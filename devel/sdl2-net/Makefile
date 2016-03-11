@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/10 08:10:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:25 naddy Exp $
 
 V =		2.0.1
 COMMENT =	SDL2 cross-platform networking library
@@ -20,8 +20,7 @@ MASTER_SITES =	http://www.libsdl.org/projects/SDL_net/release/
 LIB_DEPENDS =	devel/sdl2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-gui
+CONFIGURE_ARGS +=	--disable-gui
 
 SEPARATE_BUILD =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/02/27 22:43:18 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
@@ -26,8 +26,7 @@ MASTER_SITES =		https://www.hdfgroup.org/ftp/HDF5/current/src/ \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-cxx
+CONFIGURE_ARGS =	--enable-cxx
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hdf5

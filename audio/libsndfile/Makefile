@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/10 10:00:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -16,8 +16,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 WANTLIB=	c m sndio FLAC ogg vorbis vorbisenc
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-alsa \
+CONFIGURE_ARGS=	--disable-alsa \
 		--disable-octave \
 		--disable-sqlite
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Cfg

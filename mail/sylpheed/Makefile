@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -31,8 +31,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.4/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-ssl \
+CONFIGURE_ARGS =	--enable-ssl \
 			--enable-ipv6 \
 			--enable-gtkspell \
 			--disable-jpilot \

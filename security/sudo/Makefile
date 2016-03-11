@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/04 01:52:24 millert Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=	execute a command as another user
 
@@ -22,8 +22,7 @@ MASTER_SITES=	https://www.sudo.ws/dist/ \
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-insults \
+CONFIGURE_ARGS+=	--with-insults \
 			--with-env-editor \
 			--with-logfac=authpriv \
 			--with-libtool=system \

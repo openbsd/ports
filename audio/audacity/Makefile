@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/01/12 13:10:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/11 20:28:21 naddy Exp $
 
 COMMENT=	free audio editor
 
@@ -54,8 +54,7 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/sbsms \
 			${WRKSRC}/lib-src/libnyquist
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-unicode \
+CONFIGURE_ARGS=		--enable-unicode \
 			--enable-ladspa \
 			--enable-nyquist \
 			--with-lib-preferences=system \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -29,8 +29,7 @@ SUBST_VARS=	VERSION
 
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--with-itcl=${MODTCL_TCLDIR}/itcl \
 		--libdir=${MODTCL_TCLDIR}/itcl \

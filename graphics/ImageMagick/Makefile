@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2016/03/08 00:27:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.143 2016/03/11 20:28:25 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,8 +52,7 @@ CONFIGURE_STYLE=	autoconf
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--without-gcc-arch \
+CONFIGURE_ARGS+=	--without-gcc-arch \
 			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
 			--with-perl \
 			--with-perl-options='MAKE=${MAKE_PROGRAM}' \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/08/25 14:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
@@ -34,7 +34,6 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS} \
-		${CONFIGURE_SHARED} \
 		--disable-libsuffix
 
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}

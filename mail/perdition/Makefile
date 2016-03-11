@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/08/27 13:51:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -40,8 +40,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-ssl \
+CONFIGURE_ARGS+=	--enable-ssl \
 			--disable-cdb \
 			--disable-gdbm \
 			--disable-odbc \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=		low-level event loop management library
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		https://distfiles.nl/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--without-adns \
+CONFIGURE_ARGS+= 	--without-adns \
 			--without-glib \
 			--without-libwww \
 			--without-readline \

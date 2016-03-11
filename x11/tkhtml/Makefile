@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 20:28:33 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,8 +25,7 @@ WRKDIST =		${WRKDIR}/htmlwidget
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--libdir=${MODTCL_TCLDIR} \
+CONFIGURE_ARGS =	--libdir=${MODTCL_TCLDIR} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tclinclude=${MODTCL_INCDIR} \
 			--with-tk=${MODTK_LIBDIR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/05/11 07:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:29 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -33,8 +33,7 @@ LIB_DEPENDS =		multimedia/gstreamer1/core \
 			net/gupnp/igd
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
-			--with-gstreamer \
+CONFIGURE_ARGS = 	--with-gstreamer \
 			--without-gstreamer-0.10
 
 USE_GMAKE =		Yes

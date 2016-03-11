@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/05/22 11:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
@@ -31,8 +31,7 @@ AUTOCONF_VERSION= 2.69
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--docdir=${PREFIX}/share/doc/silc \
+CONFIGURE_ARGS+=--docdir=${PREFIX}/share/doc/silc \
 		--includedir=${PREFIX}/include/silc
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"

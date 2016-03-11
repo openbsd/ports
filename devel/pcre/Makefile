@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -25,8 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c curses m readline stdc++
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-pcre8 \
+CONFIGURE_ARGS=		--enable-pcre8 \
 			--enable-pcre16 \
 			--enable-utf \
 			--enable-unicode-properties \

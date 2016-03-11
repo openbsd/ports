@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/01 19:19:25 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
@@ -27,8 +27,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-libcurl \
+CONFIGURE_ARGS=	--without-libcurl \
 		--disable-doxygen \
 		--disable-dot \
 		--disable-gengetopt

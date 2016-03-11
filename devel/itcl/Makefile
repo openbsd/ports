@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
@@ -31,8 +31,7 @@ WRKDIST=	${WRKDIR}/itcl${VERSION}
 
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--libdir=${MODTCL_TCLDIR} \
+CONFIGURE_ARGS=	--libdir=${MODTCL_TCLDIR} \
 		--with-tcl=${MODTCL_LIBDIR} \
 		--with-tclinclude=${MODTCL_INCDIR} \
 		--includedir=${PREFIX}/include/itcl

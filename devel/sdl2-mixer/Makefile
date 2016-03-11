@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/10 08:10:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:25 naddy Exp $
 
 V =		2.0.1
 COMMENT =	SDL2 multi-channel audio mixer library
@@ -27,8 +27,7 @@ LIB_DEPENDS =	audio/flac \
 		devel/smpeg2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-music-flac-shared \
+CONFIGURE_ARGS +=	--disable-music-flac-shared \
 			--disable-music-midi-fluidsynth \
 			--disable-music-mod-modplug-shared \
 			--disable-music-mp3-smpeg-shared \

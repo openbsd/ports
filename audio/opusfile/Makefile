@@ -24,8 +24,7 @@ LIB_DEPENDS =		audio/libogg \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-maintainer-mode
+CONFIGURE_ARGS =	--disable-maintainer-mode
 CONFIGURE_ARGS +=	--disable-doc	# requires doxygen
 
 .if ${MACHINE_ARCH} == "arm"

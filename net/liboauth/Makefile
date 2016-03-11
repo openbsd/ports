@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/17 19:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		library implementing the OAuth Core RFC 5849 standard
 
@@ -19,8 +19,7 @@ LIB_DEPENDS=		net/curl \
 			security/nss
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-nss
+CONFIGURE_ARGS+=	--enable-nss
 CONFIGURE_ENV=		ac_cv_path_DOT="" \
 			ac_cv_path_DOXYGEN=""
 

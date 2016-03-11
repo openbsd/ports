@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/03 08:23:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -19,8 +19,7 @@ WANTLIB=	pthread z
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-tests \
+CONFIGURE_ARGS=	--disable-tests \
 		--without-bind \
 		--without-gnutls \
 		--without-openssl

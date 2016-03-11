@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 06:59:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT =		public suffix list library
 
@@ -28,8 +28,7 @@ LIB_DEPENDS =		converters/libunistring \
 BUILD_DEPENDS =		devel/libtool \
 			sysutils/coreutils
 CONFIGURE_STYLE =	autoconf automake
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-builtin=libidn \
+CONFIGURE_ARGS +=	--enable-builtin=libidn \
 			--enable-runtime=libidn
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/09/25 09:49:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -49,8 +49,7 @@ MODPY_RUNDEP =	No
 MODPY_ADJ_FILES =data/autostart/openbox-xdg-autostart
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
-		--docdir=${PREFIX}/share/examples/openbox
+CONFIGURE_ARGS = --docdir=${PREFIX}/share/examples/openbox
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

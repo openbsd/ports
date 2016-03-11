@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/02/23 15:41:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
@@ -22,7 +22,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		security/libgpg-error
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static
+CONFIGURE_ARGS=		--enable-static
 
 .include <bsd.port.mk>

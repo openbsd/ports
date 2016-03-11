@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/17 21:42:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:26 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -21,8 +21,7 @@ WANTLIB += usbhid xcb xcb-dri2 xcb-glx
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freeglut/}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-warnings=no
+CONFIGURE_ARGS +=	--enable-warnings=no
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
 
 NO_TEST =		Yes

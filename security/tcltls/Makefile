@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/16 18:07:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:31 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -31,8 +31,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 WRKDIST=	${WRKDIR}/tls${VERSION}
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--libdir=${MODTCL_TCLDIR} \
+CONFIGURE_ARGS=	--libdir=${MODTCL_TCLDIR} \
 		--with-tcl=${MODTCL_LIBDIR} \
 		--with-tclinclude=${MODTCL_INCDIR} \
 		--with-ssl-dir=/usr \

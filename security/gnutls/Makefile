@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2016/03/06 12:16:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -37,8 +37,7 @@ USE_GMAKE=	Yes
 PORTHOME=	${WRKDIR}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-guile \
+CONFIGURE_ARGS=	--disable-guile \
 		--disable-valgrind-tests \
 		--with-default-trust-store-file=/etc/ssl/cert.pem \
 		--with-unbound-root-key-file=/var/unbound/db/root.key

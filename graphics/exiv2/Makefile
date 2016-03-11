@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/21 15:33:56 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
@@ -23,8 +23,7 @@ CONFIGURE_STYLE=gnu
 
 MODULES=	devel/gettext
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static
+CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
 
 NO_TEST=	Yes

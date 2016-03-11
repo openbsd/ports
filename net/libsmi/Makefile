@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=	library/tools (incl smilint) to access SMI MIB information
 
@@ -24,8 +24,7 @@ USE_GMAKE=		Yes
 S=			${PREFIX}/share/smi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-data-dir=${PREFIX}/share/smi \
+CONFIGURE_ARGS=		--with-data-dir=${PREFIX}/share/smi \
 			--with-mibdir=${PREFIX}/share/smi/mibs \
 			--with-pibdir=${PREFIX}/share/smi/pibs \
 			--with-smipath=/usr/share/snmp/mibs:$S/mibs/ietf:$S/mibs/iana:$S/mibs/irtf:$S/mibs/site:$S/mibs/tubs:$S/pibs/ietf:$S/pibs/site:$S/pibs/tubs

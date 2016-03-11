@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/11/19 14:19:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2016/03/11 20:28:28 naddy Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -42,8 +42,7 @@ CONFIGURE_STYLE=autoconf dest
 AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-large-files \
+CONFIGURE_ARGS=	--with-large-files \
 		--with-snmp \
 		--with-pic \
 		--without-rlm-perl \

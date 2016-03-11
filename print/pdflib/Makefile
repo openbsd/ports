@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -26,8 +26,7 @@ FAKE=			lib
 CONFIGURE_STYLE=	autoconf dest
 AUTOCONF_VERSION=	2.13
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-tifflib \
+CONFIGURE_ARGS=		--with-tifflib \
 			--with-pnglib \
 			--with-zlib \
 			--without-perl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2016/02/07 15:54:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.208 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -86,8 +86,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			${LIBS_ENV}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS=		--enable-static \
 			--with-cups-group=_cups \
 			--with-cups-user=_cups \
 			--with-system-groups=wheel \

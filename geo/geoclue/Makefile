@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -29,8 +29,7 @@ LIB_DEPENDS =		devel/libsoup \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk \
+CONFIGURE_ARGS=		--disable-gtk \
 			--disable-connman
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"

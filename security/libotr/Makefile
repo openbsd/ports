@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/10 19:45:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -32,8 +32,7 @@ AUTOMAKE_VERSION = 	1.11
 CONFIGURE_STYLE=	autoconf automake
 # PIE is taken care of on a per-arch basis on OpenBSD, and stack
 # protection is enabled anyway.
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gcc-hardening \
+CONFIGURE_ARGS=		--disable-gcc-hardening \
 			--disable-linker-hardening
 
 .include <bsd.port.mk>

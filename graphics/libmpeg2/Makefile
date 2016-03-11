@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	free MPEG-2 video stream decoder
 
@@ -19,8 +19,7 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-sdl
+CONFIGURE_ARGS+=--disable-sdl
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/.auto
 
 NO_TEST=	Yes

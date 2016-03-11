@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/11/19 07:16:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/11 20:28:26 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,8 +41,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			ac_cv_path_DOXYGEN=false
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS=		--enable-static \
 			--without-hal \
 			--without-bonjour
 

@@ -31,8 +31,7 @@ TEST_DEPENDS =		devel/kyua-cli
 .endif
 
 CONFIGURE_STYLE  =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--without-doxygen
+CONFIGURE_ARGS =	--without-doxygen
 CONFIGURE_ENV =		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 

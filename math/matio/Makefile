@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT=	library for reading and writing Matlab MAT files
 
@@ -23,8 +23,7 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV += FC=${MODFORTRAN_COMPILER}
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-fortran=no \
+CONFIGURE_ARGS=	--enable-fortran=no \
 		--enable-test=yes
 
 TESTS=	copy write writecompressed writecell readslab \

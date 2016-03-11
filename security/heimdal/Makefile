@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/28 22:34:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -83,8 +83,7 @@ MODGNU_CONFIG_GUESS_DIRS= \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-afs-support \
+CONFIGURE_ARGS=		--disable-afs-support \
 			--disable-otp \
 			--without-x
 

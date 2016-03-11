@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/19 15:06:14 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
@@ -20,8 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
-		--without-libplot	\
+CONFIGURE_ARGS=	--without-libplot	\
 		--without-emf	 	\
 		--without-swf		\
 		--without-magick

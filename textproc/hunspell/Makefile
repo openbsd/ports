@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/07 21:43:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -25,8 +25,7 @@ MODULES =		devel/gettext
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${WRKBUILD}/src/hunspell/.libs"
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-ui \
+CONFIGURE_ARGS =	--with-ui \
 			--with-readline
 
 # default dictionary

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	audio sample rate conversion library
 
@@ -22,8 +22,7 @@ LIB_DEPENDS=	audio/libsndfile
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-cpu-clip \
+CONFIGURE_ARGS=	--disable-cpu-clip \
 		--disable-fftw
 
 post-install:

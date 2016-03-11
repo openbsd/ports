@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/18 10:07:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -30,8 +30,7 @@ GST_LIBAV_ARCH=		${MACHINE_ARCH}
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/gst-libs/ext/libav
 
-libav_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-			--arch=${GST_LIBAV_ARCH} \
+libav_CONFIGURE_ARGS=	--arch=${GST_LIBAV_ARCH} \
 			--cc=${CC} \
 			--enable-gpl \
 			--enable-runtime-cpudetect \

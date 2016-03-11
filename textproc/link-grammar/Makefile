@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/30 10:59:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:32 naddy Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -73,8 +73,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} ${ADD_CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} ${ADD_CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-perl-bindings \
+CONFIGURE_ARGS =	--enable-perl-bindings \
 			--enable-python-bindings \
 			--with-hunspell-dictdir=${LOCALBASE}/share/mozilla-dicts
 

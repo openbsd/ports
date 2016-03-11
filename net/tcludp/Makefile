@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/23 09:06:30 schwarze Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:29 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,8 +22,7 @@ FAKE_FLAGS =	PKG_DIR=tcludp
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--libdir=${MODTCL_TCLDIR} \
 		--datadir=${PREFIX}/share/examples
 

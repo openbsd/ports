@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/06 22:18:31 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT =		wonderful puzzle game
 V = 			1.0.1
@@ -24,8 +24,7 @@ LIB_DEPENDS =		devel/fribidi \
 			devel/sdl-ttf \
 			devel/smpeg
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-lua=${PREFIX} \
+CONFIGURE_ARGS +=	--with-lua=${PREFIX} \
 			--datadir=${LOCALBASE}/share/fillets-ng
 CONFIGURE_ENV += 	CPPFLAGS="${CPPFLAGS} -I${MODLUA_INCL_DIR}" \
 			LUA_CFLAGS=-I${MODLUA_INCL_DIR} \

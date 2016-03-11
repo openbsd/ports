@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/21 19:43:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=	library for delta compression of streams
 
@@ -25,8 +25,7 @@ SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-trace
+CONFIGURE_ARGS+=	--disable-trace
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

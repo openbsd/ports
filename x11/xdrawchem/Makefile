@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:34 naddy Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -27,8 +27,7 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	LDFLAGS+="-lqt-mt -pthread -L${X11BASE}/lib"
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-qtincdir=${MODQT_INCDIR} \
+CONFIGURE_ARGS=	--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2015/05/22 11:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -34,8 +34,7 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-alsa \
+CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-arts \
 		 --disable-esd \
 		 --disable-oss \

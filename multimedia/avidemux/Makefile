@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=	free video editor
 
@@ -54,8 +54,7 @@ CONFIGURE_ENV+=	CFLAGS="${PIE_CFLAGS} ${CFLAGS}" \
 		CXXFLAGS="${PIE_CFLAGS} ${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="${PIE_LDFLAGS} -L${LOCALBASE}/lib -logg -lm -lz"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-xv \
+CONFIGURE_ARGS+=--enable-xv \
 		--with-x \
 		--with-freetype2 \
 		--with-lame \

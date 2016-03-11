@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/03/16 18:07:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
@@ -29,8 +29,7 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS+=	--enable-static \
 			--enable-curses=ncursesw \
 			--enable-dict-dir=${PREFIX}/share/aspell \
 			--enable-docdir=${PREFIX}/share/doc/aspell

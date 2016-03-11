@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/21 18:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		lightweight Jabber client library
 
@@ -26,8 +26,7 @@ BUILD_DEPENDS=		${TEST_DEPENDS}
 TEST_DEPENDS=	devel/check
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-mono \
+CONFIGURE_ARGS+=	--disable-mono \
 			--with-check=${LOCALBASE} \
 			--with-ssl=openssl
 

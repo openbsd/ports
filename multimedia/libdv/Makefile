@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/02 13:03:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -23,8 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
 LIB_DEPENDS=		devel/popt
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-sdl \
+CONFIGURE_ARGS=		--disable-sdl \
 			--disable-gtk \
 			--with-x
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

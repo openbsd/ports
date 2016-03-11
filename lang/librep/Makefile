@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -33,8 +33,7 @@ USE_GMAKE=		Yes
 MAKE_FLAGS=		rep_LIBTOOL=${LIBTOOL}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS+=	--enable-static \
 			--with-aclocaldir=${PREFIX}/share/aclocal
 
 # -pthread is needed for opening libglib-2.0:

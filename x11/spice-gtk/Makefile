@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/10/01 08:49:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -59,8 +59,7 @@ MODGNU_CONFIG_GUESS_DIRS= \
 		${WRKSRC}/spice-common
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-smartcard \
+CONFIGURE_ARGS=	--disable-smartcard \
 		--disable-usbredir \
 		--enable-introspection \
 		--enable-vala \

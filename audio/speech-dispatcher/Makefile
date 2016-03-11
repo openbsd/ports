@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/18 19:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -44,8 +44,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-pulse
+CONFIGURE_ARGS=	--without-pulse
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
 

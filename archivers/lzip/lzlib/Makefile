@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/21 00:41:08 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:21 naddy Exp $
 
 COMMENT =		lzip compression library
 
@@ -16,8 +16,7 @@ MAKE_ENV +=		LIBlz_VERSION=${LIBlz_VERSION}
 
 USE_GMAKE =		Yes
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-static \
+CONFIGURE_ARGS +=	--disable-static \
 			--disable-ldconfig
 
 # The Makefile tries to strip a shared lib with the install-strip target.

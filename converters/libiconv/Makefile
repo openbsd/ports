@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/04/12 20:21:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	character set conversion library
 
@@ -21,8 +21,7 @@ WANTLIB=	c
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux ${WRKSRC}/libcharset/build-aux
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--disable-nls \
+CONFIGURE_ARGS= --disable-nls \
 		--enable-extra-encodings \
 		--enable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=	drive a toy wood engine
 
@@ -26,8 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` \
 		-I${X11BASE}/include \
 		-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-sdl-config=${SDL_CONFIG}
+CONFIGURE_ARGS=	--with-sdl-config=${SDL_CONFIG}
 
 pre-configure:
 	perl -pi -e 's|-lSDL |`${SDL_CONFIG} --libs`|' ${WRKSRC}/configure

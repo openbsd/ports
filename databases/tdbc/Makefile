@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/22 04:23:29 stu Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT =	Tcl Database Connectivity
 
@@ -29,8 +29,7 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--includedir=${PREFIX}/include/tdbc \
 			SHLIB_VERSION=${LIBtdbc${V:S/.//g}_VERSION}
 

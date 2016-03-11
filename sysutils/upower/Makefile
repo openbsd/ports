@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/10/24 09:18:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/03/11 20:28:32 naddy Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -22,8 +22,7 @@ WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gobject-2.0 m
 WANTLIB += pthread
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-introspection \
+CONFIGURE_ARGS +=	--enable-introspection \
 			--enable-man-pages \
 			--with-historydir=/var/db/upower \
 			--with-backend=openbsd \

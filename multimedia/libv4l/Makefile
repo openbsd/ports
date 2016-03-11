@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/31 07:12:25 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:28 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -34,8 +34,7 @@ LIB_DEPENDS =		graphics/jpeg
 SEPARATE_BUILD =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-doxygen-doc
+CONFIGURE_ARGS =	--disable-doxygen-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

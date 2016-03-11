@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/02/06 07:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2016/03/11 20:28:22 naddy Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -67,8 +67,7 @@ CONFIGURE_STYLE=	gnu
 # We only enable the strict minimum for basic volume control support.
 # sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
 # needed for a couple of use cases (volume control, media-keys)
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-atomic-arm-linux-helpers \
+CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-default-build-tests \
 			--with-system-user=_pulse \
 			--with-system-group=_pulse \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:28 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -44,8 +44,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-ipv6 \
+CONFIGURE_ARGS +=	--enable-ipv6 \
 			--enable-dbus \
 			--disable-sysinfo \
 			--disable-libcanberra

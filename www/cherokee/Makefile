@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/03/11 20:28:32 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -88,8 +88,7 @@ AUTOCONF_VERSION =	2.68
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_header_execinfo_h=no
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-static \
+CONFIGURE_ARGS =	--disable-static \
 			--enable-tmpdir=/tmp \
 			--sysconfdir=${SYSCONFDIR} \
 			--with-cgiroot=/var/cherokee/cgi-bin \

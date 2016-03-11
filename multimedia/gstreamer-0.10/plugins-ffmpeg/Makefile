@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/11/21 10:57:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
@@ -31,8 +31,7 @@ GST_LIBAV_ARCH=		generic
 GST_LIBAV_ARCH=		${MACHINE_ARCH}
 .endif
 
-ffmpeg_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-			--arch=${GST_LIBAV_ARCH} \
+ffmpeg_CONFIGURE_ARGS=	--arch=${GST_LIBAV_ARCH} \
 			--cc=${CC} \
 			--enable-gpl \
 			--disable-altivec \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/11/09 22:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:29 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 SHARED_ONLY=		Yes
@@ -31,8 +31,7 @@ NO_TEST=		Yes
 AUTOCONF_VERSION=	2.60
 CONFIGURE_STYLE=	automake autoconf
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-transarc-paths \
+CONFIGURE_ARGS+=	--disable-transarc-paths \
 			--enable-namei-fileserver \
 			--enable-largefile-fileserver \
 			--with-afs-sysname=${ARCH}_obsd${OSrev} \

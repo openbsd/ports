@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2015/12/06 08:29:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2016/03/11 20:28:28 naddy Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -225,8 +225,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			PTHREAD_CFLAGS="-pthread" \
 			PTHREAD_LIBS="-pthread" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
+CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 			--with-avahi-user=_avahi \
 			--with-avahi-group=_avahi \
 			--with-avahi-priv-access-group=wheel \

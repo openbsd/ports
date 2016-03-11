@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	WMF handling and conversion library
 
@@ -26,8 +26,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-png=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 		--with-freetype=${X11BASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-zlib=/usr \

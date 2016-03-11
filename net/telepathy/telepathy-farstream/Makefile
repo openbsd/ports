@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		flexible communications framework, farstream component
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		net/farstream>=0.2.0 \
 			net/telepathy/telepathy-glib>=0.19.9
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-introspection
+CONFIGURE_ARGS=		--enable-introspection
 
 .include <bsd.port.mk>

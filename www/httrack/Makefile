@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/09 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
@@ -37,8 +37,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 SEPARATE_BUILD =	No
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-online-unit-tests=no \
+CONFIGURE_ARGS +=	--enable-online-unit-tests=no \
 			ICONV_LIBS="-liconv"
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

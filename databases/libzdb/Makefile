@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/11 19:28:37 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT =		easy to use database connection pool Library
 
@@ -19,8 +19,7 @@ MASTER_SITES =		http://www.tildeslash.com/libzdb/dist/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-postgresql=no \
+CONFIGURE_ARGS +=	--with-postgresql=no \
 			--with-mysql=no
 
 FLAVORS =	mysql postgresql

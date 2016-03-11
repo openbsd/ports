@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/01/16 08:41:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=		glib bindings for dbus message system
 
@@ -28,8 +28,7 @@ LIB_DEPENDS=		devel/glib2 \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-test-socket-dir=${WRKDIR}
+CONFIGURE_ARGS=		--with-test-socket-dir=${WRKDIR}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT =		C++ application-level logging library
 
@@ -25,8 +25,7 @@ TEST_DEPENDS =	devel/gtest
 BUILD_DEPENDS +=	${TEST_DEPENDS}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-gflags=${LOCALBASE}
+CONFIGURE_ARGS +=	--with-gflags=${LOCALBASE}
 MAKE_FLAGS =            docdir='$$(prefix)/share/doc/glog'
 
 .include <bsd.port.mk>

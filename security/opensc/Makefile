@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/08/06 22:09:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/11 20:28:31 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,8 +30,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.67
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
 		--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook

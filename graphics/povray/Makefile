@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/11/14 22:53:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	3D image rendering package
 
@@ -29,8 +29,7 @@ LIB_DEPENDS=		graphics/jpeg \
 			graphics/tiff
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-x \
+CONFIGURE_ARGS+=	--with-x \
 			--enable-watch-cursor \
 			--disable-optimiz \
 			--x-includes="${X11BASE}/include" \

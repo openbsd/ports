@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/12/03 09:18:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
@@ -24,8 +24,7 @@ LIB_DEPENDS +=		${MODTCL_LIB_DEPENDS}
 SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--libdir=${MODTCL_TCLDIR} \
+CONFIGURE_ARGS +=	--libdir=${MODTCL_TCLDIR} \
 			--with-tclconfig="${MODTCL_LIBDIR}" \
 			--with-tclinclude="${MODTCL_INCDIR}"
 CONFIGURE_ENV +=	SHLIB_VERSION=${LIBexpect545_VERSION} \

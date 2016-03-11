@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/06 12:19:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
@@ -24,8 +24,7 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		security/gnutls
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

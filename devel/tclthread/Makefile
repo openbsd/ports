@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/22 04:21:42 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT =	thread extension for Tcl
 
@@ -28,8 +28,7 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			SHLIB_VERSION=${LIBtclthread${V:S/.//g}_VERSION}
 
 TEST_TARGET =	test

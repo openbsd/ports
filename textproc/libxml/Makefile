@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2015/11/22 08:06:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -24,8 +24,7 @@ LIB_DEPENDS=		archivers/xz
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS+=	--enable-static \
 			--with-html-dir="${PREFIX}/share/doc" \
 			--with-html-subdir="libxml2/html" \
 			--with-iconv="${LOCALBASE}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2015/12/07 18:24:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -28,8 +28,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS+=	--enable-static \
 			--enable-xinerama \
 			--with-datadir="${LOCALBASE}/share/WindowMaker" \
 			--with-nlsdir="${LOCALBASE}/share/locale"

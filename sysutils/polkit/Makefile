@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2015/07/19 00:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -37,8 +37,7 @@ RUN_DEPENDS +=	x11/dbus,-suid
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-libsystemd-login \
+CONFIGURE_ARGS=	--disable-libsystemd-login \
 		--mandir=${PREFIX}/man \
 		--enable-introspection \
 		--enable-man-pages \

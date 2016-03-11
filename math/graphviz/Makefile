@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/01/14 20:56:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -78,8 +78,7 @@ USE_GMAKE =	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 # Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-tcl=yes \
+CONFIGURE_ARGS=	--enable-tcl=yes \
 		--enable-perl \
 		--enable-guile \
 		--with-tclsh=${MODTCL_BIN} \

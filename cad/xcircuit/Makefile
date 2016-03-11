@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/01 21:55:25 stu Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:22 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,8 +25,7 @@ USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.68
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
 
 NO_TEST =	Yes

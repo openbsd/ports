@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/02/25 03:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2016/03/11 20:28:30 naddy Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -60,8 +60,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gs-path=${LOCALBASE}/bin/gs \
+CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-shell=/bin/ksh \
 		--without-php \

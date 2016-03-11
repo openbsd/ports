@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -40,8 +40,7 @@ RUN_DEPENDS = 		misc/shared-mime-info \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-update-xdg-database
+CONFIGURE_ARGS =	--disable-update-xdg-database
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-tools
 
 # This confuses update-patches.

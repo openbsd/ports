@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/19 12:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:30 naddy Exp $
 
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc sparc64
@@ -29,8 +29,7 @@ USE_GMAKE=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=        ${CONFIGURE_SHARED} \
-			--includedir=${PREFIX}/include/9libs
+CONFIGURE_ARGS+=        --includedir=${PREFIX}/include/9libs
 
 # broken on colorinit() in test.c
 TEST_IS_INTERACTIVE=	Yes

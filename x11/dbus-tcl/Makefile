@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/13 00:56:55 stu Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:33 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -30,8 +30,7 @@ TEST_FLAGS =	LD_PRELOAD=/usr/lib/libpthread.so
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--mandir='$${prefix}/man' \
 		--enable-threads
 

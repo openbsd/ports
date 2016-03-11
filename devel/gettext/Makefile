@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/01/02 22:00:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	GNU gettext runtime libraries and programs
 
@@ -24,8 +24,7 @@ WANTLIB=	c m stdc++
 
 WRKSRC=		${WRKDIST}/gettext-runtime
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-csharp \
+CONFIGURE_ARGS=	--disable-csharp \
 		--disable-java \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-included-gettext

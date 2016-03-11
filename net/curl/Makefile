@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2016/02/27 21:55:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.116 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -25,8 +25,7 @@ WANTLIB=	c crypto idn nghttp2 ssl z
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-ca-bundle=/etc/ssl/cert.pem \
+CONFIGURE_ARGS=	--with-ca-bundle=/etc/ssl/cert.pem \
 		--with-libidn=${LOCALBASE} \
 		--without-libpsl \
 		--without-libssh2

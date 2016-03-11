@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2015/09/21 08:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2016/03/11 20:28:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,8 +36,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-pilot-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps

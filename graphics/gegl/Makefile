@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/09/22 18:47:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.53 2016/03/11 20:28:26 naddy Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -77,8 +77,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_RUBY="" \
 			ac_cv_path_DOT="no"
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-docs \
+CONFIGURE_ARGS=		--disable-docs \
 			--without-umfpack \
 			--without-sdl \
 			--without-lua \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/08/04 07:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=		internationalized string handling
 
@@ -23,8 +23,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=libidn/}
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-csharp \
+CONFIGURE_ARGS=		--disable-csharp \
 			--disable-java
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux

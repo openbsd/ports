@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/06/06 04:49:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	SDL cross-platform networking library
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-gui
+CONFIGURE_ARGS+=--disable-gui
 
 .include <bsd.port.mk>

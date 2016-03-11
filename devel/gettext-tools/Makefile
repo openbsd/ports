@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/02 22:00:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
@@ -32,8 +32,7 @@ RUN_DEPENDS=	archivers/xz
 
 WRKSRC=		${WRKDIST}/gettext-tools
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-csharp \
+CONFIGURE_ARGS=	--disable-csharp \
 		--disable-java \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-libintl-prefix="${LOCALBASE}" \

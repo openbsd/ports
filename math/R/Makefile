@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/03/01 17:57:06 feinerer Exp $
+# $OpenBSD: Makefile,v 1.79 2016/03/11 20:28:27 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -78,8 +78,7 @@ CONFIGURE_STYLE=gnu
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--disable-java \
+CONFIGURE_ARGS= --disable-java \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
 		--with-tcl-config=${MODTCL_CONFIG} \

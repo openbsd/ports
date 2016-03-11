@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/12/11 06:35:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -25,8 +25,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-sql \
+CONFIGURE_ARGS=		--enable-sql \
 			--enable-static \
 			--without-pam \
 			--with-saslauthd="/var/sasl2" \

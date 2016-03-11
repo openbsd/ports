@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/10/19 17:00:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/11 20:28:25 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,8 +55,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-py-build-only \
+CONFIGURE_ARGS=	--enable-py-build-only \
 		--with-python=${MODPY_BIN}
 
 # don't install under share/gnome/help/, there is no yelp (xml) file

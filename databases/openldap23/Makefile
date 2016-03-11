@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/08 21:19:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	open-source LDAP software (server, legacy version)
 
@@ -25,8 +25,7 @@ EXTRACT_SUFX=		.tgz
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 
 # slapd options
 CONFIGURE_ARGS+=	--enable-slapd \

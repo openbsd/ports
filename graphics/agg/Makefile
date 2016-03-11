@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -32,8 +32,7 @@ BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=automake
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gpc \
+CONFIGURE_ARGS=	--disable-gpc \
 		--disable-examples \
 		--disable-sdltest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

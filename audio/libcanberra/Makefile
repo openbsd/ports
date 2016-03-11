@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/08/17 12:06:27 kili Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/11 20:28:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -89,8 +89,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-gstreamer \
+CONFIGURE_ARGS= 	--disable-gstreamer \
 			--disable-null \
 			--disable-oss \
 			--disable-pulse \

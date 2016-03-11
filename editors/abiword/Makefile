@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2015/10/30 12:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2016/03/11 20:28:25 naddy Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -71,8 +71,7 @@ RUN_DEPENDS +=	devel/xdg-utils
 PLUGINS=	goffice opendocument openwriter openxml pdf
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
+CONFIGURE_ARGS=	--enable-introspection \
 		--enable-plugins="${PLUGINS}" \
 		--enable-clipart \
 		--enable-templates

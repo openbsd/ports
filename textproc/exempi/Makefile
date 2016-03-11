@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/01 18:04:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:32 naddy Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -24,8 +24,7 @@ BUILD_DEPENDS =		converters/libiconv
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-unittest=no
+CONFIGURE_ARGS +=	--enable-unittest=no
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 

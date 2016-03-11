@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 12:21:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:26 naddy Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -30,8 +30,7 @@ MODULES =		devel/gettext lang/python
 LIB_DEPENDS-python = 	graphics/libiptcdata,-main
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-python
+CONFIGURE_ARGS +=	--enable-python
 CONFIGURE_ENV += 	PYTHON_VERSION=${MODPY_VERSION} \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread -lm -lutil"
 

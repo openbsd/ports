@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/03 18:02:43 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:30 naddy Exp $
 
 BROKEN-hppa =	configure: error: Could not link against boost_serialization-boost_serialization
 BROKEN-sparc64 =	configure: error: Could not link against boost_serialization-boost_serialization
@@ -23,8 +23,7 @@ LIB_DEPENDS =		devel/boost \
 			devel/rlog
 			
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-boost-serialization=boost_serialization \
+CONFIGURE_ARGS +=	--with-boost-serialization=boost_serialization \
 			--with-boost-filesystem=boost_filesystem \
 			--with-boost-system=boost_system
 # TODO convert code to use utimensat() instead of lutimes()

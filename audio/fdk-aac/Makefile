@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:21 naddy Exp $
 
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
 DISTNAME =		fdk-aac-0.1.4
@@ -16,8 +16,7 @@ WANTLIB =		c m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencore-amr/fdk-aac/}
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-example
+CONFIGURE_ARGS =	--enable-example
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fdk-aac

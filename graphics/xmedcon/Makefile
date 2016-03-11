@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/05/01 13:43:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT =	medical image conversion
 
@@ -32,8 +32,7 @@ FAKE_FLAGS =	sysconfdir=${TRUEPREFIX}/share/examples/xmedcon
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
-		 --enable-static \
+CONFIGURE_ARGS += --enable-static \
 		 --sysconfdir="${SYSCONFDIR}"
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

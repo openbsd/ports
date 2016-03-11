@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/22 11:05:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT =		sensible unix password cracker
 
@@ -21,8 +21,7 @@ MODULES =		lang/python \
 			devel/gettext
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--without-x \
+CONFIGURE_ARGS =	--without-x \
 			--with-default-dict=${PREFIX}/share/cracklib/cracklib-small
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

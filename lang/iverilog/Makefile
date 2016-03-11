@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/23 11:12:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
@@ -22,8 +22,7 @@ BUILD_DEPENDS=		devel/bison
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-suffix
+CONFIGURE_ARGS+=	--disable-suffix
 CFLAGS+=		-fPIC
 
 VVP_DOCS=		README.txt opcodes.txt

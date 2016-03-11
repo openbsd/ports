@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -26,8 +26,7 @@ LIB_DEPENDS=		devel/libsoup \
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-Werror \
+CONFIGURE_ARGS=		--disable-Werror \
 			--disable-avahi-tests
 
 .include <bsd.port.mk>

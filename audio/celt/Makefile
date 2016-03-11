@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 20:28:21 naddy Exp $
 
 PORTROACH =	limit:^0\.11\.1
 PORTROACH_COMMENT =	audio/mumble (at least as of 1.2.4) requires *exactly* 0.11.1
@@ -35,8 +35,7 @@ LIB_DEPENDS =		audio/libogg
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-assertions \
+CONFIGURE_ARGS =	--enable-assertions \
 			--enable-custom-modes \
 			--with-ogg=${LOCALBASE}
 

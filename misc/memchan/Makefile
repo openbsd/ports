@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:28 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -32,8 +32,7 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--libdir=${MODTCL_TCLDIR} \
 			--includedir=${PREFIX}/include/memchan \
 			SHLIB_VERSION=${LIBMemchan23_VERSION}

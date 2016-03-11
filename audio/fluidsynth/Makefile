@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
@@ -30,8 +30,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 BUILD_DEPENDS +=        devel/libtool
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-coreaudio \
+CONFIGURE_ARGS +=	--disable-coreaudio \
 			--disable-coremidi \
 			--disable-dart \
 			--disable-dbus-support \

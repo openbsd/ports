@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/01/17 17:29:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/03/11 20:28:34 naddy Exp $
 
 COMMENT=		GUI toolkit for X11
 
@@ -24,8 +24,7 @@ WANTLIB += xcb xcb-dri2 xcb-glx expat
 LIB_DEPENDS=		graphics/jpeg
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-extra-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=		--with-extra-prefix=${LOCALBASE} \
 			--disable-docs
 
 .include <bsd.port.mk>

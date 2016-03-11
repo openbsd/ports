@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:28 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -48,8 +48,7 @@ LIB_DEPENDS =		multimedia/libtheora \
 			multimedia/mjpegtools
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-jack \
+CONFIGURE_ARGS +=	--disable-jack \
 			--disable-frei0r \
 			--disable-libvisual \
 			--disable-static

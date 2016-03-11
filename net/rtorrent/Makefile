@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -32,8 +32,7 @@ LIB_DEPENDS=		net/libtorrent>=0.13.4 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV +=	LDFLAGS=-pthread
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-debug
+CONFIGURE_ARGS=		--disable-debug
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtorrent

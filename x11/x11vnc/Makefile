@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/08 12:04:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =		VNC server for real X displays
 
@@ -27,8 +27,7 @@ LIB_DEPENDS =		graphics/jpeg \
 
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-x \
+CONFIGURE_ARGS +=	--with-x \
 			--with-avahi
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

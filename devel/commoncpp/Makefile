@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/18 18:43:30 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
@@ -21,8 +21,7 @@ WANTLIB=	crypto ssl z m stdc++ pthread
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--without-nat \
+CONFIGURE_ARGS+= --without-nat \
 		--with-openssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

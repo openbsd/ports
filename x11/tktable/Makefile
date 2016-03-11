@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/16 18:08:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -23,8 +23,7 @@ RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--with-tkinclude=${MODTK_INCDIR}
 USE_GROFF =		Yes

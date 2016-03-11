@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/01/24 16:48:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -19,8 +19,7 @@ WANTLIB=	c m stdc++ z jpeg
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-jbig \
+CONFIGURE_ARGS=	--disable-jbig \
 		--disable-lzma \
 		--with-docdir="${PREFIX}/share/doc/tiff" \
 		--with-jpeg-include-dir="${LOCALBASE}/include" \

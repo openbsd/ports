@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/22 04:17:59 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -37,8 +37,7 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--includedir="${PREFIX}/include/tk8.6" \
+CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tk8.6" \
 			--mandir="${PREFIX}/lib/tcl/tk8.6/man" \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \

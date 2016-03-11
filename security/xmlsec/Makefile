@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/09/17 10:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -43,8 +43,7 @@ LIB_DEPENDS=		devel/libtool,-ltdl \
 # USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--without-nss \
+CONFIGURE_ARGS=		--without-nss \
 			--without-nspr
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

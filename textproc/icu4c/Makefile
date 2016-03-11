@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/12/29 12:38:27 jsg Exp $
+# $OpenBSD: Makefile,v 1.53 2016/03/11 20:28:32 naddy Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -35,8 +35,7 @@ EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS=		--enable-static \
 			--disable-extras \
 			--disable-samples
 

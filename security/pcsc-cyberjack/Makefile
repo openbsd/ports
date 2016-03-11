@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -29,8 +29,7 @@ LIB_DEPENDS =		devel/libusb1
 MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include
 
 CONFIGURE_STYLE =	autoconf automake
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-fox \
+CONFIGURE_ARGS +=	--disable-fox \
 			--disable-xml2 \
 			--enable-release
 

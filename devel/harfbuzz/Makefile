@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/02/28 11:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/03/11 20:28:24 naddy Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -53,8 +53,7 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 			textproc/icu4c
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-introspection \
+CONFIGURE_ARGS=		--enable-introspection \
 			--with-graphite2 \
 			--with-gobject
 

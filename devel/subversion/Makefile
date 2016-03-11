@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2015/12/16 10:21:52 stsp Exp $
+# $OpenBSD: Makefile,v 1.145 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -137,8 +137,7 @@ MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-sasl=${LOCALBASE} \
+CONFIGURE_ARGS+=--with-sasl=${LOCALBASE} \
 		--with-gnome-keyring \
 		--without-jikes \
 		--without-jdk \

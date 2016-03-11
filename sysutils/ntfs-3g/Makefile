@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/20 05:32:02 pirofti Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
@@ -25,8 +25,7 @@ LIB_DEPENDS =		sysutils/e2fsprogs
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-mtab \
+CONFIGURE_ARGS =	--disable-mtab \
 			--disable-ldconfig
 
 .include <bsd.port.mk>

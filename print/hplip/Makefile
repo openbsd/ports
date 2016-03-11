@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2016/02/25 03:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2016/03/11 20:28:30 naddy Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -137,8 +137,7 @@ FAKE_FLAGS=		hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
+CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 			--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 			--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
 			--with-icondir=${PREFIX}/share/applications \

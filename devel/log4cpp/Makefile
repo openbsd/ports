@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	library of C++ classes for flexible logging
 
@@ -21,8 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=log4cpp/}
 
 CONFIGURE_STYLE= gnu
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--with-pthreads \
+CONFIGURE_ARGS+= --with-pthreads \
 		--disable-doxygen
 SEPARATE_BUILD=	Yes
 

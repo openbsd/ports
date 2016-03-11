@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/04 20:47:52 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:21 naddy Exp $
 
 BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
@@ -28,8 +28,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		LIBwcs_VERSION=${LIBwcs_VERSION}
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--docdir=${PREFIX}/share/doc/wcslib \
+CONFIGURE_ARGS =	--docdir=${PREFIX}/share/doc/wcslib \
 			--with-x
 
 # non-free licensed dependency

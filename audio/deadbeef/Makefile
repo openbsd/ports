@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/10/30 12:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:21 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -66,8 +66,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-static \
+CONFIGURE_ARGS +=	--disable-static \
 			--disable-abstract-socket \
 			--disable-adplug \
 			--disable-alsa \

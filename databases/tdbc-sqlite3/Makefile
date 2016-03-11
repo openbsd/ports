@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/22 04:24:54 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT =	sqlite3 module for TDBC
 
@@ -31,8 +31,7 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tdbc=${MODTCL_TCLDIR}/tdbc
 
 TEST_TARGET =		test

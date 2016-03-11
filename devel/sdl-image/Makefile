@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/22 11:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	SDL image library
 
@@ -25,8 +25,7 @@ LIB_DEPENDS=	devel/sdl \
 		graphics/tiff
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-jpg-shared \
+CONFIGURE_ARGS+=--disable-jpg-shared \
 		--disable-png-shared \
 		--disable-tif-shared \
 		--disable-webp-shared

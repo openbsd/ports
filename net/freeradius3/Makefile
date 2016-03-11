@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/25 20:32:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 20:28:28 naddy Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -45,8 +45,7 @@ CONFIGURE_ENV=	ac_cv_path_LOCATE= \
 		ac_cv_path_SNMPWALK=${LOCALBASE}/bin/snmpwalk \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--libdir=${PREFIX}/lib/freeradius
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius
 # Disabling modules via --without-rlm_FOO doesn't seem to work as of 3.0.10.
 # No option to disable collectd; bodged via patch-configure.
 

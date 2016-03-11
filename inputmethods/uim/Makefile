@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/08/25 14:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/11 20:28:27 naddy Exp $
 
 SHARED_ONLY=		Yes
 DPB_PROPERTIES=		tag:kde3
@@ -120,8 +120,7 @@ CONFIGURE_ENV=		CPPFLAGS='-I${MODQT3_INCDIR} -I${LOCALBASE}/include -I${X11BASE}
 			ac_cv_prog_HOST_MOC=${MODQT3_MOC} \
 			ac_cv_prog_HOST_UIC=${MODQT3_MOC}
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-qt \
+CONFIGURE_ARGS=		--with-qt \
 			--with-qt-immodule \
 			--with-qt4 \
 			--with-qt4-immodule \

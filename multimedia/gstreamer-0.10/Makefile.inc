@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2014/09/13 16:36:53 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2016/03/11 20:28:28 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core          base library
@@ -56,8 +56,7 @@ BUILD_DEPENDS +=	devel/bison \
 CONFIGURE_STYLE ?=	autoconf
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-package-name="OpenBSD ${DISTNAME} package" \
+CONFIGURE_ARGS +=	--with-package-name="OpenBSD ${DISTNAME} package" \
 			--with-package-origin="http://www.openbsd.org/" \
 			--with-default-audiosink=sndiosink \
 			--with-default-audiosrc=sndiosrc \

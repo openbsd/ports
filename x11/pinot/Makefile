@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/10/30 12:59:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:33 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -71,8 +71,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CXXFLAGS="-std=c++11" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MKDIR_P="mkdir -p --"
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--with-http=curl \
+CONFIGURE_ARGS= --with-http=curl \
 		--with-ssl=/usr \
 		--enable-gtkmm3
 

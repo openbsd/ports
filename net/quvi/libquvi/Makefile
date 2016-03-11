@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=	library to parse flash media stream URLs
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	net/curl \
 
 MODLUA_SA=	Yes
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-manual
+CONFIGURE_ARGS=	--with-manual
 
 .include <bsd.port.mk>

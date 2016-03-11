@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/11 07:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:28 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,8 +40,7 @@ TEST_DEPENDS=		multimedia/gstreamer1/plugins-bad
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-gupnp \
+CONFIGURE_ARGS+=	--enable-gupnp \
 			--enable-introspection
 
 post-install:

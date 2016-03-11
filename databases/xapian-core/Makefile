@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/09/12 14:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	search engine library
 
@@ -25,8 +25,7 @@ LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		LIBxapian_VERSION=${LIBxapian_VERSION}
+CONFIGURE_ARGS=	LIBxapian_VERSION=${LIBxapian_VERSION}
 
 AUTOCONF_VERSION=	2.68
 

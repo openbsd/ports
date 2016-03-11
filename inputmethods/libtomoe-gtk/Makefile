@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/09 16:47:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	japanese handwriting input widget
 
@@ -35,8 +35,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-gucharmap \
+CONFIGURE_ARGS=	--without-gucharmap \
 		--without-python
 
 .include <bsd.port.mk>

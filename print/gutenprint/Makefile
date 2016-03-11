@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/01/16 08:52:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/11 20:28:30 naddy Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
@@ -41,8 +41,7 @@ RUN_DEPENDS +=		print/cups-filters
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-                        --enable-static \
+CONFIGURE_ARGS=		--enable-static \
                         --enable-cups-ppds-at-top-level \
                         --disable-translated-cups-ppds \
                         --disable-libgutenprintui2 \

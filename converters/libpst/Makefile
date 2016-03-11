@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/12/30 14:43:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/11 20:28:23 naddy Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -51,8 +51,7 @@ LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-pst-debug \
+CONFIGURE_ARGS+=	--enable-pst-debug \
 			--disable-static-tools \
 			--enable-libpst-shared
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \

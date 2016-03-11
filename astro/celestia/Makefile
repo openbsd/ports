@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:21 naddy Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -40,8 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lGL" \
 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gtk \
+CONFIGURE_ARGS=	--with-gtk \
 		--with-lua \
 		--enable-cairo \
 		--enable-theora

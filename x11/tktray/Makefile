@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:33:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 20:28:33 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -29,8 +29,7 @@ SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--libdir=${MODTCL_TCLDIR} \
 		--datadir=${PREFIX}/share/examples \

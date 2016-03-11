@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -38,8 +38,7 @@ LIB_DEPENDS=		devel/sdl \
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.68
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-x \
+CONFIGURE_ARGS+=	--with-x \
 			--without-v4l
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

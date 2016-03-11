@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 20:28:32 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -23,8 +23,7 @@ SEPARATE_BUILD =Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--libdir=${MODTCL_TCLDIR} \
 		SHLIB_VERSION=${LIBbyzi01_VERSION}

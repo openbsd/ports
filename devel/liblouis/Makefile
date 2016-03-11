@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/05 13:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
@@ -26,8 +26,7 @@ MODPY_ADJ_FILES=tools/lou_harnessGenerator
 BUILD_DEPENDS=	devel/help2man
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-packager="OpenBSD Ports"
+CONFIGURE_ARGS=	--with-packager="OpenBSD Ports"
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}/louis

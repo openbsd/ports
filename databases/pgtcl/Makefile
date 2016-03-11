@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:23 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,7 @@ BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 WANTLIB +=	pq>=5 ${MODTCL_WANTLIB}
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
 		--libdir=${MODTCL_TCLDIR} \
 		--with-postgres-include=${LOCALBASE}/include/postgresql \
 		--with-postgres-lib=${LOCALBASE}/lib \

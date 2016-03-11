@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/03/02 07:17:34 robert Exp $
+# $OpenBSD: Makefile,v 1.95 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -57,8 +57,7 @@ CONFIGURE_ENV+=	CFLAGS="-march=i586"
 
 WRKDIST=	${WRKDIR}/mono-${V}
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gc=included \
+CONFIGURE_ARGS=	--with-gc=included \
 		--with-sgen=no \
 		--enable-quiet-build=no \
 		--disable-shared-handles

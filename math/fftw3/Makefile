@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/08/14 19:51:26 steven Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/11 20:28:27 naddy Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -34,8 +34,7 @@ FLAVOR?=	double
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-portable-binary \
+CONFIGURE_ARGS=	--enable-portable-binary \
 		--enable-threads
 
 .if ${FLAVOR} == "float"

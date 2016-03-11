@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/15 14:12:37 shadchin Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:30 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -25,8 +25,7 @@ LIB_DEPENDS =		security/libsodium
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-libsodium=${LOCALBASE}
+CONFIGURE_ARGS =	--with-libsodium=${LOCALBASE}
 
 # XXX libsodium: https://github.com/jedisct1/libsodium/pull/104
 CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}"

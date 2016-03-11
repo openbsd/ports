@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/11/19 10:07:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/11 20:28:31 naddy Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
@@ -42,8 +42,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
+CONFIGURE_ARGS=	--enable-introspection \
 		--disable-systemd
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/accountsservice

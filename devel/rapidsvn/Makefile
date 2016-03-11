@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/12/18 19:09:51 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 20:28:24 naddy Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -41,8 +41,7 @@ LIB_DEPENDS=	x11/wxWidgets \
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
+CONFIGURE_ARGS=	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config \
 		--with-doxygen=no \
 		--with-manpage=no

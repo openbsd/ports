@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT =		free video codec
 DISTNAME =		daala-0.0.20160106
@@ -34,8 +34,7 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-check-asm \
+CONFIGURE_ARGS +=	--enable-check-asm \
 			--disable-docs \
 			--disable-player \
 			--disable-tools

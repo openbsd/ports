@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/09 15:16:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c m
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--without-x \
+CONFIGURE_ARGS +=	--without-x \
 			--disable-opengl
 MODGNU_CONFIG_GUESS_DIRS =${WRKSRC}/acaux
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/22 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.9
@@ -39,8 +39,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-gsettings \
+CONFIGURE_ARGS +=	--enable-gsettings \
 			--enable-gtk3 \
 			--disable-gconf \
 			--disable-keystore \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/13 09:09:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 20:28:23 naddy Exp $
 
 COMMENT=	library implementing the Unicode Bidirectional Algorithm
 
@@ -18,8 +18,7 @@ WANTLIB=	c
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--without-glib
 
 post-install:

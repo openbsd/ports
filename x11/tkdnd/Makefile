@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:33 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -28,8 +28,7 @@ WANTLIB += freetype m z pthread-stubs xcb
 USE_GMAKE =		yes
 WRKSRC =		${WRKDIR}/${DISTNAME}/unix
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	 ${CONFIGURE_SHARED} \
-			--libdir=${MODTCL_TCLDIR} \
+CONFIGURE_ARGS =	 --libdir=${MODTCL_TCLDIR} \
 			--with-tclinclude=${MODTCL_INCDIR} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \

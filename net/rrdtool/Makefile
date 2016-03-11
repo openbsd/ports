@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2015/12/14 18:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2016/03/11 20:28:29 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,8 +43,7 @@ CPPFLAGS+=	-I${X11BASE}/include/ \
 		-I${X11BASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-libdbi \
+CONFIGURE_ARGS+= --disable-libdbi \
 		--disable-lua \
 		--disable-tcl \
 		--enable-perl-site-install

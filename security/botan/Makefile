@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/18 20:29:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:30 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -35,8 +35,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= ${MODPY_BIN} ./configure.py
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--cpu=${MACHINE_ARCH} \
+CONFIGURE_ARGS= --cpu=${MACHINE_ARCH} \
 		--prefix=${PREFIX} \
 		--with-bzip2 \
 		--with-gnump \

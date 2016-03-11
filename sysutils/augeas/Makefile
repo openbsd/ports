@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/03 06:10:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=		configuration editing tool and API
 
@@ -27,8 +27,7 @@ LIB_DEPENDS=		textproc/libxml
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-compile-warnings=yes
+CONFIGURE_ARGS+=	--enable-compile-warnings=yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

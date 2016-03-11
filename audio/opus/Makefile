@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/15 21:52:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:22 naddy Exp $
 
 # invalid use of `restrict'
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -24,8 +24,7 @@ WANTLIB=	m
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-maintainer-mode
+CONFIGURE_ARGS=	--disable-maintainer-mode
 CONFIGURE_ARGS+=--disable-doc	# requires doxygen
 
 # x86: requires cpuid instruction

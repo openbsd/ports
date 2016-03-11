@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/29 03:27:27 lteo Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT =	data acquisition library for snort
 
@@ -23,8 +23,7 @@ MASTER_SITES =		https://www.snort.org/downloads/snort/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-ipv6
+CONFIGURE_ARGS +=	--enable-ipv6
 
 BUILD_DEPENDS =		devel/bison
 

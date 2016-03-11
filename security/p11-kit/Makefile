@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/03/06 12:16:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/11 20:28:31 naddy Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -31,8 +31,7 @@ LIB_DEPENDS=	devel/libffi \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-module-path=${PREFIX}/lib/pkcs11 \
+CONFIGURE_ARGS=	--with-module-path=${PREFIX}/lib/pkcs11 \
 		--with-trust-paths=/etc/ssl/cert.pem
 
 # no translation yet

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:27 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,8 +29,7 @@ WRKDIST=	${WRKDIR}/fcitx
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	--disable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

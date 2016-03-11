@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/08 00:43:35 jturner Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:26 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,8 +27,7 @@ LIB_DEPENDS=		graphics/png
 BUILD_DEPENDS=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-tools \
+CONFIGURE_ARGS+=	--with-tools \
 			--with-tests \
 			--with-sdl-prefix=/no
 CONFIGURE_ENV+= 	LIBS=-pthread \

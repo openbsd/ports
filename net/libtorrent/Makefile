@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/12/26 09:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -26,8 +26,7 @@ BUILD_DEPENDS=		devel/cppunit
 
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
+CONFIGURE_ARGS=		--enable-static \
 			--with-kqueue \
 			--without-epoll \
 			--disable-instrumentation \

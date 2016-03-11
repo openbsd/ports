@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/02 20:22:19 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.24.2
@@ -22,8 +22,7 @@ BUILD_DEPENDS =		devel/doxygen
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--enable-ssl-hmac
+CONFIGURE_ARGS =	--enable-ssl-hmac
 
 # OpenBSD does not support AI_V4MAPPED/AI_ALL
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -DAI_V4MAPPED=0 -DAI_ALL"

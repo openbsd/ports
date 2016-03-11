@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/01/17 20:28:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/11 20:28:21 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
@@ -22,8 +22,7 @@ WANTLIB=	c pthread
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-nls
+CONFIGURE_ARGS=	--disable-nls
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>

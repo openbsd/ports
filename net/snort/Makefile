@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2015/05/29 03:28:18 lteo Exp $
+# $OpenBSD: Makefile,v 1.92 2016/03/11 20:28:29 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,8 +22,7 @@ MASTER_SITES =		https://www.snort.org/downloads/snort/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-static-daq \
+CONFIGURE_ARGS +=	--disable-static-daq \
 			--enable-non-ether-decoders
 
 LIB_DEPENDS =		archivers/xz \

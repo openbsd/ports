@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/11 20:28:25 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -30,8 +30,7 @@ LIB_DEPENDS =		x11/gtk+2 \
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-python-version=${MODPY_VERSION} \
+CONFIGURE_ARGS +=	--with-python-version=${MODPY_VERSION} \
 			--with-png-libs="${LOCALBASE}/lib" \
 			--with-png-inc="${LOCALBASE}/include/libpng" \
 			--with-jpeg-libs="${LOCALBASE}/lib" \

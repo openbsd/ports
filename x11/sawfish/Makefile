@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=	extensible window manager
 
@@ -43,8 +43,7 @@ MODULES=	devel/gettext
 USE_GMAKE=      Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-linguas \
+CONFIGURE_ARGS+=--disable-linguas \
 		--without-kde4session \
 		--with-gnome2session \
 		--with-xdmsession

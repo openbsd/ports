@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:26 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -29,8 +29,7 @@ FAKE_FLAGS =	PKG_DIR=tkpng \
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
 		--with-tkinclude=${MODTK_INCDIR} \
 		--libdir=${MODTCL_TCLDIR} \

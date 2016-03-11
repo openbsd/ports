@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/09/23 09:41:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/11 20:28:25 naddy Exp $
 
 SHARED_ONLY=	   	Yes
 
@@ -61,8 +61,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CXXFLAGS="-std=c++11" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-default-video-sink=autovideosink \
+CONFIGURE_ARGS=		--with-default-video-sink=autovideosink \
 			--with-default-audio-sink=autoaudiosink \
 			--enable-ccache=no
 

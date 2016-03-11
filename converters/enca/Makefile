@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/08 21:18:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=		detect character set and encoding of text files
 
@@ -23,8 +23,7 @@ LIB_DEPENDS=		converters/recode
 SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-rpath \
+CONFIGURE_ARGS+=	--disable-rpath \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--with-librecode=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

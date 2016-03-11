@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/04 10:32:06 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:31 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -32,8 +32,7 @@ FAKE_FLAGS =		INSTALL_PROGRAM='$${INSTALL_DATA}' \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR}
+CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR}
 
 AUTOCONF_VERSION =	2.69
 TEST_TARGET =		test

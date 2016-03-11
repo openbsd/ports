@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
@@ -16,8 +16,7 @@ MASTER_SITES =	http://nevill.ch/libxdg-basedir/downloads/
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-doxygen-doc
+CONFIGURE_ARGS +=	--disable-doxygen-doc
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/src/basedir.c

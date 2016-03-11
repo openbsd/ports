@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/23 23:04:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT=	library for HTTP/2
 
@@ -26,8 +26,7 @@ CONFIGURE_STYLE=	gnu
 # Both of these pull in additional libraries; deliberately trying to keep
 # dependencies light for this port, to avoid pulling in the world, and
 # to avoid restricting arch.
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-examples \
+CONFIGURE_ARGS+=	--disable-examples \
 			--disable-hpack-tools \
 			--disable-python-bindings \
 			--without-libxml2

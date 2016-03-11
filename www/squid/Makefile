@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2016/02/25 00:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.179 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -62,8 +62,7 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--datadir="${PREFIX}/share/squid" \
+CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--libexecdir="${PREFIX}/libexec/squid" \
 		--disable-loadable-modules \
 		--enable-arp-acl \

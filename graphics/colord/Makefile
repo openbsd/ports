@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2015/11/28 08:31:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2016/03/11 20:28:26 naddy Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -53,8 +53,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
+CONFIGURE_ARGS=	--enable-introspection \
 		--enable-vala \
 		--disable-systemd-login \
 		--disable-udev \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2016/02/25 00:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2016/03/11 20:28:23 naddy Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -50,8 +50,7 @@ USE_GROFF =		Yes
 FLAVOR ?=
 FLAVORS =		aci
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-ipv6 \
+CONFIGURE_ARGS +=	--enable-ipv6 \
 			--with-tls=openssl
 
 # slapd options

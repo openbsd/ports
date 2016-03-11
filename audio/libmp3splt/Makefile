@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	library to split mp3/ogg files without decoding
 
@@ -27,8 +27,7 @@ LIB_DEPENDS=	audio/libmad \
 LIB_DEPENDS +=	audio/libogg
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--with-ogg="${LOCALBASE}" \
+CONFIGURE_ARGS= --with-ogg="${LOCALBASE}" \
 		--with-vorbis="${LOCALBASE}" 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

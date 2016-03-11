@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/06/25 13:00:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/11 20:28:33 naddy Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -29,8 +29,7 @@ LIB_DEPENDS=	devel/libast \
 		print/freetype
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-trans \
+CONFIGURE_ARGS=	--enable-trans \
 		--enable-utmp \
 		--enable-xim \
 		--without-pty-group \

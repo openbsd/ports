@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/03/10 00:03:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:28 naddy Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -41,8 +41,7 @@ LIB_DEPENDS=	devel/json-c \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-filter-aaaa \
+CONFIGURE_ARGS=	--enable-filter-aaaa \
 		--enable-threads \
 		--with-libtool \
 		--without-readline \

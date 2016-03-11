@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2016/03/11 20:28:32 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,8 +55,7 @@ MODGCONF2_SCHEMAS_DIR=	liferea
 USE_LIBTOOL=		gnu
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--docdir=${PREFIX}/share/doc/liferea \
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/liferea \
 			--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

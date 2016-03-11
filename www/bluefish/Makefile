@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/02/01 09:30:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.76 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
@@ -35,8 +35,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
+CONFIGURE_ARGS=		--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
 			--disable-update-databases
 
 USE_GMAKE=		Yes

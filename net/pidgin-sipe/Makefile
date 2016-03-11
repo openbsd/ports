@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/10/10 20:22:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:29 naddy Exp $
 
 BROKEN-hppa =	-Werror + sip-csta.c:707: warning: cast increases required alignment of target type
 
@@ -35,8 +35,7 @@ MODULES =		devel/gettext \
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-purple \
+CONFIGURE_ARGS +=	--enable-purple \
 			--enable-openssl \
 			--enable-nss \
 			--disable-telepathy \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/06/18 02:36:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:24 naddy Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
@@ -22,8 +22,7 @@ MASTER_SITES=	ftp://ftp.gmplib.org/pub/${DISTNAME}/ \
 		${MASTER_SITE_GNU:=gmp/}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-cxx
+CONFIGURE_ARGS=	--enable-cxx
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
 

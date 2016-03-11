@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/10/12 07:13:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/11 20:28:29 naddy Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
@@ -28,8 +28,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/neon/
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-ca-bundle=/etc/ssl/cert.pem \
+CONFIGURE_ARGS+=	--with-ca-bundle=/etc/ssl/cert.pem \
 			--with-ssl=openssl \
 			--with-expat \
 			--without-pakchois \

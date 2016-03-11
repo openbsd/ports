@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 20:28:26 naddy Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -43,8 +43,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
+CONFIGURE_ARGS=	--enable-introspection \
 		--enable-vala
 
 pre-configure:

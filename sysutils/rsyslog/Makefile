@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/06 12:18:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 20:28:32 naddy Exp $
 
 BROKEN-arm =		lack of atomic ops
 BROKEN-hppa =		lack of atomic ops
@@ -50,8 +50,7 @@ MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.65
 LIBTOOL_FLAGS = 	--tag=disable-static
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-pgsql \
+CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mysql \
 			--enable-mail \
 			--enable-gnutls \

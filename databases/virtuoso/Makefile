@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/29 10:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 20:28:23 naddy Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -35,8 +35,7 @@ AUTOMAKE_VERSION =	1.9
 
 CONFIGURE_ENV =		YACC="${LOCALBASE}/bin/bison -y"
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-all-vads \
+CONFIGURE_ARGS =	--disable-all-vads \
 			--disable-hslookup \
 			--disable-openldap \
 			--disable-php \

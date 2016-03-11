@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=	MPEG video player library with sound support
 
@@ -23,8 +23,7 @@ LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-opengl-player \
+CONFIGURE_ARGS+= --disable-opengl-player \
 		 --disable-gtk-player
 CONFIGURE_ENV+=  LDFLAGS="-L${X11BASE}/lib"
 

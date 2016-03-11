@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/03 12:33:41 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:28 naddy Exp $
 
 PORTROACH =		limit:^1\.
 PORTROACH_COMMENT =	knot-2.x uses __thread and lmdb
@@ -34,8 +34,7 @@ LIB_DEPENDS =		devel/libidn \
 USE_GMAKE =		Yes
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-storage=${LOCALSTATEDIR}/db/knot \
+CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
 			--disable-dnstap \
 			--disable-lmdb

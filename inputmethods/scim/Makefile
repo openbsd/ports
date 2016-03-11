@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 20:28:26 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,8 +38,7 @@ FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/scim
 USE_GMAKE =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
-		--with-gtk-im-module-dir="${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules"
+CONFIGURE_ARGS = --with-gtk-im-module-dir="${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules"
 CONFIGURE_ENV =	LIBS="-pthread"
 
 .include <bsd.port.mk>

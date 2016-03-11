@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/10 08:04:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:25 naddy Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -23,8 +23,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build-scripts
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --disable-alsa \
+CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-arts \
 		 --disable-dbus \
 		 --disable-esd \

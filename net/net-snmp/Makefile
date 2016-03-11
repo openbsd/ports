@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/01/07 12:35:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2016/03/11 20:28:29 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,8 +45,7 @@ OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
 CONFIGURE_STYLE=  autoconf
 AUTOCONF_VERSION= 2.68
-CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
-	--enable-ipv6 \
+CONFIGURE_ARGS=   --enable-ipv6 \
 	--enable-mfd-rewrites \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \

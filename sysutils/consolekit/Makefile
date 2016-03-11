@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/01/21 06:43:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
@@ -31,8 +31,7 @@ LIB_DEPENDS=		sysutils/polkit
 RUN_DEPENDS +=		x11/dbus,-suid
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-pam-module \
+CONFIGURE_ARGS=		--disable-pam-module \
 			--with-pam-module-dir=${LOCALBASE}/lib/security
 
 FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \

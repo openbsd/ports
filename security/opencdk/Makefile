@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/16 18:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 20:28:31 naddy Exp $
 
 COMMENT=		Open Crypto Development Kit
 
@@ -31,8 +31,7 @@ LIB_DEPENDS +=	security/libgpg-error
 
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

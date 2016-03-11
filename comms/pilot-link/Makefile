@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2015/09/21 08:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2016/03/11 20:28:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,8 +36,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_png_main=yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-libiconv=${LOCALBASE} \
+CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
 			--with-libpng=${LOCALBASE} \
 			--with-perl=/usr/bin/perl \
 			--with-readline \

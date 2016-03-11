@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/12/12 08:17:34 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/11 20:28:22 naddy Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
@@ -45,8 +45,7 @@ LIB_DEPENDS=			\
 	graphics/png
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
-	--datarootdir=${LOCALBASE}      \
+CONFIGURE_ARGS=	--datarootdir=${LOCALBASE}      \
 	--enable-largefile		\
 	--disable-silent-libtool	\
 	--disable-openmp		\

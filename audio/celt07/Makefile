@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:21 naddy Exp $
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
@@ -28,8 +28,7 @@ LIB_DEPENDS =		audio/libogg
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--program-suffix=07 \
+CONFIGURE_ARGS =	--program-suffix=07 \
 			--with-ogg=${LOCALBASE}
 
 CONFIGURE_ENV =		CPPFLAGS="-DUSE_SNDIO"

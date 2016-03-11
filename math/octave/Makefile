@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2016/03/11 20:28:27 naddy Exp $
 
 # sparc: fPIC version of libgcc.a needed but not available
 NOT_FOR_ARCHS =	sparc
@@ -72,8 +72,7 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-readline: needs GNU readline
-CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-			--disable-java
+CONFIGURE_ARGS	=	--disable-java
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \

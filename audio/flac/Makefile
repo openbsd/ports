@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/01/10 15:50:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2016/03/11 20:28:22 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -26,8 +26,7 @@ BUILD_DEPENDS+=	devel/nasm
 .endif
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-altivec \
+CONFIGURE_ARGS=	--disable-altivec \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

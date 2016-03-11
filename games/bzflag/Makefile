@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:25 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,8 +34,7 @@ AUTOCONF_VERSION= 2.68
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_lib_bind_gethostent=no
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	--disable-static
 
 # Do not configure bundled software we don't use.  This also avoids
 # build failures from those configures picking up dependencies that

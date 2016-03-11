@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2016/03/11 20:28:32 naddy Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -42,8 +42,7 @@ LIB_DEPENDS-main +=	security/libgpg-error
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-libxml-include-prefix="${LOCALBASE}/include/" \
+CONFIGURE_ARGS+=	--with-libxml-include-prefix="${LOCALBASE}/include/" \
 			--with-html-subdir=libxslt/html
 
 .include <bsd.port.arch.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/25 00:30:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:27 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=	chinese/libchewing \
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	--disable-static
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/08 08:56:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:33 naddy Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -54,8 +54,7 @@ LIB_DEPENDS-common =	#empty
 RUN_DEPENDS-common =	#empty
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-html-docs
+CONFIGURE_ARGS =	--disable-html-docs
 
 TEST_FLAGS =		LDFLAGS="-L${LOCALBASE}/lib"
 TEST_DEPENDS =		devel/py-gobject3${MODPY_FLAVOR}
