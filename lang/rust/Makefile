@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/05 15:05:33 semarie Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 05:30:45 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.7.0
 RUST_HASH =		6a154fe0
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 SUBST_VARS +=		RUST_HASH
 
@@ -32,7 +33,7 @@ MAINTAINER =		Sebastien Marie <semarie@openbsd.org>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${WANTLIB} c m pthread
+WANTLIB-main =		${WANTLIB} c m pthread z
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/
@@ -56,6 +57,7 @@ SUBST_VARS +=		TRIPLE_ARCH
 
 MODULES +=		gcc4 \
 			lang/python
+BUILD_DEPENDS +=	devel/llvm
 MODPY_RUNDEP =		No
 
 # rustllvm need c++11
@@ -83,6 +85,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--release-channel=stable \
+			--llvm-root="${LOCALBASE}" \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
 
@@ -90,10 +93,6 @@ CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
 # need for libbacktrace
 USE_LIBTOOL =		gnu
-
-.ifdef LOCAL_LLVM_FOR_RUST
-CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
-.endif
 
 ALL_TARGET +=		rustc-stage2 docs
 TEST_TARGET =		check
