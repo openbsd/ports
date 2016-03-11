@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/13 12:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:15 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -75,7 +75,6 @@ USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 MODGCONF2_SCHEMAS_DIR =	ogmrip
 

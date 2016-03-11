@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/31 17:32:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	logging for c library
 DISTNAME =	log4c-1.2.4
@@ -17,7 +17,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_DOT="" \
 		ac_cv_path_DOXYGEN="" \
 		ac_cv_path_LATEX=""
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/log4c/
 

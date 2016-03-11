@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/01 08:05:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT =		library for reading RAW files
 BROKEN-arm =		undefined reference to __sync_fetch_and_add_4
@@ -27,6 +27,5 @@ LIB_DEPENDS =		graphics/jasper \
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

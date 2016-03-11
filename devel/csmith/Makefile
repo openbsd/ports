@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/05 22:49:59 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	fuzzer for C compilers
 
@@ -20,7 +20,6 @@ HOMEPAGE=	http://embed.cs.utah.edu/csmith/
 MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS = ${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

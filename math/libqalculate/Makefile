@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/08 18:55:39 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 19:59:15 naddy Exp $
 
 BROKEN-macppc =	libqalculate/Calculator.cc:7030: internal compiler error
 COMMENT =	applied math library
@@ -32,7 +32,6 @@ LIB_DEPENDS =	devel/cln \
 USE_LIBTOOL =		gnu
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf automake
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 AUTOCONF_VERSION =	2.67

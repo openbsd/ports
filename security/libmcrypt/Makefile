@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/03/16 18:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT =		interface to access block/stream encryption algorithms
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
 
 CONFIGURE_STYLE = 	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ARGS +=	--enable-static
 
 .include <bsd.port.mk>

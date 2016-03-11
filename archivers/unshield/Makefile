@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=		extract files from InstallShield CAB archives
 
@@ -20,6 +20,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synce/}
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

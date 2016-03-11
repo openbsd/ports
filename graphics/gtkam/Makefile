@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	digital camera frontend
 
@@ -37,7 +37,6 @@ MAKE_FLAGS =	INTLLIBS='$$(LTLIBINTL)'
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 # minimal: don't include any GNOME dependency
 CONFIGURE_ARGS +=--with-gnome=no \

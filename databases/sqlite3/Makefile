@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/08/25 12:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -33,7 +33,6 @@ CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA \
 		-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_FTS3
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 PSEUDO_FLAVORS=	no_tcl
 NOT_FOR_ARCHS-tcl = ${NO_SHARED_ARCHS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/24 10:31:14 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	create MusicBrainz DiscIDs from audio CDs
 
@@ -19,7 +19,6 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/
 SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	ac_cv_header_musicbrainz5_mb5_c_h=no
 
 .include <bsd.port.mk>

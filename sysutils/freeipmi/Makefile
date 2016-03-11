@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/02 14:33:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:17 naddy Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -34,7 +34,6 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \

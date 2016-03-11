@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/02/29 23:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=	devel/popt
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \

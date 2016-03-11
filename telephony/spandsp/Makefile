@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/05 17:19:57 chris Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	DSP library for telephony
 
@@ -23,7 +23,6 @@ WRKDIST=	${WRKDIR}/spandsp-0.0.6
 LIB_DEPENDS+=	graphics/tiff
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

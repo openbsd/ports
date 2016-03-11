@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/25 11:41:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -20,7 +20,6 @@ LIB_DEPENDS =		devel/pcre
 WANTLIB =		pcre m stdc++
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:17 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
 	rm ${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/*.{a,la}

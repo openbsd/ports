@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/03/21 21:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT =	easy to use, graphical editor
 
@@ -34,7 +34,6 @@ MODULES +=	devel/gettext
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV += XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 CONFIGURE_ARGS += --enable-static --disable-mail-author
 
 # GPLv2+

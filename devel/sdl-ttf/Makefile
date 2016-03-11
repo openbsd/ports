@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/05/22 11:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	SDL TrueType fonts library
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

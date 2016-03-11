@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/09 18:29:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	image processing and analysis library
 
@@ -33,6 +33,5 @@ CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lz"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

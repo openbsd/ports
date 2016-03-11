@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/30 12:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:16 naddy Exp $
 
 CATEGORIES =		productivity devel
 COMMENT =		C library for Google calendar and contacts
@@ -17,7 +17,6 @@ MASTER_SITES =		https://libgcal.googlecode.com/files/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 MODULES =		devel/gettext
 BUILD_DEPENDS =		devel/check

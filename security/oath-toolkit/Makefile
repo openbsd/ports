@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/11 20:54:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
@@ -34,7 +34,6 @@ MODULES=	converters/libiconv
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/11/17 08:38:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=	print/libpaper
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_EMACS=no \

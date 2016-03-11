@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/16 18:07:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
@@ -20,6 +20,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=id3lib/}
 USE_GMAKE=		Yes
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

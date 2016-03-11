@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/11/10 12:16:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2016/03/11 19:59:16 naddy Exp $
 
 # this is freetype1; freetype2 is in xenocara.
 PORTROACH=	limit:^1\.
@@ -27,7 +27,6 @@ WANTLIB=		m
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
 MULTI_PACKAGES= -main -doc

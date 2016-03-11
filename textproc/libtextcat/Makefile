@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	language guessing library
 
@@ -20,7 +20,6 @@ MASTER_SITES=	http://software.wise-guys.nl/download/
 
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/textcat.h ${PREFIX}/include/

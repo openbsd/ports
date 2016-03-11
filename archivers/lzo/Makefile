@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/01/11 11:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 

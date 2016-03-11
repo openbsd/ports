@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/24 10:25:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT =		lightweight and flexible command-line JSON processor
 
@@ -19,6 +19,5 @@ WANTLIB += c m
 MASTER_SITES =		https://github.com/stedolan/jq/releases/download/jq-$V/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

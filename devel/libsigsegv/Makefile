@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT =		library for handling page faults in user mode
 
@@ -18,7 +18,6 @@ SEPARATE_BUILD = 	Yes
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 # We know these values, so don't run the configure tests for them which may
 # take hours to complete on certain OpenBSD platforms, such as mips64.
 CONFIGURE_ENV +=	sv_cv_fault_linux_i386=no \

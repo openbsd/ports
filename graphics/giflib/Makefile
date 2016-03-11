@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/17 23:16:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 TEST_DEPENDS=	sysutils/coreutils
 

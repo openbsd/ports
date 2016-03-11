@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/10/30 12:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
@@ -38,7 +38,6 @@ RUN_DEPENDS=	audio/vorbis-tools \
 		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

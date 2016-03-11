@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/16 18:07:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT =	free library for decoding ATSC A/52 streams, aka AC-3
 
@@ -26,7 +26,6 @@ WRKDIST =	${WRKDIR}/a52dec-${V}-cvs
 SEPARATE_BUILD = Yes
 CONFIGURE_STYLE = autoconf
 AUTOCONF_VERSION = 2.59
-CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 CONFIGURE_ARGS += --disable-oss
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/autotools
 

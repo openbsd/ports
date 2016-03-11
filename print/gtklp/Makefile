@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/05 14:09:17 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -44,7 +44,6 @@ BUILD_DEPENDS+=	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-extract:
 	find ${WRKSRC} -type f -name '*.orig' -exec rm {} \;

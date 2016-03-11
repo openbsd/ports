@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -24,7 +24,6 @@ SEPARATE_BUILD =	Yes
 WANTLIB =		m stdc++
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 NO_TEST =	Yes
 

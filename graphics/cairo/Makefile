@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/12/18 13:49:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=		vector graphics library
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=		archivers/lzo2 \
 			graphics/png
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
 
 # needed for firefox

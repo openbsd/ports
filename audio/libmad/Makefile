@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	high-quality MPEG audio decoder
 
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-patch:
 	@cp ${FILESDIR}/mad.pc.in ${WRKSRC}

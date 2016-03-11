@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
@@ -22,7 +22,6 @@ FLAVORS=no_tcl
 FLAVOR?=
 
 CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 .if ${FLAVOR:Mno_tcl}
 NO_TEST=	Yes
 CONFIGURE_ARGS+=--disable-tcl

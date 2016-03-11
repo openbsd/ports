@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/12/20 00:16:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 19:59:15 naddy Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 DPB_PROPERTIES = parallel
@@ -150,7 +150,6 @@ CONFIGURE_ARGS += \
 # visible beast
 CONFIGURE_ARGS += --enable-cpp
 
-CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD = flavored
 

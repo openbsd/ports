@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/10 18:40:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT =		manipulate Unicode strings
 
@@ -20,6 +20,5 @@ MASTER_SITES =		${MASTER_SITE_GNU:=libunistring/}
 MODULES =		converters/libiconv
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

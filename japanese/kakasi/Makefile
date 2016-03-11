@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:15 naddy Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	Kanji -> kana converter
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 USE_GROFF =	Yes
 

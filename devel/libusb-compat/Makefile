@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
@@ -26,7 +26,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 LIB_DEPENDS=	devel/libusb1
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 MAKE_FLAGS=	LIB=usb
 

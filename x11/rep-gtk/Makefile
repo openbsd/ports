@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -36,7 +36,6 @@ MODULES=		devel/gettext
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

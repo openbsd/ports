@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/26 19:17:00 rpe Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	GNU awk
 
@@ -24,7 +24,6 @@ SUBST_VARS=	V
 MAKE_ENV +=	RM="rm -f"
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

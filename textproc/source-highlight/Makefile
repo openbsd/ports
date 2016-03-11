@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/07/17 21:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	devel/help2man \
 		textproc/texi2html
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

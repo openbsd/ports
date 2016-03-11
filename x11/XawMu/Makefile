@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=		modern look Athena widgets
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 USE_X11 =		Yes
 
 NO_TEST=		Yes

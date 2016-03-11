@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	generic game engine library
 
@@ -27,6 +27,5 @@ LIB_DEPENDS=	devel/sdl-image \
 MODULES=	converters/libiconv
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

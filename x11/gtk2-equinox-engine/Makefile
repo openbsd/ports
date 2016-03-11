@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:17 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 _DNAME=		equinox-gtk-engine-${V:C/^([0-9]+\.[0-9]+).*/\1/}
 WRKDIST=	${WRKDIR}/${_DNAME:S/-gtk-engine//}

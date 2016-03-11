@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/11 21:22:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
@@ -16,6 +16,5 @@ WANTLIB=		c z
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

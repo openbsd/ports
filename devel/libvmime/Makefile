@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/07/19 20:57:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -52,7 +52,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EXTRA_CFLAGS="${CFLAGS}"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # security/libgsasl; not real need for this so far
 CONFIGURE_ARGS += --disable-sasl

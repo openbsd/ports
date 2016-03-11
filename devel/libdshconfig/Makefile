@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/15 12:25:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	library for parsing dsh-style configuration files
 
@@ -15,6 +15,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

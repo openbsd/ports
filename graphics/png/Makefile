@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2015/12/04 21:27:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.111 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -22,7 +22,6 @@ WANTLIB=	c m z
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 post-install:
 	cd ${PREFIX}/lib; \

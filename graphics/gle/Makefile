@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=		OpenGL Extrusion library
 
@@ -24,7 +24,6 @@ SEPARATE_BUILD= 	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 post-extract:
 	sed -i 's/3GLE/3/;' ${WRKSRC}/man/*.man

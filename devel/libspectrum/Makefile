@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/03 07:18:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=		ZX Spectrum emulator file format library
 DISTNAME =		libspectrum-1.1.1
@@ -27,7 +27,6 @@ LIB_DEPENDS=		devel/glib2 \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libspectrum

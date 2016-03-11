@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:12 naddy Exp $
 # Original from: auclair.vincent
 
 COMMENT =		c++ commandline flags processing library
@@ -22,7 +22,6 @@ MASTER_SITES =		https://google-gflags.googlecode.com/files/
 
 WANTLIB =		pthread m stdc++
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 MAKE_FLAGS =		docdir='$$(prefix)/share/doc/gflags'
 
 .include <bsd.port.mk>

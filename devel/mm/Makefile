@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	shared memory lib for apps with pre-forked process model
 
@@ -15,7 +15,6 @@ HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 TEST_TARGET=	test

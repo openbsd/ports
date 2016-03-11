@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	getopt(3)-like library with a number of enhancements
 
@@ -17,7 +17,6 @@ MODULES=	devel/gettext
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

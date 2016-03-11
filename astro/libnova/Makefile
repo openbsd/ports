@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/18 10:17:18 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT =	astronomic computations as a library
 
@@ -19,7 +19,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libnova/}
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>

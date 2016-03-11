@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -24,6 +24,5 @@ BUILD_DEPENDS =		devel/help2man
 USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

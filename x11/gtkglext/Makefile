@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/08/17 19:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/gtkglext
 

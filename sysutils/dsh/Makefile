@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/15 12:23:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	dancers shell or distributed shell
 
@@ -21,7 +21,6 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lintl -liconv"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples
 

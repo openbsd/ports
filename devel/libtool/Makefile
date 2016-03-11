@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2015/03/19 20:25:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
@@ -31,7 +31,6 @@ MAKE_FLAGS+= ${_lt_libs}
 USE_LIBTOOL=	No
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	GREP=/usr/bin/grep \
 		ac_cv_f77_compiler_gnu=yes \
 		lt_cv_prog_compiler_c_o_F77=yes \

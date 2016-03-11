@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	network audio player
 DISTNAME=	rplay-3.3.2
@@ -18,7 +18,6 @@ LIB_DEPENDS=	audio/gsm
  
 FAKE=		lib
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"

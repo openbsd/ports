@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.62
@@ -16,7 +16,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		YACC="bison -y" \
 			LDFLAGS="-L/usr/local/lib" \
 			LIBS="-liconv -lintl"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 BUILD_DEPENDS=		devel/bison
 MODULES=		devel/gettext
 USE_GMAKE=		Yes

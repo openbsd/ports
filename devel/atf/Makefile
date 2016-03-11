@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT =		Automated Testing Framework
 DISTNAME =		atf-0.18
@@ -20,7 +20,6 @@ WANTLIB += c m stdc++
 MASTER_SITES =		https://github.com/jmmv/atf/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 # Don't pickup bash
 CONFIGURE_ENV =		ATF_SHELL=/bin/sh
 

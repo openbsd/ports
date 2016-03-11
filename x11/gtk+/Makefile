@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2015/08/17 19:52:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2016/03/11 19:59:17 naddy Exp $
 
 PORTROACH=	limit:^1\.2\.
 
@@ -26,7 +26,6 @@ WANTLIB += X11 Xext Xi glib gmodule m xcb Xau Xdmcp pthread-stubs
 
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"
 CONFIGURE_ARGS+= --disable-glibtest
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/18 14:30:06 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT = 	X.509 library
 
@@ -24,6 +24,5 @@ LIB_DEPENDS = 		security/libgpg-error
 WANTLIB =		gpg-error>=1
 
 CONFIGURE_STYLE = 	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

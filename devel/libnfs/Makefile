@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/25 06:40:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	client library for accessing NFS
 
@@ -18,6 +18,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

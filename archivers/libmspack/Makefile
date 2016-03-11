@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/02/04 09:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
@@ -15,6 +15,5 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

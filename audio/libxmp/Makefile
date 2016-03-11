@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/08 21:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:12 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -21,7 +21,6 @@ WANTLIB += m
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 MAKE_FLAGS +=	V=1 \
 		LIBxmp_VERSION=${LIBxmp_VERSION}

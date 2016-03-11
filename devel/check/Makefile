@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/26 15:12:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT =	unit test framework for C programs
 
@@ -17,6 +17,5 @@ WANTLIB += m pthread
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=check/}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = 	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

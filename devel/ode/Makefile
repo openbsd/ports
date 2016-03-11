@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/23 10:58:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	3.0	# 6.0
@@ -25,7 +25,6 @@ BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = 	${CONFIGURE_SHARED}
 CONFIGURE_ENV+= 	CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib" \
 			LIBS="-lm"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/20 07:07:56 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:14 naddy Exp $
 
 BROKEN-hppa=	video/mmxflags_asm.S:54: Error: unknown pseudo-op: `.note.gnu'
 COMMENT=	MPEG video player library with sound support
@@ -20,7 +20,6 @@ LIB_DEPENDS=	devel/sdl2
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV+=  LDFLAGS="-L${X11BASE}/lib"
 
 post-install:

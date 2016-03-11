@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/21 21:36:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:14 naddy Exp $
 
 V =		1.0.1
 COMMENT =	primitives drawing/other support functions for SDL2
@@ -22,7 +22,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sdl2gfx/}
 LIB_DEPENDS =	devel/sdl2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS +=	--disable-mmx

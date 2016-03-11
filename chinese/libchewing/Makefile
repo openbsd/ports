@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/24 23:37:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	intelligent phonetic input method library
 
@@ -20,6 +20,5 @@ MASTER_SITES =	https://github.com/chewing/libchewing/releases/download/v$V/
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

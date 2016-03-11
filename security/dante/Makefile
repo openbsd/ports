@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/09/03 15:47:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM=Yes
 WANTLIB=	c m
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ARGS+= --without-gssapi \
 		--without-krb5 \

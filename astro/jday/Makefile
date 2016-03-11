@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	astronomical julian date calculator
 
@@ -17,6 +17,5 @@ WANTLIB=	c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

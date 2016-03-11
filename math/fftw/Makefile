@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/18 07:13:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:15 naddy Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -27,7 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-i386-hacks
 PATCH_LIST=		gcc-* patch-*
 .endif
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fftw

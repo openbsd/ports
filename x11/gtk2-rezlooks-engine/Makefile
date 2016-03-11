@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/17 19:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:17 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,7 +40,6 @@ WRKDIST= 	${WRKDIR}/rezlooks-$V
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 post-install:
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}

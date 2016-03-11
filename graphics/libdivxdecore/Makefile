@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/16 18:07:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	opendivx decoding API
 
@@ -15,6 +15,5 @@ PERMIT_PACKAGE_FTP=	Yes
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

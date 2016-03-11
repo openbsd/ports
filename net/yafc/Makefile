@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/21 14:09:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	powerful console ftp client with many features
 
@@ -17,7 +17,6 @@ WANTLIB += c ncurses readline
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 DOCS=	NEWS README TODO
 

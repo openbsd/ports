@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	devel/pango \
 		devel/sdl
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 TEST_IS_INTERACTIVE=	x11
 

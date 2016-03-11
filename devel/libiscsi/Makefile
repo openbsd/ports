@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/26 13:41:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	client-side library to implement the iSCSI protocol
 
@@ -19,6 +19,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

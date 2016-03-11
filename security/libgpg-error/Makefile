@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/12/13 07:54:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	error codes for GnuPG related software
 
@@ -24,6 +24,5 @@ MODULES=	devel/gettext
 SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

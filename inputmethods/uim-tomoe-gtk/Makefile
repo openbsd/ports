@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/09 15:10:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	japanese handwriting
 
@@ -30,7 +30,5 @@ LIB_DEPENDS=	inputmethods/libtomoe-gtk>=0.6.0 \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

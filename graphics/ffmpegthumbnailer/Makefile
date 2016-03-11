@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/26 13:10:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
@@ -25,6 +25,5 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

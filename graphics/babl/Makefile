@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/20 14:26:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:14 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-pthread" \
 			ac_cv_path_W3M=no \
 			ac_cv_path_RSVG=no
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 # be safe until proven stable
 CONFIGURE_ARGS +=	--enable-mmx \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/04 07:29:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:17 naddy Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -20,7 +20,6 @@ WANTLIB=		ICE SM X11 Xext Xpm c jpeg
 LIB_DEPENDS=		graphics/jpeg
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-afterdir=${PREFIX}/bin --enable-jpeg
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

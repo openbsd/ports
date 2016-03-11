@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=		GNU dbm
 
@@ -23,7 +23,6 @@ WANTLIB +=		c
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 # needed for gsort
 TEST_DEPENDS +=		sysutils/coreutils

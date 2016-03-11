@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/07 16:09:04 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
@@ -18,7 +18,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tn5250/}
 WANTLIB=	ncurses c ssl crypto
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-os-dir=no --with-ssl
 
 USE_GMAKE=	Yes

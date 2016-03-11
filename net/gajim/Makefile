@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2016/03/11 19:59:15 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static

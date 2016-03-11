@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
 post-install:

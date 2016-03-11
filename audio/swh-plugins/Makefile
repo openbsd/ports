@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:12 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,7 +26,6 @@ LIB_DEPENDS =		math/fftw3,float
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf automake
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 CFLAGS +=		-fPIC

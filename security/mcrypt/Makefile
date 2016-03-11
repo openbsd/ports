@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
@@ -24,7 +24,6 @@ LIB_DEPENDS =		security/libmcrypt \
 			devel/libtool,-ltdl
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS += 	--enable-static --with-catgets 
 CONFIGURE_ENV +=  	CPPFLAGS="-I${LOCALBASE}/include" \
                 	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv -lltdl"

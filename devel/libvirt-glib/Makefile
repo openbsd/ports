@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/17 19:13:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		sysutils/libvirt
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}

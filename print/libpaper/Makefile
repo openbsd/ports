@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/21 14:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	library for handling paper characteristics
 
@@ -27,7 +27,6 @@ WRKDIST=	${WRKDIR}/libpaper-${MAJV}+nmu${MINV}
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in

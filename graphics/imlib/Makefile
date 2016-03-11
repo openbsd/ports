@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/03/16 18:07:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2016/03/11 19:59:14 naddy Exp $
 
 # only used for kde/graphics3
 COMMENT=	image manipulation library for X11
@@ -29,7 +29,6 @@ LIB_DEPENDS= 	x11/gtk+ \
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"

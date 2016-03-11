@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/08 12:04:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=		library for easy implementation of a VNC server
 
@@ -28,7 +28,6 @@ MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png \

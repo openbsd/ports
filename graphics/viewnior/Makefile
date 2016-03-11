@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/24 08:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=		fast and simple image viewer
 
@@ -47,7 +47,6 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 pre-configure:
 	cd ${WRKSRC} && \

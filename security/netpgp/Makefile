@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/12 11:28:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT =		BSD-licensed PGP implementation
 
@@ -27,7 +27,6 @@ TEST_DEPENDS =	devel/autoconf/2.68
 TEST_FLAGS =		AUTOCONF_VERSION=2.68
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -DOPENSSL_NO_IDEA" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

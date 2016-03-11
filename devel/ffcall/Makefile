@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/08/01 12:07:46 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/11 19:59:12 naddy Exp $
 
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 .if ${MACHINE_ARCH} == "sparc"

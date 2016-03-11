@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/22 06:46:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=		text hyphenation library
 
@@ -21,7 +21,6 @@ TEST_DEPENDS=		shells/bash
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_prog_AWK=gawk
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 LANG_ALIASES=		en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH \
 			en_HK en_IE en_IN en_JM en_MW en_NA en_NZ en_PH en_SG \

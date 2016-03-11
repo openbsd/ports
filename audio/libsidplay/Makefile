@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	C64 music player and SID chip emulator library
 
@@ -20,7 +20,6 @@ EXTRACT_SUFX=	.tgz
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-optfixpoint --enable-optendian
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/09/24 10:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 19:59:14 naddy Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -37,6 +37,5 @@ MODGCC4_LANGS=		c++
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

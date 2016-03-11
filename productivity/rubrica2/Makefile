@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/21 14:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:16 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,6 @@ USE_GMAKE=	Yes
 MODGCONF2_SCHEMAS_DIR= rubrica2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 

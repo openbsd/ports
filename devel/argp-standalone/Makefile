@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=		Standalone version of arguments parsing functions from GLIBC
 
@@ -14,7 +14,6 @@ MASTER_SITES=		http://www.lysator.liu.se/~nisse/misc/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 
 do-install:

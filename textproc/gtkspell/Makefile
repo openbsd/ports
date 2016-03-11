@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/03/11 19:59:17 naddy Exp $
 
 PORTROACH+=	limit:^2
 
@@ -39,6 +39,5 @@ LIB_DEPENDS=	textproc/enchant \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

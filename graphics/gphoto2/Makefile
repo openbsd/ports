@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/19 07:16:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=		digital camera command-line interface
 
@@ -32,8 +32,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			POPT_CFLAGS="-I${LOCALBASE}/include" \
 			POPT_LIBS="-I${LOCALBASE}/lib -lpopt"
-
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 # checking how to link with libintl... /usr/local/lib/libintl.a ...
 # (we want -lintl)

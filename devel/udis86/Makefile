@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS =	devel/yasm \
 		textproc/py-sphinx
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 MAKE_ENV =		LIBudis86_VERSION=${LIBudis86_VERSION}
 
 FAKE_FLAGS =	docdir=${PREFIX}/share/doc/udis86/x86

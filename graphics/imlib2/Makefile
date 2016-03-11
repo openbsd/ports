@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/23 17:31:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	image manipulation library
 
@@ -24,7 +24,6 @@ LIB_DEPENDS+=	graphics/jpeg \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --disable-mmx
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/01/17 17:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
@@ -27,8 +27,6 @@ LIB_DEPENDS=	graphics/animorph>=0.3 \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/GL" \
 		LDFLAGS="-L${LOCALBASE}/lib -lz -lm"
-
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # remove useless files (ChangeLog, INSTALL...)
 post-install:

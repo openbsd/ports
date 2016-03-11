@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/12/22 14:26:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	gtk+2 interface to libexif
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # checking how to link with libintl... /usr/local/lib/libintl.a ...
 # (we want -lintl)

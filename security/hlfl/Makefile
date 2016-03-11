@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/18 02:55:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT =		high level firewall language
 
@@ -22,7 +22,6 @@ FAKE_FLAGS =		prefix=${PREFIX} \
 			mandir=${PREFIX}/man
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 NO_TEST =		Yes
 

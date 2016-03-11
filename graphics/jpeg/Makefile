@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/07/13 13:20:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	IJG's JPEG compression utilities#'
 
@@ -19,7 +19,6 @@ WANTLIB=	c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # Symbol versioning triggers weird linking problems in dependent ports.
 CONFIGURE_ARGS+=--disable-ld-version-script
 

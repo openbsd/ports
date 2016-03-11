@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/06 10:23:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -25,7 +25,6 @@ LIB_DEPENDS =		audio/jack \
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_FLAGS +=	--enable-test-progs
 CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

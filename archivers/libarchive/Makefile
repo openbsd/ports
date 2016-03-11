@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/30 23:34:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-lzmadec	# old LZMA utils
 CONFIGURE_ARGS+=--without-nettle	# prefer OpenSSL
 CONFIGURE_ARGS+=--without-xml2		# expat suffices

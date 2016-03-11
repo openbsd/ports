@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 09:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:11 naddy Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--docdir=${PREFIX}/share/doc/lzo2/
 

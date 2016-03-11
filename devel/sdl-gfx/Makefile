@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/12/21 13:38:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	primitives drawing/other support functions for SDL
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	devel/sdl
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS+= --disable-mmx

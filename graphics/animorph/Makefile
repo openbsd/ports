@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	morphing engine
 
@@ -18,7 +18,6 @@ WANTLIB += m stdc++
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	sed -i 's,packagedocdir=doc,packagedocdir=share/doc,g' \

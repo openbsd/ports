@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/11/17 16:08:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/11 19:59:13 naddy Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -32,7 +32,6 @@ SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_ASCIIDOC=no
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # audiofile-config is still needed by audio/normalize and devel/libspectrum
 post-install:

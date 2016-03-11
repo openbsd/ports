@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/30 12:59:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT =		Equinox desktop environment
 
@@ -26,7 +26,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 FAKE_FLAGS =		sysconfdir="${TRUEPREFIX}/share/examples/ede"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			PTHREAD_LIBS="-pthread" PTHREAD_CFLAGS="-pthread" \

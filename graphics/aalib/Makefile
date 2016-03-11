@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=	ascii art library
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m ncurses X11 xcb
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 WRKDIST=	${WRKDIR}/aalib-1.4.0
 

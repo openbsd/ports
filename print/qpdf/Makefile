@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/11 09:29:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	devel/pcre
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

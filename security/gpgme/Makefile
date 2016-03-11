@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=		GnuPG Made Easy
 
@@ -20,7 +20,6 @@ MASTER_SITES=		${MASTER_SITES_GNUPG:=gpgme/}
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 MODULES=		devel/gettext
 # Requires gpgsm (gnupg 2.x) during build, but can run with any gnupg.

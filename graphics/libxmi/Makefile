@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT =		library for rasterizing 2-D vector graphics
 
@@ -20,6 +20,5 @@ MASTER_SITES =		${MASTER_SITE_GNU:=libxmi/}
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -22,7 +22,6 @@ MODULES =		converters/libiconv
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

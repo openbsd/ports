@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/08/28 21:14:42 jca Exp $
+# $OpenBSD: Makefile,v 1.53 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -49,7 +49,6 @@ COURIERSTATE=		/var/run/courier-auth
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier-authlib
 SUBST_VARS=		COURIERSTATE EXAMPLE_DIR
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static \
 			--without-authpam \
 			--without-authvchkpw \

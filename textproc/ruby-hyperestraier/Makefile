@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/01/07 00:56:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/11 19:59:17 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,6 @@ LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
 			textproc/hyperestraier
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV =		RUBY=${RUBY} RDOC=`echo ${RUBY} | sed s/ruby/rdoc/`
 
 WRKSRC=			${WRKDIST}/rubynative

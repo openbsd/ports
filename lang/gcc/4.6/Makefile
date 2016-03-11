@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2015/12/20 00:16:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2016/03/11 19:59:15 naddy Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a valid 4.8 port
@@ -153,7 +153,6 @@ CONFIGURE_ARGS += \
 # visible beast
 CONFIGURE_ARGS += --enable-cpp
 
-CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD = flavored
 

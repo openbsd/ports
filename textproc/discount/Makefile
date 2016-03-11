@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/09 12:48:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT =		fast C implementation of Markdown
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 INSTALL_TARGET =	install.everything
 

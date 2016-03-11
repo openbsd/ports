@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/12 20:57:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -27,7 +27,6 @@ MODPY_ADJ_FILES=tools/splitconfig \
 SEPARATE_BUILD=	No
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 MODPOSTGRESQL_TEST_DBNAME =	pqxx-test
 

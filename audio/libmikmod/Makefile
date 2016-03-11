@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/25 13:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	mikmod sound library
 
@@ -20,7 +20,6 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CFLAGS +=	-DDRV_SNDIO
 CONFIGURE_ENV=	LIBRARY_LIB="-lsndio"
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-dl \
 		 --disable-oss \
 		 --disable-esd

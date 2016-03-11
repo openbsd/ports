@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/10/13 06:29:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:12 naddy Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
@@ -28,6 +28,5 @@ WANTLIB+=	m stdc++
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

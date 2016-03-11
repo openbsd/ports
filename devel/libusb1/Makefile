@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/15 09:03:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -23,7 +23,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libusb/}
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debug-log \

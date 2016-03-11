@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/24 10:37:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:17 naddy Exp $
 
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
@@ -47,6 +47,5 @@ LIB_DEPENDS=		graphics/ftgl \
 RUN_DEPENDS=		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

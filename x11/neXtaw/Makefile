@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/16 18:08:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=		libXaw widget set replacement
 
@@ -19,7 +19,6 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xt \
 MASTER_SITES=		http://siag.nu/pub/neXtaw/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include"
 
 .include <bsd.port.mk>

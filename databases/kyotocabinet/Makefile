@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/21 16:17:25 jsg Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:12 naddy Exp $
 
 BROKEN-arm=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
@@ -29,7 +29,6 @@ MASTER_SITES=	${HOMEPAGE}pkg/
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # This FLAVOR should be used for local builds only and not added to
 # bulks (i.e. _no_ entry in databases/Makefile); the reason is that it

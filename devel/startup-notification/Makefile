@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/11 19:59:14 naddy Exp $
 
 COMMENT=		library for tracking application startup
 
@@ -20,7 +20,6 @@ MASTER_SITES=		http://www.freedesktop.org/software/startup-notification/releases
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 # XXX libexecinfo is only needed for regression tests. We do not want to
 # add -lexecinfo to LDFLAGS because the main startup-notification

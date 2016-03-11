@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
@@ -30,7 +30,6 @@ MODULES =	devel/gettext
 LIB_DEPENDS =	x11/gtk+2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 # XXX gtk+3 support does not build yet
 CONFIGURE_ARGS +=	--with-gtk=2.0

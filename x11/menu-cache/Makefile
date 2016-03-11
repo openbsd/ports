@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/08 19:41:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	caching mechanism for freedesktop.org compliant menus
 
@@ -24,6 +24,5 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/libfm/extra
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

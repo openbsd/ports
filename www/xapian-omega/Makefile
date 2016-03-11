@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/16 12:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
 
 COMMENT=	web search application
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/libmagic
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

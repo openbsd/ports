@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/03/11 19:59:16 naddy Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -23,7 +23,6 @@ MODPY_RUNDEP=		No
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 # both are dependant
 CONFIGURE_ARGS+=	--disable-upower \

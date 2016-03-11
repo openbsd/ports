@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/01/28 08:40:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=		Foreign Function Interface
 
@@ -19,7 +19,6 @@ MASTER_SITES=		ftp://sourceware.org/pub/libffi/
 TEST_DEPENDS=		devel/dejagnu
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS+=		includesdir="${PREFIX}/include"
 

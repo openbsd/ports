@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/29 13:57:10 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:13 naddy Exp $
 
 COMMENT=	event notification library
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=levent/}
 WANTLIB=	crypto pthread ssl
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 MAKE_FLAGS=	RELEASE=""
 

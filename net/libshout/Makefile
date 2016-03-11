@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/04 07:21:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	library for communicating with an icecast server
 
@@ -25,7 +25,6 @@ LIB_DEPENDS +=	audio/libogg
 FAKE_FLAGS=	docdir='${PREFIX}/share/examples/libshout'
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 SEPARATE_BUILD=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/03/11 19:59:17 naddy Exp $
 
 V=			1.2.3
 DISTNAME=		libfm-${V}
@@ -27,4 +27,3 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 # prevent undefined references to libc functions
 CONFIGURE_ENV +=	ac_cv_ld_z_defs=no
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}

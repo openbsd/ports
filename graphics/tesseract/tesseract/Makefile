@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/17 17:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:15 naddy Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -29,8 +29,6 @@ RUN_DEPENDS=		graphics/tesseract/tessdata,-main
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 ALL_TARGET=		all training
 INSTALL_TARGET=		install training-install
