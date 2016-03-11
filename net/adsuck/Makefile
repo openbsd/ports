@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/15 14:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 19:46:34 sthen Exp $
 
 COMMENT=		DNS relay for ad blocking
 
-DISTNAME=		adsuck-2.5.0
+V=			2.5.0
+REVISION=		4
+GH_TAGNAME=		ADSUCK_${V:S/./_/g}
+GH_ACCOUNT=		conformal
+GH_PROJECT=		adsuck
+DISTNAME=		${GH_PROJECT}-${V}
 CATEGORIES=		net
-REVISION=		3
 
-HOMEPAGE=		http://opensource.conformal.com/wiki/Adsuck
+HOMEPAGE=		https://github.com/conformal/adsuck/wiki
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
-EXTRACT_SUFX=		.tgz
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=	http://opensource.conformal.com/snapshots/adsuck/
 
 WANTLIB += c event_core event_extra ldns pthread
 
