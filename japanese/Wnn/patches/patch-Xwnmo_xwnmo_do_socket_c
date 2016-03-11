@@ -1,6 +1,6 @@
-$OpenBSD: patch-Xwnmo_xwnmo_do_socket_c,v 1.1 2002/02/28 06:03:27 pvalchev Exp $
---- Xwnmo/xwnmo/do_socket.c.orig	Tue Aug 23 02:11:30 1994
-+++ Xwnmo/xwnmo/do_socket.c	Wed Feb 27 22:48:53 2002
+$OpenBSD: patch-Xwnmo_xwnmo_do_socket_c,v 1.2 2016/03/11 16:06:01 naddy Exp $
+--- Xwnmo/xwnmo/do_socket.c.orig	Tue Aug 23 10:11:30 1994
++++ Xwnmo/xwnmo/do_socket.c	Fri Mar 11 17:01:40 2016
 @@ -116,8 +116,6 @@ static int	rc = 0;
  #define	sock_clr(array,pos)	(array[pos/BINTSIZE] &= ~(1<<(pos%BINTSIZE)))
  #define	sock_tst(array,pos)	(array[pos/BINTSIZE] & (1<<(pos%BINTSIZE)))
@@ -10,3 +10,11 @@ $OpenBSD: patch-Xwnmo_xwnmo_do_socket_c,v 1.1 2002/02/28 06:03:27 pvalchev Exp $
  #define	_Read(fd, data, size)	read((fd), (data), (size))
  #define	_Write(fd, data, size)	write((fd), (data), (size))
  
+@@ -588,7 +586,6 @@ wait_for_socket()
+ {
+     register int i;
+     int n, ret;
+-    extern int errno;
+     extern int select();
+ 
+     /*

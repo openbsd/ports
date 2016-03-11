@@ -1,12 +1,14 @@
-$OpenBSD: patch-Wnn_jserver_error_c,v 1.1 2015/07/25 16:47:12 espie Exp $
---- Wnn/jserver/error.c.orig	Fri Jul 24 10:33:44 2015
-+++ Wnn/jserver/error.c	Fri Jul 24 10:34:05 2015
-@@ -55,6 +55,8 @@
+$OpenBSD: patch-Wnn_jserver_error_c,v 1.2 2016/03/11 16:06:01 naddy Exp $
+--- Wnn/jserver/error.c.orig	Tue Jun 28 04:06:55 1994
++++ Wnn/jserver/error.c	Fri Mar 11 17:01:32 2016
+@@ -55,8 +55,8 @@
  #include "commonhd.h"
  #include "de_header.h"
  #include <pwd.h>
+-
+-extern int errno;
 +#include <stdlib.h>
 +#include <time.h>
  
- extern int errno;
- 
+ static void my_error(), exit_hand();
+ void error1();
