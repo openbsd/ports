@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/01 15:37:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/11 23:03:21 naddy Exp $
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/
@@ -79,6 +79,18 @@ include/eopenssl/openssl/x509_vfy.h
 include/eopenssl/openssl/x509v3.h
 lib/eopenssl/
 lib/eopenssl/engines/
+lib/eopenssl/engines/lib4758cca.so
+lib/eopenssl/engines/libaep.so
+lib/eopenssl/engines/libatalla.so
+lib/eopenssl/engines/libcapi.so
+lib/eopenssl/engines/libchil.so
+lib/eopenssl/engines/libcswift.so
+lib/eopenssl/engines/libgmp.so
+lib/eopenssl/engines/libgost.so
+lib/eopenssl/engines/libnuron.so
+lib/eopenssl/engines/libpadlock.so
+lib/eopenssl/engines/libsureware.so
+lib/eopenssl/engines/libubsec.so
 lib/eopenssl/libcrypto.a
 @lib lib/eopenssl/libcrypto.so.${LIBcrypto_VERSION}
 lib/eopenssl/libssl.a
@@ -1673,7 +1685,6 @@ lib/eopenssl/man/man7/
 lib/pkgconfig/eopenssl.pc
 lib/pkgconfig/libecrypto.pc
 lib/pkgconfig/libessl.pc
-%%SHARED%%
 share/eopenssl/
 share/eopenssl/certs/
 share/eopenssl/misc/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/18 13:09:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/11 23:03:21 naddy Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=	devel/libidn \
 CONFIGURE_ARGS+=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
 			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
+			-DPODOFO_BUILD_SHARED=True \
 			-DPODOFO_BUILD_STATIC=True
 
 post-extract:
@@ -38,13 +39,5 @@ post-extract:
 BUILD_DEPENDS=	devel/cppunit
 do-test:
 	${WRKBUILD}/test/unit/podofo-test
-
-.include <bsd.port.arch.mk>
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-CONFIGURE_ARGS+=	-DPODOFO_BUILD_SHARED=False
-.else
-CONFIGURE_ARGS+=	-DPODOFO_BUILD_SHARED=True
-.endif
 
 .include <bsd.port.mk>
