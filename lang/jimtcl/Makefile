@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/22 16:36:23 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/11 12:34:21 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -37,7 +37,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODTCL_BIN} ${WRKSRC}/autosetup/autosetup
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS +=	--enable-shared \
 			--includedir='$${prefix}/include/jim' \
 			--docdir='$${prefix}/share/doc/jim' \
 			--full \
