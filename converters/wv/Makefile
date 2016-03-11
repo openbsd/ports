@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
@@ -30,7 +30,7 @@ MAKE_FILE =	GNUmakefile
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = ${CONFIGURE_SHARED} --enable-static \
+CONFIGURE_ARGS = --enable-static \
 		 --with-png=${LOCALBASE} --with-libwmf=${LOCALBASE}
 
 NO_TEST =	Yes

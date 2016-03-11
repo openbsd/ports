@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/12 13:21:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT =		an XBill Modification
 GH_ACCOUNT =		Xylemon
@@ -18,7 +18,7 @@ WANTLIB += ICE SM X11 Xaw Xmu Xpm Xt c
 RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --disable-motif --disable-gtk \
+CONFIGURE_ARGS +=	--disable-motif --disable-gtk \
 			--enable-athena --localstatedir=/var/games/xlennart
 
 post-install:

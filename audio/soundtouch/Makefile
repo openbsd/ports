@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/03 21:20:04 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -27,7 +27,7 @@ AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-x86-optimizations
+CONFIGURE_ARGS=	--disable-x86-optimizations
 
 MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
@@ -16,7 +16,7 @@ MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
+CONFIGURE_ARGS+=	--enable-static
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libdockapp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=		raster image transmission library
 
@@ -17,7 +17,7 @@ MASTER_SITES=		${HOMEPAGE}/download/
 
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static
+CONFIGURE_ARGS=		--enable-static
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ijs

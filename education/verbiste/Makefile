@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/02/25 21:38:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	x11/gtk+3,-guic
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--without-gnome-app \
 		--with-gtk-app
 

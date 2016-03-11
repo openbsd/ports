@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/14 20:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=	audio compression codec library
 
@@ -20,7 +20,7 @@ WANTLIB=	m ogg
 LIB_DEPENDS=	audio/libogg
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --with-ogg=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 SEPARATE_BUILD=	Yes
 
 post-install:

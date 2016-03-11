@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -27,6 +27,6 @@ TEST_DEPENDS =	devel/gtest
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --with-zlib 
+CONFIGURE_ARGS +=	--with-zlib 
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT =		flickr API library and utility
 
@@ -27,6 +27,6 @@ LIB_DEPENDS =		net/curl \
 			textproc/raptor>=2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} --with-raptor=2
+CONFIGURE_ARGS =	--with-raptor=2
 
 .include <bsd.port.mk>

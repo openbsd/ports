@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/08/11 20:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2016/03/11 20:11:39 naddy Exp $
 
 COMMENT=	portable audio output library
 
@@ -20,7 +20,7 @@ WANTLIB=	sndio
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--disable-arts \
 		--disable-esd \
 		--disable-nas \
