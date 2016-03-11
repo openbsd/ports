@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.24 2014/08/10 08:59:48 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.25 2016/03/11 13:06:22 nigel Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -21,6 +21,18 @@ MODPERL_pre-configure = for f in ${MODPERL_ADJ_FILES}; do \
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
+.  if ${CONFIGURE_STYLE:L:Mtiny}
+MODPERL_configure = \
+	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
+    cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
+	perl Build.PL \
+		--install_path=lib="${PREFIX}/libdata/perl5/site_perl" \
+		--install_path=arch="${PREFIX}/libdata/perl5/site_perl/$$arch" \
+		--install_path=libdoc="${PREFIX}/man/man3p" \
+		--install_path=bindoc="${PREFIX}/man/man1" \
+		--install_path=bin="${PREFIX}/bin" \
+		--install_path=script="${PREFIX}/bin" ${CONFIGURE_ARGS}
+.  else
 MODPERL_configure = \
 	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
     cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
@@ -30,7 +42,8 @@ MODPERL_configure = \
 		install_path=libdoc="${PREFIX}/man/man3p" \
 		install_path=bindoc="${PREFIX}/man/man1" \
 		install_path=bin="${PREFIX}/bin" \
-		install_path=script="${PREFIX}/bin" ${CONFIGURE_ARGS} 
+		install_path=script="${PREFIX}/bin" ${CONFIGURE_ARGS}
+.   endif
 .else
 MODPERL_configure = ${_MODPERL_preconfig}; \
 	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
@@ -64,6 +77,9 @@ MODPERL_pre-fake = \
 	${_FAKESUDO} mkdir -p ${WRKINST}`perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
+.  if ${CONFIGURE_STYLE:L:Mtiny}
+BUILD_DEPENDS +=	devel/p5-Module-Build-Tiny
+.  endif
 MODPERL_BUILD_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
 		${MODPERL_BUILD} build
@@ -73,10 +89,10 @@ MODPERL_TEST_TARGET = \
 		${MODPERL_BUILD} ${TEST_TARGET}
 MODPERL_INSTALL_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
-		${MODPERL_BUILD} destdir=${WRKINST} ${FAKE_TARGET}
+		${MODPERL_BUILD} ${FAKE_TARGET} --destdir=${WRKINST}
 
 .  if !target(do-build)
-do-build: 
+do-build:
 	@${MODPERL_BUILD_TARGET}
 .  endif
 .  if !target(do-test)
