@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/11 19:43:45 sthen Exp $
 
 COMMENT=	i/o generator
-PKGNAME=	iogen-3.1
-REVISION=	1
-CATEGORIES=	sysutils
-DISTFILES=
 
-HOMEPAGE=	http://opensource.conformal.com/wiki/Iogen
+V=		3.1
+REVISION=	2
+GH_TAGNAME=	IOGEN_${V:S/./_/g}
+GH_ACCOUNT=	conformal
+GH_PROJECT=	iogen
+DISTNAME=	${GH_PROJECT}-${V}
+CATEGORIES=	sysutils
+
+HOMEPAGE=	https://github.com/conformal/iogen
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c
 
-NO_CHECKSUM=	Yes
 NO_TEST=	Yes
 
 CFLAGS+=	-DVERSION=\"${PKGNAME:S/iogen-//}\"
 FAKE_FLAGS+=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 MAKE_ENV=	CC="${CC}"
-WRKDIST=	${WRKDIR}
-
-post-extract:
-	@lndir ${.CURDIR}/src ${WRKDIR}
 
 .include <bsd.port.mk>
