@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/22 09:35:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/12 04:58:53 ajacoutot Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	1.5.1
 DISTNAME=		ioflo-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
