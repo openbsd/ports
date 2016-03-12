@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/19 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/12 23:23:38 naddy Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -30,7 +30,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -python
-NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 
 PSEUDO_FLAVORS=	no_python
 FLAVOR?=

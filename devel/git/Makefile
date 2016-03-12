@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2016/03/07 07:33:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.146 2016/03/12 23:23:38 naddy Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -75,14 +75,6 @@ CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			DIFF=diff TAR=tar
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mno_shared}
-CONFIGURE_ENV +=	ac_cv_lib_curl_curl_global_init=yes
-MAKE_FLAGS +=		NEEDS_CRYPTO_WITH_SSL=YesPlease \
-			NEEDS_SSL_WITH_CURL=YesPlease \
-			NEEDS_LIBINTL_BEFORE_LIBICONV=YesPlease
-.endif
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.146 2016/03/12 23:23:38 naddy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -90,10 +90,6 @@ LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 WANTLIB-ap2 +=	${_lib}>=${SO_VERSION}
 .endfor
 RUN_DEPENDS-ap2=	www/apache-httpd
-
-NOT_FOR_ARCHS-perl = ${NO_SHARED_ARCHS}
-NOT_FOR_ARCHS-python = ${NO_SHARED_ARCHS}
-NOT_FOR_ARCHS-ruby = ${NO_SHARED_ARCHS}
 
 WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3 
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
