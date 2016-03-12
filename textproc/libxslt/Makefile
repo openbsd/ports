@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2016/03/12 17:22:07 naddy Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -7,7 +7,7 @@ VERSION=		1.1.28
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
-REVISION-main =		3
+REVISION-main =		4
 REVISION-python =	0
 
 SHARED_LIBS +=  xslt                 3.8      # 2.28
@@ -31,14 +31,11 @@ PSEUDO_FLAVORS=		no_python
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -python
-NOT_FOR_ARCHS-python = 	${NO_SHARED_ARCHS}
 
 WANTLIB-main=		${WANTLIB} c xml2 gcrypt pthread
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			textproc/libxml \
 			security/libgcrypt
-# non shared archs won't inherit it from libgcrypt
-LIB_DEPENDS-main +=	security/libgpg-error
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.164 2016/03/12 17:22:07 naddy Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -7,6 +7,7 @@ VERSION=		2.9.3
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py-libxml-${VERSION}
+REVISION-python=	0
 SHARED_LIBS +=	xml2                 15.1     # 11.2
 CATEGORIES=		textproc
 MASTER_SITES=		http://gd.tuwien.ac.at/pub/libxml/ \
@@ -40,7 +41,6 @@ MULTI_PACKAGES=		-main -python
 
 WANTLIB-main=		${WANTLIB} c pthread
 RUN_DEPENDS-main=
-NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 
 .include <bsd.port.arch.mk>
 
