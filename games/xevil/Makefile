@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/12 07:12:57 bentley Exp $
 #
+
+PORTROACH_COMMENT =	2.02r2 is newer than 2.02
+PORTROACH =		skipv:2.02
 
 COMMENT=	side-view, fast-action, kill everything type of game
 
