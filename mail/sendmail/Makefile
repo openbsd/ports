@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/07 14:19:46 matthieu Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/12 20:18:26 naddy Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
@@ -31,11 +31,8 @@ MASTER_SITES =		ftp://ftp.sendmail.org/pub/sendmail/ \
 
 BUILD_DEPENDS =		textproc/groff
 
-SUBDIRS =		libsmutil libsm libmilter sendmail mail.local mailstats makemap praliases smrsh editmap
-.include <bsd.port.arch.mk>
-.if ! ${PROPERTIES:Mno_shared}
-SUBDIRS +=		libsharedmilter
-.endif
+SUBDIRS =		libsmutil libsm libmilter libsharedmilter sendmail \
+			mail.local mailstats makemap praliases smrsh editmap
 
 MAKE_FLAGS =		O="${CFLAGS}" \
 			SUBDIRS="${SUBDIRS} cf/cf" \

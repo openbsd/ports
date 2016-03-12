@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/12 20:18:26 naddy Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -23,7 +23,6 @@ MASTER_SITES=		https://libdnet.googlecode.com/files/
 EXTRACT_SUFX=		.tgz
 
 PSEUDO_FLAVORS=		no_python
-NOT_FOR_ARCHS-python=	${NO_SHARED_ARCHS}
 FLAVOR?=
 
 CONFIGURE_STYLE=	gnu

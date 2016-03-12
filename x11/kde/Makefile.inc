@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.46 2015/07/17 01:17:30 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.47 2016/03/12 20:18:26 naddy Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
@@ -7,7 +7,6 @@ EXTRACT_SUFX ?=	.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
-NOT_FOR_ARCHS ?=	${NO_SHARED_ARCHS}
 SHARED_ONLY =		Yes
 MODKDE_VERSION ?=	3.1
 MODULES ?=		x11/kde
