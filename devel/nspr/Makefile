@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/03/01 21:02:30 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2016/03/12 07:02:16 mmcc Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 SHARED_ONLY =	Yes
@@ -7,6 +7,7 @@ COMMENT =		Netscape Portable Runtime
 
 VER=			4.12
 DISTNAME=		nspr-${VER}
+REVISION=		0
 
 SO_VERSION=		23.3
 .for _lib in nspr4 plc4 plds4
@@ -15,7 +16,7 @@ SHARED_LIBS+=		${_lib} ${SO_VERSION}
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.mozilla.org/projects/nspr/index.html
+HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSPR
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
 

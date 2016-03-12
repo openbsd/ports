@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/12 07:02:16 mmcc Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,13 +17,13 @@ DISTNAME =		mozjs-${MOZILLA_VERSION}.2.0
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.2.0
 PKGSPEC =		spidermonkey->=24.0,<25.0
-REVISION =		3
+REVISION =		4
 
 SO_VERSION =		0.0
 SHARED_LIBS =		mozjs-24 ${SO_VERSION}
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.mozilla.org/js/spidermonkey/
+HOMEPAGE =		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey
 MASTER_SITES =		http://ftp.mozilla.org/pub/mozilla.org/js/
 #https://groups.google.com/forum/#!topic/mozilla.dev.tech.js-engine/h6pw_gCCsfU
 
