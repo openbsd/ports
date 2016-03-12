@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.368 2016/03/09 21:32:53 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.369 2016/03/12 12:11:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -73,7 +73,6 @@ my $base_exceptions = {
 	'p5-ExtUtils-CBuilder' => "$p5/ExtUtils/CBuilder.pm",
 	'p5-ExtUtils-ParseXS' => "$p5/ExtUtils/ParseXS.pm",
 	'p5-Locale-Maketext-Simple' => "$p5/Locale/Maketext/Simple.pm",
-	'p5-Module-Build' =>  "$p5/Module/Build.pm",
 	'p5-Module-CoreList' => "$p5/Module/CoreList.pm",
 	'p5-Module-Load' => "$p5/Module/Load.pm",
 	'p5-Module-Loaded' => "$p5/Module/Loaded.pm",
