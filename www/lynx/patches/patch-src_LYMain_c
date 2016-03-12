@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_LYMain_c,v 1.1 2016/03/12 14:29:13 tb Exp $
+--- src/LYMain.c.orig	Fri Dec 18 01:34:45 2015
++++ src/LYMain.c	Wed Feb  3 19:50:41 2016
+@@ -2142,6 +2142,21 @@ int main(int argc,
+     }
+ 
+     /*
++     * Disabling features requiring 'proc' + 'exec' and calling pledge
++     */
++    no_exec = TRUE;
++    no_mail = TRUE;
++    no_shell = TRUE;
++
++    rlogin_ok = FALSE;
++    telnet_ok = FALSE;
++
++    if (pledge("stdio rpath wpath cpath fattr dns inet tty", NULL) == -1) {
++	fprintf(stderr, "%s: pledge: %s\n", getprogname(), strerror(errno));
++	exit_immediately(EXIT_FAILURE);
++    }
++
++    /*
+      * Here's where we do all the work.
+      */
+     if (dump_output_immediately) {

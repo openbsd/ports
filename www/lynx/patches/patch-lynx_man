@@ -1,0 +1,25 @@
+$OpenBSD: patch-lynx_man,v 1.1 2016/03/12 14:29:13 tb Exp $
+--- lynx.man.orig	Thu Oct  8 02:19:45 2015
++++ lynx.man	Thu Feb  4 12:37:28 2016
+@@ -593,6 +593,21 @@ flushes the cache on a proxy server
+ allows a list of services to be disabled selectively.
+ Dashes and underscores in option names can be intermixed.
+ The following list is printed if no options are specified.
++.IP
++On OpenBSD the following restrictions are always enabled:
++\fBexec\fR,
++\fBmail\fR,
++and
++\fBshell\fR.
++Additionally,
++\fBbibp-urls\fR,
++\fBdired\fR,
++\fBfinger\fR,
++\fBrlogin\fR,
++and
++\fBtelnet \fR
++features have been disabled entirely.
++.IP
+ .RS
+ .TP 3
+ .B all
