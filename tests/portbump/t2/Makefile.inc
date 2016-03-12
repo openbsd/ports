@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2014/09/13 18:09:22 brad Exp $
-
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile.inc,v 1.3 2016/03/12 20:23:35 naddy Exp $
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP

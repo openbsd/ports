@@ -1,11 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.72 2016/02/01 21:53:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.73 2016/03/12 20:23:35 naddy Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
-
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
