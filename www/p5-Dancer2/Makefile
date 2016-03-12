@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/24 10:51:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/12 22:25:48 naddy Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
@@ -35,7 +35,10 @@ RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Safe-Isa \
 			textproc/p5-Template \
 			textproc/p5-Template-Tiny \
-			devel/p5-YAML
+			devel/p5-YAML \
+			converters/p5-JSON-XS \
+			devel/p5-Class-Load-XS \
+			devel/p5-Scope-Upper
 
 TEST_DEPENDS =		devel/p5-AnyEvent \
 			sysutils/p5-Capture-Tiny \
@@ -47,12 +50,5 @@ TEST_DEPENDS =		devel/p5-AnyEvent \
 			devel/p5-Test-Memory-Cycle>=1.04 \
 			devel/p5-Test-MockTime \
 			devel/p5-YAML
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mno_shared}
-RUN_DEPENDS +=		converters/p5-JSON-XS \
-			devel/p5-Class-Load-XS \
-			devel/p5-Scope-Upper
-.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/08 17:51:09 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/12 22:25:48 naddy Exp $
 
 COMMENT =	creating and reading constant databases
 
@@ -18,18 +18,12 @@ WANTLIB =	c
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SHAREDLIB="libcdb.so.${LIBcdb_VERSION}" \
-		prefix="${PREFIX}" sysconfdir="${SYSCONFDIR}"
+		prefix="${PREFIX}" sysconfdir="${SYSCONFDIR}" \
+		INSTALLPROG="cdb-shared"
 
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mno_shared}
-TEST_TARGET =		tests
-.else
-MAKE_FLAGS +=		INSTALLPROG="cdb-shared"
 ALL_TARGET =		all shared
 INSTALL_TARGET =	install install-sharedlib
 TEST_TARGET =		tests-shared
-.endif
 
 post-install:
 	rm -f "${PREFIX}/lib/libcdb.so"
