@@ -1,9 +1,9 @@
-sysclean is a ksh(1) script designed to the administrator to help removing
-obsoletes files between upgrades.
+sysclean is a ksh(1) script designed to help removing obsolete files between
+upgrades.
 
 sysclean works by comparing a reference root directory against currently
-installed files.  It consideres standard system files, configuration
-files installed by default, and packages files.
+installed files. It considers standard system files, configuration files
+installed by default, and packages files.
 
-sysclean doesn't remove any files on the system. It only reports obsoletes
-filenames or packages using obsoletes libraries.
+sysclean doesn't remove any files on the system. It only reports obsolete
+filenames or packages using out-of-date libraries.
