@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/08/10 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/12 23:16:55 naddy Exp $
 
 COMMENT-main =		programming language with generators, X11 and more
 COMMENT-main-no_x11 =	programming language with generators
@@ -12,6 +12,7 @@ DISTFILES =	icon-v951src.tgz
 MULTI_PACKAGES =	-main #-compiler
 
 PKGNAME-main =		icon-interp-${VERSION}
+REVISION-main =		0
 
 # Public domain
 PERMIT_PACKAGE_CDROM =	Yes
@@ -37,23 +38,15 @@ CONFIGURE_TARGET =	X-Configure
 WANTLIB-main +=		X11 Xpm
 .endif
 
-.include <bsd.port.arch.mk>
-
 do-configure:
 	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=bsd
-.if ${PROPERTIES:Mno_shared}
-	echo "#undef LoadFunc" >>${WRKSRC}/src/h/define.h
-.else
 	echo "RLINK=-rdynamic" >>${WRKSRC}/Makedefs
-.endif
 .if ${FLAVOR:Mno_x11}
 	echo "XINCLUDE=" >>${WRKSRC}/Makedefs
 .endif
 
 post-build:
-.if !${PROPERTIES:Mno_shared}
 	cd ${WRKSRC}/ipl/cfuncs && ${MAKE} ICONT=${WRKBUILD}/bin/icont
-.endif
 
 # We put a wrapper around icont for finding the library files when
 # they're installed
@@ -67,11 +60,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconx ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${PREFIX}/man/man1/icont.1
 	cd ${PREFIX}/man/man1 && ln -f icont.1 iconx.1
-.if !${PROPERTIES:Mno_shared}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode
 	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode
 	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib
-.endif
 
 TEST_FLAGS =	HOME=/
 

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/20 12:21:04 espie Exp $
-lib/libcfunc.so
-share/ipl/
-share/ipl/ucode/
-share/ipl/ucode/cfunc.u1
-share/ipl/ucode/cfunc.u2
