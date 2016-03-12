@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/12 11:02:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
@@ -74,6 +74,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all
+
+MAKE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+
 pre-patch: 
 	cd ${WRKSRC}; \
 	env \
