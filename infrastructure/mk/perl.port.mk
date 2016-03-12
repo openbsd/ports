@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.25 2016/03/11 13:06:22 nigel Exp $
+# $OpenBSD: perl.port.mk,v 1.26 2016/03/12 12:12:32 sthen Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -79,6 +79,10 @@ MODPERL_pre-fake = \
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
 .  if ${CONFIGURE_STYLE:L:Mtiny}
 BUILD_DEPENDS +=	devel/p5-Module-Build-Tiny
+.  elif ${CONFIGURE_STYLE:L:Mnone}
+# for building Module::Build
+.  else
+BUILD_DEPENDS +=	devel/p5-Module-Build
 .  endif
 MODPERL_BUILD_TARGET = \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} perl \
