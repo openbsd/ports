@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/03/11 23:31:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/03/12 12:10:34 naddy Exp $
 @pkgpath lang/expect,no_tk
 bin/autoexpect
 bin/autopasswd
@@ -26,6 +26,7 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
+@lib lib/libexpect545.so.${LIBexpect545_VERSION}
 lib/tcl/expect/
 @lib lib/tcl/expect/libexpect545.so.${LIBexpect545_VERSION}
 lib/tcl/expect/pkgIndex.tcl
