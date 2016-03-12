@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/12 12:13:35 sthen Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -31,6 +31,9 @@ MODULES =		lang/python lang/ruby
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
+
+# called from the build script; doesn't use standard CONFIGURE_STYLE=modbuild
+BUILD_DEPENDS +=	devel/p5-Module-Build
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Log4perl \
