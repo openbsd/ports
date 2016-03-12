@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.36 2016/03/10 11:50:13 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.37 2016/03/12 16:45:57 naddy Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -36,7 +36,6 @@ MULTI_PACKAGES += -main -tcl
 
 LIB_DEPENDS-main?=
 RUN_DEPENDS-main?=
-NOT_FOR_ARCHS-tcl = ${NO_SHARED_ARCHS}
 #ONLY_FOR_ARCHS = ${ALL_ARCHS}
 ONLY_FOR_ARCHS-java = amd64 i386
 

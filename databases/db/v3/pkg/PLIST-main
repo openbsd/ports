@@ -1,32 +1,36 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/07/05 12:03:52 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/03/12 16:45:57 naddy Exp $
 @option no-default-conflict
 @conflict db->=3,<4
 @pkgpath databases/db/v3,no_tcl
 @pkgpath databases/db/v3
-bin/db_archive
-bin/db_checkpoint
-bin/db_deadlock
-bin/db_dump
-bin/db_dump185
-bin/db_load
-bin/db_printlog
-bin/db_recover
-bin/db_stat
-bin/db_upgrade
-bin/db_verify
+@bin bin/db_archive
+@bin bin/db_checkpoint
+@bin bin/db_deadlock
+@bin bin/db_dump
+@bin bin/db_dump185
+@bin bin/db_load
+@bin bin/db_printlog
+@bin bin/db_recover
+@bin bin/db_stat
+@bin bin/db_upgrade
+@bin bin/db_verify
 include/db/
 include/db/db.h
 include/db/db_185.h
 include/db/db_cxx.h
 lib/db/
-@comment XXX can't lose the frag, .la only built when shared
-%%SHARED%%
 lib/db/libdb.a
+lib/db/libdb.la
 @comment lib/db/libdb.so
 @comment lib/db/libdb.so.3
+@lib lib/db/libdb.so.${LIBdb_VERSION}
 lib/db/libdb_cxx.a
+lib/db/libdb_cxx.la
 @comment lib/db/libdb_cxx.so
 @comment lib/db/libdb_cxx.so.3
+@lib lib/db/libdb_cxx.so.${LIBdb_cxx_VERSION}
+@lib lib/libdb.so.${LIBdb_VERSION}
+@lib lib/libdb_cxx.so.${LIBdb_cxx_VERSION}
 share/doc/db/
 share/doc/db/api_c/
 share/doc/db/api_c/c_index.html

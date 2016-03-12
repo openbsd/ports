@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/03/19 20:25:26 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/03/12 16:45:57 naddy Exp $
 @option no-default-conflict
 @conflict db->=4,<5
 @pkgpath databases/db/v4,no_tcl
@@ -21,10 +21,14 @@ include/db4/db.h
 include/db4/db_185.h
 include/db4/db_cxx.h
 lib/db4/
-@comment can't losed the SHARED: .la don't get built if !shared
-%%SHARED%%
 lib/db4/libdb.a
+lib/db4/libdb.la
+@lib lib/db4/libdb.so.${LIBdb_VERSION}
 lib/db4/libdb_cxx.a
+lib/db4/libdb_cxx.la
+@lib lib/db4/libdb_cxx.so.${LIBdb_cxx_VERSION}
+@lib lib/libdb.so.${LIBdb_VERSION}
+@lib lib/libdb_cxx.so.${LIBdb_cxx_VERSION}
 share/doc/db4/
 share/doc/db4/api_c/
 share/doc/db4/api_c/api_core.html
