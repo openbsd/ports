@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.959 2016/03/03 07:29:29 kirby Exp $
+# $OpenBSD: Makefile,v 1.960 2016/03/12 20:22:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -422,6 +422,7 @@
      SUBDIR += p5-Net-Z3950-Zoom
      SUBDIR += p5-Net-eBay
      SUBDIR += p5-NetAddr-IP
+     SUBDIR += p5-NetAddr-MAC
      SUBDIR += p5-NetPacket
      SUBDIR += p5-Nmap-Parser
      SUBDIR += p5-Nmap-Scanner
