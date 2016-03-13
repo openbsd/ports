@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/01/27 18:44:51 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.27 2016/03/13 22:22:15 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1871,6 +1871,7 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/es.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/eu.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/fi.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/fr.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/hr.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/hu.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/is.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/lang/it.js
