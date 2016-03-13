@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/09 15:53:22 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/13 15:49:16 naddy Exp $
 
 COMMENT =	lets you build groups of accessors
 
@@ -13,17 +13,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_ARGS =	--skipdeps
 
-RUN_DEPENDS =	devel/p5-Module-Runtime>=0.012
+RUN_DEPENDS =	devel/p5-Module-Runtime>=0.012 \
+		devel/p5-Class-XSAccessor
 
 TEST_DEPENDS =	devel/p5-Test-Exception>=0.31
 
 # Optional depends to avoid skipping tests
 TEST_DEPENDS +=	devel/p5-Sub-Name \
 		devel/p5-Package-Stash
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mno_shared}
-RUN_DEPENDS += devel/p5-Class-XSAccessor
-.endif
 
 .include <bsd.port.mk>
