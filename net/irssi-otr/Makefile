@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/29 22:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/13 14:41:30 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	OTR (off the record) encryption support for irssi
 
 V =		1.0.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	irssi-otr-$V
 
 CATEGORIES =	net security
