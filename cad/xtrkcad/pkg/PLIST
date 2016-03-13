@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/21 06:48:33 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/03/13 21:35:36 sebastia Exp $
 @bin bin/xtrkcad
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
@@ -611,10 +611,12 @@ share/xtrkcad/params/N-Bonus Industrial Structures.xtp
 share/xtrkcad/params/N-Bonus Railroad Structures.xtp
 share/xtrkcad/params/N-Bonus Residential Structures.xtp
 share/xtrkcad/params/N-Bonus Structures.xtp
+share/xtrkcad/params/N-BritishFinescaleFineTraxC40.xtp
 share/xtrkcad/params/N-DESIGN-PRESERVATION.xtp
 share/xtrkcad/params/N-GRAIN-ELEVATORS.xtp
 share/xtrkcad/params/N-Greenmax-Engine sheds.xtp
 share/xtrkcad/params/N-Greenmax-Island platform 16.xtp
+share/xtrkcad/params/N-Ibertren.xtp
 share/xtrkcad/params/N-Kato-Unitram.xtp
 share/xtrkcad/params/N-Katocn.xtp
 share/xtrkcad/params/N-LifeLike Power-Loc.xtp
@@ -634,6 +636,12 @@ share/xtrkcad/params/N-me.xtp
 share/xtrkcad/params/NJI.xtp
 share/xtrkcad/params/NScale_SectorPlate_Traverser_Examples.xtp
 share/xtrkcad/params/Ninco_SCX Slot Car.xtp
+share/xtrkcad/params/Nm-NTram.xtp
+share/xtrkcad/params/O-Bassett-Lowke (discontinued).xtp
+share/xtrkcad/params/O-ETS TramTrack.xtp
+share/xtrkcad/params/O-ETS.xtp
+share/xtrkcad/params/O-Lehnhardt Tramrails.xtp
+share/xtrkcad/params/O-Lenz.xtp
 share/xtrkcad/params/O-RealTrax.xtp
 share/xtrkcad/params/O-Ross.xtp
 share/xtrkcad/params/O-atlaso3rail.xtp
@@ -665,6 +673,8 @@ share/xtrkcad/params/TilligAdvTT.xtp
 share/xtrkcad/params/TilligEliteHO-V2a.xtp
 share/xtrkcad/params/USA-G.xtp
 share/xtrkcad/params/Woodland.xtp
+share/xtrkcad/params/Z-Fasttrack.xtp
+share/xtrkcad/params/Z-Peco60.xtp
 share/xtrkcad/params/Z-Rokuhan.xtp
 share/xtrkcad/params/accurail.xtp
 share/xtrkcad/params/amb-n.xtp
