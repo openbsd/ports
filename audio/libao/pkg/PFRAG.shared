@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.15 2014/05/27 19:44:56 naddy Exp $
-lib/ao/
-lib/ao/plugins-4/
-@comment lib/ao/plugins-4/libsndio.la
-lib/ao/plugins-4/libsndio.so
