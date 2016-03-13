@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/11 14:28:52 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/13 07:57:37 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/traitlets/
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/traitlets/__init__.py
@@ -35,8 +35,10 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/tests/
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_traitlets.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/traitlets.py
@@ -50,3 +52,9 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}sentine
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/getargspec.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/importstring.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/sentinel.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}test_importstring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_importstring.py
