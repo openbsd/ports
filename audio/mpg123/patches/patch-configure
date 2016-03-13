@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2015/06/13 20:25:07 naddy Exp $
---- configure.orig	Sun May 24 14:54:07 2015
-+++ configure	Tue Jun  9 01:27:03 2015
-@@ -14559,10 +14559,10 @@ fi
+$OpenBSD: patch-configure,v 1.17 2016/03/13 22:42:27 naddy Exp $
+--- configure.orig	Tue Feb 23 09:58:05 2016
++++ configure	Sun Mar 13 21:48:50 2016
+@@ -14767,10 +14767,10 @@ fi
  # opt-in for IEEE754 floating point action
  # We want to make sure not to apply hacks relying on IEEE754 storage format on platforms where we did not make sure that this actually is valid.
  # It _should_ be fine for about all computers still out there, but we play safe.

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2013/03/22 16:31:36 naddy Exp $
-lib/mpg123/
-@comment lib/mpg123/output_dummy.la
-lib/mpg123/output_dummy.so
-@comment lib/mpg123/output_sndio.la
-lib/mpg123/output_sndio.so

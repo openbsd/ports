@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_mpg123-id3dump_c,v 1.1 2016/03/13 22:42:27 naddy Exp $
+--- src/mpg123-id3dump.c.orig	Tue Feb 23 09:56:53 2016
++++ src/mpg123-id3dump.c	Sun Mar 13 22:07:36 2016
+@@ -12,6 +12,7 @@
+ #include "getlopt.h"
+ #include <errno.h>
+ #include <ctype.h>
++#include <stdio.h>
+ #include "debug.h"
+ #include "win32_support.h"
+ 
