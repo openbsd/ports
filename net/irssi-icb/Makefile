@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/06 13:40:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/13 14:36:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ICB plugin for irssi
 
-DISTNAME=	irssi-icb-0.15
-REVISION=	0
+GH_ACCOUNT=	ailin-nemui
+GH_PROJECT=	irssi-icb
+GH_COMMIT=	8f7060835355d5f620a5d3b75a45336ab8efefd9
+
+DISTNAME=	irssi-icb-0.16pre20160307
 
 CATEGORIES=     net
 
@@ -16,11 +19,19 @@ RUN_DEPENDS=	net/irssi
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=   https://github.com/downloads/jperkin/irssi-icb/
-
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-irssi=${LOCALBASE}/include/irssi
+
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
+
+post-patch:
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./autorun.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irssi
