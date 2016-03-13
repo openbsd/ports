@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2016/03/01 21:39:58 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2016/03/13 10:31:16 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -343,6 +343,7 @@ lib/libreoffice/program/opengl/fadeBlackFragmentShader.glsl
 lib/libreoffice/program/opengl/fadeFragmentShader.glsl
 lib/libreoffice/program/opengl/glitterFragmentShader.glsl
 lib/libreoffice/program/opengl/glitterVertexShader.glsl
+lib/libreoffice/program/opengl/greyscaleFragmentShader.glsl
 lib/libreoffice/program/opengl/honeycombFragmentShader.glsl
 lib/libreoffice/program/opengl/honeycombGeometryShader.glsl
 lib/libreoffice/program/opengl/honeycombVertexShader.glsl
@@ -387,6 +388,8 @@ lib/libreoffice/program/opengl/textVertexShaderBatch.glsl
 lib/libreoffice/program/opengl/textureFragmentShader.glsl
 lib/libreoffice/program/opengl/textureVertexShader.glsl
 lib/libreoffice/program/opengl/transformedTextureVertexShader.glsl
+lib/libreoffice/program/opengl/vortexFragmentShader.glsl
+lib/libreoffice/program/opengl/vortexGeometryShader.glsl
 lib/libreoffice/program/opengl/vortexVertexShader.glsl
 lib/libreoffice/program/pagein-calc
 lib/libreoffice/program/pagein-common
