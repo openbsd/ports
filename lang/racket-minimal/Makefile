@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/10 02:35:29 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/13 00:11:40 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -113,7 +113,15 @@ post-install:
 .if ${FLAVOR:Mno_jit} && ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-extflonum
 .elif ${MACHINE_ARCH} == "i386"
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
+# There is a bug which only happens when extflonum is enabled on i386.
+# By default the build system of Racket uses "cc" as the preprocessor but
+# doesn't pass the CFLAGS, so it doesn't define __SSE_MATH__ which is
+# used to detect MZ_LONG_DOUBLE. If enable-extflonum is used and the
+# build system can't use MZ_LONG_DOUBLE, then the build fails with the error:
+# "cannot support extflonums; you may need to adjust compiler options"
+# The easiest workaround is to pass the CFLAGS also as CPPFLAGS.
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse" \
+			CPPFLAGS="${CPPFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum
 .endif
 
