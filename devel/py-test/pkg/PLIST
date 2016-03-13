@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/17 18:38:20 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/13 08:08:13 shadchin Exp $
 bin/py.test${MODPY_BIN_SUFFIX}
 @comment bin/py.test-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,18 +33,24 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}terminal.${MODP
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}tmpdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}unittest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/_argcomplete.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/_code/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/${MODPY_PYCACHE}_py2traceback.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/${MODPY_PYCACHE}source.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/_py2traceback.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/code.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/_code/source.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/_pluggy.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}newinterpret.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}oldinterpret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}reinterpret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}rewrite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/newinterpret.py
-lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/oldinterpret.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/reinterpret.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/rewrite.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/util.py
