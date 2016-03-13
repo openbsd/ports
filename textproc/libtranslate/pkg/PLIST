@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2016/03/13 20:44:46 sthen Exp $
 @bin bin/translate
 include/libtranslate/
 include/libtranslate/translate-common.h
@@ -11,14 +10,14 @@ include/libtranslate/translate.h
 @comment lib/libtranslate/
 lib/libtranslate.a
 lib/libtranslate.la
+@lib lib/libtranslate.so.${LIBtranslate_VERSION}
 @comment lib/libtranslate/modules/
 @comment lib/libtranslate/modules/generic.a
 @comment lib/libtranslate/modules/generic.la
+lib/libtranslate/modules/generic.so
 lib/pkgconfig/libtranslate.pc
 @man man/man1/translate.1
 @man man/man5/services.xml.5
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libtranslate/
 share/gtk-doc/html/libtranslate/TranslatePair.html
 share/gtk-doc/html/libtranslate/TranslateService.html

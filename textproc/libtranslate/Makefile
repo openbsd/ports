@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/19 18:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/13 20:44:46 sthen Exp $
 
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
 COMMENT=	library/CLI tool interfacing to online translation services
 
 DISTNAME=	libtranslate-0.99
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc
 
