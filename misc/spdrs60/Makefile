@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/16 11:41:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/13 21:39:16 sebastia Exp $
 
 COMMENT =	graphical SRCP client to control a digital model railway
 
-DISTNAME =	spdrs60-0.5.7
+DISTNAME =	spdrs60-0.6.0
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://spdrs60.sourceforge.net/
@@ -13,13 +13,12 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		x11/qt3
-WANTLIB += GL ICE SM X11 Xcursor Xext Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xrender c fontconfig freetype jpeg lcms m mng png pthread
-WANTLIB += stdc++ z
+MODULES =		x11/qt5
+WANTLIB += c m pthread Qt5Core Qt5Gui Qt5Network Qt5Widgets
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${MODQT_CONFIGURE_ARGS} --disable-html-doc
-CONFIGURE_ENV +=	LDFLAGS="`pkg-config --libs qt-mt`"
+CONFIGURE_ARGS +=	${MODQT_CONFIGURE_ARGS} --disable-html-doc \
+			--enable-qt5
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
