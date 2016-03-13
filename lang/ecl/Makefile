@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/25 19:52:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/13 00:18:19 juanfra Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -7,9 +7,9 @@ BROKEN-mips64 =	ecl_min fails
 BROKEN-sparc =	infinite loop while building
 BROKEN-arm =	infinite loop while building
 
-V =		16.0.0
+V =		16.1.2
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	4.0
+SHARED_LIBS +=	ecl	5.0
 SHARED_ONLY =	Yes
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
@@ -20,7 +20,7 @@ EXTRACT_SUFX =	.tgz
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}files/
+MASTER_SITES =		${HOMEPAGE}files/release/${V}/
 
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
@@ -45,5 +45,9 @@ LIB_DEPENDS +=	devel/gmp \
 		devel/libffi
 
 TEST_DEPENDS =	${BASE_PKGPATH}
+
+# XXX: Workaround for missing Copyright file
+post-configure:
+	@cp ${WRKSRC}/{LICENSE,Copyright}
 
 .include <bsd.port.mk>
