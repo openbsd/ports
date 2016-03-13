@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/09 01:15:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/13 13:18:39 sthen Exp $
 
 COMMENT =		pan-unicode font family
 
 NOTO_PROJECT =		fonts
 
-REVISION =		1
+REVISION =		2
 
-RUN_DEPENDS =		fonts/noto/cjk \
-			fonts/noto/emoji
+RUN_DEPENDS =		fonts/noto/emoji
 
 GH_TAGNAME =		v$V-license-adobe
 
