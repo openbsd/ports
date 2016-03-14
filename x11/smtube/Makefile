@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/11 00:29:11 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/14 15:33:53 gonzalo Exp $
 
 COMMENT =		browse and download YouTube videos
 
-DISTNAME =		smtube-16.1.0
+DISTNAME =		smtube-16.3.0
 
 CATEGORIES =		multimedia x11
 
