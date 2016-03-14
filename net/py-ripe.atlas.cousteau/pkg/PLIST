@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 20:54:15 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/14 09:33:52 florian Exp $
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,6 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_listing.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_listing.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_meta_data.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_meta_data.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/measurement.py
