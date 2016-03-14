@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/03/14 20:12:39 nigel Exp $
 
 MODULES += base/xenocara
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 XDEPS += xserver
