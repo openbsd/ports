@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/08/12 15:05:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/14 21:30:29 landry Exp $
 @bin bin/fidentify
 @bin bin/photorec
 @bin bin/testdisk
 @man man/man8/fidentify.8
 @man man/man8/photorec.8
 @man man/man8/testdisk.8
-share/doc/testdisk-${VERSION}/
-share/doc/testdisk-${VERSION}/AUTHORS
-share/doc/testdisk-${VERSION}/ChangeLog
-share/doc/testdisk-${VERSION}/NEWS
-share/doc/testdisk-${VERSION}/README
-share/doc/testdisk-${VERSION}/THANKS
-share/doc/testdisk-${VERSION}/documentation.html
+share/doc/testdisk/
+share/doc/testdisk/AUTHORS
+share/doc/testdisk/ChangeLog
+share/doc/testdisk/NEWS
+share/doc/testdisk/README
+share/doc/testdisk/THANKS
+share/doc/testdisk/documentation.html
