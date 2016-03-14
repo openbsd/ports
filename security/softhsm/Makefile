@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/05 18:57:46 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/14 06:46:25 jca Exp $
 
 PORTROACH=	limit:^1\.
 PORTROACH_COMMENT=	the 2.x version has a different user interface
-
-SHARED_ONLY=	Yes
 
 COMMENT=	software PKCS\#11 cryptographic token
 

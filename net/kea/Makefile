@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/03 14:41:11 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/14 06:46:24 jca Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/25 15:05:39 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/14 06:46:24 jca Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
