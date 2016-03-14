@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.86 2016/03/14 20:33:16 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.87 2016/03/14 20:34:34 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -44,10 +44,10 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.10.10
+			devel/nspr>=4.12
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.20.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.21.1
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
