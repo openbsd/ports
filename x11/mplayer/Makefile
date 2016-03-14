@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2016/01/14 06:10:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.260 2016/03/14 19:50:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,10 +7,9 @@ ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	movie player supporting many formats
 
-V=		20150910
+V=		20160306
 FFMPEG_V=	20160113
 DISTNAME=	mplayer-${V}
-REVISION=	3
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -27,7 +26,8 @@ WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		avcodec avformat avutil bluray bz2 c cdda_interface \
 		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
 		freetype fribidi gif jpeg m mng mp3lame ncurses png postproc \
-		pthread sndio stdc++ swscale swresample util x264 xvidcore z
+		pthread sndio ssl stdc++ swscale swresample util x264 xvidcore \
+		z
 
 MODULES+=	converters/libiconv \
 		lang/clang
@@ -112,7 +112,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 CONFIGURE_ARGS+=--enable-menu
 
 # CONFIGURE_ARGS that enable external stuff
-CONFIGURE_ARGS+=--with-sdl-config=${LOCALBASE}/bin/sdl-config
+CONFIGURE_ARGS+=--enable-openssl-nondistributable \
+		--with-sdl-config=${LOCALBASE}/bin/sdl-config
 
 # CONFIGURE_ARGS that disable external stuff
 CONFIGURE_ARGS+=--disable-caca \
