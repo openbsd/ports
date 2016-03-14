@@ -1,7 +1,8 @@
-$OpenBSD: patch-toolkit_components_protobuf_src_google_protobuf_stubs_atomicops_h,v 1.1 2015/09/24 20:21:15 landry Exp $
+$OpenBSD: patch-toolkit_components_protobuf_src_google_protobuf_stubs_atomicops_h,v 1.2 2016/03/14 20:44:37 landry Exp $
 
 FTBFS on i386 & macppc
 https://bugzilla.mozilla.org/show_bug.cgi?id=1192556
+https://hg.mozilla.org/mozilla-central/rev/70adea9b1272
 
 --- toolkit/components/protobuf/src/google/protobuf/stubs/atomicops.h.orig	Fri Sep 18 12:01:02 2015
 +++ toolkit/components/protobuf/src/google/protobuf/stubs/atomicops.h	Fri Sep 18 12:03:13 2015
