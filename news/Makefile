@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2014/11/01 10:31:21 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/14 19:07:26 awolk Exp $
 
      SUBDIR =
      SUBDIR += aub
      SUBDIR += hellanzb
      SUBDIR += leafnode
+     SUBDIR += multimail
      SUBDIR += nn
      SUBDIR += p5-Gateway
      SUBDIR += p5-News-Article
