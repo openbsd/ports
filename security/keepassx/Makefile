@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/18 10:26:29 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/14 18:20:54 steven Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	management tool for sensitive data
 
-V =		2.0
+V =		2.0.2
 DISTNAME =	keepassx-$V
 CATEGORIES =	security
 
