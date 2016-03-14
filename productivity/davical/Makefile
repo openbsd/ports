@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/30 10:01:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/14 21:02:51 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -16,8 +16,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
-MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
+MASTER_SITES =	https://rhaalovely.net/stuff/
 
 MODULES =	lang/php
 PREFIX =	${VARBASE}/www
