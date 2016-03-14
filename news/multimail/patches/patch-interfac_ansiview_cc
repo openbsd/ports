@@ -1,0 +1,13 @@
+$OpenBSD: patch-interfac_ansiview_cc,v 1.1.1.1 2016/03/14 19:04:40 awolk Exp $
+--- interfac/ansiview.cc.orig	Mon Jul 16 19:31:37 2007
++++ interfac/ansiview.cc	Wed Jan 20 00:32:12 2016
+@@ -234,7 +234,8 @@ void AnsiWindow::Init()
+ {
+ #ifdef NCURSES_VERSION
+ 	// Is the "PC" character set available?
+-	char *result = tigetstr("smpch");
++	char smpch[] = "smpch";
++	char *result = tigetstr(smpch);
+ 	useAltCharset = (result && (result != ((char *) -1)));
+ #endif
+ 	atparse = 1;

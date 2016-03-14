@@ -1,0 +1,7 @@
+MultiMail is an offline mail packet reader, supporting the Blue Wave,
+QWK, OMEN, SOUP and OPX formats. It uses a simple curses-based
+interface.
+
+SOUP is used for Internet email and Usenet. The other formats are
+primarily used with dialup (or telnet) BBSes, to save connect time and
+to provide a better interface to the message base.

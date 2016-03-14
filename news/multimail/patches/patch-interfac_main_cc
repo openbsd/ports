@@ -1,0 +1,23 @@
+$OpenBSD: patch-interfac_main_cc,v 1.1.1.1 2016/03/14 19:04:40 awolk Exp $
+--- interfac/main.cc.orig	Mon Jul 16 19:19:36 2007
++++ interfac/main.cc	Wed Jan 20 13:36:01 2016
+@@ -16,6 +16,7 @@
+ #endif
+ 
+ #include <locale.h>
++#include <unistd.h>
+ 
+ Interface *ui = 0;
+ const chtype *ColorArray = 0;
+@@ -95,6 +96,11 @@ int main(int argc, char **argv)
+ 	int ARGC = argc;
+ 
+ 	setlocale(LC_ALL, "");
++
++	if (pledge("stdio tty cpath rpath wpath fattr proc exec", NULL) == -1) {
++		perror("pledge");
++		exit(EXIT_FAILURE);
++	}
+ 
+ 	while ((ARGC > 2) && ('-' == ARGV[1][0])) {
+ 		char *resName = ARGV[1] + 1;
