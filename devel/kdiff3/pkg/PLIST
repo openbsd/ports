@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/19 07:12:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/14 23:50:50 zhuk Exp $
 @bin bin/kdiff3
 share/doc/kdiff3/
 share/doc/kdiff3/CMakeLists.txt
@@ -57,46 +57,17 @@ share/doc/kdiff3/en/common/top-right.png
 share/doc/kdiff3/en/common/top.jpg
 share/doc/kdiff3/en/common/x11-license.html
 share/doc/kdiff3/en/common/xml.dcl
-share/doc/kdiff3/en/compilation.html
-share/doc/kdiff3/en/credits.html
 share/doc/kdiff3/en/dirbrowser.png
-share/doc/kdiff3/en/dirmerge.html
 share/doc/kdiff3/en/dirmergebig.png
-share/doc/kdiff3/en/dirmergeoptions.html
-share/doc/kdiff3/en/dirmergevisible.html
-share/doc/kdiff3/en/documentation.html
-share/doc/kdiff3/en/dothemerge.html
-share/doc/kdiff3/en/faq.html
-share/doc/kdiff3/en/features.html
-share/doc/kdiff3/en/find.html
 share/doc/kdiff3/en/index.docbook
-share/doc/kdiff3/en/index.html
-share/doc/kdiff3/en/installation.html
-share/doc/kdiff3/en/interpretinginformation.html
-share/doc/kdiff3/en/introduction.html
 share/doc/kdiff3/en/iteminfo.png
 share/doc/kdiff3/en/kdiff3.1
-share/doc/kdiff3/en/kpart.html
 share/doc/kdiff3/en/letter_by_letter.png
 share/doc/kdiff3/en/merge_current.png
-share/doc/kdiff3/en/merging.html
-share/doc/kdiff3/en/misc.html
-share/doc/kdiff3/en/navigation.html
 share/doc/kdiff3/en/new.png
 share/doc/kdiff3/en/open_dialog.png
-share/doc/kdiff3/en/opendialog.html
-share/doc/kdiff3/en/options.html
-share/doc/kdiff3/en/other.html
-share/doc/kdiff3/en/pasteinput.html
-share/doc/kdiff3/en/preprocessors.html
-share/doc/kdiff3/en/printing.html
-share/doc/kdiff3/en/requirements.html
-share/doc/kdiff3/en/saving.html
 share/doc/kdiff3/en/screenshot_diff.png
 share/doc/kdiff3/en/screenshot_merge.png
-share/doc/kdiff3/en/screenshots.html
-share/doc/kdiff3/en/selections.html
-share/doc/kdiff3/en/startingdirmerge.html
 share/doc/kdiff3/en/triple_diff.png
 share/doc/kdiff3/en/white_space.png
 share/doc/kdiff3/es/
