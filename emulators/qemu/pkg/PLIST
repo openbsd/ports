@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/12/15 18:19:51 brad Exp $
+@comment $OpenBSD: PLIST,v 1.32 2016/03/14 19:46:12 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
 @pkgpath emulators/qemu,kqemu
 @pkgpath emulators/qemu-old[,no_x11]
+@bin bin/ivshmem-client
+@bin bin/ivshmem-server
 @bin bin/qemu-ga
 @bin bin/qemu-img
 @bin bin/qemu-io
@@ -38,6 +40,7 @@
 @bin bin/qemu-system-xtensaeb
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
+@man man/man8/qemu-ga.8
 @man man/man8/qemu-nbd.8
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
@@ -53,9 +56,6 @@ share/examples/qemu/qemu-ifup
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
-share/examples/qemu/target-x86_64.conf
-@sample ${SYSCONFDIR}/qemu/
-@sample ${SYSCONFDIR}/qemu/target-x86_64.conf
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
 share/locale/de_DE/LC_MESSAGES/qemu.mo
@@ -146,5 +146,6 @@ share/qemu/u-boot.e500
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin
 share/qemu/vgabios-stdvga.bin
+share/qemu/vgabios-virtio.bin
 share/qemu/vgabios-vmware.bin
 share/qemu/vgabios.bin
