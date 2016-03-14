@@ -59,7 +59,7 @@
  *	Define if a signal handler has type void (see signal.h)
  */
 
-/* #define	SIGNAL_HANDLERS_ARE_VOID	/* */
+#define	SIGNAL_HANDLERS_ARE_VOID	/* */
 
 /*
  *	Define if signals must be set again after they are caught

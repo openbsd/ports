@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/14 06:43:09 jca Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
 
