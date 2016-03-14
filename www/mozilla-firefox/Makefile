@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2016/03/10 02:41:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.292 2016/03/14 20:48:43 landry Exp $
 
 BROKEN-i386 =	wants __atomic_{store,fetch_add,fetch_sub,load}_8, even with -march=i586
 
@@ -6,18 +6,17 @@ COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	44.0.2
+MOZILLA_VERSION =	45.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
-SO_VERSION =	62.0
+SO_VERSION =	63.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps mozgnome xul clearkey lgpllibs
+MOZILLA_LIBS =	browsercomps mozgtk xul clearkey lgpllibs
 
 CATEGORIES =	www
 
@@ -57,12 +56,10 @@ LIB_DEPENDS +=	textproc/icu4c
 CONFIGURE_ARGS += --with-system-icu
 WANTLIB += icudata icui18n icuuc
 
-CONFIGURE_ARGS +=	--enable-gstreamer=1.0
+CONFIGURE_ARGS +=	--disable-gstreamer
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
-
-BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
