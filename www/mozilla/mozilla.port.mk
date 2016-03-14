@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.85 2016/03/14 20:30:02 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.86 2016/03/14 20:33:16 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -129,12 +129,13 @@ INSTALL_STRIP =
 CONFIGURE_ARGS +=	--with-system-cairo
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
-MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 pixman-1 pthread-stubs
+MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 gdk-x11-2.0 gtk-x11-2.0
 .else
-MODMOZ_LIB_DEPENDS +=	x11/gtk+2
 MODMOZ_WANTLIB +=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-			Xrandr gdk-x11-2.0 gtk-x11-2.0
+			Xrandr
 .endif
+MODMOZ_LIB_DEPENDS +=	x11/gtk+2
+MODMOZ_WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
 
 PORTHOME =	${WRKSRC}
 
