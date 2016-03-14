@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.84 2016/01/27 18:04:09 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.85 2016/03/14 20:30:02 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -151,7 +151,7 @@ WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 .endif
 
 # needed for PLIST
-MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*$//:C/esr//:C/rc.$//}
+MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*//:C/esr//:C/rc.$//}
 SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION
 
 MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
