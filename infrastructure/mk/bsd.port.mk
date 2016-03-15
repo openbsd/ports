@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1307 2016/03/11 20:32:22 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1308 2016/03/15 20:58:58 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -541,11 +541,8 @@ _PKG_ARGS += -D${_i}=1
 BUILD_PKGPATH := ${BUILD_PKGPATH},
 .endif
 
-.if ${NO_SHARED_LIBS:L} == "yes"
-_PKG_ARGS += -DSHARED_LIBS=0
-.else
 _PKG_ARGS += -DSHARED_LIBS=1
-.endif
+
 .if !empty(FLAVORS:M[0-9]*)
 ERRORS += "Fatal: flavor should never start with a digit"
 .endif
@@ -1428,10 +1425,6 @@ IGNORE += "is not an interactive port"
 _EXTRA_IGNORE += "is an interactive port: missing files"
 .endif
 
-.if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
-IGNORE += "requires shared libraries"
-.endif
-
 .if ${TRY_BROKEN:L} != "yes"
 .  if defined(BROKEN-${ARCH})
 IGNORE += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
@@ -1465,10 +1458,6 @@ _DEPENDS_TARGET ?= install
 # Various dependency styles
 _resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 			${_PERLSCRIPT}/resolve-lib
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-_resolve_lib += -noshared
-.endif
 
 PKG_CREATE_NO_CHECKS ?= No
 .if ${PKG_CREATE_NO_CHECKS:L} == "yes"
@@ -1628,23 +1617,15 @@ _RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 _TEST_DEP2 = ${TEST_DEPENDS:${_mod}}
 _TEST_DEP3 = ${_TEST_DEP2}
 
-.  if ${NO_SHARED_LIBS:L} != "yes"
 _RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:${_mod}}
 _LIB_DEP3 = ${LIB_DEPENDS${SUBPACKAGE}}
-.  else
-_LIB_DEP3 =
-.  endif
 
 _BUILD_DEP2 += ${_BUILDLIB_DEPENDS:${_mod}}
 
 .  for _S in ${MULTI_PACKAGES}
 _BUILD_DEP3${_S} = ${_BUILD_DEP3}
 _RUN_DEP3${_S} = ${RUN_DEPENDS${_S}:${_mod}}
-.    if ${NO_SHARED_LIBS:L} != "yes"
 _LIB_DEP3${_S} = ${LIB_DEPENDS${_S}}
-.    else
-_LIB_DEP3${_S} =
-.    endif
 .  endfor
 
 .endfor
@@ -1819,12 +1800,6 @@ _if_check_needed = \
 	${_parse_spec}; \
 	${_libs2cache}; \
 	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <$$cached_libs
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-_warn_if_shared = :
-.else
-_warn_if_shared = echo "LIB_DEPENDS $$d not needed for ${FULLPKGPATH${SUBPACKAGE}} ?" 1>&2
-.endif
 
 # turn a list of found libraries into parameters for pkg_create,
 # zap .a in the meantime
@@ -2420,16 +2395,10 @@ _internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 # Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=OpenBSD, vers=${OSREV})
 # when port is installed or package created.
 #
-.  if ${SHARED_ONLY:L} == "yes"
-_do_libs_too =
-.  else
-_do_libs_too = NO_SHARED_LIBS=Yes
-.  endif
-
 _extra_info =
 .  for _s in ${MULTI_PACKAGES}
 _extra_info += PLIST${_s}='${PLIST${_s}}'
-_extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends ${_do_libs_too})"
+_extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends)"
 .  endfor
 
 _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
@@ -3170,9 +3139,7 @@ print-package-signature print-update-signature:
 
 print-package-args: run-depends-args
 
-.if ${NO_SHARED_LIBS:L} != "yes"
 print-package-args: ${lib_depends_args} ${wantlib_args}
-.endif
 
 run-depends-args:
 	@${_emit_run_depends} | while ${_read_spec}; do \
@@ -3207,7 +3174,7 @@ lib-depends-args:
 			${_complete_pkgspec}; \
 			echo "-P $$pkgpath:$$pkg:$$default"; \
 		else \
-			${_warn_if_shared}; \
+			echo "LIB_DEPENDS $$d not needed for ${FULLPKGPATH${SUBPACKAGE}} ?" 1>&2; \
 		fi; \
 	done
 
