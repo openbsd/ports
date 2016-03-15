@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2016/02/25 08:39:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.69 2016/03/15 21:55:46 naddy Exp $
 
 COMMENT=	lightweight image viewer
 
 DISTNAME=	feh-2.14.2
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -20,9 +21,6 @@ MASTER_SITES=	${HOMEPAGE}
 LIB_DEPENDS=	graphics/imlib2 \
 		graphics/libexif \
 		net/curl
-
-# needed for jpegtran on NO_SHARED_LIBS archs
-RUN_DEPENDS=	graphics/jpeg
 
 RUN_DEPENDS+=	devel/desktop-file-utils
 
