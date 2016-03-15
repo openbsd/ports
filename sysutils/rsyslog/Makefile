@@ -1,44 +1,42 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/11 20:28:32 naddy Exp $
-
-BROKEN-arm =		lack of atomic ops
-BROKEN-hppa =		lack of atomic ops
+# $OpenBSD: Makefile,v 1.28 2016/03/15 23:25:33 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
-COMMENT-docs =		additional html documentation for rsyslog
-COMMENT-mysql =		mysql plugin for rsyslog
-COMMENT-pgsql =		postgresql plugin for rsyslog
+COMMENT-mysql =		MySQL plugin for rsyslog
+COMMENT-pgsql =		PostgreSQL plugin for rsyslog
 
-MULTI_PACKAGES =	-main -docs -mysql -pgsql
+MULTI_PACKAGES =	-main -mysql -pgsql
 
-V =			4.6.4
+V =			8.16.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
-PKGNAME-docs =		rsyslog-docs-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
-
-REVISION-main =		8
-REVISION-docs =		0
-REVISION-mysql =	6
-REVISION-pgsql =	3
 
 HOMEPAGE =		http://www.rsyslog.com/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		devel/gettext
+WANTLIB-main +=		${MODGETTEXT_WANTLIB}
+WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn
+WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 uuid z
 
-WANTLIB-main +=		c gmp hogweed nettle ffi gnutls pthread p11-kit
-WANTLIB-main +=		relp tasn1 z ${MODGETTEXT_WANTLIB}
-WANTLIB-mysql +=	crypto m mysqlclient ssl z pthread stdc++
+WANTLIB-mysql +=	crypto m mysqlclient pthread ssl stdc++ z
+
 WANTLIB-pgsql +=	crypto pq ssl
 
-LIB_DEPENDS-main =	security/gnutls \
-			sysutils/librelp
+MODULES =		devel/gettext
+
+LIB_DEPENDS-main =	devel/json-c \
+			devel/libestr>=0.1.2 \
+			security/libgcrypt \
+			security/gnutls \
+			sysutils/librelp>=1.2.9
+# XXX should port to using libc UUID functions
+LIB_DEPENDS-main +=	sysutils/e2fsprogs
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	${PKGNAME-main}:${PKGPATH},-main
 LIB_DEPENDS-pgsql =	databases/postgresql
@@ -47,20 +45,21 @@ RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
 MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 			http://download.rsyslog.com/rsyslog/
 
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.65
+CONFIGURE_STYLE =	gnu
 LIBTOOL_FLAGS = 	--tag=disable-static
 CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mysql \
 			--enable-mail \
 			--enable-gnutls \
-			--enable-relp
+			--enable-relp \
+			--disable-liblogging-stdlog
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
+	rm ${PREFIX}/lib/rsyslog/*.la
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rsyslog
-	${INSTALL_DATA} ${WRKSRC}/rsyslog.conf \
-	    ${PREFIX}/share/examples/rsyslog
+	${SUBST_DATA} ${FILESDIR}/rsyslog.conf \
+	    ${PREFIX}/share/examples/rsyslog/rsyslog.conf
 	${INSTALL_DATA} ${WRKSRC}/plugins/ommysql/createDB.sql \
 	    ${PREFIX}/share/examples/rsyslog/createDB_mysql.sql
 	${INSTALL_DATA} ${WRKSRC}/plugins/ompgsql/createDB.sql \
