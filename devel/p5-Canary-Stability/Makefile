@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/16 07:50:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/15 12:36:51 sthen Exp $
 
-COMMENT =	canary to check perl compatibility for schmorp's modules
+COMMENT =	canary to check perl compatibility for schmorp's modules#'
 
 MODULES =	cpan
-DISTNAME =	Canary-Stability-2006
+DISTNAME =	Canary-Stability-2011
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	MLEHMANN
