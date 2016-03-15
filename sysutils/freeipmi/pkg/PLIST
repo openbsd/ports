@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/12/02 14:33:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/15 22:22:05 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -264,7 +264,7 @@ include/ipmi_monitoring_bitmasks.h
 include/ipmi_monitoring_offsets.h
 include/ipmiconsole.h
 include/ipmidetect.h
-info/freeipmi-faq.info
+@info info/freeipmi-faq.info
 lib/libfreeipmi.a
 lib/libfreeipmi.la
 @lib lib/libfreeipmi.so.${LIBfreeipmi_VERSION}

@@ -2,10 +2,11 @@ FreeIPMI provides a library and tools to access IPMI Base Management
 Controllers, either in-band (host) or out-of-band (LAN etc), based on
 the IPMI v1.5/2.0 specification.
 
-In-band is not available under the usual securelevel(7) with OpenBSD
-but in some special situations it may be useful to run in insecure mode
-to allow configuration of the local BMC (e.g. using ipmi-config to
-adjust or disable network access or remove vendor default usernames).
+In-band requires that kernel ipmi device be enabled. This is present in
+standard kernels but not enabled by default, this can be modified with
+"boot -c" or config(8). (This can be useful when configuring the local
+BMC, e.g. using ipmi-config to adjust or disable network access or
+remove vendor default usernames).
 
 bmc-device	perform advanced BMC commands
 bmc-info	read information about BMC (device ID, version, etc)
