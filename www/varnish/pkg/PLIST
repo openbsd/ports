@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/28 02:42:39 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/15 15:07:36 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
@@ -12,6 +12,8 @@ include/varnish/
 include/varnish/cache/
 include/varnish/cache/cache.h
 include/varnish/cache/cache_backend.h
+include/varnish/cache/cache_director.h
+include/varnish/cache/cache_filter.h
 include/varnish/common/
 include/varnish/common/common.h
 include/varnish/common/params.h
@@ -28,7 +30,11 @@ include/varnish/tbl/feature_bits.h
 include/varnish/tbl/http_headers.h
 include/varnish/tbl/http_response.h
 include/varnish/tbl/locks.h
+include/varnish/tbl/obj_attr.h
+include/varnish/tbl/params.h
 include/varnish/tbl/req_body.h
+include/varnish/tbl/req_flags.h
+include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
 include/varnish/tbl/steps.h
 include/varnish/tbl/symbol_kind.h
@@ -66,6 +72,10 @@ include/varnish/vrt_obj.h
 include/varnish/vsa.h
 include/varnish/vsb.h
 include/varnish/vsha256.h
+include/varnish/vtcp.h
+include/varnish/vtim.h
+include/varnish/waiter/
+include/varnish/waiter/waiter.h
 lib/libvarnishapi.a
 lib/libvarnishapi.la
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
