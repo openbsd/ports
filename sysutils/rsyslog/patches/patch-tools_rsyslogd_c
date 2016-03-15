@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_rsyslogd_c,v 1.1 2016/03/15 23:25:51 sthen Exp $
+--- tools/rsyslogd.c.orig	Thu Mar  3 13:20:29 2016
++++ tools/rsyslogd.c	Thu Mar  3 13:21:39 2016
+@@ -29,7 +29,7 @@
+ #ifdef HAVE_LIBLOGGING_STDLOG
+ #  include <liblogging/stdlog.h>
+ #endif
+-#ifdef OS_SOLARIS
++#if defined(OS_SOLARIS) || defined(__OpenBSD__)
+ #	include <errno.h>
+ #else
+ #	include <sys/errno.h>

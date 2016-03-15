@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_mmexternal_mmexternal_c,v 1.1 2016/03/15 23:25:51 sthen Exp $
+--- plugins/mmexternal/mmexternal.c.orig	Thu Mar  3 13:19:44 2016
++++ plugins/mmexternal/mmexternal.c	Thu Mar  3 13:19:51 2016
+@@ -31,7 +31,7 @@
+ #include <errno.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/wait.h>
+ #else
+ #include <wait.h>
