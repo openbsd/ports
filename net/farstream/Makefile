@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/15 11:01:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		audio/video communications framework
 
-DISTNAME=		farstream-0.2.7
-REVISION=		1
+DISTNAME=		farstream-0.2.8
 
 CATEGORIES=		net devel
 
-SHARED_LIBS +=  farstream-0.2        1.1      # 5.0
+SHARED_LIBS +=  farstream-0.2        1.2      # 5.0
 
 API_VERSION=		0.2
 SUBST_VARS+=		API_VERSION
@@ -44,7 +43,7 @@ CONFIGURE_ARGS+=	--enable-gupnp \
 			--enable-introspection
 
 post-install:
-	rm ${PREFIX}/lib/farstream-${API_VERSION}/*.{a,la}
-	rm ${PREFIX}/lib/gstreamer-1.0/*.{a,la}
+	rm ${PREFIX}/lib/farstream-${API_VERSION}/*.la
+	rm ${PREFIX}/lib/gstreamer-1.0/*.la
 
 .include <bsd.port.mk>
