@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.12 2016/03/10 12:20:06 naddy Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.13 2016/03/15 21:45:16 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -22,9 +22,6 @@ _MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
 .endif
-
-# Set NO_SHARED_LIBS for those machines that don't support shared libraries.
-NO_SHARED_LIBS ?= No
 
 # needs multi-packages (and default subpackage) for the rest
 .if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES)
