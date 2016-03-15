@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.20 2015/12/21 01:09:51 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.21 2016/03/15 12:42:08 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -2165,6 +2165,7 @@ share/mysql-test/r/row.result
 share/mysql-test/r/rowid_order_innodb.result
 share/mysql-test/r/rpl_mysqldump_slave.result
 share/mysql-test/r/schema.result
+share/mysql-test/r/second_frac-9175.result
 share/mysql-test/r/secure_file_priv_win.result
 share/mysql-test/r/select.result
 share/mysql-test/r/select_debug.result
@@ -2230,6 +2231,7 @@ share/mysql-test/r/ssl_7937,nossl.result
 share/mysql-test/r/ssl_7937.result
 share/mysql-test/r/ssl_8k_key.result
 share/mysql-test/r/ssl_and_innodb.result
+share/mysql-test/r/ssl_cert_verify.result
 share/mysql-test/r/ssl_cipher.result
 share/mysql-test/r/ssl_compress.result
 share/mysql-test/r/ssl_connect.result
@@ -2432,6 +2434,7 @@ share/mysql-test/std_data/bug49823.CSM
 share/mysql-test/std_data/bug49823.CSV
 share/mysql-test/std_data/bug49823.frm
 share/mysql-test/std_data/bug887051.txt
+share/mysql-test/std_data/ca-cert-verify.pem
 share/mysql-test/std_data/cacert.pem
 share/mysql-test/std_data/charset_utf8.txt
 share/mysql-test/std_data/checkDBI_DBD-mysql.pl
@@ -2663,7 +2666,11 @@ share/mysql-test/std_data/rpl_loaddata2.dat
 share/mysql-test/std_data/rpl_mixed.dat
 share/mysql-test/std_data/rpl_timezone.dat
 share/mysql-test/std_data/rpl_timezone2.dat
+share/mysql-test/std_data/server-cert-verify-fail.pem
+share/mysql-test/std_data/server-cert-verify-pass.pem
 share/mysql-test/std_data/server-cert.pem
+share/mysql-test/std_data/server-key-verify-fail.pem
+share/mysql-test/std_data/server-key-verify-pass.pem
 share/mysql-test/std_data/server-key.pem
 share/mysql-test/std_data/server8k-cert.pem
 share/mysql-test/std_data/server8k-key.pem
@@ -4302,7 +4309,6 @@ share/mysql-test/suite/innodb/r/group_commit_no_optimize_thread.result
 share/mysql-test/suite/innodb/r/help_url.result
 share/mysql-test/suite/innodb/r/innochecksum.result
 share/mysql-test/suite/innodb/r/innodb-alter-discard.result
-share/mysql-test/suite/innodb/r/innodb-alter-filewrite.result
 share/mysql-test/suite/innodb/r/innodb-alter-table.result
 share/mysql-test/suite/innodb/r/innodb-alter-tempfile.result
 share/mysql-test/suite/innodb/r/innodb-alter-timestamp.result
@@ -4442,6 +4448,7 @@ share/mysql-test/suite/innodb/r/row_lock.result
 share/mysql-test/suite/innodb/r/snapshot.result
 share/mysql-test/suite/innodb/r/sp_temp_table.result
 share/mysql-test/suite/innodb/r/strict_mode.result
+share/mysql-test/suite/innodb/r/tmpdir.result
 share/mysql-test/suite/innodb/r/xa_recovery.result
 share/mysql-test/suite/innodb/t/
 share/mysql-test/suite/innodb/t/add_constraint.test
@@ -4470,7 +4477,6 @@ share/mysql-test/suite/innodb/t/help_url.test
 share/mysql-test/suite/innodb/t/innochecksum.opt
 share/mysql-test/suite/innodb/t/innochecksum.test
 share/mysql-test/suite/innodb/t/innodb-alter-discard.test
-share/mysql-test/suite/innodb/t/innodb-alter-filewrite.test
 share/mysql-test/suite/innodb/t/innodb-alter-table.test
 share/mysql-test/suite/innodb/t/innodb-alter-tempfile.test
 share/mysql-test/suite/innodb/t/innodb-alter-timestamp.test
@@ -4643,6 +4649,7 @@ share/mysql-test/suite/innodb/t/row_lock.test
 share/mysql-test/suite/innodb/t/snapshot.test
 share/mysql-test/suite/innodb/t/sp_temp_table.test
 share/mysql-test/suite/innodb/t/strict_mode.test
+share/mysql-test/suite/innodb/t/tmpdir.test
 share/mysql-test/suite/innodb/t/xa_recovery.test
 share/mysql-test/suite/innodb_fts/
 share/mysql-test/suite/innodb_fts/r/
@@ -6662,6 +6669,7 @@ share/mysql-test/suite/rpl/r/rpl_auto_increment_11932.result
 share/mysql-test/suite/rpl/r/rpl_auto_increment_bug33029.result
 share/mysql-test/suite/rpl/r/rpl_auto_increment_bug45679.result
 share/mysql-test/suite/rpl/r/rpl_auto_increment_update_failure.result
+share/mysql-test/suite/rpl/r/rpl_autogen_query_multi_byte_char.result
 share/mysql-test/suite/rpl/r/rpl_begin_commit_rollback.result
 share/mysql-test/suite/rpl/r/rpl_binlog_corruption.result
 share/mysql-test/suite/rpl/r/rpl_binlog_errors.result
@@ -7015,6 +7023,7 @@ share/mysql-test/suite/rpl/r/rpl_truncate_3innodb.result
 share/mysql-test/suite/rpl/r/rpl_typeconv.result
 share/mysql-test/suite/rpl/r/rpl_typeconv_innodb.result
 share/mysql-test/suite/rpl/r/rpl_udf.result
+share/mysql-test/suite/rpl/r/rpl_unsafe_statements.result
 share/mysql-test/suite/rpl/r/rpl_user.result
 share/mysql-test/suite/rpl/r/rpl_user_variables.result
 share/mysql-test/suite/rpl/r/rpl_variables.result
@@ -7061,6 +7070,7 @@ share/mysql-test/suite/rpl/t/rpl_auto_increment_11932.test
 share/mysql-test/suite/rpl/t/rpl_auto_increment_bug33029.test
 share/mysql-test/suite/rpl/t/rpl_auto_increment_bug45679.test
 share/mysql-test/suite/rpl/t/rpl_auto_increment_update_failure.test
+share/mysql-test/suite/rpl/t/rpl_autogen_query_multi_byte_char.test
 share/mysql-test/suite/rpl/t/rpl_begin_commit_rollback-master.opt
 share/mysql-test/suite/rpl/t/rpl_begin_commit_rollback-slave.opt
 share/mysql-test/suite/rpl/t/rpl_begin_commit_rollback.test
@@ -7530,6 +7540,7 @@ share/mysql-test/suite/rpl/t/rpl_typeconv-slave.opt
 share/mysql-test/suite/rpl/t/rpl_typeconv.test
 share/mysql-test/suite/rpl/t/rpl_typeconv_innodb.test
 share/mysql-test/suite/rpl/t/rpl_udf.test
+share/mysql-test/suite/rpl/t/rpl_unsafe_statements.test
 share/mysql-test/suite/rpl/t/rpl_user.test
 share/mysql-test/suite/rpl/t/rpl_user_variables.test
 share/mysql-test/suite/rpl/t/rpl_variables.test
@@ -8203,6 +8214,7 @@ share/mysql-test/suite/sys_vars/r/innodb_table_locks_func.result
 share/mysql-test/suite/sys_vars/r/innodb_thread_concurrency_basic.result
 share/mysql-test/suite/sys_vars/r/innodb_thread_concurrency_timer_based_basic.result
 share/mysql-test/suite/sys_vars/r/innodb_thread_sleep_delay_basic.result
+share/mysql-test/suite/sys_vars/r/innodb_tmpdir_basic.result
 share/mysql-test/suite/sys_vars/r/innodb_track_changed_pages_basic.result
 share/mysql-test/suite/sys_vars/r/innodb_track_redo_log_now_basic.result
 share/mysql-test/suite/sys_vars/r/innodb_trx_purge_view_update_only_debug_basic.result
@@ -8902,6 +8914,7 @@ share/mysql-test/suite/sys_vars/t/innodb_table_locks_func.test
 share/mysql-test/suite/sys_vars/t/innodb_thread_concurrency_basic.test
 share/mysql-test/suite/sys_vars/t/innodb_thread_concurrency_timer_based_basic.test
 share/mysql-test/suite/sys_vars/t/innodb_thread_sleep_delay_basic.test
+share/mysql-test/suite/sys_vars/t/innodb_tmpdir_basic.test
 share/mysql-test/suite/sys_vars/t/innodb_track_changed_pages_basic.test
 share/mysql-test/suite/sys_vars/t/innodb_track_redo_log_now_basic.test
 share/mysql-test/suite/sys_vars/t/innodb_trx_purge_view_update_only_debug_basic.test
@@ -9317,6 +9330,8 @@ share/mysql-test/suite/vcol/inc/vcol_trigger_sp.inc
 share/mysql-test/suite/vcol/inc/vcol_unsupported_storage_engines.inc
 share/mysql-test/suite/vcol/inc/vcol_view.inc
 share/mysql-test/suite/vcol/r/
+share/mysql-test/suite/vcol/r/alter_inplace-9045.result
+share/mysql-test/suite/vcol/r/innodb_autoinc_vcol.result
 share/mysql-test/suite/vcol/r/load_data.result
 share/mysql-test/suite/vcol/r/not_supported.result
 share/mysql-test/suite/vcol/r/rpl_vcol.result
@@ -9351,6 +9366,8 @@ share/mysql-test/suite/vcol/r/vcol_trigger_sp_myisam.result
 share/mysql-test/suite/vcol/r/vcol_view_innodb.result
 share/mysql-test/suite/vcol/r/vcol_view_myisam.result
 share/mysql-test/suite/vcol/t/
+share/mysql-test/suite/vcol/t/alter_inplace-9045.test
+share/mysql-test/suite/vcol/t/innodb_autoinc_vcol.test
 share/mysql-test/suite/vcol/t/load_data.test
 share/mysql-test/suite/vcol/t/not_supported.test
 share/mysql-test/suite/vcol/t/rpl_vcol.test
@@ -10061,6 +10078,7 @@ share/mysql-test/t/row.test
 share/mysql-test/t/rowid_order_innodb.test
 share/mysql-test/t/rpl_mysqldump_slave.test
 share/mysql-test/t/schema.test
+share/mysql-test/t/second_frac-9175.test
 share/mysql-test/t/secure_file_priv_win-master.opt
 share/mysql-test/t/secure_file_priv_win.test
 share/mysql-test/t/select.test
@@ -10133,6 +10151,7 @@ share/mysql-test/t/ssl_7937.test
 share/mysql-test/t/ssl_8k_key-master.opt
 share/mysql-test/t/ssl_8k_key.test
 share/mysql-test/t/ssl_and_innodb.test
+share/mysql-test/t/ssl_cert_verify.test
 share/mysql-test/t/ssl_cipher-master.opt
 share/mysql-test/t/ssl_cipher.test
 share/mysql-test/t/ssl_compress.test

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/02/12 13:30:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/15 12:42:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,12 +11,11 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.23
+VERSION=	10.0.24
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-REVISION-server= 0
 EPOCH=		1
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
@@ -99,7 +98,7 @@ post-install:
 
 .if ${BUILD_PACKAGES:M-tests}
 do-regress:
-	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --max-test-fail=0
+	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --verbose --max-test-fail=0
 .else
 NO_TEST=	Yes
 .endif
