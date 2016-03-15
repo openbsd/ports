@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/03/10 11:50:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2016/03/15 21:12:06 naddy Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -7,7 +7,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			6.6.4
-REVISION =		6
+REVISION =		7
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -72,11 +72,12 @@ post-install:
 pre-test:
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.arch.mk>
 
-.for _m in ${MACHINE_ARCH}
-.  if !empty(LP64_ARCHS:M${_m})
+.if ${PROPERTIES:Mlp64}
 BOOT =	boot64
-.  endif
-.endfor
-BOOT ?=	boot32
+.else
+BOOT =	boot32
+.endif
+
+.include <bsd.port.mk>
