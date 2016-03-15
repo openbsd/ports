@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/15 08:35:09 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.3
 
 TRYTOND_MODULE =	stock_supply_day
-REVISION =		0
 
 RUN_DEPENDS =		productivity/tryton/purchase
 
