@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Support_Unix_Signals_inc,v 1.1 2016/03/15 21:33:19 pascal Exp $
+--- lib/Support/Unix/Signals.inc.orig	Mon Mar 14 10:43:12 2016
++++ lib/Support/Unix/Signals.inc	Mon Mar 14 10:43:21 2016
+@@ -26,7 +26,7 @@
+ #include <algorithm>
+ #include <string>
+ #include <vector>
+-#if HAVE_EXECINFO_H
++#if defined(HAVE_BACKTRACE) && defined(ENABLE_BACKTRACES)
+ # include <execinfo.h>         // For backtrace().
+ #endif
+ #if HAVE_SIGNAL_H
