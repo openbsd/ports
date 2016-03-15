@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/22 04:17:01 stu Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/15 21:13:32 naddy Exp $
 @option no-default-conflict
 @conflict tcl->=8.6,<8.7
-%%SHARED%%
 @bin bin/tclsh8.6
 include/tcl8.6/
 include/tcl8.6/tcl.h
@@ -13,7 +12,9 @@ include/tcl8.6/tclTomMath.h
 include/tcl8.6/tclTomMathDecls.h
 lib/libtcl86.a
 @lib lib/libtcl86.so.${LIBtcl86_VERSION}
+lib/libtcl86_pic.a
 lib/libtclstub86.a
+lib/libtclstub86_pic.a
 lib/pkgconfig/tcl86.pc
 lib/tcl/
 lib/tcl/modules/

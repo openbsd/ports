@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/15 21:13:32 naddy Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 P =			4
 DISTNAME =		tk8.6.${P}
 PKGNAME =		tk-8.6.${P}
+REVISION =		0
 SHARED_LIBS =		tk86 1.2
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -43,16 +44,12 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tk8.6" \
 			--enable-man-symlinks \
 			--disable-rpath \
 			--with-tcl="${LOCALBASE}/lib/tcl/tcl8.6" \
+			EXTRA_INSTALL_BINARIES='@echo "Installing libtk86.a to $$(LIB_INSTALL_DIR)/" \
+			&& $$(INSTALL_DATA) libtk86.a $$(LIB_INSTALL_DIR)/libtk86.a \
+			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk86.a)' \
 			SHLIB_VERSION="${LIBtk86_VERSION}"
 
-.include <bsd.port.arch.mk>
-
-.if ${NO_SHARED_LIBS:L} == "no"
 ALL_TARGET =		all libtk86.a
-CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk86.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtk86.a $$(LIB_INSTALL_DIR)/libtk86.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk86.a)'
-.endif
 
 TEST_IS_INTERACTIVE =	X11
 WRKSRC =		${WRKDIST}/unix
@@ -67,9 +64,7 @@ pre-test:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tk8.6/man
-.if ${NO_SHARED_LIBS:L} == "no"
 	ln -s libtk86.a ${PREFIX}/lib/libtk86_pic.a
 	ln -s libtkstub86.a ${PREFIX}/lib/libtkstub86_pic.a
-.endif
 
 .include <bsd.port.mk>

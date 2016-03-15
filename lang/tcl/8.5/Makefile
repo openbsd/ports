@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/15 21:13:32 naddy Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.5.18
 PKGNAME =		tcl-8.5.18
+REVISION=		0
 SHARED_LIBS =		tcl85 1.7
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -36,16 +37,12 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.5" \
 			--enable-man-symlinks \
 			--disable-rpath \
 			EXTRA_INSTALL="install-private-headers" \
+			EXTRA_INSTALL_BINARIES='@echo "Installing libtcl85.a to $$(LIB_INSTALL_DIR)/" \
+			&& $$(INSTALL_DATA) libtcl85.a $$(LIB_INSTALL_DIR)/libtcl85.a \
+			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl85.a)' \
 			SHLIB_VERSION="${LIBtcl85_VERSION}"
 
-.include <bsd.port.arch.mk>
-
-.if ${NO_SHARED_LIBS:L} == "no"
 ALL_TARGET =		all libtcl85.a
-CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl85.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtcl85.a $$(LIB_INSTALL_DIR)/libtcl85.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl85.a)'
-.endif
 
 WRKSRC =		${WRKDIST}/unix
 TEST_TARGET =		test
@@ -68,9 +65,7 @@ pre-test:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tcl8.5/man
-.if ${NO_SHARED_LIBS:L} == "no"
 	ln -s libtcl85.a ${PREFIX}/lib/libtcl85_pic.a
 	ln -s libtclstub85.a ${PREFIX}/lib/libtclstub85_pic.a
-.endif
 
 .include <bsd.port.mk>

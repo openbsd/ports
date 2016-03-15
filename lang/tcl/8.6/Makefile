@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/15 21:13:32 naddy Exp $
 
 COMMENT =		Tool Command Language
 
 P =			4
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
+REVISION =		0
 SHARED_LIBS =		tcl86 1.2
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -37,18 +38,12 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.6" \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath \
+			EXTRA_INSTALL_BINARIES='@echo "Installing libtcl86.a to $$(LIB_INSTALL_DIR)/" \
+			&& $$(INSTALL_DATA) libtcl86.a $$(LIB_INSTALL_DIR)/libtcl86.a \
+			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl86.a)' \
 			SHLIB_VERSION="${LIBtcl86_VERSION}"
 
-.include <bsd.port.arch.mk>
-
-ALL_TARGET =		binaries
-
-.if ${NO_SHARED_LIBS:L} == "no"
-ALL_TARGET +=		libtcl86.a
-CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl86.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtcl86.a $$(LIB_INSTALL_DIR)/libtcl86.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl86.a)'
-.endif
+ALL_TARGET =		binaries libtcl86.a
 
 WRKSRC =		${WRKDIST}/unix
 TEST_TARGET =		test-tcl
@@ -72,9 +67,7 @@ pre-test:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tcl8.6/man
-.if ${NO_SHARED_LIBS:L} == "no"
 	ln -s libtcl86.a ${PREFIX}/lib/libtcl86_pic.a
 	ln -s libtclstub86.a ${PREFIX}/lib/libtclstub86_pic.a
-.endif
 
 .include <bsd.port.mk>

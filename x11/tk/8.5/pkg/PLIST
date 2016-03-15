@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/09/22 16:55:11 stu Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/03/15 21:13:32 naddy Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
-%%SHARED%%
 @bin bin/wish8.5
 include/tk8.5/
 include/tk8.5/default.h
@@ -20,7 +19,9 @@ include/tk8.5/ttkDecls.h
 include/tk8.5/ttkTheme.h
 lib/libtk85.a
 @lib lib/libtk85.so.${LIBtk85_VERSION}
+lib/libtk85_pic.a
 lib/libtkstub85.a
+lib/libtkstub85_pic.a
 lib/pkgconfig/tk85.pc
 lib/tcl/
 lib/tcl/tk8.5/
@@ -449,6 +450,7 @@ lib/tcl/tk8.5/obsolete.tcl
 lib/tcl/tk8.5/optMenu.tcl
 lib/tcl/tk8.5/palette.tcl
 lib/tcl/tk8.5/panedwindow.tcl
+lib/tcl/tk8.5/pkgIndex.tcl
 lib/tcl/tk8.5/safetk.tcl
 lib/tcl/tk8.5/scale.tcl
 lib/tcl/tk8.5/scrlbar.tcl
