@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.369 2016/03/12 12:11:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.370 2016/03/15 23:20:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -740,6 +740,7 @@ my $obsolete_reason = {
 	'fedora_gtk+2' => 0,
 	'adom' => 0,
 	'xcept' => 0,
+	'cqcam' => 6,
 };
 
 my @msg = (
