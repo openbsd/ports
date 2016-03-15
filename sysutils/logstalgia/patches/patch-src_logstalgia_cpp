@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_logstalgia_cpp,v 1.2 2014/10/22 15:02:26 gonzalo Exp $
---- src/logstalgia.cpp.orig	Wed Oct 15 22:57:08 2014
-+++ src/logstalgia.cpp	Wed Oct 22 10:29:38 2014
-@@ -391,7 +391,7 @@ std::string Logstalgia::dateAtPosition(float percent) 
+$OpenBSD: patch-src_logstalgia_cpp,v 1.3 2016/03/15 15:03:57 gonzalo Exp $
+--- src/logstalgia.cpp.orig	Tue Oct 20 17:32:05 2015
++++ src/logstalgia.cpp	Sun Mar 13 23:44:44 2016
+@@ -395,7 +395,7 @@ std::string Logstalgia::dateAtPosition(float percent) 
  
              time_t timestamp = le.timestamp;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_logstalgia_cpp,v 1.2 2014/10/22 15:02:26 gonzalo Exp $
              strftime(datestr, 256, "%H:%M:%S %B %d, %Y", timeinfo);
              date = std::string(datestr);
          }
-@@ -952,7 +952,7 @@ void Logstalgia::logic(float t, float dt) {
+@@ -975,7 +975,7 @@ void Logstalgia::logic(float t, float dt) {
              char datestr[256];
              char timestr[256];
  

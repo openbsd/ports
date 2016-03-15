@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/10 13:35:23 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/15 15:03:57 gonzalo Exp $
 
 COMMENT =	website access log visualization
 
-DISTNAME =	logstalgia-1.0.6
-REVISION =	2
+DISTNAME =	logstalgia-1.0.7
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	http://logstalgia.io/
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
-WANTLIB += GL GLEW GLU SDL SDL_image c freetype m pcre png pthread
+WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype m pcre png pthread
 WANTLIB += z
 
 MODULES =	converters/libiconv \
@@ -31,7 +30,7 @@ BUILD_DEPENDS =	graphics/glm \
 
 LIB_DEPENDS =	graphics/glew \
 		devel/pcre \
-		devel/sdl-image
+		devel/sdl2-image
 
 post-install:
 	@gzip -d ${PREFIX}/man/man1/logstalgia.1.gz
