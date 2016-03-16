@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/20 10:09:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/16 09:30:01 jasper Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 SHARED_ONLY =		Yes
 
 VERSION =		4.3.3
+REVISION =		0
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
