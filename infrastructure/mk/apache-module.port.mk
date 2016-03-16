@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.9 2014/03/13 22:10:53 sthen Exp $
+# $OpenBSD: apache-module.port.mk,v 1.10 2016/03/16 16:31:39 naddy Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -25,9 +25,6 @@
 # @exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
 # sbin/${MODAPACHE_ENABLE}
 # @unexec-delete rm -f ${MODAPACHE_FINAL}
-
-# Only works with archs supporting dynamic loading and Apache with DSO's.
-SHARED_ONLY ?= Yes
 
 MODAPACHE_ENABLE ?= mod_${MODAPACHE_NAME}-enable
 MODAPACHE_MODULE ?= mod_${MODAPACHE_NAME}.so
