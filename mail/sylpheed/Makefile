@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.107 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.108 2016/03/16 22:11:46 sthen Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.4.2
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS += 	 	sylph-0                   3.0 # 3.0
 SHARED_LIBS += 		sylpheed-plugin-0         3.0 # 3.0
@@ -31,28 +31,16 @@ RUN_DEPENDS =		devel/desktop-file-utils
 MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.4/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-ssl \
-			--enable-ipv6 \
-			--enable-gtkspell \
+CONFIGURE_ARGS =	--disable-compface \
 			--disable-jpilot \
+			--enable-gpgme \
+			--enable-gtkspell \
+			--enable-ipv6 \
 			--disable-ldap \
 			--disable-oniguruma \
-			--enable-gpgme \
+			--enable-ssl \
 			--disable-updatecheck
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
-
-FLAVORS = 		compface
-FLAVOR ?=
-
-.if ${FLAVOR:Mcompface}
-LIB_DEPENDS +=		mail/faces
-WANTLIB +=		compface
-CONFIGURE_ARGS +=	--enable-compface
-PERMIT_PACKAGE_CDROM =	No fee
-PERMIT_PACKAGE_FTP =	Yes
-.else
-CONFIGURE_ARGS +=	--disable-compface
-.endif
 
 .include <bsd.port.mk>
