@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/12 10:03:00 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2016/03/16 19:04:08 naddy Exp $
 @bin bin/anytooff
 @bin bin/anytoucd
 @bin bin/bdy
@@ -179,6 +178,7 @@ info/figs/trefdodecinter.png
 @info info/geomview-pt_BR
 lib/libgeomview.a
 lib/libgeomview.la
+@lib lib/libgeomview.so.${LIBgeomview_VERSION}
 libexec/geomview/
 libexec/geomview/.geomview-animate
 libexec/geomview/.geomview-clipboard
@@ -191,12 +191,12 @@ libexec/geomview/drawbdy
 libexec/geomview/gvclock
 @bin libexec/geomview/gvx
 @bin libexec/geomview/nose
-@man man/man1/geomview-animate.1
 @man man/man1/anytooff.1
 @man man/man1/anytoucd.1
 @man man/man1/bdy.1
 @man man/man1/bez2mesh.1
 @man man/man1/clip.1
+@man man/man1/geomview-animate.1
 @man man/man1/geomview.1
 @man man/man1/hvectext.1
 @man man/man1/math2oogl.1

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/16 19:04:08 naddy Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
 V =			1.9.4
 DISTNAME =		geomview-$V
-REVISION =		4
+REVISION =		5
+SHARED_LIBS =		geomview	0.0
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.geomview.org
@@ -24,8 +25,6 @@ RUN_DEPENDS =		graphics/netpbm \
 			print/ps2eps
 
 LIB_DEPENDS =		x11/openmotif
-
-USE_GMAKE =	Yes
 
 SUBST_VARS +=	V
 
