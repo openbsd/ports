@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/04 09:14:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/16 20:15:07 naddy Exp $
 
 COMMENT=	UCB's MPEG-I video stream encoder
 
 DISTNAME=	mpeg_encode-1.5b-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics
 
 # BSD
