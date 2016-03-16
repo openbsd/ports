@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
@@ -6,8 +6,6 @@ DISTNAME=	smsmail-1.0.2
 REVISION=	5
 
 CATEGORIES=	mail
-
-SHARED_ONLY=	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

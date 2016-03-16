@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:48 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	LIVE555 streaming media library
 

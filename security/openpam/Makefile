@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/25 09:41:27 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT=	Pluggable Authentication Module
 

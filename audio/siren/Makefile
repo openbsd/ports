@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/20 12:47:58 ratchov Exp $
-
-# installs and requires its own shared object modules
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =		text-based audio player
 DISTNAME =		siren-0.6

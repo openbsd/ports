@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/02/04 10:38:26 tb Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/16 16:46:31 naddy Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip

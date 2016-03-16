@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/12 09:22:08 czarkoff Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT =		modular and flexible STUN and TURN Server
 

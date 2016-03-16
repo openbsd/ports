@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:32 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT =	proxy for Asterisk Manager Interface
 DISTNAME =	astmanproxy-1.22pre081119

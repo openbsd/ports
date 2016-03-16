@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =	game programming library for C/C++ developers
-
-SHARED_ONLY =	Yes
 
 V =		1.3
 DISTNAME =	alpng13

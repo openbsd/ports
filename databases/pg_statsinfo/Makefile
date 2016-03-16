@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/27 13:35:34 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =	monitor PostgreSQL activity & statistics
-SHARED_ONLY =	Yes
 
 DISTNAME =	pg_statsinfo-2.4.1
 CATEGORIES =	databases

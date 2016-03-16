@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/18 10:17:17 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
 CATEGORIES=	audio devel
 
-SHARED_ONLY=	Yes
 DISTNAME=	cmt_src_1.15
 WRKDIST=	${WRKDIR}/cmt
 PKGNAME=	cmt-1.15

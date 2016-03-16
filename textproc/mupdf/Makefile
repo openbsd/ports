@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.62 2016/01/28 01:42:20 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/16 16:46:33 naddy Exp $
 
-SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 3.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities

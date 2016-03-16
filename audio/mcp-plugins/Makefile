@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/18 14:33:50 jasper Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =		MCP LADSPA plugins
 

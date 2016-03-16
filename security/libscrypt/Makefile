@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/05 13:31:14 sthen Exp $
-
-# should build a static library without using -fPIC
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT =	shared library that implements scrypt() functionality
 

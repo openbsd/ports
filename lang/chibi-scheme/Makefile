@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/31 14:37:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
 
 # The next version will work on other architectures again
 ONLY_FOR_ARCHS =	amd64 i386
-
-SHARED_ONLY =	Yes
 
 COMMENT =	interpreter of the R7RS Scheme programming language
 

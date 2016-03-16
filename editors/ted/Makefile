@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/16 16:46:32 naddy Exp $
 
 
 COMMENT =	X11 based RTF editor
@@ -26,7 +26,6 @@ LIB_DEPENDS =	graphics/png \
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 ALL_TARGET =	compile.shared
-SHARED_ONLY =	Yes
 NO_TEST =	Yes
 
 AFMDIR =	${PREFIX}/share/Ted/afm

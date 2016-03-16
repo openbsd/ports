@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/02/25 00:43:51 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.26 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/10 09:58:06 espie Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client

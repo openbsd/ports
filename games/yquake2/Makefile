@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/25 16:02:23 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/16 16:46:32 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
-SHARED_ONLY=	Yes
 
 COMMENT=	Yamagi Quake II
 N=		yquake2

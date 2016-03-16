@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/19 23:00:40 czarkoff Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.10 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip

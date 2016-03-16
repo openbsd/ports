@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/23 10:53:53 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =		software tools for blink(1) LED notification light
 

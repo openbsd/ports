@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/12/28 09:30:07 pascal Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 

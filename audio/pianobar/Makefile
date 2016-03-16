@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/03/01 12:44:58 dcoppa Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.76 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 

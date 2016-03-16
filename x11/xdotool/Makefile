@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/06 19:52:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT=	fake keyboard and mouse input
 
@@ -6,8 +6,6 @@ GH_TAGNAME=	v3.20150503.1
 GH_PROJECT=	xdotool
 GH_ACCOUNT=	jordansissel
 EPOCH=		0
-
-SHARED_ONLY=	Yes
 
 SHARED_LIBS=	xdo 0.1	# 1.1
 

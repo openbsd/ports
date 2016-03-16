@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/20 11:40:22 jca Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	lightweight Scheme implementation with subset of R5RS
 

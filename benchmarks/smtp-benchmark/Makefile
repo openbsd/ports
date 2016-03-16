@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	SMTP benchmark to measure throughput of an MTA
 
@@ -6,8 +6,6 @@ DISTNAME=	smtp-benchmark-1.0.4
 REVISION=	3
 
 CATEGORIES=    	benchmarks mail
-
-SHARED_ONLY=	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

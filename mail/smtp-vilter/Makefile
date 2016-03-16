@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -7,8 +7,6 @@ EPOCH=		0
 REVISION=	3
 
 CATEGORIES=	mail
-
-SHARED_ONLY=	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

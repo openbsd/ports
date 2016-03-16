@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/23 18:01:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/16 16:46:32 naddy Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
 DISTNAME =	repmgr-3.0.3
 CATEGORIES =	databases
 HOMEPAGE =	http://www.repmgr.org/
-SHARED_ONLY =	Yes
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

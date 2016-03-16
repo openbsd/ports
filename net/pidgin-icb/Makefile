@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/19 20:47:03 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT=	ICB protocol plugin for Pidgin
 

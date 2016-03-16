@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/03/10 19:29:25 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.62 2016/03/16 16:46:33 naddy Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 

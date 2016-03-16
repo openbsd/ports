@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/27 22:40:33 juanfra Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/16 16:46:32 naddy Exp $
 
 SHARED_LIBS=	chicken	4.0 # 7
 
