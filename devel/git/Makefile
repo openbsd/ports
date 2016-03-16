@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/03/12 23:23:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.147 2016/03/16 08:50:39 landry Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -9,6 +9,7 @@ DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
+REVISION-main =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -105,6 +106,8 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/multimail/$f \
 		${PREFIX}/share/git-core/templates/hooks/multimail
 .endfor
+	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/setgitperms.perl \
+		${PREFIX}/share/git-core/templates/hooks/setgitperms.perl
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
 	cd ${WRKBUILD}/gitweb && \
 		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install

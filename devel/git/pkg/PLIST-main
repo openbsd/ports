@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.67 2016/03/07 07:33:37 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.68 2016/03/16 08:50:39 landry Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -390,6 +390,7 @@ share/git-core/templates/hooks/pre-commit.sample
 share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
+share/git-core/templates/hooks/setgitperms.perl
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/
 share/git-core/templates/info/exclude
