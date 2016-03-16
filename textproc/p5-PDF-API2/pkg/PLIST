@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/02 23:58:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/03/16 00:17:01 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/API2/
 ${P5SITE}/PDF/API2.pm
@@ -172,6 +172,7 @@ ${P5SITE}/PDF/API2/Win32.pm
 @man man/man3p/PDF::API2::Util.3p
 share/examples/p5-PDF-API2/
 share/examples/p5-PDF-API2/combine_pdfs.pl
+share/examples/p5-PDF-API2/pdf-debug.pl
 share/examples/p5-PDF-API2/pdf-deoptimize.pl
 share/examples/p5-PDF-API2/pdf-optimize.pl
 share/examples/p5-PDF-API2/text2pdf.pl

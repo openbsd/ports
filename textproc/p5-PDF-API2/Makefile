@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/09 23:35:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/16 00:17:01 sthen Exp $
 
 COMMENT =	create PDF documents with perl
 
 MODULES =	cpan
 
-DISTNAME =	PDF-API2-2.026
-REVISION =	2
+DISTNAME =	PDF-API2-2.027
 CATEGORIES =	textproc
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
