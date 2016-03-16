@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/29 16:50:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/16 13:48:25 jasper Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -18,6 +18,7 @@ include/spice-client-glib-2.0/spice-audio.h
 include/spice-client-glib-2.0/spice-channel-enums.h
 include/spice-client-glib-2.0/spice-channel.h
 include/spice-client-glib-2.0/spice-client.h
+include/spice-client-glib-2.0/spice-file-transfer-task.h
 include/spice-client-glib-2.0/spice-glib-enums.h
 include/spice-client-glib-2.0/spice-option.h
 include/spice-client-glib-2.0/spice-session.h
@@ -27,6 +28,7 @@ include/spice-client-glib-2.0/spice-util.h
 include/spice-client-glib-2.0/spice-version.h
 include/spice-client-glib-2.0/usb-device-manager.h
 include/spice-client-gtk-3.0/
+include/spice-client-gtk-3.0/spice-client-gtk.h
 include/spice-client-gtk-3.0/spice-grabsequence.h
 include/spice-client-gtk-3.0/spice-gtk-session.h
 include/spice-client-gtk-3.0/spice-widget-enums.h
@@ -57,6 +59,7 @@ share/gtk-doc/html/spice-gtk/SpiceChannel.html
 share/gtk-doc/html/spice-gtk/SpiceCursorChannel.html
 share/gtk-doc/html/spice-gtk/SpiceDisplay.html
 share/gtk-doc/html/spice-gtk/SpiceDisplayChannel.html
+share/gtk-doc/html/spice-gtk/SpiceFileTransferTask.html
 share/gtk-doc/html/spice-gtk/SpiceGtkSession.html
 share/gtk-doc/html/spice-gtk/SpiceInputsChannel.html
 share/gtk-doc/html/spice-gtk/SpiceMainChannel.html
@@ -88,7 +91,7 @@ share/gtk-doc/html/spice-gtk/right-insensitive.png
 share/gtk-doc/html/spice-gtk/right.png
 share/gtk-doc/html/spice-gtk/spice-gtk-SpiceURI.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Utilities.html
-share/gtk-doc/html/spice-gtk/spice-gtk-spice-version.html
+share/gtk-doc/html/spice-gtk/spice-gtk-Version-Information.html
 share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
 share/gtk-doc/html/spice-gtk/style.css
 share/gtk-doc/html/spice-gtk/up-insensitive.png

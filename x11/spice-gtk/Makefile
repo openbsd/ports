@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/16 13:48:25 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.30
-REVISION=	0
+DISTNAME=	spice-gtk-0.31
 CATEGORIES=	x11 net
 
-SHARED_LIBS +=  spice-client-glib-2.0     3.0 # 13.0
-SHARED_LIBS +=  spice-client-gtk-3.0      1.2 # 4.0
-SHARED_LIBS +=  spice-controller          1.0 # 0.0
+SHARED_LIBS +=  spice-client-glib-2.0     3.1 # 13.0
+SHARED_LIBS +=  spice-client-gtk-3.0      1.3 # 4.0
+SHARED_LIBS +=  spice-controller          1.1 # 0.0
 
 HOMEPAGE=	http://www.spice-space.org/page/Spice-Gtk
 
@@ -27,7 +26,7 @@ WANTLIB += opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 ssl xcb xcb-render
 WANTLIB += xcb-shm z
 WANTLIB += FLAC X11-xcb Xtst execinfo gdbm json-c ogg pulse pulse-mainloop-glib
-WANTLIB += sndfile vorbis vorbisenc
+WANTLIB += sndfile vorbis vorbisenc lz4
 
 MASTER_SITES=	${HOMEPAGE}/../../download/gtk/
 EXTRACT_SUFX=	.tar.bz2
@@ -40,13 +39,14 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
-		devel/spice-protocol>=0.12.10p0 \
+		devel/spice-protocol>=0.12.11 \
 		sysutils/usbutils
 
-RUN_DEPENDS=	devel/spice-protocol>=0.12.10p0 \
+RUN_DEPENDS=	devel/spice-protocol>=0.12.11 \
 		sysutils/usbutils
 
-LIB_DEPENDS=	audio/opus \
+LIB_DEPENDS=	archivers/lz4 \
+		audio/opus \
 		audio/pulseaudio \
 		multimedia/gstreamer1/plugins-base \
 		security/cyrus-sasl2 \
@@ -63,7 +63,8 @@ CONFIGURE_ARGS=	--disable-smartcard \
 		--disable-usbredir \
 		--enable-introspection \
 		--enable-vala \
-		--with-audio=gstreamer
+		--enable-gstaudio \
+		--enable-lz4
 
 # XXX: Requires new phodav port
 CONFIGURE_ARGS+=--disable-webdav
