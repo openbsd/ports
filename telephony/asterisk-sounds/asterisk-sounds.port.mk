@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.10 2016/01/20 16:19:24 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.11 2016/03/16 15:54:25 naddy Exp $
 
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -14,12 +14,6 @@ EXTRACT_ONLY =
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
-
-# strictly speaking not, as they are just sound files, but packaging
-# these on !shared arch is just a total waste of cycles as asterisk itself
-# is SHARED_ONLY. can't use a BDEP on telephony/asterisk for this as some
-# sound files are RDEP of asterisk.
-SHARED_ONLY =	Yes
 
 _LN-en_AU =	Australian English
 _LN-en =	English
