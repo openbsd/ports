@@ -1,11 +1,10 @@
-$OpenBSD: patch-spice_macros_h,v 1.1 2016/03/09 11:58:29 jasper Exp $
+$OpenBSD: patch-spice_macros_h,v 1.2 2016/03/16 13:48:19 jasper Exp $
 
-Use BYTE_ORDER to figure out the...byte order.
-http://austingroupbugs.net/view.php?id=162
+https://bugs.freedesktop.org/show_bug.cgi?id=94570
 
---- spice/macros.h.orig	Thu Sep  3 17:18:48 2015
-+++ spice/macros.h	Wed Mar  9 11:58:10 2016
-@@ -370,6 +370,17 @@
+--- spice/macros.h.orig	Thu Mar 10 15:14:49 2016
++++ spice/macros.h	Wed Mar 16 14:18:03 2016
+@@ -381,6 +381,17 @@
  #define SPICE_ENDIAN_BIG    1234
  #define SPICE_ENDIAN_PDP    2143
  
