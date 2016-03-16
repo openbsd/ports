@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2014/10/05 13:34:40 jasper Exp $
-
-SHARED_ONLY?=		Yes
+# $OpenBSD: Makefile.inc,v 1.23 2016/03/16 20:02:11 naddy Exp $
 
 DIST_SUBDIR=		clutter
 

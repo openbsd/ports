@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.112 2016/03/10 11:50:13 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.113 2016/03/16 20:02:11 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
-
-SHARED_ONLY=	Yes
 
 COMMENT-main =	interpreted object-oriented programming language
 COMMENT-bsddb =	Berkeley db module for Python

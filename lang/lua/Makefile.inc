@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/05/18 16:43:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/03/16 20:02:11 naddy Exp $
 
 COMMENT=	powerful, light-weight programming language (version ${VERSION})
 
 DISTNAME=	lua-${VERSION}
-
-SHARED_ONLY=	Yes
 
 CATEGORIES=	lang
 

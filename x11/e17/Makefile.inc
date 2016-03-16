@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2013/05/09 17:03:55 rpe Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2016/03/16 20:02:12 naddy Exp $
 
 CATEGORIES ?=		x11
 
@@ -12,7 +12,6 @@ CONFIGURE_STYLE ?=	gnu
 
 NO_TEST ?=		Yes
 
-SHARED_ONLY ?=		Yes
 LIBTOOL_FLAGS ?=	--tag=disable-static
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}

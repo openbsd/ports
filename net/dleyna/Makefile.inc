@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/03/11 20:07:49 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile.inc,v 1.3 2016/03/16 20:02:12 naddy Exp $
 
 CATEGORIES ?=		net multimedia
 HOMEPAGE ?=		https://01.org/dleyna/

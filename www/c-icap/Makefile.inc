@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2015/05/11 12:06:21 espie Exp $
-
-SHARED_ONLY?=	Yes
+# $OpenBSD: Makefile.inc,v 1.4 2016/03/16 20:02:12 naddy Exp $
 
 CATEGORIES+=	www
 

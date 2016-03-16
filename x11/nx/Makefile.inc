@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2016/03/11 20:28:33 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile.inc,v 1.14 2016/03/16 20:02:12 naddy Exp $
 
 CATEGORIES+=	x11
 

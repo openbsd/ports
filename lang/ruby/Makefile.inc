@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2016/03/10 11:50:13 naddy Exp $
-
-SHARED_ONLY ?=	Yes
+# $OpenBSD: Makefile.inc,v 1.15 2016/03/16 20:02:11 naddy Exp $
 
 DISTNAME ?=	ruby-${VERSION}-p${PATCHLEVEL}
 

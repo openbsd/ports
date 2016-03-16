@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.73 2016/03/12 20:23:35 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.74 2016/03/16 20:02:11 naddy Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -26,8 +26,6 @@ MASTER_SITES0=		https://download.suhosin.org/
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
 PERMIT_PACKAGE_CDROM=   Yes
-
-SHARED_ONLY=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 
