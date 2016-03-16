@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/16 22:37:11 naddy Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
 VERSION=	1.0.4
 DISTNAME=	hfsplus_${VERSION}
 PKGNAME=	hfsplus-${VERSION}
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	hfsp	0.0
 
 CATEGORIES=	misc 
