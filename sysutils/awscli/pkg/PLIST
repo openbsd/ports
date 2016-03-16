@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/04 14:22:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/16 08:21:20 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -381,6 +381,22 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/get-invalida
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/list-distributions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/list-invalidations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/update-distribution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/add-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/create-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/create-trail.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/delete-trail.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/describe-trails.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/get-trail-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/list-public-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/list-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/lookup-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/remove-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/start-logging.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/stop-logging.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/update-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/update-trail.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/validate-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/delete-alarms.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/describe-alarm-history.rst
@@ -1078,6 +1094,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/revoke-cluster
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/revoke-snapshot-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/change-resource-record-sets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/change-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/create-health-check.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/create-hosted-zone.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/route53/delete-health-check.rst
