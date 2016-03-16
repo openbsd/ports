@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2015/06/26 18:08:39 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile.inc,v 1.33 2016/03/16 16:53:50 naddy Exp $
 
 CATEGORIES +=		sysutils
 
