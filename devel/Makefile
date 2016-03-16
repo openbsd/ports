@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1471 2016/03/12 12:11:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.1472 2016/03/16 19:32:32 naddy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1569,7 +1569,6 @@
      SUBDIR += tortoisehg
      SUBDIR += ucpp
      SUBDIR += udis86
-     SUBDIR += uisp
      SUBDIR += uthash
      SUBDIR += utop
      SUBDIR += uuid
