@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.47 2016/03/12 20:18:26 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.48 2016/03/16 21:40:56 naddy Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
 MASTER_SITES ?=	${MASTER_SITE_KDE:S@$@Attic/${VERSION}/src/@}
 EXTRACT_SUFX ?=	.tar.bz2
 
-# Parts of kde want shared libraries to work, as some symbols are
-# duplicated over the place.
-SHARED_ONLY =		Yes
 MODKDE_VERSION ?=	3.1
 MODULES ?=		x11/kde
 
