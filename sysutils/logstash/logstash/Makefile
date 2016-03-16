@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/09 11:39:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/16 13:02:33 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
-V=			2.1.1
+V=			2.2.2
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
-REVISION=		0
 EPOCH=			0
 
 MASTER_SITES=		https://download.elastic.co/logstash/logstash/
@@ -29,7 +28,13 @@ SUBST_VARS=		JFFI_ARCH
 # get to "building". Wipe the jruby vendor directory as we'll later link to
 # the system jruby.
 do-build:
+	-rm -rf ${WRKSRC}/vendor/bundle/jruby/1.9/gems/childprocess-0.5.9/lib/childprocess/unix/platform
 	-rm -r ${WRKSRC}/vendor/jruby/lib/jni
+	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/i386-{darwin,freebsd,linux,solaris,windows}
+	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/{i486-gnu,mips*}
+	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/powerpc-{aix,darwin,linux}
+	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/{ppc*,s390*,sparc*}
+	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/x86_64-{darwin,freebsd,linux,solaris,windows}
 	${SUBST_CMD} ${WRKSRC}/bin/logstash.lib.sh
 	@# apply hammer to fixup weird modes
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
