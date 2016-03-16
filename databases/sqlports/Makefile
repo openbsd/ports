@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/05/14 18:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/16 15:49:36 naddy Exp $
 
 CATEGORIES =		databases
 V =			4.4
@@ -13,35 +13,20 @@ PKGNAME-compact =	sqlports-compact-$V
 PKGNAME-main =		sqlports-$V
 PKGNAME-list =		portslist-$V
 
-
 PERMIT_PACKAGE_CDROM =	Yes
 MULTI_PACKAGES =	-main -compact -list
 
-NOT_FOR_ARCHS-main =	${NO_SHARED_ARCHS}
-NOT_FOR_ARCHS-compact =	${NO_SHARED_ARCHS}
-
-.include <bsd.port.arch.mk>
-
 DBNAME =		${WRKBUILD}/sqlports
-DBS =	${DBNAME}.list
-
-.if ${BUILD_PACKAGES:M-main}
-MKDB=${FILESDIR}/mksqlitedb
-DBS += ${DBNAME} ${DBNAME}-compact
+DBS =			${DBNAME}.list ${DBNAME} ${DBNAME}-compact
 BUILD_DEPENDS =		databases/p5-DBD-SQLite
 
-post-build:
-	sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
-.else
-MKDB=${FILESDIR}/mkdblite
-.endif
-
 do-build:
-	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} perl ${MKDB} -v ${DBNAME} -p ${WRKBUILD}/ouch
+	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
+	sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
 
 do-install:
 	@for i in ${DBS}; do \
