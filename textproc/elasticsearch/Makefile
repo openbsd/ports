@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/18 07:53:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/16 13:04:35 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-V=			2.1.1
-REVISION =		0
+V=			2.2.1
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
@@ -32,7 +31,7 @@ SUBST_VARS+=		VARBASE V
 do-install:
 	${SUBST_CMD} ${WRKSRC}/config/elasticsearch.yml \
 			${WRKSRC}/bin/plugin
-	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib}/ \
+	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib,modules}/ \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
 .for b in elasticsearch plugin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${ES_BASE}/bin/
@@ -41,6 +40,7 @@ do-install:
 .for c in ${WRKSRC}/config/*.yml ${WRKSRC}/bin/elasticsearch.in.sh
 	${INSTALL_DATA} ${WRKSRC}/$c ${PREFIX}/share/examples/elasticsearch/
 .endfor
+	cp -R ${WRKSRC}/modules ${ES_BASE}
 	${INSTALL_DATA} ${WRKSRC}/README.textile ${PREFIX}/share/doc/elasticsearch/
 
 .include <bsd.port.mk>
