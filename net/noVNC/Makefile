@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/04 14:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/16 11:49:07 sthen Exp $
 
 COMMENT=	VNC client using HTML5 (Web Sockets, Canvas)
 
-DISTNAME=	noVNC-20160129
+DISTNAME=	noVNC-20160209
 GH_ACCOUNT=	kelleyk
 GH_PROJECT=	noVNC
-GH_COMMIT=	af8836f23048f07299862f973f8499eff36a0871
+GH_COMMIT=	9ade40e815b15c7dcf732e24f6870cd0d88547c2
 
 CATEGORIES=	net www
 
