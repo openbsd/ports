@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/03/10 02:02:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/03/16 08:20:36 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -59,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2014-05-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2014-05-31/paginators-1.json
@@ -138,6 +139,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/ser
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/2016-01-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/2016-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/2015-04-16/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/2015-04-16/service-2.json
