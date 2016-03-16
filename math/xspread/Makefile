@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/16 22:22:33 naddy Exp $
 
 COMMENT=	spreadsheet program under X11
 
 DISTNAME=	xspread3.1.1c
 PKGNAME=	xspread-3.1.1c
-REVISION=	1
+REVISION=	2
 CATEGORIES=	math
 
 # GPLv2
@@ -20,7 +20,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 INSTALL_TARGET= install install.man
 
 post-install:
-	@find ${WRKSRC} -name "*.tmp" -delete || /usr/bin/true
+	@find ${WRKSRC} -name "*.tmp" -exec rm -f {} +
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/xspread/{doc,documents,tests}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xspread
