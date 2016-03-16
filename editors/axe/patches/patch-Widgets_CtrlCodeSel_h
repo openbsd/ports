@@ -1,7 +1,7 @@
-$OpenBSD: patch-Widgets_CtrlCodeSel_h,v 1.1 2001/08/22 00:04:41 naddy Exp $
+$OpenBSD: patch-Widgets_CtrlCodeSel_h,v 1.2 2016/03/16 18:36:37 naddy Exp $
 --- Widgets/CtrlCodeSel.h.orig	Wed Apr  6 18:07:46 1994
-+++ Widgets/CtrlCodeSel.h	Tue Aug 21 02:43:48 2001
-@@ -40,7 +40,6 @@ typedef struct _ControlCodeSelectorRec  
++++ Widgets/CtrlCodeSel.h	Wed Mar  9 18:06:13 2016
+@@ -40,7 +40,6 @@ typedef struct _ControlCodeSelectorRec      *ControlCo
  #define XtNbase          "base"
  #define XtCBase          "Base"
  #define XtNenterCallback "enterCallback"

@@ -1,0 +1,20 @@
+$OpenBSD: patch-Widgets_regexp_c,v 1.1 2016/03/16 18:36:37 naddy Exp $
+--- Widgets/regexp.c.orig	Wed Apr  6 18:07:43 1994
++++ Widgets/regexp.c	Wed Mar 16 19:24:55 2016
+@@ -28,6 +28,8 @@
+  * regular-expression syntax might require a total rethink.
+  */
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "regexp.h"
+ #include "regmagic.h"
+ 
+@@ -199,7 +201,6 @@ char *exp;
+ 	register char *longest;
+ 	register int len;
+ 	int flags;
+-	extern char *malloc();
+ 
+ 	if (exp == NULL)
+ 		FAIL("NULL argument");

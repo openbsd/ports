@@ -1,0 +1,20 @@
+$OpenBSD: patch-coaxe_c,v 1.1 2016/03/16 18:36:37 naddy Exp $
+--- coaxe.c.orig	Wed Apr  6 18:07:34 1994
++++ coaxe.c	Wed Mar 16 19:29:26 2016
+@@ -31,14 +31,12 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xatom.h>
+ #include <sys/param.h>
+-#include <sys/errno.h>
+-extern int errno;
++#include <errno.h>
+ #ifndef __BSD_4_4__
+ extern char *sys_errlist[];
+ #endif
+ #include <stdio.h>
+-extern char *getenv();
+-extern char *malloc(), *realloc();
++#include <stdlib.h>
+ 
+ #include "util.h"
+ 

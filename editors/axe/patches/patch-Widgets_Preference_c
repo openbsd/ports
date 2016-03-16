@@ -1,0 +1,12 @@
+$OpenBSD: patch-Widgets_Preference_c,v 1.1 2016/03/16 18:36:37 naddy Exp $
+--- Widgets/Preference.c.orig	Fri Jun 17 17:00:54 1994
++++ Widgets/Preference.c	Wed Mar 16 19:23:15 2016
+@@ -35,6 +35,8 @@
+ #include <X11/Xaw/Box.h>
+ #include <AxeText.h>
+ 
++#include <stdio.h>
++
+ #include <PreferenceP.h>
+ 
+ #define PRIVATE(w,field) (((PreferenceWidget) w)->preference.field)
