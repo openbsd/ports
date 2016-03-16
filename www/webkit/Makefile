@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2016/02/04 13:34:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2016/03/16 07:10:57 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -6,14 +6,13 @@ COMMENT =	open source web browser engine for Gtk+
 BROKEN-alpha =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 
-V =		2.4.9
+V =		2.4.10
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	4
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -78,7 +77,7 @@ CONFIGURE_ENV +=	COVERAGE_LDFLAGS="-Wl,--relax"
 
 WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
-		EGL X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
+		EGL X11-xcb glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
 		Xxf86vm dbus-1 lzma drm gbm \

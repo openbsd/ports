@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/03/25 06:25:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/03/16 07:10:57 ajacoutot Exp $
 %%gtk3%%
 !%%gtk3%%
 include/webkitgtk-${WEBKIT_API_VERSION}/
@@ -428,7 +428,6 @@ share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/ch01.html
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/home.png
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/index-all.html
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/index.html
-share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/index.sgml
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/left-insensitive.png
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/left.png
 share/gtk-doc/html/webkitdomgtk-${WEBKIT_API_VERSION}/right-insensitive.png
@@ -502,7 +501,6 @@ share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index-1.3.8.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index-all.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index-deprecated.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index.html
-share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index.sgml
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/left-insensitive.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/left.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/right-insensitive.png

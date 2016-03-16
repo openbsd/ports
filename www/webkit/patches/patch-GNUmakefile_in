@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.40 2016/03/16 07:10:57 ajacoutot Exp $
 
 - chunk 1->4 : remove silent build lines
 - chunk 5 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
@@ -6,9 +6,9 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
 - chunk 6->9 : fix variable quoting to properly install doc in a versionned dir
 
---- GNUmakefile.in.orig	Wed May 20 11:29:33 2015
-+++ GNUmakefile.in	Wed May 20 15:16:37 2015
-@@ -12574,11 +12574,11 @@ am__v_P_0 = false
+--- GNUmakefile.in.orig	Mon Mar 14 08:37:14 2016
++++ GNUmakefile.in	Tue Mar 15 08:11:20 2016
+@@ -12541,11 +12541,11 @@ am__v_P_0 = false
  am__v_P_1 = :
  AM_V_GEN = $(am__v_GEN_@AM_V@)
  am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
@@ -22,7 +22,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  am__v_at_1 = 
  DEFAULT_INCLUDES = -I.@am__isrc@
  depcomp = $(SHELL) $(top_srcdir)/Source/autotools/depcomp
-@@ -12588,7 +12588,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -12555,7 +12555,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
@@ -31,7 +31,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  am__v_CC_1 = 
  CCLD = $(CC)
  LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -12596,13 +12596,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -12563,13 +12563,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_@AM_V@)
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
@@ -47,7 +47,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  am__v_CXX_1 = 
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-@@ -12610,7 +12610,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
+@@ -12577,7 +12577,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
  am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
@@ -56,7 +56,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  am__v_CXXLD_1 = 
  SOURCES = $(Libraries_WebExtensions_libWebExtensionTest_la_SOURCES) \
  	$(Libraries_WebExtensions_libWebProcessTest_la_SOURCES) \
-@@ -72933,7 +72933,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -72944,7 +72944,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp
@@ -65,7 +65,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -82504,8 +82504,8 @@ install-data-local:
+@@ -82517,8 +82517,8 @@ install-data-local:
  @ENABLE_WEBKIT1_TRUE@	then echo 1>&2 'No documentation to install' ; \
  @ENABLE_WEBKIT1_TRUE@	else \
  @ENABLE_WEBKIT1_TRUE@	  DOC_MODULE_VERSION=`cat ./Documentation/webkitgtk/version.xml`; \
@@ -76,7 +76,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  @ENABLE_WEBKIT1_TRUE@	  else \
  @ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk"; \
  @ENABLE_WEBKIT1_TRUE@	  fi; \
-@@ -82514,9 +82514,9 @@ install-data-local:
+@@ -82527,9 +82527,9 @@ install-data-local:
  @ENABLE_WEBKIT1_TRUE@	    echo ' $(INSTALL_DATA) '$$i ; \
  @ENABLE_WEBKIT1_TRUE@	    $(INSTALL_DATA) $$i $${installdir}; \
  @ENABLE_WEBKIT1_TRUE@	  done; \
@@ -88,7 +88,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  @ENABLE_WEBKIT1_TRUE@	  fi; \
  @ENABLE_WEBKIT1_TRUE@	fi
  @ENABLE_WEBKIT2_TRUE@	@installfiles=`echo ./Documentation/webkit2gtk/html/*`; \
-@@ -82544,8 +82544,8 @@ install-data-local:
+@@ -82557,8 +82557,8 @@ install-data-local:
  	then echo 1>&2 'No documentation to install' ; \
  	else \
  	  DOC_MODULE_VERSION=`cat ./Documentation/webkitdomgtk/version.xml`; \
@@ -99,7 +99,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.39 2015/05/20 15:32:54 ajacoutot Exp $
  	  else \
  	    installdir="$(DESTDIR)$(HTML_DIR)/webkitdomgtk"; \
  	  fi; \
-@@ -82554,9 +82554,9 @@ install-data-local:
+@@ -82567,9 +82567,9 @@ install-data-local:
  	    echo ' $(INSTALL_DATA) '$$i ; \
  	    $(INSTALL_DATA) $$i $${installdir}; \
  	  done; \
