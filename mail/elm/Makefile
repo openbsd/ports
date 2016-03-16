@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/08/28 14:22:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/16 20:44:32 naddy Exp $
 
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
