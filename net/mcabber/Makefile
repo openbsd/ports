@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/10 20:38:19 tim Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/16 09:47:14 mestre Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-1.0.0
+DISTNAME=		mcabber-1.0.2
 CATEGORIES=		net
 
 HOMEPAGE=		http://mcabber.com/
@@ -20,7 +20,7 @@ MODULES=		devel/gettext
 
 WANTLIB=		c crypto gcrypt gpg-error ncursesw panelw pcre pthread \
 			ssl glib-2.0 gmodule-2.0 gpgme loudmouth-1>=3 \
-			idn otr assuan
+			idn otr assuan ffi gobject-2.0
 
 LIB_DEPENDS=		devel/glib2 \
 			security/gpgme \
