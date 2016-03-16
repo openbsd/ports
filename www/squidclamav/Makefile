@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/18 10:47:52 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT=	clamd-based virus scanner for c-icap
 

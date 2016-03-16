@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/05/22 11:31:14 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.51 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT-main=	ISO-C API and CLI for generating UUIDs
 COMMENT-perl=	UUID modules for Perl

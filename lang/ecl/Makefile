@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/13 00:18:19 juanfra Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -10,7 +10,6 @@ BROKEN-arm =	infinite loop while building
 V =		16.1.2
 DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	5.0
-SHARED_ONLY =	Yes
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 

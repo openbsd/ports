@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/11 20:28:31 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 

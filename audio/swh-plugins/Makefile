@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:12 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/16 21:19:37 naddy Exp $
 
 COMMENT =		LADSPA plugins from Steve Harris
 

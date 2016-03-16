@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:14 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT=		dynamic pixel format conversion library
 

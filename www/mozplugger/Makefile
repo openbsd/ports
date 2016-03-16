@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/17 14:28:14 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT =		framework for loading web content in external viewers
 

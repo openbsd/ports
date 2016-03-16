@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:12 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/16 21:19:37 naddy Exp $
 
 COMMENT =	module player library
 

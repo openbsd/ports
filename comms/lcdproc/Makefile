@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/05 16:29:02 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5

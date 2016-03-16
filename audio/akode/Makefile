@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/21 08:45:11 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/16 21:19:37 naddy Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 

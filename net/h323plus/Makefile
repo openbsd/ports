@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2015/07/11 07:59:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/16 21:19:38 naddy Exp $
 
 # XXX drop at next release
 CONFIGURE_ARGS += --enable-h235
-
-SHARED_ONLY=	Yes
 
 COMMENT=	H.323 video conferencing library
 

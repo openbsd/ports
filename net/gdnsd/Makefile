@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/06 10:11:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/16 21:19:38 naddy Exp $
 
 PORTROACH=		limit:^v1
 PORTROACH_COMMENT=	gdnsd >= 2.0.0 requires __thread support
-
-SHARED_ONLY=		Yes
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 

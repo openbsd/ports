@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:30 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT =		open source message queue optimised for performance
 

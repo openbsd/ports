@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/07 07:12:44 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =	advanced, stable and fast irc server
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/11 14:24:03 dcoppa Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 

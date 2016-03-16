@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/19 22:58:23 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 

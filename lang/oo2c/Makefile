@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/16 21:19:38 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT =	optimizing Oberon-2 to C compiler
-
-SHARED_ONLY =	Yes
 
 DISTNAME =	oo2c_32-2.1.11
 REVISION =	1

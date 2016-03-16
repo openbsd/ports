@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/10 22:55:04 espie Exp $
-
-# not very useful with static libao
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/16 21:19:37 naddy Exp $
 
 COMMENT=	free clone of mpg123, a command-line mp3 player
 

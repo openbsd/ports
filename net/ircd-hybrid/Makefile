@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/07 07:13:20 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.40 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =	Internet Relay Chat server
 

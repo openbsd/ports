@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2016/03/11 20:28:29 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.93 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 

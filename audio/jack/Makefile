@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/11 20:28:22 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.34 2016/03/16 21:19:37 naddy Exp $
 
 COMMENT =		low latency sound server
 

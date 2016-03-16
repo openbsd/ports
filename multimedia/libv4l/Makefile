@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:28 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =		libv4l userspace library
 

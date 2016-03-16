@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/22 00:02:41 jca Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.20 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT=	lightweight userspace bandwidth shaper
 DISTNAME=	trickle-1.07

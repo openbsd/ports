@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/25 13:18:25 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT =		high-speed character set detection library
 

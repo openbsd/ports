@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/08/25 07:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2016/03/16 21:19:38 naddy Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -19,7 +19,6 @@ REVISION-mysql =	3
 
 SHARED_LIBS =	dspam	9.0
 CATEGORIES =	mail
-SHARED_ONLY =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dspam/}
 

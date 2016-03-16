@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/19 18:14:33 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/16 21:19:39 naddy Exp $
 
 COMMENT=	software G729A encoder and decoder library
 

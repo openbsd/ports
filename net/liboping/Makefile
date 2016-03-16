@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/01 08:18:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/16 21:19:38 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	library and tools to generate ICMP echo requests
 
 DISTNAME =	liboping-1.8.0

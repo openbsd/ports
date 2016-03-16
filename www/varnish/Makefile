@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/15 15:07:36 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/16 21:19:39 naddy Exp $
 
-SHARED_ONLY =		Yes
 BROKEN-hppa =	execinfo.c:144: warning: unsupported argument to '__builtin_return_address' + Werror
 COMMENT =		high-performance HTTP accelerator
 
