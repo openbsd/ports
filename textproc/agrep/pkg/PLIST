@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/01/29 20:19:57 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/17 21:14:46 naddy Exp $
 @conflict glimpse-*
 @conflict tre-*
-bin/agrep
+@bin bin/agrep
 @man man/man1/agrep.1
 share/doc/agrep/
 share/doc/agrep/agrep.algorithms
