@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/02/01 21:53:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/03/17 16:54:06 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.6,<5.7
 @conflict php-fpm->=5.6,<5.7
@@ -67,8 +67,8 @@ share/php-${PV}/include/TSRM/tsrm_win32.h
 share/php-${PV}/include/Zend/
 share/php-${PV}/include/Zend/zend.h
 share/php-${PV}/include/Zend/zend_API.h
-share/php-${PV}/include/Zend/zend_ast.h
 share/php-${PV}/include/Zend/zend_alloc.h
+share/php-${PV}/include/Zend/zend_ast.h
 share/php-${PV}/include/Zend/zend_build.h
 share/php-${PV}/include/Zend/zend_builtin_functions.h
 share/php-${PV}/include/Zend/zend_closures.h
@@ -147,8 +147,8 @@ share/php-${PV}/include/ext/ereg/regex/utils.h
 share/php-${PV}/include/ext/filter/
 share/php-${PV}/include/ext/filter/php_filter.h
 share/php-${PV}/include/ext/gd/
-share/php-${PV}/include/ext/gd/gdcache.h
 share/php-${PV}/include/ext/gd/gd_compat.h
+share/php-${PV}/include/ext/gd/gdcache.h
 share/php-${PV}/include/ext/gd/libgd/
 share/php-${PV}/include/ext/gd/libgd/gd.h
 share/php-${PV}/include/ext/gd/libgd/gd_intern.h
@@ -223,6 +223,7 @@ share/php-${PV}/include/ext/mysqli/mysqli_libmysql.h
 share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h
+share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_alloc.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_block_alloc.h
@@ -240,7 +241,6 @@ share/php-${PV}/include/ext/mysqlnd/mysqlnd_reverse_api.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_statistics.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_structs.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_wireprotocol.h
-share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd.h
 share/php-${PV}/include/ext/pcre/
 share/php-${PV}/include/ext/pcre/pcrelib/
