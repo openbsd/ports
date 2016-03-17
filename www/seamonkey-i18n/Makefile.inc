@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.45 2016/01/22 10:28:58 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.46 2016/03/17 19:41:22 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		2.39
+FV =		2.40
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
@@ -33,8 +33,8 @@ NO_TEST =	Yes
 EXTRACT_ONLY =
 
 # needed to have all distfiles in distinfo
-LANGUAGES =	be ca de en-GB en-US es-AR es-ES fi fr gl hu it ja \
-		ja-JP-mac lt nb-NO nl pl pt-PT ru sk sv-SE tr zh-CN
+LANGUAGES =	be ca cs de en-GB en-US es-AR es-ES fi fr gl hu it ja \
+		lt nb-NO nl pl pt-PT ru sk sv-SE tr uk zh-CN zh-TW
 
 .for i in ${LANGUAGES}
 SUPDISTFILES +=	seamonkey-${FV}.$i.langpack.xpi

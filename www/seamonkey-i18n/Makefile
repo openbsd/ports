@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/02/20 20:32:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/17 19:41:22 landry Exp $
 
 SUBDIR = be
 SUBDIR += ca
+SUBDIR += cs
 SUBDIR += de
 SUBDIR += en-GB
 SUBDIR += en-US
@@ -12,7 +13,6 @@ SUBDIR += fr
 SUBDIR += gl
 SUBDIR += hu
 SUBDIR += it
-SUBDIR += ja-JP-mac
 SUBDIR += ja
 SUBDIR += lt
 SUBDIR += nb-NO
@@ -23,6 +23,8 @@ SUBDIR += ru
 SUBDIR += sk
 SUBDIR += sv-SE
 SUBDIR += tr
+SUBDIR += uk
 SUBDIR += zh-CN
+SUBDIR += zh-TW
 
 .include <bsd.port.subdir.mk>
