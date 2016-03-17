@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/29 14:05:15 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/03/17 00:46:58 jsg Exp $
 @bin bin/construct_mohawk
+@bin bin/create_sjisfnt
 @bin bin/decine
 @bin bin/degob
 @bin bin/dekyra
