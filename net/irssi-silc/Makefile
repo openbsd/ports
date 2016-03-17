@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/17 23:01:09 sthen Exp $
 
 COMMENT=	SILC plugin for irssi
 
 DISTNAME=	irssi-silc-1.1.8
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	net
 
