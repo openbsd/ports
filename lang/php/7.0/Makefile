@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/01 21:58:25 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/17 16:54:12 sthen Exp $
 
 PV=		7.0
-V=		${PV}.3
+V=		${PV}.4
 
 BUILD_DEPENDS+=	www/apache-httpd
 

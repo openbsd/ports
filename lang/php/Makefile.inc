@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.74 2016/03/16 20:02:11 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.75 2016/03/17 16:54:12 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -50,7 +50,7 @@ FLAVOR?=
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
-CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
+CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DZEND_MM_HEAP_PROTECTION -pthread" \
                         LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
 			lt_cv_path_SED=/usr/bin/sed
