@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_data_c,v 1.1 2016/03/17 21:08:28 naddy Exp $
+--- src/data.c.orig	Wed Sep 15 09:04:59 2004
++++ src/data.c	Thu Mar 17 22:04:56 2016
+@@ -55,7 +55,7 @@
+ #include <stats.h>
+ #include <config.h>
+ 
+-extern int errno, verbose, progress, bits;
++extern int verbose, progress, bits;
+ extern tnode_t **treap;
+ extern bnode_t *bintree;
+ size_t size = 0;
