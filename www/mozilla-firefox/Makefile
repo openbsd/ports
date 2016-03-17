@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2016/03/14 20:48:43 landry Exp $
-
-BROKEN-i386 =	wants __atomic_{store,fetch_add,fetch_sub,load}_8, even with -march=i586
+# $OpenBSD: Makefile,v 1.293 2016/03/17 20:08:56 landry Exp $
 
 COMMENT =	Mozilla web browser
 
