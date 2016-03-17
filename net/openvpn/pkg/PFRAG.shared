@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2013/04/20 16:22:55 sthen Exp $
-lib/openvpn/plugins/openvpn-plugin-down-root.so
