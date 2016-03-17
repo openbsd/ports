@@ -1,20 +1,9 @@
-$OpenBSD: patch-mozilla_config_system-headers,v 1.4 2016/01/20 08:39:57 jasper Exp $
-
-Fix building with freetype>=2.6.1
-https://hg.mozilla.org/mozilla-central/rev/af40750720b5
+$OpenBSD: patch-mozilla_config_system-headers,v 1.5 2016/03/17 20:18:01 landry Exp $
 
 Stop using malloc.h.
 
 --- mozilla/config/system-headers.orig	Wed Nov  4 02:56:15 2015
 +++ mozilla/config/system-headers	Thu Jan 14 18:11:28 2016
-@@ -455,6 +455,7 @@ frame/log.h
- frame/req.h
- freetype/freetype.h
- freetype/ftcache.h
-+freetype/ftfntfmt.h
- freetype/ftglyph.h
- freetype/ftsynth.h
- freetype/ftoutln.h
 @@ -708,7 +709,6 @@ MacMemory.h
  MacTCP.h
  MacTypes.h
