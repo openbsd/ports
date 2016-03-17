@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/19 02:03:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/17 22:05:07 jca Exp $
 @comment bin/pip
 @comment bin/pip2
 @comment bin/pip3
@@ -10,7 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pip/__init__.py
@@ -33,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}re-vendor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}retrying.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
@@ -46,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,6 +55,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}heuristics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}serialize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}wrapper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/_cmd.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/adapter.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/cache.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/
@@ -238,11 +240,17 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}_structures.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}specifiers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_compat.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_structures.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/markers.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/requirements.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/specifiers.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/utils.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/version.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/__init__.py
@@ -260,6 +268,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/bar.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/counter.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/helpers.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/spinner.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/re-vendor.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/__init__.py
@@ -390,8 +399,10 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/c
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}ntlmpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}pyopenssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/pyopenssl.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/exceptions.py
@@ -446,7 +457,9 @@ lib/python${MODPY_VERSION}/site-packages/pip/commands/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}completion.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}freeze.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}help.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
@@ -455,7 +468,9 @@ lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}show.${MOD
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}uninstall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/completion.py
+lib/python${MODPY_VERSION}/site-packages/pip/commands/download.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/freeze.py
+lib/python${MODPY_VERSION}/site-packages/pip/commands/hash.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/help.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/install.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/list.py
@@ -468,7 +483,9 @@ lib/python${MODPY_VERSION}/site-packages/pip/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/compat/${MODPY_PYCACHE}dictconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/compat/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/compat/dictconfig.py
+lib/python${MODPY_VERSION}/site-packages/pip/compat/ordereddict.py
 lib/python${MODPY_VERSION}/site-packages/pip/download.py
 lib/python${MODPY_VERSION}/site-packages/pip/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pip/index.py
@@ -506,16 +523,22 @@ lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}appdirs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}hashes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}outdated.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}setuptools_build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/utils/appdirs.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/build.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/deprecation.py
+lib/python${MODPY_VERSION}/site-packages/pip/utils/encoding.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/filesystem.py
+lib/python${MODPY_VERSION}/site-packages/pip/utils/hashes.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/logging.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/outdated.py
+lib/python${MODPY_VERSION}/site-packages/pip/utils/setuptools_build.py
 lib/python${MODPY_VERSION}/site-packages/pip/utils/ui.py
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/__init__.py
@@ -543,7 +566,9 @@ share/doc/${MODPY_PY_PREFIX}pip/_sources/quickstart.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/index.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip.txt
+share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_download.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_freeze.txt
+share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_hash.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_install.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_list.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/reference/pip_search.txt
@@ -585,7 +610,9 @@ share/doc/${MODPY_PY_PREFIX}pip/quickstart.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/
 share/doc/${MODPY_PY_PREFIX}pip/reference/index.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/pip.html
+share/doc/${MODPY_PY_PREFIX}pip/reference/pip_download.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/pip_freeze.html
+share/doc/${MODPY_PY_PREFIX}pip/reference/pip_hash.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/pip_install.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/pip_list.html
 share/doc/${MODPY_PY_PREFIX}pip/reference/pip_search.html
