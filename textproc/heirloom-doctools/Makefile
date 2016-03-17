@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/07 09:49:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/17 08:00:25 bentley Exp $
 
 COMMENT =		modernized troff implementation
 
-V =			150406
+V =			160308
 DISTNAME =		heirloom-doctools-$V
 
 CATEGORIES =		textproc print
 
 HOMEPAGE =		https://n-t-roff.github.io/heirloom/doctools.html
+
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # see LICENSE and LICENSE.d/
 PERMIT_PACKAGE_CDROM =	Yes

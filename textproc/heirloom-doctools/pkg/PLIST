@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/07 09:49:28 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/03/17 08:00:25 bentley Exp $
 heirloom-doctools/
 heirloom-doctools/bin/
 @bin heirloom-doctools/bin/addbib
 @bin heirloom-doctools/bin/checkeq
 @bin heirloom-doctools/bin/checknr
 @bin heirloom-doctools/bin/col
+@bin heirloom-doctools/bin/dhtml
 @bin heirloom-doctools/bin/dpost
 @bin heirloom-doctools/bin/eqn
 @bin heirloom-doctools/bin/grap
@@ -29,6 +30,7 @@ heirloom-doctools/man/man1/
 @man heirloom-doctools/man/man1/addbib.1
 @man heirloom-doctools/man/man1/checkeq.1
 @man heirloom-doctools/man/man1/checknr.1
+@man heirloom-doctools/man/man1/dhtml.1
 @man heirloom-doctools/man/man1/dpost.1
 @man heirloom-doctools/man/man1/eqn.1
 @man heirloom-doctools/man/man1/grap.1
@@ -71,6 +73,22 @@ libexec/heirloom-doctools/vgrindefs
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/heirloom-doctools/
 share/heirloom-doctools/font/
+share/heirloom-doctools/font/devhtml/
+share/heirloom-doctools/font/devhtml/B
+share/heirloom-doctools/font/devhtml/BI
+share/heirloom-doctools/font/devhtml/C
+share/heirloom-doctools/font/devhtml/CB
+share/heirloom-doctools/font/devhtml/CHAR
+share/heirloom-doctools/font/devhtml/CI
+share/heirloom-doctools/font/devhtml/CR
+share/heirloom-doctools/font/devhtml/CW
+share/heirloom-doctools/font/devhtml/DESC
+share/heirloom-doctools/font/devhtml/H
+share/heirloom-doctools/font/devhtml/HB
+share/heirloom-doctools/font/devhtml/HI
+share/heirloom-doctools/font/devhtml/I
+share/heirloom-doctools/font/devhtml/R
+share/heirloom-doctools/font/devhtml/S
 share/heirloom-doctools/font/devpost/
 share/heirloom-doctools/font/devpost/AB
 share/heirloom-doctools/font/devpost/AB.name
@@ -97,6 +115,7 @@ share/heirloom-doctools/font/devpost/CX.name
 share/heirloom-doctools/font/devpost/DESC
 share/heirloom-doctools/font/devpost/DESC.big
 share/heirloom-doctools/font/devpost/DESC.small
+share/heirloom-doctools/font/devpost/FONTMAP
 share/heirloom-doctools/font/devpost/G
 share/heirloom-doctools/font/devpost/GI
 share/heirloom-doctools/font/devpost/GR
@@ -110,16 +129,16 @@ share/heirloom-doctools/font/devpost/HI.name
 share/heirloom-doctools/font/devpost/HK
 share/heirloom-doctools/font/devpost/HL
 share/heirloom-doctools/font/devpost/HM
+share/heirloom-doctools/font/devpost/HNB
+share/heirloom-doctools/font/devpost/HNB.name
+share/heirloom-doctools/font/devpost/HNBI
+share/heirloom-doctools/font/devpost/HNBI.name
+share/heirloom-doctools/font/devpost/HNI
+share/heirloom-doctools/font/devpost/HNI.name
+share/heirloom-doctools/font/devpost/HNR
+share/heirloom-doctools/font/devpost/HNR.name
 share/heirloom-doctools/font/devpost/HX
 share/heirloom-doctools/font/devpost/HX.name
-share/heirloom-doctools/font/devpost/Hb
-share/heirloom-doctools/font/devpost/Hb.name
-share/heirloom-doctools/font/devpost/Hi
-share/heirloom-doctools/font/devpost/Hi.name
-share/heirloom-doctools/font/devpost/Hr
-share/heirloom-doctools/font/devpost/Hr.name
-share/heirloom-doctools/font/devpost/Hx
-share/heirloom-doctools/font/devpost/Hx.name
 share/heirloom-doctools/font/devpost/I
 share/heirloom-doctools/font/devpost/I.name
 share/heirloom-doctools/font/devpost/KB
@@ -218,6 +237,7 @@ share/heirloom-doctools/font/devps/CW.afm
 share/heirloom-doctools/font/devps/CX
 share/heirloom-doctools/font/devps/CX.afm
 share/heirloom-doctools/font/devps/DESC
+share/heirloom-doctools/font/devps/FONTMAP
 share/heirloom-doctools/font/devps/H
 share/heirloom-doctools/font/devps/H.afm
 share/heirloom-doctools/font/devps/HB
@@ -253,6 +273,7 @@ share/heirloom-doctools/font/devpslow/CW.afm
 share/heirloom-doctools/font/devpslow/CX
 share/heirloom-doctools/font/devpslow/CX.afm
 share/heirloom-doctools/font/devpslow/DESC
+share/heirloom-doctools/font/devpslow/FONTMAP
 share/heirloom-doctools/font/devpslow/H
 share/heirloom-doctools/font/devpslow/H.afm
 share/heirloom-doctools/font/devpslow/HB
@@ -288,6 +309,7 @@ share/heirloom-doctools/font/devpsmed/CW.afm
 share/heirloom-doctools/font/devpsmed/CX
 share/heirloom-doctools/font/devpsmed/CX.afm
 share/heirloom-doctools/font/devpsmed/DESC
+share/heirloom-doctools/font/devpsmed/FONTMAP
 share/heirloom-doctools/font/devpsmed/H
 share/heirloom-doctools/font/devpsmed/H.afm
 share/heirloom-doctools/font/devpsmed/HB
@@ -348,6 +370,7 @@ share/heirloom-doctools/pub/utf-8
 share/heirloom-doctools/tmac/
 share/heirloom-doctools/tmac/acm.me
 share/heirloom-doctools/tmac/an
+share/heirloom-doctools/tmac/an-ext
 share/heirloom-doctools/tmac/andoc
 share/heirloom-doctools/tmac/bib
 share/heirloom-doctools/tmac/chars.me
