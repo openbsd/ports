@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_gfx_skia_moz_build,v 1.7 2015/11/09 13:54:30 landry Exp $
+$OpenBSD: patch-mozilla_gfx_skia_moz_build,v 1.8 2016/03/17 19:39:38 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
---- mozilla/gfx/skia/moz.build.orig	Wed Nov  4 02:55:27 2015
-+++ mozilla/gfx/skia/moz.build	Mon Nov  9 10:30:33 2015
+--- mozilla/gfx/skia/moz.build.orig	Thu Jan 14 06:37:45 2016
++++ mozilla/gfx/skia/moz.build	Fri Jan 15 09:08:15 2016
 @@ -573,7 +573,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
              'skia/src/opts/memset32_neon.S',
          ]
@@ -11,7 +11,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
      if CONFIG['CPU_ARCH'] == 'x86_64':
          SOURCES += [
              'skia/src/opts/SkBlitRow_opts_SSE4_x64_asm.S',
-@@ -645,11 +645,13 @@ if CONFIG['_MSC_VER']:
+@@ -647,11 +647,13 @@ if CONFIG['_MSC_VER']:
  if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
      SOURCES['skia/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
      SOURCES['skia/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']

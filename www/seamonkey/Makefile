@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2016/03/14 20:42:51 landry Exp $
+# $OpenBSD: Makefile,v 1.187 2016/03/17 19:39:38 landry Exp $
 
 BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
 
@@ -7,7 +7,7 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 
 
-MOZILLA_VERSION =	2.39
+MOZILLA_VERSION =	2.40
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
@@ -15,10 +15,8 @@ EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-4.4
+PKGNAME-lightning =	lightning-seamonkey-4.5
 EPOCH-lightning =	0
-REVISION-lightning =	0
-REVISION-main =		2
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
