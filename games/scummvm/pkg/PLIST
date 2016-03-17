@@ -1,17 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/03/25 00:12:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/03/17 00:40:54 jsg Exp $
 @bin bin/scummvm
 @man man/man6/scummvm.6
 share/applications/scummvm.desktop
 share/doc/scummvm/
 share/doc/scummvm/AUTHORS
+share/doc/scummvm/COPYING
+share/doc/scummvm/COPYING.BSD
+share/doc/scummvm/COPYING.FREEFONT
+share/doc/scummvm/COPYING.LGPL
+share/doc/scummvm/COPYRIGHT
 share/doc/scummvm/NEWS
 share/doc/scummvm/README
 share/icons/
-share/icons/scummvm.svg
-share/icons/scummvm.xpm
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/scummvm.svg
+share/pixmaps/
+share/pixmaps/scummvm.xpm
 share/scummvm/
+share/scummvm/access.dat
+share/scummvm/drascula.dat
+share/scummvm/hugo.dat
+share/scummvm/kyra.dat
+share/scummvm/lure.dat
+share/scummvm/mort.dat
+share/scummvm/neverhood.dat
+share/scummvm/pred.dic
+share/scummvm/queen.tbl
 share/scummvm/scummclassic.zip
 share/scummvm/scummmodern.zip
+share/scummvm/sky.cpt
+share/scummvm/teenagent.dat
+share/scummvm/tony.dat
+share/scummvm/toon.dat
 share/scummvm/translations.dat
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/scummvm/wintermute.zip

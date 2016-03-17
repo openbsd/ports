@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2014/11/29 10:10:47 jsg Exp $
---- configure.orig	Fri Jul 11 23:10:26 2014
-+++ configure	Fri Nov 28 21:51:37 2014
-@@ -1814,22 +1814,6 @@ if test "$_use_cxx11" = "yes" ; then
+$OpenBSD: patch-configure,v 1.16 2016/03/17 00:40:54 jsg Exp $
+--- configure.orig	Wed Mar 16 22:48:06 2016
++++ configure	Wed Mar 16 22:51:54 2016
+@@ -1862,22 +1862,6 @@ if test "$_use_cxx11" = "yes" ; then
  fi
  echo $_use_cxx11
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure,v 1.15 2014/11/29 10:10:47 jsg Exp $
 -	# ICC does not support pedantic, while GCC and clang do.
 -	if test "$have_icc" = no ; then
 -		# We *do* want the 'long long' extension.
--		CXXFLAGS="$CXXFLAGS -pedantic -Wno-long-long"
+-		append_var CXXFLAGS "-pedantic -Wno-long-long"
 -	fi
 -	;;
 -esac
@@ -24,25 +24,7 @@ $OpenBSD: patch-configure,v 1.15 2014/11/29 10:10:47 jsg Exp $
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether -Wglobal-constructors work"
-@@ -2003,7 +1987,7 @@ cc_check_clean tmp_find_type_with_size.cpp
- # for the smaller sizes.
- echo_n "Alignment required... "
- case $_host_cpu in
--	i[3-6]86 | amd64 | x86_64 | ppc*)
-+	i[3-6]86 | amd64 | x86_64 | powerpc* | ppc*)
- 		# Unaligned access should work
- 		_need_memalign=no
- 		;;
-@@ -2046,7 +2030,7 @@ case $_host_cpu in
- 		echo "MIPS"
- 		DEFINES="$DEFINES -DMIPS_TARGET"
- 		;;
--	ppc*)
-+	powerpc* | ppc*)
- 		echo "PowerPC"
- 		DEFINES="$DEFINES -DPPC_TARGET"
- 		;;
-@@ -3460,18 +3444,16 @@ if test "$_flac" = auto ; then
+@@ -3613,18 +3597,16 @@ if test "$_flac" = auto ; then
  int main(void) { return FLAC__STREAM_SYNC_LEN >> 30; /* guaranteed to be 0 */ }
  EOF
  	if test "$_vorbis" = yes ; then
@@ -57,11 +39,11 @@ $OpenBSD: patch-configure,v 1.15 2014/11/29 10:10:47 jsg Exp $
  fi
  if test "$_flac" = yes ; then
  	if test "$_vorbis" = yes ; then
--		LIBS="$LIBS $FLAC_LIBS $OGG_LIBS -lFLAC -logg"
-+		LIBS="$LIBS `pkg-config --libs flac ogg`"
+-		append_var LIBS "$FLAC_LIBS $OGG_LIBS -lFLAC -logg"
++		append_var LIBS "`pkg-config --libs flac ogg`"
  	else
--		LIBS="$LIBS $FLAC_LIBS -lFLAC"
-+		LIBS="$LIBS `pkg-config --libs flac`"
+-		append_var LIBS "$FLAC_LIBS -lFLAC"
++		append_var LIBS "`pkg-config --libs flac`"
  	fi
- 	INCLUDES="$INCLUDES $FLAC_CFLAGS"
+ 	append_var INCLUDES "$FLAC_CFLAGS"
  fi

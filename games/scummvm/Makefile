@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.63 2015/06/26 09:38:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/17 00:40:54 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
-DISTNAME=	scummvm-1.7.0
-REVISION=	1
+V=		1.8.0
+DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
+MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${V}/
 
-HOMEPAGE=	http://scummvm.sourceforge.net/
+HOMEPAGE=	http://www.scummvm.org/
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
@@ -35,7 +35,8 @@ CONFIGURE_ARGS+= --disable-alsa \
 		--disable-fluidsynth \
 		--disable-seq-midi \
 		--disable-mpeg2 \
-		--enable-sndio
+		--enable-sndio \
+		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -53,21 +54,9 @@ USE_GMAKE=	Yes
 
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
-	${INSTALL_DATA_DIR} ${PREFIX}/share/scummvm
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/{NEWS,AUTHORS,README} \
-	    ${PREFIX}/share/doc/scummvm
-	${INSTALL_DATA} ${WRKSRC}/icons/scummvm.{svg,xpm} ${PREFIX}/share/icons
-	${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
-	${INSTALL_DATA} ${WRKSRC}/gui/themes/{scummmodern,scummclassic}.zip \
-	    ${PREFIX}/share/scummvm
-	${INSTALL_DATA} ${WRKSRC}/gui/themes/translations.dat \
-	    ${PREFIX}/share/scummvm
 	${INSTALL_DATA} ${WRKSRC}/dists/scummvm.desktop \
 	    ${PREFIX}/share/applications
-	${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 
 .include <bsd.port.mk>
