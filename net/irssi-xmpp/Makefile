@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/29 22:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/17 23:23:20 jung Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		XMPP plugin for irssi
 
-DISTNAME=		irssi-xmpp-0.52
-REVISION =		3
+DISTNAME=		irssi-xmpp-0.52pl20160317
+
+GH_ACCOUNT =		cdidier
+GH_PROJECT =		irssi-xmpp
+GH_COMMIT =		55cc27bd8d60a5c835050f654e80deb1afe36986
 
 CATEGORIES=		net
 
@@ -17,8 +20,6 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		glib-2.0 idn loudmouth-1
-
-MASTER_SITES=		${HOMEPAGE}files/
 
 MODULES=		devel/gettext
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/01 14:41:03 zinke Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/17 23:23:20 jung Exp $
 lib/irssi/modules/libfe_xmpp.so
 lib/irssi/modules/libtext_xmpp.so
 lib/irssi/modules/libxmpp_core.so
@@ -8,6 +8,7 @@ share/doc/irssi/irssi-xmpp/GENERAL
 share/doc/irssi/irssi-xmpp/MUC
 share/doc/irssi/irssi-xmpp/STARTUP
 share/doc/irssi/irssi-xmpp/XEP
+share/irssi/help/presence
 share/irssi/help/roster
 share/irssi/help/xmppconnect
 share/irssi/help/xmppserver
