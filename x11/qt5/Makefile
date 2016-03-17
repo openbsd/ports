@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/06 11:56:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.49 2016/03/17 11:49:08 sthen Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -17,13 +17,19 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-main =		qt5-${VERSION}
+REVISION-main =		0
 PKGNAME-examples =	qt5-examples-${VERSION}
+REVISION-examples =	0
 PKGNAME-html =		qt5-html-${VERSION}
 PKGNAME-mysql =		qt5-mysql-${VERSION}
+REVISION-mysql =	0
 PKGNAME-psql =		qt5-postgresql-${VERSION}
+REVISION-psql =		0
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
+REVISION-sqlite2 =	0
 PKGNAME-tds =		qt5-tds-${VERSION}
+REVISION-tds =		0
 
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
@@ -299,6 +305,21 @@ CONFIGURE_ENV =		MAKE=make \
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .endif
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+# AVX:    Sandy Bridge/Haswell, but not all models. AMD Bulldozer/Jaguar.
+# SSE4.2: Nehalem, Silvermont Atom, AMD Bulldozer/Jaguar.
+# SSE4.1: Core 2 (Penryn), Nehalem, Silvermont Atom, AMD Bulldozer/Jaguar.
+# SSSE3:  Core 2 Duo, Atom, AMD Bulldozer/Bobcat.
+# SSE3:   missing on very early 64-bit AMD.
+CONFIGURE_ARGS +=	-no-sse4.1 -no-sse4.2 -no-avx -no-avx2
+CONFIGURE_ARGS +=	-no-ssse3 -no-sse3
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	-no-sse2
+.endif
+
 .include <bsd.port.arch.mk>
 
 # QtWebkit (at least, maybe others) plays dirty games with inter-target
