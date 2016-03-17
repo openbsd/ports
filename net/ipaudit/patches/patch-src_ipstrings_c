@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_ipstrings_c,v 1.1 2016/03/17 19:52:40 naddy Exp $
+--- src/ipstrings.c.orig	Thu Dec 21 03:18:25 2000
++++ src/ipstrings.c	Thu Mar 17 17:35:29 2016
+@@ -49,6 +49,7 @@ Include Files
+ #include <limits.h>
+ #include <unistd.h>
+ #include <time.h>
++#include <errno.h>
+ 
+ 
+ 
+@@ -247,7 +248,6 @@ typedef struct {
+ Global variables
+ ------------------------------------------------------------------------
+ */
+-extern int errno;
+ extern char *pcap_version[];
+ 
+ 
