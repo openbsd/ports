@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:23:11 espie Exp $
-bin/sam
+@comment $OpenBSD: PLIST,v 1.5 2016/03/17 21:07:32 naddy Exp $
+@bin bin/sam
 bin/samsave
-bin/samterm
+@bin bin/samterm
 @man man/man1/sam.1
 share/doc/sam/
 share/doc/sam/README

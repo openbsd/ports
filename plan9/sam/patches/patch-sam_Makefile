@@ -1,6 +1,6 @@
-$OpenBSD: patch-sam_Makefile,v 1.1 2002/11/04 10:28:56 markus Exp $
---- sam/Makefile.orig	Thu Oct 31 00:48:26 2002
-+++ sam/Makefile	Thu Oct 31 00:48:52 2002
+$OpenBSD: patch-sam_Makefile,v 1.2 2016/03/17 21:07:32 naddy Exp $
+--- sam/Makefile.orig	Thu Mar 17 21:21:48 2016
++++ sam/Makefile	Thu Mar 17 21:21:48 2016
 @@ -8,7 +8,7 @@
  #	
  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
@@ -43,7 +43,7 @@ $OpenBSD: patch-sam_Makefile,v 1.1 2002/11/04 10:28:56 markus Exp $
  
  SYSFLAGS=  -DHOMEDIR=\"$(HOMEDIR)\" -DRSAMNAME=\"$(RSAMNAME)\" \
  		-DTERMNAME=\"$(TERMNAME)\" -DTMP=\"$(TMP)\" \
-@@ -50,7 +50,6 @@ SYSFLAGS=  -DHOMEDIR=\"$(HOMEDIR)\" -DRS
+@@ -50,7 +50,6 @@ SYSFLAGS=  -DHOMEDIR=\"$(HOMEDIR)\" -DRSAMNAME=\"$(RSA
  		-DSAMSAVE=\"$(SAMSAVE)\"
  
  LIB=../libframe/libframe.a ../libXg/libXg.a

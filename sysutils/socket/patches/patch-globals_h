@@ -1,6 +1,6 @@
-$OpenBSD: patch-globals_h,v 1.1 2011/07/08 11:19:35 jasper Exp $
+$OpenBSD: patch-globals_h,v 1.2 2016/03/17 21:07:32 naddy Exp $
 --- globals.h.orig	Sun Aug 30 21:04:27 1992
-+++ globals.h	Fri Jul  8 13:17:27 2011
++++ globals.h	Thu Mar 17 21:37:33 2016
 @@ -8,7 +8,12 @@ Please read the file COPYRIGHT for further details.
  */
  
@@ -14,7 +14,16 @@ $OpenBSD: patch-globals_h,v 1.1 2011/07/08 11:19:35 jasper Exp $
  /* globals for socket */
  
  #define IN	0		/* standard input */
-@@ -49,4 +54,7 @@ extern int quitflag ;
+@@ -37,8 +42,6 @@ void add_crs A((char *from, char *to, int *sizep)) ;
+ void strip_crs A((char *from, char *to, int *sizep)) ;
+ void background A((void)) ;
+ 
+-extern int errno ;
+-
+ /* global variables */
+ extern int serverflag ;
+ extern int loopflag ;
+@@ -49,4 +52,7 @@ extern int quitflag ;
  extern int crlfflag ;
  extern int active_socket ;
  extern char *progname ;
