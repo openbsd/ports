@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2016/01/11 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.236 2016/03/17 14:11:45 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,7 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.21
-REVISION-server=0
+V_DOVECOT=	2.2.22
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -23,6 +22,7 @@ MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
 SHARED_LIBS=	dovecot-compression 0.0 \
 		dovecot-dsync	0.0 \
+		dovecot-fts	0.0 \
 		dovecot-lda	2.0 \
 		dovecot-login	2.0 \
 		dovecot-sql	2.0 \
