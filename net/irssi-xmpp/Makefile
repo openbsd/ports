@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 19:29:03 jung Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.9 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT=		XMPP plugin for irssi
 

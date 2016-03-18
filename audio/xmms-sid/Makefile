@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/10 21:53:49 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	XMMS input plugin for playing SID files
 

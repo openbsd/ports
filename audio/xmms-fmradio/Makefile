@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/05 17:00:16 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	FM radio input plug-in for XMMS
 

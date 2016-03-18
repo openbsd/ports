@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/16 23:18:22 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	Structured Terminal Forms Language/Library
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/05 17:00:18 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	XMMS visualization plugin, to display Kjofol skins
 

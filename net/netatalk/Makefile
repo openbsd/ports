@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2015/07/01 08:19:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/18 21:38:25 naddy Exp $
 
 PORTROACH=	limit:^2
-
-SHARED_ONLY=	Yes
 
 COMMENT=	AFP file and print services for IP networks
 

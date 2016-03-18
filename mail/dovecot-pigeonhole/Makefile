@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/02/25 09:20:33 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.44 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 

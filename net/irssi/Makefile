@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/03/18 09:27:56 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.63 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.40 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/18 21:38:25 naddy Exp $
 #
-SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
 

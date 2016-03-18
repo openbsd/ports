@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/01 10:30:33 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:23 naddy Exp $
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library

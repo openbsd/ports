@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.53 2016/02/21 16:17:25 jsg Exp $
+# $OpenBSD: Makefile,v 1.54 2016/03/18 21:38:22 naddy Exp $
 
-SHARED_ONLY =		Yes
 BROKEN-arm =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077

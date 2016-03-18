@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/08/25 14:03:21 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.62 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	video stream processing tools
 

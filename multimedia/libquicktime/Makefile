@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/01 20:36:40 jca Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.49 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 

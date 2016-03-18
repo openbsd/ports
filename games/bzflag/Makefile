@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 20:28:25 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.38 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/18 21:38:25 naddy Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
-SHARED_ONLY=	Yes
 
 COMMENT=	library for rendering Postscript documents
 

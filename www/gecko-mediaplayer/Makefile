@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			1.0.9
@@ -29,7 +29,6 @@ BUILD_DEPENDS =		devel/xulrunner/24,-devel
 RUN_DEPENDS =		x11/gnome-mplayer>=${V}
 
 USE_GMAKE =		Yes
-SHARED_ONLY =		Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69

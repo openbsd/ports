@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.77 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2016/03/18 21:38:23 naddy Exp $
 
-SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}

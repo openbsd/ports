@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2016/03/18 21:38:23 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -7,8 +7,6 @@ COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
 COMMENT-mikmod=		Mikmod input plugin for XMMS
 COMMENT-mp3=		MP3 input plugin for XMMS
-
-SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}

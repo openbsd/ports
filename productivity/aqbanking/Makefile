@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/30 16:21:03 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT=	online banking interface and financial data framework
 

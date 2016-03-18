@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/01/02 22:19:06 jasper Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.54 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets

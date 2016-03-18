@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2016/03/17 14:11:45 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.237 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication support for Dovecot

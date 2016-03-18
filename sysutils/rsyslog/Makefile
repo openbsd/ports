@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/15 23:25:33 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog

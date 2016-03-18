@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.6 2016/02/23 20:54:51 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/18 21:38:23 naddy Exp $
 
-SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	OpenJDK Software Development Kit v${V}

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:28 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT =		video editor and a VJ tool
 

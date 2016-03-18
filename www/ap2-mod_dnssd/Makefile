@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/17 23:58:43 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT=	Apache2 Zeroconf module
 

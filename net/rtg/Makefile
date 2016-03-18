@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/13 18:09:21 brad Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT =		SNMP statistics monitoring system
 

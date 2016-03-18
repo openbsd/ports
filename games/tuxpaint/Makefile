@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/09/04 11:56:52 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	drawing program for children
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2016/01/15 23:40:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
@@ -27,7 +27,6 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
 MODULES=		converters/libiconv
 
-SHARED_ONLY=		Yes
 NO_TEST=		Yes
 
 MULTI_PACKAGES=		-main -common

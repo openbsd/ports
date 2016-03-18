@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2016/03/02 12:38:03 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.88 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin

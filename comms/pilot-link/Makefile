@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/03/11 20:28:22 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.80 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 

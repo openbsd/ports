@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/05 17:00:18 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT =	scim input method module for anthy
 

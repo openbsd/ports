@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/05 17:00:16 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	XF86Audio multimedia-key support for XMMS
 DISTNAME=	xmms-xf86audio-0.4.4

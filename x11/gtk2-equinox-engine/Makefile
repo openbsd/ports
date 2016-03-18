@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:17 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT=	Equinox GTK+2 engine
 

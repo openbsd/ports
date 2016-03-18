@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/19 20:17:16 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT =		AACS support library for Blu-ray playback
 

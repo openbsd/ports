@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/10/20 13:38:35 dcoppa Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 

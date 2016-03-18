@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/03/11 11:48:28 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.44 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT=	image processing tools with stable ABI
 

@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2015/07/21 20:29:34 steven Exp $
+# $OpenBSD: Makefile,v 1.54 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT=	syslogd replacement
-
-SHARED_ONLY =	Yes
 
 V =		3.6.4
 REL =		3.6

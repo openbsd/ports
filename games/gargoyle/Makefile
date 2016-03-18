@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/06 13:08:54 kirby Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/18 21:38:23 naddy Exp $
 
 COMMENT =	cross-platform interactive fiction player
 

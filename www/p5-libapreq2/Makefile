@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 19:09:01 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT=	apache HTTP server request library
-SHARED_ONLY=	Yes
 
 DISTNAME=	libapreq2-2.08
 PKGNAME=	p5-${DISTNAME}

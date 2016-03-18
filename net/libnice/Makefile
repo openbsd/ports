@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:29 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.36 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT =		GLib ICE implementation
 

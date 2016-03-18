@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/16 09:30:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
-
-SHARED_ONLY =		Yes
 
 VERSION =		4.3.3
 REVISION =		0

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/12/27 17:08:05 pascal Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.37 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 

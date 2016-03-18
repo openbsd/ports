@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/15 07:15:29 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT =		BD+ support library for Blu-ray playback
 

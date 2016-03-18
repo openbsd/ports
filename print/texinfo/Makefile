@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/27 09:49:04 feinerer Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT =		official documentation format of the GNU project
 

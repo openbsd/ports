@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/27 08:13:03 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.39 2016/03/18 21:38:24 naddy Exp $
 
 COMMENT=	multimedia player
 

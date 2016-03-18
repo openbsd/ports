@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.69 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.70 2016/03/18 21:38:25 naddy Exp $
 
 PORTROACH=	limit:^2\.
 
-SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.2      # .0.0
 SHARED_LIBS +=  freeradius-eap       4.1      # .0.0
 

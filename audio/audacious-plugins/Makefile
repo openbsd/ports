@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/04/04 09:20:59 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.67 2016/03/18 21:38:22 naddy Exp $
 
 COMMENT =		input and output plugins for Audacious
 

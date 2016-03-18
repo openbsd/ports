@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2016/03/11 20:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/18 21:38:25 naddy Exp $
 
 PORTROACH=	limitw:1,even
-
-SHARED_ONLY=	Yes
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 

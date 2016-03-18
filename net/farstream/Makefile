@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/15 11:01:57 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/18 21:38:25 naddy Exp $
 
 COMMENT=		audio/video communications framework
 

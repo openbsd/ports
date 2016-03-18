@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.72 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2016/03/18 21:38:26 naddy Exp $
 
 COMMENT=	extensible window manager
-
-SHARED_ONLY=	Yes
 
 VERSION=	1.9.1
 DISTNAME=	sawfish-${VERSION}

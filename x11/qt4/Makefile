@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.134 2016/03/08 13:32:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.135 2016/03/18 21:38:26 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-SHARED_ONLY =		Yes
 BROKEN-hppa =	libQtWebKit.so.3.0: undefined reference to __sync_sub_and_fetch_4
 
 USE_GMAKE =		Yes
