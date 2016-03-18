@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/03/16 08:20:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/03/18 07:00:32 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -276,6 +276,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/machinelearning/2014-12-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/2015-07-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/2015-07-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/2016-01-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/2016-01-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/service-2.json
