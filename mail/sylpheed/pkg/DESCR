@@ -8,6 +8,3 @@ on the X Window System, and aiming for:
 
 You may wish to install bogofilter to use junk-mail feature (not
 enabled by default).
-
-FLAVORS:
-	* compface: support X-Face header
