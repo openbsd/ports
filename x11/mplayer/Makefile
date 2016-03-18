@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2016/03/14 19:50:13 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.261 2016/03/18 23:12:21 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}

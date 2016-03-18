@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/13 07:55:20 shadchin Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.27 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 

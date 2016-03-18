@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.74 2015/09/07 19:35:05 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2016/03/18 23:12:20 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.5.11

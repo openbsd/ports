@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2016/03/11 20:28:22 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.71 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 

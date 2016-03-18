@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/22 17:47:51 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =	Tcl package that provides SNMP tools
 

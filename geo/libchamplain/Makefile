@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/02/26 19:23:51 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.34 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=	library to provide a GTK+ widget to display maps
 

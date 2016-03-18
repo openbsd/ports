@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/23 19:15:58 jasper Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:17 naddy Exp $
 
 V =		1.4.5
 COMMENT =	open-source Zelda-like 2D game engine

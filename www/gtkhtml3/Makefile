@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/18 23:12:19 naddy Exp $
 
 PORTROACH+=		limit:^3
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
-
-SHARED_ONLY=		Yes
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 

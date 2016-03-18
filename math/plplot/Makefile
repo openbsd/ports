@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/03/01 12:24:54 kirby Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.53 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/01/17 17:29:07 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.36 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT-main =		bundle of plugins for gmpc
 COMMENT-wikipedia =	wikipedia plugin for gmpc

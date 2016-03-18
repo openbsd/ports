@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/24 09:11:06 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.10 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	Erlang wrapper for OpenBSD's blowfish #' emacs, relax.
 

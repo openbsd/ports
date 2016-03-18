@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/12/14 14:10:25 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.55 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=		RSS reader plugin for evolution
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:21 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.6.2

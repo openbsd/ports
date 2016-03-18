@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/10/15 17:39:51 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 

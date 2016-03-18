@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2015/10/08 08:42:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/18 23:12:20 naddy Exp $
 
 PORTROACH+=		limit:^4
-
-SHARED_ONLY=		Yes
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 

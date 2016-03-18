@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/11 20:28:25 naddy Exp $
-
-SHARED_ONLY=	   	Yes
+# $OpenBSD: Makefile,v 1.46 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=		GTK+ subtitles editor
 

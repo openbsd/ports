@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/24 09:11:05 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/08/21 22:51:10 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 

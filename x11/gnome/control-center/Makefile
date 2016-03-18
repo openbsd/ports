@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:20 naddy Exp $
 
 # XXX change proxy settings without network-manager?
-
-SHARED_ONLY=		Yes
 
 COMMENT=		GNOME control center
 

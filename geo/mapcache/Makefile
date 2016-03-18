@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/08 20:31:21 landry Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=	GIS WMTS/TMS tile caching server
 

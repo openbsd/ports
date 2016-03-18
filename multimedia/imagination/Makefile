@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/17 20:04:16 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0

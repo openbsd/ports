@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/07 15:25:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:19 naddy Exp $
 
-SHARED_ONLY =		Yes
 COMMENT =		secure decentralised communication platform
 V = 			0.5.5c
 DISTNAME =		retroshare_0.5.5-0.7068

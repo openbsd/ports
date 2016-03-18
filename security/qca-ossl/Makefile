@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/07 14:22:59 zhuk Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =		SSL/TLS plugin for QCA2
 DISTNAME =		qca-ossl-2.0.0-beta3

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/09/24 10:33:38 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.62 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		standard GNOME themes
 

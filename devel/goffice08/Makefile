@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/25 11:16:12 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.9 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=	document centric objects and utilities
 

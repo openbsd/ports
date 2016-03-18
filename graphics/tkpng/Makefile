@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:26 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT =	PNG photo image extension for Tcl/Tk
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2015/11/10 07:06:08 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.143 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		components for the GNOME desktop
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/03/16 09:29:05 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.68 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=		terminal emulation library
 

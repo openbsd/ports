@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.68 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2016/03/18 23:12:16 naddy Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
-
-SHARED_ONLY=		Yes
 
 COMMENT=		configuration backend system
 

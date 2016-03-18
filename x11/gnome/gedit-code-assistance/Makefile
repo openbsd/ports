@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/05/03 14:16:29 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=	code assistance for Gedit
 

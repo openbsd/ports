@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/01 04:28:58 mmcc Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:21 naddy Exp $
 
-SHARED_ONLY =		Yes
 COMMENT =		template and text document library for Qt4
 PKG_VERSION =		0.5.1
 REVISION =		0

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/02 10:33:50 zhuk Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT =	Qt-based C++ library for the Last.fm webservices
 V =		1.0.9

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/30 14:32:27 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	light-weight, simple and fast XML parser for C++
 

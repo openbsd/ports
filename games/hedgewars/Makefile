@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/19 15:16:39 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/21 18:24:23 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 

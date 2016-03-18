@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/02/25 02:19:14 jsg Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:21 naddy Exp $
 
 BROKEN-arm =		missing atomic ops
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
-
-SHARED_ONLY =		Yes
 
 COMMENT-main =		3D rendering engine
 COMMENT-samples =	3D rendering engine, demos

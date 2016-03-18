@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/08/10 09:58:06 espie Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		XMPP client with whiteboard
 

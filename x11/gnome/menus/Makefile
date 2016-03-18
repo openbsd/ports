@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2014/04/19 08:32:20 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.76 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/07/10 17:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=		jabber server written in Erlang
 
@@ -31,7 +31,6 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 			SPOOLDIR=${WRKINST}/${EJDBDIR}
 
 CONFIGURE_STYLE=	gnu
-SHARED_ONLY=		Yes
 CONFIGURE_ARGS+=	--disable-pam \
 			--enable-mod_pubsub \
 			--enable-mod_irc \

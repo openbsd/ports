@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/07 13:32:35 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:22 naddy Exp $
 
 COMMENT=		GTK+3 remote desktop client
 

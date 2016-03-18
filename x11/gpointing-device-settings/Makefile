@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 09:21:08 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT =		tool for setting pointing devices
 

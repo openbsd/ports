@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/19 15:44:12 landry Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 

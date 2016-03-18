@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.55 2015/10/26 15:29:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.56 2016/03/18 23:12:18 naddy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
-
-SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 

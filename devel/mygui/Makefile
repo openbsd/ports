@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/27 21:13:16 kirby Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT =		library for creating GUIs for games and 3D applications
 

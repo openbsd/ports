@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:14 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT =		arc4random for Tcl
 

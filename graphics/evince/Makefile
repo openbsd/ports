@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2015/11/12 13:01:28 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.138 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=		GNOME document viewer
 

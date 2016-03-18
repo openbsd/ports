@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/09 17:36:42 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 

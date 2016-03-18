@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/10/13 12:15:14 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.75 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		weather information access library
 

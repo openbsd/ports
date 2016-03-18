@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/18 14:33:49 jasper Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT =		audio fingerprint extraction library
 

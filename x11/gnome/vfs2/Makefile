@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2015/04/21 18:51:26 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.83 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		GNOME Virtual File System
 

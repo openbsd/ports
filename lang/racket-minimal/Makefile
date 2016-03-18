@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/13 00:11:40 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:18 naddy Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
-
-SHARED_ONLY =		Yes
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 

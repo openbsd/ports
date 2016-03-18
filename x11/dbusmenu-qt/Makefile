@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/01 20:36:40 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:20 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
 DISTNAME =	libdbusmenu-qt_${V}+15.10.20150604

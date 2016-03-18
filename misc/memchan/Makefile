@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:28 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		in-memory channels for Tcl
 

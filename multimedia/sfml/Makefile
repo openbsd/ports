@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		simple and fast multimedia library
 

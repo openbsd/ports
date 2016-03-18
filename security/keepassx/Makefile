@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/14 18:20:54 steven Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =	management tool for sensitive data
 

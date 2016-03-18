@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/09 18:21:03 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.39 2016/03/18 23:12:22 naddy Exp $
 
 COMMENT=	simple login manager
 

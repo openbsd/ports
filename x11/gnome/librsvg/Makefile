@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2016/01/08 08:31:28 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.112 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		SAX-based render library for SVG files
 

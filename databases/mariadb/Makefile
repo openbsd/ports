@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/15 12:42:08 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.40 2016/03/18 23:12:16 naddy Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha amd64 i386 mips64 mips64el powerpc sparc64

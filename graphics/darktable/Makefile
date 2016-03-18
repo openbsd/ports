@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/03/08 14:28:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/03/18 23:12:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -8,8 +8,6 @@ V=		2.0.2
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
-
-SHARED_ONLY=	Yes
 
 CATEGORIES=	graphics x11
 

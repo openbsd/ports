@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/03/11 20:28:32 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.84 2016/03/18 23:12:20 naddy Exp $
 
 V=			1.10.16
 COMMENT=		simple GTK desktop news aggregator

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/10 14:19:53 zhuk Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/18 23:12:22 naddy Exp $
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-5.2.1

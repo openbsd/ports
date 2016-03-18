@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/05/07 15:42:16 kurt Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=		language/IDE for images, animations and interactions
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/07 14:29:02 zhuk Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =		GnuPG plugin for QCA2
 DISTNAME =		qca-gnupg-2.0.0-beta3

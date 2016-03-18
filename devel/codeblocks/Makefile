@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/12 11:02:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/18 23:12:16 naddy Exp $
 
-SHARED_ONLY=	Yes
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 

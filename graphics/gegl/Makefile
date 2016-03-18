@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2016/03/11 20:28:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2016/03/18 23:12:17 naddy Exp $
 
 PORTROACH=		limit:^0\.2
-
-SHARED_ONLY=		Yes
 
 COMMENT-main=		graph based image processing framework
 COMMENT-plugins=	gegl plugins

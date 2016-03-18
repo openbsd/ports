@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2016/01/23 08:31:50 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.124 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=	multimedia decoding library
 

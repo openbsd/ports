@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/21 04:27:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:16 naddy Exp $
 
 PORTROACH=		limitw:1,even
-SHARED_ONLY=		Yes
 
 COMMENT=		library for AppStream metadata
 

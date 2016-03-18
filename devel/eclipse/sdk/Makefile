@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.79 2015/06/05 12:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2016/03/18 23:12:16 naddy Exp $
 
-SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT-main=		general-purpose, extensible IDE for Java & other langs

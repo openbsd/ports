@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/02/25 20:24:55 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/18 23:12:18 naddy Exp $
 
 BROKEN-macppc=	error: unknown register name 'edx' in 'asm'
 COMMENT=	event-driven spam filtering system in C/Lua

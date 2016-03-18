@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/25 07:54:27 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=		NetBeans Java IDE
 

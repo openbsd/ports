@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/05/05 17:00:20 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.52 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		keyboard configuration library
 

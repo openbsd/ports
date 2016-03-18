@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2015/09/01 10:48:10 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.116 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=	archive manager utility for GNOME
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/01/19 14:51:19 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		music management and playback application for GNOME
 

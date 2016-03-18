@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/09/23 08:39:52 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.59 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	applications integration into Nautilus
 

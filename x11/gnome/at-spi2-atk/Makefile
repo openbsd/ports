@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/14 17:34:38 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		atk-bridge for at-spi2
 

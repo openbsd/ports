@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:33 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT =	dbus bindings for Tcl
 

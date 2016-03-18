@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2015/11/12 11:02:25 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.97 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/18 11:05:46 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.21 2016/03/18 23:12:15 naddy Exp $
 
 COMMENT =	Qt4-based featureful music player
 

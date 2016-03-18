@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/01/12 09:43:35 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.83 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 

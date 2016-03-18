@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2015/11/11 18:42:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/18 23:12:20 naddy Exp $
 
 TRACKER_API=		1.0
-
-SHARED_ONLY=		Yes
 
 COMMENT=		document and e-books manager for GNOME
 

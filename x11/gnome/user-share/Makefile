@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/05 06:00:24 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		personal file-sharing service for GNOME
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/21 18:19:27 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:19 naddy Exp $ 
 
 COMMENT=		Qt Cryptographic Architecture, TLS plugin
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto m pthread ssl stdc++
 
-SHARED_ONLY=		Yes
 MODULES=		x11/qt3
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2

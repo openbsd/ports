@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/02/21 15:47:30 jsg Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/18 23:12:20 naddy Exp $
 
 BROKEN-arm =		unrecognized option -mfpu=neon
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_4'
-
-SHARED_ONLY =		Yes
 
 COMMENT =		open source client for Windows Terminal Server
 DISTNAME =		freerdp-1.2.0beta1

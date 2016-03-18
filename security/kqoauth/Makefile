@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/07 14:20:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/18 23:12:19 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	OAuth support library for Qt-based applications
 V =		0.97
 DISTNAME =	${V}

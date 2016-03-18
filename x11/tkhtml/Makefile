@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/11 20:28:33 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.10 2016/03/18 23:12:22 naddy Exp $
 
 COMMENT =	Tk widget to display HTML/CSS formatted contents
 

@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2015/05/09 19:51:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/18 23:12:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
-
-SHARED_ONLY=	Yes
 
 COMMENT=	photorealistic 3D rendering solution
 

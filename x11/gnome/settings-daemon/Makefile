@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.151 2015/11/10 13:44:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2016/03/18 23:12:21 naddy Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
-
-SHARED_ONLY=		Yes
 
 COMMENT=		GNOME settings daemon
 

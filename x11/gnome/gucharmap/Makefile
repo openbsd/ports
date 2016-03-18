@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2015/11/10 18:53:10 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.103 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 

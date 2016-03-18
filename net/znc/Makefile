@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/07 07:10:00 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	advanced IRC bouncer
 

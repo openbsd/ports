@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/25 13:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/18 23:12:15 naddy Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
@@ -10,8 +10,6 @@ PKGNAME =	musescore-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 REVISION =	0
-
-SHARED_ONLY =	Yes
 
 HOMEPAGE =	http://musescore.org/
 

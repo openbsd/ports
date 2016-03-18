@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 20:28:32 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT =	confine pointer and keyboard events to a Tk window sub-tree
 

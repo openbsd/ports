@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2016/02/27 08:58:30 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.73 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 

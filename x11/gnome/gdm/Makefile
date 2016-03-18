@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2016/01/23 13:55:30 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.245 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		GNOME display manager
 

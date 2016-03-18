@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/29 10:45:22 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.9 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		2D animation software
 REVISION =		3

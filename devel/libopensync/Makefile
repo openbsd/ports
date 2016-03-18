@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:10 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=	data synchronization framework
 

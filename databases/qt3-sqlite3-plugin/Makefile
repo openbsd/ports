@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:16 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
 

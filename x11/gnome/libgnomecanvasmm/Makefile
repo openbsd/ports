@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.35 2015/09/24 10:35:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/18 23:12:20 naddy Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
-
-SHARED_ONLY=		Yes
 
 COMMENT=		C++ interface to the graphics library for GNOME
 

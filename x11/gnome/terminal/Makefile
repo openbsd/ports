@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2016/03/07 07:44:49 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.141 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	GNOME terminal
 

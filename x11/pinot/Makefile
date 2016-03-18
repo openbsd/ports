@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:33 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.57 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	personal search and metasearch
 

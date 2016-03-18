@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/02/02 03:47:34 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.47 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=	small and lightweight IDE
 

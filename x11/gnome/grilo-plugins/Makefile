@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2015/12/21 08:07:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2016/03/18 23:12:20 naddy Exp $
 
 TRACKER_API=	1.0
-
-SHARED_ONLY=	Yes
 
 COMMENT=	plugins for Grilo
 

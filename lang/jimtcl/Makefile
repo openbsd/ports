@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 12:34:21 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =		small footprint implementation of Tcl
 

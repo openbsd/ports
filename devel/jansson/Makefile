@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/11 15:56:53 giovanni Exp $
-
-SHARED_ONLY = 		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT =		library for manipulating JSON data
 

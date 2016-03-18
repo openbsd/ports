@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/02 14:42:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -36,8 +36,6 @@ MODJAVA_JRERUN=	Yes
 
 BUILD_DEPENDS=	audio/openal \
 		devel/apache-ant
-
-SHARED_ONLY=	Yes
 
 NO_TEST=	Yes
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/13 18:26:31 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.37 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=		network-related gio modules for glib2
 

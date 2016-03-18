@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/20 20:41:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:21 naddy Exp $
 COMMENT =		KDE Oxygen widget theme for GTK+3
-
-SHARED_ONLY =		Yes
 
 V =			1.3.5
 DISTNAME =		oxygen-gtk3-${V}

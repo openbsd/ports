@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/24 10:06:15 landry Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT =		small and fast Qt image viewer
 

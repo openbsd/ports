@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:42 espie Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
 
 COMMENT =	garmin gps device driver
 

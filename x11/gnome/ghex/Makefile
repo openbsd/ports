@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/10/14 19:52:18 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.61 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		binary editor
 

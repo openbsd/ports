@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/08/21 22:51:10 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.20 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	pidgin plugin to display messages through libnotify
 

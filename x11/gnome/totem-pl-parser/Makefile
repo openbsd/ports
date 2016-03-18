@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/12/15 15:56:57 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.67 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=		GObject-based parsing library
 

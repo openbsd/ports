@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/10/28 18:06:02 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.40 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT=		Javascript bindings for GNOME
 

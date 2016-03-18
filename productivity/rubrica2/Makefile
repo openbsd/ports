@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:16 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.27 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	addressbook manager
 

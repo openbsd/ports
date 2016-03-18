@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 15:08:39 stsp Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
@@ -24,8 +24,6 @@ WANTLIB =	c gpg-error gcrypt otr>=4.0 pthread
 
 USE_LIBTOOL = 	gnu
 LIBTOOL_FLAGS += --tag=disable-static
-
-SHARED_ONLY =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

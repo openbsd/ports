@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.69 2016/03/02 09:15:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2016/03/18 23:12:21 naddy Exp $
 
 TRACKER_API=		1.0
-
-SHARED_ONLY=		Yes
 
 COMMENT=		home media solution that allows easy media sharing
 

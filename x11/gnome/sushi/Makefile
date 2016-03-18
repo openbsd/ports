@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/01/17 17:29:11 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.34 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	quick previewer for Nautilus
 

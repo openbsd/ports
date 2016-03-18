@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/30 12:59:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/18 23:12:21 naddy Exp $
 
 TRACKER_API=		1.0
-
-SHARED_ONLY=		Yes
 
 COMMENT=		crawls through your online content
 

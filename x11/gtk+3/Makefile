@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2016/03/10 07:31:43 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.150 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend

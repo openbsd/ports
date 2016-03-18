@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/11 20:28:27 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=	scim input method module for chewing
 

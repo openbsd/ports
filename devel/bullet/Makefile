@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/25 15:30:05 pascal Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT =		physics library
 

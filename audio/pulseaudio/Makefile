@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2016/03/18 23:12:15 naddy Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
-
-SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 

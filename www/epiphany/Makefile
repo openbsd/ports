@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2016/03/15 10:11:25 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.135 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	GNOME web browser based on webkit
 

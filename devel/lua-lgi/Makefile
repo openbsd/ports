@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/12/29 19:49:39 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 

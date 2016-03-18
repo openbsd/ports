@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/07 13:25:17 zhuk Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 

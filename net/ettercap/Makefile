@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/08/17 19:10:12 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.65 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/03 16:42:15 zhuk Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:21 naddy Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:15 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD

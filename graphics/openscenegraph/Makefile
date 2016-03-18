@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/22 18:49:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
 
 PORTROACH =		limitw:1,even
-
-SHARED_ONLY =		Yes
 
 COMMENT =		3D graphics toolkit
 

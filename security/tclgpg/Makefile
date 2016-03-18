@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:31 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT =		Tcl interface to GNU Privacy Guard
 DISTNAME =		tclgpg-20160113

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/11 20:28:26 naddy Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/18 23:12:18 naddy Exp $
 
 COMMENT =	smart common input method platform
 

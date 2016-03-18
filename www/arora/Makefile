@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/07 14:48:32 zhuk Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
 
 COMMENT=	simple Qt4-based browser using WebKit
 
