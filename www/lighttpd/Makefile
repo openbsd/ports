@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2015/12/30 07:54:42 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.136 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 

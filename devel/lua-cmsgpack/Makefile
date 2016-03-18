@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:04 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	MessagePack implementation and bindings for Lua
 

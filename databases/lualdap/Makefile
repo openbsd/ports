@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/30 20:54:04 landry Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT =	interface LDAP from lua
 DISTNAME=	lualdap-1.1.0

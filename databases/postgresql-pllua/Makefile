@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/08 15:04:15 landry Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT =		Lua procedural language support for PostgreSQL
 

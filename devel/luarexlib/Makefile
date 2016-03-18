@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/22 09:17:35 kettenis Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/18 20:49:28 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
 DISTNAME=	lrexlib-2.4.0
 PKGNAME=	luarexlib-2.4.0

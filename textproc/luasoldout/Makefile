@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/09 12:48:22 jasper Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT =		Lua binding to libsoldout
 

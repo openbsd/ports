@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/18 10:17:18 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT =	lua binding of libevent
-SHARED_ONLY =	Yes
 
 DISTNAME =	luaevent-prosody-0.1.1
 PKGNAME=	luaevent-0.2.1

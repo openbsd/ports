@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/13 18:09:20 brad Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.9 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/19 16:24:06 jca Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT =		lua library for the expat XML parser
 DISTNAME =		luaexpat-1.3.0

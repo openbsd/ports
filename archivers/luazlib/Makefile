@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	lua binding of zlib
-SHARED_ONLY=	Yes
 DISTNAME=	luazlib-20100731
 REVISION=	2
 CATEGORIES=	archivers

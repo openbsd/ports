@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/19 12:02:48 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	JSON support for Lua
 

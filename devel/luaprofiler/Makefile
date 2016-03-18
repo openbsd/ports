@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/16 10:07:19 kettenis Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT=		time profiler for Lua
 

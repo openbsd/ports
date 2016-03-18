@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 01:30:27 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	convert data to and from C structs
 

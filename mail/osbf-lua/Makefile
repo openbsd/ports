@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/30 16:53:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
-SHARED_ONLY=	Yes
 NO_TEST=	Yes
 
 do-build:

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/10 01:04:51 gsoares Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 VERSION=	0.6

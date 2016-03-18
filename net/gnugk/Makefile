@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.57 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/03/18 20:49:28 naddy Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
-
-SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 

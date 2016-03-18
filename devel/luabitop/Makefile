@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:11 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	library for bitwise operations in lua
 

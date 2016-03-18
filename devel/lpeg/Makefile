@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/05 08:27:26 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-0.12.2

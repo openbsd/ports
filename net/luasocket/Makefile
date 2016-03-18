@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/05 13:31:14 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT=	network support for the lua language
 V=		3.0-rc1

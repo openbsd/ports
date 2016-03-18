@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2016/01/06 22:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/18 20:49:28 naddy Exp $
 
 COMMENT =	multiple states library for the lua language
-SHARED_ONLY =	Yes
 
 GH_TAGNAME =	v_1_3_0
 GH_PROJECT =	rings

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/12/29 20:06:52 jasper Exp $
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/18 20:49:27 naddy Exp $
 
 COMMENT =	file system library for the lua language
 V =		1_6_3
