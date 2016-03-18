@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-pop3,v 1.12 2012/04/28 11:06:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-pop3,v 1.13 2016/03/18 21:59:51 giovanni Exp $
 @pkgpath courier/imap,-pop3,no_trashquota
 @pkgpath courier/imap,-pop3,no_trashquota,imap_bugs
 @pkgpath courier/imap,-pop3,imap_bugs
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/*
-@extraunexec rm -rf ${LOCALSTATEDIR}/*
 @bin bin/pop3d
 libexec/pop3d-ssl.rc
 libexec/pop3d.rc
