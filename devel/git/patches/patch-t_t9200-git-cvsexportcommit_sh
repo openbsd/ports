@@ -1,11 +1,11 @@
-$OpenBSD: patch-t_t9200-git-cvsexportcommit_sh,v 1.5 2014/03/10 20:56:53 pascal Exp $
---- t/t9200-git-cvsexportcommit.sh.orig	Fri Feb 14 22:57:09 2014
-+++ t/t9200-git-cvsexportcommit.sh	Sun Feb 16 18:13:37 2014
-@@ -35,7 +35,7 @@ exit 1
+$OpenBSD: patch-t_t9200-git-cvsexportcommit_sh,v 1.6 2016/03/18 20:56:07 benoit Exp $
+--- t/t9200-git-cvsexportcommit.sh~	Sat Mar 12 21:36:54 2016
++++ t/t9200-git-cvsexportcommit.sh	Sat Mar 12 22:06:16 2016
+@@ -35,7 +35,7 @@
  
  check_entries () {
  	# $1 == directory, $2 == expected
--	grep '^/' "$1/CVS/Entries" | sort | cut -d/ -f2,3,5 >actual
+-	sed -ne '/^\//p' "$1/CVS/Entries" | sort | cut -d/ -f2,3,5 >actual
 +	grep -a '^/' "$1/CVS/Entries" | sort | cut -d/ -f2,3,5 >actual
  	if test -z "$2"
  	then

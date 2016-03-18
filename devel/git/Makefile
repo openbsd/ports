@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.147 2016/03/16 08:50:39 landry Exp $
+# $OpenBSD: Makefile,v 1.148 2016/03/18 20:56:07 benoit Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.7.2
+V =		2.7.4
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
-REVISION-main =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -26,6 +25,10 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
 MODULES =		devel/gettext x11/tk lang/python
+
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c
 
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
