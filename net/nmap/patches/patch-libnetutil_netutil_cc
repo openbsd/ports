@@ -1,4 +1,4 @@
-$OpenBSD: patch-libnetutil_netutil_cc,v 1.7 2016/01/07 13:23:47 giovanni Exp $
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.8 2016/03/18 21:13:38 giovanni Exp $
 
 first chunk:
 http://marc.info/?l=openbsd-ports&m=140284432321370&w=2
@@ -8,18 +8,9 @@ http://marc.info/?l=nmap-dev&m=140179174718457&w=2
 
 chunks dealing with iovec: ???
 
---- libnetutil/netutil.cc.orig	Wed Oct 28 04:21:15 2015
-+++ libnetutil/netutil.cc	Tue Dec 29 10:47:48 2015
-@@ -915,7 +915,7 @@ void set_ttl(int sd, int ttl) {
- /* Other than WIN32, what these systems have in common is that they use BPF for
-    packet capture. (Solaris 10 and earlier used DLPI and had valid selectable
-    fds.) */
--#if defined(WIN32) || defined(MACOSX) || (defined(FREEBSD) && (__FreeBSD_version < 500000) || defined(SOLARIS_BPF_PCAP_CAPTURE))
-+#if defined(WIN32) || defined(MACOSX) || defined(OPENBSD) || (defined(FREEBSD) && (__FreeBSD_version < 500000) || defined(SOLARIS_BPF_PCAP_CAPTURE))
- /* Returns whether the system supports pcap_get_selectable_fd() properly */
- int pcap_selectable_fd_valid() {
-   return 0;
-@@ -3139,7 +3139,6 @@ static int route_dst_netlink(const struct sockaddr_sto
+--- libnetutil/netutil.cc.orig	Thu Mar 17 20:17:27 2016
++++ libnetutil/netutil.cc	Thu Mar 17 20:19:47 2016
+@@ -3142,7 +3142,6 @@ static int route_dst_netlink(const struct sockaddr_sto
                               const struct sockaddr_storage *spoofss) {
    struct sockaddr_nl snl;
    struct msghdr msg;
@@ -27,7 +18,7 @@ chunks dealing with iovec: ???
    struct nlmsghdr *nlmsg;
    struct rtmsg *rtmsg;
    struct rtattr *rtattr;
-@@ -3191,22 +3190,14 @@ static int route_dst_netlink(const struct sockaddr_sto
+@@ -3194,22 +3193,14 @@ static int route_dst_netlink(const struct sockaddr_sto
      add_rtattr_addr(nlmsg, &rtattr, &len, RTA_SRC, spoofss, intf_index);
    }
  
@@ -50,7 +41,7 @@ chunks dealing with iovec: ???
    len = recvmsg(fd, &msg, 0);
    if (len <= 0)
      netutil_fatal("%s: cannot recvmsg: %s", __func__, strerror(errno));
-@@ -3837,7 +3828,6 @@ static const unsigned char *add_exthdr_ancillary(struc
+@@ -3840,7 +3831,6 @@ static const unsigned char *add_exthdr_ancillary(struc
  static int send_ipv6_ip(const struct sockaddr_in6 *dst,
    const unsigned char *packet, size_t packetlen) {
    struct msghdr msg;
@@ -58,7 +49,7 @@ chunks dealing with iovec: ???
  
    const unsigned char *end;
    struct ip6_hdr *hdr;
-@@ -3853,8 +3843,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3859,8 +3849,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    /* Set up sendmsg data structure. iov is filled in below. */
    msg.msg_name = (void *) dst;
    msg.msg_namelen = sizeof(*dst);
@@ -67,7 +58,7 @@ chunks dealing with iovec: ???
    msg.msg_control = NULL;
    msg.msg_controllen = 0;
    msg.msg_flags = 0;
-@@ -3913,8 +3901,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3919,8 +3907,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    }
  
    assert(packet <= end);
@@ -76,7 +67,7 @@ chunks dealing with iovec: ???
  
    n = sendmsg(sd, &msg, 0);
    if (n == -1)
-@@ -4117,9 +4103,6 @@ int datalink_offset(int datalink)
+@@ -4123,9 +4109,6 @@ int datalink_offset(int datalink)
  {
    if (datalink == DLT_EN10MB)
      return ETH_HDR_LEN;
@@ -86,16 +77,7 @@ chunks dealing with iovec: ???
    else
      return -1;
  }
-@@ -4156,7 +4139,7 @@ static int read_reply_pcap(pcap_t *pd, long to_usec,
-     netutil_fatal("Cannot obtain datalink information: %s", pcap_geterr(pd));
-   ioffset = datalink_offset(*datalink);
-   if (ioffset < 0)
--    netutil_fatal("datalink_offset failed for type %d (DLT_EN10MB = %d, DLT_LINUX_SLL = %d)", *datalink, DLT_EN10MB, DLT_LINUX_SLL);
-+    netutil_fatal("datalink_offset failed for type %d (DLT_EN10MB = %d)", *datalink, DLT_EN10MB);
-   *offset = (unsigned int) ioffset;
- 
-   if (to_usec > 0) {
-@@ -4256,10 +4239,6 @@ static bool accept_arp(const unsigned char *p, const s
+@@ -4262,10 +4245,6 @@ static bool accept_arp(const unsigned char *p, const s
  
    if (datalink == DLT_EN10MB) {
      return ntohs(*((u16 *) (p + 12))) == ETH_TYPE_ARP;

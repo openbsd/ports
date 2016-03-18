@@ -1,13 +1,9 @@
-$OpenBSD: patch-timing_cc,v 1.5 2016/01/07 13:23:47 giovanni Exp $
-
-Avoid float-related assertion triggered on i386, not triggered on
-macppc/amd64/sparc64.
-
---- timing.cc.orig	Tue Jun 23 02:09:01 2015
-+++ timing.cc	Tue Dec 29 10:47:48 2015
+$OpenBSD: patch-timing_cc,v 1.6 2016/03/18 21:13:38 giovanni Exp $
+--- timing.cc.orig	Tue Jun 23 01:09:01 2015
++++ timing.cc	Thu Mar 17 20:44:33 2016
 @@ -125,6 +125,8 @@
  
- /* $Id: patch-timing_cc,v 1.5 2016/01/07 13:23:47 giovanni Exp $ */
+ /* $Id: patch-timing_cc,v 1.6 2016/03/18 21:13:38 giovanni Exp $ */
  
 +#include <limits>
 +

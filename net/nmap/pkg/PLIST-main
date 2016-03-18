@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2016/01/07 13:23:47 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/03/18 21:13:38 giovanni Exp $
 @conflict ndiff-*
 @pkgpath net/ndiff
 @pkgpath net/nmap
@@ -121,6 +121,7 @@ share/nmap/nselib/ldap.lua
 share/nmap/nselib/lfs.luadoc
 share/nmap/nselib/listop.lua
 share/nmap/nselib/lpeg-utility.lua
+share/nmap/nselib/lpeg.luadoc
 share/nmap/nselib/ls.lua
 share/nmap/nselib/match.lua
 share/nmap/nselib/membase.lua
@@ -130,6 +131,7 @@ share/nmap/nselib/msrpc.lua
 share/nmap/nselib/msrpcperformance.lua
 share/nmap/nselib/msrpctypes.lua
 share/nmap/nselib/mssql.lua
+share/nmap/nselib/multicast.lua
 share/nmap/nselib/mysql.lua
 share/nmap/nselib/natpmp.lua
 share/nmap/nselib/ncp.lua
@@ -331,6 +333,7 @@ share/nmap/scripts/hostmap-robtex.nse
 share/nmap/scripts/http-adobe-coldfusion-apsa1301.nse
 share/nmap/scripts/http-affiliate-id.nse
 share/nmap/scripts/http-apache-negotiation.nse
+share/nmap/scripts/http-apache-server-status.nse
 share/nmap/scripts/http-auth-finder.nse
 share/nmap/scripts/http-auth.nse
 share/nmap/scripts/http-avaya-ipoffice-users.nse
@@ -428,11 +431,13 @@ share/nmap/scripts/http-vuln-cve2011-3192.nse
 share/nmap/scripts/http-vuln-cve2011-3368.nse
 share/nmap/scripts/http-vuln-cve2012-1823.nse
 share/nmap/scripts/http-vuln-cve2013-0156.nse
+share/nmap/scripts/http-vuln-cve2013-6786.nse
 share/nmap/scripts/http-vuln-cve2013-7091.nse
 share/nmap/scripts/http-vuln-cve2014-2126.nse
 share/nmap/scripts/http-vuln-cve2014-2127.nse
 share/nmap/scripts/http-vuln-cve2014-2128.nse
 share/nmap/scripts/http-vuln-cve2014-2129.nse
+share/nmap/scripts/http-vuln-cve2014-3704.nse
 share/nmap/scripts/http-vuln-cve2014-8877.nse
 share/nmap/scripts/http-vuln-cve2015-1427.nse
 share/nmap/scripts/http-vuln-cve2015-1635.nse
@@ -451,6 +456,7 @@ share/nmap/scripts/icap-info.nse
 share/nmap/scripts/ike-version.nse
 share/nmap/scripts/imap-brute.nse
 share/nmap/scripts/imap-capabilities.nse
+share/nmap/scripts/imap-ntlm-info.nse
 share/nmap/scripts/informix-brute.nse
 share/nmap/scripts/informix-query.nse
 share/nmap/scripts/informix-tables.nse
@@ -461,6 +467,7 @@ share/nmap/scripts/ip-geolocation-ipinfodb.nse
 share/nmap/scripts/ip-geolocation-maxmind.nse
 share/nmap/scripts/ip-https-discover.nse
 share/nmap/scripts/ipidseq.nse
+share/nmap/scripts/ipv6-multicast-mld-list.nse
 share/nmap/scripts/ipv6-node-info.nse
 share/nmap/scripts/ipv6-ra-flood.nse
 share/nmap/scripts/irc-botnet-channels.nse
@@ -508,6 +515,7 @@ share/nmap/scripts/ms-sql-dump-hashes.nse
 share/nmap/scripts/ms-sql-empty-password.nse
 share/nmap/scripts/ms-sql-hasdbaccess.nse
 share/nmap/scripts/ms-sql-info.nse
+share/nmap/scripts/ms-sql-ntlm-info.nse
 share/nmap/scripts/ms-sql-query.nse
 share/nmap/scripts/ms-sql-tables.nse
 share/nmap/scripts/ms-sql-xp-cmdshell.nse
@@ -543,6 +551,7 @@ share/nmap/scripts/nfs-ls.nse
 share/nmap/scripts/nfs-showmount.nse
 share/nmap/scripts/nfs-statfs.nse
 share/nmap/scripts/nje-node-brute.nse
+share/nmap/scripts/nntp-ntlm-info.nse
 share/nmap/scripts/nping-brute.nse
 share/nmap/scripts/nrpe-enum.nse
 share/nmap/scripts/ntp-info.nse
@@ -564,6 +573,7 @@ share/nmap/scripts/pgsql-brute.nse
 share/nmap/scripts/pjl-ready-message.nse
 share/nmap/scripts/pop3-brute.nse
 share/nmap/scripts/pop3-capabilities.nse
+share/nmap/scripts/pop3-ntlm-info.nse
 share/nmap/scripts/pptp-version.nse
 share/nmap/scripts/qconn-exec.nse
 share/nmap/scripts/qscan.nse
@@ -591,10 +601,12 @@ share/nmap/scripts/rsync-brute.nse
 share/nmap/scripts/rsync-list-modules.nse
 share/nmap/scripts/rtsp-methods.nse
 share/nmap/scripts/rtsp-url-brute.nse
+share/nmap/scripts/rusers.nse
 share/nmap/scripts/s7-info.nse
 share/nmap/scripts/samba-vuln-cve-2012-1182.nse
 share/nmap/scripts/script.db
 share/nmap/scripts/servicetags.nse
+share/nmap/scripts/shodan-api.nse
 share/nmap/scripts/sip-brute.nse
 share/nmap/scripts/sip-call-spoof.nse
 share/nmap/scripts/sip-enum-users.nse
@@ -628,6 +640,7 @@ share/nmap/scripts/smbv2-enabled.nse
 share/nmap/scripts/smtp-brute.nse
 share/nmap/scripts/smtp-commands.nse
 share/nmap/scripts/smtp-enum-users.nse
+share/nmap/scripts/smtp-ntlm-info.nse
 share/nmap/scripts/smtp-open-relay.nse
 share/nmap/scripts/smtp-strangeport.nse
 share/nmap/scripts/smtp-vuln-cve2010-4344.nse
@@ -681,6 +694,7 @@ share/nmap/scripts/targets-xml.nse
 share/nmap/scripts/teamspeak2-version.nse
 share/nmap/scripts/telnet-brute.nse
 share/nmap/scripts/telnet-encryption.nse
+share/nmap/scripts/telnet-ntlm-info.nse
 share/nmap/scripts/tftp-enum.nse
 share/nmap/scripts/tls-nextprotoneg.nse
 share/nmap/scripts/tor-consensus-checker.nse
