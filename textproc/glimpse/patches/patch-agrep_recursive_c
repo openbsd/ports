@@ -1,0 +1,11 @@
+$OpenBSD: patch-agrep_recursive_c,v 1.1 2016/03/18 16:41:53 naddy Exp $
+--- agrep/recursive.c.orig	Thu Nov 21 03:28:43 1996
++++ agrep/recursive.c	Thu Mar 17 22:42:46 2016
+@@ -10,6 +10,7 @@
+ 
+ #include "autoconf.h"	/* ../libtemplate/include */
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ #if	ISO_CHAR_SET
+ #include <locale.h>

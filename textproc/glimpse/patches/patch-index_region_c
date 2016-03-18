@@ -1,0 +1,11 @@
+$OpenBSD: patch-index_region_c,v 1.1 2016/03/18 16:41:53 naddy Exp $
+--- index/region.c.orig	Thu Nov 21 03:28:47 1996
++++ index/region.c	Thu Mar 17 23:08:53 2016
+@@ -1,6 +1,7 @@
+ /* Copyright (c) 1994 Sun Wu, Udi Manber, Burra Gopal.  All Rights Reserved. */
+ /* From mail received from Bill Camargo and Darren Hardy in June 1994 */
+ #include <stdio.h>
++#include <string.h>
+ #include "region.h"
+ 
+ /*

@@ -1,0 +1,29 @@
+$OpenBSD: patch-libtemplate_util_system_c,v 1.1 2016/03/18 16:41:53 naddy Exp $
+--- libtemplate/util/system.c.orig	Thu Nov 21 03:28:52 1996
++++ libtemplate/util/system.c	Thu Mar 17 23:04:41 2016
+@@ -50,6 +50,7 @@ static char rcsid[] = "$Id: system.c,v 1.22 1995/02/04
+  *    copyright, including distribution and use limitations.
+  */
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <sys/wait.h>
+ #include <signal.h>
+@@ -117,7 +118,7 @@ char *cmd;
+ 		_exit(1);
+ 	}
+ 	/* parent */
+-	(void) waitpid(pid, &status, (int) NULL);
++	(void) waitpid(pid, &status, 0);
+ 	return (WEXITSTATUS(status));
+ }
+ 
+@@ -172,7 +173,7 @@ int lifetime;
+ 		return;
+ 	}
+ 	if (dsl_pid) {		/* parent */
+-		(void) waitpid(dsl_pid, (int *) NULL, (int) NULL);
++		(void) waitpid(dsl_pid, (int *) NULL, 0);
+ 		alarm(0);
+ 		return;
+ 	} else {		/* child */

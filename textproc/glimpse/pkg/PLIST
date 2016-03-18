@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/01/29 20:19:57 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/18 16:41:53 naddy Exp $
 @conflict agrep-*
 @conflict tre-*
-bin/agrep
-bin/glimpse
-bin/glimpseindex
-bin/glimpseserver
-bin/wgconvert
+@bin bin/agrep
+@bin bin/glimpse
+@bin bin/glimpseindex
+@bin bin/glimpseserver
+@bin bin/wgconvert
 @man man/man1/agrep.1
 @man man/man1/glimpse.1
 @man man/man1/glimpseindex.1
