@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2016/03/05 16:36:48 semarie Exp $
+# $OpenBSD: Makefile,v 1.382 2016/03/18 14:33:51 sebastia Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -92,7 +92,6 @@
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
      SUBDIR += librelp
-     SUBDIR += libretto-config
      SUBDIR += libstatgrab
      SUBDIR += libvirt
      SUBDIR += libvirt-python
