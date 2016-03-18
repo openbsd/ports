@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/21 13:48:23 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/18 22:25:18 giovanni Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
-V=		4.3.1
+V=		4.4.2
 PKGNAME=	kibana-${V}
 DISTNAME=	${PKGNAME}-darwin-x64
 
@@ -22,9 +22,6 @@ RUN_DEPENDS=	lang/node
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
-
-pre-install:
-	${SUBST_CMD} ${WRKSRC}/bin/kibana
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/kibana
