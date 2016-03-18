@@ -1,0 +1,4 @@
+dstat is a lightweight utility to set the dwm status bar text.  dstat displays
+the current network throughput, CPU usage, performance settings, battery
+status, temperature, volume settings, as well as the current date and time on
+the dwm status bar.
