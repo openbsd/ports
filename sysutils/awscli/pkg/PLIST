@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/16 08:21:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/18 07:00:53 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -521,6 +521,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/stop-deployment.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/uninstall.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-deployment-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-endpoint.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-replication-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-replication-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/describe-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/batch-get-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dynamodb/batch-write-item.rst
