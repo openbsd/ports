@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.373 2016/03/18 14:46:36 mmcc Exp $
+# $OpenBSD: Quirks.pm,v 1.374 2016/03/18 15:25:31 mmcc Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -744,6 +744,7 @@ my $obsolete_reason = {
 	'uisp' => 6,
         'libretto-config' => 6,
 	'courtney' => 2,
+	'junkbuster' => 2,
 };
 
 my @msg = (
