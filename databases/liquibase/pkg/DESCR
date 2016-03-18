@@ -1,0 +1,5 @@
+Liquibase is a Java-based command-line tool that allows you to build and
+maintain a SQL database schema using a series of "changeset" files that
+can be checked into a version control system.  This allows the database
+schema to be just another piece of your application that can be
+versioned and maintained, just like any other piece of source code.

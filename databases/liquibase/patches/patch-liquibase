@@ -1,0 +1,20 @@
+$OpenBSD: patch-liquibase,v 1.1.1.1 2016/03/18 15:51:38 awolk Exp $
+--- liquibase.orig	Sun Mar 13 13:42:39 2016
++++ liquibase	Sun Mar 13 13:43:04 2016
+@@ -1,5 +1,7 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
++LIQUIBASE_HOME=${TRUEPREFIX}/share/java/classes/liquibase
++
+ if [ ! -n "${LIQUIBASE_HOME+x}" ]; then
+   # echo "LIQUIBASE_HOME is not set."
+ 
+@@ -53,6 +55,6 @@ fi
+ # add any JVM options here
+ JAVA_OPTS="${JAVA_OPTS-}"
+ 
+-java -cp "$CP" $JAVA_OPTS liquibase.integration.commandline.Main ${1+"$@"}
++`javaPathHelper -c liquibase` -cp "$CP" $JAVA_OPTS liquibase.integration.commandline.Main ${1+"$@"}
+ 
+ 

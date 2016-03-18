@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/18 15:51:38 awolk Exp $
+bin/liquibase
+@man man/man1/liquibase.1
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/java/
+share/java/classes/
+share/java/classes/liquibase/
+share/java/classes/liquibase/liquibase.jar
