@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.7 2015/12/29 22:44:37 sthen Exp $
---- src/fe-common/core/Makefile.in.orig	Sat Oct 11 09:58:14 2014
-+++ src/fe-common/core/Makefile.in	Tue Dec 29 16:47:56 2015
+$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.8 2016/03/18 09:27:57 sthen Exp $
+--- src/fe-common/core/Makefile.in.orig	Tue Dec 15 10:23:01 2015
++++ src/fe-common/core/Makefile.in	Tue Dec 29 16:11:32 2015
 @@ -365,7 +365,7 @@ AM_CPPFLAGS = \
  	-I$(top_srcdir)/src -I$(top_srcdir)/src/core/ \
  	$(GLIB_CFLAGS) \
