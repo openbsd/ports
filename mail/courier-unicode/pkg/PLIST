@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/27 09:27:10 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/18 21:35:03 giovanni Exp $
+include/courier-unicode-categories-tab.h
+include/courier-unicode-script-tab.h
 include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.la
@@ -13,10 +15,13 @@ lib/libcourier-unicode.la
 @man man/man3/unicode::linebreak_iter.3
 @man man/man3/unicode::linebreakc_callback_base.3
 @man man/man3/unicode::linebreakc_iter.3
+@man man/man3/unicode::tolower.3
+@man man/man3/unicode::toupper.3
 @man man/man3/unicode::ucs_2.3
 @man man/man3/unicode::ucs_4.3
 @man man/man3/unicode::utf_8.3
 @man man/man3/unicode::wordbreak_callback_base.3
+@man man/man3/unicode_category_lookup.3
 @man man/man3/unicode_convert.3
 @man man/man3/unicode_convert_deinit.3
 @man man/man3/unicode_convert_fromu_init.3
@@ -35,7 +40,15 @@ lib/libcourier-unicode.la
 @man man/man3/unicode_default_chset.3
 @man man/man3/unicode_grapheme_break.3
 @man man/man3/unicode_html40ent_lookup.3
+@man man/man3/unicode_isalnum.3
+@man man/man3/unicode_isalpha.3
+@man man/man3/unicode_isblank.3
+@man man/man3/unicode_isdigit.3
+@man man/man3/unicode_isgraph.3
+@man man/man3/unicode_islower.3
+@man man/man3/unicode_ispunct.3
 @man man/man3/unicode_isspace.3
+@man man/man3/unicode_isupper.3
 @man man/man3/unicode_lb_end.3
 @man man/man3/unicode_lb_init.3
 @man man/man3/unicode_lb_next.3
@@ -47,6 +60,7 @@ lib/libcourier-unicode.la
 @man man/man3/unicode_lbc_next_cnt.3
 @man man/man3/unicode_lbc_set_opts.3
 @man man/man3/unicode_lc.3
+@man man/man3/unicode_locale_chset.3
 @man man/man3/unicode_script.3
 @man man/man3/unicode_tc.3
 @man man/man3/unicode_u_ucs2_native.3
