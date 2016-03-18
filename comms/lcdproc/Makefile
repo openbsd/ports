@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/18 16:09:15 naddy Exp $
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		6
+REVISION =		7
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,7 +21,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lcdproc/}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${WITH_APM}" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+			ac_cv_port_have_lpt=no
 # xosd driver is busted, working on it upstream
 # http://lists.omnipotent.net/pipermail/lcdproc/2011-November/013871.html
 CONFIGURE_ARGS =	--enable-drivers=all,!xosd
@@ -40,12 +40,6 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLE_DIR}
 # lcdvc is a linux specific thing - prevent it appearing in PLIST
 	rm ${PREFIX}/bin/lcdvc ${PREFIX}/man/man1/lcdvc.1
-
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-PKG_ARGS += -Dparallel=1
-.else
-PKG_ARGS += -Dparallel=0
-.endif
 
 .include <bsd.port.arch.mk>
 
