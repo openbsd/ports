@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/14 20:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/18 04:35:35 mmcc Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
 DISTNAME=		nslint-2.0.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
-
-MAINTAINER=		Wangden Kelsang <wngdn@src.uchicago.edu>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
