@@ -1,0 +1,72 @@
+$OpenBSD: patch-sr_c,v 1.1 2016/03/18 17:40:09 naddy Exp $
+--- sr.c.orig	Mon Aug  4 12:17:37 1997
++++ sr.c	Fri Mar 18 18:33:47 2016
+@@ -9,6 +9,7 @@ static char *rcsid_sr_c = "$XConsortium: sr.c,v 1.10 8
+ /* Slide Rule */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <math.h>
+ #include <signal.h>
+ #include <X11/Xos.h>
+@@ -53,8 +54,8 @@ extern Window theWindow,dispwid;
+ extern XFontStruct *kfontinfo;
+ Font	scalefont, sscalefont;
+ extern Pixmap backgroundPix,regBorder,dimBorder,IconPix;
+-Pixmap	slidePix = NULL;
+-Pixmap	framePix = NULL;
++Pixmap	slidePix = 0;
++Pixmap	framePix = 0;
+ extern Cursor	arrow;
+ GC	sgc, cgc;
+ int	height,scalelen,width,fheight,foffset;
+@@ -332,11 +333,11 @@ int	w;
+     XResizeWindow(dpy, blackwid, width, SLIDEHIGH+2);
+     if (framePix)
+       XFreePixmap(dpy, framePix);
+-    framePix = NULL;
++    framePix = 0;
+     drawframe();
+     if (slidePix)
+       XFreePixmap(dpy, slidePix);
+-    slidePix = NULL;
++    slidePix = 0;
+     drawslide();
+     XMoveWindow(dpy, slidewid, xo, SLIDETOP);
+     drawnums();
+@@ -369,7 +370,7 @@ drawframe()
+     char	str[5];
+     int midpt = scalelen/2;
+ 
+-    if (framePix == NULL)
++    if (framePix == 0)
+       framePix = XCreatePixmap (dpy, theWindow, width, HEIGHT, 
+ 				DefaultDepth (dpy, DefaultScreen (dpy)));
+     XFillRectangle(dpy, framePix, cgc, 0, 0, width, HEIGHT);
+@@ -546,7 +547,7 @@ drawslide()
+     char	str[5];
+     int 	midpt = scalelen/2;
+ 
+-    if (slidePix == NULL)
++    if (slidePix == 0)
+       slidePix = XCreatePixmap (dpy, theWindow, width, SLIDEHIGH, 
+ 			        DefaultDepth (dpy, DefaultScreen (dpy)));
+     XFillRectangle(dpy, slidePix, cgc, 0, 0, width, SLIDEHIGH);
+@@ -570,7 +571,7 @@ int	x,y,w,h;
+ {
+     int	i;
+ 
+-    if (slidePix != NULL)
++    if (slidePix != 0)
+       XCopyArea(dpy, slidePix, slidewid, sgc, 0, 0, scalelen + START + END, SLIDEHIGH,
+ 		0, 0);
+     else
+@@ -580,7 +581,7 @@ int	x,y,w,h;
+ redrawframe(x, y, w, h)
+ int	x,y,w,h;
+ {
+-    if (framePix != NULL)
++    if (framePix != 0)
+       XCopyArea(dpy, framePix, theWindow, sgc, 0, 0, scalelen + START + END, HEIGHT,
+ 		0, 0);
+     else
