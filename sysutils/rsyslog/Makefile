@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/19 14:41:12 sthen Exp $
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
@@ -62,5 +62,10 @@ post-install:
 	    ${PREFIX}/share/examples/rsyslog/createDB_mysql.sql
 	${INSTALL_DATA} ${WRKSRC}/plugins/ompgsql/createDB.sql \
 	    ${PREFIX}/share/examples/rsyslog/createDB_pgsql.sql
+
+.if ${MACHINE_ARCH:Mi386}
+# 64-bit atomics
+CFLAGS += -march=i686
+.endif
 
 .include <bsd.port.mk>
