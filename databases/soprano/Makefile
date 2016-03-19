@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/28 10:17:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/19 23:44:54 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://soprano.sourceforge.net/
