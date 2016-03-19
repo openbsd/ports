@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/08/17 20:34:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT-main =	grab raw data from digital cameras
 COMMENT-icons =	icons for libkdcraw
@@ -23,7 +23,6 @@ MODULES =		devel/gettext \
 			x11/kde
 MODKDE_VERSION =	3.5.8
 
-SHARED_ONLY =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 

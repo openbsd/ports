@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/08/17 20:34:20 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.38 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT=	BitTorrent client for KDE
 

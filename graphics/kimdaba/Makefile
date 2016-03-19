@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/01/17 17:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT=		kde image database
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=	databases/qt3-sqlite3-plugin \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-SHARED_ONLY=Yes
 MODKDE_VERSION=	3.5.3
 MODULES=	x11/kde devel/gettext
 CONFIGURE_STYLE=	autoconf

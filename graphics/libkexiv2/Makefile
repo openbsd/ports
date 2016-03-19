@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/08/17 20:34:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
@@ -16,7 +16,6 @@ CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
 
 SHARED_LIBS +=	kexiv2                  3.0   # .5.0
 
-SHARED_ONLY =		Yes
 AUTOCONF_VERSION =	2.61
 MODKDE_VERSION =	3.5.7
 MODULES =		devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/22 11:34:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT=		documentation for digikam
 CATEGORIES=		graphics x11 x11/kde
@@ -9,8 +9,6 @@ PKGNAME=		digikam-doc-0.9.3
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES=		${DISTNAME}.tar.bz2
-
-SHARED_ONLY=Yes
 
 MODULES=	x11/kde
 MODKDE_VERSION=		3.5.7

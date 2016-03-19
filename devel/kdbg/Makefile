@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.39 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/19 22:48:27 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5

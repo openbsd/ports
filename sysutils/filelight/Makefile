@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/05/05 17:00:19 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT=	concentric segmented-rings disk usage visualisation
 

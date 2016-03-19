@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/05/05 17:00:19 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT =	powerful KDE batch file renamer
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/19 18:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT-main =		KDE image plugins API
 COMMENT-icons =		icons for libkipi
@@ -16,8 +16,6 @@ SHARED_LIBS +=	kipi                 1.4      # .2.0
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
-
-SHARED_ONLY =		Yes
 
 LIB_DEPENDS =		x11/kde/libs3
 LIB_DEPENDS-icons =

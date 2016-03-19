@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
@@ -11,8 +11,6 @@ SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}
 DISTFILES =		${DISTNAME}.tar.bz2
-
-SHARED_ONLY =		Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/01/17 17:29:09 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT =		CD/DVD creator
 

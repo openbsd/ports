@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/05/05 17:00:20 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.26 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT=	twin panel file manager for KDE
 

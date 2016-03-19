@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.34 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/19 22:48:27 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
 
 DISTNAME=	klogic-1.6

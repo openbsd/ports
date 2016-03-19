@@ -1,6 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.43 2013/12/24 10:38:48 zhuk Exp $
-
-SHARED_ONLY ?=	Yes
+# $OpenBSD: kde.port.mk,v 1.44 2016/03/19 22:48:28 naddy Exp $
 
 MODKDE_VERSION ?=
 MODULES +=	x11/qt3

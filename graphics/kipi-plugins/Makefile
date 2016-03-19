@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/08/25 11:16:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/19 22:48:27 naddy Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -19,7 +19,6 @@ SHARED_LIBS +=	kipiplugins          0.0      # .0.1
 
 SUBST_VARS +=	PKGNAME-cal
 MULTI_PACKAGES =-main -cal
-SHARED_ONLY =	Yes
 LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libkipi
 

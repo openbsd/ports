@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/17 17:29:11 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/19 22:48:28 naddy Exp $
 
 COMMENT=	QNX Photon inspired theme for KDE
 

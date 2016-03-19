@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.52 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2016/03/19 22:48:27 naddy Exp $
 
-SHARED_ONLY=		Yes
 DPB_PROPERTIES=		tag:kde3
 
 COMMENT-main=		multilingual input method library
