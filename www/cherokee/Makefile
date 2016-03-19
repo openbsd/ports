@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/03/11 20:28:32 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.59 2016/03/19 23:59:15 naddy Exp $
 
 COMMENT-main =	fast, flexible and easy to configure web server
 COMMENT-geoip =	GeoIP module for Cherokee web server

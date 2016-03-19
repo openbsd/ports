@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/08 20:44:39 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/19 23:59:15 naddy Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
-SHARED_ONLY=	Yes
 
 COMMENT-main=	GIS CGI server
 COMMENT-utils=	mapserver utilities

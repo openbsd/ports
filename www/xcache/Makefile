@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/19 23:00:41 mmcc Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.31 2016/03/19 23:59:15 naddy Exp $
 
 COMMENT=	fast and stable PHP opcode cacher
 

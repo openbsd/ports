@@ -1,6 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.14 2016/02/01 21:53:06 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: php.port.mk,v 1.15 2016/03/19 23:59:15 naddy Exp $
 
 CATEGORIES+=		lang/php
 
