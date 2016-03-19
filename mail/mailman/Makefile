@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2015/04/09 15:37:08 okan Exp $
+# $OpenBSD: Makefile,v 1.82 2016/03/19 10:29:03 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.20
+REVISION=	0
 CATEGORIES=	mail www
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
@@ -41,14 +42,16 @@ CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 			--with-username=_mailman \
 			--with-groupname=_mailman
 
-FLAVORS=	postfix sendmail
-FLAVOR?=
+FLAVORS=	smtpd postfix sendmail
+FLAVOR?=	smtpd
 .if ${FLAVOR:Mpostfix}
 CONFIGURE_ARGS+=--with-mail-gid=_mailman
 .elif ${FLAVOR:Msendmail}
 CONFIGURE_ARGS+=--with-mail-gid=daemon
-.else
+.elif ${FLAVOR:Msmtpd}
 CONFIGURE_ARGS+=--with-mail-gid=_smtpd
+.else
+ERRORS+="Fatal: a flavor (smtpd, postfix, sendmail) must be specified"
 .endif
 
 SCRIPTS=	Mailman/Archiver/pipermail.py \

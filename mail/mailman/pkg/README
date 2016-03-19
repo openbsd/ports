@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2016/03/19 10:29:03 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -175,12 +175,13 @@ system and version of Python.
              more information.
 
 
-   Problem:  I use Postfix for my MTA and the mail wrapper programs
-             are logging complaints about the wrong GID.
+   Problem:  The mail wrapper programs are logging complaints about the
+             wrong GID.
 
-   Solution: Install mailman with the following command:
-
-             % FLAVOR=postfix make install
+   Solution: The mail wrappers have a compiled-in GID check. Packages are
+             available for postfix/smtpd/sendmail, pkg_add will ask you which
+             to use. If you change MTA, uninstall the mailman package and
+             pkg_add a new one.
 
 
    Problem:  I send mail to the list, and get back mail saying,
