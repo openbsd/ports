@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/03/19 10:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2016/03/19 10:31:44 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
@@ -10,6 +10,7 @@ HOMEPAGE=	https://www.gnu.org/software/mailman/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
@@ -29,7 +30,7 @@ MMSPOOL=		/var/spool/mailman
 
 FAKE_FLAGS=		DIRSETGID=":"
 
-# gnu still breaks the pathes as prefix is actually mailman's home
+# gnu still breaks the paths as prefix is actually mailman's home
 CONFIGURE_STYLE=	simple
 # do not use --without-permcheck as this requires the mailman user and group
 # to exist, otherwise there will be problems running mailman
