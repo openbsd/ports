@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_main_window_tools_vala,v 1.2 2016/03/01 09:06:43 ajacoutot Exp $
+$OpenBSD: patch-src_main_window_tools_vala,v 1.3 2016/03/19 12:42:50 ajacoutot Exp $
+
+From 38024aae9c71a1764870e02506a9fb3439d9560e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Fri, 11 Mar 2016 19:05:15 +0100
+Subject: spell: update for GspellTextView API change
 
 From d8ae45d5ea29b0766b5db21739300e3d272c6848 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
@@ -15,8 +20,8 @@ From: Sebastien Wilmet <swilmet@gnome.org>
 Date: Thu, 7 Jan 2016 14:12:38 +0100
 Subject: spell: use GspellInlineCheckerText
 
---- src/main_window_tools.vala.orig	Fri Nov 27 18:31:52 2015
-+++ src/main_window_tools.vala	Thu Feb 25 11:56:36 2016
+--- src/main_window_tools.vala.orig	Sat Mar 19 13:28:55 2016
++++ src/main_window_tools.vala	Sat Mar 19 13:29:23 2016
 @@ -64,7 +64,6 @@ public class MainWindowTools
  
          _editor_settings.changed["highlight-misspelled-words"].connect (() =>
@@ -31,9 +36,9 @@ Subject: spell: use GspellInlineCheckerText
  
 -        spell_checking_action.active =
 -            _main_window.active_view.highlight_misspelled_words;
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (_main_window.active_view as TextView);
-+        spell_checking_action.active = inline_checker.enabled;
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (_main_window.active_view as TextView);
++        spell_checking_action.active = gspell_view.inline_spell_checking;
      }
  
      /* Sensitivity */
@@ -59,17 +64,17 @@ Subject: spell: use GspellInlineCheckerText
  
          bool activate = (action as ToggleAction).active;
  
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (view as TextView);
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (view as TextView);
 +
          // Save metadata only if property changes, because this function is
          // also called when update_inline_spell_checker_action_state() is
          // called.
 -        if (view.highlight_misspelled_words != activate)
-+        if (inline_checker.enabled != activate)
++        if (gspell_view.inline_spell_checking != activate)
          {
 -            view.highlight_misspelled_words = activate;
-+            inline_checker.enabled = activate;
++            gspell_view.inline_spell_checking = activate;
  
              update_inline_spell_checker_action_state ();
  

@@ -1,4 +1,14 @@
-$OpenBSD: patch-src_document_view_vala,v 1.4 2016/03/01 09:06:43 ajacoutot Exp $
+$OpenBSD: patch-src_document_view_vala,v 1.5 2016/03/19 12:42:50 ajacoutot Exp $
+
+From 38024aae9c71a1764870e02506a9fb3439d9560e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Fri, 11 Mar 2016 19:05:15 +0100
+Subject: spell: update for GspellTextView API change
+
+From db961f73ca27b88466b1c45ed56a17cff6a6f68e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Fri, 11 Mar 2016 13:52:52 +0100
+Subject: spell: update for GspellTextBuffer API change
 
 From 17fa1977ff45e48ba9495ed775d83c3d16f3d76b Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
@@ -50,8 +60,8 @@ From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
 Date: Sun, 13 Dec 2015 18:56:51 +0100
 Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 
---- src/document_view.vala.orig	Sat Dec 19 17:37:05 2015
-+++ src/document_view.vala	Thu Feb 25 11:56:36 2016
+--- src/document_view.vala.orig	Sat Mar 19 13:28:39 2016
++++ src/document_view.vala	Sat Mar 19 13:29:23 2016
 @@ -1,7 +1,7 @@
  /*
   * This file is part of LaTeXila.
@@ -96,19 +106,22 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
      public DocumentView (Document doc)
      {
          this.buffer = doc;
-@@ -225,20 +207,26 @@ public class DocumentView : Gtk.SourceView
+@@ -225,20 +207,29 @@ public class DocumentView : Gtk.SourceView
  
      private void init_spell_checking ()
      {
 -        _spell_checker = new Gspell.Checker (get_spell_language ());
 +        Gspell.Checker spell_checker = new Gspell.Checker (get_spell_language ());
-+        Gspell.text_buffer_set_spell_checker (this.buffer, spell_checker);
++
++        unowned Gspell.TextBuffer gspell_buffer =
++            Gspell.TextBuffer.get_from_gtk_text_buffer (buffer);
++        gspell_buffer.set_spell_checker (spell_checker);
 +
          setup_inline_spell_checker ();
  
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (this as TextView);
-+        inline_checker.notify["enabled"].connect (inline_checker_enabled_notify_cb);
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (this as TextView);
++        gspell_view.notify["inline-spell-checking"].connect (inline_checker_enabled_notify_cb);
 +
          Document doc = get_buffer () as Document;
  
@@ -126,7 +139,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
          });
  
          _editor_settings.changed["highlight-misspelled-words"].connect (() =>
-@@ -251,41 +239,37 @@ public class DocumentView : Gtk.SourceView
+@@ -251,41 +242,45 @@ public class DocumentView : Gtk.SourceView
      {
          Document doc = get_buffer () as Document;
  
@@ -145,6 +158,14 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 +        return Gspell.Language.lookup (lang_code);
      }
  
++    private unowned Gspell.Checker? get_spell_checker ()
++    {
++        unowned Gspell.TextBuffer gspell_buffer =
++            Gspell.TextBuffer.get_from_gtk_text_buffer (buffer);
++
++        return gspell_buffer.get_spell_checker ();
++    }
++
      public void setup_inline_spell_checker ()
      {
          Document doc = get_buffer () as Document;
@@ -164,9 +185,9 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 -            activate_inline_spell_checker ();
 -        else
 -            deactivate_inline_spell_checker ();
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (this as TextView);
-+        inline_checker.enabled = enabled;
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (this as TextView);
++        gspell_view.inline_spell_checking = enabled;
      }
  
      public void launch_spell_checker_dialog ()
@@ -180,12 +201,12 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
          Gspell.CheckerDialog dialog =
              new Gspell.CheckerDialog (this.get_toplevel () as Window, navigator);
  
-@@ -295,69 +279,72 @@ public class DocumentView : Gtk.SourceView
+@@ -295,69 +290,72 @@ public class DocumentView : Gtk.SourceView
  
      public void launch_spell_language_chooser_dialog ()
      {
 -        return_if_fail (_spell_checker != null);
-+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
++        Gspell.Checker? spell_checker = get_spell_checker ();
 +        return_if_fail (spell_checker != null);
  
          Gspell.LanguageChooserDialog dialog =
@@ -209,7 +230,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 +    public void save_spell_language_metadata ()
      {
 -        return_if_fail (_spell_checker != null);
-+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
++        Gspell.Checker? spell_checker = get_spell_checker ();
 +        return_if_fail (spell_checker != null);
  
          Document doc = get_buffer () as Document;
@@ -229,10 +250,10 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
          Document doc = get_buffer () as Document;
  
 -        if (this.highlight_misspelled_words)
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (this as TextView);
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (this as TextView);
 +
-+        if (inline_checker.enabled)
++        if (gspell_view.inline_spell_checking)
          {
              doc.set_metadata (METADATA_ATTRIBUTE_INLINE_SPELL,
 -                INLINE_SPELL_ACTIVATED_STR);
@@ -250,9 +271,9 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 +    private void inline_checker_enabled_notify_cb ()
      {
 -        return_if_fail (_spell_checker != null);
-+        Gspell.InlineCheckerTextView inline_checker =
-+            Gspell.text_view_get_inline_checker (this as TextView);
-+        if (! inline_checker.enabled)
++        Gspell.TextView gspell_view =
++            Gspell.TextView.get_from_gtk_text_view (this as TextView);
++        if (! gspell_view.inline_spell_checking)
 +            return;
  
 -        if (_spell_checker.get_language () != null)
@@ -262,7 +283,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 -                _inline_spell_checker =
 -                    new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
 -                        _spell_checker);
-+        Gspell.Checker? spell_checker = Gspell.text_buffer_get_spell_checker (buffer);
++        Gspell.Checker? spell_checker = get_spell_checker ();
 +        return_if_fail (spell_checker != null);
  
 -                _inline_spell_checker.attach_view (this);
@@ -274,12 +295,12 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
              return;
 -        }
  
-+        inline_checker.enabled = false;
++        gspell_view.inline_spell_checking = false;
 +
          if (_no_spell_language_dialog_shown)
              return;
  
-@@ -389,15 +376,5 @@ public class DocumentView : Gtk.SourceView
+@@ -389,15 +387,5 @@ public class DocumentView : Gtk.SourceView
          }
  
          dialog.destroy ();
