@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.152 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.153 2016/03/19 11:50:46 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.18.2
+GNOME_VERSION=		3.18.3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +18,7 @@ WANTLIB += cups dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += gdbm gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnome-desktop-3 gnutls gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 gweather-3 harfbuzz hogweed
-WANTLIB += json-c json-glib-1.0 lcms2 ltdl lzma m nettle notify
+WANTLIB += idn json-c json-glib-1.0 lcms2 ltdl lzma m nettle notify
 WANTLIB += nspr4 nss3 nssutil3 ogg p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib smime3
