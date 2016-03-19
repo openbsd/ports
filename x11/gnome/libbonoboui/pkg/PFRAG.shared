@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/08 14:51:51 steven Exp $
-@lib lib/libbonoboui-2.so.${LIBbonoboui-2_VERSION}
-lib/libglade/2.0/libbonobo.so

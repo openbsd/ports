@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2008/11/21 18:47:16 jasper Exp $
-lib/libglade/2.0/libgnome.so
-@lib lib/libgnomeui-2.so.${LIBgnomeui-2_VERSION}
