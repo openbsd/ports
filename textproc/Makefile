@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2016/03/19 10:23:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.490 2016/03/19 20:24:28 okan Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -243,7 +243,6 @@
      SUBDIR += p5-Text-RecordParser
      SUBDIR += p5-Text-Reflow
      SUBDIR += p5-Text-Reform
-     SUBDIR += p5-Text-Restructured
      SUBDIR += p5-Text-SimpleTable
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay

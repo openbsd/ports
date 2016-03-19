@@ -1,2 +1,0 @@
-Through Safe::Hole, one can execute outside defined subroutines in the
-original main compartment from the Safe compartment.

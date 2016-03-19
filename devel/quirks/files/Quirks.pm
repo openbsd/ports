@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.376 2016/03/19 10:23:11 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.377 2016/03/19 20:24:28 okan Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -751,6 +751,12 @@ my $obsolete_reason = {
 	'libexude' => 3,
 	'assl' => 3,
 	'libxmlsd' => 3,
+	'p5-Text-Restructured' => 3,
+	'p5-Safe-World' => 3,
+	'p5-Safe-Hole' => 3,
+	'p5-Slay-Makefile-Gress' => 3,
+	'p5-Slay-Makefile' => 3,
+	'p5-Slay-Maker' => 3,
 };
 
 my @msg = (

@@ -1,3 +1,0 @@
-Text::Restructured is a set of modules to parse reStructuredText
-documents and output them in various formats, such as HTML or LaTeX.  For
-details on reStructuredText, see http://docutils.sourceforge.net/rst.html.
