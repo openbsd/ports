@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.45 2016/02/25 03:50:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.46 2016/03/19 11:37:40 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -292,6 +292,8 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_5650-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5652-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5700-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5800-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_5810_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_5820_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5850-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5900_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_600-hpijs.ppd.gz
@@ -902,6 +904,10 @@ share/foomatic/db/source/PPD/HP/hp-officejet_v30-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_v40-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_v40xi-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_v45-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-pagewide_pro_452_printer-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-pagewide_pro_477_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-pagewide_pro_552_printer-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-pagewide_pro_577_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_100-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_1115-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_1215-hpijs.ppd.gz
