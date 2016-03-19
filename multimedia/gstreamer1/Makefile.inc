@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2016/03/19 15:47:04 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -16,8 +16,6 @@
 #     gstreamer1-plugins-libav
 
 PORTROACH=		limitw:1,even
-
-SHARED_ONLY=		Yes
 
 V ?=			1.6.3
 API=			1.0

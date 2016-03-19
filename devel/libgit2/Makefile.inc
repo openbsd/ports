@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/11/12 15:00:25 sthen Exp $
-
-SHARED_ONLY?=		Yes
+# $OpenBSD: Makefile.inc,v 1.10 2016/03/19 15:47:04 naddy Exp $
 
 CATEGORIES+=		devel
 

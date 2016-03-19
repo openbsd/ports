@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2016/03/19 15:47:04 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core          base library
@@ -16,7 +16,6 @@
 #     gstreamer-plugins-ffmpeg
 
 PORTROACH=		limit:^0\.10
-SHARED_ONLY=		Yes
 
 CATEGORIES ?=		multimedia devel
 

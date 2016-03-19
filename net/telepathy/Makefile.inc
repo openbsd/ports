@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.18 2014/09/13 16:36:54 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2016/03/19 15:47:04 naddy Exp $
 
 PORTROACH=	limitw:1,even
-
-SHARED_ONLY?=	Yes
 
 CATEGORIES +=	net
 

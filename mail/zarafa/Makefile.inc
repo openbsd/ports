@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.36 2015/11/02 11:06:34 robert Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile.inc,v 1.37 2016/03/19 15:47:04 naddy Exp $
 
 V?=		7.2.1
 BUILD?=		51838
