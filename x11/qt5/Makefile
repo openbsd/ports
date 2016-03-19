@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2016/03/17 11:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2016/03/19 12:04:05 landry Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+BROKEN-powerpc =	never built - gcc ICE
 
 VERSION =		5.5.1
 ENGINIO_VERSION =	1.2.1
