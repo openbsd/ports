@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2016/03/07 21:07:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.417 2016/03/19 10:23:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -8,7 +8,6 @@
      SUBDIR += amap
      SUBDIR += apg
      SUBDIR += arirang
-     SUBDIR += assl
      SUBDIR += bfbtester
      SUBDIR += botan
      SUBDIR += bounix

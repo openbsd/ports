@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1472 2016/03/16 19:32:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.1473 2016/03/19 10:23:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -308,7 +308,6 @@
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libbio
-     SUBDIR += libclog
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
@@ -323,7 +322,6 @@
      SUBDIR += libevent2
      SUBDIR += libeventextra
      SUBDIR += libexecinfo
-     SUBDIR += libexude
      SUBDIR += libf2c
      SUBDIR += libffi
      SUBDIR += libfmt

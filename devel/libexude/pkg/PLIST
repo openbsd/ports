@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:42 naddy Exp $
-include/exude.h
-lib/libexude.a
-@lib lib/libexude.so.${LIBexude_VERSION}
-lib/libexude_p.a
-@man man/man3/exude.3

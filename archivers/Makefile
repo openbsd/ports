@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/12/29 12:52:12 kili Exp $
+# $OpenBSD: Makefile,v 1.77 2016/03/19 10:23:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -21,7 +21,6 @@
      SUBDIR += lha
      SUBDIR += libarchive
      SUBDIR += libmspack
-     SUBDIR += libshrink
      SUBDIR += libtar
      SUBDIR += libzip
      SUBDIR += luazlib
