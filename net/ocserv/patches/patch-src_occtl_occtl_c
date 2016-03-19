@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_occtl_occtl_c,v 1.1 2016/03/19 20:03:46 sthen Exp $
+--- src/occtl/occtl.c.orig	Sun Mar  6 18:07:27 2016
++++ src/occtl/occtl.c	Sat Mar 19 14:25:48 2016
+@@ -242,7 +242,7 @@ static int handle_help_cmd(CONN_TYPE * conn, const cha
+ static int handle_reset_cmd(CONN_TYPE * conn, const char *arg, cmd_params_st *params)
+ {
+ 	rl_reset_terminal(NULL);
+-#ifdef HAVE_ORIG_READLINE
++#if defined(HAVE_ORIG_READLINE) && !defined(__OpenBSD__)
+ 	rl_reset_screen_size();
+ #endif
+ 
