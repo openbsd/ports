@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/02/01 21:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/19 23:00:41 mmcc Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,7 +48,6 @@ CONFIGURE_ARGS+=	--enable-xcache-coverager
 
 MODPHP_DO_PHPIZE=	Yes
 MODPHP_DO_SAMPLE=	xcache
-MESSAGE=		${PKGDIR}/MESSAGE
 
 post-extract:
 	@ln -sf ${LOCALBASE}/bin/gindent ${WRKDIR}/bin/indent
