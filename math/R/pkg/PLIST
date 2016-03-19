@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/09/28 07:32:19 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/03/19 11:42:57 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -200,6 +200,7 @@ lib/R/library/Matrix/Copyrights
 lib/R/library/Matrix/DESCRIPTION
 lib/R/library/Matrix/Doxyfile
 lib/R/library/Matrix/INDEX
+lib/R/library/Matrix/LICENCE
 lib/R/library/Matrix/Meta/
 lib/R/library/Matrix/Meta/Rd.rds
 lib/R/library/Matrix/Meta/data.rds
