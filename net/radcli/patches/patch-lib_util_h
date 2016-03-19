@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_util_h,v 1.1.1.1 2015/11/23 15:10:06 sthen Exp $
---- lib/util.h.orig	Fri Nov 20 23:06:58 2015
-+++ lib/util.h	Fri Nov 20 23:07:22 2015
-@@ -21,7 +21,9 @@ size_t rc_strlcpy(char *dst, char const *src, size_t s
+$OpenBSD: patch-lib_util_h,v 1.2 2016/03/19 19:59:35 sthen Exp $
+--- lib/util.h.orig	Thu Nov 26 21:12:12 2015
++++ lib/util.h	Sat Mar 19 19:57:09 2016
+@@ -23,7 +23,9 @@ size_t rc_strlcpy(char *dst, char const *src, size_t s
  #define SA_LEN(sa) \
    (((sa)->sa_family == AF_INET) ? \
      sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6))

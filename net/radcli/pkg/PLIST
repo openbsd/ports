@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/23 15:10:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/19 19:59:36 sthen Exp $
 include/radcli/
 include/radcli/radcli.h
 include/radcli/version.h
@@ -33,6 +33,7 @@ lib/pkgconfig/radcli.pc
 @man man/man3/rc_avpair_new.3
 @man man/man3/rc_avpair_next.3
 @man man/man3/rc_avpair_parse.3
+@man man/man3/rc_avpair_remove.3
 @man man/man3/rc_avpair_tostr.3
 @man man/man3/rc_buildreq.3
 @man man/man3/rc_check.3
@@ -78,5 +79,9 @@ share/examples/radcli/servers-tls
 @mode
 share/radcli/
 share/radcli/dictionary
+share/radcli/dictionary.ascend
+share/radcli/dictionary.compat
+share/radcli/dictionary.merit
 share/radcli/dictionary.microsoft
 share/radcli/dictionary.roaringpenguin
+share/radcli/dictionary.sip
