@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/01 09:05:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/19 12:42:17 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
 include/gspell-1/gspell/gspell-checker.h
-include/gspell-1/gspell/gspell-inline-checker-text-view.h
 include/gspell-1/gspell/gspell-language-chooser-button.h
 include/gspell-1/gspell/gspell-language-chooser-dialog.h
 include/gspell-1/gspell/gspell-language-chooser.h
@@ -11,35 +10,31 @@ include/gspell-1/gspell/gspell-language.h
 include/gspell-1/gspell/gspell-navigator-text-view.h
 include/gspell-1/gspell/gspell-navigator.h
 include/gspell-1/gspell/gspell-text-buffer.h
+include/gspell-1/gspell/gspell-text-view.h
 include/gspell-1/gspell/gspell.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gspell-1.typelib
 lib/libgspell-1.a
 lib/libgspell-1.la
 @lib lib/libgspell-1.so.${LIBgspell-1_VERSION}
 lib/pkgconfig/gspell-1.pc
-share/gir-1.0/
 share/gir-1.0/Gspell-1.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gspell-1.0/
 share/gtk-doc/html/gspell-1.0/GspellChecker.html
 share/gtk-doc/html/gspell-1.0/GspellCheckerDialog.html
-share/gtk-doc/html/gspell-1.0/GspellInlineCheckerTextView.html
 share/gtk-doc/html/gspell-1.0/GspellLanguage.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooser.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooserButton.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooserDialog.html
 share/gtk-doc/html/gspell-1.0/GspellNavigator.html
 share/gtk-doc/html/gspell-1.0/GspellNavigatorTextView.html
+share/gtk-doc/html/gspell-1.0/GspellTextBuffer.html
+share/gtk-doc/html/gspell-1.0/GspellTextView.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
 share/gtk-doc/html/gspell-1.0/ch01.html
 share/gtk-doc/html/gspell-1.0/ch02.html
 share/gtk-doc/html/gspell-1.0/ch03.html
 share/gtk-doc/html/gspell-1.0/ch04.html
-share/gtk-doc/html/gspell-1.0/ch05.html
-share/gtk-doc/html/gspell-1.0/gspell-1.0-GtkTextBuffer-support.html
 share/gtk-doc/html/gspell-1.0/gspell-1.0.devhelp2
 share/gtk-doc/html/gspell-1.0/home.png
 share/gtk-doc/html/gspell-1.0/index.html
@@ -53,6 +48,7 @@ share/gtk-doc/html/gspell-1.0/style.css
 share/gtk-doc/html/gspell-1.0/up-insensitive.png
 share/gtk-doc/html/gspell-1.0/up.png
 share/locale/ar/LC_MESSAGES/gspell-1.mo
+share/locale/ca/LC_MESSAGES/gspell-1.mo
 share/locale/cs/LC_MESSAGES/gspell-1.mo
 share/locale/da/LC_MESSAGES/gspell-1.mo
 share/locale/de/LC_MESSAGES/gspell-1.mo
@@ -76,13 +72,12 @@ share/locale/pt/LC_MESSAGES/gspell-1.mo
 share/locale/pt_BR/LC_MESSAGES/gspell-1.mo
 share/locale/ru/LC_MESSAGES/gspell-1.mo
 share/locale/sk/LC_MESSAGES/gspell-1.mo
+share/locale/sl/LC_MESSAGES/gspell-1.mo
 share/locale/sr/LC_MESSAGES/gspell-1.mo
 share/locale/sr@latin/LC_MESSAGES/gspell-1.mo
 share/locale/sv/LC_MESSAGES/gspell-1.mo
 share/locale/tr/LC_MESSAGES/gspell-1.mo
 share/locale/vi/LC_MESSAGES/gspell-1.mo
 share/locale/zh_TW/LC_MESSAGES/gspell-1.mo
-share/vala/
-share/vala/vapi/
 share/vala/vapi/gspell-1.deps
 share/vala/vapi/gspell-1.vapi

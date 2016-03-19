@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2016/03/19 12:42:17 ajacoutot Exp $
+
+XXX needs gtk+3 >= 3.19
+
+--- configure.orig	Sat Mar 19 12:58:15 2016
++++ configure	Sat Mar 19 12:58:32 2016
+@@ -2370,7 +2370,7 @@ GSPELL_API_VERSION=1
+ # Dependencies
+ enchant_req=1.6.0
+ glib_req=2.44
+-gtk_req=3.19.11
++gtk_req=3.18
+ 
+ 
+ ac_config_headers="$ac_config_headers config.h"
