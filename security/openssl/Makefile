@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 23:03:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/19 12:16:04 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c
 
 MASTER_SITES=	https://www.openssl.org/source/ \
+		https://www.openssl.org/source/old/${V:C/.$//}/ \
 		ftp://ftp.openssl.org/source/
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/lib/eopenssl/man
