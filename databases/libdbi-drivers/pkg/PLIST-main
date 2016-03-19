@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.2 2016/03/19 10:24:33 sthen Exp $
 lib/dbd/
 lib/dbd/libdbdmysql.a
 lib/dbd/libdbdmysql.la
+lib/dbd/libdbdmysql.so
 share/doc/libdbi-drivers/
 share/doc/libdbi-drivers/dbd_mysql/
 share/doc/libdbi-drivers/dbd_mysql.pdf

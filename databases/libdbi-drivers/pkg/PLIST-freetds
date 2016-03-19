@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-freetds,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-freetds,v 1.2 2016/03/19 10:24:33 sthen Exp $
 lib/dbd/
 lib/dbd/libdbdfreetds.a
 lib/dbd/libdbdfreetds.la
+lib/dbd/libdbdfreetds.so

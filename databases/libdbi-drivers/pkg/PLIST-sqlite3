@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-sqlite3,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-sqlite3,v 1.2 2016/03/19 10:24:33 sthen Exp $
 lib/dbd/
 lib/dbd/libdbdsqlite3.a
 lib/dbd/libdbdsqlite3.la
+lib/dbd/libdbdsqlite3.so
 share/doc/libdbi-drivers/
 share/doc/libdbi-drivers/dbd_sqlite3/
 share/doc/libdbi-drivers/dbd_sqlite3.pdf

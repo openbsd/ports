@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-pgsql,v 1.2 2016/03/19 10:24:33 sthen Exp $
 lib/dbd/
 lib/dbd/libdbdpgsql.a
 lib/dbd/libdbdpgsql.la
+lib/dbd/libdbdpgsql.so
 share/doc/libdbi-drivers/
 share/doc/libdbi-drivers/dbd_pgsql/
 share/doc/libdbi-drivers/dbd_pgsql.pdf
