@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/02/01 21:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/19 21:18:38 naddy Exp $
 
 COMMENT =	PHP interface to swish-e
 
@@ -8,7 +8,7 @@ REVISION =	2
 # PHP
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	m pcre pcreposix swish-e z
+WANTLIB =	c m pcre pcreposix swish-e z
 
 MODULES =	lang/php/pecl
 CONFIGURE_STYLE =  gnu

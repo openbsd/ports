@@ -1,9 +1,8 @@
-# $OpenBSD: pecl.port.mk,v 1.5 2015/11/14 14:55:47 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.6 2016/03/19 21:18:38 naddy Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
-SHARED_ONLY ?=	Yes
 CATEGORIES +=	www
 
 PKGNAME ?=	pecl-${DISTNAME:S/pecl-//:S/_/-/:L}
@@ -34,8 +33,4 @@ MODPHP_DO_PHPIZE ?= Yes
 TEST_TARGET = test
 TEST_FLAGS =  NO_INTERACTION=1
 USE_GMAKE ?=  Yes
-.endif
-
-.if ${SHARED_ONLY:L} == "yes"
-WANTLIB += c
 .endif

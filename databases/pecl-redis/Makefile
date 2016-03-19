@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/19 21:18:38 naddy Exp $
 
 COMMENT=		PHP interface to redis
 
@@ -9,6 +9,8 @@ CATEGORIES=		databases
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=		c
 
 MODULES=		lang/php/pecl
 

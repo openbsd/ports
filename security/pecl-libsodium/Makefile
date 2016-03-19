@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/02/02 00:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/19 21:18:38 naddy Exp $
 
 COMMENT =	low-level encryption extension for PHP
 
@@ -13,7 +13,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += sodium
+WANTLIB += c sodium
 
 MODULES =	lang/php/pecl
 LIB_DEPENDS =	security/libsodium

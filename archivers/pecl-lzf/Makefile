@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/02/01 21:55:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/19 21:18:37 naddy Exp $
 
 COMMENT =		PHP support for LZF de/compression
 
@@ -9,6 +9,8 @@ REVISION =		0
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =		c
 
 MODULES =		lang/php/pecl
 CONFIGURE_STYLE =	gnu

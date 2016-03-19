@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/01 21:55:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/19 21:18:38 naddy Exp $
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
@@ -10,6 +10,8 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =		c
 
 AUTOCONF_VERSION =	2.52
 AUTOMAKE_VERSION =	1.4

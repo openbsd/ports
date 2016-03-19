@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/02/01 21:55:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/19 21:18:38 naddy Exp $
 
 COMMENT=	extended HTTP support
 
@@ -18,7 +18,7 @@ MODULES=	lang/php/pecl \
 
 CONFIGURE_STYLE= gnu
 
-WANTLIB+=	crypto curl event idn nghttp2 ssl z
+WANTLIB+=	c crypto curl event idn nghttp2 ssl z
 RUN_DEPENDS+=	www/pecl-raphf \
 		www/pecl-propro
 TEST_DEPENDS+=	${RUN_DEPENDS}
