@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/09/28 08:45:16 vgross Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=		Internationalizing Domain Names in Applications
 
@@ -10,6 +8,7 @@ CATEGORIES=		net converters
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB=		perl
 
 MODULES=		cpan
 

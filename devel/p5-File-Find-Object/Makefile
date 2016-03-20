@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/08 20:40:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =		object oriented File::Find replacement
 
@@ -14,6 +14,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-Class-XSAccessor
 TEST_DEPENDS =		devel/p5-Test-Pod \
 			devel/p5-Test-Pod-Coverage

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:33 naddy Exp $
 
-SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
 HOMEPAGE =		http://sdlperl.org/
 
@@ -17,7 +16,7 @@ MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=		GL GLU SDL jpeg png pthread
+WANTLIB +=		GL GLU SDL jpeg perl png pthread
 
 RUN_DEPENDS =		devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/19 10:52:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	extensions to Class::DBI for MySQL
 
 MODULES=	cpan databases/mariadb
+PKG_ARCH=	*
 DISTNAME=	Class-DBI-mysql-1.00
 REVISION=	3
 CATEGORIES=	databases

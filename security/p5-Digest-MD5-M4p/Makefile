@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/20 22:47:42 naddy Exp $
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:01 naddy Exp $
 
 COMMENT=	perl interface to a variant of the MD5 algorithm
 
@@ -11,7 +10,7 @@ CATEGORIES=	security
 # same as perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 INSTALL_TARGET=	install_site
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/27 07:14:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT =	easy config file management
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	CGI-Application-Plugin-ConfigAuto-1.33
 CATEGORIES =	www
 

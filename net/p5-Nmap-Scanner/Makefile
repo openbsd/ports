@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:56 naddy Exp $
 
 COMMENT=	perform and manipulate nmap scans using Perl
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Nmap-Scanner-1.0
 REVISION=	4
 CATEGORIES=	net

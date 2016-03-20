@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/19 14:01:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT =	perl module for spell-checking source code
 
@@ -12,6 +12,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 CPAN_AUTHOR =		ZBLAIR
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	more complex retrieve_all() for Class::DBI
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-DBI-Plugin-RetrieveAll-1.04
 REVISION=	0
 CATEGORIES=	databases

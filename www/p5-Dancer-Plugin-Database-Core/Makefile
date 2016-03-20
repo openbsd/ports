@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/09 07:37:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT =		shared core for D1 and D2 Database plugins
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Dancer-Plugin-Database-Core-0.13
 CATEGORIES =		www
 

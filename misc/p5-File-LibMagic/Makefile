@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/27 19:35:55 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT =		perl wrapper for libmagic
 
@@ -13,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c magic
+WANTLIB =		c magic perl
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/libmagic

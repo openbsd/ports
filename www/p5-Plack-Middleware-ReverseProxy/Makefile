@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/15 10:24:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT =	supports app to run as a reverse proxy backend
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Plack-Middleware-ReverseProxy-0.15
 CATEGORIES =	www
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/11 18:44:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:18 naddy Exp $
 
 COMMENT =		common perl data validation methods
 
@@ -12,5 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

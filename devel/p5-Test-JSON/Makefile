@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/01 13:33:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT =	test JSON data
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-JSON-0.11
 CATEGORIES =	devel
 

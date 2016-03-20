@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT=	mod_perl class for generating browsable MP3 directory lists
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Apache-MP3-3.05
 REVISION=	3
 CATEGORIES=	www audio

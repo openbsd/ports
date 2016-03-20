@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/16 05:11:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT=		simple base package from which to inherit
 
@@ -10,5 +10,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

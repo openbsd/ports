@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT=	load modules and create objects on demand
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-Loader-2.03
 REVISION=	1
 CATEGORIES=	devel

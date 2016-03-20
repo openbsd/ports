@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/24 08:26:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
@@ -6,6 +6,7 @@ DISTNAME =	Audio-M4P-0.57
 CATEGORIES=	audio
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:22 naddy Exp $
 COMMENT=	HTML ajax autocompleter for Rose
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Rose-HTMLx-Form-Field-Autocomplete-0.02
 REVISION=	0
 CATEGORIES=	www devel databases

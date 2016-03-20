@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/25 01:16:17 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =	facility for creating read-only scalars, arrays, hashes
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Readonly-2.00
 CATEGORIES =	devel
 

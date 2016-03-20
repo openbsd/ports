@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/02 09:29:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT=	perl multi-level hash/array DBM that supports transactions
 
@@ -10,6 +10,7 @@ CATEGORIES=	databases
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Test-Deep \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT= 	read and modify Apache .htpasswd files
 
@@ -10,6 +10,7 @@ CATEGORIES=	security
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-Class-Accessor \
 		devel/p5-IO-LockedFile

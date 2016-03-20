@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/20 22:47:40 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		roles which support overloading
 
@@ -14,7 +12,7 @@ MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS=		devel/p5-Moose>=0.94 \
 			devel/p5-MooseX-Types \

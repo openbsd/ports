@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/19 12:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	create PostScript files of mailing address labels
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	PostScript-MailLabels-2.32
 CATEGORIES=	print
 

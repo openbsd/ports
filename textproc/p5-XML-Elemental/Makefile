@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/28 15:17:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT =	generic classes for simplistic handling of XML data
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	XML-Elemental-2.11
 CATEGORIES =	textproc
 REVISION =	0

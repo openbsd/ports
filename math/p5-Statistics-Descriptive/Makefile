@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/24 10:35:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT =		basic descriptive statistical functions
 
@@ -9,6 +9,7 @@ CATEGORIES =		math
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 CONFIGURE_STYLE =	modbuild
 MODCPAN_EXAMPLES =	Yes

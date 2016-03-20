@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT=	module to create objects that are handles to classes
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-Handle-1.07
 REVISION=	2
 CATEGORIES=	devel

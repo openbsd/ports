@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT=		Base32 encoder/decoder
 
@@ -10,6 +10,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/a$//}
 

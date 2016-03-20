@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/14 10:48:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT= 	simple framework for Factories
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Class-Factory-Util-1.7
 CATEGORIES=	devel

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	run-time class loading on first method call
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-Autouse-2.01
 CATEGORIES=	devel
 REVISION =	0

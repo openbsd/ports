@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	parse TIGER/Line geographic data
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Geo-TigerLine-0.03
 CATEGORIES=	geo
 

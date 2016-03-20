@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT=		generate a size report for all elements in a structure
 
@@ -11,6 +11,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 

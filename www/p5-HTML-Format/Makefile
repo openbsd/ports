@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/11/18 20:02:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	HTML text formating class
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-Format-2.11
 CATEGORIES=	www devel
 

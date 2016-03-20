@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/16 23:57:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:41 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	Perl extension for mknod, major, minor and makedev
 
 MODULES=	cpan
@@ -10,5 +9,7 @@ CATEGORIES=	devel
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 .include <bsd.port.mk>

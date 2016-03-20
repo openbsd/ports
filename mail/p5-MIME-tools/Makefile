@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/04 22:10:48 giovanni Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=		modules for parsing (and creating) MIME entities
 
@@ -11,6 +11,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-IO-stringy>=1.211 \
 			mail/p5-Mail-Tools  \

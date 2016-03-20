@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT=		FTP client class with automatic reconnect on failure
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Net-FTP-AutoReconnect-0.3
 CATEGORIES=		net
 

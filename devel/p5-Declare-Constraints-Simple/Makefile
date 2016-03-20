@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/22 13:13:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT=	declarative validation of data structures
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 CPAN_AUTHOR=	PHAYLON
 
 MODULES=	cpan
+PKG_ARCH=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Carp-Clan \
 		devel/p5-Class-Inspector \

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/05 19:08:57 jca Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT =	Moose minus the antlers
 
@@ -12,7 +10,7 @@ REVISION =	0
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CPAN_AUTHOR =	GFUJI
 

@@ -3,6 +3,7 @@
 COMMENT =	sets body for redirect response, if it's not already set
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Plack-Middleware-FixMissingBodyInRedirect-0.12
 CATEGORIES =	www
 

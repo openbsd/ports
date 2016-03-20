@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:48:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT=		perl object without classes
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Class-Classless-1.35
 REVISION=		0
 CATEGORIES=		devel

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/18 22:37:16 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT =		cookie string generator / parser
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Cookie-Baker-0.06
 CATEGORIES =		www
 

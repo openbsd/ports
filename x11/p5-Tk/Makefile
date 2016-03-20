@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/02/22 17:15:17 nigel Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.56 2016/03/20 19:57:24 naddy Exp $
 
 COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
@@ -20,7 +18,7 @@ MULTI_PACKAGES=	-main -demo
 
 MAKE_FLAGS=	OPTIMIZE="${CFLAGS}"
 
-WANTLIB-main=	${WANTLIB} X11 m jpeg z png
+WANTLIB-main=	${WANTLIB} X11 m jpeg perl z png
 LIB_DEPENDS-main =	graphics/jpeg \
 			graphics/png
 

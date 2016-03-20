@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
 MODULES=	cpan
+PKG_ARCH=	*
 VERSION=	1.997
 DISTNAME=	CursesWidgets-${VERSION}
 REVISION=	3

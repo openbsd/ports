@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/19 16:30:25 millert Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT =	tiny replacement for Module::Build
 
@@ -11,6 +11,7 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 CONFIGURE_STYLE =	modbuild
 

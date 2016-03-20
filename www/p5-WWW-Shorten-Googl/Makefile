@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/25 14:25:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=		interface to goo.gl shortening site
 
@@ -10,6 +10,7 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		converters/p5-JSON-Any \

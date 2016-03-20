@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/14 16:55:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=		minimal interface to Readline
 DISTNAME =		Term-ReadLine-Perl-1.0303
@@ -15,5 +15,6 @@ TEST_ENV=		TEST_TARGET=test.pl
 TEST_IS_INTERACTIVE= Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

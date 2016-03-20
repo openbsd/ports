@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/14 08:35:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT =	constants for libzmq
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	ZMQ-Constants-1.04
 CATEGORIES =	devel
 

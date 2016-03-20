@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT =	TT plugin for Text::Markdown
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Template-Plugin-Markdown-0.02
 REVISION =	1
 CATEGORIES =	textproc

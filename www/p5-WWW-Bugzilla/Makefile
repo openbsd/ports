@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/25 14:25:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	WWW-Bugzilla-1.5
 CATEGORIES=	www
 

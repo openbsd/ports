@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/01/06 10:57:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT=	download flash video files from various sites
 
@@ -15,6 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 GH_ACCOUNT=	monsieurvideo
 GH_PROJECT=	get-flash-videos

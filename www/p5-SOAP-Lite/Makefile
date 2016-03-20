@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/04 08:51:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
@@ -9,6 +9,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 MODCPAN_EXAMPLES=Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

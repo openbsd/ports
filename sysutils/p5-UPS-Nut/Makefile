@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:51:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT=	module to talk to a UPS via NUT (Network UPS Tools) upsd
 
@@ -6,6 +6,7 @@ DISTNAME=	UPS-Nut-0.04
 REVISION=	1
 CATEGORIES=	sysutils
 MODULES=	cpan
+PKG_ARCH=	*
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

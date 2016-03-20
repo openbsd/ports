@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/29 08:50:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT =	module for graph plotting
 
@@ -19,5 +19,6 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

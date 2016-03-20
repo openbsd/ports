@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/01/19 07:14:29 afresh1 Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.64 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =	unified perl interface for database access
 
@@ -14,7 +12,7 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS =	net/p5-PlRPC>=0.2017 \
 		databases/p5-SQL-Statement>=1.400 \

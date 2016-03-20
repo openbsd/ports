@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT=	reusable tests for POE::Loop authors
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	POE-Test-Loops-1.050
 CATEGORIES=	devel
 

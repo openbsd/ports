@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/14 07:45:58 benoit Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT =		binary data conversion using C types
 
@@ -10,7 +8,7 @@ CATEGORIES =		converters
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES =		cpan
 MODCPAN_EXAMPLES =	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:09:00 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	resolve relative links in (X)HTML into absolute URI
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-ResolveLink-0.05
 REVISION=	1
 CATEGORIES=	www

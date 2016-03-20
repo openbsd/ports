@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT=	set of objects and strings
-SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Set-Object-1.26
@@ -11,6 +10,6 @@ CATEGORIES=	devel
 # Same as perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

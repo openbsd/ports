@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT =	Write-protect variables, manipulate refcounts
-SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	Internals-1.1
@@ -11,7 +10,7 @@ CATEGORIES =	devel
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CPAN_AUTHOR =	STBEY
 

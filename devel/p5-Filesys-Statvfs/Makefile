@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:24 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	Perl extension for statvfs() and fstatvfs()
 
 MODULES=	cpan
@@ -10,5 +9,7 @@ REVISION=	1
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 .include <bsd.port.mk>

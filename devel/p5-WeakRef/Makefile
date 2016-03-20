@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/16 23:57:24 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT =	API to the Perl weak references
 
@@ -12,7 +10,7 @@ CATEGORIES =	devel
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES =	cpan
 CPAN_AUTHOR =	LUKKA

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:00 naddy Exp $
 
 COMMENT=	RSA public-key cryptosystem
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Crypt-RSA-1.99
 REVISION=	0
 CATEGORIES=	security

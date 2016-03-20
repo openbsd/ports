@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/05 12:10:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT =	generate data for Data Matrix (IEC16022) barcodes
 
@@ -10,6 +10,7 @@ CATEGORIES =	graphics
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 BUILD_DEPENDS =		devel/p5-Module-Install-Repository \
 			devel/p5-Module-Install-AuthorTests

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/25 10:36:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:04 naddy Exp $
 
 COMMENT=	XSLT Views for catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Catalyst-View-XSLT-0.09
 CATEGORIES=	textproc
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT=	virtual browser that retries on errors
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	LWP-UserAgent-Determined-1.03
 REVISION=	0
 CATEGORIES=	www

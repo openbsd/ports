@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/23 14:59:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=		creates and XML Stream connection and parses return data
 
@@ -6,6 +6,7 @@ DISTNAME=		XML-Stream-1.24
 CATEGORIES=		textproc
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

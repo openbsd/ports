@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/24 09:48:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT=	Catalyst views using Mason components
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Catalyst-View-Mason-0.19
 CATEGORIES=	www
 

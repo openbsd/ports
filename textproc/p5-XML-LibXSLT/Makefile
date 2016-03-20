@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/07/02 13:21:07 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.46 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT =		interface to the GNOME libxslt library
 
@@ -13,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c gcrypt gpg-error m util z xml2>=6 xslt>=1 exslt>=7
+WANTLIB =		c gcrypt gpg-error m perl util z xml2>=6 xslt>=1 exslt>=7
 
 MODULES =		cpan devel/gettext
 RUN_DEPENDS =		textproc/p5-XML-LibXML>=1.70

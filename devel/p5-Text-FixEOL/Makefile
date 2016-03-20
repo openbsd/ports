@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/30 15:34:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT= 	canonical EOL/EOF
 
 MODULES=	cpan 
+PKG_ARCH=	*
 
 DISTNAME =	Text-FixEOL-1.06
 CATEGORIES=	devel textproc

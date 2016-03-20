@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/13 09:08:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT =	fallbackable module loader
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Best-0.15
 CATEGORIES =	devel
 

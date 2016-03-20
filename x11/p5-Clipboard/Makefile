@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/30 14:54:46 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:24 naddy Exp $
 
 COMMENT =	Perl extension to access the x11 clipboard
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Clipboard-0.13
 CATEGORIES =	x11
 

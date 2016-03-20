@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT= 	perl interface to google sitemap protocol
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	WWW-Google-SiteMap-1.09
 REVISION=	1

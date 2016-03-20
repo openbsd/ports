@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/11 19:19:40 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT=	Perl module for SMTP with TLS/AUTH support
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Net-SMTP-TLS-ButMaintained-0.24
 CATEGORIES=	net mail
 

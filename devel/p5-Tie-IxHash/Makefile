@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 11:24:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:40 naddy Exp $
 
 COMMENT=	ordered associative arrays for Perl
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Tie-IxHash-1.23
 CATEGORIES=	devel
 

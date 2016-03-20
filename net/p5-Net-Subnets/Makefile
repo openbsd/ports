@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT=	computing subnets in large scale networks
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Net-Subnets-0.21
 REVISION=	1
 CATEGORIES=	net

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	text utilities for use with GD drawing package
 
@@ -16,5 +16,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

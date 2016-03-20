@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/18 10:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT=	helper routines for writing monitoring plugins
 
@@ -7,6 +7,7 @@ DISTNAME=	Monitoring-Plugin-0.39
 REVISION=	0
 CATEGORIES=	net
 MODULES=	cpan
+PKG_ARCH=	*
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/12 22:05:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =	polymorphic return values
 
 MODULES =	cpan 
+PKG_ARCH =	*
 
 DISTNAME =	Return-Value-1.666005
 CATEGORIES =	devel

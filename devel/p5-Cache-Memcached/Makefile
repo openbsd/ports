@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/13 21:31:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Cache-Memcached-1.30
 CATEGORIES=	devel

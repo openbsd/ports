@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	persistent session data in CGI applications
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	CGI-Session-4.48
 CATEGORIES=	www
 

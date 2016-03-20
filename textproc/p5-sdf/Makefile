@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/11 23:51:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	simple document format
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	sdf-2.001
 REVISION=	1
 CATEGORIES=	textproc

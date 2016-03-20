@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/16 10:59:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=	fast functions to CoNVert between number Bases
 
@@ -12,6 +12,7 @@ CATEGORIES=	math
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 TEST_DEPENDS=	devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage
 

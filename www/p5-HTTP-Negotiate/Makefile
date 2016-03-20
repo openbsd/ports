@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/23 19:28:39 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:20 naddy Exp $
 
 COMMENT =	choose a variant to serve
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-HTTP-Message>=6.0
 

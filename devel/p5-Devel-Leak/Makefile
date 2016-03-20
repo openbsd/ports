@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT=	finding memory leaks in perl XS
-SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Devel-Leak-0.03
@@ -11,6 +10,6 @@ CATEGORIES=	devel
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/20 09:00:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=	unique identifiers as columns in DBIx::Class
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	DBIx-Class-UUIDColumns-0.02006
 CATEGORIES=	databases devel
 

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2016/02/20 12:25:58 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:21 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	perl interface to libev
 
 MODULES =	cpan
@@ -11,7 +10,7 @@ CPAN_AUTHOR =	MLEHMANN
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c pthread
+WANTLIB =		c perl pthread
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/libev \

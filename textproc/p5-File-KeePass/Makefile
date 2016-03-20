@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 10:04:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:05 naddy Exp $
 
 COMMENT =	interface to KeePass V1 and V2 database files
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	File-KeePass-2.03
 CATEGORIES =	textproc

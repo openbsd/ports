@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT=		pure Perl implementation of YAML
 
@@ -6,6 +6,7 @@ DISTNAME=		YAML-Perl-0.02
 CATEGORIES=		devel
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		INGY
 
 # Perl

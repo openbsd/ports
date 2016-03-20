@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/21 09:07:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	base HTML library
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-Base-0.6
 REVISION=	2

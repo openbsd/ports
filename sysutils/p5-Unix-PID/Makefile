@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/29 18:25:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT=	interface for getting PID info
 
@@ -10,6 +10,7 @@ REVISION=	0
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-List-Cycle \
 		math/p5-Math-Fibonacci-Phi

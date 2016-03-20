@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/17 23:03:44 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:00 naddy Exp $
 
 COMMENT=	OpenSSL's multiprecision integer arithmetic#'
 
@@ -11,6 +9,6 @@ CATEGORIES=	security
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto
+WANTLIB += c crypto perl
 
 .include <bsd.port.mk>

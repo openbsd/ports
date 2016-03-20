@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/08/26 06:20:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Finance-Quote-1.38
 CATEGORIES=	misc
 

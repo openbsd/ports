@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/30 17:21:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT=		debugging aid based on comments
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Smart-Comments-1.06
 CATEGORIES=		devel
 

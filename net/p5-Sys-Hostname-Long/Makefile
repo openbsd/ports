@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/19 18:17:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=	perl module to get FQDN
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Sys-Hostname-Long-1.5
 CATEGORIES=	net
 

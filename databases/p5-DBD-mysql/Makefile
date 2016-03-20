@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/12/31 10:01:32 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.47 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=		MySQL drivers for the Perl DBI
 
@@ -15,7 +13,7 @@ CPAN_AUTHOR=		CAPTTOFU
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto m pthread ssl z
+WANTLIB=		c crypto m perl pthread ssl z
 
 BUILD_DEPENDS=		databases/p5-DBI>=1.08
 RUN_DEPENDS=		databases/p5-DBI>=1.08

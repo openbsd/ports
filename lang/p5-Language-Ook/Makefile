@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/13 08:58:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT =	programming language designed for orang-utans
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Language-Ook-1.0.2
 CATEGORIES =	lang
 

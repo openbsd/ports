@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:50:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Gateway-0.42
 REVISION=	4
 CATEGORIES=	news

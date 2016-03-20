@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:48:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		utilities functions to build inside-out objects
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Class-Std-Utils-0.0.2
 REVISION=		2
 CATEGORIES=		devel

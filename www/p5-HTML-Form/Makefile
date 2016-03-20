@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/23 19:23:32 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT =	Class that represents an HTML form element
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-HTML-Parser \
 		www/p5-HTTP-Message>=6.03 \

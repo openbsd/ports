@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 13:04:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT = 	author test that validates a package MANIFEST
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Test-DistManifest-1.014
 CATEGORIES =	devel

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/02 14:35:46 florian Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT =	module for reflowing text files
 
@@ -12,5 +10,7 @@ MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =	perl
 
 .include <bsd.port.mk>

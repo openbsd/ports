@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/10 15:02:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	module for converting structures to strings and back
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	FreezeThaw-0.5001
 CATEGORIES=	devel
 

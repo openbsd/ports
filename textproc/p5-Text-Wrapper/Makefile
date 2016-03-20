@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/22 14:29:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT=		simple word wrapping routine
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Text-Wrapper-1.05
 CATEGORIES=		textproc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/15 17:52:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	OO processing of keyword-based argument lists
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

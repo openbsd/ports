@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT=	object methods for locking files
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	IO-LockedFile-0.23
 REVISION=	3
 CATEGORIES=	devel

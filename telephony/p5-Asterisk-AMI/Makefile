@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/26 16:09:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:04 naddy Exp $
 
 COMMENT=	interact with Asterisk Manager Interface from perl
 
@@ -9,6 +9,7 @@ CATEGORIES=	telephony perl5
 HOMEPAGE=	https://github.com/rrb3942/perl-Asterisk-AMI/
 
 MODULES=	cpan
+PKG_ARCH=	*
 CPAN_AUTHOR=	GREENBEAN
 
 # Artistic 2.0

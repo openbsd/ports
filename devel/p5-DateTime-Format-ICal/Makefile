@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT =	parse and format iCal datetime and duration strings
 
@@ -8,6 +8,7 @@ REVISION =	1
 CATEGORIES =	devel
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 # GPLv1 / Artistic
 PERMIT_PACKAGE_CDROM =	Yes

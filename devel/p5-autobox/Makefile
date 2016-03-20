@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 08:47:59 benoit Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:42 naddy Exp $
 
 COMMENT =		pragma to call methods on native types
 
@@ -11,7 +9,7 @@ CATEGORIES =		devel
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c
+WANTLIB +=		c perl
 MODULES =		cpan
 
 BUILD_DEPENDS =		${RUN_DEPENDS}

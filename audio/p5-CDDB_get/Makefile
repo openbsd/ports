@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/11 20:35:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=		perl interface to query for cddb-information
 
@@ -11,6 +11,7 @@ HOMEPAGE=		http://armin.emx.at/cddb/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		FONKIE
 
 post-patch:

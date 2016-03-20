@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT=		partial dumping of data structures
 
@@ -11,6 +11,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Moose \
 			devel/p5-Sub-Exporter \

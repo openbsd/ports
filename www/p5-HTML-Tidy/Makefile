@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/16 23:57:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT =	(X)HTML validation in a Perl object
-SHARED_ONLY =	Yes
 
 DISTNAME =	HTML-Tidy-1.56
 CATEGORIES =	www
@@ -13,7 +12,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c tidyp
+WANTLIB +=		c perl tidyp
 
 BUILD_DEPENDS =		www/p5-Alien-Tidyp
 LIB_DEPENDS =		www/tidyp

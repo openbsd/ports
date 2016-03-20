@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/20 22:47:40 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT=	complete modern object system for perl 5
 
@@ -12,7 +10,7 @@ REVISION=	1
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CPAN_AUTHOR=	ETHER
 

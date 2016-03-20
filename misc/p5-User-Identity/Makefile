@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/17 10:19:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =		maintains info about a physical person
 
@@ -9,6 +9,7 @@ CATEGORIES =		misc
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		geo/p5-Geography-Countries
 

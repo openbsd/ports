@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/07 09:00:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT =		dbd-pg wrapper for mojolicious
 
 MODULES =		cpan databases/postgresql
+PKG_ARCH =		*
 DISTNAME =		Mojo-Pg-2.17
 CATEGORIES =		databases
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>

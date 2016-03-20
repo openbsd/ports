@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/01 15:41:21 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT =	fully-featured shell-like command line environment
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Term-ShellUI-0.92
 CATEGORIES =	devel
 

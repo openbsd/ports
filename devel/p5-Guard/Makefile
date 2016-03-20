@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/03 18:10:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:24 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	scope guards, lighter alternative
 
 MODULES =	cpan
@@ -11,6 +10,6 @@ CPAN_AUTHOR = 	MLEHMANN
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

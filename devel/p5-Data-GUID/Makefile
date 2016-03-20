@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:04 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT =	extension for generating GUIDs
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Data-GUID-0.048
 CATEGORIES =	devel
 

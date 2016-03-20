@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:51:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT= 	skeleton for application based on CGI::Application
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	CGI-Application-Generator-1.0
 CATEGORIES=	www

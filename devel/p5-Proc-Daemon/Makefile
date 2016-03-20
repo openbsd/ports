@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/02 09:33:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT= 	run perl program as a daemon process
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Proc-Daemon-0.23
 CATEGORIES=	devel
 

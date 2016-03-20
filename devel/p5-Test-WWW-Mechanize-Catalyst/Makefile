@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT=        Test-WWW-Mechanize extension for catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Test-WWW-Mechanize-Catalyst-0.56
 CATEGORIES=     devel www
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT =		hot-deployable variant of Net::Server::PreFork
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Net-Server-SS-PreFork-0.05
 REVISION =		1
 CATEGORIES =		net

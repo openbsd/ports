@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT=	use HTML Templates from CGI scripts
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-Template-2.9
 CATEGORIES=	www
 

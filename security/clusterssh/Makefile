@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/30 17:14:32 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}2.%20ClusterSSH%20Series%204/
 
 MODULES=	cpan
+PKG_ARCH=	*
 CONFIGURE_STYLE = modbuild
 RUN_DEPENDS=	x11/p5-Tk \
 		x11/p5-X11-Protocol \

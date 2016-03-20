@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT =	sets of intervals
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Set-Infinite-0.65
 REVISION =	0
 CATEGORIES =	devel

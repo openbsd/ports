@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=		provide a configuration hash with options
 
@@ -7,6 +7,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

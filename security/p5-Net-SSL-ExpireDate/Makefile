@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/24 10:44:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT =		obtain expiration date of SSL certificate
 
@@ -9,6 +9,7 @@ CATEGORIES =		security
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-Time-Duration-Parse \
 			security/p5-Crypt-OpenSSL-X509 \
 			devel/p5-Universal-require \

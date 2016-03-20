@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/08 12:40:30 benoit Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:40 naddy Exp $
 
 COMMENT =	control over the flow of time
 
@@ -11,6 +9,6 @@ CATEGORIES =	devel
 # same as perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

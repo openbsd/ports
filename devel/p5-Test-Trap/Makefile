@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT=		trap exit codes
 
@@ -12,6 +12,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 RUN_DEPENDS=		devel/p5-Data-Dump  \
 			devel/p5-Test-Tester
 BUILD_DEPENDS=		${RUN_DEPENDS}

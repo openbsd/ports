@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT=	efficiently fetch RSS feeds
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	XML-RSS-TimingBot-2.03
 REVISION=	0
 CATEGORIES=	textproc

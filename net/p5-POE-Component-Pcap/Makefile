@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:50:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=	POE interface to Net::Pcap
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	POE-Component-Pcap-0.04
 REVISION=	2
 CATEGORIES=	net

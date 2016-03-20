@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 13:13:19 nigel Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	compile .cgi scripts to a code reference
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	CGI-Compile-0.21
 CATEGORIES=	www
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/04 07:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT=		capture STDOUT and STDERR
 
 CPAN_AUTHOR=		DAGOLDEN
 MODULES=		cpan
+PKG_ARCH=		*
 
 DISTNAME =		Capture-Tiny-0.30
 CATEGORIES=		sysutils

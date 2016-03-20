@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT=		extension to add XPath support to XML::DOM
 
@@ -9,6 +9,7 @@ CATEGORIES=		textproc
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		textproc/p5-XML-DOM \
 			textproc/p5-XML-XPathEngine

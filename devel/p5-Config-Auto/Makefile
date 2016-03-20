@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/02 19:52:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =		magical config file parser
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 DISTNAME =		Config-Auto-0.44
 CATEGORIES =		devel

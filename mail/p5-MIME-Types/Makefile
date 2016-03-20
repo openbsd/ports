@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/12 09:36:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	perl module to manage MIME types
 
@@ -9,6 +9,7 @@ CATEGORIES=	mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 TEST_DEPENDS=		www/p5-Mojo
 

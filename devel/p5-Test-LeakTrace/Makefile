@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 06:13:47 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT=	module for tracing memory leaks
 
@@ -12,7 +10,7 @@ CATEGORIES=	devel
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES=	cpan
 

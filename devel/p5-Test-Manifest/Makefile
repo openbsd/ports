@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/03 19:16:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT=		interact with a t/test_manifest file
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Test-Manifest-2.02
 CATEGORIES=		devel
 

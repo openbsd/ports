@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/01/25 10:32:05 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT=	perl module for parsing XML documents
 
@@ -11,6 +9,6 @@ CATEGORIES=	textproc
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c expat
+WANTLIB += c expat perl
 
 .include <bsd.port.mk>

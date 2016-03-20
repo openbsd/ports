@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/10/24 18:17:58 nigel Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT=	perl parser that builds an HTML tree
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-Tree-5.03
 CATEGORIES=	www
 

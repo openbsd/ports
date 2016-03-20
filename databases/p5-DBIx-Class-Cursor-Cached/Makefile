@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =	cursor class with built-in caching support
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	DBIx-Class-Cursor-Cached-1.001002
 CATEGORIES =	databases
 

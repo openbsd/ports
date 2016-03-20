@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/29 18:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=		perl module to query Sender Policy Framework
 
@@ -10,6 +10,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=		net/p5-Net-CIDR-Lite>=0.15 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/18 15:21:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		required attributes which fail only when trying to use them
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS =		devel/p5-aliased \
 			devel/p5-namespace-autoclean

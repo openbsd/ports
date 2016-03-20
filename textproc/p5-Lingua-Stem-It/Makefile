@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT=	Italian language stemming
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Lingua-Stem-It-0.02
 CATEGORIES=	textproc
 

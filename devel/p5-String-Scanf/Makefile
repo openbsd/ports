@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT=	Emulates the sscanf() of the C stdio library
 
 MODULES=	cpan
+PKG_ARCH=	*
 VERSION=	2.1
 DISTNAME=	String-Scanf-${VERSION}
 REVISION=	1

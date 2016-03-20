@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT=	recursive copy of files and directories
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	File-Copy-Recursive-0.38
 REVISION=	1
 CATEGORIES=	devel

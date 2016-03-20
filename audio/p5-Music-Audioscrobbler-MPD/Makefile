@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=		module to submit songs to last.fm from MPD
 DISTNAME=		Music-Audioscrobbler-MPD-0.13
@@ -9,6 +9,7 @@ CATEGORIES=		audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		EALLENIII
 MODCPAN_EXAMPLES=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/29 12:29:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT =		provide framework for multiple event loops
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-EV>=4.00
 TEST_DEPENDS =		converters/p5-JSON-XS>=2.2 \
 			converters/p5-JSON>=2.09 \

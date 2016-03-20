@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/10 14:51:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT=		singleton for the catalyst context (deprecated)
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Catalyst-Plugin-Singleton-0.02
 REVISION =		2
 CATEGORIES=		www

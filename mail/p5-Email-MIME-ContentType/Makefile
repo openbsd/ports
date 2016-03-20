@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/14 20:46:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT=	parses a MIME Content-Type Header
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Email-MIME-ContentType-1.018
 CATEGORIES=	mail
 

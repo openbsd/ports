@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/19 12:41:24 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT= 	data driven test framework
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-Base-0.88
 CATEGORIES=	devel

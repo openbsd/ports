@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/17 23:02:25 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:00 naddy Exp $
 
 COMMENT=	routines for accessing the OpenSSL prng
 
@@ -11,7 +9,7 @@ CATEGORIES=	security
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto ssl
+WANTLIB += c crypto perl ssl
 
 CPAN_AUTHOR=	RURBAN
 

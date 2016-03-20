@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT=	parse and create IIF files for QuickBooks
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Finance-IIF-0.20.01
 REVISION=	1
 CATEGORIES=	misc

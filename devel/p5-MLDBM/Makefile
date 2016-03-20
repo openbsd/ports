@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/10 19:45:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT=	store multi-level hash structure in single-level tied hash
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	MLDBM-2.05
 CATEGORIES=	devel
 

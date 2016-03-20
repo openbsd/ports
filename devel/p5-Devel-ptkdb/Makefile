@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/19 08:36:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:21 naddy Exp $
 
 COMMENT=	perl debugger built with a PerlTk GUI
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptkdb/}
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 CONFIGURE_ARGS=	INSTALLDIRS="site"
 

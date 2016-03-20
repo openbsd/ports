@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/13 10:51:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT= 	find and format date headers
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Email-Date-1.104
 CATEGORIES=	mail

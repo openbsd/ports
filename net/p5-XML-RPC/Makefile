@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT =	pure Perl implementation for an XML-RPC client and server
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	XML-RPC-0.9
 CATEGORIES =	net devel
 

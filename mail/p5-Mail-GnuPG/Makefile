@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/02 06:53:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	handle GnuPG-encrypted/signed messages
 
@@ -12,6 +12,7 @@ RUN_DEPENDS=	security/p5-GnuPG-Interface>=0.44 \
 		mail/p5-MIME-tools>=5.428
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 CONFIGURE_STYLE=modbuild
 

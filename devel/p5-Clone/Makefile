@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/07/05 00:53:41 afresh1 Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =	recursively copy Perl datatypes
 
@@ -12,6 +10,6 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

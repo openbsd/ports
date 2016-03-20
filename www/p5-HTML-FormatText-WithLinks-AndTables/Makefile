@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:29 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT =	converts HTML to Text with tables intact
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	HTML-FormatText-WithLinks-AndTables-0.06
 CATEGORIES =	www textproc
 

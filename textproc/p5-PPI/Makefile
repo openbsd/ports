@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/05 15:35:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		PPI-1.220
 CATEGORIES=		textproc
 

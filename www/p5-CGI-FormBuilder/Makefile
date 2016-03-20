@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	easily generate and process stateful forms
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	CGI-FormBuilder-3.0501
 REVISION=	1
 CATEGORIES=	www

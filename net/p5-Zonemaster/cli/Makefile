@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/05 19:34:28 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT =	tool to check the quality of a DNS zone
 
@@ -15,6 +13,8 @@ MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =	perl
 
 CONFIGURE_STYLE =	modinst
 

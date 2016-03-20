@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/07 14:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT =	shim to support either v1 or v2 APIs of JSON::XS
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	JSON-XS-VersionOneAndTwo-0.31
 REVISION =	1
 CATEGORIES =	converters

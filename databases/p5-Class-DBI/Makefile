@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:05:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	simple database abstraction
 
 MODULES=	cpan
+PKG_ARCH=	*
 V=		3.0.16
 DISTNAME=	Class-DBI-v${V}
 PKGNAME=	p5-Class-DBI-${V}

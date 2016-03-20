@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/19 22:49:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT=	Apache ASP support
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Apache-ASP-2.62
 CATEGORIES=	www
 

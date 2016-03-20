@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/24 15:46:38 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT= 	simple Unix commands in perl
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Shell-Command-0.06
 PKGNAME=	p5-Shell-Command-0.06

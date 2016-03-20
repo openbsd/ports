@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/12/14 07:13:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	trivial perl API for reading/writing XML
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	XML-Simple-2.22
 CATEGORIES=	textproc
 

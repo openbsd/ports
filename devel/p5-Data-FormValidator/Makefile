@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=        validate user input from a constraint object
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Data-FormValidator-4.63
 REVISION=	1
 CATEGORIES=     devel

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/14 15:04:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Dancer-1.3202
 CATEGORIES =	www
 

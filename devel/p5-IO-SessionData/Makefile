@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/28 12:17:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT=	supporting module for SOAP::Lite
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	IO-SessionData-1.03
 CATEGORIES=	devel
 

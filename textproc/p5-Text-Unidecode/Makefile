@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/13 11:59:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT =	US-ASCII transliterations of Unicode text
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Text-Unidecode-1.27
 CATEGORIES =	textproc
 

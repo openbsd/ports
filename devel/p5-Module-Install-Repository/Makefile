@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/19 09:23:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =		set the repository URL from svn/svk/Git checkouts
 
@@ -9,5 +9,6 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES +=		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

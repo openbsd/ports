@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	XML-Smart-1.76
 CATEGORIES=	textproc
 

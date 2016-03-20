@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/24 10:28:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT =		return an ARGV for running this perl
 
@@ -9,5 +9,6 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

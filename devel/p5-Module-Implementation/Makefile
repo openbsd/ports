@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/09 15:57:11 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT =		loads one of several alternate module implementations
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =	devel/p5-Module-Runtime>=0.012 \
 		devel/p5-Try-Tiny>=0

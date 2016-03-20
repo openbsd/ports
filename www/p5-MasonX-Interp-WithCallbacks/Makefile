@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/10 09:06:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	MasonX-Interp-WithCallbacks-1.19
 CATEGORIES=	www
 

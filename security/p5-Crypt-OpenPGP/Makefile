@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/08 11:30:56 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	pure perl implementation of OpenPGP
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel security
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	security/p5-Crypt-Blowfish \
 		security/p5-Crypt-DES-EDE3 \

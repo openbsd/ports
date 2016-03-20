@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/18 10:48:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=	perl port of jQuery.js
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	pQuery-0.23
 CATEGORIES=	www
 

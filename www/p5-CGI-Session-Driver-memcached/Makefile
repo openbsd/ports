@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/19 10:43:48 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	CGI::Session driver for memcached
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	CGI-Session-Driver-memcached-0.04
 CATEGORIES=	www
 

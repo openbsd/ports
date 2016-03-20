@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/13 11:58:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		inside-out object scaffolding
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Class-Std-0.013
 CATEGORIES=		devel
 

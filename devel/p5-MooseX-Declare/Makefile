@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/22 12:23:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		declarative syntax for Moose
 
@@ -9,6 +9,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-MooseX-Method-Signatures>=0.37 \
 			devel/p5-MooseX-Role-Parameterized \

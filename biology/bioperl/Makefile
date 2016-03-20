@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/03 09:46:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT=	perl tools for bioinformatics
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 CPAN_AUTHOR=	CJFIELDS
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/bioperl/
 

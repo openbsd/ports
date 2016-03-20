@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/01 06:37:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:18 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	extension for generating GUIDs/UUIDs
 
 MODULES =	cpan
@@ -10,7 +9,7 @@ CATEGORIES =	devel
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MAKE_ENV =	AUTHOR_TESTING=Yes \
 		TEST_POD=Yes

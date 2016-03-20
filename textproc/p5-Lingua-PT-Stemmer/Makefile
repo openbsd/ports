@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT=	Portuguese language stemming
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Lingua-PT-Stemmer-0.01
 REVISION=	1
 CATEGORIES=	textproc

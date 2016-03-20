@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/11/14 02:00:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT =		module for easy date and time manipulation
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 # In Date.xs the tm_zone field is not set so the test t/50_timezone.t
 # fails.  Instead of implementing strftime_xs locally, use the POSIX

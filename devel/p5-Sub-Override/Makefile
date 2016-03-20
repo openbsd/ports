@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/14 08:56:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT=	extension for easily overriding subroutines
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Sub-Override-0.09
 CATEGORIES=	devel
 

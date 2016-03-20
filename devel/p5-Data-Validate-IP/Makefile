@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/02/03 15:06:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:18 naddy Exp $
 
 COMMENT =		ipv4 and ipv6 validation methods
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		devel/p5-Test-Requires
 RUN_DEPENDS =		net/p5-NetAddr-IP>=4
 TEST_DEPENDS =		devel/p5-Test-Requires \

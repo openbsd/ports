@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/12/21 13:32:54 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=	interface to FLAC header metadata
 
@@ -11,7 +9,7 @@ CATEGORIES=	audio
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	FLAC c ogg
+WANTLIB=	FLAC c ogg perl
 
 CONFIGURE_ENV=	INCPATH="${LOCALBASE}/include" LIBPATH="${LOCALBASE}/lib"
 

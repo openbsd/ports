@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/13 16:22:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =		programmable DNS resolver class for offline emulation of DNS
 
@@ -11,6 +11,7 @@ CATEGORIES =		net
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		net/p5-Net-DNS

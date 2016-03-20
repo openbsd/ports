@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/08 14:17:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT =	simple module for handling email messages
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Email-Simple-2.210
 CATEGORIES =	mail
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 13:13:19 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT =	organise your Moose types in libraries
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	MooseX-Types-0.45
 CATEGORIES =	devel
 

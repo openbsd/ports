@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =	support multimethods and function overloading in Perl
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Class-Multimethods-1.70
 REVISION =	1
 CATEGORIES =	devel

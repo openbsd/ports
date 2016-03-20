@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/09 08:18:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:09 naddy Exp $
 
 COMMENT = 	rudimentary profiling module for Template Toolkit
 
@@ -9,6 +9,7 @@ CATEGORIES =	textproc
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	textproc/p5-Template
 

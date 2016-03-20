@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/05 17:21:00 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:05 naddy Exp $
 
 COMMENT =	convert singular to plural, select a or an
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Lingua-EN-Inflect-1.899
 CATEGORIES =	textproc
 

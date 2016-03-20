@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/17 17:29:10 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=	perl binding for curl
 
@@ -15,7 +13,7 @@ HOMEPAGE=	http://curl.haxx.se/libcurl/perl/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto curl idn nghttp2 ssl z
+WANTLIB += c crypto curl idn nghttp2 perl ssl z
 
 LIB_DEPENDS=	net/curl
 

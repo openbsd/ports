@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/18 12:28:39 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT =	compare XML documents
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	XML-SemanticDiff-1.0004
 CATEGORIES =	textproc
 

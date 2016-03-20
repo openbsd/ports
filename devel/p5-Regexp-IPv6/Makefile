@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/11 23:49:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT=	regular expression for IPv6 addresses
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Regexp-IPv6-0.03
 
 CATEGORIES=	devel

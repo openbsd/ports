@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/24 06:50:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT =	Getopt::Long, but simpler and more powerful
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Getopt-Long-Descriptive-0.098
 CATEGORIES =	devel
 

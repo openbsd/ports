@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:51:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:05 naddy Exp $
 
 COMMENT=		outine for estimating syllable count in words
 
@@ -8,6 +8,7 @@ REVISION=		0
 CATEGORIES=		textproc
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

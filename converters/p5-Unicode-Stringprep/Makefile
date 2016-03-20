@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/22 09:26:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=	preparation of internationalized strings
 
@@ -9,6 +9,7 @@ CATEGORIES=	converters
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

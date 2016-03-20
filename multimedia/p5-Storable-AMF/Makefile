@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/07/28 09:46:04 nigel Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =	deserializer for Adobe Action Message Format
 
@@ -12,6 +10,8 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	 Yes
+
+WANTLIB=	perl
 
 MODULES =	cpan
 

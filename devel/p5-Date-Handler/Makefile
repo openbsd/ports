@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 23:48:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:18 naddy Exp $
 
 COMMENT=	perl module for calculates time differences
 
 MODULES=	cpan
+PKG_ARCH=	*
 VERSION=	1.2
 DISTNAME=	Date-Handler-${VERSION}
 REVISION=	1

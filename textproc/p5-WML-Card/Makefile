@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/11 23:51:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT=	perl module to create WML cards
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	WML-Card-0.02
 REVISION=	1
 CATEGORIES=	textproc www

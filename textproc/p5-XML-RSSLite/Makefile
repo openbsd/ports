@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/25 20:41:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT=	lightweight, 'relaxed' RSS (and XML-ish) parser
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	XML-RSSLite-0.15
 CATEGORIES=	textproc
 

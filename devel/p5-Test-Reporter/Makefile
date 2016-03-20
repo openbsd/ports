@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/10 15:07:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT = 	sends test results to cpan-testers@perl.org
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-Reporter-1.62
 CATEGORIES =	devel
 

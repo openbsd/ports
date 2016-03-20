@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/30 15:31:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT =	coroutines for perl
 
-SHARED_ONLY =	Yes
 MODULES =	cpan
 DISTNAME =	Coro-6.42
 CATEGORIES =	devel
@@ -10,7 +9,7 @@ CATEGORIES =	devel
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS = 	devel/p5-Event>=0.89 \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT= 	interface to RSS and Atom feeds
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	XML-Feed-0.12
 REVISION=	0

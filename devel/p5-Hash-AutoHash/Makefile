@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2015/05/22 21:28:56 bluhm Exp $
+#	$OpenBSD: Makefile,v 1.12 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	object-oriented access to real and tied hashes
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/10/13 06:29:38 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.38 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT=	generate and manipulate images
 
@@ -16,7 +14,7 @@ MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += freetype gif jpeg m png t1 tiff z
+WANTLIB += freetype gif jpeg m perl png t1 tiff z
 
 LIB_DEPENDS=	devel/t1lib \
 		graphics/png \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/28 09:06:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT =	Perl implementation of the reCAPTCHA API
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Captcha-reCAPTCHA-0.97
 CATEGORIES =	graphics security
 

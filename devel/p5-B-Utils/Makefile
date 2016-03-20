@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/14 09:54:38 benoit Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT=		helper functions for op tree manipulation
 
@@ -11,6 +9,8 @@ MODULES=		cpan
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=		perl
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Task-Weaken \

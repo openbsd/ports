@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/16 23:57:28 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT=	very fast Perl templating library
 
@@ -14,7 +12,7 @@ MAINTAINER=	Alex Feinberg <alex@strlen.net>
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODCPAN_EXAMPLES=	Yes
 

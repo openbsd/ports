@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/16 23:57:27 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.23 2016/03/20 19:57:01 naddy Exp $
 
 COMMENT=	module to implement the Twofish cipher
 
@@ -12,7 +10,7 @@ REVISION=	2
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 TEST_DEPENDS=	security/p5-Crypt-CBC
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/04/10 13:15:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT =	manipulate dates in perl
 V =		6.39
@@ -6,6 +6,7 @@ DISTNAME =	Date-Manip-$V
 PKGNAME =	p5-DateManip-$V
 CATEGORIES =	converters
 MODULES =	cpan
+PKG_ARCH =	*
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

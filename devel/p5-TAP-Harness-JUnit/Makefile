@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/16 19:43:30 schwarze Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT =	generate JUnit compatible output from TAP results
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	TAP-Harness-JUnit-0.42
 CATEGORIES =	devel
 

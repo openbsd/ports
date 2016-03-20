@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/29 06:01:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT =	working 'require Class::Name' and more
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Class-Load-0.23
 CATEGORIES =	devel
 

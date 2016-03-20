@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT =		turn every die/warn into carp verbose messages
 
@@ -6,6 +6,7 @@ DISTNAME =		Carp-Always-0.13
 CATEGORIES =		devel
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

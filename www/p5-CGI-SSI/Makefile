@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	use SSI from CGI scripts
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	CGI-SSI-0.92
 REVISION=	1
 CATEGORIES=	www

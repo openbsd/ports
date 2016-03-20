@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/16 23:57:25 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT =	Patricia Trie perl module for fast IP address lookups
 
@@ -14,7 +12,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS =	net/p5-Net-CIDR-Lite \
 		net/p5-Socket6

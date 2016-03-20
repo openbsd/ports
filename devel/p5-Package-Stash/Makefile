@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/13 15:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT =		routines for manipulating stashes
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Package-Stash-0.37
 CATEGORIES =		devel
 

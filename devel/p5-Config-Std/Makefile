@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/24 07:55:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=		use standard configuration files
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Config-Std-0.901
 CATEGORIES=		devel
 

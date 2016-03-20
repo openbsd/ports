@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT=		extensions to PPI
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		PPIx-Utilities-1.001000
 CATEGORIES=		textproc
 

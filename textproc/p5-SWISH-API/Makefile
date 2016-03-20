@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/29 18:25:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT =	Perl interface to the swish-e C library
-SHARED_ONLY =	Yes
 
 DISTNAME =	swish-e-2.4.7
 PKGNAME =	p5-SWISH-API-0.04
@@ -15,7 +14,7 @@ MASTER_SITES =	${HOMEPAGE}distribution/
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m z swish-e>=2.1
+WANTLIB += c m perl z swish-e>=2.1
 
 LIB_DEPENDS =	textproc/swish-e>=2.4.7
 

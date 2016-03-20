@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/18 16:49:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=	tries to fetch webpages with gzip-compression
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	WWW-Mechanize-GZip-0.12
 CATEGORIES=	www perl5

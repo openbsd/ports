@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	parser and generator for XSPF playlists
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	XML-XSPF-0.7.1
 CATEGORIES=	textproc
 

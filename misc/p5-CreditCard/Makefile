@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/08 14:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT =	verify credit card pins
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Business-CreditCard-0.35
 CATEGORIES =	misc
 

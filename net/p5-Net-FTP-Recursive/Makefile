@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/18 09:35:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT=	recursive FTP client module
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Net-FTP-Recursive-2.04
 CATEGORIES=	net
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/07/16 23:57:19 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=	interface to iconv() codeset conversion function
 
@@ -12,7 +10,7 @@ MODULES=	converters/libiconv cpan
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

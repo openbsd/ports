@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:20 naddy Exp $
 
-SHARED_ONLY=		Yes
 COMMENT=		assert performance of perl regexps
 
 MODULES=		cpan
@@ -11,6 +10,6 @@ REVISION =		1
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/06/26 08:55:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT=	locate install data per-module
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	File-ShareDir-1.102
 CATEGORIES=	devel
 

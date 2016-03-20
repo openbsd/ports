@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT =	interface to SMBIOS using dmidecode
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Parse-DMIDecode-0.03
 CATEGORIES =	sysutils
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT =	share Perl variables between processes
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	IPC-Shareable-0.61
 CATEGORIES =	devel
 REVISION =	0

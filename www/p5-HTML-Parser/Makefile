@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/01/22 09:23:24 benoit Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.52 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT =		modules to parse and extract information from HTML
  
@@ -16,7 +14,7 @@ TEST_DEPENDS =		www/p5-URI \
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MAKE_ENV +=		TEST_POD=Yes
 

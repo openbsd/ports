@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT=	utilities to read and manipulate patches and CVS
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	PatchReader-0.9.6
 REVISION=	1
 CATEGORIES=	textproc

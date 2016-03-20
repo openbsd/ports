@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=	event-driven IRC-client module
 
@@ -10,6 +10,7 @@ CATEGORIES=	net
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=	devel/p5-Object-Pluggable \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:11 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =	a simple class to create simple roles
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Role-Basic-0.13
 CATEGORIES =	devel
 

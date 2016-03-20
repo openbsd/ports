@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/18 19:55:39 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT =		Perl defines relating to AF_INET6 sockets
 
@@ -13,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c
+WANTLIB +=		c perl
 
 MODULES =		cpan
 

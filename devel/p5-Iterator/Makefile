@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT =	general-purpose iterator class.
 
@@ -12,6 +12,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	devel/p5-Exception-Class
 

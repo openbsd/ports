@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/28 21:59:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT=	test suite using WWW::Mechanize
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-WWW-Mechanize-1.44
 CATEGORIES=	www devel

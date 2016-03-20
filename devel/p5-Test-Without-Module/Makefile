@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/30 15:33:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT =	test fallback behaviour in absence of modules
 
@@ -9,5 +9,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM = Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

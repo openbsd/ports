@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/02/25 15:12:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT =	perl binding for Redis database
 
@@ -13,6 +13,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Try-Tiny \
 			net/p5-IO-Socket-Timeout

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/07/16 23:57:20 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT=	interface to handy and fast permutation
 
@@ -11,6 +9,6 @@ CATEGORIES=	devel
 
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

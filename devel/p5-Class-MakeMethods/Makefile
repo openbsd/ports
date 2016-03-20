@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT= 	framework for generating methods
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-MakeMethods-1.01
 REVISION=	1
 CATEGORIES=	devel

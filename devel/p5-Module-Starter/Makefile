@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/18 21:14:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Module-Starter-1.54
 REVISION =		2
 CATEGORIES =		devel

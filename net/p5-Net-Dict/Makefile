@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/28 13:31:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =	Perl interface to the DICT protocol
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-Dict-2.19
 CATEGORIES =	net
 

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.18 2015/01/22 20:26:43 naddy Exp $
+#	$OpenBSD: Makefile,v 1.19 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
@@ -29,11 +29,11 @@ RUN_DEPENDS=	devel/p5-Cache-Cache \
 		devel/p5-WeakRef
 
 .if ${FLAVOR:Mopt}
-SHARED_ONLY=Yes
 CONFIGURE_ENV+=	CHOICE1=2
 P5ACE=${P5ARCH}
-WANTLIB=c
+WANTLIB=c perl
 .else
+PKG_ARCH= *
 CONFIGURE_ENV+= CHOICE1=1
 P5ACE=${P5SITE}
 .endif

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/12 08:39:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT =		utility functions dealing with signals
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		IPC-Signal-1.00
 CATEGORIES =		devel
 

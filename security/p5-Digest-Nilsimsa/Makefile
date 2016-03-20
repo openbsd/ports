@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/16 23:57:27 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:01 naddy Exp $
 
 COMMENT=	module to calculate Nilsimsa digests
 
@@ -12,6 +10,6 @@ CATEGORIES=	security
 # Artistic licence
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

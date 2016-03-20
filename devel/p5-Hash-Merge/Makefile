@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/09 15:54:46 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT =	merges arbitrarily deep hashes into a single hash
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Hash-Merge-0.200
 CATEGORIES =	devel
 

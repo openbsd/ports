@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT=	secure, extensible and configurable Perl FTPd
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Net-FTPServer-1.122
 REVISION=	2
 CATEGORIES=	net

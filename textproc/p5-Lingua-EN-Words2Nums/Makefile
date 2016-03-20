@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/01 19:59:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT =	convert English text to numbers
 DISTNAME =	Lingua-EN-Words2Nums-0.18
@@ -11,5 +11,6 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

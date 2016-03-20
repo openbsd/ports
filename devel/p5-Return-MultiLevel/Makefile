@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/16 16:33:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =		return across multiple call levels
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Return-MultiLevel-0.04
 CATEGORIES =		devel
 

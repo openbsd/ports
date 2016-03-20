@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/05/26 21:57:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =		alternative interface to File::Find::Object
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Class-XSAccessor \
 			devel/p5-File-Find-Object>=0.2.1 \

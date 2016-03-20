@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT= 	catalyst authentication via .htpasswd
 
@@ -10,6 +10,7 @@ CATEGORIES=	security
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	security/p5-Authen-Htpasswd \
 		security/p5-Catalyst-Plugin-Authentication

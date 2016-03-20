@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/06 11:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT =	critique Perl source code for best-practices
 
@@ -10,6 +10,7 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 MODCPAN_EXAMPLES =	Yes
 MAKE_ENV =		TEST_POD=Yes
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=	simple, high-performance PSGI/Plack HTTP server
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Starlet-0.13
 REVISION=	0
 CATEGORIES=	www

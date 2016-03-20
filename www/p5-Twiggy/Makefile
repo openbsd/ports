@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/12 08:19:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =		AnyEvent HTTP server for PSGI (like Thin)
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Twiggy-0.1025
 CATEGORIES =		www
 

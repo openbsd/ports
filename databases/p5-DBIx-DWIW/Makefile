@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/18 22:39:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =	DBI wrapper intended to Do What I Want
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	DBIx-DWIW-0.50
 CATEGORIES =	databases

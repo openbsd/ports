@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/16 10:51:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT =	module to extract data from Macintosh BinHex files
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Convert-BinHex-1.125
 CATEGORIES =	converters
 

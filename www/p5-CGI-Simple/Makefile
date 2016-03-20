@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/26 14:07:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT =	drop-in object-oriented CGI.pm replacement
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	CGI-Simple-1.115
 CATEGORIES =	www
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT=	modular perl shell
 CATEGORIES=	shells
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CPAN_AUTHOR=	JBERGER
 MODULES=	cpan
+PKG_ARCH=	*
 CONFIGURE_STYLE=modbuild
 CONFIGURE_ARGS=	install_path=doc="${PREFIX}/share/doc/zoid/"
 

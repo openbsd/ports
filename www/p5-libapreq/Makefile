@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/16 23:57:28 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=	generic Apache Request library
 
@@ -14,7 +12,7 @@ HOMEPAGE=	http://httpd.apache.org/apreq/
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 

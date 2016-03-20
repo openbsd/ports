@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/22 13:52:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT=	create DTA/DTAUS files for german banking
 
@@ -10,5 +10,6 @@ CATEGORIES=	misc
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

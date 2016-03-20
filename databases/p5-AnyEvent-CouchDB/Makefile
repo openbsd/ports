@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/19 06:50:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=		non-blocking CouchDB client based on jquery.couch.js
 
@@ -6,6 +6,7 @@ DISTNAME=		AnyEvent-CouchDB-1.31
 CATEGORIES=		databases devel
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg
 

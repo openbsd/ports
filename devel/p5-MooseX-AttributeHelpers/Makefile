@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/21 07:32:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =	extend your attribute interfaces
 
@@ -9,6 +9,7 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	devel/p5-Moose
 BUILD_DEPENDS =	devel/p5-Module-Build-Tiny

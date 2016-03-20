@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT =	perl implementation of an Rsync client
-SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	File-RsyncP-0.70
@@ -11,6 +10,6 @@ CATEGORIES =	devel
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m
+WANTLIB += c m perl
 
 .include <bsd.port.mk>

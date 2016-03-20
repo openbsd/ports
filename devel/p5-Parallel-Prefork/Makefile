@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/27 09:10:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT =	simple prefork server framework
 
@@ -9,6 +9,7 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	devel/p5-Class-Accessor-Lite \
 		devel/p5-List-MoreUtils \

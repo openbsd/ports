@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/22 14:06:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		automatically apply roles at object creation time
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Moose \
 			devel/p5-Sub-Exporter \

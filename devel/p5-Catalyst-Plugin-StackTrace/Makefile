@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/05 19:08:56 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	stack trace for catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-StackTrace-0.11
 CATEGORIES=	devel
 REVISION=	0

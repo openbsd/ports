@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/21 14:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =	serialize/deserialize Adobe Action Message Format data
 
@@ -13,6 +13,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	devel/p5-Any-Moose \
 		devel/p5-DateTime \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/18 22:15:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT =		overrides time()/sleep() core functions for testing
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Test-Time-0.04
 CATEGORIES =		devel
 

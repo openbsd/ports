@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/02 11:56:54 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	speed up perl scripts by running them persistently
 

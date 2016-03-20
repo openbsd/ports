@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT =	report TAP output by test file description
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	TAP-Harness-Multiple-0.07
 CATEGORIES =	devel
 

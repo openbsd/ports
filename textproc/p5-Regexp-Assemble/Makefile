@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT =	assemble multiple Regular Expressions into a single RE
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Regexp-Assemble-0.35
 CATEGORIES =	textproc
 REVISION =	0

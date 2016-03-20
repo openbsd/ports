@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT=	interface to the ISAAC PRNG algorithm
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Math-Random-ISAAC-1.004
 CATEGORIES=	math
 

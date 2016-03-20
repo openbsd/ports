@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/21 09:14:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =		handle .desktop files
 
@@ -12,6 +12,7 @@ RUN_DEPENDS =		devel/p5-File-BaseDir>=0.03
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 MODULES =		cpan
+PKG_ARCH =		*
 CPAN_AUTHOR =		MICHIELB
 
 MAKE_ENV +=		TEST_POD=1

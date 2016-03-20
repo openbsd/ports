@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/31 15:31:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT =	create HTML table from sql queries
 
 DISTNAME =	DBIx-XHTML_Table-1.47
 CATEGORIES =	databases www
 MODULES =	cpan
+PKG_ARCH =	*
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

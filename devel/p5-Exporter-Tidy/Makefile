@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:21 naddy Exp $
 
 COMMENT=	alternative to the standard perl exporter
 CATEGORIES=	devel
@@ -12,5 +12,6 @@ REVISION=	1
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

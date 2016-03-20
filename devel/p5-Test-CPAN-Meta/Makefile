@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/07 07:35:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT =	validate your CPAN META.yml files
 
@@ -11,5 +11,6 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

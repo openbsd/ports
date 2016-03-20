@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/29 20:30:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	simple calculations with RGB colors
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Color-Calc-1.074
 CATEGORIES=	graphics
 

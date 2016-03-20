@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:51:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT=	Porters stemming algorithm for Denmark
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Lingua-Stem-Snowball-Da-1.01
 REVISION=	1
 CATEGORIES=	textproc

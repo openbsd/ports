@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/12 08:51:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT =		utility functions dealing with signals
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Signal-Mask-0.008
 CATEGORIES =		devel
 

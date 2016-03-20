@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/12 12:11:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT =		build and install Perl modules
 
@@ -10,6 +10,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 TEST_DEPENDS +=		devel/p5-PAR-Dist>=0.17
 CONFIGURE_STYLE =	modbuild none

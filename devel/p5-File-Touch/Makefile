@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/10 21:56:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT =	update access and modification timestamps of files
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	File-Touch-0.10
 CATEGORIES =	devel
 

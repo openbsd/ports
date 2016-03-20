@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/22 22:45:33 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:51 naddy Exp $
 
 COMMENT =	perl5 extension for checking data against Spamhaus
 
@@ -11,6 +11,7 @@ MAINTAINER =	James Turner <james@calminferno.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		net/p5-Net-DNS
 BUILD_DEPENDS =		${RUN_DEPENDS}

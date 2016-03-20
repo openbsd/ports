@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.19 2016/03/11 12:56:11 nigel Exp $
+# $OpenBSD: cpan.port.mk,v 1.20 2016/03/20 19:56:44 naddy Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -18,10 +18,6 @@ MODULES +=	perl
 .endif
 
 TEST_DEPENDS +=	${RUN_DEPENDS}
-
-.if !defined(SHARED_ONLY) || ${SHARED_ONLY:L} != "yes"
-PKG_ARCH ?=	*
-.endif
 
 .if defined(MAKE_ENV) && !empty(MAKE_ENV:MTEST_POD=*)
 TEST_DEPENDS +=	devel/p5-Test-Pod \

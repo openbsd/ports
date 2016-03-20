@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/04 22:23:11 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT =		minimal try/catch with proper preservation of $$@
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Try-Tiny-0.22
 CATEGORIES =		devel
 

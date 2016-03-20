@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/17 20:17:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT=		parse and format W3CDTF datetime strings
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		DateTime-Format-W3CDTF-0.06
 CATEGORIES=		devel converters
 

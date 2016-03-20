@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:07 naddy Exp $
 
 COMMENT=	extracts embedded tests and code examples from pod
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Pod-Tests-1.19
 CATEGORIES=	textproc

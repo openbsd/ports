@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=	automate launching of fake mpd for testing purposes
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
 COMMENT=	LRU cache in memory
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Tie-Cache-LRU-0.21
 REVISION=	0
 CATEGORIES=	devel

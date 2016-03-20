@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT =	storage class for Catalyst Authentication using DBIx::Class
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Catalyst-Authentication-Store-DBIx-Class-0.1502
 CATEGORIES =	security
 REVISION =	0

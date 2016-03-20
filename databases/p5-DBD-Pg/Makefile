@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/10/30 16:20:11 landry Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.72 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=	access to PostgreSQL databases through the DBI
 
@@ -23,7 +21,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=	c m pq>=2
+WANTLIB+=	c m perl pq>=2
 
 CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 		POSTGRES_LIB="${LOCALBASE}/lib" \

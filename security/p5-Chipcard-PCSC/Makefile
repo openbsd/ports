@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/20 14:27:17 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	perl interface to PC/SC smartcards
 
@@ -15,6 +13,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 MODULES=	cpan
 CPAN_AUTHOR=	WHOM

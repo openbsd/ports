@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/16 10:08:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=	send mail with attachments through SMTP
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Mail-Sender-0.8.23
 CATEGORIES=	mail

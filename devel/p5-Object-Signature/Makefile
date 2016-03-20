@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/18 13:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=        cryptographic signatures for objects
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Object-Signature-1.07
 CATEGORIES=     devel
 

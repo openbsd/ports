@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/13 15:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT =	lets you build groups of accessors
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Class-Accessor-Grouped-0.10012
 CATEGORIES =	devel
 

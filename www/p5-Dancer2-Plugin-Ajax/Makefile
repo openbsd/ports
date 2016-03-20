@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/26 18:00:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT =		a plugin for adding Ajax route handlers
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Dancer2-Plugin-Ajax-0.200000
 CATEGORIES =		www
 

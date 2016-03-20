@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.12 2014/04/13 01:01:39 naddy Exp $
+#	$OpenBSD: Makefile,v 1.13 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	allow GD perl scripts to output SVG
 
@@ -12,6 +12,7 @@ RUN_DEPENDS=	graphics/p5-GD \
 		graphics/p5-SVG
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 MODCPAN_EXAMPLES=Yes
 

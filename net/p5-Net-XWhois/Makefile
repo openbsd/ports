@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:56 naddy Exp $
 
 COMMENT =	whois client interface for perl5
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-XWhois-0.90
 REVISION =	0
 CATEGORIES =	net

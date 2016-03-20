@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/18 20:05:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	convert text to HTML with controlling options
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	HTML-FromText-2.07
 CATEGORIES=	www
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/27 15:55:29 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	DBIx-Class-Schema-Loader-0.07015
 REVISION=	1
 CATEGORIES=	databases

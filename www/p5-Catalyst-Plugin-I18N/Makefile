@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/05 19:09:00 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:15 naddy Exp $
 
 COMMENT=	I18N for Catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-I18N-0.10
 CATEGORIES=	www
 REVISION=	0

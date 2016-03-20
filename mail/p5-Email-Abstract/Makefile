@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/26 08:53:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Email-Abstract-3.008
 CATEGORIES=	mail
 

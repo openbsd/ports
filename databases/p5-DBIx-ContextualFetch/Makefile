@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=	add contextual fetches to DBI
 
@@ -6,6 +6,7 @@ DISTNAME=	DBIx-ContextualFetch-1.03
 REVISION=	1
 CATEGORIES=	databases
 MODULES=	cpan
+PKG_ARCH=	*
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

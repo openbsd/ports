@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:50:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:01 naddy Exp $
 
 COMMENT=		implementation of 3DES encryption on ECB mode
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Crypt-TripleDES-0.24
 REVISION=		1
 CATEGORIES=		security

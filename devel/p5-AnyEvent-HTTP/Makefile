@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/05 06:56:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT=		simple but non-blocking HTTP/HTTPS client
 
@@ -6,6 +6,7 @@ DISTNAME =		AnyEvent-HTTP-2.22
 CATEGORIES=		databases devel
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

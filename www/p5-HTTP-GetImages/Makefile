@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:51:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:20 naddy Exp $
 
 COMMENT=		spider to recover and store images from web pages
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		HTTP-GetImages-0.343
 REVISION=		1
 CATEGORIES=		www

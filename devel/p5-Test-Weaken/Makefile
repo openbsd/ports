@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/23 10:20:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT =	test that freed memory objects were, indeed, freed
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-Weaken-3.022000
 CATEGORIES =	devel
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/05 07:15:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT=	read / write PHP session files
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	PHP-Session-0.27
 CATEGORIES=	www
 

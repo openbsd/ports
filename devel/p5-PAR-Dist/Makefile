@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/14 08:26:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=	create and manipulate PAR distributions
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	PAR-Dist-0.49
 CATEGORIES=	devel archivers
 

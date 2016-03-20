@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/18 09:09:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =		fast, safe DBI connection and transaction management
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		DBIx-Connector-0.53
 CATEGORIES =		databases
 CPAN_AUTHOR =		DWHEELER

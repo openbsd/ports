@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/24 08:36:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=	basic first-pass API testing for large class trees
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-ClassAPI-1.06
 REVISION=	0

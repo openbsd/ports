@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/15 18:10:00 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT =	overrides perl's sleep call
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-MockSleep-0.02
 CATEGORIES =	devel
 

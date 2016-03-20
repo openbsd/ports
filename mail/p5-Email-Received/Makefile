@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/02/08 22:22:55 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT =		parse an email Received: header
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 DISTNAME =		Email-Received-1.00
 CATEGORIES =		mail

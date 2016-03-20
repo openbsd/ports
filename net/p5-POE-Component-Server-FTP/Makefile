@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=	event-based FTP server on a virtual filesystem
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	POE-Component-Server-FTP-0.08
 REVISION=	0
 CATEGORIES=	net

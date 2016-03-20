@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/13 08:37:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Devel-PartialDump \
 			devel/p5-MooseX-Types>=0.22 \

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/16 23:57:27 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT=		filesystem disk space information
 
@@ -10,7 +8,7 @@ CATEGORIES=		sysutils
 
 # XXX Force dependency on libc; this doesn't actually use libc, but doing
 #     this ensures that changes to syscalls alter the package signature.
-WANTLIB += c
+WANTLIB += c perl
 
 # Artistic
 PERMIT_PACKAGE_CDROM=   Yes

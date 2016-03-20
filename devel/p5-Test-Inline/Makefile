@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/23 14:34:46 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT=	inlining your tests next to the code being tested
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Test-Inline-2.213
 CATEGORIES=	devel
 

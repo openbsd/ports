@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/08 07:33:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT =	make NEXT suck less
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Class-C3-Adopt-NEXT-0.14
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:51:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT =	strip scripting constructs out of HTML
 
@@ -10,5 +10,6 @@ CATEGORIES =	www
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

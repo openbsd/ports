@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/27 21:38:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =		extends the Net::DNS module with DNSSEC functionality
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://www.net-dns.org/download/
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		net/p5-Net-DNS>=1.01 \
 			security/p5-Crypt-OpenSSL-RSA>=0.27 \
 			security/p5-Crypt-OpenSSL-DSA>=0.14 \

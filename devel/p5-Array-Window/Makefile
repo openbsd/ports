@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/05 19:08:56 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT=	calculate windows/subsets/pages of arrays
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Array-Window-1.02
 REVISION=	2
 CATEGORIES=	devel

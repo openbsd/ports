@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/01 22:10:28 robert Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=		SQLite2 drivers for the Perl DBI
 
@@ -13,7 +11,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 BUILD_DEPENDS=		databases/p5-DBI>=1.08
 RUN_DEPENDS=		databases/p5-DBI>=1.08

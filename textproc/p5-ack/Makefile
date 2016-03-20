@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/20 09:47:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
+PKG_ARCH=		*
 V =			2.15_02
 DISTNAME=		ack-${V}
 PKGNAME=		p5-${DISTNAME:S/_/./}

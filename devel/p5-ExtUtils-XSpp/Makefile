@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/07 09:45:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =	XS for C++
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	ExtUtils-XSpp-0.18
 CATEGORIES =	devel
 

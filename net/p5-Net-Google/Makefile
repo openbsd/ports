@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:53 naddy Exp $
 
 COMMENT=	simple OOP-ish interface to the Google SOAP API
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Net-Google-1.0.1
 REVISION=	1
 CATEGORIES=	net

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/13 16:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT =		perl oop implementation of Sender Policy Framework
 
@@ -13,6 +13,7 @@ MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		devel/p5-Error \

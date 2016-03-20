@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/18 10:38:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	MooseX-SemiAffordanceAccessor-0.10
 CATEGORIES =	devel
 

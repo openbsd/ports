@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/12 12:55:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT =		base class for creating plugin enabled POE Components
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-POE>=1.0002 \
 			devel/p5-Task-Weaken

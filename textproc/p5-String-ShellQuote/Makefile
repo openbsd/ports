@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:51:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT=		Quote strings for passing through the shell
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		String-ShellQuote-1.04
 REVISION=		0
 CATEGORIES=		textproc

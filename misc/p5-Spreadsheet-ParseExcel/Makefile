@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/12/19 17:44:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Spreadsheet-ParseExcel-0.65
 EPOCH=		0
 CATEGORIES=	misc

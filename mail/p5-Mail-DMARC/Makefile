@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/26 22:10:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	Perl implementation of DMARC
 
@@ -10,6 +10,7 @@ CATEGORIES=	mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 BUILD_DEPENDS=	devel/p5-File-ShareDir-Install>=0.06
 

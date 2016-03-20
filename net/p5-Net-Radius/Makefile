@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT=	Perl interface to Radius
 
@@ -13,6 +13,7 @@ MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 TEST_DEPENDS=	devel/p5-Test-Warn
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/22 14:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT =	use Moose or Mouse modules
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Any-Moose-0.18
 CATEGORIES =	devel
 

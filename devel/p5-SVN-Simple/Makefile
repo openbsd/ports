@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/10 13:12:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =	simple interface to subversion's editor interface#'
 
@@ -7,6 +7,7 @@ CATEGORIES =	devel
 
 CPAN_AUTHOR =	CLKAO
 MODULES =	cpan
+PKG_ARCH =	*
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

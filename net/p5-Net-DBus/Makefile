@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/04 09:21:03 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT=	Perl API to the dbus inter-application messaging system
 
@@ -14,7 +12,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += dbus-1
+WANTLIB += dbus-1 perl
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EG_DIR=		examples

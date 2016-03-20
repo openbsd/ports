@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/05/10 03:06:31 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT =	exporter on steroids
 
@@ -11,6 +11,7 @@ MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	devel/p5-Data-OptList>=0.100 \
 		devel/p5-Params-Util>=0.14 \

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/02 12:13:50 benoit Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT =	quota manipulation module
 
@@ -11,7 +9,7 @@ CATEGORIES =	sysutils
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c rpcsvc
+WANTLIB += c perl rpcsvc
 
 TEST_IS_INTERACTIVE =	Yes
 

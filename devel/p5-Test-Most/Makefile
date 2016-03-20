@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/10 01:29:16 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT =	most commonly needed test functions and features
 DISTNAME =	Test-Most-0.34
 CATEGORIES =	devel
 MODULES =	cpan
+PKG_ARCH =	*
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

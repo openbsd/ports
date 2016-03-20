@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/08 16:25:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =		interactive shell for WWW::Mechanize
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-File-Modified \
 			devel/p5-Hook-LexWrap>=0.20 \
 			devel/p5-Term-Shell>=0.02 \

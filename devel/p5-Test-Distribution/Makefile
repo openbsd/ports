@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=	perform tests on all modules of a distribution
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-Distribution-2.00
 REVISION=	1

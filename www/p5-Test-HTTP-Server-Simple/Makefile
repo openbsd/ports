@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/24 10:20:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT= 	test framework for HTTP::Server::Simple
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Test-HTTP-Server-Simple-0.11
 CATEGORIES=	www devel

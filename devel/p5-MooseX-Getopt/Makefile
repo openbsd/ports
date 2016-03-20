@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		Moose role for processing command line options
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		MooseX-Getopt-0.62
 CATEGORIES=		devel
 

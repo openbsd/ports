@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/09 15:52:16 afresh1 Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =	generate fast XS accessors without runtime compilation
 
@@ -13,6 +11,6 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

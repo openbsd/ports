@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/11 13:04:01 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT =		displays stack trace in HTML
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Devel-StackTrace-AsHTML-0.14
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>

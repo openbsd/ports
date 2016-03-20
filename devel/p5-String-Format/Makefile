@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/19 14:40:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT=	perl printf extensions
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	String-Format-1.17
 CATEGORIES=	devel

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/11 07:04:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT =	wrapper class for the various JSON classes
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	JSON-Any-1.39
 CATEGORIES =	converters
 

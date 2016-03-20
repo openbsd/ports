@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/01 17:12:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=	compare numbers
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Number-Compare-0.03
 CATEGORIES=	devel
 

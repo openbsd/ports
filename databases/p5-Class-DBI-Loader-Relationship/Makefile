@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	easier relationship specification in CDBI::L
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-DBI-Loader-Relationship-1.2
 REVISION=	0
 CATEGORIES=	databases

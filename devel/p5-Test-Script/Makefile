@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/15 20:48:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT= 	cross-platform basic tests for scripts
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Test-Script-1.10
 CATEGORIES=	devel

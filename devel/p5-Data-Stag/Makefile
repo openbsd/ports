@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/17 20:15:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:18 naddy Exp $
 
 COMMENT =		structured tags datastructures
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Graph \
 			devel/p5-IO-String \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/19 13:57:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT=		perl6-like method signature parser
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			devel/p5-MooseX-Traits \

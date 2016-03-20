@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:56 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT =	build and evaluate include/exclude lists
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Algorithm-IncludeExclude-0.01
 REVISION =	1
 CATEGORIES =	devel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/05 22:14:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =		handy web browsing in a Perl object
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 # TEST DEPENDS included as
 # perl check versions at configure time

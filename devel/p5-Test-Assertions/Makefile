@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT =	set of building blocks for both unit and runtime testing
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-Assertions-1.054
 REVISION =	1
 CATEGORIES =	devel

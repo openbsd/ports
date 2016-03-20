@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/08 14:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT= 	read an email folder as Email::Simple objects
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 HOMEPAGE=	http://emailproject.perl.org/wiki/Email::Folder
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:10:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT= 	recolor gif images on the fly
 
 MODULES=	cpan 
+PKG_ARCH=	*
 
 DISTNAME=	Image-BioChrome-1.16
 REVISION=	0

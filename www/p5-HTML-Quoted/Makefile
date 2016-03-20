@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/18 20:06:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	extract structure of quoted HTML mail message
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	HTML-Quoted-0.04
 
 CATEGORIES=	www

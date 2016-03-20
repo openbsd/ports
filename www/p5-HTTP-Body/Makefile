@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/11 18:54:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT=	HTTP Body Parser
 
@@ -9,6 +9,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	www/p5-libwww
 

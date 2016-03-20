@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =	keeps track of file creation times
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	File-CreationTime-2.04
 REVISION =	1
 CATEGORIES =	devel

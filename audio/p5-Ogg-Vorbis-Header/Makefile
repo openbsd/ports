@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/18 14:33:50 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=	object-oriented interface to Ogg Vorbis information
 
@@ -12,7 +10,7 @@ CATEGORIES=	audio
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ogg vorbis vorbisfile
+WANTLIB=	c ogg perl vorbis vorbisfile
 
 LIB_DEPENDS=	audio/libvorbis
 RUN_DEPENDS=	devel/p5-Inline

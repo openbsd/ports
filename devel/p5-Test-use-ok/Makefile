@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/23 17:31:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT=        alternative to Test::More
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Test-use-ok-0.11
 CATEGORIES=     devel perl5
 

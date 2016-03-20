@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/22 14:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT=	watch for changes to files, cross-platform style
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	File-ChangeNotify-0.20
 REVISION=	0
 CATEGORIES=	devel

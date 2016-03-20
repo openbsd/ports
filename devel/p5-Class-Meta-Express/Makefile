@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/08 19:42:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Class-Meta-Express-0.13
 CATEGORIES=		devel
 

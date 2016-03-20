@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/13 07:52:06 benoit Exp $ $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:24 naddy Exp $ $
 
 COMMENT =		flatten/unflatten complex data hashes
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Hash-Flatten-1.19
 CATEGORIES =		devel
 

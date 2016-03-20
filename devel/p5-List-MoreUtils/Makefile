@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/11 16:43:08 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT =		provide the stuff missing in List::Util
 
@@ -13,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c
+WANTLIB +=		c perl
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Exporter-Tiny

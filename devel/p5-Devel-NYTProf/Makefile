@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/24 15:45:55 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT =		powerful feature-rich perl source code profiler
 
@@ -13,7 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c z
+WANTLIB +=		c perl z
 
 MODULES =		cpan
 RUN_DEPENDS =		converters/p5-JSON-MaybeXS \

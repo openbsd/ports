@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/09/27 20:40:34 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.60 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT =		perl module for using OpenSSL
 
@@ -15,7 +13,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto ssl z
+WANTLIB =		c crypto perl ssl z
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Exception \

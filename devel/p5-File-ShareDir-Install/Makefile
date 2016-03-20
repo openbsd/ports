@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/17 20:19:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT= 	install shared files, to use with File::ShareDir
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	File-ShareDir-Install-0.10
 CATEGORIES=	devel
 

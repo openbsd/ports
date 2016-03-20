@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 23:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT=	C implementation of priority queues
-
-SHARED_ONLY=    Yes
 
 MODULES=	cpan
 DISTNAME=	POE-XS-Queue-Array-0.006
@@ -12,7 +10,7 @@ REVISION=	1
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS =	devel/p5-POE
 

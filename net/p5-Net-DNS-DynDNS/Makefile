@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/05 13:25:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-DNS-DynDNS-0.9993
 CATEGORIES =	net
 

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/30 07:42:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:08 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	Unicode line breaking algorithm
 
 DISTNAME =	Unicode-LineBreak-2015.12
@@ -10,7 +9,7 @@ MODULES =	cpan
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CPAN_AUTHOR =		NEZUMI
 

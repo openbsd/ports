@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/16 23:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT=		utility to make parameter checking easier
-
-SHARED_ONLY=		Yes
 
 MODULES=		cpan
 DISTNAME=		Params-Util-1.07
@@ -12,6 +10,6 @@ REVISION=		1
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

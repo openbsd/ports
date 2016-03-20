@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/11 23:51:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:14 naddy Exp $
 
 COMMENT=	compress CSS info for transmission
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	CSS-Squish-0.10
 CATEGORIES=	www
 

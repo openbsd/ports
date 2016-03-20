@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/29 20:36:55 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:00 naddy Exp $
 
 MODULES=	cpan
 COMMENT=	implements DSA using OpenSSL
@@ -10,6 +8,6 @@ CATEGORIES=	security
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto ssl
+WANTLIB += c crypto perl ssl
 
 .include <bsd.port.mk>

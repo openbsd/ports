@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/25 08:21:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT=	perl interface to the Twitter API
 
@@ -10,6 +10,7 @@ CATEGORIES=	net
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 CONFIGURE_STYLE=modbuild
 RUN_DEPENDS=	converters/p5-JSON-Any \
 		devel/p5-Carp-Clan \

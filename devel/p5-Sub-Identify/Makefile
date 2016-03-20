@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/04 22:12:56 afresh1 Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT =		retrieve names of code references
 DISTNAME =		Sub-Identify-0.10
@@ -11,7 +9,7 @@ MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES =		cpan
 

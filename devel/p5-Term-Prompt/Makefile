@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:49:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT= 	handles various forms of terminal input
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Term-Prompt-1.04
 REVISION=	0

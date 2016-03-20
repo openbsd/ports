@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/08/15 11:57:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	perl module for an IMAP Client API
 
@@ -9,6 +9,7 @@ CATEGORIES=	mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-Parse-RecDescent \
 		security/p5-Authen-NTLM \

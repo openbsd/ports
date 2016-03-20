@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=	Bayesian prediction of categories
 
@@ -10,6 +10,7 @@ CATEGORIES=	math
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

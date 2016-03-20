@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/12 14:27:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=	module for writing rpc servers and clients
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	PlRPC-0.2020
 CATEGORIES=	net
 

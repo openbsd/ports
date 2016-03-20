@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/31 08:13:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		minimalist class construction
 
@@ -9,5 +9,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/02 16:17:13 bluhm Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT =		simple creation of pcap files from code
 
@@ -12,5 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

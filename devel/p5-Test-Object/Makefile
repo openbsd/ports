@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT=	thoroughly testing objects via registered handlers
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-Object-0.07
 REVISION=	1

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/26 15:41:58 nigel Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT=	safe guarding for IPC::Run
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	IPC-Run-SafeHandles-0.04
 CATEGORIES=	devel
 REVISION =	0

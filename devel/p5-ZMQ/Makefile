@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/23 10:37:39 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT =	Perl-ish Interface to libzmq
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	ZMQ-1.06
 CATEGORIES =	devel
 

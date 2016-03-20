@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/13 06:30:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT =	PSGI handler for HTML::Mason
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	HTML-Mason-PSGIHandler-0.53
 CATEGORIES =	www
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/07 06:08:45 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT =	extremely flexible deep comparison
 
 DISTNAME =	Test-Deep-1.120
 CATEGORIES =	devel
 MODULES =	cpan
+PKG_ARCH =	*
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

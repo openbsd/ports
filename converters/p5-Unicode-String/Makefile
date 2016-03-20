@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/07/16 23:57:19 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=	modules to handle various Unicode issues
 
@@ -12,6 +10,6 @@ MODULES=	cpan
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

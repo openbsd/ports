@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/16 10:15:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	library for creating easy mail filters
 
@@ -9,6 +9,7 @@ CATEGORIES=	mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		RJBS
 
 RUN_DEPENDS=    	devel/p5-File-HomeDir \

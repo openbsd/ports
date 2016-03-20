@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/25 10:53:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		IO-stringy-2.111
 CATEGORIES=		devel
 

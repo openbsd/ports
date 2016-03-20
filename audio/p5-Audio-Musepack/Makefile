@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/01 10:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=	object-oriented interface to Musepack/APE file information
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Audio-Musepack-0.7
 REVISION=	1
 CATEGORIES=	audio

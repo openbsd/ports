@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/14 14:30:05 benoit Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:00 naddy Exp $
 
 COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
@@ -12,7 +10,7 @@ CATEGORIES =	security
 # Perl
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB +=	c crypto ssl
+WANTLIB +=	c crypto perl ssl
 
 RUN_DEPENDS =	security/p5-Crypt-OpenSSL-RSA
 BUILD_DEPENDS =	${RUN_DEPENDS}

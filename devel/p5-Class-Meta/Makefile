@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/08 19:41:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		class automation, introspection and validation
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Class-Meta-0.66
 CATEGORIES=		devel
 

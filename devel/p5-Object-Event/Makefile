@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/24 10:13:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT =		event callback interface
 
@@ -13,6 +13,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-AnyEvent \
 			devel/p5-common-sense

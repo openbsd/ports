@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/16 10:59:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT =	manage deprecation warnings for your distribution
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Package-DeprecationManager-0.15
 CATEGORIES =	devel
 

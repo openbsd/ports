@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2016/01/22 09:08:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =	library to parse Uniform Resource Identifiers
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	URI-1.71
 CATEGORIES =	www
 

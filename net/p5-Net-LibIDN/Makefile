@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/16 23:57:25 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:53 naddy Exp $
 
 COMMENT =	Perl bindings for GNU Libidn
 
@@ -12,7 +10,7 @@ REVISION =	0
 # Artistic
 PERMIT_PACKAGE_CDROM =Yes
 
-WANTLIB =	idn
+WANTLIB =	idn perl
 LIB_DEPENDS =	devel/libidn
 
 CONFIGURE_ARGS =--with-libidn-inc=${LOCALBASE}/include \

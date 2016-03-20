@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/10 14:51:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:15 naddy Exp $
 
 COMMENT=		sensible default end action (deprecated)
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Catalyst-Plugin-DefaultEnd-0.08
 CATEGORIES=		www devel
 REVISION =		0

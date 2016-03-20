@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=		visualisation of Kohonen's Self-Organizing Maps#'
 
@@ -10,6 +10,7 @@ CATEGORIES=		math x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		math/p5-AI-NeuralNet-Kohonen \
 			x11/p5-Tk

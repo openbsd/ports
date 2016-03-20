@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:50:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT=		translator to LOLCAT
 
@@ -7,6 +7,7 @@ REVISION=		1
 CATEGORIES=		misc
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/17 09:51:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT =	pure Perl implementation for parsing/writing XML documents
 
@@ -14,6 +14,7 @@ MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	p5-libwww-*|p5-HTTP-Lite-*:www/p5-libwww
 TEST_DEPENDS =	converters/p5-Jcode \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/12/19 07:18:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT=		module for merging hierarchies using the C3 algorithm
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Algorithm-C3-0.10
 CATEGORIES=		devel
 

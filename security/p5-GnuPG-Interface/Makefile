@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	GnuPG-Interface-0.44
 CATEGORIES=	security
 

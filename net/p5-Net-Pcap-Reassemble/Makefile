@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT =	IP fragment reassembly for Net::Pcap
 
 DISTNAME =	Net-Pcap-Reassemble-0.05
 CATEGORIES =	net
 MODULES =	cpan
+PKG_ARCH =	*
 
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 

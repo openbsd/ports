@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/05/04 15:33:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	copy a HTML file without breaking links
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	HTML-Copy-1.31
 CATEGORIES=	www
 

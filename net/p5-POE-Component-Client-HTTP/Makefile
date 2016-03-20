@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:56 naddy Exp $
 
 COMMENT=	POE HTTP user-agent component
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	POE-Component-Client-HTTP-0.88
 REVISION=	1
 CATEGORIES=	net www

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/18 13:08:50 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT=	interface to gettext() internationalization function
 
@@ -12,6 +10,8 @@ CATEGORIES=	converters devel
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 MODULES+=	devel/gettext
 

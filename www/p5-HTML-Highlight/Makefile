@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:09:00 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	module to highlight words or patterns in HTML documents
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-Highlight-0.20
 REVISION=	1
 CATEGORIES=	www

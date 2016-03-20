@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 23:57:20 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT =		stat() with BSD 4.4 extentions
 
@@ -14,7 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c
+WANTLIB +=		c perl
 
 MODULES =		cpan
 

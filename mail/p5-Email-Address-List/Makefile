@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:18 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT =	RFC close address list parsing
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Email-Address-List-0.05
 CATEGORIES =	mail
 

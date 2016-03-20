@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/12 11:27:03 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT=		template processing system
 
@@ -15,7 +13,7 @@ HOMEPAGE=		http://www.template-toolkit.org/
 # Same as Perl: Artistic/GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS=		devel/p5-AppConfig
 BUILD_DEPENDS=		${RUN_DEPENDS}

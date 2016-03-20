@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/23 08:42:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:21 naddy Exp $
 
 COMMENT =	easy-to-use self-cleaning scratch space
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Directory-Scratch-0.18
 CATEGORIES =	devel
 

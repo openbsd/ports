@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/13 06:29:38 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT=	module to manipulate raw ip packets
 
@@ -14,7 +12,7 @@ MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pcap
+WANTLIB += c pcap perl
 
 MODCPAN_EXAMPLES=	Yes
 

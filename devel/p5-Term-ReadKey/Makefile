@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/07/16 23:57:23 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT=		change terminal modes, and perform non-blocking reads
 
@@ -13,7 +11,7 @@ CATEGORIES=		devel
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Term/}
 

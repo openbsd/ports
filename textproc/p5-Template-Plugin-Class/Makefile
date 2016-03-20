@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT=		template extension for calling class methods
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Template-Plugin-Class-0.14
 CATEGORIES=		textproc
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/11/01 15:59:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT =	extensible framework for Perl server engines
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-Server-2.008
 CATEGORIES =	devel net
 

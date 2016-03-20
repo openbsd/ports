@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/24 12:53:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:34 naddy Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	act on upper scopes
 
 MODULES =	cpan
@@ -10,7 +9,7 @@ CATEGORIES =	devel
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CPAN_AUTHOR =		VPIT
 

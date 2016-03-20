@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/16 14:58:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =		call isa, can, does and DOES safely
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Safe-Isa-1.000005
 CATEGORIES =		devel
 

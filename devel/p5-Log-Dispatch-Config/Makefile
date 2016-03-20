@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT=		abstract Configurator class
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-AppConfig \
 			devel/p5-IO-stringy \

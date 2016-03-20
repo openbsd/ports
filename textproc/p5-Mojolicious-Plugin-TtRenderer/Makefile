@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/27 19:38:21 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT =	Template Renderer Plugin for Mojolicious
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Mojolicious-Plugin-TtRenderer-1.56
 CATEGORIES =	textproc
 

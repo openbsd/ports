@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/11 23:48:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT=	validate method/function parameters
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-Container-0.12
 REVISION=	1
 CATEGORIES=	devel

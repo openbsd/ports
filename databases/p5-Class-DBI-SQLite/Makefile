@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	extensions to Class::DBI for SQLite
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-DBI-SQLite-0.11
 REVISION=	0
 CATEGORIES=	databases

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/27 14:24:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT =	SSL support for Net::SMTP
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-SMTP-SSL-1.03
 CATEGORIES =	net mail
 

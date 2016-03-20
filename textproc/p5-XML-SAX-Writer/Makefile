@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/19 17:28:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	SAX2 writer
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	XML-SAX-Writer-0.56
 CATEGORIES=	textproc
 

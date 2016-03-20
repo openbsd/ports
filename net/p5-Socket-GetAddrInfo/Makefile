@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/25 23:29:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT	= 	RFC 2553 getaddrinfo and getnameinfo functions
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Socket-GetAddrInfo-0.22
 REVISION =	0
 CATEGORIES =	net

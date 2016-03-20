@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/23 19:39:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:21 naddy Exp $
 
 COMMENT =	simple, extensible Perl debugger
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Devel-ebug-0.56
 CATEGORIES =	devel
 

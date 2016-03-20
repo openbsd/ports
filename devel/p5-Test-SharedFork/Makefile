@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/05 09:54:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT =		fork test
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Test-SharedFork-0.34
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/01 12:21:32 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:53 naddy Exp $
 
 COMMENT =	module to interface the DNS resolver using the ldns library
 
@@ -13,7 +11,7 @@ MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto idn
+WANTLIB += crypto idn perl
 
 LIB_DEPENDS =	devel/libidn
 BUILD_DEPENDS =	devel/p5-Devel-CheckLib

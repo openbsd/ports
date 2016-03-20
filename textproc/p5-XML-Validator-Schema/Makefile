@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	validate XML schema using SAX
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	XML-Validator-Schema-1.10
 REVISION=	1
 CATEGORIES=	textproc

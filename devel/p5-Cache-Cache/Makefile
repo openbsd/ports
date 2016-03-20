@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/30 13:39:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	perl cache interface
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Cache-Cache-1.08
 CATEGORIES=	devel
 

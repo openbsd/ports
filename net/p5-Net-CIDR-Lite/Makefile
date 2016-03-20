@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:51 naddy Exp $
 
 COMMENT=	Perl extension for merging IPv4 or IPv6 CIDR addresses
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Net-CIDR-Lite-0.21
 CATEGORIES=	net
 

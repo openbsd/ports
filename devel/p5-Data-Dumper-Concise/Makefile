@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/27 09:05:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT =		less indentation and newlines plus sub deparsing
 
@@ -10,5 +10,6 @@ MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

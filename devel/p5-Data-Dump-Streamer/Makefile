@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/27 10:16:37 benoit Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=		accurately serialize a data structure as Perl code
 
@@ -12,7 +10,7 @@ MODULES=		cpan
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/01 22:46:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =		framework to automate HTML forms
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Data-Random>=0.05
 TEST_DEPENDS =		devel/p5-File-Slurp \

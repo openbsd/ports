@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/20 08:53:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT= 	catalyst model for Class::DBI
 
 DISTNAME =	Catalyst-Model-CDBI-0.12
 CATEGORIES=	databases www
 MODULES=	cpan
+PKG_ARCH=	*
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

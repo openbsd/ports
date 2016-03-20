@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:09 naddy Exp $
 
 COMMENT=	abstract Class::DBI's SQL with SQL::Abstract
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Class-DBI-AbstractSearch-0.07
 REVISION=	0
 CATEGORIES=	databases

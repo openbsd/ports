@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/24 14:46:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:09 naddy Exp $
 
 COMMENT=		perl module for formatting plaintext
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Text-Autoformat-1.669002
 CATEGORIES=		textproc
 

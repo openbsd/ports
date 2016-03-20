@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/27 06:54:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT =		lightweight regexp-based XML parser
 
@@ -11,6 +11,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 TEST_DEPENDS =		devel/p5-Test-Requires
 

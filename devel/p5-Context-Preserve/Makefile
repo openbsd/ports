@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:48:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:17 naddy Exp $
 
 COMMENT=		run code after a subroutine call
 
@@ -11,6 +11,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		JROCKWAY
 
 TEST_DEPENDS=	devel/p5-Test-Exception \

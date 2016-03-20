@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/11 07:54:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT =		interface to Twitter API
 
@@ -12,6 +12,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Test-Fatal \
 			net/p5-Net-OAuth \

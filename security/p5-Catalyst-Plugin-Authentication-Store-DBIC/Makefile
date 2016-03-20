@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	CDBI Authentication for Catalyst
 
@@ -10,6 +10,7 @@ CATEGORIES=	security
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	databases/p5-DBIx-Class \
 		databases/p5-Catalyst-Model-DBIC-Schema \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/13 20:12:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT=	manage sets of integers
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Set-IntSpan-1.19
 CATEGORIES=	math
 

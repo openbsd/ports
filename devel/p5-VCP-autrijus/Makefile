@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT=	tool for copying resources between repositories
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	VCP-autrijus-snapshot-0.9-20050110
 PKGNAME=	p5-VCP-autrijus-0.9
 REVISION =	2

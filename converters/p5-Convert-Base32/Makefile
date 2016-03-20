@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT =	encoding and decoding of base32 (RFC4648) strings
 
@@ -10,6 +10,7 @@ CATEGORIES =	converters
 PERMIT_PACKAGE_CDROM =	 Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 TEST_DEPENDS = devel/p5-Test-Exception
 

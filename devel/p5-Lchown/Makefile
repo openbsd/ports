@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/16 23:57:22 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT=	perl interface to the lchown(2) system call
 
@@ -14,7 +12,7 @@ MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES=		cpan
 CPAN_AUTHOR=		NCLEATON

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/07 05:29:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:54 naddy Exp $
 
 COMMENT =	Perl extension for decoding NTP server responses
 
@@ -11,6 +11,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =	net/p5-IO-Socket-INET6
 

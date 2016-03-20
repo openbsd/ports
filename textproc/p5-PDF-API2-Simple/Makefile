@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT =		simple wrapper for PDF::API2 module
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		PDF-API2-Simple-1.1.4u
 PKGNAME =		p5-${DISTNAME:S/u$//}
 CATEGORIES =		textproc

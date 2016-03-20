@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/28 09:53:30 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:53 naddy Exp $
 
 COMMENT =	Perl HTTP connection client
 
@@ -11,6 +11,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	 Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-URI
 BUILD_DEPENDS =	${RUN_DEPENDS}

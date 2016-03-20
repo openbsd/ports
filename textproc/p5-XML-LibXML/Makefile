@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/03/09 17:39:59 bluhm Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.48 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT =		perl binding for libxml2
 
@@ -14,7 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m xml2 z
+WANTLIB =		m perl xml2 z
 
 MODULES =		cpan converters/libiconv
 RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport>=1.07 \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT=	Apache::Session storage using memcached
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Apache-Session-Memcached-0.03
 REVISION=	1
 CATEGORIES=	www

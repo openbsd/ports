@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT=		Moose role for setting attributes from a config file
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		MooseX-ConfigFromFile-0.02
 REVISION=		0
 CATEGORIES=		devel

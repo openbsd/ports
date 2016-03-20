@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/11 12:33:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT =	parse vFile formatted files into data structures
 
@@ -7,6 +7,7 @@ DISTNAME =	Text-vFile-asData-0.08
 CATEGORIES =	devel textproc
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

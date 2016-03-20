@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/05 07:25:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:53 naddy Exp $
 
 COMMENT =	Perl extension for doing ident requests
 
@@ -9,6 +9,7 @@ CATEGORIES =	net
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		net/p5-Socket-GetAddrInfo
 

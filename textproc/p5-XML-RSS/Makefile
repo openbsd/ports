@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/12/14 07:06:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/20 19:57:11 naddy Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
@@ -9,6 +9,7 @@ CATEGORIES=	textproc
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

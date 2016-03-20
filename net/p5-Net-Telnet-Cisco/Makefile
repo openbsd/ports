@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT=		module to interact with a Cisco router
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Net-Telnet-Cisco-1.10
 REVISION=		0
 CATEGORIES=		net

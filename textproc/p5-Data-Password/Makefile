@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/01 15:40:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:04 naddy Exp $
 
 COMMENT =	module for assessing password quality
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Data-Password-1.12
 CATEGORIES =	textproc

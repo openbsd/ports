@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/25 14:25:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=		search and manage eBay accounts
 
@@ -9,6 +9,7 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		security/p5-Crypt-SSLeay \
 			www/p5-HTML-Form \

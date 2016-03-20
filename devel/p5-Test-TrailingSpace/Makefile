@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/31 20:03:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT =		test for trailing space in source files
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-File-Find-Object-Rule>=0.0301
 
 .include <bsd.port.mk>

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/08 13:40:44 benoit Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT=		adding keywords to perl, in perl
 
@@ -11,7 +9,7 @@ CATEGORIES=		devel
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES=		cpan
 

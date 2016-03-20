@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/03 09:33:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT =		perl module implementing simple file locking
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		LockFile-Simple-0.208
 CATEGORIES =		devel
 

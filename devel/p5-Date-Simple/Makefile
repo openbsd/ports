@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/16 23:57:21 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT=	Manipulate simple date objects
 
@@ -14,6 +12,6 @@ MAINTAINER=	Sam Smith <S@msmith.net>
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/16 23:57:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	SAX2 driver directly based on expat
 
-SHARED_ONLY=	Yes
 MODULES=	cpan
 DISTNAME =	XML-SAX-ExpatXS-1.33
 CATEGORIES=	textproc
@@ -11,7 +10,7 @@ REVISION =	0
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c expat
+WANTLIB += c expat perl
 
 RUN_DEPENDS=	textproc/p5-XML-SAX \
 		textproc/p5-XML-NamespaceSupport

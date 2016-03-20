@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/11 11:58:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT = 	perl extension for emulating troublesome interfaces
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-MockObject-1.20150527
 CATEGORIES =	devel
 

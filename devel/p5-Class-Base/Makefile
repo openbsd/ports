@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/12/15 16:09:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT= 	abstract class for constructing hashes
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Class-Base-0.06
 CATEGORIES=	devel
 

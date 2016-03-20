@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:19:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=		Kohonen's Self-Organizing Maps#'
 
@@ -10,5 +10,6 @@ CATEGORIES=		math
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 .include <bsd.port.mk>

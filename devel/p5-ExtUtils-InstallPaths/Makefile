@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/05 06:06:18 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT =	Build.PL install path logic made easy
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	ExtUtils-InstallPaths-0.010
 CATEGORIES =	devel
 

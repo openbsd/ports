@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/18 06:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:18 naddy Exp $
 
 COMMENT =	timezones module for Data::ICal
 
@@ -8,6 +8,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

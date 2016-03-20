@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/17 17:17:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =	easy aliasing of methods and attributes
 
 DISTNAME =	MooseX-Aliases-0.11
 CATEGORIES =	devel
 MODULES =	cpan
+PKG_ARCH =	*
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

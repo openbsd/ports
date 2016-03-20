@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/08 17:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=		bunch of common helper classes for MPD
 
@@ -10,6 +10,7 @@ CATEGORIES=		audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		JQUELIN
 
 CONFIGURE_STYLE=	modbuild

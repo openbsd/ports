@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/16 15:00:25 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT =	adds support for https to p5-libwww
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	net/p5-Net-HTTP>=6 \
 		security/p5-IO-Socket-SSL>=1.54 \

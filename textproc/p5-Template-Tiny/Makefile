@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/01/18 10:49:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:09 naddy Exp $
 
 COMMENT =	Template Toolkit reimplemented in as little code as possible
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Template-Tiny-1.12
 CATEGORIES =	textproc
 

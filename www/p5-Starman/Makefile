@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 13:13:19 nigel Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Starman-0.4014
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>

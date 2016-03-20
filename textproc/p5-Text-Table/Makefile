@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 06:23:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:10 naddy Exp $
 
 COMMENT=	organize data in tables
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Text-Table-1.130
 CATEGORIES=	textproc
 REVISION =	0

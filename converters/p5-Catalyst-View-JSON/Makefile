@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/27 07:38:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:07 naddy Exp $
 
 COMMENT =	JSON view for your data
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Catalyst-View-JSON-0.36
 CATEGORIES =	converters www
 

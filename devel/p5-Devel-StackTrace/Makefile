@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/25 02:17:28 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT =	an object representing a stack trace
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Devel-StackTrace-2.00
 CATEGORIES =	devel
 

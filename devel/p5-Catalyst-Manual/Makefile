@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	catalyst documentation
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-Manual-5.9002
 CATEGORIES=	devel
 

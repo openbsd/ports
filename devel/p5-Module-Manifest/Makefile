@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT = 	parse and examine a perl distribution MANIFEST file
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Module-Manifest-1.08
 CATEGORIES =	devel

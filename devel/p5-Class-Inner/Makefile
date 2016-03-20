@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/31 13:35:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT =	perlish implementation of Java like inner classes
 
@@ -9,5 +9,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

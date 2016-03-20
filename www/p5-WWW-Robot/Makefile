@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=		configurable web traversal engine
 
@@ -9,6 +9,7 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		www/p5-HTML-Parser \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/12 08:35:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT=	bundle for reading and parsing config files
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	AppConfig-1.71
 CATEGORIES=	devel
 

@@ -1,10 +1,11 @@
-#   $OpenBSD: Makefile,v 1.25 2015/10/14 17:43:05 robert Exp $
+#   $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:47 naddy Exp $
 
 COMMENT=	modules for handling mail with perl
 
 V=		2.14
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	MailTools-${V}
 PKGNAME=	p5-Mail-Tools-${V}
 CATEGORIES=	mail devel

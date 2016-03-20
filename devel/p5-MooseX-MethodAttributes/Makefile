@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT =	code attribute introspection
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	MooseX-MethodAttributes-0.25
 CATEGORIES =	devel
 

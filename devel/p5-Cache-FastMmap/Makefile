@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/30 16:34:05 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	fast shared data cache using memory mapped files
 
@@ -11,6 +9,6 @@ CATEGORIES=	devel
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

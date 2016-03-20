@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/08/17 06:49:41 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.33 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT=	high speed arbitrary-size integer math
 
@@ -11,7 +9,7 @@ CATEGORIES=	math
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gmp>=4
+WANTLIB += c gmp>=4 perl
 
 LIB_DEPENDS =		devel/gmp
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/09 08:30:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	ACL support for Catalyst applications
 
@@ -9,6 +9,7 @@ CATEGORIES=	security
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		security/p5-Catalyst-Plugin-Authentication \

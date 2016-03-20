@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/21 02:34:36 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT =	Spiffy Perl Interface Framework For You
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Spiffy-0.46
 CATEGORIES =	devel

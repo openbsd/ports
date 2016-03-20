@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/05 15:53:19 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT =	part-of-speech tagger for EN natural language processing
 
@@ -11,6 +11,7 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =	devel/p5-Memoize-ExpireLRU>=0.55 \
 		textproc/p5-Lingua-Stem>=0.81 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT =	nonlinear least squares curve fitting
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 CPAN_AUTHOR =	SMUELLER
 
 MODULES =	cpan
+PKG_ARCH =	*
 RUN_DEPENDS =	math/p5-Math-MatrixReal \
 		math/p5-Math-Symbolic
 

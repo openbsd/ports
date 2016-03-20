@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/20 09:34:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT= 	Atom RSS protocol for perl
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	XML-Atom-0.41
 CATEGORIES=	www textproc

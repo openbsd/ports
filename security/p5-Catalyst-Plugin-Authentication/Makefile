@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	Catalyst authentication framework
 
@@ -10,6 +10,7 @@ REVISION=	0
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-Class-Inspector \
 		devel/p5-MRO-Compat \

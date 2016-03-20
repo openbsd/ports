@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:15 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT =		finds name and type of a global variable
 
@@ -9,5 +9,6 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

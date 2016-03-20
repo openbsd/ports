@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/10 21:31:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT =		test your regular expressions
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 TEST_DEPENDS =		devel/p5-Test-Tester
 
 .include <bsd.port.mk>

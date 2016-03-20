@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=		faster Class::Std
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

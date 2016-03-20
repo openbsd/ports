@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/19 06:52:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT=	universal I/O to everything
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	IO-All-0.86
 CATEGORIES=	devel
 

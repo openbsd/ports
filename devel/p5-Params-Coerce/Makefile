@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:31 naddy Exp $
 
 COMMENT=	allow your classes to do coercion of parameters
 
@@ -11,6 +11,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Params-Util
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/24 11:35:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT =	charset Informations for MIME
 
@@ -9,5 +9,6 @@ CATEGORIES =	mail
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 .include <bsd.port.mk>

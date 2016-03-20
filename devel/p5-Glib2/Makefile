@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/02/02 10:11:46 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.36 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	perl interface to the Glib libraries
 
@@ -14,7 +12,7 @@ CPAN_AUTHOR=	XAOC
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += glib-2.0 gobject-2.0
+WANTLIB += glib-2.0 gobject-2.0 perl
 
 MODULES=	cpan \
 		devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 06:13:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT=	module for controlling superclass method dispatch
 
@@ -11,6 +11,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Sub-Identify
 

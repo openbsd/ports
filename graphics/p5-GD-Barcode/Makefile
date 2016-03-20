@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:09:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	create barcode image with GD
 
@@ -15,5 +15,6 @@ RUN_DEPENDS=	graphics/p5-GD>=1.18
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

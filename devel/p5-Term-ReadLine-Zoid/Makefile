@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=		Readline Library Wrapper for zoid
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		Term-ReadLine-Zoid-0.07
 REVISION=		0
 CATEGORIES=		devel

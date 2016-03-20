@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/18 09:10:34 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT=	asynchronous Input/Output
 
@@ -11,7 +9,7 @@ CATEGORIES=	devel
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += pthread
+WANTLIB += perl pthread
 
 RUN_DEPENDS=	devel/p5-common-sense
 

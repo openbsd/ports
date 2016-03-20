@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/15 21:08:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT =		file path utility
 
@@ -11,5 +11,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 CPAN_AUTHOR =		DAGOLDEN
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

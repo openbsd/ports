@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:40 naddy Exp $
 
 COMMENT=	simple tree object
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Tree-Simple-1.18
 REVISION=	1
 CATEGORIES=	devel

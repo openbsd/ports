@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/19 14:42:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT=	subversion activity notification
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	SVN-Notify-2.84
 CATEGORIES=	devel

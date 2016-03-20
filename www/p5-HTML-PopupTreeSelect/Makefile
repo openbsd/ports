@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	popup tree widget
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	HTML-PopupTreeSelect-1.6
 REVISION=	0

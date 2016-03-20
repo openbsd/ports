@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/22 16:15:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
 COMMENT=	LRU cache in memory with expiry
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Tie-Cache-LRU-Expires-0.55
 CATEGORIES=	devel
 

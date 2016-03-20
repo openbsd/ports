@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/22 13:47:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:34 naddy Exp $
 
 COMMENT =		only use Sub::Exporter if you need it  
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Sub-Exporter
 

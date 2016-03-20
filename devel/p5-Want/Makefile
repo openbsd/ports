@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/02/26 19:20:46 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT=	generalisation of wantarray
 
@@ -12,6 +10,8 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 CPAN_AUTHOR=	ROBIN
 

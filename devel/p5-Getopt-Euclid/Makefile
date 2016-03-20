@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=		Executable Uniform Command-Line Interface Descriptions
 
@@ -12,6 +12,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

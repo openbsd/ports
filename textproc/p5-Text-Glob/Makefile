@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:09 naddy Exp $
 
 COMMENT=	match globbing patterns against text
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Text-Glob-0.09
 CATEGORIES=	textproc
 

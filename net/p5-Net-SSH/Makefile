@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/13 11:08:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:55 naddy Exp $
 
 COMMENT =	Perl extension for SSH secure shell
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-SSH-0.09
 CATEGORIES =	net
 

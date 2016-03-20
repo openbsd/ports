@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/26 17:23:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT =		make URLs for Gravatars from an email address
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 CPAN_AUTHOR =		MSCHWERN
 
 MODULES =		cpan
+PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/p5-Test-Warn
 RUN_DEPENDS =		net/p5-Net-DNS \

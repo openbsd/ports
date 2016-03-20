@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/30 15:36:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:40 naddy Exp $
 COMMENT=	ordered hashes
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Tie-LLHash-1.004
 CATEGORIES=	devel
 

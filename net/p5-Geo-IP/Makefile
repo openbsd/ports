@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/01 00:07:17 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/20 19:56:51 naddy Exp $
 
 COMMENT=	look up country by IP address/hostname
 
@@ -13,7 +11,7 @@ CATEGORIES=	net geo
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GeoIP>=8
+WANTLIB += GeoIP>=8 perl
 
 LIB_DEPENDS=	net/GeoIP>=1.4.8
 

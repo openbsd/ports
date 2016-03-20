@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/18 10:26:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/20 19:56:05 naddy Exp $
 
 COMMENT =	perl interface to ZIP files
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Archive-Zip-1.56
 

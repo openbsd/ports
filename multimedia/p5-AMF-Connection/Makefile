@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/23 13:47:45 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =	AMF client to connect to remote FLEX AIR service
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	 Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	multimedia/p5-Storable-AMF \
 		www/p5-libwww

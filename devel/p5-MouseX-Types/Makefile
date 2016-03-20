@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT =	organize your Mouse types in libraries
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	MouseX-Types-0.06
 CATEGORIES =	devel
 

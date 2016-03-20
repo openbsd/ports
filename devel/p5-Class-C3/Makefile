@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/10/30 16:42:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=		pragma to use the C3 method resolution order algorithm
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Class-C3-0.30
 CATEGORIES =		devel
 

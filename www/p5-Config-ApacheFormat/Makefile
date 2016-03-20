@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT=	parse apache-like config files
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Config-ApacheFormat-1.2
 REVISION=	0

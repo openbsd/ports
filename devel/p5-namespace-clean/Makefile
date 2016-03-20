@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/18 13:15:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:42 naddy Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	namespace-clean-0.26
 CATEGORIES =	devel
 

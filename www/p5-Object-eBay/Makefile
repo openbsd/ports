@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT=	OO interface to the eBay API
 
@@ -9,6 +9,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CONFIGURE_STYLE=	modbuild
 
 RUN_DEPENDS=		devel/p5-Class-Std \

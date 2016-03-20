@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/24 18:30:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 CPAN_AUTHOR =		TOBYINK
 
 RUN_DEPENDS =		devel/p5-Exporter-Tiny

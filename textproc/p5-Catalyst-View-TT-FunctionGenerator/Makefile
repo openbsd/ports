@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/25 07:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:04 naddy Exp $
 
 COMMENT=	use shorter names in catalyst tt views (deprecated)
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-View-TT-FunctionGenerator-0.02
 CATEGORIES=	textproc devel
 

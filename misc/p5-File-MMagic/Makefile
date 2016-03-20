@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/05 00:56:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT =		perl module to guess file type from contents
 
@@ -12,5 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

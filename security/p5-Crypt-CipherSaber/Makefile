@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/14 14:22:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT =	cryptographic CipherSaber encryption
 
@@ -9,6 +9,7 @@ CATEGORIES =	security
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 TEST_DEPENDS =	devel/p5-Test-Warn
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:56 naddy Exp $
 
 COMMENT =		ospf link-state database viewer
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-Data-Validate \
 			devel/p5-Data-Validate-Struct \
 			devel/p5-File-Slurp \

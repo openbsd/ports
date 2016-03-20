@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.16 2014/12/14 10:47:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:15 naddy Exp $
 
-SHARED_ONLY=		Yes
 COMMENT=		XS speed-up for Class-C3
 
 MODULES=		cpan
@@ -12,7 +11,7 @@ CPAN_AUTHOR =		FLORA
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS=		devel/p5-Class-C3>=0.15
 

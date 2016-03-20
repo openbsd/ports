@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/05 19:09:00 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:15 naddy Exp $
 
 COMMENT= 	HTML widget and validation framework for Catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-HTML-Widget-1.1
 REVISION=	3
 CATEGORIES=	www

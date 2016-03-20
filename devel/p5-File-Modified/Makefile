@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/27 14:12:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT =		checks intelligently if files have changed
 
@@ -12,6 +12,7 @@ MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 TEST_DEPENDS =		security/p5-Digest-MD2 \
 			security/p5-Digest-SHA1
 

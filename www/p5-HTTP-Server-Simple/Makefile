@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/17 08:07:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:20 naddy Exp $
 
 COMMENT=	simple standalone HTTP server
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	HTTP-Server-Simple-0.51
 CATEGORIES=	www
 

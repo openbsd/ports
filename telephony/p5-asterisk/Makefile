@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:04 naddy Exp $
 
 COMMENT=	collection of perl modules to be used with asterisk
 
@@ -8,6 +8,7 @@ CATEGORIES=	telephony perl5
 HOMEPAGE=	http://asterisk.gnuinter.net/
 
 MODULES=	cpan
+PKG_ARCH=	*
 CPAN_AUTHOR=	JAMESGOL
 
 # artistic

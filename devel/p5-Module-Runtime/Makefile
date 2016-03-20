@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/21 15:21:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =	runtime module handling
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Module-Runtime-0.014
 CATEGORIES =	devel
 

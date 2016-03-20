@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:42 naddy Exp $
 
 COMMENT=	perl module that provides geographic constants
 MODULES=	cpan	
+PKG_ARCH=	*
 DISTNAME=	Geo-Constants-0.06
 REVISION=	0
 CATEGORIES=	geo

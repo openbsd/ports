@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/16 23:57:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	Perl interface to IDEA block cipher
 
@@ -6,9 +6,10 @@ MODULES=	cpan
 DISTNAME=	Crypt-IDEA-1.10
 REVISION=	1
 CATEGORIES=	security
-SHARED_ONLY=	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 .include <bsd.port.mk>

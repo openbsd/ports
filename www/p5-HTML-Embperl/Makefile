@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/02/29 21:31:52 mmcc Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT=	embperl allows you to embed perl in your HTML documents
 
@@ -13,7 +11,7 @@ CATEGORIES=	www
 # Perl or GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m xml2>=10 xslt>=3 z
+WANTLIB += c m perl xml2>=10 xslt>=3 z
 
 HOMEPAGE=	http://www.embperl.org/embperl/
 MASTER_SITES=	http://www.embperl.org/downloads/

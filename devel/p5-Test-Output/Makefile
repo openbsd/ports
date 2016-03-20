@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/22 17:48:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT= 	test output of other modules
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Test-Output-1.03
 CATEGORIES=	devel
 

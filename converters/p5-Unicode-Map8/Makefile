@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/16 23:57:19 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:08 naddy Exp $
 
 COMMENT=	module to implement efficient mapping tables
 
@@ -12,7 +10,7 @@ REVISION =	0
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS=	converters/p5-Unicode-String
 

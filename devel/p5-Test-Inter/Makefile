@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/31 09:02:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT =		framework for more readable interactive test scripts
 
@@ -9,5 +9,6 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=		DateTime related constraints and coercions for Moose
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		MooseX-Types-DateTime-0.10
 REVISION=		1
 CATEGORIES=		devel

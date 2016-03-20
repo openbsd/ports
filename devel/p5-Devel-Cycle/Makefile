@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/06 11:48:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT= 	find memory cycles in objects
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Devel-Cycle-1.12
 REVISION=	0

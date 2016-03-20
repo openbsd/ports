@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/18 15:13:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:40 naddy Exp $
 
 COMMENT=	use regular expressions as hash keys
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Tie-RegexpHash-0.17
 CATEGORIES=	devel
 

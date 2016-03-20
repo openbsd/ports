@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/20 09:55:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT =	extension of Params::Validate for using Moose types
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	MooseX-Params-Validate-0.19
 CATEGORIES =	devel
 

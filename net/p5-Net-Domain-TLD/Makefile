@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/25 15:23:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =	module to work with TLD names
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Net-Domain-TLD-1.74
 CATEGORIES =	net
 

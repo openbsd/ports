@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/01/09 09:44:49 landry Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.33 2016/03/20 19:56:36 naddy Exp $
 
 COMMENT=		GNU Readline Library Wrapper Module
 
@@ -10,7 +8,7 @@ CATEGORIES=		devel
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c readline termcap
+WANTLIB += c perl readline termcap
 
 TEST_DEPENDS=	x11/p5-Tk
 TEST_FLAGS=		TERM=${TERM}

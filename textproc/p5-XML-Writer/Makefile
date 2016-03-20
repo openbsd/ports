@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/07/13 00:06:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:57:12 naddy Exp $
 
 COMMENT=	perl extension for writing XML documents
 
@@ -11,6 +11,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

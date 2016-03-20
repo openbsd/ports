@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/19 08:28:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	SQL-ReservedWords-0.8
 CATEGORIES=	databases
 

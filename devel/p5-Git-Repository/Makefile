@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/02/25 15:18:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Git-Repository-1.317
 CATEGORIES =	devel
 

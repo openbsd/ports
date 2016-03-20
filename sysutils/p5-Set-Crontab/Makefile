@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:51:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT=	expand crontab(5)-style integer lists
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Set-Crontab-1.03
 CATEGORIES=	sysutils
 

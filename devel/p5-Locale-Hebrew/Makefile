@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2014/07/09 09:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:26 naddy Exp $
 COMMENT=	bidirectional Hebrew support
 
 MODULES=	cpan
 DISTNAME=	Locale-Hebrew-1.05
 CATEGORIES=	devel
-SHARED_ONLY=	yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

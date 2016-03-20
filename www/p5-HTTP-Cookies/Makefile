@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/23 19:24:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT =	HTTP Cookie jars
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-HTTP-Date>=6.0 \
 		www/p5-HTTP-Message>=6.0

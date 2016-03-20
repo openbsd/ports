@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/14 15:02:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:06 naddy Exp $
 
 COMMENT=		higher-order list utility functions
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		List-UtilsBy-0.10
 CATEGORIES=		textproc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:51:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT =	XSS filter using HTML::Parser
 
@@ -10,6 +10,7 @@ CATEGORIES =	www
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-HTML-StripScripts \
 		www/p5-HTML-Parser

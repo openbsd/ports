@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:38 naddy Exp $
 
 COMMENT=        forbids warnings while testing
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Test-NoWarnings-1.04
 CATEGORIES=     devel
 REVISION=	0

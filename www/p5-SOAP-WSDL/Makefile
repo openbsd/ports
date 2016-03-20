@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/17 09:46:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:22 naddy Exp $
 
 COMMENT=		SOAP with WSDL support
 
@@ -9,6 +9,7 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 

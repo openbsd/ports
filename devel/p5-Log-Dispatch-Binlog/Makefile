@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT=		Storable based binary logs
 
@@ -11,6 +11,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Log-Dispatch
 TEST_DEPENDS=		devel/p5-Test-use-ok \

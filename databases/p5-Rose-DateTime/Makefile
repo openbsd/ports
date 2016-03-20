@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/13 10:18:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT=	datetime helper functions for Rose
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Rose-DateTime-0.540
 CATEGORIES=	databases devel

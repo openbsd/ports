@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT=	peek at lexical variables
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Proc-Background-1.10
 REVISION=	0
 CATEGORIES=	devel

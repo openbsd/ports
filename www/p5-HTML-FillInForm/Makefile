@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/02 10:41:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT =	inserts data into HTML input and select tags
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	HTML-FillInForm-2.21
 CATEGORIES =	www
 

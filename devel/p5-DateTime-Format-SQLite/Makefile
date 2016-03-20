@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT =	parse and format SQLite dates and times
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	DateTime-Format-SQLite-0.11
 CATEGORIES =	devel
 

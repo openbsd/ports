@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 14:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	AJAX framework for perl
 
 MODULES=	cpan
+PKG_ARCH=	*
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 MASTER_SITES0=	http://script.aculo.us/dist/

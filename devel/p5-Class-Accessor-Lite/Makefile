@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/10 08:08:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	minimalistic variant of Class::Accessor
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Class-Accessor-Lite-0.08
 CATEGORIES=	devel
 

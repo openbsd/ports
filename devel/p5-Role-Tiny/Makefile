@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/19 21:11:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:33 naddy Exp $
 
 COMMENT =	minimalist role composition tool
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Role-Tiny-2.000001
 CATEGORIES =	devel
 

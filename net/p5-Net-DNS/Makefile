@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/03/09 17:12:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.63 2016/03/20 19:56:52 naddy Exp $
 
 COMMENT =		perl interface to the domain name system
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://www.net-dns.org/download/
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		security/p5-Digest-HMAC>=1.03
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			net/p5-IO-Socket-INET6>=2.01 \

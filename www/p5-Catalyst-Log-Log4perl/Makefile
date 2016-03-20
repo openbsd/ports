@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/01 15:05:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:15 naddy Exp $
 
 COMMENT=		Log::Log4perl logging for Catalyst (deprecated)
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		Catalyst-Log-Log4perl-1.06
 CATEGORIES=		www devel
 

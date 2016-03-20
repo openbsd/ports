@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/03 09:16:26 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:17 naddy Exp $
 
 COMMENT =		display HTML locally in a browser
 
@@ -12,6 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+PKG_ARCH =		*
 RUN_DEPENDS =		www/p5-URI \
 			www/p5-HTML-Parser \
 			www/p5-HTML-TokeParser-Simple>=2 \

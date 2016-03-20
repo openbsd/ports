@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/30 16:24:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:12 naddy Exp $
 
 COMMENT=	object-oriented DBMS
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Tangram-2.12
 CATEGORIES=	databases

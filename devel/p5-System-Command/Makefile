@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/01 06:59:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:35 naddy Exp $
 
 COMMENT = 	object for running system commands
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	System-Command-1.07
 CATEGORIES =	devel
 

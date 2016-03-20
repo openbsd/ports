@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/06 14:26:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =	provides Moose-like method modifiers
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Class-Method-Modifiers-2.11
 CATEGORIES =	devel
 

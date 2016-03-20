@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/09/11 11:57:10 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT=	read and write meta information in image/audio/video files
 
@@ -16,5 +16,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/} \
 		${HOMEPAGE}
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

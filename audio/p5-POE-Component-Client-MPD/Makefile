@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/09/15 19:54:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=		complete MPD client library
 
@@ -10,6 +10,7 @@ CATEGORIES=		audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	bin
 

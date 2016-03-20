@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:19 naddy Exp $
 
 COMMENT=	HTML widget and validation framework
 
@@ -10,6 +10,7 @@ CATEGORIES=	www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	devel/p5-Class-Accessor-Chained \
 		devel/p5-Class-Data-Accessor \

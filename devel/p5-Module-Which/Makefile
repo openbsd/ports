@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/13 16:46:10 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT =	finds out which version of Perl modules are installed
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Module-Which-0.04
 EPOCH =		0
 CATEGORIES =	devel

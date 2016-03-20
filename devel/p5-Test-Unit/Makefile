@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:39 naddy Exp $
 
 COMMENT=	Perl unit testing framework
 
@@ -10,6 +10,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-Symdump \

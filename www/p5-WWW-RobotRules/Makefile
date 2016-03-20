@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/23 19:31:07 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT =	database of robots.txt-derived permissions
 
@@ -12,6 +12,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	www/p5-URI>=1.10
 

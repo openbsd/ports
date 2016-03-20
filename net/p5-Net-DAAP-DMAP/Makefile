@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/20 08:13:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:51 naddy Exp $
 
 COMMENT=	perl module for reading and writing DAAP structures
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Net-DAAP-DMAP-1.27
 CATEGORIES=	net
 

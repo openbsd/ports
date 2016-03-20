@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/25 16:21:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Test-Expect-0.33
 CATEGORIES=	devel
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	make a separate copy of a web site in local file system
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	HTML-SiteTear-1.44
 CATEGORIES=	www
 

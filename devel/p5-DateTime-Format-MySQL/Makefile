@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/22 15:09:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:19 naddy Exp $
 
 COMMENT=		parse and create MySQL date objects
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME =		DateTime-Format-MySQL-0.05
 CATEGORIES=		devel converters
 

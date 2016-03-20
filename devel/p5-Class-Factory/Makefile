@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/17 14:05:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:15 naddy Exp $
 
 COMMENT= 	automates the Factory design pattern
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	Class-Factory-1.06
 CATEGORIES=	devel

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/01/21 14:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-Mason-1.45
 REVISION=	0
 CATEGORIES=	www

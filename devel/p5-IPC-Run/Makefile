@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/27 10:47:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT= 	run a subprocess
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	IPC-Run-0.94
 CATEGORIES=	devel
 

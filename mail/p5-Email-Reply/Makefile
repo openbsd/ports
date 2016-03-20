@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/03 14:44:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT=	module to generate replies to e-mail messages.
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Email-Reply-1.204
 CATEGORIES=	mail
 

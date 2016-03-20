@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/03 06:14:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:44 naddy Exp $
 
 COMMENT=	Scalable Vector Graphics (SVG) in perl
 
@@ -11,6 +11,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EG_DIR=		examples

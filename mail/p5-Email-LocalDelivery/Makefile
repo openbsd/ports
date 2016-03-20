@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/05 20:12:43 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT= 	deliver a piece of mail locally
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Email-LocalDelivery-1.200
 CATEGORIES=	mail

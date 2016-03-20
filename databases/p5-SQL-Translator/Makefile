@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/21 02:38:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT =	SQL DDL transformations and more
 
 DISTNAME =	SQL-Translator-0.11021
 CATEGORIES =	databases
 MODULES =	cpan databases/postgresql
+PKG_ARCH =	*
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/25 15:32:12 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	PDF manipulation library
 
@@ -12,7 +10,7 @@ CATEGORIES=	print
 PERMIT_PACKAGE_CDROM=	Yes
 
 # dynamically opened via Glib::Object::Introspection
-WANTLIB += poppler-glib
+WANTLIB += perl poppler-glib
 
 HOMEPAGE=	https://github.com/c9s/perl-poppler
 

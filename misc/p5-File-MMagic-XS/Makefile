@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/16 23:57:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:49 naddy Exp $
 
 COMMENT =	guess file type with XS (a la mod_mime_magic)
-SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	File-MMagic-XS-0.09008
@@ -11,7 +10,7 @@ REVISION =	0
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 BUILD_DEPENDS =	devel/p5-Module-Install-AuthorTests \
 		devel/p5-Module-Install-Repository \

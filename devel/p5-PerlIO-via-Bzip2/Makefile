@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT=	implement PerlIO layers which let you handle bzip2 files
 
@@ -10,6 +10,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 RUN_DEPENDS=	archivers/p5-Compress-Bzip2
 
 .include <bsd.port.mk>

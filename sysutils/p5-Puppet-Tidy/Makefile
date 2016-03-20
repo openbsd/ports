@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/10 19:09:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT=	perl script to Tidy Puppet manifests
 
@@ -14,6 +14,7 @@ HOMEPAGE=	http://opensource.mtier.org/ptidy.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 CPAN_AUTHOR=	JASPER
 
 .include <bsd.port.mk>

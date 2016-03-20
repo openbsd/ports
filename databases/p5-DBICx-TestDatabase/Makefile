@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/23 16:34:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =	create a temporary database from a DBIx::Class::Schema
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	DBICx-TestDatabase-0.05
 CATEGORIES =	databases
 CPAN_AUTHOR =	JROCKWAY

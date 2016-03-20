@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
 
 COMMENT=		Sugar syntax for moose 'has' fields
 DISTNAME=		MooseX-Has-Sugar-0.05070419
@@ -8,6 +8,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

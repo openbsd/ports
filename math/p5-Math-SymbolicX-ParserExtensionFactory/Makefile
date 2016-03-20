@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT =	generate Math::Symbolic parser extensions
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 CPAN_AUTHOR =	SMUELLER
 
 MODULES =	cpan
+PKG_ARCH =	*
 RUN_DEPENDS =	devel/p5-Parse-RecDescent \
 		math/p5-Math-Symbolic
 

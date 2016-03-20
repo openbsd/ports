@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/11 13:51:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT =	AJAX framework for perl
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	CGI-Ajax-0.707
 CATEGORIES =	www
 

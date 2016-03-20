@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/18 22:48:06 nigel Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:21 naddy Exp $
 
 COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Plack-1.0039
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>

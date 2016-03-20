@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/22 00:10:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:59 naddy Exp $
 
 COMMENT=	Diffie-Hellman key exchange system
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	math/p5-Math-BigInt-GMP \
 		security/p5-Crypt-Random
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 # use a fast computer, tests will finish eventually
 #NO_TEST=	tests take ages to complete

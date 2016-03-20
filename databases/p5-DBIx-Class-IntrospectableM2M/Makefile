@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/16 07:03:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT=	introspect many-to-many shortcuts
 
@@ -9,6 +9,7 @@ CATEGORIES=	databases devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		databases/p5-DBIx-Class
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/12 21:57:33 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:27 naddy Exp $
 
 COMMENT =		Module::Build class for building XS modules
 
@@ -9,6 +9,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES +=		cpan
+PKG_ARCH =		*
 
 CONFIGURE_STYLE=	modbuild
 

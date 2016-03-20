@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/12 09:11:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT =	object oriented DBMS for perl
 
@@ -9,6 +9,7 @@ CATEGORIES =	databases devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 RUN_DEPENDS =	databases/p5-Rose-DateTime
 

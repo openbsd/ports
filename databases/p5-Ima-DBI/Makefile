@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:11 naddy Exp $
 
 COMMENT=	database connection caching and organization
 
@@ -6,6 +6,7 @@ DISTNAME=	Ima-DBI-0.35
 REVISION=	0
 CATEGORIES=	databases
 MODULES=	cpan
+PKG_ARCH=	*
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

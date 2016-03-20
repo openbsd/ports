@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/12 04:42:13 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT= 	check if the documentation of a module is comprehensive
 
@@ -12,6 +10,8 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-Symdump

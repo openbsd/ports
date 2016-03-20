@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/05 14:52:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:32 naddy Exp $
 
 COMMENT =	paranoia support for safer programs
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Paranoid-0.36
 CATEGORIES =	devel
 

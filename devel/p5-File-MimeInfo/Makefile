@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/31 13:33:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:23 naddy Exp $
 
 COMMENT=		determine file types
 
@@ -9,6 +9,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-File-BaseDir \
 			misc/shared-mime-info

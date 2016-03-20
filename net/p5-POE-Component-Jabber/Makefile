@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:57 naddy Exp $
 
 COMMENT=		POE Component for communicating over Jabber
 
@@ -10,6 +10,7 @@ CATEGORIES=		net
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

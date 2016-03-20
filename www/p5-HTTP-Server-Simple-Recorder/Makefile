@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:20 naddy Exp $
 
 COMMENT= 	record communication with an HTTP::Server::Simple
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME =	HTTP-Server-Simple-Recorder-0.03
 CATEGORIES=	www

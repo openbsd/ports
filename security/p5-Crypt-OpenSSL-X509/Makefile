@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/16 23:57:26 ajacoutot Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:00 naddy Exp $
 
 COMMENT =		access OpenSSL's X509 API from Perl#'
 
@@ -12,7 +10,7 @@ CATEGORIES =		security
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto
+WANTLIB += crypto perl
 
 MODULES =		cpan
 

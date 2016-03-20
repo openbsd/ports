@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =	perl module for mon
 
@@ -8,6 +8,7 @@ PKGNAME = 	p5-Mon-${V}
 REVISION =	3
 
 MODULES = 	cpan
+PKG_ARCH = 	*
 
 DISTFILES = 	mon-client-${V}.tar.gz \
 		mon-${V}.tar.gz

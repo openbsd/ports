@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.17 2014/12/15 15:53:07 benoit Exp $
+#	$OpenBSD: Makefile,v 1.18 2016/03/20 19:56:14 naddy Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/14 12:28:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=		Path::Class type library for Moose
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Moose>=2.1204 \
 			devel/p5-MooseX-Types \

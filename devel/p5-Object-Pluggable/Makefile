@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:30 naddy Exp $
 
 COMMENT=		base class for creating plugin-enabled objects
 
@@ -10,6 +10,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Task-Weaken
 

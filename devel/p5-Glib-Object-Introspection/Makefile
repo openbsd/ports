@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/11 10:22:39 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	dynamically create Perl language bindings
 
@@ -11,7 +9,7 @@ CATEGORIES=	devel
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 perl
 
 MODULES=	cpan devel/gettext
 CPAN_AUTHOR=	XAOC

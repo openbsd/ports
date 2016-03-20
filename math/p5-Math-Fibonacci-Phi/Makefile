@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/29 18:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT=	calculates Phi and phi for Fibonacci numbers
 
@@ -10,6 +10,7 @@ CATEGORIES=	math
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	math/p5-Math-Fibonacci
 BUILD_DEPENDS=	${RUN_DEPENDS}

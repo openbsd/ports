@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.27 2016/03/20 00:31:36 naddy Exp $
+# $OpenBSD: perl.port.mk,v 1.28 2016/03/20 19:56:44 naddy Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -106,10 +106,6 @@ do-test:
 do-install:
 	@${MODPERL_INSTALL_TARGET}
 .  endif
-.endif
-
-.if defined(SHARED_ONLY) && ${SHARED_ONLY:L:Myes}
-WANTLIB += perl
 .endif
 
 P5SITE = libdata/perl5/site_perl

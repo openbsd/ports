@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/02 14:28:01 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT =	validate email addresses according to RFC822
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Mail-RFC822-Address-0.3
 CATEGORIES =	mail
 

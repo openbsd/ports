@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/06/18 01:03:52 william Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:46 naddy Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
@@ -12,6 +12,7 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 CPAN_AUTHOR=	JASLONG
 
 RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \

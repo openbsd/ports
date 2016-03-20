@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/18 10:43:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=		interface to URL shortening sites
 
@@ -9,6 +9,7 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 

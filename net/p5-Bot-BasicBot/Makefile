@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/25 10:35:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT =	simple irc bot baseclass
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Bot-BasicBot-0.89
 CATEGORIES =	net
 

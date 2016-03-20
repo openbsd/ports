@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/16 15:15:04 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT =	library for sending email
 
 MODULES =	cpan
+PKG_ARCH =	*
 
 DISTNAME =	Email-Sender-1.300018
 CATEGORIES =	mail

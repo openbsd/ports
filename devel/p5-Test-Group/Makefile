@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/04 09:54:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT =	group together related tests in a test suite
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Test-Group-0.20
 CATEGORIES =	devel
 

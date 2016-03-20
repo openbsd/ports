@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/16 13:45:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT=	alternative interface to File::Find
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	File-Find-Rule-0.34
 CATEGORIES=	devel
 

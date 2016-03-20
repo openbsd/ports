@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:57 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:22 naddy Exp $
 
 COMMENT=        automatic Perl XS glue code generation
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	ExtUtils-XSBuilder-0.28
 REVISION=	2
 CATEGORIES=	devel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/29 10:14:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:48 naddy Exp $
 
 COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.12
@@ -8,6 +8,7 @@ CATEGORIES =	math
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	cpan
+PKG_ARCH =	*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 

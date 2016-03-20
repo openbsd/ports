@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/14 20:42:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:13 naddy Exp $
 
 COMMENT=	subclass of AppConfig that provides standard options
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	AppConfig-Std-1.10
 CATEGORIES=	devel
 

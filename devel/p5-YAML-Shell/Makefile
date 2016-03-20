@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/08 14:24:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:41 naddy Exp $
 
 COMMENT=		YAML Test Shell
 
@@ -9,6 +9,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-YAML>=0.68
 

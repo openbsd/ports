@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/22 16:59:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT=		test file attributes
 
@@ -9,6 +9,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Test-Manifest
 

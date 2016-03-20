@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/12/14 16:52:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:37 naddy Exp $
 
 COMMENT= 	tests strings for equality
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	Test-LongString-0.17
 CATEGORIES=	devel

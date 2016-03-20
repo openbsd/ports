@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/29 09:23:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:05 naddy Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
 MODULES=	cpan
-
-SHARED_ONLY=	Yes
 
 DISTNAME =	PerlIO-gzip-0.19
 CATEGORIES=	archivers
@@ -12,6 +10,6 @@ CATEGORIES=	archivers
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c z
+WANTLIB=	c perl z
 
 .include <bsd.port.mk>

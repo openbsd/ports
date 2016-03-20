@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:40:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:50 naddy Exp $
 
 COMMENT=		parse and manipulate DNS Zone files
 
 MODULES=		cpan
+PKG_ARCH=		*
 DISTNAME=		DNS-ZoneParse-1.10
 CATEGORIES=		net
 

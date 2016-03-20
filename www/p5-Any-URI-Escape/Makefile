@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/30 18:13:19 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT =	URI::Escape::XS module loader
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Any-URI-Escape-0.01
 CATEGORIES =	www
 

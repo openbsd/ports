@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/17 07:19:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:21 naddy Exp $
 
 COMMENT =		safely and cleanly create closures via string eval 
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 CPAN_AUTHOR =		DOY
 
 MODULES =		cpan
+PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Try-Tiny
 

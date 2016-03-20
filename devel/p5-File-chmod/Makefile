@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/03 07:20:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:24 naddy Exp $
 
 COMMENT=	implements symbolic and ls chmod modes
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	File-chmod-0.42
 CATEGORIES=	devel
 

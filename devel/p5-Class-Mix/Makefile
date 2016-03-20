@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:01 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT =		dynamic class mixing
 
 MODULES =		cpan
+PKG_ARCH =		*
 DISTNAME =		Class-Mix-0.005
 CATEGORIES =		devel
 

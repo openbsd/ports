@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:45 naddy Exp $
 
 COMMENT=	generate world unique message-ids
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Email-MessageID-1.401
 REVISION=	0
 CATEGORIES=	mail

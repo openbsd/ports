@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 13:13:19 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:43 naddy Exp $
 
 COMMENT=	regular expressions for handling British postcodes
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Geo-UK-Postcode-Regex-0.015
 CATEGORIES=	geo
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT =	GD plugin(s) for the Template Toolkit
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Template-GD-2.66
 REVISION =	2
 CATEGORIES =	textproc graphics

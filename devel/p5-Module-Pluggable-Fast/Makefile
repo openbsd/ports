@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/13 10:30:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:28 naddy Exp $
 
 COMMENT=	instantiate plugins as they're found
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Module-Pluggable-Fast-0.19
 CATEGORIES=	devel
 

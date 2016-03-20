@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:02 naddy Exp $
 
 COMMENT=	monitor files and directories for changes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 DISTNAME=	File-Monitor-1.00
 

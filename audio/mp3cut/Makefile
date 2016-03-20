@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:48:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT =		cut and cat MP3 files
 
 MODULES =		cpan
+PKG_ARCH =		*
 # strip -p5 from PKGNAME (added by the cpan MODULE)
 DISTNAME =		mp3cut-1.13
 PKGNAME =		${DISTNAME}

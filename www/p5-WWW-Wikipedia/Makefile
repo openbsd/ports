@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/11/21 20:40:46 gsoares Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:23 naddy Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
@@ -8,6 +8,7 @@ CATEGORIES=		www
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 MODULES=		cpan
+PKG_ARCH=		*
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

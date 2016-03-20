@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:10 naddy Exp $
 
 COMMENT =	automatically set and update time based columns
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	DBIx-Class-TimeStamp-0.14
 CATEGORIES =	databases
 

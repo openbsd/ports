@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 23:57:22 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:26 naddy Exp $
 
 COMMENT=	simple interface to access shared memory
 
@@ -12,7 +10,7 @@ CATEGORIES=	devel
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MAKE_ENV+=		TEST_POD=Yes
 

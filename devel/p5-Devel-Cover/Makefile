@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/21 06:30:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:20 naddy Exp $
 
 COMMENT =	code coverage metrics for Perl
-SHARED_ONLY =	Yes
 
 MODULES =	cpan
 DISTNAME =	Devel-Cover-1.21
@@ -10,7 +9,7 @@ CATEGORIES =	devel
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 RUN_DEPENDS =	devel/p5-Pod-Coverage \
 		devel/p5-Test-Differences \

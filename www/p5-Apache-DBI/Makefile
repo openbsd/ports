@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 23:51:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT=	DBI persistent connection, authentication and authorization
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Apache-DBI-0.94
 REVISION=	2
 CATEGORIES=	www databases

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/09/08 17:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:06 naddy Exp $
 
 COMMENT=		module for communicating with MPD servers
 DISTNAME=		Audio-MPD-1.110560
@@ -9,6 +9,7 @@ CATEGORIES=		audio
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
+PKG_ARCH=		*
 CPAN_AUTHOR=		JQUELIN
 MODCPAN_EXAMPLES=	Yes
 

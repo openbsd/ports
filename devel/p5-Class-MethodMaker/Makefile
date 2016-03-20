@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/13 12:36:45 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:16 naddy Exp $
 
 COMMENT=	module for creating generic methods
 
@@ -11,6 +9,6 @@ CATEGORIES=	devel
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 .include <bsd.port.mk>

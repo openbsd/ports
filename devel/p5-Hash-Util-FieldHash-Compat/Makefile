@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/28 09:02:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:25 naddy Exp $
 
 COMMENT =	use Hash::Util::FieldHash or ties, depending on availability
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Hash-Util-FieldHash-Compat-0.10
 CATEGORIES =	devel
 

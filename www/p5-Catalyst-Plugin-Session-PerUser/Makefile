@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:42:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:16 naddy Exp $
 
 COMMENT=	per-user session for catalyst
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	Catalyst-Plugin-Session-PerUser-0.05
 CATEGORIES=	www
 

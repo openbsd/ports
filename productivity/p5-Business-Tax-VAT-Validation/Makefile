@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/31 10:08:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:58 naddy Exp $
 
 COMMENT=	European VAT number validator
 
@@ -9,6 +9,7 @@ CATEGORIES=	productivity
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
+PKG_ARCH=	*
 
 RUN_DEPENDS=	www/p5-libwww
 

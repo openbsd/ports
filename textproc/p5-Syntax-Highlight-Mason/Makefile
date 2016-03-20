@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/26 09:38:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:08 naddy Exp $
 
 COMMENT=	syntax highlight for Mason
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME =	Syntax-Highlight-Mason-1.23
 CATEGORIES=	textproc www
 EXTRACT_SUFX=	.tgz

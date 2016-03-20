@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/20 19:57:13 naddy Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -15,8 +15,6 @@ MASTER_SITES=	https://distfiles.nl/ \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat m perl pthread util
-
-SHARED_ONLY=		Yes
 
 CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2 \
 			MP_NO_THREADS=1

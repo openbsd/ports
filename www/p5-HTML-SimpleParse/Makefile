@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:09:00 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:18 naddy Exp $
 
 COMMENT=	bare-bones HTML parser
 
 MODULES=	cpan
+PKG_ARCH=	*
 DISTNAME=	HTML-SimpleParse-0.12
 REVISION=	1
 CATEGORIES=	www

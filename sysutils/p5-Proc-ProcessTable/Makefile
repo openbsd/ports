@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/11/18 13:23:51 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 19:57:03 naddy Exp $
 
 COMMENT=	interface to the system's process table
 
@@ -12,7 +10,7 @@ MAINTAINER=	William Yodlowsky <william@openbsd.org>
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += kvm
+WANTLIB += kvm perl
 
 MODULES=	cpan
 

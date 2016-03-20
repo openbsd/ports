@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/13 15:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:09 naddy Exp $
 
 COMMENT =	comma-separated values manipulation routines
 
 MODULES =	cpan
+PKG_ARCH =	*
 DISTNAME =	Text-CSV-1.33
 CATEGORIES =	textproc
 
