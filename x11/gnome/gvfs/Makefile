@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2016/02/27 09:13:49 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.152 2016/03/20 17:59:21 naddy Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba

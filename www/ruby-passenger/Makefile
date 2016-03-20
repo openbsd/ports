@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/12/10 08:49:31 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/20 17:59:21 naddy Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -22,8 +22,6 @@ PERMIT_PACKAGE_CDROM = Yes
 
 MODULES =		devel/gettext \
 			lang/ruby
-
-SHARED_ONLY =	Yes
 
 CONFIGURE_STYLE =	gem ext
 

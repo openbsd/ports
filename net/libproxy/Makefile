@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/01/20 11:29:05 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.47 2016/03/20 17:59:21 naddy Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers

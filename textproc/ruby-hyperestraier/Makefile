@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/11 19:59:17 naddy Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.41 2016/03/20 17:59:21 naddy Exp $
 
 COMMENT=		Ruby interface to hyperestraier
 
