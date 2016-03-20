@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.74 2016/03/11 20:32:23 naddy Exp $
+# $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -8,7 +8,6 @@
 #
 #ONLY_FOR_ARCHS =	???
 #NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
 #COMES_WITH =		???
 #BROKEN =		reason
 

@@ -642,7 +642,7 @@ sub process_makefile {
 			$revsincurblock = 0;
 			$block1end = $in->input_line_number()
 			    if $block1begin && !$block1end;
-		} elsif (!/^ *(\#|BROKEN|COMES_WITH|IGNORE|NOT_FOR_ARCHS|ONLY_FOR_ARCHS|SHARED_ONLY)/) {
+		} elsif (!/^ *(\#|BROKEN|COMES_WITH|IGNORE|NOT_FOR_ARCHS|ONLY_FOR_ARCHS)/) {
 			$block1begin = $in->input_line_number() if !$block1begin;
 		}
 	}
