@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.216 2016/03/09 19:40:11 jca Exp $
+# $OpenBSD: Makefile,v 1.217 2016/03/20 15:58:26 naddy Exp $
 
-SHARED_ONLY =		Yes
 VERSION =		4.1.23
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b

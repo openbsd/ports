@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.50 2016/03/19 12:04:05 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2016/03/20 15:58:26 naddy Exp $
 
-SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
 
@@ -101,7 +100,7 @@ HOMEPAGE =		http://www.qt-project.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 
-WANTLIB-main =  ${WANTLIB:Nperl}
+WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main += cups fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
