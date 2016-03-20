@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2016/03/20 15:33:38 naddy Exp $
 
 COMMENT = 		K Desktop Environment bindings for scripting languages
 CATEGORIES =		x11 x11/kde devel
@@ -31,8 +31,8 @@ WANTLIB = GL GLU ICE SM X11 Xext Xrender Xfixes Xt art_lgpl_2 c expat fam \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/khtml lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kscript lib/kde3/kspell \
-	lib/kde3/kutils lib/kde3/kwalletclient m pcre pcreposix png pthread \
-	pthread-stubs qui-mt stdc++ util xcb z ${MODRUBY_WANTLIB}
+	lib/kde3/kutils lib/kde3/kwalletclient m pcre pcreposix perl png \
+	pthread pthread-stubs qui-mt stdc++ util xcb z ${MODRUBY_WANTLIB}
 WANTLIB += Xmu kabc kabc_file kresources qui
 WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
