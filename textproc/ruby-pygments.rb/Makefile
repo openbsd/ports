@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/23 07:46:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
@@ -12,8 +12,6 @@ HOMEPAGE=	https://github.com/tmm1/pygments.rb
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-# order matters, as otherwise ruby.port.mk complains about SHARED_ONLY=yes
-# which is set by python.port.mk, and not having 'ext' in CONFIGURE_STYLE.
 MODULES=	lang/ruby \
 		lang/python
 

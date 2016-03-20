@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/19 20:13:59 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.14 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		python interface to adns
 

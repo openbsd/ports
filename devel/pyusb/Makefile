@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/21 18:33:49 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	python interface to libusb
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/23 07:58:56 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:27 naddy Exp $
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 

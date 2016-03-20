@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.86 2016/01/17 19:39:05 jasper Exp $
+# $OpenBSD: ruby.port.mk,v 1.87 2016/03/20 16:12:24 naddy Exp $
 
 # ruby module
 
@@ -253,12 +253,11 @@ MODRUBY_WANTLIB+=	gmp
 
 .if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
 # Ruby C exensions are specific to an arch and are loaded as
-# shared libraries (not compiled into ruby), so set SHARED_ONLY
-# and make sure PKG_ARCH=* is not set.
+# shared libraries (not compiled into ruby), so make sure PKG_ARCH=*
+# is not set.
 .  if defined(PKG_ARCH) && ${PKG_ARCH} == *
 ERRORS+=	"Fatal: Should not have PKG_ARCH=* when compiling extensions"
 .  endif
-SHARED_ONLY=	Yes
 
 # Add appropriate libraries to WANTLIB depending on ruby version and
 # implementation
@@ -285,14 +284,8 @@ BUILD_DEPENDS+=	lang/jruby>=1.6.5
 BUILD_DEPENDS+=	lang/ruby/2.1>=2.1.0p0
 .  endif
 
-# Just like all ruby C extensions should set SHARED_ONLY,
-# pure ruby gem ports without C extensions should definitely not
-# set SHARED_ONLY, and they are arch-independent.
+# Pure ruby gem ports without C extensions are arch-independent.
 .  if !${CONFIGURE_STYLE:L:Mext}
-.    if defined(SHARED_ONLY) && ${SHARED_ONLY:L:Myes}
-ERRORS+=	"Fatal: Pure ruby gems without ext CONFIGURE_STYLE should not \
-		have SHARED_ONLY=Yes"
-.    endif
 PKG_ARCH=	*
 .  elif ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2 || ${MODRUBY_REV} == 2.3
 # Add build complete file to package so rubygems doesn't complain

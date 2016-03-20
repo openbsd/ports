@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c m ${MODRUBY_WANTLIB}
 
 MASTER_SITES =		https://spacehopper.org/mirrors/
-
-SHARED_ONLY =		Yes
 
 # Must stay in sync with the version vim is using!
 MODRUBY_REV =		1.8

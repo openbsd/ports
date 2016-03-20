@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/19 20:14:00 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:27 naddy Exp $
 
 COMMENT=	lightweight panel written in Python and C for X11
 

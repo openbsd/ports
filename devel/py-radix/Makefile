@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/13 16:09:17 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	Radix tree implementation for Python
 

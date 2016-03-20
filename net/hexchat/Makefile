@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/14 20:25:39 jca Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.10 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.0

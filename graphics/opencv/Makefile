@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.35 2015/11/23 20:34:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/20 16:12:24 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 ONLY_FOR_ARCHS-java =	amd64 i386
-SHARED_ONLY =		Yes
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples

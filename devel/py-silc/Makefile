@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/06 17:01:54 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.21 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	Python bindings for the SILC toolkit
 

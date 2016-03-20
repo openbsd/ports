@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/12 07:02:16 mmcc Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/20 16:12:24 naddy Exp $
 
 # old version that does not get updates; should be rm'd at some point
 PORTROACH=	ignore:1
-
-SHARED_ONLY=	Yes
 
 COMMENT =	Mozilla C implementation of JavaScript
 

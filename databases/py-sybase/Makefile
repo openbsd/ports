@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/13 09:04:37 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	Python interface to the Sybase relational database system
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/01/17 09:48:59 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 

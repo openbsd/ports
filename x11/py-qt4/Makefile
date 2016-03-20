@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/08/20 10:02:25 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.45 2016/03/20 16:12:27 naddy Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation

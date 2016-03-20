@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/07/19 23:46:08 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.64 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=	gettext(1) files editor for GNOME
 

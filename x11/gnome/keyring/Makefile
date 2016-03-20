@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2016/01/23 09:09:40 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.122 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=		password agent for the GNOME project
 

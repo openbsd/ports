@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/26 13:29:11 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT =	thin SQLite wrapper for Python
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/10 11:50:13 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.39 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client

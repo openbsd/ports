@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/08/20 10:02:25 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 

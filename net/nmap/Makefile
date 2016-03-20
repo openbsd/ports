@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2016/03/18 21:13:38 giovanni Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.119 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/12 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/20 16:12:22 naddy Exp $
 
-SHARED_ONLY=		Yes
 COMMENT=		Python tools for computational molecular biology
 
 MODPY_EGG_VERSION=	1.66

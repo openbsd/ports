@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 11:48:28 naddy Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT =		equinox desktop library
 

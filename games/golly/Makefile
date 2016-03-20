@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/31 01:21:39 jca Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.5 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT =	game of life simulator
 

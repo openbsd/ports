@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/21 06:13:46 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT=	universal unicode codec using iconv for Python
 

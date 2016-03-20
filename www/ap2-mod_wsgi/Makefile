@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/17 23:58:43 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=	Python WSGI compliant interface module for Apache2
 

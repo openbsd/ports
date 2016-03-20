@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/06/14 10:34:45 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.29 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT-main=	fast, powerful, and language-neutral HTML template system
 COMMENT-perl=	perl bindings for clearsilver

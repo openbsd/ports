@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/01/06 10:49:28 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.38 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=	Python interface to cURL library
 

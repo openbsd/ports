@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/18 22:30:44 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		AFP file and print services for IP networks
 

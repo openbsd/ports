@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/12/14 07:45:57 benoit Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.34 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 

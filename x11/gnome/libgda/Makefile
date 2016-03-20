@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/01/05 17:18:19 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.109 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda

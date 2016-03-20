@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:51:14 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.13 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT =	ODBC bindings for Python
 

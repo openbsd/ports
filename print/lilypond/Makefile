@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/04/06 21:05:07 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.44 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/03/11 20:28:25 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.64 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT=	educational game for children
 

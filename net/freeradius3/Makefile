@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/20 16:12:25 naddy Exp $
 
 PORTROACH=	limit:^3\.
-
-SHARED_ONLY=	Yes
 
 COMMENT-main=	RADIUS server implementation
 COMMENT-iodbc=	freeradius iodbc rlm addon

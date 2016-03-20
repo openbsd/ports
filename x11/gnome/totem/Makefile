@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2015/10/12 17:20:35 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.141 2016/03/20 16:12:27 naddy Exp $
 
 COMMENT=		official media player for GNOME
 

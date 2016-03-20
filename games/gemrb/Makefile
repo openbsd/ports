@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/06 20:28:36 kirby Exp $
-
-SHARED_ONLY = 		Yes
+# $OpenBSD: Makefile,v 1.4 2016/03/20 16:12:24 naddy Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 

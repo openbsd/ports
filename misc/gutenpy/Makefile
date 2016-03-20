@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:57 espie Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.15 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		text reader and catalog browser for Project Gutenberg
 

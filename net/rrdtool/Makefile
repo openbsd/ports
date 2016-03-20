@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/03/11 20:28:29 naddy Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.95 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/21 18:40:20 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.20 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT=	Python wrapper module for the ao library
 

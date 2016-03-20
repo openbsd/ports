@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/27 07:04:35 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.37 2016/03/20 16:12:26 naddy Exp $
 
 # This architecture lacks fast mutexes...
 NOT_FOR_ARCHS=		mips64 mips64el

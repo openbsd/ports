@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/21 18:40:20 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	SQLite adapter for Python
 

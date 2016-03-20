@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/12/29 23:19:33 rpe Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.36 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT =		cryptographic tools for Python
 

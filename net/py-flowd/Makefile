@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/19 20:13:59 sthen Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		Python API for flowd binary log files
 

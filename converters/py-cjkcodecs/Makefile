@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/01/21 06:13:46 bentley Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.22 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT=	Python unicode codecs for Chinese, Japanese and Korean
 

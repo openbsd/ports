@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/12 11:24:05 jca Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.16 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	trivial database library
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/07 09:37:06 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -32,8 +32,6 @@ CONFIGURE_STYLE =	qmake
 MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
 			plugins-src/TWPythonPlugin/TWPythonPlugin.pro \
 			TeXworks.pro
-
-SHARED_ONLY =		Yes
 
 WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.3

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/21 18:24:22 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.28 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=	fast array facility to the Python language
 

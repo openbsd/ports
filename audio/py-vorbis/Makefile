@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/21 18:40:20 sthen Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.8 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT =	Python wrapper for the Vorbis libraries
 

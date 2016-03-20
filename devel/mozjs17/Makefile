@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/12 07:02:16 mmcc Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/20 16:12:23 naddy Exp $
 
-SHARED_ONLY=	Yes
 # based on ffx 17 engine
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)

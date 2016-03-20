@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/02 12:43:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -10,8 +10,6 @@ CATEGORIES =	devel
 REVISION =	0
 
 HOMEPAGE =	http://chipx86.github.com/gtkparasite/
-
-SHARED_ONLY =	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

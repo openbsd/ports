@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2016/01/22 19:04:39 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.130 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client

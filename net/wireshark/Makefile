@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/05 16:26:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/20 16:12:25 naddy Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -16,7 +16,6 @@ DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
-SHARED_ONLY =	Yes
 
 SHARED_LIBS +=	wsutil               2.0      # 5.0
 SHARED_LIBS +=	wiretap              2.0      # 4.5

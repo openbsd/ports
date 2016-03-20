@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/24 09:11:04 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	Python-alike language for writing Python extension modules
 

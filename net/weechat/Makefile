@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/11 15:11:31 abieber Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -20,8 +20,6 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.weechat.org/
 
 MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
-
-SHARED_ONLY=	Yes
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

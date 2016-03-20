@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/08 12:02:03 jasper Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT =		library for reading and writing images
 

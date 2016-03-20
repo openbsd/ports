@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/07 22:29:14 bcallah Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT=	set of Python modules designed for writing games
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/11/13 08:44:53 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.42 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python

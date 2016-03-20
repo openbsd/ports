@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.140 2016/03/19 11:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2016/03/20 16:12:25 naddy Exp $
 
 PORTROACH=		skipv:${V}_py2.5
-
-SHARED_ONLY=		Yes
 
 COMMENT-main=		HP Linux Imaging and Printing
 COMMENT-common=		HPLIP applications common files

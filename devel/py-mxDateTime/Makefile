@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/09/17 12:33:00 benoit Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.44 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT =	date and time types for Python
 

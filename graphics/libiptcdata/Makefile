@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:26 naddy Exp $
-
-SHARED_ONLY = 		Yes
+# $OpenBSD: Makefile,v 1.6 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT-main =		library for manipulating IPTC metadata
 COMMENT-python =	libiptcdata Python bindings

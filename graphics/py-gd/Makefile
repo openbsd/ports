@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/05 13:31:14 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT=	Python wrapper for the GD library
 

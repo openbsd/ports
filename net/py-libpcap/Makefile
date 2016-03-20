@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/01/23 18:28:34 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.31 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		libpcap bindings for Python
 

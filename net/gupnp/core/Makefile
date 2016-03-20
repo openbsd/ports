@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/02/25 07:36:15 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.40 2016/03/20 16:12:25 naddy Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 

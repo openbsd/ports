@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/20 16:12:24 naddy Exp $
 
-SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
 
 COMMENT =	embeddable prototype-based language

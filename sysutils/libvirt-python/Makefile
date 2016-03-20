@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/04 10:14:05 jasper Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.25 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT =		libvirt virtualization API python bindings
 

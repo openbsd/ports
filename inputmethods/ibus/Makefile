@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/01/01 12:00:15 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.49 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT =	intelligent input bus framework
 

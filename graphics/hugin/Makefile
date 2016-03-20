@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2015/10/10 08:44:39 kirby Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/20 16:12:24 naddy Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
-
-SHARED_ONLY =		Yes
 
 COMMENT =		panorama image stitcher
 

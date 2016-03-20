@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2016/02/13 21:54:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.210 2016/03/20 16:12:23 naddy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -43,7 +43,6 @@ MULTI_PACKAGES=	-docs -main -server -contrib -plpython
 # but the server requires loadable library support. Until we figure
 # out the correct incantation to not build the server on those systems,
 # simply don't build for them, yet.
-SHARED_ONLY=	Yes
 
 MAKE_FILE=	GNUmakefile
 

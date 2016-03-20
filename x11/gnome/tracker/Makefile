@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2016/03/02 07:22:38 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.200 2016/03/20 16:12:27 naddy Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 

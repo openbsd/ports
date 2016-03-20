@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/18 21:54:37 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.7 2016/03/20 16:12:24 naddy Exp $
 
 COMMENT=	convert Big5 encoded files to PDF
 

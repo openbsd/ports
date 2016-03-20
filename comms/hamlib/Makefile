@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/10 21:42:26 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib

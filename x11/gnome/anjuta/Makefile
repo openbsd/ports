@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2015/11/08 19:43:40 jasper Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.134 2016/03/20 16:12:26 naddy Exp $
 
 COMMENT=		versatile IDE for GNOME
 

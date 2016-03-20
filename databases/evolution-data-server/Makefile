@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.202 2016/02/27 08:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2016/03/20 16:12:22 naddy Exp $
 
 # XXX add libphonenumber support when a cpp release is out
-
-SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 

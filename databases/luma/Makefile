@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/27 08:11:25 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.12 2016/03/20 16:12:22 naddy Exp $
 
 COMMENT=	Qt-based LDAP browser and utility
 
