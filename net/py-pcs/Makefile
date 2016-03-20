@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/13 19:10:45 fgsch Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.11 2016/03/20 18:17:50 naddy Exp $
 
 COMMENT=		Python Packet Construction Set
 
