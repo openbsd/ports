@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/20 20:31:56 naddy Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -38,17 +38,8 @@ BUILD_DEPENDS=	textproc/libxslt
 
 MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
-FLAVORS=	rplay debug
+FLAVORS=	debug
 FLAVOR?=
-
-.if ${FLAVOR:Mrplay}
-LIB_DEPENDS+=	audio/rplay
-CONFIGURE_ARGS+= --with-rplay-includes="${LOCALBASE}/include" \
-		 --with-rplay-library="${LOCALBASE}/lib"
-WANTLIB += rplay
-.else
-CONFIGURE_ARGS+= --without-rplay-library
-.endif
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+= --enable-debug-msgs
@@ -68,6 +59,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS +=	--disable-bidi \
 			--disable-gtk \
 			--without-gnome \
+			--without-rplay-library \
 			--without-stroke-library
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
