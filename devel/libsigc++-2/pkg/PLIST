@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/09/27 06:56:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/20 11:57:38 ajacoutot Exp $
 @conflict libsigc++-docs-*
 @pkgpath devel/libsigc++
 @pkgpath devel/libsigc++-2,-main
@@ -71,6 +71,8 @@ share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01con
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01const__reference__wrapper_3_01T__wrapped_01_4_01_4.html
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01reference__wrapper_3_01T__wrapped_01_4_01_4-members.html
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01reference__wrapper_3_01T__wrapped_01_4_01_4.html
+share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01std_1_1reference__wrapper_3_01T__wrapped_01_4_01_4-members.html
+share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__argument_3_01std_1_1reference__wrapper_3_01T__wrapped_01_4_01_4.html
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__const__mem__functor0-members.html
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__const__mem__functor0.html
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1bound__const__mem__functor0__inherit__graph.png
@@ -510,6 +512,8 @@ share/doc/libsigc++-${API_V}/reference/html/inherit_graph_44.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_45.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_46.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_47.png
+share/doc/libsigc++-${API_V}/reference/html/inherit_graph_48.png
+share/doc/libsigc++-${API_V}/reference/html/inherit_graph_49.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_5.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_6.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_7.png
@@ -549,6 +553,7 @@ share/doc/libsigc++-${API_V}/reference/html/open.png
 share/doc/libsigc++-${API_V}/reference/html/pages.html
 share/doc/libsigc++-${API_V}/reference/html/since_2_2_11.html
 share/doc/libsigc++-${API_V}/reference/html/since_2_4.html
+share/doc/libsigc++-${API_V}/reference/html/since_2_8.html
 share/doc/libsigc++-${API_V}/reference/html/splitbar.png
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1adaptor__base.html
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1adaptor__base__inherit__graph.png
@@ -635,6 +640,8 @@ share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01const__reference__wrapper_3_01T__type_01_4_01_4.html
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01reference__wrapper_3_01T__type_01_4_01_4-members.html
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01reference__wrapper_3_01T__type_01_4_01_4.html
+share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01std_1_1reference__wrapper_3_01T__type_01_4_01_4-members.html
+share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1unwrap__reference_3_01std_1_1reference__wrapper_3_01T__type_01_4_01_4.html
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1visitor-members.html
 share/doc/libsigc++-${API_V}/reference/html/structsigc_1_1visitor.html
 share/doc/libsigc++-${API_V}/reference/html/sync_off.png
