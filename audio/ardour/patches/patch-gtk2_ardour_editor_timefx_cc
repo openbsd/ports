@@ -1,0 +1,27 @@
+$OpenBSD: patch-gtk2_ardour_editor_timefx_cc,v 1.1 2016/03/20 11:58:32 ajacoutot Exp $
+
+Fix build with libsigc++ >=2.8.0
+
+--- gtk2_ardour/editor_timefx.cc.orig	Sun Mar 20 11:40:16 2016
++++ gtk2_ardour/editor_timefx.cc	Sun Mar 20 11:40:30 2016
+@@ -323,9 +323,9 @@ Editor::time_fx (RegionSelection& regions, float val, 
+ 	current_timefx->first_delete.disconnect();
+ 	
+ 	current_timefx->first_cancel = current_timefx->cancel_button->signal_clicked().connect 
+-		(mem_fun (current_timefx, &TimeFXDialog::cancel_in_progress));
++		(mem_fun (*current_timefx, &TimeFXDialog::cancel_in_progress));
+ 	current_timefx->first_delete = current_timefx->signal_delete_event().connect 
+-		(mem_fun (current_timefx, &TimeFXDialog::delete_in_progress));
++		(mem_fun (*current_timefx, &TimeFXDialog::delete_in_progress));
+ 
+ 	if (pthread_create_and_store ("timefx", &current_timefx->request.thread, 0, timefx_thread, current_timefx)) {
+ 		current_timefx->hide ();
+@@ -335,7 +335,7 @@ Editor::time_fx (RegionSelection& regions, float val, 
+ 
+ 	pthread_detach (current_timefx->request.thread);
+ 
+-	sigc::connection c = Glib::signal_timeout().connect (mem_fun (current_timefx, &TimeFXDialog::update_progress), 100);
++	sigc::connection c = Glib::signal_timeout().connect (mem_fun (*current_timefx, &TimeFXDialog::update_progress), 100);
+ 
+ 	while (!current_timefx->request.done && !current_timefx->request.cancel) {
+ 		gtk_main_iteration ();

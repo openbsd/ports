@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/20 11:58:32 ajacoutot Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -8,7 +8,8 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
-REVISION =		2
+REVISION =		3
+
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
 

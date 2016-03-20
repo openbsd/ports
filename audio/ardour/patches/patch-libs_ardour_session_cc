@@ -1,0 +1,59 @@
+$OpenBSD: patch-libs_ardour_session_cc,v 1.1 2016/03/20 11:58:32 ajacoutot Exp $
+
+Fix build with libsigc++ >=2.8.0
+
+--- libs/ardour/session.cc.orig	Sun Mar 20 11:14:18 2016
++++ libs/ardour/session.cc	Sun Mar 20 11:16:06 2016
+@@ -1035,7 +1035,7 @@ Session::diskstream_playlist_changed (boost::weak_ptr<
+ 	boost::shared_ptr<Playlist> playlist;
+ 
+ 	if ((playlist = dstream->playlist()) != 0) {
+-		playlist->LengthChanged.connect (mem_fun (this, &Session::playlist_length_changed));
++		playlist->LengthChanged.connect (mem_fun (*this, &Session::playlist_length_changed));
+ 	}
+ 	
+ 	/* see comment in playlist_length_changed () */
+@@ -1174,9 +1174,9 @@ Session::set_auto_punch_location (Location* location)
+ 	auto_punch_end_changed_connection.disconnect();
+ 	auto_punch_changed_connection.disconnect();
+ 		
+-	auto_punch_start_changed_connection = location->start_changed.connect (mem_fun (this, &Session::auto_punch_start_changed));
+-	auto_punch_end_changed_connection = location->end_changed.connect (mem_fun (this, &Session::auto_punch_end_changed));
+-	auto_punch_changed_connection = location->changed.connect (mem_fun (this, &Session::auto_punch_changed));
++	auto_punch_start_changed_connection = location->start_changed.connect (mem_fun (*this, &Session::auto_punch_start_changed));
++	auto_punch_end_changed_connection = location->end_changed.connect (mem_fun (*this, &Session::auto_punch_end_changed));
++	auto_punch_changed_connection = location->changed.connect (mem_fun (*this, &Session::auto_punch_changed));
+ 
+ 	location->set_auto_punch (true, this);
+ 
+@@ -1217,9 +1217,9 @@ Session::set_auto_loop_location (Location* location)
+ 	auto_loop_end_changed_connection.disconnect();
+ 	auto_loop_changed_connection.disconnect();
+ 	
+-	auto_loop_start_changed_connection = location->start_changed.connect (mem_fun (this, &Session::auto_loop_changed));
+-	auto_loop_end_changed_connection = location->end_changed.connect (mem_fun (this, &Session::auto_loop_changed));
+-	auto_loop_changed_connection = location->changed.connect (mem_fun (this, &Session::auto_loop_changed));
++	auto_loop_start_changed_connection = location->start_changed.connect (mem_fun (*this, &Session::auto_loop_changed));
++	auto_loop_end_changed_connection = location->end_changed.connect (mem_fun (*this, &Session::auto_loop_changed));
++	auto_loop_changed_connection = location->changed.connect (mem_fun (*this, &Session::auto_loop_changed));
+ 
+ 	location->set_auto_loop (true, this);
+ 
+@@ -1823,7 +1823,7 @@ Session::new_audio_track (int input_channels, int outp
+ 
+ 			track->audio_diskstream()->non_realtime_input_change();
+ 			
+-			track->DiskstreamChanged.connect (mem_fun (this, &Session::resort_routes));
++			track->DiskstreamChanged.connect (mem_fun (*this, &Session::resort_routes));
+ 			track->set_remote_control_id (control_id);
+ 			++control_id;
+ 
+@@ -3060,7 +3060,7 @@ Session::add_source (boost::shared_ptr<Source> source)
+ 		}
+ 
+ 		if (result.second) {
+-			source->GoingAway.connect (sigc::bind (mem_fun (this, &Session::remove_source), boost::weak_ptr<Source> (source)));
++			source->GoingAway.connect (sigc::bind (mem_fun (*this, &Session::remove_source), boost::weak_ptr<Source> (source)));
+ 			set_dirty();
+ 		}
+ 
