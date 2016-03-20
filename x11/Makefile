@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.566 2016/03/18 20:57:55 jung Exp $
+# $OpenBSD: Makefile,v 1.567 2016/03/20 20:42:47 naddy Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -69,7 +69,6 @@
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
-     SUBDIR += fvwm95
      SUBDIR += gaia
      SUBDIR += gammapage
      SUBDIR += gbdfed
