@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/19 12:42:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/20 12:25:06 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
@@ -67,6 +67,7 @@ share/locale/lt/LC_MESSAGES/gspell-1.mo
 share/locale/lv/LC_MESSAGES/gspell-1.mo
 share/locale/nb/LC_MESSAGES/gspell-1.mo
 share/locale/nl/LC_MESSAGES/gspell-1.mo
+share/locale/oc/LC_MESSAGES/gspell-1.mo
 share/locale/pl/LC_MESSAGES/gspell-1.mo
 share/locale/pt/LC_MESSAGES/gspell-1.mo
 share/locale/pt_BR/LC_MESSAGES/gspell-1.mo
