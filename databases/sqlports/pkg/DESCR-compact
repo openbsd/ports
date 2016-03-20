@@ -46,7 +46,6 @@ stored in specialized tables, e.g.,:
     TEST_IS_INTERACTIVE 
     REVISION
     SEPARATE_BUILD 
-    SHARED_ONLY 
     STATIC_PLIST
     SUBPACKAGE 
     SUPDISTFILES 

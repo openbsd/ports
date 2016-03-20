@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.17 2015/05/14 18:01:08 jasper Exp $
+# $OpenBSD: Info.pm,v 1.18 2016/03/20 20:03:07 naddy Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -88,7 +88,6 @@ our $vars = {
     RUN_DEPENDS => 'RunDependsVar',
     SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',
-    SHARED_ONLY => 'YesNoVar',
     STATIC_PLIST => 'StaticPlistVar',
     SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',

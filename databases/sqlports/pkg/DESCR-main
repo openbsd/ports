@@ -43,7 +43,6 @@ holds all the information retrieved through various variables, e.g.,:
     REVISION
     SEPARATE_BUILD 
     SHARED_LIBS 
-    SHARED_ONLY 
     SUBPACKAGE 
     SUPDISTFILES 
     TARGETS
