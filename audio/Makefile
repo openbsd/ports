@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2016/01/12 20:45:01 landry Exp $
+# $OpenBSD: Makefile,v 1.363 2016/03/20 18:27:59 mmcc Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -124,7 +124,6 @@
      SUBDIR += mpd
      SUBDIR += mpd-add-similar
      SUBDIR += mpdscribble
-     SUBDIR += mpegaudio
      SUBDIR += mpg123
      SUBDIR += mpg321
      SUBDIR += mscore

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.377 2016/03/19 20:24:28 okan Exp $
+# $OpenBSD: Quirks.pm,v 1.378 2016/03/20 18:27:59 mmcc Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -757,6 +757,7 @@ my $obsolete_reason = {
 	'p5-Slay-Makefile-Gress' => 3,
 	'p5-Slay-Makefile' => 3,
 	'p5-Slay-Maker' => 3,
+	'mpegaudio' => 0,
 };
 
 my @msg = (
