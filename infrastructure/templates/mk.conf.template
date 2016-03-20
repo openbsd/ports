@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.21 2016/03/11 20:32:23 naddy Exp $
+# $OpenBSD: mk.conf.template,v 1.22 2016/03/20 20:16:19 naddy Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -57,4 +57,5 @@
 
 # used to exist, but now retired
 .poison CONFIGURE_SHARED
+.poison SHARED_ONLY
 .poison VMEM_WARNING
