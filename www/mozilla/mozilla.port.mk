@@ -1,6 +1,5 @@
-# $OpenBSD: mozilla.port.mk,v 1.87 2016/03/14 20:34:34 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.88 2016/03/20 00:02:31 naddy Exp $
 
-SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
