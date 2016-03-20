@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 23:57:20 ajacoutot Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.19 2016/03/20 16:36:33 naddy Exp $
 
 COMMENT=	access to PostgreSQL databases perl
 
@@ -17,7 +15,7 @@ MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pq>=3
+WANTLIB += c perl pq>=3
 
 CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
 		POSTGRES_LIB="${LOCALBASE}/lib" \

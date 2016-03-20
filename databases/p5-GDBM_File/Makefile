@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 23:57:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 16:36:33 naddy Exp $
 
-SHARED_ONLY=	Yes
 COMMENT=	perl interface to gdbm
 
 PERL_V=		5.22.0
@@ -15,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c gdbm
+WANTLIB +=	c gdbm perl
 
 LIB_DEPENDS=	databases/gdbm
 

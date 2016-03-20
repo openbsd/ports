@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/07/17 21:13:14 jasper Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.35 2016/03/20 16:36:33 naddy Exp $
 
 COMMENT=	interface to lzo compression library
 
@@ -13,7 +11,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
 
 LIB_DEPENDS =	archivers/lzo
-WANTLIB =	c lzo>=1
+WANTLIB =	c lzo>=1 perl
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

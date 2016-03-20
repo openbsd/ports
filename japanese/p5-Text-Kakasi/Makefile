@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/20 22:47:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/20 16:36:34 naddy Exp $
 
 COMMENT=	Kanji -> kana converter, perl interface
 
-SHARED_ONLY=	Yes
 DISTNAME=	Text-Kakasi-2.04
 PKGNAME=	p5-${DISTNAME}
 REVISION=	5
@@ -16,7 +15,7 @@ LIB_DEPENDS=	japanese/kakasi
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c kakasi
+WANTLIB += c kakasi perl
 
 CONFIGURE_STYLE= perl
 

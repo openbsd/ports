@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/16 23:57:24 ajacoutot Exp $
-
-SHARED_ONLY =	Yes
+# $OpenBSD: Makefile,v 1.30 2016/03/20 16:36:34 naddy Exp $
 
 COMMENT =	Network Kanji code conversion Filter
 
@@ -18,7 +16,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		BSD
 PERMIT_PACKAGE_CDROM =	Yes
-WANTLIB =		c
+WANTLIB =		c perl
 
 WRKSRC =		${WRKDIST}/NKF.mod
 CONFIGURE_STYLE =	perl

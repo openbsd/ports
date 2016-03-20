@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/08/17 19:10:12 sthen Exp $
-
-SHARED_ONLY =		Yes
+# $OpenBSD: Makefile,v 1.24 2016/03/20 16:36:34 naddy Exp $
 
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/07/16 23:57:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/20 16:36:33 naddy Exp $
 
 DISTNAME=	sybperl-2.19
 PKGNAME=	p5-${DISTNAME}
@@ -8,9 +8,7 @@ CATEGORIES=	databases perl5
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c m sybdb>=5 ct>=3
-
-SHARED_ONLY=	Yes
+WANTLIB +=	c m perl sybdb>=5 ct>=3
 
 COMMENT=	Sybase database access in Perl
 HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
