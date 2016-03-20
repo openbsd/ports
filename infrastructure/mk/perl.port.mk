@@ -1,12 +1,11 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.26 2016/03/12 12:12:32 sthen Exp $
+# $OpenBSD: perl.port.mk,v 1.27 2016/03/20 00:31:36 naddy Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
 TEST_TARGET ?=	test
 MODPERL_BUILD ?= Build
-SHARED_ONLY ?= No
 
 # set /usr/bin/perl for executable scripts
 MODPERL_BIN_ADJ =	perl -pi \
@@ -109,7 +108,7 @@ do-install:
 .  endif
 .endif
 
-.if ${SHARED_ONLY:L:Myes}
+.if defined(SHARED_ONLY) && ${SHARED_ONLY:L:Myes}
 WANTLIB += perl
 .endif
 
