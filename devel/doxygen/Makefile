@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/01 20:36:40 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/21 20:07:16 jca Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -35,7 +35,10 @@ LIB_DEPENDS-gui= ${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
 RUN_DEPENDS-gui= doxygen-${VERSION}:${BUILD_PKGPATH}
 
 MODULES =	devel/cmake \
-		converters/libiconv
+		converters/libiconv \
+		lang/python
+
+MODPY_RUNDEP =	No
 
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-gui}
