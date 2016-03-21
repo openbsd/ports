@@ -1,25 +1,12 @@
-OfflineIMAP is  a  tool  to   simplify   your   e-mail  reading.   With
-OfflineIMAP,  you  can  read  the same mailbox from multiple computers.
-You get a current copy of your messages on each computer,  and  changes
-you make one place will be visible on all other systems.  For instance,
-you can delete a message on your home  computer,  and  it  will  appear
-deleted  on  your work computer as well.  OfflineIMAP is also useful if
-you want to use a mail reader that does not have IMAP support, has poor
-IMAP support, or does not provide disconnected operation.
+OfflineIMAP is a software to dispose your e-mail mailbox(es) as a local
+Maildir. OfflineIMAP will synchronize both sides via IMAP.
 
-OfflineIMAP is FAST; it synchronizes my two accounts with over 50 fold-
-ers in 3 seconds.  Other similar tools might take over  a  minute,  and
-achieve  a  less-reliable  result.   Some mail readers can take over 10
-minutes to do the same thing, and some don't even support  it  at  all.
-Unlike other mail tools, OfflineIMAP features a multi-threaded synchro-
-nization algorithm that can dramatically speed up performance  in  many
-situations by synchronizing several different things simultaneously.
+The main downside about IMAP is that you have to trust your email provider to
+not lose your mails. This is not something impossible while not very common.
+With OfflineIMAP, you can download your Mailboxes and make your own backups of
+the Maildir.
 
-OfflineIMAP is FLEXIBLE; you can customize which folders are synced via
-regular expressions, lists, or Python expressions; a versatile and com-
-prehensive  configuration  file  is  used to control behavior; two user
-interfaces are built-in; fine-tuning of synchronization performance  is
-possible; internal or external automation is supported; SSL and PREAUTH
-tunnels are both supported; offline (or "unplugged")  reading  is  sup-
-ported;  and esoteric IMAP features are supported to ensure compatibil-
-ity with the widest variety of IMAP servers.
+This allows reading your email while offline without the need for the mail
+reader (MUA) to support IMAP disconnected operations. Need an attachment from a
+message without internet connection? It's fine, the message is still there.
+
