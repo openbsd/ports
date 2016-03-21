@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/21 07:32:43 sebastia Exp $
 
 COMMENT=	OpenSSL Tcl extension
 
@@ -6,7 +6,7 @@ VERSION=	1.6
 DISTNAME=	tls${VERSION}-src
 PKGNAME=	tcltls-${VERSION}
 SHARED_LIBS=	tls16	1.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--libdir=${MODTCL_TCLDIR} \
 		LIBtls16_VERSION=${LIBtls16_VERSION}
 FAKE_FLAGS =	PKG_DIR=tls
 TEST_TARGET=	test
-CFLAGS +=	-DNO_SSL2
+CFLAGS +=	-DNO_SSL2 -DNO_SSL3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tcltls/
