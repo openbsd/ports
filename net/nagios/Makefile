@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/23 09:17:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/21 07:22:23 sebastia Exp $
 
   SUBDIR =
   SUBDIR += check_bioctl
@@ -8,6 +8,7 @@
   SUBDIR += check_mssql_health
   SUBDIR += check_openbgpd
   SUBDIR += check_postgres
+  SUBDIR += check_rabbitmq
   SUBDIR += check_sip
   SUBDIR += cnagios
   SUBDIR += nagios
