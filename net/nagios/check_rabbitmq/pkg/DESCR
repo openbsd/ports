@@ -1,0 +1,3 @@
+This package contains a set of nagios checks useful for monitoring a
+RabbitMQ server. They use the RabbitMQ management interface with is over
+HTTP and therefore have a very light profile on the nagios server.

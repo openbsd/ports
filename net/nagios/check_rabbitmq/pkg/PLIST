@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/21 07:21:26 sebastia Exp $
+libexec/nagios/plugins-rabbitmq/
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_aliveness
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_connections
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_objects
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_overview
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_partition
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_queue
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_server
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_shovels
+libexec/nagios/plugins-rabbitmq/check_rabbitmq_watermark
