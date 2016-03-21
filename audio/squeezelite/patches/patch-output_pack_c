@@ -1,0 +1,11 @@
+$OpenBSD: patch-output_pack_c,v 1.1.1.1 2016/03/21 22:28:24 sthen Exp $
+--- output_pack.c.orig	Fri Feb 13 23:15:17 2015
++++ output_pack.c	Fri Feb 13 23:15:28 2015
+@@ -20,6 +20,7 @@
+ 
+ // Scale and pack functions
+ 
++#include <stdint.h>
+ #include "squeezelite.h"
+ 
+ #define MAX_SCALESAMPLE 0x7fffffffffffLL

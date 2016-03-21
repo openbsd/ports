@@ -1,0 +1,7 @@
+Squeezelite is a small squeezebox emulator using PortAudio. It is
+headless, and must be controlled via Logitech Media Server. It supports
+gapless playback, client synchronization (allowing groups of clients for
+simultaneous playback), and direct streaming for those LMS plugins which
+require it. It has a built-in decoder for PCM (wav/aiff); other formats
+(flac, mp3, ogg, aac, wma, alac) are available via libraries. It has
+resampling support via libsoxr.
