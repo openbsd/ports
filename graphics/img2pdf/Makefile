@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/17 17:54:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/21 18:17:18 sthen Exp $
 
 COMMENT=	losslessly convert images to PDF
 
 MODPY_EGG_VERSION= 0.1.5
 DISTNAME=	img2pdf-${MODPY_EGG_VERSION}
-DISTFILES=	${DISTNAME}.tar.bz2{archive.tar.bz2?ref=${MODPY_EGG_VERSION}}
+EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	graphics
 
@@ -13,7 +13,8 @@ HOMEPAGE=	https://gitlab.mister-muffin.de/josch/img2pdf/
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://gitlab.mister-muffin.de/josch/img2pdf/repository/
+# from https://gitlab.mister-muffin.de/josch/img2pdf/repository/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
