@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2016/03/18 14:33:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.383 2016/03/21 07:31:22 kirby Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -8,6 +8,7 @@
      SUBDIR += apcd
      SUBDIR += apcupsd
      SUBDIR += augeas
+     SUBDIR += autossh
      SUBDIR += aws-shell
      SUBDIR += awscli
      SUBDIR += backuppc
