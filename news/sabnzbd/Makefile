@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/21 23:30:08 abieber Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			0.7.20
+VERSION =			1.0.0
 DISTNAME =			SABnzbd-${VERSION}-src
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
 HOMEPAGE =			http://sabnzbd.org/
 MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
-REVISION =			0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =			${MASTER_SITE_SOURCEFORGE:=sabnzbdplus/}
+MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}/
 
 MODULES =			lang/python
 
