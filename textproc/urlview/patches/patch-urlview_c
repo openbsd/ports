@@ -1,6 +1,6 @@
-$OpenBSD: patch-urlview_c,v 1.3 2009/12/23 22:04:18 jasper Exp $
---- urlview.c.orig	Tue Jul  4 12:14:30 2000
-+++ urlview.c	Sun Jan 29 15:41:28 2006
+$OpenBSD: patch-urlview_c,v 1.4 2016/03/21 17:41:52 mestre Exp $
+--- urlview.c.orig	Tue Jul  4 11:14:30 2000
++++ urlview.c	Mon Mar 21 12:38:33 2016
 @@ -46,9 +46,11 @@
  #include <rx/rxposix.h>
  #endif
@@ -14,3 +14,15 @@ $OpenBSD: patch-urlview_c,v 1.3 2009/12/23 22:04:18 jasper Exp $
  
  #define OFFSET 2
  #define PAGELEN (LINES - 1 - OFFSET)
+@@ -187,6 +189,11 @@ int main (int argc, char **argv)
+ 
+   pw = getpwuid (getuid ());
+   snprintf (buf, sizeof (buf), "%s/.urlview", pw->pw_dir);
++
++  if (pledge("stdio rpath tty proc exec", NULL) == -1) {
++    perror("pledge");
++    exit(1);
++  }
+ 
+   /*** Check for users rc-file ***/
+   if (stat (buf,&stat_buf) == -1)
