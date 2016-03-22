@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/09/07 16:14:43 chrisz Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/22 19:17:30 mmcc Exp $
 
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
@@ -8,11 +8,11 @@ COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
-REVISION =      5
+REVISION =      6
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
-HOMEPAGE=	http://kerneis.github.com/cil/
+HOMEPAGE=	https://cil-project.github.io/cil/
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
