@@ -1,0 +1,19 @@
+$OpenBSD: patch-git-compat-util_h,v 1.1 2016/03/22 18:04:16 juanfra Exp $
+
+git-compat-util: st_add4: work around gcc 4.2.x compiler crash
+
+https://github.com/git/git/commit/d616fbf256ef3102669d450ddadd8469fefcf95c
+
+--- git-compat-util.h.orig	Thu Mar 17 21:47:59 2016
++++ git-compat-util.h	Tue Mar 22 00:21:14 2016
+@@ -715,8 +715,8 @@ static inline size_t st_add(size_t a, size_t b)
+ 		    (uintmax_t)a, (uintmax_t)b);
+ 	return a + b;
+ }
+-#define st_add3(a,b,c)   st_add((a),st_add((b),(c)))
+-#define st_add4(a,b,c,d) st_add((a),st_add3((b),(c),(d)))
++#define st_add3(a,b,c)   st_add(st_add((a),(b)),(c))
++#define st_add4(a,b,c,d) st_add(st_add3((a),(b),(c)),(d))
+ 
+ static inline size_t st_mult(size_t a, size_t b)
+ {
