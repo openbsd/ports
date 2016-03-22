@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/01 12:00:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/22 13:00:04 ajacoutot Exp $
 
 COMMENT=		accounts management library for GLib applications
 
 DISTNAME=		libaccounts-glib-1.18
+REVISION=		0
 
 SHARED_LIBS +=  accounts-glib        1.0      # 1.3
 
