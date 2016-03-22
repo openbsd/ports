@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.103 2016/03/10 12:20:06 naddy Exp $
+# $OpenBSD: portcheck,v 1.104 2016/03/22 21:25:53 naddy Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1731,7 +1731,7 @@ check_patches_dir() {
 #   * Directory is not empty and consist only of plain files with fixed names.
 #   * PFRAG, PLIST, README and .rc files contain appropriate OpenBSD RCS
 #     tags; other files should NOT contain OpenBSD RCS tag.
-#   * PFRAG.shared should be merged in PLIST if it contains @lib items only.
+#   * PFRAG.shared should be merged into PLIST.
 #   * No trailing whitespace for DESCR, MESSAGE, README, UNMESSAGE and
 #     .rc files (PLIST and PFRAG are better checked with "make package").
 #   * See also check_plist_file().
@@ -1747,6 +1747,7 @@ check_pkg_dir() {
 	fi
 	local empty=true
 	local F
+	local plist
 
 	check_perms_in_dir "$dir"
 
@@ -1769,20 +1770,8 @@ check_pkg_dir() {
 		empty=false
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_plist_file "$F"
-		awk <"$F" '/^(@comment )?@lib /' | {
-			local no_a_for_so=false plist=${F##*/} shlibs_found=false
-			plist=PLIST${plist##PFRAG.+([!-])}
-			while read l; do
-				shlibs_found=true
-				l=${l##"@comment "}
-				l=${l##"@lib "}
-				l=${l%%.so.*}.a
-				fgrep -q -- "$l" "${F%/*}/$plist" || no_a_for_so=true
-			done
-			$shlibs_found && ! $no_a_for_so &&
-				err "$F should be merged in $plist"
-			! $error
-		} || error=true
+		plist=PLIST${F##*/PFRAG.+([!-])}
+		err "$F should be merged into $plist"
 		;;
 
 	PFRAG.*|PLIST?(-*))
