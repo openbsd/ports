@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.63 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/22 08:51:07 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.18.2
+GNOME_VERSION=		3.18.3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject crypto
 WANTLIB += curl dbus-1 drm enchant epoxy estdc++ evdocument3 evview3
 WANTLIB += expat ffi fontconfig freetype gbm gck-1 gcr-base-3
