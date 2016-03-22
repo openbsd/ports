@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.75 2016/02/03 18:49:09 giovanni Exp $
+# $OpenBSD: Makefile,v 1.76 2016/03/22 18:37:21 giovanni Exp $
 
 COMMENT=		open source web analytics software program
 
-DISTNAME=		piwik-2.15.0
+DISTNAME=		piwik-2.16.0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.piwik.org/
@@ -37,7 +37,7 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	cd ${WRKSRC} && tar -cf - * .* | \
+	cd ${WRKSRC} && tar -cf - * | \
                 tar -C ${INSTDIR} -xf -
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
