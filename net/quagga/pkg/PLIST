@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/01/19 15:44:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/03/22 12:57:54 jca Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/*
 @extraunexec rm -rf /var/log/quagga/*
+@comment @bin bin/bgp_btoa
+@bin bin/test_igmpv3_join
 @bin bin/vtysh
 include/quagga/
 include/quagga/quagga/
@@ -11,6 +13,7 @@ include/quagga/quagga/buffer.h
 include/quagga/quagga/checksum.h
 include/quagga/quagga/command.h
 include/quagga/quagga/distribute.h
+include/quagga/quagga/fifo.h
 include/quagga/quagga/filter.h
 include/quagga/quagga/getopt.h
 include/quagga/quagga/hash.h
@@ -53,6 +56,7 @@ include/quagga/quagga/table.h
 include/quagga/quagga/thread.h
 include/quagga/quagga/vector.h
 include/quagga/quagga/version.h
+include/quagga/quagga/vrf.h
 include/quagga/quagga/vty.h
 include/quagga/quagga/workqueue.h
 include/quagga/quagga/zassert.h
@@ -74,16 +78,17 @@ lib/libzebra.la
 @man man/man8/ospf6d.8
 @man man/man8/ospfclient.8
 @man man/man8/ospfd.8
+@man man/man8/pimd.8
 @man man/man8/ripd.8
 @man man/man8/ripngd.8
 @man man/man8/watchquagga.8
 @man man/man8/zebra.8
-@bin sbin/babeld
 @bin sbin/bgpd
 @bin sbin/isisd
 @bin sbin/ospf6d
 @bin sbin/ospfclient
 @bin sbin/ospfd
+@bin sbin/pimd
 @bin sbin/ripd
 @bin sbin/ripngd
 @bin sbin/watchquagga
@@ -92,13 +97,11 @@ share/doc/quagga/
 share/doc/quagga/README
 share/doc/quagga/SERVICES
 share/examples/quagga/
-share/examples/quagga/babeld.conf.sample
 @mode 750
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/
 @mode
-@sample ${SYSCONFDIR}/babeld.conf
 @owner
 @group
 share/examples/quagga/bgpd.conf.sample
@@ -124,6 +127,12 @@ share/examples/quagga/ospfd.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/ospfd.conf
+@owner
+@group
+share/examples/quagga/pimd.conf.sample
+@owner _quagga
+@group _quagga
+@sample ${SYSCONFDIR}/pimd.conf
 @owner
 @group
 share/examples/quagga/ripd.conf.sample
@@ -152,11 +161,11 @@ share/examples/quagga/zebra.conf.sample
 @sample /var/log/quagga/
 @owner
 @group
-@rcscript ${RCDIR}/quagga_babeld
 @rcscript ${RCDIR}/quagga_bgpd
 @rcscript ${RCDIR}/quagga_isisd
 @rcscript ${RCDIR}/quagga_ospf6d
 @rcscript ${RCDIR}/quagga_ospfd
+@rcscript ${RCDIR}/quagga_pimd
 @rcscript ${RCDIR}/quagga_ripd
 @rcscript ${RCDIR}/quagga_ripngd
 @rcscript ${RCDIR}/quagga_zebra

@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_sockopt_c,v 1.1 2013/01/04 00:24:10 sthen Exp $
+$OpenBSD: patch-lib_sockopt_c,v 1.2 2016/03/22 12:57:54 jca Exp $
 
 Revert 69bf3a39; does not work on at least (Open/Net)BSD.
 This can be put back if we get RFC3678 support.
 
---- lib/sockopt.c.orig	Thu Jan  3 00:29:56 2013
-+++ lib/sockopt.c	Thu Jan  3 00:29:45 2013
+--- lib/sockopt.c.orig	Wed Mar 16 00:17:17 2016
++++ lib/sockopt.c	Mon Mar 21 01:42:18 2016
 @@ -197,7 +197,7 @@ setsockopt_ipv6_tclass(int sock, int tclass)
  
  /*
@@ -14,7 +14,7 @@ This can be put back if we get RFC3678 support.
   *
   * Many operating systems have a limit on the number of groups that
   * can be joined per socket (where each group and local address
-@@ -217,133 +217,121 @@ setsockopt_ipv6_tclass(int sock, int tclass)
+@@ -217,132 +217,121 @@ setsockopt_ipv6_tclass(int sock, int tclass)
   * allow leaves, or implicitly leave all groups joined to down interfaces.
   */
  int
@@ -23,8 +23,8 @@ This can be put back if we get RFC3678 support.
  			int optname, 
 +			struct in_addr if_addr /* required */,
  			unsigned int mcast_addr,
--			unsigned int ifindex)
-+			unsigned int ifindex /* optional: if non-zero, may be
+-			ifindex_t ifindex)
++			ifindex_t ifindex /* optional: if non-zero, may be
 +						  used instead of if_addr */)
  {
 -#ifdef HAVE_RFC3678
@@ -206,8 +206,7 @@ This can be put back if we get RFC3678 support.
 - * Set IP_MULTICAST_IF socket option in an OS-dependent manner.
 - */
 -int
--setsockopt_ipv4_multicast_if(int sock,
--			unsigned int ifindex)
+-setsockopt_ipv4_multicast_if(int sock, ifindex_t ifindex)
 -{
 -
 -#ifdef HAVE_STRUCT_IP_MREQN_IMR_IFINDEX
@@ -233,5 +232,5 @@ This can be put back if we get RFC3678 support.
 -}
 -  
  static int
- setsockopt_ipv4_ifindex (int sock, int val)
+ setsockopt_ipv4_ifindex (int sock, ifindex_t val)
  {

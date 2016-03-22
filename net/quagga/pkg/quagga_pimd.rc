@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: quagga_pimd.rc,v 1.1 2016/03/22 12:57:54 jca Exp $
+
+daemon="${TRUEPREFIX}/sbin/pimd -d"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
