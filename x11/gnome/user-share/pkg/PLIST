@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/10/05 06:00:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/22 12:23:26 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-share-extension.so
 @bin libexec/gnome-user-share-webdav
 share/GConf/gsettings/gnome-user-share.convert
@@ -53,6 +53,9 @@ share/locale/kk/LC_MESSAGES/gnome-user-share.mo
 share/locale/km/LC_MESSAGES/gnome-user-share.mo
 share/locale/kn/LC_MESSAGES/gnome-user-share.mo
 share/locale/ko/LC_MESSAGES/gnome-user-share.mo
+share/locale/ln/
+share/locale/ln/LC_MESSAGES/
+share/locale/ln/LC_MESSAGES/gnome-user-share.mo
 share/locale/lt/LC_MESSAGES/gnome-user-share.mo
 share/locale/lv/LC_MESSAGES/gnome-user-share.mo
 share/locale/mai/LC_MESSAGES/gnome-user-share.mo
