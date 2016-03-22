@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/22 13:39:15 sthen Exp $
 
 COMMENT =	interface to md4 message-digest algorithm
 
 DISTNAME =	Digest-MD4-1.9
 CATEGORIES =	security
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -14,9 +14,8 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # See "A.3 md4c.c" for the copyright notice.
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB += c perl
 
 MODULES =	cpan
-PKG_ARCH =	*
 
 .include <bsd.port.mk>
