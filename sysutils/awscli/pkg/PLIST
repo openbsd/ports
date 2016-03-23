@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/03/18 07:00:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/03/23 07:02:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1236,6 +1236,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/describe-gateway-information.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/list-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/storagegateway/list-volumes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/sts/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/sts/assume-role.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/count-closed-workflow-executions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/count-open-workflow-executions.rst
