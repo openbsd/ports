@@ -1,9 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.22 2015/08/25 11:04:39 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.23 2016/03/23 19:08:15 jca Exp $
 @pkgpath net/samba,-docs
-share/doc/samba/
-share/doc/samba/Samba3-ByExample.pdf
-share/doc/samba/Samba3-Developers-Guide.pdf
-share/doc/samba/Samba3-HOWTO.pdf
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
 share/examples/samba/LDAP/get_next_oid

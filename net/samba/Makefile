@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.217 2016/03/20 15:58:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.218 2016/03/23 19:08:15 jca Exp $
 
 VERSION =		4.1.23
 DISTNAME =		samba-${VERSION}
-DOCSVERSION =		v3-5-test-4c5a1b6b
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			samba-docs-${DOCSVERSION}.tar.bz2:0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -20,6 +17,7 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 REVISION-ldb =		7
 REVISION-tevent =	6
+REVISION-docs =		0
 
 PKG_ARCH-docs =		*
 
@@ -115,8 +113,6 @@ WANTLIB-docs =
 
 MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
-
-MASTER_SITES0 =		https://www.samba.org/~samba-bugs/docs/v3-5-test/
 
 MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 
@@ -233,8 +229,6 @@ post-install:
 .endfor
 	# install samba docs and sample config
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/samba
-	${INSTALL_DATA} ${WRKDIR}/samba-docs-${DOCSVERSION}/*.pdf \
-		${PREFIX}/share/doc/samba
 	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
 	find ${PREFIX}/share/examples/samba -type f | xargs chmod ${SHAREMODE}
