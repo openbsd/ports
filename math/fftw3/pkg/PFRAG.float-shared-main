@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.float-shared-main,v 1.2 2012/10/23 20:44:04 kirby Exp $
-@lib lib/libfftw3f.so.${LIBfftw3f_VERSION}
-@lib lib/libfftw3f_threads.so.${LIBfftw3f_threads_VERSION}

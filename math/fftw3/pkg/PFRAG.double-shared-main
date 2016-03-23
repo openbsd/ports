@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.double-shared-main,v 1.2 2012/10/23 20:44:03 kirby Exp $
-@lib lib/libfftw3.so.${LIBfftw3_VERSION}
-@lib lib/libfftw3_threads.so.${LIBfftw3_threads_VERSION}

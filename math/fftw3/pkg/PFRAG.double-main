@@ -1,10 +1,12 @@
-@comment $OpenBSD: PFRAG.double-main,v 1.3 2012/10/23 20:44:03 kirby Exp $
+@comment $OpenBSD: PFRAG.double-main,v 1.4 2016/03/23 21:14:58 naddy Exp $
 @pkgpath math/fftw3
 @pkgpath math/fftw3,double
 @bin bin/fftw-wisdom
 lib/libfftw3.a
 lib/libfftw3.la
+@lib lib/libfftw3.so.${LIBfftw3_VERSION}
 lib/libfftw3_threads.a
 lib/libfftw3_threads.la
+@lib lib/libfftw3_threads.so.${LIBfftw3_threads_VERSION}
 lib/pkgconfig/fftw3.pc
 @man man/man1/fftw-wisdom.1
