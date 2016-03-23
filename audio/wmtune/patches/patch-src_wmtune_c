@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
---- src/wmtune.c.orig	Sat Sep 11 11:49:24 1999
-+++ src/wmtune.c	Fri Sep 27 21:22:11 2002
-@@ -18,102 +18,74 @@
+$OpenBSD: patch-src_wmtune_c,v 1.6 2016/03/23 20:25:52 naddy Exp $
+--- src/wmtune.c.orig	Sat Sep 11 07:49:24 1999
++++ src/wmtune.c	Fri Mar 18 23:51:45 2016
+@@ -18,102 +18,59 @@
   ****************************************************************
   */
  
@@ -30,19 +30,13 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  #include <unistd.h>
 -#include <fcntl.h>
  
--#include <X11/xpm.h>
-+#ifdef ZOLTRIX
-+#include <sys/syscall.h>
-+#include <machine/sysarch.h>
-+#include <machine/pio.h>
-+#else
 +#include <sys/ioctl.h>
 +#include <sys/radioio.h>
-+#endif /* ZOLTRIX */
++
+ #include <X11/xpm.h>
  
 -#include <time.h>
-+#include <X11/xpm.h>
- 
+-
  #include "wmgeneral/wmgeneral.h"
  #include "wmtune-master.xpm"
  #include "wmtune-mask.xbm"
@@ -56,21 +50,8 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -#define TRUE 1
 -#define FALSE 0
 -#define FCODE(f)    ((int)(((float)(f)-88.0)*40)+0xf6c)
--
--/* #define RADIOTRACK */
--/* #define KERNEL     */
--/* #define ZOLTRIX    */
--
--#ifdef KERNEL
--	/* Kernel driver support */
--	#include <linux/types.h>
--	#include <linux/videodev.h>
--	#include <linux/ioctl.h>
 +/* Defines */
 +const char *VERSION = "1.2-OpenBSD"
-+#ifdef ZOLTRIX
-+	"-zoltrix"
- #endif
 +;
 +const char *RCFILE = "wmtunerc";
 +#define TMPBUFLEN	128
@@ -79,45 +60,51 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +#define OFF	0
 +#define TRUE	1
 +#define FALSE	0
-+
+ 
+-/* #define RADIOTRACK */
+-/* #define KERNEL     */
+-/* #define ZOLTRIX    */
 +/* Data Types */
 +unsigned int max_presets;
 +unsigned int hour, minute;
 +struct tm *time_struct;
 +long current_time;
-+
+ 
+-#ifdef KERNEL
+-	/* Kernel driver support */
+-	#include <linux/types.h>
+-	#include <linux/videodev.h>
+-	#include <linux/ioctl.h>
+-#endif
 +int preset_count = 1;
 +int cmdline_preset = OFF;
 +int radio_status = OFF;
 +int auto_radio_on = OFF;
 +int auto_alarm_start = OFF;
-+
-+int volume = 0;
-+
-+struct presets_t {
-+	double freq;
-+} *presets;
  
 -#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
 -	#define OUTW(word,port)  outw(port,word)
 -	#define OUTB(byte,port)  outb(port,byte)
-+#ifdef ZOLTRIX
-+unsigned long iomap[32];
-+struct i386_set_ioperm_args ioperms;
-+unsigned int rport = 0x000;
- #else
+-#else
 -	#define OUTW(word,port)  outw(word,port)
 -	#define OUTB(byte,port)  outb(byte,port)
 -#endif
--
++int volume = 0;
+ 
 -// Data Types
 -#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
 -	int fpiopl;
 -#endif
--
++struct presets_t {
++	double freq;
++} *presets;
+ 
 -	unsigned int max_presets;
 -	unsigned int hour=0,minute=0;
--
++int VOLUME_STEP;
++static struct radio_info ri;
++char *radiodevice = NULL;
+ 
 -	struct tm *time_struct;
 -	long current_time;
 -
@@ -129,11 +116,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	char temp[128];
 -
 -	int i;
-+int VOLUME_STEP;
-+static struct radio_info ri;
-+char *radiodevice = NULL;
-+#endif /* ZOLTRIX */
- 
+-
 -	XEvent Event;
 -
 -	int but_stat=-1;
@@ -157,7 +140,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  void RadioOff(void);
  void RadioOn(void);
  void DrawDigitalFreq(void);
-@@ -127,7 +99,6 @@ void VolumeUp(void);
+@@ -127,7 +84,6 @@ void VolumeUp(void);
  void VolumeDown(void);
  void TuneUp(void);
  void TuneDown(void);
@@ -165,38 +148,22 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  void PresetHandler(int);
  void ScanUp(void);
  void ScanDown(void);
-@@ -137,333 +108,262 @@ void FastFreqUpdate(void);
+@@ -137,333 +93,235 @@ void FastFreqUpdate(void);
  void TuneRadio(void);
  int TestTune(void);
  void TestFreq(void);
-+void usage(void);
-+
- #ifdef ZOLTRIX
+-#ifdef ZOLTRIX
 -void tuneFreq(double freq,int fast);
-+void tuneFreq(double, int);
-+void CheckIOPerms(void);
-+void goroot(void);
-+void gouser(void);
-+inline int cardRead(int);
-+inline void cardWrite(int);
-+#else
-+int SetGetRadioInfo(int);
-+void GetVolumeStep(void);
- #endif
+-#endif
++void usage(void);
  
 -// Main
 -void main(int argc,char *argv[])
 -{
 -	myname = argv[0];
 -	ParseCMDLine(argc,argv);
-+int main(int argc,char **argv) {
-+	char temp[TMPBUFLEN];
-+	char *home;
-+	XEvent Event;
-+	int but_stat = -1;
-+	int but_timer = 0;
-+	int alarm_state = 0;
-+	int i = 0;
++int SetGetRadioInfo(int);
++void GetVolumeStep(void);
  
 -	strcpy(temp,(char*)getenv("HOME"));
 -	strcat(temp,"/.");
@@ -205,10 +172,14 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	{
 -		strcpy(temp, "/etc/");
 -		strcat(temp, RCFILE);
-+#ifdef ZOLTRIX
-+	/* Drop privileges */
-+	gouser();
-+#endif /* ZOLTRIX */
++int main(int argc,char **argv) {
++	char temp[TMPBUFLEN];
++	char *home;
++	XEvent Event;
++	int but_stat = -1;
++	int but_timer = 0;
++	int alarm_state = 0;
++	int i = 0;
 +
 +	ParseCMDLine(argc, argv);
 +
@@ -231,13 +202,11 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  	}
  
 -#ifndef KERNEL
-+#ifdef ZOLTRIX
- 	CheckIOPerms();
-+#else
+-	CheckIOPerms();
+-#endif
 +	if (SetGetRadioInfo(RIOCGINFO) < 0)
 +		errx(1, "Cannot manage the FM tuner");
 +	GetVolumeStep();
- #endif
 +
  	if (cmdline_preset == ON)
 -	{
@@ -317,15 +286,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -					ioperm(rport,4,0);
 -					#endif
 -				#endif
-+#ifdef ZOLTRIX
-+				goroot();
-+
-+				memset(iomap, 0xFFFF, sizeof(iomap));
-+				ioperms.iomap = iomap;
-+				sysarch(I386_SET_IOPERM, (char *)&ioperms);
-+
-+				gouser();
-+#endif /* NATIVE */
  				exit(0);
 -			break;
 +				break;
@@ -408,12 +368,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -							if (!(but_timer >= 5))
 -							{
 -								TimeUp();
--							}
--						break;
--						case 4:			// TIME DOWN
--							if (!(but_timer >= 5))
--							{
--								TimeDown();
 +				ButtonUp(but_stat);
 +				if (i == but_stat && but_stat >= 0) {
 +					if (radio_status == OFF ||
@@ -434,6 +388,23 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +								RedrawWindowXYWH(6, 23, 5, 6);
 +								break;
  							}
+-						break;
+-						case 4:			// TIME DOWN
++						} else {
++							if (i == 0)
++								RadioOn();
++						}
++						but_stat = -1;
++					} else {	
++						switch (i) {
++						case 0:	// ON/OFF BUTTON
++							RadioOff();
++							break;
++						case 1:	// FINE TUNE UP (+)
+ 							if (!(but_timer >= 5))
+-							{
+-								TimeDown();
+-							}
 -						break;
 -						case 5:			// ALARM BUTTON SET
 -							alarm_state = ON;
@@ -461,18 +432,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -								RadioOff();
 -						break;
 -						case 1:			// FINE TUNE UP (+)
-+						} else {
-+							if (i == 0)
-+								RadioOn();
-+						}
-+						but_stat = -1;
-+					} else {	
-+						switch (i) {
-+						case 0:	// ON/OFF BUTTON
-+							RadioOff();
-+							break;
-+						case 1:	// FINE TUNE UP (+)
- 							if (!(but_timer >= 5))
+-							if (!(but_timer >= 5))
 -							{
  								TuneUp();
 -							}
@@ -610,7 +570,9 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +					case 2:	// FINE TUNE DOWN (-) AUTO-REPEAT
  						TuneDown();
 -					break;
--				}
++						break;
++					}
+ 				}
 -			}
 -		}	
 -	}
@@ -629,12 +591,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -				if (radio_status == ON)
 -				{
 -					RadioOff();
-+						break;
-+					}
- 				}
--				else
--				{
--					RadioOn();
 +			}	
 +		}
 +		usleep(5000);
@@ -651,6 +607,10 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +					else
 +						RadioOn();
  				}
+-				else
+-				{
+-					RadioOn();
+-				}
 -			}
 -		}		
 -	}
@@ -659,10 +619,10 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +			}		
 +		}
 +	} /* while */
-+
+ 
 +	return 0;
 +} /* main */
- 
++
  void RadioOn(void)
  {
  	radio_status = ON;
@@ -680,7 +640,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  	GeneralFreqUpdate();
  }
  
-@@ -475,110 +375,65 @@ void GeneralFreqUpdate(void)
+@@ -475,110 +333,65 @@ void GeneralFreqUpdate(void)
  	DrawDigitalFreq();
  }
  
@@ -720,9 +680,14 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -    char    temp[10];
 -    char    *p = temp;
 -    int     i,j,k=13;
--
++	char	 temp[TMPBUFLEN + 1];
++	char	*p = temp;
++	int	 i, j, k = 13;
+ 
 -    sprintf(temp, "%02d:%02d", hr, min);
--
++	snprintf(temp, TMPBUFLEN, "%02d:%02d", hr, min);
++	temp[TMPBUFLEN] = '\0';
+ 
 -    for (i=0; i<2; i++)
 -	{
 -        for (j=0; j<2; j++)
@@ -738,13 +703,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -            p++;
 -        }
 -    }
-+	char	 temp[TMPBUFLEN + 1];
-+	char	*p = temp;
-+	int	 i, j, k = 13;
-+
-+	snprintf(temp, TMPBUFLEN, "%02d:%02d", hr, min);
-+	temp[TMPBUFLEN] = '\0';
-+
 +	for (i = 0; i < 2; i++) {
 +		for (j = 0; j < 2; j++) {
 +			copyXPMArea((*p-'0')*6 + 1, 79, 6, 7, k, 22);
@@ -820,33 +778,31 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  		copyXPMArea((*p-'0')*6 + 1, 79, 5, 7, k, 50);
  		k += 6;
  		p++;
-@@ -589,16 +444,15 @@ void DrawDigitalPreset(void)
+@@ -589,16 +402,15 @@ void DrawDigitalPreset(void)
  	
  void DrawDigitalFreq(void)
  {
 -	char temp[10];
 -	char *p = temp;
 -	int i=5,j=0,k=6;
--
++	char	 temp[TMPBUFLEN + 1];
++	char	*p = temp;
++	int	 i = 5, j = 0, k = 6;
+ 
 -	sprintf(temp,"%0f",freqf);
--
++	snprintf(temp, TMPBUFLEN, "%0f", presets[0].freq);
++	temp[TMPBUFLEN] = '\0';
+ 
 -	while (j<i) 
 -	{
 -		if (j == 0 && *p != '1')
 -		{
-+	char	 temp[TMPBUFLEN + 1];
-+	char	*p = temp;
-+	int	 i = 5, j = 0, k = 6;
-+
-+	snprintf(temp, TMPBUFLEN, "%0f", presets[0].freq);
-+	temp[TMPBUFLEN] = '\0';
-+
 +	while (j < i) {
 +		if (j == 0 && *p != '1') {
  			copyXPMArea(76, 40, 6, 9, k, 7);
  			k += 7;
  			i--;
-@@ -606,8 +460,7 @@ void DrawDigitalFreq(void)
+@@ -606,8 +418,7 @@ void DrawDigitalFreq(void)
  		copyXPMArea((*p-'0')*7 + 1, 66, 7, 9, k, 7);
  		k += 7;
  		p++;
@@ -856,7 +812,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  			copyXPMArea(71, 66, 3, 9, k, 7);
  			k += 3;
  			p++;
-@@ -619,30 +472,22 @@ void DrawDigitalFreq(void)
+@@ -619,30 +430,22 @@ void DrawDigitalFreq(void)
  
  void ScanUp(void)
  {
@@ -898,7 +854,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  			RedrawWindowXYWH(44, 16, 13, 4); 			// Test Freq Field Only
  			return;
  		}
-@@ -651,333 +496,155 @@ void ScanUp(void)
+@@ -651,333 +454,149 @@ void ScanUp(void)
  
  void ScanDown(void)
  {
@@ -945,7 +901,8 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  }
  
 -void CheckIOPerms(void)
--{
++void ParseCMDLine(int argc,char **argv)
+ {
 -	#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
 -	if ((fpiopl = open( "/dev/io", O_RDONLY ) < 0) )
 -	{
@@ -964,13 +921,15 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	}
 -	#endif
 -}
--
++	int optchar;
+ 
 -void ParseCMDLine(int argc,char *argv[])
-+void ParseCMDLine(int argc,char **argv)
- {
+-{
 -	char *cmdline;
 -	int i;
-+	int optchar;
++	radiodevice = getenv("RADIODEVICE");
++	if (radiodevice == NULL)
++		radiodevice = "/dev/radio";
  
 -	for (i = 1; i < argc; i++) 
 -	{
@@ -981,15 +940,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -			{
 -			case 'n':
 -				auto_radio_on = ON;
-+#ifdef ZOLTRIX
-+	while ((optchar = getopt(argc, argv, "hnt:p:")) != -1) {
-+#else
-+	radiodevice = getenv("RADIODEVICE");
-+	if (radiodevice == NULL)
-+		radiodevice = "/dev/radio";
-+
 +	while ((optchar = getopt(argc, argv, "hnt:p:f:")) != -1) {
-+#endif /* ZOLTRIX */
 +		switch (optchar) {
 +		case 'n':
 +			auto_radio_on = ON;
@@ -1023,7 +974,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +			cmdline_preset = ON;
  			break;
 -			case 'd':
-+#ifndef ZOLTRIX
 +		case 'f':
 +			radiodevice = optarg;
  			break;
@@ -1047,7 +997,6 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -				printf("\n");
 -				exit(0);
 -			}
-+#endif /* !ZOLTRIX */
 +		case 'h':
 +		default:
 +			usage();
@@ -1186,63 +1135,56 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -		case 0:			// ON/OFF BUTTON
 -			copyXPMArea(79, 100, 12, 11, 47, 48);
 -			RedrawWindowXYWH(47, 48, 12, 11);
--		break;
--		case 1:			// FINE TUNE UP (+)
--			copyXPMArea(0, 98, 11, 9, 5, 35);
--			RedrawWindowXYWH(5, 35, 11, 9);
--		break;
--		case 2:			// FINE TUNE DOWN (-)
--			copyXPMArea(11, 98, 11, 9, 16, 35);
--			RedrawWindowXYWH(16, 35, 11, 9);
--		break;
--		case 3:			// SCAN UP & TIME UP
--			copyXPMArea(22, 98, 11, 9, 27, 35);
--			RedrawWindowXYWH(27, 35, 11, 9);
--		break;
--		case 4:			// SCAN DOWN & TIME DOWN
--			copyXPMArea(33, 98, 11, 9, 38, 35);
--			RedrawWindowXYWH(38, 35, 11, 9);
--		break;
--		case 5:			// ALARM BUTTON
--			copyXPMArea(44, 98, 10, 9, 49, 35);
--			RedrawWindowXYWH(49, 35, 10, 9);
--		break;
--		case 6:			// LEFT PRESET SCAN BUTTON
--			copyXPMArea(55, 100, 12, 11, 23, 48);
--			RedrawWindowXYWH(23, 48, 12, 11);
--		break;
--		case 7:			// RIGHT PRESET SCAN BUTTON
--			copyXPMArea(67, 100, 12, 11, 35, 48);
--			RedrawWindowXYWH(35, 48, 12, 11);
 +	switch (button) {
 +	case 0:	// ON/OFF BUTTON
 +		copyXPMArea(79, 100, 12, 11, 47, 48);
 +		RedrawWindowXYWH(47, 48, 12, 11);
-+		break;
+ 		break;
+-		case 1:			// FINE TUNE UP (+)
+-			copyXPMArea(0, 98, 11, 9, 5, 35);
+-			RedrawWindowXYWH(5, 35, 11, 9);
 +	case 1:	// FINE TUNE UP (+)
 +		copyXPMArea(0, 98, 11, 9, 5, 35);
 +		RedrawWindowXYWH(5, 35, 11, 9);
-+		break;
+ 		break;
+-		case 2:			// FINE TUNE DOWN (-)
+-			copyXPMArea(11, 98, 11, 9, 16, 35);
+-			RedrawWindowXYWH(16, 35, 11, 9);
 +	case 2:	// FINE TUNE DOWN (-)
 +		copyXPMArea(11, 98, 11, 9, 16, 35);
 +		RedrawWindowXYWH(16, 35, 11, 9);
-+		break;
+ 		break;
+-		case 3:			// SCAN UP & TIME UP
+-			copyXPMArea(22, 98, 11, 9, 27, 35);
+-			RedrawWindowXYWH(27, 35, 11, 9);
 +	case 3:	// SCAN UP & TIME UP
 +		copyXPMArea(22, 98, 11, 9, 27, 35);
 +		RedrawWindowXYWH(27, 35, 11, 9);
-+		break;
+ 		break;
+-		case 4:			// SCAN DOWN & TIME DOWN
+-			copyXPMArea(33, 98, 11, 9, 38, 35);
+-			RedrawWindowXYWH(38, 35, 11, 9);
 +	case 4:	// SCAN DOWN & TIME DOWN
 +		copyXPMArea(33, 98, 11, 9, 38, 35);
 +		RedrawWindowXYWH(38, 35, 11, 9);
-+		break;
+ 		break;
+-		case 5:			// ALARM BUTTON
+-			copyXPMArea(44, 98, 10, 9, 49, 35);
+-			RedrawWindowXYWH(49, 35, 10, 9);
 +	case 5:	// ALARM BUTTON
 +		copyXPMArea(44, 98, 10, 9, 49, 35);
 +		RedrawWindowXYWH(49, 35, 10, 9);
-+		break;
+ 		break;
+-		case 6:			// LEFT PRESET SCAN BUTTON
+-			copyXPMArea(55, 100, 12, 11, 23, 48);
+-			RedrawWindowXYWH(23, 48, 12, 11);
 +	case 6:	// LEFT PRESET SCAN BUTTON
 +		copyXPMArea(55, 100, 12, 11, 23, 48);
 +		RedrawWindowXYWH(23, 48, 12, 11);
-+		break;
+ 		break;
+-		case 7:			// RIGHT PRESET SCAN BUTTON
+-			copyXPMArea(67, 100, 12, 11, 35, 48);
+-			RedrawWindowXYWH(35, 48, 12, 11);
 +	case 7:	// RIGHT PRESET SCAN BUTTON
 +		copyXPMArea(67, 100, 12, 11, 35, 48);
 +		RedrawWindowXYWH(35, 48, 12, 11);
@@ -1257,63 +1199,56 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -		case 0:			// ON/OFF BUTTON
 -			copyXPMArea(79, 88, 12, 11, 47, 48);
 -			RedrawWindowXYWH(47, 48, 12, 11);
--		break;
--		case 1:			// FINE TUNE UP (+)
--			copyXPMArea(0, 88, 11, 9, 5, 35);
--			RedrawWindowXYWH(5, 35, 11, 9);
--		break;
--		case 2:			// FINE TUNE DOWN (-)
--			copyXPMArea(11, 88, 11, 9, 16, 35);
--			RedrawWindowXYWH(16, 35, 11, 9);
--		break;
--		case 3:			// SCAN UP
--			copyXPMArea(22, 88, 11, 9, 27, 35);
--			RedrawWindowXYWH(27, 35, 11, 9);
--		break;
--		case 4:			// SCAN DOWN
--			copyXPMArea(33, 88, 11, 9, 38, 35);
--			RedrawWindowXYWH(38, 35, 11, 9);
--		break;
--		case 5:			// ALARM BUTTON
--			copyXPMArea(44, 88, 10, 9, 49, 35);
--			RedrawWindowXYWH(49, 35, 10, 9);
--		break;
--		case 6:			// LEFT PRESET SCAN BUTTON
--			copyXPMArea(55, 88, 12, 11, 23, 48);
--			RedrawWindowXYWH(23, 48, 12, 11);
--		break;
--		case 7:			// RIGHT PRESET SCAN BUTTON
--			copyXPMArea(67, 88, 12, 11, 35, 48);
--			RedrawWindowXYWH(35, 48, 12, 11);
 +	switch (button) {
 +	case 0:	// ON/OFF BUTTON
 +		copyXPMArea(79, 88, 12, 11, 47, 48);
 +		RedrawWindowXYWH(47, 48, 12, 11);
-+		break;
+ 		break;
+-		case 1:			// FINE TUNE UP (+)
+-			copyXPMArea(0, 88, 11, 9, 5, 35);
+-			RedrawWindowXYWH(5, 35, 11, 9);
 +	case 1:	// FINE TUNE UP (+)
 +		copyXPMArea(0, 88, 11, 9, 5, 35);
 +		RedrawWindowXYWH(5, 35, 11, 9);
-+		break;
+ 		break;
+-		case 2:			// FINE TUNE DOWN (-)
+-			copyXPMArea(11, 88, 11, 9, 16, 35);
+-			RedrawWindowXYWH(16, 35, 11, 9);
 +	case 2:	// FINE TUNE DOWN (-)
 +		copyXPMArea(11, 88, 11, 9, 16, 35);
 +		RedrawWindowXYWH(16, 35, 11, 9);
-+		break;
+ 		break;
+-		case 3:			// SCAN UP
+-			copyXPMArea(22, 88, 11, 9, 27, 35);
+-			RedrawWindowXYWH(27, 35, 11, 9);
 +	case 3:	// SCAN UP
 +		copyXPMArea(22, 88, 11, 9, 27, 35);
 +		RedrawWindowXYWH(27, 35, 11, 9);
-+		break;
+ 		break;
+-		case 4:			// SCAN DOWN
+-			copyXPMArea(33, 88, 11, 9, 38, 35);
+-			RedrawWindowXYWH(38, 35, 11, 9);
 +	case 4:	// SCAN DOWN
 +		copyXPMArea(33, 88, 11, 9, 38, 35);
 +		RedrawWindowXYWH(38, 35, 11, 9);
-+		break;
+ 		break;
+-		case 5:			// ALARM BUTTON
+-			copyXPMArea(44, 88, 10, 9, 49, 35);
+-			RedrawWindowXYWH(49, 35, 10, 9);
 +	case 5:	// ALARM BUTTON
 +		copyXPMArea(44, 88, 10, 9, 49, 35);
 +		RedrawWindowXYWH(49, 35, 10, 9);
-+		break;
+ 		break;
+-		case 6:			// LEFT PRESET SCAN BUTTON
+-			copyXPMArea(55, 88, 12, 11, 23, 48);
+-			RedrawWindowXYWH(23, 48, 12, 11);
 +	case 6:	// LEFT PRESET SCAN BUTTON
 +		copyXPMArea(55, 88, 12, 11, 23, 48);
 +		RedrawWindowXYWH(23, 48, 12, 11);
-+		break;
+ 		break;
+-		case 7:			// RIGHT PRESET SCAN BUTTON
+-			copyXPMArea(67, 88, 12, 11, 35, 48);
+-			RedrawWindowXYWH(35, 48, 12, 11);
 +	case 7:	// RIGHT PRESET SCAN BUTTON
 +		copyXPMArea(67, 88, 12, 11, 35, 48);
 +		RedrawWindowXYWH(35, 48, 12, 11);
@@ -1342,7 +1277,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  		minute++;
  	}
  	DrawDigitalTime(hour,minute);
-@@ -985,113 +652,48 @@ void TimeUp(void)
+@@ -985,113 +604,48 @@ void TimeUp(void)
  
  void TimeDown(void)
  {
@@ -1391,7 +1326,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	}
 -#endif
 -}
--
+ 
 -void VolumeDown(void)
 -{
 -#ifdef RADIOTRACK
@@ -1416,7 +1351,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	}
 -#endif
 -}
- 
+-
  void TuneUp(void)
  {
 -	if ((float)freqf != 108.0)
@@ -1471,7 +1406,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  		break;
  	}
  	RedrawWindowXYWH(44, 16, 13, 4);
-@@ -1099,12 +701,10 @@ void TestFreq(void)
+@@ -1099,12 +653,10 @@ void TestFreq(void)
  
  void OnPreset(void)
  {
@@ -1487,24 +1422,15 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
  			preset_count = count;
  			DrawDigitalPreset();
  			return;
-@@ -1113,28 +713,129 @@ void OnPreset(void)
+@@ -1113,103 +665,180 @@ void OnPreset(void)
  	}
  }
  
 -int TestTune(void)
-+int ParseRCFile(char *filename)
- {
+-{
 -#ifdef RADIOTRACK
 -	int res;
-+	char temp[TMPBUFLEN + 1], *p;
-+	FILE *fp;
-+	int ln = 1, count = -1;
-+	char *tokens = " \t\n";
-+
-+	presets = malloc(sizeof(struct presets_t));
-+	if (presets == NULL)
-+		err(1, "memory allocation error");
- 
+-
 -	OUTB(0xf8,rport);
 -	usleep(150000);
 -	res = (int)inb(rport);
@@ -1515,19 +1441,72 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -	else if (res != 0xff)
 -	{
 -		return 2;				// POSSIBLY MONO :) 	(2)
+-	}
+-	return 0;					// POSSIBLE SIGNAL LOSS (0)
+-#elif defined ZOLTRIX
+-	int x1,x2;
+-
+-	OUTB(0x00, rport);         // This stuff I found to do nothing
+-	OUTB(volume, rport);
+-	usleep(10000);
+-
+-	x1 = inb(rport);
+-	usleep(1000);
+-	x2 = inb(rport);
+-
+-	if ((x1 == x2) && (x1 == 0xdf)) 
+-	   return 1;
+-	else return 0;
+-#elif defined KERNEL
+-	struct video_tuner v;
+-	int fd = open ("/dev/radio", O_RDONLY);
+-	v.tuner = 0;
+-	ioctl (fd, VIDIOCGTUNER, &v);
+-	close (fd);
+-	return (v.signal != 0)?1:0;
+-#endif
+-	return 0;
+-}
+-
+ int ParseRCFile(char *filename)
+ {
+-	char temp[128];
+-	char *p;
++	char temp[TMPBUFLEN + 1], *p;
+ 	FILE *fp;
+-	int ln=1;
+-	int count=-1;
++	int ln = 1, count = -1;
+ 	char *tokens = " \t\n";
+ 
+-	if ((fp = fopen(filename,"r")) == NULL)
+-	{
++	presets = malloc(sizeof(struct presets_t));
++	if (presets == NULL)
++		err(1, "memory allocation error");
++
 +	if ((fp = fopen(filename, "r")) == NULL)
-+		return 1;
+ 		return 1;
+-	}
+-	while(fgets(temp, 128, fp)) 
+-	{
+-		if ((p = strtok(temp,tokens)) != NULL)
+-		{
+-			if ((p = strchr(temp,'#')) != NULL) 
+-			{
 +
 +	while (fgets(temp, TMPBUFLEN, fp)) {
 +		if ((p = strtok(temp, tokens)) != NULL) {
 +			if ((p = strchr(temp, '#')) != NULL) 
-+				*p = '\0';
+ 				*p = '\0';
+-			}
+-			if ((strlen(temp)) != 0)
+-			{
+-				if (count == -1)
+-				{
+-					sscanf(temp,"%x",&rport);
 +
 +			if ((strlen(temp)) != 0) {
-+#ifdef ZOLTRIX
-+				if (count == -1)
-+					rport = strtol(temp, (char **)NULL, 10);
-+#endif /* ZOLTRIX */
 +				if (count > 0) {
 +					max_presets++;
 +
@@ -1538,280 +1517,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +					presets[count].freq = atof(temp);
 +					if (presets[count].freq < 88.0 || presets[count].freq > 108.0)
 +						errx(1, "Invalid preset in %s line %d.", filename, ln);
-+				}
-+				count++;
-+			}
-+		}
-+		ln++;
- 	}
--	return 0;					// POSSIBLE SIGNAL LOSS (0)
--#elif defined ZOLTRIX
-+
-+	fclose(fp);
-+	return 0;
-+}
-+
-+void
-+usage(void) {
-+	const char usagestr[] =
-+	"\nwmtune v%s, by soren@leiden.org, design & art by warp@xs4all.nl\n"
-+	"http://soren.org/linux/wmtune & http://windowmaker.mezaway.org\n\n"
-+	"usage:\n"
-+	"\t-n\t\tturn radio on initially on startup\n"
-+	"\t-t <##:##>\tset timer on startup, military time\n"
-+	"\t-p <##>\t\tset startup preset # listed in %s file\n"
-+#ifndef ZOLTRIX
-+	"\t-f <filename>\tuse filename as a radio device file\n"
-+#endif
-+	"\t-h\t\tdisplay this screen\n\n"
-+	"examples:\n"
-+	"\t\tturn on radio on startup using preset 5\n"
-+	"\twmtune -n -p 5\n"
-+	"\t\tturn radio on at 2:35pm using preset 2\n"
-+	"\twmtune -p 2 -t 14:35\n"
-+	"\t\tturn on radio on startup and turn radio off at midnight\n"
-+	"\twmtune -n -t 0:0\n\n";
-+
-+	printf(usagestr, VERSION, RCFILE);
-+}
-+
-+/* CARD MANAGEMENT ROUTINES */
-+void RadioOff(void)
-+{
-+#ifdef ZOLTRIX
-+	cardWrite(0);
-+	cardWrite(0);
-+	cardRead(3);
-+#else
-+	ri.mute = 1;
-+	SetGetRadioInfo(RIOCSINFO);
-+#endif /* ZOLTRIX */
-+	radio_status = OFF;	
-+	copyXPMArea(76, 40, 51, 13, 6, 7); 
-+	copyXPMArea(115, 55, 11, 7, 45, 22);
-+	copyXPMArea(83, 55, 11, 7, 6, 50);
-+	RedrawWindowXYWH(6, 50, 11, 7); /* Full Preset Field */
-+	RedrawWindowXYWH(6, 7, 51, 22); /* Full Upper Field */
-+}
-+
-+void FastFreqUpdate(void)
-+{
-+#ifdef ZOLTRIX
-+	tuneFreq(presets[0].freq, 1);
-+#else
-+	ri.freq = presets[0].freq * 1000;
-+	SetGetRadioInfo(RIOCSINFO);
-+	usleep(50000);
-+	SetGetRadioInfo(RIOCGINFO);
-+	presets[0].freq = (float)ri.freq / 1000.;
-+#endif
-+}
-+
-+void TuneRadio(void)
-+{
-+#ifdef ZOLTRIX
-+	tuneFreq(presets[0].freq, 0);
-+#else
-+	ri.freq = presets[0].freq * 1000;
-+	ri.volume = volume * VOLUME_STEP;
-+	ri.mute = 0;
-+	SetGetRadioInfo(RIOCSINFO);
-+	usleep(200000);
-+	SetGetRadioInfo(RIOCGINFO);
-+	presets[0].freq = (float)ri.freq / 1000.;
-+#endif /* ZOLTRIX */
-+}
-+
-+int TestTune(void)
-+{
-+#ifdef ZOLTRIX
- 	int x1,x2;
- 
--	OUTB(0x00, rport);         // This stuff I found to do nothing
--	OUTB(volume, rport);
-+	outb(rport, 0x00); /* This stuff I found to do nothing */
-+	outb(rport, volume);
- 	usleep(10000);
- 
- 	x1 = inb(rport);
-@@ -1143,73 +844,181 @@ int TestTune(void)
- 
- 	if ((x1 == x2) && (x1 == 0xdf)) 
- 	   return 1;
--	else return 0;
--#elif defined KERNEL
--	struct video_tuner v;
--	int fd = open ("/dev/radio", O_RDONLY);
--	v.tuner = 0;
--	ioctl (fd, VIDIOCGTUNER, &v);
--	close (fd);
--	return (v.signal != 0)?1:0;
--#endif
-+#else
-+	int ret = 0;
-+
-+	SetGetRadioInfo(RIOCGINFO);
-+	if (ri.info & RADIO_INFO_SIGNAL)
-+		ret  = 1;
-+	if (ri.info & RADIO_INFO_STEREO)
-+		ret |= 2;
-+	switch (ret) {
-+	case 0: return 0;
-+	case 1: return 2;
-+	default:
-+		return 1;
-+	}
-+#endif /* ZOLTRIX */
- 	return 0;
- }
- 
--int ParseRCFile(char *filename)
-+void VolumeUp(void)
- {
--	char temp[128];
--	char *p;
--	FILE *fp;
--	int ln=1;
--	int count=-1;
--	char *tokens = " \t\n";
-+#ifdef ZOLTRIX
-+	if (volume < 16)
-+		volume++;
-+	cardWrite(volume);
-+	usleep(10000);
-+	cardRead(2);
-+#else
-+	if (volume < 255 / VOLUME_STEP)
-+		volume++;
- 
--	if ((fp = fopen(filename,"r")) == NULL)
--	{
--		return 1;
-+	ri.volume = volume * VOLUME_STEP;
-+	SetGetRadioInfo(RIOCSINFO);
-+#endif
-+}
-+
-+void VolumeDown(void)
-+{
-+	if (volume > 0)
-+		volume--;
-+
-+#ifdef ZOLTRIX
-+	cardWrite(volume);
-+	usleep(10000);
-+	cardRead(2);
-+#else
-+	ri.volume = volume * VOLUME_STEP;
-+	SetGetRadioInfo(RIOCSINFO);
-+#endif
-+}
-+
-+/* ZOLTRIX & NATIVE STUFF */
-+#ifdef ZOLTRIX
-+void
-+goroot(void) {
-+	if (seteuid(0) < 0)
-+		err(1, "failed to restore saved root id");
-+}
-+
-+void
-+gouser(void) {
-+	if (seteuid(getuid()) < 0)
-+		err(1, "failed to get effective user id");
-+}
-+
-+inline void cardWrite(int k)
-+{
-+	usleep(0);
-+	outb(rport, k);
-+}
-+
-+inline int cardRead(int offset)
-+{
-+	return inb(rport + offset);
-+}
-+
-+void tuneFreq(double freq, int fast)
-+{
-+/* tunes the radio to the desired frequency */
-+	unsigned long long bitmask, f;
-+	int i;
-+
-+	f = (unsigned long long)(((float)(freq - 88.0)) * 200.0) + 0x4d1c;
-+	bitmask = 0xc480402c10080000ull;
-+	i = 45;
-+	if (!fast) {
-+		cardWrite(0x00);
-+		cardWrite(0x00);
-+		cardRead(3);
-+	}
-+	cardWrite(0x40);
-+	cardWrite(0xc0);
-+	bitmask = (bitmask ^ ((f & 0xff) << 47) ^ ((f & 0xff00) << 30) ^ (/*stereo*/ 0 << 31));
-+	while (i--) {
-+		if ((bitmask & 0x8000000000000000ull) != 0) {
-+			cardWrite(0x80);
-+			cardWrite(0x00);
-+			cardWrite(0x80);
-+		} else {
-+			cardWrite(0xc0);
-+			cardWrite(0x40);
-+			cardWrite(0xc0);
-+		}
-+		bitmask *= 2;
-+	}
-+	/* termination sequence */
-+	cardWrite(0x80);
-+	cardWrite(0xc0);
-+	cardWrite(0x40);
-+	usleep (20000);
-+	cardWrite(volume);
-+	usleep (10000);
-+	cardRead(2);
-+}
-+
-+void CheckIOPerms(void)
-+{
-+	int offset;
-+	unsigned long mask = 0;
-+	offset = rport / 32;
-+
-+	goroot();
-+
-+	mask = 0x0F << rport % 32;
-+	memset(iomap, 0xFFFF, sizeof(iomap));
-+	iomap[offset] ^= mask;
-+	ioperms.iomap = iomap;
-+	if (sysarch(I386_SET_IOPERM, (char *)&ioperms) < 0)
-+		err(1, "Unsufficient IO privileges");
-+
-+	gouser();
-+}
-+#else /* !ZOLTRIX */
-+int
-+SetGetRadioInfo(int setinfo) {
-+	int rd;
-+
-+	rd = open(radiodevice, setinfo == RIOCSINFO ? O_RDWR : O_RDONLY);
-+	if (rd < 0) {
-+		warn("%s open error", radiodevice);
-+		return -1;
- 	}
--	while(fgets(temp, 128, fp)) 
--	{
--		if ((p = strtok(temp,tokens)) != NULL)
--		{
--			if ((p = strchr(temp,'#')) != NULL) 
--			{
--				*p = '\0';
--			}
--			if ((strlen(temp)) != 0)
--			{
--				if (count == -1)
--				{
--					sscanf(temp,"%x",&rport);
--				}
+ 				}
 -				if (count == 0)
 -				{
 -					sscanf(temp,"%d",&max_presets);
@@ -1835,24 +1541,129 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 -						}
 -					}
 -				}
--				count++;
--			}
--		}
--		ln++;
+ 				count++;
+ 			}
+ 		}
+ 		ln++;
+ 	}
++
+ 	fclose(fp);
+ 	return 0;
++}
++
++void
++usage(void) {
++	const char usagestr[] =
++	"\nwmtune v%s, by soren@leiden.org, design & art by warp@xs4all.nl\n"
++	"http://soren.org/linux/wmtune & http://windowmaker.mezaway.org\n\n"
++	"usage:\n"
++	"\t-n\t\tturn radio on initially on startup\n"
++	"\t-t <##:##>\tset timer on startup, military time\n"
++	"\t-p <##>\t\tset startup preset # listed in %s file\n"
++	"\t-f <filename>\tuse filename as a radio device file\n"
++	"\t-h\t\tdisplay this screen\n\n"
++	"examples:\n"
++	"\t\tturn on radio on startup using preset 5\n"
++	"\twmtune -n -p 5\n"
++	"\t\tturn radio on at 2:35pm using preset 2\n"
++	"\twmtune -p 2 -t 14:35\n"
++	"\t\tturn on radio on startup and turn radio off at midnight\n"
++	"\twmtune -n -t 0:0\n\n";
++
++	printf(usagestr, VERSION, RCFILE);
++}
++
++/* CARD MANAGEMENT ROUTINES */
++void RadioOff(void)
++{
++	ri.mute = 1;
++	SetGetRadioInfo(RIOCSINFO);
++	radio_status = OFF;	
++	copyXPMArea(76, 40, 51, 13, 6, 7); 
++	copyXPMArea(115, 55, 11, 7, 45, 22);
++	copyXPMArea(83, 55, 11, 7, 6, 50);
++	RedrawWindowXYWH(6, 50, 11, 7); /* Full Preset Field */
++	RedrawWindowXYWH(6, 7, 51, 22); /* Full Upper Field */
++}
++
++void FastFreqUpdate(void)
++{
++	ri.freq = presets[0].freq * 1000;
++	SetGetRadioInfo(RIOCSINFO);
++	usleep(50000);
++	SetGetRadioInfo(RIOCGINFO);
++	presets[0].freq = (float)ri.freq / 1000.;
++}
++
++void TuneRadio(void)
++{
++	ri.freq = presets[0].freq * 1000;
++	ri.volume = volume * VOLUME_STEP;
++	ri.mute = 0;
++	SetGetRadioInfo(RIOCSINFO);
++	usleep(200000);
++	SetGetRadioInfo(RIOCGINFO);
++	presets[0].freq = (float)ri.freq / 1000.;
++}
++
++int TestTune(void)
++{
++	int ret = 0;
++
++	SetGetRadioInfo(RIOCGINFO);
++	if (ri.info & RADIO_INFO_SIGNAL)
++		ret  = 1;
++	if (ri.info & RADIO_INFO_STEREO)
++		ret |= 2;
++	switch (ret) {
++	case 0: return 0;
++	case 1: return 2;
++	default:
++		return 1;
++	}
++	return 0;
++}
++
++void VolumeUp(void)
++{
++	if (volume < 255 / VOLUME_STEP)
++		volume++;
++
++	ri.volume = volume * VOLUME_STEP;
++	SetGetRadioInfo(RIOCSINFO);
++}
++
++void VolumeDown(void)
++{
++	if (volume > 0)
++		volume--;
++
++	ri.volume = volume * VOLUME_STEP;
++	SetGetRadioInfo(RIOCSINFO);
++}
++
++int
++SetGetRadioInfo(int setinfo) {
++	int rd;
++
++	rd = open(radiodevice, setinfo == RIOCSINFO ? O_RDWR : O_RDONLY);
++	if (rd < 0) {
++		warn("%s open error", radiodevice);
++		return -1;
++	}
 +
 +	if (ioctl(rd, setinfo, &ri) < 0) {
 +		warn("%s", setinfo == RIOCSINFO ? "RIOCSINFO" : "RIOCGINFO");
 +		return -1;
- 	}
--	fclose(fp);
++	}
 +
 +	if (close(rd) < 0) {
 +		warn("%s close error", radiodevice);
 +		return -1;
 +	}
 +
- 	return 0;
- }
++	return 0;
++}
 +
 +void
 +GetVolumeStep(void) {
@@ -1875,5 +1686,4 @@ $OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 +
 +	ri.volume = oldvol;
 +	SetGetRadioInfo(RIOCSINFO);
-+}
-+#endif
+ }
