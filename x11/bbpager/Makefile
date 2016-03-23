@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/02/22 18:41:19 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/23 12:51:49 jca Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
@@ -22,7 +22,10 @@ MODULES =	converters/libiconv
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat fontconfig \
 		freetype m stdc++ z pthread-stubs xcb
 
-
 CONFIGURE_STYLE = gnu
+
+.ifdef DEBUG
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 .include <bsd.port.mk>
