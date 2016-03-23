@@ -1,8 +1,8 @@
-$OpenBSD: patch-qt5_src_Makefile_in,v 1.1 2015/12/14 14:25:47 zhuk Exp $
+$OpenBSD: patch-qt5_src_Makefile_in,v 1.2 2016/03/23 20:09:34 kili Exp $
 Reorder linking to make sure libestdc++ is picked up earlier than libstdc++.
---- qt5/src/Makefile.in.orig	Fri Dec 11 20:57:08 2015
-+++ qt5/src/Makefile.in	Fri Dec 11 20:57:51 2015
-@@ -517,8 +517,8 @@ libpoppler_qt5_la_CXXFLAGS = \
+--- qt5/src/Makefile.in.orig	Wed Mar 16 23:22:13 2016
++++ qt5/src/Makefile.in	Mon Mar 21 11:04:17 2016
+@@ -520,8 +520,8 @@ libpoppler_qt5_la_CXXFLAGS = \
  	-Dpoppler_qt5_EXPORTS
  
  libpoppler_qt5_la_LIBADD = \

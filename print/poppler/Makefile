@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2016/02/27 19:21:32 kili Exp $
+# $OpenBSD: Makefile,v 1.104 2016/03/23 20:09:34 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -6,7 +6,7 @@ COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.41.0
+V=		0.42.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -16,7 +16,7 @@ PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
 OLDSHIT =	poppler-0.16.7
 
-SHARED_LIBS +=	poppler              34.0     # 58.0
+SHARED_LIBS +=	poppler              35.0     # 58.0
 SHARED_LIBS +=	poppler-glib         15.0     # 15.0
 SHARED_LIBS +=	poppler-qt           12.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          18.0     # 13.0
@@ -102,11 +102,12 @@ WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjpeg \
 		png poppler pcre pthread-stubs xcb
 WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
-		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb Xau \
-		Xdamage Xdmcp Xext Xfixes Xxf86vm drm execinfo ffi glapi \
-		glib-2.0 gobject-2.0 gthread-2.0 iconv icudata icui18n \
-		icuuc intl lcms2 openjpeg pcre pcre16 png poppler \
-		pthread-stubs xcb xcb-dri2 xcb-glx
+		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
+		Xdamage Xext Xfixes Xxf86vm drm execinfo ffi glapi \
+		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
+		iconv icudata icui18n icuuc intl lcms2 openjpeg pcre \
+		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
+		
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
 		poppler z ${cWANTLIB}
@@ -117,7 +118,8 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 		--enable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib \
-		--disable-gtk-test
+		--disable-gtk-test \
+		--disable-libnss
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
