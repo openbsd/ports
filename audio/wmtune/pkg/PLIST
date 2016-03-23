@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/19 09:55:51 espie Exp $
-%%zoltrix%%
-!%%zoltrix%%
+@comment $OpenBSD: PLIST,v 1.5 2016/03/23 09:50:00 sthen Exp $
+bin/wmtune
 @man man/man1/wmtune.1
 share/examples/wmtune/
 share/examples/wmtune/sample.wmtunerc

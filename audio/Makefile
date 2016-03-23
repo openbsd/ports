@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2016/03/21 22:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.366 2016/03/23 09:50:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -259,7 +259,6 @@
      SUBDIR += wmmp
      SUBDIR += wmmp3
      SUBDIR += wmtune
-     SUBDIR += wmtune,zoltrix
      SUBDIR += xcd
      SUBDIR += xcdplayer
      SUBDIR += xhippo

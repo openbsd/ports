@@ -1,2 +1,2 @@
-WMTune is a WindowMaker dock.app that controls Zoltrix FM radio tuner cards
-and any other cards supported under OpenBSD.
+WMTune is a WindowMaker dock.app that controls FM tuner cards
+supported by radio(4).
