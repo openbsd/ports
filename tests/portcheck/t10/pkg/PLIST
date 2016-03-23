@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1 2014/05/06 11:02:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/23 16:30:38 zhuk Exp $
+@man man/man1/bar.1.gz
 share/man/
 share/man/man1/
 share/man/man1/foo.1

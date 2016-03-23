@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.104 2016/03/22 21:25:53 naddy Exp $
+# $OpenBSD: portcheck,v 1.105 2016/03/23 16:30:38 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -929,6 +929,8 @@ sub_checks() {
 #
 #   * Manual (man and info) pages should go under ${PREFIX}/{man,info},
 #     not under ${PREFIx}/share/{man,info}.
+#
+#   * Manual pages shouldn't be compressed.
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -1176,6 +1178,9 @@ check_plist() {
 			;;
 		share/info/*)
 			wrong_info=true
+			;;
+		"@man "*.gz)
+			err "${portref}compressed $l"
 			;;
 		esac
 	done

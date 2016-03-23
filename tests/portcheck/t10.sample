@@ -1,2 +1,3 @@
+compressed @man man/man1/bar.1.gz
 info pages should go under ${PREFIX}/info/ rather than under ${PREFIX}/share/info/
 manual pages should go under ${PREFIX}/man/ rather than under ${PREFIX}/share/man/
