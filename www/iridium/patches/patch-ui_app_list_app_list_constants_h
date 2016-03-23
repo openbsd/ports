@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.5 2016/02/15 18:07:53 robert Exp $
---- ui/app_list/app_list_constants.h.orig.port	Wed Jan 20 21:01:25 2016
-+++ ui/app_list/app_list_constants.h	Fri Jan 22 19:58:59 2016
-@@ -89,7 +89,7 @@ APP_LIST_EXPORT extern const char kSearchResultOpenDis
+$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.6 2016/03/23 20:13:07 robert Exp $
+--- ui/app_list/app_list_constants.h.orig.port	Wed Feb 24 00:02:06 2016
++++ ui/app_list/app_list_constants.h	Thu Mar  3 09:43:26 2016
+@@ -92,7 +92,7 @@ APP_LIST_EXPORT extern const char kSearchResultOpenDis
  APP_LIST_EXPORT extern const char kSearchQueryLength[];
  APP_LIST_EXPORT extern const char kSearchResultDistanceFromOrigin[];
  

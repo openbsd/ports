@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/02/17 07:23:26 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/23 20:13:07 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -99,6 +99,8 @@ iridium/resources/inspector/Images/forward.png
 iridium/resources/inspector/Images/frame.png
 iridium/resources/inspector/Images/graphLabelCalloutLeft.png
 iridium/resources/inspector/Images/graphLabelCalloutRight.png
+iridium/resources/inspector/Images/ic_info_black_18dp.svg
+iridium/resources/inspector/Images/ic_warning_black_18dp.svg
 iridium/resources/inspector/Images/indexedDB.png
 iridium/resources/inspector/Images/indexedDBIndex.png
 iridium/resources/inspector/Images/indexedDBObjectStore.png
@@ -114,6 +116,12 @@ iridium/resources/inspector/Images/profileGroupIcon.png
 iridium/resources/inspector/Images/profileIcon.png
 iridium/resources/inspector/Images/profileSmallIcon.png
 iridium/resources/inspector/Images/radioDot.png
+iridium/resources/inspector/Images/resizeDiagonal.png
+iridium/resources/inspector/Images/resizeDiagonal_2x.png
+iridium/resources/inspector/Images/resizeHorizontal.png
+iridium/resources/inspector/Images/resizeHorizontal_2x.png
+iridium/resources/inspector/Images/resizeVertical.png
+iridium/resources/inspector/Images/resizeVertical_2x.png
 iridium/resources/inspector/Images/resourceCSSIcon.png
 iridium/resources/inspector/Images/resourceDocumentIcon.png
 iridium/resources/inspector/Images/resourceDocumentIconSmall.png
@@ -138,12 +146,6 @@ iridium/resources/inspector/Images/sessionStorage.png
 iridium/resources/inspector/Images/settingsListRemove.png
 iridium/resources/inspector/Images/settingsListRemove_2x.png
 iridium/resources/inspector/Images/speech.png
-iridium/resources/inspector/Images/thumbActiveHoriz.png
-iridium/resources/inspector/Images/thumbActiveVert.png
-iridium/resources/inspector/Images/thumbHoriz.png
-iridium/resources/inspector/Images/thumbHoverHoriz.png
-iridium/resources/inspector/Images/thumbHoverVert.png
-iridium/resources/inspector/Images/thumbVert.png
 iridium/resources/inspector/Images/toolbarButtonGlyphs.png
 iridium/resources/inspector/Images/toolbarButtonGlyphs_2x.png
 iridium/resources/inspector/Images/toolbarItemSelected.png
@@ -178,6 +180,18 @@ iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-1x
 iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-2x.png
 iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-1x.png
 iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-default-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-default-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-keyboard-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-keyboard-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-navigation-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-horizontal-navigation-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-default-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-default-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-keyboard-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-keyboard-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 iridium/resources/inspector/emulated_devices_module.js
 iridium/resources/inspector/heap_snapshot_worker_module.js
 iridium/resources/inspector/inspector.css
@@ -188,6 +202,7 @@ iridium/resources/inspector/network_module.js
 iridium/resources/inspector/profiler_module.js
 iridium/resources/inspector/promises_module.js
 iridium/resources/inspector/resources_module.js
+iridium/resources/inspector/sass_module.js
 iridium/resources/inspector/screencast_module.js
 iridium/resources/inspector/script_formatter_worker_module.js
 iridium/resources/inspector/security_module.js

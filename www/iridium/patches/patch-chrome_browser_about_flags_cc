@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.7 2016/02/15 18:07:52 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Mon Feb 15 07:30:05 2016
-+++ chrome/browser/about_flags.cc	Mon Feb 15 12:12:51 2016
-@@ -755,7 +755,7 @@ const FeatureEntry kFeatureEntries[] = {
-      // On by default for the Mac (different implementation in WebKit).
-      kOsLinux | kOsWin,
-      SINGLE_VALUE_TYPE(switches::kEnableSmoothScrolling)},
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.8 2016/03/23 20:13:06 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Wed Mar 23 13:05:39 2016
++++ chrome/browser/about_flags.cc	Wed Mar 23 13:06:02 2016
+@@ -684,7 +684,7 @@ const FeatureEntry kFeatureEntries[] = {
+      // Mac has a separate implementation with its own setting to disable.
+      kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
+      SINGLE_DISABLE_VALUE_TYPE(switches::kDisableSmoothScrolling)},
 -#if defined(USE_AURA) || defined(OS_LINUX)
 +#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
      {"overlay-scrollbars",
-      IDS_FLAGS_ENABLE_OVERLAY_SCROLLBARS_NAME,
-      IDS_FLAGS_ENABLE_OVERLAY_SCROLLBARS_DESCRIPTION,
-@@ -877,7 +877,7 @@ const FeatureEntry kFeatureEntries[] = {
-      SINGLE_VALUE_TYPE(switches::kEnableSpellingAutoCorrect)},
+      IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
+      IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
+@@ -795,7 +795,7 @@ const FeatureEntry kFeatureEntries[] = {
+      SINGLE_VALUE_TYPE(switches::kEnableAndroidSpellChecker)},
  #endif
  #if defined(ENABLE_SPELLCHECK) && \
 -    (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS))
@@ -19,3 +19,12 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.7 2016/02/15 18:07:52 robert E
      {"enable-multilingual-spellchecker",
       IDS_FLAGS_ENABLE_MULTILINGUAL_SPELLCHECKER_NAME,
       IDS_FLAGS_ENABLE_MULTILINGUAL_SPELLCHECKER_DESCRIPTION,
+@@ -2083,7 +2083,7 @@ const FeatureEntry kFeatureEntries[] = {
+       kOsDesktop,
+       SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
+ #endif
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+      {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
+       IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION,
+       kOsWin | kOsLinux,

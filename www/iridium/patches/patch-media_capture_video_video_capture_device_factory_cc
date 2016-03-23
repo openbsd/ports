@@ -1,22 +1,12 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_factory_cc,v 1.1 2015/10/24 18:22:21 robert Exp $
---- media/capture/video/video_capture_device_factory.cc.orig.port	Wed Oct 14 07:53:56 2015
-+++ media/capture/video/video_capture_device_factory.cc	Wed Oct 14 07:54:20 2015
-@@ -14,6 +14,10 @@ namespace media {
- // static
- scoped_ptr<VideoCaptureDeviceFactory> VideoCaptureDeviceFactory::CreateFactory(
-     scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {
-+#if defined(OS_BSD)
-+  return scoped_ptr<VideoCaptureDeviceFactory>(new
-+      media::FakeVideoCaptureDeviceFactory());
-+#else
-   const base::CommandLine* command_line =
-       base::CommandLine::ForCurrentProcess();
-   // Use a Fake or File Video Device Factory if the command line flags are
-@@ -32,6 +36,7 @@ scoped_ptr<VideoCaptureDeviceFactory> VideoCaptureDevi
-     return scoped_ptr<VideoCaptureDeviceFactory>(
-         CreateVideoCaptureDeviceFactory(ui_task_runner));
-   }
-+#endif
+$OpenBSD: patch-media_capture_video_video_capture_device_factory_cc,v 1.2 2016/03/23 20:13:07 robert Exp $
+--- media/capture/video/video_capture_device_factory.cc.orig.port	Sun Mar  6 11:32:49 2016
++++ media/capture/video/video_capture_device_factory.cc	Sun Mar  6 11:32:56 2016
+@@ -55,7 +55,7 @@ void VideoCaptureDeviceFactory::EnumerateDeviceNames(c
  }
  
- VideoCaptureDeviceFactory::VideoCaptureDeviceFactory() {
+ #if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_ANDROID) && \
+-    !defined(OS_WIN)
++    !defined(OS_WIN) && !defined(OS_BSD)
+ // static
+ VideoCaptureDeviceFactory*
+ VideoCaptureDeviceFactory::CreateVideoCaptureDeviceFactory(

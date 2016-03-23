@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2016/03/09 14:21:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2016/03/23 20:13:06 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			48.2
+V=			49.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
-REVISION=		1
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/rc1//}
 
@@ -151,7 +150,6 @@ CARCH=		x86_64
 .endif
 
 REL!=		uname -r
-MAKE_ENV+=	CPATH=${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/bits/:${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/:${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/${CARCH}-unknown-openbsd${REL}/
 
 .if ${FLAVOR:Mdebug}
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
@@ -185,7 +183,7 @@ do-build:
 	@cd ${WRKSRC}/out/${BUILDTYPE} && \
 	for _r in generate_version_info cloud_policy_proto net_interfaces suggestions \
 	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
-	data_reduction_proxy_proto cloud_policy_code_generate \
+	data_reduction_proxy_proto cloud_policy_code_generate common_constants \
 	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \

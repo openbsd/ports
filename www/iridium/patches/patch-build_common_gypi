@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
---- build/common.gypi.orig.port	Wed Jan 20 21:01:18 2016
-+++ build/common.gypi	Fri Jan 22 19:58:58 2016
-@@ -105,7 +105,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
+--- build/common.gypi.orig.port	Wed Feb 24 21:01:30 2016
++++ build/common.gypi	Thu Mar  3 17:37:31 2016
+@@ -112,7 +112,7 @@
  
            'conditions': [
              # Windows and Linux (including Chrome OS) use Aura and Ash.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -229,12 +229,12 @@
+@@ -249,12 +249,12 @@
            }],
  
            # Enable HiDPI on Mac OS, Windows and Linux (including Chrome OS).
@@ -25,7 +25,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
              'enable_topchrome_md%': 1,
            }],
  
-@@ -761,7 +761,7 @@
+@@ -784,7 +784,7 @@
          }],
  
          # DBus usage.
@@ -34,7 +34,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -868,7 +868,7 @@
+@@ -889,7 +889,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -43,7 +43,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -974,7 +974,7 @@
+@@ -995,7 +995,7 @@
          # --help for more information. Meant to be overriden with GYP_DEFINES.
          # TODO(maruel): Remove the conditions as more configurations are
          # supported.
@@ -52,16 +52,16 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -990,7 +990,7 @@
+@@ -1011,7 +1011,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
 -        ['OS=="win" or OS=="linux"', {
 +        ['OS=="win" or OS=="linux" or OS=="openbsd"', {
-             'enable_mdns%' : 1,
+           'enable_mdns%' : 1,
          }],
  
-@@ -1617,7 +1617,7 @@
+@@ -1636,7 +1636,7 @@
        ['OS=="win"', {
          'windows_driver_kit_path%': '$(WDK_DIR)',
        }],
@@ -70,7 +70,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
          'conditions': [
            ['target_arch=="mipsel" or target_arch=="mips64el"', {
              'werror%': '',
-@@ -3609,6 +3609,13 @@
+@@ -3613,6 +3613,13 @@
      },
    },
    'conditions': [
@@ -84,7 +84,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
      ['os_posix==1', {
        'target_defaults': {
          'ldflags': [
-@@ -4695,7 +4702,7 @@
+@@ -4735,7 +4742,7 @@
      }],
      # FreeBSD-specific options; note that most FreeBSD options are set above,
      # with Linux.
@@ -93,7 +93,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2016/02/15 18:07:52 robert Exp $
        'target_defaults': {
          'ldflags': [
            '-Wl,--no-keep-memory',
-@@ -5980,8 +5987,8 @@
+@@ -6031,8 +6038,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.6 2016/02/15 18:07:53 robert Exp $
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Fri Jan 22 22:07:37 2016
-+++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Fri Jan 22 22:08:15 2016
-@@ -272,7 +272,7 @@ void TabDragController::Init(
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.7 2016/03/23 20:13:07 robert Exp $
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Thu Mar  3 10:04:33 2016
++++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Thu Mar  3 10:05:04 2016
+@@ -274,7 +274,7 @@ void TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - Ash
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.6 2016/0
    can_release_capture_ = false;
  #else
    can_release_capture_ =
-@@ -624,7 +624,7 @@ TabDragController::DragBrowserToNewTabStrip(
+@@ -626,7 +626,7 @@ TabDragController::DragBrowserToNewTabStrip(
      // that to effect the position of any windows.
      SetWindowPositionManaged(browser_widget->GetNativeWindow(), false);
  
@@ -19,10 +19,10 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.6 2016/0
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1799,7 +1799,7 @@ gfx::NativeWindow TabDragController::GetLocalProcessWi
-       attached_tabstrip_->GetWidget()->GetNativeWindow();
-   if (exclude_dragged_view && dragged_window)
-     exclude.insert(dragged_window);
+@@ -1806,7 +1806,7 @@ gfx::NativeWindow TabDragController::GetLocalProcessWi
+     if (dragged_window)
+       exclude.insert(dragged_window);
+   }
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    // Exclude windows which are pending deletion via Browser::TabStripEmpty().

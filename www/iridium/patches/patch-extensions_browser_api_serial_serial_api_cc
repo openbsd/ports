@@ -1,17 +1,12 @@
-$OpenBSD: patch-extensions_browser_api_serial_serial_api_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
---- extensions/browser/api/serial/serial_api.cc.orig.port	Fri Oct 10 16:15:30 2014
-+++ extensions/browser/api/serial/serial_api.cc	Fri Oct 10 16:15:52 2014
-@@ -85,11 +85,13 @@ bool SerialGetDevicesFunction::Prepare() {
- void SerialGetDevicesFunction::Work() {
+$OpenBSD: patch-extensions_browser_api_serial_serial_api_cc,v 1.3 2016/03/23 20:13:07 robert Exp $
+--- extensions/browser/api/serial/serial_api.cc.orig.port	Thu Mar  3 10:09:49 2016
++++ extensions/browser/api/serial/serial_api.cc	Thu Mar  3 10:09:57 2016
+@@ -87,7 +87,7 @@ void SerialGetDevicesFunction::Work() {
    DCHECK_CURRENTLY_ON(BrowserThread::FILE);
  
-+#if !defined(OS_BSD)
+ // TODO(moshayedi): crbug.com/549257. Add USB support for Aura on Android.
+-#if !defined(OS_ANDROID)
++#if !defined(OS_ANDROID) && !defined(OS_BSD)
    scoped_ptr<device::SerialDeviceEnumerator> enumerator =
        device::SerialDeviceEnumerator::Create();
    mojo::Array<device::serial::DeviceInfoPtr> devices = enumerator->GetDevices();
-   results_ = serial::GetDevices::Results::Create(
-       devices.To<std::vector<linked_ptr<serial::DeviceInfo> > >());
-+#endif
- }
- 
- SerialConnectFunction::SerialConnectFunction() {

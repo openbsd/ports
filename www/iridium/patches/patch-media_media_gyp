@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
---- media/media.gyp.orig.port	Wed Jan 20 21:01:22 2016
-+++ media/media.gyp	Fri Jan 22 19:58:58 2016
+$OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
+--- media/media.gyp.orig.port	Wed Feb 24 21:01:33 2016
++++ media/media.gyp	Sat Mar  5 23:31:13 2016
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
        # Enable ALSA and Pulse for runtime selection.
--      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded!=1 or (chromecast==1 and target_arch!="arm"))', {
-+      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded!=1 or (chromecast==1 and target_arch!="arm")) and os_bsd != 1', {
+-      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and ((embedded!=1 and chromecast==0) or is_cast_desktop_build==1)', {
++      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and ((embedded!=1 and chromecast==0) or is_cast_desktop_build==1) and os_bsd != 1', {
          # ALSA is always needed for Web MIDI even if the cras is enabled.
          'use_alsa%': 1,
          'conditions': [
@@ -21,7 +21,7 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
        # low memory buffer is used in non-Android based chromecast build due to hardware limitation.
        ['chromecast==1 and OS!="android"', {
          'use_low_memory_buffer%': 1,
-@@ -161,6 +165,8 @@
+@@ -184,6 +188,8 @@
          'audio/mac/audio_manager_mac.h',
          'audio/null_audio_sink.cc',
          'audio/null_audio_sink.h',
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
          'audio/pulse/audio_manager_pulse.cc',
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_input.cc',
-@@ -169,6 +175,8 @@
+@@ -192,6 +198,8 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
@@ -39,7 +39,7 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -770,6 +778,24 @@
+@@ -789,6 +797,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -64,30 +64,22 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -787,11 +813,21 @@
-         }],
-         ['OS=="openbsd"', {
-           'sources!': [
-+            'capture/video/linux/v4l2_capture_delegate.cc',
-+            'capture/video/linux/v4l2_capture_delegate.h',
-             'capture/video/linux/v4l2_capture_delegate_multi_plane.cc',
-             'capture/video/linux/v4l2_capture_delegate_multi_plane.h',
-+            'capture/video/linux/v4l2_capture_delegate_single_plane.cc',
-+            'capture/video/linux/v4l2_capture_delegate_single_plane.h',
-+            'capture/video/linux/video_capture_device_chromeos.cc',
-+            'capture/video/linux/video_capture_device_chromeos.h',
-+            'capture/video/linux/video_capture_device_factory_linux.cc',
-+            'capture/video/linux/video_capture_device_factory_linux.h',
-+            'capture/video/linux/video_capture_device_linux.cc',
-+            'capture/video/linux/video_capture_device_linux.h',
+@@ -804,13 +830,7 @@
+             ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
+-        ['OS=="openbsd"', {
+-          'sources!': [
+-            'capture/video/linux/v4l2_capture_delegate_multi_plane.cc',
+-            'capture/video/linux/v4l2_capture_delegate_multi_plane.h',
+-          ],
+-        }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or os_bsd==1', {
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -885,7 +921,7 @@
+@@ -904,7 +924,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
@@ -96,7 +88,7 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1127,7 +1163,7 @@
+@@ -1148,7 +1168,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],
@@ -105,7 +97,7 @@ $OpenBSD: patch-media_media_gyp,v 1.8 2016/02/15 18:07:53 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1992,7 +2028,7 @@
+@@ -2033,7 +2053,7 @@
              'test/pipeline_integration_test_base.cc',
            ],
            'conditions': [

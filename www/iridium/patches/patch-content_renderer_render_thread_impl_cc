@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.7 2016/02/15 18:07:53 robert Exp $
---- content/renderer/render_thread_impl.cc.orig.port	Wed Jan 20 21:01:21 2016
-+++ content/renderer/render_thread_impl.cc	Fri Jan 22 19:58:58 2016
-@@ -788,7 +788,7 @@ void RenderThreadImpl::Init() {
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.8 2016/03/23 20:13:07 robert Exp $
+--- content/renderer/render_thread_impl.cc.orig.port	Wed Feb 24 21:01:32 2016
++++ content/renderer/render_thread_impl.cc	Thu Mar  3 09:43:26 2016
+@@ -823,7 +823,7 @@ void RenderThreadImpl::Init() {
    are_image_decode_tasks_enabled_ = num_raster_threads > 1;
  
    base::SimpleThread::Options thread_options;

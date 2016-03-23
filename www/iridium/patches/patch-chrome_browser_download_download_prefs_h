@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.3 2015/08/12 10:56:13 robert Exp $
---- chrome/browser/download/download_prefs.h.orig.port	Wed Jul 15 22:29:57 2015
-+++ chrome/browser/download/download_prefs.h	Wed Jul 22 08:37:29 2015
-@@ -77,7 +77,7 @@ class DownloadPrefs {
+$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.4 2016/03/23 20:13:07 robert Exp $
+--- chrome/browser/download/download_prefs.h.orig.port	Wed Feb 24 21:01:31 2016
++++ chrome/browser/download/download_prefs.h	Thu Mar  3 09:43:25 2016
+@@ -79,7 +79,7 @@ class DownloadPrefs {
    // Disables auto-open based on file extension.
    void DisableAutoOpenBasedOnExtension(const base::FilePath& file_name);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.3 2015/08/12 10:56:
      (defined(OS_MACOSX) && !defined(OS_IOS))
    // Store the user preference to disk. If |should_open| is true, also disable
    // the built-in PDF plugin. If |should_open| is false, enable the PDF plugin.
-@@ -109,7 +109,7 @@ class DownloadPrefs {
+@@ -111,7 +111,7 @@ class DownloadPrefs {
                     AutoOpenCompareFunctor> AutoOpenSet;
    AutoOpenSet auto_open_;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.3 2016/02/15 18:07:52 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Mon Feb 15 09:23:02 2016
-+++ chrome/browser/chrome_browser_main.cc	Mon Feb 15 12:12:51 2016
-@@ -161,7 +161,7 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.4 2016/03/23 20:13:06 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Mon Mar 21 19:53:22 2016
++++ chrome/browser/chrome_browser_main.cc	Wed Mar 23 12:37:29 2016
+@@ -166,7 +166,7 @@
  #include "chrome/browser/feedback/feedback_profile_observer.h"
  #endif  // defined(OS_ANDROID)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.3 2016/02/15 18:07:52 
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #include "chrome/browser/sxs_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
-@@ -1050,7 +1050,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1077,7 +1077,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.3 2016/02/15 18:07:52 
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1402,7 +1402,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1414,7 +1414,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
      return chrome::RESULT_CODE_MACHINE_LEVEL_INSTALL_EXISTS;
  #endif  // defined(OS_WIN)
  
