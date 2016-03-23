@@ -8,7 +8,7 @@ WANTLIB =  c pthread
 DISTFILES =
 
 do-extract:
-	cp ${FILESDIR}/* ${WRKSRC}
+	cp ${FILESDIR}/{Makefile,*.c} ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/t6 ${PREFIX}/bin

@@ -2,7 +2,8 @@
 
 COMMENT-main =	portbump test package 7
 COMMENT-qt4 =	portbump test package 7, qt4 subpackage
-PKGNAME-main =	portbump-t7-1.0
+PKGNAME =	portbump-t7-1.0
+PKGNAME-main =	${PKGNAME}
 PKGNAME-qt4 =	portbump-t7-qt4-1.0
 
 WANTLIB-main =  c m pthread
@@ -18,7 +19,7 @@ MODULES =	x11/qt4
 MAKE_ENV =	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 do-extract:
-	cp ${FILESDIR}/* ${WRKSRC}
+	cp ${FILESDIR}/{Makefile,*.c} ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/t7 ${PREFIX}/bin
