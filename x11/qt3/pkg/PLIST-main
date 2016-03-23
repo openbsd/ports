@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/05/22 11:31:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/03/23 21:58:11 naddy Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
 @pkgpath x11/qt3
-%%SHARED%%
 bin/assistant
 bin/assistant-mt
 bin/designer3
@@ -435,6 +434,9 @@ include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
+@lib lib/libqt-mt.so.${LIBqt-mt_VERSION}
+@lib lib/libqui-mt.so.${LIBqui-mt_VERSION}
+@lib lib/libqui.so.${LIBqui_VERSION}
 lib/pkgconfig/qt-mt.pc
 lib/qt3/
 lib/qt3/.qmake.cache
@@ -458,6 +460,9 @@ lib/qt3/lib
 lib/qt3/libdesignercore.a
 lib/qt3/libeditor.a
 lib/qt3/libqassistantclient.a
+@lib lib/qt3/libqt-mt.so.${LIBqt-mt_VERSION}
+@lib lib/qt3/libqui-mt.so.${LIBqui-mt_VERSION}
+@lib lib/qt3/libqui.so.${LIBqui_VERSION}
 @mandir lib/qt3/man/
 lib/qt3/man/man1/
 @man lib/qt3/man/man1/lrelease.1
@@ -1493,7 +1498,15 @@ lib/qt3/mkspecs/win32-watcom/
 lib/qt3/mkspecs/win32-watcom/qmake.conf
 lib/qt3/${QT_PLUGINS}/
 lib/qt3/${QT_PLUGINS}/designer/
+lib/qt3/${QT_PLUGINS}/designer/libcppeditor.so
+lib/qt3/${QT_PLUGINS}/designer/libdlgplugin.so
+lib/qt3/${QT_PLUGINS}/designer/librcplugin.so
+lib/qt3/${QT_PLUGINS}/designer/libwizards.so
 lib/qt3/${QT_PLUGINS}/inputmethods/
+lib/qt3/${QT_PLUGINS}/inputmethods/libqimsw-multi.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqimsw-none.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqsimple.so
+lib/qt3/${QT_PLUGINS}/inputmethods/libqxim.so
 lib/qt3/${QT_PLUGINS}/sqldrivers/
 lib/qt3/${QT_PLUGINS}/styles/
 share/doc/qt3/

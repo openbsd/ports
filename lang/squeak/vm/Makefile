@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/01/22 13:11:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/23 21:58:11 naddy Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -6,7 +6,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	4
+REVISION =	5
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config

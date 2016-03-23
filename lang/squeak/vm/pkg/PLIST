@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/07/23 11:17:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/23 21:58:11 naddy Exp $
 bin/squeak
 lib/squeak/${FULLV}/
-lib/squeak/${FULLV}/B3DAcceleratorPlugin
-lib/squeak/${FULLV}/PseudoTTYPlugin
-lib/squeak/${FULLV}/Squeak3D
-lib/squeak/${FULLV}/UnixOSProcessPlugin
-lib/squeak/${FULLV}/XDisplayControlPlugin
+@bin lib/squeak/${FULLV}/B3DAcceleratorPlugin
+@bin lib/squeak/${FULLV}/PseudoTTYPlugin
+@bin lib/squeak/${FULLV}/Squeak3D
+@bin lib/squeak/${FULLV}/UnixOSProcessPlugin
+@bin lib/squeak/${FULLV}/XDisplayControlPlugin
+lib/squeak/${FULLV}/npsqueak.so
 @bin lib/squeak/${FULLV}/squeak
-lib/squeak/${FULLV}/vm-display-X11
-lib/squeak/${FULLV}/vm-display-null
-lib/squeak/${FULLV}/vm-sound-OpenBSD
-lib/squeak/${FULLV}/vm-sound-null
+@bin lib/squeak/${FULLV}/vm-display-X11
+@bin lib/squeak/${FULLV}/vm-display-null
+@bin lib/squeak/${FULLV}/vm-sound-OpenBSD
+@bin lib/squeak/${FULLV}/vm-sound-null
 lib/squeak/npsqueakregister
 lib/squeak/npsqueakrun
 @man man/man1/inisqueak.1
@@ -20,4 +21,3 @@ share/doc/squeak/LICENSE.gz
 share/doc/squeak/README.Contributing.gz
 share/doc/squeak/README.Keyboard.gz
 share/doc/squeak/README.Sound.gz
-%%SHARED%%
