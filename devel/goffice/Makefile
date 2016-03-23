@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.83 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2016/03/23 07:11:18 ajacoutot Exp $
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.27
+GNOME_VERSION=	0.10.28
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -11,7 +11,7 @@ GNOME_VERSION=	0.10.27
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
-SHARED_LIBS +=  goffice-0.10         0.0      # 10.27
+SHARED_LIBS +=  goffice-0.10         0.0      # 10.28
 
 CATEGORIES=	devel
 
@@ -28,7 +28,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2
 WANTLIB += gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed jpeg lzma
 WANTLIB += m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 spectre
-WANTLIB += tasn1 xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += tasn1 xcb xcb-render xcb-shm xml2 xslt z idn
 
 MODULES=		devel/gettext \
 			x11/gnome

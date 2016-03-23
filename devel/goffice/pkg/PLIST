@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/04/17 03:42:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/03/23 07:11:18 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -243,6 +243,7 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOColorGroup.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOComboBox.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOComboColor.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOComboPixmaps.html
+share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOComplex.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOComponent.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOData.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GODataMatrix.html
@@ -354,7 +355,6 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GLib-extras.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOAccumulator.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOColor.html
-share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOComplex.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GODataCVector.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOFileOpeners.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}-GOPattern.html
