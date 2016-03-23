@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.1 2012/04/28 09:49:49 stsp Exp $
+@comment $OpenBSD: PFRAG.ldap,v 1.2 2016/03/23 05:17:57 naddy Exp $
+lib/apr-util-1/apr_ldap-1.so
 lib/apr-util-1/apr_ldap.a
 lib/apr-util-1/apr_ldap.la
+lib/apr-util-1/apr_ldap.so

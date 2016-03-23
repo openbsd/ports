@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2012/04/28 09:49:49 stsp Exp $
-%%ldap%%
-lib/apr-util-1/apr_dbm_db-1.so
-lib/apr-util-1/apr_dbm_db.so
-@lib lib/libaprutil-1.so.${LIBaprutil-1_VERSION}
