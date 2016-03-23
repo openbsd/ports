@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-userdb,v 1.4 2015/08/27 09:29:53 giovanni Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-userdb,v 1.5 2016/03/23 12:12:26 naddy Exp $
 @comment lib/libauthuserdb.a
 @comment lib/libauthuserdb.la
+@lib lib/libauthuserdb.so.${LIBauthuserdb_VERSION}
 @man man/man8/makeuserdb.8
 @man man/man8/userdb.8
 @man man/man8/userdbpw.8

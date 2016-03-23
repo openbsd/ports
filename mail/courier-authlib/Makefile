@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/03/18 21:37:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.55 2016/03/23 12:12:26 naddy Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -12,6 +12,7 @@ PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
+REVISION=		0
 
 SHARED_LIBS +=  courierauth          1.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      1.0      # .0.0

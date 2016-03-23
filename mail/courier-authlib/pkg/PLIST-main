@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/08/27 09:29:53 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/03/23 12:12:26 naddy Exp $
 @conflict courier-authlib-*
 @pkgpath mail/courier-authlib
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
-%%SHARED%%
 @bin bin/courierauthconfig
 include/courier_auth_config.h
 include/courierauth.h
@@ -14,18 +13,25 @@ include/courierauthstaticlist.h
 @comment lib/courier-authlib/
 @comment lib/libauthpipe.a
 @comment lib/libauthpipe.la
+@lib lib/libauthpipe.so.${LIBauthpipe_VERSION}
 @comment lib/libauthpwd.a
 @comment lib/libauthpwd.la
+@lib lib/libauthpwd.so.${LIBauthpwd_VERSION}
 @comment lib/libauthsqlite.a
 @comment lib/libauthsqlite.la
+@lib lib/libauthsqlite.so.${LIBauthsqlite_VERSION}
 @comment lib/libcourierauth.a
 @comment lib/libcourierauth.la
+@lib lib/libcourierauth.so.${LIBcourierauth_VERSION}
 @comment lib/libcourierauthcommon.a
 @comment lib/libcourierauthcommon.la
+@lib lib/libcourierauthcommon.so.${LIBcourierauthcommon_VERSION}
 @comment lib/libcourierauthsasl.a
 @comment lib/libcourierauthsasl.la
+@lib lib/libcourierauthsasl.so.${LIBcourierauthsasl_VERSION}
 @comment lib/libcourierauthsaslclient.a
 @comment lib/libcourierauthsaslclient.la
+@lib lib/libcourierauthsaslclient.so.${LIBcourierauthsaslclient_VERSION}
 libexec/courier-authlib/
 @bin libexec/courier-authlib/authdaemond
 libexec/courier-authlib/authmigrate
