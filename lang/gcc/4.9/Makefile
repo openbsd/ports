@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/24 13:16:32 jsg Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.3
-REVISION = 3
+REVISION = 4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 

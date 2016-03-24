@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1 2014/11/12 10:56:59 tobiasu Exp $
---- gcc/config/arm/openbsd.h.orig	Mon May 19 00:32:53 2014
-+++ gcc/config/arm/openbsd.h	Tue May 20 13:30:23 2014
+$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2016/03/24 13:16:32 jsg Exp $
+--- gcc/config/arm/openbsd.h.orig	Wed Mar 23 22:15:54 2016
++++ gcc/config/arm/openbsd.h	Wed Mar 23 22:15:39 2016
 @@ -0,0 +1,240 @@
 +/* Definitions of target machine for GNU compiler, OpenBSD/arm ELF version.
 +   Copyright (C) 2002 Free Software Foundation, Inc.
@@ -42,8 +42,8 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1 2014/11/12 10:56:59 tobiasu Exp $
 +
 +#undef MULTILIB_DEFAULTS
 +
-+/* strongarm family default cpu.  */
-+#define SUBTARGET_CPU_DEFAULT TARGET_CPU_strongarm
++/* armv5te default cpu.  */
++#define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm9e
 +
 +/* Default is to use APCS-32 mode.  */
 +
