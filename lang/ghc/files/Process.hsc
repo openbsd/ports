@@ -7,7 +7,7 @@ import Foreign.C
 import System.Posix.Internals ( withFilePath )
 
 -- | This function provides an interface to the OpenBSD
--- <http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man2/pledge.2 pledge(2)>
+-- <http://man.openbsd.org/OpenBSD-current/man2/pledge.2 pledge(2)>
 -- system call.
 --
 -- Passing 'Nothing' to the promises or paths arguments has the same
