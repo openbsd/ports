@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2016/02/26 16:05:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.330 2016/03/24 03:42:46 jsg Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -191,7 +191,7 @@
      SUBDIR += qstat
      SUBDIR += quadrupleback
      SUBDIR += quake
-     SUBDIR += yquake2
+     SUBDIR += quakespasm
      SUBDIR += redeclipse
      SUBDIR += renpy
      SUBDIR += residualvm
@@ -315,6 +315,7 @@
      SUBDIR += xwelltris,no_sdl
      SUBDIR += xye
      SUBDIR += xzip
+     SUBDIR += yquake2
      SUBDIR += zangband
      SUBDIR += zangband,no_x11
      SUBDIR += zaz
