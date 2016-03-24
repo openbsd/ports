@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/24 13:21:45 dcoppa Exp $
 
 COMMENT =		JSON parsing C++ API
 
 GH_ACCOUNT =		open-source-parsers
 GH_PROJECT =		jsoncpp
-GH_TAGNAME =		0.10.5
+GH_TAGNAME =		1.7.1
 SUBST_VARS +=		GH_TAGNAME
 
-REVISION =		0
-
 # no upstream revision
-SHARED_LIBS =		jsoncpp 0.0
+SHARED_LIBS =		jsoncpp 1.0
 
 CATEGORIES =		devel
 

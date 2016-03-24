@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/24 13:21:45 dcoppa Exp $
 include/jsoncpp/
 include/jsoncpp/json/
+include/jsoncpp/json/allocator.h
 include/jsoncpp/json/assertions.h
 include/jsoncpp/json/autolink.h
 include/jsoncpp/json/config.h
