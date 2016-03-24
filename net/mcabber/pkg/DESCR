@@ -1,2 +1,4 @@
 Small console Jabber client which features SSL support, history logging
 and external actions.
+
+Module support has been disabled in favour of a strong pledge(2).

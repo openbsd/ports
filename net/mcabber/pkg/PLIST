@@ -1,47 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/10 20:38:19 tim Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/24 20:04:25 mestre Exp $
 @bin bin/mcabber
-include/mcabber/
-include/mcabber/api.h
-include/mcabber/caps.h
-include/mcabber/commands.h
-include/mcabber/compl.h
-include/mcabber/config.h
-include/mcabber/events.h
-include/mcabber/fifo.h
-include/mcabber/hbuf.h
-include/mcabber/help.h
-include/mcabber/hgcset.h
-include/mcabber/histolog.h
-include/mcabber/hooks.h
-include/mcabber/logprint.h
-include/mcabber/main.h
-include/mcabber/modules.h
-include/mcabber/nohtml.h
-include/mcabber/otr.h
-include/mcabber/pgp.h
-include/mcabber/roster.h
-include/mcabber/screen.h
-include/mcabber/settings.h
-include/mcabber/utf8.c
-include/mcabber/utf8.h
-include/mcabber/utils.h
-include/mcabber/xmpp.h
-include/mcabber/xmpp_defines.h
-include/mcabber/xmpp_helper.h
-include/mcabber/xmpp_iq.h
-include/mcabber/xmpp_iqrequest.h
-include/mcabber/xmpp_muc.h
-include/mcabber/xmpp_s10n.h
-lib/mcabber/
-lib/mcabber/libbeep.la
-lib/mcabber/libbeep.so
-lib/mcabber/libfifo.la
-lib/mcabber/libfifo.so
-lib/mcabber/liburlregex.la
-lib/mcabber/liburlregex.so
-lib/mcabber/libxttitle.la
-lib/mcabber/libxttitle.so
-lib/pkgconfig/mcabber.pc
 @man man/man1/mcabber.1
 share/applications/mcabber.desktop
 share/examples/mcabber/
