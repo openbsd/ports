@@ -1,6 +1,6 @@
-# $OpenBSD: cmake.port.mk,v 1.54 2016/01/28 11:28:02 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.55 2016/03/24 13:22:21 dcoppa Exp $
 
-BUILD_DEPENDS+=	devel/cmake>=3.4.3p0
+BUILD_DEPENDS+=	devel/cmake>=3.4.3p1
 
 .for _n _v in ${SHARED_LIBS}
 CONFIGURE_ENV+=LIB${_n}_VERSION=${_v}
