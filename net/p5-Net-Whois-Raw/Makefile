@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/20 19:56:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/24 21:10:29 giovanni Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
-DISTNAME =	Net-Whois-Raw-2.92
+DISTNAME =	Net-Whois-Raw-2.93
 CATEGORIES=	net
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
