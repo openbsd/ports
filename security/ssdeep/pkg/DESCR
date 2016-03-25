@@ -1,0 +1,7 @@
+ssdeep is a program for computing context triggered piecewise hashes (CTPH).
+Also called fuzzy hashes, CTPH can match inputs that have homologies.  Such
+inputs have sequences of identical bytes in the same order, although bytes
+in between these sequences may be different in both content and length.
+
+The package also includes a fuzzy hashing API, which is documented in the
+README file.
