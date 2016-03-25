@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.136 2016/03/24 20:32:57 kili Exp $
+# $OpenBSD: Makefile,v 1.137 2016/03/25 10:42:17 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
 # Note: please never ever set DPB_PROPERTIES=parallel (or some other
 # magic that enables parallel builds) for this port! Not even if it
 # appears to work. (search the upstream bug tracker for terms like
-# "non-dterministic", "unresolved symbol", "signature mismatch" etc. to
+# "non-deterministic", "unresolved symbol", "signature mismatch" etc. to
 # find the appropriate bug tickets)
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache 
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.10.2.20160324
+BIN_VER =		7.10.2.20160325
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -194,7 +194,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20160324
+BOOTSTRAP_DATE =	20160325
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
