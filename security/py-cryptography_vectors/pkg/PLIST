@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/09 16:23:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/03/26 14:37:05 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha3
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha512.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/ansx963_2001.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/nist-800-108-KBKDF-CTR.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-5869-HKDF-SHA1.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-5869-HKDF-SHA256.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-6070-PBKDF2-SHA1.txt
@@ -2092,6 +2093,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ocsp_n
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/pc_inhibit.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/pc_inhibit_require.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/pc_require.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/policy_constraints_explicit.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/post2000utctime.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_dirname.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/san_email_dns_ip_dirname_uri.pem
@@ -2112,6 +2114,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_subject_name.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/unsupported_subject_public_key_info.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/utf8_common_name.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/department-of-state-root.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/e-trust.ru.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ecdsa_root.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/rapidssl_sha256_ca_g3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/
@@ -2120,6 +2124,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/dsa_
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/dsa_sha1.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/ec_sha256.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/ec_sha256.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/invalid_signature.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/rsa_md4.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/rsa_md4.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/rsa_sha1.der
