@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/26 12:53:31 ajacoutot Exp $
+@bin bin/dwarfdump
+include/libdwarf/
+include/libdwarf/dwarf.h
+include/libdwarf/libdwarf.h
+lib/libdwarf.a
+@lib lib/libdwarf.so.${LIBdwarf_VERSION}
