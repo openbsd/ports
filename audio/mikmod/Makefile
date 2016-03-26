@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/25 13:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/26 16:08:30 awolk Exp $
 
 COMMENT =	module audio player
-DISTNAME =	mikmod-3.2.6
-REVISION =	1
+DISTNAME =	mikmod-3.2.7
 CATEGORIES =	audio
 
-HOMEPAGE =	http://mikmod.shlomifish.org/
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
+
+HOMEPAGE =	http://mikmod.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m mikmod ncurses pthread sndio
+WANTLIB +=	c m mikmod ncurses pthread sndio
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mikmod/}
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE = gnu
 
 LIB_DEPENDS =	audio/libmikmod
 
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/unzip
-
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
