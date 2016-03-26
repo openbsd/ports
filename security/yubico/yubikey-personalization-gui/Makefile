@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/07 14:39:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT=	Qt GUI to configure YubiKeys
 
@@ -14,8 +14,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	security/yubico/yubico-c \
 		security/yubico/yubikey-personalization
 
-MODULES=	x11/qt4
-CONFIGURE_STYLE=qmake
+MODULES=	devel/qmake x11/qt4
 NO_TEST=	Yes
 
 R = ${WRKSRC}/resources/lin/yubikey-personalization-gui

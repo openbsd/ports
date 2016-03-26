@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		constructive solid geometry rendering library
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		GL GLEW lib/qt4/QtGui m stdc++ pthread
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 SEPARATE_BUILD =	No
 
 LIB_DEPENDS =		graphics/glew

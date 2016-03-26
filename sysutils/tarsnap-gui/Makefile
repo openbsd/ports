@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/07 10:52:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT = 		frontend to the popular Tarsnap backup service
 
@@ -19,8 +19,7 @@ GH_ACCOUNT =		Tarsnap
 GH_PROJECT =		tarsnap-gui
 GH_TAGNAME =		v${V}
 
-MODULES =		x11/qt5
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt5
 RUN_DEPENDS =		sysutils/tarsnap
 
 do-install:

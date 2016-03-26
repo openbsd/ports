@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/07 13:30:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -26,9 +26,9 @@ WANTLIB += freetype gsasl ircclient protobuf sqlite3 ssl tinyxml
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 MODULES=	converters/libiconv \
+		devel/qmake \
 		x11/qt4
 
-CONFIGURE_STYLE=	qmake
 MODQMAKE_PROJECTS=	pokerth.pro
 
 RUN_DEPENDS=	devel/desktop-file-utils

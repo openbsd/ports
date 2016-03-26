@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =	OAuth support library for Qt-based applications
 V =		1.0.1
@@ -17,8 +17,7 @@ WANTLIB =		lib/qt4/QtNetwork m pthread qca2 stdc++
 MASTER_SITES =		http://files.ayoy.net/qoauth/$V/
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 SEPARATE_BUILD =	No
 MODQMAKE_ARGS =		PREFIX=${PREFIX}
 

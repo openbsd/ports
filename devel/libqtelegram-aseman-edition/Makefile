@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/07 10:36:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/26 20:37:35 zhuk Exp $
 
 V =		4.1
 COMMENT =	Qt5 library for Telegram messaging service
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network crypto m
 WANTLIB += pthread ssl z
 
-MODULES =	x11/qt5
-CONFIGURE_STYLE =	qmake
+MODULES =	devel/qmake x11/qt5
 
 NO_TEST =	Yes
 

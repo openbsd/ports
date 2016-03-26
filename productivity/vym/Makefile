@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/07 11:14:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -17,9 +17,8 @@ WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread
 
 MODULES=	devel/gettext \
+		devel/qmake \
 		x11/qt5
-
-CONFIGURE_STYLE=	qmake
 
 RUN_DEPENDS=	archivers/zip \
 		archivers/unzip \

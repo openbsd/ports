@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/07 12:51:49 zhuk Exp $ 
+# $OpenBSD: Makefile,v 1.4 2016/03/26 20:37:35 zhuk Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
@@ -15,8 +15,7 @@ WANTLIB += pthread stdc++
 MASTER_SITES = 		http://jag.xlabsoft.com/files/
 DISTFILES = 		jag-${V}-src.zip jag-${V}-data.zip
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 BUILD_DEPENDS = 	archivers/unzip
 LIB_DEPENDS =		devel/sdl \
 			devel/sdl-mixer

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -19,8 +19,7 @@ WANTLIB +=		lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=		lib/qt4/QtXml m opus portaudio protobuf
 WANTLIB +=		pthread sndfile speex speexdsp ssl stdc++
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		audio/celt07 \

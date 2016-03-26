@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/07 12:37:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		tile map editor
 
@@ -23,8 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tiled/}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 
 # XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
 DPB_PROPERTIES =	nojunk

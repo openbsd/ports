@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/07 14:51:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -17,11 +17,11 @@ WANTLIB += freetype m pthread stdc++
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	lang/python \
+MODULES=	devel/qmake \
+		lang/python \
 		x11/qt4
 BUILD_DEPENDS=	devel/bison
 
-CONFIGURE_STYLE= qmake
 SEPARATE_BUILD=	No
 
 MODPY_ADJ_FILES= ../bin/termdiff

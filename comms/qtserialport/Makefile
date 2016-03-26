@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/07 12:01:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -20,8 +20,7 @@ MASTER_SITES =		https://deftly.net/
 # This lib is included in later versions of QT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}
 NO_TEST =		Yes
 

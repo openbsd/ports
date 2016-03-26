@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =		GnuPG plugin for QCA2
 DISTNAME =		qca-gnupg-2.0.0-beta3
@@ -14,8 +14,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += m pthread qca2 stdc++
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 
 LIB_DEPENDS =		security/qca2
 

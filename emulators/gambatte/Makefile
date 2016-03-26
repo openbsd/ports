@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/09 17:24:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -30,10 +30,10 @@ WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio us
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 
-MODULES =		lang/python x11/qt4
+MODULES =		devel/qmake lang/python x11/qt4
 MODQMAKE_PROJECTS =	gambatte_qt
 SEPARATE_BUILD =	No
-CONFIGURE_STYLE =	qmake specific		# avoid qt4.port.mk add do-build
+CONFIGURE_STYLE =	qmake specific		# avoid qmake.port.mk add do-build
 
 LIB_DEPENDS-main =	devel/sdl
 

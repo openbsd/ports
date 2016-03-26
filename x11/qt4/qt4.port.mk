@@ -1,4 +1,4 @@
-# $OpenBSD: qt4.port.mk,v 1.11 2016/03/10 17:45:11 zhuk Exp $
+# $OpenBSD: qt4.port.mk,v 1.12 2016/03/26 20:37:35 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -42,5 +42,3 @@ WANTLIB += 		${MODQT4_WANTLIB}
 CONFIGURE_ENV +=${_MODQT4_SETUP}
 MAKE_ENV +=	${_MODQT4_SETUP}
 MAKE_FLAGS +=	${_MODQT4_SETUP}
-
-MODULES +=	devel/qmake

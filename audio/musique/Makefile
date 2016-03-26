@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/10 17:27:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
@@ -16,7 +16,7 @@ WANTLIB += ICE QtDBus QtGui QtNetwork QtSql QtXml SM
 WANTLIB += X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m phonon pthread stdc++ tag
 
-MODULES =	x11/qt4
+MODULES =	devel/qmake x11/qt4
 
 LIB_DEPENDS =	audio/taglib
 
@@ -24,8 +24,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		x11/gtk+3,-guic
-
-CONFIGURE_STYLE =	qmake
 
 WRKDIST =	${WRKDIR}/musique
 NO_TEST =	Yes

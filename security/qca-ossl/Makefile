@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =		SSL/TLS plugin for QCA2
 DISTNAME =		qca-ossl-2.0.0-beta3
@@ -17,8 +17,7 @@ MASTER_SITES =		http://delta.affinix.com/download/qca/2.0/plugins/
 EXTRACT_SUFX =		.tar.bz2
 
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 LIB_DEPENDS =		security/qca2
 
 NO_TEST =		Yes

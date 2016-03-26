@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT=	simple Qt4-based browser using WebKit
 
@@ -19,9 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += QtGui QtNetwork QtScript QtSql QtWebKit c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
-MODULES=	x11/qt4
-
-CONFIGURE_STYLE=	qmake
+MODULES=	devel/qmake x11/qt4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \

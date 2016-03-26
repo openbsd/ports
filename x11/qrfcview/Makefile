@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/08 14:36:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -20,10 +20,9 @@ GH_ACCOUNT=	saghul
 GH_PROJECT=	qrfcview-osx
 GH_COMMIT=	dff3ee489a6aca0c20800219f7c207884f918023
 
-MODULES=	x11/qt4
-NO_TEST=	Yes
+MODULES=	devel/qmake x11/qt4
 
-CONFIGURE_STYLE=	qmake
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qRFCView ${PREFIX}/bin

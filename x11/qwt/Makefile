@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/18 23:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-5.2.1
 SHARED_LIBS =		qwt 6.0
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://qwt.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
@@ -14,8 +14,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 # http://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
 MODQMAKE_INSTALL_ROOT =
 NO_TEST =		Yes
 USE_GMAKE =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/10 16:07:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -36,7 +36,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MULTI_PACKAGES=		-main -tk -qt
 
-MODULES=		x11/tk x11/qt4
+MODULES=		devel/qmake x11/tk x11/qt4
 MODQMAKE_PROJECTS =	gui/app.pro
 SEPARATE_BUILD=		No
 

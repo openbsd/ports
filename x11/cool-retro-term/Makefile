@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/10 17:24:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 DISTNAME =	cool-retro-term-1.0.0
@@ -15,8 +15,7 @@ WANTLIB += Qt5Widgets c m pthread
 
 MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
-MODULES =		x11/qt5
-CONFIGURE_STYLE =	qmake
+MODULES =	devel/qmake x11/qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/07 12:28:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
@@ -18,10 +18,8 @@ LIB_DEPENDS =	textproc/aspell/core
 WANTLIB += c m pthread stdc++ z QtGui QtXml aspell
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
-MODULES =	x11/qt4
+MODULES =	devel/qmake x11/qt4
 CONFIGURE_ENV =	USE_ASPELL=true USE_HUNSPELL=false
-
-CONFIGURE_STYLE =	qmake
 
 NO_TEST =	Yes
 

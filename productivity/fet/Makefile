@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/07 13:58:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT=		automatically create timetables
 
@@ -20,11 +20,8 @@ MASTER_SITES=		${HOMEPAGE}/download/ \
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
+			devel/qmake \
 			x11/qt4
-
-CONFIGURE_STYLE=	qmake
-
-LIB_DEPENDS=		x11/qt4
 
 PORTHOME=		${WRKDIR}
 

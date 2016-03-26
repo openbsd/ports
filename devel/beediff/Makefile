@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/07 12:06:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT=	graphical file comparator
 
@@ -20,9 +20,8 @@ WANTLIB += lib/qt4/QtGui ICE SM Xi Xinerama Xrender fontconfig freetype
 WRKDIST=	${WRKDIR}/beediff
 
 MODULES=	devel/gettext \
+		devel/qmake \
 		x11/qt4
-
-CONFIGURE_STYLE=	qmake
 
 NO_TEST=	Yes
 

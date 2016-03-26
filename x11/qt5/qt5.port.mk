@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.10 2016/03/10 17:45:11 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.11 2016/03/26 20:37:35 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -86,5 +86,3 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
   MODGCC4_LANGS +=	c++
   MODGCC4_ARCHS ?=	*
 .endif
-
-MODULES +=	devel/qmake

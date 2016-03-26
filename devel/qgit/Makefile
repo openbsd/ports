@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/07 12:19:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =	qt git repository viewer
 
@@ -17,8 +17,7 @@ WANTLIB += freetype m pthread stdc++
 
 MASTER_SITES =	http://libre.tibirna.org/attachments/download/9/
 
-MODULES =	x11/qt4
-CONFIGURE_STYLE=qmake
+MODULES =	devel/qmake x11/qt4
 
 RUN_DEPENDS =	devel/git
 

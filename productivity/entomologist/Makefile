@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/07 13:16:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
@@ -11,10 +11,8 @@ HOMEPAGE =	http://entomologist.sourceforge.net
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	x11/qt4
+MODULES =	devel/qmake x11/qt4
 
-CONFIGURE_STYLE =	qmake
-QMAKE_ARGS =		LOCALE_PREFIX=${PREFIX}
 SEPARATE_BUILD =	No
 
 RUN_DEPENDS =	devel/desktop-file-utils \

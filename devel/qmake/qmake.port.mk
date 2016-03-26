@@ -1,4 +1,8 @@
-# $OpenBSD: qmake.port.mk,v 1.1 2016/03/10 17:45:11 zhuk Exp $
+# $OpenBSD: qmake.port.mk,v 1.2 2016/03/26 20:37:34 zhuk Exp $
+
+.if empty(CONFIGURE_STYLE)
+CONFIGURE_STYLE =	qmake
+.endif
 
 .if ${CONFIGURE_STYLE:Mqmake}
 . if ${MODULES:Mx11/qt?} == ${MODULES}

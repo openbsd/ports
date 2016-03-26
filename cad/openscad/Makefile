@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/07 12:24:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
@@ -23,6 +23,7 @@ MASTER_SITES =		http://files.openscad.org/
 DISTFILES =		openscad-${V}.src.tar.gz
 
 MODULES =		devel/gettext \
+			devel/qmake \
 			x11/qt4
 BUILD_DEPENDS =		devel/bison \
 			math/eigen3
@@ -38,7 +39,6 @@ LIB_DEPENDS =		devel/boost \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			fonts/liberation-fonts
 
-CONFIGURE_STYLE =	qmake
 MODQMAKE_ARGS =		VERSION=${V}
 SEPARATE_BUILD =	No
 

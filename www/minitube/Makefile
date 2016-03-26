@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/07 14:54:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.46 2016/03/26 20:37:36 zhuk Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -15,9 +15,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	https://distfiles.bsdfrog.org/
 
-MODULES =	x11/qt4
-
-CONFIGURE_STYLE =	qmake
+MODULES =	devel/qmake x11/qt4
 
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB +=	freetype lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

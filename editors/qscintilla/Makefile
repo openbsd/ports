@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/07 12:27:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =	Qt4 port of the Scintilla source code editor
 
@@ -20,9 +20,8 @@ WANTLIB += freetype m pthread stdc++
 
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
-MODULES = devel/gettext x11/qt4
+MODULES =	devel/gettext devel/qmake x11/qt4
 
-CONFIGURE_STYLE =	qmake
 SEPARATE_BUILD =	No
 
 CONFIGURE_ENV =	HOME=${WRKDIR}

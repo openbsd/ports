@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/07 12:41:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.5
@@ -18,8 +18,7 @@ WANTLIB += ICE QtGui QtNetwork QtScript QtWebKit QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.3
 WANTLIB += m poppler-qt4 pthread stdc++ z
 
-MODULES=		x11/qt4
-CONFIGURE_STYLE=	qmake
+MODULES=		devel/qmake x11/qt4
 MODQMAKE_ARGS=		DESKTOPDIR=${LOCALBASE}/share/applications \
 			ICONDIR=${LOCALBASE}/share/pixmaps
 

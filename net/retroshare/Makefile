@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT =		secure decentralised communication platform
 V = 			0.5.5c
@@ -17,8 +17,8 @@ WANTLIB += 	freetype gpgme gnome-keyring ixml m pthread protobuf speex
 WANTLIB += 	speexdsp ssh ssh_threads ssl stdc++ upnp xml2 xslt z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retroshare/RetroShare/${V}/}
-MODULES =		x11/qt4
-CONFIGURE_STYLE =	qmake
+MODULES =		devel/qmake x11/qt4
+
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/speex \

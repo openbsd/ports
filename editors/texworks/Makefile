@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/26 20:37:35 zhuk Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -25,10 +25,11 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		x11/qt4 \
+MODULES =		devel/qmake \
 			lang/python \
-			lang/lua
-CONFIGURE_STYLE =	qmake
+			lang/lua \
+			x11/qt4
+
 MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
 			plugins-src/TWPythonPlugin/TWPythonPlugin.pro \
 			TeXworks.pro
