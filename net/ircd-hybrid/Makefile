@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/26 14:39:11 ajacoutot Exp $
 
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.15
+DISTNAME =	ircd-hybrid-8.2.16
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
@@ -23,7 +23,8 @@ SUBST_VARS +=	CONFDIR LOGDIR
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --disable-libgeoip
+CONFIGURE_ARGS = --disable-gnutls \
+		 --disable-libgeoip
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
