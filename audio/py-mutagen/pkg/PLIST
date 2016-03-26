@@ -1,89 +1,102 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/03 06:37:26 jasper Exp $
-bin/mid3cp
-bin/mid3iconv
-bin/mid3v2
-bin/moggsplit
-bin/mutagen-inspect
-bin/mutagen-pony
+@comment $OpenBSD: PLIST,v 1.7 2016/03/26 15:00:33 sthen Exp $
+bin/mid3cp${MODPY_BIN_SUFFIX}
+bin/mid3iconv${MODPY_BIN_SUFFIX}
+bin/mid3v2${MODPY_BIN_SUFFIX}
+bin/moggsplit${MODPY_BIN_SUFFIX}
+bin/mutagen-inspect${MODPY_BIN_SUFFIX}
+bin/mutagen-pony${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/mutagen/
 lib/python${MODPY_VERSION}/site-packages/mutagen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_mp3util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_toolsutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}_vorbis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}aac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}aiff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}apev2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}easyid3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}easymp4.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}flac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}m4a.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}monkeysaudio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}mp3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}musepack.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}ogg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggflac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggopus.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggspeex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggtheora.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}oggvorbis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}optimfrog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}trueaudio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/${MODPY_PYCACHE}wavpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_compat.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_constants.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_file.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_file.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_mp3util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_toolsutil.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_toolsutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/aac.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/aac.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/aiff.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/apev2.pyc
-lib/python${MODPY_VERSION}/site-packages/mutagen/asf.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/asf.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}_attrs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}_objects.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/_attrs.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/_objects.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/asf/_util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/easyid3.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/easyid3.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/easymp4.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/easymp4.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/flac.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/flac.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}_frames.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}_specs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/id3/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_frames.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_frames.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_specs.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_specs.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_util.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/id3/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/m4a.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/monkeysaudio.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp3.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}_as_entry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}_atom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_as_entry.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_as_entry.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_atom.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_atom.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_util.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/mp4/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/musepack.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/ogg.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/ogg.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggflac.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/oggflac.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggopus.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/oggopus.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggspeex.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/oggspeex.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggtheora.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/oggtheora.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/oggvorbis.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/oggvorbis.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/optimfrog.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/optimfrog.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/trueaudio.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.py
-lib/python${MODPY_VERSION}/site-packages/mutagen/wavpack.pyc
-@man man/man1/mid3cp.1
-@man man/man1/mid3iconv.1
-@man man/man1/mid3v2.1
-@man man/man1/moggsplit.1
-@man man/man1/mutagen-inspect.1
-@man man/man1/mutagen-pony.1
+@man man/man1/mid3cp${MODPY_BIN_SUFFIX}.1
+@man man/man1/mid3iconv${MODPY_BIN_SUFFIX}.1
+@man man/man1/mid3v2${MODPY_BIN_SUFFIX}.1
+@man man/man1/moggsplit${MODPY_BIN_SUFFIX}.1
+@man man/man1/mutagen-inspect${MODPY_BIN_SUFFIX}.1
+@man man/man1/mutagen-pony${MODPY_BIN_SUFFIX}.1
