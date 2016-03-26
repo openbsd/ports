@@ -1,19 +1,18 @@
-# $OpenBSD: qmake.port.mk,v 1.2 2016/03/26 20:37:34 zhuk Exp $
+# $OpenBSD: qmake.port.mk,v 1.3 2016/03/26 21:03:03 zhuk Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
 .endif
 
-.if ${CONFIGURE_STYLE:Mqmake}
-. if ${MODULES:Mx11/qt?} == ${MODULES}
+.if ${MODULES:Mx11/qt?} == ${MODULES}
 ERRORS +=	qmake port module requires one of the x11/qt* modules
-. endif
+.endif
 
 MAKE_FLAGS +=	CC="${CC}" CXX="${CXX}"
 MAKE_FLAGS +=	PREFIX=${PREFIX}
-. for _l _v in ${SHARED_LIBS}
+.for _l _v in ${SHARED_LIBS}
 MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
-. endfor
+.endfor
 
 MODQMAKE_PROJECTS ?=	.
 MODQMAKE_ARGS +=	-recursive \
@@ -30,7 +29,7 @@ _MODQMAKE_FAKE_FLAGS =		INSTALL_ROOT=${MODQMAKE_INSTALL_ROOT}
 MODQMAKE_configure =
 MODQMAKE_build =
 MODQMAKE_install =
-. for _qp in ${MODQMAKE_PROJECTS}
+.for _qp in ${MODQMAKE_PROJECTS}
 _MODQMAKE_CD_${_qp:/=_} = \
 	cd ${WRKBUILD}; \
 	if [ -d ${WRKSRC}/${_qp} ]; then \
@@ -61,8 +60,9 @@ MODQMAKE_install += \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQMAKE_FAKE_FLAGS} \
 		-f Makefile ${FAKE_TARGET};
-. endfor
+.endfor
 
+.if ${CONFIGURE_STYLE:Mqmake}
 SEPARATE_BUILD ?=	Yes
 . if ${SEPARATE_BUILD:L} != "no"
 .  if ${SEPARATE_BUILD:L} != "yes"
