@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/16 16:29:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/26 12:15:17 danj Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}mpd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}mpd_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpd.py
+lib/python${MODPY_VERSION}/site-packages/mpd_test.py
 lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

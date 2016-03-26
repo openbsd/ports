@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/10 15:55:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/26 12:15:17 danj Exp $
 
 COMMENT =		Python client interface for MPD
 
-MODPY_EGG_VERSION =	0.5.4
+MODPY_EGG_VERSION =	0.5.5
 DISTNAME =		python-mpd2-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd2-${MODPY_EGG_VERSION}
 
@@ -20,7 +20,9 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-# too many missing dependencies
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+
+do-test:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/python${MODPY_VERSION} mpd_test.py
 
 .include <bsd.port.mk>
