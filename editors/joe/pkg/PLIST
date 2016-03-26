@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/10/03 17:58:07 jca Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/03/26 17:04:18 danj Exp $
 bin/jmacs
 @bin bin/joe
 bin/jpico
@@ -87,6 +87,8 @@ share/joe/syntax/debian.jsf
 @sample ${SYSCONFDIR}/joe/syntax/debian.jsf
 share/joe/syntax/diff.jsf
 @sample ${SYSCONFDIR}/joe/syntax/diff.jsf
+share/joe/syntax/dockerfile.jsf
+@sample ${SYSCONFDIR}/joe/syntax/dockerfile.jsf
 share/joe/syntax/elixir.jsf
 @sample ${SYSCONFDIR}/joe/syntax/elixir.jsf
 share/joe/syntax/erb.jsf
