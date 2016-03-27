@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.14 2015/10/11 17:33:33 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.15 2016/03/27 13:48:41 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=755655
+From af3ce0bc6552923d6449a233b8887da1e2072411 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 14 Oct 2015 21:15:11 +0200
+Subject: Adapt to new GKqueue monitor naming.
 
 --- src/libtracker-miner/tracker-monitor.c.orig	Sun Oct 11 18:42:32 2015
 +++ src/libtracker-miner/tracker-monitor.c	Sun Oct 11 18:45:19 2015
