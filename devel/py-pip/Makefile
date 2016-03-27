@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/17 22:05:07 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/27 11:10:15 danj Exp $
 
 COMMENT =		Python easy_install replacement
 
-MODPY_EGG_VERSION =	8.1.0
+MODPY_EGG_VERSION =	8.1.1
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
