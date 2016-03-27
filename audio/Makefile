@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.367 2016/03/26 15:00:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.368 2016/03/27 11:13:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -71,6 +71,7 @@
      SUBDIR += lame
      SUBDIR += liba52
      SUBDIR += libao
+     SUBDIR += libbs2b
      SUBDIR += libcanberra
      SUBDIR += libcdaudio
      SUBDIR += libcddb
