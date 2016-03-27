@@ -1,0 +1,9 @@
+A typical stereo recording is made for reproduction on loudspeakers. That is,
+the stereo mix is often made with the assumption that sound from one channel
+will be heard in both ears. This is not usually the case with headphone
+reproduction. The Bauer stereophonic-to-binaural DSP (bs2b) is designed to
+improve headphone listening of stereo audio recordings by reproducing this
+effect: some of the sound from each channel also goes to the opposite ear,
+arriving a short time later (as extra distance is travelled), with a bit of
+high frequency roll-off for the shadowing effect of the head, and additional
+time delay for low frequencies than high frequencies.
