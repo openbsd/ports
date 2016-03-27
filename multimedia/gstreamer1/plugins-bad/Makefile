@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2016/03/01 20:09:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/27 12:08:19 sthen Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gstphotography-1.0   2.0      # 602.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 2.0      # 602.0
@@ -19,7 +19,7 @@ SHARED_LIBS +=  gstbadvideo-1.0      1.0      # 602.0
 
 WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm ass atk-1.0 atk-bridge-2.0 atspi bz2 cairo
+WANTLIB += Xxf86vm ass atk-1.0 atk-bridge-2.0 atspi bs2b bz2 cairo
 WANTLIB += cairo-gobject croco-0.6 dbus-1 drm epoxy expat ffi
 WANTLIB += fontconfig freetype fribidi gbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
@@ -39,6 +39,7 @@ BUILD_DEPENDS=		devel/gobject-introspection
 BUILD_DEPENDS +=	graphics/libexif
 
 LIB_DEPENDS=		${P}/plugins-base=${V} \
+			audio/libbs2b \
 			audio/opus \
 			audio/soundtouch \
 			multimedia/libass \
@@ -54,7 +55,6 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-apple_media \
 			--disable-avc \
 			--disable-bluez \
-			--disable-bs2b \
 			--disable-chromaprint \
 			--disable-cocoa \
 			--disable-curl \
