@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/03/08 16:14:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.103 2016/03/27 16:16:50 zhuk Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -80,9 +80,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${BUILD_PACKAGES:M-qt}
-MODULES+=		x11/qt5
+MODULES+=		devel/qmake x11/qt5
 MODQMAKE_PROJECTS=	qt/qtr.pro
-CONFIGURE_STYLE+=	qmake
 SEPARATE_BUILD=		No
 MODQMAKE_INSTALL_ROOT=	${PREFIX}
 .else
