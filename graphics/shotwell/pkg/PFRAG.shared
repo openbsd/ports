@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2012/09/24 20:32:49 jasper Exp $
-lib/shotwell/plugins/builtin/shotwell-data-imports.so
-lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
-lib/shotwell/plugins/builtin/shotwell-publishing.so
-lib/shotwell/plugins/builtin/shotwell-transitions.so

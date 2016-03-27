@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:13 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2016/03/27 15:31:23 naddy Exp $
 @bin bin/mcs-getconfval
 @bin bin/mcs-info
 @bin bin/mcs-query-backends
@@ -7,5 +6,7 @@
 @bin bin/mcs-walk-config
 include/libmcs/
 include/libmcs/mcs.h
+@lib lib/libmcs.so.${LIBmcs_VERSION}
 lib/mcs/
+lib/mcs/keyfile.so
 lib/pkgconfig/libmcs.pc

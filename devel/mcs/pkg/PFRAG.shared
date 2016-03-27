@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2009/01/14 21:07:17 fgsch Exp $
-@lib lib/libmcs.so.${LIBmcs_VERSION}
-lib/mcs/keyfile.so

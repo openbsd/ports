@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/29 12:45:04 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/27 15:31:24 naddy Exp $
 
 COMMENT =		open source MPI-2 implementation
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -6,7 +6,7 @@ BROKEN-powerpc =	checking if Fortran 77 compiler works... no
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \

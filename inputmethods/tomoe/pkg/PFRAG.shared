@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2015/01/09 16:46:49 ajacoutot Exp $
-lib/tomoe/module/dict/xml.so
-lib/tomoe/module/recognizer/simple.so

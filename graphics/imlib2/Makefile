@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/27 15:31:24 naddy Exp $
 
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.4.7
+REVISION=	0
 SHARED_LIBS=	Imlib2	6.0	# .5.7
 CATEGORIES=	graphics
 

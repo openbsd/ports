@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/12/28 19:54:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/27 15:31:23 naddy Exp $
 @newgroup _couchdb:621
 @newuser _couchdb:621:_couchdb:daemon:CouchDB account:/var/couchdb:/bin/sh
-%%SHARED%%
 bin/couch-config
 bin/couchdb
 bin/couchjs
@@ -74,8 +73,10 @@ lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/couchspawnkillable
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_ejson_compare.a
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_ejson_compare.la
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_ejson_compare.so
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_icu_driver.a
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_icu_driver.la
+lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/lib/couch_icu_driver.so
 lib/couchdb/erlang/lib/couch-${COUCH_VER}/priv/stat_descriptions.cfg
 lib/couchdb/erlang/lib/couch_dbupdates-0.1/
 lib/couchdb/erlang/lib/couch_dbupdates-0.1/ebin/
@@ -133,6 +134,7 @@ lib/couchdb/erlang/lib/ejson-0.1.0/ebin/mochinum.beam
 lib/couchdb/erlang/lib/ejson-0.1.0/priv/
 lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.a
 lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.la
+lib/couchdb/erlang/lib/ejson-0.1.0/priv/ejson.so
 lib/couchdb/erlang/lib/erlang-oauth/
 lib/couchdb/erlang/lib/erlang-oauth/ebin/
 lib/couchdb/erlang/lib/erlang-oauth/ebin/oauth.app
@@ -194,6 +196,7 @@ lib/couchdb/erlang/lib/snappy-1.0.5/ebin/snappy.beam
 lib/couchdb/erlang/lib/snappy-1.0.5/priv/
 lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.a
 lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.la
+lib/couchdb/erlang/lib/snappy-1.0.5/priv/snappy_nif.so
 @man man/man1/couchdb.1
 @man man/man1/couchjs.1
 share/couchdb/

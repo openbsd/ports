@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/22 17:32:31 zhuk Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2016/03/27 15:31:23 naddy Exp $
 @bin bin/inifile
 @bin bin/isql
 @bin bin/isqlw
@@ -29,15 +28,20 @@ lib/virtuoso/
 lib/virtuoso/hosting/
 lib/virtuoso/hosting/im.a
 lib/virtuoso/hosting/im.la
+lib/virtuoso/hosting/im.so
 lib/virtuoso/plugins/
 lib/virtuoso/plugins/virtodbc.a
 lib/virtuoso/plugins/virtodbc.la
+lib/virtuoso/plugins/virtodbc.so
 lib/virtuoso/plugins/virtodbc_r.a
 lib/virtuoso/plugins/virtodbc_r.la
+lib/virtuoso/plugins/virtodbc_r.so
 lib/virtuoso/plugins/virtodbcu.a
 lib/virtuoso/plugins/virtodbcu.la
+lib/virtuoso/plugins/virtodbcu.so
 lib/virtuoso/plugins/virtodbcu_r.a
 lib/virtuoso/plugins/virtodbcu_r.la
+lib/virtuoso/plugins/virtodbcu_r.so
 share/doc/virtuoso/
 share/doc/virtuoso/AUTHORS
 share/doc/virtuoso/COPYING
