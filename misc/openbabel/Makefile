@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/27 20:53:15 naddy Exp $
 
 COMMENT=	chemistry file translation program
 
 V=		2.2.3
 DISTNAME=	openbabel-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	misc
 
 SUBST_VARS=	V

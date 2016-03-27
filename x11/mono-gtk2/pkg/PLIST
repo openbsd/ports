@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/21 14:52:59 robert Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2016/03/27 20:53:16 naddy Exp $
 bin/gapi2-codegen
 bin/gapi2-fixup
 bin/gapi2-parser
@@ -11,16 +10,22 @@ lib/gtk-sharp-2.0/gapi_codegen.exe
 lib/gtk-sharp-2.0/gapi_pp.pl
 lib/libatksharpglue-2.a
 lib/libatksharpglue-2.la
+lib/libatksharpglue-2.so
 lib/libgdksharpglue-2.a
 lib/libgdksharpglue-2.la
+lib/libgdksharpglue-2.so
 lib/libgladesharpglue-2.a
 lib/libgladesharpglue-2.la
+lib/libgladesharpglue-2.so
 lib/libglibsharpglue-2.a
 lib/libglibsharpglue-2.la
+lib/libglibsharpglue-2.so
 lib/libgtksharpglue-2.a
 lib/libgtksharpglue-2.la
+lib/libgtksharpglue-2.so
 lib/libpangosharpglue-2.a
 lib/libpangosharpglue-2.la
+lib/libpangosharpglue-2.so
 lib/mono/gac/atk-sharp/
 lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/
 lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/09/20 08:39:35 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/27 20:53:15 naddy Exp $
 
 COMMENT =		GTK+2 file manager
 
 DISTNAME =		emelfm2-0.9.1
+REVISION =		0
 
 CATEGORIES =		x11
 HOMEPAGE =		http://emelfm2.net/

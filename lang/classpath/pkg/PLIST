@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/10/19 22:28:41 kurt Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2016/03/27 20:53:15 naddy Exp $
 bin/gappletviewer
 bin/gjar
 bin/gjarsigner
@@ -24,26 +23,37 @@ include/classpath/jni_md.h
 lib/classpath/
 lib/classpath/libgconfpeer.a
 lib/classpath/libgconfpeer.la
+lib/classpath/libgconfpeer.so
 lib/classpath/libgtkpeer.a
 lib/classpath/libgtkpeer.la
+lib/classpath/libgtkpeer.so
 lib/classpath/libjavaio.a
 lib/classpath/libjavaio.la
+@lib lib/classpath/libjavaio.so.${LIBjavaio_VERSION}
 lib/classpath/libjavalang.a
 lib/classpath/libjavalang.la
+@lib lib/classpath/libjavalang.so.${LIBjavalang_VERSION}
 lib/classpath/libjavalangmanagement.a
 lib/classpath/libjavalangmanagement.la
+@lib lib/classpath/libjavalangmanagement.so.${LIBjavalangmanagement_VERSION}
 lib/classpath/libjavalangreflect.a
 lib/classpath/libjavalangreflect.la
+@lib lib/classpath/libjavalangreflect.so.${LIBjavalangreflect_VERSION}
 lib/classpath/libjavamath.a
 lib/classpath/libjavamath.la
+lib/classpath/libjavamath.so
 lib/classpath/libjavanet.a
 lib/classpath/libjavanet.la
+@lib lib/classpath/libjavanet.so.${LIBjavanet_VERSION}
 lib/classpath/libjavanio.a
 lib/classpath/libjavanio.la
+@lib lib/classpath/libjavanio.so.${LIBjavanio_VERSION}
 lib/classpath/libjavautil.a
 lib/classpath/libjavautil.la
+@lib lib/classpath/libjavautil.so.${LIBjavautil_VERSION}
 lib/classpath/libjawt.a
 lib/classpath/libjawt.la
+lib/classpath/libjawt.so
 lib/classpath/logging.properties
 lib/classpath/security/
 lib/classpath/security/classpath.security

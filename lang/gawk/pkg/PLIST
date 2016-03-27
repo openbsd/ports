@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/05/26 19:17:00 rpe Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.14 2016/03/27 20:53:15 naddy Exp $
 bin/awk
 @bin bin/gawk
 @bin bin/gawk-${V}
@@ -7,6 +6,19 @@ bin/igawk
 include/gawkapi.h
 @info info/gawk.info
 @info info/gawkinet.info
+lib/gawk/
+lib/gawk/filefuncs.so
+lib/gawk/fnmatch.so
+lib/gawk/fork.so
+lib/gawk/inplace.so
+lib/gawk/ordchr.so
+lib/gawk/readdir.so
+lib/gawk/readfile.so
+lib/gawk/revoutput.so
+lib/gawk/revtwoway.so
+lib/gawk/rwarray.so
+lib/gawk/testext.so
+lib/gawk/time.so
 libexec/awk/
 @bin libexec/awk/grcat
 @bin libexec/awk/pwcat

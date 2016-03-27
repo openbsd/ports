@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/06/20 19:31:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/27 20:53:15 naddy Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
 COMMENT=	Portable Forth Environment
 
 DISTNAME=	pfe-0.33.71
+REVISION=	0
 CATEGORIES=    	lang
 
 SHARED_LIBS +=  pfe                  33.71    # .33.71

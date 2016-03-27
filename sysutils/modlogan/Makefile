@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/03/17 23:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/27 20:53:15 naddy Exp $
 
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
-REVISION=	6
+REVISION=	7
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/28 09:48:54 bentley Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2016/03/27 20:53:15 naddy Exp $
 @bin bin/automappingconverter
 @bin bin/tiled
 @bin bin/tmxrasterizer
@@ -7,6 +6,13 @@
 @lib lib/libtiled.so.${LIBtiled_VERSION}
 lib/tiled/
 lib/tiled/plugins/
+lib/tiled/plugins/libdroidcraft.so
+lib/tiled/plugins/libflare.so
+lib/tiled/plugins/libjson.so
+lib/tiled/plugins/liblua.so
+lib/tiled/plugins/libreplicaisland.so
+lib/tiled/plugins/libtengine.so
+lib/tiled/plugins/libtmw.so
 @man man/man1/automappingconverter.1
 @man man/man1/tiled.1
 @man man/man1/tmxrasterizer.1
