@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/02 17:43:43 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/03/28 14:25:02 semarie Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
 bin/privoxy-log-parser.pl
@@ -111,6 +111,9 @@ share/examples/privoxy/templates/connect-failed
 @owner
 @group
 share/examples/privoxy/templates/connection-timeout
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/connection-timeout
 share/examples/privoxy/templates/default
 @owner _privoxy
 @group _privoxy
@@ -202,6 +205,9 @@ share/examples/privoxy/templates/mod-unstable-warning
 @owner
 @group
 share/examples/privoxy/templates/no-server-data
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/no-server-data
 share/examples/privoxy/templates/no-such-domain
 @owner _privoxy
 @group _privoxy
@@ -257,6 +263,9 @@ share/examples/privoxy/templates/untrusted
 @owner
 @group
 share/examples/privoxy/templates/url-info-osd.xml
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/url-info-osd.xml
 share/examples/privoxy/user.action
 @owner _privoxy
 @group _privoxy
