@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/28 22:42:13 kili Exp $
 
 COMMENT =	Haskell 98 interpreter
 
 DISTNAME =	hugs98-plus-Sep2006
 PKGNAME =	hugs98-2006.09
-REVISION =	2
+REVISION =	3
 CATEGORIES =	lang
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =	http://www.haskell.org/hugs/
