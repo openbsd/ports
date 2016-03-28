@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.105 2016/03/23 16:30:38 zhuk Exp $
+# $OpenBSD: portcheck,v 1.106 2016/03/28 12:40:06 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1320,11 +1320,9 @@ check_plist() {
 		    "devel/gettext dependency in MODULES or RUN_DEPENDS"
 
 	# dbus,-suid
-	if $dbus_suid_dep_needed; then
-		if ! $dbus_suid_dep; then
-			err "${portref}missing" \
-			    "RUN_DEPENDS${subpkg}+=x11/dbus,-suid"
-		fi
+	if $dbus_suid_dep_needed && ! $dbus_suid_dep; then
+		err "${portref}missing" \
+		    "RUN_DEPENDS${subpkg}+=x11/dbus,-suid"
 	fi
 
 	# Haskell register/unregister
