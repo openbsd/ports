@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/28 11:05:22 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/28 21:37:25 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
-DISTNAME=	sslsplit-0.4.11
-REVISION=	1
+DISTNAME=	sslsplit-0.5.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security
@@ -21,8 +20,8 @@ WANTLIB += pthread ssl
 MASTER_SITES=	https://mirror.roe.ch/rel/sslsplit/
 
 LIB_DEPENDS=	devel/libevent2
-# following is expected with MALLOC_FLAGS J:
-# "cert.t.c:66:F:cert_refcount_inc:cert_refcount_inc_01:0: refcount mismatch"
+# following is expected unless MALLOC_FLAGS includes 'j':
+# "cert.t.c:65:F:cert_refcount_inc:cert_refcount_inc_01:0: refcount mismatch"
 # the test deliberately does a use-after-free
 TEST_DEPENDS=	devel/check
 MAKE_FLAGS=	MANDIR=man PREFIX=${TRUEPREFIX}

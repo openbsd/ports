@@ -1,0 +1,12 @@
+$OpenBSD: patch-defaults_h,v 1.1 2016/03/28 21:37:25 sthen Exp $
+--- defaults.h.orig	Mon Mar 28 22:33:15 2016
++++ defaults.h	Mon Mar 28 22:33:43 2016
+@@ -38,7 +38,7 @@
+  * overloading nobody with yet another use case.  Using nobody for source
+  * builds makes sense because chances are high that it exists.
+  */
+-#define DFLT_DROPUSER "nobody"
++#define DFLT_DROPUSER "_sslsplit"
+ 
+ /*
+  * Default file and directory modes for newly created files and directories
