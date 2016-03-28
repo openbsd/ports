@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/04 12:21:41 shadchin Exp $
+# $OpenBSD: Makefile,v 1.23 2016/03/28 12:20:33 danj Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.11.3
+MODPY_EGG_VERSION =	0.11.5
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
