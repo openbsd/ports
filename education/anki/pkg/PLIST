@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/03 00:02:56 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/28 13:25:25 gonzalo Exp $
 bin/anki
 lib/python${MODPY_VERSION}/site-packages/anki/
 lib/python${MODPY_VERSION}/site-packages/anki/__init__.py
@@ -69,6 +69,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/bn/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ca/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ca/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ca/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ca@valencia/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ca@valencia/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ca@valencia/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/cs/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/cs/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/cs/LC_MESSAGES/anki.mo
@@ -120,6 +123,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/hr/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/hu/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ia/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ia/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/ia/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/it/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/it/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/it/LC_MESSAGES/anki.mo
@@ -178,6 +184,7 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_fr.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_gl.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_he.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_hu.qm
+lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_it.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_ja.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_ko.qm
 lib/python${MODPY_VERSION}/site-packages/anki/locale/qt_lt.qm
@@ -196,6 +203,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/ro/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sco/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sco/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sco/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/LC_MESSAGES/anki.mo
