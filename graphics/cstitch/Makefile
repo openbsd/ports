@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/15 21:45:11 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/28 09:27:10 zhuk Exp $
 
 COMMENT =		convert images to cross stitch patterns
 
@@ -10,10 +10,8 @@ DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME}-icons{icons}.zip:0
 
 MASTER_SITES0 =		http://sourceforge.net/projects/cstitch/files/Cstitch/Icons/
 
-MODULES =		lang/python x11/qt5
+MODULES =		devel/qmake lang/python x11/qt5
 MODPY_RUNDEP =		No
-
-CONFIGURE_STYLE =       qmake
 
 CATEGORIES =		graphics
 
