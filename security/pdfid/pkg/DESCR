@@ -1,0 +1,4 @@
+PDFiD is not a PDF parser, but it will scan a file to look for certain PDF
+keywords, allowing you to identify PDF documents that contain (for example)
+JavaScript or execute an action when opened. PDFiD will also handle name
+obfuscation.
