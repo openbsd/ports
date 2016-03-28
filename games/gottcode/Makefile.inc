@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2016/03/07 10:14:57 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2016/03/28 09:29:00 zhuk Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -11,6 +11,7 @@ MASTER_SITES ?=	${HOMEPAGE}
 PERMIT_PACKAGE_CDROM =	Yes
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
+MODULES +=	devel/qmake
 QT5 ?=		No
 .if ${QT5} == "Yes"
 MODULES +=	x11/qt5
@@ -24,8 +25,6 @@ WANTLIB +=	QtGui stdc++
 .endif
 WANTLIB +=	c m pthread
 RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
-
-CONFIGURE_STYLE =	qmake
 
 MAKE_FLAGS +=	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS}"
