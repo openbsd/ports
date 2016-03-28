@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2014/09/02 09:24:44 chrisz Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/28 14:48:02 okan Exp $
 
 COMMENT=		curses calendar front-end to remind
 
-DISTNAME=		wyrd-1.4.5
-REVISION=		1
+DISTNAME=		wyrd-1.4.6
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://pessimization.com/software/wyrd/
