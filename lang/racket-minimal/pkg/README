@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2016/03/10 02:35:29 juanfra Exp $
+$OpenBSD: README,v 1.6 2016/03/28 19:08:18 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,8 +10,11 @@ Limitations
 - Racket's JIT only supports CPUs with SSE2 extensions or PowerPC CPUs. There
   is a "no_jit" flavor for i386 and amd64. The JIT on PowerPC is disabled by
   default due to a bug which breaks the build.
+- DrRacket doesn't work correctly with the "no_jit" flavor.
 - Racket is slightly broken here and there on powerpc.
 - FFI is broken on sparc64.
+- Never run "raco pkg" commands as root, even when the commands are suggested
+  by upstream. You're going to break the racket package.
 
 FAQ
 ===
