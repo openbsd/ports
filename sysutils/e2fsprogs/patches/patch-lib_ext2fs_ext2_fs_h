@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_ext2fs_ext2_fs_h,v 1.1 2016/03/28 20:08:56 kili Exp $
+--- lib/ext2fs/ext2_fs.h.orig	Sat Aug  2 22:26:22 2014
++++ lib/ext2fs/ext2_fs.h	Tue Mar 22 22:26:56 2016
+@@ -344,6 +344,7 @@ struct ext4_new_group_input {
+ #define _IOT_ext2_new_group_input _IOT (_IOTS(__u32), 5, _IOTS(__u16), 2, 0, 0)
+ #endif
+ 
++#ifndef __OpenBSD__
+ #define EXT2_IOC_GETFLAGS		_IOR('f', 1, long)
+ #define EXT2_IOC_SETFLAGS		_IOW('f', 2, long)
+ #define EXT2_IOC_GETVERSION		_IOR('v', 1, long)
+@@ -354,6 +355,7 @@ struct ext4_new_group_input {
+ #define EXT2_IOC_GROUP_ADD		_IOW('f', 8,struct ext2_new_group_input)
+ #define EXT4_IOC_GROUP_ADD		_IOW('f', 8,struct ext4_new_group_input)
+ #define EXT4_IOC_RESIZE_FS		_IOW('f', 16, __u64)
++#endif
+ 
+ /*
+  * Structure of an inode on the disk
