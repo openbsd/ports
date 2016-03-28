@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.418 2016/03/25 01:15:43 lteo Exp $
+# $OpenBSD: Makefile,v 1.419 2016/03/28 12:40:49 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -215,6 +215,7 @@
      SUBDIR += pcsc-lite
      SUBDIR += pcsc-tools
      SUBDIR += pdfcrack
+     SUBDIR += pdfid
      SUBDIR += pear-Auth
      SUBDIR += pear-Auth-HTTP
      SUBDIR += pear-Auth-SASL
