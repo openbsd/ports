@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.106 2016/03/28 12:40:06 zhuk Exp $
+# $OpenBSD: portcheck,v 1.107 2016/03/28 15:38:21 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -846,7 +846,7 @@ sub_checks() {
 			local wantlib_var=WANTLIB${subpkg%-}
 			local vars="COMMENT$subpkg FULLPKGNAME$subpkg"
 			vars="$vars MODULES"
-			vars="$vars PKG_ARCH$subpkg $wantlib_var"
+			vars="$vars PKG_ARCH$subpkg $wantlib_var WANTLIB-"
 			vars="$vars PERMIT_PACKAGE_CDROM${subpkg%-}"
 			vars="$vars PERMIT_PACKAGE_FTP${subpkg%-}"
 			make "${make_args[@]}" show="$vars" | {
@@ -857,6 +857,7 @@ sub_checks() {
 				read -r modules
 				read -r pkg_arch
 				read -r wantlib
+				read -r wantlib_ss
 				read -r perm_pkg_cdrom
 				read -r perm_pkg_ftp
 
@@ -866,8 +867,10 @@ sub_checks() {
 				fi
 
 				if [[ $pkg_arch == "*" && -n $wantlib ]]; then
-					err "${portref}non-empty $wantlib_var for" \
-					    "arch-independent package"
+					if [[ $subpkg != - || -n $wantlib_ss ]]; then
+						err "${portref}non-empty $wantlib_var for" \
+						    "arch-independent package"
+					fi
 				fi
 
 				check_wantlib "$portref" "$modules" $wantlib
