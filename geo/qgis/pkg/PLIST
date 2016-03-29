@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/03/02 14:39:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/03/29 15:09:52 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -389,6 +389,7 @@ include/qgis/qgsmultibandcolorrendererwidget.h
 include/qgis/qgsmultirenderchecker.h
 include/qgis/qgsnetworkaccessmanager.h
 include/qgis/qgsnetworkcontentfetcher.h
+include/qgis/qgsnetworkdiskcache.h
 include/qgis/qgsnetworkreplyparser.h
 include/qgis/qgsnewhttpconnection.h
 include/qgis/qgsnewmemorylayerdialog.h
@@ -3105,6 +3106,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.0/Multi-BandVaria
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultiDirectionLeeFilter.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultilevelB-SplineInterpolation(fromGrid).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultilevelB-SplineInterpolation.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultilevelB-SplineInterpolationforCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultipleRegressionAnalysis(GridGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultipleRegressionAnalysis(PointsGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/MultiresolutionIndexofValleyBottomFlatness(MRVBF).txt
@@ -3180,9 +3182,8 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.0/SupervisedClass
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/SurfaceSpecificPoints.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/TPIBasedLandformClassification.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/TerrainRuggednessIndex(TRI).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.0/ThinPlateSpline(Global).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.0/ThinPlateSpline(Local).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/ThinPlateSpline(TIN).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.0/ThinPlateSpline.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/ThresholdBuffer.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/TopographicCorrection.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.0/TopographicPositionIndex(TPI).txt
@@ -3233,6 +3234,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.2/CloseGaps.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/CloseGapswithSpline.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/CloseOneCellGaps.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ClusterAnalysisforGrids.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ConfusionMatrix(GridPolygons).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ContourLinesfromGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ConvergenceIndex(SearchRadius).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ConvergenceIndex.txt
@@ -3255,6 +3257,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DTMFilter(slope
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DirectionalStatisticsforSingleGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DistanceMatrix.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DiurnalAnisotropicHeating.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DiversityOfCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/DownslopeDistanceGradient.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/EdgeContamination.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/EffectiveAirFlowHeights.txt
@@ -3340,6 +3343,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.2/Multi-BandVaria
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultiDirectionLeeFilter.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultilevelB-SplineInterpolation(fromGrid).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultilevelB-SplineInterpolation.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultilevelB-SplineInterpolationforCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultipleRegressionAnalysis(GridGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultipleRegressionAnalysis(PointsGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/MultiresolutionIndexofValleyBottomFlatness(MRVBF).txt
@@ -3415,9 +3419,8 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.2/SupervisedClass
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/SurfaceSpecificPoints.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/TPIBasedLandformClassification.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/TerrainRuggednessIndex(TRI).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ThinPlateSpline(Global).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ThinPlateSpline(Local).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ThinPlateSpline(TIN).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ThinPlateSpline.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/ThresholdBuffer.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/TopographicCorrection.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.2/TopographicPositionIndex(TPI).txt
@@ -3468,6 +3471,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CloseGaps.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CloseGapswithSpline.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CloseOneCellGaps.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ClusterAnalysisforGrids.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConfusionMatrix(GridPolygons).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ContourLinesfromGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvergenceIndex(SearchRadius).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvergenceIndex.txt
@@ -3479,7 +3483,8 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvertPointsto
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvertPolygonLineVerticestoPoints.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvertPolygonstoLines.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ConvexHull.txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CreateGraticule.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CreateLinesGraticule.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CreatePolygonsGraticule.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CropToData.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/Cross-ClassificationandTabulation.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CrossProfiles.txt
@@ -3487,9 +3492,12 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CubicSplineAppr
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CurvatureClassification.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/CutShapesLayer.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DTMFilter(slope-based).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DiffusiveHillslopeEvolution(ADI).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DiffusiveHillslopeEvolution(FTCS).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DirectionalStatisticsforSingleGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DistanceMatrix.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DiurnalAnisotropicHeating.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DiversityOfCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/DownslopeDistanceGradient.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/EdgeContamination.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/EffectiveAirFlowHeights.txt
@@ -3497,6 +3505,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FastRegionGrowi
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FastRepresentativeness.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FillGapsinRecords.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FillSinks(PlanchonDarboux,2001).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FillSinks(QMofESP).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FillSinks(WangLiu).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FillSinksXXL(WangLiu).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FilterClumps.txt
@@ -3504,6 +3513,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FireRiskAnalysi
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FitNPointstoshape.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlatDetection.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlowAccumulation(FlowTracing).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlowAccumulation(QMofESP).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlowAccumulation(Recursive).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlowAccumulation(Top-Down).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/FlowPathLength.txt
@@ -3575,6 +3585,7 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/Multi-BandVaria
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultiDirectionLeeFilter.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultilevelB-SplineInterpolation(fromGrid).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultilevelB-SplineInterpolation.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultilevelB-SplineInterpolationforCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultipleRegressionAnalysis(GridGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultipleRegressionAnalysis(PointsGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/MultiresolutionIndexofValleyBottomFlatness(MRVBF).txt
@@ -3646,13 +3657,13 @@ share/qgis/python/plugins/processing/algs/saga/description/2.2.3/SplitShapesLaye
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/StatisticsforGrids.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/StrahlerOrder.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/StreamPowerIndex.txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/SuccessiveFlowRouting.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/SupervisedClassification.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/SurfaceSpecificPoints.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/TPIBasedLandformClassification.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/TerrainRuggednessIndex(TRI).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ThinPlateSpline(Global).txt
-share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ThinPlateSpline(Local).txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ThinPlateSpline(TIN).txt
+share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ThinPlateSpline.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/ThresholdBuffer.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/TopographicCorrection.txt
 share/qgis/python/plugins/processing/algs/saga/description/2.2.3/TopographicPositionIndex(TPI).txt

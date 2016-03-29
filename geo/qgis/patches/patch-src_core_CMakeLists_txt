@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.12 2016/03/02 14:39:10 landry Exp $
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.13 2016/03/29 15:09:52 landry Exp $
 
 chunk 1: workaround $area expansion issue with gmake expanding to $$$$area
 
---- src/core/CMakeLists.txt.orig	Fri Feb 26 13:23:48 2016
-+++ src/core/CMakeLists.txt	Tue Mar  1 13:51:41 2016
-@@ -340,7 +340,7 @@ SET(QGIS_CORE_SRCS
+--- src/core/CMakeLists.txt.orig	Fri Mar 25 13:17:01 2016
++++ src/core/CMakeLists.txt	Tue Mar 29 14:24:04 2016
+@@ -341,7 +341,7 @@ SET(QGIS_CORE_SRCS
    geometry/qgswkbtypes.cpp
  )
  
@@ -13,7 +13,7 @@ chunk 1: workaround $area expansion issue with gmake expanding to $$$$area
  STRING(REPLACE "$" "$$" JSON_HELP_FILES "${JSON_HELP_FILES}")
  STRING(REPLACE "\(" "\\(" JSON_HELP_FILES "${JSON_HELP_FILES}")
  STRING(REPLACE "\)" "\\)" JSON_HELP_FILES "${JSON_HELP_FILES}")
-@@ -913,9 +913,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
+@@ -915,9 +915,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
  TARGET_LINK_LIBRARIES(qgis_core
    ${QT_QTMAIN_LIBRARY}
    ${QT_QTXML_LIBRARY}
