@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.228 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.229 2016/03/29 23:24:46 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.7.2
+VER=			13.8.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -21,17 +21,14 @@ PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main += c crypto curl execinfo g7221codec gsm idn iksemel ilbccodec
-WANTLIB-main += jansson m nghttp2 ogg opencore-amrnb opencore-amrwb pj pjlib-util
-WANTLIB-main += pjmedia pjmedia-audiodev pjmedia-codec pjmedia-videodev
-WANTLIB-main += pjnath pjsip pjsip-simple pjsip-ua pjsua pjsua2 portaudio
-WANTLIB-main += pthread resample spandsp speex speexdsp sqlite3 ssl
-WANTLIB-main += stdc++ termcap tiff uriparser uuid vorbis vorbisenc
-WANTLIB-main += vorbisfile xml2 xslt z
-WANTLIB-main += ${MODGETTEXT_WANTLIB}
+WANTLIB-main += iconv jansson m nghttp2 ogg opencore-amrnb opencore-amrwb
+WANTLIB-main += pj pjlib-util pjmedia pjmedia-audiodev pjmedia-codec
+WANTLIB-main += pjmedia-videodev pjnath pjsip pjsip-simple pjsip-ua
+WANTLIB-main += pjsua pjsua2 portaudio pthread resample spandsp speex
+WANTLIB-main += speexdsp sqlite3 ssl stdc++ termcap tiff uriparser
+WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
 
 SHARED_LIBS=		asteriskssl 0.0		# 1
-
-MODULES=		devel/gettext
 
 MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
 			-pgsql -snmp -speex -tds
@@ -41,6 +38,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
 			audio/portaudio-svn \
+			converters/libiconv \
 			devel/libexecinfo \
 			devel/jansson \
 			graphics/tiff \
@@ -51,10 +49,8 @@ LIB_DEPENDS-main=	audio/gsm \
 			textproc/iksemel \
 			textproc/libxml \
 			textproc/libxslt \
-			www/uriparser \
-			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
+			www/uriparser
+RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 			telephony/asterisk-sounds/moh-opsound,wav
 BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
@@ -141,21 +137,20 @@ CONFIGURE_ARGS+=	--with-imap=no
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
-WANTLIB-calendar=	${MODGETTEXT_WANTLIB} crypto expat ical iksemel
+WANTLIB-calendar=	crypto expat ical iconv intl iksemel
 WANTLIB-calendar+=	m neon proxy ssl xml2 z
 
-LIB_DEPENDS-calendar=	net/neon \
-			textproc/libical \
-			${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-calendar=	devel/gettext \
+			net/neon \
+			textproc/libical
 .if !${BUILD_PACKAGES:M-calendar}
 CONFIGURE_ARGS+=	--with-ical=no
 .endif
 
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
-LIB_DEPENDS-http_post=	mail/gmime ${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 \
-			${MODGETTEXT_WANTLIB}
+LIB_DEPENDS-http_post=	devel/gettext mail/gmime
+WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
 .endif

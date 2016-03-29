@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.59 2016/01/16 14:21:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.60 2016/03/29 23:24:46 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -151,6 +151,8 @@ include/asterisk/pval.h
 include/asterisk/res_fax.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
+include/asterisk/res_odbc_transaction.h
+include/asterisk/res_pjproject.h
 include/asterisk/res_pjsip.h
 include/asterisk/res_pjsip_body_generator_types.h
 include/asterisk/res_pjsip_cli.h
@@ -440,6 +442,7 @@ lib/asterisk/modules/res_musiconhold.so
 lib/asterisk/modules/res_mutestream.so
 lib/asterisk/modules/res_parking.so
 lib/asterisk/modules/res_phoneprov.so
+lib/asterisk/modules/res_pjproject.so
 lib/asterisk/modules/res_pjsip.so
 lib/asterisk/modules/res_pjsip_acl.so
 lib/asterisk/modules/res_pjsip_authenticator_digest.so
@@ -454,8 +457,8 @@ lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
 lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
 lib/asterisk/modules/res_pjsip_exten_state.so
 lib/asterisk/modules/res_pjsip_header_funcs.so
+lib/asterisk/modules/res_pjsip_history.so
 lib/asterisk/modules/res_pjsip_keepalive.so
-lib/asterisk/modules/res_pjsip_log_forwarder.so
 lib/asterisk/modules/res_pjsip_logger.so
 lib/asterisk/modules/res_pjsip_messaging.so
 lib/asterisk/modules/res_pjsip_multihomed.so
@@ -566,6 +569,7 @@ share/asterisk/static-http/astman.js
 share/asterisk/static-http/core-en_US.xml
 share/asterisk/static-http/mantest.html
 share/asterisk/static-http/prototype.js
+share/asterisk/third-party/
 share/doc/asterisk/
 share/doc/asterisk/Asterisk-13-Reference.pdf
 share/doc/asterisk/Asterisk-Admin-Guide.pdf
@@ -671,6 +675,7 @@ share/examples/asterisk/default/osp.conf
 @comment share/examples/asterisk/default/oss.conf
 share/examples/asterisk/default/phone.conf
 share/examples/asterisk/default/phoneprov.conf
+share/examples/asterisk/default/pjproject.conf
 share/examples/asterisk/default/pjsip.conf
 share/examples/asterisk/default/pjsip_notify.conf
 share/examples/asterisk/default/pjsip_wizard.conf
