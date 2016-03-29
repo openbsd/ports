@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/28 12:40:06 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/29 06:06:57 rpointel Exp $
 
 COMMENT =	tool to test a PDF file
 
 MODPY_EGG_VERSION =	0.2.1
+REVISION =	0
 DISTNAME =	pdfid_v${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdfid-${MODPY_EGG_VERSION}
 
@@ -25,6 +26,8 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}
+
+MODPY_ADJ_FILES = pdfid.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pdfid.py ${PREFIX}/bin/pdfid
