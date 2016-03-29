@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2014/04/21 21:45:35 jca Exp $
-lib/ocaml/stublibs/dlllablglade2.so
-lib/ocaml/stublibs/dlllablgnomecanvas.so
-lib/ocaml/stublibs/dlllablgtk2.so
-lib/ocaml/stublibs/dlllablgtksourceview2.so
-lib/ocaml/stublibs/dlllablrsvg.so

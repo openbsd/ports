@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/08/30 15:38:32 avsm Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2016/03/29 11:27:00 naddy Exp $
 %%native%%
-%%SHARED%%
 @bin bin/ocaml
 @bin bin/ocamlbuild
 @bin bin/ocamlbuild.byte
@@ -442,6 +441,7 @@ lib/ocaml/lexing.mli
 lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
 lib/ocaml/libcamlrun_pic.a
+lib/ocaml/libcamlrun_shared.so
 lib/ocaml/libcamlstr.a
 lib/ocaml/libnums.a
 lib/ocaml/libthreads.a
@@ -633,6 +633,13 @@ lib/ocaml/stringLabels.cmt
 lib/ocaml/stringLabels.cmti
 lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
+lib/ocaml/stublibs/
+lib/ocaml/stublibs/dllbigarray.so
+lib/ocaml/stublibs/dllcamlstr.so
+lib/ocaml/stublibs/dllnums.so
+lib/ocaml/stublibs/dllthreads.so
+lib/ocaml/stublibs/dllunix.so
+lib/ocaml/stublibs/dllvmthreads.so
 lib/ocaml/sys.cmi
 lib/ocaml/sys.cmt
 lib/ocaml/sys.cmti

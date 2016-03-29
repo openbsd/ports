@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/29 11:27:01 naddy Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocsigen
 GH_PROJECT =	lwt
 GH_TAGNAME =	2.4.8
-REVISION =	0
+REVISION =	1
 # This is not the latest upstream version, but the last one that is most
 # compatible due to an API change. Be careful about upgrading to lwt-2.5.0
 # without checking that no in-tree ports break due to new buffer APIs.

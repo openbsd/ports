@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/17 17:18:35 jca Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2016/03/29 11:27:00 naddy Exp $
 %%native%%
 lib/ocaml/parmap/
 lib/ocaml/parmap/META
@@ -13,5 +12,6 @@ lib/ocaml/parmap/parmap_utils.cmi
 lib/ocaml/parmap/parmap_utils.mli
 lib/ocaml/parmap/setcore.cmi
 lib/ocaml/parmap/setcore.mli
+lib/ocaml/stublibs/dllparmap_stubs.so
 @comment lib/ocaml/stublibs/dllparmap_stubs.so.owner
 @man man/man3/Parmap.3o

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/19 21:25:32 daniel Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2016/03/29 11:27:01 naddy Exp $
 %%native%%
 @bin bin/coq-tex
 @bin bin/coq_makefile
@@ -19,6 +18,7 @@ lib/coq/
 lib/coq/config/
 lib/coq/config/coq_config.cmi
 lib/coq/config/coq_config.cmo
+lib/coq/dllcoqrun.so
 lib/coq/ide/
 lib/coq/ide/command_windows.cmi
 lib/coq/ide/config_lexer.cmi

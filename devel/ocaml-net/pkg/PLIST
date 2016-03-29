@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/08/30 16:02:11 avsm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2016/03/29 11:27:00 naddy Exp $
 %%native%%
 @bin bin/netplex-admin
 @bin bin/ocamlrpcgen
@@ -603,6 +602,12 @@ lib/ocaml/shell/shell_sys.cmi
 lib/ocaml/shell/shell_sys.mli
 lib/ocaml/shell/shell_uq.cmi
 lib/ocaml/shell/shell_uq.mli
+lib/ocaml/stublibs/dllnetaccel_c.so
+@comment lib/ocaml/stublibs/dllnetaccel_c.so.owner
+lib/ocaml/stublibs/dllnetsys.so
+@comment lib/ocaml/stublibs/dllnetsys.so.owner
+lib/ocaml/stublibs/dllrpc_auth_local.so
+@comment lib/ocaml/stublibs/dllrpc_auth_local.so.owner
 share/doc/ocaml-net/
 share/doc/ocaml-net/ChangeLog
 share/doc/ocaml-net/LICENSE

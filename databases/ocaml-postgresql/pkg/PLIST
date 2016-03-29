@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/08/30 15:49:08 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/29 11:27:00 naddy Exp $
 lib/ocaml/postgresql/
 lib/ocaml/postgresql/META
 lib/ocaml/postgresql/libpostgresql_stubs.a
@@ -9,8 +9,8 @@ lib/ocaml/postgresql/postgresql.cmt
 lib/ocaml/postgresql/postgresql.cmti
 lib/ocaml/postgresql/postgresql.mli
 %%native%%
-%%SHARED%%
 @comment lib/ocaml/stublibs/
+lib/ocaml/stublibs/dllpostgresql_stubs.so
 @comment lib/ocaml/stublibs/dllpostgresql_stubs.so.owner
 share/doc/ocaml-postgresql/
 share/doc/ocaml-postgresql/api/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/02 09:24:45 chrisz Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/29 11:27:00 naddy Exp $
 
 COMMENT =	library for dealing with unicode text
 CATEGORIES =	devel textproc
 
 NAME =		ocaml-text
 DISTNAME =	${NAME}-0.6
-REVISION =	2
+REVISION =	3
 MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/937/
 
 HOMEPAGE =	http://ocaml-text.forge.ocamlcore.org/

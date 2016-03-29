@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/30 16:06:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/29 11:27:01 naddy Exp $
 @conflict camlimages-*
-%%SHARED%%
 %%native%%
 lib/ocaml/camlimages/
 lib/ocaml/camlimages/META
@@ -116,6 +115,25 @@ lib/ocaml/camlimages/xpm.cmi
 lib/ocaml/camlimages/xpm.mli
 lib/ocaml/camlimages/xvthumb.cmi
 lib/ocaml/camlimages/xvthumb.mli
+@comment lib/ocaml/stublibs/
+lib/ocaml/stublibs/dllcamlimages_all_formats.so
+@comment lib/ocaml/stublibs/dllcamlimages_all_formats.so.owner
+lib/ocaml/stublibs/dllcamlimages_exif.so
+@comment lib/ocaml/stublibs/dllcamlimages_exif.so.owner
+lib/ocaml/stublibs/dllcamlimages_freetype.so
+@comment lib/ocaml/stublibs/dllcamlimages_freetype.so.owner
+lib/ocaml/stublibs/dllcamlimages_gif.so
+@comment lib/ocaml/stublibs/dllcamlimages_gif.so.owner
+lib/ocaml/stublibs/dllcamlimages_jpeg.so
+@comment lib/ocaml/stublibs/dllcamlimages_jpeg.so.owner
+lib/ocaml/stublibs/dllcamlimages_png.so
+@comment lib/ocaml/stublibs/dllcamlimages_png.so.owner
+lib/ocaml/stublibs/dllcamlimages_supported.so
+@comment lib/ocaml/stublibs/dllcamlimages_supported.so.owner
+lib/ocaml/stublibs/dllcamlimages_tiff.so
+@comment lib/ocaml/stublibs/dllcamlimages_tiff.so.owner
+lib/ocaml/stublibs/dllcamlimages_xpm.so
+@comment lib/ocaml/stublibs/dllcamlimages_xpm.so.owner
 @comment share/examples/camlimages/.cvsignore
 @comment share/examples/camlimages/converter/.cvsignore
 @comment share/examples/camlimages/crop/.cvsignore
@@ -131,17 +149,6 @@ lib/ocaml/camlimages/xvthumb.mli
 @comment share/examples/camlimages/resize/.cvsignore
 @comment share/examples/camlimages/tiffps/.cvsignore
 @comment share/examples/camlimages/ttfimg/.cvsignore
-@comment lib/ocaml/stublibs/
-@comment lib/ocaml/stublibs/dllcamlimages_all.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_all_formats.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_exif.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_freetype.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_gif.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_jpeg.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_png.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_supported.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_tiff.so.owner
-@comment lib/ocaml/stublibs/dllcamlimages_xpm.so.owner
 share/examples/ocaml-camlimages/
 @comment share/examples/ocaml-camlimages/.cvsignore
 share/examples/ocaml-camlimages/OMakefile

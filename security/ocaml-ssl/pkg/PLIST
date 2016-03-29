@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/09 00:28:24 jca Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2016/03/29 11:27:00 naddy Exp $
 %%native%%
 lib/ocaml/ssl/
 lib/ocaml/ssl/META
@@ -11,7 +10,9 @@ lib/ocaml/ssl/ssl.mli
 lib/ocaml/ssl/ssl_threads.cma
 lib/ocaml/ssl/ssl_threads.cmi
 lib/ocaml/ssl/ssl_threads.mli
+lib/ocaml/stublibs/dllssl_stubs.so
 @comment lib/ocaml/stublibs/dllssl_stubs.so.owner
+lib/ocaml/stublibs/dllssl_threads_stubs.so
 @comment lib/ocaml/stublibs/dllssl_threads_stubs.so.owner
 share/doc/ocaml-ssl/
 share/doc/ocaml-ssl/CHANGES

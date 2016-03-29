@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/30 15:59:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/29 11:27:01 naddy Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
@@ -10,6 +10,7 @@ GH_PROJECT =	lambda-term
 GH_TAGNAME =	$V
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
+REVISION =	0
 
 # BSD3
 PERMIT_PACKAGE_CDROM =		Yes

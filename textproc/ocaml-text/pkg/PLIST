@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/18 22:49:29 avsm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2016/03/29 11:27:00 naddy Exp $
 %%native%%
+lib/ocaml/stublibs/dlltext-bigarray_stubs.so
 @comment lib/ocaml/stublibs/dlltext-bigarray_stubs.so.owner
+lib/ocaml/stublibs/dlltext_stubs.so
 @comment lib/ocaml/stublibs/dlltext_stubs.so.owner
 lib/ocaml/text/
 lib/ocaml/text/META

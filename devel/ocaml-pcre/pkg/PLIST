@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/08/30 16:02:58 avsm Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2016/03/29 11:27:00 naddy Exp $
 %%native%%
 lib/ocaml/pcre/
 lib/ocaml/pcre/META
@@ -10,6 +9,7 @@ lib/ocaml/pcre/pcre.cmi
 lib/ocaml/pcre/pcre.cmt
 lib/ocaml/pcre/pcre.cmti
 lib/ocaml/pcre/pcre.mli
+lib/ocaml/stublibs/dllpcre_stubs.so
 @comment lib/ocaml/stublibs/dllpcre_stubs.so.owner
 share/doc/ocaml-pcre/
 share/doc/ocaml-pcre/api/

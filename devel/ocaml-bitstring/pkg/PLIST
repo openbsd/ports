@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/05 14:38:18 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/29 11:27:00 naddy Exp $
 %%native%%
-%%SHARED%%
 lib/ocaml/bitstring/
 lib/ocaml/bitstring/META
 lib/ocaml/bitstring/bitstring.cma
@@ -11,3 +10,5 @@ lib/ocaml/bitstring/bitstring_persistent.cmi
 lib/ocaml/bitstring/bitstring_persistent.mli
 lib/ocaml/bitstring/libbitstring.a
 lib/ocaml/bitstring/pa_bitstring.cmo
+lib/ocaml/stublibs/dllbitstring.so
+@comment lib/ocaml/stublibs/dllbitstring.so.owner
