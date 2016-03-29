@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/27 14:17:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/29 09:26:00 sthen Exp $
 
 COMMENT=		store and access your passwords safely
 
@@ -19,6 +19,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	keyring/cli.py
 
 #BUILD_DEPENDS=		devel/py-hgtools${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			security/py-secretstorage${MODPY_FLAVOR} \
