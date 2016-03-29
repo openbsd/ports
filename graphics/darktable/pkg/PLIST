@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/03/08 14:28:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/03/29 14:55:18 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cli
 @bin bin/darktable-cltest
@@ -132,6 +132,7 @@ lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/
 lib/darktable/views/libdarkroom.so
+lib/darktable/views/libknight.so
 lib/darktable/views/liblighttable.so
 lib/darktable/views/libmap.so
 lib/darktable/views/libprint.so
