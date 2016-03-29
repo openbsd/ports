@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/02/28 22:26:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/03/29 16:21:03 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -460,6 +460,8 @@ lib/calibre/calibre/ebooks/conversion/utils.py
 lib/calibre/calibre/ebooks/conversion/utils.pyc
 lib/calibre/calibre/ebooks/covers.py
 lib/calibre/calibre/ebooks/covers.pyc
+lib/calibre/calibre/ebooks/css_transform_rules.py
+lib/calibre/calibre/ebooks/css_transform_rules.pyc
 lib/calibre/calibre/ebooks/djvu/
 lib/calibre/calibre/ebooks/djvu/__init__.py
 lib/calibre/calibre/ebooks/djvu/__init__.pyc
@@ -1582,6 +1584,8 @@ lib/calibre/calibre/gui2/cover_flow.py
 lib/calibre/calibre/gui2/cover_flow.pyc
 lib/calibre/calibre/gui2/covers.py
 lib/calibre/calibre/gui2/covers.pyc
+lib/calibre/calibre/gui2/css_transform_rules.py
+lib/calibre/calibre/gui2/css_transform_rules.pyc
 lib/calibre/calibre/gui2/custom_column_widgets.py
 lib/calibre/calibre/gui2/custom_column_widgets.pyc
 lib/calibre/calibre/gui2/dbus_export/
@@ -1763,8 +1767,6 @@ lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.pyc
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.pyc
-lib/calibre/calibre/gui2/dialogs/test_email_ui.py
-lib/calibre/calibre/gui2/dialogs/test_email_ui.pyc
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dialogs/trim_image.pyc
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
@@ -2499,6 +2501,8 @@ lib/calibre/calibre/srv/http_request.py
 lib/calibre/calibre/srv/http_request.pyc
 lib/calibre/calibre/srv/http_response.py
 lib/calibre/calibre/srv/http_response.pyc
+lib/calibre/calibre/srv/jobs.py
+lib/calibre/calibre/srv/jobs.pyc
 lib/calibre/calibre/srv/legacy.py
 lib/calibre/calibre/srv/legacy.pyc
 lib/calibre/calibre/srv/loop.py
@@ -2513,6 +2517,8 @@ lib/calibre/calibre/srv/pool.py
 lib/calibre/calibre/srv/pool.pyc
 lib/calibre/calibre/srv/pre_activated.py
 lib/calibre/calibre/srv/pre_activated.pyc
+lib/calibre/calibre/srv/render_book.py
+lib/calibre/calibre/srv/render_book.pyc
 lib/calibre/calibre/srv/routes.py
 lib/calibre/calibre/srv/routes.pyc
 lib/calibre/calibre/srv/sendfile.py
@@ -3216,6 +3222,7 @@ share/calibre/content-server/font-awesome/fontawesome-webfont.ttf
 share/calibre/content-server/font-awesome/fontawesome-webfont.woff
 share/calibre/content-server/font-awesome/fontawesome-webfont.woff2
 share/calibre/content-server/index.html
+share/calibre/content-server/locales.zip
 share/calibre/content-server/main.js
 share/calibre/content-server/mobile.css
 share/calibre/content-server/reset.css
