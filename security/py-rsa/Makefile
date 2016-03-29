@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/08 09:23:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/29 17:44:29 danj Exp $
 
 COMMENT=		Python RSA implementation
 
-MODPY_EGG_VERSION=	3.2.3
+MODPY_EGG_VERSION=	3.4.1
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		security
 
@@ -19,17 +18,11 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		devel/py-asn1${MODPY_FLAVOR}
+TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-# needs devel/py-unittest2,python3
-#NO_TEST=		Yes
-.else
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-unittest2
-.endif
 
 .if ${FLAVOR:Mpython3}
 post-install:
@@ -39,6 +32,6 @@ post-install:
 .endif
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./run_tests.py
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
