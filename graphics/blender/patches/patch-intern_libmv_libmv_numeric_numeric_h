@@ -1,6 +1,6 @@
-$OpenBSD: patch-extern_libmv_libmv_numeric_numeric_h,v 1.4 2014/03/24 21:16:14 pascal Exp $
---- extern/libmv/libmv/numeric/numeric.h.orig	Wed Mar 19 23:05:24 2014
-+++ extern/libmv/libmv/numeric/numeric.h	Thu Mar 20 22:29:21 2014
+$OpenBSD: patch-intern_libmv_libmv_numeric_numeric_h,v 1.1 2016/03/30 13:30:04 pascal Exp $
+--- intern/libmv/libmv/numeric/numeric.h.orig	Wed Mar 30 13:32:23 2016
++++ intern/libmv/libmv/numeric/numeric.h	Wed Mar 30 13:32:36 2016
 @@ -35,7 +35,7 @@
  
  #if !defined(__MINGW64__)

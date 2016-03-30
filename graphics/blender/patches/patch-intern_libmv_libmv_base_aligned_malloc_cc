@@ -1,10 +1,6 @@
-$OpenBSD: patch-extern_libmv_libmv_base_aligned_malloc_cc,v 1.2 2014/11/04 06:02:40 brad Exp $
-
-- Don't use malloc.h header on OpenBSD.
-- Use posix_memalign() on OpenBSD.
-
---- extern/libmv/libmv/base/aligned_malloc.cc.orig	Sun Jun 29 15:44:24 2014
-+++ extern/libmv/libmv/base/aligned_malloc.cc	Sun Jun 29 15:45:16 2014
+$OpenBSD: patch-intern_libmv_libmv_base_aligned_malloc_cc,v 1.1 2016/03/30 13:30:04 pascal Exp $
+--- intern/libmv/libmv/base/aligned_malloc.cc.orig	Wed Mar 30 13:31:27 2016
++++ intern/libmv/libmv/base/aligned_malloc.cc	Wed Mar 30 13:32:15 2016
 @@ -21,7 +21,8 @@
  #include "libmv/base/aligned_malloc.h"
  #include "libmv/logging/logging.h"

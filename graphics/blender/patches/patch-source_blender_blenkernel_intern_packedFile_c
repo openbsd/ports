@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.9 2014/07/03 14:41:48 pascal Exp $
---- source/blender/blenkernel/intern/packedFile.c.orig	Wed Jun 25 22:43:52 2014
-+++ source/blender/blenkernel/intern/packedFile.c	Fri Jun 27 20:37:52 2014
-@@ -322,7 +322,7 @@ int writePackedFile(ReportList *reports, const char *f
+$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.10 2016/03/30 13:30:04 pascal Exp $
+--- source/blender/blenkernel/intern/packedFile.c.orig	Mon Mar 21 17:16:12 2016
++++ source/blender/blenkernel/intern/packedFile.c	Wed Mar 30 11:42:27 2016
+@@ -320,7 +320,7 @@ int writePackedFile(ReportList *reports, const char *f
  	/* make sure the path to the file exists... */
  	BLI_make_existing_file(name);
  	

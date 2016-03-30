@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2015/12/30 12:35:45 pascal Exp $
+# $OpenBSD: Makefile,v 1.72 2016/03/30 13:30:04 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.76b
+DISTNAME =	blender-2.77
 
 CATEGORIES =	graphics
 
@@ -23,7 +23,7 @@ MODULES =	devel/cmake \
 		gcc4
 MODGCC4_ARCHS = *
 MODGCC4_LANGS += c++
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION =	3.5
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \

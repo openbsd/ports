@@ -1,6 +1,6 @@
-$OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.2 2015/09/22 18:48:40 pascal Exp $
---- intern/cycles/util/util_aligned_malloc.cpp.orig	Tue Jun 30 14:38:37 2015
-+++ intern/cycles/util/util_aligned_malloc.cpp	Thu Sep 10 19:35:17 2015
+$OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.3 2016/03/30 13:30:04 pascal Exp $
+--- intern/cycles/util/util_aligned_malloc.cpp.orig	Mon Mar 21 17:16:12 2016
++++ intern/cycles/util/util_aligned_malloc.cpp	Wed Mar 30 11:42:27 2016
 @@ -21,7 +21,8 @@
  
  /* Adopted from Libmv. */
@@ -11,7 +11,7 @@ $OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.2 2015/09/22 18:4
  /* Needed for memalign on Linux and _aligned_alloc on Windows. */
  #  ifdef FREE_WINDOWS
  /* Make sure _aligned_malloc is included. */
-@@ -53,7 +54,7 @@ void *util_aligned_malloc(size_t size, int alignment)
+@@ -52,7 +53,7 @@ void *util_aligned_malloc(size_t size, int alignment)
  	 */
  	assert(alignment == 16);
  	return malloc(size);

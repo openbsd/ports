@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/10/12 12:29:02 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/03/30 13:30:04 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -222,6 +222,7 @@ share/blender/datafiles/blender_icons16/icon16_material_data.dat
 share/blender/datafiles/blender_icons16/icon16_matplane.dat
 share/blender/datafiles/blender_icons16/icon16_matsphere.dat
 share/blender/datafiles/blender_icons16/icon16_menu_panel.dat
+share/blender/datafiles/blender_icons16/icon16_mesh_capsule.dat
 share/blender/datafiles/blender_icons16/icon16_mesh_circle.dat
 share/blender/datafiles/blender_icons16/icon16_mesh_cone.dat
 share/blender/datafiles/blender_icons16/icon16_mesh_cube.dat
@@ -703,6 +704,7 @@ share/blender/datafiles/blender_icons32/icon32_material_data.dat
 share/blender/datafiles/blender_icons32/icon32_matplane.dat
 share/blender/datafiles/blender_icons32/icon32_matsphere.dat
 share/blender/datafiles/blender_icons32/icon32_menu_panel.dat
+share/blender/datafiles/blender_icons32/icon32_mesh_capsule.dat
 share/blender/datafiles/blender_icons32/icon32_mesh_circle.dat
 share/blender/datafiles/blender_icons32/icon32_mesh_cone.dat
 share/blender/datafiles/blender_icons32/icon32_mesh_cube.dat
@@ -1102,7 +1104,6 @@ share/blender/datafiles/colormanagement/luts/srgb.spi1d
 share/blender/datafiles/colormanagement/luts/srgb_to_xyz.spimtx
 share/blender/datafiles/colormanagement/luts/vd16.spi1d
 share/blender/datafiles/ctodata.py
-share/blender/datafiles/datatoc.py
 share/blender/datafiles/fonts/
 share/blender/datafiles/fonts/bmonofont-i18n.ttf.gz
 share/blender/datafiles/fonts/droidsans.ttf.gz
@@ -1116,6 +1117,7 @@ share/blender/datafiles/locale/po/de.po
 share/blender/datafiles/locale/po/eo.po
 share/blender/datafiles/locale/po/es.po
 share/blender/datafiles/locale/po/es_ES.po
+share/blender/datafiles/locale/po/eu.po
 share/blender/datafiles/locale/po/fa.po
 share/blender/datafiles/locale/po/fr.po
 share/blender/datafiles/locale/po/he.po
@@ -1245,6 +1247,17 @@ share/blender/scripts/addons/io_anim_nuke_chan/
 share/blender/scripts/addons/io_anim_nuke_chan/__init__.py
 share/blender/scripts/addons/io_anim_nuke_chan/export_nuke_chan.py
 share/blender/scripts/addons/io_anim_nuke_chan/import_nuke_chan.py
+share/blender/scripts/addons/io_blend_utils/
+share/blender/scripts/addons/io_blend_utils/__init__.py
+share/blender/scripts/addons/io_blend_utils/bl_utils/
+share/blender/scripts/addons/io_blend_utils/bl_utils/pipe_non_blocking.py
+share/blender/scripts/addons/io_blend_utils/bl_utils/subprocess_helper.py
+share/blender/scripts/addons/io_blend_utils/blend/
+share/blender/scripts/addons/io_blend_utils/blend/blendfile.py
+share/blender/scripts/addons/io_blend_utils/blend/blendfile_path_walker.py
+share/blender/scripts/addons/io_blend_utils/blendfile_pack.py
+share/blender/scripts/addons/io_blend_utils/utils/
+share/blender/scripts/addons/io_blend_utils/utils/system.py
 share/blender/scripts/addons/io_coat3D/
 share/blender/scripts/addons/io_coat3D/__init__.py
 share/blender/scripts/addons/io_coat3D/coat.py
@@ -1495,6 +1508,17 @@ share/blender/scripts/addons/object_print3d_utils/ui.py
 share/blender/scripts/addons/paint_palette.py
 share/blender/scripts/addons/presets/
 share/blender/scripts/addons/presets/operator/
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/13x8_wicker_globe.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/7x6.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/9x9_color.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/braided_coil.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/flower_mesh_(2d).py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/slinky_knot.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/snowflake_(2d).py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/sun_cross_(2d).py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/tripple_dna.py
+share/blender/scripts/addons/presets/operator/curve.torus_knot_plus/wicker_basket.py
 share/blender/scripts/addons/presets/operator/mesh.bolt_add/
 share/blender/scripts/addons/presets/operator/mesh.bolt_add/default.py
 share/blender/scripts/addons/presets/operator/mesh.bolt_add/m10.py
@@ -1548,7 +1572,9 @@ share/blender/scripts/addons/render_freestyle_svg.py
 share/blender/scripts/addons/render_povray/
 share/blender/scripts/addons/render_povray/__init__.py
 share/blender/scripts/addons/render_povray/df3.py
+share/blender/scripts/addons/render_povray/primitives.py
 share/blender/scripts/addons/render_povray/render.py
+share/blender/scripts/addons/render_povray/shading.py
 share/blender/scripts/addons/render_povray/ui.py
 share/blender/scripts/addons/render_povray/update_files.py
 share/blender/scripts/addons/rigify/
@@ -1917,6 +1943,8 @@ share/blender/scripts/startup/bl_operators/
 share/blender/scripts/startup/bl_operators/__init__.py
 share/blender/scripts/startup/bl_operators/add_mesh_torus.py
 share/blender/scripts/startup/bl_operators/anim.py
+share/blender/scripts/startup/bl_operators/bmesh/
+share/blender/scripts/startup/bl_operators/bmesh/find_adjacent.py
 share/blender/scripts/startup/bl_operators/clip.py
 share/blender/scripts/startup/bl_operators/console.py
 share/blender/scripts/startup/bl_operators/file.py
