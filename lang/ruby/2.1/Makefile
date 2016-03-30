@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/29 20:46:54 jeremy Exp $
-
-BROKEN-mips64 =		miniruby spins on rbconfig.rb
+# $OpenBSD: Makefile,v 1.19 2016/03/30 16:47:34 visa Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
