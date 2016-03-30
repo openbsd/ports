@@ -1,3 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/01 07:26:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/30 20:38:03 sthen Exp $
 ${P5SITE}/Expect.pm
 @man man/man3p/Expect.3p
+share/examples/p5-Expect/
+share/examples/p5-Expect/calc.pl
+share/examples/p5-Expect/expect_calc.pl
+share/examples/p5-Expect/kibitz/
+share/examples/p5-Expect/kibitz/Changelog
+share/examples/p5-Expect/kibitz/README
+share/examples/p5-Expect/kibitz/kibitz
+share/examples/p5-Expect/kibitz/kibitz.man
+share/examples/p5-Expect/ssh.pl
