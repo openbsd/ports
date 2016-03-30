@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1475 2016/03/26 12:54:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1476 2016/03/30 09:15:57 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1382,6 +1382,8 @@
      SUBDIR += py-wbem
      SUBDIR += py-wcwidth
      SUBDIR += py-wcwidth,python3
+     SUBDIR += py-wrapt
+     SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
