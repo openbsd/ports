@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/03/30 09:10:41 shadchin Exp $
+
+For option --single-version-externally-managed
+
+--- setup.py.orig	Sun Mar 27 22:47:45 2016
++++ setup.py	Sun Mar 27 22:48:45 2016
+@@ -3,7 +3,7 @@ from __future__ import print_function
+ import os
+ import sys
+ 
+-from distutils.core import setup
++from setuptools import setup
+ from distutils.core import Extension
+ from distutils.command.build_ext import build_ext
+ from distutils.errors import (CCompilerError, DistutilsExecError,
