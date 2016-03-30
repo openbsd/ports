@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/03/23 07:02:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/03/30 05:46:54 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -197,6 +197,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2015-02-02/se
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2015-02-02/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticbeanstalk/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticbeanstalk/2010-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticbeanstalk/2010-12-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticbeanstalk/2010-12-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticbeanstalk/2010-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elastictranscoder/
@@ -244,6 +245,8 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/importexport/2010-06-01/s
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/2015-08-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/2015-08-18/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/2016-02-16/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/inspector/2016-02-16/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-data/2015-05-28/
