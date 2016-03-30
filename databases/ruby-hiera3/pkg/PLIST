@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/11 20:15:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/30 18:59:23 jasper Exp $
 @conflict ruby22-hiera-<3.0.0
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -41,9 +41,18 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/hiera.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/hiera_iplm_hiera.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/hiera_iplm_hiera_bad.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/bad_interpolation.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/complex.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/dotted_keys.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/empty_interpolation.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/frontend.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/niltest.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/recursive.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/role.json
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/weird_keys.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/config/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/config/hiera.yaml
