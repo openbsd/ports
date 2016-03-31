@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2016/03/22 12:57:54 jca Exp $
+# $OpenBSD: Makefile,v 1.51 2016/03/31 22:35:41 jca Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.0.20160315
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 EXTRACT_SUFX=	.tar.xz
@@ -26,7 +27,8 @@ LIB_DEPENDS=	devel/libexecinfo
 USE_GMAKE=	Yes
 SYSCONFDIR=	${BASESYSCONFDIR}/quagga
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
 		--enable-user=_quagga \
 		--enable-group=_quagga \
