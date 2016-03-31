@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/29 05:10:55 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/31 07:22:01 uebayasi Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,8 +6,8 @@ COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
 
 V =			3.10.1
-PV =			20160330
-REVISION =		9
+PV =			20160331
+REVISION =		10
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
@@ -27,8 +27,8 @@ WANTLIB +=		c pthread
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
-AUTOCONF_VERSION =	2.62
-AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libelf
