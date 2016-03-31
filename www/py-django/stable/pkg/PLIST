@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/10 09:31:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/31 19:06:24 rpointel Exp $
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
@@ -6521,6 +6521,7 @@ share/doc/${LNAME}/releases/1.7.9.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/1.8.1.txt
 share/doc/${LNAME}/releases/1.8.10.txt
+share/doc/${LNAME}/releases/1.8.11.txt
 share/doc/${LNAME}/releases/1.8.2.txt
 share/doc/${LNAME}/releases/1.8.3.txt
 share/doc/${LNAME}/releases/1.8.4.txt
@@ -6533,6 +6534,7 @@ share/doc/${LNAME}/releases/1.8.txt
 share/doc/${LNAME}/releases/1.9.1.txt
 share/doc/${LNAME}/releases/1.9.2.txt
 share/doc/${LNAME}/releases/1.9.3.txt
+share/doc/${LNAME}/releases/1.9.4.txt
 share/doc/${LNAME}/releases/1.9.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
