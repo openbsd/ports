@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/03/13 22:22:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/03/31 09:00:29 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -623,6 +623,8 @@ lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Hungarian.lproj/Localizable.str
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -688,6 +690,8 @@ lib/GNUstep/SOGo/Appointments.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/MSExchangeFreeBusySOAPRequest.wo/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/MSExchangeFreeBusySOAPRequest.wo/MSExchangeFreeBusySOAPRequest.html
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/MSExchangeFreeBusySOAPRequest.wo/MSExchangeFreeBusySOAPRequest.wod
@@ -757,6 +761,8 @@ lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -822,6 +828,8 @@ lib/GNUstep/SOGo/Contacts.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/NorwegianBokmal.lproj/
@@ -886,6 +894,8 @@ lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -952,6 +962,8 @@ lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Icelandic.lproj/Localizable.stri
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/NorwegianBokmal.lproj/
@@ -1014,6 +1026,8 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/NorwegianBokmal.lproj/
@@ -1116,6 +1130,12 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianForward.wo/SOGoMailItalian
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianReply.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianReply.wo/SOGoMailItalianReply.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianReply.wo/SOGoMailItalianReply.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianForward.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianForward.wo/SOGoMailLithuanianForward.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianForward.wo/SOGoMailLithuanianForward.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianReply.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianReply.wo/SOGoMailLithuanianReply.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailLithuanianReply.wo/SOGoMailLithuanianReply.wod
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailMacedonianForward.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailMacedonianForward.wo/SOGoMailMacedonianForward.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailMacedonianForward.wo/SOGoMailMacedonianForward.wod
@@ -1245,6 +1265,8 @@ lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -1329,6 +1351,9 @@ lib/GNUstep/SOGo/MainUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Italian.lproj/Locale
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Lithuanian.lproj/Locale
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Macedonian.lproj/Locale
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
@@ -1410,6 +1435,8 @@ lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Icelandic.lproj/Localizable.string
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -1474,6 +1501,8 @@ lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Lithuanian.lproj/
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Lithuanian.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Macedonian.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Macedonian.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/NorwegianBokmal.lproj/
@@ -1613,6 +1642,9 @@ lib/GNUstep/SOGo/Templates/SOGoACLIcelandicRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLLithuanianAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLLithuanianModificationAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLLithuanianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLMacedonianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLMacedonianModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLMacedonianRemovalAdvisory.wox
@@ -1681,6 +1713,8 @@ lib/GNUstep/SOGo/Templates/SOGoFolderIcelandicAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderIcelandicRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderItalianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderItalianRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderLithuanianAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderLithuanianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderMacedonianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderMacedonianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderNorwegianBokmalAdditionAdvisory.wox
