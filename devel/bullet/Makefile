@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/31 19:15:35 pascal Exp $
 
 COMMENT =		physics library
 
-V =			2.83.6
+V =			2.83.7
 DISTNAME =		bullet-${V}
 
-SHARED_LIBS +=  BulletCollision           1.0 # 2.79
-SHARED_LIBS +=  BulletDynamics            1.0 # 2.79
-SHARED_LIBS +=  BulletSoftBody            1.0 # 2.79
-SHARED_LIBS +=  LinearMath                1.0 # 2.79
-SHARED_LIBS +=  Bullet2FileLoader         0.0 # 2.83
-SHARED_LIBS +=  Bullet3Collision          0.0 # 2.83
-SHARED_LIBS +=  Bullet3Common             0.0 # 2.83
-SHARED_LIBS +=  Bullet3Dynamics           0.0 # 2.83
-SHARED_LIBS +=  Bullet3Geometry           0.0 # 2.83
-SHARED_LIBS +=  Bullet3OpenCL_clew        0.0 # 2.83
+SHARED_LIBS +=  BulletCollision           2.0 # 2.79
+SHARED_LIBS +=  BulletDynamics            2.0 # 2.79
+SHARED_LIBS +=  BulletInverseDynamics     0.0 # 2.83
+SHARED_LIBS +=  BulletSoftBody            2.0 # 2.79
+SHARED_LIBS +=  LinearMath                2.0 # 2.79
+SHARED_LIBS +=  Bullet2FileLoader         1.0 # 2.83
+SHARED_LIBS +=  Bullet3Collision          1.0 # 2.83
+SHARED_LIBS +=  Bullet3Common             1.0 # 2.83
+SHARED_LIBS +=  Bullet3Dynamics           1.0 # 2.83
+SHARED_LIBS +=  Bullet3Geometry           1.0 # 2.83
+SHARED_LIBS +=  Bullet3OpenCL_clew        1.0 # 2.83
 
 CATEGORIES =		devel
 
@@ -30,14 +31,16 @@ GH_ACCOUNT =		bulletphysics
 GH_PROJECT =		bullet3
 GH_TAGNAME =		$V
 
-WANTLIB += m stdc++
+WANTLIB += m
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 BUILD_DEPENDS =		graphics/freeglut
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DBUILD_CPU_DEMOS=OFF \
-			-DBUILD_EXTRAS=OFF \
+			-DBUILD_EXTRAS=ON \
 			-DINSTALL_LIBS=ON \
 			-DCMAKE_SHARED_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DCMAKE_MODULE_LINKER_FLAGS="-L${X11BASE}/lib" \
@@ -47,9 +50,5 @@ NO_TEST =		Yes
 
 CFLAGS +=		-I${X11BASE}/include
 CXXFLAGS +=		-I${X11BASE}/include
-
-post-extract:
-	perl -pi -e 's/\015//g' \
-	${WRKSRC}/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/*
 
 .include <bsd.port.mk>
