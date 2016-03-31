@@ -105,6 +105,7 @@
 	native-getgid: permit
 	native-getgroups: permit
 	native-getlogin: permit
+	native-getlogin_r: permit
 	native-getpeername: permit
 	native-getpgid: permit
 	native-getpgrp: permit
@@ -205,7 +206,6 @@
 	native-sendmsg: sockaddr match "/<non-existent filename>: *" then deny[enoent]
 	native-sendmsg: sockaddr eq "<unknown>" then permit
 	native-sendsyslog: permit
-	native-sendsyslog2: permit
 	native-sendto: permit
 	native-setegid: permit
 	native-setgid: permit
