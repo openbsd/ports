@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/03/23 07:01:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/03/31 06:06:22 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -273,6 +273,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/debug.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/debug.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/errors.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/errors.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/transforms.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/debug/transforms.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/__init__.pyc
@@ -377,6 +379,11 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/consumers_flags.p
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/consumers_flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/services_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/services_util.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/__init__.pyc
@@ -2297,6 +2304,26 @@ google-cloud-sdk/lib/surface/dataproc/operations/list.pyc
 google-cloud-sdk/lib/surface/debug/
 google-cloud-sdk/lib/surface/debug/__init__.py
 google-cloud-sdk/lib/surface/debug/__init__.pyc
+google-cloud-sdk/lib/surface/debug/logpoints/
+google-cloud-sdk/lib/surface/debug/logpoints/__init__.py
+google-cloud-sdk/lib/surface/debug/logpoints/__init__.pyc
+google-cloud-sdk/lib/surface/debug/logpoints/create.py
+google-cloud-sdk/lib/surface/debug/logpoints/create.pyc
+google-cloud-sdk/lib/surface/debug/logpoints/delete.py
+google-cloud-sdk/lib/surface/debug/logpoints/delete.pyc
+google-cloud-sdk/lib/surface/debug/logpoints/list.py
+google-cloud-sdk/lib/surface/debug/logpoints/list.pyc
+google-cloud-sdk/lib/surface/debug/snapshots/
+google-cloud-sdk/lib/surface/debug/snapshots/__init__.py
+google-cloud-sdk/lib/surface/debug/snapshots/__init__.pyc
+google-cloud-sdk/lib/surface/debug/snapshots/create.py
+google-cloud-sdk/lib/surface/debug/snapshots/create.pyc
+google-cloud-sdk/lib/surface/debug/snapshots/delete.py
+google-cloud-sdk/lib/surface/debug/snapshots/delete.pyc
+google-cloud-sdk/lib/surface/debug/snapshots/describe.py
+google-cloud-sdk/lib/surface/debug/snapshots/describe.pyc
+google-cloud-sdk/lib/surface/debug/snapshots/list.py
+google-cloud-sdk/lib/surface/debug/snapshots/list.pyc
 google-cloud-sdk/lib/surface/debug/targets/
 google-cloud-sdk/lib/surface/debug/targets/__init__.py
 google-cloud-sdk/lib/surface/debug/targets/__init__.pyc
@@ -2484,6 +2511,11 @@ google-cloud-sdk/lib/surface/genomics/operations/describe.py
 google-cloud-sdk/lib/surface/genomics/operations/describe.pyc
 google-cloud-sdk/lib/surface/genomics/operations/list.py
 google-cloud-sdk/lib/surface/genomics/operations/list.pyc
+google-cloud-sdk/lib/surface/genomics/pipelines/
+google-cloud-sdk/lib/surface/genomics/pipelines/__init__.py
+google-cloud-sdk/lib/surface/genomics/pipelines/__init__.pyc
+google-cloud-sdk/lib/surface/genomics/pipelines/run.py
+google-cloud-sdk/lib/surface/genomics/pipelines/run.pyc
 google-cloud-sdk/lib/surface/genomics/readgroupsets/
 google-cloud-sdk/lib/surface/genomics/readgroupsets/__init__.py
 google-cloud-sdk/lib/surface/genomics/readgroupsets/__init__.pyc
@@ -2834,6 +2866,16 @@ google-cloud-sdk/lib/surface/service_management/remove_quota_override.py
 google-cloud-sdk/lib/surface/service_management/remove_quota_override.pyc
 google-cloud-sdk/lib/surface/service_management/remove_visibility_label.py
 google-cloud-sdk/lib/surface/service_management/remove_visibility_label.pyc
+google-cloud-sdk/lib/surface/service_registry/
+google-cloud-sdk/lib/surface/service_registry/__init__.py
+google-cloud-sdk/lib/surface/service_registry/__init__.pyc
+google-cloud-sdk/lib/surface/service_registry/endpoints/
+google-cloud-sdk/lib/surface/service_registry/endpoints/__init__.py
+google-cloud-sdk/lib/surface/service_registry/endpoints/__init__.pyc
+google-cloud-sdk/lib/surface/service_registry/endpoints/describe.py
+google-cloud-sdk/lib/surface/service_registry/endpoints/describe.pyc
+google-cloud-sdk/lib/surface/service_registry/endpoints/list.py
+google-cloud-sdk/lib/surface/service_registry/endpoints/list.pyc
 google-cloud-sdk/lib/surface/source/
 google-cloud-sdk/lib/surface/source/__init__.py
 google-cloud-sdk/lib/surface/source/__init__.pyc
@@ -4146,6 +4188,41 @@ google-cloud-sdk/platform/ext-runtime/nodejs/test/
 google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/nodejs/testing.md
+google-cloud-sdk/platform/ext-runtime/php/
+google-cloud-sdk/platform/ext-runtime/php/CONTRIBUTING.md
+google-cloud-sdk/platform/ext-runtime/php/LICENSE
+google-cloud-sdk/platform/ext-runtime/php/README.md
+google-cloud-sdk/platform/ext-runtime/php/bin/
+google-cloud-sdk/platform/ext-runtime/php/bin/detect
+google-cloud-sdk/platform/ext-runtime/php/bin/generate_configs
+google-cloud-sdk/platform/ext-runtime/php/runtime.yaml
+google-cloud-sdk/platform/ext-runtime/php/templates/
+google-cloud-sdk/platform/ext-runtime/php/templates/Dockerfile.template
+google-cloud-sdk/platform/ext-runtime/php/templates/dockerignore.template
+google-cloud-sdk/platform/ext-runtime/php/test/
+google-cloud-sdk/platform/ext-runtime/php/test/runtime_test.py
+google-cloud-sdk/platform/ext-runtime/php/test/runtime_test.pyc
+google-cloud-sdk/platform/ext-runtime/python/
+google-cloud-sdk/platform/ext-runtime/python/CONTRIBUTING.md
+google-cloud-sdk/platform/ext-runtime/python/LICENSE
+google-cloud-sdk/platform/ext-runtime/python/README.md
+google-cloud-sdk/platform/ext-runtime/python/bin/
+google-cloud-sdk/platform/ext-runtime/python/bin/detect
+google-cloud-sdk/platform/ext-runtime/python/bin/generate_configs
+google-cloud-sdk/platform/ext-runtime/python/data/
+google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.install_app
+google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.preamble
+google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.requirements_txt
+google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.virtualenv.template
+google-cloud-sdk/platform/ext-runtime/python/data/app.yaml.template
+google-cloud-sdk/platform/ext-runtime/python/data/dockerignore
+google-cloud-sdk/platform/ext-runtime/python/lib/
+google-cloud-sdk/platform/ext-runtime/python/lib/comm.py
+google-cloud-sdk/platform/ext-runtime/python/lib/comm.pyc
+google-cloud-sdk/platform/ext-runtime/python/runtime.yaml
+google-cloud-sdk/platform/ext-runtime/python/test/
+google-cloud-sdk/platform/ext-runtime/python/test/runtime_test.py
+google-cloud-sdk/platform/ext-runtime/python/test/runtime_test.pyc
 google-cloud-sdk/platform/gsutil/
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
@@ -4176,6 +4253,8 @@ google-cloud-sdk/platform/gsutil/gslib/addlhelp/crc32c.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/crc32c.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/creds.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/creds.pyc
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/csek.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/csek.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/dev.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/dev.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/encoding.py
@@ -4261,6 +4340,8 @@ google-cloud-sdk/platform/gsutil/gslib/commands/perfdiag.py
 google-cloud-sdk/platform/gsutil/gslib/commands/perfdiag.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/rb.py
 google-cloud-sdk/platform/gsutil/gslib/commands/rb.pyc
+google-cloud-sdk/platform/gsutil/gslib/commands/rewrite.py
+google-cloud-sdk/platform/gsutil/gslib/commands/rewrite.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/rm.py
 google-cloud-sdk/platform/gsutil/gslib/commands/rm.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/rsync.py
@@ -4293,6 +4374,8 @@ google-cloud-sdk/platform/gsutil/gslib/data/
 google-cloud-sdk/platform/gsutil/gslib/data/cacerts.txt
 google-cloud-sdk/platform/gsutil/gslib/devshell_auth_plugin.py
 google-cloud-sdk/platform/gsutil/gslib/devshell_auth_plugin.pyc
+google-cloud-sdk/platform/gsutil/gslib/encryption_helper.py
+google-cloud-sdk/platform/gsutil/gslib/encryption_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/exception.py
 google-cloud-sdk/platform/gsutil/gslib/exception.pyc
 google-cloud-sdk/platform/gsutil/gslib/file_part.py
@@ -4313,6 +4396,8 @@ google-cloud-sdk/platform/gsutil/gslib/no_op_auth_plugin.py
 google-cloud-sdk/platform/gsutil/gslib/no_op_auth_plugin.pyc
 google-cloud-sdk/platform/gsutil/gslib/no_op_credentials.py
 google-cloud-sdk/platform/gsutil/gslib/no_op_credentials.pyc
+google-cloud-sdk/platform/gsutil/gslib/parallel_tracker_file.py
+google-cloud-sdk/platform/gsutil/gslib/parallel_tracker_file.pyc
 google-cloud-sdk/platform/gsutil/gslib/parallelism_framework_util.py
 google-cloud-sdk/platform/gsutil/gslib/parallelism_framework_util.pyc
 google-cloud-sdk/platform/gsutil/gslib/plurality_checkable_iterator.py
@@ -4338,6 +4423,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/mock_cloud_api.py
 google-cloud-sdk/platform/gsutil/gslib/tests/mock_cloud_api.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/mock_logging_handler.py
 google-cloud-sdk/platform/gsutil/gslib/tests/mock_logging_handler.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/rewrite_helper.py
+google-cloud-sdk/platform/gsutil/gslib/tests/rewrite_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_Doption.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_Doption.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_acl.py
@@ -4370,6 +4457,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_defacl.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_defacl.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_du.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_du.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_encryption_helper.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_encryption_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_file_part.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_file_part.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_gsutil.py
@@ -4406,6 +4495,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_rb.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_rb.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_resumable_streaming.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_resumable_streaming.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_rewrite.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_rewrite.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_rm.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_rm.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_rsync.py
@@ -7008,6 +7099,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_compute_disks_describe.1
 @man man/man1/gcloud_compute_disks_list.1
 @man man/man1/gcloud_compute_disks_move.1
+@man man/man1/gcloud_compute_disks_resize.1
 @man man/man1/gcloud_compute_disks_snapshot.1
 @man man/man1/gcloud_compute_firewall-rules.1
 @man man/man1/gcloud_compute_firewall-rules_create.1
