@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/26 12:38:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/31 21:15:07 bluhm Exp $
 
 COMMENT =		powerful feature-rich perl source code profiler
 
@@ -17,6 +17,7 @@ MODULES =		cpan
 RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			sysutils/p5-File-Which>=1.09
 TEST_DEPENDS =		devel/p5-Sub-Name>=0.05 \
-			devel/p5-Test-Differences>=0.60
+			devel/p5-Test-Differences>=0.60 \
+			devel/p5-Test-Portability-Files
 
 .include <bsd.port.mk>
