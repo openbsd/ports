@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.51 2016/03/17 14:11:45 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.52 2016/03/31 11:12:38 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -790,6 +790,7 @@ share/doc/dovecot/wiki/MailboxFormat.Cydir.txt
 share/doc/dovecot/wiki/MailboxFormat.MH.txt
 share/doc/dovecot/wiki/MailboxFormat.Maildir.txt
 share/doc/dovecot/wiki/MailboxFormat.dbox.txt
+share/doc/dovecot/wiki/MailboxFormat.imapc.txt
 share/doc/dovecot/wiki/MailboxFormat.mailstore.txt
 share/doc/dovecot/wiki/MailboxFormat.mbox.txt
 share/doc/dovecot/wiki/MailboxFormat.mbx.txt
