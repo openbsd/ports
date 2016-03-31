@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1476 2016/03/30 09:15:57 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1477 2016/03/31 20:26:24 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1051,6 +1051,7 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Content
      SUBDIR += p5-Test-Pod-Coverage
+     SUBDIR += p5-Test-Portability-Files
      SUBDIR += p5-Test-Regexp
      SUBDIR += p5-Test-Reporter
      SUBDIR += p5-Test-Requires
