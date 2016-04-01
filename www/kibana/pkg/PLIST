@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/18 22:25:18 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/01 11:07:28 jasper Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 kibana/
@@ -3739,12 +3739,14 @@ kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modul
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/package.json
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/test.js
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/
+kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/.npmignore
+kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/.travis.yml
+kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/Makefile
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/README.md
-kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/
-kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/build.js
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/component.json
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/package.json
+kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/test.js
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/.travis.yml
 kibana/node_modules/babel/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/index.js
@@ -4837,16 +4839,6 @@ kibana/node_modules/chalk/node_modules/
 kibana/node_modules/chalk/node_modules/ansi-styles/
 kibana/node_modules/chalk/node_modules/ansi-styles/index.js
 kibana/node_modules/chalk/node_modules/ansi-styles/license
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/CHANGELOG.md
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/LICENSE
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/README.md
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/conversions.js
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/css-keywords.js
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/index.js
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/package.json
-kibana/node_modules/chalk/node_modules/ansi-styles/node_modules/color-convert/route.js
 kibana/node_modules/chalk/node_modules/ansi-styles/package.json
 kibana/node_modules/chalk/node_modules/ansi-styles/readme.md
 kibana/node_modules/chalk/node_modules/escape-string-regexp/
@@ -11068,8 +11060,7 @@ kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_module
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/window-size/index.js
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/window-size/package.json
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/
-kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/.npmignore
-kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/.travis.yml
+kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/LICENSE
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/README.md
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/index.js
 kibana/node_modules/regenerator/node_modules/defs/node_modules/yargs/node_modules/y18n/package.json
@@ -11262,12 +11253,14 @@ kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_mo
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/package.json
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/test.js
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/
+kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/.npmignore
+kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/.travis.yml
+kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/Makefile
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/README.md
-kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build/
-kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build/build.js
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/component.json
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/index.js
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/package.json
+kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/test.js
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/.travis.yml
 kibana/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/index.js
@@ -11332,11 +11325,16 @@ kibana/node_modules/request/node_modules/forever-agent/README.md
 kibana/node_modules/request/node_modules/forever-agent/index.js
 kibana/node_modules/request/node_modules/forever-agent/package.json
 kibana/node_modules/request/node_modules/form-data/
+kibana/node_modules/request/node_modules/form-data/.dockerignore
+kibana/node_modules/request/node_modules/form-data/.editorconfig
+kibana/node_modules/request/node_modules/form-data/.eslintignore
+kibana/node_modules/request/node_modules/form-data/.eslintrc
 kibana/node_modules/request/node_modules/form-data/License
-kibana/node_modules/request/node_modules/form-data/Readme.md
+kibana/node_modules/request/node_modules/form-data/README.md
 kibana/node_modules/request/node_modules/form-data/lib/
 kibana/node_modules/request/node_modules/form-data/lib/browser.js
 kibana/node_modules/request/node_modules/form-data/lib/form_data.js
+kibana/node_modules/request/node_modules/form-data/lib/populate.js
 kibana/node_modules/request/node_modules/form-data/node_modules/
 kibana/node_modules/request/node_modules/form-data/node_modules/async/
 kibana/node_modules/request/node_modules/form-data/node_modules/async/CHANGELOG.md
@@ -11349,6 +11347,7 @@ kibana/node_modules/request/node_modules/form-data/node_modules/async/lib/
 kibana/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js
 kibana/node_modules/request/node_modules/form-data/node_modules/async/package.json
 kibana/node_modules/request/node_modules/form-data/package.json
+kibana/node_modules/request/node_modules/form-data/wercker.yml
 kibana/node_modules/request/node_modules/hawk/
 kibana/node_modules/request/node_modules/hawk/.npmignore
 kibana/node_modules/request/node_modules/hawk/.travis.yml
@@ -12749,12 +12748,14 @@ kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_mo
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/package.json
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/core-util-is/test.js
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/
+kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/.npmignore
+kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/.travis.yml
+kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/Makefile
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/README.md
-kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/
-kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/build/build.js
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/component.json
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/index.js
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/package.json
+kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/isarray/test.js
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/.travis.yml
 kibana/node_modules/webpack/node_modules/watchpack/node_modules/chokidar/node_modules/readdirp/node_modules/readable-stream/node_modules/process-nextick-args/index.js
@@ -12983,6 +12984,7 @@ kibana/src/cli/plugin/plugin_cleaner.js
 kibana/src/cli/plugin/plugin_downloader.js
 kibana/src/cli/plugin/plugin_extractor.js
 kibana/src/cli/plugin/plugin_installer.js
+kibana/src/cli/plugin/plugin_lister.js
 kibana/src/cli/plugin/plugin_logger.js
 kibana/src/cli/plugin/plugin_remover.js
 kibana/src/cli/plugin/progress_reporter.js
@@ -13021,7 +13023,6 @@ kibana/src/plugins/elasticsearch/lib/map_uri.js
 kibana/src/plugins/elasticsearch/lib/migrate_config.js
 kibana/src/plugins/elasticsearch/lib/setup_error.js
 kibana/src/plugins/elasticsearch/lib/upgrade_config.js
-kibana/src/plugins/elasticsearch/lib/validate.js
 kibana/src/plugins/elasticsearch/lib/version_satisfies.js
 kibana/src/plugins/elasticsearch/package.json
 kibana/src/plugins/kbn_vislib_vis_types/
@@ -13255,8 +13256,8 @@ kibana/src/plugins/table_vis/public/table_vis_params.js
 kibana/src/server/
 kibana/src/server/KbnServer.js
 kibana/src/server/config/
-kibana/src/server/config/Config.js
 kibana/src/server/config/complete.js
+kibana/src/server/config/config.js
 kibana/src/server/config/deepCloneWithBuffers.js
 kibana/src/server/config/explodeBy.js
 kibana/src/server/config/flattenWith.js
