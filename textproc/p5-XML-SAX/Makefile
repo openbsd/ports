@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/01 19:32:48 sthen Exp $
 
-COMMENT=	perl interface to the SAX2 XML parser
+COMMENT =	framework for the Perl SAX2 XML parsers, filters and drivers
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	XML-SAX-0.96
-REVISION=	1
-CATEGORIES=	textproc
+DISTNAME =	XML-SAX-0.99
 
-# GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+CATEGORIES =	textproc
 
-RUN_DEPENDS=	textproc/p5-XML-NamespaceSupport>=0.03
+# Perl (see LICENSE)
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =	cpan
+PKG_ARCH =	*
+
+RUN_DEPENDS =	textproc/p5-XML-SAX-Base>=1.05 \
+		textproc/p5-XML-NamespaceSupport>=0.03
 
 # Install parser template
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/ParserDetails.ini	\
+	@${INSTALL_DATA} ${FILESDIR}/ParserDetails.ini \
 		${PREFIX}/libdata/perl5/site_perl/XML/SAX/
 
 .include <bsd.port.mk>

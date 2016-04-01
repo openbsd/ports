@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.491 2016/04/01 18:46:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.492 2016/04/01 19:32:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -281,6 +281,7 @@
      SUBDIR += p5-XML-RSSLite
      SUBDIR += p5-XML-RegExp
      SUBDIR += p5-XML-SAX
+     SUBDIR += p5-XML-SAX-Base
      SUBDIR += p5-XML-SAX-Expat
      SUBDIR += p5-XML-SAX-Expat-Incremental
      SUBDIR += p5-XML-SAX-ExpatXS
