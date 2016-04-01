@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/01 18:46:06 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-VERSION=	1.9.5
-DISTNAME=	pear-${VERSION}
-PKGNAME-main=	${DISTNAME}
+VERSION=	1.10.1
+DISTNAME=	go-pear-${VERSION}
+PKGNAME=	pear-${VERSION}
+EXTRACT_SUFX=	.phar
+EXTRACT_ONLY=
+PKGNAME-main=	pear-${VERSION}
 PKGNAME-utils=	pear-utils-${VERSION}
+WRKDIST=	${WRKDIR}
 CATEGORIES=	www devel
-REVISION-main=	0
-REVISION-utils=	1
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	https://spacehopper.org/mirrors/
@@ -28,23 +30,18 @@ RUN_DEPENDS-main=	www/pear,-utils
 PREFIX-main=	${VARBASE}/www
 PREFIX-utils=	/usr/local
 
-NO_BUILD=	Yes
 NO_TEST=	Yes
 
+BUILD_DEPENDS=	devel/p5-Expect
 SUBST_VARS=	MODPHP_BIN
 
-pre-fake:
-	@perl -pi -e "s,%%BUNDLEDIR%%,${WRKSRC}/go-pear-bundle,g" ${WRKSRC}/go-pear
-	@perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX-main},g" ${WRKSRC}/go-pear
-	@perl -pi -e "s,%%TMPDIR%%,${TMPDIR}/go-pear,g" ${WRKSRC}/go-pear
+do-extract:
+	cp ${FULLDISTDIR}/${DISTFILES} ${WRKSRC}/go-pear.phar
+
+do-build:
+	cd ${WRKSRC}; perl ${FILESDIR}/run-go-pear ${WRKINST} ${PREFIX} ${MODPHP_BIN}
 
 do-install:
-	@${MODPHP_BIN} -q ${WRKSRC}/go-pear
-
-	@mv ${WRKINST}${PREFIX-main}/bin ${WRKINST}${PREFIX-utils}/
-	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
-	@rm -rf ${WRKINST}${PREFIX-main}/share ${WRKINST}${PREFIX-main}/etc
-
 	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \;
 	@find ${WRKINST}${PREFIX-utils}/bin -type f -exec perl -pi -e "s,${WRKINST},,g" {} \;
 
@@ -56,5 +53,7 @@ do-install:
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	@touch ${WRKINST}${PREFIX-main}/pear/.lock
 	@touch ${WRKINST}${PREFIX-main}/pear/lib/.lock
+	@rm ${PREFIX}/bin/{pear,peardev,pecl}{.beforesubst,.orig}*
+	@rmdir ${WRKINST}${PREFIX-main}/pear/{cfg,htdocs}
 
 .include <bsd.port.mk>

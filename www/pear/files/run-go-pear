@@ -1,0 +1,40 @@
+#!/usr/bin/perl -W
+
+use Cwd;
+use Expect;
+
+my $wrkinst = shift;
+my $prefix = $wrkinst . shift;
+my $varwww = $wrkinst . '/var/www';
+my $phpbin = shift;
+my $spawn  = new Expect;
+
+$spawn = Expect->spawn("$phpbin -d suhosin.executor.include.whitelist=phar go-pear.phar");
+$spawn->log_file("/tmp/go-pear.log.$$");
+
+my $ret = $spawn->expect(
+    10,
+    '-re', "^1-12, 'all' or Enter", sub { $spawn->send("all\n"); }
+);
+
+$ret = $spawn->expect(
+    10,
+    '-re', "^Installation base", sub { $spawn->send("$prefix\n"); exp_continue; },
+    '-re', "^Temporary dir", sub { $spawn->send(cwd."/tmp\n"); exp_continue; },
+    '-re', "^Binaries dir", sub { $spawn->send("\n"); exp_continue; },
+    '-re', "^PHP code dir", sub { $spawn->send("$varwww/pear/lib\n"); exp_continue; },
+    '-re', "^Documentation dir", sub { $spawn->send("$prefix/share/doc/pear\n"); exp_continue; },
+    '-re', "^Data dir", sub { $spawn->send("$varwww/pear/data\n"); exp_continue; },
+    '-re', "^User-modifiable config", sub { $spawn->send("$varwww/pear/cfg\n"); exp_continue; },
+    '-re', "^Public Web Files dir", sub { $spawn->send("$varwww/pear/htdocs\n"); exp_continue; },
+    '-re', "^System manual pages", sub { $spawn->send("$prefix/man\n"); exp_continue; },
+    '-re', "^Tests dir", sub { $spawn->send("$varwww/pear/tests\n"); exp_continue; },
+    '-re', "^Name of config", sub { $spawn->send(cwd."/tmp.pearrc\n"); exp_continue; },
+    '-re', "^1-12, 'all' or Enter", sub { $spawn->send("\n"); exp_continue; },
+    '-re', "^Would you like to alter php.ini", sub { $spawn->send("n\n"); exp_continue; },
+    '-re', "^Press Enter to continue:", sub { $spawn->send("\n"); }
+);
+
+print "\n...done...\n";
+
+exit;

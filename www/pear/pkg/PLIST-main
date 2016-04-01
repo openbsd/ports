@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/12/20 15:21:30 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/04/01 18:46:06 sthen Exp $
 @conflict php5-pear-*
 @conflict php4-pear-*
+@conflict pear-XML-Util-*
 @pkgpath www/php5/core,-pear
+@pkgpath textproc/pear-XML-Util
 @group daemon
 pear/
 pear/.lock
@@ -9,8 +11,6 @@ pear/data/
 pear/data/PEAR/
 pear/data/PEAR/package.dtd
 pear/data/PEAR/template.spec
-pear/data/Structures_Graph/
-pear/data/Structures_Graph/LICENSE
 pear/lib/
 pear/lib/.channels/
 pear/lib/.channels/.alias/
@@ -32,6 +32,7 @@ pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg
 pear/lib/.registry/pear.reg
 pear/lib/.registry/structures_graph.reg
+pear/lib/.registry/xml_util.reg
 pear/lib/Archive/
 pear/lib/Archive/Tar.php
 pear/lib/Console/
@@ -80,7 +81,6 @@ pear/lib/PEAR/Downloader.php
 pear/lib/PEAR/Downloader/Package.php
 pear/lib/PEAR/ErrorStack.php
 pear/lib/PEAR/Exception.php
-pear/lib/PEAR/FixPHP5PEARWarnings.php
 pear/lib/PEAR/Frontend/
 pear/lib/PEAR/Frontend.php
 pear/lib/PEAR/Frontend/CLI.php
@@ -97,6 +97,8 @@ pear/lib/PEAR/Installer/Role/Doc.php
 pear/lib/PEAR/Installer/Role/Doc.xml
 pear/lib/PEAR/Installer/Role/Ext.php
 pear/lib/PEAR/Installer/Role/Ext.xml
+pear/lib/PEAR/Installer/Role/Man.php
+pear/lib/PEAR/Installer/Role/Man.xml
 pear/lib/PEAR/Installer/Role/Php.php
 pear/lib/PEAR/Installer/Role/Php.xml
 pear/lib/PEAR/Installer/Role/Script.php
@@ -146,7 +148,6 @@ pear/lib/PEAR/Validate.php
 pear/lib/PEAR/Validator/
 pear/lib/PEAR/Validator/PECL.php
 pear/lib/PEAR/XMLParser.php
-pear/lib/PEAR5.php
 pear/lib/Structures/
 pear/lib/Structures/Graph/
 pear/lib/Structures/Graph.php
@@ -155,11 +156,42 @@ pear/lib/Structures/Graph/Manipulator/AcyclicTest.php
 pear/lib/Structures/Graph/Manipulator/TopologicalSorter.php
 pear/lib/Structures/Graph/Node.php
 pear/lib/System.php
+pear/lib/XML/
+pear/lib/XML/Util.php
 pear/lib/pearcmd.php
 pear/lib/peclcmd.php
 pear/tests/
+pear/tests/Console_Getopt/
+pear/tests/Console_Getopt/tests/
+pear/tests/Console_Getopt/tests/001-getopt.phpt
+pear/tests/Console_Getopt/tests/bug10557.phpt
+pear/tests/Console_Getopt/tests/bug11068.phpt
+pear/tests/Console_Getopt/tests/bug13140.phpt
 pear/tests/Structures_Graph/
 pear/tests/Structures_Graph/tests/
+pear/tests/Structures_Graph/tests/AcyclicTestTest.php
 pear/tests/Structures_Graph/tests/AllTests.php
-pear/tests/Structures_Graph/tests/testCase/
-pear/tests/Structures_Graph/tests/testCase/BasicGraph.php
+pear/tests/Structures_Graph/tests/BasicGraphTest.php
+pear/tests/Structures_Graph/tests/TopologicalSorterTest.php
+pear/tests/Structures_Graph/tests/helper.inc
+pear/tests/XML_Util/
+pear/tests/XML_Util/tests/
+pear/tests/XML_Util/tests/testBasic_apiVersion.phpt
+pear/tests/XML_Util/tests/testBasic_attributesToString.phpt
+pear/tests/XML_Util/tests/testBasic_collapseEmptyTags.phpt
+pear/tests/XML_Util/tests/testBasic_createCDataSection.phpt
+pear/tests/XML_Util/tests/testBasic_createComment.phpt
+pear/tests/XML_Util/tests/testBasic_createEndElement.phpt
+pear/tests/XML_Util/tests/testBasic_createStartElement.phpt
+pear/tests/XML_Util/tests/testBasic_createTag.phpt
+pear/tests/XML_Util/tests/testBasic_createTagFromArray.phpt
+pear/tests/XML_Util/tests/testBasic_getDocTypeDeclaration.phpt
+pear/tests/XML_Util/tests/testBasic_getXmlDeclaration.phpt
+pear/tests/XML_Util/tests/testBasic_isValidName.phpt
+pear/tests/XML_Util/tests/testBasic_raiseError.phpt
+pear/tests/XML_Util/tests/testBasic_replaceEntities.phpt
+pear/tests/XML_Util/tests/testBasic_reverseEntities.phpt
+pear/tests/XML_Util/tests/testBasic_splitQualifiedName.phpt
+pear/tests/XML_Util/tests/testBug_18343.phpt
+pear/tests/XML_Util/tests/testBug_4950.phpt
+pear/tests/XML_Util/tests/testBug_5392.phpt
