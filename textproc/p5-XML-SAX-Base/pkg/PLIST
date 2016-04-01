@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/01 19:31:39 sthen Exp $
+@conflict p5-XML-SAX-<0.99
+${P5SITE}/XML/
+${P5SITE}/XML/SAX/
+${P5SITE}/XML/SAX/Base.pm
+${P5SITE}/XML/SAX/BuildSAXBase.pl
+${P5SITE}/XML/SAX/Exception.pm
+@man man/man3p/XML::SAX::Base.3p
+@man man/man3p/XML::SAX::BuildSAXBase.3p
+@man man/man3p/XML::SAX::Exception.3p

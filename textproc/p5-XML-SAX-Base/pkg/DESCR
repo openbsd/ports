@@ -1,0 +1,9 @@
+XML::SAX::Base is intended for use as a base class for SAX filter modules
+and XML parsers generating SAX events.
+
+If you simply wish to build a SAX handler class to 'consume' SAX events you
+do not need to use XML::SAX::Base directly although you will need to install
+XML::SAX.
+
+This module used to be distributed as part of the XML:SAX distribution but
+is now distributed separately and referenced as a dependency by XML::SAX.
