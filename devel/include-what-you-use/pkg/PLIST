@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/01 01:51:28 jsg Exp $
+bin/fix_includes.py
+@bin bin/include-what-you-use
+bin/iwyu_tool.py

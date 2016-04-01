@@ -1,0 +1,105 @@
+$OpenBSD: patch-iwyu_include_picker_cc,v 1.1.1.1 2016/04/01 01:51:28 jsg Exp $
+--- iwyu_include_picker.cc.orig	Fri Dec 11 16:45:54 2015
++++ iwyu_include_picker.cc	Mon Jan 25 12:04:44 2016
+@@ -115,8 +115,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "gid_t", kPrivate, "<unistd.h>", kPublic },
+   { "id_t", kPrivate, "<sys/types.h>", kPublic },
+   { "id_t", kPrivate, "<sys/resource.h>", kPublic },
+-  { "ino64_t", kPrivate, "<sys/types.h>", kPublic },
+-  { "ino64_t", kPrivate, "<dirent.h>", kPublic },
+   { "ino_t", kPrivate, "<sys/types.h>", kPublic },
+   { "ino_t", kPrivate, "<dirent.h>", kPublic },
+   { "ino_t", kPrivate, "<sys/stat.h>", kPublic },
+@@ -132,8 +130,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "mode_t", kPrivate, "<sys/mman.h>", kPublic },
+   { "nlink_t", kPrivate, "<sys/types.h>", kPublic },
+   { "nlink_t", kPrivate, "<sys/stat.h>", kPublic },
+-  { "off64_t", kPrivate, "<sys/types.h>", kPublic },
+-  { "off64_t", kPrivate, "<unistd.h>", kPublic },
+   { "off_t", kPrivate, "<sys/types.h>", kPublic },
+   { "off_t", kPrivate, "<unistd.h>", kPublic },
+   { "off_t", kPrivate, "<sys/stat.h>", kPublic },
+@@ -147,11 +143,8 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "pid_t", kPrivate, "<time.h>", kPublic },
+   { "pid_t", kPrivate, "<utmpx.h>", kPublic },
+   { "sigset_t", kPrivate, "<signal.h>", kPublic },
+-  { "sigset_t", kPrivate, "<sys/epoll.h>", kPublic },
+   { "sigset_t", kPrivate, "<sys/select.h>", kPublic },
+-  { "socklen_t", kPrivate, "<bits/socket.h>", kPrivate },
+-  { "socklen_t", kPrivate, "<unistd.h>", kPublic },
+-  { "socklen_t", kPrivate, "<arpa/inet.h>", kPublic },
++  { "socklen_t", kPrivate, "<sys/socket.h>", kPublic },
+   { "ssize_t", kPrivate, "<sys/types.h>", kPublic },
+   { "ssize_t", kPrivate, "<unistd.h>", kPublic },
+   { "ssize_t", kPrivate, "<monetary.h>", kPublic },
+@@ -179,6 +172,7 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "size_t", kPrivate, "<string.h>", kPublic },
+   { "size_t", kPrivate, "<time.h>", kPublic },
+   { "size_t", kPrivate, "<wchar.h>", kPublic },
++  { "size_t", kPrivate, "<sys/types.h>", kPublic },
+   // Macros that can be defined in more than one file, don't have the
+   // same __foo_defined guard that other types do, so the grep above
+   // doesn't discover them.  Until I figure out a better way, I just
+@@ -192,6 +186,10 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "calloc", kPrivate, "<stdlib.h>", kPublic },
+   { "realloc", kPrivate, "<stdlib.h>", kPublic },
+   { "free", kPrivate, "<stdlib.h>", kPublic },
++  { "htonl", kPrivate, "<arpa/inet.h>", kPublic },
++  { "htons", kPrivate, "<arpa/inet.h>", kPublic },
++  { "ntohl", kPrivate, "<arpa/inet.h>", kPublic },
++  { "ntohs", kPrivate, "<arpa/inet.h>", kPublic },
+   // Entries for NULL
+   { "NULL", kPrivate, "<stddef.h>", kPublic },  // 'canonical' location for NULL
+   { "NULL", kPrivate, "<clocale>", kPublic },
+@@ -237,7 +235,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
+ };
+ 
+ // Private -> public include mappings for GNU libc
+-const IncludeMapEntry libc_include_map[] = {
++const IncludeMapEntry glibc_include_map[] = {
+   // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
+   // When I saw more than one mapping for these, I typically picked
+   // what I thought was the "best" one.
+@@ -436,6 +434,42 @@ const IncludeMapEntry libc_include_map[] = {
+   { "<linux/limits.h>", kPrivate, "<limits.h>", kPublic },   // PATH_MAX
+   { "<linux/prctl.h>", kPrivate, "<sys/prctl.h>", kPublic },
+   { "<sys/ucontext.h>", kPrivate, "<ucontext.h>", kPublic },
++};
++
++// Private -> public include mappings for OpenBSD libc
++const IncludeMapEntry libc_include_map[] = {
++  { "<machine/_float.h>", kPrivate, "<float.h>", kPublic },
++  { "<machine/_types.h>", kPrivate, "<sys/_types.h>", kPrivate },
++  { "<machine/atomic.h>", kPrivate, "<sys/atomic.h>", kPublic },
++  { "<machine/cdefs.h>", kPrivate, "<sys/cdefs.h>", kPublic },
++  { "<machine/disklabel.h>", kPrivate, "<sys/disklabel.h>", kPublic },
++  { "<machine/endian.h>", kPrivate, "<sys/endian.h>", kPrivate },
++  { "<machine/limits.h>", kPrivate, "<sys/limits.h>", kPrivate },
++  { "<machine/param.h>", kPrivate, "<sys/param.h>", kPublic },
++  { "<machine/ptrace.h>", kPrivate, "<sys/ptrace.h>", kPublic },
++  { "<machine/signal.h>", kPrivate, "<sys/signal.h>", kPrivate },
++  { "<machine/stdarg.h>", kPrivate, "<sys/stdarg.h>", kPrivate },
++  { "<machine/stdint.h>", kPrivate, "<sys/stdint.h>", kPrivate },
++  { "<machine/varargs.h>", kPrivate, "<sys/varags.h>", kPrivate },
++  { "<netinet6/in6.h>", kPrivate, "<netinet/in.h>", kPublic },
++  { "<sys/_endian.h>", kPrivate, "<sys/endian.h>", kPrivate },
++  { "<sys/_time.h>", kPrivate, "<time.h>", kPublic },
++  { "<sys/_types.h>", kPrivate, "<sys/types.h>", kPublic },
++  { "<sys/endian.h>", kPrivate, "<endian.h>", kPublic },
++  { "<sys/dirent.h>", kPrivate, "<dirent.h>", kPublic },
++  { "<sys/errno.h>", kPrivate, "<errno.h>", kPublic },
++  { "<sys/fcntl.h>", kPrivate, "<fcntl.h>", kPublic },
++  { "<sys/limits.h>", kPrivate, "<limits.h>", kPublic },
++  { "<sys/poll.h>", kPrivate, "<poll.h>", kPublic },
++  { "<sys/signal.h>", kPrivate, "<signal.h>", kPublic },
++  { "<sys/stdarg.h>", kPrivate, "<stdarg.h>", kPublic },
++  { "<sys/stdint.h>", kPrivate, "<stdint.h>", kPublic },
++  { "<sys/syslimits.h>", kPrivate, "<limits.h>", kPublic },
++  { "<sys/syslog.h>", kPrivate, "<syslog.h>", kPublic },
++  { "<sys/termios.h>", kPrivate, "<termios.h>", kPublic },
++  { "<sys/unistd.h>", kPrivate, "<unistd.h>", kPublic },
++  { "<sys/uuid.h>", kPrivate, "<uuid.h>", kPublic },
++  { "<sys/varargs.h>", kPrivate, "<varargs.h>", kPublic },
+ };
+ 
+ const IncludeMapEntry stdlib_c_include_map[] = {
