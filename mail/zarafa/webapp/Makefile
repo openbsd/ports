@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/12/30 10:01:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/04/01 18:09:08 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_BUILD=	51748
-WAPP_VERSION=	2.1.0
+WAPP_VERSION=	2.1.2
 EPOCH=		0
-REVISION=	0
 
 PLUGINS_WITH_DEFCONF= \
 		browsercompatibility \
@@ -26,17 +24,17 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		oauthlib \
 		quickitems
 
-RPMVER=		419.1
+RPMVER=		551.1
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
 
 .for _dfile in ${PLUGINS}
-EDISTFILES+=    zarafa-webapp-${_dfile}-${WAPP_VERSION}.${WAPP_BUILD}-${RPMVER}.noarch.rpm
+EDISTFILES+=    zarafa-webapp-${_dfile}-${WAPP_VERSION}-${RPMVER}.noarch.rpm
 .endfor
 EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
 
-DISTFILES+=	zarafa-webapp-${WAPP_VERSION}.${WAPP_BUILD}-${RPMVER}.noarch.rpm \
+DISTFILES+=	zarafa-webapp-${WAPP_VERSION}-${RPMVER}.noarch.rpm \
 		${EDISTFILES}
 
 MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel-5/

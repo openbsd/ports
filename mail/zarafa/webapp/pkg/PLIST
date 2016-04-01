@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/12/30 10:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/01 18:09:08 robert Exp $
 zarafa-webapp/
 zarafa-webapp/.htaccess
 zarafa-webapp/CONTRIBUTORS.txt
@@ -1584,6 +1584,7 @@ zarafa-webapp/plugins/xmpp/resources/icons/offline.png
 zarafa-webapp/plugins/xmpp/resources/icons/online.png
 zarafa-webapp/plugins/xmpp/resources/icons/privacy.png
 zarafa-webapp/plugins/xmpp/resources/icons/punish.png
+zarafa-webapp/robots.txt
 zarafa-webapp/server/
 zarafa-webapp/server/PEAR/
 zarafa-webapp/server/PEAR/JSON.php
