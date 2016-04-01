@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1477 2016/03/31 20:26:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1478 2016/04/01 01:54:46 jsg Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -279,6 +279,7 @@
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf
+     SUBDIR += include-what-you-use
      SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython
