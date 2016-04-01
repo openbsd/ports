@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2016/02/27 12:47:32 robert Exp $
+# $OpenBSD: Makefile,v 1.92 2016/04/01 18:18:21 robert Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.9.12
+VERSION=	1.9.13
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
