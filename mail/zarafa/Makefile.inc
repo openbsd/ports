@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.37 2016/03/19 15:47:04 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2016/04/01 18:08:10 robert Exp $
 
-V?=		7.2.1
-BUILD?=		51838
-DISTNAME?=	zarafa-${V}-${BUILD}
+V?=		7.2.2
+BUILD?=		531
+DISTNAME?=	zcp-${V}.${BUILD}
 
 CATEGORIES+=	mail
 
@@ -17,4 +17,4 @@ PERMIT_DISTFILES_FTP?=	Yes
 
 DIST_SUBDIR?=	zarafa
 MASTER_SITES?=	http://nerd.hu/distfiles/ \
-		http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}-${BUILD}/sourcecode/
+		http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}.${BUILD}/

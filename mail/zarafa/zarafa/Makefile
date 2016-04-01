@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.197 2016/04/01 18:08:10 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,10 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-REVISION=	5
 
 CATEGORIES=	mail www productivity
+
+EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS +=  freebusy             2.0 # .0.0
 SHARED_LIBS +=  mapi                 2.0 # .0.0
@@ -25,6 +26,8 @@ SHARED_LIBS +=  zcp_common_mapi      0.0 # 0.0
 SHARED_LIBS +=  zcp_common_service   0.0 # 0.0
 SHARED_LIBS +=  zcp_common_ssl       0.0 # 0.0
 SHARED_LIBS +=  zcp_common_util      0.0 # 0.0
+SHARED_LIBS +=  zcp_pyconv           0.0 # 0.0
+SHARED_LIBS +=  zcp_pydirector       0.0 # 0.0
 
 MULTI_PACKAGES=	-main -web
 
@@ -46,10 +49,10 @@ BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
 WANTLIB += m pthread z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt lzma
+WANTLIB += boost_filesystem-mt boost_system-mt lzma idn crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += c crypto ical icalss lber-2.4
+WANTLIB-main += c ical icalss lber-2.4
 WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
 WANTLIB-main += ldap_r-2.4 gsoapssl++
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit stdc++ tasn1
@@ -143,13 +146,14 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
 		users_common.sh
 
-WRKDIST=	${WRKDIR}/zarafa-${V}/
+WRKDIST=	${WRKDIR}/zcp-${V}.${BUILD}/
 
 post-patch:
 	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \
 		${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg.dist
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/gcp ${WRKDIR}/bin/cp
+	ln -sf ${LOCALBASE}/bin/gmv ${WRKDIR}/bin/mv
 
 pre-configure:
 	cd ${WRKSRC}/installer/linux && \
@@ -211,27 +215,6 @@ post-install:
 	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh
 	rmdir ${PREFIX}/share/doc/{zarafa/example-config,zarafa-gateway}
 	rm -rf ${PREFIX}/share/examples/{cron.daily,init.d,logrotate.d,sysconfig,zarafa/zarafa-gateway,zarafa/license}
-
-	# part of zarafa-licensed, Zarafa Enterprise / Hosted editions
-	# (i.e. commercial edition, linux bin only)
-	cd ${PREFIX} && rm \
-		man/man8/zarafa-licensed.8 \
-		man/man5/zarafa-licensed.cfg.5 \
-		man/man8/zarafa-restore.8 \
-		man/man8/zarafa-backup.8 \
-		man/man8/zarafa-msr-verify.8 \
-		man/man8/zarafa-report.8 \
-		man/man8/za-aclsync.8 \
-		man/man8/zarafa-msr.8 \
-		man/man5/zarafa-ldapms.cfg.5 \
-		man/man5/zarafa-msr.cfg.5 \
-		man/man5/zarafa-backup.cfg.5
-	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}/plugins
-	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}
-	rmdir ${WRKINST}/var/lib/zarafa/report
-	rmdir ${WRKINST}/var/lib/zarafa/
-	rmdir ${WRKINST}/var/lib/
-
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
 		${PREFIX}/sbin/zarafa-search \
 		${PREFIX}/sbin/zarafa-search-xapian-compact.py \

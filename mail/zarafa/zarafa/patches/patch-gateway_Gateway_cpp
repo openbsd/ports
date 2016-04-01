@@ -1,14 +1,28 @@
-$OpenBSD: patch-gateway_Gateway_cpp,v 1.9 2015/11/02 11:06:34 robert Exp $
---- gateway/Gateway.cpp.orig	Wed Aug  5 17:30:47 2015
-+++ gateway/Gateway.cpp	Thu Aug 20 12:36:50 2015
-@@ -80,6 +80,10 @@
- 
- #include "UnixUtil.h"
+$OpenBSD: patch-gateway_Gateway_cpp,v 1.10 2016/04/01 18:08:10 robert Exp $
+--- gateway/Gateway.cpp.orig	Wed Mar 23 12:14:33 2016
++++ gateway/Gateway.cpp	Fri Apr  1 13:30:49 2016
+@@ -90,6 +90,10 @@
+ #include <zarafa/UnixUtil.h>
+ #endif
  
 +#ifdef __OpenBSD__
 +#include <sys/resource.h>
 +#endif
 +
- #if HAVE_ICU
+ #ifdef ZCP_USES_ICU
  #include <unicode/uclean.h>
+ #endif
+@@ -324,10 +328,10 @@ int main(int argc, char *argv[]) {
+ 	static const configsetting_t lpDefaults[] = {
+ 		{ "server_bind", "" },
+ #ifdef LINUX
+-		{ "run_as_user", "zarafa" },
+-		{ "run_as_group", "zarafa" },
++		{ "run_as_user", "_zarafa" },
++		{ "run_as_group", "_zarafa" },
+ 		{ "pid_file", "/var/run/zarafad/gateway.pid" },
+-		{ "running_path", "/var/lib/zarafa" },
++		{ "running_path", "/var/empty" },
+ 		{ "process_model", "fork" },
+ 		{ "coredump_enabled", "no" },
  #endif

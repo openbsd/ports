@@ -1,0 +1,14 @@
+$OpenBSD: patch-ECtools_fsck_zarafa-fsck_cpp,v 1.1 2016/04/01 18:08:10 robert Exp $
+--- ECtools/fsck/zarafa-fsck.cpp.orig	Wed Mar 23 12:14:33 2016
++++ ECtools/fsck/zarafa-fsck.cpp	Fri Apr  1 09:30:17 2016
+@@ -557,8 +557,10 @@ int main(int argc, char *argv[])
+ 	bool acceptDisclaimer = false;
+ 
+ 	setlocale(LC_MESSAGES, "");
++#ifndef __OpenBSD__
+ 	if (!forceUTF8Locale(true))
+ 		return -1;
++#endif
+ 
+ 	strHost = GetServerUnixSocket();
+ 

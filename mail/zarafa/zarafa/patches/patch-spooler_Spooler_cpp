@@ -1,7 +1,21 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.19 2015/11/02 11:06:34 robert Exp $
---- spooler/Spooler.cpp.orig	Fri Sep 11 10:47:40 2015
-+++ spooler/Spooler.cpp	Thu Sep 24 16:56:51 2015
-@@ -1143,8 +1143,8 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.20 2016/04/01 18:08:10 robert Exp $
+--- spooler/Spooler.cpp.orig	Wed Mar 23 12:14:33 2016
++++ spooler/Spooler.cpp	Fri Apr  1 13:25:33 2016
+@@ -1166,10 +1166,10 @@ int main(int argc, char *argv[]) {
+ 		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
+ 		{ "server_socket", "default:" },
+ #ifdef LINUX
+-		{ "run_as_user", "zarafa" },
+-		{ "run_as_group", "zarafa" },
++		{ "run_as_user", "_zarafa" },
++		{ "run_as_group", "_zarafa" },
+ 		{ "pid_file", "/var/run/zarafad/spooler.pid" },
+-		{ "running_path", "/var/lib/zarafa" },
++		{ "running_path", "/var/empty" },
+ 		{ "coredump_enabled", "no" },
+ #endif
+ 		{ "log_method","file" },
+@@ -1194,8 +1194,8 @@ int main(int argc, char *argv[]) {
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },
@@ -9,18 +23,18 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.19 2015/11/02 11:06:34 robert Exp $
 -        { "plugin_manager_path", "/usr/share/zarafa-spooler/python" },
 +        { "plugin_path", "/var/db/zarafa/spooler/plugins" },
 +        { "plugin_manager_path", "/usr/local/share/zarafa-spooler/python" },
- 		{ "z_statsd_stats", "/var/run/zarafa-zstatsd" },
+ 		{ "z_statsd_stats", "/var/run/zarafad/statsd.sock" },
  		{ "tmp_path", "/tmp" },
  		{ "tmp_path", "/tmp" },
-@@ -1262,6 +1262,7 @@ int main(int argc, char *argv[]) {
- 
+@@ -1322,6 +1322,7 @@ int main(int argc, char *argv[]) {
+ #ifdef LINUX
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
 +#if defined(__linux__)
  		char buffer[256] = { 0 };
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
  
-@@ -1271,6 +1272,10 @@ int main(int argc, char *argv[]) {
+@@ -1331,6 +1332,10 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: your system is running with outdated linuxthreads.");
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
@@ -29,5 +43,5 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.19 2015/11/02 11:06:34 robert Exp $
 +		g_lpConfig->AddSetting("max_threads","1");
 +#endif
  	}
+ #endif
  
- 	// set socket filename

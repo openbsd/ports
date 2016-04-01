@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.10 2015/11/02 11:06:34 robert Exp $
---- provider/client/WSTransport.cpp.orig	Wed Aug  5 17:30:47 2015
-+++ provider/client/WSTransport.cpp	Thu Aug 20 12:36:50 2015
-@@ -95,6 +95,10 @@ using namespace std;
+$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.11 2016/04/01 18:08:10 robert Exp $
+--- provider/client/WSTransport.cpp.orig	Wed Mar 23 12:14:33 2016
++++ provider/client/WSTransport.cpp	Fri Apr  1 13:26:05 2016
+@@ -108,6 +108,10 @@ using namespace std;
  static const char THIS_FILE[] = __FILE__;
  #endif
  

@@ -1,22 +1,32 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp $
---- installer/linux/server.cfg.orig	Wed Aug  5 17:28:49 2015
-+++ installer/linux/server.cfg	Thu Aug 20 12:36:50 2015
+$OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp $
+--- installer/linux/server.cfg.orig	Wed Mar 23 12:14:33 2016
++++ installer/linux/server.cfg	Fri Apr  1 16:17:52 2016
+@@ -36,7 +36,7 @@ allow_local_users	= yes
+ # local admin users who can connect to any store (use this for the zarafa-dagent)
+ # field is SPACE separated
+ # eg: local_admin_users = root vmail
+-local_admin_users	= root zarafa
++local_admin_users	= root _zarafa
+ 
+ # The user has full rights on a folder by default, uncomment the following line to disable this. 
+ # owner_auto_full_access = false 
 @@ -46,16 +46,16 @@ owner_auto_full_access = true
  system_email_address	= postmaster@localhost
  
  # drop privileges and run the process as this user
--run_as_user		= 
+-#run_as_user		= zarafa
 +run_as_user		= _zarafa
  
  # drop privileges and run the process as this group
--run_as_group		= 
+-#run_as_group		= zarafa
 +run_as_group		= _zarafa
  
  # create a pid file for stopping the service via the init.d scripts
- pid_file		= /var/run/zarafa-server.pid
+-#pid_file		= /var/run/zarafad/server.pid
++pid_file		= /var/run/zarafad/server.pid
  
  # run server in this path (when not using the -F switch)
--running_path = /
+-#running_path = /var/lib/zarafa
 +running_path = /var/empty
  
  # create memory coredumps upon crash in the running_path directory
@@ -25,12 +35,12 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp
  session_timeout		= 300
  
  # Socket to connect to license server
--license_socket		= /var/run/zarafa-licensed
-+#license_socket		= /var/run/zarafa-licensed
+-license_socket		= /var/run/zarafad/licensed.sock
++#license_socket		= /var/run/zarafad/licensed.sock
  
  # Time (in seconds) to wait for a connection to the license server before 
  # terminating the request.
-@@ -151,7 +151,7 @@ attachment_storage	= files 
+@@ -146,7 +146,7 @@ attachment_storage	= files 
  attachment_files_fsync  = yes
  
  # When attachment_storage is 'files', use this path to store the files
@@ -39,7 +49,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -167,13 +167,13 @@ server_ssl_enabled	= no
+@@ -162,13 +162,13 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -55,7 +65,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp
  
  # Path with CA certificates, e.g. /etc/ssl/certs
  server_ssl_ca_path	=
-@@ -188,7 +188,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
+@@ -183,7 +183,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
  server_ssl_prefer_server_ciphers = no
  
  # Path of SSL Public keys of clients
@@ -64,7 +74,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp
  
  ##############################################################
  # THREAD SETTINGS
-@@ -320,20 +320,20 @@ companyquota_warn      = 0
+@@ -315,20 +315,20 @@ companyquota_warn      = 0
  user_plugin		= db
  
  # configuration file of the user plugin, examples can be found in /usr/share/doc/zarafa/example-config
@@ -93,7 +103,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -390,7 +390,7 @@ client_update_enabled = false
+@@ -385,7 +385,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.30 2015/11/02 11:06:34 robert Exp $
---- provider/server/ECServer.cpp.orig	Wed Aug  5 17:30:48 2015
-+++ provider/server/ECServer.cpp	Thu Aug 20 12:36:50 2015
-@@ -89,6 +89,10 @@
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert Exp $
+--- provider/server/ECServer.cpp.orig	Wed Mar 23 12:14:33 2016
++++ provider/server/ECServer.cpp	Fri Apr  1 11:32:16 2016
+@@ -102,6 +102,10 @@
  
  #include "TmpPath.h"
  
@@ -12,28 +12,42 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.30 2015/11/02 11:06:34 robert E
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -904,7 +908,7 @@ int running_server(char *szName, const char *szConfig,
- 		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
- #endif
- 		{ "attachment_storage",			"database" },
+@@ -994,10 +998,10 @@ int running_server(char *szName, const char *szConfig,
+ 		{ "thread_stacksize",			"512" },
+ 		{ "allow_local_users",			"yes", CONFIGSETTING_RELOADABLE },			// allow any user connect through the unix socket
+ 		{ "local_admin_users",			"root", CONFIGSETTING_RELOADABLE },			// this local user is admin
+-		{ "run_as_user",			"zarafa" }, // drop root privileges, and run as this user/group
+-		{ "run_as_group",			"zarafa" },
++		{ "run_as_user",			"_zarafa" }, // drop root privileges, and run as this user/group
++		{ "run_as_group",			"_zarafa" },
+ 		{ "pid_file",					"/var/run/zarafad/server.pid" },
+-		{ "running_path",			"/var/lib/zarafa" },
++		{ "running_path",			"/var/empty" },
+ 		{ "coredump_enabled",			"yes" },
+ 
+ 		{ "license_path",			"/etc/zarafa/license", CONFIGSETTING_UNUSED },
+@@ -1040,7 +1044,7 @@ int running_server(char *szName, const char *szConfig,
+ #ifdef WIN32
+ 		{ "attachment_path",			"Zarafa Data" },
+ #else
 -		{ "attachment_path",			"/var/lib/zarafa/attachments" },
 +		{ "attachment_path",			"/var/db/zarafa/attachments" },
+ #endif
  		{ "attachment_compression",		"6" },
  
- 		// Log options
-@@ -978,7 +982,7 @@ int running_server(char *szName, const char *szConfig,
- 
+@@ -1132,7 +1136,7 @@ int running_server(char *szName, const char *szConfig,
  		{ "client_update_enabled",	"no" },
  		{ "client_update_log_level", "1", CONFIGSETTING_RELOADABLE },
+ #ifdef LINUX
 -		{ "client_update_path",		"/var/lib/zarafa/client", CONFIGSETTING_RELOADABLE },
 +		{ "client_update_path",		"/var/db/zarafa/client", CONFIGSETTING_RELOADABLE },
  		{ "client_update_log_path",	"/var/log/zarafa/autoupdate", CONFIGSETTING_RELOADABLE },
- 		{ "index_services_enabled", "", CONFIGSETTING_UNUSED },
- 		{ "index_services_path",    "", CONFIGSETTING_UNUSED },
-@@ -1010,10 +1014,14 @@ int running_server(char *szName, const char *szConfig,
- 		{ NULL, NULL },
+ #else
+ 		{ "client_update_path",		"c:\\client_update_path", CONFIGSETTING_RELOADABLE },
+@@ -1173,10 +1177,14 @@ int running_server(char *szName, const char *szConfig,
  	};
  
+ #ifdef LINUX
 +#if defined(__linux__)
  	char buffer[256];
  	confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
@@ -42,6 +56,6 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.30 2015/11/02 11:06:34 robert E
 +#elif defined(__OpenBSD__)
 +	m_bNPTL = true;
 +#endif
+ #endif
  
  	// Init random generator
- 	rand_init();

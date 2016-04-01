@@ -1,0 +1,17 @@
+$OpenBSD: patch-caldav_CalDAV_cpp,v 1.1 2016/04/01 18:08:10 robert Exp $
+--- caldav/CalDAV.cpp.orig	Fri Apr  1 13:29:56 2016
++++ caldav/CalDAV.cpp	Fri Apr  1 13:30:11 2016
+@@ -190,10 +190,10 @@ int main(int argc, char **argv) {
+ #endif
+ 	static const configsetting_t lpDefaults[] = {
+ #ifdef LINUX
+-		{ "run_as_user", "zarafa" },
+-		{ "run_as_group", "zarafa" },
++		{ "run_as_user", "_zarafa" },
++		{ "run_as_group", "_zarafa" },
+ 		{ "pid_file", "/var/run/zarafad/ical.pid" },
+-		{ "running_path", "/var/lib/zarafa" },
++		{ "running_path", "/var/empty" },
+ 		{ "process_model", "fork" },
+ #endif
+ 		{ "server_bind", "" },

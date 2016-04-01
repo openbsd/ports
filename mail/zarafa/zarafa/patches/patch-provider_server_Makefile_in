@@ -1,12 +1,12 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.23 2015/11/02 11:06:34 robert Exp $
---- provider/server/Makefile.in.orig	Thu Aug 20 13:59:44 2015
-+++ provider/server/Makefile.in	Thu Aug 20 13:59:49 2015
-@@ -379,7 +379,7 @@ zarafa_server_LDADD = \
+$OpenBSD: patch-provider_server_Makefile_in,v 1.24 2016/04/01 18:08:10 robert Exp $
+--- provider/server/Makefile.in.orig	Fri Apr  1 10:32:49 2016
++++ provider/server/Makefile.in	Fri Apr  1 10:32:52 2016
+@@ -440,7 +440,7 @@ zarafa_server_LDADD = \
  	${top_builddir}/common/libzcp_common_ssl.la \
- 	$(PROG_LIBS)															\
+ 	$(PROG_LIBS) ${icu_uc_LIBS} \
  	$(BOOST_FILESYSTEM_LIBS) $(BOOST_SYSTEM_LIBS) $(ICU_LIBS) $(DL_LIBS)	\
--	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS) $(TCMALLOC_LIBS) -lrt
-+	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS) $(TCMALLOC_LIBS)
+-	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS) -lrt
++	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS)
  
  zarafa_server_SOURCES = ECServer.cpp  \
  						ECSoapServerConnection.h ECSoapServerConnection.cpp \

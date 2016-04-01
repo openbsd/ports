@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_client_ECNotifyMaster_cpp,v 1.7 2015/11/02 11:06:34 robert Exp $
---- provider/client/ECNotifyMaster.cpp.orig	Wed Aug  5 17:30:48 2015
-+++ provider/client/ECNotifyMaster.cpp	Thu Aug 20 12:36:50 2015
-@@ -388,7 +388,7 @@ void* ECNotifyMaster::NotifyWatch(void *pTmpNotifyMast
+$OpenBSD: patch-provider_client_ECNotifyMaster_cpp,v 1.8 2016/04/01 18:08:10 robert Exp $
+--- provider/client/ECNotifyMaster.cpp.orig	Wed Mar 23 12:14:33 2016
++++ provider/client/ECNotifyMaster.cpp	Thu Mar 31 23:23:31 2016
+@@ -394,7 +394,7 @@ void* ECNotifyMaster::NotifyWatch(void *pTmpNotifyMast
  		notificationArray *pNotifyArray = NULL;
  
  		hr = pNotifyMaster->m_lpTransport->HrGetNotify(&pNotifyArray);

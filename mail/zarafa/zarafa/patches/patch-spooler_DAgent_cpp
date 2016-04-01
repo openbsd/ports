@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.27 2015/11/02 11:06:34 robert Exp $
---- spooler/DAgent.cpp.orig	Thu Aug 20 13:00:51 2015
-+++ spooler/DAgent.cpp	Thu Aug 20 13:02:20 2015
-@@ -91,6 +91,11 @@
- #include <sys/mman.h>
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
+--- spooler/DAgent.cpp.orig	Wed Mar 23 12:14:33 2016
++++ spooler/DAgent.cpp	Fri Apr  1 13:29:37 2016
+@@ -94,6 +94,11 @@
  #include <pwd.h>
+ #endif
  
 +#ifdef __OpenBSD__
 +#include <sys/resource.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.27 2015/11/02 11:06:34 robert Exp $
  #include "spmain.h"
  #include "TmpPath.h"
  
-@@ -1703,12 +1708,18 @@ static HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LP
+@@ -1748,12 +1753,18 @@ static HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LP
  	}
  
  	{
@@ -32,7 +32,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.27 2015/11/02 11:06:34 robert Exp $
  	}
  
  	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess) {
-@@ -3920,7 +3931,7 @@ int main(int argc, char *argv[]) {
+@@ -3998,7 +4009,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
@@ -41,12 +41,25 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.27 2015/11/02 11:06:34 robert Exp $
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
-@@ -3986,10 +3997,10 @@ int main(int argc, char *argv[]) {
+@@ -4054,8 +4065,8 @@ int main(int argc, char *argv[]) {
+ 		{ "server_bind", "" },
+ 		{ "server_bind_intf", "" },
+ #ifdef LINUX
+-		{ "run_as_user", "zarafa" },
+-		{ "run_as_group", "zarafa" },
++		{ "run_as_user", "_zarafa" },
++		{ "run_as_group", "_zarafa" },
+ 		{ "pid_file", "/var/run/zarafad/dagent.pid" },
+ 		{ "coredump_enabled", "no" },
+ #endif
+@@ -4075,11 +4086,11 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
 -		{ "mr_autoaccepter", "/usr/sbin/zarafa-mr-accept", CONFIGSETTING_RELOADABLE },
+-		{ "mr_autoprocessor", "/usr/sbin/zarafa-mr-process", CONFIGSETTING_RELOADABLE },
 +		{ "mr_autoaccepter", "/usr/local/sbin/zarafa-mr-accept", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoprocessor", "/usr/local/sbin/zarafa-mr-process", CONFIGSETTING_RELOADABLE },
  		{ "plugin_enabled", "yes" },
 -		{ "plugin_path", "/var/lib/zarafa/dagent/plugins" },
 -		{ "plugin_manager_path", "/usr/share/zarafa-dagent/python" },

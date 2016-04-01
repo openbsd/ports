@@ -1,27 +1,28 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.5 2015/11/02 11:06:34 robert Exp $
---- installer/linux/ical.cfg.orig	Wed Aug  5 17:28:49 2015
-+++ installer/linux/ical.cfg	Thu Aug 20 12:36:50 2015
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.6 2016/04/01 18:08:10 robert Exp $
+--- installer/linux/ical.cfg.orig	Wed Mar 23 12:14:33 2016
++++ installer/linux/ical.cfg	Fri Apr  1 13:25:51 2016
 @@ -2,16 +2,16 @@
  # ICAL SETTINGS
  
  # drop privileges and run the process as this user
--run_as_user = 
+-#run_as_user = zarafa
 +run_as_user = _zarafa
  
  # drop privileges and run the process as this group
--run_as_group = 
+-#run_as_group = zarafa
 +run_as_group = _zarafa
  
 -# create a pid file for stopping the service via the init.d scripts
+-#pid_file = /var/run/zarafad/ical.pid
 +# write the process ID number to this file
- pid_file = /var/run/zarafa-ical.pid
++pid_file = /var/run/zarafad/ical.pid
  
  # run server in this path (when not using the -F switch)
--running_path = /
+-#running_path = /var/lib/zarafa
 +running_path = /var/empty
  
- # IP Address to bind to (0.0.0.0 for ANY)
- server_bind = 0.0.0.0
+ # IP Address to bind to (empty for ANY)
+ #server_bind =
 @@ -33,7 +33,7 @@ icals_port = 8443
  server_socket = http://localhost:236/zarafa
  
@@ -31,7 +32,7 @@ $OpenBSD: patch-installer_linux_ical_cfg,v 1.5 2015/11/02 11:06:34 robert Exp $
  
  ##############################################################
  # ICAL LOG SETTINGS
-@@ -62,10 +62,10 @@ log_buffer_size  = 4096
+@@ -57,10 +57,10 @@ log_timestamp = 1
  # ICAL SSL SETTINGS FOR INCOMING CONNECTIONS
  
  # File with RSA key for SSL

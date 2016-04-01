@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.51 2015/11/02 11:06:34 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.52 2016/04/01 18:08:10 robert Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
@@ -63,6 +63,7 @@ include/libzarafasync/ECSyncLog.h
 include/libzarafasync/ECSyncSettings.h
 include/libzarafasync/ECSyncUtil.h
 include/mapi4linux/
+include/mapi4linux/edkguid.h
 include/mapi4linux/edkmdb.h
 include/mapi4linux/imessage.h
 include/mapi4linux/initguid.h
@@ -75,98 +76,61 @@ include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 include/zarafa/
+include/zarafa/ArchiveControl.h
 include/zarafa/CommonUtil.h
-include/zarafa/ConsoleTable.h
 include/zarafa/ECABEntryID.h
-include/zarafa/ECACL.h
-include/zarafa/ECCache.h
 include/zarafa/ECChannel.h
-include/zarafa/ECChannelClient.h
 include/zarafa/ECConfig.h
-include/zarafa/ECConfigImpl.h
-include/zarafa/ECDatabaseMySQL.h
 include/zarafa/ECDebug.h
 include/zarafa/ECDebugPrint.h
 include/zarafa/ECDefs.h
-include/zarafa/ECFeatureList.h
-include/zarafa/ECFeatures.h
-include/zarafa/ECFifoBuffer.h
-include/zarafa/ECFifoStream.h
 include/zarafa/ECGetText.h
 include/zarafa/ECGuid.h
 include/zarafa/ECIConv.h
 include/zarafa/ECInterfaceDefs.h
-include/zarafa/ECInvariantChecker.h
-include/zarafa/ECIterators.h
 include/zarafa/ECKeyTable.h
 include/zarafa/ECLogger.h
-include/zarafa/ECMAPIDebug.h
-include/zarafa/ECMemStream.h
 include/zarafa/ECMemTable.h
+include/zarafa/ECPluginSharedData.h
 include/zarafa/ECRestriction.h
 include/zarafa/ECScheduler.h
-include/zarafa/ECSerializer.h
 include/zarafa/ECTags.h
 include/zarafa/ECThreadPool.h
 include/zarafa/ECUnknown.h
 include/zarafa/EMSAbTag.h
-include/zarafa/HrException.h
-include/zarafa/HtmlEntity.h
-include/zarafa/HtmlToTextParser.h
-include/zarafa/IECChangeAdviseSink.h
-include/zarafa/IECChangeAdvisor.h
-include/zarafa/IECExchangeModifyTable.h
-include/zarafa/IECExportAddressbookChanges.h
-include/zarafa/IECExportChanges.h
-include/zarafa/IECImportAddressbookChanges.h
-include/zarafa/IECImportContentsChanges.h
-include/zarafa/IECImportHierarchyChanges.h
 include/zarafa/IECLicense.h
-include/zarafa/IECMultiStoreTable.h
 include/zarafa/IECSecurity.h
 include/zarafa/IECServiceAdmin.h
 include/zarafa/IECSingleInstance.h
-include/zarafa/IECSpooler.h
 include/zarafa/IECStatsCollector.h
-include/zarafa/IECTestProtocol.h
 include/zarafa/IECUnknown.h
-include/zarafa/IMAPIOffline.h
-include/zarafa/IStreamAdapter.h
-include/zarafa/MAPIConsoleTable.h
 include/zarafa/MAPIErrors.h
-include/zarafa/MAPINotifSink.h
 include/zarafa/RecurrenceState.h
-include/zarafa/SSLUtil.h
-include/zarafa/StatsClient.h
-include/zarafa/SymmetricCrypt.h
-include/zarafa/TimeUtil.h
-include/zarafa/TmpPath.h
 include/zarafa/Trace.h
 include/zarafa/UnixUtil.h
 include/zarafa/Util.h
 include/zarafa/ZarafaCode.h
+include/zarafa/ZarafaUser.h
+include/zarafa/archiver-common.h
 include/zarafa/auto_free.h
 include/zarafa/base64.h
 include/zarafa/boost_compat.h
 include/zarafa/charset/
 include/zarafa/charset/convert.h
 include/zarafa/charset/convstring.h
-include/zarafa/charset/localeutil.h
 include/zarafa/charset/traits.h
 include/zarafa/charset/utf16string.h
-include/zarafa/charset/utf32string.h
 include/zarafa/charset/utf8string.h
 include/zarafa/codepage.h
-include/zarafa/edkguid.h
-include/zarafa/favoritesutil.h
-include/zarafa/fileutil.h
+include/zarafa/conversion.h
+include/zarafa/director_util.h
+include/zarafa/ecversion.h
 include/zarafa/mapi_ptr/
 include/zarafa/mapi_ptr.h
 include/zarafa/mapi_ptr/mapi_array_ptr.h
 include/zarafa/mapi_ptr/mapi_memory_ptr.h
 include/zarafa/mapi_ptr/mapi_object_ptr.h
 include/zarafa/mapi_ptr/mapi_rowset_ptr.h
-include/zarafa/mapicontact.h
 include/zarafa/mapiext.h
 include/zarafa/mapiguidext.h
 include/zarafa/md5.h
@@ -174,21 +138,15 @@ include/zarafa/my_getopt.h
 include/zarafa/namedprops.h
 include/zarafa/platform.h
 include/zarafa/platform.linux.h
-include/zarafa/pthreadutil.h
 include/zarafa/restrictionutil.h
-include/zarafa/rtfutil.h
 include/zarafa/stringutil.h
+include/zarafa/swig_iunknown.h
 include/zarafa/threadutil.h
 include/zarafa/tstring.h
+include/zarafa/typemap.i
+include/zarafa/typemap_python.i
 include/zarafa/userutil.h
-include/zarafa/ustringutil/
 include/zarafa/ustringutil.h
-include/zarafa/ustringutil/utfutil.h
-include/zarafa/utf8/
-include/zarafa/utf8.h
-include/zarafa/utf8/checked.h
-include/zarafa/utf8/core.h
-include/zarafa/utf8/unchecked.h
 @comment lib/libarchiver-core.la
 @comment lib/libarchiver.la
 @comment lib/libcommon_mapi.la
@@ -198,6 +156,7 @@ include/zarafa/utf8/unchecked.h
 @comment lib/libzarafaclient.la
 @comment lib/libzarafacontacts.la
 include/zarafa/zcdefs.h
+include/zarafa/zconfig.h
 @comment lib/libfreebusy.la
 @lib lib/libfreebusy.so.${LIBfreebusy_VERSION}
 @comment lib/libicalmapi.la
@@ -226,6 +185,10 @@ lib/libzcp_common_ssl.la
 @lib lib/libzcp_common_ssl.so.${LIBzcp_common_ssl_VERSION}
 lib/libzcp_common_util.la
 @lib lib/libzcp_common_util.so.${LIBzcp_common_util_VERSION}
+lib/libzcp_pyconv.la
+@lib lib/libzcp_pyconv.so.${LIBzcp_pyconv_VERSION}
+lib/libzcp_pydirector.la
+@lib lib/libzcp_pydirector.so.${LIBzcp_pydirector_VERSION}
 lib/pkgconfig/zarafa.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
 lib/python${MODPY_VERSION}/site-packages/MAPI-1.0-py${MODPY_VERSION}.egg-info
@@ -286,6 +249,18 @@ lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.py
 lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.pyc
 lib/python${MODPY_VERSION}/site-packages/zarafa/lockfile.py
 lib/python${MODPY_VERSION}/site-packages/zarafa/lockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_backup/
+lib/python${MODPY_VERSION}/site-packages/zarafa_backup-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafa_backup/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_backup/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/plugin_spreed.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/plugin_spreed.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/plugin_xmpp.py
+lib/python${MODPY_VERSION}/site-packages/zarafa_presence/plugin_xmpp.pyc
 lib/python${MODPY_VERSION}/site-packages/zarafa_search/
 lib/python${MODPY_VERSION}/site-packages/zarafa_search-0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zarafa_search/__init__.py
@@ -299,6 +274,20 @@ lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_solr.pyc
 lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_xapian.py
 lib/python${MODPY_VERSION}/site-packages/zarafa_search/plugin_xapian.pyc
 lib/python${MODPY_VERSION}/site-packages/zarafa_search/xmltotext.xslt
+lib/systemd/
+lib/systemd/system/
+lib/systemd/system/zarafa-dagent.service
+lib/systemd/system/zarafa-gateway.service
+lib/systemd/system/zarafa-ical.service
+lib/systemd/system/zarafa-monitor.service
+lib/systemd/system/zarafa-presence.service
+lib/systemd/system/zarafa-search.service
+lib/systemd/system/zarafa-server.service
+lib/systemd/system/zarafa-spooler.service
+lib/sysusers.d/
+lib/sysusers.d/zarafa-sysusers.conf
+lib/tmpfiles.d/
+lib/tmpfiles.d/zarafa-tmpfiles.conf
 lib/zarafa/
 @comment lib/zarafa/dbplugin.la
 lib/zarafa/dbplugin.so
@@ -329,8 +318,6 @@ lib/zarafa/libzarafacontacts.la
 @man man/man5/zarafa-spooler.cfg.5
 @man man/man5/zarafa-unix.cfg.5
 @man man/man7/zarafa.7
-@man man/man8/za-aclset.8
-@man man/man8/za-restore.8
 @man man/man8/zarafa-admin.8
 @man man/man8/zarafa-archiver.8
 @man man/man8/zarafa-autorespond.8
@@ -347,6 +334,7 @@ lib/zarafa/libzarafacontacts.la
 @bin sbin/zarafa-admin
 @bin sbin/zarafa-archiver
 sbin/zarafa-autorespond
+sbin/zarafa-backup-plus
 @bin sbin/zarafa-dagent
 @bin sbin/zarafa-gateway
 @bin sbin/zarafa-ical
@@ -354,6 +342,7 @@ sbin/zarafa-mailbox-permissions
 @bin sbin/zarafa-monitor
 sbin/zarafa-mr-accept
 sbin/zarafa-mr-process
+sbin/zarafa-presence
 sbin/zarafa-search
 sbin/zarafa-search-xapian-compact.py
 @bin sbin/zarafa-server
@@ -372,9 +361,6 @@ share/doc/zarafa/db-convert-4.2x-to-5.00
 share/doc/zarafa/db-convert-attachments-to-files
 share/doc/zarafa/db-remove-orphaned-attachments
 share/doc/zarafa/db-upgrade-objectsid-to-objectguid.pl
-@mode
-share/doc/zarafa/eula.txt
-@mode 0555
 share/doc/zarafa/ldap-switch-sendas.pl
 share/doc/zarafa/optimize-imap.py
 share/doc/zarafa/update-resource-recipients
@@ -397,6 +383,7 @@ share/examples/zarafa/archiver.cfg
 @sample ${SYSCONFDIR}/zarafa/archiver.cfg
 share/examples/zarafa/autorespond
 @sample ${SYSCONFDIR}/zarafa/autorespond
+share/examples/zarafa/backup-plus.cfg
 share/examples/zarafa/dagent.cfg
 @sample ${SYSCONFDIR}/zarafa/dagent.cfg
 share/examples/zarafa/gateway.cfg
@@ -502,7 +489,6 @@ share/examples/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
 @mode
-share/examples/zarafa/ws.cfg
 share/examples/zarafa/zarafa.inf
 share/examples/zarafa/zarafa.m4
 share/examples/zarafa/zarafa.schema
@@ -548,6 +534,15 @@ share/locale/tr/LC_MESSAGES/zarafa.mo
 share/locale/uk/LC_MESSAGES/zarafa.mo
 share/locale/zh_CN/LC_MESSAGES/zarafa.mo
 share/locale/zh_TW/LC_MESSAGES/zarafa.mo
+share/zarafa/
+share/zarafa/LDAPCache.cpp
+share/zarafa/LDAPCache.h
+share/zarafa/LDAPUserPlugin.cpp
+share/zarafa/LDAPUserPlugin.h
+share/zarafa/ldap.m4
+share/zarafa/ldappasswords.cpp
+share/zarafa/ldappasswords.h
+share/zarafa/plugin.h
 share/zarafa-dagent/
 share/zarafa-dagent/python/
 share/zarafa-dagent/python/mapiplugin.py

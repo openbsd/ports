@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECStatsTables_cpp,v 1.4 2015/11/02 11:06:34 robert Exp $
---- provider/libserver/ECStatsTables.cpp.orig	Wed Aug  5 17:30:47 2015
-+++ provider/libserver/ECStatsTables.cpp	Thu Aug 20 12:36:50 2015
-@@ -350,15 +350,26 @@ void ECSessionStatsTable::GetSessionData(ECSession *lp
+$OpenBSD: patch-provider_libserver_ECStatsTables_cpp,v 1.5 2016/04/01 18:08:10 robert Exp $
+--- provider/libserver/ECStatsTables.cpp.orig	Wed Mar 23 12:14:33 2016
++++ provider/libserver/ECStatsTables.cpp	Thu Mar 31 23:23:31 2016
+@@ -351,15 +351,26 @@ void ECSessionStatsTable::GetSessionData(ECSession *lp
  	// To get up-to-date CPU stats, check each of the active threads on the session
  	// for their CPU usage, and add that to the already-logged time on the session
  	for (iterBS = sd.busystates.begin(); iterBS != sd.busystates.end(); iterBS++) {
@@ -30,4 +30,4 @@ $OpenBSD: patch-provider_libserver_ECStatsTables_cpp,v 1.4 2015/11/02 11:06:34 r
 +#endif
  		sd.dblReal += GetTimeOfDay() - iterBS->start;
  	}
- 
+ #endif

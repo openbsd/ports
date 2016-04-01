@@ -1,21 +1,21 @@
-$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.6 2015/11/02 11:06:34 robert Exp $
---- provider/server/ECThreadManager.cpp.orig	Wed Aug  5 17:30:48 2015
-+++ provider/server/ECThreadManager.cpp	Thu Aug 20 12:36:50 2015
-@@ -164,7 +164,7 @@ void *ECWorkerThread::Work(void *lpParam)
-     bool fStop = false;
- 	int err = 0;
- 
+$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.7 2016/04/01 18:08:10 robert Exp $
+--- provider/server/ECThreadManager.cpp.orig	Fri Apr  1 10:32:31 2016
++++ provider/server/ECThreadManager.cpp	Fri Apr  1 10:32:44 2016
+@@ -170,7 +170,7 @@ void *ECWorkerThread::Work(void *lpParam)
+ 	// Win32 pthread_t is a struct, which we can't cast to a ULONG.
+     lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started%sthread %p", lpPrio ? " priority " : " ", pthread_self().p);
+ #else
 -    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started%sthread %08x", lpPrio ? " priority " : " ", (ULONG)pthread_self());
 +    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started%sthread %08x", lpPrio ? " priority " : " ", (uintptr_t)pthread_self());
+ #endif
      
      while(1) {
- 		set_thread_name(pthread_self(), "z-s: idle thread");
-@@ -176,7 +176,7 @@ void *ECWorkerThread::Work(void *lpParam)
-             
-             // We were requested to exit due to idle state
-             if(fStop) {
+@@ -187,7 +187,7 @@ void *ECWorkerThread::Work(void *lpParam)
+ 				// Win32 pthread_t is a struct, which we can't cast to a ULONG.
+ 				lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Thread %p idle and requested to exit", pthread_self().p);
+ #else
 -                lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Thread %08x idle and requested to exit", (ULONG)pthread_self());
 +                lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Thread %08x idle and requested to exit", (uintptr_t)pthread_self());
+ #endif
                  break;
              }
-                 

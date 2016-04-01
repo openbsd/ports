@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_ldap_openldap_cfg,v 1.7 2013/01/27 13:06:20 robert Exp $
---- installer/linux/ldap.openldap.cfg.orig	Wed Jan 23 12:49:31 2013
-+++ installer/linux/ldap.openldap.cfg	Sun Jan 27 12:59:52 2013
-@@ -15,7 +15,7 @@ ldap_port = 389
+$OpenBSD: patch-installer_linux_ldap_m4,v 1.1 2016/04/01 18:08:10 robert Exp $
+--- installer/linux/ldap.m4.orig	Fri Apr  1 10:20:19 2016
++++ installer/linux/ldap.m4	Fri Apr  1 10:20:35 2016
+@@ -19,7 +19,7 @@ ldap_port = 389
  
  # LDAP protocol
  # Optional, default = ldap
@@ -10,8 +10,8 @@ $OpenBSD: patch-installer_linux_ldap_openldap_cfg,v 1.7 2013/01/27 13:06:20 robe
  # configured correctly with TLS_CACERT
  ldap_protocol = ldap
  
-@@ -197,7 +197,7 @@ ldap_sendas_relation_attribute = 
- ldap_user_certificate_attribute = userCertificate;binary
+@@ -202,7 +202,7 @@ ldap_sendas_relation_attribute = ifelse(TYPE,`OPENLDAP
+ ldap_user_certificate_attribute = userCertificate`'ifelse(TYPE,`OPENLDAP',`;binary',`')
  
  # Load extra user properties from the propmap file
 -!propmap /etc/zarafa/ldap.propmap.cfg

@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.17 2015/11/02 11:06:34 robert Exp $
---- common/platform.linux.h.orig	Wed Aug  5 17:30:48 2015
-+++ common/platform.linux.h	Thu Aug 20 12:36:50 2015
+$OpenBSD: patch-common_include_zarafa_platform_linux_h,v 1.1 2016/04/01 18:08:10 robert Exp $
+--- common/include/zarafa/platform.linux.h.orig	Wed Mar 23 12:14:33 2016
++++ common/include/zarafa/platform.linux.h	Fri Apr  1 10:09:54 2016
 @@ -57,7 +57,14 @@
  #include <dlfcn.h>
  #include <cstddef>
@@ -16,7 +16,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.17 2015/11/02 11:06:34 robert Exp $
  #include <endian.h>
  #include <cerrno>
  #include <clocale>
-@@ -97,6 +104,8 @@
+@@ -91,6 +98,8 @@
  #define _snprintf snprintf
  #ifdef HAVE_VSNPRINTF_L
  #define _vsnprintf_l vsnprintf_l
@@ -25,7 +25,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.17 2015/11/02 11:06:34 robert Exp $
  #else
  inline int _vsnprintf_l(char *str, size_t size, const char *format, locale_t locale, va_list ap) {
  	locale_t prev = uselocale(locale);
-@@ -685,7 +694,11 @@ time_t GetProcessTime();
+@@ -679,7 +688,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -37,7 +37,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.17 2015/11/02 11:06:34 robert Exp $
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -693,14 +706,18 @@ time_t GetProcessTime();
+@@ -687,14 +700,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

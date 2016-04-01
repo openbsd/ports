@@ -1,20 +1,20 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
---- common/ECLogger.cpp.orig	Wed Aug  5 17:30:49 2015
-+++ common/ECLogger.cpp	Thu Aug 20 13:20:50 2015
-@@ -52,6 +52,10 @@
- #include "stringutil.h"
+$OpenBSD: patch-common_ECLogger_cpp,v 1.21 2016/04/01 18:08:10 robert Exp $
+--- common/ECLogger.cpp.orig	Wed Mar 23 12:14:33 2016
++++ common/ECLogger.cpp	Fri Apr  1 09:32:35 2016
+@@ -53,6 +53,10 @@
+ #include <zarafa/stringutil.h>
  #include "charset/localeutil.h"
  
 +#ifdef __OpenBSD__
 +#include <signal.h>
 +#endif
 +
+ #ifdef LINUX
  #include "config.h"
  #include <poll.h>
- #if HAVE_SYSLOG_H
-@@ -88,18 +92,22 @@ static const char *const ll_names[] = {
- ECLogger::ECLogger(int max_ll) {
+@@ -96,18 +100,22 @@ ECLogger::ECLogger(int max_ll) {
  	max_loglevel = max_ll;
+ 	pthread_mutex_init(&m_mutex, NULL);
  	// get system locale for time, NULL is returned if locale was not found.
 +#ifndef __OpenBSD__
  	timelocale = createlocale(LC_TIME, "C");
@@ -32,10 +32,10 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  	if (datalocale)
  		freelocale(datalocale);
 +#endif
+ 	pthread_mutex_destroy(&m_mutex);
  }
  
- void ECLogger::SetLoglevel(unsigned int max_ll) {
-@@ -114,9 +122,11 @@ std::string ECLogger::MakeTimestamp() {
+@@ -127,9 +135,11 @@ std::string ECLogger::MakeTimestamp() {
  
  	char buffer[_LOG_TSSIZE];
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  		strftime(buffer, sizeof buffer, "%c", &local);
  
  	return buffer;
-@@ -175,7 +185,11 @@ int ECLogger::snprintf(char *str, size_t size, const c
+@@ -196,7 +206,11 @@ int ECLogger::snprintf(char *str, size_t size, const c
  	int len = 0;
  
  	va_start(va, format);
@@ -59,7 +59,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  	va_end(va);
  
  	return len;
-@@ -397,7 +411,11 @@ void ECLogger_File::Log(unsigned int loglevel, const c
+@@ -427,7 +441,11 @@ void ECLogger_File::Log(unsigned int loglevel, const c
  
  void ECLogger_File::LogVA(unsigned int loglevel, const char *format, va_list& va) {
  	char msgbuffer[_LOG_BUFSIZE];
@@ -71,7 +71,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  
  	Log(loglevel, std::string(msgbuffer));
  }
-@@ -456,7 +474,11 @@ void ECLogger_Syslog::LogVA(unsigned int loglevel, con
+@@ -487,7 +505,11 @@ void ECLogger_Syslog::LogVA(unsigned int loglevel, con
  	vsyslog(levelmap[loglevel & EC_LOGLEVEL_MASK], format, va);
  #else
  	char msgbuffer[_LOG_BUFSIZE];
@@ -83,7 +83,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  	syslog(levelmap[loglevel & EC_LOGLEVEL_MASK], "%s", msgbuffer);
  #endif
  }
-@@ -541,7 +563,11 @@ void ECLogger_Tee::LogVA(unsigned int loglevel, const 
+@@ -651,7 +673,11 @@ void ECLogger_Tee::LogVA(unsigned int loglevel, const 
  	LoggerList::iterator iLogger;
  
  	char msgbuffer[_LOG_BUFSIZE];
@@ -95,25 +95,25 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  
  	for (iLogger = m_loggers.begin(); iLogger != m_loggers.end(); ++iLogger)
  		(*iLogger)->Log(loglevel, std::string(msgbuffer));
-@@ -588,7 +614,7 @@ void ECLogger_Pipe::Log(unsigned int loglevel, const s
- 	off += 1;
- 
- 	if (prefix == LP_TID)
+@@ -702,7 +728,7 @@ void ECLogger_Pipe::Log(unsigned int loglevel, const s
+ #ifdef WIN32
+ 		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%p] ", pthread_self());
+ #else
 -	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (unsigned int)pthread_self());
 +	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (uintptr_t)pthread_self());
+ #endif
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%5d] ", getpid());
- 
-@@ -632,7 +658,7 @@ void ECLogger_Pipe::LogVA(unsigned int loglevel, const
- 	off += 1;
- 
- 	if (prefix == LP_TID)
+@@ -750,7 +776,7 @@ void ECLogger_Pipe::LogVA(unsigned int loglevel, const
+ #ifdef WIN32
+ 		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%p] ", pthread_self());
+ #else
 -	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (unsigned int)pthread_self());
 +	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (uintptr_t)pthread_self());
+ #endif
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%5d] ", getpid());
- 
-@@ -642,7 +668,11 @@ void ECLogger_Pipe::LogVA(unsigned int loglevel, const
+@@ -761,7 +787,11 @@ void ECLogger_Pipe::LogVA(unsigned int loglevel, const
  		off += len;
  
  	// return value is what WOULD have been written if enough space were available in the buffer
@@ -125,9 +125,9 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.20 2015/11/02 11:06:34 robert Exp $
  	// -1 can be returned on formatting error (eg. %ls in C locale)
  	if (len < 0)
  		len = 0;
-@@ -722,9 +752,13 @@ namespace PrivatePipe {
- 		int l;
- 		bool bNPTL = true;
+@@ -844,9 +874,13 @@ namespace PrivatePipe {
+ 		fd_set readfds;
+ #endif
  
 +#if defined(__linux__)
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));

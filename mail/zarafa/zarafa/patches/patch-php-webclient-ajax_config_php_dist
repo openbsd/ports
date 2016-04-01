@@ -1,19 +1,18 @@
-$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.9 2014/07/03 06:14:40 robert Exp $
---- php-webclient-ajax/config.php.dist.orig	Fri May 23 15:00:09 2014
-+++ php-webclient-ajax/config.php.dist	Wed Jul  2 17:28:25 2014
-@@ -17,9 +17,9 @@
+$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.10 2016/04/01 18:08:10 robert Exp $
+--- php-webclient-ajax/config.php.dist.orig	Fri Apr  1 10:28:05 2016
++++ php-webclient-ajax/config.php.dist	Fri Apr  1 10:29:24 2016
+@@ -17,8 +17,8 @@
  	define("CONFIG_CHECK_COOKIES_SSL", FALSE);
  
  	// Default Zarafa server to connect to.
--	define("DEFAULT_SERVER","file:///var/run/zarafa");
-+	#define("DEFAULT_SERVER","file:///var/run/zarafa");
- 	#define("DEFAULT_SERVER","file://\\\\.\\pipe\\zarafa");
+-	define("DEFAULT_SERVER", "default:"); // local pipe
 -	#define("DEFAULT_SERVER","http://localhost:236/zarafa");
++	// define("DEFAULT_SERVER", "default:"); // local pipe
 +	define("DEFAULT_SERVER","http://localhost:236/zarafa");
  
  	// When using a single-signon system on your webserver, but Zarafa is on another server
  	// you can use https to access the zarafa server, and authenticate using an SSL certificate.
-@@ -52,12 +52,13 @@
+@@ -51,12 +51,13 @@
  
  	// Defines the temp path (absolute). Here uploaded attachments will be saved.
  	// The web client doesn't work without this directory.
@@ -24,12 +23,12 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.9 2014/07/03 06:14:40 rob
  	set_include_path(BASE_PATH. PATH_SEPARATOR . 
  	                 BASE_PATH."server/PEAR/" .  PATH_SEPARATOR . 
 -	                 "/usr/share/php/");
-+	                 "/include/php/" .  PATH_SEPARATOR . 
-+	                 "/var/www/include/php/");
++			 "/include/php/" .  PATH_SEPARATOR .
++			 "/var/www/include/php/");
  
  	// Define the relative URL for dialogs, this string is appended with HTTP GET arguments
  	define("DIALOG_URL", "index.php?load=dialog&");
-@@ -163,7 +164,7 @@
+@@ -162,7 +163,7 @@
  
  	// Spellchecker, change here to enable
  	define('FCKEDITOR_SPELLCHECKER_ENABLED', false);

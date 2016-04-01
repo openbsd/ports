@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.26 2016/02/01 21:55:39 sthen Exp $
+@comment $OpenBSD: PLIST-web,v 1.27 2016/04/01 18:08:10 robert Exp $
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini 
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
@@ -1153,7 +1153,6 @@ zarafa-webaccess/debug.txt
 @owner
 zarafa-webaccess/defaults.php
 zarafa-webaccess/index.php
-zarafa-webaccess/plugins/
 @comment zarafa-webaccess/senddocument.php
 zarafa-webaccess/server/
 zarafa-webaccess/server/PEAR/

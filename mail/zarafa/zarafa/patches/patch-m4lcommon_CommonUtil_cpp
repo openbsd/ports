@@ -1,11 +1,11 @@
-$OpenBSD: patch-m4lcommon_CommonUtil_cpp,v 1.1 2015/11/02 11:06:34 robert Exp $
---- m4lcommon/CommonUtil.cpp.orig	Thu Aug 20 12:38:56 2015
-+++ m4lcommon/CommonUtil.cpp	Thu Aug 20 12:39:05 2015
-@@ -83,6 +83,7 @@
- 
- #include <sys/types.h>
+$OpenBSD: patch-m4lcommon_CommonUtil_cpp,v 1.2 2016/04/01 18:08:10 robert Exp $
+--- m4lcommon/CommonUtil.cpp.orig	Wed Mar 23 12:14:33 2016
++++ m4lcommon/CommonUtil.cpp	Thu Mar 31 23:23:31 2016
+@@ -86,6 +86,7 @@
+ #include <ws2tcpip.h>
+ #else
  #include <sys/socket.h>
 +#include <netinet/in.h>
  #include <netdb.h>
+ #endif
  
- using namespace std;

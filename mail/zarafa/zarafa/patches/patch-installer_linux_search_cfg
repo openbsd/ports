@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.6 2015/11/03 06:48:48 robert Exp $
---- installer/linux/search.cfg.orig	Sat Oct 31 00:01:55 2015
-+++ installer/linux/search.cfg	Tue Nov  3 07:47:09 2015
+$OpenBSD: patch-installer_linux_search_cfg,v 1.7 2016/04/01 18:08:10 robert Exp $
+--- installer/linux/search.cfg.orig	Wed Mar 23 12:14:33 2016
++++ installer/linux/search.cfg	Fri Apr  1 13:20:45 2016
 @@ -2,19 +2,19 @@
  # INDEXED SEARCH SERVICE SETTINGS
  
@@ -9,25 +9,25 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.6 2015/11/03 06:48:48 robert Exp 
 +index_path          =   /var/db/zarafa/search/
  
  # run as specific user
--run_as_user         =
+-#run_as_user         = zarafa
 +run_as_user         = _zarafa
  
  # run as specific group
--run_as_group        =
+-#run_as_group        = zarafa
 +run_as_group        = _zarafa
  
  # control pid file
--pid_file            =   /var/run/zarafa-search.pid
-+pid_file            =   /var/run/zarafa-search/zarafa-search.pid
+-#pid_file            =   /var/run/zarafad/search.pid
++pid_file            =   /var/run/zarafad/search.pid
  
  # run server in this path (when not using the -F switch)
--running_path        =   /
-+running_path        =   /var/empty
+-#running_path = /var/lib/zarafa
++running_path = /var/empty
  
  # Limit the number of results returned (0 = don't limit)
  limit_results		=	1000
 @@ -28,7 +28,7 @@ limit_results		=	1000
- server_socket   =   file:///var/run/zarafa
+ #server_socket = file:///var/run/zarafad/server.sock
  
  # Login to the Zarafa server using this SSL Key
 -#sslkey_file         = /etc/zarafa/ssl/search.pem
@@ -35,8 +35,8 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.6 2015/11/03 06:48:48 robert Exp 
  
  # The password of the SSL Key
  #sslkey_pass         = replace-with-server-cert-password
-@@ -42,10 +42,10 @@ server_socket   =   file:///var/run/zarafa
- server_bind_name   =   file:///var/run/zarafa-search
+@@ -42,10 +42,10 @@ limit_results		=	1000
+ server_bind_name   =   file:///var/run/zarafad/search.sock
  
  # File with RSA key for SSL, used then server_bind_name uses https
 -ssl_private_key_file= /etc/zarafa/search/privkey.pem

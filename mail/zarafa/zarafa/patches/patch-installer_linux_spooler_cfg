@@ -1,27 +1,28 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.10 2015/11/02 11:06:34 robert Exp $
---- installer/linux/spooler.cfg.orig	Wed Aug  5 17:28:49 2015
-+++ installer/linux/spooler.cfg	Thu Aug 20 12:36:50 2015
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.11 2016/04/01 18:08:10 robert Exp $
+--- installer/linux/spooler.cfg.orig	Wed Mar 23 12:14:33 2016
++++ installer/linux/spooler.cfg	Fri Apr  1 16:50:10 2016
 @@ -11,16 +11,16 @@ smtp_port = 25
- server_socket	=	file:///var/run/zarafa
+ #server_socket = file:///var/run/zarafad/server.sock
  
  # drop privileges and run the process as this user
--run_as_user = 
+-#run_as_user = zarafa
 +run_as_user = _zarafa
  
  # drop privileges and run the process as this group
--run_as_group = 
+-#run_as_group = zarafa
 +run_as_group = _zarafa
  
  # create a pid file for stopping the service via the init.d scripts
- pid_file = /var/run/zarafa-spooler.pid
+-#pid_file = /var/run/zarafad/spooler.pid
++pid_file = /var/run/zarafad/spooler.pid
  
  # run server in this path (when not using the -F switch)
--running_path = /
+-#running_path = /var/lib/zarafa
 +running_path = /var/empty
  
  # create memory coredumps upon crash in the running_path directory
  coredump_enabled = no
-@@ -61,7 +61,7 @@ log_buffer_size  = 4096
+@@ -55,7 +55,7 @@ log_timestamp	=	1
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
@@ -30,7 +31,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.10 2015/11/02 11:06:34 robert Ex
  
  # The password of the SSL Key
  #sslkey_pass = replace-with-server-cert-password
-@@ -156,7 +156,7 @@ archive_on_send = no
+@@ -150,7 +150,7 @@ archive_on_send = no
  plugin_enabled = yes
  
  # Path to the spooler plugin manager
@@ -39,7 +40,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.10 2015/11/02 11:06:34 robert Ex
  
  # Path to the activated spooler plugins.
  #   This folder contains symlinks to the zarafa plugins and custom scripts. The plugins are
-@@ -165,4 +165,4 @@ plugin_manager_path = /usr/share/zarafa-spooler/python
+@@ -159,4 +159,4 @@ plugin_manager_path = /usr/share/zarafa-spooler/python
  #
  # Example:
  #  $ ln -s /usr/share/zarafa-spooler/python/plugins/disclaimer.py /var/lib/zarafa/spooler/plugins/disclaimer.py
