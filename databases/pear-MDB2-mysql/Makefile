@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/01 18:46:50 sthen Exp $
 
 COMMENT=	database abstraction layer for PHP
 
 V=		1.4.1
 DISTNAME=	MDB2_Driver_mysql-${V}
 PKGNAME=	pear-MDB2-mysql-${V}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	net databases
 
 MODULES=	lang/php www/pear

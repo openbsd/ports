@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/10/29 21:52:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/04/01 18:46:50 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -15,7 +15,6 @@ pear/doc/XML_Parser/examples/xml_parser_simple2.php
 pear/doc/XML_Parser/examples/xml_parser_simple2.xml
 pear/doc/XML_Parser/examples/xml_parser_simple_handler.php
 pear/lib/.registry/xml_parser.reg
-pear/lib/XML/
 pear/lib/XML/Parser/
 pear/lib/XML/Parser.php
 pear/lib/XML/Parser/Simple.php
