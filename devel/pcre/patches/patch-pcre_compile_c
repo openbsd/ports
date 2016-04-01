@@ -1,0 +1,59 @@
+$OpenBSD: patch-pcre_compile_c,v 1.8 2016/04/01 18:15:11 robert Exp $
+
+CVE-2016-3191
+
+  Upstream commit: http://vcs.pcre.org/pcre?view=revision&revision=1631
+
+--- pcre_compile.c.orig	Tue Mar 22 20:27:48 2016
++++ pcre_compile.c	Tue Mar 22 20:39:59 2016
+@@ -6,7 +6,7 @@
+ and semantics are as close as possible to those of the Perl 5 language.
+ 
+                        Written by Philip Hazel
+-           Copyright (c) 1997-2014 University of Cambridge
++           Copyright (c) 1997-2016 University of Cambridge
+ 
+ -----------------------------------------------------------------------------
+ Redistribution and use in source and binary forms, with or without
+@@ -560,6 +560,7 @@ static const char error_texts[] =
+   /* 85 */
+   "parentheses are too deeply nested (stack check)\0"
+   "digits missing in \\x{} or \\o{}\0"
++  "regular expression is too complicated\0"
+   ;
+ 
+ /* Table to identify digits and hex digits. This is used when compiling
+@@ -4591,7 +4592,8 @@ for (;; ptr++)
+     if (code > cd->start_workspace + cd->workspace_size -
+         WORK_SIZE_SAFETY_MARGIN)                       /* Check for overrun */
+       {
+-      *errorcodeptr = ERR52;
++      *errorcodeptr = (code >= cd->start_workspace + cd->workspace_size)?
++       ERR52 : ERR87;
+       goto FAILED;
+       }
+ 
+@@ -6604,8 +6606,21 @@ for (;; ptr++)
+             cd->had_accept = TRUE;
+             for (oc = cd->open_caps; oc != NULL; oc = oc->next)
+               {
+-              *code++ = OP_CLOSE;
+-              PUT2INC(code, 0, oc->number);
++              if (lengthptr != NULL)
++                {
++#ifdef COMPILE_PCRE8
++                *lengthptr += 1 + IMM2_SIZE;
++#elif defined COMPILE_PCRE16
++                *lengthptr += 2 + IMM2_SIZE;
++#elif defined COMPILE_PCRE32
++                *lengthptr += 4 + IMM2_SIZE;
++#endif
++                }
++              else
++                {
++                *code++ = OP_CLOSE;
++                PUT2INC(code, 0, oc->number);
++                }
+               }
+             setverb = *code++ =
+               (cd->assert_depth > 0)? OP_ASSERT_ACCEPT : OP_ACCEPT;
