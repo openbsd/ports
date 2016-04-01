@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2016/04/01 18:08:10 robert Exp $
+# $OpenBSD: Makefile,v 1.198 2016/04/01 18:30:48 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -82,7 +82,7 @@ WANTLIB-web += zcp_common_mapi zcp_common_util
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
-		${MODGETTEXT_RUN_DEPENDS}
+		 ${MODGETTEXT_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 
@@ -91,8 +91,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		tools/python-scripts/update-resource-recipients \
 		installer/linux/zarafa7-upgrade \
-		ECtools/zarafa-utils/zarafa-mailbox-permissions \
-		ECtools/zarafa-utils/zarafa-set-oof
+		ECtools/utils/zarafa-mailbox-permissions \
+		ECtools/utils/zarafa-set-oof
 
 WEBROOT=	${VARBASE}/www
 
