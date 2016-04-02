@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/04/02 14:45:25 benoit Exp $
 
 COMMENT =	load various configuration file formats
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Config-Any-0.26
+DISTNAME =	Config-Any-0.27
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
