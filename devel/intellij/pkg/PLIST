@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/03/26 21:39:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/04/02 21:35:31 zhuk Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -98,7 +98,7 @@ intellij/lib/commons-net-3.3.jar
 intellij/lib/coverage-agent.jar
 intellij/lib/coverage-instrumenter.jar
 intellij/lib/coverage-util.jar
-intellij/lib/ecj-4.4.2.jar
+intellij/lib/ecj-4.5.2.jar
 intellij/lib/extensions.jar
 intellij/lib/external-system-rt.jar
 intellij/lib/fluent-hc-4.4.1.jar
@@ -289,12 +289,10 @@ intellij/plugins/Kotlin/kotlinc/bin/kotlinc.bat
 intellij/plugins/Kotlin/kotlinc/build.txt
 intellij/plugins/Kotlin/kotlinc/lib/
 intellij/plugins/Kotlin/kotlinc/lib/android-compiler-plugin.jar
-intellij/plugins/Kotlin/kotlinc/lib/kotlin-android-sdk-annotations.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar
-intellij/plugins/Kotlin/kotlinc/lib/kotlin-jdk-annotations.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-jslib-sources.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-jslib.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-preloader.jar
