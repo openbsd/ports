@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2016/01/31 10:37:55 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.35 2016/04/02 20:58:58 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -105,6 +105,7 @@ share/manaplus/data/graphics/gui/circle-on.xml
 share/manaplus/data/graphics/gui/colors.xml
 share/manaplus/data/graphics/gui/complete_icon.xml
 share/manaplus/data/graphics/gui/connection.xml
+share/manaplus/data/graphics/gui/cutin.xml
 share/manaplus/data/graphics/gui/dbutton.xml
 share/manaplus/data/graphics/gui/dbutton_image.xml
 share/manaplus/data/graphics/gui/desktop.xml
@@ -316,6 +317,7 @@ share/manaplus/data/themes/classic/
 share/manaplus/data/themes/enchilado/
 share/manaplus/data/themes/enchilado/buy.xml
 share/manaplus/data/themes/enchilado/colors.xml
+share/manaplus/data/themes/enchilado/cutin.xml
 share/manaplus/data/themes/enchilado/equipment.xml
 share/manaplus/data/themes/enchilado/info.xml
 share/manaplus/data/themes/enchilado/inventory.xml
@@ -350,6 +352,7 @@ share/manaplus/data/themes/golden-delicious/circle-off.xml
 share/manaplus/data/themes/golden-delicious/circle-on.xml
 share/manaplus/data/themes/golden-delicious/colors.xml
 share/manaplus/data/themes/golden-delicious/complete_icon.xml
+share/manaplus/data/themes/golden-delicious/cutin.xml
 share/manaplus/data/themes/golden-delicious/dbutton.xml
 share/manaplus/data/themes/golden-delicious/desktop.xml
 share/manaplus/data/themes/golden-delicious/didyouknow.xml
@@ -464,6 +467,7 @@ share/manaplus/data/themes/jewelry/circle-off.xml
 share/manaplus/data/themes/jewelry/circle-on.xml
 share/manaplus/data/themes/jewelry/colors.xml
 share/manaplus/data/themes/jewelry/complete_icon.xml
+share/manaplus/data/themes/jewelry/cutin.xml
 share/manaplus/data/themes/jewelry/dbutton.xml
 share/manaplus/data/themes/jewelry/didyouknow.xml
 share/manaplus/data/themes/jewelry/dpad.xml
@@ -583,6 +587,7 @@ share/manaplus/data/themes/pink/
 share/manaplus/data/themes/pink/bubble.png
 share/manaplus/data/themes/pink/buy.xml
 share/manaplus/data/themes/pink/colors.xml
+share/manaplus/data/themes/pink/cutin.xml
 share/manaplus/data/themes/pink/equipment.xml
 share/manaplus/data/themes/pink/info.xml
 share/manaplus/data/themes/pink/inventory.xml
@@ -605,6 +610,7 @@ share/manaplus/data/themes/unity/
 share/manaplus/data/themes/unity/buy.xml
 share/manaplus/data/themes/unity/char.xml
 share/manaplus/data/themes/unity/colors.xml
+share/manaplus/data/themes/unity/cutin.xml
 share/manaplus/data/themes/unity/equipment.xml
 share/manaplus/data/themes/unity/info.xml
 share/manaplus/data/themes/unity/inventory.xml
@@ -625,6 +631,7 @@ share/manaplus/data/themes/unity/world.xml
 share/manaplus/data/themes/wood/
 share/manaplus/data/themes/wood/buy.xml
 share/manaplus/data/themes/wood/colors.xml
+share/manaplus/data/themes/wood/cutin.xml
 share/manaplus/data/themes/wood/equipment.xml
 share/manaplus/data/themes/wood/info.xml
 share/manaplus/data/themes/wood/inventory.xml
