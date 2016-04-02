@@ -1,9 +1,9 @@
-; $OpenBSD: cdr.conf.sample,v 1.1 2011/03/02 12:53:11 sthen Exp $
+; $OpenBSD: cdr.conf.sample,v 1.2 2016/04/02 14:38:19 sthen Exp $
 ; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 
 [general]
-enabled = yes
-unanswered = yes
+enable=yes
+unanswered=yes
 
 [csv]
 usegmtime=yes    ; log date/time in GMT.  Default is "no"
