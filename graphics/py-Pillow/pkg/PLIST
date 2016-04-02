@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/01 01:02:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/04/02 14:03:58 sthen Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -27,12 +27,14 @@ lib/python${MODPY_VERSION}/site-packages/PIL/BufrStubImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ContainerIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/CurImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/DcxImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/DdsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/EpsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ExifTags.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FitsStubImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FliImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FpxImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/FtexImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/GbrImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/GdImageFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/GifImagePlugin.py
@@ -112,12 +114,14 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BufrStubImagePlugin
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ContainerIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}CurImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}DcxImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}DdsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}EpsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ExifTags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsStubImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FliImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FontFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FpxImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FtexImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}GbrImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}GdImageFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}GifImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
