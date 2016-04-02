@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.179 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.180 2016/04/02 10:44:18 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.15
+V=		3.5.16
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -21,13 +21,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m nettle pthread stdc++
-cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed p11-kit tasn1 z
+cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed iconv idn intl p11-kit tasn1 z
 
 # bzr repository at https://code.launchpad.net/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
 		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
 
-MODULES+=	devel/gettext gcc4
+MODULES+=	gcc4
 LIB_DEPENDS+=	security/gnutls
 BUILD_DEPENDS+=	devel/cppunit
 USE_GROFF=	Yes
@@ -51,6 +51,7 @@ WANTLIB-main +=	${cWANTLIB} crypto db ssl
 
 LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
+		devel/gettext \
 		security/libnettle
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
