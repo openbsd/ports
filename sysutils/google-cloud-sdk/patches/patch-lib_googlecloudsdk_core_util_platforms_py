@@ -1,0 +1,41 @@
+$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.1 2016/04/02 11:30:45 ajacoutot Exp $
+--- lib/googlecloudsdk/core/util/platforms.py.orig	Sat Apr  2 13:26:36 2016
++++ lib/googlecloudsdk/core/util/platforms.py	Sat Apr  2 13:27:22 2016
+@@ -65,7 +65,8 @@ class OperatingSystem(object):
+   LINUX = _OS('LINUX', 'Linux', 'linux')
+   CYGWIN = _OS('CYGWIN', 'Cygwin', 'cygwin')
+   MSYS = _OS('MSYS', 'Msys', 'msys')
+-  _ALL = [WINDOWS, MACOSX, LINUX, CYGWIN, MSYS]
++  OPENBSD = _OS('OPENBSD', 'OpenBSD', 'openbsd')
++  _ALL = [WINDOWS, MACOSX, LINUX, CYGWIN, MSYS, OPENBSD]
+ 
+   @staticmethod
+   def AllValues():
+@@ -118,6 +119,8 @@ class OperatingSystem(object):
+       return OperatingSystem.MACOSX
+     elif 'cygwin' in sys.platform:
+       return OperatingSystem.CYGWIN
++    elif 'openbsd' in sys.platform:
++      return OperatingSystem.OPENBSD
+     # TODO(user): More reliable handling of OS types
+     # TODO(user): What happens when we use jython, does it actually use the
+     # 'java' os name?
+@@ -139,7 +142,7 @@ class Architecture(object):
+   x86_64 = _ARCH('x86_64', 'x86_64', 'x86_64')
+   ppc = _ARCH('PPC', 'PPC', 'ppc')
+   _ALL = [x86, x86_64, ppc]
+-  _MACHINE_TO_ARCHITECTURE = {'AMD64': x86_64, 'x86_64': x86_64,
++  _MACHINE_TO_ARCHITECTURE = {'AMD64': x86_64, 'x86_64': x86_64, 'amd64': x86_64,
+                               'i386': x86, 'i686': x86, 'x86': x86,
+                               'Power Macintosh': ppc}
+ 
+@@ -251,6 +254,9 @@ class Platform(object):
+                      if self.architecture == Architecture.ppc else 'Intel')
+       return format_string.format(
+           name=arch_string, version=platform.release())
++    elif self.operating_system == OperatingSystem.OPENBSD:
++      return '({name} {version})'.format(
++          name=self.operating_system.name, version=platform.release())
+     else:
+       return '()'
+ 
