@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/05 15:13:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/03 07:56:27 ajacoutot Exp $
 
 COMMENT=		Python SANE module
 
-MODPY_EGG_VERSION=	2.8.1
+MODPY_EGG_VERSION=	2.8.2
 DISTNAME=		Sane-${MODPY_EGG_VERSION}
 DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}

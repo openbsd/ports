@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/05 15:13:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/03 07:56:27 ajacoutot Exp $
 @pkgpath graphics/py-Pillow,-sane${MODPY_FLAVOR}
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_sane.so
-lib/python${MODPY_VERSION}/site-packages/python_sane-2.8-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/sane.py
