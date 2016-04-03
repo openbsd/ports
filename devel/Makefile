@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1478 2016/04/01 01:54:46 jsg Exp $
+# $OpenBSD: Makefile,v 1.1479 2016/04/03 11:23:23 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -817,6 +817,7 @@
      SUBDIR += p5-Log-Dispatch-FileRotate
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-Log-Trace
+     SUBDIR += p5-MCE
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-MRO-Compat
