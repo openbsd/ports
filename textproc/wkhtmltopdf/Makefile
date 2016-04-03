@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/02 18:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/03 14:20:03 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 DPB_PROPERTIES =	parallel nojunk
@@ -28,7 +28,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += X11 Xext Xrender c fontconfig freetype jpeg m
 WANTLIB += png pthread stdc++ z
 
-WANTLIB += icu18n # dlopen()d via QLibrary
+WANTLIB += icui18n # dlopen()d via QLibrary
 
 MODULES =		converters/libiconv
 LIB_DEPENDS =		graphics/png \
