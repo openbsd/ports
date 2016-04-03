@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/26 22:21:20 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/03 13:34:03 gonzalo Exp $
 bin/lynis
 @man man/man8/lynis.8
 share/doc/lynis/
@@ -24,6 +24,8 @@ share/lynis/db/sbl.db
 @mode 0755
 share/lynis/include/
 @mode 0600
+@owner root
+@group wheel
 share/lynis/include/binaries
 share/lynis/include/consts
 share/lynis/include/data_upload
@@ -74,6 +76,7 @@ share/lynis/include/tests_time
 share/lynis/include/tests_tooling
 share/lynis/include/tests_virtualization
 share/lynis/include/tests_webservers
+share/lynis/include/tool_tips
 @mode 0755
 share/lynis/plugins/
 @mode 0600
