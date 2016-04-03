@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.47 2016/01/24 10:50:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2016/04/03 09:39:57 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
 include/rhythmbox/backends/
 include/rhythmbox/backends/rb-encoder.h
-include/rhythmbox/backends/rb-player-gst-data-tee.h
 include/rhythmbox/backends/rb-player-gst-filter.h
 include/rhythmbox/backends/rb-player-gst-tee.h
 include/rhythmbox/backends/rb-player.h
@@ -151,7 +150,6 @@ lib/rhythmbox/plugins/context/${MODPY_PYCACHE}LyricsTab.${MODPY_PYC_MAGIC_TAG}py
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}LyricsTab.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyo
-lib/rhythmbox/plugins/context/context.plugin
 lib/rhythmbox/plugins/context/context.py
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
@@ -330,7 +328,6 @@ share/gtk-doc/html/rhythmbox/RBMissingFilesSource.html
 share/gtk-doc/html/rhythmbox/RBPlayOrder.html
 share/gtk-doc/html/rhythmbox/RBPlayQueueSource.html
 share/gtk-doc/html/rhythmbox/RBPlayer.html
-share/gtk-doc/html/rhythmbox/RBPlayerGstDataTee.html
 share/gtk-doc/html/rhythmbox/RBPlayerGstFilter.html
 share/gtk-doc/html/rhythmbox/RBPlayerGstTee.html
 share/gtk-doc/html/rhythmbox/RBPlaylistManager.html
