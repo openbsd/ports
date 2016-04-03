@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/10/18 13:58:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/04/03 10:56:27 sthen Exp $
 include/sodium/
 include/sodium.h
 include/sodium/core.h
@@ -10,6 +10,7 @@ include/sodium/crypto_auth_hmacsha512.h
 include/sodium/crypto_auth_hmacsha512256.h
 include/sodium/crypto_box.h
 include/sodium/crypto_box_curve25519xsalsa20poly1305.h
+include/sodium/crypto_core_hchacha20.h
 include/sodium/crypto_core_hsalsa20.h
 include/sodium/crypto_core_salsa20.h
 include/sodium/crypto_core_salsa2012.h
@@ -23,6 +24,8 @@ include/sodium/crypto_int32.h
 include/sodium/crypto_int64.h
 include/sodium/crypto_onetimeauth.h
 include/sodium/crypto_onetimeauth_poly1305.h
+include/sodium/crypto_pwhash.h
+include/sodium/crypto_pwhash_argon2i.h
 include/sodium/crypto_pwhash_scryptsalsa208sha256.h
 include/sodium/crypto_scalarmult.h
 include/sodium/crypto_scalarmult_curve25519.h
