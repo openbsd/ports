@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gpl2,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
+@comment $OpenBSD: PLIST-gpl2,v 1.2 2016/04/03 19:15:23 zhuk Exp $
 lib/mlt/libmltlinsys.so
 lib/mlt/libmltmotion_est.so
 lib/mlt/libmltnormalize.so
@@ -23,6 +23,9 @@ share/mlt/plusgpl/filter_burningtv.yml
 share/mlt/plusgpl/filter_lumaliftgaingamma.yml
 share/mlt/plusgpl/filter_rotoscoping.yml
 share/mlt/qt/
+share/mlt/qt/filter_audiospectrum.yml
+share/mlt/qt/filter_audiowaveform.yml
+share/mlt/qt/filter_lightshow.yml
 share/mlt/qt/producer_kdenlivetitle.yml
 share/mlt/qt/producer_qimage.yml
 share/mlt/qt/producer_qtext.yml

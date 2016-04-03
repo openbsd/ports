@@ -1,24 +1,11 @@
-$OpenBSD: patch-src_tests_test_properties_test_properties_cpp,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
-1. Unbreak building tests.
-
-2. Upstream commit ac3977c603a5eba581e2e4a557fdee160d3cc615:
-https://github.com/mltframework/mlt/commit/ac3977c603a5eba581e2e4a557fdee160d3cc615
-Unbreaks running tests.
---- src/tests/test_properties/test_properties.cpp.orig	Sun Jun 29 22:23:17 2014
-+++ src/tests/test_properties/test_properties.cpp	Mon Jul 14 09:30:11 2014
+$OpenBSD: patch-src_tests_test_properties_test_properties_cpp,v 1.2 2016/04/03 19:15:23 zhuk Exp $
+--- src/tests/test_properties/test_properties.cpp.orig	Mon Feb 29 20:15:28 2016
++++ src/tests/test_properties/test_properties.cpp	Mon Feb 29 20:15:58 2016
 @@ -23,7 +23,6 @@
  using namespace Mlt;
  
  extern "C" {
--#define __DARWIN__
+-#define __APPLE__
  #include <framework/mlt_property.h>
  #include <framework/mlt_animation.h>
  }
-@@ -39,6 +38,7 @@ class TestProperties: public QObject (public)
- #if defined(__linux__) || defined(__DARWIN__)
-         locale = newlocale( LC_NUMERIC_MASK, "POSIX", NULL );
- #endif
-+        Factory::init();
-     }
- 
-     ~TestProperties() {

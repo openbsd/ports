@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_plusgpl_consumer_cbrts_c,v 1.1.1.1 2014/07/14 09:15:12 zhuk Exp $
---- src/modules/plusgpl/consumer_cbrts.c.orig	Sun Jul 13 12:08:52 2014
-+++ src/modules/plusgpl/consumer_cbrts.c	Sun Jul 13 12:09:39 2014
-@@ -216,6 +216,10 @@ static void load_sections( consumer_cbrts self, mlt_pr
+$OpenBSD: patch-src_modules_plusgpl_consumer_cbrts_c,v 1.2 2016/04/03 19:15:23 zhuk Exp $
+--- src/modules/plusgpl/consumer_cbrts.c.orig	Thu Feb 18 00:43:24 2016
++++ src/modules/plusgpl/consumer_cbrts.c	Mon Feb 29 19:34:22 2016
+@@ -251,6 +251,10 @@ static void load_sections( consumer_cbrts self, mlt_pr
  		{
  			size_t len = strlen( name );
  			char *si_name = strdup( name + 3 );

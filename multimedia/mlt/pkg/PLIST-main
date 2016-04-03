@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/07/20 05:20:27 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/04/03 19:15:23 zhuk Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
 include/mlt++/
 include/mlt++/Mlt.h
+include/mlt++/MltAnimation.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
 include/mlt++/MltEvent.h
@@ -80,6 +81,7 @@ share/mlt/avformat/producer_avformat.yml
 share/mlt/core/
 share/mlt/core/consumer_multi.yml
 share/mlt/core/data_fx.properties
+share/mlt/core/filter_audiomap.yml
 share/mlt/core/filter_audiowave.yml
 share/mlt/core/filter_brightness.yml
 share/mlt/core/filter_channelcopy.yml
@@ -107,6 +109,7 @@ share/mlt/core/producer_loader.yml
 share/mlt/core/producer_melt.yml
 share/mlt/core/producer_melt_file.yml
 share/mlt/core/producer_noise.yml
+share/mlt/core/producer_timewarp.yml
 share/mlt/core/producer_tone.yml
 share/mlt/core/transition_composite.yml
 share/mlt/core/transition_luma.yml
@@ -213,7 +216,9 @@ share/mlt/plus/
 share/mlt/plus/consumer_blipflash.yml
 share/mlt/plus/filter_affine.yml
 share/mlt/plus/filter_charcoal.yml
+share/mlt/plus/filter_dance.yml
 share/mlt/plus/filter_dynamictext.yml
+share/mlt/plus/filter_fft.yml
 share/mlt/plus/filter_invert.yml
 share/mlt/plus/filter_lift_gamma_gain.yml
 share/mlt/plus/filter_loudness.yml
