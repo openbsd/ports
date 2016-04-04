@@ -1,0 +1,11 @@
+$OpenBSD: patch-drivers_c,v 1.1 2016/04/04 18:47:03 sthen Exp $
+--- drivers.c.orig	Mon Apr  4 19:46:02 2016
++++ drivers.c	Mon Apr  4 19:46:11 2016
+@@ -60,6 +60,7 @@ char *strchr (), *strrchr ();
+ #include <net/soioctl.h>
+ #endif
+ #ifdef HAVE_SYS_MBUF_H
++#include <sys/queue.h>
+ #include <sys/mbuf.h>
+ #endif
+ #ifdef HAVE_NET_ROUTE_H
