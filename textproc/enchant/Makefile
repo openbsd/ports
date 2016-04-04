@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/04 22:57:45 naddy Exp $
 
 COMMENT=	generic spell checking library/wrapper
 
 V=		1.6.0
 DISTNAME=	enchant-${V}
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	enchant	6.1 # .7.0
 CATEGORIES=	textproc
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.6 2013/06/20 09:48:28 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PFRAG.ldap,v 1.7 2016/04/04 22:57:45 naddy Exp $
+lib/sasl2/libldapdb.la
+lib/sasl2/libldapdb.so
 share/doc/cyrus-sasl/LDAP_SASLAUTHD
 share/examples/cyrus-sasl/saslauthd.conf
 @mode 640

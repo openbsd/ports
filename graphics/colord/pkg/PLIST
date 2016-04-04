@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/04/04 22:57:45 naddy Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -9,7 +9,6 @@
 @newuser _colord:694:_colord:daemon:colord Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/db/colord/mapping.db
 @extraunexec rm -f /var/db/colord/storage.db
-%%SHARED%%
 @bin bin/cd-create-profile
 @bin bin/cd-fix-profile
 @bin bin/cd-iccdump
@@ -48,6 +47,7 @@ include/colord-1/colord/cd-spectrum.h
 include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/
+lib/colord-sensors/libcolord_sensor_dummy.so
 lib/girepository-1.0/
 lib/girepository-1.0/Colord-1.0.typelib
 lib/libcolord.a

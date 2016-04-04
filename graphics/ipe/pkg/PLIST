@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/09 15:56:35 edd Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2016/04/04 22:57:45 naddy Exp $
 @bin bin/ipe
 @bin bin/ipe6upgrade
 @bin bin/ipeextract
@@ -47,9 +46,15 @@ lib/ipe/${V}/ipelets/align.lua
 lib/ipe/${V}/ipelets/euclid.lua
 lib/ipe/${V}/ipelets/goodies.lua
 lib/ipe/${V}/ipelets/image.lua
+lib/ipe/${V}/ipelets/image.so
 lib/ipe/${V}/ipelets/move.lua
 lib/ipe/${V}/ipelets/search-replace.lua
 lib/ipe/${V}/ipelets/symbols.lua
+@lib lib/libipe.so.${LIBipe_VERSION}
+@lib lib/libipecairo.so.${LIBipecairo_VERSION}
+@lib lib/libipecanvas.so.${LIBipecanvas_VERSION}
+@lib lib/libipelua.so.${LIBipelua_VERSION}
+@lib lib/libipeui.so.${LIBipeui_VERSION}
 @man man/man1/ipe.1
 @man man/man1/ipe6upgrade.1
 @man man/man1/ipeextract.1

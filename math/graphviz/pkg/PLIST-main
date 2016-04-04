@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/02/06 17:32:27 edd Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.6 2016/04/04 22:57:45 naddy Exp $
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
@@ -72,67 +71,92 @@ lib/graphviz/config6
 lib/graphviz/guile/
 lib/graphviz/guile/libgv_guile.a
 lib/graphviz/guile/libgv_guile.la
+lib/graphviz/guile/libgv_guile.so
 lib/graphviz/libgvplugin_core.a
 lib/graphviz/libgvplugin_core.la
+@lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
 lib/graphviz/libgvplugin_dot_layout.a
 lib/graphviz/libgvplugin_dot_layout.la
+@lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
 lib/graphviz/libgvplugin_gd.a
 lib/graphviz/libgvplugin_gd.la
+@lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}
 lib/graphviz/libgvplugin_gdk.a
 lib/graphviz/libgvplugin_gdk.la
+@lib lib/graphviz/libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION}
 lib/graphviz/libgvplugin_gtk.a
 lib/graphviz/libgvplugin_gtk.la
+@lib lib/graphviz/libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION}
 lib/graphviz/libgvplugin_neato_layout.a
 lib/graphviz/libgvplugin_neato_layout.la
+@lib lib/graphviz/libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION}
 lib/graphviz/libgvplugin_pango.a
 lib/graphviz/libgvplugin_pango.la
+@lib lib/graphviz/libgvplugin_pango.so.${LIBgvplugin_pango_VERSION}
 lib/graphviz/libgvplugin_poppler.a
 lib/graphviz/libgvplugin_poppler.la
+@lib lib/graphviz/libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION}
 lib/graphviz/libgvplugin_rsvg.a
 lib/graphviz/libgvplugin_rsvg.la
+@lib lib/graphviz/libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION}
 lib/graphviz/libgvplugin_xlib.a
 lib/graphviz/libgvplugin_xlib.la
+@lib lib/graphviz/libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION}
 lib/graphviz/perl/
 lib/graphviz/perl/gv.pm
+lib/graphviz/perl/gv.so
 lib/graphviz/perl/libgv_perl.a
 lib/graphviz/perl/libgv_perl.la
+lib/graphviz/perl/libgv_perl.so
 lib/libcdt.a
 lib/libcdt.la
+@lib lib/libcdt.so.${LIBcdt_VERSION}
 lib/libcgraph.a
 lib/libcgraph.la
+@lib lib/libcgraph.so.${LIBcgraph_VERSION}
 lib/libgvc.a
 lib/libgvc.la
+@lib lib/libgvc.so.${LIBgvc_VERSION}
 lib/libgvpr.a
 lib/libgvpr.la
+@lib lib/libgvpr.so.${LIBgvpr_VERSION}
 lib/libpathplan.a
 lib/libpathplan.la
+@lib lib/libpathplan.so.${LIBpathplan_VERSION}
 lib/libxdot.a
 lib/libxdot.la
+@lib lib/libxdot.so.${LIBxdot_VERSION}
 lib/pkgconfig/libcdt.pc
 lib/pkgconfig/libcgraph.pc
 lib/pkgconfig/libgvc.pc
 lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/tcl/
 lib/tcl/graphviz/
 lib/tcl/graphviz/libgdtclft.a
 lib/tcl/graphviz/libgdtclft.la
+@lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
 lib/tcl/graphviz/libgv_tcl.a
 lib/tcl/graphviz/libgv_tcl.la
+lib/tcl/graphviz/libgv_tcl.so
 lib/tcl/graphviz/libtcldot.a
 lib/tcl/graphviz/libtcldot.la
+@lib lib/tcl/graphviz/libtcldot.so.${LIBtcldot_VERSION}
 lib/tcl/graphviz/libtcldot_builtin.a
 lib/tcl/graphviz/libtcldot_builtin.la
+@lib lib/tcl/graphviz/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
 lib/tcl/graphviz/libtclplan.a
 lib/tcl/graphviz/libtclplan.la
+@lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
 lib/tcl/graphviz/libtkspline.a
 lib/tcl/graphviz/libtkspline.la
+@lib lib/tcl/graphviz/libtkspline.so.${LIBtkspline_VERSION}
 lib/tcl/graphviz/pkgIndex.tcl
 lib/tcl${MODTK_VERSION}/
 lib/tcl${MODTK_VERSION}/graphviz
 ${P5ARCH}/
 ${P5ARCH}/gv.pm
+${P5ARCH}/gv.so
 @man man/man1/acyclic.1
 @man man/man1/bcomps.1
 @man man/man1/ccomps.1

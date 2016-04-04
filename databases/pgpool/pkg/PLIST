@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/21 15:51:04 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/04 22:57:45 naddy Exp $
 @newgroup _pgpool:690
 @newuser _pgpool:690:_pgpool:daemon:pgpool daemon:/nonexistent:/sbin/nologin
-%%SHARED%%
 @bin bin/pcp_attach_node
 @bin bin/pcp_detach_node
 @bin bin/pcp_node_count
@@ -21,7 +20,9 @@ include/pool_process_reporting.h
 include/pool_type.h
 lib/libpcp.a
 lib/libpcp.la
+@lib lib/libpcp.so.${LIBpcp_VERSION}
 lib/postgresql/
+lib/postgresql/pgpool-regclass.so
 @man man/man8/pgpool.8
 share/examples/pgpool-II/
 share/examples/pgpool-II/pcp.conf.sample

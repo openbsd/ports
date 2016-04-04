@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/05/28 15:01:28 edd Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/04/04 22:57:45 naddy Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -6,7 +6,6 @@
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
-%%SHARED%%
 %%xindy%%
 @bin bin/afm2pl
 @bin bin/afm2tfm
@@ -413,8 +412,10 @@ include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
 lib/libkpathsea.a
 lib/libkpathsea.la
+@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/libptexenc.a
 lib/libptexenc.la
+@lib lib/libptexenc.so.${LIBptexenc_VERSION}
 share/doc/pkg-readmes/${FULLPKGNAME}
 ${P5SITE}/TeXLive/
 ${P5SITE}/TeXLive/TLConfig.pm

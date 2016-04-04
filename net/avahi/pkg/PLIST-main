@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2016/04/04 22:57:45 naddy Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
-%%SHARED%%
 @bin bin/avahi-browse
 bin/avahi-browse-domains
 @bin bin/avahi-publish
@@ -79,12 +78,26 @@ lib/girepository-1.0/
 lib/girepository-1.0/Avahi-0.6.typelib
 lib/girepository-1.0/AvahiCore-0.6.typelib
 lib/libavahi-client.a
+lib/libavahi-client.la
+@lib lib/libavahi-client.so.${LIBavahi-client_VERSION}
 lib/libavahi-common.a
+lib/libavahi-common.la
+@lib lib/libavahi-common.so.${LIBavahi-common_VERSION}
 lib/libavahi-core.a
+lib/libavahi-core.la
+@lib lib/libavahi-core.so.${LIBavahi-core_VERSION}
 lib/libavahi-glib.a
+lib/libavahi-glib.la
+@lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
 lib/libavahi-gobject.a
+lib/libavahi-gobject.la
+@lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
 lib/libdns_sd.a
+lib/libdns_sd.la
+@lib lib/libdns_sd.so.${LIBdns_sd_VERSION}
 lib/libhowl.a
+lib/libhowl.la
+@lib lib/libhowl.so.${LIBhowl_VERSION}
 lib/pkgconfig/avahi-client.pc
 lib/pkgconfig/avahi-compat-howl.pc
 lib/pkgconfig/avahi-compat-libdns_sd.pc

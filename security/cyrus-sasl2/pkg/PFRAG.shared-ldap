@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-ldap,v 1.2 2012/11/22 16:01:38 ajacoutot Exp $
-lib/sasl2/libldapdb.la
-lib/sasl2/libldapdb.so

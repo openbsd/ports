@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2015/09/25 12:13:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.81 2016/04/04 22:57:45 naddy Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		1
+REVISION =		2
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}

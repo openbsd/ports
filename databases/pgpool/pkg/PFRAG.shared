@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/12/21 15:51:04 pea Exp $
-@lib lib/libpcp.so.${LIBpcp_VERSION}
-lib/postgresql/pgpool-regclass.so
