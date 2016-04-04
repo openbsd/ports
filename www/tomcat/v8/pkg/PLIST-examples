@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.14 2016/02/25 10:03:58 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.15 2016/04/04 07:36:38 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -1610,6 +1610,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.SafeCharsSet.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
+webapps/docs/api/org/apache/tomcat/util/buf/UriUtil.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Decoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Encoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-frame.html
@@ -1886,7 +1887,6 @@ webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Handler.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.NioBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.SendfileData.html
-webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.SocketProcessor.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.html
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.html
@@ -1911,6 +1911,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SecureNio2Channel.ApplicationBufferH
 webapps/docs/api/org/apache/tomcat/util/net/SecureNio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/ServerSocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketProperties.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketStatus.html
