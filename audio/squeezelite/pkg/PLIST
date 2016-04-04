@@ -1,2 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/21 22:28:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/04 12:05:37 sthen Exp $
+@newgroup _squeezelite:767
+@owner root
+@group _squeezelite
+@mode 750
+@sample /var/squeezelite/
+@mode
+@group
+@owner
+@newuser _squeezelite:767:_squeezelite:daemon:squeezelite user:/var/squeezelite:/sbin/nologin
 @bin bin/squeezelite
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/squeezelite

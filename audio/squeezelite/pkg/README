@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1 2016/04/04 12:05:37 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Squeezelite is a software program emulating a Squeezebox music player.
+It requires a running Squeezebox Server on your network to control it
+and stream music to it.
+
+It can normally auto-detect the server's address, but in more complicated
+network setups you may need to configure it specifically, e.g. by using
+"rcctl set squeezelite flags -s <server>". To set a particular client
+name to appear, use "-n <name>".
+
+sndiod does not normally allow access to audio from two different user
+accounts. On a desktop configuration this restriction is inconvenient -
+in that case you will usually want to allow Squeezelite to share access
+to sndiod with your normal login user. This can be done by copying (not
+linking) .aucat_cookie from your home directory to /var/squeezelite.
+If Squeezelite is run stand-alone or you don't need to share access to
+the audio device, this can be omitted.
