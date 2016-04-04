@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2013/06/01 12:11:52 ajacoutot Exp $
-bin/cairo-trace
-lib/cairo/cairo-fdr.so
-lib/cairo/cairo-sphinx.so
-lib/cairo/libcairo-trace.so

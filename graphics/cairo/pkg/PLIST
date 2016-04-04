@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/11/13 07:05:45 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.20 2016/04/04 16:09:09 naddy Exp $
 @bin bin/cairo-sphinx
+bin/cairo-trace
 include/cairo/
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
@@ -18,6 +18,9 @@ include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
 include/cairo/cairo.h
 lib/cairo/
+lib/cairo/cairo-fdr.so
+lib/cairo/cairo-sphinx.so
+lib/cairo/libcairo-trace.so
 lib/libcairo-gobject.a
 lib/libcairo-gobject.la
 @lib lib/libcairo-gobject.so.${LIBcairo-gobject_VERSION}
@@ -41,8 +44,6 @@ lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
 lib/pkgconfig/cairo-xlib.pc
 lib/pkgconfig/cairo.pc
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/cairo/
 share/gtk-doc/html/cairo/bindings-errors.html
 share/gtk-doc/html/cairo/bindings-fonts.html

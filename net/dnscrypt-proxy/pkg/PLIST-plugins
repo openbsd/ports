@@ -1,2 +1,7 @@
-@comment $OpenBSD: PLIST-plugins,v 1.1.1.1 2012/10/12 15:20:00 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-plugins,v 1.2 2016/04/04 16:09:10 naddy Exp $
+lib/dnscrypt-proxy/libdcplugin_example.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_aaaa_blocking.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_blocking.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_opendns_deviceid.so
+lib/dnscrypt-proxy/libdcplugin_example_ldns_opendns_set_client_ip.so
+lib/dnscrypt-proxy/libdcplugin_example_logging.so

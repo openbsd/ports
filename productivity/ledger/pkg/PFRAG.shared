@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2010/10/14 00:02:24 jim Exp $
-@lib lib/libamounts.so.${LIBamounts_VERSION}
-lib/libledger-2.6.3.so
-lib/libledger.so

@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2012/09/28 14:25:06 jasper Exp $
-lib/amsn/utils/TkCximage/TkCximage.so
-lib/amsn/utils/asyncresolver/libasyncresolver.so
-lib/amsn/utils/linux/linflash/flash.so
-lib/amsn/utils/linux/traydock/libtray.so
-lib/amsn/utils/tclISF/tclISF.so
-lib/amsn/utils/tcl_siren/tcl_siren.so
-lib/amsn/utils/webcamsn/webcamsn.so

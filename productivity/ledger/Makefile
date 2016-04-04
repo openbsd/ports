@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/07 21:58:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/04 16:09:10 naddy Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
 DISTNAME=	ledger-2.6.3
-REVISION=	2
+REVISION=	3
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.ledger-cli.org/

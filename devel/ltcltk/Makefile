@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/29 18:41:52 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/04 16:09:09 naddy Exp $
 
 COMMENT =	binding for lua to the tcl interpreter and to the tk toolkit
 
@@ -6,6 +6,7 @@ V =		0.9-2
 PV =		-${V:S/-/_/}
 DISTNAME =	ltcltk-${V}
 PKGNAME =	ltcltk${PV}
+REVISION =	0
 CATEGORIES =	devel
 HOMEPAGE =	http://www.tset.de/ltcltk/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

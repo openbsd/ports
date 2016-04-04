@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-libs,v 1.2 2011/12/13 12:51:17 jasper Exp $
+@comment $OpenBSD: PLIST-libs,v 1.3 2016/04/04 16:09:09 naddy Exp $
 @pkgpath ${BASE_PKGPATH},-libs
-%%SHARED%%
 include/QF/
 include/QF/GL/
 include/QF/GL/ati.h
@@ -93,6 +92,20 @@ include/QF/wad.h
 include/QF/wadfile.h
 include/QF/winding.h
 include/QF/zone.h
+@lib lib/libQFcd.so.${LIBQFcd_VERSION}
+@lib lib/libQFconsole.so.${LIBQFconsole_VERSION}
+@lib lib/libQFgamecode.so.${LIBQFgamecode_VERSION}
+@lib lib/libQFgib.so.${LIBQFgib_VERSION}
+@lib lib/libQFimage.so.${LIBQFimage_VERSION}
+@lib lib/libQFjs.so.${LIBQFjs_VERSION}
+@lib lib/libQFmodels.so.${LIBQFmodels_VERSION}
+@lib lib/libQFmodels_gl.so.${LIBQFmodels_gl_VERSION}
+@lib lib/libQFmodels_sw.so.${LIBQFmodels_sw_VERSION}
+@lib lib/libQFrenderer_gl.so.${LIBQFrenderer_gl_VERSION}
+@lib lib/libQFrenderer_sw32.so.${LIBQFrenderer_sw32_VERSION}
+@lib lib/libQFruamoko.so.${LIBQFruamoko_VERSION}
+@lib lib/libQFsound.so.${LIBQFsound_VERSION}
+@lib lib/libQFutil.so.${LIBQFutil_VERSION}
 lib/pkgconfig/qfcc.pc
 lib/pkgconfig/quakeforge.pc
 lib/qfcc/
@@ -153,14 +166,19 @@ lib/quakeforge/
 lib/quakeforge/plugins/
 lib/quakeforge/plugins/cd_file.a
 lib/quakeforge/plugins/cd_file.la
+lib/quakeforge/plugins/cd_file.so
 lib/quakeforge/plugins/cd_sdl.a
 lib/quakeforge/plugins/cd_sdl.la
+lib/quakeforge/plugins/cd_sdl.so
 lib/quakeforge/plugins/console_client.a
 lib/quakeforge/plugins/console_client.la
+lib/quakeforge/plugins/console_client.so
 lib/quakeforge/plugins/console_server.a
 lib/quakeforge/plugins/console_server.la
+lib/quakeforge/plugins/console_server.so
 lib/quakeforge/plugins/snd_output_disk.a
 lib/quakeforge/plugins/snd_output_disk.la
+lib/quakeforge/plugins/snd_output_disk.so
 lib/quakeforge/plugins/snd_output_sdl.a
 lib/quakeforge/plugins/snd_output_sdl.la
 lib/quakeforge/plugins/snd_output_sdl.so

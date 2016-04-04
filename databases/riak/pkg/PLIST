@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/07/18 01:23:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/04 16:09:09 naddy Exp $
 @comment riak uses su(1): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
-%%SHARED%%
 lib/riak/
 lib/riak/erts-${ERTS_V}/
 lib/riak/erts-${ERTS_V}/bin/
@@ -141,6 +140,7 @@ lib/riak/lib/asn1-${ASN1_V}/ebin/asn1rt.beam
 lib/riak/lib/asn1-${ASN1_V}/ebin/asn1rt_nif.beam
 lib/riak/lib/asn1-${ASN1_V}/priv/
 lib/riak/lib/asn1-${ASN1_V}/priv/lib/
+lib/riak/lib/asn1-${ASN1_V}/priv/lib/asn1_erl_nif.so
 lib/riak/lib/basho-patches/
 lib/riak/lib/basho-patches/etop_txt.beam
 lib/riak/lib/basho_stats-${BASHO_STATS_V}/
@@ -179,6 +179,7 @@ lib/riak/lib/bitcask-${BITCASK_V}/include/
 lib/riak/lib/bitcask-${BITCASK_V}/include/bitcask.hrl
 lib/riak/lib/bitcask-${BITCASK_V}/priv/
 lib/riak/lib/bitcask-${BITCASK_V}/priv/bitcask.schema
+lib/riak/lib/bitcask-${BITCASK_V}/priv/bitcask.so
 lib/riak/lib/bitcask-${BITCASK_V}/priv/bitcask_multi.schema
 lib/riak/lib/bitcask-${BITCASK_V}/priv/scenario/
 lib/riak/lib/bitcask-${BITCASK_V}/priv/scenario/trigger_commonpaths.erl
@@ -280,6 +281,8 @@ lib/riak/lib/crypto-${CRYPTO_V}/ebin/crypto_server.beam
 lib/riak/lib/crypto-${CRYPTO_V}/ebin/crypto_sup.beam
 lib/riak/lib/crypto-${CRYPTO_V}/priv/
 lib/riak/lib/crypto-${CRYPTO_V}/priv/lib/
+lib/riak/lib/crypto-${CRYPTO_V}/priv/lib/crypto.so
+lib/riak/lib/crypto-${CRYPTO_V}/priv/lib/crypto_callback.so
 lib/riak/lib/crypto-${CRYPTO_V}/priv/obj/
 lib/riak/lib/crypto-${CRYPTO_V}/priv/obj/Makefile
 lib/riak/lib/crypto-${CRYPTO_V}/priv/obj/crypto.o
@@ -321,6 +324,7 @@ lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb.beam
 lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb_bump.beam
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/eleveldb.schema
+lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/eleveldb.so
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/eleveldb_multi.schema
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/vsn.git
 @bin lib/riak/lib/env.sh
@@ -391,6 +395,7 @@ lib/riak/lib/erlang_js-${ERLANG_JS_V}/ebin/js_memory.beam
 lib/riak/lib/erlang_js-${ERLANG_JS_V}/ebin/js_mochijson2.beam
 lib/riak/lib/erlang_js-${ERLANG_JS_V}/ebin/js_mochinum.beam
 lib/riak/lib/erlang_js-${ERLANG_JS_V}/priv/
+lib/riak/lib/erlang_js-${ERLANG_JS_V}/priv/erlang_js_drv.so
 lib/riak/lib/erlang_js-${ERLANG_JS_V}/priv/json2.js
 lib/riak/lib/erlang_js-${ERLANG_JS_V}/priv/vsn.git
 lib/riak/lib/erlydtl-${ERLYDTL_V}/
@@ -1420,6 +1425,7 @@ lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/ebin/synctree_orddict.beam
 lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/include/
 lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/include/riak_ensemble_types.hrl
 lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/priv/
+lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/priv/riak_ensemble.so
 lib/riak/lib/riak_ensemble-${RIAK_ENSEMBLE_V}/priv/vsn.git
 lib/riak/lib/riak_kv-${RIAK_KV_V}/
 lib/riak/lib/riak_kv-${RIAK_KV_V}/ebin/
@@ -1744,6 +1750,9 @@ lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/include/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/include/observer_backend.hrl
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/
+lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/dyntrace.so
+lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/trace_file_drv.so
+lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/trace_ip_drv.so
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/obj/
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/obj/dyntrace.o
 lib/riak/lib/sasl-${SASL_V}/
@@ -1783,6 +1792,7 @@ lib/riak/lib/sext-${SEXT_V}/ebin/
 lib/riak/lib/sext-${SEXT_V}/ebin/sext.app
 lib/riak/lib/sext-${SEXT_V}/ebin/sext.beam
 lib/riak/lib/sext-${SEXT_V}/priv/
+lib/riak/lib/sext-${SEXT_V}/priv/sext.so
 lib/riak/lib/sext-${SEXT_V}/priv/vsn.git
 lib/riak/lib/sidejob-${SIDEJOB_V}/
 lib/riak/lib/sidejob-${SIDEJOB_V}/ebin/
@@ -2086,6 +2096,7 @@ lib/riak/lib/syslog-${SYSLOG_V}/ebin/syslog.beam
 lib/riak/lib/syslog-${SYSLOG_V}/ebin/syslog_app.beam
 lib/riak/lib/syslog-${SYSLOG_V}/ebin/syslog_sup.beam
 lib/riak/lib/syslog-${SYSLOG_V}/priv/
+lib/riak/lib/syslog-${SYSLOG_V}/priv/syslog_drv.so
 lib/riak/lib/syslog-${SYSLOG_V}/priv/vsn.git
 lib/riak/lib/tools-${TOOLS_V}/
 lib/riak/lib/tools-${TOOLS_V}/ebin/

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/14 00:02:24 jim Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2016/04/04 16:09:10 naddy Exp $
 @bin bin/ledger
 include/ledger/
 include/ledger/acconf.h
@@ -35,8 +34,11 @@ include/ledger/xml.h
 @info info/ledger.info
 lib/libamounts.a
 lib/libamounts.la
+@lib lib/libamounts.so.${LIBamounts_VERSION}
+lib/libledger-2.6.3.so
 lib/libledger.a
 lib/libledger.la
+lib/libledger.so
 share/doc/ledger/
 share/doc/ledger/README
 share/doc/ledger/bal

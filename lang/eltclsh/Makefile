@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/04 16:09:09 naddy Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME =	eltclsh-1.12
 CATEGORIES =	lang x11
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	http://www.openrobots.org/distfiles/eltclsh/
 

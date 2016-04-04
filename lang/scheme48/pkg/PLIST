@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/02/08 14:39:50 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/04/04 16:09:09 naddy Exp $
 @conflict scsh-*
 @conflict gambit-*
-%%SHARED%%
 @bin bin/scheme-r5rs
 @bin bin/scheme-srfi-7
 bin/scheme48
@@ -13,8 +12,12 @@ include/scheme48.h
 include/scheme48arch.h
 include/scheme48write-barrier.h
 lib/scheme48/
+lib/scheme48/ffi-test.so
+lib/scheme48/posix.so
+lib/scheme48/r6rs.so
 lib/scheme48/scheme48.image
 @bin lib/scheme48/scheme48vm
+lib/scheme48/srfi-27.so
 @man man/man1/scheme48.1
 share/doc/scheme48/
 share/doc/scheme48/COPYING

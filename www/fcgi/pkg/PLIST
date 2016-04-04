@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/20 16:28:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/04/04 16:09:10 naddy Exp $
 @bin bin/cgi-fcgi
 include/fastcgi.h
 include/fcgi_config.h
@@ -9,12 +9,15 @@ include/fcgio.h
 include/fcgios.h
 lib/libfcgi++.a
 lib/libfcgi++.la
+@lib lib/libfcgi++.so.${LIBfcgi++_VERSION}
 lib/libfcgi.a
 lib/libfcgi.la
+@lib lib/libfcgi.so.${LIBfcgi_VERSION}
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/FCGI.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/FCGI.so
 @man man/cat1/cgi-fcgi.0
 @man man/cat3/FCGI_Accept.0
 @man man/cat3/FCGI_Finish.0
@@ -31,4 +34,3 @@ share/doc/fcgi/fcgi-tcl.htm
 share/doc/fcgi/omi-logo.gif
 share/doc/fcgi/overview.html
 share/doc/fcgi/www5-api-workshop.html
-%%SHARED%%

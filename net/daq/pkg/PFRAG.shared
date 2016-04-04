@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2013/03/15 02:57:17 lteo Exp $
-lib/daq/daq_dump.so
-lib/daq/daq_ipfw.so
-lib/daq/daq_pcap.so

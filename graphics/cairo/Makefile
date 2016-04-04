@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2016/04/04 16:09:09 naddy Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.14.6
+REVISION=		0
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz

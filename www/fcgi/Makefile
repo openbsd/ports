@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/02/06 14:55:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/04 16:09:10 naddy Exp $
 
 COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0
-REVISION=		10
+REVISION=		11
 CATEGORIES=		www
 SHARED_LIBS +=	fcgi                 0.0      # .0.0
 SHARED_LIBS +=	fcgi++               1.0      # .1.0

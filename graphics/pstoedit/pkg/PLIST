@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/19 15:06:14 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2016/04/04 16:09:09 naddy Exp $
 @bin bin/pstoedit
 include/pstoedit/
 include/pstoedit/base64writer.h
@@ -23,8 +22,8 @@ lib/pkgconfig/pstoedit.pc
 lib/pstoedit/
 @comment lib/pstoedit/libp2edrvstd.a
 @comment lib/pstoedit/libp2edrvstd.la
+lib/pstoedit/libp2edrvstd.so
 @man man/man1/pstoedit.1
-share/aclocal/
 share/aclocal/pstoedit.m4
 share/pstoedit/
 share/pstoedit/drvhpgl.pencolors
