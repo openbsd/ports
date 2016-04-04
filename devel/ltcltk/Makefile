@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/04 18:55:05 sthen Exp $
 
 COMMENT =	binding for lua to the tcl interpreter and to the tk toolkit
 
@@ -30,8 +30,8 @@ CFLAGS +=	-Wall ${PICFLAG} -shared \
 		-I${MODTCL_INCDIR} -I${MODLUA_INCL_DIR} \
 		-L${LOCALBASE}/lib
 
-LK_DOC_DIR =	${MODLUA_DOCDIR:S!${PV}/$!/!}
-LK_EXA_DIR =	${MODLUA_EXAMPLEDIR:S!${PV}/$!/!}
+LK_DOC_DIR=	${PREFIX}/share/doc/ltcltk
+LK_EXA_DIR=	${PREFIX}/share/examples/ltcltk
 
 do-configure:
 	perl -pi \
