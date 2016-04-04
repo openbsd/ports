@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/21 18:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2016/04/04 10:20:02 sthen Exp $
 
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://corewars.sourceforge.net/
+HOMEPAGE=	http://corewars.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
