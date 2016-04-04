@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2016/01/27 11:10:00 tb Exp $
+# $OpenBSD: Makefile,v 1.74 2016/04/04 14:55:36 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.5.24
-REVISION=	5
+DISTNAME=	mutt-1.6.0
 EPOCH=		0
 
 CATEGORIES=	mail
@@ -99,14 +98,14 @@ WANTLIB+=	ncurses
 # already fixed: http://prefix.gentooexperimental.org:8000/mutt-patches
 
 # sidebar patch (not good, but people seem to like it...)
-DIST_SIDEBAR=	sidebar-1.5.24.diff.gz:2
+DIST_SIDEBAR=	sidebar-1.6.0.diff.gz:2
 SUPDISTFILES+=	${DIST_SIDEBAR}
 .if ${FLAVOR:Msidebar}
 PATCHFILES+=	${DIST_SIDEBAR}
 .endif
 
 # compressed folders patch http://www.spinnaker.de/mutt/compressed/
-DIST_COMPR=	compressed-1.5.24.diff.gz:2
+DIST_COMPR=	compressed-1.6.0.diff.gz:2
 SUPDISTFILES+=	${DIST_COMPR}
 .if ${FLAVOR:Mcompressed}
 PATCHFILES+=	${DIST_COMPR}
@@ -116,11 +115,11 @@ CONFIGURE_ARGS+= --enable-compressed
 # trashfolder, http://cedricduval.free.fr/mutt/patches/
 # enabled unconditionally, it's not *too* intrusive (additional flavours
 # mean a big increase in ports testing required).
-PATCHFILES+=	trashfolder-1.5.24.diff.gz:2
+PATCHFILES+=	trashfolder-1.6.0.diff.gz:2
 
 .if ${FLAVOR:Msidebar} || ${FLAVOR:Mcompressed}
-AUTOCONF_VERSION= 2.65
-AUTOMAKE_VERSION= 1.9
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
