@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/03 10:56:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/04/05 13:59:51 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
@@ -15,7 +15,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
+MASTER_SITES=	https://download.libsodium.org/libsodium/releases/ \
+		https://download.libsodium.org/libsodium/releases/old/
 
 SEPARATE_BUILD=	Yes
 
