@@ -1,0 +1,14 @@
+$OpenBSD: patch-bpf_filter_c,v 1.1 2016/04/05 17:49:17 jasper Exp $
+--- bpf_filter.c.orig	Tue Apr  5 19:48:10 2016
++++ bpf_filter.c	Tue Apr  5 19:48:45 2016
+@@ -143,8 +143,8 @@ bpf_m_xhalf(m, k, err)
+  */
+ u_int
+ bpf_filter(pc, p, wirelen, buflen)
+-	struct bpf_insn *pc;
+-	u_char *p;
++	const struct bpf_insn *pc;
++	const u_char *p;
+ 	u_int wirelen;
+ 	u_int buflen;
+ {
