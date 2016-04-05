@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2015/12/27 23:28:40 sthen Exp $
+$OpenBSD: README,v 1.7 2016/04/05 13:39:49 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -135,8 +135,13 @@ be added to ${INSTDIR}/config.php.
 LibreNMS is capable of auto-discovery based on CDP/LLDP information from
 supported devices (this is possible with many switches); if you have such
 a switch and plan to use LibreNMS to monitor servers, running an LLDP agent
-(such as ladvd or lldpd) as well as snmpd on on servers will allow them
+(such as ladvd or lldpd) as well as snmpd on servers will allow them
 to be found.
+
+Rotate LibreNMS' logs in newsyslog.conf, e.g.:
+
+/var/www/librenms/logs/librenms.log     644  7     250  *     Z
+/var/www/librenms/logs/daily.log        644  7     250  *     Z
 
 Upstream documentation is present in ${INSTDIR}/doc and also online at
 http://docs.librenms.org/.

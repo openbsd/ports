@@ -1,0 +1,15 @@
+$OpenBSD: patch-includes_polling_core_inc_php,v 1.1 2016/04/05 13:39:49 sthen Exp $
+
+OpenBSD snmpd(8)'s snmpEngineTime.0 is bogus
+
+--- includes/polling/core.inc.php.orig	Tue Apr  5 14:33:28 2016
++++ includes/polling/core.inc.php	Tue Apr  5 14:36:03 2016
+@@ -42,7 +42,7 @@ if (empty($uptime)) {
+     }//end if
+ }//end if
+ 
+-if ($snmp_uptime > $uptime && is_numeric($snmp_uptime)) {
++if ($snmp_uptime > $uptime && is_numeric($snmp_uptime) && $snmp_uptime < 1000000000) {
+     $uptime = $snmp_uptime;
+     d_echo('hrSystemUptime or sysUpTime looks like to have rolled, using snmpEngineTime instead');
+ }
