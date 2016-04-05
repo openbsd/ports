@@ -1,0 +1,11 @@
+$OpenBSD: patch-interfaces_c,v 1.1 2016/04/05 21:45:36 sthen Exp $
+--- interfaces.c.orig	Tue Apr  5 22:44:50 2016
++++ interfaces.c	Tue Apr  5 22:44:55 2016
+@@ -17,6 +17,7 @@
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #ifdef	HAVE_SYS_MBUF_H
++#include <sys/queue.h>
+ #include <sys/mbuf.h>
+ #endif
+ #include <netinet/in.h>
