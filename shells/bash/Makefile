@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2016/03/09 19:11:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.98 2016/04/05 20:03:26 naddy Exp $
 
 BROKEN-sparc=	Segmentation fault on any non-trivial script
 
@@ -6,6 +6,7 @@ COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.3.30
 PKGNAME=	bash-4.3.42
+REVISION=	0
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -21,8 +22,8 @@ DIST_SUBDIR=	bash
 PATCHFILES+=	bash43-0$i:0
 .endfor
 
-MODULES=	devel/gettext
-WANTLIB=	c termcap 
+LIB_DEPENDS=	devel/gettext
+WANTLIB=	c iconv intl termcap 
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support

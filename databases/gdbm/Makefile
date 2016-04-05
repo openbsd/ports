@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2016/04/05 20:03:26 naddy Exp $
 
 COMMENT=		GNU dbm
 
 VERSION=		1.11
-REVISION=		0
+REVISION=		1
 DISTNAME=		gdbm-${VERSION}
 CATEGORIES=		databases
 
@@ -16,9 +16,9 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gdbm/}
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
-WANTLIB +=		c
+WANTLIB +=		c iconv intl
 
 USE_GROFF =		Yes
 
