@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/05 19:28:24 naddy Exp $
 
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.32
+REVISION=		0
 
 SHARED_LIBS +=  idn                  17.2     # 17.14
 
@@ -16,11 +17,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_GNU:=libidn/}
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-csharp \
