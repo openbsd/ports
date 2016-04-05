@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.19 2016/03/20 19:56:07 naddy Exp $
+#	$OpenBSD: Makefile,v 1.20 2016/04/05 12:21:41 sthen Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
 DISTNAME=	AcePerl-1.92
 PKGNAME=	${DISTNAME}# No p5-prefix
-REVISION=	1
+REVISION=	2
 CATEGORIES=	biology databases
 
 FLAVORS=	opt
@@ -26,7 +26,8 @@ MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/AcePerl/
 SUBST_VARS=	P5ACE
 
 RUN_DEPENDS=	devel/p5-Cache-Cache \
-		devel/p5-WeakRef
+		devel/p5-WeakRef \
+		www/p5-CGI
 
 .if ${FLAVOR:Mopt}
 CONFIGURE_ENV+=	CHOICE1=2

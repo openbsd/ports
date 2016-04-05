@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/05 12:21:41 sthen Exp $
 
 COMMENT=	perl tools for bioinformatics
 
 DISTNAME=	BioPerl-1.6.924
+REVISION=	0
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
 CATEGORIES=	biology
 
@@ -49,6 +50,7 @@ RUN_DEPENDS=	biology/AcePerl \
 		textproc/p5-XML-Simple \
 		textproc/p5-XML-Twig \
 		textproc/p5-XML-Writer \
+		www/p5-CGI \
 		www/p5-HTML-Parser \
 		www/p5-SOAP-Lite \
 		www/p5-URI \

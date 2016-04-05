@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/05 12:21:41 sthen Exp $
 
 COMMENT=		virtual base class for WWW searches
 
-DISTNAME =		WWW-Search-2.515
+DISTNAME=		WWW-Search-2.515
+REVISION=		0
 CATEGORIES=		www
 
 # perl
@@ -18,6 +19,7 @@ RUN_DEPENDS=		converters/p5-DateManip \
 			mail/p5-Email-Send \
 			math/p5-Bit-Vector \
 			misc/p5-User \
+			www/p5-CGI \
 			www/p5-HTML-Parser>=2.23 \
 			www/p5-HTML-Tree \
 			www/p5-URI \

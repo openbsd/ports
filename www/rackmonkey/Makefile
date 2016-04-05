@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/30 13:14:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/05 12:21:41 sthen Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
 VER=		1.2.5-1
 DISTNAME=	rackmonkey-${VER}
 PKGNAME=	rackmonkey-${VER:S/-/./}
-
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	www net databases
 
@@ -25,6 +24,7 @@ RUN_DEPENDS=	p5-DBD-SQLite-*|p5-DBD-Pg-*|p5-DBD-mysql-*:databases/p5-DBD-SQLite 
 		misc/p5-Spreadsheet-WriteExcel \
 		net/p5-Net-DNS \
 		www/mod_perl \
+		www/p5-CGI \
 		www/p5-HTML-Template \
 		www/p5-HTML-Parser
 

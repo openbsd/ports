@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/25 07:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/05 12:21:40 sthen Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
-# note, newer versions want p5-EV which in turn wants threaded perl
-# or running with LD_PRELOAD=/usr/lib/libpthread.so to avoid problems
-# with the userland thread library.
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
-REVISION =	6
+REVISION =	7
 CATEGORIES =	audio net
 
 HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter
@@ -42,6 +39,7 @@ RUN_DEPENDS =	audio/flac \
 		devel/p5-Class-Data-Accessor>=0.03 \
 		devel/p5-Class-Data-Inheritable>=0.04 \
 		devel/p5-Class-Inspector>=1.16 \
+		www/p5-CGI \
 		databases/p5-DBD-mysql>=3.0002 \
 		databases/p5-DBI>=1.604 \
 		databases/p5-DBIx-Class>=0.07001 \
