@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Plugins_Qt_qt_gui_cpp,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
+--- src/Plugins/Qt/qt_gui.cpp.orig	Fri Feb 19 02:23:57 2016
++++ src/Plugins/Qt/qt_gui.cpp	Fri Feb 19 02:24:00 2016
+@@ -761,7 +761,11 @@ qt_gui_rep::update () {
+   
+   time_t delay = delayed_commands.lapse - texmacs_time();
+   if (needing_update) delay = 0;
+-  else                delay = max (0, min (std_delay, delay));
++  else {
++    delay = std_delay < delay ? std_delay : delay;
++    if (delay < 0)
++      delay = 0;
++  }
+   
+   updatetimer->start (delay);
+   updating = false;

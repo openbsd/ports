@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_System_Link_pipe_link_cpp,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
+--- src/System/Link/pipe_link.cpp.orig	Fri Feb 19 03:13:01 2016
++++ src/System/Link/pipe_link.cpp	Fri Feb 19 03:13:01 2016
+@@ -30,9 +30,6 @@
+ #include <signal.h>
+ #include <sys/wait.h>
+ #endif
+-#ifndef __APPLE__
+-#include <malloc.h>
+-#endif
+ 
+ hashset<pointer> pipe_link_set;
+ void pipe_callback (void *obj, void *info);

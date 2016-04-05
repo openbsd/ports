@@ -1,0 +1,57 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
+--- configure.in.orig	Thu Dec  3 16:29:48 2015
++++ configure.in	Mon Apr  4 12:37:17 2016
+@@ -16,23 +16,6 @@ AC_CONFIG_HEADERS([src/System/config.h:src/System/conf
+ AC_CANONICAL_HOST
+ 
+ #--------------------------------------------------------------------
+-# Retrieve SVN revision number from working dir or fallback file
+-#--------------------------------------------------------------------
+-
+-AC_MSG_CHECKING(current Subversion revision number)
+-SVNREV=`svnversion -n . 2>/dev/null`
+-SVNREV=${SVNREV/:/_}
+-if { test "$SVNREV" = "" || test "$SVNREV" = "exported" ; } ; then 
+-  SVNREV=`cat $srcdir/SVNREV`
+-  AC_MSG_RESULT($SVNREV, read from $srcdir/SVNREV)
+-else 
+-  echo "$SVNREV" > $srcdir/SVNREV
+-  AC_MSG_RESULT($SVNREV)
+-fi
+-
+-AC_SUBST(SVNREV)
+-
+-#--------------------------------------------------------------------
+ # Export version and package name 
+ #--------------------------------------------------------------------
+ 
+@@ -771,12 +754,14 @@ case "${host}" in
+     CONFIG_LIB_PATH="DYLD_LIBRARY_PATH"
+     GUILE_LDFLAGS=""
+     for l in $($GUILE_CONFIG link)
+-    do if [[[ $l =~ ^-L ]]]
+-       then GuileLibPath=${l#-L} 
+-       elif [[[ $l =~ ^-l ]]]   
+-       then lib="$GuileLibPath/lib${l#-l}.a"
++    do case "$i" in
++       -L*) GuileLibPath=${l#-L} 
++            ;;
++       -l*) lib="$GuileLibPath/lib${l#-l}.a"
+             [[[ -f $lib ]]] && GUILE_LDFLAGS+="$lib " || GUILE_LDFLAGS+="${l} " #try to use dynamic lib 
+-       fi
++            ;;
++       *)   ;;
++       esac
+    done
+ #        done
+ # guile-config doesn't return the need of libnintl
+@@ -1097,7 +1082,8 @@ no) unset QT_PLUGINS_LIST
+ esac
+ 
+ [[[ $enable_qt == no ]]] &&  unset QT_PLUGINS_LIST
+-for p in ${QT_PLUGINS_LIST/,/ }
++QT_PLUGINS_LIST=`echo "$QT_PLUGINS_LIST" | tr , ' '`
++for p in $QT_PLUGINS_LIST
+ do [[ -d $QT_PLUGINS_PATH/$p ]] || AC_MSG_ERROR(QT plugins not found!)
+ done
+     
