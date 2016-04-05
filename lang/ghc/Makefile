@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2016/03/25 10:42:17 kili Exp $
+# $OpenBSD: Makefile,v 1.138 2016/04/05 08:15:50 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -47,7 +47,8 @@ DISTFILES =		ghc-${MODGHC_VER}b-src.tar.bz2 \
 			${BINDISTFILE}
 
 .for m in amd64 i386
-BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.bz2:0
+BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.bz2:0 \
+			ghc-${BIN_VER}-shlibs-$m.tar.gz:0
 SUPDISTFILES +=		${BINDISTFILE-$m}
 .endfor
 
@@ -148,17 +149,30 @@ post-extract:
 	mkdir -p System/OpenBSD && \
 	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
 
+BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
+
 post-patch:
 # - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
-	./configure --prefix=${WRKDIR} && \
+	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
+	./configure --prefix=${WRKDIR}/bootstrap && \
+	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
+# - Create some wrapper scripts setting LD_LIBRARY_PATH
+	cd ${WRKDIR}/bin && \
+	for f in $$(ls ../bootstrap/bin); do \
+		${INSTALL_SCRIPT} /dev/null $$f && \
+		exec > $$f && \
+		echo '#!/bin/sh' && \
+		echo 'LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \' && \
+		printf 'exec ${WRKDIR}/bootstrap/bin/%s "$$@"\n' "$$f"; \
+	done
 # - Force the bootstrapper to use -nopie
 #   (maybe removed when switching to a newer bootstrapper, but only if I
 #    properly fix the bootstrap target)
 	perl -pi -e 's/(\S+ \S+)/\1 -optl -nopie/ if /^exec /' \
-		${WRKDIR}/bin/ghc
+		${WRKDIR}/bootstrap/bin/ghc
 
 post-install:
 	cd ${PREFIX}/lib/ghc && \
@@ -232,5 +246,12 @@ bootstrap: patch
 
 	env MAKE_ENV="AUTOCONF_VERSION=2.61 AUTOMAKE_VERSION=1.4" \
 	${MAKE} build ALL_TARGET="all binary-dist"
+
+	mkdir -p ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
+	ldd ${WRKBUILD}/ghc/stage2/build/tmp/ghc-stage2 | \
+	awk '$$NF ~ /^\/usr\/(local\/)?lib\// { print $$NF }' | \
+	xargs -J % cp -p % ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
+	cd ${WRKBUILD} && \
+	pax -wzf ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
 
 .include <bsd.port.mk>
