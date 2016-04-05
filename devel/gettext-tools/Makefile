@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/05 19:16:20 naddy Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
 VERSION=	0.19.7
 DISTNAME=	gettext-${VERSION}
 PKGNAME=	gettext-tools-${VERSION}
+REVISION=	0
 SHARED_LIBS +=  gettextlib           7.0      # unknown
 SHARED_LIBS +=  gettextsrc           6.0      # unknown
 SHARED_LIBS +=  gettextpo            8.0      # 5.3
@@ -22,10 +23,9 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # LGPLv2.1, GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext
-MODGETTEXT_TOOLS=No
+LIB_DEPENDS=	devel/gettext
 
-WANTLIB=	c m ncurses
+WANTLIB=	c iconv intl m ncurses
 
 # required by the autopoint tool
 RUN_DEPENDS=	archivers/xz
