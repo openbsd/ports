@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/04/05 16:34:36 jca Exp $
 
 COMMENT=	trivial database library
 
 # Keep in sync with the version bundled in net/samba4
 DISTNAME=	tdb-1.2.12
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	tdb	4.0
 

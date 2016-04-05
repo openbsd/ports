@@ -1,13 +1,15 @@
-$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.1 2015/07/18 02:11:13 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.2 2016/04/05 16:34:36 jca Exp $
 
 - allow the library version to be overriden
+- make sure we don't clobber the version that ends up in tdb.pc
 
---- buildtools/wafsamba/wafsamba.py.orig	Thu Jul 16 14:04:52 2015
-+++ buildtools/wafsamba/wafsamba.py	Thu Jul 16 14:05:42 2015
-@@ -195,6 +195,12 @@ def SAMBA_LIBRARY(bld, libname, source,
+--- buildtools/wafsamba/wafsamba.py.orig	Tue Jun  4 16:21:30 2013
++++ buildtools/wafsamba/wafsamba.py	Tue Apr  5 02:09:58 2016
+@@ -195,6 +195,13 @@ def SAMBA_LIBRARY(bld, libname, source,
      realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
      link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
  
++    saved_lib_version = vnum
 +    if vnum is not None:
 +        osvnum = os.getenv('LIB' + libname.replace('-', '_') + '_VERSION')
 +        if osvnum:
@@ -17,3 +19,12 @@ $OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.1 2015/07/18 02:11:13 jca Ex
      # we don't want any public libraries without version numbers
      if (not private_library and target_type != 'PYTHON' and not realname):
          if vnum is None and soname is None:
+@@ -283,7 +290,7 @@ def SAMBA_LIBRARY(bld, libname, source,
+         t.link_name = link_name
+ 
+     if pc_files is not None and not private_library:
+-        bld.PKG_CONFIG_FILES(pc_files, vnum=vnum)
++        bld.PKG_CONFIG_FILES(pc_files, vnum=saved_lib_version)
+ 
+     if (manpages is not None and 'XSLTPROC_MANPAGES' in bld.env and
+         bld.env['XSLTPROC_MANPAGES']):
