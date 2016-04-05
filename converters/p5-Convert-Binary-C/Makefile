@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/05 09:26:07 benoit Exp $
 
 COMMENT =		binary data conversion using C types
 
-DISTNAME =		Convert-Binary-C-0.77
+DISTNAME =		Convert-Binary-C-0.78
 CATEGORIES =		converters
 
 # perl
