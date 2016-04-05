@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2016/01/01 22:17:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.37 2016/04/05 19:33:21 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -60,6 +60,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_SSL_VERIFYRESULT.3
 @man man/man3/CURLINFO_STARTTRANSFER_TIME.3
 @man man/man3/CURLINFO_TLS_SESSION.3
+@man man/man3/CURLINFO_TLS_SSL_PTR.3
 @man man/man3/CURLINFO_TOTAL_TIME.3
 @man man/man3/CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE.3
 @man man/man3/CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE.3
@@ -274,6 +275,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_TCP_NODELAY.3
 @man man/man3/CURLOPT_TELNETOPTIONS.3
 @man man/man3/CURLOPT_TFTP_BLKSIZE.3
+@man man/man3/CURLOPT_TFTP_NO_OPTIONS.3
 @man man/man3/CURLOPT_TIMECONDITION.3
 @man man/man3/CURLOPT_TIMEOUT.3
 @man man/man3/CURLOPT_TIMEOUT_MS.3
