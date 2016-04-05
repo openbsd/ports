@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/05 09:31:53 benoit Exp $
 
 COMMENT =	Unicode line breaking algorithm
 
-DISTNAME =	Unicode-LineBreak-2015.12
+DISTNAME =	Unicode-LineBreak-2016.003
 CATEGORIES =	converters
 MODULES =	cpan
 
