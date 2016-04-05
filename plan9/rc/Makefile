@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2015/10/14 02:58:29 gsoares Exp $
+# $OpenBSD: Makefile,v 1.25 2016/04/05 22:54:46 jca Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.7.4
+REVISION=	0
 CATEGORIES=	plan9 shells
 MASTER_SITES=	http://static.tobold.org/rc/
 
 HOMEPAGE=	http://tobold.org/article/rc
-
-MAINTAINER=	Michael Reed <m.reed@mykolab.com>
 
 # zlib license
 PERMIT_PACKAGE_CDROM=	Yes
