@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/01/10 21:36:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2016/04/05 19:05:37 naddy Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -29,7 +29,8 @@ CONFIGURE_ARGS =--with-included-popt \
 .if ${FLAVOR:Miconv}
 CONFIGURE_ENV += CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib'
-MODULES += converters/libiconv
+LIB_DEPENDS +=	converters/libiconv
+WANTLIB +=	iconv
 .endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync

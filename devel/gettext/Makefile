@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.80 2016/04/05 19:05:37 naddy Exp $
 
 COMMENT=	GNU gettext runtime libraries and programs
 
@@ -19,8 +19,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # LGPLv2.1, GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	converters/libiconv
-WANTLIB=	c m stdc++
+LIB_DEPENDS=	converters/libiconv
+WANTLIB=	c m iconv stdc++
 
 WRKSRC=		${WRKDIST}/gettext-runtime
 CONFIGURE_STYLE=gnu
