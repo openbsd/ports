@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.419 2016/03/28 12:40:49 rpointel Exp $
+# $OpenBSD: Makefile,v 1.420 2016/04/06 22:03:45 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -36,6 +36,7 @@
      SUBDIR += dante
      SUBDIR += despoof
      SUBDIR += distorm3
+     SUBDIR += dropbear
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
      SUBDIR += easy-rsa
