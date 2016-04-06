@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2015/03/14 20:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2016/04/06 21:14:13 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
 DISTNAME=	tar-1.28
-REVISION=	1
+REVISION=	2
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
@@ -19,7 +19,6 @@ EXTRACT_SUFX=	.tar.xz
 # fake WANTLIB to ensure updates occur for major changes in base even for static
 WANTLIB=	c
 
-MODULES=	devel/gettext
 # only force dependencies for compressors that have a single-letter option
 RUN_DEPENDS=	archivers/bzip2 archivers/xz
 
@@ -38,11 +37,12 @@ FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR:Mstatic}
-LDSTATIC=	${STATIC}
-MODULES=
 BUILD_DEPENDS+=	devel/gettext
 CONFIGURE_ENV+=	SHLIBEXT=""
+LDSTATIC=	${STATIC}
 .else
+WANTLIB+=	iconv intl
+LIB_DEPENDS+=	devel/gettext
 LDSTATIC=
 .endif
 
