@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2016/04/06 17:36:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2016/04/06 19:10:18 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -28,8 +28,7 @@ PATCH_DIST_STRIP= -p1
 LIB_DEPENDS=	databases/qdbm \
 		devel/gettext \
 		devel/libidn
-BUILD_DEPENDS+=	devel/gettext-tools \
-		textproc/docbook-xsl \
+BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
 FLAVORS=	compressed gpgme sasl sidebar slang
