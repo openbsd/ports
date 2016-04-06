@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.113 2016/03/16 20:02:11 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.114 2016/04/06 11:29:25 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -57,8 +57,6 @@ MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .endif
 
-MODULES +=		devel/gettext
-
 # All subpackages depend on the main python package.
 
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
@@ -66,11 +64,10 @@ LIB_DEPENDS =
 
 LIB_DEPENDS-main =	archivers/bzip2 \
 			devel/libffi \
-			${MODGETTEXT_LIB_DEPENDS}
+			devel/gettext
 RUN_DEPENDS-main =
-WANTLIB-main =		bz2 c crypto expat ffi m ncursesw panelw pthread \
-			readline sqlite3 ssl stdc++ util z \
-			${MODGETTEXT_WANTLIB}
+WANTLIB-main =		bz2 c crypto expat ffi intl m ncursesw panelw pthread \
+			readline sqlite3 ssl stdc++ util z
 .if ${VERSION} != "2.7"
 LIB_DEPENDS-main +=	archivers/xz
 WANTLIB-main +=		lzma
