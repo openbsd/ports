@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2016/04/06 17:47:59 danj Exp $
+
+For option --single-version-externally-managed
+
+--- setup.py.orig	Fri Apr  1 20:25:54 2016
++++ setup.py	Fri Apr  1 20:26:10 2016
+@@ -1,6 +1,6 @@
+ import os
+ import sys
+-from distutils.core import setup
++from setuptools import setup
+ from distutils.extension import Extension
+ 
+ f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
