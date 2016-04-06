@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/04 14:26:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/04/06 22:03:49 sthen Exp $
 @extraunexec rm -rf /var/log/letsencrypt/*
 bin/letsencrypt
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/
@@ -27,13 +27,15 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/configuration.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/configuration.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/constants.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/constants.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/continuity_auth.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/continuity_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/crypto_util.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/crypto_util.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/__init__.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/completer.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/completer.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/dummy_readline.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/dummy_readline.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/enhancements.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/enhancements.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/display/ops.py
@@ -44,12 +46,16 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/error_handler.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/error_handler.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/errors.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/hooks.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/hooks.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/le_util.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/le_util.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/log.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/log.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/main.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/main.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/notify.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/notify.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/
@@ -71,6 +77,10 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/null.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/null.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/null_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/null_test.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/selection.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/selection.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/selection_test.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/selection_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/standalone.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/standalone.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/standalone_test.py
@@ -83,8 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot_test.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/proof_of_possession.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/proof_of_possession.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/renewal.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/renewal.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reporter.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reverter.py
@@ -108,13 +118,13 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/colored_logging_test.
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/colored_logging_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/configuration_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/configuration_test.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/continuity_auth_test.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/continuity_auth_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/crypto_util_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/__init__.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/completer_test.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/completer_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/enhancements_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/enhancements_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/display/ops_test.py
@@ -125,14 +135,14 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/error_handler_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/error_handler_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/errors_test.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/hook_test.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/hook_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/le_util_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/le_util_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/log_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/log_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/notify_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/notify_test.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/proof_of_possession_test.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/proof_of_possession_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reporter_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reporter_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reverter_test.py

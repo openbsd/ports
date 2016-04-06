@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2016/03/04 14:26:35 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2016/04/06 22:03:48 sthen Exp $
 
 HOMEPAGE?=		https://letsencrypt.org/
 MAINTAINER?=		Stuart Henderson <sthen@openbsd.org>
@@ -8,7 +8,7 @@ CATEGORIES?=		security/letsencrypt security
 MODPY_PI?=		Yes
 MODPY_SETUPTOOLS?=	Yes
 
-MODPY_EGG_VERSION?=	0.4.2
+MODPY_EGG_VERSION?=	0.5.0
 PKGNAME?=		${DISTNAME:S/.dev/pre/}
 
 MODULES?=		lang/python

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/15 21:40:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/06 22:03:49 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
 bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
@@ -26,8 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}jws.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}jws_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}messages_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}other.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}other_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}standalone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}standalone_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -83,8 +81,6 @@ lib/python${MODPY_VERSION}/site-packages/acme/jws.py
 lib/python${MODPY_VERSION}/site-packages/acme/jws_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/messages.py
 lib/python${MODPY_VERSION}/site-packages/acme/messages_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/other.py
-lib/python${MODPY_VERSION}/site-packages/acme/other_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/standalone.py
 lib/python${MODPY_VERSION}/site-packages/acme/standalone_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/test_util.py
