@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2016/04/04 14:55:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2016/04/06 17:36:09 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.6.0
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -14,7 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto idn qdbm ssl z
+WANTLIB+=	c crypto iconv idn intl qdbm ssl z
 
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -24,11 +25,11 @@ MASTER_SITES2=	http://spacehopper.org/mutt/
 DIST_SUBDIR=	mutt
 PATCH_DIST_STRIP= -p1
 
-MODULES=	devel/gettext
-
 LIB_DEPENDS=	databases/qdbm \
+		devel/gettext \
 		devel/libidn
-BUILD_DEPENDS+=	textproc/docbook-xsl \
+BUILD_DEPENDS+=	devel/gettext-tools \
+		textproc/docbook-xsl \
 		www/lynx
 
 FLAVORS=	compressed gpgme sasl sidebar slang
