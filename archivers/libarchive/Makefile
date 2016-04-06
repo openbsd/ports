@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/06 14:16:58 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://www.libarchive.org/downloads/
 
-MODULES=	converters/libiconv
-WANTLIB=	bz2 c expat lzma lzo2 pthread z
+WANTLIB=	bz2 c expat iconv lzma lzo2 pthread z
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
-		archivers/xz
+		archivers/xz \
+		converters/libiconv
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
