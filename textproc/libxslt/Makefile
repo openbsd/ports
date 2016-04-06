@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/03/12 17:22:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.86 2016/04/06 19:55:04 naddy Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -7,8 +7,8 @@ VERSION=		1.1.28
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
-REVISION-main =		4
-REVISION-python =	0
+REVISION-main =		5
+REVISION-python =	1
 
 SHARED_LIBS +=  xslt                 3.8      # 2.28
 SHARED_LIBS +=  exslt                9.8      # 8.17
@@ -23,9 +23,7 @@ MASTER_SITES=		https://distfiles.nl/ \
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		gpg-error lzma m z
-
-MODULES=		devel/gettext
+WANTLIB=		gpg-error iconv intl lzma m z
 
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
@@ -33,8 +31,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -python
 
 WANTLIB-main=		${WANTLIB} c xml2 gcrypt pthread
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			textproc/libxml \
+LIB_DEPENDS-main=	textproc/libxml \
 			security/libgcrypt
 
 USE_GMAKE=		Yes
@@ -52,10 +49,8 @@ MODPY_RUNDEP=		No
 BUILD_DEPENDS+= 	textproc/libxml,-python
 WANTLIB-python= 	${WANTLIB} gcrypt xml2 exslt xslt pthread util \
 			${MODPY_WANTLIB}
-RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
-			${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-python=	textproc/libxslt,-main \
-			${MODGETTEXT_LIB_DEPENDS}
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-python=	textproc/libxslt,-main
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
 CONFIGURE_ARGS+=	--with-python
 
