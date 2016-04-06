@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/04/06 16:56:42 naddy Exp $
 
 COMMENT=	error codes for GnuPG related software
 
 DISTNAME=	libgpg-error-1.21
+REVISION=	0
 CATEGORIES=	security devel
 EXTRACT_SUFX=	.tar.bz2
 
@@ -15,11 +16,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c iconv intl
 
 MASTER_SITES=	${MASTER_SITES_GNUPG:=libgpg-error/}
 
-MODULES=	devel/gettext
+LIB_DEPENDS=	devel/gettext
 
 SEPARATE_BUILD=	Yes
 
