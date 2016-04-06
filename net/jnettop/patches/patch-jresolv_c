@@ -1,0 +1,31 @@
+$OpenBSD: patch-jresolv_c,v 1.1 2016/04/06 21:51:36 sthen Exp $
+--- jresolv.c.orig	Wed Apr 12 08:47:01 2006
++++ jresolv.c	Thu Dec 20 12:14:35 2012
+@@ -23,6 +23,7 @@
+ #include "jbase.h"
+ #include "jconfig.h"
+ #include <netinet/ip6.h>
++#include <stdint.h>
+ 
+ static gboolean resolveStreamTCP(const gchar *data, guint len, jbase_stream *stream, jbase_payload_info *payloads) {
+ 	guint	hlen;
+@@ -74,6 +75,19 @@ static gboolean resolveStreamIP(const gchar  *data, gu
+ 	hlen = IP_HL(ip) * 4;
+ 	if (hlen < sizeof(struct ip)) {
+ 		return FALSE;
++	}
++	if ((intptr_t)ip & (sizeof(long)-1)) {
++		static u_char *abuf = NULL;
++
++		if (abuf == NULL) {
++			abuf = (u_char *)malloc(1500);
++			if (abuf == NULL) {
++				printf("resolveStreamIP: malloc");
++				return TRUE;
++			}
++		}
++		memmove((char *)abuf, (char *)ip, len);
++		ip = (struct ip *)abuf;
+ 	}
+ 	memcpy(&stream->src.addr4, &ip->ip_src, sizeof(struct in_addr));
+ 	memcpy(&stream->dst.addr4, &ip->ip_dst, sizeof(struct in_addr));
