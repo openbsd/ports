@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
---- colorls.1.orig	Sat Nov 29 19:57:03 2014
-+++ colorls.1	Sat Nov 29 20:02:08 2014
+$OpenBSD: patch-colorls_1,v 1.16 2016/04/06 18:53:16 naddy Exp $
+--- colorls.1.orig	Wed Apr  6 19:24:58 2016
++++ colorls.1	Wed Apr  6 19:26:02 2016
 @@ -37,11 +37,11 @@
  .Dt COLORLS 1
  .Os
@@ -38,7 +38,7 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  .It Ev BLOCKSIZE
  If the environment variable
  .Ev BLOCKSIZE
-@@ -435,11 +441,138 @@ option is not specified, the block counts
+@@ -435,6 +441,40 @@ option is not specified, the block counts
  (see
  .Fl s )
  will be displayed in units of that size block.
@@ -79,8 +79,10 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  .It COLUMNS
  If this variable contains a string representing a
  decimal integer, it is used as the
- column position width for displaying
- multiple-text-column output.
+@@ -446,6 +486,99 @@ If set to a string ending in
+ .Nm
+ respects character display widths when columnating output.
+ Otherwise, non-ASCII bytes are replaced by question marks.
 +.It Ev LSCOLORS
 +The value of this variable describes what color to use for which
 +attribute when colors are enabled with
@@ -177,7 +179,7 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -447,33 +580,34 @@ See
+@@ -453,33 +586,34 @@ See
  for more information.
  .El
  .Sh EXIT STATUS
@@ -199,7 +201,7 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  .Pp
  List the files in
  .Pa /var/log ,
- sorting the output such that the mostly recently modified entries are
+ sorting the output such that the most recently modified entries are
  printed first:
  .Pp
 -.Dl $ ls -lt /var/log
@@ -217,7 +219,7 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  utility is compliant with the
  .St -p1003.1-2008
  specification,
-@@ -482,10 +616,10 @@ except behaviour for the
+@@ -488,10 +622,10 @@ except behaviour for the
  flag differs.
  .Pp
  The flags
@@ -230,7 +232,7 @@ $OpenBSD: patch-colorls_1,v 1.15 2014/11/29 19:16:48 naddy Exp $
  are extensions to that specification.
  .Pp
  The flags
-@@ -505,6 +639,6 @@ flag has been changed in order to be compatible with t
+@@ -511,6 +645,6 @@ flag has been changed in order to be compatible with t
  specification.
  .Sh HISTORY
  An

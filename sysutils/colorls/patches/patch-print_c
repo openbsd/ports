@@ -1,29 +1,24 @@
-$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
---- print.c.orig	Thu Jan 15 23:39:32 2015
-+++ print.c	Thu Oct 29 01:01:20 2015
+$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $
+--- print.c.orig	Tue Dec  1 19:36:13 2015
++++ print.c	Wed Apr  6 20:47:37 2016
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $	*/
-+/*	$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $	*/
+-/*	$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $	*/
++/*	$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $	*/
  /*	$NetBSD: print.c,v 1.15 1996/12/11 03:25:39 thorpej Exp $	*/
  
  /*
-@@ -45,10 +45,14 @@
- #include <stdlib.h>
- #include <string.h>
- #include <time.h>
--#include <tzfile.h>
+@@ -48,6 +48,10 @@
  #include <unistd.h>
  #include <limits.h>
  #include <util.h>
 +#ifdef COLORLS
-+#include <ctype.h>
 +#include <termcap.h>
 +#include <signal.h>
 +#endif
  
  #include "ls.h"
  #include "extern.h"
-@@ -59,12 +63,44 @@ static void	printsize(size_t, off_t);
+@@ -58,6 +62,10 @@ static void	printsize(size_t, off_t);
  static void	printtime(time_t);
  static int	printtype(u_int);
  static int	compute_columns(DISPLAY *, int *);
@@ -34,12 +29,10 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
  
  #define	IS_NOPRINT(p)	((p)->fts_number == NO_PRINT)
  
- #define	DATELEN		64
--#define	SIXMONTHS	((DAYSPERNYEAR / 2) * SECSPERDAY)
+@@ -66,6 +74,32 @@ static int	compute_columns(DISPLAY *, int *);
+ #define	SECSPERDAY	(24 * 60 * 60)
+ #define	SIXMONTHS	(SECSPERDAY * 365 / 2)
  
-+#define	SECSPERDAY	(24 * 60 * 60)
-+#define	SIXMONTHS	(SECSPERDAY * 365 / 2)
-+
 +#ifdef COLORLS
 +/* Most of these are taken from <sys/stat.h> */
 +typedef enum Colors {
@@ -69,7 +62,7 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
  void
  printscol(DISPLAY *dp)
  {
-@@ -85,6 +121,9 @@ printlong(DISPLAY *dp)
+@@ -86,6 +120,9 @@ printlong(DISPLAY *dp)
  	FTSENT *p;
  	NAMES *np;
  	char buf[20];
@@ -79,7 +72,7 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
  
  	if (dp->list->fts_level != FTS_ROOTLEVEL && (f_longform || f_size))
  		(void)printf("total %llu\n", howmany(dp->btotal, blocksize));
-@@ -121,7 +160,15 @@ printlong(DISPLAY *dp)
+@@ -122,7 +159,15 @@ printlong(DISPLAY *dp)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -87,7 +80,7 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
 +		if (f_color)
 +			color_printed = colortype(sp->st_mode);
 +#endif
- 		(void)putname(p->fts_name);
+ 		(void)mbsprint(p->fts_name, 1);
 +#ifdef COLORLS
 +		if (f_color && color_printed)
 +			endcolor(0);
@@ -95,7 +88,7 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -221,6 +268,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -222,6 +267,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  {
  	struct stat *sp;
  	int chcnt;
@@ -105,33 +98,23 @@ $OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -230,7 +280,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -231,7 +279,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
 +#ifdef COLORLS
 +	if (f_color)
 +		color_printed = colortype(sp->st_mode);
-+#endif 
- 	chcnt += putname(p->fts_name);
++#endif
+ 	chcnt += mbsprint(p->fts_name, 1);
 +#ifdef COLORLS
 +	if (f_color && color_printed)
 +		endcolor(0);
-+#endif 
++#endif
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -309,7 +367,8 @@ printstream(DISPLAY *dp)
- 			continue;
- 		if (col > 0) {
- 			(void)putchar(','), col++;
--			if (col + 1 + extwidth + p->fts_namelen >= termwidth)
-+			if (col + 1 + extwidth + strwidth(p->fts_name) >=
-+			    termwidth)
- 				(void)putchar('\n'), col = 0;
- 			else
- 				(void)putchar(' '), col++;
-@@ -342,6 +401,151 @@ printtype(u_int mode)
+@@ -344,6 +400,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }
