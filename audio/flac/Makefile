@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2016/04/07 16:05:48 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 EXTRACT_SUFX=	.tar.xz
 
-WANTLIB=	c m ogg stdc++
+WANTLIB=	c iconv m ogg stdc++
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	audio/libogg
+LIB_DEPENDS=	audio/libogg converters/libiconv
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
