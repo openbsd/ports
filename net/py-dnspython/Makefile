@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/12 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/04/07 21:01:23 sthen Exp $
 
 COMMENT=		DNS toolkit for Python
 
-MODPY_EGG_VERSION=	1.11.1
+# python3 support is in a separate upstream distribution, dnspython3
+MODPY_EGG_VERSION=	1.12.0
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		0
 
 HOMEPAGE=		http://www.dnspython.org/
 
@@ -21,9 +21,9 @@ MODULES=		lang/python
 MODPY_ADJ_FILES=	examples/*.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-dnspython
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}dnspython
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/py-dnspython
+		${PREFIX}/share/examples/${MODPY_PY_PREFIX}dnspython
 
 do-test:
 	@cd ${WRKSRC}/tests && env PYTHONPATH=../ \
