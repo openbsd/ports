@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavutil_libm_h,v 1.1 2016/04/07 06:01:19 ajacoutot Exp $
+
+lavu/libm: add exp10 support
+
+--- libavutil/libm.h.orig	Wed Apr  6 20:45:13 2016
++++ libavutil/libm.h	Wed Apr  6 20:45:27 2016
+@@ -28,6 +28,7 @@
+ #include "config.h"
+ #include "attributes.h"
+ #include "intfloat.h"
++#include "mathematics.h"
+ 
+ #if HAVE_MIPSFPU && HAVE_INLINE_ASM
+ #include "libavutil/mips/libm_mips.h"

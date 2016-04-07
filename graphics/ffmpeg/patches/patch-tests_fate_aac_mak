@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_fate_aac_mak,v 1.9 2016/03/07 07:11:35 ajacoutot Exp $
+$OpenBSD: patch-tests_fate_aac_mak,v 1.10 2016/04/07 06:01:19 ajacoutot Exp $
 
 fate: adjust AAC encoder tests values
 
@@ -70,9 +70,11 @@ tests/fate/aac: remove unneeded strict arguments from the encoder tests
 
 fate/aac: Increase fuzz from of fate-aac-pns-encode from 72 to 74 for Loongson
 
+AAC encoder: new regression test
+
 --- tests/fate/aac.mak.orig	Wed Jan 13 15:27:50 2016
-+++ tests/fate/aac.mak	Sun Mar  6 19:41:20 2016
-@@ -142,56 +142,84 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
++++ tests/fate/aac.mak	Sun Apr  3 18:34:00 2016
+@@ -142,56 +142,95 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
  
  FATE_AAC_ENCODE += fate-aac-aref-encode
  fate-aac-aref-encode: ./tests/data/asynth-44100-2.wav
@@ -160,6 +162,17 @@ fate/aac: Increase fuzz from of fate-aac-pns-encode from 72 to 74 for Loongson
 +fate-aac-ltp-encode: CMP_TARGET = 1270
 +fate-aac-ltp-encode: SIZE_TOLERANCE = 3560
 +fate-aac-ltp-encode: FUZZ = 17
++
++#Ticket1784
++FATE_AAC_ENCODE += fate-aac-yoraw-encode
++fate-aac-yoraw-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/yo.raw-short.wav -c:a aac -fflags +bitexact -flags +bitexact
++fate-aac-yoraw-encode: CMP = stddev
++fate-aac-yoraw-encode: REF = $(SAMPLES)/audio-reference/yo.raw-short.wav
++fate-aac-yoraw-encode: CMP_SHIFT = -12288
++fate-aac-yoraw-encode: CMP_TARGET = 259
++fate-aac-yoraw-encode: SIZE_TOLERANCE = 3560
++fate-aac-yoraw-encode: FUZZ = 17
++
 +
  FATE_AAC_ENCODE += fate-aac-pred-encode
 -fate-aac-pred-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -profile:a aac_main -c:a aac -aac_is 0 -aac_pns 0 -b:a 128k

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.14 2016/03/09 17:29:36 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.15 2016/04/07 06:01:19 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -76,8 +76,10 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
 
 aacenc: use generational cache instead of resetting.
 
+AAC encoder: fix valgrind errors
+
 --- libavcodec/aacenc.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc.c	Tue Mar  8 19:23:12 2016
++++ libavcodec/aacenc.c	Wed Apr  6 18:35:10 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -169,7 +171,7 @@ aacenc: use generational cache instead of resetting.
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
-@@ -517,10 +540,12 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -517,19 +540,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -185,7 +187,18 @@ aacenc: use generational cache instead of resetting.
              samples2 = overlap + 1024;
              la       = samples2 + (448+64);
              if (!frame)
-@@ -537,7 +562,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+                 la = NULL;
+             if (tag == TYPE_LFE) {
+-                wi[ch].window_type[0] = ONLY_LONG_SEQUENCE;
++                wi[ch].window_type[0] = wi[ch].window_type[1] = ONLY_LONG_SEQUENCE;
+                 wi[ch].window_shape   = 0;
+                 wi[ch].num_windows    = 1;
+                 wi[ch].grouping[0]    = 1;
++                wi[ch].clipping[0]    = 0;
+ 
+                 /* Only the lowest 12 coefficients are used in a LFE channel.
+                  * The expression below results in only the bottom 8 coefficients
+@@ -537,7 +563,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -194,7 +207,32 @@ aacenc: use generational cache instead of resetting.
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -571,25 +596,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -554,10 +580,23 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+             ics->tns_max_bands      = wi[ch].window_type[0] == EIGHT_SHORT_SEQUENCE ?
+                                         ff_tns_max_bands_128 [s->samplerate_index]:
+                                         ff_tns_max_bands_1024[s->samplerate_index];
+-            clip_avoidance_factor = 0.0f;
++
+             for (w = 0; w < ics->num_windows; w++)
+                 ics->group_len[w] = wi[ch].grouping[w];
++
++            /* Calculate input sample maximums and evaluate clipping risk */
++            clip_avoidance_factor = 0.0f;
+             for (w = 0; w < ics->num_windows; w++) {
++                const float *wbuf = overlap + w * 128;
++                const int wlen = 2048 / ics->num_windows;
++                float max = 0;
++                int j;
++                /* mdct input is 2 * output */
++                for (j = 0; j < wlen; j++)
++                    max = FFMAX(max, fabsf(wbuf[j]));
++                wi[ch].clipping[w] = max;
++            }
++            for (w = 0; w < ics->num_windows; w++) {
+                 if (wi[ch].clipping[w] > CLIP_AVOIDANCE_FACTOR) {
+                     ics->window_clipping[w] = 1;
+                     clip_avoidance_factor = FFMAX(clip_avoidance_factor, wi[ch].clipping[w]);
+@@ -571,25 +610,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
@@ -236,7 +274,7 @@ aacenc: use generational cache instead of resetting.
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -606,15 +640,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -606,15 +654,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -266,7 +304,7 @@ aacenc: use generational cache instead of resetting.
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -632,14 +679,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -632,14 +693,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -283,7 +321,7 @@ aacenc: use generational cache instead of resetting.
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -656,8 +703,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -656,8 +717,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -294,7 +332,7 @@ aacenc: use generational cache instead of resetting.
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -666,22 +713,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -666,22 +727,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -333,7 +371,7 @@ aacenc: use generational cache instead of resetting.
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -693,36 +752,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -693,36 +766,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -432,7 +470,7 @@ aacenc: use generational cache instead of resetting.
      if (!frame)
          s->last_frame++;
  
-@@ -738,6 +839,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -738,6 +853,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -441,7 +479,7 @@ aacenc: use generational cache instead of resetting.
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -796,76 +899,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -796,76 +913,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -599,7 +637,7 @@ aacenc: use generational cache instead of resetting.
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -876,27 +1026,16 @@ fail:
+@@ -876,27 +1040,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -637,7 +675,7 @@ aacenc: use generational cache instead of resetting.
      {NULL}
  };
  
-@@ -907,6 +1046,11 @@ static const AVClass aacenc_class = {
+@@ -907,6 +1060,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -649,7 +687,7 @@ aacenc: use generational cache instead of resetting.
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -916,9 +1060,9 @@ AVCodec ff_aac_encoder = {
+@@ -916,9 +1074,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,

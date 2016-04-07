@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.9 2016/03/09 17:29:36 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.10 2016/04/07 06:01:19 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -28,11 +28,15 @@ aacenc: avoid double in quantize_bands.
 
 aacenc_utils: Use temporary variable.
 
+lavc/aacenc_utils: replace powf(x,y) by expf(logf(x), y)
+
 --- libavcodec/aacenc_utils.h.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc_utils.h	Tue Mar  8 19:24:00 2016
-@@ -29,8 +29,8 @@
++++ libavcodec/aacenc_utils.h	Fri Mar 18 20:59:09 2016
+@@ -28,9 +28,10 @@
+ #ifndef AVCODEC_AACENC_UTILS_H
  #define AVCODEC_AACENC_UTILS_H
  
++#include "libavutil/internal.h"
  #include "aac.h"
 -#include "aac_tablegen_decl.h"
  #include "aacenctab.h"
@@ -40,7 +44,7 @@ aacenc_utils: Use temporary variable.
  
  #define ROUND_STANDARD 0.4054f
  #define ROUND_TO_ZERO 0.1054f
-@@ -45,6 +45,11 @@ static inline void abs_pow34_v(float *out, const float
+@@ -45,6 +46,11 @@ static inline void abs_pow34_v(float *out, const float
      }
  }
  
@@ -52,7 +56,7 @@ aacenc_utils: Use temporary variable.
  /**
   * Quantize one coefficient.
   * @return absolute value of the quantized coefficient
-@@ -61,13 +66,13 @@ static inline void quantize_bands(int *out, const floa
+@@ -61,13 +67,13 @@ static inline void quantize_bands(int *out, const floa
                                    const float rounding)
  {
      int i;
@@ -70,7 +74,7 @@ aacenc_utils: Use temporary variable.
      }
  }
  
-@@ -85,20 +90,65 @@ static inline float find_max_val(int group_len, int sw
+@@ -85,20 +91,68 @@ static inline float find_max_val(int group_len, int sw
  
  static inline int find_min_book(float maxval, int sf)
  {
@@ -115,7 +119,10 @@ aacenc_utils: Use temporary variable.
 +            if (s >= ethresh) {
 +                nzl += 1.0f;
 +            } else {
-+                nzl += powf(s / ethresh, nzslope);
++                if (nzslope == 2.f)
++                    nzl += (s / ethresh) * (s / ethresh);
++                else
++                    nzl += ff_fast_powf(s / ethresh, nzslope);
 +            }
 +        }
 +        if (e2 > thresh) {
@@ -145,7 +152,7 @@ aacenc_utils: Use temporary variable.
  /** Return the minimum scalefactor where the quantized coef does not clip. */
  static inline uint8_t coef2minsf(float coef)
  {
-@@ -128,6 +178,76 @@ static inline int quant_array_idx(const float val, con
+@@ -128,6 +182,76 @@ static inline int quant_array_idx(const float val, con
      return index;
  }
  
@@ -222,7 +229,7 @@ aacenc_utils: Use temporary variable.
  #define ERROR_IF(cond, ...) \
      if (cond) { \
          av_log(avctx, AV_LOG_ERROR, __VA_ARGS__); \
-@@ -138,6 +258,5 @@ static inline int quant_array_idx(const float val, con
+@@ -138,6 +262,5 @@ static inline int quant_array_idx(const float val, con
      if (cond) { \
          av_log(avctx, AV_LOG_WARNING, __VA_ARGS__); \
      }
