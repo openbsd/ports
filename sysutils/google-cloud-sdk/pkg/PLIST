@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/03/31 06:06:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/07 05:49:52 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -489,8 +489,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/apis.py
 google-cloud-sdk/lib/googlecloudsdk/core/apis.pyc
-google-cloud-sdk/lib/googlecloudsdk/core/cli.py
-google-cloud-sdk/lib/googlecloudsdk/core/cli.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/config.json
 google-cloud-sdk/lib/googlecloudsdk/core/config.py
 google-cloud-sdk/lib/googlecloudsdk/core/config.pyc
@@ -518,6 +516,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/credentials/gce_cache.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/gce_cache.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/gce_read.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/gce_read.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/http.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/http.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/legacy.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/legacy.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/oauth2_landing.html
@@ -558,6 +558,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/core/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/execution_utils.py
 google-cloud-sdk/lib/googlecloudsdk/core/execution_utils.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/http.py
+google-cloud-sdk/lib/googlecloudsdk/core/http.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/iam/
 google-cloud-sdk/lib/googlecloudsdk/core/iam/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/iam/__init__.pyc
@@ -600,6 +602,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_expr.py
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_expr.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_filter.py
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_filter.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_keys_expr.py
+google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_keys_expr.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_lex.py
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_lex.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_lf_expr.py
@@ -1738,6 +1742,8 @@ google-cloud-sdk/lib/surface/compute/images/deprecate.py
 google-cloud-sdk/lib/surface/compute/images/deprecate.pyc
 google-cloud-sdk/lib/surface/compute/images/describe.py
 google-cloud-sdk/lib/surface/compute/images/describe.pyc
+google-cloud-sdk/lib/surface/compute/images/describe_from_family.py
+google-cloud-sdk/lib/surface/compute/images/describe_from_family.pyc
 google-cloud-sdk/lib/surface/compute/images/list.py
 google-cloud-sdk/lib/surface/compute/images/list.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/
