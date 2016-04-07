@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/14 23:50:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/07 02:32:02 lteo Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
 DISTNAME =	kdiff3-0.9.98
+REVISION =	0
 CATEGORIES =	devel x11/kde
 HOMEPAGE =	http://kdiff3.sourceforge.net/
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kdiff3/}
-
-MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
