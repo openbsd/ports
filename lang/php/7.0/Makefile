@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/17 16:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/08 20:26:13 robert Exp $
 
 PV=		7.0
-V=		${PV}.4
-
-BUILD_DEPENDS+=	www/apache-httpd
+V=		${PV}.5
 
 WANTLIB-main+=	stdc++ ncurses readline
-
-.include <bsd.port.mk>
+BUILD_DEPENDS+=	devel/bison
 
 # XXX disable suhosin for 7.0 and enforce apache2 because apache
 # is not supported anymore
 FLAVORS:=
-CONFIGURE_ARGS+=	--disable-suhosin \
-			--with-apxs2=${LOCALBASE}/sbin/apxs2
+CONFIGURE_ENV+=		YACC="${LOCALBASE}/bin/bison -y"
+
+.include <bsd.port.mk>
