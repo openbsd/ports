@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/08 20:50:05 sthen Exp $
 
-COMMENT=        standalone extensible Perl module installer
+COMMENT=	standalone extensible Perl module installer
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Module-Install-1.08
-REVISION=	1
-CATEGORIES=     devel
+REVISION=	2
+CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-Module-ScanDeps>=1.13 \
+RUN_DEPENDS+=	devel/p5-Module-ScanDeps>=1.13 \
 		devel/p5-File-Remove \
 		devel/p5-PAR-Dist \
 		devel/p5-YAML-Tiny>=1.38 \
 		converters/p5-JSON
+
+# special case; this is *not* a CONFIGURE_STYLE=modbuild port
+RUN_DEPENDS+=	devel/p5-Module-Build
 
 CONFIGURE_ARGS=	--skipdeps
 
