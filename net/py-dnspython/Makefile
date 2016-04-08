@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/07 21:01:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/08 09:13:03 sthen Exp $
 
 COMMENT=		DNS toolkit for Python
 
 # python3 support is in a separate upstream distribution, dnspython3
 MODPY_EGG_VERSION=	1.12.0
+REVISION=		0
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.dnspython.org/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
