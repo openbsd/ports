@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2016/04/08 11:16:15 naddy Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.23.2
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -17,13 +18,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi pthread tasn1
+WANTLIB += c ffi iconv intl pthread tasn1
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
-MODULES=	devel/gettext
-
-LIB_DEPENDS=	devel/libffi \
+LIB_DEPENDS=	devel/gettext \
+		devel/libffi \
 		security/libtasn1
 
 CONFIGURE_STYLE=gnu

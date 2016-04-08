@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.119 2016/03/11 20:28:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.120 2016/04/08 11:16:15 naddy Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
 V=		3.4.10
 DISTNAME=	gnutls-${V}
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
@@ -18,15 +19,14 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp hogweed idn m nettle p11-kit pthread stdc++
+WANTLIB += c ffi gmp hogweed iconv idn intl m nettle p11-kit pthread stdc++
 WANTLIB += tasn1 z
 
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
 		http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/v${V:R}/
 
-MODULES=	devel/gettext
-
-LIB_DEPENDS=	devel/libidn \
+LIB_DEPENDS=	devel/gettext \
+		devel/libidn \
 		security/libtasn1 \
 		security/libnettle \
 		security/p11-kit>=0.23.2
@@ -64,9 +64,8 @@ post-install:
 
 # warning: implicit declaration of function 'kill'
 # error: 'SIGTERM' undeclared (first use in this function)
-TEST_DEPENDS +=	textproc/gsed
 pre-test:
-	gsed -Ei 's,#include <stdlib.h>,&\n#include <signal.h>,' \
+	perl -i -pe 's,#include <stdlib.h>,$$&\n#include <signal.h>,' \
 		${WRKSRC}/tests/*.c
 
 .include <bsd.port.mk>
