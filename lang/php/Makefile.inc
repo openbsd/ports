@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.76 2016/03/17 16:58:01 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.77 2016/04/08 20:25:51 robert Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -50,8 +50,8 @@ FLAVOR?=
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
-CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
-                        LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
+			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
 			lt_cv_path_SED=/usr/bin/sed
 # configure detects us as having decimal fp support but it's not built in
@@ -77,13 +77,13 @@ CONFIGURE_ARGS+=	--enable-shared \
 CONFIGURE_ARGS +=	--with-readline
 .endif
 
-.if ${FLAVOR:Map2}
+.if ${FLAVOR:Map2} || ${PV} == "7.0"
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
-BUILD_DEPENDS=		www/apache-httpd
+BUILD_DEPENDS+=		www/apache-httpd
 .else
 # doesn't use apache-module.port.mk so MODAPACHE_APXS not available
 CONFIGURE_ARGS+=	--with-apxs=${LOCALBASE}/sbin/apxs
-BUILD_DEPENDS=		www/apache-httpd-openbsd
+BUILD_DEPENDS+=		www/apache-httpd-openbsd
 .endif
 
 # default included extensions
@@ -354,7 +354,7 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 SUHOSIN_V=		0.9.38
-.if ${FLAVOR:Mno_suhosin}
+.if ${FLAVOR:Mno_suhosin} || ${PV} == "7.0"
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0
 .else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
