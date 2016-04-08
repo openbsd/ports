@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.49 2016/03/18 06:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/04/08 17:28:38 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			1.2.4
+V=			1.2.5
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             8.1      # 10200.4
-SHARED_LIBS +=  harfbuzz-icu         0.2      # 10200.4
-SHARED_LIBS +=  harfbuzz-gobject     0.0      # 10200.4
+SHARED_LIBS +=  harfbuzz             8.1      # 10200.5
+SHARED_LIBS +=  harfbuzz-icu         0.2      # 10200.5
+SHARED_LIBS +=  harfbuzz-gobject     0.0      # 10200.5
 
 CATEGORIES=		devel graphics textproc
 
@@ -25,13 +25,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += freetype glib-2.0 graphite2 m pcre pthread stdc++ z
+WANTLIB += freetype glib-2.0 graphite2 iconv intl m pcre pthread
+WANTLIB += stdc++ z
 
 MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 
 MULTI_PACKAGES=		-main -icu
-
-MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
 
@@ -45,8 +44,7 @@ WANTLIB-icu += harfbuzz icudata icuuc
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			graphics/cairo \
+LIB_DEPENDS-main=	graphics/cairo \
 			graphics/graphite2
 
 LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
