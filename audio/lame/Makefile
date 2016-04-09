@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -17,11 +17,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c m ncurses
+WANTLIB += c iconv m ncurses
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 USE_GMAKE=	Yes
 

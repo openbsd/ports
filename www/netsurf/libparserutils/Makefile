@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/06 20:27:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT =		utility library for parser building
 
@@ -8,7 +8,9 @@ NETSURF_VERSION =	0.2.3
 CATEGORIES =		devel
 SHARED_LIBS =		parserutils 2.0 #0.2.1
 
-MODULES =		converters/libiconv
+WANTLIB =		iconv
+
+LIB_DEPENDS =		converters/libiconv
 
 MAKE_FLAGS +=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 

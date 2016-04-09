@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/12 09:59:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=	dynamic window manager
 
@@ -13,9 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://dl.suckless.org/wmii/
 
-WANTLIB += X11 Xext c m
+WANTLIB += X11 Xext c iconv m
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 BUILD_DEPENDS=	devel/libixp
 

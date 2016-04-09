@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT =		manipulate Unicode strings
 
@@ -15,9 +15,11 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # (L)GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =		iconv
+
 MASTER_SITES =		${MASTER_SITE_GNU:=libunistring/}
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 
 CONFIGURE_STYLE =	gnu
 

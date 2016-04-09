@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/11 20:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
@@ -14,11 +14,11 @@ HOMEPAGE =	http://freshmeat.net/projects/sablotron/
 # MPL1.1 / GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c expat m ncurses readline stdc++
+WANTLIB =	c expat iconv m ncurses readline stdc++
 
 MASTER_SITES =	http://www.arcane-labs.net/download/OpenBSD/
 
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv
 
 # required to build the documentation
 BUILD_DEPENDS =	textproc/p5-XML-Parser

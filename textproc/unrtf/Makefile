@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/27 18:20:47 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=	RTF document converter
 
@@ -12,9 +12,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
 # GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c
+WANTLIB += c iconv
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 CONFIGURE_STYLE= gnu
 

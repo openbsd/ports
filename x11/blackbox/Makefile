@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/11/11 09:28:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.54 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
@@ -13,10 +13,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=blackboxwm/}
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xft Xrender c expat fontconfig freetype m
+WANTLIB += X11 Xext Xft Xrender c expat fontconfig freetype iconv m
 WANTLIB += pthread-stubs stdc++ xcb z
 
-MODULES=		converters/libiconv
+LIB_DEPENDS=		converters/libiconv
 
 LIBTOOL_FLAGS=		--tag=disable-shared
 CONFIGURE_STYLE=	gnu

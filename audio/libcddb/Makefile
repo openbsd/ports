@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=		library to access data on a CDDB server
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libcddb/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		converters/libiconv
+LIB_DEPENDS=		converters/libiconv
 
-WANTLIB=		c
+WANTLIB=		c iconv
 
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.21 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT =		EFL API for data types
 
@@ -11,9 +11,9 @@ SHARED_LIBS += eina                 4.0      # 8.10
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		m pthread
+WANTLIB += 		iconv m pthread
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 
 CONFIGURE_ARGS =	--disable-doc \
 			--enable-mempool-chained-pool=static \

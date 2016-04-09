@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2016/04/04 22:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -17,11 +17,10 @@ MASTER_SITES+=	http://www.zsh.org/pub/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pcre ncursesw
+WANTLIB=	c iconv m pcre ncursesw
 
-MODULES=	converters/libiconv
-
-LIB_DEPENDS=	devel/pcre
+LIB_DEPENDS=	converters/libiconv \
+		devel/pcre
 
 AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf

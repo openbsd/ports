@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 20:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/
 
-WANTLIB=		c z
-MODULES=		converters/libiconv
+WANTLIB=		c iconv z
+LIB_DEPENDS=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-zlib \

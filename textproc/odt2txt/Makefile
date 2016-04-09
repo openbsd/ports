@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/16 19:37:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=		convert OpenDocument Text to plain text
 
@@ -11,9 +11,9 @@ CATEGORIES=		textproc
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
-WANTLIB += c z
+WANTLIB += c iconv z
 
 USE_GMAKE=	Yes
 

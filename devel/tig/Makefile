@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/05 22:54:46 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT =		ncurses GIT repository browser
 DISTNAME =		tig-2.1.1
@@ -9,8 +9,8 @@ HOMEPAGE =		http://jonas.nitro.dk/tig/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c ncursesw
-MODULES =		converters/libiconv
+WANTLIB =		c iconv ncursesw
+LIB_DEPENDS =		converters/libiconv
 RUN_DEPENDS =		devel/git
 
 MASTER_SITES =		${HOMEPAGE}releases/

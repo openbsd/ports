@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/28 15:48:45 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT =	lightweight irc server
 
@@ -13,12 +13,12 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c crypto ssl z
+WANTLIB =	c crypto iconv ssl z
 
 MASTER_SITES =	http://ngircd.barton.de/pub/ngircd/ \
 		http://ngircd.mirror.3rz.org/pub/ngircd/
 
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv
 TEST_DEPENDS =	lang/expect \
 		${BASE_PKGPATH}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	curses-based 3270 terminal editor
 
@@ -13,9 +13,9 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c crypto ssl ncursesw readline util
+WANTLIB=		c crypto iconv ssl ncursesw readline util
 
-MODULES=                converters/libiconv
+LIB_DEPENDS=		converters/libiconv
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x3270/}
 

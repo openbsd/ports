@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
@@ -18,9 +18,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	pthread
+WANTLIB=	iconv pthread
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"   
 BUILD_DEPENDS+= devel/yasm

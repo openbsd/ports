@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/04 13:16:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MAINTAINER=	Jung Lee <moorang@gmail.com>
 
-WANTLIB=	ICE SM X11 Xaw Xext Xmu Xt c termcap util
+WANTLIB=	ICE SM X11 Xaw Xext Xmu Xt c iconv termcap util
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 USE_GROFF =	Yes
 NO_TEST=	Yes 
 

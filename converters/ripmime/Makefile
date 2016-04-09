@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	extract attachments from MIME encoded emails
 
@@ -11,11 +11,11 @@ HOMEPAGE=	http://www.pldaniels.com/ripmime/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c
+WANTLIB=	c iconv
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" LIBS="-L${LOCALBASE}/lib -liconv"
 

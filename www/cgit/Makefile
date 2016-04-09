@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/16 08:56:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT =	web frontend for git repositories
 
@@ -16,9 +16,11 @@ HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =	iconv
+
 USE_GMAKE =	yes
 
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv
 
 PREFIX =	${VARBASE}/www
 MAKE_FLAGS +=	V=1 NO_LUA=1 LDFLAGS+='${STATIC} -L${LOCALBASE}/lib'

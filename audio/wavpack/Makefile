@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -13,12 +13,12 @@ SHARED_LIBS +=		wavpack		0.1	# 2.5
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m
+WANTLIB =		c iconv m
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2016/04/09 20:14:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -78,8 +78,9 @@ ALT_BOOTDIR=	${WRKDIR}/bootjdk
 BUILD_DEPENDS+=	archivers/zip \
 		archivers/unzip \
 		print/cups,-libs
-MODULES=	converters/libiconv
-WANTLIB=	X11 Xext Xi Xtst Xrender c freetype m pthread sndio stdc++ z
+LIB_DEPENDS=	converters/libiconv
+WANTLIB=	X11 Xext Xi Xtst Xrender c freetype iconv m pthread sndio \
+		stdc++ z
 
 USE_GMAKE=	Yes
 

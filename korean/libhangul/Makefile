@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	hangul input library
 
@@ -14,7 +14,9 @@ HOMEPAGE= 	http://kldp.net/projects/hangul/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	converters/libiconv
+WANTLIB=	iconv
+
+LIB_DEPENDS=	converters/libiconv
 
 MASTER_SITES=	http://kldp.net/frs/download.php/5417/
 

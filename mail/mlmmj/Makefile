@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/09 12:44:20 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	mailing list manager
 
@@ -10,11 +10,11 @@ HOMEPAGE=	http://mlmmj.org/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c iconv
 
 MASTER_SITES=	http://mlmmj.org/releases/
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-receive-strip=yes

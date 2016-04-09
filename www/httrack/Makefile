@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
@@ -26,11 +26,11 @@ HOMEPAGE =		http://www.httrack.com/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c crypto pthread ssl z
+WANTLIB =  c crypto iconv pthread ssl z
 
 MASTER_SITES =		http://mirror.httrack.com/
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

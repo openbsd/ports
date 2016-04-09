@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=compile Java source into .class files (quickly!)
 
@@ -17,9 +17,9 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c m stdc++
+WANTLIB=		c iconv m stdc++
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu

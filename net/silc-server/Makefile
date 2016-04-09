@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/07/16 21:17:04 brad Exp $
+# $OpenBSD: Makefile,v 1.71 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
@@ -14,9 +14,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c pthread
+WANTLIB=	c iconv pthread
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm

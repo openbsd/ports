@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/02/21 00:01:20 schwarze Exp $
+# $OpenBSD: Makefile,v 1.22 2016/04/09 20:14:49 naddy Exp $
 
 COMMENT=		ICQ console client with encryption support
 
@@ -11,11 +11,11 @@ HOMEPAGE=		http://ysmv7.sourceforge.net/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ysmv7/}
 
-MODULES=		converters/libiconv
+LIB_DEPENDS=		converters/libiconv
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c pthread readline termcap 
+WANTLIB=		c iconv pthread readline termcap
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

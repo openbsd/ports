@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/04 11:40:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/09 20:14:48 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -19,9 +19,9 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # compiler: GPLv2+, packages/rtl: modified LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c pthread
+WANTLIB += c iconv pthread
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 
 MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/dist/$V/source/
 MASTER_SITES0 =		https://distfiles.bsdfrog.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/22 18:57:41 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT =	text editor inspired by Norton Commander
 DISTNAME =	le-1.16.1
@@ -10,11 +10,11 @@ MAINTAINER =	Ivan Ivanov <rambiusparkisanius@gmail.com>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncursesw stdc++
+WANTLIB += c iconv m ncursesw stdc++
 
 MASTER_SITES =	http://lav.yar.ru/download/le/
 
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv
 
 CONFIGURE_STYLE =	gnu
 

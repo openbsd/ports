@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/12/02 21:52:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	Internet Relay Chat client
 
@@ -19,11 +19,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto ssl termcap
+WANTLIB=	c crypto iconv ssl termcap
 
 FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"

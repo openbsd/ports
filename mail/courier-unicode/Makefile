@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 21:35:03 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/09 20:14:48 naddy Exp $
 
 SHARED_LIBS +=  courier-unicode		0.0 # 2.0
 
@@ -17,8 +17,8 @@ MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=		m stdc++
-MODULES =		converters/libiconv
+WANTLIB +=		iconv m stdc++
+LIB_DEPENDS =		converters/libiconv
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

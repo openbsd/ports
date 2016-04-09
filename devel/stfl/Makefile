@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:48 naddy Exp $
 
 COMMENT=	Structured Terminal Forms Language/Library
 
@@ -13,11 +13,11 @@ HOMEPAGE=	http://www.clifford.at/stfl/
 # LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ncursesw pthread
+WANTLIB += iconv ncursesw pthread
 
 MASTER_SITES=	http://www.clifford.at/stfl/
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 ALL_TARGET=	libstfl.so.${LIBstfl_VERSION}
 USE_GMAKE=	Yes
