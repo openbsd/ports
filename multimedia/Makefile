@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2016/01/07 17:23:22 feinerer Exp $
+# $OpenBSD: Makefile,v 1.92 2016/04/09 19:18:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -52,6 +52,9 @@
      SUBDIR += mlbviewer
      SUBDIR += mlt
      SUBDIR += motion
+     SUBDIR += motion,bktr
+     SUBDIR += motion,mysql
+     SUBDIR += motion,pgsql
      SUBDIR += mpgtx
      SUBDIR += mpv
      SUBDIR += oggconvert
