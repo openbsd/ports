@@ -1,6 +1,6 @@
-$OpenBSD: patch-bind_Makefile_in,v 1.1 2015/09/12 19:00:41 sthen Exp $
---- bind/Makefile.in.orig	Tue Sep  1 23:21:26 2015
-+++ bind/Makefile.in	Tue Sep  1 23:26:02 2015
+$OpenBSD: patch-bind_Makefile_in,v 1.2 2016/04/09 12:59:41 sthen Exp $
+--- bind/Makefile.in.orig	Tue Mar 22 09:53:43 2016
++++ bind/Makefile.in	Fri Apr  8 23:40:38 2016
 @@ -64,7 +64,7 @@ bind1:
  		echo Configuring BIND Export libraries for DHCP. ;      \
  		rm -rf ${cleandirs} ${cleanfiles} ;                     \
@@ -19,7 +19,7 @@ $OpenBSD: patch-bind_Makefile_in,v 1.1 2015/09/12 19:00:41 sthen Exp $
  		 cp -rp atf ${binddir}) ;			      \
  	fi
  
-@@ -87,11 +87,11 @@ bind2:
+@@ -90,11 +90,11 @@ bind2-noguest:
  		echo Building BIND Export libraries - this takes some time. ;\
  		(cd ${bindsrcdir}/lib/export ;                               \
  		  echo building in `pwd` ;                                   \
@@ -32,4 +32,4 @@ $OpenBSD: patch-bind_Makefile_in,v 1.1 2015/09/12 19:00:41 sthen Exp $
 +		  MAKE=${GMAKE} ${GMAKE} install 2>&1 | tee ${binddir}/install.log) ; \
  	fi
  
- clean:
+ bind2-hostgen:

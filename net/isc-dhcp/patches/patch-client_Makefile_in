@@ -1,13 +1,13 @@
-$OpenBSD: patch-client_Makefile_in,v 1.7 2016/01/13 09:33:02 sthen Exp $
---- client/Makefile.in.orig	Thu Dec 17 01:14:48 2015
-+++ client/Makefile.in	Wed Jan 13 09:25:39 2016
-@@ -860,7 +860,8 @@ uninstall-man: uninstall-man5 uninstall-man8
+$OpenBSD: patch-client_Makefile_in,v 1.8 2016/04/09 12:59:41 sthen Exp $
+--- client/Makefile.in.orig	Tue Mar 22 09:16:51 2016
++++ client/Makefile.in	Fri Apr  8 23:46:24 2016
+@@ -358,7 +358,8 @@ top_srcdir = @top_srcdir@
+ SUBDIRS = . tests
+ BINDLIBDIR = @BINDDIR@/lib
+ AM_CPPFLAGS = -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
+-	      -DLOCALSTATEDIR='"$(localstatedir)"'
++	      -DLOCALSTATEDIR='"$(localstatedir)"' \
++	      -D_PATH_DHCLIENT_SCRIPT='"$(sbindir)/dhclient-script"'
  
- dhclient.o: dhclient.c
- 	$(COMPILE) -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
--		   -DLOCALSTATEDIR='"$(localstatedir)"' -c dhclient.c
-+		   -DLOCALSTATEDIR='"$(localstatedir)"' \
-+		   -D_PATH_DHCLIENT_SCRIPT='"$(sbindir)/dhclient-script"' -c dhclient.c
- 
- dhc6.o: dhc6.c
- 	$(COMPILE) -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
+ dist_sysconf_DATA = dhclient.conf.example
+ dhclient_SOURCES = clparse.c dhclient.c dhc6.c \
