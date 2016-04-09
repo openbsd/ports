@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/09 23:59:49 naddy Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.0
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
+REVISION =		0
 
 HOMEPAGE =		http://hexchat.github.io/
 MAINTAINER =		Florian Stinglmayr <florian@n0la.org>
@@ -15,20 +16,20 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto dbus-1 dbus-glib-1
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m ${MODPY_WANTLIB} notify
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m ${MODPY_WANTLIB}
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1
 WANTLIB += png proxy pthread pthread-stubs ssl stdc++ util xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES =		http://dl.hexchat.net/hexchat/
 
-MODULES =		devel/gettext \
-			textproc/intltool \
+MODULES =		textproc/intltool \
 			lang/python
 
 BUILD_DEPENDS =		devel/iso-codes
 
-LIB_DEPENDS =		devel/libnotify \
+LIB_DEPENDS =		devel/gettext \
+			devel/libnotify \
 			net/libproxy \
 			x11/gtk+2 \
 			x11/dbus-glib \
