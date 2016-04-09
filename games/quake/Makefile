@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2016/04/09 14:50:59 sthen Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -16,9 +16,9 @@ FULLPKGPATH-server =	games/quake,-server
 EPOCH-main =		0
 EPOCH-libs =		0
 EPOCH-server =		1
-REVISION-libs =		2
-REVISION-main =		1
-REVISION-server =	0
+REVISION-libs =		3
+REVISION-main =		2
+REVISION-server =	1
 
 MULTI_PACKAGES =	-main -libs -server
 
@@ -40,8 +40,6 @@ SHARED_LIBS +=		QFutil		${SOMAJOR}.${SOMINOR}
 CATEGORIES =		games x11
 
 HOMEPAGE =		http://www.quakeforge.net/
-
-MAINTAINER =		Antti Harri <iku@openbsd.fi>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

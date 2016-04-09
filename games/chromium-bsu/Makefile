@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/04/09 14:50:59 sthen Exp $
 
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.15.1
 CATEGORIES =		games x11
 HOMEPAGE =		http://chromium-bsu.sourceforge.net/
-REVISION =		1
-
-MAINTAINER =		Antti Harri <iku@openbsd.fi>
+REVISION =		2
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM =	Yes

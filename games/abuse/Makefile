@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/04/09 14:50:59 sthen Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -7,11 +7,9 @@ PKGNAME =	abuse-0.8
 EPOCH =		0
 ABUSE_SFX =	abuse-free-sounds-20120309
 CATEGORIES =	games x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://abuse.zoy.org/
-
-MAINTAINER =	Antti Harri <iku@openbsd.fi>
 
 # Abuse: GPLv2 and public domain
 # Abuse-free-sounds: various free licenses

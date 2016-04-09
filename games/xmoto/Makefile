@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/02 19:32:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.20 2016/04/09 14:50:59 sthen Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.11
+REVISION =	0
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
 
-MAINTAINER =	Antti Harri <iku@openbsd.fi>
 HOMEPAGE =	http://xmoto.tuxfamily.org/
 
 MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
