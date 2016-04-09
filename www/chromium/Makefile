@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.280 2016/03/29 17:37:38 robert Exp $
+# $OpenBSD: Makefile,v 1.281 2016/04/09 13:33:13 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			49.0.2623.110
+V=			49.0.2623.112
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
