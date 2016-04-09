@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/06/04 18:41:46 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/04/09 23:38:55 naddy Exp $
 
 CATEGORIES ?=	geo
 
@@ -7,8 +7,6 @@ PERMIT_PACKAGE_CDROM ?=	Yes
 
 HOMEPAGE ?=	https://www.gaia-gis.it/fossil/${PROJECT}/index
 MASTER_SITES ?=	https://www.gaia-gis.it/gaia-sins/
-
-MODULES ?=	converters/libiconv
 
 CONFIGURE_STYLE ?=	gnu
 
