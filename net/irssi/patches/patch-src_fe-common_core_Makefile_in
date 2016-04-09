@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.8 2016/03/18 09:27:57 sthen Exp $
---- src/fe-common/core/Makefile.in.orig	Tue Dec 15 10:23:01 2015
-+++ src/fe-common/core/Makefile.in	Tue Dec 29 16:11:32 2015
-@@ -365,7 +365,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.9 2016/04/09 21:48:55 sthen Exp $
+--- src/fe-common/core/Makefile.in.orig	Tue Mar 22 23:25:27 2016
++++ src/fe-common/core/Makefile.in	Sat Apr  9 22:44:36 2016
+@@ -377,7 +377,7 @@ AM_CPPFLAGS = \
  	-I$(top_srcdir)/src -I$(top_srcdir)/src/core/ \
  	$(GLIB_CFLAGS) \
  	-DHELPDIR=\""$(datadir)/irssi/help"\" \
