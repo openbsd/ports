@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=WordNet Browser
+Exec=${TRUEPREFIX}/bin/wnb %f

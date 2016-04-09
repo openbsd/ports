@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/30 05:41:35 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/09 11:42:09 sthen Exp $
+
 COMMENT=		browser for a large lexical database of English
 
 V=			3.0
 DISTNAME=		WordNet-$V
 PKGNAME=		wordnet-$V
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		misc
 
@@ -16,19 +17,14 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig
-WANTLIB += freetype m pthread-stubs xcb z
+WANTLIB += freetype m pthread-stubs xcb z ${MODTK_WANTLIB}
 
 MASTER_SITES=		http://wordnet.princeton.edu/3.0/
 
 MODULES=		x11/tk
 
+RUN_DEPENDS +=		devel/desktop-file-utils
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
-WANTLIB +=		${MODTK_WANTLIB}
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/include/wn.h ${WRKSRC}/src/wnb
-	@perl -pi -e 's,/usr/local/WordNet-3.0,${PREFIX}/share/wordnet,; \
-		s,([0-9])WN,$$1,g' \${WRKSRC}/doc/man/*.[1-9]
 
 CONFIGURE_STYLE=	simple
 
@@ -44,7 +40,16 @@ CFLAGS+=		-I${MODTK_INCDIR} -I${MODTCL_INCDIR}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
-USE_GROFF =	Yes
 NO_TEST=		Yes
+
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/include/wn.h ${WRKSRC}/src/wnb
+	@perl -pi -e 's,/usr/local/WordNet-3.0,${PREFIX}/share/wordnet,; \
+		s,([0-9])WN,$$1,g' \${WRKSRC}/doc/man/*.[1-9]
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${SUBST_DATA} ${FILESDIR}/wordnet.desktop \
+		${PREFIX}/share/applications/wordnet.desktop
 
 .include <bsd.port.mk>
