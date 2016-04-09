@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/21 13:10:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/09 19:18:07 sthen Exp $
 
 COMMENT=	motion detection software for video
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
 GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
 V=		3.4.1
+REVISION=	0
 DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale
 
 FLAVOR?=
-FLAVORS=		mysql pgsql
+FLAVORS=		bktr mysql pgsql
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/ffmpeg
@@ -40,6 +41,10 @@ AUTOMAKE_VERSION=	1.15
 CONFIGURE_ARGS=		--without-optimizecpu \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+.if ${FLAVOR:L:Mbktr}
+CONFIGURE_ARGS+=	--without-v4l
+.endif
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=		databases/mariadb

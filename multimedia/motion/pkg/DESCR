@@ -13,3 +13,8 @@ external programs, log to a database, etc.
 
 Motion hasn't had an official release for some time; at present,
 this package uses the forked code at https://github.com/Mr-Dave/motion/
+
+Flavours:
+	bktr - build with bktr(4) support instead of video(4)
+	mysql - build with MySQL/MariaDB database support
+	pgsql - build with PostgreSQL database support
