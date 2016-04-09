@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_dis_Makefile_in,v 1.2 2015/12/15 15:32:04 robert Exp $
---- mono/dis/Makefile.in.orig	Thu Nov 12 10:00:45 2015
-+++ mono/dis/Makefile.in	Sun Dec 13 18:11:25 2015
-@@ -427,7 +427,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-mono_dis_Makefile_in,v 1.3 2016/04/09 14:19:02 robert Exp $
+--- mono/dis/Makefile.in.orig	Tue Mar 15 12:32:53 2016
++++ mono/dis/Makefile.in	Sat Apr  9 16:18:04 2016
+@@ -438,7 +438,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = $(GLIB_CFLAGS) -I$(top_srcdir)
