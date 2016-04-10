@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/18 22:14:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.30 2016/04/10 12:25:45 kirby Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -8,18 +8,19 @@ DISTNAME =		apcupsd-3.14.13
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-main = 	0
+REVISION-main = 	1
+REVISION-cgi =		0
+REVISION-x11 =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.apcupsd.com
+HOMEPAGE =		http://www.apcupsd.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		devel/gettext
 LIB_DEPENDS-main = 	devel/libusb-compat
 WANTLIB-main =		c pthread usb
 
@@ -67,11 +68,10 @@ LIB_DEPENDS-x11 =	devel/gconf2 \
 RUN_DEPENDS-x11 =	devel/desktop-file-utils \
 			${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-x11 += ${WANTLIB}
 WANTLIB-x11 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-x11 += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB-x11 += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-x11 += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB-x11 += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl pango-1.0 pangocairo-1.0
 WANTLIB-x11 += pangoft2-1.0 pthread z
 .endif
 
