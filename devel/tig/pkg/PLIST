@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/16 21:50:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/10 21:29:06 sthen Exp $
 @bin bin/tig
 @man man/man1/tig.1
 @man man/man5/tigrc.5
 @man man/man7/tigmanual.7
 share/doc/tig/
 share/doc/tig/manual.html
+share/examples/tig/
+share/examples/tig/tigrc

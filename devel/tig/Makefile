@@ -1,32 +1,45 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/10 21:29:05 sthen Exp $
 
-COMMENT =		ncurses GIT repository browser
-DISTNAME =		tig-2.1.1
-REVISION =		1
-CATEGORIES =		devel
-HOMEPAGE =		http://jonas.nitro.dk/tig/
+COMMENT =	ncurses Git repository browser
+
+DISTNAME =	tig-2.1.1
+REVISION =	2
+
+CATEGORIES =	devel
+
+HOMEPAGE =	http://jonas.nitro.dk/tig/
+
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c iconv ncursesw
-LIB_DEPENDS =		converters/libiconv
-RUN_DEPENDS =		devel/git
+WANTLIB =	c iconv ncursesw
 
-MASTER_SITES =		${HOMEPAGE}releases/
+MASTER_SITES =	${HOMEPAGE}releases/
 
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
-BUILD_DEPENDS =		textproc/asciidoc textproc/xmlto
-ALL_TARGET =		all doc-man doc-html
-CONFIGURE_ARGS +=	--with-libiconv=${LOCALBASE} DOCBOOK2PDF=false
-NO_TEST =		Yes
+BUILD_DEPENDS =	textproc/asciidoc \
+		textproc/xmlto
+
+RUN_DEPENDS =	devel/git
+
+LIB_DEPENDS =	converters/libiconv
+
+USE_GMAKE =	Yes
+ALL_TARGET =	all doc-man doc-html
+
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS += --with-libiconv=${LOCALBASE} DOCBOOK2PDF=false
+
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tig
-	${INSTALL_DATA} ${WRKBUILD}/doc/manual.html ${PREFIX}/share/doc/tig
-	${INSTALL_MAN} ${WRKBUILD}/doc/tig.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/doc/tigrc.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKBUILD}/doc/tigmanual.7 ${PREFIX}/man/man7
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/tig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tig
+	${INSTALL_DATA} ${WRKSRC}/tigrc ${PREFIX}/share/examples/tig
+	${INSTALL_MAN} ${WRKSRC}/doc/tig.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/tigrc.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/tigmanual.7 ${PREFIX}/man/man7
 
 .include <bsd.port.mk>
