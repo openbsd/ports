@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.77 2016/04/08 20:25:51 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.78 2016/04/10 19:38:13 naddy Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -378,10 +378,10 @@ pre-configure:
 		${WRKSRC}/scripts/php-config.in
 
 .if ${FLAVOR:Map2}
-MULTI_PACKAGES :=       ${MULTI_PACKAGES:N-fpm:N-fastcgi}
+MULTI_PACKAGES :=       ${MULTI_PACKAGES:N-fastcgi}
 .endif
 
-.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
+.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
@@ -426,7 +426,7 @@ post-install:
 	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g" \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 
-.for m in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
+.for m in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
 	echo "extension=${m}.so" > \
