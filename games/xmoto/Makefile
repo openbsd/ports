@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/09 22:28:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.22 2016/04/10 10:36:29 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -17,11 +17,10 @@ MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl jpeg
+WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl iconv intl jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ode png pthread sqlite3 stdc++ xdg-basedir xml2 z
 
-MODULES=	devel/gettext \
-		lang/lua
+MODULES=	lang/lua
 MODLUA_SA=	Yes
 BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
