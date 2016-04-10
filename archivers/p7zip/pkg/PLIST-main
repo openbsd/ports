@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/10/21 10:45:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2016/04/10 19:53:09 naddy Exp $
 bin/7z
 bin/7za
 bin/7zr
@@ -39,6 +39,8 @@ share/doc/p7zip/DOC/MANUAL/cmdline/switches/
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/ar_exclude.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/ar_include.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/ar_no.htm
+share/doc/p7zip/DOC/MANUAL/cmdline/switches/bb.htm
+share/doc/p7zip/DOC/MANUAL/cmdline/switches/bs.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/charset.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/email.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/exclude.htm
@@ -65,6 +67,7 @@ share/doc/p7zip/DOC/MANUAL/cmdline/switches/stdin.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/stdout.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/stl.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/stop_switch.htm
+share/doc/p7zip/DOC/MANUAL/cmdline/switches/stx.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/style.css
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/type.htm
 share/doc/p7zip/DOC/MANUAL/cmdline/switches/update.htm

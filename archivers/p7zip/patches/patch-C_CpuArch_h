@@ -1,31 +1,25 @@
-$OpenBSD: patch-C_CpuArch_h,v 1.1 2015/11/16 22:52:08 jca Exp $
+$OpenBSD: patch-C_CpuArch_h,v 1.2 2016/04/10 19:53:09 naddy Exp $
 
 Add support for more OpenBSD architectures.
 
---- C/CpuArch.h.orig	Sun Sep 27 21:31:20 2015
-+++ C/CpuArch.h	Thu Nov 12 00:28:15 2015
-@@ -65,7 +65,10 @@ If MY_CPU_LE_UNALIGN is not defined, we don't know abo
-     || defined(__AARCH64EL__) \
+--- C/CpuArch.h.orig	Wed Feb 17 01:27:16 2016
++++ C/CpuArch.h	Sun Apr  3 19:05:55 2016
+@@ -66,6 +66,8 @@ MY_CPU_LE_UNALIGN means that CPU is LITTLE ENDIAN and 
      || defined(__MIPSEL__) \
      || defined(__MIPSEL) \
--    || defined(_MIPSEL)
-+    || defined(_MIPSEL) \
+     || defined(_MIPSEL) \
 +    || defined(__alpha__) \
 +    || defined(__sh__) \
-+    || defined(__vax__)
+     || (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__))
    #define MY_CPU_LE
  #endif
- 
-@@ -77,7 +80,11 @@ If MY_CPU_LE_UNALIGN is not defined, we don't know abo
-     || defined(__MIPSEB) \
-     || defined(_MIPSEB) \
-     || defined(__m68k__) \
--    || defined(__s390x__)
-+    || defined(__m88k__) \
-+    || defined(__s390x__) \
+@@ -82,6 +84,9 @@ MY_CPU_LE_UNALIGN means that CPU is LITTLE ENDIAN and 
+     || defined(__s390x__) \
+     || defined(__zarch__) \
+     || defined(__sparc) \
++    || defined(__sparc__) \
 +    || defined(__hppa__) \
 +    || defined(__mips64__) \
-+    || defined(__sparc__)
+     || (defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__))
    #define MY_CPU_BE
  #endif
- 
