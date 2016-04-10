@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/10 10:14:12 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -11,7 +11,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += bz2 ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 lzma m orc-0.4 pcre pthread z
+WANTLIB += gstvideo-1.0 iconv intl lzma m orc-0.4 pcre pthread
+WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-libav/}
 
