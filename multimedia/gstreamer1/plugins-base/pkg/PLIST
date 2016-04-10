@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/09/27 08:21:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/04/10 10:13:16 ajacoutot Exp $
+@conflict gstreamer1-plugins-bad-<1.8.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
 @bin bin/gst-play-${API}
@@ -11,10 +12,13 @@ include/gstreamer-${API}/gst/app/app.h
 include/gstreamer-${API}/gst/app/gstappsink.h
 include/gstreamer-${API}/gst/app/gstappsrc.h
 include/gstreamer-${API}/gst/audio/
+include/gstreamer-${API}/gst/audio/audio-channel-mixer.h
 include/gstreamer-${API}/gst/audio/audio-channels.h
+include/gstreamer-${API}/gst/audio/audio-converter.h
 include/gstreamer-${API}/gst/audio/audio-enumtypes.h
 include/gstreamer-${API}/gst/audio/audio-format.h
 include/gstreamer-${API}/gst/audio/audio-info.h
+include/gstreamer-${API}/gst/audio/audio-quantize.h
 include/gstreamer-${API}/gst/audio/audio.h
 include/gstreamer-${API}/gst/audio/gstaudiobasesink.h
 include/gstreamer-${API}/gst/audio/gstaudiobasesrc.h
@@ -41,6 +45,7 @@ include/gstreamer-${API}/gst/pbutils/codec-utils.h
 include/gstreamer-${API}/gst/pbutils/descriptions.h
 include/gstreamer-${API}/gst/pbutils/encoding-profile.h
 include/gstreamer-${API}/gst/pbutils/encoding-target.h
+include/gstreamer-${API}/gst/pbutils/gstaudiovisualizer.h
 include/gstreamer-${API}/gst/pbutils/gstdiscoverer.h
 include/gstreamer-${API}/gst/pbutils/gstpluginsbaseversion.h
 include/gstreamer-${API}/gst/pbutils/install-plugins.h
@@ -87,6 +92,7 @@ include/gstreamer-${API}/gst/tag/xmpwriter.h
 include/gstreamer-${API}/gst/video/
 include/gstreamer-${API}/gst/video/colorbalance.h
 include/gstreamer-${API}/gst/video/colorbalancechannel.h
+include/gstreamer-${API}/gst/video/gstvideoaffinetransformationmeta.h
 include/gstreamer-${API}/gst/video/gstvideodecoder.h
 include/gstreamer-${API}/gst/video/gstvideoencoder.h
 include/gstreamer-${API}/gst/video/gstvideofilter.h
@@ -134,6 +140,7 @@ lib/gstreamer-${API}/libgstencodebin.so
 lib/gstreamer-${API}/libgstgio.so
 lib/gstreamer-${API}/libgstivorbisdec.so
 lib/gstreamer-${API}/libgstogg.so
+lib/gstreamer-${API}/libgstopus.so
 lib/gstreamer-${API}/libgstpango.so
 lib/gstreamer-${API}/libgstplayback.so
 lib/gstreamer-${API}/libgstsndio.so
@@ -216,6 +223,8 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/api-index-deprecated.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/api-index-full.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/compiling.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-${API}.devhelp2
+share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-GstAudioConverter.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-GstAudioQuantize.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-GstVideoChroma.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-GstVideoDecoder.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-GstVideoDither.html
@@ -286,6 +295,7 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gsttagvorb
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gsttagxmp.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gsttagxmpwriter.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideo.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideoaffinetransformationmeta.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideofilter.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideometa.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideoorientation.html
@@ -309,7 +319,6 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/gstreamer-tag.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gstreamer-video.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/home.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/index.html
-share/gtk-doc/html/gst-plugins-base-libs-${API}/index.sgml
 share/gtk-doc/html/gst-plugins-base-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/left.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/right-insensitive.png
@@ -322,6 +331,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/ch01.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/ch02.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-${API}.devhelp2
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-adder.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-alsamidisrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-alsasink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-alsasrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-appsink.html
@@ -347,6 +357,8 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-oggp
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-ogmaudioparse.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-ogmtextparse.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-ogmvideoparse.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-opusdec.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-opusenc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-playbin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-playsink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-adder.html
@@ -362,6 +374,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plug
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-ivorbisdec.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-libvisual.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-ogg.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-opus.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-pango.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-playback.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-subparse.html
@@ -405,7 +418,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-xima
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-xvimagesink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/home.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/index.html
-share/gtk-doc/html/gst-plugins-base-plugins-${API}/index.sgml
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/left.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/right-insensitive.png
