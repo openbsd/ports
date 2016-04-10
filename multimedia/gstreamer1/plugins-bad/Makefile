@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/27 12:08:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2016/04/10 10:13:58 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		1
 
-SHARED_LIBS +=  gstphotography-1.0   2.0      # 602.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 2.0      # 602.0
-SHARED_LIBS +=  gstcodecparsers-1.0  2.0      # 602.0
-SHARED_LIBS +=  gstinsertbin-1.0     1.0      # 602.0
-SHARED_LIBS +=  gsturidownloader-1.0 1.0      # 602.0
-SHARED_LIBS +=  gstmpegts-1.0        1.0      # 602.0
-SHARED_LIBS +=  gstbadbase-1.0       1.0      # 602.0
-SHARED_LIBS +=  gstgl-1.0            1.0      # 602.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 0.0      # 602.0
-SHARED_LIBS +=  gstbadvideo-1.0      1.0      # 602.0
+SHARED_LIBS +=  gstphotography-1.0   3.0      # 800.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.0      # 800.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.0      # 800.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.0      # 800.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.0      # 800.0
+SHARED_LIBS +=  gstmpegts-1.0        2.0      # 800.0
+SHARED_LIBS +=  gstbadbase-1.0       2.0      # 800.0
+SHARED_LIBS +=  gstplayer-1.0        0.0      # 800.0
+SHARED_LIBS +=  gstgl-1.0            2.0      # 800.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.0      # 800.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.0      # 800.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.0      # 800.0
 
 WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
@@ -29,7 +30,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += jpeg lzma m mms nettle opus orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 stdc++ xcb xcb-dri2 xcb-glx xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-xfixes xml2 z
+WANTLIB += xcb-shm xcb-xfixes xml2 z gstallocators-1.0 iconv intl
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
@@ -45,7 +46,8 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			multimedia/libass \
 			multimedia/libmms
 
-CONFIGURE_ARGS=		--with-gtk=3.0
+CONFIGURE_ARGS=		--with-gtk=3.0 \
+			--with-hls-crypto=openssl
 
 # each plugin that has an external dependency is disabled unless proved useful
 # gtksink is needed by the corebird package
@@ -64,11 +66,13 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-direct3d \
 			--disable-directfb \
 			--disable-directsound \
+			--disable-dtls \
 			--disable-dts \
 			--disable-dvb \
 			--disable-dvbsuboverlay \
 			--disable-faac \
 			--disable-faad \
+			--disable-fbdev \
 			--disable-flite \
 			--disable-fluidsynth \
 			--disable-gme \
@@ -82,11 +86,11 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-mimic \
 			--disable-modplug \
 			--disable-mpeg2enc \
-			--disable-mpg123 \
 			--disable-mplex \
 			--disable-musepack \
 			--disable-nas \
 			--disable-neon \
+			--disable-nvenc \
 			--disable-ofa \
 			--disable-openal \
 			--disable-opencv \
@@ -108,11 +112,13 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-srtp \
 			--disable-teletextdec \
 			--disable-timidity \
+			--disable-tinyalsa \
 			--disable-uvch264 \
 			--disable-vcd \
 			--disable-vdpau \
 			--disable-voaacenc \
 			--disable-voamrwbenc \
+			--disable-vulkan \
 			--disable-wasapi \
 			--disable-wayland \
 			--disable-webp \
