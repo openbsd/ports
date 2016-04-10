@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/08 21:15:04 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/10 09:27:53 ajacoutot Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -20,11 +20,11 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 WANTLIB +=		${MODPY_WANTLIB} crypto pthread lz4
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} archivers/lz4
-BUILD_DEPENDS +=	devel/py-setuptools_scm,python3 \
+BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-sphinx
-RUN_DEPENDS +=		net/py-msgpack,python3
+RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 
-TEST_DEPENDS +=		net/py-msgpack,python3
+TEST_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
 
