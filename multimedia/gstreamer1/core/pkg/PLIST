@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/12/18 10:05:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/04/10 10:13:04 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
+@bin bin/gst-stats-${API}
 @bin bin/gst-typefind-${API}
 include/gstreamer-${API}/
 include/gstreamer-${API}/gst/
@@ -97,6 +98,9 @@ include/gstreamer-${API}/gst/gsttask.h
 include/gstreamer-${API}/gst/gsttaskpool.h
 include/gstreamer-${API}/gst/gsttoc.h
 include/gstreamer-${API}/gst/gsttocsetter.h
+include/gstreamer-${API}/gst/gsttracer.h
+include/gstreamer-${API}/gst/gsttracerfactory.h
+include/gstreamer-${API}/gst/gsttracerrecord.h
 include/gstreamer-${API}/gst/gsttypefind.h
 include/gstreamer-${API}/gst/gsttypefindfactory.h
 include/gstreamer-${API}/gst/gsturi.h
@@ -124,6 +128,7 @@ lib/gstreamer-${API}/include/
 lib/gstreamer-${API}/include/gst/
 lib/gstreamer-${API}/include/gst/gstconfig.h
 lib/gstreamer-${API}/libgstcoreelements.so
+lib/gstreamer-${API}/libgstcoretracers.so
 lib/libgstbase-${API}.a
 lib/libgstbase-${API}.la
 @lib lib/libgstbase-${API}.so.${LIBgstbase-1.0_VERSION}
@@ -204,6 +209,9 @@ share/gtk-doc/html/gstreamer-${API}/GstTagSetter.html
 share/gtk-doc/html/gstreamer-${API}/GstTask.html
 share/gtk-doc/html/gstreamer-${API}/GstTaskPool.html
 share/gtk-doc/html/gstreamer-${API}/GstToc.html
+share/gtk-doc/html/gstreamer-${API}/GstTracer.html
+share/gtk-doc/html/gstreamer-${API}/GstTracerFactory.html
+share/gtk-doc/html/gstreamer-${API}/GstTracerRecord.html
 share/gtk-doc/html/gstreamer-${API}/GstTypeFindFactory.html
 share/gtk-doc/html/gstreamer-${API}/annotation-glossary.html
 share/gtk-doc/html/gstreamer-${API}/gst-building.html
@@ -238,7 +246,6 @@ share/gtk-doc/html/gstreamer-${API}/gstreamer-support.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer.html
 share/gtk-doc/html/gstreamer-${API}/home.png
 share/gtk-doc/html/gstreamer-${API}/index.html
-share/gtk-doc/html/gstreamer-${API}/index.sgml
 share/gtk-doc/html/gstreamer-${API}/ix01.html
 share/gtk-doc/html/gstreamer-${API}/ix02.html
 share/gtk-doc/html/gstreamer-${API}/ix03.html
@@ -268,6 +275,7 @@ share/gtk-doc/html/gstreamer-libs-${API}/GstInterpolationControlSource.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstLFOControlSource.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstNetClientClock.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstNetTimeProvider.html
+share/gtk-doc/html/gstreamer-libs-${API}/GstPtpClock.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstPushSrc.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstTestClock.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstTimedValueControlSource.html
@@ -290,7 +298,6 @@ share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstHarness.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstNetAddressMeta.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstNetControlMessageMeta.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstNetTimePacket.html
-share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstPtpClock.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstQueueArray.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstStreamConsistency.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstTypeFindHelper.html
@@ -298,7 +305,6 @@ share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-net.html
 share/gtk-doc/html/gstreamer-libs-${API}/home.png
 share/gtk-doc/html/gstreamer-libs-${API}/index.html
-share/gtk-doc/html/gstreamer-libs-${API}/index.sgml
 share/gtk-doc/html/gstreamer-libs-${API}/ix01.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix02.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix03.html
@@ -339,7 +345,6 @@ share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-typefind.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-valve.html
 share/gtk-doc/html/gstreamer-plugins-${API}/home.png
 share/gtk-doc/html/gstreamer-plugins-${API}/index.html
-share/gtk-doc/html/gstreamer-plugins-${API}/index.sgml
 share/gtk-doc/html/gstreamer-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-plugins-${API}/left.png
 share/gtk-doc/html/gstreamer-plugins-${API}/right-insensitive.png
