@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/10/07 05:52:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/04/10 10:13:42 ajacoutot Exp $
 lib/gstreamer-${API}/libgstasf.so
 lib/gstreamer-${API}/libgstdvdlpcmdec.so
 lib/gstreamer-${API}/libgstdvdread.so
@@ -22,6 +22,7 @@ share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-amrw
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-cdiocddasrc.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-lamemp3enc.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-mad.html
+share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-mpg123audiodec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-a52dec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-amrnb.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-amrwbdec.html
@@ -33,6 +34,7 @@ share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plug
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-lame.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mad.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mpeg2dec.html
+share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-mpg123.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-realmedia.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-siddec.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-plugin-twolame.html
@@ -48,7 +50,6 @@ share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-x264
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/gst-plugins-ugly-plugins-xingmux.html
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/home.png
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/index.html
-share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/index.sgml
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/left.png
 share/gtk-doc/html/gst-plugins-ugly-plugins-${API}/right-insensitive.png
