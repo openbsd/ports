@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/12/26 09:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2016/04/10 21:23:16 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -23,12 +23,12 @@ WANTLIB += ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
 WANTLIB += Xext boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt c cairo dbus-1 fontconfig freetype fribidi
-WANTLIB += glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += glib-2.0 gobject-2.0 intl m pango-1.0 pangocairo-1.0
 WANTLIB += pthread stdc++ vorbisfile z
 
-MODULES=	devel/cmake \
-		devel/gettext
+MODULES=	devel/cmake
 
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	devel/boost>=1.53.0p6 \
 		devel/sdl-image \
 		devel/sdl-net \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/10 21:23:16 kirby Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.tar.bz2
 MULTI_PACKAGES = 	-main -editor
 
 cWANTLIB += GL SDL c jpeg m ogg png pthread vorbis
-cWANTLIB += z execinfo ${MODGETTEXT_WANTLIB}
+cWANTLIB += z execinfo iconv intl
 cWANTLIB += ${MODGCC4_CPPWANTLIB}
 
 WANTLIB-main += SDL_mixer SDL_ttf curl mxml theora
@@ -29,10 +29,11 @@ WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-editor += pangox-1.0 vorbisfile xml2 ${cWANTLIB}
 
-MODULES = 		devel/gettext gcc4
+MODULES = 		gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS =	c++
 
+BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS = 		games/ufoai/data \
 			devel/desktop-file-utils
 
