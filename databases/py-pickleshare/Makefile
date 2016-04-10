@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/20 05:32:59 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/10 13:22:02 shadchin Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
-MODPY_EGG_VERSION =	0.6
+MODPY_EGG_VERSION =	0.7.2
 DISTNAME =		pickleshare-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -19,7 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		devel/py-path.py${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
