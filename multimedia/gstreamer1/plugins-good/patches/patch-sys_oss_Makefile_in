@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_oss_Makefile_in,v 1.9 2015/09/27 08:22:06 ajacoutot Exp $
---- sys/oss/Makefile.in.orig	Fri Sep 25 14:59:50 2015
-+++ sys/oss/Makefile.in	Sat Sep 26 09:40:59 2015
-@@ -574,7 +574,8 @@ libgstossaudio_la_LIBADD = \
+$OpenBSD: patch-sys_oss_Makefile_in,v 1.10 2016/04/10 10:13:30 ajacoutot Exp $
+--- sys/oss/Makefile.in.orig	Thu Mar 24 10:04:27 2016
++++ sys/oss/Makefile.in	Sat Apr  9 11:09:15 2016
+@@ -577,7 +577,8 @@ libgstossaudio_la_LIBADD = \
  	$(GST_PLUGINS_BASE_LIBS) \
  	-lgstaudio-$(GST_API_VERSION) \
  	$(GST_BASE_LIBS) \

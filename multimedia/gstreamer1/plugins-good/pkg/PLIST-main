@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2015/09/27 08:22:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2016/04/10 10:13:30 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.2.0
 lib/gstreamer-${API}/libgstalaw.so
 lib/gstreamer-${API}/libgstalpha.so
@@ -272,6 +272,8 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpj
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpklvdepay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpklvpay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpmux.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpopusdepay.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpopuspay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpptdemux.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtprtxreceive.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtprtxsend.html
@@ -322,7 +324,6 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-xima
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-y4menc.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/home.png
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/index.html
-share/gtk-doc/html/gst-plugins-good-plugins-${API}/index.sgml
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/left.png
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/right-insensitive.png
