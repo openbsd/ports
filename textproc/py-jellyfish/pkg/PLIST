@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/20 08:11:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/10 19:55:22 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/jellyfish/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jellyfish/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}/
