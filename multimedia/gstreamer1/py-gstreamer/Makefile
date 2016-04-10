@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/09 08:08:38 ajacoutot Exp $
-
-V=			1.6.2
+# $OpenBSD: Makefile,v 1.5 2016/04/10 10:14:25 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
@@ -9,10 +7,10 @@ PKGNAME=		py-gstreamer1-${V}
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-python/}
-
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-1.0
-WANTLIB += m pcre pthread ${MODPY_WANTLIB} util
+WANTLIB += iconv intl m pcre pthread ${MODPY_WANTLIB} util
+
+MASTER_SITES=		${MASTER_SITE_GST:=gst-python/}
 
 MODULES=		lang/python
 
