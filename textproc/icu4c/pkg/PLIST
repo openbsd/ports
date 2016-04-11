@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/25 10:16:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/04/11 09:46:48 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -98,6 +98,7 @@ include/unicode/schriter.h
 include/unicode/scientificnumberformatter.h
 include/unicode/search.h
 include/unicode/selfmt.h
+include/unicode/simpleformatter.h
 include/unicode/simpletz.h
 include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
@@ -168,6 +169,7 @@ include/unicode/uobject.h
 include/unicode/upluralrules.h
 include/unicode/uregex.h
 include/unicode/uregion.h
+include/unicode/ureldatefmt.h
 include/unicode/urename.h
 include/unicode/urep.h
 include/unicode/ures.h
@@ -243,10 +245,10 @@ lib/pkgconfig/icu-uc.pc
 @bin sbin/icupkg
 share/icu/
 share/icu/${VERSION}/
+share/icu/${VERSION}/LICENSE
 share/icu/${VERSION}/config/
 share/icu/${VERSION}/config/mh-bsd-gcc
 share/icu/${VERSION}/install-sh
-share/icu/${VERSION}/license.html
 share/icu/${VERSION}/mkinstalldirs
 %%be%%
 %%le%%
