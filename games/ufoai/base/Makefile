@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/10 21:23:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/11 18:22:43 nigel Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -6,8 +6,8 @@ COMMENT-editor = 	UFO:AI map editor
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor =       0
-REVISION-main =		0
+REVISION-editor =       1
+REVISION-main =		1
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -46,7 +46,6 @@ LIB_DEPENDS-main =	devel/libexecinfo \
 			multimedia/xvidcore \
 			net/curl \
 			textproc/mxml \
-			${MODGETTEXT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-editor = 	audio/libvorbis \
@@ -55,7 +54,6 @@ LIB_DEPENDS-editor = 	audio/libvorbis \
 			devel/sdl \
 			x11/gtkglext \
 			x11/gtksourceview \
-			${MODGETTEXT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
 
 USE_GMAKE =		Yes
