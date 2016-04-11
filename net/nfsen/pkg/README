@@ -1,8 +1,10 @@
-$OpenBSD: README,v 1.4 2015/10/05 12:59:12 kirby Exp $
+$OpenBSD: README,v 1.5 2016/04/11 08:51:28 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Note: the _nfcapd user has been added to group "www".
 
 Basic installation
 ==================

@@ -1,6 +1,0 @@
-Note: the _nfcapd user has been added to group www.
-
-To proceed with an installation or upgrade, adjust ${SYSCONFDIR}/nfsen.conf
-as required and run the configuration tool:
-
-# install-nfsen.pl ${SYSCONFDIR}/nfsen.conf

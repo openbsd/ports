@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_pl,v 1.7 2015/01/09 18:04:19 sthen Exp $
+$OpenBSD: patch-install_pl,v 1.8 2016/04/11 08:51:28 sthen Exp $
 --- install.pl.orig	Mon Jun 23 20:27:50 2014
-+++ install.pl	Fri Jan  9 17:16:58 2015
++++ install.pl	Mon Apr 11 09:23:26 2016
 @@ -165,14 +165,14 @@ sub VerifyUser {
  	if ( !defined $gid_name ) {
  		die "Group '$user_gid' not found on this system\n";
@@ -22,6 +22,15 @@ $OpenBSD: patch-install_pl,v 1.7 2015/01/09 18:04:19 sthen Exp $
  
  } # End of VerifyUser
  
+@@ -553,7 +553,7 @@ sub UpgradeProfiles {
+ 				if( ! -f "$NfConf::PROFILEDATADIR/$profilepath/$channel/.nfstat") { 
+ 					# no shadow profile, but missing channel stat
+ 					print "Rebuilding profile stats for '$profilegroup/$profilename'\n";
+-					NfProfile::DoRebuild(\%profileinfo, $profilename, $profilegroup, $profilepath, 1, 0);
++					NfProfile::DoRebuild("", \%profileinfo, $profilename, $profilegroup, $profilepath, 1, 0);
+ 					NfProfile::WriteProfile(\%profileinfo);
+ 				}
+ 				# make sure it's own by nfsen_uid after the rebuild
 @@ -584,7 +584,6 @@ sub CopyAllFiles {
  	$CopyRecursive::UID 	 = 0;
  	$CopyRecursive::GID 	 = $www_gid;
