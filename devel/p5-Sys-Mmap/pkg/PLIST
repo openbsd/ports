@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/11 13:07:55 ian Exp $
+${P5ARCH}/
+${P5ARCH}/Sys/
+${P5ARCH}/Sys/Mmap.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Sys/
+${P5ARCH}/auto/Sys/Mmap/
+${P5ARCH}/auto/Sys/Mmap/Mmap.so
+@man man/man3p/Sys::Mmap.3p

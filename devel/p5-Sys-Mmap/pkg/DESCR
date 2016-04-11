@@ -1,0 +1,1 @@
+uses mmap to map in a file as a Perl variable
