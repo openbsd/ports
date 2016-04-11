@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2016/04/11 05:12:04 landry Exp $
 
-V=			1.10.16
+V=			1.10.19
 COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
 
 HOMEPAGE=		http://lzone.de/liferea/
 

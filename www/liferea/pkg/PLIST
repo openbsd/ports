@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/08/24 20:56:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/04/11 05:12:04 landry Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -129,6 +129,8 @@ share/liferea/pixmaps/unread.png
 share/liferea/pixmaps/vfolder.png
 share/liferea/prefs.ui
 share/liferea/reedah_source.ui
+share/liferea/search.ui
+share/liferea/search_folder.ui
 share/liferea/simple_subscription.ui
 share/liferea/theoldreader_source.ui
 share/liferea/ttrss_source.ui
