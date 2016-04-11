@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2016/03/27 16:19:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.105 2016/04/11 20:00:51 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -9,6 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
@@ -32,8 +33,8 @@ FLAVOR?=
 .include <bsd.port.arch.mk>
 
 WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
-		natpmp pthread ssl z ${MODGETTEXT_WANTLIB}
-WANTLIB-main=	${WANTLIB-common} idn nghttp2
+		natpmp pthread ssl z intl
+WANTLIB-main=	${WANTLIB-common} idn nghttp2 iconv
 WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender \
 		atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
@@ -42,14 +43,14 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
 		harfbuzz pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
-		xcb-render xcb-shm epoxy idn nghttp2
+		xcb-render xcb-shm epoxy idn nghttp2 iconv
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
 		fontconfig freetype estdc++
 
-MODULES=	devel/gettext textproc/intltool
+MODULES=	textproc/intltool
 
-LIB_DEPENDS-common=${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-common=devel/gettext \
 		devel/libevent2 \
 		net/curl \
 		net/miniupnp/libnatpmp \
