@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/11 15:24:45 kirby Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -10,9 +10,9 @@ SHARED_LIBS += 		searpc			0.0 # 1.2
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ffi glib-2.0 gobject-2.0 jansson pcre pthread
+WANTLIB += ffi glib-2.0 gobject-2.0 iconv intl jansson pcre pthread
 
-MODULES =		devel/gettext lang/python
+MODULES =		lang/python
 
 BUILD_DEPENDS = 	devel/libtool \
 			${MODGNU_AUTOMAKE_DEPENDS} \

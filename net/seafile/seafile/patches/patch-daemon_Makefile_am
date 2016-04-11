@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_Makefile_am,v 1.4 2015/09/14 12:56:15 kirby Exp $
---- daemon/Makefile.am.orig	Fri Sep 11 05:39:32 2015
-+++ daemon/Makefile.am	Mon Sep 14 12:06:03 2015
-@@ -132,7 +132,7 @@ seaf_daemon_SOURCES = seaf-daemon.c $(common_src)
+$OpenBSD: patch-daemon_Makefile_am,v 1.5 2016/04/11 15:24:45 kirby Exp $
+--- daemon/Makefile.am.orig	Mon Mar 28 09:20:36 2016
++++ daemon/Makefile.am	Tue Mar 29 18:59:16 2016
+@@ -123,7 +123,7 @@ seaf_daemon_SOURCES = seaf-daemon.c $(common_src)
  
  seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_common.la \
  	@LIB_INTL@ \
@@ -9,4 +9,4 @@ $OpenBSD: patch-daemon_Makefile_am,v 1.4 2015/09/14 12:56:15 kirby Exp $
 +	@GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ -linotify \
  	$(top_builddir)/common/cdc/libcdc.la \
  	$(top_builddir)/common/index/libindex.la @LIB_WS32@ @LIB_CRYPT32@ \
- 	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@
+ 	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@
