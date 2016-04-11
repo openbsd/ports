@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2015/11/06 19:56:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/11 09:09:16 shadchin Exp $
 
 COMMENT =		Python API for dealing with timezones
 
-MODPY_EGG_VERSION =	2015.7
+MODPY_EGG_VERSION =	2016.3
 DISTNAME =		pytz-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^py/py-/}
 CATEGORIES =		devel
@@ -21,9 +21,9 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-do-test: fake
+do-test:
 	cd ${WRKSRC}/pytz/tests && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		PYTHONPATH=${WRKSRC} \
 		${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/11/06 19:56:44 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/04/11 09:09:16 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -273,6 +273,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Baghdad
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Bahrain
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Baku
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Bangkok
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Barnaul
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Beirut
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Bishkek
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Brunei
@@ -456,6 +457,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/Zulu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Amsterdam
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Andorra
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Astrakhan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Athens
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Belfast
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Belgrade
@@ -503,6 +505,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Stockholm
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Tallinn
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Tirane
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Tiraspol
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Ulyanovsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Uzhgorod
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Vaduz
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Vatican
