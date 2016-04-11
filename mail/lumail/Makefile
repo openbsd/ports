@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/11/21 00:48:28 jturner Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/11 01:04:39 jturner Exp $
 
 PORTROACH =		limit:^0
 
@@ -6,7 +6,7 @@ COMMENT =		console-based e-mail client with Lua scripting support
 
 DISTNAME =		lumail-0.26
 CATEGORIES =		mail
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -17,10 +17,10 @@ MASTER_SITES =		http://lumail.org/download/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
-WANTLIB +=		${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
+WANTLIB +=		intl ${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
 WANTLIB +=		sigc-2.0
 
-MODULES =		devel/gettext lang/lua
+MODULES =		lang/lua
 
 # c++11
 MODULES +=		gcc4
