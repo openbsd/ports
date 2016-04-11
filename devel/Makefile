@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1479 2016/04/03 11:23:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1480 2016/04/11 13:12:50 ian Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -987,6 +987,7 @@
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Switch
      SUBDIR += p5-Symbol-Global-Name
+     SUBDIR += p5-Sys-Mmap
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
      SUBDIR += p5-TAP-Formatter-JUnit
