@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2016/03/29 11:27:00 naddy Exp $
-
-NOT_FOR_ARCHS=	hppa
+# $OpenBSD: Makefile,v 1.72 2016/04/11 11:21:31 jca Exp $
 
 MULTI_PACKAGES = -graphics -main
 
