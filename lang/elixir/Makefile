@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/19 14:24:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/11 11:04:52 jasper Exp $
 
 COMMENT=		functional language for building scalable applications
 
-V=			1.2.1
+V=			1.2.4
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V

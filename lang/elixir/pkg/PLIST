@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/01/02 08:42:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/04/11 11:04:52 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -152,6 +152,8 @@ lib/elixir/lib/elixir/ebin/Elixir.RuntimeError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Set.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.Reducers.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.beam
+lib/elixir/lib/elixir/ebin/Elixir.String.Break.beam
+lib/elixir/lib/elixir/ebin/Elixir.String.Casing.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.BitString.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Float.beam
@@ -161,7 +163,6 @@ lib/elixir/lib/elixir/ebin/Elixir.String.Chars.URI.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.Requirement.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.beam
-lib/elixir/lib/elixir/ebin/Elixir.String.Graphemes.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Normalizer.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Unicode.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.beam
@@ -329,6 +330,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.App.Start.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Build.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Check.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Install.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.Uninstall.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Archive.beam
@@ -347,6 +349,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Clean.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Compile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Get.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Loadpaths.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Precompile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Unlock.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Update.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.beam
