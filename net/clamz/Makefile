@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/19 16:33:52 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/11 01:04:10 jturner Exp $
 
 COMMENT =		downloader for the Amazon.com MP3 music store
 
 DISTNAME =		clamz-0.5
 CATEGORIES =		net
+REVISION =		0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -14,8 +15,6 @@ MASTER_SITES =		https://clamz.googlecode.com/files/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c curl expat gcrypt gpg-error
-
-MODULES =		devel/gettext
 
 LIB_DEPENDS =		net/curl \
 			security/libgcrypt
