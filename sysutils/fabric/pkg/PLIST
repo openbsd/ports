@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/01/30 01:13:47 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/11 19:16:45 juanfra Exp $
 @conflict py-fabric-*
 @pkgpath sysutils/py-fabric
 bin/fab
@@ -9,9 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/Fabric-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/Fabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/Fabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Fabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/fabfile/
-lib/python${MODPY_VERSION}/site-packages/fabfile/__init__.py
-lib/python${MODPY_VERSION}/site-packages/fabfile/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/fabric/
 lib/python${MODPY_VERSION}/site-packages/fabric/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fabric/__init__.pyc
