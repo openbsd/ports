@@ -1,4 +1,4 @@
-$OpenBSD: patch-CPP_7zip_UI_Console_Main_cpp,v 1.4 2016/02/04 10:38:26 tb Exp $
+$OpenBSD: patch-CPP_7zip_UI_Console_Main_cpp,v 1.5 2016/04/12 23:13:22 sthen Exp $
 
 Pledge archivers/p7zip main executables
 
@@ -15,7 +15,7 @@ Pledge archivers/p7zip main executables
 +  printf("initial pledge: 7za 7zr\n");
 +#endif
 +
-+  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
++  if (pledge("stdio rpath wpath cpath fattr tty ps", NULL) == -1) {
 +    perror("pledge");
 +    exit(2);
 +  }
@@ -35,7 +35,7 @@ Pledge archivers/p7zip main executables
 +  printf("initial pledge: 7z\n");
 +#endif
 +
-+  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
++  if (pledge("stdio rpath wpath cpath fattr tty ps", NULL) == -1) {
 +    perror("pledge");
 +    exit(2);
 +  }
@@ -71,7 +71,7 @@ Pledge archivers/p7zip main executables
 +  printf("reduced pledge: benchmark\n");
 +#endif
 +
-+  if (pledge("stdio", NULL) == -1) {
++  if (pledge("stdio ps", NULL) == -1) {
 +    perror("pledge");
 +    exit(2);
 +  }
