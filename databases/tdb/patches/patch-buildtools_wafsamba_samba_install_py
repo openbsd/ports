@@ -1,25 +1,32 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.1 2015/07/18 02:11:13 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.2 2016/04/12 17:38:15 jca Exp $
 
-- install_link is used so encode the SONAME; use of SONAME is currenty
-  needed since the installed library is created with an improper name
-  (eg "libsomething.inst.so")
+- respect OpenBSD shared libraries versioning
+- --version-script fails if specified multipled times
 
-- no need to setup symlinks on OpenBSD
-
---- buildtools/wafsamba/samba_install.py.orig	Sun Jan 27 04:51:43 2013
-+++ buildtools/wafsamba/samba_install.py	Thu Jul 16 13:57:59 2015
-@@ -112,9 +112,12 @@ def install_library(self):
-     elif self.vnum:
-         vnum_base    = self.vnum.split('.')[0]
-         install_name = bld.make_libname(target_name, version=self.vnum)
--        install_link = bld.make_libname(target_name, version=vnum_base)
-+        if sys.platform.startswith('openbsd'):
-+            install_link = install_name
-+        else:
-+            install_link = bld.make_libname(target_name, version=vnum_base)
-         inst_name    = bld.make_libname(t.target)
--        if not self.private_library:
-+        if not self.private_library and not sys.platform.startswith('openbsd'):
-             # only generate the dev link for non-bundled libs
-             dev_link     = bld.make_libname(target_name)
-     elif getattr(self, 'soname', ''):
+--- buildtools/wafsamba/samba_install.py.orig	Sat Jun 13 03:00:10 2015
++++ buildtools/wafsamba/samba_install.py	Sun Apr 10 12:24:17 2016
+@@ -117,9 +117,12 @@ def install_library(self):
+         elif self.vnum:
+             vnum_base    = self.vnum.split('.')[0]
+             install_name = bld.make_libname(target_name, version=self.vnum)
+-            install_link = bld.make_libname(target_name, version=vnum_base)
+-            inst_name    = bld.make_libname(t.target)
+-            if not self.private_library:
++            if sys.platform.startswith('openbsd'):
++                install_link = install_name
++            else:
++                install_link = bld.make_libname(target_name, version=self.vnum)
++            inst_name    = bld.make_libname(t.target, version=self.vnum)
++            if not self.private_library and not sys.platform.startswith('openbsd'):
+                 # only generate the dev link for non-bundled libs
+                 dev_link     = bld.make_libname(target_name)
+         elif getattr(self, 'soname', ''):
+@@ -169,7 +172,7 @@ def apply_vscript(self):
+     '''add version-script arguments to library build'''
+ 
+     if self.env.HAVE_LD_VERSION_SCRIPT and getattr(self, 'version_script', ''):
+-        self.env.append_value('LINKFLAGS', "-Wl,--version-script=%s" %
++        self.env.append_unique('LINKFLAGS', "-Wl,--version-script=%s" %
+             self.version_script)
+         self.version_script = None
+ 
