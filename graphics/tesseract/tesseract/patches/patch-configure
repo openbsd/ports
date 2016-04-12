@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2015/11/13 12:54:23 ajacoutot Exp $
---- configure.orig	Fri Nov 13 11:14:06 2015
-+++ configure	Fri Nov 13 11:13:20 2015
-@@ -3435,6 +3435,10 @@ fi
+$OpenBSD: patch-configure,v 1.2 2016/04/12 07:38:02 ajacoutot Exp $
+--- configure.orig	Tue Feb 16 22:27:01 2016
++++ configure	Tue Apr 12 08:47:26 2016
+@@ -4119,6 +4119,10 @@ fi
      powerpc-*-darwin*)
          OPENCL_LIBS=""
          ;;
