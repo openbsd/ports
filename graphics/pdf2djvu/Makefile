@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/11 18:30:25 juanfra Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/12 22:06:41 juanfra Exp $
 
 # XXX Don't update until the upstream bugs 113 and 114 are resolved
 # https://bitbucket.org/jwilk/pdf2djvu/issues
@@ -6,6 +6,7 @@
 COMMENT =		creates DjVu files from PDF files
 
 DISTNAME =		pdf2djvu-0.8.1
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -16,7 +17,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre m poppler
+WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre iconv intl m poppler
 WANTLIB += pthread stdc++ xml2 xslt z
 
 MASTER_SITES =		https://bitbucket.org/jwilk/pdf2djvu/downloads/ \
@@ -26,11 +27,11 @@ MASTER_SITES =		https://bitbucket.org/jwilk/pdf2djvu/downloads/ \
 EXTRACT_SUFX =		.tar.xz
 
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
-MODULES =		devel/gettext
-LIB_DEPENDS =		graphics/GraphicsMagick \
-			textproc/libxslt \
+LIB_DEPENDS =		devel/gettext\
+			graphics/djvulibre \
+			graphics/GraphicsMagick \
 			print/poppler \
-			graphics/djvulibre
+			textproc/libxslt
 TEST_DEPENDS =		devel/py-nose
 
 # Weird things like "API specificationu[3]d for details"
