@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/11/14 14:38:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2016/04/12 11:41:02 sthen Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ncurses
 
-MASTER_SITES =		ftp://invisible-island.net/dialog/
+MASTER_SITES =		http://invisible-mirror.net/archives/dialog/ \
+			ftp://invisible-island.net/dialog/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext

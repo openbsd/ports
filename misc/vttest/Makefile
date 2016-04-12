@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/02 19:15:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/12 11:41:02 sthen Exp $
 
 COMMENT=	test VT100-type terminal
 
@@ -11,7 +11,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://invisible-island.net/vttest/
+MASTER_SITES=	http://invisible-mirror.net/archives/vttest/ \
+		ftp://invisible-island.net/vttest/
 EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c
