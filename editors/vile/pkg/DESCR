@@ -1,0 +1,9 @@
+vile is a text editor which is extremely compatible with vi in terms
+of "finger feel".  In addition, it has extended capabilities in many areas,
+notably multi-file editing and viewing, key rebinding, real X window
+system support, an optional embedded perl interpreter, and robust
+support for non-Unix hosts.
+
+The authors of vile are Paul Fox, Tom Dickey, and Kevin Buettner.
+
+Many patches have been contributed by a lot of users.  We thank them.
