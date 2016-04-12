@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.5 2013/01/21 19:28:07 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Mon Jan 21 20:24:48 2013
-+++ examples/mimedefang-filter-openbsd-ports	Mon Jan 21 20:25:43 2013
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.6 2016/04/12 15:20:17 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Tue Apr 12 17:19:16 2016
++++ examples/mimedefang-filter-openbsd-ports	Tue Apr 12 17:19:25 2016
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -85,7 +85,17 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.5 2013/01/21 19:28:
  
      # Block message/partial parts
      if (lc($type) eq "message/partial") {
-@@ -316,7 +323,40 @@ sub filter_end {
+@@ -262,6 +269,9 @@ sub filter_end {
+     # No sense doing any extra work
+     return if message_rejected();
+ 
++    # Uncomment to disable SPAM scanning from Sendmail authenticated users
++    #return if ($SendmailMacros{'auth_authen'});
++
+     # Spam checks if SpamAssassin is installed
+     if ($Features{"SpamAssassin"}) {
+ 	if (-s "./INPUTMSG" < 100*1024) {
+@@ -316,7 +326,40 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();
