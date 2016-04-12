@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2016/03/20 17:59:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.153 2016/04/12 17:43:31 jca Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,6 +14,8 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+
+REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -39,11 +41,11 @@ WANTLIB-main += gcrypt gpg-error secret-1 epoxy lzo2 gck-1 gcr-base-3
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += gcrypt gpg-error secret-1 smbclient gck-1 gcr-base-3
 WANTLIB-smb += com_err crypto dcerpc-binding execinfo gensec gmp gnutls
-WANTLIB-smb += hogweed lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
-WANTLIB-smb += ndr-standard nettle nss_wrapper ntdb p11-kit replace
+WANTLIB-smb += hogweed idn lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
+WANTLIB-smb += ndr-standard nettle p11-kit replace
 WANTLIB-smb += samba-credentials samba-hostconfig samba-util samdb
-WANTLIB-smb += sasl2 smbconf socket_wrapper ssl talloc tasn1 tdb tevent
-WANTLIB-smb += tevent-util uid_wrapper util_setid wbclient p11-kit
+WANTLIB-smb += sasl2 smbconf ssl talloc tasn1 tdb tevent
+WANTLIB-smb += tevent-util util-setid wbclient p11-kit
 WANTLIB-smb += gthread-2.0
 WANTLIB-smb += lib/samba/asn1-samba4
 WANTLIB-smb += lib/samba/gssapi-samba4

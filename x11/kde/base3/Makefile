@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2016/01/18 23:42:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2016/04/12 17:43:31 jca Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -14,7 +14,7 @@ PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
 REVISION-main =		42
-REVISION-samba =	17
+REVISION-samba =	18
 REVISION-en_US =	2
 REVISION-locale =	2
 
@@ -89,12 +89,12 @@ WANTLIB-main += ogg pcre pcreposix qtmcop usb usb-1.0 vorbis vorbisenc
 WANTLIB-main += vorbisfile
 
 WANTLIB-samba =  ${WANTLIB}
-WANTLIB-samba += execinfo ndr ndr-standard nss_wrapper replace samba-hostconfig
-WANTLIB-samba += samba-util smbclient smbconf socket_wrapper talloc tdb tevent
-WANTLIB-samba += tevent-util uid_wrapper util_setid
+WANTLIB-samba += execinfo ndr ndr-standard replace samba-hostconfig
+WANTLIB-samba += samba-util smbclient smbconf talloc tdb tevent
+WANTLIB-samba += tevent-util
 WANTLIB-samba += X11-xcb Xdamage Xxf86vm com_err dcerpc-binding drm
 WANTLIB-samba += ffi gcrypt gensec glapi gmp gnutls gpg-error hogweed
-WANTLIB-samba += ldb ndr-krb5pac ndr-nbt nettle ntdb p11-kit samba-credentials
+WANTLIB-samba += ldb ndr-krb5pac ndr-nbt nettle p11-kit samba-credentials
 WANTLIB-samba += samdb tasn1 wbclient xcb-dri2 xcb-glx
 WANTLIB-samba += lib/samba/asn1-samba4 lib/samba/gssapi-samba4
 WANTLIB-samba += lib/samba/hcrypto-samba4 lib/samba/heimbase-samba4
