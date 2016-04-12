@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2016/04/12 15:19:40 naddy Exp $
 
 COMMENT=	gid/lid tools for looking up variables in code
 
 DISTNAME=	id-utils-3.2d
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+WANTLIB=		c iconv intl
 
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/
 
-MODULES=	devel/gettext
+BUILD_DEPENDS=	devel/gettext-tools
+
+LIB_DEPENDS=	devel/gettext
 
 # don't compile emacs mode files now, install what's needed
 # and run it at pkg_add time

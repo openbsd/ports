@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/19 11:58:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/04/12 15:19:40 naddy Exp $
 
 COMMENT=		Website META Language: off-line HTML generation toolkit
 
 DISTNAME=		wml-2.0.11
-REVISION=		8
+REVISION=		9
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.thewml.org/
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/distrib/
 
-WANTLIB=		c m ncurses perl util
-MODULES=		devel/gettext
+WANTLIB=		c iconv intl m ncurses perl util
+LIB_DEPENDS=		devel/gettext
 
 RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			graphics/p5-GD \

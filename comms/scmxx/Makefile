@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/11 23:48:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/12 15:19:39 naddy Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
 
 DISTNAME=		scmxx-0.8.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		comms
 HOMEPAGE=		http://www.hendrik-sattler.de/scmxx/
 
@@ -12,9 +12,11 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scmxx/}
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext
+BUILD_DEPENDS=	devel/gettext-tools
 
-WANTLIB=	c m
+LIB_DEPENDS=	devel/gettext
+
+WANTLIB=	c iconv intl m
 
 USE_GMAKE=	Yes
 

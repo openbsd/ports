@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/12 15:19:40 naddy Exp $
 
 COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.7
 PKGNAME=		lib${DISTNAME}
-REVISION=		2
+REVISION=		3
 SHARED_LIBS=		confuse 1.0	# .0.0
 CATEGORIES=		devel
 
@@ -12,9 +12,11 @@ HOMEPAGE=		http://www.nongnu.org/confuse/
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB=		iconv intl
+
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=confuse/}
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"

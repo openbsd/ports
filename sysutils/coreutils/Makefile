@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/12 15:19:40 naddy Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
 DISTNAME =		coreutils-8.25
-REVISION =		0
+REVISION =		1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
@@ -11,12 +11,12 @@ HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c pthread
+WANTLIB =		c iconv intl pthread
 
 MASTER_SITES =		${MASTER_SITE_GNU:=coreutils/}
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/gettext
+LIB_DEPENDS =		devel/gettext
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g \

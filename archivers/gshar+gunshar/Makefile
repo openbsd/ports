@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/07 17:57:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/12 15:19:39 naddy Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.15.2
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -13,9 +14,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:=sharutils/}
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c intl
 
-MODULES=	devel/gettext
+LIB_DEPENDS=	devel/gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --program-prefix="g" \
