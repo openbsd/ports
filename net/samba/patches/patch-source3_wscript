@@ -1,8 +1,11 @@
-$OpenBSD: patch-source3_wscript,v 1.1 2015/08/25 11:04:39 jca Exp $
-Use more generic check for OpenBSD.
---- source3/wscript.orig	Mon Dec  1 13:48:32 2014
-+++ source3/wscript	Wed Jun 17 13:18:09 2015
-@@ -72,7 +72,7 @@ def configure(conf):
+$OpenBSD: patch-source3_wscript,v 1.2 2016/04/12 17:42:09 jca Exp $
+
+- use more generic check for OpenBSD.
+- disable vfs_snapper.so to avoid a possibly useless dep on d-bus
+
+--- source3/wscript.orig	Mon Apr 11 19:08:44 2016
++++ source3/wscript	Mon Apr 11 21:32:23 2016
+@@ -74,7 +74,7 @@ def configure(conf):
          conf.ADD_CFLAGS('-DDEVELOPER -DDEBUG_PASSWORD')
          conf.env.developer = True
  
@@ -11,3 +14,12 @@ Use more generic check for OpenBSD.
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      conf.CHECK_HEADERS('execinfo.h libexc.h libunwind.h netdb.h')
+@@ -1652,7 +1652,7 @@ main() {
+     if conf.CONFIG_SET('HAVE_VXFS'):
+         default_shared_modules.extend(TO_LIST('vfs_vxfs'))
+ 
+-    if conf.CONFIG_SET('HAVE_DBUS'):
++    if False:
+ 	default_shared_modules.extend(TO_LIST('vfs_snapper'))
+ 
+     explicit_shared_modules = TO_LIST(Options.options.shared_modules, delimiter=',')

@@ -1,9 +1,9 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_conftests_py,v 1.1 2015/08/25 11:04:39 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_samba_conftests_py,v 1.2 2016/04/12 17:42:09 jca Exp $
 Reverse order of paths added to get reliable builds.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9890
---- buildtools/wafsamba/samba_conftests.py.orig	Tue May 14 21:50:32 2013
-+++ buildtools/wafsamba/samba_conftests.py	Tue May 14 21:53:28 2013
-@@ -39,9 +39,9 @@ def check(self, *k, **kw):
+--- buildtools/wafsamba/samba_conftests.py.orig	Tue Jul 21 11:47:48 2015
++++ buildtools/wafsamba/samba_conftests.py	Sun Apr 10 19:38:17 2016
+@@ -40,9 +40,9 @@ def check(self, *k, **kw):
      def add_options_dir(dirs, env):
          for x in dirs:
               if not x in env.CPPPATH:

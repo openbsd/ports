@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ldb,v 1.1 2015/08/25 11:04:39 jca Exp $
+@comment $OpenBSD: PLIST-ldb,v 1.2 2016/04/12 17:42:09 jca Exp $
 @bin bin/ldbadd
 @bin bin/ldbdel
 @bin bin/ldbedit
@@ -17,7 +17,7 @@ lib/pkgconfig/ldb.pc
 lib/pkgconfig/pyldb-util.pc
 lib/python${MODPY_VERSION}/site-packages/ldb.so
 lib/samba/ldb/
-lib/samba/libldb-cmdline.so
+lib/samba/libldb-cmdline-samba4.so
 @man man/man1/ldbadd.1
 @man man/man1/ldbdel.1
 @man man/man1/ldbedit.1

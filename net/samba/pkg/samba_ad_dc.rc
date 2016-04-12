@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: samba_ad_dc.rc,v 1.1 2015/08/25 11:39:25 jca Exp $
+# $OpenBSD: samba_ad_dc.rc,v 1.2 2016/04/12 17:42:09 jca Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
@@ -16,10 +16,6 @@ rc_check() {
 
 rc_reload() {
 	${smbcontrol} samba reload-config
-}
-
-rc_stop() {
-	${smbcontrol} samba shutdown
 }
 
 rc_cmd $1

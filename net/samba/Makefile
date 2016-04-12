@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.218 2016/03/23 19:08:15 jca Exp $
+# $OpenBSD: Makefile,v 1.219 2016/04/12 17:42:09 jca Exp $
 
-VERSION =		4.1.23
+VERSION =		4.3.6
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -15,14 +15,10 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-ldb =		7
-REVISION-tevent =	6
-REVISION-docs =		0
-
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.17
-TEVENT_V =		0.9.18
+LDB_V =			1.1.21
+TEVENT_V =		0.9.25
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			dcerpc			0.0 \
@@ -39,39 +35,32 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.0 \
-			ldb			0.0 \
-			mit_samba		0.0 \
-			ndr			0.0 \
+			ldb			0.1 \
+			ndr			0.1 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
 			ndr-standard		0.0 \
 			netapi			2.0 \
-			ntdb			0.0 \
-			pdb			0.0 \
 			pyldb-util		0.0 \
 			registry		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.0 \
 			samba-hostconfig	0.0 \
+			samba-passdb		0.0 \
 			samba-policy		0.0 \
 			samba-util		1.0 \
 			samdb			0.0 \
-			smbclient		4.0 \
+			smbclient		4.1 \
 			smbclient-raw		0.0 \
 			smbconf			0.0 \
 			smbldap			0.0 \
-			smbsharemodes		2.0 \
-			tevent			0.0 \
+			tevent			0.1 \
 			tevent-util		0.0 \
 			torture			0.0 \
-			wbclient		2.0 \
+			wbclient		3.0 \
 			wind-samba4		0.0 \
-			winbind_krb5_locator	0.0 \
-			nss_wrapper		0.0 \
-			socket_wrapper		0.0 \
-			uid_wrapper		0.0 \
 			replace			0.0 \
-			util_setid		0.0
+			util-setid		0.0
 
 CATEGORIES =		net sysutils security
 
@@ -83,8 +72,7 @@ MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-UTIL_LIBS =		nss_wrapper socket_wrapper uid_wrapper replace
-UTIL_LIBS +=		util_setid
+UTIL_LIBS =		replace util-setid
 # TODO WAF scripts link to those without version info, but those are
 # not "plugins" or such.
 UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
@@ -130,10 +118,10 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
-			databases/tdb>=1.2.12 \
+			databases/tdb>=1.3.7 \
 			devel/iniparser \
 			devel/libexecinfo \
-			devel/libtalloc>=2.1.2 \
+			devel/libtalloc>=2.1.3 \
 			net/avahi \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
@@ -145,15 +133,15 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
-			databases/tdb>=1.2.12 \
-			devel/libtalloc>=2.1.2 \
+			databases/tdb>=1.3.7 \
+			devel/libtalloc>=2.1.3 \
 			devel/popt
 
 LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${VERSION} \
-			devel/libtalloc>=2.1.2
+			devel/libtalloc>=2.1.3
 
 LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS} \
-			devel/libtalloc>=2.1.2
+			devel/libtalloc>=2.1.3
 
 LIB_DEPENDS-docs =
 
@@ -161,7 +149,7 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto,ldb,ntdb,!talloc,!tdb,tevent" \
+			--bundled-libraries="!crypto,ldb,!talloc,!tdb,tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \
@@ -177,9 +165,11 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-lockdir=${VARBASE}/run/samba \
 			--with-privileged-socket-dir=${VARBASE}/samba \
 			--without-pie \
-			--enable-selftest \
 			--pedantic \
-			--without-regedit
+			--without-regedit \
+			--without-acl-support \
+			--without-libarchive \
+			--disable-rpath
 
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 #CONFIGURE_ARGS +=	--enable-developer
@@ -187,7 +177,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
 
-CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
+CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
+			CPP="/usr/libexec/cpp"
 
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
@@ -204,7 +195,6 @@ SUBST_VARS =		SAMBA_LOGDIR
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
-	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
 # Avoid bogus -L/usr/local/lib at the start of linker options
 post-configure:
@@ -223,6 +213,8 @@ post-install:
 	# precompiling Python modules
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	# removing extra symlinks
+	find ${PREFIX}/lib -type l -name '*.so' -exec rm {} ';'
 	# creating library symlinks
 .for _l in ${UTIL_LIBS}
 	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.23 2016/03/23 19:08:15 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.24 2016/04/12 17:42:09 jca Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -55,6 +55,7 @@ share/examples/samba/libsmbclient/testbrowse2.c
 share/examples/samba/libsmbclient/testchmod.c
 share/examples/samba/libsmbclient/testctx.c
 share/examples/samba/libsmbclient/testfstatvfs.c
+share/examples/samba/libsmbclient/testnotify.c
 share/examples/samba/libsmbclient/testread.c
 share/examples/samba/libsmbclient/testsmbc.c
 share/examples/samba/libsmbclient/teststat.c
