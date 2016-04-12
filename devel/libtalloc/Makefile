@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/12 17:39:20 jca Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
 # Keep in sync with the version bundled in net/samba4
-DISTNAME=	talloc-2.1.2
+DISTNAME=	talloc-2.1.3
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS+=	talloc		1.0
@@ -36,8 +36,10 @@ MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"
 .for _l _v in ${SHARED_LIBS}
 MAKE_ENV +=             LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
+TEST_ENV =	LD_LIBRARY_PATH="${WRKSRC}/bin/default"
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS= --mandir="${PREFIX}/man"
+CONFIGURE_ARGS= --mandir="${PREFIX}/man" \
+		--disable-rpath
 
 .include <bsd.port.mk>
