@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/11/05 15:42:09 sthen Exp $
+$OpenBSD: README,v 1.5 2016/04/12 10:18:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,9 +47,10 @@ configuration section for use with nginx:
 Other probe types
 =================
 
-Smokeping is commonly used to perform ICMP monitoring using fping,
-but also includes probes to monitor other protocols. Some require
-additional dependencies:
+Smokeping is commonly used to perform ICMP monitoring using fping, but
+also includes probes to monitor other protocols. Some have additional
+dependencies which are not forcibly installed. Use pkg_add to install
+the relevant packages if needed.
 
  RADIUS:	   p5-Authen-Radius
  TelnetIOSPing:	   p5-Net-Telnet
@@ -57,3 +58,45 @@ additional dependencies:
  OpenSSHJunOSPing: p5-Net-OpenSSH, p5-IO-Pty
  AnotherDNS:	   p5-Net-DNS
  LDAP:		   p5-ldap, p5-IO-Socket-SSL
+
+Advanced topic: Heavy load systems
+==================================
+
+If problems are seen with excessive load or i/o, it is possible to
+configure Smokeping to use rrdcached instead. Read through the whole
+section before starting; this is *not* needed for a typical setup.
+
+To do this, group permissions should be set to allow Smokeping to
+access the rrdcached socket, and to allow rrdcached to access
+Smokeping's files, e.g.:
+
+	$ grep _smokeping /etc/group
+	_smokeping:*:562:_rrdcached
+	_rrdcached:*:726:_smokeping
+
+	# chgrp -R _rrdcached /var/db/smokeping
+	# chmod -R g+w /var/db/smokeping
+
+The rrdcached daemon must be running:
+
+	# rcctl enable rrdcached
+	# rcctl set rrdcached flags -b /var/db/smokeping -B -m 770 \
+	    -l unix:/var/run/rrd/rrdcached.sock -j /var/db/smokeping/journal \
+	    -p /var/run/rrd/rrdcached.pid
+	# rcctl restart rrdcached
+
+Smokeping must be told to use the daemon. This is done by setting an
+environment variable; add this to /etc/login.conf:
+
+smokeping:setenv=RRDCACHED_ADDRESS=unix\c/var/run/rrd/rrdcached.sock:tc=daemon
+
+The Smokeping FastCGI script must also be told to use the daemon.
+This is done by setting the variable in your web server. For nginx:
+
+fastcgi_param  RRDCACHED_ADDRESS unix:/var/run/rrd/rrdcached.sock;
+
+Then restart smokeping and smokeping_fcgi. Use -d to show more information
+in case of errors at startup.
+
+	# rcctl restart -d smokeping
+	# rcctl restart -d smokeping_fcgi
