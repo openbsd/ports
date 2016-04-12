@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/10 21:58:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/04/12 19:18:18 naddy Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -25,10 +25,12 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
+REVISION-main=		0
 REVISION-c-client=	0
-REVISION-imap=		0
-REVISION-pico=		3
-REVISION-pilot=		15
+REVISION-imap=		1
+REVISION-mailutil=	0
+REVISION-pico=		4
+REVISION-pilot=		16
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -50,7 +52,7 @@ MASTER_SITES=		http://patches.freeiz.com/alpine/release/src/ \
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
-WANTLIB += c crypto ncurses ssl
+WANTLIB += c crypto iconv intl ncurses ssl
 
 WANTLIB-main=		${WANTLIB} pthread
 WANTLIB-c-client=	# empty
@@ -59,7 +61,7 @@ WANTLIB-mailutil=	${WANTLIB}
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 BUILD_DEPENDS=		textproc/aspell/core
 RUN_DEPENDS-main=	${RUN_DEPENDS} textproc/aspell/core
 RUN_DEPENDS-pico=	${RUN_DEPENDS} textproc/aspell/core
