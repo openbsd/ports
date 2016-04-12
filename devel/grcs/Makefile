@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/19 13:02:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/12 15:13:43 naddy Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 
 DISTNAME=	rcs-5.9.4
 PKGNAME=	g${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -24,8 +24,6 @@ BUILD_DEPENDS=	textproc/gdiff
 USE_GROFF=	Yes
 USE_GMAKE=	Yes
 
-MODULES=	devel/gettext
-
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
 CONFIGURE_ARGS= --program-prefix=g
@@ -33,6 +31,7 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		DIFF="${LOCALBASE}/bin/gdiff" \
 		DIFF3="${LOCALBASE}/bin/gdiff3"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 pre-install:
 .for f in ci co rcsclean rcsdiff rcsmerge rlog
