@@ -1,6 +1,6 @@
- $OpenBSD: patch-src_devedeng_configuration_data_py,v 1.2 2015/12/30 13:02:24 ajacoutot Exp $
---- src/devedeng/configuration_data.py.orig	Sat Nov 21 00:09:29 2015
-+++ src/devedeng/configuration_data.py	Wed Dec 30 12:12:10 2015
+ $OpenBSD: patch-src_devedeng_configuration_data_py,v 1.3 2016/04/12 15:54:26 ajacoutot Exp $
+--- src/devedeng/configuration_data.py.orig	Mon Mar 14 16:08:41 2016
++++ src/devedeng/configuration_data.py	Tue Apr 12 17:49:47 2016
 @@ -42,11 +42,8 @@ class configuration(GObject.GObject):
      def fill_config(self):
  
@@ -15,12 +15,31 @@
  
          is_local = None
          self.log = ""
-@@ -71,7 +68,7 @@ class configuration(GObject.GObject):
+@@ -61,7 +58,7 @@ class configuration(GObject.GObject):
+ 
+         if is_local is None:
+             try:
+-                os.stat("/usr/local/share/devedeng/wselect_disk.ui")
++                os.stat("${PREFIX}/share/devedeng/wselect_disk.ui")
+                 is_local = True
+             except:
+                 pass
+@@ -71,12 +68,12 @@ class configuration(GObject.GObject):
          else:
              if (is_local):
                  # locales must be always at /usr/share/locale because Gtk.Builder always search there
 -                self.share_locale="/usr/share/locale"
+-                self.glade="/usr/local/share/devedeng"
+-                self.font_path="/usr/local/share/devedeng"
+-                self.pic_path="/usr/local/share/devedeng"
+-                self.other_path="/usr/local/share/devedeng"
+-                self.help_path="/usr/local/share/doc/devedeng"
 +                self.share_locale="${PREFIX}/share/locale"
-                 self.glade="/usr/local/share/devede_ng"
-                 self.font_path="/usr/local/share/devede_ng"
-                 self.pic_path="/usr/local/share/devede_ng"
++                self.glade="${PREFIX}/share/devedeng"
++                self.font_path="${PREFIX}/share/devedeng"
++                self.pic_path="${PREFIX}/share/devedeng"
++                self.other_path="${PREFIX}/share/devedeng"
++                self.help_path="${PREFIX}/share/doc/devedeng"
+             else:
+                 self.share_locale="/usr/share/locale"
+                 self.glade="/usr/share/devedeng"
