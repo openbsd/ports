@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/29 14:55:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2016/04/12 09:40:59 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		2.0.3
+REVISION=	0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -22,15 +23,14 @@ WANTLIB += GL GLU GraphicsMagick ICE Iex IlmImf IlmThread Imath
 WANTLIB += SDL SM X11 Xext Xrandr atk-1.0 c cairo cairo-gobject
 WANTLIB += colord colord-gtk colordprivate cups curl exiv2 flickcurl
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gphoto2 gphoto2_port gthread-2.0 gtk-3 jpeg json-glib-1.0
-WANTLIB += lcms2 lensfun lua5.2 m openjpeg osmgpsmap-1.0 pango-1.0
-WANTLIB += pangocairo-1.0 png pthread pugixml rsvg-2 secret-1
+WANTLIB += gphoto2 gphoto2_port gthread-2.0 gtk-3 intl jpeg
+WANTLIB += json-glib-1.0 lcms2 lensfun lua5.2 m openjpeg osmgpsmap-1.0
+WANTLIB += pango-1.0 pangocairo-1.0 png pthread pugixml rsvg-2 secret-1
 WANTLIB += soup-2.4 sqlite3 tiff webp xml2 z
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
 MODULES=	devel/cmake \
-		devel/gettext \
 		gcc4 \
 		lang/lua \
 		textproc/intltool
@@ -41,7 +41,8 @@ MODGCC4_LANGS=	c c++
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	devel/json-glib \
+LIB_DEPENDS=	devel/gettext \
+		devel/json-glib \
 		devel/libsoup \
 		devel/sdl \
 		geo/osm-gps-map \
