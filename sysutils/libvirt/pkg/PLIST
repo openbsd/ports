@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/03/04 10:13:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/04/13 13:23:25 gonzalo Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -89,10 +89,7 @@ share/doc/libvirt/html/drvvirtuozzo.html
 share/doc/libvirt/html/drvvmware.html
 share/doc/libvirt/html/drvxen.html
 share/doc/libvirt/html/errors.html
-share/doc/libvirt/html/et.png
 share/doc/libvirt/html/firewall.html
-share/doc/libvirt/html/footer_corner.png
-share/doc/libvirt/html/footer_pattern.png
 share/doc/libvirt/html/format.html
 share/doc/libvirt/html/formatcaps.html
 share/doc/libvirt/html/formatdomain.html
@@ -171,6 +168,7 @@ share/doc/libvirt/html/news-2014.html
 share/doc/libvirt/html/news-2015.html
 share/doc/libvirt/html/news.html
 share/doc/libvirt/html/node.gif
+share/doc/libvirt/html/nss.html
 share/doc/libvirt/html/pending.html
 share/doc/libvirt/html/php.html
 share/doc/libvirt/html/python.html
