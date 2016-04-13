@@ -2,3 +2,5 @@ NSH is a CLI intended for OpenBSD-based network appliances. It replaces
 ifconfig, sysctl and route with its own simple command language, and
 consolidates configuration and control of other daemons into one place,
 presenting the user with a vaguely cisco-like interface.
+
+Flavour: static - link statically.

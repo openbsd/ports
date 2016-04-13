@@ -1,23 +1,29 @@
-# $OpenBSD: Makefile,v 1.19 2015/12/18 13:17:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/04/13 09:44:25 sthen Exp $
 
-COMMENT =		network switch style shell
+COMMENT =	network switch style shell
 
-DISTNAME =		nsh-1.0.20151213
+DISTNAME =	nsh-1.0.20151213
+REVISION =	0
 
-GH_ACCOUNT =		yellowman
-GH_PROJECT =		nsh
-GH_COMMIT =		d20e09e1dab907067eaad228432af8b0117cb741
-#WRKDIST =		${WRKDIR}/nsh-${GH_COMMIT}
+GH_ACCOUNT =	yellowman
+GH_PROJECT =	nsh
+GH_COMMIT =	d20e09e1dab907067eaad228432af8b0117cb741
 
-CATEGORIES =		shells net
-HOMEPAGE =		http://www.nmedia.net/nsh/
+CATEGORIES =	shells net
+HOMEPAGE =	http://www.nmedia.net/nsh/
 
 # 3 & 2 clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c edit termcap sqlite3
 
-MAKE_FLAGS =		CC="${CC}"
+FLAVORS =	static
+FLAVOR ?=
+
+MAKE_FLAGS =	CC="${CC}"
+.if ${FLAVOR:Mstatic}
+MAKE_FLAGS +=	LDADD="-ledit -ltermcap -lsqlite3 -static"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/nsh ${PREFIX}/bin
