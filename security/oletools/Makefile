@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/14 06:13:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/13 05:42:29 rpointel Exp $
 
 COMMENT =	python tools to analyze OLE files
 
-MODPY_EGG_VERSION = 0.44
+MODPY_EGG_VERSION = 0.45
 DISTNAME =	oletools-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
