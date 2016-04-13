@@ -1,36 +1,36 @@
-$OpenBSD: patch-src_compiletest_runtest_rs,v 1.1 2016/03/11 05:30:45 semarie Exp $
+$OpenBSD: patch-src_compiletest_runtest_rs,v 1.2 2016/04/13 17:33:51 semarie Exp $
 disable this part of test, as FileCheck isn't installed with LLVM
---- src/compiletest/runtest.rs.orig	Mon Mar  7 08:17:06 2016
-+++ src/compiletest/runtest.rs	Mon Mar  7 09:37:52 2016
-@@ -1685,33 +1685,15 @@ fn compile_test_and_save_ir(config: &Config, props: &T
-     compose_and_run_compiler(config, props, testfile, args, None)
+--- src/compiletest/runtest.rs.orig	Mon Apr 11 23:22:03 2016
++++ src/compiletest/runtest.rs	Wed Apr 13 14:08:41 2016
+@@ -1740,33 +1740,15 @@ fn compile_test_and_save_ir(config: &Config, props: &T
+     compose_and_run_compiler(config, props, testpaths, args, None)
  }
  
--fn check_ir_with_filecheck(config: &Config, testfile: &Path) -> ProcRes {
--    let irfile = output_base_name(config, testfile).with_extension("ll");
+-fn check_ir_with_filecheck(config: &Config, testpaths: &TestPaths) -> ProcRes {
+-    let irfile = output_base_name(config, testpaths).with_extension("ll");
 -    let prog = config.llvm_bin_path.as_ref().unwrap().join("FileCheck");
 -    let proc_args = ProcArgs {
 -        // FIXME (#9639): This needs to handle non-utf8 paths
 -        prog: prog.to_str().unwrap().to_owned(),
 -        args: vec!(format!("-input-file={}", irfile.to_str().unwrap()),
--                   testfile.to_str().unwrap().to_owned())
+-                   testpaths.file.to_str().unwrap().to_owned())
 -    };
--    compose_and_run(config, testfile, proc_args, Vec::new(), "", None, None)
+-    compose_and_run(config, testpaths, proc_args, Vec::new(), "", None, None)
 -}
 -
- fn run_codegen_test(config: &Config, props: &TestProps, testfile: &Path) {
+ fn run_codegen_test(config: &Config, props: &TestProps, testpaths: &TestPaths) {
  
      if config.llvm_bin_path.is_none() {
          fatal("missing --llvm-bin-path");
      }
  
--    let mut proc_res = compile_test_and_save_ir(config, props, testfile);
-+    let proc_res = compile_test_and_save_ir(config, props, testfile);
+-    let mut proc_res = compile_test_and_save_ir(config, props, testpaths);
++    let proc_res = compile_test_and_save_ir(config, props, testpaths);
      if !proc_res.status.success() {
          fatal_proc_rec("compilation failed!", &proc_res);
 -    }
 -
--    proc_res = check_ir_with_filecheck(config, testfile);
+-    proc_res = check_ir_with_filecheck(config, testpaths);
 -    if !proc_res.status.success() {
 -        fatal_proc_rec("verification with 'FileCheck' failed",
 -                      &proc_res);

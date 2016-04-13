@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.8 2016/03/11 05:30:45 semarie Exp $
+$OpenBSD: patch-configure,v 1.9 2016/04/13 17:33:51 semarie Exp $
 Remove requirement for curl or wget.
 The snapshot isn't downloaded but copied by post-configure.
 
 Remove requirement for FileCheck (LLVM) used in some tests.
---- configure.orig	Tue Mar  1 20:18:54 2016
-+++ configure	Mon Mar  7 06:07:54 2016
+--- configure.orig	Mon Apr 11 23:22:03 2016
++++ configure	Wed Apr 13 10:23:22 2016
 @@ -727,7 +727,7 @@ putvar CFG_BOOTSTRAP_KEY
  
  step_msg "looking for build programs"
@@ -12,9 +12,9 @@ Remove requirement for FileCheck (LLVM) used in some tests.
 -probe_need CFG_CURLORWGET  curl wget
 +probe CFG_CURLORWGET  curl wget
  if [ -z "$CFG_PYTHON_PROVIDED" ]; then
-     probe_need CFG_PYTHON      python2.7 python2.6 python2 python
+     probe_need CFG_PYTHON      python2.7 python2 python
  fi
-@@ -1495,7 +1495,7 @@ do
+@@ -1494,7 +1494,7 @@ do
          LLVM_INST_DIR=$CFG_LLVM_ROOT
          do_reconfigure=0
          # Check that LLVm FileCheck is available. Needed for the tests
