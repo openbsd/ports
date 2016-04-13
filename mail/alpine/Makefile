@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/04/12 19:18:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2016/04/13 05:54:38 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -56,16 +56,13 @@ WANTLIB += c crypto iconv intl ncurses ssl
 
 WANTLIB-main=		${WANTLIB} pthread
 WANTLIB-c-client=	# empty
-WANTLIB-imap=		${WANTLIB}
-WANTLIB-mailutil=	${WANTLIB}
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
 LIB_DEPENDS=		devel/gettext
 BUILD_DEPENDS=		textproc/aspell/core
-RUN_DEPENDS-main=	${RUN_DEPENDS} textproc/aspell/core
-RUN_DEPENDS-pico=	${RUN_DEPENDS} textproc/aspell/core
-RUN_DEPENDS-c-client=	#empty
+RUN_DEPENDS-main=	textproc/aspell/core
+RUN_DEPENDS-pico=	textproc/aspell/core
 
 # Link error: c-client not found!
 USE_LIBTOOL=		gnu
