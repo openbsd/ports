@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/03/31 08:59:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.58 2016/04/13 21:31:39 sebastia Exp $
 
 PORTROACH+=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.3.9
+VERSION =		2.3.10
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
