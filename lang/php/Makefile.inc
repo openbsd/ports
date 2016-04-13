@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.78 2016/04/10 19:38:13 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.79 2016/04/13 11:42:59 naddy Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -270,7 +270,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap=		${MODLIBICONV_WANTLIB} m pthread z xml2>=8
+WANTLIB-soap=		iconv m pthread z xml2>=8
 
 # snmp
 MULTI_PACKAGES+=	-snmp
@@ -316,14 +316,14 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php5
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
-WANTLIB-xmlrpc=		${MODLIBICONV_WANTLIB} m z xml2>=8 pthread
+WANTLIB-xmlrpc=		iconv m z xml2>=8 pthread
 
 # xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		${MODLIBICONV_WANTLIB} m xml2 z xslt>=3 exslt pthread
+WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt pthread
 
 # zip
 MULTI_PACKAGES+=	-zip
@@ -341,17 +341,16 @@ SV=		${PV:S/.//}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-MODULES=		converters/libiconv devel/gettext
-
-WANTLIB-main+=		c crypto lzma m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
 WANTLIB-main+=		ncurses readline stdc++
 
 # php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
-LIB_DEPENDS-main=	textproc/libxml
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			mail/femail,-chroot
+LIB_DEPENDS-main=	devel/gettext \
+			textproc/libxml
+RUN_DEPENDS-main=	mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
+RUN_DEPENDS-fastcgi=
 
 SUHOSIN_V=		0.9.38
 .if ${FLAVOR:Mno_suhosin} || ${PV} == "7.0"

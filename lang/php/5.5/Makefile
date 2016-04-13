@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.51 2016/04/04 18:47:22 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2016/04/13 11:42:59 naddy Exp $
 
 PV=		5.5
 V=		${PV}.34
+REVISION-fastcgi=0
 
 .include <bsd.port.mk>
