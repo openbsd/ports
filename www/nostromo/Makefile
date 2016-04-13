@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2016/04/13 17:35:48 juanfra Exp $
 
-COMMENT=		Nostromo webserver
+COMMENT=		simple, fast and secure HTTP server
 
-DISTNAME=		nostromo-1.9.5
+DISTNAME=		nostromo-1.9.6
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
-HOMEPAGE=		http://www.nazgul.ch/dev.html
+HOMEPAGE=		http://www.nazgul.ch/dev_nostromo.html
 
 MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
