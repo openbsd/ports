@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/27 09:14:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/14 06:13:19 jasper Exp $
 
 COMMENT=	Python client for Elasticsearch
 
-MODPY_EGG_VERSION=2.2.0
+MODPY_EGG_VERSION=2.3.0
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
 
@@ -24,5 +24,8 @@ MODULES=	lang/python
 RUN_DEPENDS=	www/py-urllib3
 
 MODPY_SETUPTOOLS= Yes
+
+# Requires unported nosexcover
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
