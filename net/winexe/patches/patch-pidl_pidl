@@ -1,0 +1,15 @@
+$OpenBSD: patch-pidl_pidl,v 1.1 2016/04/14 23:11:22 sthen Exp $
+
+fix with perl 5.22
+
+--- pidl/pidl.orig	Fri Apr 15 00:07:49 2016
++++ pidl/pidl	Fri Apr 15 00:08:59 2016
+@@ -580,7 +580,7 @@ sub process_file($)
+ 		require Parse::Pidl::IDL;
+ 
+ 		$pidl = Parse::Pidl::IDL::parse_file($idl_file, \@opt_incdirs);
+-		defined @$pidl || die "Failed to parse $idl_file";
++		@$pidl || die "Failed to parse $idl_file";
+ 		require Parse::Pidl::Typelist;
+ 		Parse::Pidl::Typelist::LoadIdl($pidl);
+ 	}
