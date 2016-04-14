@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_milestone_pl,v 1.1 2016/04/14 23:06:49 sthen Exp $
+
+fix with perl 5.22
+
+--- config/milestone.pl.orig	Fri Apr 15 00:04:49 2016
++++ config/milestone.pl	Fri Apr 15 00:04:58 2016
+@@ -56,7 +56,7 @@ $MILESTONE_FILE  = "$TOPSRCDIR/config/milestone.txt";
+ #
+ my $milestone = Moz::Milestone::getOfficialMilestone($MILESTONE_FILE);
+ 
+-if (defined(@TEMPLATE_FILE)) {
++if (@TEMPLATE_FILE) {
+   my $TFILE;
+ 
+   foreach $TFILE (@TEMPLATE_FILE) {
