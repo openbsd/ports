@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/12/05 05:01:24 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/14 17:43:26 juanfra Exp $
 bin/go
 bin/gofmt
 go/
@@ -881,6 +881,7 @@ go/pkg${GOCFG}/internal/format.a
 go/pkg${GOCFG}/internal/singleflight.a
 go/pkg${GOCFG}/internal/syscall/
 go/pkg${GOCFG}/internal/syscall/windows/
+go/pkg${GOCFG}/internal/syscall/windows/sysdll.a
 go/pkg${GOCFG}/internal/testenv.a
 go/pkg${GOCFG}/internal/trace.a
 go/pkg${GOCFG}/io/
@@ -2817,6 +2818,8 @@ go/src/internal/syscall/windows/registry/syscall.go
 go/src/internal/syscall/windows/registry/value.go
 go/src/internal/syscall/windows/registry/zsyscall_windows.go
 go/src/internal/syscall/windows/syscall_windows.go
+go/src/internal/syscall/windows/sysdll/
+go/src/internal/syscall/windows/sysdll/sysdll.go
 go/src/internal/syscall/windows/zsyscall_windows.go
 go/src/internal/testenv/
 go/src/internal/testenv/testenv.go
