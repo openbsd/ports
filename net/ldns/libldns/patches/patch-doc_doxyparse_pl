@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_doxyparse_pl,v 1.1 2016/04/14 23:02:27 sthen Exp $
+--- doc/doxyparse.pl.orig	Thu Apr 14 17:00:36 2016
++++ doc/doxyparse.pl	Thu Apr 14 17:00:51 2016
+@@ -273,7 +273,7 @@ foreach (keys %manpages) {
+ 
+ 	print MAN $MAN_MIDDLE;
+ 
+-	if (defined(@$also)) {
++	if (@$also) {
+ 		print MAN "\n.SH SEE ALSO\n\\fI";
+ 		print MAN join "\\fR, \\fI", @$also;
+ 		print MAN "\\fR.\nAnd ";
