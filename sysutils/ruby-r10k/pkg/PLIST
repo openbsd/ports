@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/18 20:01:56 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/14 06:21:28 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -28,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/git/
 ${GEM_LIB}/gems/${DISTNAME}/doc/git/cloning-and-mirroring.mkd
 ${GEM_LIB}/gems/${DISTNAME}/doc/git/providers.mkd
 ${GEM_LIB}/gems/${DISTNAME}/doc/puppetfile.mkd
+${GEM_LIB}/gems/${DISTNAME}/doc/updating-your-puppetfile.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
@@ -262,9 +263,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/git.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/local.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/metadata_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/svn.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_repository/
-${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_repository.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_repository/forge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings.rb
@@ -298,6 +296,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/jruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/posix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/pump.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/windows.rb
@@ -413,8 +412,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/forge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/git_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/metadata_file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/svn_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_repository/
-${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_repository/forge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppetfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/
