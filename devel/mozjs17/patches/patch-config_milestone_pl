@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_milestone_pl,v 1.1 2016/04/14 00:12:27 sthen Exp $
+
+deprecated since perl 5.6.1, removed in 5.22
+
+--- config/milestone.pl.orig	Wed Apr 13 17:56:47 2016
++++ config/milestone.pl	Wed Apr 13 17:57:04 2016
+@@ -55,7 +55,7 @@ $MILESTONE_FILE  = "$TOPSRCDIR/config/milestone.txt";
+ #
+ my $milestone = Moz::Milestone::getOfficialMilestone($MILESTONE_FILE);
+ 
+-if (defined(@TEMPLATE_FILE)) {
++if (@TEMPLATE_FILE) {
+   my $TFILE;
+ 
+   foreach $TFILE (@TEMPLATE_FILE) {
