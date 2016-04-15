@@ -1,7 +1,9 @@
-$OpenBSD: patch-pytest_ini,v 1.1 2016/01/10 16:18:35 shadchin Exp $
---- pytest.ini.orig	Sun Jan 10 15:35:27 2016
-+++ pytest.ini	Sun Jan 10 15:34:28 2016
-@@ -1,2 +1,2 @@
+$OpenBSD: patch-pytest_ini,v 1.2 2016/04/15 08:38:45 shadchin Exp $
+--- pytest.ini.orig	Fri Apr  8 17:03:35 2016
++++ pytest.ini	Sat Apr  9 23:11:25 2016
+@@ -1,4 +1,4 @@
  [pytest]
+ norecursedirs=*.egg .eggs dist build
 -addopts=--doctest-modules --ignore=build
 +addopts=--doctest-modules --ignore=lib
+ doctest_optionflags=ALLOW_UNICODE ELLIPSIS

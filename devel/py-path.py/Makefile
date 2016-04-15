@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/10 16:18:35 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/15 08:38:45 shadchin Exp $
 
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	8.1.2
+MODPY_EGG_VERSION =	8.2
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 HOMEPAGE =		https://github.com/jaraco/path.py
 
@@ -18,8 +20,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
+TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-runner${MODPY_FLAVOR}
 
