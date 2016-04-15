@@ -1,5 +1,0 @@
-Quake is a 3D action game, which can be played both single-user as multi-
-user. This package holds common libraries for client and server packages.
-
-Refer to ${HOMEPAGE}doxygen/ for documentation and
-command line switches.

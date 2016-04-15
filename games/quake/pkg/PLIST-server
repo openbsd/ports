@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2011/07/11 16:33:06 jasper Exp $
-@pkgpath ${BASE_PKGPATH},-server[,sdl][,ggi][,x11][,gl]
-@bin bin/nq-server
-@bin bin/qw-server
