@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/15 13:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/15 14:14:04 sthen Exp $
 
 COMMENT=	navigation scripting and testing utility for PhantomJS
 
@@ -35,5 +35,8 @@ do-install:
 	cd ${WRKSRC}/docs/_build; pax -rw * ${PREFIX}/share/doc/casperjs/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/casperjs ${PREFIX}/share/casperjs/bin/
 	ln -s ../share/casperjs/bin/casperjs ${PREFIX}/bin/casperjs
+
+pre-test:
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
