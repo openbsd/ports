@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/12 14:29:13 tb Exp $
+# $OpenBSD: Makefile,v 1.25 2016/04/15 03:21:51 tb Exp $
 
 V =		2.8.9
 PL =		8
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_LYReadCFG_c,v 1.1 2016/04/15 03:21:51 tb Exp $
+--- src/LYReadCFG.c.orig	Wed Apr 13 16:48:57 2016
++++ src/LYReadCFG.c	Wed Apr 13 16:49:39 2016
+@@ -1544,7 +1544,6 @@ static Config_Type Config_Table [] =
+ #endif
+      PARSE_Env(RC_FTP_PROXY,            0),
+      PARSE_STR(RC_GLOBAL_EXTENSION_MAP, global_extension_map),
+-     PARSE_STR(RC_GLOBAL_MAILCAP,       global_type_map),
+      PARSE_Env(RC_GOPHER_PROXY,         0),
+      PARSE_SET(RC_GOTOBUFFER,           goto_buffer),
+      PARSE_PRG(RC_GZIP_PATH,            ppGZIP),
+@@ -1662,7 +1661,6 @@ static Config_Type Config_Table [] =
+      PARSE_SET(RC_PERSISTENT_COOKIES,   persistent_cookies),
+ #endif /* USE_PERSISTENT_COOKIES */
+      PARSE_STR(RC_PERSONAL_EXTENSION_MAP, personal_extension_map),
+-     PARSE_STR(RC_PERSONAL_MAILCAP,     personal_type_map),
+      PARSE_LST(RC_POSITIONABLE_EDITOR,  positionable_editor),
+      PARSE_STR(RC_PREFERRED_CHARSET,    pref_charset),
+      PARSE_ENU(RC_PREFERRED_ENCODING,   LYAcceptEncoding, tbl_preferred_encoding),

@@ -1,0 +1,25 @@
+$OpenBSD: patch-userdefs_h,v 1.1 2016/04/15 03:21:52 tb Exp $
+--- userdefs.h.orig	Tue Dec 22 02:45:35 2015
++++ userdefs.h	Thu Apr 14 00:11:57 2016
+@@ -129,8 +129,8 @@
+  * Mappings in these global and personal files override any VIEWER
+  * definitions in lynx.cfg and built-in defaults from src/HTInit.c.
+  */
+-#define GLOBAL_MAILCAP "Lynx_Dir:mailcap"
+-#define PERSONAL_MAILCAP ".mailcap"
++#define GLOBAL_MAILCAP "/dev/null"
++#define PERSONAL_MAILCAP "/dev/null"
+ 
+ /**************************
+  * XLOADIMAGE_COMMAND will be used as a default in src/HTInit.c
+@@ -327,8 +327,8 @@
+  * Mappings in these global and personal files override any VIEWER
+  * definitions in lynx.cfg and built-in defaults from src/HTInit.c.
+  */
+-#define GLOBAL_MAILCAP MIME_LIBDIR "mailcap"
+-#define PERSONAL_MAILCAP "~/.mailcap"
++#define GLOBAL_MAILCAP "/dev/null"
++#define PERSONAL_MAILCAP "/dev/null"
+ 
+ /**************************
+  * XLOADIMAGE_COMMAND will be used as a default in src/HTInit.c for

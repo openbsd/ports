@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_LYMain_c,v 1.1 2016/03/12 14:29:13 tb Exp $
+$OpenBSD: patch-src_LYMain_c,v 1.2 2016/04/15 03:21:51 tb Exp $
 --- src/LYMain.c.orig	Fri Dec 18 01:34:45 2015
-+++ src/LYMain.c	Wed Feb  3 19:50:41 2016
-@@ -2142,6 +2142,21 @@ int main(int argc,
++++ src/LYMain.c	Mon Apr 11 01:55:21 2016
+@@ -2142,6 +2142,22 @@ int main(int argc,
      }
  
      /*
 +     * Disabling features requiring 'proc' + 'exec' and calling pledge
 +     */
++    no_editor = TRUE;
 +    no_exec = TRUE;
 +    no_mail = TRUE;
 +    no_shell = TRUE;
