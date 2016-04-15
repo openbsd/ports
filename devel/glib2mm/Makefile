@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2015/12/13 17:38:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2016/04/15 13:17:08 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.46.3
+GNOME_VERSION=		2.46.4
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 V=			2.4
@@ -25,11 +25,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pcre
-WANTLIB += pthread sigc-2.0 z
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
+WANTLIB += intl m pcre pthread sigc-2.0 z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # c++11
 MODULES +=		gcc4

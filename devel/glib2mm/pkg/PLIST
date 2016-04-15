@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2015/09/24 10:31:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2016/04/15 13:17:08 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -445,8 +445,6 @@ lib/libglibmm_generate_extra_defs-${V}.la
 @lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-2.4_VERSION}
 lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/glibmm-${V}/
 share/devhelp/books/glibmm-${V}/glibmm-${V}.devhelp2
 share/doc/glibmm-${V}/
