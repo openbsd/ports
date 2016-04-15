@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/15 14:43:07 jca Exp $
 
 BROKEN-arm =		undefined reference to __sync atomic ops
 BROKEN-hppa =		undefined reference to __sync atomic ops
@@ -28,6 +28,11 @@ MAINTAINER = 		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
+
+# In-tree gcc fails to compile some of the atomic sequences on alpha.
+MODULES+=		gcc4
+MODGCC4_ARCHS=		alpha
+MODGCC4_VERSION=	4.6
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
