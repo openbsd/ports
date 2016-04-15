@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/24 10:32:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/15 14:09:40 ajacoutot Exp $
 
 COMMENT=		C++ interface for gtk3+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.18.1
 PKGNAME=		gtk3mm-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
@@ -23,13 +23,12 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi cairo cairo-gobject cairomm-1.0 dbus-1 epoxy
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sigc-2.0 xcb xcb-render xcb-shm
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sigc-2.0 xcb xcb-render xcb-shm
 WANTLIB += z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # c++11
 MODULES +=		gcc4
