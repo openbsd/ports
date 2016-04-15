@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/17 22:05:07 jca Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/04/15 08:53:49 shadchin Exp $
 @comment bin/pip
 @comment bin/pip2
 @comment bin/pip3
@@ -583,17 +583,32 @@ share/doc/${MODPY_PY_PREFIX}pip/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}pip/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/comment.png
-share/doc/${MODPY_PY_PREFIX}pip/_static/default.css
+share/doc/${MODPY_PY_PREFIX}pip/_static/css/
+share/doc/${MODPY_PY_PREFIX}pip/_static/css/badge_only.css
+share/doc/${MODPY_PY_PREFIX}pip/_static/css/theme.css
 share/doc/${MODPY_PY_PREFIX}pip/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}pip/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/down.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/file.png
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/Inconsolata-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/Inconsolata-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/Lato-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/Lato-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/RobotoSlab-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/RobotoSlab-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/fontawesome-webfont.eot
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/fontawesome-webfont.svg
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/fontawesome-webfont.ttf
+share/doc/${MODPY_PY_PREFIX}pip/_static/fonts/fontawesome-webfont.woff
 share/doc/${MODPY_PY_PREFIX}pip/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}pip/_static/js/
+share/doc/${MODPY_PY_PREFIX}pip/_static/js/modernizr.min.js
+share/doc/${MODPY_PY_PREFIX}pip/_static/js/theme.js
 share/doc/${MODPY_PY_PREFIX}pip/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}pip/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}pip/_static/sidebar.js
 share/doc/${MODPY_PY_PREFIX}pip/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}pip/_static/up-pressed.png
 share/doc/${MODPY_PY_PREFIX}pip/_static/up.png

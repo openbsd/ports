@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/03 10:01:09 giovanni Exp $$
+# $OpenBSD: Makefile,v 1.10 2016/04/15 08:53:48 shadchin Exp $$
 
 COMMENT =	utility for quick MySQL dumping
 
 V =		0.9.1
+REVISION =	0
 DISTNAME =	mydumper-${V}
 CATEGORIES =	databases
 

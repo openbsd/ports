@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/24 15:01:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/04/15 08:53:48 shadchin Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/
@@ -118,6 +118,7 @@ share/pgadmin3/docs/en_US/_static/backup-3.png
 share/pgadmin3/docs/en_US/_static/backup-4.png
 share/pgadmin3/docs/en_US/_static/backup.png
 share/pgadmin3/docs/en_US/_static/basic.css
+share/pgadmin3/docs/en_US/_static/classic.css
 share/pgadmin3/docs/en_US/_static/comment-bright.png
 share/pgadmin3/docs/en_US/_static/comment-close.png
 share/pgadmin3/docs/en_US/_static/comment.png

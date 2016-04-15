@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/27 09:12:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/15 08:53:49 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -26,6 +26,7 @@ share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_sources/signals.txt
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_static/comment.png

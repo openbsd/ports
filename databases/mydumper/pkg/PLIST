@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/09/25 09:02:10 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/15 08:53:48 shadchin Exp $
 @bin bin/mydumper
 @bin bin/myloader
 @man man/man1/mydumper.1
@@ -21,6 +21,7 @@ share/doc/mydumper/html/_sources/myloader_usage.txt
 share/doc/mydumper/html/_static/
 share/doc/mydumper/html/_static/ajax-loader.gif
 share/doc/mydumper/html/_static/basic.css
+share/doc/mydumper/html/_static/classic.css
 share/doc/mydumper/html/_static/comment-bright.png
 share/doc/mydumper/html/_static/comment-close.png
 share/doc/mydumper/html/_static/comment.png

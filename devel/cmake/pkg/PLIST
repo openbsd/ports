@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2015/12/08 17:18:59 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.33 2016/04/15 08:53:49 shadchin Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -3187,6 +3187,7 @@ share/doc/cmake/html/_sources/variable/XCODE_VERSION.txt
 share/doc/cmake/html/_static/
 share/doc/cmake/html/_static/ajax-loader.gif
 share/doc/cmake/html/_static/basic.css
+share/doc/cmake/html/_static/classic.css
 share/doc/cmake/html/_static/cmake-favicon.ico
 share/doc/cmake/html/_static/cmake-logo-16.png
 share/doc/cmake/html/_static/cmake.css

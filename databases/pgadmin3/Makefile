@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/02 10:03:34 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/15 08:53:48 shadchin Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.20.0
 DISTNAME=	pgadmin3-$V
+REVISION=	0
 CATEGORIES=	databases devel
 
 HOMEPAGE=	http://www.pgadmin.org/

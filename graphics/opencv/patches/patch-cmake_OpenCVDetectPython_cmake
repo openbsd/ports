@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_OpenCVDetectPython_cmake,v 1.1 2016/04/15 08:53:49 shadchin Exp $
+--- cmake/OpenCVDetectPython.cmake.orig	Fri Jan 15 15:12:13 2016
++++ cmake/OpenCVDetectPython.cmake	Fri Jan 15 15:12:31 2016
+@@ -123,8 +123,8 @@ if(PYTHON_EXECUTABLE)
+     find_host_program(SPHINX_BUILD sphinx-build)
+     if(SPHINX_BUILD)
+         execute_process(COMMAND "${SPHINX_BUILD}"
+-                        OUTPUT_QUIET
+-                        ERROR_VARIABLE SPHINX_OUTPUT
++                        OUTPUT_VARIABLE SPHINX_OUTPUT
++                        ERROR_QUIET
+                         OUTPUT_STRIP_TRAILING_WHITESPACE)
+         message(STATUS "Found Sphinx ${SPHINX_BUILD} ${SPHINX_OUTPUT}")
+         if(SPHINX_OUTPUT MATCHES "Sphinx v([0-9][^ \n]*)")

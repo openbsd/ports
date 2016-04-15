@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/12/28 19:48:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/04/15 08:53:48 shadchin Exp $
 @conflict py-CouchDB-*
 bin/couchdb-dump
 bin/couchdb-load
@@ -72,6 +72,7 @@ share/doc/${MODPY_PY_PREFIX}couchdb/
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}couchdb/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}couchdb/_static/comment.png

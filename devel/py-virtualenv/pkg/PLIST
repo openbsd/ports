@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/11/18 20:38:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/04/15 08:53:49 shadchin Exp $
 bin/virtualenv${MODPY_BIN_SUFFIX}
 bin/virtualenv-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}virtualenv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,17 +33,32 @@ share/doc/${MODPY_PY_PREFIX}virtualenv/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/comment.png
-share/doc/${MODPY_PY_PREFIX}virtualenv/_static/default.css
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/css/
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/css/badge_only.css
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/css/theme.css
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/down.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/file.png
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/Inconsolata-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/Inconsolata-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/Lato-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/Lato-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/RobotoSlab-Bold.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/RobotoSlab-Regular.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.eot
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.svg
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.ttf
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/fonts/fontawesome-webfont.woff
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/jquery.js
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/js/
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/js/modernizr.min.js
+share/doc/${MODPY_PY_PREFIX}virtualenv/_static/js/theme.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}virtualenv/_static/sidebar.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/up-pressed.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/up.png

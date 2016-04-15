@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/07/21 14:43:57 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/15 08:53:49 shadchin Exp $
 @conflict py-mysqlclient-*
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MySQL_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -54,6 +54,7 @@ share/doc/${MODPY_PY_PREFIX}mysql/_sources/user_guide.txt
 share/doc/${MODPY_PY_PREFIX}mysql/_static/
 share/doc/${MODPY_PY_PREFIX}mysql/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}mysql/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}mysql/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}mysql/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}mysql/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}mysql/_static/comment.png
@@ -76,6 +77,7 @@ share/doc/${MODPY_PY_PREFIX}mysql/genindex.html
 share/doc/${MODPY_PY_PREFIX}mysql/index.html
 share/doc/${MODPY_PY_PREFIX}mysql/modules.html
 share/doc/${MODPY_PY_PREFIX}mysql/objects.inv
+share/doc/${MODPY_PY_PREFIX}mysql/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}mysql/search.html
 share/doc/${MODPY_PY_PREFIX}mysql/searchindex.js
 share/doc/${MODPY_PY_PREFIX}mysql/user_guide.html

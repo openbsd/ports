@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/02/08 14:58:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/15 08:53:49 shadchin Exp $
 @conflict py-flask-wtk-<0.9.4p0
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -150,11 +150,11 @@ share/doc/${MODPY_PY_PREFIX}wtforms/_sources/validators.txt
 share/doc/${MODPY_PY_PREFIX}wtforms/_sources/widgets.txt
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/ajax-loader.gif
+share/doc/${MODPY_PY_PREFIX}wtforms/_static/alabaster.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/comment.png
-share/doc/${MODPY_PY_PREFIX}wtforms/_static/default.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/docstyles.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/down-pressed.png
@@ -166,7 +166,6 @@ share/doc/${MODPY_PY_PREFIX}wtforms/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}wtforms/_static/sidebar.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/up-pressed.png
 share/doc/${MODPY_PY_PREFIX}wtforms/_static/up.png

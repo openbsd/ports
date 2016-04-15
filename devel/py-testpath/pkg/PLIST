@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/02/27 20:23:04 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/04/15 08:53:49 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/testpath/
 lib/python${MODPY_VERSION}/site-packages/testpath/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}/
@@ -23,6 +23,7 @@ share/doc/${MODPY_PY_PREFIX}testpath/_sources/tempdir.txt
 share/doc/${MODPY_PY_PREFIX}testpath/_static/
 share/doc/${MODPY_PY_PREFIX}testpath/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}testpath/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}testpath/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}testpath/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}testpath/_static/comment.png
