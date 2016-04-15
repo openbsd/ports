@@ -1,0 +1,12 @@
+$OpenBSD: patch-dcopidlng_kdocAstUtil_pm,v 1.1 2016/04/15 00:05:31 sthen Exp $
+--- dcopidlng/kdocAstUtil.pm.orig	Thu Apr 14 17:52:56 2016
++++ dcopidlng/kdocAstUtil.pm	Thu Apr 14 17:53:03 2016
+@@ -647,7 +647,7 @@ sub dumpAst
+ 		dumpAst( $kid );
+ 	}
+ 
+-	print "\t" x $depth, "Documentation nodes:\n" if defined 
++	print "\t" x $depth, "Documentation nodes:\n" if
+ 		@{ $node->{Doc}->{ "Text" }};
+ 
+ 	foreach $kid ( @{ $node->{Doc}->{ "Text" }} ) {
