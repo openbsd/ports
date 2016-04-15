@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.60 2016/03/29 23:24:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.61 2016/04/15 11:35:12 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -458,7 +458,6 @@ lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
 lib/asterisk/modules/res_pjsip_exten_state.so
 lib/asterisk/modules/res_pjsip_header_funcs.so
 lib/asterisk/modules/res_pjsip_history.so
-lib/asterisk/modules/res_pjsip_keepalive.so
 lib/asterisk/modules/res_pjsip_logger.so
 lib/asterisk/modules/res_pjsip_messaging.so
 lib/asterisk/modules/res_pjsip_multihomed.so
@@ -486,6 +485,7 @@ lib/asterisk/modules/res_pjsip_send_to_voicemail.so
 lib/asterisk/modules/res_pjsip_session.so
 lib/asterisk/modules/res_pjsip_sips_contact.so
 lib/asterisk/modules/res_pjsip_t38.so
+lib/asterisk/modules/res_pjsip_transport_management.so
 lib/asterisk/modules/res_pjsip_transport_websocket.so
 lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
 lib/asterisk/modules/res_realtime.so
