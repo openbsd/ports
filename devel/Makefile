@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1480 2016/04/11 13:12:50 ian Exp $
+# $OpenBSD: Makefile,v 1.1481 2016/04/15 18:53:21 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1274,6 +1274,8 @@
      SUBDIR += py-jupyter_client
      SUBDIR += py-jupyter_core
      SUBDIR += py-kid
+     SUBDIR += py-lazy-object-proxy
+     SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
      SUBDIR += py-libmagic
      SUBDIR += py-libmagic,python3
@@ -1352,6 +1354,8 @@
      SUBDIR += py-symboltype
      SUBDIR += py-test
      SUBDIR += py-test,python3
+     SUBDIR += py-test-benchmark
+     SUBDIR += py-test-benchmark,python3
      SUBDIR += py-test-capturelog
      SUBDIR += py-test-capturelog,python3
      SUBDIR += py-test-cov
