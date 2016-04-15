@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.768 2016/03/18 15:25:31 mmcc Exp $
+# $OpenBSD: Makefile,v 1.769 2016/04/15 13:46:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -20,6 +20,7 @@
      SUBDIR += c-icap
      SUBDIR += calamaris
      SUBDIR += canto
+     SUBDIR += casperjs
      SUBDIR += cclive
      SUBDIR += cgicc
      SUBDIR += cgiparse
