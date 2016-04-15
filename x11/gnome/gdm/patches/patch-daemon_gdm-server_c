@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.7 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-server_c,v 1.8 2016/04/15 14:11:09 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -18,8 +18,8 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-server.c.orig	Sun Oct 18 14:26:36 2015
-+++ daemon/gdm-server.c	Sun Oct 18 14:24:34 2015
+--- daemon/gdm-server.c.orig	Thu Apr 14 07:29:22 2016
++++ daemon/gdm-server.c	Fri Apr 15 15:05:26 2016
 @@ -43,7 +43,9 @@
  #include <linux/vt.h>
  #endif
@@ -227,9 +227,9 @@ Subject: require logind support
          }
 +#endif
  
-         if (server->priv->disable_tcp && ! query_in_arglist) {
-                 argv[len++] = g_strdup ("-nolisten");
-@@ -650,12 +648,6 @@ server_child_watch (GPid       pid,
+         /* If we were compiled with Xserver >= 1.17 we need to specify
+          * '-listen tcp' as the X server dosen't listen on tcp sockets
+@@ -663,12 +661,6 @@ server_child_watch (GPid       pid,
          g_object_unref (server);
  }
  
@@ -242,7 +242,7 @@ Subject: require logind support
  static gboolean
  gdm_server_spawn (GdmServer    *server,
                    const char   *vtarg,
-@@ -693,15 +685,6 @@ gdm_server_spawn (GdmServer    *server,
+@@ -706,15 +698,6 @@ gdm_server_spawn (GdmServer    *server,
          g_debug ("GdmServer: Starting X server process: %s", freeme);
          g_free (freeme);
  
@@ -258,7 +258,7 @@ Subject: require logind support
          if (!g_spawn_async_with_pipes (NULL,
                                         argv,
                                         (char **)env->pdata,
-@@ -1037,11 +1020,16 @@ gdm_server_class_init (GdmServerClass *klass)
+@@ -1050,11 +1033,16 @@ gdm_server_class_init (GdmServerClass *klass)
  static void
  gdm_server_init (GdmServer *server)
  {
@@ -275,7 +275,7 @@ Subject: require logind support
  }
  
  static void
-@@ -1055,6 +1043,9 @@ gdm_server_finalize (GObject *object)
+@@ -1068,6 +1056,9 @@ gdm_server_finalize (GObject *object)
          server = GDM_SERVER (object);
  
          g_return_if_fail (server->priv != NULL);

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.245 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.246 2016/04/15 14:11:09 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.18.2
-REVISION=		4
+GNOME_VERSION=		3.18.3
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -20,13 +19,12 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz ltdl m ogg pam
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs util vorbis vorbisfile xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl ltdl
+WANTLIB += m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs util vorbis vorbisfile
+WANTLIB += xcb xcb-render xcb-shm z
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/dconf
 
 BUILD_DEPENDS=		devel/check \
