@@ -1,7 +1,7 @@
-$OpenBSD: patch-testing_test_regressions_py,v 1.1.1.1 2016/01/10 15:41:42 shadchin Exp $
---- testing/test_regressions.py.orig	Sun Jan 10 13:33:40 2016
-+++ testing/test_regressions.py	Sun Jan 10 13:33:19 2016
-@@ -12,14 +12,14 @@ def test_pkginfo_noscmroot(tmpdir, monkeypatch):
+$OpenBSD: patch-testing_test_regressions_py,v 1.2 2016/04/15 09:09:35 shadchin Exp $
+--- testing/test_regressions.py.orig	Wed Apr  6 13:37:26 2016
++++ testing/test_regressions.py	Fri Apr 15 14:05:49 2016
+@@ -12,16 +12,16 @@ def test_pkginfo_noscmroot(tmpdir, monkeypatch):
          'from setuptools import setup;'
          'setup(use_scm_version={"root": ".."})')
  
@@ -16,6 +16,15 @@ $OpenBSD: patch-testing_test_regressions_py,v 1.1.1.1 2016/01/10 15:41:42 shadch
      assert res == '1.0'
  
      do('git init', p.dirpath())
+-    res = do('python setup.py --version', p)
++    res = do('${MODPY_BIN} setup.py --version', p)
+     assert res == '1.0'
+ 
+ 
+@@ -41,5 +41,5 @@ setup(use_scm_version=vcfg)
+ ''')
+     p.join("PKG-INFO").write('Version: 1.0')
+ 
 -    res = do('python setup.py --version', p)
 +    res = do('${MODPY_BIN} setup.py --version', p)
      assert res == '1.0'
