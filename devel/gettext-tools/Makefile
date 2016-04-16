@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/05 19:16:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/16 12:06:24 ajacoutot Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
 VERSION=	0.19.7
 DISTNAME=	gettext-${VERSION}
 PKGNAME=	gettext-tools-${VERSION}
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  gettextlib           7.0      # unknown
 SHARED_LIBS +=  gettextsrc           6.0      # unknown
 SHARED_LIBS +=  gettextpo            8.0      # 5.3
+
+SUBST_VARS=	VERSION
 
 CATEGORIES=	devel
 # DPB: parallel-safe, not worth it. Too much time in configure
