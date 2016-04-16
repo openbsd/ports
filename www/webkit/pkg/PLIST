@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/03/16 07:10:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/04/16 18:23:31 ajacoutot Exp $
 %%gtk3%%
 !%%gtk3%%
 include/webkitgtk-${WEBKIT_API_VERSION}/
@@ -533,6 +533,7 @@ share/locale/hi/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/hu/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/id/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/it/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
+share/locale/ja/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/kn/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/lt/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
@@ -557,6 +558,7 @@ share/locale/te/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/vi/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
+share/locale/zh_TW/LC_MESSAGES/WebKitGTK-${GTK_API_VERSION}.mo
 share/webkitgtk-${WEBKIT_API_VERSION}/
 share/webkitgtk-${WEBKIT_API_VERSION}/images/
 share/webkitgtk-${WEBKIT_API_VERSION}/images/deleteButton.png

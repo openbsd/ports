@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2016/03/16 07:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2016/04/16 18:23:31 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -6,7 +6,7 @@ COMMENT =	open source web browser engine for Gtk+
 BROKEN-alpha =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 
-V =		2.4.10
+V =		2.4.11
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
@@ -20,14 +20,13 @@ MASTER_SITES =	${HOMEPAGE}/releases/
 MAINTAINER =	Landry Breuil <landry@openbsd.org> \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.3
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.11
+SHARED_LIBS +=  javascriptcoregtk-3.0 5.0      # 16.19
+SHARED_LIBS +=  webkitgtk-3.0        7.0      # 22.17
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/gettext \
-		lang/python \
+MODULES =	lang/python \
 		lang/ruby \
 		x11/gnome
 
@@ -75,18 +74,18 @@ CONFIGURE_ARGS +=	--enable-optimizations=no
 CONFIGURE_ENV +=	COVERAGE_LDFLAGS="-Wl,--relax"
 .endif
 
-WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
-		EGL X11-xcb glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
-		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
-		Xxf86vm dbus-1 lzma drm gbm \
-		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 orc-0.4 \
-		gstreamer-1.0 gstbase-1.0 gstvideo-1.0 gstapp-1.0 gstpbutils-1.0 \
-		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
-		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++ ffi \
-		harfbuzz graphite2 gcrypt gpg-error gsttag-1.0 secret-1 webp
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
+WANTLIB += c cairo dbus-1 drm enchant expat ffi fontconfig freetype
+WANTLIB += gbm gcrypt gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz harfbuzz-icu
+WANTLIB += iconv icudata icui18n icuuc intl jpeg lzma m orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
+WANTLIB += stdc++ webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 
 LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		devel/harfbuzz,-icu \
