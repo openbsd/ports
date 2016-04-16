@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_wizard_CMakeLists_txt,v 1.1.1.1 2015/12/27 21:55:24 pascal Exp $
---- apps/wizard/CMakeLists.txt.orig	Fri Dec 25 17:19:18 2015
-+++ apps/wizard/CMakeLists.txt	Fri Dec 25 17:19:36 2015
-@@ -150,6 +150,6 @@ endif()
+$OpenBSD: patch-apps_wizard_CMakeLists_txt,v 1.2 2016/04/16 15:27:15 pascal Exp $
+--- apps/wizard/CMakeLists.txt.orig	Wed Apr  6 13:40:42 2016
++++ apps/wizard/CMakeLists.txt	Sat Apr 16 14:29:29 2016
+@@ -147,6 +147,6 @@ endif()
  
  # Workaround for binutil => 2.23 problem when linking, should be fixed eventually upstream
  if (UNIX AND NOT APPLE)

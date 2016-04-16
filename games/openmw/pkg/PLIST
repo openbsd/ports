@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/02/29 16:21:14 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/16 15:27:15 pascal Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -118,6 +118,12 @@ share/openmw/resources/mygui/openmw_wait_dialog_progressbar.layout
 share/openmw/resources/mygui/openmw_windows.skin.xml
 share/openmw/resources/mygui/skins.xml
 share/openmw/resources/shaders/
+share/openmw/resources/shaders/lighting.glsl
+share/openmw/resources/shaders/objects_fragment.glsl
+share/openmw/resources/shaders/objects_vertex.glsl
+share/openmw/resources/shaders/parallax.glsl
+share/openmw/resources/shaders/terrain_fragment.glsl
+share/openmw/resources/shaders/terrain_vertex.glsl
 share/openmw/resources/shaders/water_fragment.glsl
 share/openmw/resources/shaders/water_nm.png
 share/openmw/resources/shaders/water_vertex.glsl
