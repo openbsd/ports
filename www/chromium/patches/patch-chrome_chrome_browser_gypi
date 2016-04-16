@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.44 2016/03/06 10:51:14 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Wed Mar  2 21:02:05 2016
-+++ chrome/chrome_browser.gypi	Thu Mar  3 09:43:26 2016
-@@ -3588,7 +3588,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.45 2016/04/16 19:08:46 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Wed Apr 13 22:59:42 2016
++++ chrome/chrome_browser.gypi	Sat Apr 16 10:41:54 2016
+@@ -3638,7 +3638,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.44 2016/03/06 10:51:14 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3647,7 +3647,7 @@
+@@ -3702,7 +3702,7 @@
          ['use_x11==1', {
            'sources': [ '<@(chrome_browser_x11_sources)' ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.44 2016/03/06 10:51:14 robert Exp
            'sources': [
              'app/chrome_crash_reporter_client.cc',
              'app/chrome_crash_reporter_client.h',
-@@ -3780,6 +3780,12 @@
+@@ -3834,6 +3834,12 @@
              }],
            ],
          }],
@@ -32,7 +32,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.44 2016/03/06 10:51:14 robert Exp
          ['OS=="mac"', {
            'dependencies': [
              '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
-@@ -3890,7 +3896,7 @@
+@@ -3943,7 +3949,7 @@
              }],
            ],
          }],
@@ -41,3 +41,12 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.44 2016/03/06 10:51:14 robert Exp
            'conditions': [
              ['use_aura==1', {
                'dependencies': [
+@@ -3962,7 +3968,7 @@
+             }],
+           ],
+         }],
+-        ['OS=="linux" or OS=="win"', {
++        ['OS=="linux" or OS=="win" or os_bsd==1', {
+             'sources': [ '<@(chrome_browser_non_mac_desktop_sources)' ],
+         }],
+         ['desktop_linux==1', {

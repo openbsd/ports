@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2016/03/06 10:51:14 robert Exp $
+@comment $OpenBSD: PLIST,v 1.58 2016/04/16 19:08:46 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -130,8 +130,6 @@ chrome/resources/inspector/Images/resourceJSIcon.png
 chrome/resources/inspector/Images/resourcePlainIcon.png
 chrome/resources/inspector/Images/resourcePlainIconSmall.png
 chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
-chrome/resources/inspector/Images/responsiveDesign.png
-chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/securityPropertyInfo.svg
@@ -195,7 +193,6 @@ chrome/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-
 chrome/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 chrome/resources/inspector/emulated_devices_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
-chrome/resources/inspector/inspector.css
 chrome/resources/inspector/inspector.html
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/layers_module.js
@@ -213,7 +210,6 @@ chrome/resources/inspector/source_frame_module.js
 chrome/resources/inspector/sources_module.js
 chrome/resources/inspector/temp_storage_shared_worker_module.js
 chrome/resources/inspector/timeline_module.js
-chrome/resources/inspector/toolbox.css
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy_module.js

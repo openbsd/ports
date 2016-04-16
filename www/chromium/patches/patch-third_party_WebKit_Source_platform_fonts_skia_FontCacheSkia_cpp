@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.5 2016/04/16 19:08:46 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu Apr 14 20:07:25 2016
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Thu Apr 14 20:07:34 2016
+@@ -65,7 +65,7 @@ const char* kColorEmojiFonts[] = { "56##fallback", "No
+ const char* kTextEmojiFonts[] = { "Droid Sans Fallback" };
+ const char* kSymbolsFonts[] = { "Droid Sans Fallback" };
+ const char* kMathFonts[] = { "Droid Sans Fallback" };
+-#elif OS(LINUX)
++#elif OS(LINUX) || OS(OPENBSD)
+ const char* kColorEmojiFonts[] = { "Noto Color Emoji", "Noto Sans Symbols", "Symbola", "DejaVu Sans" };
+ const char* kTextEmojiFonts[] = { "Noto Sans Symbols", "Symbola", "Droid Sans Fallback", "DejaVu Sans" };
+ const char* kSymbolsFonts[] = { "FreeSerif", "FreeMono", "Droid Sans Fallback", "DejaVu Sans" };

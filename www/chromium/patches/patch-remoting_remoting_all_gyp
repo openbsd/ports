@@ -1,7 +1,7 @@
-$OpenBSD: patch-remoting_remoting_all_gyp,v 1.2 2015/12/05 16:13:32 robert Exp $
---- remoting/remoting_all.gyp.orig.port	Wed Dec  2 13:51:41 2015
-+++ remoting/remoting_all.gyp	Wed Dec  2 13:51:46 2015
-@@ -60,7 +60,6 @@
+$OpenBSD: patch-remoting_remoting_all_gyp,v 1.3 2016/04/16 19:08:46 robert Exp $
+--- remoting/remoting_all.gyp.orig.port	Wed Apr 13 22:59:49 2016
++++ remoting/remoting_all.gyp	Thu Apr 14 08:25:13 2016
+@@ -61,7 +61,6 @@
              '../remoting/remoting.gyp:remoting_host_setup_base',
              '../remoting/remoting.gyp:remoting_native_messaging_base',
              '../remoting/remoting.gyp:remoting_native_messaging_manifests',

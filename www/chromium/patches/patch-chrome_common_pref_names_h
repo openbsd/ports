@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.22 2016/03/06 10:51:14 robert Exp $
---- chrome/common/pref_names.h.orig.port	Wed Feb 24 21:01:32 2016
-+++ chrome/common/pref_names.h	Thu Mar  3 09:43:26 2016
-@@ -294,7 +294,7 @@ extern const char kForceYouTubeSafetyMode[];
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.23 2016/04/16 19:08:46 robert Exp $
+--- chrome/common/pref_names.h.orig.port	Thu Apr 14 08:48:39 2016
++++ chrome/common/pref_names.h	Thu Apr 14 08:48:58 2016
+@@ -295,7 +295,7 @@ extern const char kForceYouTubeSafetyMode[];
  extern const char kRecordHistory[];
  extern const char kDeleteTimePeriod[];
  extern const char kLastClearBrowsingDataTime[];
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -463,7 +463,7 @@ extern const char kAppWindowPlacement[];
+@@ -464,7 +464,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
--#if defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     (defined(OS_MACOSX) && !defined(OS_IOS))
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
+ 

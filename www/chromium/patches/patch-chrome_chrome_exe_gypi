@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_exe_gypi,v 1.12 2016/03/06 10:51:14 robert Exp $
---- chrome/chrome_exe.gypi.orig.port	Thu Feb 25 03:02:29 2016
-+++ chrome/chrome_exe.gypi	Thu Mar  3 09:43:26 2016
-@@ -190,7 +190,7 @@
+$OpenBSD: patch-chrome_chrome_exe_gypi,v 1.13 2016/04/16 19:08:46 robert Exp $
+--- chrome/chrome_exe.gypi.orig.port	Wed Apr 13 22:59:42 2016
++++ chrome/chrome_exe.gypi	Thu Apr 14 08:25:10 2016
+@@ -182,7 +182,7 @@
                  '../build/linux/system.gyp:xext',
                ],
              }],

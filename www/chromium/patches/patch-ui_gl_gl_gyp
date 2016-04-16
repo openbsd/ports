@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_gl_gyp,v 1.16 2016/03/06 10:51:14 robert Exp $
---- ui/gl/gl.gyp.orig.port	Wed Feb 24 21:01:35 2016
-+++ ui/gl/gl.gyp	Thu Mar  3 09:43:26 2016
-@@ -132,7 +132,7 @@
+$OpenBSD: patch-ui_gl_gl_gyp,v 1.17 2016/04/16 19:08:46 robert Exp $
+--- ui/gl/gl.gyp.orig.port	Fri Apr  8 18:02:15 2016
++++ ui/gl/gl.gyp	Thu Apr 14 08:25:16 2016
+@@ -130,7 +130,7 @@
          'trace_util.h',
        ],
        'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_gl_gl_gyp,v 1.16 2016/03/06 10:51:14 robert Exp $
            'sources': [
              'egl_util.cc',
              'egl_util.h',
-@@ -153,7 +153,7 @@
+@@ -151,7 +151,7 @@
              '<(DEPTH)/third_party/khronos',
          ],
          }],

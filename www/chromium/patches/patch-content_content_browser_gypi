@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert Exp $
---- content/content_browser.gypi.orig.port	Wed Feb 24 21:01:32 2016
-+++ content/content_browser.gypi	Thu Mar  3 09:43:26 2016
-@@ -1994,7 +1994,7 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.41 2016/04/16 19:08:46 robert Exp $
+--- content/content_browser.gypi.orig.port	Wed Apr 13 22:59:46 2016
++++ content/content_browser.gypi	Sat Apr 16 10:47:05 2016
+@@ -1988,7 +1988,7 @@
          },
        },
      }],
@@ -10,8 +10,8 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert E
        'dependencies': [
          '../build/linux/system.gyp:atk',
          '../build/linux/system.gyp:gconf',
-@@ -2023,7 +2023,7 @@
-         'browser/udev_linux.h',
+@@ -2014,7 +2014,7 @@
+         'browser/gamepad/gamepad_platform_data_fetcher_linux.cc',
        ],
      }],
 -    ['OS=="linux" and use_aura==1', {
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert E
        'dependencies': [
          '../build/linux/system.gyp:fontconfig',
        ],
-@@ -2127,9 +2127,22 @@
+@@ -2109,9 +2109,25 @@
        ],
      }],
      ['os_bsd==1', {
@@ -27,6 +27,9 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert E
 -        ['exclude', '^browser/gamepad/gamepad_platform_data_fetcher_linux\\.cc$'],
 +      'sources!': [
 +        'public/browser/zygote_host_linux.h',
++        'browser/zygote_host/zygote_communication_linux.cc',
++        'browser/zygote_host/zygote_communication_linux.h',
++        'browser/zygote_host/zygote_handle_linux.cc',
 +        'browser/zygote_host/zygote_host_impl_linux.cc',
 +        'browser/zygote_host/zygote_host_impl_linux.h',
 +        'zygote/zygote_linux.cc',
@@ -44,7 +47,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert E
      }],
      ['use_aura==1', {
        'dependencies': [
-@@ -2177,10 +2190,7 @@
+@@ -2159,10 +2175,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],
@@ -56,7 +59,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.40 2016/03/06 10:51:14 robert E
        'dependencies': [
          '../build/linux/system.gyp:dbus',
          '../dbus/dbus.gyp:dbus',
-@@ -2196,7 +2206,7 @@
+@@ -2178,7 +2191,7 @@
          'browser/media/cdm/browser_cdm_manager.h',
        ],
      }],

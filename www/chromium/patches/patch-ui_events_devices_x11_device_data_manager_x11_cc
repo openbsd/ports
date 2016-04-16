@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.8 2016/03/06 10:51:14 robert Exp $
---- ui/events/devices/x11/device_data_manager_x11.cc.orig.port	Wed Feb 24 21:01:35 2016
-+++ ui/events/devices/x11/device_data_manager_x11.cc	Thu Mar  3 09:43:26 2016
-@@ -823,6 +823,8 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
+$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.9 2016/04/16 19:08:46 robert Exp $
+--- ui/events/devices/x11/device_data_manager_x11.cc.orig.port	Fri Apr  8 18:02:15 2016
++++ ui/events/devices/x11/device_data_manager_x11.cc	Thu Apr 14 08:25:15 2016
+@@ -809,6 +809,8 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
  }
  
  void DeviceDataManagerX11::DisableDevice(int deviceid) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.8 2016/03/0
    blocked_devices_.set(deviceid, true);
    // TODO(rsadam@): Support blocking touchscreen devices.
    std::vector<KeyboardDevice> keyboards = keyboard_devices();
-@@ -834,6 +836,7 @@ void DeviceDataManagerX11::DisableDevice(int deviceid)
+@@ -820,6 +822,7 @@ void DeviceDataManagerX11::DisableDevice(int deviceid)
      keyboards.erase(it);
      DeviceDataManager::OnKeyboardDevicesUpdated(keyboards);
    }

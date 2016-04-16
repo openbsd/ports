@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.13 2016/03/06 10:51:14 robert Exp $
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Wed Feb 24 21:01:34 2016
-+++ third_party/WebKit/Source/platform/blink_platform.gyp	Thu Mar  3 09:43:26 2016
-@@ -201,7 +201,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.14 2016/04/16 19:08:46 robert Exp $
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Wed Apr 13 23:00:02 2016
++++ third_party/WebKit/Source/platform/blink_platform.gyp	Thu Apr 14 08:25:13 2016
+@@ -219,7 +219,7 @@
            ['include', 'graphics/cpu/x86/WebGLImageConversionSSE\\.h$'],
          ],
        }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.13 201
          'sources/': [
            # Cherry-pick files excluded by the broader regular expressions above.
            ['include', 'fonts/opentype/OpenTypeTypes\\.h$'],
-@@ -212,7 +212,7 @@
+@@ -230,7 +230,7 @@
          ],
        },
        ],
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.13 201
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
          ]
-@@ -297,7 +297,7 @@
+@@ -315,7 +315,7 @@
            ['exclude', 'scroll/ScrollbarThemeMac'],
          ],
        }],
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.13 201
          'sources/': [
            ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
          ],
-@@ -340,7 +340,7 @@
+@@ -358,7 +358,7 @@
            ['exclude', 'Android\\.cpp$'],
          ],
        }],

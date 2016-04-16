@@ -1,7 +1,7 @@
-$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.5 2016/03/06 10:51:13 robert Exp $
---- ash/display/mirror_window_controller.cc.orig.port	Wed Feb 24 21:01:30 2016
-+++ ash/display/mirror_window_controller.cc	Thu Mar  3 09:43:25 2016
-@@ -258,7 +258,11 @@ void MirrorWindowController::UpdateWindow(
+$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.6 2016/04/16 19:08:45 robert Exp $
+--- ash/display/mirror_window_controller.cc.orig.port	Wed Apr 13 22:59:35 2016
++++ ash/display/mirror_window_controller.cc	Thu Apr 14 08:25:08 2016
+@@ -260,7 +260,11 @@ void MirrorWindowController::UpdateWindow(
                           return info.id() == iter->first;
                         }) == display_info_list.end()) {
          CloseAndDeleteHost(iter->second, true);

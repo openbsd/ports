@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_wtf_MathExtras_h,v 1.6 2016/03/06 10:51:14 robert Exp $
---- third_party/WebKit/Source/wtf/MathExtras.h.orig.port	Wed Feb 24 21:01:34 2016
-+++ third_party/WebKit/Source/wtf/MathExtras.h	Thu Mar  3 09:43:26 2016
-@@ -42,8 +42,8 @@
+$OpenBSD: patch-third_party_WebKit_Source_wtf_MathExtras_h,v 1.7 2016/04/16 19:08:46 robert Exp $
+--- third_party/WebKit/Source/wtf/MathExtras.h.orig.port	Fri Apr  8 18:02:13 2016
++++ third_party/WebKit/Source/wtf/MathExtras.h	Thu Apr 14 08:25:14 2016
+@@ -43,8 +43,8 @@
  #endif
  
  #if OS(OPENBSD)

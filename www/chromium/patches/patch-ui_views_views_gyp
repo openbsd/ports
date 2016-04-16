@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_views_gyp,v 1.15 2016/03/06 10:51:14 robert Exp $
---- ui/views/views.gyp.orig.port	Wed Feb 24 21:01:35 2016
-+++ ui/views/views.gyp	Thu Mar  3 09:43:26 2016
-@@ -680,12 +680,12 @@
+$OpenBSD: patch-ui_views_views_gyp,v 1.16 2016/04/16 19:08:46 robert Exp $
+--- ui/views/views.gyp.orig.port	Wed Apr 13 23:00:05 2016
++++ ui/views/views.gyp	Thu Apr 14 08:25:16 2016
+@@ -693,12 +693,12 @@
              '../display/display.gyp:display_util',
            ],
          }],
@@ -16,7 +16,7 @@ $OpenBSD: patch-ui_views_views_gyp,v 1.15 2016/03/06 10:51:14 robert Exp $
            'dependencies': [
              '../shell_dialogs/shell_dialogs.gyp:shell_dialogs',
            ],
-@@ -754,7 +754,7 @@
+@@ -767,7 +767,7 @@
          ['use_aura and chromeos == 0', {
            'sources': [ '<@(views_desktop_aura_sources)' ],
            'conditions': [

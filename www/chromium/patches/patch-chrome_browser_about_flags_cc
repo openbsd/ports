@@ -1,30 +1,21 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.24 2016/03/06 10:51:14 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Thu Feb 25 03:02:29 2016
-+++ chrome/browser/about_flags.cc	Sat Mar  5 19:12:35 2016
-@@ -684,7 +684,7 @@ const FeatureEntry kFeatureEntries[] = {
-      // Mac has a separate implementation with its own setting to disable.
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.25 2016/04/16 19:08:45 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Thu Apr 14 08:35:25 2016
++++ chrome/browser/about_flags.cc	Thu Apr 14 08:35:48 2016
+@@ -673,7 +673,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
-      SINGLE_DISABLE_VALUE_TYPE(switches::kDisableSmoothScrolling)},
+      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
+                                switches::kDisableSmoothScrolling)},
 -#if defined(USE_AURA) || defined(OS_LINUX)
 +#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
-     {"overlay-scrollbars",
-      IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
+     {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
-@@ -795,7 +795,7 @@ const FeatureEntry kFeatureEntries[] = {
-      SINGLE_VALUE_TYPE(switches::kEnableAndroidSpellChecker)},
- #endif
- #if defined(ENABLE_SPELLCHECK) && \
--    (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD))
-     {"enable-multilingual-spellchecker",
-      IDS_FLAGS_ENABLE_MULTILINGUAL_SPELLCHECKER_NAME,
-      IDS_FLAGS_ENABLE_MULTILINGUAL_SPELLCHECKER_DESCRIPTION,
-@@ -2083,7 +2083,7 @@ const FeatureEntry kFeatureEntries[] = {
-       kOsDesktop,
-       SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
+      // Uses the system preference on Mac (a different implementation).
+@@ -1729,7 +1729,7 @@ const FeatureEntry kFeatureEntries[] = {
+      IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
+      SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
  #endif
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
-      {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
-       IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION,
-       kOsWin | kOsLinux,
+     {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
+      IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION, kOsWin | kOsLinux,
+      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,

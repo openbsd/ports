@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.20 2016/03/06 10:51:14 robert Exp $
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Wed Feb 24 21:01:32 2016
-+++ chrome/browser/ui/webui/options/browser_options_handler.cc	Thu Mar  3 09:43:26 2016
-@@ -483,7 +483,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.21 2016/04/16 19:08:46 robert Exp $
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Wed Apr 13 22:59:42 2016
++++ chrome/browser/ui/webui/options/browser_options_handler.cc	Thu Apr 14 08:25:10 2016
+@@ -491,7 +491,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
      { "syncButtonTextStart", IDS_SYNC_SETUP_BUTTON_LABEL },
  #endif  // defined(OS_CHROMEOS)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.2
      { "showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS },
      { "themesNativeButton", IDS_THEMES_GTK_BUTTON },
      { "themesSetClassic", IDS_THEMES_SET_CLASSIC },
-@@ -730,7 +730,7 @@ void BrowserOptionsHandler::RegisterMessages() {
+@@ -738,7 +738,7 @@ void BrowserOptionsHandler::RegisterMessages() {
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.2
    web_ui()->RegisterMessageCallback(
        "themesSetNative",
        base::Bind(&BrowserOptionsHandler::ThemesSetNative,
-@@ -1355,7 +1355,7 @@ void BrowserOptionsHandler::ObserveThemeChanged() {
+@@ -1361,7 +1361,7 @@ void BrowserOptionsHandler::ObserveThemeChanged() {
    ThemeService* theme_service = ThemeServiceFactory::GetForProfile(profile);
    bool is_system_theme = false;
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.2
    bool profile_is_supervised = profile->IsSupervised();
    is_system_theme = theme_service->UsingSystemTheme();
    base::FundamentalValue native_theme_enabled(!is_system_theme &&
-@@ -1377,7 +1377,7 @@ void BrowserOptionsHandler::ThemesReset(const base::Li
+@@ -1383,7 +1383,7 @@ void BrowserOptionsHandler::ThemesReset(const base::Li
    ThemeServiceFactory::GetForProfile(profile)->UseDefaultTheme();
  }
  

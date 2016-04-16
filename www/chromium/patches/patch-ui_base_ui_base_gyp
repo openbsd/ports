@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_ui_base_gyp,v 1.12 2016/01/23 18:49:31 robert Exp $
---- ui/base/ui_base.gyp.orig.port	Thu Jan 14 02:49:28 2016
-+++ ui/base/ui_base.gyp	Fri Jan 22 19:58:59 2016
-@@ -409,7 +409,7 @@
+$OpenBSD: patch-ui_base_ui_base_gyp,v 1.13 2016/04/16 19:08:46 robert Exp $
+--- ui/base/ui_base.gyp.orig.port	Wed Apr 13 23:00:04 2016
++++ ui/base/ui_base.gyp	Sat Apr 16 12:33:46 2016
+@@ -454,7 +454,7 @@
              'x/selection_utils.h',
            ]
          }],
@@ -10,7 +10,16 @@ $OpenBSD: patch-ui_base_ui_base_gyp,v 1.12 2016/01/23 18:49:31 robert Exp $
            'sources!': [
              'resource/resource_bundle_auralinux.cc',
            ],
-@@ -465,7 +465,7 @@
+@@ -477,7 +477,7 @@
+             '../../build/linux/system.gyp:glib',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or os_bsd==1', {
+           'conditions': [
+             ['toolkit_views==0 and use_aura==0', {
+               # Note: because of gyp predence rules this has to be defined as
+@@ -510,7 +510,7 @@
              'clipboard/clipboard_aurax11.cc',
            ],
          }],

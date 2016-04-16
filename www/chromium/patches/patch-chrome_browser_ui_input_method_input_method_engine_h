@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_h,v 1.1 2016/04/16 19:08:45 robert Exp $
+--- chrome/browser/ui/input_method/input_method_engine.h.orig.port	Thu Apr 14 22:40:29 2016
++++ chrome/browser/ui/input_method/input_method_engine.h	Thu Apr 14 22:40:34 2016
+@@ -25,7 +25,7 @@ class InputMethodEngine : public InputMethodEngineBase
+   bool SendKeyEvents(int context_id,
+                      const std::vector<KeyboardEvent>& events) override;
+   bool IsActive() const override;
+-  std::string GetExtensionId() const override;
++  std::string GetExtensionId() const;
+ 
+   // Creates and shows the IME window.
+   // Returns 0 for errors and |error| will contains the error message.
