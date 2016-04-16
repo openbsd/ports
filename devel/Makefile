@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1481 2016/04/15 18:53:21 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1482 2016/04/16 14:07:39 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1293,6 +1293,8 @@
      SUBDIR += py-nbformat
      SUBDIR += py-nose
      SUBDIR += py-nose,python3
+     SUBDIR += py-nosexcover
+     SUBDIR += py-nosexcover,python3
      SUBDIR += py-notify
      SUBDIR += py-olefile
      SUBDIR += py-optik
