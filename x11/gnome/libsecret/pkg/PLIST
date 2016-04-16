@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/01/19 08:40:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/16 08:18:28 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -25,8 +25,6 @@ lib/pkgconfig/libsecret-unstable.pc
 @man man/man1/secret-tool.1
 share/gir-1.0/
 share/gir-1.0/Secret-1.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libsecret-1/
 share/gtk-doc/html/libsecret-1/SecretCollection.html
 share/gtk-doc/html/libsecret-1/SecretItem.html
@@ -86,22 +84,12 @@ share/gtk-doc/html/libsecret-1/vala-examples.html
 share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/libsecret.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libsecret.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/libsecret.mo
 share/locale/be/LC_MESSAGES/libsecret.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libsecret.mo
 share/locale/ca/LC_MESSAGES/libsecret.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/libsecret.mo
 share/locale/cs/LC_MESSAGES/libsecret.mo
 share/locale/da/LC_MESSAGES/libsecret.mo
@@ -110,8 +98,6 @@ share/locale/el/LC_MESSAGES/libsecret.mo
 share/locale/eo/LC_MESSAGES/libsecret.mo
 share/locale/es/LC_MESSAGES/libsecret.mo
 share/locale/eu/LC_MESSAGES/libsecret.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libsecret.mo
 share/locale/fr/LC_MESSAGES/libsecret.mo
 share/locale/fur/
@@ -123,21 +109,13 @@ share/locale/hu/LC_MESSAGES/libsecret.mo
 share/locale/id/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/libsecret.mo
 share/locale/ko/LC_MESSAGES/libsecret.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libsecret.mo
 share/locale/lv/LC_MESSAGES/libsecret.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/libsecret.mo
 share/locale/nb/LC_MESSAGES/libsecret.mo
 share/locale/nl/LC_MESSAGES/libsecret.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libsecret.mo
 share/locale/pa/LC_MESSAGES/libsecret.mo
 share/locale/pl/LC_MESSAGES/libsecret.mo
@@ -148,12 +126,8 @@ share/locale/ru/LC_MESSAGES/libsecret.mo
 share/locale/sk/LC_MESSAGES/libsecret.mo
 share/locale/sl/LC_MESSAGES/libsecret.mo
 share/locale/sr/LC_MESSAGES/libsecret.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/libsecret.mo
 share/locale/sv/LC_MESSAGES/libsecret.mo
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/libsecret.mo
 share/locale/tr/LC_MESSAGES/libsecret.mo
 share/locale/uk/LC_MESSAGES/libsecret.mo

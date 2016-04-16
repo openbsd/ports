@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_tap-unittest,v 1.1 2016/04/16 08:18:27 ajacoutot Exp $
+
+From d50dbae41ef973b0a858dbda5db91b8658787f3b Mon Sep 17 00:00:00 2001
+From: Dmitry Shachnev <mitya57@gmail.com>
+Date: Wed, 6 Apr 2016 10:37:38 +0200
+Subject: build: Port to Python 3
+
+--- build/tap-unittest.orig	Tue Sep 23 09:49:21 2014
++++ build/tap-unittest	Sat Apr 16 10:14:16 2016
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ #
+ # This is a TAP compiler for python unittest
