@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/15 13:00:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/16 13:35:02 ajacoutot Exp $
 
 COMMENT=		platform-independent file locking for Python
 
@@ -27,12 +27,12 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
-# XXX sphinx is not picked up?
-NO_TEST=		Yes
-.else
 TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
-.endif
+
+MAKE_ENV=		SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+
+pre-test:
+	sed -i "s,^sphinx.*,sphinx," ${WRKSRC}/test-requirements.txt
 
 .include <bsd.port.mk>
