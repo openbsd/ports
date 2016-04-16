@@ -1,0 +1,15 @@
+$OpenBSD: patch-werkzeug_contrib_lint_py,v 1.1 2016/04/16 19:06:26 shadchin Exp $
+--- werkzeug/contrib/lint.py.orig	Fri Apr 15 21:52:40 2016
++++ werkzeug/contrib/lint.py	Fri Apr 15 21:54:00 2016
+@@ -19,7 +19,10 @@
+     :copyright: (c) 2014 by the Werkzeug Team, see AUTHORS for more details.
+     :license: BSD, see LICENSE for more details.
+ """
+-from urlparse import urlparse
++try:
++    from urlparse import urlparse
++except ImportError:
++    from urllib.parse import urlparse
+ from warnings import warn
+ 
+ from werkzeug.datastructures import Headers

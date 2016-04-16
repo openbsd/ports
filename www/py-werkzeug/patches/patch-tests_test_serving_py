@@ -1,9 +1,12 @@
-$OpenBSD: patch-tests_test_serving_py,v 1.1 2016/01/04 12:21:41 shadchin Exp $
---- tests/test_serving.py.orig	Thu Dec 24 00:04:27 2015
-+++ tests/test_serving.py	Thu Dec 24 00:03:59 2015
-@@ -195,4 +195,4 @@ def test_monkeypached_sleep(tmpdir):
+$OpenBSD: patch-tests_test_serving_py,v 1.2 2016/04/16 19:06:26 shadchin Exp $
+--- tests/test_serving.py.orig	Wed Mar 23 00:38:53 2016
++++ tests/test_serving.py	Fri Apr 15 21:33:04 2016
+@@ -195,7 +195,7 @@ def test_monkeypached_sleep(tmpdir):
      from werkzeug._reloader import ReloaderLoop
      ReloaderLoop()._sleep(0)
      '''))
 -    subprocess.check_call(['python', str(script)])
 +    subprocess.check_call(['${MODPY_BIN}', str(script)])
+ 
+ 
+ def test_wrong_protocol(dev_server):

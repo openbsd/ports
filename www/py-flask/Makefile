@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/04/16 19:06:26 shadchin Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	0.10.1
-REVISION =	1
+REVISION =	2
 DISTNAME =	Flask-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -26,12 +26,12 @@ RUN_DEPENDS =	devel/py-blinker${MODPY_FLAVOR} \
 		www/py-itsdangerous${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}>=2.4 \
 		www/py-werkzeug${MODPY_FLAVOR}>=0.7
-BUILD_DEPENDS =	textproc/py-sphinx \
+BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR} \
 		www/py-itsdangerous${MODPY_FLAVOR} \
 		www/py-werkzeug${MODPY_FLAVOR}>=0.7
 TEST_DEPENDS = ${RUN_DEPENDS}
 
-MAKE_ENV =	PYTHONPATH="${WRKSRC}"
+MAKE_ENV =	PYTHONPATH="${WRKSRC}" SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 post-build:
 	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html

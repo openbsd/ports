@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/16 19:06:25 shadchin Exp $
 
 PKG_ARCH=		*
 COMMENT=		small expressive ORM
@@ -6,7 +6,7 @@ COMMENT=		small expressive ORM
 MODPY_EGG_VERSION=	2.8.0
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 
@@ -19,7 +19,7 @@ GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
 GH_TAGNAME=		${MODPY_EGG_VERSION}
 
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR?=
@@ -27,12 +27,10 @@ FLAVOR?=
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC}
+MAKE_ENV +=	PYTHONPATH=${WRKSRC} SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 DOCSRC =	${WRKSRC}/docs
 post-build:
 	cd ${DOCSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-	cd ${DOCSRC} && PYTHONPATH=${WRKSRC} \
-		${LOCALBASE}/bin/sphinx-build -N . _build/html
 
 DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}peewee
 EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}peewee

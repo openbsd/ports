@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.26 2016/04/16 19:06:26 shadchin Exp $
 
 COMMENT =		Python easy_install replacement
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	8.1.1
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://pip.pypa.io/en/stable/
 
@@ -16,18 +16,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 MODPY_SETUPTOOLS =	Yes
 NO_TEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 DOCSRC =	${WRKSRC}/docs
 post-build:
 	cd ${DOCSRC} && PYTHONPATH=${WRKSRC} \
-		${LOCALBASE}/bin/sphinx-build -N . _build/html
+		${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -N . _build/html
 
 DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}pip
 

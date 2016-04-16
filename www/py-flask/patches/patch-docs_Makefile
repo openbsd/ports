@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile,v 1.1 2016/04/16 19:06:26 shadchin Exp $
+--- docs/Makefile.orig	Fri Apr 15 21:22:09 2016
++++ docs/Makefile	Fri Apr 15 21:22:15 2016
+@@ -3,7 +3,7 @@
+ 
+ # You can set these variables from the command line.
+ SPHINXOPTS    =
+-SPHINXBUILD   = sphinx-build
++SPHINXBUILD   ?= sphinx-build
+ PAPER         =
+ BUILDDIR      = _build
+ 
