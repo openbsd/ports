@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/15 08:38:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/17 12:47:39 shadchin Exp $
 
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	8.2
+MODPY_EGG_VERSION =	8.2.1
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
