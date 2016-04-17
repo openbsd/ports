@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/17 19:01:22 afresh1 Exp $
 
 COMMENT=	generate and manipulate images
 
-DISTNAME =	Imager-1.000
+DISTNAME =	Imager-1.005
 CATEGORIES=	graphics
 MODULES=	cpan
-REVISION =	1
 
 HOMEPAGE=	http://imager.perl.org/
 
@@ -22,9 +21,14 @@ LIB_DEPENDS=	devel/t1lib \
 		graphics/tiff \
 		graphics/giflib
 
-CONFIGURE_ARGS=	--enable jpeg,tiff,png,gif,T1-fonts,freetype2 \
+TEST_DEPENDS =	devel/p5-Inline \
+		devel/p5-Test-Pod \
+		devel/p5-Test-Pod-Coverage
+
+TEST_ENV =	AUTOMATED_TESTING=1
+
+CONFIGURE_ARGS=	--enable JPEG,TIFF,PNG,GIF,T1,FT2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
 		--libpath="${LOCALBASE}/lib:${X11BASE}/lib"
-USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
