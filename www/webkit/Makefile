@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/04/16 18:23:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2016/04/17 13:18:43 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -20,8 +20,8 @@ MASTER_SITES =	${HOMEPAGE}/releases/
 MAINTAINER =	Landry Breuil <landry@openbsd.org> \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  javascriptcoregtk-3.0 5.0      # 16.19
-SHARED_LIBS +=  webkitgtk-3.0        7.0      # 22.17
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.19
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.17
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
