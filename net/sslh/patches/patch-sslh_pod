@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslh_pod,v 1.5 2015/03/15 12:26:16 sthen Exp $
---- sslh.pod.orig	Mon Mar  9 21:51:39 2015
-+++ sslh.pod	Wed Mar 11 15:29:21 2015
+$OpenBSD: patch-sslh_pod,v 1.6 2016/04/17 09:14:26 landry Exp $
+--- sslh.pod.orig	Tue Jul 28 15:14:21 2015
++++ sslh.pod	Mon Sep 21 12:15:48 2015
 @@ -26,17 +26,14 @@ Hence B<sslh> acts as a protocol demultiplexer, or a
  switchboard. Its name comes from its original function to
  serve SSH and HTTPS on the same port.
@@ -26,7 +26,7 @@ $OpenBSD: patch-sslh_pod,v 1.5 2015/03/15 12:26:16 sthen Exp $
  =head2 Configuration file
  
  A configuration file can be supplied to B<sslh>. Command
-@@ -207,24 +204,6 @@ Runs in background. This overrides B<foreground> if se
+@@ -203,24 +200,6 @@ Runs in background. This overrides B<foreground> if se
  the configuration file (or on the command line, but there is
  no point setting both on the command line unless you have a
  personality disorder).

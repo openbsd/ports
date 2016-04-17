@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/06 20:02:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/17 09:14:26 landry Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
 GH_ACCOUNT =	yrutschle
 GH_PROJECT =	sslh
-V =		1.17
+V =		1.18
 GH_TAGNAME =	v$V
 CATEGORIES =	security net
-REVISION =	0
 
 HOMEPAGE =	http://www.rutschle.net/tech/sslh.shtml
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c config
-LIB_DEPENDS =	devel/libconfig
+WANTLIB =	c config pcre
+LIB_DEPENDS =	devel/libconfig \
+		devel/pcre
 
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DLIBCONFIG" \
-		LIBS="-L${LOCALBASE}/lib -lconfig" VERSION=$V
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
+		-DENABLE_REGEX -DLIBCONFIG -DLIBPCRE" \
+		LIBS="-L${LOCALBASE}/lib -lconfig -lpcre" VERSION=$V
 NO_TEST =	Yes
 
 do-configure:
