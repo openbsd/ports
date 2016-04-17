@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/20 16:36:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/04/17 18:55:49 afresh1 Exp $
 
 COMMENT=		agent for Razor spam filtering networks
 
 DISTNAME=		razor-agents-2.85
-REVISION=		4
+REVISION=		5
 CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 

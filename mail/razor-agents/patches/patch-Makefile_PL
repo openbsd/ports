@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2016/02/05 14:59:27 sthen Exp $
+$OpenBSD: patch-Makefile_PL,v 1.3 2016/04/17 18:55:49 afresh1 Exp $
 --- Makefile.PL.orig	Tue May  8 23:47:53 2007
 +++ Makefile.PL	Fri Feb  5 11:39:03 2016
 @@ -58,7 +58,7 @@ MAN5PODS = docs/razor-agent.conf.pod \
@@ -10,3 +10,16 @@ $OpenBSD: patch-Makefile_PL,v 1.2 2016/02/05 14:59:27 sthen Exp $
  INSTALLSITEMAN5DIR = $(DESTDIR)$(SITEPREFIX)/share/man/man5
  INSTALLVENDORMAN5DIR = $(DESTDIR)$(VENDORPREFIX)/share/man/man5
  MAN5EXT = 5
+@@ -139,10 +139,9 @@ sub MY::install {
+   my $self = shift;
+   my $inherited = $self->SUPER::install(@_);
+ 
+-  my $man5 = q{ \\
+-		$(INST_MAN5DIR) $(INSTALLMAN5DIR)};
++  $inherited =~ s{(\$\((?:DEST)?INSTALL\w*MAN1DIR\)("?))}{$1 \\
++		$2\$(INST_MAN5DIR)$2 $2\$(INSTALLMAN5DIR)$2}gm;
+ 
+-  $inherited =~ s/(\$\((?:DEST)?INSTALL\w*MAN1DIR\))/$1$man5/gm;
+ 
+   return $inherited;
+ }
