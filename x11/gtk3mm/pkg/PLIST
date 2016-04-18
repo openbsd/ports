@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/09/24 10:32:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/04/18 06:50:52 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -37,6 +37,7 @@ include/gdkmm-3.0/gdkmm/private/pixbufloader_p.h
 include/gdkmm-3.0/gdkmm/private/rectangle_p.h
 include/gdkmm-3.0/gdkmm/private/rgba_p.h
 include/gdkmm-3.0/gdkmm/private/screen_p.h
+include/gdkmm-3.0/gdkmm/private/seat_p.h
 include/gdkmm-3.0/gdkmm/private/timecoord_p.h
 include/gdkmm-3.0/gdkmm/private/types_p.h
 include/gdkmm-3.0/gdkmm/private/visual_p.h
@@ -44,6 +45,7 @@ include/gdkmm-3.0/gdkmm/private/window_p.h
 include/gdkmm-3.0/gdkmm/rectangle.h
 include/gdkmm-3.0/gdkmm/rgba.h
 include/gdkmm-3.0/gdkmm/screen.h
+include/gdkmm-3.0/gdkmm/seat.h
 include/gdkmm-3.0/gdkmm/timecoord.h
 include/gdkmm-3.0/gdkmm/types.h
 include/gdkmm-3.0/gdkmm/visual.h
@@ -380,6 +382,10 @@ include/gtkmm-3.0/gtkmm/private/separator_p.h
 include/gtkmm-3.0/gtkmm/private/separatormenuitem_p.h
 include/gtkmm-3.0/gtkmm/private/separatortoolitem_p.h
 include/gtkmm-3.0/gtkmm/private/settings_p.h
+include/gtkmm-3.0/gtkmm/private/shortcutsgroup_p.h
+include/gtkmm-3.0/gtkmm/private/shortcutssection_p.h
+include/gtkmm-3.0/gtkmm/private/shortcutsshortcut_p.h
+include/gtkmm-3.0/gtkmm/private/shortcutswindow_p.h
 include/gtkmm-3.0/gtkmm/private/sizegroup_p.h
 include/gtkmm-3.0/gtkmm/private/socket_p.h
 include/gtkmm-3.0/gtkmm/private/spinbutton_p.h
@@ -464,6 +470,10 @@ include/gtkmm-3.0/gtkmm/separator.h
 include/gtkmm-3.0/gtkmm/separatormenuitem.h
 include/gtkmm-3.0/gtkmm/separatortoolitem.h
 include/gtkmm-3.0/gtkmm/settings.h
+include/gtkmm-3.0/gtkmm/shortcutsgroup.h
+include/gtkmm-3.0/gtkmm/shortcutssection.h
+include/gtkmm-3.0/gtkmm/shortcutsshortcut.h
+include/gtkmm-3.0/gtkmm/shortcutswindow.h
 include/gtkmm-3.0/gtkmm/sizegroup.h
 include/gtkmm-3.0/gtkmm/socket.h
 include/gtkmm-3.0/gtkmm/spinbutton.h
