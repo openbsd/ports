@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/05 13:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/04/18 09:36:03 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-V =		201603
-REVISION =	1
+V =		201604
 DISTNAME =	librenms-$V
 DISTFILES =	librenms-$V{$V}.tar.gz
 

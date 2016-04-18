@@ -1,10 +1,10 @@
-$OpenBSD: patch-includes_polling_core_inc_php,v 1.1 2016/04/05 13:39:49 sthen Exp $
+$OpenBSD: patch-includes_polling_core_inc_php,v 1.2 2016/04/18 09:36:03 sthen Exp $
 
 OpenBSD snmpd(8)'s snmpEngineTime.0 is bogus
 
---- includes/polling/core.inc.php.orig	Tue Apr  5 14:33:28 2016
-+++ includes/polling/core.inc.php	Tue Apr  5 14:36:03 2016
-@@ -42,7 +42,7 @@ if (empty($uptime)) {
+--- includes/polling/core.inc.php.orig	Mon Apr 18 10:20:49 2016
++++ includes/polling/core.inc.php	Mon Apr 18 10:20:56 2016
+@@ -44,7 +44,7 @@ if (empty($uptime)) {
      }//end if
  }//end if
  

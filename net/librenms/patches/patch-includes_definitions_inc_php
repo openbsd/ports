@@ -1,11 +1,11 @@
-$OpenBSD: patch-includes_definitions_inc_php,v 1.14 2016/03/07 16:43:03 sthen Exp $
+$OpenBSD: patch-includes_definitions_inc_php,v 1.15 2016/04/18 09:36:03 sthen Exp $
 
 Minimal handling for running inside chroot. Not really recommended and some
 functionality will be lost, but it might be enough for some users.
 
---- includes/definitions.inc.php.orig	Mon Mar  7 16:28:39 2016
-+++ includes/definitions.inc.php	Mon Mar  7 16:28:49 2016
-@@ -1926,10 +1926,12 @@ $config['device_types'][$i]['text'] = 'Appliance';
+--- includes/definitions.inc.php.orig	Mon Apr 18 10:20:49 2016
++++ includes/definitions.inc.php	Mon Apr 18 10:20:56 2016
+@@ -2091,10 +2091,12 @@ $config['device_types'][$i]['text'] = 'Appliance';
  $config['device_types'][$i]['type'] = 'appliance';
  $config['device_types'][$i]['icon'] = 'appliance.png';
  
