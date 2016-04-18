@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.151 2016/04/18 06:50:02 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
@@ -6,7 +6,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.18.9
+GNOME_VERSION=		3.20.3
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
@@ -15,8 +15,8 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                1800.0   # 1800.7
-SHARED_LIBS +=  gtk-3                1800.0   # 1800.7
+SHARED_LIBS +=  gdk-3                2000.3   # 2000.3
+SHARED_LIBS +=  gtk-3                2000.3   # 2000.3
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -26,13 +26,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += pcre png pthread z
+WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += iconv intl m pcre png pthread z
 
 MULTI_PACKAGES=		-main -cups -cloudprint -guic
 
-MODULES=		devel/gettext \
-			devel/dconf \
+MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
