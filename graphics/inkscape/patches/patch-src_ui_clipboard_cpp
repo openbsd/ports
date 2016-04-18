@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_ui_clipboard_cpp,v 1.1 2016/04/18 07:57:55 ajacoutot Exp $
+
+Fix build with glib2 >=2.48.0
+http://pkgs.fedoraproject.org/cgit/rpms/inkscape.git/commit/inkscape-0.91-drop-wait-for-targets.patch?id=eb5340800b563d6b05aa5f11a2f24f2cc0d8c80e
+
+--- src/ui/clipboard.cpp.orig	Wed Jan 28 04:32:28 2015
++++ src/ui/clipboard.cpp	Mon Apr 18 09:00:03 2016
+@@ -145,8 +145,6 @@ class ClipboardManagerImpl : public ClipboardManager {
+     void _setClipboardColor(guint32);
+     void _userWarn(SPDesktop *, char const *);
+ 
+-    void _inkscape_wait_for_targets(std::list<Glib::ustring> &);
+-
+     // private properites
+     SPDocument *_clipboardSPDoc; ///< Document that stores the clipboard until someone requests it
+     Inkscape::XML::Node *_defs; ///< Reference to the clipboard document's defs node
+@@ -1222,9 +1220,7 @@ Geom::Scale ClipboardManagerImpl::_getScale(SPDesktop 
+  */
+ Glib::ustring ClipboardManagerImpl::_getBestTarget()
+ {
+-    // GTKmm's wait_for_targets() is broken, see the comment in _inkscape_wait_for_targets()
+-    std::list<Glib::ustring> targets; // = _clipboard->wait_for_targets();
+-    _inkscape_wait_for_targets(targets);
++    std::list<Glib::ustring> targets = _clipboard->wait_for_targets();
+ 
+     // clipboard target debugging snippet
+     /*
+@@ -1374,39 +1370,6 @@ void ClipboardManagerImpl::_setClipboardColor(guint32 
+ void ClipboardManagerImpl::_userWarn(SPDesktop *desktop, char const *msg)
+ {
+     desktop->messageStack()->flash(Inkscape::WARNING_MESSAGE, msg);
+-}
+-
+-
+-// GTKMM's clipboard::wait_for_targets is buggy and might return bogus, see
+-//
+-// https://bugs.launchpad.net/inkscape/+bug/296778
+-// http://mail.gnome.org/archives/gtk-devel-list/2009-June/msg00062.html
+-//
+-// for details. Until this has been fixed upstream we will use our own implementation
+-// of this method, as copied from /gtkmm-2.16.0/gtk/gtkmm/clipboard.cc.
+-void ClipboardManagerImpl::_inkscape_wait_for_targets(std::list<Glib::ustring> &listTargets)
+-{
+-    //Get a newly-allocated array of atoms:
+-    GdkAtom* targets = NULL;
+-    gint n_targets = 0;
+-    gboolean test = gtk_clipboard_wait_for_targets( gtk_clipboard_get(GDK_SELECTION_CLIPBOARD), &targets, &n_targets );
+-    if (!test || (targets == NULL)) {
+-        return;
+-    }
+-
+-    //Add the targets to the C++ container:
+-    for (int i = 0; i < n_targets; i++)
+-    {
+-        //Convert the atom to a string:
+-        gchar* const atom_name = gdk_atom_name(targets[i]);
+-
+-        Glib::ustring target;
+-        if (atom_name) {
+-            target = Glib::ScopedPtr<char>(atom_name).get(); //This frees the gchar*.
+-        }
+-
+-        listTargets.push_back(target);
+-    }
+ }
+ 
+ /* #######################################
