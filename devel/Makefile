@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1482 2016/04/16 14:07:39 danj Exp $
+# $OpenBSD: Makefile,v 1.1483 2016/04/18 15:04:24 awolk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1592,5 +1592,6 @@
      SUBDIR += xulrunner
      SUBDIR += yaml-cpp
      SUBDIR += yasm
+     SUBDIR += zeal
 
 .include <bsd.port.subdir.mk>
