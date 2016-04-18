@@ -1,6 +1,5 @@
-(comment
-  $OpenBSD: jna.clj,v 1.1 2015/10/24 14:22:14 jasper Exp $
-  Basic set of JNA tests for use with Clojure)
+;;; $OpenBSD: jna.clj,v 1.2 2016/04/18 17:33:12 jasper Exp $
+;;; Basic set of JNA tests for use with Clojure
 
 (gen-interface
  :name jna.CLibrary
