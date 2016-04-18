@@ -1,5 +1,4 @@
-This is the stable branch of nginx, as distributed by nginx.org.  It provides
-additional compiled-in modules over the version in the base system.
+This is the stable branch of nginx, as distributed by nginx.org.
 
 nginx provides FastCGI and reverse HTTP proxying, with or without caching,
 including simple load balancing and fault tolerance.
