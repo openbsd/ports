@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/06 14:44:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/18 09:48:09 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -208,7 +208,14 @@ icinga-web2/bin/
 icinga-web2/bin/icingacli
 icinga-web2/changelog.py
 icinga-web2/doc/
-icinga-web2/doc/about.md
+icinga-web2/doc/01-About.md
+icinga-web2/doc/02-Installation.md
+icinga-web2/doc/03-Configuration.md
+icinga-web2/doc/04-Resources.md
+icinga-web2/doc/05-Authentication.md
+icinga-web2/doc/06-Security.md
+icinga-web2/doc/07-Preferences.md
+icinga-web2/doc/99-Vagrant.md
 icinga-web2/doc/accessibility/
 icinga-web2/doc/accessibility/ifont-mute.html
 icinga-web2/doc/accessibility/ifont.html
@@ -217,12 +224,7 @@ icinga-web2/doc/accessibility/required-form-elements.html
 icinga-web2/doc/accessibility/skip-content.html
 icinga-web2/doc/accessibility/svg.html
 icinga-web2/doc/accessibility/text-cue-for-required-form-control-labels.html
-icinga-web2/doc/authentication.md
-icinga-web2/doc/configuration.md
-icinga-web2/doc/external_authentication.md
-icinga-web2/doc/installation.md
 icinga-web2/doc/phpdoc.xml
-icinga-web2/doc/preferences.md
 icinga-web2/doc/res/
 icinga-web2/doc/res/GraphExample#1.png
 icinga-web2/doc/res/GraphExample#2.png
@@ -234,9 +236,6 @@ icinga-web2/doc/res/GraphExample#7.1.png
 icinga-web2/doc/res/GraphExample#7.png
 icinga-web2/doc/res/GraphExample#8.png
 icinga-web2/doc/res/GraphExample#9.png
-icinga-web2/doc/resources.md
-icinga-web2/doc/security.md
-icinga-web2/doc/vagrant.md
 icinga-web2/etc/
 icinga-web2/etc/bash_completion.d/
 icinga-web2/etc/bash_completion.d/icingacli
@@ -260,6 +259,8 @@ icinga-web2/library/Icinga/Application/EmbeddedWeb.php
 icinga-web2/library/Icinga/Application/Hook/
 icinga-web2/library/Icinga/Application/Hook.php
 icinga-web2/library/Icinga/Application/Hook/GrapherHook.php
+icinga-web2/library/Icinga/Application/Hook/Ticket/
+icinga-web2/library/Icinga/Application/Hook/Ticket/TicketPattern.php
 icinga-web2/library/Icinga/Application/Hook/TicketHook.php
 icinga-web2/library/Icinga/Application/Hook/WebBaseHook.php
 icinga-web2/library/Icinga/Application/Icinga.php
@@ -288,6 +289,7 @@ icinga-web2/library/Icinga/Authentication/AdmissionLoader.php
 icinga-web2/library/Icinga/Authentication/Auth.php
 icinga-web2/library/Icinga/Authentication/AuthChain.php
 icinga-web2/library/Icinga/Authentication/Authenticatable.php
+icinga-web2/library/Icinga/Authentication/Role.php
 icinga-web2/library/Icinga/Authentication/User/
 icinga-web2/library/Icinga/Authentication/User/DbUserBackend.php
 icinga-web2/library/Icinga/Authentication/User/ExternalBackend.php
@@ -487,6 +489,7 @@ icinga-web2/library/Icinga/Util/DirectoryIterator.php
 icinga-web2/library/Icinga/Util/EnumeratingFilterIterator.php
 icinga-web2/library/Icinga/Util/File.php
 icinga-web2/library/Icinga/Util/Format.php
+icinga-web2/library/Icinga/Util/GlobFilter.php
 icinga-web2/library/Icinga/Util/String.php
 icinga-web2/library/Icinga/Util/StringHelper.php
 icinga-web2/library/Icinga/Util/TimezoneDetect.php
@@ -3289,6 +3292,7 @@ icinga-web2/modules/monitoring/configuration.php
 icinga-web2/modules/monitoring/doc/
 icinga-web2/modules/monitoring/doc/commandtransports.md
 icinga-web2/modules/monitoring/doc/configuration.md
+icinga-web2/modules/monitoring/doc/restrict-custom-variables.md
 icinga-web2/modules/monitoring/doc/security.md
 icinga-web2/modules/monitoring/library/
 icinga-web2/modules/monitoring/library/Monitoring/
@@ -3874,6 +3878,7 @@ icinga-web2/test/php/library/Icinga/UserTest.php
 icinga-web2/test/php/library/Icinga/Util/
 icinga-web2/test/php/library/Icinga/Util/DimensionTest.php
 icinga-web2/test/php/library/Icinga/Util/FileTest.php
+icinga-web2/test/php/library/Icinga/Util/GlobFilterTest.php
 icinga-web2/test/php/library/Icinga/Util/StringHelperTest.php
 icinga-web2/test/php/library/Icinga/Util/TranslatorTest.php
 icinga-web2/test/php/library/Icinga/Web/
