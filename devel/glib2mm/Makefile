@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/04/15 13:17:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2016/04/18 06:50:20 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -6,15 +6,15 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.46.4
+GNOME_VERSION=		2.48.1
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 V=			2.4
 SUBST_VARS=		V
 
-SHARED_LIBS +=  glibmm_generate_extra_defs-2.4 13.1     # 4.0
-SHARED_LIBS +=  glibmm-2.4           13.2     # 4.0
-SHARED_LIBS +=  giomm-2.4            13.2     # 4.0
+SHARED_LIBS +=  glibmm_generate_extra_defs-2.4 13.2     # 4.0
+SHARED_LIBS +=  glibmm-2.4           13.3     # 4.0
+SHARED_LIBS +=  giomm-2.4            13.3     # 4.0
 
 CATEGORIES=		devel
 
@@ -35,8 +35,11 @@ MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
 
+# clang-format
+BUILD_DEPENDS=		devel/llvm
+
 LIB_DEPENDS=		devel/libsigc++-2 \
-			devel/glib2
+			devel/glib2>=2.48.0
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		M4='m4 -g' \

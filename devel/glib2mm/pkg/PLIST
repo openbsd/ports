@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2016/04/15 13:17:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2016/04/18 06:50:20 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -1039,53 +1039,16 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalIO-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalIO.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalIdle-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalIdle.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy0-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy0.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy0__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy1-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy1.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy1__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy2-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy2.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy2__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy3-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy3.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy3__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy4-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy4.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy4__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy5-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy5.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy5__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy6-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy6.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy6__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6-members.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailedAnyType-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailedAnyType.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailedAnyType__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal.html
@@ -1093,6 +1056,7 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal__inherit__gr
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyProperty-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyProperty.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyProperty__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalTimeout-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalTimeout.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Source-members.html
@@ -1666,6 +1630,7 @@ share/doc/glibmm-${V}/reference/html/since_2_40.html
 share/doc/glibmm-${V}/reference/html/since_2_42.html
 share/doc/glibmm-${V}/reference/html/since_2_44.html
 share/doc/glibmm-${V}/reference/html/since_2_46.html
+share/doc/glibmm-${V}/reference/html/since_2_48.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
