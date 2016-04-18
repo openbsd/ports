@@ -1,0 +1,4 @@
+Zeal is an offline documentation browser inspired by Dash.  The default package
+handles 198 various doc sets that can be downloaded and later accessed while
+offline.  Users can also create their own docsets by following instructions for
+Dash: https://kapeli.com/docsets

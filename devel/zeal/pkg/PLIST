@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/18 15:01:43 awolk Exp $
+@bin bin/zeal
+share/applications/zeal.desktop
+share/icons/hicolor/128x128/apps/zeal.png
+share/icons/hicolor/16x16/apps/zeal.png
+share/icons/hicolor/24x24/apps/zeal.png
+share/icons/hicolor/32x32/apps/zeal.png
+share/icons/hicolor/64x64/apps/zeal.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
