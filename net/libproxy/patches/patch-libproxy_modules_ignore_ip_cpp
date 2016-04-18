@@ -1,0 +1,13 @@
+$OpenBSD: patch-libproxy_modules_ignore_ip_cpp,v 1.1 2016/04/18 17:44:40 awolk Exp $
+https://github.com/libproxy/libproxy/issues/24
+--- libproxy/modules/ignore_ip.cpp.orig	Mon Apr 18 18:14:53 2016
++++ libproxy/modules/ignore_ip.cpp	Mon Apr 18 18:15:26 2016
+@@ -147,7 +147,7 @@ class ip_ignore_extension : public ignore_extension { 
+ 			else
+ 			{
+ 				/* If CIDR notation was used, get the netmask */
+-				if (sscanf(mask.c_str(), "%d", &cidr) == 1)
++				if (ign_ip && sscanf(mask.c_str(), "%d", &cidr) == 1)
+ 					net_ip = sockaddr_from_cidr(ign_ip->sa_family, cidr);
+ 			}
+ 
