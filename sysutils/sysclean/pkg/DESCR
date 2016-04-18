@@ -1,4 +1,4 @@
-sysclean is a ksh(1) script designed to help removing obsolete files between
+sysclean is a perl(1) script designed to help removing obsolete files between
 upgrades.
 
 sysclean works by comparing a reference root directory against currently
