@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2016/04/18 06:51:32 ajacoutot Exp $
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.20
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,11 +12,11 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 BUILD_DEPENDS=		x11/gtk+3
 
