@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/18 15:01:43 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/18 16:57:04 jasper Exp $
 
-COMMENT =	Simple offline API documentation browser
-
-DISTNAME =	zeal-0.2.1
+COMMENT =	simple offline API documentation browser
 
 GH_ACCOUNT =	zealdocs
 GH_PROJECT =	zeal
 GH_TAGNAME =	v0.2.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -24,5 +23,7 @@ WANTLIB += xcb-keysyms
 MODULES =	devel/qmake x11/qt5
 RUN_DEPENDS =	devel/desktop-file-utils x11/gtk+3,-guic
 LIB_DEPENDS =	archivers/libarchive
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
