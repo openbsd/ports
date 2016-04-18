@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_bindings_cc,v 1.4 2014/09/16 23:41:41 jturner Exp $
+$OpenBSD: patch-src_bindings_cc,v 1.5 2016/04/18 07:15:14 ajacoutot Exp $
 
-Check ${LOCALBASE} for help file.
+Unbreak with glib2 >=2.48.0
 
---- src/bindings.cc.orig	Tue Sep 16 13:29:01 2014
-+++ src/bindings.cc	Tue Sep 16 18:45:20 2014
+--- src/bindings.cc.orig	Tue Sep 16 19:29:01 2014
++++ src/bindings.cc	Mon Apr 18 09:10:24 2016
 @@ -19,7 +19,7 @@
  
  
@@ -25,3 +25,25 @@ Check ${LOCALBASE} for help file.
              show_file_contents( L );
              CLua::Instance()->execute( "global_mode( \"text\" )" );
              return 0;
+@@ -784,19 +784,14 @@ int sleep(lua_State *L )
+     return 0;
+ }
+ 
+-
+ /**
+  * Stuff input into the input-buffer.
+  */
+ int stuff(lua_State * L)
+ {
+-    UTFString str = NULL;
++    const char *str = lua_tostring(L, -1);
+ 
+-    if (lua_isstring(L, -1))
+-        str = lua_tostring(L, 1);
+-
+-
+-    if ((str == NULL) || (str.empty()) )
++    if (str == NULL)
+         return luaL_error(L, "Missing argument to stuff(..)");
+ 
+     CInput::Instance()->add( UTFString( str ) );
