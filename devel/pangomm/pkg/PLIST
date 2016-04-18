@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/29 11:52:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/18 06:50:36 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 include/pangomm-1.4/
 include/pangomm-1.4/pangomm/
@@ -69,8 +69,6 @@ lib/pangomm-1.4/proc/m4/convert.m4
 lib/pangomm-1.4/proc/m4/convert_pango.m4
 lib/pangomm-1.4/proc/m4/convert_pangomm.m4
 lib/pkgconfig/pangomm-1.4.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/pangomm-1.4/
 share/devhelp/books/pangomm-1.4/pangomm-1.4.devhelp2
 share/doc/pangomm-1.4/
@@ -261,6 +259,17 @@ share/doc/pangomm-1.4/reference/html/namespacemembers_d.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_e.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_enum.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_eval.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_c.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_d.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_e.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_f.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_g.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_r.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_s.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_t.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_u.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_v.html
+share/doc/pangomm-1.4/reference/html/namespacemembers_eval_w.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_f.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_func.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_g.html
@@ -290,7 +299,9 @@ share/doc/pangomm-1.4/reference/html/since_1_20.html
 share/doc/pangomm-1.4/reference/html/since_1_22.html
 share/doc/pangomm-1.4/reference/html/since_1_30.html
 share/doc/pangomm-1.4/reference/html/since_1_32.html
+share/doc/pangomm-1.4/reference/html/since_1_38.html
 share/doc/pangomm-1.4/reference/html/since_1_4.html
+share/doc/pangomm-1.4/reference/html/since_1_40.html
 share/doc/pangomm-1.4/reference/html/since_1_6.html
 share/doc/pangomm-1.4/reference/html/since_1_8.html
 share/doc/pangomm-1.4/reference/html/since_2_14.html
