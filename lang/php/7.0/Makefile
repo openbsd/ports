@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/13 11:42:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/18 09:45:52 sthen Exp $
 
 PV=		7.0
 V=		${PV}.5
-REVISION-fastcgi=0
+REVISION=	1
 
 WANTLIB-main+=	stdc++ ncurses readline
 BUILD_DEPENDS+=	devel/bison
