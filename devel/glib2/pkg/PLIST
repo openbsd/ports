@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2015/11/07 05:52:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2016/04/18 06:46:30 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -53,6 +53,7 @@ include/glib-2.0/gio/gconverter.h
 include/glib-2.0/gio/gconverterinputstream.h
 include/glib-2.0/gio/gconverteroutputstream.h
 include/glib-2.0/gio/gcredentials.h
+include/glib-2.0/gio/gdatagrambased.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdbusactiongroup.h
@@ -78,6 +79,9 @@ include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
 include/glib-2.0/gio/gdrive.h
+include/glib-2.0/gio/gdtlsclientconnection.h
+include/glib-2.0/gio/gdtlsconnection.h
+include/glib-2.0/gio/gdtlsserverconnection.h
 include/glib-2.0/gio/gemblem.h
 include/glib-2.0/gio/gemblemedicon.h
 include/glib-2.0/gio/gfile.h
@@ -340,8 +344,14 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.4600.2-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.4600.2-gdb.py
+share/gdb/auto-load/usr/
+share/gdb/auto-load/usr/local/
+share/gdb/auto-load/usr/local/lib/
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.4800.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.4800.0-gdb.py
+share/gettext/its/
+share/gettext/its/gschema.its
+share/gettext/its/gschema.loc
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -413,7 +423,11 @@ share/gtk-doc/html/gio/GDBusProxy.html
 share/gtk-doc/html/gio/GDBusServer.html
 share/gtk-doc/html/gio/GDataInputStream.html
 share/gtk-doc/html/gio/GDataOutputStream.html
+share/gtk-doc/html/gio/GDatagramBased.html
 share/gtk-doc/html/gio/GDrive.html
+share/gtk-doc/html/gio/GDtlsClientConnection.html
+share/gtk-doc/html/gio/GDtlsConnection.html
+share/gtk-doc/html/gio/GDtlsServerConnection.html
 share/gtk-doc/html/gio/GEmblem.html
 share/gtk-doc/html/gio/GEmblemedIcon.html
 share/gtk-doc/html/gio/GFile.html
@@ -523,6 +537,7 @@ share/gtk-doc/html/gio/api-index-2-40.html
 share/gtk-doc/html/gio/api-index-2-42.html
 share/gtk-doc/html/gio/api-index-2-44.html
 share/gtk-doc/html/gio/api-index-2-46.html
+share/gtk-doc/html/gio/api-index-2-48.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -649,6 +664,7 @@ share/gtk-doc/html/glib/api-index-2-40.html
 share/gtk-doc/html/glib/api-index-2-42.html
 share/gtk-doc/html/glib/api-index-2-44.html
 share/gtk-doc/html/glib/api-index-2-46.html
+share/gtk-doc/html/glib/api-index-2-48.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
 share/gtk-doc/html/glib/api-index-deprecated.html
@@ -663,6 +679,7 @@ share/gtk-doc/html/glib/glib-Balanced-Binary-Trees.html
 share/gtk-doc/html/glib/glib-Base64-Encoding.html
 share/gtk-doc/html/glib/glib-Basic-Types.html
 share/gtk-doc/html/glib/glib-Bookmark-file-parser.html
+share/gtk-doc/html/glib/glib-Bounds-checked-integer-arithmetic.html
 share/gtk-doc/html/glib/glib-Byte-Arrays.html
 share/gtk-doc/html/glib/glib-Byte-Order-Macros.html
 share/gtk-doc/html/glib/glib-Caches.html
@@ -913,6 +930,9 @@ share/locale/fa/LC_MESSAGES/glib20.mo
 share/locale/fi/LC_MESSAGES/glib20.mo
 share/locale/fr/LC_MESSAGES/glib20.mo
 share/locale/ga/LC_MESSAGES/glib20.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/glib20.mo
 share/locale/gl/LC_MESSAGES/glib20.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/

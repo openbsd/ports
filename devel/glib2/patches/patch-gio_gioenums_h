@@ -1,0 +1,18 @@
+$OpenBSD: patch-gio_gioenums_h,v 1.4 2016/04/18 06:46:30 ajacoutot Exp $
+
+From 52f116e874c783789bda3ddc67df61729834bf49 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 17 Apr 2016 10:04:13 +0200
+Subject: gioenums.h: Remove trailing comma.
+
+--- gio/gioenums.h.orig	Sun Apr 17 10:50:06 2016
++++ gio/gioenums.h	Sun Apr 17 10:50:11 2016
+@@ -561,7 +561,7 @@ typedef enum {
+   G_IO_ERROR_BROKEN_PIPE,
+   G_IO_ERROR_CONNECTION_CLOSED = G_IO_ERROR_BROKEN_PIPE,
+   G_IO_ERROR_NOT_CONNECTED,
+-  G_IO_ERROR_MESSAGE_TOO_LARGE,
++  G_IO_ERROR_MESSAGE_TOO_LARGE
+ } GIOErrorEnum;
+ 
+ 
