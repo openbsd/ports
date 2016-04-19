@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2016/01/25 19:19:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2016/04/19 08:34:36 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
-DISTNAME =		ncmpcpp-0.7.3
+DISTNAME =		ncmpcpp-0.7.4
 
 EXTRACT_SUFX =		.tar.bz2
 
