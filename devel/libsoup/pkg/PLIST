@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/09/24 10:27:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/04/19 06:01:29 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -202,3 +202,5 @@ share/locale/vi/LC_MESSAGES/libsoup.mo
 share/locale/zh_CN/LC_MESSAGES/libsoup.mo
 share/locale/zh_HK/LC_MESSAGES/libsoup.mo
 share/locale/zh_TW/LC_MESSAGES/libsoup.mo
+share/vala/vapi/libsoup-${API_VERSION}.deps
+share/vala/vapi/libsoup-${API_VERSION}.vapi
