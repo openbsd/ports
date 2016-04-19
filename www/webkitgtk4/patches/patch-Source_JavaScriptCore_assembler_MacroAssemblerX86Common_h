@@ -1,0 +1,20 @@
+$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.1 2016/04/19 06:05:36 ajacoutot Exp $
+
+XXX error: macro "swap32" passed 2 arguments, but takes just 1
+XXX error: macro "swap64" passed 2 arguments, but takes just 1
+
+--- Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h.orig	Thu Apr 14 10:45:23 2016
++++ Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	Sun Apr 17 10:19:41 2016
+@@ -32,6 +32,12 @@
+ #include "AbstractMacroAssembler.h"
+ #include <wtf/Optional.h>
+ 
++/* conflicting definition in endian.h */
++#if OS(OPENBSD)
++#undef swap32
++#undef swap64
++#endif
++
+ namespace JSC {
+ 
+ class MacroAssemblerX86Common : public AbstractMacroAssembler<X86Assembler, MacroAssemblerX86Common> {

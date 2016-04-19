@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.5 2015/09/23 06:06:11 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.6 2016/04/19 06:05:36 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
 Undefined references to libc functions.
 
---- Source/cmake/OptionsCommon.cmake.orig	Mon Sep 21 09:29:46 2015
-+++ Source/cmake/OptionsCommon.cmake	Mon Sep 21 17:13:00 2015
+--- Source/cmake/OptionsCommon.cmake.orig	Thu Apr 14 10:45:24 2016
++++ Source/cmake/OptionsCommon.cmake	Sat Apr 16 13:02:54 2016
 @@ -17,10 +17,10 @@ endif ()
  
  execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
@@ -21,7 +21,7 @@ Undefined references to libc functions.
  endif ()
  
  set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-@@ -109,9 +109,9 @@ if (NOT MSVC)
+@@ -120,9 +120,9 @@ if (NOT MSVC)
      string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
  endif ()
  
@@ -32,5 +32,5 @@ Undefined references to libc functions.
 +#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
 +#endif ()
  
- # GTK uses the GNU installation directories as defaults.
- if (NOT PORT STREQUAL "GTK")
+ # Enable the usage of OpenMP.
+ #  - At this moment, OpenMP is only used as an alternative implementation

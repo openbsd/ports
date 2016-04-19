@@ -1,0 +1,117 @@
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1 2016/04/19 06:05:36 ajacoutot Exp $
+
+XXX no mcontext_t on OpenBSD
+
+--- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Wed Apr 13 18:00:00 2016
++++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Sun Apr 17 10:20:58 2016
+@@ -86,7 +86,9 @@ static void pthreadSignalHandlerSuspendResume(int, sig
+     }
+ 
+     ucontext_t* userContext = static_cast<ucontext_t*>(ucontext);
+-#if CPU(PPC)
++#if OS(OPENBSD)
++    thread->suspendedMachineContext = *userContext;
++#elif CPU(PPC)
+     thread->suspendedMachineContext = *userContext->uc_mcontext.uc_regs;
+ #else
+     thread->suspendedMachineContext = userContext->uc_mcontext;
+@@ -566,6 +568,24 @@ void* MachineThreads::Thread::Registers::stackPointer(
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD) && ENABLE(JIT)
++
++#if CPU(X86)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_esp);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_rsp);
++#elif CPU(ARM)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_SP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_sp);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[29]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_rsp);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__) && ENABLE(JIT)
+ 
+ #if CPU(X86)
+@@ -665,6 +685,24 @@ void* MachineThreads::Thread::Registers::framePointer(
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_ebp);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_rbp);
++#elif CPU(ARM)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_FP]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[29]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[30]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_rbp);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -747,6 +785,24 @@ void* MachineThreads::Thread::Registers::instructionPo
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_eip);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_rip);
++#elif CPU(ARM)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_PC]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_elr);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_pc);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_rip);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif defined(__GLIBC__)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -834,6 +890,24 @@ void* MachineThreads::Thread::Registers::llintPC() con
+     return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[4]);
+ #elif CPU(MIPS)
+     return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[12]);
++#else
++#error Unknown Architecture
++#endif
++
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_esi);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.sc_r8);
++#elif CPU(ARM)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.__gregs[_REG_R8]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[4]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[12]);
++#elif CPU(SPARC64)
++    return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_r8);
+ #else
+ #error Unknown Architecture
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/20 09:35:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/04/19 06:05:36 ajacoutot Exp $
 @bin bin/jsc
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -11,9 +11,11 @@ include/webkitgtk-${API}/JavaScriptCore/JavaScript.h
 include/webkitgtk-${API}/JavaScriptCore/WebKitAvailability.h
 include/webkitgtk-${API}/webkit2/
 include/webkitgtk-${API}/webkit2/WebKitAuthenticationRequest.h
+include/webkitgtk-${API}/webkit2/WebKitAutocleanups.h
 include/webkitgtk-${API}/webkit2/WebKitBackForwardList.h
 include/webkitgtk-${API}/webkit2/WebKitBackForwardListItem.h
 include/webkitgtk-${API}/webkit2/WebKitColorChooserRequest.h
+include/webkitgtk-${API}/webkit2/WebKitConsoleMessage.h
 include/webkitgtk-${API}/webkit2/WebKitContextMenu.h
 include/webkitgtk-${API}/webkit2/WebKitContextMenuActions.h
 include/webkitgtk-${API}/webkit2/WebKitContextMenuItem.h
@@ -59,12 +61,14 @@ include/webkitgtk-${API}/webkit2/WebKitVersion.h
 include/webkitgtk-${API}/webkit2/WebKitWebContext.h
 include/webkitgtk-${API}/webkit2/WebKitWebEditor.h
 include/webkitgtk-${API}/webkit2/WebKitWebExtension.h
+include/webkitgtk-${API}/webkit2/WebKitWebExtensionAutocleanups.h
 include/webkitgtk-${API}/webkit2/WebKitWebHitTestResult.h
 include/webkitgtk-${API}/webkit2/WebKitWebInspector.h
 include/webkitgtk-${API}/webkit2/WebKitWebPage.h
 include/webkitgtk-${API}/webkit2/WebKitWebResource.h
 include/webkitgtk-${API}/webkit2/WebKitWebView.h
 include/webkitgtk-${API}/webkit2/WebKitWebViewBase.h
+include/webkitgtk-${API}/webkit2/WebKitWebViewSessionState.h
 include/webkitgtk-${API}/webkit2/WebKitWebsiteDataManager.h
 include/webkitgtk-${API}/webkit2/WebKitWindowProperties.h
 include/webkitgtk-${API}/webkit2/webkit-web-extension.h
@@ -97,9 +101,7 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMDOMMimeTypeArray.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMNamedFlowCollection.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMPlugin.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMPluginArray.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMDOMSecurityPolicy.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMSelection.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMDOMSettableTokenList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMStringList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMStringMap.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMTokenList.h
@@ -118,7 +120,6 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMDocumentTypeUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDocumentUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMElementUnstable.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMEntityReference.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMEvent.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMEventTarget.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMEventUnstable.h
@@ -135,7 +136,6 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLAreaElementUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLAudioElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLBRElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLBaseElement.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLBaseFontElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLBodyElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLButtonElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLButtonElementUnstable.h
@@ -218,6 +218,7 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMMediaDevices.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMediaError.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMediaList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMediaQueryList.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMMediaTrackSupportedConstraints.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMessagePort.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMouseEvent.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMMouseEventUnstable.h
@@ -276,6 +277,8 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMXPathExpression.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMXPathNSResolver.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMXPathResult.h
 include/webkitgtk-${API}/webkitdom/webkitdom.h
+include/webkitgtk-${API}/webkitdom/webkitdomautocleanups-unstable.h
+include/webkitgtk-${API}/webkitdom/webkitdomautocleanups.h
 include/webkitgtk-${API}/webkitdom/webkitdomdefines-unstable.h
 include/webkitgtk-${API}/webkitdom/webkitdomdefines.h
 lib/girepository-1.0/JavaScriptCore-${API}.typelib

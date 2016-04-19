@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_h,v 1.1 2016/04/19 06:05:36 ajacoutot Exp $
+
+XXX no mcontext_t on OpenBSD
+
+--- Source/JavaScriptCore/heap/MachineStackMarker.h.orig	Mon Apr 11 08:18:43 2016
++++ Source/JavaScriptCore/heap/MachineStackMarker.h	Sat Apr 16 19:52:20 2016
+@@ -43,6 +43,10 @@
+ #endif
+ #endif
+ 
++#if OS(OPENBSD)
++typedef ucontext_t mcontext_t;
++#endif
++
+ #if OS(DARWIN)
+ typedef mach_port_t PlatformThread;
+ #elif OS(WINDOWS)
