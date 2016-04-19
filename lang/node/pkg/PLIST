@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/03/12 02:50:36 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/04/19 18:38:06 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -294,6 +294,7 @@ lib/node_modules/github-url-from-username-repo/package.json
 lib/node_modules/glob/
 lib/node_modules/glob/LICENSE
 lib/node_modules/glob/README.md
+lib/node_modules/glob/changelog.md
 lib/node_modules/glob/common.js
 lib/node_modules/glob/glob.js
 lib/node_modules/glob/node_modules/
@@ -1644,7 +1645,6 @@ lib/node_modules/npm/html/doc/cli/npm-explore.html
 lib/node_modules/npm/html/doc/cli/npm-help-search.html
 lib/node_modules/npm/html/doc/cli/npm-help.html
 lib/node_modules/npm/html/doc/cli/npm-init.html
-lib/node_modules/npm/html/doc/cli/npm-install-test.html
 lib/node_modules/npm/html/doc/cli/npm-install.html
 lib/node_modules/npm/html/doc/cli/npm-link.html
 lib/node_modules/npm/html/doc/cli/npm-logout.html
@@ -1828,7 +1828,6 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-help-search.1
 @man lib/node_modules/npm/man/man1/npm-help.1
 @man lib/node_modules/npm/man/man1/npm-init.1
-@man lib/node_modules/npm/man/man1/npm-install-test.1
 @man lib/node_modules/npm/man/man1/npm-install.1
 @man lib/node_modules/npm/man/man1/npm-link.1
 @man lib/node_modules/npm/man/man1/npm-logout.1
@@ -2247,6 +2246,7 @@ lib/node_modules/realize-package-specifier/README.md
 lib/node_modules/realize-package-specifier/index.js
 lib/node_modules/realize-package-specifier/package.json
 lib/node_modules/request/
+lib/node_modules/request/.eslintrc
 lib/node_modules/request/.npmignore
 lib/node_modules/request/.travis.yml
 lib/node_modules/request/CHANGELOG.md

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/12 02:50:36 abieber Exp $
+# $OpenBSD: Makefile,v 1.45 2016/04/19 18:38:06 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v4.4.0
+NODE_VERSION=	v4.4.3
 
 PLEDGE_VER=	1.1.0
 DISTFILES=	node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
@@ -32,8 +32,8 @@ MASTER_SITES=	${HOMEPAGE}dist/${NODE_VERSION}/
 MODULES=	gcc4 \
 		lang/python
 
-MODGCC4_LANGS =         c c++
-MODGCC4_ARCHS =         *
+MODGCC4_LANGS =	c c++
+MODGCC4_ARCHS =	*
 
 WANTLIB += c execinfo lib/eopenssl/crypto lib/eopenssl/ssl kvm m pthread
 WANTLIB += util z
