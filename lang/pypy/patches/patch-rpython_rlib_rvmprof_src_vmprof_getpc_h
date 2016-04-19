@@ -1,0 +1,12 @@
+$OpenBSD: patch-rpython_rlib_rvmprof_src_vmprof_getpc_h,v 1.1 2016/04/19 11:14:54 edd Exp $
+--- rpython/rlib/rvmprof/src/vmprof_getpc.h.orig	Tue Apr  5 14:40:47 2016
++++ rpython/rlib/rvmprof/src/vmprof_getpc.h	Tue Apr  5 14:41:21 2016
+@@ -66,6 +66,8 @@
+ #elif defined(HAVE_CYGWIN_SIGNAL_H)
+ #include <cygwin/signal.h>
+ typedef ucontext ucontext_t;
++#elif defined(__OpenBSD__)
++#include <signal.h>
+ #endif
+ 
+ 

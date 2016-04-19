@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/01/20 14:05:12 edd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/19 11:14:54 edd Exp $
 bin/pypy
 lib/libpypy-c.so
 pypy/
@@ -49,6 +49,7 @@ pypy/include/pymem.h
 pypy/include/pyport.h
 pypy/include/pypy_decl.h
 pypy/include/pypy_macros.h
+pypy/include/pypy_structmember_decl.h
 pypy/include/pysignals.h
 pypy/include/pystate.h
 pypy/include/pythonrun.h
@@ -2155,10 +2156,12 @@ pypy/lib-python/2.7/test/badsyntax_future9.py
 pypy/lib-python/2.7/test/badsyntax_nocaret.py
 pypy/lib-python/2.7/test/buffer_tests.py
 pypy/lib-python/2.7/test/capath/
+pypy/lib-python/2.7/test/capath/0e4015b9.0
 pypy/lib-python/2.7/test/capath/4e1295a3.0
 pypy/lib-python/2.7/test/capath/5ed36f99.0
 pypy/lib-python/2.7/test/capath/6e88d7b8.0
 pypy/lib-python/2.7/test/capath/99d0fa06.0
+pypy/lib-python/2.7/test/capath/ce7b8643.0
 pypy/lib-python/2.7/test/cfgparser.1
 pypy/lib-python/2.7/test/check_soundcard.vbs
 pypy/lib-python/2.7/test/cjkencodings/
@@ -2366,7 +2369,6 @@ pypy/lib-python/2.7/test/fork_wait.py
 pypy/lib-python/2.7/test/formatfloat_testcases.txt
 pypy/lib-python/2.7/test/gdb_sample.py
 pypy/lib-python/2.7/test/greyrgb.uue
-pypy/lib-python/2.7/test/https_svn_python_org_root.pem
 pypy/lib-python/2.7/test/ieee754.txt
 pypy/lib-python/2.7/test/imghdrdata/
 pypy/lib-python/2.7/test/imghdrdata/python.bmp
@@ -3017,7 +3019,7 @@ pypy/lib_pypy/__init__.py
 pypy/lib_pypy/__init__.pyc
 pypy/lib_pypy/_audioop_build.py
 pypy/lib_pypy/_audioop_build.pyc
-pypy/lib_pypy/_audioop_cffi.pypy-26.so
+pypy/lib_pypy/_audioop_cffi.pypy-41.so
 pypy/lib_pypy/_codecs_cn.py
 pypy/lib_pypy/_codecs_cn.pyc
 pypy/lib_pypy/_codecs_hk.py
@@ -3064,7 +3066,7 @@ pypy/lib_pypy/_curses.py
 pypy/lib_pypy/_curses.pyc
 pypy/lib_pypy/_curses_build.py
 pypy/lib_pypy/_curses_build.pyc
-pypy/lib_pypy/_curses_cffi.pypy-26.so
+pypy/lib_pypy/_curses_cffi.pypy-41.so
 pypy/lib_pypy/_curses_panel.py
 pypy/lib_pypy/_curses_panel.pyc
 pypy/lib_pypy/_elementtree.py
@@ -3075,14 +3077,14 @@ pypy/lib_pypy/_functools.py
 pypy/lib_pypy/_functools.pyc
 pypy/lib_pypy/_gdbm_build.py
 pypy/lib_pypy/_gdbm_build.pyc
-pypy/lib_pypy/_gdbm_cffi.pypy-26.so
+pypy/lib_pypy/_gdbm_cffi.pypy-41.so
 pypy/lib_pypy/_marshal.py
 pypy/lib_pypy/_marshal.pyc
 pypy/lib_pypy/_md5.py
 pypy/lib_pypy/_md5.pyc
 pypy/lib_pypy/_pwdgrp_build.py
 pypy/lib_pypy/_pwdgrp_build.pyc
-pypy/lib_pypy/_pwdgrp_cffi.pypy-26.so
+pypy/lib_pypy/_pwdgrp_cffi.pypy-41.so
 pypy/lib_pypy/_pypy_interact.py
 pypy/lib_pypy/_pypy_interact.pyc
 pypy/lib_pypy/_pypy_irc_topic.py
@@ -3103,19 +3105,23 @@ pypy/lib_pypy/_sqlite3.py
 pypy/lib_pypy/_sqlite3.pyc
 pypy/lib_pypy/_sqlite3_build.py
 pypy/lib_pypy/_sqlite3_build.pyc
-pypy/lib_pypy/_sqlite3_cffi.pypy-26.so
+pypy/lib_pypy/_sqlite3_cffi.pypy-41.so
 pypy/lib_pypy/_structseq.py
 pypy/lib_pypy/_structseq.pyc
 pypy/lib_pypy/_subprocess.py
 pypy/lib_pypy/_subprocess.pyc
 pypy/lib_pypy/_syslog_build.py
 pypy/lib_pypy/_syslog_build.pyc
-pypy/lib_pypy/_syslog_cffi.pypy-26.so
+pypy/lib_pypy/_syslog_cffi.pypy-41.so
 pypy/lib_pypy/_testcapi.py
 pypy/lib_pypy/_testcapi.pyc
 pypy/lib_pypy/_tkinter/
 pypy/lib_pypy/_tkinter/__init__.py
 pypy/lib_pypy/_tkinter/__init__.pyc
+pypy/lib_pypy/_tkinter/__pycache__/
+pypy/lib_pypy/_tkinter/__pycache__/_cffi__g15c874e3x76499050.pypy-41.so
+pypy/lib_pypy/_tkinter/__pycache__/_tkinter/
+pypy/lib_pypy/_tkinter/__pycache__/_tkinter/__pycache__/
 pypy/lib_pypy/_tkinter/app.py
 pypy/lib_pypy/_tkinter/app.pyc
 pypy/lib_pypy/_tkinter/license.terms
@@ -3123,7 +3129,7 @@ pypy/lib_pypy/_tkinter/tclobj.py
 pypy/lib_pypy/_tkinter/tclobj.pyc
 pypy/lib_pypy/_tkinter/tklib_build.py
 pypy/lib_pypy/_tkinter/tklib_build.pyc
-pypy/lib_pypy/_tkinter/tklib_cffi.pypy-26.so
+pypy/lib_pypy/_tkinter/tklib_cffi.pypy-41.so
 pypy/lib_pypy/audioop.py
 pypy/lib_pypy/audioop.pyc
 pypy/lib_pypy/cPickle.py
@@ -3142,6 +3148,7 @@ pypy/lib_pypy/cffi.egg-info/top_level.txt
 pypy/lib_pypy/cffi/__init__.py
 pypy/lib_pypy/cffi/__init__.pyc
 pypy/lib_pypy/cffi/_cffi_include.h
+pypy/lib_pypy/cffi/_embedding.h
 pypy/lib_pypy/cffi/_pycparser/
 pypy/lib_pypy/cffi/_pycparser/README
 pypy/lib_pypy/cffi/_pycparser/__init__.py

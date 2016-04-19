@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_pypy__tkinter_tklib_build_py,v 1.1 2015/08/27 14:21:32 edd Exp $
---- lib_pypy/_tkinter/tklib_build.py.orig	Mon Mar 23 16:17:54 2015
-+++ lib_pypy/_tkinter/tklib_build.py	Thu Apr  2 19:25:50 2015
-@@ -119,9 +119,9 @@ void Tcl_FindExecutable(char *argv0);
+$OpenBSD: patch-lib_pypy__tkinter_tklib_build_py,v 1.2 2016/04/19 11:14:54 edd Exp $
+--- lib_pypy/_tkinter/tklib_build.py.orig	Fri Mar 18 17:52:25 2016
++++ lib_pypy/_tkinter/tklib_build.py	Tue Apr  5 14:40:36 2016
+@@ -6,9 +6,9 @@ import sys, os
  # XXX find a better way to detect paths
  # XXX pick up CPPFLAGS and LDFLAGS and add to these paths?
  if sys.platform.startswith("openbsd"):

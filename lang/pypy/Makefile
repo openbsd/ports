@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/26 12:11:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/04/19 11:14:54 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -13,8 +13,8 @@ COMMENT =		fast implementation of the Python language
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			4.0.1
-BOOTSTRAP_V =		${V}-1
+V =			5.0.1
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
@@ -28,8 +28,9 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi gdbm m ncurses panel
-WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
+WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
+WANTLIB +=		ncurses panel pthread sqlite3 ssl ${MODTCL_LIB}
+WANTLIB +=		${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
@@ -46,7 +47,7 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 # if adding archs, list *all* bootstraps in SUPDISTFILES
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
-MODULES +=		devel/gettext lang/python gcc4 lang/tcl x11/tk
+MODULES +=		lang/python gcc4 lang/tcl x11/tk
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c
@@ -76,17 +77,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib_build.py
 	# prevent crap in the plist
 	rm ${WRKSRC}/lib_pypy/_tkinter/tklib_build.py.beforesubst
-
-# When updating the port, see pypy/tool/release/package.py and check for
-# new modules which require a cffi cache. In post-fake we must mimic
-# the function create_cffi_import_libraries().
-CFFI_CACHES =		_sqlite3_build.py \
-			_audioop_build.py \
-			_tkinter/tklib_build.py \
-			_curses_build.py \
-			_syslog_build.py \
-			_gdbm_build.py \
-			_pwdgrp_build.py
 
 do-build:
 .if ${FLAVOR:Mno_bootstrap}
@@ -125,16 +115,13 @@ do-install:
 	${PYPY_LD_LIBRARY_PATH} sh -c \
 		'find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
 		  | xargs ${PREFIX}/pypy/bin/pypy -m compileall'
-	find ${PREFIX}/pypy/lib_pypy/ -name '*.c' -or -name '*.o' | xargs rm
 	# make cffi shared objects
-.for i in ${CFFI_CACHES}
-	cd ${WRKSRC}/lib_pypy && ${PYPY_LD_LIBRARY_PATH} \
+	cd ${WRKSRC} && ${PYPY_LD_LIBRARY_PATH} \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include \
-		${PREFIX}/pypy/bin/pypy ${i}
-.endfor
-	cp ${WRKSRC}/lib_pypy/*.so ${PREFIX}/pypy/lib_pypy/
-	cp ${WRKSRC}/lib_pypy/_tkinter/*.so ${PREFIX}/pypy/lib_pypy/_tkinter/
+		PYTHONPATH=`pwd` \
+		${PREFIX}/pypy/bin/pypy pypy/tool/build_cffi_imports.py
+	find ${PREFIX}/pypy/lib_pypy/ -name '*.c' -or -name '*.o' | xargs rm
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy

@@ -1,0 +1,14 @@
+$OpenBSD: patch-rpython_rlib_rvmprof_src_vmprof_config_h,v 1.1 2016/04/19 11:14:54 edd Exp $
+--- rpython/rlib/rvmprof/src/vmprof_config.h.orig	Fri Mar 18 17:52:25 2016
++++ rpython/rlib/rvmprof/src/vmprof_config.h	Tue Apr  5 14:43:56 2016
+@@ -1,6 +1,10 @@
++#if !defined(__OpenBSD__)
+ #define HAVE_SYS_UCONTEXT_H
++#endif
+ #if defined(__FreeBSD__) || defined(__APPLE__)
+ #define PC_FROM_UCONTEXT uc_mcontext.mc_rip
++#elif defined(__OpenBSD__)
++#define PC_FROM_UCONTEXT sc_rip
+ #else
+ #define PC_FROM_UCONTEXT uc_mcontext.gregs[REG_RIP]
+ #endif
