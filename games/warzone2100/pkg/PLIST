@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/01 07:29:32 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/04/19 11:20:42 kirby Exp $
 @bin bin/warzone2100
 @man man/man6/warzone2100.6
 share/applications/warzone2100.desktop
@@ -58,7 +58,6 @@ share/doc/warzone2100/images/unitordersmenu.jpg
 share/doc/warzone2100/images/wss.png
 share/doc/warzone2100/images/www.png
 share/doc/warzone2100/quickstartguide.html
-share/icons/
 share/icons/warzone2100.png
 share/locale/ca_ES/
 share/locale/ca_ES/LC_MESSAGES/
@@ -67,8 +66,6 @@ share/locale/cs/LC_MESSAGES/warzone2100.mo
 share/locale/da/LC_MESSAGES/warzone2100.mo
 share/locale/de/LC_MESSAGES/warzone2100.mo
 share/locale/el/LC_MESSAGES/warzone2100.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/warzone2100.mo
 share/locale/es/LC_MESSAGES/warzone2100.mo
 share/locale/et_EE/
@@ -87,8 +84,6 @@ share/locale/ko/LC_MESSAGES/warzone2100.mo
 share/locale/la/
 share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/warzone2100.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/warzone2100.mo
 share/locale/nb/LC_MESSAGES/warzone2100.mo
 share/locale/nl/LC_MESSAGES/warzone2100.mo

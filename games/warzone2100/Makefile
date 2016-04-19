@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/01 19:33:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.27 2016/04/19 11:20:42 kirby Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-3.1.3
+DISTNAME=	warzone2100-3.1.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
@@ -15,11 +15,11 @@ HOMEPAGE=	http://wz2100.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLEW GLU QtNetwork QtScript SDL X11 Xrandr c fontconfig
-WANTLIB += freetype fribidi m ogg openal physfs png pthread stdc++
-WANTLIB += theora vorbis vorbisfile z
+WANTLIB += freetype fribidi iconv intl m ogg openal physfs png pthread
+WANTLIB += stdc++ theora vorbis vorbisfile z
 
-MODULES=	devel/gettext \
-		x11/qt4
+MODULES=	x11/qt4
+
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
 		audio/openal>=20110627 \
@@ -34,13 +34,13 @@ BUILD_DEPENDS=	archivers/unzip \
 		textproc/asciidoc
 RUN_DEPENDS=	devel/desktop-file-utils
 
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --with-distributor="OpenBSD"
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		PKG_CONFIG_LIBDIR="/usr/lib/pkgconfig:${X11BASE}/lib/pkgconfig:${LOCALBASE}/lib/pkgconfig:${LOCALBASE}/lib/qt4/pkgconfig" \
 		ac_cv_path_MOC4="${LOCALBASE}/bin/moc4" \
 		ac_cv_path_UIC4="${LOCALBASE}/bin/uic4"
 
