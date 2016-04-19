@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_classes_action_movie_vala,v 1.1 2016/04/19 19:36:33 jasper Exp $
+
+/usr/obj/ports/pdfpc-4.0.2/pdfpc-4.0.2/src/classes/action/movie.vala:540.24-540.39:
+error: use `new' operator to create new objects
+            var info = Gst.Video.Info();
+                       ^^^^^^^^^^^^^^^^
+/usr/obj/ports/pdfpc-4.0.2/pdfpc-4.0.2/src/classes/action/movie.vala:540.17-540.39:
+error: var declaration not allowed with non-typed initializer
+            var info = Gst.Video.Info();
+                ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/obj/ports/pdfpc-4.0.2/pdfpc-4.0.2/src/classes/action/movie.vala:541.13-541.26:
+error: The name `from_caps' does not exist in the context of `GLib.info'
+            info.from_caps(caps);
+            ^^^^^^^^^^^^^^
+/usr/obj/ports/pdfpc-4.0.2/pdfpc-4.0.2/src/classes/action/movie.vala:542.25-542.34:
+error: The name `width' does not exist in the context of `GLib.info'
+            int width = info.width, height = info.height;
+                        ^^^^^^^^^^
+/usr/obj/ports/pdfpc-4.0.2/pdfpc-4.0.2/src/classes/action/movie.vala:542.46-542.56:
+error: The name `height' does not exist in the context of `GLib.info'
+            int width = info.width, height = info.height;
+                                             ^^^^^^^^^^^
+
+--- src/classes/action/movie.vala.orig	Tue Apr 19 21:28:46 2016
++++ src/classes/action/movie.vala	Tue Apr 19 21:28:51 2016
+@@ -537,7 +537,7 @@ namespace pdfpc {
+          * for the view with the controls.)
+          */
+         public void on_prepare(Gst.Element overlay, Gst.Caps caps) {
+-            var info = Gst.Video.Info();
++            var info = new Gst.Video.Info();
+             info.from_caps(caps);
+             int width = info.width, height = info.height;
+             this.scalex = (double) width / rect.width;
