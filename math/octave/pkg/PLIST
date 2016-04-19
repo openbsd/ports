@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/07/24 14:54:01 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/04/19 05:55:44 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -875,37 +875,15 @@ libexec/octave/site/exec/${GNU_ARCH}/
 share/appdata/
 share/appdata/www.octave.org-octave.appdata.xml
 share/applications/www.octave.org-octave.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/octave.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/octave.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/octave.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/octave.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/octave.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/octave.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/octave.png
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/octave.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/octave.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/octave.svg
 share/octave/
 share/octave/${VERSION}/
@@ -1036,6 +1014,10 @@ share/octave/${VERSION}/etc/tests/fixed/classes/@Pork/gurk.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Pork/private/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Pork/private/myStash.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Pork/set.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@SizeTester/
+share/octave/${VERSION}/etc/tests/fixed/classes/@SizeTester/SizeTester.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@SizeTester/numel.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@SizeTester/size.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Sneetch/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Sneetch/Sneetch.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Sneetch/display.m
@@ -1170,6 +1152,7 @@ share/octave/${VERSION}/etc/tests/libinterp/corefcn/dlmread.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/dot.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/eig.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/ellipj.cc-tst
+share/octave/${VERSION}/etc/tests/libinterp/corefcn/error.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/fft.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/fft2.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/file-io.cc-tst

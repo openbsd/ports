@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.83 2016/03/11 20:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2016/04/19 05:55:44 steven Exp $
 
 # sparc: fPIC version of libgcc.a needed but not available
 NOT_FOR_ARCHS =	sparc
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.0.0
-REVISION =	3
+VERSION =	4.0.1
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		6.0 # 3.0
-SHARED_LIBS +=	octgui		0.0 # 1.0
-SHARED_LIBS +=	octinterp	5.0 # 3.0
+SHARED_LIBS +=	octave		7.0 # 3.0
+SHARED_LIBS +=	octgui		1.0 # 1.0
+SHARED_LIBS +=	octinterp	6.0 # 3.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
