@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.144 2016/04/19 19:48:28 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -13,7 +13,8 @@ HOMEPAGE =	http://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
+MASTER_SITES =	${HOMEPAGE}files/v3.5/ \
+		${HOMEPAGE}files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,7 +26,7 @@ WANTLIB += archive c curl expat form jsoncpp m ncurses pthread stdc++ z
 BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
 
-BUILD_DEPENDS +=	textproc/py-sphinx>=1.1.3p1
+BUILD_DEPENDS +=	textproc/py-sphinx>=1.4
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/jsoncpp \
