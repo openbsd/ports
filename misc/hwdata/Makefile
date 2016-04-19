@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/23 06:50:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/04/19 06:25:29 ajacoutot Exp $
 
 COMMENT=		hardware identification and configuration data
 
-DISTNAME=		hwdata-0.287
+DISTNAME=		hwdata-0.288
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		misc
