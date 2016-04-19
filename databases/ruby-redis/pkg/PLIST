@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/11/17 06:42:00 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/04/19 07:39:16 dcoppa Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.travis/
@@ -52,6 +52,7 @@ ${GEM_LIB}/gems/${DISTNAME}/redis.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/bitpos_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/blocking_commands_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/client_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/command_map_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_hashes_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/commands_on_hyper_log_log_test.rb
@@ -105,12 +106,23 @@ ${GEM_LIB}/gems/${DISTNAME}/test/scripting_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sentinel_command_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sentinel_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sorting_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/ssl_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/
 ${GEM_LIB}/gems/${DISTNAME}/test/support/connection/
 ${GEM_LIB}/gems/${DISTNAME}/test/support/connection/hiredis.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/connection/ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/connection/synchrony.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/redis_mock.rb
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/gen_certs.sh
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/trusted-ca.crt
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/trusted-ca.key
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/trusted-cert.crt
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/trusted-cert.key
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/untrusted-ca.crt
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/untrusted-ca.key
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/untrusted-cert.crt
+${GEM_LIB}/gems/${DISTNAME}/test/support/ssl/untrusted-cert.key
 ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/
 ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/synchrony.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/wire/thread.rb
