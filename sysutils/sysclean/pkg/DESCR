@@ -1,5 +1,4 @@
-sysclean is a perl(1) script designed to help removing obsolete files between
-upgrades.
+sysclean is a script designed to help removing obsolete files between upgrades.
 
 sysclean works by comparing a reference root directory against currently
 installed files. It considers standard system files, configuration files
