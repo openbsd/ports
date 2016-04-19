@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.80 2016/04/18 09:45:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.81 2016/04/19 06:19:41 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -422,7 +422,7 @@ post-install:
 
 	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/php.conf
-	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g;s,!!MV!!,${PV:R}" \
+	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g;s,!!MV!!,${PV:R},g" \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 
 .for m in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
