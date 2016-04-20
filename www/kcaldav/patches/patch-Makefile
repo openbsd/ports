@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+--- Makefile.orig	Thu Mar  3 13:22:28 2016
++++ Makefile	Tue Apr 19 07:41:49 2016
+@@ -4,6 +4,9 @@
+ # I have added defaults for all of the systems that I use.
+ # Good luck!
+ 
++# This is the file-system root for the CGI and web
++# programs and files.
++#WWWPREFIX	 = /var/www/
+ # This is the directory prepended to all calendar requests.
+ # It is relative to the CGI process's file-system root.
+ # It contains the database.
+@@ -34,12 +37,13 @@
+ 
+ # ...and this for deployment on BSD.lv, which has its static files in a
+ # virtual host and runs within a chroot(2).
++WWWPREFIX	 = /var/www
+ CALDIR		 = /caldav
+-CALPREFIX	 = /var/www/caldav
++CALPREFIX	 = $(WWWPREFIX)/caldav
+ HTDOCS	 	 = /kcaldav
+-HTDOCSPREFIX	 = /var/www/vhosts/www.bsd.lv/htdocs/kcaldav
++HTDOCSPREFIX	 = $(WWWPREFIX)/htdocs/kcaldav
+ CGIURI		 = /cgi-bin/kcaldav.cgi
+-CGIPREFIX	 = /var/www/cgi-bin
++CGIPREFIX	 = $(WWWPREFIX)/cgi-bin
+ PREFIX		 = /usr/local
+ 
+ # Add any special dependency directives here.
+@@ -52,7 +56,7 @@ PREFIX		 = /usr/local
+ #### For OpenBSD:
+ LIBS		 = -lexpat -lm -lsqlite3
+ STATIC		 = -static
+-CPPFLAGS	+= -I/usr/local/include -DLOGTIMESTAMP=1 -DDEBUG=1
++CPPFLAGS	+= -I/usr/local/include -DLOGTIMESTAMP=1 -DDEBUG=0
+ BINLDFLAGS	 = -L/usr/local/lib
+ 
+ #### For Mac OS X:

@@ -1,0 +1,5 @@
+kCalDAV is a simple, safe, and minimal CalDAV server depending only on
+kcgi(3), SQLite, and expat(3). The ISO C source code is ISC licensed.
+For the time being, it works only for simple setups, for example, a
+calendar collection shared between Mozilla Lightning, Mac OS X iCal,
+and iOS7 (iPhone4) clients.

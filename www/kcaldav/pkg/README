@@ -1,0 +1,59 @@
+$OpenBSD: README,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Administrator Quick Start
+=========================
+  Create users by running "kcaldav.passwd -C -u <user>".
+  Read kcaldav.passwd(1) for more details about creating
+  new calenders for users, changing email address and other
+  options.
+
+User Quick Start
+================
+  User's can manage their account settings, create calendars
+  and find the URL for use with their calendar application
+  by browsing to: http://localhost/kcaldav/home.html
+
+Security
+========
+  kcaldav.cgi uses http authentication for user security.
+  Install a tls certificate to ensure privacy of connection.
+
+Porting Notes: Write Ahead Logging
+==================================
+  As implemented in the original source, kcaldav use sqlite3(3)
+  Write Ahead Logging (WAL). WAL requires write access to /tmp.
+
+  This port disables WAL due to the expectation kcaldav will be
+  running in a chroot environment which may not have a /tmp dir.
+
+  To re-enable WAL:
+
+  Open the kcaldav.db:
+
+  % doas sqlite3 caldav/kcaldav.db
+
+  Type:
+
+  sqlite> PRAGMA journal_mode=WAL;
+
+  To disable WAL later open the kcaldav db and type:
+
+  sqlite> PRAGMA journal_mode=DELETE;
+
+  If you plan to run kcaldav in a chroot environment you must
+  create a /tmp directory in the chroot and it must be writable
+  by the httpd daemon account:
+
+  % doas mkdir /var/www/tmp
+  % doas chown www:daemon /var/www/tmp
+  % doas chmod 755 /var/www/tmp
+
+  For more details about WAL and temp directory requirements
+  see:
+
+  https://www.sqlite.org/wal.html
+  https://www.sqlite.org/c3ref/temp_directory.html

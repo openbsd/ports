@@ -1,0 +1,12 @@
+$OpenBSD: patch-kcaldav_passwd_in_1,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+--- kcaldav.passwd.in.1.orig	Thu Apr 14 22:35:31 2016
++++ kcaldav.passwd.in.1	Thu Apr 14 22:35:57 2016
+@@ -125,7 +125,7 @@ binary, you might use a dummy
+ user owning the file.
+ .Bd -literal -offset indent
+ # chown kcaldav @PREFIX@/bin/kcaldav.passwd
+-# chmod u+s @PREFIX/bin/kcaldav.passwd
++# chmod u+s @PREFIX@/bin/kcaldav.passwd
+ # sudo -u kcaldav kcaldav.passwd -C -u <user>
+ .Ed
+ .Pp

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+@bin bin/kcaldav.passwd
+include/libkcaldav.h
+lib/libkcaldav.a
+@man man/man1/kcaldav.passwd.1
+@man man/man3/libkcaldav.3
+@man man/man8/kcaldav.8
+share/doc/pkg-readmes/${FULLPKGNAME}
+@cwd /var/www
+caldav/
+@bin cgi-bin/kcaldav
+@bin cgi-bin/kcaldav.cgi
+htdocs/kcaldav/
+htdocs/kcaldav/collection.html
+htdocs/kcaldav/collection.min.js
+htdocs/kcaldav/home.html
+htdocs/kcaldav/home.min.js
+htdocs/kcaldav/md5.min.js
+htdocs/kcaldav/script.min.js
+htdocs/kcaldav/style.css
