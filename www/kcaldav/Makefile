@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/20 15:12:18 jturner Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c expat m sqlite3
 
 MASTER_SITES =		http://kristaps.bsd.lv/kcaldav/snapshots/
-DISTFILES =		kcaldav.tgz
+EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		www/kcgi
 
