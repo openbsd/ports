@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2015/09/28 12:02:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2016/04/20 06:21:35 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.46.0
+GNOME_VERSION=		1.48.0
 GNOME_PROJECT=		gobject-introspection
 
 CATEGORIES=		devel
@@ -16,11 +16,11 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # Tools: GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		devel/gettext \
-			lang/python \
+MODULES=		lang/python \
 			x11/gnome
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pcre pthread z
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
+WANTLIB += intl m pcre pthread z
 
 LIB_DEPENDS=		devel/glib2
 
@@ -31,11 +31,21 @@ BUILD_DEPENDS=		devel/bison \
 RUN_DEPENDS=		graphics/cairo \
 			www/py-mako
 
+# XXX: gi-tester uses "-B" (--ignore-blank-lines)
+TEST_DEPENDS=		textproc/gdiff
+# XXX: tests/scanner/test_transformer.py fails otherwise
+TEST_DEPENDS+=		textproc/gsed
+
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gobject-introspection/giscanner/*.{a,la}
+
+# XXX: tidy-up some GNU-isms; see above.
+pre-test:
+	sed -i 's,^\([ \t]*\)diff,\1gdiff,' ${WRKSRC}/tests/gi-tester
+	sed -i 's,\"sed ,\"gsed ,g' ${WRKSRC}/tests/scanner/test_transformer.py
 
 .include <bsd.port.mk>
