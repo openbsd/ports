@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.264 2016/04/04 12:05:37 sthen Exp $
+$OpenBSD: user.list,v 1.265 2016/04/20 22:19:04 edd Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -276,3 +276,4 @@ id  user		group		port options
 765 _hedgewars		_hedgewars	games/hedgewars
 766 _kibana		_kibana		www/kibana
 767 _squeezelite	_squeezelite	audio/squeezelite
+768 _syncthing		_syncthing	net/syncthing
