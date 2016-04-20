@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/18 05:47:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/04/20 06:04:17 ajacoutot Exp $
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.4.11
+# XXX issues with pypi MASTER_SITES
+MODPY_EGG_VERSION=	1.4.12
 DISTNAME=		botocore-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+
+GH_ACCOUNT=		boto
+GH_PROJECT=		botocore
+GH_TAGNAME=		${MODPY_EGG_VERSION}
 
 CATEGORIES=		net devel
 
@@ -17,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MODPY_PI=		Yes
+#MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
