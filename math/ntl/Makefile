@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/21 08:17:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.41 2016/04/20 07:59:45 benoit Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
 DISTNAME =	ntl-9.7.0
+REVISION =	0
 SHARED_LIBS =	ntl	8.0	# 0.0
 CATEGORIES =	math
 
@@ -25,7 +26,8 @@ CONFIGURE_STYLE = 	simple
 CONFIGURE_ARGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}" \
 			LIBntl_VERSION=${LIBntl_VERSION} \
-			SHARED=on DEF_PREFIX="${LOCALBASE}"
+			SHARED=on DEF_PREFIX="${LOCALBASE}" \
+			NATIVE=off
 
 WRKBUILD =		${WRKSRC}/src
 
