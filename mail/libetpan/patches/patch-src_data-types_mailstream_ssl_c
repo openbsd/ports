@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_data-types_mailstream_ssl_c,v 1.1 2016/04/20 10:18:16 danj Exp $
+
+When encrypting the connection with STARTTLS the only method
+allowed was TLSv1. Change this to allow TLSv1.2 (or whatever the
+strongest method is).
+
+Additionally tls_data_new() and ssl_data_new() did the same (with
+exception to the nailed method in tls_data_new()), so drop one
+of them.
+https://github.com/dinhviethoa/libetpan/commit/7f1f97f4d59d5724af97f4d32424c2841715561c.patch
+
+--- src/data-types/mailstream_ssl.c.orig	Tue Apr 19 14:04:46 2016
++++ src/data-types/mailstream_ssl.c	Tue Apr 19 14:03:25 2016
+@@ -485,15 +485,21 @@ again:
+ static struct mailstream_ssl_data * ssl_data_new(int fd, time_t timeout,
+ 	void (* callback)(struct mailstream_ssl_context * ssl_context, void * cb_data), void * cb_data)
+ {
+-  return ssl_data_new_full(fd, timeout, SSLv23_client_method(), callback, cb_data);
++  return ssl_data_new_full(fd, timeout,
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
++		TLS_client_method(),
++#else
++	/* Despite their name the SSLv23_*method() functions have nothing to do
++	 * with the availability of SSLv2 or SSLv3. What these functions do is
++	 * negotiate with the peer the highest available SSL/TLS protocol version
++	 * available. The name is as it is for historic reasons. This is a very
++	 * common confusion and is the main reason why these names have been
++	 * deprecated in the latest dev version of OpenSSL. */
++		SSLv23_client_method(),
++#endif
++		callback, cb_data);
+ }
+ 
+-static struct mailstream_ssl_data * tls_data_new(int fd, time_t timeout,
+-  void (* callback)(struct mailstream_ssl_context * ssl_context, void * cb_data), void * cb_data)
+-{
+-  return ssl_data_new_full(fd, timeout, TLSv1_client_method(), callback, cb_data);
+-}
+-
+ #else
+ 
+ static struct mailstream_ssl_context * mailstream_ssl_context_new(gnutls_session session, int fd);
+@@ -625,11 +631,6 @@ static struct mailstream_ssl_data * ssl_data_new(int f
+  err:
+   return NULL;
+ }
+-static struct mailstream_ssl_data * tls_data_new(int fd, time_t timeout,
+-  void (* callback)(struct mailstream_ssl_context * ssl_context, void * cb_data), void * cb_data)
+-{
+-  return ssl_data_new(fd, timeout, callback, cb_data);
+-}
+ #endif
+ 
+ static void  ssl_data_free(struct mailstream_ssl_data * ssl_data)
+@@ -681,10 +682,7 @@ static mailstream_low * mailstream_low_ssl_open_full(i
+   mailstream_low * s;
+   struct mailstream_ssl_data * ssl_data;
+ 
+-  if (starttls)
+-    ssl_data = tls_data_new(fd, timeout, callback, cb_data);
+-  else
+-    ssl_data = ssl_data_new(fd, timeout, callback, cb_data);
++  ssl_data = ssl_data_new(fd, timeout, callback, cb_data);
+ 
+   if (ssl_data == NULL)
+     goto err;
