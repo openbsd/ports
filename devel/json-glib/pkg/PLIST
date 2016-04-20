@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 09:16:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/20 06:19:47 jasper Exp $
 @bin bin/json-glib-format
 @bin bin/json-glib-validate
 include/json-glib-1.0/
@@ -13,6 +13,7 @@ include/json-glib-1.0/json-glib/json-parser.h
 include/json-glib-1.0/json-glib/json-path.h
 include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
+include/json-glib-1.0/json-glib/json-utils.h
 include/json-glib-1.0/json-glib/json-version-macros.h
 include/json-glib-1.0/json-glib/json-version.h
 lib/girepository-1.0/
@@ -25,8 +26,6 @@ lib/pkgconfig/json-glib-1.0.pc
 @man man/man1/json-glib-validate.1
 share/gir-1.0/
 share/gir-1.0/Json-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/json-glib/
 share/gtk-doc/html/json-glib/JsonBuilder.html
 share/gtk-doc/html/json-glib/JsonGenerator.html
@@ -37,7 +36,8 @@ share/gtk-doc/html/json-glib/annotation-glossary.html
 share/gtk-doc/html/json-glib/ch01.html
 share/gtk-doc/html/json-glib/ch02.html
 share/gtk-doc/html/json-glib/ch03.html
-share/gtk-doc/html/json-glib/ch05.html
+share/gtk-doc/html/json-glib/ch04.html
+share/gtk-doc/html/json-glib/ch06.html
 share/gtk-doc/html/json-glib/home.png
 share/gtk-doc/html/json-glib/index.html
 share/gtk-doc/html/json-glib/index.sgml
@@ -51,6 +51,7 @@ share/gtk-doc/html/json-glib/ix07.html
 share/gtk-doc/html/json-glib/ix08.html
 share/gtk-doc/html/json-glib/ix09.html
 share/gtk-doc/html/json-glib/ix10.html
+share/gtk-doc/html/json-glib/ix11.html
 share/gtk-doc/html/json-glib/json-advanced.html
 share/gtk-doc/html/json-glib/json-base.html
 share/gtk-doc/html/json-glib/json-format-tool.html
@@ -61,6 +62,7 @@ share/gtk-doc/html/json-glib/json-glib-JSON-GVariant-Integration.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Node.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Object.html
 share/gtk-doc/html/json-glib/json-glib-Serializable-Interface.html
+share/gtk-doc/html/json-glib/json-glib-Utility-API.html
 share/gtk-doc/html/json-glib/json-glib-Versioning-information.html
 share/gtk-doc/html/json-glib/json-glib.devhelp2
 share/gtk-doc/html/json-glib/json-glib.html
@@ -76,26 +78,16 @@ share/gtk-doc/html/json-glib/style.css
 share/gtk-doc/html/json-glib/tools.html
 share/gtk-doc/html/json-glib/up-insensitive.png
 share/gtk-doc/html/json-glib/up.png
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/json-glib-1.0.mo
 share/locale/bg/LC_MESSAGES/json-glib-1.0.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/json-glib-1.0.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ca/LC_MESSAGES/json-glib-1.0.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/json-glib-1.0.mo
 share/locale/cs/LC_MESSAGES/json-glib-1.0.mo
 share/locale/da/LC_MESSAGES/json-glib-1.0.mo
 share/locale/de/LC_MESSAGES/json-glib-1.0.mo
 share/locale/el/LC_MESSAGES/json-glib-1.0.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/json-glib-1.0.mo
 share/locale/eo/LC_MESSAGES/json-glib-1.0.mo
 share/locale/es/LC_MESSAGES/json-glib-1.0.mo
@@ -107,8 +99,6 @@ share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/json-glib-1.0.mo
 share/locale/gl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/he/LC_MESSAGES/json-glib-1.0.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/json-glib-1.0.mo
 share/locale/hu/LC_MESSAGES/json-glib-1.0.mo
 share/locale/id/LC_MESSAGES/json-glib-1.0.mo
@@ -118,38 +108,26 @@ share/locale/ko/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/json-glib-1.0.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/lv/LC_MESSAGES/json-glib-1.0.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/json-glib-1.0.mo
 share/locale/nb/LC_MESSAGES/json-glib-1.0.mo
-share/locale/or/
-share/locale/or/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/json-glib-1.0.mo
 share/locale/or/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pa/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/json-glib-1.0.mo
+share/locale/ro/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ru/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sk/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sr/LC_MESSAGES/json-glib-1.0.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sv/LC_MESSAGES/json-glib-1.0.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/json-glib-1.0.mo
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/json-glib-1.0.mo
 share/locale/tr/LC_MESSAGES/json-glib-1.0.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/json-glib-1.0.mo
 share/locale/uk/LC_MESSAGES/json-glib-1.0.mo
 share/locale/vi/LC_MESSAGES/json-glib-1.0.mo
