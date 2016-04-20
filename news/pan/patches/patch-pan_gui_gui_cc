@@ -1,15 +1,15 @@
-$OpenBSD: patch-pan_gui_gui_cc,v 1.3 2011/08/30 06:48:49 ajacoutot Exp $
+$OpenBSD: patch-pan_gui_gui_cc,v 1.4 2016/04/20 07:20:34 pea Exp $
 
 Fix compiling on 64-bit.
 
---- pan/gui/gui.cc.orig	Mon Aug 29 12:05:11 2011
-+++ pan/gui/gui.cc	Mon Aug 29 12:05:37 2011
-@@ -1791,7 +1791,7 @@ GUI :: set_queue_size_label (unsigned int running,
- 
-   // build the tooltip
+--- pan/gui/gui.cc.orig	Mon Apr 18 18:16:20 2016
++++ pan/gui/gui.cc	Mon Apr 18 18:16:36 2016
+@@ -2275,7 +2275,7 @@ GUI :: set_queue_size_label (unsigned int running,
+   uint64_t KiB_remain;
+ #else
    gulong queued, unused, stopped;
 -  guint64 KiB_remain;
 +  uint64_t KiB_remain;
+ #endif
    double KiBps;
    int hr, min, sec;
-   _queue.get_stats (queued, unused, stopped,

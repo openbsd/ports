@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2014/10/01 12:22:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2016/04/20 07:20:34 pea Exp $
 
 COMMENT=	powerful newsreader
 
-V=		0.139
+V=		0.140
 DISTNAME=	pan-${V}
 CATEGORIES=	news x11
-REVISION=	3
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
@@ -14,16 +13,17 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+USE_GMAKE= 	Yes
+
+WANTLIB += atk-1.0 c cairo cairo-gobject iconv intl
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread stdc++ z
+WANTLIB += pthread stdc++ z
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
-MODULES=	devel/gettext \
-		textproc/intltool # test target
+MODULES=	textproc/intltool # test target
 
 LIB_DEPENDS=	devel/libnotify \
 		mail/gmime \
