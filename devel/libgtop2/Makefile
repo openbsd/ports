@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.133 2016/01/12 16:38:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2016/04/20 06:20:38 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
-GNOME_VERSION=		2.32.0
+GNOME_VERSION=		2.34.0
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		0
 
 SHARED_LIBS=		gtop-2.0	10.0	# .10.0
 
@@ -16,10 +15,10 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Xau c ffi glib-2.0 gobject-2.0 kvm pcre pthread
+WANTLIB += Xau c ffi glib-2.0 gobject-2.0 iconv intl kvm pcre
+WANTLIB += pthread
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/glib2
 
