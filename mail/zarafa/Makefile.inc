@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.38 2016/04/01 18:08:10 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2016/04/20 18:38:41 robert Exp $
 
-V?=		7.2.2
-BUILD?=		531
+V?=		7.2.3
+BUILD?=		657
 DISTNAME?=	zcp-${V}.${BUILD}
 
 CATEGORIES+=	mail

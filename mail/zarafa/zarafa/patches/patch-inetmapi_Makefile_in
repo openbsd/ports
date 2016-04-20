@@ -1,7 +1,7 @@
-$OpenBSD: patch-inetmapi_Makefile_in,v 1.6 2016/04/01 18:08:10 robert Exp $
---- inetmapi/Makefile.in.orig	Thu Mar 31 12:54:54 2016
-+++ inetmapi/Makefile.in	Thu Mar 31 23:23:32 2016
-@@ -471,7 +471,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+$OpenBSD: patch-inetmapi_Makefile_in,v 1.7 2016/04/20 18:38:41 robert Exp $
+--- inetmapi/Makefile.in.orig	Wed Apr 20 15:02:27 2016
++++ inetmapi/Makefile.in	Wed Apr 20 19:54:15 2016
+@@ -472,7 +472,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
  	-I$(top_srcdir)/mapi4linux/include -I$(top_srcdir)/provider/common \
  	-I${top_srcdir}/common -I${top_srcdir}/m4lcommon \
  	-I${top_srcdir}/libfreebusy -I${top_srcdir}/libicalmapi \

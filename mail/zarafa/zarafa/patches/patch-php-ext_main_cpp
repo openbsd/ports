@@ -1,7 +1,7 @@
-$OpenBSD: patch-php-ext_main_cpp,v 1.7 2016/04/01 18:08:10 robert Exp $
---- php-ext/main.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ php-ext/main.cpp	Thu Mar 31 23:23:31 2016
-@@ -646,8 +646,11 @@ PHP_MINIT_FUNCTION(mapi) {
+$OpenBSD: patch-php-ext_main_cpp,v 1.8 2016/04/20 18:38:41 robert Exp $
+--- php-ext/main.cpp.orig	Wed Apr 20 13:13:54 2016
++++ php-ext/main.cpp	Wed Apr 20 19:54:13 2016
+@@ -620,8 +620,11 @@ PHP_MINIT_FUNCTION(mapi) {
  
  	ZEND_INIT_MODULE_GLOBALS(mapi, php_mapi_init_globals, NULL);
  

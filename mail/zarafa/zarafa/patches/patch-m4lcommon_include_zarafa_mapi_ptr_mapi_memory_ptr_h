@@ -1,7 +1,7 @@
-$OpenBSD: patch-m4lcommon_include_zarafa_mapi_ptr_mapi_memory_ptr_h,v 1.1 2016/04/01 18:08:10 robert Exp $
---- m4lcommon/include/zarafa/mapi_ptr/mapi_memory_ptr.h.orig	Fri Apr  1 10:27:35 2016
-+++ m4lcommon/include/zarafa/mapi_ptr/mapi_memory_ptr.h	Fri Apr  1 10:27:40 2016
-@@ -151,11 +151,11 @@ class mapi_memory_ptr _zcp_final { (public)
+$OpenBSD: patch-m4lcommon_include_zarafa_mapi_ptr_mapi_memory_ptr_h,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- m4lcommon/include/zarafa/mapi_ptr/mapi_memory_ptr.h.orig	Wed Apr 20 13:13:54 2016
++++ m4lcommon/include/zarafa/mapi_ptr/mapi_memory_ptr.h	Wed Apr 20 19:54:13 2016
+@@ -125,11 +125,11 @@ class mapi_memory_ptr _zcp_final { (public)
  		return proxy(&m_lpMemory);
  	}
  

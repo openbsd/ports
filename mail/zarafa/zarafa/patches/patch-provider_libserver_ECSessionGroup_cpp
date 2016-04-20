@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.8 2015/11/02 11:06:34 robert Exp $
---- provider/libserver/ECSessionGroup.cpp.orig	Thu Aug 20 12:59:26 2015
-+++ provider/libserver/ECSessionGroup.cpp	Thu Aug 20 12:59:55 2015
-@@ -48,6 +48,10 @@
+$OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.9 2016/04/20 18:38:41 robert Exp $
+--- provider/libserver/ECSessionGroup.cpp.orig	Wed Apr 20 13:13:54 2016
++++ provider/libserver/ECSessionGroup.cpp	Wed Apr 20 19:54:13 2016
+@@ -22,6 +22,10 @@
  
  #include <algorithm>
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.8 2015/11/02 11:06:34 
  #include "ECSession.h"
  #include "ECSessionGroup.h"
  #include "ECSessionManager.h"
-@@ -57,6 +61,11 @@
+@@ -31,6 +35,11 @@
  #define new DEBUG_NEW
  #undef THIS_FILE
  static const char THIS_FILE[] = __FILE__;

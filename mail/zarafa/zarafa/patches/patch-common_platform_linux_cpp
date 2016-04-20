@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.11 2016/04/01 18:08:10 robert Exp $
---- common/platform.linux.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ common/platform.linux.cpp	Thu Mar 31 23:23:31 2016
-@@ -59,6 +59,8 @@
+$OpenBSD: patch-common_platform_linux_cpp,v 1.12 2016/04/20 18:38:41 robert Exp $
+--- common/platform.linux.cpp.orig	Wed Apr 20 13:13:54 2016
++++ common/platform.linux.cpp	Wed Apr 20 20:27:41 2016
+@@ -36,6 +36,8 @@
  #include <cerrno>
  #include <climits>
  
@@ -9,8 +9,17 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.11 2016/04/01 18:08:10 robert Exp 
 +
  #include <string>
  #include <map>
- 
-@@ -74,7 +76,7 @@
+ #include <vector>
+@@ -45,7 +47,7 @@
+ #else
+ #	include <uuid.h>
+ #endif
+-#if defined(__linux__) && defined(__GLIBC__)
++#if (defined(__linux__) && defined(__GLIBC__)) || defined(__OpenBSD__)
+ #	include <cxxabi.h>
+ #	include <execinfo.h>
+ #endif
+@@ -56,7 +58,7 @@
  #define ICONV_CONST const
  #elif OPENBSD
  // bsd
@@ -19,7 +28,7 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.11 2016/04/01 18:08:10 robert Exp 
  #else
  // linux
  #define ICONV_CONST
-@@ -97,22 +99,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
+@@ -79,22 +81,10 @@ HRESULT CoCreateGuid(LPGUID pNewGUID) {
  		return MAPI_E_INVALID_PARAMETER;
  
  #if HAVE_UUID_CREATE
@@ -42,7 +51,7 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.11 2016/04/01 18:08:10 robert Exp 
  #else
  	uuid_t g;
  	uuid_generate(g);
-@@ -169,6 +159,12 @@ void Sleep(unsigned int msec) {
+@@ -151,6 +141,12 @@ void Sleep(unsigned int msec) {
  	nanosleep(&ts, NULL);
  }
  
@@ -55,7 +64,7 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.11 2016/04/01 18:08:10 robert Exp 
  static void rand_fail(void)
  {
  	fprintf(stderr, "Cannot access/use /dev/urandom, this is fatal (%s)\n", strerror(errno));
-@@ -205,6 +201,7 @@ void rand_get(char *p, int n)
+@@ -187,6 +183,7 @@ void rand_get(char *p, int n)
  
  		close(fd);
  	}

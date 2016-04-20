@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_monitor_zarafa-monitor_cpp,v 1.1 2016/04/01 18:08:10 robert Exp $
---- ECtools/monitor/zarafa-monitor.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ ECtools/monitor/zarafa-monitor.cpp	Fri Apr  1 13:30:27 2016
-@@ -186,10 +186,10 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-ECtools_monitor_zarafa-monitor_cpp,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- ECtools/monitor/zarafa-monitor.cpp.orig	Wed Apr 20 13:13:54 2016
++++ ECtools/monitor/zarafa-monitor.cpp	Wed Apr 20 19:54:13 2016
+@@ -161,10 +161,10 @@ int main(int argc, char *argv[]) {
  		{ "smtp_server","localhost" },
  		{ "server_socket", "default:" },
  #ifdef LINUX
@@ -15,7 +15,7 @@ $OpenBSD: patch-ECtools_monitor_zarafa-monitor_cpp,v 1.1 2016/04/01 18:08:10 rob
  #endif		
  		{ "log_method","file" },
  #ifdef LINUX
-@@ -230,8 +230,10 @@ int main(int argc, char *argv[]) {
+@@ -205,8 +205,10 @@ int main(int argc, char *argv[]) {
  		{ NULL, 0, NULL, 0 }
  	};
  

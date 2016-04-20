@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.20 2016/04/01 18:08:10 robert Exp $
---- spooler/Spooler.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ spooler/Spooler.cpp	Fri Apr  1 13:25:33 2016
-@@ -1166,10 +1166,10 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.21 2016/04/20 18:38:41 robert Exp $
+--- spooler/Spooler.cpp.orig	Wed Apr 20 13:13:54 2016
++++ spooler/Spooler.cpp	Wed Apr 20 19:54:13 2016
+@@ -1151,10 +1151,10 @@ int main(int argc, char *argv[]) {
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
  #ifdef LINUX
@@ -15,7 +15,7 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.20 2016/04/01 18:08:10 robert Exp $
  		{ "coredump_enabled", "no" },
  #endif
  		{ "log_method","file" },
-@@ -1194,8 +1194,8 @@ int main(int argc, char *argv[]) {
+@@ -1179,8 +1179,8 @@ int main(int argc, char *argv[]) {
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },
@@ -26,7 +26,7 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.20 2016/04/01 18:08:10 robert Exp $
  		{ "z_statsd_stats", "/var/run/zarafad/statsd.sock" },
  		{ "tmp_path", "/tmp" },
  		{ "tmp_path", "/tmp" },
-@@ -1322,6 +1322,7 @@ int main(int argc, char *argv[]) {
+@@ -1311,6 +1311,7 @@ int main(int argc, char *argv[]) {
  #ifdef LINUX
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
@@ -34,7 +34,7 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.20 2016/04/01 18:08:10 robert Exp $
  		char buffer[256] = { 0 };
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
  
-@@ -1331,6 +1332,10 @@ int main(int argc, char *argv[]) {
+@@ -1320,6 +1321,10 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: your system is running with outdated linuxthreads.");
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
---- spooler/DAgent.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ spooler/DAgent.cpp	Fri Apr  1 13:29:37 2016
-@@ -94,6 +94,11 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.29 2016/04/20 18:38:41 robert Exp $
+--- spooler/DAgent.cpp.orig	Wed Apr 20 13:13:54 2016
++++ spooler/DAgent.cpp	Wed Apr 20 19:54:13 2016
+@@ -69,6 +69,11 @@
  #include <pwd.h>
  #endif
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
  #include "spmain.h"
  #include "TmpPath.h"
  
-@@ -1748,12 +1753,18 @@ static HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LP
+@@ -1727,12 +1732,18 @@ static HRESULT SendOutOfOffice(LPADRBOOK lpAdrBook, LP
  	}
  
  	{
@@ -32,7 +32,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
  	}
  
  	if (WriteOrLogError(fd, szHeader, strlen(szHeader)) != hrSuccess) {
-@@ -3998,7 +4009,7 @@ int main(int argc, char *argv[]) {
+@@ -3989,7 +4000,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
@@ -41,7 +41,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
-@@ -4054,8 +4065,8 @@ int main(int argc, char *argv[]) {
+@@ -4045,8 +4056,8 @@ int main(int argc, char *argv[]) {
  		{ "server_bind", "" },
  		{ "server_bind_intf", "" },
  #ifdef LINUX
@@ -52,7 +52,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.28 2016/04/01 18:08:10 robert Exp $
  		{ "pid_file", "/var/run/zarafad/dagent.pid" },
  		{ "coredump_enabled", "no" },
  #endif
-@@ -4075,11 +4086,11 @@ int main(int argc, char *argv[]) {
+@@ -4066,11 +4077,11 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },

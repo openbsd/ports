@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert Exp $
---- provider/server/ECServer.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ provider/server/ECServer.cpp	Fri Apr  1 11:32:16 2016
-@@ -102,6 +102,10 @@
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.32 2016/04/20 18:38:41 robert Exp $
+--- provider/server/ECServer.cpp.orig	Wed Apr 20 13:13:54 2016
++++ provider/server/ECServer.cpp	Wed Apr 20 19:54:13 2016
+@@ -76,6 +76,10 @@
  
  #include "TmpPath.h"
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert E
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -994,10 +998,10 @@ int running_server(char *szName, const char *szConfig,
+@@ -967,10 +971,10 @@ int running_server(char *szName, const char *szConfig,
  		{ "thread_stacksize",			"512" },
  		{ "allow_local_users",			"yes", CONFIGSETTING_RELOADABLE },			// allow any user connect through the unix socket
  		{ "local_admin_users",			"root", CONFIGSETTING_RELOADABLE },			// this local user is admin
@@ -26,7 +26,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert E
  		{ "coredump_enabled",			"yes" },
  
  		{ "license_path",			"/etc/zarafa/license", CONFIGSETTING_UNUSED },
-@@ -1040,7 +1044,7 @@ int running_server(char *szName, const char *szConfig,
+@@ -1021,7 +1025,7 @@ int running_server(char *szName, const char *szConfig,
  #ifdef WIN32
  		{ "attachment_path",			"Zarafa Data" },
  #else
@@ -35,7 +35,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert E
  #endif
  		{ "attachment_compression",		"6" },
  
-@@ -1132,7 +1136,7 @@ int running_server(char *szName, const char *szConfig,
+@@ -1113,7 +1117,7 @@ int running_server(char *szName, const char *szConfig,
  		{ "client_update_enabled",	"no" },
  		{ "client_update_log_level", "1", CONFIGSETTING_RELOADABLE },
  #ifdef LINUX
@@ -44,7 +44,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.31 2016/04/01 18:08:10 robert E
  		{ "client_update_log_path",	"/var/log/zarafa/autoupdate", CONFIGSETTING_RELOADABLE },
  #else
  		{ "client_update_path",		"c:\\client_update_path", CONFIGSETTING_RELOADABLE },
-@@ -1173,10 +1177,14 @@ int running_server(char *szName, const char *szConfig,
+@@ -1154,10 +1158,14 @@ int running_server(char *szName, const char *szConfig,
  	};
  
  #ifdef LINUX

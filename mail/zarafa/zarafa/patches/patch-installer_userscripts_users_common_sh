@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_userscripts_users_common_sh,v 1.6 2012/02/27 19:01:34 ajacoutot Exp $
---- installer/userscripts/users_common.sh.orig	Wed Feb  1 15:42:09 2012
-+++ installer/userscripts/users_common.sh	Mon Feb 27 19:26:00 2012
+$OpenBSD: patch-installer_userscripts_users_common_sh,v 1.7 2016/04/20 18:38:41 robert Exp $
+--- installer/userscripts/users_common.sh.orig	Wed Apr 20 13:13:54 2016
++++ installer/userscripts/users_common.sh	Wed Apr 20 19:54:13 2016
 @@ -1,7 +1,7 @@
  # shell include script
  
@@ -11,9 +11,11 @@ $OpenBSD: patch-installer_userscripts_users_common_sh,v 1.6 2012/02/27 19:01:34 
  export ZARAFA_LANG PATH
  
  if [ -z "${ZARAFA_USER_SCRIPTS}" ] ; then
-@@ -22,4 +22,4 @@ if [ -z "${ZARAFA_USER}" -a -z "${ZARAFA_STOREGUID}" ]
+@@ -22,6 +22,6 @@ if [ -z "${ZARAFA_USER}" -a -z "${ZARAFA_STOREGUID}" ]
      exit 1
  fi
  
--find ${ZARAFA_USER_SCRIPTS} -maxdepth 1 -type f -perm -u=x -not -name \*~ -not -name \#\* -not -name \*.rpm\* -not -name \*.bak -not -name \*.old -exec {} \;
+-# Find cannot cope with unreadable cwd
 +find ${ZARAFA_USER_SCRIPTS} -maxdepth 1 -type f -perm -u=x -and ! -name \*~ -and ! -name \#\* -exec {} \;
+ cd "$ZARAFA_USER_SCRIPTS"
+ find "${ZARAFA_USER_SCRIPTS}" -maxdepth 1 -type f -perm -u=x -not -name \*~ -not -name \#\* -not -name \*.rpm\* -not -name \*.bak -not -name \*.old -exec {} \;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_include_zarafa_charset_traits_h,v 1.1 2016/04/01 18:08:10 robert Exp $
---- common/include/zarafa/charset/traits.h.orig	Fri Apr  1 10:07:57 2016
-+++ common/include/zarafa/charset/traits.h	Fri Apr  1 10:08:06 2016
-@@ -107,31 +107,31 @@ class iconv_charset<const char *> _zcp_final { (public
+$OpenBSD: patch-common_include_zarafa_charset_traits_h,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- common/include/zarafa/charset/traits.h.orig	Wed Apr 20 13:13:54 2016
++++ common/include/zarafa/charset/traits.h	Wed Apr 20 19:54:13 2016
+@@ -81,31 +81,31 @@ class iconv_charset<const char *> _zcp_final { (public
  	}
  };
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-common_include_zarafa_charset_traits_h,v 1.1 2016/04/01 18:08:10
  	}
  };
  
-@@ -179,31 +179,31 @@ class iconv_charset<const wchar_t *> _zcp_final { (pub
+@@ -153,31 +153,31 @@ class iconv_charset<const wchar_t *> _zcp_final { (pub
  	}
  };
  

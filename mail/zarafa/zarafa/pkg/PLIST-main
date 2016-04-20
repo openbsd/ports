@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.52 2016/04/01 18:08:10 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.53 2016/04/20 18:38:41 robert Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
@@ -321,6 +321,7 @@ lib/zarafa/libzarafacontacts.la
 @man man/man8/zarafa-admin.8
 @man man/man8/zarafa-archiver.8
 @man man/man8/zarafa-autorespond.8
+@man man/man8/zarafa-backup-plus.8
 @man man/man8/zarafa-dagent.8
 @man man/man8/zarafa-gateway.8
 @man man/man8/zarafa-ical.8
@@ -335,6 +336,7 @@ lib/zarafa/libzarafacontacts.la
 @bin sbin/zarafa-archiver
 sbin/zarafa-autorespond
 sbin/zarafa-backup-plus
+sbin/zarafa-cachestat.py
 @bin sbin/zarafa-dagent
 @bin sbin/zarafa-gateway
 @bin sbin/zarafa-ical
@@ -349,7 +351,6 @@ sbin/zarafa-search-xapian-compact.py
 @bin sbin/zarafa-spooler
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/zarafa/
-share/doc/zarafa/AGPL-3
 @mode 0555
 share/doc/zarafa/audit-parse.pl
 share/doc/zarafa/createuser.dotforward
@@ -384,6 +385,7 @@ share/examples/zarafa/archiver.cfg
 share/examples/zarafa/autorespond
 @sample ${SYSCONFDIR}/zarafa/autorespond
 share/examples/zarafa/backup-plus.cfg
+@sample ${SYSCONFDIR}/zarafa/backup-plus.cfg
 share/examples/zarafa/dagent.cfg
 @sample ${SYSCONFDIR}/zarafa/dagent.cfg
 share/examples/zarafa/gateway.cfg

@@ -1,7 +1,7 @@
-$OpenBSD: patch-caldav_CalDAV_cpp,v 1.1 2016/04/01 18:08:10 robert Exp $
---- caldav/CalDAV.cpp.orig	Fri Apr  1 13:29:56 2016
-+++ caldav/CalDAV.cpp	Fri Apr  1 13:30:11 2016
-@@ -190,10 +190,10 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-caldav_CalDAV_cpp,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- caldav/CalDAV.cpp.orig	Wed Apr 20 13:13:54 2016
++++ caldav/CalDAV.cpp	Wed Apr 20 19:54:13 2016
+@@ -166,10 +166,10 @@ int main(int argc, char **argv) {
  #endif
  	static const configsetting_t lpDefaults[] = {
  #ifdef LINUX

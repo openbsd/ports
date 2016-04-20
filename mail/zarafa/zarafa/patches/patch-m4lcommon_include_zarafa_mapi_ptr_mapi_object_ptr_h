@@ -1,6 +1,6 @@
---- m4lcommon/include/zarafa/mapi_ptr/mapi_object_ptr.h.orig	Wed Mar 23 12:14:33 2016
-+++ m4lcommon/include/zarafa/mapi_ptr/mapi_object_ptr.h	Fri Apr  1 11:15:33 2016
-@@ -127,13 +127,13 @@ class mapi_object_ptr _zcp_final { (public)
+--- m4lcommon/include/zarafa/mapi_ptr/mapi_object_ptr.h.orig	Wed Apr 20 13:13:54 2016
++++ m4lcommon/include/zarafa/mapi_ptr/mapi_object_ptr.h	Wed Apr 20 19:54:13 2016
+@@ -101,13 +101,13 @@ class mapi_object_ptr _zcp_final { (public)
  		std::swap(m_lpObject, other.m_lpObject);
  	}
  	
@@ -18,7 +18,7 @@
  			if (hr == hrSuccess)
  				refResult.reset(lpNewObject, false);
  
-@@ -155,7 +155,7 @@ class mapi_object_ptr _zcp_final { (public)
+@@ -129,7 +129,7 @@ class mapi_object_ptr _zcp_final { (public)
  				if (HrGetOneProp(m_lpObject, PR_EC_OBJECT, &ptrPropValue) != hrSuccess)
  					goto exit;	// hr is still MAPI_E_INTERFACE_NOT_SUPPORTED
  
@@ -27,7 +27,7 @@
  				if (hr == hrSuccess)
  					refResult.reset(lpNewObject, false);
  			}
-@@ -181,9 +181,9 @@ class mapi_object_ptr _zcp_final { (public)
+@@ -155,9 +155,9 @@ class mapi_object_ptr _zcp_final { (public)
  		return m_lpObject;
  	}
  

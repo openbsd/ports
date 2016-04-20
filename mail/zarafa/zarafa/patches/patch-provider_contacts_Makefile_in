@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_contacts_Makefile_in,v 1.11 2016/04/01 18:08:10 robert Exp $
---- provider/contacts/Makefile.in.orig	Thu Mar 31 12:54:54 2016
-+++ provider/contacts/Makefile.in	Thu Mar 31 23:23:32 2016
-@@ -450,7 +450,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS)	\
+$OpenBSD: patch-provider_contacts_Makefile_in,v 1.12 2016/04/20 18:38:41 robert Exp $
+--- provider/contacts/Makefile.in.orig	Wed Apr 20 15:02:27 2016
++++ provider/contacts/Makefile.in	Wed Apr 20 19:54:15 2016
+@@ -451,7 +451,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS)	\
  	-I${top_srcdir}/mapi4linux/include	\
  	-I${top_srcdir}/common -I${top_srcdir}/m4lcommon
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_include_zarafa_ECLogger_h,v 1.1 2016/04/01 18:08:10 robert Exp $
---- common/include/zarafa/ECLogger.h.orig	Fri Apr  1 09:32:58 2016
-+++ common/include/zarafa/ECLogger.h	Fri Apr  1 09:33:09 2016
-@@ -138,8 +138,10 @@ class ECLogger {
+$OpenBSD: patch-common_include_zarafa_ECLogger_h,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- common/include/zarafa/ECLogger.h.orig	Wed Apr 20 13:13:54 2016
++++ common/include/zarafa/ECLogger.h	Wed Apr 20 19:54:13 2016
+@@ -114,8 +114,10 @@ class ECLogger {
  		std::string MakeTimestamp();
  
  		unsigned int max_loglevel;

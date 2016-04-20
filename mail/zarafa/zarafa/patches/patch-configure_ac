@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.4 2016/04/01 18:08:10 robert Exp $
---- configure.ac.orig	Wed Mar 23 12:14:33 2016
-+++ configure.ac	Fri Apr  1 19:49:10 2016
+$OpenBSD: patch-configure_ac,v 1.5 2016/04/20 18:38:41 robert Exp $
+--- configure.ac.orig	Wed Apr 20 20:00:21 2016
++++ configure.ac	Wed Apr 20 20:02:22 2016
 @@ -52,7 +52,7 @@ AC_CANONICAL_HOST
  BUILDOS=""
  case "$host_os" in
@@ -20,16 +20,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2016/04/01 18:08:10 robert Exp $
  	AC_MSG_ERROR([unknown distro])
  else
  	AC_MSG_RESULT([using $with_distro])
-@@ -703,7 +704,7 @@ AS_IF(
- 	],
- 	[test "$want_icu" = "yes"], [
- 		PKG_CHECK_MODULES([icu_uc], [$req_icu_uc])
--		PKG_CHECK_MODULES([icu_i18n], [$req_icu])
-+		PKG_CHECK_MODULES([icu_i18n], [$req_icu_i18n])
- 		have_icu=1
- 	]
- )
-@@ -716,6 +717,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
+@@ -740,6 +741,8 @@ ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
  # all libs for programs, because functions are in static common stuff
  PROG_LIBS="$UUID_LIBS $INTL_LIBS $ICONV_LIBS $GZ_LIBS"
  AC_SUBST(PROG_LIBS)

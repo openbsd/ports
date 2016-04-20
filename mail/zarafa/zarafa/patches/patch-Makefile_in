@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2016/04/01 18:08:10 robert Exp $
---- Makefile.in.orig	Thu Mar 31 12:54:54 2016
-+++ Makefile.in	Thu Mar 31 23:23:32 2016
-@@ -909,7 +909,7 @@ uninstall-am:
+$OpenBSD: patch-Makefile_in,v 1.3 2016/04/20 18:38:41 robert Exp $
+--- Makefile.in.orig	Wed Apr 20 15:02:27 2016
++++ Makefile.in	Wed Apr 20 19:54:15 2016
+@@ -979,7 +979,7 @@ uninstall-am: uninstall-sbinSCRIPTS
  
  .PHONY: source-moved-check
  source-moved-check:

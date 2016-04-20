@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robert Exp $
---- provider/libserver/StreamUtil.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ provider/libserver/StreamUtil.cpp	Thu Mar 31 23:23:31 2016
-@@ -287,7 +287,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.8 2016/04/20 18:38:41 robert Exp $
+--- provider/libserver/StreamUtil.cpp.orig	Wed Apr 20 13:13:54 2016
++++ provider/libserver/StreamUtil.cpp	Wed Apr 20 19:54:13 2016
+@@ -261,7 +261,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	unsigned int ulKind;
  	unsigned int ulNameId;
  	std::string strNameString;
@@ -11,7 +11,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robe
  	convert_context converter;
  
  	short i;
-@@ -334,7 +336,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -308,7 +310,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -23,7 +23,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robe
  		er = lpSink->Write(&flt, sizeof(flt), 1);
  		break;
  	case PT_BOOLEAN:
-@@ -351,7 +357,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -325,7 +331,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -35,9 +35,9 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robe
  		er = lpSink->Write(&dbl, sizeof(dbl), 1);
  		break;
  	case PT_CURRENCY:
-@@ -448,7 +458,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
- 		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
- 		{
+@@ -419,7 +429,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+ 		ulLastPos = 0;
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
 +#ifndef __OpenBSD__
  			flt = (float)strtod_l(strData.c_str(), NULL, loc);
@@ -47,9 +47,9 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robe
  			er = lpSink->Write(&flt, sizeof(flt), 1);
  		}
  		break;
-@@ -465,7 +479,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
- 		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
- 		{
+@@ -435,7 +449,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+ 		ulLastPos = 0;
+ 		for (unsigned int x = 0; er == erSuccess && x < ulCount; ++x) {
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
 +#ifndef __OpenBSD__
  			dbl = strtod_l(strData.c_str(), NULL, loc);
@@ -59,7 +59,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.7 2016/04/01 18:08:10 robe
  			er = lpSink->Write(&dbl, sizeof(dbl), 1);
  		}
  		break;
-@@ -583,7 +601,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -549,7 +567,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	}
  
  exit:

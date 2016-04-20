@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.24 2016/04/01 18:08:10 robert Exp $
---- provider/server/Makefile.in.orig	Fri Apr  1 10:32:49 2016
-+++ provider/server/Makefile.in	Fri Apr  1 10:32:52 2016
-@@ -440,7 +440,7 @@ zarafa_server_LDADD = \
+$OpenBSD: patch-provider_server_Makefile_in,v 1.25 2016/04/20 18:38:41 robert Exp $
+--- provider/server/Makefile.in.orig	Wed Apr 20 15:02:27 2016
++++ provider/server/Makefile.in	Wed Apr 20 19:54:15 2016
+@@ -441,7 +441,7 @@ zarafa_server_LDADD = \
  	${top_builddir}/common/libzcp_common_ssl.la \
  	$(PROG_LIBS) ${icu_uc_LIBS} \
  	$(BOOST_FILESYSTEM_LIBS) $(BOOST_SYSTEM_LIBS) $(ICU_LIBS) $(DL_LIBS)	\

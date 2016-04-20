@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp $
---- installer/linux/server.cfg.orig	Wed Mar 23 12:14:33 2016
-+++ installer/linux/server.cfg	Fri Apr  1 16:17:52 2016
+$OpenBSD: patch-installer_linux_server_cfg,v 1.24 2016/04/20 18:38:41 robert Exp $
+--- installer/linux/server.cfg.orig	Wed Apr 20 20:02:28 2016
++++ installer/linux/server.cfg	Wed Apr 20 20:04:08 2016
 @@ -36,7 +36,7 @@ allow_local_users	= yes
  # local admin users who can connect to any store (use this for the zarafa-dagent)
  # field is SPACE separated
@@ -40,16 +40,16 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp
  
  # Time (in seconds) to wait for a connection to the license server before 
  # terminating the request.
-@@ -146,7 +146,7 @@ attachment_storage	= files 
- attachment_files_fsync  = yes
- 
+@@ -148,7 +148,7 @@ attachment_files_fsync  = yes
  # When attachment_storage is 'files', use this path to store the files
--attachment_path		= /var/lib/zarafa/attachments
-+attachment_path		= /var/db/zarafa/attachments
+ # When attachment_storage is 's3', use this path to set a prefix to all
+ # attachment data of a certain cluster, for example 'attach'
+-attachment_path         = /var/lib/zarafa/attachments
++attachment_path         = /var/db/zarafa/attachments
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -162,13 +162,13 @@ server_ssl_enabled	= no
+@@ -185,13 +185,13 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -65,7 +65,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp
  
  # Path with CA certificates, e.g. /etc/ssl/certs
  server_ssl_ca_path	=
-@@ -183,7 +183,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
+@@ -206,7 +206,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
  server_ssl_prefer_server_ciphers = no
  
  # Path of SSL Public keys of clients
@@ -74,7 +74,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp
  
  ##############################################################
  # THREAD SETTINGS
-@@ -315,20 +315,20 @@ companyquota_warn      = 0
+@@ -338,20 +338,20 @@ companyquota_warn      = 0
  user_plugin		= db
  
  # configuration file of the user plugin, examples can be found in /usr/share/doc/zarafa/example-config
@@ -103,7 +103,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.23 2016/04/01 18:08:10 robert Exp
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -385,7 +385,7 @@ client_update_enabled = false
+@@ -408,7 +408,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

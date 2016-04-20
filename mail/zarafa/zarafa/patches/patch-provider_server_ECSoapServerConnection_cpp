@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.6 2015/11/02 11:06:34 robert Exp $
---- provider/server/ECSoapServerConnection.cpp.orig	Wed Aug  5 17:30:48 2015
-+++ provider/server/ECSoapServerConnection.cpp	Thu Aug 20 12:36:50 2015
-@@ -52,6 +52,11 @@
+$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.7 2016/04/20 18:38:41 robert Exp $
+--- provider/server/ECSoapServerConnection.cpp.orig	Wed Apr 20 13:13:54 2016
++++ provider/server/ECSoapServerConnection.cpp	Wed Apr 20 19:54:13 2016
+@@ -26,6 +26,11 @@
  #include <sys/un.h>
  #endif
  

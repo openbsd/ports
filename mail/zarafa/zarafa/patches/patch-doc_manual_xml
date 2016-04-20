@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
---- doc/manual.xml.orig	Fri Apr  1 10:11:46 2016
-+++ doc/manual.xml	Fri Apr  1 10:17:23 2016
+$OpenBSD: patch-doc_manual_xml,v 1.42 2016/04/20 18:38:41 robert Exp $
+--- doc/manual.xml.orig	Wed Apr 20 13:13:54 2016
++++ doc/manual.xml	Wed Apr 20 19:54:13 2016
 @@ -876,9 +876,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -90,7 +90,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafad/gateway.pid</replaceable>
-@@ -8307,14 +8283,8 @@
+@@ -8309,14 +8285,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -106,7 +106,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8466,9 +8436,7 @@
+@@ -8468,9 +8438,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -117,7 +117,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafad/monitor.pid
  			  </para>
-@@ -9028,13 +8996,8 @@
+@@ -9030,13 +8998,8 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -133,7 +133,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -9217,9 +9180,7 @@
+@@ -9219,9 +9182,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -144,7 +144,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafad/ical.pid</replaceable>
-@@ -9915,8 +9876,8 @@
+@@ -9917,8 +9878,8 @@
  		  <replaceable>/path/to/search.cfg</replaceable>
  		</para>
  
@@ -155,7 +155,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.41 2016/04/01 18:08:10 robert Exp $
  		[<replaceable>start</replaceable>|
  		<replaceable>stop</replaceable>|
  		<replaceable>restart</replaceable>|
-@@ -10051,7 +10012,7 @@
+@@ -10053,7 +10014,7 @@
  			<term><option>pid_file</option></term>
  			<listitem>
  			  <para>Write the process ID number to this file. This is

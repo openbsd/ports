@@ -1,7 +1,36 @@
-$OpenBSD: patch-common_ECChannel_cpp,v 1.1 2016/04/01 18:08:10 robert Exp $
---- common/ECChannel.cpp.orig	Wed Mar 23 12:14:33 2016
-+++ common/ECChannel.cpp	Fri Apr  1 12:41:25 2016
-@@ -805,12 +805,18 @@ int zcp_bindtodevice(ECLogger *log, int fd, const char
+$OpenBSD: patch-common_ECChannel_cpp,v 1.2 2016/04/20 18:38:41 robert Exp $
+--- common/ECChannel.cpp.orig	Wed Apr 20 13:13:54 2016
++++ common/ECChannel.cpp	Wed Apr 20 20:27:17 2016
+@@ -30,8 +30,10 @@
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
+ #include <arpa/inet.h>
++#ifndef OPENBSD
+ #include <linux/rtnetlink.h>
+ #endif
++#endif
+ 
+ #include <cerrno>
+ #include <mapicode.h>
+@@ -677,7 +679,7 @@ const char *ECChannel::peer_addr(void) const
+ 	return peer_atxt;
+ }
+ 
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ static int peer_is_local2(int rsk, const struct nlmsghdr *nlh)
+ {
+ 	if (send(rsk, nlh, nlh->nlmsg_len, 0) < 0)
+@@ -716,7 +718,7 @@ int zcp_peeraddr_is_local(const struct sockaddr *peer_
+ 	} else {
+ 		return -EPROTONOSUPPORT;
+ 	}
+-#ifdef LINUX
++#if defined(LINUX) && !defined(__OpenBSD__)
+ 	int rsk = socket(AF_NETLINK, SOCK_DGRAM, NETLINK_ROUTE);
+ 	if (rsk < 0) {
+ 		fprintf(stderr, "socket AF_NETLINK: %s\n", strerror(errno));
+@@ -895,12 +897,18 @@ int zcp_bindtodevice(ECLogger *log, int fd, const char
  	if (i == NULL || strcmp(i, "any") == 0 || strcmp(i, "all") == 0 ||
  	    strcmp(i, "") == 0)
  		return 0;
