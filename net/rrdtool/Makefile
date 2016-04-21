@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2016/04/21 23:46:47 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -6,16 +6,14 @@ COMMENT-python= python interface to librrd
 COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
-VERSION=	1.5.5
-REVISION=	0
+VERSION=	1.6.0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
 
-SHARED_LIBS +=	rrd                  5.0      # 7.0
-SHARED_LIBS +=	rrd_th               5.0      # 7.0
+SHARED_LIBS +=	rrd                  5.1      # 8.0
 
 CATEGORIES=	net databases
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bindings_Makefile_in,v 1.4 2015/11/23 11:41:02 sthen Exp $
---- bindings/Makefile.in.orig	Sun Aug  9 16:17:18 2015
-+++ bindings/Makefile.in	Wed Aug 12 16:27:51 2015
-@@ -725,6 +725,7 @@ install-data-local:
+$OpenBSD: patch-bindings_Makefile_in,v 1.5 2016/04/21 23:46:47 sthen Exp $
+--- bindings/Makefile.in.orig	Tue Apr 19 15:53:14 2016
++++ bindings/Makefile.in	Fri Apr 22 00:37:12 2016
+@@ -724,6 +724,7 @@ install-data-local:
             && ( cd ${builddir}/python \
                  && env BUILDLIBDIR=${abs_top_builddir}/src/.libs \
                    $(PYTHON) ${abs_srcdir}/python/setup.py install \

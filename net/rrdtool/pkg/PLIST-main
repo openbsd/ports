@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/11/23 11:41:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2016/04/21 23:46:47 sthen Exp $
 @conflict p5-RRD-*
 @pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
@@ -13,9 +13,6 @@ include/rrd_format.h
 lib/librrd.a
 lib/librrd.la
 @lib lib/librrd.so.${LIBrrd_VERSION}
-lib/librrd_th.a
-lib/librrd_th.la
-@lib lib/librrd_th.so.${LIBrrd_th_VERSION}
 lib/pkgconfig/librrd.pc
 libdata/perl5/site_perl/RRDp.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
