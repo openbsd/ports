@@ -1,0 +1,12 @@
+$OpenBSD: patch-variable_c,v 1.1.1.1 2016/04/21 20:41:09 naddy Exp $
+--- variable.c.orig	Sat Mar 19 13:22:33 2016
++++ variable.c	Thu Apr  7 22:26:29 2016
+@@ -1093,7 +1093,7 @@ void variable_set(const wchar_t *name, variable_T *var
+ 		    && var->v_value != NULL) {
+ 		unsigned long seed;
+ 		if (xwcstoul(var->v_value, 0, &seed)) {
+-		    srand((unsigned) seed);
++		    srand_deterministic((unsigned) seed);
+ 		    var->v_getter = random_getter;
+ 		    random_active = true;
+ 		}
