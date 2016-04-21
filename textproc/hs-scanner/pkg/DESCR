@@ -1,0 +1,10 @@
+scanner is a fast non-backtracking incremental combinator parsing
+library for bytestrings.
+It is often convenient to use backtracking to parse some sophisticated
+input. Unfortunately it kills performance, so usually you should
+avoid backtracking.
+Often (actually always, but it could be too hard sometimes) you can
+implement your parser without any backtracking. It that case all
+the bookkeeping usual parser combinators do becomes unnecessary.
+The scanner library is designed for such cases. It is often 2 times
+faster than attoparsec.
