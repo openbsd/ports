@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+$OpenBSD: README,v 1.2 2016/04/21 13:08:01 jturner Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ Administrator Quick Start
 
 User Quick Start
 ================
-  User's can manage their account settings, create calendars
+  Users can manage their account settings, create calendars
   and find the URL for use with their calendar application
   by browsing to: http://localhost/kcaldav/home.html
 
