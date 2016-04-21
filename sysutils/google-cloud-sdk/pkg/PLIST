@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/04/19 06:24:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/04/21 05:57:48 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -81,6 +81,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/instances_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/instances_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_requestor.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_requestor.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtimes/
@@ -338,6 +340,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/common.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/common.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/meta/
@@ -377,6 +381,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/base_classes.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/base_classes.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/consumers_flags.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/consumers_flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/enable_api.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/enable_api.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/services_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_management/services_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/
@@ -384,6 +390,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/constants.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/constants.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/write_support.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/write_support.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/
@@ -1074,7 +1082,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/servic
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry_beta.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry_v1alpha.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/__init__.pyc
@@ -1896,6 +1912,8 @@ google-cloud-sdk/lib/surface/compute/instances/start.py
 google-cloud-sdk/lib/surface/compute/instances/start.pyc
 google-cloud-sdk/lib/surface/compute/instances/stop.py
 google-cloud-sdk/lib/surface/compute/instances/stop.pyc
+google-cloud-sdk/lib/surface/compute/instances/suspend.py
+google-cloud-sdk/lib/surface/compute/instances/suspend.pyc
 google-cloud-sdk/lib/surface/compute/instances/tail_serial_port_output.py
 google-cloud-sdk/lib/surface/compute/instances/tail_serial_port_output.pyc
 google-cloud-sdk/lib/surface/compute/machine_types/
@@ -2727,6 +2745,11 @@ google-cloud-sdk/lib/surface/preview/app/instances/enable_debug.py
 google-cloud-sdk/lib/surface/preview/app/instances/enable_debug.pyc
 google-cloud-sdk/lib/surface/preview/app/instances/list.py
 google-cloud-sdk/lib/surface/preview/app/instances/list.pyc
+google-cloud-sdk/lib/surface/preview/app/logs/
+google-cloud-sdk/lib/surface/preview/app/logs/__init__.py
+google-cloud-sdk/lib/surface/preview/app/logs/__init__.pyc
+google-cloud-sdk/lib/surface/preview/app/logs/read.py
+google-cloud-sdk/lib/surface/preview/app/logs/read.pyc
 google-cloud-sdk/lib/surface/preview/app/modules/
 google-cloud-sdk/lib/surface/preview/app/modules/__init__.py
 google-cloud-sdk/lib/surface/preview/app/modules/__init__.pyc
@@ -4292,6 +4315,7 @@ google-cloud-sdk/platform/ext-runtime/ruby/test/runtime_test.pyc
 google-cloud-sdk/platform/gsutil/
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
+google-cloud-sdk/platform/gsutil/CONTRIBUTING.md
 google-cloud-sdk/platform/gsutil/COPYING
 google-cloud-sdk/platform/gsutil/MANIFEST.in
 google-cloud-sdk/platform/gsutil/README.md
@@ -5881,6 +5905,8 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_con
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_connection.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_password_policy.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_password_policy.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_policy.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_policy.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis/
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis/__init__.pyc
@@ -6115,6 +6141,8 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_con
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_connection.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_distribution.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_distribution.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_invalidation.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_invalidation.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_invalidation_list.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_invalidation_list.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_signed_urls.py
@@ -6220,6 +6248,11 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_spotinstan
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_spotinstance.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_volume.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_volume.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2containerservice/
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2containerservice/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2containerservice/__init__.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2containerservice/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2containerservice/test_connection.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ecs/
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ecs/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ecs/__init__.pyc
@@ -6261,6 +6294,8 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/__init__.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/test_connection.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/test_connection.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/test_policy.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/test_policy.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/kinesis/
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/kinesis/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/kinesis/__init__.pyc
@@ -7451,6 +7486,10 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_preview_app_browse.1
 @man man/man1/gcloud_preview_app_deploy.1
 @man man/man1/gcloud_preview_app_gen-config.1
+@man man/man1/gcloud_preview_app_instances.1
+@man man/man1/gcloud_preview_app_instances_disable-debug.1
+@man man/man1/gcloud_preview_app_instances_enable-debug.1
+@man man/man1/gcloud_preview_app_instances_list.1
 @man man/man1/gcloud_preview_app_modules.1
 @man man/man1/gcloud_preview_app_modules_delete.1
 @man man/man1/gcloud_preview_app_modules_get-logs.1
@@ -7459,6 +7498,17 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_preview_app_modules_set-managed-by.1
 @man man/man1/gcloud_preview_app_modules_start.1
 @man man/man1/gcloud_preview_app_modules_stop.1
+@man man/man1/gcloud_preview_app_services.1
+@man man/man1/gcloud_preview_app_services_browse.1
+@man man/man1/gcloud_preview_app_services_delete.1
+@man man/man1/gcloud_preview_app_services_list.1
+@man man/man1/gcloud_preview_app_services_set-traffic.1
+@man man/man1/gcloud_preview_app_versions.1
+@man man/man1/gcloud_preview_app_versions_browse.1
+@man man/man1/gcloud_preview_app_versions_delete.1
+@man man/man1/gcloud_preview_app_versions_list.1
+@man man/man1/gcloud_preview_app_versions_start.1
+@man man/man1/gcloud_preview_app_versions_stop.1
 @man man/man1/gcloud_preview_datastore.1
 @man man/man1/gcloud_preview_datastore_cleanup-indexes.1
 @man man/man1/gcloud_preview_datastore_create-indexes.1
