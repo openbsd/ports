@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.107 2016/03/28 15:38:21 zhuk Exp $
+# $OpenBSD: portcheck,v 1.108 2016/04/21 15:51:33 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1911,6 +1911,7 @@ check_subst_vars() {
 #   * SHARED_LIBS are not defined inside ".if" statements.
 #   * Variables are not assigned via "=" twice outside of .if statemets.
 #   * No user settings present.
+#   * SHARED_ONLY not defined
 check_makefile() {
 	$debugging && echo "CALLED: check_makefile($*)" >&2
 
@@ -1964,6 +1965,9 @@ check_makefile() {
 			if ((iflevel > 0)); then
 				err "should not be inside .if block ($F:$lnum): $l"
 			fi
+			;;
+		*(" ")SHARED_ONLY*(" "|"$tab")*(+|:|!|\?)=*)
+			err "SHARED_ONLY is deprecated ($F:$lnum)"
 			;;
 		esac
 
