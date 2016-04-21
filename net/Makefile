@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.964 2016/04/21 19:04:00 edd Exp $
+# $OpenBSD: Makefile,v 1.965 2016/04/21 20:28:26 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -9,7 +9,6 @@
      SUBDIR += aiccu
      SUBDIR += aimsniff
      SUBDIR += aircontrol
-     SUBDIR += amsn
      SUBDIR += amule
      SUBDIR += angst
      SUBDIR += ap-utils
@@ -474,7 +473,6 @@
      SUBDIR += pear-Net-URL2
      SUBDIR += pear-Services-Weather
      SUBDIR += pear-Services-oEmbed
-     SUBDIR += pebrot
      SUBDIR += pen
      SUBDIR += pfstat
      SUBDIR += php-weathermap

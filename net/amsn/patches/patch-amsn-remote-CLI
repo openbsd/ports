@@ -1,9 +1,0 @@
-$OpenBSD: patch-amsn-remote-CLI,v 1.2 2008/08/31 17:16:22 steven Exp $
---- amsn-remote-CLI.orig	Fri Dec  1 16:20:48 2006
-+++ amsn-remote-CLI	Fri Dec  1 16:21:25 2006
-@@ -1,4 +1,4 @@
--#!/usr/bin/tclsh
-+#!${MODTK_BIN}
- ###
- ### Remote controller program
- ###
