@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/13 09:44:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/21 20:42:01 naddy Exp $
 
     SUBDIR =
     SUBDIR += bash
@@ -14,6 +14,7 @@
     SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += tcsh,static
+    SUBDIR += yash
     SUBDIR += zoidberg
     SUBDIR += zsh
 
