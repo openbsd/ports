@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/17 17:30:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/21 19:44:17 naddy Exp $
 @newgroup _siproxd:574
 @newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
 lib/siproxd/
+lib/siproxd/plugin_codecfilter.so
 lib/siproxd/plugin_defaulttarget.so
 lib/siproxd/plugin_demo.so
+lib/siproxd/plugin_fix_DTAG.so
 lib/siproxd/plugin_fix_bogus_via.so
+lib/siproxd/plugin_fix_fbox_anoncall.so
 lib/siproxd/plugin_logcall.so
 lib/siproxd/plugin_prefix.so
 lib/siproxd/plugin_regex.so
 lib/siproxd/plugin_shortdial.so
+lib/siproxd/plugin_siptrunk.so
+lib/siproxd/plugin_stripheader.so
 lib/siproxd/plugin_stun.so
 @bin sbin/siproxd
 share/doc/siproxd/

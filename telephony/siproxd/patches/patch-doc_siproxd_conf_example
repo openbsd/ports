@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_siproxd_conf_example,v 1.4 2012/05/04 21:42:18 sthen Exp $
---- doc/siproxd.conf.example.orig	Mon Jun 20 16:25:27 2011
-+++ doc/siproxd.conf.example	Thu May  3 22:57:55 2012
+$OpenBSD: patch-doc_siproxd_conf_example,v 1.5 2016/04/21 19:44:17 naddy Exp $
+--- doc/siproxd.conf.example.orig	Fri Mar 25 19:44:51 2016
++++ doc/siproxd.conf.example	Sun Apr 17 22:28:24 2016
 @@ -9,6 +9,9 @@
  ######################################################################
  # The interface names of INBOUND and OUTBOUND interface.
@@ -51,7 +51,7 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.4 2012/05/04 21:42:18 sthen Exp $
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -322,18 +325,18 @@ debug_port = 0
+@@ -322,23 +325,23 @@ debug_port = 0
  # The plugins are loaded in the order they appear here. Also
  # the processing order is given by the load order.
  #
@@ -66,18 +66,28 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.4 2012/05/04 21:42:18 sthen Exp $
 -load_plugin=plugin_logcall.la
 -#load_plugin=plugin_defaulttarget.la
 -#load_plugin=plugin_fix_bogus_via.la
+-#load_plugin=plugin_fix_DTAG.la
 -#load_plugin=plugin_stun.la
 -#load_plugin=plugin_prefix.la
 -#load_plugin=plugin_regex.la
+-#load_plugin=plugin_stripheader.la
+-#load_plugin=plugin_codecfilter.la
+-#load_plugin=plugin_siptrunk.la
+-#load_plugin=plugin_fix_fbox_anoncall.la
 +# List of plugins to load.
 +#load_plugin=plugin_demo.so
 +#load_plugin=plugin_shortdial.so
 +load_plugin=plugin_logcall.so
 +#load_plugin=plugin_defaulttarget.so
 +#load_plugin=plugin_fix_bogus_via.so
++#load_plugin=plugin_fix_DTAG.so
 +#load_plugin=plugin_stun.so
 +#load_plugin=plugin_prefix.so
 +#load_plugin=plugin_regex.so
++#load_plugin=plugin_stripheader.so
++#load_plugin=plugin_codecfilter.so
++#load_plugin=plugin_siptrunk.so
++#load_plugin=plugin_fix_fbox_anoncall.so
  
  
  ######################################################################
