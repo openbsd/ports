@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/16 21:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/21 08:13:22 dcoppa Exp $
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
-DISTNAME =	ccid-1.4.22
+DISTNAME =	ccid-1.4.23
 
 CATEGORIES =	security
 
