@@ -1,6 +1,6 @@
-$OpenBSD: patch-pstree_c,v 1.5 2015/05/22 13:45:30 schwarze Exp $
---- pstree.c.orig	Thu May 21 11:23:56 2015
-+++ pstree.c	Thu May 21 11:24:29 2015
+$OpenBSD: patch-pstree_c,v 1.6 2016/04/21 08:56:07 semarie Exp $
+--- pstree.c.orig	Wed May 13 14:24:47 2015
++++ pstree.c	Thu Apr 21 08:23:00 2016
 @@ -77,7 +77,7 @@ extern getargs(struct ProcInfo *, int, char *, int);
   * (Net|Open|Free)BSD & Darwin merged by Ralf Meyer <ralf AT thp.Uni-Duisburg.DE>
   */
@@ -10,3 +10,17 @@ $OpenBSD: patch-pstree_c,v 1.5 2015/05/22 13:45:30 schwarze Exp $
  #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
  #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
  #  define PSVARSN	5
+@@ -872,7 +872,12 @@ int main(int argc, char **argv) {
+ #ifdef ZOMBIES_HAVE_PID_0
+   FixZombies();
+ #endif
+-  
++
++  if (pledge("stdio getpw proc tty", NULL) == -1) {
++    fprintf(stderr, "%s: pledge\n", Progname);
++    exit(1);
++  }
++
+   if (NProc == 0) {
+     fprintf(stderr, "%s: No processes read.\n", Progname);
+     exit(1);

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2015/05/22 13:45:30 schwarze Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/21 08:56:07 semarie Exp $
 
 COMMENT =		list processes as a tree
 DISTNAME =		pstree-2.39
 CATEGORIES =		sysutils
 HOMEPAGE =		http://www.thp.uni-duisburg.de/pstree/
+REVISION =		0
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c 
 
 MASTER_SITES =		ftp://ftp.thp.uni-duisburg.de/pub/source/
