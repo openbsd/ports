@@ -1,8 +1,8 @@
-$OpenBSD: patch-mlterm_Makefile_in,v 1.4 2015/11/04 13:49:34 dcoppa Exp $
---- mlterm/Makefile.in.orig	Sat Oct 24 18:18:14 2015
-+++ mlterm/Makefile.in	Wed Nov  4 13:42:59 2015
+$OpenBSD: patch-mlterm_Makefile_in,v 1.5 2016/04/21 11:42:29 dcoppa Exp $
+--- mlterm/Makefile.in.orig	Sun Mar 13 11:57:39 2016
++++ mlterm/Makefile.in	Thu Apr 21 12:37:13 2016
 @@ -30,6 +30,8 @@ OBJ = ml_char_encoding.o ml_color.o ml_edit.o ml_edit_
- 	ml_pty.o ml_termcap.o ml_line_shape.o @ML_PTY_OBJ@
+ 	ml_pty.o ml_termcap.o ml_line_shape.o cygfile.o @ML_PTY_OBJ@
  
  LIBNAME = libmlterm
 +MAJOR = ${LIBmlterm_core_VERSION:R}

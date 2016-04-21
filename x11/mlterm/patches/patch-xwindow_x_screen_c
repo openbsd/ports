@@ -1,10 +1,10 @@
-$OpenBSD: patch-xwindow_x_screen_c,v 1.14 2015/12/23 09:19:57 dcoppa Exp $
+$OpenBSD: patch-xwindow_x_screen_c,v 1.15 2016/04/21 11:42:29 dcoppa Exp $
 
 'XKeycodeToKeysym' is deprecated
 
---- xwindow/x_screen.c.orig	Tue Dec 15 13:25:01 2015
-+++ xwindow/x_screen.c	Wed Dec 23 09:19:52 2015
-@@ -6646,8 +6646,8 @@ compare_key_state_with_modmap(
+--- xwindow/x_screen.c.orig	Sun Mar 13 11:57:40 2016
++++ xwindow/x_screen.c	Thu Apr 21 12:37:13 2016
+@@ -6663,8 +6663,8 @@ compare_key_state_with_modmap(
  			{
  				KeySym  sym ;
  

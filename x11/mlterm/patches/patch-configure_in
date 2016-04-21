@@ -1,12 +1,28 @@
-$OpenBSD: patch-configure_in,v 1.13 2015/12/23 09:19:57 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.14 2016/04/21 11:42:29 dcoppa Exp $
 
 setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around
 
---- configure.in.orig	Tue Dec 15 13:25:01 2015
-+++ configure.in	Wed Dec 23 09:19:54 2015
-@@ -675,44 +675,14 @@ AC_ARG_ENABLE(pty_helper,
+--- configure.in.orig	Sun Mar 13 11:57:40 2016
++++ configure.in	Thu Apr 21 13:06:02 2016
+@@ -612,15 +612,6 @@ else
+ 				OT_LAYOUT_OBJ=hb.o
+ 			fi
+ 		fi
+-
+-		if test "$have_hb" != "yes"; then
+-			AC_CHECK_PROG(libotf_config,libotf-config,yes)
+-			if test "$libotf_config" = "yes" ; then
+-				OT_LAYOUT_CFLAGS="`libotf-config --cflags` -DUSE_OT_LAYOUT"
+-				OT_LAYOUT_LIBS="`libotf-config --libs`"
+-				OT_LAYOUT_OBJ=otf.o
+-			fi
+-		fi
+ 	fi
+ 
+ 	if test "$have_hb" = "yes" -a "$gui" != "quartz" -a "$PKG_CONFIG" != ""; then
+@@ -741,44 +732,14 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"
@@ -51,5 +67,5 @@ Do not enable VTE support if libvte is around
 -fi
 +have_vte=no
  
- tools="mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,registobmp"
+ tools="mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,registobmp,mlfc"
  AC_ARG_WITH(tools,
