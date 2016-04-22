@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_liboctave_Makefile_in,v 1.8 2016/04/22 17:21:39 steven Exp $
+avoid rebuilding info file
+--- doc/liboctave/Makefile.in.orig	Thu Apr 21 12:39:41 2016
++++ doc/liboctave/Makefile.in	Thu Apr 21 12:39:59 2016
+@@ -2238,7 +2238,7 @@ install-html-am: $(HTMLS)
+ 	done; }
+ install-info: install-info-am
+ 
+-install-info-am: $(INFO_DEPS)
++install-info-am:
+ 	@$(NORMAL_INSTALL)
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(INFO_DEPS)'; test -n "$(infodir)" || list=; \

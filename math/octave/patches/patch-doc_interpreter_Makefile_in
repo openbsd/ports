@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_interpreter_Makefile_in,v 1.8 2016/04/22 17:21:39 steven Exp $
+avoid rebuilding info file
+--- doc/interpreter/Makefile.in.orig	Thu Apr 21 11:13:33 2016
++++ doc/interpreter/Makefile.in	Thu Apr 21 11:13:47 2016
+@@ -2494,7 +2494,7 @@ install-html-am: $(HTMLS)
+ 	done; }
+ install-info: install-info-am
+ 
+-install-info-am: $(INFO_DEPS)
++install-info-am:
+ 	@$(NORMAL_INSTALL)
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(INFO_DEPS)'; test -n "$(infodir)" || list=; \
