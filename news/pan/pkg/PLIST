@@ -1,34 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/20 07:20:34 pea Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/22 05:33:15 ajacoutot Exp $
 @bin bin/pan
 share/appdata/
 share/appdata/pan.appdata.xml
 share/applications/pan.desktop
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/pan.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/pan.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/pan.mo
 share/locale/bg/LC_MESSAGES/pan.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/pan.mo
 share/locale/ca/LC_MESSAGES/pan.mo
 share/locale/cs/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/de/LC_MESSAGES/pan.mo
-share/locale/dz/
-share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/pan.mo
 share/locale/el/LC_MESSAGES/pan.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/pan.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/pan.mo
 share/locale/eo/LC_MESSAGES/pan.mo
 share/locale/es/LC_MESSAGES/pan.mo
@@ -43,17 +29,11 @@ share/locale/hu/LC_MESSAGES/pan.mo
 share/locale/it/LC_MESSAGES/pan.mo
 share/locale/ja/LC_MESSAGES/pan.mo
 share/locale/ko/LC_MESSAGES/pan.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/pan.mo
 share/locale/lv/LC_MESSAGES/pan.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/pan.mo
 share/locale/nb/LC_MESSAGES/pan.mo
 share/locale/nl/LC_MESSAGES/pan.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/pan.mo
 share/locale/pt/LC_MESSAGES/pan.mo
 share/locale/pt_BR/LC_MESSAGES/pan.mo
@@ -61,12 +41,8 @@ share/locale/ro/LC_MESSAGES/pan.mo
 share/locale/ru/LC_MESSAGES/pan.mo
 share/locale/sk/LC_MESSAGES/pan.mo
 share/locale/sl/LC_MESSAGES/pan.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/pan.mo
 share/locale/sr/LC_MESSAGES/pan.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/pan.mo
 share/locale/sv/LC_MESSAGES/pan.mo
 share/locale/tr/LC_MESSAGES/pan.mo

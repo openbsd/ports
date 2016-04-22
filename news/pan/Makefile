@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/04/20 07:20:34 pea Exp $
+# $OpenBSD: Makefile,v 1.51 2016/04/22 05:33:15 ajacoutot Exp $
 
 COMMENT=	powerful newsreader
 
@@ -13,34 +13,28 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GMAKE= 	Yes
+WANTLIB += atk-1.0 c cairo cairo-gobject enchant gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gnome-keyring
+WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-3 gtkspell3-3 iconv
+WANTLIB += intl m notify pango-1.0 pangocairo-1.0 pthread stdc++
+WANTLIB += z
 
-WANTLIB += atk-1.0 c cairo cairo-gobject iconv intl
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gnutls gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
-WANTLIB += pthread stdc++ z
+USE_GMAKE= 	Yes
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
-MODULES=	textproc/intltool # test target
+MODULES=	textproc/intltool
 
 LIB_DEPENDS=	devel/libnotify \
 		mail/gmime \
 		security/gnutls \
-		x11/gnome/libgnome-keyring \
-		x11/gtk+3
+		textproc/gtkspell3 \
+		x11/gnome/libgnome-keyring
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk3 --enable-libnotify --enable-gkr --with-gnutls
-
-# XXX needs to be ported to gtkspell3
-CONFIGURE_ARGS += --without-gtkspell
-
-post-configure:
-	cd ${WRKSRC}/po && for i in $$(ls *.po) ; do ${LOCALBASE}/bin/msgfmt -c -o $${i%%po}gmo $$i ; done
 
 .include <bsd.port.mk>
