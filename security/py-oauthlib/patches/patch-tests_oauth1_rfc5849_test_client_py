@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_oauth1_rfc5849_test_client_py,v 1.1 2016/04/22 22:25:53 sthen Exp $
+--- tests/oauth1/rfc5849/test_client.py.orig	Wed Dec 23 16:15:03 2015
++++ tests/oauth1/rfc5849/test_client.py	Wed Dec 23 16:15:18 2015
+@@ -133,7 +133,7 @@ class SignatureMethodTest(TestCase):
+ 
+         u, h, b = client.sign('http://example.com')
+ 
+-        self.assertEquals(h['Authorization'], (
++        self.assertEqual(h['Authorization'], (
+             'OAuth oauth_nonce="abc", oauth_timestamp="1234567890", '
+             'oauth_version="1.0", oauth_signature_method="PIZZA", '
+             'oauth_consumer_key="client_key", '
