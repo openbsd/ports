@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/09 10:07:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/22 11:30:50 shadchin Exp $
 
 COMMENT =	messagepack (de)serializer
 
-MODPY_EGG_VERSION =	0.4.6
+MODPY_EGG_VERSION =	0.4.7
 DISTNAME =	msgpack-python-${MODPY_EGG_VERSION}
 PKGNAME =	py-msgpack-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	net textproc
 
 HOMEPAGE =	http://msgpack.org/
+
+MAINTAINER =	Alexandr Shadchin <shadchin@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,14 +21,12 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 WANTLIB +=	${MODPY_WANTLIB} m pthread stdc++
 
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR?=
 
 do-test:
-	@cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX} test
+	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
