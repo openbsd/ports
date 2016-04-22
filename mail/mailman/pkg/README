@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/03/19 10:29:03 sthen Exp $
+$OpenBSD: README,v 1.5 2016/04/22 16:42:14 okan Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,6 +10,8 @@ taken from the file INSTALL of the mailman distribution, with some
 OpenBSD specific comments added. It's a good time to become root, now.
 
 1) Final Steps for Installation
+
+- Add your MTA and web server user to the _mailmanq group.
 
 - Configure your web server to give $mailmandir/cgi-bin permission to
   run CGI scripts by adding
@@ -175,13 +177,10 @@ system and version of Python.
              more information.
 
 
-   Problem:  The mail wrapper programs are logging complaints about the
-             wrong GID.
+   Problem:  The cgi and mail wrapper programs are logging complaints
+             about group mismatch.
 
-   Solution: The mail wrappers have a compiled-in GID check. Packages are
-             available for postfix/smtpd/sendmail, pkg_add will ask you which
-             to use. If you change MTA, uninstall the mailman package and
-             pkg_add a new one.
+   Solution: Add your MTA and web server user to the _mailmanq group.
 
 
    Problem:  I send mail to the list, and get back mail saying,

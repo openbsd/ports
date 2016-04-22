@@ -30,8 +30,3 @@ mailing list manager, and more:
 - An extensible mail delivery pipeline.
 
 - Support for virtual domains.
-
-Flavors:
-    The default flavor makes the mailwrapper run in group _smtpd, for smtpd
-    postfix - makes the mailwrapper run in group _mailman, for  postfix
-    sendmail - makes the mailwrapper run in group daemon, for sendmail

@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/04/09 15:37:08 okan Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/04/22 16:42:14 okan Exp $
+@pkgpath mail/mailman,postfix
+@pkgpath mail/mailman,sendmail
+@pkgpath mail/mailman,smtpd
 @newgroup _mailman:504
+@newgroup _mailmanq:769
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
 @owner _mailman
@@ -902,6 +906,7 @@ lib/mailman/templates/da/verify.txt
 @mode 775
 lib/mailman/templates/de/
 @mode
+lib/mailman/templates/de/adminaddrchgack.txt
 lib/mailman/templates/de/admindbdetails.html
 lib/mailman/templates/de/admindbpreamble.html
 lib/mailman/templates/de/admindbsummary.html
@@ -1574,6 +1579,7 @@ lib/mailman/templates/it/verify.txt
 @mode 775
 lib/mailman/templates/ja/
 @mode
+lib/mailman/templates/ja/adminaddrchgack.txt
 lib/mailman/templates/ja/admindbdetails.html
 lib/mailman/templates/ja/admindbpreamble.html
 lib/mailman/templates/ja/admindbsummary.html
@@ -1794,9 +1800,6 @@ lib/mailman/templates/no/verify.txt
 @mode 775
 lib/mailman/templates/pl/
 @mode
-lib/mailman/templates/pl/admindbdetails.html
-lib/mailman/templates/pl/admindbpreamble.html
-lib/mailman/templates/pl/admindbsummary.html
 lib/mailman/templates/pl/adminsubscribeack.txt
 lib/mailman/templates/pl/adminunsubscribeack.txt
 lib/mailman/templates/pl/admlogin.html
@@ -1812,11 +1815,9 @@ lib/mailman/templates/pl/archtocnombox.html
 lib/mailman/templates/pl/article.html
 lib/mailman/templates/pl/bounce.txt
 lib/mailman/templates/pl/checkdbs.txt
-lib/mailman/templates/pl/convert.txt
 lib/mailman/templates/pl/cronpass.txt
 lib/mailman/templates/pl/disabled.txt
 lib/mailman/templates/pl/emptyarchive.html
-lib/mailman/templates/pl/headfoot.html
 lib/mailman/templates/pl/help.txt
 lib/mailman/templates/pl/invite.txt
 lib/mailman/templates/pl/listinfo.html

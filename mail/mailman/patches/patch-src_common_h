@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_common_h,v 1.1 2016/04/22 16:42:14 okan Exp $
+--- src/common.h.orig	Sun Mar 20 13:48:18 2016
++++ src/common.h	Sun Mar 20 13:53:00 2016
+@@ -27,6 +27,7 @@
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <grp.h>
++#include <pwd.h>
+ #include <unistd.h>
+ 
+ /* GETGROUPS_T gets set in the makefile by configure */
+@@ -52,6 +53,7 @@ extern const char* logident;
+ #define MAIL_ILLEGAL_COMMAND 6
+ #define ADDALIAS_USAGE_ERROR 7
+ #define GROUP_NAME_NOT_FOUND 8
++#define USER_NAME_NOT_FOUND 9
+ 
+ 
+ /*
