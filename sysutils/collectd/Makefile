@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2016/04/22 15:27:45 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -13,8 +13,12 @@ COMMENT-nut =		collectd nut plugin
 V =			5.5.0
 REVISION-main =		3
 REVISION-nut =		0
-REVISION-rrdtool =	0
+REVISION-rrdtool =	1
 REVISION-virt =		1
+REVISION-python =	0
+REVISION-memcachec =	0
+REVISION-pgsql =	0
+REVISION-mysql =	0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -40,19 +44,19 @@ MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -nut
 
-WANTLIB-mysql =		crypto m ssl z mysqlclient_r stdc++ pthread
+WANTLIB-mysql =		crypto m ssl z mysqlclient_r pthread
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-pgsql =		pq pthread crypto ssl
+WANTLIB-pgsql =		pq pthread
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
-			freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+			freetype glib-2.0 gobject-2.0 \
 			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-			pixman-1 png pthread pthread-stubs rrd_th xcb \
+			pixman-1 png pthread pthread-stubs rrd xcb \
 			xcb-render xcb-shm xml2 z
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
@@ -68,12 +72,12 @@ WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
-WANTLIB-python =	${MODPY_WANTLIB} util m pthread
+WANTLIB-python =	${MODPY_WANTLIB} pthread
 RUN_DEPENDS-python =	collectd-$V:${BASE_PKGPATH},-main \
 			${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS-memcachec =	devel/libmemcached
-WANTLIB-memcachec =	memcached sasl2 m pthread
+WANTLIB-memcachec =	memcached sasl2 pthread
 RUN_DEPENDS-memcachec =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut

@@ -1,8 +1,11 @@
-$OpenBSD: patch-configure,v 1.8 2015/07/23 07:33:17 landry Exp $
-no Werror, breaks with gcrypt deprecation warnings
-dont check for pcap-bpf.h, not installed on openbsd
---- configure.orig	Wed May 27 10:51:50 2015
-+++ configure	Wed Jun  3 15:45:37 2015
+$OpenBSD: patch-configure,v 1.9 2016/04/22 15:27:45 sthen Exp $
+
+- no Werror, breaks with gcrypt deprecation warnings
+- dont check for pcap-bpf.h, not installed on openbsd
+- in rrdtool the main librrd.so is now threadsafe, there is no more librrd_th.so
+
+--- configure.orig	Wed May 27 08:51:50 2015
++++ configure	Fri Apr 22 16:21:02 2016
 @@ -17312,7 +17312,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
@@ -36,3 +39,12 @@ dont check for pcap-bpf.h, not installed on openbsd
  if test "x$with_libpcap" = "xyes"
  then
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libpcap has PCAP_ERROR_IFACE_NOT_UP" >&5
+@@ -25067,7 +25051,7 @@ then
+ 
+ 
+ fi
+-if test "x$librrd_threadsafe" = "xyes"
++if 1
+ then
+ 
+ $as_echo "#define HAVE_THREADSAFE_LIBRRD 1" >>confdefs.h
