@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/19 08:32:37 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/22 04:40:19 semarie Exp $
 
 COMMENT =	help removing obsolete files between OpenBSD upgrades
 
-V =		1.4
+V =		1.5
 DISTNAME =	sysclean-${V}
 
 CATEGORIES =	sysutils
