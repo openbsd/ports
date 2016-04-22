@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/12 17:39:20 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/22 11:44:48 jca Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
-# Keep in sync with the version bundled in net/samba4
-DISTNAME=	talloc-2.1.3
+# Keep in sync with the version bundled in net/samba
+DISTNAME=	talloc-2.1.6
 PKGNAME=	lib${DISTNAME}
 
-SHARED_LIBS+=	talloc		1.0
-SHARED_LIBS+=	pytalloc-util	0.0
+SHARED_LIBS+=	talloc		1.1
+SHARED_LIBS+=	pytalloc-util	0.1
 
 CATEGORIES=	devel
 
@@ -34,9 +34,9 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 WAF_ARGS=	-v -j ${MAKE_JOBS}
 MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"
 .for _l _v in ${SHARED_LIBS}
-MAKE_ENV +=             LIB${_l:S/-/_/g}_VERSION=${_v}
+MAKE_ENV +=	LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
-TEST_ENV =	LD_LIBRARY_PATH="${WRKSRC}/bin/default"
+TEST_ENV=	LD_LIBRARY_PATH="${WRKSRC}/bin/default"
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --mandir="${PREFIX}/man" \

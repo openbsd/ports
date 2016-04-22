@@ -1,0 +1,15 @@
+$OpenBSD: patch-wscript,v 1.1 2016/04/22 11:44:48 jca Exp $
+
+- fix path to tests helper script
+
+--- wscript.orig	Sun Apr 17 19:47:33 2016
++++ wscript	Sun Apr 17 19:47:35 2016
+@@ -159,7 +159,7 @@ def test(ctx):
+     ret = samba_utils.RUN_COMMAND(cmd)
+     print("testsuite returned %d" % ret)
+     magic_helper_cmd = os.path.join(Utils.g_module.blddir, 'talloc_test_magic_differs_helper')
+-    magic_cmd = os.path.join(srcdir, 'lib', 'talloc',
++    magic_cmd = os.path.join(srcdir,
+                              'test_magic_differs.sh')
+ 
+     magic_ret = samba_utils.RUN_COMMAND(magic_cmd + " " +  magic_helper_cmd)
