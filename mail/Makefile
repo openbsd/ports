@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2016/03/19 10:29:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.336 2016/04/22 16:43:01 okan Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -75,9 +75,7 @@
      SUBDIR += maildrop,postfix
      SUBDIR += mailest
      SUBDIR += mailgraph
-     SUBDIR += mailman,postfix
-     SUBDIR += mailman,sendmail
-     SUBDIR += mailman,smtpd
+     SUBDIR += mailman
      SUBDIR += mailscanner
      SUBDIR += mairix
      SUBDIR += majordomo
