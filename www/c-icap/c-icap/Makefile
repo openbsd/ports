@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/11 17:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/22 20:08:04 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.4.2
-REVISION-main=	1
+V=		0.4.3
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V

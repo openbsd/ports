@@ -1,15 +1,6 @@
-$OpenBSD: patch-c-icap_conf_in,v 1.6 2015/11/20 17:34:25 sthen Exp $
---- c-icap.conf.in.orig	Tue Sep 15 10:00:59 2015
-+++ c-icap.conf.in	Fri Nov 20 17:32:15 2015
-@@ -268,7 +268,7 @@ TemplateDefaultLanguage en
- #	It can be used more than once to use multiple magic files.
- # Default:
- #	LoadMagicFile @prefix@/etc/c-icap.magic
--LoadMagicFile @prefix@/etc/c-icap.magic
-+LoadMagicFile @sysconfdir@/c-icap.magic
- 
- # TAG: RemoteProxyUsers
- # Format: RemoteProxyUsers onoff
+$OpenBSD: patch-c-icap_conf_in,v 1.7 2016/04/22 20:08:04 sthen Exp $
+--- c-icap.conf.in.orig	Tue Mar 29 10:27:15 2016
++++ c-icap.conf.in	Fri Apr 22 20:39:55 2016
 @@ -335,7 +335,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No value
