@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2016/04/17 13:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2016/04/22 12:02:08 naddy Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -97,6 +97,7 @@ LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		x11/gnome/libsecret
 
 BUILD_DEPENDS =	devel/bison \
+		devel/gettext-tools \
 		devel/gperf \
 		geo/geoclue2
 
