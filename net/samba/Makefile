@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.220 2016/04/13 11:25:40 jca Exp $
+# $OpenBSD: Makefile,v 1.221 2016/04/22 11:48:36 jca Exp $
 
-VERSION =		4.3.8
+VERSION =		4.4.2
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -17,16 +17,15 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.21
-TEVENT_V =		0.9.25
+LDB_V =			1.1.26
+TEVENT_V =		0.9.28
 
 SHARED_LIBS =		asn1-samba4		0.0 \
+			com_err-samba4		0.0 \
 			dcerpc			0.0 \
-			dcerpc-atsvc		0.0 \
-			dcerpc-binding		0.0 \
+			dcerpc-binding		1.0 \
 			dcerpc-samr		0.0 \
 			dcerpc-server		0.0 \
-			gensec			0.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -35,28 +34,27 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.0 \
-			ldb			0.1 \
+			ldb			0.2 \
+			tevent-unix-util	0.0 \
 			ndr			0.1 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
 			ndr-standard		0.0 \
 			netapi			2.0 \
 			pyldb-util		0.0 \
-			registry		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.0 \
-			samba-hostconfig	0.0 \
-			samba-passdb		0.0 \
+			samba-errors		0.0 \
+			samba-hostconfig	1.0 \
+			samba-passdb		0.1 \
 			samba-policy		0.0 \
 			samba-util		1.0 \
 			samdb			0.0 \
 			smbclient		4.1 \
-			smbclient-raw		0.0 \
 			smbconf			0.0 \
 			smbldap			0.0 \
-			tevent			0.1 \
+			tevent			0.2 \
 			tevent-util		0.0 \
-			torture			0.0 \
 			wbclient		3.0 \
 			wind-samba4		0.0 \
 			replace			0.0 \
@@ -77,25 +75,22 @@ UTIL_LIBS =		replace util-setid
 # not "plugins" or such.
 UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 
-WANTLIB-common =	c m pthread util ${MODPY_WANTLIB}
+WANTLIB-common =	c pthread
 
-WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB}
-WANTLIB-main +=		com_err ncurses z
-WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
-WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
+WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main +=		z
+WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
+WANTLIB-main +=		lber ldap pam popt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
-WANTLIB-ldb =		${WANTLIB-common}
-WANTLIB-ldb +=		popt tdb talloc tevent
-WANTLIB-ldb +=		${UTIL_WANTLIB}
+WANTLIB-ldb =		${WANTLIB-common} ${MODPY_WANTLIB}
+WANTLIB-ldb +=		popt talloc tevent
 
-WANTLIB-tevent =	${WANTLIB-common}
+WANTLIB-tevent =	${WANTLIB-common} ${MODPY_WANTLIB}
 WANTLIB-tevent +=	talloc
-WANTLIB-tevent +=	${UTIL_WANTLIB}
 
 WANTLIB-util =		${WANTLIB-common}
-WANTLIB-util +=		pytalloc-util talloc
 
 WANTLIB-docs =
 
@@ -108,7 +103,8 @@ MODULES =		devel/gettext lang/python perl
 
 BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
 			net/py-dnspython \
-			textproc/docbook-xsl
+			textproc/docbook-xsl \
+			x11/dbus
 
 RUN_DEPENDS-main =	net/py-dnspython
 
@@ -118,30 +114,20 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
-			databases/tdb>=1.3.7 \
-			devel/iniparser \
+			databases/tdb>=1.3.8 \
 			devel/libexecinfo \
-			devel/libtalloc>=2.1.3 \
+			devel/libtalloc>=2.1.6 \
 			net/avahi \
 			print/cups,-libs \
-			security/cyrus-sasl2 \
 			security/gnutls \
-			security/libgcrypt \
 			security/openpam \
-			sysutils/e2fsprogs \
 			sysutils/gamin
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
-			${BUILD_PKGPATH},-util>=${VERSION} \
-			databases/tdb>=1.3.7 \
-			devel/libtalloc>=2.1.3 \
+			devel/libtalloc>=2.1.6 \
 			devel/popt
 
-LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${VERSION} \
-			devel/libtalloc>=2.1.3
-
-LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS} \
-			devel/libtalloc>=2.1.3
+LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.6
 
 LIB_DEPENDS-docs =
 

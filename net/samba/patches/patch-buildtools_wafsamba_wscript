@@ -1,8 +1,8 @@
-$OpenBSD: patch-buildtools_wafsamba_wscript,v 1.1 2015/08/25 11:04:39 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_wscript,v 1.2 2016/04/22 11:48:36 jca Exp $
 Add a hack to force addition of -I/usr/include before any other include path discovered.
---- buildtools/wafsamba/wscript.orig	Thu May  1 16:31:00 2014
-+++ buildtools/wafsamba/wscript	Thu May  1 16:31:00 2014
-@@ -85,6 +85,11 @@ def set_options(opt):
+--- buildtools/wafsamba/wscript.orig	Wed Apr 13 17:18:35 2016
++++ buildtools/wafsamba/wscript	Wed Apr 13 17:18:35 2016
+@@ -82,6 +82,11 @@ def set_options(opt):
                     help=("Disable use of gettext"),
                     action="store_true", dest='disable_gettext', default=False)
  

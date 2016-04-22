@@ -1,12 +1,12 @@
-$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.2 2015/09/28 22:51:25 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.3 2016/04/22 11:48:36 jca Exp $
 Add a bunch of common symbols to allow tests to run. Those that added in
 safe_symbols initially should probably go upstream, _Jv_RegisterClasses is
 a strange one (weak symbol everywhere in the whole system) and others are
 coming from libgcc.a.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9892
---- buildtools/wafsamba/symbols.py.orig	Tue May 14 17:30:33 2013
-+++ buildtools/wafsamba/symbols.py	Tue May 14 19:58:59 2013
-@@ -569,7 +569,14 @@ def symbols_whyneeded(task):
+--- buildtools/wafsamba/symbols.py.orig	Wed Apr 13 17:18:35 2016
++++ buildtools/wafsamba/symbols.py	Wed Apr 13 17:18:35 2016
+@@ -570,7 +570,14 @@ def symbols_whyneeded(task):
  
  def report_duplicate(bld, binname, sym, libs, fail_on_error):
      '''report duplicated symbols'''

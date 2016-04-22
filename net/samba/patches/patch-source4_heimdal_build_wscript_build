@@ -1,11 +1,11 @@
-$OpenBSD: patch-source4_heimdal_build_wscript_build,v 1.1 2015/08/25 11:04:39 jca Exp $
+$OpenBSD: patch-source4_heimdal_build_wscript_build,v 1.2 2016/04/22 11:48:36 jca Exp $
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
---- source4/heimdal_build/wscript_build.orig	Thu Dec  5 10:16:48 2013
-+++ source4/heimdal_build/wscript_build	Wed Jun 17 13:28:09 2015
+--- source4/heimdal_build/wscript_build.orig	Sun Apr 17 22:05:54 2016
++++ source4/heimdal_build/wscript_build	Sun Apr 17 22:27:32 2016
 @@ -243,6 +243,11 @@ def HEIMDAL_LIBRARY(libname, source, deps, vnum, versi
  
-     features = 'cc cshlib symlink_lib install_lib'
+     features = 'c cshlib symlink_lib install_lib'
  
 +    # OpenBSD-like library version handling
 +    osvnum = os.getenv('LIB' + bundled_name.replace('-', '_') + '_VERSION')

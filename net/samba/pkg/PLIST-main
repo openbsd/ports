@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2016/04/12 17:42:09 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2016/04/22 11:48:36 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -30,9 +30,7 @@ bin/samba-tool
 @bin bin/smbget
 @bin bin/smbpasswd
 @bin bin/smbspool
-@bin bin/smbspool_krb5_wrapper
 @bin bin/smbstatus
-@bin bin/smbta-util
 bin/smbtar
 @bin bin/smbtorture
 @bin bin/smbtree
@@ -48,7 +46,6 @@ include/samba-4.0/core/werror.h
 include/samba-4.0/credentials.h
 include/samba-4.0/dcerpc.h
 include/samba-4.0/dcerpc_server.h
-include/samba-4.0/dlinklist.h
 include/samba-4.0/domain_credentials.h
 include/samba-4.0/gen_ndr/
 include/samba-4.0/gen_ndr/atsvc.h
@@ -56,22 +53,15 @@ include/samba-4.0/gen_ndr/auth.h
 include/samba-4.0/gen_ndr/dcerpc.h
 include/samba-4.0/gen_ndr/drsblobs.h
 include/samba-4.0/gen_ndr/drsuapi.h
-include/samba-4.0/gen_ndr/epmapper.h
 include/samba-4.0/gen_ndr/krb5pac.h
 include/samba-4.0/gen_ndr/lsa.h
-include/samba-4.0/gen_ndr/mgmt.h
 include/samba-4.0/gen_ndr/misc.h
 include/samba-4.0/gen_ndr/nbt.h
 include/samba-4.0/gen_ndr/ndr_atsvc.h
-include/samba-4.0/gen_ndr/ndr_atsvc_c.h
 include/samba-4.0/gen_ndr/ndr_dcerpc.h
 include/samba-4.0/gen_ndr/ndr_drsblobs.h
 include/samba-4.0/gen_ndr/ndr_drsuapi.h
-include/samba-4.0/gen_ndr/ndr_epmapper.h
-include/samba-4.0/gen_ndr/ndr_epmapper_c.h
 include/samba-4.0/gen_ndr/ndr_krb5pac.h
-include/samba-4.0/gen_ndr/ndr_mgmt.h
-include/samba-4.0/gen_ndr/ndr_mgmt_c.h
 include/samba-4.0/gen_ndr/ndr_misc.h
 include/samba-4.0/gen_ndr/ndr_nbt.h
 include/samba-4.0/gen_ndr/ndr_samr.h
@@ -83,11 +73,6 @@ include/samba-4.0/gen_ndr/samr.h
 include/samba-4.0/gen_ndr/security.h
 include/samba-4.0/gen_ndr/server_id.h
 include/samba-4.0/gen_ndr/svcctl.h
-include/samba-4.0/gensec.h
-include/samba-4.0/ldap-util.h
-include/samba-4.0/ldap_errors.h
-include/samba-4.0/ldap_message.h
-include/samba-4.0/ldap_ndr.h
 include/samba-4.0/ldb_wrap.h
 include/samba-4.0/libsmbclient.h
 include/samba-4.0/lookup_sid.h
@@ -103,43 +88,18 @@ include/samba-4.0/netapi.h
 include/samba-4.0/param.h
 include/samba-4.0/passdb.h
 include/samba-4.0/policy.h
-include/samba-4.0/read_smb.h
-include/samba-4.0/registry.h
-include/samba-4.0/roles.h
 include/samba-4.0/rpc_common.h
 include/samba-4.0/samba/
 include/samba-4.0/samba/session.h
 include/samba-4.0/samba/version.h
-include/samba-4.0/samba_util.h
 include/samba-4.0/share.h
-include/samba-4.0/smb2.h
-include/samba-4.0/smb2_constants.h
-include/samba-4.0/smb2_create_blob.h
-include/samba-4.0/smb2_lease.h
 include/samba-4.0/smb2_lease_struct.h
-include/samba-4.0/smb2_signing.h
-include/samba-4.0/smb_cli.h
-include/samba-4.0/smb_cliraw.h
-include/samba-4.0/smb_common.h
-include/samba-4.0/smb_composite.h
-include/samba-4.0/smb_constants.h
 include/samba-4.0/smb_ldap.h
-include/samba-4.0/smb_raw.h
-include/samba-4.0/smb_raw_interfaces.h
-include/samba-4.0/smb_raw_signing.h
-include/samba-4.0/smb_raw_trans2.h
-include/samba-4.0/smb_request.h
-include/samba-4.0/smb_seal.h
-include/samba-4.0/smb_signing.h
-include/samba-4.0/smb_unix_ext.h
-include/samba-4.0/smb_util.h
 include/samba-4.0/smbconf.h
 include/samba-4.0/smbldap.h
 include/samba-4.0/tdr.h
-include/samba-4.0/torture.h
 include/samba-4.0/tsocket.h
 include/samba-4.0/tsocket_internal.h
-include/samba-4.0/tstream_smbXcli_np.h
 include/samba-4.0/util/
 include/samba-4.0/util/attr.h
 include/samba-4.0/util/blocking.h
@@ -163,50 +123,42 @@ include/samba-4.0/util/time.h
 include/samba-4.0/util/xfile.h
 include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
-@lib lib/libdcerpc-atsvc.so.${LIBdcerpc-atsvc_VERSION}
 @lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
 @lib lib/libdcerpc-samr.so.${LIBdcerpc-samr_VERSION}
 @lib lib/libdcerpc-server.so.${LIBdcerpc-server_VERSION}
 @lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
-@lib lib/libgensec.so.${LIBgensec_VERSION}
 @lib lib/libndr-krb5pac.so.${LIBndr-krb5pac_VERSION}
 @lib lib/libndr-nbt.so.${LIBndr-nbt_VERSION}
 @lib lib/libndr-standard.so.${LIBndr-standard_VERSION}
 @lib lib/libndr.so.${LIBndr_VERSION}
 @lib lib/libnetapi.so.${LIBnetapi_VERSION}
-@lib lib/libregistry.so.${LIBregistry_VERSION}
 @lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
+@lib lib/libsamba-errors.so.${LIBsamba-errors_VERSION}
 @lib lib/libsamba-hostconfig.so.${LIBsamba-hostconfig_VERSION}
 @lib lib/libsamba-passdb.so.${LIBsamba-passdb_VERSION}
 @lib lib/libsamba-policy.so.${LIBsamba-policy_VERSION}
 @lib lib/libsamba-util.so.${LIBsamba-util_VERSION}
 @lib lib/libsamdb.so.${LIBsamdb_VERSION}
-@lib lib/libsmbclient-raw.so.${LIBsmbclient-raw_VERSION}
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 @lib lib/libsmbconf.so.${LIBsmbconf_VERSION}
 @lib lib/libsmbldap.so.${LIBsmbldap_VERSION}
+@lib lib/libtevent-unix-util.so.${LIBtevent-unix-util_VERSION}
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
-@lib lib/libtorture.so.${LIBtorture_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/pkgconfig/dcerpc.pc
-lib/pkgconfig/dcerpc_atsvc.pc
 lib/pkgconfig/dcerpc_samr.pc
 lib/pkgconfig/dcerpc_server.pc
-lib/pkgconfig/gensec.pc
 lib/pkgconfig/ndr.pc
 lib/pkgconfig/ndr_krb5pac.pc
 lib/pkgconfig/ndr_nbt.pc
 lib/pkgconfig/ndr_standard.pc
 lib/pkgconfig/netapi.pc
-lib/pkgconfig/registry.pc
 lib/pkgconfig/samba-credentials.pc
 lib/pkgconfig/samba-hostconfig.pc
 lib/pkgconfig/samba-policy.pc
 lib/pkgconfig/samba-util.pc
 lib/pkgconfig/samdb.pc
-lib/pkgconfig/smbclient-raw.pc
 lib/pkgconfig/smbclient.pc
-lib/pkgconfig/torture.pc
 lib/pkgconfig/wbclient.pc
 lib/python${MODPY_VERSION}/site-packages/samba/
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.py
@@ -267,6 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.py
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/dsdb.so
+lib/python${MODPY_VERSION}/site-packages/samba/dsdb_dns.so
 lib/python${MODPY_VERSION}/site-packages/samba/gensec.so
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.py
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.pyc
@@ -375,9 +328,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/netcmd/time.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.py
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.pyo
-lib/python${MODPY_VERSION}/site-packages/samba/netcmd/vampire.py
-lib/python${MODPY_VERSION}/site-packages/samba/netcmd/vampire.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/netcmd/vampire.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.py
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.pyo
@@ -398,6 +348,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/provision/sambadns.py
 lib/python${MODPY_VERSION}/site-packages/samba/provision/sambadns.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/provision/sambadns.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/registry.so
+lib/python${MODPY_VERSION}/site-packages/samba/remove_dc.py
+lib/python${MODPY_VERSION}/site-packages/samba/remove_dc.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/remove_dc.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/samba3/
 lib/python${MODPY_VERSION}/site-packages/samba/samba3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/samba3/__init__.pyc
@@ -420,6 +373,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/sites.py
 lib/python${MODPY_VERSION}/site-packages/samba/sites.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/sites.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/smb.so
+lib/python${MODPY_VERSION}/site-packages/samba/subnets.py
+lib/python${MODPY_VERSION}/site-packages/samba/subnets.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/subnets.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/subunit/
 lib/python${MODPY_VERSION}/site-packages/samba/subunit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/subunit/__init__.pyc
@@ -460,6 +416,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/array.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/array.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/array.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/bare.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/bare.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/bare.pyo
@@ -472,6 +431,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/integer.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/misc.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/misc.pyo
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/raw_protocol.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/raw_protocol.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/raw_protocol.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/registry.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/registry.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dcerpc/registry.pyo
@@ -579,6 +541,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/ntacl.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.pyo
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/sites.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/sites.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/sites.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/timecmd.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/timecmd.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/timecmd.pyo
@@ -666,8 +631,8 @@ lib/samba/ldb/aclread.so
 lib/samba/ldb/anr.so
 lib/samba/ldb/asq.so
 lib/samba/ldb/descriptor.so
-lib/samba/ldb/dns_notify.so
 lib/samba/ldb/dirsync.so
+lib/samba/ldb/dns_notify.so
 lib/samba/ldb/extended_dn_in.so
 lib/samba/ldb/extended_dn_out.so
 lib/samba/ldb/extended_dn_store.so
@@ -734,6 +699,7 @@ lib/samba/libcli-spoolss-samba4.so
 lib/samba/libcliauth-samba4.so
 lib/samba/libcluster-samba4.so
 lib/samba/libcmdline-credentials-samba4.so
+@lib lib/samba/libcom_err-samba4.so.${LIBcom_err-samba4_VERSION}
 lib/samba/libdb-glue-samba4.so
 lib/samba/libdbwrap-samba4.so
 lib/samba/libdcerpc-samba-samba4.so
@@ -742,10 +708,10 @@ lib/samba/libdfs-server-ad-samba4.so
 lib/samba/libdlz-bind9-for-torture-samba4.so
 lib/samba/libdnsserver-common-samba4.so
 lib/samba/libdsdb-module-samba4.so
-lib/samba/liberrors-samba4.so
 lib/samba/libevents-samba4.so
 lib/samba/libflag-mapping-samba4.so
 lib/samba/libgenrand-samba4.so
+lib/samba/libgensec-samba4.so
 lib/samba/libgpo-samba4.so
 lib/samba/libgse-samba4.so
 @lib lib/samba/libgssapi-samba4.so.${LIBgssapi-samba4_VERSION}
@@ -782,6 +748,7 @@ lib/samba/libpopt-samba3-samba4.so
 lib/samba/libposix-eadb-samba4.so
 lib/samba/libprinting-migrate-samba4.so
 lib/samba/libprocess-model-samba4.so
+lib/samba/libregistry-samba4.so
 @lib lib/samba/libroken-samba4.so.${LIBroken-samba4_VERSION}
 lib/samba/libsamba-cluster-support-samba4.so
 lib/samba/libsamba-debug-samba4.so
@@ -798,6 +765,7 @@ lib/samba/libserver-role-samba4.so
 lib/samba/libservice-samba4.so
 lib/samba/libshares-samba4.so
 lib/samba/libsmb-transport-samba4.so
+lib/samba/libsmbclient-raw-samba4.so
 lib/samba/libsmbd-base-samba4.so
 lib/samba/libsmbd-conn-samba4.so
 lib/samba/libsmbd-shim-samba4.so
@@ -809,6 +777,7 @@ lib/samba/libsys-rw-samba4.so
 lib/samba/libtalloc-report-samba4.so
 lib/samba/libtdb-wrap-samba4.so
 lib/samba/libtime-basic-samba4.so
+lib/samba/libtorture-samba4.so
 lib/samba/libtrusts-util-samba4.so
 lib/samba/libutil-cmdline-samba4.so
 lib/samba/libutil-reg-samba4.so
@@ -835,7 +804,6 @@ lib/samba/service/ldap.so
 lib/samba/service/nbtd.so
 lib/samba/service/ntp_signd.so
 lib/samba/service/s3fs.so
-lib/samba/service/smb.so
 lib/samba/service/web.so
 lib/samba/service/winbindd.so
 lib/samba/service/wrepl.so
@@ -859,16 +827,16 @@ lib/samba/vfs/full_audit.so
 lib/samba/vfs/linux_xfs_sgid.so
 lib/samba/vfs/media_harmony.so
 lib/samba/vfs/netatalk.so
+lib/samba/vfs/offline.so
 lib/samba/vfs/posix_eadb.so
 lib/samba/vfs/preopen.so
 lib/samba/vfs/readahead.so
 lib/samba/vfs/readonly.so
 lib/samba/vfs/recycle.so
-lib/samba/vfs/scannedonly.so
 lib/samba/vfs/shadow_copy.so
 lib/samba/vfs/shadow_copy2.so
 lib/samba/vfs/shell_snap.so
-lib/samba/vfs/smb_traffic_analyzer.so
+lib/samba/vfs/snapper.so
 lib/samba/vfs/streams_depot.so
 lib/samba/vfs/streams_xattr.so
 lib/samba/vfs/syncops.so
@@ -876,7 +844,6 @@ lib/samba/vfs/time_audit.so
 lib/samba/vfs/unityed_media.so
 lib/samba/vfs/worm.so
 lib/samba/vfs/xattr_tdb.so
-lib/security/pam_smbpass.so
 lib/security/pam_winbind.so
 lib/winbind_krb5_locator.so
 ${P5SITE}/Parse/
@@ -911,6 +878,8 @@ ${P5SITE}/Parse/Pidl/Util.pm
 ${P5SITE}/Parse/Pidl/Wireshark/
 ${P5SITE}/Parse/Pidl/Wireshark/Conformance.pm
 ${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
+libexec/samba/
+@bin libexec/samba/smbspool_krb5_wrapper
 @man man/man1/dbwrap_tool.1
 @man man/man1/findsmb.1
 @man man/man1/gentest.1
@@ -954,6 +923,7 @@ ${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
 @man man/man7/libsmbclient.7
 @man man/man7/samba.7
 @man man/man7/winbind_krb5_locator.7
+@man man/man8/cifsdd.8
 @man man/man8/eventlogadm.8
 @man man/man8/idmap_ad.8
 @man man/man8/idmap_autorid.8
@@ -975,7 +945,6 @@ ${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
 @man man/man8/smbpasswd.8
 @man man/man8/smbspool.8
 @man man/man8/smbspool_krb5_wrapper.8
-@man man/man8/smbta-util.8
 @man man/man8/vfs_acl_tdb.8
 @man man/man8/vfs_acl_xattr.8
 @man man/man8/vfs_aio_fork.8
@@ -1001,16 +970,15 @@ ${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
 @man man/man8/vfs_linux_xfs_sgid.8
 @man man/man8/vfs_media_harmony.8
 @man man/man8/vfs_netatalk.8
+@man man/man8/vfs_offline.8
 @man man/man8/vfs_prealloc.8
 @man man/man8/vfs_preopen.8
 @man man/man8/vfs_readahead.8
 @man man/man8/vfs_readonly.8
 @man man/man8/vfs_recycle.8
-@man man/man8/vfs_scannedonly.8
 @man man/man8/vfs_shadow_copy.8
 @man man/man8/vfs_shadow_copy2.8
 @man man/man8/vfs_shell_snap.8
-@man man/man8/vfs_smb_traffic_analyzer.8
 @man man/man8/vfs_snapper.8
 @man man/man8/vfs_streams_depot.8
 @man man/man8/vfs_streams_xattr.8
