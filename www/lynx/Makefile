@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/15 03:21:51 tb Exp $
+# $OpenBSD: Makefile,v 1.26 2016/04/22 22:21:56 sthen Exp $
 
 V =		2.8.9
 PL =		8
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
@@ -17,11 +17,13 @@ MAINTAINER =	Frederic Cambus <fred@statdns.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB += c crypto ncurses ssl z
+WANTLIB += bz2 c crypto ncurses ssl z
 
 MASTER_SITES =	http://lynx.invisible-island.net/current/ \
 		http://invisible-mirror.net/archives/lynx/tarballs/ \
 		http://invisible-mirror.net/archives/lynx/patches/
+
+LIB_DEPENDS =	archivers/bzip2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
@@ -34,7 +36,8 @@ CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
 			--enable-ipv6 \
 			--enable-widec \
 			--with-ssl=/usr \
-			--with-zlib
+			--with-zlib \
+			--with-bzlib
 
 # This disables most calls to getpw*(3) so we can avoid pledge "getpw".
 CONFIGURE_ENV =	CFLAGS="-DNOUSERS"
