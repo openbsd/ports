@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/20 06:04:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/22 07:44:43 ajacoutot Exp $
 
 COMMENT=		universal command line environment for AWS
 
 # XXX issues with pypi MASTER_SITES
-MODPY_EGG_VERSION=	1.10.21
+MODPY_EGG_VERSION=	1.10.22
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT=             aws
@@ -29,7 +29,7 @@ RUN_DEPENDS=		security/py-rsa \
 
 # !!! check setup.py for exact dependencies version
 RUN_DEPENDS +=		devel/py-colorama=0.3.3
-RUN_DEPENDS +=		net/py-botocore=1.4.12
+RUN_DEPENDS +=		net/py-botocore=1.4.13
 RUN_DEPENDS +=		net/py-s3transfer=0.0.1
 
 NO_TEST=		Yes
