@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/22 11:38:37 shadchin Exp $
 
-COMMENT =		ssl.match_hostname() function from Python 3.4
+COMMENT =		ssl.match_hostname() function from Python 3.5
 
-MODPY_EGG_VERSION =	3.4.0.2
+MODPY_EGG_VERSION =	3.5.0.1
 DISTNAME =		backports.ssl_match_hostname-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-ssl-match-hostname-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # Python Software Foundation License
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +19,5 @@ MODULES =		lang/python
 # This comes built in with python-3.2 and above. Since all our
 # Python 3 ports are newer than 3.2, we can just do this:
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
-
-MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
