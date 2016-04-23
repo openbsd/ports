@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/04/23 12:44:14 steven Exp $
+# $OpenBSD: Makefile,v 1.86 2016/04/23 21:16:30 sthen Exp $
 
 # sparc: fPIC version of libgcc.a needed but not available
 NOT_FOR_ARCHS =	sparc
@@ -40,6 +40,7 @@ MODULES =	devel/gettext \
 		x11/qt4
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		print/texinfo \
 		textproc/gsed \
 		math/gnuplot
 
@@ -82,5 +83,10 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
 SUBST_VARS =	GNU_ARCH VERSION
+
+post-extract:
+.for i in makeinfo texi2dvi texi2pdf
+	ln -s ${LOCALBASE}/bin/g$i ${WRKDIR}/bin/$i
+.endfor
 
 .include <bsd.port.mk>
