@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/23 14:02:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/23 14:08:41 sthen Exp $
 
 COMMENT =	print a tree of the directory structure
 
@@ -6,7 +6,7 @@ V =		1.7.0
 DISTNAME =	tree-$V
 PKGNAME=	colortree-$V
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://mama.indstate.edu/users/ice/tree/
 
@@ -15,7 +15,6 @@ MAINTAINER =	David Dahlberg <david+bsd@dahlberg.cologne>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-# uses pledge()
 WANTLIB =	c
 
 MASTER_SITES =	http://mama.indstate.edu/users/ice/tree/src/
