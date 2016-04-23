@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/21 19:01:31 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/23 08:02:05 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
 V =		0.12.22
+REVISION =	0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -35,6 +36,8 @@ do-test:
 do-install:
 	# Note: Don't use INSTALL_PROGRAM. It strips, and go hates this.
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/syncthing ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/*.{1,5,7} ${PREFIX}/man/
+.for sec in 1 5 7
+	${INSTALL_MAN} ${WRKSRC}/man/*.${sec} ${PREFIX}/man/man${sec}/
+.endfor
 
 .include <bsd.port.mk>
