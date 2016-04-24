@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ctx_c,v 1.2 2015/12/04 01:38:56 gsoares Exp $
---- src/ctx.c.orig	Mon Nov 30 11:15:43 2015
-+++ src/ctx.c	Thu Dec  3 19:26:54 2015
-@@ -351,7 +351,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
+$OpenBSD: patch-src_ctx_c,v 1.3 2016/04/24 12:07:48 gsoares Exp $
+--- src/ctx.c.orig	Fri Feb 19 16:18:43 2016
++++ src/ctx.c	Thu Apr 21 21:59:31 2016
+@@ -363,7 +363,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
  /**************************************** initialize OpenSSL CONF */
  
  NOEXPORT int conf_init(SERVICE_OPTIONS *section) {

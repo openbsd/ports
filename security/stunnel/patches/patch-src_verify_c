@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_verify_c,v 1.2 2015/10/14 02:05:06 gsoares Exp $
+$OpenBSD: patch-src_verify_c,v 1.3 2016/04/24 12:07:48 gsoares Exp $
 
 disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
 
 
---- src/verify.c.orig	Wed Sep 23 07:00:08 2015
-+++ src/verify.c	Tue Oct  6 05:52:42 2015
+--- src/verify.c.orig	Fri Feb 19 16:18:43 2016
++++ src/verify.c	Thu Apr 21 21:59:31 2016
 @@ -51,7 +51,7 @@ NOEXPORT int add_dir_lookup(X509_STORE *, char *);
  NOEXPORT int verify_callback(int, X509_STORE_CTX *);
  NOEXPORT int verify_checks(CLI *, int, X509_STORE_CTX *);
@@ -14,7 +14,7 @@ disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
  NOEXPORT int cert_check_subject(CLI *, X509_STORE_CTX *);
  #endif /* OPENSSL_VERSION_NUMBER>=0x10002000L */
  NOEXPORT int cert_check_local(X509_STORE_CTX *);
-@@ -280,7 +280,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
+@@ -274,7 +274,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
      }
  
      if(depth==0) { /* additional peer certificate checks */
@@ -23,7 +23,7 @@ disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
          if(!cert_check_subject(c, callback_ctx))
              return 0; /* reject */
  #endif /* OPENSSL_VERSION_NUMBER>=0x10002000L */
-@@ -291,7 +291,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
+@@ -285,7 +285,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
      return 1; /* accept */
  }
  
