@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/13 20:18:25 jung Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/24 15:44:32 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		terminus-font-4.40
+REVISION =		0
 CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
@@ -24,13 +25,18 @@ FONTDIR =		${PREFIX}/share/fonts/terminus
 
 USE_GMAKE =		Yes
 
-FLAVORS =		symquotes
+FLAVORS =		symquotes centered_tilde
 FLAVOR ?=
 
-.if ${FLAVOR:Msymquotes}
-post-patch:
-	${PATCH} -d ${WRKSRC} < ${WRKSRC}/alt/gq2.diff
+.if ${FLAVOR:Mcentered_tilde}
+FLAVOR_PATCHES += ${WRKSRC}/alt/td1.diff
 .endif
+
+.if ${FLAVOR:Msymquotes}
+FLAVOR_PATCHES += ${WRKSRC}/alt/gq2.diff
+.endif
+
+PATCH_LIST = patch-* ${FLAVOR_PATCHES}
 
 do-install:
 	${GZIP_CMD} ${WRKSRC}/*.pcf

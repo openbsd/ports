@@ -1,5 +1,6 @@
 The Terminus font is a complete set of fixed-size fonts designed
-especially for the usage in terms.
+especially for use in terminals.
 
 Flavors:
-	symquotes - Build with symmetric single quotes.
+	symquotes	- Build with symmetric single quotes (gq2)
+	centered_tilde	- Build with centered ASCII tilde (td1)
