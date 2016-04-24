@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/10 09:01:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/24 07:09:02 ajacoutot Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/
@@ -105,6 +105,7 @@ share/glabels-3.0/pixmaps/new-rotate.png
 share/glabels-3.0/pixmaps/new-select.png
 share/glabels-3.0/pixmaps/template-designer.png
 share/glabels-3.0/ui/
+share/glabels-3.0/ui/label-properties-dialog.ui
 share/glabels-3.0/ui/media-select.ui
 share/glabels-3.0/ui/merge-properties-dialog.ui
 share/glabels-3.0/ui/new-label-dialog.ui
@@ -661,7 +662,9 @@ share/libglabels-3.0/templates/ascom-iso-templates.xml
 share/libglabels-3.0/templates/avery-iso-templates.xml
 share/libglabels-3.0/templates/avery-other-templates.xml
 share/libglabels-3.0/templates/avery-us-templates.xml
+share/libglabels-3.0/templates/begalabel-templates.xml
 share/libglabels-3.0/templates/brother-other-templates.xml
+share/libglabels-3.0/templates/cablelabel-templates.xml
 share/libglabels-3.0/templates/canon-other-templates.xml
 share/libglabels-3.0/templates/categories.xml
 share/libglabels-3.0/templates/databecker-iso-templates.xml
@@ -676,6 +679,7 @@ share/libglabels-3.0/templates/herma-iso-templates.xml
 share/libglabels-3.0/templates/igepa-templates.xml
 share/libglabels-3.0/templates/jac-iso-templates.xml
 share/libglabels-3.0/templates/maco-us-templates.xml
+share/libglabels-3.0/templates/mayspies-templates.xml
 share/libglabels-3.0/templates/meritline-us-templates.xml
 share/libglabels-3.0/templates/microapp-templates.xml
 share/libglabels-3.0/templates/misc-iso-templates.xml
@@ -690,6 +694,7 @@ share/libglabels-3.0/templates/vendors.xml
 share/libglabels-3.0/templates/worldlabel-us-templates.xml
 share/libglabels-3.0/templates/zweckform-iso-templates.xml
 share/locale/ar/LC_MESSAGES/glabels-3.0.mo
+share/locale/bs/LC_MESSAGES/glabels-3.0.mo
 share/locale/ca/LC_MESSAGES/glabels-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/glabels-3.0.mo
 share/locale/cs/LC_MESSAGES/glabels-3.0.mo
@@ -702,6 +707,7 @@ share/locale/es/LC_MESSAGES/glabels-3.0.mo
 share/locale/fi/LC_MESSAGES/glabels-3.0.mo
 share/locale/fr/LC_MESSAGES/glabels-3.0.mo
 share/locale/gl/LC_MESSAGES/glabels-3.0.mo
+share/locale/hu/LC_MESSAGES/glabels-3.0.mo
 share/locale/id/LC_MESSAGES/glabels-3.0.mo
 share/locale/it/LC_MESSAGES/glabels-3.0.mo
 share/locale/ja/LC_MESSAGES/glabels-3.0.mo
@@ -711,7 +717,9 @@ share/locale/nb/LC_MESSAGES/glabels-3.0.mo
 share/locale/nl/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt_BR/LC_MESSAGES/glabels-3.0.mo
+share/locale/ro/LC_MESSAGES/glabels-3.0.mo
 share/locale/ru/LC_MESSAGES/glabels-3.0.mo
+share/locale/sk/LC_MESSAGES/glabels-3.0.mo
 share/locale/sl/LC_MESSAGES/glabels-3.0.mo
 share/locale/sr/LC_MESSAGES/glabels-3.0.mo
 share/locale/sr@latin/LC_MESSAGES/glabels-3.0.mo
