@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/30 19:18:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/24 08:36:09 ajacoutot Exp $
 @conflict gqview-*
 @pkgpath graphics/gqview
 @bin bin/geeqie
@@ -94,8 +94,6 @@ share/geeqie/applications/geeqie-ufraw-id.desktop
 share/geeqie/applications/rotate.desktop
 share/geeqie/applications/symlink.desktop
 share/geeqie/template.desktop
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/geeqie.mo
 share/locale/be/LC_MESSAGES/geeqie.mo
 share/locale/bg/LC_MESSAGES/geeqie.mo
@@ -123,12 +121,8 @@ share/locale/ru/LC_MESSAGES/geeqie.mo
 share/locale/sk/LC_MESSAGES/geeqie.mo
 share/locale/sl/LC_MESSAGES/geeqie.mo
 share/locale/sr/LC_MESSAGES/geeqie.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/geeqie.mo
 share/locale/sv/LC_MESSAGES/geeqie.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/geeqie.mo
 share/locale/tr/LC_MESSAGES/geeqie.mo
 share/locale/uk/LC_MESSAGES/geeqie.mo
