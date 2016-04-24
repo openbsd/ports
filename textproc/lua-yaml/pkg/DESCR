@@ -1,0 +1,3 @@
+LibYAML binding for Lua, with a fast C implementation for converting
+between YAML 1.1 and Lua tables, and a low-level YAML event parser
+for implementing more intricate YAML document loading.

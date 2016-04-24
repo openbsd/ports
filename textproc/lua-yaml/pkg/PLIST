@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/24 02:36:45 jsg Exp $
+lib/lua/${MODLUA_VERSION}/yaml.so
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/index.html
+share/doc/${FULLPKGNAME}/ldoc.css
+share/doc/${FULLPKGNAME}/modules/
+share/doc/${FULLPKGNAME}/modules/lyaml.explicit.html
+share/doc/${FULLPKGNAME}/modules/lyaml.functional.html
+share/doc/${FULLPKGNAME}/modules/lyaml.html
+share/doc/${FULLPKGNAME}/modules/lyaml.implicit.html
+share/lua/${MODLUA_VERSION}/lyaml/
+share/lua/${MODLUA_VERSION}/lyaml.lua
+share/lua/${MODLUA_VERSION}/lyaml/explicit.lua
+share/lua/${MODLUA_VERSION}/lyaml/functional.lua
+share/lua/${MODLUA_VERSION}/lyaml/implicit.lua
