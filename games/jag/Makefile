@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/26 20:37:35 zhuk Exp $ 
+# $OpenBSD: Makefile,v 1.5 2016/04/24 11:07:55 zhuk Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
 CATEGORIES =		games
 HOMEPAGE =		http://jag.xlabsoft.com
+REVISION =		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
