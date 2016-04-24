@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.495 2016/04/23 22:25:58 awolk Exp $
+# $OpenBSD: Makefile,v 1.496 2016/04/24 02:41:38 jsg Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -112,6 +112,7 @@
      SUBDIR += lttoolbox
      SUBDIR += lua-lustache
      SUBDIR += lua-markdown
+     SUBDIR += lua-yaml
      SUBDIR += luaexpat
      SUBDIR += luasoldout
      SUBDIR += luasoldout,lua52
