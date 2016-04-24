@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2016/04/22 11:49:43 jca Exp $
+# $OpenBSD: Makefile,v 1.140 2016/04/24 00:35:10 jca Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -14,7 +14,7 @@ PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
 REVISION-main =		42
-REVISION-samba =	19
+REVISION-samba =	20
 REVISION-en_US =	2
 REVISION-locale =	2
 
@@ -92,7 +92,7 @@ WANTLIB-samba =  ${WANTLIB}
 WANTLIB-samba += execinfo ndr ndr-standard replace samba-hostconfig
 WANTLIB-samba += samba-util smbclient smbconf talloc tdb tevent
 WANTLIB-samba += tevent-util
-WANTLIB-samba += X11-xcb Xdamage Xxf86vm com_err dcerpc-binding drm
+WANTLIB-samba += X11-xcb Xdamage Xxf86vm dcerpc-binding drm
 WANTLIB-samba += ffi gcrypt glapi gmp gnutls gpg-error hogweed
 WANTLIB-samba += ldb ndr-krb5pac ndr-nbt nettle p11-kit samba-credentials
 WANTLIB-samba += samdb tasn1 wbclient xcb-dri2 xcb-glx
