@@ -1,0 +1,23 @@
+$OpenBSD: patch-FindRef_xs,v 1.1 2016/04/24 20:53:22 afresh1 Exp $
+
+Patch from SREZIC [...] cpan.org
+https://rt.cpan.org/Public/Bug/Display.html?id=101077
+
+--- FindRef.xs.orig	Sun Aug 30 07:33:01 2009
++++ FindRef.xs	Sun Apr 24 11:30:12 2016
+@@ -6,13 +6,13 @@
+   (PERL_REVISION > (a)                                          \
+    || (PERL_REVISION == (a)                                     \
+        && (PERL_VERSION > (b)                                   \
+-           || (PERL_VERSION == (b) && PERLSUBVERSION >= (c)))))
++           || (PERL_VERSION == (b) && PERL_SUBVERSION >= (c)))))
+ 
+ #if !PERL_VERSION_ATLEAST (5,8,9)
+ # define SVt_LAST 16
+ #endif
+ 
+-#if !PERL_VERSION_ATLEAST (5,10,0)
++#if !PERL_VERSION_ATLEAST (5,10,0) || PERL_VERSION_ATLEAST (5,21,7)
+ # define SvPAD_OUR(dummy) 0
+ #endif
+ 

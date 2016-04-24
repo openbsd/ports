@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/24 20:53:22 afresh1 Exp $
 
 COMMENT =	tracking back references
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Devel-FindRef-1.422
 CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	1
+REVISION =	2
 
 RUN_DEPENDS =	devel/p5-common-sense
 
