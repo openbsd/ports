@@ -1,26 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/17 07:22:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/04/25 15:24:54 jasper Exp $
 @conflict california-*
 @pkgpath x11/gnome/california
 @bin bin/gnome-calendar
 share/appdata/
 share/appdata/org.gnome.Calendar.appdata.xml
 share/applications/org.gnome.Calendar.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Calendar.service
 share/glib-2.0/schemas/org.gnome.calendar.enums.xml
 share/glib-2.0/schemas/org.gnome.calendar.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Calendar.search-provider.ini
-share/icons/hicolor/16x16/apps/gnome-calendar.png
-share/icons/hicolor/22x22/apps/gnome-calendar.png
-share/icons/hicolor/24x24/apps/gnome-calendar.png
-share/icons/hicolor/256x256/apps/gnome-calendar.png
-share/icons/hicolor/32x32/apps/gnome-calendar.png
-share/icons/hicolor/48x48/apps/gnome-calendar.png
-share/icons/hicolor/512x512/apps/gnome-calendar.png
-share/icons/hicolor/symbolic/apps/gnome-calendar-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.Calendar.png
+share/icons/hicolor/22x22/apps/org.gnome.Calendar.png
+share/icons/hicolor/24x24/apps/org.gnome.Calendar.png
+share/icons/hicolor/256x256/apps/org.gnome.Calendar.png
+share/icons/hicolor/32x32/apps/org.gnome.Calendar.png
+share/icons/hicolor/48x48/apps/org.gnome.Calendar.png
+share/icons/hicolor/512x512/apps/org.gnome.Calendar.png
+share/icons/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
 share/locale/an/LC_MESSAGES/gnome-calendar.mo
 share/locale/ar/LC_MESSAGES/gnome-calendar.mo
 share/locale/bs/LC_MESSAGES/gnome-calendar.mo
@@ -36,12 +34,8 @@ share/locale/eu/LC_MESSAGES/gnome-calendar.mo
 share/locale/fa/LC_MESSAGES/gnome-calendar.mo
 share/locale/fi/LC_MESSAGES/gnome-calendar.mo
 share/locale/fr/LC_MESSAGES/gnome-calendar.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-calendar.mo
 share/locale/ga/LC_MESSAGES/gnome-calendar.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/gnome-calendar.mo
 share/locale/gl/LC_MESSAGES/gnome-calendar.mo
 share/locale/he/LC_MESSAGES/gnome-calendar.mo
