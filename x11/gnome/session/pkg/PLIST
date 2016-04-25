@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2015/10/18 13:25:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2016/04/25 16:57:45 ajacoutot Exp $
 bin/gnome-session
 @bin bin/gnome-session-inhibit
 @bin bin/gnome-session-quit
@@ -19,7 +19,6 @@ share/gnome-session/hardware-compatibility
 share/gnome-session/session-properties.ui
 share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-dummy.session
-share/gnome-session/sessions/gnome-wayland.session
 share/gnome-session/sessions/gnome.session
 share/icons/hicolor/16x16/apps/session-properties.png
 share/icons/hicolor/22x22/apps/session-properties.png
@@ -46,8 +45,6 @@ share/locale/ca/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/crh/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/cs/LC_MESSAGES/gnome-session-3.0.mo
-share/locale/csb/
-share/locale/csb/LC_MESSAGES/
 share/locale/csb/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/cy/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/da/LC_MESSAGES/gnome-session-3.0.mo
@@ -70,8 +67,6 @@ share/locale/ga/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/gd/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/gl/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/gu/LC_MESSAGES/gnome-session-3.0.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/he/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/hi/LC_MESSAGES/gnome-session-3.0.mo
@@ -79,8 +74,6 @@ share/locale/hr/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/hu/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/hy/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/id/LC_MESSAGES/gnome-session-3.0.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/is/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/it/LC_MESSAGES/gnome-session-3.0.mo
@@ -137,8 +130,6 @@ share/locale/uz@cyrillic/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/vi/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/wa/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/xh/LC_MESSAGES/gnome-session-3.0.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-session-3.0.mo

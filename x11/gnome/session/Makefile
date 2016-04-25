@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.251 2015/10/18 13:25:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.252 2016/04/25 16:57:45 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.18.1.2
+GNOME_VERSION=		3.20.1
 
 CATEGORIES=		x11
 
@@ -11,18 +11,17 @@ CATEGORIES=		x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += dbus-1 dbus-glib-1 drm epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz json-glib-1.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		textproc/xmlto \
