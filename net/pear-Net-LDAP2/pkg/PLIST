@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/08 09:08:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/25 15:06:21 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -33,23 +33,25 @@ pear/lib/Net/LDAP2/SimpleFileSchemaCache.php
 pear/lib/Net/LDAP2/Util.php
 pear/tests/Net_LDAP2/
 pear/tests/Net_LDAP2/tests/
-pear/tests/Net_LDAP2/tests/AllTests.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2Test.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_EntryTest.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_FilterTest.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_LDIFTest.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_RootDSETest.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_SearchTest.php
+pear/tests/Net_LDAP2/tests/Net_LDAP2_TestBase.php
 pear/tests/Net_LDAP2/tests/Net_LDAP2_UtilTest.php
 pear/tests/Net_LDAP2/tests/ldapconfig.ini.dist
 pear/tests/Net_LDAP2/tests/ldapldifconfig.ini.dist
 pear/tests/Net_LDAP2/tests/ldif_data/
+pear/tests/Net_LDAP2/tests/ldif_data/base.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/changes.ldif
-pear/tests/Net_LDAP2/tests/ldif_data/malformed_encoding.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/malformed_syntax.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/malformed_wrapping.ldif
+pear/tests/Net_LDAP2/tests/ldif_data/slapd.conf
 pear/tests/Net_LDAP2/tests/ldif_data/sorted_w40.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/sorted_w50.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/unsorted_w30.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/unsorted_w50.ldif
 pear/tests/Net_LDAP2/tests/ldif_data/unsorted_w50_WIN.ldif
+pear/tests/Net_LDAP2/tests/phpunit.xml
