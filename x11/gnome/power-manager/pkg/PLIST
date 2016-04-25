@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/04/28 07:06:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/25 15:17:25 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/appdata/
 share/appdata/gnome-power-statistics.appdata.xml
@@ -40,8 +40,6 @@ share/locale/fa/LC_MESSAGES/gnome-power-manager.mo
 share/locale/fi/LC_MESSAGES/gnome-power-manager.mo
 share/locale/fr/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ga/LC_MESSAGES/gnome-power-manager.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/gnome-power-manager.mo
 share/locale/gl/LC_MESSAGES/gnome-power-manager.mo
 share/locale/gu/LC_MESSAGES/gnome-power-manager.mo
@@ -54,8 +52,6 @@ share/locale/is/LC_MESSAGES/gnome-power-manager.mo
 share/locale/it/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ka/LC_MESSAGES/gnome-power-manager.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-power-manager.mo
 share/locale/kn/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-power-manager.mo
@@ -67,8 +63,6 @@ share/locale/mg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mk/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-power-manager.mo
-share/locale/my/
-share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/gnome-power-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-power-manager.mo
 share/locale/nl/LC_MESSAGES/gnome-power-manager.mo
