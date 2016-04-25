@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/04/25 16:46:37 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.18.2
-REVISION=		1
+GNOME_VERSION=		3.20.1
 
 CATEGORIES=		x11
 
@@ -14,28 +13,29 @@ CATEGORIES=		x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst accountsservice
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avahi-common c cairo cairo-gobject
-WANTLIB += canberra canberra-gtk3 colord colord-gtk colordprivate
-WANTLIB += com_err crack crypto cups dbus-1 dbus-glib-1 epoxy
-WANTLIB += execinfo expat ffi fontconfig freetype gcrypt gdbm
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
-WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
-WANTLIB += gpg-error graphite2 grilo-0.2 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtop-2.0 harfbuzz hogweed ibus-1.0 icudata icuuc javascriptcoregtk-4.0
-WANTLIB += json-c json-glib-1.0 kvm lcms2 ltdl lzma m nettle ogg
-WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png polkit-gobject-1 pthread pthread-stubs
-WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 secret-1
-WANTLIB += smbclient sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB += tasn1 telepathy-glib upower-glib vorbis vorbisenc vorbisfile
-WANTLIB += webkit2gtk-4.0 xcb xcb-render xcb-shm xml2 z lber-2.4 sasl2 ssl
-WANTLIB += Xxf86vm drm gbm glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += accountsservice atk-1.0 atk-bridge-2.0 atspi avahi-common
+WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
+WANTLIB += colord-gtk colordprivate com_err crack crypto cups
+WANTLIB += dbus-1 dbus-glib-1 drm epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype gbm gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnome-desktop-3 goa-1.0
+WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error graphite2 grilo-0.3
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz hogweed ibus-1.0
+WANTLIB += iconv icudata icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += json-c json-glib-1.0 kvm lber-2.4 lcms2 ltdl lzma m
+WANTLIB += nettle ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
+WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
+WANTLIB += sasl2 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl stdc++ tasn1 telepathy-glib upower-glib
+WANTLIB += vorbis vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2
+WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
+WANTLIB += z
 WANTLIB += heimdal/lib/heimsqlite
 
-MODULES=		devel/gettext \
-			security/heimdal \
+MODULES=		security/heimdal \
 			x11/gnome
 
 LIB_DEPENDS=		audio/pulseaudio \
@@ -48,7 +48,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			sysutils/accountsservice \
 			sysutils/upower \
 			x11/gnome/desktop \
-			x11/gnome/grilo \
+			x11/gnome/grilo>=0.3.0 \
 			x11/gnome/online-accounts
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon \
