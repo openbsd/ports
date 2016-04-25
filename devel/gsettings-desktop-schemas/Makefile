@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2015/10/20 18:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2016/04/25 10:20:26 ajacoutot Exp $
 
 COMMENT=		collection of shared GSettings schemas
 
 GNOME_PROJECT=		gsettings-desktop-schemas
-GNOME_VERSION=		3.18.1
+GNOME_VERSION=		3.20.0
 
 CATEGORIES=		devel
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
 			x11/gnome
-
-BUILD_DEPENDS=		devel/gettext
 
 MODGNOME_TOOLS=		gobject-introspection
 
