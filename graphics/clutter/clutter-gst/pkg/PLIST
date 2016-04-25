@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/02/25 07:43:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/04/25 09:35:49 jasper Exp $
 include/clutter-gst-${API_VERSION}/
 include/clutter-gst-${API_VERSION}/clutter-gst/
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-aspectratio.h
@@ -26,6 +26,7 @@ share/gtk-doc/html/clutter-gst-${API_VERSION}/
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstAspectratio.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstCamera.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstCameraDevice.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstCameraManager.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstContent.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstCrop.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstPlayback.html
