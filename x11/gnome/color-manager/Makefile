@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2015/10/12 05:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/04/25 15:11:58 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
 GNOME_PROJECT=		gnome-color-manager
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.20.0
 
 CATEGORIES=		graphics
 
@@ -16,14 +16,13 @@ WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
 WANTLIB += colord-gtk colordprivate dbus-1 epoxy exif exiv2 expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed jpeg lcms2 ltdl
-WANTLIB += m nettle ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ tasn1
-WANTLIB += tiff util vorbis vorbisfile vte-2.91 xcb xcb-render
+WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn intl jpeg
+WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += stdc++ tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/vte3 \

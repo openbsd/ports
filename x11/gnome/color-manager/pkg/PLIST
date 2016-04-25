@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/10/12 05:45:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/04/25 15:11:58 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
@@ -108,6 +108,12 @@ share/help/hu/gnome-color-manager/color-import-linux.page
 share/help/hu/gnome-color-manager/color-import-osx.page
 share/help/hu/gnome-color-manager/color-import-windows.page
 share/help/hu/gnome-color-manager/legal.xml
+share/help/ko/
+share/help/ko/gnome-color-manager/
+share/help/ko/gnome-color-manager/color-import-linux.page
+share/help/ko/gnome-color-manager/color-import-osx.page
+share/help/ko/gnome-color-manager/color-import-windows.page
+share/help/ko/gnome-color-manager/legal.xml
 share/help/ml/
 share/help/ml/gnome-color-manager/
 share/help/ml/gnome-color-manager/color-import-linux.page
@@ -120,6 +126,12 @@ share/help/pt_BR/gnome-color-manager/color-import-linux.page
 share/help/pt_BR/gnome-color-manager/color-import-osx.page
 share/help/pt_BR/gnome-color-manager/color-import-windows.page
 share/help/pt_BR/gnome-color-manager/legal.xml
+share/help/sv/
+share/help/sv/gnome-color-manager/
+share/help/sv/gnome-color-manager/color-import-linux.page
+share/help/sv/gnome-color-manager/color-import-osx.page
+share/help/sv/gnome-color-manager/color-import-windows.page
+share/help/sv/gnome-color-manager/legal.xml
 share/help/zh_CN/
 share/help/zh_CN/gnome-color-manager/
 share/help/zh_CN/gnome-color-manager/color-import-linux.page
