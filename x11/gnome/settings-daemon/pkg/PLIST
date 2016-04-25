@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2015/10/18 13:23:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2016/04/25 14:53:50 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -89,8 +89,6 @@ share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.sharing.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xrandr.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xsettings.gschema.xml
 share/gnome-settings-daemon/
-share/gnome-settings-daemon-3.0/
-share/gnome-settings-daemon-3.0/input-device-example.sh
 share/gnome-settings-daemon/datetime/
 share/gnome-settings-daemon/datetime/backward
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
