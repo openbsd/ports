@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2015/10/23 15:12:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.47 2016/04/25 15:20:06 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -122,8 +122,6 @@ share/gtk-doc/html/eog/rn01.html
 share/gtk-doc/html/eog/style.css
 share/gtk-doc/html/eog/up-insensitive.png
 share/gtk-doc/html/eog/up.png
-share/help/
-share/help/C/
 share/help/C/eog/
 share/help/C/eog/bug-filing.page
 share/help/C/eog/commandline.page
@@ -173,7 +171,6 @@ share/help/C/eog/toolbar.page
 share/help/C/eog/translate.page
 share/help/C/eog/view.page
 share/help/C/eog/zoom.page
-share/help/ar/
 share/help/ar/eog/
 share/help/ar/eog/bug-filing.page
 share/help/ar/eog/commandline.page
@@ -223,7 +220,6 @@ share/help/ar/eog/toolbar.page
 share/help/ar/eog/translate.page
 share/help/ar/eog/view.page
 share/help/ar/eog/zoom.page
-share/help/ca/
 share/help/ca/eog/
 share/help/ca/eog/bug-filing.page
 share/help/ca/eog/commandline.page
@@ -273,7 +269,6 @@ share/help/ca/eog/toolbar.page
 share/help/ca/eog/translate.page
 share/help/ca/eog/view.page
 share/help/ca/eog/zoom.page
-share/help/cs/
 share/help/cs/eog/
 share/help/cs/eog/bug-filing.page
 share/help/cs/eog/commandline.page
@@ -373,7 +368,6 @@ share/help/da/eog/toolbar.page
 share/help/da/eog/translate.page
 share/help/da/eog/view.page
 share/help/da/eog/zoom.page
-share/help/de/
 share/help/de/eog/
 share/help/de/eog/bug-filing.page
 share/help/de/eog/commandline.page
@@ -423,7 +417,6 @@ share/help/de/eog/toolbar.page
 share/help/de/eog/translate.page
 share/help/de/eog/view.page
 share/help/de/eog/zoom.page
-share/help/el/
 share/help/el/eog/
 share/help/el/eog/bug-filing.page
 share/help/el/eog/commandline.page
@@ -523,7 +516,6 @@ share/help/en_GB/eog/toolbar.page
 share/help/en_GB/eog/translate.page
 share/help/en_GB/eog/view.page
 share/help/en_GB/eog/zoom.page
-share/help/es/
 share/help/es/eog/
 share/help/es/eog/bug-filing.page
 share/help/es/eog/commandline.page
@@ -573,7 +565,6 @@ share/help/es/eog/toolbar.page
 share/help/es/eog/translate.page
 share/help/es/eog/view.page
 share/help/es/eog/zoom.page
-share/help/eu/
 share/help/eu/eog/
 share/help/eu/eog/bug-filing.page
 share/help/eu/eog/commandline.page
@@ -623,7 +614,6 @@ share/help/eu/eog/toolbar.page
 share/help/eu/eog/translate.page
 share/help/eu/eog/view.page
 share/help/eu/eog/zoom.page
-share/help/fi/
 share/help/fi/eog/
 share/help/fi/eog/bug-filing.page
 share/help/fi/eog/commandline.page
@@ -673,7 +663,6 @@ share/help/fi/eog/toolbar.page
 share/help/fi/eog/translate.page
 share/help/fi/eog/view.page
 share/help/fi/eog/zoom.page
-share/help/fr/
 share/help/fr/eog/
 share/help/fr/eog/bug-filing.page
 share/help/fr/eog/commandline.page
@@ -723,7 +712,6 @@ share/help/fr/eog/toolbar.page
 share/help/fr/eog/translate.page
 share/help/fr/eog/view.page
 share/help/fr/eog/zoom.page
-share/help/gl/
 share/help/gl/eog/
 share/help/gl/eog/bug-filing.page
 share/help/gl/eog/commandline.page
@@ -773,7 +761,6 @@ share/help/gl/eog/toolbar.page
 share/help/gl/eog/translate.page
 share/help/gl/eog/view.page
 share/help/gl/eog/zoom.page
-share/help/hu/
 share/help/hu/eog/
 share/help/hu/eog/bug-filing.page
 share/help/hu/eog/commandline.page
@@ -923,7 +910,6 @@ share/help/ja/eog/toolbar.page
 share/help/ja/eog/translate.page
 share/help/ja/eog/view.page
 share/help/ja/eog/zoom.page
-share/help/ko/
 share/help/ko/eog/
 share/help/ko/eog/bug-filing.page
 share/help/ko/eog/commandline.page
@@ -1023,7 +1009,6 @@ share/help/lv/eog/toolbar.page
 share/help/lv/eog/translate.page
 share/help/lv/eog/view.page
 share/help/lv/eog/zoom.page
-share/help/oc/
 share/help/oc/eog/
 share/help/oc/eog/bug-filing.page
 share/help/oc/eog/commandline.page
@@ -1073,7 +1058,6 @@ share/help/oc/eog/toolbar.page
 share/help/oc/eog/translate.page
 share/help/oc/eog/view.page
 share/help/oc/eog/zoom.page
-share/help/pa/
 share/help/pa/eog/
 share/help/pa/eog/bug-filing.page
 share/help/pa/eog/commandline.page
@@ -1123,7 +1107,6 @@ share/help/pa/eog/toolbar.page
 share/help/pa/eog/translate.page
 share/help/pa/eog/view.page
 share/help/pa/eog/zoom.page
-share/help/pt_BR/
 share/help/pt_BR/eog/
 share/help/pt_BR/eog/bug-filing.page
 share/help/pt_BR/eog/commandline.page
@@ -1273,7 +1256,6 @@ share/help/ru/eog/toolbar.page
 share/help/ru/eog/translate.page
 share/help/ru/eog/view.page
 share/help/ru/eog/zoom.page
-share/help/sl/
 share/help/sl/eog/
 share/help/sl/eog/bug-filing.page
 share/help/sl/eog/commandline.page
@@ -1323,7 +1305,6 @@ share/help/sl/eog/toolbar.page
 share/help/sl/eog/translate.page
 share/help/sl/eog/view.page
 share/help/sl/eog/zoom.page
-share/help/sv/
 share/help/sv/eog/
 share/help/sv/eog/bug-filing.page
 share/help/sv/eog/commandline.page
@@ -1473,7 +1454,6 @@ share/help/th/eog/toolbar.page
 share/help/th/eog/translate.page
 share/help/th/eog/view.page
 share/help/th/eog/zoom.page
-share/help/uk/
 share/help/uk/eog/
 share/help/uk/eog/bug-filing.page
 share/help/uk/eog/commandline.page
@@ -1523,7 +1503,6 @@ share/help/uk/eog/toolbar.page
 share/help/uk/eog/translate.page
 share/help/uk/eog/view.page
 share/help/uk/eog/zoom.page
-share/help/zh_CN/
 share/help/zh_CN/eog/
 share/help/zh_CN/eog/bug-filing.page
 share/help/zh_CN/eog/commandline.page
@@ -1662,8 +1641,6 @@ share/locale/fa/LC_MESSAGES/eog.mo
 share/locale/fi/LC_MESSAGES/eog.mo
 share/locale/fr/LC_MESSAGES/eog.mo
 share/locale/fur/LC_MESSAGES/eog.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/eog.mo
 share/locale/ga/LC_MESSAGES/eog.mo
 share/locale/gd/LC_MESSAGES/eog.mo
@@ -1693,8 +1670,6 @@ share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/LC_MESSAGES/eog.mo
 share/locale/mr/LC_MESSAGES/eog.mo
 share/locale/ms/LC_MESSAGES/eog.mo
-share/locale/my/
-share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/eog.mo
 share/locale/nb/LC_MESSAGES/eog.mo
 share/locale/nds/LC_MESSAGES/eog.mo
@@ -1723,8 +1698,6 @@ share/locale/ta/LC_MESSAGES/eog.mo
 share/locale/te/LC_MESSAGES/eog.mo
 share/locale/tg/LC_MESSAGES/eog.mo
 share/locale/th/LC_MESSAGES/eog.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/ts/
