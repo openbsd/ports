@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/23 15:23:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/04/25 14:41:31 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -146,8 +146,6 @@ share/evince/icons/hicolor/scalable/
 share/evince/icons/hicolor/scalable/actions/
 share/evince/icons/hicolor/scalable/actions/object-rotate-left.svg
 share/evince/icons/hicolor/scalable/actions/object-rotate-right.svg
-share/evince/icons/hicolor/scalable/apps/
-share/evince/icons/hicolor/scalable/apps/evince-symbolic.svg
 share/evince/icons/hicolor/scalable/mimetypes/
 share/evince/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gir-1.0/EvinceDocument-${MAJ_V}.gir
@@ -3072,6 +3070,7 @@ share/icons/hicolor/22x22/apps/evince.png
 share/icons/hicolor/24x24/apps/evince.png
 share/icons/hicolor/256x256/apps/evince.png
 share/icons/hicolor/48x48/apps/evince.png
+share/icons/hicolor/symbolic/apps/evince-symbolic.svg
 share/locale/af/LC_MESSAGES/evince.mo
 share/locale/an/LC_MESSAGES/evince.mo
 share/locale/ar/LC_MESSAGES/evince.mo

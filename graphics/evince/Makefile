@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.138 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.139 2016/04/25 14:41:31 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.18.2
+GNOME_VERSION=		3.20.0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -28,11 +28,10 @@ WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma lzo2 m openjpeg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
 WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z
-WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy
-WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4
+WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl
+WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
@@ -56,6 +55,9 @@ CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 # modern browsers can already display PDF
 CONFIGURE_ARGS +=	--disable-browser-plugin
+
+# Not much point in installing systemd service files
+FAKE_FLAGS +=		systemd_user_in_files=""
 
 FLAVORS=		light
 FLAVOR?=
