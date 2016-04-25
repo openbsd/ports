@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.200 2016/03/20 16:12:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.201 2016/04/25 16:40:38 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.6.2
+GNOME_VERSION=		1.8.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -19,32 +19,32 @@ PKGNAME=		meta-tracker-${VERSION}
 TRACKER_API=		1.0
 SUBST_VARS=		TRACKER_API
 
-SHARED_LIBS +=  tracker-common       3.1      # unknown
-SHARED_LIBS +=  tracker-data         3.1      # unknown
-SHARED_LIBS +=  tracker-sparql-1.0   1.0      # 600.0
-SHARED_LIBS +=  tracker-extract      0.0      # unknown
-SHARED_LIBS +=  tracker-miner-1.0    1.0      # 600.0
-SHARED_LIBS +=  tracker-control-1.0  1.0      # 600.0
+SHARED_LIBS +=  tracker-common       3.2      # unknown
+SHARED_LIBS +=  tracker-data         3.2      # unknown
+SHARED_LIBS +=  tracker-sparql-1.0   1.1      # 800.0
+SHARED_LIBS +=  tracker-extract      0.1      # unknown
+SHARED_LIBS +=  tracker-miner-1.0    1.1      # 800.0
+SHARED_LIBS +=  tracker-control-1.0  1.1      # 800.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender archive atk-1.0 atk-bridge-2.0 atspi bz2 c
-WANTLIB += cairo cairo-gobject cue dbus-1 enca epoxy exempi exif expat
-WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gif
-WANTLIB += gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gxps
-WANTLIB += harfbuzz icudata icui18n icuuc iptcdata jpeg kvm lcms2 lzma
-WANTLIB += lzo2 m mediaart-2.0 openjpeg orc-0.4 osinfo-1.0 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
-WANTLIB += poppler-glib pthread pthread-stubs soup-2.4 sqlite3 stdc++
-WANTLIB += tag tag_c tiff totem-plparser upower-glib util uuid xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject cue dbus-1 enca epoxy
+WANTLIB += exempi exif expat ffi fontconfig freetype gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz iconv
+WANTLIB += icudata icui18n icuuc intl iptcdata jpeg kvm lcms2
+WANTLIB += lzma lzo2 m mediaart-2.0 openjpeg orc-0.4 osinfo-1.0
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png poppler poppler-glib pthread pthread-stubs soup-2.4
+WANTLIB += sqlite3 stdc++ tag tag_c tiff totem-plparser upower-glib
+WANTLIB += util uuid xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 
@@ -63,7 +63,7 @@ LIB_DEPENDS=		audio/libcue \
 			sysutils/upower \
 			textproc/exempi \
 			textproc/icu4c \
-			x11/gnome/libmediaart>=1.9.0 \
+			x11/gnome/libmediaart \
 			x11/gnome/totem-pl-parser
 
 # picked up by configure to build the resdump tool. it is not installed,

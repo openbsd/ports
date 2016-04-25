@@ -1,19 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.38 2015/09/25 06:56:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2016/04/25 16:40:38 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
 @pkgpath x11/gnome/tracker,-evolution
 @pkgpath x11/gnome/tracker,-nautilus
 @bin bin/tracker
-bin/tracker-control
-bin/tracker-import
-bin/tracker-info
 @bin bin/tracker-needle
 @bin bin/tracker-preferences
-bin/tracker-search
-bin/tracker-sparql
-bin/tracker-stats
-bin/tracker-tag
 include/tracker-${TRACKER_API}/
 include/tracker-${TRACKER_API}/libtracker-control/
 include/tracker-${TRACKER_API}/libtracker-control/tracker-control.h
@@ -156,6 +149,7 @@ share/gtk-doc/html/libtracker-control/annotation-glossary.html
 share/gtk-doc/html/libtracker-control/ch01.html
 share/gtk-doc/html/libtracker-control/home.png
 share/gtk-doc/html/libtracker-control/index.html
+share/gtk-doc/html/libtracker-control/index.sgml
 share/gtk-doc/html/libtracker-control/left-insensitive.png
 share/gtk-doc/html/libtracker-control/left.png
 share/gtk-doc/html/libtracker-control/libtracker-control.devhelp2
@@ -180,6 +174,7 @@ share/gtk-doc/html/libtracker-miner/ch04.html
 share/gtk-doc/html/libtracker-miner/ch05.html
 share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
+share/gtk-doc/html/libtracker-miner/index.sgml
 share/gtk-doc/html/libtracker-miner/left-insensitive.png
 share/gtk-doc/html/libtracker-miner/left.png
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
@@ -204,6 +199,7 @@ share/gtk-doc/html/libtracker-sparql/TrackerSparqlCursor.html
 share/gtk-doc/html/libtracker-sparql/annotation-glossary.html
 share/gtk-doc/html/libtracker-sparql/home.png
 share/gtk-doc/html/libtracker-sparql/index.html
+share/gtk-doc/html/libtracker-sparql/index.sgml
 share/gtk-doc/html/libtracker-sparql/left-insensitive.png
 share/gtk-doc/html/libtracker-sparql/left.png
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Utilities.html
@@ -378,7 +374,6 @@ share/tracker/stop-words/stopwords.ru
 share/tracker/stop-words/stopwords.sv
 share/tracker/tracker-backup.xml
 share/tracker/tracker-extract-priority.xml
-share/tracker/tracker-extract.xml
 share/tracker/tracker-miner-files-index.xml
 share/tracker/tracker-miner.xml
 share/tracker/tracker-needle.ui
