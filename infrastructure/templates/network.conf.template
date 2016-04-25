@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.203 2016/01/10 22:31:40 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.204 2016/04/25 16:38:36 edd Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -207,7 +207,7 @@ MASTER_SITE_APACHE+= \
 	http://www.apache.org/dist/
 
 MASTER_SITE_PYPI +=	\
-	https://pypi.python.org/packages/source/
+	https://pypi.io/packages/source/
 
 MASTER_SITE_RUBYGEMS += \
 	https://rubygems.org/downloads/
