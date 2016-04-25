@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/10/09 06:58:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/04/25 11:11:02 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -15,7 +15,6 @@ include/goa-1.0/goabackend/goabackendenums.h
 include/goa-1.0/goabackend/goabackendenumtypes.h
 include/goa-1.0/goabackend/goabackendtypes.h
 include/goa-1.0/goabackend/goaprovider.h
-lib/girepository-1.0/
 lib/girepository-1.0/Goa-1.0.typelib
 lib/goa-1.0/
 lib/goa-1.0/include/
@@ -32,10 +31,7 @@ lib/pkgconfig/goa-1.0.pc
 lib/pkgconfig/goa-backend-1.0.pc
 @bin libexec/goa-daemon
 @man man/man8/goa-daemon.8
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.OnlineAccounts.service
-share/gir-1.0/
 share/gir-1.0/Goa-1.0.gir
 share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
 share/gnome-online-accounts/
@@ -230,8 +226,6 @@ share/locale/bg/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/bn/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/bs/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/bs/LC_MESSAGES/gnome-online-accounts.mo
@@ -239,8 +233,6 @@ share/locale/ca/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/cs/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/cs/LC_MESSAGES/gnome-online-accounts.mo
@@ -270,13 +262,9 @@ share/locale/fi/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/gl/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/gl/LC_MESSAGES/gnome-online-accounts.mo
@@ -298,8 +286,6 @@ share/locale/ja/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ja/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/kk/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/kk/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/km/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/kn/LC_MESSAGES/gnome-online-accounts-tpaw.mo
@@ -320,8 +306,6 @@ share/locale/mr/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/mr/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ms/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ms/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/my/
-share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/nb/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/nb/LC_MESSAGES/gnome-online-accounts.mo
@@ -382,9 +366,9 @@ share/locale/zh_HK/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts.mo
-share/locale/zu/
-share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/vala/vapi/goa-1.0.deps
+share/vala/vapi/goa-1.0.vapi
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

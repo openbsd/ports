@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.77 2016/02/25 07:44:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2016/04/25 11:11:02 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.18.4
+GNOME_VERSION=	3.20.1
 
-SHARED_LIBS +=  goa-1.0              3.1      # .0.0
-SHARED_LIBS +=  goa-backend-1.0      3.2      # .1.0
+SHARED_LIBS +=  goa-1.0              3.2      # .0.0
+SHARED_LIBS +=  goa-backend-1.0      3.3      # .1.0
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,10 +26,9 @@ WANTLIB += soup-gnome-2.4 sqlite3 stdc++ telepathy-glib
 WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
 WANTLIB += X11-xcb Xxf86vm drm epoxy estdc++ glapi
 WANTLIB += javascriptcoregtk-4.0 notify webkit2gtk-4.0 xcb-dri2
-WANTLIB += xcb-xfixes xcb-glx xcb-shape hyphen
+WANTLIB += xcb-xfixes xcb-glx xcb-shape hyphen intl iconv
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		devel/json-glib \
@@ -38,7 +37,7 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gnome/libsecret \
 			www/webkitgtk4
 
-MODGNOME_TOOLS += 	docbook gobject-introspection gtk-update-icon-cache
+MODGNOME_TOOLS += 	docbook gobject-introspection gtk-update-icon-cache vala
 
 MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \
