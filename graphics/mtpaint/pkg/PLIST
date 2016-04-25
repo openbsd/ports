@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/25 13:22:00 giovanni Exp $
+@bin bin/mtpaint
+@man man/man1/mtpaint.1
+share/applications/mtpaint.desktop
+share/locale/cs/LC_MESSAGES/mtpaint.mo
+share/locale/de/LC_MESSAGES/mtpaint.mo
+share/locale/es/LC_MESSAGES/mtpaint.mo
+share/locale/fr/LC_MESSAGES/mtpaint.mo
+share/locale/gl/LC_MESSAGES/mtpaint.mo
+share/locale/hu/LC_MESSAGES/mtpaint.mo
+share/locale/it/LC_MESSAGES/mtpaint.mo
+share/locale/ja/LC_MESSAGES/mtpaint.mo
+share/locale/nl/LC_MESSAGES/mtpaint.mo
+share/locale/pl/LC_MESSAGES/mtpaint.mo
+share/locale/pt/LC_MESSAGES/mtpaint.mo
+share/locale/pt_BR/LC_MESSAGES/mtpaint.mo
+share/locale/ru/LC_MESSAGES/mtpaint.mo
+share/locale/sk/LC_MESSAGES/mtpaint.mo
+share/locale/sv/LC_MESSAGES/mtpaint.mo
+share/locale/tl/LC_MESSAGES/mtpaint.mo
+share/locale/tr/LC_MESSAGES/mtpaint.mo
+share/locale/zh_CN/LC_MESSAGES/mtpaint.mo
+share/locale/zh_TW/LC_MESSAGES/mtpaint.mo
+share/pixmaps/
+share/pixmaps/mtpaint.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
