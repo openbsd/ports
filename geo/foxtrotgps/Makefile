@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/30 12:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/25 09:31:13 kirby Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		geo x11
 
@@ -20,16 +20,16 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo crypto curl dbus-1 dbus-glib-1 exif
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gps
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma m nghttp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sqlite3 ssl xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv idn intl
+WANTLIB += lzma m nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sqlite3 ssl xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
-MODULES = 		devel/gettext \
+MODULES = 		devel/gconf2 \
 			lang/python \
-			devel/gconf2 \
 			textproc/intltool
 
+BUILD_DEPENDS = 	devel/gettext-tools
 LIB_DEPENDS =		devel/libglade2 \
 			graphics/libexif \
 			misc/gpsd \
@@ -42,6 +42,7 @@ CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
 			GCONF_SCHEMA_FILE_DIR=${SCHEMAS_INSTDIR}
 
+SEPARATE_BUILD = 	Yes
 USE_GMAKE = 		Yes
 CONFIGURE_STYLE =	gnu
 NO_TEST = 		Yes
