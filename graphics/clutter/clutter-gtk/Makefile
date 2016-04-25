@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/14 17:23:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/04/25 09:36:01 jasper Exp $
 
 COMMENT=		GTK+ widget for clutter
 
 GNOME_PROJECT=		clutter-gtk
-GNOME_VERSION=		1.6.6
+GNOME_VERSION=		1.8.0
 
-SHARED_LIBS +=  clutter-gtk-1.0      0.0      # 600.6
+SHARED_LIBS +=  clutter-gtk-1.0      0.0      # 800.0
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
@@ -15,8 +15,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz json-glib-1.0 cogl-path
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
-WANTLIB += EGL X11-xcb Xau Xdmcp drm epoxy gbm glapi xcb-dri2
-WANTLIB += xcb-shape xcb-xfixes
+WANTLIB += EGL X11-xcb drm epoxy gbm xcb-dri2
+WANTLIB += xcb-shape xcb-xfixes iconv intl
 
 MODGNOME_TOOLS +=	gobject-introspection
 
