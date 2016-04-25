@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2016/01/19 09:19:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.50 2016/04/25 15:00:03 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.14/
@@ -29,6 +29,27 @@ lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
 lib/gedit/plugins/externaltools.plugin
 lib/gedit/plugins/externaltools/__init__.py
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}/
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}filelookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}filelookup.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}library.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}library.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}linkparsing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}linkparsing.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}outputpanel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}outputpanel.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/externaltools/appactivatable.py
 lib/gedit/plugins/externaltools/capture.py
 lib/gedit/plugins/externaltools/filelookup.py
@@ -49,16 +70,67 @@ lib/gedit/plugins/modelines.plugin
 lib/gedit/plugins/pythonconsole/
 lib/gedit/plugins/pythonconsole.plugin
 lib/gedit/plugins/pythonconsole/__init__.py
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}/
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/pythonconsole/config.py
 lib/gedit/plugins/pythonconsole/console.py
 lib/gedit/plugins/quickopen/
 lib/gedit/plugins/quickopen.plugin
 lib/gedit/plugins/quickopen/__init__.py
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}/
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}popup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}popup.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}virtualdirs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/quickopen/${MODPY_PYCACHE}virtualdirs.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/quickopen/popup.py
 lib/gedit/plugins/quickopen/virtualdirs.py
 lib/gedit/plugins/snippets/
 lib/gedit/plugins/snippets.plugin
 lib/gedit/plugins/snippets/__init__.py
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}/
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}completion.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}completion.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}languagemanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}languagemanager.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}library.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}library.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}placeholder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}placeholder.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}shareddata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}shareddata.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}singleton.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}singleton.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}snippet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}snippet.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}substitutionparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}substitutionparser.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/snippets/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/snippets/appactivatable.py
 lib/gedit/plugins/snippets/completion.py
 lib/gedit/plugins/snippets/document.py
@@ -81,6 +153,8 @@ lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
 lib/pkgconfig/gedit.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gedit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gedit.${MODPY_PYC_MAGIC_TAG}pyo
 libexec/gedit/
 libexec/gedit/gedit-bugreport.sh
 @man man/man1/gedit.1
@@ -92,8 +166,6 @@ share/dbus-1/services/org.gnome.gedit.service
 share/gedit/
 share/gedit/gir-1.0/
 share/gedit/gir-1.0/Gedit-3.0.gir
-share/gedit/logo/
-share/gedit/logo/gedit-logo.png
 share/gedit/plugins/
 share/gedit/plugins/externaltools/
 share/gedit/plugins/externaltools/tools/
@@ -1733,6 +1805,13 @@ share/help/zh_TW/gedit/gedit-tabs.page
 share/help/zh_TW/gedit/gedit-undo-recent-action.page
 share/help/zh_TW/gedit/index.page
 share/help/zh_TW/gedit/legal.xml
+share/icons/hicolor/16x16/apps/gedit.png
+share/icons/hicolor/22x22/apps/gedit.png
+share/icons/hicolor/24x24/apps/gedit.png
+share/icons/hicolor/256x256/apps/gedit.png
+share/icons/hicolor/32x32/apps/gedit.png
+share/icons/hicolor/48x48/apps/gedit.png
+share/icons/hicolor/symbolic/apps/gedit-symbolic.svg
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/an/LC_MESSAGES/gedit.mo
@@ -1839,3 +1918,5 @@ share/vala/vapi/gedit.vapi
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
