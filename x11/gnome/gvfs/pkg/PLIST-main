@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2015/10/15 14:10:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2016/04/25 13:43:20 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -27,10 +27,6 @@ lib/gio/modules/libgvfsdbus.so
 lib/gvfs/
 lib/gvfs/libgvfscommon.so
 lib/gvfs/libgvfsdaemon.so
-lib/systemd/
-lib/systemd/user/
-lib/systemd/user/gvfs-daemon.service
-lib/systemd/user/gvfs-metadata.service
 @bin libexec/gvfsd
 @bin libexec/gvfsd-afp
 @bin libexec/gvfsd-afp-browse
@@ -40,7 +36,6 @@ lib/systemd/user/gvfs-metadata.service
 @bin libexec/gvfsd-dav
 @bin libexec/gvfsd-dnssd
 @bin libexec/gvfsd-ftp
-@bin libexec/gvfsd-fuse
 @bin libexec/gvfsd-http
 @bin libexec/gvfsd-localtest
 @bin libexec/gvfsd-metadata
@@ -79,6 +74,7 @@ share/bash-completion/completions/gvfs-ls
 share/bash-completion/completions/gvfs-mkdir
 share/bash-completion/completions/gvfs-monitor-dir
 share/bash-completion/completions/gvfs-monitor-file
+share/bash-completion/completions/gvfs-mount
 share/bash-completion/completions/gvfs-move
 share/bash-completion/completions/gvfs-open
 share/bash-completion/completions/gvfs-rename

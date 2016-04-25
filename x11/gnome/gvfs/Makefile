@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2016/04/24 00:35:10 jca Exp $
+# $OpenBSD: Makefile,v 1.156 2016/04/25 13:43:20 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.26.3
+GNOME_VERSION=		1.28.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -15,38 +15,34 @@ PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
 
-REVISION-smb=		2
-
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre
-WANTLIB += pthread util z
+WANTLIB += pthread util z iconv intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage xcb-shm
-WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender graphite2 xml2
-WANTLIB-main += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
-WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 expat
-WANTLIB-main += fontconfig freetype fuse gdk-3 gdk_pixbuf-2.0 xml2
-WANTLIB-main += archive gtk-3 harfbuzz lzma m pango-1.0 p11-kit
-WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
-WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
-WANTLIB-main += gcrypt gpg-error secret-1 epoxy lzo2 gck-1 gcr-base-3
+WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-main += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB-main += atspi avahi-client avahi-common avahi-glib bz2 cairo
+WANTLIB-main += cairo-gobject dbus-1 epoxy expat fontconfig freetype
+WANTLIB-main += gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0 gpg-error
+WANTLIB-main += graphite2 gthread-2.0 gtk-3 harfbuzz lzma lzo2 m p11-kit
+WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB-main += pthread-stubs secret-1 soup-2.4 sqlite3 xcb xcb-render
+WANTLIB-main += xcb-shm xml2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += gcrypt gpg-error secret-1 smbclient gck-1 gcr-base-3
-WANTLIB-smb += crypto dcerpc-binding execinfo gmp gnutls
-WANTLIB-smb += hogweed idn lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
-WANTLIB-smb += ndr-standard nettle p11-kit replace
-WANTLIB-smb += samba-credentials samba-hostconfig samba-util samdb
-WANTLIB-smb += sasl2 smbconf ssl talloc tasn1 tdb tevent
-WANTLIB-smb += tevent-util util-setid wbclient p11-kit
-WANTLIB-smb += gthread-2.0
+WANTLIB-smb += com_err crypto dcerpc-binding execinfo gcrypt gensec
+WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn
+WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
+WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
+WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf
+WANTLIB-smb += ssl talloc tasn1 tdb tevent tevent-util util-setid
+WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1
 WANTLIB-smb += lib/samba/asn1-samba4
 WANTLIB-smb += lib/samba/gssapi-samba4
 WANTLIB-smb += lib/samba/hcrypto-samba4
@@ -60,46 +56,37 @@ WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
 WANTLIB-nfs += ${WANTLIB}
-WANTLIB-nfs += gcrypt gpg-error nfs secret-1 gck-1 gcr-base-3
-WANTLIB-nfs += p11-kit gthread-2.0
+WANTLIB-nfs += gcrypt gpg-error gthread-2.0 iconv intl nfs secret-1
+WANTLIB-nfs += gck-1 gcr-base-3 p11-kit
 
 WANTLIB-google += ${WANTLIB}
 WANTLIB-google += crypto curl gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error
-WANTLIB-google += gthread-2.0 idn json-glib-1.0 lzma m nghttp2 nspr4 nss3 oauth
-WANTLIB-google += p11-kit plc4 plds4 secret-1 smime3 softokn3 soup-2.4
-WANTLIB-google += sqlite3 ssl ssl3 xml2
+WANTLIB-google += gthread-2.0 iconv idn intl json-glib-1.0 lzma m nghttp2
+WANTLIB-google += nspr4 nss3 oauth p11-kit plc4 plds4 secret-1 smime3
+WANTLIB-google += softokn3 soup-2.4 sqlite3 ssl ssl3 xml2
 
 MODGNOME_TOOLS=		docbook
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			archivers/libarchive \
+LIB_DEPENDS-main=	archivers/libarchive \
 			devel/libsoup \
 			net/avahi \
 			x11/gnome/gcr \
 			x11/gnome/libsecret \
 			x11/gtk+3
 
-RUN_DEPENDS-smb=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODDCONF_RUN_DEPENDS} \
+RUN_DEPENDS-smb=	${MODDCONF_RUN_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-smb=	${LIB_DEPENDS} \
-			net/samba
+LIB_DEPENDS-smb=	net/samba
 
-RUN_DEPENDS-goa=	${MODGETTEXT_RUN_DEPENDS} \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-goa=	${LIB_DEPENDS} \
-			x11/gnome/online-accounts
+RUN_DEPENDS-goa=	${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-goa=	x11/gnome/online-accounts
 
-RUN_DEPENDS-nfs=	${MODGETTEXT_RUN_DEPENDS} \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-nfs=	${LIB_DEPENDS} \
-			devel/libnfs \
+RUN_DEPENDS-nfs=	${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-nfs=	devel/libnfs \
 			x11/gnome/libsecret
 
-RUN_DEPENDS-google=	${MODGETTEXT_RUN_DEPENDS} \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-google=	${LIB_DEPENDS} \
-			devel/libgdata \
+RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-google=	devel/libgdata \
 			x11/gnome/online-accounts
 
 CONFIGURE_ARGS=		--disable-libsystemd-login \
@@ -109,6 +96,9 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-gudev \
 			--disable-udev \
 			--disable-gdu
+
+# XXX gvfsfusedaemon.c:47:27: error: fuse_lowlevel.h: No such file or director
+CONFIGURE_ARGS +=	--disable-fuse
 
 MULTI_PACKAGES=		-main -goa -nfs -smb -google
 
