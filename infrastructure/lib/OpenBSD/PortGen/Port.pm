@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.1.1.1 2016/01/18 18:08:19 tsg Exp $
+# $OpenBSD: Port.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -201,7 +201,7 @@ sub write_makefile
 	    or die $!;
 	open my $mk, '>', 'Makefile' or die $!;
 
-	my $output = '# $OpenBSD: Port.pm,v 1.1.1.1 2016/01/18 18:08:19 tsg Exp $' . "\n";
+	my $output = '# $OpenBSD: Port.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $' . "\n";
 	my %vars_found;
 
 	# such a mess, should fix
@@ -222,6 +222,7 @@ sub write_makefile
 			$other_stuff =~ s/^#//;
 			$other_stuff =~ s/(\?\?\?|$)/$value\n/;
 
+			# handle cases where replacing '???' isn't enough
 			if ( $other_stuff =~ /^PERMIT_PACKAGE_CDROM/ ) {
 				$output .= "# $self->{license}\n";
 			} elsif ( $other_stuff =~ /_DEPENDS/ ) {
@@ -229,6 +230,8 @@ sub write_makefile
 			} elsif ( $other_stuff =~ /^COMMENT/ ) {
 				$output .= "# original: $self->{full_comment}\n"
 				    if $self->{full_comment};
+			} elsif ( $other_stuff =~ /^WANTLIB/ ) {
+				$other_stuff =~ s/=/+=/;
 			}
 
 			$output .= $other_stuff;

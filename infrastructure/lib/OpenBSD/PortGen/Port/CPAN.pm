@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.1.1.1 2016/01/18 18:08:20 tsg Exp $
+# $OpenBSD: CPAN.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -205,6 +205,13 @@ sub postextract
 
 	$self->set_descr( $self->read_descr($wrksrc) || $di->{abstract} );
 	$self->_find_hidden_test_deps($wrksrc);
+
+	if ( $self->_uses_xs($wrksrc) ) {
+		$self->set_other( 'WANTLIB', 'perl' );
+	}
+	else {
+		$self->set_other( 'PKG_ARCH', '*' );
+	}
 }
 
 sub try_building
@@ -266,6 +273,22 @@ sub _test_skips
 			return;
 		}
 	}
+}
+
+sub _uses_xs
+{
+	my ( $self, $dir ) = @_;
+	my $found_xs = 0;
+
+	find( sub {
+		if ( -d && /^(inc|t|xt)$/ ) {
+			$File::Find::prune = 1;
+			return;
+		}
+		$found_xs = 1 if -f && /\.xs$/;
+	}, $dir );
+
+	return $found_xs;
 }
 
 1;
