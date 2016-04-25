@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/25 14:51:52 jasper Exp $
 
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		3.18.3
+GNOME_VERSION=		3.20.0
 
 CATEGORIES=		math
 
@@ -17,10 +17,9 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz lzma m mpfr pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z iconv intl soup-2.4 sqlite3
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/dconf
 
 LIB_DEPENDS+=		devel/mpfr \
