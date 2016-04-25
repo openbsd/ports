@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2016/03/19 10:08:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2016/04/25 17:17:51 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 include/nautilus/
@@ -22,9 +22,7 @@ lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/libnautilus-sendto.so
 lib/pkgconfig/libnautilus-extension.pc
-@bin libexec/nautilus-convert-metadata
 @man man/man1/nautilus.1
-share/GConf/gsettings/nautilus.convert
 share/appdata/org.gnome.Nautilus.appdata.xml
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-classic.desktop
@@ -57,7 +55,6 @@ share/gtk-doc/html/libnautilus-extension/NautilusPropertyPageProvider.html
 share/gtk-doc/html/libnautilus-extension/ch01.html
 share/gtk-doc/html/libnautilus-extension/home.png
 share/gtk-doc/html/libnautilus-extension/index.html
-share/gtk-doc/html/libnautilus-extension/index.sgml
 share/gtk-doc/html/libnautilus-extension/ix01.html
 share/gtk-doc/html/libnautilus-extension/left-insensitive.png
 share/gtk-doc/html/libnautilus-extension/left.png
