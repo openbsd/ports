@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2016/04/25 18:59:11 jca Exp $
 
 PORTROACH=	limit:^1\.2\.
 
@@ -16,8 +16,6 @@ HOMEPAGE=	http://www.gtk.org/
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/glib
-
-FAKE=			all
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

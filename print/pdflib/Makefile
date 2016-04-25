@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/11 20:28:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/04/25 18:59:11 jca Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=		graphics/png \
 # XXX !shared archs don't inherit libraries
 LIB_DEPENDS +=		graphics/jpeg
 
-FAKE=			lib
 CONFIGURE_STYLE=	autoconf dest
 AUTOCONF_VERSION=	2.13
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
