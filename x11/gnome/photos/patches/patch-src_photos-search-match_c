@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_photos-search-match_c,v 1.1 2015/10/05 06:01:15 ajacoutot Exp $
+$OpenBSD: patch-src_photos-search-match_c,v 1.2 2016/04/25 18:05:31 ajacoutot Exp $
 
 photos-search-match.c:64: error: #pragma GCC diagnostic not allowed inside functions
 
---- src/photos-search-match.c.orig	Sat Oct  3 14:41:01 2015
-+++ src/photos-search-match.c	Sat Oct  3 14:41:41 2015
-@@ -61,12 +61,7 @@ photos_search_match_get_filter (PhotosFilterable *ifac
-   PhotosSearchMatchPrivate *priv = self->priv;
+--- src/photos-search-match.c.orig	Fri Apr  1 13:34:04 2016
++++ src/photos-search-match.c	Mon Apr 25 19:39:27 2016
+@@ -65,12 +65,7 @@ photos_search_match_get_filter (PhotosFilterable *ifac
+   PhotosSearchMatch *self = PHOTOS_SEARCH_MATCH (iface);
    char *ret_val;
  
 -  #pragma GCC diagnostic push
 -  #pragma GCC diagnostic ignored "-Wformat-nonliteral"
 -
-   ret_val = g_strdup_printf (priv->filter, priv->term);
+   ret_val = g_strdup_printf (self->filter, self->term);
 -
 -  #pragma GCC diagnostic pop
  
