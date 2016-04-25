@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/07 21:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/25 08:59:02 jca Exp $
 
 COMMENT =		console-based visual debugger for Python
 
-MODPY_EGG_VERSION =	2015.4.1
+MODPY_EGG_VERSION =	2016.1
 DISTNAME =		pudb-${MODPY_EGG_VERSION}
 PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
-
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
