@@ -1,16 +1,24 @@
-$OpenBSD: README,v 1.1 2011/11/02 16:45:02 stsp Exp $
+$OpenBSD: README,v 1.2 2016/04/25 18:21:09 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Using /etc/hostname.tun0 without persist-tun
-============================================
+Upgrading from OpenBSD 5.8 or earlier
+-------------------------------------
+Note that in previous versions of OpenBSD, the tun(4) interface was
+used for both layer-3 (routed) connections, and also for layer-2
+(bridged, using the "link0" flag). This was changed in OpenBSD 5.8,
+layer-2 (bridged) connections should now use the tap(4) interface
+instead as on other OS. Consult the upgrade guide for 5.9 for more
+information.
 
-OpenVPN re-creates the tun(4) interface at startup, unless the
-persist-tun option is given in the configuration file. When not using
-persist-tun, compatibility with PF is improved by starting OpenVPN from
-hostname.if(5).  For example:
+Using an /etc/hostname.* file without persist-tun
+-------------------------------------------------
+OpenVPN normally re-creates the tun/tap interface at startup.
+This has been reported to cause problems with some PF configurations
+(especially with queueing), if you run into problems with this then
+then OpenVPN should be started from the hostname.* file, e.g.:
 
 # cat << EOF > /etc/hostname.tun0
 up
@@ -18,11 +26,12 @@ up
     --config ${SYSCONFDIR}/openvpn/server.conf
 EOF
 
-Using /etc/hostname.tun0 with persist-tun
-=========================================
+(Or use hostname.tap0 for a layer-2 connection).
 
-When the persist-tun option is used, the tun(4) interface can be
-configured before OpenVPN is started, just like any other interface.
+Using an /etc/hostname.* file with persist-tun
+----------------------------------------------
+When the persist-tun option is used, the tun(4) or tap(4) interface can
+be configured before OpenVPN is started, just like any other interface.
 
 The example below configures a point-to-point link between two sites
 accross an OpenVPN tunnel. Site-1 has tunnel end point 10.1.1.1 and
@@ -63,8 +72,7 @@ A suitable OpenVPN configuration file for site-1 might look as follows:
   ping-restart 60
 
 Running OpenVPN in chroot
-=========================
-
+-------------------------
 OpenVPN can run as an unprivileged user inside chroot when the
 persist-tun, persist-key, and persist-local-ip options are used.
 Note that persist-local-ip requires that OpenVPN is listening on an
