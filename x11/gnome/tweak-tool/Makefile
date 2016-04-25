@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2015/11/11 18:36:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2016/04/25 08:41:56 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=		gnome-tweak-tool
-GNOME_VERSION=		3.18.1
+GNOME_VERSION=		3.20.1
 
 CATEGORIES=		sysutils
 
@@ -19,12 +19,11 @@ MODPY_ADJ_FILES=	gnome-tweak-tool
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/gettext \
+			devel/gettext-tools \
 			devel/py-gobject3 \
 			x11/gtk+3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/gettext \
 			devel/py-gobject3
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
