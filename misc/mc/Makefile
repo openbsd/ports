@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2016/04/25 10:16:41 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2016/04/25 13:35:06 kirby Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
 DISTNAME=		mc-4.8.16
+REVISION=		0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.midnight-commander.org/
@@ -14,12 +15,10 @@ EXTRACT_SUFX=		.tar.xz
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pcre pthread termcap glib-2.0 gmodule-2.0 slang
+WANTLIB += c iconv intl m pcre pthread termcap glib-2.0 gmodule-2.0 slang
 WANTLIB += crypto ssl z ssh2
 
 USE_GMAKE=		Yes
-
-MODULES=		devel/gettext
 
 BUILD_DEPENDS=		security/libssh2
 LIB_DEPENDS=		devel/glib2 \
