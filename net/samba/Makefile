@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2016/04/22 11:48:36 jca Exp $
+# $OpenBSD: Makefile,v 1.222 2016/04/25 08:58:10 jca Exp $
 
 VERSION =		4.4.2
 DISTNAME =		samba-${VERSION}
@@ -14,6 +14,10 @@ PKGNAME-ldb =		ldb-${LDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
+
+REVISION-ldb =		0
+REVISION-tevent =	0
+REVISION-util =		0
 
 PKG_ARCH-docs =		*
 
@@ -77,10 +81,10 @@ UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 
 WANTLIB-common =	c pthread
 
-WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main =		${WANTLIB-common} ${MODPY_WANTLIB}
 WANTLIB-main +=		z
 WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
-WANTLIB-main +=		lber ldap pam popt gnutls
+WANTLIB-main +=		iconv intl lber ldap pam popt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
@@ -99,7 +103,7 @@ MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
 
 MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 
-MODULES =		devel/gettext lang/python perl
+MODULES =		lang/python perl
 
 BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
 			net/py-dnspython \
@@ -112,9 +116,10 @@ RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
-			${MODGETTEXT_LIB_DEPENDS} \
+			converters/libiconv \
 			databases/openldap \
 			databases/tdb>=1.3.8 \
+			devel/gettext \
 			devel/libexecinfo \
 			devel/libtalloc>=2.1.6 \
 			net/avahi \
