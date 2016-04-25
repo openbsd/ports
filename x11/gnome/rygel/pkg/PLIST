@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/03/02 09:15:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/04/25 15:20:32 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -45,11 +45,13 @@ lib/rygel-${API_V}/plugins/external.plugin
 lib/rygel-${API_V}/plugins/gst-launch.plugin
 lib/rygel-${API_V}/plugins/librygel-external.so
 lib/rygel-${API_V}/plugins/librygel-gst-launch.so
+lib/rygel-${API_V}/plugins/librygel-lms.so
 lib/rygel-${API_V}/plugins/librygel-media-export.so
 lib/rygel-${API_V}/plugins/librygel-mpris.so
 lib/rygel-${API_V}/plugins/librygel-playbin.so
 lib/rygel-${API_V}/plugins/librygel-ruih.so
 lib/rygel-${API_V}/plugins/librygel-tracker.so
+lib/rygel-${API_V}/plugins/lms.plugin
 lib/rygel-${API_V}/plugins/media-export.plugin
 lib/rygel-${API_V}/plugins/mpris.plugin
 lib/rygel-${API_V}/plugins/playbin.plugin

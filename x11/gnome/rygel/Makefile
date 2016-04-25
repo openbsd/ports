@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2016/04/25 15:20:32 jasper Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
-GNOME_VERSION=		0.28.3
+GNOME_VERSION=		0.30.1
 API_V=			2.6
 
 SHARED_LIBS +=  rygel-core-${API_V}         1.0      # .2.4
@@ -31,13 +31,12 @@ WANTLIB += gupnp-av-1.0 gupnp-dlna-2.0 gupnp-dlna-gst-2.0 harfbuzz
 WANTLIB += icudata icui18n icuuc kvm lzma m mediaart-2.0 orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 unistring
-WANTLIB += uuid xcb xcb-render xcb-shm xml2 z
+WANTLIB += uuid xcb xcb-render xcb-shm xml2 z intl iconv
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		converters/libunistring \
 			devel/libgee \
