@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/03 20:19:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/25 17:59:27 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 GH_PROJECT =		rofi
-GH_TAGNAME =		0.15.12
-REVISION =		0
+GH_TAGNAME =		1.0.0
 GH_ACCOUNT =		DaveDavenPort
 
 CATEGORIES =		sysutils x11
@@ -15,30 +14,18 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		devel/gettext
+MASTER_SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
-WANTLIB += X11 Xext Xinerama c cairo glib-2.0 gobject-2.0 pango-1.0
-WANTLIB += pangocairo-1.0 pthread startup-notification-1
+WANTLIB += X11 X11-xcb c cairo glib-2.0 gobject-2.0 intl pango-1.0
+WANTLIB += pangocairo-1.0 startup-notification-1 xcb xcb-ewmh
+WANTLIB += xcb-icccm xcb-render xcb-util xcb-xinerama xcb-xkb
 
 BUILD_DEPENDS +=	x11/i3
 LIB_DEPENDS =		devel/pango \
 			devel/startup-notification
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.12
-BUILD_DEPENDS+=		${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-
-TEST_TARGET =		test
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -i
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 post-install:
 	sed -i 's,#!.*bash,#!/usr/local/bin/bash,g' ${WRKSRC}/Examples/*.sh
