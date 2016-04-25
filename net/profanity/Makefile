@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/25 17:46:38 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/25 21:01:45 tb Exp $
 
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.4.7
@@ -26,6 +26,8 @@ LIB_DEPENDS +=	net/curl \
 		security/libotr \
 		sysutils/e2fsprogs
 
+TEST_DEPENDS =	devel/cmocka
+
 CONFIGURE_STYLE = autoconf
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -43,6 +45,6 @@ AUTOMAKE_VERSION =	1.11
 post-patch:
 	find ${WRKSRC} -type f -name "*.c" \
 		-exec sed -i '/stub\_ui.h/d' "{}" \;
-	sed -i s,/usr/local,${LOCALBASE}, ${WRKSRC}/configure.ac 
+	sed -i s,/usr/local,${LOCALBASE}, ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
