@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.965 2016/04/21 20:28:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.966 2016/04/25 17:47:40 tb Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -216,6 +216,7 @@
      SUBDIR += libshout
      SUBDIR += libsmi
      SUBDIR += libst
+     SUBDIR += libstrophe
      SUBDIR += libtorrent
      SUBDIR += libupnp
      SUBDIR += libvncserver
@@ -490,6 +491,7 @@
      SUBDIR += poptop
      SUBDIR += pork
      SUBDIR += powerdns
+     SUBDIR += profanity
      SUBDIR += prosody
      SUBDIR += proxy-suite
      SUBDIR += psi
