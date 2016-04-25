@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/05/07 13:23:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/04/25 18:19:58 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -91,6 +91,7 @@ lib/totem/plugins/vimeo/vimeo.plugin
 lib/totem/plugins/zeitgeist-dp/
 lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
 lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
+@man man/man1/totem-audio-preview.1
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
 share/GConf/gsettings/opensubtitles.convert
@@ -113,7 +114,6 @@ share/gtk-doc/html/totem/api-index-full.html
 share/gtk-doc/html/totem/core-api.html
 share/gtk-doc/html/totem/home.png
 share/gtk-doc/html/totem/index.html
-share/gtk-doc/html/totem/index.sgml
 share/gtk-doc/html/totem/ix02.html
 share/gtk-doc/html/totem/ix03.html
 share/gtk-doc/html/totem/ix04.html
@@ -528,6 +528,7 @@ share/locale/eu/LC_MESSAGES/totem.mo
 share/locale/fa/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
+share/locale/fur/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/gd/LC_MESSAGES/totem.mo
 share/locale/gl/LC_MESSAGES/totem.mo
@@ -597,6 +598,7 @@ share/totem/controls.ui
 share/totem/playlist.ui
 share/totem/preferences.ui
 share/totem/properties.ui
+share/totem/shortcuts.ui
 share/totem/totem.ui
 share/totem/uri.ui
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
