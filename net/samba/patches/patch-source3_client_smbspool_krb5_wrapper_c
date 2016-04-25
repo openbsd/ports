@@ -1,16 +1,16 @@
-$OpenBSD: patch-source3_client_smbspool_krb5_wrapper_c,v 1.1 2016/04/12 17:42:09 jca Exp $
+$OpenBSD: patch-source3_client_smbspool_krb5_wrapper_c,v 1.2 2016/04/25 15:01:29 jca Exp $
 
 Workaround lack of clearenv(3).
 
---- source3/client/smbspool_krb5_wrapper.c.orig	Sun Apr 10 20:20:07 2016
-+++ source3/client/smbspool_krb5_wrapper.c	Sun Apr 10 20:41:51 2016
+--- source3/client/smbspool_krb5_wrapper.c.orig	Mon Apr 25 10:31:47 2016
++++ source3/client/smbspool_krb5_wrapper.c	Mon Apr 25 16:55:21 2016
 @@ -195,7 +195,8 @@ int main(int argc, char *argv[])
  	 * Make sure we do not have LD_PRELOAD or other security relevant
  	 * environment variables set.
  	 */
 -	clearenv();
 +	extern char **environ;
-+	environ = NULL;
++	environ = calloc(1, sizeof(*environ));
  
  	CUPS_SMB_DEBUG("Setting KRB5CCNAME to '%s'", gen_cc);
  	setenv("KRB5CCNAME", gen_cc, 1);
