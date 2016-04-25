@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/10/12 05:43:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/25 10:31:49 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -65,7 +65,6 @@ include/gcr-3/ui/gcr-ui.h
 include/gcr-3/ui/gcr-unlock-options-widget.h
 include/gcr-3/ui/gcr-viewer-widget.h
 include/gcr-3/ui/gcr-viewer.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gck-1.typelib
 lib/girepository-1.0/Gcr-3.typelib
 lib/girepository-1.0/GcrUi-3.typelib
@@ -89,15 +88,12 @@ share/GConf/gsettings/org.gnome.crypto.pgp.convert
 share/GConf/gsettings/org.gnome.crypto.pgp_keyservers.convert
 share/applications/gcr-prompter.desktop
 share/applications/gcr-viewer.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.keyring.PrivatePrompter.service
 share/dbus-1/services/org.gnome.keyring.SystemPrompter.service
 share/gcr-3/
 share/gcr-3/ui/
 share/gcr-3/ui/gcr-pkcs11-import-dialog.ui
 share/gcr-3/ui/gcr-unlock-options-widget.ui
-share/gir-1.0/
 share/gir-1.0/Gck-1.gir
 share/gir-1.0/Gcr-3.gir
 share/gir-1.0/GcrUi-3.gir
