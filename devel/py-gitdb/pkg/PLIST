@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 14:30:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/25 09:14:53 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/gitdb/
 lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gitdb/__init__.py
@@ -6,6 +6,8 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/_perf.so
 lib/python${MODPY_VERSION}/site-packages/gitdb/base.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/base.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/const.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/const.pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/db/__init__.pyc
@@ -29,7 +31,29 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/pack.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/pack.pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/stream.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/stream.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/lib.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/lib.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_base.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_base.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_example.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_example.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_pack.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_pack.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_stream.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_stream.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_util.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/test/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/typ.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/typ.pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/util.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/util.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/compat.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/encoding.py
+lib/python${MODPY_VERSION}/site-packages/gitdb/utils/encoding.pyc

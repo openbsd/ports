@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/25 09:14:53 danj Exp $
 
 COMMENT=		Git object database
 
-MODPY_EGG_VERSION=	0.5.4
-REVISION=		1
+MODPY_EGG_VERSION=	0.6.4
 DISTNAME=		gitdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
@@ -18,8 +17,10 @@ MODPY_PI =		Yes
 MODULES=		lang/python
 
 RUN_DEPENDS=		devel/py-async \
-			devel/py-smmap
+			devel/py-smmap>=0.9.0
 
+# tests should be run using nosetests against the appropriate tag of
+# upstream's git repo
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
