@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/08 13:30:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/04/25 17:54:36 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -113,7 +113,6 @@ lib/gegl-${API_VERSION}/copy-buffer.so
 lib/gegl-${API_VERSION}/crop.so
 lib/gegl-${API_VERSION}/cubism.so
 lib/gegl-${API_VERSION}/darken.so
-lib/gegl-${API_VERSION}/dcraw-load.so
 lib/gegl-${API_VERSION}/deinterlace.so
 lib/gegl-${API_VERSION}/difference-of-gaussians.so
 lib/gegl-${API_VERSION}/difference.so
@@ -141,6 +140,7 @@ lib/gegl-${API_VERSION}/fractal-explorer.so
 lib/gegl-${API_VERSION}/fractal-trace.so
 lib/gegl-${API_VERSION}/gamma.so
 lib/gegl-${API_VERSION}/gaussian-blur-iir.so
+lib/gegl-${API_VERSION}/gaussian-blur-selective.so
 lib/gegl-${API_VERSION}/gaussian-blur.so
 lib/gegl-${API_VERSION}/gblur-1d.so
 lib/gegl-${API_VERSION}/gegl-buffer-load-op.so
@@ -223,6 +223,7 @@ lib/gegl-${API_VERSION}/remap.so
 lib/gegl-${API_VERSION}/rgbe-load.so
 lib/gegl-${API_VERSION}/rgbe-save.so
 lib/gegl-${API_VERSION}/ripple.so
+lib/gegl-${API_VERSION}/saturation.so
 lib/gegl-${API_VERSION}/save-pixbuf.so
 lib/gegl-${API_VERSION}/save.so
 lib/gegl-${API_VERSION}/screen.so
@@ -290,6 +291,7 @@ lib/pkgconfig/gegl-sc-${API_VERSION}.pc
 share/gir-1.0/Gegl-${API_VERSION}.gir
 share/locale/bs/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ca/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/da/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/de/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/el/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gegl-${API_VERSION}.mo
@@ -299,15 +301,19 @@ share/locale/eu/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/fr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/gl/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/id/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/is/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/nb/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/oc/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pt/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/sk/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/sr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gegl-${API_VERSION}.mo
