@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/11/10 16:59:33 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/04/25 10:16:41 robert Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -110,14 +110,10 @@ share/examples/mc/mc.keymap
 @sample ${SYSCONFDIR}/mc/mc.keymap
 share/examples/mc/mc.menu
 @sample ${SYSCONFDIR}/mc/mc.menu
-share/examples/mc/mc.menu.sr
-@sample ${SYSCONFDIR}/mc/mc.menu.sr
 share/examples/mc/mcedit.menu
 @sample ${SYSCONFDIR}/mc/mcedit.menu
 share/examples/mc/sfs.ini
 @sample ${SYSCONFDIR}/mc/sfs.ini
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
 share/locale/be/LC_MESSAGES/mc.mo
 share/locale/bg/LC_MESSAGES/mc.mo
@@ -129,15 +125,11 @@ share/locale/de_CH/
 share/locale/de_CH/LC_MESSAGES/
 share/locale/de_CH/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/mc.mo
 share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/et/LC_MESSAGES/mc.mo
 share/locale/eu/LC_MESSAGES/mc.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
@@ -153,19 +145,11 @@ share/locale/ia/LC_MESSAGES/mc.mo
 share/locale/id/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/mc.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/mc.mo
 share/locale/lv/LC_MESSAGES/mc.mo
-share/locale/mn/
-share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/mc.mo
 share/locale/nb/LC_MESSAGES/mc.mo
 share/locale/nl/LC_MESSAGES/mc.mo
@@ -181,17 +165,11 @@ share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/szl/
 share/locale/szl/LC_MESSAGES/
 share/locale/szl/LC_MESSAGES/mc.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
 share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/vi/LC_MESSAGES/mc.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN/LC_MESSAGES/mc.mo
 share/locale/zh_TW/LC_MESSAGES/mc.mo
@@ -316,6 +294,7 @@ share/mc/syntax/erlang.syntax
 share/mc/syntax/f90.syntax
 share/mc/syntax/filehighlight.syntax
 share/mc/syntax/fortran.syntax
+share/mc/syntax/go.syntax
 share/mc/syntax/haskell.syntax
 share/mc/syntax/html.syntax
 share/mc/syntax/idl.syntax
