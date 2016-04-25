@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2016/04/25 17:43:39 tb Exp $
+
+remove thread.{c,h} discussed on
+https://github.com/strophe/libstrophe/pull/72
+
+
+--- Makefile.am.orig	Tue Aug 18 23:07:06 2015
++++ Makefile.am	Sun Dec 20 14:39:41 2015
+@@ -22,10 +22,10 @@ libstrophe_la_LDFLAGS += -export-symbols-regex '^xmpp_
+ libstrophe_la_SOURCES = src/auth.c src/conn.c src/ctx.c \
+ 	src/event.c src/handler.c src/hash.c \
+ 	src/jid.c src/md5.c src/sasl.c src/scram.c src/sha1.c \
+-	src/snprintf.c src/sock.c src/stanza.c src/thread.c \
++	src/snprintf.c src/sock.c src/stanza.c \
+ 	src/tls_openssl.c src/util.c \
+ 	src/common.h src/hash.h src/md5.h src/ostypes.h src/parser.h \
+-	src/sasl.h src/scram.h src/sha1.h src/sock.h src/thread.h src/tls.h \
++	src/sasl.h src/scram.h src/sha1.h src/sock.h src/tls.h \
+ 	src/util.h
+ 
+ if PARSER_EXPAT
+@@ -45,13 +45,13 @@ EXTRA_DIST = docs
+ noinst_PROGRAMS = examples/active examples/roster examples/basic examples/bot examples/component
+ examples_active_SOURCES = examples/active.c
+ examples_active_CFLAGS = $(STROPHE_FLAGS)
+-examples_active_LDADD = $(STROPHE_LIBS) 
++examples_active_LDADD = $(STROPHE_LIBS)
+ examples_roster_SOURCES = examples/roster.c
+ examples_roster_CFLAGS = $(STROPHE_FLAGS)
+-examples_roster_LDADD = $(STROPHE_LIBS) 
++examples_roster_LDADD = $(STROPHE_LIBS)
+ examples_basic_SOURCES = examples/basic.c
+ examples_basic_CFLAGS = $(STROPHE_FLAGS)
+-examples_basic_LDADD = $(STROPHE_LIBS) 
++examples_basic_LDADD = $(STROPHE_LIBS)
+ examples_bot_SOURCES = examples/bot.c
+ examples_bot_CFLAGS = $(STROPHE_FLAGS)
+ examples_bot_LDADD = $(STROPHE_LIBS)
