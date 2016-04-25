@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/10/05 05:59:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/04/25 17:01:29 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
 share/appdata/
 share/appdata/org.gnome.baobab.appdata.xml
 share/applications/org.gnome.baobab.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.baobab.service
 share/glib-2.0/schemas/org.gnome.baobab.gschema.xml
 share/help/
@@ -202,6 +200,22 @@ share/help/it/baobab/scan-file-system.page
 share/help/it/baobab/scan-folder.page
 share/help/it/baobab/scan-home.page
 share/help/it/baobab/scan-remote.page
+share/help/ko/
+share/help/ko/baobab/
+share/help/ko/baobab/index.page
+share/help/ko/baobab/introduction.page
+share/help/ko/baobab/legal.xml
+share/help/ko/baobab/media/
+share/help/ko/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/ko/baobab/pref-view-chart.page
+share/help/ko/baobab/problem-permissions.page
+share/help/ko/baobab/problem-slow-scan.page
+share/help/ko/baobab/question-open-folder.page
+share/help/ko/baobab/question-trash.page
+share/help/ko/baobab/scan-file-system.page
+share/help/ko/baobab/scan-folder.page
+share/help/ko/baobab/scan-home.page
+share/help/ko/baobab/scan-remote.page
 share/help/pt_BR/
 share/help/pt_BR/baobab/
 share/help/pt_BR/baobab/index.page
