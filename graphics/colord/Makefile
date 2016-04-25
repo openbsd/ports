@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.59 2016/04/04 22:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2016/04/25 15:02:46 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	device color profile management daemon
 
-V=		1.2.12
+V=		1.3.2
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
-SHARED_LIBS +=  colordprivate        1.1      # 2.4
-SHARED_LIBS +=  colord               1.3      # 2.4
+SHARED_LIBS +=  colordprivate        1.1      # 2.5
+SHARED_LIBS +=  colord               1.4      # 2.5
 
 CATEGORIES=	graphics print
 
@@ -22,12 +21,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += lcms2 m pcre polkit-gobject-1 pthread sqlite3 z
+WANTLIB += iconv intl lcms2 m pcre polkit-gobject-1 pthread sqlite3
+WANTLIB += z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
 MODULES=	devel/dconf \
-		devel/gettext \
 		textproc/intltool
 
 BUILD_DEPENDS=	devel/gobject-introspection \
