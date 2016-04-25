@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/22 07:44:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/04/25 16:52:20 ajacoutot Exp $
 
 COMMENT=		AWS SDK for Python
 
-# XXX issues with pypi MASTER_SITES
 MODPY_EGG_VERSION=	1.3.1
 DISTNAME=               boto3-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-
-GH_ACCOUNT=             boto
-GH_PROJECT=             boto3
-GH_TAGNAME=             ${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		net devel
 
@@ -22,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-#MODPY_PI=		Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3

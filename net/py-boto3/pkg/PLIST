@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/04/22 07:44:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/04/25 16:52:20 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/boto3/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -99,9 +99,6 @@ lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}createtags.${
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}deletetags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/createtags.py
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/deletetags.py
-lib/python${MODPY_VERSION}/site-packages/boto3/examples/
-lib/python${MODPY_VERSION}/site-packages/boto3/examples/cloudfront.rst
-lib/python${MODPY_VERSION}/site-packages/boto3/examples/s3.rst
 lib/python${MODPY_VERSION}/site-packages/boto3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/__init__.py
