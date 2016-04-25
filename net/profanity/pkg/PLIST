@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/25 17:46:38 tb Exp $
+@bin bin/profanity
+@man man/man1/profanity.1
+share/profanity/
+share/profanity/themes/
+share/profanity/themes/aqua
+share/profanity/themes/batman
+share/profanity/themes/boothj5
+share/profanity/themes/complex
+share/profanity/themes/forest
+share/profanity/themes/hacker
+share/profanity/themes/headache
+share/profanity/themes/joker
+share/profanity/themes/mono
+share/profanity/themes/orange
+share/profanity/themes/original
+share/profanity/themes/original_bright
+share/profanity/themes/shade
+share/profanity/themes/simple
+share/profanity/themes/spawn
+share/profanity/themes/whiteness
