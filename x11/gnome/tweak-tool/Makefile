@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/04/25 08:41:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2016/04/25 08:59:27 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -19,7 +19,6 @@ MODPY_ADJ_FILES=	gnome-tweak-tool
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/gettext-tools \
 			devel/py-gobject3 \
 			x11/gtk+3
 
