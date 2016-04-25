@@ -1,0 +1,59 @@
+$OpenBSD: patch-configure,v 1.17 2016/04/25 15:52:14 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=759589
+
+--- configure.orig	Mon Apr 25 17:41:27 2016
++++ configure	Mon Apr 25 17:41:30 2016
+@@ -15858,7 +15858,7 @@ LIBSOUP_REQS=2.34.0
+ GUDEV_REQS=143
+ LIBMTP_REQS=0.3.0
+ LIBPEAS_REQS=0.7.3
+-GRILO_REQS=0.2.0
++GRILO_REQS=0.3.0
+ LIBXML2_REQS=2.7.8
+ LIBSECRET_REQS=0.18
+ 
+@@ -22403,12 +22403,12 @@ if test -n "$GRILO_CFLAGS"; then
+     pkg_cv_GRILO_CFLAGS="$GRILO_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"grilo-0.2 >= \$GRILO_REQS\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "grilo-0.2 >= $GRILO_REQS") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"grilo-0.3 >= \$GRILO_REQS\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "grilo-0.3 >= $GRILO_REQS") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GRILO_CFLAGS=`$PKG_CONFIG --cflags "grilo-0.2 >= $GRILO_REQS" 2>/dev/null`
++  pkg_cv_GRILO_CFLAGS=`$PKG_CONFIG --cflags "grilo-0.3 >= $GRILO_REQS" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22420,12 +22420,12 @@ if test -n "$GRILO_LIBS"; then
+     pkg_cv_GRILO_LIBS="$GRILO_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"grilo-0.2 >= \$GRILO_REQS\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "grilo-0.2 >= $GRILO_REQS") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"grilo-0.3 >= \$GRILO_REQS\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "grilo-0.3 >= $GRILO_REQS") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_GRILO_LIBS=`$PKG_CONFIG --libs "grilo-0.2 >= $GRILO_REQS" 2>/dev/null`
++  pkg_cv_GRILO_LIBS=`$PKG_CONFIG --libs "grilo-0.3 >= $GRILO_REQS" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22446,9 +22446,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        GRILO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "grilo-0.2 >= $GRILO_REQS" 2>&1`
++	        GRILO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "grilo-0.3 >= $GRILO_REQS" 2>&1`
+         else
+-	        GRILO_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "grilo-0.2 >= $GRILO_REQS" 2>&1`
++	        GRILO_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "grilo-0.3 >= $GRILO_REQS" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$GRILO_PKG_ERRORS" >&5

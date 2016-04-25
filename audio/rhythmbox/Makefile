@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.152 2016/04/03 09:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2016/04/25 15:52:14 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.3.1
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -21,7 +22,7 @@ WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
 WANTLIB += dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
 WANTLIB += freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glapi glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpod graphite2 grilo-0.2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gpod graphite2 grilo-0.3 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstcontroller-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen icudata icui18n icuuc javascriptcoregtk-4.0
@@ -49,14 +50,14 @@ LIB_DEPENDS=		audio/libgpod \
 			devel/libnotify \
 			devel/libpeas \
 			www/webkitgtk4 \
-			x11/gnome/grilo \
+			x11/gnome/grilo>=0.3.0 \
 			x11/gnome/totem-pl-parser
 
 # context plugin
 RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 
 # calls grl_registry_load...plugin
-RUN_DEPENDS +=		x11/gnome/grilo-plugins
+RUN_DEPENDS +=		x11/gnome/grilo-plugins>=0.3.0
 
 # rbzeitgeist plugin
 RUN_DEPENDS +=		productivity/zeitgeist
