@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/09/25 05:49:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/04/25 09:13:33 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Blinds.jpg
@@ -8,13 +8,13 @@ share/backgrounds/gnome/Dark_Ivy.jpg
 share/backgrounds/gnome/Fabric.jpg
 share/backgrounds/gnome/Flowerbed.jpg
 share/backgrounds/gnome/FootFall.png
+share/backgrounds/gnome/Godafoss_Iceland.jpg
 share/backgrounds/gnome/Mirror.jpg
 share/backgrounds/gnome/Road.jpg
 share/backgrounds/gnome/Sandstone.jpg
 share/backgrounds/gnome/Stones.jpg
 share/backgrounds/gnome/Terraform-green.jpg
 share/backgrounds/gnome/Waves.jpg
-share/backgrounds/gnome/Whispy_Tails.jpg
 share/backgrounds/gnome/adwaita-day.jpg
 share/backgrounds/gnome/adwaita-lock.jpg
 share/backgrounds/gnome/adwaita-morning.jpg
