@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2016/04/08 21:27:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.385 2016/04/25 18:34:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -31,6 +31,7 @@
      SUBDIR += conky,no_x11
      SUBDIR += conky,xmms2
      SUBDIR += consolekit
+     SUBDIR += cpuid
      SUBDIR += coreutils
      SUBDIR += crashme
      SUBDIR += curlftpfs
