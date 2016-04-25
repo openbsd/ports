@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.497 2016/04/24 07:44:06 shadchin Exp $
+# $OpenBSD: Makefile,v 1.498 2016/04/25 12:28:29 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -459,6 +459,7 @@
      SUBDIR += txt2tags
      SUBDIR += uchardet
      SUBDIR += uncrustify
+     SUBDIR += unicode-ucd
      SUBDIR += unrtf
      SUBDIR += urlview
      SUBDIR += urlview,slang
