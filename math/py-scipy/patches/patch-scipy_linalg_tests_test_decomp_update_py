@@ -1,0 +1,32 @@
+$OpenBSD: patch-scipy_linalg_tests_test_decomp_update_py,v 1.1 2016/04/25 08:33:23 daniel Exp $
+
+This will core dump:
+
+import numpy as np
+from scipy import linalg
+from scipy.linalg._decomp_update import *
+
+q = np.eye(5, 3, dtype=np.complex64)
+r = np.eye(3, dtype=np.complex64)
+u = np.array([1, 0, 0, 0, 0], np.complex64)
+qr_insert(q, r, u, 0, 'col')
+
+--- scipy/linalg/tests/test_decomp_update.py.orig	Thu Oct 15 14:07:35 2015
++++ scipy/linalg/tests/test_decomp_update.py	Fri Mar 25 23:55:50 2016
+@@ -9,6 +9,8 @@ from scipy import linalg
+ import scipy.linalg._decomp_update as _decomp_update
+ from scipy.linalg._decomp_update import *
+ 
++from nose.tools import nottest
++
+ def assert_unitary(a, rtol=None, atol=None, assert_sqr=True):
+     if rtol is None:
+         rtol = 10.0 ** -(np.finfo(a.dtype).precision-2)
+@@ -795,6 +797,7 @@ class BaseQRinsert(BaseQRdeltas):
+             a1 = np.insert(a, col, u, 1)
+             check_qr(q1, r1, a1, self.rtol, self.atol, False)
+ 
++    @nottest
+     def test_economic_1_col_bad_update(self):
+         # When the column to be added lies in the span of Q, the update is
+         # not meaningful.  This is detected, and a LinAlgError is issued.

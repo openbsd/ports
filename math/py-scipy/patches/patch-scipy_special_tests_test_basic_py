@@ -1,0 +1,17 @@
+$OpenBSD: patch-scipy_special_tests_test_basic_py,v 1.1 2016/04/25 08:33:23 daniel Exp $
+
+Silence a warning that shows up on OpenBSD. Inspired by:
+https://github.com/numpy/numpy/pull/5020
+
+--- scipy/special/tests/test_basic.py.orig	Sat Oct 24 19:15:57 2015
++++ scipy/special/tests/test_basic.py	Sat Mar 19 00:11:00 2016
+@@ -3097,7 +3097,8 @@ def test_xlog1py():
+         if x == 0 and not np.isnan(y):
+             return x
+         else:
+-            return x * np.log1p(y)
++            with np.errstate(invalid="ignore", divide="ignore"):
++                return x * np.log1p(y)
+ 
+     z1 = np.asarray([(0,0), (0, np.nan), (0, np.inf), (1.0, 2.0),
+                      (1, 1e-30)], dtype=float)
