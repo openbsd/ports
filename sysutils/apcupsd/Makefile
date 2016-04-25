@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/04/10 12:25:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/25 12:36:09 kirby Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -63,10 +63,8 @@ RUN_DEPENDS-cgi =
 MULTI_PACKAGES +=	-x11
 CONFIGURE_ARGS +=	--enable-gapcmon
 LIB_DEPENDS-x11 =	devel/gconf2 \
-			x11/gtk+2 \
-			${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-x11 =	devel/desktop-file-utils \
-			${MODGETTEXT_RUN_DEPENDS}
+			x11/gtk+2
+RUN_DEPENDS-x11 =	devel/desktop-file-utils
 
 WANTLIB-x11 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-x11 += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
