@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2015/12/11 14:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2016/04/25 16:49:18 jasper Exp $
 
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		3.18.2
-REVISION=		0
+GNOME_VERSION=		3.20.1
 
 CATEGORIES=		sysutils
 
@@ -20,10 +19,9 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtkmm-3.0 gtop-2.0
 WANTLIB += harfbuzz kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 sigc-2.0 xcb xcb-render xcb-shm xml2
-WANTLIB += z epoxy lzma
+WANTLIB += z epoxy lzma intl iconv
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 # c++11
