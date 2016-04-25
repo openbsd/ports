@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/25 14:15:21 sthen Exp $
 
 COMMENT = 	perform diffs on files and record sets
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Text-Diff-1.43
+DISTNAME =	Text-Diff-1.44
 CATEGORIES =	textproc
 
 # perl
