@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.135 2016/04/20 06:22:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2016/04/25 16:27:53 jasper Exp $
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.18.2
-REVISION=		0
+GNOME_VERSION=		3.20.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -16,8 +15,8 @@ HOMEPAGE=		http://www.anjuta.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
 WANTLIB += apr-1 aprutil-1 atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject crypto db dbus-1 devhelp-3 drm enchant
 WANTLIB += estdc++ expat ffi fontconfig freetype gbm gcrypt gda-5.0
@@ -35,7 +34,7 @@ WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += util vala-0.32 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
 WANTLIB += epoxy gmp gnutls hogweed nettle notify p11-kit tasn1 xslt z
-WANTLIB += hyphen
+WANTLIB += hyphen idn
 
 MODULES=		devel/dconf \
 			devel/gettext \
