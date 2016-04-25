@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2015/10/13 13:17:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/04/25 13:55:08 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		3.18.1
+GNOME_VERSION=		3.20.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,11 +14,13 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		x11/gnome/gjs \
+BUILD_DEPENDS=		geo/geoclue2 \
+			x11/gnome/gjs \
 			x11/gnome/libgweather \
 			x11/gtk+3
 
-RUN_DEPENDS=		x11/gnome/gjs \
+RUN_DEPENDS=		geo/geoclue2 \
+			x11/gnome/gjs \
 			x11/gnome/libgweather \
 			x11/gtk+3
 

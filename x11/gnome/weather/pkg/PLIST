@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/10/13 13:17:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/25 13:55:08 ajacoutot Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.Application.appdata.xml
 share/applications/org.gnome.Weather.Application.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Weather.Application.service
 share/dbus-1/services/org.gnome.Weather.BackgroundService.service
 share/glib-2.0/schemas/org.gnome.Weather.Application.gschema.xml
@@ -36,8 +34,6 @@ share/locale/eu/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/fa/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/fi/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/fr/LC_MESSAGES/org.gnome.Weather.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ga/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/gd/LC_MESSAGES/org.gnome.Weather.mo
