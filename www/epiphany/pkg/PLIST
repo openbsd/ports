@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2015/10/24 14:07:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2016/04/25 14:18:19 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
@@ -385,6 +385,42 @@ share/help/ru/epiphany/pref-passwords.page
 share/help/ru/epiphany/pref.page
 share/help/ru/epiphany/prob-restore-closed-page.page
 share/help/ru/epiphany/proxy.page
+share/help/sv/epiphany/
+share/help/sv/epiphany/bookmark-add.page
+share/help/sv/epiphany/bookmark-delete.page
+share/help/sv/epiphany/bookmark-edit.page
+share/help/sv/epiphany/bookmark-smart.page
+share/help/sv/epiphany/bookmark-topic.page
+share/help/sv/epiphany/bookmark.page
+share/help/sv/epiphany/browse-local.page
+share/help/sv/epiphany/browse-private.page
+share/help/sv/epiphany/browse-tab.page
+share/help/sv/epiphany/browse-web.page
+share/help/sv/epiphany/browse-webapps-del.page
+share/help/sv/epiphany/browse-webapps.page
+share/help/sv/epiphany/cert.page
+share/help/sv/epiphany/cookies.xml
+share/help/sv/epiphany/data-cookies.page
+share/help/sv/epiphany/data-passwords.page
+share/help/sv/epiphany/history-delete.page
+share/help/sv/epiphany/history.page
+share/help/sv/epiphany/index.page
+share/help/sv/epiphany/introduction.page
+share/help/sv/epiphany/keyboard-shortcut.page
+share/help/sv/epiphany/legal.xml
+share/help/sv/epiphany/media/
+share/help/sv/epiphany/media/epiphany-3-12.png
+share/help/sv/epiphany/media/private-browsing-3-12.png
+share/help/sv/epiphany/media/web-browser.png
+share/help/sv/epiphany/pref-cookies.page
+share/help/sv/epiphany/pref-css.page
+share/help/sv/epiphany/pref-do-not-track.page
+share/help/sv/epiphany/pref-downloads.page
+share/help/sv/epiphany/pref-font.page
+share/help/sv/epiphany/pref-passwords.page
+share/help/sv/epiphany/pref.page
+share/help/sv/epiphany/prob-restore-closed-page.page
+share/help/sv/epiphany/proxy.page
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo

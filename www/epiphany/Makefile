@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.136 2016/04/11 08:05:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.137 2016/04/25 14:18:19 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.18.6
+GNOME_VERSION=	3.20.0
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -31,7 +31,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 startup-notification-1 stdc++
 WANTLIB += webkit2gtk-4.0 webp wnck-3 xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z
-WANTLIB += epoxy hyphen
+WANTLIB += epoxy hyphen intl iconv
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -53,8 +53,10 @@ LIB_DEPENDS=	devel/libexecinfo \
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 
 MODULES=	devel/dconf \
-		devel/gettext \
-		x11/gnome
+		x11/gnome \
+		gcc4
+
+MODGCC4_ARCHS=*
 
 MODGNOME_TOOLS=	desktop-file-utils yelp
 
