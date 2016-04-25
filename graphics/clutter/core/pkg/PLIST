@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/09/19 11:06:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/04/25 09:35:31 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -322,6 +322,7 @@ share/gtk-doc/html/clutter/flow-layout.png
 share/gtk-doc/html/clutter/go01.html
 share/gtk-doc/html/clutter/home.png
 share/gtk-doc/html/clutter/index.html
+share/gtk-doc/html/clutter/index.sgml
 share/gtk-doc/html/clutter/iterating-paths.html
 share/gtk-doc/html/clutter/ix01.html
 share/gtk-doc/html/clutter/ix02.html
@@ -342,6 +343,7 @@ share/gtk-doc/html/clutter/ix16.html
 share/gtk-doc/html/clutter/ix17.html
 share/gtk-doc/html/clutter/ix18.html
 share/gtk-doc/html/clutter/ix19.html
+share/gtk-doc/html/clutter/ix20.html
 share/gtk-doc/html/clutter/left-insensitive.png
 share/gtk-doc/html/clutter/left.png
 share/gtk-doc/html/clutter/license.html
@@ -399,6 +401,7 @@ share/locale/mk/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ml/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/nb/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/nl/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/oc/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/or/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pa/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/clutter-${API_VERSION}.mo

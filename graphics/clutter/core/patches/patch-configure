@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.13 2015/10/14 17:24:10 jasper Exp $
+$OpenBSD: patch-configure,v 1.14 2016/04/25 09:35:31 jasper Exp $
 
 - Don't do bash pattern substitutions.
 
---- configure.orig	Mon Oct 12 22:51:16 2015
-+++ configure	Wed Oct 14 19:23:54 2015
-@@ -15540,11 +15540,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+--- configure.orig	Mon Mar 21 15:17:20 2016
++++ configure	Mon Apr 25 10:29:49 2016
+@@ -15410,11 +15410,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
  esac
  
  # strip leading spaces
