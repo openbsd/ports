@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/03/27 14:21:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/04/25 16:25:23 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -70,6 +70,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-aboutdialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-accelgroup.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-accellabel.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-action.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-actionbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-actiongroup.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-adjustment.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-alignment.png
@@ -112,6 +113,8 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserdialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filechooserwidget.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-filefilter.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fixed.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-flowbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-flowboxchild.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselection.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselectiondialog.png
@@ -120,6 +123,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-grid.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-handlebox.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hbox.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hbuttonbox.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-headerbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hpaned.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hscale.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hscrollbar.png
@@ -137,18 +141,22 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-linkbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-listbox.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-listboxrow.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-liststore.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-lockbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menu.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menubar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menubutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menuitem.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-menutoolbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-messagedialog.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-modelbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-notebook.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-offscreenwindow.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-overlay.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-pagesetupdialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-paned.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-placessidebar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-popover.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-popovermenu.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-printdialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-progressbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-radioaction.png
@@ -166,6 +174,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scale.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scalebutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scrollbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-scrolledwindow.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-searchbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-searchentry.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separator.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separatormenuitem.png
@@ -173,6 +182,9 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-separatortoolitem.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-sizegroup.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinner.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-stack.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-stacksidebar.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-stackswitcher.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusicon.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-switch.png
@@ -212,6 +224,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-aboutdialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-accelgroup.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-accellabel.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-action.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-actionbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-actiongroup.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-adjustment.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-alignment.png
@@ -254,6 +267,8 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserdialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filechooserwidget.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-filefilter.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fixed.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-flowbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-flowboxchild.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselection.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselectiondialog.png
@@ -262,6 +277,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-grid.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-handlebox.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hbox.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hbuttonbox.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-headerbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hpaned.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hscale.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hscrollbar.png
@@ -279,18 +295,22 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-linkbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-listbox.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-listboxrow.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-liststore.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-lockbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menu.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menubar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menubutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menuitem.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-menutoolbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-messagedialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-modelbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-notebook.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-offscreenwindow.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-overlay.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-pagesetupdialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-paned.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-placessidebar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-popover.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-popovermenu.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-printdialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-progressbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-radioaction.png
@@ -308,6 +328,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scale.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scalebutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scrollbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-scrolledwindow.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-searchbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-searchentry.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separator.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separatormenuitem.png
@@ -315,6 +336,9 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-separatortoolitem.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-sizegroup.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinner.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-stack.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-stacksidebar.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-stackswitcher.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusicon.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-switch.png
@@ -473,6 +497,11 @@ share/help/ja/glade/figures/
 share/help/ja/glade/figures/main-window.png
 share/help/ja/glade/index.docbook
 share/help/ja/glade/legal.xml
+share/help/ko/glade/
+share/help/ko/glade/figures/
+share/help/ko/glade/figures/main-window.png
+share/help/ko/glade/index.docbook
+share/help/ko/glade/legal.xml
 share/help/oc/glade/
 share/help/oc/glade/figures/
 share/help/oc/glade/figures/main-window.png
@@ -514,12 +543,14 @@ share/icons/hicolor/24x24/apps/glade.png
 share/icons/hicolor/256x256/apps/glade.png
 share/icons/hicolor/32x32/apps/glade.png
 share/icons/hicolor/48x48/apps/glade.png
+share/icons/hicolor/scalable/apps/glade-symbolic.svg
 share/locale/ar/LC_MESSAGES/glade.mo
 share/locale/ast/LC_MESSAGES/glade.mo
 share/locale/az/LC_MESSAGES/glade.mo
 share/locale/bg/LC_MESSAGES/glade.mo
 share/locale/bn/LC_MESSAGES/glade.mo
 share/locale/bn_IN/LC_MESSAGES/glade.mo
+share/locale/bs/LC_MESSAGES/glade.mo
 share/locale/ca/LC_MESSAGES/glade.mo
 share/locale/ca@valencia/LC_MESSAGES/glade.mo
 share/locale/cs/LC_MESSAGES/glade.mo
@@ -544,6 +575,7 @@ share/locale/hy/LC_MESSAGES/glade.mo
 share/locale/id/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/kk/LC_MESSAGES/glade.mo
 share/locale/km/LC_MESSAGES/glade.mo
 share/locale/ko/LC_MESSAGES/glade.mo
 share/locale/lt/LC_MESSAGES/glade.mo
@@ -554,6 +586,7 @@ share/locale/ml/LC_MESSAGES/glade.mo
 share/locale/mr/LC_MESSAGES/glade.mo
 share/locale/ms/LC_MESSAGES/glade.mo
 share/locale/nb/LC_MESSAGES/glade.mo
+share/locale/ne/LC_MESSAGES/glade.mo
 share/locale/nl/LC_MESSAGES/glade.mo
 share/locale/nn/LC_MESSAGES/glade.mo
 share/locale/oc/LC_MESSAGES/glade.mo
