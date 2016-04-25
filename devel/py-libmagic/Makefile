@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/17 13:30:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/25 14:36:19 sthen Exp $
 
 COMMENT=	Python bindings to libmagic
 
-MODPY_EGG_VERSION = 0.2
-V=		5.25
+MODPY_EGG_VERSION = 0.3.0
+V=		5.26
 DISTNAME=	file-${V}
 PKGNAME=	py-libmagic-${V}
 
@@ -23,6 +23,7 @@ NO_TEST=	Yes
 FLAVORS=	python3
 FLAVOR?=
 
+MODPY_SETUPTOOLS= Yes
 MODULES=	lang/python
 WRKSRC=		${WRKDIST}/python
 

@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/12 17:59:35 nigel Exp $
-lib/python${MODPY_VERSION}/site-packages/Magic_file_extensions-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+@comment $OpenBSD: PLIST,v 1.3 2016/04/25 14:36:19 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/magic.py
