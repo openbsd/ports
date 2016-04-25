@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/10/05 06:01:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/04/25 18:51:01 ajacoutot Exp $
 @bin libexec/vino-server
 share/applications/vino-server.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Vino.service
 share/glib-2.0/schemas/org.gnome.Vino.enums.xml
 share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
@@ -35,8 +33,6 @@ share/locale/eu/LC_MESSAGES/vino.mo
 share/locale/fa/LC_MESSAGES/vino.mo
 share/locale/fi/LC_MESSAGES/vino.mo
 share/locale/fr/LC_MESSAGES/vino.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/vino.mo
 share/locale/ga/LC_MESSAGES/vino.mo
 share/locale/gl/LC_MESSAGES/vino.mo
@@ -51,8 +47,6 @@ share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
 share/locale/kk/LC_MESSAGES/vino.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/vino.mo
 share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
