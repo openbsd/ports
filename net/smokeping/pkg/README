@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2016/04/12 10:18:21 sthen Exp $
+$OpenBSD: README,v 1.6 2016/04/25 00:03:04 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -98,5 +98,5 @@ fastcgi_param  RRDCACHED_ADDRESS unix:/var/run/rrd/rrdcached.sock;
 Then restart smokeping and smokeping_fcgi. Use -d to show more information
 in case of errors at startup.
 
-	# rcctl restart -d smokeping
-	# rcctl restart -d smokeping_fcgi
+	# rcctl -d restart smokeping
+	# rcctl -d restart smokeping_fcgi
