@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/19 14:30:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/25 18:00:29 jasper Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
-DISTNAME=		libxkbcommon-0.5.0
-SHARED_LIBS +=	xkbcommon            1.0      # unknown
+DISTNAME=		libxkbcommon-0.6.0
+SHARED_LIBS +=	xkbcommon            1.1      # unknown
 SHARED_LIBS +=	xkbcommon-x11        1.0      # unknown
 CATEGORIES=		x11 inputmethods
 
@@ -20,14 +20,17 @@ EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += Xau Xdmcp pthread-stubs xcb xcb-xkb
 
+BUILD_DEPENDS =		devel/bison
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--without-doxygen
+CONFIGURE_ENV +=	YACC=${LOCALBASE}/bin/bison
 
+TEST_DEPENDS =		shells/bash
 TEST_IS_INTERACTIVE=	x11
 
-# our pre-historic bison has been mummified and put into a museum.
-# so generate parser.c with a fresh young bison that still roams the plains.
-post-extract:
-	cp ${FILESDIR}/parser.c ${WRKSRC}/src/xkbcomp/
+# XXX: This test still fails
+pre-test:
+	sed -i 's,bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/test/symbols-leak-test.bash
 
 .include <bsd.port.mk>
