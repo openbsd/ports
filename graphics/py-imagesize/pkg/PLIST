@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/11 17:43:00 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/25 17:43:21 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/imagesize/
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,5 @@ lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/imagesize/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}py2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}py3.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/imagesize/py2.py
-lib/python${MODPY_VERSION}/site-packages/imagesize/py3.py
+lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}get.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/imagesize/get.py

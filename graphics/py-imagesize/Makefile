@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/11 17:43:00 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/25 17:43:21 shadchin Exp $
 
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
-MODPY_EGG_VERSION =	0.7.0
+MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		imagesize-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
