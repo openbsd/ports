@@ -1,20 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/25 09:09:17 danj Exp $
 
 COMMENT=		pure Python implementation of an SMM manager
 
-MODPY_EGG_VERSION=	0.8.2
+MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		smmap-${MODPY_EGG_VERSION}
-REVISION=		3
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =		Yes
-
 MODULES=		lang/python
 
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+
+FLAVORS=		python3
+FLAVOR?=
+
+TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-nosexcover${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
