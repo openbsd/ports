@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/04/18 06:51:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/04/25 08:59:03 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -12,8 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		devel/gettext-tools \
-			textproc/itstool \
+BUILD_DEPENDS=		textproc/itstool \
 			textproc/libxslt
 
 .include <bsd.port.mk>
