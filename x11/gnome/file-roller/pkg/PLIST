@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/04/14 06:55:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/04/25 14:04:50 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -278,6 +278,26 @@ share/help/ja/file-roller/supported-formats.page
 share/help/ja/file-roller/test-integrity.page
 share/help/ja/file-roller/troubleshooting-archive-open.page
 share/help/ja/file-roller/troubleshooting-password.page
+share/help/ko/file-roller/
+share/help/ko/file-roller/archive-create.page
+share/help/ko/file-roller/archive-edit.page
+share/help/ko/file-roller/archive-extract-advanced-options.page
+share/help/ko/file-roller/archive-extract.page
+share/help/ko/file-roller/archive-open.page
+share/help/ko/file-roller/archive-view.page
+share/help/ko/file-roller/figures/
+share/help/ko/file-roller/figures/file-roller-3-12.png
+share/help/ko/file-roller/figures/file-roller-icon.png
+share/help/ko/file-roller/figures/file-roller-open-recent.png
+share/help/ko/file-roller/index.page
+share/help/ko/file-roller/introduction.page
+share/help/ko/file-roller/keyboard-shortcuts.page
+share/help/ko/file-roller/legal.xml
+share/help/ko/file-roller/password-protection.page
+share/help/ko/file-roller/supported-formats.page
+share/help/ko/file-roller/test-integrity.page
+share/help/ko/file-roller/troubleshooting-archive-open.page
+share/help/ko/file-roller/troubleshooting-password.page
 share/help/pt_BR/file-roller/
 share/help/pt_BR/file-roller/archive-create.page
 share/help/pt_BR/file-roller/archive-edit.page
@@ -339,6 +359,26 @@ share/help/sl/file-roller/supported-formats.page
 share/help/sl/file-roller/test-integrity.page
 share/help/sl/file-roller/troubleshooting-archive-open.page
 share/help/sl/file-roller/troubleshooting-password.page
+share/help/sv/file-roller/
+share/help/sv/file-roller/archive-create.page
+share/help/sv/file-roller/archive-edit.page
+share/help/sv/file-roller/archive-extract-advanced-options.page
+share/help/sv/file-roller/archive-extract.page
+share/help/sv/file-roller/archive-open.page
+share/help/sv/file-roller/archive-view.page
+share/help/sv/file-roller/figures/
+share/help/sv/file-roller/figures/file-roller-3-12.png
+share/help/sv/file-roller/figures/file-roller-icon.png
+share/help/sv/file-roller/figures/file-roller-open-recent.png
+share/help/sv/file-roller/index.page
+share/help/sv/file-roller/introduction.page
+share/help/sv/file-roller/keyboard-shortcuts.page
+share/help/sv/file-roller/legal.xml
+share/help/sv/file-roller/password-protection.page
+share/help/sv/file-roller/supported-formats.page
+share/help/sv/file-roller/test-integrity.page
+share/help/sv/file-roller/troubleshooting-archive-open.page
+share/help/sv/file-roller/troubleshooting-password.page
 share/help/te/
 share/help/te/file-roller/
 share/help/te/file-roller/archive-create.page

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.116 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.117 2016/04/25 14:04:50 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.16.4
+GNOME_VERSION=	3.20.1
 
 CATEGORIES=	archivers
 
@@ -17,10 +17,9 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += json-glib-1.0 lzma m magic nautilus-extension epoxy lzo2
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z intl iconv
 
 MODULES=	devel/dconf \
-		devel/gettext \
 		x11/gnome
 
 RUN_DEPENDS=	archivers/gcpio \
@@ -46,9 +45,5 @@ CONFIGURE_ENV=		CPIO=${LOCALBASE}/bin/gcpio
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
-
-# XXX: Remove when patch-configure_ac is merged
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
