@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/11/12 11:02:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/04/25 18:57:09 ajacoutot Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/GConf/gsettings/org.gnome.Vinagre.convert
@@ -249,6 +249,22 @@ share/help/sl/vinagre/legal.xml
 share/help/sl/vinagre/scaling.page
 share/help/sl/vinagre/take-screenshot.page
 share/help/sl/vinagre/view-only.page
+share/help/sv/
+share/help/sv/vinagre/
+share/help/sv/vinagre/connect-file.page
+share/help/sv/vinagre/connect-reverse.page
+share/help/sv/vinagre/connect.page
+share/help/sv/vinagre/figures/
+share/help/sv/vinagre/figures/preferences-desktop-remote-desktop.png
+share/help/sv/vinagre/figures/vinagre-connected-3-16.png
+share/help/sv/vinagre/fullscreen.page
+share/help/sv/vinagre/index.page
+share/help/sv/vinagre/introduction.page
+share/help/sv/vinagre/keyboard-shortcuts.page
+share/help/sv/vinagre/legal.xml
+share/help/sv/vinagre/scaling.page
+share/help/sv/vinagre/take-screenshot.page
+share/help/sv/vinagre/view-only.page
 share/help/zh_CN/
 share/help/zh_CN/vinagre/
 share/help/zh_CN/vinagre/connect-file.page
@@ -305,6 +321,7 @@ share/locale/eu/LC_MESSAGES/vinagre.mo
 share/locale/fa/LC_MESSAGES/vinagre.mo
 share/locale/fi/LC_MESSAGES/vinagre.mo
 share/locale/fr/LC_MESSAGES/vinagre.mo
+share/locale/fur/LC_MESSAGES/vinagre.mo
 share/locale/ga/LC_MESSAGES/vinagre.mo
 share/locale/gl/LC_MESSAGES/vinagre.mo
 share/locale/gu/LC_MESSAGES/vinagre.mo
