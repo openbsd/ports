@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2015/10/22 17:56:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2016/04/25 15:00:06 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.20.0
 
 CATEGORIES=		editors
 
@@ -46,8 +46,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gucharmap
 
 MODGNOME_TOOLS +=	yelp
-# dashboard plugin
-RUN_DEPENDS +=		productivity/zeitgeist
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}
