@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2016/04/11 17:49:18 shadchin Exp $
+# $OpenBSD: Makefile,v 1.410 2016/04/25 13:23:27 giovanni Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -165,6 +165,7 @@
      SUBDIR += mpeg_play
      SUBDIR += mplex
      SUBDIR += mscgen
+     SUBDIR += mtpaint
      SUBDIR += netpbm
      SUBDIR += nomacs
      SUBDIR += ocaml-camlimages
