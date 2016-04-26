@@ -1,0 +1,3 @@
+PNP is an addon to Nagios and Icinga which analyzes performance data
+provided by plugins and stores them automatically into RRD-databases
+(Round Robin Databases).

@@ -1,0 +1,15 @@
+$OpenBSD: patch-sample-config_httpd_conf_in,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+
+Do not block access by default.
+
+--- sample-config/httpd.conf.in.orig	Sun Feb  7 15:00:14 2016
++++ sample-config/httpd.conf.in	Sun Feb  7 15:02:35 2016
+@@ -12,7 +12,7 @@ Alias @BASE_URL@ "@datarootdir@"
+    	AuthName "Nagios Access"
+    	AuthType Basic
+    	AuthUserFile /usr/local/nagios/etc/htpasswd.users
+-   	Require valid-user
++#   	Require valid-user
+ 	<IfModule mod_rewrite.c>
+ 		# Turn on URL rewriting
+ 		RewriteEngine On

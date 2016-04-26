@@ -1,0 +1,10 @@
+$OpenBSD: README-main,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Log file in /var/log/pnp4nagios will need to be rotated. Here is a sample
+line for newsyslog.conf:
+
+/var/log/pnp4nagios/pnp4nagios.log _icinga:_icinga 644 7  250  * Z

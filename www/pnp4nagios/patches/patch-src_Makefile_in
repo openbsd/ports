@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+--- src/Makefile.in.orig	Fri Feb  5 17:22:57 2016
++++ src/Makefile.in	Fri Feb  5 17:23:26 2016
+@@ -128,7 +128,7 @@ install-basic:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATA_DIR)
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATA_SPOOL_DIR)
++#	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATA_SPOOL_DIR)
+ 	$(INSTALL) -m 754 $(INSTALL_OPTS) @npcd_name@ $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 754 $(INSTALL_OPTS) npcdmod.o $(DESTDIR)$(LIBDIR)
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_Makefile_in,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+--- scripts/Makefile.in.orig	Fri Feb  5 17:26:12 2016
++++ scripts/Makefile.in	Fri Feb  5 17:26:33 2016
+@@ -44,7 +44,7 @@ install-rrdmodify: 
+ install: 
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATADIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/stats
++#	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/stats
+ 	$(MAKE) install-processperfdata
+ 	$(MAKE) install-plugins
+ 	$(MAKE) install-rrdconvert
