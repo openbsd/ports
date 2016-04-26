@@ -1,9 +1,12 @@
-$OpenBSD: patch-lib_replace_wscript,v 1.3 2016/04/22 11:48:36 jca Exp $
+$OpenBSD: patch-lib_replace_wscript,v 1.4 2016/04/26 12:23:05 jca Exp $
 
 Fix __sync_fetch_and_add check so that it properly fails instead of
 succeeding erroneously (eg on hppa/mips64).
 
 Also fix atomic_add_32 check so that it doesn't get picked up instead.
+
+Committed upstream:
+  https://git.samba.org/?p=samba.git;a=commit;h=53e0860122c3fa6b9fe80b5693c7b1eee2ad605d
 
 --- lib/replace/wscript.orig	Wed Apr 13 17:18:37 2016
 +++ lib/replace/wscript	Wed Apr 13 17:18:37 2016
