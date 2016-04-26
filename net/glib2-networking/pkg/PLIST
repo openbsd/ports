@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/04/18 06:52:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/04/26 13:17:16 ajacoutot Exp $
 @comment lib/gio/modules/libgiognomeproxy.la
 lib/gio/modules/libgiognomeproxy.so
 @comment lib/gio/modules/libgiognutls.la
@@ -9,6 +9,8 @@ lib/systemd/
 lib/systemd/user/
 lib/systemd/user/glib-pacrunner.service
 @bin libexec/glib-pacrunner
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.gtk.GLib.PACRunner.service
 share/locale/an/LC_MESSAGES/glib-networking.mo
 share/locale/ar/LC_MESSAGES/glib-networking.mo
