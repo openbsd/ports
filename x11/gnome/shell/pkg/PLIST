@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/11/12 18:00:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/04/26 07:42:21 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -28,8 +28,7 @@ lib/mozilla/plugins/libgnome-shell-browser-plugin.so
 share/GConf/gsettings/gnome-shell-overrides.convert
 share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
-share/applications/gnome-shell-wayland.desktop
-share/applications/gnome-shell.desktop
+share/applications/org.gnome.Shell.desktop
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
@@ -83,16 +82,10 @@ share/gtk-doc/html/shell/up-insensitive.png
 share/gtk-doc/html/shell/up.png
 share/gtk-doc/html/st/
 share/gtk-doc/html/st/StBin.html
-share/gtk-doc/html/st/StBoxLayout.html
 share/gtk-doc/html/st/StButton.html
 share/gtk-doc/html/st/StDrawingArea.html
 share/gtk-doc/html/st/StEntry.html
-share/gtk-doc/html/st/StIcon.html
-share/gtk-doc/html/st/StLabel.html
-share/gtk-doc/html/st/StScrollView.html
 share/gtk-doc/html/st/StScrollable.html
-share/gtk-doc/html/st/StTextureCache.html
-share/gtk-doc/html/st/StThemeNodeTransition.html
 share/gtk-doc/html/st/StWidget.html
 share/gtk-doc/html/st/StWidgetAccessible.html
 share/gtk-doc/html/st/annotation-glossary.html
@@ -108,7 +101,13 @@ share/gtk-doc/html/st/object-tree.html
 share/gtk-doc/html/st/pt01.html
 share/gtk-doc/html/st/right-insensitive.png
 share/gtk-doc/html/st/right.png
+share/gtk-doc/html/st/st-st-box-layout.html
+share/gtk-doc/html/st/st-st-icon.html
+share/gtk-doc/html/st/st-st-label.html
+share/gtk-doc/html/st/st-st-scroll-view.html
+share/gtk-doc/html/st/st-st-texture-cache.html
 share/gtk-doc/html/st/st-st-theme-context.html
+share/gtk-doc/html/st/st-st-theme-node-transition.html
 share/gtk-doc/html/st/st-st-theme-node.html
 share/gtk-doc/html/st/st-st-theme.html
 share/gtk-doc/html/st/st.devhelp2
@@ -143,6 +142,7 @@ share/locale/fi/LC_MESSAGES/gnome-shell.mo
 share/locale/fr/LC_MESSAGES/gnome-shell.mo
 share/locale/fur/LC_MESSAGES/gnome-shell.mo
 share/locale/ga/LC_MESSAGES/gnome-shell.mo
+share/locale/gd/LC_MESSAGES/gnome-shell.mo
 share/locale/gl/LC_MESSAGES/gnome-shell.mo
 share/locale/gu/LC_MESSAGES/gnome-shell.mo
 share/locale/he/LC_MESSAGES/gnome-shell.mo

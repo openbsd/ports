@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2016/03/04 10:21:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2016/04/26 07:42:21 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.18.4
+GNOME_VERSION=		3.20.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,11 +26,14 @@ WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z epoxy
-WANTLIB += EGL drm gbm xcb-dri2 xcb-randr xcb-shape
+WANTLIB += EGL drm gbm xcb-dri2 xcb-randr xcb-shape iconv intl
 WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
+WANTLIB += GL Xt Xxf86vm enchant glapi gstapp-1.0 gstaudio-1.0
+WANTLIB += gstfft-1.0 gstpbutils-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
+WANTLIB += javascriptcoregtk-3.0 jpeg orc-0.4 stdc++ webkitgtk-3.0
+WANTLIB += webp xcb-glx xslt
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 
@@ -103,6 +106,9 @@ CONFIGURE_ARGS=		--disable-systemd
 #     shell-glsl-quad.c:86:35: error: implicit conversion from enumeration type 'ShellSnippetHook'
 #     to different enumeration type 'CoglSnippetHook' [-Werror,-Wenum-conversion]
 CONFIGURE_ARGS +=	--enable-compile-warnings
+
+# XXX: gnome-shell-3.18.4_writes_to_HOME
+PORTHOME=		${WRKDIR}
 
 post-install:
 	rm ${PREFIX}/lib/gnome-shell/*.{a,la}
