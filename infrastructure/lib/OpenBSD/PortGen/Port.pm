@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $
+# $OpenBSD: Port.pm,v 1.3 2016/04/26 17:24:38 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -201,7 +201,7 @@ sub write_makefile
 	    or die $!;
 	open my $mk, '>', 'Makefile' or die $!;
 
-	my $output = '# $OpenBSD: Port.pm,v 1.2 2016/04/25 18:38:40 tsg Exp $' . "\n";
+	my $output = "# \$OpenBSD\$\n";
 	my %vars_found;
 
 	# such a mess, should fix
