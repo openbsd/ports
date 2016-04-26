@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1.1.1 2016/04/26 18:33:25 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Loading index template
+======================
+If Packetbeat will be shipping directly into ElasticSearch, the index
+template needs to be loaded into the cluster first:
+
+    curl -XPUT 'http://localhost:9200/_template/packetbeat?pretty' \
+    	 -d@${SYSCONFDIR/filebeat/packetbeat.template.json
+
+Replace `localhost` and `9200` if required by your setup.
+
+Sniffer interface
+=================
+Before starting packetbeat, the correct interface needs to be
+specified in the configuration file.

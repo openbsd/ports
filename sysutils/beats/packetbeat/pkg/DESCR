@@ -1,0 +1,3 @@
+Packetbeat is the open source data shipper that integrates with
+Elasticsearch and Kibana to provide real-time analytics for web,
+database, and other network protocols.

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 18:33:25 jasper Exp $
+@bin bin/packetbeat
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/packetbeat/
+@sample ${SYSCONFDIR}/packetbeat/
+share/examples/packetbeat/packetbeat.template.json
+@sample ${SYSCONFDIR}/packetbeat/packetbeat.template.json
+share/examples/packetbeat/packetbeat.yml
+@sample ${SYSCONFDIR}/packetbeat/packetbeat.yml
+@rcscript ${RCDIR}/packetbeat

@@ -1,0 +1,15 @@
+$OpenBSD: patch-packetbeat_etc_packetbeat_yml,v 1.1.1.1 2016/04/26 18:33:25 jasper Exp $
+
+'any' interface doesn't work on non-Linux
+
+--- packetbeat/etc/packetbeat.yml.orig	Tue Apr 26 16:26:04 2016
++++ packetbeat/etc/packetbeat.yml	Tue Apr 26 16:26:10 2016
+@@ -13,7 +13,7 @@
+ # Select the network interfaces to sniff the data. You can use the "any"
+ # keyword to sniff on all connected interfaces.
+ interfaces:
+-  device: any
++  device: em0
+ 
+ ############################# Protocols #######################################
+ protocols:
