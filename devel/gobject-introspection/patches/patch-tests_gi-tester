@@ -1,6 +1,7 @@
-$OpenBSD: patch-tests_gi-tester,v 1.1 2016/04/26 15:54:59 jasper Exp $
+$OpenBSD: patch-tests_gi-tester,v 1.2 2016/04/26 16:03:14 jasper Exp $
 
 Replace -B GNUism wit portable -I-equivalent
+https://bugzilla.gnome.org/show_bug.cgi?id=765618
 
 --- tests/gi-tester.orig	Tue Apr 26 17:51:36 2016
 +++ tests/gi-tester	Tue Apr 26 17:51:42 2016
