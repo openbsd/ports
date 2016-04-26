@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/26 13:03:40 landry Exp $
 
 COMMENT =	library to retrieve system information and utilisation
 
-MODPY_EGG_VERSION = 3.3.0
-REVISION =	0
+MODPY_EGG_VERSION = 4.1.0
 GH_ACCOUNT =	giampaolo
 GH_PROJECT =	psutil
 GH_TAGNAME =	release-${MODPY_EGG_VERSION}
@@ -25,6 +24,6 @@ TEST_DEPENDS =	${BUILD_PKGPATH} \
 MODPY_SETUPTOOLS =	Yes
 
 do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} test/test_psutil.py
+	cd ${WRKSRC}; ${MODPY_BIN} psutil/tests/runner.py
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/14 07:35:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/26 13:03:41 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/psutil/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,3 +25,28 @@ lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_bsd.so
 lib/python${MODPY_VERSION}/site-packages/psutil/_psutil_posix.so
 lib/python${MODPY_VERSION}/site-packages/psutil/_pswindows.py
 lib/python${MODPY_VERSION}/site-packages/psutil/_pswindows.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/runner.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_bsd.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_bsd.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_linux.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_linux.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_memory_leaks.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_memory_leaks.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_misc.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_misc.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_osx.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_osx.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_posix.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_posix.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_process.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_process.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_sunos.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_sunos.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_system.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_system.pyc
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_windows.py
+lib/python${MODPY_VERSION}/site-packages/psutil/tests/test_windows.pyc
