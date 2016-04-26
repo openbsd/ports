@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2016/04/26 09:53:54 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2016/04/26 21:08:40 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=765587
+From f2160f52786aac9ffaf42d55b086cb9f875cafa5 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@hergert.me>
+Date: Tue, 26 Apr 2016 13:59:37 -0700
+Subject: build: use -export-symbols-regex
 
 --- configure.orig	Tue Apr 26 11:15:23 2016
 +++ configure	Tue Apr 26 11:15:40 2016
