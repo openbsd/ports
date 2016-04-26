@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2016/04/25 13:23:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.411 2016/04/26 15:31:41 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -74,6 +74,7 @@
      SUBDIR += gimp
      SUBDIR += gle
      SUBDIR += glew
+     SUBDIR += glfw
      SUBDIR += glm
      SUBDIR += glpng
      SUBDIR += gmt
