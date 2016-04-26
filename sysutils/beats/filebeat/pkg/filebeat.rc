@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: filebeat.rc,v 1.1.1.1 2016/04/26 13:08:03 jasper Exp $
+
+daemon="${PREFIX}/bin/filebeat"
+daemon_flags="-c ${SYSCONFDIR}/filebeat/filebeat.yml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_pre() {
+	install -d -o root -m 0700 /var/db/filebeat
+}
+
+rc_cmd $1

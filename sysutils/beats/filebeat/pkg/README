@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2016/04/26 13:08:03 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Loading index template
+======================
+If Filebeat will be shipping directly into ElasticSearch, the index
+template needs to be loaded into the cluster first:
+
+    curl -XPUT 'http://localhost:9200/_template/filebeat?pretty' \
+    	 -d@${SYSCONFDIR/filebeat/filebeat.template.json
+
+Replace `localhost` and `9200` if required by your setup.
+
+Migrating from Logstash Forwarder
+=================================
+When migrating from logstash-forwarder to filebeat, please review this
+document on how to adapt your configuration:
+
+    https://www.elastic.co/guide/en/beats/filebeat/current/migrating-from-logstash-forwarder.html

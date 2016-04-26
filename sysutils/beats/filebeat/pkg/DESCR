@@ -1,0 +1,2 @@
+Filebeat is an open source file harvester, mostly used to fetch logs
+files and feed them into logstash.
