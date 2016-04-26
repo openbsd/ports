@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2016/04/26 13:08:02 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/04/26 21:29:43 jasper Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -13,22 +13,24 @@ MODULES +=	     	lang/go
 
 ELASTIC_BEAT ?=	     	Yes
 
-.if ${ELASTIC_BEAT:L} == "yes"
-HOMEPAGE ?=		https://www.elastic.co/products/beats/${BEAT}
-
-ALL_TARGET =		github.com/elastic/beats/${BEAT}
-
-WRKDIST =		 ${WRKDIR}/${GH_PROJECT}-${VERSION}
-MODGO_SUBDIR =		 ${WRKDIST}/${BEAT}
-
 # Redefine ${MODGO_CMD} to include GO15VENDOREXPERIMENT
 MODGO_CMD =		unset GOPATH; \
 	  		export GO15VENDOREXPERIMENT=1 \
 			GOPATH="${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}"; \
 			go
 
+.if ${ELASTIC_BEAT:L} == "yes"
+HOMEPAGE ?=		https://www.elastic.co/products/beats/${BEAT}
+
+ALL_TARGET =		github.com/elastic/beats/${BEAT}
+
+WRKDIST =		${WRKDIR}/${GH_PROJECT}-${VERSION}
+MODGO_SUBDIR =		${WRKDIST}/${BEAT}
+
 pre-build:
 	cp -r ${WRKDIST}/{libbeat,vendor} ${WRKSRC}/../
+.else
+ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${BEAT}
 .endif
 
 post-install:
