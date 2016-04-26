@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/26 07:06:36 kirby Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
 DISTNAME =		gemrb-0.8.4
+REVISION = 		0
 
 CATEGORIES =		games emulators x11
 
@@ -17,11 +18,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 
-WANTLIB += SDL SDL_mixer c freetype m openal png pthread stdc++
+WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread stdc++
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB}
 
-MODULES =		converters/libiconv \
-			devel/cmake \
+MODULES =		devel/cmake \
 			lang/python
 LIB_DEPENDS =		audio/openal \
 			devel/sdl-mixer \
