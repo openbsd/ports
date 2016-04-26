@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/25 21:01:45 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/26 09:35:38 sthen Exp $
 
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.4.7
@@ -16,7 +16,7 @@ WANTLIB += assuan c curl ereadline glib-2.0 gpg-error gpgme intl ncursesw
 WANTLIB += otr strophe uuid
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE)DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS +=	net/curl \
 		devel/readline>=6.1p2 \
