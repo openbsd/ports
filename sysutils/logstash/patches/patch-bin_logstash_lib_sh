@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_logstash_lib_sh,v 1.2 2015/12/08 09:20:24 jasper Exp $
+$OpenBSD: patch-bin_logstash_lib_sh,v 1.1 2016/04/26 13:31:25 jasper Exp $
 
 Revert: 44edf5bd00c116d356acbcd21369e4cebcbae5f9
 See: https://github.com/elastic/logstash/pull/4303#issuecomment-162823365

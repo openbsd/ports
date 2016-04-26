@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: logstash.rc,v 1.6 2015/12/09 11:39:14 jasper Exp $
+# $OpenBSD: logstash.rc,v 1.1 2016/04/26 13:31:25 jasper Exp $
 
 daemon_user="_logstash"
 daemon="${TRUEPREFIX}/logstash/bin/logstash"

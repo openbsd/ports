@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/04/26 11:13:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.1 2016/04/26 13:31:25 jasper Exp $
+@pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/logstash/*
