@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/28 08:18:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/26 18:06:26 jca Exp $
 
 COMMENT=	PPM to Pilot bitmap converter
 
@@ -15,7 +15,7 @@ WANTLIB=		c m netpbm
 
 MASTER_SITES=	${HOMEPAGE}
 
-MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/netpbm" \
 		LDLIBS="-L${LOCALBASE}/lib -lnetpbm -lm"
 
 LIB_DEPENDS=	graphics/netpbm

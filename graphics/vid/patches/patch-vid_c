@@ -1,6 +1,15 @@
-$OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
+$OpenBSD: patch-vid_c,v 1.4 2016/04/26 18:06:26 jca Exp $
 --- vid.c.orig	Mon May  8 06:59:03 2000
-+++ vid.c	Mon Jan 20 17:56:47 2003
++++ vid.c	Tue Apr 26 15:50:06 2016
+@@ -37,7 +37,7 @@
+ 
+ #include <dev/usb/usb.h>
+ 
+-#include <pnm.h>
++#include <netpbm/pnm.h>
+ 
+ #include "vid.h"
+ 
 @@ -48,15 +48,15 @@ ov511_reg_read(int fd, int reg) {
    struct usb_ctl_request ur;
    unsigned char data[1024];
@@ -25,7 +34,7 @@ $OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
    
    if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
      return -1;
-@@ -72,15 +72,15 @@ ov511_reg_write(int fd, int reg, int val
+@@ -72,15 +72,15 @@ ov511_reg_write(int fd, int reg, int val) {
  
    data[0] = val;
    
@@ -63,8 +72,8 @@ $OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
 +  int isplus;                  /* bridge is OV511+ if true, else OV511 */
 +  int is20;                    /* sensor is OV7620 if true, else OV7610 */
 +  int bufsize;                 /* size of packet buffer */
-+
  
++
    /* pnm_init(&argc, argv); */	/* required for PNM programs? */
  
    while(++argv, --argc) {
@@ -135,7 +144,7 @@ $OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
    
    /* reset the OV511 */
    if(ov511_reg_write(fd, OV511_REG_RST, 0x7f) < 0)
-@@ -398,23 +412,56 @@ main(int argc, char *argv[]) {
+@@ -398,24 +412,57 @@ main(int argc, char *argv[]) {
    if(ov511_reg_write(fd, OV511_REG_CE_EN, 0x0) < 0)
      exit(1);
  
@@ -158,7 +167,8 @@ $OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
 +  if((is20 = ov511_i2c_read(fd, OV7610_REG_COMI)) < 0)
 +    exit(1);
 +  is20 = !is20;
-+
+ 
+-  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
 +  /* set up the OV7610/OV7620 */
 +  if(is20) {
 +    ov511_i2c_write(fd, OV7610_REG_EC,      0xff);
@@ -200,14 +210,14 @@ $OpenBSD: patch-vid_c,v 1.3 2003/01/20 18:54:14 sturm Exp $
 +    ov511_i2c_write(fd, OV7610_REG_COMJ, 0x93);
 +    ov511_i2c_write(fd, OV7610_REG_BADJ, 0x48);
 +    ov511_i2c_write(fd, OV7610_REG_COMK, 0x81);
-+
+ 
 +    ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
 +  }
- 
--  ov511_i2c_write(fd, OV7610_REG_GAM, 0x04);
- 
++
++
    if(small) {
      vs.width = 320;
+     vs.height = 240;
 @@ -442,14 +489,14 @@ main(int argc, char *argv[]) {
    ov511_reg_write(fd, OV511_REG_LNDV, 0x00);
  

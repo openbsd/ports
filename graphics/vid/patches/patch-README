@@ -1,6 +1,6 @@
-$OpenBSD: patch-README,v 1.1 2003/01/20 18:54:14 sturm Exp $
---- README.orig	Sun May  7 22:59:03 2000
-+++ README	Sun Jan 19 11:41:56 2003
+$OpenBSD: patch-README,v 1.2 2016/04/26 18:06:26 jca Exp $
+--- README.orig	Mon May  8 06:59:03 2000
++++ README	Tue Apr 26 15:49:36 2016
 @@ -1,4 +1,5 @@
 -NetBSD/FreeBSD Simple OV511 video capture program, version 1.0 (2000-04-26)
 +FreeBSD/NetBSD/OpenBSD Simple OV511 video capture program
@@ -8,7 +8,7 @@ $OpenBSD: patch-README,v 1.1 2003/01/20 18:54:14 sturm Exp $
  
  This is a simple image capture program for USB webcams based on the
  OmniVision Technologies OV511 bridge chip attached to an OV7610 CCD
-@@ -61,3 +62,5 @@ http://members.home.com/housel/ for upda
+@@ -61,3 +62,5 @@ http://members.home.com/housel/ for updates.
  
  -Peter S. Housel-
  
