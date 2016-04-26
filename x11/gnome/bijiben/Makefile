@@ -1,19 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/04/26 07:41:48 jasper Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.18.2
-REVISION=		0
+GNOME_VERSION=		3.20.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=		devel/dconf \
-			devel/gettext \
-			x11/gnome
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
@@ -30,12 +25,15 @@ WANTLIB += nspr4 nss3 nssutil3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
 WANTLIB += uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2
-WANTLIB += xslt z zeitgeist-2.0
+WANTLIB += xslt z zeitgeist-2.0 json-glib-1.0
 WANTLIB += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
-WANTLIB += xcb-xfixes
+WANTLIB += xcb-xfixes iconv intl
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
+
+MODULES=		devel/dconf \
+			x11/gnome
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			productivity/zeitgeist \

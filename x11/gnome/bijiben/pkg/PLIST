@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/11/09 08:28:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/04/26 07:41:48 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
-share/appdata/
-share/appdata/bijiben.appdata.xml
-share/applications/bijiben.desktop
+share/appdata/org.gnome.bijiben.appdata.xml
+share/applications/org.gnome.bijiben.desktop
 share/bijiben/
 share/bijiben/Default.css
 share/bijiben/icons/
@@ -20,13 +19,11 @@ share/bijiben/icons/hicolor/48x48/actions/note.png
 share/bijiben/icons/hicolor/scalable/
 share/bijiben/icons/hicolor/scalable/actions/
 share/bijiben/icons/hicolor/scalable/actions/link.svg
-share/dbus-1/
-share/dbus-1/services/
-share/dbus-1/services/org.gnome.Bijiben.SearchProvider.service
+share/dbus-1/services/org.gnome.bijiben.SearchProvider.service
 share/glib-2.0/schemas/org.gnome.bijiben.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
-share/gnome-shell/search-providers/bijiben-search-provider.ini
+share/gnome-shell/search-providers/org.gnome.bijiben-search-provider.ini
 share/help/
 share/help/C/
 share/help/C/bijiben/
@@ -182,6 +179,28 @@ share/help/hu/bijiben/notebooks.page
 share/help/hu/bijiben/rename.page
 share/help/hu/bijiben/search.page
 share/help/hu/bijiben/share.page
+share/help/ko/
+share/help/ko/bijiben/
+share/help/ko/bijiben/colors.page
+share/help/ko/bijiben/create.page
+share/help/ko/bijiben/cut-copy-paste.page
+share/help/ko/bijiben/delete-permanent.page
+share/help/ko/bijiben/delete-restore.page
+share/help/ko/bijiben/delete.page
+share/help/ko/bijiben/figures/
+share/help/ko/bijiben/figures/hicolor_apps_16x16_bijiben.png
+share/help/ko/bijiben/figures/hicolor_apps_48x48_bijiben.png
+share/help/ko/bijiben/figures/notes-3-12.png
+share/help/ko/bijiben/format-list.page
+share/help/ko/bijiben/format-text.page
+share/help/ko/bijiben/index.page
+share/help/ko/bijiben/introduction.page
+share/help/ko/bijiben/legal.xml
+share/help/ko/bijiben/new-window.page
+share/help/ko/bijiben/notebooks.page
+share/help/ko/bijiben/rename.page
+share/help/ko/bijiben/search.page
+share/help/ko/bijiben/share.page
 share/help/pt_BR/
 share/help/pt_BR/bijiben/
 share/help/pt_BR/bijiben/colors.page
@@ -204,13 +223,13 @@ share/help/pt_BR/bijiben/notebooks.page
 share/help/pt_BR/bijiben/rename.page
 share/help/pt_BR/bijiben/search.page
 share/help/pt_BR/bijiben/share.page
-share/icons/hicolor/16x16/apps/bijiben.png
-share/icons/hicolor/22x22/apps/bijiben.png
-share/icons/hicolor/24x24/apps/bijiben.png
-share/icons/hicolor/256x256/apps/bijiben.png
-share/icons/hicolor/32x32/apps/bijiben.png
-share/icons/hicolor/48x48/apps/bijiben.png
-share/icons/hicolor/scalable/apps/bijiben-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.bijiben.png
+share/icons/hicolor/22x22/apps/org.gnome.bijiben.png
+share/icons/hicolor/24x24/apps/org.gnome.bijiben.png
+share/icons/hicolor/256x256/apps/org.gnome.bijiben.png
+share/icons/hicolor/32x32/apps/org.gnome.bijiben.png
+share/icons/hicolor/48x48/apps/org.gnome.bijiben.png
+share/icons/hicolor/scalable/apps/org.gnome.bijiben-symbolic.svg
 share/locale/ar/LC_MESSAGES/bijiben.mo
 share/locale/as/LC_MESSAGES/bijiben.mo
 share/locale/bs/LC_MESSAGES/bijiben.mo
@@ -220,8 +239,6 @@ share/locale/cs/LC_MESSAGES/bijiben.mo
 share/locale/da/LC_MESSAGES/bijiben.mo
 share/locale/de/LC_MESSAGES/bijiben.mo
 share/locale/el/LC_MESSAGES/bijiben.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/bijiben.mo
 share/locale/eo/LC_MESSAGES/bijiben.mo
 share/locale/es/LC_MESSAGES/bijiben.mo
@@ -235,7 +252,6 @@ share/locale/gl/LC_MESSAGES/bijiben.mo
 share/locale/he/LC_MESSAGES/bijiben.mo
 share/locale/hu/LC_MESSAGES/bijiben.mo
 share/locale/id/LC_MESSAGES/bijiben.mo
-share/locale/is/LC_MESSAGES/bijiben.mo
 share/locale/it/LC_MESSAGES/bijiben.mo
 share/locale/ja/LC_MESSAGES/bijiben.mo
 share/locale/kk/LC_MESSAGES/bijiben.mo
@@ -266,7 +282,7 @@ share/locale/uk/LC_MESSAGES/bijiben.mo
 share/locale/zh_CN/LC_MESSAGES/bijiben.mo
 share/locale/zh_HK/LC_MESSAGES/bijiben.mo
 share/locale/zh_TW/LC_MESSAGES/bijiben.mo
-share/mime/packages/bijiben.xml
+share/mime/packages/org.gnome.bijiben.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
