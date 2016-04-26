@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/02 02:53:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/26 08:25:50 jasper Exp $
+
+BROKEN=			undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
 
 COMMENT =		constraint grammar formalism variant
 
