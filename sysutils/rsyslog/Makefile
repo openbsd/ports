@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/19 14:41:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/26 10:28:19 sthen Exp $
+
+BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
