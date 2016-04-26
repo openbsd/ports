@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/10 06:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/26 07:47:31 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.18.2
+GNOME_VERSION =		3.20.1
 
 CATEGORIES =		games
 
@@ -16,13 +16,13 @@ WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 croco-0.6
 WANTLIB += dbus-1 dbus-glib-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-3 guile-2.0
-WANTLIB += harfbuzz ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 unistring
-WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += harfbuzz iconv intl ltdl lzma m ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += rsvg-2 unistring vorbis vorbisfile xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES =		devel/dconf \
 			devel/gconf2 \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
