@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/06 19:12:08 lteo Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/26 16:37:47 naddy Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -20,8 +20,8 @@ WANTLIB =	c bz2
 
 FAKE=lib
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
-		LDFLAGS="-L${DEPBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
 

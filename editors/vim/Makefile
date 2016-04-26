@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/03/09 18:20:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.147 2016/04/26 16:37:47 naddy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -33,8 +33,8 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
 .endif
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
-		LDFLAGS="-L${DEPBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-multibyte \
 		--enable-cscope

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/11 10:35:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2016/04/26 16:37:47 naddy Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -28,8 +28,8 @@ AUTOCONF_VERSION=	2.61
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 #CONFIGURE_ARGS=		--datadir=${PREFIX}/share/examples
 CONFIGURE_ENV=		LIBS="-lm -lcurses -lintl -liconv" \
-			SLANG_LIB_LOC=${DEPBASE}/lib \
-			SLANG_H_LOC=${DEPBASE}/include/slang.h
+			SLANG_LIB_LOC=${LOCALBASE}/lib \
+			SLANG_H_LOC=${LOCALBASE}/include/slang.h
 WRKDIST=		${WRKDIR}/pdmenu
 
 NO_TEST=		Yes

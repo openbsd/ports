@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2015/04/21 18:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/04/26 16:37:47 naddy Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -45,13 +45,13 @@ CONFIGURE_ARGS +=	--enable-altivec
 .else
 CONFIGURE_ARGS +=	--disable-altivec
 .endif
-CONFIGURE_ARGS +=	--with-libjpeg=${DEPBASE} \
-			--with-dvdread=${DEPBASE} \
-			--with-liba52=${DEPBASE} \
-			--with-libmad=${DEPBASE} \
-			--with-xml-prefix=${DEPBASE}
+CONFIGURE_ARGS +=	--with-libjpeg=${LOCALBASE} \
+			--with-dvdread=${LOCALBASE} \
+			--with-liba52=${LOCALBASE} \
+			--with-libmad=${LOCALBASE} \
+			--with-xml-prefix=${LOCALBASE}
 
-CONFIGURE_ENV +=	xml_config_args=--prefix=${DEPBASE} \
+CONFIGURE_ENV +=	xml_config_args=--prefix=${LOCALBASE} \
 			LIBOGLEAO_LIBS="-lsndio"
 
 post-install:

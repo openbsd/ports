@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/26 16:37:47 naddy Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -20,9 +20,9 @@ WANTLIB =		c m stdc++ lzo
 USE_X11 = 		Yes
 
 CONFIGURE_STYLE =	gnu dest
-CONFIGURE_ARGS +=	--with-lzo-lib=${DEPBASE}
+CONFIGURE_ARGS +=	--with-lzo-lib=${LOCALBASE}
 
-MAKE_FLAGS +=		LDFLAGS=-L${DEPBASE}/lib
+MAKE_FLAGS +=		LDFLAGS=-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 
