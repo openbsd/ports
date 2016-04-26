@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/15 19:41:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/04/26 17:42:20 naddy Exp $
 @bin bin/galculator
 @man man/man1/galculator.1
+share/appdata/
+share/appdata/galculator.appdata.xml
 share/applications/galculator.desktop
 share/galculator/
 share/galculator/ui/
@@ -24,23 +26,25 @@ share/galculator/ui/scientific_buttons_gtk2.ui
 share/galculator/ui/scientific_buttons_gtk3.ui
 share/icons/hicolor/48x48/apps/galculator.png
 share/icons/hicolor/scalable/apps/galculator.svg
-share/locale/da_DK/
-share/locale/da_DK/LC_MESSAGES/
-share/locale/da_DK/LC_MESSAGES/galculator.mo
+share/locale/cs/LC_MESSAGES/galculator.mo
 share/locale/de/LC_MESSAGES/galculator.mo
+share/locale/el/LC_MESSAGES/galculator.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/galculator.mo
 share/locale/es/LC_MESSAGES/galculator.mo
 share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
+share/locale/gl/LC_MESSAGES/galculator.mo
 share/locale/hu/LC_MESSAGES/galculator.mo
+share/locale/id/LC_MESSAGES/galculator.mo
+share/locale/it/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
-share/locale/kk_KZ/
-share/locale/kk_KZ/LC_MESSAGES/
-share/locale/kk_KZ/LC_MESSAGES/galculator.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/galculator.mo
 share/locale/lt/LC_MESSAGES/galculator.mo
+share/locale/mr/LC_MESSAGES/galculator.mo
 share/locale/pl/LC_MESSAGES/galculator.mo
 share/locale/pt/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
@@ -49,6 +53,7 @@ share/locale/ru/LC_MESSAGES/galculator.mo
 share/locale/sk/LC_MESSAGES/galculator.mo
 share/locale/sv/LC_MESSAGES/galculator.mo
 share/locale/tr/LC_MESSAGES/galculator.mo
+share/locale/uk/LC_MESSAGES/galculator.mo
 share/locale/zh_CN/LC_MESSAGES/galculator.mo
 share/locale/zh_TW/LC_MESSAGES/galculator.mo
 share/pixmaps/
