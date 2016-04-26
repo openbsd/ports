@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.770 2016/04/20 15:09:38 jturner Exp $
+# $OpenBSD: Makefile,v 1.771 2016/04/26 10:14:48 kirby Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -393,6 +393,7 @@
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
      SUBDIR += piwik
+     SUBDIR += pnp4nagios
      SUBDIR += polipo
      SUBDIR += pound
      SUBDIR += privoxy
