@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2016/03/19 11:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2016/04/26 07:42:08 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.18.3
-REVISION=		0
+GNOME_VERSION=		3.20.1
 
 SHARED_LIBS +=  mutter                    1.0 # 0.0
 
@@ -23,10 +22,9 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 upower-glib vorbis vorbisfile
 WANTLIB += xcb xcb-dri2 xcb-randr xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB += xkbfile z epoxy
+WANTLIB += xkbfile z epoxy iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection

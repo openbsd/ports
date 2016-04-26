@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/10/24 14:07:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/04/26 07:42:08 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -48,7 +48,6 @@ lib/pkgconfig/libmutter.pc
 @bin libexec/mutter-restart-helper
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
-share/applications/mutter-wayland.desktop
 share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
 share/glib-2.0/schemas/org.gnome.mutter.wayland.gschema.xml
@@ -67,8 +66,6 @@ share/locale/be@latin/LC_MESSAGES/mutter.mo
 share/locale/bg/LC_MESSAGES/mutter.mo
 share/locale/bn/LC_MESSAGES/mutter.mo
 share/locale/bn_IN/LC_MESSAGES/mutter.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/mutter.mo
 share/locale/bs/LC_MESSAGES/mutter.mo
 share/locale/ca/LC_MESSAGES/mutter.mo
@@ -88,11 +85,10 @@ share/locale/eu/LC_MESSAGES/mutter.mo
 share/locale/fa/LC_MESSAGES/mutter.mo
 share/locale/fi/LC_MESSAGES/mutter.mo
 share/locale/fr/LC_MESSAGES/mutter.mo
+share/locale/fur/LC_MESSAGES/mutter.mo
 share/locale/ga/LC_MESSAGES/mutter.mo
 share/locale/gl/LC_MESSAGES/mutter.mo
 share/locale/gu/LC_MESSAGES/mutter.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/mutter.mo
 share/locale/he/LC_MESSAGES/mutter.mo
 share/locale/hi/LC_MESSAGES/mutter.mo
@@ -100,8 +96,6 @@ share/locale/hr/LC_MESSAGES/mutter.mo
 share/locale/hu/LC_MESSAGES/mutter.mo
 share/locale/hy/LC_MESSAGES/mutter.mo
 share/locale/id/LC_MESSAGES/mutter.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/mutter.mo
 share/locale/is/LC_MESSAGES/mutter.mo
 share/locale/it/LC_MESSAGES/mutter.mo
@@ -148,8 +142,6 @@ share/locale/ta/LC_MESSAGES/mutter.mo
 share/locale/te/LC_MESSAGES/mutter.mo
 share/locale/tg/LC_MESSAGES/mutter.mo
 share/locale/th/LC_MESSAGES/mutter.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/mutter.mo
 share/locale/tr/LC_MESSAGES/mutter.mo
 share/locale/ug/LC_MESSAGES/mutter.mo
@@ -157,8 +149,6 @@ share/locale/uk/LC_MESSAGES/mutter.mo
 share/locale/vi/LC_MESSAGES/mutter.mo
 share/locale/wa/LC_MESSAGES/mutter.mo
 share/locale/xh/LC_MESSAGES/mutter.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/mutter.mo
 share/locale/zh_CN/LC_MESSAGES/mutter.mo
 share/locale/zh_HK/LC_MESSAGES/mutter.mo
