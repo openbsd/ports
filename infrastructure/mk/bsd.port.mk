@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1311 2016/04/26 10:56:59 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1312 2016/04/26 17:35:35 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -366,7 +366,7 @@ USE_LIBTOOL ?= Yes
 _lt_libs =
 .if ${USE_LIBTOOL:L} != "no"
 .  if ${USE_LIBTOOL:L} == "gnu"
-LIBTOOL ?= ${DEPBASE}/bin/libtool
+LIBTOOL ?= ${LOCALBASE}/bin/libtool
 BUILD_DEPENDS += devel/libtool
 .  else
 LIBTOOL ?= /usr/bin/libtool
@@ -671,7 +671,7 @@ _CIPHERS = sha256
 # This is the one you can override
 PREFERRED_CIPHERS ?= ${_CIPHERS}
 
-PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin
+PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
@@ -687,7 +687,7 @@ CXXFLAGS += ${CXXDIAGFLAGS}
 PORTHOME ?= /${PKGNAME}_writes_to_HOME
 
 MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
-	LOCALBASE='${LOCALBASE}' DEPBASE='${DEPBASE}' X11BASE='${X11BASE}' \
+	LOCALBASE='${LOCALBASE}' X11BASE='${X11BASE}' \
 	CFLAGS='${CFLAGS:C/ *$//}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
@@ -1448,8 +1448,6 @@ lib_depends_args ?= lib-depends-args
 
 
 PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
-DEPBASE = ${LOCALBASE}
-DEPDIR =
 
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment = { \
@@ -2464,7 +2462,7 @@ ${_WRKDIR_COOKIE}:
 	fi
 .endif
 	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
-	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
+	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
 	@${ECHO_MSG} "===>  Enabling ccache for ${FULLPKGNAME}${_MASTER}"
 	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/gcc

@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.13 2015/10/16 20:07:39 naddy Exp $
+$OpenBSD: README.internals,v 1.14 2016/04/26 17:35:35 naddy Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -423,6 +423,6 @@ fishy:
 
 uninstall ? deinstall
 
-Todo: kill PORT_LD_LIBRARY_PATH, DEPBASE, DEPDIR
+Todo: kill PORT_LD_LIBRARY_PATH
 
 Document: all recursive targets
