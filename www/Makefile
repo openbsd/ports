@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.771 2016/04/26 10:14:48 kirby Exp $
+# $OpenBSD: Makefile,v 1.772 2016/04/26 14:28:44 juanfra Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -540,6 +540,7 @@
      SUBDIR += squidclamav
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
+     SUBDIR += stagit
      SUBDIR += sthttpd
      SUBDIR += surf
      SUBDIR += surf2
