@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/11/10 18:59:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2016/04/26 21:58:53 jasper Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
@@ -11,11 +11,6 @@ CATEGORIES=		graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=		devel/dconf \
-			devel/gettext \
-			lang/python \
-			x11/gnome
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
@@ -31,7 +26,11 @@ WANTLIB += pcre peas-1.0 pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl
 WANTLIB += ssl3 xcb xcb-render xcb-shm xml2 z
 WANTLIB += EGL X11-xcb Xau Xdmcp drm gbm glapi xcb-dri2 xcb-shape
-WANTLIB += xcb-xfixes lzma epoxy
+WANTLIB += xcb-xfixes lzma epoxy iconv intl
+
+MODULES=		devel/dconf \
+			lang/python \
+			x11/gnome
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \

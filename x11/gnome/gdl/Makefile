@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/03/19 12:55:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT=		GNOME Docking Library
 
@@ -17,10 +17,9 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		textproc/libxml \
 			x11/gtk+3

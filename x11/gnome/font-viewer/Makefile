@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/25 13:49:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT=		font viewer for GNOME
 
@@ -15,12 +15,11 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 epoxy
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z iconv intl
 
 LIB_DEPENDS=		x11/gnome/desktop
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils
 

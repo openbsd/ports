@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/25 15:24:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT =		GNOME calendar
 
@@ -7,10 +7,6 @@ GNOME_VERSION =		3.20.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-
-MODULES =		devel/dconf \
-			devel/gettext \
-			x11/gnome
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
@@ -29,7 +25,10 @@ WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
 WANTLIB += javascriptcoregtk-3.0 jpeg json-glib-1.0 orc-0.4 stdc++
 WANTLIB += webkitgtk-3.0 webp xcb-dri2 xcb-glx xcb-shape xcb-xfixes
-WANTLIB += xslt
+WANTLIB += xslt iconv intl
+
+MODULES =		devel/dconf \
+			x11/gnome
 
 LIB_DEPENDS =		databases/evolution-data-server
 

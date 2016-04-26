@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2016/04/26 21:58:54 jasper Exp $
 
 COMMENT=		binary editor
 
@@ -18,10 +18,9 @@ WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		x11/gtk+3

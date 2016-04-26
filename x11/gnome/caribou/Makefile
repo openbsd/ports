@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/02/27 09:05:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT=		input assistive technology
 
@@ -19,10 +19,9 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtk-x11-2.0 harfbuzz json-glib-1.0 lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-dri2 xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-xfixes xkbfile xklavier xml2 z
+WANTLIB += xcb-xfixes xkbfile xklavier xml2 z iconv intl
 
-MODULES=		devel/gettext \
-			devel/dconf \
+MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 

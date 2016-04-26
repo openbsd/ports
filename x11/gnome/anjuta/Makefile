@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2016/04/25 16:27:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.137 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT=		versatile IDE for GNOME
 
@@ -34,10 +34,9 @@ WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += util vala-0.32 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
 WANTLIB += epoxy gmp gnutls hogweed nettle notify p11-kit tasn1 xslt z
-WANTLIB += hyphen idn
+WANTLIB += hyphen idn iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 

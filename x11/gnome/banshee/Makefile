@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT=		music management and playback application for GNOME
 
@@ -27,10 +27,9 @@ WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-1.0
 WANTLIB += jpeg lzma m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0 webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z
+WANTLIB += xcb-render xcb-shm xml2 xslt z iconv intl
 
-MODULES=		devel/gettext \
-			lang/mono \
+MODULES=		lang/mono \
 			x11/gnome
 
 MODMONO_GMCS_COMPAT=	Yes

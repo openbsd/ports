@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2016/04/26 21:58:53 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -35,10 +35,9 @@ WANTLIB += sqlite3 stdc++ tasn1 telepathy-farstream telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisenc vorbisfile webkitgtk-3.0
 WANTLIB += webp xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z zeitgeist-2.0
-WANTLIB += Xxf86vm xcb-glx
+WANTLIB += Xxf86vm xcb-glx iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2016/04/25 15:00:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2016/04/26 21:58:54 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -18,10 +18,9 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 harfbuzz m pango-1.0 epoxy
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z sqlite3 zeitgeist-2.0 lzma
+WANTLIB += xml2 z sqlite3 zeitgeist-2.0 lzma iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 
