@@ -1,0 +1,12 @@
+$OpenBSD: patch-src-egl_context-c,v 1.1.1.1 2016/04/26 15:30:50 jca Exp $
+--- src/egl_context.c.orig	Mon Oct 12 21:09:07 2015
++++ src/egl_context.c	Tue Apr 26 14:59:36 2016
+@@ -488,6 +488,8 @@ int _glfwCreateContext(_GLFWwindow* window,
+         {
+ #if defined(_GLFW_WIN32)
+ #elif defined(_GLFW_COCOA)
++#elif defined(__OpenBSD__)
++            "libGL.so",
+ #else
+             "libGL.so.1",
+ #endif

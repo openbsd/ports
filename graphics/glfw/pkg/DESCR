@@ -1,0 +1,17 @@
+GLFW is an Open Source, multi-platform library for creating windows with
+OpenGL contexts and receiving input and events. It is easy to integrate
+into existing applications and does not lay claim to the main loop.
+
+GLFW is written in C and has native support for Windows, OS X and many
+Unix-like systems using the X Window System, such as Linux and FreeBSD.
+
+Features:
+* Gives you a window and OpenGL context with just two function calls
+* Support for OpenGL 3.2+ with profiles and flags, OpenGL ES, MSAA, sRGB
+  and robustness
+* Support for multiple windows, multiple monitors, high-DPI, gamma ramps
+  and clipboard
+* Support for keyboard, mouse, gamepad, time and window event input, via
+  polling or callbacks
+* Access to native objects and compile-time options for platform
+  specific features

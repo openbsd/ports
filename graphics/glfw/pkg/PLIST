@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 15:30:50 jca Exp $
+include/GLFW/
+include/GLFW/glfw3.h
+include/GLFW/glfw3native.h
+lib/cmake/
+lib/cmake/glfw/
+lib/cmake/glfw/glfw3Config.cmake
+lib/cmake/glfw/glfw3ConfigVersion.cmake
+lib/cmake/glfw/glfwTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/glfw/glfwTargets.cmake
+@lib lib/libglfw.so.${LIBglfw_VERSION}
+lib/pkgconfig/glfw3.pc

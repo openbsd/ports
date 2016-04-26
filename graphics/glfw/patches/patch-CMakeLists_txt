@@ -1,0 +1,17 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/04/26 15:30:50 jca Exp $
+--- CMakeLists.txt.orig	Mon Oct 12 21:09:07 2015
++++ CMakeLists.txt	Tue Apr 26 14:59:36 2016
+@@ -213,13 +213,6 @@ endif()
+ # Find and add Unix math and time libraries
+ #--------------------------------------------------------------------
+ if (UNIX AND NOT APPLE)
+-    find_library(RT_LIBRARY rt)
+-    mark_as_advanced(RT_LIBRARY)
+-    if (RT_LIBRARY)
+-        list(APPEND glfw_LIBRARIES "${RT_LIBRARY}")
+-        list(APPEND glfw_PKG_LIBS "-lrt")
+-    endif()
+-
+     find_library(MATH_LIBRARY m)
+     mark_as_advanced(MATH_LIBRARY)
+     if (MATH_LIBRARY)

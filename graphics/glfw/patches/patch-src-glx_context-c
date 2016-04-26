@@ -1,0 +1,12 @@
+$OpenBSD: patch-src-glx_context-c,v 1.1.1.1 2016/04/26 15:30:50 jca Exp $
+--- src/glx_context.c.orig	Mon Oct 12 21:09:07 2015
++++ src/glx_context.c	Tue Apr 26 14:59:36 2016
+@@ -158,6 +158,8 @@ int _glfwInitContextAPI(void)
+ {
+ #if defined(__CYGWIN__)
+     const char* soname = "libGL-1.so";
++#elif defined(__OpenBSD__)
++    const char* soname = "libGL.so";
+ #else
+     const char* soname = "libGL.so.1";
+ #endif
