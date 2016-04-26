@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/04/20 06:21:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2016/04/26 15:54:59 jasper Exp $
 
 COMMENT=		GObject Introspection
 
@@ -31,8 +31,6 @@ BUILD_DEPENDS=		devel/bison \
 RUN_DEPENDS=		graphics/cairo \
 			www/py-mako
 
-# XXX: gi-tester uses "-B" (--ignore-blank-lines)
-TEST_DEPENDS=		textproc/gdiff
 # XXX: tests/scanner/test_transformer.py fails otherwise
 TEST_DEPENDS+=		textproc/gsed
 
@@ -45,7 +43,6 @@ post-install:
 
 # XXX: tidy-up some GNU-isms; see above.
 pre-test:
-	sed -i 's,^\([ \t]*\)diff,\1gdiff,' ${WRKSRC}/tests/gi-tester
 	sed -i 's,\"sed ,\"gsed ,g' ${WRKSRC}/tests/scanner/test_transformer.py
 
 .include <bsd.port.mk>

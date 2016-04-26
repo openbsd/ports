@@ -1,0 +1,30 @@
+$OpenBSD: patch-tests_gi-tester,v 1.1 2016/04/26 15:54:59 jasper Exp $
+
+Replace -B GNUism wit portable -I-equivalent
+
+--- tests/gi-tester.orig	Tue Apr 26 17:51:36 2016
++++ tests/gi-tester	Tue Apr 26 17:51:42 2016
+@@ -19,19 +19,19 @@ case $targetname in
+     exit 0
+     ;;
+ *-C)
+-    diff -r -u -w -B -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
++    diff -r -u -w -I '^\s*$' -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
+     exit $?
+     ;;
+ *-Python)
+-    diff -r -u -w -B -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
++    diff -r -u -w -I '^\s*$' -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
+     exit $?
+     ;;
+ *-Gjs)
+-    diff -r -u -w -B -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
++    diff -r -u -w -I '^\s*$' -U 10 ${srcdir}/${targetbase}-expected ${builddir}/${targetbase}
+     exit $?
+     ;;
+ *-sections.txt)
+-    diff -u -w -B -U 10 ${srcdir}/${targetname::-4}-expected.txt ${builddir}/${targetname}
++    diff -u -w -I '^\s*$' -U 10 ${srcdir}/${targetname::-4}-expected.txt ${builddir}/${targetname}
+     exit $?
+     ;;
+ *.py)
