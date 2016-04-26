@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2016/04/06 19:37:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.166 2016/04/26 21:33:41 naddy Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -49,7 +49,7 @@ MODULES+=		lang/python
 LIB_DEPENDS-python=	textproc/libxml,-main=${VERSION} \
 			${MODPY_LIB_DEPENDS} \
 			converters/libiconv
-WANTLIB-python=		${WANTLIB} ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB} \
+WANTLIB-python=		${WANTLIB} ${MODPY_WANTLIB} \
 			pthread util xml2>=11
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/libxml2
 CONFIGURE_ARGS+=	--with-python
