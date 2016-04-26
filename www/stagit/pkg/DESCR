@@ -1,0 +1,2 @@
+stagit generates static HTML pages for a git repository, making it a light
+alternative for gitweb or cgit.

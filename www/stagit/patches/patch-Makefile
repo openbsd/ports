@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/04/26 13:53:10 juanfra Exp $
+--- Makefile.orig	Fri Mar 25 10:20:24 2016
++++ Makefile	Sat Apr 23 13:11:03 2016
+@@ -26,7 +26,7 @@ COMPATOBJ = \
+ 	strlcat.o\
+ 	strlcpy.o
+ 
+-OBJ = ${SRC:.c=.o} ${COMPATOBJ}
++OBJ = ${SRC:.c=.o}
+ 
+ all: $(BIN)
+ 
+@@ -55,11 +55,11 @@ config.h:
+ 	@echo creating $@ from config.def.h
+ 	@cp config.def.h $@
+ 
+-stagit: stagit.o ${COMPATOBJ}
+-	${CC} -o $@ stagit.o ${COMPATOBJ} ${LDFLAGS}
++stagit: stagit.o
++	${CC} -o $@ stagit.o ${LDFLAGS}
+ 
+-stagit-index: stagit-index.o ${COMPATOBJ}
+-	${CC} -o $@ stagit-index.o ${COMPATOBJ} ${LDFLAGS}
++stagit-index: stagit-index.o
++	${CC} -o $@ stagit-index.o ${LDFLAGS}
+ 
+ clean:
+ 	rm -f ${BIN} ${OBJ}
