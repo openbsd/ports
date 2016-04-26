@@ -1,12 +1,21 @@
-$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.27 2016/04/16 19:08:46 robert Exp $
---- third_party/libjingle/libjingle.gyp.orig.port	Wed Apr 13 23:00:03 2016
-+++ third_party/libjingle/libjingle.gyp	Thu Apr 14 08:25:14 2016
-@@ -397,7 +397,7 @@
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.28 2016/04/26 14:22:24 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Thu Apr 21 00:01:54 2016
++++ third_party/libjingle/libjingle.gyp	Mon Apr 25 19:00:43 2016
+@@ -128,6 +128,8 @@
+         ['os_bsd==1', {
+           'defines': [
+             'BSD',
++            'WEBRTC_LINUX',
++            'WEBRTC_BSD',
            ],
-           'conditions': [
-             # TODO(mallinath) - Enable SCTP for iOS.
--            ['OS!="ios"', {
-+            ['OS!="ios" and os_bsd!=1', {
-               'defines': [
-                 'HAVE_SCTP',
-               ],
+         }],
+         ['OS=="openbsd"', {
+@@ -198,6 +200,8 @@
+       ['os_bsd==1', {
+         'defines': [
+           'BSD',
++          'WEBRTC_LINUX',
++          'WEBRTC_BSD',
+         ],
+       }],
+       ['OS=="openbsd"', {

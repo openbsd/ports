@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_usrsctp_usrsctp_gyp,v 1.3 2016/04/26 14:22:24 robert Exp $
+--- third_party/usrsctp/usrsctp.gyp.orig.port	Mon Apr 25 19:19:30 2016
++++ third_party/usrsctp/usrsctp.gyp	Mon Apr 25 19:56:41 2016
+@@ -111,6 +111,11 @@
+           'cflags!': [ '-Werror', '-Wall' ],
+           'cflags': [ '-w' ],
+         }],
++        ['os_bsd==1', {
++          'defines': [
++            '__Userspace_os_OpenBSD',
++          ],
++        }],
+         ['OS=="mac" or OS=="ios"', {
+           'defines': [
+             'HAVE_SA_LEN',

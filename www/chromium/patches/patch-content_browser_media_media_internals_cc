@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.1 2016/04/26 14:22:24 robert Exp $
+--- content/browser/media/media_internals.cc.orig.port	Mon Apr 25 18:41:22 2016
++++ content/browser/media/media_internals.cc	Mon Apr 25 18:41:30 2016
+@@ -607,7 +607,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
+         "name", video_capture_device_info.name.GetNameAndModel());
+     device_dict->Set("formats", format_list);
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+     device_dict->SetString(
+         "captureApi", video_capture_device_info.name.GetCaptureApiTypeString());
+ #endif

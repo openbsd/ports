@@ -19,6 +19,9 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   // Implementation of AudioManager.
   bool HasAudioOutputDevices() override;
   bool HasAudioInputDevices() override;
+  void ShowAudioInputSettings() override;
+  void GetAudioInputDeviceNames(AudioDeviceNames* device_names) override;
+  void GetAudioOutputDeviceNames(AudioDeviceNames* device_names) override;
   AudioParameters GetInputStreamParameters(
       const std::string& device_id) override;
 
@@ -43,6 +46,7 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
  private:
   // Called by MakeLinearOutputStream and MakeLowLatencyOutputStream.
   AudioOutputStream* MakeOutputStream(const AudioParameters& params);
+  AudioInputStream* MakeInputStream(const AudioParameters& params);
 
   // Flag to indicate whether the pulse library has been initialized or not.
   bool pulse_library_is_initialized_;

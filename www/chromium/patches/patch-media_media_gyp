@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.43 2016/04/16 19:08:46 robert Exp $
---- media/media.gyp.orig.port	Thu Apr 14 14:04:33 2016
-+++ media/media.gyp	Thu Apr 14 14:06:37 2016
+$OpenBSD: patch-media_media_gyp,v 1.44 2016/04/26 14:22:24 robert Exp $
+--- media/media.gyp.orig.port	Thu Apr 21 00:01:50 2016
++++ media/media.gyp	Tue Apr 26 10:07:36 2016
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
@@ -30,16 +30,18 @@ $OpenBSD: patch-media_media_gyp,v 1.43 2016/04/16 19:08:46 robert Exp $
          'audio/pulse/audio_manager_pulse.cc',
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_input.cc',
-@@ -197,6 +203,8 @@
+@@ -197,6 +203,10 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
++        'audio/sndio/sndio_input.cc',
++        'audio/sndio/sndio_input.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -730,6 +738,24 @@
+@@ -730,6 +740,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -64,7 +66,7 @@ $OpenBSD: patch-media_media_gyp,v 1.43 2016/04/16 19:08:46 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -745,7 +771,7 @@
+@@ -745,7 +773,7 @@
              ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
@@ -73,7 +75,7 @@ $OpenBSD: patch-media_media_gyp,v 1.43 2016/04/16 19:08:46 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -850,7 +876,7 @@
+@@ -850,7 +878,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
@@ -82,7 +84,7 @@ $OpenBSD: patch-media_media_gyp,v 1.43 2016/04/16 19:08:46 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1095,7 +1121,7 @@
+@@ -1095,7 +1123,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],

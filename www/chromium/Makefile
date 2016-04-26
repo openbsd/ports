@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2016/04/25 17:12:53 robert Exp $
+# $OpenBSD: Makefile,v 1.285 2016/04/26 14:22:24 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			50.0.2661.86
-REVISION=		0
+REVISION=		1
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -117,7 +117,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_allocator=none \
 		-Dlinux_strip_binary=0 \
 		-Dlinux_use_heapchecker=0 \
-		-Denable_webrtc=0 \
+		-Denable_webrtc=1 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-Duse_sndio=1 \
@@ -161,7 +161,7 @@ pre-configure:
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
-	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	# XXX Create a missing html file to avoid a build failure (unused in the actual package)
 	@touch ${WRKSRC}/chrome/test/data/webui/i18n_process_css_test.html
