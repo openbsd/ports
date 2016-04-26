@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.137 2016/04/25 14:18:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.138 2016/04/26 07:39:17 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.20.0
+GNOME_VERSION=	3.20.1
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 

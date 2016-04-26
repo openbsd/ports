@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2016/04/25 14:18:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.35 2016/04/26 07:39:17 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
@@ -452,6 +452,7 @@ share/locale/eu/LC_MESSAGES/epiphany.mo
 share/locale/fa/LC_MESSAGES/epiphany.mo
 share/locale/fi/LC_MESSAGES/epiphany.mo
 share/locale/fr/LC_MESSAGES/epiphany.mo
+share/locale/fur/LC_MESSAGES/epiphany.mo
 share/locale/ga/LC_MESSAGES/epiphany.mo
 share/locale/gl/LC_MESSAGES/epiphany.mo
 share/locale/gu/LC_MESSAGES/epiphany.mo
