@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.52 2015/11/10 18:54:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.53 2016/04/26 07:41:29 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
 lib/nautilus/extensions-3.0/libterminal-nautilus.so
 @bin libexec/gnome-terminal-migration
 @bin libexec/gnome-terminal-server
-share/appdata/gnome-terminal.appdata.xml
-share/applications/gnome-terminal.desktop
+share/appdata/org.gnome.Terminal.Nautilus.appdata.xml
+share/appdata/org.gnome.Terminal.appdata.xml
+share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
 share/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 share/gnome-shell/search-providers/gnome-terminal-search-provider.ini
@@ -327,6 +328,7 @@ share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
 share/help/hu/gnome-terminal/figures/
+share/help/hu/gnome-terminal/figures/gnome-terminal.png
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -352,6 +354,41 @@ share/help/hu/gnome-terminal/txt-copy-paste.page
 share/help/hu/gnome-terminal/txt-links.page
 share/help/hu/gnome-terminal/txt-search.page
 share/help/hu/gnome-terminal/txt-select-text.page
+share/help/ko/gnome-terminal/
+share/help/ko/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/ko/gnome-terminal/app-colors.page
+share/help/ko/gnome-terminal/app-cursor.page
+share/help/ko/gnome-terminal/app-fonts.page
+share/help/ko/gnome-terminal/app-fullscreen.page
+share/help/ko/gnome-terminal/app-terminal-sizes.page
+share/help/ko/gnome-terminal/app-zoom.page
+share/help/ko/gnome-terminal/figures/
+share/help/ko/gnome-terminal/figures/gnome-terminal.png
+share/help/ko/gnome-terminal/gs-execute-commands.page
+share/help/ko/gnome-terminal/gs-tabs.page
+share/help/ko/gnome-terminal/index.page
+share/help/ko/gnome-terminal/introduction.page
+share/help/ko/gnome-terminal/legal.xml
+share/help/ko/gnome-terminal/overview.page
+share/help/ko/gnome-terminal/pref-bell.page
+share/help/ko/gnome-terminal/pref-custom-command.page
+share/help/ko/gnome-terminal/pref-custom-exit.page
+share/help/ko/gnome-terminal/pref-encoding.page
+share/help/ko/gnome-terminal/pref-keyboard-access.page
+share/help/ko/gnome-terminal/pref-menubar.page
+share/help/ko/gnome-terminal/pref-profile-char-width.page
+share/help/ko/gnome-terminal/pref-profile-encoding.page
+share/help/ko/gnome-terminal/pref-profiles.page
+share/help/ko/gnome-terminal/pref-scrolling.page
+share/help/ko/gnome-terminal/pref-tab-window.page
+share/help/ko/gnome-terminal/pref-user-input.page
+share/help/ko/gnome-terminal/pref.page
+share/help/ko/gnome-terminal/prob-reset.page
+share/help/ko/gnome-terminal/profile.page
+share/help/ko/gnome-terminal/txt-copy-paste.page
+share/help/ko/gnome-terminal/txt-links.page
+share/help/ko/gnome-terminal/txt-search.page
+share/help/ko/gnome-terminal/txt-select-text.page
 share/help/pt_BR/gnome-terminal/
 share/help/pt_BR/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/pt_BR/gnome-terminal/app-colors.page
@@ -361,6 +398,7 @@ share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
 share/help/pt_BR/gnome-terminal/figures/
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page
@@ -396,6 +434,7 @@ share/help/ru/gnome-terminal/app-fullscreen.page
 share/help/ru/gnome-terminal/app-terminal-sizes.page
 share/help/ru/gnome-terminal/app-zoom.page
 share/help/ru/gnome-terminal/figures/
+share/help/ru/gnome-terminal/figures/gnome-terminal.png
 share/help/ru/gnome-terminal/gs-execute-commands.page
 share/help/ru/gnome-terminal/gs-tabs.page
 share/help/ru/gnome-terminal/index.page

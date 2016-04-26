@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.141 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.142 2016/04/26 07:41:29 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.18.3
+GNOME_VERSION=	3.20.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,12 +15,11 @@ WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs util vte-2.91 xcb xcb-render
-WANTLIB += xcb-shm z nautilus-extension
+WANTLIB += png pthread pthread-stubs vte-2.91 xcb xcb-render
+WANTLIB += xcb-shm z nautilus-extension iconv intl idn
 WANTLIB += epoxy gmp gnutls hogweed nettle p11-kit tasn1
 
 MODULES=	devel/dconf \
-		devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
