@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_sample_config,v 1.11 2016/03/19 20:03:46 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.12 2016/04/26 12:11:08 sthen Exp $
 
 no seccomp, gssapi
 
---- doc/sample.config.orig	Sat Mar 19 14:25:48 2016
-+++ doc/sample.config	Sat Mar 19 14:26:51 2016
+--- doc/sample.config.orig	Tue Apr 26 12:56:25 2016
++++ doc/sample.config	Tue Apr 26 12:56:25 2016
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
@@ -14,7 +14,7 @@ no seccomp, gssapi
  # Note that authentication methods cannot be changed with reload.
  
 @@ -26,15 +26,6 @@
- # file. If the groupconfig option is set, then config-per-user will be overriden,
+ # file. If the groupconfig option is set, then config-per-user/group will be overriden,
  # and all configuration will be read from radius. The 'override-interim-updates' if set to
  # true will ignore Acct-Interim-Interval from the server and 'stats-report-time' will be considered.
 -#

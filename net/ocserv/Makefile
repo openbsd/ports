@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/19 20:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/26 12:11:08 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.11.1
+DISTNAME=	ocserv-0.11.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -14,13 +14,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ev gnutls lz4 m ncurses nettle oath pam protobuf-c
-WANTLIB += pthread radcli readline talloc
+WANTLIB += c ev gnutls intl lz4 m ncurses nettle oath pam
+WANTLIB += protobuf-c radcli readline talloc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
-MODULES=	devel/gettext
 LIB_DEPENDS=	archivers/lz4 \
+		devel/gettext \
 		devel/libev \
 		devel/libtalloc \
 		devel/protobuf-c \
