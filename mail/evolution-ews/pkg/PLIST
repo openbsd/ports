@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/10/12 05:47:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/04/26 07:39:49 ajacoutot Exp $
 include/evolution-data-server/ews/
 include/evolution-data-server/ews/e-ews-connection-utils.h
 include/evolution-data-server/ews/e-ews-connection.h
@@ -51,6 +51,7 @@ share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo
 share/locale/mr/LC_MESSAGES/evolution-ews.mo
 share/locale/nb/LC_MESSAGES/evolution-ews.mo
+share/locale/oc/LC_MESSAGES/evolution-ews.mo
 share/locale/or/LC_MESSAGES/evolution-ews.mo
 share/locale/pl/LC_MESSAGES/evolution-ews.mo
 share/locale/pt/LC_MESSAGES/evolution-ews.mo

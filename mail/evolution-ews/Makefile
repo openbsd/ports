@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2016/04/26 07:39:49 ajacoutot Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.18.5
+GNOME_VERSION=		3.20.1
 
 CATEGORIES=		mail
 
@@ -16,26 +16,26 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atspi cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += cryptui db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2
-WANTLIB += ebook-contacts-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2
-WANTLIB += edataserver-1.2 edataserverui-1.2 enchant epoxy expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gbm gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 gpg-error graphite2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtkspell3-3 harfbuzz harfbuzz-icu ical icalss icalvcal
-WANTLIB += icudata icui18n icuuc javascriptcoregtk-3.0 jpeg ltdl
-WANTLIB += lzma m mspack nspr4 nss3 nssutil3 ogg orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 stdc++ vorbis vorbisfile
-WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
-WANTLIB += xcb-xfixes z
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject camel-1.2
+WANTLIB += canberra canberra-gtk3 cryptui db dbus-1 dbus-glib-1
+WANTLIB += drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
+WANTLIB += edata-book-1.2 edata-cal-1.2 edataserver-1.2 edataserverui-1.2
+WANTLIB += enchant epoxy expat ffi fontconfig freetype gailutil-3
+WANTLIB += gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkspell3-3
+WANTLIB += harfbuzz harfbuzz-icu ical icalss icalvcal iconv icudata
+WANTLIB += icui18n icuuc intl javascriptcoregtk-3.0 jpeg json-glib-1.0
+WANTLIB += ltdl lzma m mspack nspr4 nss3 nssutil3 ogg orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
+WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++ vorbis
+WANTLIB += vorbisfile webkitgtk-3.0 webp xcb xcb-dri2 xcb-glx
+WANTLIB += xcb-render xcb-shape xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
@@ -51,8 +51,7 @@ WANTLIB += lib/evolution/evolution-smime
 WANTLIB += lib/evolution/evolution-util
 WANTLIB += lib/evolution/gnomecanvas
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		archivers/libmspack \
 			mail/evolution
