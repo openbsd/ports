@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/09/11 11:57:10 jca Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/04/26 13:16:42 jca Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -132,6 +132,7 @@ ${P5SITE}/Image/ExifTool/Matroska.pm
 ${P5SITE}/Image/ExifTool/Microsoft.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
 ${P5SITE}/Image/ExifTool/MinoltaRaw.pm
+${P5SITE}/Image/ExifTool/Motorola.pm
 ${P5SITE}/Image/ExifTool/Nikon.pm
 ${P5SITE}/Image/ExifTool/NikonCapture.pm
 ${P5SITE}/Image/ExifTool/NikonCustom.pm
@@ -297,6 +298,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Microsoft.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
 @man man/man3p/Image::ExifTool::MinoltaRaw.3p
+@man man/man3p/Image::ExifTool::Motorola.3p
 @man man/man3p/Image::ExifTool::Nikon.3p
 @man man/man3p/Image::ExifTool::NikonCapture.3p
 @man man/man3p/Image::ExifTool::NikonCustom.3p
