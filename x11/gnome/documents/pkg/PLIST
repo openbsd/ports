@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/10/05 06:02:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/04/26 07:47:06 ajacoutot Exp $
 bin/gnome-books
 bin/gnome-documents
 lib/gnome-documents/
@@ -579,22 +579,22 @@ share/help/zh_CN/gnome-documents/search.page
 share/help/zh_CN/gnome-documents/view-add.page
 share/help/zh_CN/gnome-documents/view.page
 share/help/zh_CN/gnome-documents/viewgrid.page
-share/icons/hicolor/16x16/apps/gnome-books.png
-share/icons/hicolor/16x16/apps/gnome-documents.png
-share/icons/hicolor/22x22/apps/gnome-books.png
-share/icons/hicolor/22x22/apps/gnome-documents.png
-share/icons/hicolor/24x24/apps/gnome-books.png
-share/icons/hicolor/24x24/apps/gnome-documents.png
-share/icons/hicolor/256x256/apps/gnome-books.png
-share/icons/hicolor/256x256/apps/gnome-documents.png
-share/icons/hicolor/32x32/apps/gnome-books.png
-share/icons/hicolor/32x32/apps/gnome-documents.png
-share/icons/hicolor/48x48/apps/gnome-books.png
-share/icons/hicolor/48x48/apps/gnome-documents.png
-share/icons/hicolor/512x512/apps/gnome-books.png
-share/icons/hicolor/512x512/apps/gnome-documents.png
-share/icons/hicolor/scalable/apps/gnome-books-symbolic.svg
-share/icons/hicolor/scalable/apps/gnome-documents-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.Books.png
+share/icons/hicolor/16x16/apps/org.gnome.Documents.png
+share/icons/hicolor/22x22/apps/org.gnome.Books.png
+share/icons/hicolor/22x22/apps/org.gnome.Documents.png
+share/icons/hicolor/24x24/apps/org.gnome.Books.png
+share/icons/hicolor/24x24/apps/org.gnome.Documents.png
+share/icons/hicolor/256x256/apps/org.gnome.Books.png
+share/icons/hicolor/256x256/apps/org.gnome.Documents.png
+share/icons/hicolor/32x32/apps/org.gnome.Books.png
+share/icons/hicolor/32x32/apps/org.gnome.Documents.png
+share/icons/hicolor/48x48/apps/org.gnome.Books.png
+share/icons/hicolor/48x48/apps/org.gnome.Documents.png
+share/icons/hicolor/512x512/apps/org.gnome.Books.png
+share/icons/hicolor/512x512/apps/org.gnome.Documents.png
+share/icons/hicolor/scalable/apps/org.gnome.Books-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Documents-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-documents.mo
 share/locale/ar/LC_MESSAGES/gnome-documents.mo
 share/locale/as/LC_MESSAGES/gnome-documents.mo
