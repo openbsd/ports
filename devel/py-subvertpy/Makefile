@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/21 18:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/26 15:10:58 jasper Exp $
 
 COMMENT=	alternative python bindings for subversion
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION= 0.8.8
 DISTNAME=	subvertpy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://launchpad.net/subvertpy
 
