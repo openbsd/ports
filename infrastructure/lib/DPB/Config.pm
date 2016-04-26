@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.61 2015/08/25 22:40:56 espie Exp $
+# $OpenBSD: Config.pm,v 1.62 2016/04/26 16:54:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -224,7 +224,7 @@ sub parse_command_line
 		$state->{startup_script} = $state->{subst}->value($k);
 	}
 	if ($state->define_present('LOGDIR')) {
-		$state->{logdir} = $state->subst->value('LOGDIR');
+		$state->{logdir} = $state->{subst}->value('LOGDIR');
 	}
 	if ($state->{opt}{s}) {
 		$state->{wantsize} = 1;
