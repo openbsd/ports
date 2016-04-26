@@ -1,0 +1,14 @@
+$OpenBSD: patch-vendor_github_com_elastic_gosigar_sigar_unix_go,v 1.1.1.1 2016/04/26 18:33:54 jasper Exp $
+
+https://github.com/elastic/gosigar/pull/22
+
+--- vendor/github.com/elastic/gosigar/sigar_unix.go.orig	Tue Apr 26 15:43:36 2016
++++ vendor/github.com/elastic/gosigar/sigar_unix.go	Tue Apr 26 15:43:42 2016
+@@ -1,6 +1,6 @@
+ // Copyright (c) 2012 VMware, Inc.
+ 
+-// +build darwin freebsd linux netbsd openbsd
++// +build darwin freebsd linux netbsd
+ 
+ package gosigar
+ 

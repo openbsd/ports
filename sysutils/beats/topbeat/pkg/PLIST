@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 18:33:54 jasper Exp $
+@bin bin/topbeat
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/topbeat/
+@sample ${SYSCONFDIR}/topbeat/
+share/examples/topbeat/topbeat.template.json
+@sample ${SYSCONFDIR}/topbeat/topbeat.template.json
+share/examples/topbeat/topbeat.yml
+@sample ${SYSCONFDIR}/topbeat/topbeat.yml
+@rcscript ${RCDIR}/topbeat

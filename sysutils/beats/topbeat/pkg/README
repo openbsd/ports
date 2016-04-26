@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1.1.1 2016/04/26 18:33:54 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Loading index template
+======================
+If Topbeat will be shipping directly into ElasticSearch, the index
+template needs to be loaded into the cluster first:
+
+    curl -XPUT 'http://localhost:9200/_template/topbeat?pretty' \
+    	 -d@${SYSCONFDIR/topbeat/topbeat.template.json
+
+Replace `localhost` and `9200` if required by your setup.

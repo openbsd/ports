@@ -1,0 +1,3 @@
+Topbeat is a lightweight way to gather CPU, memory, and other
+per-process and system wide data, then ship it to Elasticsearch to
+analyze the results.
