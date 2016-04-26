@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/11 20:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/04/26 22:23:24 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -15,7 +15,7 @@ PKGNAME-lib =	libgfortran-$V
 SHARED_LIBS =	gfortran	2.0
 
 REVISION = 15
-REVISION-lib = 16
+REVISION-lib = 17
 
 CATEGORIES =	lang math
 
@@ -36,11 +36,9 @@ USE_GMAKE =	Yes
 
 MULTI_PACKAGES =	-main -lib
 
-MODULES =		converters/libiconv
-
-WANTLIB-main =		${MODLIBICONV_WANTLIB} c iberty gmp mpfr
+WANTLIB-main =		c iberty iconv gmp mpfr
 LIB_DEPENDS-main =	devel/mpfr \
-			${MODLIBICONV_LIB_DEPENDS}
+			converters/libiconv
 WANTLIB-lib =
 LIB_DEPENDS-lib =
 RUN_DEPENDS-main =	${BASE_PKGPATH},-lib
