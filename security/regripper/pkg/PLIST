@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/28 09:55:17 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/26 19:22:22 rpointel Exp $
 bin/rip.pl
 ${P5SITE}/regripper/
 ${P5SITE}/regripper/shellitems.pl
@@ -31,6 +31,7 @@ share/regripper/plugins/attachmgr_tln.pl
 share/regripper/plugins/audiodev.pl
 share/regripper/plugins/auditfail.pl
 share/regripper/plugins/auditpol.pl
+share/regripper/plugins/auditpol_xp.pl
 share/regripper/plugins/autoendtasks.pl
 share/regripper/plugins/autorun.pl
 share/regripper/plugins/backuprestore.pl
@@ -61,9 +62,11 @@ share/regripper/plugins/comfoo.pl
 share/regripper/plugins/compdesc.pl
 share/regripper/plugins/compname.pl
 share/regripper/plugins/controlpanel.pl
+share/regripper/plugins/cortana.pl
 share/regripper/plugins/cpldontload.pl
 share/regripper/plugins/crashcontrol.pl
 share/regripper/plugins/ctrlpnl.pl
+share/regripper/plugins/dcom.pl
 share/regripper/plugins/ddm.pl
 share/regripper/plugins/ddo.pl
 share/regripper/plugins/decaf.pl
@@ -103,6 +106,7 @@ share/regripper/plugins/handler.pl
 share/regripper/plugins/haven_and_hearth.pl
 share/regripper/plugins/hibernate.pl
 share/regripper/plugins/ide.pl
+share/regripper/plugins/identities.pl
 share/regripper/plugins/ie_main.pl
 share/regripper/plugins/ie_settings.pl
 share/regripper/plugins/ie_version.pl
@@ -125,6 +129,7 @@ share/regripper/plugins/kbdcrash.pl
 share/regripper/plugins/knowndev.pl
 share/regripper/plugins/landesk.pl
 share/regripper/plugins/landesk_tln.pl
+share/regripper/plugins/latentbot.pl
 share/regripper/plugins/lazyshell.pl
 share/regripper/plugins/legacy.pl
 share/regripper/plugins/legacy_tln.pl
@@ -169,6 +174,7 @@ share/regripper/plugins/nic_mst2.pl
 share/regripper/plugins/nolmhash.pl
 share/regripper/plugins/ntuser
 share/regripper/plugins/ntusernetwork.pl
+share/regripper/plugins/null.pl
 share/regripper/plugins/odysseus.pl
 share/regripper/plugins/officedocs.pl
 share/regripper/plugins/officedocs2010.pl
@@ -201,6 +207,7 @@ share/regripper/plugins/proxysettings.pl
 share/regripper/plugins/publishingwizard.pl
 share/regripper/plugins/putty.pl
 share/regripper/plugins/rdphint.pl
+share/regripper/plugins/rdpnla.pl
 share/regripper/plugins/rdpport.pl
 share/regripper/plugins/reading_locations.pl
 share/regripper/plugins/realplayer6.pl
