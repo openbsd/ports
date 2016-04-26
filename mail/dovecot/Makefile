@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2016/03/31 11:12:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.239 2016/04/26 21:09:43 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication support for Dovecot
@@ -6,7 +6,7 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.23
+V_DOVECOT=	2.2.24
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}

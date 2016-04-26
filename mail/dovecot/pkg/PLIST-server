@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.52 2016/03/31 11:12:38 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.53 2016/04/26 21:09:43 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -133,6 +133,7 @@ include/dovecot/file-set-size.h
 include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
+include/dovecot/fs-test.h
 include/dovecot/fsync-mode.h
 include/dovecot/fts-api-private.h
 include/dovecot/fts-api.h
@@ -430,6 +431,7 @@ include/dovecot/ostream-escaped.h
 include/dovecot/ostream-failure-at.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
+include/dovecot/ostream-null.h
 include/dovecot/ostream-private.h
 include/dovecot/ostream-rawlog.h
 include/dovecot/ostream-zlib.h
@@ -916,6 +918,7 @@ share/doc/dovecot/wiki/Upgrading.1.2.txt
 share/doc/dovecot/wiki/Upgrading.2.0.txt
 share/doc/dovecot/wiki/Upgrading.2.1.txt
 share/doc/dovecot/wiki/Upgrading.2.2.txt
+share/doc/dovecot/wiki/Upgrading.2.3.txt
 share/doc/dovecot/wiki/Upgrading.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
 share/doc/dovecot/wiki/UserDatabase.NSS.txt

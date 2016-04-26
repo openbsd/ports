@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.14 2016/03/17 14:11:45 sthen Exp $
+$OpenBSD: patch-configure,v 1.15 2016/04/26 21:09:43 sthen Exp $
 
 Workaround libpthread bug.
 
---- configure.orig	Fri Mar  4 06:04:42 2016
-+++ configure	Sun Mar  6 21:30:34 2016
-@@ -26215,7 +26215,7 @@ _ACEOF
+--- configure.orig	Tue Apr 26 11:10:48 2016
++++ configure	Tue Apr 26 15:29:56 2016
+@@ -26234,7 +26234,7 @@ _ACEOF
  
  
  CFLAGS="$CFLAGS $EXTRA_CFLAGS"
