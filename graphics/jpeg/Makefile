@@ -1,26 +1,39 @@
-# $OpenBSD: Makefile,v 1.51 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2016/04/26 11:01:45 robert Exp $
 
-COMMENT=	IJG's JPEG compression utilities#'
+COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		9a
-DISTNAME=	jpeg-$V
-SHARED_LIBS=	jpeg	67.0	# 10.0
+V=		1.4.2
+DISTNAME=	jpeg-turbo-${V}
+PKGNAME=	jpeg-${V}
+EPOCH=		0
+
+SHARED_LIBS+=	jpeg		67.0	# 10.0
+
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
-HOMEPAGE=	http://www.ijg.org/
+
+HOMEPAGE=	http://libjpeg-turbo.virtualgl.org/
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.ijg.org/files/
-DISTFILES=	jpegsrc.v$V.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
+DISTFILES=	libjpeg-turbo-${V}.tar.gz
 
 WANTLIB=	c
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS=	devel/yasm
+.endif
+
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
+
 # Symbol versioning triggers weird linking problems in dependent ports.
-CONFIGURE_ARGS+=--disable-ld-version-script
+CONFIGURE_ARGS+=--disable-ld-version-script \
+		--without-turbojpeg
+
+WRKDIST=	${WRKDIR}/lib${DISTNAME}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpeg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/04/18 12:21:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/26 11:01:45 robert Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
@@ -19,5 +19,13 @@ lib/libjpeg.la
 share/doc/jpeg/
 share/doc/jpeg/libjpeg.txt
 share/doc/jpeg/wizard.txt
+share/doc/libjpeg-turbo/
+share/doc/libjpeg-turbo/README
+share/doc/libjpeg-turbo/README-turbo.txt
+share/doc/libjpeg-turbo/example.c
+share/doc/libjpeg-turbo/libjpeg.txt
+share/doc/libjpeg-turbo/structure.txt
+share/doc/libjpeg-turbo/usage.txt
+share/doc/libjpeg-turbo/wizard.txt
 share/examples/jpeg/
 share/examples/jpeg/example.c

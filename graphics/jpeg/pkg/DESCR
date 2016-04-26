@@ -1,13 +1,15 @@
-This package contains software to implement JPEG image encoding, decoding,
-and transcoding.  JPEG (pronounced "jay-peg") is a standardized compression
-method for full-color and gray-scale images.
+libjpeg-turbo is a high-speed version of libjpeg for x86 and x86-64 processors
+which uses SIMD instructions (MMX, SSE2, etc.) to accelerate baseline JPEG
+compression and decompression.
+libjpeg-turbo is generally 2-4x as fast as the unmodified version
+of libjpeg, all else being equal.
 
-This software implements JPEG baseline, extended-sequential, and progressive
-compression processes.
-
-A set of library routines for reading and writing JPEG image files is provided,
-plus two sample applications "cjpeg" and "djpeg", which use the library to
-perform conversion between JPEG and some other popular image file formats.
-Also included is "jpegtran", a utility for lossless transcoding between
-different JPEG processes, and "rdjpgcom" and "wrjpgcom", two simple
-applications for inserting and extracting textual comments in JFIF files.
+libjpeg-turbo was originally based on libjpeg/SIMD by Miyasaka Masaru,
+but the TigerVNC and VirtualGL projects made numerous enhancements to the codec,
+including improved support for Mac OS X, 64-bit support,
+support for 32-bit and big endian pixel formats (RGBA, ABGR, etc.),
+accelerated Huffman encoding/decoding, and various bug fixes.
+The goal was to produce a fully open source codec that could replace
+the partially closed source TurboJPEG/IPP codec used by VirtualGL and TurboVNC.
+libjpeg-turbo generally achieves 80-120% of the performance of TurboJPEG/IPP.
+It is faster in some areas but slower in others.
