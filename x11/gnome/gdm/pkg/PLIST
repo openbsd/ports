@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2015/10/18 13:25:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.84 2016/04/26 08:25:04 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -110,8 +110,6 @@ share/gdm/gdm.schemas
 share/gdm/greeter/
 share/gdm/greeter-dconf-defaults
 share/gdm/greeter/applications/
-share/gdm/greeter/applications/gnome-shell-wayland.desktop
-share/gdm/greeter/applications/gnome-shell.desktop
 share/gdm/greeter/applications/mime-dummy-handler.desktop
 share/gdm/greeter/applications/mimeapps.list
 share/gdm/greeter/autostart/

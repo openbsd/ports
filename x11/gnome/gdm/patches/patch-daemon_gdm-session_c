@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_c,v 1.7 2016/04/15 14:11:09 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_c,v 1.8 2016/04/26 08:25:04 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -12,20 +12,20 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 14:33:40 -0400
 Subject: session: drop session-type property
 
---- daemon/gdm-session.c.orig	Thu Apr 14 07:56:26 2016
-+++ daemon/gdm-session.c	Fri Apr 15 15:05:26 2016
-@@ -3060,6 +3060,10 @@ gdm_session_get_display_mode (GdmSession *self)
-                  self->priv->is_program_session? "yes" : "no",
-                  self->priv->display_seat_id);
+--- daemon/gdm-session.c.orig	Tue Apr 19 07:00:04 2016
++++ daemon/gdm-session.c	Tue Apr 26 10:02:48 2016
+@@ -3055,6 +3055,10 @@ gdm_session_bypasses_xsession (GdmSession *self)
+         g_return_val_if_fail (self != NULL, FALSE);
+         g_return_val_if_fail (GDM_IS_SESSION (self), FALSE);
  
 +        if (!LOGIND_RUNNING()) {
 +                return GDM_SESSION_DISPLAY_MODE_REUSE_VT;
 +        }
 +
  #ifdef ENABLE_WAYLAND_SUPPORT
-         /* Wayland sessions are for now assumed to run in a
-          * mutter-launch-like environment, so we allocate
-@@ -3098,6 +3102,27 @@ gdm_session_select_program (GdmSession *self,
+         if (gdm_session_is_wayland_session (self)) {
+                 bypasses_xsession = TRUE;
+@@ -3134,6 +3138,27 @@ gdm_session_select_program (GdmSession *self,
          g_free (self->priv->selected_program);
  
          self->priv->selected_program = g_strdup (text);

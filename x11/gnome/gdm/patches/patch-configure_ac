@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.8 2016/04/15 14:11:09 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2016/04/26 08:25:04 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -8,9 +8,9 @@ Subject: drop consolekit support
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
---- configure.ac.orig	Thu Apr 14 07:56:26 2016
-+++ configure.ac	Fri Apr 15 15:05:26 2016
-@@ -244,7 +244,15 @@ AC_ARG_WITH(tcp-wrappers,
+--- configure.ac.orig	Tue Apr 19 07:04:17 2016
++++ configure.ac	Tue Apr 26 10:02:47 2016
+@@ -246,7 +246,15 @@ AC_ARG_WITH(tcp-wrappers,
                             [Use TCP Wrappers @<:@default=auto@:>@]),,
              with_tcp_wrappers=auto)
  
@@ -26,7 +26,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_ARG_WITH([systemdsystemunitdir],
              AS_HELP_STRING([--with-systemdsystemunitdir=DIR],
                             [Directory for systemd service files]),
-@@ -614,14 +622,8 @@ dnl --------------------------------------------------
+@@ -613,14 +621,8 @@ dnl --------------------------------------------------
  dnl - Check for utmp stuff
  dnl ---------------------------------------------------------------------------
  
@@ -43,7 +43,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_CHECK_LIB(util, logwtmp, [
  	  	   AC_DEFINE(HAVE_LOGWTMP, 1, [Define if have logwtmp])
  		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])
-@@ -870,12 +872,42 @@ AC_SUBST(XINERAMA_LIBS)
+@@ -869,12 +871,42 @@ AC_SUBST(XINERAMA_LIBS)
  CPPFLAGS="$xinerama_save_cppflags"
  
  dnl ---------------------------------------------------------------------------
@@ -87,7 +87,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_SUBST(SYSTEMD_CFLAGS)
  AC_SUBST(SYSTEMD_LIBS)
  
-@@ -1068,6 +1100,14 @@ fi
+@@ -1067,6 +1099,14 @@ fi
  AC_SUBST(GDM_CUSTOM_CONF)
  AC_SUBST(GDM_OLD_CONF, '${gdmconfdir}/gdm.conf')
  
@@ -102,7 +102,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_ARG_WITH(gnome-settings-daemon-directory,
                [AC_HELP_STRING([--with-gnome-settings-daemon-directory],
                                [Specify the directory of gnome-settings-daemon used by the chooser @<:@default=libexecdir@:>@])],,
-@@ -1557,6 +1597,7 @@ echo "
+@@ -1555,6 +1595,7 @@ echo "
          dmconfdir:                ${dmconfdir}
          localstatedir:            ${localstatedir}
          datadir:                  ${datadir}
@@ -110,7 +110,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  	gnome-settings-daemon location: ${with_gnome_settings_daemon_directory}
  	gnome-session-check-accel location: ${with_check_accelerated_directory}
  	source code location:	  ${srcdir}
-@@ -1586,6 +1627,8 @@ echo \
+@@ -1584,6 +1625,8 @@ echo \
  "        Xinerama support:         ${XINERAMA_SUPPORT}
          XDMCP support:            ${XDMCP_SUPPORT}
          SELinux support:          ${use_selinux}
@@ -118,8 +118,8 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
 +        systemd support:          ${use_systemd}
          systemd unit dir:         ${with_systemdsystemunitdir}
          plymouth support:         ${use_plymouth}
-         wayland support:          ${use_wayland}
-@@ -1594,3 +1637,4 @@ echo \
+         wayland support:          ${enable_wayland_support}
+@@ -1592,3 +1635,4 @@ echo \
          Enable documentation:     ${enable_documentation}
          Install GDM's Xsession:   ${enable_gdm_xsession}
  "

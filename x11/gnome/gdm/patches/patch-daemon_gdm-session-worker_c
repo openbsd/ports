@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.11 2016/04/15 14:11:09 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.12 2016/04/26 08:25:04 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -24,8 +24,8 @@ From: Tim Lunn <tim@feathertop.org>
 Date: Mon, 11 Apr 2016 23:18:10 +1000
 Subject: gdm-session: set PAM_TTY when initialising pam
 
---- daemon/gdm-session-worker.c.orig	Thu Apr 14 07:56:26 2016
-+++ daemon/gdm-session-worker.c	Fri Apr 15 15:48:26 2016
+--- daemon/gdm-session-worker.c.orig	Tue Apr 19 07:00:41 2016
++++ daemon/gdm-session-worker.c	Tue Apr 26 10:02:48 2016
 @@ -28,9 +28,11 @@
  #include <string.h>
  #include <sys/types.h>
@@ -541,7 +541,7 @@ Subject: gdm-session: set PAM_TTY when initialising pam
  gdm_session_worker_handle_set_session_display_mode (GdmDBusWorker         *object,
                                                      GDBusMethodInvocation *invocation,
                                                      const char            *str)
-@@ -3148,6 +3387,7 @@ worker_interface_init (GdmDBusWorkerIface *interface)
+@@ -3147,6 +3386,7 @@ worker_interface_init (GdmDBusWorkerIface *interface)
          interface->handle_open = gdm_session_worker_handle_open;
          interface->handle_set_language_name = gdm_session_worker_handle_set_language_name;
          interface->handle_set_session_name = gdm_session_worker_handle_set_session_name;

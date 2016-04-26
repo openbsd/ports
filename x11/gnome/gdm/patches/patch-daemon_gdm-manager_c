@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.9 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.10 2016/04/26 08:25:04 ajacoutot Exp $
 
 XXX fix+push upstream
 
@@ -14,8 +14,8 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-manager.c.orig	Sun Oct 18 14:26:34 2015
-+++ daemon/gdm-manager.c	Sun Oct 18 14:34:21 2015
+--- daemon/gdm-manager.c.orig	Tue Apr 19 07:00:04 2016
++++ daemon/gdm-manager.c	Tue Apr 26 10:02:48 2016
 @@ -34,7 +34,9 @@
  #include <glib/gstdio.h>
  #include <glib-object.h>
@@ -669,7 +669,7 @@ Subject: require logind support
          return is_on_seat0;
  }
  
-@@ -1749,11 +2162,57 @@ on_user_session_died (GdmSession *session,
+@@ -1785,11 +2198,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
