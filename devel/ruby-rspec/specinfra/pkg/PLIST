@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/03/04 10:14:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/04/26 10:53:52 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -281,6 +281,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles/v12/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles/v12.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/sles/v12/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/smartos/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/smartos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/smartos/base/
@@ -404,6 +410,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/backend/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/build_command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/child_process_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/consume_exited_process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/env_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/read_noblock_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/stdxxx_handler_spec.rb
@@ -487,6 +494,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/darwin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/esxi_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/freebsd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/openbsd_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/suse_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/os_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/properties_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/set_spec.rb
