@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.15 2015/08/24 10:16:18 espie Exp $
+# $OpenBSD: State.pm,v 1.16 2016/04/26 17:19:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -105,11 +105,11 @@ sub startdate
 
 sub anchor
 {
-	my ($self, $dir) = @_;
+	my ($self, $path) = @_;
 	if ($self->{chroot}) {
-		return join('/', $self->{chroot}, $dir);
+		return join('/', $self->{chroot}, $path);
 	} else {
-		return $dir;
+		return $path;
 	}
 }
 

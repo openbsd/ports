@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.72 2015/06/17 07:31:44 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.73 2016/04/26 17:19:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,6 +33,7 @@ sub new
 	    known_sha => {}, known_files => {},
 	    known_short => {},
 	    user => $state->{fetch_user},
+	    state => $state,
 	    build_user => $state->{build_user},
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
@@ -244,7 +245,8 @@ sub build_distinfo
 		}
 		$checksum_file = $checksum_file->string;
 		$distinfo->{$checksum_file} //=
-		    $self->read_checksums($checksum_file);
+		    $self->read_checksums(
+			$self->{state}->anchor($checksum_file));
 		my $checksums = $distinfo->{$checksum_file};
 
 		my $files = {};
