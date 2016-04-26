@@ -1,6 +1,6 @@
-$OpenBSD: patch-contrib_egg_Egg-1_0_gir,v 1.1 2015/10/17 08:35:49 ajacoutot Exp $
---- contrib/egg/Egg-1.0.gir.orig	Sat Oct 17 10:16:50 2015
-+++ contrib/egg/Egg-1.0.gir	Sat Oct 17 10:16:59 2015
+$OpenBSD: patch-contrib_egg_Egg-1_0_gir,v 1.2 2016/04/26 09:53:54 ajacoutot Exp $
+--- contrib/egg/Egg-1.0.gir.orig	Wed Mar 23 03:22:52 2016
++++ contrib/egg/Egg-1.0.gir	Tue Apr 26 09:49:33 2016
 @@ -12,7 +12,7 @@ and/or use gtk-doc annotations.  -->
    <c:include name="egg-private.h"/>
    <namespace name="Egg"
@@ -9,4 +9,4 @@ $OpenBSD: patch-contrib_egg_Egg-1_0_gir,v 1.1 2015/10/17 08:35:49 ajacoutot Exp 
 +             shared-library="libegg-private.so"
               c:identifier-prefixes="Egg"
               c:symbol-prefixes="egg">
-     <alias name="Animation_autoptr" c:type="EggAnimation_autoptr">
+     <class name="Animation"

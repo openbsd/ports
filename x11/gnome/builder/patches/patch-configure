@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2016/04/26 09:53:54 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=765587
+
+--- configure.orig	Tue Apr 26 11:15:23 2016
++++ configure	Tue Apr 26 11:15:40 2016
+@@ -24917,7 +24917,7 @@ PLUGIN_CFLAGS="$PLUGIN_CFLAGS $OPTIMIZE_CFLAGS"
+ 
+ PLUGIN_LDFLAGS="$PLUGIN_LDFLAGS $OPTIMIZE_LDFLAGS"
+ PLUGIN_LDFLAGS="$PLUGIN_LDFLAGS -avoid-version"
+-PLUGIN_LDFLAGS="$PLUGIN_LDFLAGS -export-regex peas_register_types"
++PLUGIN_LDFLAGS="$PLUGIN_LDFLAGS -export-symbols-regex peas_register_types"
+ PLUGIN_LDFLAGS="$PLUGIN_LDFLAGS -module"
+ 
+ 

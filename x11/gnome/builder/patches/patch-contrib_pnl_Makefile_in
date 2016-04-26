@@ -1,0 +1,15 @@
+$OpenBSD: patch-contrib_pnl_Makefile_in,v 1.1 2016/04/26 09:53:54 ajacoutot Exp $
+
+XXX cc: error: unrecognized command line option '--no-undefined'
+
+--- contrib/pnl/Makefile.in.orig	Tue Apr 26 10:00:56 2016
++++ contrib/pnl/Makefile.in	Tue Apr 26 10:01:00 2016
+@@ -639,7 +639,7 @@ libpanel_gtk_la_LIBADD = \
+ 	$(NULL)
+ 
+ libpanel_gtk_la_LDFLAGS = \
+-	--no-undefined \
++	-no-undefined \
+ 	$(NULL)
+ 
+ glib_resources_h = pnl-resources.h
