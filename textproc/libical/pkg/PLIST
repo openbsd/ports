@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/20 15:51:54 ajacoutot Exp $
-include/ical.h
+@comment $OpenBSD: PLIST,v 1.6 2016/04/26 10:24:46 ajacoutot Exp $
 include/libical/
 include/libical/ical.h
 include/libical/icalarray.h
@@ -25,13 +24,16 @@ include/libical/icalmemory.h
 include/libical/icalmessage.h
 include/libical/icalmime.h
 include/libical/icalparameter.h
+include/libical/icalparameter_cxx.h
 include/libical/icalparser.h
 include/libical/icalperiod.h
 include/libical/icalproperty.h
+include/libical/icalproperty_cxx.h
 include/libical/icalrecur.h
 include/libical/icalrestriction.h
 include/libical/icalset.h
 include/libical/icalspanlist.h
+include/libical/icalspanlist_cxx.h
 include/libical/icalss.h
 include/libical/icalssyacc.h
 include/libical/icaltime.h
@@ -39,27 +41,36 @@ include/libical/icaltimezone.h
 include/libical/icaltypes.h
 include/libical/icaltz-util.h
 include/libical/icalvalue.h
+include/libical/icalvalue_cxx.h
 include/libical/icalvcal.h
-include/libical/port.h
+include/libical/icptrholder_cxx.h
+include/libical/libical_ical_export.h
+include/libical/libical_icalss_export.h
+include/libical/libical_vcal_export.h
 include/libical/pvl.h
 include/libical/sspm.h
 include/libical/vcaltmp.h
 include/libical/vcc.h
+include/libical/vcomponent_cxx.h
 include/libical/vobject.h
 lib/cmake/
 lib/cmake/LibIcal/
 lib/cmake/LibIcal/LibIcalConfig.cmake
 lib/cmake/LibIcal/LibIcalConfigVersion.cmake
-lib/cmake/LibIcal/LibIcalTargets-release.cmake
+lib/cmake/LibIcal/LibIcalTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/LibIcal/LibIcalTargets.cmake
 lib/girepository-1.0/
-lib/girepository-1.0/libical-1.0.1.typelib
+lib/girepository-1.0/libical-2.0.0.typelib
 lib/libical.a
 @lib lib/libical.so.${LIBical_VERSION}
+lib/libical_cxx.a
+@lib lib/libical_cxx.so.${LIBical_cxx_VERSION}
 lib/libicalss.a
 @lib lib/libicalss.so.${LIBicalss_VERSION}
+lib/libicalss_cxx.a
+@lib lib/libicalss_cxx.so.${LIBicalss_cxx_VERSION}
 lib/libicalvcal.a
 @lib lib/libicalvcal.so.${LIBicalvcal_VERSION}
 lib/pkgconfig/libical.pc
 share/gir-1.0/
-share/gir-1.0/libical-1.0.1.gir
+share/gir-1.0/libical-2.0.0.gir

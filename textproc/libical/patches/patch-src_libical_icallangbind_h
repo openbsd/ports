@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libical_icallangbind_h,v 1.1 2016/04/26 10:24:46 ajacoutot Exp $
+
+Fix function name (Fedora).
+
+--- src/libical/icallangbind.h.orig	Tue Apr 26 11:48:21 2016
++++ src/libical/icallangbind.h	Tue Apr 26 11:49:08 2016
+@@ -63,6 +63,6 @@ LIBICAL_ICAL_EXPORT int icallangbind_string_to_open_fl
+ 
+ LIBICAL_ICAL_EXPORT const char *icallangbind_quote_as_ical(const char *str);
+ 
+-LIBICAL_ICAL_EXPORT char *callangbind_quote_as_ical_r(const char *str);
++LIBICAL_ICAL_EXPORT char *icallangbind_quote_as_ical_r(const char *str);
+ 
+ #endif

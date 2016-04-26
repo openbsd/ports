@@ -1,32 +1,36 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/19 06:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/04/26 10:24:46 ajacoutot Exp $
 
-COMMENT=	implementation of the iCalendar protocols and data units
+COMMENT=		implementation of the iCalendar protocols and data units
 
-V=		1.0.1
-DISTNAME=	libical-${V}
-REVISION=	1
+GH_ACCOUNT=		libical
+GH_PROJECT=		libical
+GH_TAGNAME=		v2.0.0
 
-GH_ACCOUNT=	libical
-GH_PROJECT=	libical
-GH_TAGNAME=	v${V}
+SHARED_LIBS +=  ical                 3.0
+SHARED_LIBS +=  icalss               3.0
+SHARED_LIBS +=  icalvcal             2.0
+SHARED_LIBS +=  ical_cxx             0.0
+SHARED_LIBS +=  icalss_cxx           0.0
 
-SHARED_LIBS +=  ical                 2.0
-SHARED_LIBS +=  icalss               2.0
-SHARED_LIBS +=  icalvcal             1.0
+CATEGORIES=		textproc
 
-CATEGORIES=	textproc
-
-HOMEPAGE=	https://libical.github.io/libical/
+HOMEPAGE=		https://libical.github.io/libical/
 
 # MPL/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/cmake
+WANTLIB += icui18n icuuc m pthread stdc++
 
-WANTLIB += pthread
+MODULES=		devel/cmake
 
-BUILD_DEPENDS=	devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection
 
-CONFIGURE_ARGS= -DGOBJECT_INTROSPECTION=true
+LIB_DEPENDS=		textproc/icu4c
+
+CONFIGURE_ARGS=		-DGOBJECT_INTROSPECTION=true \
+			-DUSE_INTEROPERABLE_VTIMEZONES=true
+
+# the cmake MODULE sets it to Yes
+SEPARATE_BUILD=		No
 
 .include <bsd.port.mk>

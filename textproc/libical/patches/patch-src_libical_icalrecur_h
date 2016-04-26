@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_libical_icalrecur_h,v 1.1 2016/04/26 10:24:46 ajacoutot Exp $
+
+Add patch for possible use-after-free of icalrecurrencetype::rscale (Fedora).
+
+--- src/libical/icalrecur.h.orig	Mon Dec 28 22:44:53 2015
++++ src/libical/icalrecur.h	Tue Apr 26 12:08:58 2016
+@@ -181,7 +181,7 @@ struct icalrecurrencetype
+     short by_set_pos[ICAL_BY_SETPOS_SIZE];
+ 
+     /* For RSCALE extension (RFC 7529) */
+-    char *rscale;
++    const char *rscale;
+     icalrecurrencetype_skip skip;
+ };
+ 
+@@ -190,6 +190,12 @@ LIBICAL_ICAL_EXPORT int icalrecurrencetype_rscale_is_s
+ LIBICAL_ICAL_EXPORT icalarray *icalrecurrencetype_rscale_supported_calendars(void);
+ 
+ LIBICAL_ICAL_EXPORT void icalrecurrencetype_clear(struct icalrecurrencetype *r);
++
++/* Frees pool of calendar names used by icalrecurrencetype::rscale.
++ * Do not call if anything else can use it (like components or other
++ * icalrecurrencetype structures).
++ */
++LIBICAL_ICAL_EXPORT void icalrecur_free_rscale_texts(void);
+ 
+ /**
+  * Array Encoding
