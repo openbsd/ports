@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/04/26 21:16:00 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.5
-REVISION=		2
+REVISION=		3
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -41,7 +41,6 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 
 SUBST_VARS=		GCCARCH VERSION
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		security/gnutls \
 			textproc/libxml
 
@@ -66,27 +65,27 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xaw3d Xext Xft Xinerama
-WANTLIB += Xmu Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig freetype
-WANTLIB += gconf-2 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += jpeg png rsvg-2 tiff
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xaw3d
+WANTLIB += Xext Xft Xinerama Xmu Xpm Xrandr Xrender Xt cairo dbus-1
+WANTLIB += fontconfig freetype gconf-2 gdk_pixbuf-2.0 gif gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl jpeg png rsvg-2 tiff
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xft Xi Xinerama Xpm Xrandr Xrender
-WANTLIB += atk-1.0 cairo dbus-1 fontconfig freetype gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png rsvg-2
-WANTLIB += tiff
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xpm Xrandr
+WANTLIB += Xrender atk-1.0 cairo dbus-1 fontconfig freetype gconf-2
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 intl jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += png rsvg-2 tiff
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xft Xinerama Xpm Xrandr
-WANTLIB += Xrender atk-1.0 cairo cairo-gobject dbus-1 fontconfig
-WANTLIB += freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += png rsvg-2 tiff
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xft Xinerama
+WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo cairo-gobject dbus-1
+WANTLIB += fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gif
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl jpeg pango-1.0
+WANTLIB += pangocairo-1.0 png rsvg-2 tiff
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
