@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/11/10 07:06:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2016/04/26 10:41:43 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -7,7 +7,7 @@ PKG_ARCH=		*
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		3.18.2
+GNOME_VERSION=		3.20.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,10 +21,12 @@ COMMON_DEPENDS= 	audio/speech-dispatcher \
 			x11/gnome/py-atspi
 
 BUILD_DEPENDS=		${COMMON_DEPENDS} \
+			multimedia/gstreamer1/core \
 			x11/gtk+3
 
 RUN_DEPENDS=		${COMMON_DEPENDS} \
-			devel/py-setproctitle${MODPY_FLAVOR}
+			devel/py-setproctitle${MODPY_FLAVOR} \
+			multimedia/gstreamer1/plugins-base
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
