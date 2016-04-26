@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/05 08:48:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/26 20:47:24 robert Exp $
 
 COMMENT=	command line utility to transform jpeg files
 
-V=		2.10
+V=		2.12
 DISTNAME=	fbida-${V}
 
 PKGNAME=	exiftran-${V}
