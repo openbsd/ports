@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.56 2016/04/19 19:48:28 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.57 2016/04/26 10:56:59 sthen Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=3.4.3p2
 
@@ -68,7 +68,7 @@ CONFIGURE_ENV +=	MODJAVA_VER=${MODJAVA_VER} \
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE=	cmake
 .endif
-MODCMAKE_configure=	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
+MODCMAKE_configure=	cd ${WRKBUILD} && ${SETENV} \
 	CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \

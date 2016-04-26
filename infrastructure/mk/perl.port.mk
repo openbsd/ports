@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.28 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: perl.port.mk,v 1.29 2016/04/26 10:56:59 sthen Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -23,7 +23,7 @@ MODPERL_pre-configure = for f in ${MODPERL_ADJ_FILES}; do \
 .  if ${CONFIGURE_STYLE:L:Mtiny}
 MODPERL_configure = \
 	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-    cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
+    cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
 	perl Build.PL \
 		--install_path=lib="${PREFIX}/libdata/perl5/site_perl" \
 		--install_path=arch="${PREFIX}/libdata/perl5/site_perl/$$arch" \
@@ -34,7 +34,7 @@ MODPERL_configure = \
 .  else
 MODPERL_configure = \
 	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-    cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
+    cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
 	perl Build.PL \
 		install_path=lib="${PREFIX}/libdata/perl5/site_perl" \
 		install_path=arch="${PREFIX}/libdata/perl5/site_perl/$$arch" \
@@ -46,7 +46,7 @@ MODPERL_configure = \
 .else
 MODPERL_configure = ${_MODPERL_preconfig}; \
 	arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`; \
-     cd ${WRKSRC}; ${_SYSTRACE_CMD} ${SETENV} ${CONFIGURE_ENV} \
+     cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
 	 PERL_MM_USE_DEFAULT=Yes \
      perl Makefile.PL \
      	PREFIX='${PREFIX}' \

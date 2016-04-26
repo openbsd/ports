@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.108 2016/04/21 15:51:33 zhuk Exp $
+# $OpenBSD: portcheck,v 1.109 2016/04/26 10:56:59 sthen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -308,7 +308,6 @@ TRY_BROKEN
 UNLOCK_CMD
 UPDATE_COOKIES_DIR
 USE_CCACHE
-USE_SYSTRACE
 VARBASE
 WARNINGS
 EOF
@@ -606,11 +605,6 @@ check_port_dir() {
 			test -f "$F" || err "$F is not a file"
 			check_makefile "$F"
 			portmk_exists=true
-			;;
-
-		systrace.filter)
-			test -f "$F" || err "$F is not a file"
-			((++non_portmk))
 			;;
 
 		files|patches)

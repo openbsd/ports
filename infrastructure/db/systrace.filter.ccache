@@ -1,5 +1,0 @@
-	native-chmod: filename match "${CCACHE_DIR}" then permit
-	native-fswrite: filename match "${CCACHE_DIR}" then permit
-	native-link: filename match "${CCACHE_DIR}" and filename[1] match "${CCACHE_DIR}" then permit
-	native-rename: filename match "${CCACHE_DIR}" and filename[1] match "${CCACHE_DIR}" then permit
-	native-symlink: filename match "${CCACHE_DIR}" then permit

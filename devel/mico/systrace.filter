@@ -1,4 +1,0 @@
-# $OpenBSD: systrace.filter,v 1.4 2010/09/22 08:42:53 landry Exp $
-# necessary for idl to work
-	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then permit
-	native-connect: permit

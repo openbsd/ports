@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1310 2016/03/20 20:07:20 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1311 2016/04/26 10:56:59 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -59,24 +59,14 @@ _BSD_PORT_MK = Done
 # User settings
 FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
-USE_SYSTRACE ?= No
 BULK ?= Auto
 RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?=
 _FETCH_MAKEFILE ?= /dev/stdout
 
-.if ${USE_SYSTRACE:L} == "yes"
-WRKOBJDIR_MFS ?!= readlink -fn /tmp/pobj
-.else
-WRKOBJDIR_MFS ?= /tmp/pobj
-.endif
-
 USE_MFS ?= No
-.if ${USE_SYSTRACE:L} == "yes"
-WRKOBJDIR ?!= readlink -fn ${PORTSDIR}/pobj
-.else
 WRKOBJDIR ?= ${PORTSDIR}/pobj
-.endif
+WRKOBJDIR_MFS ?= /tmp/pobj
 FAKEOBJDIR ?=
 
 BULK_TARGETS ?=
@@ -625,7 +615,6 @@ PKGSPEC${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*/-*/}
 .  endfor
 .endif
 
-_SYSTRACE_COOKIE =		${WRKDIR}/systrace.policy
 _WRKDIR_COOKIE =		${WRKDIR}/.extract_started
 _EXTRACT_COOKIE =		${WRKDIR}/.extract_done
 _PATCH_COOKIE =			${WRKDIR}/.patch_done
@@ -662,7 +651,7 @@ _TEST_COOKIE =			${WRKDIR}/.test_done
 
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
-	${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
+	${_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPTEST_COOKIES} ${_UPDATE_COOKIES} \
@@ -957,25 +946,6 @@ _INSTALL_MACROS = BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	BSD_INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 	BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
 MAKE_ENV += ${_INSTALL_MACROS}
-
-# setup systrace variables
-NO_SYSTRACE ?= No
-.if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
-_SYSTRACE_CMD ?= /bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
-.else
-_SYSTRACE_CMD =
-.endif
-SYSTRACE_FILTER ?= ${PORTSDIR}/infrastructure/db/systrace.filter
-SYSTRACE_FILTER_CCACHE ?= ${PORTSDIR}/infrastructure/db/systrace.filter.ccache
-_SYSTRACE_POLICIES += /bin/sh /usr/bin/env /usr/bin/make \
-	/usr/bin/patch ${DEPBASE}/bin/gmake
-SYSTRACE_SUBST_VARS += DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
-.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
-SYSTRACE_SUBST_VARS += CCACHE_DIR
-.endif
-.for _v in ${SYSTRACE_SUBST_VARS}
-_SYSTRACE_SED_SUBST += -e 's,$${${_v}},${${_v}},g'
-.endfor
 
 SHARED_LIBS ?=
 
@@ -1584,7 +1554,7 @@ _DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,g
 # corresponding file. However, there is nothing phony about the cookie.
 
 MODSIMPLE_configure = \
-	cd ${WRKCONF} && ${_SYSTRACE_CMD} ${SETENV} \
+	cd ${WRKCONF} && ${SETENV} \
 		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS:C/ *$//}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS:C/ *$//}" \
 		INSTALL="${_INSTALL} -c ${_BINOWNGRP}" \
@@ -2011,22 +1981,6 @@ ${_FUPDATE_COOKIE${_S}}:
 .endfor
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIES}
-
-${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
-	@rm -f $@
-.for _i in ${_SYSTRACE_POLICIES}
-	@echo "Policy: ${_i}, Emulation: native" >> $@
-	@if [ -f ${.CURDIR}/systrace.filter ]; then \
-		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.filter >> $@; \
-	fi
-	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
-.  if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
-	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER_CCACHE} >> $@
-.  endif
-.endfor
-	@if [ -f ${.CURDIR}/systrace.policy ]; then \
-		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.policy >> $@; \
-	fi
 
 makesum: fetch-all
 	@${_warn_checksum}
@@ -2526,7 +2480,7 @@ ${_WRKDIR_COOKIE}:
 .endif
 	@${_MAKE_COOKIE} $@
 
-${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
+${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 	@${_MAKE} _internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
@@ -2625,7 +2579,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 							*) ${ECHO_MSG} "===>   Applying OpenBSD patch $$i" ;; \
 						esac; \
 						if [ -s $$i ]; then \
-							${_SYSTRACE_CMD} ${PATCH} ${PATCH_ARGS} < $$i || \
+							${PATCH} ${PATCH_ARGS} < $$i || \
 								{ echo "***>   $$i did not apply cleanly"; \
 								error=true; }; \
 						else \
@@ -2718,7 +2672,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@${_MAKESYS} do-build
 .  else
 # What BUILD normally does:
-	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 # End of BUILD
 .  endif
@@ -2806,7 +2760,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${_SUDOMAKESYS} do-install ${FAKE_SETUP}
 .else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} ${_SYSTRACE_CMD} \
+	@cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.

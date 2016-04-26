@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.59 2014/09/16 09:08:02 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.60 2016/04/26 10:56:59 sthen Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -122,8 +122,8 @@ _cache_fragment = \
 
 _MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
-_MAKESYS = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${_SYSTRACE_CMD} ${MAKE}
-_SUDOMAKESYS = cd ${.CURDIR} && umask 022 && PKGPATH=${PKGPATH} exec ${_FAKESUDO} ${_SYSTRACE_CMD} ${MAKE}
+_MAKESYS = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
+_SUDOMAKESYS = cd ${.CURDIR} && umask 022 && PKGPATH=${PKGPATH} exec ${_FAKESUDO} ${MAKE}
 
 REPORT_PROBLEM_LOGFILE ?=
 .if !empty(REPORT_PROBLEM_LOGFILE)

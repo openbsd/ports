@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.22 2016/03/20 20:16:19 naddy Exp $
+# $OpenBSD: mk.conf.template,v 1.23 2016/04/26 10:57:00 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -10,7 +10,6 @@
 # you might want to use.
 
 #SUDO=/usr/bin/doas
-#USE_SYSTRACE=Yes
 
 # Set additional warning flags when compiling:
 #WARNINGS=Yes
@@ -59,3 +58,6 @@
 .poison CONFIGURE_SHARED
 .poison SHARED_ONLY
 .poison VMEM_WARNING
+.poison NO_SYSTRACE
+.poison _SYSTRACE_CMD
+.poison USE_SYSTRACE

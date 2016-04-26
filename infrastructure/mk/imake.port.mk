@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.8 2012/11/19 12:19:30 espie Exp $
+# $OpenBSD: imake.port.mk,v 1.9 2016/04/26 10:56:59 sthen Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -22,4 +22,4 @@ MODIMAKE_DEPENDS = \
 BUILD_DEPENDS += ${MODIMAKE_DEPENDS}
 
 MODIMAKE_configure = \
-		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF};
+		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF};
