@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.19 2016/04/26 12:37:43 landry Exp $
+
+Add missing #include after https://cgit.freedesktop.org/upower/commit/?id=77239cc4470fc515e1c8c6c21005fa08f3b1b04e
+--- src/openbsd/up-backend.c.orig	Sun Apr 17 12:38:26 2016
++++ src/openbsd/up-backend.c	Sun Apr 17 12:38:32 2016
+@@ -24,6 +24,7 @@
+ #include "up-backend.h"
+ #include "up-daemon.h"
+ #include "up-device.h"
++#include "up-backend-bsd-private.h"
+ #include <string.h> /* strcmp() */
+ 
+ static void	up_backend_class_init	(UpBackendClass	*klass);
