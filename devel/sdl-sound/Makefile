@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/12/15 03:10:18 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/26 21:21:22 naddy Exp $
 
 COMMENT=	library that handles the decoding of sound file formats
 
 DISTNAME=	SDL_sound-1.0.3
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel audio
 MASTER_SITES=	http://offload1.icculus.org/SDL_sound/downloads/
 
@@ -15,10 +15,9 @@ HOMEPAGE=	http://icculus.org/SDL_sound/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	FLAC SDL c m mikmod ogg pthread physfs smpeg speex \
+WANTLIB=	FLAC SDL c iconv m mikmod ogg pthread physfs smpeg speex \
 		sndio usbhid vorbis vorbisfile z
 
-MODULES=	converters/libiconv
 LIB_DEPENDS+=	audio/flac \
 		audio/libmikmod \
 		audio/libvorbis \

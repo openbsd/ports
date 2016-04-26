@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2016/04/26 21:21:22 naddy Exp $
 
 COMMENT=	SDL multi-channel audio mixer library
 
 DISTNAME=	SDL_mixer-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel audio
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -15,10 +15,9 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_mixer/
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	FLAC SDL c m mikmod ogg pthread smpeg>=1 sndio \
+WANTLIB=	FLAC SDL c iconv m mikmod ogg pthread smpeg>=1 sndio \
 		usbhid vorbis vorbisfile
 
-MODULES=	converters/libiconv
 LIB_DEPENDS=	audio/flac \
 		audio/libmikmod \
 		audio/libogg \

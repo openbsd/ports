@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.99 2016/04/26 21:21:22 naddy Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -16,9 +16,9 @@ HOMEPAGE=	http://www.libsdl.org/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	m pthread sndio usbhid
+WANTLIB=	iconv m pthread sndio usbhid
 
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv
 
 AUTOCONF_VERSION= 2.61
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}

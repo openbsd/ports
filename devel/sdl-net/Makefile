@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/26 21:21:22 naddy Exp $
 
 COMMENT=	SDL cross-platform networking library
 
 V=		1.2.8
 DISTNAME=	SDL_net-${V}
 PKGNAME=	sdl-net-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/ \
 		http://distcache.freebsd.org/ports-distfiles/
@@ -17,9 +17,8 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_net/
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL m pthread sndio usbhid
+WANTLIB=	SDL iconv m pthread sndio usbhid
 
-MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 
 SEPARATE_BUILD=	Yes
