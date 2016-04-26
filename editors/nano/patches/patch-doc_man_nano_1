@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_man_nano_1,v 1.6 2015/12/21 20:58:57 naddy Exp $
---- doc/man/nano.1.orig	Sun Aug 30 18:38:50 2015
-+++ doc/man/nano.1	Mon Dec 21 18:11:49 2015
-@@ -284,8 +284,6 @@ http://www.nano-editor.org/
+$OpenBSD: patch-doc_man_nano_1,v 1.7 2016/04/26 15:54:00 naddy Exp $
+--- doc/man/nano.1.orig	Mon Feb 22 15:47:50 2016
++++ doc/man/nano.1	Tue Apr 26 17:14:37 2016
+@@ -287,8 +287,6 @@ http://www.nano-editor.org/
  .PD 0
  .TP
  \fBnanorc\fP(5)
