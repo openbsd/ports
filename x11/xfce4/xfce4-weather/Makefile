@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2015/06/26 07:43:13 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2016/04/26 12:42:10 landry Exp $
 
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
-XFCE_VERSION=	0.8.6
+XFCE_VERSION=	0.8.7
 XFCE_PLUGIN=	weather
 
 # GPLv2
