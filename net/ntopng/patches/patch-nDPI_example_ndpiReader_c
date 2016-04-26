@@ -1,0 +1,41 @@
+$OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- nDPI/example/ndpiReader.c.orig	Tue Apr 26 17:09:12 2016
++++ nDPI/example/ndpiReader.c	Tue Apr 26 17:11:57 2016
+@@ -62,7 +62,7 @@ static char *_pcap_file[MAX_NUM_READER_THREADS]; /**< 
+ static FILE *playlist_fp[MAX_NUM_READER_THREADS] = { NULL }; /**< Ingress playlist */
+ static FILE *results_file = NULL;
+ static char *results_path = NULL;
+-static char *_bpf_filter      = NULL; /**< bpf filter  */
++static char *__bpf_filter      = NULL; /**< bpf filter  */
+ static char *_protoFilePath   = NULL; /**< Protocol file path  */
+ #ifdef HAVE_JSON_C
+ static char *_jsonFilePath    = NULL; /**< JSON file path  */
+@@ -180,7 +180,7 @@ static void parseOptions(int argc, char **argv) {
+       break;
+ 
+     case 'f':
+-      _bpf_filter = optarg;
++      __bpf_filter = optarg;
+       break;
+ 
+     case 'g':
+@@ -1083,16 +1083,16 @@ static int getNextPcapFileFromPlaylist(u_int16_t threa
+  */ 
+ static void configurePcapHandle(pcap_t * pcap_handle) {
+ 
+-  if(_bpf_filter != NULL) {
++  if(__bpf_filter != NULL) {
+     struct bpf_program fcode;
+ 
+-    if(pcap_compile(pcap_handle, &fcode, _bpf_filter, 1, 0xFFFFFF00) < 0) {
++    if(pcap_compile(pcap_handle, &fcode, __bpf_filter, 1, 0xFFFFFF00) < 0) {
+       printf("pcap_compile error: '%s'\n", pcap_geterr(pcap_handle));
+     } else {
+       if(pcap_setfilter(pcap_handle, &fcode) < 0) {
+ 	printf("pcap_setfilter error: '%s'\n", pcap_geterr(pcap_handle));
+       } else
+-	printf("Successfully set BPF filter to '%s'\n", _bpf_filter);
++	printf("Successfully set BPF filter to '%s'\n", __bpf_filter);
+     }
+   }
+ }

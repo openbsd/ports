@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: ntopng.rc,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/ntopng --daemon"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	/usr/bin/install -d -o _ntopng -g wheel -m 750 /var/run/ntopng
+}
+
+rc_cmd $1

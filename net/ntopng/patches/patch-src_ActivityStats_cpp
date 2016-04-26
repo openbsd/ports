@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ActivityStats_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/ActivityStats.cpp.orig	Sat Feb 13 22:07:57 2016
++++ src/ActivityStats.cpp	Sat Feb 13 22:08:16 2016
+@@ -127,7 +127,7 @@ json_object* ActivityStats::getJSONObject() {
+     if(bitset.counter[i] > 0) {
+       char buf[32];
+ 
+-      snprintf(buf, sizeof(buf), "%lu", begin_time+i*60);
++      snprintf(buf, sizeof(buf), "%lld", (long long) begin_time+i*60);
+       json_object_object_add(my_object, buf, json_object_new_int(bitset.counter[i]));
+     }
+   }

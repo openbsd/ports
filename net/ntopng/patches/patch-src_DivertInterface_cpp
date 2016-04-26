@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_DivertInterface_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/DivertInterface.cpp.orig	Tue Apr 26 17:13:32 2016
++++ src/DivertInterface.cpp	Tue Apr 26 17:17:12 2016
+@@ -44,6 +44,7 @@ static void* divertPacketPollLoop(void* ptr) {
+     socklen_t sin_len = sizeof(struct sockaddr_in);
+     u_int16_t c;
+     struct pcap_pkthdr h;
++    struct timeval tv;
+     
+     len = recvfrom(fd, packet, sizeof(packet), 0,
+ 		   (struct sockaddr *)&sin, &sin_len);
+@@ -58,7 +59,10 @@ static void* divertPacketPollLoop(void* ptr) {
+       break;
+     }
+    
+-    h.len = h.caplen = len, gettimeofday(&h.ts, NULL);
++    h.len = h.caplen = len;
++    gettimeofday(&tv, NULL);
++    h.ts.tv_sec = tv.tv_sec;
++    h.ts.tv_usec = tv.tv_usec;
+     iface->dissectPacket(&h, packet, &shaped, &c);
+ 
+     /* Enable the row below to specify the firewall rule corresponding to the protocol */

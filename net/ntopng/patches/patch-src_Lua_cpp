@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Lua_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/Lua.cpp.orig	Mon Apr 25 09:27:48 2016
++++ src/Lua.cpp	Mon Apr 25 19:49:20 2016
+@@ -3033,8 +3033,8 @@ static int ntop_generate_csrf_value(lua_State* vm) {
+   ntop->getTrace()->traceEvent(TRACE_INFO, "%s() called", __FUNCTION__);
+ 
+ #ifdef __OpenBSD__
+-  snprintf(random_a, sizeof(random_a), "%d", arc4random());
+-  snprintf(random_b, sizeof(random_b), "%lu", time(NULL)*arc4random());
++  arc4random_buf(random_a, sizeof(random_a) - 1);
++  arc4random_buf(random_b, sizeof(random_b) - 1);
+ #else
+   snprintf(random_a, sizeof(random_a), "%d", rand());
+   snprintf(random_b, sizeof(random_b), "%lu", time(NULL)*rand());

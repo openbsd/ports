@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_DummyInterface_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/DummyInterface.cpp.orig	Tue Apr 26 17:57:19 2016
++++ src/DummyInterface.cpp	Tue Apr 26 17:57:48 2016
+@@ -44,11 +44,11 @@ void DummyInterface::forgeFlow(u_int iteration) {
+     u_int16_t sport = 1234+i, dport = 80;
+ 
+     snprintf(payload, sizeof(payload), 
+-	     "{\"8\":\"%s\",\"12\":\"%s\",\"10\":0,\"14\":0,\"2\":%u,\"1\":%u,\"22\":%lu,\"21\":%lu,\"7\":%u,\"11\":%u,\"6\":0,\"4\":17,\"5\":0,\"16\":0,\"17\":0,\"9\":0,\"13\":0,\"42\":297}",
++	     "{\"8\":\"%s\",\"12\":\"%s\",\"10\":0,\"14\":0,\"2\":%u,\"1\":%u,\"22\":%llu,\"21\":%llu,\"7\":%u,\"11\":%u,\"6\":0,\"4\":17,\"5\":0,\"16\":0,\"17\":0,\"9\":0,\"13\":0,\"42\":297}",
+ 	     Utils::intoaV4(srcIp, a, sizeof(a)),
+ 	     Utils::intoaV4(dstIp, b, sizeof(b)),
+ 	     iteration, iteration*1500,
+-	     now-60, now, sport, dport);
++	     (long long)now-60, (long long)now, sport, dport);
+ 
+     parseFlow(payload, sizeof(payload), 1 /* source_id */, this /* iface */);
+   }

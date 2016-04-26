@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_NetworkInterface_h,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- include/NetworkInterface.h.orig	Tue Apr 26 17:20:12 2016
++++ include/NetworkInterface.h	Tue Apr 26 17:25:49 2016
+@@ -194,7 +194,7 @@ class NetworkInterface {
+ 		     u_int16_t vlan_id,
+ 		     struct ndpi_iphdr *iph,
+ 		     struct ndpi_ipv6hdr *ip6,
+-		     u_int16_t ipsize, u_int16_t rawsize,
++		     u_int32_t ipsize, u_int32_t rawsize,
+ 		     const struct pcap_pkthdr *h,
+ 		     const u_char *packet,
+ 		     bool *shaped,

@@ -1,0 +1,8 @@
+$OpenBSD: patch-nDPI_autogen_sh,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- nDPI/autogen.sh.orig	Mon Apr 25 19:49:22 2016
++++ nDPI/autogen.sh	Mon Apr 25 19:49:24 2016
+@@ -30,4 +30,3 @@ if test -z $AUTORECONF; then
+ fi
+ 
+ autoreconf -ivf
+-./configure $*

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/NetworkInterface.cpp.orig	Tue Apr 26 17:20:12 2016
++++ src/NetworkInterface.cpp	Tue Apr 26 17:25:39 2016
+@@ -679,8 +679,8 @@ bool NetworkInterface::processPacket(const struct bpf_
+ 				     u_int16_t vlan_id,
+ 				     struct ndpi_iphdr *iph,
+ 				     struct ndpi_ipv6hdr *ip6,
+-				     u_int16_t ipsize,
+-				     u_int16_t rawsize,
++				     u_int32_t ipsize,
++				     u_int32_t rawsize,
+ 				     const struct pcap_pkthdr *h,
+ 				     const u_char *packet,
+ 				     bool *shaped,

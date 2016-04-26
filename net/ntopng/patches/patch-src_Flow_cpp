@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_Flow_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/Flow.cpp.orig	Mon Apr 25 09:27:48 2016
++++ src/Flow.cpp	Tue Apr 26 17:53:24 2016
+@@ -1634,9 +1634,9 @@ json_object* Flow::flow2json(bool partial_dump) {
+ 
+ /* *************************************** */
+ 
+-void Flow::updatePacketStats(InterarrivalStats *stats, const struct timeval *when) {
++void Flow::updatePacketStats(InterarrivalStats *stats, const struct bpf_timeval *when) {
+   if(stats->lastTime.tv_sec != 0) {
+-    float deltaMS = (float)(Utils::timeval2usec((struct timeval*)when) - Utils::timeval2usec(&stats->lastTime))/(float)1000;
++    float deltaMS = (float)(Utils::timeval2usec(when) - Utils::timeval2usec(&stats->lastTime))/(float)1000;
+ 
+     if(deltaMS > 0) {
+       if(stats->max_ms == 0)
+@@ -1650,7 +1650,7 @@ void Flow::updatePacketStats(InterarrivalStats *stats,
+     }
+   }
+ 
+-  memcpy(&stats->lastTime, when, sizeof(struct timeval));
++  memcpy(&stats->lastTime, when, sizeof(struct bpf_timeval));
+ }
+ 
+ /* *************************************** */
+@@ -1669,8 +1669,8 @@ void Flow::dumpPacketStats(lua_State* vm, bool cli2srv
+ 
+ /* *************************************** */
+ 
+-void Flow::incStats(bool cli2srv_direction, u_int pkt_len,
+-		    u_int payload_len, const struct timeval *when) {
++void Flow::incStats(bool cli2srv_direction, u_int32_t pkt_len,
++		    u_int16_t payload_len, const struct bpf_timeval *when) {
+   updateSeen();
+   updatePacketStats(cli2srv_direction ? &cli2srvStats.pktTime : &srv2cliStats.pktTime, when);
+ 

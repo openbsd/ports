@@ -1,0 +1,37 @@
+$OpenBSD: README,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Running ntopng
+==============
+Configure the interfaces to listen on in ntopng_flags:
+
+  rcctl enable ntopng
+  rcctl set ntopng flags -i em0
+
+or to listen on two interfaces and allow them to be viewed either
+individually or combined:
+
+  rcctl set ntopng flags -i em0 -i em1 -i view:em0,em1
+
+By default ntopng's embedded web server listens to port 3000 from all
+interfaces. This can be restricted to localhost only by adding "-w :3000"
+to the flags.
+
+To use HTTPS on the built-in web server, create /etc/ssl/ntopng-cert.pem
+containing both the private key and certificate in the same file and make
+this readable by the _ntopng user. Use the -W flag to listen on HTTPS.
+
+ntopng uses redis as backend storage and will not start unless redis
+is running first. This can be done as follows:
+
+  rcctl enable redis
+  rcctl order redis ntopng
+
+Then you can start the daemons and connect to the web interface.
+
+  rcctl start redis ntopng
+
+Monitor disk space usage in ${LOCALSTATEDIR}/db/ntopng.

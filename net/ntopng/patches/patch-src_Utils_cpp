@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Utils_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+--- src/Utils.cpp.orig	Tue Apr 26 17:45:12 2016
++++ src/Utils.cpp	Tue Apr 26 17:45:48 2016
+@@ -201,7 +201,19 @@ float Utils::timeval2ms(struct timeval *tv) {
+ 
+ /* ****************************************************** */
+ 
++float Utils::timeval2ms(struct bpf_timeval *tv) {
++  return((float)tv->tv_sec*1000+(float)tv->tv_usec/1000);
++}
++
++/* ****************************************************** */
++
+ u_int32_t Utils::timeval2usec(const struct timeval *tv) {
++  return(tv->tv_sec*1000000+tv->tv_usec);
++}
++
++/* ****************************************************** */
++
++u_int32_t Utils::timeval2usec(const struct bpf_timeval *tv) {
+   return(tv->tv_sec*1000000+tv->tv_usec);
+ }
+ 
