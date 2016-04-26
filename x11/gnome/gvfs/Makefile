@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2016/04/25 13:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2016/04/26 21:00:38 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,6 +14,8 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+
+REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,14 +38,15 @@ WANTLIB-main += pthread-stubs secret-1 soup-2.4 sqlite3 xcb xcb-render
 WANTLIB-main += xcb-shm xml2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += com_err crypto dcerpc-binding execinfo gcrypt gensec
+WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors
 WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn
 WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
 WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
 WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf
 WANTLIB-smb += ssl talloc tasn1 tdb tevent tevent-util util-setid
-WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1
+WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1 tevent-unix-util
 WANTLIB-smb += lib/samba/asn1-samba4
+WANTLIB-smb += lib/samba/com_err-samba4
 WANTLIB-smb += lib/samba/gssapi-samba4
 WANTLIB-smb += lib/samba/hcrypto-samba4
 WANTLIB-smb += lib/samba/heimbase-samba4
