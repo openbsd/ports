@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/12/02 07:39:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/04/26 07:38:25 jasper Exp $
 @conflict gupnp-vala-<=0.10.3p0
 @bin bin/gssdp-device-sniffer
 include/gssdp-1.0/
@@ -8,18 +8,14 @@ include/gssdp-1.0/libgssdp/gssdp-error.h
 include/gssdp-1.0/libgssdp/gssdp-resource-browser.h
 include/gssdp-1.0/libgssdp/gssdp-resource-group.h
 include/gssdp-1.0/libgssdp/gssdp.h
-lib/girepository-1.0/
 lib/girepository-1.0/GSSDP-1.0.typelib
 lib/libgssdp-1.0.a
 lib/libgssdp-1.0.la
 @lib lib/libgssdp-1.0.so.${LIBgssdp-1.0_VERSION}
 lib/pkgconfig/gssdp-1.0.pc
-share/gir-1.0/
 share/gir-1.0/GSSDP-1.0.gir
 share/gssdp/
 share/gssdp/gssdp-device-sniffer.ui
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gssdp/
 share/gtk-doc/html/gssdp/GSSDPClient.html
 share/gtk-doc/html/gssdp/GSSDPResourceBrowser.html
@@ -37,7 +33,5 @@ share/gtk-doc/html/gssdp/right.png
 share/gtk-doc/html/gssdp/style.css
 share/gtk-doc/html/gssdp/up-insensitive.png
 share/gtk-doc/html/gssdp/up.png
-share/vala/
-share/vala/vapi/
 share/vala/vapi/gssdp-1.0.deps
 share/vala/vapi/gssdp-1.0.vapi
