@@ -1,44 +1,74 @@
-# $OpenBSD: Makefile,v 1.74 2016/03/09 18:22:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2016/04/26 17:59:50 naddy Exp $
 
-COMMENT=	toolkit for converting images between different formats
+COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.35.97
-SHARED_LIBS=	netpbm	2.0
+DISTNAME=	netpbm-10.74.02
+SHARED_LIBS=	netpbm	3.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp c jasper jbig jpeg m png pthread pthread-stubs
-WANTLIB += tiff xcb xml2 z
+WANTLIB=	X11 c jasper jbig jpeg m png tiff xml2 z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netpbm/}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://shell.uugrn.org/~naddy/
+EXTRACT_SUFX=	.tar.xz
 
-MODULES=	converters/libiconv
 LIB_DEPENDS=	graphics/tiff \
 		graphics/jpeg \
 		graphics/png \
-		graphics/jbigkit>=2.0 \
+		graphics/jbigkit \
 		graphics/jasper \
 		textproc/libxml
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
-ALL_TARGET=
 INSTALL_TARGET=	install.bin install.lib install.data \
 		install.hdr install.staticlib
 
 MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
-FAKE_FLAGS=	PKGDIR="${WRKINST}${TRUEPREFIX}"
+# programs can take seed on command line
+MAKE_FLAGS+=	CFLAGS_CONFIG="-Dsrand=srand_deterministic"
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/pm_config.in.h
-	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
-# Missing in some releases
-	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
+FAKE_FLAGS=	pkgdir="${WRKINST}${TRUEPREFIX}"
 
-NO_TEST=	Yes
+do-configure:
+	cp ${FILESDIR}/config.mk ${WRKSRC}
+
+TEST_DEPENDS=	shells/bash sysutils/coreutils
+TEST_TARGET=	check
+TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
+		resultdir="${WRKDIR}/tests" \
+          	RGBDEF="${WRKINST}${PREFIX}/share/netpbm/rgb.txt"
+
+# cp -v, head -c, mv -T, seq
+pre-test:
+	@for i in cp head mv seq; do \
+		ln -s ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
+	done
+	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \
+	    ${WRKSRC}/test/Execute-Tests ${WRKSRC}/test/*.test
+
+# must run after fake
+test: fake
+
+# Get the latest release in a release series from Netpbm Subversion.
+# Requires devel/subversion.
+distfile:
+	@REPO=https://svn.code.sf.net/p/netpbm/code; \
+	SERIES=advanced; \
+	REV=`svn info $$REPO/$$SERIES/version.mk | \
+	    sed -n 's/Last Changed Rev: //p'`; \
+	VERSION=`(svn cat -r$$REV $$REPO/$$SERIES/version.mk; \
+	    echo 'all:'; \
+	    echo '	@printf "%02d.%02d.%02d" \\'; \
+	    echo '	    $${NETPBM_MAJOR_RELEASE} \\'; \
+	    echo '	    $${NETPBM_MINOR_RELEASE} \\'; \
+	    echo '	    $${NETPBM_POINT_RELEASE}'; \
+	    ) | make -f-`; \
+	svn export -r$$REV $$REPO/$$SERIES "netpbm-$$VERSION"; \
+	tar cf - "netpbm-$$VERSION" | xz >"netpbm-$$VERSION".tar.xz; \
+	rm -rf "netpbm-$$VERSION"
 
 .include <bsd.port.mk>

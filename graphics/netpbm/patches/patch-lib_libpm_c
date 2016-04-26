@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_libpm_c,v 1.1 2016/04/26 17:59:51 naddy Exp $
+--- lib/libpm.c.orig	Mon Mar 30 01:07:03 2015
++++ lib/libpm.c	Tue Apr 26 10:59:12 2016
+@@ -785,7 +785,7 @@ pm_arg0toprogname(const char arg0[]) {
+ unsigned int
+ pm_randseed(void) {
+ 
+-    return time(NULL) ^ getpid();
++    return arc4random();
+ 
+ }
+ 

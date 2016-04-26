@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile.config.OpenBSD,v 1.11 2016/03/09 18:22:52 naddy Exp $
-# Indented variables are unchanged from the defaults in Makefile.config.in.
+# $OpenBSD: config.mk,v 1.1 2016/04/26 17:59:50 naddy Exp $
+# Indented variables are unchanged from the defaults in config.mk.in.
 # Commented out variables are set in MAKE_FLAGS.
 #
  DEFAULT_TARGET = nonmerge
  BUILD_FIASCO = Y
-#CC
+#CC = cc
  LD = $(CC)
  LINKERISCOMPILER=Y
  LINKER_CAN_DO_EXPLICIT_LIBRARY=N
  INTTYPES_H = <inttypes.h>
  HAVE_INT64 = Y
+ WANT_SSE = N
  CC_FOR_BUILD = $(CC)
  LD_FOR_BUILD = $(LD)
- CFLAGS_FOR_BUILD = $(CFLAGS)
-#INSTALL = $(SRCDIR)/buildtools/install.sh
+ CFLAGS_FOR_BUILD = $(CFLAGS_CONFIG)
+ LDFLAGS_FOR_BUILD = $(LDFLAGS)
+ WINDRES = windres
+INSTALL = install
  STRIPFLAG = -s
  SYMLINK = ln -s
  MANPAGE_FORMAT = nroff
@@ -26,47 +29,54 @@
 LDSHLIB = -shared
  LDRELOC = NONE
 CFLAGS_SHLIB = -fPIC
- SHLIB_CLIB =
+ SHLIB_CLIB = -lc
  NEED_RUNTIME_PATH = N
- NETPBMLIB_RUNTIME_PATH =
+ RPATHOPTNAME = -rpath
+ NETPBMLIB_RUNTIME_PATH = 
 TIFFLIB = -L$(LOCALBASE)/lib -ltiff
 TIFFHDR_DIR = $(LOCALBASE)/include
  TIFFLIB_NEEDS_JPEG = Y
  TIFFLIB_NEEDS_Z = Y
 JPEGLIB = -L$(LOCALBASE)/lib -ljpeg
 JPEGHDR_DIR = $(LOCALBASE)/include
+ PNGLIB = NONE
+ PNGHDR_DIR =
  PNGVER = 
 ZLIB = -lz
- ZHDR_DIR =
+ ZHDR_DIR = 
 JBIGLIB = -L$(LOCALBASE)/lib -ljbig
 JBIGHDR_DIR = $(LOCALBASE)/include
 JASPERLIB = -L$(LOCALBASE)/lib -ljasper
 JASPERHDR_DIR = $(LOCALBASE)/include
+ JASPERDEPLIBS =
  URTLIB = $(BUILDDIR)/urt/librle.a
  URTHDR_DIR = $(SRCDIR)/urt
-X11LIB = -L$(X11BASE)/lib -lX11 -lXau -lXdmcp -lxcb -lpthread-stubs
+X11LIB = -L$(X11BASE)/lib -lX11
 X11HDR_DIR = $(X11BASE)/include
  LINUXSVGALIB = NONE
+ LINUXSVGAHDR_DIR = 
+ WINICON_OBJECT =
  OMIT_NETWORK =
- NETWORKLD =
- VMS =
+ NETWORKLD = 
  DONT_HAVE_PROCESS_MGMT = N
 #PKGDIR_DEFAULT = /tmp/netpbm
+#RESULTDIR_DEFAULT = /tmp/netpbm-test
  PKGMANDIR = man
- INSTALL_PERM_BIN =  755
- INSTALL_PERM_LIBD = 755
- INSTALL_PERM_LIBS = 644
- INSTALL_PERM_HDR =  644
- INSTALL_PERM_MAN =  644
- INSTALL_PERM_DATA = 644
+INSTALL_PERM_BIN =  $(BINMODE)
+INSTALL_PERM_LIBD = $(DIRMODE)
+INSTALL_PERM_LIBS = $(NONBINMODE)
+INSTALL_PERM_HDR =  $(NONBINMODE)
+INSTALL_PERM_MAN =  $(MANMODE)
+INSTALL_PERM_DATA = $(NONBINMODE)
  SUFFIXMANUALS1 = 1
  SUFFIXMANUALS3 = 3
  SUFFIXMANUALS5 = 5
  NETPBMLIBTYPE = unixshared
  NETPBMLIBSUFFIX = so
- STATICLIB_TOO = y
+ STATICLIB_TOO = Y
  STATICLIBSUFFIX = a
  SHLIBPREFIXLIST = lib
  NETPBMSHLIBPREFIX = $(firstword $(SHLIBPREFIXLIST))
  DLLVER =
  NETPBM_DOCURL = http://netpbm.sourceforge.net/doc/
+ RGB_DB_PATH = $(PREFIX)/share/netpbm/rgb.txt:/usr/X11R6/share/X11/rgb.txt

@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_mk,v 1.1 2016/04/26 17:59:51 naddy Exp $
+--- common.mk.orig	Sat Sep 26 21:59:25 2015
++++ common.mk	Mon Apr 25 19:43:02 2016
+@@ -470,7 +470,7 @@ endif
+ 
+ PKGMANSUBDIRS = man1 man3 man5 web
+ 
+-PKGSUBDIRS = bin include include/netpbm lib link misc \
++PKGSUBDIRS = bin include include/netpbm lib link share/netpbm \
+   $(PKGMANSUBDIRS:%=$(PKGMANDIR)/%)
+ 
+ $(PKGSUBDIRS:%=$(PKGDIR)/%):
+@@ -504,7 +504,7 @@ $(SCRIPTS:%=%_installscript): $(PKGDIR)/bin
+ install.data: $(DATAFILES:%=%_installdata) $(SUBDIRS:%=%/install.data)
+ 
+ .PHONY: $(DATAFILES:%=%_installdata) 
+-$(DATAFILES:%=%_installdata): $(PKGDIR)/misc
++$(DATAFILES:%=%_installdata): $(PKGDIR)/share/netpbm
+ 	$(INSTALL) -c -m $(INSTALL_PERM_DATA) \
+ 	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $<
+ 

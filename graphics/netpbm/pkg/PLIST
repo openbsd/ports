@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/07/08 20:48:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/04/26 17:59:51 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
 @bin bin/atktopbm
+@bin bin/avstopam
 @bin bin/bioradtopgm
 @bin bin/bmptopnm
 bin/bmptoppm
 @bin bin/brushtopbm
 @bin bin/cameratopam
+@bin bin/cistopbm
 @bin bin/cmuwmtopbm
 @bin bin/ddbugtopbm
 @bin bin/escp2topbm
@@ -23,7 +25,7 @@ bin/gemtopbm
 @bin bin/hdifftopam
 @bin bin/hipstopgm
 @comment bin/hpcdtoppm
-@bin bin/icontopbm
+bin/icontopbm
 @bin bin/ilbmtoppm
 @bin bin/imgtoppm
 @bin bin/infotopam
@@ -42,9 +44,11 @@ bin/manweb
 @bin bin/palmtopnm
 @bin bin/pamaddnoise
 @bin bin/pamarith
+@bin bin/pambackground
 @bin bin/pambayer
 @bin bin/pamchannel
 @bin bin/pamcomp
+@bin bin/pamcrater
 @bin bin/pamcut
 @bin bin/pamdeinterlace
 @bin bin/pamdepth
@@ -53,7 +57,10 @@ bin/manweb
 @bin bin/pamedge
 @bin bin/pamendian
 @bin bin/pamenlarge
+@bin bin/pamexec
 @bin bin/pamfile
+@bin bin/pamfix
+bin/pamfixtrunc
 @bin bin/pamflip
 @bin bin/pamfunc
 @bin bin/pamgauss
@@ -61,15 +68,21 @@ bin/manweb
 @bin bin/pamlookup
 @bin bin/pammasksharpen
 @bin bin/pammixinterlace
+@bin bin/pammosaicknit
 @bin bin/pamoil
+@bin bin/pampaintspill
 @bin bin/pamperspective
 @bin bin/pampick
 @bin bin/pampop9
-@bin bin/pamrgbatopng
+@bin bin/pamrecolor
+bin/pamrgbatopng
+@bin bin/pamrubber
 @bin bin/pamscale
 @bin bin/pamseq
+@bin bin/pamshadedrelief
 @bin bin/pamsharpmap
 @bin bin/pamsharpness
+@bin bin/pamsistoaglyph
 @bin bin/pamslice
 @bin bin/pamsplit
 @bin bin/pamstack
@@ -80,23 +93,37 @@ bin/pamstretch-gen
 @bin bin/pamsummcol
 @bin bin/pamthreshold
 @bin bin/pamtilt
+@bin bin/pamtoavs
 @bin bin/pamtodjvurle
 @bin bin/pamtofits
+@bin bin/pamtogif
 @bin bin/pamtohdiff
 @bin bin/pamtohtmltbl
 @bin bin/pamtojpeg2k
+@bin bin/pamtompfont
+@bin bin/pamtooctaveimg
+@bin bin/pamtopam
+@bin bin/pamtopdbimg
 @bin bin/pamtopfm
+@bin bin/pamtopng
 @bin bin/pamtopnm
+@bin bin/pamtosrf
 @bin bin/pamtosvg
 @bin bin/pamtotga
 @bin bin/pamtotiff
 @bin bin/pamtouil
+@bin bin/pamtowinicon
 @bin bin/pamtoxvmini
+@bin bin/pamundice
+@bin bin/pamunlookup
+@bin bin/pamvalidate
+@bin bin/pamwipeout
 @bin bin/pamx
 @bin bin/pbmclean
 @bin bin/pbmlife
 @bin bin/pbmmake
 @bin bin/pbmmask
+@bin bin/pbmminkowski
 @bin bin/pbmpage
 @bin bin/pbmpscale
 @bin bin/pbmreduce
@@ -107,6 +134,7 @@ bin/pamstretch-gen
 @bin bin/pbmtoascii
 @bin bin/pbmtoatk
 @bin bin/pbmtobbnbg
+@bin bin/pbmtocis
 @bin bin/pbmtocmuwm
 @bin bin/pbmtodjvurle
 @bin bin/pbmtoepsi
@@ -116,7 +144,7 @@ bin/pamstretch-gen
 @bin bin/pbmtogem
 @bin bin/pbmtogo
 @bin bin/pbmtoibm23xx
-@bin bin/pbmtoicon
+bin/pbmtoicon
 @bin bin/pbmtolj
 @bin bin/pbmtoln03
 @bin bin/pbmtolps
@@ -133,8 +161,9 @@ bin/pamstretch-gen
 @bin bin/pbmtoppa
 @bin bin/pbmtopsg3
 @bin bin/pbmtoptx
+@bin bin/pbmtosunicon
 @bin bin/pbmtowbmp
-@bin bin/pbmtox10bm
+bin/pbmtox10bm
 @bin bin/pbmtoxbm
 @bin bin/pbmtoybm
 @bin bin/pbmtozinc
@@ -142,10 +171,11 @@ bin/pamstretch-gen
 @bin bin/pc1toppm
 bin/pcdovtoppm
 @bin bin/pcxtoppm
+@bin bin/pdbimgtopam
 @bin bin/pfmtopam
 @bin bin/pgmabel
 @bin bin/pgmbentley
-@bin bin/pgmcrater
+bin/pgmcrater
 @bin bin/pgmdeshadow
 bin/pgmedge
 @bin bin/pgmenhance
@@ -166,20 +196,23 @@ bin/pgmslice
 @bin bin/pgmtopbm
 @bin bin/pgmtopgm
 @bin bin/pgmtoppm
+@bin bin/pgmtosbig
+@bin bin/pgmtost4
 @bin bin/pi1toppm
 @bin bin/pi3topbm
 @bin bin/picttoppm
 @bin bin/pjtoppm
 @bin bin/pktopbm
-@bin bin/pngtopnm
+@bin bin/pngtopam
+bin/pngtopnm
 @bin bin/pnmalias
 bin/pnmarith
 @bin bin/pnmcat
 @bin bin/pnmcolormap
-@bin bin/pnmcomp
+bin/pnmcomp
 @bin bin/pnmconvol
 @bin bin/pnmcrop
-@bin bin/pnmcut
+bin/pnmcut
 bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
@@ -191,6 +224,7 @@ bin/pnmflip
 bin/pnminterp
 @bin bin/pnminvert
 bin/pnmmargin
+@bin bin/pnmmercator
 @bin bin/pnmmontage
 @bin bin/pnmnlfilt
 bin/pnmnoraw
@@ -199,9 +233,10 @@ bin/pnmnoraw
 @bin bin/pnmpaste
 @bin bin/pnmpsnr
 bin/pnmquant
+bin/pnmquantall
 @bin bin/pnmremap
 @bin bin/pnmrotate
-@bin bin/pnmscale
+bin/pnmscale
 @bin bin/pnmscalefixed
 @bin bin/pnmshear
 @bin bin/pnmsmooth
@@ -259,7 +294,9 @@ bin/ppmshadow
 @bin bin/ppmshift
 @bin bin/ppmspread
 @bin bin/ppmtoacad
+@bin bin/ppmtoapplevol
 @bin bin/ppmtoarbtxt
+@bin bin/ppmtoascii
 @bin bin/ppmtobmp
 @bin bin/ppmtoeyuv
 @bin bin/ppmtogif
@@ -282,6 +319,7 @@ bin/ppmtomap
 @bin bin/ppmtopuzz
 @bin bin/ppmtorgb3
 @bin bin/ppmtosixel
+@bin bin/ppmtospu
 @bin bin/ppmtoterm
 bin/ppmtotga
 bin/ppmtouil
@@ -307,11 +345,15 @@ bin/ppmtouil
 @bin bin/spctoppm
 @bin bin/spottopgm
 @bin bin/sputoppm
+@bin bin/srftopam
+@bin bin/st4topgm
+@bin bin/sunicontopnm
 @bin bin/svgtopam
 @bin bin/tgatoppm
 @bin bin/thinkjettopbm
 @bin bin/tifftopnm
 @bin bin/wbmptopbm
+@bin bin/winicontopam
 @bin bin/winicontoppm
 @bin bin/xbmtopbm
 @bin bin/ximtoppm
@@ -321,25 +363,29 @@ bin/ppmtouil
 @bin bin/ybmtopbm
 @bin bin/yuvsplittoppm
 @bin bin/yuvtoppm
+@bin bin/yuy2topam
 @bin bin/zeisstopnm
-include/bitio.h
-include/colorname.h
-include/mallocvar.h
-include/nstring.h
-include/pam.h
-include/pammap.h
-include/pbm.h
-include/pbmfont.h
-include/pgm.h
-include/pm.h
-include/pm_config.h
-include/pm_gamma.h
-include/pm_system.h
-include/pnm.h
-include/ppm.h
-include/ppmcmap.h
-include/ppmfloyd.h
-include/shhopt.h
+include/netpbm/
+include/netpbm/colorname.h
+include/netpbm/mallocvar.h
+include/netpbm/pam.h
+include/netpbm/pamdraw.h
+include/netpbm/pammap.h
+include/netpbm/pbm.h
+include/netpbm/pbmfont.h
+include/netpbm/pgm.h
+include/netpbm/pm.h
+include/netpbm/pm_config.h
+include/netpbm/pm_gamma.h
+include/netpbm/pm_system.h
+include/netpbm/pnm.h
+include/netpbm/ppm.h
+include/netpbm/ppmcmap.h
+include/netpbm/ppmdfont.h
+include/netpbm/ppmdraw.h
+include/netpbm/ppmfloyd.h
+include/netpbm/runlength.h
+include/netpbm/shhopt.h
 lib/libnetpbm.a
 @lib lib/libnetpbm.so.${LIBnetpbm_VERSION}
 share/netpbm/
