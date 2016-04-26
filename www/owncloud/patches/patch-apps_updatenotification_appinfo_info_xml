@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_updatenotification_appinfo_info_xml,v 1.1 2016/04/26 12:05:19 ajacoutot Exp $
+--- apps/updatenotification/appinfo/info.xml.orig	Mon Apr 25 17:04:58 2016
++++ apps/updatenotification/appinfo/info.xml	Mon Apr 25 17:05:09 2016
+@@ -6,7 +6,6 @@
+ 	<licence>AGPL</licence>
+ 	<author>Lukas Reschke</author>
+ 	<version>0.1.0</version>
+-	<default_enable/>
+ 	<dependencies>
+ 		<owncloud min-version="9.0" max-version="9.0" />
+ 	</dependencies>

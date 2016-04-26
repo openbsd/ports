@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.103 2016/03/14 09:29:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2016/04/26 12:05:19 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
-V=			8.2.3
+V=			9.0.1
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
