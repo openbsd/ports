@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/04/26 07:39:32 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
-GNOME_VERSION=		0.20.16
+GNOME_VERSION=		0.20.17
 
 SHARED_LIBS +=  gupnp-1.0            3.2     # 4.0
 
-MODULES=		devel/gettext \
-			lang/python \
+MODULES=		lang/python \
 			x11/gnome
 
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma intl iconv
 WANTLIB += gssdp-1.0 m pcre soup-2.4 xml2 z ffi pthread sqlite3
 
 MODGNOME_TOOLS += gobject-introspection vala
 
-LIB_DEPENDS=		net/gssdp>=0.14.13
+LIB_DEPENDS=		net/gssdp>=0.14.15
 
 MODPY_ADJ_FILES=	tools/gupnp-binding-tool
 
