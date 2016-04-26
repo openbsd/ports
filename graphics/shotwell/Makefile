@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2016/04/16 10:48:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2016/04/26 11:10:56 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.22.1
+GNOME_VERSION =		0.23.0
 GNOME_PROJECT =		shotwell
 
 CATEGORIES =		graphics
@@ -42,13 +42,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--disable-desktop-update \
 			--disable-icon-update
 
-# From 3ae27fc3f41ceb7820f365244e6ae6a4dc65fcaa Mon Sep 17 00:00:00 2001
-# Subject: Port to webkit2gtk-4.0
-post-extract:
-	rm ${WRKSRC}/vapi/webkitgtk-3.0.deps \
-		${WRKSRC}/vapi/webkitgtk-3.0.vapi
-
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/plugins/Makefile.plugin.mk
+	${SUBST_CMD} ${WRKSRC}/Makefile \
+		${WRKSRC}/plugins/Makefile.plugin.mk
 
 .include <bsd.port.mk>

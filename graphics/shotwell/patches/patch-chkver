@@ -1,0 +1,9 @@
+$OpenBSD: patch-chkver,v 1.1 2016/04/26 11:10:56 ajacoutot Exp $
+--- chkver.orig	Tue Apr 26 12:50:25 2016
++++ chkver	Tue Apr 26 12:50:28 2016
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ #
+ # Copyright 2009-2015 Yorba Foundation
+ #
