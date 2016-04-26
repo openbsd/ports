@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 14:19:03 feinerer Exp $
+bin/muttprint
+@bin bin/muttprint-langinfo
+@man man/de/man1/muttprint.1
+man/es/
+man/es/man1/
+@man man/es/man1/muttprint.1
+man/it/
+man/it/man1/
+@man man/it/man1/muttprint.1
+@man man/man1/muttprint.1
+share/doc/muttprint/
+share/doc/muttprint/sample-muttprintrc-de
+share/doc/muttprint/sample-muttprintrc-en
+share/doc/muttprint/sample-muttprintrc-es
+share/doc/muttprint/sample-muttprintrc-fr
+share/doc/muttprint/sample-muttprintrc-it
+share/doc/muttprint/sample-muttprintrc-nl
+share/doc/muttprint/sample-muttprintrc-si
+share/muttprint/
+share/muttprint/BabyTuX.eps
+share/muttprint/BabyTuX_color.eps
+share/muttprint/Debian.eps
+share/muttprint/Debian_color.eps
+share/muttprint/Gentoo.eps
+share/muttprint/Gentoo_color.eps
+share/muttprint/README.pics
+share/muttprint/penguin.eps
+share/muttprint/translations/
+share/muttprint/translations/translation-cs.pl
+share/muttprint/translations/translation-de.pl
+share/muttprint/translations/translation-es.pl
+share/muttprint/translations/translation-example.pl
+share/muttprint/translations/translation-fi.pl
+share/muttprint/translations/translation-fr.pl
+share/muttprint/translations/translation-hu.pl
+share/muttprint/translations/translation-it.pl
+share/muttprint/translations/translation-nl.pl
+share/muttprint/translations/translation-pl.pl
+share/muttprint/translations/translation-pt.pl
+share/muttprint/translations/translation-ru.pl
+share/muttprint/translations/translation-sl.pl
+share/muttprint/translations/translation-sv.pl
