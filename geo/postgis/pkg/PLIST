@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/10/30 12:09:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/04/26 20:19:01 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
@@ -61,6 +61,8 @@ share/doc/postgresql/postgis/images/st_azimuth02.png
 share/doc/postgresql/postgis/images/st_band01.png
 share/doc/postgresql/postgis/images/st_band02.png
 share/doc/postgresql/postgis/images/st_band03.png
+share/doc/postgresql/postgis/images/st_boundary01.png
+share/doc/postgresql/postgis/images/st_boundary02.png
 share/doc/postgresql/postgis/images/st_buffer01.png
 share/doc/postgresql/postgis/images/st_buffer02.png
 share/doc/postgresql/postgis/images/st_buffer03.png
@@ -221,22 +223,23 @@ share/postgresql/contrib/postgis-2.2/legacy_gist.sql
 share/postgresql/contrib/postgis-2.2/legacy_minimal.sql
 share/postgresql/contrib/postgis-2.2/postgis.sql
 share/postgresql/contrib/postgis-2.2/postgis_comments.sql
+share/postgresql/contrib/postgis-2.2/postgis_proc_set_search_path.sql
 share/postgresql/contrib/postgis-2.2/postgis_restore.pl
 share/postgresql/contrib/postgis-2.2/postgis_upgrade.sql
 share/postgresql/contrib/postgis-2.2/raster_comments.sql
 share/postgresql/contrib/postgis-2.2/rtpostgis.sql
 share/postgresql/contrib/postgis-2.2/rtpostgis_legacy.sql
+share/postgresql/contrib/postgis-2.2/rtpostgis_proc_set_search_path.sql
 share/postgresql/contrib/postgis-2.2/rtpostgis_upgrade.sql
 share/postgresql/contrib/postgis-2.2/sfcgal_comments.sql
 share/postgresql/contrib/postgis-2.2/spatial_ref_sys.sql
+share/postgresql/contrib/postgis-2.2/topology.sql
 share/postgresql/contrib/postgis-2.2/topology_comments.sql
+share/postgresql/contrib/postgis-2.2/topology_upgrade.sql
 share/postgresql/contrib/postgis-2.2/uninstall_legacy.sql
 share/postgresql/contrib/postgis-2.2/uninstall_postgis.sql
 share/postgresql/contrib/postgis-2.2/uninstall_rtpostgis.sql
-share/postgresql/contrib/postgis_topology-2.2/
-share/postgresql/contrib/postgis_topology-2.2/topology.sql
-share/postgresql/contrib/postgis_topology-2.2/topology_upgrade.sql
-share/postgresql/contrib/postgis_topology-2.2/uninstall_topology.sql
+share/postgresql/contrib/postgis-2.2/uninstall_topology.sql
 share/postgresql/extension/address_standardizer--1.0--${V}.sql
 share/postgresql/extension/address_standardizer--${V}--${V}next.sql
 share/postgresql/extension/address_standardizer--${V}.sql
@@ -266,10 +269,12 @@ share/postgresql/extension/postgis--2.1.6--${V}.sql
 share/postgresql/extension/postgis--2.1.7--${V}.sql
 share/postgresql/extension/postgis--2.1.8--${V}.sql
 share/postgresql/extension/postgis--2.1.9--${V}.sql
+share/postgresql/extension/postgis--2.2.0--${V}.sql
+share/postgresql/extension/postgis--2.2.1--${V}.sql
+share/postgresql/extension/postgis--${V}--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
-share/postgresql/extension/postgis--${V}rc1--${V}.sql
 share/postgresql/extension/postgis--unpackaged--${V}.sql
 share/postgresql/extension/postgis.control
 share/postgresql/extension/postgis_tiger_geocoder--2.0.0--${V}.sql
@@ -290,10 +295,12 @@ share/postgresql/extension/postgis_tiger_geocoder--2.1.6--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.7--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.8--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--2.1.9--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.2.0--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--2.2.1--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
-share/postgresql/extension/postgis_tiger_geocoder--${V}rc1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--unpackaged--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder.control
 share/postgresql/extension/postgis_tiger_geocoder.sql
@@ -315,9 +322,11 @@ share/postgresql/extension/postgis_topology--2.1.6--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.7--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.8--${V}.sql
 share/postgresql/extension/postgis_topology--2.1.9--${V}.sql
+share/postgresql/extension/postgis_topology--2.2.0--${V}.sql
+share/postgresql/extension/postgis_topology--2.2.1--${V}.sql
+share/postgresql/extension/postgis_topology--${V}--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql
-share/postgresql/extension/postgis_topology--${V}rc1--${V}.sql
 share/postgresql/extension/postgis_topology--unpackaged--${V}.sql
 share/postgresql/extension/postgis_topology.control
