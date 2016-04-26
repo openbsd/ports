@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.567 2016/03/20 20:42:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.568 2016/04/26 15:36:41 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -214,7 +214,6 @@
      SUBDIR += polkit-qt
      SUBDIR += polkit-qt,qt5
      SUBDIR += pwm
-     SUBDIR += py-Xlib
      SUBDIR += py-gtk2
      SUBDIR += py-kiwi
      SUBDIR += py-osd
@@ -222,7 +221,6 @@
      SUBDIR += py-qt4
      SUBDIR += py-qt5
      SUBDIR += py-wxPython
-     SUBDIR += pypanel
      SUBDIR += qinx
      SUBDIR += qrfcview
      SUBDIR += qt3
