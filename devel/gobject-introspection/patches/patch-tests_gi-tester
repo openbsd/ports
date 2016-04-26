@@ -1,7 +1,9 @@
-$OpenBSD: patch-tests_gi-tester,v 1.2 2016/04/26 16:03:14 jasper Exp $
+$OpenBSD: patch-tests_gi-tester,v 1.3 2016/04/26 20:52:52 jasper Exp $
 
-Replace -B GNUism wit portable -I-equivalent
-https://bugzilla.gnome.org/show_bug.cgi?id=765618
+From dbbb8b36f2573134d46d5a514a86cc82a18e89d9 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Tue, 26 Apr 2016 17:58:29 +0200
+Subject: Replace GNU -B extension with a more portable -I equivalent
 
 --- tests/gi-tester.orig	Tue Apr 26 17:51:36 2016
 +++ tests/gi-tester	Tue Apr 26 17:51:42 2016
