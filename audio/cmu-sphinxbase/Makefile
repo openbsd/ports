@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/27 20:53:34 eric Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
 VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
 PKGNAME=	cmu-sphinxbase-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 SHARED_LIBS= 	sphinxbase	1.0 \
 		sphinxad	1.0
 
 HOMEPAGE=	http://cmusphinx.sourceforge.net/
-
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
 # CMU
 PERMIT_PACKAGE_CDROM=	Yes
