@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/26 14:19:03 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/27 09:18:03 feinerer Exp $
 
 COMMENT =	pretty printing of your mails
 
@@ -17,6 +17,8 @@ WANTLIB += c
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=muttprint/}
 
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS =		converters/p5-Text-Iconv \
 			devel/p5-Time-TimeDate \
 			graphics/ImageMagick \
