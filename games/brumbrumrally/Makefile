@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/05 13:01:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/27 21:06:27 ajacoutot Exp $
 
 COMMENT =		racing game with randomized tracks
 
-DISTNAME =		brumbrumrally-0.5
+DISTNAME =		brumbrumrally-0.6
 
 CATEGORIES =		games
 
