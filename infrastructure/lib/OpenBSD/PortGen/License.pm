@@ -1,4 +1,4 @@
-# $OpenBSD: License.pm,v 1.1.1.1 2016/01/18 18:08:19 tsg Exp $
+# $OpenBSD: License.pm,v 1.2 2016/04/27 09:58:35 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -27,8 +27,6 @@ our @EXPORT_OK = qw(
 );
 
 # Add licenses not recognized here.
-# Lowercase of what API returns as the key
-# and printable string as the value.
 my %good_licenses = (
 	agpl_3      => 'AGPL 3',
 	apache_1_1  => 'Apache 1.1',
@@ -44,6 +42,7 @@ my %good_licenses = (
 	lgpl_2_1    => 'LGPL v2.1',
 	'lgpl_2_1+' => 'LGPL v2.1',
 	mit         => 'MIT',
+	new_bsd     => 'BSD-3',
 	perl_5      => 'Perl',
 	ruby        => 'Ruby',
 	qpl_1_0     => 'QPLv1',
