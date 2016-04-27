@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/21 10:03:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.20 2016/04/27 12:37:30 shadchin Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
-MODPY_EGG_VERSION=	2.3.3
+MODPY_EGG_VERSION=	2.3.4
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=    		devel
