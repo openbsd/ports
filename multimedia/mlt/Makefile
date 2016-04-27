@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/03 19:15:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/27 10:46:31 jca Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -6,6 +6,8 @@ VERSION =		6.0.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
+REVISION-main =		0
+REVISION-gpl2 =		0
 
 # XXX versions should be kept in sync together
 SHARED_LIBS =		mlt		1.1
@@ -24,7 +26,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB-main =  ${MODGCC4_CPPWANTLIB} SDL SDL_image X11 avcodec
 WANTLIB-main += avdevice avformat avutil c cairo exif gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
-WANTLIB-main += pangoft2-1.0 pthread sox swfdec-0.8 swscale xml2 fftw3
+WANTLIB-main += pangoft2-1.0 pthread sox swscale xml2 fftw3
 
 WANTLIB-gpl2 =  ${MODGCC4_CPPWANTLIB} ${MODQT4_WANTLIB} lib/qt4/QtGui
 WANTLIB-gpl2 += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtOpenGL
@@ -53,7 +55,6 @@ LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
 			devel/sdl-image>=1.2 \
 			graphics/ffmpeg \
 			graphics/libexif \
-			graphics/swfdec \
 			math/fftw3 \
 			x11/gtk+2,-main
 
@@ -72,6 +73,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--disable-dv \
 			--disable-frei0r \
 			--disable-kino \
+			--disable-swfdec \
 			--enable-gpl
 
 # one test fails due to lack of support of locale-specific numeric formatting
