@@ -1,4 +1,4 @@
-# $OpenBSD: font.port.mk,v 1.1 2016/04/26 11:33:03 jasper Exp $
+# $OpenBSD: font.port.mk,v 1.2 2016/04/27 14:58:17 jasper Exp $
 
 CATEGORIES +=	fonts
 
@@ -17,8 +17,10 @@ FONTDIR ?=	${PREFIX}/share/fonts/${TYPEFACE}
 
 FONTTYPES ?=	ttf
 
+FONT_DISTDIR ?=	${WRKSRC}
+
 MODFONT_do-install = ${INSTALL_DATA_DIR} ${FONTDIR}; \
-	for t in ${FONTTYPES}; do ${INSTALL_DATA} ${WRKSRC}/${FONT_DISTDIR}/*.$$t ${FONTDIR}; done
+	for t in ${FONTTYPES}; do ${INSTALL_DATA} ${FONT_DISTDIR}/${FONT_DISTSUBDIR}/*.$$t ${FONTDIR}; done
 
 .  if !target(do-install)
 do-install:
