@@ -1,0 +1,17 @@
+$OpenBSD: patch-mozilla_storage_mozStorageConnection_cpp,v 1.1 2016/04/27 14:18:52 landry Exp $
+--- mozilla/storage/mozStorageConnection.cpp.orig	Fri Feb  5 21:02:38 2016
++++ mozilla/storage/mozStorageConnection.cpp	Fri Feb  5 22:55:15 2016
+@@ -743,6 +743,13 @@ Connection::initializeInternal()
+     return convertResultCode(srv);
+   }
+ 
++  srv = ::sqlite3_exec(mDBConn, "PRAGMA secure_delete = ON", NULL, NULL, NULL);
++  if (srv != SQLITE_OK) {
++    ::sqlite3_close(mDBConn);
++    mDBConn = nullptr;
++    return convertResultCode(srv);
++  }
++
+   // Set the synchronous PRAGMA, according to the preference.
+   switch (Service::getSynchronousPref()) {
+     case 2:

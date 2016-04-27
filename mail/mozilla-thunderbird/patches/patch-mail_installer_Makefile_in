@@ -1,14 +1,12 @@
-$OpenBSD: patch-mail_installer_Makefile_in,v 1.8 2015/07/05 20:18:06 landry Exp $
+$OpenBSD: patch-mail_installer_Makefile_in,v 1.9 2016/04/27 14:18:52 landry Exp $
 Don't install the sdk (revert bug #639462)
---- mail/installer/Makefile.in.orig	Mon Jun  8 19:40:38 2015
-+++ mail/installer/Makefile.in	Thu Jun 11 20:08:20 2015
-@@ -111,10 +111,6 @@ endif
+--- mail/installer/Makefile.in.orig	Fri Feb  5 20:44:00 2016
++++ mail/installer/Makefile.in	Sat Feb  6 08:24:43 2016
+@@ -111,8 +111,6 @@ endif
  
  NON_OMNIJAR_FILES = defaults/messenger/mailViews.dat
  
--ifndef LIBXUL_SDK
 -INSTALL_SDK = 1
--endif
 -
  include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/signing.mk
  include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/packager.mk

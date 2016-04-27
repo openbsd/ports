@@ -1,33 +1,28 @@
-# $OpenBSD: Makefile,v 1.220 2016/03/25 07:47:04 landry Exp $
+# $OpenBSD: Makefile,v 1.221 2016/04/27 14:18:52 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	38.7.1
-MOZILLA_BRANCH =	esr38
+MOZILLA_VERSION =	45.0
+MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
-BROKEN-sparc64 =	xpcshell SIGBUS during fake
+EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-4.0.7.1
+PKGNAME-lightning =	lightning-4.7
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
-SO_VERSION =	30.0
+SO_VERSION =	31.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 xul calbasecomps
-
-#.if ${FLAVOR:L:Mdebug}
-#MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
-#	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
-#.endif
+MOZILLA_LIBS = ldap60 ldif60 lgpllibs prldap60 xul calbasecomps
 
 CATEGORIES=	mail news
 
@@ -44,15 +39,14 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
+MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+
 NO_TEST =	Yes
 
-MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
-
-CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
-			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4 pthread
 
 # build lightning xpi
@@ -60,8 +54,7 @@ CONFIGURE_ARGS +=	--enable-calendar
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
 
-CONFIGURE_ARGS +=	--enable-gstreamer=1.0
-BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
+CONFIGURE_ARGS +=	--disable-gstreamer
 
 # to be able to link when building with clang on i386
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
@@ -69,8 +62,6 @@ CONFIGURE_ARGS +=       --disable-debug-symbols
 .endif
 
 ALL_TARGET =	default
-
-MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
@@ -86,8 +77,10 @@ post-patch:
 
 post-install:
 .for xpi guid in ${GUIDS}
-	${UNZIP} -oq ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
+	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
 .endfor
+	# lightning cant be used packed as a zip because it contains a binary component
+	# (libcalbasecomps.so) that the system wouldnt be able to load...
 	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
 		${EXTDIR}
 	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/

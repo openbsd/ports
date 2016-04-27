@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_gfx_skia_skia_src_opts_SkBitmapProcState_opts_SSSE3_cpp,v 1.1 2016/04/27 14:18:52 landry Exp $
+--- mozilla/gfx/skia/skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp.orig	Wed Sep 23 13:19:28 2015
++++ mozilla/gfx/skia/skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp	Fri Sep 25 10:56:22 2015
+@@ -13,7 +13,7 @@
+  * SSSE3 functions and enable the caller to determine SSSE3 support.  However for
+  * compilers that do not support SSSE3 we provide a stub implementation.
+  */
+-#if SK_CPU_SSE_LEVEL >= SK_CPU_SSE_LEVEL_SSSE3
++#if !defined(SK_BUILD_FOR_ANDROID_FRAMEWORK) || SK_CPU_SSE_LEVEL >= SK_CPU_SSE_LEVEL_SSSE3
+ 
+ #include <tmmintrin.h>  // SSSE3
+ 
