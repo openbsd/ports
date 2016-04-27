@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.387 2016/04/27 10:49:41 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.388 2016/04/27 12:19:50 shadchin Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -397,6 +397,7 @@ my $stem_extensions = {
 # 6.0
 	'cosmic-sans-neue-mono' => 'fantasque-sans',
 	'droid-fonts' => 'noto-fonts',
+	'py-logilab-astng' => 'py-astroid',
 };
 
 # reasons for obsolete packages
