@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2016/04/27 13:50:27 landry Exp $
+# $OpenBSD: Makefile,v 1.296 2016/04/27 22:08:14 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.tar.xz
 SO_VERSION =	64.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps mozavcodec mozavutil mozsqlite3 xul clearkey lgpllibs
+MOZILLA_LIBS =	browsercomps mozavcodec mozavutil mozgtk mozsqlite3 xul clearkey lgpllibs
 
 CATEGORIES =	www
 
