@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/27 21:58:06 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and dpi
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
 GH_COMMIT=	6bdf05cb7c6209875ae7969c991a882fa61b58dc
-DISTNAME=	ntopng-2.3pre20160426
+D=		20160426
+DISTNAME=	ntopng-2.3pre$D
 MASTER_SITES0=	https://github.com/ntop/nDPI/archive/
 DISTFILES=	${DISTNAME}{${GH_COMMIT}}.tar.gz \
 		nDPI-dev-20160426{7c1e8ba2bf3a4d6e7784f0d8051b8745074c76f1}.tar.gz:0
@@ -61,7 +62,7 @@ post-extract:
 
 post-patch:
 	cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh -c \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} TODAY="$D" sh -c \
 		"./autogen.sh; cd nDPI; ./autogen.sh"
 
 pre-configure:
