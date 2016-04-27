@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/27 13:27:00 ajacoutot Exp $
 @pkgpath x11/libfm
 @bin bin/libfm-pref-apps
 @bin bin/lxshortcut
-include/libfm-1.0/
 include/libfm-1.0/fm-actions.h
 include/libfm-1.0/fm-app-chooser-combo-box.h
 include/libfm-1.0/fm-app-chooser-dlg.h

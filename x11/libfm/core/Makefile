@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/27 13:27:00 ajacoutot Exp $
 
 COMMENT=		glib/gio-based lib for file management
-REVISION=		0
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo exif expat ffi fm-extra
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m menu-cache pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 harfbuzz iconv intl m menu-cache pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
 BUILD_DEPENDS=		lang/vala
 
