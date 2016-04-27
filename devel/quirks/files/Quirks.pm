@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.384 2016/04/27 10:01:01 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.385 2016/04/27 10:01:46 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -764,8 +764,9 @@ my $obsolete_reason = {
 	'pebrot' => 6,
 	'alacarte' => 3,
 	'logstash-forwarder' => 3,
-	'py-Xlib' => 3,
+	'py-Xlib' => 5,
 	'pypanel' => 3,
+	'gtkhtml3' => 5,
 };
 
 my @msg = (
