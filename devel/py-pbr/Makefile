@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/18 20:38:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/27 21:54:43 jca Exp $
 
 COMMENT =		Python Build Reasonableness
 
@@ -8,12 +8,13 @@ PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/openstack-dev/pbr
-MODPY_PI =		Yes
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
+
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
