@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.89 2016/04/27 13:37:32 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.90 2016/04/27 22:08:57 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -128,7 +128,6 @@ INSTALL_STRIP =
 CONFIGURE_ARGS +=	--with-system-cairo
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
-MOZILLA_LIBS +=		mozgtk
 MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
 .else
 MODMOZ_WANTLIB +=	Xcursor Xi Xinerama Xrandr
