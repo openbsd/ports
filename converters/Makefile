@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.79 2016/04/27 21:07:29 jca Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -8,6 +8,7 @@
     SUBDIR += dos2unix
     SUBDIR += enca
     SUBDIR += html2text
+    SUBDIR += html2text,python3
     SUBDIR += html2wml
     SUBDIR += ish
     SUBDIR += libdvdcss
