@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/29 11:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/27 00:10:02 jca Exp $
 
 COMMENT =	OCaml bindings for libssl
 CATEGORIES =	devel security
@@ -13,11 +13,12 @@ HOMEPAGE =	http://sourceforge.net/projects/savonet/files/ocaml-ssl/
 # LGPL2.1
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += crypto ssl
+
 MODULES =	lang/ocaml
 
 BUILD_DEPENDS =	sysutils/findlib
 RUN_DEPENDS =	lang/ocaml
-WANTLIB =	crypto ssl
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LIBS=-lcrypto
