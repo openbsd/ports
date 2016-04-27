@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/10 14:41:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/27 14:21:06 jasper Exp $
 
      SUBDIR =
-     SUBDIR += asm
      SUBDIR += jBCrypt
      SUBDIR += java-getopt
      SUBDIR += javaPathHelper
