@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/03/23 07:02:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/04/27 09:00:30 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -286,10 +286,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.py
 lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/add-tags-to-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/delete-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/describe-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/get-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/list-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/list-tags-for-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/remove-tags-from-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/
