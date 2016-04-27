@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/16 07:26:12 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/27 14:10:54 landry Exp $
 
 SUBDIR = ach
+SUBDIR += af
+SUBDIR += an
 SUBDIR += ar
+SUBDIR += as
 SUBDIR += ast
+SUBDIR += az
 SUBDIR += be
 SUBDIR += bg
 SUBDIR += bn-BD
@@ -14,6 +18,7 @@ SUBDIR += cs
 SUBDIR += cy
 SUBDIR += da
 SUBDIR += de
+SUBDIR += dsb
 SUBDIR += el
 SUBDIR += en-GB
 SUBDIR += en-US
@@ -33,10 +38,12 @@ SUBDIR += fy-NL
 SUBDIR += ga-IE
 SUBDIR += gd
 SUBDIR += gl
+SUBDIR += gn
 SUBDIR += gu-IN
 SUBDIR += he
 SUBDIR += hi-IN
 SUBDIR += hr
+SUBDIR += hsb
 SUBDIR += hu
 SUBDIR += hy-AM
 SUBDIR += id
@@ -54,6 +61,7 @@ SUBDIR += mai
 SUBDIR += mk
 SUBDIR += ml
 SUBDIR += mr
+SUBDIR += ms
 SUBDIR += nb-NO
 SUBDIR += nl
 SUBDIR += nn-NO
@@ -77,7 +85,9 @@ SUBDIR += te
 SUBDIR += th
 SUBDIR += tr
 SUBDIR += uk
+SUBDIR += uz
 SUBDIR += vi
+SUBDIR += xh
 SUBDIR += zh-CN
 SUBDIR += zh-TW
 
