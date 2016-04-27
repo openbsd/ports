@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/04/27 14:58:42 jasper Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
+TYPEFACE=	farsifonts
 V=		0.4
 DISTNAME=	farsi_fonts_$V
-PKGNAME=	farsifonts-ttf-$V
+PKGNAME=	${TYPEFACE}-ttf-$V
 REVISION=	2
 CATEGORIES=	fonts x11
 
@@ -16,15 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=arabeyes/}
 EXTRACT_SUFX=		.tar.bz2
 
-PKG_ARCH=		*
+MODULES=		font
+
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/farsifonts-$V
-FONTSDIR=		${PREFIX}/share/fonts/farsifonts
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 
 .include <bsd.port.mk>

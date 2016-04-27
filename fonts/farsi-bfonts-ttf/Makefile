@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/27 14:58:42 jasper Exp $
 
 COMMENT=	farsi bornaray fonts
 
+TYPEFACE=	farsi-bfonts
 DISTNAME=	bfonts
-PKGNAME=	farsi-bfonts-ttf-2.0
+PKGNAME=	${TYPEFACE}-ttf-2.0
 REVISION=	2
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -27,14 +28,9 @@ BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.exe) \
 	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 
+MODULES=	font
+
 NO_BUILD=	Yes
 NO_TEST=	Yes
-PKG_ARCH=	*
-
-FONTSDIR=	${PREFIX}/share/fonts/farsi-bfonts
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 
 .include <bsd.port.mk>

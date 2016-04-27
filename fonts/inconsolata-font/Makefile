@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/27 14:58:42 jasper Exp $
 
 COMMENT=		monospace font designed for coders
 
+TYPEFACE=		inconsolata
 DISTNAME=		Inconsolata
-PKGNAME=		inconsolata-font-0.1
-REVISION=		1
+PKGNAME=		${TYPEFACE}-font-0.1
+REVISION=		2
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://www.levien.com/type/myfonts/inconsolata.html
@@ -17,13 +18,13 @@ EXTRACT_ONLY=
 # http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=OFL
 PERMIT_PACKAGE_CDROM=	Yes
 
-PKG_ARCH=		*
+MODULES=		font
+FONTTYPES=		otf
+
 NO_BUILD=		Yes
 NO_TEST=		Yes
-FONTSDIR=		${PREFIX}/share/fonts/Inconsolata/
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${FONTSDIR}
+pre-install:
+	cp ${FULLDISTDIR}/${DISTFILES} ${WRKSRC}
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/25 12:50:08 sthen Exp $
-
-PKG_ARCH=	*
+# $OpenBSD: Makefile,v 1.5 2016/04/27 14:58:42 jasper Exp $
 
 COMMENT=	clear, readable monospaced font
 
-DISTNAME=	otf-hermit-1.21
-PKGNAME=	hermit-font-1.21
+TYPEFACE=	hermit
+VERSION=	1.21
+DISTNAME=	otf-hermit-${VERSION}
+PKGNAME=	hermit-font-${VERSION}
 CATEGORIES=	fonts x11
 REVISION=	1
 
@@ -16,14 +16,14 @@ MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 HOMEPAGE=	https://pcaro.es/p/hermit/
 MASTER_SITES=	https://pcaro.es/d/
+EXTRACT_SUFX=	.tar.gz
+
+MODULES=	font
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-INST_DIR=	${PREFIX}/share/fonts/hermit/
-
-do-install:
-	${INSTALL_DATA_DIR} ${INST_DIR}
-	${INSTALL_DATA}	${WRKDIR}/*.otf ${INST_DIR}
+FONTTYPES=	otf
+FONT_DISTDIR=	${WRKDIR}
 
 .include <bsd.port.mk>
