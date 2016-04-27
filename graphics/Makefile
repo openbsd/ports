@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2016/04/26 15:31:41 jca Exp $
+# $OpenBSD: Makefile,v 1.412 2016/04/27 10:49:41 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -261,7 +261,6 @@
      SUBDIR += simple-scan
      SUBDIR += sketch
      SUBDIR += slop
-     SUBDIR += swfdec
      SUBDIR += sxiv
      SUBDIR += tesseract
      SUBDIR += tgif
