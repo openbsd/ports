@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/26 09:53:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/04/27 14:22:19 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -50,7 +50,8 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala
 
-BUILD_DEPENDS=		devel/ectags
+BUILD_DEPENDS=		devel/ectags \
+			textproc/itstool
 RUN_DEPENDS=		devel/ectags
 
 LIB_DEPENDS=		devel/libgit2/libgit2-glib \
