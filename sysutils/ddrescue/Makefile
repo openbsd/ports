@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/19 10:07:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/27 12:42:55 jca Exp $
 
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.20
+DISTNAME =		ddrescue-1.21
 
 CATEGORIES =		sysutils
 
