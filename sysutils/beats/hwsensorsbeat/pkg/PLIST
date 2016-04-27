@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/27 17:47:55 jasper Exp $
+@bin bin/hwsensorsbeat
+share/examples/hwsensorsbeat/
+@sample ${SYSCONFDIR}/hwsensorsbeat/
+share/examples/hwsensorsbeat/hwsensorsbeat.template.json
+@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.template.json
+share/examples/hwsensorsbeat/hwsensorsbeat.yml
+@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.yml
+@rcscript ${RCDIR}/hwsensorsbeat

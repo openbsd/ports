@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: hwsensorsbeat.rc,v 1.1.1.1 2016/04/27 17:47:55 jasper Exp $
+
+daemon="${PREFIX}/bin/hwsensorsbeat"
+daemon_flags="-c ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.yml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

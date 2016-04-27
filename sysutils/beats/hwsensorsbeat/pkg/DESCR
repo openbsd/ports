@@ -1,0 +1,2 @@
+Lightweight shipper for OpenBSD sensors information, reading the data
+from hw.sensors.
