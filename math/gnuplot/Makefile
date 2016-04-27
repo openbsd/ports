@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2015/06/03 07:28:28 pirofti Exp $
+# $OpenBSD: Makefile,v 1.61 2016/04/27 21:41:07 naddy Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
 V =		4.6
 PATCHLEVEL =	6
+REVISION =	0
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
@@ -14,7 +15,7 @@ HOMEPAGE =	http://www.gnuplot.info/
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses pthread readline stdc++ z
+WANTLIB += c m ncurses readline stdc++ z
 
 BUILD_DEPENDS =	emacs->=24:editors/emacs
 
@@ -44,20 +45,18 @@ SUBST_VARS =	V
 CONFIGURE_ARGS += --without-x \
 		  --without-gd
 .else
-MODULES +=	converters/libiconv
-LIB_DEPENDS +=	graphics/gd
-WANTLIB +=	X11 fontconfig freetype jpeg png gd>=20 tiff vpx \
-		${MODLIBICONV_WANTLIB}
+LIB_DEPENDS +=	converters/libiconv graphics/gd
+WANTLIB +=	X11 fontconfig freetype gd iconv jpeg png tiff vpx
 CONFIGURE_ARGS += --with-x
 .endif
 
 .if ${FLAVOR:Mno_cairo} || ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --without-cairo
 .else
-MODULES +=	devel/gettext
-LIB_DEPENDS +=	devel/pango	\
+LIB_DEPENDS +=	devel/gettext \
+		devel/pango	\
 		graphics/cairo
-WANTLIB +=	gobject-2.0 pangocairo-1.0 cairo glib-2.0 pango-1.0 pangoft2-1.0
+WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0
 .endif
 
 post-install:
