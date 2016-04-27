@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1312 2016/04/26 17:35:35 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1313 2016/04/27 18:13:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -529,8 +529,6 @@ _PKG_ARGS += -D${_i}=1
 .if !${BUILD_PKGPATH:M*,*}
 BUILD_PKGPATH := ${BUILD_PKGPATH},
 .endif
-
-_PKG_ARGS += -DSHARED_LIBS=1
 
 .if !empty(FLAVORS:M[0-9]*)
 ERRORS += "Fatal: flavor should never start with a digit"
