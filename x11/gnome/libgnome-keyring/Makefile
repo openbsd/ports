@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2016/04/27 21:27:15 jasper Exp $
 
 COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
 GNOME_VERSION=	3.12.0
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 
