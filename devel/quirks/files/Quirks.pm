@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.385 2016/04/27 10:01:46 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.386 2016/04/27 10:47:15 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -767,6 +767,7 @@ my $obsolete_reason = {
 	'py-Xlib' => 5,
 	'pypanel' => 3,
 	'gtkhtml3' => 5,
+	'libunique3' => 5,
 };
 
 my @msg = (
