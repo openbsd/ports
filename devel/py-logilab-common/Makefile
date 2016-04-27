@@ -1,26 +1,43 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/01 10:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/27 12:02:52 shadchin Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
-DISTNAME=	logilab-common-0.56.0
+MODPY_EGG_VERSION =	1.2.0
+DISTNAME=	logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.logilab.org/projects/common/
+HOMEPAGE=	https://www.logilab.org/project/logilab-common
+
+MAINTAINER =	Alexandr Shadchin <shadchin@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
+MODPY_PI =		Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-mxDateTime
-TEST_DEPENDS=${RUN_DEPENDS}
+RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS =	${FULLPKGNAME}:${FULLPKGPATH} \
+		${RUN_DEPENDS} \
+		devel/py-tz${MODPY_FLAVOR}
 
-do-test: fake
-	@cd ${WRKSRC}/test && \
-	env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ../bin/pytest
+FLAVORS =	python3
+FLAVOR ?=
+
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS +=	devel/py-mxDateTime
+.endif
+
+MODPY_SETUPTOOLS =	Yes
+
+do-test:
+	@cd ${WRKSRC} && ${MODPY_BIN} bin/pytest
+
+.if ${FLAVOR:Mpython3}
+post-install:
+	mv ${PREFIX}/bin/pytest ${PREFIX}/bin/pytest${MODPY_BIN_SUFFIX}
+.endif
 
 .include <bsd.port.mk>
