@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2016/04/26 10:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2016/04/27 09:02:24 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -25,8 +25,10 @@ BUILD_DEPENDS=		${COMMON_DEPENDS} \
 			x11/gtk+3
 
 RUN_DEPENDS=		${COMMON_DEPENDS} \
-			devel/py-setproctitle${MODPY_FLAVOR} \
-			multimedia/gstreamer1/plugins-base
+			devel/py-setproctitle${MODPY_FLAVOR}
+
+# sndio(7) support
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
