@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/26 18:34:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/27 17:50:03 jasper Exp $
 
     SUBDIR =
     SUBDIR += filebeat
+    SUBDIR += hwsensorsbeat
     SUBDIR += packetbeat
     SUBDIR += topbeat
 
