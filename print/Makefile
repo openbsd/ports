@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2016/01/26 23:11:12 abieber Exp $
+# $OpenBSD: Makefile,v 1.121 2016/04/27 09:23:23 feinerer Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -41,6 +41,7 @@
     SUBDIR += lss
     SUBDIR += lyx
     SUBDIR += mpage
+    SUBDIR += muttprint
     SUBDIR += openclipart
     SUBDIR += p5-Poppler
     SUBDIR += p5-PostScript-MailLabels
