@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/02/04 09:23:20 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/27 11:39:04 czarkoff Exp $
 @bin bin/mpv
 @man man/man1/mpv.1
 share/applications/mpv.desktop
 share/examples/mpv/
 @sample ${SYSCONFDIR}/mpv/
-share/examples/mpv/encoding-profiles.conf
-@sample ${SYSCONFDIR}/mpv/encoding-profiles.conf
 share/examples/mpv/input.conf
 share/examples/mpv/mplayer-input.conf
 share/examples/mpv/mpv.conf
@@ -16,6 +14,7 @@ share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
 share/icons/hicolor/scalable/apps/mpv.svg
+share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
