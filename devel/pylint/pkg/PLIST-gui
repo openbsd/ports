@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2007/05/04 17:43:27 alek Exp $
-bin/pylint-gui
+@comment $OpenBSD: PLIST-gui,v 1.2 2016/04/27 12:05:02 shadchin Exp $
+bin/pylint-gui${MODPY_BIN_SUFFIX}

@@ -1,38 +1,58 @@
-# $OpenBSD: Makefile,v 1.15 2013/07/01 10:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/04/27 12:05:02 shadchin Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-VERSION=		0.24.0
-DISTNAME=		pylint-${VERSION}
-PKGNAME-main=		pylint-${VERSION}
-PKGNAME-gui=		pylint-gui-${VERSION}
-REVISION-main =		2
-REVISION-gui =		1
+MODPY_EGG_VERSION=	1.5.5
+DISTNAME=		pylint-${MODPY_EGG_VERSION}
+PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
+PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.logilab.org/projects/pylint/
+HOMEPAGE=		http://www.pylint.org/
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		ftp://ftp.logilab.fr/pub/pylint/
-
 MULTI_PACKAGES=		-main -gui
 
 MODULES=		lang/python
-RUN_DEPENDS=		devel/py-logilab-astng
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR} \
+			devel/py-astroid${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
-			devel/pylint=${VERSION}
-TEST_DEPENDS=	${RUN_DEPENDS}
+			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
+TEST_DEPENDS=		${RUN_DEPENDS}
 
-SUBST_VARS+=		VERSION
+FLAVORS =		python3
+FLAVOR ?=
 
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-main=	${PKGNAME-main:S/pylint/pylint3/}
+FULLPKGPATH-main=	devel/pylint,-main${MODPY_FLAVOR}
+FULLPKGNAME-gui=	${PKGNAME-gui:S/pylint/pylint3/}
+FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
+.endif
+
+# Note: pytest here is not the same as in devel/py-test
 do-test: fake
-	cd ${WRKSRC}/test && env \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG}:${MODPY_SITEPKG} \
+	cd ${WRKINST}${MODPY_SITEPKG} && env \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		PYLINTHOME=${WRKINST} \
-		USER_HOME=${WRKSRC} \
-		${MODPY_BIN} /usr/local/bin/pytest
+		${MODPY_BIN} ${LOCALBASE}/bin/pytest${MODPY_BIN_SUFFIX}
+
+post-install:
+	rm ${WRKINST}${MODPY_SITEPKG}/pylint/test/unittest_lint.py.orig
+.if ${FLAVOR:Mpython3}
+.for i in epylint pylint pylint-gui pyreverse symilar
+	mv ${PREFIX}/bin/$i ${PREFIX}/bin/$i${MODPY_BIN_SUFFIX}
+.endfor
+.endif
 
 .include <bsd.port.mk>
