@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/18 21:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/04/27 18:17:19 jasper Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
-DISTNAME=	giflib-5.1.3
+DISTNAME=	giflib-5.1.4
 SHARED_LIBS +=	gif                  7.0      # 7.0
 CATEGORIES=	graphics
 
