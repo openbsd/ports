@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/27 11:52:27 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/27 18:16:35 shadchin Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -27,9 +27,6 @@ TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
 
 do-test:
 	cd ${WRKSRC} && \
