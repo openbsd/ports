@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/02/04 19:55:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2016/04/27 09:16:55 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,7 +6,7 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so convert it to
 # 'pl' for local use.
 
-VERSION=	4.2.8p6
+VERSION=	4.2.8p7
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -39,8 +39,6 @@ LIB_DEPENDS=	devel/libevent2
 
 post-patch:
 	cp ${WRKSRC}/sntp/loc/freebsd ${WRKSRC}/sntp/loc/openbsd
-# short-circuit regeneration after patching ssl_init.c
-	touch ${WRKSRC}/tests/libntp/run-ssl_init.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp
