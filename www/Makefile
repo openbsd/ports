@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.772 2016/04/26 14:28:44 juanfra Exp $
+# $OpenBSD: Makefile,v 1.773 2016/04/27 09:59:58 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -55,7 +55,6 @@
      SUBDIR += gecko-mediaplayer
      SUBDIR += gnash
      SUBDIR += goaccess
-     SUBDIR += gtkhtml3
      SUBDIR += gtkhtml4
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
