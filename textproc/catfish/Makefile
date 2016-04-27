@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/26 20:30:05 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/27 17:35:52 sthen Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -28,7 +28,8 @@ RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
 BUILD_DEPENDS =	textproc/intltool
-BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
+BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
+		devel/py-distutils-extra${MODPY_FLAVOR}
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
