@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/03/23 20:13:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/27 12:46:16 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -129,8 +129,6 @@ iridium/resources/inspector/Images/resourceJSIcon.png
 iridium/resources/inspector/Images/resourcePlainIcon.png
 iridium/resources/inspector/Images/resourcePlainIconSmall.png
 iridium/resources/inspector/Images/resourcesTimeGraphIcon.png
-iridium/resources/inspector/Images/responsiveDesign.png
-iridium/resources/inspector/Images/responsiveDesign_2x.png
 iridium/resources/inspector/Images/searchNext.png
 iridium/resources/inspector/Images/searchPrev.png
 iridium/resources/inspector/Images/securityPropertyInfo.svg
@@ -194,7 +192,6 @@ iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation
 iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 iridium/resources/inspector/emulated_devices_module.js
 iridium/resources/inspector/heap_snapshot_worker_module.js
-iridium/resources/inspector/inspector.css
 iridium/resources/inspector/inspector.html
 iridium/resources/inspector/inspector.js
 iridium/resources/inspector/layers_module.js
@@ -212,7 +209,6 @@ iridium/resources/inspector/source_frame_module.js
 iridium/resources/inspector/sources_module.js
 iridium/resources/inspector/temp_storage_shared_worker_module.js
 iridium/resources/inspector/timeline_module.js
-iridium/resources/inspector/toolbox.css
 iridium/resources/inspector/toolbox.html
 iridium/resources/inspector/toolbox.js
 iridium/resources/inspector/ui_lazy_module.js

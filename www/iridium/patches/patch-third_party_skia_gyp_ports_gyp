@@ -1,11 +1,11 @@
-$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.6 2016/03/23 20:13:07 robert Exp $
---- third_party/skia/gyp/ports.gyp.orig.port	Wed Mar  2 21:03:31 2016
-+++ third_party/skia/gyp/ports.gyp	Thu Mar  3 09:43:26 2016
-@@ -94,7 +94,6 @@
+$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.7 2016/04/27 12:46:16 robert Exp $
+--- third_party/skia/gyp/ports.gyp.orig.port	Thu Apr 14 14:09:21 2016
++++ third_party/skia/gyp/ports.gyp	Thu Apr 14 14:09:28 2016
+@@ -91,7 +91,6 @@
+             [ 'skia_android_framework', {
+               'link_settings': { 'libraries': [ '-lexpat' ] },
              }, {
-               'link_settings': {
-                 'libraries': [
--                  '-ldl',
-                   '-lexpat',
-                 ],
-               },
+-              'link_settings': { 'libraries': [ '-ldl' ] },
+               'dependencies': [ 'expat.gyp:expat' ],
+             }],
+             [ 'skia_embedded_fonts', {

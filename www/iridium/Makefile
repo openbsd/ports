@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/23 20:13:06 robert Exp $
+# $OpenBSD: Makefile,v 1.49 2016/04/27 12:46:16 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			49.0
+V=			50.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 
@@ -165,7 +165,7 @@ pre-configure:
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
-	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	# XXX Create a missing html file to avoid a build failure (unused in the actual package)
 	@touch ${WRKSRC}/chrome/test/data/webui/i18n_process_css_test.html
@@ -184,6 +184,7 @@ do-build:
 	for _r in generate_version_info cloud_policy_proto net_interfaces suggestions \
 	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
 	data_reduction_proxy_proto cloud_policy_code_generate common_constants \
+	profile_reset_report_proto \
 	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \

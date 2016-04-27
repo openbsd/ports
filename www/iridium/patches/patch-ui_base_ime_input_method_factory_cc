@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.4 2016/02/15 18:07:53 robert Exp $
---- ui/base/ime/input_method_factory.cc.orig.port	Wed Jan 20 21:01:25 2016
-+++ ui/base/ime/input_method_factory.cc	Fri Jan 22 19:58:59 2016
-@@ -14,7 +14,7 @@
- #include "ui/base/ime/remote_input_method_win.h"
+$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
+--- ui/base/ime/input_method_factory.cc.orig.port	Fri Apr  8 18:02:15 2016
++++ ui/base/ime/input_method_factory.cc	Thu Apr 14 08:25:15 2016
+@@ -13,7 +13,7 @@
+ #include "ui/base/ime/input_method_win.h"
  #elif defined(OS_MACOSX)
  #include "ui/base/ime/input_method_mac.h"
 -#elif defined(USE_AURA) && defined(OS_LINUX) && defined(USE_X11) && \
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.4 2016/02/15 18:07:53 ro
        !defined(OS_CHROMEOS)
  #include "ui/base/ime/input_method_auralinux.h"
  #elif defined(OS_ANDROID)
-@@ -58,7 +58,7 @@ scoped_ptr<InputMethod> CreateInputMethod(
+@@ -55,7 +55,7 @@ scoped_ptr<InputMethod> CreateInputMethod(
    return make_scoped_ptr(new InputMethodWin(delegate, widget));
  #elif defined(OS_MACOSX)
    return make_scoped_ptr(new InputMethodMac(delegate));

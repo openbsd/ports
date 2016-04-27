@@ -1,19 +1,19 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.8 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Wed Feb 24 21:01:31 2016
-+++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Thu Mar  3 09:43:26 2016
-@@ -57,7 +57,7 @@
- #include "chrome/browser/ui/views/profiles/supervised_user_avatar_label.h"
- #endif
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.9 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Thu Apr 14 08:45:55 2016
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Thu Apr 14 08:46:06 2016
+@@ -53,7 +53,7 @@
+ #include "ui/views/window/frame_background.h"
+ #include "ui/views/window/window_shape.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -339,7 +339,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
- 
- void OpaqueBrowserFrameView::OnMenuButtonClicked(views::View* source,
-                                                  const gfx::Point& point) {
+@@ -311,7 +311,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+ void OpaqueBrowserFrameView::OnMenuButtonClicked(views::MenuButton* source,
+                                                  const gfx::Point& point,
+                                                  const ui::Event* event) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),

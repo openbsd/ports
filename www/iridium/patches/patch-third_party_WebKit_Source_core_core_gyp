@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.7 2016/03/23 20:13:07 robert Exp $
---- third_party/WebKit/Source/core/core.gyp.orig.port	Wed Feb 24 21:01:34 2016
-+++ third_party/WebKit/Source/core/core.gyp	Thu Mar  3 09:43:26 2016
-@@ -458,13 +458,13 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.8 2016/04/27 12:46:16 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Thu Apr 14 14:07:02 2016
++++ third_party/WebKit/Source/core/core.gyp	Thu Apr 14 14:07:39 2016
+@@ -367,7 +367,7 @@
              'layout/LayoutThemeMac.mm',
            ],
          }],
@@ -10,14 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.7 2016/03/23 20:13:0
            'sources!': [
              'layout/LayoutThemeLinux.cpp',
              'layout/LayoutThemeLinux.h',
-           ],
-         }],
--        ['OS != "linux" and OS != "android"', {
-+        ['OS != "linux" and OS != "android" and OS != "openbsd"', {
-           'sources!': [
-             'layout/LayoutThemeFontProviderLinux.cpp',
-           ],
-@@ -784,13 +784,13 @@
+@@ -644,7 +644,7 @@
                  'layout/LayoutThemeMac.mm',
                ],
              }],
@@ -26,10 +19,3 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.7 2016/03/23 20:13:0
                'sources!': [
                  'layout/LayoutThemeLinux.cpp',
                  'layout/LayoutThemeLinux.h',
-               ],
-             }],
--            ['OS != "linux" and OS != "android"', {
-+            ['OS != "linux" and OS != "android" and OS != "openbsd"', {
-               'sources!': [
-                 'layout/LayoutThemeFontProviderLinux.cpp',
-               ],

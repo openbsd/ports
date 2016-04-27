@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.6 2016/03/23 20:13:06 robert Exp $
---- base/threading/platform_thread_linux.cc.orig.port	Wed Feb 24 21:01:30 2016
-+++ base/threading/platform_thread_linux.cc	Thu Mar  3 09:43:25 2016
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.7 2016/04/27 12:46:16 robert Exp $
+--- base/threading/platform_thread_linux.cc.orig.port	Fri Apr  8 18:02:06 2016
++++ base/threading/platform_thread_linux.cc	Thu Apr 14 08:25:08 2016
 @@ -17,7 +17,9 @@
  
  #if !defined(OS_NACL)
@@ -11,7 +11,7 @@ $OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.6 2016/03/23 20:13:0
  #include <sys/types.h>
  #include <unistd.h>
  #endif
-@@ -81,7 +83,7 @@ void PlatformThread::SetName(const std::string& name) 
+@@ -70,7 +72,7 @@ void PlatformThread::SetName(const std::string& name) 
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  

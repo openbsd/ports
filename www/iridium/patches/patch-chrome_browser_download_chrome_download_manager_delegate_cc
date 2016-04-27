@@ -1,12 +1,21 @@
-$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.5 2016/03/23 20:13:06 robert Exp $
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Wed Feb 24 21:01:31 2016
-+++ chrome/browser/download/chrome_download_manager_delegate.cc	Wed Mar 23 12:37:29 2016
-@@ -752,7 +752,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.6 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Wed Apr 27 11:15:49 2016
++++ chrome/browser/download/chrome_download_manager_delegate.cc	Wed Apr 27 11:16:04 2016
+@@ -736,7 +736,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+         target_info->is_filetype_handled_safely)
+       DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+     if (item->GetOriginalMimeType() == "application/x-x509-user-cert")
+       DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
+ #endif
+@@ -751,7 +751,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {
--#if defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     (defined(OS_MACOSX) && !defined(OS_IOS))
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
      return !download_prefs_->ShouldOpenPdfInSystemReader();
+   }

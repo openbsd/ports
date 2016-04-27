@@ -1,28 +1,16 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2016/03/23 20:13:07 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Wed Feb 24 21:01:32 2016
-+++ content/browser/child_process_launcher.cc	Thu Mar  3 09:43:26 2016
-@@ -116,7 +116,11 @@ void LaunchOnLauncherThread(const NotifyCallback& call
-   base::EnvironmentMap env = delegate->GetEnvironment();
-   base::ScopedFD ipcfd = delegate->TakeIpcFd();
- #elif defined(OS_POSIX) && !defined(OS_ANDROID)
-+#if !defined(OS_BSD)
-   bool use_zygote = delegate->ShouldUseZygote();
-+#else
-+  bool use_zygote = false;
-+#endif
-   base::EnvironmentMap env = delegate->GetEnvironment();
-   base::ScopedFD ipcfd = delegate->TakeIpcFd();
- #endif
-@@ -198,7 +202,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.10 2016/04/27 12:46:16 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Thu Apr 14 13:59:42 2016
++++ content/browser/child_process_launcher.cc	Thu Apr 14 14:01:41 2016
+@@ -229,7 +229,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
    // We need to close the client end of the IPC channel to reliably detect
    // child termination.
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
-   if (use_zygote) {
-     base::ProcessHandle handle = ZygoteHostImpl::GetInstance()->ForkRequest(
-         cmd_line->argv(), std::move(files_to_register), process_type);
-@@ -296,7 +300,7 @@ void TerminateOnLauncherThread(bool zygote, base::Proc
+   ZygoteHandle* zygote_handle = delegate->GetZygote();
+   // If |zygote_handle| is null, a zygote should not be used.
+   if (zygote_handle) {
+@@ -333,7 +333,7 @@ void TerminateOnLauncherThread(ZygoteHandle zygote, ba
    process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -31,16 +19,16 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.9 2016/03/23 20:13
    if (zygote) {
      // If the renderer was created via a zygote, we have to proxy the reaping
      // through the zygote process.
-@@ -398,7 +402,7 @@ void ChildProcessLauncher::Launch(
+@@ -435,7 +435,7 @@ void ChildProcessLauncher::Launch(
  
  void ChildProcessLauncher::UpdateTerminationStatus(bool known_dead) {
    DCHECK(CalledOnValidThread());
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    if (zygote_) {
-     termination_status_ = ZygoteHostImpl::GetInstance()->
-         GetTerminationStatus(process_.Handle(), known_dead, &exit_code_);
-@@ -469,7 +473,7 @@ void ChildProcessLauncher::Notify(
+     termination_status_ = zygote_->GetTerminationStatus(
+         process_.Handle(), known_dead, &exit_code_);
+@@ -505,7 +505,7 @@ void ChildProcessLauncher::Notify(ZygoteHandle zygote,
    starting_ = false;
    process_ = std::move(process);
  

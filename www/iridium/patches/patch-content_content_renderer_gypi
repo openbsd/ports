@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_content_renderer_gypi,v 1.6 2016/03/23 20:13:07 robert Exp $
---- content/content_renderer.gypi.orig.port	Wed Feb 24 21:01:32 2016
-+++ content/content_renderer.gypi	Thu Mar  3 09:43:26 2016
-@@ -37,6 +37,7 @@
-     '../third_party/libjingle/libjingle.gyp:libjingle',
-     '../third_party/libyuv/libyuv.gyp:libyuv',
-     '../third_party/mojo/mojo_edk.gyp:mojo_js_lib',
+$OpenBSD: patch-content_content_renderer_gypi,v 1.7 2016/04/27 12:46:16 robert Exp $
+--- content/content_renderer.gypi.orig.port	Thu Apr 14 14:02:18 2016
++++ content/content_renderer.gypi	Thu Apr 14 14:02:36 2016
+@@ -28,6 +28,7 @@
+     '../mojo/mojo_base.gyp:mojo_geometry_lib',
+     '../mojo/mojo_base.gyp:mojo_url_type_converters',
+     '../mojo/mojo_edk.gyp:mojo_js_lib',
 +    '../third_party/libyuv/libyuv.gyp:libyuv',
-     '../third_party/npapi/npapi.gyp:npapi',
-     '../third_party/widevine/cdm/widevine_cdm.gyp:widevine_cdm_version_h',
-     '../ui/accessibility/accessibility.gyp:accessibility',
+     '../net/net.gyp:net',
+     '../skia/skia.gyp:skia',
+     '../skia/skia.gyp:skia_mojo',

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.9 2016/03/23 20:13:07 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Thu Feb 25 03:02:29 2016
-+++ chrome/common/chrome_switches.cc	Wed Mar 23 12:37:30 2016
-@@ -1152,7 +1152,7 @@ const char kHelpShort[]                     = "h";
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.10 2016/04/27 12:46:16 robert Exp $
+--- chrome/common/chrome_switches.cc.orig.port	Thu Apr 21 00:01:48 2016
++++ chrome/common/chrome_switches.cc	Wed Apr 27 11:11:17 2016
+@@ -1133,7 +1133,7 @@ const char kHelpShort[]                     = "h";
  const char kPasswordStore[]                 = "password-store";
  #endif
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.9 2016/03/23 20:13:07 rober
  // Triggers migration of user data directory to another directory
  // specified as a parameter. The migration is done under singleton lock,
  // and sanity checks are made to avoid corrupting the profile.
-@@ -1345,7 +1345,7 @@ const char kForceShowUpdateMenuBadge[] = "force-show-u
- const char kMarketUrlForTesting[] = "market-url-for-testing";
- #endif // defined(OS_ANDROID)
+@@ -1330,7 +1330,7 @@ const char kTabManagementExperimentTypeDill[] =
+     "tab-management-experiment-type-dill";
+ #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)

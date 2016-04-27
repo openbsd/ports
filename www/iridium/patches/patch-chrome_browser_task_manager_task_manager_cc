@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_task_manager_task_manager_cc,v 1.4 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/task_manager/task_manager.cc.orig.port	Wed Feb 24 21:01:31 2016
-+++ chrome/browser/task_manager/task_manager.cc	Thu Mar  3 09:43:26 2016
-@@ -1204,7 +1204,7 @@ void TaskManagerModel::Refresh() {
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/task_manager/task_manager.cc.orig.port	Wed Apr 13 22:59:40 2016
++++ chrome/browser/task_manager/task_manager.cc	Thu Apr 14 08:25:09 2016
+@@ -1213,7 +1213,7 @@ void TaskManagerModel::Refresh() {
        values.is_cpu_usage_valid = true;
        values.cpu_usage = metrics_iter->second->GetCPUUsage();
      }

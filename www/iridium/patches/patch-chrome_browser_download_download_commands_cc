@@ -1,25 +1,25 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.4 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/download/download_commands.cc.orig.port	Wed Feb 24 21:01:31 2016
-+++ chrome/browser/download/download_commands.cc	Thu Mar  3 09:43:25 2016
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/download/download_commands.cc.orig.port	Thu Apr 14 08:36:11 2016
++++ chrome/browser/download/download_commands.cc	Thu Apr 14 08:36:32 2016
 @@ -211,7 +211,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
+       return download_item_->GetOpenWhenComplete() ||
               download_crx_util::IsExtensionDownload(*download_item_);
      case ALWAYS_OPEN_TYPE:
- #if defined(OS_WIN) || defined(OS_LINUX) || \
--    (defined(OS_MACOSX) && !defined(OS_IOS))
-+    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
              download_item_->GetBrowserContext());
-@@ -255,7 +255,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -254,7 +254,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+       bool is_checked = IsCommandChecked(ALWAYS_OPEN_TYPE);
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
            download_item_->GetBrowserContext());
- #if defined(OS_WIN) || defined(OS_LINUX) || \
--    (defined(OS_MACOSX) && !defined(OS_IOS))
-+    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          DownloadItemModel(download_item_)
-@@ -325,7 +325,7 @@ Browser* DownloadCommands::GetBrowser() const {
+@@ -352,7 +352,7 @@ Browser* DownloadCommands::GetBrowser() const {
    return browser_displayer.browser();
  }
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.4 2016/03/23 20
  bool DownloadCommands::IsDownloadPdf() const {
    base::FilePath path = download_item_->GetTargetFilePath();
    return path.MatchesExtension(FILE_PATH_LITERAL(".pdf"));
-@@ -342,7 +342,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -369,7 +369,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
                                            : true);

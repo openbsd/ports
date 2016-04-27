@@ -5,6 +5,7 @@
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 
 #include "media/audio/audio_output_dispatcher.h"
+#include "media/audio/sndio/sndio_input.h"
 #include "media/audio/sndio/sndio_output.h"
 #include "media/base/limits.h"
 #include "media/base/media_switches.h"
@@ -17,12 +18,33 @@ static const int kMaxOutputStreams = 4;
 // Default sample rate for input and output streams.
 static const int kDefaultSampleRate = 48000;
 
+void AddDefaultDevice(AudioDeviceNames* device_names) {
+  DCHECK(device_names->empty());
+  device_names->push_front(AudioDeviceName(AudioManager::GetDefaultDeviceName(),
+                                           AudioManagerBase::kDefaultDeviceId));
+}
+
 bool AudioManagerOpenBSD::HasAudioOutputDevices() {
   return true;
 }
 
 bool AudioManagerOpenBSD::HasAudioInputDevices() {
-  return false;
+  return true;
+}
+
+void AudioManagerOpenBSD::ShowAudioInputSettings() {
+  NOTIMPLEMENTED();
+}
+
+void AudioManagerOpenBSD::GetAudioInputDeviceNames(
+    AudioDeviceNames* device_names) {
+  DCHECK(device_names->empty());
+  AddDefaultDevice(device_names);
+}
+
+void AudioManagerOpenBSD::GetAudioOutputDeviceNames(
+    AudioDeviceNames* device_names) {
+  AddDefaultDevice(device_names);
 }
 
 AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
@@ -65,15 +87,13 @@ AudioOutputStream* AudioManagerOpenBSD::MakeLowLatencyOutputStream(
 AudioInputStream* AudioManagerOpenBSD::MakeLinearInputStream(
     const AudioParameters& params, const std::string& device_id) {
   DCHECK_EQ(AudioParameters::AUDIO_PCM_LINEAR, params.format());
-  NOTIMPLEMENTED();
-  return NULL;
+  return MakeInputStream(params);
 }
 
 AudioInputStream* AudioManagerOpenBSD::MakeLowLatencyInputStream(
     const AudioParameters& params, const std::string& device_id) {
   DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format());
-  NOTIMPLEMENTED();
-  return NULL;
+  return MakeInputStream(params);
 }
 
 AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
@@ -101,6 +121,13 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
   return AudioParameters(
       AudioParameters::AUDIO_PCM_LOW_LATENCY, channel_layout,
       sample_rate, bits_per_sample, buffer_size);
+}
+
+AudioInputStream* AudioManagerOpenBSD::MakeInputStream(
+    const AudioParameters& params) {
+  DLOG(WARNING) << "MakeInputStream";
+  return new SndioAudioInputStream(this,
+             AudioManagerBase::kDefaultDeviceId, params);
 }
 
 AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(

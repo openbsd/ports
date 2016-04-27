@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
---- build/common.gypi.orig.port	Wed Feb 24 21:01:30 2016
-+++ build/common.gypi	Thu Mar  3 17:37:31 2016
+$OpenBSD: patch-build_common_gypi,v 1.9 2016/04/27 12:46:16 robert Exp $
+--- build/common.gypi.orig.port	Thu Apr 14 08:30:54 2016
++++ build/common.gypi	Thu Apr 14 08:35:16 2016
 @@ -112,7 +112,7 @@
  
            'conditions': [
-             # Windows and Linux (including Chrome OS) use Aura and Ash.
+             # Windows and Linux use Aura, but not Ash.
 -            ['OS=="win" or OS=="linux"', {
 +            ['OS=="win" or OS=="linux" or OS=="openbsd"', {
-               'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -249,12 +249,12 @@
+ 
+@@ -254,13 +254,13 @@
            }],
  
            # Enable HiDPI on Mac OS, Windows and Linux (including Chrome OS).
@@ -19,13 +19,14 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
              'enable_hidpi%': 1,
            }],
  
-           # Enable Top Chrome Material Design on Chrome OS, Windows, and Linux.
--          ['chromeos==1 or OS=="win" or OS=="linux"', {
-+          ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+           # Enable Top Chrome Material Design on Chrome OS, Windows, and Linux,
+           # and Mac.
+-          ['chromeos==1 or OS=="win" or OS=="linux" or OS=="mac"', {
++          ['chromeos==1 or OS=="win" or OS=="linux" or OS=="mac" or OS=="openbsd"', {
              'enable_topchrome_md%': 1,
            }],
  
-@@ -784,7 +784,7 @@
+@@ -778,7 +778,7 @@
          }],
  
          # DBus usage.
@@ -34,7 +35,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -889,7 +889,7 @@
+@@ -881,7 +881,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -43,7 +44,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -995,7 +995,7 @@
+@@ -987,7 +987,7 @@
          # --help for more information. Meant to be overriden with GYP_DEFINES.
          # TODO(maruel): Remove the conditions as more configurations are
          # supported.
@@ -52,7 +53,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -1011,7 +1011,7 @@
+@@ -1003,7 +1003,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -61,7 +62,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
            'enable_mdns%' : 1,
          }],
  
-@@ -1636,7 +1636,7 @@
+@@ -1633,7 +1633,7 @@
        ['OS=="win"', {
          'windows_driver_kit_path%': '$(WDK_DIR)',
        }],
@@ -70,7 +71,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
          'conditions': [
            ['target_arch=="mipsel" or target_arch=="mips64el"', {
              'werror%': '',
-@@ -3613,6 +3613,13 @@
+@@ -3592,6 +3592,13 @@
      },
    },
    'conditions': [
@@ -84,16 +85,16 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2016/03/23 20:13:06 robert Exp $
      ['os_posix==1', {
        'target_defaults': {
          'ldflags': [
-@@ -4735,7 +4742,7 @@
+@@ -4710,7 +4717,7 @@
      }],
      # FreeBSD-specific options; note that most FreeBSD options are set above,
      # with Linux.
 -    ['OS=="freebsd"', {
-+    ['OS=="openbsd"', {
++    ['OS=="freebsd" or OS=="openbsd"', {
        'target_defaults': {
          'ldflags': [
            '-Wl,--no-keep-memory',
-@@ -6031,8 +6038,8 @@
+@@ -6003,8 +6010,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [

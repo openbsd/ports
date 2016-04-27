@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.6 2016/03/23 20:13:07 robert Exp $
---- content/browser/gpu/gpu_internals_ui.cc.orig.port	Wed Feb 24 21:01:32 2016
-+++ content/browser/gpu/gpu_internals_ui.cc	Thu Mar  3 09:43:26 2016
-@@ -37,14 +37,14 @@
+$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.7 2016/04/27 12:46:16 robert Exp $
+--- content/browser/gpu/gpu_internals_ui.cc.orig.port	Thu Apr 14 14:01:47 2016
++++ content/browser/gpu/gpu_internals_ui.cc	Thu Apr 14 14:02:13 2016
+@@ -37,7 +37,7 @@
  #include "third_party/angle/src/common/version.h"
  #include "ui/gl/gpu_switching_manager.h"
  
@@ -10,7 +10,8 @@ $OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.6 2016/03/23 20:13:0
  #include <X11/Xlib.h>
  #endif
  #if defined(OS_WIN)
- #include "ui/base/win/shell.h"
+@@ -45,7 +45,7 @@
+ #include "ui/gfx/win/physical_size.h"
  #endif
  
 -#if defined(OS_LINUX) && defined(USE_X11)
@@ -18,7 +19,7 @@ $OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.6 2016/03/23 20:13:0
  #include "ui/base/x/x11_util.h"
  #include "ui/gfx/x/x11_atom_cache.h"
  #endif
-@@ -186,7 +186,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
+@@ -198,7 +198,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
                                               gpu_info.gl_ws_version));
    basic_info->Append(NewDescriptionValuePair("Window system binding extensions",
                                               gpu_info.gl_ws_extensions));

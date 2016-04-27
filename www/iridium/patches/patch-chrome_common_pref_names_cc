@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.8 2016/03/23 20:13:07 robert Exp $
---- chrome/common/pref_names.cc.orig.port	Mon Feb 15 07:30:08 2016
-+++ chrome/common/pref_names.cc	Mon Feb 15 12:12:52 2016
-@@ -883,7 +883,7 @@ const char kForceYouTubeSafetyMode[] = "settings.force
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.9 2016/04/27 12:46:16 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Wed Apr 27 11:16:09 2016
++++ chrome/common/pref_names.cc	Wed Apr 27 11:16:27 2016
+@@ -885,7 +885,7 @@ const char kForceYouTubeSafetyMode[] = "settings.force
  // supervised users.
  const char kRecordHistory[] = "settings.history_recorded";
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-chrome_common_pref_names_cc,v 1.8 2016/03/23 20:13:07 robert Exp
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1346,7 +1346,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1348,7 +1348,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
--#if defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     (defined(OS_MACOSX) && !defined(OS_IOS))
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
+ #endif

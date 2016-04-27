@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.9 2016/03/23 20:13:06 robert Exp $
---- chrome/app/chromium_strings.grd.orig.port	Mon Mar 21 19:53:15 2016
-+++ chrome/app/chromium_strings.grd	Wed Mar 23 12:37:29 2016
-@@ -965,7 +965,7 @@ Signing in anyway will merge Iridium information like 
+$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.10 2016/04/27 12:46:16 robert Exp $
+--- chrome/app/chromium_strings.grd.orig.port	Tue Apr 26 16:20:01 2016
++++ chrome/app/chromium_strings.grd	Wed Apr 27 11:11:15 2016
+@@ -948,7 +948,7 @@ Signing in anyway will merge browser information like 
        </message>
  
        <!-- ProcessSingleton -->
 -      <if expr="is_linux or is_macosx">
 +      <if expr="is_linux or is_macosx or is_bsd">
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
-           The profile appears to be in use by another Iridium process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Iridium has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Iridium.
+           The profile appears to be in use by another browser process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). The browser has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch the browser.
          </message>

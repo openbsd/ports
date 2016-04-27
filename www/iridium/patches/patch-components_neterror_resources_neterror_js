@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_renderer_resources_neterror_js,v 1.2 2016/02/15 18:07:53 robert Exp $
---- chrome/renderer/resources/neterror.js.orig.port	Wed Jan 20 21:01:20 2016
-+++ chrome/renderer/resources/neterror.js	Fri Jan 22 19:58:58 2016
+$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.1 2016/04/27 12:46:16 robert Exp $
+--- components/neterror/resources/neterror.js.orig.port	Sat Apr 16 20:27:04 2016
++++ components/neterror/resources/neterror.js	Sat Apr 16 20:27:19 2016
 @@ -153,7 +153,7 @@ function setUpCachedButton(buttonStrings) {
  }
  

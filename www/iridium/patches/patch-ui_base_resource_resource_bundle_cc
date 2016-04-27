@@ -1,12 +1,21 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.6 2016/03/23 20:13:07 robert Exp $
---- ui/base/resource/resource_bundle.cc.orig.port	Wed Feb 24 21:01:35 2016
-+++ ui/base/resource/resource_bundle.cc	Thu Mar  3 09:43:26 2016
-@@ -641,7 +641,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
- #elif defined(OS_CHROMEOS)
-   // TODO(oshima): Include 200P only if the device support 200P
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.7 2016/04/27 12:46:16 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig.port	Thu Apr 14 14:10:58 2016
++++ ui/base/resource/resource_bundle.cc	Thu Apr 14 14:11:14 2016
+@@ -612,7 +612,7 @@ void ResourceBundle::ReloadFonts() {
+ }
+ 
+ ScaleFactor ResourceBundle::GetMaxScaleFactor() const {
+-#if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   return max_scale_factor_;
+ #else
+   return GetSupportedScaleFactors().back();
+@@ -674,7 +674,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+ #elif defined(OS_MACOSX)
+   if (base::mac::IsOSLionOrLater())
+     supported_scale_factors.push_back(SCALE_FACTOR_200P);
+-#elif defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN)
++#elif defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    supported_scale_factors.push_back(SCALE_FACTOR_200P);
--#elif defined(OS_LINUX) && defined(ENABLE_HIDPI)
-+#elif (defined(OS_LINUX) || defined(OS_BSD)) && defined(ENABLE_HIDPI)
-   supported_scale_factors.push_back(SCALE_FACTOR_200P);
- #elif defined(OS_WIN)
-   bool default_to_100P = true;
+ #endif
+   ui::SetSupportedScaleFactors(supported_scale_factors);

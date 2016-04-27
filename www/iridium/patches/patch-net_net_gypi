@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_net_gypi,v 1.8 2016/03/23 20:13:07 robert Exp $
---- net/net.gypi.orig.port	Wed Feb 24 21:01:33 2016
-+++ net/net.gypi	Thu Mar  3 09:43:26 2016
-@@ -435,8 +435,6 @@
+$OpenBSD: patch-net_net_gypi,v 1.9 2016/04/27 12:46:16 robert Exp $
+--- net/net.gypi.orig.port	Wed Apr 13 22:59:49 2016
++++ net/net.gypi	Thu Apr 14 08:25:13 2016
+@@ -439,8 +439,6 @@
        'android/network_library.h',
        'android/traffic_stats.cc',
        'android/traffic_stats.h',
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_net_gypi,v 1.8 2016/03/23 20:13:07 robert Exp $
        'base/backoff_entry.cc',
        'base/backoff_entry.h',
        'base/backoff_entry_serializer.cc',
-@@ -509,7 +507,6 @@
+@@ -513,7 +511,6 @@
        'base/network_delegate.h',
        'base/network_delegate_impl.cc',
        'base/network_delegate_impl.h',

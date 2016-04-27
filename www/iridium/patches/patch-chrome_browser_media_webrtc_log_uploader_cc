@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_media_webrtc_log_uploader_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/media/webrtc_log_uploader.cc.orig.port	Mon Apr 25 17:42:10 2016
++++ chrome/browser/media/webrtc_log_uploader.cc	Mon Apr 25 17:42:31 2016
+@@ -344,6 +344,8 @@ void WebRtcLogUploader::SetupMultipart(
+   const char product[] = "Chrome_Android";
+ #elif defined(OS_CHROMEOS)
+   const char product[] = "Chrome_ChromeOS";
++#elif defined(OS_OPENBSD)
++  const char product[] = "Chrome_OpenBSD";
+ #else
+ #error Platform not supported.
+ #endif

@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
---- media/media.gyp.orig.port	Wed Feb 24 21:01:33 2016
-+++ media/media.gyp	Sat Mar  5 23:31:13 2016
+$OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
+--- media/media.gyp.orig.port	Thu Apr 21 00:01:50 2016
++++ media/media.gyp	Tue Apr 26 10:07:36 2016
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
        # Enable ALSA and Pulse for runtime selection.
--      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and ((embedded!=1 and chromecast==0) or is_cast_desktop_build==1)', {
-+      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and ((embedded!=1 and chromecast==0) or is_cast_desktop_build==1) and os_bsd != 1', {
+-      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded==0 or chromecast==1)', {
++      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded==0 or chromecast==1) and os_bsd!=1', {
          # ALSA is always needed for Web MIDI even if the cras is enabled.
          'use_alsa%': 1,
          'conditions': [
@@ -21,7 +21,7 @@ $OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
        # low memory buffer is used in non-Android based chromecast build due to hardware limitation.
        ['chromecast==1 and OS!="android"', {
          'use_low_memory_buffer%': 1,
-@@ -184,6 +188,8 @@
+@@ -189,6 +193,8 @@
          'audio/mac/audio_manager_mac.h',
          'audio/null_audio_sink.cc',
          'audio/null_audio_sink.h',
@@ -30,16 +30,18 @@ $OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
          'audio/pulse/audio_manager_pulse.cc',
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_input.cc',
-@@ -192,6 +198,8 @@
+@@ -197,6 +203,10 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
++        'audio/sndio/sndio_input.cc',
++        'audio/sndio/sndio_input.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -789,6 +797,24 @@
+@@ -730,6 +740,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -64,22 +66,16 @@ $OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -804,13 +830,7 @@
+@@ -745,7 +773,7 @@
              ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
--        ['OS=="openbsd"', {
--          'sources!': [
--            'capture/video/linux/v4l2_capture_delegate_multi_plane.cc',
--            'capture/video/linux/v4l2_capture_delegate_multi_plane.h',
--          ],
--        }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or os_bsd==1', {
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -904,7 +924,7 @@
+@@ -850,7 +878,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
@@ -88,21 +84,12 @@ $OpenBSD: patch-media_media_gyp,v 1.9 2016/03/23 20:13:07 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1148,7 +1168,7 @@
+@@ -1095,7 +1123,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],
 -        ['OS!="linux" and OS!="win"', {
-+        ['(OS!="linux" and os_bsd!=1) and OS!="win"', {
++        ['OS!="linux" and OS!="win" and os_bsd!=1', {
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -2033,7 +2053,7 @@
-             'test/pipeline_integration_test_base.cc',
-           ],
-           'conditions': [
--            ['os_posix==1 and OS!="mac"', {
-+            ['os_posix==1 and OS!="mac" and os_bsd!=1', {
-               'conditions': [
-                 ['use_allocator!="none"', {
-                   'dependencies': [

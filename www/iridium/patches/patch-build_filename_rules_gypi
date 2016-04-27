@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_filename_rules_gypi,v 1.2 2015/05/06 14:27:23 robert Exp $
---- build/filename_rules.gypi.orig.port	Fri Jul 18 23:35:30 2014
-+++ build/filename_rules.gypi	Fri Jul 18 23:41:13 2014
-@@ -85,7 +85,7 @@
-     ['<(use_aura)==0 or OS!="win" or >(nacl_untrusted_build)==1', {
-       'sources/': [ ['exclude', '_aurawin\\.(h|cc)$'] ]
+$OpenBSD: patch-build_filename_rules_gypi,v 1.3 2016/04/27 12:46:16 robert Exp $
+--- build/filename_rules.gypi.orig.port	Fri Apr  8 18:02:06 2016
++++ build/filename_rules.gypi	Thu Apr 14 08:25:08 2016
+@@ -89,7 +89,7 @@
+                     ['exclude', '_ashwin\\.(h|cc)$']
+       ]
      }],
 -    ['<(use_aura)==0 or OS!="linux" or >(nacl_untrusted_build)==1', {
 +    ['<(use_aura)==0 or (OS!="linux" and OS!="openbsd") or >(nacl_untrusted_build)==1', {
        'sources/': [ ['exclude', '_auralinux\\.(h|cc)$'] ]
      }],
-     ['<(use_ash)==0 or >(nacl_untrusted_build)==1', {
+     ['<(use_ozone)==0 or >(nacl_untrusted_build)==1', {

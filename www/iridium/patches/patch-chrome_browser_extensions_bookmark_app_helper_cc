@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_extensions_bookmark_app_helper_cc,v 1.7 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/extensions/bookmark_app_helper.cc.orig.port	Thu Mar  3 10:03:03 2016
-+++ chrome/browser/extensions/bookmark_app_helper.cc	Thu Mar  3 10:03:09 2016
-@@ -705,7 +705,7 @@ void BookmarkAppHelper::FinishInstallation(const Exten
-   chrome::HostDesktopType desktop = browser->host_desktop_type();
-   if (desktop != chrome::HOST_DESKTOP_TYPE_ASH) {
-     web_app::ShortcutLocations creation_locations;
+$OpenBSD: patch-chrome_browser_extensions_bookmark_app_helper_cc,v 1.8 2016/04/27 12:46:16 robert Exp $
+--- chrome/browser/extensions/bookmark_app_helper.cc.orig.port	Thu Apr 14 08:37:25 2016
++++ chrome/browser/extensions/bookmark_app_helper.cc	Thu Apr 14 08:37:31 2016
+@@ -706,7 +706,7 @@ void BookmarkAppHelper::FinishInstallation(const Exten
+ #if !defined(OS_MACOSX)
+ #if !defined(USE_ASH)
+   web_app::ShortcutLocations creation_locations;
 -#if defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-     creation_locations.on_desktop = true;
+   creation_locations.on_desktop = true;
  #else
-     creation_locations.on_desktop = false;
+   creation_locations.on_desktop = false;

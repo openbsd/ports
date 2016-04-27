@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
+--- ui/views/style/platform_style.cc.orig.port	Sat Apr 16 11:59:30 2016
++++ ui/views/style/platform_style.cc	Sat Apr 16 11:59:47 2016
+@@ -34,7 +34,7 @@ scoped_ptr<ScrollBar> PlatformStyle::CreateScrollBar(b
+ 
+ #endif
+ 
+-#if !defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(OS_CHROMEOS)
+ // static
+ scoped_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
+     LabelButton* button) {

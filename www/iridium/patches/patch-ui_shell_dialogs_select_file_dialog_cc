@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.3 2016/03/23 20:13:07 robert Exp $
---- ui/shell_dialogs/select_file_dialog.cc.orig.port	Wed Feb 24 21:01:35 2016
-+++ ui/shell_dialogs/select_file_dialog.cc	Thu Mar  3 09:43:26 2016
-@@ -21,7 +21,7 @@
+$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
+--- ui/shell_dialogs/select_file_dialog.cc.orig.port	Wed Apr 13 23:00:05 2016
++++ ui/shell_dialogs/select_file_dialog.cc	Thu Apr 14 08:25:16 2016
+@@ -20,7 +20,7 @@
  #include "ui/shell_dialogs/select_file_dialog_mac.h"
  #elif defined(OS_ANDROID)
  #include "ui/shell_dialogs/select_file_dialog_android.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.3 2016/03/23 20:13:07
  #include "ui/shell_dialogs/linux_shell_dialog.h"
  #endif
  
-@@ -81,7 +81,7 @@ scoped_refptr<SelectFileDialog> SelectFileDialog::Crea
+@@ -79,7 +79,7 @@ scoped_refptr<SelectFileDialog> SelectFileDialog::Crea
        return dialog;
    }
  
