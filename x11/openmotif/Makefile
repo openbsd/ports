@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2016/04/27 13:58:19 naddy Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -46,19 +46,17 @@ MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOXMREV=${LIBXm_VERSION}
 FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 
-MODULES=		converters/libiconv
-
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
-LIB_DEPENDS=		graphics/jpeg \
+LIB_DEPENDS=		converters/libiconv \
+			graphics/jpeg \
 			graphics/png
 LIB_DEPENDS-demos=	x11/openmotif \
-			${MODLIBICONV_LIB_DEPENDS} \
 			${LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xt c Xft Xmu Xrender \
-			expat fontconfig freetype m z xcb \
+			expat fontconfig freetype iconv m z xcb \
 			jpeg png pthread-stubs
 WANTLIB-demos=		${WANTLIB} Xm Mrm
 
