@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/27 20:21:19 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/27 21:06:31 jca Exp $
 
 COMMENT =	HTML to markdown-formatted text converter
 
 MODPY_EGG_VERSION =	2016.4.2
+REVISION =	0
 DISTNAME =	html2text-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -18,7 +19,10 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
+FLAVORS =	python3
+FLAVOR ?=
+
 post-install:
-	mv ${PREFIX}/bin/{,py-}html2text
+	mv ${PREFIX}/bin/{,${MODPY_PY_PREFIX}}html2text
 
 .include <bsd.port.mk>
