@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/01/10 16:16:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/04/27 08:55:33 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -21,6 +21,7 @@ include/dovecot/sieve/realpath.h
 include/dovecot/sieve/rfc2822.h
 include/dovecot/sieve/sieve-actions.h
 include/dovecot/sieve/sieve-address-parts.h
+include/dovecot/sieve/sieve-address-source.h
 include/dovecot/sieve/sieve-address.h
 include/dovecot/sieve/sieve-ast.h
 include/dovecot/sieve/sieve-binary-dumper.h
@@ -68,6 +69,7 @@ include/dovecot/sieve/sieve.h
 include/dovecot/sieve/strtrim.h
 lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
 lib/dovecot/lib90_sieve_plugin.so
+lib/dovecot/lib95_imap_sieve_plugin.so
 @lib lib/dovecot/libdovecot-sieve.so.${LIBdovecot-sieve_VERSION}
 lib/dovecot/settings/
 lib/dovecot/settings/libmanagesieve_login_settings.so
@@ -75,6 +77,7 @@ lib/dovecot/settings/libmanagesieve_settings.so
 lib/dovecot/settings/libpigeonhole_settings.so
 lib/dovecot/sieve/
 lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
+lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.so
 @bin libexec/dovecot/managesieve
 @bin libexec/dovecot/managesieve-login
 @man man/man1/doveadm-sieve.1
