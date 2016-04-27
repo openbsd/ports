@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2016/04/20 06:22:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2016/04/27 10:12:41 jasper Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -18,7 +18,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		3
+REVISION-main=		4
+REVISION-ldap=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
+REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -41,12 +45,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
 WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
+WANTLIB += iconv intl
 
 # /libgda-5.1.2_writes_to_HOME/.cache/g-ir-scanner
 PORTHOME=		${WRKDIST}
 
-MODULES=		devel/gettext \
-			lang/python \
+MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_LDFLAGS=	-lm
@@ -92,9 +96,8 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c gcrypt gpg-error ncurses sqlite3 gee-0.8
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-main=	devel/gettext \
 			devel/libgee \
 			devel/libsoup \
 			textproc/libxslt \
@@ -111,7 +114,7 @@ WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm epoxy
 WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
 
-LIB_DEPENDS-ui=		${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-ui=		devel/gettext \
 			graphics/goocanvas2 \
 			x11/dbus \
 			x11/gnome/libgda \
@@ -123,31 +126,25 @@ RUN_DEPENDS-ui=		${RUN_DEPENDS} \
 WANTLIB-mysql += ${WANTLIB}
 WANTLIB-mysql += crypto gda-${GDA_MAJOR} mysqlclient ssl stdc++
 
-LIB_DEPENDS-mysql=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-mysql=	devel/gettext \
 			x11/gnome/libgda \
 			databases/mariadb
-
-RUN_DEPENDS-mysql=	${MODGETTEXT_RUN_DEPENDS}
 
 ### pgsql
 WANTLIB-pgsql += ${WANTLIB}
 WANTLIB-pgsql += gda-${GDA_MAJOR} pq crypto ssl
 
-LIB_DEPENDS-pgsql=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-pgsql=	devel/gettext \
 			x11/gnome/libgda \
 			databases/postgresql
-
-RUN_DEPENDS-pgsql=	${MODGETTEXT_RUN_DEPENDS}
 
 ### -ldap
 WANTLIB-ldap += ${WANTLIB}
 WANTLIB-ldap += crypto gda-${GDA_MAJOR} lber-2.4 ldap-2.4 sasl2 ssl
 
-LIB_DEPENDS-ldap=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-ldap=	devel/gettext \
 			x11/gnome/libgda \
 			databases/openldap
-
-RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 
 # XXX sync with LIBdb_VERSION in databases/db/v4
 # (find a proper way to push upstream)
