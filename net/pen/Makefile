@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/27 21:16:17 jca Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
-DISTNAME=		pen-0.32.0
-REVISION=		0
+DISTNAME=		pen-0.33.0
 
 CATEGORIES=		net
 
