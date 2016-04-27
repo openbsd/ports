@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2016/04/27 21:01:26 jasper Exp $
 
 COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	3.8.3
+REVISION=	0
 
 CATEGORIES=	mail
 
