@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.383 2016/04/26 15:36:23 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.384 2016/04/27 10:01:01 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -858,22 +858,23 @@ sub tweak_search
 # list of
 #   cat/path => badspec
 my $cve = {
-	'print/cups,-main' => 'cups-<1.7.4',
-	'sysutils/mcollective' => 'mcollective-<2.5.3',
-	'net/transmission,-main' => 'transmission-<2.84',
-	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
-	'net/transmission,-qt' => 'transmission-qt-<2.84',
-	'www/bozohttpd' => 'bozohttpd-<20130711p0',
-	'mail/exim' => 'exim-<4.83',
-	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
-	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
-	'shells/bash' => 'bash-<4.3.27',
-	'www/drupal7/core' => 'drupal->=7.0,<7.32',
 	'audio/flac' => 'flac-<1.3.0p1',
-	'www/drupal6/views' => 'drupal6-views-<2.18',
-	'graphics/tiff' => 'tiff-<4.0.4beta',
-	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'devel/pcre' => 'pcre-<8.38',
+	'graphics/tiff' => 'tiff-<4.0.4beta',
+	'mail/exim' => 'exim-<4.83',
+	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'net/ntp' => 'ntp-<4.2.8pl7',
+	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
+	'net/transmission,-main' => 'transmission-<2.84',
+	'net/transmission,-qt' => 'transmission-qt-<2.84',
+	'print/cups,-main' => 'cups-<1.7.4',
+	'shells/bash' => 'bash-<4.3.27',
+	'sysutils/mcollective' => 'mcollective-<2.5.3',
+	'www/bozohttpd' => 'bozohttpd-<20130711p0',
+	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
+	'www/drupal6/views' => 'drupal6-views-<2.18',
+	'www/drupal7/core' => 'drupal->=7.0,<7.32',
+	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 };
 
 # ->check_security($path)
