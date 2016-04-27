@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/05/22 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		project management application
 
@@ -44,10 +44,9 @@ WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl lzma m ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += pthread pthread-stubs ssl util vorbis vorbisfile xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z
+WANTLIB += xcb-render xcb-shm xml2 xslt z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/gconf2
 
 LIB_DEPENDS=		security/libgcrypt \

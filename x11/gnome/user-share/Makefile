@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/22 12:23:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		personal file-sharing service for GNOME
 
@@ -18,10 +18,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz ltdl m nautilus-extension
 WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z iconv intl
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/04/27 09:47:43 jasper Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
@@ -22,9 +22,9 @@ WANTLIB += readline xcb xcb-render xcb-shm z Xrandr epoxy
 WANTLIB += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi dbus-1 gdk-3 gdk_pixbuf-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # sync with devel/spidermonkey
 MODULES +=		gcc4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
@@ -19,10 +19,9 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gpgme graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz m nautilus-extension notify p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/dconf
 
 MODGNOME_TOOLS=		desktop-file-utils

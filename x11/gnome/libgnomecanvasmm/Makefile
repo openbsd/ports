@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2016/04/27 09:47:44 jasper Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -25,10 +25,9 @@ WANTLIB += glibmm-2.4 gmodule-2.0 gnomecanvas-2 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
 WANTLIB += png pthread pthread-stubs sigc-2.0 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # c++11
 MODULES +=		gcc4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/10/15 17:43:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -20,7 +20,12 @@ WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gpgme
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
+
+MODULES=	x11/gnome \
+		devel/dconf
+
+MODGNOME_TOOLS=	gobject-introspection
 
 LIB_DEPENDS=	x11/dbus-glib \
 		security/gpgme \
@@ -32,11 +37,5 @@ LIB_DEPENDS=	x11/dbus-glib \
 BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
 RUN_DEPENDS +=		gnupg->=2:security/gnupg2
 CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
-
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
-
-MODGNOME_TOOLS=	gobject-introspection
 
 .include <bsd.port.mk>

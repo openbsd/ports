@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/03/19 10:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -16,9 +16,9 @@ WANTLIB += ORBit-2 ORBitCosNaming-2 bonobo-2 bonobo-activation c
 WANTLIB += canberra crypto dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 ltdl lzma m
 WANTLIB += ogg pcre popt pthread ssl util vorbis vorbisfile xml2 z
+WANTLIB += iconv intl
 
 MODULES=	devel/gconf2 \
-		devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	audio/libcanberra \

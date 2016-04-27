@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/28 18:03:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		media art extraction and cache management library
 
@@ -13,10 +13,9 @@ CATEGORIES=		multimedia
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m pcre png pthread z
+WANTLIB += m pcre png pthread z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 

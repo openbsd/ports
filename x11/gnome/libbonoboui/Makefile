@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2016/03/19 10:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=	user interface components for bonobo
 
@@ -21,11 +21,11 @@ WANTLIB += gnomevfs-2 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += iconv intl
 
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=	x11/gnome
 
 LIB_DEPENDS=	devel/popt \
 		x11/gnome/libgnome \

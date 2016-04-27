@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
@@ -12,10 +12,9 @@ SHARED_LIBS +=  gnome-menu-3         0.0      # 0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre pthread
-WANTLIB += z
+WANTLIB += z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS += 	gobject-introspection
 

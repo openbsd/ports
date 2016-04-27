@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=	quick previewer for Nautilus
 
@@ -26,10 +26,9 @@ WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png proxy pthread pthread-stubs readline
 WANTLIB += secret-1 soup-2.4 sqlite3 ssl stdc++ webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-xfixes xml2 xslt z hyphen
+WANTLIB += xcb-xfixes xml2 xslt z hyphen iconv intl
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=	x11/gnome
 
 LIB_DEPENDS=	audio/libmusicbrainz5 \
 		graphics/clutter/clutter-gst \

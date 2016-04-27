@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/04/25 15:50:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2016/04/27 09:47:44 jasper Exp $
 
 TRACKER_API=	1.0
 
@@ -23,13 +23,12 @@ WANTLIB += grlpls-0.3 gthread-2.0 icudata icui18n icuuc idn json-glib-1.0
 WANTLIB += kvm lzma m mediaart-2.0 nghttp2 nspr4 nss3 oauth p11-kit pcre
 WANTLIB += plc4 plds4 png pthread smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl ssl3 totem-plparser uuid
-WANTLIB += xml2 z lzo2
+WANTLIB += xml2 z lzo2 iconv intl
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=	x11/gnome
 
 LIB_DEPENDS=	devel/libgdata \
 		mail/gmime \

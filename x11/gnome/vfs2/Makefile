@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2016/04/27 09:47:45 jasper Exp $
 
 COMMENT=		GNOME Virtual File System
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += bz2 c crypto dbus-1 dbus-glib-1 fam ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 lzma m pcre pthread ssl
-WANTLIB += util xml2 z
+WANTLIB += util xml2 z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/gconf2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

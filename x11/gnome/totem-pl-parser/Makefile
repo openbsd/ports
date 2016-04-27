@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2016/04/27 09:47:44 jasper Exp $
 
 COMMENT=		GObject-based parsing library
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += archive bz2 c crypto curl expat ffi gcrypt gio-2.0
 WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 idn lua5.1 lzma lzo2 m nghttp2 pcre proxy pthread
-WANTLIB += quvi-0.9 soup-2.4 sqlite3 ssl xml2 z
+WANTLIB += quvi-0.9 soup-2.4 sqlite3 ssl xml2 z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		archivers/libarchive \
 			devel/libsoup \

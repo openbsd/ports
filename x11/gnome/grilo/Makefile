@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/04/25 15:50:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2016/04/27 09:47:43 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -25,10 +25,9 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz idn lzma lzo2 m nghttp2 nspr4
 WANTLIB += nss3 oauth pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3 softokn3
 WANTLIB += soup-2.4 sqlite3 ssl ssl3 totem-plparser xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z iconv intl
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=	x11/gnome
 
 LIB_DEPENDS=	devel/libsoup \
 		net/liboauth \
