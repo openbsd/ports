@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2012/12/24 13:11:03 stsp Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2016/04/27 00:40:16 jca Exp $
 
-tests/main.c uses clearenv(), which has been rejected twice by POSIX.
+don't install the test suite
 
 --- src/Makefile.in.orig	Fri Dec 21 15:42:57 2012
 +++ src/Makefile.in	Sun Dec 23 14:04:11 2012
