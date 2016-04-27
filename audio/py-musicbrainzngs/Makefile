@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/27 18:14:29 jasper Exp $
 
 COMMENT =	python bindings for musicbrainz NGS webservice
 
-MODPY_EGG_VERSION = 0.5
+MODPY_EGG_VERSION = 0.6
 DISTNAME =	musicbrainzngs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
@@ -17,6 +17,6 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 do-test:
-	@${MODPY_TEST_TARGET}
+	${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
