@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/25 17:59:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/27 16:12:07 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
@@ -26,6 +26,9 @@ LIB_DEPENDS =		devel/pango \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+
+pre-configure:
+	sed -i 's,/usr/bin/env bash,/bin/sh,' ${WRKSRC}/script/get_git_rev.sh
 
 post-install:
 	sed -i 's,#!.*bash,#!/usr/local/bin/bash,g' ${WRKSRC}/Examples/*.sh
