@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.39 2016/04/27 12:08:06 shadchin Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	4.0.0
-REVISION =		1
+REVISION =		2
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -29,7 +29,9 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 			textproc/py-numpydoc \
 			devel/py-ipykernel \
-			graphics/py-matplotlib
+			devel/py-nose \
+			graphics/py-matplotlib \
+			www/py-requests
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
