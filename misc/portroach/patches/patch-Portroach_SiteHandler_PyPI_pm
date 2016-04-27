@@ -1,4 +1,9 @@
-$OpenBSD: patch-Portroach_SiteHandler_PyPI_pm,v 1.1 2016/01/03 20:35:45 jasper Exp $
+$OpenBSD: patch-Portroach_SiteHandler_PyPI_pm,v 1.2 2016/04/27 17:02:17 jasper Exp $
+
+From f3ce759e766027f45ed6f52a832d3a2140a9cf69 Mon Sep 17 00:00:00 2001
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed Apr 27 18:58:44 2016 +0200
+Subject: [PATCH] Sync with the new MODPY_PI mastersite
 
 From e93b8331f6e5f850bbb5faca866efcbf73de756c Mon Sep 17 00:00:00 2001
 From: Alexander Shadchin <alexandr.shadchin@gmail.com>
@@ -6,7 +11,16 @@ Date: Fri, 18 Dec 2015 03:29:57 +0500
 Subject: [PATCH] Fix PyPI
 
 --- Portroach/SiteHandler/PyPI.pm.orig	Fri Jan  1 21:46:36 2016
-+++ Portroach/SiteHandler/PyPI.pm	Sun Jan  3 21:34:31 2016
++++ Portroach/SiteHandler/PyPI.pm	Wed Apr 27 19:00:55 2016
+@@ -73,7 +73,7 @@ sub CanHandle
+ 
+ 	my ($url) = @_;
+ 
+-	return ($url =~ /https:\/\/pypi\.python\.org\//);
++	return ($url =~ /https:\/\/pypi\.io\//);
+ }
+ 
+ 
 @@ -109,14 +109,13 @@ sub GetFiles
  	$ua->agent(USER_AGENT);
  	$resp = $ua->request(HTTP::Request->new(GET => $query));
