@@ -1,0 +1,29 @@
+$OpenBSD: patch-gfx_skia_moz_build,v 1.3 2016/04/27 14:01:02 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
+--- gfx/skia/moz.build.orig	Thu Dec 17 01:45:28 2015
++++ gfx/skia/moz.build	Thu Dec 17 08:04:24 2015
+@@ -573,7 +573,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
+             'skia/src/opts/memset32_neon.S',
+         ]
+ 
+-if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT':
++if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT' and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
+     if CONFIG['CPU_ARCH'] == 'x86_64':
+         SOURCES += [
+             'skia/src/opts/SkBlitRow_opts_SSE4_x64_asm.S',
+@@ -644,11 +644,13 @@ if CONFIG['_MSC_VER']:
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
+     SOURCES['skia/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
++    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
++        SOURCES['skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+     SOURCES['skia/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['skia/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
++    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
++        SOURCES['skia/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
+     SOURCES['skia/src/opts/SkMorphology_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkUtils_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkXfermode_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']

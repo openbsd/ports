@@ -1,0 +1,17 @@
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_cpp,v 1.1 2016/04/27 14:01:02 landry Exp $
+
+Mark JIT pages as non-writable
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1215479
+
+--- js/src/jit/ExecutableAllocator.cpp.orig	Tue Sep 29 23:44:56 2015
++++ js/src/jit/ExecutableAllocator.cpp	Fri Oct 16 17:02:15 2015
+@@ -88,7 +88,7 @@ ExecutableAllocator::addSizeOfCode(JS::CodeSizes* size
+     }
+ }
+ 
+-#if TARGET_OS_IPHONE
++#if defined(__OpenBSD__) || TARGET_OS_IPHONE
+ bool ExecutableAllocator::nonWritableJitCode = true;
+ #else
+ bool ExecutableAllocator::nonWritableJitCode = false;

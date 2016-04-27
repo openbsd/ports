@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/21 06:25:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/04/27 14:01:02 landry Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/application.ini
@@ -19,25 +19,12 @@ lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/features/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/features/loop@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/icons/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/icons/mozicon128.png
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/omni.ja
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/amazondotcom.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/bing.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/ddg.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/eBay.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/google.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/twitter.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/wikipedia.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/yahoo.xml
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/chrome.manifest
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/
-lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/pref/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/pref/channel-prefs.js
@@ -51,7 +38,7 @@ lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/gmp-clearkey/0.1/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/gmp-clearkey/0.1/clearkey.info
 @lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
-@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/omni.ja
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/platform.ini
