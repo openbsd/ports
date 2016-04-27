@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/16 13:48:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2016/04/27 10:42:50 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -70,5 +70,21 @@ CONFIGURE_ARGS=	--disable-smartcard \
 CONFIGURE_ARGS+=--disable-webdav
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX: Remove when bz is merged
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 .include <bsd.port.mk>
