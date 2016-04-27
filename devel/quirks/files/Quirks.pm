@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.388 2016/04/27 12:19:50 shadchin Exp $
+# $OpenBSD: Quirks.pm,v 1.389 2016/04/27 14:24:03 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -770,6 +770,7 @@ my $obsolete_reason = {
 	'gtkhtml3' => 5,
 	'libunique3' => 5,
 	'swfdec' => 3,
+	'asm' => 5,
 };
 
 my @msg = (
