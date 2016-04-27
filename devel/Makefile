@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1485 2016/04/27 10:45:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.1486 2016/04/27 11:58:16 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1188,6 +1188,8 @@
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules
      SUBDIR += py-asn1-modules,python3
+     SUBDIR += py-astroid
+     SUBDIR += py-astroid,python3
      SUBDIR += py-async
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
