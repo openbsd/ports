@@ -1,29 +1,21 @@
-$OpenBSD: patch-gfx_skia_moz_build,v 1.13 2016/01/27 18:12:43 landry Exp $
+$OpenBSD: patch-gfx_skia_moz_build,v 1.14 2016/04/27 13:50:27 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
---- gfx/skia/moz.build.orig	Thu Dec 17 01:45:28 2015
-+++ gfx/skia/moz.build	Thu Dec 17 08:04:24 2015
-@@ -573,7 +573,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
-             'skia/src/opts/memset32_neon.S',
-         ]
- 
--if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT':
-+if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC'] and CONFIG['OS_ARCH'] != 'WINNT' and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
-     if CONFIG['CPU_ARCH'] == 'x86_64':
-         SOURCES += [
-             'skia/src/opts/SkBlitRow_opts_SSE4_x64_asm.S',
-@@ -644,11 +644,13 @@ if CONFIG['_MSC_VER']:
- if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
-     SOURCES['skia/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+--- gfx/skia/moz.build.orig	Thu Mar 10 04:02:24 2016
++++ gfx/skia/moz.build	Mon Mar 14 23:02:47 2016
+@@ -709,10 +709,13 @@ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
      SOURCES['skia/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
--    SOURCES['skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
-+    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
-+        SOURCES['skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
-     SOURCES['skia/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['skia/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
      SOURCES['skia/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
-     SOURCES['skia/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
--    SOURCES['skia/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
+-    SOURCES['skia/src/opts/SkBlitRow_opts_SSE4.cpp'].flags += ['-msse4.1']
 +    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
-+        SOURCES['skia/src/opts/SkBlurImage_opts_SSE4.cpp'].flags += ['-msse4.1']
-     SOURCES['skia/src/opts/SkMorphology_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
-     SOURCES['skia/src/opts/SkUtils_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
-     SOURCES['skia/src/opts/SkXfermode_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
++        SOURCES['skia/src/opts/SkBlitRow_opts_SSE4.cpp'].flags += ['-msse4.1']
+     SOURCES['skia/src/opts/SkOpts_sse2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['skia/src/opts/SkOpts_ssse3.cpp'].flags += ['-mssse3']
+-    SOURCES['skia/src/opts/SkOpts_sse41.cpp'].flags += ['-msse4.1']
++    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
++        SOURCES['skia/src/opts/SkOpts_ssse3.cpp'].flags += ['-mssse3']
++    if CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSE4_1']:
++        SOURCES['skia/src/opts/SkOpts_sse41.cpp'].flags += ['-msse4.1']
+     SOURCES['skia/src/opts/SkOpts_avx.cpp'].flags += ['-mavx']
+ elif CONFIG['CPU_ARCH'] == 'arm' and CONFIG['GNU_CC'] and CONFIG['BUILD_ARM_NEON']:
+     DEFINES['SK_ARM_HAS_OPTIONAL_NEON'] = 1

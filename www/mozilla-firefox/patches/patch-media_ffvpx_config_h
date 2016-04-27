@@ -1,0 +1,16 @@
+$OpenBSD: patch-media_ffvpx_config_h,v 1.1 2016/04/27 13:50:27 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1239550#c13
+
+--- media/ffvpx/config.h.orig	Fri Apr  8 03:19:22 2016
++++ media/ffvpx/config.h	Sat Apr  9 11:43:17 2016
+@@ -26,4 +26,9 @@
+ #endif
+ #endif
+ #include "config_common.h"
++
++#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#undef HAVE_MALLOC_H
++#define HAVE_MALLOC_H 0
++#endif
+ #endif // MOZ_FFVPX_CONFIG_H

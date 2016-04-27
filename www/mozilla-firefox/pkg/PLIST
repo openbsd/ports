@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2016/03/14 20:48:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.60 2016/04/27 13:50:27 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -32,6 +32,8 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.j
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/features/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/features/e10srollout@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/features/${MOZILLA_PROJECT}@getpocket.com.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/features/loop@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/mozicon128.png
@@ -49,7 +51,13 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/clearkey.info
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozavutil.so.${LIBmozavutil_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini

@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.294 2016/03/19 13:37:37 landry Exp $
+# $OpenBSD: Makefile,v 1.295 2016/04/27 13:50:27 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	45.0.1
+MOZILLA_VERSION =	46.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
-SO_VERSION =	63.0
+SO_VERSION =	64.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps mozgtk xul clearkey lgpllibs
+MOZILLA_LIBS =	browsercomps mozavcodec mozavutil mozsqlite3 xul clearkey lgpllibs
 
 CATEGORIES =	www
 
@@ -35,6 +35,10 @@ MODCLANG_LANGS =	c c++
 
 # firefox >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+# gecko 46 wants sqlite 3.10.2
+MOZILLA_USE_BUNDLED_SQLITE = Yes
+# firefox >= 46 defaults to gtk+3
+MOZILLA_USE_GTK3 = Yes
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -47,7 +51,7 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
 # relies on pulseaudio for sound and broken at runtime
-CONFIGURE_ARGS +=	--disable-webrtc
+#CONFIGURE_ARGS +=	--disable-webrtc
 
 # bug #1064665
 LIB_DEPENDS +=	textproc/icu4c
