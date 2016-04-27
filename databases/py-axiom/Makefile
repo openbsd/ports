@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/27 20:57:43 eric Exp $
 
 COMMENT=	sqlite-based object persistence system for python
 
 VERSION=	0.6.0
 DISTNAME=	Axiom-${VERSION}
 PKGNAME=	py-axiom-${VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	databases
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodAxiom
-
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
