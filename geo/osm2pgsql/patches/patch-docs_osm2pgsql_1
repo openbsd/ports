@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_osm2pgsql_1,v 1.1.1.1 2015/10/30 17:18:53 landry Exp $
---- docs/osm2pgsql.1.orig	Sat Aug 15 07:28:11 2015
-+++ docs/osm2pgsql.1	Fri Oct 30 17:45:53 2015
-@@ -111,14 +111,14 @@ to be able to update your database, as these tables ar
+$OpenBSD: patch-docs_osm2pgsql_1,v 1.2 2016/04/27 17:02:34 danj Exp $
+--- docs/osm2pgsql.1.orig	Wed Mar  2 15:06:44 2016
++++ docs/osm2pgsql.1	Wed Apr 27 15:05:35 2016
+@@ -108,14 +108,14 @@ to be able to update your database, as these tables ar
  .TP
  \fB\-S\fR|\-\-style /path/to/style
  Location of the osm2pgsql style file. This specifies which tags from the data get
@@ -13,8 +13,8 @@ $OpenBSD: patch-docs_osm2pgsql_1,v 1.1.1.1 2015/10/30 17:18:53 landry Exp $
  to store all imported nodes typically greatly increases the speed of the import. Each cached node
  requires 8 bytes of cache, plus about 10% \- 30% overhead. For a current OSM full planet import with
  its ~ 3 billion nodes, a good value would be 27000 if you have enough RAM. If you don't have enough
--RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 800. 
-+RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 100. 
+-RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 800.
++RAM, it is likely beneficial to give osm2pgsql close to the full available amount of RAM. Defaults to 100.
  .TP
  \fB\  \fR\-\-cache\-strategy strategy
  There are a number of different modes in which osm2pgsql can organize its

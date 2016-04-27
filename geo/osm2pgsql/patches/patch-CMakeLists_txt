@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2016/04/27 17:02:34 danj Exp $
+--- CMakeLists.txt.orig	Wed Mar  2 15:06:44 2016
++++ CMakeLists.txt	Wed Apr 27 17:27:26 2016
+@@ -98,7 +98,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAK
+ find_package(Osmium REQUIRED COMPONENTS io geos proj)
+ include_directories(SYSTEM ${OSMIUM_INCLUDE_DIRS})
+ 
+-find_package(Lua)
++find_package(Lua ${MODLUA_VERSION})
+ if (LUA_FOUND)
+   include_directories(${LUA_INCLUDE_DIR})
+   set(HAVE_LUA 1)
+@@ -257,5 +257,5 @@ endif()
+ #############################################################
+ 
+ install(TARGETS osm2pgsql DESTINATION bin)
+-install(FILES docs/osm2pgsql.1 DESTINATION share/man/man1)
++install(FILES docs/osm2pgsql.1 DESTINATION man/man1)
+ install(FILES default.style empty.style 900913.sql DESTINATION share/osm2pgsql)

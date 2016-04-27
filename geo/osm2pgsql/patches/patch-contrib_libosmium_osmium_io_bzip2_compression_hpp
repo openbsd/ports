@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_libosmium_osmium_io_bzip2_compression_hpp,v 1.1 2016/04/27 17:02:34 danj Exp $
+--- contrib/libosmium/osmium/io/bzip2_compression.hpp.orig	Wed Apr 27 11:16:52 2016
++++ contrib/libosmium/osmium/io/bzip2_compression.hpp	Wed Apr 27 12:44:28 2016
+@@ -140,7 +140,7 @@ namespace osmium {
+                     m_bzfile = nullptr;
+                     if (m_file) {
+                         if (do_fsync()) {
+-                            osmium::io::detail::reliable_fsync(::fileno(m_file));
++                            osmium::io::detail::reliable_fsync(fileno(m_file));
+                         }
+                         if (fclose(m_file) != 0) {
+                             throw std::system_error(errno, std::system_category(), "Close failed");

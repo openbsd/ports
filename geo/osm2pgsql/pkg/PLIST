@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 17:18:53 landry Exp $
-@bin bin/nodecachefilereader
+@comment $OpenBSD: PLIST,v 1.2 2016/04/27 17:02:34 danj Exp $
 @bin bin/osm2pgsql
-@man man/man1/nodecachefilereader.1
 @man man/man1/osm2pgsql.1
 share/osm2pgsql/
 share/osm2pgsql/900913.sql
 share/osm2pgsql/default.style
+share/osm2pgsql/empty.style
