@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2016/04/27 09:48:59 jasper Exp $
 
 COMMENT=		keyboard configuration library
 
@@ -15,15 +15,14 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo iconv
 WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread intl
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm xkbfile xklavier xml2 z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
