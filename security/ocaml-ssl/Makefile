@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/27 00:12:22 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/27 00:13:11 jca Exp $
 
 COMMENT =	OCaml bindings for libssl
 CATEGORIES =	devel security
@@ -19,7 +19,6 @@ MODULES =	lang/ocaml
 BUILD_DEPENDS =	sysutils/findlib
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		LIBS=-lcrypto
 
 USE_GMAKE =	Yes
 
