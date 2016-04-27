@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.88 2016/03/20 00:02:31 naddy Exp $
+# $OpenBSD: mozilla.port.mk,v 1.89 2016/04/27 13:37:32 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -123,28 +123,25 @@ CONFIGURE_ARGS +=	--enable-debug-symbols=yes \
 INSTALL_STRIP =
 .endif
 
-.if ${FLAVOR:Mgtk3}
+.if ${FLAVOR:Mgtk3} || defined(MOZILLA_USE_GTK3)
 # https://bugzilla.mozilla.org/show_bug.cgi?id=983843
 CONFIGURE_ARGS +=	--with-system-cairo
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
-MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 gdk-x11-2.0 gtk-x11-2.0
+MOZILLA_LIBS +=		mozgtk
+MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
 .else
-MODMOZ_WANTLIB +=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-			Xrandr
+MODMOZ_WANTLIB +=	Xcursor Xi Xinerama Xrandr
 .endif
 MODMOZ_LIB_DEPENDS +=	x11/gtk+2
-MODMOZ_WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
+MODMOZ_WANTLIB +=	Xcomposite Xdamage Xfixes gdk-x11-2.0 gtk-x11-2.0
 
 PORTHOME =	${WRKSRC}
 
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-# starting with esr45, only xulrunner will be special
-.if ${MOZILLA_PROJECT} == "thunderbird"
-WRKDIST ?=	${WRKDIR}/comm-${MOZILLA_BRANCH}
-.elif ${MOZILLA_PROJECT} == "xulrunner" || ${PKGPATH} == "www/firefox-esr"
+.if ${MOZILLA_PROJECT} == "xulrunner"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
 WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
