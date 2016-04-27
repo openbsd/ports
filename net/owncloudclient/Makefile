@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/03 07:28:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2016/04/27 11:58:16 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-2.1.1
+REVISION = 		0
 
 SHARED_LIBS =		owncloudsync	2.0
 SHARED_LIBS +=		ocsync		2.0
@@ -16,17 +17,18 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto lib/inotify/inotify m pthread sqlite3 ssl z
+WANTLIB += c crypto iconv lib/inotify/inotify m pthread sqlite3 ssl z
 
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		converters/libiconv devel/cmake gcc4
+MODULES =		devel/cmake gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS += 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-LIB_DEPENDS =		devel/libinotify
+LIB_DEPENDS =		converters/libiconv \
+			devel/libinotify
 
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
@@ -34,7 +36,7 @@ CONFIGURE_ARGS +=	-Wno-dev \
 				-I${LOCALBASE}/include/inotify" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
-				-L${LOCALBASE}/lib/inotify -linotify \
+				-L${LOCALBASE}/lib/inotify -linotify -liconv \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify"
 
 FLAVORS = 		qt5
