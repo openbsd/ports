@@ -1,7 +1,7 @@
-$OpenBSD: patch-dynamic_Makefile_in,v 1.1 2006/11/28 05:19:49 msf Exp $
---- dynamic/Makefile.in.orig	Mon Nov 27 23:49:07 2006
-+++ dynamic/Makefile.in	Mon Nov 27 23:49:30 2006
-@@ -32,8 +32,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(
+$OpenBSD: patch-dynamic_Makefile_in,v 1.2 2016/04/27 15:42:55 jca Exp $
+--- dynamic/Makefile.in.orig	Mon Oct 20 01:07:01 2014
++++ dynamic/Makefile.in	Wed Apr 27 16:40:21 2016
+@@ -32,8 +32,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(LIBOBJS)))
  install:
  		mkdir -p $(libdir)
  		$(INSTALL_PROGRAM) $(SHLIBFILE) $(libdir)/$(SHLIBFILE)
