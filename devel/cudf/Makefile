@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/27 12:21:50 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/27 12:36:32 jca Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -7,8 +7,7 @@ COMMENT-main =		CUDF library (C bindings)
 
 CATEGORIES =		devel sysutils
 
-VERSION =		0.7
-REVISION =		1
+VERSION =		0.8
 DISTNAME =		cudf-${VERSION}
 PKGNAME-ocaml =		ocaml-cudf-${VERSION}
 PKGNAME-main =		libcudf-${VERSION}
