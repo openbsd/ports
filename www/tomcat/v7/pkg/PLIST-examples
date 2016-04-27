@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.32 2016/02/25 10:03:58 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.33 2016/04/27 07:54:10 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -1487,6 +1487,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.SafeCharsSet.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
+webapps/docs/api/org/apache/tomcat/util/buf/UriUtil.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Decoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/Utf8Encoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-frame.html
@@ -1743,6 +1744,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/ServerSocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketProperties.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketStatus.html
@@ -2510,7 +2512,8 @@ webapps/examples/WEB-INF/classes/websocket/echo/
 webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
 webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
 webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
-webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandler.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
 webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
 webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
 webapps/examples/WEB-INF/classes/websocket/snake/
