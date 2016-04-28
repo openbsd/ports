@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.393 2016/04/28 16:05:23 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.394 2016/04/28 16:29:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -795,6 +795,7 @@ my $obsolete_reason = {
 	'mod_text2html' => 6,
 	'p5-CGI-SpeedyCGI' => 6,
 	'p5-HTML-Embperl' => 6,
+	'p5-libapreq' => 6,
 };
 
 my @msg = (
