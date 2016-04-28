@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_puppet_provider_package_pip_rb,v 1.1 2016/04/28 11:53:09 jasper Exp $
+
+Allow the pip package provider to work, at least for the
+default python version.
+
+--- lib/puppet/provider/package/pip.rb.orig	Sat Apr 23 00:15:56 2016
++++ lib/puppet/provider/package/pip.rb	Thu Apr 28 12:10:05 2016
+@@ -42,7 +42,7 @@ Puppet::Type.type(:package).provide :pip,
+   end
+ 
+   def self.cmd
+-    ["pip", "pip-python"]
++    ["pip", "pip-python", "pip${MODPY_VERSION"]
+   end
+ 
+   # Return structured information about a particular package or `nil` if

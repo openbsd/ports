@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.1 2016/04/28 11:53:09 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Thu Apr 28 11:58:31 2016
++++ lib/puppet/defaults.rb	Thu Apr 28 11:59:05 2016
+@@ -1044,11 +1044,11 @@ EOT
+ 
+   define_settings(:master,
+     :user => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The user puppet master should run as.",
+     },
+     :group => {
+-      :default    => "puppet",
++      :default    => "_puppet",
+       :desc       => "The group puppet master should run as.",
+     },
+     :default_manifest => {
+@@ -1141,7 +1141,7 @@ EOT
+       :desc       => "File that provides mapping between custom SSL oids and user-friendly names"
+     },
+     :basemodulepath => {
+-      :default => "$codedir/modules#{File::PATH_SEPARATOR}/opt/puppetlabs/puppet/modules",
++      :default => "$codedir/modules#{File::PATH_SEPARATOR}/var/puppetlabs/puppet/modules",
+       :type => :path,
+       :desc => "The search path for **global** modules. Should be specified as a
+         list of directories separated by the system path separator character. (The

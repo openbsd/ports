@@ -1,0 +1,18 @@
+$OpenBSD: patch-ext_rack_config_ru,v 1.1 2016/04/28 11:53:09 jasper Exp $
+--- ext/rack/config.ru.orig	Thu Apr 28 11:57:37 2016
++++ ext/rack/config.ru	Thu Apr 28 11:58:15 2016
+@@ -14,11 +14,11 @@ ARGV << "--rack"
+ # Rack applications typically don't start as root.  Set --confdir, --vardir,
+ # --logdir, --rundir to prevent reading configuration from
+ # ~/ based pathing.
+-ARGV << "--confdir" << "/etc/puppetlabs/puppet"
+-ARGV << "--vardir"  << "/opt/puppetlabs/server/data/puppetmaster"
++ARGV << "--confdir" << "${SYSCONFDIR}/puppetlabs/puppet"
++ARGV << "--vardir"  << "/var/db/puppetlabs/server/data/puppetmaster"
+ ARGV << "--logdir"  << "/var/log/puppetlabs/puppetmaster"
+ ARGV << "--rundir"  << "/var/run/puppetlabs/puppetmaster"
+-ARGV << "--codedir"  << "/etc/puppetlabs/code"
++ARGV << "--codedir"  << "${SYSCONFIDR}/puppetlabs/code"
+ 
+ # always_cache_features is a performance improvement and safe for a master to
+ # apply. This is intended to allow agents to recognize new features that may be

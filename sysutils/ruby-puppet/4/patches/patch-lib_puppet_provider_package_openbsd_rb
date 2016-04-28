@@ -1,0 +1,162 @@
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1 2016/04/28 11:53:09 jasper Exp $
+
+- Handle the flavor as a property, not as a parameter.  
+- Handle errors from pkg_add
+- Handle uninstall_options being 'nil' by default
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Sat Apr 23 00:15:56 2016
++++ lib/puppet/provider/package/openbsd.rb	Thu Apr 28 13:49:08 2016
+@@ -20,48 +20,49 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+   has_feature :install_options
+   has_feature :uninstall_options
+   has_feature :upgradeable
++  has_feature :flavorable
+ 
++  mk_resource_methods
++
+   def self.instances
+-    packages = []
++    # our regex for matching pkg_info output
++    regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
++    fields = [:name, :ensure, :flavor ]
+ 
+     begin
+-      execpipe(listcmd) do |process|
+-        # our regex for matching pkg_info output
+-        regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+-        fields = [:name, :ensure, :flavor ]
+-        hash = {}
+-
+-        # now turn each returned line into a package object
+-        process.each_line { |line|
+-          if match = regex.match(line.split[0])
+-            fields.zip(match.captures) { |field,value|
+-              hash[field] = value
+-            }
+-
+-            hash[:provider] = self.name
+-
+-            packages << new(hash)
+-            hash = {}
+-          else
+-            unless line =~ /Updating the pkgdb/
+-              # Print a warning on lines we can't match, but move
+-              # on, since it should be non-fatal
+-              warning("Failed to match line #{line}")
+-            end
++      packages = pkginfo('-a')
++      packages.split("\n").collect do |package|
++        if match = regex.match(package.split[0])
++	  new( :name => match.captures[0],
++               :ensure => match.captures[1],
++               :flavor => match.captures[2],
++          )
++        else
++          unless line =~ /Updating the pkgdb/
++            # Print a warning on lines we can't match, but move
++            # on, since it should be non-fatal
++            warning("Failed to match line #{line}")
+           end
+-        }
++        end
+       end
+-
+-      return packages
+     rescue Puppet::ExecutionFailure
+       return nil
+     end
+   end
+ 
+-  def self.listcmd
+-    [command(:pkginfo), "-a"]
++  def self.prefetch(resources)
++    packages = instances
++    resources.keys.each do |name|
++      if provider = packages.find{ |pkg| pkg.name == name }
++        resources[name].provider = provider
++      end
++    end
+   end
+ 
++  def flavor=(value)
++    install
++  end
++
+   def latest
+     parse_pkgconf
+ 
+@@ -78,11 +79,10 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+     end
+ 
+     output = Puppet::Util.withenv(e_vars) {pkginfo "-Q", query}
+-    version = properties[:ensure]
+ 
+     if output.nil? or output.size == 0 or output =~ /Error from /
+       debug "Failed to query for #{resource[:name]}"
+-      return version
++      return properties[:ensure]
+     else
+       # Remove all fuzzy matches first.
+       output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
+@@ -91,21 +91,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+ 
+     if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*) \(installed\)$/
+       debug "Package is already the latest available"
+-      return version
++      return properties[:ensure]
+     else
+       match = /^(.*)-(\d[^-]*)[-]?(\w*)$/.match(output)
+       debug "Latest available for #{resource[:name]}: #{match[2]}"
+ 
+-      if version.to_sym == :absent || version.to_sym == :purged
++      if properties[:ensure].to_sym == :absent
+         return match[2]
+       end
+ 
+-      vcmp = version.split('.').map{|s|s.to_i} <=> match[2].split('.').map{|s|s.to_i}
++      vcmp = properties[:ensure].split('.').map{|s|s.to_i} <=> match[2].split('.').map{|s|s.to_i}
+       if vcmp > 0
++        debug "ensure: #{properties[:ensure]}"
+         # The locally installed package may actually be newer than what a mirror
+         # has. Log it at debug, but ignore it otherwise.
+-        debug "Package #{resource[:name]} #{version} newer then available #{match[2]}"
+-        return version
++        debug "Package #{resource[:name]} #{properties[:ensure]} newer then available #{match[2]}"
++        return properties[:ensure]
+       else
+         return match[2]
+       end
+@@ -155,14 +156,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+       full_name = @resource[:source]
+     end
+ 
++    cmd << '-r'
+     cmd << install_options
+     cmd << full_name
+ 
+     if latest
+-      cmd.unshift('-rz')
++      cmd.unshift('-z')
+     end
+ 
+-    Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
++    # pkg_add(1) doesn't set the return value upon failure so we have to peek
++    # at it's output to see if something went wrong.
++    output = Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
++    require 'pp'
++    pp output
++    if output =~ /Can't find /
++      self.fail "pkg_add returned: #{output.chomp}"
++    end
+   end
+ 
+   def get_full_name(latest = false)
+@@ -229,7 +238,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+   end
+ 
+   def uninstall_options
+-    join_options(resource[:uninstall_options])
++    [join_options(resource[:uninstall_options])]
+   end
+ 
+   def uninstall
