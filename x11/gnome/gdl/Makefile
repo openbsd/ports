@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2016/04/26 21:58:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2016/04/28 07:33:23 ajacoutot Exp $
 
 COMMENT=		GNOME Docking Library
 
 GNOME_PROJECT=		gdl
 GNOME_VERSION=		3.20.0
+REVISION=		0
 
 SHARED_LIBS +=  gdl-3                3.1      # 5.9
 
