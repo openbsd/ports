@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.773 2016/04/27 09:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.774 2016/04/28 14:41:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -469,7 +469,6 @@
      SUBDIR += py-wsgiproxy
      SUBDIR += py-wtforms
      SUBDIR += py-wtools
-     SUBDIR += rackmonkey
      SUBDIR += racktables
      SUBDIR += ratproxy
      SUBDIR += rawdog
