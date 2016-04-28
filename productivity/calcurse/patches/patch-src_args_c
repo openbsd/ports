@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_args_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
---- src/args.c.orig	Sun Feb 22 10:34:11 2015
-+++ src/args.c	Tue Oct 13 23:07:51 2015
-@@ -274,10 +274,11 @@ static void next_arg(void)
+$OpenBSD: patch-src_args_c,v 1.2 2016/04/28 14:26:13 ajacoutot Exp $
+--- src/args.c.orig	Sun Mar 27 12:26:18 2016
++++ src/args.c	Thu Apr 28 16:23:45 2016
+@@ -225,10 +225,11 @@ static void next_arg(void)
  /*
   * Print the date on stdout.
   */

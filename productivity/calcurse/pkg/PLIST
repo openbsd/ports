@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/15 08:29:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/28 14:26:13 ajacoutot Exp $
 @bin bin/calcurse
+bin/calcurse-caldav
 bin/calcurse-upgrade
 @man man/man1/calcurse.1
 share/doc/calcurse/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utils_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
---- src/utils.c.orig	Tue Oct 13 22:55:09 2015
-+++ src/utils.c	Tue Oct 13 23:00:58 2015
-@@ -349,17 +349,19 @@ long get_item_time(long date)
+$OpenBSD: patch-src_utils_c,v 1.2 2016/04/28 14:26:13 ajacoutot Exp $
+--- src/utils.c.orig	Sun Mar 27 12:45:31 2016
++++ src/utils.c	Thu Apr 28 16:23:45 2016
+@@ -350,17 +350,19 @@ long get_item_time(long date)
  		      get_item_min(date) * MININSEC);
  }
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_utils_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
  
  	localtime_r((time_t *) & date, &lt);
  	return lt.tm_min;
-@@ -387,10 +389,11 @@ long date2sec(struct date day, unsigned hour, unsigned
+@@ -443,10 +445,11 @@ int date_cmp_day(time_t d1, time_t d2)
  }
  
  /* Return a string containing the date, given a date in seconds. */
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_utils_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
  
  	if (sec == 0) {
  		strncpy(datestr, "0", BUFSIZ);
-@@ -403,8 +406,10 @@ char *date_sec2date_str(long sec, const char *datefmt)
+@@ -459,8 +462,10 @@ char *date_sec2date_str(long sec, const char *datefmt)
  }
  
  /* Generic function to format date. */
