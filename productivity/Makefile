@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/08/03 10:03:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2016/04/28 11:15:49 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -26,7 +26,6 @@
      SUBDIR += libgcal
      SUBDIR += libkfbapi
      SUBDIR += libkgapi
-     SUBDIR += libqzeitgeist
      SUBDIR += librcps
      SUBDIR += osmo
      SUBDIR += p5-Business-Tax-VAT-Validation
@@ -53,7 +52,6 @@
      SUBDIR += xinvest
      SUBDIR += xquote
      SUBDIR += yokadi
-     SUBDIR += zeitgeist
      SUBDIR += zim
 
 .include <bsd.port.subdir.mk>
