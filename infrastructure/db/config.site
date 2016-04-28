@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.26 2015/07/16 01:56:14 sthen Exp $
+# $OpenBSD: config.site,v 1.27 2016/04/28 22:40:50 sthen Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -872,7 +872,6 @@ ac_cv_path_fp_prog_find=${ac_cv_path_fp_prog_find=/usr/bin/find}
 ac_cv_path_fp_prog_sort=${ac_cv_path_fp_prog_sort=/usr/bin/sort}
 ac_cv_path_passwd_program=${ac_cv_path_passwd_program=/usr/bin/passwd}
 ac_cv_path_path_su=${ac_cv_path_path_su=/usr/bin/su}
-ac_cv_path_path_sudo=${ac_cv_path_path_sudo=/usr/bin/sudo}
 ac_cv_prog_AWK=${ac_cv_prog_AWK=awk}
 ac_cv_prog_LEX=${ac_cv_prog_LEX=flex}
 ac_cv_prog_PERL=${ac_cv_prog_PERL=/usr/bin/perl}
