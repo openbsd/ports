@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/20 16:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/04/28 13:59:19 naddy Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -10,7 +10,7 @@ PKGNAME-main=	hamlib-${VERSION}
 PKGNAME-python=	hamlib-python-${VERSION}
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
 CATEGORIES=	comms hamradio
-REVISION-main=	1
+REVISION-main=	2
 
 MULTI_PACKAGES=	-main -python -tcl
 
@@ -20,8 +20,7 @@ SHARED_LIBS +=	hamlib++             3.0      # 2.16
 HOMEPAGE=	http://hamlib.sourceforge.net/
 
 MODULES=	lang/python \
-		lang/tcl \
-		converters/libiconv
+		lang/tcl
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 cWANTLIB=		ltdl m pthread usb usb-1.0
-WANTLIB-main=		${cWANTLIB} c lzma stdc++ z xml2 ${MODLIBICONV_WANTLIB}
+WANTLIB-main=		${cWANTLIB} c iconv lzma stdc++ xml2 z
 WANTLIB-python=		${cWANTLIB} hamlib ${MODPY_WANTLIB}
 WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 
@@ -43,7 +42,7 @@ LIB_DEPENDS-tcl=	${BUILD_PKGPATH} \
 
 BUILD_DEPENDS=		devel/swig
 
-RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-main=
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
