@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/28 16:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/04/28 17:00:21 sthen Exp $
 
 COMMENT=	test wrapper with helpers for testing Apache
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Apache-Test-1.39
+REVISION=	0
 CATEGORIES=	www
 
 # Apache License 2.0
