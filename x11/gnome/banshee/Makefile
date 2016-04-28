@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2016/04/26 21:58:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/04/28 08:16:28 ajacoutot Exp $
 
 COMMENT=		music management and playback application for GNOME
 
 GNOME_VERSION=		2.6.2
 GNOME_PROJECT=		banshee
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		audio multimedia
 
