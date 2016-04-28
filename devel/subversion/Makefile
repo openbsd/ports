@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/03/12 23:23:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.147 2016/04/28 16:03:01 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,7 +21,9 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
+REVISION-main=		0
 REVISION-ruby=		0
+REVISION-ap2=		0
 
 SO_VERSION=	1.4
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \

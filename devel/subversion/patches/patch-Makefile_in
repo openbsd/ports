@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2011/10/23 09:51:59 stsp Exp $
---- Makefile.in.orig	Sat Jul 16 13:50:53 2011
-+++ Makefile.in	Sat Oct 22 10:40:12 2011
-@@ -85,11 +85,11 @@ swig_pl_libdir = @libdir@
+$OpenBSD: patch-Makefile_in,v 1.14 2016/04/28 16:03:01 stsp Exp $
+--- Makefile.in.orig	Mon Jul 27 02:23:40 2015
++++ Makefile.in	Thu Apr 28 17:16:21 2016
+@@ -81,11 +81,11 @@ swig_pl_libdir = @libdir@
  swig_rb_libdir = @libdir@
  
  ### these possibly need further discussion
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.13 2011/10/23 09:51:59 stsp Exp $
  
  javahl_javadir = @libdir@/svn-javahl
  javahl_javahdir = @libdir@/svn-javahl/include
-@@ -134,13 +134,13 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
+@@ -135,13 +135,13 @@ APACHE_LDFLAGS = @APACHE_LDFLAGS@
  SWIG = @SWIG@
  SWIG_PY_INCLUDES = @SWIG_PY_INCLUDES@ -I$(SWIG_SRC_DIR)/python/libsvn_swig_py
  SWIG_PY_COMPILE = @SWIG_PY_COMPILE@

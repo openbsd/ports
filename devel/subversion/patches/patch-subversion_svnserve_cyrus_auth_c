@@ -1,0 +1,13 @@
+$OpenBSD: patch-subversion_svnserve_cyrus_auth_c,v 1.1 2016/04/28 16:03:01 stsp Exp $
+CVE-2016-2167
+--- subversion/svnserve/cyrus_auth.c.orig	Thu Apr 11 16:38:20 2013
++++ subversion/svnserve/cyrus_auth.c	Thu Apr 28 17:16:41 2016
+@@ -74,6 +74,8 @@ static int canonicalize_username(sasl_conn_t *conn,
+     {
+       /* The only valid realm is user_realm (i.e. the repository's realm).
+          If the user gave us another realm, complain. */
++      if (realm_len != inlen-(pos-in+1))
++        return SASL_BADPROT;
+       if (strncmp(pos+1, user_realm, inlen-(pos-in+1)) != 0)
+         return SASL_BADPROT;
+     }
