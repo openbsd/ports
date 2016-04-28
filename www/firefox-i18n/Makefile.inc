@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.68 2016/04/28 11:46:41 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.69 2016/04/28 16:51:40 ajacoutot Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
 		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/
 
-LANGUAGES =	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cs cy da de dsb el en-GB en-US en-ZA eo \
+LANGUAGES =	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cs cy da de dsb el en-GB en-ZA eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he \
 		hi-IN hr hsb hu hy-AM id \
 		is it ja kk km kn ko lij lt lv mai mk ml mr ms nb-NO nl nn-NO \

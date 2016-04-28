@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/04/28 11:46:41 landry Exp $
+# $OpenBSD: Makefile,v 1.79 2016/04/28 16:51:40 ajacoutot Exp $
 
 SUBDIR = af
 SUBDIR += ach
@@ -21,7 +21,6 @@ SUBDIR += dsb
 SUBDIR += de
 SUBDIR += el
 SUBDIR += en-GB
-SUBDIR += en-US
 SUBDIR += en-ZA
 SUBDIR += eo
 SUBDIR += es-AR
