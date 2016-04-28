@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/21 05:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/04/28 08:24:36 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -506,6 +506,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/config/completers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/config/completers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/config/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/config/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.pyc
@@ -916,17 +921,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/dataproc/v1/dataproc_v1_cli
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/dataproc/v1/dataproc_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/dataproc/v1/dataproc_v1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/dataproc_v1.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/datastore_v1beta3_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/datastore_v1beta3_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/datastore_v1beta3_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore/v1beta3/datastore_v1beta3_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/datastore_v1beta3.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/deploymentmanager/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/deploymentmanager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/deploymentmanager/__init__.pyc
@@ -1075,13 +1069,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/beta/serviceregistry_beta_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/__init__.pyc
@@ -1089,7 +1076,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/ser
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry/v1alpha/serviceregistry_v1alpha_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry_beta.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serviceregistry_v1alpha.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/__init__.py
@@ -1617,6 +1603,21 @@ google-cloud-sdk/lib/surface/compute/autoscaler/list.py
 google-cloud-sdk/lib/surface/compute/autoscaler/list.pyc
 google-cloud-sdk/lib/surface/compute/autoscaler/update.py
 google-cloud-sdk/lib/surface/compute/autoscaler/update.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/
+google-cloud-sdk/lib/surface/compute/backend_buckets/__init__.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/__init__.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/create.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/create.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/delete.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/delete.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/describe.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/describe.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/edit.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/edit.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/list.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/list.pyc
+google-cloud-sdk/lib/surface/compute/backend_buckets/update.py
+google-cloud-sdk/lib/surface/compute/backend_buckets/update.pyc
 google-cloud-sdk/lib/surface/compute/backend_services/
 google-cloud-sdk/lib/surface/compute/backend_services/__init__.py
 google-cloud-sdk/lib/surface/compute/backend_services/__init__.pyc
@@ -4126,6 +4127,8 @@ google-cloud-sdk/platform/bq/third_party/oauth2client/client.pyc
 google-cloud-sdk/platform/bq/third_party/oauth2client/clientsecrets.py
 google-cloud-sdk/platform/bq/third_party/oauth2client/clientsecrets.pyc
 google-cloud-sdk/platform/bq/third_party/oauth2client/contrib/
+google-cloud-sdk/platform/bq/third_party/oauth2client/contrib/__init__.py
+google-cloud-sdk/platform/bq/third_party/oauth2client/contrib/__init__.pyc
 google-cloud-sdk/platform/bq/third_party/oauth2client/contrib/gce.py
 google-cloud-sdk/platform/bq/third_party/oauth2client/contrib/gce.pyc
 google-cloud-sdk/platform/bq/third_party/oauth2client/crypt.py
@@ -4217,6 +4220,25 @@ google-cloud-sdk/platform/ext-runtime/custom/runtime.yaml
 google-cloud-sdk/platform/ext-runtime/custom/test/
 google-cloud-sdk/platform/ext-runtime/custom/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/custom/test/runtime_test.pyc
+google-cloud-sdk/platform/ext-runtime/go/
+google-cloud-sdk/platform/ext-runtime/go/LICENSE
+google-cloud-sdk/platform/ext-runtime/go/README.md
+google-cloud-sdk/platform/ext-runtime/go/bin/
+google-cloud-sdk/platform/ext-runtime/go/bin/detect
+google-cloud-sdk/platform/ext-runtime/go/bin/generate_configs
+google-cloud-sdk/platform/ext-runtime/go/data/
+google-cloud-sdk/platform/ext-runtime/go/data/Dockerfile
+google-cloud-sdk/platform/ext-runtime/go/data/dockerignore
+google-cloud-sdk/platform/ext-runtime/go/lib/
+google-cloud-sdk/platform/ext-runtime/go/lib/gae_ext_runtime/
+google-cloud-sdk/platform/ext-runtime/go/lib/gae_ext_runtime/__init__.py
+google-cloud-sdk/platform/ext-runtime/go/lib/gae_ext_runtime/__init__.pyc
+google-cloud-sdk/platform/ext-runtime/go/lib/gae_ext_runtime/comm.py
+google-cloud-sdk/platform/ext-runtime/go/lib/gae_ext_runtime/comm.pyc
+google-cloud-sdk/platform/ext-runtime/go/runtime.yaml
+google-cloud-sdk/platform/ext-runtime/go/test/
+google-cloud-sdk/platform/ext-runtime/go/test/runtime_test.py
+google-cloud-sdk/platform/ext-runtime/go/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/java/
 google-cloud-sdk/platform/ext-runtime/java/LICENSE
 google-cloud-sdk/platform/ext-runtime/java/bin/
@@ -7230,6 +7252,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_compute_images_create.1
 @man man/man1/gcloud_compute_images_delete.1
 @man man/man1/gcloud_compute_images_deprecate.1
+@man man/man1/gcloud_compute_images_describe-from-family.1
 @man man/man1/gcloud_compute_images_describe.1
 @man man/man1/gcloud_compute_images_list.1
 @man man/man1/gcloud_compute_instance-groups.1
