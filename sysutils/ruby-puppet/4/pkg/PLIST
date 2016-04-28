@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/04/28 11:53:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/28 13:05:31 jasper Exp $
 @conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1410,7 +1410,7 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet.8.gz
 @sample ${VARBASE}/log/puppetlabs/puppet/
 @sample ${VARBASE}/run/puppetlabs/
-@sample ${VARBASE}/db/puppet/cache/
+@sample ${VARBASE}/puppetlabs/puppet/cache
 @sample ${VARBASE}/puppetlabs/puppet/modules/
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ruby${MODRUBY_BINREV}-puppet/
