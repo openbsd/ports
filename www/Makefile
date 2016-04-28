@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.774 2016/04/28 14:41:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.775 2016/04/28 15:41:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -101,26 +101,8 @@
      SUBDIR += midori,gtk3
      SUBDIR += mimetex
      SUBDIR += minitube
-     SUBDIR += mod_auth_bsd
-     SUBDIR += mod_auth_ldap
-     SUBDIR += mod_auth_mysql
-     SUBDIR += mod_auth_pgsql
-     SUBDIR += mod_auth_radius
-     SUBDIR += mod_encoding
      SUBDIR += mod_fastcgi
-     SUBDIR += mod_geoip
-     SUBDIR += mod_gzip
-     SUBDIR += mod_jk
-     SUBDIR += mod_layout
-     SUBDIR += mod_ldapvhost
-     SUBDIR += mod_log_sql
-     SUBDIR += mod_mp3
-     SUBDIR += mod_mp3,mysql
      SUBDIR += mod_perl
-     SUBDIR += mod_random
-     SUBDIR += mod_scgi
-     SUBDIR += mod_security
-     SUBDIR += mod_text2html
      SUBDIR += moinmoin
      SUBDIR += mollify
      SUBDIR += mongrel2
@@ -169,7 +151,6 @@
      SUBDIR += p5-CGI-Session
      SUBDIR += p5-CGI-Session-Driver-memcached
      SUBDIR += p5-CGI-Simple
-     SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-Minifier
@@ -234,7 +215,6 @@
      SUBDIR += p5-HTML-Clean
      SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Display
-     SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
