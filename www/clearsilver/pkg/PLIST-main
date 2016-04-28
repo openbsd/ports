@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/09/05 17:12:35 okan Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/04/28 15:57:19 sthen Exp $
 @pkgpath www/clearsilver
 @pkgpath www/clearsilver,python
 @bin bin/cs
@@ -35,7 +35,6 @@ include/ClearSilver/util/wildmat.h
 lib/libneo_cgi.a
 lib/libneo_cs.a
 lib/libneo_utl.a
-libexec/mod_ecs.so
 @man man/man3/cBroadcast.3
 @man man/man3/cCreate.3
 @man man/man3/cDestroy.3
