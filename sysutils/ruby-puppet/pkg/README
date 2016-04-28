@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2013/03/18 15:07:56 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2016/04/28 09:38:56 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ MCollective and ActiveMQ Integration
 
 Here are some quick notes about using ActiveMQ as a middleware layer for
 MCollective.
- 
+
 Packages
 --------
 All clients will need to have the "mcollective" package installed.
@@ -31,7 +31,6 @@ Setting up ActiveMQ can be tedious so it is recommended to start with
 the single-broker example configuration from the Puppet Labs
 documentation, as a starting point for configuring:
     ${SYSCONFDIR}/activemq/activemq.xml
-
 
 More information is available in the Puppet Labs online documentation:
     http://docs.puppetlabs.com/mcollective/reference/plugins/connector_activemq.html
