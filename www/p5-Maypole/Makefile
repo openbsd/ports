@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/28 16:20:46 sthen Exp $
 
 COMMENT=	Perl MVC for web applications
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Maypole-1.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <S@msmith.net>
@@ -27,7 +27,7 @@ RUN_DEPENDS=	databases/p5-Class-DBI-AbstractSearch \
 		devel/p5-Universal-require \
 		devel/p5-Universal-moniker \
 		textproc/p5-Template \
-		www/p5-libapreq \
+		www/p5-libapreq2 \
 		www/p5-CGI-Untaint \
 		www/p5-URI
 
