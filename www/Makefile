@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.776 2016/04/28 16:04:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.777 2016/04/28 16:28:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -339,7 +339,6 @@
      SUBDIR += p5-XML-Atom
      SUBDIR += p5-XML-Atom-SimpleFeed
      SUBDIR += p5-XML-Feed
-     SUBDIR += p5-libapreq
      SUBDIR += p5-libapreq2
      SUBDIR += p5-libwww
      SUBDIR += p5-pQuery
