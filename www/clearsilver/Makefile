@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/04/28 15:57:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/28 15:59:02 sthen Exp $
 
 COMMENT-main=	fast, powerful, and language-neutral HTML template system
 COMMENT-perl=	perl bindings for clearsilver
@@ -7,7 +7,7 @@ COMMENT-python=	python bindings for clearsilver
 V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
-REVISION=	11
+REVISION=	12
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
@@ -17,8 +17,6 @@ CATEGORIES=	www net
 
 HOMEPAGE=       http://www.clearsilver.net/
 MASTER_SITES=   ${HOMEPAGE}/downloads/
-
-MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # Apache 1
 PERMIT_PACKAGE_CDROM=	Yes
