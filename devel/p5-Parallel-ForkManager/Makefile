@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/04/28 14:19:50 rpe Exp $
 
 COMMENT =	simple parallel processing fork manager
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Parallel-ForkManager-1.17
+DISTNAME =	Parallel-ForkManager-1.18
 CATEGORIES =	devel
 
 # perl
