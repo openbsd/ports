@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/04/27 21:07:29 jca Exp $
+# $OpenBSD: Makefile,v 1.80 2016/04/28 08:38:26 jasper Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -8,7 +8,6 @@
     SUBDIR += dos2unix
     SUBDIR += enca
     SUBDIR += html2text
-    SUBDIR += html2text,python3
     SUBDIR += html2wml
     SUBDIR += ish
     SUBDIR += libdvdcss
@@ -60,6 +59,7 @@
     SUBDIR += ppmtoTbmp
     SUBDIR += py-cjkcodecs
     SUBDIR += py-html2text
+    SUBDIR += py-html2text,python3
     SUBDIR += py-iconvcodec
     SUBDIR += qprint
     SUBDIR += recode
