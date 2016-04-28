@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/28 09:37:24 jasper Exp $
 
 COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.18.1
+REVISION=		0
 
 CATEGORIES=		www sysutils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2016/04/28 09:37:23 jasper Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -8,7 +8,7 @@ COMMENT=		C++ interface to the graphics library for GNOME
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.26.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		11
+REVISION=		12
 
 SHARED_LIBS +=  gnomecanvasmm-2.6         1.0 # 1.6
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2016/04/28 09:37:23 jasper Exp $
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.3
-REVISION=	5
+REVISION=	6
 
 EXTRACT_SUFX=	.tar.bz2
 

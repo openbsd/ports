@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/04/28 09:37:23 jasper Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.10.1
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		security
 
