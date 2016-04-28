@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/06/01 06:41:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/04/28 09:27:11 jasper Exp $
 @pkgpath sysutils/ruby-puppet
+@conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*

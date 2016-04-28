@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2016/04/28 08:54:37 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2016/04/28 09:27:10 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -38,17 +38,6 @@ RUN_DEPENDS +=	databases/ruby-hiera,${MODRUBY_FLAVOR} \
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
-
-do-install:
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb ${WRKSRC}/ext/rack/config.ru
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
-	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/
-	gunzip ${PREFIX}/man/*/*.gz
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
