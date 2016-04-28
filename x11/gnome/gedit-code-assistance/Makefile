@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/04/26 21:58:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2016/04/28 07:22:18 ajacoutot Exp $
 
 COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	3.16.0
+REVISION=	0
 
 CATEGORIES=	editors devel
 
