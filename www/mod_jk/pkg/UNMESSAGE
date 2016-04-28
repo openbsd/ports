@@ -1,9 +1,0 @@
-To completely deinstall the mod_jk package you
-need to perform these steps as root:
-
-       edit /var/www/conf/httpd.conf
-       and remove the lines
-       'LoadModule jk_module'
-
-Do not do this if you plan on re-installing mod_jk
-package at some future time.

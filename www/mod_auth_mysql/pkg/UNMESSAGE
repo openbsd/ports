@@ -1,8 +1,0 @@
-To completely deinstall the mod_auth_mysql package you
-should edit /var/www/conf/httpd.conf and remove the
-line that starts with
-
-      LoadModule auth_mysql_module
-
-Do not do this if you plan on re-installing the
-mod_auth_mysql package before the next apache restart.

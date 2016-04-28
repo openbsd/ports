@@ -1,8 +1,0 @@
-To completely deinstall the mod_mp3 package you
-need to perform these steps as root:
-
-        edit /var/www/conf/httpd.conf
-        remove the line: LoadModule mp3_module
-
-Do not do this if you plan on re-installing the mod_mp3
-package at some future time.

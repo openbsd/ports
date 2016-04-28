@@ -1,6 +1,0 @@
-mod_jk is a DSO module for Apache 1.3.  It connects Apache to Tomcat.
-mod_jk can be configured to off-load SSL processing to Apache, serve
-static content for webapps and load balance multiple Tomcat servers.
-
-See ${DOCDIR}/README.OpenBSD for more information on using mod_jk on
-OpenBSD.

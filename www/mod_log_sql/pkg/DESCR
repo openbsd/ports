@@ -1,7 +1,0 @@
-mod_log_sql offers Apache administrators the ability to log 
-accesses to an SQL database. This capability can replace or 
-coexist with Apache's regular text-file logging mechanisms. 
-mod_log_sql is production-ready and is known to work with high 
-volume webservers and webserver clusters supporting over six 
-million hits per day (about 70 hits per second) -- and has 
-been benchmarked at over 300 hits per second.

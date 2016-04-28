@@ -1,2 +1,0 @@
-mod_auth_bsd is an Apache module which provides HTTP Basic
-authentication via the BSD Authentication framework.

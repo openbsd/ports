@@ -1,8 +1,0 @@
-To completely deinstall the mod_log_sql package you
-need to perform these steps as root:
-
-        edit /var/www/conf/httpd.conf
-        remove the line: LoadModule log_sql_module
-
-Do not do this if you plan on re-installing the
-mod_log_sql package at some future time.

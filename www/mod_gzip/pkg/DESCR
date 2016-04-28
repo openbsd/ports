@@ -1,9 +1,0 @@
-mod_gzip is a standard Apache Web Server module which acts as an
-Internet Content Accelerator. Its function in life is to become an
-integral 'part' of any existing Apache Web Server and see that the
-content being delivered to the end-user, is as small and as optimized
-as possible.
-
-It makes use of the Accept-Encoding feature in most modern browsers
-to deliver gzipped content transparently, and so cuts down on
-bandwidth usage.

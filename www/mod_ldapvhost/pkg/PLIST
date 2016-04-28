@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/17 10:29:44 sthen Exp $
-lib/${MODAPACHE_MODULE}
-@exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
-sbin/${MODAPACHE_ENABLE}
-share/doc/mod_ldapvhost/
-share/doc/mod_ldapvhost/mod_ldapvhost.conf
-share/doc/mod_ldapvhost/msys.schema
-share/doc/mod_ldapvhost/vhost.schema
-@unexec-delete rm -f ${MODAPACHE_FINAL}
