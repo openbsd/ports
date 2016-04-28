@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.778 2016/04/28 16:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.779 2016/04/28 17:43:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -101,7 +101,6 @@
      SUBDIR += midori,gtk3
      SUBDIR += mimetex
      SUBDIR += minitube
-     SUBDIR += mod_perl
      SUBDIR += moinmoin
      SUBDIR += mollify
      SUBDIR += mongrel2

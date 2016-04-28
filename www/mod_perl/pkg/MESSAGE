@@ -1,8 +1,0 @@
-To finish the install of ${PKGNAME}, enable the module using the
-following command:
-
-  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
-
-Then restart Apache:
-
-  /etc/rc.d/httpd restart
