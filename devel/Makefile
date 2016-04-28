@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1487 2016/04/27 12:08:06 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1488 2016/04/28 11:34:09 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1315,6 +1315,8 @@
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
      SUBDIR += py-pip,python3
+     SUBDIR += py-pluggy
+     SUBDIR += py-pluggy,python3
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
      SUBDIR += py-prioritized_methods
@@ -1373,6 +1375,8 @@
      SUBDIR += py-testtools
      SUBDIR += py-testtools,python3
      SUBDIR += py-texscythe
+     SUBDIR += py-tox
+     SUBDIR += py-tox,python3
      SUBDIR += py-tpg
      SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
