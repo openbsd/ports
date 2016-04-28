@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/18 20:59:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/28 17:03:50 sthen Exp $
 
 COMMENT =		simple weblog
 
 DISTNAME =		blogsum-1.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		www
 HOMEPAGE =		http://blogsum.obfuscurity.com/
 
@@ -27,10 +27,9 @@ RUN_DEPENDS =	databases/p5-DBD-SQLite \
 		databases/p5-DBI \
 		textproc/p5-XML-RSS \
 		textproc/p5-XML-Simple \
-		www/mod_perl \
+		www/ap2-mod_perl \
 		www/p5-HTML-Template \
 		www/p5-HTTP-Lite
-
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/httpd-blogsum.conf
