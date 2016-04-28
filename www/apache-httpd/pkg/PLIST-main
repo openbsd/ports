@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2016/01/15 23:40:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2016/04/28 08:40:42 ajacoutot Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -49,6 +49,7 @@ include/apache2/mod_rewrite.h
 include/apache2/mod_session.h
 include/apache2/mod_so.h
 include/apache2/mod_ssl.h
+include/apache2/mod_ssl_openssl.h
 include/apache2/mod_status.h
 include/apache2/mod_unixd.h
 include/apache2/mod_watchdog.h
@@ -363,6 +364,8 @@ share/doc/apache2/howto/public_html.html.fr
 share/doc/apache2/howto/public_html.html.ja.utf8
 share/doc/apache2/howto/public_html.html.ko.euc-kr
 share/doc/apache2/howto/public_html.html.tr.utf8
+share/doc/apache2/howto/reverse_proxy.html
+share/doc/apache2/howto/reverse_proxy.html.en
 share/doc/apache2/howto/ssi.html
 share/doc/apache2/howto/ssi.html.en
 share/doc/apache2/howto/ssi.html.fr
@@ -370,6 +373,9 @@ share/doc/apache2/howto/ssi.html.ja.utf8
 share/doc/apache2/howto/ssi.html.ko.euc-kr
 share/doc/apache2/images/
 share/doc/apache2/images/apache_header.gif
+share/doc/apache2/images/bal-man-b.png
+share/doc/apache2/images/bal-man-w.png
+share/doc/apache2/images/bal-man.png
 share/doc/apache2/images/build_a_mod_2.png
 share/doc/apache2/images/build_a_mod_3.png
 share/doc/apache2/images/build_a_mod_4.png
@@ -396,6 +402,7 @@ share/doc/apache2/images/mod_rewrite_fig1.png
 share/doc/apache2/images/mod_rewrite_fig2.gif
 share/doc/apache2/images/mod_rewrite_fig2.png
 share/doc/apache2/images/pixel.gif
+share/doc/apache2/images/reverse-proxy-arch.png
 share/doc/apache2/images/rewrite_backreferences.png
 share/doc/apache2/images/rewrite_process_uri.png
 share/doc/apache2/images/rewrite_rule_flow.png
