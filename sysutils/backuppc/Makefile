@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/20 07:23:36 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/28 16:03:41 sthen Exp $
 
 COMMENT =	remote backup software system
 
 DISTNAME =	BackupPC-3.3.1
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	sysutils
@@ -26,8 +27,7 @@ RUN_DEPENDS =	textproc/p5-XML-RSS \
 		devel/p5-File-RsyncP \
 		archivers/p5-Archive-Zip \
 		www/p5-libwww \
-		www/spawn-fcgi \
-		www/mod_fastcgi
+		www/spawn-fcgi
 
 do-install:
 	cd ${WRKSRC} && perl ./configure.pl \

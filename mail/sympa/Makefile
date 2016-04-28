@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/04/28 16:03:41 sthen Exp $
 
 COMMENT =	mailing list manager with web interface
 
 VERSION =	6.1.24
 DISTNAME =	sympa-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	mail www
 
@@ -61,7 +61,6 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		textproc/p5-Template \
 		textproc/p5-XML-LibXML \
 		www/spawn-fcgi \
-		www/mod_fastcgi \
 		www/mhonarc \
 		www/p5-libwww \
 		www/p5-HTML-Format \
