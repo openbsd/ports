@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/07/18 21:05:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/28 17:39:53 sthen Exp $
 
 COMMENT=	PF firewall log analysis
 
 DISTNAME=	hatchet-0.9.2
+REVISION=	2
 CATEGORIES=	security www
 HOMEPAGE=	http://www.dixongroup.net/hatchet/
-REVISION=	0
 
 MAINTAINER=	Jason Dixon <jdixon@openbsd.org>
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	databases/p5-DBD-Chart \
 		databases/p5-DBI \
 		graphics/p5-GD \
 		graphics/p5-GD-TextUtil \
-		www/mod_perl \
+		www/ap2-mod_perl \
 		www/p5-HTML-Template
 
 do-configure:
