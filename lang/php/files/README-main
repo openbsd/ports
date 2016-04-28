@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2016/02/01 21:53:06 sthen Exp $
+$OpenBSD: README-main,v 1.2 2016/04/28 18:19:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -49,9 +49,8 @@ is fairly simple, but in this case the operating system can't provide
 memory protection between the two; therefore bugs in php can potentially
 do more damage this way.
 
-If using Apache 2.x, another option is to use FastCGI as described
-in the previous section; you can use mod_proxy_fcgi to interface
-it with Apache.
+Another option is to use FastCGI as described in the previous section;
+you can use mod_proxy_fcgi to interface it with Apache.
 
 If you wish to use the Apache module, enable it by creating a
 symbolic link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf

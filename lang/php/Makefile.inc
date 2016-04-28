@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.83 2016/04/28 18:09:37 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.84 2016/04/28 18:19:23 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -44,7 +44,7 @@ INI_TEMPLATES?=		development production
 # don't have.
 USE_LIBTOOL?=		No
 
-FLAVORS=		ap2 no_suhosin
+FLAVORS=		no_suhosin
 FLAVOR?=
 
 PATCHORIG=		.orig.port
@@ -77,14 +77,9 @@ CONFIGURE_ARGS+=	--enable-shared \
 CONFIGURE_ARGS +=	--with-readline
 .endif
 
-.if ${FLAVOR:Map2} || ${PV} == "7.0"
+# apache module
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
 BUILD_DEPENDS+=		www/apache-httpd
-.else
-# doesn't use apache-module.port.mk so MODAPACHE_APXS not available
-CONFIGURE_ARGS+=	--with-apxs=${LOCALBASE}/sbin/apxs
-BUILD_DEPENDS+=		www/apache-httpd-openbsd
-.endif
 
 # default included extensions
 CONFIGURE_ARGS+= 	--with-openssl \
@@ -376,17 +371,10 @@ pre-configure:
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
-.if ${FLAVOR:Map2}
-MULTI_PACKAGES :=       ${MULTI_PACKAGES:N-fastcgi}
-.endif
-
 .for i in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
-# don't build separate plugins for -ap2
-FULLPKGNAME-${i}=	php-${i}-${V}${FLAVOR_EXT:S/-ap2//}
-FULLPKGPATH-${i}=	${PKGPATH},-${i}${FLAVOR_EXT:S/-ap2//:S/-/,/g}
 .if ${V:M5.4*}
 PKGSPEC-${i}=		php-${i}->=5.4,<5.5
 .elif ${V:M5.5*}
