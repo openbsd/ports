@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2016/04/26 13:08:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.387 2016/04/28 10:11:09 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -158,6 +158,7 @@
      SUBDIR += p5-Unix-PID
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
+     SUBDIR += packer
      SUBDIR += parallel
      SUBDIR += pciutils
      SUBDIR += pftop
@@ -241,6 +242,7 @@
      SUBDIR += tarsnap
      SUBDIR += tarsnap-gui
      SUBDIR += tentakel
+     SUBDIR += terraform
      SUBDIR += testdisk
      SUBDIR += tkdvd
      SUBDIR += tmux-mem-cpu-load
