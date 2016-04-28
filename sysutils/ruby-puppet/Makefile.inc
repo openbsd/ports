@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2016/04/28 09:27:10 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2016/04/28 10:36:17 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -21,6 +21,7 @@ SUBST_VARS +=	RUBY
 #  devel/ruby-rgen
 #  databases/puppetdb
 #  databases/ruby-hiera
+#  databases/ruby-hiera3
 #  databases/ruby-hiera-file
 #  net/ruby-msgpack
 #  sysutils/mcollective
@@ -30,14 +31,21 @@ SUBST_VARS +=	RUBY
 #  www/puppet-dashboard
 MODULES +=	lang/ruby
 
+MODULES +=		lang/python
+MODPY_BUILDDEP = 	No
+MODPY_RUNDEP =		No
+
 BUILD_DEPENDS +=${RUN_DEPENDS}
-RUN_DEPENDS +=	databases/ruby-hiera,${MODRUBY_FLAVOR} \
+RUN_DEPENDS +=	archivers/gtar \
 		sysutils/ruby-augeas,${MODRUBY_FLAVOR} \
-		sysutils/ruby-facter>=2.0.1p0 \
+		devel/ruby-rgen,${MODRUBY_FLAVOR} \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
+
+PORTHOME=		${WRKDIR}
+SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
