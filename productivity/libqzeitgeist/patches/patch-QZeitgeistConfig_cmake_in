@@ -1,9 +1,0 @@
-$OpenBSD: patch-QZeitgeistConfig_cmake_in,v 1.1.1.1 2012/09/30 09:51:05 jasper Exp $
---- QZeitgeistConfig.cmake.in.orig	Sun Nov 13 12:28:58 2011
-+++ QZeitgeistConfig.cmake.in	Sun Nov 13 12:29:11 2011
-@@ -1,4 +1,4 @@
- include(@CMAKE_INSTALL_PREFIX@/share/qzeitgeist/cmake/QZeitgeistExport.cmake)
- set(QZEITGEIST_LIBRARY QZEITGEIST_qzeitgeist)
--set(QZEITGEIST_INCLUDE_DIR @CMAKE_INSTALL_PREFIX@/include/QtZeitgeist)
-+set(QZEITGEIST_INCLUDE_DIR @CMAKE_INSTALL_PREFIX@/include)
- set(QZEITGEIST_FOUND TRUE)
