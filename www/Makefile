@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.777 2016/04/28 16:28:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.778 2016/04/28 16:39:39 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -121,7 +121,6 @@
      SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
-     SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DB
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
