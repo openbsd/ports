@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/28 10:10:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/28 10:16:36 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -15,6 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c pthread
 
 MODULES=		lang/go
 
