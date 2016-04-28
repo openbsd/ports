@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/07 19:59:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/28 17:43:11 sthen Exp $
 bin/make_method
-${P5SITE}/Apache/
-${P5SITE}/Apache/RPC/
-${P5SITE}/Apache/RPC/Server.pm
-${P5SITE}/Apache/RPC/Status.pm
-${P5SITE}/Apache/RPC/status.xpl
+@comment ${P5SITE}/Apache/
+@comment ${P5SITE}/Apache/RPC/
+@comment ${P5SITE}/Apache/RPC/Server.pm
+@comment ${P5SITE}/Apache/RPC/Status.pm
+@comment ${P5SITE}/Apache/RPC/status.xpl
 ${P5SITE}/RPC/
 ${P5SITE}/RPC/XML/
 ${P5SITE}/RPC/XML.pm
@@ -24,8 +24,8 @@ ${P5SITE}/RPC/XML/methodSignature.xpl
 ${P5SITE}/RPC/XML/multicall.xpl
 ${P5SITE}/RPC/XML/status.xpl
 @man man/man1/make_method.1
-@man man/man3p/Apache::RPC::Server.3p
-@man man/man3p/Apache::RPC::Status.3p
+@comment @man man/man3p/Apache::RPC::Server.3p
+@comment @man man/man3p/Apache::RPC::Status.3p
 @man man/man3p/RPC::XML.3p
 @man man/man3p/RPC::XML::Client.3p
 @man man/man3p/RPC::XML::Parser.3p
