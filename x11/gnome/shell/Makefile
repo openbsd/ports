@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2016/04/26 07:42:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2016/04/28 09:32:08 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -107,7 +107,7 @@ CONFIGURE_ARGS=		--disable-systemd
 #     to different enumeration type 'CoglSnippetHook' [-Werror,-Wenum-conversion]
 CONFIGURE_ARGS +=	--enable-compile-warnings
 
-# XXX: gnome-shell-3.18.4_writes_to_HOME
+# /gnome-shell-3.18.4_writes_to_HOME
 PORTHOME=		${WRKDIR}
 
 post-install:

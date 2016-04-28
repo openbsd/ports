@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.137 2016/04/26 21:58:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.138 2016/04/28 09:32:08 jasper Exp $
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.20.0
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2016/04/27 09:47:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2016/04/28 09:32:08 jasper Exp $
 
 COMMENT=		GNOME Virtual File System
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		2.24.4
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		13
+REVISION=		14
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
