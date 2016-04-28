@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.1.1.1 2016/01/18 18:08:19 tsg Exp $
+# $OpenBSD: Utils.pm,v 1.2 2016/04/28 13:29:04 tsg Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -31,14 +31,14 @@ our @EXPORT_OK = qw(
     ports_dir
 );
 
-sub _fetch_cmd { qw( ftp -V -o- ) }
+sub _fetch_cmd { $ENV{'FETCH_CMD'} || '/usr/bin/ftp' }
 
 sub fetch
 {
 	my $url = shift;
 
 	for ( 0 .. 1 ) {
-		open my $fh, '-|', _fetch_cmd(), $url or die $!;
+		open my $fh, '-|', _fetch_cmd() . " -o- $url 2> /dev/null" or die $!;
 		my $content = do { local $/ = undef; <$fh> };
 		return $content if $content;
 		sleep 2 * $_;
