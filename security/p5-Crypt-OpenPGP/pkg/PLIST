@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/08 11:30:56 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/28 14:31:56 rpe Exp $
+bin/pgplet
 ${P5SITE}/Crypt/OpenPGP/
 ${P5SITE}/Crypt/OpenPGP.pm
 ${P5SITE}/Crypt/OpenPGP/Armour.pm

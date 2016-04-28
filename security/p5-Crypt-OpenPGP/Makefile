@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/28 14:31:56 rpe Exp $
 
 COMMENT=	pure perl implementation of OpenPGP
 
-DISTNAME=	Crypt-OpenPGP-1.07
+DISTNAME=	Crypt-OpenPGP-1.12
 CATEGORIES=	devel security
 
 # Perl
@@ -26,6 +26,6 @@ RUN_DEPENDS=	security/p5-Crypt-Blowfish \
 		www/p5-libwww \
 		www/p5-URI
 
-CPAN_AUTHOR=	SROMANOV
+TEST_DEPENDS=	devel/p5-Test-Exception
 
 .include <bsd.port.mk>
