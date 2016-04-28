@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/12/04 12:58:12 pea Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/04/28 16:13:39 sthen Exp $
 @comment bin/convert0.6.README
 @comment bin/convert0.6.pl
 @comment bin/convert0.8.README
@@ -6,6 +6,7 @@
 bin/mason.pl
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Mason.pm
+${P5SITE}/Bundle/
 ${P5SITE}/Bundle/HTML/
 ${P5SITE}/Bundle/HTML/Mason.pm
 ${P5SITE}/HTML/Mason/

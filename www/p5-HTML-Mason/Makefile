@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/04/28 16:13:39 sthen Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Mason-1.45
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.masonhq.com/
@@ -22,8 +22,8 @@ RUN_DEPENDS=	devel/p5-Cache-Cache>=1.02 \
 		devel/p5-Log-Any \
 		devel/p5-Test-Deep \
 		www/p5-HTML-Parser \
-		www/p5-libapreq>=1.1 \
-		www/mod_perl>=1.27 
+		www/p5-libapreq2 \
+		www/ap2-mod_perl
 
 MAKE_ENV=       TEST_POD=Yes
 
