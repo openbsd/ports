@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/04/28 14:26:19 rpe Exp $
 
 COMMENT=		Base32 encoder/decoder
 
-DISTNAME=		MIME-Base32-1.02a
-PKGNAME=		p5-${DISTNAME:S/a$//}
+DISTNAME =		MIME-Base32-1.301
 CATEGORIES=		mail
 
 # Perl
