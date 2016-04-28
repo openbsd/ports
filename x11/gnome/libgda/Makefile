@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2016/04/27 10:12:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2016/04/28 14:29:50 ajacoutot Exp $
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
@@ -18,11 +18,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		4
-REVISION-ldap=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-ui=		0
+REVISION-main=		5
+REVISION-ldap=		1
+REVISION-mysql=		1
+REVISION-pgsql=		1
+REVISION-ui=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -97,8 +97,7 @@ WANTLIB-main += c gcrypt gpg-error ncurses sqlite3 gee-0.8
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main=	devel/gettext \
-			devel/libgee \
+LIB_DEPENDS-main=	devel/libgee \
 			devel/libsoup \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2 \
@@ -114,8 +113,7 @@ WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm epoxy
 WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
 
-LIB_DEPENDS-ui=		devel/gettext \
-			graphics/goocanvas2 \
+LIB_DEPENDS-ui=		graphics/goocanvas2 \
 			x11/dbus \
 			x11/gnome/libgda \
 			x11/gtksourceview3
@@ -126,24 +124,24 @@ RUN_DEPENDS-ui=		${RUN_DEPENDS} \
 WANTLIB-mysql += ${WANTLIB}
 WANTLIB-mysql += crypto gda-${GDA_MAJOR} mysqlclient ssl stdc++
 
-LIB_DEPENDS-mysql=	devel/gettext \
-			x11/gnome/libgda \
+RUN_DEPENDS-mysql=	# empty
+LIB_DEPENDS-mysql=	x11/gnome/libgda \
 			databases/mariadb
 
 ### pgsql
 WANTLIB-pgsql += ${WANTLIB}
 WANTLIB-pgsql += gda-${GDA_MAJOR} pq crypto ssl
 
-LIB_DEPENDS-pgsql=	devel/gettext \
-			x11/gnome/libgda \
+RUN_DEPENDS-pgsql=	# empty
+LIB_DEPENDS-pgsql=	x11/gnome/libgda \
 			databases/postgresql
 
 ### -ldap
 WANTLIB-ldap += ${WANTLIB}
 WANTLIB-ldap += crypto gda-${GDA_MAJOR} lber-2.4 ldap-2.4 sasl2 ssl
 
-LIB_DEPENDS-ldap=	devel/gettext \
-			x11/gnome/libgda \
+RUN_DEPENDS-ldap=	# empty
+LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 
 # XXX sync with LIBdb_VERSION in databases/db/v4
