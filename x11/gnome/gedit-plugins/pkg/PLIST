@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/10/22 17:56:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/04/28 11:13:15 ajacoutot Exp $
 @conflict gedit-<3.14.0
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
@@ -86,17 +86,6 @@ lib/gedit/plugins/commander/utils.pyo
 lib/gedit/plugins/commander/windowactivatable.py
 lib/gedit/plugins/commander/windowactivatable.pyc
 lib/gedit/plugins/commander/windowactivatable.pyo
-lib/gedit/plugins/dashboard/
-lib/gedit/plugins/dashboard.plugin
-lib/gedit/plugins/dashboard/__init__.py
-lib/gedit/plugins/dashboard/__init__.pyc
-lib/gedit/plugins/dashboard/__init__.pyo
-lib/gedit/plugins/dashboard/dashboard.py
-lib/gedit/plugins/dashboard/dashboard.pyc
-lib/gedit/plugins/dashboard/dashboard.pyo
-lib/gedit/plugins/dashboard/utils.py
-lib/gedit/plugins/dashboard/utils.pyc
-lib/gedit/plugins/dashboard/utils.pyo
 lib/gedit/plugins/drawspaces.plugin
 lib/gedit/plugins/git/
 lib/gedit/plugins/git.plugin
@@ -131,7 +120,6 @@ lib/gedit/plugins/joinlines.pyo
 lib/gedit/plugins/libbookmarks.so
 lib/gedit/plugins/libdrawspaces.so
 lib/gedit/plugins/libwordcompletion.so
-lib/gedit/plugins/libzeitgeist.so
 lib/gedit/plugins/multiedit/
 lib/gedit/plugins/multiedit.plugin
 lib/gedit/plugins/multiedit/__init__.py
@@ -180,7 +168,6 @@ lib/gedit/plugins/textsize/viewactivatable.py
 lib/gedit/plugins/textsize/viewactivatable.pyc
 lib/gedit/plugins/textsize/viewactivatable.pyo
 lib/gedit/plugins/wordcompletion.plugin
-lib/gedit/plugins/zeitgeist.plugin
 share/appdata/gedit-bookmarks.metainfo.xml
 share/appdata/gedit-bracketcompletion.metainfo.xml
 share/appdata/gedit-charmap.metainfo.xml
@@ -188,7 +175,6 @@ share/appdata/gedit-codecomment.metainfo.xml
 share/appdata/gedit-colorpicker.metainfo.xml
 share/appdata/gedit-colorschemer.metainfo.xml
 share/appdata/gedit-commander.metainfo.xml
-share/appdata/gedit-dashboard.metainfo.xml
 share/appdata/gedit-drawspaces.metainfo.xml
 share/appdata/gedit-git.metainfo.xml
 share/appdata/gedit-joinlines.metainfo.xml
@@ -198,7 +184,6 @@ share/appdata/gedit-synctex.metainfo.xml
 share/appdata/gedit-terminal.metainfo.xml
 share/appdata/gedit-textsize.metainfo.xml
 share/appdata/gedit-wordcompletion.metainfo.xml
-share/appdata/gedit-zeitgeist.metainfo.xml
 share/gedit/plugins/colorschemer/
 share/gedit/plugins/colorschemer/ui/
 share/gedit/plugins/colorschemer/ui/schemer.ui

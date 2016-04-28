@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2016/04/25 18:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2016/04/28 11:13:15 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		folks
 GNOME_VERSION=		0.11.2
 # MODULE_VERSION in config.h
 API_V=			43
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  folks-telepathy           5.2 # 43.0
 SHARED_LIBS +=  folks                     5.5 # 43.0
@@ -36,15 +36,14 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline secret-1 smime3 softokn3 soup-2.4 sqlite3
 WANTLIB += ssl3 stdc++ telepathy-glib webkitgtk-3.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
-WANTLIB += xslt z zeitgeist-2.0
+WANTLIB += xslt z
 
 MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libgee \
-			net/telepathy/telepathy-glib \
-			productivity/zeitgeist
+			net/telepathy/telepathy-glib
 
 # needed at runtime by the telepathy backend (AccountManager)
 RUN_DEPENDS=		net/telepathy/telepathy-mission-control

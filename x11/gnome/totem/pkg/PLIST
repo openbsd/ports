@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/04/25 18:19:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/04/28 11:13:15 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -88,9 +88,6 @@ lib/totem/plugins/skipto/skipto.ui
 lib/totem/plugins/vimeo/
 lib/totem/plugins/vimeo/libvimeo.so
 lib/totem/plugins/vimeo/vimeo.plugin
-lib/totem/plugins/zeitgeist-dp/
-lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
-lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
 @man man/man1/totem-audio-preview.1
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.153 2016/04/25 15:52:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.154 2016/04/28 11:13:15 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.3.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -58,9 +58,6 @@ RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins>=0.3.0
-
-# rbzeitgeist plugin
-RUN_DEPENDS +=		productivity/zeitgeist
 
 # needed for flac support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good

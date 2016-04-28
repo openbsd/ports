@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2016/04/28 09:32:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2016/04/28 11:13:15 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.20.0
-REVISION =		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -19,7 +19,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 harfbuzz m pango-1.0 epoxy
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z sqlite3 zeitgeist-2.0 lzma iconv intl
+WANTLIB += xml2 z sqlite3 lzma iconv intl
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -34,7 +34,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gucharmap
 
 LIB_DEPENDS=		devel/libpeas \
-			productivity/zeitgeist>=0.9.14v0 \
 			x11/gtksourceview3
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
