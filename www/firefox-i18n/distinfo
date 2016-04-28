@@ -19,6 +19,7 @@ SHA256 (mozilla/firefox-i18n-46.0/de.xpi) = sUwm/IeT1g/RCY8vjK8NJv3od9msc2um5UFy
 SHA256 (mozilla/firefox-i18n-46.0/dsb.xpi) = pZmlkFbYataLPCSFJbP0mG4o2YsGDSHZT61ugTMgv/E=
 SHA256 (mozilla/firefox-i18n-46.0/el.xpi) = t3hVX5zBL/G+7qjNLOYEnYQQ34yyg6p7m1ihfSJvprU=
 SHA256 (mozilla/firefox-i18n-46.0/en-GB.xpi) = xHFP8Nh1A3hGHRUCInFmWcyVgnNE0mU++HpZ1ZVnGtE=
+SHA256 (mozilla/firefox-i18n-46.0/en-US.xpi) = ImHuCceDTq2SPh2GUMPMl5Mk8XAw3F3qtYEu94Bar98=
 SHA256 (mozilla/firefox-i18n-46.0/en-ZA.xpi) = l4+DQUOlF5QYZBrMBlUxA1ia3qjQ5razk6CaMZsSF+o=
 SHA256 (mozilla/firefox-i18n-46.0/eo.xpi) = SgZEh/jnG0VywIfRbOS0MFmtdBcRc+aLuTwOQzFgyUI=
 SHA256 (mozilla/firefox-i18n-46.0/es-AR.xpi) = KVRetI970MJx3gP933X/WiV4eyFEgO0khYTu+yQvoo8=
@@ -106,6 +107,7 @@ SIZE (mozilla/firefox-i18n-46.0/de.xpi) = 444268
 SIZE (mozilla/firefox-i18n-46.0/dsb.xpi) = 462489
 SIZE (mozilla/firefox-i18n-46.0/el.xpi) = 473311
 SIZE (mozilla/firefox-i18n-46.0/en-GB.xpi) = 421832
+SIZE (mozilla/firefox-i18n-46.0/en-US.xpi) = 430496
 SIZE (mozilla/firefox-i18n-46.0/en-ZA.xpi) = 411466
 SIZE (mozilla/firefox-i18n-46.0/eo.xpi) = 438143
 SIZE (mozilla/firefox-i18n-46.0/es-AR.xpi) = 439950
