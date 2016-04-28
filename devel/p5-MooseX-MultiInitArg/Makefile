@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/04/28 14:16:01 rpe Exp $
 
 COMMENT=	attributes with aliases for constructor arguments for MooseX
 
-DISTNAME=	MooseX-MultiInitArg-0.01
-REVISION=	1
+DISTNAME=	MooseX-MultiInitArg-0.02
 
 CATEGORIES=	devel
 
@@ -13,7 +12,10 @@ PERMIT_PACKAGE_CDROM =		Yes
 MODULES=	cpan
 PKG_ARCH=	*
 RUN_DEPENDS=	devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/p5-Module-Build-Tiny
+
+CONFIGURE_STYLE=	modbuild
 
 MAKE_ENV=	TEST_POD=Yes
 
