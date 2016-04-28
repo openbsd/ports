@@ -1,4 +1,4 @@
-Devel::TraceUse can analyze a program to see which part used which module. 
+Devel::TraceUse can analyze a program to see which part used which module.
 
 Command-line usage:
 
