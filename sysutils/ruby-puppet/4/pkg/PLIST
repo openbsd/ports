@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/04/28 13:05:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/28 15:43:39 jasper Exp $
 @conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1408,10 +1408,6 @@ ${MODRUBY_SITEDIR}/semver.rb
 @man man/man8/puppet-resource_type.8.gz
 @man man/man8/puppet-status.8.gz
 @man man/man8/puppet.8.gz
-@sample ${VARBASE}/log/puppetlabs/puppet/
-@sample ${VARBASE}/run/puppetlabs/
-@sample ${VARBASE}/puppetlabs/puppet/cache
-@sample ${VARBASE}/puppetlabs/puppet/modules/
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ruby${MODRUBY_BINREV}-puppet/
 @sample ${SYSCONFDIR}/puppetlabs/
@@ -1423,3 +1419,12 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
+@sample /var/log/puppetlabs/puppet/
+@sample /var/run/puppetlabs/
+@mode 0755
+@sample /var/puppetlabs/puppet/cache/lib/
+@sample /var/puppetlabs/puppet/modules/
+@sample /var/puppetlabs/puppet/cache/facts.d/
+@mode
+@rcscript ${RCDIR}/puppet
+@rcscript ${RCDIR}/puppetmaster
