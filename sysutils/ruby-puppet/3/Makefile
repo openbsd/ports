@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2016/04/28 10:36:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.131 2016/04/28 16:02:33 jasper Exp $
 
 PORTROACH=		limit:^3
 
@@ -21,9 +21,6 @@ do-install:
 	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	gunzip ${PREFIX}/man/*/*.gz
 
 .include <bsd.port.mk>

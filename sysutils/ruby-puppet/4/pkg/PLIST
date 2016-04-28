@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/04/28 15:43:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/04/28 16:02:33 jasper Exp $
 @conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1376,39 +1376,43 @@ ${MODRUBY_SITEDIR}/puppet/vendor/semantic/spec/unit/semantic/version_spec.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/puppet_x.rb
 ${MODRUBY_SITEDIR}/semver.rb
-@man man/man5/puppet.conf.5.gz
-@man man/man8/extlookup2hiera.8.gz
-@man man/man8/puppet-agent.8.gz
-@man man/man8/puppet-apply.8.gz
-@man man/man8/puppet-ca.8.gz
-@man man/man8/puppet-catalog.8.gz
-@man man/man8/puppet-cert.8.gz
-@man man/man8/puppet-certificate.8.gz
-@man man/man8/puppet-certificate_request.8.gz
-@man man/man8/puppet-certificate_revocation_list.8.gz
-@man man/man8/puppet-config.8.gz
-@man man/man8/puppet-describe.8.gz
-@man man/man8/puppet-device.8.gz
-@man man/man8/puppet-doc.8.gz
-@man man/man8/puppet-epp.8.gz
-@man man/man8/puppet-facts.8.gz
-@man man/man8/puppet-file.8.gz
-@man man/man8/puppet-filebucket.8.gz
-@man man/man8/puppet-help.8.gz
-@man man/man8/puppet-inspect.8.gz
-@man man/man8/puppet-key.8.gz
-@man man/man8/puppet-man.8.gz
-@man man/man8/puppet-master.8.gz
-@man man/man8/puppet-module.8.gz
-@man man/man8/puppet-node.8.gz
-@man man/man8/puppet-parser.8.gz
-@man man/man8/puppet-plugin.8.gz
-@man man/man8/puppet-report.8.gz
-@man man/man8/puppet-resource.8.gz
-@man man/man8/puppet-resource_type.8.gz
-@man man/man8/puppet-status.8.gz
-@man man/man8/puppet.8.gz
+@man man/man5/puppet.conf.5
+@man man/man8/extlookup2hiera.8
+@man man/man8/puppet-agent.8
+@man man/man8/puppet-apply.8
+@man man/man8/puppet-ca.8
+@man man/man8/puppet-catalog.8
+@man man/man8/puppet-cert.8
+@man man/man8/puppet-certificate.8
+@man man/man8/puppet-certificate_request.8
+@man man/man8/puppet-certificate_revocation_list.8
+@man man/man8/puppet-config.8
+@man man/man8/puppet-describe.8
+@man man/man8/puppet-device.8
+@man man/man8/puppet-doc.8
+@man man/man8/puppet-epp.8
+@man man/man8/puppet-facts.8
+@man man/man8/puppet-file.8
+@man man/man8/puppet-filebucket.8
+@man man/man8/puppet-help.8
+@man man/man8/puppet-inspect.8
+@man man/man8/puppet-key.8
+@man man/man8/puppet-man.8
+@man man/man8/puppet-master.8
+@man man/man8/puppet-module.8
+@man man/man8/puppet-node.8
+@man man/man8/puppet-parser.8
+@man man/man8/puppet-plugin.8
+@man man/man8/puppet-report.8
+@man man/man8/puppet-resource.8
+@man man/man8/puppet-resource_type.8
+@man man/man8/puppet-status.8
+@man man/man8/puppet.8
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/puppet-mode-init.el
+share/emacs/site-lisp/puppet-mode.el
 share/examples/ruby${MODRUBY_BINREV}-puppet/
 @sample ${SYSCONFDIR}/puppetlabs/
 share/examples/ruby${MODRUBY_BINREV}-puppet/code/
@@ -1417,6 +1421,12 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
 @sample ${SYSCONFDIR}/puppetlabs/puppet/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
+share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/config.ru
+@sample ${SYSCONFDIR}/puppetlabs/puppet/config.ru
+share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/environment.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/environment.conf
+share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/fileserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppet/fileserver.conf
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
 @sample /var/log/puppetlabs/puppet/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.34 2016/04/28 10:36:17 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2016/04/28 16:02:33 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -8,7 +8,6 @@ MASTER_SITES ?=	https://downloads.puppetlabs.com/puppet/
 MAINTAINER ?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 NO_TEST ?=	Yes
 NO_BUILD ?=	Yes
-FILESDIR ?=	${.CURDIR}/../files
 PKGDIR ?=	${.CURDIR}/../pkg
 PLIST ?=	${.CURDIR}/pkg/PLIST
 
@@ -49,3 +48,6 @@ SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
+	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
+	gunzip ${PREFIX}/man/*/*.gz

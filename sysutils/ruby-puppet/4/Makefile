@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2016/04/28 11:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/28 16:02:33 jasper Exp $
 
 PORTROACH=		limit:^4
 
@@ -19,6 +19,7 @@ do-install:
 		--vardir=${VARBASE}/db/puppet/cache/ \
 		--rundir=${VARBASE}/run/puppetlabs/
 	mv ${WRKINST}${SYSCONFDIR}/puppetlabs ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-
+	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
+	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
 
 .include <bsd.port.mk>
