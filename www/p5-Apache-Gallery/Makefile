@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:13 naddy Exp $
-
+# $OpenBSD: Makefile,v 1.23 2016/04/28 16:18:29 sthen Exp $
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Apache-Gallery-1.0.2
-EPOCH =			0
-REVISION =		2
+EPOCH=			0
+REVISION=		3
 CATEGORIES=		www
 HOMEPAGE=		http://www.apachegallery.dk/
-MASTER_SITES =		${HOMEPAGE}/download/
+MASTER_SITES=		${HOMEPAGE}/download/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,16 +19,18 @@ RUN_DEPENDS=		www/p5-URI \
 			graphics/p5-Image-Size>=3.1.1 \
 			textproc/p5-Text-Template \
 			graphics/p5-Image-Imlib2 \
-			www/mod_perl \
-			www/p5-libapreq>=1.0
+			www/ap2-mod_perl \
+			www/p5-libapreq2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS=	devel/p5-Test-Pod \
+TEST_DEPENDS=		devel/p5-Test-Pod \
 			devel/p5-Test-MockObject
 
 TEMPLATESDIR=   ${PREFIX}/share/Apache-Gallery/templates
 ICONSDIR=       ${PREFIX}/share/Apache-Gallery/icons
 DOCSDIR=        ${PREFIX}/share/doc/Apache-Gallery
+
+MAKE_ENV=	MOD_PERL_API_VERSION=2
 
 post-install:
 	${INSTALL_DATA_DIR} ${TEMPLATESDIR}
