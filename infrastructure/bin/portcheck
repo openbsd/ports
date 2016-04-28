@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.109 2016/04/26 10:56:59 sthen Exp $
+# $OpenBSD: portcheck,v 1.110 2016/04/28 17:30:28 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1314,7 +1314,7 @@ check_plist() {
 	$translation_found && ! $gettext_dep && ! $is_static &&
 		[[ $fullpkgname != gettext-* ]] &&
 		err "${portref}translation file(s) found without" \
-		    "devel/gettext dependency in MODULES or RUN_DEPENDS"
+		    "devel/gettext dependency in RUN_DEPENDS"
 
 	# dbus,-suid
 	if $dbus_suid_dep_needed && ! $dbus_suid_dep; then
@@ -1390,19 +1390,15 @@ check_plist() {
 }
 
 # Checks made:
-#   * devel/gettext and converters/libiconv MODULES are not forgotten.
+#   * devel/gettext dependency is not forgotten.
 #   * lib/kde/ and lib/kde4/ prefixes not missing where applicable.
 #   * stdc++ doesn't get into WANTLIB when gcc4.port.mk is used.
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
 
-	local iconv_wantlib=false
-	local intl_wantlib=false
 	local phonon_s_wantlib=false
 
-	local gettext_module=false
-	local iconv_module=false
 	local kde3_module=false
 	local kde4_module=false
 	local phonon_module=false
@@ -1411,8 +1407,6 @@ check_wantlib() {
 	local v
 
 	for v in $modules; do case $v in
-		converters/libiconv)	iconv_module=true;;
-		devel/gettext)		gettext_module=true;;
 		gcc4)			gcc4_module=true;;
 		multimedia/phonon)	phonon_module=true;;
 		x11/kde)		kde3_module=true;;
@@ -1420,14 +1414,6 @@ check_wantlib() {
 	esac; done
 
 	for v; do case $v in
-		iconv?(?(">")=+([0-9])))
-			iconv_wantlib=true
-			;;
-
-		intl?(?(">")=+([0-9])))
-			intl_wantlib=true
-			;;
-
 		phonon_s?(?(">")=+([0-9])))
 			phonon_s_wantlib=true
 			;;
@@ -1462,12 +1448,6 @@ check_wantlib() {
 				    "actual build thoroughly, it's broken"
 			fi
 	esac; done
-
-	if $intl_wantlib && ! $gettext_module; then
-		err "${portref}missing devel/gettext in MODULES"
-	elif $iconv_wantlib && ! $gettext_module && ! $iconv_module; then
-		err "${portref}missing converters/libiconv in MODULES"
-	fi
 
 	if $phonon_s_wantlib && ! $phonon_module; then
 		err "${portref}missing multimedia/phonon in MODULES"
