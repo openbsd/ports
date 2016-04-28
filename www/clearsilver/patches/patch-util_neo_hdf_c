@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_neo_hdf_c,v 1.4 2008/11/18 20:00:09 okan Exp $
---- util/neo_hdf.c.orig	Tue Mar  7 21:24:44 2006
-+++ util/neo_hdf.c	Mon May  8 16:57:13 2006
-@@ -771,13 +771,14 @@ skip_search:
+$OpenBSD: patch-util_neo_hdf_c,v 1.5 2016/04/28 15:34:14 sthen Exp $
+--- util/neo_hdf.c.orig	Sat Aug 12 00:47:01 2006
++++ util/neo_hdf.c	Thu Apr 28 16:33:48 2016
+@@ -772,13 +772,14 @@ skip_search:
      }
      else if (hp->link) 
      {
@@ -19,7 +19,7 @@ $OpenBSD: patch-util_neo_hdf_c,v 1.4 2008/11/18 20:00:09 okan Exp $
        err = _set_value (hdf, new_name, value, dup, wf, link, attr, set_node);
        free(new_name);
        return nerr_pass(err);
-@@ -1170,8 +1171,9 @@ static NEOERR* hdf_dump_cb(HDF *hdf, con
+@@ -1211,8 +1212,9 @@ static NEOERR* hdf_dump_cb(HDF *hdf, const char *prefi
      {
        if (prefix && (dtype == DUMP_TYPE_DOTTED))
        {

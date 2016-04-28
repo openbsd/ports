@@ -1,6 +1,6 @@
---- util/neo_err.h.orig	Thu Dec 15 23:17:36 2005
-+++ util/neo_err.h	Mon May  8 16:54:19 2006
-@@ -105,7 +105,7 @@ NEOERR *nerr_raise_errnof (const char *f
+--- util/neo_err.h.orig	Thu Dec 15 22:17:36 2005
++++ util/neo_err.h	Thu Apr 28 16:33:48 2016
+@@ -105,7 +105,7 @@ NEOERR *nerr_raise_errnof (const char *func, const cha
  #define nerr_pass(e) \
     nerr_passf(__PRETTY_FUNCTION__,__FILE__,__LINE__,e)
  NEOERR *nerr_passf (const char *func, const char *file, int lineno, 
@@ -9,7 +9,7 @@
  
  /* function: nerr_pass_ctx
   * description: this function is used to pass an error up a level in the
-@@ -127,47 +127,47 @@ NEOERR *nerr_passf (const char *func, co
+@@ -127,47 +127,47 @@ NEOERR *nerr_passf (const char *func, const char *file
  #define nerr_pass_ctx(e,f,...) \
     nerr_pass_ctxf(__PRETTY_FUNCTION__,__FILE__,__LINE__,e,f,__VA_ARGS__)
  #endif

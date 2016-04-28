@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_html_c,v 1.4 2008/11/18 20:00:09 okan Exp $
---- cgi/html.c.orig	Thu Dec  1 05:03:09 2005
-+++ cgi/html.c	Mon May  8 16:54:19 2006
-@@ -392,7 +392,7 @@ static NEOERR *split_and_convert (const 
+$OpenBSD: patch-cgi_html_c,v 1.5 2016/04/28 15:34:14 sthen Exp $
+--- cgi/html.c.orig	Fri Oct 20 00:26:35 2006
++++ cgi/html.c	Thu Apr 28 16:33:48 2016
+@@ -392,7 +392,7 @@ static NEOERR *split_and_convert (const char *src, int
  		  "Unable to allocate memory to convert url");
  	      break;
  	    }
