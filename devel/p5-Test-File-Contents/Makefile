@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/28 14:24:06 rpe Exp $
 
 COMMENT=		perl test framework for file contents
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Test-File-Contents-0.21
+DISTNAME =		Test-File-Contents-0.23
 CATEGORIES=		devel
 
 # perl
@@ -16,4 +16,4 @@ RUN_DEPENDS =		textproc/p5-Text-Diff
 
 MAKE_ENV=		TEST_POD=Yes
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
