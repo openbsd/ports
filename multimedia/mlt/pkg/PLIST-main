@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/04/03 19:15:23 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/04/28 08:20:32 sthen Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
@@ -69,7 +69,6 @@ lib/mlt/libmltoldfilm.so
 lib/mlt/libmltplus.so
 lib/mlt/libmltsdl.so
 lib/mlt/libmltsox.so
-lib/mlt/libmltswfdec.so
 lib/mlt/libmltvmfx.so
 lib/mlt/libmltxml.so
 lib/pkgconfig/mlt++.pc
@@ -431,8 +430,6 @@ share/mlt/sdl/producer_sdl_image.yml
 share/mlt/sox/
 share/mlt/sox/filter_sox.yml
 share/mlt/sox/filter_sox_effect.yml
-share/mlt/swfdec/
-share/mlt/swfdec/producer_swfdec.yml
 share/mlt/vmfx/
 share/mlt/vmfx/filter_chroma.yml
 share/mlt/vmfx/filter_chroma_hold.yml

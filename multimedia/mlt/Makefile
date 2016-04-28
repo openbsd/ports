@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/27 10:46:31 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/04/28 08:20:32 sthen Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -6,7 +6,7 @@ VERSION =		6.0.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION-main =		0
+REVISION-main =		1
 REVISION-gpl2 =		0
 
 # XXX versions should be kept in sync together
