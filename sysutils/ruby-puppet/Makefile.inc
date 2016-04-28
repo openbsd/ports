@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.31 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2016/04/28 08:54:37 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
 DISTNAME ?=	puppet-${VERSION}
-HOMEPAGE ?=	https://puppetlabs.com
+HOMEPAGE ?=	https://puppet.com/
 MASTER_SITES ?=	https://downloads.puppetlabs.com/puppet/
 MAINTAINER ?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 NO_TEST ?=	Yes
