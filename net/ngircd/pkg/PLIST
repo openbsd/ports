@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/11/03 23:29:28 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/04/28 13:35:46 tsg Exp $
 @newgroup _ngircd:703
 @newuser _ngircd:703:703:daemon:ngircd account:/var/ngircd:/sbin/nologin
 @man man/man5/ngircd.conf.5
@@ -13,7 +13,6 @@ share/doc/ngircd/ChangeLog
 share/doc/ngircd/Commands.txt
 share/doc/ngircd/Contributing.txt
 share/doc/ngircd/FAQ.txt
-share/doc/ngircd/GIT.txt
 share/doc/ngircd/HowToRelease.txt
 share/doc/ngircd/INSTALL
 share/doc/ngircd/Modes.txt

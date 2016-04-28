@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/04/28 13:35:46 tsg Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-22.1
+DISTNAME =	ngircd-23
 
 CATEGORIES =	net
 
 HOMEPAGE =	http://ngircd.barton.de/
 
-MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
+MAINTAINER =	Giannis Tsaraias <tsg@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
