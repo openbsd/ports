@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/18 11:18:27 weerd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/04/29 12:51:13 sthen Exp $
 
 COMMENT =		generate random numbers
 
-DISTNAME =		ranval-1.3
+DISTNAME =		ranval-1.4
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.weirdnet.nl/openbsd/code/ranval/
@@ -13,6 +13,7 @@ MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c
 
 NO_TEST =		Yes
