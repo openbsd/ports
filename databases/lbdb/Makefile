@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/01 06:49:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2016/04/29 11:03:43 naddy Exp $
 
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
@@ -21,8 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 RUN_DEPENDS-ldap =	databases/p5-ldap \
 			databases/lbdb
 
-MODULES =		converters/libiconv
-WANTLIB-main =		c ${MODLIBICONV_WANTLIB}
+LIB_DEPENDS-main =	converters/libiconv
+WANTLIB-main =		c iconv
 LIB_DEPENDS-ldap =
 WANTLIB-ldap =
 
