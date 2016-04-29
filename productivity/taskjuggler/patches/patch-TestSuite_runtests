@@ -1,9 +1,0 @@
-$OpenBSD: patch-TestSuite_runtests,v 1.1 2008/05/22 11:48:05 sturm Exp $
---- TestSuite/runtests.orig	Thu May 22 12:51:43 2008
-+++ TestSuite/runtests	Thu May 22 12:51:47 2008
-@@ -1,4 +1,4 @@
--#! /bin/bash
-+#! /bin/sh
- 
- # Run the test suite in a different time zone than the reference files
- # were generated. This catches all test cases without timezone

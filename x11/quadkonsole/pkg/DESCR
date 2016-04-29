@@ -1,6 +1,0 @@
-QuadKonsole is a terminal application that embeds Konsole kparts 
-in a grid layout. This saves memory, provides faster startup, and 
-makes it unnecessary to align your Konsole windows by hand. 
-It also provides a lot more screen real estate, makes navigation 
-easier by using arrow keys, and allows all Konsoles to be minimized 
-or maximized at once. It only occupies one slot in the taskbar.
