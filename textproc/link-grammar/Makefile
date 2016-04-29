@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/19 11:55:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/04/29 10:32:42 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,7 +6,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.4
+VERSION =		5.3.5
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -48,6 +48,8 @@ MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java
 
 .include <bsd.port.arch.mk>
+
+BUILD_DEPENDS =		devel/swig
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/hunspell
