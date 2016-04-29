@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1489 2016/04/29 08:35:21 danj Exp $
+# $OpenBSD: Makefile,v 1.1490 2016/04/29 09:22:44 eric Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1199,6 +1199,8 @@
      SUBDIR += py-blessings
      SUBDIR += py-blinker
      SUBDIR += py-blinker,python3
+     SUBDIR += py-blist
+     SUBDIR += py-blist,python3
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
