@@ -1,0 +1,12 @@
+$OpenBSD: patch-Apache-Test_lib_Apache_TestConfig_pm,v 1.1 2016/04/29 08:21:03 sthen Exp $
+--- Apache-Test/lib/Apache/TestConfig.pm.orig	Fri Apr 29 09:12:45 2016
++++ Apache-Test/lib/Apache/TestConfig.pm	Fri Apr 29 09:12:53 2016
+@@ -441,7 +441,7 @@ sub configure_apxs {
+     $vars->{conf_dir} ||= $self->apxs('SYSCONFDIR');
+ 
+     if ($vars->{conf_dir}) {
+-        $vars->{httpd_conf} ||= catfile $vars->{conf_dir}, 'httpd.conf';
++        $vars->{httpd_conf} ||= catfile $vars->{conf_dir}, 'httpd2.conf';
+     }
+ }
+ 
