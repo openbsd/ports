@@ -1,9 +1,0 @@
-$OpenBSD: patch-akode_artsplugin_akodeVorbisStreamPlayObject_mcopclass,v 1.1 2007/11/01 04:06:23 jakemsr Exp $
---- akode_artsplugin/akodeVorbisStreamPlayObject.mcopclass.orig	Mon Oct  1 03:10:16 2007
-+++ akode_artsplugin/akodeVorbisStreamPlayObject.mcopclass	Mon Oct  1 03:12:23 2007
-@@ -4,4 +4,4 @@ Language=C++
- Author=Allan Sandfeld Jensen <kde@carewolf.com>
- Extension=
- MimeType=audio/x-vorbis,audio/vorbis,application/ogg
--Preference=6
-+Preference=1

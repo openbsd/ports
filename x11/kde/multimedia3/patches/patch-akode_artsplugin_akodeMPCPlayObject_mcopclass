@@ -1,9 +1,0 @@
-$OpenBSD: patch-akode_artsplugin_akodeMPCPlayObject_mcopclass,v 1.1 2007/11/01 04:06:23 jakemsr Exp $
---- akode_artsplugin/akodeMPCPlayObject.mcopclass.orig	Mon Oct  1 03:10:16 2007
-+++ akode_artsplugin/akodeMPCPlayObject.mcopclass	Mon Oct  1 03:10:46 2007
-@@ -4,4 +4,4 @@ Language=C++
- Author=Allan Sandfeld Jensen <kde@carewolf.com>
- Extension=mpc,mpp,mp+
- MimeType=audio/x-musepack
--Preference=4
-+Preference=1

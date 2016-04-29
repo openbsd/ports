@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_fastscale_asm_scale_S,v 1.1 2010/05/22 15:13:39 landry Exp $
---- src/fastscale/asm_scale.S.orig	Sat May 22 05:20:09 2010
-+++ src/fastscale/asm_scale.S	Sat May 22 05:20:13 2010
-@@ -806,5 +806,3 @@ PR_(mimageScale_mmx_AARGBA):
- SIZE(mimageScale_mmx_AARGBA)
- 
- #endif
--
--.section	.note.GNU-stack,"",%progbits

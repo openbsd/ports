@@ -1,9 +1,0 @@
-$OpenBSD: patch-akode_artsplugin_akodePlayObject_mcopclass,v 1.1 2007/11/01 04:06:23 jakemsr Exp $
---- akode_artsplugin/akodePlayObject.mcopclass.orig	Mon Oct  1 03:10:16 2007
-+++ akode_artsplugin/akodePlayObject.mcopclass	Mon Oct  1 03:11:51 2007
-@@ -4,4 +4,4 @@ Language=C++
- Author=Allan Sandfeld Jensen <kde@carewolf.com>
- Extension=wav
- MimeType=audio/x-wav
--Preference=3
-+Preference=1

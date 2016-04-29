@@ -1,9 +1,0 @@
-$OpenBSD: patch-akode_artsplugin_akodeXiphPlayObject_mcopclass,v 1.1 2007/11/01 04:06:23 jakemsr Exp $
---- akode_artsplugin/akodeXiphPlayObject.mcopclass.orig	Mon Oct  1 03:10:16 2007
-+++ akode_artsplugin/akodeXiphPlayObject.mcopclass	Mon Oct  1 03:12:42 2007
-@@ -4,4 +4,4 @@ Language=C++
- Author=Allan Sandfeld Jensen <kde@carewolf.com>
- Extension=flac,ogg,spx
- MimeType=audio/x-flac,audio/x-oggflac,audio/x-speex,audio/x-vorbis,audio/vorbis,application/ogg
--Preference=6
-+Preference=1

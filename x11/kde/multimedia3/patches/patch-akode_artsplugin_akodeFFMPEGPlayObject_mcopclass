@@ -1,9 +1,0 @@
-$OpenBSD: patch-akode_artsplugin_akodeFFMPEGPlayObject_mcopclass,v 1.1 2007/11/01 04:06:23 jakemsr Exp $
---- akode_artsplugin/akodeFFMPEGPlayObject.mcopclass.orig	Mon Oct  1 03:10:16 2007
-+++ akode_artsplugin/akodeFFMPEGPlayObject.mcopclass	Mon Oct  1 03:11:03 2007
-@@ -4,4 +4,4 @@ Language=C++
- Author=Allan Sandfeld Jensen <kde@carewolf.com>
- Extension=wma,ra,m4a,ram,aac,ac3,ogg
- MimeType=audio/mp4,audio/vnd.rn-realaudio,audio/x-pn-realaudio,audio/x-ms-wma,application/vnd.ms-asf,audio/ac3,audio/aac,audio/mpeg,audio/x-mp3,audio/x-mp2,audio/x-mp1,audio/vorbis,audio/x-vorbis,application/ogg,video/x-ms-asf
--Preference=5
-+Preference=1

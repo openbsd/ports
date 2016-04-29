@@ -1,3 +1,0 @@
-kamera is a KDE interface to libgphoto2, part of kdegraphics.
-It has been split out so as to not impose a dependency on gphoto2
-for people who don't own digital cameras.
