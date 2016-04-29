@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/25 08:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/29 11:19:35 naddy Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -ipadic
 
-WANTLIB-main =	c m pthread stdc++ ${MODLIBICONV_WANTLIB}
+WANTLIB-main =	c iconv m pthread stdc++
 WANTLIB-ipadic =
 
 MASTER_SITES =	https://mecab.googlecode.com/files/
@@ -32,9 +32,7 @@ MASTER_SITES =	https://mecab.googlecode.com/files/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz
 
-MODULES =	converters/libiconv
-
-LIB_DEPENDS-main = ${MODLIBICONV_LIB_DEPENDS}
+LIB_DEPENDS-main = converters/libiconv
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic
 RUN_DEPENDS-ipadic =
 
