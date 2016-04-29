@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2015/09/08 07:54:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2016/04/29 08:15:50 ajacoutot Exp $
 
 COMMENT=		brain teaser game
 
-DISTNAME=		gbrainy-2.2.6
+DISTNAME=		gbrainy-2.2.7
 EPOCH=			0
 
 CATEGORIES=		games
@@ -37,6 +37,7 @@ DLLMAP_FILES=		src/Clients/Classical/gbrainy.exe.config.in \
 			src/Core/gbrainy.Core.dll.config.in
 
 pre-configure:
-	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/src/Clients/Classical/gbrainy.in
+	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' \
+		${WRKSRC}/src/Clients/Classical/gbrainy.in
 
 .include <bsd.port.mk>
