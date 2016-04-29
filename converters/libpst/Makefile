@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2016/04/29 10:57:53 naddy Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -6,6 +6,8 @@ COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
 DISTNAME=		libpst-0.6.66
+REVISION-main=		0
+REVISION-python=	0
 
 SHARED_LIBS +=  pst                  3.0      # 5.11
 
@@ -21,12 +23,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 cWANTLIB += m pthread stdc++
 
-WANTLIB-main += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-main += ${cWANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
 WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 jpeg pcre png
 WANTLIB-main += pthread-stubs tiff vpx xml2 z m pthread stdc++ lzma
 
-WANTLIB-python += ${cWANTLIB} ${MODLIBICONV_WANTLIB}
+WANTLIB-python += ${cWANTLIB} iconv
 WANTLIB-python += pst util boost_python
 
 MASTER_SITES=		${HOMEPAGE}/packages/ \
@@ -34,18 +36,14 @@ MASTER_SITES=		${HOMEPAGE}/packages/ \
 
 MULTI_PACKAGES=		-main -python
 
-MODULES=		converters/libiconv \
-			devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS-main}
 RUN_DEPENDS-main=	graphics/ImageMagick
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			devel/libgsf \
+LIB_DEPENDS-main=	devel/libgsf \
 			graphics/gd
 
-LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
-			${BASE_PKGPATH} \
+LIB_DEPENDS-python=	${BASE_PKGPATH} \
 			devel/boost
 
 USE_GMAKE=		Yes
