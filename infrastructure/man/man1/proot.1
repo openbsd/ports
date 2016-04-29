@@ -1,0 +1,159 @@
+.\"	$OpenBSD: proot.1,v 1.1 2016/04/29 15:15:47 espie Exp $
+.\"
+.\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: April 29 2016 $
+.Dt PROOT 1
+.Os
+.Sh NAME
+.Nm proot
+.Nd ports chroot builder
+.Sh SYNOPSIS
+.Nm proot
+.Bk -words
+.Op Fl B Ar chroot
+.Op Fl c Ar configfile
+.Op Fl S Ar srcroot
+.Op Ar key Ns = Ns Ar value
+.Ek
+.Sh DESCRIPTION
+.Nm
+can fill up a chroot directory for ports building usage.
+It will perform a set of
+.Cm actions
+that should fill up a destination
+.Ar chroot
+from the base system
+.Po
+or an optional
+.Fl S Ar srcroot
+.Pc .
+.Pp
+As far as possible,
+.Nm
+will create hardlinks instead of copying files, so that cloning an existing
+chroot will often only consume i-nodes.
+.Pp
+Attribute values can be specified on the command line
+.Ar key Ns = Ns Ar value .
+Some attribute take several values.
+As a shorthand, several values can be specified in a row without having
+to repeat the
+.Ar key .
+.Pp
+A config file mostly contains one key=value per line, with comments starting
+with a #.
+.Pp
+Possible actions (in order of execution) are as follows:
+.Bl -tag -width Ds -compact
+.It Cm check_mount
+Verify the state of mount points in the system, specifically whether
+the chroot area is not nodev.
+.It Cm unpopulate
+Remove everything from the chroot, apart from known preserved areas
+.Po marked with
+.Ar preserve
+.Pc
+or other mountpoints.
+.It Cm snapshot
+Copy things from a
+.Ar snapshot ,
+to retrieve from an url, or from the local filesystem
+.It Cm locate
+Copy things from the base system, perusing the system locate databases.
+.It Cm resolv
+Copy the system
+.Pa resolv.conf
+file
+.It Cm devs
+Regenerate devices using
+.Xr MAKEDEV 8
+.It Cm ldconfig
+Rerun 
+.Xr ldconfig 8
+.It Cm copy_ports
+Copy the ports tree
+.It Cm checkout_ports
+Check out a ports tree from cvs using a provided
+.Ar portscvs
+location .
+.It Cm copy_sys
+Copy system include files (deprecated).
+.It Cm ports_subdirs
+Create ports infrastructure subdirs, according to users required for
+.Xr dpb 1 .
+.It Cm stragglers
+Double-check filled up chroot for files we don't know about.
+.It Cm write_mk
+If some directory values are different from the default, 
+write a skeleton
+.Pa mk.conf
+file.
+.El
+.Pp
+By default,
+.Nm
+will run
+.Cm check_mount , devs , ldconfig , ports_subdirs , resolv , write_mk .
+It will also run
+.Cm snapshot
+if a snapshot location is provided,
+or
+.Cm locate
+otherwise.
+.Pp
+Add actions with
+.Ar actions Ns = Ns value ,
+remove them with
+.Ar actions Ns = Ns - Ns value .
+.Pp
+Other attributes are
+.Bl -tag -width Ds -compact
+.It Ar chroot
+same as
+.Fl B Ar chroot
+.It Ar srcroot
+same as
+.Fl S Ar srcroot
+.It Ar PORT_USER
+Who the ports tree should belong to (we always use _pbuild and _pfetch
+for the build and fetch stage).
+.It Ar PORTSDIR
+.It Ar DISTDIR
+.It Ar PACKAGE_REPOSITORY
+.It Ar PLIST_DB
+.It Ar LOCKDIR
+same as in
+.Xr bsd.port.mk 5
+.It Ar preserve
+Supplemental directory to preserve during
+.Cm unpopulate .
+.It Ar snapshot
+Location of snapshot for the
+.Cm snapshot
+action.
+.It Ar portscvs
+Where to get a ports snapshot for the
+.Cm checkout_ports
+action.
+.El
+.Pp
+.Sh SEE ALSO
+.Xr dpb 1 ,
+.Xr chroot 8
+.Sh AUTHOR
+Marc Espie
+.Sh BUGS
+Very much a work in progress, options and mode of operation will change.
