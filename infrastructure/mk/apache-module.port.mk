@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.10 2016/03/16 16:31:39 naddy Exp $
+# $OpenBSD: apache-module.port.mk,v 1.11 2016/04/29 13:59:52 sthen Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -28,15 +28,15 @@
 
 MODAPACHE_ENABLE ?= mod_${MODAPACHE_NAME}-enable
 MODAPACHE_MODULE ?= mod_${MODAPACHE_NAME}.so
-MODAPACHE_FINAL = ${LOCALBASE}/lib/apache/modules/${MODAPACHE_MODULE}
+MODAPACHE_FINAL = ${LOCALBASE}/lib/apache2/modules/${MODAPACHE_MODULE}
 MODAPACHE_LOCATION ?= ${WRKBUILD}
 MODAPACHE_FILE ?= ${MODAPACHE_LOCATION}/${MODAPACHE_MODULE}
-MODAPACHE_APXS ?= ${LOCALBASE}/sbin/apxs
-MODAPACHE_CTL ?= ${LOCALBASE}/sbin/apachectl
+MODAPACHE_APXS ?= ${LOCALBASE}/sbin/apxs2
+MODAPACHE_CTL ?= ${LOCALBASE}/sbin/apachectl2
 
 MAKE_FLAGS += APXS=${MODAPACHE_APXS} APACHECTL=${MODAPACHE_CTL}
-BUILD_DEPENDS += www/apache-httpd-openbsd
-RUN_DEPENDS += www/apache-httpd-openbsd
+BUILD_DEPENDS += www/apache-httpd
+RUN_DEPENDS += www/apache-httpd
 
 MODAPACHE_CREATE_ENABLE_SCRIPT = \
 	exec >${WRKBUILD}/${MODAPACHE_ENABLE}; \
