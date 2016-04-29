@@ -1,29 +1,33 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/04/29 08:57:52 jca Exp $
 
 COMMENT =	manual tiling window manager
-DISTNAME =	herbstluftwm-0.6.2
+DISTNAME =	herbstluftwm-0.7.0
 CATEGORIES =	x11
-REVISION =	1
 
 HOMEPAGE =	http://herbstluftwm.org/
+
+MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext Xinerama c glib-2.0 pthread
+WANTLIB += X11 Xext Xinerama c estdc++ glib-2.0 intl m pthread
 
 MASTER_SITES =	http://herbstluftwm.org/tarballs/
 
-MODULES =	devel/gettext
+MODULES =	gcc4
 
-LIB_DEPENDS =	devel/glib2
+MODGCC4_LANGS=	c++
+MODGCC4_ARCHS=	*
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+LIB_DEPENDS +=	devel/glib2
+
+RUN_DEPENDS +=	devel/desktop-file-utils \
 		shells/bash \
 		x11/dzen2,-gadgets
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CC="${CC}" LDFLAGS= VERBOSE= COLOR=0
+MAKE_FLAGS =	LDFLAGS= VERBOSE= COLOR=0
 
 BASEDIR =	${PREFIX}/share/examples/herbstluftwm
 FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
@@ -33,9 +37,5 @@ FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
 		XSESSIONSDIR="${PREFIX}/share/applications"
 
 NO_TEST =	Yes
-
-post-patch:
-	perl -pi -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash," \
-		`grep -Rl /bin/bash ${WRKSRC}/*`
 
 .include <bsd.port.mk>

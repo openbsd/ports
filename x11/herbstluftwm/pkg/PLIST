@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/05 05:42:07 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/04/29 08:57:52 jca Exp $
+@bin bin/dmenu_run_hlwm
 @bin bin/herbstclient
 @bin bin/herbstluftwm
 @man man/man1/herbstclient.1
@@ -7,9 +8,9 @@
 share/applications/herbstluftwm.desktop
 share/doc/herbstluftwm/
 share/doc/herbstluftwm/BUGS
+share/doc/herbstluftwm/INSTALL
 share/doc/herbstluftwm/LICENSE
 share/doc/herbstluftwm/NEWS
-share/doc/herbstluftwm/README
 share/doc/herbstluftwm/herbstclient.html
 share/doc/herbstluftwm/herbstluftwm-tutorial.html
 share/doc/herbstluftwm/herbstluftwm.html
@@ -29,9 +30,12 @@ share/examples/herbstluftwm/keychain.sh
 share/examples/herbstluftwm/lasttag.sh
 share/examples/herbstluftwm/layout.sh
 share/examples/herbstluftwm/loadstate.sh
+share/examples/herbstluftwm/maximize.sh
 share/examples/herbstluftwm/q3terminal.sh
 share/examples/herbstluftwm/savestate.sh
 share/examples/herbstluftwm/scratchpad.sh
+share/examples/herbstluftwm/toggledualhead.sh
+share/examples/herbstluftwm/windowmenu.sh
 share/examples/herbstluftwm/wselect.sh
 share/examples/herbstluftwm/xdg/
 share/examples/herbstluftwm/xdg/herbstluftwm/
