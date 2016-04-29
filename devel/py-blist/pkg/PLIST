@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/29 09:06:01 eric Exp $
+lib/python${MODPY_VERSION}/site-packages/blist/
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/blist/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blist/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/blist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blist/${MODPY_PYCACHE}_btuple.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blist/${MODPY_PYCACHE}_sorteddict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blist/${MODPY_PYCACHE}_sortedlist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blist/_blist.so
+lib/python${MODPY_VERSION}/site-packages/blist/_btuple.py
+lib/python${MODPY_VERSION}/site-packages/blist/_sorteddict.py
+lib/python${MODPY_VERSION}/site-packages/blist/_sortedlist.py
