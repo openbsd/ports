@@ -1,0 +1,781 @@
+#! /usr/bin/perl
+# ex:ts=8 sw=4:
+# $OpenBSD: proot,v 1.1 2016/04/29 14:27:15 espie Exp $
+#
+# Copyright (c) 2016 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+use OpenBSD::Getopt;
+use OpenBSD::Paths;
+use OpenBSD::State;
+use OpenBSD::ProgressMeter;
+
+package User;
+use File::Basename;
+
+sub new
+{
+	my ($class, $u) = @_;
+	# XXX getpwnam for local access, distant access is different
+	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
+		my $groups = `/usr/bin/id -G $u`;
+		chomp $groups;
+		my $group = getgrgid($gid);
+		bless { user => $l, uid => $uid, 
+		    group => $group, gid => $gid,
+		    grouplist => "$gid $groups" }, $class;
+	} else {
+		bless { user => $u}, $class;
+	}
+}
+
+sub enforce_local
+{
+	my $self = shift;
+	if (!defined $self->{uid}) {
+		print STDERR "User $self->{user} does not exist locally\n";
+		exit 1;
+	} else {
+		return $self;
+	}
+}
+
+sub run_as
+{
+	my ($self, $code) = @_;
+	local $> = 0;
+	local $) = $self->{grouplist};
+	$> = $self->{uid};
+	&$code;
+}
+
+sub mkdir
+{
+	my ($self, $dir) = @_;
+	mkdir($dir);
+	$self->own($dir);
+}
+
+sub mkpath
+{
+	my ($self, $dir) = @_;
+	my $p = dirname($dir);
+	if (! -d $p) {
+		$self->mkpath($p);
+	}
+	$self->mkdir($dir);
+}
+
+sub own
+{
+	my ($self, $path) = @_;
+	chown $self->{uid}, $self->{gid}, $path;
+}
+
+package LocalUser;
+our @ISA = qw(User);
+
+sub new
+{
+	my $class = shift;
+	return $class->SUPER::new(@_)->enforce_local;
+}
+
+package MyState;
+our @ISA = (qw(OpenBSD::State));
+
+use File::Copy;
+use File::Spec;
+use File::Basename;
+use File::Find;
+use File::Path qw(remove_tree);
+
+sub canonical_dir
+{
+	my ($state, $path) = @_;
+	$path = File::Spec->canonpath($path);
+	$path =~ s,/+$,,;
+	return $path;
+}
+
+sub handle_options
+{
+	my $state = shift;
+	$state->{no_exports} = 1;
+	$state->{opt} = {
+		B => sub { $state->{chroot} = File::Spec->canonpath(shift); },
+		S => sub { $state->{srcroot} = File::Spec->canonpath(shift); },
+		c => sub { $state->read_configfile(shift); },
+	    };
+	# default shit
+	$state->{actions} = {
+	    check_mount => 1,
+	    devs => 1,
+	    ldconfig => 1,
+	    ports_subdirs => 1,
+	    resolv => 1,
+	    write_mk => 1,
+	};
+	$state->SUPER::handle_options("B:S:c:mx", "[-B chroot] [-S chroot]");
+
+	if (!defined $state->{chroot}) {
+		$state->usage("need a chroot base");
+	}
+	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
+	$state->{progressmeter}->setup($state->opt('x'), $state->opt('m'), 
+	    $state);
+	if ($< != 0) {
+		$state->fatal("Must be root");
+	}
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR)) {
+		if (defined $state->{$i}) {
+			$state->{write}{$i} = 1;
+		}
+	}
+	$state->{PORTSDIR} //= "/usr/ports";
+	$state->{DISTDIR} //= join('/', $state->{PORTSDIR}, 'distfiles');
+	$state->{WRKOBJDIR} //= join('/', $state->{PORTSDIR}, 'pobj');
+	$state->{LOCKDIR} //= join('/', $state->{WRKOBJDIR}, 'locks');
+	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
+	$state->{fetchuser} //= LocalUser->new('_pfetch');
+	$state->{builduser} //= LocalUser->new('_pbuild');
+	$state->{loguser} //= $state->{portuser};
+	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
+	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
+	$state->{sysdir} //= '/usr/src/sys';
+	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB)) {
+		if (defined $state->{$dir}) {
+			$state->{$dir} = $state->canonical_dir($state->{$dir});
+		} else {
+			$state->fatal("Missing #1", $dir);
+		}
+	}
+	for my $i (qw(portuser loguser fetchuser builduser)) {
+		if (defined $state->{$i}) {
+			$state->say("#1: #2", $i, $state->{$i}->{user});
+		}
+	}
+}
+
+sub read_configfile
+{
+	my ($state, $name) = @_;
+	open(my $f, '<', $name) or die "Can't open config $name: $!";
+	my ($k, $v);
+	my $opts = {
+	    chroot => sub {
+		    $state->{chroot} = File::Spec->canonpath($v);
+	    }, srcroot => sub {
+		    $state->{srcroot} = File::Spec->canonpath($v);
+	    }, PORT_USER => sub {
+		    $state->{portuser} = LocalUser->new($v);
+	    }, LOG_USER => sub {
+		    $state->{loguser} = LocalUser->new($v);
+	    }, PORTSDIR => sub {
+		    $state->{PORTSDIR} = File::Spec->canonpath($v);
+	    }, DISTDIR => sub {
+		    $state->{DISTDIR} = File::Spec->canonpath($v);
+	    }, PACKAGE_REPOSITORY => sub {
+		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
+	    }, PLIST_DB => sub {
+		    $state->{PLIST_DB} = File::Spec->canonpath($v);
+	    }, preserve => sub {
+		    push(@{$state->{preserved}}, $v);
+	    }, portscvs => sub {
+		    $state->{portscvs} = $v;
+	    }, WRKOBJDIR => sub {
+	    	$state->{WRKOBJDIR} = File::Spec->canonpath($v);
+	    }, DISTDIR => sub {
+	    	$state->{DISTDIR} = File::Spec->canonpath($v);
+	    }, LOCKDIR => sub {
+	    	$state->{LOCKDIR} = File::Spec->canonpath($v);
+	    }, snapshot => sub {
+	    	$state->{snapshot} = $v;
+	    }, actions => sub {
+	    	if ($v =~ m/^-(.*)/) {
+			$state->{actions}{$1} = 0;
+		} else {
+			$state->{actions}{$v} = 1;
+		}
+	    },
+	};
+
+	while (<$f>) {
+		chomp;
+		my $line = $_;
+		s/\s*\#.*//;
+		next if /^$/;
+		if (m/^(.*?)\s*\=\s*(.*)$/) {
+			($k, $v) = ($1, $2);
+		} elsif (m/^\s+(.*)$/) {
+			$v = $1;
+		} else {
+			$state->errsay("Error in config file #1: #2", 
+			    $., $line);
+			next;
+		} 
+		if (defined $opts->{$k}) {
+			&{$opts->{$k}};
+		} else {
+			$state->errsay("Unknown options #1=#2", $k, $v);
+		}
+	}
+	close($f);
+}
+
+sub chroot
+{
+	my $state = shift;
+	if (defined $state->{chroot}) {
+		unshift @_, $state->{chroot};
+	}
+	return File::Spec->canonpath(join('/', @_));
+}
+
+sub srcroot
+{
+	my $state = shift;
+	if (defined $state->{srcroot}) {
+		unshift @_, $state->{srcroot};
+	}
+	return File::Spec->canonpath(join('/', @_));
+}
+
+sub chdir
+{
+	my ($state, $dir) = @_;
+	chdir($dir) or $state->fatal("Can't change to #1: #2", $dir, $!);
+}
+
+sub banner
+{
+	my ($self, $text, $sub) = @_;
+	$self->{progressmeter}->set_header($text);
+	&$sub;
+	$self->{progressmeter}->next;
+}
+
+sub sync_display
+{
+	my $self = shift;
+	$self->{progressmeter}->clear if defined $self->{progressmeter};
+}
+
+sub check_mountpoint
+{
+	my $state = shift; 
+	open(my $cmd, "-|", OpenBSD::Paths->mount);
+	my ($dev, $nosuid);
+	while (<$cmd>)  {
+		chomp;
+		if (m/^(\S+)\s+on\s+(\S+)\s+type\s+(\S+)\s+\((.+)\)$/) {
+			my ($dir, $options) = ($2, $4);
+			my %opts = map {($_, 1)} split(/,\s+/, $options);
+			if ($opts{nodev}) {
+				$dev->{$dir} = 0;
+			} else {
+				$dev->{$dir} = 1;
+			}
+			if ($opts{nosuid}) {
+				$nosuid->{$dir} = 0;
+			} else {
+				$nosuid->{$dir} = 1;
+			}
+		}
+	}
+	close($cmd);
+	my $root = $state->{chroot};
+	for my $dir (keys %$dev) {
+		if ($dir =~ m/^\Q$state->{chroot}\//) {
+			$state->{dontrm}{$dir} = 1;
+			$state->say("Preserve #1", $dir);
+		}
+	}
+	my $mnt = $root;
+	do {
+		if (defined $dev->{$mnt}) {
+			$state->errsay("#1 is under #2 which is nodev", $root, $mnt)
+			    if $dev->{$mnt} == 0;
+			$state->errsay("#1 is under #2 which does not have nosuid",
+				$root, $mnt) if $nosuid->{$mnt} == 0;
+			return;
+		}
+	    $mnt = dirname($mnt);
+	} while ($mnt ne dirname($mnt));
+	$state->errsay("Couldn't find mountpoint for #1 ???", $root);
+}
+
+sub special_data
+{
+	my $state = shift;
+	$state->{known}{'/etc/resolv.conf'} = 1;
+}
+
+sub read_locates
+{
+	my $state = shift;
+	$state->banner("Running locate",
+	    sub {
+		open(my $cmd, '-|', 'locate',
+		    '-d', $state->srcroot(OpenBSD::Paths->srclocatedb),
+		    '-d', $state->srcroot(OpenBSD::Paths->xlocatedb), ':');
+		while (<$cmd>) {
+			chomp;
+			my ($set, $path) = split(':', $_, 2);
+			if ($set =~ m/^(x?base|comp|x?etc|xfont|xshare)/) {
+				$state->{known}{$path} = 1;
+			}
+			$state->{progressmeter}->working(1000);
+		}
+		close($cmd);
+	    });
+}
+
+# THIS IS THE WORK HORSE
+sub simple_copy
+{
+	my ($state, $path, $cpath, $user) = @_;
+
+	$state->{accounted}{$path} = 1;
+	if (-l $path) {
+		remove_tree($cpath);
+		my $target = readlink $path;
+		symlink($target, $cpath);
+		return;
+	} else {
+		my ($dev, $ino, $mode, $uid, $gid, $sz) = 
+		    (stat $path)[0, 1, 2, 4, 5, 7];
+		if (-d $path) {
+			if (!-d $cpath) {
+				remove_tree($cpath);
+			}
+			mkdir $cpath, $mode;
+			if (defined $user) {
+				$user->own($cpath);
+			} else {
+				chown $uid, $gid, $cpath;
+			}
+			return;
+		} elsif (-f $path) {
+			my $key = "$dev/$ino";
+
+			if (exists $state->{copied}{$key}) {
+				link($state->{copied}{$key}, $cpath);
+				return;
+			}
+			# avoid the copy if same filesystem
+			if (link($path, $cpath)) {
+				return;
+			}
+
+			my $sz2 = (stat $cpath)[7];
+			my $okay = 0;
+			if (defined $sz2 && $sz2 == $sz) {
+				$okay = 1;
+			} else {
+				remove_tree($cpath);
+				$okay = copy($path, $cpath);
+			}
+			if ($okay) {
+				if (defined $user) {
+					$user->own($cpath);
+				} else {
+					chown $uid, $gid, $cpath;
+				}
+				chmod $mode, $cpath;
+				$state->{copied}{$key} = $cpath;
+				return;
+			}
+		}
+	}
+	$state->errsay("Can't copy #1", $path);
+}
+
+sub recursive_copy
+{
+	my ($state, $path) = @_;
+
+	my $d = dirname($path);
+	if ($d ne $path) {
+		if (!-d $state->chroot($d)) {
+			$state->recursive_copy($d);
+		}
+	}
+	my $spath = $state->srcroot($path);
+	if (!-e $spath) {
+		$state->errsay("#1 does not exist", $spath);
+		return;
+    	}
+	$state->simple_copy($spath, $state->chroot($path));
+}
+
+sub copy_sync
+{
+	my $state = shift;
+	$state->banner("Copying shit over",
+	    sub {
+		my $old = umask;
+		umask 0;
+		for my $path (sort keys %{$state->{known}}) {
+			$state->recursive_copy($path);
+			$state->{progressmeter}->message($path);
+		}
+		umask $old;
+	    });
+}
+
+sub best_user
+{
+	my $state = shift;
+	local $_ = shift;
+
+	if (m/^\Q$state->{LOGDIR}\E/) {
+		return $state->{loguser};
+	}
+	if (m/^\Q$state->{DISTDIR}\E\/build-stats/) {
+		return $state->{loguser};
+	}
+	if (m/^\Q$state->{PLIST_DB}\E/) {
+		return $state->{builduser};
+	}
+	if (m/^\Q$state->{PACKAGE_REPOSITORY}\E/) {
+		return $state->{builduser};
+	}
+	if (m/^\Q$state->{DISTDIR}\E/) {
+		return $state->{fetchuser};
+	}
+	if (m/^\Q$state->{DISTDIR}\E/) {
+		return $state->{fetchuser};
+	}
+	return $state->{portuser};
+}
+
+sub grab_file
+{
+	my ($state, $file) = @_;
+
+	my $baseurl = $state->{snapshot};
+
+	unless (-f $file) {
+		if ($state->system('/usr/bin/ftp' , "-C", "-o", "$file.part", 
+		    "$baseurl/$file") == 0) {
+			rename("$file.part", $file);
+		} else {
+			$state->fatal("fetch #1 failed", $file);
+		}
+
+	}
+}
+
+sub get_snapshot
+{
+	my $state = shift;
+
+	$state->banner("Grabbing snapshot",
+	    sub {
+	    	my ($snapdir, $grab);
+	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
+			$snapdir = $state->chroot('/tmp');
+			File::Path::make_path($snapdir);
+			$grab = sub { $state->grab_file(shift); }
+		} else {
+			$snapdir = $state->{snapshot};
+			$grab = sub {};
+		}
+		$state->chdir($snapdir);
+
+		&$grab("SHA256.sig");
+		open my $f, '<', "SHA256.sig" or $state->fatal("no SHA256.sig");
+		my $line = <$f>;
+		if ($line !~ m/openbsd\s+(\d+)\.(\d+)\s+base/) {
+			$state->fatal("Unrecognized snapshot");
+		}
+		my $v = "$1$2";
+		my @files;
+		for my $set (qw(base comp xbase xfont xshare)) {
+			my $file = "$set$v.tgz";
+			&$grab($file);
+			push(@files, $file);
+		}
+		if ($state->system('/usr/bin/signify', '-C', '-p',
+		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
+		    @files) != 0) {
+			$state->fatal("Checksum error");
+		}
+		$state->chdir($state->chroot);
+		open(my $fh, "+>", "$snapdir/listing");
+		for my $archive (@files) {
+			$state->say("Extracting #1", $archive);
+			if ($state->system(sub {
+			    open(STDOUT, '>&', $fh); },
+			    '/bin/tar', 'zxvpf', "$snapdir/$archive") != 0) {
+				$state->fatal("Error while extracting #1", $archive);
+			}
+		}
+		for my $archive ("etc.tgz", "xetc.tgz") {
+			$state->say("Extracting #1", $archive);
+				if ($state->system(sub {
+				    open(STDOUT, '>&', $fh); },
+				    "/bin/tar", 'zxvpf', "var/sysmerge/$archive") != 0) {
+				$state->fatal("Error while extracting #1", $archive);
+			}
+		}
+		seek($fh, 0, 0);
+		while (<$fh>) {
+			chomp;
+			s/^\.//;
+			$state->{accounted}{$_} = 1;
+		}
+
+	    });
+}
+
+sub copy_ports
+{
+	my $state = shift;
+	$state->banner("Copying ports",
+	    sub {
+		my $old = umask;
+		umask 0;
+		my $srcports = $state->srcroot($state->{PORTSDIR});
+		$state->chdir($srcports);
+		$state->{portuser}->mkpath($state->chroot($state->{PORTSDIR}));
+		find(sub {
+			my $d = $File::Find::dir;
+			$d =~ s/^\.\///;
+			$state->{progressmeter}->message($d);
+			my $realname = $File::Find::name;
+			my $r2 = $realname;
+			$realname =~ s,^\./,$srcports/,;
+			$r2 =~ s,^\./,$state->{PORTSDIR}/,;
+			if ($r2 eq $state->{WRKOBJDIR}) {
+				$File::Find::prune = 1;
+				return;
+			}
+			$state->simple_copy($realname, $state->chroot($r2),
+			    $state->best_user($r2));
+		    }, ".");
+		umask $old;
+	    });
+}
+
+sub copy_sys
+{
+	my $state = shift;
+	$state->banner("Copying sys includes",
+	    sub {
+		my $old = umask;
+		umask 0;
+		my $sysdir = $state->srcroot($state->{sysdir});
+		$state->chdir($sysdir);
+		$state->{portuser}->mkpath($state->chroot($state->{sysdir}));
+		find(sub {
+			# XXX don't bother copying stuff that's NOT .h
+			return if -f $_ && !m/\.h$/ && $_ ne 'Makefile';
+			$state->{progressmeter}->working(1000);
+			my $realname = $File::Find::name;
+			my $r2 = $realname;
+			$realname =~ s,^\./,$sysdir/,;
+			$r2 =~ s,^\./,$state->{sysdir}/,;
+			$state->simple_copy($realname, $state->chroot($r2));
+		    }, ".");
+		umask $old;
+	    });
+}
+
+sub regen_devs
+{
+	my $state = shift;
+	$state->banner("Generating devices",
+	    sub {
+		$state->chdir($state->chroot("/dev"));
+		$state->system('/bin/sh', './MAKEDEV', 'all');
+		push(@{$state->{preserved}}, "/dev");
+	    });
+}
+
+sub run_ldconfig
+{
+	my $state = shift;
+	$state->banner("Running ldconfig",
+	    sub {
+		$state->system(OpenBSD::Paths->chroot, $state->chroot, 
+		    'ldconfig', '/usr/lib', '/usr/X11R6/lib', '/usr/local/lib');
+		$state->{accounted}{'/var/run/ld.so.hints'} = 1;
+	    });
+}
+
+sub checkout_ports
+{
+	my $state = shift;
+	$state->banner("Checking out ports tree",
+	    sub {
+	    	my @cvs = ("/usr/bin/cvs", "-z3", "-d", $state->{portscvs});
+		my $dir = $state->chroot($state->{PORTSDIR});
+		if (-d "$dir/CVS") {
+			$state->chdir($dir);
+			$state->{portuser}->run_as(sub {
+			    $state->system(@cvs, "update", "-dP", "-A");
+			    });
+		} else {
+			# okay, so stupid cvs creates the dir, work-around that
+			$state->{portuser}->mkpath("$dir.tmp");
+			$state->chdir("$dir.tmp");
+			$state->{portuser}->run_as(sub {
+			    $state->system(@cvs, "co", "-P", "-A", "ports");
+			    });
+			rename("$dir.tmp/ports", "$dir");
+			rmdir("$dir.tmp");
+		}
+	    });
+}
+
+sub unpopulate_chroot
+{
+	my $state = shift;
+	$state->banner("Cleaning up files and directories",
+	    sub {
+	    	for my $dir (@{$state->{preserved}}) {
+			$state->{dontrm}{$state->chroot($dir)} = 1;
+		}
+		my @dirs;
+	    	find(
+		    sub {
+			if (-d $_ && $state->{dontrm}{$File::Find::name}) {
+				$File::Find::prune = 1;
+				return;
+			}
+			if ($state->{dontrm}{$File::Find::name}) {
+				return;
+			}
+		    	my $dir =$File::Find::dir;
+			$dir =~ s/^\Q$state->{chroot}\E//;
+		    	$state->{progressmeter}->message($dir);
+		    	if (-l $_ || !-d $_) {
+				#$state->say("unlink #1", $File::Find::name);
+				unlink($_);
+			} else {
+				push(@dirs, $File::Find::name);
+			}
+		    }, $state->{chroot});
+		for my $dir (reverse @dirs) {
+			#$state->say("rmdir #1", $dir);
+			rmdir $dir;
+		}
+	    });
+}
+sub verbose_shit
+{
+	my $state = shift;
+	$state->banner("Showing up stragglers",
+	    sub {
+		for my $dir (@{$state->{preserved}}) {
+			$state->{dontrm}{$state->chroot($dir)} = 1;
+		}
+	    	find(
+		    sub {
+			if (-d $_ && $state->{dontrm}{$File::Find::name}) {
+				$File::Find::prune = 1;
+				return;
+			}
+			if ($state->{dontrm}{$File::Find::name}) {
+				return;
+			}
+		    	my $f = $File::Find::name;
+			$f =~ s/^\Q$state->{chroot}\E//;
+			if ($state->{accounted}{$f} || $f eq '') {
+				return;
+			}
+			$state->say("#1", $File::Find::name);
+		    }, $state->{chroot});
+	    });
+}
+
+sub make_ports_subdirs
+{
+	my $state = shift;
+	$state->banner("Making out extra directories",
+	    sub {
+	    	$state->{fetchuser}->mkpath($state->chroot($state->{DISTDIR}));
+	    	$state->{loguser}->mkpath($state->chroot($state->{LOGDIR}));
+	    	$state->{builduser}->mkpath($state->chroot($state->{WRKOBJDIR}));
+	    	$state->{builduser}->mkpath($state->chroot($state->{PACKAGE_REPOSITORY}));
+	    	$state->{builduser}->mkpath($state->chroot($state->{PLIST_DB}));
+		$state->{builduser}->mkpath($state->chroot($state->{LOCKDIR}));
+	    });
+}
+
+sub write_mk_conf
+{
+	my $state = shift;
+	$state->banner("Writing mk.conf",
+	    sub {
+		open(my $f, ">", $state->chroot("/etc/mk.conf"));
+		print $f "# Automatically generated by $0\n";
+		for my $i (keys %{$state->{write}}) {
+			print $f "$i = $state->{$i}\n";
+		}
+		close($f);
+	    });
+}
+
+package main;
+
+my $state = MyState->new("populate_chroot");
+$state->handle_options;
+$state->check_mountpoint;
+if ($state->{actions}{unpopulate}) {
+	$state->unpopulate_chroot;
+}
+if ($state->{actions}{snapshot}) {
+	$state->get_snapshot;
+}
+if ($state->{actions}{locate}) {
+	$state->read_locates;
+}
+
+if ($state->{actions}{resolv}) {
+	$state->special_data;
+}
+if ($state->{actions}{resolv} || $state->{actions}{locate}) {
+	$state->copy_sync;
+}
+
+if ($state->{actions}{devs}) {
+	$state->regen_devs;
+}
+if ($state->{actions}{ldconfig}) {
+	$state->run_ldconfig;
+}
+if ($state->{actions}{copy_ports}) {
+	$state->copy_ports;
+}
+if ($state->{actions}{checkout_ports}) {
+	$state->checkout_ports;
+}
+if ($state->{actions}{copy_sys}) {
+	$state->copy_sys;
+}
+if ($state->{actions}{ports_subdirs}) {
+	$state->make_ports_subdirs;
+}
+if ($state->{actions}{stragglers}) {
+	$state->verbose_shit;
+}
+if ($state->{actions}{write_mk} && exists $state->{write}) {
+	$state->write_mk_conf;
+}
