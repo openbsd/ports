@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.1 2016/04/29 14:27:15 espie Exp $
+# $OpenBSD: proot,v 1.2 2016/04/29 14:47:32 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -112,70 +112,10 @@ sub canonical_dir
 	return $path;
 }
 
-sub handle_options
+sub do_parm
 {
-	my $state = shift;
-	$state->{no_exports} = 1;
-	$state->{opt} = {
-		B => sub { $state->{chroot} = File::Spec->canonpath(shift); },
-		S => sub { $state->{srcroot} = File::Spec->canonpath(shift); },
-		c => sub { $state->read_configfile(shift); },
-	    };
-	# default shit
-	$state->{actions} = {
-	    check_mount => 1,
-	    devs => 1,
-	    ldconfig => 1,
-	    ports_subdirs => 1,
-	    resolv => 1,
-	    write_mk => 1,
-	};
-	$state->SUPER::handle_options("B:S:c:mx", "[-B chroot] [-S chroot]");
+	my ($state, $k, $v) = @_;
 
-	if (!defined $state->{chroot}) {
-		$state->usage("need a chroot base");
-	}
-	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
-	$state->{progressmeter}->setup($state->opt('x'), $state->opt('m'), 
-	    $state);
-	if ($< != 0) {
-		$state->fatal("Must be root");
-	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR)) {
-		if (defined $state->{$i}) {
-			$state->{write}{$i} = 1;
-		}
-	}
-	$state->{PORTSDIR} //= "/usr/ports";
-	$state->{DISTDIR} //= join('/', $state->{PORTSDIR}, 'distfiles');
-	$state->{WRKOBJDIR} //= join('/', $state->{PORTSDIR}, 'pobj');
-	$state->{LOCKDIR} //= join('/', $state->{WRKOBJDIR}, 'locks');
-	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
-	$state->{fetchuser} //= LocalUser->new('_pfetch');
-	$state->{builduser} //= LocalUser->new('_pbuild');
-	$state->{loguser} //= $state->{portuser};
-	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
-	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
-	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB)) {
-		if (defined $state->{$dir}) {
-			$state->{$dir} = $state->canonical_dir($state->{$dir});
-		} else {
-			$state->fatal("Missing #1", $dir);
-		}
-	}
-	for my $i (qw(portuser loguser fetchuser builduser)) {
-		if (defined $state->{$i}) {
-			$state->say("#1: #2", $i, $state->{$i}->{user});
-		}
-	}
-}
-
-sub read_configfile
-{
-	my ($state, $name) = @_;
-	open(my $f, '<', $name) or die "Can't open config $name: $!";
-	my ($k, $v);
 	my $opts = {
 	    chroot => sub {
 		    $state->{chroot} = File::Spec->canonpath($v);
@@ -214,6 +154,19 @@ sub read_configfile
 	    },
 	};
 
+	if (defined $opts->{$k}) {
+		&{$opts->{$k}};
+	} else {
+		$state->errsay("Unknown options #1=#2", $k, $v);
+	}
+}
+
+sub read_configfile
+{
+	my ($state, $name) = @_;
+	open(my $f, '<', $name) or die "Can't open config $name: $!";
+	my ($k, $v);
+
 	while (<$f>) {
 		chomp;
 		my $line = $_;
@@ -228,13 +181,95 @@ sub read_configfile
 			    $., $line);
 			next;
 		} 
-		if (defined $opts->{$k}) {
-			&{$opts->{$k}};
-		} else {
-			$state->errsay("Unknown options #1=#2", $k, $v);
-		}
+		$state->do_parm($k, $v);
 	}
 	close($f);
+}
+
+sub handle_options
+{
+	my $state = shift;
+	$state->{no_exports} = 1;
+	$state->{opt} = {
+		B => sub { $state->{fchroot} = File::Spec->canonpath(shift); },
+		S => sub { $state->{fsrcroot} = File::Spec->canonpath(shift); },
+		c => sub { $state->read_configfile(shift); },
+	    };
+	# default shit
+	$state->{actions} = {
+	    check_mount => 1,
+	    devs => 1,
+	    ldconfig => 1,
+	    ports_subdirs => 1,
+	    resolv => 1,
+	    write_mk => 1,
+	};
+	$state->SUPER::handle_options("B:S:c:mx", 
+	    "[-B chroot] [-c configfile] [-S chroot] [arg=value...]");
+
+	my ($k, $v);
+	for my $arg (@ARGV) {
+		if ($arg =~ m/^(.*?)\s*\=\s*(.*)$/) {
+			($k, $v) = ($1, $2);
+		} elsif ($arg =~ m/^\s+(.*)$/) {
+			$v = $1;
+		}
+		$state->do_parm($k, $v);
+	}
+
+	# command-line options trump configuration file
+	if (defined $state->{fchroot}) {
+		$state->{chroot} = $state->{fchroot};
+	}
+	if (defined $state->{fsrcroot}) {
+		$state->{srcroot} = $state->{fsrcroot};
+	}
+	if (!defined $state->{actions}{snapshot} && 
+	    !defined $state->{actions}{locate}) {
+	    	if ($state->{snapshot}) {
+			$state->{actions}{snapshot} = 1;
+		} else {
+			$state->{actions}{locate} = 1;
+		}
+	}
+
+	if (!defined $state->{chroot}) {
+		$state->usage("need a chroot base");
+	}
+	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
+	$state->{progressmeter}->setup($state->opt('x'), $state->opt('m'), 
+	    $state);
+	if ($< != 0) {
+		$state->fatal("Must be root");
+	}
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR)) {
+		if (defined $state->{$i}) {
+			$state->{write}{$i} = 1;
+		}
+	}
+	$state->{PORTSDIR} //= "/usr/ports";
+	$state->{DISTDIR} //= join('/', $state->{PORTSDIR}, 'distfiles');
+	$state->{WRKOBJDIR} //= join('/', $state->{PORTSDIR}, 'pobj');
+	$state->{LOCKDIR} //= join('/', $state->{WRKOBJDIR}, 'locks');
+	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
+	$state->{fetchuser} //= LocalUser->new('_pfetch');
+	$state->{builduser} //= LocalUser->new('_pbuild');
+	$state->{loguser} //= $state->{portuser};
+	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
+	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
+	$state->{sysdir} //= '/usr/src/sys';
+	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB)) {
+		if (defined $state->{$dir}) {
+			$state->{$dir} = $state->canonical_dir($state->{$dir});
+		} else {
+			$state->fatal("Missing #1", $dir);
+		}
+	}
+	for my $i (qw(portuser loguser fetchuser builduser)) {
+		if (defined $state->{$i}) {
+			$state->say("#1: #2", $i, $state->{$i}->{user});
+		}
+	}
 }
 
 sub chroot
@@ -711,7 +746,9 @@ sub make_ports_subdirs
 	$state->banner("Making out extra directories",
 	    sub {
 	    	$state->{fetchuser}->mkpath($state->chroot($state->{DISTDIR}));
-	    	$state->{loguser}->mkpath($state->chroot($state->{LOGDIR}));
+		if (defined $state->{loguser}) {
+			$state->{loguser}->mkpath($state->chroot($state->{LOGDIR}));
+		}
 	    	$state->{builduser}->mkpath($state->chroot($state->{WRKOBJDIR}));
 	    	$state->{builduser}->mkpath($state->chroot($state->{PACKAGE_REPOSITORY}));
 	    	$state->{builduser}->mkpath($state->chroot($state->{PLIST_DB}));
