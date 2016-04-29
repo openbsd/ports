@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.56 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2016/04/29 11:01:02 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.10.3-P4
+V=		9.10.4
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-SHARED_LIBS +=	isc                  3.1      # 160.0
-SHARED_LIBS +=	isccc                0.0      # 140.3
-SHARED_LIBS +=	dns                  4.3      # 162.0
-SHARED_LIBS +=	isccfg               0.4      # 143.0
-SHARED_LIBS +=	bind9                0.1      # 140.10
+SHARED_LIBS +=	isc                  3.2      # 161.1
+SHARED_LIBS +=	isccc                0.0      # 140.4
+SHARED_LIBS +=	dns                  4.4      # 164.3
+SHARED_LIBS +=	isccfg               0.4      # 143.1
+SHARED_LIBS +=	bind9                0.1      # 140.11
 SHARED_LIBS +=	lwres                0.1      # 141.3
 SHARED_LIBS +=	irs                  0.0      # 141.4
 
@@ -39,8 +39,7 @@ LIB_DEPENDS=	devel/json-c \
 		textproc/libxml
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-filter-aaaa \
 		--enable-threads \
 		--with-libtool \
