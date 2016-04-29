@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/04/05 22:07:59 landry Exp $
+$OpenBSD: README,v 1.2 2016/04/29 09:40:51 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,7 +38,7 @@ server {
 Apache config
 -------------
 
-That config snipped works with apache-httpd-openbsd:
+This config snippet works with Apache:
 
 ScriptAlias /cgit /cgi-bin/cgit.cgi
 <Location "/cgit">
