@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/04/26 16:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/29 14:05:34 jca Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -18,7 +18,6 @@ MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
 LIB_DEPENDS =	archivers/bzip2
 WANTLIB =	c bz2
 
-FAKE=lib
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
