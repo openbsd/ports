@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/18 21:38:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/04/29 08:22:42 sthen Exp $
 
 COMMENT=	apache HTTP server request library
 
 DISTNAME=	libapreq2-2.08
+# no perl module; p5- is needed
 PKGNAME=	p5-${DISTNAME}
 REVISION=	5
 CATEGORIES=	www
@@ -21,14 +22,11 @@ CONFIGURE_ARGS=	--enable-perl-glue \
 		--with-apache2-apxs=${LOCALBASE}/sbin/apxs2
 
 BUILD_DEPENDS=	devel/p5-ExtUtils-XSBuilder \
-	 	www/p5-Apache-Test \
 		www/ap2-mod_perl
 LIB_DEPENDS=	devel/apr \
 		devel/apr-util
 
 RUN_DEPENDS =	www/ap2-mod_perl
-
-TEST_DEPENDS=www/p5-Apache-Test
 
 post-test:
 	cd ${WRKSRC}/glue/perl && \
