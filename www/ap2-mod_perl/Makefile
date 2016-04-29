@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2016/04/28 16:41:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/04/29 08:20:36 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
 DISTNAME=	mod_perl-2.0.9
+REVISION=	0
 PKGNAME=	ap2-${DISTNAME:S/-rc/rc/}
 CATEGORIES=	www net
 
@@ -20,14 +21,8 @@ CONFIGURE_ARGS+=	MP_APXS=${LOCALBASE}/sbin/apxs2 \
 LIB_DEPENDS=		devel/apr \
 			devel/apr-util
 RUN_DEPENDS=		www/apache-httpd
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			www/p5-Apache-Test>=1.29 \
-			www/p5-Apache-Reload
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 PORTHOME=		${WRKDIR}
-
-# avoid conflicts
-post-extract:
-	rm -r ${WRKSRC}/Apache-Test ${WRKSRC}/Apache-Reload/lib/Apache
 
 .include <bsd.port.mk>

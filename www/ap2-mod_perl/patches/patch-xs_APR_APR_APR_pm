@@ -1,7 +1,7 @@
-$OpenBSD: patch-xs_APR_APR_APR_pm,v 1.1 2007/06/09 16:02:04 martynas Exp $
---- xs/APR/APR/APR.pm.orig	Mon Nov 20 01:31:02 2006
-+++ xs/APR/APR/APR.pm	Sat Jun  9 18:10:04 2007
-@@ -23,7 +23,7 @@ our @ISA = qw(DynaLoader);
+$OpenBSD: patch-xs_APR_APR_APR_pm,v 1.2 2016/04/29 08:20:36 sthen Exp $
+--- xs/APR/APR/APR.pm.orig	Thu Jun 18 21:13:59 2015
++++ xs/APR/APR/APR.pm	Fri Apr 29 09:10:00 2016
+@@ -24,7 +24,7 @@ our @ISA = qw(DynaLoader);
  # XXX: see xs/ModPerl/Const/Const.pm for issues of using 0x01
  use Config ();
  use constant DL_GLOBAL =>
