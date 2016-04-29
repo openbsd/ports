@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.30 2015/10/06 21:53:05 sthen Exp $
+$OpenBSD: README-main,v 1.31 2016/04/29 09:39:54 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -148,11 +148,6 @@ icinga-cgi" or "pkg_add icinga-web").
 
 2) icinga-web: new API-based interface
 
-** N.B. These icinga-web instructions have not yet been updated for use with
-** with nginx; 2.6 and 2.7 below relate to use with the apache-httpd-openbsd
-** package. Please contact the port maintainer if you can provide suitable
-** configuration sections to use icinga-web with nginx.
-
    2.1) Setup the icinga database. For details see:
    ${TRUEPREFIX}/share/examples/icinga/db/README
 
@@ -187,7 +182,8 @@ icinga-cgi" or "pkg_add icinga-web").
    2.5) Change the db settings accordingly for both icinga and for
    icinga_web in /var/www/icinga-web/etc/conf.d/databases.xml.
 
-   2.6) To enable icinga-web, link the provided httpd.conf snippet:
+   2.6) Enable icinga-web for your web server. If using Apache, an
+   httpd.conf snippet is provided and can be enabled as follows:
 
       # ln -s ../modules.sample/icinga-web.conf /var/www/conf/modules
 
