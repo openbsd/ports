@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.62 2016/04/26 16:54:00 espie Exp $
+# $OpenBSD: Config.pm,v 1.63 2016/04/29 11:17:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -219,10 +219,6 @@ sub parse_command_line
 
 	$state->{size_log} = "%f/build-stats/%a-size";
 
-	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
-	if ($state->define_present($k)) {
-		$state->{startup_script} = $state->{subst}->value($k);
-	}
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->{subst}->value('LOGDIR');
 	}
@@ -270,6 +266,10 @@ sub parse_command_line
 		$state->{want_fetchinfo} = 1;
 	}
 
+	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
+	if ($state->define_present($k)) {
+		$state->{startup_script} = $state->expand_path($state->{subst}->value($k));
+	}
 	# redo this in case config files changed it
 	$state->{logdir} = $state->expand_path($state->{logdir});
 
