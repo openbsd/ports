@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_cxx,v 1.10 2015/12/08 17:18:59 dcoppa Exp $
+$OpenBSD: patch-Source_cmake_cxx,v 1.11 2016/04/29 10:34:33 dcoppa Exp $
 
 Revert 4e3c7725d0d724d7a8a0e8305d15713e01b20503: we want to build
 CMake using Ninja
 
---- Source/cmake.cxx.orig	Thu Nov 12 16:39:51 2015
-+++ Source/cmake.cxx	Mon Nov 23 16:54:15 2015
-@@ -75,9 +75,7 @@
+--- Source/cmake.cxx.orig	Fri Apr 15 15:41:22 2016
++++ Source/cmake.cxx	Fri Apr 29 12:07:07 2016
+@@ -74,9 +74,7 @@
  # include "cmGlobalWatcomWMakeGenerator.h"
  #endif
  #include "cmGlobalUnixMakefileGenerator3.h"
@@ -16,7 +16,7 @@ CMake using Ninja
  #include "cmExtraCodeLiteGenerator.h"
  
  #if !defined(CMAKE_BOOT_MINGW)
-@@ -1703,10 +1701,8 @@ void cmake::AddDefaultGenerators()
+@@ -1856,10 +1854,8 @@ void cmake::AddDefaultGenerators()
  #endif
    this->Generators.push_back(
      cmGlobalUnixMakefileGenerator3::NewFactory());
@@ -27,3 +27,26 @@ CMake using Ninja
  #if defined(CMAKE_USE_WMAKE)
    this->Generators.push_back(
      cmGlobalWatcomWMakeGenerator::NewFactory());
+@@ -2721,22 +2717,6 @@ void displayMessage(cmake::MessageType t, std::ostring
+ 
+   // Add a terminating blank line.
+   msg << "\n";
+-
+-#if defined(CMAKE_BUILD_WITH_CMAKE)
+-  // Add a C++ stack trace to internal errors.
+-  if(t == cmake::INTERNAL_ERROR)
+-    {
+-    std::string stack = cmsys::SystemInformation::GetProgramStack(0,0);
+-    if(!stack.empty())
+-      {
+-      if(cmHasLiteralPrefix(stack, "WARNING:"))
+-        {
+-        stack = "Note:" + stack.substr(8);
+-        }
+-      msg << stack << "\n";
+-      }
+-    }
+-#endif
+ 
+   // Output the message.
+   if(t == cmake::FATAL_ERROR

@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindBoost_cmake,v 1.9 2015/12/08 17:18:59 dcoppa Exp $
---- Modules/FindBoost.cmake.orig	Thu Nov 12 16:39:50 2015
-+++ Modules/FindBoost.cmake	Mon Nov 23 16:20:59 2015
-@@ -471,6 +471,22 @@ function(_Boost_GUESS_COMPILER_PREFIX _ret)
-   set(${_ret} ${_boost_COMPILER} PARENT_SCOPE)
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.10 2016/04/29 10:34:33 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Fri Apr 15 15:41:20 2016
++++ Modules/FindBoost.cmake	Wed Apr 27 10:55:08 2016
+@@ -782,6 +782,22 @@ function(_Boost_MISSING_DEPENDENCIES componentvar extr
+   set(${extravar} ${_boost_extra_components} PARENT_SCOPE)
  endfunction()
  
 +function(_Boost_consider_adding_pthread _outvar)
@@ -24,7 +24,7 @@ $OpenBSD: patch-Modules_FindBoost_cmake,v 1.9 2015/12/08 17:18:59 dcoppa Exp $
  #
  # End functions/macros
  #
-@@ -1242,6 +1258,8 @@ if(Boost_FOUND)
+@@ -1652,6 +1668,8 @@ if(Boost_FOUND)
        list(APPEND Boost_LIBRARIES ${Boost_${UPPERCOMPONENT}_LIBRARY})
      endif()
    endforeach()

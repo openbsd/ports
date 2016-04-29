@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.19 2016/01/28 11:28:02 dcoppa Exp $
---- CMakeLists.txt.orig	Thu Nov 12 16:39:50 2015
-+++ CMakeLists.txt	Mon Nov 23 16:20:59 2015
-@@ -270,6 +270,15 @@ macro (CMAKE_BUILD_UTILITIES)
-   # (a macro defined in this file)
-   CMAKE_HANDLE_SYSTEM_LIBRARIES()
+$OpenBSD: patch-CMakeLists_txt,v 1.20 2016/04/29 10:34:33 dcoppa Exp $
+--- CMakeLists.txt.orig	Fri Apr 15 15:41:19 2016
++++ CMakeLists.txt	Wed Apr 27 10:55:08 2016
+@@ -262,6 +262,15 @@ macro (CMAKE_BUILD_UTILITIES)
+     CMAKE_SET_TARGET_FOLDER(${KWSYS_NAMESPACE}TestSharedForward "${kwsys_folder}")
+   endif()
  
 +  if($ENV{LOCALBASE})
 +    set(OPENBSD_LOCALBASE $ENV{LOCALBASE})
@@ -15,9 +15,9 @@ $OpenBSD: patch-CMakeLists_txt,v 1.19 2016/01/28 11:28:02 dcoppa Exp $
 +  link_directories("${OPENBSD_LOCALBASE}/lib")
 +
    #---------------------------------------------------------------------
-   # Build zlib library for Curl, CMake, and CTest.
-   set(CMAKE_ZLIB_HEADER "cm_zlib.h")
-@@ -404,15 +413,17 @@ macro (CMAKE_BUILD_UTILITIES)
+   # Setup third-party libraries.
+   # Everything in the tree should be able to include files from the
+@@ -425,15 +434,17 @@ macro (CMAKE_BUILD_UTILITIES)
    # Build jsoncpp library.
    if(CMAKE_USE_SYSTEM_JSONCPP)
      if(NOT CMAKE_VERSION VERSION_LESS 3.0)

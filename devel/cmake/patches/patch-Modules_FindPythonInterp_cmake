@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.9 2014/12/31 11:06:02 dcoppa Exp $
---- Modules/FindPythonInterp.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindPythonInterp.cmake	Thu Dec 18 06:34:41 2014
-@@ -47,6 +47,8 @@
+$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.10 2016/04/29 10:34:33 dcoppa Exp $
+--- Modules/FindPythonInterp.cmake.orig	Fri Apr 15 15:41:21 2016
++++ Modules/FindPythonInterp.cmake	Wed Apr 27 10:55:08 2016
+@@ -48,6 +48,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.9 2014/12/31 11:06:02 dcoppa 
  unset(_Python_NAMES)
  
  set(_PYTHON1_VERSIONS 1.6 1.5)
-@@ -79,19 +81,23 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
+@@ -80,19 +82,23 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
  
  # Set up the versions we know about, in the order we will search. Always add
  # the user supplied additional versions to the front.

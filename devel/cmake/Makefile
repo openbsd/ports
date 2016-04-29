@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.144 2016/04/19 19:48:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.145 2016/04/29 10:34:33 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
 COMMENT =	portable build system
 
-VER =		3.4.3
+VER =		3.5.2
 DISTNAME =	cmake-${VER}
-REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}files/v3.5/ \
-		${HOMEPAGE}files/v${VER:R}/
+MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

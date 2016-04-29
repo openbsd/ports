@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.27 2015/12/08 17:18:59 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Thu Nov 12 16:39:51 2015
-+++ Source/cmTarget.cxx	Mon Nov 23 16:11:38 2015
-@@ -214,7 +214,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.28 2016/04/29 10:34:33 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Fri Apr 15 15:41:22 2016
++++ Source/cmTarget.cxx	Wed Apr 27 11:03:28 2016
+@@ -120,7 +120,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
      this->SetPropertyDefault("ANDROID_ANT_ADDITIONAL_OPTIONS", 0);
      this->SetPropertyDefault("INSTALL_NAME_DIR", 0);
      this->SetPropertyDefault("INSTALL_RPATH", "");
@@ -10,27 +10,3 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.27 2015/12/08 17:18:59 dcoppa Exp $
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
      this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", 0);
-@@ -2736,7 +2736,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
-   if(version)
-     {
-     vName += ".";
-+#if defined(__OpenBSD__)
-+    // OpenBSD-style versioning for shared libraries.
-+    // Convert libname.so.X.X.X to libname.so.X.X
-+    int j = 0;
-+    for (int i = 0; i < (int)strlen(version); i++)
-+      {
-+      if (version[i] == '.')
-+        {
-+        j++;
-+        if (j == 2)
-+          break;
-+        }
-+      vName += version[i];
-+      }
-+#else
-     vName += version;
-+#endif
-     }
-   vName += this->IsApple? suffix : std::string();
- }
