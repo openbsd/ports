@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/10/29 08:58:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/04/29 18:54:49 ajacoutot Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 include/libgeoclue-2.0/
@@ -10,6 +10,7 @@ include/libgeoclue-2.0/gclue-location.h
 include/libgeoclue-2.0/gclue-manager.h
 include/libgeoclue-2.0/gclue-simple.h
 include/libgeoclue-2.0/geoclue.h
+lib/girepository-1.0/Geoclue-2.0.typelib
 lib/libgeoclue-2.a
 lib/libgeoclue-2.la
 @lib lib/libgeoclue-2.so.${LIBgeoclue-2_VERSION}
@@ -20,8 +21,6 @@ libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
 @bin libexec/geoclue-2.0/demos/where-am-i
 share/applications/geoclue-where-am-i.desktop
-share/dbus-1/
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Client.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Location.xml
@@ -40,5 +39,6 @@ share/examples/geoclue/geoclue/
 @sample ${SYSCONFDIR}/geoclue/
 share/examples/geoclue/geoclue/geoclue.conf
 @sample ${SYSCONFDIR}/geoclue/geoclue.conf
+share/gir-1.0/Geoclue-2.0.gir
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
