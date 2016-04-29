@@ -1,4 +1,4 @@
-.\"     $OpenBSD: portbump.1,v 1.4 2016/01/25 17:27:24 schwarze Exp $
+.\"     $OpenBSD: portbump.1,v 1.5 2016/04/29 16:01:22 schwarze Exp $
 .\"
 .\" Copyright (c) 2014 Vadim Zhukov
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 25 2016 $
+.Dd $Mdocdate: April 29 2016 $
 .Dt PORTBUMP 1
 .Os
 .Sh NAME
@@ -59,8 +59,8 @@ information will be ignored.
 doesn't care about actual subdirectory portion of
 .Ar portref ,
 so you can freely pass
-.Sq . ,
-.Sq ../foo
+.Pa \&. ,
+.Pa ../foo
 or anything else like this.
 .Pp
 If subpackage is not specified in port reference, then all subpackages
