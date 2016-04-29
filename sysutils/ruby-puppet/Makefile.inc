@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.35 2016/04/28 16:02:33 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2016/04/29 07:59:53 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -43,7 +43,8 @@ RUN_DEPENDS +=	archivers/gtar \
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-PORTHOME=		${WRKDIR}
+FAKE_FLAGS +=		HOME=${WKRDIR}/home
+
 SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:

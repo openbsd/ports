@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2016/04/28 16:02:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2016/04/29 07:59:53 jasper Exp $
 
 PORTROACH=		limit:^3
 
@@ -8,10 +8,10 @@ REVISION=		2
 RUN_DEPENDS+=		databases/ruby-hiera,${MODRUBY_FLAVOR} \
 			sysutils/ruby-facter>=2.0.1p0
 
-PORTHOME=		${WRKDIR}
 SUBST_VARS +=		MODRUBY_BINREV
 
 pre-install:
+	mkdir -p ${WRKDIR}/home
 	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb
 	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/pip.rb
 
