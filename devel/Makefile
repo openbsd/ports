@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1491 2016/04/29 11:48:13 jsg Exp $
+# $OpenBSD: Makefile,v 1.1492 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -295,7 +295,6 @@
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += jsoncpp
-     SUBDIR += kdbg
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3

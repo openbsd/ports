@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2016/04/09 19:18:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -19,9 +19,7 @@
      SUBDIR += gstreamer1
      SUBDIR += hdhomerun
      SUBDIR += imagination
-     SUBDIR += k3b
      SUBDIR += k3b-kde4
-     SUBDIR += kaffeine
      SUBDIR += kdenlive
      SUBDIR += kguitar
      SUBDIR += libaacs

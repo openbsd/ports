@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2016/04/28 11:15:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -39,7 +39,6 @@
      SUBDIR += sl
      SUBDIR += slideml
      SUBDIR += taskd
-     SUBDIR += taskjuggler
      SUBDIR += taskwarrior
      SUBDIR += tdl
      SUBDIR += thinkingrock

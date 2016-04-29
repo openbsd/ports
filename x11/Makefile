@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.568 2016/04/26 15:36:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.569 2016/04/29 21:01:38 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -143,9 +143,6 @@
      SUBDIR += keybinder3
      SUBDIR += keynav
      SUBDIR += klavaro
-     SUBDIR += kmplayer
-     SUBDIR += kountdown
-     SUBDIR += krusader
      SUBDIR += lablgtk2
      SUBDIR += libdnd
      SUBDIR += libfm
@@ -221,12 +218,10 @@
      SUBDIR += py-qt4
      SUBDIR += py-qt5
      SUBDIR += py-wxPython
-     SUBDIR += qinx
      SUBDIR += qrfcview
      SUBDIR += qt3
      SUBDIR += qt4
      SUBDIR += qt5
-     SUBDIR += quadkonsole
      SUBDIR += qvwm
      SUBDIR += qwt
      SUBDIR += ratmen
@@ -264,7 +259,6 @@
      SUBDIR += tangerine-icon-theme
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
-     SUBDIR += tellico
      SUBDIR += tellico-kde4
      SUBDIR += terminator
      SUBDIR += thewidgetfactory
@@ -397,7 +391,6 @@
      SUBDIR += xwrits
      SUBDIR += xzoom
      SUBDIR += yad
-     SUBDIR += yakuake
      SUBDIR += yakuake-kde4
      SUBDIR += yeahconsole
      SUBDIR += yeahlaunch

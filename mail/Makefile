@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.336 2016/04/22 16:43:01 okan Exp $
+# $OpenBSD: Makefile,v 1.337 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -66,7 +66,6 @@
      SUBDIR += imapproxy
      SUBDIR += imapsync
      SUBDIR += isync
-     SUBDIR += kbiff
      SUBDIR += ldapvacation
      SUBDIR += libetpan
      SUBDIR += libspf2

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.368 2016/03/27 11:13:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.369 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += abcde
      SUBDIR += akode
      SUBDIR += alac_decoder
-     SUBDIR += amarok
      SUBDIR += aqualung
      SUBDIR += ardour
      SUBDIR += ario

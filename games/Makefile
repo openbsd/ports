@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2016/04/15 15:27:55 awolk Exp $
+# $OpenBSD: Makefile,v 1.332 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -131,7 +131,6 @@
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
      SUBDIR += komi
-     SUBDIR += kslide
      SUBDIR += late
      SUBDIR += lbreakout2
      SUBDIR += lgeneral

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.412 2016/04/27 10:49:41 jca Exp $
+# $OpenBSD: Makefile,v 1.413 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -36,9 +36,6 @@
      SUBDIR += dcraw
      SUBDIR += delaboratory
      SUBDIR += dia
-     SUBDIR += digikam
-     SUBDIR += digikam-doc
-     SUBDIR += digikam-kde4
      SUBDIR += discwrapper
      SUBDIR += djview4
      SUBDIR += djvulibre
@@ -91,8 +88,6 @@
      SUBDIR += gthumb
      SUBDIR += gtkam
      SUBDIR += gtkimageview
-     SUBDIR += gwenview
-     SUBDIR += gwenview-i18n
      SUBDIR += hs-GLURaw
      SUBDIR += hs-GLUT
      SUBDIR += hs-OpenGL
@@ -117,8 +112,6 @@
      SUBDIR += jpegdump
      SUBDIR += jpegpixi
      SUBDIR += k3dsurf
-     SUBDIR += kimdaba
-     SUBDIR += kipi-plugins
      SUBDIR += l2p
      SUBDIR += lcms
      SUBDIR += lcms2
@@ -135,10 +128,6 @@
      SUBDIR += libgphoto2
      SUBDIR += libgxps
      SUBDIR += libiptcdata
-     SUBDIR += libkdcraw
-     SUBDIR += libkexif
-     SUBDIR += libkexiv2
-     SUBDIR += libkipi
      SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2

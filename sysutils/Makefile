@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2016/04/28 10:11:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.388 2016/04/29 21:01:38 zhuk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -62,7 +62,6 @@
      SUBDIR += facter
      SUBDIR += faubackup
      SUBDIR += fdupes
-     SUBDIR += filelight
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flock
@@ -92,7 +91,6 @@
      SUBDIR += ipmitool
      SUBDIR += iwatch
      SUBDIR += knutclient
-     SUBDIR += krename
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
      SUBDIR += librelp
