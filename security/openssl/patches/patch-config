@@ -1,0 +1,12 @@
+$OpenBSD: patch-config,v 1.1 2016/04/29 11:24:05 sthen Exp $
+--- config.orig	Fri Apr 29 05:22:38 2016
++++ config	Fri Apr 29 05:22:46 2016
+@@ -758,7 +758,7 @@ case "$GUESSOS" in
+ 			    libc=/usr/lib/libc.so
+ 			else					# OpenBSD
+ 			    # ld searches for highest libc.so.* and so do we
+-			    libc=`(ls /usr/lib/libc.so.* /lib/libc.so.* | tail -1) 2>/dev/null`
++			    libc=`(ls /usr/lib/libc.so.*[0-9] | tail -1) 2>/dev/null`
+ 			fi
+ 			case "`(file -L $libc) 2>/dev/null`" in
+ 			*ELF*)	OUT="BSD-x86-elf" ;;
