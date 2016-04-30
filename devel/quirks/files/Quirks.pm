@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.396 2016/04/28 18:23:47 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.397 2016/04/30 11:56:31 zhuk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -798,6 +798,24 @@ my $obsolete_reason = {
 	'p5-HTML-Embperl' => 6,
 	'p5-libapreq' => 6,
 	'mod_perl' => 6,
+
+# KDE3 removals
+	'amarok' => 2,
+	'digikam-doc' => 6,
+	'gwenview-i18n' => 6,
+	'kaffeine' => 6,
+	'kbiff' => 6,
+	'kdbg' => 3,
+	'kdewebdev' => 5,
+	'kmplayer' => 6,
+	'kountdown' => 3,
+	'krusader' => 2,
+	'kslide' => 3,
+	'ktimeclock' => 6,
+	'okle' => 2,
+	'qinx' => 6,
+	'quadkonsole' => 6,
+	'taskjuggler' => 6,
 };
 
 my @msg = (
