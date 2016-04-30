@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/29 11:43:12 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/30 16:51:15 jsg Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/
@@ -14,17 +14,32 @@ share/doc/luacheck/_static/basic.css
 share/doc/luacheck/_static/comment-bright.png
 share/doc/luacheck/_static/comment-close.png
 share/doc/luacheck/_static/comment.png
-share/doc/luacheck/_static/default.css
+share/doc/luacheck/_static/css/
+share/doc/luacheck/_static/css/badge_only.css
+share/doc/luacheck/_static/css/theme.css
 share/doc/luacheck/_static/doctools.js
 share/doc/luacheck/_static/down-pressed.png
 share/doc/luacheck/_static/down.png
 share/doc/luacheck/_static/file.png
+share/doc/luacheck/_static/fonts/
+share/doc/luacheck/_static/fonts/Inconsolata-Bold.ttf
+share/doc/luacheck/_static/fonts/Inconsolata-Regular.ttf
+share/doc/luacheck/_static/fonts/Lato-Bold.ttf
+share/doc/luacheck/_static/fonts/Lato-Regular.ttf
+share/doc/luacheck/_static/fonts/RobotoSlab-Bold.ttf
+share/doc/luacheck/_static/fonts/RobotoSlab-Regular.ttf
+share/doc/luacheck/_static/fonts/fontawesome-webfont.eot
+share/doc/luacheck/_static/fonts/fontawesome-webfont.svg
+share/doc/luacheck/_static/fonts/fontawesome-webfont.ttf
+share/doc/luacheck/_static/fonts/fontawesome-webfont.woff
 share/doc/luacheck/_static/jquery.js
+share/doc/luacheck/_static/js/
+share/doc/luacheck/_static/js/modernizr.min.js
+share/doc/luacheck/_static/js/theme.js
 share/doc/luacheck/_static/minus.png
 share/doc/luacheck/_static/plus.png
 share/doc/luacheck/_static/pygments.css
 share/doc/luacheck/_static/searchtools.js
-share/doc/luacheck/_static/sidebar.js
 share/doc/luacheck/_static/underscore.js
 share/doc/luacheck/_static/up-pressed.png
 share/doc/luacheck/_static/up.png
