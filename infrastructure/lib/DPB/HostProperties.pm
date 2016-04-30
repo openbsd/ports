@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.15 2015/08/22 09:24:42 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.16 2016/04/30 09:15:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,9 +65,6 @@ sub finalize
 	if (defined $prop->{mem}) {
 		$prop->{memory} = $prop->{mem};
 	}
-	if (defined $prop->{chroot_user}) {
-		$prop->{build_user} //= $prop->{chroot_user};
-	}
 	if (defined $prop->{chroot}) {
 		if ($prop->{chroot} eq '/' || $prop->{chroot} eq '') {
 			delete $prop->{chroot};
@@ -81,7 +78,7 @@ sub finalize
 		if ($prop->{base_user}{uid} != 0) {
 			$prop->{build_user} = $prop->{base_user};
 		} else {
-			$prop->{build_user} = $prop->{port_user};
+			$prop->{build_user} = DPB::User->new('_pbuild');
 		}
 	}
 	if (defined $prop->{dirmode}) {

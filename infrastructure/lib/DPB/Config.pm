@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.63 2016/04/29 11:17:44 espie Exp $
+# $OpenBSD: Config.pm,v 1.64 2016/04/30 09:15:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -169,16 +169,15 @@ sub parse_command_line
 	}
 	$class->setup_users($state);
 	$state->{build_user} //= $state->{default_prop}{build_user};
+	if ($state->{base_user}{uid} == 0) {
+		$state->{fetch_user} //= DPB::User->new('_pfetch');
+	}
 	if (!defined $state->{port_user}) {
 		my ($uid, $gid) = (stat $state->{realports})[4,5];
 		$state->{port_user} = DPB::User->from_uid($uid, $gid);
 	}
 	if (!defined $state->{build_user}) {
-		if ($state->{base_user}{uid} != 0) {
-			$state->{build_user} = $state->{base_user};
-		} else {
-			$state->{build_users} = $state->{port_user};
-		}
+		$state->{build_user} = $state->{base_user};
 	}
 	$state->{log_user} //= $state->{build_user};
 	$state->{fetch_user} //= $state->{build_user};
