@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2016/01/07 00:52:47 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2016/04/30 14:19:00 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -7138,28 +7138,10 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/debug-c.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/errors-c.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/fips_mode%3d-c.ri
 share/ri/${RUBYLIBREV}/system/OpenStruct/
-share/ri/${RUBYLIBREV}/system/OpenStruct/%3d%3d-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/%5b%5d%3d-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/%5b%5d-i.ri
 share/ri/${RUBYLIBREV}/system/OpenStruct/as_json-i.ri
 share/ri/${RUBYLIBREV}/system/OpenStruct/cdesc-OpenStruct.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/delete_field-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/dig-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/each_pair-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/eql%3f-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/hash-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/initialize_copy-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/inspect-i.ri
 share/ri/${RUBYLIBREV}/system/OpenStruct/json_create-c.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/marshal_dump-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/marshal_load-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/modifiable-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/new-c.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/new_ostruct_member-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/respond_to_missing%3f-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/to_h-i.ri
 share/ri/${RUBYLIBREV}/system/OpenStruct/to_json-i.ri
-share/ri/${RUBYLIBREV}/system/OpenStruct/to_s-i.ri
 share/ri/${RUBYLIBREV}/system/OpenURI/
 share/ri/${RUBYLIBREV}/system/OpenURI/HTTPError/
 share/ri/${RUBYLIBREV}/system/OpenURI/HTTPError/cdesc-HTTPError.ri
@@ -14049,7 +14031,6 @@ share/ri/${RUBYLIBREV}/system/URI/Generic/userinfo-i.ri
 share/ri/${RUBYLIBREV}/system/URI/HTTP/
 share/ri/${RUBYLIBREV}/system/URI/HTTP/build-c.ri
 share/ri/${RUBYLIBREV}/system/URI/HTTP/cdesc-HTTP.ri
-share/ri/${RUBYLIBREV}/system/URI/HTTP/new-c.ri
 share/ri/${RUBYLIBREV}/system/URI/HTTP/request_uri-i.ri
 share/ri/${RUBYLIBREV}/system/URI/HTTPS/
 share/ri/${RUBYLIBREV}/system/URI/HTTPS/cdesc-HTTPS.ri
@@ -14810,6 +14791,7 @@ share/ri/${RUBYLIBREV}/system/XMLRPC/Client/call_async-i.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/cdesc-Client.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/cookie-i.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/do_rpc-i.ri
+share/ri/${RUBYLIBREV}/system/XMLRPC/Client/dup_net_http-i.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/gen_multicall-i.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/http-i.ri
 share/ri/${RUBYLIBREV}/system/XMLRPC/Client/http_header_extra-i.ri
