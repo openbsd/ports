@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2016/01/03 16:53:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.49 2016/04/30 00:37:36 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	7
+REVISION =	8
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -84,7 +84,7 @@ WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg kvm png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
 WANTLIB += usb xml2 xmms
 
-MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby
+MODULES =	multimedia/phonon lang/python lang/ruby
 MODKDE4_USE =	pim
 
 MODRUBY_BUILDDEP =	No
@@ -93,8 +93,8 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/gettext \
 		misc/shared-desktop-ontologies \
-		sysutils/lsof \
 		x11/gtk+3,-guic \
 		x11/polkit-qt, \
 		${MODKDE4_DEP_DIR}/base-artwork>=${MODKDE4_DEP_VERSION} \

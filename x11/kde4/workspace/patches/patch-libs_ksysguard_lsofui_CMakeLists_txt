@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_ksysguard_lsofui_CMakeLists_txt,v 1.1 2016/04/30 00:37:36 zhuk Exp $
+Use kvm_getfiles() instead of starting lsof(1).
+--- libs/ksysguard/lsofui/CMakeLists.txt.orig	Sat Apr 30 02:55:52 2016
++++ libs/ksysguard/lsofui/CMakeLists.txt	Sat Apr 30 02:55:33 2016
+@@ -12,6 +12,11 @@ kde4_add_ui_files( lsofui_LIB_SRCS
+ kde4_add_library(lsofui SHARED ${lsofui_LIB_SRCS})
+ 
+ target_link_libraries(lsofui ${KDE4_KIO_LIBS} )
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  message(STATUS "Adding kvm library on NetBSD/OpenBSD")
++  target_link_libraries(lsofui kvm)
++  add_definitions(-DHAVE_KVM_H=1)
++endif()
+ set_target_properties(lsofui PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+ install(TARGETS lsofui EXPORT kdeworkspaceLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )
+ 
