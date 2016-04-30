@@ -1,43 +1,41 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/01 18:09:08 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2016/04/30 12:09:19 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_VERSION=	2.1.2
+WAPP_VERSION=	2.2.0
 EPOCH=		0
 
 PLUGINS_WITH_DEFCONF= \
 		browsercompatibility \
 		contactfax \
-		extbox \
+		files \
 		gmaps \
-		pdfbox \
 		pimfolder \
 		titlecounter \
 		webappmanual \
-		webodf \
 		xmpp
 
 PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		clockwidget \
 		folderwidgets \
 		lang \
-		oauthlib \
 		quickitems
 
-RPMVER=		551.1
+MINOR=		414
+RPMVER=		185.1
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
 
 .for _dfile in ${PLUGINS}
-EDISTFILES+=    zarafa-webapp-${_dfile}-${WAPP_VERSION}-${RPMVER}.noarch.rpm
+EDISTFILES+=    zarafa-webapp-${_dfile}-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm
 .endfor
 EXTRACT_ONLY=   ${EDISTFILES:C/:[0-9]$//}
 
-DISTFILES+=	zarafa-webapp-${WAPP_VERSION}-${RPMVER}.noarch.rpm \
+DISTFILES+=	zarafa-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
 		${EDISTFILES}
 
-MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel-5/
+MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel-6/
 
 CATEGORIES=	mail www
 
