@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/04/07 05:51:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2016/04/30 09:06:13 ajacoutot Exp $
 
 MODPY_EGG_VERSION =	3.2.15
 
@@ -21,6 +21,13 @@ RUN_DEPENDS =		databases/py-psycopg2 \
 
 # optional: graphviz has a lot of dependencies
 #RUN_DEPENDS +=		graphics/py-dot
+
+MODULES +=		databases/postgresql
+# py-psycopg2 doesn't seem to have a way to use socket anywhere but /tmp:
+MODPOSTGRESQL_TEST_PGHOST = /tmp
+MODPOSTGRESQL_TEST_CMD = ${MODPY_TEST_TARGET}
+# give the tests a database name to use
+MAKE_ENV =		DB_NAME=trytond_test
 
 pre-configure:
 	perl -pi -e 's,/var/lib,/var/db,,' ${WRKSRC}/trytond/config.py
