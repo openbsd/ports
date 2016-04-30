@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.3 2016/04/29 14:49:33 espie Exp $
+# $OpenBSD: proot,v 1.4 2016/04/30 09:13:48 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -211,8 +211,8 @@ sub handle_options
 	for my $arg (@ARGV) {
 		if ($arg =~ m/^(.*?)\s*\=\s*(.*)$/) {
 			($k, $v) = ($1, $2);
-		} elsif ($arg =~ m/^\s+(.*)$/) {
-			$v = $1;
+		} else {
+			$v = $arg;
 		}
 		$state->do_parm($k, $v);
 	}
