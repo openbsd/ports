@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/18 14:49:27 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/04/30 16:37:55 zhuk Exp $
 include/quazip/
 include/quazip/JlCompress.h
 include/quazip/crypt.h
@@ -16,7 +16,6 @@ include/quazip/quazipfileinfo.h
 include/quazip/quazipnewinfo.h
 include/quazip/unzip.h
 include/quazip/zip.h
+lib/libquazip.a
 @lib lib/libquazip.so.${LIBquazip_VERSION}
-share/cmake/
-share/cmake/Modules/
 share/cmake/Modules/FindQuaZip.cmake
