@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2016/04/01 08:29:30 jung Exp $
+# $OpenBSD: Makefile,v 1.177 2016/04/30 14:25:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -42,7 +42,6 @@
      SUBDIR += impress
      SUBDIR += insult
      SUBDIR += jive
-     SUBDIR += ktimeclock
      SUBDIR += lfm
      SUBDIR += libosinfo
      SUBDIR += lifelines
