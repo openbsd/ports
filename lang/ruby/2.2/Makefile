@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/30 16:47:34 visa Exp $
+# $OpenBSD: Makefile,v 1.12 2016/04/30 14:18:12 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
 COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
-VERSION =		2.2.4
+VERSION =		2.2.5
 RUBYLIBREV =		2.2
 DISTNAME =		ruby-${VERSION}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/01/08 18:48:32 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/04/30 14:18:12 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.2,<2.3
 bin/erb22
@@ -110,7 +110,9 @@ lib/ruby/${RUBYLIBREV}/${SUB}/enc/utf_16be.so
 lib/ruby/${RUBYLIBREV}/${SUB}/enc/utf_16le.so
 lib/ruby/${RUBYLIBREV}/${SUB}/enc/utf_32be.so
 lib/ruby/${RUBYLIBREV}/${SUB}/enc/utf_32le.so
+lib/ruby/${RUBYLIBREV}/${SUB}/enc/windows_1250.so
 lib/ruby/${RUBYLIBREV}/${SUB}/enc/windows_1251.so
+lib/ruby/${RUBYLIBREV}/${SUB}/enc/windows_1252.so
 lib/ruby/${RUBYLIBREV}/${SUB}/enc/windows_31j.so
 lib/ruby/${RUBYLIBREV}/${SUB}/etc.so
 lib/ruby/${RUBYLIBREV}/${SUB}/fcntl.so
