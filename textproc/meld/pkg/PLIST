@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/12/11 06:42:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/05/01 09:23:49 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -103,24 +103,14 @@ lib/python${MODPY_VERSION}/site-packages/meld/vc/_vc.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/_vc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/bzr.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/bzr.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/vc/cvs.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/cvs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/darcs.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/darcs.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/vc/fossil.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/fossil.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/git.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/git.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/mercurial.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/mercurial.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/vc/monotone.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/monotone.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/vc/svk.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/svk.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/svn.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/svn.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/vc/svn_17.py
-lib/python${MODPY_VERSION}/site-packages/meld/vc/svn_17.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vcview.py
 lib/python${MODPY_VERSION}/site-packages/meld/vcview.pyc
 @man man/man1/meld.1
@@ -322,8 +312,10 @@ share/meld/icons/vc-push-24.png
 share/meld/icons/vc-remove-24.png
 share/meld/icons/vc-resolve-24.png
 share/meld/icons/vc-update-24.png
-share/meld/meld-dark.css
 share/meld/meld.css
+share/meld/styles/
+share/meld/styles/meld-base.xml
+share/meld/styles/meld-dark.xml
 share/meld/ui/
 share/meld/ui/EditableList.ui
 share/meld/ui/application.ui
@@ -337,6 +329,7 @@ share/meld/ui/meldapp-ui.xml
 share/meld/ui/meldapp.ui
 share/meld/ui/patch-dialog.ui
 share/meld/ui/preferences.ui
+share/meld/ui/shortcuts.ui
 share/meld/ui/tab-placeholder.ui
 share/meld/ui/vcview-ui.xml
 share/meld/ui/vcview.ui
