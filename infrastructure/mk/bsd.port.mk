@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1314 2016/04/27 20:41:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1315 2016/05/01 09:12:27 ajacoutot Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -77,6 +77,10 @@ DPB ?= All Fetch Test
 PREPARE_CHECK_ONLY ?= No
 _SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
 DPB_PROPERTIES ?=
+
+# bsd.own.mk overrides
+BINMODE = 755
+NONBINMODE = 644
 
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
@@ -895,10 +899,6 @@ _FAKESUDO_CHECK_COOKIE =
 _BINOWNGRP = 
 _SHAREOWNGRP =
 _MANOWNGRP =
-BINMODE = 755
-NONBINMODE = 644
-MANMODE = ${NONBINMODE}
-SHAREMORE = ${NONBINMODE}
 _INSTALL_WRAPPER = ${PORTSDIR}/infrastructure/bin/install-wrapper
 .endif
 
