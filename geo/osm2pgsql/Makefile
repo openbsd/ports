@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/04/27 17:02:34 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/01 20:23:54 danj Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
@@ -18,9 +18,9 @@ USE_GMAKE =		Yes
 WANTLIB += boost_system-mt boost_filesystem-mt bz2 c expat
 WANTLIB += geos m pthread pq proj z ${MODLUA_WANTLIB}
 
-
-MODULES =		devel/cmake		\
-			databases/postgresql	\
+# postgresql needs to be first otherwise tests are done by cmake module
+MODULES =		databases/postgresql    \
+			devel/cmake		\
 			gcc4			\
 			lang/python		\
 			lang/lua
@@ -32,8 +32,10 @@ LIB_DEPENDS =		databases/postgresql	\
 
 BUILD_DEPENDS =		devel/libtool
 
-TEST_DEPENDS =		databases/py-psycopg2 \
-			geo/postgis
+# postgresql,-contrib is needed for hstore extension
+TEST_DEPENDS =		databases/py-psycopg2	\
+			geo/postgis		\
+			databases/postgresql,-contrib
 
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS +=	c++
@@ -44,6 +46,12 @@ MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes
 
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON
+
+# bump postgresql,-server limits according to its README otherwise some
+# tests fail
+MODPOSTGRESQL_TEST_DBNAME =	osm2pgsql-test
+MODPOSTGRESQL_TEST_CMD =	cd ${WRKSRC} && ${MODPY_BIN} tests/regression-test.py \
+				-x ${WRKBUILD}/osm2pgsql
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
