@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.145 2016/04/18 10:03:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2016/05/01 13:45:00 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.3
-DASHVER=		8
+DASHVER=		9
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:http://www.imagemagick.org/download/
