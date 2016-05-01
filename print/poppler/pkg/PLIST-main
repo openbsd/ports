@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2016/03/23 20:09:34 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2016/05/01 12:33:24 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -56,6 +56,7 @@ include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
 include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
+include/poppler/SignatureHandler.h
 include/poppler/SignatureInfo.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
@@ -196,7 +197,6 @@ share/gtk-doc/html/poppler/api-index-full.html
 share/gtk-doc/html/poppler/ch01.html
 share/gtk-doc/html/poppler/home.png
 share/gtk-doc/html/poppler/index.html
-share/gtk-doc/html/poppler/index.sgml
 share/gtk-doc/html/poppler/left-insensitive.png
 share/gtk-doc/html/poppler/left.png
 share/gtk-doc/html/poppler/poppler-Error-handling.html

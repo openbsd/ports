@@ -1,7 +1,7 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.14 2016/03/23 20:09:34 kili Exp $
---- poppler/XRef.cc.orig	Wed Mar 16 10:36:12 2016
-+++ poppler/XRef.cc	Mon Mar 21 11:04:17 2016
-@@ -1077,49 +1077,38 @@ void XRef::getEncryptionParameters(Guchar **fileKeyA, 
+$OpenBSD: patch-poppler_XRef_cc,v 1.15 2016/05/01 12:33:24 kili Exp $
+--- poppler/XRef.cc.orig	Thu Apr 28 09:51:41 2016
++++ poppler/XRef.cc	Fri Apr 29 20:48:29 2016
+@@ -1087,49 +1087,38 @@ void XRef::getEncryptionParameters(Guchar **fileKeyA, 
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
