@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/07/21 20:29:34 steven Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/05/01 11:19:09 steven Exp $
 @bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
@@ -32,6 +32,10 @@ include/syslog-ng/control/
 include/syslog-ng/control/control-server.h
 include/syslog-ng/control/control.h
 include/syslog-ng/crypto.h
+include/syslog-ng/debugger/
+include/syslog-ng/debugger/debugger-main.h
+include/syslog-ng/debugger/debugger.h
+include/syslog-ng/debugger/tracer.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
 include/syslog-ng/file-perms.h
@@ -42,6 +46,7 @@ include/syslog-ng/filter/filter-expr-parser.h
 include/syslog-ng/filter/filter-expr.h
 include/syslog-ng/filter/filter-in-list.h
 include/syslog-ng/filter/filter-netmask.h
+include/syslog-ng/filter/filter-netmask6.h
 include/syslog-ng/filter/filter-op.h
 include/syslog-ng/filter/filter-pipe.h
 include/syslog-ng/filter/filter-pri.h
@@ -50,6 +55,7 @@ include/syslog-ng/filter/filter-tags.h
 include/syslog-ng/gprocess.h
 include/syslog-ng/gsockaddr.h
 include/syslog-ng/gsocket.h
+include/syslog-ng/host-id.h
 include/syslog-ng/host-resolve.h
 include/syslog-ng/hostname.h
 include/syslog-ng/libtest/
@@ -92,6 +98,7 @@ include/syslog-ng/memtrace.h
 include/syslog-ng/messages.h
 include/syslog-ng/misc.h
 include/syslog-ng/ml-batched-timer.h
+include/syslog-ng/module-config.h
 include/syslog-ng/msg-format.h
 include/syslog-ng/nvtable.h
 include/syslog-ng/parse-number.h
@@ -131,11 +138,20 @@ include/syslog-ng/stats/stats-registry.h
 include/syslog-ng/stats/stats-syslog.h
 include/syslog-ng/stats/stats.h
 include/syslog-ng/str-format.h
+include/syslog-ng/stringutils.h
 include/syslog-ng/syslog-names.h
 include/syslog-ng/syslog-ng.h
 include/syslog-ng/tags.h
 include/syslog-ng/template/
+include/syslog-ng/template/common-template-typedefs.h
+include/syslog-ng/template/compiler.h
+include/syslog-ng/template/escaping.h
+include/syslog-ng/template/function.h
+include/syslog-ng/template/macros.h
+include/syslog-ng/template/repr.h
+include/syslog-ng/template/simple-function.h
 include/syslog-ng/template/templates.h
+include/syslog-ng/template/user-function.h
 include/syslog-ng/thread-utils.h
 include/syslog-ng/timeutils.h
 include/syslog-ng/tls-support.h
@@ -149,11 +165,12 @@ include/syslog-ng/transport/transport-pipe.h
 include/syslog-ng/transport/transport-socket.h
 include/syslog-ng/transport/transport-tls.h
 include/syslog-ng/type-hinting.h
+include/syslog-ng/utf8utils.h
 include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/vptransform.h
-@lib lib/libsyslog-ng-3.6.so.${LIBsyslog-ng-3.6_VERSION}
+@lib lib/libsyslog-ng-3.7.so.${LIBsyslog-ng-3.7_VERSION}
 lib/libsyslog-ng.a
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
@@ -162,8 +179,6 @@ lib/pkgconfig/syslog-ng.pc
 lib/syslog-ng/
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafprog.so
-lib/syslog-ng/libafsocket-notls.so
-lib/syslog-ng/libafsocket-tls.so
 lib/syslog-ng/libafsocket.so
 lib/syslog-ng/libafsql.so
 lib/syslog-ng/libafuser.so
@@ -174,9 +189,9 @@ lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.so
 lib/syslog-ng/libgraphite.so
 lib/syslog-ng/libjson-plugin.so
+lib/syslog-ng/libkvformat.so
 lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libpseudofile.so
-lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libsystem-source.so
 lib/syslog-ng/libtest/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2016/05/01 11:19:09 steven Exp $
 
 COMMENT=	syslogd replacement
 
-V =		3.6.4
-REL =		3.6
+V =		3.7.2
+REL =		3.7
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
 
@@ -14,11 +14,10 @@ HOMEPAGE =	http://www.balabit.com/network-security/syslog-ng/
 # GPL v2
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/$V/source/
-DISTFILES =	syslog-ng_$V.tar.gz
+MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	syslog-ng		2.0 \
-		syslog-ng-${REL}	2.0
+SHARED_LIBS =	syslog-ng		3.0 \
+		syslog-ng-${REL}	3.0
 
 MODULES =	devel/gettext
 
@@ -37,6 +36,7 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--enable-json \
 			--with-libmongo-client=no \
 			--with-librabbitmq-client=no \
+			--disable-python \
 			--disable-mongodb \
 			--disable-amqp \
 			--disable-stomp \
