@@ -1,4 +1,4 @@
-$OpenBSD: patch-libs_ksysguard_lsofui_lsof_cpp,v 1.1 2016/04/30 00:37:36 zhuk Exp $
+$OpenBSD: patch-libs_ksysguard_lsofui_lsof_cpp,v 1.2 2016/05/01 16:24:09 zhuk Exp $
 Use kvm_getfiles() instead of starting lsof(1).
 --- libs/ksysguard/lsofui/lsof.cpp.orig	Fri Jun 26 06:17:21 2015
 +++ libs/ksysguard/lsofui/lsof.cpp	Sat Apr 30 03:14:56 2016
@@ -34,7 +34,7 @@ Use kvm_getfiles() instead of starting lsof(1).
  	setAllColumnsShowFocus(true);
  	setHeaderLabels(QStringList() << i18nc("Short for File Descriptor", "FD") << i18n("Type") << i18n("Object"));
 +#ifdef HAVE_KVM_H
-+	d->kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, d->errbuf);
++	d->kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, d->errbuf);
 +#else
  	d->process = new QProcess(this);
  	connect(d->process, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(finished(int,QProcess::ExitStatus)));
