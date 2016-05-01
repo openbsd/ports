@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.4 2016/04/30 09:13:48 espie Exp $
+# $OpenBSD: proot,v 1.5 2016/05/01 08:39:43 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -516,6 +516,33 @@ sub grab_file
 	}
 }
 
+sub extract_archive
+{
+	my ($state, $dir, $archive) = @_;
+	require IO::Uncompress::AnyUncompress;
+
+	my $in = IO::Uncompress::AnyUncompress->new("$dir/$archive", 
+	    MultiStream => 1);
+	if (!$in) {
+		$state->fatal("Couldn't open #1", "$dir/$archive");
+	}
+	require OpenBSD::Ustar;
+	my $arc = OpenBSD::Ustar->new($in, $state, $state->chroot);
+	while (my $o = $arc->next) {
+		$o->{name} =~ s,^\./,/,;
+		if (defined $o->{linkname}) {
+			$o->{linkname} =~ s,^\./,/,;
+		}
+		unlink($state->chroot($o->{name}));
+#		$state->say("$o->{name}");
+		$state->{progressmeter}->message("$archive: $o->{name}");
+		$state->{accounted}{$o->{name}} = 1;
+		$o->create;
+	}
+	$arc->close;
+	$in->close;
+}
+
 sub get_snapshot
 {
 	my $state = shift;
@@ -551,29 +578,12 @@ sub get_snapshot
 		    @files) != 0) {
 			$state->fatal("Checksum error");
 		}
-		$state->chdir($state->chroot);
-		open(my $fh, "+>", "$snapdir/listing");
 		for my $archive (@files) {
-			$state->say("Extracting #1", $archive);
-			if ($state->system(sub {
-			    open(STDOUT, '>&', $fh); },
-			    '/bin/tar', 'zxvpf', "$snapdir/$archive") != 0) {
-				$state->fatal("Error while extracting #1", $archive);
-			}
+			$state->extract_archive($snapdir, $archive);
 		}
 		for my $archive ("etc.tgz", "xetc.tgz") {
-			$state->say("Extracting #1", $archive);
-				if ($state->system(sub {
-				    open(STDOUT, '>&', $fh); },
-				    "/bin/tar", 'zxvpf', "var/sysmerge/$archive") != 0) {
-				$state->fatal("Error while extracting #1", $archive);
-			}
-		}
-		seek($fh, 0, 0);
-		while (<$fh>) {
-			chomp;
-			s/^\.//;
-			$state->{accounted}{$_} = 1;
+			$state->extract_archive($state->chroot("var/sysmerge"), 
+			    $archive);
 		}
 
 	    });
