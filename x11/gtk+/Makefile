@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/04/26 16:30:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.87 2016/05/01 11:17:09 naddy Exp $
 
 PORTROACH=	limit:^1\.2\.
 
@@ -28,5 +28,8 @@ CONFIGURE_ARGS+= --disable-glibtest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		glib_config_args=--prefix=${LOCALBASE}
+
+# The message catalogs are untouched, so do not require gettext-tools.
+CONFIGURE_ENV+=	MSGFMT=/usr/bin/true
 
 .include <bsd.port.mk>
