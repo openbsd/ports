@@ -1,0 +1,116 @@
+$OpenBSD: README,v 1.1.1.1 2016/05/01 17:28:32 jca Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Utilities
+=========
+
+cd_disect       Display SCSI / ATAPI device information
+cd_sessions     Optical device sessions report
+mmc_format      Format optical media
+newfs_udf       Format a filesystem
+udfclient       Read or write to a filesystem
+udfdump         Display contents of a filesystem
+
+Issuing any command without options will produce a usage summary.
+
+Considerations
+==============
+
+Special files and links
+-----------------------
+
+* All links will be followed and files replicated when copied to
+  a UDF filesystem, whether hard or symbolic links.
+
+* Block, character, FIFO, and socket special files are not
+  supported.
+
+UDF on disk drives
+------------------
+
+Disklabels are not used, except for virtual partition "a" with
+2048-byte blocksize devices.  MBRs are not used, the filesystem
+begins at LBA 0.  Partition "c" should be used if writing directly
+to a drive instead of an image file.  If the drive contains prior
+data, zero the leading sectors before use as shown in the first
+command below.
+
+# dd if=/dev/zero of=/dev/rsd9c count=63
+# newfs_udf -L shared.drive /dev/rsd9c
+# ufsclient -W /dev/rsd9c
+
+While it is possible to direct a filesystem image to a disklabel
+partition, there would be no interoperability with other OSes.
+
+Interoperability with mount_udf(8)
+----------------------------------
+
+Kernel recognition (virtual partition "a") and mounting r/o with
+mount_udf() currently requires a 2048-byte logical block size, to
+map a filesystem image to an optical drive's sector size.
+
+This precludes direct use with sd(4) devices, and may prevent
+interoperability with other OSes.  The OSTA specification
+requires a logical blocksize equal to the media sector size, and
+the filesystem does not include a Virtual Allocation Table
+required for -R media.
+
+If you wish to use mount_udf(), include '-b 2048' with both
+the newfs_udf and udfclient utilities.
+
+UDF root directory
+------------------
+
+The UDF root directory is named with colon separated strings.
+
+  "<volume set>:<primary volume>:<logical volume>:<additional tag>"
+
+The udfclient requires a 'cd' into this root directory before you can
+read or write files and directories. Spaces will require quoting the
+string between " " characters.
+
+udfclient interactive commands
+------------------------------
+
+These are ftp-like, with some differences.  Use the 'help' command at
+the "UDF>" prompt to display a summary.
+
+Of particular value is a 'get' or 'put' of a directory.  This will copy
+the entire structure in or out of the filesystem.
+
+Example
+=======
+
+$ cd /tmp
+$ mkdir test.directory
+$ touch test.directory/{a,b,c,d}
+$ dd if=/dev/zero of=test.iso bs=10m count=10
+$ newfs_udf -S test -P test -L test test.iso
+$ udfclient -W test.iso
+.
+.
+.
+UDF> ls
+Directory listing of /
+drwxrwxrwx     -1     -1          40  test:test:test:fileset
+UDF> cd test:test:test:fileset
+UDF working directory is     /test:test:test:fileset
+Current FS working directory /tmp
+UDF> put test.directory
+A total of 0 kb transfered at an overal average of 0 kb/sec
+UDF> get test.directory new.directory
+new.directory/a  ...
+new.directory/b  ...
+new.directory/c  ...
+new.directory/d  ...
+A total of 0 kb transfered at an overal average of 115 kb/sec
+UDF> quit
+.
+.
+.
+$ ls new.directory
+a b c d
+$

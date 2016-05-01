@@ -1,0 +1,6 @@
+UDFclient is a userland implementation of the UDF filesystem as defined
+by the OSTA group. UDFclient is designed to be a study platform and a
+run-up to a full read and write kernel level implementation.
+
+UDFclient provides a user interface similar to ftp(1), but differs in
+that it always fetches or writes directory structures recursively.

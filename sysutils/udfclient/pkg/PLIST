@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/01 17:28:32 jca Exp $
+@bin bin/cd_disect
+@bin bin/cd_sessions
+@bin bin/mmc_format
+@bin bin/newfs_udf
+@bin bin/udfclient
+@bin bin/udfdump
+share/doc/pkg-readmes/${FULLPKGNAME}
