@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/21 08:03:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2016/05/02 07:19:28 dcoppa Exp $
 
 COMMENT =		client library for the Redis datastore
 
-DISTNAME =		hedis-0.8.0
+DISTNAME =		hedis-0.8.1
 CATEGORIES =		databases
 HOMEPAGE =		https://github.com/informatikr/hedis
 
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	KRqtlUVFWuE4DnqMR5iXAb
+MODGHC_PACKAGE_KEY =	CiRA3HP8JZlC2BYr8mdPEB
 
 RUN_DEPENDS +=		textproc/hs-scanner>=0.2 \
 			textproc/hs-bytestring-lexing>=0.5 \
