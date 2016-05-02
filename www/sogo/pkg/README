@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.19 2015/09/26 14:29:22 sebastia Exp $
+# $OpenBSD: README,v 1.20 2016/05/02 10:38:27 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ over multiple systems, related to your needs:
 - Memcached to speed up SOGo:
   * install the memcached package
 - Web Server:
-  * you can install nginx or the apache-httpd-openbsd package
+  * install the nginx or the apache-httpd package
 - Database Server:
   * install postgresql-server package
   - or install mariadb-server package
@@ -143,94 +143,25 @@ server {
     }
 }
 
-SOGo with OpenBSD apache-httpd-openbsd package
-==============================================
-Since the httpd 1.3 configuration is slightly different than the Apache 2
-configuration explained in the SOGo Manual, here is an example. It's assumed
-that the httpd and SOGo run on the same host. The httpd listens on port 80,
-and SOGo is listening on its default port 20000.
-
-The OpenBSD httpd runs in a chroot environment, therefore you have to
-copy some files into the server's chroot environment:
-
-# mkdir -p ${VARBASE}/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
-
-Edit ${VARBASE}/www/conf/httpd.conf:
-You should make sure the proxy and header modules are loaded:
-LoadModule proxy_module ${TRUEPREFIX}/lib/apache/modules/libproxy.so
-LoadModule headers_module ${TRUEPREFIX}/apache/modules/mod_headers.so
-
-Alias /SOGo.woa/WebServerResources/ \
-      /lib/sogo/www/
-Alias /SOGo/WebServerResources/ \
-      /lib/sogo/www/
-AliasMatch /SOGo/so/ControlPanel/Products/(.*)/Resources/(.*) \
-           /lib/sogo/$1.SOGo/Resources/$2
-
-<LocationMatch "^/SOGo/so/ControlPanel/Products/.*UI/Resources/.*\.(jpg|png|gif|css|js)">
-  SetHandler default-handler
-</LocationMatch>
-
-## Uncomment the following to enable proxy-side authentication, you will then
-## need to set the "SOGoTrustProxyAuthentication" SOGo user default to YES and
-## adjust the "x-webobjects-remote-user" proxy header in the "Proxy" section
-## below.
-#<Location /SOGo>
-#  AuthType XXX
-#  Require valid-user
-#  SetEnv proxy-nokeepalive 1
-#  Allow from all
-#</Location>
-
-ProxyRequests Off
-SetEnv proxy-nokeepalive 1
-ProxyPreserveHost On
-
-# When using CAS, you should uncomment this and install cas-proxy-validate.py
-# in ${VARBASE}/www/cgi-bin to reduce server overloading
-#
-# ProxyPass /SOGo/casProxy http://localhost/cgi-bin/cas-proxy-validate.py
-# <Proxy http://localhost/app/cas-proxy-validate.py>
-#   Order deny,allow
-#   Allow from your-cas-host-addr
-# </Proxy>
-
-ProxyPass /SOGo http://127.0.0.1:20000/SOGo
-ProxyPassReverse /SOGo http://127.0.0.1:20000/SOGo
-
-RequestHeader set "x-webobjects-server-port" "443"
-RequestHeader set "x-webobjects-server-name" "127.0.0.1"
-RequestHeader set "x-webobjects-server-url" "http://127.0.0.1"
-RequestHeader set "x-webobjects-server-protocol" "HTTP/1.0"
-RequestHeader set "x-webobjects-remote-host" "127.0.0.1"
-
-AddDefaultCharset UTF-8
-
-# To be able to use iPhone a vhost on port 8800 should be
-# configured and those redirects must be set
-RedirectMatch ^/principals/users/(.*)$ http://127.0.0.1:8800/SOGo/dav/$1
-RedirectMatch ^/principals/$ http://127.0.0.1:8800/SOGo/dav/
-RedirectMatch ^/.well-known/(caldav|carddav)$ http://127.0.0.1:8800/SOGo/dav/
+SOGo with apache-httpd package
+==============================
+The configuration of SOGo behind Apache is described in the manual.
 
 A note on using CAS
 ===================
-Using CAS with the base httpd is not tested by the maintainer. You
-have to copy ${TRUEPREFIX}/share/doc/sogo/cas-proxy-validate.py to
+Using CAS is not tested by the maintainer. You have to copy
+${TRUEPREFIX}/share/doc/sogo/cas-proxy-validate.py to
 ${VARBASE}/www/cgi-bin. Within the script, you have to edit the config
-array and the path to your python to fit your configurtaion. Since
-the httpd runs in a chroot environment you at least have to copy Python
-and its dependencies into the chroot environment. Further you have to
-make sure the following python modules are also available in the
-chroot environment: cgi, memcache, os, sys. For the memcache
-module you have to install the py-memcached package.
+array and the path to your python to fit your configurtaion.
+The script also requires Python memcached, provided by
+the py-memcached package.
 
 A note on using Thunderbird integrator
 ======================================
 If you are going to use Thunderbird integrator you will need the php
 script installed on ${TRUEPREFIX}/share/doc/sogo/updates.php.
 You should copy it under ${VARBASE}/www/htdocs, install the php package and
-follow the instuctions under ${TRUEPREFIX}/share/doc/sogo/SOGo_Mozilla_Thunderbird_Configuration.odt.
+follow the instuctions in the SOGo manual.
 
 SOGo configuration example
 ==========================
