@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/07/10 20:02:41 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/02 18:40:40 sthen Exp $
 @pkgpath databases/maatkit
 bin/pt-align
 bin/pt-archiver
@@ -21,7 +21,7 @@ bin/pt-online-schema-change
 @comment bin/pt-pmp
 bin/pt-query-digest
 bin/pt-show-grants
-bin/pt-sift
+@comment bin/pt-sift
 bin/pt-slave-delay
 bin/pt-slave-find
 bin/pt-slave-restart
@@ -55,7 +55,7 @@ bin/pt-visual-explain
 @comment @man man/man1/pt-pmp.1
 @man man/man1/pt-query-digest.1
 @man man/man1/pt-show-grants.1
-@man man/man1/pt-sift.1
+@comment @man man/man1/pt-sift.1
 @man man/man1/pt-slave-delay.1
 @man man/man1/pt-slave-find.1
 @man man/man1/pt-slave-restart.1
