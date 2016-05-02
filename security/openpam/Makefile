@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/02 14:52:48 espie Exp $
 
 COMMENT=	Pluggable Authentication Module
 
@@ -23,6 +23,7 @@ MASTER_SITES=	http://nerd.hu/distfiles/
 
 WRKSRC=	${WRKDIST}/libpam
 
+MAKE_FLAGS += 	BSDSRCDIR=${WRKDIST} BSDOBJDIR=${WRKBUILD}
 MAKE_ENV+=	PAM_MOD_DIR=${TRUEPREFIX}/lib/security
 
 PAM_MODULES=	deny echo exec nologin permit rootok \
@@ -31,7 +32,7 @@ PAM_MODULES=	deny echo exec nologin permit rootok \
 NO_TEST=	Yes
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} obj
+	cd ${WRKSRC} && ${MAKE} ${MAKE_FLAGS} obj
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/security
