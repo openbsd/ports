@@ -1,0 +1,16 @@
+$OpenBSD: patch-html5lib_ihatexml_py,v 1.1 2016/05/02 18:10:09 danj Exp $
+
+Backport of patch for comment issue:
+https://github.com/html5lib/html5lib-python/commit/0c551c9519e47f76f8f185089ed71cb9539b6e00
+--- html5lib/ihatexml.py.orig	Fri Apr 22 18:44:14 2016
++++ html5lib/ihatexml.py	Fri Apr 22 18:45:49 2016
+@@ -225,6 +225,9 @@ class InfosetFilter(object):
+             while "--" in data:
+                 warnings.warn("Comments cannot contain adjacent dashes", DataLossWarning)
+                 data = data.replace("--", "- -")
++            if data.endswith("-"):
++                warnings.warn("Comments cannot end in a dash", DataLossWarning)
++                data += " "
+         return data
+ 
+     def coerceCharacters(self, data):
