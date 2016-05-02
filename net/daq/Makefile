@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/05/02 02:28:46 lteo Exp $
 
 COMMENT =	data acquisition library for snort
 
-DISTNAME =	daq-2.0.5
-REVISION =	0
+DISTNAME =	daq-2.0.6
 
 SHARED_LIBS +=		daq		2.1 # 2.4
 SHARED_LIBS +=		sfbpf		1.0 # 0.1

@@ -1,12 +1,12 @@
-$OpenBSD: patch-os-daq-modules_daq_ipfw_c,v 1.4 2015/05/29 03:27:27 lteo Exp $
+$OpenBSD: patch-os-daq-modules_daq_ipfw_c,v 1.5 2016/05/02 02:28:46 lteo Exp $
 
 This patch removes DAQ_CAPA_UNPRIV_START from the list of capabilities so that
 Snort can run as an unprivileged user in inline mode.  Sent upstream:
 http://marc.info/?l=snort-devel&m=136254358118711&w=2
 
---- os-daq-modules/daq_ipfw.c.orig	Thu Apr 23 02:15:57 2015
-+++ os-daq-modules/daq_ipfw.c	Sun May 24 16:51:39 2015
-@@ -404,7 +404,7 @@ static int ipfw_daq_get_snaplen (void* handle)
+--- os-daq-modules/daq_ipfw.c.orig	Tue Sep  9 15:57:31 2014
++++ os-daq-modules/daq_ipfw.c	Fri Apr 29 10:54:35 2016
+@@ -403,7 +403,7 @@ static int ipfw_daq_get_snaplen (void* handle)
  static uint32_t ipfw_daq_get_capabilities (void* handle)
  {
      return DAQ_CAPA_BLOCK | DAQ_CAPA_REPLACE | DAQ_CAPA_INJECT | DAQ_CAPA_INJECT_RAW
