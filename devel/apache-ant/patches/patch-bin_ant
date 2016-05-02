@@ -1,33 +1,12 @@
-$OpenBSD: patch-bin_ant,v 1.8 2013/07/15 06:58:29 jasper Exp $
---- bin/ant.orig	Thu May 16 04:35:45 2013
-+++ bin/ant	Wed Jul 10 15:34:48 2013
-@@ -135,27 +135,9 @@ fi
+$OpenBSD: patch-bin_ant,v 1.9 2016/05/02 11:53:49 jasper Exp $
+--- bin/ant.orig	Mon May  2 12:49:24 2016
++++ bin/ant	Mon May  2 12:49:45 2016
+@@ -136,6 +136,8 @@ fi
  # set ANT_LIB location
  ANT_LIB="${ANT_HOME}/lib"
  
--if [ -z "$JAVACMD" ] ; then
--  if [ -n "$JAVA_HOME"  ] ; then
--    # IBM's JDK on AIX uses strange locations for the executables
--    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
--      JAVACMD="$JAVA_HOME/jre/sh/java"
--    elif [ -x "$JAVA_HOME/jre/bin/java" ] ; then
--      JAVACMD="$JAVA_HOME/jre/bin/java"
--    else
--      JAVACMD="$JAVA_HOME/bin/java"
--    fi
--  else
--    JAVACMD=`which java 2> /dev/null `
--    if [ -z "$JAVACMD" ] ; then
--        JAVACMD=java
--    fi
--  fi
--fi
 +JAVACMD=$(javaPathHelper -c apache-ant)
- 
--if [ ! -x "$JAVACMD" ] ; then
--  echo "Error: JAVA_HOME is not defined correctly."
--  echo "  We cannot execute $JAVACMD"
-+if [ -z "${JAVACMD}" ]; then
-   exit 1
- fi
- 
++
+ if [ -z "$JAVACMD" ] ; then
+   if [ -n "$JAVA_HOME"  ] ; then
+     # IBM's JDK on AIX uses strange locations for the executables
