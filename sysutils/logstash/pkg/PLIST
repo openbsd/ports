@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/04/26 13:31:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/02 21:09:05 sebastia Exp $
 @pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
@@ -12158,6 +12158,7 @@ share/examples/logstash/
 @sample ${SYSCONFDIR}/logstash/conf.d/
 share/examples/logstash/logstash.conf
 @sample ${SYSCONFDIR}/logstash/conf.d/logstash.conf
+@rcscript ${RCDIR}/logstash
 @mode 755
 @owner _logstash
 @group _logstash
