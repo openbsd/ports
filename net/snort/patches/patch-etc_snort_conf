@@ -1,9 +1,9 @@
-$OpenBSD: patch-etc_snort_conf,v 1.14 2015/05/29 03:28:18 lteo Exp $
+$OpenBSD: patch-etc_snort_conf,v 1.15 2016/05/02 02:29:58 lteo Exp $
 
 reputation preprocessor disabled, still experimental
 
---- etc/snort.conf.orig	Thu Apr 23 20:29:00 2015
-+++ etc/snort.conf	Sun May 24 22:10:12 2015
+--- etc/snort.conf.orig	Fri Mar 18 15:11:55 2016
++++ etc/snort.conf	Fri Apr 29 11:02:26 2016
 @@ -101,17 +101,17 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
@@ -48,7 +48,7 @@ reputation preprocessor disabled, still experimental
  # config daq_mode: <mode>
  # config daq_var: <var>
  #
-@@ -503,12 +508,12 @@ preprocessor dnp3: ports { 20000 } \
+@@ -504,12 +509,12 @@ preprocessor dnp3: ports { 20000 } \
     check_crc
  
  # Reputation preprocessor. For more information see README.reputation
@@ -67,7 +67,7 @@ reputation preprocessor disabled, still experimental
  
  ###################################################
  # Step #6: Configure output plugins
-@@ -542,8 +547,10 @@ include reference.config
+@@ -543,8 +548,10 @@ include reference.config
  ###################################################
  
  # site specific rules
@@ -79,7 +79,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/app-detect.rules
  include $RULE_PATH/attack-responses.rules
  include $RULE_PATH/backdoor.rules
-@@ -568,6 +575,7 @@ include $RULE_PATH/file-executable.rules
+@@ -569,6 +576,7 @@ include $RULE_PATH/file-executable.rules
  include $RULE_PATH/file-flash.rules
  include $RULE_PATH/file-identify.rules
  include $RULE_PATH/file-image.rules
@@ -87,7 +87,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/file-multimedia.rules
  include $RULE_PATH/file-office.rules
  include $RULE_PATH/file-other.rules
-@@ -579,6 +587,7 @@ include $RULE_PATH/icmp.rules
+@@ -580,6 +588,7 @@ include $RULE_PATH/icmp.rules
  include $RULE_PATH/imap.rules
  include $RULE_PATH/indicator-compromise.rules
  include $RULE_PATH/indicator-obfuscation.rules
@@ -95,7 +95,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/indicator-shellcode.rules
  include $RULE_PATH/info.rules
  include $RULE_PATH/malware-backdoor.rules
-@@ -592,6 +601,7 @@ include $RULE_PATH/netbios.rules
+@@ -593,6 +602,7 @@ include $RULE_PATH/netbios.rules
  include $RULE_PATH/nntp.rules
  include $RULE_PATH/oracle.rules
  include $RULE_PATH/os-linux.rules
@@ -103,7 +103,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/os-other.rules
  include $RULE_PATH/os-solaris.rules
  include $RULE_PATH/os-windows.rules
-@@ -605,12 +615,20 @@ include $RULE_PATH/policy-social.rules
+@@ -606,12 +616,20 @@ include $RULE_PATH/policy-social.rules
  include $RULE_PATH/policy-spam.rules
  include $RULE_PATH/pop2.rules
  include $RULE_PATH/pop3.rules
@@ -124,7 +124,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/protocol-voip.rules
  include $RULE_PATH/pua-adware.rules
  include $RULE_PATH/pua-other.rules
-@@ -627,6 +645,7 @@ include $RULE_PATH/server-mssql.rules
+@@ -628,6 +646,7 @@ include $RULE_PATH/server-mssql.rules
  include $RULE_PATH/server-mysql.rules
  include $RULE_PATH/server-oracle.rules
  include $RULE_PATH/server-other.rules
@@ -132,7 +132,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/server-webapp.rules
  include $RULE_PATH/shellcode.rules
  include $RULE_PATH/smtp.rules
-@@ -649,6 +668,9 @@ include $RULE_PATH/web-misc.rules
+@@ -650,6 +669,9 @@ include $RULE_PATH/web-misc.rules
  include $RULE_PATH/web-php.rules
  include $RULE_PATH/x11.rules
  
@@ -142,7 +142,7 @@ reputation preprocessor disabled, still experimental
  ###################################################
  # Step #8: Customize your preprocessor and decoder alerts
  # For more information, see README.decoder_preproc_rules
-@@ -666,9 +688,11 @@ include $RULE_PATH/x11.rules
+@@ -667,9 +689,11 @@ include $RULE_PATH/x11.rules
  
  # dynamic library rules
  # include $SO_RULE_PATH/bad-traffic.rules

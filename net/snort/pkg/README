@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/03/04 04:23:18 lteo Exp $
+$OpenBSD: README,v 1.4 2016/05/02 02:29:58 lteo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,7 +29,7 @@ to the correct directory:
 * Official Snort rules (replace <oinkcode> with yours):
 
     ftp -o snortrules-snapshot-${V}.tar.gz \
-        https://www.snort.org/reg-rules/snortrules-snapshot-${V}.tar.gz/<oinkcode>
+      https://www.snort.org/reg-rules/snortrules-snapshot-${V}.tar.gz/<oinkcode>
     tar -C /etc/snort -xzf snortrules-snapshot-${V}.tar.gz rules preproc_rules
 
   Note that registered users without a paid subscription are only
