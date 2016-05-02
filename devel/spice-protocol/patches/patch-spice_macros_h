@@ -1,15 +1,15 @@
-$OpenBSD: patch-spice_macros_h,v 1.5 2016/04/27 10:41:49 jasper Exp $
+$OpenBSD: patch-spice_macros_h,v 1.6 2016/05/02 09:27:19 jasper Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=94570
 
---- spice/macros.h.orig	Wed Apr 27 12:15:16 2016
-+++ spice/macros.h	Wed Apr 27 12:17:29 2016
+--- spice/macros.h.orig	Thu Mar 10 15:14:49 2016
++++ spice/macros.h	Mon May  2 11:22:16 2016
 @@ -381,6 +381,15 @@
  #define SPICE_ENDIAN_BIG    1234
  #define SPICE_ENDIAN_PDP    2143
  
-+#ifdef HAVE_MACHINE_ENDIAN_H
-+#  include <machine/endian.h>
++#ifdef HAVE_ENDIAN_H
++#  include <endian.h>
 +#  if _BYTE_ORDER == _LITTLE_ENDIAN
 +#    define SPICE_ENDIAN SPICE_ENDIAN_LITTLE
 +#  elif _BYTE_ORDER == _BIG_ENDIAN

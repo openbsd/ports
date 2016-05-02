@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2016/04/27 10:42:50 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2016/05/02 09:27:19 jasper Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=94570
 
@@ -8,7 +8,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=94570
  AC_CHECK_HEADERS([sys/ipc.h sys/shm.h])
  AC_CHECK_HEADERS([sys/socket.h netinet/in.h arpa/inet.h])
  AC_CHECK_HEADERS([termios.h])
-+AC_CHECK_HEADERS([machine/endian.h])
++AC_CHECK_HEADERS([endian.h])
  
  AC_CHECK_LIBM
  AC_SUBST(LIBM)
