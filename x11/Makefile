@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.569 2016/04/29 21:01:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.570 2016/05/03 18:44:16 jca Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -45,6 +45,7 @@
      SUBDIR += driconf
      SUBDIR += driftnet
      SUBDIR += dstat
+     SUBDIR += dunst
      SUBDIR += dwm
      SUBDIR += dzen2
      SUBDIR += e16keyedit
