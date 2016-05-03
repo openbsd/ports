@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+--- config.mk.orig	Tue Jul 29 22:49:11 2014
++++ config.mk	Sat Apr 30 23:59:21 2016
+@@ -23,7 +23,7 @@ endif
+ 
+ # flags
+ CPPFLAGS += -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS} ${INIFLAGS}
+-CFLAGS   += -g --std=gnu99 -pedantic -Wall -Wno-overlength-strings -Os ${STATIC} ${CPPFLAGS} ${EXTRACFLAGS}
++CFLAGS   += -g --std=gnu99 -pedantic -Wall -Wno-overlength-strings ${STATIC} ${CPPFLAGS} ${EXTRACFLAGS}
+ 
+ pkg_config_packs := dbus-1 x11 freetype2 xext xft xscrnsaver \
+                     "glib-2.0 >= 2.36" gio-2.0 \

@@ -1,0 +1,22 @@
+$OpenBSD: patch-dunst_c,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+Pledge rpath for config file, proc/exec for running scripts.
+--- dunst.c.orig	Tue Jul 29 22:49:11 2014
++++ dunst.c	Sat Apr 30 23:13:54 2016
+@@ -4,6 +4,7 @@
+ #define XLIB_ILLEGAL_ACCESS
+ 
+ #include <assert.h>
++#include <err.h>
+ #include <unistd.h>
+ #include <time.h>
+ #include <stdio.h>
+@@ -361,6 +362,9 @@ int main(int argc, char *argv[])
+ 
+         g_unix_signal_add(SIGUSR1, pause_signal, NULL);
+         g_unix_signal_add(SIGUSR2, unpause_signal, NULL);
++
++	if (pledge("stdio rpath proc exec", NULL) == -1)
++		err(1, "pledge");
+ 
+         run(NULL);
+         g_main_loop_run(mainloop);

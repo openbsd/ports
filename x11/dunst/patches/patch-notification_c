@@ -1,0 +1,11 @@
+$OpenBSD: patch-notification_c,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+--- notification.c.orig	Sat Apr 30 22:47:20 2016
++++ notification.c	Sat Apr 30 23:04:16 2016
+@@ -5,6 +5,7 @@
+ #include <time.h>
+ #include <glib.h>
+ #include <errno.h>
++#include <libgen.h>
+ #include <string.h>
+ #include <stdbool.h>
+ #include <unistd.h>

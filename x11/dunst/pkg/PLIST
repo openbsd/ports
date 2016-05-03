@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+@bin bin/dunst
+@man man/man1/dunst.1
+share/dbus-1/services/org.knopwob.dunst.service
+share/examples/dunst/
+share/examples/dunst/dunstrc

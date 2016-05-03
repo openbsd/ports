@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+--- Makefile.orig	Tue Jul 29 22:49:11 2014
++++ Makefile	Sat Apr 30 23:48:26 2016
+@@ -77,7 +77,7 @@ install: all
+ 	mkdir -p "${DESTDIR}${PREFIX}/share/dunst"
+ 	 cp -f dunstrc ${DESTDIR}${PREFIX}/share/dunst
+ 	mkdir -p "${DESTDIR}${PREFIX}/share/dbus-1/services/"
+-	cp -vf org.knopwob.dunst.service "${DESTDIR}${PREFIX}/share/dbus-1/services/org.knopwob.dunst.service"
++	cp -f org.knopwob.dunst.service "${DESTDIR}${PREFIX}/share/dbus-1/services/org.knopwob.dunst.service"
+ 
+ uninstall:
+ 	@echo removing executables from ${DESTDIR}${PREFIX}/bin
