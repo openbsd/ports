@@ -1,10 +1,10 @@
-$OpenBSD: patch-libavutil_random_seed_c,v 1.1 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavutil_random_seed_c,v 1.2 2016/05/03 06:05:49 ajacoutot Exp $
 
 lavu/random_seed: use arc4random() when available
 
---- libavutil/random_seed.c.orig	Thu Dec 17 20:55:23 2015
-+++ libavutil/random_seed.c	Thu Dec 17 20:55:53 2015
-@@ -121,6 +121,10 @@ uint32_t av_get_random_seed(void)
+--- libavutil/random_seed.c.orig	Wed Apr 27 00:56:57 2016
++++ libavutil/random_seed.c	Wed Apr 27 01:08:36 2016
+@@ -126,6 +126,10 @@ uint32_t av_get_random_seed(void)
      }
  #endif
  

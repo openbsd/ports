@@ -1,9 +1,9 @@
-$OpenBSD: patch-libavutil_opt_c,v 1.2 2015/10/17 06:49:22 ajacoutot Exp $
+$OpenBSD: patch-libavutil_opt_c,v 1.3 2016/05/03 06:05:49 ajacoutot Exp $
 
 avutil/opt: add AV_OPT_TYPE_BOOL
 
---- libavutil/opt.c.orig	Mon Sep  7 21:58:02 2015
-+++ libavutil/opt.c	Tue Oct 13 18:24:31 2015
+--- libavutil/opt.c.orig	Wed Apr 27 00:56:52 2016
++++ libavutil/opt.c	Wed Apr 27 01:08:36 2016
 @@ -67,6 +67,7 @@ static int read_number(const AVOption *o, const void *
      case AV_OPT_TYPE_FLAGS:     *intnum = *(unsigned int*)dst;return 0;
      case AV_OPT_TYPE_PIXEL_FMT: *intnum = *(enum AVPixelFormat *)dst;return 0;
@@ -120,7 +120,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
              case AV_OPT_TYPE_FLAGS:
              case AV_OPT_TYPE_INT:
              case AV_OPT_TYPE_INT64:
-@@ -1554,6 +1605,7 @@ void *av_opt_ptr(const AVClass *class, void *obj, cons
+@@ -1555,6 +1606,7 @@ void *av_opt_ptr(const AVClass *class, void *obj, cons
  static int opt_size(enum AVOptionType type)
  {
      switch(type) {
@@ -128,7 +128,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
      case AV_OPT_TYPE_INT:
      case AV_OPT_TYPE_FLAGS:     return sizeof(int);
      case AV_OPT_TYPE_DURATION:
-@@ -1671,6 +1723,7 @@ int av_opt_query_ranges_default(AVOptionRanges **range
+@@ -1672,6 +1724,7 @@ int av_opt_query_ranges_default(AVOptionRanges **range
      range->value_max = field->max;
  
      switch (field->type) {
@@ -136,7 +136,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
      case AV_OPT_TYPE_INT:
      case AV_OPT_TYPE_INT64:
      case AV_OPT_TYPE_PIXEL_FMT:
-@@ -1754,6 +1807,7 @@ int av_opt_is_set_to_default(void *obj, const AVOption
+@@ -1755,6 +1808,7 @@ int av_opt_is_set_to_default(void *obj, const AVOption
      switch (o->type) {
      case AV_OPT_TYPE_CONST:
          return 1;
@@ -144,7 +144,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
      case AV_OPT_TYPE_FLAGS:
      case AV_OPT_TYPE_PIXEL_FMT:
      case AV_OPT_TYPE_SAMPLE_FMT:
-@@ -1917,6 +1971,9 @@ typedef struct TestContext
+@@ -1918,6 +1972,9 @@ typedef struct TestContext
      float flt;
      double dbl;
      char *escape;
@@ -154,7 +154,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
  } TestContext;
  
  #define OFFSET(x) offsetof(TestContext, x)
-@@ -1948,6 +2005,9 @@ static const AVOption test_options[]= {
+@@ -1949,6 +2006,9 @@ static const AVOption test_options[]= {
  {"num64",    "set num 64bit",  OFFSET(num64),    AV_OPT_TYPE_INT64,    {.i64 = 1},        0,        100, 1 },
  {"flt",      "set float",      OFFSET(flt),      AV_OPT_TYPE_FLOAT,    {.dbl = 1.0/3},    0,        100, 1},
  {"dbl",      "set double",     OFFSET(dbl),      AV_OPT_TYPE_DOUBLE,   {.dbl = 1.0/3},    0,        100, 1 },
@@ -164,7 +164,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
  {NULL},
  };
  
-@@ -2113,6 +2173,8 @@ int main(void)
+@@ -2114,6 +2174,8 @@ int main(void)
              "dbl=2.2",
              "dbl=-1",
              "dbl=101",

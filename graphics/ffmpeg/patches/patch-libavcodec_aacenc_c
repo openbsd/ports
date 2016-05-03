@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.15 2016/04/07 06:01:19 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.16 2016/05/03 06:05:49 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -62,8 +62,6 @@ avcodec/aacenc: Check for +-Inf too
 
 lavc/aacenc: use isfinite to simplify isnan/isinf logic
 
-avcodec/aacenc: Check both channels for finiteness
-
 aacenc: mark LTP mode as experimental
 
 aacenc: remove FAAC-like coder
@@ -78,8 +76,8 @@ aacenc: use generational cache instead of resetting.
 
 AAC encoder: fix valgrind errors
 
---- libavcodec/aacenc.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc.c	Wed Apr  6 18:35:10 2016
+--- libavcodec/aacenc.c.orig	Wed Apr 27 00:56:50 2016
++++ libavcodec/aacenc.c	Wed Apr 27 01:24:53 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -232,16 +230,23 @@ AAC encoder: fix valgrind errors
                  if (wi[ch].clipping[w] > CLIP_AVOIDANCE_FACTOR) {
                      ics->window_clipping[w] = 1;
                      clip_avoidance_factor = FFMAX(clip_avoidance_factor, wi[ch].clipping[w]);
-@@ -571,25 +610,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -571,33 +610,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
 -            apply_window_and_mdct(s, &cpe->ch[ch], overlap);
--            if (isnan(cpe->ch->coeffs[0])) {
--                av_log(avctx, AV_LOG_ERROR, "Input contains NaN\n");
--                return AVERROR(EINVAL);
 +            apply_window_and_mdct(s, sce, overlap);
-+
+ 
+-            if (isnan(cpe->ch[ch].coeffs[    0]) || isinf(cpe->ch[ch].coeffs[    0]) ||
+-                isnan(cpe->ch[ch].coeffs[  128]) || isinf(cpe->ch[ch].coeffs[  128]) ||
+-                isnan(cpe->ch[ch].coeffs[2*128]) || isinf(cpe->ch[ch].coeffs[2*128]) ||
+-                isnan(cpe->ch[ch].coeffs[3*128]) || isinf(cpe->ch[ch].coeffs[3*128]) ||
+-                isnan(cpe->ch[ch].coeffs[4*128]) || isinf(cpe->ch[ch].coeffs[4*128]) ||
+-                isnan(cpe->ch[ch].coeffs[5*128]) || isinf(cpe->ch[ch].coeffs[5*128]) ||
+-                isnan(cpe->ch[ch].coeffs[6*128]) || isinf(cpe->ch[ch].coeffs[6*128]) ||
+-                isnan(cpe->ch[ch].coeffs[7*128]) || isinf(cpe->ch[ch].coeffs[7*128])) {
+-                av_log(avctx, AV_LOG_ERROR, "Input contains NaN/+-Inf\n");
+-                return AVERROR(EINVAL);
 +            if (s->options.ltp && s->coder->update_ltp) {
 +                s->coder->update_ltp(s, sce);
 +                apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, &sce->ltp_state[0]);
@@ -274,7 +279,7 @@ AAC encoder: fix valgrind errors
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -606,15 +654,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -614,15 +654,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -304,7 +309,7 @@ AAC encoder: fix valgrind errors
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -632,14 +693,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -640,14 +693,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -321,7 +326,7 @@ AAC encoder: fix valgrind errors
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -656,8 +717,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -664,8 +717,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -332,7 +337,7 @@ AAC encoder: fix valgrind errors
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -666,22 +727,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -674,22 +727,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -371,7 +376,7 @@ AAC encoder: fix valgrind errors
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -693,36 +766,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -701,36 +766,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -470,7 +475,7 @@ AAC encoder: fix valgrind errors
      if (!frame)
          s->last_frame++;
  
-@@ -738,6 +853,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -746,6 +853,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -479,7 +484,7 @@ AAC encoder: fix valgrind errors
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -796,76 +913,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -804,76 +913,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -637,7 +642,7 @@ AAC encoder: fix valgrind errors
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -876,27 +1040,16 @@ fail:
+@@ -884,27 +1040,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -675,7 +680,7 @@ AAC encoder: fix valgrind errors
      {NULL}
  };
  
-@@ -907,6 +1060,11 @@ static const AVClass aacenc_class = {
+@@ -915,6 +1060,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -687,7 +692,7 @@ AAC encoder: fix valgrind errors
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -916,9 +1074,9 @@ AVCodec ff_aac_encoder = {
+@@ -924,9 +1074,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
