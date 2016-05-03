@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.7 2016/05/03 05:02:38 espie Exp $
+# $OpenBSD: proot,v 1.8 2016/05/03 09:08:17 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -125,6 +125,10 @@ sub do_parm
 		    $state->{portuser} = LocalUser->new($v);
 	    }, LOG_USER => sub {
 		    $state->{loguser} = LocalUser->new($v);
+	    }, FETCH_USER => sub {
+		    $state->{fetchuser} = LocalUser->new($v);
+	    }, BUILD_USER => sub {
+		    $state->{builduser} = LocalUser->new($v);
 	    }, PORTSDIR => sub {
 		    $state->{PORTSDIR} = File::Spec->canonpath($v);
 	    }, DISTDIR => sub {
@@ -151,7 +155,14 @@ sub do_parm
 		} else {
 			$state->{actions}{$v} = 1;
 		}
+	    }, sets => sub {
+	    	if ($v =~ m/^-(.*)/) {
+			$state->{sets}{$1} = 0;
+		} else {
+			$state->{sets}{$v} = 1;
+		}
 	    },
+	    	
 	};
 
 	if (defined $opts->{$k}) {
@@ -203,6 +214,15 @@ sub handle_options
 	    ports_subdirs => 1,
 	    resolv => 1,
 	    write_mk => 1,
+	};
+	$state->{sets} = {
+		base => 1,
+		comp => 1,
+		etc => 1,
+		xetc => 1,
+		xbase => 1,
+		xfont => 1,
+		xshare => 1,
 	};
 	$state->SUPER::handle_options("B:S:c:mx", 
 	    "[-B chroot] [-c configfile] [-S chroot] [arg=value...]");
@@ -371,7 +391,8 @@ sub read_locates
 		while (<$cmd>) {
 			chomp;
 			my ($set, $path) = split(':', $_, 2);
-			if ($set =~ m/^(x?base|comp|x?etc|xfont|xshare)/) {
+			$set =~ s/\d+//;
+			if ($state->{sets}{$set}) {
 				$state->{known}{$path} = 1;
 			}
 			$state->{progressmeter}->working(1000);
@@ -567,11 +588,15 @@ sub get_snapshot
 			$state->fatal("Unrecognized snapshot");
 		}
 		my $v = "$1$2";
-		my @files;
-		for my $set (qw(base comp xbase xfont xshare)) {
-			my $file = "$set$v.tgz";
-			&$grab($file);
-			push(@files, $file);
+		my (@files, @later);
+		for my $set (keys %{$state->{sets}}) {
+			if ($set =~ m/etc/) {
+				push(@later, "$set.tgz");
+			} else {
+				my $file = "$set$v.tgz";
+				&$grab($file);
+				push(@files, $file);
+			}
 		}
 		if ($state->system('/usr/bin/signify', '-C', '-p',
 		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
@@ -581,7 +606,7 @@ sub get_snapshot
 		for my $archive (@files) {
 			$state->extract_archive($snapdir, $archive);
 		}
-		for my $archive ("etc.tgz", "xetc.tgz") {
+		for my $archive (@later) {
 			$state->extract_archive($state->chroot("var/sysmerge"), 
 			    $archive);
 		}
