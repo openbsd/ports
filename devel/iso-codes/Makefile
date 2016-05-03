@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2016/04/07 11:30:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2016/05/03 18:23:13 jasper Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
-DISTNAME=	iso-codes-3.67
+DISTNAME=	iso-codes-3.68
 
 CATEGORIES=	devel
 
@@ -22,7 +22,10 @@ CONFIGURE_STYLE=gnu
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
-MODPY_ADJ_FILES=check_valid_utf8.py iso2pot.py
+MODPY_ADJ_FILES=bin/validate_json_data.py \
+		bin/xml_from_json.py \
+		bin/pot_from_json.py \
+		bin/check_valid_utf8.py
 
 BUILD_DEPENDS=	devel/gettext-tools
 
