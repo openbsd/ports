@@ -1,0 +1,3 @@
+The objective of this program is to gather emails, subdomains, hosts, employee
+names, open ports and banners from different public sources like search engines,
+PGP key servers and SHODAN computer database.
