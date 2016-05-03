@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/03/07 07:46:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/05/03 18:23:47 jasper Exp $
 @newgroup _activemq:714
 @newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/db/activemq:/sbin/nologin
 @comment needs a RW homedir to prevent java.io.IOException
@@ -420,7 +420,7 @@ activemq/lib/optional/log4j-1.2.17.jar
 activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
 activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-activemq/lib/optional/proton-j-0.12.0.jar
+activemq/lib/optional/proton-j-0.12.1.jar
 activemq/lib/optional/scala-library-2.11.0.jar
 activemq/lib/optional/shiro-core-1.2.4.jar
 activemq/lib/optional/shiro-spring-1.2.4.jar
