@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/02 16:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/03 16:16:47 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -35,6 +35,9 @@ PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 
 PROVISIONERS=		chef file local-exec remote-exec
 
+# prevent stripping go binaries
+INSTALL_STRIP=
+
 post-build:
 .for provider in ${PROVIDERS}
 	cd ${WRKSRC} && \
@@ -48,8 +51,7 @@ post-build:
 .endfor
 
 post-install:
-# Use INSTALL_SCRIPT to prevent stripping go binaries
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/terraform-* \
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/terraform-* \
 		${PREFIX}/bin/
 
 .include <bsd.port.mk>
