@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.2 2016/04/30 09:14:15 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.3 2016/05/03 09:20:30 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 30 2016 $
+.Dd $Mdocdate: May 3 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -34,7 +34,7 @@ can fill up a chroot directory for ports building usage.
 It will perform a set of
 .Cm actions
 that should fill up a destination
-.Ar chroot
+.Fl B Ar chroot
 from the base system
 .Po
 or an optional
@@ -53,11 +53,13 @@ As a shorthand, several values can be specified in a row without having
 to repeat the
 .Ar key .
 .Pp
-A config file mostly contains one key=value per line, with comments starting
+A
+.Fl c Ar configfile
+mostly contains one key=value per line, with comments starting
 with a #.
 .Pp
 Possible actions (in order of execution) are as follows:
-.Bl -tag -width Ds -compact
+.Bl -tag -width Dssssssssssss -compact -offset indent
 .It Cm check_mount
 Verify the state of mount points in the system, specifically whether
 the chroot area is not nodev.
@@ -81,7 +83,7 @@ file
 Regenerate devices using
 .Xr MAKEDEV 8
 .It Cm ldconfig
-Rerun 
+Rerun
 .Xr ldconfig 8
 .It Cm copy_ports
 Copy the ports tree
@@ -97,7 +99,7 @@ Create ports infrastructure subdirs, according to users required for
 .It Cm stragglers
 Double-check filled up chroot for files we don't know about.
 .It Cm write_mk
-If some directory values are different from the default, 
+If some directory values are different from the default,
 write a skeleton
 .Pa mk.conf
 file.
@@ -119,8 +121,8 @@ Add actions with
 remove them with
 .Ar actions Ns = Ns - Ns value .
 .Pp
-Other attributes are
-.Bl -tag -width Ds -compact
+Other attributes are:
+.Bl -tag -width Dssssssssss -offset indent -compact
 .It Ar chroot
 same as
 .Fl B Ar chroot
@@ -128,8 +130,17 @@ same as
 same as
 .Fl S Ar srcroot
 .It Ar PORT_USER
-Who the ports tree should belong to (we always use _pbuild and _pfetch
-for the build and fetch stage).
+Who the ports tree should belong to
+.It Ar BUILD_USER
+Who to build as (defaults to _pbuild)
+.It Ar FETCH_USER
+Who to fetch as (defaults to _pfetch)
+.It Ar LOG_USER
+Who to write log as
+.Po
+defaults to
+.Ar BUILD_USER
+.Pc
 .It Ar PORTSDIR
 .It Ar DISTDIR
 .It Ar PACKAGE_REPOSITORY
@@ -137,9 +148,13 @@ for the build and fetch stage).
 .It Ar LOCKDIR
 same as in
 .Xr bsd.port.mk 5
+.Pp
 .It Ar preserve
 Supplemental directory to preserve during
 .Cm unpopulate .
+.It Ar sets
+Add or remove sets compared to the default list required to build ports
+(defaults to base comp etc xbase xfont xshare xetc).
 .It Ar snapshot
 Location of snapshot for the
 .Cm snapshot
