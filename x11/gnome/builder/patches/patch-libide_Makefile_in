@@ -1,0 +1,17 @@
+$OpenBSD: patch-libide_Makefile_in,v 1.1 2016/05/03 06:16:17 ajacoutot Exp $
+
+From 3108388e0f80fe9a0d65fc15d3e4e266b557c388 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@hergert.me>
+Date: Thu, 28 Apr 2016 20:02:11 -0700
+Subject: file-settings: fix editorconfig
+
+--- libide/Makefile.in.orig	Tue May  3 07:58:33 2016
++++ libide/Makefile.in	Tue May  3 08:00:55 2016
+@@ -1417,6 +1417,7 @@ libide_1_0_la_CPPFLAGS = \
+ libide_1_0_la_CFLAGS = $(AM_CFLAGS) $(LIBIDE_CFLAGS) \
+ 	$(OPTIMIZE_CFLAGS) $(DEBUG_CFLAGS) $(libide_1_0_la_includes) \
+ 	$(NULL) $(am__append_2) $(am__append_9)
++libide_1_0_la_CFLAGS += -DENABLE_EDITORCONFIG
+ libide_1_0_la_CXXFLAGS = \
+ 	$(AM_CXXFLAGS) \
+ 	$(LIBIDE_CFLAGS) \

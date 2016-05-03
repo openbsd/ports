@@ -1,0 +1,172 @@
+$OpenBSD: patch-libide_ide-uri_c,v 1.1 2016/05/03 06:16:17 ajacoutot Exp $
+
+From d727ec719028f8272d73878d9269b68bbf884ab8 Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@hergert.me>
+Date: Thu, 28 Apr 2016 15:57:22 -0700
+Subject: uri: fix to_string generation for non-file URIs
+
+--- libide/ide-uri.c.orig	Sun Apr 24 23:51:37 2016
++++ libide/ide-uri.c	Tue May  3 08:01:03 2016
+@@ -25,6 +25,12 @@
+ 
+ #include "ide-uri.h"
+ 
++#if 0
++# define GOTO(l) do { g_print ("%s():%d\n", G_STRFUNC, __LINE__); goto l; } while (0)
++#else
++# define GOTO(l) goto l
++#endif
++
+ /**
+  * SECTION:ide-uri
+  * @short_description: URI-handling utilities
+@@ -128,12 +134,6 @@ struct _IdeUri
+   gchar   *path;
+   gchar   *query;
+   gchar   *fragment;
+-
+-  gchar   *encoded_userinfo;
+-  gchar   *encoded_host;
+-  gchar   *encoded_path;
+-  gchar   *encoded_query;
+-  gchar   *encoded_fragment;
+ };
+ 
+ G_DEFINE_BOXED_TYPE (IdeUri, ide_uri, ide_uri_ref, ide_uri_unref)
+@@ -613,7 +613,7 @@ ide_uri_new_relative (IdeUri            *base_uri,
+     {
+       g_set_error_literal (error, IDE_URI_ERROR, IDE_URI_ERROR_MISC,
+                            _("URI is not absolute, and no base URI was provided"));
+-      goto fail;
++      GOTO (fail);
+     }
+ 
+   if (raw->user)
+@@ -621,37 +621,37 @@ ide_uri_new_relative (IdeUri            *base_uri,
+       if (!parse_userinfo (raw->user, flags,
+                            &uri->user, &uri->password, &uri->auth_params,
+                            error))
+-        goto fail;
++        GOTO (fail);
+     }
+ 
+   if (raw->host)
+     {
+       if (!parse_host (raw->host, flags, &uri->host, error))
+-        goto fail;
++        GOTO (fail);
+     }
+ 
+   if (raw_port)
+     {
+       if (!parse_port (raw_port, &uri->port, error))
+-        goto fail;
++        GOTO (fail);
+     }
+ 
+   uri->path = uri_normalize (raw->path, flags, IDE_URI_ERROR_BAD_PATH, error);
+   if (!uri->path)
+-    goto fail;
++    GOTO (fail);
+ 
+   if (raw->query)
+     {
+       uri->query = uri_normalize (raw->query, flags, IDE_URI_ERROR_BAD_QUERY, error);
+       if (!uri->query)
+-        goto fail;
++        GOTO (fail);
+     }
+ 
+   if (raw->fragment)
+     {
+       uri->fragment = uri_normalize (raw->fragment, flags, IDE_URI_ERROR_BAD_FRAGMENT, error);
+       if (!uri->fragment)
+-        goto fail;
++        GOTO (fail);
+     }
+ 
+   if (!uri->scheme && !base_uri)
+@@ -659,7 +659,7 @@ ide_uri_new_relative (IdeUri            *base_uri,
+       g_set_error (error, IDE_URI_ERROR, IDE_URI_ERROR_MISC,
+                    _("Could not parse '%s' as absolute URI"),
+                    uri_string);
+-      goto fail;
++      GOTO (fail);
+     }
+ 
+   if (base_uri)
+@@ -764,9 +764,24 @@ ide_uri_to_string (IdeUri              *uri,
+     {
+       g_string_append (str, "//");
+ 
+-      if (uri->encoded_userinfo && !(flags & IDE_URI_HIDE_AUTH_PARAMS))
++      if (uri->user)
+         {
+-          g_string_append (str, uri->encoded_userinfo);
++          g_string_append (str, uri->user);
++
++          if (!(flags & IDE_URI_HIDE_AUTH_PARAMS))
++            {
++              if (uri->auth_params)
++                {
++                  g_string_append_c (str, ':');
++                  g_string_append (str, uri->auth_params);
++                }
++              else if (uri->password)
++                {
++                  g_string_append_c (str, ':');
++                  g_string_append (str, uri->password);
++                }
++            }
++
+           g_string_append_c (str, '@');
+         }
+ 
+@@ -777,18 +792,18 @@ ide_uri_to_string (IdeUri              *uri,
+         g_string_append_printf (str, ":%d", uri->port);
+     }
+ 
+-  if (uri->encoded_path)
+-    g_string_append (str, uri->encoded_path);
++  if (uri->path)
++    g_string_append (str, uri->path);
+ 
+-  if (uri->encoded_query)
++  if (uri->query)
+     {
+       g_string_append_c (str, '?');
+-      g_string_append (str, uri->encoded_query);
++      g_string_append (str, uri->query);
+     }
+-  if (uri->encoded_fragment && !(flags & IDE_URI_HIDE_FRAGMENT))
++  if (uri->fragment && !(flags & IDE_URI_HIDE_FRAGMENT))
+     {
+       g_string_append_c (str, '#');
+-      g_string_append (str, uri->encoded_fragment);
++      g_string_append (str, uri->fragment);
+     }
+ 
+   return g_string_free (str, FALSE);
+@@ -1187,19 +1202,19 @@ ide_uri_parse_host (const gchar       *uri_string,
+       g_set_error (error, IDE_URI_ERROR, IDE_URI_ERROR_BAD_HOST,
+                    _("URI '%s' has no host component"),
+                    uri_string);
+-      goto fail;
++      GOTO (fail);
+     }
+ 
+   if (raw_port)
+     {
+       if (!parse_port (raw_port, port, error))
+-        goto fail;
++        GOTO (fail);
+     }
+   else
+     *port = 0;
+ 
+   if (!parse_host (raw_host, flags, host, error))
+-    goto fail;
++    GOTO (fail);
+ 
+   *scheme = raw_scheme;
+   g_free (raw_host);
