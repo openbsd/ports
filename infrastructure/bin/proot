@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.8 2016/05/03 09:08:17 espie Exp $
+# $OpenBSD: proot,v 1.9 2016/05/03 09:12:51 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -427,6 +427,10 @@ sub simple_copy
 			}
 			return;
 		} elsif (-f $path) {
+			my ($dev2, $ino2, $sz2) = (stat $cpath)[0, 1, 7];
+			if (defined $dev2 && $dev2 == $dev && $ino2 == $ino) {
+				return;
+			}
 			my $key = "$dev/$ino";
 
 			if (exists $state->{copied}{$key}) {
@@ -438,7 +442,6 @@ sub simple_copy
 				return;
 			}
 
-			my $sz2 = (stat $cpath)[7];
 			my $okay = 0;
 			if (defined $sz2 && $sz2 == $sz) {
 				$okay = 1;
