@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2016/05/03 05:47:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.422 2016/05/03 05:52:45 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -326,6 +326,7 @@
      SUBDIR += tclgpg
      SUBDIR += tcltls
      SUBDIR += tempwatch
+     SUBDIR += theharvester
      SUBDIR += towitoko
      SUBDIR += volatility
      SUBDIR += vomit
