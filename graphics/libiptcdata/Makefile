@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/12 10:11:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/03 19:35:52 espie Exp $
 
 COMMENT-main =		library for manipulating IPTC metadata
 COMMENT-python =	libiptcdata Python bindings
@@ -8,6 +8,7 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
 
 REVISION-main =		1
+REVISION-python =	0
 
 SHARED_LIBS =		iptcdata 	0.0 # 3.3
 
