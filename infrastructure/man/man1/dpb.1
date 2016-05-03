@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.116 2016/04/18 20:36:51 naddy Exp $
+.\"	$OpenBSD: dpb.1,v 1.117 2016/05/03 05:01:25 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 18 2016 $
+.Dd $Mdocdate: May 3 2016 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -26,6 +26,7 @@
 .Op Fl acemqrRsuUvx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
+.Op Fl B Ar chroot
 .Op Fl C Ar pathlist
 .Op Fl D Ar PARAM Ns = Ns Ar value
 .Op Fl f Ar m
@@ -158,6 +159,10 @@ so that packages that take a long time to build will happen earlier.
 The rolling log under
 .Pa %f/build-stats/%a
 is automatically used.
+.It Fl B Ar chroot
+chroot to
+.Ar chroot
+before building.
 .It Fl c
 Clean port working directory and log before each build.
 .It Fl C Ar pathlist
@@ -222,7 +227,7 @@ Alternate way to specify the number of fetch jobs.
 .It Ar FETCH_USER
 User for all fetch activities if possible
 .Po defaults to
-.Ar build_user
+.Ar _pfetch
 .Pc .
 .It Ar FETCH_TIMEOUT
 Timeout (in seconds) after which fetches that don't show
@@ -378,10 +383,6 @@ value).
 Chroot to
 .Ar dir
 before building.
-.It chroot_user=user
-Synonym for
-.Ar build_user
-(compatibility).
 .It jobs=n
 Number of jobs to run on that host, defaults to hw.ncpu.
 .It junk=n
@@ -789,26 +790,12 @@ When
 .Nm
 is run as root, it uses a privilege drop model instead of the
 dangerous privilege elevation model of
-.Xr sudo 8 .
-By default, the owner of the ports tree is used as the target user,
-though
-.Nm
-can be configured with several distinct users with different roles.
-.Pp
-Note that each of these users defaults to
-.Ar BUILD_USER .
-A minimally secured configuration would define a
-.Ar BUILD_USER
-without any
-.Xr sudo 8
-privileges.
-.Pp
-.Ox 5.8
-ships with a
-.Ar _pbuild ,
-and a
+.Xr doas 8 .
+When run as root, by default,
+.Ar _pbuild
+is used as the build and log user, and
 .Ar _pfetch
-user.
+is used as the fetch user.
 .Bl -bullet
 .It
 Start
