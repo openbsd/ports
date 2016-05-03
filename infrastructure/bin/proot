@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.6 2016/05/02 06:56:30 espie Exp $
+# $OpenBSD: proot,v 1.7 2016/05/03 05:02:38 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -254,7 +254,7 @@ sub handle_options
 	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
 	$state->{fetchuser} //= LocalUser->new('_pfetch');
 	$state->{builduser} //= LocalUser->new('_pbuild');
-	$state->{loguser} //= $state->{portuser};
+	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
