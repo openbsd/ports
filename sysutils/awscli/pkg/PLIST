@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/04/27 09:00:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/05/04 04:41:51 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -524,6 +524,26 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/stop-deployment.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/uninstall.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-deployment-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-connection-on-interconnect.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-private-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-private-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-interconnect.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-private-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-interconnect.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-locations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-gateways.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-interfaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-replication-instance.rst
@@ -704,6 +724,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-subnet-attri
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-peering-connection-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
