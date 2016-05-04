@@ -1,15 +1,6 @@
---- Makefile.orig	Sun Oct 26 12:25:14 2014
-+++ Makefile	Mon Oct 27 11:23:10 2014
-@@ -13,7 +13,7 @@ CFLAGS+=-std=c99 -Wmissing-prototypes -Wall -Wextra -W
- # Uncomment define below to disallow user settable clock format string
- #CFLAGS+=-DSWM_DENY_CLOCK_FORMAT
- CPPFLAGS+= -I${X11BASE}/include -I${X11BASE}/include/freetype2
--LDADD+=-lutil -L${X11BASE}/lib -lX11 -lX11-xcb -lxcb-aux -lxcb-icccm -lxcb-keysyms -lxcb-randr -lxcb-xtest -lXft -lXcursor
-+LDADD+=-lutil -L${X11BASE}/lib -lX11 -lX11-xcb -lxcb-util -lxcb-icccm -lxcb-keysyms -lxcb-randr -lxcb-xtest -lXft -lXcursor
- BUILDVERSION != sh "${.CURDIR}/buildver.sh"
- .if !${BUILDVERSION} == ""
- CPPFLAGS+= -DSPECTRWM_BUILDSTR=\"$(BUILDVERSION)\"
-@@ -26,8 +26,8 @@ MANDIR= ${PREFIX}/man/man
+--- Makefile.orig	Tue May  3 12:54:17 2016
++++ Makefile	Tue May  3 12:55:20 2016
+@@ -22,8 +22,8 @@ MANDIR= ${PREFIX}/man/man
  
  obj: _xenocara_obj
  
@@ -18,5 +9,5 @@
 +#beforeinstall:
 +#	ln -sf ${PROG} ${BINDIR}/scrotwm
  
- # clang targets
- .if ${.TARGETS:M*analyze*}
+ spectrwm.html: spectrwm.1
+ 	mandoc -Thtml ${.CURDIR}/spectrwm.1 > spectrwm.html

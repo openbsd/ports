@@ -1,7 +1,7 @@
-$OpenBSD: patch-spectrwm_c,v 1.6 2014/03/20 14:51:29 gonzalo Exp $
---- spectrwm.c.orig	Wed Feb 26 11:45:42 2014
-+++ spectrwm.c	Tue Mar 18 13:53:24 2014
-@@ -300,7 +300,7 @@ uint32_t		swm_debug = 0
+$OpenBSD: patch-spectrwm_c,v 1.7 2016/05/04 13:56:26 gonzalo Exp $
+--- spectrwm.c.orig	Tue May  3 12:54:28 2016
++++ spectrwm.c	Tue May  3 12:56:02 2016
+@@ -274,7 +274,7 @@ uint32_t		swm_debug = 0
  #define SWM_CONF_KEYMAPPING	(1)
  
  #ifndef SWM_LIB
