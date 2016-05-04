@@ -1,0 +1,17 @@
+$OpenBSD: patch-storage_innobase_include_os0sync_h,v 1.4 2016/05/04 07:37:22 sthen Exp $
+
+InnoDB attempted to verify if __sync_lock_test_and_set() is available by
+checking IB_STRONG_MEMORY_MODEL. This macro has nothing to do with availability
+of __sync_lock_test_and_set(), the right one is HAVE_ATOMIC_BUILTINS.
+
+--- storage/innobase/include/os0sync.h.orig	Mon May  2 06:19:43 2016
++++ storage/innobase/include/os0sync.h	Mon May  2 06:20:19 2016
+@@ -466,7 +466,7 @@ amount to decrement. */
+ # define os_atomic_decrement_uint64(ptr, amount) \
+ 	os_atomic_decrement(ptr, amount)
+ 
+-# if defined(IB_STRONG_MEMORY_MODEL)
++# if defined(HAVE_ATOMIC_BUILTINS)
+ 
+ /** Do an atomic test and set.
+ @param[in,out]	ptr		Memory location to set to non-zero
