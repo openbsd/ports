@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/05/11 21:22:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/04 06:09:56 jasper Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
+@bin bin/ziptool
 include/zip.h
 lib/libzip/
 lib/libzip.a
@@ -11,6 +12,7 @@ lib/libzip/include/zipconf.h
 lib/pkgconfig/libzip.pc
 @man man/man1/zipcmp.1
 @man man/man1/zipmerge.1
+@man man/man1/ziptool.1
 @man man/man3/ZIP_SOURCE_GET_ARGS.3
 @man man/man3/libzip.3
 @man man/man3/zip_add.3
