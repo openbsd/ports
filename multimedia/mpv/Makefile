@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/27 11:39:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/04 09:13:10 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -8,6 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.17.0
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -62,6 +63,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
 			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
+			--enable-encoding \
 			--enable-sndio \
 			--enable-sdl2 \
 			--enable-zsh-comp \
