@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2016/04/26 12:05:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2016/05/04 05:27:36 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-owncloud.conf
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
@@ -9080,9 +9080,12 @@ owncloud/core/doc/admin/_images/deprecs-2.png
 owncloud/core/doc/admin/_images/deprecs-3.png
 owncloud/core/doc/admin/_images/documents_app_enable.png
 owncloud/core/doc/admin/_images/documents_apply_test.png
-owncloud/core/doc/admin/_images/dropbox-allowshare.png
-owncloud/core/doc/admin/_images/dropbox-app.png
-owncloud/core/doc/admin/_images/dropbox-configapp.png
+owncloud/core/doc/admin/_images/dropbox-1.png
+owncloud/core/doc/admin/_images/dropbox-2.png
+owncloud/core/doc/admin/_images/dropbox-3.png
+owncloud/core/doc/admin/_images/dropbox-4.png
+owncloud/core/doc/admin/_images/dropbox-5.png
+owncloud/core/doc/admin/_images/dropbox-6.png
 owncloud/core/doc/admin/_images/dropbox-oc.png
 owncloud/core/doc/admin/_images/dropbox.png
 owncloud/core/doc/admin/_images/enable-app.png
@@ -9148,8 +9151,6 @@ owncloud/core/doc/admin/_images/ldap-wizard-3-login.png
 owncloud/core/doc/admin/_images/ldap-wizard-4-group.png
 owncloud/core/doc/admin/_images/local.png
 owncloud/core/doc/admin/_images/logging-1.png
-owncloud/core/doc/admin/_images/lucene-search-enable.png
-owncloud/core/doc/admin/_images/lucene-search-user.png
 owncloud/core/doc/admin/_images/mount_options.png
 owncloud/core/doc/admin/_images/oc_admin_app_page.png
 owncloud/core/doc/admin/_images/oracle-1.png
@@ -9202,7 +9203,6 @@ owncloud/core/doc/admin/_sources/configuration_database/
 owncloud/core/doc/admin/_sources/configuration_database/db_conversion.txt
 owncloud/core/doc/admin/_sources/configuration_database/index.txt
 owncloud/core/doc/admin/_sources/configuration_database/linux_database_configuration.txt
-owncloud/core/doc/admin/_sources/configuration_database/oracle_db_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/
 owncloud/core/doc/admin/_sources/configuration_files/big_file_upload_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/collaborative_documents_configuration.txt
@@ -9224,6 +9224,7 @@ owncloud/core/doc/admin/_sources/configuration_files/external_storage_configurat
 owncloud/core/doc/admin/_sources/configuration_files/external_storage_configuration_gui.txt
 owncloud/core/doc/admin/_sources/configuration_files/federated_cloud_sharing_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/file_sharing_configuration.txt
+owncloud/core/doc/admin/_sources/configuration_files/file_versioning.txt
 owncloud/core/doc/admin/_sources/configuration_files/files_locking_transactional.txt
 owncloud/core/doc/admin/_sources/configuration_files/index.txt
 owncloud/core/doc/admin/_sources/configuration_files/previews_configuration.txt
@@ -9247,15 +9248,9 @@ owncloud/core/doc/admin/_sources/configuration_server/js_css_asset_management_co
 owncloud/core/doc/admin/_sources/configuration_server/knowledgebase_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/language_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/logging_configuration.txt
+owncloud/core/doc/admin/_sources/configuration_server/oc_server_tuning.txt
 owncloud/core/doc/admin/_sources/configuration_server/occ_command.txt
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/database_best_practice.txt
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/index.txt
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/oc_server_tuning.txt
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/ssl_encryption_app.txt
-owncloud/core/doc/admin/_sources/configuration_server/performance_tuning/webserver_tips.txt
 owncloud/core/doc/admin/_sources/configuration_server/reverse_proxy_configuration.txt
-owncloud/core/doc/admin/_sources/configuration_server/search_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/security_setup_warnings.txt
 owncloud/core/doc/admin/_sources/configuration_server/thirdparty_php_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_user/
@@ -9291,6 +9286,7 @@ owncloud/core/doc/admin/_sources/enterprise_installation/
 owncloud/core/doc/admin/_sources/enterprise_installation/index.txt
 owncloud/core/doc/admin/_sources/enterprise_installation/license_keys_installation.txt
 owncloud/core/doc/admin/_sources/enterprise_installation/linux_installation.txt
+owncloud/core/doc/admin/_sources/enterprise_installation/oracle_db_configuration.txt
 owncloud/core/doc/admin/_sources/enterprise_installation/supported_apps_installation.txt
 owncloud/core/doc/admin/_sources/enterprise_logging/
 owncloud/core/doc/admin/_sources/enterprise_logging/enterprise_logging_apps.txt
@@ -9311,8 +9307,6 @@ owncloud/core/doc/admin/_sources/installation/deployment_recommendations.txt
 owncloud/core/doc/admin/_sources/installation/index.txt
 owncloud/core/doc/admin/_sources/installation/installation_wizard.txt
 owncloud/core/doc/admin/_sources/installation/linux_installation.txt
-owncloud/core/doc/admin/_sources/installation/php_54_installation.txt
-owncloud/core/doc/admin/_sources/installation/php_55_installation.txt
 owncloud/core/doc/admin/_sources/installation/selinux_configuration.txt
 owncloud/core/doc/admin/_sources/installation/source_installation.txt
 owncloud/core/doc/admin/_sources/installation/system_requirements.txt
@@ -9440,7 +9434,6 @@ owncloud/core/doc/admin/configuration_database/
 owncloud/core/doc/admin/configuration_database/db_conversion.html
 owncloud/core/doc/admin/configuration_database/index.html
 owncloud/core/doc/admin/configuration_database/linux_database_configuration.html
-owncloud/core/doc/admin/configuration_database/oracle_db_configuration.html
 owncloud/core/doc/admin/configuration_files/
 owncloud/core/doc/admin/configuration_files/big_file_upload_configuration.html
 owncloud/core/doc/admin/configuration_files/collaborative_documents_configuration.html
@@ -9462,6 +9455,7 @@ owncloud/core/doc/admin/configuration_files/external_storage_configuration.html
 owncloud/core/doc/admin/configuration_files/external_storage_configuration_gui.html
 owncloud/core/doc/admin/configuration_files/federated_cloud_sharing_configuration.html
 owncloud/core/doc/admin/configuration_files/file_sharing_configuration.html
+owncloud/core/doc/admin/configuration_files/file_versioning.html
 owncloud/core/doc/admin/configuration_files/files_locking_transactional.html
 owncloud/core/doc/admin/configuration_files/index.html
 owncloud/core/doc/admin/configuration_files/previews_configuration.html
@@ -9485,15 +9479,9 @@ owncloud/core/doc/admin/configuration_server/js_css_asset_management_configurati
 owncloud/core/doc/admin/configuration_server/knowledgebase_configuration.html
 owncloud/core/doc/admin/configuration_server/language_configuration.html
 owncloud/core/doc/admin/configuration_server/logging_configuration.html
+owncloud/core/doc/admin/configuration_server/oc_server_tuning.html
 owncloud/core/doc/admin/configuration_server/occ_command.html
-owncloud/core/doc/admin/configuration_server/performance_tuning/
-owncloud/core/doc/admin/configuration_server/performance_tuning/database_best_practice.html
-owncloud/core/doc/admin/configuration_server/performance_tuning/index.html
-owncloud/core/doc/admin/configuration_server/performance_tuning/oc_server_tuning.html
-owncloud/core/doc/admin/configuration_server/performance_tuning/ssl_encryption_app.html
-owncloud/core/doc/admin/configuration_server/performance_tuning/webserver_tips.html
 owncloud/core/doc/admin/configuration_server/reverse_proxy_configuration.html
-owncloud/core/doc/admin/configuration_server/search_configuration.html
 owncloud/core/doc/admin/configuration_server/security_setup_warnings.html
 owncloud/core/doc/admin/configuration_server/thirdparty_php_configuration.html
 owncloud/core/doc/admin/configuration_user/
@@ -9529,6 +9517,7 @@ owncloud/core/doc/admin/enterprise_installation/
 owncloud/core/doc/admin/enterprise_installation/index.html
 owncloud/core/doc/admin/enterprise_installation/license_keys_installation.html
 owncloud/core/doc/admin/enterprise_installation/linux_installation.html
+owncloud/core/doc/admin/enterprise_installation/oracle_db_configuration.html
 owncloud/core/doc/admin/enterprise_installation/supported_apps_installation.html
 owncloud/core/doc/admin/enterprise_logging/
 owncloud/core/doc/admin/enterprise_logging/enterprise_logging_apps.html
@@ -9550,8 +9539,6 @@ owncloud/core/doc/admin/installation/deployment_recommendations.html
 owncloud/core/doc/admin/installation/index.html
 owncloud/core/doc/admin/installation/installation_wizard.html
 owncloud/core/doc/admin/installation/linux_installation.html
-owncloud/core/doc/admin/installation/php_54_installation.html
-owncloud/core/doc/admin/installation/php_55_installation.html
 owncloud/core/doc/admin/installation/selinux_configuration.html
 owncloud/core/doc/admin/installation/source_installation.html
 owncloud/core/doc/admin/installation/system_requirements.html
@@ -9581,35 +9568,13 @@ owncloud/core/doc/admin/searchindex.js
 owncloud/core/doc/admin/whats_new_admin.html
 owncloud/core/doc/user/
 owncloud/core/doc/user/_images/
-owncloud/core/doc/user/_images/bookmark_addurl.png
-owncloud/core/doc/user/_images/bookmark_setting.png
-owncloud/core/doc/user/_images/calendar_caldav_icon.png
-owncloud/core/doc/user/_images/calendar_caldav_ios.png
-owncloud/core/doc/user/_images/calendar_caldav_link.png
-owncloud/core/doc/user/_images/calendar_create_event.png
-owncloud/core/doc/user/_images/calendar_create_new.png
-owncloud/core/doc/user/_images/calendar_default.png
-owncloud/core/doc/user/_images/calendar_newtimezone1.png
-owncloud/core/doc/user/_images/calendar_settings.png
-owncloud/core/doc/user/_images/contact_address_book_add.png
-owncloud/core/doc/user/_images/contact_bottombar.png
-owncloud/core/doc/user/_images/contact_crop.jpg
-owncloud/core/doc/user/_images/contact_new.png
-owncloud/core/doc/user/_images/contact_picture.png
-owncloud/core/doc/user/_images/contact_picture_default.png
-owncloud/core/doc/user/_images/contact_syncopt.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-URL_config.jpg
-owncloud/core/doc/user/_images/contact_uploadbutton.png
-owncloud/core/doc/user/_images/contact_vcfpick.jpg
-owncloud/core/doc/user/_images/contacts_empty.png
-owncloud/core/doc/user/_images/contacts_settings.png
 owncloud/core/doc/user/_images/create_public_share-6.png
 owncloud/core/doc/user/_images/create_public_share-8.png
 owncloud/core/doc/user/_images/create_public_share-9.png
 owncloud/core/doc/user/_images/direct-share-1.png
-owncloud/core/doc/user/_images/download.png
 owncloud/core/doc/user/_images/encryption1.png
 owncloud/core/doc/user/_images/encryption2.png
 owncloud/core/doc/user/_images/encryption3.png
@@ -9634,7 +9599,6 @@ owncloud/core/doc/user/_images/files_page1.png
 owncloud/core/doc/user/_images/files_versioning.png
 owncloud/core/doc/user/_images/gallery-1.png
 owncloud/core/doc/user/_images/gallery-2.png
-owncloud/core/doc/user/_images/gear.png
 owncloud/core/doc/user/_images/kdes.png
 owncloud/core/doc/user/_images/kdes1.png
 owncloud/core/doc/user/_images/kdes2.png
@@ -9658,7 +9622,6 @@ owncloud/core/doc/user/_images/video_player_2.png
 owncloud/core/doc/user/_images/webdav_dolphin.png
 owncloud/core/doc/user/_images/webdav_gnome3_nautilus.png
 owncloud/core/doc/user/_sources/
-owncloud/core/doc/user/_sources/bookmarks.txt
 owncloud/core/doc/user/_sources/contents.txt
 owncloud/core/doc/user/_sources/documents.txt
 owncloud/core/doc/user/_sources/external_storage/
@@ -9790,7 +9753,6 @@ owncloud/core/doc/user/_static/underscore.js
 owncloud/core/doc/user/_static/up-pressed.png
 owncloud/core/doc/user/_static/up.png
 owncloud/core/doc/user/_static/websupport.js
-owncloud/core/doc/user/bookmarks.html
 owncloud/core/doc/user/contents.html
 owncloud/core/doc/user/documents.html
 owncloud/core/doc/user/external_storage/
@@ -11104,6 +11066,7 @@ owncloud/lib/private/releasenotes.php
 owncloud/lib/private/repair/
 owncloud/lib/private/repair.php
 owncloud/lib/private/repair/assetcache.php
+owncloud/lib/private/repair/brokenupdaterrepair.php
 owncloud/lib/private/repair/cleantags.php
 owncloud/lib/private/repair/collation.php
 owncloud/lib/private/repair/dropoldjobs.php
@@ -11490,6 +11453,33 @@ owncloud/resources/config/
 owncloud/resources/config/ca-bundle.crt
 owncloud/resources/config/mimetypealiases.dist.json
 owncloud/resources/config/mimetypemapping.dist.json
+owncloud/resources/updater-fixes/
+owncloud/resources/updater-fixes/composer/
+owncloud/resources/updater-fixes/composer.json
+owncloud/resources/updater-fixes/composer.lock
+owncloud/resources/updater-fixes/composer/LICENSE
+owncloud/resources/updater-fixes/composer/autoload_classmap.php
+owncloud/resources/updater-fixes/composer/installed.json
+owncloud/resources/updater-fixes/icewind/
+owncloud/resources/updater-fixes/icewind/streams/
+owncloud/resources/updater-fixes/icewind/streams/src/
+owncloud/resources/updater-fixes/icewind/streams/src/DirectoryFilter.php
+owncloud/resources/updater-fixes/icewind/streams/src/DirectoryWrapper.php
+owncloud/resources/updater-fixes/icewind/streams/src/RetryWrapper.php
+owncloud/resources/updater-fixes/icewind/streams/src/SeekableWrapper.php
+owncloud/resources/updater-fixes/sabre/
+owncloud/resources/updater-fixes/sabre/dav/
+owncloud/resources/updater-fixes/sabre/dav/CHANGELOG.md
+owncloud/resources/updater-fixes/sabre/dav/composer.json
+owncloud/resources/updater-fixes/sabre/dav/lib/
+owncloud/resources/updater-fixes/sabre/dav/lib/CalDAV/
+owncloud/resources/updater-fixes/sabre/dav/lib/CalDAV/Plugin.php
+owncloud/resources/updater-fixes/sabre/dav/lib/CardDAV/
+owncloud/resources/updater-fixes/sabre/dav/lib/CardDAV/Backend/
+owncloud/resources/updater-fixes/sabre/dav/lib/CardDAV/Backend/PDO.php
+owncloud/resources/updater-fixes/sabre/dav/lib/DAV/
+owncloud/resources/updater-fixes/sabre/dav/lib/DAV/CorePlugin.php
+owncloud/resources/updater-fixes/sabre/dav/lib/DAV/Version.php
 owncloud/robots.txt
 owncloud/settings/
 owncloud/settings/admin.php
@@ -12220,9 +12210,6 @@ owncloud/updater/vendor/symfony/console/Question/ChoiceQuestion.php
 owncloud/updater/vendor/symfony/console/Question/ConfirmationQuestion.php
 owncloud/updater/vendor/symfony/console/Question/Question.php
 owncloud/updater/vendor/symfony/console/README.md
-owncloud/updater/vendor/symfony/console/Resources/
-owncloud/updater/vendor/symfony/console/Resources/bin/
-owncloud/updater/vendor/symfony/console/Resources/bin/hiddeninput.exe
 owncloud/updater/vendor/symfony/console/Shell.php
 owncloud/updater/vendor/symfony/console/Style/
 owncloud/updater/vendor/symfony/console/Style/OutputStyle.php
