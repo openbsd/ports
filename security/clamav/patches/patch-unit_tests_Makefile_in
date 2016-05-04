@@ -1,10 +1,10 @@
-$OpenBSD: patch-unit_tests_Makefile_in,v 1.6 2015/12/01 23:25:09 sthen Exp $
+$OpenBSD: patch-unit_tests_Makefile_in,v 1.7 2016/05/04 07:12:55 sthen Exp $
 
 unnecessary gnu-ism
 
---- unit_tests/Makefile.in.orig	Tue Nov 24 21:43:19 2015
-+++ unit_tests/Makefile.in	Tue Dec  1 22:19:26 2015
-@@ -1226,7 +1226,7 @@ check_clamd.sh: $(top_builddir)/test/clam.exe check_cl
+--- unit_tests/Makefile.in.orig	Fri Apr 22 17:19:54 2016
++++ unit_tests/Makefile.in	Wed May  4 00:09:31 2016
+@@ -1476,7 +1476,7 @@ check_clamd.sh: $(top_builddir)/test/clam.exe check_cl
  check_clamscan.sh: $(top_builddir)/test/clam.exe
  
  clamav.hdb: input/clamav.hdb

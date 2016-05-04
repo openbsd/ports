@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.107 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.108 2016/05/04 07:12:55 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.99.1
+DISTNAME=		clamav-0.99.2
 
 CATEGORIES=		security
 
@@ -16,20 +16,21 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += bz2 c crypto curl idn ltdl lzma m milter ncurses nghttp2
-WANTLIB += pcre pthread ssl stdc++ xml2 z
+WANTLIB += bz2 c crypto curl iconv idn intl ltdl lzma m milter
+WANTLIB += ncurses nghttp2 pcre pthread ssl stdc++ xml2 z
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
 
 LIB_DEPENDS=		archivers/bzip2 \
+			devel/gettext \
 			devel/libtool,-ltdl \
 			devel/pcre \
 			mail/sendmail,-libmilter \
 			net/curl \
 			textproc/libxml
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clamav/}
+MASTER_SITES=		http://www.clamav.net/downloads/production/
 
 CONFIGURE_STYLE=        gnu
 CONFIGURE_ARGS+=        --disable-clamav \
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=        --disable-clamav \
 			--with-ltdl-lib=${LOCALBASE}/lib
 
 TEST_TARGET=	check
-MODULES=	lang/python devel/gettext
+MODULES=	lang/python
 MODPY_RUNDEP=	no
 
 CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
@@ -59,9 +60,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 .if ${PROPERTIES:Mllvm} && ! ${MACHINE_ARCH:Msparc} && \
 	! ${MACHINE_ARCH:Msparc64} && ! ${MACHINE_ARCH:Mmips64}
 CONFIGURE_ARGS+=	--enable-llvm
-# At present (20140228 snapshot of LLVM, which is pre-3.5 but advertising a
-# 3.5 version number), system LLVM does not work with ClamAV. To attempt
-# using system LLVM, try this:
+# As of 0.99.2, requires LLVM < 3.7.
+# To attempt using system LLVM, try this:
 #			--with-llvm-linking=dynamic \
 #			--with-system-llvm=${LOCALBASE}/bin/llvm-config
 # And add LIB_DEPENDS etc. sparc64 should work with ports LLVM, but not the
