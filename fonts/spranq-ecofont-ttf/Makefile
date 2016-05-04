@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/24 09:11:04 jasper Exp $
-
-PKG_ARCH=		*
+# $OpenBSD: Makefile,v 1.7 2016/05/04 12:14:33 jasper Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
+TYPEFACE =		ecofont
 # Make sure we're well below upstreams initial versioned release
 V=			0.001
 DISTNAME=		spranq_eco_sans_regular-$V
@@ -19,16 +18,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # Untill upstream starts to version the font
 MASTER_SITES=		https://distfiles.nl/
-EXTRACT_SUFX=		.zip
+
+MODULES =		font
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/
-FONTSDIR=		${PREFIX}/share/fonts/ecofont
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 
 .include <bsd.port.mk>

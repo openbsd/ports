@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/10 07:18:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/04 12:14:32 jasper Exp $
 
-PKG_ARCH =		*
-
-V =			5.000
 COMMENT =		readable Unicode font for laser printers
+
+TYPEFACE =		charis
+V =			5.000
 DISTNAME =		CharisSIL-$V
-PKGNAME =		charis-$V
 CATEGORIES =		fonts
 
 HOMEPAGE =		http://software.sil.org/charis/
@@ -16,17 +15,16 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://software.sil.org/downloads/charis/
-EXTRACT_SUFX =		.zip
+
+MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-FONTDIR =		${PREFIX}/share/fonts/charis
 DOCDIR =		${PREFIX}/share/doc/charis
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 
 .include <bsd.port.mk>

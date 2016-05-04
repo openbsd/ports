@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/29 08:37:40 bentley Exp $
-
-PKG_ARCH =		*
+# $OpenBSD: Makefile,v 1.6 2016/05/04 12:14:33 jasper Exp $
 
 COMMENT =		replacement for Comic Sans font
 
-DISTNAME =		comic-neue-2.2
+TYPEFACE =		comic-neue
+VERSION =		2.2
+DISTNAME =		${TYPEFACE}-${VERSION}
 
 CATEGORIES =		fonts
 
@@ -17,17 +17,17 @@ MAINTAINER =		Tristan Le Guern <tleguern@bouledef.eu>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://comicneue.com/
-EXTRACT_SUFX =		.zip
+
+MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-FONTDIR =		${PREFIX}/share/fonts/comic-neue
+FONT_DISTDIR =		${WRKSRC}/Web/
 FCDIR =			${PREFIX}/share/comic-neue
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${FCDIR}
-	${INSTALL_DATA} ${WRKSRC}/Web/*ttf ${FONTDIR}
+post-install:
+	${INSTALL_DATA_DIR} ${FCDIR}
 	${INSTALL_DATA} ${FILESDIR}/30-comic-sans-aliases.conf ${FCDIR}
 
 .include <bsd.port.mk>
