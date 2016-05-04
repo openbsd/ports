@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2016/05/04 22:52:19 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -122,8 +122,7 @@ post-install:
 # This target requires py-texscythe.
 update-plist: plist
 plist:
-	cd ${FILESDIR} && ${LOCALBASE}/bin/texscyther --initdb \
-		-t ${LOCALBASE}//share/examples/py-texscythe/texlive2014.tlpdb.gz && \
-		${MODPY_BIN} mk_plists.py
+	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
+		${TRUEPREFIX}/share/examples/py-texscythe/texlive2014.tlpdb.gz
 
 .include <bsd.port.mk>
