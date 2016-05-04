@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/29 10:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/04 04:41:31 ajacoutot Exp $
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.4.15
+MODPY_EGG_VERSION=	1.4.16
 DISTNAME=		botocore-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
