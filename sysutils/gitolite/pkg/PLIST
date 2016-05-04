@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/01/24 20:13:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/04 06:45:04 jasper Exp $
 bin/gitolite
 libexec/gitolite/
 libexec/gitolite/VERSION
@@ -14,6 +14,7 @@ libexec/gitolite/VREF/lock
 libexec/gitolite/VREF/partial-copy
 libexec/gitolite/VREF/refex-expr
 libexec/gitolite/commands/
+libexec/gitolite/commands/1plus1
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
 libexec/gitolite/commands/config
@@ -88,6 +89,7 @@ libexec/gitolite/triggers/bg
 libexec/gitolite/triggers/expand-deny-messages
 libexec/gitolite/triggers/partial-copy
 libexec/gitolite/triggers/post-compile/
+libexec/gitolite/triggers/post-compile/create-with-reference
 libexec/gitolite/triggers/post-compile/ssh-authkeys
 libexec/gitolite/triggers/post-compile/ssh-authkeys-shell-users
 libexec/gitolite/triggers/post-compile/ssh-authkeys-split
