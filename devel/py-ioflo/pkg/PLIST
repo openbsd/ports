@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/25 06:54:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/04 05:24:17 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -80,6 +80,30 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aio/http/test/test_clienting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/http/test/test_clienting.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/http/test/test_serving.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/http/test/test_serving.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/devicing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/devicing.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/exchanging.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/exchanging.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/packeting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/packeting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/protoing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/protoing.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/stacking.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/stacking.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_devicing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_devicing.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_exchanging.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_exchanging.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_packeting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_packeting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_stacking.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aio/proto/test/test_stacking.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/serial/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/serial/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aio/serial/__init__.pyc
