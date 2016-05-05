@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.397 2016/04/30 11:56:31 zhuk Exp $
+# $OpenBSD: Quirks.pm,v 1.398 2016/05/05 19:58:37 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -399,6 +399,7 @@ my $stem_extensions = {
 	'droid-fonts' => 'noto-fonts',
 	'py-logilab-astng' => 'py-astroid',
 	'apache-httpd-openbsd' => 'apache-httpd',
+	'openmotif' => 'motif',
 };
 
 # reasons for obsolete packages
