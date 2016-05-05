@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/03 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/05 10:46:50 czarkoff Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -34,9 +34,6 @@ PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 			triton ultradns vcd vsphere
 
 PROVISIONERS=		chef file local-exec remote-exec
-
-# prevent stripping go binaries
-INSTALL_STRIP=
 
 post-build:
 .for provider in ${PROVIDERS}

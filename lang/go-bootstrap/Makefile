@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/04 17:19:18 jsing Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/05 10:46:50 czarkoff Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,6 +8,7 @@ VERSION =		1.4.3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-bootstrap-${VERSION}
+REVISION =		0
 CATEGORIES =		lang
 
 HOMEPAGE =		https://golang.org/
@@ -31,6 +32,8 @@ SUBST_VARS =		GOEXE GOCFG
 
 WRKDIST =		${WRKDIR}/go
 WRKSRC =		${WRKDIST}/src
+
+INSTALL_STRIP =
 
 GOOS = 			openbsd
 GOARCH =		unknown
