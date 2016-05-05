@@ -1,0 +1,15 @@
+$OpenBSD: patch-demos_programs_workspace_xrmLib_c,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+
+Fix implicit declaration.
+
+--- demos/programs/workspace/xrmLib.c.orig	Wed Mar 16 03:52:10 2016
++++ demos/programs/workspace/xrmLib.c	Wed Apr 27 14:49:26 2016
+@@ -30,7 +30,7 @@ static char rcsid[] = "$XConsortium: xrmLib.c /main/6 
+ #endif
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <Xm/Xm.h>
+ #include "wsm.h"
+ #include "wsmDebug.h"

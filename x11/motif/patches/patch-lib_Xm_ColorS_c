@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Xm_ColorS_c,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+--- lib/Xm/ColorS.c.orig	Wed Mar 16 03:10:08 2016
++++ lib/Xm/ColorS.c	Thu Apr 28 17:26:41 2016
+@@ -146,7 +146,12 @@ static XtResource resources[] =
+   {
+     XmNrgbFile, XmCString, XmRString,
+     sizeof(String), XtOffsetOf(XmColorSelectorRec, cs.rgb_file),
+-    XmRString, (XtPointer) "/usr/lib/X11/rgb.txt"
++    XmRString,
++#ifdef RGB_TXT
++    (XtPointer) RGB_TXT
++#else
++    (XtPointer) "/usr/lib/X11/rgb.txt"
++#endif
+   },
+ #endif
+   {

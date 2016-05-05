@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Xm_TextF_c,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+--- lib/Xm/TextF.c.orig	Wed Mar 16 20:51:57 2016
++++ lib/Xm/TextF.c	Thu Apr 28 14:59:16 2016
+@@ -86,7 +86,7 @@ static char rcsid[] = "$TOG: TextF.c /main/65 1999/09/
+ #define FIX_1409
+ 
+ #if (defined(__FreeBSD__) && (__FreeBSD__ < 4)) || \
+-    (defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__))
++    (defined(__APPLE__) || defined(__NetBSD__))
+ /*
+  * Modification by Integrated Computer Solutions, Inc.  May 2000
+  *

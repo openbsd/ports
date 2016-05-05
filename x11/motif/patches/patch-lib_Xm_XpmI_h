@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Xm_XpmI_h,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+--- lib/Xm/XpmI.h.orig	Wed Mar 16 03:10:08 2016
++++ lib/Xm/XpmI.h	Thu Apr 28 15:19:55 2016
+@@ -111,6 +111,7 @@ extern "C" {
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <limits.h>
+ #include <X11/Xmd.h>
+ /* stdio.h doesn't declare popen on a Sequent DYNIX OS */
