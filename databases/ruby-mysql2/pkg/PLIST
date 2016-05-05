@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/16 20:34:29 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/05/05 22:46:27 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/eventmachine.rb
@@ -12,8 +14,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/console.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/em.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/field.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/mysql2.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/result.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/configuration.yml.example
@@ -24,8 +28,23 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/client_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/result_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/statement_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/ca-cert.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/ca-key.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/ca.cnf
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/cert.cnf
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/client-cert.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/client-key.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/client-req.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/gen_certs.sh
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/pkcs8-client-key.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/pkcs8-server-key.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/server-cert.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/server-key.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/ssl/server-req.pem
 ${GEM_LIB}/gems/${DISTNAME}/spec/test_data
 ${GEM_LIB}/gems/${DISTNAME}/support/
 ${GEM_LIB}/gems/${DISTNAME}/support/libmysql.def
