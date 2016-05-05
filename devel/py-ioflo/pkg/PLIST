@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/05/04 05:24:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/05/05 07:53:01 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -180,6 +180,7 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/box4.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/box5.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/box6.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/cloner.flo
+lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/continuation.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/counter1.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/gps.flo
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/plan/marker.flo
