@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/03 22:03:18 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/05/05 02:29:34 bentley Exp $
 bin/0ad
 @bin bin/pyrogenesis
 lib/libCollada.so
@@ -20,6 +20,7 @@ lib/libtinygettext.a
 share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
+share/0ad/l10n/bg.engine.po
 share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
 share/0ad/l10n/de.engine.po
@@ -29,6 +30,7 @@ share/0ad/l10n/es.engine.po
 share/0ad/l10n/fr.engine.po
 share/0ad/l10n/gd.engine.po
 share/0ad/l10n/gl.engine.po
+share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
 share/0ad/l10n/messages.json
@@ -38,6 +40,7 @@ share/0ad/l10n/pt_BR.engine.po
 share/0ad/l10n/pt_PT.engine.po
 share/0ad/l10n/ru.engine.po
 share/0ad/l10n/sk.engine.po
+share/0ad/l10n/sv.engine.po
 share/0ad/l10n/tr.engine.po
 share/0ad/mods/_test.dae/
 share/0ad/mods/_test.dae/art/

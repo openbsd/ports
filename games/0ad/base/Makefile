@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/05 02:29:34 bentley Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		0
 
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}
 
 WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
-WANTLIB += enet execinfo gloox icui18n icuuc jpeg m miniupnpc
+WANTLIB += enet execinfo gloox icui18n icuuc m miniupnpc
 WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
 WANTLIB += xml2 z
 
@@ -22,7 +21,6 @@ LIB_DEPENDS =		audio/libvorbis \
 			devel/libexecinfo \
 			devel/nspr \
 			devel/sdl2 \
-			graphics/jpeg \
 			graphics/png \
 			net/curl \
 			net/enet \

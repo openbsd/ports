@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/05 02:29:34 bentley Exp $
 
 COMMENT =		historical real-time strategy game data
 
 DISTNAME =		0ad-${V}-alpha-unix-data
 PKGNAME =		0ad-data-${V}
-REVISION =		0
 
 PKG_ARCH =		*
 
