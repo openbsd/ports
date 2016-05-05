@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/26 22:04:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/05/05 02:32:55 bentley Exp $
 
 COMMENT =		GTK2 terminal emulator with split-window and tabs support
 
 MODPY_EGG_VERSION =	0.98
 DISTNAME =		terminator-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		x11
 
-HOMEPAGE =		http://gnometerminator.blogspot.com/p/introduction.html
+HOMEPAGE =		https://gnometerminator.blogspot.com/p/introduction.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

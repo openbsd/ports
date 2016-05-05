@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/05 02:32:55 bentley Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
 GH_TAGNAME =	1.0.0
 
-HOMEPAGE =	http://valyriatear.blogspot.com/
+HOMEPAGE =	https://valyriatear.blogspot.com/
 
 # Main game is GPLv2+
 # Art/music a variety of CC and GPL.
