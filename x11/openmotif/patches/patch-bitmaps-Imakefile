@@ -1,9 +1,0 @@
-$OpenBSD: patch-bitmaps-Imakefile,v 1.4 2012/10/28 11:05:45 sthen Exp $
---- bitmaps/Imakefile.orig	Mon Oct 22 15:50:39 2012
-+++ bitmaps/Imakefile	Wed Oct 24 21:18:52 2012
-@@ -43,4 +43,4 @@ HEADERS = \
- 
- all::
- 
--InstallMultipleFlags($(HEADERS),$(XPROJECTROOT)/include/X11/bitmaps/,$(INSTINCFLAGS))
-+InstallMultipleFlags($(HEADERS),$(PROJECTROOT)/include/X11/bitmaps/,$(INSTINCFLAGS))
