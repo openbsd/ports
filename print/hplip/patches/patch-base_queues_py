@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_queues_py,v 1.6 2015/06/11 06:25:07 ajacoutot Exp $
---- base/queues.py.orig	Sun Jun  7 21:25:25 2015
-+++ base/queues.py	Thu Jun 11 08:11:35 2015
-@@ -122,7 +122,7 @@ def parseQueues(mode):
+$OpenBSD: patch-base_queues_py,v 1.7 2016/05/05 08:25:31 ajacoutot Exp $
+--- base/queues.py.orig	Wed May  4 07:23:22 2016
++++ base/queues.py	Thu May  5 10:02:31 2016
+@@ -128,7 +128,7 @@ def parseQueues(mode):
                      is_hp = True
  
              log.debug("Device URI: %s" % device_uri)

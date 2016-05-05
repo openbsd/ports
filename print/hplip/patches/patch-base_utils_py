@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_utils_py,v 1.17 2016/02/25 03:50:37 ajacoutot Exp $
---- base/utils.py.orig	Mon Feb  8 10:42:52 2016
-+++ base/utils.py	Wed Feb 10 09:20:26 2016
+$OpenBSD: patch-base_utils_py,v 1.18 2016/05/05 08:25:31 ajacoutot Exp $
+--- base/utils.py.orig	Wed May  4 07:23:22 2016
++++ base/utils.py	Thu May  5 10:02:31 2016
 @@ -138,11 +138,11 @@ for s in EXPECT_WORD_LIST:
  def get_cups_systemgroup_list():
      lis = []
@@ -52,7 +52,7 @@ $OpenBSD: patch-base_utils_py,v 1.17 2016/02/25 03:50:37 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -949,10 +949,9 @@ def all(S,f=lambda x:x):
+@@ -967,10 +967,9 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-base_utils_py,v 1.17 2016/02/25 03:50:37 ajacoutot Exp $
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2013,51 +2012,54 @@ def chunk_write(response, out_fd, chunk_size =8192, st
+@@ -2036,51 +2035,54 @@ def chunk_write(response, out_fd, chunk_size =8192, st
  def download_from_network(weburl, outputFile = None, useURLLIB=False):
      retValue = -1
  
@@ -153,7 +153,7 @@ $OpenBSD: patch-base_utils_py,v 1.17 2016/02/25 03:50:37 ajacoutot Exp $
  class Sync_Lock:
      def __init__(self, filename):
          self.Lock_filename = filename
-@@ -2153,7 +2155,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2176,7 +2178,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:

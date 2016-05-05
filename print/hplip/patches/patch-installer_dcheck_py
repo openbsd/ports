@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_dcheck_py,v 1.8 2015/02/05 17:34:33 ajacoutot Exp $
---- installer/dcheck.py.orig	Thu Jan 29 13:20:24 2015
-+++ installer/dcheck.py	Thu Feb  5 14:30:38 2015
+$OpenBSD: patch-installer_dcheck_py,v 1.9 2016/05/05 08:25:31 ajacoutot Exp $
+--- installer/dcheck.py.orig	Wed May  4 07:23:15 2016
++++ installer/dcheck.py	Thu May  5 10:02:31 2016
 @@ -48,7 +48,7 @@ mod_output = ''
  def update_ld_output():
      # For library checks
@@ -19,7 +19,7 @@ $OpenBSD: patch-installer_dcheck_py,v 1.8 2015/02/05 17:34:33 ajacoutot Exp $
      log.debug("Searching for file '%s' in '%s'..." % (f, dir))
      for w in utils.walkFiles(dir, recurse=True, abs_paths=True, return_folders=False, pattern=f):
          log.debug("File found at '%s'" % w)
-@@ -364,10 +364,13 @@ def get_libpthread_version():
+@@ -378,10 +378,13 @@ def get_libpthread_version():
      except ImportError:
          return '-'
      else:

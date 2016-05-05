@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.46 2016/03/19 11:37:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.47 2016/05/05 08:25:31 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -707,6 +707,8 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_p4515xm-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m201_m202-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m402_m403-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m402_m403d-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m501dn-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m501n-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m701-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_m706-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m125a-hpijs.ppd.gz
@@ -866,6 +868,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_pro_8620-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8630-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8640-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8660-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_pro_8730-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k5300-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k5400-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_k550-hpijs.ppd.gz

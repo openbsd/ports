@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.142 2016/05/05 08:25:31 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.16.3
+V=			3.16.5
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -38,25 +38,22 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hplip/}
 
 MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 MODPY_RUNDEP=		No
 
 cWANTLIB += crypto m pthread
 
 ### -main
-WANTLIB-main += ${WANTLIB} ${cWANTLIB}
+WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
-WANTLIB-main += hpdiscovery hpipp idn
+WANTLIB-main += hpdiscovery hpipp idn iconv intl
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			print/cups,-libs \
+LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			${MODGETTEXT_RUN_DEPENDS} \
 			devel/py-gobject \
 			print/py-reportlab \
 			x11/dbus-python \
@@ -73,23 +70,23 @@ WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0
 LIB_DEPENDS-common= 	net/net-snmp \
 			devel/libusb1
 
-RUN_DEPENDS-common=	#empty
+RUN_DEPENDS-common=	# empty
 
 ### -hpaio
-WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
+WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
 WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z hpdiscovery
-WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn
+WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn iconv intl
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
 			graphics/sane-backends
 
-RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-hpaio=	# empty
 
 ### -hpcups
-WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z netsnmp hpdiscovery
+WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1 idn
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
@@ -99,7 +96,7 @@ LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/cups,-libs \
 			x11/dbus
 
-RUN_DEPENDS-hpcups=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-hpcups=	# empty
 
 ### -hpijs
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery
@@ -113,7 +110,7 @@ LIB_DEPENDS-hpijs=	print/hplip,-common \
 RUN_DEPENDS-hpijs +=	print/cups-filters
 
 ### -gui
-WANTLIB-gui +=		#empty
+WANTLIB-gui +=		# empty
 
 RUN_DEPENDS-gui=	x11/py-qt4 \
 			print/hplip,-main \
@@ -125,7 +122,7 @@ RUN_DEPENDS-gui=	x11/py-qt4 \
 # hp-toolbox, Actions, Scan
 RUN_DEPENDS-gui +=	graphics/xsane
 
-LIB_DEPENDS-gui=	#empty
+LIB_DEPENDS-gui=	# empty
 
 FAKE_FLAGS=		hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 			hplip_statedir=${PREFIX}/share/examples/hplip/db \

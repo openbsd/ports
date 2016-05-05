@@ -1,7 +1,7 @@
-$OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
---- check.py.orig	Thu Jan 29 13:20:49 2015
-+++ check.py	Thu Feb  5 16:45:04 2015
-@@ -144,9 +144,9 @@ def get_comment(package, Inst_status, installed_ver):
+$OpenBSD: patch-check_py,v 1.18 2016/05/05 08:25:31 ajacoutot Exp $
+--- check.py.orig	Wed May  4 07:23:31 2016
++++ check.py	Thu May  5 10:02:31 2016
+@@ -139,9 +139,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
          if Inst_status == 'OK':
@@ -13,9 +13,9 @@ $OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
      elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
          if Inst_status != 'OK':
              comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
-@@ -311,9 +311,9 @@ class DependenciesCheck(CoreInstall):
-                      %(self.distro_name, self.distro_version, self.distro_name, supported_distro_vrs)))
-           
+@@ -308,9 +308,9 @@ class DependenciesCheck(object):
+                      %(self.core.distro, self.core.distro_version, self.core.distro, supported_distro_vrs)))
+ 
          tui.header("SYSTEM INFO")
 -        Sts, Kernel_info =utils.run("uname -r -v -o")
 +        Sts, Kernel_info =utils.run("uname -r -v -s")
@@ -23,10 +23,10 @@ $OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
 -        Sts, Proc_info =utils.run("uname -r -v -o")
 +        Sts, Proc_info =utils.run("uname -r -v -s")
          log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
-              %(Kernel_info,Host_info,Proc_info,self.distro_name, self.distro_version))
+              %(Kernel_info,Host_info,Proc_info,self.core.distro, self.core.distro_version))
          log.info(" Bitness: %s bit\n"%utils.getBitness())
-@@ -329,9 +329,9 @@ class DependenciesCheck(CoreInstall):
-                 log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.distro_name, self.distro_version))
+@@ -326,9 +326,9 @@ class DependenciesCheck(object):
+                 log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.core.distro, self.core.distro_version))
  
              log.info()
 -            log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))
@@ -37,7 +37,7 @@ $OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
              except (IOError, OSError) as e:
                  log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
                  self.num_errors += 1
-@@ -339,9 +339,9 @@ class DependenciesCheck(CoreInstall):
+@@ -336,9 +336,9 @@ class DependenciesCheck(object):
                  log.info(output)
  
              log.info()
@@ -49,7 +49,7 @@ $OpenBSD: patch-check_py,v 1.17 2015/02/05 17:34:33 ajacoutot Exp $
              except (IOError, OSError) as e:
                  log.info("Plugins are not installed. Could not access file: %s" % e.strerror)
              else:
-@@ -496,7 +496,7 @@ class DependenciesCheck(CoreInstall):
+@@ -502,7 +502,7 @@ class DependenciesCheck(object):
                          #log.info("Installed in HPLIP?: %s" % x)
                          log.info("Device URI: %s" % device_uri)
  
