@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/05 19:52:28 naddy Exp $
 
 
 COMMENT =	X11 based RTF editor
 V =		2.17
 DISTNAME =	ted-$V
-REVISION =	3
+REVISION =	4
 CATEGORIES =	editors textproc print
 HOMEPAGE =	http://www.nllgg.nl/Ted/
 MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
@@ -22,7 +22,7 @@ WRKDIST =	${WRKDIR}/Ted-$V
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/tiff \
-		x11/openmotif
+		x11/motif
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 ALL_TARGET =	compile.shared

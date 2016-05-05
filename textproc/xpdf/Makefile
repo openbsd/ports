@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2015/04/06 21:05:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2016/05/05 19:52:29 naddy Exp $
 
 COMMENT=	PDF viewer for X11
 
 DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		http://mirror.ctan.org/support/xpdf/
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.foolabs.com/xpdf/
 # GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS+=	graphics/png x11/openmotif
+LIB_DEPENDS+=	graphics/png x11/motif
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-multithreaded \

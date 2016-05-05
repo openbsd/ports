@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2015/06/17 19:00:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
 P_V=			0.5
-REVISION=		21
+REVISION=		22
 EPOCH=			0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
@@ -24,7 +24,7 @@ WANTLIB += c expat fontconfig freetype m z Xm
 
 MODULES=		converters/libiconv
 
-LIB_DEPENDS+=		x11/openmotif
+LIB_DEPENDS+=		x11/motif
 
 ALL_TARGET=		openbsd
 

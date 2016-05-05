@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/06 17:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
-REVISION=		8
+REVISION=		9
 CATEGORIES=		productivity x11
 
 # BSD
@@ -14,7 +14,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m Xbae Xm
 MASTER_SITES=	https://distfiles.nl/
 
 LIB_DEPENDS=	x11/xbae \
-		x11/openmotif
+		x11/motif
 
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page

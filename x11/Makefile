@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.570 2016/05/03 18:44:16 jca Exp $
+# $OpenBSD: Makefile,v 1.571 2016/05/05 19:52:29 naddy Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -160,6 +160,7 @@
      SUBDIR += mlterm
      SUBDIR += moka-icon-theme
      SUBDIR += mono-gtk2
+     SUBDIR += motif
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
@@ -179,7 +180,6 @@
      SUBDIR += ogle_gui
      SUBDIR += ogre
      SUBDIR += openbox
-     SUBDIR += openmotif
      SUBDIR += oroborus
      SUBDIR += osd_clock
      SUBDIR += p5-AnyEvent-I3

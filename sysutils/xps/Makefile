@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:51:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/05/05 19:52:29 naddy Exp $
 
 DISTNAME=       xps-4.2
-REVISION=	7
+REVISION=	8
 CATEGORIES=     sysutils x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
@@ -19,7 +19,7 @@ CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
 CONFIGURE_ENV=		LDFLAGS=-lm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-LIB_DEPENDS+=		x11/openmotif
+LIB_DEPENDS+=		x11/motif
 
 NO_TEST=		Yes
 

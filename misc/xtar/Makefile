@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2015/02/15 16:29:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=	view and manipulate contents of a tar file
 
 DISTNAME=	xtar-1.4
-REVISION=	4
+REVISION=	5
 CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m pthread-stubs xcb Xm
 
 CONFIGURE_STYLE=imake
-LIB_DEPENDS+=	x11/openmotif
+LIB_DEPENDS+=	x11/motif
 MAKE_FLAGS=	EXTRA_LDOPTIONS=-L${WRKBUILD}/common
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 

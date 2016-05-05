@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2015/06/27 16:54:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/05/05 19:52:29 naddy Exp $
 
 COMMENT=		interactive X11 proxy with selective X request replacement
 
 DISTNAME=		mxconns-3.1.10
 CATEGORIES=		x11 security
+REVISION=		0
 
 HOMEPAGE=		http://cern.ch/mxconns/
 MASTER_SITES=		${HOMEPAGE}
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	No
 
 WANTLIB += X11 Xau Xext Xm Xpm Xt c
 
-LIB_DEPENDS=		x11/openmotif
+LIB_DEPENDS=		x11/motif
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		-optim "${CFLAGS}" -debug

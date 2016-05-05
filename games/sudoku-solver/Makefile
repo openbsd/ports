@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
 DISTNAME=	sudoku-solver-1.0.1
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=    	games www x11
 
@@ -19,7 +19,7 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	www/clearsilver
 LIB_DEPENDS=	www/fcgi \
-		x11/openmotif
+		x11/motif
 
 MAKE_ENV=	LDADD=-lm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'

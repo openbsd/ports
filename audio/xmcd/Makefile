@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
-REVISION=	13
+REVISION=	14
 CATEGORIES=	audio
 HOMEPAGE=	http://www.amb.org/xmcd/
 
@@ -14,7 +14,7 @@ WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c curses \
 
 MASTER_SITES=	https://distfiles.nl/
 
-LIB_DEPENDS+=	x11/openmotif
+LIB_DEPENDS+=	x11/motif
 
 CONFIGURE_STYLE= imake
 MAKE_ENV+=	MOTIFLIB='-L${LOCALBASE}/lib -lXm'

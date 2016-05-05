@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	6
+REVISION=	7
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--without-x
 NO_TEST=		Yes
 .else
 TEST_IS_INTERACTIVE=	x11
-LIB_DEPENDS+=		x11/openmotif
+LIB_DEPENDS+=		x11/motif
 WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
 MAKE_ENV+=		MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 CONFIGURE_ENV=		LDFLAGS=-lm

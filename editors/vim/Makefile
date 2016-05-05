@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2016/04/26 16:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.148 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,6 +8,7 @@ DISTNAME=	vim-$V
 DISTFILES=	vim-$V{v$V}.tar.gz
 PKGNAME-main=	vim-$V
 PKGNAME-lang=	vim-lang-$V
+REVISION-main=	0
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vim/vim/archive/
@@ -107,7 +108,7 @@ CONFIGURE_ARGS+= --enable-gui="motif" \
 		--enable-xim \
 		--with-x
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
-LIB_DEPENDS+=	x11/openmotif
+LIB_DEPENDS+=	x11/motif
 WANTLIB +=	m ICE SM X11 Xmu Xpm Xt Xm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .elif ${FLAVOR:Mathena} && \

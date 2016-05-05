@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2014/11/07 14:20:11 abieber Exp $
+# $OpenBSD: Makefile,v 1.34 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-2.0.6
+REVISION=	0
 
 CATEGORIES=    	comms hamradio geo
 
@@ -48,6 +49,6 @@ LIB_DEPENDS=	net/curl \
 		graphics/GraphicsMagick \
 		databases/db/v4 \
 		devel/pcre \
-		x11/openmotif
+		x11/motif
 
 .include <bsd.port.mk>

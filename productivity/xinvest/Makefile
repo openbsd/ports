@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/05/05 19:52:28 naddy Exp $
 
 COMMENT= 		personal finance tracking and performance tool
 
 DISTNAME=		xinvest-2.6.9
-REVISION=		7
+REVISION=		8
 CATEGORIES=		productivity x11
 
 # BSD
@@ -13,7 +13,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xpm Xt c m Xm
 
 MASTER_SITES=	https://distfiles.nl/
 
-LIB_DEPENDS+=		x11/openmotif
+LIB_DEPENDS+=		x11/motif
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
