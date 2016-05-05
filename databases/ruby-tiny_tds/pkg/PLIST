@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/05 14:49:32 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/05 22:45:39 jeremy Exp $
+${GEM_BIN}/defncopy${GEM_BIN_SUFFIX}
+${GEM_BIN}/tsql${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -8,10 +10,17 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/VERSION
 ${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/defncopy
+${GEM_LIB}/gems/${DISTNAME}/bin/tsql
+${GEM_LIB}/gems/${DISTNAME}/exe/
+${GEM_LIB}/gems/${DISTNAME}/exe/.keep
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/bin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/result.rb
@@ -38,4 +47,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/schema/sybase_ase.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/thread_test.rb
+${GEM_LIB}/gems/${DISTNAME}/tiny_tds.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
