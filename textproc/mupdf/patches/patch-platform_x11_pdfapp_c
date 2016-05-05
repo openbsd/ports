@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.4 2016/01/26 14:43:08 tb Exp $
---- platform/x11/pdfapp.c.orig	Tue Nov 10 17:19:51 2015
-+++ platform/x11/pdfapp.c	Mon Jan 18 10:14:13 2016
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.5 2016/05/05 09:02:46 sthen Exp $
+--- platform/x11/pdfapp.c.orig	Tue Nov 10 16:19:51 2015
++++ platform/x11/pdfapp.c	Thu May  5 09:58:19 2016
 @@ -26,8 +26,18 @@ enum
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
  static void pdfapp_updatepage(pdfapp_t *app);
@@ -21,6 +21,15 @@ $OpenBSD: patch-platform_x11_pdfapp_c,v 1.4 2016/01/26 14:43:08 tb Exp $
  static int zoom_in(int oldres)
  {
  	int i;
+@@ -316,7 +326,7 @@ void pdfapp_open_progressive(pdfapp_t *app, char *file
+ 		}
+ 
+ #ifdef HAVE_CURL
+-		if (!strncmp(filename, "http://", 7))
++		if (!strncmp(filename, "http://", 7) || !strncmp(filename, "https://", 8))
+ 		{
+ 			app->stream = fz_stream_from_curl(ctx, filename, pdfapp_more_data, app);
+ 			while (1)
 @@ -1041,6 +1051,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
  {
  	int firstpage, page;
