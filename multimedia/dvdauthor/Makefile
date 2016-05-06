@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/05/06 21:39:03 sthen Exp $
 
 COMMENT=	creates DVD file structures
 
 DISTNAME=	dvdauthor-0.7.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
 

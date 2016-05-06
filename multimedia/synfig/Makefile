@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/05/06 21:39:03 sthen Exp $
 
 COMMENT =		2D animation software
-REVISION =		3
+REVISION =		4
 
 V=			1.0.1
 DISTNAME =		synfig-$V

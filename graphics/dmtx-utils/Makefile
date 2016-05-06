@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/29 10:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/06 21:39:03 sthen Exp $
 
 COMMENT =		tools for handling data matrix barcodes
 
 DISTNAME =		dmtx-utils-0.7.4
-REVISION =		6
+REVISION =		7
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.libdmtx.org/
