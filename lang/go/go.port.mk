@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.7 2016/05/05 10:46:50 czarkoff Exp $
+# $OpenBSD: go.port.mk,v 1.8 2016/05/06 10:04:00 czarkoff Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -48,10 +48,13 @@ MODGO_INSTALL_TARGET =	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
 # Go source files serve the purpose of libraries, so sources should be included
 # with library ports.
 .if ${MODGO_TYPE:L:Mlib}
-MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH}; \
-			cp -pR ${MODGO_WORKSPACE}/src \
-			       ${MODGO_WORKSPACE}/pkg \
-				${MODGO_PACKAGE_PATH};
+MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH} && \
+			cd ${MODGO_WORKSPACE} && \
+			find src pkg -type d -exec ${INSTALL_DATA_DIR} \
+				${MODGO_PACKAGE_PATH}/{} \; && \
+			find src pkg -type f -exec ${INSTALL_DATA} -p \
+				${MODGO_WORKSPACE}/{} \
+				${MODGO_PACKAGE_PATH}/{} \;
 .endif
 
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
