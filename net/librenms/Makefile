@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/24 23:36:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/05/06 19:31:08 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-V =		201604
-REVISION =	0
+V =		201605
 DISTNAME =	librenms-$V
 DISTFILES =	librenms-$V{$V}.tar.gz
 
@@ -48,7 +47,7 @@ INSTDIR =	${PREFIX}/librenms
 SUBST_VARS =	INSTDIR MODPHP_BIN
 
 R =	s,^\#!( )?/bin/bash,\#!${LOCALBASE}/bin/bash,;
-R +=	s,^\#!( )?/usr/bin/(env )?python,\#!${MODPY_BIN},;
+R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
 R +=	s,^\#!( )?/usr/bin/(env )?php,\#!${MODPHP_BIN},;
 R +=	s,/opt/librenms,/var/www/librenms,g;
 R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;

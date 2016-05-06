@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.14 2016/03/07 16:43:03 sthen Exp $
---- includes/defaults.inc.php.orig	Mon Mar  7 16:28:39 2016
-+++ includes/defaults.inc.php	Mon Mar  7 16:28:49 2016
+$OpenBSD: patch-includes_defaults_inc_php,v 1.15 2016/05/06 19:31:08 sthen Exp $
+--- includes/defaults.inc.php.orig	Tue May  3 12:24:33 2016
++++ includes/defaults.inc.php	Tue May  3 12:24:43 2016
 @@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
@@ -76,7 +76,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.14 2016/03/07 16:43:03 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -797,7 +797,7 @@ $config['api_demo'] = 0;
+@@ -799,7 +799,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

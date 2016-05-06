@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_distro,v 1.4 2015/12/07 23:42:03 sthen Exp $
---- scripts/distro.orig	Mon Dec  7 14:22:34 2015
-+++ scripts/distro	Mon Dec  7 14:26:21 2015
-@@ -1,91 +1,2 @@
+$OpenBSD: patch-scripts_distro,v 1.5 2016/05/06 19:31:08 sthen Exp $
+--- scripts/distro.orig	Tue May  3 12:24:48 2016
++++ scripts/distro	Tue May  3 12:25:20 2016
+@@ -1,94 +1,2 @@
 -#!/usr/bin/env bash
 -# Detects which OS and if it is Linux then it will detect which Linux Distribution.
 -
@@ -90,6 +90,9 @@ $OpenBSD: patch-scripts_distro,v 1.4 2015/12/07 23:42:03 sthen Exp $
 -  if [ -f /usr/bin/sw_vers ] ; then
 -    OSSTR=`/usr/bin/sw_vers|grep -v Build|sed 's/^.*:.//'| tr "\n" ' '`
 -  fi
+-
+-elif [ "${OS}" = "FreeBSD" ] ; then
+-  OSSTR=`/usr/bin/uname -mior`
 -fi
 -
 -echo ${OSSTR}

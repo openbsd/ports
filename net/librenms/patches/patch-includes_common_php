@@ -1,12 +1,21 @@
-$OpenBSD: patch-includes_common_php,v 1.1 2016/03/07 17:49:10 sthen Exp $
---- includes/common.php.orig	Mon Mar  7 17:28:11 2016
-+++ includes/common.php	Mon Mar  7 17:45:50 2016
-@@ -1073,12 +1073,12 @@ function version_info($remote=true) {
+$OpenBSD: patch-includes_common_php,v 1.2 2016/05/06 19:31:08 sthen Exp $
+--- includes/common.php.orig	Tue May  3 12:24:33 2016
++++ includes/common.php	Tue May  3 12:27:00 2016
+@@ -1041,18 +1041,17 @@ function version_info($remote=true) {
          curl_setopt($api, CURLOPT_RETURNTRANSFER, 1);
          $output['github'] = json_decode(curl_exec($api),true);
      }
--    $output['local_sha']   = chop(`git rev-parse HEAD`);
-+    $output['local_sha']   = '';
+-    $output['local_sha']    = rtrim(`git rev-parse HEAD`);
+-    $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
++    $output['local_sha']    = '';
++    $output['local_branch'] = '';
+ 
+-    exec('git diff --name-only --exit-code', $cmdoutput, $code);
+-    $output['git_modified'] = ($code !== 0);
+-    $output['git_modified_files'] = $cmdoutput;
++    $output['git_modified'] = 0;
++    $output['git_modified_files'] = '';
+ 
      $output['db_schema']   = dbFetchCell('SELECT version FROM dbSchema');
      $output['php_ver']     = phpversion();
      $output['mysql_ver']   = dbFetchCell('SELECT version()');
