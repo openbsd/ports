@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2016/04/28 18:19:23 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2016/05/06 19:59:45 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.5,<5.6
 @conflict php-pdo_sqlite->=5.5,<5.6
@@ -225,6 +225,7 @@ share/php-${PV}/include/ext/mysqli/mysqli_libmysql.h
 share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h
+share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_alloc.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_block_alloc.h
@@ -242,7 +243,6 @@ share/php-${PV}/include/ext/mysqlnd/mysqlnd_reverse_api.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_statistics.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_structs.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_wireprotocol.h
-share/php-${PV}/include/ext/mysqlnd/mysql_float_to_double.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd_config.h
 share/php-${PV}/include/ext/pcre/
