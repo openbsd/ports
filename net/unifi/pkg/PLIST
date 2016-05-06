@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/09 13:48:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/05/06 14:52:08 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -32,8 +32,8 @@ share/unifi/dl/firmware/U7P/
 share/unifi/dl/firmware/U7P/3.3.20.4019/
 share/unifi/dl/firmware/U7P/3.3.20.4019/firmware.bin
 share/unifi/dl/firmware/U7PG2/
-share/unifi/dl/firmware/U7PG2/3.4.17.3440/
-share/unifi/dl/firmware/U7PG2/3.4.17.3440/firmware.bin
+share/unifi/dl/firmware/U7PG2/3.4.18.3464/
+share/unifi/dl/firmware/U7PG2/3.4.18.3464/firmware.bin
 share/unifi/dl/firmware/US24P250/
 share/unifi/dl/firmware/US24P250/3.3.20.4019/
 share/unifi/dl/firmware/US24P250/3.3.20.4019/firmware.bin
@@ -58,6 +58,7 @@ share/unifi/lib/ecj-4.3.1.jar
 share/unifi/lib/gson-2.2.4.jar
 share/unifi/lib/guava-14.0.1.jar
 share/unifi/lib/jmdns-3.4.1.jar
+share/unifi/lib/jorbis-0.0.17.jar
 share/unifi/lib/jsch-0.1.51.jar
 share/unifi/lib/jstl-1.2.jar
 share/unifi/lib/jstun-0.7.3.jar

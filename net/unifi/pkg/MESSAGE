@@ -1,2 +1,0 @@
-WARNING: UniFi admin password is available without authentication to localhost.
-$ echo 'db.admin.find()' | mongo --quiet 127.0.0.1:27117/ace
