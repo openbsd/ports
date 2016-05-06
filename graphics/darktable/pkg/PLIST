@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/03/29 14:55:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/05/06 21:47:59 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cli
 @bin bin/darktable-cltest
@@ -375,6 +375,7 @@ share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/pt_PT/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sk/LC_MESSAGES/darktable.mo
+share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
