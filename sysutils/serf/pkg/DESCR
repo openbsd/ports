@@ -1,0 +1,8 @@
+Serf is a decentralized solution for service discovery and orchestration that is
+lightweight, highly available, and fault tolerant.
+
+An efficient and lightweight gossip protocol is used to communicate with other
+nodes. Serf can detect node failures and notify the rest of the cluster. An
+event system is built on top of Serf, letting you use Serf's gossip protocol to
+propagate events such as deploys, configuration changes, etc. Serf is completely
+masterless with no single point of failure.
