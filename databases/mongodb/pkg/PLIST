@@ -1,20 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/09/16 17:28:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/06 15:33:37 sthen Exp $
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
-@bin bin/bsondump
 @bin bin/mongo
 @bin bin/mongod
-@bin bin/mongodump
-@bin bin/mongoexport
-@bin bin/mongofiles
-@bin bin/mongoimport
-@bin bin/mongooplog
 @bin bin/mongoperf
-@bin bin/mongorestore
 @bin bin/mongos
 @bin bin/mongosniff
-@bin bin/mongostat
-@bin bin/mongotop
 share/examples/mongodb/
 share/examples/mongodb/mongodb.conf
 @sample ${SYSCONFDIR}/mongodb.conf

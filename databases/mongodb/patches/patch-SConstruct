@@ -1,48 +1,11 @@
-$OpenBSD: patch-SConstruct,v 1.5 2014/12/10 19:59:29 dcoppa Exp $
-
-Fixup detection of yaml-cpp system library
-https://github.com/mongodb/mongo/commit/44b0e3591839525a0c951319540488814e5c25fd
-
---- SConstruct.orig	Fri Aug  8 15:13:51 2014
-+++ SConstruct	Wed Dec 10 09:28:50 2014
-@@ -814,7 +814,6 @@ if nix:
-     # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
-     env.Append( CCFLAGS=["-fPIC",
-                          "-fno-strict-aliasing",
--                         "-ggdb",
-                          "-pthread",
-                          "-Wall",
-                          "-Wsign-compare",
-@@ -828,6 +827,7 @@ if nix:
+$OpenBSD: patch-SConstruct,v 1.6 2016/05/06 15:33:37 sthen Exp $
+--- SConstruct.orig	Sat Apr 30 18:18:21 2016
++++ SConstruct	Sat Apr 30 18:20:28 2016
+@@ -831,6 +831,7 @@ envDict = dict(BUILD_ROOT=buildDir,
+                INSTALL_DIR=installDir,
+                CONFIG_HEADER_DEFINES={},
+                LIBDEPS_TAG_EXPANSIONS=[],
++               ENV = {'PATH': os.environ['PATH']},
+                )
  
-     env.Append( CPPDEFINES=["_FILE_OFFSET_BITS=64"] )
-     env.Append( CXXFLAGS=["-Wnon-virtual-dtor", "-Woverloaded-virtual"] )
-+    env.Append( CXXFLAGS=os.environ['CXXFLAGS'] )
-     env.Append( LINKFLAGS=["-fPIC", "-pthread"] )
- 
-     # SERVER-9761: Ensure early detection of missing symbols in dependent libraries at program
-@@ -859,14 +859,9 @@ if nix:
-         env.Append( CPPDEFINES=["MONGO_GCOV"] )
-         env.Append( LINKFLAGS=" -fprofile-arcs -ftest-coverage " )
- 
--    if optBuild:
--        env.Append( CCFLAGS=["-O3"] )
--    else:
--        env.Append( CCFLAGS=["-O0"] )
--
-     if debugBuild:
-         if not optBuild:
--            env.Append( CCFLAGS=["-fstack-protector"] )
-+            env.Append( CCFLAGS=["-fstack-protector", "-ggdb"] )
-             env.Append( LINKFLAGS=["-fstack-protector"] )
-             env.Append( SHLINKFLAGS=["-fstack-protector"] )
-         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
-@@ -1352,7 +1347,7 @@ def doConfigure(myenv):
-         conf.FindSysLibDep("stemmer", ["stemmer"])
- 
-     if use_system_version_of_library("yaml"):
--        conf.FindSysLibDep("yaml", ["yaml"])
-+        conf.FindSysLibDep("yaml", ["yaml-cpp"])
- 
-     if use_system_version_of_library("boost"):
-         if not conf.CheckCXXHeader( "boost/filesystem/operations.hpp" ):
+ env = Environment(variables=env_vars, **envDict)

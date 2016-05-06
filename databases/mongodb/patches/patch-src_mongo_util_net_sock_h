@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_mongo_util_net_sock_h,v 1.1 2016/05/06 15:33:37 sthen Exp $
+--- src/mongo/util/net/sock.h.orig	Mon May  2 00:00:19 2016
++++ src/mongo/util/net/sock.h	Mon May  2 00:00:34 2016
+@@ -37,6 +37,7 @@
+ #include <sys/types.h>
+ #include <sys/un.h>
+ #include <errno.h>
++#include <unistd.h>
+ 
+ #ifdef __OpenBSD__
+ #include <sys/uio.h>

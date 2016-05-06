@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mongo_util_signal_handlers_synchronous_cpp,v 1.1 2016/05/06 15:33:37 sthen Exp $
+--- src/mongo/util/signal_handlers_synchronous.cpp.orig	Thu Apr 21 16:21:39 2016
++++ src/mongo/util/signal_handlers_synchronous.cpp	Sun May  1 23:59:28 2016
+@@ -266,7 +266,7 @@ void abruptQuitWithAddrSignal(int signalNum, siginfo_t
+     MallocFreeOStreamGuard lk{};
+ 
+     const char* action = (signalNum == SIGSEGV || signalNum == SIGBUS) ? "access" : "operation";
+-    mallocFreeOStream << "Invalid " << action << " at address: " << siginfo->si_addr;
++    mallocFreeOStream << "Invalid " << action << " at address: " << reinterpret_cast<void*>(siginfo->si_addr);
+ 
+     // Writing out message to log separate from the stack trace so at least that much gets
+     // logged. This is important because we may get here by jumping to an invalid address which
