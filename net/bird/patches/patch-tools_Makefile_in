@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2016/05/06 19:56:20 sthen Exp $
+--- tools/Makefile.in.orig	Fri Apr 29 10:13:23 2016
++++ tools/Makefile.in	Sun May  1 14:20:56 2016
+@@ -37,16 +37,13 @@ subdir: sysdep/paths.h .dir-stamp .dep-stamp
+ 	set -e ; for a in $(static-dirs) $(client-dirs) ; do $(MAKE) -C $$a -f $(srcdir_abs)/$$a/Makefile $@ ; done
+ 
+ $(exedir)/bird: $(bird-dep)
+-	@echo LD $(LDFLAGS) -o $@ $^ $(LIBS)
+-	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ $(exedir)/birdc: $(birdc-dep)
+-	@echo LD $(LDFLAGS) -o $@ $^ $(LIBS) $(CLIENT_LIBS)
+-	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS) $(CLIENT_LIBS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS) $(CLIENT_LIBS)
+ 
+ $(exedir)/birdcl: $(birdcl-dep)
+-	@echo LD $(LDFLAGS) -o $@ $^ $(LIBS)
+-	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ .dir-stamp: sysdep/paths.h
+ 	mkdir -p $(static-dirs) $(client-dirs) $(doc-dirs)

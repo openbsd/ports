@@ -1,20 +1,7 @@
-$OpenBSD: patch-sysdep_unix_io_c,v 1.3 2016/02/12 17:09:00 sthen Exp $
-
-Hunks #2 and #3: FD_SET overflow.
-
-From 338f85ca7721fac16394ccabd561ddb5ccaacb36 Mon Sep 17 00:00:00 2001
-From: Ondrej Zajicek (work) <santiago@crfreenet.org>
-Date: Tue, 3 Nov 2015 11:08:57 +0100
-Subject: [PATCH] IO: Handle fd values too big for select()
-
-From 3aed0a6ff7b2b811a535202fd787281d2ac33409 Mon Sep 17 00:00:00 2001
-From: Ondrej Zajicek (work) <santiago@crfreenet.org>
-Date: Tue, 3 Nov 2015 11:27:27 +0100
-Subject: [PATCH] IO: Fix the previous bugfix
-
---- sysdep/unix/io.c.orig	Wed Apr 22 15:41:44 2015
-+++ sysdep/unix/io.c	Fri Feb 12 17:06:31 2016
-@@ -261,7 +261,7 @@ tm_start(timer *t, unsigned after)
+$OpenBSD: patch-sysdep_unix_io_c,v 1.4 2016/05/06 19:56:20 sthen Exp $
+--- sysdep/unix/io.c.orig	Fri Apr 29 10:13:23 2016
++++ sysdep/unix/io.c	Sun May  1 14:18:39 2016
+@@ -262,7 +262,7 @@ tm_start(timer *t, unsigned after)
    bird_clock_t when;
  
    if (t->randomize)
@@ -23,34 +10,7 @@ Subject: [PATCH] IO: Fix the previous bugfix
    when = now + after;
    if (t->expires == when)
      return;
-@@ -1328,6 +1328,16 @@ sk_passive_connected(sock *s, int type)
-       log(L_WARN "SOCK: Cannot get remote IP address for TCP<");
-   }
- 
-+  if (fd >= FD_SETSIZE)
-+  {
-+    /* FIXME: Call err_hook instead ? */
-+    log(L_ERR "SOCK: Incoming connection from %I%J (port %d) %s",
-+	t->daddr, ipa_is_link_local(t->daddr) ? t->iface : NULL,
-+	t->dport, "rejected due to FD_SETSIZE limit");
-+    close(fd);
-+    return 1;
-+  }
-+
-   if (sk_setup(t) < 0)
-   {
-     /* FIXME: Call err_hook instead ? */
-@@ -1404,6 +1414,9 @@ sk_open(sock *s)
-   if (fd < 0)
-     ERR("socket");
- 
-+  if (fd >= FD_SETSIZE)
-+    ERR2("FD_SETSIZE limit reached");
-+
-   s->af = af;
-   s->fd = fd;
- 
-@@ -2038,7 +2051,6 @@ io_init(void)
+@@ -2043,7 +2043,6 @@ io_init(void)
    init_times();
    update_times();
    boot_time = now;

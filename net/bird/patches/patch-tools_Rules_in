@@ -1,0 +1,20 @@
+$OpenBSD: patch-tools_Rules_in,v 1.1 2016/05/06 19:56:20 sthen Exp $
+--- tools/Rules.in.orig	Fri Apr 29 10:13:23 2016
++++ tools/Rules.in	Sun May  1 14:20:53 2016
+@@ -68,14 +68,12 @@ subdir: all.o
+ all.o: $(objs)
+ #       $(LD) -r -o $@ $^
+ #	Changed to $(CC) because $(LD) has problems with crosscompiling
+-	@echo LD -r -o $@ $^
+-	@$(CC) -nostdlib -r -o $@ $^
++	$(CC) -nostdlib -r -o $@ $^
+ 
+ endif
+ 
+ %.o: $(src-path)%.c
+-	@echo CC -o $@ -c $<
+-	@$(CC) $(CFLAGS) -o $@ -c $<
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ ifndef source-dep
+ source-dep := $(source)
