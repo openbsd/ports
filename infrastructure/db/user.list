@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.267 2016/04/29 13:03:24 giovanni Exp $
+$OpenBSD: user.list,v 1.268 2016/05/06 11:58:09 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -279,3 +279,4 @@ id  user		group		port options
 768 _syncthing		_syncthing	net/syncthing
 769 			_mailmanq	mail/mailman
 770 _milter-auth	_milter-auth	mail/p5-Mail-Milter-Authentication
+771 _serf		_serf		sysutils/serf
