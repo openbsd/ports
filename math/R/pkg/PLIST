@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/03/19 11:42:57 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/05/06 08:52:28 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -1339,7 +1339,6 @@ lib/R/library/survival/Meta/package.rds
 lib/R/library/survival/Meta/vignette.rds
 lib/R/library/survival/NAMESPACE
 lib/R/library/survival/NEWS.Rd
-lib/R/library/survival/NEWS.Rd.orig
 lib/R/library/survival/R/
 lib/R/library/survival/R/survival
 lib/R/library/survival/R/survival.rdb
@@ -1366,6 +1365,8 @@ lib/R/library/survival/doc/tests.pdf
 lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
+lib/R/library/survival/doc/validate.R
+lib/R/library/survival/doc/validate.Rnw
 lib/R/library/survival/doc/validate.pdf
 lib/R/library/survival/help/
 lib/R/library/survival/help/AnIndex
@@ -1778,6 +1779,8 @@ lib/R/library/utils/Meta/package.rds
 lib/R/library/utils/Meta/vignette.rds
 lib/R/library/utils/NAMESPACE
 lib/R/library/utils/R/
+lib/R/library/utils/R/sysdata.rdb
+lib/R/library/utils/R/sysdata.rdx
 lib/R/library/utils/R/utils
 lib/R/library/utils/R/utils.rdb
 lib/R/library/utils/R/utils.rdx
@@ -1875,6 +1878,8 @@ share/doc/R/html/
 share/doc/R/html/NEWS.2.html
 share/doc/R/html/NEWS.html
 share/doc/R/html/R.css
+share/doc/R/html/Rlogo.pdf
+share/doc/R/html/Rlogo.svg
 share/doc/R/html/Search.html
 share/doc/R/html/SearchOn.html
 share/doc/R/html/about.html
@@ -1882,7 +1887,6 @@ share/doc/R/html/favicon.ico
 share/doc/R/html/index.html
 share/doc/R/html/left.jpg
 share/doc/R/html/logo.jpg
-share/doc/R/html/logosm.jpg
 share/doc/R/html/packages-head-utf8.html
 share/doc/R/html/packages.html
 share/doc/R/html/resources.html

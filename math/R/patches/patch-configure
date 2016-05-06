@@ -1,29 +1,24 @@
-$OpenBSD: patch-configure,v 1.27 2015/12/14 16:49:02 feinerer Exp $
+$OpenBSD: patch-configure,v 1.28 2016/05/06 08:52:28 feinerer Exp $
 
-Unbreak build on powerpc (relocation truncated to fit: R_PPC_GOT16...)
-
---- configure.orig	Thu Dec 10 15:45:13 2015
-+++ configure	Thu Dec 10 15:47:05 2015
-@@ -26576,6 +26576,22 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
-       main_ldflags="${wl}-export-dynamic"
-       shlib_ldflags="-shared -fPIC"
-     fi
-+    case "${host_cpu}" in
-+      powerpc*)
-+	## GCC -fpic limits to 2**16 on OpenBSD powerpc.
-+	## Error message without -fPIC:
-+	##   relocation truncated to fit: R_PPC_GOT16...
-+        if test "${GCC}" = yes; then
-+          cpicflags="-fPIC"
-+        fi
-+        if test "${G77}" = yes; then
-+          fpicflags="-fPIC"
-+        fi
-+        if test "${GXX}" = yes; then
-+          cxxpicflags="-fPIC"
-+        fi
-+        ;;
-+    esac
-     ;;
-   osf*)
-     cpicflags=
+--- configure.orig	Tue May  3 12:17:51 2016
++++ configure	Tue May  3 12:19:33 2016
+@@ -35481,8 +35481,8 @@ fi
+ 
+ fi
+ if test "${have_zlib}" = yes; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if zlib version >= 1.2.5" >&5
+-$as_echo_n "checking if zlib version >= 1.2.5... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking if zlib version >= 1.2.3" >&5
++$as_echo_n "checking if zlib version >= 1.2.3... " >&6; }
+ if ${r_cv_header_zlib_h+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+@@ -35499,7 +35499,7 @@ int main() {
+ #ifdef ZLIB_VERSION
+ /* Work around Debian bug: it uses 1.2.3.4 even though there was no such
+    version on the master site zlib.net */
+-  exit(strncmp(ZLIB_VERSION, "1.2.5", 5) < 0);
++  exit(strncmp(ZLIB_VERSION, "1.2.3", 5) < 0);
+ #else
+   exit(1);
+ #endif
