@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/05 09:31:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/05/06 16:26:20 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.20.2
-REVISION=		1
+GNOME_VERSION=		3.20.4
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -13,23 +12,6 @@ SHARED_LIBS +=	search                    0.0 # 0.0
 SHARED_LIBS +=  template-glib-1.0         0.0 # 0.0
 
 CATEGORIES=		devel
-
-MASTER_SITES0=		https://git.gnome.org/browse/gnome-builder/patch/?id=
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=		d727ec719028f8272d73878d9269b68bbf884ab8:0 \
-			aaa997737bf3ede474ddd1deb57cc7986f030109:0 \
-			517650712643245ba4b0599f8746528714c580f8:0 \
-			ba32a12fd952705e9ca15daa13b78080fa726164:0 \
-			3108388e0f80fe9a0d65fc15d3e4e266b557c388:0 \
-			3831a7981925ca682835e1e9a38bd8eaab76a6bf:0 \
-			256b4617ef81a540cddddf46c2267503a421bce9:0 \
-			6e81ce4fd5ec64a4cfd3e6da2d995a7dd1e0153a:0 \
-			726bfc788b03b33717dfae733f5615b8fa4809c6:0 \
-			fede61d482fb782c0eb4dd96e177c4dea554858e:0 \
-			35e3814a2e3898990de2dead02cb50fb69730635:0 \
-			fbfa709313a28345b06a523895c54f5179d5c1da:0 \
-			346912a3f873169c7eb226ffc4b7a4b42a248958:0 \
-			b3d894fed81e9d28dce06bc947cbc5fd67e75d04:0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
