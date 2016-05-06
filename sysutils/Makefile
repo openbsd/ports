@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.390 2016/05/01 17:36:47 jca Exp $
+# $OpenBSD: Makefile,v 1.391 2016/05/06 15:12:32 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -212,6 +212,7 @@
      SUBDIR += salt
      SUBDIR += salt-testing
      SUBDIR += sec
+     SUBDIR += serf
      SUBDIR += setquota
      SUBDIR += shelldap
      SUBDIR += shmux
