@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/02 08:29:20 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/06 06:45:43 kirby Exp $
 
 COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
-GH_TAGNAME =		v0.4.0
+GH_TAGNAME =		v0.6.1
 
 SHARED_LIBS +=		qtkeychain	0.0 # 0.4
 SHARED_LIBS +=		qt5keychain	0.0 # 0.4

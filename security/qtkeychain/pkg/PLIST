@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/02 08:29:20 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/05/06 06:45:43 kirby Exp $
 include/${LIBNAME_L}/
 include/${LIBNAME_L}/keychain.h
 include/${LIBNAME_L}/qkeychain_export.h
-lib/cmake/
 lib/cmake/${LIBNAME}/
 lib/cmake/${LIBNAME}/${LIBNAME}Config.cmake
 lib/cmake/${LIBNAME}/${LIBNAME}ConfigVersion.cmake
