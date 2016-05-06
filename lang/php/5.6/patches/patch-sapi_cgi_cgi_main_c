@@ -1,7 +1,7 @@
-$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.4 2016/02/01 23:37:23 sthen Exp $
---- sapi/cgi/cgi_main.c.orig.port	Wed Jan  6 15:14:47 2016
-+++ sapi/cgi/cgi_main.c	Mon Jan 25 20:18:17 2016
-@@ -1744,6 +1744,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.5 2016/05/06 19:59:32 sthen Exp $
+--- sapi/cgi/cgi_main.c.orig.port	Thu Apr 28 01:33:49 2016
++++ sapi/cgi/cgi_main.c	Fri Apr 29 14:02:27 2016
+@@ -1745,6 +1745,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;
  	int ini_entries_len = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.4 2016/02/01 23:37:23 sthen Exp $
  	/* end of temporary locals */
  
  #ifdef ZTS
-@@ -1804,7 +1805,12 @@ int main(int argc, char *argv[])
+@@ -1805,7 +1806,12 @@ int main(int argc, char *argv[])
  
  	sapi_startup(&cgi_sapi_module);
  	fastcgi = fcgi_is_fastcgi();

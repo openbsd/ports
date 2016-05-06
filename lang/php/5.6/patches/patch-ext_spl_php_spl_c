@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_spl_php_spl_c,v 1.1 2014/11/15 13:43:01 robert Exp $
---- ext/spl/php_spl.c.orig.port	Wed Sep 18 14:08:04 2013
-+++ ext/spl/php_spl.c	Fri Sep 20 15:23:16 2013
-@@ -784,7 +784,7 @@ PHP_FUNCTION(spl_object_hash)
+$OpenBSD: patch-ext_spl_php_spl_c,v 1.2 2016/05/06 19:59:32 sthen Exp $
+--- ext/spl/php_spl.c.orig.port	Thu Apr 28 01:33:49 2016
++++ ext/spl/php_spl.c	Fri Apr 29 14:02:27 2016
+@@ -788,7 +788,7 @@ PHP_FUNCTION(spl_object_hash)
  
  PHPAPI void php_spl_object_hash(zval *obj, char *result TSRMLS_DC) /* {{{*/
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-ext_spl_php_spl_c,v 1.1 2014/11/15 13:43:01 robert Exp $
  	char *hex;
  
  	if (!SPL_G(hash_mask_init)) {
-@@ -792,13 +792,13 @@ PHPAPI void php_spl_object_hash(zval *obj, char *resul
+@@ -796,13 +796,13 @@ PHPAPI void php_spl_object_hash(zval *obj, char *resul
  			php_mt_srand(GENERATE_SEED() TSRMLS_CC);
  		}
  
