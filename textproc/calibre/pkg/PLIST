@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/03/29 16:21:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/05/06 21:52:11 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -909,6 +909,8 @@ lib/calibre/calibre/ebooks/oeb/display/__init__.pyc
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.pyc
+lib/calibre/calibre/ebooks/oeb/display/test-cfi/run_rapydscript.py
+lib/calibre/calibre/ebooks/oeb/display/test-cfi/run_rapydscript.pyc
 lib/calibre/calibre/ebooks/oeb/display/webview.py
 lib/calibre/calibre/ebooks/oeb/display/webview.pyc
 lib/calibre/calibre/ebooks/oeb/iterator/
@@ -927,6 +929,8 @@ lib/calibre/calibre/ebooks/oeb/parse_utils.pyc
 lib/calibre/calibre/ebooks/oeb/polish/
 lib/calibre/calibre/ebooks/oeb/polish/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/__init__.pyc
+lib/calibre/calibre/ebooks/oeb/polish/cascade.py
+lib/calibre/calibre/ebooks/oeb/polish/cascade.pyc
 lib/calibre/calibre/ebooks/oeb/polish/check/
 lib/calibre/calibre/ebooks/oeb/polish/check/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/check/__init__.pyc
@@ -989,6 +993,8 @@ lib/calibre/calibre/ebooks/oeb/polish/tests/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/__init__.pyc
 lib/calibre/calibre/ebooks/oeb/polish/tests/base.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/base.pyc
+lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.pyc
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.pyc
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
@@ -1767,6 +1773,8 @@ lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.pyc
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.pyc
+lib/calibre/calibre/gui2/dialogs/test_email_ui.py
+lib/calibre/calibre/gui2/dialogs/test_email_ui.pyc
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dialogs/trim_image.pyc
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
@@ -2489,6 +2497,8 @@ lib/calibre/calibre/srv/auto_reload.py
 lib/calibre/calibre/srv/auto_reload.pyc
 lib/calibre/calibre/srv/bonjour.py
 lib/calibre/calibre/srv/bonjour.pyc
+lib/calibre/calibre/srv/books.py
+lib/calibre/calibre/srv/books.pyc
 lib/calibre/calibre/srv/code.py
 lib/calibre/calibre/srv/code.pyc
 lib/calibre/calibre/srv/content.py
@@ -2837,8 +2847,6 @@ lib/calibre/calibre/web/feeds/__init__.py
 lib/calibre/calibre/web/feeds/__init__.pyc
 lib/calibre/calibre/web/feeds/feedparser.py
 lib/calibre/calibre/web/feeds/feedparser.pyc
-lib/calibre/calibre/web/feeds/jsnews.py
-lib/calibre/calibre/web/feeds/jsnews.pyc
 lib/calibre/calibre/web/feeds/news.py
 lib/calibre/calibre/web/feeds/news.pyc
 lib/calibre/calibre/web/feeds/recipes/
@@ -2853,21 +2861,8 @@ lib/calibre/calibre/web/feeds/templates.pyc
 lib/calibre/calibre/web/fetch/
 lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/__init__.pyc
-lib/calibre/calibre/web/fetch/javascript.py
-lib/calibre/calibre/web/fetch/javascript.pyc
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/simple.pyc
-lib/calibre/calibre/web/jsbrowser/
-lib/calibre/calibre/web/jsbrowser/__init__.py
-lib/calibre/calibre/web/jsbrowser/__init__.pyc
-lib/calibre/calibre/web/jsbrowser/browser.py
-lib/calibre/calibre/web/jsbrowser/browser.pyc
-lib/calibre/calibre/web/jsbrowser/forms.py
-lib/calibre/calibre/web/jsbrowser/forms.pyc
-lib/calibre/calibre/web/jsbrowser/login.py
-lib/calibre/calibre/web/jsbrowser/login.pyc
-lib/calibre/calibre/web/jsbrowser/test.py
-lib/calibre/calibre/web/jsbrowser/test.pyc
 lib/calibre/chardet/
 lib/calibre/chardet/__init__.py
 lib/calibre/chardet/__init__.pyc
@@ -3213,17 +3208,9 @@ share/calibre/content-server/
 share/calibre/content-server/autoreload.js
 share/calibre/content-server/calibre.png
 share/calibre/content-server/empty.html
-share/calibre/content-server/font-awesome/
-share/calibre/content-server/font-awesome/FontAwesome.otf
-share/calibre/content-server/font-awesome/fa.css
-share/calibre/content-server/font-awesome/fontawesome-webfont.eot
-share/calibre/content-server/font-awesome/fontawesome-webfont.svg
-share/calibre/content-server/font-awesome/fontawesome-webfont.ttf
-share/calibre/content-server/font-awesome/fontawesome-webfont.woff
-share/calibre/content-server/font-awesome/fontawesome-webfont.woff2
+share/calibre/content-server/index-generated.html
 share/calibre/content-server/index.html
 share/calibre/content-server/locales.zip
-share/calibre/content-server/main.js
 share/calibre/content-server/mobile.css
 share/calibre/content-server/reset.css
 share/calibre/content_server/
@@ -3569,15 +3556,20 @@ share/calibre/quick_start/ita.epub
 share/calibre/rapydscript/
 share/calibre/rapydscript/compiler.js.xz
 share/calibre/rapydscript/lib/
+share/calibre/rapydscript/lib/aes.pyj
 share/calibre/rapydscript/lib/elementmaker.pyj
+share/calibre/rapydscript/lib/encodings.pyj
 share/calibre/rapydscript/lib/gettext.pyj
 share/calibre/rapydscript/lib/math.pyj
 share/calibre/rapydscript/lib/operator.pyj
+share/calibre/rapydscript/lib/pythonize.pyj
 share/calibre/rapydscript/lib/random.pyj
 share/calibre/rapydscript/lib/re.pyj
+share/calibre/rapydscript/lib/traceback.pyj
 share/calibre/recipes/
 share/calibre/recipes/10minutos.recipe
 share/calibre/recipes/180.recipe
+share/calibre/recipes/1843.recipe
 share/calibre/recipes/20_minutos.recipe
 share/calibre/recipes/20minutes.recipe
 share/calibre/recipes/20minutos.png
@@ -3750,6 +3742,7 @@ share/calibre/recipes/bbcvietnamese.recipe
 share/calibre/recipes/benchmark_pl.png
 share/calibre/recipes/benchmark_pl.recipe
 share/calibre/recipes/beppe_grillo.recipe
+share/calibre/recipes/berlin_policy_journal.recipe
 share/calibre/recipes/berliner_zeitung.recipe
 share/calibre/recipes/berlingske_dk.png
 share/calibre/recipes/berlingske_dk.recipe
@@ -4315,7 +4308,6 @@ share/calibre/recipes/frontlineonnet.recipe
 share/calibre/recipes/fstream.png
 share/calibre/recipes/fstream.recipe
 share/calibre/recipes/ftd.png
-share/calibre/recipes/ftd.recipe
 share/calibre/recipes/fudzilla.png
 share/calibre/recipes/fudzilla.recipe
 share/calibre/recipes/furstenfeldbrucker_tagblatt.recipe
@@ -4635,6 +4627,7 @@ share/calibre/recipes/kellog_faculty.recipe
 share/calibre/recipes/kellog_insight.recipe
 share/calibre/recipes/kerrang.recipe
 share/calibre/recipes/kidney.recipe
+share/calibre/recipes/kitekinto.recipe
 share/calibre/recipes/kitsapun.png
 share/calibre/recipes/kitsapun.recipe
 share/calibre/recipes/kleinezeitung.recipe
@@ -4819,6 +4812,7 @@ share/calibre/recipes/mac_world_uk.recipe
 share/calibre/recipes/macity.recipe
 share/calibre/recipes/macleans.recipe
 share/calibre/recipes/maekyung.recipe
+share/calibre/recipes/magyar_nemzet.recipe
 share/calibre/recipes/maharashtra_times.recipe
 share/calibre/recipes/mail_and_guardian.recipe
 share/calibre/recipes/mainichi.png
@@ -4910,6 +4904,7 @@ share/calibre/recipes/msnbc.png
 share/calibre/recipes/msnbc.recipe
 share/calibre/recipes/msnsankei.png
 share/calibre/recipes/msnsankei.recipe
+share/calibre/recipes/mult_kor.recipe
 share/calibre/recipes/mumbai_mirror.recipe
 share/calibre/recipes/munchner_merkur_nord.recipe
 share/calibre/recipes/munchner_merkur_stadt.recipe

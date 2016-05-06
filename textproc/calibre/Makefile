@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2016/03/29 16:21:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/05/06 21:52:11 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			2.53.0
+V =			2.56.0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
@@ -17,16 +17,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += EGL GL MagickCore-6.Q16 MagickWand-6.Q16 Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Widgets X11 Xext Xrender chm crypto fontconfig
-WANTLIB += freetype glib-2.0 gthread-2.0 icudata icui18n icuio
-WANTLIB += icuuc m mtp podofo pthread usb-1.0 z
+WANTLIB += freetype glib-2.0 gthread-2.0 iconv icudata icui18n icuio
+WANTLIB += icuuc intl m mtp podofo pthread usb-1.0 z
 
 MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v$V/
 
-MODULES =		devel/gettext \
-			lang/python \
+MODULES =		lang/python \
 			x11/qt5
 
 LIB_DEPENDS=		devel/chmlib \
+			devel/gettext \
 			devel/libmtp \
 			devel/libusb1 \
 			graphics/ImageMagick \
