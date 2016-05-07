@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.80 2016/05/07 20:43:10 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -50,8 +50,8 @@ USE_GROFF =	Yes
 NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.3-bin.tar.gz
-SUPDISTFILES+=	openjdk7-bootjdk-i386-20140430.tar.gz:2 \
-		openjdk7-bootjdk-amd64-20140430.tar.gz:2 \
+SUPDISTFILES+=	openjdk7-bootjdk-i386-20160412.tar.gz:2 \
+		openjdk7-bootjdk-amd64-20160412.tar.gz:2 \
 		${APACHE_ANT}:3
 
 .if ${FLAVOR:Mnative_bootstrap}
@@ -63,7 +63,7 @@ BUILD_DEPENDS+=	jdk->=1.7.0.00v0,<1.8v0:devel/jdk/1.7 \
 		devel/apache-ant>=1.8.2
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
-BOOT_JDK=	openjdk7-bootjdk-${ARCH}-20140430.tar.gz
+BOOT_JDK=	openjdk7-bootjdk-${ARCH}-20160412.tar.gz
 .include <bsd.port.arch.mk>
 .if (${ARCH}==amd64) || (${ARCH}==i386)
 DISTFILES+=	${BOOT_JDK}:2
