@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/07 22:16:58 naddy Exp $
 
 COMMENT=	convert media files to Vorbis, Theora and Dirac
 
@@ -21,7 +21,8 @@ MODULES=	lang/python
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	multimedia/gstreamer-0.10/py-gstreamer
+BUILD_DEPENDS=	devel/gettext-tools \
+		multimedia/gstreamer-0.10/py-gstreamer
 RUN_DEPENDS=	multimedia/gstreamer-0.10/py-gstreamer \
 		devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-good \
