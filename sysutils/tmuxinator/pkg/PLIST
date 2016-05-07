@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/01 17:24:46 jasper Exp $
-${GEM_BIN}/tmuxinator${GEM_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2016/05/07 08:58:36 jasper Exp $
+${GEM_BIN}/tmuxinator
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/bin/
