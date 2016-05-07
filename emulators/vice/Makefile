@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/12 10:01:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 21:54:40 sthen Exp $
 
 BROKEN-i386 =		platform_x86_runtime_cpu.c:203: error: 'asm' operand has impossible constraints
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-2.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://viceteam.org/
+HOMEPAGE =		http://vice-emu.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
