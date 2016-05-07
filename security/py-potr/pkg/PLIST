@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/07 14:53:13 danj Exp $
+lib/python${MODPY_VERSION}/site-packages/potr/
+lib/python${MODPY_VERSION}/site-packages/potr/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}crypt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}proto.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/${MODPY_PYCACHE}pycrypto.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/common.py
+lib/python${MODPY_VERSION}/site-packages/potr/compatcrypto/pycrypto.py
+lib/python${MODPY_VERSION}/site-packages/potr/context.py
+lib/python${MODPY_VERSION}/site-packages/potr/crypt.py
+lib/python${MODPY_VERSION}/site-packages/potr/proto.py
+lib/python${MODPY_VERSION}/site-packages/potr/utils.py
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
