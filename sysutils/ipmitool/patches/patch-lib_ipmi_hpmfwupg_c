@@ -1,28 +1,7 @@
-$OpenBSD: patch-lib_ipmi_hpmfwupg_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
---- lib/ipmi_hpmfwupg.c.orig	Fri Feb 19 21:01:38 2016
-+++ lib/ipmi_hpmfwupg.c	Thu Feb 25 21:11:45 2016
-@@ -38,6 +38,8 @@
- #include <ipmitool/ipmi_strings.h>
- #include <ipmitool/log.h>
- #include "../src/plugins/lan/md5.h"
-+#include <ctype.h>
-+#include <unistd.h>
- #include <stdio.h>
- #include <time.h>
- #include <sys/param.h>
-@@ -98,8 +100,10 @@ int HpmfwupgWaitLongDurationCmd(struct ipmi_intf *intf
- 		struct HpmfwupgUpgradeCtx *pFwupgCtx);
- struct ipmi_rs *HpmfwupgSendCmd(struct ipmi_intf *intf,
- 		struct ipmi_rq req, struct HpmfwupgUpgradeCtx* pFwupgCtx);
-+int HpmfwupgPreUpgradeCheck(struct ipmi_intf *intf,
-+		struct HpmfwupgUpgradeCtx *pFwupgCtx,
-+		int componentMask, int option);
- 
--
- int HpmFwupgActionUploadFirmware(struct HpmfwupgComponentBitMask components,
- 		struct HpmfwupgUpgradeCtx* pFwupgCtx,
- 		unsigned char **pImagePtr,
-@@ -180,8 +184,8 @@ HpmDisplayUpgrade(int skip, unsigned int totalSent,
+$OpenBSD: patch-lib_ipmi_hpmfwupg_c,v 1.2 2016/05/07 14:18:12 sthen Exp $
+--- lib/ipmi_hpmfwupg.c.orig	Fri May  6 15:48:54 2016
++++ lib/ipmi_hpmfwupg.c	Sat May  7 14:34:35 2016
+@@ -194,8 +194,8 @@ HpmDisplayUpgrade(int skip, unsigned int totalSent,
  	if (totalSent == displayFWLength) {
  		/* Display the time taken to complete the upgrade */
  		printf(
@@ -33,7 +12,7 @@ $OpenBSD: patch-lib_ipmi_hpmfwupg_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
  		old_percent = -1;
  	}
  }
-@@ -1282,8 +1286,8 @@ HpmFwupgActionUploadFirmware(struct HpmfwupgComponentB
+@@ -1285,8 +1285,8 @@ HpmFwupgActionUploadFirmware(struct HpmfwupgComponentB
  								imageOffset,blockLength);
  					}
  					if (displayFWLength == totalSent) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ipmievd_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
---- src/ipmievd.c.orig	Thu Feb 25 21:07:13 2016
-+++ src/ipmievd.c	Thu Feb 25 21:07:28 2016
-@@ -42,6 +42,7 @@
+$OpenBSD: patch-src_ipmievd_c,v 1.2 2016/05/07 14:18:12 sthen Exp $
+--- src/ipmievd.c.orig	Fri May  6 15:48:54 2016
++++ src/ipmievd.c	Sat May  7 14:35:56 2016
+@@ -43,6 +43,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <signal.h>

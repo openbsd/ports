@@ -1,16 +1,7 @@
-$OpenBSD: patch-lib_ipmi_delloem_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
---- lib/ipmi_delloem.c.orig	Thu Feb 25 21:14:37 2016
-+++ lib/ipmi_delloem.c	Thu Feb 25 21:16:46 2016
-@@ -252,6 +252,8 @@ static int ipmi_setled_state(struct ipmi_intf *intf, i
- static int ipmi_getdrivemap(struct ipmi_intf *intf, int b, int d, int f,
- 		int *bayId, int *slotId);
- 
-+int get_nic_selection_mode_12g(struct ipmi_intf *, int, char **, char *);
-+
- /* Function Name:       ipmi_delloem_main
-  *
-  * Description:         This function processes the delloem command
-@@ -3385,7 +3387,7 @@ ipmi_get_minpower_consmpt_history(struct ipmi_intf * i
+$OpenBSD: patch-lib_ipmi_delloem_c,v 1.2 2016/05/07 14:18:12 sthen Exp $
+--- lib/ipmi_delloem.c.orig	Fri May  6 15:48:54 2016
++++ lib/ipmi_delloem.c	Sat May  7 14:33:25 2016
+@@ -3382,7 +3382,7 @@ ipmi_get_minpower_consmpt_history(struct ipmi_intf * i
  		rdata = (void *)pstMinpower;
  		printf("Peak power consmhistory  Data               : "
  				"%x %x %x %x %x %x %x %x %x %x\n   "
@@ -19,7 +10,7 @@ $OpenBSD: patch-lib_ipmi_delloem_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
  				rdata[0], rdata[1], rdata[2], rdata[3],
  				rdata[4], rdata[5], rdata[6], rdata[7],
  				rdata[8], rdata[9], rdata[10], rdata[11],
-@@ -3579,7 +3581,7 @@ ipmi_get_power_cap(struct ipmi_intf * intf, IPMI_POWER
+@@ -3576,7 +3576,7 @@ ipmi_get_power_cap(struct ipmi_intf * intf, IPMI_POWER
  	}
  	if (verbose > 1) {
  		rdata = (void*)ipmipowercap;

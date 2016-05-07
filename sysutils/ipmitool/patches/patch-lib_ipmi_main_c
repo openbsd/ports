@@ -1,15 +1,7 @@
-$OpenBSD: patch-lib_ipmi_main_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
---- lib/ipmi_main.c.orig	Fri Feb 19 21:01:38 2016
-+++ lib/ipmi_main.c	Thu Feb 25 21:36:59 2016
-@@ -30,6 +30,7 @@
-  * EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-  */
- #define _XOPEN_SOURCE 700
-+#define _BSD_SOURCE
- 
- #include <stdlib.h>
- #include <stdio.h>
-@@ -39,6 +40,7 @@
+$OpenBSD: patch-lib_ipmi_main_c,v 1.2 2016/05/07 14:18:12 sthen Exp $
+--- lib/ipmi_main.c.orig	Fri May  6 15:48:54 2016
++++ lib/ipmi_main.c	Sat May  7 14:30:40 2016
+@@ -43,6 +43,7 @@
  #include <strings.h>
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -17,12 +9,3 @@ $OpenBSD: patch-lib_ipmi_main_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
-@@ -69,6 +71,8 @@
- #include <ipmitool/ipmi_oem.h>
- #include <ipmitool/ipmi_ekanalyzer.h>
- #include <ipmitool/ipmi_picmg.h>
-+#include <ipmitool/ipmi_kontronoem.h>
-+#include <ipmitool/ipmi_vita.h>
- 
- #ifdef HAVE_CONFIG_H
- # include <config.h>
