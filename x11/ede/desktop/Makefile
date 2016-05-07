@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
-REVISION =		4
+REVISION =		5
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama Xpm c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images

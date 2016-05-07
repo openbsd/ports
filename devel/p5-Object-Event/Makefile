@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		event callback interface
 
 DISTNAME =		Object-Event-1.23
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

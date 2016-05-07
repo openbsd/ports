@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		widgets library for graphics engines
 
 V =			0.8.4
 DISTNAME =		cegui-${V}
-REVISION =		1
+REVISION =		2
 
 PATCHORIG =		.orig.port
 
@@ -20,7 +20,7 @@ CATEGORIES =		x11
 
 HOMEPAGE =		http://cegui.org.uk/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

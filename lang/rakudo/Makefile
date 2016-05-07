@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
 V =			2015.12
 DISTNAME =		rakudo-$V
-REVISION =		1
+REVISION =		2
 
 NQP_VERSION =		2015.12
 
@@ -12,7 +12,7 @@ CATEGORIES =		lang perl6
 
 HOMEPAGE =		http://rakudo.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
 PERMIT_PACKAGE_CDROM =	Yes

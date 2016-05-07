@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/21 18:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		shell client for ogmrip
 
 DISTNAME =		shrip-0.6.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		multimedia
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

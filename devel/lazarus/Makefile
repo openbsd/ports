@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/08 22:05:54 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Delphi compatible IDE
 
 V =			1.6.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
@@ -15,7 +15,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://lazarus.freepascal.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+ / LGPL / MPL
 PERMIT_PACKAGE_CDROM =	Yes

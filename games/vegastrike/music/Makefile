@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =	music files for vegastrike
 
 DISTNAME =	vegastrike-music-${V}
+REVISION =	0
 
 RUN_DEPENDS =	games/vegastrike/data>=${V}
 

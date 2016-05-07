@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		9
+REVISION=		10
 
 CATEGORIES =		multimedia kde
 
 HOMEPAGE =		http://kguitar.sourceforge.net/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+; for MusicXML copyright see licenseMusicXML.html
 PERMIT_PACKAGE_CDROM =	Yes

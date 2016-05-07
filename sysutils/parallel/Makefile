@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/06 19:22:11 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		execute jobs in parallel
 
 DISTNAME =		parallel-20160422
+REVISION =		0
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.gnu.org/software/parallel/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/24 13:16:32 jsg Exp $
+# $OpenBSD: Makefile,v 1.29 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.3
-REVISION = 4
+REVISION = 5
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -64,7 +64,7 @@ ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 .include <bsd.port.arch.mk>
 

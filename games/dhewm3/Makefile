@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:56 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open-source version of Doom 3
 
+REVISION =		0
+
 CATEGORIES =		games
 
 HOMEPAGE =		https://github.com/dhewm/dhewm3
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

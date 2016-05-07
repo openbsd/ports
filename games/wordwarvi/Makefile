@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://wordwarvi.sourceforge.net/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2 / CC licenses for soundfiles
 PERMIT_PACKAGE_CDROM =	Yes

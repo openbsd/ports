@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/05/07 12:40:58 pascal Exp $
 
 BROKEN-arm =		missing atomic ops
 BROKEN-hppa =		missing atomic ops
@@ -11,8 +11,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		2
-REVISION-samples =	2
+REVISION-main =		3
+REVISION-samples =	3
 
 MULTI_PACKAGES =	-main -samples
 
@@ -28,7 +28,7 @@ CATEGORIES =		x11
 
 HOMEPAGE =		http://www.ogre3d.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

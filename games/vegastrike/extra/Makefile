@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/18 15:14:05 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =	extra data files for vegastrike
 
 DISTNAME =	vegastrike-extra-${V}
+REVISION =	0
 
 RUN_DEPENDS =	games/vegastrike/data>=${V}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -12,12 +12,14 @@ REV =			r5799
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME-main =		speeddreams-$V
 PKGNAME-data =		speeddreams-data-$V
+REVISION-data =		0
+REVISION-main =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.speed-dreams.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

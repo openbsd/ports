@@ -3,13 +3,13 @@
 COMMENT =		new brainfuck compiler
 
 DISTNAME =		nbfc-0.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 
 HOMEPAGE =		http://koeln.ccc.de/ablage/brainfuck/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		3
+REVISION =		4
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/27 20:35:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
 V =			2015.12
 DISTNAME =		nqp-$V
+REVISION =		0
 
 MOAR_VERSION =		2015.12
 
@@ -13,7 +14,7 @@ CATEGORIES =		lang
 
 HOMEPAGE =		https://github.com/perl6/NQP
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
 PERMIT_PACKAGE_CDROM =	Yes

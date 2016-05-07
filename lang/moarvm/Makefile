@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/27 20:35:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/05/07 12:40:57 pascal Exp $
 
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
@@ -9,6 +9,7 @@ COMMENT =		virtual machine for nqp/rakudo
 V =			2015.12
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
+REVISION =		0
 
 SHARED_LIBS =		moar	5.0
 
@@ -16,7 +17,7 @@ CATEGORIES =		lang
 
 HOMEPAGE =		http://moarvm.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic2
 PERMIT_PACKAGE_CDROM =	Yes

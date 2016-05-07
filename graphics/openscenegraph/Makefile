@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/07 12:40:57 pascal Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -7,6 +7,7 @@ COMMENT =		3D graphics toolkit
 V =			3.4.0
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
+REVISION =		0
 
 SUBST_VARS +=		V
 
@@ -34,7 +35,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.openscenegraph.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE_CDROM =	Yes

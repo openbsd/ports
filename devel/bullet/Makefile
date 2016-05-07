@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/31 19:15:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		physics library
 
 V =			2.83.7
 DISTNAME =		bullet-${V}
+REVISION =		0
 
 SHARED_LIBS +=  BulletCollision           2.0 # 2.79
 SHARED_LIBS +=  BulletDynamics            2.0 # 2.79
@@ -21,7 +22,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://bulletphysics.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes

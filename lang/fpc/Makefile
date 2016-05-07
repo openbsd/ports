@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,14 +7,14 @@ COMMENT =		open source compiler for Pascal/Object Pascal
 V =			3.0.0
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		0
+REVISION =		1
 BOOT_GEN =		0
 
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.freepascal.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # compiler: GPLv2+, packages/rtl: modified LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/13 11:36:54 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
 V =			20160108
 DISTNAME =		osh-$V
+REVISION =		0
 
 SUBST_VARS +=		V
 
@@ -11,7 +12,7 @@ CATEGORIES =		shells
 
 HOMEPAGE =		http://v6shell.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

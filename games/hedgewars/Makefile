@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		1
+REVISION =		2
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -18,7 +18,7 @@ CATEGORIES =		games
 
 HOMEPAGE =		http://www.hedgewars.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

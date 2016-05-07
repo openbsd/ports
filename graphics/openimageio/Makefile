@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		library for reading and writing images
 
@@ -7,6 +7,7 @@ GH_PROJECT = 		oiio
 V =			1.5.20
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO		3.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	0.0 # 1.5
@@ -15,7 +16,7 @@ CATEGORIES =		graphics devel
 
 HOMEPAGE =		https://sites.google.com/site/openimageio/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

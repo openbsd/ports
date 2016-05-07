@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =	programming language designed for orang-utans
 
@@ -6,8 +6,9 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Language-Ook-1.0.2
 CATEGORIES =	lang
+REVISION =	0
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 HOMEPAGE =	http://www.dangermouse.net/esoteric/ook.html
 

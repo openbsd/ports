@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/11 20:55:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:58 pascal Exp $
 
 BROKEN-mips64 =		libast is not built
 
@@ -7,13 +7,13 @@ COMMENT =		AT&T Korn Shell
 V =			2012-08-01
 DISTNAME =		ast-ksh.${V}
 PKGNAME =		ksh93-${V:S/-//g}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		shells
 
 HOMEPAGE =		http://www.kornshell.com/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # EPL
 PERMIT_PACKAGE_CDROM =	commercial distribution defend and indemnify clauses

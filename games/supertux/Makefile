@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/23 13:30:10 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
 V =			0.4.0
 DISTNAME =		supertux-$V
+REVISION =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://supertux.lethargik.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

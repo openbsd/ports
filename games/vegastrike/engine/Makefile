@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -6,6 +6,7 @@ COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
+REVISION =		0
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0

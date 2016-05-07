@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/04 19:25:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.41 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.11
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
-MAINTAINER=	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2 and GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

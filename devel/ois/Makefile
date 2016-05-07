@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		object-oriented input system
 
 V =			1.3
 DISTNAME =		ois-v${V:S/./-/g}
 PKGNAME =		ois-${V}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		OIS	0.0
 
@@ -13,7 +13,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://www.wreckedgames.com
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib/libpng
 PERMIT_PACKAGE_CDROM =	Yes

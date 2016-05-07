@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2015/03/17 17:20:55 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -8,7 +8,7 @@ CATEGORIES =		games
 
 HOMEPAGE =		http://www.flightgear.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

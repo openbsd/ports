@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/16 15:27:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -6,12 +6,13 @@ COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.39.0
 DISTNAME =		openmw-$V
+REVISION =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		https://openmw.org/en/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3 / custom BSD-like font license / DejaVu license
 PERMIT_PACKAGE_CDROM =	Yes

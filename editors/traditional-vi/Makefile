@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		traditional vi and ex
 
 DISTNAME =		ex-050325
 PKGNAME =		traditional-vi-20050325
+REVISION =		0
 
 CATEGORIES =		editors
 
 HOMEPAGE =		http://ex-vi.sourceforge.net/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD-style, libuxre is LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

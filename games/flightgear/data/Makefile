@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/13 10:31:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		data files for flightgear
 
 DISTNAME =		FlightGear-data-${V}
 PKGNAME =		flightgear-data-${V}
+REVISION =		0
 
 MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
 		http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \

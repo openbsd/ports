@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		event based IRC client API
 
 DISTNAME =		AnyEvent-IRC-0.97
+REVISION =		0
 
 CATEGORIES =		net devel
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

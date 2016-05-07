@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/11 20:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.1.1
 CATEGORIES=	security
+REVISION=	0
 
 SHARED_LIBS +=  otr                  4.1      # 6.0
 
@@ -11,7 +12,7 @@ HOMEPAGE=	http://otr.cypherpunks.ca/
 
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

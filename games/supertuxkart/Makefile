@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/29 07:46:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -8,12 +8,13 @@ V =			0.9.1
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
+REVISION =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://supertuxkart.sourceforge.net
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

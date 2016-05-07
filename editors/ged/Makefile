@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		GNU version of standard text editor
 
 V =			1.13
 DISTNAME =		ed-${V}
 PKGNAME =		ged-${V}
+REVISION =		0
 
 CATEGORIES =		editors
 
 HOMEPAGE =		https://www.gnu.org/software/ed/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

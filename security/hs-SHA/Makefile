@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		SHA message digests
 
 DISTNAME =		SHA-1.6.4.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

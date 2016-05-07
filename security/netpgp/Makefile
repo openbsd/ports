@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		BSD-licensed PGP implementation
 
 DISTNAME =		netpgp-20140220
+REVISION =		0
 
 SHARED_LIBS +=		mj                        1.0 # 0.0
 SHARED_LIBS +=		netpgp                    1.0 # 0.0
@@ -11,7 +12,7 @@ CATEGORIES =		security
 
 HOMEPAGE =		http://www.netpgp.com
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

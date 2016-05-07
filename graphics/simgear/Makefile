@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 12:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
 DISTNAME =		simgear-3.4.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  SimGearCore               2.0 # 2.10
 SHARED_LIBS +=  SimGearScene              2.0 # 2.10
 
 CATEGORIES =		graphics
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 HOMEPAGE =		http://simgear.sourceforge.net/
 

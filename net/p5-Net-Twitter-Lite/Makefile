@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		interface to Twitter API
 
 DISTNAME =		Net-Twitter-Lite-0.12006
+REVISION =		0
 
 CATEGORIES =		net devel
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

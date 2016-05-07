@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
@@ -7,8 +7,8 @@ V =			1.0.1
 DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
-REVISION-dvdcpy =	0
-REVISION-main =		2
+REVISION-dvdcpy =	1
+REVISION-main =		3
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -24,7 +24,7 @@ CATEGORIES =		multimedia
 
 HOMEPAGE =		http://ogmrip.sourceforge.net/en/index.html
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes

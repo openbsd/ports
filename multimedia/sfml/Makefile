@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -6,6 +6,7 @@ V =			2.1
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
 EXTRACT_SUFX =		.zip
+REVISION =		0
 
 SHARED_LIBS +=  sfml-audio                0.0 # 2.1
 SHARED_LIBS +=  sfml-graphics             0.0 # 2.1
@@ -17,7 +18,7 @@ CATEGORIES =		multimedia
 
 HOMEPAGE =		http://www.sfml-dev.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib/libpng
 PERMIT_PACKAGE_CDROM =	Yes

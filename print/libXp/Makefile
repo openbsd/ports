@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		X11 printing system
 
 DISTNAME =		libXp-1.0.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  Xp                        11.0
 
@@ -11,7 +11,7 @@ CATEGORIES =		print devel x11
 
 HOMEPAGE =		http://xprint.mozdev.org
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

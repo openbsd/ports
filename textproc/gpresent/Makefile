@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/31 17:28:35 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		make presentations with groff and PDF
 DISTNAME =		gpresent-2.3
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.science.uva.nl/~bobd/useful/gpresent/
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

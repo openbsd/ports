@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/21 17:25:49 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/07 12:40:57 pascal Exp $
 
 COMMENT =		color management library
 
 V =			20140911
 DISTNAME =		OpenColorIO-$V
 PKGNAME =		opencolorio-$V
+REVISION =		0
 
 SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
 
@@ -12,7 +13,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://opencolorio.org/index.html
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # several BSD-like
 PERMIT_PACKAGE_CDROM =	Yes

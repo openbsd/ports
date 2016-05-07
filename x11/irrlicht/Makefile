@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/10 18:38:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.2
+REVISION =		0
 
 SO_VERSION =		2.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
@@ -10,7 +11,7 @@ CATEGORIES =		x11 games
 
 HOMEPAGE =		http://irrlicht.sourceforge.net/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD-style (zlib/libpng)
 PERMIT_PACKAGE_CDROM =	Yes

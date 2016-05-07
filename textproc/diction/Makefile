@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =	sentence grammar and readability analyzer
 
 CATEGORIES =	textproc
 
 DISTNAME =	diction-1.11
+REVISION =	0
 
 HOMEPAGE =	https://www.gnu.org/software/diction/
 
 MASTER_SITES =	${MASTER_SITE_GNU:=diction/}
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 WANTLIB +=	c m
 

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/15 16:34:24 stsp Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
 
 COMMENT =		simple, command-line multi messenger
 
 DISTNAME =		climm-0.7.1
-REVISION = 		0
+REVISION = 		1
 
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.climm.org/
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

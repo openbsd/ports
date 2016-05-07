@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.72 2016/03/30 13:30:04 pascal Exp $
+# $OpenBSD: Makefile,v 1.73 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.77
+REVISION =	0
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.blender.org/
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

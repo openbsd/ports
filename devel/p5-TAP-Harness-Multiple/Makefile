@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =	report TAP output by test file description
 
@@ -6,8 +6,9 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	TAP-Harness-Multiple-0.07
 CATEGORIES =	devel
+REVISION =	0
 
-MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
 
 COMMENT =		text adventure game
 
 PKGNAME =		dungeon-2.7s
 DISTNAME =		dungn27s
 EXTRACT_SUFX =		.zip
+REVISION =		0
 
 CATEGORIES =		games
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Commercial use prohibited.
 PERMIT_PACKAGE_CDROM =	no commercial use

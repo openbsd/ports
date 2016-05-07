@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/25 14:17:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:57 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		1
+REVISION =		2
 
 SUBST_VARS +=		V
 
@@ -15,7 +15,7 @@ CATEGORIES =		games
 
 HOMEPAGE =		http://sumwars.org/wiki/Main_Page
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+ / CC-by-sa 3.0 for data
 PERMIT_PACKAGE_CDROM =	Yes
