@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/18 15:31:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/07 14:02:53 sthen Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 0.4.1
-DISTNAME=	chirp-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION= 20160507
+DISTNAME=	chirp-daily-${MODPY_EGG_VERSION}
+PKGNAME=	chirp-${MODPY_EGG_VERSION}
 
 CATEGORIES=	comms hamradio
 
@@ -12,7 +13,7 @@ HOMEPAGE=	http://chirp.danplanet.com/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://chirp.danplanet.com/download/${MODPY_EGG_VERSION}/
+MASTER_SITES=	http://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 COMMON_DEPS=	devel/py-serial \
@@ -26,6 +27,6 @@ NO_TEST=	Yes
 
 post-extract:
 	sed -i 's,/usr/share,${PREFIX}/share,' \
-	    ${WRKSRC}/chirpui/mainapp.py
+	    ${WRKSRC}/chirp/ui/mainapp.py
 
 .include <bsd.port.mk>
