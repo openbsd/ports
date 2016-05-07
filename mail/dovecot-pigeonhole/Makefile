@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/04/27 08:55:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/05/07 17:14:13 sthen Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -8,6 +8,7 @@ V_DOVECOT=	2.2
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
 PKGNAME=	dovecot-pigeonhole-${V_SIEVE}
 EPOCH=		0
+REVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_DOVECOT}/
 
@@ -35,5 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-install:
 	@find ${PREFIX}/lib/dovecot -name '*.a' -print | xargs rm
 	@find ${PREFIX}/lib/dovecot -name '*.la' -print | xargs rm
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dovecot/
+	@mv ${PREFIX}/share/doc/dovecot/example-config/ \
+		${PREFIX}/share/examples/dovecot/
 
 .include <bsd.port.mk>

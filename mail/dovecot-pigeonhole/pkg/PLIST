@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/04/27 08:55:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/05/07 17:14:13 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -88,14 +88,6 @@ lib/dovecot/sieve/lib90_sieve_imapsieve_plugin.so
 @man man/man1/sieved.1
 @man man/man7/pigeonhole.7
 share/aclocal/dovecot-pigeonhole.m4
-share/doc/dovecot/example-config/
-share/doc/dovecot/example-config/conf.d/
-share/doc/dovecot/example-config/conf.d/20-managesieve.conf
-@sample ${SYSCONFDIR}/dovecot/conf.d/20-managesieve.conf
-share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
-@sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve-extprograms.conf
-share/doc/dovecot/example-config/conf.d/90-sieve.conf
-@sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
 share/doc/dovecot/sieve/
 share/doc/dovecot/sieve/extensions/
 share/doc/dovecot/sieve/extensions/duplicate.txt
@@ -109,3 +101,9 @@ share/doc/dovecot/sieve/locations/file.txt
 share/doc/dovecot/sieve/locations/ldap.txt
 share/doc/dovecot/sieve/plugins/
 share/doc/dovecot/sieve/plugins/sieve_extprograms.txt
+share/examples/dovecot/example-config/conf.d/20-managesieve.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/20-managesieve.conf
+share/examples/dovecot/example-config/conf.d/90-sieve-extprograms.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve-extprograms.conf
+share/examples/dovecot/example-config/conf.d/90-sieve.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
