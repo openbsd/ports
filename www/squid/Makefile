@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.182 2016/05/06 19:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.183 2016/05/07 14:06:41 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.17
-REVISION-main=	0
+V=		3.5.18
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -28,10 +27,8 @@ cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed iconv idn intl p11-kit tasn1 z
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
 		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
 
-MASTER_SITES0=	http://www.squid-cache.org/Versions/v3/3.5/changesets/
-PATCHFILES=	squid-3.5-14039.patch:0 \
-		squid-3.5-14038.patch:0 \
-		SQUID-2016_9.patch:0
+#MASTER_SITES0=	http://www.squid-cache.org/Versions/v3/3.5/changesets/
+#PATCHFILES=	...
 
 MODULES+=	gcc4
 LIB_DEPENDS+=	security/gnutls
