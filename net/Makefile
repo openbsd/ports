@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.968 2016/04/29 21:01:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.969 2016/05/07 15:04:45 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -486,6 +486,7 @@
      SUBDIR += plushs
      SUBDIR += pmacct
      SUBDIR += poco
+     SUBDIR += poezio
      SUBDIR += poink
      SUBDIR += pop3gwd
      SUBDIR += poptop
@@ -509,6 +510,8 @@
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-adns
+     SUBDIR += py-aiodns
+     SUBDIR += py-aiodns,python3
      SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.sagan
      SUBDIR += py-ripe.atlas.tools
@@ -517,6 +520,8 @@
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore
      SUBDIR += py-botocore,python3
+     SUBDIR += py-cares
+     SUBDIR += py-cares,python3
      SUBDIR += py-curl
      SUBDIR += py-curl,python3
      SUBDIR += py-czmq
@@ -562,6 +567,7 @@
      SUBDIR += py-zmq
      SUBDIR += py-zmq,python3
      SUBDIR += py-zsi
+     SUBDIR += py3-slixmpp
      SUBDIR += qsynergy
      SUBDIR += quagga
      SUBDIR += queryperf
