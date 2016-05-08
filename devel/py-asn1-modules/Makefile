@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/05 10:17:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/08 11:50:18 ajacoutot Exp $
 
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
 MODPY_EGG_VERSION =	0.0.8
-REVISION =		0
+REVISION =		1
 DISTNAME =		pyasn1-modules-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -23,7 +23,7 @@ FLAVOR?=
 
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		devel/py-asn1
+RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 MODPY_ADJ_FILES =	tools/*.py
