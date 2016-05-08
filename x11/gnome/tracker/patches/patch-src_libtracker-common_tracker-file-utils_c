@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_libtracker-common_tracker-file-utils_c,v 1.6 2016/05/08 13:45:55 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=766137
+
+--- src/libtracker-common/tracker-file-utils.c.orig	Sun May  8 15:16:58 2016
++++ src/libtracker-common/tracker-file-utils.c	Sun May  8 15:24:06 2016
+@@ -242,16 +242,20 @@ tracker_file_get_mime_type (GFile *file)
+ 
+ #ifdef __USE_LARGEFILE64
+ #define __statvfs statfs64
++#define __bsize f_bsize
+ #else
+ #define __statvfs statfs
++#define __bsize f_bsize
+ #endif
+ 
+ #else /* __linux__ */
+ 
+ #if HAVE_STATVFS64
+ #define __statvfs statvfs64
++#define __bsize f_frsize
+ #else
+ #define __statvfs statvfs
++#define __bsize f_frsize
+ #endif
+ 
+ #endif /* __linux__ */
+@@ -294,7 +298,7 @@ tracker_file_system_get_remaining_space (const gchar *
+ 
+ 	if (statvfs_helper (path, &st)) {
+ 		available = (geteuid () == 0) ? st.f_bfree : st.f_bavail;
+-		return st.f_bsize * available;
++		return st.__bsize * available;
+ 	} else {
+ 		return 0;
+ 	}
