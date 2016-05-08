@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/19 11:14:54 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2016/05/08 09:56:01 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -14,7 +14,7 @@ COMMENT =		fast implementation of the Python language
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
 V =			5.0.1
-BOOTSTRAP_V =		${V}
+BOOTSTRAP_V =		${V}-1
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
@@ -62,8 +62,8 @@ RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
 post-extract:
-	@if [ `ulimit -d` -lt $$((4*1024*1024)) ]; then \
-	    echo datasize limit is too low - amd64 build takes approx 4GB; \
+	@if [ `ulimit -d` -lt $$((5*1024*1024)) ]; then \
+	    echo datasize limit is too low - amd64 build takes approx 5GB; \
 	    exit 1; fi
 .if !${FLAVOR:Mno_bootstrap}
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
