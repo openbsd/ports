@@ -1,6 +1,7 @@
-$OpenBSD: patch-cipher_crc-intel-pclmul_c,v 1.2 2016/05/08 23:13:20 jca Exp $
+$OpenBSD: patch-cipher_crc-intel-pclmul_c,v 1.3 2016/05/08 23:21:29 jca Exp $
 
 1. disable plcmul (actually SSE4.1) for CRC, asm instructions unknown to base gcc
+  "crc-intel-pclmul.c:369: Error: no such instruction: `pextrd $1,%xmm0,(%rdi)'"
 
 2.
 From: Werner Koch <wk@gnupg.org>
