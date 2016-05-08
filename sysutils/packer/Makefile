@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/28 10:09:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/08 12:29:17 czarkoff Exp $
 
 COMMENT=		tool for building machine images
 
@@ -19,10 +19,6 @@ WANTLIB += c pthread
 
 MODULES=		lang/go
 
-# Redefine ${MODGO_CMD} to include GO15VENDOREXPERIMENT
-MODGO_CMD=		unset GOPATH; \
-				export GO15VENDOREXPERIMENT=1; \
-				export GOPATH="${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}"; \
-				go
+MODGO_ENV=		GO15VENDOREXPERIMENT=1
 
 .include <bsd.port.mk>

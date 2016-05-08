@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/04/26 21:29:43 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2016/05/08 12:29:17 czarkoff Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -13,11 +13,7 @@ MODULES +=	     	lang/go
 
 ELASTIC_BEAT ?=	     	Yes
 
-# Redefine ${MODGO_CMD} to include GO15VENDOREXPERIMENT
-MODGO_CMD =		unset GOPATH; \
-	  		export GO15VENDOREXPERIMENT=1 \
-			GOPATH="${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}"; \
-			go
+MODGO_ENV =		GO15VENDOREXPERIMENT=1
 
 .if ${ELASTIC_BEAT:L} == "yes"
 HOMEPAGE ?=		https://www.elastic.co/products/beats/${BEAT}

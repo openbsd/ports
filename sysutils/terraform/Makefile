@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/05 10:46:50 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/08 12:29:17 czarkoff Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -20,11 +20,7 @@ WANTLIB += c pthread
 
 MODULES=		lang/go
 
-# Redefine ${MODGO_CMD} to include GO15VENDOREXPERIMENT
-MODGO_CMD=		unset GOPATH; \
-				export GO15VENDOREXPERIMENT=1; \
-				export GOPATH="${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}"; \
-				go
+MODGO_ENV=		GO15VENDOREXPERIMENT=1
 
 PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 			cobbler consul datadog digitalocean dme dnsimple \
