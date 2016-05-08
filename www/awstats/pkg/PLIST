@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/28 16:47:24 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/08 15:55:13 rpe Exp $
 awstats/
 awstats/README.md
 awstats/data/
@@ -285,6 +285,7 @@ awstats/wwwroot/icon/browser/dillo.png
 awstats/wwwroot/icon/browser/doris.png
 awstats/wwwroot/icon/browser/dreamcast.png
 awstats/wwwroot/icon/browser/ecatch.png
+awstats/wwwroot/icon/browser/edge.png
 awstats/wwwroot/icon/browser/encompass.png
 awstats/wwwroot/icon/browser/epiphany.png
 awstats/wwwroot/icon/browser/ericsson.png
@@ -687,6 +688,7 @@ awstats/wwwroot/icon/mime/mdb.png
 awstats/wwwroot/icon/mime/notavailable.png
 awstats/wwwroot/icon/mime/ooffice.png
 awstats/wwwroot/icon/mime/other.png
+awstats/wwwroot/icon/mime/package.png
 awstats/wwwroot/icon/mime/page.png
 awstats/wwwroot/icon/mime/pdf.png
 awstats/wwwroot/icon/mime/php.png
