@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/07 21:44:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/08 15:58:12 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
-GH_TAGNAME=		2.14
+GH_TAGNAME=		2.15
 GH_ACCOUNT=		SSilence
 GH_PROJECT=		selfoss
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -29,8 +28,10 @@ INSTDIR=		${PREFIX}/selfoss
 TINSTDIR=		${TRUEPREFIX}/selfoss
 SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR
 
+post-extract:
+	rm ${WRKSRC}/${FULLPKGNAME}.zip
+
 do-install:
-	sed -i 's,^#\(RewriteBase /selfoss.*\),\1,' ${WRKDIST}/.htaccess
 	cp -Rp ${WRKDIST} ${INSTDIR}
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/selfoss.conf ${INSTDIR}/selfoss.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}

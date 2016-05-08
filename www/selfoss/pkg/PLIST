@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/01/02 19:05:34 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/05/08 15:58:12 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -250,7 +250,6 @@ selfoss/libs/twitteroauth/twitteroauth.php
 selfoss/public/
 @mode
 @group
-selfoss/public/apple-touch-icon.png
 selfoss/public/css/
 selfoss/public/css/fonts.css
 selfoss/public/css/jquery.fancybox.css
@@ -284,6 +283,8 @@ selfoss/public/fonts/OpenSans-Semibold-webfont.eot
 selfoss/public/fonts/OpenSans-Semibold-webfont.svg
 selfoss/public/fonts/OpenSans-Semibold-webfont.ttf
 selfoss/public/fonts/OpenSans-Semibold-webfont.woff
+selfoss/public/icon-128x128.png
+selfoss/public/icon-32x32.png
 selfoss/public/images/
 selfoss/public/images/ajax-loader-big.gif
 selfoss/public/images/ajax-loader.gif
@@ -343,6 +344,7 @@ selfoss/public/js/selfoss-shares.js
 selfoss/public/js/selfoss-shortcuts.js
 selfoss/public/js/spectrum.js
 selfoss/public/lang/
+selfoss/public/lang/ca.ini
 selfoss/public/lang/cn.ini
 selfoss/public/lang/cs.ini
 selfoss/public/lang/de.ini
@@ -386,6 +388,7 @@ selfoss/spouts/github/commits.php
 selfoss/spouts/reddit/
 selfoss/spouts/reddit/reddit2.php
 selfoss/spouts/rss/
+selfoss/spouts/rss/enclosures.php
 selfoss/spouts/rss/feed.php
 selfoss/spouts/rss/fulltextrss.php
 selfoss/spouts/rss/golem.php
