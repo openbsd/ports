@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.20 2015/08/20 16:03:07 espie Exp $
+# $OpenBSD: User.pm,v 1.21 2016/05/08 11:51:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -78,6 +78,8 @@ sub enforce_local
 	if (!defined $self->{uid}) {
 		print STDERR "User $self->{user} does not exist locally\n";
 		exit 1;
+	} else {
+		return $self;
 	}
 }
 

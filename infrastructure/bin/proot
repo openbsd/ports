@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.9 2016/05/03 09:12:51 espie Exp $
+# $OpenBSD: proot,v 1.10 2016/05/08 11:51:40 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -19,55 +19,27 @@
 use strict;
 use warnings;
 
+my $ports1;
+use FindBin;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 use OpenBSD::Getopt;
 use OpenBSD::Paths;
 use OpenBSD::State;
 use OpenBSD::ProgressMeter;
+use DPB::User;
 
-package User;
+package MyUser;
+our @ISA = qw(DPB::User);
+
 use File::Basename;
-
 sub new
 {
-	my ($class, $u) = @_;
-	# XXX getpwnam for local access, distant access is different
-	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
-		my $groups = `/usr/bin/id -G $u`;
-		chomp $groups;
-		my $group = getgrgid($gid);
-		bless { user => $l, uid => $uid, 
-		    group => $group, gid => $gid,
-		    grouplist => "$gid $groups" }, $class;
-	} else {
-		bless { user => $u}, $class;
-	}
-}
-
-sub enforce_local
-{
-	my $self = shift;
-	if (!defined $self->{uid}) {
-		print STDERR "User $self->{user} does not exist locally\n";
-		exit 1;
-	} else {
-		return $self;
-	}
-}
-
-sub run_as
-{
-	my ($self, $code) = @_;
-	local $> = 0;
-	local $) = $self->{grouplist};
-	$> = $self->{uid};
-	&$code;
-}
-
-sub mkdir
-{
-	my ($self, $dir) = @_;
-	mkdir($dir);
-	$self->own($dir);
+	my $class = shift;
+	return $class->SUPER::new(@_)->enforce_local;
 }
 
 sub mkpath
@@ -79,22 +51,18 @@ sub mkpath
 	}
 	$self->mkdir($dir);
 }
-
 sub own
 {
 	my ($self, $path) = @_;
 	chown $self->{uid}, $self->{gid}, $path;
 }
 
-package LocalUser;
-our @ISA = qw(User);
-
-sub new
+sub mkdir
 {
-	my $class = shift;
-	return $class->SUPER::new(@_)->enforce_local;
+	my ($self, $dir) = @_;
+	mkdir($dir);
+	$self->own($dir);
 }
-
 package MyState;
 our @ISA = (qw(OpenBSD::State));
 
@@ -122,13 +90,13 @@ sub do_parm
 	    }, srcroot => sub {
 		    $state->{srcroot} = File::Spec->canonpath($v);
 	    }, PORT_USER => sub {
-		    $state->{portuser} = LocalUser->new($v);
+		    $state->{portuser} = MyUser->new($v);
 	    }, LOG_USER => sub {
-		    $state->{loguser} = LocalUser->new($v);
+		    $state->{loguser} = MyUser->new($v);
 	    }, FETCH_USER => sub {
-		    $state->{fetchuser} = LocalUser->new($v);
+		    $state->{fetchuser} = MyUser->new($v);
 	    }, BUILD_USER => sub {
-		    $state->{builduser} = LocalUser->new($v);
+		    $state->{builduser} = MyUser->new($v);
 	    }, PORTSDIR => sub {
 		    $state->{PORTSDIR} = File::Spec->canonpath($v);
 	    }, DISTDIR => sub {
@@ -272,8 +240,8 @@ sub handle_options
 	$state->{WRKOBJDIR} //= join('/', $state->{PORTSDIR}, 'pobj');
 	$state->{LOCKDIR} //= join('/', $state->{WRKOBJDIR}, 'locks');
 	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
-	$state->{fetchuser} //= LocalUser->new('_pfetch');
-	$state->{builduser} //= LocalUser->new('_pbuild');
+	$state->{fetchuser} //= MyUser->new('_pfetch');
+	$state->{builduser} //= MyUser->new('_pbuild');
 	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
@@ -346,9 +314,9 @@ sub check_mountpoint
 				$dev->{$dir} = 1;
 			}
 			if ($opts{nosuid}) {
-				$nosuid->{$dir} = 0;
-			} else {
 				$nosuid->{$dir} = 1;
+			} else {
+				$nosuid->{$dir} = 0;
 			}
 		}
 	}
@@ -363,7 +331,7 @@ sub check_mountpoint
 	my $mnt = $root;
 	do {
 		if (defined $dev->{$mnt}) {
-			$state->errsay("#1 is under #2 which is nodev", $root, $mnt)
+			$state->errsay("#1 is under #2 which is nodev (that won't work)", $root, $mnt)
 			    if $dev->{$mnt} == 0;
 			$state->errsay("#1 is under #2 which does not have nosuid",
 				$root, $mnt) if $nosuid->{$mnt} == 0;
@@ -408,6 +376,7 @@ sub simple_copy
 
 	$state->{accounted}{$path} = 1;
 	if (-l $path) {
+		return if $state->{dontrm}{$cpath};
 		remove_tree($cpath);
 		my $target = readlink $path;
 		symlink($target, $cpath);
