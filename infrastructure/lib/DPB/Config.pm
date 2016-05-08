@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.64 2016/04/30 09:15:58 espie Exp $
+# $OpenBSD: Config.pm,v 1.65 2016/05/08 12:52:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -158,10 +158,6 @@ sub parse_command_line
 	# keep cmdline subst values
 	my %cmdline = %{$state->{subst}};
 
-	if (!defined $state->{port_user}) {
-		my ($uid, $gid) = (stat $state->{realports})[4,5];
-		$state->{port_user} = DPB::User->from_uid($uid, $gid);
-	}
 	$class->parse_config_files($state);
 	# ... as those must override the config files contents
 	while (my ($k, $v) = each %cmdline) {
@@ -183,13 +179,6 @@ sub parse_command_line
 	$state->{fetch_user} //= $state->{build_user};
 
 	$state->{log_user}->enforce_local;
-	$state->say("Started as: #1", $state->{base_user}->user);
-	$state->say("Port user: #1", $state->{port_user}->user);
-	$state->say("Build user: #1", $state->{build_user}->user);
-	$state->say("Fetch user: #1", $state->{fetch_user}->user);
-	$state->say("Log user: #1", $state->{log_user}->user);
-	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
-
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
 	my $p;
@@ -205,7 +194,19 @@ sub parse_command_line
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
 	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
+	$state->{realports} = $state->anchor($state->{ports});
 	$state->{realdistdir} = $state->anchor($state->{distdir});
+	if (!defined $state->{port_user}) {
+		my ($uid, $gid) = (stat $state->{realports})[4,5];
+		$state->{port_user} = DPB::User->from_uid($uid, $gid);
+	}
+	$state->say("Started as: #1", $state->{base_user}->user);
+	$state->say("Port user: #1", $state->{port_user}->user);
+	$state->say("Build user: #1", $state->{build_user}->user);
+	$state->say("Fetch user: #1", $state->{fetch_user}->user);
+	$state->say("Log user: #1", $state->{log_user}->user);
+	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
+
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	$state->{logdir} = $state->expand_path($state->{logdir});
@@ -267,7 +268,7 @@ sub parse_command_line
 
 	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
 	if ($state->define_present($k)) {
-		$state->{startup_script} = $state->expand_path($state->{subst}->value($k));
+		$state->{startup_script} = $state->expand_chrooted_path($state->{subst}->value($k));
 	}
 	# redo this in case config files changed it
 	$state->{logdir} = $state->expand_path($state->{logdir});

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.16 2016/04/26 17:19:41 espie Exp $
+# $OpenBSD: State.pm,v 1.17 2016/05/08 12:52:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -123,6 +123,19 @@ sub expand_path
 	$path =~ s/\%t/$self->{starttime}/g;
 	$path =~ s/\%d/$self->startdate/ge;
 	$path =~ s/\%f/$self->{realdistdir}/g;
+	return $path;
+}
+
+sub expand_chrooted_path
+{
+	my ($self, $path) = @_;
+	$path =~ s/\%L/$self->{logdir}/g;
+	$path =~ s/\%p/$self->{ports}/g;
+	$path =~ s/\%h/DPB::Core::Local->hostname/ge;
+	$path =~ s/\%a/$self->{arch}/g;
+	$path =~ s/\%t/$self->{starttime}/g;
+	$path =~ s/\%d/$self->startdate/ge;
+	$path =~ s/\%f/$self->{distdir}/g;
 	return $path;
 }
 
