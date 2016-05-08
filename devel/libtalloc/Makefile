@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/22 11:44:48 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2016/05/08 09:11:35 jca Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pthread util ${MODPY_WANTLIB}
 
-MASTER_SITES=	https://samba.org/ftp/talloc/
+MASTER_SITES=	https://download.samba.org/pub/talloc/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

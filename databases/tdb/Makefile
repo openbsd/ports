@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/25 08:13:41 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2016/05/08 09:11:35 jca Exp $
 
 COMMENT=	trivial database library
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread util ${MODPY_WANTLIB}
 
-MASTER_SITES=	http://samba.org/ftp/tdb/
+MASTER_SITES=	https://download.samba.org/pub/tdb/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
