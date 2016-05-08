@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2016/05/08 08:59:16 jca Exp $
 
 COMMENT=		daemontools alike replacement for init
 
-DISTNAME=		runit-1.7.2
-REVISION=		2
+DISTNAME=		runit-2.1.2
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.smarden.org/runit/
 
-MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
-
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c 
+WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
 WRKDIST=		${WRKDIR}/admin/${DISTNAME}

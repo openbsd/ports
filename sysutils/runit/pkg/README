@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2014/11/01 14:54:51 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2016/05/08 08:59:16 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,10 +10,10 @@ You will need to add
 
 to /etc/rc.local in order to have runit start at boot.
 
-The service directory has moved from /service to ${LOCALSTATEDIR}/service.
+The service directory has moved back from ${LOCALSTATEDIR}/service to
+/service.  To keep on using ${LOCALSTATEDIR}/service, a symlink is
+enough:
 
-With this version the runsvctrl, runsvstat, svwaitdown, and svwaitup
-programs no longer are being installed. The functionality of these
-programs has been incorporated into the sv program.
+  # ln -s /var/service /
 
 Read ${PREFIX}/share/doc/runit/upgrade.html on update.
