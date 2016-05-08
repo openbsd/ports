@@ -1,0 +1,15 @@
+$OpenBSD: patch-cipher_crc_c,v 1.1 2016/05/08 23:13:20 jca Exp $
+
+disable plcmul (actually SSE4.1) for CRC, asm instructions unknown to base gcc
+
+--- cipher/crc.c.orig	Sun May  8 18:58:27 2016
++++ cipher/crc.c	Sun May  8 18:58:46 2016
+@@ -34,7 +34,7 @@
+ /* USE_INTEL_PCLMUL indicates whether to compile CRC with Intel PCLMUL
+  * code.  */
+ #undef USE_INTEL_PCLMUL
+-#ifdef ENABLE_PCLMUL_SUPPORT
++#if 0
+ # if ((defined(__i386__) && SIZEOF_UNSIGNED_LONG == 4) || defined(__x86_64__))
+ #  if __GNUC__ >= 4
+ #   define USE_INTEL_PCLMUL 1

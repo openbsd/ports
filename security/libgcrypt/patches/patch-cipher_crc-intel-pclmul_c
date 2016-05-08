@@ -1,5 +1,8 @@
-$OpenBSD: patch-cipher_crc-intel-pclmul_c,v 1.1 2016/04/24 21:40:25 ajacoutot Exp $
+$OpenBSD: patch-cipher_crc-intel-pclmul_c,v 1.2 2016/05/08 23:13:20 jca Exp $
 
+1. disable plcmul (actually SSE4.1) for CRC, asm instructions unknown to base gcc
+
+2.
 From: Werner Koch <wk@gnupg.org>
 Date: Tue, 19 Apr 2016 18:05:07 +0000 (+0200)
 Subject: asm fix for older gcc versions.
@@ -7,7 +10,16 @@ X-Git-Url: http://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgcrypt.git;a=commitdiff_
 asm fix for older gcc versions.
 
 --- cipher/crc-intel-pclmul.c.orig	Thu Apr  7 17:30:08 2016
-+++ cipher/crc-intel-pclmul.c	Sat Apr 23 08:38:06 2016
++++ cipher/crc-intel-pclmul.c	Sun May  8 18:56:35 2016
+@@ -30,7 +30,7 @@
+ #include "bufhelp.h"
+ 
+ 
+-#if defined(ENABLE_PCLMUL_SUPPORT) && __GNUC__ >= 4 && \
++#if 0 && __GNUC__ >= 4 && \
+     ((defined(__i386__) && SIZEOF_UNSIGNED_LONG == 4) || defined(__x86_64__))
+ 
+ 
 @@ -143,7 +143,7 @@ crc32_reflected_bulk (u32 *pcrc, const byte *inbuf, si
  		      [inbuf_2] "m" (inbuf[2 * 16]),
  		      [inbuf_3] "m" (inbuf[3 * 16]),
