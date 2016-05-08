@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2016/04/25 18:24:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2016/05/08 10:23:57 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		3.20.0
+GNOME_VERSION=		3.20.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,6 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		audio/gsound \
-			devel/libtool,-ltdl \
 			geo/geocode-glib \
 			x11/gnome/desktop \
 			x11/gnome/libgweather
