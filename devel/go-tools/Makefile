@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/14 16:11:17 jsing Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/08 17:14:07 czarkoff Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c pthread
 
 MODULES =		lang/go
+MODGO_ENV =		PATH="${PORTPATH}"
 
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
