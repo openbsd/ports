@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.82 2015/05/12 19:47:02 espie Exp $
+# $OpenBSD: Core.pm,v 1.83 2016/05/08 09:31:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -337,7 +337,7 @@ sub mark_ready
 	my $self = shift;
 	if ($self->{pid}) {
 		require Data::Dumper;
-		print Data::Dumper::Dumper($self), "\n";
+		#print Data::Dumper::Dumper($self), "\n";
 		DPB::Util->die("Marking ready an incomplete process");
 	}
 	delete $self->{job};
@@ -685,6 +685,22 @@ sub get_affinity
 	while (@$available > 0) {
 		my $core = shift @$available;
 		if ($core->hostname eq $host) {
+			push(@$available, @$l);
+			return $core;
+		}
+		push(@$l, $core);
+	}
+	$available = $l;
+	return undef
+}
+
+sub get_compatible
+{
+	my ($self, $v) = @_;
+	my $l = [];
+	while (@$available > 0) {
+		my $core = shift @$available;
+		if (!$core->prop->taint_incompatible($v)) {
 			push(@$available, @$l);
 			return $core;
 		}

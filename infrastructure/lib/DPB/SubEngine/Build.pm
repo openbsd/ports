@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.17 2015/07/14 08:17:38 espie Exp $
+# $OpenBSD: Build.pm,v 1.18 2016/05/08 09:31:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,14 @@ sub can_start_build
 	# fail abysmally if there's no junking going on
 	my $reason = $core->prop->taint_incompatible($v);
 	if (defined $reason) {
+		my $core2 = DPB::Core->get_compatible($v);
+		if (defined $core2) {
+			if ($self->lock_and_start_build($core2, $v)) {
+				return 0;
+			} else {
+				$core2->mark_ready;
+			}
+		}
 		if (!$self->{klogged}{$v->pkgpath}) {
 			$self->log('K', $v, " ".$core->hostname." ".$reason);
 			$self->{klogged}{$v->pkgpath} = 1;
