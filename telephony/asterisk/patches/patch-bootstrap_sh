@@ -1,6 +1,6 @@
-$OpenBSD: patch-bootstrap_sh,v 1.5 2015/10/12 22:07:29 sthen Exp $
---- bootstrap.sh.orig	Fri Jan 13 21:42:12 2012
-+++ bootstrap.sh	Thu Feb 19 21:08:57 2015
+$OpenBSD: patch-bootstrap_sh,v 1.6 2016/05/09 16:07:13 sthen Exp $
+--- bootstrap.sh.orig	Mon May  9 14:04:34 2016
++++ bootstrap.sh	Mon May  9 16:09:07 2016
 @@ -18,8 +18,8 @@ case `uname -sr` in
  		MY_AM_VER=19
  		;;
@@ -12,3 +12,12 @@ $OpenBSD: patch-bootstrap_sh,v 1.5 2015/10/12 22:07:29 sthen Exp $
  		;;
  	*'BSD'*)
  		MY_AC_VER=-2.62
+@@ -46,7 +46,7 @@ check_for_app aclocal${MY_AM_VER}
+ 
+ echo "Generating the configure script ..."
+ 
+-aclocal${MY_AM_VER} -I autoconf `find third-party/ -maxdepth 1 -type d -printf "-I %p "`
++aclocal${MY_AM_VER} -I autoconf `find third-party/ -maxdepth 1 -type d | sed 's/^/-I /'`
+ autoconf${MY_AC_VER}
+ autoheader${MY_AC_VER}
+ automake${MY_AM_VER} --add-missing --copy 2>/dev/null
