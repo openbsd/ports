@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/09 08:04:44 semarie Exp $
+# $OpenBSD: Makefile,v 1.21 2016/05/09 14:08:41 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -21,7 +21,7 @@ PKGNAME-doc =		rust-doc-${V}
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2016-02-17-4d3eebf-openbsd-x86_64-99f710b8226e6ac8010c4924fc107cda5268d50e.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2016-02-17-4d3eebf-openbsd-x86_64-266b485dc1658ceb1b119ea57ff5fab705003776.tar.bz2
 
 CATEGORIES =		lang
 
