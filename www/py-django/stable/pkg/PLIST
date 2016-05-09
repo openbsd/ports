@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/08 16:13:30 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/05/09 17:21:06 rpointel Exp $
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
@@ -708,6 +708,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/af/LC_MES
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/af/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/af/LC_MESSAGES/${LNAME}js.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/af/LC_MESSAGES/${LNAME}js.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/am/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/am/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/am/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/am/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ar/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ar/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ar/LC_MESSAGES/${LNAME}.mo
@@ -1200,12 +1204,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/vi/LC_MES
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/vi/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/vi/LC_MESSAGES/${LNAME}js.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/vi/LC_MESSAGES/${LNAME}js.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/LC_MESSAGES/${LNAME}js.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_CN/LC_MESSAGES/${LNAME}js.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -1218,12 +1216,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hant/L
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hant/LC_MESSAGES/${LNAME}js.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_Hant/LC_MESSAGES/${LNAME}js.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/LC_MESSAGES/${LNAME}js.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/zh_TW/LC_MESSAGES/${LNAME}js.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/migrations/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/migrations/0001_initial.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/migrations/0001_initial.pyc
@@ -1712,10 +1704,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -1724,10 +1712,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Ha
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/middleware.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/middleware.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/templates/
@@ -2113,10 +2097,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -2125,10 +2105,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hant/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/management/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/management/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/management/__init__.pyc
@@ -2528,10 +2504,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/vi
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -2540,10 +2512,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/migrations/
@@ -2899,10 +2867,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -2911,10 +2875,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Ha
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/middleware.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/middleware.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/migrations/
@@ -3531,10 +3491,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -3543,10 +3499,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hant/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/management/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/management/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/management/__init__.pyc
@@ -3966,10 +3918,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -3978,10 +3926,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Han
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/templatetags/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/templatetags/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/templatetags/__init__.pyc
@@ -4134,6 +4078,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/he/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/he/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/he/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/id/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/id/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/id/LC_MESSAGES/${LNAME}.mo
@@ -4210,6 +4158,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Han
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hans/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hant/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hant/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/lookups.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/lookups.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/operations.py
@@ -4558,10 +4510,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -4570,10 +4518,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Ha
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/middleware.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/middleware.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/migrations/
@@ -4940,10 +4884,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -4952,10 +4892,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Han
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/management/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/management/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/management/__init__.pyc
@@ -5149,6 +5085,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -5333,10 +5273,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/vi/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/vi/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_CN/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_CN/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_CN/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_CN/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hans/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hans/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hans/LC_MESSAGES/${LNAME}.mo
@@ -5345,10 +5281,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hant/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hant/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hant/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_TW/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_TW/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_TW/LC_MESSAGES/${LNAME}.mo
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/locale/zh_TW/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/management.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/management.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sites/managers.py
@@ -6523,6 +6455,7 @@ share/doc/${LNAME}/releases/1.8.1.txt
 share/doc/${LNAME}/releases/1.8.10.txt
 share/doc/${LNAME}/releases/1.8.11.txt
 share/doc/${LNAME}/releases/1.8.12.txt
+share/doc/${LNAME}/releases/1.8.13.txt
 share/doc/${LNAME}/releases/1.8.2.txt
 share/doc/${LNAME}/releases/1.8.3.txt
 share/doc/${LNAME}/releases/1.8.4.txt
@@ -6537,6 +6470,7 @@ share/doc/${LNAME}/releases/1.9.2.txt
 share/doc/${LNAME}/releases/1.9.3.txt
 share/doc/${LNAME}/releases/1.9.4.txt
 share/doc/${LNAME}/releases/1.9.5.txt
+share/doc/${LNAME}/releases/1.9.6.txt
 share/doc/${LNAME}/releases/1.9.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
