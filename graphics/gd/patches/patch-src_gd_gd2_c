@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gd_gd2_c,v 1.1 2016/05/09 06:29:18 ajacoutot Exp $
+
+gd2: handle corrupt images better (CVE-2016-3074)
+
+--- src/gd_gd2.c.orig	Sun May  8 23:50:58 2016
++++ src/gd_gd2.c	Sun May  8 23:52:14 2016
+@@ -167,6 +167,8 @@ _gd2GetHeader (gdIOCtxPtr in, int *sx, int *sy,
+ 			if (gdGetInt (&cidx[i].size, in) != 1) {
+ 				goto fail2;
+ 			};
++			if (cidx[i].offset < 0 || cidx[i].size < 0)
++				goto fail2;
+ 		};
+ 		*chunkIdx = cidx;
+ 	};
