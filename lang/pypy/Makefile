@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/08 09:56:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/05/09 11:18:00 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -136,7 +136,7 @@ PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 # The bootstrap-based build process uses less memory and is faster,
 # but if you need to build a new bootstrap because the existing one no
 # longer runs, use FLAVOR=no_bootstrap to do a cpython-based build.
-# Expect 5.3GB+ memory usage on amd64.
+# Expect 6.5GB memory usage on amd64.
 bootstrap: ${PYPY_PKG}
 	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${PYPY_PKG}
