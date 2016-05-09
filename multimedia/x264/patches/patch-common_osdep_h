@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_osdep_h,v 1.5 2016/01/02 07:49:19 ajacoutot Exp $
---- common/osdep.h.orig	Tue Jul 28 16:45:03 2015
-+++ common/osdep.h	Fri Dec 25 03:30:17 2015
-@@ -234,7 +234,8 @@ int x264_threading_init( void );
+$OpenBSD: patch-common_osdep_h,v 1.6 2016/05/09 06:09:09 ajacoutot Exp $
+--- common/osdep.h.orig	Sun May  8 16:45:04 2016
++++ common/osdep.h	Sun May  8 21:27:57 2016
+@@ -249,7 +249,8 @@ int x264_threading_init( void );
  static ALWAYS_INLINE int x264_pthread_fetch_and_add( int *val, int add, x264_pthread_mutex_t *mutex )
  {
  #if HAVE_THREAD
