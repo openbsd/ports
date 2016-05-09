@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/11 22:45:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/09 22:57:57 jca Exp $
 @bin bin/hexchat
 include/hexchat-plugin.h
 lib/hexchat/
@@ -9,6 +9,8 @@ lib/hexchat/plugins/checksum.so
 lib/hexchat/plugins/doat.so
 @comment lib/hexchat/plugins/fishlim.la
 lib/hexchat/plugins/fishlim.so
+@comment lib/hexchat/plugins/lua.la
+lib/hexchat/plugins/lua.so
 @comment lib/hexchat/plugins/perl.la
 lib/hexchat/plugins/perl.so
 @comment lib/hexchat/plugins/python.la
@@ -44,8 +46,6 @@ share/locale/hi/LC_MESSAGES/hexchat.mo
 share/locale/hu/LC_MESSAGES/hexchat.mo
 share/locale/id/LC_MESSAGES/hexchat.mo
 share/locale/it/LC_MESSAGES/hexchat.mo
-share/locale/ja_JP/
-share/locale/ja_JP/LC_MESSAGES/
 share/locale/ja_JP/LC_MESSAGES/hexchat.mo
 share/locale/kn/LC_MESSAGES/hexchat.mo
 share/locale/ko/LC_MESSAGES/hexchat.mo
