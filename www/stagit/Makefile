@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/09 17:01:54 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/09 17:03:43 jca Exp $
 
 COMMENT =		static git page generator
 
@@ -11,6 +11,7 @@ HOMEPAGE =		http://git.2f30.org/stagit/
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c git2
 LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
 
