@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/17 03:22:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/09 06:31:56 ajacoutot Exp $
 @bin bin/cwebp
 @bin bin/dwebp
 @bin bin/gif2webp
@@ -7,6 +7,7 @@ include/webp/
 include/webp/decode.h
 include/webp/demux.h
 include/webp/encode.h
+include/webp/extras.h
 include/webp/mux.h
 include/webp/mux_types.h
 include/webp/types.h
@@ -19,12 +20,16 @@ lib/libwebpdecoder.la
 lib/libwebpdemux.a
 lib/libwebpdemux.la
 @lib lib/libwebpdemux.so.${LIBwebpdemux_VERSION}
+lib/libwebpextras.a
+lib/libwebpextras.la
+@lib lib/libwebpextras.so.${LIBwebpextras_VERSION}
 lib/libwebpmux.a
 lib/libwebpmux.la
 @lib lib/libwebpmux.so.${LIBwebpmux_VERSION}
 lib/pkgconfig/libwebp.pc
 lib/pkgconfig/libwebpdecoder.pc
 lib/pkgconfig/libwebpdemux.pc
+lib/pkgconfig/libwebpextras.pc
 lib/pkgconfig/libwebpmux.pc
 @man man/man1/cwebp.1
 @man man/man1/dwebp.1
