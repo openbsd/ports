@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/19 16:40:21 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/09 23:01:45 jca Exp $
 @bin bin/sockc
 @bin bin/tlsc
+@bin bin/tlss
 @man man/man1/sockc.1
 @man man/man1/tlsc.1
+@man man/man1/tlss.1
