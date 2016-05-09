@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_sh,v 1.1 2016/05/09 23:03:40 jca Exp $
+--- test.sh.orig	Tue May 10 01:01:56 2016
++++ test.sh	Tue May 10 01:02:02 2016
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/usr/bin/env ksh
+ 
+ . ./tap-functions -u
+ 
