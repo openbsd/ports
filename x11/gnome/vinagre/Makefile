@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2016/04/25 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2016/05/10 06:57:28 ajacoutot Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
 GNOME_PROJECT=		vinagre
-GNOME_VERSION=		3.20.1
+GNOME_VERSION=		3.20.2
 
 CATEGORIES=		net
 
