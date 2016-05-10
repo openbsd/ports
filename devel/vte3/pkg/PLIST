@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/04/25 09:41:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/05/10 18:38:23 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -30,7 +30,6 @@ share/gtk-doc/html/vte-${API_V}/ch02.html
 share/gtk-doc/html/vte-${API_V}/ch03.html
 share/gtk-doc/html/vte-${API_V}/home.png
 share/gtk-doc/html/vte-${API_V}/index.html
-share/gtk-doc/html/vte-${API_V}/index.sgml
 share/gtk-doc/html/vte-${API_V}/left-insensitive.png
 share/gtk-doc/html/vte-${API_V}/left.png
 share/gtk-doc/html/vte-${API_V}/licence.html
