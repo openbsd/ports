@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/25 13:55:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/05/10 05:29:57 ajacoutot Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.Application.appdata.xml
@@ -9,16 +9,17 @@ share/glib-2.0/schemas/org.gnome.Weather.Application.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Weather.Application.search-provider.ini
-share/icons/hicolor/16x16/apps/org.gnome.Weather.Application.png
-share/icons/hicolor/22x22/apps/org.gnome.Weather.Application.png
-share/icons/hicolor/256x256/apps/org.gnome.Weather.Application.png
-share/icons/hicolor/32x32/apps/org.gnome.Weather.Application.png
-share/icons/hicolor/48x48/apps/org.gnome.Weather.Application.png
-share/icons/hicolor/symbolic/apps/org.gnome.Weather.Application-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.Weather.png
+share/icons/hicolor/22x22/apps/org.gnome.Weather.png
+share/icons/hicolor/256x256/apps/org.gnome.Weather.png
+share/icons/hicolor/32x32/apps/org.gnome.Weather.png
+share/icons/hicolor/48x48/apps/org.gnome.Weather.png
+share/icons/hicolor/symbolic/apps/org.gnome.Weather-symbolic.svg
 share/locale/an/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/as/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/be/LC_MESSAGES/org.gnome.Weather.mo
+share/locale/bg/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/bs/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ca@valencia/LC_MESSAGES/org.gnome.Weather.mo
