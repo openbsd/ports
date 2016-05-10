@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ssli_openssl_c,v 1.1 2015/09/01 13:57:59 dcoppa Exp $
+$OpenBSD: patch-src_ssli_openssl_c,v 1.2 2016/05/10 12:25:06 dcoppa Exp $
 
 commit 82e80f8f18cbb6fed903621751ba9751dc2b80a2
 Author: Felix Morgner <felix.morgner@gmail.com>
@@ -11,8 +11,8 @@ SSL_CTX_use_certificate_chain_file(...) so that concatenated
 certificate files containing a verification chain are read correctly.
 
 --- src/ssli_openssl.c.orig	Sat Jun 20 00:58:46 2015
-+++ src/ssli_openssl.c	Tue Sep  1 15:48:00 2015
-@@ -154,100 +154,72 @@ static void SSL_writekey(char *keyfile, RSA *rsa)
++++ src/ssli_openssl.c	Tue May 10 14:15:53 2016
+@@ -154,100 +154,74 @@ static void SSL_writekey(char *keyfile, RSA *rsa)
  
  static void SSL_initializeCert() {
  
@@ -151,10 +151,12 @@ certificate files containing a verification chain are read correctly.
 +	ERR_load_crypto_strings();
 +
 +	context = SSL_CTX_new(SSLv23_server_method());
++	SSL_CTX_set_options(context, SSL_OP_NO_SSLv2);
++	SSL_CTX_set_options(context, SSL_OP_NO_SSLv3);
  	if (context == NULL)
  	{
  		ERR_print_errors_fp(stderr);
-@@ -261,12 +233,6 @@ void SSLi_init(void)
+@@ -261,12 +235,6 @@ void SSLi_init(void)
  	}
  
  	SSL_initializeCert();

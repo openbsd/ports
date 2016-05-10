@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/01 13:57:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2016/05/10 12:25:06 dcoppa Exp $
 
 COMMENT =		minimalistic Mumble server
 
@@ -7,7 +7,7 @@ GH_ACCOUNT =		fatbob313
 GH_PROJECT =		umurmur
 GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio
 
 HOMEPAGE =		https://code.google.com/p/umurmur/
