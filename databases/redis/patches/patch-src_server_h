@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_server_h,v 1.1 2016/05/10 09:38:48 dcoppa Exp $
+--- src/server.h.orig	Tue May 10 10:20:32 2016
++++ src/server.h	Tue May 10 10:21:24 2016
+@@ -105,7 +105,7 @@ typedef long long mstime_t; /* millisecond time type. 
+ #define CONFIG_DEFAULT_REPL_BACKLOG_TIME_LIMIT (60*60)  /* 1 hour */
+ #define CONFIG_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
+ #define CONFIG_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */
+-#define CONFIG_DEFAULT_PID_FILE "/var/run/redis.pid"
++#define CONFIG_DEFAULT_PID_FILE "/var/run/redis/redis.pid"
+ #define CONFIG_DEFAULT_SYSLOG_IDENT "redis"
+ #define CONFIG_DEFAULT_CLUSTER_CONFIG_FILE "nodes.conf"
+ #define CONFIG_DEFAULT_DAEMONIZE 0

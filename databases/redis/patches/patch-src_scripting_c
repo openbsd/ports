@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_scripting_c,v 1.9 2015/06/05 16:29:09 dcoppa Exp $
+$OpenBSD: patch-src_scripting_c,v 1.10 2016/05/10 09:38:48 dcoppa Exp $
 
 Remove dofile() from Redis Lua scripting, because it allows an
 attacker to enumerate filesystem contents. See:
 http://blog.liftsecurity.io/post/35714931664/filesystem-enumeration-using-redis-and-lua
 
---- src/scripting.c.orig	Thu Jun  4 11:35:56 2015
-+++ src/scripting.c	Fri Jun  5 18:07:16 2015
-@@ -593,11 +593,13 @@ void luaLoadLibraries(lua_State *lua) {
+--- src/scripting.c.orig	Fri May  6 09:11:36 2016
++++ src/scripting.c	Tue May 10 09:49:02 2016
+@@ -834,11 +834,13 @@ void luaLoadLibraries(lua_State *lua) {
  #endif
  }
  
