@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2016/04/26 07:15:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2016/05/10 06:48:57 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -1074,7 +1074,6 @@ share/gtk-doc/html/evolution-mail-composer/ch01.html
 share/gtk-doc/html/evolution-mail-composer/evolution-mail-composer.devhelp2
 share/gtk-doc/html/evolution-mail-composer/home.png
 share/gtk-doc/html/evolution-mail-composer/index.html
-share/gtk-doc/html/evolution-mail-composer/index.sgml
 share/gtk-doc/html/evolution-mail-composer/left-insensitive.png
 share/gtk-doc/html/evolution-mail-composer/left.png
 share/gtk-doc/html/evolution-mail-composer/object-tree.html
@@ -1103,7 +1102,6 @@ share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine-Miscellaneous-Uti
 share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine.devhelp2
 share/gtk-doc/html/evolution-mail-engine/home.png
 share/gtk-doc/html/evolution-mail-engine/index.html
-share/gtk-doc/html/evolution-mail-engine/index.sgml
 share/gtk-doc/html/evolution-mail-engine/left-insensitive.png
 share/gtk-doc/html/evolution-mail-engine/left.png
 share/gtk-doc/html/evolution-mail-engine/object-tree.html
@@ -1135,7 +1133,6 @@ share/gtk-doc/html/evolution-mail-formatter/ch03.html
 share/gtk-doc/html/evolution-mail-formatter/evolution-mail-formatter.devhelp2
 share/gtk-doc/html/evolution-mail-formatter/home.png
 share/gtk-doc/html/evolution-mail-formatter/index.html
-share/gtk-doc/html/evolution-mail-formatter/index.sgml
 share/gtk-doc/html/evolution-mail-formatter/left-insensitive.png
 share/gtk-doc/html/evolution-mail-formatter/left.png
 share/gtk-doc/html/evolution-mail-formatter/object-tree.html
@@ -1163,7 +1160,6 @@ share/gtk-doc/html/evolution-shell/evolution-shell-Shell-Utilities.html
 share/gtk-doc/html/evolution-shell/evolution-shell.devhelp2
 share/gtk-doc/html/evolution-shell/home.png
 share/gtk-doc/html/evolution-shell/index.html
-share/gtk-doc/html/evolution-shell/index.sgml
 share/gtk-doc/html/evolution-shell/left-insensitive.png
 share/gtk-doc/html/evolution-shell/left.png
 share/gtk-doc/html/evolution-shell/object-tree.html
@@ -1411,7 +1407,6 @@ share/gtk-doc/html/evolution-util/evolution-util-e-spell-text-view.html
 share/gtk-doc/html/evolution-util/evolution-util.devhelp2
 share/gtk-doc/html/evolution-util/home.png
 share/gtk-doc/html/evolution-util/index.html
-share/gtk-doc/html/evolution-util/index.sgml
 share/gtk-doc/html/evolution-util/left-insensitive.png
 share/gtk-doc/html/evolution-util/left.png
 share/gtk-doc/html/evolution-util/object-tree.html
