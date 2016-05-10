@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.12 2016/05/10 09:13:47 espie Exp $
+# $OpenBSD: proot,v 1.13 2016/05/10 10:44:07 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -224,6 +224,11 @@ sub handle_options
 	if (!defined $state->{chroot}) {
 		$state->usage("need a chroot base");
 	}
+	if (defined $state->{snapshot} &&
+	    $state->{snapshot} =~ m/^\Q$state->{chroot}\E(.*)/) {
+		push(@{$state->{preserved}}, $1);
+	}
+
 	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
 	$state->{progressmeter}->setup($state->opt('x'), $state->opt('m'), 
 	    $state);
@@ -583,7 +588,11 @@ sub get_snapshot
 			$state->extract_archive($state->chroot("var/sysmerge"), 
 			    $archive);
 		}
-
+	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
+			for my $file (@files) {
+				unlink($file);
+			}
+		}
 	    });
 }
 
