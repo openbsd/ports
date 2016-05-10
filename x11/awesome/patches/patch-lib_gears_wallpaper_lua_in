@@ -1,0 +1,42 @@
+$OpenBSD: patch-lib_gears_wallpaper_lua_in,v 1.1 2016/05/10 13:42:43 dcoppa Exp $
+
+commit f29eb2fee33fa30a3fc9fc20967776076346d937
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Apr 28 17:31:39 2016 +0200
+
+Fix wallpaper setting after RandR monitor changes
+
+A co-worker of mine has a laptop with a small display and two larger displays.
+When enabling the larger displays (and disabling the built-in display), the
+wallpaper was set incorrectly. Only the size of the old, smaller screen actually
+contained the wallpaper and the left was black.
+
+The reason for this is that the code directly draws the new wallpaper to the
+pixmap containing the old wallpaper. However, because the old display was
+smaller, this pixmap isn't as large as the screen and so couldn't contain all of
+the new wallpaper.
+
+Fix this by explicitly creating a surface of the needed size and copying the old
+wallpaper into it (because we might be setting only the wallpaper of some
+screen, not all of them).
+
+Special-thanks-to: vsp
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- lib/gears/wallpaper.lua.in.orig	Sun Mar  6 15:05:54 2016
++++ lib/gears/wallpaper.lua.in	Tue May 10 15:21:33 2016
+@@ -40,6 +40,14 @@ local function prepare_wallpaper(s)
+         -- No wallpaper yet, create an image surface for just the part we need
+         img = cairo.ImageSurface(cairo.Format.RGB24, geom.width, geom.height)
+         img:set_device_offset(-geom.x, -geom.y)
++    else
++        -- Some wallpaper yet, copy it to a new surface
++        local new_img = img:create_similar(cairo.Content.COLOR, root_geom.width, root_geom.height)
++        local cr = cairo.Context(new_img)
++        cr.operator = cairo.Operator.SOURCE
++        cr:set_source_surface(img, 0, 0)
++        cr:paint()
++        img = new_img
+     end
+ 
+     local cr = cairo.Context(img)
