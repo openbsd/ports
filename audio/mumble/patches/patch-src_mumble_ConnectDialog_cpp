@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_mumble_ConnectDialog_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-src_mumble_ConnectDialog_cpp,v 1.2 2016/05/10 07:44:11 dcoppa Exp $
 
 Prevent method from being hidden instead of being overridden
 
---- src/mumble/ConnectDialog.cpp.orig	Sat Sep 28 03:41:43 2013
-+++ src/mumble/ConnectDialog.cpp	Sat Sep 28 03:43:07 2013
-@@ -113,7 +113,7 @@ ServerView::~ServerView() {
+--- src/mumble/ConnectDialog.cpp.orig	Thu May  5 17:48:09 2016
++++ src/mumble/ConnectDialog.cpp	Tue May 10 09:19:52 2016
+@@ -120,7 +120,7 @@ ServerView::~ServerView() {
  	delete siPublic;
  }
  
