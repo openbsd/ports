@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.16 2016/05/10 15:48:18 espie Exp $
+# $OpenBSD: proot,v 1.17 2016/05/10 16:13:31 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -275,12 +275,12 @@ sub handle_options
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB)) {
-		if (defined $state->{$dir}) {
-			$state->{$dir} = $state->canonical_dir($state->{$dir});
-		} else {
+	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR)) {
+		if (!defined $state->{$dir}) {
 			$state->fatal("Missing #1", $dir);
 		}
+		$state->{$dir} = $state->canonical_dir($state->{$dir});
+		push(@{$state->{preserved}}, $state->{$dir});
 	}
 	for my $i (qw(portuser loguser fetchuser builduser)) {
 		if (defined $state->{$i}) {
