@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_server_h,v 1.1 2016/05/10 09:38:48 dcoppa Exp $
+$OpenBSD: patch-src_server_h,v 1.2 2016/05/10 12:45:28 dcoppa Exp $
 --- src/server.h.orig	Tue May 10 10:20:32 2016
 +++ src/server.h	Tue May 10 10:21:24 2016
+@@ -94,7 +94,7 @@ typedef long long mstime_t; /* millisecond time type. 
+ #define AOF_REWRITE_ITEMS_PER_CMD 64
+ #define CONFIG_DEFAULT_SLOWLOG_LOG_SLOWER_THAN 10000
+ #define CONFIG_DEFAULT_SLOWLOG_MAX_LEN 128
+-#define CONFIG_DEFAULT_MAX_CLIENTS 10000
++#define CONFIG_DEFAULT_MAX_CLIENTS 96
+ #define CONFIG_AUTHPASS_MAX_LEN 512
+ #define CONFIG_DEFAULT_SLAVE_PRIORITY 100
+ #define CONFIG_DEFAULT_REPL_TIMEOUT 60
 @@ -105,7 +105,7 @@ typedef long long mstime_t; /* millisecond time type. 
  #define CONFIG_DEFAULT_REPL_BACKLOG_TIME_LIMIT (60*60)  /* 1 hour */
  #define CONFIG_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
