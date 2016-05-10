@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.11 2016/05/10 08:52:52 espie Exp $
+# $OpenBSD: proot,v 1.12 2016/05/10 09:13:47 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -705,11 +705,13 @@ sub unpopulate_chroot
 			if ($state->{dontrm}{$File::Find::name}) {
 				return;
 			}
-		    	my $dir =$File::Find::dir;
-			$dir =~ s/^\Q$state->{chroot}\E//;
-		    	$state->{progressmeter}->message($dir);
+		    	my $file =$File::Find::name;
+			$file =~ s/^\Q$state->{chroot}\E//;
+			if ($state->{known}{$file}) {
+				return;
+			}
+		    	$state->{progressmeter}->message($file);
 		    	if (-l $_ || !-d $_) {
-				#$state->say("unlink #1", $File::Find::name);
 				unlink($_);
 			} else {
 				push(@dirs, $File::Find::name);
@@ -786,20 +788,21 @@ $state->check_mountpoint;
 if ($state->{actions}{unpopulate}) {
 	$state->unpopulate_chroot;
 }
-if ($state->{actions}{snapshot}) {
-	$state->get_snapshot;
-}
 if ($state->{actions}{locate}) {
 	$state->read_locates;
 }
-
+if ($state->{actions}{snapshot}) {
+	$state->get_snapshot;
+}
 if ($state->{actions}{resolv}) {
 	$state->special_data;
 }
 if ($state->{actions}{resolv} || $state->{actions}{locate}) {
 	$state->copy_sync;
 }
-
+if ($state->{actions}{unpopulate_light}) {
+	$state->unpopulate_chroot;
+}
 if ($state->{actions}{devs}) {
 	$state->regen_devs;
 }
