@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2016/04/26 07:41:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.54 2016/05/10 18:38:17 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -328,7 +328,6 @@ share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
 share/help/hu/gnome-terminal/figures/
-share/help/hu/gnome-terminal/figures/gnome-terminal.png
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -363,7 +362,6 @@ share/help/ko/gnome-terminal/app-fullscreen.page
 share/help/ko/gnome-terminal/app-terminal-sizes.page
 share/help/ko/gnome-terminal/app-zoom.page
 share/help/ko/gnome-terminal/figures/
-share/help/ko/gnome-terminal/figures/gnome-terminal.png
 share/help/ko/gnome-terminal/gs-execute-commands.page
 share/help/ko/gnome-terminal/gs-tabs.page
 share/help/ko/gnome-terminal/index.page
@@ -398,7 +396,6 @@ share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
 share/help/pt_BR/gnome-terminal/figures/
-share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page
@@ -434,7 +431,6 @@ share/help/ru/gnome-terminal/app-fullscreen.page
 share/help/ru/gnome-terminal/app-terminal-sizes.page
 share/help/ru/gnome-terminal/app-zoom.page
 share/help/ru/gnome-terminal/figures/
-share/help/ru/gnome-terminal/figures/gnome-terminal.png
 share/help/ru/gnome-terminal/gs-execute-commands.page
 share/help/ru/gnome-terminal/gs-tabs.page
 share/help/ru/gnome-terminal/index.page

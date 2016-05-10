@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.142 2016/04/26 07:41:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.143 2016/05/10 18:38:17 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.20.1
+GNOME_VERSION=	3.20.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
-		devel/vte3 \
+		devel/vte3>=0.44.2 \
 		sysutils/e2fsprogs \
 		x11/gnome/nautilus
 
@@ -41,5 +41,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
+	rm -r ${PREFIX}/lib/systemd/
 
 .include <bsd.port.mk>
