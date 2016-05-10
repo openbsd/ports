@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.14 2016/05/10 15:29:53 espie Exp $
+# $OpenBSD: proot,v 1.15 2016/05/10 15:31:17 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -330,6 +330,9 @@ sub check_mountpoint
 	}
 	close($cmd);
 	my $root = $state->{chroot};
+	if (-l $root) {
+		$root = readlink $root;
+	}
 	for my $dir (keys %$dev) {
 		if ($dir =~ m/^\Q$state->{chroot}\//) {
 			$state->{dontrm}{$dir} = 1;
