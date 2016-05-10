@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/05/06 15:33:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/05/10 08:57:06 sthen Exp $
 
 PORTROACH =	limitw:1,even
 
@@ -58,6 +58,9 @@ LIB_DEPENDS =	devel/libexecinfo \
 		devel/yaml-cpp
 TEST_DEPENDS =	textproc/py-yaml \
 		databases/py-mongo
+# icu4c support is not actually compiled in, but scons picks up the
+# headers and patching this away is intrusive
+BUILD_DEPENDS =	textproc/icu4c
 
 do-install:
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
