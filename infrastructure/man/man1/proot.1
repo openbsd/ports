@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.4 2016/05/10 09:16:31 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.5 2016/05/10 15:53:02 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -109,6 +109,8 @@ Copy system include files (deprecated).
 .It Cm ports_subdirs
 Create ports infrastructure subdirs, according to users required for
 .Xr dpb 1 .
+.Xr chown 2
+any content within to the appropriate users.
 .It Cm stragglers
 Double-check filled up chroot for files we don't know about.
 .It Cm write_mk
@@ -159,9 +161,23 @@ defaults to
 .It Ar PACKAGE_REPOSITORY
 .It Ar PLIST_DB
 .It Ar LOCKDIR
+.It Ar WRKOBJDIR
 same as in
 .Xr bsd.port.mk 5
 .Pp
+.It Ar key
+Name of a
+.Xr signify 1
+signing key.
+Just give the stem, as in
+.Ar key Ns = Ns stem .
+This will copy
+.Pa /etc/signify/stem-pkg.{pub,sec}
+and set
+.Va SIGNING_PARAMETERS
+in generated
+.Pa /etc/mk.conf
+accordingly.
 .It Ar preserve
 Supplemental directory to preserve during
 .Cm unpopulate .
@@ -183,5 +199,3 @@ action.
 .Xr chroot 8
 .Sh AUTHOR
 Marc Espie
-.Sh BUGS
-Very much a work in progress, options and mode of operation will change.
