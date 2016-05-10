@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/04/21 11:42:29 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/05/10 10:09:52 dcoppa Exp $
 @bin bin/mlcc
 @bin bin/mlclient
 @bin bin/mlclientx
@@ -46,6 +46,12 @@ lib/mlterm/libim-kbd-fb.so
 @comment lib/mlterm/libim-kbd.a
 @comment lib/mlterm/libim-kbd.la
 lib/mlterm/libim-kbd.so
+@comment lib/mlterm/libim-skk-fb.a
+@comment lib/mlterm/libim-skk-fb.la
+lib/mlterm/libim-skk-fb.so
+@comment lib/mlterm/libim-skk.a
+@comment lib/mlterm/libim-skk.la
+lib/mlterm/libim-skk.so
 @comment lib/mlterm/libmotif.a
 @comment lib/mlterm/libmotif.la
 lib/mlterm/libmotif.so
@@ -104,8 +110,6 @@ share/examples/mlterm/vfont
 @sample ${SYSCONFDIR}/mlterm/vfont
 share/examples/mlterm/xim
 @sample ${SYSCONFDIR}/mlterm/xim
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/mlconfig.mo
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo
