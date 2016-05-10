@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.3 2016/05/03 09:20:30 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.4 2016/05/10 09:16:31 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 3 2016 $
+.Dd $Mdocdate: May 10 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -78,7 +78,20 @@ Copy things from the base system, perusing the system locate databases.
 .It Cm resolv
 Copy the system
 .Pa resolv.conf
-file
+and
+.Pa hosts
+files
+.It Cm unpopulate_light
+Remove everything from the chroot, apart from known preserved areas
+.Po marked with
+.Ar preserve
+.Pc
+or other mountpoints,
+and stuff copied over during
+.Cm locate ,
+.Cm snapshot
+or
+.Cm resolv .
 .It Cm devs
 Regenerate devices using
 .Xr MAKEDEV 8
