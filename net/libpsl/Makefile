@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 20:28:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/10 11:34:54 jca Exp $
 
 COMMENT =		public suffix list library
 
-V =			0.7.1
-REVISION =		1
-DISTNAME =		libpsl-$V
+DISTNAME =		libpsl-0.13.0
 
-SHARED_LIBS +=		psl	0.0	# 2.4
+SHARED_LIBS +=		psl	1.0	# 5.0
 
 CATEGORIES =		net www
 
@@ -15,31 +13,27 @@ HOMEPAGE =		https://github.com/rockdaboot/libpsl/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c idn unistring
+WANTLIB += c iconv idn intl unistring
 
-GH_ACCOUNT =		rockdaboot
-GH_PROJECT =		libpsl
-GH_TAGNAME =		libpsl-$V
+MASTER_SITES =		${HOMEPAGE}/releases/download/${DISTNAME}/
 
-MODULES =		devel/gettext
+MODULES =		lang/python
+
+MODPY_RUNDEP =		No
+
 LIB_DEPENDS =		converters/libunistring \
 			devel/libidn
 
-BUILD_DEPENDS =		devel/libtool \
-			sysutils/coreutils
-CONFIGURE_STYLE =	autoconf automake
+BUILD_DEPENDS =		sysutils/coreutils
+
+CONFIGURE_STYLE = gnu
+
 CONFIGURE_ARGS +=	--enable-builtin=libidn \
 			--enable-runtime=libidn
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    sh ./autogen.sh
+pre-configure:
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/28 06:59:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/05/10 11:34:54 jca Exp $
 @conflict gmt-*
 @bin bin/psl
 include/libpsl.h
@@ -6,6 +6,3 @@ lib/libpsl.a
 lib/libpsl.la
 @lib lib/libpsl.so.${LIBpsl_VERSION}
 lib/pkgconfig/libpsl.pc
-share/libpsl/
-share/libpsl/effective_tld_names.dat
-share/libpsl/test_psl.txt

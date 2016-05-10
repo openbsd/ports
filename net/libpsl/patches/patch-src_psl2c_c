@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_psl2c_c,v 1.2 2015/04/09 20:04:23 jca Exp $
+$OpenBSD: patch-src_psl2c_c,v 1.3 2016/05/10 11:34:54 jca Exp $
 
 Correct the name of the sha1sum command.
 
---- src/psl2c.c.orig	Sat Feb 21 19:30:52 2015
-+++ src/psl2c.c	Thu Apr  9 21:59:06 2015
-@@ -167,7 +167,7 @@ int main(int argc, const char **argv)
- 		_print_psl_entries(fpout, psl->suffixes, "suffixes");
- 		_print_psl_entries(fpout, psl->suffix_exceptions, "suffix_exceptions");
+--- src/psl2c.c.orig	Mon May  9 17:26:56 2016
++++ src/psl2c.c	Mon May  9 17:27:08 2016
+@@ -276,7 +276,7 @@ int main(int argc, const char **argv)
  
--		snprintf(cmd, cmdsize, "sha1sum %s", argv[1]);
-+		snprintf(cmd, cmdsize, "gsha1sum %s", argv[1]);
+ 		_print_psl_entries_dafsa(fpout, psl->suffixes);
+ 
+-		snprintf(cmd, cmdsize, "sha1sum %s", argv[argpos]);
++		snprintf(cmd, cmdsize, "gsha1sum %s", argv[argpos]);
  		if ((pp = popen(cmd, "r"))) {
  			if (fscanf(pp, "%63[0-9a-zA-Z]", checksum) < 1)
  				*checksum = 0;
