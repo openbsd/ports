@@ -1,35 +1,36 @@
-$OpenBSD: patch-src_libtracker-common_tracker-file-utils_c,v 1.6 2016/05/08 13:45:55 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-file-utils_c,v 1.7 2016/05/10 05:55:19 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=766137
+From 6c97d3df87e594549cbc84676596f49ae7ade6c0 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 10 May 2016 07:52:45 +0200
+Subject: tracker_file_system_get_remaining_space: use proper units
 
---- src/libtracker-common/tracker-file-utils.c.orig	Sun May  8 15:16:58 2016
-+++ src/libtracker-common/tracker-file-utils.c	Sun May  8 15:24:06 2016
-@@ -242,16 +242,20 @@ tracker_file_get_mime_type (GFile *file)
+--- src/libtracker-common/tracker-file-utils.c.orig	Wed Mar  2 13:02:34 2016
++++ src/libtracker-common/tracker-file-utils.c	Tue May 10 07:43:31 2016
+@@ -240,6 +240,8 @@ tracker_file_get_mime_type (GFile *file)
  
+ #ifdef __linux__
+ 
++#define __bsize f_bsize
++
  #ifdef __USE_LARGEFILE64
  #define __statvfs statfs64
-+#define __bsize f_bsize
  #else
- #define __statvfs statfs
-+#define __bsize f_bsize
- #endif
+@@ -248,6 +250,8 @@ tracker_file_get_mime_type (GFile *file)
  
  #else /* __linux__ */
  
++#define __bsize f_frsize
++
  #if HAVE_STATVFS64
  #define __statvfs statvfs64
-+#define __bsize f_frsize
  #else
- #define __statvfs statvfs
-+#define __bsize f_frsize
- #endif
- 
- #endif /* __linux__ */
-@@ -294,7 +298,7 @@ tracker_file_system_get_remaining_space (const gchar *
+@@ -294,7 +298,8 @@ tracker_file_system_get_remaining_space (const gchar *
  
  	if (statvfs_helper (path, &st)) {
  		available = (geteuid () == 0) ? st.f_bfree : st.f_bavail;
 -		return st.f_bsize * available;
++		/* __bsize is a platform dependent #define above */
 +		return st.__bsize * available;
  	} else {
  		return 0;
