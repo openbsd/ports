@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.15 2016/05/10 15:31:17 espie Exp $
+# $OpenBSD: proot,v 1.16 2016/05/10 15:48:18 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -36,6 +36,8 @@ package MyUser;
 our @ISA = qw(DPB::User);
 
 use File::Basename;
+use File::Find;
+
 sub new
 {
 	my $class = shift;
@@ -51,6 +53,24 @@ sub mkpath
 	}
 	$self->mkdir($dir);
 }
+
+sub mkRpath
+{
+	my ($self, $dir, @except) = @_;
+	my %dont = map {($_, 1)} @except;
+	if (-d $dir) {
+		find(sub {
+		    if ($dont{$_}) {
+			    $File::Find::prune = 1;
+			    return;
+		    }
+		    $self->own($_);
+		}, $dir);
+	} else {
+		$self->mkpath($dir);
+	}
+}
+
 sub own
 {
 	my ($self, $path) = @_;
@@ -63,6 +83,7 @@ sub mkdir
 	mkdir($dir);
 	$self->own($dir);
 }
+
 package MyState;
 our @ISA = (qw(OpenBSD::State));
 
@@ -775,16 +796,23 @@ sub verbose_shit
 sub make_ports_subdirs
 {
 	my $state = shift;
-	$state->banner("Making out extra directories",
+	$state->banner("Adjusting ports directories",
 	    sub {
-	    	$state->{fetchuser}->mkpath($state->chroot($state->{DISTDIR}));
+	    	$state->{progressmeter}->message("DISTDIR");
+	    	$state->{fetchuser}->mkRpath($state->chroot($state->{DISTDIR}), 'build-stats');
 		if (defined $state->{loguser}) {
-			$state->{loguser}->mkpath($state->chroot($state->{LOGDIR}));
+			$state->{progressmeter}->message("LOGDIR");
+			$state->{loguser}->mkRpath($state->chroot($state->{LOGDIR}));
+			$state->{loguser}->mkRpath($state->chroot($state->{DISTDIR}, "build-stats"));
+			
 		}
 	    	$state->{builduser}->mkpath($state->chroot($state->{WRKOBJDIR}));
-	    	$state->{builduser}->mkpath($state->chroot($state->{PACKAGE_REPOSITORY}));
-	    	$state->{builduser}->mkpath($state->chroot($state->{PLIST_DB}));
-		$state->{builduser}->mkpath($state->chroot($state->{LOCKDIR}));
+		$state->{progressmeter}->message("PACKAGE_REPOSITORY");
+	    	$state->{builduser}->mkRpath($state->chroot($state->{PACKAGE_REPOSITORY}));
+		$state->{progressmeter}->message("PLIST_DB");
+	    	$state->{builduser}->mkRpath($state->chroot($state->{PLIST_DB}));
+		$state->{progressmeter}->message("LOCKDIR");
+		$state->{builduser}->mkRpath($state->chroot($state->{LOCKDIR}));
 	    });
 }
 
