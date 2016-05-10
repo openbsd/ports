@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/01 19:10:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/10 09:36:22 sthen Exp $
 
 COMMENT=	small 3rd-party letsencrypt client
 
-DISTNAME=	acme-tiny-20151215
-REVISION=	1
+DISTNAME=	acme-tiny-20160326
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 GH_ACCOUNT=	diafygi
 GH_PROJECT=	acme-tiny
-GH_COMMIT=	86394c615afa9470b82c3385500941b62f69ab44
+GH_COMMIT=	7a5a2558c8d6e5ab2a59b9fec9633d9e63127971
 
 MODPY_PI=	No
 MODPY_SETUPTOOLS= No
