@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/04/26 07:42:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2016/05/10 07:16:44 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -17,8 +17,7 @@ CONFIGURE_ARGS=		--enable-extensions=all
 
 MODGNOME_TOOLS +=	desktop-file-utils
 
-BUILD_DEPENDS=		devel/gettext \
-			devel/libgtop2
+BUILD_DEPENDS=		devel/libgtop2
 
 RUN_DEPENDS=		devel/libgtop2 \
 			x11/gnome/shell
