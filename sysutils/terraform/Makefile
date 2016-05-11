@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/08 12:29:17 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/11 17:03:21 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
-
-MODGO_ENV=		GO15VENDOREXPERIMENT=1
 
 PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 			cobbler consul datadog digitalocean dme dnsimple \

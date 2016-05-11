@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/08 12:29:17 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/11 17:03:21 ajacoutot Exp $
 
 COMMENT=		tool for building machine images
 
@@ -18,7 +18,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
-
-MODGO_ENV=		GO15VENDOREXPERIMENT=1
 
 .include <bsd.port.mk>
