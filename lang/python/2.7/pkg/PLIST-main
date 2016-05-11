@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2015/12/17 19:16:51 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2016/05/11 22:43:49 naddy Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -2032,11 +2032,11 @@ lib/python2.7/pipes.pyo
 lib/python2.7/pkgutil.py
 lib/python2.7/pkgutil.pyc
 lib/python2.7/pkgutil.pyo
-lib/python2.7/plat-openbsd5/
-lib/python2.7/plat-openbsd5/IN.py
-lib/python2.7/plat-openbsd5/IN.pyc
-lib/python2.7/plat-openbsd5/IN.pyo
-lib/python2.7/plat-openbsd5/regen
+lib/python2.7/plat-openbsd6/
+lib/python2.7/plat-openbsd6/IN.py
+lib/python2.7/plat-openbsd6/IN.pyc
+lib/python2.7/plat-openbsd6/IN.pyo
+lib/python2.7/plat-openbsd6/regen
 lib/python2.7/platform.py
 lib/python2.7/platform.pyc
 lib/python2.7/platform.pyo
