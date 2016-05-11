@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/05/05 10:46:50 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.31 2016/05/11 15:19:04 czarkoff Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.5.4
+VERSION =		1.6
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -83,7 +83,7 @@ do-install:
 			-exec ${INSTALL_DATA} -p {} \
 			${GOROOT} \;
 
-.	for dir in doc lib misc src pkg
+.	for dir in api doc lib misc src pkg/include pkg/obj pkg/${GOCFG} test
 		@cd ${WRKDIST} && \
 			find ${dir} -type d \
 				-exec ${INSTALL_DATA_DIR} \
@@ -94,7 +94,6 @@ do-install:
 				${GOROOT}/{} \;
 .	endfor
 
-	# These get installed via `find' however we need them to be executable
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
 	${INSTALL_PROGRAM} -p ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
 		${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
