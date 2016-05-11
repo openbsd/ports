@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.17 2016/05/10 16:13:31 espie Exp $
+# $OpenBSD: proot,v 1.18 2016/05/11 12:50:02 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -335,7 +335,7 @@ sub check_mountpoint
 	while (<$cmd>)  {
 		chomp;
 		if (m/^(\S+)\s+on\s+(\S+)\s+type\s+(\S+)\s+\((.+)\)$/) {
-			my ($dir, $options) = ($2, $4);
+			my ($dir, $type, $options) = ($2, $3, $4);
 			my %opts = map {($_, 1)} split(/,\s+/, $options);
 			if ($opts{nodev}) {
 				$dev->{$dir} = 0;
@@ -346,6 +346,9 @@ sub check_mountpoint
 				$nosuid->{$dir} = 1;
 			} else {
 				$nosuid->{$dir} = 0;
+			}
+			if ($type eq 'nfs') {
+				push(@{$state->{nfs}}, $dir);
 			}
 		}
 	}
@@ -793,26 +796,53 @@ sub verbose_shit
 	    });
 }
 
+sub is_under_nfs
+{
+	my ($state, $dir) = @_;
+
+	for my $root (@{$state->{nfs}}) {
+		if ($dir =~ m/^\Q$root\E\b/) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+use constant { WHINE => 1, MKPATH => 2 };
+
+sub build_dir
+{
+	my ($state, $opts, $username, $dirname, @r) = @_;
+	$state->{progressmeter}->message($dirname);
+	my $dir = $state->chroot($state->{$dirname}, @r);
+	my $nfs = $state->is_under_nfs($dir);
+	if (($opts & WHINE) && $nfs) {
+		$state->errsay("#1 (#2) is under nfs", $dirname, $dir);
+	}
+		
+	if ($state->{chown_all} && !$nfs && !($opts & MKPATH)) {
+		$state->{$username}->mkRpath($dir);
+	} else {
+		$state->{$username}->mkpath($dir);
+	}
+}
+
+
 sub make_ports_subdirs
 {
 	my $state = shift;
 	$state->banner("Adjusting ports directories",
 	    sub {
-	    	$state->{progressmeter}->message("DISTDIR");
-	    	$state->{fetchuser}->mkRpath($state->chroot($state->{DISTDIR}), 'build-stats');
+	    	$state->build_dir(0, "fetchuser", "DISTDIR");
 		if (defined $state->{loguser}) {
-			$state->{progressmeter}->message("LOGDIR");
-			$state->{loguser}->mkRpath($state->chroot($state->{LOGDIR}));
-			$state->{loguser}->mkRpath($state->chroot($state->{DISTDIR}, "build-stats"));
-			
+			$state->build_dir(0, "loguser", "LOGDIR"); 
+			$state->build_dir(0, "loguser", "DISTDIR", "build-stats"); 
 		}
-	    	$state->{builduser}->mkpath($state->chroot($state->{WRKOBJDIR}));
-		$state->{progressmeter}->message("PACKAGE_REPOSITORY");
-	    	$state->{builduser}->mkRpath($state->chroot($state->{PACKAGE_REPOSITORY}));
-		$state->{progressmeter}->message("PLIST_DB");
-	    	$state->{builduser}->mkRpath($state->chroot($state->{PLIST_DB}));
-		$state->{progressmeter}->message("LOCKDIR");
-		$state->{builduser}->mkRpath($state->chroot($state->{LOCKDIR}));
+
+		$state->build_dir(WHINE|MKPATH , "builduser", "WRKOBJDIR");
+		$state->build_dir(0, "builduser", "PACKAGE_REPOSITORY");
+		$state->build_dir(0, "builduser", "PLIST_DB");
+		$state->build_dir(WHINE, "builduser", "LOCKDIR");
 	    });
 }
 
