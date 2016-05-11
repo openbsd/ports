@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/09 10:00:49 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/11 09:35:26 czarkoff Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		0.12.22
-REVISION =	0
+V =		0.12.23
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -19,13 +18,13 @@ WANTLIB += c pthread
 
 MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
 
+WRKDIST =		${WRKDIR}/syncthing
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing
 SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 MODGO_TYPE =		bin
-MODGO_SUBDIR =		${WRKDIR}/syncthing
-MODGO_ENV =		PATH="${PORTPATH}"
+MODGO_ENV =		PATH="${PORTPATH}" HOME="${PORTHOME}"
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \

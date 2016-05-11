@@ -1,0 +1,21 @@
+$OpenBSD: patch-build_go,v 1.1 2016/05/11 09:35:26 czarkoff Exp $
+--- build.go.orig	Wed May 11 00:53:47 2016
++++ build.go	Wed May 11 00:55:06 2016
+@@ -213,7 +213,7 @@ func install(pkg string, tags []string) {
+ 		log.Fatal(err)
+ 	}
+ 	os.Setenv("GOBIN", filepath.Join(cwd, "bin"))
+-	args := []string{"install", "-v", "-ldflags", ldflags()}
++	args := []string{"install", "-v", "-x", "-ldflags", ldflags()}
+ 	if len(tags) > 0 {
+ 		args = append(args, "-tags", strings.Join(tags, ","))
+ 	}
+@@ -232,7 +232,7 @@ func build(pkg string, tags []string) {
+ 	}
+ 
+ 	rmr(binary)
+-	args := []string{"build", "-i", "-v", "-ldflags", ldflags()}
++	args := []string{"build", "-i", "-v", "-x", "-ldflags", ldflags()}
+ 	if len(tags) > 0 {
+ 		args = append(args, "-tags", strings.Join(tags, ","))
+ 	}
