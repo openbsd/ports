@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.25 2016/03/10 12:20:06 naddy Exp $
+# $OpenBSD: arch-defines.mk,v 1.26 2016/05/11 22:00:26 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -11,15 +11,15 @@
 
 ARCH ?!= uname -m
 
-ALL_ARCHS = alpha amd64 arm armish aviion hppa hppa64 i386 landisk loongson \
+ALL_ARCHS = alpha amd64 arm armish aviion hppa i386 landisk loongson \
 	luna88k m88k macppc mips64 mips64el octeon sgi socppc sparc \
 	sparc64 zaurus
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64 zaurus
-BE_ARCHS = hppa hppa64 m88k mips64 powerpc sparc sparc64
+BE_ARCHS = hppa m88k mips64 powerpc sparc sparc64
 LE_ARCHS = alpha amd64 arm i386 mips64el sh
-LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
-GCC4_ARCHS = alpha amd64 arm armish armv7 i386 hppa hppa64 landisk loongson \
+LP64_ARCHS = alpha amd64 sparc64 mips64 mips64el
+GCC4_ARCHS = alpha amd64 arm armish armv7 i386 hppa landisk loongson \
 	macppc mips64 mips64el octeon powerpc sgi sh socppc sparc sparc64 zaurus
 GCC3_ARCHS = aviion luna88k m88k
 # XXX easier for ports that depend on mono

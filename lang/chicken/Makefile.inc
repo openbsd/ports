@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2015/08/27 22:40:33 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2016/05/11 22:00:26 naddy Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -29,7 +29,7 @@ FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
 # Based on param.h:MACHINE_STACK_GROWS_UP
 pre-build:
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "hppa64"
+.if ${MACHINE_ARCH} == "hppa"
 	sed -i 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' "${WRKSRC}/Makefile.bsd"
 .endif
 
