@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_am,v 1.4 2015/09/26 21:39:52 dcoppa Exp $
+$OpenBSD: patch-Makefile_am,v 1.5 2016/05/12 09:27:39 dcoppa Exp $
 
 Unbreak separate build
 
---- Makefile.am.orig	Thu Sep 24 10:20:44 2015
-+++ Makefile.am	Thu Sep 24 10:58:26 2015
-@@ -40,7 +40,7 @@ libinotify_la_SOURCES += compat/fstatat.c
+--- Makefile.am.orig	Wed May 11 12:06:59 2016
++++ Makefile.am	Wed May 11 12:25:03 2016
+@@ -41,7 +41,7 @@ libinotify_la_SOURCES += compat/ik_atomic.c
  endif
  
  libinotify_la_CFLAGS = -I. -DNDEBUG @PTHREAD_CFLAGS@
