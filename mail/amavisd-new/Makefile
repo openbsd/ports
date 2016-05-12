@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/02 14:30:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/05/12 15:16:00 giovanni Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 
-V=			2.10.1
+V=			2.11.0
 DISTNAME=		amavisd-new-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
-
-REVISION-main=		3
-REVISION-utils=		2
 
 HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
@@ -74,6 +71,8 @@ do-install:
 		p0f-analyzer.pl ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/JpegTester.pm \
 			${PREFIX}/libdata/perl5/site_perl/JpegTester.pm
+	${INSTALL_DATA} ${WRKSRC}/TinyRedis.pm \
+			${PREFIX}/libdata/perl5/site_perl/TinyRedis.pm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amavisd-new
 	cd ${WRKSRC}; ${INSTALL_DATA} AAAREADME.first INSTALL LDAP.schema \
 		LDAP.ldif LICENSE MANIFEST README_FILES/README.* RELEASE_NOTES \

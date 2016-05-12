@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/05/12 15:16:00 giovanni Exp $
 @pkgpath mail/amavisd-new
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
@@ -9,6 +9,7 @@ bin/amavisd-signer
 bin/amavisd-submit
 bin/p0f-analyzer.pl
 libdata/perl5/site_perl/JpegTester.pm
+libdata/perl5/site_perl/TinyRedis.pm
 sbin/amavisd
 share/doc/amavisd-new/
 share/doc/amavisd-new/AAAREADME.first
