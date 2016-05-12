@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/04/23 21:16:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2016/05/12 01:17:13 naddy Exp $
 
 # sparc: fPIC version of libgcc.a needed but not available
 NOT_FOR_ARCHS =	sparc
@@ -7,6 +7,7 @@ COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.2
 DISTNAME =	octave-${VERSION}
+REVISION =	0
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		7.0 # 3.0
