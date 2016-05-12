@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2016/05/09 13:52:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.185 2016/05/12 16:15:58 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
 		--enable-ssl-crtd
 
-EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota \
+EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group wbinfo_group # kerberos_ldap_group (sasl/gssapi)
 
 WANTLIB-main +=	${cWANTLIB} crypto db ssl
