@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/05/05 07:59:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/05/12 05:36:11 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -155,8 +155,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/addresses_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/addresses_utils.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/autoscaler_utils.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/autoscaler_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_buckets_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_buckets_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services_utils.py
@@ -397,6 +395,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/arg_support.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/constants.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/constants.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/transforms.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/transforms.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/write_support.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/service_registry/write_support.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/
@@ -765,16 +765,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine_v1beta4_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine_v1beta4_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine_v1beta4.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/autoscaler_v1beta2_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/autoscaler_v1beta2_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/autoscaler_v1beta2_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler/v1beta2/autoscaler_v1beta2_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler_v1beta2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/__init__.py
@@ -1033,17 +1023,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager/v1beta2/manager_v1b
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager/v1beta2/manager_v1beta2_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager/v1beta2/manager_v1beta2_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager_v1beta2.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/ml_v1alpha2_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/ml_v1alpha2_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/ml_v1alpha2_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha2/ml_v1alpha2_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml_v1alpha2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/__init__.pyc
@@ -1305,8 +1284,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/namespace_manager/
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/namespace_manager/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/namespace_manager/namespace_manager.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/namespace_manager/namespace_manager.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/pagespeedinfo.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/pagespeedinfo.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/queueinfo.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/queueinfo.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/api/taskqueue/
@@ -1623,19 +1600,6 @@ google-cloud-sdk/lib/surface/compute/addresses/describe.py
 google-cloud-sdk/lib/surface/compute/addresses/describe.pyc
 google-cloud-sdk/lib/surface/compute/addresses/list.py
 google-cloud-sdk/lib/surface/compute/addresses/list.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/
-google-cloud-sdk/lib/surface/compute/autoscaler/__init__.py
-google-cloud-sdk/lib/surface/compute/autoscaler/__init__.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/create.py
-google-cloud-sdk/lib/surface/compute/autoscaler/create.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/delete.py
-google-cloud-sdk/lib/surface/compute/autoscaler/delete.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/get.py
-google-cloud-sdk/lib/surface/compute/autoscaler/get.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/list.py
-google-cloud-sdk/lib/surface/compute/autoscaler/list.pyc
-google-cloud-sdk/lib/surface/compute/autoscaler/update.py
-google-cloud-sdk/lib/surface/compute/autoscaler/update.pyc
 google-cloud-sdk/lib/surface/compute/backend_buckets/
 google-cloud-sdk/lib/surface/compute/backend_buckets/__init__.py
 google-cloud-sdk/lib/surface/compute/backend_buckets/__init__.pyc
@@ -2527,6 +2491,14 @@ google-cloud-sdk/lib/surface/emulators/pubsub/env_init.py
 google-cloud-sdk/lib/surface/emulators/pubsub/env_init.pyc
 google-cloud-sdk/lib/surface/emulators/pubsub/start.py
 google-cloud-sdk/lib/surface/emulators/pubsub/start.pyc
+google-cloud-sdk/lib/surface/error_reporting/
+google-cloud-sdk/lib/surface/error_reporting/__init__.py
+google-cloud-sdk/lib/surface/error_reporting/__init__.pyc
+google-cloud-sdk/lib/surface/error_reporting/events/
+google-cloud-sdk/lib/surface/error_reporting/events/__init__.py
+google-cloud-sdk/lib/surface/error_reporting/events/__init__.pyc
+google-cloud-sdk/lib/surface/error_reporting/events/delete.py
+google-cloud-sdk/lib/surface/error_reporting/events/delete.pyc
 google-cloud-sdk/lib/surface/feedback.py
 google-cloud-sdk/lib/surface/feedback.pyc
 google-cloud-sdk/lib/surface/functions/
