@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.398 2016/05/05 19:58:37 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.399 2016/05/12 14:02:46 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -99,6 +99,8 @@ my $base_exceptions = {
 # 5.8
 	'libepoxy' => '/usr/X11R6/lib/libepoxy.so.1.0',
 	'flex' => '/usr/bin/flex',
+# 6.0
+	'p5-Term-ReadKey' => "$p5a/Term/ReadKey.pm",
 };
 
 my $stem_extensions = {

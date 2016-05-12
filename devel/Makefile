@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1492 2016/04/29 21:01:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.1493 2016/05/12 14:02:46 espie Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -999,7 +999,6 @@
      SUBDIR += p5-Term-Encoding
      SUBDIR += p5-Term-ProgressBar
      SUBDIR += p5-Term-Prompt
-     SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-ReadLine-Perl
      SUBDIR += p5-Term-ReadLine-TTYtter
