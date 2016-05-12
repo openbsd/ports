@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/12 15:53:33 ajacoutot Exp $
+@newgroup _vault:772
+@newuser _vault:772:_vault:daemon:Vault Server:/nonexistent:/sbin/nologin
+@bin bin/vault
+share/examples/vault/
+share/examples/vault/vault.hcl
+@sample ${SYSCONFDIR}/vault.hcl
+@rcscript ${RCDIR}/vault
