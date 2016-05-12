@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_d_config_os_progs,v 1.3 2016/05/12 22:00:14 sthen Exp $
+
+target_os contains the first number of the OS version number,
+which is a poor thing to use on OpenBSD.
+
+--- configure.d/config_os_progs.orig	Thu May 12 22:19:21 2016
++++ configure.d/config_os_progs	Thu May 12 22:19:30 2016
+@@ -184,7 +184,7 @@ AC_SUBST(NON_GNU_VPATH)
+ #
+ AC_CANONICAL_TARGET
+ changequote(, )
+-PARTIALTARGETOS=`echo $target_os | sed 's/[-._].*//'`
++PARTIALTARGETOS=`echo $target_os | sed -e 's/[-._].*//' -e 's/openbsd[0-9]/openbsd/'`
+ changequote([, ])
+ AC_MSG_CACHE_ADD(Building for:               $PARTIALTARGETOS)
+ 

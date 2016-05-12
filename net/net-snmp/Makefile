@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2016/05/12 22:00:14 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.3
-REVISION-main=	6
+REVISION-main=	7
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -63,6 +63,7 @@ pre-configure:
 	    ${WRKSRC}/include/net-snmp/net-snmp-config.h.in > /dev/null; then \
 	    echo 'DEFAULT_MIBS in the port Makefile is out of sync'; exit 1; fi
 	@perl -pi -e 's,(snmpd\(8\)|snmpd\.conf\(5\)),netsnmp-\1,' ${WRKSRC}/man/*
+	rm ${WRKSRC}/include/net-snmp/system/openbsd[0-9].h
 
 post-install:
 	@perl -pi -e 's,^(#define[ ]PACKAGE_.*)$$,/* $$1 */,' \

@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.8 2016/05/12 22:00:14 sthen Exp $
+
+quick hack to define the old openbsd{3,4,5} from before stripping
+the version number part when defining the OS macro (see config_os_progs)
+
+--- include/net-snmp/system/openbsd.h.orig	Thu May 12 22:17:49 2016
++++ include/net-snmp/system/openbsd.h	Thu May 12 22:18:06 2016
+@@ -2,6 +2,9 @@
+ 
+ #define netbsd1 netbsd1         /* we're really close to this */
+ #define openbsd openbsd
++#define openbsd3 openbsd3
++#define openbsd4 openbsd4
++#define openbsd5 openbsd5
+ #define UVM
+ 
+ #undef MBPOOL_SYMBOL

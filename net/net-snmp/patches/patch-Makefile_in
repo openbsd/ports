@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2016/05/12 22:00:14 sthen Exp $
+--- Makefile.in.orig	Thu May 12 22:55:09 2016
++++ Makefile.in	Thu May 12 22:55:14 2016
+@@ -24,7 +24,7 @@ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi
+ 	freebsd12.h freebsd.h \
+         generic.h \
+ 	hpux.h irix.h linux.h mingw32.h mips.h netbsd.h osf5.h \
+-	openbsd.h openbsd5.h openbsd4.h \
++	openbsd.h \
+ 	solaris2.3.h solaris2.4.h solaris2.5.h solaris2.6.h \
+ 	solaris.h sunos.h svr5.h sysv.h ultrix4.h
+ INCLUDESUBDIR2=machine

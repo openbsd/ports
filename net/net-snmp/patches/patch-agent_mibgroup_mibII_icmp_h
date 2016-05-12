@@ -1,0 +1,13 @@
+$OpenBSD: patch-agent_mibgroup_mibII_icmp_h,v 1.1 2016/05/12 22:00:14 sthen Exp $
+--- agent/mibgroup/mibII/icmp.h.orig	Thu May 12 22:22:06 2016
++++ agent/mibgroup/mibII/icmp.h	Thu May 12 22:22:13 2016
+@@ -16,8 +16,7 @@ config_arch_require(freebsd9,  mibII/kernel_sysctl)
+ config_arch_require(freebsd10, mibII/kernel_sysctl)
+ config_arch_require(netbsd,    mibII/kernel_netbsd)
+ config_arch_require(netbsdelf, mibII/kernel_netbsd)
+-config_arch_require(openbsd4,  mibII/kernel_sysctl)
+-config_arch_require(openbsd5,  mibII/kernel_sysctl)
++config_arch_require(openbsd,   mibII/kernel_sysctl)
+ config_arch_require(dragonfly2, mibII/kernel_sysctl)
+ config_arch_require(dragonfly3, mibII/kernel_sysctl)
+ config_arch_require(darwin10,  mibII/kernel_sysctl)

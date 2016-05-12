@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2015/11/05 23:43:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2016/05/12 22:00:14 sthen Exp $
 @newgroup _netsnmp:760
 @newuser _netsnmp:760:_netsnmp:daemon:Net-SNMP user:/nonexistent:/sbin/nologin
 @conflict p5-SNMP-*
@@ -204,8 +204,6 @@ include/net-snmp/system/mingw32.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
-include/net-snmp/system/openbsd4.h
-include/net-snmp/system/openbsd5.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
