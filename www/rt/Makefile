@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/14 17:45:44 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2016/05/12 14:00:13 espie Exp $
 
 COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-4.2.12
 CATEGORIES=		www
+REVISION =		0
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
@@ -39,7 +40,6 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			devel/p5-Regexp-IPv6 \
 			devel/p5-Role-Basic \
 			devel/p5-Symbol-Global-Name \
-			devel/p5-Term-ReadKey \
 			devel/p5-Time-modules \
 			devel/p5-Tree-Simple \
 			devel/p5-Universal-require \

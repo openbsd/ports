@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/02 19:20:15 pea Exp $
+# $OpenBSD: Makefile,v 1.15 2016/05/12 14:00:13 espie Exp $
 
 GH_ACCOUNT =    imapsync
 GH_PROJECT =    imapsync
@@ -6,6 +6,7 @@ GH_PROJECT =    imapsync
 COMMENT=	IMAP synchronization tool
 
 DISTNAME=	imapsync-1.637
+REVISION =	0
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
@@ -19,7 +20,6 @@ RUN_DEPENDS=	converters/p5-DateManip \
 		security/p5-IO-Socket-SSL \
 		security/p5-Digest-HMAC \
 		mail/p5-Mail-IMAPClient \
-		devel/p5-Term-ReadKey \
 		net/p5-IO-Socket-INET6 \
 		security/p5-IO-Socket-SSL \
 		devel/p5-IO-Tee \

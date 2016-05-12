@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/02 18:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/05/12 14:00:13 espie Exp $
 
 COMMENT =	MySQL Percona tools
 
 V =		2.2.9
 DISTNAME =	percona-toolkit-${V}
-REVISION =	0
+REVISION =	1
 EPOCH =		0
 CATEGORIES =	databases perl5
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	http://www.percona.com/redir/downloads/percona-toolkit/${V}/
 
 RUN_DEPENDS =	databases/p5-DBD-mysql>=3.0 \
-		devel/p5-Term-ReadKey \
 		sysutils/flock
 
 CONFIGURE_STYLE =	perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/05/04 07:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/05/12 14:00:12 espie Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -15,6 +15,8 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
 EPOCH=		1
+REVISION-server=0
+
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
 		http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
@@ -43,8 +45,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
-			databases/p5-DBD-mysql \
-			devel/p5-Term-ReadKey
+			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1
 

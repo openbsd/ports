@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/05/12 14:00:13 espie Exp $
 
 COMMENT=	download flash video files from various sites
 
@@ -6,6 +6,7 @@ V=		1.25.91
 DISTNAME=	get_flash_videos-$V
 PKGNAME=	${DISTNAME}
 CATEGORIES=	multimedia
+REVISION =	0
 
 HOMEPAGE=	https://get-flash-videos.googlecode.com/
 
@@ -31,8 +32,7 @@ RUN_DEPENDS=	www/p5-LWP-Protocol-https \
 		www/p5-URI \
 		www/p5-WWW-Mechanize
 # modules
-RUN_DEPENDS+=	devel/p5-Term-ReadKey \
-		multimedia/p5-Data-AMF \
+RUN_DEPENDS+=	multimedia/p5-Data-AMF \
 		multimedia/p5-Storable-AMF \
 		rtmpdump-*|flvstreamer-*:net/rtmpdump \
 		security/p5-Crypt-Blowfish_PP \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/23 13:24:17 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/12 14:00:13 espie Exp $
 
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
@@ -8,6 +8,7 @@ PROJECT =	sieve-connect
 DISTNAME =	${PROJECT}-${V}
 CATEGORIES =	mail
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
@@ -23,8 +24,7 @@ NO_TEST =	Yes
 RUN_DEPENDS =	net/p5-Net-DNS \
 		net/p5-IO-Socket-INET6 \
 		security/p5-IO-Socket-SSL>=1.14 \
-		security/p5-Authen-SASL \
-		devel/p5-Term-ReadKey
+		security/p5-Authen-SASL
 
 do-configure:
 	@perl -pi -e 's,^PREFIX=.*,,' ${WRKSRC}/Makefile

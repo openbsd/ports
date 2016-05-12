@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2016/05/12 14:00:13 espie Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	POE-1.294
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://poe.perl.org/
@@ -18,7 +18,6 @@ CONFIGURE_ARGS=	--default
 RUN_DEPENDS=	devel/p5-Curses \
 		devel/p5-IO-Tty \
 		devel/p5-POE-Test-Loops>=1.036 \
-		devel/p5-Term-ReadKey \
 		net/p5-Socket6 \
 		www/p5-libwww
 

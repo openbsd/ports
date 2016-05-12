@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/29 13:50:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/12 14:00:13 espie Exp $
 
 COMMENT =	cli browser for keepassx databases
 
@@ -7,7 +7,7 @@ CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
 HOMEPAGE =	http://kpcli.sourceforge.net/
-REVISION =	1
+REVISION =	2
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,7 +19,6 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 RUN_DEPENDS =	security/p5-Crypt-Rijndael \
-		devel/p5-Term-ReadKey \
 		devel/p5-Term-ShellUI \
 		devel/p5-Clone \
 		p5-Term-ReadLine-Perl-*|p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \

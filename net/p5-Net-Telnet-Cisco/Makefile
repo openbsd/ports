@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/05/12 14:00:13 espie Exp $
 
 COMMENT=		module to interact with a Cisco router
 
 MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Net-Telnet-Cisco-1.10
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
@@ -13,8 +13,7 @@ HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=		net/p5-Net-Telnet>=3.02 \
-			devel/p5-Term-ReadKey>=2.14
+RUN_DEPENDS=		net/p5-Net-Telnet>=3.02
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
