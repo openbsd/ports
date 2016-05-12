@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.424 2016/05/10 22:10:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.425 2016/05/12 15:54:55 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -331,6 +331,7 @@
      SUBDIR += tempwatch
      SUBDIR += theharvester
      SUBDIR += towitoko
+     SUBDIR += vault
      SUBDIR += volatility
      SUBDIR += vomit
      SUBDIR += vpnc
