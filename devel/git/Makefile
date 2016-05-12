@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2016/04/05 08:28:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.152 2016/05/12 14:46:35 espie Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -8,6 +8,7 @@ V =		2.8.1
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
+REVISION-svn =	0
 PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
 
@@ -45,7 +46,6 @@ LIB_DEPENDS-main =	net/curl \
 			${MODGETTEXT_LIB_DEPENDS}
 
 RUN_DEPENDS-svn =	${BASE_PKGPATH} \
-			devel/p5-Term-ReadKey \
 			devel/subversion,-perl \
 			www/p5-URI \
 			www/p5-libwww
