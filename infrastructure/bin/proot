@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.19 2016/05/11 12:51:07 espie Exp $
+# $OpenBSD: proot,v 1.20 2016/05/12 13:14:13 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -439,6 +439,7 @@ sub simple_copy
 			} else {
 				chown $uid, $gid, $cpath;
 			}
+			chmod $mode, $cpath;
 			return;
 		} elsif (-f $path) {
 			my ($dev2, $ino2, $sz2) = (stat $cpath)[0, 1, 7];
