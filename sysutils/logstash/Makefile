@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/02 21:09:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/13 10:09:10 sebastia Exp $
 
 COMMENT=		tool for managing events and logs
 
 V=			2.3.2
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 
 CATEGORIES=		sysutils
@@ -54,7 +54,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,vendor}/
 	${INSTALL_DATA} ${WRKSRC}/Gemfile* ${LS_BASE}
-.for b in logstash logstash.lib.sh plugin
+.for b in logstash logstash-plugin logstash.lib.sh plugin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
 .endfor
 	cd ${WRKSRC} && cp -R lib vendor ${LS_BASE}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/02 21:09:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/05/13 10:09:10 sebastia Exp $
 @pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
@@ -16,6 +16,7 @@ logstash/Gemfile.jruby-1.9.lock
 @group
 logstash/bin/
 logstash/bin/logstash
+logstash/bin/logstash-plugin
 logstash/bin/logstash.lib.sh
 logstash/bin/plugin
 logstash/lib/
