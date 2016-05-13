@@ -1,10 +1,10 @@
-$OpenBSD: patch-rel_reltool_config,v 1.1 2015/01/16 04:42:13 jmatthew Exp $
+$OpenBSD: patch-rel_reltool_config,v 1.2 2016/05/13 04:29:58 jmatthew Exp $
 
 Remove yokozuna
 
---- rel/reltool.config.orig	Sat Jan 10 09:29:36 2015
-+++ rel/reltool.config	Fri Jan 16 12:17:43 2015
-@@ -25,7 +25,7 @@
+--- rel/reltool.config.orig	Thu Apr  7 10:04:44 2016
++++ rel/reltool.config	Wed May 11 11:34:44 2016
+@@ -26,7 +26,7 @@
           riak_kv,
           riak_search,
           riak_api,
@@ -13,7 +13,7 @@ Remove yokozuna
           cluster_info,
           riak_control,
           exometer_core,
-@@ -57,7 +57,7 @@
+@@ -58,7 +58,7 @@
         {app, riak_pipe, [{incl_cond, include}]},
         {app, riak_kv, [{incl_cond, include}]},
         {app, riak_search, [{incl_cond, include}]},
@@ -22,7 +22,7 @@ Remove yokozuna
         {app, eper, [{incl_cond, include}]},
         {app, sasl, [{incl_cond, include}]},
         {app, syslog, [{incl_cond, include}]},
-@@ -116,7 +116,7 @@
+@@ -117,7 +117,7 @@
             {template, "../deps/riak_kv/priv/multi_backend.schema", "lib/20-multi_backend.schema"},
             {template, "../deps/eleveldb/priv/eleveldb.schema", "lib/21-leveldb.schema"},
             {template, "../deps/eleveldb/priv/eleveldb_multi.schema", "lib/22-leveldb_multi.schema"},
@@ -31,7 +31,7 @@ Remove yokozuna
  
             %% Copy additional bin scripts
             {template, "files/riak-admin", "bin/riak-admin"},
-@@ -124,7 +124,7 @@
+@@ -125,7 +125,7 @@
             {template, "files/search-cmd", "bin/search-cmd"},
  
             {mkdir, "lib/basho-patches"},

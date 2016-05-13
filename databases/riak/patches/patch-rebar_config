@@ -1,15 +1,15 @@
-$OpenBSD: patch-rebar_config,v 1.1 2015/01/16 04:42:13 jmatthew Exp $
+$OpenBSD: patch-rebar_config,v 1.2 2016/05/13 04:29:58 jmatthew Exp $
 
 Disable yokozuna for now
 
---- rebar.config.orig	Thu Jan  8 15:40:38 2015
-+++ rebar.config	Thu Jan  8 15:40:44 2015
-@@ -21,7 +21,7 @@
-         {riak_search, ".*", {git, "git://github.com/basho/riak_search.git", {branch, "2.0"}}},
-         {riak_control, ".*", {git, "git://github.com/basho/riak_control.git", {branch, "2.0"}}},
-         {riaknostic, ".*", {git, "git://github.com/basho/riaknostic.git", {tag, "2.0.0"}}},
--        {yokozuna, ".*", {git, "git://github.com/basho/yokozuna.git", {branch, "2.0"}}},
-+%%        {yokozuna, ".*", {git, "git://github.com/basho/yokozuna.git", {branch, "2.0"}}},
-         {riak_auth_mods, ".*", {git, "git://github.com/basho/riak_auth_mods.git", {branch, "2.0"}}},
-         {rebar_lock_deps_plugin, ".*", {git, "git://github.com/seth/rebar_lock_deps_plugin.git", {branch, "master"}}}
-        ]}.
+--- rebar.config.orig	Thu Apr  7 10:04:44 2016
++++ rebar.config	Wed May 11 11:44:44 2016
+@@ -20,7 +20,7 @@
+         {riak_search, ".*", {git, "git://github.com/basho/riak_search.git", {branch, "2.1"}}},
+         {riak_control, ".*", {git, "git://github.com/basho/riak_control.git", {branch, "2.1"}}},
+         {riaknostic, ".*", {git, "git://github.com/basho/riaknostic.git", {branch, "2.1"}}},
+-        {yokozuna, ".*", {git, "git://github.com/basho/yokozuna.git", {branch, "2.1"}}},
++%%        {yokozuna, ".*", {git, "git://github.com/basho/yokozuna.git", {branch, "2.1"}}},
+         {riak_auth_mods, ".*", {git, "git://github.com/basho/riak_auth_mods.git", {branch, "2.1"}}},
+         {rebar_lock_deps_plugin, ".*", {git, "git://github.com/seth/rebar_lock_deps_plugin.git",
+             "7a5835029c42b8138325405237ea7e8516a84800"}}

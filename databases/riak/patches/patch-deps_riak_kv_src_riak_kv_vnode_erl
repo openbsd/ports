@@ -1,10 +1,10 @@
-$OpenBSD: patch-deps_riak_kv_src_riak_kv_vnode_erl,v 1.1 2015/01/16 04:42:13 jmatthew Exp $
+$OpenBSD: patch-deps_riak_kv_src_riak_kv_vnode_erl,v 1.2 2016/05/13 04:29:58 jmatthew Exp $
 
 Remove yokozuna tentacles
 
---- deps/riak_kv/src/riak_kv_vnode.erl.orig	Fri Jan  9 17:57:18 2015
-+++ deps/riak_kv/src/riak_kv_vnode.erl	Mon Jan 12 10:45:47 2015
-@@ -92,18 +92,18 @@
+--- deps/riak_kv/src/riak_kv_vnode.erl.orig	Thu Nov 12 08:02:14 2015
++++ deps/riak_kv/src/riak_kv_vnode.erl	Wed May 11 11:43:58 2016
+@@ -93,20 +93,20 @@
  
  %% N.B. The ?INDEX macro should be called any time the object bytes on
  %% disk are modified.
@@ -12,11 +12,14 @@ Remove yokozuna tentacles
 +%%-ifdef(TEST).
  %% Use values so that test compile doesn't give 'unused vars' warning.
  -define(INDEX(A,B,C), _=element(1,{A,B,C}), ok).
+ -define(INDEX_BIN(A,B,C,D,E), _=element(1,{A,B,C,D,E}), ok).
 --else.
 --define(INDEX(Obj, Reason, Partition), yz_kv:index(Obj, Reason, Partition)).
+--define(INDEX_BIN(Bucket, Key, Obj, Reason, Partition), yz_kv:index_binary(Bucket, Key, Obj, Reason, Partition)).
 --endif.
 +%%-else.
 +%%-define(INDEX(Obj, Reason, Partition), yz_kv:index(Obj, Reason, Partition)).
++%%-define(INDEX_BIN(Bucket, Key, Obj, Reason, Partition), yz_kv:index_binary(Bucket, Key, Obj, Reason, Partition)).
 +%%-endif.
  
 --ifdef(TEST).
