@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/13 14:36:37 jeremy Exp $
 
 COMMENT =		Lua procedural language support for PostgreSQL
 
 VERSION =		1.0
 DISTNAME =		pllua-${VERSION}
 PKGNAME =		postgresql-pllua-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =		databases
 
@@ -22,7 +22,7 @@ MASTER_SITES =		http://pgfoundry.org/frs/download.php/3481/
 
 MODULES =		lang/lua
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		postgresql-server->=9.4,<9.5:databases/postgresql,-server
+RUN_DEPENDS =		postgresql-server->=9.5,<9.6:databases/postgresql,-server
 
 USE_GMAKE =		Yes
 
