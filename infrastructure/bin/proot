@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.24 2016/05/13 14:30:06 espie Exp $
+# $OpenBSD: proot,v 1.25 2016/05/13 22:40:28 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -904,6 +904,7 @@ sub build_dir
 	my ($state, $opts, $username, $dirname, @r) = @_;
 	$state->{progressmeter}->message($dirname);
 	my $dir = join('/', $state->{$dirname}, @r);
+	$state->{$username}->mkpath($dir);
 	my $nfs = $state->is_under_nfs($dir);
 	if (($opts & WHINE) && $nfs) {
 		$state->errsay("#1 (#2) is under nfs", $dirname, $dir);
@@ -911,9 +912,7 @@ sub build_dir
 		
 	if ($state->{chown_all} && !$nfs && !($opts & MKPATH)) {
 		$state->{$username}->mkRpath($dir);
-	} else {
-		$state->{$username}->mkpath($dir);
-	}
+	} 
 }
 
 
