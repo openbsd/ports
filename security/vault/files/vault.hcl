@@ -1,3 +1,5 @@
+# $OpenBSD: vault.hcl,v 1.2 2016/05/13 06:06:14 ajacoutot Exp $
+#
 # Vault server configuration
 
 backend "inmem" {
