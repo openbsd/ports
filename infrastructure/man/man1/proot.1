@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.5 2016/05/10 15:53:02 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.6 2016/05/13 17:26:08 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 10 2016 $
+.Dd $Mdocdate: May 13 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -109,6 +109,9 @@ Copy system include files (deprecated).
 .It Cm ports_subdirs
 Create ports infrastructure subdirs, according to users required for
 .Xr dpb 1 .
+If
+.Ar chown_all
+is set to 1,
 .Xr chown 2
 any content within to the appropriate users.
 .It Cm stragglers
@@ -118,6 +121,10 @@ If some directory values are different from the default,
 write a skeleton
 .Pa mk.conf
 file.
+.It Cm check_symlinks
+Report absolute symlinks that exist under the
+.Ar chroot ,
+white-listing known base system links.
 .El
 .Pp
 By default,
@@ -165,6 +172,10 @@ defaults to
 same as in
 .Xr bsd.port.mk 5
 .Pp
+.It Ar chown_all
+set to 1 to have action
+.Cm ports_subdirs
+change owners of every content.
 .It Ar key
 Name of a
 .Xr signify 1
