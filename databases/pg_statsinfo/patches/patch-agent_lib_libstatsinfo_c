@@ -1,39 +1,19 @@
-$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.2 2014/12/26 12:56:56 landry Exp $
-freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
---- agent/lib/libstatsinfo.c.orig	Mon Nov 26 03:21:03 2012
-+++ agent/lib/libstatsinfo.c	Fri Dec 26 13:54:46 2014
-@@ -50,9 +50,17 @@
- #include "pgut/pgut-spi.h"
- #include "../common.h"
- 
--#ifndef WIN32
-+#if !defined(WIN32)
-+#if defined(__OpenBSD__)
-+#include <sys/sched.h>
-+#include <sys/resource.h>
-+#include <sys/sysctl.h>
-+#include <paths.h>
-+#include <kvm.h>
-+#else
- #include "linux/version.h"
- #endif
-+#endif
- 
- /* also adjust non-critial setting parameters? */
- /* #define ADJUST_NON_CRITICAL_SETTINGS */
-@@ -1114,9 +1122,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
+$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
+--- agent/lib/libstatsinfo.c.orig	Fri Feb 12 10:49:13 2016
++++ agent/lib/libstatsinfo.c	Fri May 13 23:34:34 2016
+@@ -1693,9 +1693,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
  #define NUM_STAT_FIELDS_MIN		6
  
  /* not support a kernel that does not have the required fields at "/proc/stat" */
-+#if !defined(__OpenBSD__)
- #if LINUX_VERSION_CODE < KERNEL_VERSION(2,5,41)
++#if defined(__linux__)
+ #if !LINUX_VERSION_AT_LEAST(2,5,41)
  #error kernel version 2.5.41 or later is required
  #endif
 +#endif
  
  /*
   * statsinfo_cpustats - get cpu information
-@@ -1155,6 +1165,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
+@@ -1734,6 +1736,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
  	PG_RETURN_DATUM(get_cpustats(fcinfo, 0, 0, 0, 0));
  }
  
@@ -41,7 +21,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  static Datum
  get_cpustats(FunctionCallInfo fcinfo,
  			 int64 prev_cpu_user,
-@@ -1167,6 +1178,59 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -1746,6 +1749,59 @@ get_cpustats(FunctionCallInfo fcinfo,
  	int64			 cpu_system;
  	int64			 cpu_idle;
  	int64			 cpu_iowait;
@@ -101,106 +81,15 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  	List			*records = NIL;
  	List			*fields = NIL;
  	HeapTuple		 tuple;
-@@ -1239,6 +1303,7 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -1818,6 +1874,7 @@ get_cpustats(FunctionCallInfo fcinfo,
  
  	return HeapTupleGetDatum(tuple);
  }
 +#endif
  
- /*
-  * statsinfo_devicestats - get device information
-@@ -1333,11 +1398,14 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 
- 	for (row = 0; row < SPI_processed; row++)
- 	{
-+#if !defined(__OpenBSD__)
- 		HeapTupleHeader prev_devicestats;
-+#endif
- 		char *device;
- 		char *spcname;
- 		char *dev_major;
- 		char *dev_minor;
-+#if !defined(__OpenBSD__)
- 		char *dev_name = NULL;
- 		int64 readsector;
- 		int64 readtime;
-@@ -1346,14 +1414,18 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 		int64 ioqueue;
- 		int64 iototaltime;
- 		char *record;
-+#endif
- 		char  regex[64];
- 		List *devicenum = NIL;
-+#if !defined(__OpenBSD__)
- 		List *records = NIL;
- 		List *fields = NIL;
- 		int   nfield;
-+#endif
- 
- 		device = SPI_getvalue(tuptable->vals[row], tuptable->tupdesc, 1);
- 		spcname = SPI_getvalue(tuptable->vals[row], tuptable->tupdesc, 2);
-+		elog(LOG, "device:%s, spc:%s\n", device, spcname);
- 
- 		if (prev_device)
- 		{
-@@ -1375,6 +1447,7 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 
- 		snprintf(regex, lengthof(regex), "^\\s*%s\\s+%s\\s+", dev_major, dev_minor);
- 
-+#if !defined(__OpenBSD__)
- 		/* extract device information */
- 		if (exec_grep(FILE_DISKSTATS, regex, &records) <= 0)
- 		{
-@@ -1389,11 +1462,24 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 		record = b_trim((char *) list_nth(records, 0));
- 
- 		nfield = exec_split(record, "\\s+", &fields);
-+#endif
- 
- 		memset(nulls, 0, sizeof(nulls));
- 		memset(values, 0, sizeof(values));
- 		spclist = list_truncate(spclist, 0);
- 
-+#if defined(__OpenBSD__)
-+		values[0] = CStringGetTextDatum("");
-+		values[1] = CStringGetTextDatum("");
-+		values[2] = CStringGetTextDatum("");
-+		values[2] = Int64GetDatum(0);
-+		values[3] = Int64GetDatum(0);
-+		values[4] = Int64GetDatum(0);
-+		values[5] = Int64GetDatum(0);
-+		values[6] = Int64GetDatum(0);
-+		values[7] = Int64GetDatum(0);
-+		values[8] = Int64GetDatum(0);
-+#else
- 		if (nfield  == NUM_DISKSTATS_FIELDS)
- 		{
- 			/* device_major */
-@@ -1467,7 +1553,15 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 				(errcode(ERRCODE_DATA_EXCEPTION),
- 				 errmsg("unexpected file format: \"%s\"", FILE_DISKSTATS),
- 				 errdetail("number of fields is not corresponding")));
-+#endif
- 
-+#if defined(__OpenBSD__)
-+		values[9] = Int16GetDatum(0);
-+		values[10] = Int16GetDatum(0);
-+		values[11] = Int16GetDatum(0);
-+		values[12] = Int16GetDatum(0);
-+		values[13] = Int16GetDatum(0);
-+#else
- 		/* set the overflow flag if value is smaller than previous value */
- 		prev_devicestats = search_devicestats(devicestats, dev_name);
- 
-@@ -1536,6 +1630,7 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
- 
- 		spclist = lappend(spclist, spcname);
- 		prev_device = device;
-+#endif
- 	}
- 
- 	/* store the last tuple */
-@@ -1560,10 +1655,46 @@ get_devicestats(FunctionCallInfo fcinfo, ArrayType *de
+ #define NUM_DEVICESTATS_COLS			17
+ #define TYPE_DEVICE_TABLESPACES			TEXTOID
+@@ -1991,10 +2048,46 @@ statsinfo_devicestats(PG_FUNCTION_ARGS)
  /*
   * statsinfo_loadavg - get loadavg information
   */
@@ -247,7 +136,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  	int			fd;
  	char		buffer[256];
  	int			nbytes;
-@@ -1622,6 +1753,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
+@@ -2053,6 +2146,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -255,7 +144,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  
  #define FILE_MEMINFO		"/proc/meminfo"
  #define NUM_MEMORY_COLS		5
-@@ -1641,6 +1773,7 @@ compare_meminfo_table(const void *a, const void *b)
+@@ -2072,6 +2166,7 @@ compare_meminfo_table(const void *a, const void *b)
  /*
   * statsinfo_memory - get memory information
   */
@@ -263,7 +152,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  Datum
  statsinfo_memory(PG_FUNCTION_ARGS)
  {
-@@ -1648,6 +1781,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
+@@ -2079,6 +2174,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
  	HeapTuple		 tuple;
  	Datum			 values[NUM_MEMORY_COLS];
  	bool			 nulls[NUM_MEMORY_COLS];
@@ -300,7 +189,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  	int				 fd;
  	char			 buffer[2048];
  	int				 nbytes;
-@@ -1746,6 +1909,7 @@ nextline:
+@@ -2177,6 +2302,7 @@ nextline:
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -308,7 +197,7 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  
  #define FILE_PROFILE		"/proc/systemtap/statsinfo_prof/profile"
  #define NUM_PROFILE_COLS	3
-@@ -1754,9 +1918,16 @@ nextline:
+@@ -2185,9 +2311,16 @@ nextline:
  /*
   * statsinfo_profile - get profile information
   */
@@ -325,20 +214,11 @@ freebsd-ports/databases/pg_statsinfo/files/patch-libstatsinfo.c
  	ReturnSetInfo	*rsinfo = (ReturnSetInfo *) fcinfo->resultinfo;
  	TupleDesc		 tupdesc;
  	Tuplestorestate	*tupstore;
-@@ -1863,6 +2034,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
+@@ -2294,6 +2427,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
  
  	PG_RETURN_VOID();
  }
 +#endif
  
- static void
+ static bool
  checked_write(int fd, const void *buf, int size)
-@@ -2226,7 +2398,7 @@ statsinfo_tablespaces(PG_FUNCTION_ARGS)
- 
- 	relation = heap_open(TableSpaceRelationId, AccessShareLock);
- 
--	scan = heap_beginscan(relation, SnapshotNow, 0, NULL);
-+	scan = heap_beginscan(relation, SnapshotAny, 0, NULL);
- 	while ((tuple = heap_getnext(scan, ForwardScanDirection)) != NULL)
- 	{
- 		Form_pg_tablespace form = (Form_pg_tablespace) GETSTRUCT(tuple);

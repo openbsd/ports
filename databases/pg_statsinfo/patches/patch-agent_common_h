@@ -1,0 +1,34 @@
+$OpenBSD: patch-agent_common_h,v 1.1 2016/05/13 22:09:21 landry Exp $
+--- agent/common.h.orig	Fri May 13 21:03:17 2016
++++ agent/common.h	Fri May 13 21:13:03 2016
+@@ -12,9 +12,17 @@
+ 
+ #include "catalog/pg_control.h"
+ 
+-#ifndef WIN32
++#if !defined(WIN32)
++#if defined(__OpenBSD__)
++#include <sys/sched.h>
++#include <sys/resource.h>
++#include <sys/sysctl.h>
++#include <paths.h>
++#include <kvm.h>
++#else
+ #include "linux/version.h"
+ #endif
++#endif
+ 
+ #define LINUX_VERSION_AT_LEAST(major, minor, patch) \
+ 	(LINUX_VERSION_CODE >= KERNEL_VERSION(major, minor, patch))
+@@ -22,9 +30,11 @@
+ #define GLIBC_VERSION_AT_LEAST(major, minor) \
+ 	(__GLIBC__ > major || (__GLIBC__ == major && __GLIBC_MINOR__ >= minor))
+ 
++#if defined(__linux__)
+ #ifndef HAVE_SYNC_FILE_RANGE
+ #if (LINUX_VERSION_AT_LEAST(2,6,17) && GLIBC_VERSION_AT_LEAST(2,6))
+ #define HAVE_SYNC_FILE_RANGE
++#endif
+ #endif
+ #endif
+ 
