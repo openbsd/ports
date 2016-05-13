@@ -1,0 +1,8 @@
+--- MANIFEST.in.orig	Tue May 10 17:52:18 2016
++++ MANIFEST.in	Tue May 10 17:52:28 2016
+@@ -2,4 +2,4 @@ recursive-include barman *.py
+ recursive-include rpm *
+ include doc/barman.1 doc/barman.5 doc/barman.conf
+ include scripts/barman-wal-restore scripts/barman.bash_completion
+-include AUTHORS NEWS ChangeLog LICENSE PKG-INFO MANIFEST.in MANIFEST setup.py INSTALL README
++include AUTHORS NEWS ChangeLog LICENSE PKG-INFO MANIFEST.in setup.py INSTALL README

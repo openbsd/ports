@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/22 21:36:31 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/13 18:05:01 landry Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_EGG_VERSION =	1.6.0
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 HOMEPAGE =	http://www.pgbarman.org/
@@ -22,8 +22,13 @@ RUN_DEPENDS =	databases/py-psycopg2 \
 		devel/py-dateutil \
 		devel/py-argh
 
-# needs pytest-timeout and pytest-capturelog
+# needs pytest-timeout and pytest-catchlog
 NO_TEST =	Yes
+#TEST_DEPENDS =	${RUN_DEPENDS} \
+#		devel/py-test-timeout \
+#		devel/py-test-catchlog \
+#		devel/py-test-runner \
+#		devel/py-setuptools_scm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/barman

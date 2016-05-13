@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/22 21:36:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/05/13 18:05:01 landry Exp $
 @newgroup _barman:723
 @newuser _barman:723:723:daemon:Barman User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/barman/*
@@ -46,8 +46,14 @@ lib/python${MODPY_VERSION}/site-packages/barman/lockfile.py
 lib/python${MODPY_VERSION}/site-packages/barman/lockfile.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/output.py
 lib/python${MODPY_VERSION}/site-packages/barman/output.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/postgres.py
+lib/python${MODPY_VERSION}/site-packages/barman/postgres.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/process.py
+lib/python${MODPY_VERSION}/site-packages/barman/process.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/recovery_executor.py
 lib/python${MODPY_VERSION}/site-packages/barman/recovery_executor.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/remote_status.py
+lib/python${MODPY_VERSION}/site-packages/barman/remote_status.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.py
 lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/server.py
@@ -56,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/barman/utils.py
 lib/python${MODPY_VERSION}/site-packages/barman/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/version.py
 lib/python${MODPY_VERSION}/site-packages/barman/version.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/wal_archiver.py
+lib/python${MODPY_VERSION}/site-packages/barman/wal_archiver.pyc
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.pyc
 @man man/man1/barman.1
