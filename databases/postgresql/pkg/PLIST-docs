@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.73 2016/05/13 14:27:48 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.74 2016/05/13 17:15:55 pea Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -106,9 +106,7 @@ share/doc/postgresql/html/catalog-pg-pltemplate.html
 share/doc/postgresql/html/catalog-pg-policy.html
 share/doc/postgresql/html/catalog-pg-proc.html
 share/doc/postgresql/html/catalog-pg-range.html
-share/doc/postgresql/html/catalog-pg-replication-origin-status.html
 share/doc/postgresql/html/catalog-pg-replication-origin.html
-share/doc/postgresql/html/catalog-pg-replication-slots.html
 share/doc/postgresql/html/catalog-pg-rewrite.html
 share/doc/postgresql/html/catalog-pg-seclabel.html
 share/doc/postgresql/html/catalog-pg-shdepend.html
@@ -866,6 +864,7 @@ share/doc/postgresql/html/release-9-1-19.html
 share/doc/postgresql/html/release-9-1-2.html
 share/doc/postgresql/html/release-9-1-20.html
 share/doc/postgresql/html/release-9-1-21.html
+share/doc/postgresql/html/release-9-1-22.html
 share/doc/postgresql/html/release-9-1-3.html
 share/doc/postgresql/html/release-9-1-4.html
 share/doc/postgresql/html/release-9-1-5.html
@@ -882,6 +881,7 @@ share/doc/postgresql/html/release-9-2-13.html
 share/doc/postgresql/html/release-9-2-14.html
 share/doc/postgresql/html/release-9-2-15.html
 share/doc/postgresql/html/release-9-2-16.html
+share/doc/postgresql/html/release-9-2-17.html
 share/doc/postgresql/html/release-9-2-2.html
 share/doc/postgresql/html/release-9-2-3.html
 share/doc/postgresql/html/release-9-2-4.html
@@ -895,6 +895,7 @@ share/doc/postgresql/html/release-9-3-1.html
 share/doc/postgresql/html/release-9-3-10.html
 share/doc/postgresql/html/release-9-3-11.html
 share/doc/postgresql/html/release-9-3-12.html
+share/doc/postgresql/html/release-9-3-13.html
 share/doc/postgresql/html/release-9-3-2.html
 share/doc/postgresql/html/release-9-3-3.html
 share/doc/postgresql/html/release-9-3-4.html
@@ -911,9 +912,11 @@ share/doc/postgresql/html/release-9-4-4.html
 share/doc/postgresql/html/release-9-4-5.html
 share/doc/postgresql/html/release-9-4-6.html
 share/doc/postgresql/html/release-9-4-7.html
+share/doc/postgresql/html/release-9-4-8.html
 share/doc/postgresql/html/release-9-4.html
 share/doc/postgresql/html/release-9-5-1.html
 share/doc/postgresql/html/release-9-5-2.html
+share/doc/postgresql/html/release-9-5-3.html
 share/doc/postgresql/html/release-9-5.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
@@ -1276,6 +1279,8 @@ share/doc/postgresql/html/view-pg-matviews.html
 share/doc/postgresql/html/view-pg-policies.html
 share/doc/postgresql/html/view-pg-prepared-statements.html
 share/doc/postgresql/html/view-pg-prepared-xacts.html
+share/doc/postgresql/html/view-pg-replication-origin-status.html
+share/doc/postgresql/html/view-pg-replication-slots.html
 share/doc/postgresql/html/view-pg-roles.html
 share/doc/postgresql/html/view-pg-rules.html
 share/doc/postgresql/html/view-pg-seclabels.html
