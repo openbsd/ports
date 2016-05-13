@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/16 15:37:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/05/13 07:56:55 nigel Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
 ${P5SITE}/FlashVideo/FFmpegDownloader.pm
 ${P5SITE}/FlashVideo/Generic.pm
+${P5SITE}/FlashVideo/HLSDownloader.pm
 ${P5SITE}/FlashVideo/JSON.pm
 ${P5SITE}/FlashVideo/Mechanize.pm
 ${P5SITE}/FlashVideo/RTMPDownloader.pm
@@ -42,6 +43,7 @@ ${P5SITE}/FlashVideo/Site/Dailymotion.pm
 ${P5SITE}/FlashVideo/Site/Daserste.pm
 ${P5SITE}/FlashVideo/Site/Daum.pm
 ${P5SITE}/FlashVideo/Site/Divxstage.pm
+${P5SITE}/FlashVideo/Site/Dplay.pm
 ${P5SITE}/FlashVideo/Site/Ehow.pm
 ${P5SITE}/FlashVideo/Site/Escapistmagazine.pm
 ${P5SITE}/FlashVideo/Site/Expertvillage.pm
@@ -63,7 +65,6 @@ ${P5SITE}/FlashVideo/Site/Grindtv.pm
 ${P5SITE}/FlashVideo/Site/Ima.pm
 ${P5SITE}/FlashVideo/Site/Itv.pm
 ${P5SITE}/FlashVideo/Site/Joemonster.pm
-${P5SITE}/FlashVideo/Site/Kanal5play.pm
 ${P5SITE}/FlashVideo/Site/Kidswb.pm
 ${P5SITE}/FlashVideo/Site/Last.pm
 ${P5SITE}/FlashVideo/Site/Liveleak.pm
