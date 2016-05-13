@@ -1,11 +1,11 @@
-# $OpenBSD: go.port.mk,v 1.9 2016/05/08 12:29:17 czarkoff Exp $
+# $OpenBSD: go.port.mk,v 1.10 2016/05/13 06:43:37 jasper Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
 MODGO_BUILDDEP ?=	Yes
 
 MODGO_RUN_DEPENDS =	lang/go
-MODGO_BUILD_DEPENDS =	lang/go
+MODGO_BUILD_DEPENDS =	lang/go>=1.6
 
 .if ${NO_BUILD:L} == "no" && ${MODGO_BUILDDEP:L} == "yes"
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
