@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2016/03/14 19:46:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2016/05/13 07:20:46 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -133,11 +133,9 @@ share/qemu/pxe-ne2k_pci.rom
 share/qemu/pxe-pcnet.rom
 share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
-share/qemu/q35-acpi-dsdt.aml
 share/qemu/qemu-icon.bmp
 share/qemu/qemu_logo_no_text.svg
 share/qemu/s390-ccw.img
-share/qemu/s390-zipl.rom
 share/qemu/sgabios.bin
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
