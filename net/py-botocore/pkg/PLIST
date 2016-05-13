@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/04/20 06:04:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/05/13 07:12:24 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -144,6 +144,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/devicefarm/2015-06-23/ser
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/directconnect/2012-10-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/discovery/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/discovery/2015-11-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/discovery/2015-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/2016-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dms/2016-01-01/service-2.json
