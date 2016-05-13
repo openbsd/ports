@@ -1,31 +1,33 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/19 23:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/13 22:30:25 landry Exp $
 
 COMMENT =	graphical report tool for PostgreSQL
 
-DISTNAME =	pg_stats_reporter-1.0.1
+DISTNAME =	pg_stats_reporter-3.2.1
 CATEGORIES =	databases www
-REVISION =	1
 
-HOMEPAGE =	http://pgstatsinfo.projects.pgfoundry.org/
+HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://pgfoundry.org/frs/download.php/3437/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pgstatsinfo/}
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
 PREFIX =		${VARBASE}/www
-INSTDIR =	${PREFIX}/pg_stats_reporter/
+INSTDIR =	${PREFIX}/pg_stats_reporter_lib/
 
-SUBST_VARS +=	INSTDIR
+SUBST_VARS +=	INSTDIR MODPHP_BIN
 MODULES =	lang/php
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-pgsql
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-pgsql \
+		lang/php/${MODPHP_VERSION},-intl
 
 do-install:
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	${SUBST_CMD} -c -m 755 ${WRKSRC}/bin/pg_stats_reporter ${WRKINST}/usr/local/bin/pg_stats_reporter
 	cp -pR ${WRKSRC}/html/ ${PREFIX}/htdocs/
 	mv ${PREFIX}/htdocs/pg_stats_reporter/{pg_stats_reporter,index}.php
-	cp -pR ${WRKSRC}/pg_stats_reporter ${INSTDIR}
+	cp -pR ${WRKSRC}/pg_stats_reporter_lib ${PREFIX}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR} ${PREFIX}/htdocs/pg_stats_reporter/
 	chown www:www ${INSTDIR}/{cache,compiled}
 
