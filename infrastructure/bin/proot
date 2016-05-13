@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.22 2016/05/13 13:37:22 espie Exp $
+# $OpenBSD: proot,v 1.23 2016/05/13 14:17:24 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -843,6 +843,47 @@ sub verbose_shit
 	    });
 }
 
+sub show_absolute_symlinks
+{
+	my $state = shift;
+	my $wrapper = '/usr/sbin/mailwrapper';
+	my $expected = {
+		'/etc/localtime' => undef,
+		'/etc/rmt' => '/usr/sbin/rmt',
+		'/etc/termcap' => '/usr/share/misc/termcap',
+		'/usr/bin/hoststat' => $wrapper,
+		'/usr/bin/mailq' => $wrapper,
+		'/usr/bin/newaliases' => $wrapper,
+		'/usr/bin/purgestat' => $wrapper,
+		'/usr/bin/rcs2log' => '/usr/libexec/cvs/contrib/rcs2log',
+		'/usr/local/lib/X11/app-defaults' => '/etc/X11/app-defaults',
+		'/usr/sbin/makemap' => $wrapper,
+		'/usr/sbin/sendmail' => $wrapper,
+    	};
+
+	$state->run_chroot("Showing absolute symlinks",
+	    sub {
+	    	find(
+		    sub {
+		    	return unless -l $_;
+			my $dest = readlink $_;
+			return unless $dest =~ m/^\//;
+			my $ok = 0;
+			my $n = $File::Find::name;
+			if (exists $expected->{$n}) {
+				$ok = 1;
+				if (defined $expected->{$n}
+				    and $expected->{$n} ne $dest) {
+				    $ok = 0;
+				}
+			}
+			if (!$ok) {
+				$state->errsay("#1 points to #2", $n, $dest);
+			}
+		    }, '/');
+	    });
+}
+
 sub is_under_nfs
 {
 	my ($state, $dir) = @_;
@@ -956,4 +997,7 @@ if ($state->{actions}{stragglers}) {
 }
 if ($state->{actions}{write_mk} && exists $state->{write}) {
 	$state->write_mk_conf;
+}
+if ($state->{actions}{check_symlinks}) {
+	$state->show_absolute_symlinks;
 }
