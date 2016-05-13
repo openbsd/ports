@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_interfaces_ecpg_compatlib_Makefile,v 1.10 2016/02/13 21:54:28 sthen Exp $
+$OpenBSD: patch-src_interfaces_ecpg_compatlib_Makefile,v 1.11 2016/05/13 14:27:48 pea Exp $
 --- src/interfaces/ecpg/compatlib/Makefile.orig	Mon Feb  8 21:15:19 2016
 +++ src/interfaces/ecpg/compatlib/Makefile	Fri Feb 12 17:18:09 2016
 @@ -14,8 +14,8 @@ top_builddir = ../../../..
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_interfaces_ecpg_compatlib_Makefile,v 1.10 2016/02/13 21:54:2
  
  NAME= ecpg_compat
 -SO_MAJOR_VERSION= 3
--SO_MINOR_VERSION= 6
+-SO_MINOR_VERSION= 7
 +SO_MAJOR_VERSION= ${LIBecpg_compat_MAJOR}
 +SO_MINOR_VERSION= ${LIBecpg_compat_MINOR}
  
