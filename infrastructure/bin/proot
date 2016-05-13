@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.21 2016/05/13 02:38:03 espie Exp $
+# $OpenBSD: proot,v 1.22 2016/05/13 13:37:22 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -31,6 +31,18 @@ use OpenBSD::Paths;
 use OpenBSD::State;
 use OpenBSD::ProgressMeter;
 use DPB::User;
+
+package OpenBSD::ProgressMeter::Term;
+sub changed
+{
+	my $self = shift;
+	$self->{lastdisplay} = ' 'x($self->{width}-1);
+}
+
+package OpenBSD::ProgressMeter;
+sub changed
+{
+}
 
 package MyUser;
 our @ISA = qw(DPB::User);
@@ -312,7 +324,7 @@ sub srcroot
 sub chdir
 {
 	my ($state, $dir) = @_;
-	chdir($dir) or $state->fatal("Can't change to #1: #2", $dir, $!);
+	CORE::chdir($dir) or $state->fatal("Can't change to #1: #2", $dir, $!);
 }
 
 sub banner
@@ -320,6 +332,33 @@ sub banner
 	my ($self, $text, $sub) = @_;
 	$self->{progressmeter}->set_header($text);
 	&$sub;
+	$self->{progressmeter}->next;
+}
+
+sub run_chroot
+{
+	my ($self, $text, $sub) = @_;
+	$self->{progressmeter}->set_header($text);
+	my $r = fork();
+	if (!defined $r) {
+		$self->fatal("Couldn't fork");
+	}
+	if ($r == 0) {
+		CORE::chroot($self->chroot) or
+		    $self->fatal("Can't chroot into #1: #2", 
+		    $self->chroot, $!); 
+		CORE::chdir('/') or
+		    $self->fatal("Can't chdir after chroot: #1", $!);
+		&$sub;
+		exit(0);
+	}
+	waitpid($r, 0);
+	if ($? != 0) {
+		$self->fatal("Running task failed");
+	}
+	# XXX fork'd so we don't know what we showed
+	$self->{progressmeter}->changed;
+
 	$self->{progressmeter}->next;
 }
 
@@ -349,8 +388,9 @@ sub check_mountpoint
 			} else {
 				$nosuid->{$dir} = 0;
 			}
+			my $devno = (stat $dir)[0];
 			if ($type eq 'nfs') {
-				push(@{$state->{nfs}}, $dir);
+				$state->{nfs}{$devno} = $dir;
 			}
 		}
 	}
@@ -708,7 +748,10 @@ sub run_ldconfig
 	my $state = shift;
 	$state->banner("Running ldconfig",
 	    sub {
-		$state->system(OpenBSD::Paths->chroot, $state->chroot, 
+		$state->system(
+		    sub {
+			CORE::chroot($state->chroot) or exit 1;
+		    }, 
 		    'ldconfig', '/usr/lib', '/usr/X11R6/lib', '/usr/local/lib');
 		$state->{accounted}{'/var/run/ld.so.hints'} = 1;
 	    });
@@ -742,10 +785,10 @@ sub checkout_ports
 sub unpopulate_chroot
 {
 	my $state = shift;
-	$state->banner("Cleaning up files and directories",
+	$state->run_chroot("Cleaning up files and directories",
 	    sub {
 	    	for my $dir (@{$state->{preserved}}) {
-			$state->{dontrm}{$state->chroot($dir)} = 1;
+			$state->{dontrm}{$dir} = 1;
 		}
 		my @dirs;
 	    	find(
@@ -757,31 +800,30 @@ sub unpopulate_chroot
 			if ($state->{dontrm}{$File::Find::name}) {
 				return;
 			}
-		    	my $file =$File::Find::name;
-			$file =~ s/^\Q$state->{chroot}\E//;
-			if ($state->{known}{$file}) {
+			if ($state->{known}{$File::Find::name}) {
 				return;
 			}
-		    	$state->{progressmeter}->message($file);
+		    	$state->{progressmeter}->message($File::Find::name);
 		    	if (-l $_ || !-d $_) {
 				unlink($_);
 			} else {
 				push(@dirs, $File::Find::name);
 			}
-		    }, $state->{chroot});
+		    }, '/');
 		for my $dir (reverse @dirs) {
 			#$state->say("rmdir #1", $dir);
 			rmdir $dir;
 		}
 	    });
 }
+
 sub verbose_shit
 {
 	my $state = shift;
-	$state->banner("Showing up stragglers",
+	$state->run_chroot("Showing up stragglers",
 	    sub {
 		for my $dir (@{$state->{preserved}}) {
-			$state->{dontrm}{$state->chroot($dir)} = 1;
+			$state->{dontrm}{$dir} = 1;
 		}
 	    	find(
 		    sub {
@@ -792,13 +834,12 @@ sub verbose_shit
 			if ($state->{dontrm}{$File::Find::name}) {
 				return;
 			}
-		    	my $f = $File::Find::name;
-			$f =~ s/^\Q$state->{chroot}\E//;
-			if ($state->{accounted}{$f} || $f eq '') {
+			if ($state->{accounted}{$File::Find::name} || 
+			    $File::Find::name eq '/') {
 				return;
 			}
 			$state->say("#1", $File::Find::name);
-		    }, $state->{chroot});
+		    }, '/');
 	    });
 }
 
@@ -806,12 +847,12 @@ sub is_under_nfs
 {
 	my ($state, $dir) = @_;
 
-	for my $root (@{$state->{nfs}}) {
-		if ($dir =~ m/^\Q$root\E\b/) {
-			return 1;
-		}
+	my $devno = (stat $dir)[0];
+	if (exists $state->{nfs}{$devno}) {
+		return 1;
+	} else {
+		return 0;
 	}
-	return 0;
 }
 
 use constant { WHINE => 1, MKPATH => 2 };
@@ -820,7 +861,7 @@ sub build_dir
 {
 	my ($state, $opts, $username, $dirname, @r) = @_;
 	$state->{progressmeter}->message($dirname);
-	my $dir = $state->chroot($state->{$dirname}, @r);
+	my $dir = join('/', $state->{$dirname}, @r);
 	my $nfs = $state->is_under_nfs($dir);
 	if (($opts & WHINE) && $nfs) {
 		$state->errsay("#1 (#2) is under nfs", $dirname, $dir);
@@ -837,7 +878,7 @@ sub build_dir
 sub make_ports_subdirs
 {
 	my $state = shift;
-	$state->banner("Adjusting ports directories",
+	$state->run_chroot("Adjusting ports directories",
 	    sub {
 	    	$state->build_dir(0, "fetchuser", "DISTDIR");
 		if (defined $state->{loguser}) {
