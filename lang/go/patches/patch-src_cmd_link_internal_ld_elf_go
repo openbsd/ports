@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cmd_link_internal_ld_elf_go,v 1.1 2016/05/13 13:49:26 jsing Exp $
+--- src/cmd/link/internal/ld/elf.go.orig	Thu May  5 01:30:21 2016
++++ src/cmd/link/internal/ld/elf.go	Thu May  5 01:30:47 2016
+@@ -2585,8 +2585,8 @@ func Elfadddynsym(ctxt *Link, s *LSym) {
+ 			Addaddr(ctxt, d, s)
+ 		}
+ 
+-		/* size */
+-		Adduint32(ctxt, d, 0)
++		/* size of object */
++		Adduint32(ctxt, d, uint32(s.Size))
+ 
+ 		/* type */
+ 		t := STB_GLOBAL << 4
