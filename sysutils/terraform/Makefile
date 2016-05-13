@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/11 17:03:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/13 17:10:38 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
-GH_TAGNAME=		v0.6.15
+GH_TAGNAME=		v0.6.16
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		terraform
-REVISION=		0
 
 CATEGORIES=		sysutils net
 
@@ -23,9 +22,9 @@ MODULES=		lang/go
 PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 			cobbler consul datadog digitalocean dme dnsimple \
 			docker dyn fastly github google heroku influxdb \
-			mailgun mysql null openstack packet postgresql \
-			powerdns rundeck statuscake template terraform tls \
-			triton ultradns vcd vsphere
+			librato mailgun mysql null openstack packet postgresql \
+			powerdns rundeck softlayer statuscake template \
+			terraform tls triton ultradns vcd vsphere
 
 PROVISIONERS=		chef file local-exec remote-exec
 
