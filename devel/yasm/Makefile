@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/05/05 21:44:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/05/13 22:06:29 naddy Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
 DISTNAME=	yasm-1.3.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
@@ -14,12 +14,12 @@ HOMEPAGE=	http://yasm.tortall.net/
 # BSD and Artistic/LGPLv2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c iconv intl
-
-LIB_DEPENDS=	devel/gettext
+WANTLIB=	c
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-python
+# there are no translations yet
+CONFIGURE_ARGS+=--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
