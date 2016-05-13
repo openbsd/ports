@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.8 2015/10/31 09:39:20 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.9 2016/05/13 08:32:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,7 @@ use warnings;
 
 package DPB::MiniCurses;
 use Term::Cap;
+use Term::ReadKey;
 use constant { 
 	BLACK => 0,
 	RED => 1,
@@ -29,24 +30,16 @@ use constant {
 	TURQUOISE => 6,
 	WHITE => 7 };
 
-my $width;
-my $wsz_format = 'SSSS';
-our %sizeof;
-
 sub find_window_size
 {
 	my $self = shift;
-	# try to get exact window width
-	my $r;
-	$r = pack($wsz_format, 0, 0, 0, 0);
-	$sizeof{'struct winsize'} = 8;
-	require 'sys/ttycom.ph';
-	$width = 80;
-	if (ioctl(STDOUT, &TIOCGWINSZ, $r)) {
-		my ($rows, $cols, $xpix, $ypix) =
-		    unpack($wsz_format, $r);
-		$self->{width} = $cols;
-		$self->{height} = $rows;
+	my @l = Term::ReadKey::GetTermSizeGWINSZ(\*STDOUT);
+	if (@l != 4) {
+		$self->{width} = 80;
+		$self->{height} = 24;
+	} else {
+		$self->{width} = $l[0];
+		$self->{height} = $l[1];
 	}
 }
 
