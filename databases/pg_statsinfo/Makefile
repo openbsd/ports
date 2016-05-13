@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/13 14:41:10 pea Exp $
 
+BROKEN = 	doesnt build with postgresql 9.5
 COMMENT =	monitor PostgreSQL activity & statistics
 
 DISTNAME =	pg_statsinfo-2.4.1
