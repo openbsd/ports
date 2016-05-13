@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_sys_defs_h,v 1.5 2016/05/13 20:19:27 sthen Exp $
+--- src/util/sys_defs.h.orig	Fri May 13 09:53:04 2016
++++ src/util/sys_defs.h	Fri May 13 09:53:31 2016
+@@ -28,7 +28,7 @@
+     || defined(FREEBSD8) || defined(FREEBSD9) || defined(FREEBSD10) \
+     || defined(BSDI2) || defined(BSDI3) || defined(BSDI4) \
+     || defined(OPENBSD2) || defined(OPENBSD3) || defined(OPENBSD4) \
+-    || defined(OPENBSD5) \
++    || defined(OPENBSD5) || defined(OPENBSD6) \
+     || defined(NETBSD1) || defined(NETBSD2) || defined(NETBSD3) \
+     || defined(NETBSD4) || defined(NETBSD5) || defined(NETBSD6) \
+     || defined(NETBSD7) \
