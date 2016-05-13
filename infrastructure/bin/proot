@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.20 2016/05/12 13:14:13 espie Exp $
+# $OpenBSD: proot,v 1.21 2016/05/13 02:38:03 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -427,8 +427,8 @@ sub simple_copy
 		symlink($target, $cpath);
 		return;
 	} else {
-		my ($dev, $ino, $mode, $uid, $gid, $sz) = 
-		    (stat $path)[0, 1, 2, 4, 5, 7];
+		my ($dev, $ino, $mode, $uid, $gid, $sz, $atime, $mtime) = 
+		    (stat $path)[0, 1, 2, 4, 5, 7, 8, 9];
 		if (-d $path) {
 			if (!-d $cpath) {
 				remove_tree($cpath);
@@ -440,9 +440,11 @@ sub simple_copy
 				chown $uid, $gid, $cpath;
 			}
 			chmod $mode, $cpath;
+			utime $atime, $mtime, $cpath;
 			return;
 		} elsif (-f $path) {
-			my ($dev2, $ino2, $sz2) = (stat $cpath)[0, 1, 7];
+			my ($dev2, $ino2, $sz2, $mtime2) = 
+			    (stat $cpath)[0, 1, 7, 9];
 			if (defined $dev2 && $dev2 == $dev && $ino2 == $ino) {
 				return;
 			}
@@ -458,7 +460,7 @@ sub simple_copy
 			}
 
 			my $okay = 0;
-			if (defined $sz2 && $sz2 == $sz) {
+			if (defined $sz2 && $sz2 == $sz && $mtime2 >= $mtime) {
 				$okay = 1;
 			} else {
 				remove_tree($cpath);
@@ -471,6 +473,7 @@ sub simple_copy
 					chown $uid, $gid, $cpath;
 				}
 				chmod $mode, $cpath;
+				utime $atime, $mtime, $cpath;
 				$state->{copied}{$key} = $cpath;
 				return;
 			}
