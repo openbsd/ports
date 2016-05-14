@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.36 2015/06/23 08:51:53 espie Exp $
+# $OpenBSD: Locks.pm,v 1.37 2016/05/14 20:26:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -233,6 +233,10 @@ sub find_tag
 		#next if -d $fullname;
 		my $fullname = $self->{lockdir}."/".$name;
 		my $f = $self->open('<', $fullname);
+		# XXX nfs shitting on itself again
+		# assume we don't have several dpb running and so I don't
+		# give a fuck
+		next if !$f;
 		my ($host, $cleaned, $tag);
 		while (<$f>) {
 			if (m/^host\=(.*)/) {
