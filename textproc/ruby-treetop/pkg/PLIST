@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/12/07 08:03:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/05/14 13:43:56 jasper Exp $
 ${GEM_BIN}/tt${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -22,8 +22,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/indented_blocks/
 ${GEM_LIB}/gems/${DISTNAME}/examples/indented_blocks/indented_blocks.tt
 ${GEM_LIB}/gems/${DISTNAME}/examples/indented_blocks/indented_blocks_test.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/inner_outer.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/inner_outer.tt
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/arithmetic.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/arithmetic.treetop
@@ -34,8 +32,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/lambda_calculus.treetop
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/lambda_calculus_node_classes.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/lambda_calculus_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/lambda_calculus/test_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/numerals.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/numerals.tt
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop.rb

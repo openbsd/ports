@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/07 08:03:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/05/14 13:43:56 jasper Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
-DISTNAME =	treetop-1.6.3
+DISTNAME =	treetop-1.6.5
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://treetop.rubyforge.org/
@@ -23,6 +23,6 @@ TEST_DEPENDS =		devel/ruby-rr,${MODRUBY_FLAVOR}
 SUBST_VARS +=		RUBY
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/spec/compiler/tt_compiler_spec.rb
+	sed -i 's,\(system("ruby\),\1${MODRUBY_BINREV},g' ${WRKSRC}/spec/compiler/tt_compiler_spec.rb
 
 .include <bsd.port.mk>
