@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/20 12:45:47 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/14 15:03:15 danj Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}vcversioner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,4 +7,3 @@ lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/vcversioner-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/vcversioner.py
-lib/python${MODPY_VERSION}/site-packages/vcversioner.pyc

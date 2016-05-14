@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/14 15:03:15 danj Exp $
 
 COMMENT =		use version control tags to discover version numbers
 
-MODPY_EGG_VERSION =	2.14.0.0
+MODPY_EGG_VERSION =	2.16.0.0
 DISTNAME =		vcversioner-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,6 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 NO_TEST =		Yes
 
