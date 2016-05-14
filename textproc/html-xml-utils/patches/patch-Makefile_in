@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2016/01/29 11:23:27 bentley Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2016/05/14 07:57:26 bentley Exp $
 Skip test that hangs due to differences in nc(1) behavior between OpenBSD
 and Linux.
---- Makefile.in.orig	Fri Jan 29 04:18:57 2016
-+++ Makefile.in	Fri Jan 29 04:19:01 2016
-@@ -613,7 +613,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
+--- Makefile.in.orig	Thu Apr 14 15:55:58 2016
++++ Makefile.in	Sat May 14 01:39:01 2016
+@@ -883,7 +883,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
  	tests/cite4.sh\
  	tests/clean1.sh tests/copy1.sh tests/copy2.sh tests/copy3.sh\
  	tests/copy4.sh tests/copy5.sh tests/copy6.sh\
--	tests/copy7.sh tests/extract1.sh\
-+	tests/copy7.sh\
+-	tests/copy7.sh tests/copy8.sh tests/extract1.sh\
++	tests/copy7.sh tests/copy8.sh\
  	tests/hxnsxml1.sh tests/hxnsxml2.sh tests/hxnsxml3.sh\
  	tests/hxnsxml4.sh tests/incl1.sh tests/incl10.sh\
  	tests/incl11.sh tests/incl2.sh tests/incl3.sh tests/incl4.sh\
