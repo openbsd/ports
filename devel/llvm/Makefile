@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2016/04/29 08:40:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2016/05/14 20:36:36 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -8,17 +8,16 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
-LLVM_V =	3.7.1
+LLVM_V =	3.8.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
-REVISION =	0
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX}
 MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	clang		2.0 \
+SHARED_LIBS =	clang		3.0 \
 		LTO		0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
@@ -77,10 +76,8 @@ post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
-		${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
-		${WRKSRC}/tools/clang/lib/Driver/Tools.cpp
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp \
+	    ${WRKSRC}/tools/clang/lib/Driver/Tools.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
@@ -88,15 +85,7 @@ post-build:
 	cd ${WRKSRC}/tools/clang/docs && make -f Makefile.sphinx man
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
-	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
-	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
-	    ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
-	    ${PREFIX}/share/llvm
 	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/* \
-	    ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scan-build.1 \
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/docs/_build/man/clang.1 \
 	    ${PREFIX}/man/man1

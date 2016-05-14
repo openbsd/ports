@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.5 2016/03/05 15:31:41 pascal Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.6 2016/05/14 20:36:36 ajacoutot Exp $
 
 Alias the command line parameter -p to -pg.
 
---- tools/clang/include/clang/Driver/Options.td.orig	Fri Jul 31 00:47:41 2015
-+++ tools/clang/include/clang/Driver/Options.td	Wed Sep  9 10:44:20 2015
-@@ -1560,7 +1560,7 @@ def pthreads : Flag<["-"], "pthreads">;
+--- tools/clang/include/clang/Driver/Options.td.orig	Wed Jan  6 16:27:42 2016
++++ tools/clang/include/clang/Driver/Options.td	Fri Mar 25 21:50:14 2016
+@@ -1682,7 +1682,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
  def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;

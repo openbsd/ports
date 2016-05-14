@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_Support_Unix_Signals_inc,v 1.1 2016/03/15 21:33:19 pascal Exp $
---- lib/Support/Unix/Signals.inc.orig	Mon Mar 14 10:43:12 2016
-+++ lib/Support/Unix/Signals.inc	Mon Mar 14 10:43:21 2016
-@@ -26,7 +26,7 @@
+$OpenBSD: patch-lib_Support_Unix_Signals_inc,v 1.2 2016/05/14 20:36:36 ajacoutot Exp $
+--- lib/Support/Unix/Signals.inc.orig	Tue Dec  1 01:12:59 2015
++++ lib/Support/Unix/Signals.inc	Fri Mar 25 22:06:21 2016
+@@ -24,7 +24,7 @@
+ #include "llvm/Support/raw_ostream.h"
  #include <algorithm>
  #include <string>
- #include <vector>
 -#if HAVE_EXECINFO_H
 +#if defined(HAVE_BACKTRACE) && defined(ENABLE_BACKTRACES)
  # include <execinfo.h>         // For backtrace().
