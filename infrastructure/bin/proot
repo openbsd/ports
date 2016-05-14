@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.26 2016/05/14 09:04:40 espie Exp $
+# $OpenBSD: proot,v 1.27 2016/05/14 09:19:09 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -445,6 +445,7 @@ sub read_locates
 			chomp;
 			my ($set, $path) = split(':', $_, 2);
 			$set =~ s/\d+//;
+			next if $path =~ m/\.ph$/;
 			if ($state->{sets}{$set}) {
 				$state->{known}{$path} = 1;
 			}
@@ -890,7 +891,7 @@ sub is_under_nfs
 	my ($state, $dir) = @_;
 
 	my $devno = (stat $dir)[0];
-	if (exists $state->{nfs}{$devno}) {
+	if (defined $devno && exists $state->{nfs}{$devno}) {
 		return 1;
 	} else {
 		return 0;
