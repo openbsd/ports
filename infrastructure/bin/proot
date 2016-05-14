@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.32 2016/05/14 15:19:48 espie Exp $
+# $OpenBSD: proot,v 1.33 2016/05/14 22:49:23 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -751,8 +751,10 @@ sub regen_devs
 	my $state = shift;
 	$state->banner("Generating devices",
 	    sub {
-		$state->chdir($state->chroot("/dev"));
-		$state->system('/bin/sh', './MAKEDEV', 'all');
+		$state->system(
+		    sub {
+			$state->chdir($state->chroot("/dev"));
+		    }, '/bin/sh', './MAKEDEV', 'all');
 		push(@{$state->{preserved}}, "/dev");
 	    });
 }
