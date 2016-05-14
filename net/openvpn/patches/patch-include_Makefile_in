@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_Makefile_in,v 1.4 2015/06/25 08:46:49 sthen Exp $
---- include/Makefile.in.orig	Mon Jun  8 07:19:09 2015
-+++ include/Makefile.in	Thu Jun 25 09:38:54 2015
-@@ -310,7 +310,7 @@ host_cpu = @host_cpu@
+$OpenBSD: patch-include_Makefile_in,v 1.5 2016/05/14 13:14:46 sthen Exp $
+--- include/Makefile.in.orig	Tue May 10 07:02:54 2016
++++ include/Makefile.in	Sat May 14 13:45:56 2016
+@@ -322,7 +322,7 @@ host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
  htmldir = @htmldir@
