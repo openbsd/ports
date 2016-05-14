@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2016/05/14 13:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.393 2016/05/14 14:01:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -176,6 +176,7 @@
      SUBDIR += py-metlog
      SUBDIR += py-psutil
      SUBDIR += py-statgrab
+     SUBDIR += py-statgrab,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
