@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.30 2016/05/14 13:55:42 espie Exp $
+# $OpenBSD: proot,v 1.31 2016/05/14 15:00:07 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -589,14 +589,14 @@ sub best_user
 
 sub grab_file
 {
-	my ($state, $file) = @_;
+	my ($state, $snapdir, $file) = @_;
 
 	my $baseurl = $state->{snapshot};
 
 	unless (-f $file) {
-		if ($state->system('/usr/bin/ftp' , "-C", "-o", "$file.part", 
-		    "$baseurl/$file") == 0) {
-			rename("$file.part", $file);
+		if ($state->system('/usr/bin/ftp' , "-C", "-o", 
+		    "$snapdir/$file.part", "$baseurl/$file") == 0) {
+			rename("$snapdir/$file.part", "$snapdir/$file");
 		} else {
 			$state->fatal("fetch #1 failed", $file);
 		}
@@ -641,22 +641,22 @@ sub get_snapshot
 	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
 			$snapdir = $state->chroot('/tmp');
 			File::Path::make_path($snapdir);
-			$grab = sub { $state->grab_file(shift); }
+			$grab = sub { $state->grab_file($snapdir, shift); }
 		} else {
 			$snapdir = $state->{snapshot};
 			$grab = sub {};
 		}
-		$state->chdir($snapdir);
 
 		&$grab("SHA256.sig");
-		open my $f, '<', "SHA256.sig" or $state->fatal("no SHA256.sig");
+		open my $f, '<', "$snapdir/SHA256.sig" 
+		    or $state->fatal("no SHA256.sig");
 		my $line = <$f>;
 		if ($line !~ m/openbsd\s+(\d+)\.(\d+)\s+base/) {
 			$state->fatal("Unrecognized snapshot");
 		}
 		my $v = "$1$2";
 		my (@files, @later);
-		for my $set (keys %{$state->{sets}}) {
+		for my $set (sort keys %{$state->{sets}}) {
 			if ($set =~ m/etc/) {
 				push(@later, "$set.tgz");
 			} else {
@@ -665,7 +665,10 @@ sub get_snapshot
 				push(@files, $file);
 			}
 		}
-		if ($state->system('/usr/bin/signify', '-C', '-p',
+		if ($state->system(
+		    sub {
+			$state->chdir($snapdir); },
+		    '/usr/bin/signify', '-C', '-p',
 		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
 		    @files) != 0) {
 			$state->fatal("Checksum error");
@@ -679,7 +682,7 @@ sub get_snapshot
 		}
 	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
 			for my $file (@files) {
-				unlink($file);
+				unlink("$snapdir/$file");
 			}
 		}
 	    });
@@ -709,7 +712,7 @@ sub copy_ports
 			}
 			$state->simple_copy($realname, $state->chroot($r2),
 			    $state->best_user($r2));
-		    }, ".");
+		    }, $srcports);
 		umask $old;
 	    });
 }
