@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.28 2016/05/14 10:05:55 espie Exp $
+# $OpenBSD: proot,v 1.29 2016/05/14 11:16:29 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -400,8 +400,9 @@ sub check_mountpoint
 		$root = readlink $root;
 	}
 	for my $dir (keys %$dev) {
-		if ($dir =~ m/^\Q$root\E\b(.*)/) {
-			$state->{dontrm}{$1} = 1;
+		if ($dir =~ m/^\Q$root\E(\/.*)/) {
+			my $devno = (stat $dir)[0];
+			$state->{dontrm_dev}{$devno} = 1;
 			$state->say("Preserve #1", $1);
 		}
 	}
@@ -424,6 +425,9 @@ sub special_data
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
+	if (-f '/etc/doas.conf') {
+		$state->{known}{'/etc/doas.conf'} = 1;
+	}
 }
 
 sub key_data
@@ -789,24 +793,23 @@ sub unpopulate_chroot
 	my $state = shift;
 	$state->run_chroot("Cleaning up files and directories",
 	    sub {
-	    	for my $dir (@{$state->{preserved}}) {
-			$state->{dontrm}{$dir} = 1;
+	    	for my $item (@{$state->{preserved}}) {
+			$state->{dontrm}{$item} = 1;
 		}
 		my @dirs;
 	    	find(
 		    sub {
-			if (-d $_ && $state->{dontrm}{$File::Find::name}) {
-				$File::Find::prune = 1;
-				return;
-			}
-			if ($state->{dontrm}{$File::Find::name}) {
+		    	my $devno = (lstat $_)[0];
+			if ($state->{dontrm_dev}{$devno} || 
+			    $state->{dontrm}{$File::Find::name}) {
+				$File::Find::prune = 1 if -d _;
 				return;
 			}
 			if ($state->{known}{$File::Find::name}) {
 				return;
 			}
 		    	$state->{progressmeter}->message($File::Find::name);
-		    	if (-l $_ || !-d $_) {
+		    	if (-l _ || ! -d _) {
 				unlink($_);
 			} else {
 				push(@dirs, $File::Find::name);
