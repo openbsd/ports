@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/01 13:58:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2016/05/14 13:55:47 jasper Exp $
 
 COMMENT =	simple viewer for NFO files
-MODPY_EGG_VERSION =	1.17
+MODPY_EGG_VERSION =	1.18
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
 
@@ -14,11 +14,11 @@ HOMEPAGE =	http://otsaloma.github.io/nfoview/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/gettext \
-		lang/python \
+MODULES =	lang/python \
 		textproc/intltool
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
+BUILD_DEPENDS =	devel/gettext-tools
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		fonts/terminus-font \
