@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/06 20:36:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2016/05/14 13:50:33 jasper Exp $
 
 COMMENT=		Joe's Window Manager
 
-DISTNAME=		jwm-2.3.4
+DISTNAME=		jwm-2.3.5
 
 CATEGORIES=		x11
 
