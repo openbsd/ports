@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1493 2016/05/12 14:02:46 espie Exp $
+# $OpenBSD: Makefile,v 1.1494 2016/05/14 15:12:28 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1274,6 +1274,7 @@
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
      SUBDIR += py-jsonschema
+     SUBDIR += py-jsonschema,python3
      SUBDIR += py-jupyter_client
      SUBDIR += py-jupyter_core
      SUBDIR += py-kid
@@ -1395,6 +1396,7 @@
      SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
      SUBDIR += py-vcversioner
+     SUBDIR += py-vcversioner,python3
      SUBDIR += py-virtualenv
      SUBDIR += py-virtualenv,python3
      SUBDIR += py-wbem
