@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.7 2016/05/14 11:29:09 krw Exp $
+.\"	$OpenBSD: proot.1,v 1.8 2016/05/14 22:46:53 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -51,7 +51,11 @@ Attribute values can be specified on the command line
 Some attribute take several values.
 As a shorthand, several values can be specified in a row without having
 to repeat the
-.Ar key .
+.Ar key ,
+for instance:
+.Bd -literal -offset indent
+.Nm Fl B Ar /build Ar actions Ns = Ns Ar unpopulate_light Ar check_symlinks
+.Ed
 .Pp
 A
 .Fl c Ar configfile
