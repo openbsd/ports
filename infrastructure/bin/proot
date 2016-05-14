@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.31 2016/05/14 15:00:07 espie Exp $
+# $OpenBSD: proot,v 1.32 2016/05/14 15:19:48 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -469,7 +469,11 @@ sub simple_copy
 		return if $state->{dontrm}{$cpath};
 		remove_tree($cpath);
 		my $target = readlink $path;
-		symlink($target, $cpath);
+		if (!defined $target) {
+			$state->errsay("Can't read link to #1: #2", $path, $!);
+		} else {
+			symlink($target, $cpath);
+		}
 		return;
 	} else {
 		my ($dev, $ino, $mode, $uid, $gid, $sz, $atime, $mtime) = 
@@ -724,18 +728,20 @@ sub copy_sys
 	    sub {
 		my $old = umask;
 		umask 0;
-		my $sysdir = $state->srcroot($state->{sysdir});
-		$state->chdir($sysdir);
+		my $srcsys = $state->srcroot($state->{sysdir});
+		my $destsys = $state->chroot($state->{sysdir});
 		find(sub {
 			# XXX don't bother copying stuff that's NOT .h
 			return if -f $_ && !m/\.h$/ && $_ ne 'Makefile';
-			my $realname = $File::Find::name;
-			my $r2 = $realname;
-			$realname =~ s,^\.,$sysdir,;
-			$r2 =~ s,^\.,$state->{sysdir},;
-			$state->{progressmeter}->message($realname);
-			$state->simple_copy($realname, $state->chroot($r2));
-		    }, ".");
+			if (-d _ && $_ eq 'obj' || $_ eq 'CVS') {
+				$File::Find::prune = 1;
+				return;
+			}
+			my $destname = $File::Find::name;
+			$destname =~ s,^\Q$srcsys\E\b,$destsys,;
+			$state->{progressmeter}->message($File::Find::name);
+			$state->simple_copy($File::Find::name, $destname);
+		    }, $srcsys);
 		umask $old;
 	    });
 }
