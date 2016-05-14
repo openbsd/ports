@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2016/05/06 15:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.392 2016/05/14 13:50:22 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -32,6 +32,7 @@
      SUBDIR += conky,no_x11
      SUBDIR += conky,xmms2
      SUBDIR += consolekit
+     SUBDIR += consul
      SUBDIR += cpuid
      SUBDIR += coreutils
      SUBDIR += crashme
