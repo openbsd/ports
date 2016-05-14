@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.9 2016/05/13 08:32:17 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.10 2016/05/14 18:14:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -80,7 +80,7 @@ sub create_terminal
 	$self->{home} = $self->{terminal}->Tputs("ho", 1);
 	$self->{clear} = $self->{terminal}->Tputs("cl", 1);
 	$self->{down} = $self->{terminal}->Tputs("do", 1);
-	$self->{glitch} = $self->{terminal}->Tputs("xn", 1);
+	$self->{glitch} = exists $self->{terminal}{_xn};
 	$self->{cleareol} = $self->{terminal}->Tputs("ce", 1);
 	if ($o->{color}) {
 		$self->{bg} = $self->{terminal}->Tputs('AB', 1);
