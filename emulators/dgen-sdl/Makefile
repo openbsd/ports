@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/24 10:26:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2016/05/14 14:11:21 landry Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
+BROKEN-powerpc =	OOM or ICE on hqx/src/hq4x_32.c
 COMMENT =		Sega Megadrive/Genesis emulator
 DISTNAME =		dgen-sdl-1.33
 CATEGORIES =		emulators games
