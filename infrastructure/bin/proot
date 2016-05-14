@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.27 2016/05/14 09:19:09 espie Exp $
+# $OpenBSD: proot,v 1.28 2016/05/14 10:05:55 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -445,7 +445,7 @@ sub read_locates
 			chomp;
 			my ($set, $path) = split(':', $_, 2);
 			$set =~ s/\d+//;
-			next if $path =~ m/\.ph$/;
+#			next if $path =~ m/\.ph$/;
 			if ($state->{sets}{$set}) {
 				$state->{known}{$path} = 1;
 			}
