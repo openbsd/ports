@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: consul.rc,v 1.1.1.1 2016/05/14 13:49:47 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/consul agent"
+daemon_flags="-config-dir ${SYSCONFDIR}/consul.d"
+daemon_user="_consul"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_stop() {
+	pkill -INT -T "${daemon_rtable}" -xf "${pexp}"
+}
+
+rc_cmd $1

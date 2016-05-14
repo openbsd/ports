@@ -1,0 +1,7 @@
+{
+    "bootstrap": false,
+    "server": true,
+    "ui": false,
+    "enable_syslog": true,
+    "data_dir": "${LOCALSTATEDIR}/consul"
+}

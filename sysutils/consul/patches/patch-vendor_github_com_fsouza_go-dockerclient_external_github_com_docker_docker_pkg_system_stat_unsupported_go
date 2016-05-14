@@ -1,0 +1,12 @@
+$OpenBSD: patch-vendor_github_com_fsouza_go-dockerclient_external_github_com_docker_docker_pkg_system_stat_unsupported_go,v 1.1.1.1 2016/05/14 13:49:47 ajacoutot Exp $
+
+https://github.com/docker/docker/pull/21325/commits/719a43ca3530c424c3875d8c066f7ab09195dfdc
+
+--- vendor/github.com/fsouza/go-dockerclient/external/github.com/docker/docker/pkg/system/stat_unsupported.go.orig	Thu May 12 17:18:45 2016
++++ vendor/github.com/fsouza/go-dockerclient/external/github.com/docker/docker/pkg/system/stat_unsupported.go	Thu May 12 17:18:52 2016
+@@ -1,4 +1,4 @@
+-// +build !linux,!windows,!freebsd,!solaris
++// +build !linux,!windows,!freebsd,!solaris,!openbsd
+ 
+ package system
+ 

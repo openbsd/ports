@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/14 13:49:47 ajacoutot Exp $
+@newgroup _consul:773
+@newuser _consul:773:_consul:daemon:Consul Agent:/nonexistent:/sbin/nologin
+@bin bin/consul
+share/examples/consul/
+@sample ${SYSCONFDIR}/consul.d/
+@mode 0640
+@owner _consul
+@group _consul
+share/examples/consul/config.json
+@sample ${SYSCONFDIR}/consul.d/config.json
+@mode
+@sample ${LOCALSTATEDIR}/consul/
+@owner
+@group
+@rcscript ${RCDIR}/consul
