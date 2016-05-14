@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.29 2016/05/14 11:16:29 espie Exp $
+# $OpenBSD: proot,v 1.30 2016/05/14 13:55:42 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -723,15 +723,14 @@ sub copy_sys
 		umask 0;
 		my $sysdir = $state->srcroot($state->{sysdir});
 		$state->chdir($sysdir);
-		$state->{portuser}->mkpath($state->chroot($state->{sysdir}));
 		find(sub {
 			# XXX don't bother copying stuff that's NOT .h
 			return if -f $_ && !m/\.h$/ && $_ ne 'Makefile';
-			$state->{progressmeter}->working(1000);
 			my $realname = $File::Find::name;
 			my $r2 = $realname;
-			$realname =~ s,^\./,$sysdir/,;
-			$r2 =~ s,^\./,$state->{sysdir}/,;
+			$realname =~ s,^\.,$sysdir,;
+			$r2 =~ s,^\.,$state->{sysdir},;
+			$state->{progressmeter}->message($realname);
 			$state->simple_copy($realname, $state->chroot($r2));
 		    }, ".");
 		umask $old;
