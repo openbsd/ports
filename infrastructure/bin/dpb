@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.115 2015/10/17 19:32:03 espie Exp $
+# $OpenBSD: dpb,v 1.116 2016/05/15 14:02:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,11 +49,26 @@ use DPB::Trace;
 
 my $keep_going = 1;
 
+my $starttime = time();
+sub show_time
+{
+	my $secs = int(shift);
+
+	my $mn = $secs/60;
+	my $hours = $mn/60;
+	my $days= $hours/24;
+	$secs %= 60;
+	$mn %= 60;
+	$hours %= 24;
+
+	return ($days >0.5? "$days d" : "").sprintf("%02d:%02d:%02d", $hours, $mn, $secs);
+}
+
 sub report
 {
 	return DPB::Util->time2string(time)." [$$]".
 		($keep_going ? "" : " STOPPED!").
-		"\n";
+		" running for ".show_time(time-$starttime)."\n";
 }
 
 sub affinityclass
