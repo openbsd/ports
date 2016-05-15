@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/15 18:13:44 shadchin Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.5.2
-REVISION = 		2
+MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
 
 HOMEPAGE =		http://initd.org/projects/psycopg2
 
-# GPLv2+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+
+# LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
@@ -21,6 +22,8 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	databases/postgresql
+BUILD_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR} \
+		textproc/py-sphinx${MODPY_FLAVOR}
 TEST_DEPENDS = ${RUN_DEPENDS}
 
 FLAVORS = 	python3
@@ -46,17 +49,18 @@ TEST_ENV =	PSYCOPG2_TESTDB=${PSYCOPG2_TESTDB} \
 		PYTHON=python${MODPY_VERSION} \
 		PYTHONPATH=./lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION}
 
+post-build:
+	cd ${WRKSRC}/doc/src && PYTHONPATH=${WRKSRC}/lib.openbsd-`uname -r`-${ARCH}-${MODPY_VERSION} \
+		${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -N . _build/html
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-psycopg2
-.if ${FLAVOR:Mpython3}
-	mv ${PREFIX}/share/doc/py-psycopg2 ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
-.endif
-	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
+	cd ${WRKSRC}/doc/src/_build/html && pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}psycopg2
 	${INSTALL_DATA} ${WRKSRC}/examples/* \
 		${PREFIX}/share/examples/${MODPY_PY_PREFIX}psycopg2/
 
-do-test: fake
+do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gmake check
 
 .include <bsd.port.mk>

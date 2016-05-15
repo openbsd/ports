@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_src_conf_py,v 1.1 2016/05/15 18:13:44 shadchin Exp $
+
+Prevent build from calling out to the internet.
+
+--- doc/src/conf.py.orig	Sun Apr 17 12:22:00 2016
++++ doc/src/conf.py	Sun Apr 17 12:22:24 2016
+@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath('tools/lib'))
+ # Add any Sphinx extension module names here, as strings. They can be extensions
+ # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo', 'sphinx.ext.ifconfig',
+-              'sphinx.ext.doctest', 'sphinx.ext.intersphinx' ]
++              'sphinx.ext.doctest']
+ 
+ # Specific extensions for Psycopg documentation.
+ extensions += [ 'dbapi_extension', 'sql_role', 'ticket_role' ]
