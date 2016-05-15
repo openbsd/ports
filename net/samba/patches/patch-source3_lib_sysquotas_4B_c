@@ -1,0 +1,16 @@
+$OpenBSD: patch-source3_lib_sysquotas_4B_c,v 1.1 2016/05/15 01:10:07 jca Exp $
+
+Switch back to root to call quotactl(2), our kernel has too strict
+permision checks.
+
+--- source3/lib/sysquotas_4B.c.orig	Fri May 13 21:11:44 2016
++++ source3/lib/sysquotas_4B.c	Fri May 13 21:12:54 2016
+@@ -47,7 +47,7 @@
+ #include <ufs/ufs/quota.h>
+ #endif
+ 
+-#if defined(DARWINOS)
++#if defined(DARWINOS) || defined(__OpenBSD__)
+ /* WorkARound broken HFS access checks in hfs_quotactl. Darwin only(?) */
+ #define HFS_QUOTACTL_WAR 1
+ #endif
