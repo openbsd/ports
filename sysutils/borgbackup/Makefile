@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/10 18:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/15 18:22:44 shadchin Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.0.1
+MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 MODPY_PI =		Yes
@@ -21,28 +21,27 @@ WANTLIB +=		${MODPY_WANTLIB} crypto pthread lz4
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} archivers/lz4
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-sphinx
+			textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 
-TEST_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR} \
+TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
-			devel/py-virtualenv${MODPY_FLAVOR}
+			devel/py-test-benchmark${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
 
 post-build:
-	make -C ${WRKSRC}/docs man READTHEDOCS=True
+	${MODPY_CMD} build_ext --inplace
+	cd ${WRKSRC}/docs; env PYTHONPATH=${WRKSRC} \
+		make man SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/borg.1 ${PREFIX}/man/man1/borg.1
 
-do-test:
-	(cd ${WRKSRC} ;\
-		virtualenv${MODPY_BIN_SUFFIX} --system-site-packages --no-pip borg-env ;\
-		. borg-env/bin/activate ;\
-		./borg-env/bin/python${MODPY_DEFAULT_VERSION_3} ./setup.py install ;\
-		cd build/lib.openbsd-$$(uname -r)-$$(uname -m)-${MODPY_DEFAULT_VERSION_3} ;\
-		export PYTHONPATH=`pwd` ;\
-		py.test${MODPY_BIN_SUFFIX} -k 'not benchmark' --pyargs borg.testsuite)
+do-test: fake
+	cd ${WRKSRC}; \
+		PATH=${WRKINST}/usr/local/bin:${PATH} \
+		PYTHONPATH=${WRKSRC} \
+		${MODPY_BIN} -m pytest --ignore lib*
 
 .include <bsd.port.mk>
