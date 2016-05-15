@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/20 04:59:37 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/15 18:10:39 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/alabaster/
 lib/python${MODPY_VERSION}/site-packages/alabaster-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/alabaster-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,5 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/alabaster/navigation.html
 lib/python${MODPY_VERSION}/site-packages/alabaster/relations.html
 lib/python${MODPY_VERSION}/site-packages/alabaster/static/
 lib/python${MODPY_VERSION}/site-packages/alabaster/static/alabaster.css_t
+lib/python${MODPY_VERSION}/site-packages/alabaster/static/custom.css
 lib/python${MODPY_VERSION}/site-packages/alabaster/support.py
 lib/python${MODPY_VERSION}/site-packages/alabaster/theme.conf
