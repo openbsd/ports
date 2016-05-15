@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.9 2016/05/15 11:09:47 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.10 2016/05/15 13:09:58 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -76,7 +76,7 @@ or other mountpoints.
 .It Cm snapshot
 Copy things from a
 .Ar snapshot ,
-to retrieve from an url, or from the local filesystem
+to retrieve from an url, or from the local filesystem.
 .It Cm locate
 Copy things from the base system, perusing the system locate databases.
 .It Cm resolv
@@ -84,7 +84,7 @@ Copy the system
 .Pa resolv.conf
 and
 .Pa hosts
-files
+files.
 .It Cm unpopulate_light
 Remove everything from the chroot, apart from known preserved areas
 .Po marked with
@@ -98,12 +98,12 @@ or
 .Cm resolv .
 .It Cm devs
 Regenerate devices using
-.Xr MAKEDEV 8
+.Xr MAKEDEV 8 .
 .It Cm ldconfig
 Rerun
-.Xr ldconfig 8
+.Xr ldconfig 8 .
 .It Cm copy_ports
-Copy the ports tree
+Copy the ports tree.
 .It Cm checkout_ports
 Check out a ports tree from cvs using a provided
 .Ar portscvs
@@ -182,7 +182,7 @@ set to 1 to have action
 change owners of every content.
 .It Ar extra
 extra file to copy into the
-.Ar chroot
+.Ar chroot .
 .It Ar key
 Name of a
 .Xr signify 1
@@ -198,7 +198,7 @@ in generated
 accordingly.
 .It Ar mkconf_tail
 Add file to the generated
-.Pa /etc/mk.conf
+.Pa /etc/mk.conf .
 .It Ar preserve
 Supplemental directory to preserve during
 .Cm unpopulate .
@@ -214,6 +214,48 @@ Where to get a ports snapshot for the
 .Cm checkout_ports
 action.
 .El
+.Sh EXAMPLES
+The following 
+.Ar configfile
+sets things up for an initial build on a
+.Xr dpb 1
+cluster.
+.Bd -literal -offset index
+chroot=/build
+PORT_USER=espie
+extra=/home/espie/startup
+WRKOBJDIR=/tmp/pobj
+LOCKDIR=/tmp/locks
+PLIST_DB=/data/plist
+DISTDIR=/data/distfiles
+PACKAGE_REPOSITORY=/data/packages
+actions=unpopulate_light
+	copy_ports
+.Ed
+.Pp
+It assumes
+.Pa /build/data
+is a separate partition that won't be cleaned up by
+.Cm unpopulate_light ,
+and that can be mounted on slaves.
+Note also that
+.Pa /tmp
+should be a fast local directory on every machine of the cluster.
+.Pp
+.Pa /home/espie/startup
+is a startup script for
+.Xr dpb 1 .
+.Pp
+Initial invocation on the master could be
+.Bd -offset indent 
+.Nm Fl c Ar configfile Ar chown_all Ns = Ns Ar 1
+.Ed
+.Pp
+to ensure correct permissions for existing data under various
+ports directories.
+.Pp
+Slaves should not need the extra arguments, as the directories will
+already have correct owners.
 .Sh SEE ALSO
 .Xr dpb 1 ,
 .Xr chroot 8
