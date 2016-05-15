@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/05/15 20:21:24 sthen Exp $
 share/fonts/
 share/fonts/powerline/
 @fontdir share/fonts/powerline/AnonymousPro/
@@ -8,6 +8,20 @@ share/fonts/powerline/AnonymousPro/Anonymice Powerline Italic.ttf
 share/fonts/powerline/AnonymousPro/Anonymice Powerline.ttf
 share/fonts/powerline/AnonymousPro/LICENSE.txt
 share/fonts/powerline/AnonymousPro/README.rst
+@fontdir share/fonts/powerline/Arimo/
+share/fonts/powerline/Arimo/Arimo Bold Italic for Powerline.ttf
+share/fonts/powerline/Arimo/Arimo Bold for Powerline.ttf
+share/fonts/powerline/Arimo/Arimo Italic for Powerline.ttf
+share/fonts/powerline/Arimo/Arimo for Powerline.ttf
+share/fonts/powerline/Arimo/LICENSE.txt
+share/fonts/powerline/Arimo/README.rst
+@fontdir share/fonts/powerline/Cousine/
+share/fonts/powerline/Cousine/Cousine Bold Italic for Powerline.ttf
+share/fonts/powerline/Cousine/Cousine Bold for Powerline.ttf
+share/fonts/powerline/Cousine/Cousine Italic for Powerline.ttf
+share/fonts/powerline/Cousine/Cousine for Powerline.ttf
+share/fonts/powerline/Cousine/LICENSE.txt
+share/fonts/powerline/Cousine/README.rst
 @fontdir share/fonts/powerline/DejaVuSansMono/
 share/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold Oblique for Powerline.ttf
 share/fonts/powerline/DejaVuSansMono/DejaVu Sans Mono Bold for Powerline.ttf
@@ -19,6 +33,32 @@ share/fonts/powerline/DejaVuSansMono/README.rst
 share/fonts/powerline/DroidSansMono/Droid Sans Mono for Powerline.otf
 share/fonts/powerline/DroidSansMono/LICENSE.txt
 share/fonts/powerline/DroidSansMono/README.rst
+@fontdir share/fonts/powerline/DroidSansMonoDotted/
+share/fonts/powerline/DroidSansMonoDotted/Droid Sans Mono Dotted for Powerline.ttf
+share/fonts/powerline/DroidSansMonoDotted/LICENSE.txt
+share/fonts/powerline/DroidSansMonoDotted/README.rst
+@fontdir share/fonts/powerline/DroidSansMonoSlashed/
+share/fonts/powerline/DroidSansMonoSlashed/Droid Sans Mono Slashed for Powerline.ttf
+share/fonts/powerline/DroidSansMonoSlashed/LICENSE.txt
+share/fonts/powerline/DroidSansMonoSlashed/README.rst
+@fontdir share/fonts/powerline/FiraMono/
+share/fonts/powerline/FiraMono/FuraMono-Bold Powerline.otf
+share/fonts/powerline/FiraMono/FuraMono-Medium Powerline.otf
+share/fonts/powerline/FiraMono/FuraMono-Regular Powerline.otf
+share/fonts/powerline/FiraMono/LICENSE.txt
+share/fonts/powerline/FiraMono/README.rst
+@fontdir share/fonts/powerline/Hack/
+share/fonts/powerline/Hack/Hack-Bold.ttf
+share/fonts/powerline/Hack/Hack-BoldItalic.ttf
+share/fonts/powerline/Hack/Hack-Italic.ttf
+share/fonts/powerline/Hack/Hack-Regular.ttf
+share/fonts/powerline/Hack/LICENSE.txt
+share/fonts/powerline/Hack/README.rst
+share/fonts/powerline/Hack/hack-specimen-for-Powerline.png
+@fontdir share/fonts/powerline/Inconsolata-g/
+share/fonts/powerline/Inconsolata-g/Inconsolata-g for Powerline.otf
+share/fonts/powerline/Inconsolata-g/LICENSE.txt
+share/fonts/powerline/Inconsolata-g/README.rst
 @fontdir share/fonts/powerline/Inconsolata/
 share/fonts/powerline/Inconsolata/Inconsolata for Powerline.otf
 share/fonts/powerline/Inconsolata/LICENSE.txt
@@ -27,6 +67,8 @@ share/fonts/powerline/Inconsolata/README.rst
 share/fonts/powerline/InconsolataDz/Inconsolata-dz for Powerline.otf
 share/fonts/powerline/InconsolataDz/LICENSE.txt
 share/fonts/powerline/InconsolataDz/README.rst
+share/fonts/powerline/InputMono/
+share/fonts/powerline/InputMono/README.rst
 @fontdir share/fonts/powerline/LiberationMono/
 share/fonts/powerline/LiberationMono/LICENSE.txt
 share/fonts/powerline/LiberationMono/Literation Mono Powerline Bold Italic.ttf
@@ -43,7 +85,25 @@ share/fonts/powerline/Meslo/Meslo LG M Regular for Powerline.otf
 share/fonts/powerline/Meslo/Meslo LG S DZ Regular for Powerline.otf
 share/fonts/powerline/Meslo/Meslo LG S Regular for Powerline.otf
 share/fonts/powerline/Meslo/README.rst
+@fontdir share/fonts/powerline/Monofur/
+share/fonts/powerline/Monofur/LICENSE.txt
+share/fonts/powerline/Monofur/Monofur Bold for Powerline.ttf
+share/fonts/powerline/Monofur/Monofur Italic for Powerline.ttf
+share/fonts/powerline/Monofur/Monofur for Powerline.ttf
 share/fonts/powerline/README.rst
+@fontdir share/fonts/powerline/RobotoMono/
+share/fonts/powerline/RobotoMono/LICENSE.txt
+share/fonts/powerline/RobotoMono/README.rst
+share/fonts/powerline/RobotoMono/Roboto Mono Bold Italic for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Bold for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Italic for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Light Italic for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Light for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Medium Italic for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Medium for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Thin Italic for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono Thin for Powerline.ttf
+share/fonts/powerline/RobotoMono/Roboto Mono for Powerline.ttf
 @fontdir share/fonts/powerline/SourceCodePro/
 share/fonts/powerline/SourceCodePro/LICENSE.txt
 share/fonts/powerline/SourceCodePro/README.rst
@@ -54,6 +114,10 @@ share/fonts/powerline/SourceCodePro/Sauce Code Powerline Light.otf
 share/fonts/powerline/SourceCodePro/Sauce Code Powerline Medium.otf
 share/fonts/powerline/SourceCodePro/Sauce Code Powerline Regular.otf
 share/fonts/powerline/SourceCodePro/Sauce Code Powerline Semibold.otf
+@fontdir share/fonts/powerline/SymbolNeu/
+share/fonts/powerline/SymbolNeu/LICENSE.txt
+share/fonts/powerline/SymbolNeu/README.rst
+share/fonts/powerline/SymbolNeu/Symbol Neu for Powerline.ttf
 @fontdir share/fonts/powerline/Terminus/
 share/fonts/powerline/Terminus/LICENSE.txt
 share/fonts/powerline/Terminus/README.rst
@@ -75,6 +139,13 @@ share/fonts/powerline/Terminus/ter-powerline-x28b.pcf.gz
 share/fonts/powerline/Terminus/ter-powerline-x28n.pcf.gz
 share/fonts/powerline/Terminus/ter-powerline-x32b.pcf.gz
 share/fonts/powerline/Terminus/ter-powerline-x32n.pcf.gz
+@fontdir share/fonts/powerline/Tinos/
+share/fonts/powerline/Tinos/LICENSE.txt
+share/fonts/powerline/Tinos/README.rst
+share/fonts/powerline/Tinos/Tinos Bold Italic for Powerline.ttf
+share/fonts/powerline/Tinos/Tinos Bold for Powerline.ttf
+share/fonts/powerline/Tinos/Tinos Italic for Powerline.ttf
+share/fonts/powerline/Tinos/Tinos for Powerline.ttf
 share/fonts/powerline/UbuntuMono/
 share/fonts/powerline/UbuntuMono/LICENCE.txt
 share/fonts/powerline/UbuntuMono/README.rst
