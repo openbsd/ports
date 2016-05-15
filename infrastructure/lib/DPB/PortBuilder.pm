@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.73 2015/07/20 20:14:45 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.74 2016/05/15 20:08:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -230,9 +230,6 @@ sub build
 		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
 	print $fh ">>> Building on ", $core->hostname;
-	if (defined $core->{user}) {
-		print $fh " as ", $core->{user}->user, " ";
-	}
 	print $fh $meminfo, " under ";
 	$v->quick_dump($fh);
 
@@ -261,9 +258,6 @@ sub force_junk
 	my $log = $self->logger->log_pkgpath($v);
 	my $fh = $self->logger->open('>>', $log);
 	print $fh ">>> Force junking on ", $core->hostname;
-	if (defined $core->{user}) {
-		print $fh " as ", $core->{user}->user, " ";
-	}
 	my $job;
 	$job = DPB::Job::Port->new_junk_only($log, $fh, $v, undef, $self,
 	    0,$core,

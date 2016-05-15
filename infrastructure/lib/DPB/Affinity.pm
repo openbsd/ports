@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.17 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.18 2016/05/15 20:08:30 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -61,10 +61,6 @@ sub start
 		next if !defined $fh;
 		$w->{affinity} = $host;
 		print $fh "host=$host\n";
-		if ($core->{user}) {
-			print $fh "user=", $core->{user}->user, "\n";
-			$w->{user_affinity} = $core->{user}->user;
-		}
 		print $fh "path=", $w->fullpkgpath, "\n";
 		if ($core->{inmem}) {
 			print $fh "mem=$core->{inmem}\n";
@@ -82,7 +78,6 @@ sub unmark
 	$self->unlink($self->affinity_marker($v));
 	delete $v->{affinity};
 	delete $v->{mem_affinity};
-	delete $v->{user_affinity};
 }
 
 # on the other hand, when we finish building a port, we can unmark all paths.
@@ -104,14 +99,11 @@ sub retrieve_existing_markers
 		next unless -f "$self->{dir}/$e";
 		my $fh = $self->open('<', "$self->{dir}/$e");
 		return if !defined $fh;
-		my ($hostname, $pkgpath, $memory, $user);
+		my ($hostname, $pkgpath, $memory);
 		while (<$fh>) {
 			chomp;
 			if (m/^host\=(.*)/) {
 				$hostname = $1;
-			}
-			if (m/^user\=(.*)/) {
-				$user = $1;
 			}
 			if (m/^path\=(.*)/) {
 				$pkgpath = $1;
@@ -127,9 +119,6 @@ sub retrieve_existing_markers
 		$v->{affinity} = $hostname;
 		if ($memory) {
 			$v->{mem_affinity} = $memory;
-		}
-		if ($user) {
-			$v->{user_affinity} = $user;
 		}
 		print $log "$$:", $v->fullpkgpath, " => ", $hostname, "\n";
 	}
