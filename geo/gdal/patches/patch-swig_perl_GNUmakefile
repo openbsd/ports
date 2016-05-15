@@ -1,8 +1,8 @@
-$OpenBSD: patch-swig_perl_GNUmakefile,v 1.2 2014/05/04 20:17:35 landry Exp $
+$OpenBSD: patch-swig_perl_GNUmakefile,v 1.3 2016/05/15 12:18:26 landry Exp $
 INST_PREFIX is wrong
---- swig/perl/GNUmakefile.orig	Wed Apr 16 22:04:49 2014
-+++ swig/perl/GNUmakefile	Wed Apr 30 22:15:37 2014
-@@ -26,7 +26,7 @@ build: gdal_wrap.cc Makefile_Geo__GDAL
+--- swig/perl/GNUmakefile.orig	Mon Apr 25 19:35:57 2016
++++ swig/perl/GNUmakefile	Fri May 13 09:46:29 2016
+@@ -28,7 +28,7 @@ build: gdal_wrap.cc Makefile_Geo__GDAL
  gdal_wrap.cc: generate
  
  Makefile_Geo__GDAL:
