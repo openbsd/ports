@@ -1,6 +1,6 @@
-$OpenBSD: patch-iwyu_include_picker_cc,v 1.1.1.1 2016/04/01 01:51:28 jsg Exp $
---- iwyu_include_picker.cc.orig	Fri Dec 11 16:45:54 2015
-+++ iwyu_include_picker.cc	Mon Jan 25 12:04:44 2016
+$OpenBSD: patch-iwyu_include_picker_cc,v 1.2 2016/05/15 00:03:43 jsg Exp $
+--- iwyu_include_picker.cc.orig	Wed May 11 14:50:08 2016
++++ iwyu_include_picker.cc	Thu May 12 14:57:34 2016
 @@ -115,8 +115,6 @@ const IncludeMapEntry libc_symbol_map[] = {
    { "gid_t", kPrivate, "<unistd.h>", kPublic },
    { "id_t", kPrivate, "<sys/types.h>", kPublic },
@@ -60,7 +60,7 @@ $OpenBSD: patch-iwyu_include_picker_cc,v 1.1.1.1 2016/04/01 01:51:28 jsg Exp $
    // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
    // When I saw more than one mapping for these, I typically picked
    // what I thought was the "best" one.
-@@ -436,6 +434,42 @@ const IncludeMapEntry libc_include_map[] = {
+@@ -440,6 +438,42 @@ const IncludeMapEntry libc_include_map[] = {
    { "<linux/limits.h>", kPrivate, "<limits.h>", kPublic },   // PATH_MAX
    { "<linux/prctl.h>", kPrivate, "<sys/prctl.h>", kPublic },
    { "<sys/ucontext.h>", kPrivate, "<ucontext.h>", kPublic },
