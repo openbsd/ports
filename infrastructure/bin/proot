@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.37 2016/05/15 13:25:25 espie Exp $
+# $OpenBSD: proot,v 1.38 2016/05/15 14:14:45 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -138,6 +138,16 @@ sub do_parm
 		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
 	    }, PLIST_DB => sub {
 		    $state->{PLIST_DB} = File::Spec->canonpath($v);
+	    }, NFSDIR => sub {
+		    $state->{DISTDIR} = File::Spec->canonpath("$v/distfiles");
+		    $state->{PACKAGE_REPOSITORY} = 
+			File::Spec->canonpath("$v/packages");
+		    my $arch = OpenBSD::Paths->machine_architecture;
+		    $state->{PLIST_DB} = 
+		    	File::Spec->canonpath("$v/plist/$arch");
+	    }, LOCALDIR => sub {
+		    $state->{WRKOBJDIR} = File::Spec->canonpath("$v/pobj");
+		    $state->{LOCKDIR} = File::Spec->canonpath("$v/locks");
 	    }, preserve => sub {
 		    push(@{$state->{preserved}}, $v);
 	    }, portscvs => sub {
