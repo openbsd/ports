@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp,v 1.1 2016/05/15 07:07:52 ajacoutot Exp $
+
+Use the integrated assembler by default on Mips64.
+
+--- lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp.orig	Sat May 14 20:30:16 2016
++++ lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp	Sat May 14 20:30:35 2016
+@@ -42,4 +42,6 @@ MipsMCAsmInfo::MipsMCAsmInfo(const Triple &TheTriple) 
+   SupportsDebugInformation = true;
+   ExceptionsType = ExceptionHandling::DwarfCFI;
+   DwarfRegNumForCFI = true;
++
++  UseIntegratedAssembler = true;
+ }

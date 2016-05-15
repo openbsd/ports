@@ -1,10 +1,25 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.6 2016/05/14 20:36:36 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.7 2016/05/15 07:07:52 ajacoutot Exp $
+
+Use the integrated assembler by default on Sparc and Mips64.
+
 --- tools/clang/lib/Driver/ToolChains.cpp.orig	Tue Feb 16 14:56:48 2016
-+++ tools/clang/lib/Driver/ToolChains.cpp	Fri Mar 25 21:50:14 2016
-@@ -2986,6 +2986,50 @@ Tool *OpenBSD::buildAssembler() const {
++++ tools/clang/lib/Driver/ToolChains.cpp	Sat May 14 20:34:32 2016
+@@ -2378,6 +2378,10 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+   case llvm::Triple::ppc64:
+   case llvm::Triple::ppc64le:
+   case llvm::Triple::systemz:
++  case llvm::Triple::sparc:
++  case llvm::Triple::sparcv9:
++  case llvm::Triple::mips64:
++  case llvm::Triple::mips64el:
+     return true;
+   default:
+     return false;
+@@ -2985,6 +2989,50 @@ Tool *OpenBSD::buildAssembler() const {
+ }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
- 
++
 +ToolChain::CXXStdlibType OpenBSD::GetCXXStdlibType(const ArgList &Args) const {
 +  if (Arg *A = Args.getLastArg(options::OPT_stdlib_EQ)) {
 +    StringRef Value = A->getValue();
@@ -48,7 +63,6 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.6 2016/05/14 20:36:36 
 +    break;
 +  }
 +}
-+
+ 
  /// Bitrig - Bitrig tool chain which can call as(1) and ld(1) directly.
  
- Bitrig::Bitrig(const Driver &D, const llvm::Triple &Triple, const ArgList &Args)
