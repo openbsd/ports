@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/15 20:27:09 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/15 21:09:06 jca Exp $
 
 COMMENT =	terminal library for Lua
 
@@ -13,11 +13,11 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c ${MODLUA_WANTLIB}
+WANTLIB +=	c ${MODLUA_WANTLIB}
 
-MODULES =		lang/lua
+MODULES =	lang/lua
 
-NO_TEST =		Yes
+NO_TEST =	Yes
 
 do-build:
 	cd ${WRKSRC} && \
