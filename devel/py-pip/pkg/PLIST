@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/04/15 08:53:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/05/15 15:48:41 danj Exp $
 @comment bin/pip
 @comment bin/pip2
 @comment bin/pip3
@@ -36,12 +36,6 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}pyparsing.$
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}re-vendor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}retrying.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/_markerlib/markers.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/${MODPY_PYCACHE}/
@@ -402,9 +396,11 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/c
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}ntlmpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}pyopenssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/pyopenssl.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/contrib/socks.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/fields.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/requests/packages/urllib3/filepost.py
