@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/15 15:34:45 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-V =			20160108
+V =			4.2.0
 DISTNAME =		osh-$V
-REVISION =		0
+EPOCH =			0
 
 SUBST_VARS +=		V
 
@@ -32,10 +32,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/osh
 	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.login \
-		${PREFIX}/share/examples/osh.login
+		${PREFIX}/share/examples/osh/osh.login
 	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.logout \
-		${PREFIX}/share/examples/osh.logout
+		${PREFIX}/share/examples/osh/osh.logout
 	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.oshrc \
-		${PREFIX}/share/examples/osh.oshrc
+		${PREFIX}/share/examples/osh/osh.oshrc
 
 .include <bsd.port.mk>

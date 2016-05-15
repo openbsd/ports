@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/08 18:21:48 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/05/15 15:34:45 pascal Exp $
 @conflict omake-*
 @shell bin/osh
 @shell bin/sh6
@@ -15,9 +15,9 @@ libexec/osh-${V}/README
 @man man/man1/osh.1
 @man man/man1/sh6.1
 share/examples/osh/
-share/examples/osh.login
+share/examples/osh/osh.login
 @sample ${SYSCONFDIR}/osh.login
-share/examples/osh.logout
+share/examples/osh/osh.logout
 @sample ${SYSCONFDIR}/osh.logout
-share/examples/osh.oshrc
+share/examples/osh/osh.oshrc
 @sample ${SYSCONFDIR}/osh.oshrc
