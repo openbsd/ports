@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.33 2016/05/14 22:49:23 espie Exp $
+# $OpenBSD: proot,v 1.34 2016/05/15 10:00:16 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -781,16 +781,18 @@ sub checkout_ports
 	    	my @cvs = ("/usr/bin/cvs", "-z3", "-d", $state->{portscvs});
 		my $dir = $state->chroot($state->{PORTSDIR});
 		if (-d "$dir/CVS") {
-			$state->chdir($dir);
 			$state->{portuser}->run_as(sub {
-			    $state->system(@cvs, "update", "-dP", "-A");
+			    $state->system(
+			    	sub { $state->chdir($dir); },
+				@cvs, "update", "-dP", "-A");
 			    });
 		} else {
 			# okay, so stupid cvs creates the dir, work-around that
 			$state->{portuser}->mkpath("$dir.tmp");
-			$state->chdir("$dir.tmp");
 			$state->{portuser}->run_as(sub {
-			    $state->system(@cvs, "co", "-P", "-A", "ports");
+			    $state->system(
+			    	sub { $state->chdir($dir); },
+			    	@cvs, "co", "-P", "-A", "ports");
 			    });
 			rename("$dir.tmp/ports", "$dir");
 			rmdir("$dir.tmp");
