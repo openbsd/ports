@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.35 2016/05/15 10:24:38 espie Exp $
+# $OpenBSD: proot,v 1.36 2016/05/15 11:06:57 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -168,6 +168,10 @@ sub do_parm
 	    	$state->{key} = $v;
 		$state->{SIGNING_PARAMETERS} = 
 		    "-s signify -s /etc/signify/$v-pkg.sec";
+	    }, extra => sub {
+	    	$state->{known}{$v} = 1;
+	    }, mkconf_tail => sub {
+	    	$state->{mkconf_tail} = $v;
 	    },
 	};
 
@@ -425,9 +429,6 @@ sub special_data
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
-	if (-f '/etc/doas.conf') {
-		$state->{known}{'/etc/doas.conf'} = 1;
-	}
 }
 
 sub key_data
@@ -962,6 +963,16 @@ sub write_mk_conf
 		for my $i (sort keys %{$state->{write}}) {
 			print $f "$i = $state->{$i}\n";
 		}
+		if (exists $state->{mkconf_tail}) {
+			open(my $g, "<", $state->{mkconf_tail}) or
+			    $state->errsay("Couldn't read tail #1: #2",
+				$state->{mkconf_tail}, $!);
+			print $f "# Copied from $state->{mkconf_tail}\n";
+			while(<$g>) {
+				print $f $_;
+			}
+			close $g;
+		}
 		close($f);
 	    });
 }
@@ -977,6 +988,7 @@ if ($state->{actions}{unpopulate}) {
 if ($state->{actions}{locate}) {
 	$state->read_locates;
 }
+
 if ($state->{actions}{snapshot}) {
 	$state->get_snapshot;
 }
@@ -986,7 +998,7 @@ if ($state->{actions}{resolv}) {
 if ($state->{key}) {
 	$state->key_data;
 }
-if ($state->{actions}{resolv} || $state->{actions}{locate}) {
+if (defined $state->{known}) {
 	$state->copy_sync;
 }
 if ($state->{actions}{unpopulate_light}) {
@@ -1013,7 +1025,8 @@ if ($state->{actions}{ports_subdirs}) {
 if ($state->{actions}{stragglers}) {
 	$state->verbose_shit;
 }
-if ($state->{actions}{write_mk} && exists $state->{write}) {
+if ($state->{actions}{write_mk} && 
+    exists $state->{write} || exists $state->{mkconf_tail}) {
 	$state->write_mk_conf;
 }
 if ($state->{actions}{check_symlinks}) {
