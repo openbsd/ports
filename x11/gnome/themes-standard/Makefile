@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2016/04/18 06:51:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2016/05/15 13:16:17 ajacoutot Exp $
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.20
+GNOME_VERSION=		3.20.2
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
