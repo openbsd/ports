@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/15 13:20:43 landry Exp $
 
 COMMENT =	Java web browser plugin
-DISTNAME =	icedtea-web-1.5.2
-REVISION =	0
+DISTNAME =	icedtea-web-1.6.2
 CATEGORIES =	www
-
-MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -36,5 +33,9 @@ WANTLIB += glib-2.0 m stdc++
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/launcher/launchers.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

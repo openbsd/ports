@@ -1,9 +1,9 @@
-$OpenBSD: patch-launcher_launchers_in,v 1.1 2015/03/24 20:29:10 landry Exp $
+$OpenBSD: patch-launcher_launchers_in,v 1.2 2016/05/15 13:20:43 landry Exp $
 2nd chunk needed for:
 Error: could not find libjava.so
 Error: Could not find Java SE Runtime Environment.
---- launcher/launchers.in.orig	Wed Nov 26 17:39:23 2014
-+++ launcher/launchers.in	Tue Mar 24 21:15:51 2015
+--- launcher/launchers.in.orig	Wed Feb  3 14:47:43 2016
++++ launcher/launchers.in	Wed Mar  9 17:35:04 2016
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${TRUEPREFIX}/bin/bash

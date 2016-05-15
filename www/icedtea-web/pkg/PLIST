@@ -1,14 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/24 20:29:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/05/15 13:20:43 landry Exp $
 bin/itweb-settings
 bin/javaws
 bin/policyeditor
 lib/mozilla/
 lib/mozilla/plugins/
 lib/mozilla/plugins/IcedTeaPlugin.so
+@man man/man1/icedtea-web-plugin.1
+@man man/man1/icedtea-web.1
 @man man/man1/itweb-settings.1
 @man man/man1/javaws.1
 @man man/man1/policyeditor.1
+share/applications/
+share/applications/itweb-settings.desktop
+share/applications/javaws.desktop
+share/applications/policyeditor.desktop
 share/icedtea-web/
 share/icedtea-web/javaws_splash.png
 share/icedtea-web/netx.jar
 share/icedtea-web/plugin.jar
+share/pixmaps/
+share/pixmaps/javaws.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
