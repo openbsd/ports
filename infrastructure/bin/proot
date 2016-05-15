@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.38 2016/05/15 14:14:45 espie Exp $
+# $OpenBSD: proot,v 1.39 2016/05/15 20:31:05 rpe Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -289,7 +289,7 @@ sub handle_options
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSTORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
