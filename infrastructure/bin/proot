@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.34 2016/05/15 10:00:16 espie Exp $
+# $OpenBSD: proot,v 1.35 2016/05/15 10:24:38 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -699,23 +699,25 @@ sub copy_ports
 	    sub {
 		my $old = umask;
 		umask 0;
-		my $srcports = $state->srcroot($state->{PORTSDIR});
-		$state->chdir($srcports);
-		$state->{portuser}->mkpath($state->chroot($state->{PORTSDIR}));
+		my $portsdir = $state->{PORTSDIR};
+		my $srcports = $state->srcroot($portsdir);
+		if (-l $srcports) {
+			$srcports = readlink $srcports;
+		}
+		my $destports = $state->chroot($portsdir);
 		find(sub {
-			my $d = $File::Find::dir;
-			$d =~ s/^\.\///;
-			$state->{progressmeter}->message($d);
 			my $realname = $File::Find::name;
+			$realname =~ s,^\Q$srcports\E\b,,;
 			my $r2 = $realname;
-			$realname =~ s,^\./,$srcports/,;
-			$r2 =~ s,^\./,$state->{PORTSDIR}/,;
+			$r2 =~ s,^,$portsdir,;
 			if ($r2 eq $state->{WRKOBJDIR}) {
 				$File::Find::prune = 1;
 				return;
 			}
-			$state->simple_copy($realname, $state->chroot($r2),
-			    $state->best_user($r2));
+			$realname =~ s,^/,,;
+			$state->{progressmeter}->message($realname);
+			$state->simple_copy($File::Find::name, 
+			    $state->chroot($r2), $state->best_user($r2));
 		    }, $srcports);
 		umask $old;
 	    });
