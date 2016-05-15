@@ -1,2 +1,4 @@
 SHA256 (gdal-2.1.0.tar.gz) = 60mbGOXFJiqAO7dTCuVulcMpO+eybHS8rfZ0iSA78s0=
+SHA256 (gdalautotest-2.1.0.tar.gz) = xDFAr6Z9a8T1vRYgLHUpGqK0PLddGo7PlYq3y82UF38=
 SIZE (gdal-2.1.0.tar.gz) = 12819400
+SIZE (gdalautotest-2.1.0.tar.gz) = 5791840

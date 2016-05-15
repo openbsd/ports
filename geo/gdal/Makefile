@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/05/15 12:18:26 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2016/05/15 12:29:20 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -6,6 +6,8 @@ COMMENT-perl =	perl bindings for GDAL
 
 V =		2.1.0
 DISTNAME =	gdal-${V}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		gdalautotest-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
@@ -58,6 +60,9 @@ WANTLIB-perl =		gdal
 RUN_DEPENDS +=		math/py-numpy
 BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig
 
+TEST_DEPENDS +=		${PKGNAME-python}:${BASE_PKGPATH},-python
+TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
+
 MODPY_SETUPTOOLS =	Yes
 MODPY_EGG_VERSION =	${V}
 MODPY_ADJ_FILES =	swig/python/scripts/*.py
@@ -65,7 +70,6 @@ MODPY_ADJ_FILES =	swig/python/scripts/*.py
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
-NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
@@ -100,7 +104,13 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--with-libjson-c=${LOCALBASE} \
 		--with-jasper=${LOCALBASE}
 
+post-extract:
+	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
+
 post-install:
 	rm ${PREFIX}/man/man1/_home_rouault_dist_wrk_gdal_apps_.1
+
+do-test:
+	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} run_all.py
 
 .include <bsd.port.mk>
