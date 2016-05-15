@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.45 2015/07/27 17:19:46 espie Exp $
+# $OpenBSD: Vars.pm,v 1.46 2016/05/15 22:24:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,10 +27,13 @@ sub subdirlist
 
 sub run_command
 {
-	my ($class, $core, $shell, $grabber, $subdirs, @args) = @_;
+	my ($class, $core, $shell, $grabber, $subdirs, $skip, @args) = @_;
 
 	if (defined $subdirs) {
 		$shell->env(SUBDIR => $class->subdirlist($subdirs));
+	}
+	if (defined $skip) {
+		$shell->env(SKIPDIR => $class->subdirlist($skip));
 	}
 	$shell->exec($grabber->make_args, @args);
 	exit(1);
@@ -87,20 +90,20 @@ EOT
 
 sub run_pipe
 {
-	my ($class, $core, $grabber, $subdirs, $dpb) = @_;
+	my ($class, $core, $grabber, $subdirs, $skip, $dpb) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
 		open STDERR, '>&', STDOUT or DPB::Util->die_bang("bad redirect");
-		$class->run_command($core, $shell, $grabber, $subdirs,
+		$class->run_command($core, $shell, $grabber, $subdirs, $skip,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 	}, "LISTING");
 }
 
 sub grab_list
 {
-	my ($class, $core, $grabber, $subdirs, $log, $dpb, $code) = @_;
-	$class->run_pipe($core, $grabber, $subdirs, $dpb);
+	my ($class, $core, $grabber, $subdirs, $skip, $log, $dpb, $code) = @_;
+	$class->run_pipe($core, $grabber, $subdirs, $skip, $dpb);
 	my $h = {};
 	my $seen = {};
 	my $fh = $core->fh;
@@ -121,6 +124,9 @@ sub grab_list
 	while(<$fh>) {
 		push(@current, $_);
 		chomp;
+		if (m/^\=\=\=\> .* skipped$/) {
+			next;
+		}
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
 			my $dir = DPB::PkgPath->new($1);
@@ -191,7 +197,7 @@ sub grab_signature
 	$core->start_pipe(sub {
 		my $shell = shift;
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
-			'print-package-signature', 'ECHO_MSG=:')
+			undef, 'print-package-signature', 'ECHO_MSG=:')
 	}, "PORT-SIGNATURE");
 	my $fh = $core->fh;
 	while (<$fh>) {
@@ -210,7 +216,7 @@ sub clean
 	$core->start_pipe(sub {
 		my $shell = shift;
 		$class->run_command($core, $shell, $grabber, {$subdir => 1},
-			'clean=package')
+			undef, 'clean=package')
 	}, "CLEAN-PACKAGES");
 	my $fh = $core->fh;
 	while (<$fh>) {
