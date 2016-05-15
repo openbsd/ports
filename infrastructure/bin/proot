@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.36 2016/05/15 11:06:57 espie Exp $
+# $OpenBSD: proot,v 1.37 2016/05/15 13:25:25 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -153,7 +153,9 @@ sub do_parm
 	    }, snapshot => sub {
 	    	$state->{snapshot} = $v;
 	    }, actions => sub {
-	    	if ($v =~ m/^-(.*)/) {
+	    	if ($v eq 'none') {
+			delete $state->{actions};
+		} elsif ($v =~ m/^-(.*)/) {
 			$state->{actions}{$1} = 0;
 		} else {
 			$state->{actions}{$v} = 1;
@@ -981,7 +983,9 @@ package main;
 
 my $state = MyState->new("proot");
 $state->handle_options;
-$state->check_mountpoint;
+if ($state->{actions}{check_mount}) {
+	$state->check_mountpoint;
+}
 if ($state->{actions}{unpopulate}) {
 	$state->unpopulate_chroot;
 }
