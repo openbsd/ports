@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.47 2016/05/16 10:28:14 espie Exp $
+# $OpenBSD: Vars.pm,v 1.48 2016/05/16 10:37:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -125,7 +125,7 @@ sub grab_list
 		push(@current, $_);
 		chomp;
 		if (m/^\=\=\=\> .* skipped$/) {
-			print $log $_;
+			print $log $_, "\n";
 			next;
 		}
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
