@@ -1,14 +1,58 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_elf_go,v 1.1 2016/05/13 13:49:26 jsing Exp $
---- src/cmd/link/internal/ld/elf.go.orig	Thu May  5 01:30:21 2016
-+++ src/cmd/link/internal/ld/elf.go	Thu May  5 01:30:47 2016
-@@ -2585,8 +2585,8 @@ func Elfadddynsym(ctxt *Link, s *LSym) {
- 			Addaddr(ctxt, d, s)
+$OpenBSD: patch-src_cmd_link_internal_ld_elf_go,v 1.2 2016/05/16 13:50:02 jsing Exp $
+--- src/cmd/link/internal/ld/elf.go.orig	Sat May 14 02:17:19 2016
++++ src/cmd/link/internal/ld/elf.go	Sat May 14 02:19:21 2016
+@@ -1730,14 +1730,11 @@ func doelf() {
+ 	Addstring(shstrtab, ".bss")
+ 	Addstring(shstrtab, ".noptrbss")
+ 
+-	// generate .tbss section (except for OpenBSD where it's not supported)
+-	// for dynamic internal linker or external linking, so that various
+-	// binutils could correctly calculate PT_TLS size.
+-	// see https://golang.org/issue/5200.
+-	if HEADTYPE != obj.Hopenbsd {
+-		if Debug['d'] == 0 || Linkmode == LinkExternal {
+-			Addstring(shstrtab, ".tbss")
+-		}
++	// generate .tbss section for dynamic internal linker or external
++	// linking, so that various binutils could correctly calculate
++	// PT_TLS size - see https://golang.org/issue/5200.
++	if Debug['d'] == 0 || Linkmode == LinkExternal {
++		Addstring(shstrtab, ".tbss")
+ 	}
+ 	if HEADTYPE == obj.Hnetbsd {
+ 		Addstring(shstrtab, ".note.netbsd.ident")
+@@ -2359,23 +2356,18 @@ func Asmbelf(symo int64) {
+ 		/*
+ 		 * Thread-local storage segment (really just size).
+ 		 */
+-		// Do not emit PT_TLS for OpenBSD since ld.so(1) does
+-		// not currently support it. This is handled
+-		// appropriately in runtime/cgo.
+-		if HEADTYPE != obj.Hopenbsd {
+-			tlssize := uint64(0)
+-			for sect := Segdata.Sect; sect != nil; sect = sect.Next {
+-				if sect.Name == ".tbss" {
+-					tlssize = sect.Length
+-				}
++		tlssize := uint64(0)
++		for sect := Segdata.Sect; sect != nil; sect = sect.Next {
++			if sect.Name == ".tbss" {
++				tlssize = sect.Length
+ 			}
+-			if tlssize != 0 {
+-				ph := newElfPhdr()
+-				ph.type_ = PT_TLS
+-				ph.flags = PF_R
+-				ph.memsz = tlssize
+-				ph.align = uint64(Thearch.Regsize)
+-			}
++		}
++		if tlssize != 0 {
++			ph := newElfPhdr()
++			ph.type_ = PT_TLS
++			ph.flags = PF_R
++			ph.memsz = tlssize
++			ph.align = uint64(Thearch.Regsize)
  		}
+ 	}
  
--		/* size */
--		Adduint32(ctxt, d, 0)
-+		/* size of object */
-+		Adduint32(ctxt, d, uint32(s.Size))
- 
- 		/* type */
- 		t := STB_GLOBAL << 4

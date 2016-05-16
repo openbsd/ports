@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.1 2016/05/16 13:50:02 jsing Exp $
+--- src/cmd/link/internal/ld/lib.go.orig	Thu Feb 18 07:35:20 2016
++++ src/cmd/link/internal/ld/lib.go	Sat May 14 02:17:32 2016
+@@ -1951,7 +1951,7 @@ func genasmsym(put func(*LSym, string, int, int64, int
+ 			put(s, s.Extname, 'U', 0, 0, int(s.Version), nil)
+ 
+ 		case obj.STLSBSS:
+-			if Linkmode == LinkExternal && HEADTYPE != obj.Hopenbsd {
++			if Linkmode == LinkExternal {
+ 				put(s, s.Name, 't', Symaddr(s), s.Size, int(s.Version), s.Gotype)
+ 			}
+ 		}
