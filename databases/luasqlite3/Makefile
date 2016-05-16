@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/05/16 18:51:51 jca Exp $
 
 COMMENT=	binding of sqlite3 for lua
 PKGNAME=	luasqlite3-0.4.1
@@ -19,6 +19,7 @@ MODULES=	lang/lua
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-lua-dir=${PREFIX} \
+		--with-lua=${MODLUA_BIN} \
 		--with-lua-includedir=${MODLUA_INCL_DIR}
 CFLAGS+=	-fPIC -DPIC
 
