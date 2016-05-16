@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.270 2016/05/12 15:34:31 ajacoutot Exp $
+$OpenBSD: user.list,v 1.271 2016/05/16 09:42:17 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -282,3 +282,4 @@ id  user		group		port options
 771 _serf		_serf		sysutils/serf
 772 _vault		_vault		security/vault
 773 _consul		_consul		sysutils/consul
+774 _facette		_facette	sysutils/facette
