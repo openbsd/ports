@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_driver_implementation_mh_mhdriver_cached_message_c,v 1.1 2015/09/17 20:28:33 jca Exp $
+$OpenBSD: patch-src_driver_implementation_mh_mhdriver_cached_message_c,v 1.2 2016/05/16 16:06:28 danj Exp $
+
+Committed upstream
+https://github.com/dinhviethoa/libetpan/commit/a8d2f243509939b6c5cb5360f1796f1eb7698fde
+
 --- src/driver/implementation/mh/mhdriver_cached_message.c.orig	Fri Oct 31 22:41:02 2014
 +++ src/driver/implementation/mh/mhdriver_cached_message.c	Thu Sep 17 20:27:20 2015
 @@ -187,8 +187,8 @@ static int mh_initialize(mailmessage * msg_info)
