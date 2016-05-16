@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/10 02:35:29 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/16 22:20:16 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -793,36 +793,42 @@ share/racket/collects/racket/contract/compiled/region_rkt.dep
 share/racket/collects/racket/contract/compiled/region_rkt.zo
 share/racket/collects/racket/contract/parametric.rkt
 share/racket/collects/racket/contract/private/
+share/racket/collects/racket/contract/private/and.rkt
 share/racket/collects/racket/contract/private/application-arity-checking.rkt
 share/racket/collects/racket/contract/private/arity-checking.rkt
+share/racket/collects/racket/contract/private/arr-d.rkt
 share/racket/collects/racket/contract/private/arr-i-parse.rkt
 share/racket/collects/racket/contract/private/arr-i.rkt
 share/racket/collects/racket/contract/private/arr-util.rkt
+share/racket/collects/racket/contract/private/arrow-common.rkt
 share/racket/collects/racket/contract/private/arrow-higher-order.rkt
 share/racket/collects/racket/contract/private/arrow-val-first.rkt
-share/racket/collects/racket/contract/private/arrow.rkt
 share/racket/collects/racket/contract/private/base.rkt
 share/racket/collects/racket/contract/private/basic-opters.rkt
 share/racket/collects/racket/contract/private/blame.rkt
 share/racket/collects/racket/contract/private/box.rkt
 share/racket/collects/racket/contract/private/case-arrow.rkt
 share/racket/collects/racket/contract/private/compiled/
+share/racket/collects/racket/contract/private/compiled/and_rkt.dep
+share/racket/collects/racket/contract/private/compiled/and_rkt.zo
 share/racket/collects/racket/contract/private/compiled/application-arity-checking_rkt.dep
 share/racket/collects/racket/contract/private/compiled/application-arity-checking_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arity-checking_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arity-checking_rkt.zo
+share/racket/collects/racket/contract/private/compiled/arr-d_rkt.dep
+share/racket/collects/racket/contract/private/compiled/arr-d_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-i-parse_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-i-parse_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-i_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-i_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-util_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-util_rkt.zo
+share/racket/collects/racket/contract/private/compiled/arrow-common_rkt.dep
+share/racket/collects/racket/contract/private/compiled/arrow-common_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arrow-higher-order_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arrow-higher-order_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arrow-val-first_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arrow-val-first_rkt.zo
-share/racket/collects/racket/contract/private/compiled/arrow_rkt.dep
-share/racket/collects/racket/contract/private/compiled/arrow_rkt.zo
 share/racket/collects/racket/contract/private/compiled/base_rkt.dep
 share/racket/collects/racket/contract/private/compiled/base_rkt.zo
 share/racket/collects/racket/contract/private/compiled/basic-opters_rkt.dep
@@ -837,8 +843,6 @@ share/racket/collects/racket/contract/private/compiled/ds-helpers_rkt.dep
 share/racket/collects/racket/contract/private/compiled/ds-helpers_rkt.zo
 share/racket/collects/racket/contract/private/compiled/ds_rkt.dep
 share/racket/collects/racket/contract/private/compiled/ds_rkt.zo
-share/racket/collects/racket/contract/private/compiled/env_rkt.dep
-share/racket/collects/racket/contract/private/compiled/env_rkt.zo
 share/racket/collects/racket/contract/private/compiled/exists_rkt.dep
 share/racket/collects/racket/contract/private/compiled/exists_rkt.zo
 share/racket/collects/racket/contract/private/compiled/generate-base_rkt.dep
@@ -855,6 +859,8 @@ share/racket/collects/racket/contract/private/compiled/kwd-info-struct_rkt.dep
 share/racket/collects/racket/contract/private/compiled/kwd-info-struct_rkt.zo
 share/racket/collects/racket/contract/private/compiled/legacy_rkt.dep
 share/racket/collects/racket/contract/private/compiled/legacy_rkt.zo
+share/racket/collects/racket/contract/private/compiled/list_rkt.dep
+share/racket/collects/racket/contract/private/compiled/list_rkt.zo
 share/racket/collects/racket/contract/private/compiled/misc_rkt.dep
 share/racket/collects/racket/contract/private/compiled/misc_rkt.zo
 share/racket/collects/racket/contract/private/compiled/object_rkt.dep
@@ -885,11 +891,12 @@ share/racket/collects/racket/contract/private/compiled/top-sort_rkt.dep
 share/racket/collects/racket/contract/private/compiled/top-sort_rkt.zo
 share/racket/collects/racket/contract/private/compiled/types_rkt.dep
 share/racket/collects/racket/contract/private/compiled/types_rkt.zo
+share/racket/collects/racket/contract/private/compiled/unconstrained-domain-arrow_rkt.dep
+share/racket/collects/racket/contract/private/compiled/unconstrained-domain-arrow_rkt.zo
 share/racket/collects/racket/contract/private/compiled/vector_rkt.dep
 share/racket/collects/racket/contract/private/compiled/vector_rkt.zo
 share/racket/collects/racket/contract/private/ds-helpers.rkt
 share/racket/collects/racket/contract/private/ds.rkt
-share/racket/collects/racket/contract/private/env.rkt
 share/racket/collects/racket/contract/private/exists.rkt
 share/racket/collects/racket/contract/private/generate-base.rkt
 share/racket/collects/racket/contract/private/generate.rkt
@@ -898,6 +905,7 @@ share/racket/collects/racket/contract/private/hash.rkt
 share/racket/collects/racket/contract/private/helpers.rkt
 share/racket/collects/racket/contract/private/kwd-info-struct.rkt
 share/racket/collects/racket/contract/private/legacy.rkt
+share/racket/collects/racket/contract/private/list.rkt
 share/racket/collects/racket/contract/private/misc.rkt
 share/racket/collects/racket/contract/private/object.rkt
 share/racket/collects/racket/contract/private/opt-guts.rkt
@@ -913,6 +921,7 @@ share/racket/collects/racket/contract/private/struct-dc.rkt
 share/racket/collects/racket/contract/private/struct-prop.rkt
 share/racket/collects/racket/contract/private/top-sort.rkt
 share/racket/collects/racket/contract/private/types.rkt
+share/racket/collects/racket/contract/private/unconstrained-domain-arrow.rkt
 share/racket/collects/racket/contract/private/vector.rkt
 share/racket/collects/racket/contract/region.rkt
 share/racket/collects/racket/control.rkt
@@ -1809,8 +1818,6 @@ share/racket/collects/syntax/unsafe/compiled/for-transform_rkt.dep
 share/racket/collects/syntax/unsafe/compiled/for-transform_rkt.zo
 share/racket/collects/syntax/unsafe/for-transform.rkt
 share/racket/collects/syntax/wrap-modbeg.rkt
-share/racket/collects/unstable/
-share/racket/collects/unstable/compiled/
 share/racket/collects/version/
 share/racket/collects/version/check.rkt
 share/racket/collects/version/compiled/
