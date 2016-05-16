@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.118 2016/05/16 10:28:14 espie Exp $
+# $OpenBSD: Engine.pm,v 1.119 2016/05/16 13:47:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -692,10 +692,19 @@ sub dump_dependencies
 			}
 		}
 	}
-	my $log = $self->{logger}->create("dependencies");
-	for my $k (sort {$cache->{$b} <=> $cache->{$a}} keys %$cache) {
-		print $log "$k $cache->{$k}\n";
-	}
+	my $state = $self->{state};
+	$state->{log_user}->make_path(File::Basename::dirname(
+	    $state->{dependencies_log}));
+	$state->{log_user}->run_as(
+	    sub {
+		open my $log, '>', $state->{dependencies_log}.'.part' or return;
+		for my $k (sort {$cache->{$b} <=> $cache->{$a}} keys %$cache) {
+			print $log "$k $cache->{$k}\n";
+		}
+		close $log;
+		rename $state->{dependencies_log}.'.part', 
+		    $state->{dependencies_log};
+	    });
 }
 
 sub find_best
