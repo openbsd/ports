@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/04/02 21:35:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/05/16 09:39:51 zhuk Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -174,7 +174,7 @@ intellij/lib/microba.jar
 intellij/lib/miglayout-swing.jar
 intellij/lib/nanoxml-2.2.3.jar
 intellij/lib/nekohtml-1.9.14.jar
-intellij/lib/netty-all-4.1.0.Beta8.jar
+intellij/lib/netty-all-4.1.0.CR7.jar
 intellij/lib/openapi.jar
 intellij/lib/optimizedFileManager.jar
 intellij/lib/oromatcher.jar
