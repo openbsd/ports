@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.117 2016/05/08 09:34:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.118 2016/05/16 10:28:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -511,7 +511,7 @@ sub rebuild_info
 		}
 		delete $v->{info};
 	}
-	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
+	$self->{state}->grabber->grab_subdirs($core, \%subdirs, undef);
 	for my $v (@l) {
 		$self->{buildable}->release($v);
 	}

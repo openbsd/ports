@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.32 2016/05/15 22:24:56 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.33 2016/05/16 10:28:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -106,9 +106,9 @@ sub logger
 
 sub grab_subdirs
 {
-	my ($self, $core, $list) = @_;
+	my ($self, $core, $list, $skip) = @_;
 	$core->unsquiggle;
-	DPB::Vars->grab_list($core, $self, $list, undef,
+	DPB::Vars->grab_list($core, $self, $list, $skip,
 	    $self->{loglist}, $self->{dpb},
 	    sub {
 	    	my $h = shift;

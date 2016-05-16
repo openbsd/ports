@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.46 2016/05/15 22:24:56 espie Exp $
+# $OpenBSD: Vars.pm,v 1.47 2016/05/16 10:28:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -125,11 +125,15 @@ sub grab_list
 		push(@current, $_);
 		chomp;
 		if (m/^\=\=\=\> .* skipped$/) {
+			print $log $_;
 			next;
 		}
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
 			my $dir = DPB::PkgPath->new($1);
+			if (defined $skip) {
+				$dir->add_to_subdirlist($skip);
+			}
 			$dir->break("exiting with an error");
 			$h->{$dir} = $dir;
 			my $quicklog = $grabber->logger->append(
@@ -142,6 +146,9 @@ sub grab_list
 			@current = ("$_\n");
 			$core->job->set_status(" at $1");
 			$subdir = DPB::PkgPath->new($1);
+			if (defined $skip) {
+				$subdir->add_to_subdirlist($skip);
+			}
 			print $log $_;
 			if (defined $subdir->{parent}) {
 				print $log " (", $subdir->{parent}->fullpkgpath, ")";
@@ -176,6 +183,9 @@ sub grab_list
 			my $dir = DPB::PkgPath->new($1);
 			$dir->break("broken dependency");
 			$h->{$dir} = $dir;
+			if (defined $skip) {
+				$dir->add_to_subdirlist($skip);
+			}
 			print $log $_, "\n";
 			print $log "Broken ", $dir->fullpkgpath, "\n";
 			&$reset;
