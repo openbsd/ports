@@ -1,0 +1,27 @@
+$OpenBSD: patch-share_pnp_templates_dist_default_php,v 1.1 2016/05/17 07:13:42 kirby Exp $
+
+Fix compatibility with rrdtool-1.6.x
+Upstream commit 0a539e1c7ab03ec015c27e4ad0fe16343a98c269
+
+--- share/pnp/templates.dist/default.php.orig	Mon May 16 16:43:00 2016
++++ share/pnp/templates.dist/default.php	Mon May 16 16:44:06 2016
+@@ -47,7 +47,7 @@ foreach ($this->DS as $KEY=>$VAL) {
+ 		$crit_min = $VAL['CRIT_MIN'];
+ 	}
+ 	if ( $VAL['MIN'] != "" && is_numeric($VAL['MIN']) ) {
+-		$lower = " --lower=" . $VAL['MIN'];
++		$lower = " --lower-limit=" . $VAL['MIN'];
+ 		$minimum = $VAL['MIN'];
+ 	}
+ 	if ( $VAL['MAX'] != "" && is_numeric($VAL['MAX']) ) {
+@@ -55,8 +55,8 @@ foreach ($this->DS as $KEY=>$VAL) {
+ 	}
+ 	if ($VAL['UNIT'] == "%%") {
+ 		$vlabel = "%";
+-		$upper = " --upper=101 ";
+-		$lower = " --lower=0 ";
++		$upper = " --upper-limit=101 ";
++		$lower = " --lower-limit=0 ";
+ 	}
+ 	else {
+ 		$vlabel = $VAL['UNIT'];

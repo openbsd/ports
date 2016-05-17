@@ -1,0 +1,14 @@
+$OpenBSD: patch-share_Makefile_in,v 1.1 2016/05/17 07:13:42 kirby Exp $
+
+Do not install templates directory. @sample it from templates.dist instead.
+
+--- share/Makefile.in.orig	Mon May 16 17:07:11 2016
++++ share/Makefile.in	Mon May 16 17:07:37 2016
+@@ -166,7 +166,6 @@ install:
+ 	for file in pnp/templates.special/*; \
+ 		do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(DATAROOTDIR)/templates.special; done
+ 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(DATAROOTDIR)/templates
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS) pnp/index.php $(DESTDIR)$(DATAROOTDIR)
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS) pnp/install.php $(DESTDIR)$(DATAROOTDIR)
+ 

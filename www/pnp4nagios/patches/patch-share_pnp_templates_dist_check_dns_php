@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_pnp_templates_dist_check_dns_php,v 1.1 2016/05/17 07:13:42 kirby Exp $
+
+Fix compatibility with rrdtool-1.6.x
+Upstream commit 0a539e1c7ab03ec015c27e4ad0fe16343a98c269
+
+--- share/pnp/templates.dist/check_dns.php.orig	Mon May 16 16:41:26 2016
++++ share/pnp/templates.dist/check_dns.php	Mon May 16 16:41:44 2016
+@@ -4,7 +4,7 @@
+ # Template for check_dns
+ #
+ 
+-$opt[1] = "--lower=$MIN[1] --vertical-label $UNIT[1]  --title \"DNS Response Time\" ";
++$opt[1] = "--lower-limit=$MIN[1] --vertical-label $UNIT[1]  --title \"DNS Response Time\" ";
+ 
+ 
+ $def[1] =  "DEF:var1=$RRDFILE[1]:$DS[1]:AVERAGE " ;

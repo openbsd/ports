@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.2 2016/05/17 07:13:42 kirby Exp $
 @extraunexec rm -rf %D/pnp4nagios/rrd
 conf/modules.sample/pnp4nagios.conf.dist
 @sample conf/modules.sample/pnp4nagios.conf
@@ -363,74 +363,140 @@ pnp4nagios/media/js/jquery.mobile.min.js
 pnp4nagios/rrd/
 @owner
 @group
-pnp4nagios/templates/
 pnp4nagios/templates.dist/
+@sample pnp4nagios/templates/
 pnp4nagios/templates.dist/check-host-alive.php
+@sample pnp4nagios/templates/check-host-alive.php
 pnp4nagios/templates.dist/check_apachestatus.php
+@sample pnp4nagios/templates/check_apachestatus.php
 pnp4nagios/templates.dist/check_apachestatus_auto.php
+@sample pnp4nagios/templates/check_apachestatus_auto.php
 pnp4nagios/templates.dist/check_dell_bladechassis.php
+@sample pnp4nagios/templates/check_dell_bladechassis.php
 pnp4nagios/templates.dist/check_disk.php
+@sample pnp4nagios/templates/check_disk.php
 pnp4nagios/templates.dist/check_dns.php
+@sample pnp4nagios/templates/check_dns.php
 pnp4nagios/templates.dist/check_esx3.php
+@sample pnp4nagios/templates/check_esx3.php
 pnp4nagios/templates.dist/check_fping.php
+@sample pnp4nagios/templates/check_fping.php
 pnp4nagios/templates.dist/check_gearman.php
+@sample pnp4nagios/templates/check_gearman.php
 pnp4nagios/templates.dist/check_hp_bladechassis.php
+@sample pnp4nagios/templates/check_hp_bladechassis.php
 pnp4nagios/templates.dist/check_hpasm.php
+@sample pnp4nagios/templates/check_hpasm.php
 pnp4nagios/templates.dist/check_http.php
+@sample pnp4nagios/templates/check_http.php
 pnp4nagios/templates.dist/check_icmp.php
+@sample pnp4nagios/templates/check_icmp.php
 pnp4nagios/templates.dist/check_iftraffic_counter.php
+@sample pnp4nagios/templates/check_iftraffic_counter.php
 pnp4nagios/templates.dist/check_iftraffic_pct.php
+@sample pnp4nagios/templates/check_iftraffic_pct.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_errors.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_errors.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_nr_requests.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_nr_requests.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_proc_time.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_proc_time.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_received.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_received.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_sent.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_sent.php
 pnp4nagios/templates.dist/check_jmx4perl_connector_threads.php
+@sample pnp4nagios/templates/check_jmx4perl_connector_threads.php
 pnp4nagios/templates.dist/check_jmx4perl_memory_gc_count.php
+@sample pnp4nagios/templates/check_jmx4perl_memory_gc_count.php
 pnp4nagios/templates.dist/check_jmx4perl_memory_gc_time.php
+@sample pnp4nagios/templates/check_jmx4perl_memory_gc_time.php
 pnp4nagios/templates.dist/check_jmx4perl_memory_heap.php
+@sample pnp4nagios/templates/check_jmx4perl_memory_heap.php
 pnp4nagios/templates.dist/check_jmx4perl_thread_count.php
+@sample pnp4nagios/templates/check_jmx4perl_thread_count.php
 pnp4nagios/templates.dist/check_jmx4perl_thread_increase.php
+@sample pnp4nagios/templates/check_jmx4perl_thread_increase.php
 pnp4nagios/templates.dist/check_load.php
+@sample pnp4nagios/templates/check_load.php
 pnp4nagios/templates.dist/check_local_disk.php
+@sample pnp4nagios/templates/check_local_disk.php
 pnp4nagios/templates.dist/check_local_load.php
+@sample pnp4nagios/templates/check_local_load.php
 pnp4nagios/templates.dist/check_messpc_temp.php
+@sample pnp4nagios/templates/check_messpc_temp.php
 pnp4nagios/templates.dist/check_mssql_health.php
+@sample pnp4nagios/templates/check_mssql_health.php
 pnp4nagios/templates.dist/check_multi.php
+@sample pnp4nagios/templates/check_multi.php
 pnp4nagios/templates.dist/check_multi_nagiostats.php
+@sample pnp4nagios/templates/check_multi_nagiostats.php
 pnp4nagios/templates.dist/check_mysql_health.php
+@sample pnp4nagios/templates/check_mysql_health.php
 pnp4nagios/templates.dist/check_nt_cpu.php
+@sample pnp4nagios/templates/check_nt_cpu.php
 pnp4nagios/templates.dist/check_nt_disk.php
+@sample pnp4nagios/templates/check_nt_disk.php
 pnp4nagios/templates.dist/check_nt_mem.php
+@sample pnp4nagios/templates/check_nt_mem.php
 pnp4nagios/templates.dist/check_ntp_time.php
+@sample pnp4nagios/templates/check_ntp_time.php
 pnp4nagios/templates.dist/check_nwstat_CONNS.php
+@sample pnp4nagios/templates/check_nwstat_CONNS.php
 pnp4nagios/templates.dist/check_nwstat_LOAD.php
+@sample pnp4nagios/templates/check_nwstat_LOAD.php
 pnp4nagios/templates.dist/check_nwstat_LOAD1.php
+@sample pnp4nagios/templates/check_nwstat_LOAD1.php
 pnp4nagios/templates.dist/check_nwstat_LOAD15.php
+@sample pnp4nagios/templates/check_nwstat_LOAD15.php
 pnp4nagios/templates.dist/check_nwstat_LOAD5.php
+@sample pnp4nagios/templates/check_nwstat_LOAD5.php
 pnp4nagios/templates.dist/check_nwstat_ofiles.php
+@sample pnp4nagios/templates/check_nwstat_ofiles.php
 pnp4nagios/templates.dist/check_openmanage.php
+@sample pnp4nagios/templates/check_openmanage.php
 pnp4nagios/templates.dist/check_oracle_connection-time.php
+@sample pnp4nagios/templates/check_oracle_connection-time.php
 pnp4nagios/templates.dist/check_oracle_health.php
+@sample pnp4nagios/templates/check_oracle_health.php
 pnp4nagios/templates.dist/check_oracle_health_connection-time.php
+@sample pnp4nagios/templates/check_oracle_health_connection-time.php
 pnp4nagios/templates.dist/check_oracle_health_pga-in-memory-sort-ratio.php
+@sample pnp4nagios/templates/check_oracle_health_pga-in-memory-sort-ratio.php
 pnp4nagios/templates.dist/check_oracle_health_redo-io-traffic.php
+@sample pnp4nagios/templates/check_oracle_health_redo-io-traffic.php
 pnp4nagios/templates.dist/check_oracle_health_switch-interval.php
+@sample pnp4nagios/templates/check_oracle_health_switch-interval.php
 pnp4nagios/templates.dist/check_oracle_health_tablespace-usage.php
+@sample pnp4nagios/templates/check_oracle_health_tablespace-usage.php
 pnp4nagios/templates.dist/check_ping.php
+@sample pnp4nagios/templates/check_ping.php
 pnp4nagios/templates.dist/check_ping_tick.php
+@sample pnp4nagios/templates/check_ping_tick.php
 pnp4nagios/templates.dist/check_pnp_rrds.php
+@sample pnp4nagios/templates/check_pnp_rrds.php
 pnp4nagios/templates.dist/check_smtp.php
+@sample pnp4nagios/templates/check_smtp.php
 pnp4nagios/templates.dist/check_snmp_int-bits.php
+@sample pnp4nagios/templates/check_snmp_int-bits.php
 pnp4nagios/templates.dist/check_snmp_int.php
+@sample pnp4nagios/templates/check_snmp_int.php
 pnp4nagios/templates.dist/check_swap.php
+@sample pnp4nagios/templates/check_swap.php
 pnp4nagios/templates.dist/check_tcp.php
+@sample pnp4nagios/templates/check_tcp.php
 pnp4nagios/templates.dist/check_users.php
+@sample pnp4nagios/templates/check_users.php
 pnp4nagios/templates.dist/default.php
+@sample pnp4nagios/templates/default.php
 pnp4nagios/templates.dist/integer.php
+@sample pnp4nagios/templates/integer.php
 pnp4nagios/templates.dist/nagiostats.php
+@sample pnp4nagios/templates/nagiostats.php
 pnp4nagios/templates.dist/pnp-runtime.php
+@sample pnp4nagios/templates/pnp-runtime.php
 pnp4nagios/templates.dist/response.php
+@sample pnp4nagios/templates/response.php
 pnp4nagios/templates.special/
 pnp4nagios/templates.special/README
 pnp4nagios/templates.special/advanced_loop.php-sample
