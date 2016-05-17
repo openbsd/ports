@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_utils_common_h,v 1.1 2016/05/17 08:29:27 dcoppa Exp $
+
+From ecbb0b3dc122b0d290987cf9c84010bbe53e1022 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Fri, 4 Mar 2016 17:20:18 +0200
+Subject: [PATCH 1/5] WPS: Reject a Credential with invalid passphrase
+
+WPA/WPA2-Personal passphrase is not allowed to include control
+characters. Reject a Credential received from a WPS Registrar both as
+STA (Credential) and AP (AP Settings) if the credential is for WPAPSK or
+WPA2PSK authentication type and includes an invalid passphrase.
+
+This fixes an issue where hostapd or wpa_supplicant could have updated
+the configuration file PSK/passphrase parameter with arbitrary data from
+an external device (Registrar) that may not be fully trusted. Should
+such data include a newline character, the resulting configuration file
+could become invalid and fail to be parsed.
+
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+
+From 0fe5a234240a108b294a87174ad197f6b5cb38e9 Mon Sep 17 00:00:00 2001
+From: Paul Stewart <pstew@google.com>
+Date: Thu, 3 Mar 2016 15:40:19 -0800
+Subject: [PATCH 3/5] Remove newlines from wpa_supplicant config network output
+
+Spurious newlines output while writing the config file can corrupt the
+wpa_supplicant configuration. Avoid writing these for the network block
+parameters. This is a generic filter that cover cases that may not have
+been explicitly addressed with a more specific commit to avoid control
+characters in the psk parameter.
+
+Signed-off-by: Paul Stewart <pstew@google.com>
+
+--- src/utils/common.h.orig	Sun Sep 27 21:02:05 2015
++++ src/utils/common.h	Tue May 17 09:21:02 2016
+@@ -477,6 +477,8 @@ const char * wpa_ssid_txt(const u8 *ssid, size_t ssid_
+ 
+ char * wpa_config_parse_string(const char *value, size_t *len);
+ int is_hex(const u8 *data, size_t len);
++int has_ctrl_char(const u8 *data, size_t len);
++int has_newline(const char *str);
+ size_t merge_byte_arrays(u8 *res, size_t res_len,
+ 			 const u8 *src1, size_t src1_len,
+ 			 const u8 *src2, size_t src2_len);

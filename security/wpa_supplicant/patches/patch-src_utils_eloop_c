@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_utils_eloop_c,v 1.5 2015/09/29 11:57:54 dcoppa Exp $
+$OpenBSD: patch-src_utils_eloop_c,v 1.6 2016/05/17 08:29:27 dcoppa Exp $
 
-don't try to access list members to free them unless already initialised
+Don't try to access list members to free them unless already
+initialised
 
 --- src/utils/eloop.c.orig	Sun Sep 27 21:02:05 2015
 +++ src/utils/eloop.c	Mon Sep 28 09:35:05 2015
