@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2016/03/18 15:54:03 awolk Exp $
+# $OpenBSD: Makefile,v 1.310 2016/05/17 11:26:14 jca Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -35,7 +35,6 @@
      SUBDIR += luadbi,lua52
      SUBDIR += lualdap
      SUBDIR += luasqlite3
-     SUBDIR += luasqlite3,lua52
      SUBDIR += luma
      SUBDIR += mariadb
      SUBDIR += mdbtools

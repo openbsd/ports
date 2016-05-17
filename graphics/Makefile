@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.413 2016/04/29 21:01:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.414 2016/05/17 11:26:14 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -141,7 +141,6 @@
      SUBDIR += libxmi
      SUBDIR += lsys
      SUBDIR += luagd
-     SUBDIR += luagd,lua52
      SUBDIR += luvcview
      SUBDIR += maim
      SUBDIR += makehuman
