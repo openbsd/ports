@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.39 2016/05/15 20:31:05 rpe Exp $
+# $OpenBSD: proot,v 1.40 2016/05/17 13:14:45 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -303,7 +303,8 @@ sub handle_options
 	$state->{builduser} //= MyUser->new('_pbuild');
 	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
-	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
+	my $arch = OpenBSD::Paths->machine_architecture;
+	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist', $arch);
 	$state->{sysdir} //= '/usr/src/sys';
 	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR)) {
 		if (!defined $state->{$dir}) {
