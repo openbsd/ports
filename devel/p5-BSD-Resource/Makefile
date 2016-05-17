@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2016/05/17 23:51:06 bluhm Exp $
 
 COMMENT =		BSD process resource limit and priority functions
 
-DISTNAME =		BSD-Resource-1.2909
+DISTNAME =		BSD-Resource-1.2910
 
 CATEGORIES =		devel
 
