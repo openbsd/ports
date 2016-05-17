@@ -1,0 +1,15 @@
+$OpenBSD: patch-lua_cjson_util_lua,v 1.1 2016/05/17 11:23:18 jca Exp $
+
+unpack moved to table.unpack in lua5.2
+
+--- lua/cjson/util.lua.orig	Mon May 16 22:58:17 2016
++++ lua/cjson/util.lua	Mon May 16 23:05:46 2016
+@@ -4,6 +4,8 @@ local json = require "cjson"
+ --
+ -- Mark Pulford <mark@kyne.com.au>
+ 
++local unpack = unpack or table.unpack
++
+ -- Determine with a Lua table can be treated as an array.
+ -- Explicitly returns "not an array" for very sparse arrays.
+ -- Returns:

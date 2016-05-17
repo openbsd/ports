@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/16 20:52:37 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/17 11:23:18 jca Exp $
 
 COMMENT=	JSON support for Lua
 
 DISTNAME=	lua-cjson-2.1.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.kyne.com.au/~mark/software/lua-cjson.php
