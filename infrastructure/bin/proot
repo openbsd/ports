@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.40 2016/05/17 13:14:45 espie Exp $
+# $OpenBSD: proot,v 1.41 2016/05/17 16:16:17 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -277,6 +277,10 @@ sub handle_options
 
 	if (!defined $state->{chroot}) {
 		$state->usage("need a chroot base");
+	}
+	if (defined $state->{actions}{checkout_ports} &&
+	    !defined $state->{portuser}) {
+	    	$state->usage("can't do action checkout_ports without a PORT_USER");
 	}
 	if (defined $state->{snapshot} &&
 	    $state->{snapshot} =~ m/^\Q$state->{chroot}\E(.*)/) {
