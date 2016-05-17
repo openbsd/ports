@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.119 2016/05/16 13:47:18 espie Exp $
+# $OpenBSD: dpb,v 1.120 2016/05/17 14:50:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -259,6 +259,11 @@ sub main_loop
 }
 
 my $skip = undef;
+
+if (keys %$subdirlist > 0) {
+	$state->grabber->grab_subdirs($core, $subdirlist, $skip);
+}
+
 if ($state->{all} && !$state->{random}) {
 	# when restarting interrupted dpb,
 	# find the most important paths first
@@ -269,12 +274,8 @@ if ($state->{all} && !$state->{random}) {
 		for my $name (@$list) {
 			DPB::PkgPath->new($name)->add_to_subdirlist($skip);
 		}
-		$state->grabber->grab_subdirs($core, $skip);
+		$state->grabber->grab_subdirs($core, $skip, undef, 1);
 	}
-}
-
-if (keys %$subdirlist > 0) {
-	$state->grabber->grab_subdirs($core, $subdirlist, $skip);
 }
 
 $state->grabber->complete_subdirs($core, $skip);

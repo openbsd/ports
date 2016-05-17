@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.48 2016/05/16 10:37:22 espie Exp $
+# $OpenBSD: Vars.pm,v 1.49 2016/05/17 14:50:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,8 @@ sub run_pipe
 
 sub grab_list
 {
-	my ($class, $core, $grabber, $subdirs, $skip, $log, $dpb, $code) = @_;
+	my ($class, $core, $grabber, $subdirs, $skip, $ignore_errors, 
+	    $log, $dpb, $code) = @_;
 	$class->run_pipe($core, $grabber, $subdirs, $skip, $dpb);
 	my $h = {};
 	my $seen = {};
@@ -130,6 +131,7 @@ sub grab_list
 		}
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
+			next if $ignore_errors;
 			my $dir = DPB::PkgPath->new($1);
 			if (defined $skip) {
 				$dir->add_to_subdirlist($skip);
@@ -180,6 +182,7 @@ sub grab_list
 				$o->break("error with adding $var=$value");
 			}
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
+			next if $ignore_errors;
 			my $dir = DPB::PkgPath->new($1);
 			$dir->break("broken dependency");
 			$h->{$dir} = $dir;
