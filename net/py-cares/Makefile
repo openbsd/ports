@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/07 14:46:08 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/17 05:12:02 ajacoutot Exp $
 
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
@@ -19,6 +19,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+USE_GMAKE =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
