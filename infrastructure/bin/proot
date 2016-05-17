@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.41 2016/05/17 16:16:17 espie Exp $
+# $OpenBSD: proot,v 1.42 2016/05/17 16:23:02 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -811,7 +811,7 @@ sub checkout_ports
 			$state->{portuser}->mkpath("$dir.tmp");
 			$state->{portuser}->run_as(sub {
 			    $state->system(
-			    	sub { $state->chdir($dir); },
+			    	sub { $state->chdir("$dir.tmp"); },
 			    	@cvs, "co", "-P", "-A", "ports");
 			    });
 			rename("$dir.tmp/ports", "$dir");
