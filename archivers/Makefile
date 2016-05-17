@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/04/04 11:35:13 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2016/05/17 11:38:09 jca Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -24,7 +24,6 @@
      SUBDIR += libtar
      SUBDIR += libzip
      SUBDIR += luazlib
-     SUBDIR += luazlib,lua52
      SUBDIR += lxsplit
      SUBDIR += lz4
      SUBDIR += lz4json
