@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/22 22:21:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/17 00:08:44 sthen Exp $
 
 V =		2.8.9
-PL =		8
+PL =		9
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
-REVISION =	4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
@@ -19,9 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB += bz2 c crypto ncurses ssl z
 
-MASTER_SITES =	http://lynx.invisible-island.net/current/ \
-		http://invisible-mirror.net/archives/lynx/tarballs/ \
-		http://invisible-mirror.net/archives/lynx/patches/
+MASTER_SITES =	http://invisible-mirror.net/archives/lynx/tarballs/ \
+		ftp://invisible-island.net/lynx/tarballs/
 
 LIB_DEPENDS =	archivers/bzip2
 
