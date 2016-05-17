@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.69 2016/03/18 20:56:07 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.70 2016/05/17 11:54:58 jca Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -381,6 +381,7 @@ share/git-core/templates/hooks/commit-msg.sample
 share/git-core/templates/hooks/multimail/
 share/git-core/templates/hooks/multimail/git_multimail.py
 share/git-core/templates/hooks/multimail/migrate-mailhook-config
+share/git-core/templates/hooks/multimail/post-receive.example
 share/git-core/templates/hooks/post-receive-email.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample

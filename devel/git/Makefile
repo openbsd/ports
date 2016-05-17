@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2016/05/12 14:46:35 espie Exp $
+# $OpenBSD: Makefile,v 1.153 2016/05/17 11:54:58 jca Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -7,6 +7,7 @@ COMMENT-x11 =	GIT - graphical tools
 V =		2.8.1
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
+REVISION-main =	0
 PKGNAME-svn =	git-svn-${V}
 REVISION-svn =	0
 PKGNAME-x11 =	git-x11-${V}
@@ -31,7 +32,7 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
 			contrib/hooks/multimail/migrate-mailhook-config \
-			contrib/hooks/multimail/post-receive
+			contrib/hooks/multimail/post-receive.example
 
 BUILD_DEPENDS =		devel/p5-Error
 
@@ -101,7 +102,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/git-core/templates/hooks/multimail
-.for f in git_multimail.py migrate-mailhook-config
+.for f in git_multimail.py migrate-mailhook-config post-receive.example
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/multimail/$f \
 		${PREFIX}/share/git-core/templates/hooks/multimail
 .endfor
