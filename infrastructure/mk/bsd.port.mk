@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1316 2016/05/17 13:33:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1317 2016/05/17 13:38:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -135,7 +135,9 @@ BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
 
 PLIST_REPOSITORY ?= ${PORTSDIR}/plist
+.if !empty(PLIST_REPOSITORY)
 PLIST_DB ?= ${PLIST_REPOSITORY}/${MACHINE_ARCH}
+.endif
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
 # experimental, don't touch the default unless you really know
