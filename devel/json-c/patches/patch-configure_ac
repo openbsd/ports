@@ -1,10 +1,23 @@
-$OpenBSD: patch-configure_ac,v 1.1 2015/08/25 11:37:02 jca Exp $
---- configure.ac.orig	Mon Aug 24 20:07:25 2015
-+++ configure.ac	Mon Aug 24 20:06:41 2015
-@@ -66,6 +66,21 @@ int main(int c,char* v) {return 0;}
-    AC_MSG_RESULT(no)
- ])
- 
+$OpenBSD: patch-configure_ac,v 1.2 2016/05/17 16:59:23 jca Exp $
+--- configure.ac.orig	Fri Apr 11 03:47:07 2014
++++ configure.ac	Mon May  9 21:06:15 2016
+@@ -43,6 +43,7 @@ AC_FUNC_MEMCMP
+ AC_FUNC_MALLOC
+ AC_FUNC_REALLOC
+ AC_CHECK_FUNCS(strcasecmp strdup strerror snprintf vsnprintf vasprintf open vsyslog strncasecmp setlocale)
++AC_SEARCH_LIBS(arc4random, bsd, [AC_DEFINE(HAVE_ARC4RANDOM, [1], [Define to 1 if you have the `arc4random' function.])])
+ AC_CHECK_DECLS([INFINITY], [], [], [[#include <math.h>]])
+ AC_CHECK_DECLS([nan], [], [], [[#include <math.h>]])
+ AC_CHECK_DECLS([isnan], [], [], [[#include <math.h>]])
+@@ -61,6 +62,21 @@ __asm__(".section .gnu.json_object_get,\n\t.ascii \"Pl
+ int main(int c,char* v) {return 0;}
+ ]])], [
+     AC_DEFINE(HAS_GNU_WARNING_LONG, 1, [Define if .gnu.warning accepts long strings.])
++    AC_MSG_RESULT(yes)
++], [
++   AC_MSG_RESULT(no)
++])
++
 +AC_MSG_CHECKING([if compiler supports __sync_val_compare_and_swap with int objects])
 +AC_LINK_IFELSE([AC_LANG_SOURCE([[
 +int
@@ -15,11 +28,6 @@ $OpenBSD: patch-configure_ac,v 1.1 2015/08/25 11:37:02 jca Exp $
 +}
 +]])], [
 +    AC_DEFINE(HAS___SYNC_VAL_COMPARE_AND_SWAP_INT, 1, [Define if compiler supports __sync_val_compare_and_swap.])
-+    AC_MSG_RESULT(yes)
-+], [
-+   AC_MSG_RESULT(no)
-+])
-+
- AC_LANG_POP([C])
- 
- AM_PROG_LIBTOOL
+     AC_MSG_RESULT(yes)
+ ], [
+    AC_MSG_RESULT(no)

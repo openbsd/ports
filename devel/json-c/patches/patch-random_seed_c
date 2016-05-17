@@ -1,0 +1,13 @@
+$OpenBSD: patch-random_seed_c,v 1.1 2016/05/17 16:59:23 jca Exp $
+--- random_seed.c.orig	Fri Apr 11 02:41:08 2014
++++ random_seed.c	Mon May  9 20:43:17 2016
+@@ -227,6 +227,9 @@ int json_c_get_random_seed()
+ #if HAVE_RDRAND
+     if (has_rdrand()) return get_rdrand_seed();
+ #endif
++#if HAVE_ARC4RANDOM
++    return arc4random();
++#endif
+ #if HAVE_DEV_RANDOM
+     if (has_dev_urandom()) return get_dev_random_seed();
+ #endif
