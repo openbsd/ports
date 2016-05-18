@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/05/18 09:24:00 sebastia Exp $
 @extraunexec rm -rf /var/log/pnp4nagios
 @extraunexec rm -rf ${LOCALSTATEDIR}/stats/*
 @bin bin/npcd
@@ -327,3 +327,4 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 @sample ${LOCALSTATEDIR}/
 @sample ${LOCALSTATEDIR}/stats/
 @sample /var/log/pnp4nagios/
+@rcscript ${RCDIR}/npcd
