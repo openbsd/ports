@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.15 2015/11/25 21:04:07 pascal Exp $
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.16 2016/05/18 10:14:07 pascal Exp $
 --- src/config/torrc.sample.in.orig	Fri Nov 13 14:41:38 2015
-+++ src/config/torrc.sample.in	Fri Nov 20 19:45:16 2015
++++ src/config/torrc.sample.in	Wed May 18 12:06:59 2016
 @@ -39,18 +39,18 @@
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
@@ -23,6 +23,19 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.15 2015/11/25 21:04:07 pascal Exp
  
  ## The port on which Tor will listen for local connections from Tor
  ## controller applications, as documented in control-spec.txt.
+@@ -69,10 +69,10 @@
+ ## HiddenServicePort x y:z says to redirect requests on port x to the
+ ## address y:z.
+ 
+-#HiddenServiceDir @LOCALSTATEDIR@/lib/tor/hidden_service/
++#HiddenServiceDir @LOCALSTATEDIR@/tor/hidden_service/
+ #HiddenServicePort 80 127.0.0.1:80
+ 
+-#HiddenServiceDir @LOCALSTATEDIR@/lib/tor/other_hidden_service/
++#HiddenServiceDir @LOCALSTATEDIR@/tor/other_hidden_service/
+ #HiddenServicePort 80 127.0.0.1:80
+ #HiddenServicePort 22 127.0.0.1:22
+ 
 @@ -182,6 +182,8 @@
  ## and any public IPv4 and IPv6 addresses on any interface on the relay.
  ## See the man page entry for ExitPolicyRejectPrivate if you want to allow
