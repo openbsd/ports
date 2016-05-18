@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.73 2016/04/26 17:19:41 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.74 2016/05/18 06:35:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -214,14 +214,12 @@ sub read_checksums
 	return if !defined $fh;
 	my $r = { size => {}, sha => {}};
 	while (<$fh>) {
-		next if m/^(?:MD5|RMD160|SHA1)/;
 		if (m/^SIZE \((.*)\) \= (\d+)$/) {
 			$r->{size}{$1} = $2;
 		} elsif (m/^SHA256 \((.*)\) \= (.*)$/) {
 			$r->{sha}{$1} = OpenBSD::sha->fromstring($2);
-		} else {
-			next;
 		}
+		# next!
 	}
 	return $r;
 }
@@ -244,6 +242,8 @@ sub build_distinfo
 			next;
 		}
 		$checksum_file = $checksum_file->string;
+		# collapse identical checksum files together
+		$checksum_file =~ s,/[^/]+/\.\./,/,g;
 		$distinfo->{$checksum_file} //=
 		    $self->read_checksums(
 			$self->{state}->anchor($checksum_file));
