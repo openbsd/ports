@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.117 2016/05/03 05:01:25 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.118 2016/05/18 13:49:32 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 3 2016 $
+.Dd $Mdocdate: May 18 2016 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -60,10 +60,9 @@ installations.
 If run as non-root,
 .Nm
 will warn.
-The preferred way is to run it as root.
+The preferred way is to run it as root (and preferably under a chroot).
 .Nm
-will change its identity to a different user as needed (by default
-the owner of the ports tree).
+will then change its identity to different users as needed.
 See
 .Sq THE SECURITY MODEL OF DPB
 for details.
@@ -99,14 +98,30 @@ the corresponding lockfile, and
 .Nm
 will pick it up without needing to be stopped and restarted.
 .Pp
-In order to build on a cluster, the ports tree itself should be shared
-through NFS, including distfiles and built packages, but the WRKOBJDIR
-should be local to each machine.
+In order to build on a cluster, the ports tree itself should be identical
+on each machine (shared through NFS or copied at start).
 .Pp
-Also note that logs and locks are managed by the main
+Some directories must be shared:
+.Ev PACKAGE_REPOSITORY ,
+.Ev DISTDIR ,
+and
+.Ev PLIST_REPOSITORY .
+The
+.Ev WRKOBJDIR
+and
+.Ev LOCKDIR
+should be local to each machine, and on a high-speed partition.
+.Pp
+Also note that
+.Nm Ns 's
+logs and locks are managed by the main
 .Nm
 process, which runs locally, and hence those directories do not need to
 be shared on the cluster.
+.Pp
+Some log files ("rolling logs") are kept from one run to the run and
+stored under
+.Pa ${DISTDIR}/build-stats .
 .Pp
 Option
 .Fl h Ar file
@@ -163,6 +178,9 @@ is automatically used.
 chroot to
 .Ar chroot
 before building.
+See
+.Xr proot 1
+for preparing such an environment.
 .It Fl c
 Clean port working directory and log before each build.
 .It Fl C Ar pathlist
@@ -239,7 +257,7 @@ Don't fetch or build anything.
 Only run
 .Nm
 to figure out old distfiles and update
-.Pa ${FULLDISTDIR}/history .
+.Pa %f/history .
 .It Ar LOGDIR
 Alternate way to specify the logging directory.
 .It Ar LOG_USER
@@ -540,13 +558,13 @@ Number of jobs to run on a single host (defaults to hw.ncpu).
 Choose a log directory.
 .Po
 Defaults to
-.Pa ${PORTSDIR}/logs/${ARCH}
+.Pa %p/logs/%a
 .Pc .
 .It Fl l Ar lockdir
 Choose a lock directory.
 .Po
 Defaults to
-.Pa ${PORTSDIR}/logs/${ARCH}/locks
+.Pa %L/locks
 .Pc .
 Override to keep local, as locks don't really like NFS.
 .It Fl M Ar threshold
@@ -608,6 +626,7 @@ Note that
 .Fl R
 won't always work, as rebuilding a package when another version is already
 installed is not supported.
+Building in a chroot is strongly recommended.
 .It Fl S Ar logfile
 Read
 .Ar logfile
@@ -824,7 +843,7 @@ is used to build stuff locally or distantly (can be per-host), using:
 .Pa /
 if there is no actual chroot needed).
 It must have read access to ${DISTDIR} and ${PORTSDIR}, and write
-access to ${WRKOBJDIR}, ${PACKAGE_REPOSITORY}, and ${PLIST_DB}.
+access to ${WRKOBJDIR}, ${PACKAGE_REPOSITORY}, and ${PLIST_REPOSITORY}.
 It does not require network access.
 .It
 .Ar LOG_USER
@@ -1009,12 +1028,12 @@ and
 .Pc ,
 .Nm
 populates
-.Pa ${FULLDISTDIR}/by_cipher/sha256
+.Pa ${DISTDIR}/by_cipher/sha256
 with links.
 It also uses
-.Pa ${FULLDISTDIR}/distinfo
+.Pa ${DISTDIR}/distinfo
 and
-.Pa ${FULLDISTDIR}/history
+.Pa ${DISTDIR}/history
 as a
 .Sq permanent log :
 .Bl -tag -width distinfo
@@ -1023,7 +1042,7 @@ cache of distfiles checksum.
 Contains all
 .Xr sha256 1
 checksums of known files under
-.Pa ${FULLDISTDIR} .
+.Pa ${DISTDIR} .
 Fetching uses this to avoid re-checksumming known files.
 .It history
 Log of old files under distinfo.
@@ -1098,6 +1117,16 @@ That file also belongs to the
 if it is defined.
 .Pp
 .Nm
+also maintains a list of pkgpath frequencies
+.Pa ${DISTDIR}/build-stats/${ARCH}-dependencies ,
+filled at end of LISTING if
+.Fl a .
+This list will be automatically reused when restarting a build:
+a quick LISTING of the most important dependencies will happen
+before the general LISTING,
+in order to prime further LISTING steps with most common ports first.
+.Pp
+.Nm
 will also create a large number of log files under
 .Pa ${PORTSDIR}/logs/{$ARCH} ,
 which will belong
@@ -1141,8 +1170,6 @@ Note that the actual build time starts at
 .Sq extract
 and finishes at
 .Sq package .
-.It Pa clean.log
-Paths that do not clean correctly, and required root to clean the directory.
 .It Pa concurrent.log
 Shows the actual concurrency achieved as a result of job starvation /
 parallel handling.
@@ -1153,11 +1180,6 @@ figured that one yet) along with the more useful warning and die traces that
 happen when something wrong occurs.
 Especially useful for the warning messages that tend to be overwritten by
 subsequent displays.
-.It Pa dependencies.log
-List of pkgpath frequencies, filled at end of LISTING if
-.Fl a .
-Will be automatically reused when restarting a build: a quick LISTING of
-the most important dependencies will happen before the general LISTING.
 .It Pa dist/<distfile>.log
 Log of the
 .Xr ftp 1
@@ -1250,6 +1272,8 @@ List of URLs that fetched correctly, along with timing statistics.
 List of pkgpaths that require manual intervention, in human-readable form.
 .It Pa <hostname>.sig.log
 Complete library signature of the host.
+.It Pa init.<hostname>.log
+Captured output of the initialization job for each host.
 .It Pa junk.log
 Option
 .Fl J
@@ -1264,10 +1288,6 @@ Directory where locks are created.
 The slash in a pkgpath is replaced with a dot like so:
 .Pa locks/devel.make
 to flatten the structure.
-.It Pa needed.log
-list of needed dependencies at each point in time for each host when the
-.Fl J
-option has been used.
 .It Pa packages/pkgname.log
 one file or symlink per pkgname.
 .It Pa paths/some/path.log
@@ -1408,9 +1428,10 @@ shared libraries and .la files), it is still dependent on the user to
 make sure all the hosts build ports the same way.
 .Pp
 Make sure your NFS setup is consistent.
-The ports dir itself should be exported, including distfiles and packages
-repository, but the WRKOBJDIR should not be on NFS unless you have
-absolutely no choice, or if you exhibit deep masochistic tendencies.
+The ports dir itself should be exported or synchronized.
+Distfiles, the package repository,  and the plist repository should be exported,
+but WRKOBJDIR should not be on NFS unless you have absolutely no choice,
+or if you exhibit deep masochistic tendencies.
 Pay particular attention to discrepancies in
 .Pa /etc/mk.conf .
 .Pp
@@ -1440,7 +1461,8 @@ and restart it.
 .Sh SEE ALSO
 .Xr clean-old-distfiles 1 ,
 .Xr dpb-replay 1 ,
-.Xr pkgpath 7
+.Xr pkgpath 7 ,
+.Xr proot 1
 .Sh AUTHOR
 Marc Espie
 .Sh HISTORY
