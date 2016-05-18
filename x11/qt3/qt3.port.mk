@@ -1,4 +1,4 @@
-# $OpenBSD: qt3.port.mk,v 1.14 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: qt3.port.mk,v 1.15 2016/05/18 19:12:22 jca Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -35,6 +35,8 @@ MODQT3_UIC =	${LOCALBASE}/bin/uic3-mt
 MODQT_UIC ?=	${MODQT3_UIC}
 MODQT3_QTDIR =	${LOCALBASE}/lib/qt3
 MODQT_QTDIR ?=	${MODQT3_QTDIR}
+MODQT3_LRELEASE = ${LOCALBASE}/bin/lrelease-mt
+MODQT_LRELEASE ?= ${MODQT3_LRELEASE}
 MODQT3_PLUGINS =lib/qt3/plugins-33
 MODQT_PLUGINS ?=${MODQT3_PLUGINS}
 

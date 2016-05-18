@@ -1,4 +1,4 @@
-# $OpenBSD: qt4.port.mk,v 1.12 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: qt4.port.mk,v 1.13 2016/05/18 19:12:22 jca Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -30,6 +30,8 @@ MODQT4_QMAKE =	${LOCALBASE}/bin/qmake4
 MODQT_QMAKE ?=	${MODQT4_QMAKE}
 MODQT4_QTDIR =	${LOCALBASE}/lib/qt4
 MODQT_QTDIR ?=	${MODQT4_QTDIR}
+MODQT4_LRELEASE = ${LOCALBASE}/bin/lrelease4
+MODQT_LRELEASE ?= ${MODQT4_LRELEASE}
 
 MODQT4_LIB_DEPENDS = 	x11/qt4
 MODQT_LIB_DEPENDS ?= 	${MODQT4_LIB_DEPENDS}

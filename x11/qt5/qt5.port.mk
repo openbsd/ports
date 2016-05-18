@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.11 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.12 2016/05/18 19:12:22 jca Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -28,6 +28,8 @@ MODQT5_QMAKE =	${LOCALBASE}/bin/qmake-qt5
 MODQT_QMAKE ?=	${MODQT5_QMAKE}
 MODQT5_QTDIR =	${LOCALBASE}/lib/qt5
 MODQT_QTDIR ?=	${MODQT5_QTDIR}
+MODQT5_LRELEASE = ${LOCALBASE}/bin/lrelease-qt5
+MODQT_LRELEASE ?= ${MODQT5_LRELEASE}
 
 _MODQT5_CMAKE_PKGS = \
 	Qt5 \
