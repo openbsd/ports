@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Barcode_DataMatrix_Engine_pm,v 1.1 2016/05/18 10:31:26 sthen Exp $
+
+https://github.com/mstratman/Barcode-DataMatrix/pull/29
+
+--- lib/Barcode/DataMatrix/Engine.pm.orig	Thu Mar 24 20:06:06 2016
++++ lib/Barcode/DataMatrix/Engine.pm	Tue May 17 16:42:57 2016
+@@ -130,6 +130,7 @@ Convert a "width x height" format string into an inter
+ sub stringToFormat {
+ 	my $sz = shift;
+ 	return unless $sz;
++	return if $sz eq 'AUTO';
+ 	my ($w,$h) = map { +int } split /\s*x\s*/,$sz,2;
+ 	my $r;
+ 	for my $i (0..$#FORMATS) {
