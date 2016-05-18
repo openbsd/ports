@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: npcd.rc,v 1.1 2016/05/18 09:24:00 sebastia Exp $
+# $OpenBSD: npcd.rc,v 1.2 2016/05/18 17:34:00 ajacoutot Exp $
 
-daemon="/usr/local/bin/npcd -d"
-daemon_flags="-f /etc/pnp4nagios/npcd.cfg"
+daemon="${TRUEPREFIX}/bin/npcd -d"
+daemon_flags="-f ${SYSCONFDIR}/pnp4nagios/npcd.cfg"
 
 . /etc/rc.d/rc.subr
 
