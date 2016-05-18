@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_gt68xx_low_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+
+errno.h header is required now that errno is a per-thread variable.
+"undefined symbol 'errno'" at runtime with dlopen()'d modules.
+
+--- backend/gt68xx_low.c.orig	Wed May 18 13:59:02 2016
++++ backend/gt68xx_low.c	Wed May 18 13:59:11 2016
+@@ -54,6 +54,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <errno.h>
+ 
+ #ifdef USE_FORK
+ #include <sys/wait.h>

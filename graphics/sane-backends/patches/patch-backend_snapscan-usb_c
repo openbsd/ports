@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_snapscan-usb_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+
+errno.h header is required now that errno is a per-thread variable.
+"undefined symbol 'errno'" at runtime with dlopen()'d modules.
+
+--- backend/snapscan-usb.c.orig	Sat Feb 23 02:00:56 2013
++++ backend/snapscan-usb.c	Wed May 18 14:02:25 2016
+@@ -73,6 +73,7 @@
+ 
+ #include "snapscan-usb.h"
+ #include "snapscan-mutex.c"
++#include <errno.h>
+ 
+ #ifndef SHM_R
+ #define SHM_R 0

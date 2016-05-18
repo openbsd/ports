@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_sm3600-scanusb_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+
+errno.h header is required now that errno is a per-thread variable.
+"undefined symbol 'errno'" at runtime with dlopen()'d modules.
+
+--- backend/sm3600-scanusb.c.orig	Wed May 18 14:00:07 2016
++++ backend/sm3600-scanusb.c	Wed May 18 14:00:14 2016
+@@ -51,6 +51,7 @@
+ 
+ ====================================================================== */
+ 
++#include <errno.h>
+ #include "sm3600-scantool.h"
+ 
+ /* **********************************************************************

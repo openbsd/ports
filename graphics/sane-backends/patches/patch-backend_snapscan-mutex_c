@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_snapscan-mutex_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+
+errno.h header is required now that errno is a per-thread variable.
+"undefined symbol 'errno'" at runtime with dlopen()'d modules.
+
+--- backend/snapscan-mutex.c.orig	Wed May 18 13:57:39 2016
++++ backend/snapscan-mutex.c	Wed May 18 13:58:15 2016
+@@ -69,6 +69,7 @@ static void snapscani_mutex_unlock(snapscan_mutex_t* a
+ 
+ #elif defined USE_PTHREAD || defined HAVE_OS2_H
+ 
++#include <errno.h>
+ #include <pthread.h>
+ #define snapscan_mutex_t pthread_mutex_t
+ 
