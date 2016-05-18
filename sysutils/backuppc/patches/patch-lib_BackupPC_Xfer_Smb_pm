@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_BackupPC_Xfer_Smb_pm,v 1.1 2016/05/18 08:05:11 landry Exp $
+
+Fix errors with smb >= 4.2
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1294761
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=820963
+
+--- lib/BackupPC/Xfer/Smb.pm.orig	Mon Jan 12 01:19:53 2015
++++ lib/BackupPC/Xfer/Smb.pm	Wed May 18 10:01:30 2016
+@@ -230,7 +230,9 @@ sub readOutput
+             $t->{byteCnt} += $2;
+             $t->{fileCnt}++;
+             $t->{XferLOG}->write(\"$_\n") if ( $t->{logLevel} >= 1 );
+-        } elsif ( /^\s*tar: dumped \d+ files/ ) {
++        } elsif ( /^\s*tar: dumped \d+ files/
++                    || /Total bytes received: \d+/i
++		) {
+             $t->{xferOK} = 1;
+             $t->{XferLOG}->write(\"$_\n") if ( $t->{logLevel} >= 0 );
+         } elsif ( /^\s*tar: restored \d+ files/ ) {
+@@ -270,6 +272,7 @@ sub readOutput
+         } elsif ( /^\s*directory \\/i ) {
+             $t->{XferLOG}->write(\"$_\n") if ( $t->{logLevel} >= 2 );
+         } elsif ( /smb: \\>/
++                || /^tar:\d+/
+                 || /^\s*added interface/i
+                 || /^\s*tarmode is now/i
+                 || /^\s*Total bytes written/i

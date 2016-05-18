@@ -1,0 +1,44 @@
+$OpenBSD: patch-lib_BackupPC_CGI_Browse_pm,v 1.1 2016/05/18 08:05:11 landry Exp $
+
+Fix errors with perl 5.22
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1259481
+
+--- lib/BackupPC/CGI/Browse.pm.orig	Wed May 18 10:01:30 2016
++++ lib/BackupPC/CGI/Browse.pm	Wed May 18 10:02:15 2016
+@@ -106,7 +106,7 @@ sub action
+         my($fLast, $fLastum, @DirStr);
+ 
+ 	$attr = $view->dirAttrib($num, $share, $relDir);
+-        if ( !defined($attr) ) {
++        if ( !$attr ) {
+             $relDir = decode_utf8($relDir);
+             ErrorExit(eval("qq{$Lang->{Can_t_browse_bad_directory_name2}}"));
+         }
+@@ -134,7 +134,7 @@ sub action
+             $path     =~ s/([^\w.\/-])/uc sprintf("%%%02X", ord($1))/eg;
+             $fURI     =~ s/([^\w.\/-])/uc sprintf("%%%02X", ord($1))/eg;
+             $shareURI =~ s/([^\w.\/-])/uc sprintf("%%%02X", ord($1))/eg;
+-            $dirOpen  = 1 if ( defined($currDir) && $f eq $currDir );
++            $dirOpen  = 1 if ( $currDir && $f eq $currDir );
+             if ( $attr->{$f}{type} == BPC_FTYPE_DIR ) {
+                 #
+                 # Display directory if it exists in current backup.
+@@ -171,7 +171,7 @@ EOF
+ 		    foreach my $d ( @DirStrPrev ) {
+ 			$lastTick = $d if ( $d->{needTick} );
+ 		    }
+-		    $doneLastTick = 1 if ( !defined($lastTick) );
++		    $doneLastTick = 1 if ( !$lastTick );
+ 		    foreach my $d ( @DirStrPrev ) {
+ 			$img = 0;
+ 			if  ( $d->{needTick} ) {
+@@ -197,7 +197,7 @@ EOF
+                 # This is the selected directory, so display all the files
+                 #
+                 my ($attrStr, $iconStr);
+-                if ( defined($a = $attr->{$f}) ) {
++                if ( $a = $attr->{$f} ) {
+                     my $mtimeStr = $bpc->timeStamp($a->{mtime});
+ 		    # UGH -> fix this
+                     my $typeStr  = BackupPC::Attrib::fileType2Text(undef,
