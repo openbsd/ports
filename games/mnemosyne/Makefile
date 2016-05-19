@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/05/19 11:24:41 shadchin Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION = 2.3.5
+MODPY_EGG_VERSION = 2.3.6
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
 
 HOMEPAGE=	http://www.mnemosyne-proj.org/
+
+MAINTAINER =	Nils Reuße <n.reusse@hxgn.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

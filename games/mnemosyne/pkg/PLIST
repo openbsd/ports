@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/03/14 21:05:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/05/19 11:24:41 shadchin Exp $
 bin/mnemosyne
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -236,6 +236,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/cr
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/criterion_widget.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/dialogs.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/dialogs.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/headless_review_widget.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/headless_review_widget.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/main_widget.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/main_widget.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/ui_components/review_widget.py
