@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/05/12 05:36:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/05/19 05:42:24 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -327,10 +327,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/genomics/genomics_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/base_classes.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/base_classes.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/data_formats.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/data_formats.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/iam/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/logging/
@@ -351,6 +347,13 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/meta/help_html_data/_menu_.js
 google-cloud-sdk/lib/googlecloudsdk/api_lib/meta/help_html_data/_title_.html
 google-cloud-sdk/lib/googlecloudsdk/api_lib/meta/help_html_data/favicon.ico
 google-cloud-sdk/lib/googlecloudsdk/api_lib/meta/help_html_data/index.html
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/errors.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/errors.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/orgs_base.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/orgs_base.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/projects/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/projects/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/projects/__init__.pyc
@@ -404,8 +407,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/source/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/capture.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/capture.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/source/context_util.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/source/context_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/git.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/git.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/source.py
@@ -494,6 +495,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/components/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/completers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/completers.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/components/util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/components/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/__init__.pyc
@@ -523,6 +526,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/container/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/base_classes.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/base_classes.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.pyc
@@ -679,8 +687,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/resource/table_printer.py
 google-cloud-sdk/lib/googlecloudsdk/core/resource/table_printer.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/resource/yaml_printer.py
 google-cloud-sdk/lib/googlecloudsdk/core/resource/yaml_printer.pyc
-google-cloud-sdk/lib/googlecloudsdk/core/resource_printer.py
-google-cloud-sdk/lib/googlecloudsdk/core/resource_printer.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/resources.py
 google-cloud-sdk/lib/googlecloudsdk/core/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/updater/
@@ -765,7 +771,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine_v1beta4_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta4/appengine_v1beta4_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine_v1beta4.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/autoscaler_v1beta2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/__init__.pyc
@@ -1034,17 +1039,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/v1/pubsub_v1_client.
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/v1/pubsub_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/v1/pubsub_v1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub_v1.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/replicapool_v1beta2_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/replicapool_v1beta2_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/replicapool_v1beta2_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool/v1beta2/replicapool_v1beta2_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapool_v1beta2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/__init__.pyc
@@ -1056,17 +1050,17 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/v1beta1/replicapoolupdater_v1beta1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater/v1beta1/replicapoolupdater_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/replicapoolupdater_v1beta1.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/resourceviews_v1beta1_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/resourceviews_v1beta1_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/resourceviews_v1beta1_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews/v1beta1/resourceviews_v1beta1_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/resourceviews_v1beta1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/__init__.pyc
@@ -1416,6 +1410,8 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/appengine_rpc_ht
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/appengine_rpc_httplib2.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/appengine_rpc_test_util.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/appengine_rpc_test_util.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/context_util.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/context_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/value_mixin.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/tools/value_mixin.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/py27/
@@ -2730,6 +2726,23 @@ google-cloud-sdk/lib/surface/meta/list_gcloud.py
 google-cloud-sdk/lib/surface/meta/list_gcloud.pyc
 google-cloud-sdk/lib/surface/meta/render_markdown.py
 google-cloud-sdk/lib/surface/meta/render_markdown.pyc
+google-cloud-sdk/lib/surface/organizations/
+google-cloud-sdk/lib/surface/organizations/__init__.py
+google-cloud-sdk/lib/surface/organizations/__init__.pyc
+google-cloud-sdk/lib/surface/organizations/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/organizations/add_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/organizations/describe.py
+google-cloud-sdk/lib/surface/organizations/describe.pyc
+google-cloud-sdk/lib/surface/organizations/get_iam_policy.py
+google-cloud-sdk/lib/surface/organizations/get_iam_policy.pyc
+google-cloud-sdk/lib/surface/organizations/list.py
+google-cloud-sdk/lib/surface/organizations/list.pyc
+google-cloud-sdk/lib/surface/organizations/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/organizations/remove_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/organizations/set_iam_policy.py
+google-cloud-sdk/lib/surface/organizations/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/organizations/update.py
+google-cloud-sdk/lib/surface/organizations/update.pyc
 google-cloud-sdk/lib/surface/preview/
 google-cloud-sdk/lib/surface/preview/__init__.py
 google-cloud-sdk/lib/surface/preview/__init__.pyc
@@ -2823,6 +2836,8 @@ google-cloud-sdk/lib/surface/projects/get_iam_policy.py
 google-cloud-sdk/lib/surface/projects/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/projects/list.py
 google-cloud-sdk/lib/surface/projects/list.pyc
+google-cloud-sdk/lib/surface/projects/move.py
+google-cloud-sdk/lib/surface/projects/move.pyc
 google-cloud-sdk/lib/surface/projects/remove_iam_policy_binding.py
 google-cloud-sdk/lib/surface/projects/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/projects/set_iam_policy.py
@@ -2966,6 +2981,10 @@ google-cloud-sdk/lib/surface/source/repos/__init__.py
 google-cloud-sdk/lib/surface/source/repos/__init__.pyc
 google-cloud-sdk/lib/surface/source/repos/clone.py
 google-cloud-sdk/lib/surface/source/repos/clone.pyc
+google-cloud-sdk/lib/surface/source/repos/create.py
+google-cloud-sdk/lib/surface/source/repos/create.pyc
+google-cloud-sdk/lib/surface/source/repos/delete.py
+google-cloud-sdk/lib/surface/source/repos/delete.pyc
 google-cloud-sdk/lib/surface/source/repos/list.py
 google-cloud-sdk/lib/surface/source/repos/list.pyc
 google-cloud-sdk/lib/surface/sql/
@@ -3918,10 +3937,10 @@ google-cloud-sdk/lib/third_party/rsa/transform.pyc
 google-cloud-sdk/lib/third_party/rsa/varblock.py
 google-cloud-sdk/lib/third_party/rsa/varblock.pyc
 google-cloud-sdk/lib/third_party/ruamel/
+google-cloud-sdk/lib/third_party/ruamel/LICENSE
 google-cloud-sdk/lib/third_party/ruamel/__init__.py
 google-cloud-sdk/lib/third_party/ruamel/__init__.pyc
 google-cloud-sdk/lib/third_party/ruamel/yaml/
-google-cloud-sdk/lib/third_party/ruamel/yaml/LICENSE
 google-cloud-sdk/lib/third_party/ruamel/yaml/__init__.py
 google-cloud-sdk/lib/third_party/ruamel/yaml/__init__.pyc
 google-cloud-sdk/lib/third_party/ruamel/yaml/comments.py
@@ -7509,6 +7528,23 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_docker.1
 @man man/man1/gcloud_feedback.1
 @man man/man1/gcloud_help.1
+@man man/man1/gcloud_iam.1
+@man man/man1/gcloud_iam_list-grantable-roles.1
+@man man/man1/gcloud_iam_service-accounts.1
+@man man/man1/gcloud_iam_service-accounts_add-iam-policy-binding.1
+@man man/man1/gcloud_iam_service-accounts_create.1
+@man man/man1/gcloud_iam_service-accounts_delete.1
+@man man/man1/gcloud_iam_service-accounts_describe.1
+@man man/man1/gcloud_iam_service-accounts_get-iam-policy.1
+@man man/man1/gcloud_iam_service-accounts_keys.1
+@man man/man1/gcloud_iam_service-accounts_keys_create.1
+@man man/man1/gcloud_iam_service-accounts_keys_delete.1
+@man man/man1/gcloud_iam_service-accounts_keys_list.1
+@man man/man1/gcloud_iam_service-accounts_list.1
+@man man/man1/gcloud_iam_service-accounts_remove-iam-policy-binding.1
+@man man/man1/gcloud_iam_service-accounts_set-iam-policy.1
+@man man/man1/gcloud_iam_service-accounts_sign-blob.1
+@man man/man1/gcloud_iam_service-accounts_update.1
 @man man/man1/gcloud_info.1
 @man man/man1/gcloud_init.1
 @man man/man1/gcloud_preview.1
