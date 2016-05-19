@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/02/04 22:27:38 jung Exp $
+# $OpenBSD: Makefile,v 1.10 2016/05/19 02:50:05 giovanni Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -9,7 +9,7 @@ COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 COMMENT-spamassassin=	extras with spamassassin support for smtpd
 
-V=			201602042118
+V=			201605182041
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-clamav=		opensmtpd-extras-clamav-${V}
@@ -43,14 +43,9 @@ WANTLIB-spamassassin=	c crypto event ssl
 
 MASTER_SITES=		${HOMEPAGE}archives/
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-
 MODULES=		lang/lua \
 			lang/python
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-mysql=	databases/mariadb,-main
 LIB_DEPENDS-pgsql=	databases/postgresql,-main
@@ -65,7 +60,7 @@ RUN_DEPENDS-spamassassin=\
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--libexecdir=${PREFIX}/libexec \
-			--sysconfdir=${SYSCONFDIR} \
+			--sysconfdir=${SYSCONFDIR}/mail \
 			--with-cppflags="${CFLAGS} -I${PREFIX}/include \
 			    -I${PREFIX}/include/postgresql" \
 			--with-lua-type=lua${MODLUA_VERSION:S/.//g} \
@@ -102,11 +97,6 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-tool-stats
 
 NO_TEST=		Yes
-
-pre-configure:
-			cd ${WRKSRC} && \
-			    env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./bootstrap
 
 post-install:
 			${INSTALL_DATA_DIR} \
