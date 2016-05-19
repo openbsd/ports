@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/19 06:25:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/19 05:37:36 ajacoutot Exp $
 
 COMMENT=		hardware identification and configuration data
 
-DISTNAME=		hwdata-0.288
+DISTNAME=		hwdata-0.289
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		misc
@@ -20,11 +20,11 @@ PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-# grep ^FILES ${WRKSRC}/Makefile
-FILES=			pci.ids usb.ids oui.txt iab.txt pnp.ids
+# grep ^IDFILES ${WRKSRC}/Makefile
+IDFILES=		pci.ids usb.ids oui.txt iab.txt pnp.ids
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/hwdata
-.for i in ${FILES}
+.for i in ${IDFILES}
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/hwdata
 .endfor
 
