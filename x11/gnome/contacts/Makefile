@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2016/04/28 11:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2016/05/19 08:03:36 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.18.1
-REVISION=		1
+GNOME_VERSION=		3.20.0
 
 CATEGORIES=		productivity
 
@@ -36,8 +35,7 @@ WANTLIB += orc-0.4 stdc++ webkitgtk-3.0 webp xcb-glx xslt
 MODULES=		x11/gnome \
 			devel/dconf
 
-LIB_DEPENDS=		devel/libnotify \
-			geo/libchamplain \
+LIB_DEPENDS=		geo/libchamplain \
 			net/telepathy/folks \
 			x11/gnome/desktop
 
