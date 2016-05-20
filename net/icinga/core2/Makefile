@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/04/21 21:19:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/05/20 08:13:41 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -9,7 +9,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.4.7
+V =		2.4.9
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -24,8 +24,10 @@ HOMEPAGE =	https://www.icinga.org/icinga2/
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++ yajl
+WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++
+WANTLIB += yajl
 
 MODULES =		devel/cmake \
 			gcc4

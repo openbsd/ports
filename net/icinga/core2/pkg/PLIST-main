@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2015/11/26 18:03:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2016/05/20 08:13:42 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -174,6 +174,7 @@ share/icinga2/include/plugins-contrib
 share/icinga2/include/plugins-contrib.d/
 share/icinga2/include/plugins-contrib.d/databases.conf
 share/icinga2/include/plugins-contrib.d/hardware.conf
+share/icinga2/include/plugins-contrib.d/icingacli.conf
 share/icinga2/include/plugins-contrib.d/ipmi.conf
 share/icinga2/include/plugins-contrib.d/network-components.conf
 share/icinga2/include/plugins-contrib.d/operating-system.conf
