@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/05/11 15:19:04 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/05/20 16:03:24 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -669,6 +669,7 @@ go/pkg${GOCFG}/internal/race.a
 go/pkg${GOCFG}/internal/singleflight.a
 go/pkg${GOCFG}/internal/syscall/
 go/pkg${GOCFG}/internal/syscall/windows/
+go/pkg${GOCFG}/internal/syscall/windows/sysdll.a
 go/pkg${GOCFG}/internal/testenv.a
 go/pkg${GOCFG}/internal/trace.a
 go/pkg${GOCFG}/io/
@@ -2720,6 +2721,8 @@ go/src/internal/syscall/windows/registry/syscall.go
 go/src/internal/syscall/windows/registry/value.go
 go/src/internal/syscall/windows/registry/zsyscall_windows.go
 go/src/internal/syscall/windows/syscall_windows.go
+go/src/internal/syscall/windows/sysdll/
+go/src/internal/syscall/windows/sysdll/sysdll.go
 go/src/internal/syscall/windows/zsyscall_windows.go
 go/src/internal/testenv/
 go/src/internal/testenv/testenv.go
@@ -4040,6 +4043,7 @@ go/src/runtime/testdata/testprog/signal.go
 go/src/runtime/testdata/testprog/stringconcat.go
 go/src/runtime/testdata/testprog/syscall_windows.go
 go/src/runtime/testdata/testprogcgo/
+go/src/runtime/testdata/testprogcgo/aprof.go
 go/src/runtime/testdata/testprogcgo/callback.go
 go/src/runtime/testdata/testprogcgo/cgo.go
 go/src/runtime/testdata/testprogcgo/crash.go
