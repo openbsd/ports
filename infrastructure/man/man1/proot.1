@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.11 2016/05/19 13:40:27 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.12 2016/05/20 09:55:25 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 19 2016 $
+.Dd $Mdocdate: May 20 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -170,7 +170,7 @@ defaults to
 .It Ar PORTSDIR
 .It Ar DISTDIR
 .It Ar PACKAGE_REPOSITORY
-.It Ar PLIST_DB
+.It Ar PLIST_REPOSITORY
 .It Ar LOCKDIR
 .It Ar WRKOBJDIR
 same as in
@@ -229,7 +229,7 @@ PORT_USER=espie
 extra=/home/espie/startup
 WRKOBJDIR=/tmp/pobj
 LOCKDIR=/tmp/locks
-PLIST_DB=/data/plist
+PLIST_REPOSITORY=/data/plist
 DISTDIR=/data/distfiles
 PACKAGE_REPOSITORY=/data/packages
 actions=unpopulate_light
