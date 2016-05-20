@@ -1,0 +1,18 @@
+$OpenBSD: patch-Logic_LSFoundation_SkyPropertyValues_m,v 1.1 2016/05/20 08:42:39 sebastia Exp $
+
+In preparation of gnustep-make/gnustep-base update and use of
+ng-gnu-gnu library combo
+
+--- Logic/LSFoundation/SkyPropertyValues.m.orig	Fri May 20 00:36:42 2016
++++ Logic/LSFoundation/SkyPropertyValues.m	Fri May 20 00:38:53 2016
+@@ -23,7 +23,9 @@
+ #include "common.h"
+ #include <EOControl/EOKeyGlobalID.h>
+ #if !GNU_RUNTIME
+-#  include <objc/objc-class.h>
++#  if !GNUSTEP_RUNTIME
++#    include <objc/objc-class.h>
++#  endif
+ #endif
+ 
+ @implementation NSObject(SkyPropValues)
