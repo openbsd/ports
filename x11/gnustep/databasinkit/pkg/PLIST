@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/26 12:39:58 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/05/20 18:12:20 sebastia Exp $
 include/DataBasinKit
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/DataBasinKit.framework/
@@ -6,20 +6,20 @@ lib/GNUstep/Frameworks/DataBasinKit.framework/DataBasinKit
 lib/GNUstep/Frameworks/DataBasinKit.framework/Headers
 lib/GNUstep/Frameworks/DataBasinKit.framework/Resources
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/DataBasinKit
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBCSVReader.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBCSVWriter.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBLoggerProtocol.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBProgressProtocol.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBSObject.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBSoap.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DBSoapCSV.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Headers/DataBasinKit.h
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Resources/
-lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/Resources/Info-gnustep.plist
-@lib lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/0.8/libDataBasinKit.so.${LIBDataBasinKit_VERSION}
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/DataBasinKit
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBCSVReader.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBCSVWriter.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBLoggerProtocol.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBProgressProtocol.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSObject.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSoap.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSoapCSV.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DataBasinKit.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Resources/
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/libDataBasinKit.so.${LIBDataBasinKit_VERSION}
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/DataBasinKit.framework/libDataBasinKit.so.${LIBDataBasinKit_VERSION}
 @lib lib/libDataBasinKit.so.${LIBDataBasinKit_VERSION}

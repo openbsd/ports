@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/05 16:04:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/05/20 18:12:20 sebastia Exp $
 
 COMMENT =	GNUstep client framework for salesforce.com
 
-REVISION =	1
-DISTNAME =	DataBasinKit-0.8
-SHARED_LIBS +=  DataBasinKit	0.0
+VERSION =	0.9
+DISTNAME =	DataBasinKit-${VERSION}
+SHARED_LIBS +=  DataBasinKit	0.1
 
 HOMEPAGE =	http://gap.nongnu.org/databasin/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
@@ -18,5 +18,7 @@ BUILD_DEPENDS +=		x11/gnustep/gui \
 				x11/gnustep/webservices
 
 MAKE_FLAGS +=	DataBasinKit_INTERFACE_VERSION=${LIBDataBasinKit_VERSION}
+
+SUBST_VARS +=	VERSION
 
 .include <bsd.port.mk>
