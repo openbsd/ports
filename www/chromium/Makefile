@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2016/05/12 15:26:01 robert Exp $
+# $OpenBSD: Makefile,v 1.287 2016/05/20 15:36:05 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -179,7 +179,7 @@ do-build:
 	for _r in generate_version_info cloud_policy_proto net_interfaces suggestions \
 	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
 	data_reduction_proxy_proto cloud_policy_code_generate common_constants \
-	profile_reset_report_proto \
+	profile_reset_report_proto autofill_server_proto \
 	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
