@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/10 01:04:51 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/20 02:24:30 gsoares Exp $
 lib/lua/${MODLUA_VERSION}/ssl.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/README
@@ -76,4 +76,6 @@ share/examples/${FULLPKGNAME}/wantread/server.lua
 share/examples/${FULLPKGNAME}/wantwrite/
 share/examples/${FULLPKGNAME}/wantwrite/client.lua
 share/examples/${FULLPKGNAME}/wantwrite/server.lua
+share/lua/${MODLUA_VERSION}/ssl/
 share/lua/${MODLUA_VERSION}/ssl.lua
+share/lua/${MODLUA_VERSION}/ssl/https.lua
