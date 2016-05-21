@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.26 2015/12/02 09:44:25 ajacoutot Exp $
---- configure.orig	Tue Dec  1 00:59:48 2015
-+++ configure	Wed Dec  2 10:36:03 2015
-@@ -13228,9 +13228,7 @@ CFLAGS=$save_CFLAGS
+$OpenBSD: patch-configure,v 1.27 2016/05/21 07:12:16 ajacoutot Exp $
+--- configure.orig	Fri May 20 08:01:17 2016
++++ configure	Sat May 21 09:01:23 2016
+@@ -13850,9 +13850,7 @@ CFLAGS=$save_CFLAGS
  fi
  
  if test "$ac_cv_fpic" = "yes"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.26 2015/12/02 09:44:25 ajacoutot Exp $
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fpic" >&5
  $as_echo "$ac_cv_fpic" >&6; }
-@@ -14675,7 +14673,7 @@ fi
+@@ -15297,7 +15295,7 @@ fi
  
  
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.26 2015/12/02 09:44:25 ajacoutot Exp $
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
  $as_echo "#define HAVE_BDB /**/" >>confdefs.h
-@@ -19988,7 +19986,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
+@@ -20490,7 +20488,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
  elif test "${with_perl}" != "no"; then
      PERL="${with_perl}"
      case "${target_os}" in
