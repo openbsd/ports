@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/05/18 05:44:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/05/21 06:54:56 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -125,8 +125,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/bundleinstanc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/bundleinstance.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/decryptpassword.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/decryptpassword.pyc
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/paginate.py
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/paginate.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/protocolarg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/protocolarg.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/runinstances.py
