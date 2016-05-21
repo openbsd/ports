@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/01 11:05:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/05/21 10:13:16 jasper Exp $
 @ask-update elasticsearch-<2.0.0 Make sure your existing data is backed up
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
@@ -19,10 +19,10 @@ elasticsearch/lib/compress-lzf-1.0.2.jar
 elasticsearch/lib/elasticsearch-${V}.jar
 elasticsearch/lib/guava-18.0.jar
 elasticsearch/lib/hppc-0.7.1.jar
-elasticsearch/lib/jackson-core-2.6.2.jar
-elasticsearch/lib/jackson-dataformat-cbor-2.6.2.jar
-elasticsearch/lib/jackson-dataformat-smile-2.6.2.jar
-elasticsearch/lib/jackson-dataformat-yaml-2.6.2.jar
+elasticsearch/lib/jackson-core-2.6.6.jar
+elasticsearch/lib/jackson-dataformat-cbor-2.6.6.jar
+elasticsearch/lib/jackson-dataformat-smile-2.6.6.jar
+elasticsearch/lib/jackson-dataformat-yaml-2.6.6.jar
 elasticsearch/lib/jna-4.1.0.jar
 elasticsearch/lib/joda-convert-1.2.jar
 elasticsearch/lib/joda-time-2.8.2.jar
