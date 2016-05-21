@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.19 2016/04/28 11:23:21 gsoares Exp $
---- Makefile.orig	Wed Apr 27 15:55:27 2016
-+++ Makefile	Wed Apr 27 18:23:09 2016
-@@ -18,7 +18,7 @@ VERSION     = 2.11b
+$OpenBSD: patch-Makefile,v 1.20 2016/05/21 04:05:07 gsoares Exp $
+--- Makefile.orig	Sat May 14 14:43:15 2016
++++ Makefile	Fri May 20 00:13:10 2016
+@@ -18,7 +18,7 @@ VERSION     = 2.13b
  
  PREFIX     ?= /usr/local
  BIN_PATH    = $(PREFIX)/bin
