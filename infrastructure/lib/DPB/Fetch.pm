@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.74 2016/05/18 06:35:38 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.75 2016/05/21 12:20:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,6 +34,7 @@ sub new
 	    known_short => {},
 	    user => $state->{fetch_user},
 	    state => $state,
+	    cache => {},
 	    build_user => $state->{build_user},
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
@@ -200,6 +201,12 @@ sub expire_old
 	$self->rename("history.new", "history");
 }
 
+sub forget_cache
+{
+	my $self = shift;
+	$self->{cache} = {};
+}
+
 sub distdir
 {
 	my $self = shift;
@@ -227,7 +234,6 @@ sub read_checksums
 sub build_distinfo
 {
 	my ($self, $h, $mirror) = @_;
-	my $distinfo = {};
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		next unless defined $info->{DISTFILES} ||
@@ -244,10 +250,10 @@ sub build_distinfo
 		$checksum_file = $checksum_file->string;
 		# collapse identical checksum files together
 		$checksum_file =~ s,/[^/]+/\.\./,/,g;
-		$distinfo->{$checksum_file} //=
+		$self->{cache}{$checksum_file} //=
 		    $self->read_checksums(
 			$self->{state}->anchor($checksum_file));
-		my $checksums = $distinfo->{$checksum_file};
+		my $checksums = $self->{cache}{$checksum_file};
 
 		my $files = {};
 		my $build = sub {

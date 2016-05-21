@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.120 2016/05/17 14:50:36 espie Exp $
+# $OpenBSD: dpb,v 1.121 2016/05/21 12:20:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -290,6 +290,8 @@ $state->grabber->complete_subdirs($core);
 
 my $occupied = 0;
 
+$state->grabber->forget_cache;
+
 if ($state->{all}) {
 	$state->engine->dump_dependencies;
 	if (!$state->defines('NO_HISTORY')) {
@@ -321,6 +323,7 @@ if ($state->{scan_only}) {
 
 $reporter->reset;
 DPB::Core->cleanup;
+print "Elapsed time=", show_time(time-$starttime),"\n";
 print $state->engine->report;
 $state->engine->end_dump($state->logger->append('dump'));
 $state->engine->smart_dump($state->logger->append('summary'));
