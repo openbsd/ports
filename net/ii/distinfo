@@ -1,4 +1,6 @@
-SHA256 (ii-1.7-ssl.diff) = XIX43pP/cC8eUWZG8kGz9hlpuuKwhqwcQ9mH31PNyJw=
+SHA256 (ii-1.7-ssl.diff) = 8arZ/XrHGLHsiIrg5aj/z/fmb0mRScdj5yvIZjrN448=
+SHA256 (ii-1.7-ucspi.diff) = +teAZTglx5YRD+OX6noPVewnwlnJQAIRfbSJdK3xqyY=
 SHA256 (ii-1.7.tar.gz) = OnKsZgbVVgtiXAYscfE1gg4iFP7QmObWJPxAYy3HzJw=
 SIZE (ii-1.7-ssl.diff) = 7631
+SIZE (ii-1.7-ucspi.diff) = 5161
 SIZE (ii-1.7.tar.gz) = 10174

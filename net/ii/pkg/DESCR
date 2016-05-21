@@ -1,1 +1,4 @@
-ii is a minimalist FIFO and filesystem-based IRC client. 
+ii is a minimalist FIFO and filesystem-based IRC client.
+
+Flavors:
+	ucspi - uses ucspi for back-end connection instead of socked API

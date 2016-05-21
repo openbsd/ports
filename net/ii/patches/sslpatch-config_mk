@@ -1,0 +1,21 @@
+$OpenBSD: sslpatch-config_mk,v 1.1 2016/05/21 05:31:38 gsoares Exp $
+--- config.mk.orig	Wed Jul 16 22:29:41 2014
++++ config.mk	Thu Jul 17 08:21:18 2014
+@@ -15,13 +15,13 @@ LIBDIR      = ${PREFIX}/lib
+ VERSION     = 1.7
+ 
+ # includes and libs
+-INCLUDES    = -I. -I${INCDIR} -I/usr/include
+-LIBS        = -L${LIBDIR} -L/usr/lib -lc -lssl -lcrypto
++INCLUDES    += -I${INCDIR}
++LIBS        = -L${LIBDIR} -lssl -lcrypto
+ # uncomment and comment other variables for compiling on Solaris
+ #LIBS = -L${LIBDIR} -L/usr/lib -lc -lsocket -lnsl
+ #CFLAGS      = -g ${INCLUDES} -DVERSION=\"${VERSION}\"
+ 
+ # compiler
+ CC          = cc
+-CFLAGS      = -g -O0 -W -Wall ${INCLUDES} -DVERSION=\"${VERSION}\"
+-LDFLAGS     = ${LIBS}
++CFLAGS      += ${INCLUDES} -DVERSION=\"${VERSION}\"
++LDFLAGS     += ${LIBS}

@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/18 01:23:04 gsoares Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/21 05:31:38 gsoares Exp $
 
 COMMENT=		minimalist IRC client
 
 DISTNAME=		ii-1.7
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
-
-# adds ssl encryption support
-# patch from http://tools.suckless.org/ii/patches
-PATCHFILES+=		${DISTNAME}-ssl.diff:0
-PATCH_DIST_STRIP=	-p1
 
 HOMEPAGE=		http://tools.suckless.org/ii
 MASTER_SITES=		http://dl.suckless.org/tools/
@@ -20,9 +15,30 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto ssl
+WANTLIB=		c
 
 NO_TEST=		Yes
+
+FLAVORS=		ucspi
+FLAVOR?=
+
+# patches from http://tools.suckless.org/ii/patches
+PATCH_DIST_STRIP=	-p1
+
+.if ${FLAVOR} == "ucspi"
+# adds unix client server programming interface support
+PATCHFILES+=		${DISTNAME}-ucspi.diff:0
+PATCH_LIST=		patch-* ucspipatch-*
+RUN_DEPENDS=		net/ucspi-tools
+.else
+# adds ssl encryption support
+PATCHFILES+=		${DISTNAME}-ssl.diff:0
+PATCH_LIST=		patch-* sslpatch-*
+WANTLIB+=		crypto ssl
+.endif
+
+SUPDISTFILES+=		${DISTNAME}-ssl.diff:0
+SUPDISTFILES+=		${DISTNAME}-ucspi.diff:0
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ii ${PREFIX}/bin
