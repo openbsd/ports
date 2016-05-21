@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.399 2016/05/12 14:02:46 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.400 2016/05/21 01:27:09 czarkoff Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -402,6 +402,7 @@ my $stem_extensions = {
 	'py-logilab-astng' => 'py-astroid',
 	'apache-httpd-openbsd' => 'apache-httpd',
 	'openmotif' => 'motif',
+	'go-websocket' => 'go-net',
 };
 
 # reasons for obsolete packages
