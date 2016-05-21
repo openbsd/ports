@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/10 10:26:50 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/05/21 17:31:23 feinerer Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -55,6 +55,8 @@ share/maxima/${VERSION}/doc/html/figures/bodephase7.gif
 share/maxima/${VERSION}/doc/html/figures/bodephase8.gif
 share/maxima/${VERSION}/doc/html/figures/bodephase9.gif
 share/maxima/${VERSION}/doc/html/figures/color_terminal.png
+share/maxima/${VERSION}/doc/html/figures/draw_allocation.gif
+share/maxima/${VERSION}/doc/html/figures/draw_allocation2.gif
 share/maxima/${VERSION}/doc/html/figures/draw_axis3d.gif
 share/maxima/${VERSION}/doc/html/figures/draw_axis_bottom.gif
 share/maxima/${VERSION}/doc/html/figures/draw_bars.gif
@@ -123,6 +125,7 @@ share/maxima/${VERSION}/doc/html/figures/draw_logx_secondary.gif
 share/maxima/${VERSION}/doc/html/figures/draw_mesh.gif
 share/maxima/${VERSION}/doc/html/figures/draw_mesh2.gif
 share/maxima/${VERSION}/doc/html/figures/draw_mesh3.gif
+share/maxima/${VERSION}/doc/html/figures/draw_multiplot.png
 share/maxima/${VERSION}/doc/html/figures/draw_nticks.gif
 share/maxima/${VERSION}/doc/html/figures/draw_palette.gif
 share/maxima/${VERSION}/doc/html/figures/draw_palette2.gif
@@ -170,6 +173,7 @@ share/maxima/${VERSION}/doc/html/figures/draw_view2.gif
 share/maxima/${VERSION}/doc/html/figures/draw_wired_surface.gif
 share/maxima/${VERSION}/doc/html/figures/draw_xaxis.gif
 share/maxima/${VERSION}/doc/html/figures/draw_xaxis_secondary.gif
+share/maxima/${VERSION}/doc/html/figures/draw_xugrid.gif
 share/maxima/${VERSION}/doc/html/figures/draw_ylabel_secondary.gif
 share/maxima/${VERSION}/doc/html/figures/dynamics1.png
 share/maxima/${VERSION}/doc/html/figures/dynamics2.png
@@ -642,6 +646,7 @@ share/maxima/${VERSION}/share/contrib/boolsimp/boolsimp.lisp
 share/maxima/${VERSION}/share/contrib/boolsimp/rtest_boolsimp.mac
 share/maxima/${VERSION}/share/contrib/celine.mac
 share/maxima/${VERSION}/share/contrib/cgrind.lisp
+share/maxima/${VERSION}/share/contrib/chebformax.lisp
 share/maxima/${VERSION}/share/contrib/clebsch_gordan.mac
 share/maxima/${VERSION}/share/contrib/clebsh-gordan.tex
 share/maxima/${VERSION}/share/contrib/colorterm.lisp
@@ -2086,6 +2091,7 @@ share/maxima/${VERSION}/src/strmac.lisp
 share/maxima/${VERSION}/src/sublis.lisp
 share/maxima/${VERSION}/src/sumcon.lisp
 share/maxima/${VERSION}/src/suprv1.lisp
+share/maxima/${VERSION}/src/sys-proclaim.lisp
 share/maxima/${VERSION}/src/tlimit.lisp
 share/maxima/${VERSION}/src/todd-coxeter.lisp
 share/maxima/${VERSION}/src/trans1.lisp
