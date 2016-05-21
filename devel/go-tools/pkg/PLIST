@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/14 16:11:17 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/05/21 01:29:09 czarkoff Exp $
 @conflict stress-*
 @pkgpath textproc/godoc
 @bin bin/benchcmp
+@bin bin/bundle
 @bin bin/callgraph
 @bin bin/digraph
 @bin bin/eg
@@ -12,6 +13,7 @@
 @bin bin/gomvpkg
 @bin bin/gorename
 @bin bin/gotype
+@bin bin/html2article
 @bin bin/oracle
 @bin bin/ssadump
 @bin bin/stress
