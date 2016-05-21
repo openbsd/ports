@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/18 14:37:50 kspillner Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/21 01:27:37 czarkoff Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
-V =			0.2.11
-VERSION =		$V
-DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
-GH_TAGNAME =		v$V
-REVISION =		0
+GH_TAGNAME =		v0.2.12
 
 CATEGORIES =		net www
 
@@ -23,7 +19,7 @@ WANTLIB =		c pthread
 
 MODULES +=		lang/go
 
-BUILD_DEPENDS =		net/go-websocket
+BUILD_DEPENDS =		net/go-net
 
 NO_TEST =		Yes
 SUBST_VARS =		VERSION
