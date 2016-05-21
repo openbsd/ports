@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.35 2016/05/17 14:50:36 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.36 2016/05/21 19:38:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,6 +102,12 @@ sub logger
 {
 	my $self = shift;
 	return $self->{state}->logger;
+}
+
+sub forget_cache
+{
+	my $self = shift;
+	$self->{fetch}->forget_cache;
 }
 
 sub grab_subdirs
