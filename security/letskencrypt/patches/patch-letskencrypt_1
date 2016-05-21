@@ -1,0 +1,12 @@
+$OpenBSD: patch-letskencrypt_1,v 1.1.1.1 2016/05/21 10:44:21 sthen Exp $
+--- letskencrypt.1.orig	Fri May 20 14:07:42 2016
++++ letskencrypt.1	Fri May 20 22:25:32 2016
+@@ -47,7 +47,7 @@ and
+ for the account private key
+ .Pq Fl f .
+ It drops privileges to the
+-.Dq nobody
++.Dq _letskencrypt
+ user.
+ Its arguments are as follows:
+ .Bl -tag -width Ds

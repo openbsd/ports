@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/21 10:44:21 sthen Exp $
+@newgroup _letskencrypt:775
+@newuser _letskencrypt:775:_letskencrypt::letskencrypt user:/nonexistent:/sbin/nologin
+@bin bin/letskencrypt
+@man man/man1/letskencrypt.1
+@owner root
+@mode 755
+@sample /etc/ssl/letsencrypt/
+@mode 700
+@sample /etc/ssl/letsencrypt/private/
+@group www
+@mode 750
+@sample /var/www/letsencrypt/

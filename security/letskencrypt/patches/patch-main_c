@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2016/05/21 10:44:21 sthen Exp $
+--- main.c.orig	Fri May 20 22:23:57 2016
++++ main.c	Fri May 20 22:24:03 2016
+@@ -31,7 +31,7 @@
+ 
+ #include "extern.h"
+ 
+-#define NOBODY_USER "nobody"
++#define NOBODY_USER "_letskencrypt"
+ 
+ int
+ main(int argc, char *argv[])

@@ -1,0 +1,10 @@
+letskencrypt is yet another Let's Encrypt client, but one with a
+strong focus on security. It is still under development.
+
+It supports the following operations:
+
+* Account registration (see the -n flag).
+* Domain certificate signing.
+* Domain certificate revocation (see the -r flag).
+
+Many parts of the process are run as jailed unprivileged processes.
