@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/01/10 09:39:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/05/21 10:49:24 sthen Exp $
 @bin bin/redshift
 bin/redshift-gtk
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.py
 share/appdata/
 share/appdata/redshift-gtk.appdata.xml
 share/applications/redshift-gtk.desktop
+share/applications/redshift.desktop
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg
 share/icons/hicolor/scalable/apps/redshift.svg
@@ -50,6 +51,7 @@ share/locale/pt/LC_MESSAGES/redshift.mo
 share/locale/pt_BR/LC_MESSAGES/redshift.mo
 share/locale/ru/LC_MESSAGES/redshift.mo
 share/locale/sv/LC_MESSAGES/redshift.mo
+share/locale/tr/LC_MESSAGES/redshift.mo
 share/locale/zh_CN/LC_MESSAGES/redshift.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
