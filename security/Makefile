@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.425 2016/05/12 15:54:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.426 2016/05/21 01:13:51 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -52,6 +52,7 @@
      SUBDIR += gnupg,card,ldap
      SUBDIR += gnupg2
      SUBDIR += gnutls
+     SUBDIR += go-crypto
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += gringotts
