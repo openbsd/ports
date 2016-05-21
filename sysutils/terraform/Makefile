@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/13 17:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/05/21 01:47:42 czarkoff Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
@@ -28,20 +28,15 @@ PROVIDERS=		atlas aws azure azurerm chef clc cloudflare cloudstack \
 
 PROVISIONERS=		chef file local-exec remote-exec
 
-post-build:
-.for provider in ${PROVIDERS}
-	cd ${WRKSRC} && \
-		${MODGO_CMD} build -o bin/terraform-provider-${provider} \
-		github.com/hashicorp/terraform/builtin/bins/provider-${provider}
-.endfor
-.for provisioner in ${PROVISIONERS}
-	cd ${WRKSRC} && \
-		${MODGO_CMD} build -o bin/terraform-provisioner-${provisioner} \
-		github.com/hashicorp/terraform/builtin/bins/provisioner-${provisioner}
-.endfor
+BINARIES=		${PROVIDERS:%=provider-%} ${PROVISIONERS:%=provisioner-%}
+
+_MAIN=			github.com/${GH_ACCOUNT}/${GH_PROJECT}
+WRKSRC=			${MODGO_WORKSPACE}/src/${_MAIN}
+ALL_TARGET=		${_MAIN} ${BINARIES:%=${_MAIN}/builtin/bins/%}
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/terraform-* \
-		${PREFIX}/bin/
+.for binary in ${BINARIES}
+	mv ${PREFIX}/bin/${binary} ${PREFIX}/bin/terraform-${binary}
+.endfor
 
 .include <bsd.port.mk>
