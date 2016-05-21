@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_mimeutils_c,v 1.3 2016/05/21 13:05:37 jasper Exp $
+
+From ec0949091f7a771c852c0314108f9aa4b2a25575 Mon Sep 17 00:00:00 2001
+From: Hans Petter Jansson <hpj@cl.no>
+Date: Wed, 11 May 2016 22:41:14 +0200
+Subject: mimeutils: Allow multipart/related MIME type.
+
+--- src/mimeutils.c.orig	Mon Aug 27 16:09:02 2012
++++ src/mimeutils.c	Sat May 21 11:32:34 2016
+@@ -71,6 +71,9 @@ static const char *registered_not_used_media_types[] =
+ static const char *valid_exceptions_mime_types[] = {
+   /* mail: a mail saved in a file will have this mime type */
+   "message/rfc822",
++  /* Implemented as an extension of RFC 822; used for MHTML, in addition to
++   * application/x-mimearchive */
++  "multipart/related",
+   /* some multimedia mime type; it clearly doesn't respect the mime type rules,
+    * but it's widely deployed */
+   "misc/ultravox"
