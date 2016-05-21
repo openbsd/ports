@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.121 2016/04/16 15:52:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2016/05/21 06:48:14 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.4.11
+V=		3.4.12
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               43.0     # 36.3
+SHARED_LIBS +=  gnutls               43.1     # 36.4
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 
 HOMEPAGE=	http://www.gnutls.org/
@@ -54,6 +54,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
+	rm ${PREFIX}/lib/gnutls/*.{a,la}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnutls
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gnutls

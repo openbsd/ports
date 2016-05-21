@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2016/03/06 12:16:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2016/05/21 06:48:14 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -37,6 +37,8 @@ info/gnutls-pgp.png
 info/gnutls-x509.png
 @info info/gnutls.info
 info/pkcs11-vision.png
+lib/gnutls/
+lib/gnutls/libpkcs11mock1.so
 lib/libgnutls.a
 lib/libgnutls.la
 @lib lib/libgnutls.so.${LIBgnutls_VERSION}
@@ -53,6 +55,24 @@ lib/pkgconfig/gnutls.pc
 @man man/man1/psktool.1
 @man man/man1/srptool.1
 @man man/man1/tpmtool.1
+@man man/man3/dane_cert_type_name.3
+@man man/man3/dane_cert_usage_name.3
+@man man/man3/dane_match_type_name.3
+@man man/man3/dane_query_data.3
+@man man/man3/dane_query_deinit.3
+@man man/man3/dane_query_entries.3
+@man man/man3/dane_query_status.3
+@man man/man3/dane_query_tlsa.3
+@man man/man3/dane_query_to_raw_tlsa.3
+@man man/man3/dane_raw_tlsa.3
+@man man/man3/dane_state_deinit.3
+@man man/man3/dane_state_init.3
+@man man/man3/dane_state_set_dlv_file.3
+@man man/man3/dane_strerror.3
+@man man/man3/dane_verification_status_print.3
+@man man/man3/dane_verify_crt.3
+@man man/man3/dane_verify_crt_raw.3
+@man man/man3/dane_verify_session_crt.3
 @man man/man3/gnutls_aead_cipher_decrypt.3
 @man man/man3/gnutls_aead_cipher_deinit.3
 @man man/man3/gnutls_aead_cipher_encrypt.3
