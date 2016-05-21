@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.970 2016/05/21 01:25:50 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.971 2016/05/21 12:00:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -485,6 +485,8 @@
      SUBDIR += pktstat
      SUBDIR += plushs
      SUBDIR += pmacct
+     SUBDIR += pmacct,mysql
+     SUBDIR += pmacct,postgresql
      SUBDIR += poco
      SUBDIR += poezio
      SUBDIR += poink
