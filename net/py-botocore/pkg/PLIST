@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/05/13 07:12:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/05/21 06:54:41 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -51,6 +51,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/paginators-1.json
