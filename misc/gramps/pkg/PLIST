@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/01/01 08:29:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/05/21 07:18:23 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -60,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_fr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_hr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_hu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_is.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_it.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_ja.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/${MODPY_PYCACHE}_date_lt.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_fi.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_fr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_hr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_hu.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_is.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_it.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_ja.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/datehandler/_date_lt.py
@@ -1988,6 +1990,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_fr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_hr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_hu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_is.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_it.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_nl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/${MODPY_PYCACHE}rel_no.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2008,6 +2011,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_fi.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_fr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_hr.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_hu.py
+lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_is.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_it.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_nl.py
 lib/python${MODPY_VERSION}/site-packages/gramps/plugins/rel/rel_no.py

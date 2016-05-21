@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.41 2016/01/01 11:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2016/05/21 07:18:23 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION=	4.2.1
+MODPY_EGG_VERSION=	4.2.3
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		misc x11
 
-HOMEPAGE=		http://www.gramps-project.org/
+HOMEPAGE=		https://gramps-project.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
