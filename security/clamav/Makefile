@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.108 2016/05/04 07:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2016/05/22 21:03:33 sthen Exp $
 
-COMMENT=		virus scanner
-DISTNAME=		clamav-0.99.2
+COMMENT=	virus scanner
+DISTNAME=	clamav-0.99.2
+REVISION=	0
 
-CATEGORIES=		security
+CATEGORIES=	security
 
 SHARED_LIBS +=	clamav               22.2     # 8.1
 SHARED_LIBS +=	clamunrar            3.0      # 8.1
 SHARED_LIBS +=	clamunrar_iface      3.0
 
-HOMEPAGE=		http://www.clamav.net/
+HOMEPAGE=	http://www.clamav.net/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,19 +57,9 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}"
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mllvm} && ! ${MACHINE_ARCH:Msparc} && \
-	! ${MACHINE_ARCH:Msparc64} && ! ${MACHINE_ARCH:Mmips64}
-CONFIGURE_ARGS+=	--enable-llvm
-# As of 0.99.2, requires LLVM < 3.7.
-# To attempt using system LLVM, try this:
-#			--with-llvm-linking=dynamic \
-#			--with-system-llvm=${LOCALBASE}/bin/llvm-config
-# And add LIB_DEPENDS etc. sparc64 should work with ports LLVM, but not the
-# bundled internal one.
-.else
-CONFIGURE_ARGS+=	--disable-llvm
-.endif
+# This is used for a JIT bytecode compiler. Disabling it should
+# still allow bytecode to work, just without the W|X-mapping JIT.
+CONFIGURE_ARGS+= --disable-llvm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav \
