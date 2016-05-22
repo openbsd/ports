@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/05/22 08:05:29 ajacoutot Exp $
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
-DISTNAME=	dnsmasq-2.75
+DISTNAME=	dnsmasq-2.76
 CATEGORIES=	net
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 HOMEPAGE=	http://www.thekelleys.org.uk/dnsmasq/doc.html
 
