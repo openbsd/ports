@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/05/22 19:12:36 tb Exp $
 
 COMMENT=	flexible POP3 server
 
 VERSION=	0.15
 DISTNAME=	solid-pop3d-${VERSION}
-REVISION =	6
+REVISION =	7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://dione.ids.pl/pub/solidpop3d/
 

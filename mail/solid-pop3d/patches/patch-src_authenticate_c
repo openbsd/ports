@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_authenticate_c,v 1.1 2016/05/22 19:12:36 tb Exp $
+--- src/authenticate.c.orig	Sun May 22 18:15:44 2016
++++ src/authenticate.c	Sun May 22 18:16:14 2016
+@@ -168,8 +168,8 @@ int _sp_authenticate_user(char *ausername, char *apass
+ 	char *encrypted_passwd;
+ 	struct passwd *pwentry;
+ 	
+-	if ((pwentry = getpwnam(ausername)) == NULL) {
+-		pop_log(pop_priority, "auth: getpwnam() failed");
++	if ((pwentry = getpwnam_shadow(ausername)) == NULL) {
++		pop_log(pop_priority, "auth: getpwnam_shadow() failed");
+ 		return -1;
+ 	};	
+ 	if (strcmp(pwentry->pw_passwd, "") == 0) {
