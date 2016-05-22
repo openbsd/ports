@@ -1,11 +1,12 @@
-$OpenBSD: patch-config_config_inc_php_sample,v 1.2 2014/05/02 07:46:11 sthen Exp $
---- config/config.inc.php.sample.orig	Wed Apr 30 10:14:57 2014
-+++ config/config.inc.php.sample	Wed Apr 30 10:15:16 2014
-@@ -24,7 +24,7 @@ $config = array();
- // Currently supported db_providers: mysql, pgsql, sqlite, mssql or sqlsrv
+$OpenBSD: patch-config_config_inc_php_sample,v 1.3 2016/05/22 19:22:22 sthen Exp $
+--- config/config.inc.php.sample.orig	Mon Nov 23 14:54:00 2015
++++ config/config.inc.php.sample	Mon Nov 23 16:37:00 2015
+@@ -25,7 +25,8 @@ $config = array();
  // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
- // NOTE: for SQLite use absolute path: 'sqlite:////full/path/to/sqlite.db?mode=0646'
+ // NOTE: for SQLite use absolute path (Linux): 'sqlite:////full/path/to/sqlite.db?mode=0646'
+ //       or (Windows): 'sqlite:///C:/full/path/to/sqlite.db'
 -$config['db_dsnw'] = 'mysql://roundcube:pass@localhost/roundcubemail';
++// $config['db_dsnw'] = 'mysql://roundcube:pass@localhost/roundcubemail';
 +$config['db_dsnw'] = 'sqlite:///roundcubemail/db/sqlite.db?mode=0660';
  
  // The mail host chosen to perform the log-in.
