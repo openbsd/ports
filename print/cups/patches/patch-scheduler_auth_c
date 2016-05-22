@@ -1,0 +1,12 @@
+$OpenBSD: patch-scheduler_auth_c,v 1.6 2016/05/22 15:44:23 ajacoutot Exp $
+--- scheduler/auth.c.orig	Sun May 22 17:34:17 2016
++++ scheduler/auth.c	Sun May 22 17:35:08 2016
+@@ -651,7 +651,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+ #  endif /* HAVE_SHADOW_H */
+ 
+ 
+-	    pw = getpwnam(username);	/* Get the current password */
++	    pw = getpwnam_shadow(username);	/* Get the current password */
+ 	    endpwent();			/* Close the password file */
+ 
+ 	    if (!pw)
