@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.36 2016/05/21 19:38:44 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.37 2016/05/22 11:41:56 nigel Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -192,6 +192,12 @@ sub build_distinfo
 sub run_expire_old
 {
 	return 0;
+}
+
+sub forget_cache
+{
+       my $self = shift;
+       $self->{cache} = {};
 }
 
 1;
