@@ -1,0 +1,15 @@
+$OpenBSD: patch-schemas_org_gnome_desktop_interface_gschema_xml_in,v 1.1 2016/05/23 17:35:47 ajacoutot Exp $
+
+See ports/x11/gtk+3/patches/patch-gtk_gtksettings_c
+
+--- schemas/org.gnome.desktop.interface.gschema.xml.in.orig	Mon May 23 19:11:11 2016
++++ schemas/org.gnome.desktop.interface.gschema.xml.in	Mon May 23 19:11:30 2016
+@@ -97,7 +97,7 @@
+       </description>
+     </key>
+     <key name="gtk-key-theme" type="s">
+-      <default>'Default'</default>
++      <default>'Emacs'</default>
+       <summary>Gtk+ Keybinding Theme</summary>
+       <description>
+         Basename of the default keybinding theme used by gtk+.
