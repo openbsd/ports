@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.44 2016/05/20 09:55:25 espie Exp $
+# $OpenBSD: proot,v 1.45 2016/05/23 13:36:25 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -136,8 +136,6 @@ sub do_parm
 		    $state->{DISTDIR} = File::Spec->canonpath($v);
 	    }, PACKAGE_REPOSITORY => sub {
 		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
-	    }, PLIST_DB => sub {
-		    $state->{PLIST_DB} = File::Spec->canonpath($v);
 	    }, PLIST_REPOSITORY => sub {
 		    $state->{PLIST_REPOSITORY} = File::Spec->canonpath($v);
 	    }, NFSDIR => sub {
@@ -298,7 +296,7 @@ sub handle_options
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -312,12 +310,9 @@ sub handle_options
 	$state->{builduser} //= MyUser->new('_pbuild');
 	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
-	if (!defined $state->{PLIST_DB}) {
-		$state->{PLIST_REPOSITORY} 
-		    //= join('/', $state->{PORTSDIR}, 'plist');
-	}
+	$state->{PLIST_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY PLIST_DB LOCKDIR)) {
+	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR)) {
 		next if !defined $state->{$dir};
 		$state->{$dir} = $state->canonical_dir($state->{$dir});
 		push(@{$state->{preserved}}, $state->{$dir});
@@ -600,9 +595,6 @@ sub best_user
 		return $state->{loguser};
 	}
 	if (m/^\Q$state->{PLIST_REPOSITORY}\E/) {
-		return $state->{builduser};
-	}
-	elsif (m/^\Q$state->{PLIST_DB}\E/) {
 		return $state->{builduser};
 	}
 	if (m/^\Q$state->{PACKAGE_REPOSITORY}\E/) {
@@ -973,11 +965,7 @@ sub make_ports_subdirs
 
 		$state->build_dir(WHINE|MKPATH , "builduser", "WRKOBJDIR");
 		$state->build_dir(0, "builduser", "PACKAGE_REPOSITORY");
-		if (defined $state->{PLIST_DB}) {
-			$state->build_dir(0, "builduser", "PLIST_DB");
-		} else {
-			$state->build_dir(0, "builduser", "PLIST_REPOSITORY");
-		}
+		$state->build_dir(0, "builduser", "PLIST_REPOSITORY");
 		$state->build_dir(WHINE, "builduser", "LOCKDIR");
 	    });
 }
