@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/09 11:40:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/23 12:49:59 juanfra Exp $
 
 COMMENT =		data recovery tool and decompressor for lzip files
 
-DISTNAME =		lziprecover-1.17
+DISTNAME =		lziprecover-1.18
 
 HOMEPAGE =		http://lzip.nongnu.org/lziprecover.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lziprecover/}
