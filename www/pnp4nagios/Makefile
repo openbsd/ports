@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/18 17:34:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/23 20:24:11 sebastia Exp $
 
 COMMENT-main =	Nagios/Icinga addon which graphs performance data
 COMMENT-cgi =	pnp4nagios CGI scripts
@@ -7,8 +7,8 @@ V = 		0.6.25
 DISTNAME =	pnp4nagios-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-cgi =	pnp4nagios-cgi-${V}
-REVISION-main =	1
-REVISION-cgi = 	0
+REVISION-main =	2
+REVISION-cgi = 	1
 
 CATEGORIES =	www
 
@@ -25,10 +25,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pnp4nagios/}
 
 MODULES =		lang/php
 BUILD_DEPENDS =		net/rrdtool
-RUN_DEPENDS-main =	net/icinga/core \
-			net/rrdtool
+RUN_DEPENDS-main =	net/rrdtool
 RUN_DEPENDS-cgi =	lang/php/${MODPHP_VERSION},-gd \
-			net/icinga/web \
 			www/pnp4nagios,-main
 
 FAKE_FLAGS =		INSTALL_OPTS="-o root -g bin" \

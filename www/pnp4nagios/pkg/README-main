@@ -1,10 +1,119 @@
-$OpenBSD: README-main,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
+$OpenBSD: README-main,v 1.2 2016/05/23 20:24:11 sebastia Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running pnp4nagios on OpenBSD
 +-----------------------------------------------------------------------
 
-Log file in /var/log/pnp4nagios will need to be rotated. Here is a sample
-line for newsyslog.conf:
+General
+=======
 
-/var/log/pnp4nagios/pnp4nagios.log _icinga:_icinga 644 7  250  * Z
+Pnp4nagios has no default runtime dependencies to a monitoring tool,
+as well as to a monitoring webinterface or web server. Example
+instructions below are given for icinga, icinga-web and Apache2, as
+well as icinga2, icinga-web2 and nginx.
+
+Log file in ${VARBASE}/log/pnp4nagios will need to be rotated. Here is
+a sample line for newsyslog.conf:
+
+${VARBASE}/log/pnp4nagios/pnp4nagios.log _icinga:_icinga 644 7  250  * Z
+
+Icinga, Icinga-web, Apache
+==========================
+
+Apache2 configuration
+---------------------
+Apache2 configuration for PNP4Nagios is stored under:
+    ${VARBASE}/www/conf/modules.sample/pnp4nagios.conf
+
+It needs to be enabled by running the following command:
+# ln -s ../modules.sample/pnp4nagios.conf ${VARBASE}/www/conf/modules
+# rcctl restart apache2
+
+Icinga-web configuration
+------------------------
+To integrate PNP4Nagios into the Icinga Web frontend you will need to
+install templates extensions which comes with icinga-web package:
+% cd ${VARBASE}/www/icinga-web/app/modules/Cronks/data/xml/extensions
+# ln -s pnp-host-extension.xml.dist pnp-host-extension.xml
+# ln -s pnp-service-extension.xml.dist pnp-service-extension.xml
+
+Icinga2, Icinga-web2, Nginx
+===========================
+Pnp4nagios runs with php_fpm behind nginx in a chrooted environment.
+
+Prepare the chroot environment
+------------------------------
+ - follow the instructions in the rrdtool package README
+   to chroot rrdtool
+ - copy /bin/sh to ${VARBASE}/www/bin
+ - copy ${SYSCONFDIR}/pnp4nagios ${VARBASE}/www${SYSCONFDIR}/pnp4nagios
+ - copy ${LOCALBASE}/lib/kohana/system ${VARBASE}/www${LOCALBASE}/lib/kohana/system
+ - edit ${VARBASE}/www${SYSCONFDIR}/pnp4nagios/config.php
+   - ensure: $conf['rrdbase'] = "/pnp4nagios/rrd/";
+   - ensure: $conf['nagios_base'] = "/icingaweb2";
+
+Icinga2 configuration
+---------------------
+With Icinga2 enable the perfdata feature:
+
+# icinga2 feature enable perfdata
+
+Pnp4nagios will use the npcd daemon, and work in the 'bulk' mode.
+In ${SYSCONFDIR}/pnp4nagios/npcd.cfg update the 'perfdata_spool_dir'
+to point to '${VARBASE}/spool/icinga2/perfdata'. Additionally ensure
+the 'perfdata_file_run_cmd_args' has a '--bulk' argument specified.
+
+In ${SYSCONFDIR}/pnp4nagios/process_perfdata.cfg ensure the
+RRDPATH setting points to '${VARBASE}/www/pnp4nagios/rrd'.
+
+Finally enable npcd:
+
+# rcctl enable npcd
+
+Nginx configuration
+-------------------
+Below a minimal snippet for the nginx configuration:
+
+server {
+
+  ...
+
+  location /pnp4nagios {
+
+    alias /var/www/pnp4nagios;
+  }
+
+  location ~ ^(/pnp4nagios.*\.php)(.*)$ {
+
+
+    root          /pnp4nagios;
+    include       ${SYSCONFDIR}/nginx/fastcgi_params;
+
+    fastcgi_pass  unix:run/php-fpm-pnp4nagios.sock;
+    fastcgi_split_path_info ^(.+\.php)(.*)$;
+    fastcgi_param PATH_INFO       $fastcgi_path_info;
+    fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+  }
+}
+
+Php_fpm configuration
+---------------------
+Configure php_fpm pool, the most important configuration
+entries:
+
+[pnp4nagios]
+listen = ${VARBASE}/www/run/php-fpm-pnp4nagios.sock
+listen.owner = www
+listen.group = www
+listen.mode = 0660
+user = _icinga
+group = _icinga
+chroot = ${VARBASE}/www
+
+Icinga-web2 configuration
+-------------------------
+Pnp4nagios integration with Icinga-web2 is done via PNP
+module, that can be found here: 
+ - https://github.com/Icinga/icingaweb2-module-pnp
+For installation and configuration follow the modules
+instructions.
