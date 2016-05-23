@@ -1,4 +1,7 @@
-$OpenBSD: patch-gtk_gtksettings_c,v 1.18 2016/04/18 06:50:02 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtksettings_c,v 1.19 2016/05/23 17:36:11 ajacoutot Exp $
+
+See ports/devel/gsettings-desktop-schemas/patches/patch-schemas_org_gnome_desktop_interface_gschema_xml_in
+
 --- gtk/gtksettings.c.orig	Mon Apr 11 20:40:43 2016
 +++ gtk/gtksettings.c	Sat Apr 16 10:54:47 2016
 @@ -473,7 +473,7 @@ gtk_settings_class_init (GtkSettingsClass *class)
