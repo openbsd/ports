@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/24 13:57:49 sthen Exp $
 
 COMMENT=	perl interface to the Twitter API
 
-DISTNAME =	Net-Twitter-4.01010
+DISTNAME =	Net-Twitter-4.01020
 
 CATEGORIES=	net
 
@@ -11,8 +11,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*
-CONFIGURE_STYLE=modbuild
-RUN_DEPENDS=	converters/p5-JSON-Any \
+CONFIGURE_STYLE= modbuild
+RUN_DEPENDS=	converters/p5-JSON-XS \
+		converters/p5-JSON-MaybeXS \
 		devel/p5-Carp-Clan \
 		devel/p5-Data-Visitor \
 		devel/p5-DateTime-Format-Strptime \
