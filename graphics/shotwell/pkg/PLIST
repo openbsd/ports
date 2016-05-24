@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/04/26 11:10:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/05/24 05:35:28 ajacoutot Exp $
 @bin bin/shotwell
 lib/shotwell/
 lib/shotwell/plugins/
@@ -362,9 +362,13 @@ share/gnome/help/shotwell/sv/share-upload.page
 share/gnome/help/shotwell/sv/view-displaying.page
 share/gnome/help/shotwell/sv/view-information.page
 share/gnome/help/shotwell/sv/view-sidebar.page
-share/icons/hicolor/16x16/apps/shotwell.svg
-share/icons/hicolor/24x24/apps/shotwell.svg
-share/icons/hicolor/scalable/apps/shotwell.svg
+share/icons/hicolor/16x16/apps/shotwell.png
+share/icons/hicolor/22x22/apps/shotwell.png
+share/icons/hicolor/24x24/apps/shotwell.png
+share/icons/hicolor/256x256/apps/shotwell.png
+share/icons/hicolor/32x32/apps/shotwell.png
+share/icons/hicolor/48x48/apps/shotwell.png
+share/icons/hicolor/symbolic/apps/shotwell-symbolic.svg
 share/locale/af/LC_MESSAGES/shotwell.mo
 share/locale/ar/LC_MESSAGES/shotwell.mo
 share/locale/as/LC_MESSAGES/shotwell.mo
@@ -465,12 +469,8 @@ share/shotwell/icons/pin-toolbar.svg
 share/shotwell/icons/publish.png
 share/shotwell/icons/redeye.png
 share/shotwell/icons/rejected.svg
-share/shotwell/icons/shotwell-16.svg
-share/shotwell/icons/shotwell-24.svg
 share/shotwell/icons/shotwell-auto-enhance.png
 share/shotwell/icons/shotwell-street.jpg
-share/shotwell/icons/shotwell.ico
-share/shotwell/icons/shotwell.svg
 share/shotwell/icons/slideshow-extension-point.png
 share/shotwell/icons/sprocket.png
 share/shotwell/icons/straighten.svg
