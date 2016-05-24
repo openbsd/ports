@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ssli_openssl_c,v 1.2 2016/05/10 12:25:06 dcoppa Exp $
+$OpenBSD: patch-src_ssli_openssl_c,v 1.3 2016/05/24 09:13:14 dcoppa Exp $
 
 commit 82e80f8f18cbb6fed903621751ba9751dc2b80a2
 Author: Felix Morgner <felix.morgner@gmail.com>
@@ -10,9 +10,29 @@ The OpenSSL TLS backend now reads the certificate file using
 SSL_CTX_use_certificate_chain_file(...) so that concatenated
 certificate files containing a verification chain are read correctly.
 
+commit c72ebd29f239793218f2248c3f8b48a7b3e0a541
+Author: Felix Morgner <felix.morgner@gmail.com>
+Date:   Sun Mar 6 23:40:45 2016 +0100
+
+Upgrade TLS suites for GnuTLS, mbedTLS and OpenSSL
+
+I could not figure out whether or not PolarSSL, which is technically
+now mbedTLS, does support ECDHE suites. I currently have no access to
+PolarSSL myself. It would be great if somebody could figure that one
+out. Relates to #82, fixes #84 and #77.
+
 --- src/ssli_openssl.c.orig	Sat Jun 20 00:58:46 2015
-+++ src/ssli_openssl.c	Tue May 10 14:15:53 2016
-@@ -154,100 +154,74 @@ static void SSL_writekey(char *keyfile, RSA *rsa)
++++ src/ssli_openssl.c	Tue May 24 10:19:22 2016
+@@ -48,6 +48,8 @@ static RSA *rsa;
+ static SSL_CTX *context;
+ static EVP_PKEY *pkey;
+ 
++static char const * ciphers = "EECDH+AESGCM:AES256-SHA:AES128-SHA";
++
+ static int verify_callback(int preverify_ok, X509_STORE_CTX *ctx);
+ 
+ static int SSL_add_ext(X509 * crt, int nid, char *value) {
+@@ -154,106 +156,86 @@ static void SSL_writekey(char *keyfile, RSA *rsa)
  
  static void SSL_initializeCert() {
  
@@ -156,7 +176,19 @@ certificate files containing a verification chain are read correctly.
  	if (context == NULL)
  	{
  		ERR_print_errors_fp(stderr);
-@@ -261,12 +235,6 @@ void SSLi_init(void)
+ 		abort();
+ 	}
+ 
++	SSL_CTX_set_cipher_list(context, ciphers);
++
++	EC_KEY *ecdhkey = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
++	SSL_CTX_set_tmp_ecdh(context, ecdhkey);
++	EC_KEY_free(ecdhkey);
++
+ 	char const * sslCAPath = getStrConf(CAPATH);
+ 	if(sslCAPath != NULL)
+ 	{
+@@ -261,12 +243,6 @@ void SSLi_init(void)
  	}
  
  	SSL_initializeCert();

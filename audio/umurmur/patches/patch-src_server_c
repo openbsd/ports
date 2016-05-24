@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_server_c,v 1.4 2015/07/24 15:03:38 dcoppa Exp $
+$OpenBSD: patch-src_server_c,v 1.5 2016/05/24 09:13:14 dcoppa Exp $
 
 commit c2eec4582ad6f5f759d8b9a3c7f9bf78aa59f656
 Author: Felix Morgner <felix.morgner@gmail.com>
@@ -12,8 +12,14 @@ Date:   Sun Jul 12 12:34:18 2015 +0300
 
 Null pointer references
 
+commit d723b45fc42e04b9179ba29c65efc9484ec2924c
+Author: Patrick Mooney <pmooney@pfmooney.com>
+Date:   Sun Feb 21 02:11:34 2016 -0600
+
+Fix size of value passed to setsockopt
+
 --- src/server.c.orig	Sat Jun 20 00:58:46 2015
-+++ src/server.c	Fri Jul 24 16:51:57 2015
++++ src/server.c	Tue May 24 10:20:55 2016
 @@ -95,15 +95,22 @@ void checkIPversions()
  struct sockaddr_storage** Server_setupAddressesAndPorts()
  {
@@ -39,3 +45,12 @@ Null pointer references
  #endif
  
  	int error = 0;
+@@ -208,7 +215,7 @@ void Server_runLoop(struct pollfd* pollfds)
+ 
+ void Server_setupTCPSockets(struct sockaddr_storage* addresses[2], struct pollfd* pollfds)
+ {
+-	uint8_t yes = 1;
++	int yes = 1;
+ 	int sockets[2];
+ 
+ 	if (hasv4) {
