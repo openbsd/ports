@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/23 21:14:35 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/24 18:01:36 edd Exp $
 
 COMMENT =		freezes a Flask application into a set of static files
 
@@ -25,7 +25,8 @@ RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 post-build:
-	cd ${WRKBUILD}/docs && ${MODPY_BIN} -m sphinx . html
+	cd ${WRKBUILD}/docs && \
+		env PYTHONPATH=${WRKSRC} ${MODPY_BIN} -m sphinx . html
 
 DOCS_DIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}frozen-flask
 post-install:
