@@ -1,4 +1,4 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.7 2014/12/14 08:32:55 rpointel Exp $
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.8 2016/05/24 09:57:50 sthen Exp $
 
 - test_bsddb and test_bsddb3 are in the list below as they are only available
   on i386 and amd64.
@@ -30,12 +30,13 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.7 2014/12/14 08:32:55 rpointel Exp $
          """,
      'netbsd3':
          """
-@@ -1469,6 +1463,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
+@@ -1469,6 +1463,9 @@ _expectations['freebsd5'] = _expectations['freebsd4']
  _expectations['freebsd6'] = _expectations['freebsd4']
  _expectations['freebsd7'] = _expectations['freebsd4']
  _expectations['freebsd8'] = _expectations['freebsd4']
 +_expectations['openbsd4'] = _expectations['openbsd3']
 +_expectations['openbsd5'] = _expectations['openbsd3']
++_expectations['openbsd6'] = _expectations['openbsd3']
  
  class _ExpectedSkips:
      def __init__(self):
