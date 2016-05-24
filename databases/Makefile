@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2016/05/17 11:26:14 jca Exp $
+# $OpenBSD: Makefile,v 1.311 2016/05/24 00:21:41 jturner Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -22,6 +22,7 @@
      SUBDIR += hs-resource-pool
      SUBDIR += iodbc
      SUBDIR += jxplorer
+     SUBDIR += ksql
      SUBDIR += kyotocabinet
      SUBDIR += lbdb
      SUBDIR += leveldb
