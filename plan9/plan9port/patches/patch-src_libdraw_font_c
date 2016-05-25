@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_libdraw_font_c,v 1.1 2016/05/25 15:49:21 okan Exp $
+
+# https://plan9port-review.googlesource.com/#/c/1520/
+
+--- src/libdraw/font.c.orig	Fri Jan 22 19:52:32 2016
++++ src/libdraw/font.c	Tue Apr  5 21:29:31 2016
+@@ -222,16 +222,14 @@ loadchar(Font *f, Rune r, Cacheinfo *c, int h, int nof
+ 			subf->age = 0;
+ 		}else{				/* too recent; grow instead */
+ 			of = f->subf;
+-			f->subf = malloc((f->nsubf+DSUBF)*sizeof *subf);
++			f->subf = reallocarray(of, f->nsubf+DSUBF, sizeof *subf);
+ 			if(f->subf == nil){
+ 				f->subf = of;
+ 				goto Toss;
+ 			}
+-			memmove(f->subf, of, (f->nsubf+DSUBF)*sizeof *subf);
+ 			memset(f->subf+f->nsubf, 0, DSUBF*sizeof *subf);
+ 			subf = &f->subf[f->nsubf];
+ 			f->nsubf += DSUBF;
+-			free(of);
+ 		}
+ 	}
+ 	subf->age = 0;

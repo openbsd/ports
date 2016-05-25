@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cmd_9term_win_c,v 1.1 2016/05/25 15:49:21 okan Exp $
+
+# https://plan9port-review.googlesource.com/#/c/1540/
+
+--- src/cmd/9term/win.c.orig	Tue Apr 19 02:07:22 2016
++++ src/cmd/9term/win.c	Mon May 23 22:28:05 2016
+@@ -634,7 +634,7 @@ label(char *sr, int n)
+ 
+ 	el = r+1;
+ 	if(el-sr > sizeof wdir - strlen(name) - 20)
+-		sr = el - sizeof wdir - strlen(name) - 20;
++		sr = el - (sizeof wdir - strlen(name) - 20);
+ 	for(sl=el-3; sl>=sr; sl--)
+ 		if(sl[0]=='\033' && sl[1]==']' && sl[2]==';')
+ 			break;
