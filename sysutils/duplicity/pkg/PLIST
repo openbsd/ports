@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/01/17 05:30:31 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/05/25 17:41:36 danj Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.6-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/duplicity-0.7.7.1-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/_librsync.so
@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_cloudfiles.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_cloudfiles.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/acdclibackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/acdclibackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/azurebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/azurebackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/b2backend.py
@@ -52,6 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/lftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/lftpbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/mediafirebackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/mediafirebackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/multibackend.py
@@ -107,6 +111,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/filechunkio.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/filechunkio.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/globals.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/globals.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/globmatch.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/globmatch.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpg.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpg.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpginterface.py
@@ -140,6 +146,11 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/util.pyc
 @man man/man1/duplicity.1
 @man man/man1/rdiffdir.1
 share/locale/bg/LC_MESSAGES/duplicity.mo
+share/locale/ca/LC_MESSAGES/duplicity.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/duplicity.mo
+share/locale/cs/LC_MESSAGES/duplicity.mo
 share/locale/de/LC_MESSAGES/duplicity.mo
 share/locale/el/LC_MESSAGES/duplicity.mo
 share/locale/en_AU/
@@ -150,7 +161,9 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/duplicity.mo
 share/locale/eo/LC_MESSAGES/duplicity.mo
 share/locale/es/LC_MESSAGES/duplicity.mo
+share/locale/fi/LC_MESSAGES/duplicity.mo
 share/locale/fr/LC_MESSAGES/duplicity.mo
+share/locale/gl/LC_MESSAGES/duplicity.mo
 share/locale/he/LC_MESSAGES/duplicity.mo
 share/locale/hu/LC_MESSAGES/duplicity.mo
 share/locale/id/LC_MESSAGES/duplicity.mo
@@ -158,6 +171,13 @@ share/locale/io/
 share/locale/io/LC_MESSAGES/
 share/locale/io/LC_MESSAGES/duplicity.mo
 share/locale/it/LC_MESSAGES/duplicity.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/duplicity.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/duplicity.mo
+share/locale/nl/LC_MESSAGES/duplicity.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/duplicity.mo
@@ -175,4 +195,5 @@ share/locale/tr/LC_MESSAGES/duplicity.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/duplicity.mo
+share/locale/uk/LC_MESSAGES/duplicity.mo
 share/locale/zh_CN/LC_MESSAGES/duplicity.mo

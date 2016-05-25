@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.36 2016/02/22 18:45:53 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2016/05/25 17:41:36 danj Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.06
+MODPY_EGG_VERSION = 0.7.07.1
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION = 0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.nongnu.org/duplicity/
+
+MAINTAINER =	Daniel Jakots <obsd@chown.me>
+
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=duplicity/}
 
 # GPLv2
@@ -38,5 +40,8 @@ MODPY_ADJ_FILES = bin/duplicity bin/rdiffdir
 # Some regression tests are hanging
 # TEST_DEPENDS =	devel/py-mock
 NO_TEST =	Yes
+
+post-extract:
+	chmod 644 ${WRKSRC}/bin/*.1
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.4 2016/02/22 18:45:53 jca Exp $
+$OpenBSD: patch-bin_duplicity_1,v 1.5 2016/05/25 17:41:36 danj Exp $
 Document the ssh backend change from paramiko to pexpect.
---- bin/duplicity.1.orig	Mon Dec  7 12:03:39 2015
-+++ bin/duplicity.1	Thu Dec 24 19:56:18 2015
-@@ -432,7 +432,7 @@ should be given relative to the root of the directory 
+--- bin/duplicity.1.orig	Tue Apr 19 13:38:57 2016
++++ bin/duplicity.1	Mon Apr 25 17:23:16 2016
+@@ -434,7 +434,7 @@ should be given relative to the root of the directory 
  
  
  .TP
@@ -11,7 +11,7 @@ Document the ssh backend change from paramiko to pexpect.
  Adds a prefix to all files, manifest files, archive files, and/or signature files.
  
  The same set of prefixes must be passed in on backup and restore.
-@@ -850,7 +850,6 @@ currently supports only the
+@@ -852,7 +852,6 @@ currently supports only the
  or
  .B -oIdentityFile
  setting. If needed provide more host specific options via ssh_config file.
@@ -19,12 +19,3 @@ Document the ssh backend change from paramiko to pexpect.
  
  .TP
  .BI "--ssl-cacert-file " file
-@@ -1471,7 +1470,7 @@ which aren't followed by 'foo'.  However, it wouldn't 
- if /home/ben/1234567 existed.
- 
- .SH A NOTE ON AZURE ACCESS
--The Azure backend requires the Microsoft Azure Storage SDK for Python to be 
-+The Azure backend requires the Microsoft Azure Storage SDK for Python to be
- installed on the system.
- See
- .B REQUIREMENTS
