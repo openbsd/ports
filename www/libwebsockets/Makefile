@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/05/03 15:34:35 awolk Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/25 16:40:13 awolk Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
 GH_ACCOUNT =		warmcat
 GH_PROJECT =		libwebsockets
-V =			1.7.7
+V =			1.7.8
 GH_TAGNAME =		v$V
 
 SHARED_LIBS =		websockets 5.0 # 7
