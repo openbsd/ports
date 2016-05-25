@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.62 2016/04/02 15:03:37 benoit Exp $
+$OpenBSD: patch-Makefile,v 1.63 2016/05/25 07:13:05 benoit Exp $
 
 No need for librt on OpenBSD
 
 Workaround for ar(1) not having 's' on VAX by calling ranlib
 
---- Makefile.orig	Mon Mar 28 22:17:31 2016
-+++ Makefile	Sat Apr  2 16:49:57 2016
-@@ -1471,7 +1471,6 @@ endif
+--- Makefile.orig	Thu May 19 19:17:58 2016
++++ Makefile	Wed May 25 08:57:19 2016
+@@ -1465,7 +1465,6 @@ endif
  
  ifdef HAVE_CLOCK_GETTIME
  	BASIC_CFLAGS += -DHAVE_CLOCK_GETTIME
@@ -14,7 +14,7 @@ Workaround for ar(1) not having 's' on VAX by calling ranlib
  endif
  
  ifdef HAVE_CLOCK_MONOTONIC
-@@ -2032,13 +2031,13 @@ $(REMOTE_CURL_PRIMARY): remote-curl.o http.o http-walk
+@@ -2026,13 +2025,13 @@ $(REMOTE_CURL_PRIMARY): remote-curl.o http.o http-walk
  		$(CURL_LIBCURL) $(EXPAT_LIBEXPAT) $(LIBS)
  
  $(LIB_FILE): $(LIB_OBJS)
@@ -31,7 +31,7 @@ Workaround for ar(1) not having 's' on VAX by calling ranlib
  
  export DEFAULT_EDITOR DEFAULT_PAGER
  
-@@ -2223,7 +2222,7 @@ export TEST_NO_MALLOC_CHECK
+@@ -2217,7 +2216,7 @@ export TEST_NO_MALLOC_CHECK
  
  ### Testing rules
  
