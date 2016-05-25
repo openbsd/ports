@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/05/25 07:51:51 benoit Exp $
 
 COMMENT =	analyze C source files and print a call graph
 
-DISTNAME =	cflow-1.4
-REVISION =	0
+DISTNAME =	cflow-1.5
 CATEGORIES =	devel
 
 HOMEPAGE =	https://www.gnu.org/software/cflow/
@@ -13,11 +12,11 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =		c
+WANTLIB =		c iconv intl
 
 MASTER_SITES =		${MASTER_SITE_GNU:=cflow/}
 
-MODULES =		devel/gettext
+LIB_DEPENDS =		devel/gettext
 
 MAKE_FLAGS =		LIBINTL="-L${LOCALBASE}/lib -liconv -lintl"
 
