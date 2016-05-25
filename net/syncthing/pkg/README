@@ -1,8 +1,16 @@
-$OpenBSD: README,v 1.1.1.1 2016/04/21 19:01:31 edd Exp $
+$OpenBSD: README,v 1.2 2016/05/25 13:41:43 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Compatibility
+=============
+
+Please note that not all versions of Syncthing are compatible. The
+second number in the release string must match. E.g. 0.12.x is not
+compatible with 0.13.x. If you mismatch the versions, hosts will fail to
+discover each other.
 
 Starting Syncthing
 ==================

@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_go,v 1.1 2016/05/11 09:35:26 czarkoff Exp $
---- build.go.orig	Wed May 11 00:53:47 2016
-+++ build.go	Wed May 11 00:55:06 2016
-@@ -213,7 +213,7 @@ func install(pkg string, tags []string) {
+$OpenBSD: patch-build_go,v 1.2 2016/05/25 13:41:43 edd Exp $
+--- build.go.orig	Mon May 23 22:35:03 2016
++++ build.go	Mon May 23 22:35:42 2016
+@@ -311,7 +311,7 @@ func install(target target, tags []string) {
  		log.Fatal(err)
  	}
  	os.Setenv("GOBIN", filepath.Join(cwd, "bin"))
@@ -10,10 +10,10 @@ $OpenBSD: patch-build_go,v 1.1 2016/05/11 09:35:26 czarkoff Exp $
  	if len(tags) > 0 {
  		args = append(args, "-tags", strings.Join(tags, ","))
  	}
-@@ -232,7 +232,7 @@ func build(pkg string, tags []string) {
- 	}
+@@ -329,7 +329,7 @@ func build(target target, tags []string) {
+ 	lazyRebuildAssets()
  
- 	rmr(binary)
+ 	rmr(target.binaryName)
 -	args := []string{"build", "-i", "-v", "-ldflags", ldflags()}
 +	args := []string{"build", "-i", "-v", "-x", "-ldflags", ldflags()}
  	if len(tags) > 0 {
