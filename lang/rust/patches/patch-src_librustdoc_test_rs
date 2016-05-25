@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.1 2016/05/25 06:39:35 semarie Exp $
+fallback to CFG_PREFIX as default sysroot.
+--- src/librustdoc/test.rs.orig	Mon Apr 11 23:22:04 2016
++++ src/librustdoc/test.rs	Mon May 16 21:01:26 2016
+@@ -64,9 +64,16 @@ pub fn run(input: &str,
+     let input_path = PathBuf::from(input);
+     let input = config::Input::File(input_path.clone());
+ 
++    let sysroot = match env::current_exe().ok() {
++        Some(mut p) => { p.pop(); p.pop(); p }
++        None => match option_env!("CFG_PREFIX") {
++            Some(dir) => PathBuf::from(dir),
++            None => panic!("can't determine value for sysroot"),
++        }
++    };
++
+     let sessopts = config::Options {
+-        maybe_sysroot: Some(env::current_exe().unwrap().parent().unwrap()
+-                                              .parent().unwrap().to_path_buf()),
++        maybe_sysroot: Some(sysroot),
+         search_paths: libs.clone(),
+         crate_types: vec!(config::CrateTypeDylib),
+         externs: externs.clone(),
+@@ -187,9 +194,16 @@ fn runtest(test: &str, cratename: &str, cfgs: Vec<Stri
+     let mut outputs = HashMap::new();
+     outputs.insert(OutputType::Exe, None);
+ 
++    let sysroot = match env::current_exe().ok() {
++        Some(mut p) => { p.pop(); p.pop(); p }
++        None => match option_env!("CFG_PREFIX") {
++            Some(dir) => PathBuf::from(dir),
++            None => panic!("can't determine value for sysroot"),
++        }
++    };
++
+     let sessopts = config::Options {
+-        maybe_sysroot: Some(env::current_exe().unwrap().parent().unwrap()
+-                                              .parent().unwrap().to_path_buf()),
++        maybe_sysroot: Some(sysroot),
+         search_paths: libs,
+         crate_types: vec!(config::CrateTypeExecutable),
+         output_types: outputs,

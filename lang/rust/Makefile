@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/09 14:08:41 semarie Exp $
+# $OpenBSD: Makefile,v 1.22 2016/05/25 06:39:35 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,7 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.8.0
 RUST_HASH =		4fda350b
 DISTNAME =		rustc-${V}-src
-REVISION =		0
+REVISION =		1
 
 SUBST_VARS +=		RUST_HASH
 
@@ -127,11 +127,5 @@ post-configure:
 post-install:
 	# cleanup
 	rm ${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version}
-	# host binary wrapper
-	${INSTALL_PROGRAM_DIR} \
-		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
-	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
-	${SUBST_PROGRAM} -c \
-		files/rustc ${PREFIX}/bin/rustc
 	
 .include <bsd.port.mk>

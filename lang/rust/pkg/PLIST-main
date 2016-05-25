@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/03/05 15:05:33 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2016/05/25 06:39:35 semarie Exp $
 bin/rust-gdb
-bin/rustc
+@bin bin/rustc
 @bin bin/rustdoc
 lib/libarena-${RUST_HASH}.so
 lib/libflate-${RUST_HASH}.so
@@ -43,8 +43,6 @@ lib/rustlib/manifest-rust-docs
 lib/rustlib/manifest-rust-std-${TRIPLE_ARCH}
 lib/rustlib/manifest-rustc
 lib/rustlib/${TRIPLE_ARCH}/
-lib/rustlib/${TRIPLE_ARCH}/bin/
-@bin lib/rustlib/${TRIPLE_ARCH}/bin/rustc
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc_system-${RUST_HASH}.rlib

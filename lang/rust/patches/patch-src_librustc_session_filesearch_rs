@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_librustc_session_filesearch_rs,v 1.1 2016/05/25 06:39:35 semarie Exp $
+fallback to CFG_PREFIX as default sysroot.
+--- src/librustc/session/filesearch.rs.orig	Fri May  6 06:30:18 2016
++++ src/librustc/session/filesearch.rs	Fri May  6 06:31:04 2016
+@@ -162,7 +162,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
+ 
+     match canonicalize(env::current_exe().ok()) {
+         Some(mut p) => { p.pop(); p.pop(); p }
+-        None => panic!("can't determine value for sysroot")
++        None => match option_env!("CFG_PREFIX") {
++            Some(dir) => PathBuf::from(dir),
++            None => panic!("can't determine value for sysroot"),
++        }
+     }
+ }
+ 
