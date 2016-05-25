@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/04/26 10:53:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/05/25 06:55:53 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -71,6 +71,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ip6tables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ipfilter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ipnat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/iptables.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/json_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/kernel_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/linux_audit_system.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/linux_kernel_parameter.rb
@@ -121,6 +122,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/default_gateway_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/host_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/base/json_file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/mail_alias_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/mysql_config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/package_spec.rb
