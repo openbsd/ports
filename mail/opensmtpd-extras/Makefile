@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/05/19 02:50:05 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/26 20:12:44 jung Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -9,7 +9,7 @@ COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 COMMENT-spamassassin=	extras with spamassassin support for smtpd
 
-V=			201605182041
+V=			201605232202
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-clamav=		opensmtpd-extras-clamav-${V}
@@ -24,7 +24,8 @@ CATEGORIES=		mail
 
 HOMEPAGE=		https://www.opensmtpd.org/
 
-MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>, \
+			Joerg Jung <jung@openbsd.org>
 
 MULTI_PACKAGES=		-main -clamav -lua -mysql -pgsql -python -redis \
 			-spamassassin
