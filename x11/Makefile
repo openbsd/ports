@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.571 2016/05/05 19:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.572 2016/05/26 17:53:12 jung Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -241,6 +241,7 @@
      SUBDIR += sakura
      SUBDIR += sawfish
      SUBDIR += sclock
+     SUBDIR += sct
      SUBDIR += sisctrl
      SUBDIR += skippy
      SUBDIR += sliderule
