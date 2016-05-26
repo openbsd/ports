@@ -1,0 +1,28 @@
+$OpenBSD: patch-impacket_smb3_py,v 1.1 2016/05/26 09:29:23 dcoppa Exp $
+
+commit df4c95522d406455011e9f77c699fb84db891d1d
+Author: R_mi R_rolle <remi.rerolle@gmail.com>
+Date:   Wed Mar 23 17:54:45 2016 +0100
+
+SMB3.create: define CreateContextsOffset and CreateContextsLength when applicable
+
+When providing createContexts in a SMB3 create call, the buffer is set
+accordingly, but not the offset and length fields. This causes the createContext
+data to be ignored by the server.
+
+This patch tries to fix this by specifying the offset and length. The offset is
+determined by adding the size of the SMB2 and CREATE_REQUEST headers to the
+name length.
+
+--- impacket/smb3.py.orig	Wed Jan  6 09:57:14 2016
++++ impacket/smb3.py	Wed May 25 08:47:41 2016
+@@ -918,6 +918,9 @@ class SMB3:
+ 
+         if createContexts is not None:
+             smb2Create['Buffer'] += createContexts
++            # Offset = SMB2_HEADER (64) + CREATE_REQUEST_HEADER (56) + NameLength
++            smb2Create['CreateContextsOffset'] = 64 + 56 + smb2Create['NameLength']
++            smb2Create['CreateContextsLength'] = len(createContexts)
+         else:
+             smb2Create['CreateContextsOffset'] = 0
+             smb2Create['CreateContextsLength'] = 0

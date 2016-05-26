@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/12 10:22:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2016/05/26 09:29:23 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.13
+MODPY_EGG_VERSION =	0.9.14
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
@@ -32,7 +32,8 @@ NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \
-		${WRKSRC}/examples/nmapAnswerMachine.py
+		${WRKSRC}/examples/nmapAnswerMachine.py \
+		${WRKSRC}/examples/raiseChild.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-impacket

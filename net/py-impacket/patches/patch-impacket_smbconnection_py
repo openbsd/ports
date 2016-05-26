@@ -1,0 +1,19 @@
+$OpenBSD: patch-impacket_smbconnection_py,v 1.1 2016/05/26 09:29:23 dcoppa Exp $
+
+commit e42d8e183a8766d49c799348db17b9d0e656ec0a
+Author: byt3bl33d3r <byt3bl33d3r@gmail.com>
+Date:   Tue Mar 29 23:43:31 2016 -0600
+
+Fixed while loop in smbconnection.read() when STATUS_END_OF_FILE is received
+
+--- impacket/smbconnection.py.orig	Wed May 25 08:51:26 2016
++++ impacket/smbconnection.py	Wed May 25 08:51:58 2016
+@@ -483,7 +483,7 @@ class SMBConnection:
+             except (smb.SessionError, smb3.SessionError), e:
+                 if e.get_error_code() == nt_errors.STATUS_END_OF_FILE:
+                     toRead = ''
+-                    pass
++                    break
+                 else:
+                     raise SessionError(e.get_error_code())
+ 

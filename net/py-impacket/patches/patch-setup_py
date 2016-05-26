@@ -1,14 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.4 2016/01/12 10:22:32 dcoppa Exp $
+$OpenBSD: patch-setup_py,v 1.5 2016/05/26 09:29:23 dcoppa Exp $
 --- setup.py.orig	Mon May  4 17:17:36 2015
 +++ setup.py	Thu Jun  4 09:25:06 2015
 @@ -21,9 +21,6 @@ setup(name = PACKAGE_NAME,
        platforms = ["Unix","Windows"],
        packages = ['impacket', 'impacket.dcerpc', 'impacket.examples', 'impacket.dcerpc.v5', 'impacket.dcerpc.v5.dcom', 'impacket.krb5'],
        scripts = glob.glob(os.path.join('examples', '*.py')),
--      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README', 'LICENSE']+glob.glob('doc/*')),
+-      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README.md', 'LICENSE']+glob.glob('doc/*')),
 -                    (os.path.join('share', 'doc', PACKAGE_NAME, 'testcases', 'dot11'),glob.glob('impacket/testcases/dot11/*')),
 -                    (os.path.join('share', 'doc', PACKAGE_NAME, 'testcases', 'ImpactPacket'),glob.glob('impacket/testcases/ImpactPacket/*')),
 -                    (os.path.join('share', 'doc', PACKAGE_NAME, 'testcases', 'SMB_RPC'),glob.glob('impacket/testcases/SMB_RPC/*'))],
-+      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README', 'LICENSE']+glob.glob('doc/*'))],
++      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README.md', 'LICENSE']+glob.glob('doc/*'))],
        requires=['pycrypto (>=2.6)', 'pyasn1 (>=0.1.7)'],
        )

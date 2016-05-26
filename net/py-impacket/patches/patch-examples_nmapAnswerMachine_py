@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.5 2016/01/12 10:22:32 dcoppa Exp $
---- examples/nmapAnswerMachine.py.orig	Sat Apr 25 19:41:23 2015
-+++ examples/nmapAnswerMachine.py	Thu Jun  4 09:25:06 2015
+$OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.6 2016/05/26 09:29:23 dcoppa Exp $
+--- examples/nmapAnswerMachine.py.orig	Sun May 24 17:21:17 2015
++++ examples/nmapAnswerMachine.py	Thu May 26 02:34:28 2016
 @@ -15,11 +15,11 @@ from impacket.examples import logger
  
  MAC = "01:02:03:04:05:06"
@@ -15,9 +15,11 @@ $OpenBSD: patch-examples_nmapAnswerMachine_py,v 1.5 2016/01/12 10:22:32 dcoppa E
  
  # Fingerprint = 'Adtran NetVanta 3200 router' # CD=Z TOSI=Z <----------- NMAP detects it as Linux!!!
  # Fingerprint = 'ADIC Scalar 1000 tape library remote management unit' # DFI=S
-@@ -1121,4 +1121,4 @@ if __name__ == '__main__':
+@@ -1122,5 +1122,5 @@ if __name__ == '__main__':
+ # [-] ??? (TOS) Type of Service
  # [-] ??? (RUL) Length of return UDP packet is correct
  
- # sudo nmap -O 127.0.0.2 -p 22,111,89
+-# sudo nmap -O 127.0.0.2 -p 22,111,89
 -# sudo python nmapAnswerMachine.py -i eth0 -p 192.168.66.254 -f 'Sun Solaris 9 (SPARC)'
-+# sudo ${MODPY_BIN} nmapAnswerMachine.py -i em0 -p 192.168.66.254 -f 'Sun Solaris 9 (SPARC)'
++# doas nmap -O 127.0.0.2 -p 22,111,89
++# doas ${MODPY_BIN} nmapAnswerMachine.py -i em0 -p 192.168.66.254 -f 'Sun Solaris 9 (SPARC)'

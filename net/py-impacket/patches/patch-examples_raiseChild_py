@@ -1,0 +1,74 @@
+$OpenBSD: patch-examples_raiseChild_py,v 1.3 2016/05/26 09:29:23 dcoppa Exp $
+
+commit f8b900f2a8adae3dbfb79c123f76f2b57a2022a3
+Author: asolino <bethus@gmail.com>
+Date:   Fri May 6 14:56:46 2016 -0300
+
+Fix ERROR_DS_DIFFERENT_REPL_EPOCHS when running against a domain
+with dwReplEpoch != 0
+
+commit 8d8aab419fa17ce7d922a307f1c7ed0ed8e0b130
+Author: asolino <bethus@gmail.com>
+Date:   Sun May 15 18:47:15 2016 -0300
+
+Fix empty domain check
+
+--- examples/raiseChild.py.orig	Wed Jan  6 09:54:29 2016
++++ examples/raiseChild.py	Wed May 25 09:10:06 2016
+@@ -838,6 +838,25 @@ class RAISECHILD:
+         request['pextClient']['rgb'] = list(str(drs))
+         resp = self.__drsr.request(request)
+ 
++        # Let's dig into the answer to check the dwReplEpoch. This field should match the one we send as part of
++        # DRSBind's DRS_EXTENSIONS_INT(). If not, it will fail later when trying to sync data.
++        drsExtensionsInt = drsuapi.DRS_EXTENSIONS_INT()
++
++        # If dwExtCaps is not included in the answer, let's just add it so we can unpack DRS_EXTENSIONS_INT right.
++        ppextServer = ''.join(resp['ppextServer']['rgb']) + '\x00' * (
++        len(drsuapi.DRS_EXTENSIONS_INT()) - resp['ppextServer']['cb'])
++        drsExtensionsInt.fromString(ppextServer)
++
++        if drsExtensionsInt['dwReplEpoch'] != 0:
++            # Different epoch, we have to call DRSBind again
++            if logging.getLogger().level == logging.DEBUG:
++                logging.debug("DC's dwReplEpoch != 0, setting it to %d and calling DRSBind again" % drsExtensionsInt[
++                    'dwReplEpoch'])
++            drs['dwReplEpoch'] = drsExtensionsInt['dwReplEpoch']
++            request['pextClient']['cb'] = len(drs)
++            request['pextClient']['rgb'] = list(str(drs))
++            resp = self.__drsr.request(request)
++
+         self.__hDrs = resp['phDrs']
+ 
+         # Now let's get the NtdsDsaObjectGuid UUID to use when querying NCChanges
+@@ -1397,16 +1416,16 @@ if __name__ == '__main__':
+     if len(sys.argv)==1:
+         parser.print_help()
+         print "\nExamples: "
+-        print "\tpython raiseChild.py childDomain.net/adminuser\n"
++        print "\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser\n"
+         print "\tthe password will be asked, or\n"
+-        print "\tpython raiseChild.py childDomain.net/adminuser:mypwd\n"
++        print "\t${MODPY_BIN} raiseChild.py childDomain.net/adminuser:mypwd\n"
+         print "\tor if you just have the hashes\n"
+-        print "\tpython raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n"
++        print "\t${MODPY_BIN} raiseChild.py -hashes LMHASH:NTHASH childDomain.net/adminuser\n"
+ 
+         print "\tThis will perform the attack and then psexec against target-exec as Enterprise Admin"
+-        print "\tpython raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n"
++        print "\t${MODPY_BIN} raiseChild.py -target-exec targetHost childDomainn.net/adminuser\n"
+         print "\tThis will save the final goldenTicket generated in the ccache target file"
+-        print "\tpython raiseChild.py -w ccache childDomain.net/adminuser\n"
++        print "\t${MODPY_BIN} raiseChild.py -w ccache childDomain.net/adminuser\n"
+         sys.exit(1)
+  
+     options = parser.parse_args()
+@@ -1427,7 +1446,7 @@ if __name__ == '__main__':
+     else:
+         logging.getLogger().setLevel(logging.INFO)
+ 
+-    if domain is None:
++    if domain is '':
+         logging.critical('Domain should be specified!')
+         sys.exit(1)
+ 

@@ -1,6 +1,13 @@
-$OpenBSD: patch-examples_goldenPac_py,v 1.2 2016/01/12 10:22:32 dcoppa Exp $
---- examples/goldenPac.py.orig	Mon Jan 11 09:53:27 2016
-+++ examples/goldenPac.py	Mon Jan 11 09:55:11 2016
+$OpenBSD: patch-examples_goldenPac_py,v 1.3 2016/05/26 09:29:23 dcoppa Exp $
+
+commit b6f28459970a4fc0a63dce9323da97287ada1322
+Author: asolino <bethus@gmail.com>
+Date:   Sun May 15 18:46:20 2016 -0300
+
+Fix empty domain check
+
+--- examples/goldenPac.py.orig	Wed Jan  6 09:43:25 2016
++++ examples/goldenPac.py	Wed May 25 09:08:30 2016
 @@ -20,10 +20,10 @@
  #   5) Use WMIEXEC approach instead
  #
@@ -14,7 +21,7 @@ $OpenBSD: patch-examples_goldenPac_py,v 1.2 2016/01/12 10:22:32 dcoppa Exp $
  #
  #       if domain.net and/or domain-host do not resolve, add them
  #       to the hosts file or use the -dc-ip and -target-ip parameters
-@@ -1126,14 +1126,14 @@ if __name__ == '__main__':
+@@ -1262,14 +1262,14 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
          print "\nExamples: "
@@ -33,3 +40,12 @@ $OpenBSD: patch-examples_goldenPac_py,v 1.2 2016/01/12 10:22:32 dcoppa Exp $
          sys.exit(1)
   
      options = parser.parse_args()
+@@ -1282,7 +1282,7 @@ if __name__ == '__main__':
+         password = password + '@' + address.rpartition('@')[0]
+         address = address.rpartition('@')[2]
+ 
+-    if domain is None:
++    if domain is '':
+         logging.critical('Domain should be specified!')
+         sys.exit(1)
+ 
