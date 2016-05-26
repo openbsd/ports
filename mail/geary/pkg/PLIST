@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/04/02 13:19:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/05/26 07:01:18 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -38,25 +38,6 @@ share/geary/sql/version-024.sql
 share/geary/theming/
 share/geary/theming/message-viewer.css
 share/geary/theming/message-viewer.html
-share/geary/ui/
-share/geary/ui/accelerators.ui
-share/geary/ui/account_cannot_remove.glade
-share/geary/ui/account_list.glade
-share/geary/ui/account_spinner.glade
-share/geary/ui/app_menu.interface
-share/geary/ui/certificate_warning_dialog.glade
-share/geary/ui/composer.glade
-share/geary/ui/composer_accelerators.ui
-share/geary/ui/edit_alternate_emails.glade
-share/geary/ui/find_bar.glade
-share/geary/ui/login.glade
-share/geary/ui/message.glade
-share/geary/ui/password-dialog.glade
-share/geary/ui/preferences.glade
-share/geary/ui/remove_confirm.glade
-share/geary/ui/toolbar_empty_menu.ui
-share/geary/ui/toolbar_mark_menu.ui
-share/geary/ui/upgrade_dialog.glade
 share/glib-2.0/schemas/org.yorba.geary.gschema.xml
 share/gnome/
 share/gnome/help/
@@ -181,6 +162,7 @@ share/icons/hicolor/scalable/actions/marker-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-rtl-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
+share/icons/hicolor/symbolic/apps/geary-symbolic.svg
 share/locale/ar/LC_MESSAGES/geary.mo
 share/locale/bs/LC_MESSAGES/geary.mo
 share/locale/ca/LC_MESSAGES/geary.mo
@@ -211,6 +193,7 @@ share/locale/lt/LC_MESSAGES/geary.mo
 share/locale/ms/LC_MESSAGES/geary.mo
 share/locale/nb/LC_MESSAGES/geary.mo
 share/locale/nl/LC_MESSAGES/geary.mo
+share/locale/oc/LC_MESSAGES/geary.mo
 share/locale/pl/LC_MESSAGES/geary.mo
 share/locale/pt/LC_MESSAGES/geary.mo
 share/locale/pt_BR/LC_MESSAGES/geary.mo
