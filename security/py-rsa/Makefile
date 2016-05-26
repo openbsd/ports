@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/29 17:44:29 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2016/05/26 09:57:47 ajacoutot Exp $
 
 COMMENT=		Python RSA implementation
 
-MODPY_EGG_VERSION=	3.4.1
+MODPY_EGG_VERSION=	3.4.2
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		security
 
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
