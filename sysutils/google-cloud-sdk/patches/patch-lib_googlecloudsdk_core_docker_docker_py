@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.3 2016/04/21 05:57:48 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.4 2016/05/26 12:05:25 ajacoutot Exp $
 --- lib/googlecloudsdk/core/docker/docker.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/docker/docker.py	Thu Apr 21 07:51:11 2016
-@@ -253,7 +253,7 @@ def EnsureDocker(func):
-       return func(*args, **kwargs)
-     except OSError as e:
-       if e.errno == errno.ENOENT:
--        raise exceptions.Error('Docker is not installed.')
-+        raise exceptions.Error('Docker is not available on OpenBSD.')
-       else:
-         raise
-   return DockerFunc
++++ lib/googlecloudsdk/core/docker/docker.py	Thu May 26 12:26:04 2016
+@@ -35,7 +35,7 @@ from googlecloudsdk.third_party.py27 import py27_subpr
+ 
+ _USERNAME = 'oauth2accesstoken'
+ _EMAIL = 'not@val.id'
+-_DOCKER_NOT_FOUND_ERROR = 'Docker is not installed.'
++_DOCKER_NOT_FOUND_ERROR = 'Docker is not available on OpenBSD.'
+ 
+ 
+ # Other tools like the python docker library (used by gcloud app)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/05/19 05:42:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/05/26 12:05:25 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -284,6 +284,15 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/importer.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/importer.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/exceptions.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/transforms.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/transforms.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/deployment_manager/runtime_configs/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/__init__.pyc
@@ -526,6 +535,16 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/container/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/base_commands.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/base_commands.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/__init__.pyc
@@ -2413,6 +2432,47 @@ google-cloud-sdk/lib/surface/deployment_manager/resources/describe.py
 google-cloud-sdk/lib/surface/deployment_manager/resources/describe.pyc
 google-cloud-sdk/lib/surface/deployment_manager/resources/list.py
 google-cloud-sdk/lib/surface/deployment_manager/resources/list.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/__init__.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/__init__.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/create.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/create.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/delete.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/delete.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/describe.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/describe.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/list.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/list.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/update.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/update.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/__init__.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/__init__.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/describe.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/describe.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/get_value.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/get_value.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/list.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/list.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/set.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/set.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/unset.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/unset.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/watch.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/variables/watch.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/__init__.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/__init__.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/create.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/create.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/delete.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/delete.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/describe.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/describe.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/list.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/list.pyc
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/wait.py
+google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/wait.pyc
 google-cloud-sdk/lib/surface/deployment_manager/types/
 google-cloud-sdk/lib/surface/deployment_manager/types/__init__.py
 google-cloud-sdk/lib/surface/deployment_manager/types/__init__.pyc
@@ -7450,8 +7510,14 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_container_clusters_get-credentials.1
 @man man/man1/gcloud_container_clusters_list.1
 @man man/man1/gcloud_container_clusters_resize.1
+@man man/man1/gcloud_container_clusters_update.1
 @man man/man1/gcloud_container_clusters_upgrade.1
 @man man/man1/gcloud_container_get-server-config.1
+@man man/man1/gcloud_container_node-pools.1
+@man man/man1/gcloud_container_node-pools_create.1
+@man man/man1/gcloud_container_node-pools_delete.1
+@man man/man1/gcloud_container_node-pools_describe.1
+@man man/man1/gcloud_container_node-pools_list.1
 @man man/man1/gcloud_container_operations.1
 @man man/man1/gcloud_container_operations_describe.1
 @man man/man1/gcloud_container_operations_list.1
