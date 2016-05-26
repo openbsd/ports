@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+include/KF5/KRunner/
+include/KF5/KRunner/KRunner/
+include/KF5/KRunner/KRunner/AbstractRunner
+include/KF5/KRunner/KRunner/QueryMatch
+include/KF5/KRunner/KRunner/RunnerContext
+include/KF5/KRunner/KRunner/RunnerManager
+include/KF5/KRunner/KRunner/RunnerSyntax
+include/KF5/KRunner/krunner/
+include/KF5/KRunner/krunner/abstractrunner.h
+include/KF5/KRunner/krunner/krunner_export.h
+include/KF5/KRunner/krunner/querymatch.h
+include/KF5/KRunner/krunner/runnercontext.h
+include/KF5/KRunner/krunner/runnermanager.h
+include/KF5/KRunner/krunner/runnersyntax.h
+include/KF5/krunner_version.h
+lib/cmake/KF5Runner/
+lib/cmake/KF5Runner/KF5RunnerConfig.cmake
+lib/cmake/KF5Runner/KF5RunnerConfigVersion.cmake
+lib/cmake/KF5Runner/KF5RunnerTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Runner/KF5RunnerTargets.cmake
+@lib lib/libKF5Runner.so.${LIBKF5Runner_VERSION}
+lib/qml/org/kde/runnermodel/
+lib/qml/org/kde/runnermodel/librunnermodelplugin.so
+lib/qml/org/kde/runnermodel/qmldir
+share/kdevappwizard/templates/runner.tar.bz2
+share/kf5/mkspecs/qt_KRunner.pri
+share/kservicetypes5/plasma-runner.desktop

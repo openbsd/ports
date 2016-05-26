@@ -1,0 +1,12 @@
+This library contains classes to improve the handling of icons
+in applications using the KDE Frameworks. Provided are:
+
+- KIconDialog: Dialog class to let the user select an icon
+    from the list of installed icons.
+- KIconButton: Custom button class that displays an icon.
+    When clicking it, the user can change it using the icon dialog.
+- KIconEffect: Applies various colorization effects to icons,
+    which can be used to create selected/disabled icon images.
+
+Other classes in this repository are used internally by the icon
+theme configuration dialogs, and should not be used by applications.

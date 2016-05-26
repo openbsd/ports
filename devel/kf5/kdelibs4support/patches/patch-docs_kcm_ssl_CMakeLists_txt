@@ -1,0 +1,8 @@
+$OpenBSD: patch-docs_kcm_ssl_CMakeLists_txt,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+De-conflict with kde-runtime-4.x.
+--- docs/kcm_ssl/CMakeLists.txt.orig	Tue Dec 29 12:16:48 2015
++++ docs/kcm_ssl/CMakeLists.txt	Tue Dec 29 12:16:55 2015
+@@ -1,2 +1,2 @@
+ ########### install files ###############
+-kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kcontrol/kcm_ssl)
++kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR kcontrol/kcm_ssl5)

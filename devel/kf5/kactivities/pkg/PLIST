@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+include/KF5/KActivities/
+include/KF5/KActivities/KActivities/
+include/KF5/KActivities/KActivities/ActivitiesModel
+include/KF5/KActivities/KActivities/Consumer
+include/KF5/KActivities/KActivities/Controller
+include/KF5/KActivities/KActivities/Info
+include/KF5/KActivities/KActivities/ResourceInstance
+include/KF5/KActivities/KActivities/Version
+include/KF5/KActivities/kactivities/
+include/KF5/KActivities/kactivities/activitiesmodel.h
+include/KF5/KActivities/kactivities/consumer.h
+include/KF5/KActivities/kactivities/controller.h
+include/KF5/KActivities/kactivities/info.h
+include/KF5/KActivities/kactivities/kactivities_export.h
+include/KF5/KActivities/kactivities/resourceinstance.h
+include/KF5/KActivities/kactivities/version.h
+include/KF5/kactivities_version.h
+lib/cmake/KF5Activities/
+lib/cmake/KF5Activities/KF5ActivitiesConfig.cmake
+lib/cmake/KF5Activities/KF5ActivitiesConfigVersion.cmake
+lib/cmake/KF5Activities/KF5ActivitiesLibraryTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Activities/KF5ActivitiesLibraryTargets.cmake
+@lib lib/libKF5Activities.so.${LIBKF5Activities_VERSION}
+lib/pkgconfig/libKActivities.pc
+lib/qml/org/kde/activities/
+lib/qml/org/kde/activities/libkactivitiesextensionplugin.so
+lib/qml/org/kde/activities/qmldir
+share/kf5/mkspecs/qt_KActivities.pri

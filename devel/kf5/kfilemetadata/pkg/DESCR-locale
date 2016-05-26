@@ -1,0 +1,3 @@
+This package contains localization files for KFileMetaData.  Localization files
+are separated from main package to avoid conflict with corresponding KDE 4
+package.

@@ -1,0 +1,8 @@
+This framework contains scripts and data for building KDE API
+documentation (dox) in a standard format and style.
+
+The Doxygen tool is used to do the actual documentation extraction and
+formatting, but this framework provides a wrapper script to make generating
+the documentation more convenient (including reading settings from the target
+framework or other module) and a standard template for the generated
+documentation.

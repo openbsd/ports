@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+include/KF5/
+include/KF5/KPlotting/
+include/KF5/KPlotting/KPlotAxis
+include/KF5/KPlotting/KPlotObject
+include/KF5/KPlotting/KPlotPoint
+include/KF5/KPlotting/KPlotWidget
+include/KF5/KPlotting/kplotaxis.h
+include/KF5/KPlotting/kplotobject.h
+include/KF5/KPlotting/kplotpoint.h
+include/KF5/KPlotting/kplotting_export.h
+include/KF5/KPlotting/kplotwidget.h
+include/KF5/kplotting_version.h
+lib/cmake/KF5Plotting/
+lib/cmake/KF5Plotting/KF5PlottingConfig.cmake
+lib/cmake/KF5Plotting/KF5PlottingConfigVersion.cmake
+lib/cmake/KF5Plotting/KF5PlottingTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Plotting/KF5PlottingTargets.cmake
+@lib lib/libKF5Plotting.so.${LIBKF5Plotting_VERSION}
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KPlotting.pri

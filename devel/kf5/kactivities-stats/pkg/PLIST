@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:59:00 zhuk Exp $
+include/KF5/KActivitiesStats/
+include/KF5/KActivitiesStats/KActivities/
+include/KF5/KActivitiesStats/KActivities/Stats/
+include/KF5/KActivitiesStats/KActivities/Stats/Cleaning
+include/KF5/KActivitiesStats/KActivities/Stats/Query
+include/KF5/KActivitiesStats/KActivities/Stats/ResultModel
+include/KF5/KActivitiesStats/KActivities/Stats/ResultSet
+include/KF5/KActivitiesStats/KActivities/Stats/ResultWatcher
+include/KF5/KActivitiesStats/KActivities/Stats/Terms
+include/KF5/KActivitiesStats/kactivitiesstats/
+include/KF5/KActivitiesStats/kactivitiesstats/cleaning.h
+include/KF5/KActivitiesStats/kactivitiesstats/kactivitiesstats_export.h
+include/KF5/KActivitiesStats/kactivitiesstats/query.h
+include/KF5/KActivitiesStats/kactivitiesstats/resultmodel.h
+include/KF5/KActivitiesStats/kactivitiesstats/resultset.h
+include/KF5/KActivitiesStats/kactivitiesstats/resultwatcher.h
+include/KF5/KActivitiesStats/kactivitiesstats/terms.h
+include/KF5/kactivitiesstats_version.h
+lib/cmake/KF5ActivitiesStats/
+lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfig.cmake
+lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfigVersion.cmake
+lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsLibraryTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsLibraryTargets.cmake
+@lib lib/libKF5ActivitiesStats.so.${LIBKF5ActivitiesStats_VERSION}
+lib/pkgconfig/libKActivitiesStats.pc
+share/kf5/mkspecs/qt_KActivitiesStats.pri

@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+include/KF5/
+include/KF5/KGuiAddons/
+include/KF5/KGuiAddons/KColorCollection
+include/KF5/KGuiAddons/KColorMimeData
+include/KF5/KGuiAddons/KColorUtils
+include/KF5/KGuiAddons/KDateValidator
+include/KF5/KGuiAddons/KFontUtils
+include/KF5/KGuiAddons/KIconUtils
+include/KF5/KGuiAddons/KImageCache
+include/KF5/KGuiAddons/KModifierKeyInfo
+include/KF5/KGuiAddons/KWordWrap
+include/KF5/KGuiAddons/kcolorcollection.h
+include/KF5/KGuiAddons/kcolormimedata.h
+include/KF5/KGuiAddons/kcolorutils.h
+include/KF5/KGuiAddons/kdatevalidator.h
+include/KF5/KGuiAddons/kfontutils.h
+include/KF5/KGuiAddons/kguiaddons_export.h
+include/KF5/KGuiAddons/kiconutils.h
+include/KF5/KGuiAddons/kimagecache.h
+include/KF5/KGuiAddons/klocalimagecacheimpl.h
+include/KF5/KGuiAddons/kmodifierkeyinfo.h
+include/KF5/KGuiAddons/kwordwrap.h
+include/KF5/kguiaddons_version.h
+lib/cmake/KF5GuiAddons/
+lib/cmake/KF5GuiAddons/KF5GuiAddonsConfig.cmake
+lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
+lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets.cmake
+@lib lib/libKF5GuiAddons.so.${LIBKF5GuiAddons_VERSION}
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KGuiAddons.pri

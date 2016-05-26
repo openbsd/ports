@@ -1,0 +1,4 @@
+The plasma framework provides the following:
+- QML components
+- A C++ library: libplasma
+- Script engines

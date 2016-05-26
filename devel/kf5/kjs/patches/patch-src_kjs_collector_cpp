@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_kjs_collector_cpp,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+Allow to build & run on OpenBSD.
+--- src/kjs/collector.cpp.orig	Sat Dec 26 19:52:01 2015
++++ src/kjs/collector.cpp	Sat Dec 26 20:03:18 2015
+@@ -513,6 +513,11 @@ static inline void *currentThreadStackBase()
+     static pthread_t stackThread;
+     pthread_t thread = pthread_self();
+     if (stackBase == 0 || thread != stackThread) {
++#if defined(__OpenBSD__)
++        stack_t sinfo;
++        pthread_stackseg_np(thread, &sinfo);
++        stackBase = sinfo.ss_sp;
++#else
+         pthread_attr_t sattr;
+ #if HAVE_PTHREAD_NP_H || defined(__NetBSD__)
+         // e.g. on FreeBSD 5.4, neundorf@kde.org
+@@ -530,6 +535,7 @@ static inline void *currentThreadStackBase()
+         pthread_attr_getstack(&sattr, &stackBase, &stackSize);
+         stackBase = (char *)stackBase + stackSize;      // a matter of interpretation, apparently...
+         pthread_attr_destroy(&sattr);
++#endif  // OpenBSD
+         assert(stackBase);
+         stackThread = thread;
+     }

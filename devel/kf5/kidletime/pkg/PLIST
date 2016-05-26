@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+include/KF5/
+include/KF5/KIdleTime/
+include/KF5/KIdleTime/KIdleTime
+include/KF5/KIdleTime/kidletime.h
+include/KF5/KIdleTime/kidletime_export.h
+include/KF5/KIdleTime/private/
+include/KF5/KIdleTime/private/abstractsystempoller.h
+include/KF5/kidletime_version.h
+lib/cmake/KF5IdleTime/
+lib/cmake/KF5IdleTime/KF5IdleTimeConfig.cmake
+lib/cmake/KF5IdleTime/KF5IdleTimeConfigVersion.cmake
+lib/cmake/KF5IdleTime/KF5IdleTimeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5IdleTime/KF5IdleTimeTargets.cmake
+lib/kf5/
+lib/qt5/plugins/
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
+@lib lib/libKF5IdleTime.so.${LIBKF5IdleTime_VERSION}
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KIdleTime.pri

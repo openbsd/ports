@@ -1,0 +1,9 @@
+kdeinit is a process launcher somewhat similar to the famous init used for
+booting UNIX.
+
+It launches processes by forking and then loading a dynamic library which
+should contain a 'kdemain(...)' function.
+
+Using kdeinit to launch KDE applications makes starting a typical KDE
+applications 2.5 times faster (100ms instead of 250ms on a P-III 500) It
+reduces memory consumption by approx. 350Kb per application.

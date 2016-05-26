@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+lib/qt5/plugins/imageformats/kimg_eps.so
+lib/qt5/plugins/imageformats/kimg_exr.so
+lib/qt5/plugins/imageformats/kimg_kra.so
+lib/qt5/plugins/imageformats/kimg_ora.so
+lib/qt5/plugins/imageformats/kimg_pcx.so
+lib/qt5/plugins/imageformats/kimg_pic.so
+lib/qt5/plugins/imageformats/kimg_psd.so
+lib/qt5/plugins/imageformats/kimg_ras.so
+lib/qt5/plugins/imageformats/kimg_rgb.so
+lib/qt5/plugins/imageformats/kimg_tga.so
+lib/qt5/plugins/imageformats/kimg_xcf.so
+share/kservices5/
+share/kservices5/qimageioplugins/
+share/kservices5/qimageioplugins/dds.desktop
+share/kservices5/qimageioplugins/eps.desktop
+share/kservices5/qimageioplugins/exr.desktop
+share/kservices5/qimageioplugins/jp2.desktop
+share/kservices5/qimageioplugins/kra.desktop
+share/kservices5/qimageioplugins/ora.desktop
+share/kservices5/qimageioplugins/pcx.desktop
+share/kservices5/qimageioplugins/pic.desktop
+share/kservices5/qimageioplugins/psd.desktop
+share/kservices5/qimageioplugins/ras.desktop
+share/kservices5/qimageioplugins/rgb.desktop
+share/kservices5/qimageioplugins/tga.desktop
+share/kservices5/qimageioplugins/xcf.desktop

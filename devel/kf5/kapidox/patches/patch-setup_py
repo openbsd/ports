@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+Correct manpages install location.
+--- setup.py.orig	Wed Dec 23 21:54:08 2015
++++ setup.py	Wed Dec 23 21:54:29 2015
+@@ -35,7 +35,7 @@ setup(
+             'src/depdiagram-generate-all',
+         ],
+         data_files= [
+-            (os.path.join('share', 'man', 'man1'), ['docs/kgenapidox.1',
++            (os.path.join('man', 'man1'), ['docs/kgenapidox.1',
+                 'docs/kgenframeworksapidox.1', 'docs/depdiagram-prepare.1',
+                 'docs/depdiagram-generate.1',
+                 'docs/depdiagram-generate-all.1'])],

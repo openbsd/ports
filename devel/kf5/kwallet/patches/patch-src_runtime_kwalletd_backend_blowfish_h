@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_h,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+Unbreak build.
+--- src/runtime/kwalletd/backend/blowfish.h.orig	Fri Nov 20 00:52:55 2015
++++ src/runtime/kwalletd/backend/blowfish.h	Fri Nov 20 00:55:01 2015
+@@ -54,13 +54,13 @@ class KWALLETBACKEND5_EXPORT BlowFish : public BlockCi
+     virtual int decrypt(void *block, int len);
+ 
+ private:
+-    uint32_t _S[4][256];
+-    uint32_t _P[18];
++    uint32_t S[4][256];
++    uint32_t Pm[18];
+ 
+-    void *_key;
+-    int _keylen;  // in bits
++    void *key;
++    int keylen;  // in bits
+ 
+-    bool _init;
++    bool initialized;
+ 
+     bool init();
+     uint32_t F(uint32_t x);

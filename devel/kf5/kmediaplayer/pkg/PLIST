@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+include/KF5/KMediaPlayer/
+include/KF5/KMediaPlayer/KMediaPlayer/
+include/KF5/KMediaPlayer/KMediaPlayer/Player
+include/KF5/KMediaPlayer/KMediaPlayer/View
+include/KF5/KMediaPlayer/kmediaplayer/
+include/KF5/KMediaPlayer/kmediaplayer/kmediaplayer_export.h
+include/KF5/KMediaPlayer/kmediaplayer/player.h
+include/KF5/KMediaPlayer/kmediaplayer/view.h
+include/KF5/kmediaplayer_version.h
+lib/cmake/KF5MediaPlayer/
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfig.cmake
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfigVersion.cmake
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5MediaPlayer/KF5MediaPlayerTargets.cmake
+@lib lib/libKF5MediaPlayer.so.${LIBKF5MediaPlayer_VERSION}
+share/dbus-1/interfaces/kf5_org.kde.KMediaPlayer.xml
+share/kservicetypes5/kmediaplayer.desktop
+share/kservicetypes5/kmediaplayerengine.desktop
