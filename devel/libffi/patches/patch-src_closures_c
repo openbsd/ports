@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_closures_c,v 1.1 2016/05/26 20:48:50 jca Exp $
+--- src/closures.c.orig	Mon May 23 20:34:13 2016
++++ src/closures.c	Mon May 23 20:35:56 2016
+@@ -525,6 +525,7 @@ dlmmap (void *start, size_t length, int prot,
+   printf ("mapping in %zi\n", length);
+ #endif
+ 
++#if 0
+   if (execfd == -1 && is_emutramp_enabled ())
+     {
+       ptr = mmap (start, length, prot & ~PROT_EXEC, flags, fd, offset);
+@@ -543,6 +544,7 @@ dlmmap (void *start, size_t length, int prot,
+ 	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
+ 	 MREMAP_DUP and prot at this point.  */
+     }
++#endif
+ 
+   if (execsize == 0 || execfd == -1)
+     {
