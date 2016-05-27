@@ -1,0 +1,3 @@
+It supports both client and server side of HTTP protocol. It also supports
+both client and server Web-Sockets out-of-the-box. The web-server has
+middlewares and pluggable routing.
