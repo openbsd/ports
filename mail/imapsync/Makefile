@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2016/05/27 15:48:50 tim Exp $
 
 GH_ACCOUNT =    imapsync
 GH_PROJECT =    imapsync
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.637
-REVISION =	0
+DISTNAME=	imapsync-1.678
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
