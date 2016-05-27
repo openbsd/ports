@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2016/05/27 02:44:00 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/05/27 03:44:26 zhuk Exp $
 
 CATEGORIES +=	multimedia
 
@@ -8,11 +8,13 @@ PERMIT_PACKAGE_CDROM =   Yes
 FLAVOR ?=
 .if ${FLAVOR:Mqt5}
 MODULES =		devel/kf5
+PKGNAME ?=		${DISTNAME:C/-backend/-qt5/}
 FULLPKGNAME ?=		${DISTNAME:C/-backend/-qt5/}
 BACKEND_DIR =		lib/qt5/plugins/phonon4qt5_backend
 CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon4qt5 \
 			-DPHONON_BUILD_PHONON4QT5=Yes
 .else
+PKGNAME ?=		${DISTNAME:C/-backend//}
 FULLPKGNAME ?=		${DISTNAME:C/-backend//}
 MODULES =		x11/kde4
 MODKDE4_USE =
