@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/02/28 20:07:35 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/05/27 23:44:14 abieber Exp $
+@newgroup _ioq3:776
+@newuser _ioq3:776:_ioq3:daemon:ioquake3 Server:/var/ioq3:/sbin/nologin
 @bin bin/ioq3ded
 @bin bin/ioquake3
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -1553,3 +1555,11 @@ share/ioquake3/tools/rcc/tree.d
 share/ioquake3/tools/rcc/tree.o
 share/ioquake3/tools/rcc/types.d
 share/ioquake3/tools/rcc/types.o
+@mode 750
+@owner _ioq3
+@group _ioq3
+@sample /var/ioq3/
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/ioq3ded
