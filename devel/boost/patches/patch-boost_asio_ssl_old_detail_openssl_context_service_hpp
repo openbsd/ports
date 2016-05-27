@@ -1,0 +1,26 @@
+$OpenBSD: patch-boost_asio_ssl_old_detail_openssl_context_service_hpp,v 1.1 2016/05/27 22:35:41 dcoppa Exp $
+--- boost/asio/ssl/old/detail/openssl_context_service.hpp.orig	Thu May 26 21:14:44 2016
++++ boost/asio/ssl/old/detail/openssl_context_service.hpp	Thu May 26 21:22:22 2016
+@@ -85,7 +85,14 @@ class openssl_context_service (public)
+       impl = ::SSL_CTX_new(::SSLv2_server_method());
+       break;
+ #endif // defined(OPENSSL_NO_SSL2)
++#if defined(OPENSSL_NO_SSL3)
+     case context_base::sslv3:
++    case context_base::sslv3_client:
++    case context_base::sslv3_server:
++      boost::asio::detail::throw_error(boost::asio::error::invalid_argument);
++      break;
++#else // defined(OPENSSL_NO_SSL3)
++    case context_base::sslv3:
+       impl = ::SSL_CTX_new(::SSLv3_method());
+       break;
+     case context_base::sslv3_client:
+@@ -94,6 +101,7 @@ class openssl_context_service (public)
+     case context_base::sslv3_server:
+       impl = ::SSL_CTX_new(::SSLv3_server_method());
+       break;
++#endif // defined(OPENSSL_NO_SSL3)
+     case context_base::tlsv1:
+       impl = ::SSL_CTX_new(::TLSv1_method());
+       break;
