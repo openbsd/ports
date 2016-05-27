@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1497 2016/05/17 11:38:09 jca Exp $
+# $OpenBSD: Makefile,v 1.1498 2016/05/27 03:43:20 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -298,6 +298,7 @@
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3
+     SUBDIR += kf5
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
      SUBDIR += lam

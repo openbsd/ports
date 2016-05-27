@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/27 03:43:20 zhuk Exp $
 
      SUBDIR =
+     SUBDIR += gpgmepp
      SUBDIR += libkface
      SUBDIR += libkgeomap
 
