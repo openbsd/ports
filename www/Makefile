@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.783 2016/05/27 17:56:07 danj Exp $
+# $OpenBSD: Makefile,v 1.784 2016/05/27 18:07:43 danj Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -392,6 +392,7 @@
      SUBDIR += py-frozen-flask,python3
      SUBDIR += py-genshi
      SUBDIR += py-gunicorn
+     SUBDIR += py-gunicorn,python3
      SUBDIR += py-htmltmpl
      SUBDIR += py-httpbin
      SUBDIR += py-httpbin,python3
