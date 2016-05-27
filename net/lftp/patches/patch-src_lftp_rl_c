@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lftp_rl_c,v 1.1 2016/05/27 12:09:20 jca Exp $
+--- src/lftp_rl.c.orig	Mon May 23 17:46:56 2016
++++ src/lftp_rl.c	Mon May 23 17:47:33 2016
+@@ -19,8 +19,8 @@
+ 
+ #include <config.h>
+ #include <stdio.h>
+-#include <readline.h>
+-#include <history.h>
++#include <readline/readline.h>
++#include <readline/history.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include "lftp_rl.h"
