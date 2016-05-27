@@ -1,6 +1,11 @@
-# $OpenBSD: phonon.port.mk,v 1.5 2015/06/26 09:18:15 ajacoutot Exp $
+# $OpenBSD: phonon.port.mk,v 1.6 2016/05/27 00:00:37 zhuk Exp $
+.if ${MODULES:Mx11/qt5} || ${MODULES:Mdevel/kf5}
+MODPHONON_WANTLIB =	phonon4qt5
+MODPHONON_LIB_DEPENDS =	phonon-qt5->=4.8.0:multimedia/phonon,qt5
+.else
 MODPHONON_WANTLIB =	${MODKDE4_LIB_DIR}/phonon_s
 MODPHONON_LIB_DEPENDS =	phonon->=4.8.0:multimedia/phonon
+.endif
 
 # If enabled (default), make sure at least one Phonon backend is
 # installed prior installing affected port.
