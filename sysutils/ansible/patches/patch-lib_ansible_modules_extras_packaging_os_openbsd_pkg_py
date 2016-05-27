@@ -1,15 +1,21 @@
-$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.2 2016/02/27 15:37:50 jasper Exp $
---- lib/ansible/modules/extras/packaging/os/openbsd_pkg.py.orig	Thu Feb 25 04:01:01 2016
-+++ lib/ansible/modules/extras/packaging/os/openbsd_pkg.py	Sat Feb 27 13:39:49 2016
-@@ -119,9 +119,9 @@ def get_package_state(name, pkg_spec, module):
- # Function used to make sure a package is present.
- def package_present(name, installed_state, pkg_spec, module):
+$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.3 2016/05/27 13:54:49 rpe Exp $
+--- lib/ansible/modules/extras/packaging/os/openbsd_pkg.py.orig	Fri May 27 03:29:21 2016
++++ lib/ansible/modules/extras/packaging/os/openbsd_pkg.py	Fri May 27 03:30:02 2016
+@@ -144,7 +144,7 @@ def package_present(name, installed_state, pkg_spec, m
+     build = module.params['build']
+ 
      if module.check_mode:
 -        install_cmd = 'pkg_add -Imn'
 +        install_cmd = 'pkg_add -Imnz'
      else:
--        install_cmd = 'pkg_add -Im'
-+        install_cmd = 'pkg_add -Imz'
+         if build is True:
+             port_dir = "%s/%s" % (module.params['ports_dir'], get_package_source_path(name, pkg_spec, module))
+@@ -159,7 +159,7 @@ def package_present(name, installed_state, pkg_spec, m
+             else:
+                 module.fail_json(msg="the port source directory %s does not exist" % (port_dir))
+         else:
+-            install_cmd = 'pkg_add -Im'
++            install_cmd = 'pkg_add -Imz'
  
      if installed_state is False:
  

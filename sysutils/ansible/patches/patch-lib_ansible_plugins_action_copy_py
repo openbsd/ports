@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_ansible_plugins_action_copy_py,v 1.1 2016/01/15 18:34:34 rpe Exp $
+$OpenBSD: patch-lib_ansible_plugins_action_copy_py,v 1.2 2016/05/27 13:54:49 rpe Exp $
 
 https://github.com/adamchainz/ansible/commit/842a1b976d650b2c3117a6e0ed1329e5d0d62873
 
 'copy' write new line at end of file if 'content' passed without newline
 
---- lib/ansible/plugins/action/copy.py.orig	Wed Jan 13 21:13:56 2016
-+++ lib/ansible/plugins/action/copy.py	Wed Jan 13 21:14:39 2016
-@@ -299,6 +299,8 @@ class ActionModule(ActionBase):
+--- lib/ansible/plugins/action/copy.py.orig	Wed May 25 07:00:55 2016
++++ lib/ansible/plugins/action/copy.py	Fri May 27 03:25:38 2016
+@@ -310,6 +310,8 @@ class ActionModule(ActionBase):
          content = to_bytes(content)
          try:
              f.write(content)
