@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.2 2016/03/06 10:51:14 robert Exp $
---- chrome/browser/chrome_browser_main_linux.cc.orig.port	Wed Feb 24 00:01:58 2016
-+++ chrome/browser/chrome_browser_main_linux.cc	Thu Mar  3 09:43:25 2016
-@@ -62,12 +62,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.3 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/chrome_browser_main_linux.cc.orig.port	Wed May 25 04:54:08 2016
++++ chrome/browser/chrome_browser_main_linux.cc	Thu May 26 08:09:40 2016
+@@ -57,12 +57,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.2 2016/03/06 10:
    bluez::DBusThreadManagerLinux::Initialize();
    bluez::BluezDBusManager::Initialize(
        bluez::DBusThreadManagerLinux::Get()->GetSystemBus(), false);
-@@ -77,7 +79,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
+@@ -72,7 +74,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

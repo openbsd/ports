@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_launch_h,v 1.4 2016/04/16 19:08:45 robert Exp $
---- base/process/launch.h.orig.port	Wed Apr 13 22:59:36 2016
-+++ base/process/launch.h	Thu Apr 14 08:25:08 2016
-@@ -135,7 +135,7 @@ struct BASE_EXPORT LaunchOptions {
+$OpenBSD: patch-base_process_launch_h,v 1.5 2016/05/27 06:28:20 robert Exp $
+--- base/process/launch.h.orig.port	Wed May 25 04:54:06 2016
++++ base/process/launch.h	Thu May 26 08:09:39 2016
+@@ -138,7 +138,7 @@ struct BASE_EXPORT LaunchOptions {
    // will be the same as its pid.
    bool new_process_group;
  

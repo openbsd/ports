@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.1 2016/05/27 06:28:21 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig.port	Thu May 26 10:46:03 2016
++++ third_party/WebKit/Source/platform/fonts/FontCache.h	Thu May 26 10:46:12 2016
+@@ -174,7 +174,7 @@ class PLATFORM_EXPORT FontCache { (private)
+     // Implemented on skia platforms.
+     PassRefPtr<SkTypeface> createTypeface(const FontDescription&, const FontFaceCreationParams&, CString& name);
+ 
+-#if OS(ANDROID) || OS(LINUX)
++#if OS(ANDROID) || OS(LINUX) || OS(OPENBSD)
+     static AtomicString getFamilyNameForCharacter(SkFontMgr*, UChar32, const FontDescription&, FontFallbackPriority);
+ #endif
+ 

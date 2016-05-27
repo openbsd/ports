@@ -1,10 +1,10 @@
-$OpenBSD: patch-v8_src_globals_h,v 1.9 2015/10/14 16:42:07 robert Exp $
+$OpenBSD: patch-v8_src_globals_h,v 1.10 2016/05/27 06:28:21 robert Exp $
 
 Try to pre-allocate less memory on OpenBSD in the v8 engine.
 
---- v8/src/globals.h.orig.port	Tue Oct 13 21:04:45 2015
-+++ v8/src/globals.h	Wed Oct 14 07:41:14 2015
-@@ -141,7 +141,11 @@ const bool kRequiresCodeRange = true;
+--- v8/src/globals.h.orig.port	Wed May 25 21:02:49 2016
++++ v8/src/globals.h	Thu May 26 08:09:50 2016
+@@ -156,7 +156,11 @@ const bool kRequiresCodeRange = true;
  // region. Used only for large object space.
  const size_t kMaximalCodeRangeSize = 256 * MB;
  #else

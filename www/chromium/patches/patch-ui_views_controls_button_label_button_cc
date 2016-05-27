@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.9 2016/04/16 19:08:46 robert Exp $
---- ui/views/controls/button/label_button.cc.orig.port	Wed Apr 13 23:00:05 2016
-+++ ui/views/controls/button/label_button.cc	Thu Apr 14 08:25:16 2016
-@@ -30,7 +30,7 @@ namespace {
+$OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.10 2016/05/27 06:28:21 robert Exp $
+--- ui/views/controls/button/label_button.cc.orig.port	Wed May 25 21:01:13 2016
++++ ui/views/controls/button/label_button.cc	Thu May 26 08:09:50 2016
+@@ -31,7 +31,7 @@ namespace {
  // The default spacing between the icon and text.
  const int kSpacing = 5;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.9 2016/04/16 19:08:
  // Default text and shadow colors for STYLE_BUTTON.
  const SkColor kStyleButtonTextColor = SK_ColorBLACK;
  const SkColor kStyleButtonShadowColor = SK_ColorWHITE;
-@@ -482,7 +482,7 @@ void LabelButton::ResetColorsFromNativeTheme() {
+@@ -484,7 +484,7 @@ void LabelButton::ResetColorsFromNativeTheme() {
      // confusion. These details should either be pushed into ui::NativeThemeWin
      // or should be obsoleted by rendering buttons with paint calls instead of
      // with static assets. http://crbug.com/350498

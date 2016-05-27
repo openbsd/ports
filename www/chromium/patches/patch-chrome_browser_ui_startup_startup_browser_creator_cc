@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.15 2016/04/16 19:08:45 robert Exp $
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Wed Apr 13 22:59:41 2016
-+++ chrome/browser/ui/startup/startup_browser_creator.cc	Thu Apr 14 08:25:10 2016
-@@ -666,8 +666,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.16 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Wed May 25 21:00:58 2016
++++ chrome/browser/ui/startup/startup_browser_creator.cc	Thu May 26 08:09:41 2016
+@@ -636,8 +636,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  

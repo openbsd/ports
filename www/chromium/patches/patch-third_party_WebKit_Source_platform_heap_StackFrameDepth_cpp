@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.6 2016/04/16 19:08:46 robert Exp $
---- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Thu Apr 14 14:07:45 2016
-+++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Thu Apr 14 20:00:25 2016
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.7 2016/05/27 06:28:21 robert Exp $
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Wed May 25 04:54:37 2016
++++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Thu May 26 08:09:48 2016
 @@ -13,6 +13,10 @@
  #elif defined(__GLIBC__)
  extern "C" void* __libc_stack_end;  // NOLINT
@@ -12,7 +12,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.
  
  namespace blink {
  
-@@ -115,6 +119,8 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
+@@ -104,6 +108,8 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
      //    low as 512k.
      //
      return 512 * 1024;
@@ -21,7 +21,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.
  #elif OS(MACOSX)
      // pthread_get_stacksize_np() returns too low a value for the main thread on
      // OSX 10.9, http://mail.openjdk.java.net/pipermail/hotspot-dev/2013-October/011369.html
-@@ -146,12 +152,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
+@@ -135,12 +141,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
  
  void* StackFrameDepth::getStackStart()
  {

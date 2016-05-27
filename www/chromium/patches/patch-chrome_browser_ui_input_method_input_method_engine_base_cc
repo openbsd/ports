@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_base_cc,v 1.1 2016/04/16 19:08:45 robert Exp $
---- chrome/browser/ui/input_method/input_method_engine_base.cc.orig.port	Thu Apr 14 19:55:42 2016
-+++ chrome/browser/ui/input_method/input_method_engine_base.cc	Thu Apr 14 19:55:49 2016
-@@ -35,7 +35,7 @@
+$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_base_cc,v 1.2 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/ui/input_method/input_method_engine_base.cc.orig.port	Wed May 25 04:54:10 2016
++++ chrome/browser/ui/input_method/input_method_engine_base.cc	Thu May 26 08:09:41 2016
+@@ -37,7 +37,7 @@
  #elif defined(OS_WIN)
  #include "ui/events/keycodes/dom/keycode_converter.h"
  #include "ui/events/keycodes/keyboard_codes_win.h"

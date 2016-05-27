@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.287 2016/05/20 15:36:05 robert Exp $
+# $OpenBSD: Makefile,v 1.288 2016/05/27 06:28:20 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			50.0.2661.102
+V=			51.0.2704.63
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -196,12 +196,14 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/chrome
 
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
+	${INSTALL_DATA_DIR} ${PREFIX}/chrome/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/chrome/locales
+	${INSTALL_DATA} ${BUILDDIR}/pseudo_locales/* ${PREFIX}/chrome/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/chrome
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in libexif.so protoc icudtl.dat mksnapshot
+.for f in protoc icudtl.dat mksnapshot
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 .for s in 22 24 48 64 128 256

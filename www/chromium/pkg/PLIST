@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2016/04/16 19:08:46 robert Exp $
+@comment $OpenBSD: PLIST,v 1.59 2016/05/27 06:28:21 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -10,7 +10,6 @@ chrome/chrome_material_200_percent.pak
 chrome/content_resources.pak
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
-chrome/libexif.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/ar.pak
@@ -68,6 +67,8 @@ chrome/locales/zh-TW.pak
 chrome/mksnapshot
 chrome/product_logo_48.png
 chrome/protoc
+chrome/pseudo_locales/
+chrome/pseudo_locales/fake-bidi.pak
 chrome/resources/
 chrome/resources.pak
 chrome/resources/extension/
@@ -108,7 +109,6 @@ chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
-chrome/resources/inspector/Images/notifications.svg
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
@@ -152,9 +152,9 @@ chrome/resources/inspector/Images/toolbarResizerHorizontal.png
 chrome/resources/inspector/Images/toolbarResizerVertical.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
-chrome/resources/inspector/Images/updateServiceWorker.svg
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
+chrome/resources/inspector/Tests.js
 chrome/resources/inspector/accessibility_module.js
 chrome/resources/inspector/animation_module.js
 chrome/resources/inspector/audits_module.js
@@ -192,17 +192,17 @@ chrome/resources/inspector/emulated_devices/google-nexus-5x-vertical-keyboard-2x
 chrome/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-1x.png
 chrome/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 chrome/resources/inspector/emulated_devices_module.js
+chrome/resources/inspector/es_tree_module.js
+chrome/resources/inspector/formatter_worker_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
 chrome/resources/inspector/inspector.html
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/layers_module.js
 chrome/resources/inspector/network_module.js
 chrome/resources/inspector/profiler_module.js
-chrome/resources/inspector/promises_module.js
 chrome/resources/inspector/resources_module.js
 chrome/resources/inspector/sass_module.js
 chrome/resources/inspector/screencast_module.js
-chrome/resources/inspector/script_formatter_worker_module.js
 chrome/resources/inspector/security_module.js
 chrome/resources/inspector/settings_module.js
 chrome/resources/inspector/snippets_module.js
@@ -213,7 +213,6 @@ chrome/resources/inspector/timeline_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy_module.js
-chrome/shell_resources.pak
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

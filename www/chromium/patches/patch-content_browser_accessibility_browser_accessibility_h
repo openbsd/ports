@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.4 2016/04/16 19:08:46 robert Exp $
---- content/browser/accessibility/browser_accessibility.h.orig.port	Wed Apr 13 22:59:45 2016
-+++ content/browser/accessibility/browser_accessibility.h	Thu Apr 14 08:25:11 2016
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.5 2016/05/27 06:28:21 robert Exp $
+--- content/browser/accessibility/browser_accessibility.h.orig.port	Thu May 26 08:28:24 2016
++++ content/browser/accessibility/browser_accessibility.h	Thu May 26 13:44:06 2016
 @@ -38,7 +38,7 @@
  #define PLATFORM_HAS_NATIVE_ACCESSIBILITY_IMPL 1
  #endif
@@ -15,16 +15,7 @@ $OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.4 2016
  #if defined(OS_WIN)
  class BrowserAccessibilityWin;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11)
-+#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_X11) && !defined(OS_CHROMEOS)
  class BrowserAccessibilityAuraLinux;
  #endif
  
-@@ -226,7 +226,7 @@ class CONTENT_EXPORT BrowserAccessibility {
- #elif defined(OS_WIN)
-   const BrowserAccessibilityWin* ToBrowserAccessibilityWin() const;
-   BrowserAccessibilityWin* ToBrowserAccessibilityWin();
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11)
-+#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11)
-   const BrowserAccessibilityAuraLinux* ToBrowserAccessibilityAuraLinux() const;
-   BrowserAccessibilityAuraLinux* ToBrowserAccessibilityAuraLinux();
- #endif

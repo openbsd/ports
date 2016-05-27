@@ -1,6 +1,6 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.9 2016/04/16 19:08:46 robert Exp $
---- pdf/pdfium/pdfium_engine.cc.orig.port	Fri Apr  8 18:02:10 2016
-+++ pdf/pdfium/pdfium_engine.cc	Sat Apr 16 17:55:24 2016
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.10 2016/05/27 06:28:21 robert Exp $
+--- pdf/pdfium/pdfium_engine.cc.orig.port	Wed May 25 21:01:04 2016
++++ pdf/pdfium/pdfium_engine.cc	Thu May 26 08:09:47 2016
 @@ -121,7 +121,7 @@ std::vector<uint32_t> GetPageNumbersFromPrintPageNumbe
    return page_numbers;
  }
@@ -37,7 +37,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.9 2016/04/16 19:08:46 robert Exp
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2688,7 +2688,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2692,7 +2692,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.9 2016/04/16 19:08:46 robert Exp
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3142,7 +3142,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3146,7 +3146,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

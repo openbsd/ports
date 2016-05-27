@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.1 2016/04/26 14:22:24 robert Exp $
---- media/base/video_frame.h.orig.port	Mon Apr 25 18:29:18 2016
-+++ media/base/video_frame.h	Mon Apr 25 18:29:38 2016
+$OpenBSD: patch-media_base_video_frame_h,v 1.2 2016/05/27 06:28:21 robert Exp $
+--- media/base/video_frame.h.orig.port	Wed May 25 21:01:03 2016
++++ media/base/video_frame.h	Thu May 26 08:09:47 2016
 @@ -61,7 +61,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.1 2016/04/26 14:22:24 robert Exp $
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE or another
      // meaningful name and handle it appropriately in all cases.
      STORAGE_DMABUFS = 5,  // Each plane is stored into a DmaBuf.
-@@ -206,7 +206,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -207,7 +207,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        const gfx::GpuMemoryBufferHandle& v_handle,
        base::TimeDelta timestamp);
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.1 2016/04/26 14:22:24 robert Exp $
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/Documentation/dma-buf-sharing.txt) with a
    // VideoFrame. The dmabuf fds are dup()ed on creation, so that the VideoFrame
-@@ -360,7 +360,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -362,7 +362,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    const std::vector<gfx::GpuMemoryBufferHandle>& gpu_memory_buffer_handles()
        const;
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_base_video_frame_h,v 1.1 2016/04/26 14:22:24 robert Exp $
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
    // TODO(mcasas): Rename to DmabufFd() to comply with Style Guide.
-@@ -507,7 +507,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -543,7 +543,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GpuMemoryBuffer handles attached to the video_frame.
    std::vector<gfx::GpuMemoryBufferHandle> gpu_memory_buffer_handles_;
  

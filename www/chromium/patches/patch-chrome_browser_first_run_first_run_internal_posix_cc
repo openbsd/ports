@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_first_run_first_run_internal_posix_cc,v 1.1 2014/07/20 17:22:33 robert Exp $
---- chrome/browser/first_run/first_run_internal_posix.cc.orig.port	Sat Jul 19 00:27:56 2014
-+++ chrome/browser/first_run/first_run_internal_posix.cc	Sat Jul 19 00:28:02 2014
-@@ -22,7 +22,7 @@ namespace first_run {
+$OpenBSD: patch-chrome_browser_first_run_first_run_internal_posix_cc,v 1.2 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/first_run/first_run_internal_posix.cc.orig.port	Wed May 25 04:54:09 2016
++++ chrome/browser/first_run/first_run_internal_posix.cc	Thu May 26 08:09:41 2016
+@@ -24,7 +24,7 @@ namespace first_run {
  namespace internal {
  
  void DoPostImportPlatformSpecificTasks(Profile* profile) {

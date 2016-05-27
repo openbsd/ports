@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.10 2016/04/16 19:08:46 robert Exp $
---- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Thu Apr 14 08:45:27 2016
-+++ chrome/browser/ui/views/chrome_views_delegate.h	Thu Apr 14 08:45:50 2016
-@@ -35,7 +35,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.11 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Wed May 25 21:00:58 2016
++++ chrome/browser/ui/views/chrome_views_delegate.h	Thu May 26 08:09:42 2016
+@@ -37,7 +37,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
  #if defined(OS_WIN)
    HICON GetDefaultWindowIcon() const override;
    HICON GetSmallWindowIcon() const override;
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.10 2016/04/1
    gfx::ImageSkia* GetDefaultWindowIcon() const override;
  #endif
  
-@@ -48,7 +48,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+@@ -50,7 +50,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    void OnBeforeWidgetInit(
        views::Widget::InitParams* params,
        views::internal::NativeWidgetDelegate* delegate) override;

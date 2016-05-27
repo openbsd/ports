@@ -1,17 +1,8 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.20 2016/04/16 19:08:46 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Wed Apr 13 22:59:42 2016
-+++ chrome/common/chrome_switches.cc	Thu Apr 14 08:25:10 2016
-@@ -1133,7 +1133,7 @@ const char kHelpShort[]                     = "h";
- const char kPasswordStore[]                 = "password-store";
- #endif
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- // Triggers migration of user data directory to another directory
- // specified as a parameter. The migration is done under singleton lock,
- // and sanity checks are made to avoid corrupting the profile.
-@@ -1330,7 +1330,7 @@ const char kTabManagementExperimentTypeDill[] =
-     "tab-management-experiment-type-dill";
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.21 2016/05/27 06:28:20 robert Exp $
+--- chrome/common/chrome_switches.cc.orig.port	Thu May 26 08:25:11 2016
++++ chrome/common/chrome_switches.cc	Thu May 26 08:25:20 2016
+@@ -1298,7 +1298,7 @@ const char kTabManagementExperimentTypeElderberry[] =
+     "tab-management-experiment-type-elderberry";
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || defined(OS_LINUX)

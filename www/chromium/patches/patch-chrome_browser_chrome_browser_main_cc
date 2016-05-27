@@ -1,30 +1,21 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.6 2016/04/16 19:08:45 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Wed Apr 13 22:59:39 2016
-+++ chrome/browser/chrome_browser_main.cc	Thu Apr 14 08:25:09 2016
-@@ -169,7 +169,7 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.7 2016/05/27 06:28:20 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Thu May 26 08:18:19 2016
++++ chrome/browser/chrome_browser_main.cc	Thu May 26 08:19:37 2016
+@@ -173,7 +173,7 @@
  #include "chrome/browser/feedback/feedback_profile_observer.h"
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
- #include "chrome/browser/sxs_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
-@@ -1087,7 +1087,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+ 
+@@ -1109,7 +1109,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
--#if defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX)
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1437,7 +1437,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
-     return chrome::RESULT_CODE_MACHINE_LEVEL_INSTALL_EXISTS;
- #endif  // defined(OS_WIN)
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   if (sxs_linux::ShouldMigrateUserDataDir())
-     return sxs_linux::MigrateUserDataDir();
- #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
