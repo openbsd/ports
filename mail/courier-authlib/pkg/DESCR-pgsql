@@ -1,5 +1,5 @@
 This package provides a PostgreSQL database authentication backend
-for Courier-IMAP. Install this package in order to enable to 
+for Courier-IMAP. Install this package in order to enable to
 authenticating using PostgreSQL.
 
 Documentation is installed in:

@@ -1,5 +1,5 @@
-This package provides a MySQL database authentication backend for 
-Courier-IMAP. Install this package in order to enable authentication 
+This package provides a MySQL database authentication backend for
+Courier-IMAP. Install this package in order to enable authentication
 using MySQL.
 
 Documentation is installed in:

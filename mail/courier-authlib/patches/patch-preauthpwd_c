@@ -1,0 +1,12 @@
+$OpenBSD: patch-preauthpwd_c,v 1.1 2016/05/27 16:18:28 giovanni Exp $
+--- preauthpwd.c.orig	Thu May 12 17:28:26 2016
++++ preauthpwd.c	Thu May 12 17:40:12 2016
+@@ -28,7 +28,7 @@ struct passwd *pw;
+ 
+ 	memset(&auth, 0, sizeof(auth));
+ 
+-	if ((pw=getpwnam(userid)) == 0)
++	if ((pw=getpwnam_shadow(userid)) == 0)
+ 	{
+ 		if (errno == ENOMEM)	return (1);
+ 		return (-1);
