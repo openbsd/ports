@@ -1,16 +1,28 @@
-# $OpenBSD: Makefile.inc,v 1.2 2015/07/05 00:46:14 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2016/05/27 02:44:00 zhuk Exp $
 
 CATEGORIES +=	multimedia
-PKGNAME ?=	${DISTNAME:C/-backend//}
 
 # LGPL 2.1
 PERMIT_PACKAGE_CDROM =   Yes
 
-MODULES =		x11/kde4 multimedia/phonon
+FLAVOR ?=
+.if ${FLAVOR:Mqt5}
+MODULES =		devel/kf5
+FULLPKGNAME ?=		${DISTNAME:C/-backend/-qt5/}
+BACKEND_DIR =		lib/qt5/plugins/phonon4qt5_backend
+CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon4qt5 \
+			-DPHONON_BUILD_PHONON4QT5=Yes
+.else
+FULLPKGNAME ?=		${DISTNAME:C/-backend//}
+MODULES =		x11/kde4
 MODKDE4_USE =
-MODPHONON_PLUGIN_DEPS =	No
-
+BACKEND_DIR =		lib/kde4/plugins/phonon_s_backend
 CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon
+.endif
+
+MODULES +=		multimedia/phonon
+MODPHONON_PLUGIN_DEPS =	No
+SUBST_VARS =		BACKEND_DIR
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 

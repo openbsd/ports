@@ -1,16 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/10 19:50:26 zhuk Exp $
-lib/kde4/plugins/
-lib/kde4/plugins/phonon_s_backend/
-lib/kde4/plugins/phonon_s_backend/phonon_gstreamer.so
+@comment $OpenBSD: PLIST-icons,v 1.1 2016/05/27 02:44:00 zhuk Exp $
 share/icons/hicolor/128x128/apps/phonon-gstreamer.png
 share/icons/hicolor/16x16/apps/phonon-gstreamer.png
 share/icons/hicolor/22x22/apps/phonon-gstreamer.png
 share/icons/hicolor/48x48/apps/phonon-gstreamer.png
 share/icons/hicolor/64x64/apps/phonon-gstreamer.png
 share/icons/hicolor/scalable/apps/phonon-gstreamer.svgz
-share/kde4/
-share/kde4/services/
-share/kde4/services/phononbackends/
-share/kde4/services/phononbackends/gstreamer.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
