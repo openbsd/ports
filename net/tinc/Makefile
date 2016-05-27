@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/03 20:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/27 11:49:04 jca Exp $
 
 COMMENT =		Virtual Private Network (VPN) daemon
-DISTNAME =		tinc-1.0.26
+DISTNAME =		tinc-1.0.28
 CATEGORIES =		net security
 
-HOMEPAGE =		http://www.tinc-vpn.org/
+HOMEPAGE =		https://www.tinc-vpn.org/
 
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto lzo2 z
 
-MASTER_SITES =		http://www.tinc-vpn.org/packages/
+MASTER_SITES =		https://www.tinc-vpn.org/packages/
 
 LIB_DEPENDS +=		archivers/lzo2
 
