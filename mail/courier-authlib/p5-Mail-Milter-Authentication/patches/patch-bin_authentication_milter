@@ -1,0 +1,21 @@
+$OpenBSD: patch-bin_authentication_milter,v 1.1.1.1 2016/05/27 16:23:33 giovanni Exp $
+--- bin/authentication_milter.orig	Thu Sep 10 05:37:11 2015
++++ bin/authentication_milter	Wed Apr 27 15:57:09 2016
+@@ -14,7 +14,7 @@ use Module::Load;
+ use Pod::Usage;
+ 
+ # CONFIG
+-my $pid_file = '/run/authentication_milter.pid';
++my $pid_file = '/var/run/authentication_milter.pid';
+ my $daemon = 0;
+ my $help   = 0;
+ my $prefix;
+@@ -145,7 +145,7 @@ __END__
+ =item -p|--pidfile <file>
+ 
+   Write the process PID to the given file.
+-  defaults to /run/authentication_milter.pid
++  defaults to /var/run/authentication_milter.pid
+ 
+ =item --prefix <dir>
+ 

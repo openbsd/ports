@@ -1,0 +1,11 @@
+A Perl implementation of email authentication standards rolled up
+into a single easy to use milter.
+
+This milter verifies using the following standards.
+
+- SPF
+- SenderID
+- DKIM (including ADSP)
+- DMARC
+- IPRev
+- Check HELO matches it's IP address
