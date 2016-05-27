@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2015/10/31 22:58:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2016/05/27 12:48:16 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -70,7 +70,9 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/discrete
 @bin libexec/xscreensaver/distort
 @bin libexec/xscreensaver/drift
+@bin libexec/xscreensaver/dymaxionmap
 @bin libexec/xscreensaver/endgame
+@bin libexec/xscreensaver/energystream
 @bin libexec/xscreensaver/engine
 @bin libexec/xscreensaver/epicycle
 @bin libexec/xscreensaver/eruption
@@ -114,6 +116,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
+@bin libexec/xscreensaver/hydrostat
 @bin libexec/xscreensaver/hypertorus
 @bin libexec/xscreensaver/hypnowheel
 @bin libexec/xscreensaver/ifs
@@ -174,6 +177,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/qix
 @bin libexec/xscreensaver/quasicrystal
 @bin libexec/xscreensaver/queens
+@bin libexec/xscreensaver/raverhoop
 @bin libexec/xscreensaver/rd-bomb
 @bin libexec/xscreensaver/ripples
 @bin libexec/xscreensaver/rocks
@@ -214,6 +218,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/tronbit
 @bin libexec/xscreensaver/truchet
 @bin libexec/xscreensaver/twang
+@bin libexec/xscreensaver/unicrud
 @bin libexec/xscreensaver/unknownpleasures
 @bin libexec/xscreensaver/vermiculate
 libexec/xscreensaver/vidwhacker
@@ -290,7 +295,9 @@ libexec/xscreensaver/webcollage
 @man man/man6/discrete.6
 @man man/man6/distort.6
 @man man/man6/drift.6
+@man man/man6/dymaxionmap.6
 @man man/man6/endgame.6
+@man man/man6/energystream.6
 @man man/man6/engine.6
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
@@ -334,6 +341,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/hexadrop.6
 @man man/man6/hilbert.6
 @man man/man6/hopalong.6
+@man man/man6/hydrostat.6
 @man man/man6/hypertorus.6
 @man man/man6/hypnowheel.6
 @man man/man6/ifs.6
@@ -392,6 +400,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/qix.6
 @man man/man6/quasicrystal.6
 @man man/man6/queens.6
+@man man/man6/raverhoop.6
 @man man/man6/rd-bomb.6
 @man man/man6/ripples.6
 @man man/man6/rocks.6
@@ -432,6 +441,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/tronbit.6
 @man man/man6/truchet.6
 @man man/man6/twang.6
+@man man/man6/unicrud.6
 @man man/man6/unknownpleasures.6
 @man man/man6/vermiculate.6
 @man man/man6/vidwhacker.6
@@ -508,7 +518,9 @@ share/applications/screensavers/discrete.desktop
 share/applications/screensavers/distort.desktop
 share/applications/screensavers/dnalogo.desktop
 share/applications/screensavers/drift.desktop
+share/applications/screensavers/dymaxionmap.desktop
 share/applications/screensavers/endgame.desktop
+share/applications/screensavers/energystream.desktop
 share/applications/screensavers/engine.desktop
 share/applications/screensavers/epicycle.desktop
 share/applications/screensavers/eruption.desktop
@@ -555,6 +567,7 @@ share/applications/screensavers/helix.desktop
 share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
+share/applications/screensavers/hydrostat.desktop
 share/applications/screensavers/hyperball.desktop
 share/applications/screensavers/hypercube.desktop
 share/applications/screensavers/hypertorus.desktop
@@ -623,6 +636,7 @@ share/applications/screensavers/pyro.desktop
 share/applications/screensavers/qix.desktop
 share/applications/screensavers/quasicrystal.desktop
 share/applications/screensavers/queens.desktop
+share/applications/screensavers/raverhoop.desktop
 share/applications/screensavers/rd-bomb.desktop
 share/applications/screensavers/rdbomb.desktop
 share/applications/screensavers/ripples.desktop
@@ -669,6 +683,7 @@ share/applications/screensavers/triangle.desktop
 share/applications/screensavers/tronbit.desktop
 share/applications/screensavers/truchet.desktop
 share/applications/screensavers/twang.desktop
+share/applications/screensavers/unicrud.desktop
 share/applications/screensavers/unknownpleasures.desktop
 share/applications/screensavers/vermiculate.desktop
 share/applications/screensavers/vidwhacker.desktop
@@ -710,8 +725,6 @@ share/locale/ru/LC_MESSAGES/xscreensaver.mo
 share/locale/sk/LC_MESSAGES/xscreensaver.mo
 share/locale/sv/LC_MESSAGES/xscreensaver.mo
 share/locale/vi/LC_MESSAGES/xscreensaver.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xscreensaver.mo
 share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
 share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
@@ -772,7 +785,9 @@ share/xscreensaver/config/demon.xml
 share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
+share/xscreensaver/config/dymaxionmap.xml
 share/xscreensaver/config/endgame.xml
+share/xscreensaver/config/energystream.xml
 share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
@@ -816,6 +831,7 @@ share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
+share/xscreensaver/config/hydrostat.xml
 share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/hypnowheel.xml
 share/xscreensaver/config/ifs.xml
@@ -875,6 +891,7 @@ share/xscreensaver/config/pyro.xml
 share/xscreensaver/config/qix.xml
 share/xscreensaver/config/quasicrystal.xml
 share/xscreensaver/config/queens.xml
+share/xscreensaver/config/raverhoop.xml
 share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
@@ -915,6 +932,7 @@ share/xscreensaver/config/triangle.xml
 share/xscreensaver/config/tronbit.xml
 share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/twang.xml
+share/xscreensaver/config/unicrud.xml
 share/xscreensaver/config/unknownpleasures.xml
 share/xscreensaver/config/vermiculate.xml
 share/xscreensaver/config/vidwhacker.xml
