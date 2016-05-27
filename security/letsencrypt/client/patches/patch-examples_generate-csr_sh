@@ -1,9 +1,9 @@
-$OpenBSD: patch-examples_generate-csr_sh,v 1.1 2015/12/03 20:49:58 sthen Exp $
+$OpenBSD: patch-examples_generate-csr_sh,v 1.2 2016/05/27 10:01:38 sthen Exp $
 
 environment parsing was removed from LibreSSL's libraries.
 
---- examples/generate-csr.sh.orig	Thu Dec  3 20:29:24 2015
-+++ examples/generate-csr.sh	Thu Dec  3 20:29:26 2015
+--- examples/generate-csr.sh.orig	Thu May 12 01:42:39 2016
++++ examples/generate-csr.sh	Fri May 27 10:39:54 2016
 @@ -17,7 +17,11 @@ do
    domains="$domains,DNS:$x"
  done
@@ -22,4 +22,4 @@ environment parsing was removed from LibreSSL's libraries.
  # 512 or 1024 too low for Boulder, 2048 is smallest for tests
  
 +echo rm $_conftemp
- echo "You can now run: letsencrypt auth --csr ${CSR_PATH:-csr.der}"
+ echo "You can now run: certbot auth --csr ${CSR_PATH:-csr.der}"

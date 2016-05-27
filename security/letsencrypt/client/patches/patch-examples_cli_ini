@@ -1,4 +1,4 @@
-$OpenBSD: patch-examples_cli_ini,v 1.4 2016/01/15 21:40:28 sthen Exp $
+$OpenBSD: patch-examples_cli_ini,v 1.5 2016/05/27 10:01:38 sthen Exp $
 --- examples/cli.ini.orig	Fri Jan 15 01:39:05 2016
 +++ examples/cli.ini	Fri Jan 15 21:14:32 2016
 @@ -12,8 +12,8 @@ rsa-key-size = 4096
@@ -17,7 +17,7 @@ $OpenBSD: patch-examples_cli_ini,v 1.4 2016/01/15 21:40:28 sthen Exp $
  # Uncomment to use the webroot authenticator. Replace webroot-path with the
  # path to the public_html / webroot folder being served by your web server.
 +#
-+# The user running letsencrypt needs write access to WEBROOT/.well-known
++# The user running certbot needs write access to WEBROOT/.well-known
 +# and this must be accessible via http. Watch out for webserver config rules
 +# that deny access to dotfiles.
 +#

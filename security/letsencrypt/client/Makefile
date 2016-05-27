@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/08 11:52:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/05/27 10:01:38 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
-DISTNAME=	letsencrypt-${MODPY_EGG_VERSION}
-REVISION=	0
+DISTNAME=	certbot-${MODPY_EGG_VERSION}
 
 RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-configobj \
@@ -19,11 +18,12 @@ TEST_DEPENDS=	${RUN_DEPENDS}
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \
 		-e 's,/var/lib,${LOCALSTATEDIR}/db,' \
-		${WRKSRC}/letsencrypt/constants.py
+		${WRKSRC}/certbot/constants.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/letsencrypt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/certbot
 	${INSTALL_DATA} ${WRKSRC}/examples/*.{ini,sh,cnf} \
-		${PREFIX}/share/examples/letsencrypt
+		${PREFIX}/share/examples/certbot
+	ln -s certbot ${PREFIX}/bin/letsencrypt # add courtesy symlink
 
 .include <bsd.port.mk>

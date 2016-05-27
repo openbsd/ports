@@ -1,9 +1,10 @@
-$OpenBSD: patch-letsencrypt_plugins_webroot_py,v 1.1 2016/04/08 11:52:16 sthen Exp $
+$OpenBSD: patch-certbot_plugins_webroot_py,v 1.1 2016/05/27 10:01:38 sthen Exp $
 
 https://github.com/letsencrypt/letsencrypt/pull/2788
+(will be fixed differently in 0.7.0)
 
---- letsencrypt/plugins/webroot.py.orig	Fri Apr  8 12:42:28 2016
-+++ letsencrypt/plugins/webroot.py	Fri Apr  8 12:43:59 2016
+--- certbot/plugins/webroot.py.orig	Fri May 27 10:44:22 2016
++++ certbot/plugins/webroot.py	Fri May 27 10:44:31 2016
 @@ -181,7 +181,7 @@ to serve all files under specified web root ({0})."""
                      os.chown(self.full_roots[name], stat_path.st_uid,
                               stat_path.st_gid)

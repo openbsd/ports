@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.400 2016/05/21 01:27:09 czarkoff Exp $
+# $OpenBSD: Quirks.pm,v 1.401 2016/05/27 10:01:38 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -403,6 +403,7 @@ my $stem_extensions = {
 	'apache-httpd-openbsd' => 'apache-httpd',
 	'openmotif' => 'motif',
 	'go-websocket' => 'go-net',
+	'letsencrypt' => 'certbot',
 };
 
 # reasons for obsolete packages
