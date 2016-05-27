@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.87 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: ruby.port.mk,v 1.88 2016/05/27 17:04:35 jeremy Exp $
 
 # ruby module
 
@@ -113,7 +113,7 @@ MODRUBY_BINREV =	23
 MODRUBY_FLAVOR =	ruby23
 GEM_BIN_SUFFIX =	23
 .elif ${MODRUBY_REV} == jruby
-MODRUBY_LIBREV =	2.2.0
+MODRUBY_LIBREV =	2.3.0
 
 # Set these during development of ruby.port.mk to make sure
 # nothing is broken.  However, turn them off before committing,
