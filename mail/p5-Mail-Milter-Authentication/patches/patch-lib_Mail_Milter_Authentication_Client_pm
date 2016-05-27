@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_Mail_Milter_Authentication_Client_pm,v 1.1.1.1 2016/05/27 16:28:44 giovanni Exp $
+--- lib/Mail/Milter/Authentication/Client.pm.orig	Thu Sep 10 05:37:11 2015
++++ lib/Mail/Milter/Authentication/Client.pm	Wed Apr 27 16:05:37 2016
+@@ -212,7 +212,7 @@ sub load_mail {
+         else {
+             if ( $value ) {
+                 my ( $hkey, $hvalue ) = split ( ':', $value, 2 );
+-                $hvalue =~ s/^ //;
++                $hvalue =~ s/^ // if defined $hvalue;
+                 push @header_pairs , $hkey;
+                 push @header_pairs , $hvalue;
+             }
+@@ -221,7 +221,7 @@ sub load_mail {
+     }
+     if ( $value ) {
+         my ( $hkey, $hvalue ) = split ( ':', $value, 2 );
+-        $hvalue =~ s/^ //;
++        $hvalue =~ s/^ // if defined $hvalue;
+         push @header_pairs , $hkey;
+         push @header_pairs , $hvalue;
+     }
+@@ -310,6 +310,7 @@ sub process {
+         while ( @process_header ) {
+             my $key = shift @process_header;
+             my $value = shift @process_header;
++            $value //= '';
+             $header_string .= "$key: $value\015\012";
+         }
+         my $header_obj = Email::Simple::Header->new( $header_string );
