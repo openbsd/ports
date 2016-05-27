@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/05/27 09:18:14 sthen Exp $
 
 BROKEN-macppc=	error: unknown register name 'edx' in 'asm'
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.1.4
+DISTNAME=	rspamd-1.2.7
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -13,7 +13,7 @@ HOMEPAGE=	https://rspamd.com/
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto event gio-2.0 glib-2.0 gmime-2.6 gobject-2.0
+WANTLIB += c crypto event gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0
 WANTLIB += luajit-5.1 m magic pcre pthread sqlite3 ssl
 
 MASTER_SITES=	https://rspamd.com/downloads/

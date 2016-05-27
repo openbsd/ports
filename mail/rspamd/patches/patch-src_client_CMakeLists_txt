@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_client_CMakeLists_txt,v 1.2 2016/01/19 01:14:51 sthen Exp $
---- src/client/CMakeLists.txt.orig	Thu Mar 12 13:04:45 2015
-+++ src/client/CMakeLists.txt	Mon Jan 18 18:31:19 2016
-@@ -9,8 +9,8 @@ SET_TARGET_PROPERTIES(rspamc PROPERTIES COMPILE_FLAGS 
- TARGET_LINK_LIBRARIES(rspamc rspamd-server)
- TARGET_LINK_LIBRARIES(rspamc ${RSPAMD_REQUIRED_LIBRARIES})
+$OpenBSD: patch-src_client_CMakeLists_txt,v 1.3 2016/05/27 09:18:14 sthen Exp $
+--- src/client/CMakeLists.txt.orig	Tue Mar 15 13:39:30 2016
++++ src/client/CMakeLists.txt	Wed Mar 23 17:27:31 2016
+@@ -12,8 +12,8 @@ IF (ENABLE_HYPERSCAN MATCHES "ON")
+ 	SET_TARGET_PROPERTIES(rspamc PROPERTIES LINKER_LANGUAGE CXX)
+ ENDIF()
  
 -IF(NOT DEBIAN_BUILD)
 +IF(NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)

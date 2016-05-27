@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/02/01 14:45:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/27 09:18:14 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -61,6 +61,8 @@ share/examples/rspamd/modules.d/rbl.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/rbl.conf
 share/examples/rspamd/modules.d/regexp.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/regexp.conf
+share/examples/rspamd/modules.d/rspamd_update.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/rspamd_update.conf
 share/examples/rspamd/modules.d/spf.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/spf.conf
 share/examples/rspamd/modules.d/surbl.conf
@@ -86,6 +88,7 @@ share/examples/rspamd/worker-normal.inc
 share/rspamd/
 share/rspamd/effective_tld_names.dat
 share/rspamd/lua/
+share/rspamd/lua/dcc.lua
 share/rspamd/lua/dmarc.lua
 share/rspamd/lua/emails.lua
 share/rspamd/lua/fann_scores.lua
@@ -100,6 +103,7 @@ share/rspamd/lua/once_received.lua
 share/rspamd/lua/phishing.lua
 share/rspamd/lua/ratelimit.lua
 share/rspamd/lua/rbl.lua
+share/rspamd/lua/rspamd_update.lua
 share/rspamd/lua/settings.lua
 share/rspamd/lua/spamassassin.lua
 share/rspamd/lua/trie.lua

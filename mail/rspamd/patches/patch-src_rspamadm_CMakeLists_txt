@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.4 2016/02/25 00:47:55 sthen Exp $
---- src/rspamadm/CMakeLists.txt.orig	Fri Feb  5 13:38:07 2016
-+++ src/rspamadm/CMakeLists.txt	Tue Feb 23 14:20:53 2016
-@@ -43,9 +43,9 @@ IF(ENABLE_HIREDIS MATCHES "ON")
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.5 2016/05/27 09:18:14 sthen Exp $
+--- src/rspamadm/CMakeLists.txt.orig	Mon Apr  4 12:37:40 2016
++++ src/rspamadm/CMakeLists.txt	Wed Apr 13 21:48:16 2016
+@@ -44,9 +44,9 @@ IF(ENABLE_HIREDIS MATCHES "ON")
  ENDIF()
  TARGET_LINK_LIBRARIES(rspamadm rspamd-actrie)
  
