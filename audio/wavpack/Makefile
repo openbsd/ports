@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/27 21:57:52 tim Exp $
+# $OpenBSD: Makefile,v 1.21 2016/05/28 21:19:16 tim Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -21,9 +21,16 @@ EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		converters/libiconv
 
-SEPARATE_BUILD=		Yes
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-tests
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	rm ${PREFIX}/bin/wvtest
+
+do-test:
+	${WRKBUILD}/cli/wvtest --default
 
 .include <bsd.port.mk>
