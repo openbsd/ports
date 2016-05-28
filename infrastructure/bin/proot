@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.46 2016/05/26 00:08:02 espie Exp $
+# $OpenBSD: proot,v 1.47 2016/05/28 08:42:23 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -105,6 +105,29 @@ use File::Basename;
 use File::Find;
 use File::Path qw(remove_tree);
 
+sub set_chroot
+{
+	my $state = shift;
+	for my $item (keys %{$state->{dontrm}}) {
+		$state->add_chroot_preserved($item);
+	}
+}
+
+sub add_chroot_preserved
+{
+	my ($state, $item) = @_;
+	$state->{chroot_dont}{$state->chroot($item)} = 1;
+}
+
+sub add_preserved
+{
+	my ($state, $item) = @_;
+	$state->{dontrm}{$item} = 1;
+	if (exists $state->{chroot_dont}) {
+		$state->add_chroot_preserved($item);
+	}
+}
+
 sub canonical_dir
 {
 	my ($state, $path) = @_;
@@ -148,7 +171,7 @@ sub do_parm
 		    $state->{WRKOBJDIR} = File::Spec->canonpath("$v/pobj");
 		    $state->{LOCKDIR} = File::Spec->canonpath("$v/locks");
 	    }, preserve => sub {
-		    push(@{$state->{preserved}}, $v);
+		    $state->add_preserved($v);
 	    }, portscvs => sub {
 		    $state->{portscvs} = $v;
 	    }, chown_all => sub {
@@ -264,6 +287,7 @@ sub handle_options
 	if (defined $state->{fchroot}) {
 		$state->{chroot} = $state->{fchroot};
 	}
+	$state->set_chroot;
 	if (defined $state->{fsrcroot}) {
 		$state->{srcroot} = $state->{fsrcroot};
 	}
@@ -287,7 +311,7 @@ sub handle_options
 	}
 	if (defined $state->{snapshot} &&
 	    $state->{snapshot} =~ m/^\Q$state->{chroot}\E(.*)/) {
-		push(@{$state->{preserved}}, $1);
+	    	$state->add_preserved($1);
 	}
 
 	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
@@ -315,7 +339,7 @@ sub handle_options
 	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR)) {
 		next if !defined $state->{$dir};
 		$state->{$dir} = $state->canonical_dir($state->{$dir});
-		push(@{$state->{preserved}}, $state->{$dir});
+		$state->add_preserved($state->{$dir});
 	}
 	for my $i (qw(portuser loguser fetchuser builduser)) {
 		if (defined $state->{$i}) {
@@ -422,9 +446,10 @@ sub check_mountpoint
 	}
 	for my $dir (keys %$dev) {
 		if ($dir =~ m/^\Q$root\E(\/.*)/) {
+			$state->say("Preserve #1", $1);
+			$state->add_preserved($1);
 			my $devno = (stat $dir)[0];
 			$state->{dontrm_dev}{$devno} = 1;
-			$state->say("Preserve #1", $1);
 		}
 	}
 	my $mnt = $root;
@@ -484,23 +509,29 @@ sub simple_copy
 
 	$state->{accounted}{$path} = 1;
 	if (-l $path) {
-		return if $state->{dontrm}{$cpath};
+		return if $state->{chroot_dont}{$cpath};
 		remove_tree($cpath);
 		my $target = readlink $path;
 		if (!defined $target) {
 			$state->errsay("Can't read link to #1: #2", $path, $!);
 		} else {
-			symlink($target, $cpath);
+			symlink($target, $cpath) or
+			    $state->errsay("Can't symlink #1 -> #2", $target, 
+				$cpath);
 		}
 		return;
 	} else {
 		my ($dev, $ino, $mode, $uid, $gid, $sz, $atime, $mtime) = 
 		    (stat $path)[0, 1, 2, 4, 5, 7, 8, 9];
 		if (-d $path) {
-			if (!-d $cpath) {
+			if (!-d $cpath && -e _) {
+				return if $state->{chroot_dont}{$cpath};
 				remove_tree($cpath);
 			}
 			mkdir $cpath, $mode;
+			if (!-d $cpath) {
+				$state->errsay("Can't mkdir #1", $cpath);
+			}
 			if (defined $user) {
 				$user->own($cpath);
 			} else {
@@ -518,6 +549,7 @@ sub simple_copy
 			my $key = "$dev/$ino";
 
 			if (exists $state->{copied}{$key}) {
+				return if $state->{chroot_dont}{$cpath};
 				remove_tree($cpath);
 				link($state->{copied}{$key}, $cpath);
 				return;
@@ -531,6 +563,7 @@ sub simple_copy
 			if (defined $sz2 && $sz2 == $sz && $mtime2 >= $mtime) {
 				$okay = 1;
 			} else {
+				return if $state->{chroot_dont}{$cpath};
 				remove_tree($cpath);
 				$okay = copy($path, $cpath);
 			}
@@ -547,7 +580,7 @@ sub simple_copy
 			}
 		}
 	}
-	$state->errsay("Can't copy #1", $path);
+	$state->errsay("Can't copy #1: #2", $path, $!);
 }
 
 sub recursive_copy
@@ -776,7 +809,7 @@ sub regen_devs
 		    sub {
 			$state->chdir($state->chroot("/dev"));
 		    }, '/bin/sh', './MAKEDEV', 'all');
-		push(@{$state->{preserved}}, "/dev");
+		$state->add_preserved('/dev');
 	    });
 }
 
