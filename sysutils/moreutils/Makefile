@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/05 15:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/05/28 13:47:14 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-V =		0.58
-DISTNAME =	moreutils_$V
-EXTRACT_SUFX =	.orig.tar.gz
+V =		0.59
+DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
-WRKDIST =	${WRKDIR}/${PKGNAME}
+WRKDIST =	${WRKDIR}/moreutils-$V.orig
 
 CATEGORIES =	sysutils
 
@@ -26,11 +25,9 @@ RUN_DEPENDS =		devel/p5-IPC-Run \
 			devel/p5-Time-Duration \
 			devel/p5-Time-TimeDate
 
+MAKE_FLAGS =		DOCBOOKXSL=${LOCALBASE}/share/xsl/docbook
 FAKE_FLAGS =		PREFIX=${PREFIX}
 USE_GMAKE =		Yes
 NO_TEST =		Yes
-
-pre-patch:
-	sed -i 's,/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages,${LOCALBASE}/share/xsl/docbook/manpages,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
