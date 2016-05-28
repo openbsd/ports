@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.204 2016/04/25 16:38:36 edd Exp $
+# $OpenBSD: network.conf.template,v 1.205 2016/05/28 13:51:18 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -224,9 +224,9 @@ MASTER_SITE_ISC +=	\
 	ftp://ftp.nominum.com/pub/isc/
 
 MASTER_SITE_DEBIAN += \
+	http://ftp.debian.org/debian/pool/ \
 	http://ftp.au.debian.org/debian/pool/ \
 	http://ftp.de.debian.org/debian/pool/ \
-	http://ftp.debian.org/debian/pool/ \
 	http://ftp.fr.debian.org/debian/pool/ \
 	http://ftp.nl.debian.org/debian/pool/ \
 	http://ftp.uk.debian.org/debian/pool/ \
