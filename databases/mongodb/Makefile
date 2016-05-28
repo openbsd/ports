@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/10 08:57:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/05/28 21:16:04 sthen Exp $
 
 PORTROACH =	limitw:1,even
 
@@ -9,6 +9,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	scalable, high-performance document-oriented database
 
 DISTNAME =	mongodb-src-r3.2.6
+REVISION =	0
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
 
@@ -19,8 +20,9 @@ HOMEPAGE =	http://www.mongodb.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_chrono-mt boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c execinfo
-WANTLIB += kvm m pcap pcre pcrecpp pthread yaml-cpp z
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
+WANTLIB += execinfo kvm m pcap pcre pcrecpp pthread ssl yaml-cpp
+WANTLIB += z
 
 MASTER_SITES =	http://downloads.mongodb.org/src/
 
@@ -44,6 +46,7 @@ MODSCONS_ENV =	CC="${CC}" \
 		LIBPATH="${LOCALBASE}/lib"
 MODSCONS_FLAGS += --prefix="${PREFIX}" \
 		  --opt=on \
+		  --ssl=SSL \
 		  --allocator=system \
 		  --use-system-boost \
 		  --use-system-pcre \
@@ -63,10 +66,9 @@ TEST_DEPENDS =	textproc/py-yaml \
 BUILD_DEPENDS =	textproc/icu4c
 
 do-install:
-	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${INSTALL_TARGET}
-
-post-install:
+	for bin in mongo mongod mongos mongosniff mongobridge mongoperf; do \
+		${INSTALL_PROGRAM} ${WRKSRC}/$$bin ${PREFIX}/bin/; \
+	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb
 	${INSTALL_DATA} ${FILESDIR}/mongodb.conf \
 	    ${PREFIX}/share/examples/mongodb
