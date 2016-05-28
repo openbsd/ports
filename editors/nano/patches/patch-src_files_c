@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_files_c,v 1.1 2016/05/28 21:16:43 naddy Exp $
+
+Do not call free on the result of dirname.
+http://git.savannah.gnu.org/cgit/nano.git/commit/src/files.c?id=33a6f6a1b643bac50ca59a4cbd861cb4e8a7c45d
+
+--- src/files.c.orig	Thu Feb 25 21:47:10 2016
++++ src/files.c	Sat May 28 23:09:43 2016
+@@ -36,15 +36,11 @@
+ /* Verify that the containing directory of the given filename exists. */
+ bool has_valid_path(const char *filename)
+ {
+-    char *parentdir;
++    char *namecopy = mallocstrcpy(NULL, filename);
++    char *parentdir = dirname(namecopy);
+     struct stat parentinfo;
+     bool validity = FALSE;
+ 
+-    if (strrchr(filename, '/') == NULL)
+-	parentdir = mallocstrcpy(NULL, ".");
+-    else
+-	parentdir = dirname(mallocstrcpy(NULL, filename));
+-
+     if (stat(parentdir, &parentinfo) == -1) {
+ 	if (errno == ENOENT)
+ 	    statusbar(_("Directory '%s' does not exist"), parentdir);
+@@ -59,7 +55,7 @@ bool has_valid_path(const char *filename)
+ 	    validity = TRUE;
+     }
+ 
+-    free(parentdir);
++    free(namecopy);
+ 
+     if (!validity)
+ 	beep();
