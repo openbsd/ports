@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/24 08:36:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/28 13:59:51 sthen Exp $
 @conflict gqview-*
 @pkgpath graphics/gqview
 @bin bin/geeqie
@@ -63,8 +63,10 @@ share/doc/geeqie/GuidePrinting.html
 share/doc/geeqie/GuideReference.html
 share/doc/geeqie/GuideReferenceCommandLine.html
 share/doc/geeqie/GuideReferenceKeyboardShortcuts.html
+share/doc/geeqie/GuideReferenceLua.html
 share/doc/geeqie/GuideReferenceManagement.html
 share/doc/geeqie/GuideReferenceThumbnails.html
+share/doc/geeqie/GuideReferenceToolbar.html
 share/doc/geeqie/GuideSidebars.html
 share/doc/geeqie/GuideSidebarsInfo.html
 share/doc/geeqie/GuideSidebarsSortManager.html
@@ -101,6 +103,7 @@ share/locale/ca/LC_MESSAGES/geeqie.mo
 share/locale/cs/LC_MESSAGES/geeqie.mo
 share/locale/da/LC_MESSAGES/geeqie.mo
 share/locale/de/LC_MESSAGES/geeqie.mo
+share/locale/el/LC_MESSAGES/geeqie.mo
 share/locale/eo/LC_MESSAGES/geeqie.mo
 share/locale/es/LC_MESSAGES/geeqie.mo
 share/locale/et/LC_MESSAGES/geeqie.mo
@@ -124,6 +127,9 @@ share/locale/sr/LC_MESSAGES/geeqie.mo
 share/locale/sr@latin/LC_MESSAGES/geeqie.mo
 share/locale/sv/LC_MESSAGES/geeqie.mo
 share/locale/th/LC_MESSAGES/geeqie.mo
+share/locale/tlh/
+share/locale/tlh/LC_MESSAGES/
+share/locale/tlh/LC_MESSAGES/geeqie.mo
 share/locale/tr/LC_MESSAGES/geeqie.mo
 share/locale/uk/LC_MESSAGES/geeqie.mo
 share/locale/vi/LC_MESSAGES/geeqie.mo

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_window_c,v 1.1.1.1 2011/03/09 09:58:49 ajacoutot Exp $
---- src/window.c.orig	Sun Mar  6 08:46:11 2011
-+++ src/window.c	Sun Mar  6 08:47:21 2011
-@@ -162,19 +162,11 @@ static gchar *html_browsers[] =
+$OpenBSD: patch-src_window_c,v 1.2 2016/05/28 13:59:51 sthen Exp $
+--- src/window.c.orig	Fri May 27 10:37:56 2016
++++ src/window.c	Sat May 28 14:55:27 2016
+@@ -171,19 +171,11 @@ static gchar *html_browsers[] =
  {
  	/* Our specific script */
  	GQ_APPNAME_LC "_html_browser", NULL,
