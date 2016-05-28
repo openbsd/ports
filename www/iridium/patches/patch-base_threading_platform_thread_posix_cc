@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.2 2016/05/28 14:49:39 robert Exp $
 
 XXX pledge(2)
 
---- base/threading/platform_thread_posix.cc.orig.port	Sat Apr 16 14:48:22 2016
-+++ base/threading/platform_thread_posix.cc	Sat Apr 16 14:48:26 2016
-@@ -53,7 +53,7 @@ void* ThreadFunc(void* params) {
+--- base/threading/platform_thread_posix.cc.orig.port	Wed May 25 04:54:06 2016
++++ base/threading/platform_thread_posix.cc	Thu May 26 08:09:40 2016
+@@ -55,7 +55,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::ThreadRestrictions::SetSingletonAllowed(false);
  

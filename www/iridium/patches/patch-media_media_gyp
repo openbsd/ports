@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
---- media/media.gyp.orig.port	Thu Apr 21 00:01:50 2016
-+++ media/media.gyp	Tue Apr 26 10:07:36 2016
+$OpenBSD: patch-media_media_gyp,v 1.11 2016/05/28 14:49:39 robert Exp $
+--- media/media.gyp.orig.port	Wed May 25 21:01:03 2016
++++ media/media.gyp	Thu May 26 08:09:47 2016
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
@@ -21,7 +21,7 @@ $OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
        # low memory buffer is used in non-Android based chromecast build due to hardware limitation.
        ['chromecast==1 and OS!="android"', {
          'use_low_memory_buffer%': 1,
-@@ -189,6 +193,8 @@
+@@ -191,6 +195,8 @@
          'audio/mac/audio_manager_mac.h',
          'audio/null_audio_sink.cc',
          'audio/null_audio_sink.h',
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
          'audio/pulse/audio_manager_pulse.cc',
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_input.cc',
-@@ -197,6 +203,10 @@
+@@ -199,6 +205,10 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
@@ -41,7 +41,7 @@ $OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -730,6 +740,24 @@
+@@ -745,6 +755,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -66,7 +66,7 @@ $OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -745,7 +773,7 @@
+@@ -760,7 +788,7 @@
              ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
@@ -75,16 +75,16 @@ $OpenBSD: patch-media_media_gyp,v 1.10 2016/04/27 12:46:16 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -850,7 +878,7 @@
-             'ozone/media_ozone_platform.h',
-           ]
+@@ -812,7 +840,7 @@
+             }],
+           ],
          }],
 -        ['OS!="linux"', {
 +        ['OS!="linux" and os_bsd!=1', {
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1095,7 +1123,7 @@
+@@ -1059,7 +1087,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],

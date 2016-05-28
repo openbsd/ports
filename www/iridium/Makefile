@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/20 15:36:05 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2016/05/28 14:49:39 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			50.0
+V=			51.1
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 
@@ -201,12 +201,14 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/iridium
 
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
+	${INSTALL_DATA_DIR} ${PREFIX}/iridium/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
+	${INSTALL_DATA} ${BUILDDIR}/pseudo_locales/* ${PREFIX}/iridium/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
-.for f in libexif.so protoc icudtl.dat mksnapshot
+.for f in protoc icudtl.dat mksnapshot
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
 .endfor
 .for s in 22 24 48 64 128 256

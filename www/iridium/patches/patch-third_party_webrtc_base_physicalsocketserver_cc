@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_webrtc_base_physicalsocketserver_cc,v 1.6 2016/04/27 12:46:16 robert Exp $
---- third_party/webrtc/base/physicalsocketserver.cc.orig.port	Wed Apr 13 23:01:41 2016
-+++ third_party/webrtc/base/physicalsocketserver.cc	Sat Apr 16 16:09:56 2016
-@@ -250,7 +250,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+$OpenBSD: patch-third_party_webrtc_base_physicalsocketserver_cc,v 1.7 2016/05/28 14:49:39 robert Exp $
+--- third_party/webrtc/base/physicalsocketserver.cc.orig.port	Wed May 25 21:02:41 2016
++++ third_party/webrtc/base/physicalsocketserver.cc	Thu May 26 08:09:49 2016
+@@ -245,7 +245,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
    socklen_t optlen = sizeof(*value);
    int ret = ::getsockopt(s_, slevel, sopt, (SockOptArg)value, &optlen);
    if (ret != -1 && opt == OPT_DONTFRAGMENT) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_webrtc_base_physicalsocketserver_cc,v 1.6 2016/04/27
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
    }
-@@ -263,7 +263,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -258,7 +258,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_webrtc_base_physicalsocketserver_cc,v 1.6 2016/04/27
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    }
-@@ -538,7 +538,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -533,7 +533,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

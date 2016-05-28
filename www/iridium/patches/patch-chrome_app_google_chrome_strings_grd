@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.9 2016/04/27 12:46:16 robert Exp $
---- chrome/app/google_chrome_strings.grd.orig.port	Thu Apr 21 00:01:47 2016
-+++ chrome/app/google_chrome_strings.grd	Wed Apr 27 11:11:15 2016
-@@ -949,7 +949,7 @@ Signing in anyway will merge Chrome information like b
+$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.10 2016/05/28 14:49:39 robert Exp $
+--- chrome/app/google_chrome_strings.grd.orig.port	Wed May 25 21:00:56 2016
++++ chrome/app/google_chrome_strings.grd	Sat May 28 10:25:24 2016
+@@ -938,7 +938,7 @@ Signing in anyway will merge Chrome information like b
        </message>
  
        <!-- ProcessSingleton -->

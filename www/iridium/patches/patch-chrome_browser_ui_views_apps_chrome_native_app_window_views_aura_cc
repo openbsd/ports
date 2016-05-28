@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
---- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig.port	Wed Apr 13 22:59:41 2016
-+++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc	Thu Apr 14 08:25:10 2016
-@@ -20,7 +20,7 @@
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.6 2016/05/28 14:49:39 robert Exp $
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig.port	Wed May 25 04:54:10 2016
++++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc	Thu May 26 08:09:41 2016
+@@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_skia.h"
  #include "ui/views/widget/widget.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -58,7 +58,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+@@ -57,7 +57,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
      const AppWindow::CreateParams& create_params,
      views::Widget::InitParams* init_params,
      views::Widget* widget) {

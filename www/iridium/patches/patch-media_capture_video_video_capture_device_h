@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.4 2016/04/27 12:46:16 robert Exp $
---- media/capture/video/video_capture_device.h.orig.port	Wed Apr 13 22:59:48 2016
-+++ media/capture/video/video_capture_device.h	Thu Apr 14 08:25:13 2016
+$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.5 2016/05/28 14:49:39 robert Exp $
+--- media/capture/video/video_capture_device.h.orig.port	Wed May 25 21:01:03 2016
++++ media/capture/video/video_capture_device.h	Thu May 26 08:09:47 2016
 @@ -51,7 +51,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      Name();
      Name(const std::string& name, const std::string& id);
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.4 2016/04/27 12:4
      CaptureApiType capture_api_type() const {
        return capture_api_class_.capture_api_type();
      }
-@@ -143,7 +143,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -139,7 +139,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      std::string device_name_;
      std::string unique_id_;
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

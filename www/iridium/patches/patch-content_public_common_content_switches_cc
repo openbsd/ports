@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.10 2016/04/27 12:46:16 robert Exp $
---- content/public/common/content_switches.cc.orig.port	Thu Apr 21 00:01:49 2016
-+++ content/public/common/content_switches.cc	Wed Apr 27 11:11:18 2016
-@@ -642,6 +642,8 @@ const char kNoReferrers[]                   = "no-refe
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.11 2016/05/28 14:49:39 robert Exp $
+--- content/public/common/content_switches.cc.orig.port	Wed May 25 21:01:01 2016
++++ content/public/common/content_switches.cc	Sat May 28 10:25:28 2016
+@@ -633,6 +633,8 @@ const char kNoReferrers[]                   = "no-refe
  // Disables the sandbox for all process types that are normally sandboxed.
  const char kNoSandbox[]                     = "no-sandbox";
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_public_common_content_switches_cc,v 1.10 2016/04/27 12:4
  // Enable or disable appcontainer/lowbox for renderer on Win8+ platforms.
  const char kEnableAppContainer[]           = "enable-appcontainer";
  const char kDisableAppContainer[]          = "disable-appcontainer";
-@@ -978,7 +980,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+@@ -963,7 +965,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
      "disable-vaapi-accelerated-video-encode";
  #endif
  

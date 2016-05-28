@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_pdfium_core_include_fxcrt_fx_system_h,v 1.4 2015/10/24 18:22:21 robert Exp $
---- third_party/pdfium/core/include/fxcrt/fx_system.h.orig.port	Tue Sep  1 22:10:51 2015
-+++ third_party/pdfium/core/include/fxcrt/fx_system.h	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-third_party_pdfium_core_fxcrt_include_fx_system_h,v 1.1 2016/05/28 14:49:39 robert Exp $
+--- third_party/pdfium/core/fxcrt/include/fx_system.h.orig.port	Thu May 26 08:32:11 2016
++++ third_party/pdfium/core/fxcrt/include/fx_system.h	Thu May 26 08:32:19 2016
 @@ -40,7 +40,7 @@
  #elif defined(_WIN64)
  #define _FX_OS_ _FX_WIN64_DESKTOP_

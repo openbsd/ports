@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
---- media/base/video_frame.cc.orig.port	Mon Apr 25 18:28:58 2016
-+++ media/base/video_frame.cc	Mon Apr 25 18:29:16 2016
-@@ -60,7 +60,7 @@ static std::string StorageTypeToString(
+$OpenBSD: patch-media_base_video_frame_cc,v 1.2 2016/05/28 14:49:39 robert Exp $
+--- media/base/video_frame.cc.orig.port	Wed May 25 21:01:03 2016
++++ media/base/video_frame.cc	Thu May 26 08:09:47 2016
+@@ -49,7 +49,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_base_video_frame_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -87,7 +87,7 @@ static bool IsValidPlane(size_t plane, VideoPixelForma
+@@ -71,7 +71,7 @@ static std::string StorageTypeToString(
  // static
  static bool IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_base_video_frame_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -416,7 +416,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuvG
+@@ -311,7 +311,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuvG
    return frame;
  }
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_base_video_frame_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      VideoPixelFormat format,
-@@ -526,7 +526,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -427,7 +427,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      wrapping_frame->data_[i] = frame->data(i);
    }
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-media_base_video_frame_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
      std::vector<int> original_fds;
-@@ -811,7 +811,7 @@ VideoFrame::gpu_memory_buffer_handles() const {
+@@ -712,7 +712,7 @@ VideoFrame::gpu_memory_buffer_handles() const {
    return gpu_memory_buffer_handles_;
  }
  

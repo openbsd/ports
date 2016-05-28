@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.1 2016/05/28 14:49:39 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig.port	Thu May 26 14:23:38 2016
++++ third_party/WebKit/Source/platform/fonts/FontCache.cpp	Thu May 26 14:23:45 2016
+@@ -59,7 +59,7 @@ using namespace WTF;
+ 
+ namespace blink {
+ 
+-#if !OS(WIN) && !OS(LINUX)
++#if !OS(WIN) && !OS(LINUX) && !OS(OPENBSD)
+ FontCache::FontCache()
+     : m_purgePreventCount(0)
+     , m_fontManager(nullptr)

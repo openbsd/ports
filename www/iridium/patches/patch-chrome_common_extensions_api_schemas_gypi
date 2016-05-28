@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.9 2016/04/27 12:46:16 robert Exp $
---- chrome/common/extensions/api/schemas.gypi.orig.port	Wed Apr 13 22:59:42 2016
-+++ chrome/common/extensions/api/schemas.gypi	Thu Apr 14 08:25:10 2016
-@@ -177,7 +177,7 @@
+$OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.10 2016/05/28 14:49:39 robert Exp $
+--- chrome/common/extensions/api/schemas.gypi.orig.port	Wed May 25 21:00:58 2016
++++ chrome/common/extensions/api/schemas.gypi	Thu May 26 08:09:42 2016
+@@ -184,7 +184,7 @@
          ],
        }, { # chromeos==0
          'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.9 2016/04/27 12:46
              'schema_files': [
                '<@(input_ime_schema_file)',
              ],
-@@ -192,6 +192,11 @@
+@@ -199,6 +199,11 @@
        ['enable_webrtc==1', {
          'schema_files': [
            '<@(webrtc_schema_files)',

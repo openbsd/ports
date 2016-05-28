@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.5 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig.port	Wed Feb 24 00:01:59 2016
-+++ chrome/browser/ui/views/frame/system_menu_model_builder.cc	Thu Mar  3 09:43:26 2016
-@@ -88,7 +88,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.6 2016/05/28 14:49:39 robert Exp $
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig.port	Wed May 25 04:54:10 2016
++++ chrome/browser/ui/views/frame/system_menu_model_builder.cc	Thu May 26 08:09:42 2016
+@@ -85,7 +85,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.5
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    model->AddCheckItemWithStringId(IDC_USE_SYSTEM_TITLE_BAR,
                                    IDS_SHOW_WINDOW_DECORATIONS_MENU);
-@@ -126,7 +126,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -123,7 +123,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }

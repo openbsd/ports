@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/04/27 12:46:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/05/28 14:49:39 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -9,7 +9,6 @@ iridium/content_resources.pak
 iridium/icudtl.dat
 @bin iridium/iridium
 iridium/keyboard_resources.pak
-iridium/libexif.so
 iridium/locales/
 iridium/locales/am.pak
 iridium/locales/ar.pak
@@ -67,6 +66,8 @@ iridium/locales/zh-TW.pak
 iridium/mksnapshot
 iridium/product_logo_48.png
 iridium/protoc
+iridium/pseudo_locales/
+iridium/pseudo_locales/fake-bidi.pak
 iridium/resources/
 iridium/resources.pak
 iridium/resources/extension/
@@ -107,7 +108,6 @@ iridium/resources/inspector/Images/indexedDBObjectStore.png
 iridium/resources/inspector/Images/localStorage.png
 iridium/resources/inspector/Images/navigationControls.png
 iridium/resources/inspector/Images/navigationControls_2x.png
-iridium/resources/inspector/Images/notifications.svg
 iridium/resources/inspector/Images/paneAddButtons.png
 iridium/resources/inspector/Images/paneFilterButtons.png
 iridium/resources/inspector/Images/paneRefreshButtons.png
@@ -151,9 +151,9 @@ iridium/resources/inspector/Images/toolbarResizerHorizontal.png
 iridium/resources/inspector/Images/toolbarResizerVertical.png
 iridium/resources/inspector/Images/touchCursor.png
 iridium/resources/inspector/Images/touchCursor_2x.png
-iridium/resources/inspector/Images/updateServiceWorker.svg
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
+iridium/resources/inspector/Tests.js
 iridium/resources/inspector/accessibility_module.js
 iridium/resources/inspector/animation_module.js
 iridium/resources/inspector/audits_module.js
@@ -191,17 +191,17 @@ iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-keyboard-2
 iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-1x.png
 iridium/resources/inspector/emulated_devices/google-nexus-5x-vertical-navigation-2x.png
 iridium/resources/inspector/emulated_devices_module.js
+iridium/resources/inspector/es_tree_module.js
+iridium/resources/inspector/formatter_worker_module.js
 iridium/resources/inspector/heap_snapshot_worker_module.js
 iridium/resources/inspector/inspector.html
 iridium/resources/inspector/inspector.js
 iridium/resources/inspector/layers_module.js
 iridium/resources/inspector/network_module.js
 iridium/resources/inspector/profiler_module.js
-iridium/resources/inspector/promises_module.js
 iridium/resources/inspector/resources_module.js
 iridium/resources/inspector/sass_module.js
 iridium/resources/inspector/screencast_module.js
-iridium/resources/inspector/script_formatter_worker_module.js
 iridium/resources/inspector/security_module.js
 iridium/resources/inspector/settings_module.js
 iridium/resources/inspector/snippets_module.js

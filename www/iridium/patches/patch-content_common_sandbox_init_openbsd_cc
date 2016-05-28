@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
---- content/common/sandbox_init_openbsd.cc.orig.port	Fri Apr 22 21:49:42 2016
-+++ content/common/sandbox_init_openbsd.cc	Mon Apr 25 18:06:32 2016
+$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.5 2016/05/28 14:49:39 robert Exp $
+--- content/common/sandbox_init_openbsd.cc.orig.port	Thu May 26 08:09:46 2016
++++ content/common/sandbox_init_openbsd.cc	Thu May 26 14:18:22 2016
 @@ -0,0 +1,77 @@
 +/*
 + * Copyright (c) 2016 Robert Nagy <robert@openbsd.org>
@@ -53,7 +53,7 @@ $OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.4 2016/04/27 12:46:16
 +      LOG(ERROR) << "pledge() failed, errno: " << errno;
 +      _exit(1);
 +    }
-+  } else if ((process_type == switches::kPluginProcess) ||
++  } else if ((process_type == switches::kPpapiInProcess) ||
 +             (process_type == switches::kPpapiPluginProcess)) {
 +    // "cache" the amount of physical memory before pledge(2)
 +    base::SysInfo::AmountOfPhysicalMemoryMB();

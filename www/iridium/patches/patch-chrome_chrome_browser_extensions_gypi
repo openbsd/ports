@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.9 2016/04/27 12:46:16 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Wed Apr 13 22:59:42 2016
-+++ chrome/chrome_browser_extensions.gypi	Thu Apr 14 08:25:10 2016
-@@ -1023,6 +1023,11 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.10 2016/05/28 14:49:39 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Thu May 26 08:24:00 2016
++++ chrome/chrome_browser_extensions.gypi	Thu May 26 08:25:06 2016
+@@ -1014,6 +1014,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
@@ -10,10 +10,10 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.9 2016/04/27 12:46:16 
 +            ['exclude', '^browser/extensions/api/image_writer_private/removable_storage_provider_linux.cc'],
 +          ],
 +        }],
-         ['chromeos==1', {
-           'dependencies': [
-             '../build/linux/system.gyp:dbus',
-@@ -1065,7 +1070,7 @@
+         ['enable_task_manager==1', {
+           'sources': [
+             '<@(chrome_browser_extensions_task_manager_enabled_sources)',
+@@ -1061,7 +1066,7 @@
              '../ui/views/views.gyp:views',
            ],
          }],

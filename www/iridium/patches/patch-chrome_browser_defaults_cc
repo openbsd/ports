@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_defaults_cc,v 1.5 2016/03/23 20:13:06 robert Exp $
---- chrome/browser/defaults.cc.orig.port	Wed Feb 24 00:01:58 2016
-+++ chrome/browser/defaults.cc	Thu Mar  3 09:43:25 2016
-@@ -46,7 +46,7 @@ const bool kSyncAutoStarts = false;
- const bool kShowOtherBrowsersInAboutMemory = true;
+$OpenBSD: patch-chrome_browser_defaults_cc,v 1.6 2016/05/28 14:49:39 robert Exp $
+--- chrome/browser/defaults.cc.orig.port	Wed May 25 04:54:08 2016
++++ chrome/browser/defaults.cc	Thu May 26 08:09:40 2016
+@@ -44,7 +44,7 @@ const bool kSyncAutoStarts = true;
+ const bool kSyncAutoStarts = false;
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

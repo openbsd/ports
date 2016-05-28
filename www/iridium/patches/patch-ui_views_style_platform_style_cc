@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
---- ui/views/style/platform_style.cc.orig.port	Sat Apr 16 11:59:30 2016
-+++ ui/views/style/platform_style.cc	Sat Apr 16 11:59:47 2016
-@@ -34,7 +34,7 @@ scoped_ptr<ScrollBar> PlatformStyle::CreateScrollBar(b
- 
+$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.2 2016/05/28 14:49:39 robert Exp $
+--- ui/views/style/platform_style.cc.orig.port	Wed May 25 21:01:13 2016
++++ ui/views/style/platform_style.cc	Thu May 26 08:09:50 2016
+@@ -55,7 +55,7 @@ scoped_ptr<ScrollBar> PlatformStyle::CreateScrollBar(b
+ }
  #endif
  
 -#if !defined(OS_LINUX) || defined(OS_CHROMEOS)

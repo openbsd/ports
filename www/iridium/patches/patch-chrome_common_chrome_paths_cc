@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.7 2016/03/23 20:13:07 robert Exp $
---- chrome/common/chrome_paths.cc.orig.port	Wed Feb 24 00:01:59 2016
-+++ chrome/common/chrome_paths.cc	Thu Mar  3 09:43:26 2016
-@@ -178,7 +178,7 @@ bool PathProvider(int key, base::FilePath* result) {
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.8 2016/05/28 14:49:39 robert Exp $
+--- chrome/common/chrome_paths.cc.orig.port	Wed May 25 21:00:58 2016
++++ chrome/common/chrome_paths.cc	Thu May 26 08:09:42 2016
+@@ -170,7 +170,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.7 2016/03/23 20:13:07 robert E
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -422,7 +422,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -400,7 +400,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
  #endif
  #if defined(ENABLE_SUPERVISED_USERS)
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.7 2016/03/23 20:13:07 robert E
      case chrome::DIR_SUPERVISED_USERS_DEFAULT_APPS:
        if (!PathService::Get(chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS, &cur))
          return false;
-@@ -470,7 +470,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -448,7 +448,7 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;

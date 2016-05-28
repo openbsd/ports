@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.1 2016/05/28 14:49:39 robert Exp $
+--- base/trace_event/process_memory_dump.cc.orig.port	Thu May 26 09:33:50 2016
++++ base/trace_event/process_memory_dump.cc	Thu May 26 09:58:14 2016
+@@ -83,7 +83,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
+   const size_t kMaxChunkSize = 8 * 1024 * 1024;
+   size_t max_vec_size =
+       GetSystemPageCount(std::min(mapped_size, kMaxChunkSize), page_size);
+-#if defined(OS_MACOSX) || defined(OS_IOS)
++#if defined(OS_MACOSX) || defined(OS_IOS) || defined(OS_BSD)
+   std::unique_ptr<char[]> vec(new char[max_vec_size]);
+ #elif defined(OS_WIN)
+   std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(

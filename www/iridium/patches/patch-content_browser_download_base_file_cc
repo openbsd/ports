@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_browser_download_base_file_cc,v 1.4 2016/03/23 20:13:07 robert Exp $
---- content/browser/download/base_file.cc.orig.port	Wed Feb 24 00:02:00 2016
-+++ content/browser/download/base_file.cc	Thu Mar  3 09:43:26 2016
-@@ -216,7 +216,7 @@ void BaseFile::SetClientGuid(const std::string& guid) 
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.5 2016/05/28 14:49:39 robert Exp $
+--- content/browser/download/base_file.cc.orig.port	Thu May 26 08:29:17 2016
++++ content/browser/download/base_file.cc	Thu May 26 08:29:24 2016
+@@ -186,7 +186,7 @@ scoped_ptr<crypto::SecureHash> BaseFile::Finish() {
  }
  
  // OS_WIN, OS_MACOSX and OS_LINUX have specialized implementations.
 -#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
 +#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_BSD)
- DownloadInterruptReason BaseFile::AnnotateWithSourceInformation() {
-   return DOWNLOAD_INTERRUPT_REASON_NONE;
- }
+ DownloadInterruptReason BaseFile::AnnotateWithSourceInformation(
+     const std::string& client_guid,
+     const GURL& source_url,
