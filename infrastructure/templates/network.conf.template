@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.205 2016/05/28 13:51:18 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.206 2016/05/29 21:31:00 bentley Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -118,9 +118,7 @@ MASTER_SITE_SOURCEFORGE+=	\
 	http://downloads.sourceforge.net/sourceforge/
 
 MASTER_SITE_SOURCEFORGE_JP+=	\
-	http://osdn.dl.sourceforge.jp/ \
-	http://downloads.sourceforge.jp/ \
-	http://prdownloads.sourceforge.jp/
+	http://osdn.dl.sourceforge.jp/
 
 MASTER_SITE_GNOME+=	\
 	http://ftp.acc.umu.se/pub/GNOME/ \
