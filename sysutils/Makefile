@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.393 2016/05/14 14:01:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.394 2016/05/29 02:42:19 jsg Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -51,6 +51,7 @@
      SUBDIR += dmidecode
      SUBDIR += downtimed
      SUBDIR += dsh
+     SUBDIR += dtb
      SUBDIR += dtpstree
      SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
@@ -255,6 +256,7 @@
      SUBDIR += tray-app
      SUBDIR += tree
      SUBDIR += ttyload
+     SUBDIR += u-boot
      SUBDIR += udfclient
      SUBDIR += upower
      SUBDIR += upsd
