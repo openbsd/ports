@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/16 19:06:26 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2016/05/29 18:08:04 danj Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.11.5
+MODPY_EGG_VERSION =	0.11.10
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -14,7 +13,7 @@ HOMEPAGE =		http://werkzeug.pocoo.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-GH_ACCOUNT=		mitsuhiko
+GH_ACCOUNT=		pallets
 GH_PROJECT=		werkzeug
 GH_TAGNAME=		${MODPY_EGG_VERSION}
 
