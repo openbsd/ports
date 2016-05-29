@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: svnserve.rc,v 1.1 2016/05/29 17:42:22 jung Exp $
+
+daemon="${TRUEPREFIX}/bin/svnserve -d"
+daemon_user="_svnserve"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

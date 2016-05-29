@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2015/03/19 20:25:26 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2016/05/29 17:42:22 jung Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
@@ -211,3 +211,4 @@ share/locale/pt_BR/LC_MESSAGES/subversion.mo
 share/locale/sv/LC_MESSAGES/subversion.mo
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
 share/locale/zh_TW/LC_MESSAGES/subversion.mo
+@rcscript ${RCDIR}/svnserve
