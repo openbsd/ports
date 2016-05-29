@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/29 10:50:49 zhuk Exp $
 
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
@@ -13,7 +13,9 @@ WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += X11 assuan c gcrypt gpg-error gpgme m pthread
 
-BUILD_DEPENDS =		devel/gettext-tools \
+# N.B.: Tell upstream to add explicit dependency on Boost
+BUILD_DEPENDS =		devel/boost \
+			devel/gettext-tools \
 			devel/kf5/kdoctools
 
 RUN_DEPENDS =		devel/kf5/kdoctools
