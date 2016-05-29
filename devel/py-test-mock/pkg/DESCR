@@ -1,0 +1,3 @@
+This plugin installs a mocker fixture which is a thin-wrapper around the
+patching API provided by the mock package, but with the benefit of not
+having to worry about undoing patches at the end of a test.
