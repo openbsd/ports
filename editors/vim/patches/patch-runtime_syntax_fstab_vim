@@ -1,0 +1,12 @@
+$OpenBSD: patch-runtime_syntax_fstab_vim,v 1.1 2016/05/29 12:26:23 natano Exp $
+--- runtime/syntax/fstab.vim.orig	Mon Feb 29 23:12:49 2016
++++ runtime/syntax/fstab.vim	Sun May 29 13:54:01 2016
+@@ -138,7 +138,7 @@ syn match fsOptionsKeywords contained /\<\%(dir\|file\
+ syn match fsOptionsKeywords contained /\<\%(session\|part\)=/ nextgroup=fsOptionsNumber
+ 
+ " Options: ffs
+-syn keyword fsOptionsKeyWords contained softdep
++syn keyword fsOptionsKeyWords contained softdep wxallowed
+ 
+ " Options: hpfs
+ syn match fsOptionsKeywords contained /\<case=/ nextgroup=fsOptionsHpfsCase
