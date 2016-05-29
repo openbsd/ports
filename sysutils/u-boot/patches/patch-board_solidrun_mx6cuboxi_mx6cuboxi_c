@@ -1,0 +1,21 @@
+$OpenBSD: patch-board_solidrun_mx6cuboxi_mx6cuboxi_c,v 1.1.1.1 2016/05/29 01:35:33 jsg Exp $
+--- board/solidrun/mx6cuboxi/mx6cuboxi.c.orig	Tue Mar 15 01:20:21 2016
++++ board/solidrun/mx6cuboxi/mx6cuboxi.c	Sat Mar 26 15:00:27 2016
+@@ -320,10 +320,17 @@ int board_early_init_f(void)
+ 	return ret;
+ }
+ 
++static bool is_hummingboard(void);
++
+ int board_init(void)
+ {
+ 	/* address of boot parameters */
+ 	gd->bd->bi_boot_params = CONFIG_SYS_SDRAM_BASE + 0x100;
++
++	if (is_hummingboard())
++		gd->bd->bi_arch_number = 4773; /* HummingBoard machine ID */
++	else
++		gd->bd->bi_arch_number = 4821; /* CuBox-i machine ID */
+ 
+ 	return 0;
+ }

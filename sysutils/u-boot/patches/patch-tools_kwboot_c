@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_kwboot_c,v 1.1.1.1 2016/05/29 01:35:33 jsg Exp $
+--- tools/kwboot.c.orig	Sat Mar 26 23:43:37 2016
++++ tools/kwboot.c	Sat Mar 26 23:47:40 2016
+@@ -32,6 +32,14 @@
+ #define PACKED
+ #endif
+ 
++#ifndef EPROTO
++#define EPROTO EIO
++#endif
++
++#ifndef EBADMSG
++#define EBADMSG ECONNREFUSED
++#endif
++
+ /*
+  * Marvell BootROM UART Sensing
+  */

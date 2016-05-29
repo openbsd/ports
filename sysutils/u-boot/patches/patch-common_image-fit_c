@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_image-fit_c,v 1.1.1.1 2016/05/29 01:35:33 jsg Exp $
+--- common/image-fit.c.orig	Mon Mar 21 20:05:57 2016
++++ common/image-fit.c	Mon Mar 21 20:06:02 2016
+@@ -27,6 +27,10 @@ DECLARE_GLOBAL_DATA_PTR;
+ #include <u-boot/sha1.h>
+ #include <u-boot/sha256.h>
+ 
++#ifndef ENOLINK
++#define ENOLINK ENOENT
++#endif
++
+ /*****************************************************************************/
+ /* New uImage format routines */
+ /*****************************************************************************/

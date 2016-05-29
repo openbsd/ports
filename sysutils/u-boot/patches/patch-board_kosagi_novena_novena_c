@@ -1,0 +1,11 @@
+$OpenBSD: patch-board_kosagi_novena_novena_c,v 1.1.1.1 2016/05/29 01:35:33 jsg Exp $
+--- board/kosagi/novena/novena.c.orig	Sat Mar 26 14:47:15 2016
++++ board/kosagi/novena/novena.c	Sat Mar 26 14:47:48 2016
+@@ -166,6 +166,7 @@ int board_init(void)
+ {
+ 	/* address of boot parameters */
+ 	gd->bd->bi_boot_params = PHYS_SDRAM + 0x100;
++	gd->bd->bi_arch_number = 4269;
+ 
+ #ifdef CONFIG_CMD_SATA
+ 	setup_sata();
