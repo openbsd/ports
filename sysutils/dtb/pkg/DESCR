@@ -1,0 +1,6 @@
+Device Tree Blobs (DTBs) for various ARM/MIPS/PowerPC boards.  DTBs are
+binary representations of Flattened Device Trees (FDTs) that describe
+hardware properties such as memory ranges, interrupts and processors.
+
+DTB files are used by U-Boot and other firmware interfaces to provide
+this information to the kernel.
