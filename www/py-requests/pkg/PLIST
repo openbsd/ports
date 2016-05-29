@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/05 07:14:30 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/05/29 15:21:56 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -138,9 +138,11 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MOD
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}ntlmpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}pyopenssl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/appengine.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/pyopenssl.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/contrib/socks.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/fields.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/filepost.py
