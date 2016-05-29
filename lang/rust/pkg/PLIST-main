@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/05/25 06:39:35 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/05/29 07:26:46 semarie Exp $
 bin/rust-gdb
 @bin bin/rustc
 @bin bin/rustdoc
@@ -12,9 +12,11 @@ lib/librbml-${RUST_HASH}.so
 lib/librustc-${RUST_HASH}.so
 lib/librustc_back-${RUST_HASH}.so
 lib/librustc_borrowck-${RUST_HASH}.so
+lib/librustc_const_eval-${RUST_HASH}.so
+lib/librustc_const_math-${RUST_HASH}.so
 lib/librustc_data_structures-${RUST_HASH}.so
 lib/librustc_driver-${RUST_HASH}.so
-lib/librustc_front-${RUST_HASH}.so
+lib/librustc_incremental-${RUST_HASH}.so
 lib/librustc_lint-${RUST_HASH}.so
 lib/librustc_llvm-${RUST_HASH}.so
 lib/librustc_metadata-${RUST_HASH}.so
@@ -24,6 +26,7 @@ lib/librustc_platform_intrinsics-${RUST_HASH}.so
 lib/librustc_plugin-${RUST_HASH}.so
 lib/librustc_privacy-${RUST_HASH}.so
 lib/librustc_resolve-${RUST_HASH}.so
+lib/librustc_save_analysis-${RUST_HASH}.so
 lib/librustc_trans-${RUST_HASH}.so
 lib/librustc_typeck-${RUST_HASH}.so
 lib/librustdoc-${RUST_HASH}.so
@@ -46,31 +49,28 @@ lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/liballoc_system-${RUST_HASH}.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libarena-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libarena-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libcollections-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler-rt.a
 lib/rustlib/${TRIPLE_ARCH}/lib/libcore-${RUST_HASH}.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libflate-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libflate-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libfmt_macros-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${RUST_HASH}.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-${RUST_HASH}.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/liblog-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/liblog-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librand-${RUST_HASH}.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librbml-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/librbml-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_back-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_borrowck-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_const_eval-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_const_math-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_data_structures-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_driver-${RUST_HASH}.so
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_front-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_incremental-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_lint-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_llvm-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_metadata-${RUST_HASH}.so
@@ -80,11 +80,11 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_platform_intrinsics-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_plugin-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_privacy-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_resolve-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_save_analysis-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_trans-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_typeck-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_unicode-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/librustdoc-${RUST_HASH}.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.so
