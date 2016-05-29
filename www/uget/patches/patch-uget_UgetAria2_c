@@ -1,7 +1,7 @@
-$OpenBSD: patch-uget_UgetAria2_c,v 1.1 2015/05/24 17:18:46 bcallah Exp $
---- uget/UgetAria2.c.orig	Fri Mar 27 17:14:20 2015
-+++ uget/UgetAria2.c	Fri Mar 27 17:15:01 2015
-@@ -52,7 +52,7 @@
+$OpenBSD: patch-uget_UgetAria2_c,v 1.2 2016/05/29 13:59:01 sthen Exp $
+--- uget/UgetAria2.c.orig	Sun May 15 19:28:25 2016
++++ uget/UgetAria2.c	Sat May 28 20:30:26 2016
+@@ -53,7 +53,7 @@
  #define RPC_URI              "http://localhost:6800/jsonrpc"
  #define RPC_BATCH_LEN        5
  #define RPC_INTERVAL         500

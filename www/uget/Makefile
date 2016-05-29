@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/05/29 01:56:18 juanfra Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/29 13:59:01 sthen Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.0.8
+REVISION =	0
 CATEGORIES =	www net x11
 
 HOMEPAGE =	http://ugetdm.com/
