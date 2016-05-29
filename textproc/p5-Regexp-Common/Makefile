@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/05/29 16:27:36 bluhm Exp $
 
 COMMENT =		provide commonly requested regular expressions
 
-DISTNAME =		Regexp-Common-2016020301
+DISTNAME =		Regexp-Common-2016052804
 
 CATEGORIES =		textproc
 
