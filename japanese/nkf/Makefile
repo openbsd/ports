@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/20 16:36:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/05/29 21:41:46 bentley Exp $
 
 COMMENT =	Network Kanji code conversion Filter
 
@@ -6,10 +6,10 @@ VERSION =	2.1.1
 DISTNAME =	nkf-${VERSION}
 PKGNAME =	ja-nkf-${VERSION}
 EPOCH =		0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	japanese textproc
 
-HOMEPAGE =	http://sourceforge.jp/projects/nkf/
+HOMEPAGE =	https://nkf.osdn.jp/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=nkf/48945/}
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

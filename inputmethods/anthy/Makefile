@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/22 11:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/05/29 21:41:45 bentley Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -7,8 +7,8 @@ V =		9100h
 DISTNAME =	anthy-$V
 PKGNAME-main =	anthy-$V
 PKGNAME-emacs =	emacs-anthy-$V
-REVISION-main = 1
-REVISION-emacs = 2
+REVISION-main = 2
+REVISION-emacs = 3
 
 SHARED_LIBS +=	anthydic             1.0      # .1.0
 SHARED_LIBS +=	anthy                1.0      # .1.0
@@ -16,7 +16,7 @@ SHARED_LIBS +=	anthyinput           1.0      # .0.0
 
 CATEGORIES =	inputmethods japanese
 
-HOMEPAGE = 	http://anthy.sourceforge.jp/
+HOMEPAGE = 	https://anthy.osdn.jp/
 
 # GPL, part LGPL
 PERMIT_PACKAGE_CDROM =	Yes

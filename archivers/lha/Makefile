@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2016/01/27 13:36:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/05/29 21:41:45 bentley Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
 DISTNAME=	lha-1.14i-ac20050924p1
 PKGNAME=	lha-1.14i.ac20050924.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	archivers
 
-HOMEPAGE=       http://lha.sourceforge.jp/
+HOMEPAGE=       https://lha.osdn.jp/
 
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 

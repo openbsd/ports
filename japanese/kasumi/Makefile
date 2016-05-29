@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/05/29 21:41:46 bentley Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
 DISTNAME =	kasumi-2.5
 
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	japanese
 
-HOMEPAGE =	http://kasumi.sourceforge.jp/
+HOMEPAGE =	https://osdn.jp/projects/kasumi/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

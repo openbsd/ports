@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/05/29 21:41:45 bentley Exp $
 
 COMMENT =	scim input method module for anthy
 
 DISTNAME =	scim-anthy-1.2.7
 
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	inputmethods japanese
 
-HOMEPAGE =	http://scim-imengine.sourceforge.jp/
+HOMEPAGE =	https://osdn.jp/projects/scim-imengine/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
