@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/30 11:18:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/05/30 11:37:16 jasper Exp $
 @conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1432,9 +1432,8 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
 share/emacs/site-lisp/puppet-mode.el
 share/examples/ruby${MODRUBY_BINREV}-puppet/
-@sample ${SYSCONFDIR}/puppetlabs/
-share/examples/ruby${MODRUBY_BINREV}-puppet/code/
-@sample ${SYSCONFDIR}/puppetlabs/code/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/manifests/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/modules/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
 @sample ${SYSCONFDIR}/puppetlabs/puppet/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
