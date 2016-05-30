@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.13 2016/05/30 15:10:00 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.14 2016/05/30 17:01:44 jasper Exp $
 
-- Hook up missing file
+- https://github.com/puppetlabs/facter/pull/1344
 - Override library version
 
 --- lib/CMakeLists.txt.orig	Fri May 20 18:36:55 2016

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_src_facts_openbsd_networking_resolver_cc,v 1.1 2016/05/30 15:07:58 jasper Exp $
+$OpenBSD: patch-lib_src_facts_openbsd_networking_resolver_cc,v 1.2 2016/05/30 17:01:44 jasper Exp $
 
-- execution.hpp moved to leatherman
-- Implement missing get_link_address_bytes()
+- https://github.com/puppetlabs/facter/pull/1343
+- https://github.com/puppetlabs/facter/pull/1344
 
 --- lib/src/facts/openbsd/networking_resolver.cc.orig	Fri May 20 18:36:55 2016
 +++ lib/src/facts/openbsd/networking_resolver.cc	Mon May 30 16:57:25 2016

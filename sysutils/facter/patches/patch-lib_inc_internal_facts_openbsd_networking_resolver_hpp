@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_inc_internal_facts_openbsd_networking_resolver_hpp,v 1.1 2016/05/30 15:07:58 jasper Exp $
+$OpenBSD: patch-lib_inc_internal_facts_openbsd_networking_resolver_hpp,v 1.2 2016/05/30 17:01:44 jasper Exp $
 
-Implement missing get_link_address_bytes()
+https://github.com/puppetlabs/facter/pull/1344
 
 --- lib/inc/internal/facts/openbsd/networking_resolver.hpp.orig	Mon May 30 15:26:16 2016
 +++ lib/inc/internal/facts/openbsd/networking_resolver.hpp	Mon May 30 15:26:37 2016

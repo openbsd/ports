@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2016/05/30 15:07:58 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2016/05/30 17:01:44 jasper Exp $
 
-- allow building curl on OpenBSD
+https://github.com/puppetlabs/facter/pull/1342
 
 --- CMakeLists.txt.orig	Wed Apr 27 17:53:21 2016
 +++ CMakeLists.txt	Wed Apr 27 17:53:37 2016
