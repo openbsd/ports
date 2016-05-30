@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.13 2016/05/30 15:10:00 jasper Exp $
+
+- Hook up missing file
+- Override library version
+
+--- lib/CMakeLists.txt.orig	Fri May 20 18:36:55 2016
++++ lib/CMakeLists.txt	Mon May 30 16:42:26 2016
+@@ -202,6 +202,7 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
+         "src/facts/openbsd/collection.cc"
+         "src/facts/glib/load_average_resolver.cc"
+         "src/facts/bsd/filesystem_resolver.cc"
++        "src/facts/bsd/networking_resolver.cc"
+         "src/facts/bsd/uptime_resolver.cc"
+         "src/facts/openbsd/dmi_resolver.cc"
+         "src/facts/openbsd/networking_resolver.cc"
+@@ -282,7 +283,7 @@ link_directories(
+ add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOURCES} ${LIBFACTER_STANDARD_SOURCES} ${LIBFACTER_PLATFORM_SOURCES})
+ set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
+ add_library(libfacter SHARED $<TARGET_OBJECTS:libfactersrc>)
+-set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION "${LIBFACTER_VERSION_MAJOR}.${LIBFACTER_VERSION_MINOR}.${LIBFACTER_VERSION_PATCH}")
++set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION "${LIBfacter_MAJOR}.${LIBfacter_MINOR}")
+ 
+ if(AIX)
+     # On AIX we need to be built such that we are "dynamically
