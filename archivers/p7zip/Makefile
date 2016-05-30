@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/04/12 23:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/05/30 21:22:50 sthen Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
@@ -7,7 +7,7 @@ V=		15.14.1
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-rar=	p7zip-rar-${V}
 CATEGORIES=	archivers
 
