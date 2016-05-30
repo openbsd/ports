@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+- found python2.7
+- remove need of curl or wget
+--- configure.orig	Sun Jan 24 14:12:38 2016
++++ configure	Sun Jan 24 14:12:46 2016
+@@ -341,8 +341,7 @@ validate_opt
+ 
+ step_msg "looking for build programs"
+ 
+-probe_need CFG_CURLORWGET  curl wget
+-probe_need CFG_PYTHON      python
++probe_need CFG_PYTHON      python2.7
+ probe_need CFG_CC          cc gcc clang
+ 
+ if [ ! -z "${CFG_LOCAL_RUST_ROOT}" ]; then

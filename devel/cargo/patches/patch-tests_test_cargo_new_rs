@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_test_cargo_new_rs,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+obsolete config. backport https://github.com/rust-lang/cargo/pull/2719
+--- tests/test_cargo_new.rs.orig	Fri Apr  8 22:31:50 2016
++++ tests/test_cargo_new.rs	Thu May 19 21:10:53 2016
+@@ -217,7 +217,7 @@ test!(author_prefers_cargo {
+         [cargo-new]
+         name = "new-foo"
+         email = "new-bar"
+-        git = false
++        vcs = "none"
+     "#).unwrap();
+ 
+     assert_that(cargo_process("new").arg("foo").env("USER", "foo"),

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+@bin bin/cargo
+@man man/man1/cargo.1
+@comment share/bash-completion/
+@comment share/bash-completion/completions/
+share/bash-completion/completions/cargo
+share/doc/cargo/
+share/doc/cargo/LICENSE-APACHE
+share/doc/cargo/LICENSE-MIT
+share/doc/cargo/LICENSE-THIRD-PARTY
+share/doc/cargo/README.md
+share/zsh/site-functions/_cargo

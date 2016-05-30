@@ -1,0 +1,29 @@
+$OpenBSD: patch-tests_support_paths_rs,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+use WRKBUILD as temporary directory for testing.
+--- tests/support/paths.rs.orig	Fri Apr  8 22:31:50 2016
++++ tests/support/paths.rs	Thu May 19 08:27:23 2016
+@@ -1,4 +1,3 @@
+-use std::env;
+ use std::fs;
+ use std::io::{self, ErrorKind};
+ use std::path::{Path, PathBuf};
+@@ -12,18 +11,7 @@ static NEXT_ID: AtomicUsize = ATOMIC_USIZE_INIT;
+ thread_local!(static TASK_ID: usize = NEXT_ID.fetch_add(1, Ordering::SeqCst));
+ 
+ pub fn root() -> PathBuf {
+-    let mut path = env::current_exe().unwrap();
+-    path.pop(); // chop off exe name
+-    path.pop(); // chop off 'debug'
+-
+-    // If `cargo test` is run manually then our path looks like
+-    // `target/debug/foo`, in which case our `path` is already pointing at
+-    // `target`. If, however, `cargo test --target $target` is used then the
+-    // output is `target/$target/debug/foo`, so our path is pointing at
+-    // `target/$target`. Here we conditionally pop the `$target` name.
+-    if path.file_name().and_then(|s| s.to_str()) != Some("target") {
+-        path.pop();
+-    }
++    let path = PathBuf::from("${WRKBUILD}/target/debug");
+ 
+     path.join(CARGO_INTEGRATION_TEST_DIR)
+         .join(&TASK_ID.with(|my_id| format!("t{}", my_id)))
