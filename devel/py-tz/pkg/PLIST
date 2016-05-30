@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/04/11 09:09:16 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/05/30 14:47:55 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -345,6 +345,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Tel_Aviv
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Thimbu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Thimphu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Tokyo
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Tomsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ujung_Pandang
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ulaanbaatar
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ulan_Bator
@@ -478,6 +479,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Istanbul
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Jersey
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kaliningrad
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kiev
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kirov
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Lisbon
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Ljubljana
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/London
