@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.149 2016/05/19 19:49:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2016/05/30 12:02:53 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.4
-DASHVER=		3
+DASHVER=		4
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:http://www.imagemagick.org/download/
@@ -69,6 +69,9 @@ CONFIGURE_ARGS+=	--without-gcc-arch \
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
+
+# neuter popen() support; CVE-2016-5118
+CONFIGURE_ENV+=		ac_cv_func_popen=no
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} $$(find . -name '*.pc.in')
