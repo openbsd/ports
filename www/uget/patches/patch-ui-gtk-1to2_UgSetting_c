@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui-gtk-1to2_UgSetting_c,v 1.1 2016/05/30 18:31:39 juanfra Exp $
+--- ui-gtk-1to2/UgSetting.c.orig	Sun May 29 23:24:17 2016
++++ ui-gtk-1to2/UgSetting.c	Sun May 29 23:24:29 2016
+@@ -512,7 +512,7 @@ void	ug_setting_init (UgSetting* setting)
+ 	setting->plugin.aria2.launch = TRUE;
+ 	setting->plugin.aria2.shutdown = TRUE;
+ 	setting->plugin.aria2.path = g_strdup ("aria2c");
+-	setting->plugin.aria2.args = g_strdup ("--enable-rpc=true -D --check-certificate=false");
++	setting->plugin.aria2.args = g_strdup ("--enable-rpc=true -D");
+ 	setting->plugin.aria2.uri  = g_strdup ("http://localhost:6800/rpc");
+ 
+ 	// "FolderList"
