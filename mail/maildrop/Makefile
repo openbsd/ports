@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2015/08/27 09:35:16 giovanni Exp $
+# $OpenBSD: Makefile,v 1.54 2016/05/30 19:09:18 jasper Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -58,16 +58,6 @@ CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/courier \
 			--enable-maildirquota \
 			--with-default-maildrop="./Maildir"
 
-DOCFILES=		${WRKSRC}/README \
-			${WRKSRC}/INSTALL \
-			${WRKSRC}/UPGRADE \
-			${WRKSRC}/README.postfix \
-			${WRKSRC}/maildroptips.txt \
-			${WRKSRC}/libs/maildir/README.sharedfolders.txt \
-			${WRKSRC}/libs/maildir/README.maildirquota.txt \
-			${WRKSRC}/libs/maildir/quotawarnmsg
-
-
 .if ${FLAVOR:Mpostfix}
 CONFIGURE_ARGS+=	--enable-sendmail=/usr/local/sbin/sendmail
 CONFIGURE_ARGS+=	--enable-trusted-users="root _courier _postfix"
@@ -103,12 +93,19 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 USE_GROFF=		Yes
 
+DOCFILES=		README \
+			INSTALL \
+			UPGRADE \
+			README.postfix \
+			maildroptips.txt \
+			libs/maildir/README.sharedfolders.txt \
+			libs/maildir/README.maildirquota.txt \
+			libs/maildir/quotawarnmsg
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
-	@for i in ${DOCFILES}; do \
-	    if [ -f $$i ]; then \
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/maildrop ;\
-	    fi \
-	done
+.for f in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/maildrop/
+.endfor
 
 .include <bsd.port.mk>
