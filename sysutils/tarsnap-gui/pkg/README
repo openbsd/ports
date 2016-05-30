@@ -1,4 +1,4 @@
-$OpenBSD:
+$OpenBSD: README,v 1.2 2016/05/30 21:31:16 jturner Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD

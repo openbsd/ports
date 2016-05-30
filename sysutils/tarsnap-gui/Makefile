@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/26 20:37:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2016/05/30 21:31:16 jturner Exp $
 
 COMMENT = 		frontend to the popular Tarsnap backup service
 
-V = 			0.8
+V = 			0.9
 DISTNAME =		tarsnap-gui-${V}
 CATEGORIES =		sysutils
 
-HOMEPAGE =		https://github.com/Tarsnap/tarsnap-gui/wiki/Tarsnap
 MAINTAINER =		Josh Grosse <josh@jggimi.homeip.net>
 
 # BSD
