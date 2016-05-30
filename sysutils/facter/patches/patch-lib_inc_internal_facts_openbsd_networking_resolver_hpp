@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_inc_internal_facts_openbsd_networking_resolver_hpp,v 1.1 2016/05/30 15:07:58 jasper Exp $
+
+Implement missing get_link_address_bytes()
+
+--- lib/inc/internal/facts/openbsd/networking_resolver.hpp.orig	Mon May 30 15:26:16 2016
++++ lib/inc/internal/facts/openbsd/networking_resolver.hpp	Mon May 30 15:26:37 2016
+@@ -30,6 +30,13 @@ namespace facter { namespace facts { namespace openbsd
+          * @returns Returns true if the socket address is a link layer address or false if it is not.
+          */
+         virtual bool is_link_address(sockaddr const* addr) const override;
++
++        /**
++         * Gets the bytes of the link address.
++         * @param addr The socket address representing the link address.
++         * @return Returns a pointer to the address bytes or nullptr if not a link address.
++         */
++        virtual uint8_t const* get_link_address_bytes(sockaddr const* addr) const override;
+     };
+ 
+ }}}  // namespace facter::facts::openbsd

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/30 12:34:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2016/05/30 15:07:58 jasper Exp $
 
+# XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-DISTNAME =		facter-3.0.2
-REVISION =		5
-SHARED_LIBS +=  	facter                    3.0 # 3.0
+DISTNAME =		facter-3.1.7
+SHARED_LIBS +=  	facter                    3.0 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
 
@@ -21,55 +21,29 @@ MODULES +=		devel/cmake \
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_log boost_log-mt boost_log_setup-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
-WANTLIB += m pthread yaml-cpp
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_log-mt boost_log_setup-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c crypto curl m pthread yaml-cpp
 
 LIB_DEPENDS =		devel/boost>=1.58 \
-			devel/yaml-cpp
+			devel/yaml-cpp \
+			net/curl
 
-CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes \
-			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
-			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}"
+BUILD_DEPENDS =		devel/leatherman
 
-SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
+CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
+			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}" \
+			-DWITHOUT_JRUBY:Bool=Yes
 
-# XXX: Remove on upgrade
-# https://github.com/puppetlabs/facter/pull/1041 (networking: merged)
-# https://github.com/puppetlabs/facter/pull/1061 (dmi: merged)
-# https://github.com/puppetlabs/facter/pull/1073 (processor: merged)
-# https://github.com/puppetlabs/facter/pull/1074 (memory: merged)
-# https://github.com/puppetlabs/facter/pull/1075 (virtualization: merged)
-# https://github.com/puppetlabs/facter/pull/1129 (swap: merged)
-post-extract:
-	${INSTALL_DATA_DIR} ${WRKSRC}/lib/inc/internal/facts/openbsd/
-	${INSTALL_DATA_DIR} ${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/networking_resolver.hpp \
-		${WRKSRC}/lib/inc/internal/facts/openbsd/
-	cp ${FILESDIR}/networking_resolver.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/processor_resolver.hpp \
-		${WRKSRC}/lib/inc/internal/facts/openbsd/
-	cp ${FILESDIR}/processor_resolver.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/memory_resolver.hpp \
-		${WRKSRC}/lib/inc/internal/facts/openbsd/
-	cp ${FILESDIR}/memory_resolver.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/dmi_resolver.hpp \
-		${WRKSRC}/lib/inc/internal/facts/openbsd/
-	cp ${FILESDIR}/dmi_resolver.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/virtualization_resolver.hpp \
-		${WRKSRC}/lib/inc/internal/facts/openbsd/
-	cp ${FILESDIR}/virtualization_resolver.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
-	cp ${FILESDIR}/collection.cc \
-		${WRKSRC}/lib/src/facts/openbsd/
+LIBfacter_MAJOR =	${LIBfacter_VERSION:R}
+LIBfacter_MINOR =	${LIBfacter_VERSION:E}
+SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV LIBfacter_MAJOR LIBfacter_MINOR
+
+CXXFLAGS +=		-pthread
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/lib/CMakeLists.txt
 
 # Install symlinked libfacter.so so Ruby can load libfacter.so as it refuses
 # to load with the version appended.

@@ -1,68 +1,15 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/07/16 19:57:36 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2016/05/30 15:07:58 jasper Exp $
 
-- From 4aa96f13f233dcff08e732c38168989913b44f2f Mon Sep 17 00:00:00 2001
-  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-  Date: Tue, 30 Jun 2015 10:43:11 +0200
-  Subject: [PATCH] (maint) Do not enable pre-compiled headers on OpenBSD also
-- From 70d5c6ae661ac544236cb6df9533d078d76187df Mon Sep 17 00:00:00 2001
-  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-  Date: Tue, 30 Jun 2015 10:34:05 +0200
-  Subject: [PATCH] (maint) Use correct manpage path on OpenBSD
-- From 1dccdcee37f5d58bec7e7a05e7080edbcd766dae Mon Sep 17 00:00:00 2001
-  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-  Date: Wed, 15 Jul 2015 20:51:40 -0600
-  Subject: [PATCH] (MAINT) Fix FACTER_RUBY_PATH path in cmake message
 - allow building curl on OpenBSD
 
---- CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
-+++ CMakeLists.txt	Wed Jul 15 23:04:59 2015
-@@ -22,7 +22,7 @@ set(FACTER_RUBY "" CACHE FILEPATH "Specify the locatio
- if (FACTER_RUBY)
-     file(TO_CMAKE_PATH ${FACTER_RUBY} FACTER_RUBY_PATH)
-     add_definitions(-DFACTER_RUBY="${FACTER_RUBY_PATH}")
--    message(STATUS "Fixing lookup for libruby to ${FACTERPATH_PATH}")
-+    message(STATUS "Fixing lookup for libruby to ${FACTER_RUBY_PATH}")
- endif()
+--- CMakeLists.txt.orig	Wed Apr 27 17:53:21 2016
++++ CMakeLists.txt	Wed Apr 27 17:53:37 2016
+@@ -45,7 +45,7 @@ SET(LEATHERMAN_COMPONENTS locale catch nowide logging 
  
- enable_testing()
-@@ -34,6 +34,10 @@ if (MINGW)
-     # MinGW crashes with large pre-compiled headers; ours definitely exceeds the limit.
-     # See http://stackoverflow.com/questions/10841306/cc1plus-exe-crash-when-using-large-precompiled-header-file
-     set(PRECOMPILED_HEADERS FALSE)
-+elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
-+    # On OpenBSD enabling precompiled headers result in cc1plus warnings:
-+    # "had text segment at different address" due to PIE.
-+    set(PRECOMPILED_HEADERS FALSE)
- else()
-     set(PRECOMPILED_HEADERS TRUE)
- endif()
-@@ -56,7 +60,7 @@ if (WIN32)
- endif()
- find_package(Boost 1.54 REQUIRED COMPONENTS ${BOOST_PKGS})
- 
--find_package(Ruby 1.9)
-+find_package(Ruby ${MODRUBY_REV})
- 
- find_package(YAMLCPP REQUIRED)
- if (NOT WITHOUT_OPENSSL)
-@@ -66,7 +70,7 @@ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" AND NOT WIT
-     find_package(BLKID)
- endif()
- 
+ # We look for curl early, because whether or not we link to the leatherman curl library
+ # is dependant on whether or not we find curl on the system.
 -if ((("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") OR WIN32) AND NOT WITHOUT_CURL)
-+if ((("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") OR ("${MAKE_SYSTEM_NAME}" MATCHES "OpenBSD") OR WIN32) AND NOT WITHOUT_CURL)
++if ((("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") OR ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD") OR WIN32) AND NOT WITHOUT_CURL)
      find_package(CURL)
      if (CURL_FOUND)
          add_definitions(-DUSE_CURL)
-@@ -169,4 +173,10 @@ endif()
- add_test(NAME "facter\\ smoke" COMMAND facter)
- 
- # Install the man page
--install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION share/man/man8/)
-+if ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
-+    set(MANDIR man/man8/)
-+else()
-+    set(MANDIR share/man/man8/)
-+endif()
-+
-+install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION ${MANDIR})
