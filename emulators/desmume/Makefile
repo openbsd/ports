@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/30 10:01:35 bentley Exp $
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -36,7 +36,10 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MODULES =	devel/gettext \
+		gcc4 \
 		textproc/intltool
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	c c++
 
 CONFIGURE_STYLE =	gnu
 
