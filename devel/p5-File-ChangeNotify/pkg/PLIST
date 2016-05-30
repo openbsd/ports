@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/03 03:41:42 jim Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/05/30 15:24:48 sthen Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/ChangeNotify/
 ${P5SITE}/File/ChangeNotify.pm
-${P5SITE}/File/ChangeNotify/ConfigData.pm
 ${P5SITE}/File/ChangeNotify/Event.pm
 ${P5SITE}/File/ChangeNotify/Watcher/
 ${P5SITE}/File/ChangeNotify/Watcher.pm
@@ -10,7 +9,6 @@ ${P5SITE}/File/ChangeNotify/Watcher/Default.pm
 ${P5SITE}/File/ChangeNotify/Watcher/Inotify.pm
 ${P5SITE}/File/ChangeNotify/Watcher/KQueue.pm
 @man man/man3p/File::ChangeNotify.3p
-@man man/man3p/File::ChangeNotify::ConfigData.3p
 @man man/man3p/File::ChangeNotify::Event.3p
 @man man/man3p/File::ChangeNotify::Watcher.3p
 @man man/man3p/File::ChangeNotify::Watcher::Default.3p

@@ -1,25 +1,27 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/05/30 15:24:48 sthen Exp $
 
-COMMENT=	watch for changes to files, cross-platform style
+COMMENT =	watch for changes to files, cross-platform style
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	File-ChangeNotify-0.20
-REVISION=	0
-CATEGORIES=	devel
+DISTNAME =	File-ChangeNotify-0.26
+
+CATEGORIES =	devel
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE =	modbuild
+MODULES =		cpan
 
-RUN_DEPENDS =	devel/p5-Moose>=2.1204 \
-		devel/p5-MooseX-Params-Validate \
-		devel/p5-MooseX-SemiAffordanceAccessor \
-		devel/p5-namespace-autoclean
+RUN_DEPENDS =		devel/p5-Class-Load \
+			devel/p5-Module-Pluggable \
+			devel/p5-Module-Runtime \
+			devel/p5-Moo>=1.006 \
+			devel/p5-Type-Tiny \
+			devel/p5-namespace-autoclean
 
-TEST_DEPENDS =	devel/p5-Test-Exception
+TEST_DEPENDS =		devel/p5-Test-Exception \
+			devel/p5-Test-Requires \
+			devel/p5-Test-Without-Module
 
-MAKE_ENV +=	TEST_POD=1 IS_MAINTAINER=1
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
