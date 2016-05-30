@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/21 20:41:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/30 10:46:10 naddy Exp $
 
 COMMENT=	POSIX-compliant command line shell
 
@@ -11,7 +11,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://dl.osdn.jp/yash/64861/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=/yash/64861/}
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c curses intl m
