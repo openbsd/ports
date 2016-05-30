@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/28 17:47:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/05/30 11:18:22 jasper Exp $
 @conflict puppet->=3,<4
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -202,6 +202,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/
 ${MODRUBY_SITEDIR}/puppet/functions.rb
 ${MODRUBY_SITEDIR}/puppet/functions/assert_type.rb
 ${MODRUBY_SITEDIR}/puppet/functions/defined.rb
+${MODRUBY_SITEDIR}/puppet/functions/dig.rb
 ${MODRUBY_SITEDIR}/puppet/functions/each.rb
 ${MODRUBY_SITEDIR}/puppet/functions/epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/filter.rb
@@ -211,9 +212,11 @@ ${MODRUBY_SITEDIR}/puppet/functions/hiera_hash.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_include.rb
 ${MODRUBY_SITEDIR}/puppet/functions/import.rb
 ${MODRUBY_SITEDIR}/puppet/functions/inline_epp.rb
+${MODRUBY_SITEDIR}/puppet/functions/lest.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lookup.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
 ${MODRUBY_SITEDIR}/puppet/functions/match.rb
+${MODRUBY_SITEDIR}/puppet/functions/new.rb
 ${MODRUBY_SITEDIR}/puppet/functions/reduce.rb
 ${MODRUBY_SITEDIR}/puppet/functions/regsubst.rb
 ${MODRUBY_SITEDIR}/puppet/functions/reverse_each.rb
@@ -221,6 +224,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/functions/slice.rb
 ${MODRUBY_SITEDIR}/puppet/functions/split.rb
 ${MODRUBY_SITEDIR}/puppet/functions/step.rb
+${MODRUBY_SITEDIR}/puppet/functions/then.rb
 ${MODRUBY_SITEDIR}/puppet/functions/type.rb
 ${MODRUBY_SITEDIR}/puppet/functions/versioncmp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/with.rb
@@ -395,6 +399,8 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/Gemfile
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/README.md.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/Rakefile
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/examples/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/examples/init.pp.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/init.pp.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/metadata.json.erb
@@ -402,8 +408,6 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/classes/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/classes/init_spec.rb.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/spec_helper.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/
-${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/init.pp.erb
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar/
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/tar/gnu.rb
@@ -619,8 +623,10 @@ ${MODRUBY_SITEDIR}/puppet/pops/loader/loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/loader_paths.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/module_loaders.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/null_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/predefined_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_function_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/ruby_function_instantiator.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/runtime3_type_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/simple_environment_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/static_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/type_definition_instantiator.rb
@@ -629,7 +635,9 @@ ${MODRUBY_SITEDIR}/puppet/pops/loaders.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/
 ${MODRUBY_SITEDIR}/puppet/pops/lookup.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/explainer.rb
+${MODRUBY_SITEDIR}/puppet/pops/lookup/interpolation.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/invocation.rb
+${MODRUBY_SITEDIR}/puppet/pops/lookup/sub_lookup.rb
 ${MODRUBY_SITEDIR}/puppet/pops/merge_strategy.rb
 ${MODRUBY_SITEDIR}/puppet/pops/migration/
 ${MODRUBY_SITEDIR}/puppet/pops/migration/migration_checker.rb
@@ -657,22 +665,31 @@ ${MODRUBY_SITEDIR}/puppet/pops/parser/locator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/parser_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/slurp_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/patterns.rb
+${MODRUBY_SITEDIR}/puppet/pops/pcore.rb
 ${MODRUBY_SITEDIR}/puppet/pops/semantic_error.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/
 ${MODRUBY_SITEDIR}/puppet/pops/types/class_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/enumeration.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/implementation_registry.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/iterable.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_object_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_runtime_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_range_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/puppet_object.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/recursion_guard.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/ruby_generator.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/string_converter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_acceptor.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_asserter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_assertion_error.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_calculator.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/type_conversion_error.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_factory.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_formatter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_mismatch_describer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_parser.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/types.rb
-${MODRUBY_SITEDIR}/puppet/pops/types/types_meta.rb
 ${MODRUBY_SITEDIR}/puppet/pops/utils.rb
 ${MODRUBY_SITEDIR}/puppet/pops/validation/
 ${MODRUBY_SITEDIR}/puppet/pops/validation.rb
@@ -879,6 +896,7 @@ ${MODRUBY_SITEDIR}/puppet/settings/ini_file.rb
 ${MODRUBY_SITEDIR}/puppet/settings/path_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/priority_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/string_setting.rb
+${MODRUBY_SITEDIR}/puppet/settings/symbolic_enum_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/terminus_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/ttl_setting.rb
 ${MODRUBY_SITEDIR}/puppet/settings/value_translator.rb

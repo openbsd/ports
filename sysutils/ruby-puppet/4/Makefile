@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/28 16:02:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/30 11:18:22 jasper Exp $
 
 PORTROACH=		limit:^4
 
-VERSION=		4.4.2
+VERSION=		4.5.0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			sysutils/facter

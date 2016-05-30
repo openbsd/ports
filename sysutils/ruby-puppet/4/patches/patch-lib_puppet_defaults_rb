@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.1 2016/04/28 11:53:09 jasper Exp $
---- lib/puppet/defaults.rb.orig	Thu Apr 28 11:58:31 2016
-+++ lib/puppet/defaults.rb	Thu Apr 28 11:59:05 2016
-@@ -1044,11 +1044,11 @@ EOT
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.2 2016/05/30 11:18:22 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Fri May 20 18:31:46 2016
++++ lib/puppet/defaults.rb	Mon May 30 13:17:05 2016
+@@ -1109,11 +1109,11 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -15,7 +15,7 @@ $OpenBSD: patch-lib_puppet_defaults_rb,v 1.1 2016/04/28 11:53:09 jasper Exp $
        :desc       => "The group puppet master should run as.",
      },
      :default_manifest => {
-@@ -1141,7 +1141,7 @@ EOT
+@@ -1206,7 +1206,7 @@ EOT
        :desc       => "File that provides mapping between custom SSL oids and user-friendly names"
      },
      :basemodulepath => {
