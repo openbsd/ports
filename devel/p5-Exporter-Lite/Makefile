@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/05/30 15:24:27 sthen Exp $
 
-COMMENT=		lightweight exporting of variables
+COMMENT =	lightweight exporting of functions and variables
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME=		Exporter-Lite-0.02
-REVISION=		0
-CATEGORIES=		devel
+DISTNAME =	Exporter-Lite-0.08
+
+CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
