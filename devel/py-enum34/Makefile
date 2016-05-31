@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/31 08:46:19 shadchin Exp $
 
-COMMENT =	Python 3.4 Enum backported to previous versions
+COMMENT =		Python 3.4 Enum backported to previous versions
 
-MODPY_EGG_VERSION = 1.1.2
-DISTNAME =	enum34-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION =	1.1.6
+DISTNAME =		enum34-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES =		devel
 
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
+MODULES =		lang/python
 
-MODULES =	lang/python
+MODPY_PI =		Yes
 
 post-install:
 	mv ${WRKINST}${MODPY_SITEPKG}/enum/doc ${PREFIX}/share/doc/py-enum34
@@ -22,6 +23,6 @@ post-install:
 	mv ${WRKINST}${MODPY_SITEPKG}/enum/README ${PREFIX}/share/doc/py-enum34
 
 do-test:
-	cd ${WRKSRC} && env PYTHONPATH=${WRKSRC} ${MODPY_BIN} enum/test_enum.py
+	cd ${WRKSRC} && env PYTHONPATH=${WRKSRC} ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
