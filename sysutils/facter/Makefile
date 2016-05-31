@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/05/31 14:09:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2016/05/31 18:40:06 jasper Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -36,6 +36,11 @@ BUILD_DEPENDS =		devel/leatherman
 CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
 			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}" \
 			-DWITHOUT_JRUBY:Bool=Yes
+
+# NB:
+# When/if SERVER-14 is resolved, drop the `-DWITHOUT_JRUBY:Bool=Yes`
+# then use a pre-build target to run the ninja `facter-jruby` target
+# to generate the JNI header file.
 
 LIBfacter_MAJOR =	${LIBfacter_VERSION:R}
 LIBfacter_MINOR =	${LIBfacter_VERSION:E}
