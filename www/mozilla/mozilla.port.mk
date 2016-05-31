@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.90 2016/04/27 22:08:57 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.91 2016/05/31 20:15:51 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -38,7 +38,8 @@ EXTRACT_SUFX ?=	.tar.bz2
 DIST_SUBDIR ?=	mozilla
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
-MODMOZ_BUILD_DEPENDS =	archivers/gtar \
+MODMOZ_BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+			archivers/gtar \
 			archivers/unzip \
 			archivers/zip>=2.3
 
