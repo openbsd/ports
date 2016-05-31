@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/07 09:34:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/31 06:06:54 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
 PORTROACH=		ignore:1
 
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	0.52
+MODPY_EGG_VERSION=	1.0.0
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
