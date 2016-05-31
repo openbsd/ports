@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/31 01:18:35 krw Exp $
+# $OpenBSD: Makefile,v 1.9 2016/05/31 11:39:20 nigel Exp $
 
 COMMENT =		an extensible platform for analysis of C software
 #Error: Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma(String):
@@ -9,6 +9,7 @@ BROKEN-alpha =		Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma
 DISTNAME =		frama-c-Sodium-20150201
 PKGNAME =		frama-c-1.11
 CATEGORIES =		devel
+REVISION =		0
 HOMEPAGE =		http://www.frama-c.com/
 
 # LGPLv2
