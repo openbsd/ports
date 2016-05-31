@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/30 16:22:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2016/05/31 01:18:35 krw Exp $
 
 COMMENT =		an extensible platform for analysis of C software
 #Error: Error while linking /usr/local/lib/ocaml/vmthreads/stdlib.cma(String):
@@ -25,8 +25,8 @@ MASTER_SITES =		http://www.frama-c.com/download/
 MODULES =		devel/gettext \
 			lang/ocaml
 
-BUILD_DEPENDS =		x11/lablgtk2
-RUN_DEPENDS =		x11/lablgtk2
+BUILD_DEPENDS =		x11/lablgtk2 devel/ocaml-graph math/graphviz
+RUN_DEPENDS =		x11/lablgtk2 math/graphviz
 
 LIB_DEPENDS =		x11/gnome/libgnomecanvas \
 			x11/gtksourceview
