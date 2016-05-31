@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/15 08:37:08 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/31 19:30:11 danj Exp $
 
 COMMENT =		Python module for decorators, wrappers and monkey patching
 
@@ -27,10 +27,10 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+do-test: fake
+	 cd ${WRKSRC} && env PYTHONPATH=${WRKINST}/${MODPY_SITEPKG} \
+		${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
