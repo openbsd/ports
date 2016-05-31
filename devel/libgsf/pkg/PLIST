@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/04/17 03:10:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/05/31 05:51:05 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -58,7 +58,6 @@ include/libgsf-1/gsf/gsf-structured-blob.h
 include/libgsf-1/gsf/gsf-timestamp.h
 include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.la
@@ -67,10 +66,7 @@ lib/pkgconfig/libgsf-1.pc
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
-share/gir-1.0/
 share/gir-1.0/Gsf-1.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gsf/
 share/gtk-doc/html/gsf/annotation-glossary.html
 share/gtk-doc/html/gsf/api.html
@@ -112,22 +108,14 @@ share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
 share/gtk-doc/html/gsf/up-insensitive.png
 share/gtk-doc/html/gsf/up.png
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/libgsf.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgsf.mo
 share/locale/ca/LC_MESSAGES/libgsf.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/libgsf.mo
 share/locale/cs/LC_MESSAGES/libgsf.mo
 share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
 share/locale/el/LC_MESSAGES/libgsf.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libgsf.mo
 share/locale/eo/LC_MESSAGES/libgsf.mo
 share/locale/es/LC_MESSAGES/libgsf.mo
@@ -141,17 +129,11 @@ share/locale/id/LC_MESSAGES/libgsf.mo
 share/locale/it/LC_MESSAGES/libgsf.mo
 share/locale/ja/LC_MESSAGES/libgsf.mo
 share/locale/ko/LC_MESSAGES/libgsf.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgsf.mo
 share/locale/lv/LC_MESSAGES/libgsf.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/libgsf.mo
 share/locale/nb/LC_MESSAGES/libgsf.mo
 share/locale/nn/LC_MESSAGES/libgsf.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/pa/LC_MESSAGES/libgsf.mo
 share/locale/pl/LC_MESSAGES/libgsf.mo
@@ -162,18 +144,10 @@ share/locale/ru/LC_MESSAGES/libgsf.mo
 share/locale/sk/LC_MESSAGES/libgsf.mo
 share/locale/sl/LC_MESSAGES/libgsf.mo
 share/locale/sr/LC_MESSAGES/libgsf.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgsf.mo
-share/locale/tg/
-share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/libgsf.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libgsf.mo
 share/locale/tr/LC_MESSAGES/libgsf.mo
 share/locale/uk/LC_MESSAGES/libgsf.mo
