@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/05/31 06:25:18 zhuk Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
@@ -19,7 +19,8 @@ WANTLIB += Xext c m
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kded \
 			devel/kf5/kdesignerplugin \
-			devel/kf5/kdoctools
+			devel/kf5/kdoctools \
+			www/p5-URI
 
 RUN_DEPENDS =		devel/kf5/kded \
 			devel/kf5/kdesignerplugin \
