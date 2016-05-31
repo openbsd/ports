@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/26 09:10:22 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2016/05/31 19:33:09 danj Exp $
 
 COMMENT =		virtual Python environment builder
 
-MODPY_EGG_VERSION =	15.0.1
+MODPY_EGG_VERSION =	15.0.2
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
