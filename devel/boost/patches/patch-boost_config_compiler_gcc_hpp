@@ -1,0 +1,35 @@
+$OpenBSD: patch-boost_config_compiler_gcc_hpp,v 1.1 2016/06/01 14:56:54 dcoppa Exp $
+
+boost does not like mixing different compilers at build and compile
+time.
+
+We build boost itself with gcc-4.2.1 from base, which doesn't support
+the integer scalar type __int128, and this results in a
+/usr/local/include/boost/config/user.hpp lacking the "BOOST_HAS_INT128"
+define.
+
+When compiling something that depends on boost using a newer compiler
+like gcc-4.9 or clang, a code snippet in
+/usr/local/include/boost/config/compiler/{clang,gcc}.hpp reactivates
+__int128 support, but the code containing typedef declarations
+inside /usr/local/include/boost/config/suffix.hpp is never reached,
+because /usr/local/include/boost/config/user.hpp lacks "BOOST_HAS_INT128".
+Hence, the following errors occur:
+
+/usr/local/include/boost/type_traits/is_integral.hpp:72:1: error: 'int128_type' is not a member of 'boost'
+/usr/local/include/boost/type_traits/is_integral.hpp:73:1: error: 'uint128_type' is not a member of 'boost'
+
+As a temporary band-aid, completely disable __int128 support on
+OpenBSD.
+
+--- boost/config/compiler/gcc.hpp.orig	Tue Mar 24 19:27:48 2015
++++ boost/config/compiler/gcc.hpp	Mon May 30 09:11:23 2016
+@@ -140,7 +140,7 @@
+ // Only re-enable this for nvcc if you're absolutely sure
+ // of the circumstances under which it's supported:
+ //
+-#if defined(__SIZEOF_INT128__) && !defined(__CUDACC__)
++#if defined(__SIZEOF_INT128__) && !defined(__CUDACC__) && !defined(__OpenBSD__)
+ #  define BOOST_HAS_INT128
+ #endif
+ 

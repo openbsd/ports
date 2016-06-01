@@ -1,0 +1,25 @@
+$OpenBSD: patch-libs_filesystem_src_unique_path_cpp,v 1.1 2016/06/01 14:56:54 dcoppa Exp $
+
+commit 7e3e5ef60ce216ddddbfb15b76e98257a1eb8338
+Author: Beman <bdawes@acm.org>
+Date:   Fri Oct 16 16:03:45 2015 -0400
+
+Missing unistd.h include in boost/libs/filesystem/src/unique_path.cpp
+
+Fix errors:
+
+error: use of undeclared identifier 'read'
+error: use of undeclared identifier 'close'
+
+--- libs/filesystem/src/unique_path.cpp.orig	Mon Mar 30 16:28:45 2015
++++ libs/filesystem/src/unique_path.cpp	Tue May 31 09:16:45 2016
+@@ -22,6 +22,9 @@
+ 
+ # ifdef BOOST_POSIX_API
+ #   include <fcntl.h>
++#   ifdef BOOST_HAS_UNISTD_H
++#      include <unistd.h>
++#   endif
+ # else // BOOST_WINDOWS_API
+ #   include <windows.h>
+ #   include <wincrypt.h>
