@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2016/06/01 08:20:47 dcoppa Exp $
+
+commit ab23479d27d32d0b62c609997e14c38fef6e5928
+Author: Ludovic Rousseau <ludovic.rousseau@free.fr>
+Date:   Tue May 31 20:17:10 2016 +0200
+
+Fix compilation on {Free,Open}BSD: alloca.h does not exist
+
+On {Free,Open}BSD alloca.h does not exist and alloca(3) is declared
+in stdlib.h (already included by src/readerfactory.c).
+
+--- configure.orig	Wed Jun  1 10:07:04 2016
++++ configure	Wed Jun  1 10:07:39 2016
+@@ -13701,7 +13701,7 @@ $as_echo "#define HAVE_SYS_WAIT_H 1" >>confdefs.h
+ 
+ fi
+ 
+-for ac_header in getopt.h sys/filio.h syslog.h dl.h fcntl.h
++for ac_header in getopt.h sys/filio.h syslog.h dl.h fcntl.h alloca.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
