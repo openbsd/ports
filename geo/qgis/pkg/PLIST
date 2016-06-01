@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/05/02 12:42:03 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/06/01 14:05:22 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -753,15 +753,6 @@ share/qgis/images/icons/qgis-icon-60x60_xmas.png
 share/qgis/images/icons/qgis-icon.png
 share/qgis/images/icons/qgis-mime-icon.png
 share/qgis/python/
-share/qgis/python/PyQt/
-share/qgis/python/PyQt/Qsci.py
-share/qgis/python/PyQt/QtCore.py
-share/qgis/python/PyQt/QtGui.py
-share/qgis/python/PyQt/QtPrintSupport.py
-share/qgis/python/PyQt/QtWebKit.py
-share/qgis/python/PyQt/QtWebKitWidgets.py
-share/qgis/python/PyQt/QtWidgets.py
-share/qgis/python/PyQt/__init__.py
 share/qgis/python/console/
 share/qgis/python/console/__init__.py
 share/qgis/python/console/console.py
@@ -4675,6 +4666,24 @@ share/qgis/python/pytz/zoneinfo/posixrules
 share/qgis/python/pytz/zoneinfo/zone.tab
 share/qgis/python/pytz/zoneinfo/zone1970.tab
 share/qgis/python/qgis/
+share/qgis/python/qgis/PyQt/
+share/qgis/python/qgis/PyQt/Qsci.py
+share/qgis/python/qgis/PyQt/QtCore.py
+share/qgis/python/qgis/PyQt/QtGui.py
+share/qgis/python/qgis/PyQt/QtNetwork.py
+share/qgis/python/qgis/PyQt/QtPrintSupport.py
+share/qgis/python/qgis/PyQt/QtSql.py
+share/qgis/python/qgis/PyQt/QtSvg.py
+share/qgis/python/qgis/PyQt/QtTest.py
+share/qgis/python/qgis/PyQt/QtWebKit.py
+share/qgis/python/qgis/PyQt/QtWebKitWidgets.py
+share/qgis/python/qgis/PyQt/QtWidgets.py
+share/qgis/python/qgis/PyQt/QtXml.py
+share/qgis/python/qgis/PyQt/__init__.py
+share/qgis/python/qgis/PyQt/uic/
+share/qgis/python/qgis/PyQt/uic/__init__.py
+share/qgis/python/qgis/PyQt/uic/properties.py
+share/qgis/python/qgis/PyQt/uic/pyuic.py
 share/qgis/python/qgis/__init__.py
 share/qgis/python/qgis/_analysis.so
 share/qgis/python/qgis/_core.so
