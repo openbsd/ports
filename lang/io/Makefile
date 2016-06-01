@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/19 16:47:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/06/01 22:01:08 sthen Exp $
 
 ONLY_FOR_ARCHS =i386 amd64
-BROKEN-amd64 =	coroutine code doesn't support setjmp PC/SP xor
+BROKEN =	coroutine code doesn't support setjmp PC/SP xor
 
 COMMENT =	embeddable prototype-based language
 
