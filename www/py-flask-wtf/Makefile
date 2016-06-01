@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/31 13:43:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/06/01 14:28:34 jasper Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
@@ -29,7 +29,8 @@ TEST_DEPENDS=		devel/py-nose
 USE_GMAKE=		Yes
 
 post-build:
-	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	@cd ${WRKSRC}/docs && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX} html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-wtf/
