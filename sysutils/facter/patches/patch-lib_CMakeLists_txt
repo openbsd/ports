@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.14 2016/05/30 17:01:44 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.15 2016/06/01 07:02:02 jasper Exp $
 
-- https://github.com/puppetlabs/facter/pull/1344
+- From fbb7625c044091f5de8525e85f714999eb79e81a Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Mon, 30 May 2016 18:56:21 +0200
+  Subject: [PATCH] (FACT-1432) Fixup OpenBSD networking facts
 - Override library version
 
 --- lib/CMakeLists.txt.orig	Fri May 20 18:36:55 2016

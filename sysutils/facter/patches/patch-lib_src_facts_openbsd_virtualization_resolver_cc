@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_src_facts_openbsd_virtualization_resolver_cc,v 1.2 2016/05/30 17:01:44 jasper Exp $
+$OpenBSD: patch-lib_src_facts_openbsd_virtualization_resolver_cc,v 1.3 2016/06/01 07:02:02 jasper Exp $
 
-https://github.com/puppetlabs/facter/pull/1343
+From 8ee968b997ab0cd55be4ae071f9d17d6ef0b33a6 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 30 May 2016 18:34:50 +0200
+Subject: [PATCH] (MAINT) Unbreak after leatherman split in cc1245ab
 
 --- lib/src/facts/openbsd/virtualization_resolver.cc.orig	Mon May 30 16:52:49 2016
 +++ lib/src/facts/openbsd/virtualization_resolver.cc	Mon May 30 16:55:50 2016
