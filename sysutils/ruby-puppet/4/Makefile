@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/01 09:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/01 12:02:45 jasper Exp $
 
 PORTROACH=		limit:^4
 
 VERSION=		4.5.0
+REVISION=		0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
+			devel/ruby-rgen,${MODRUBY_FLAVOR} \
 			sysutils/facter
 
 pre-install:

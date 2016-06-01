@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.38 2016/06/01 11:56:23 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2016/06/01 12:02:44 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -44,7 +44,6 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	archivers/gtar \
 		sysutils/ruby-augeas,${MODRUBY_FLAVOR} \
-		devel/ruby-rgen,${MODRUBY_FLAVOR} \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1
 
 # Apache2
