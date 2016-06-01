@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/06/01 15:12:07 sthen Exp $
 
 COMMENT=	check validity of Internet email addresses
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-Valid-1.198
+DISTNAME=	Email-Valid-1.200
 CATEGORIES=	mail
 
 # perl
