@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2016/05/29 02:42:19 jsg Exp $
+# $OpenBSD: Makefile,v 1.395 2016/06/01 16:42:53 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -66,6 +66,7 @@
      SUBDIR += fdupes
      SUBDIR += findlib
      SUBDIR += firmware
+     SUBDIR += flashrom
      SUBDIR += flock
      SUBDIR += freedt
      SUBDIR += freeipmi
