@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/08/01 08:46:34 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/06/01 07:17:01 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -37,6 +37,12 @@ pear/lib/Predis/Command/ConnectionEcho.php
 pear/lib/Predis/Command/ConnectionPing.php
 pear/lib/Predis/Command/ConnectionQuit.php
 pear/lib/Predis/Command/ConnectionSelect.php
+pear/lib/Predis/Command/GeospatialGeoAdd.php
+pear/lib/Predis/Command/GeospatialGeoDist.php
+pear/lib/Predis/Command/GeospatialGeoHash.php
+pear/lib/Predis/Command/GeospatialGeoPos.php
+pear/lib/Predis/Command/GeospatialGeoRadius.php
+pear/lib/Predis/Command/GeospatialGeoRadiusByMember.php
 pear/lib/Predis/Command/HashDelete.php
 pear/lib/Predis/Command/HashExists.php
 pear/lib/Predis/Command/HashGet.php
@@ -144,6 +150,7 @@ pear/lib/Predis/Command/SetUnion.php
 pear/lib/Predis/Command/SetUnionStore.php
 pear/lib/Predis/Command/StringAppend.php
 pear/lib/Predis/Command/StringBitCount.php
+pear/lib/Predis/Command/StringBitField.php
 pear/lib/Predis/Command/StringBitOp.php
 pear/lib/Predis/Command/StringBitPos.php
 pear/lib/Predis/Command/StringDecrement.php
@@ -245,6 +252,7 @@ pear/lib/Predis/Profile/RedisVersion240.php
 pear/lib/Predis/Profile/RedisVersion260.php
 pear/lib/Predis/Profile/RedisVersion280.php
 pear/lib/Predis/Profile/RedisVersion300.php
+pear/lib/Predis/Profile/RedisVersion320.php
 pear/lib/Predis/Protocol/
 pear/lib/Predis/Protocol/ProtocolException.php
 pear/lib/Predis/Protocol/ProtocolProcessorInterface.php
