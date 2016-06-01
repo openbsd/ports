@@ -1,7 +1,7 @@
-$OpenBSD: patch-texmf-dist_tex_latex_beamer_beamerbaseverbatim_sty,v 1.2 2014/01/11 18:46:52 edd Exp $
---- texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty.origy	Sun Sep  2 23:45:05 2012
-+++ texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty	Thu Sep 26 22:47:53 2013
-@@ -42,32 +42,27 @@
+$OpenBSD: patch-texmf-dist_tex_latex_beamer_beamerbaseverbatim_sty,v 1.3 2016/06/01 12:47:33 edd Exp $
+--- texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty.origy	Tue Feb 24 23:10:28 2015
++++ texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty	Sun Apr 17 21:46:32 2016
+@@ -43,32 +43,27 @@
      \def\beamer@test{#1#2}%
      \ifx\beamer@test\beamer@stopframefirst%
        \let\next=\beamer@framewritten%

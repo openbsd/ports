@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.82 2016/04/19 21:37:16 edd Exp $
+# $OpenBSD: Makefile,v 1.83 2016/06/01 12:46:35 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
-DISTNAME =		texlive-${DIST_V}-source
+# This year they used a different datestamp on the -source tarball.
+DIST_V_SOURCE =		${V}0521
+DISTNAME =		texlive-${DIST_V_SOURCE}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		3
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	7.0
-SHARED_LIBS +=		ptexenc		4.0
+SHARED_LIBS =		kpathsea	8.0 # 8.1
+SHARED_LIBS +=		ptexenc		5.0 # 4.3
+SHARED_LIBS +=		synctex		0.0 # 18.0
+SHARED_LIBS +=		texlua52	0.0 # 7.4
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
@@ -25,7 +28,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}p0:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 LIB_DEPENDS =		graphics/png \
 			graphics/gd \

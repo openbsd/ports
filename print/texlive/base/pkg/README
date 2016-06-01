@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2015/05/28 15:01:28 edd Exp $
+$OpenBSD: README,v 1.15 2016/06/01 12:46:41 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,34 +11,33 @@ There are a number of texmf trees in the OpenBSD packages:
 
 texmf-buildset:
   The smallest of the subsets. This is primarily for building OpenBSD
-  ports (approx 110M).
+  ports (approx 100M).
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users who do not need many
-  extra macros or ConTeXt (approx 319MB).
+  extra macros or ConTeXt (approx 250MB).
 
 texmf-full:
-  Extra macros (approx 247MB).
+  Extra macros (approx 500MB).
 
 texmf-context:
-  Macros for the conTeXt typesetter (approx 9MB).
+  Macros for the conTeXt typesetter (approx 10MB).
 
   This was separated because conTeXt maintains it's own hashes separate
   from that of libkpse. As 99% of users don't use this, these hashes are
   generated only when the conTeXt macros are installed.
 
 texmf-doc:
-  Documentation for all of TeX Live (approx 510MB).
+  Documentation (approx 550MB).
 
-  To take load off the OpenBSD mirrors (all of the docs would be 1.1GB
-  compressed package), this is only the documentation for the
-  texmf-minimal tree. This should contains documentation for the most
-  popular packages.
+  To take load off the OpenBSD mirrors this is only the documentation
+  for the texmf-minimal and texmf-buildset trees. This should include
+  documentation for the most popular packages.
 
 All sizes are approximate compressed package sizes and the texmf package
 contents do not overlap.
 
-There is a *lot* of functionality in texmf-full, so before reportng
+There is a *lot* of functionality in texmf-full, so before reporting
 "missing" features, please try installing texmf-full first. Eg. xindy
 requires texmf-full.
 
@@ -58,16 +57,6 @@ installation by searching for the files using kpsewhich(1). Eg:
 /home/edd/texmf/tex/latex/acronym/acronym.sty
 % kpsewhich acronym.sty
 /home/edd/texmf/tex/latex/acronym/acronym.sty
-
-Upgrade From TeX Live 2009
-==========================
-
-Due to inconsistencies in the legacy TeX Live 2009 package, if you
-upgraded from TeX live 2009 (at some point in the past) you may see the
-package tools complain about non-empty directories. This is harmless,
-but can be silenced by (having backed up anything manually added to
-texmfs) removing all TeX Live packages, then `rm -Rf ${LOCALBASE}/share/texmf*`.
-Now you can install afresh the new TeX Live packages.
 
 Other Misc. Notes
 =================

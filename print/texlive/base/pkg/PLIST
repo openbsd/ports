@@ -1,137 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/04/19 21:37:16 edd Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/06/01 12:46:41 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2014
+@conflict texlive_texmf-buildset-<2015
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
 %%xindy%%
-@bin bin/afm2pl
-@bin bin/afm2tfm
-@bin bin/aleph
-@bin bin/bg5conv
-@bin bin/bibtex
-@bin bin/bibtex8
-@bin bin/bibtexu
-@bin bin/cef5conv
-@bin bin/cefconv
-@bin bin/cefsconv
-@bin bin/cfftot1
-@bin bin/chktex
-@bin bin/ctangle
-@bin bin/ctie
-@bin bin/cweave
-@bin bin/devnag
-@bin bin/dt2dv
-@bin bin/dv2dt
-@bin bin/dvibook
-@bin bin/dviconcat
-@bin bin/dvicopy
-@bin bin/dvidvi
-@bin bin/dvilj
-@bin bin/dvilj2p
-@bin bin/dvilj4
-@bin bin/dvilj4l
-@bin bin/dvipdfmx
-@bin bin/dvipng
-@bin bin/dvipos
-@bin bin/dvips
-@bin bin/dviselect
-@bin bin/dvisvgm
-@bin bin/dvitodvi
-@bin bin/dvitype
-@bin bin/eptex
-@bin bin/euptex
-@bin bin/extconv
-@bin bin/gftodvi
-@bin bin/gftopk
-@bin bin/gftype
-@bin bin/gsftopk
-@bin bin/hbf2gf
-@bin bin/kpseaccess
-@bin bin/kpsereadlink
-@bin bin/kpsestat
-@bin bin/kpsewhich
-@bin bin/lacheck
-@bin bin/luatex
-@bin bin/mag
-@bin bin/makeindex
-@bin bin/makejvf
-@bin bin/mendex
-@bin bin/mf
-@bin bin/mf-nowin
-@bin bin/mft
-@bin bin/mmafm
-@bin bin/mmpfb
-@bin bin/mpost
-@bin bin/odvicopy
-@bin bin/odvitype
-@bin bin/omfonts
-@bin bin/otangle
-@bin bin/otfinfo
-@bin bin/otftotfm
-@bin bin/otp2ocp
-@bin bin/outocp
-@bin bin/patgen
-@bin bin/pbibtex
-@bin bin/pdfclose
-@bin bin/pdfopen
-@bin bin/pdftex
-@bin bin/pdftosrc
-@bin bin/pdvitype
-@bin bin/pfb2pfa
-@bin bin/pk2bm
-@bin bin/pktogf
-@bin bin/pktype
-@bin bin/pltotf
-@bin bin/pmxab
-@bin bin/pooltype
-@bin bin/ppltotf
-@bin bin/prepmx
-@bin bin/ps2pk
-@bin bin/ptex
-@bin bin/ptftopl
-@bin bin/scor2prt
-@bin bin/sjisconv
-@bin bin/synctex
-@bin bin/t1dotlessj
-@bin bin/t1lint
-@bin bin/t1rawafm
-@bin bin/t1reencode
-@bin bin/t1testpage
-@bin bin/t4ht
-@bin bin/tangle
-@bin bin/teckit_compile
-@bin bin/tex
-@bin bin/tex4ht
-@bin bin/tftopl
-@bin bin/tie
-@bin bin/ttf2afm
-@bin bin/ttf2pk
-@bin bin/ttf2tfm
-@bin bin/ttfdump
-@bin bin/ttftotype42
-@bin bin/upbibtex
-@bin bin/updvitype
-@bin bin/uppltotf
-@bin bin/uptex
-@bin bin/uptftopl
-@bin bin/vftovp
-@bin bin/vlna
-@bin bin/vptovf
-@bin bin/weave
-@bin bin/wofm2opl
-@bin bin/wopl2ofm
-@bin bin/wovf2ovp
-@bin bin/wovp2ovf
-@bin bin/xdvi-xaw
-@bin bin/xdvipdfmx
-@bin bin/xetex
 bin/a2ping
 bin/a5toa4
 bin/adhocfilelist
 bin/afm2afm
+@bin bin/afm2pl
+@bin bin/afm2tfm
+@bin bin/aleph
 bin/allcm
 bin/allec
 bin/allneeded
@@ -142,42 +24,76 @@ bin/authorindex
 bin/autoinst
 bin/bg5+latex
 bin/bg5+pdflatex
+@bin bin/bg5conv
 bin/bg5latex
 bin/bg5pdflatex
+bin/bibdoiadd
 bin/bibexport
+@bin bin/bibtex
+@bin bin/bibtex8
+@bin bin/bibtexu
+bin/bibzbladd
 bin/bundledoc
 bin/cachepic
+@bin bin/cef5conv
 bin/cef5latex
 bin/cef5pdflatex
+@bin bin/cefconv
 bin/ceflatex
 bin/cefpdflatex
+@bin bin/cefsconv
 bin/cefslatex
 bin/cefspdflatex
+@bin bin/cfftot1
 bin/checkcites
+@bin bin/chktex
 bin/chkweb
+bin/cjk-gs-integrate
 bin/context
 bin/contextjit
 bin/convbkmk
 bin/cslatex
 bin/csplain
+@bin bin/ctangle
 bin/ctanify
 bin/ctanupload
+@bin bin/ctie
+@bin bin/cweave
 bin/de-macro
 bin/depythontex
+@bin bin/devnag
 bin/deweb
 bin/dosepsbin
+@bin bin/dt2dv
 bin/dtxgen
+@bin bin/dv2dt
 bin/dvi2fax
 bin/dviasm
+@bin bin/dvibook
+@bin bin/dviconcat
+@bin bin/dvicopy
+@bin bin/dvidvi
 bin/dvigif
 bin/dvihp
+@bin bin/dvilj
+@bin bin/dvilj2p
+@bin bin/dvilj4
+@bin bin/dvilj4l
 bin/dvilj6
 bin/dvilualatex
 bin/dviluatex
 bin/dvipdfm
+@bin bin/dvipdfmx
 bin/dvipdft
+@bin bin/dvipng
+@bin bin/dvipos
+@bin bin/dvips
 bin/dvired
+@bin bin/dviselect
+@bin bin/dvisvgm
+@bin bin/dvitodvi
 bin/dvitomp
+@bin bin/dvitype
 bin/e2pall
 bin/ebb
 bin/ebong
@@ -185,17 +101,27 @@ bin/eplain
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
+@bin bin/eptex
 bin/etex
+@bin bin/euptex
 bin/exceltex
+@bin bin/extconv
 bin/extractbb
 bin/fig4latex
 bin/findhyph
+@bin bin/fixmsxpart
 bin/fmtutil
 bin/fmtutil-sys
 bin/fontinst
 bin/fragmaster
 bin/gbklatex
 bin/gbkpdflatex
+bin/getmapdl
+@bin bin/gftodvi
+@bin bin/gftopk
+@bin bin/gftype
+@bin bin/gsftopk
+@bin bin/hbf2gf
 bin/ht
 bin/htcontext
 bin/htlatex
@@ -213,10 +139,15 @@ bin/kanji-config-updmap
 bin/kanji-config-updmap-sys
 bin/kanji-fontmap-creator
 bin/komkindex
+@bin bin/kpseaccess
 bin/kpsepath
+@bin bin/kpsereadlink
+@bin bin/kpsestat
 bin/kpsetool
 bin/kpsewhere
+@bin bin/kpsewhich
 bin/kpsexpand
+@bin bin/lacheck
 bin/lamed
 bin/latex
 bin/latex-git-log
@@ -234,25 +165,33 @@ bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
 bin/lollipop
+bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
 bin/lualatex
 bin/lualollipop
 bin/luaotfload-tool
+@bin bin/luatex
 bin/luatools
 bin/m-tx
+@bin bin/mag
 bin/makeglossaries
+@bin bin/makeindex
+@bin bin/makejvf
 bin/match_parens
 bin/mathspic
+@bin bin/mendex
 bin/mex
+@bin bin/mf
+@bin bin/mf-nowin
 bin/mf2pt1
 bin/mfplain
+@bin bin/mft
 bin/mk4ht
 bin/mkgrkindex
 bin/mkindex
 bin/mkjobtexmf
-bin/mkluatexfontdb
 bin/mkocp
 bin/mkofm
 bin/mkpic
@@ -264,23 +203,38 @@ bin/mktexpk
 bin/mktextfm
 bin/mllatex
 bin/mltex
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/mpost
 bin/mptopdf
+@bin bin/msxlint
 bin/mtxrun
 bin/mtxrunjit
 bin/multibibliography
 bin/musixflx
 bin/musixtex
+@bin bin/odvicopy
+@bin bin/odvitype
 bin/ofm2opl
+@bin bin/omfonts
 bin/opl2ofm
 bin/ot2kpx
+@bin bin/otangle
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/otp2ocp
+@bin bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
+@bin bin/patgen
+@bin bin/pbibtex
 bin/pdf180
 bin/pdf270
 bin/pdf90
 bin/pdfannotextractor
 bin/pdfatfi
 bin/pdfbook
+@bin bin/pdfclose
 bin/pdfcrop
 bin/pdfcslatex
 bin/pdfcsplain
@@ -295,22 +249,41 @@ bin/pdfjoin
 bin/pdflatex
 bin/pdfmex
 bin/pdfnup
+@bin bin/pdfopen
 bin/pdfpun
+@bin bin/pdftex
+@bin bin/pdftosrc
 bin/pdfxmltex
+bin/pdvitomp
+@bin bin/pdvitype
 bin/pedigree
 bin/perltex
 bin/pfarrei
+@bin bin/pfb2pfa
+@bin bin/pk2bm
 bin/pkfix
 bin/pkfix-helper
+@bin bin/pktogf
+@bin bin/pktype
 bin/platex
+@bin bin/pltotf
+@bin bin/pmpost
 bin/pmx2pdf
+@bin bin/pmxab
 bin/pmxchords
+@bin bin/pooltype
+@bin bin/ppltotf
+@bin bin/prepmx
 bin/ps2frag
+@bin bin/ps2pk
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
+@bin bin/ptex
 bin/ptex2pdf
+@bin bin/ptftopl
 bin/purifyeps
+bin/pygmentex
 bin/pythontex
 bin/repstopdf
 bin/rpdfcrop
@@ -318,12 +291,25 @@ bin/rubibtex
 bin/rubikrotation
 bin/rumakeindex
 bin/rungs
+@bin bin/scor2prt
 bin/simpdftex
+@bin bin/sjisconv
 bin/sjislatex
 bin/sjispdflatex
 bin/splitindex
 bin/sty2dtx
 bin/svn-multi
+@bin bin/synctex
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1rawafm
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/t4ht
+@bin bin/tangle
+@bin bin/teckit_compile
+@bin bin/tex
+@bin bin/tex4ht
 bin/texconfig
 bin/texconfig-dialog
 bin/texconfig-sys
@@ -343,26 +329,51 @@ bin/texlua
 bin/texluac
 bin/texmfstart
 bin/texsis
+@bin bin/tftopl
 bin/thumbpdf
+@bin bin/tie
 bin/tpic2pdftex
+@bin bin/ttf2afm
 bin/ttf2kotexfont
+@bin bin/ttf2pk
+@bin bin/ttf2tfm
+@bin bin/ttfdump
+@bin bin/ttftotype42
 bin/typeoutfileinfo
 bin/ulqda
+@bin bin/upbibtex
 bin/updmap
 bin/updmap-sys
+bin/updvitomp
+@bin bin/updvitype
 bin/uplatex
+@bin bin/upmpost
+@bin bin/uppltotf
+@bin bin/uptex
+@bin bin/uptftopl
 bin/urlbst
 bin/utf8mex
+@bin bin/vftovp
+@bin bin/vlna
 bin/vpe
 bin/vpl2ovp
 bin/vpl2vpl
+@bin bin/vptovf
+@bin bin/weave
+@bin bin/wofm2opl
+@bin bin/wopl2ofm
+@bin bin/wovf2ovp
+@bin bin/wovp2ovf
 bin/xdvi
+@bin bin/xdvi-xaw
+@bin bin/xdvipdfmx
 bin/xelatex
 bin/xelollipop
+@bin bin/xetex
 bin/xmltex
+bin/yplan
 include/kpathsea/
 include/kpathsea/absolute.h
-include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
 include/kpathsea/c-dir.h
 include/kpathsea/c-errno.h
@@ -410,16 +421,37 @@ include/kpathsea/win32lib.h
 include/ptexenc/
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
+include/synctex/
+include/synctex/synctex_parser.h
+include/synctex/synctex_parser_utils.h
+include/texlua52/
+include/texlua52/lauxlib.h
+include/texlua52/lua.h
+include/texlua52/lua.hpp
+include/texlua52/luaconf.h
+include/texlua52/lualib.h
+lib/kpathsea/
+lib/kpathsea/c-auto.h
 lib/libkpathsea.a
 lib/libkpathsea.la
 @lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/libptexenc.a
 lib/libptexenc.la
 @lib lib/libptexenc.so.${LIBptexenc_VERSION}
-share/doc/pkg-readmes/${FULLPKGNAME}
+lib/libsynctex.a
+lib/libsynctex.la
+@lib lib/libsynctex.so.${LIBsynctex_VERSION}
+lib/libtexlua52.a
+lib/libtexlua52.la
+@lib lib/libtexlua52.so.${LIBtexlua52_VERSION}
+lib/pkgconfig/kpathsea.pc
+lib/pkgconfig/ptexenc.pc
+lib/pkgconfig/synctex.pc
+lib/pkgconfig/texlua52.pc
 ${P5SITE}/TeXLive/
 ${P5SITE}/TeXLive/TLConfig.pm
 ${P5SITE}/TeXLive/TLUtils.pm
+share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R

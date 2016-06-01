@@ -14,7 +14,7 @@ PLIST_FULL_OUT = "../pkg/PLIST-full"
 PLIST_DOCS_OUT = "../pkg/PLIST-docs"
 PLIST_CONTEXT_OUT = "../pkg/PLIST-context"
 
-YEAR = 2014
+YEAR = 2015
 MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
 
 if len(sys.argv) != 2:
@@ -31,79 +31,80 @@ class NastyError(Exception):
 # Files from our pre-generated 'texmf-var' tarball.
 # This will change from year to year.
 TEXMF_VAR_FILES = [
-    "share/texmf-var/fonts/",
-    "share/texmf-var/fonts/map/",
-    "share/texmf-var/fonts/map/dvipdfmx/",
-    "share/texmf-var/fonts/map/dvipdfmx/updmap/",
-    "share/texmf-var/fonts/map/dvipdfmx/updmap/kanjix.map",
-    "share/texmf-var/fonts/map/dvips/",
-    "share/texmf-var/fonts/map/dvips/updmap/",
-    "share/texmf-var/fonts/map/dvips/updmap/builtin35.map",
-    "share/texmf-var/fonts/map/dvips/updmap/download35.map",
-    "share/texmf-var/fonts/map/dvips/updmap/ps2pk.map",
-    "share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map",
-    "share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map",
-    "share/texmf-var/fonts/map/pdftex/",
-    "share/texmf-var/fonts/map/pdftex/updmap/",
-    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map",
-    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map",
     "share/texmf-var/web2c/",
-    "share/texmf-var/web2c/aleph/",
-    "share/texmf-var/web2c/aleph/aleph.fmt",
-    "share/texmf-var/web2c/aleph/lamed.fmt",
     "share/texmf-var/web2c/eptex/",
-    "share/texmf-var/web2c/eptex/eptex.fmt",
     "share/texmf-var/web2c/eptex/platex.fmt",
+    "share/texmf-var/web2c/eptex/eptex.fmt",
     "share/texmf-var/web2c/euptex/",
-    "share/texmf-var/web2c/euptex/euptex.fmt",
     "share/texmf-var/web2c/euptex/uplatex.fmt",
-    "share/texmf-var/web2c/luajittex/",
+    "share/texmf-var/web2c/euptex/euptex.fmt",
+    "share/texmf-var/web2c/uptex/",
+    "share/texmf-var/web2c/uptex/uptex.fmt",
+    "share/texmf-var/web2c/pdftex/",
+    "share/texmf-var/web2c/pdftex/pdfetex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfcsplain.fmt",
+    "share/texmf-var/web2c/pdftex/cslatex.fmt",
+    "share/texmf-var/web2c/pdftex/amstex.fmt",
+    "share/texmf-var/web2c/pdftex/utf8mex.fmt",
+    "share/texmf-var/web2c/pdftex/pdflatex.fmt",
+    "share/texmf-var/web2c/pdftex/etex.fmt",
+    "share/texmf-var/web2c/pdftex/latex.fmt",
+    "share/texmf-var/web2c/pdftex/mptopdf.fmt",
+    "share/texmf-var/web2c/pdftex/eplain.fmt",
+    "share/texmf-var/web2c/pdftex/mex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfjadetex.fmt",
+    "share/texmf-var/web2c/pdftex/pdfxmltex.fmt",
+    "share/texmf-var/web2c/pdftex/lollipop.fmt",
+    "share/texmf-var/web2c/pdftex/pdfcslatex.fmt",
+    "share/texmf-var/web2c/pdftex/cont-en.fmt",
+    "share/texmf-var/web2c/pdftex/jadetex.fmt",
+    "share/texmf-var/web2c/pdftex/csplain.fmt",
+    "share/texmf-var/web2c/pdftex/pdfmex.fmt",
+    "share/texmf-var/web2c/pdftex/mltex.fmt",
+    "share/texmf-var/web2c/pdftex/texsis.fmt",
+    "share/texmf-var/web2c/pdftex/mllatex.fmt",
+    "share/texmf-var/web2c/pdftex/xmltex.fmt",
+    "share/texmf-var/web2c/pdftex/pdftex.fmt",
     "share/texmf-var/web2c/luatex/",
+    "share/texmf-var/web2c/luatex/pdfcsplain.fmt",
     "share/texmf-var/web2c/luatex/dvilualatex.fmt",
     "share/texmf-var/web2c/luatex/dviluatex.fmt",
     "share/texmf-var/web2c/luatex/lualatex.fmt",
     "share/texmf-var/web2c/luatex/lualollipop.fmt",
     "share/texmf-var/web2c/luatex/luatex.fmt",
-    "share/texmf-var/web2c/luatex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/metafont/",
-    "share/texmf-var/web2c/metafont/mf.base",
-    "share/texmf-var/web2c/pdftex/",
-    "share/texmf-var/web2c/pdftex/amstex.fmt",
-    "share/texmf-var/web2c/pdftex/cont-en.fmt",
-    "share/texmf-var/web2c/pdftex/cslatex.fmt",
-    "share/texmf-var/web2c/pdftex/csplain.fmt",
-    "share/texmf-var/web2c/pdftex/eplain.fmt",
-    "share/texmf-var/web2c/pdftex/etex.fmt",
-    "share/texmf-var/web2c/pdftex/jadetex.fmt",
-    "share/texmf-var/web2c/pdftex/latex.fmt",
-    "share/texmf-var/web2c/pdftex/lollipop.fmt",
-    "share/texmf-var/web2c/pdftex/mex.fmt",
-    "share/texmf-var/web2c/pdftex/mllatex.fmt",
-    "share/texmf-var/web2c/pdftex/mltex.fmt",
-    "share/texmf-var/web2c/pdftex/mptopdf.fmt",
-    "share/texmf-var/web2c/pdftex/pdfcslatex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/pdftex/pdfetex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfjadetex.fmt",
-    "share/texmf-var/web2c/pdftex/pdflatex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfmex.fmt",
-    "share/texmf-var/web2c/pdftex/pdftex.fmt",
-    "share/texmf-var/web2c/pdftex/pdfxmltex.fmt",
-    "share/texmf-var/web2c/pdftex/texsis.fmt",
-    "share/texmf-var/web2c/pdftex/utf8mex.fmt",
-    "share/texmf-var/web2c/pdftex/xmltex.fmt",
-    "share/texmf-var/web2c/ptex/",
-    "share/texmf-var/web2c/ptex/ptex.fmt",
+    "share/texmf-var/web2c/aleph/",
+    "share/texmf-var/web2c/aleph/lamed.fmt",
+    "share/texmf-var/web2c/aleph/aleph.fmt",
     "share/texmf-var/web2c/tex/",
     "share/texmf-var/web2c/tex/tex.fmt",
-    "share/texmf-var/web2c/uptex/",
-    "share/texmf-var/web2c/uptex/uptex.fmt",
+    "share/texmf-var/web2c/ptex/",
+    "share/texmf-var/web2c/ptex/ptex.fmt",
     "share/texmf-var/web2c/xetex/",
-    "share/texmf-var/web2c/xetex/cont-en.fmt",
     "share/texmf-var/web2c/xetex/pdfcsplain.fmt",
-    "share/texmf-var/web2c/xetex/xelatex.fmt",
     "share/texmf-var/web2c/xetex/xelollipop.fmt",
+    "share/texmf-var/web2c/xetex/xelatex.fmt",
+    "share/texmf-var/web2c/xetex/cont-en.fmt",
     "share/texmf-var/web2c/xetex/xetex.fmt",
+    "share/texmf-var/web2c/metafont/",
+    "share/texmf-var/web2c/metafont/mf.base",
+    "share/texmf-var/fonts/",
+    "share/texmf-var/fonts/map/",
+    "share/texmf-var/fonts/map/dvips/",
+    "share/texmf-var/fonts/map/dvips/updmap/",
+    "share/texmf-var/fonts/map/dvips/updmap/builtin35.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map",
+    "share/texmf-var/fonts/map/dvips/updmap/ps2pk.map",
+    "share/texmf-var/fonts/map/dvips/updmap/psfonts.map",
+    "share/texmf-var/fonts/map/dvips/updmap/download35.map",
+    "share/texmf-var/fonts/map/pdftex/",
+    "share/texmf-var/fonts/map/pdftex/updmap/",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex.map",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map",
+    "share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map",
+    "share/texmf-var/fonts/map/dvipdfmx/",
+    "share/texmf-var/fonts/map/dvipdfmx/updmap/",
+    "share/texmf-var/fonts/map/dvipdfmx/updmap/kanjix.map",
 ]
 
 CONFLICT_FILES = [
@@ -130,13 +131,7 @@ CONFLICT_FILES = [
 ]
 
 # Files that are missing due to a bug in the tlpdb
-BUG_MISSING_FILES = [
-    "share/texmf-dist/doc/latex/l3ctr2e/",
-    "share/texmf-dist/doc/latex/l3ctr2e/README",
-    "share/texmf-dist/doc/latex/l3ctr2e/l3ctr2e.pdf",
-    "share/texmf-dist/tex/latex/l3ctr2e/",
-    "share/texmf-dist/tex/latex/l3ctr2e/l3ctr2e.sty",
-]
+BUG_MISSING_FILES = []
 
 # Don't need to add dir entries for these
 # Note these must not be slash suffixed
@@ -290,12 +285,12 @@ buildset_pkgs = [
 print(">>> texlive_texmf-buildset")
 buildset_specs = runspecs(buildset_pkgs)  # note, no manuals
 buildset_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.3 2016/05/04 22:52:19 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.4 2016/06/01 12:47:31 edd Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    "@conflict texlive_texmf-full-<%sp0" % YEAR,
+    "@conflict texlive_texmf-full-<%s" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
@@ -328,11 +323,14 @@ context_pkgs = [
     "!context",
     "!context-account",
     "!context-algorithmic",
+    "!context-animation",
+    "!context-annotation",
     "!context-bnf",
     "!context-chromato",
     "!context-construction-plan",
     "!context-cyrillicnumbers",
     "!context-degrade",
+    "!context-fancybreak",
     "!context-filter",
     "!context-fixme",
     "!context-french",
@@ -349,15 +347,17 @@ context_pkgs = [
     "!context-ruby",
     "!context-simplefonts",
     "!context-simpleslides",
+    "!context-title",
     "!context-transliterator",
     "!context-typearea",
     "!context-typescripts",
-    "!context-vim"
+    "!context-vim",
+    "!context-visualcounter",
 ]
 
 print(">>> PLIST-context")
 context_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.3 2016/05/04 22:52:19 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.4 2016/06/01 12:47:31 edd Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -387,7 +387,7 @@ print("\n\n")
 print(">>> texlive_texmf-minimal")
 minimal_pkgs = ["scheme-tetex"]
 minimal_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.3 2016/05/04 22:52:19 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.4 2016/06/01 12:47:31 edd Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -418,7 +418,7 @@ print("\n\n")
 print(">>> texlive_texmf-full")
 full_pkgs = ["scheme-full"]
 full_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.3 2016/05/04 22:52:19 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.4 2016/06/01 12:47:31 edd Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -443,7 +443,7 @@ print("\n\n")
 # /----------------------------------------------------------
 # | DOCS
 # +----------------------------------------------------------
-# | All remaining docs
+# | Docs for TeX packages in -buildset and -minimal only.
 # \----------------------------------------------------------
 
 # exclude manuals and info files
@@ -453,7 +453,7 @@ NO_MAN_INFO_PDFMAN_REGEX = \
 print(">>> texlive_texmf-docs")
 doc_specs = ["scheme-tetex:doc"]
 doc_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.3 2016/05/04 22:52:19 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.4 2016/06/01 12:47:31 edd Exp $",
     "@conflict teTeX_texmf-doc-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,

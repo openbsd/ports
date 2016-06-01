@@ -1,18 +1,34 @@
-# $OpenBSD: adj.mk,v 1.2 2015/05/18 21:37:58 edd Exp $
+# $OpenBSD: adj.mk,v 1.3 2016/06/01 12:47:30 edd Exp $
+#
+# Replace interpreter paths in these files.
+#
+# Use grep to find files with bogus (non-absolute, non-openbsd friendly)
+# shebang paths and add them here.
+
 SCRIPTS_DIR =	texmf-dist/scripts
 
 MODPY_ADJ_FILES =	${SCRIPTS_DIR}/de-macro/de-macro \
 			${SCRIPTS_DIR}/dviasm/dviasm.py \
 			${SCRIPTS_DIR}/ebong/ebong.py \
-			${SCRIPTS_DIR}/lilyglyphs/lily-image-commands.py \
+			${SCRIPTS_DIR}/latex-make/figdepth.py \
+			${SCRIPTS_DIR}/latex-make/gensubfig.py \
+			${SCRIPTS_DIR}/latex-make/latexfilter.py \
+			${SCRIPTS_DIR}/latex-make/svg2dev.py \
+			${SCRIPTS_DIR}/latex-make/svgdepth.py \
 			${SCRIPTS_DIR}/lilyglyphs/lily-glyph-commands.py \
+			${SCRIPTS_DIR}/lilyglyphs/lily-image-commands.py \
 			${SCRIPTS_DIR}/lilyglyphs/lily-rebuild-pdfs.py \
 			${SCRIPTS_DIR}/lilyglyphs/lilyglyphs_common.py \
-			${SCRIPTS_DIR}/pythontex/pythontex3.py \
+			${SCRIPTS_DIR}/pygmentex/pygmentex.py \
+			${SCRIPTS_DIR}/pythontex/depythontex.py \
+			${SCRIPTS_DIR}/pythontex/depythontex2.py \
+			${SCRIPTS_DIR}/pythontex/depythontex3.py \
 			${SCRIPTS_DIR}/pythontex/pythontex.py \
-			${SCRIPTS_DIR}/pythontex/pythontex_2to3.py \
-			${SCRIPTS_DIR}/pythontex/pythontex_install_texlive.py \
 			${SCRIPTS_DIR}/pythontex/pythontex2.py \
+			${SCRIPTS_DIR}/pythontex/pythontex3.py \
+			${SCRIPTS_DIR}/pythontex/pythontex_2to3.py \
+			${SCRIPTS_DIR}/pythontex/pythontex_install.py \
+			${SCRIPTS_DIR}/pythontex/pythontex_install_texlive.py \
 			${SCRIPTS_DIR}/texliveonfly/texliveonfly.py
 
 RUBY_ADJ_FILES =	${SCRIPTS_DIR}/context/ruby/textools.rb \
