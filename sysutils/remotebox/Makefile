@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/12 08:40:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/01 10:17:44 ajacoutot Exp $
 
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-2.0
+DISTNAME=		RemoteBox-2.1
 PKGNAME=		${DISTNAME:L}
 
 CATEGORIES=		sysutils
