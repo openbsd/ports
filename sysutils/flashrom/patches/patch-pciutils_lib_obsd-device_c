@@ -1,0 +1,46 @@
+$OpenBSD: patch-pciutils_lib_obsd-device_c,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+
+OpenBSD's /dev/pci only permits aligned 32 bit writes.
+Emulate smaller writes by doing read/modify/write.
+
+http://marc.info/?l=openbsd-ports&m=127780030728045&w=2
+
+--- pciutils/lib/obsd-device.c.orig	Sat May 21 22:41:31 2016
++++ pciutils/lib/obsd-device.c	Sat May 21 22:41:34 2016
+@@ -109,19 +109,31 @@ obsd_write(struct pci_dev *d, int pos, byte *buf, int 
+   pi.pi_sel.pc_dev = d->dev;
+   pi.pi_sel.pc_func = d->func;
+ 
+-  pi.pi_reg = pos;
+-  pi.pi_width = len;
++  pi.pi_reg = pos - (pos % 4);
++  pi.pi_width = 4;
++  pi.pi_data = 0xffffffff;
+ 
++  /* Questionable read-modify-write cycle for non-32-bit writes */
++  if (len != 4)
++    if (ioctl(d->access->fd, PCIOCREAD, &pi) < 0)
++      {
++	/* Abort on any error because the write will contain garbage */
++	d->access->error("obsd_read: ioctl(PCIOCREAD) failed");
++	return 0;
++      }
++
+   switch (len)
+     {
+     case 1:
+-      pi.pi_data = buf[0];
++      pi.pi_data &= ~(0xff << ((pos % 4) * 8));
++      pi.pi_data |= buf[0] << ((pos % 4) * 8);
+       break;
+     case 2:
+-      pi.pi_data = ((u16 *) buf)[0];
++      pi.pi_data &= ~(0xffff << ((pos % 4) * 8));
++      pi.pi_data |= htole16(((u16 *) buf)[0]) << ((pos % 4) * 8);
+       break;
+     case 4:
+-      pi.pi_data = ((u32 *) buf)[0];
++      pi.pi_data = htole32(((u32 *) buf)[0]);
+       break;
+     }
+ 

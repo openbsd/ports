@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+@man man/man8/flashrom.8
+@bin sbin/flashrom
+share/doc/pkg-readmes/${FULLPKGNAME}

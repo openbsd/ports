@@ -1,0 +1,20 @@
+flashrom is a utility for identifying, reading, writing, verifying
+and erasing flash chips. It is designed to flash BIOS, EFI, coreboot,
+firmware and optionROM images on mainboards, network/graphics/storage
+controller cards, and various programmer devices.
+
+* Supports more than 225 flash chips, 128 chipsets, 186 mainboards, 19 PCI
+devices, 3 USB devices and all external programmers using the serprog protocol.
+* Supports parallel, LPC, FWH and SPI flash interfaces and various chip
+packages (DIP32, PLCC32, DIP8, SO8/SOIC8, TSOP32, TSOP40, TSOP48, and more)
+* No physical access needed, root and /dev/mem access is sufficient.
+* No bootable floppy disk, bootable CD-ROM or other media needed.
+* No keyboard or monitor needed. Simply reflash remotely via SSH.
+* No instant reboot needed. Reflash your chip in a running system,
+verify it, be happy. The new firmware will be present next time you boot.
+* Crossflashing and hotflashing is possible as long as the flash chips are
+electrically and logically compatible (same protocol). Great for recovery.
+* Scriptability. Reflash a whole pool of identical machines at the
+same time from the command line. It is recommended to check flashrom
+output and error codes.
+* Speed. flashrom is often much faster than most vendor flash tools.

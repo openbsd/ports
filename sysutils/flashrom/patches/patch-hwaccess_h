@@ -1,0 +1,17 @@
+$OpenBSD: patch-hwaccess_h,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+
+use patched pciutils.
+
+--- hwaccess.h.orig	Sat Feb 20 21:43:56 2016
++++ hwaccess.h	Mon May 30 23:26:58 2016
+@@ -34,7 +34,9 @@
+  */
+ #define index shadow_workaround_index
+ 
+-#if !defined (__NetBSD__)
++#ifdef __OpenBSD__
++#include "pciutils/lib/pci.h"
++#elif !defined (__NetBSD__)
+ #include <pci/pci.h>
+ #else
+ #include <pciutils/pci.h>

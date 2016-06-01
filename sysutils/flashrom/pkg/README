@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Programming on-board devices
+============================
+One common use of flashrom is to programme an on-board flash device
+(e.g. for updating devices on the mainboard or a PCI device attached
+to the machine you're running it on).
+
+This requires the ability to write directly to memory, which is
+INSECURE. Therefore, OpenBSD denies it under normal operating
+conditions.
+
+If you have decided to accept the risks of using this software,
+it is advised to reboot into *single user mode* ("boot -s"),
+mount necessary filesystems (mount -a -t nonfs), flash and
+reboot.
+
+In single user mode, the system securelevel(8) does allow
+access to write directly to system memory, and importantly
+network services and other third-party software will usually
+not be running at the time.
+
+flashrom also supports some external programming devices via USB;
+in those cases it can be run from a normal boot.
