@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/01 22:36:30 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -31,7 +31,7 @@ FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
-post-extract:
+pre-patch:
 	mv ${WRKDIR}/sysutils/pciutils/pciutils-* ${WRKSRC}/pciutils
 
 do-configure:
