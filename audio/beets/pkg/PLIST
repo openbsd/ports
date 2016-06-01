@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/02/25 00:44:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/06/01 15:01:32 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/beets/__init__.py
@@ -63,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/enumeration.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/enumeration.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/functemplate.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/functemplate.pyc
+lib/python${MODPY_VERSION}/site-packages/beets/util/hidden.py
+lib/python${MODPY_VERSION}/site-packages/beets/util/hidden.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/pipeline.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/pipeline.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/vfs.py
@@ -95,14 +96,14 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/discogs.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/discogs.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.pyc
-lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.py
-lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/edit.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/edit.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embyupdate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embyupdate.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/export.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/export.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/filefilter.py
@@ -115,6 +116,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/ftintitle.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ftintitle.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fuzzy.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fuzzy.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/hook.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/hook.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ihate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ihate.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/importadded.py
