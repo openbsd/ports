@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/10/26 18:08:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/01 12:14:39 jasper Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 puppetboard/
 puppetboard/CHANGELOG.rst
@@ -78,6 +78,8 @@ puppetboard/puppetboard/templates/412.html
 puppetboard/puppetboard/templates/500.html
 puppetboard/puppetboard/templates/_macros.html
 puppetboard/puppetboard/templates/catalog.html
+puppetboard/puppetboard/templates/catalog_compare.html
+puppetboard/puppetboard/templates/catalogs.html
 puppetboard/puppetboard/templates/fact.html
 puppetboard/puppetboard/templates/facts.html
 puppetboard/puppetboard/templates/index.html
@@ -90,7 +92,6 @@ puppetboard/puppetboard/templates/nodes.html
 puppetboard/puppetboard/templates/query.html
 puppetboard/puppetboard/templates/report.html
 puppetboard/puppetboard/templates/reports.html
-puppetboard/puppetboard/templates/reports_node.html
 puppetboard/puppetboard/tmp/
 puppetboard/puppetboard/utils.py
 puppetboard/puppetboard_wsgi.py

@@ -1,32 +1,30 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/30 09:26:43 jasper Exp $
-
-PORTROACH_COMMENT=	newer versions (>= 0.1.0) require puppetdb 4
-PORTROACH=		limit:^0
+# $OpenBSD: Makefile,v 1.15 2016/06/01 12:14:39 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	0.0.5
+MODPY_EGG_VERSION=	0.1.3
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
-REVISION=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
+MODULES=		lang/python
 MODPY_PI =		Yes
 
-MODULES=		lang/python
+FLAVORS =		python3
+FLAVOR ?=
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		databases/py-puppetdb>=0.1.0,<0.2.0 \
-			www/py-flask-wtf>=0.9.4p0 \
-			www/py-gunicorn \
-			www/py-requests
+RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=0.2.3 \
+			www/py-flask-wtf${MODPY_FLAVOR}>=0.9.4p0 \
+			www/py-gunicorn${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/puppetboard
