@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2016/01/20 16:22:26 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2016/06/01 09:19:44 dcoppa Exp $
 
 COMMENT =		versatile logging framework
 
-DISTNAME =		hslogger-1.2.9
-REVISION =		2
+DISTNAME =		hslogger-1.2.10
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/hslogger/wiki
 
@@ -16,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	BLLA2mHMd1Y30ogCyK2blO
+MODGHC_PACKAGE_KEY =	7S2R9oN6Jiq9ujVQkRIVGN
 
 RUN_DEPENDS +=		devel/hs-network \
 			devel/hs-mtl \

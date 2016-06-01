@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/09/21 18:27:43 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/06/01 09:19:44 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -23,8 +23,6 @@ lib/ghc/${DISTNAME}/Data/Hash/
 lib/ghc/${DISTNAME}/Data/Hash/CRC32/
 lib/ghc/${DISTNAME}/Data/Hash/CRC32/GZip.hi
 lib/ghc/${DISTNAME}/Data/Hash/CRC32/GZip.p_hi
-lib/ghc/${DISTNAME}/Data/Hash/CRC32/Posix.hi
-lib/ghc/${DISTNAME}/Data/Hash/CRC32/Posix.p_hi
 lib/ghc/${DISTNAME}/Data/Hash/MD5/
 lib/ghc/${DISTNAME}/Data/Hash/MD5.hi
 lib/ghc/${DISTNAME}/Data/Hash/MD5.p_hi
@@ -119,8 +117,6 @@ lib/ghc/${DISTNAME}/System/Posix/
 lib/ghc/${DISTNAME}/System/Posix/Consts.hi
 lib/ghc/${DISTNAME}/System/Posix/Consts.p_hi
 lib/ghc/${DISTNAME}/System/Time/
-lib/ghc/${DISTNAME}/System/Time/ParseDate.hi
-lib/ghc/${DISTNAME}/System/Time/ParseDate.p_hi
 lib/ghc/${DISTNAME}/System/Time/Utils.hi
 lib/ghc/${DISTNAME}/System/Time/Utils.p_hi
 lib/ghc/${DISTNAME}/Text/
@@ -141,7 +137,6 @@ share/doc/hs-${DISTNAME}/html/Data-CSV.html
 share/doc/hs-${DISTNAME}/html/Data-Compression-Inflate.html
 share/doc/hs-${DISTNAME}/html/Data-Either-Utils.html
 share/doc/hs-${DISTNAME}/html/Data-Hash-CRC32-GZip.html
-share/doc/hs-${DISTNAME}/html/Data-Hash-CRC32-Posix.html
 share/doc/hs-${DISTNAME}/html/Data-Hash-MD5-Zord64_HARD.html
 share/doc/hs-${DISTNAME}/html/Data-Hash-MD5.html
 share/doc/hs-${DISTNAME}/html/Data-List-Utils.html
@@ -179,7 +174,6 @@ share/doc/hs-${DISTNAME}/html/System-Path-NameManip.html
 share/doc/hs-${DISTNAME}/html/System-Path-WildMatch.html
 share/doc/hs-${DISTNAME}/html/System-Path.html
 share/doc/hs-${DISTNAME}/html/System-Posix-Consts.html
-share/doc/hs-${DISTNAME}/html/System-Time-ParseDate.html
 share/doc/hs-${DISTNAME}/html/System-Time-Utils.html
 share/doc/hs-${DISTNAME}/html/Text-ParserCombinators-Parsec-Utils.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
@@ -221,7 +215,6 @@ share/doc/hs-${DISTNAME}/html/mini_Data-CSV.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Compression-Inflate.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Either-Utils.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Hash-CRC32-GZip.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Hash-CRC32-Posix.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Hash-MD5-Zord64_HARD.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Hash-MD5.html
 share/doc/hs-${DISTNAME}/html/mini_Data-List-Utils.html
@@ -258,7 +251,6 @@ share/doc/hs-${DISTNAME}/html/mini_System-Path-NameManip.html
 share/doc/hs-${DISTNAME}/html/mini_System-Path-WildMatch.html
 share/doc/hs-${DISTNAME}/html/mini_System-Path.html
 share/doc/hs-${DISTNAME}/html/mini_System-Posix-Consts.html
-share/doc/hs-${DISTNAME}/html/mini_System-Time-ParseDate.html
 share/doc/hs-${DISTNAME}/html/mini_System-Time-Utils.html
 share/doc/hs-${DISTNAME}/html/mini_Text-ParserCombinators-Parsec-Utils.html
 share/doc/hs-${DISTNAME}/html/minus.gif
