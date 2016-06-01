@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/30 12:09:19 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2016/06/01 22:22:48 sthen Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
@@ -44,7 +44,7 @@ MODULES=	lang/php
 MODPHP_BUILDDEP=No
 MODPHP_RUNDEP=	No
 
-BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio
+BUILD_DEPENDS=	converters/rpm2cpio
 RUN_DEPENDS=	mail/zarafa/zarafa,-web # php-mapi
 
 NO_BUILD=	Yes
