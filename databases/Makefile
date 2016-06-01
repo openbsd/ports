@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2016/05/24 00:21:41 jturner Exp $
+# $OpenBSD: Makefile,v 1.312 2016/06/01 12:12:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -159,6 +159,7 @@
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
      SUBDIR += puppetdb
+     SUBDIR += puppetdb4
      SUBDIR += py-apsw
      SUBDIR += py-apsw,python3
      SUBDIR += py-axiom
