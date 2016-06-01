@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/03 14:41:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/01 22:37:58 sthen Exp $
 
 COMMENT=	SSL port scanner
 
@@ -43,7 +43,7 @@ CFLAGS+=	-nostdinc -I${WRKSRC}/openssl/include -I/usr/include
 
 post-extract:
 	ln -s ${WRKDIR}/security/openssl/openssl-* ${WRKSRC}/openssl
-	rm ${WRKSRC}/openssl/Makefile
+	rm -f ${WRKSRC}/openssl/Makefile
 .else
 WANTLIB +=	crypto ssl
 .endif
