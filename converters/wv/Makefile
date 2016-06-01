@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/11 20:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/06/01 08:34:25 landry Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
-DISTNAME =	wv-1.2.4
-REVISION =	6
+DISTNAME =	wv-1.2.9
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -20,7 +19,7 @@ WANTLIB += wmflite-0.2 xcb xml2 z
 
 MODULES =	devel/gettext
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wvware/}
+MASTER_SITES =	http://abisource.com/downloads/wv/1.2.9/
 
 RUN_DEPENDS =	graphics/ImageMagick
 LIB_DEPENDS =	devel/libgsf \
