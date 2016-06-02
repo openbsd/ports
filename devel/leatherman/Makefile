@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/30 13:07:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/02 05:59:22 ajacoutot Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
@@ -20,6 +20,7 @@ MODGCC4_ARCHS =		*
 MODGCC4_LANGS +=	c++
 
 BUILD_DEPENDS =		devel/boost \
+			devel/gettext-tools \
 			net/curl
 
 # cmake tests are botched
