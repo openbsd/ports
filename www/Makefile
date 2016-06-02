@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.785 2016/05/31 13:43:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.786 2016/06/02 11:35:42 bentley Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -505,6 +505,7 @@
      SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += sarg,ldap
+     SUBDIR += sblg
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
      SUBDIR += selfoss
