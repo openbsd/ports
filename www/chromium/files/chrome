@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.13 2015/02/22 11:33:57 robert Exp $
+# $OpenBSD: chrome,v 1.14 2016/06/02 21:03:38 sthen Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -22,6 +22,13 @@ if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
 		[ $? -eq 0 ] || exit
 fi
 
+if ! mount | grep `df -h ${TRUEPREFIX} | tail -1 | awk '{print $6}'` | 
+	grep -q wxallowed; then 
+	echo "Filesystem containing ${TRUEPREFIX} must have the 'wxallowed' flag" | 
+	    ${X11BASE}/bin/xmessage -file - -center -buttons exit:0 -default exit
+	exit
+fi
+
 #
 # Temporary workaround for the case when chromium crashes and leaves
 # the SingletonLock, which prevents chromium to start up.
@@ -40,4 +47,4 @@ fi
 #
 [ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
 
-LANG=${_l} exec "/usr/local/chrome/chrome" "${@}"
+LANG=${_l} exec "${TRUEPREFIX}/chrome/chrome" "${@}"
