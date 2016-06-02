@@ -1,10 +1,13 @@
-$OpenBSD: patch-lib_src_facts_openbsd_memory_resolver_cc,v 1.4 2016/06/01 07:02:02 jasper Exp $
+$OpenBSD: patch-lib_src_facts_openbsd_memory_resolver_cc,v 1.5 2016/06/02 20:15:59 jasper Exp $
 
 - From 8ee968b997ab0cd55be4ae071f9d17d6ef0b33a6 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Mon, 30 May 2016 18:34:50 +0200
   Subject: [PATCH] (MAINT) Unbreak after leatherman split in cc1245ab
-- https://github.com/puppetlabs/facter/pull/1345
+- From 27369d5db64f0926da0c4d916ac5c65ad750ed49 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Tue, 31 May 2016 16:01:53 +0200
+  Subject: [PATCH] (FACT-1433) Properly scale swap results
 
 --- lib/src/facts/openbsd/memory_resolver.cc.orig	Fri May 20 18:36:55 2016
 +++ lib/src/facts/openbsd/memory_resolver.cc	Tue May 31 15:53:39 2016

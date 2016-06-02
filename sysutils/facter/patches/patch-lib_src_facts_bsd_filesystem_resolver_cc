@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.6 2016/06/02 09:52:38 jasper Exp $
+$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.7 2016/06/02 20:15:59 jasper Exp $
 
-https://github.com/puppetlabs/facter/pull/1347
+From cade2dd2fadd4d31355aa688f76e89f534a5c464 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 2 Jun 2016 11:50:59 +0200
+Subject: [PATCH] (FACT-1434) Recognize wxallowed mount option
 
 --- lib/src/facts/bsd/filesystem_resolver.cc.orig	Thu Jun  2 11:45:23 2016
 +++ lib/src/facts/bsd/filesystem_resolver.cc	Thu Jun  2 11:45:30 2016
