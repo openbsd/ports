@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2016/04/29 21:01:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.333 2016/06/02 11:33:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -156,6 +156,7 @@
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
      SUBDIR += moria
+     SUBDIR += mysticmine
      SUBDIR += naev
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
