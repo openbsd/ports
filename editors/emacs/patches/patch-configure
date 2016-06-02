@@ -1,11 +1,22 @@
-$OpenBSD: patch-configure,v 1.6 2015/11/13 20:33:31 jca Exp $
---- configure.orig	Fri Nov 13 20:53:33 2015
-+++ configure	Fri Nov 13 20:53:57 2015
-@@ -9102,6 +9102,7 @@ case "$opsys" in
+$OpenBSD: patch-configure,v 1.7 2016/06/02 16:32:47 jca Exp $
+--- configure.orig	Wed Apr  8 19:11:56 2015
++++ configure	Thu Jun  2 18:31:04 2016
+@@ -9101,7 +9101,17 @@ case "$opsys" in
+   openbsd)
     ## Han Boetes <han@boetes.org> says this is necessary,
     ## otherwise Emacs dumps core on elf systems.
-    LD_SWITCH_SYSTEM="-Z"
+-   LD_SWITCH_SYSTEM="-Z"
++   ## Enable only where necessary.
++   case $host_cpu in
++     x86_64|sparc64)
++      ;;
++     powerpc|mips64el|*)
++      LD_SWITCH_SYSTEM="-Z"
++      ;;
++   esac
++
 +   case $host_cpu in powerpc) LD_SWITCH_SYSTEM="-Wl,--bss-plt $LD_SWITCH_SYSTEM";; esac
++
     ;;
  esac
  
