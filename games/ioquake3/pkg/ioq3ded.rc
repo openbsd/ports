@@ -1,16 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: ioq3ded.rc,v 1.1 2016/05/27 23:44:14 abieber Exp $
+# $OpenBSD: ioq3ded.rc,v 1.2 2016/06/02 11:51:15 ajacoutot Exp $
 
-daemon="/usr/local/bin/ioq3ded"
-daemon_flags=""
+daemon="${TRUEPREFIX}/bin/ioq3ded"
 daemon_user="_ioq3"
 
 . /etc/rc.d/rc.subr
 
 pexp="${daemon}.*"
 
-rc_reload=NO
 rc_bg=YES
+rc_reload=NO
 
 rc_cmd $1
