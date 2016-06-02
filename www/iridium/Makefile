@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/05/28 16:37:10 robert Exp $
+# $OpenBSD: Makefile,v 1.53 2016/06/02 16:34:50 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,6 +8,7 @@ COMMENT=		Iridium browser
 V=			51.1
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
+REVISION=		0
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/rc1//}
 
@@ -97,7 +98,7 @@ TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 CONFIGURE_ENV=	CPPFLAGS="-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 		GYP_GENERATORS=ninja
 
 ALL_TARGET=	chrome
