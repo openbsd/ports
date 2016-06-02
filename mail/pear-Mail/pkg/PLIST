@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/19 15:09:12 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/02 14:21:02 sthen Exp $
 @group daemon
 pear/lib/.registry/mail.reg
 pear/lib/Mail/
@@ -15,6 +15,7 @@ pear/tests/Mail/tests/
 pear/tests/Mail/tests/13659.phpt
 pear/tests/Mail/tests/9137.phpt
 pear/tests/Mail/tests/9137_2.phpt
+pear/tests/Mail/tests/bug17178.phpt
+pear/tests/Mail/tests/bug17317.phpt
 pear/tests/Mail/tests/rfc822.phpt
 pear/tests/Mail/tests/smtp_error.phpt
-pear/tests/Mail/tests/validateQuotedString.php
