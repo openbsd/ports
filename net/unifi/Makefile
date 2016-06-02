@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/06 14:52:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/06/02 11:35:23 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
-VERSION=	4.8.18
+VERSION=	5.0.6
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
