@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/16 11:41:21 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/06/02 21:03:49 sebastia Exp $
 @bin bin/centralclock
 @bin bin/spdrs60
 man/de/
 man/de/man1/
-@man man/de/man1/centralclock.1x
-@man man/de/man1/spdrs60.1x
-@man man/man1/centralclock.1x
-@man man/man1/spdrs60.1x
+@man man/de/man1/centralclock.1
+@man man/de/man1/spdrs60.1
+@man man/man1/centralclock.1
+@man man/man1/spdrs60.1
 share/doc/spdrs60/
 share/doc/spdrs60/html/
 share/doc/spdrs60/html/commonimages/
