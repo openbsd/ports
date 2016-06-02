@@ -1,16 +1,7 @@
-$OpenBSD: patch-src_isis_isis_c,v 1.1 2014/03/22 23:05:43 sthen Exp $
---- src/isis/isis.c.orig	Sun Mar 16 01:29:27 2014
-+++ src/isis/isis.c	Sun Mar 16 01:32:53 2014
-@@ -645,7 +645,7 @@ void igp_daemon_map_validate(char *filename, struct pl
- 
-       memset(isis_dgram, 0, sizeof(isis_dgram));
- 
--      /* can't use DLT_RAW for IS-IS, let's use DLT_CHDLC */
-+      /* can't use DLT_RAW for IS-IS, let's use DLT_C_HDLC */
-       chdlc_hdr = (struct chdlc_header *) isis_dgram_ptr;
-       chdlc_hdr->address = CHDLC_MCAST_ADDR;
-       chdlc_hdr->control = CHDLC_FIXED_CONTROL;
-@@ -819,7 +819,7 @@ void igp_daemon_map_initialize(char *filename, struct 
+$OpenBSD: patch-src_isis_isis_c,v 1.2 2016/06/02 11:52:32 sthen Exp $
+--- src/isis/isis.c.orig	Tue Jan 12 14:59:07 2016
++++ src/isis/isis.c	Sat May 21 11:34:49 2016
+@@ -820,7 +820,7 @@ void igp_daemon_map_initialize(char *filename, struct 
    pcap_t *p;
  
    if (config.debug && config.igp_daemon_map_msglog) {
@@ -18,4 +9,4 @@ $OpenBSD: patch-src_isis_isis_c,v 1.1 2014/03/22 23:05:43 sthen Exp $
 +    p = pcap_open_dead(DLT_C_HDLC, RECEIVE_LSP_BUFFER_SIZE+sizeof(struct chdlc_header)+sizeof(struct isis_fixed_hdr));
  
      if ((idmm_fd = pcap_dump_open(p, config.igp_daemon_map_msglog)) == NULL) {
-       Log(LOG_ERR, "ERROR ( default/core/ISIS ): Can not open igp_daemon_map_msglog '%s' (%s).\n",
+       Log(LOG_ERR, "ERROR ( %s/core/ISIS ): Can not open igp_daemon_map_msglog '%s' (%s).\n",

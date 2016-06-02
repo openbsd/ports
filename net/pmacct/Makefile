@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2016/06/02 11:52:32 sthen Exp $
 
 COMMENT=	IP accounting software
 
-DISTNAME=	pmacct-1.5.0rc2
-REVISION=	0
+DISTNAME=	pmacct-1.5.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -18,6 +17,7 @@ MASTER_SITES=	${HOMEPAGE}
 NO_TEST=	Yes
 CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.13
+USE_GMAKE=	Yes
 CONFIGURE_ARGS= --enable-ipv6 \
 		--enable-sqlite3 \
 		--with-sqlite3-includes="/usr/include"
@@ -25,7 +25,6 @@ CONFIGURE_ARGS= --enable-ipv6 \
 MAKE_ARGS+=	DEBUG=1
 .endif
 
-CONFIGURE_ENV += ac_cv_prog_MAKE="/usr/bin/make"
 FLAVORS=	mysql postgresql
 FLAVOR?=
 
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+= --disable-pgsql
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	lib/mysql/mysqlclient
+WANTLIB +=	lib/mysql/mysqlclient stdc++
 CONFIGURE_ARGS+= --enable-mysql
 .else
 CONFIGURE_ARGS+= --disable-mysql
