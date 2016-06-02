@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2016/05/30 17:01:44 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2016/06/02 07:36:19 jasper Exp $
 
 https://github.com/puppetlabs/facter/pull/1342
 
---- CMakeLists.txt.orig	Wed Apr 27 17:53:21 2016
-+++ CMakeLists.txt	Wed Apr 27 17:53:37 2016
-@@ -45,7 +45,7 @@ SET(LEATHERMAN_COMPONENTS locale catch nowide logging 
+--- CMakeLists.txt.orig	Wed Jun  1 20:11:33 2016
++++ CMakeLists.txt	Thu Jun  2 08:55:31 2016
+@@ -51,7 +51,7 @@ SET(LEATHERMAN_COMPONENTS locale catch nowide logging 
  
  # We look for curl early, because whether or not we link to the leatherman curl library
  # is dependant on whether or not we find curl on the system.
