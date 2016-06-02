@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.6 2016/06/02 09:52:38 jasper Exp $
+
+https://github.com/puppetlabs/facter/pull/1347
+
+--- lib/src/facts/bsd/filesystem_resolver.cc.orig	Thu Jun  2 11:45:23 2016
++++ lib/src/facts/bsd/filesystem_resolver.cc	Thu Jun  2 11:45:30 2016
+@@ -73,6 +73,9 @@ namespace facter { namespace facts { namespace bsd {
+             make_tuple<unsigned int, string>(MNT_JOURNALED,    "journaled"),
+             make_tuple<unsigned int, string>(MNT_DEFWRITE,     "deferwrites"),
+ #endif
++#ifdef __OpenBSD__
++            make_tuple<unsigned int, string>(MNT_WXALLOWED,     "wxallowed"),
++#endif
+         };
+ 
+         vector<string> options;
