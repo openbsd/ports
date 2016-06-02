@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/05/26 12:05:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/06/02 07:19:21 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -68,8 +68,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/fingerprinting.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/fingerprinting.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/__init__.pyc
@@ -157,12 +155,19 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/addresses_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/addresses_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_buckets_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_buckets_utils.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/client.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services/client.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/backend_services_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/base_classes.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/base_classes.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/batch_helper.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/batch_helper.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/constants.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/constants.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/csek_utils.py
@@ -499,6 +504,15 @@ google-cloud-sdk/lib/googlecloudsdk/calliope/walker_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/exceptions.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/output_helpers.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/output_helpers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/components/__init__.pyc
@@ -555,6 +569,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/table.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/table.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.pyc
@@ -2685,6 +2704,8 @@ google-cloud-sdk/lib/surface/genomics/variantsets/export.py
 google-cloud-sdk/lib/surface/genomics/variantsets/export.pyc
 google-cloud-sdk/lib/surface/genomics/variantsets/list.py
 google-cloud-sdk/lib/surface/genomics/variantsets/list.pyc
+google-cloud-sdk/lib/surface/genomics/variantsets/update.py
+google-cloud-sdk/lib/surface/genomics/variantsets/update.pyc
 google-cloud-sdk/lib/surface/help.py
 google-cloud-sdk/lib/surface/help.pyc
 google-cloud-sdk/lib/surface/iam/
