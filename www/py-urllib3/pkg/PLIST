@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/27 09:13:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/06/02 21:15:05 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -35,6 +35,11 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/filepost.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/__init__.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/__init__.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/makefile.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/makefile.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ordered_dict.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/six.py
