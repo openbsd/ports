@@ -1,7 +1,7 @@
-$OpenBSD: patch-Instance_library_make,v 1.4 2011/07/19 06:23:28 sebastia Exp $
---- Instance/library.make.orig	Sat Apr 30 09:59:20 2011
-+++ Instance/library.make	Mon Jun  6 13:31:34 2011
-@@ -190,7 +190,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
+$OpenBSD: patch-Instance_library_make,v 1.5 2016/06/03 11:42:23 sebastia Exp $
+--- Instance/library.make.orig	Sun Oct 25 16:22:25 2015
++++ Instance/library.make	Wed May 18 21:13:09 2016
+@@ -192,7 +192,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
  VERSION_LIBRARY_FILE = $(LIBRARY_NAME_WITH_LIB).$(VERSION)$(SHARED_LIBEXT)
  SONAME_LIBRARY_FILE  = $(LIBRARY_NAME_WITH_LIB).$(INTERFACE_VERSION)$(SHARED_LIBEXT)
  else
