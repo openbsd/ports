@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/05/27 10:01:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/06/03 11:42:30 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -167,6 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cli.ini
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-6sans.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nonames.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san.pem
