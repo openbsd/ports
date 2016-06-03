@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: buildslave.rc,v 1.2 2011/04/24 19:15:13 ajacoutot Exp $
+# $OpenBSD: buildslave.rc,v 1.3 2016/06/03 07:59:22 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/buildslave"
 daemon_flags="${HOMEDIR}"
@@ -8,7 +8,7 @@ daemon_user="_buildslave"
 
 . /etc/rc.d/rc.subr
 
-pexp="${MODPY_BIN} ${daemon} start ${daemon_flags}"
+pexp="${MODPY_BIN} ${daemon} start${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_start() {
