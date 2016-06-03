@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/06/03 11:42:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/06/03 14:23:07 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -51,8 +51,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/hooks.py
 lib/python${MODPY_VERSION}/site-packages/certbot/hooks.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/le_util.py
-lib/python${MODPY_VERSION}/site-packages/certbot/le_util.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/log.py
 lib/python${MODPY_VERSION}/site-packages/certbot/log.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/main.py
@@ -138,8 +136,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/le_util_test.py
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/le_util_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.py
@@ -182,12 +178,17 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-rene
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/fullchain.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/privkey.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/matching_cert.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/os-release
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key_2.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal-ancient.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/webrootconftest.ini
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/util_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/util_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/util.py
+lib/python${MODPY_VERSION}/site-packages/certbot/util.pyc
 share/examples/certbot/
 @mode 750
 @sample ${SYSCONFDIR}/letsencrypt/
