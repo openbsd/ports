@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/14 06:20:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/03 13:31:07 sebastia Exp $
 
 COMMENT =	tools to access the Puppet Forge API
 
-DISTNAME =	puppet_forge-2.1.4
+DISTNAME =	puppet_forge-2.2.1
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/puppetlabs/forge-ruby
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
