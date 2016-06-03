@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2016/05/26 08:34:17 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2016/06/03 08:11:09 kirby Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
 COMMENT-x11 =		gapcmon - GUI for apcupsd
 
-DISTNAME =		apcupsd-3.14.13
+DISTNAME =		apcupsd-3.14.14
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-main = 	2
-REVISION-cgi =		0
-REVISION-x11 =		0
 
 CATEGORIES =		sysutils
 
@@ -43,8 +40,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--with-nisip=127.0.0.1 \
 			--enable-modbus-usb \
 			--enable-test \
-			--enable-usb \
-			--with-generic-usb
+			--enable-usb
 CONFIGURE_ENV += 	LDFLAGS=-L${X11BASE}/lib \
 			SHUTDOWN=/sbin/shutdown
 
