@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/04/13 21:31:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.59 2016/06/03 11:58:27 sebastia Exp $
 
 PORTROACH+=		limit:^2
 
@@ -7,6 +7,7 @@ COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION =		2.3.10
+REVISION =		0
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
