@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/14 06:21:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/03 13:33:59 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -123,6 +123,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_d
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_invalid_git_provider.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/negative_bad_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/proxy_specified_in_configuration.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/proxy_with_pe_only_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/proxy_with_puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/rugged_git_provider_with_ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/rugged_git_provider_without_ssh.rb
@@ -270,6 +271,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/collection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/container.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/enum_definition.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/list.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/loader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/mixin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/uri_definition.rb
@@ -360,6 +363,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/git/bare_repository.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/git/thin_repository.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/git/working_repository.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/puppetfile-action.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/settings/
+${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/settings/ancestry.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/subprocess-runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/
@@ -419,6 +424,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/collection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/container_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/definition_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/enum_definition_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/inheritance_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/list_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/loader_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/uri_definition_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings_spec.rb
