@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/05 16:04:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/03 11:57:58 sebastia Exp $
 
 COMMENT =	framework for reading different types of RSS formats
 
-REVISION =	6
+REVISION =	7
 DISTNAME =	RSSKit-0.4
 
 SHARED_LIBS +=	RSSKit	0.0

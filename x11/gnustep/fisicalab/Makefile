@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/05 16:04:08 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2016/06/03 11:57:57 sebastia Exp $
 
 COMMENT=	educational application to solve physics problems
 
 VERSION =	0.3.5
-REVISION =	1
+REVISION =	2
 DISTNAME =	fisicalab-${VERSION}-1
 PKGNAME =	fisicalab-${VERSION}.1
 

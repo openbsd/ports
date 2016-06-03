@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/05 16:04:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2016/06/03 11:57:58 sebastia Exp $
 
 COMMENT =	GNUstep performance library
 
 VERSION =	0.5.0
-REVISION =	2
+REVISION =	3
 DISTNAME =	Performance-${VERSION}
 PKGNAME =	gnustep-performance-${VERSION}
 CATEGORIES =	devel

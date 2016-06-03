@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/05 16:04:08 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2016/06/03 11:57:57 sebastia Exp $
 
 COMMENT =	GNUstep libobjc2 objective-c runtime
 BROKEN-hppa =	missing asm impl in block_trampolines.S
@@ -7,6 +7,7 @@ NOT_FOR_ARCHS = ${GCC3_ARCHS}
 
 # note: this port does not use the gnustep module
 VERSION =	1.8
+REVISION =	0
 GH_ACCOUNT =	gnustep
 GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}

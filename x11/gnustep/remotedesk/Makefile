@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/05 16:04:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2016/06/03 11:57:58 sebastia Exp $
 
 COMMENT=	GNUstep rdesktop frontend
 
-REVISION =	8
+REVISION =	9
 DISTNAME=	RemoteDesk-0.1
 
 CATEGORIES=	x11

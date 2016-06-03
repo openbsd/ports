@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/05 16:04:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/03 11:57:56 sebastia Exp $
 
 COMMENT =	GNUstep based CD player
 
 VERSION =	0.5.1
-REVISION =	8
+REVISION =	9
 DISTNAME =	cdplayer-${VERSION}
 
 HOMEPAGE =	http://gsburn.sourceforge.net/
