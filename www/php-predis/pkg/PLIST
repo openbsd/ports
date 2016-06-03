@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/06/01 07:17:01 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/06/03 08:04:16 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -218,6 +218,7 @@ pear/lib/Predis/Connection/Aggregate/MasterSlaveReplication.php
 pear/lib/Predis/Connection/Aggregate/PredisCluster.php
 pear/lib/Predis/Connection/Aggregate/RedisCluster.php
 pear/lib/Predis/Connection/Aggregate/ReplicationInterface.php
+pear/lib/Predis/Connection/Aggregate/SentinelReplication.php
 pear/lib/Predis/Connection/AggregateConnectionInterface.php
 pear/lib/Predis/Connection/CompositeConnectionInterface.php
 pear/lib/Predis/Connection/CompositeStreamConnection.php
@@ -276,7 +277,9 @@ pear/lib/Predis/PubSub/AbstractConsumer.php
 pear/lib/Predis/PubSub/Consumer.php
 pear/lib/Predis/PubSub/DispatcherLoop.php
 pear/lib/Predis/Replication/
+pear/lib/Predis/Replication/MissingMasterException.php
 pear/lib/Predis/Replication/ReplicationStrategy.php
+pear/lib/Predis/Replication/RoleException.php
 pear/lib/Predis/Response/
 pear/lib/Predis/Response/Error.php
 pear/lib/Predis/Response/ErrorInterface.php
