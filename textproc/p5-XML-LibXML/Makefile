@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2016/06/03 23:10:43 bluhm Exp $
 
 COMMENT =		perl binding for libxml2
 
-DISTNAME =		XML-LibXML-2.0124
+DISTNAME =		XML-LibXML-2.0125
 EPOCH =			0
 
 CATEGORIES =		textproc
