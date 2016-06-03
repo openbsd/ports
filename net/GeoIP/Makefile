@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/05/26 15:21:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/06/03 10:59:00 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -6,8 +6,7 @@ COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
 COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
 V=		1.6.5
-D=		20160518
-REVISION=	0
+D=		20160603
 REVISION-main=	4
 DISTNAME=	GeoIP-$V
 PKGNAME-main=	GeoIP-$V
@@ -60,7 +59,7 @@ geolite:
 	cd data; \
 	echo "This file contains an unmodified dated snapshot of GeoLite data from MaxMind," > readme.txt; \
 	echo "see http://www.maxmind.com and http://dev.maxmind.com/geoip/legacy/geolite/." >> readme.txt; \
-	echo "Distributed under Creative Commons Attribution-ShareAlike 3.0 Unported License." >> readme.txt; \
+	echo "Distributed under Creative Commons Attribution-ShareAlike 4.0 Unported License." >> readme.txt; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> readme.txt; \
 	ftp http://geolite.maxmind.com/download/geoip/database/{GeoIPv6,GeoLiteCity,GeoLiteCityv6-beta/GeoLiteCityv6,GeoLiteCountry/GeoIP}.dat.gz http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum{,v6}.dat.gz; \
 	gunzip *gz; \
