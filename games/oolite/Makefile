@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2016/06/03 11:58:46 sebastia Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4
-REVISION =	10
+REVISION =	11
 DISTNAME=	oolite-dev-source-${VERSION}
 PKGNAME=	oolite-${VERSION}
 CATEGORIES=	games
