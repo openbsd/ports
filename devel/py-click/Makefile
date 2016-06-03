@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/07 11:35:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/03 12:20:32 sebastia Exp $
 
 COMMENT=	command line library for Python
 
-MODPY_EGG_VERSION=6.2
+MODPY_EGG_VERSION=6.6
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
 
