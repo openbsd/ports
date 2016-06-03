@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/16 17:31:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/03 13:32:41 sebastia Exp $
 
 COMMENT =	middleware for Ruby Faraday
 
-DISTNAME =	faraday_middleware-0.9.1
+DISTNAME =	faraday_middleware-0.10.0
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/lostisland/faraday_middleware
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

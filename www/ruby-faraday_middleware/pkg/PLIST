@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/16 17:31:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/03 13:32:41 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/faraday_middleware.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/addressable_patch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/backwards_compatibility.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/gzip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/instrumentation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/rack_compatible.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/request/
@@ -32,20 +32,4 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/response/parse_yaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/response/rashify.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/response_middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/faraday_middleware/version.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/
-${GEM_LIB}/gems/${DISTNAME}/spec/caching_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/chunked_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/encode_json_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/follow_redirects_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/helper.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/mashify_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/method_override_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/oauth2_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/oauth_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/parse_dates_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/parse_json_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/parse_marshal_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/parse_xml_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/parse_yaml_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/rashify_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
