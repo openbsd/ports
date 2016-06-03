@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2016/04/06 21:14:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2016/06/03 14:53:32 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.28
-REVISION=	2
+DISTNAME=	tar-1.29
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
@@ -46,10 +45,15 @@ LIB_DEPENDS+=	devel/gettext
 LDSTATIC=
 .endif
 
-# Test 87 is known to fail because getcwd(3) fails if the
-# parent directory is unreadable.
+# autom4te
+TEST_DEPENDS=	devel/autoconf/2.69
+TEST_ENV=	AUTOCONF_VERSION=2.69
+# without GNU m4, commands with leading parenthesis are mis-expanded
+TEST_DEPENDS+=	devel/m4
+TEST_ENV+=	M4=${LOCALBASE}/bin/gm4
 
-# Tests 161 163 are known to fail because path resolution of ".."
-# in a removed directory fails.
+# do not rebuild tar.info
+post-patch:
+	touch -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
 
 .include <bsd.port.mk>
