@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.76 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2016/06/03 08:34:00 dcoppa Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 
-DISTNAME =	pianobar-2015.11.22
-REVISION =	1
+DISTNAME =	pianobar-2016.06.02
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -35,7 +34,8 @@ MAKE_FLAGS =	DYNLINK=1 \
 		CC=${CC} \
 		LIBGCRYPT_CFLAGS="-DGCRYPT_NO_DEPRECATED \
 				  -I${LOCALBASE}/include" \
-		LIBpiano_VERSION="${LIBpiano_VERSION}"
+		LIBpiano_VERSION="${LIBpiano_VERSION}" \
+		V=1
 
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \

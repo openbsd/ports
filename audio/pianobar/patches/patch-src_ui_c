@@ -1,27 +1,7 @@
-$OpenBSD: patch-src_ui_c,v 1.18 2016/03/01 12:44:58 dcoppa Exp $
-
-commit bdc9dc727b0464bc17bed002d2a701cfc34b777a
-Author: Lars-Dominik Braun <lars@6xq.net>
-Date:   Thu Feb 11 19:50:55 2016 +0100
-
-Add default value for rpcTlsPort
-
-Passing NULL to printf and the result to curl may or may not work. YMMV.
-Fixes #574.
-
---- src/ui.c.orig	Sun Nov 22 13:31:27 2015
-+++ src/ui.c	Tue Mar  1 13:32:43 2016
-@@ -179,6 +179,9 @@ static CURLcode BarPianoHttpRequest (CURL * const http
- 	buffer buffer = {NULL, 0};
- 	sig_atomic_t lint = 0, *prevint;
- 	char url[2048];
-+	assert (settings->rpcHost != NULL);
-+	assert (settings->rpcTlsPort != NULL);
-+	assert (req->urlPath != NULL);
- 	int ret = snprintf (url, sizeof (url), "%s://%s:%s%s",
- 		req->secure ? "https" : "http",
- 		settings->rpcHost,
-@@ -201,6 +204,7 @@ static CURLcode BarPianoHttpRequest (CURL * const http
+$OpenBSD: patch-src_ui_c,v 1.19 2016/06/03 08:34:00 dcoppa Exp $
+--- src/ui.c.orig	Thu Jun  2 08:49:26 2016
++++ src/ui.c	Fri Jun  3 10:16:34 2016
+@@ -205,6 +205,7 @@ static CURLcode BarPianoHttpRequest (CURL * const http
  	setAndCheck (CURLOPT_PROGRESSDATA, &lint);
  	setAndCheck (CURLOPT_NOPROGRESS, 0);
  	setAndCheck (CURLOPT_POST, 1);

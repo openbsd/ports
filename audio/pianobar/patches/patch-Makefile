@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.27 2015/10/07 08:40:54 dcoppa Exp $
---- Makefile.orig	Wed Oct  7 09:13:18 2015
-+++ Makefile	Wed Oct  7 09:22:12 2015
+$OpenBSD: patch-Makefile,v 1.28 2016/06/03 08:34:00 dcoppa Exp $
+--- Makefile.orig	Fri Jun  3 10:17:24 2016
++++ Makefile	Fri Jun  3 10:25:35 2016
 @@ -6,21 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -24,59 +24,31 @@ $OpenBSD: patch-Makefile,v 1.27 2015/10/07 08:40:54 dcoppa Exp $
  PIANOBAR_DIR:=src
  PIANOBAR_SRC:=\
  		${PIANOBAR_DIR}/main.c \
-@@ -71,24 +58,18 @@ ALL_LDFLAGS:=${LDFLAGS} -lpthread -lm \
+@@ -79,7 +66,7 @@ endif
  
  # build pianobar
  ifeq (${DYNLINK},1)
 -pianobar: ${PIANOBAR_OBJ} libpiano.so.0
--	@echo "  LINK  $@"
--	@${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
 +pianobar: ${PIANOBAR_OBJ} libpiano.so.${LIBpiano_VERSION}
-+	${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
+ 	${SILENTECHO} "  LINK  $@"
+ 	${SILENTCMD}${CC} -o $@ ${PIANOBAR_OBJ} -L. -lpiano ${ALL_LDFLAGS}
  else
- pianobar: ${PIANOBAR_OBJ} ${LIBPIANO_OBJ}
--	@echo "  LINK  $@"
--	@${CC} -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${ALL_LDFLAGS}
-+	${CC} -o $@ ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${ALL_LDFLAGS}
+@@ -89,12 +76,10 @@ pianobar: ${PIANOBAR_OBJ} ${LIBPIANO_OBJ}
  endif
  
  # build shared and static libpiano
 -libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_OBJ}
--	@echo "  LINK  $@"
--	@${CC} -shared -Wl,-soname,libpiano.so.0 -o libpiano.so.0.0.0 \
 +libpiano.so.${LIBpiano_VERSION}: ${LIBPIANO_RELOBJ} ${LIBPIANO_OBJ}
-+	${CC} -shared -o libpiano.so.${LIBpiano_VERSION} \
+ 	${SILENTECHO} "  LINK  $@"
+-	${SILENTCMD}${CC} -shared -Wl,-soname,libpiano.so.0 -o libpiano.so.0.0.0 \
++	${SILENTCMD}${CC} -shared -o libpiano.so.${LIBpiano_VERSION} \
  			${LIBPIANO_RELOBJ} ${ALL_LDFLAGS}
--	@ln -fs libpiano.so.0.0.0 libpiano.so.0
--	@ln -fs libpiano.so.0 libpiano.so
--	@echo "    AR  libpiano.a"
--	@${AR} rcs libpiano.a ${LIBPIANO_OBJ}
-+	${AR} rcs libpiano.a ${LIBPIANO_OBJ}
+-	${SILENTCMD}ln -fs libpiano.so.0.0.0 libpiano.so.0
+-	${SILENTCMD}ln -fs libpiano.so.0 libpiano.so
+ 	${SILENTECHO} "    AR  libpiano.a"
+ 	${SILENTCMD}${AR} rcs libpiano.a ${LIBPIANO_OBJ}
  
- 
- -include $(PIANOBAR_SRC:.c=.d)
-@@ -96,17 +77,14 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_OBJ}
- 
- # build standard object files
- %.o: %.c
--	@echo "    CC  $<"
--	@${CC} -c -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
-+	${CC} -c -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
- 
- # create position independent code (for shared libraries)
- %.lo: %.c
--	@echo "    CC  $< (PIC)"
--	@${CC} -c -fPIC -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
-+	${CC} -c -fPIC -o $@ ${ALL_CFLAGS} -MMD -MF $*.d -MP $<
- 
- clean:
--	@echo " CLEAN"
--	@${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
-+	${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
- 			${LIBPIANO_RELOBJ} pianobar libpiano.so* \
- 			libpiano.a $(PIANOBAR_SRC:.c=.d) $(LIBPIANO_SRC:.c=.d)
- 
-@@ -117,18 +95,16 @@ install: pianobar install-libpiano
+@@ -125,18 +110,16 @@ install: pianobar install-libpiano
  else
  install: pianobar
  endif
@@ -84,9 +56,9 @@ $OpenBSD: patch-Makefile,v 1.27 2015/10/07 08:40:54 dcoppa Exp $
 -	install -m755 pianobar ${DESTDIR}${BINDIR}/
 -	install -d ${DESTDIR}${MANDIR}/man1/
 -	install -m644 contrib/pianobar.1 ${DESTDIR}${MANDIR}/man1/
-+	${INSTALL_DATA_DIR} ${DESTDIR}${BINDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}${BINDIR}
 +	${INSTALL_PROGRAM} pianobar ${DESTDIR}${BINDIR}/
-+	${INSTALL_DATA_DIR} ${DESTDIR}${MANDIR}/man1/
++	${INSTALL_DATA_DIR} ${DESTDIR}${MANDIR}/man1
 +	${INSTALL_MAN} contrib/pianobar.1 ${DESTDIR}${MANDIR}/man1/
  
  install-libpiano:
@@ -97,10 +69,10 @@ $OpenBSD: patch-Makefile,v 1.27 2015/10/07 08:40:54 dcoppa Exp $
 -	install -m644 libpiano.a ${DESTDIR}${LIBDIR}/
 -	install -d ${DESTDIR}${INCDIR}/
 -	install -m644 src/libpiano/piano.h ${DESTDIR}${INCDIR}/
-+	${INSTALL_DATA_DIR} ${DESTDIR}${LIBDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}${LIBDIR}
 +	${INSTALL_DATA} libpiano.so.${LIBpiano_VERSION} ${DESTDIR}${LIBDIR}/
 +	${INSTALL_DATA} libpiano.a ${DESTDIR}${LIBDIR}/
-+	${INSTALL_DATA_DIR} ${DESTDIR}${INCDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}${INCDIR}
 +	${INSTALL_DATA} src/libpiano/piano.h ${DESTDIR}${INCDIR}/
  
  .PHONY: install install-libpiano test debug all
