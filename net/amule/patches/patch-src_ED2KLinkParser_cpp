@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ED2KLinkParser_cpp,v 1.1 2016/06/03 11:54:44 dcoppa Exp $
+
+From bb890318844e571fc18d3b80d79cbc8bece54540 Mon Sep 17 00:00:00 2001
+From: upstream svn <svn@amule.org>
+Date: Wed, 7 Oct 2015 17:00:13 +0000
+Subject: [PATCH] Use the proper return type of
+std::string.length() and std::string.size()
+
+--- src/ED2KLinkParser.cpp.orig	Fri Jun  3 12:19:13 2016
++++ src/ED2KLinkParser.cpp	Fri Jun  3 12:19:40 2016
+@@ -184,8 +184,8 @@ string Unescape( const string& str )
+  */
+ string strip( const string& str )
+ {
+-	int first = 0;
+-	int last  = str.length() - 1;
++	size_t first = 0;
++	size_t last  = str.length() - 1;
+ 
+ 	// A simple but no very optimized way to narrow down the 
+ 	// usable text within the string.
