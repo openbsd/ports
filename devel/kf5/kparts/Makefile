@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/03 19:24:20 zhuk Exp $
 
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Parts	0.0
 
@@ -12,6 +13,7 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Test Qt5Widgets Qt5Xml m
 
 BUILD_DEPENDS =		devel/gettext-tools
+RUN_DEPENDS =		devel/gettext
 
 LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
