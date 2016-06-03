@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/05/28 18:35:35 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/06/03 11:44:36 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -164,6 +164,7 @@ include/GNUstepBase/NSCalendarDate+GNUstepBase.h
 include/GNUstepBase/NSData+GNUstepBase.h
 include/GNUstepBase/NSDebug+GNUstepBase.h
 include/GNUstepBase/NSFileHandle+GNUstepBase.h
+include/GNUstepBase/NSHashTable+GNUstepBase.h
 include/GNUstepBase/NSLock+GNUstepBase.h
 include/GNUstepBase/NSMutableString+GNUstepBase.h
 include/GNUstepBase/NSNetServices+GNUstepBase.h
@@ -359,6 +360,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Edmonton
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Eirunepe
 ${LIBDIR}/Resources/NSTimeZones/zones/America/El_Salvador
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Ensenada
+${LIBDIR}/Resources/NSTimeZones/zones/America/Fort_Nelson
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Fort_Wayne
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Fortaleza
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Glace_Bay
@@ -497,6 +499,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Baghdad
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Bahrain
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Baku
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Bangkok
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Barnaul
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Beirut
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Bishkek
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Brunei
@@ -680,6 +683,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Etc/Zulu
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Amsterdam
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Andorra
+${LIBDIR}/Resources/NSTimeZones/zones/Europe/Astrakhan
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Athens
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Belfast
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Belgrade
@@ -727,6 +731,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Stockholm
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Tallinn
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Tirane
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Tiraspol
+${LIBDIR}/Resources/NSTimeZones/zones/Europe/Ulyanovsk
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Uzhgorod
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Vaduz
 ${LIBDIR}/Resources/NSTimeZones/zones/Europe/Vatican
