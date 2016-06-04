@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.50 2016/06/04 12:36:06 espie Exp $
+# $OpenBSD: proot,v 1.51 2016/06/04 17:22:11 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -482,7 +482,7 @@ sub check_mountpoint
 		}
 	}
 	my $mnt = $root;
-	do {
+	do {{
 		if (!defined $dev->{$mnt}) {
 			$mnt = dirname($mnt);
 			next;
@@ -494,7 +494,7 @@ sub check_mountpoint
 		$state->errsay("#1 is under #2 which does not have wxallowed",
 		    $root, $mnt) if $wx->{$mnt} == 0;
 			return;
-	} while ($mnt ne dirname($mnt));
+	}} while ($mnt ne dirname($mnt));
 	$state->fatal_error("Couldn't find mountpoint for #1 ???", $root);
 }
 
@@ -905,7 +905,7 @@ sub unpopulate_chroot
 				$File::Find::prune = 1 if -d _;
 				return;
 			}
-			if ($state->{known}{$File::Find::name}) {
+			if ($state->{accounted}{$File::Find::name}) {
 				return;
 			}
 		    	$state->{progressmeter}->message($File::Find::name);
