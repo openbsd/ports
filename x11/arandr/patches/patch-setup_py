@@ -1,18 +1,18 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2013/11/18 21:51:11 edd Exp $
+$OpenBSD: patch-setup_py,v 1.2 2016/06/04 20:24:54 giovanni Exp $
 
 Do not compress manual pages and install them in the right place.
 
---- setup.py.orig	Mon Mar  4 17:22:25 2013
-+++ setup.py	Mon Nov 18 20:56:56 2013
+--- setup.py.orig	Wed Feb 24 13:47:08 2016
++++ setup.py	Wed Jun  1 12:20:09 2016
 @@ -20,7 +20,6 @@ import os
  import operator
  import subprocess
  import glob
 -import gzip
+ import datetime
  
  import docutils.core
- import docutils.writers.manpage
-@@ -99,20 +98,19 @@ class build_man(NoOptionCommand):
+@@ -100,20 +99,19 @@ class build_man(NoOptionCommand):
      def run(self):
          self.mkpath('build')
  
@@ -38,9 +38,9 @@ Do not compress manual pages and install them in the right place.
 +                    with open(manfile, 'w') as fh:
 +                        fh.write(manpage)
  
- class build(_build):
-     sub_commands = _build.sub_commands + [('build_trans', None), ('build_man', None)]
-@@ -137,7 +135,7 @@ class clean(_clean):
+ class update_translator_credits(NoOptionCommand):
+     description = 'Examine the git history to produce an updated metadata file.'
+@@ -212,7 +210,7 @@ class clean(_clean):
      def run(self):
          if self.all:
              dirs = ['build/locale']
@@ -49,7 +49,7 @@ Do not compress manual pages and install them in the right place.
              for directory in dirs:
                  if os.path.exists(directory):
                      remove_tree(directory, dry_run=self.dry_run)
-@@ -177,7 +175,7 @@ setup(name = PACKAGENAME,
+@@ -253,7 +251,7 @@ setup(name = PACKAGENAME,
              },
          data_files = [
              ('share/applications', ['data/arandr.desktop']), # FIXME: use desktop-file-install?
