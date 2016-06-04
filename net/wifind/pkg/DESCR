@@ -1,0 +1,4 @@
+wifind is an automatic wifi connection manager
+wifind recognizes a set of known wifi networks and automatically
+configures the network. This allows you to open your laptop lid
+anywhere and have network connectivity.
