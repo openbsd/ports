@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.49 2016/06/04 12:22:02 espie Exp $
+# $OpenBSD: proot,v 1.50 2016/06/04 12:36:06 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -181,6 +181,8 @@ sub do_parm
 		    $state->add_preserved($v);
 	    }, portscvs => sub {
 		    $state->{portscvs} = $v;
+	    }, ignorecvs => sub {
+		    $state->{ignorecvs} = 1;
 	    }, chown_all => sub {
 		    $state->{chown_all} = $v;
 	    }, WRKOBJDIR => sub {
@@ -311,6 +313,10 @@ sub handle_options
 		} else {
 			$state->{actions}{locate} = 1;
 		}
+	}
+	if (defined $state->{portscvs} && 
+	    !defined $state->{actions}{checkout_ports}) {
+	    	$state->{actions}{checkout_ports} = 1;
 	}
 	if ($state->{actions}{unpopulate}) {
 		delete $state->{actions}{unpopulate_light};
@@ -785,6 +791,10 @@ sub copy_ports
 		}
 		my $destports = $state->chroot($portsdir);
 		find(sub {
+			if ($state->{ignorecvs} && $_ eq 'CVS' && -d $_) {
+				$File::Find::prune = 1;
+				return;
+			}
 			my $realname = $File::Find::name;
 			$realname =~ s,^\Q$srcports\E\b,,;
 			my $r2 = $realname;
