@@ -1,20 +1,19 @@
-#	$OpenBSD: Makefile,v 1.11 2013/03/11 11:23:55 espie Exp $
+#	$OpenBSD: Makefile,v 1.12 2016/06/04 15:57:02 sthen Exp $
 
-COMMENT=		Marco's Object Oriented calculator#'
+COMMENT=		"Marco's Object Oriented calculator"
 
-DISTNAME=		moo-1.3
-REVISION=		1
+GH_ACCOUNT=		raylai
+GH_PROJECT=		moo
+GH_TAGNAME=		1.5
+
 CATEGORIES=		math
 
-MAINTAINER=		Raymond Lai <ray@cyth.net>
-
-HOMEPAGE=		http://cyth.net/moo/
-MASTER_SITES=		${HOMEPAGE}
-EXTRACT_SUFX=		.tgz
+MAINTAINER=		Ray Lai <ray@raylai.com>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 MAKE_FLAGS=		CC=${CC}
