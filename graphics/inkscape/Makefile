@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2016/04/18 07:57:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/06/04 07:00:28 landry Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,10 +7,12 @@ COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
+
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

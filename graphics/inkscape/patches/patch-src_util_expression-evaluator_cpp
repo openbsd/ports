@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_util_expression-evaluator_cpp,v 1.1 2016/02/05 22:27:25 sthen Exp $
+$OpenBSD: patch-src_util_expression-evaluator_cpp,v 1.2 2016/06/04 07:00:28 landry Exp $
 
-Fix g_utf8_validate call. get_text() from GtkSpinButton returns an
-string with a wrong encoding.
+- Fix g_utf8_validate call. get_text() from GtkSpinButton returns an string
+  with a wrong encoding.
+- fix https://bugs.launchpad.net/inkscape/+bug/1587311
 
 --- src/util/expression-evaluator.cpp.orig	Sun Nov 30 19:45:32 2014
-+++ src/util/expression-evaluator.cpp	Thu Feb  4 20:46:25 2016
++++ src/util/expression-evaluator.cpp	Sat Jun  4 08:34:35 2016
 @@ -28,6 +28,8 @@
  #include "util/expression-evaluator.h"
  #include "util/units.h"
@@ -23,3 +24,17 @@ string with a wrong encoding.
      unit(unit)
  {
      current_token.type  = TOKEN_END;
+@@ -206,8 +208,11 @@ EvaluatorQuantity ExpressionEvaluator::evaluateFactor(
+ {
+     EvaluatorQuantity evaluated_factor = EvaluatorQuantity();
+     EvaluatorToken consumed_token = EvaluatorToken();
+-    
+-    if (acceptToken(TOKEN_NUM, &consumed_token)) {
++
++    if (acceptToken(TOKEN_END, &consumed_token)) {
++        return evaluated_factor;
++    }
++    else if (acceptToken(TOKEN_NUM, &consumed_token)) {
+         evaluated_factor.value = consumed_token.value.fl;
+     } else if (acceptToken('(', NULL)) {
+         evaluated_factor = evaluateExpression();
