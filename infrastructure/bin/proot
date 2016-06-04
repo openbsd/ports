@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.47 2016/05/28 08:42:23 espie Exp $
+# $OpenBSD: proot,v 1.48 2016/06/04 11:58:36 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -113,6 +113,13 @@ sub set_chroot
 	}
 }
 
+sub fatal_error
+{
+	my $self = shift;
+	$self->errsay(@_);
+	$self->{error} = 1;
+}
+
 sub add_chroot_preserved
 {
 	my ($state, $item) = @_;
@@ -214,7 +221,7 @@ sub do_parm
 	if (defined $opts->{$k}) {
 		&{$opts->{$k}};
 	} else {
-		$state->errsay("Unknown options #1=#2", $k, $v);
+		$state->fatal_error("Unknown options #1=#2", $k, $v);
 	}
 }
 
@@ -234,7 +241,7 @@ sub read_configfile
 		} elsif (m/^\s+(.*)$/) {
 			$v = $1;
 		} else {
-			$state->errsay("Error in config file #1: #2", 
+			$state->fatal_error("Error in config file #1: #2", 
 			    $., $line);
 			next;
 		} 
@@ -252,6 +259,7 @@ sub handle_options
 	    devs => 1,
 	    ldconfig => 1,
 	    ports_subdirs => 1,
+	    unpopulate_light => 1,
 	    resolv => 1,
 	    write_mk => 1,
 	};
@@ -265,6 +273,7 @@ sub handle_options
 		xshare => 1,
 	};
 
+	$state->{error} = 0;
 	$state->{no_exports} = 1;
 	$state->{opt} = {
 		B => sub { $state->{fchroot} = File::Spec->canonpath(shift); },
@@ -301,6 +310,9 @@ sub handle_options
 			$state->{actions}{locate} = 1;
 		}
 	}
+	if ($state->{actions}{unpopulate}) {
+		delete $state->{actions}{unpopulate_light};
+	}
 
 	if (!defined $state->{chroot}) {
 		$state->usage("need a chroot base");
@@ -336,11 +348,15 @@ sub handle_options
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR)) {
-		next if !defined $state->{$dir};
+	for my $dir (qw(DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR)) {
 		$state->{$dir} = $state->canonical_dir($state->{$dir});
 		$state->add_preserved($state->{$dir});
 	}
+	$state->{PORTSDIR} = $state->canonical_dir($state->{PORTSDIR});
+	if (!$state->{actions}{copy_ports}) {
+		$state->add_preserved($state->{PORTSDIR});
+	}
+
 	for my $i (qw(portuser loguser fetchuser builduser)) {
 		if (defined $state->{$i}) {
 			$state->say("#1: #2", $i, $state->{$i}->{user});
@@ -417,7 +433,7 @@ sub check_mountpoint
 {
 	my $state = shift; 
 	open(my $cmd, "-|", OpenBSD::Paths->mount);
-	my ($dev, $nosuid);
+	my ($dev, $nosuid, $wx);
 	while (<$cmd>)  {
 		chomp;
 		if (m/^(\S+)\s+on\s+(\S+)\s+type\s+(\S+)\s+\((.+)\)$/) {
@@ -432,6 +448,11 @@ sub check_mountpoint
 				$nosuid->{$dir} = 1;
 			} else {
 				$nosuid->{$dir} = 0;
+			}
+			if ($opts{wxallowed}) {
+				$wx->{$dir} = 1;
+			} else {
+				$wx->{$dir} = 0;
 			}
 			my $devno = (stat $dir)[0];
 			if ($type eq 'nfs') {
@@ -454,16 +475,19 @@ sub check_mountpoint
 	}
 	my $mnt = $root;
 	do {
-		if (defined $dev->{$mnt}) {
-			$state->errsay("#1 is under #2 which is nodev (that won't work)", $root, $mnt)
-			    if $dev->{$mnt} == 0;
-			$state->errsay("#1 is under #2 which does not have nosuid",
-				$root, $mnt) if $nosuid->{$mnt} == 0;
-			return;
+		if (!defined $dev->{$mnt}) {
+			$mnt = dirname($mnt);
+			next;
 		}
-	    $mnt = dirname($mnt);
+		$state->errsay("#1 is under #2 which is nodev", $root, $mnt)
+		    if $dev->{$mnt} == 0;
+		$state->errsay("#1 is under #2 which does not have nosuid",
+		    $root, $mnt) if $nosuid->{$mnt} == 0;
+		$state->errsay("#1 is under #2 which does not have wxallowed",
+		    $root, $mnt) if $wx->{$mnt} == 0;
+			return;
 	} while ($mnt ne dirname($mnt));
-	$state->errsay("Couldn't find mountpoint for #1 ???", $root);
+	$state->fatal_error("Couldn't find mountpoint for #1 ???", $root);
 }
 
 sub special_data
@@ -513,11 +537,12 @@ sub simple_copy
 		remove_tree($cpath);
 		my $target = readlink $path;
 		if (!defined $target) {
-			$state->errsay("Can't read link to #1: #2", $path, $!);
+			$state->fatal_error("Can't read link to #1: #2", 
+			    $path, $!);
 		} else {
 			symlink($target, $cpath) or
-			    $state->errsay("Can't symlink #1 -> #2", $target, 
-				$cpath);
+			    $state->fatal_error("Can't symlink #1 -> #2", 
+			    	$target, $cpath);
 		}
 		return;
 	} else {
@@ -530,7 +555,7 @@ sub simple_copy
 			}
 			mkdir $cpath, $mode;
 			if (!-d $cpath) {
-				$state->errsay("Can't mkdir #1", $cpath);
+				$state->fatal_error("Can't mkdir #1", $cpath);
 			}
 			if (defined $user) {
 				$user->own($cpath);
@@ -580,7 +605,7 @@ sub simple_copy
 			}
 		}
 	}
-	$state->errsay("Can't copy #1: #2", $path, $!);
+	$state->fatal_error("Can't copy #1: #2", $path, $!);
 }
 
 sub recursive_copy
@@ -859,9 +884,6 @@ sub unpopulate_chroot
 	my $state = shift;
 	$state->run_chroot("Cleaning up files and directories",
 	    sub {
-	    	for my $item (@{$state->{preserved}}) {
-			$state->{dontrm}{$item} = 1;
-		}
 		my @dirs;
 	    	find(
 		    sub {
@@ -893,9 +915,6 @@ sub verbose_shit
 	my $state = shift;
 	$state->run_chroot("Showing up stragglers",
 	    sub {
-		for my $dir (@{$state->{preserved}}) {
-			$state->{dontrm}{$dir} = 1;
-		}
 	    	find(
 		    sub {
 			if (-d $_ && $state->{dontrm}{$File::Find::name}) {
@@ -1022,7 +1041,7 @@ sub write_mk_conf
 		}
 		if (exists $state->{mkconf_tail}) {
 			open(my $g, "<", $state->{mkconf_tail}) or
-			    $state->errsay("Couldn't read tail #1: #2",
+			    $state->fatal_error("Couldn't read tail #1: #2",
 				$state->{mkconf_tail}, $!);
 			print $f "# Copied from $state->{mkconf_tail}\n";
 			while(<$g>) {
@@ -1060,23 +1079,26 @@ if ($state->{key}) {
 if (defined $state->{known}) {
 	$state->copy_sync;
 }
+if ($state->{error}) {
+	exit(1);
+}
+if ($state->{actions}{copy_ports}) {
+	$state->copy_ports;
+}
+if ($state->{actions}{copy_sys}) {
+	$state->copy_sys;
+}
+if ($state->{actions}{ldconfig}) {
+	$state->run_ldconfig;
+}
 if ($state->{actions}{unpopulate_light}) {
 	$state->unpopulate_chroot;
 }
 if ($state->{actions}{devs}) {
 	$state->regen_devs;
 }
-if ($state->{actions}{ldconfig}) {
-	$state->run_ldconfig;
-}
-if ($state->{actions}{copy_ports}) {
-	$state->copy_ports;
-}
 if ($state->{actions}{checkout_ports}) {
 	$state->checkout_ports;
-}
-if ($state->{actions}{copy_sys}) {
-	$state->copy_sys;
 }
 if ($state->{actions}{ports_subdirs}) {
 	$state->make_ports_subdirs;
@@ -1091,3 +1113,5 @@ if ($state->{actions}{write_mk} &&
 if ($state->{actions}{check_symlinks}) {
 	$state->show_absolute_symlinks;
 }
+
+exit($state->{error});

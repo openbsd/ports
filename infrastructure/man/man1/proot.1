@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.12 2016/05/20 09:55:25 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.13 2016/06/04 11:58:36 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 20 2016 $
+.Dd $Mdocdate: June 4 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -68,48 +68,45 @@ Possible actions (in order of execution) are as follows:
 Verify the state of mount points in the system, specifically whether
 the chroot area is not nodev.
 .It Cm unpopulate
-Remove everything from the chroot, apart from known preserved areas
-.Po marked with
-.Ar preserve
-.Pc
-or other mountpoints.
+Remove everything from the chroot apart from selected data.
+See
+.Sq PRESERVED AREAS AND UNPOPULATE
+for details.
 .It Cm snapshot
 Copy things from a
 .Ar snapshot ,
 to retrieve from an url, or from the local filesystem.
 .It Cm locate
 Copy things from the base system, perusing the system locate databases.
+.Bf Sy
+Note that this might erase data, in case it doesn't match the base system
+and is in the way.
+.Ef
 .It Cm resolv
 Copy the system
 .Pa resolv.conf
 and
 .Pa hosts
 files.
-.It Cm unpopulate_light
-Remove everything from the chroot, apart from known preserved areas
-.Po marked with
-.Ar preserve
-.Pc
-or other mountpoints,
-and stuff copied over during
-.Cm locate ,
-.Cm snapshot
-or
-.Cm resolv .
-.It Cm devs
-Regenerate devices using
-.Xr MAKEDEV 8 .
+.It Cm copy_ports
+Copy the ports tree.
+.It Cm copy_sys
+Copy system include files (deprecated).
 .It Cm ldconfig
 Rerun
 .Xr ldconfig 8 .
-.It Cm copy_ports
-Copy the ports tree.
+.It Cm unpopulate_light
+Remove everything from the chroot apart from selected data.
+See
+.Sq PRESERVED AREAS AND UNPOPULATE
+for details.
+.It Cm devs
+Regenerate devices using
+.Xr MAKEDEV 8 .
 .It Cm checkout_ports
 Check out a ports tree from cvs using a provided
 .Ar portscvs
 location .
-.It Cm copy_sys
-Copy system include files (deprecated).
 .It Cm ports_subdirs
 Create ports infrastructure subdirs, according to users required for
 .Xr dpb 1 .
@@ -134,7 +131,12 @@ white-listing known base system links.
 By default,
 .Nm
 will run
-.Cm check_mount , devs , ldconfig , ports_subdirs , resolv , write_mk .
+.Cm check_mount , unpopulate_light , devs , ldconfig , ports_subdirs , resolv , write_mk .
+If
+.Cm unpopulate
+is used,
+.Cm unpopulate_light
+won't be run.
 It will also run
 .Cm snapshot
 if a snapshot location is provided,
@@ -217,8 +219,40 @@ Where to get a ports snapshot for the
 .Cm checkout_ports
 action.
 .El
+.Ss PRESERVED AREAS AND UNPOPULATE
+The following entries won't be erased during a
+.Cm locate
+or
+.Cm unpopulate*
+action:
+.Bl -dash -compact -offset indent
+.It
+Items explicitly marked with the
+.Ar preserve
+attribute.
+.It
+A
+.Ar snapshot
+directory containing the base sets.
+.It
+All the ports specific sub directories if they are defined,
+namely
+.Ar DISTDIR , WRKOBJDIR, LOGDIR, PACKAGE_REPOSITORY , PLIST_REPOSITY , LOCKDIR .
+.It
+The
+.Ar PORTSDIR
+itself, unless
+.Cm copy_ports
+is used.
+.It
+Any mountpoint.
+.It
+Data explicitly copied through other actions, e.g.,
+.Ar extra
+files, key files...
+.El
 .Sh EXAMPLES
-The following 
+The following
 .Ar configfile
 sets things up for an initial build on a
 .Xr dpb 1
@@ -250,7 +284,7 @@ is a startup script for
 .Xr dpb 1 .
 .Pp
 Initial invocation on the master could be
-.Bd -offset indent 
+.Bd -offset indent
 .Nm Fl c Ar configfile Ar chown_all Ns = Ns Ar 1
 .Ed
 .Pp
