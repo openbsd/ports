@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/04 15:58:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/04 20:08:47 sthen Exp $
 
 COMMENT=		wifi automagic connector
 
@@ -19,5 +19,9 @@ MAKE_ENV=		BINDIR=${LOCALBASE}/sbin \
 			MANDIR=${LOCALBASE}/man/man
 
 NO_TEST=		Yes
+
+do-configure:
+	@cd ${WRKSRC}; sed -i s,/etc/wifind.conf,${SYSCONFDIR}/wifind.conf,g \
+		wifind.8 wifind wifind.conf.5
 
 .include <bsd.port.mk>
