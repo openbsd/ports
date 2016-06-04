@@ -1,7 +1,7 @@
-$OpenBSD: patch-websockify_websocket_py,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp $
---- websockify/websocket.py.orig	Fri Dec 18 12:31:42 2015
-+++ websockify/websocket.py	Fri Dec 18 12:34:27 2015
-@@ -711,15 +711,6 @@ class WebSocketServer(object):
+$OpenBSD: patch-websockify_websocket_py,v 1.2 2016/06/04 22:52:24 gsoares Exp $
+--- websockify/websocket.py.orig	Thu Feb 18 16:11:15 2016
++++ websockify/websocket.py	Sat Jun  4 19:47:55 2016
+@@ -722,15 +722,6 @@ class WebSocketServer(object):
  
              if  tcp_keepalive:
                  sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)

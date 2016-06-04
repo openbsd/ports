@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/22 14:41:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/04 22:52:24 gsoares Exp $
 
 COMMENT=	WebSocket to TCP proxy
 
-MODPY_EGG_VERSION= 0.7.0
-REVISION=	0
+MODPY_EGG_VERSION= 0.8.0
 DISTNAME=	websockify-${MODPY_EGG_VERSION}
 
 CATEGORIES=	net
@@ -28,7 +27,7 @@ post-build:
 	cd ${WRKSRC}; env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/docs/websockify.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/websockify.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/websockify
 	${INSTALL_DATA} ${WRKSRC}/rebind.so ${PREFIX}/lib/websockify/
 
