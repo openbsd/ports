@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.48 2016/06/04 11:58:36 espie Exp $
+# $OpenBSD: proot,v 1.49 2016/06/04 12:22:02 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -194,7 +194,8 @@ sub do_parm
 	    }, actions => sub {
 	    	if ($v eq 'none') {
 			delete $state->{actions};
-		} elsif ($v =~ m/^-(.*)/) {
+		}
+		if ($v =~ m/^-(.*)/) {
 			$state->{actions}{$1} = 0;
 		} else {
 			$state->{actions}{$v} = 1;
@@ -303,7 +304,8 @@ sub handle_options
 
 	# more basic option defaults
 	if (!defined $state->{actions}{snapshot} && 
-	    !defined $state->{actions}{locate}) {
+	    !defined $state->{actions}{locate} && 
+	    !defined $state->{actions}{none}) {
 	    	if ($state->{snapshot}) {
 			$state->{actions}{snapshot} = 1;
 		} else {
