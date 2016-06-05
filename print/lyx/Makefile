@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.73 2015/09/01 14:37:50 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2016/06/05 21:06:58 landry Exp $
 
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.1.4
+DISTNAME=	lyx-2.2.0
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
 
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.1.x/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.1.x/ \
-		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.1.x/ \
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.2.x/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.2.x/ \
+		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.2.x/ \
 		http://ftp.icm.edu.pl/packages/lyx/stable/ \
-		http://lyx.cybermirror.org/stable/2.1.x/ \
-		http://mirror.ufs.ac.za/applications/lyx/stable/2.1.x/
+		http://mirror.ufs.ac.za/applications/lyx/stable/2.2.x/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,9 +44,11 @@ CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--without-hunspell \
 		--without-included-boost \
 		--with-packaging=posix
-CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} MOC4=${MODQT4_MOC} UIC4=${MODQT4_UIC} \
-		ac_cv_func_fork=yes LIBS=-pthread \
-		QT4DIR=${LOCALBASE}/lib/qt4
+CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} \
+		ac_cv_path_QT_MOC=${MODQT4_MOC} \
+		ac_cv_path_QT_UIC=${MODQT4_UIC} \
+		lyx_cv_callstack_printing=no \
+		ac_cv_func_fork=yes LIBS=-pthread
 
 pre-configure:
 	sed -i "s,python -tt,${MODPY_BIN} -tt," \
