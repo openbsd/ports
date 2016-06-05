@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/16 22:20:16 juanfra Exp $
+# $OpenBSD: Makefile,v 1.22 2016/06/05 01:21:03 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			6.5
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -66,7 +67,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug no_jit
