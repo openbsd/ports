@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/07 14:56:28 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/05 17:17:19 danj Exp $
 bin/poezio
 bin/poezio_gpg_export
 lib/python${MODPY_VERSION}/site-packages/poezio/
@@ -69,7 +69,9 @@ lib/python${MODPY_VERSION}/site-packages/poezio/core/newhandlers.py
 lib/python${MODPY_VERSION}/site-packages/poezio/core/structs.py
 lib/python${MODPY_VERSION}/site-packages/poezio/daemon.py
 lib/python${MODPY_VERSION}/site-packages/poezio/decorators.py
+@mode 644
 lib/python${MODPY_VERSION}/site-packages/poezio/default_config.cfg
+@mode
 lib/python${MODPY_VERSION}/site-packages/poezio/events.py
 lib/python${MODPY_VERSION}/site-packages/poezio/fifo.py
 lib/python${MODPY_VERSION}/site-packages/poezio/fixes.py
