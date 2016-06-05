@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2016/03/17 00:40:54 jsg Exp $
---- configure.orig	Wed Mar 16 22:48:06 2016
-+++ configure	Wed Mar 16 22:51:54 2016
-@@ -1862,22 +1862,6 @@ if test "$_use_cxx11" = "yes" ; then
+$OpenBSD: patch-configure,v 1.17 2016/06/05 10:47:25 jsg Exp $
+--- configure.orig	Sun Jun  5 20:09:33 2016
++++ configure	Sun Jun  5 20:11:31 2016
+@@ -1903,22 +1903,6 @@ if test "$_use_cxx11" = "yes" ; then
  fi
  echo $_use_cxx11
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.16 2016/03/17 00:40:54 jsg Exp $
 -# However, some platforms use GNU extensions in system header files, so
 -# for these we must not use -pedantic.
 -case $_host_os in
--android | gamecube | psp | tizen | wii | webos)
+-android | androidsdl | gamecube | psp | tizen | wii | webos)
 -	;;
 -*)
 -	# ICC does not support pedantic, while GCC and clang do.
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure,v 1.16 2016/03/17 00:40:54 jsg Exp $
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether -Wglobal-constructors work"
-@@ -3613,18 +3597,16 @@ if test "$_flac" = auto ; then
+@@ -3738,18 +3722,16 @@ if test "$_flac" = auto ; then
  int main(void) { return FLAC__STREAM_SYNC_LEN >> 30; /* guaranteed to be 0 */ }
  EOF
  	if test "$_vorbis" = yes ; then
