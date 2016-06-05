@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.972 2016/06/04 13:54:23 tb Exp $
+# $OpenBSD: Makefile,v 1.973 2016/06/05 17:13:48 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -556,6 +556,7 @@
      SUBDIR += py-raet
      SUBDIR += py-s3transfer
      SUBDIR += py-s3transfer,python3
+     SUBDIR += py-slixmpp
      SUBDIR += py-snmp
      SUBDIR += py-socketio-client
      SUBDIR += py-socketio-client,python3
@@ -569,7 +570,6 @@
      SUBDIR += py-zmq
      SUBDIR += py-zmq,python3
      SUBDIR += py-zsi
-     SUBDIR += py3-slixmpp
      SUBDIR += qsynergy
      SUBDIR += quagga
      SUBDIR += queryperf
