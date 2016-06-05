@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/05/12 01:17:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2016/06/05 16:56:19 kettenis Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -38,11 +38,13 @@ CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 # ld -Z doesn't work with secure-PLT
 .if ${MACHINE_ARCH} == "powerpc"
-ARCH_LDFLAGS =		-Wl,--bss-plt
-.else
+ARCH_LDFLAGS =		-Z -Wl,--bss-plt
+.elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
 ARCH_LDFLAGS =
+.else
+ARCH_LDFLAGS =		-Z
 .endif
-LDFLAGS=		-Z ${ARCH_LDFLAGS} -L${LOCALBASE}/lib -nopie
+LDFLAGS=		${ARCH_LDFLAGS} -L${LOCALBASE}/lib -nopie
 CFLAGS +=		-fno-pie
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
