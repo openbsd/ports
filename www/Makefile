@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.786 2016/06/02 11:35:42 bentley Exp $
+# $OpenBSD: Makefile,v 1.787 2016/06/05 17:14:56 danj Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -372,6 +372,7 @@
      SUBDIR += puppet-dashboard
      SUBDIR += puppetboard
      SUBDIR += py-CherryPy
+     SUBDIR += py-aiohttp
      SUBDIR += py-beaker
      SUBDIR += py-beaker,python3
      SUBDIR += py-beautifulsoup
@@ -412,6 +413,7 @@
      SUBDIR += py-mechanize
      SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
+     SUBDIR += py-multidict
      SUBDIR += py-ndg-httpsclient
      SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-nevow
@@ -447,8 +449,6 @@
      SUBDIR += py-wtforms
      SUBDIR += py-wtforms,python3
      SUBDIR += py-wtools
-     SUBDIR += py3-aiohttp
-     SUBDIR += py3-multidict
      SUBDIR += racktables
      SUBDIR += ratproxy
      SUBDIR += rawdog
