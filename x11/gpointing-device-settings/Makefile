@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/06/05 11:02:25 sthen Exp $
 
 COMMENT =		tool for setting pointing devices
 
@@ -21,7 +21,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE_JP:=gsynaptics/45812/}
+MASTER_SITES =		${MASTER_SITE_OSDN_JP:=gsynaptics/45812/}
 
 MODULES =		devel/gconf2 \
 			devel/gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/29 21:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/05 11:02:25 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -14,7 +14,7 @@ CATEGORIES=	fonts japanese x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE=	https://mix-mplus-ipa.osdn.jp/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=mix-mplus-ipa/20216/}
+MASTER_SITES=	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/20216/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

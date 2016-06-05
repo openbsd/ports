@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/29 21:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2016/06/05 11:02:25 sthen Exp $
 
 COMMENT =	scim input method module for anthy
 
@@ -22,7 +22,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread
 WANTLIB += scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 stdc++ xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=scim-imengine/37309/}
+MASTER_SITES =	${MASTER_SITE_OSDN_JP:=scim-imengine/37309/}
 
 MODULES =	devel/gettext
 

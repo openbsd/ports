@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/29 21:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2016/06/05 11:02:25 sthen Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main =	c m
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=anthy/37536/}
+MASTER_SITES =	${MASTER_SITE_OSDN_JP:=anthy/37536/}
 
 FAKE_FLAGS =	sysconfdir=$(PREFIX)/share/examples/anthy
 

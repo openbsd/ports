@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/05/29 21:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2016/06/05 11:02:25 sthen Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	requires advance notification
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=lha/22231/}
+MASTER_SITES=	${MASTER_SITE_OSDN_JP:=lha/22231/}
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/05/29 21:41:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2016/06/05 11:02:25 sthen Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
@@ -21,7 +21,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
 WANTLIB += z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE_JP:=kasumi/41436/}
+MASTER_SITES =	${MASTER_SITE_OSDN_JP:=kasumi/41436/}
 
 MODULES =	devel/gettext
 
