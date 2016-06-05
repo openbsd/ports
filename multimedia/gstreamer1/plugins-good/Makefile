@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/06/05 10:00:01 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2016/06/05 10:49:04 landry Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -27,7 +27,13 @@ WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-ren
 WANTLIB-main += gstallocators-1.0 gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4
 WANTLIB-main += speex sqlite3 stdc++ tag theora vorbis vpx>=5 wavpack xcb-shm
 WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
-WANTLIB-main += v4l2 v4lconvert ${MODGCC4_CPPWANTLIB}
+WANTLIB-main += v4l2 v4lconvert
+
+# comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
+# which includes gcc4 MODULE with adds gcc-libs in dependency scope
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+WANTLIB += estdc++
+.endif
 
 WANTLIB-pulse += ${WANTLIB}
 WANTLIB-pulse += execinfo gdbm pulse sndfile X11-xcb Xi Xtst ICE

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/06/05 10:00:01 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2016/06/05 10:49:04 landry Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avcodec
-WANTLIB += avformat avutil bz2 c cairo crypto ${MODGCC4_CPPWANTLIB} expat ffi
+WANTLIB += avformat avutil bz2 c cairo crypto expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsm gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl iodbc jpeg m mp3lame
@@ -29,6 +29,12 @@ WANTLIB += vpx wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html
 WANTLIB += wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc x264 x265 xcb
 WANTLIB += xcb-render xcb-shm xvidcore z
+
+# comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
+# which includes gcc4 MODULE with adds gcc-libs in dependency scope
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+WANTLIB += estdc++
+.endif
 
 LIB_DEPENDS=		graphics/ffmpeg \
 			graphics/cairo \
