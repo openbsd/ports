@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/04 22:52:24 gsoares Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/05 11:04:12 sthen Exp $
 
 COMMENT=	WebSocket to TCP proxy
 
@@ -19,9 +19,9 @@ GH_TAGNAME=	v${MODPY_EGG_VERSION}
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
 RUN_DEPENDS=	math/py-numpy
-TEST_DEPENDS=	devel/py-nose \
+TEST_DEPENDS=	devel/py-test \
 		devel/py-mox \
-		${BUILD_PKGPATH}
+		${BUILD_PKGPATH}-=${MODPY_EGG_VERSION}
 
 post-build:
 	cd ${WRKSRC}; env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
@@ -32,6 +32,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/rebind.so ${PREFIX}/lib/websockify/
 
 do-test:
-	cd ${WRKSRC}/tests; nosetests
+	cd ${WRKSRC}/tests; py.test
 
 .include <bsd.port.mk>
