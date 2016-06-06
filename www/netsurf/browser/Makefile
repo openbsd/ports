@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/06 20:27:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2016/06/06 11:51:00 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.4
+NETSURF_VERSION =	3.5
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -40,7 +40,8 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_ROSPRITE=NO \
 			NETSURF_USE_WEBP=YES \
 			NETSURF_USE_MOZJS=NO \
-			NETSURF_USE_JS=NO
+			NETSURF_USE_JS=NO \
+			NETSURF_GTK_RESOURCES=${WRKINST}${PREFIX}/share/netsurf/
 
 post-patch:
 	#http://bugs.netsurf-browser.org/mantis/view.php?id=2045

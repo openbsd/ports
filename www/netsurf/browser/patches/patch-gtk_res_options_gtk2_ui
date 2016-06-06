@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
---- gtk/res/options.gtk2.ui.orig	Tue Mar 10 08:37:37 2015
-+++ gtk/res/options.gtk2.ui	Wed Mar 11 16:35:45 2015
+$OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.5 2016/06/06 11:51:00 bentley Exp $
+--- gtk/res/options.gtk2.ui.orig	Wed Apr  6 04:39:35 2016
++++ gtk/res/options.gtk2.ui	Sun Jun  5 05:19:23 2016
 @@ -5,7 +5,7 @@
    <object class="GtkDialog" id="dialogPreferences">
      <property name="can_focus">False</property>
@@ -118,25 +118,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="tab_fill">False</property>
-@@ -456,7 +456,7 @@
-                             </child>
-                             <child>
-                               <object class="GtkButton" id="buttonAddTheme">
--                                <property name="label" translatable="yes">preferencesThemesAdd</property>
-+                                <property name="label" translatable="yes">Add Theme...</property>
-                                 <property name="visible">True</property>
-                                 <property name="can_focus">True</property>
-                                 <property name="receives_default">True</property>
-@@ -477,7 +477,7 @@
-                       <object class="GtkLabel" id="label3">
-                         <property name="visible">True</property>
-                         <property name="can_focus">False</property>
--                        <property name="label" translatable="yes">preferencesThemes</property>
-+                        <property name="label" translatable="yes">&lt;b>Themes&lt;/b></property>
-                         <property name="use_markup">True</property>
-                       </object>
-                     </child>
-@@ -509,7 +509,7 @@
+@@ -436,7 +436,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkShowSingleTab">
@@ -145,7 +127,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -525,7 +525,7 @@
+@@ -452,7 +452,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkFocusNew">
@@ -154,7 +136,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -541,7 +541,7 @@
+@@ -468,7 +468,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkNewBlank">
@@ -163,7 +145,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -564,7 +564,7 @@
+@@ -491,7 +491,7 @@
                                    <object class="GtkLabel" id="label9">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -172,7 +154,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -607,7 +607,7 @@
+@@ -534,7 +534,7 @@
                        <object class="GtkLabel" id="label6">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -181,7 +163,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -646,7 +646,7 @@
+@@ -573,7 +573,7 @@
                                    <object class="GtkLabel" id="label13">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -190,7 +172,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -689,7 +689,7 @@
+@@ -616,7 +616,7 @@
                        <object class="GtkLabel" id="label12">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -199,7 +181,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -721,7 +721,7 @@
+@@ -648,7 +648,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkDisplayRecentURLs">
@@ -208,7 +190,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -743,7 +743,7 @@
+@@ -670,7 +670,7 @@
                        <object class="GtkLabel" id="label14">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -217,7 +199,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -782,7 +782,7 @@
+@@ -709,7 +709,7 @@
                                    <object class="GtkLabel" id="label16">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -226,7 +208,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -825,7 +825,7 @@
+@@ -752,7 +752,7 @@
                        <object class="GtkLabel" id="label15">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -235,7 +217,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -846,7 +846,7 @@
+@@ -773,7 +773,7 @@
                <object class="GtkLabel" id="label2">
                  <property name="visible">True</property>
                  <property name="can_focus">False</property>
@@ -244,7 +226,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="position">1</property>
-@@ -878,7 +878,7 @@
+@@ -805,7 +805,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkDisablePopups">
@@ -253,7 +235,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -894,7 +894,7 @@
+@@ -821,7 +821,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkHideAdverts">
@@ -262,7 +244,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -910,7 +910,7 @@
+@@ -837,7 +837,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkEnableJavascript">
@@ -271,7 +253,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -926,7 +926,7 @@
+@@ -853,7 +853,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkDisablePlugins">
@@ -280,7 +262,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -942,7 +942,7 @@
+@@ -869,7 +869,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkResampleImages">
@@ -289,7 +271,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -965,7 +965,7 @@
+@@ -892,7 +892,7 @@
                                    <object class="GtkLabel" id="label17">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -298,7 +280,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1008,7 +1008,7 @@
+@@ -935,7 +935,7 @@
                        <object class="GtkLabel" id="label11">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -307,7 +289,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1040,7 +1040,7 @@
+@@ -967,7 +967,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkEnableAnimations">
@@ -316,7 +298,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -1063,7 +1063,7 @@
+@@ -990,7 +990,7 @@
                                    <object class="GtkLabel" id="label19">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -325,7 +307,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1076,7 +1076,7 @@
+@@ -1003,7 +1003,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">True</property>
                                      <property name="has_tooltip">True</property>
@@ -334,7 +316,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="invisible_char">●</property>
                                      <property name="primary_icon_activatable">False</property>
                                      <property name="secondary_icon_activatable">False</property>
-@@ -1111,7 +1111,7 @@
+@@ -1038,7 +1038,7 @@
                        <object class="GtkLabel" id="label18">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -343,7 +325,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1150,7 +1150,7 @@
+@@ -1077,7 +1077,7 @@
                                    <object class="GtkLabel" id="label26">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -352,7 +334,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1194,7 +1194,7 @@
+@@ -1121,7 +1121,7 @@
                                    <object class="GtkLabel" id="label27">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -361,7 +343,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1207,7 +1207,7 @@
+@@ -1134,7 +1134,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">True</property>
                                      <property name="has_tooltip">True</property>
@@ -370,7 +352,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="max_length">4</property>
                                      <property name="invisible_char">●</property>
                                      <property name="width_chars">4</property>
-@@ -1237,7 +1237,7 @@
+@@ -1164,7 +1164,7 @@
                              </child>
                              <child>
                                <object class="GtkButton" id="fontPreview">
@@ -379,7 +361,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">True</property>
-@@ -1259,7 +1259,7 @@
+@@ -1186,7 +1186,7 @@
                        <object class="GtkLabel" id="label20">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -388,7 +370,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1297,7 +1297,7 @@
+@@ -1224,7 +1224,7 @@
                                    <object class="GtkLabel" id="label21">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -397,7 +379,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1310,7 +1310,7 @@
+@@ -1237,7 +1237,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
                                      <property name="has_tooltip">True</property>
@@ -406,7 +388,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="model">liststore_content_language</property>
                                      <signal name="changed" handler="nsgtk_preferences_comboboxLanguage_changed" swapped="no"/>
                                      <signal name="realize" handler="nsgtk_preferences_comboboxLanguage_realize" swapped="no"/>
-@@ -1352,7 +1352,7 @@
+@@ -1279,7 +1279,7 @@
                        <object class="GtkLabel" id="label25">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -415,7 +397,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1372,7 +1372,7 @@
+@@ -1299,7 +1299,7 @@
                <object class="GtkLabel" id="label10">
                  <property name="visible">True</property>
                  <property name="can_focus">False</property>
@@ -424,7 +406,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="position">2</property>
-@@ -1404,7 +1404,7 @@
+@@ -1331,7 +1331,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkSendReferer">
@@ -433,7 +415,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -1420,7 +1420,7 @@
+@@ -1347,7 +1347,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkSendDNT">
@@ -442,7 +424,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -1442,7 +1442,7 @@
+@@ -1369,7 +1369,7 @@
                        <object class="GtkLabel" id="label61">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -451,7 +433,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1474,7 +1474,7 @@
+@@ -1401,7 +1401,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkHoverURLs">
@@ -460,7 +442,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -1497,7 +1497,7 @@
+@@ -1424,7 +1424,7 @@
                                    <object class="GtkLabel" id="label28">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -469,7 +451,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1533,7 +1533,7 @@
+@@ -1460,7 +1460,7 @@
                                    <object class="GtkLabel" id="label29">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -478,7 +460,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -1556,7 +1556,7 @@
+@@ -1483,7 +1483,7 @@
                        <object class="GtkLabel" id="label23">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -487,7 +469,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1599,7 +1599,7 @@
+@@ -1526,7 +1526,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
                                      <property name="xalign">0</property>
@@ -496,7 +478,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="x_options">GTK_FILL</property>
-@@ -1610,7 +1610,7 @@
+@@ -1537,7 +1537,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
                                      <property name="xalign">0</property>
@@ -505,7 +487,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="top_attach">1</property>
-@@ -1623,7 +1623,7 @@
+@@ -1550,7 +1550,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
                                      <property name="xalign">0</property>
@@ -514,7 +496,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="top_attach">2</property>
-@@ -1734,7 +1734,7 @@
+@@ -1661,7 +1661,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
                                      <property name="xalign">0</property>
@@ -523,7 +505,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="left_attach">2</property>
-@@ -1760,7 +1760,7 @@
+@@ -1687,7 +1687,7 @@
                                  </child>
                                  <child>
                                    <object class="GtkButton" id="buttonCacheMaintenance">
@@ -532,7 +514,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="visible">True</property>
                                      <property name="can_focus">True</property>
                                      <property name="receives_default">True</property>
-@@ -1786,7 +1786,7 @@
+@@ -1713,7 +1713,7 @@
                        <object class="GtkLabel" id="label24">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -541,7 +523,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -1807,7 +1807,7 @@
+@@ -1734,7 +1734,7 @@
                <object class="GtkLabel" id="label22">
                  <property name="visible">True</property>
                  <property name="can_focus">False</property>
@@ -550,7 +532,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="position">3</property>
-@@ -1845,7 +1845,7 @@
+@@ -1772,7 +1772,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -559,7 +541,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="x_options">GTK_FILL</property>
-@@ -1856,7 +1856,7 @@
+@@ -1783,7 +1783,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -568,7 +550,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">1</property>
-@@ -1869,7 +1869,7 @@
+@@ -1796,7 +1796,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -577,7 +559,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">2</property>
-@@ -1882,7 +1882,7 @@
+@@ -1809,7 +1809,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -586,7 +568,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">3</property>
-@@ -1895,7 +1895,7 @@
+@@ -1822,7 +1822,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="has_tooltip">True</property>
@@ -595,7 +577,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="model">liststore_proxy_type</property>
                                  <signal name="changed" handler="nsgtk_preferences_comboProxyType_changed" swapped="no"/>
                                  <signal name="realize" handler="nsgtk_preferences_comboProxyType_realize" swapped="no"/>
-@@ -1921,7 +1921,7 @@
+@@ -1848,7 +1848,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">True</property>
                                      <property name="has_tooltip">True</property>
@@ -604,7 +586,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="invisible_char">●</property>
                                      <property name="primary_icon_activatable">False</property>
                                      <property name="secondary_icon_activatable">False</property>
-@@ -1953,7 +1953,7 @@
+@@ -1880,7 +1880,7 @@
                                      <property name="visible">True</property>
                                      <property name="can_focus">True</property>
                                      <property name="has_tooltip">True</property>
@@ -613,7 +595,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                      <property name="max_length">5</property>
                                      <property name="invisible_char">●</property>
                                      <property name="width_chars">5</property>
-@@ -1987,7 +1987,7 @@
+@@ -1914,7 +1914,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -622,7 +604,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="invisible_char">●</property>
                                  <property name="primary_icon_activatable">False</property>
                                  <property name="secondary_icon_activatable">False</property>
-@@ -2008,7 +2008,7 @@
+@@ -1935,7 +1935,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -631,7 +613,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visibility">False</property>
                                  <property name="invisible_char">●</property>
                                  <property name="primary_icon_activatable">False</property>
-@@ -2030,7 +2030,7 @@
+@@ -1957,7 +1957,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -640,7 +622,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">4</property>
-@@ -2043,7 +2043,7 @@
+@@ -1970,7 +1970,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -649,7 +631,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="caps_lock_warning">False</property>
                                  <property name="primary_icon_activatable">False</property>
                                  <property name="secondary_icon_activatable">False</property>
-@@ -2067,7 +2067,7 @@
+@@ -1994,7 +1994,7 @@
                        <object class="GtkLabel" id="label37">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -658,7 +640,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -2105,7 +2105,7 @@
+@@ -2032,7 +2032,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -667,7 +649,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="x_options">GTK_FILL</property>
-@@ -2116,7 +2116,7 @@
+@@ -2043,7 +2043,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -676,7 +658,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">1</property>
-@@ -2129,7 +2129,7 @@
+@@ -2056,7 +2056,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">False</property>
                                  <property name="xalign">0</property>
@@ -685,7 +667,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                </object>
                                <packing>
                                  <property name="top_attach">2</property>
-@@ -2142,7 +2142,7 @@
+@@ -2069,7 +2069,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -694,7 +676,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="invisible_char">●</property>
                                  <property name="width_chars">3</property>
                                  <property name="primary_icon_activatable">False</property>
-@@ -2166,7 +2166,7 @@
+@@ -2093,7 +2093,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -703,7 +685,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="invisible_char">●</property>
                                  <property name="width_chars">3</property>
                                  <property name="primary_icon_activatable">False</property>
-@@ -2192,7 +2192,7 @@
+@@ -2119,7 +2119,7 @@
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="has_tooltip">True</property>
@@ -712,7 +694,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="invisible_char">●</property>
                                  <property name="width_chars">3</property>
                                  <property name="primary_icon_activatable">False</property>
-@@ -2221,7 +2221,7 @@
+@@ -2148,7 +2148,7 @@
                        <object class="GtkLabel" id="label38">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -721,7 +703,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -2242,7 +2242,7 @@
+@@ -2169,7 +2169,7 @@
                <object class="GtkLabel" id="label36">
                  <property name="visible">True</property>
                  <property name="can_focus">False</property>
@@ -730,7 +712,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="position">4</property>
-@@ -2274,7 +2274,7 @@
+@@ -2201,7 +2201,7 @@
                              <property name="spacing">6</property>
                              <child>
                                <object class="GtkCheckButton" id="checkSuppressImages">
@@ -739,7 +721,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -2290,7 +2290,7 @@
+@@ -2217,7 +2217,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkRemoveBackgrounds">
@@ -748,7 +730,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -2306,7 +2306,7 @@
+@@ -2233,7 +2233,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkFitPage">
@@ -757,7 +739,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -2329,7 +2329,7 @@
+@@ -2256,7 +2256,7 @@
                                    <object class="GtkLabel" id="label59">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -766,7 +748,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -2388,7 +2388,7 @@
+@@ -2315,7 +2315,7 @@
                        <object class="GtkLabel" id="label48">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -775,7 +757,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -2426,7 +2426,7 @@
+@@ -2353,7 +2353,7 @@
                                    <object class="GtkLabel" id="label62">
                                      <property name="visible">True</property>
                                      <property name="can_focus">False</property>
@@ -784,7 +766,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                    </object>
                                    <packing>
                                      <property name="expand">False</property>
-@@ -2671,7 +2671,7 @@
+@@ -2598,7 +2598,7 @@
                        <object class="GtkLabel" id="label49">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -793,7 +775,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -2703,7 +2703,7 @@
+@@ -2630,7 +2630,7 @@
                              <property name="spacing">7</property>
                              <child>
                                <object class="GtkCheckButton" id="checkCompressPDF">
@@ -802,7 +784,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -2719,7 +2719,7 @@
+@@ -2646,7 +2646,7 @@
                              </child>
                              <child>
                                <object class="GtkCheckButton" id="checkPasswordPDF">
@@ -811,7 +793,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                                  <property name="visible">True</property>
                                  <property name="can_focus">True</property>
                                  <property name="receives_default">False</property>
-@@ -2741,7 +2741,7 @@
+@@ -2668,7 +2668,7 @@
                        <object class="GtkLabel" id="label50">
                          <property name="visible">True</property>
                          <property name="can_focus">False</property>
@@ -820,7 +802,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                          <property name="use_markup">True</property>
                        </object>
                      </child>
-@@ -2762,7 +2762,7 @@
+@@ -2689,7 +2689,7 @@
                <object class="GtkLabel" id="label47">
                  <property name="visible">True</property>
                  <property name="can_focus">False</property>
@@ -829,7 +811,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
                </object>
                <packing>
                  <property name="position">5</property>
-@@ -2861,16 +2861,16 @@
+@@ -2788,16 +2788,16 @@
      </columns>
      <data>
        <row>
@@ -850,7 +832,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
        </row>
      </data>
    </object>
-@@ -2881,16 +2881,16 @@
+@@ -2808,16 +2808,16 @@
      </columns>
      <data>
        <row>
@@ -871,7 +853,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
        </row>
      </data>
    </object>
-@@ -2901,16 +2901,16 @@
+@@ -2828,16 +2828,16 @@
      </columns>
      <data>
        <row>
@@ -892,7 +874,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
        </row>
      </data>
    </object>
-@@ -2921,19 +2921,19 @@
+@@ -2848,19 +2848,19 @@
      </columns>
      <data>
        <row>
@@ -917,7 +899,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
        </row>
      </data>
    </object>
-@@ -2950,19 +2950,19 @@
+@@ -2877,19 +2877,19 @@
      </columns>
      <data>
        <row>
@@ -942,16 +924,7 @@ $OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.4 2015/03/30 03:01:51 bentley Exp $
        </row>
      </data>
    </object>
-@@ -3064,7 +3064,7 @@
-     </columns>
-     <data>
-       <row>
--        <col id="0" translatable="yes">preferencesThemeTypeDefault</col>
-+        <col id="0" translatable="yes">Default</col>
-       </row>
-     </data>
-   </object>
-@@ -3075,13 +3075,13 @@
+@@ -2991,13 +2991,13 @@
      </columns>
      <data>
        <row>

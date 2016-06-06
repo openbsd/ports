@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/03/06 20:27:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/06/06 11:51:00 bentley Exp $
 @bin bin/netsurf
 share/applications/netsurf.desktop
 share/netsurf/
@@ -61,39 +61,6 @@ share/netsurf/password.gtk2.ui
 share/netsurf/quirks.css
 share/netsurf/ssl.gtk2.ui
 share/netsurf/tabcontents.gtk2.ui
-share/netsurf/themelist
-share/netsurf/themes/
-share/netsurf/themes/Alpha.png
-share/netsurf/themes/gtk+/
-share/netsurf/themes/gtk+/back.png
-share/netsurf/themes/gtk+/closetab.png
-share/netsurf/themes/gtk+/closewindow.png
-share/netsurf/themes/gtk+/copy.png
-share/netsurf/themes/gtk+/cut.png
-share/netsurf/themes/gtk+/delete.png
-share/netsurf/themes/gtk+/forward.png
-share/netsurf/themes/gtk+/fullscreen.png
-share/netsurf/themes/gtk+/helpabout.png
-share/netsurf/themes/gtk+/helpcontents.png
-share/netsurf/themes/gtk+/history.png
-share/netsurf/themes/gtk+/home.png
-share/netsurf/themes/gtk+/info
-share/netsurf/themes/gtk+/newtab.png
-share/netsurf/themes/gtk+/newwindow.png
-share/netsurf/themes/gtk+/openfile.png
-share/netsurf/themes/gtk+/paste.png
-share/netsurf/themes/gtk+/preferences.png
-share/netsurf/themes/gtk+/print.png
-share/netsurf/themes/gtk+/printpreview.png
-share/netsurf/themes/gtk+/quit.png
-share/netsurf/themes/gtk+/reload.png
-share/netsurf/themes/gtk+/savepage.png
-share/netsurf/themes/gtk+/selectall.png
-share/netsurf/themes/gtk+/stop.png
-share/netsurf/themes/gtk+/viewsource.png
-share/netsurf/themes/gtk+/zoomminus.png
-share/netsurf/themes/gtk+/zoomnormal.png
-share/netsurf/themes/gtk+/zoomplus.png
 share/netsurf/throbber/
 share/netsurf/throbber/throbber0.png
 share/netsurf/throbber/throbber1.png
