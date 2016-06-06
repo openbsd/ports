@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/21 05:31:38 gsoares Exp $
+# $OpenBSD: Makefile,v 1.14 2016/06/06 11:02:05 gsoares Exp $
 
 COMMENT=		minimalist IRC client
 
 DISTNAME=		ii-1.7
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://tools.suckless.org/ii
@@ -15,6 +15,7 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB=		c
 
 NO_TEST=		Yes

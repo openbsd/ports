@@ -1,0 +1,48 @@
+$OpenBSD: sslpatch-ii_c,v 1.1 2016/06/06 11:02:05 gsoares Exp $
+
+http://git.suckless.org/ii/commit/?id=f79e2f09534d92a6fe4e062b06449a925fef1c41
+
+uses pledge():
+  - stdio rpath wpath cpath dpath: ii(1) will create directory
+    structure and fifos on demand (when joining a new channel for
+    example).
+
+--- ii.c.orig	Mon Jun  6 00:44:40 2016
++++ ii.c	Mon Jun  6 01:47:02 2016
+@@ -438,7 +438,7 @@ static void handle_server_output() {
+ }
+ 
+ static void run() {
+-	Channel *c;
++	Channel *c, *n;
+ 	int r, maxfd;
+ 	fd_set rd;
+ 	struct timeval tv;
+@@ -475,9 +475,11 @@ static void run() {
+ 			handle_server_output();
+ 			last_response = time(NULL);
+ 		}
+-		for(c = channels; c; c = c->next)
++		for(c = channels; c; c = n) {
++			n = c->next;
+ 			if(FD_ISSET(c->fd, &rd))
+ 				handle_channels_input(c);
++		}
+ 	}
+ }
+ 
+@@ -511,6 +513,14 @@ int main(int argc, char *argv[]) {
+ 	if(use_ssl)
+ 		port = port == SERVER_PORT ? SSL_SERVER_PORT : port;
+ 	irc = tcpopen(port);
++
++#ifdef __OpenBSD__
++	if (pledge("stdio rpath wpath cpath dpath", NULL) == -1) {
++		fputs("ii: pledge\n", stderr);
++		exit(EXIT_FAILURE);
++	}
++#endif
++
+ 	if(!snprintf(path, sizeof(path), "%s/%s", prefix, host)) {
+ 		fputs("ii: path to irc directory too long\n", stderr);
+ 		exit(EXIT_FAILURE);
