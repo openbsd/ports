@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.974 2016/06/06 13:27:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.975 2016/06/06 22:30:19 gsoares Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -147,6 +147,7 @@
      SUBDIR += iftop
      SUBDIR += igmpproxy
      SUBDIR += ii
+     SUBDIR += ii,ucspi
      SUBDIR += ike-scan
      SUBDIR += inadyn
      SUBDIR += iodine
