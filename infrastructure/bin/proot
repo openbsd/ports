@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.51 2016/06/04 17:22:11 espie Exp $
+# $OpenBSD: proot,v 1.52 2016/06/06 22:14:20 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -1090,9 +1090,6 @@ if ($state->{key}) {
 }
 if (defined $state->{known}) {
 	$state->copy_sync;
-}
-if ($state->{error}) {
-	exit(1);
 }
 if ($state->{actions}{copy_ports}) {
 	$state->copy_ports;
