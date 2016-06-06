@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/06 11:41:44 sthen Exp $
 
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}
@@ -11,6 +11,7 @@ WANTLIB += KF5KIOCore KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 
+BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		devel/kf5/kparts \
 			devel/kf5/kxmlgui
 
