@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.205 2016/05/04 04:48:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.206 2016/06/06 08:34:38 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.2.3
+V=		2.2.4
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
