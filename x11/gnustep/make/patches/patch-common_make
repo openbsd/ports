@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_make,v 1.1 2016/06/06 21:52:15 sebastia Exp $
+
+Remove unused compilation flag. The flag is only for linking.
+Same fix from upstream SVN, unbreaks gnustep-gui
+
+--- common.make.orig	Mon Jun  6 23:35:08 2016
++++ common.make	Mon Jun  6 23:35:31 2016
+@@ -626,7 +626,7 @@ endif
+ # If the compiler supports nonfragile ABI and the user wants us to
+ # use them, turn them on!
+ ifeq ($(USE_NONFRAGILE_ABI), yes)
+-  INTERNAL_OBJCFLAGS += -fobjc-nonfragile-abi -D_NONFRAGILE_ABI
++  INTERNAL_OBJCFLAGS += -D_NONFRAGILE_ABI
+   INTERNAL_LDFLAGS += -fobjc-nonfragile-abi
+ endif
+ 
