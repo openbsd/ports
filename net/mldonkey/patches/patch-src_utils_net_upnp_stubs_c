@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_utils_net_upnp_stubs_c,v 1.1 2016/06/06 10:15:53 dcoppa Exp $
+
+commit d0f0cd5ce38bac67ecc55e4cc5dd2e1883ebc2e4
+Author: ygrek <ygrek@autistici.org>
+Date:   Sat Oct 17 16:00:17 2015 -0700
+
+fix build with libminiupnpc 1.9 (closes #13)
+
+--- src/utils/net/upnp_stubs.c.orig	Mon Jun  6 11:50:22 2016
++++ src/utils/net/upnp_stubs.c	Mon Jun  6 11:52:06 2016
+@@ -640,7 +640,17 @@ upnpPulse( ml_upnpmp_t * map )
+     {
+         struct UPNPDev * devlist;
+         errno = 0;
+-        devlist = upnpDiscover( 2000, NULL, NULL, 0, 0, 0 );
++        devlist = upnpDiscover(
++          2000, /* delay */
++          NULL, /* multicastif */
++          NULL, /* minissdpsock */
++          0,    /* localport */
++          0,    /* ipv6 */
++#if MINIUPNPC_API_VERSION >= 14
++          2,    /* ttl */
++#endif
++          NULL  /* error */
++        );
+         if( devlist == NULL )
+         {
+             dbg_printf( "upnpDiscover failed (errno %d - %s)\n", errno,  str_errno( errno ) );
