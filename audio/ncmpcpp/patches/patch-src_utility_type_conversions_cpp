@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_utility_type_conversions_cpp,v 1.1 2016/06/06 14:26:37 dcoppa Exp $
+
+commit dcbb3ab7effaa558a4022f5daf6f4ee6d4339f17
+Author: Chris Gregory <czipperz@gmail.com>
+Date:   Sun Nov 22 15:33:07 2015 -0800
+
+Consistently use nullptr instead of 0
+
+--- src/utility/type_conversions.cpp.orig	Sun Apr 17 07:41:01 2016
++++ src/utility/type_conversions.cpp	Mon Jun  6 16:10:13 2016
+@@ -108,7 +108,7 @@ MPD::MutableSong::SetFunction tagTypeToSetFunction(mpd
+ 		case MPD_TAG_DISC:
+ 			return &MPD::MutableSong::setDisc;
+ 		default:
+-			return 0;
++			return nullptr;
+ 	}
+ }
+ 
