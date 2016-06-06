@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/09 19:13:54 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/06 18:31:39 rpointel Exp $
 
 COMMENT =		system downtime monitoring
-DISTNAME =		downtimed-0.6
+DISTNAME =		downtimed-1.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://dist.epipe.com/downtimed/
