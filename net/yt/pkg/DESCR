@@ -1,3 +1,0 @@
-yt is an extensible Lua script to fetch videos from YouTube.com. You can
-(and probably should) customize it to use your preferred encoding tool.
-By default it uses graphics/ffmpeg.
