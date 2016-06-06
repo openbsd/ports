@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.973 2016/06/05 17:13:48 danj Exp $
+# $OpenBSD: Makefile,v 1.974 2016/06/06 13:27:49 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -719,7 +719,6 @@
      SUBDIR += yaz
      SUBDIR += yersinia
      SUBDIR += ysmv7
-     SUBDIR += yt
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
      SUBDIR += zabbix
