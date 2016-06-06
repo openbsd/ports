@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.402 2016/06/01 18:31:34 krw Exp $
+# $OpenBSD: Quirks.pm,v 1.403 2016/06/06 13:37:35 dcoppa Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -804,6 +804,7 @@ my $obsolete_reason = {
 	'p5-libapreq' => 6,
 	'mod_perl' => 6,
 	'ocamlduce' => 0,
+	'yt' => 0,
 
 # KDE3 removals
 	'amarok' => 2,
