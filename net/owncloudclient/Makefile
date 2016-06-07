@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/27 11:58:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/07 14:44:08 dcoppa Exp $
 
 COMMENT =		owncloud sync client
 
@@ -37,7 +37,8 @@ CONFIGURE_ARGS +=	-Wno-dev \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 				-L${LOCALBASE}/lib/inotify -linotify -liconv \
-				-Wl,-rpath=${LOCALBASE}/lib/inotify"
+				-Wl,-rpath=${LOCALBASE}/lib/inotify" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE
 
 FLAVORS = 		qt5
 FLAVOR ?=
