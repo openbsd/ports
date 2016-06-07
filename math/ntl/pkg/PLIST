@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/01/31 09:03:50 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/06/07 13:35:28 benoit Exp $
 include/NTL/
 include/NTL/BasicThreadPool.h
 include/NTL/FFT.h
@@ -34,6 +34,7 @@ include/NTL/ZZ_pX.h
 include/NTL/ZZ_pXFactoring.h
 include/NTL/c_lip.h
 include/NTL/config.h
+include/NTL/config_log.h
 include/NTL/ctools.h
 include/NTL/def_config.h
 include/NTL/fileio.h
@@ -99,6 +100,7 @@ include/NTL/vec_vec_ulong.h
 include/NTL/vec_xdouble.h
 include/NTL/vector.h
 include/NTL/version.h
+include/NTL/wizard_log.h
 include/NTL/xdouble.h
 lib/libntl.a
 @lib lib/libntl.so.${LIBntl_VERSION}
@@ -210,6 +212,7 @@ share/doc/NTL/tour-ex3.html
 share/doc/NTL/tour-ex4.html
 share/doc/NTL/tour-ex5.html
 share/doc/NTL/tour-ex6.html
+share/doc/NTL/tour-ex7.html
 share/doc/NTL/tour-examples.html
 share/doc/NTL/tour-gf2x.html
 share/doc/NTL/tour-gmp.html
