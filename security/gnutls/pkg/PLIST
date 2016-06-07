@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2016/05/21 06:48:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2016/06/07 08:56:09 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -37,8 +37,6 @@ info/gnutls-pgp.png
 info/gnutls-x509.png
 @info info/gnutls.info
 info/pkcs11-vision.png
-lib/gnutls/
-lib/gnutls/libpkcs11mock1.so
 lib/libgnutls.a
 lib/libgnutls.la
 @lib lib/libgnutls.so.${LIBgnutls_VERSION}
