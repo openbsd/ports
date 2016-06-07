@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/06/07 11:55:24 jca Exp $
 
 COMMENT=	network support for the lua language
 V=		3.0-rc1
 GH_ACCOUNT=	diegonehab
 GH_PROJECT=	luasocket
 GH_TAGNAME=	v$V
-REVISION=	0
+REVISION=	1
 DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	${DISTNAME:S/-rc/rc/}
 CATEGORIES=	net
@@ -25,7 +25,8 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	CC_linux=${CC} \
 		LD_linux=${CC} \
 		CFLAGS_linux="${CFLAGS} -I${MODLUA_INCL_DIR} -fPIC \
-			      -DPIC -DUNIX_HAS_SUN_LEN" \
+			      -DPIC -DUNIX_HAS_SUN_LEN \
+			      -DLUA_COMPAT_APIINTCASTS" \
 		LDFLAGS_linux="${LDFLAGS} -shared -fPIC -o "
 
 do-install:
