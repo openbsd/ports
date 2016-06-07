@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/17 05:12:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/07 19:17:20 danj Exp $
 
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		pycares-${MODPY_EGG_VERSION}
 PKGNAME =		py-cares-${MODPY_EGG_VERSION}
 CATEGORIES =		net
@@ -24,5 +24,9 @@ USE_GMAKE =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+do-test: fake
+	cd ${WRKSRC} && env PYTHONPATH=${WRKINST}/${MODPY_SITEPKG} \
+		${MODPY_BIN} tests/tests.py
 
 .include <bsd.port.mk>
