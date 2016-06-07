@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/07 22:18:00 bluhm Exp $
 
 COMMENT =		test your regular expressions
 
-DISTNAME =		Test-Regexp-2015110201
+DISTNAME =		Test-Regexp-2016060501
 
 CATEGORIES =		devel
 
