@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.4 2015/06/15 09:36:42 dcoppa Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2016/06/07 14:08:44 dcoppa Exp $
 
 libdl is not required on OpenBSD
 
---- configure.ac.orig	Sat May 16 22:30:24 2015
-+++ configure.ac	Mon Jun 15 11:18:27 2015
-@@ -340,11 +340,6 @@ AC_CHECK_LIB(
+--- configure.ac.orig	Fri Jun  3 11:19:51 2016
++++ configure.ac	Tue Jun  7 14:48:33 2016
+@@ -380,11 +380,6 @@ AC_CHECK_LIB(
  )
  
  if test "${WIN32}" = "no"; then

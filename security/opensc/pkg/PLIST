@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/04/24 12:53:24 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/06/07 14:08:44 dcoppa Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
 @bin bin/eidenv
+@bin bin/gids-tool
 @bin bin/iasecc-tool
 @bin bin/netkey-tool
 @bin bin/openpgp-tool
@@ -33,6 +34,7 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/cryptoflex-tool.1
 @man man/man1/dnie-tool.1
 @man man/man1/eidenv.1
+@man man/man1/gids-tool.1
 @man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
 @man man/man1/openpgp-tool.1
@@ -61,6 +63,7 @@ share/opensc/cyberflex.profile
 share/opensc/entersafe.profile
 share/opensc/epass2003.profile
 share/opensc/flex.profile
+share/opensc/gids.profile
 share/opensc/gpk.profile
 share/opensc/ias_adele_admin1.profile
 share/opensc/ias_adele_admin2.profile

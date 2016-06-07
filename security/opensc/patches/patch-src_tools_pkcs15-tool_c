@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_tools_pkcs15-tool_c,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
+
+commit d97ee793337e3590bed38426a0c46d095b087d48
+Author: Nuno Goncalves <nunojpg@gmail.com>
+Date:   Mon Jun 6 18:29:03 2016 +0100
+
+fix 'pkcs15-tool --read-ssh-key' crash
+
+Don't try to free again pubkey if the parent cert has already been freed.
+
+Signed-off-by: Nuno Goncalves <nunojpg@gmail.com>
+
+--- src/tools/pkcs15-tool.c.orig	Fri Jun  3 11:19:51 2016
++++ src/tools/pkcs15-tool.c	Tue Jun  7 15:50:15 2016
+@@ -1051,8 +1051,8 @@ static int read_ssh_key(void)
+ 		fclose(outf);
+ 	if (cert)
+ 		sc_pkcs15_free_certificate(cert);
+-	sc_pkcs15_free_pubkey(pubkey);
+-
++	else if (pubkey)
++		sc_pkcs15_free_pubkey(pubkey);
+ 	return 0;
+ fail:
+ 	printf("can't convert key: buffer too small\n");

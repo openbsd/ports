@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/16 21:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/06/07 14:08:44 dcoppa Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
-DISTNAME=	opensc-0.15.0
-REVISION=	1
-CATEGORIES=	security
+VERSION=	0.16.0
+DISTNAME=	OpenSC-${VERSION}
+PKGNAME=	opensc-${VERSION}
+GH_ACCOUNT=	OpenSC
+GH_PROJECT=	${GH_ACCOUNT}
+GH_TAGNAME=	${VERSION}
 
-SHARED_LIBS +=  opensc 4.0	# 3.0
-SHARED_LIBS +=	smm-local 0.0	# 3.0
+SHARED_LIBS +=  opensc 5.0	# 4.0
+SHARED_LIBS +=	smm-local 1.0	# 4.0
+
+CATEGORIES=	security
 
 HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
 
@@ -16,18 +21,18 @@ MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opensc/}
-
 WANTLIB=	c crypto ncurses pthread readline z
 
-BUILD_DEPENDS=	textproc/docbook-xsl \
-		security/pcsc-lite
+BUILD_DEPENDS=	devel/libtool \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		security/pcsc-lite \
+		textproc/docbook-xsl
 RUN_DEPENDS=	security/ccid
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.67
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
@@ -36,6 +41,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC -DOPENSSL_NO_STATIC_ENGINE"
 
 FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 		sysconfdir="${PREFIX}/share/examples/opensc/"
+
+AUTOCONF_VERSION = 2.69
+AUTOMAKE_VERSION = 1.14
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig

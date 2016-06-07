@@ -1,0 +1,22 @@
+$OpenBSD: patch-doc_tools_Makefile_am,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
+
+Do not install bash-completion scripts
+
+--- doc/tools/Makefile.am.orig	Fri Jun  3 16:47:44 2016
++++ doc/tools/Makefile.am	Fri Jun  3 16:48:26 2016
+@@ -12,9 +12,6 @@ man1_MANS = $(patsubst $(srcdir)/%.xml, %, $(wildcard 
+ man5_MANS = $(patsubst $(srcdir)/%.xml, %, $(wildcard $(srcdir)/*.5.xml))
+ endif
+ 
+-completion_DATA = $(patsubst $(srcdir)/%.1.xml, %, $(wildcard $(srcdir)/*.1.xml))
+-completiondir = $(sysconfdir)/bash_completion.d
+-
+ tools.html: $(srcdir)/tools.xml $(wildcard $(srcdir)/*.1.xml) $(wildcard $(srcdir)/*.5.xml)
+ 	$(XSLTPROC) --nonet --path "$(srcdir)/..:$(xslstylesheetsdir)/html" --xinclude -o $@ html.xsl $<
+ 
+@@ -43,4 +40,4 @@ tools.html: $(srcdir)/tools.xml $(wildcard $(srcdir)/*
+ 		> $@
+ 
+ clean-local:
+-	-rm -rf $(html_DATA) $(man1_MANS) $(man5_MANS) $(completion_DATA)
++	-rm -rf $(html_DATA) $(man1_MANS) $(man5_MANS)
