@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/08 23:48:58 jturner Exp $
 
 COMMENT =	perl5 extension for checking data against Spamhaus
 
-DISTNAME =	Net-Abuse-Utils-Spamhaus-0.07
+DISTNAME =	Net-Abuse-Utils-Spamhaus-0.09
 CATEGORIES =	net
 
 MAINTAINER =	James Turner <james@calminferno.net>

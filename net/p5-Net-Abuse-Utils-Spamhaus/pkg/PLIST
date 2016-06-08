@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/22 22:45:33 jturner Exp $
-${P5SITE}/Net/
+@comment $OpenBSD: PLIST,v 1.2 2016/06/08 23:48:58 jturner Exp $
 ${P5SITE}/Net/Abuse/
 ${P5SITE}/Net/Abuse/Utils/
 ${P5SITE}/Net/Abuse/Utils/Spamhaus.pm
