@@ -1,0 +1,14 @@
+$OpenBSD: patch-Ui_cpp,v 1.1.1.1 2016/06/08 17:48:44 jca Exp $
+
+unistd.h needed for usleep(3)
+
+--- Ui.cpp.orig	Sun Aug 30 09:04:24 2015
++++ Ui.cpp	Fri May 27 00:19:26 2016
+@@ -24,6 +24,7 @@
+ 
+ #include <cstdio>
+ #include <cstdlib>
++#include <unistd.h>
+ #include <boost/format.hpp>
+ #include <boost/foreach.hpp>
+ #include <boost/algorithm/string.hpp>

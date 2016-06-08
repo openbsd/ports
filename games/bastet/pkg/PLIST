@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/08 17:48:44 jca Exp $
+@mode g+s
+@group games
+@bin bin/bastet
+@mode
+@group
+@man man/man6/bastet.6
+share/doc/bastet/
+share/doc/bastet/AUTHORS
+share/doc/bastet/LICENSE
+share/doc/bastet/NEWS
+share/doc/bastet/README
+share/examples/bastet/
+share/examples/bastet/bastet.scores2
+@mode 664
+@group games
+@sample /var/games/bastet.scores2
