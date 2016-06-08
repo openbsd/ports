@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.87 2016/06/08 17:04:03 jca Exp $
+# $OpenBSD: Makefile,v 1.88 2016/06/08 17:04:56 jca Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
-# ignore arches that have a valid 4.8 port
+# ignore arches that have a more recent gcc port
 ONLY_FOR_ARCHS = alpha
 DPB_PROPERTIES = parallel
 
