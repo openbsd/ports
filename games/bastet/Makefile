@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/08 17:48:44 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/08 18:29:39 jca Exp $
+
+# Block.s: Assembler messages:
+# Block.s:73: Error: junk `(%rip)' after expression
+ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 COMMENT =	bastard tetris
 DISTNAME =	bastet-0.43.1.2015083000
