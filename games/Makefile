@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2016/06/02 11:33:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.334 2016/06/08 17:50:48 jca Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -20,6 +20,7 @@
      SUBDIR += atomix
      SUBDIR += barrage
      SUBDIR += bass
+     SUBDIR += bastet
      SUBDIR += batrachians
      SUBDIR += belooted
      SUBDIR += beret
