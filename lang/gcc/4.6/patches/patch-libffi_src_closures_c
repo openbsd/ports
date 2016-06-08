@@ -1,0 +1,19 @@
+$OpenBSD: patch-libffi_src_closures_c,v 1.1 2016/06/08 17:04:03 jca Exp $
+--- libffi/src/closures.c.orig	Mon Jun  6 21:05:54 2016
++++ libffi/src/closures.c	Mon Jun  6 21:06:55 2016
+@@ -453,6 +453,7 @@ dlmmap (void *start, size_t length, int prot,
+   printf ("mapping in %zi\n", length);
+ #endif
+ 
++#if 0
+   if (execfd == -1 && !is_selinux_enabled ())
+     {
+       ptr = mmap (start, length, prot | PROT_EXEC, flags, fd, offset);
+@@ -465,6 +466,7 @@ dlmmap (void *start, size_t length, int prot,
+ 	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
+ 	 MREMAP_DUP and prot at this point.  */
+     }
++#endif
+ 
+   if (execsize == 0 || execfd == -1)
+     {
