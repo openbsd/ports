@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/06/08 21:20:26 ajacoutot Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
 V=		2.3.13
 DISTNAME=	mico-${V}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # The build framework accommodates only a single shared lib extension.
 SHARED_LIBS=	mico${V}	${LIB_VERSION} \
@@ -38,7 +38,12 @@ FAKE_FLAGS=		INSTDIR=${WRKINST}${PREFIX} \
 
 WRKDIST=		${WRKDIR}/mico
 
+# in case we can't resolve ourselves, don't use the network to make a DNS lookup
+MAKE_ENV=		MICORC=${WRKSRC}/openbsd-ports.rc
+
 pre-build:
+	echo '-ORBIIOPAddr inet:127.0.0.1:0 -ORBNoResolve' \
+		>${WRKSRC}/openbsd-ports.rc
 	cd ${WRKSRC}/idl && ${GMAKE} generate
 
 pre-test:
