@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/04 18:26:49 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/06/08 01:24:46 juanfra Exp $
 @bin bin/chicken
 @bin bin/chicken-bug
 @bin bin/chicken-install
@@ -7,34 +7,35 @@
 @bin bin/chicken-uninstall
 @bin bin/csc
 @bin bin/csi
+bin/feathers
 include/chicken/
 include/chicken/chicken-config.h
 include/chicken/chicken.h
 lib/chicken/
-lib/chicken/7/
-lib/chicken/7/chicken.import.so
-lib/chicken/7/csi.import.so
-lib/chicken/7/data-structures.import.so
-lib/chicken/7/extras.import.so
-lib/chicken/7/files.import.so
-lib/chicken/7/foreign.import.so
-lib/chicken/7/irregex.import.so
-lib/chicken/7/lolevel.import.so
-lib/chicken/7/ports.import.so
-lib/chicken/7/posix.import.so
-lib/chicken/7/setup-api.import.so
-lib/chicken/7/setup-api.so
-lib/chicken/7/setup-download.import.so
-lib/chicken/7/setup-download.so
-lib/chicken/7/srfi-1.import.so
-lib/chicken/7/srfi-13.import.so
-lib/chicken/7/srfi-14.import.so
-lib/chicken/7/srfi-18.import.so
-lib/chicken/7/srfi-4.import.so
-lib/chicken/7/srfi-69.import.so
-lib/chicken/7/tcp.import.so
-lib/chicken/7/types.db
-lib/chicken/7/utils.import.so
+lib/chicken/8/
+lib/chicken/8/chicken.import.so
+lib/chicken/8/csi.import.so
+lib/chicken/8/data-structures.import.so
+lib/chicken/8/extras.import.so
+lib/chicken/8/files.import.so
+lib/chicken/8/foreign.import.so
+lib/chicken/8/irregex.import.so
+lib/chicken/8/lolevel.import.so
+lib/chicken/8/ports.import.so
+lib/chicken/8/posix.import.so
+lib/chicken/8/setup-api.import.so
+lib/chicken/8/setup-api.so
+lib/chicken/8/setup-download.import.so
+lib/chicken/8/setup-download.so
+lib/chicken/8/srfi-1.import.so
+lib/chicken/8/srfi-13.import.so
+lib/chicken/8/srfi-14.import.so
+lib/chicken/8/srfi-18.import.so
+lib/chicken/8/srfi-4.import.so
+lib/chicken/8/srfi-69.import.so
+lib/chicken/8/tcp.import.so
+lib/chicken/8/types.db
+lib/chicken/8/utils.import.so
 lib/libchicken.a
 @lib lib/libchicken.so.${LIBchicken_VERSION}
 @man man/man1/chicken-bug.1
@@ -45,7 +46,9 @@ lib/libchicken.a
 @man man/man1/chicken.1
 @man man/man1/csc.1
 @man man/man1/csi.1
+@man man/man1/feathers.1
 share/chicken/
+share/chicken/feathers.tcl
 share/chicken/setup.defaults
 share/doc/chicken/
 share/doc/chicken/LICENSE
@@ -60,6 +63,7 @@ share/doc/chicken/manual/C interface.html
 share/doc/chicken/manual/Callbacks.html
 share/doc/chicken/manual/Cross development.html
 share/doc/chicken/manual/Data representation.html
+share/doc/chicken/manual/Debugging.html
 share/doc/chicken/manual/Declarations.html
 share/doc/chicken/manual/Deployment.html
 share/doc/chicken/manual/Deviations from the standard.html
