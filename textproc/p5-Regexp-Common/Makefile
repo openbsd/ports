@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2016/06/03 21:20:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2016/06/09 23:33:04 bluhm Exp $
 
 COMMENT =		provide commonly requested regular expressions
 
-DISTNAME =		Regexp-Common-2016060201
+DISTNAME =		Regexp-Common-2016060801
 
 CATEGORIES =		textproc
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# MIT
+# Artistic, Artistic 2.0, BSD, MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
