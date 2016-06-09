@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/29 07:26:46 semarie Exp $
+# $OpenBSD: Makefile,v 1.24 2016/06/09 04:20:10 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -8,6 +8,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 V =			1.9.0
+BV =			${V}-20160608
 DISTNAME =		rustc-${V}-src
 
 RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
@@ -18,9 +19,6 @@ PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
 
 MULTI_PACKAGES =	-main -doc
-
-# the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2016-03-18-235d774-openbsd-x86_64-6d5adfe4301d158be8a5a33fb2e11bf857475cb3.tar.bz2
 
 CATEGORIES =		lang
 
@@ -40,11 +38,9 @@ MASTER_SITES0 =		http://semarie.free.fr/rust/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-.if defined(SNAPSHOT-${MACHINE_ARCH})
-DISTFILES +=            ${SNAPSHOT-${MACHINE_ARCH}}:0
-.endif
+DISTFILES +=		rustc-bootstrap-${MACHINE_ARCH}-${BV}.tar.gz:0
 
-SUPDISTFILES =		${SNAPSHOT-amd64}:0
+SUPDISTFILES =		rustc-bootstrap-amd64-${BV}.tar.gz:0
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
@@ -109,7 +105,7 @@ pre-configure:
 # - copy libestdc++ from MODGCC4 to specific directory
 #   in order to disambiguate version linking (having multiple libestdc++
 #   at build time)
-# - copy snapshot in stage0 (avoid downloading a snapshot)
+# - copy bootstrap in stage0 (avoid downloading)
 post-configure:
 .for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
 	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
@@ -119,13 +115,27 @@ post-configure:
 	rm -rf ${WRKDIR}/modgcc-libs
 	mkdir ${WRKDIR}/modgcc-libs
 	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} ${WRKDIR}/modgcc-libs
-	cp ${WRKDIR}/rust-stage0/bin/rustc \
+	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc \
 		${WRKBUILD}/${TRIPLE_ARCH}/stage0/bin
-	cp ${WRKDIR}/rust-stage0/lib/lib*.so* \
+	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/lib/lib*.so* \
 		${WRKBUILD}/${TRIPLE_ARCH}/stage0/lib
 
 post-install:
 	# cleanup
 	rm ${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version}
-	
+
+
+# bootstrap target permits to regenerate the bootstrap archive
+# it is based on stage3 binary
+BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
+bootstrap: configure
+	rm -rf ${BOOTSTRAPDIR}
+	mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} rustc-stage3
+	cp ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc ${BOOTSTRAPDIR}/bin
+	ldd ${BOOTSTRAPDIR}/bin/rustc \
+		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
+		| xargs -r -J % cp % \
+			${BOOTSTRAPDIR}/lib
+
 .include <bsd.port.mk>

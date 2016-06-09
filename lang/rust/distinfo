@@ -1,4 +1,4 @@
-SHA256 (rust/rust-stage0-2016-03-18-235d774-openbsd-x86_64-6d5adfe4301d158be8a5a33fb2e11bf857475cb3.tar.bz2) = 8QZ/pf8S9dkMdbFw5kIU/x4VkwT51I9W1gyoFDt9tOQ=
 SHA256 (rust/rustc-1.9.0-src.tar.gz) = sZshGT19NgOd6+qqH2HL+YeH4M6UvYXFy+KllGLXz80=
-SIZE (rust/rust-stage0-2016-03-18-235d774-openbsd-x86_64-6d5adfe4301d158be8a5a33fb2e11bf857475cb3.tar.bz2) = 21260143
+SHA256 (rust/rustc-bootstrap-amd64-1.9.0-20160608.tar.gz) = +1dvjutKxR/9eBKi46JfFqgFWbkMYH/21zN24Rvhi5Y=
 SIZE (rust/rustc-1.9.0-src.tar.gz) = 25859714
+SIZE (rust/rustc-bootstrap-amd64-1.9.0-20160608.tar.gz) = 24387449
