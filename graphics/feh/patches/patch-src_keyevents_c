@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_keyevents_c,v 1.9 2015/04/23 05:54:04 dcoppa Exp $
---- src/keyevents.c.orig	Wed Apr  8 11:21:11 2015
-+++ src/keyevents.c	Thu Apr 23 07:46:02 2015
-@@ -170,7 +170,7 @@ void init_keyevents(void) {
+$OpenBSD: patch-src_keyevents_c,v 1.10 2016/06/09 10:56:59 dcoppa Exp $
+--- src/keyevents.c.orig	Thu Jun  9 09:02:41 2016
++++ src/keyevents.c	Thu Jun  9 12:27:08 2016
+@@ -172,7 +172,7 @@ void init_keyevents(void) {
  
  	free(confpath);
  
