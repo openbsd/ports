@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/20 20:00:37 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/09 14:59:08 kirby Exp $
 
 COMMENT =		light and fast log analyzer for squid proxy
 
 DISTNAME =		lightsquid-1.8
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -36,5 +36,5 @@ do-install:
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}/*cgi ${INSTDIR}/*pl
 	mv ${INSTDIR}/group.cfg.src ${INSTDIR}/doc/group.cfg
 	mv ${INSTDIR}/*cfg ${INSTDIR}/doc
-	
+
 .include <bsd.port.mk>
