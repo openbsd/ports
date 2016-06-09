@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/14 20:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/09 15:46:17 jca Exp $
 
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
-DISTNAME =		dash-0.5.8
-REVISION =		0
+DISTNAME =		dash-0.5.9
 CATEGORIES =		shells
 
 HOMEPAGE =		http://gondor.apana.org.au/~herbert/dash/
