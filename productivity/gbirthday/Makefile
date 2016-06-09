@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/21 14:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/09 13:54:34 kirby Exp $
 
 COMMENT =		birthday reminder with tray notification
 
-DISTNAME =		gbirthday-0.6.8
+GH_ACCOUNT = 		lafrech
+GH_PROJECT =		gbirthday
+GH_TAGNAME = 		v0.6.10
 
 CATEGORIES =		productivity x11
 
@@ -12,8 +14,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gbirthday/}
 
 MODULES =		lang/python
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -28,6 +28,8 @@ PKG_ARCH = 		*
 
 post-patch:
 	sed -i 's,_Comment,Comment,' ${WRKSRC}/gbirthday.desktop.in
+	sed -i 's,@VER@,${GH_TAGNAME:S/v//},g' ${WRKSRC}/src/gbirthday/__init__.py
+
 
 do-build:
 	# dummy. cannot be "NO_BUILD" as that zaps BUILD_DEPENDS.
