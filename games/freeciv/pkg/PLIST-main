@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/08/25 14:27:20 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/06/09 12:16:14 kirby Exp $
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
@@ -8,7 +8,6 @@
 @comment lib/libfreeciv-srv.la
 @man man/man6/freeciv-manual.6
 @man man/man6/freeciv-server.6
-@comment share/applications/
 share/appdata/
 share/appdata/freeciv-server.appdata.xml
 share/applications/freeciv-server.desktop
@@ -68,8 +67,6 @@ share/locale/fi/LC_MESSAGES/freeciv-nations.mo
 share/locale/fr/LC_MESSAGES/freeciv-nations.mo
 share/locale/ga/LC_MESSAGES/freeciv-nations.mo
 share/locale/ga/LC_MESSAGES/freeciv.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/freeciv-nations.mo
 share/locale/gd/LC_MESSAGES/freeciv.mo
 share/locale/he/LC_MESSAGES/freeciv-nations.mo
