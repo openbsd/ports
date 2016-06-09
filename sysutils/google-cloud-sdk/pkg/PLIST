@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/06/02 07:19:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/06/09 05:37:50 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -572,6 +572,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/lookup.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/lookup.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/table.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/static_completion/table.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/
@@ -657,6 +659,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/execution_utils.py
 google-cloud-sdk/lib/googlecloudsdk/core/execution_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/http.py
 google-cloud-sdk/lib/googlecloudsdk/core/http.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/http_proxy.py
+google-cloud-sdk/lib/googlecloudsdk/core/http_proxy.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/iam/
 google-cloud-sdk/lib/googlecloudsdk/core/iam/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/iam/__init__.pyc
@@ -2252,6 +2256,11 @@ google-cloud-sdk/lib/surface/config/unset.pyc
 google-cloud-sdk/lib/surface/container/
 google-cloud-sdk/lib/surface/container/__init__.py
 google-cloud-sdk/lib/surface/container/__init__.pyc
+google-cloud-sdk/lib/surface/container/builds/
+google-cloud-sdk/lib/surface/container/builds/__init__.py
+google-cloud-sdk/lib/surface/container/builds/__init__.pyc
+google-cloud-sdk/lib/surface/container/builds/list.py
+google-cloud-sdk/lib/surface/container/builds/list.pyc
 google-cloud-sdk/lib/surface/container/clusters/
 google-cloud-sdk/lib/surface/container/clusters/__init__.py
 google-cloud-sdk/lib/surface/container/clusters/__init__.pyc
@@ -7446,6 +7455,18 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_compute_regions_describe.1
 @man man/man1/gcloud_compute_regions_list.1
 @man man/man1/gcloud_compute_reset-windows-password.1
+@man man/man1/gcloud_compute_routers.1
+@man man/man1/gcloud_compute_routers_add-bgp-peer.1
+@man man/man1/gcloud_compute_routers_add-interface.1
+@man man/man1/gcloud_compute_routers_create.1
+@man man/man1/gcloud_compute_routers_delete.1
+@man man/man1/gcloud_compute_routers_describe.1
+@man man/man1/gcloud_compute_routers_get-status.1
+@man man/man1/gcloud_compute_routers_list.1
+@man man/man1/gcloud_compute_routers_remove-bgp-peer.1
+@man man/man1/gcloud_compute_routers_remove-interface.1
+@man man/man1/gcloud_compute_routers_update-bgp-peer.1
+@man man/man1/gcloud_compute_routers_update-interface.1
 @man man/man1/gcloud_compute_routes.1
 @man man/man1/gcloud_compute_routes_create.1
 @man man/man1/gcloud_compute_routes_delete.1
