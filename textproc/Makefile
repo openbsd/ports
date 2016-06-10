@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.501 2016/05/21 05:58:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.502 2016/06/10 13:01:07 awolk Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -41,6 +41,7 @@
      SUBDIR += extract_url
      SUBDIR += fcbanner
      SUBDIR += filepp
+     SUBDIR += fragistics
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
