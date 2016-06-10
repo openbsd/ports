@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/06/05 10:49:04 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2016/06/10 02:30:43 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -13,6 +13,7 @@ PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
 REVISION-main=		0
+REVISION-pulse=		0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -32,7 +33,7 @@ WANTLIB-main += v4l2 v4lconvert
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-WANTLIB += estdc++
+WANTLIB-main += estdc++
 .endif
 
 WANTLIB-pulse += ${WANTLIB}
