@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2016/05/27 06:28:21 robert Exp $
+@comment $OpenBSD: PLIST,v 1.60 2016/06/10 05:15:55 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -213,6 +213,7 @@ chrome/resources/inspector/timeline_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy_module.js
+chrome/shell_resources.pak
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png
