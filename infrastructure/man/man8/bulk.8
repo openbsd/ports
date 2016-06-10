@@ -1,4 +1,4 @@
-.\"	$OpenBSD: bulk.8,v 1.1 2016/06/10 15:35:56 espie Exp $
+.\"	$OpenBSD: bulk.8,v 1.2 2016/06/10 15:37:00 espie Exp $
 .\"
 .\"	Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -26,15 +26,15 @@ They are:
 .Pp
 .Bl -enum -compact -offset indent
 .It
-Choose master machine setup and create partitions
+Choose master machine setup and create partitions.
 .It
-Setup chrooted builds on the master
+Setup chrooted builds on the master.
 .It
-Add slaves and do a full bulk
+Add slaves and do a full bulk.
 .It
 Clean up and do subsequent bulks.
 .It
-Perform additional maintenance
+Perform additional maintenance.
 .El
 
 .Ss 1. Choose master machine setup and create partitions
@@ -192,4 +192,5 @@ should be run occasionally to find out conflicts and dependency issues.
 .Xr proot 1 ,
 .Xr register-plist 1 ,
 .Xr tmux 1 ,
-.Xr bsd.port.mk 5
+.Xr bsd.port.mk 5 ,
+.Xr release 8
