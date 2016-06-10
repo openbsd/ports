@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/16 21:37:45 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/10 20:48:30 jeremy Exp $
 ${GEM_BIN}/puma${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pumactl${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/DEPLOYMENT.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
@@ -19,6 +18,7 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/
 ${GEM_LIB}/gems/${DISTNAME}/docs/config.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/nginx.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/signals.md
+${GEM_LIB}/gems/${DISTNAME}/docs/systemd.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma.rb
@@ -26,7 +26,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/accept_nonblock.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/app/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/app/status.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/binder.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/capistrano.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/cluster.rb
@@ -35,6 +34,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/const.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/control_cli.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/convenient.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/daemon_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/delegation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/detect.rb
@@ -43,8 +43,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/events.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/io_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/java_io_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/jruby_restart.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/launcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/null_io.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/plugin/tmp_restart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/puma_http11.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/
@@ -53,11 +57,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_18.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_192.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/backports/uri/common_193.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/builder.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack/urlmap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/rack_default.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/reactor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/single.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/state_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/tcp_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/thread_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/util.rb

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/16 21:37:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/10 20:48:30 jeremy Exp $
 
 COMMENT =		simple, fast, threaded webserver for rack applications
 
-DISTNAME =		puma-2.12.1
+DISTNAME =		puma-3.4.0
 CATEGORIES =		www
 
 HOMEPAGE =		http://puma.io/
