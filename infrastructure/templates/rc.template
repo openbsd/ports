@@ -5,10 +5,11 @@ See rc.subr(8) for more information.
 -----------------------------------8<-----------------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.9 2015/12/02 10:29:09 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.10 2016/06/10 21:14:37 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=
+#daemon_rtable=0
 #daemon_timeout="30"
 #daemon_user="root"
 
@@ -27,15 +28,15 @@ daemon="${TRUEPREFIX}/bin/foobar"
 #}
 
 #rc_check() {
-#	pgrep -q -xf "^${pexp}"
+#	pgrep -T "${daemon_rtable}" -q -xf "${pexp}"
 #}
 
 #rc_reload() {
-#	pkill -HUP -xf "^${pexp}"
+#	pkill -HUP -T "${daemon_rtable}" -xf "${pexp}"
 #}
 
 #rc_stop() {
-#	pkill -xf "^${pexp}"
+#	pkill -T "${daemon_rtable}" -xf "${pexp}"
 #}
 
 #rc_post() {
