@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.31 2014/10/17 06:36:22 ajacoutot Exp $
---- src/daemon.c.orig	Thu Oct 16 19:46:52 2014
-+++ src/daemon.c	Fri Oct 17 08:33:27 2014
+$OpenBSD: patch-src_daemon_c,v 1.32 2016/06/10 15:17:36 ajacoutot Exp $
+--- src/daemon.c.orig	Wed Feb 25 14:51:44 2015
++++ src/daemon.c	Fri Jun 10 16:43:03 2016
 @@ -33,6 +33,10 @@
  #include <errno.h>
  #include <sys/types.h>
@@ -24,7 +24,7 @@ $OpenBSD: patch-src_daemon_c,v 1.31 2014/10/17 06:36:22 ajacoutot Exp $
  #define PATH_GROUP "/etc/group"
  #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
  
-@@ -881,7 +889,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -877,7 +885,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_daemon_c,v 1.31 2014/10/17 06:36:22 ajacoutot Exp $
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -898,9 +910,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -894,9 +906,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = ADMIN_GROUP;
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_daemon_c,v 1.31 2014/10/17 06:36:22 ajacoutot Exp $
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1087,6 +1107,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1083,6 +1103,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -89,7 +89,7 @@ $OpenBSD: patch-src_daemon_c,v 1.31 2014/10/17 06:36:22 ajacoutot Exp $
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          if (daemon->priv->autologin != NULL) {
-@@ -1112,11 +1160,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1108,11 +1156,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
