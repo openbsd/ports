@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/06/07 03:28:47 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.18 2016/06/11 15:50:40 jca Exp $
 
 COMMENT =		browse and download YouTube videos
 
@@ -31,7 +31,7 @@ NO_TEST =		Yes
 
 ALL_TARGET =		src/smtube
 
-MAKE_FLAGS =		QMAKE=${LOCALBASE}/bin/qmake-qt5 \
-			LRELEASE=${LOCALBASE}/bin/lrelease-qt5
+MAKE_FLAGS =		QMAKE=${MODQT_QMAKE} \
+			LRELEASE=${MODQT_LRELEASE}
 
 .include <bsd.port.mk>

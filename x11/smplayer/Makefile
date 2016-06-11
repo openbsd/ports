@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/15 15:11:38 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.26 2016/06/11 15:50:40 jca Exp $
 
 COMMENT =		complete front-end for MPlayer
 
@@ -32,7 +32,7 @@ NO_TEST =		Yes
 
 ALL_TARGET =		src/smplayer
 
-MAKE_FLAGS =		QMAKE=${LOCALBASE}/bin/qmake4 \
-			LRELEASE=${LOCALBASE}/bin/lrelease4
+MAKE_FLAGS =		QMAKE=${MODQT_QMAKE} \
+			LRELEASE=${MODQT_LRELEASE}
 
 .include <bsd.port.mk>
