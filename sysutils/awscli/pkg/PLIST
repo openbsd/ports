@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/05/21 06:54:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/06/11 09:50:15 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -300,8 +300,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-account.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-api-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-api-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-authorizers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-base-path-mapping.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-base-path-mappings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-client-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-deployments.rst
@@ -675,6 +678,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-i
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-route-tables.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-instance-availability.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-group-references.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshots.rst
@@ -684,6 +688,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-fleet
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-fleet-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-instance-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-price-history.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-stale-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-subnets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-attribute.rst
@@ -709,6 +714,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
