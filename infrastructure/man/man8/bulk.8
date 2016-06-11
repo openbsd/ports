@@ -1,4 +1,4 @@
-.\"	$OpenBSD: bulk.8,v 1.2 2016/06/10 15:37:00 espie Exp $
+.\"	$OpenBSD: bulk.8,v 1.3 2016/06/11 09:54:20 espie Exp $
 .\"
 .\"	Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-.Dd $Mdocdate: June 10 2016 $
+.Dd $Mdocdate: June 11 2016 $
 .Dt BULK 8
 .Os
 .Sh NAME
@@ -101,7 +101,7 @@ is run as root and drops permissions appropriately.
 .Ss 2. Setup chrooted builds on the master
 Populate the initial chroot with
 .Xr proot 1 .
-Point DISTFILES , PACKAGE_REPOSITORY, PLIST_REPOSITORY, WRKOBJDIR
+Point DISTDIR, PACKAGE_REPOSITORY, PLIST_REPOSITORY, WRKOBJDIR
 to appropriate locations.
 .Pp
 Pay attention to nodev and wxallowed warnings.
