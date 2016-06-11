@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/10 07:44:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2016/06/11 17:06:07 jca Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -37,7 +37,7 @@ RUN_DEPENDS =		audio/celt07 \
 			x11/gtk+3,-guic
 
 MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
-			QMAKE_LRELEASE=${LOCALBASE}/bin/lrelease4 \
+			QMAKE_LRELEASE=${MODQT_LRELEASE} \
 			CONFIG+=no-11x \
 			CONFIG+=no-alsa \
 			CONFIG+=no-bonjour \
@@ -64,7 +64,7 @@ NO_TEST =		Yes
 
 pre-build:
 	cd ${WRKSRC}/src/mumble/ && QTDIR=${WRKDIR}/bin \
-		${LOCALBASE}/bin/lrelease4 *.ts
+		${MODQT_LRELEASE} *.ts
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/release/mumble \
