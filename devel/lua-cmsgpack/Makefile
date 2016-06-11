@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/11 14:10:06 jca Exp $
 
 COMMENT=	MessagePack implementation and bindings for Lua
 
 DISTNAME=	lua-cmsgpack-0.3.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
