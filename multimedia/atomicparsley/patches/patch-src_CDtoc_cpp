@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_CDtoc_cpp,v 1.1 2016/06/11 22:11:53 sthen Exp $
+--- src/CDtoc.cpp.orig	Sat Jun 11 23:06:27 2016
++++ src/CDtoc.cpp	Sat Jun 11 23:06:38 2016
+@@ -71,7 +71,7 @@ CD_TOC_* cdTOC = NULL;
+ 	uint8_t LEADOUT_TRACK_NUMBER = MACOSX_LEADOUT_TRACK;
+ #elif defined (HAVE_LINUX_CDROM_H)
+ 	uint8_t LEADOUT_TRACK_NUMBER = CDROM_LEADOUT;
+-#elif defined (_WIN32)
++#else
+ 	uint8_t LEADOUT_TRACK_NUMBER = 0xAA; //NOTE: for WinXP IOCTL_CDROM_READ_TOC_EX code, its 0xA2
+ #endif
+ 
