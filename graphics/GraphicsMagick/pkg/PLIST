@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/05/13 09:41:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/06/11 11:48:17 sthen Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -221,8 +221,6 @@ lib/GraphicsMagick/modules-Q16/coders/ps2.la
 lib/GraphicsMagick/modules-Q16/coders/ps2.so
 lib/GraphicsMagick/modules-Q16/coders/ps3.la
 lib/GraphicsMagick/modules-Q16/coders/ps3.so
-lib/GraphicsMagick/modules-Q16/coders/psd.la
-lib/GraphicsMagick/modules-Q16/coders/psd.so
 lib/GraphicsMagick/modules-Q16/coders/pwp.la
 lib/GraphicsMagick/modules-Q16/coders/pwp.so
 lib/GraphicsMagick/modules-Q16/coders/rgb.la
@@ -341,6 +339,8 @@ share/doc/GraphicsMagick/ChangeLog.2010
 share/doc/GraphicsMagick/ChangeLog.2011
 share/doc/GraphicsMagick/ChangeLog.2012
 share/doc/GraphicsMagick/ChangeLog.2013
+share/doc/GraphicsMagick/ChangeLog.2014
+share/doc/GraphicsMagick/ChangeLog.2015
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -358,6 +358,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2011.html
 share/doc/GraphicsMagick/www/ChangeLog-2012.html
 share/doc/GraphicsMagick/www/ChangeLog-2013.html
 share/doc/GraphicsMagick/www/ChangeLog-2014.html
+share/doc/GraphicsMagick/www/ChangeLog-2015.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
