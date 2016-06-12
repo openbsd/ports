@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/12 05:43:31 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/12 05:44:46 jca Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -31,8 +31,7 @@ LIB_DEPENDS +=	audio/mpg123 \
 		audio/taglib \
 		devel/libmtp \
 		devel/qjson \
-		graphics/ffmpeg \
-		x11/qt4
+		graphics/ffmpeg
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtSvg QtXml SM X11 Xext
 WANTLIB += avcodec avformat avutil c cdda_interface cdda_paranoia
