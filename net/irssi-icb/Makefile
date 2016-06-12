@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2016/06/12 06:32:15 mglocker Exp $
 
 COMMENT=	ICB plugin for irssi
 
@@ -7,6 +7,7 @@ GH_PROJECT=	irssi-icb
 GH_COMMIT=	8f7060835355d5f620a5d3b75a45336ab8efefd9
 
 DISTNAME=	irssi-icb-0.16pre20160307
+REVISION=	0
 
 CATEGORIES=     net
 
