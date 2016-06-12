@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/11 15:24:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/12 12:57:04 jca Exp $
 
 COMMENT =		seafile client
 
@@ -16,6 +16,6 @@ RUN_DEPENDS = 		devel/desktop-file-utils \
 NO_TEST =		Yes
 
 post-configure:
-	cd ${WRKSRC}/i18n/ && lrelease4 *.ts
+	cd ${WRKSRC}/i18n/ && ${MODQT_LRELEASE} *.ts
 
 .include <bsd.port.mk>
