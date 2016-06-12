@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/06/09 04:20:10 semarie Exp $
+# $OpenBSD: Makefile,v 1.25 2016/06/12 13:07:42 sthen Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -38,7 +38,9 @@ MASTER_SITES0 =		http://semarie.free.fr/rust/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+.if "${MACHINE_ARCH}" == "amd64"
 DISTFILES +=		rustc-bootstrap-${MACHINE_ARCH}-${BV}.tar.gz:0
+.endif
 
 SUPDISTFILES =		rustc-bootstrap-amd64-${BV}.tar.gz:0
 
