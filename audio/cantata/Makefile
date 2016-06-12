@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/12 20:44:29 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/12 05:43:31 jca Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -40,7 +40,7 @@ WANTLIB += cddb m mpg123 mtp musicbrainz5 pthread qjson speexdsp
 WANTLIB += tag z
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
-			-DLRELEASE_EXECUTABLE:String=lrelease4 \
+			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
 			-DLCONVERT_EXECUTABLE:String=lconvert4
 
 .include <bsd.port.mk>
