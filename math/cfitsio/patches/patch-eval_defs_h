@@ -1,0 +1,13 @@
+$OpenBSD: patch-eval_defs_h,v 1.1 2016/06/13 19:59:25 landry Exp $
+--- eval_defs.h.orig	Mon Jun 13 13:35:33 2016
++++ eval_defs.h	Mon Jun 13 13:35:50 2016
+@@ -5,9 +5,6 @@
+ #if defined(__sgi) || defined(__hpux)
+ #include <alloca.h>
+ #endif
+-#ifdef sparc
+-#include <malloc.h>
+-#endif
+ #include "fitsio2.h"
+ 
+ #ifndef FFBISON

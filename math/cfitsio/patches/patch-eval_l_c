@@ -1,0 +1,15 @@
+$OpenBSD: patch-eval_l_c,v 1.1 2016/06/13 19:59:25 landry Exp $
+--- eval_l.c.orig	Mon Jun 13 13:34:54 2016
++++ eval_l.c	Mon Jun 13 13:35:07 2016
+@@ -560,11 +560,7 @@ char *fftext;
+ #include <math.h>
+ #include <string.h>
+ #include <ctype.h>
+-#ifdef sparc
+-#include <malloc.h>
+-#else
+ #include <stdlib.h>
+-#endif
+ #include "eval_defs.h"
+ 
+ ParseData gParse;     /* Global structure holding all parser information     */

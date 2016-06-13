@@ -1,0 +1,15 @@
+$OpenBSD: patch-grparser_c,v 1.1 2016/06/13 19:59:25 landry Exp $
+--- grparser.c.orig	Mon Jun 13 13:39:07 2016
++++ grparser.c	Mon Jun 13 13:39:23 2016
+@@ -70,11 +70,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-#ifdef sparc
+-#include <malloc.h>
+-#include <memory.h>
+-#endif
+-
+ #include <string.h>
+ #include "fitsio2.h"
+ #include "grparser.h"
