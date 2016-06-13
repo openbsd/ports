@@ -1,0 +1,25 @@
+$OpenBSD: patch-par1repairer_cpp,v 1.3 2016/06/13 17:32:27 semarie Exp $
+
+pledge:
+    'par2 repair' with par1 files - stdio rpath cpath
+        once the target files have been opened for writing, wpath is no
+        longer required, cpath must be kept to delete partial files in
+        case of an error
+
+--- par1repairer.cpp.orig	Wed Jun  8 23:41:11 2016
++++ par1repairer.cpp	Wed Jun  8 23:42:01 2016
+@@ -157,6 +157,14 @@ Result Par1Repairer::Process(const CommandLine &comman
+         if (!CreateTargetFiles())
+           return eFileIOError;
+ 
++#ifdef HAVE_PLEDGE
++        if (pledge("stdio rpath cpath", NULL) == -1)
++        {
++          cerr << "pledge failed" << endl;
++          return eLogicError;
++        }
++#endif
++
+         // Work out which data blocks are available, which need to be recreated, 
+         // and compute the appropriate Reed Solomon matrix.
+         if (!ComputeRSmatrix())

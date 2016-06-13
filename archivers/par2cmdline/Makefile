@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/05 16:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/13 17:32:27 semarie Exp $
 
 COMMENT =	command line implementation of the PAR v2.0 specification
 
 V =		0.6.14
 DISTNAME =	par2cmdline-$V
 DISTFILES =	${DISTNAME}{v$V}.tar.gz
+REVISION =	0
 
 CATEGORIES =	archivers
 
@@ -13,6 +14,7 @@ HOMEPAGE =	https://github.com/BlackIkeEagle/par2cmdline/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =	c m stdc++
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>

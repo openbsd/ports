@@ -1,0 +1,57 @@
+$OpenBSD: patch-par2cmdline_cpp,v 1.1 2016/06/13 17:32:27 semarie Exp $
+
+pledge:
+    'par2 create' - stdio rpath wpath cpath
+        creates and writes par files
+
+    'par2 repair' - stdio rpath wpath cpath
+        renames and deletes partial/damaged files, writes repaired files
+
+    'par2 verify' - stdio rpath cpath
+        may delete par files, only if -p option was given, otherwise
+        cpath is not required
+
+--- par2cmdline.cpp.orig	Wed Jun  8 23:31:42 2016
++++ par2cmdline.cpp	Wed Jun  8 23:38:36 2016
+@@ -34,6 +34,14 @@ int main(int argc, char *argv[])
+   _CrtSetDbgFlag(_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG) | _CRTDBG_ALLOC_MEM_DF | /*_CRTDBG_CHECK_CRT_DF | */_CRTDBG_DELAY_FREE_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+ #endif
+ 
++#ifdef HAVE_PLEDGE
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    cerr << "pledge failed" << endl;
++    return eLogicError;
++  }
++#endif
++
+   // Parse the command line
+   CommandLine *commandline = new CommandLine;
+ 
+@@ -55,6 +63,26 @@ int main(int argc, char *argv[])
+         break;
+       case CommandLine::opVerify:
+         {
++#ifdef HAVE_PLEDGE
++          if (!commandline->GetPurgeFiles())
++          {
++            if (pledge("stdio rpath", NULL) == -1)
++            {
++              cerr << "pledge failed" << endl;
++              result = eLogicError;
++              break;
++            }
++          }
++          else
++          {
++            if (pledge("stdio rpath cpath", NULL) == -1)
++            {
++              cerr << "pledge failed" << endl;
++              result = eLogicError;
++              break;
++            }
++          }
++#endif
+           // Verify damaged files
+           switch (commandline->GetVersion())
+           {
