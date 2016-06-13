@@ -1,266 +1,46 @@
-$OpenBSD: patch-cmake_modules_TpQtMacros_cmake,v 1.3 2014/11/01 20:43:26 zhuk Exp $
+$OpenBSD: patch-cmake_modules_TpQtMacros_cmake,v 1.4 2016/06/13 08:27:42 jasper Exp $
 
 1. Unbreak building with Ninja generator.
-https://bugs.freedesktop.org/show_bug.cgi?id=65981
+https://cgit.freedesktop.org/telepathy/telepathy-qt/commit/?id=d9354dfe8cca364e4a8c3a44c302ceb714c53911
 
 2. Fix linking order.
 
---- cmake/modules/TpQtMacros.cmake.orig	Tue Sep  9 02:13:43 2014
-+++ cmake/modules/TpQtMacros.cmake	Mon Oct  6 00:07:12 2014
-@@ -217,20 +217,26 @@ function(tpqt_client_generator spec group pretty_inclu
-             --must-define=IN_TP_QT_HEADER
-             --visibility=TP_QT_EXPORT
-             ${client_generator_args})
--    add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp
--        COMMAND ${PYTHON_EXECUTABLE}
--        ARGS ${ARGS}
--        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+--- cmake/modules/TpQtMacros.cmake.orig	Tue Sep  9 00:13:43 2014
++++ cmake/modules/TpQtMacros.cmake	Mon Jun 13 10:01:38 2016
+@@ -223,7 +223,9 @@ function(tpqt_client_generator spec group pretty_inclu
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
  
--        DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
+         DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
 -                ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py)
--    add_custom_target(generate_cli-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp)
--    add_dependencies(all-generated-sources generate_cli-${spec}-body)
--
-     if (client_generator_depends)
--        add_dependencies(generate_cli-${spec}-body ${client_generator_depends})
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py ${client_generator_depends})
-+    else (client_generator_depends)
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py)
-     endif (client_generator_depends)
++                ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/stable-spec.xml
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/spec-${spec}.xml)
+     add_custom_target(generate_cli-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp)
+     add_dependencies(all-generated-sources generate_cli-${spec}-body)
  
-+    add_custom_target(generate_cli-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}-body.hpp)
-+    add_dependencies(all-generated-sources generate_cli-${spec}-body)
-+
-     tpqt_generate_moc_i_target_deps(${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}.h
-                        ${CMAKE_CURRENT_BINARY_DIR}/_gen/cli-${spec}.moc.hpp
-                        "generate_cli-${spec}-body")
-@@ -253,20 +259,26 @@ function(tpqt_future_client_generator spec namespace)
-             --extraincludes='<TelepathyQt/future-internal.h>'
-             --visibility=TP_QT_NO_EXPORT
-             ${future_client_generator_args})
--    add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp
--        COMMAND ${PYTHON_EXECUTABLE}
--        ARGS ${ARGS}
--        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+@@ -259,7 +261,9 @@ function(tpqt_future_client_generator spec namespace)
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
  
--        DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
+         DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
 -                ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py)
--    add_custom_target(generate_future-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp)
--    add_dependencies(all-generated-sources generate_future-${spec}-body)
--
-     if (future_client_generator_depends)
--        add_dependencies(generate_future-${spec}-body ${future_client_generator_depends})
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py ${future_client_generator_depends})
-+    else (future_client_generator_depends)
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py)
-     endif (future_client_generator_depends)
++                ${CMAKE_SOURCE_DIR}/tools/qt-client-gen.py
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-spec.xml
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.xml)
+     add_custom_target(generate_future-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp)
+     add_dependencies(all-generated-sources generate_future-${spec}-body)
  
-+    add_custom_target(generate_future-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}-body.hpp)
-+    add_dependencies(all-generated-sources generate_future-${spec}-body)
-+
-     tpqt_generate_moc_i_target_deps(${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.h
-                        ${CMAKE_CURRENT_BINARY_DIR}/_gen/future-${spec}.moc.hpp
-                        "generate_future-${spec}-body")
-@@ -288,20 +300,26 @@ function(tpqt_service_generator spec group pretty_incl
-             --ifacexml=${CMAKE_CURRENT_BINARY_DIR}/_gen/spec-svc-${spec}.xml
-             --visibility=TP_QT_EXPORT
-             ${service_generator_args})
--    add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp
--        COMMAND ${PYTHON_EXECUTABLE}
--        ARGS ${ARGS}
--        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+@@ -294,7 +298,9 @@ function(tpqt_service_generator spec group pretty_incl
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
  
--        DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
+         DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
 -                ${CMAKE_SOURCE_DIR}/tools/qt-svc-gen.py)
--    add_custom_target(generate_service-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp)
--    add_dependencies(all-generated-service-sources generate_service-${spec}-body)
--
-     if (service_generator_depends)
--        add_dependencies(generate_service-${spec}-body ${service_generator_depends})
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-svc-gen.py ${service_generator_depends})
-+    else (service_generator_depends)
-+        add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.h ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp
-+            COMMAND ${PYTHON_EXECUTABLE}
-+            ARGS ${ARGS}
-+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-+            DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                    ${CMAKE_SOURCE_DIR}/tools/qt-svc-gen.py)
-     endif (service_generator_depends)
++                ${CMAKE_SOURCE_DIR}/tools/qt-svc-gen.py
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/stable-spec.xml
++                ${CMAKE_CURRENT_BINARY_DIR}/_gen/spec-svc-${spec}.xml)
+     add_custom_target(generate_service-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp)
+     add_dependencies(all-generated-service-sources generate_service-${spec}-body)
  
-+    add_custom_target(generate_service-${spec}-body DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.cpp)
-+    add_dependencies(all-generated-service-sources generate_service-${spec}-body)
-+
-     tpqt_generate_moc_i_target_deps(${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.h
-                        ${CMAKE_CURRENT_BINARY_DIR}/_gen/svc-${spec}.moc.hpp
-                        "generate_service-${spec}-body")
-@@ -331,22 +349,27 @@ function(tpqt_xincludator _TARGET_NAME _INPUT_FILE _OU
-     # Gather all .xml files in TelepathyQt and spec/ and make this target depend on those
-     file(GLOB depends_xml_files ${CMAKE_SOURCE_DIR}/TelepathyQt/*.xml ${CMAKE_SOURCE_DIR}/spec/*.xml)
- 
--    add_custom_command(OUTPUT ${_OUTPUT_FILE}
--
--                       COMMAND ${PYTHON_EXECUTABLE}
--
--                       ARGS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
--                            ${_INPUT_FILE}
--                            ${xincludator_gen_args}
--                            > ${_OUTPUT_FILE}
--
--                       DEPENDS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
--                               ${_INPUT_FILE} ${depends_xml_files})
--    add_custom_target(${_TARGET_NAME} DEPENDS ${_OUTPUT_FILE})
--
-     if (xincludator_gen_depends)
--        add_dependencies(${_TARGET_NAME} ${xincludator_gen_depends})
-+        add_custom_command(OUTPUT ${_OUTPUT_FILE}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
-+                                ${_INPUT_FILE}
-+                                ${xincludator_gen_args}
-+                                > ${_OUTPUT_FILE}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
-+                                   ${_INPUT_FILE} ${depends_xml_files} ${xincludator_gen_depends})
-+    else (xincludator_gen_depends)
-+        add_custom_command(OUTPUT ${_OUTPUT_FILE}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
-+                                ${_INPUT_FILE}
-+                                ${xincludator_gen_args}
-+                                > ${_OUTPUT_FILE}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/xincludator.py
-+                                   ${_INPUT_FILE} ${depends_xml_files})
-     endif (xincludator_gen_depends)
-+
-+    add_custom_target(${_TARGET_NAME} DEPENDS ${_OUTPUT_FILE})
- endfunction(tpqt_xincludator _TARGET_NAME _INPUT_FILE _OUTPUT_FILE)
- 
- function(tpqt_constants_gen _TARGET_NAME _SPEC_XML _OUTFILE)
-@@ -354,24 +377,30 @@ function(tpqt_constants_gen _TARGET_NAME _SPEC_XML _OU
-     # Gather all .xml files in TelepathyQt and spec/ and make this target depend on those
-     file(GLOB depends_xml_files ${CMAKE_SOURCE_DIR}/TelepathyQt/*.xml ${CMAKE_SOURCE_DIR}/spec/*.xml)
- 
--    add_custom_command(OUTPUT ${_OUTFILE}
-+    if (constants_gen_depends)
-+        add_custom_command(OUTPUT ${_OUTFILE}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS    ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
-+                                   ${constants_gen_args}
-+                                   --specxml=${_SPEC_XML}
-+                                   > ${_OUTFILE}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                                   ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
-+                                   ${_SPEC_XML} ${depends_xml_files} ${constants_gen_depends})
-+    else (constants_gen_depends)
-+        add_custom_command(OUTPUT ${_OUTFILE}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS    ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
-+                                   ${constants_gen_args}
-+                                   --specxml=${_SPEC_XML}
-+                                   > ${_OUTFILE}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                                   ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
-+                                   ${_SPEC_XML} ${depends_xml_files})
-+    endif (constants_gen_depends)
- 
--                       COMMAND ${PYTHON_EXECUTABLE}
--
--                       ARGS    ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
--                               ${constants_gen_args}
--                               --specxml=${_SPEC_XML}
--                               > ${_OUTFILE}
--
--                       DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
--                               ${CMAKE_SOURCE_DIR}/tools/qt-constants-gen.py
--                               ${_SPEC_XML} ${depends_xml_files})
-     add_custom_target(${_TARGET_NAME} DEPENDS ${_OUTFILE})
-     add_dependencies(all-generated-sources ${_TARGET_NAME})
--
--    if (constants_gen_depends)
--        add_dependencies(${_TARGET_NAME} ${constants_gen_depends})
--    endif (constants_gen_depends)
- endfunction (tpqt_constants_gen _TARGET_NAME _SPEC_XML _OUTFILE)
- 
- function(tpqt_types_gen _TARGET_NAME _SPEC_XML _OUTFILE_DECL _OUTFILE_IMPL _NAMESPACE _REALINCLUDE _PRETTYINCLUDE)
-@@ -379,32 +408,52 @@ function(tpqt_types_gen _TARGET_NAME _SPEC_XML _OUTFIL
-     # Gather all .xml files in TelepathyQt and spec/ and make this target depend on those
-     file(GLOB depends_xml_files ${CMAKE_SOURCE_DIR}/TelepathyQt/*.xml ${CMAKE_SOURCE_DIR}/spec/*.xml)
- 
--    add_custom_command(OUTPUT ${_OUTFILE_DECL} ${_OUTFILE_IMPL}
--                       COMMAND ${PYTHON_EXECUTABLE}
--                       ARGS ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
--                            --namespace=${_NAMESPACE}
--                            --declfile=${_OUTFILE_DECL}
--                            --implfile=${_OUTFILE_IMPL}
--                            --realinclude=${_REALINCLUDE}
--                            --prettyinclude=${_PRETTYINCLUDE}
--                            ${types_gen_args}
--                            --specxml=${_SPEC_XML}
-+    if (types_gen_depends)
-+        add_custom_command(OUTPUT ${_OUTFILE_DECL} ${_OUTFILE_IMPL}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
-+                                --namespace=${_NAMESPACE}
-+                                --declfile=${_OUTFILE_DECL}
-+                                --implfile=${_OUTFILE_IMPL}
-+                                --realinclude=${_REALINCLUDE}
-+                                --prettyinclude=${_PRETTYINCLUDE}
-+                                ${types_gen_args}
-+                                --specxml=${_SPEC_XML}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                                   ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
-+                                   ${_SPEC_XML} ${depends_xml_files} ${types_gen_depends})
-+    else (types_gen_depends)
-+        add_custom_command(OUTPUT ${_OUTFILE_DECL} ${_OUTFILE_IMPL}
-+                           COMMAND ${PYTHON_EXECUTABLE}
-+                           ARGS ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
-+                                --namespace=${_NAMESPACE}
-+                                --declfile=${_OUTFILE_DECL}
-+                                --implfile=${_OUTFILE_IMPL}
-+                                --realinclude=${_REALINCLUDE}
-+                                --prettyinclude=${_PRETTYINCLUDE}
-+                                ${types_gen_args}
-+                                --specxml=${_SPEC_XML}
-+                           DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
-+                                   ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
-+                                   ${_SPEC_XML} ${depends_xml_files})
-+    endif (types_gen_depends)
- 
--                       DEPENDS ${CMAKE_SOURCE_DIR}/tools/libqtcodegen.py
--                               ${CMAKE_SOURCE_DIR}/tools/qt-types-gen.py
--                               ${_SPEC_XML} ${depends_xml_files})
-     add_custom_target(${_TARGET_NAME} DEPENDS ${_OUTFILE_IMPL})
-     add_dependencies(all-generated-sources ${_TARGET_NAME})
--
--    if (types_gen_depends)
--        add_dependencies(${_TARGET_NAME} ${types_gen_depends})
--    endif (types_gen_depends)
- endfunction(tpqt_types_gen _TARGET_NAME _SPEC_XML _OUTFILE_DECL _OUTFILE_IMPL _NAMESPACE _REALINCLUDE _PRETTYINCLUDE)
- 
+@@ -404,7 +410,15 @@ endfunction(tpqt_types_gen _TARGET_NAME _SPEC_XML _OUT
  macro(tpqt_add_generic_unit_test _fancyName _name)
      tpqt_generate_moc_i(${_name}.cpp ${CMAKE_CURRENT_BINARY_DIR}/_gen/${_name}.cpp.moc.hpp)
      add_executable(test-${_name} ${_name}.cpp ${CMAKE_CURRENT_BINARY_DIR}/_gen/${_name}.cpp.moc.hpp)
@@ -277,7 +57,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=65981
      add_test(${_fancyName} ${SH} ${CMAKE_CURRENT_BINARY_DIR}/runGenericTest.sh ${CMAKE_CURRENT_BINARY_DIR}/test-${_name})
      list(APPEND _telepathy_qt_test_cases test-${_name})
  
-@@ -415,7 +464,17 @@ endmacro(tpqt_add_generic_unit_test _fancyName _name)
+@@ -415,7 +429,17 @@ endmacro(tpqt_add_generic_unit_test _fancyName _name)
  macro(tpqt_add_dbus_unit_test _fancyName _name)
      tpqt_generate_moc_i(${_name}.cpp ${CMAKE_CURRENT_BINARY_DIR}/_gen/${_name}.cpp.moc.hpp)
      add_executable(test-${_name} ${_name}.cpp ${CMAKE_CURRENT_BINARY_DIR}/_gen/${_name}.cpp.moc.hpp)
@@ -286,7 +66,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=65981
 +      ${TP_QT_EXECUTABLE_LINKER_FLAGS}
 +      ${ARGN}
 +      tp-qt-tests
-+      telepathy-qt${QT_VERSION_MAJOR}
++      telepathy-qt${QT_VERSION_MAJOR}   
 +      ${QT_QTTEST_LIBRARY}
 +      ${QT_QTDBUS_LIBRARY}
 +      ${QT_QTXML_LIBRARY}
