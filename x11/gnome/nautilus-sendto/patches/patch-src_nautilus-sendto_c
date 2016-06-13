@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_nautilus-sendto_c,v 1.4 2016/06/13 09:05:55 ajacoutot Exp $
+
+nautilus-sendto.c:383: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-sendto.c:384: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-sendto.c:387: error: #pragma GCC diagnostic not allowed inside functions
+
+--- src/nautilus-sendto.c.orig	Mon Jun 13 11:04:02 2016
++++ src/nautilus-sendto.c	Mon Jun 13 11:04:15 2016
+@@ -380,11 +380,8 @@ send_files (NautilusSendto *nst)
+ 		get_evo_mailto (mailto, nst->file_list);
+ 	}
+ 
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+ 	cmd = g_strdup_printf (nst->mail_cmd, mailto->str);
+ 	g_string_free (mailto, TRUE);
+-#pragma GCC diagnostic pop
+ 
+ 	g_debug ("Mailer type: %d", nst->type);
+ 	g_debug ("Command: %s", cmd);
