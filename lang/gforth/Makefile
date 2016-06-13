@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/28 18:34:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/06/13 11:22:09 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT =		ANSI/200x Forth interpreter and compiler
 
 V =			0.7.3
 DISTNAME =		gforth-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.gnu.org/software/gforth/
@@ -25,8 +25,8 @@ LIB_DEPENDS =		devel/ffcall \
 			devel/libtool,-ltdl
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I/usr/local/include" \
-			LDFLAGS="-L/usr/local/lib"
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-z,wxneeded"
 
 CFLAGS +=		-Dunix
 FAKE_FLAGS+=		DESTDIR="${WRKINST}"
