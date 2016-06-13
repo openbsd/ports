@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.403 2016/06/06 13:37:35 dcoppa Exp $
+# $OpenBSD: Quirks.pm,v 1.404 2016/06/13 09:25:09 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -406,7 +406,6 @@ my $stem_extensions = {
 	'letsencrypt' => 'certbot',
 };
 
-# reasons for obsolete packages
 my $obsolete_reason = {
 	'BitTorrent' => 0,
 	'BitTorrent-gui' => 0,
@@ -805,6 +804,7 @@ my $obsolete_reason = {
 	'mod_perl' => 6,
 	'ocamlduce' => 0,
 	'yt' => 0,
+	'gmime-sharp' => 6,
 
 # KDE3 removals
 	'amarok' => 2,
@@ -825,6 +825,7 @@ my $obsolete_reason = {
 	'taskjuggler' => 6,
 };
 
+# reasons for obsolete packages
 my @msg = (
 	"ancient software that doesn't work", #0
 	"web application with no benefit being packaged", #1
