@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/04/27 12:05:02 shadchin Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/06/13 11:16:53 shadchin Exp $
 bin/epylint${MODPY_BIN_SUFFIX}
 bin/pylint${MODPY_BIN_SUFFIX}
 bin/pyreverse${MODPY_BIN_SUFFIX}
@@ -767,6 +767,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0705.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0801.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_with_without_as_py25.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/
+lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/.pylintrc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/absimp/
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/absimp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/absimp/string.py
@@ -782,9 +783,11 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/dummy/__init_
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/dummy/another.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/dummy/dummy.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/html_crash_420.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/huge.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/import_assign.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/import_package_subpackage_module.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/import_something.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/meta.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/module_global.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/no_stdout_encoding.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/numarray_import.py

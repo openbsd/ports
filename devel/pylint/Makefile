@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/27 12:05:02 shadchin Exp $
+# $OpenBSD: Makefile,v 1.17 2016/06/13 11:16:53 shadchin Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-MODPY_EGG_VERSION=	1.5.5
+MODPY_EGG_VERSION=	1.5.6
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
@@ -23,12 +23,12 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR} \
-			devel/py-astroid${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
-TEST_DEPENDS=		${RUN_DEPENDS}
+TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-logilab-common${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
