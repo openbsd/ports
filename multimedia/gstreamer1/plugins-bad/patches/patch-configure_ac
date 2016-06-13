@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.10 2016/04/10 10:13:58 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.11 2016/06/13 11:15:27 ajacoutot Exp $
 
 XXX: Short cut check for shm_open(3).
 Remove when/if we have librt.
 
---- configure.ac.orig	Thu Mar 24 09:49:23 2016
-+++ configure.ac	Sat Apr  9 11:33:10 2016
-@@ -1793,6 +1793,9 @@ AG_GST_CHECK_FEATURE(SHM, [POSIX shared memory source 
-             AC_DEFINE(HAVE_OSX,[1],[Apple Mac OS X operating system detected])
+--- configure.ac.orig	Thu Jun  9 09:09:24 2016
++++ configure.ac	Mon Jun 13 12:38:58 2016
+@@ -1796,6 +1796,9 @@ AG_GST_CHECK_FEATURE(SHM, [POSIX shared memory source 
+         *-*-OpenBSD*)
              HAVE_SHM=yes
              ;;
 +	*-*-openbsd*)
