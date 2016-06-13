@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/05/22 11:31:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/06/13 09:22:10 ajacoutot Exp $
 @pkgpath mail/gmime
+@pkgpath mail/gmime,-main
 @pkgpath mail/gmime24
 @pkgpath mail/gmime24,-main
 include/gmime-2.6/
@@ -65,8 +66,6 @@ lib/libgmime-2.6.la
 lib/pkgconfig/gmime-2.6.pc
 share/gir-1.0/
 share/gir-1.0/GMime-2.6.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gmime-2.6/
 share/gtk-doc/html/gmime-2.6/CryptoContexts.html
 share/gtk-doc/html/gmime-2.6/DataWrappers.html

@@ -1,66 +1,33 @@
-# $OpenBSD: Makefile,v 1.51 2015/05/22 11:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2016/06/13 09:22:10 ajacoutot Exp $
 
-ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
+COMMENT=		MIME messages creation and parsing library
 
-COMMENT-main=	MIME messages creation and parsing library
-COMMENT-mono=	mono bindings for gmime
-
-GNOME_PROJECT=	gmime
-GNOME_VERSION=	2.6.20
-
-PKGNAME-main=	${DISTNAME}
-PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
-REVISION-main=	0
-REVISION-mono=	0
+GNOME_PROJECT=		gmime
+GNOME_VERSION=		2.6.20
+REVISION=		1
 
 SHARED_LIBS +=  gmime-2.6            0.1      # 619.0
 
-CATEGORIES=	mail devel
+CATEGORIES=		mail devel
 
-HOMEPAGE=	http://spruce.sourceforge.net/gmime/
+HOMEPAGE=		http://spruce.sourceforge.net/gmime/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main += ${MODGETTEXT_WANTLIB}
-WANTLIB-main += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-main += pcre pthread z
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += iconv intl pcre pthread z
 
-MULTI_PACKAGES=	-main -mono
+MODULES=		x11/gnome
 
-MODULES +=	devel/gettext \
-		x11/gnome
-
-MODGNOME_TOOLS += gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 # needed to build the tests
-BUILD_DEPENDS += security/libgpg-error
+BUILD_DEPENDS +=	security/libgpg-error
 
-LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		devel/glib2
+LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_STYLE= gnu
-
-### mono subpackage
-PSEUDO_FLAVORS=	no_mono
-FLAVOR ?=
-
-MODMONO_DEPS=   No
-DLLMAP_FILES=	mono/gmime-sharp.dll.config
-
-.include <bsd.port.arch.mk>
-
-.if ${BUILD_PACKAGES:M-mono}
-MODULES+=	lang/mono
-BUILD_DEPENDS+= ${MODMONO_BUILD_DEPENDS} \
-		x11/mono-gtk2
-RUN_DEPENDS-mono= ${MODMONO_RUN_DEPENDS} \
-		x11/mono-gtk2
-LIB_DEPENDS-mono= # empty
-WANTLIB-mono=	# empty
-.else
-CONFIGURE_ARGS+= --disable-mono
-.endif
-### end of mono subpackage
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-mono
 
 .include <bsd.port.mk>
