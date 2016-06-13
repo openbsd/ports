@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_rpc_virnettlscontext_c,v 1.1 2016/06/13 08:36:34 jasper Exp $
+--- src/rpc/virnettlscontext.c.orig	Fri May 27 15:17:45 2016
++++ src/rpc/virnettlscontext.c	Fri May 27 15:22:22 2016
+@@ -45,9 +45,15 @@
+ 
+ #define DH_BITS 2048
+ 
+-#define LIBVIRT_PKI_DIR SYSCONFDIR "/pki"
+-#define LIBVIRT_CACERT LIBVIRT_PKI_DIR "/CA/cacert.pem"
+-#define LIBVIRT_CACRL LIBVIRT_PKI_DIR "/CA/cacrl.pem"
++#ifdef __OpenBSD__
++# define LIBVIRT_PKI_DIR SYSCONFDIR "/ssl"
++# define LIBVIRT_CACERT LIBVIRT_PKI_DIR "/cert.pem"
++# define LIBVIRT_CACRL LIBVIRT_PKI_DIR "/crl.pem"
++#else
++# define LIBVIRT_PKI_DIR SYSCONFDIR "/pki"
++# define LIBVIRT_CACERT LIBVIRT_PKI_DIR "/CA/cacert.pem"
++# define LIBVIRT_CACRL LIBVIRT_PKI_DIR "/CA/cacrl.pem"
++#endif
+ #define LIBVIRT_CLIENTKEY LIBVIRT_PKI_DIR "/libvirt/private/clientkey.pem"
+ #define LIBVIRT_CLIENTCERT LIBVIRT_PKI_DIR "/libvirt/clientcert.pem"
+ #define LIBVIRT_SERVERKEY LIBVIRT_PKI_DIR "/libvirt/private/serverkey.pem"
