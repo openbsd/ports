@@ -1,12 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/03 09:20:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/06/13 08:16:55 jasper Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/adhoc/
+${GEM_LIB}/gems/${DISTNAME}/adhoc/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/adhoc/README.md
+${GEM_LIB}/gems/${DISTNAME}/adhoc/issue121_01.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/issue121_01_conn.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/issue121_02.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/issue121_03.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/payload_generator.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/payload_generator_adhoctest.rb
+${GEM_LIB}/gems/${DISTNAME}/adhoc/stomp_adhoc_common.rb
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/catstomp
 ${GEM_LIB}/gems/${DISTNAME}/bin/stompcat
@@ -17,12 +27,18 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/client11_putget1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn11_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn11_ex2.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn11_hb1.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/consume_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/consumer.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/contrib.sh
+${GEM_LIB}/gems/${DISTNAME}/examples/contributors.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/examplogger.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/get11conn_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/get11conn_ex2.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/lflogger.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/logexamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/logexamp_ssl.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/publish_file.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/publish_file_conn.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/publisher.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/put11conn_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/putget11_rh1.rb
@@ -72,6 +88,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/message_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/stomp.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/test/test_anonymous.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_client.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_codec.rb
