@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/04/29 08:15:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2016/06/13 09:22:42 ajacoutot Exp $
 
 TRACKER_API=	1.0
 
@@ -6,7 +6,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.1
-REVISION=	0
+REVISION=	1
 
 API=		0.3
 SUBST_VARS=	API

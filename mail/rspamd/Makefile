@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2016/05/27 09:18:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/06/13 09:22:42 ajacoutot Exp $
 
 BROKEN-macppc=	error: unknown register name 'edx' in 'asm'
 COMMENT=	event-driven spam filtering system in C/Lua
 
 DISTNAME=	rspamd-1.2.7
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	mail
 
