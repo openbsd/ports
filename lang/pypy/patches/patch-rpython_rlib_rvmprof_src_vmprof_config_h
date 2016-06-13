@@ -1,14 +1,18 @@
-$OpenBSD: patch-rpython_rlib_rvmprof_src_vmprof_config_h,v 1.1 2016/04/19 11:14:54 edd Exp $
---- rpython/rlib/rvmprof/src/vmprof_config.h.orig	Fri Mar 18 17:52:25 2016
-+++ rpython/rlib/rvmprof/src/vmprof_config.h	Tue Apr  5 14:43:56 2016
-@@ -1,6 +1,10 @@
+$OpenBSD: patch-rpython_rlib_rvmprof_src_vmprof_config_h,v 1.2 2016/06/13 08:44:17 edd Exp $
+--- rpython/rlib/rvmprof/src/vmprof_config.h.orig	Sun Jun  5 16:45:04 2016
++++ rpython/rlib/rvmprof/src/vmprof_config.h	Sun Jun  5 16:47:15 2016
+@@ -1,10 +1,14 @@
 +#if !defined(__OpenBSD__)
  #define HAVE_SYS_UCONTEXT_H
 +#endif
- #if defined(__FreeBSD__) || defined(__APPLE__)
- #define PC_FROM_UCONTEXT uc_mcontext.mc_rip
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+   #ifdef __i386__
+     #define PC_FROM_UCONTEXT uc_mcontext.mc_eip
+   #else
+     #define PC_FROM_UCONTEXT uc_mcontext.mc_rip
+   #endif
 +#elif defined(__OpenBSD__)
 +#define PC_FROM_UCONTEXT sc_rip
- #else
- #define PC_FROM_UCONTEXT uc_mcontext.gregs[REG_RIP]
- #endif
+ #elif defined( __APPLE__)
+   #if ((ULONG_MAX) == (UINT_MAX))
+     #define PC_FROM_UCONTEXT uc_mcontext->__ss.__eip
