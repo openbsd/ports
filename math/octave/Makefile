@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2016/05/12 01:17:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.88 2016/06/13 17:42:36 jca Exp $
 
 # sparc: fPIC version of libgcc.a needed but not available
 NOT_FOR_ARCHS =	sparc
@@ -77,7 +77,7 @@ CONFIGURE_ARGS	=	--disable-java
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LRELEASE="lrelease4" \
+		LRELEASE="${MODQT_LRELEASE}" \
 		F77=${FC}
 
 # needed to build on amd64
