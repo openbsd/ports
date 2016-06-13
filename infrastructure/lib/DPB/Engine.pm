@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.120 2016/05/21 12:20:10 espie Exp $
+# $OpenBSD: Engine.pm,v 1.121 2016/06/13 13:36:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -216,7 +216,12 @@ sub missing_dep
 sub stub_out
 {
 	my ($self, $v) = @_;
+	push(@{$self->{ignored}}, $v);
+
+	# keep the info if it exists, make sure it's stubbed out otherwise
 	my $i = $v->{info};
+	$v->{info} = DPB::PortInfo->stub;
+	return if !defined $i;
 	for my $w ($v->build_path_list) {
 		# don't fill in equiv lists if they don't matter.
 		next if !defined $w->{info};
@@ -224,7 +229,6 @@ sub stub_out
 			$w->{info} = DPB::PortInfo->stub;
 		}
 	}
-	push(@{$self->{ignored}}, $v);
 }
 
 # need to ignore $v because of some missing $kind dependency:
