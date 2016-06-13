@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/27 11:52:27 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/13 10:59:57 shadchin Exp $
 @pkgpath devel/py-logilab-astng
 lib/python${MODPY_VERSION}/site-packages/astroid/
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -49,6 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_num
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_pytest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_qt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_six.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_ssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_stdlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_builtin_inference.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dateutil.py
@@ -59,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_numpy.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_pytest.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_qt.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_six.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_ssl.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_stdlib.py
 lib/python${MODPY_VERSION}/site-packages/astroid/builder.py
 lib/python${MODPY_VERSION}/site-packages/astroid/context.py
