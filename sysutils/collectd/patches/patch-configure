@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.9 2016/04/22 15:27:45 sthen Exp $
+$OpenBSD: patch-configure,v 1.10 2016/06/13 09:12:40 landry Exp $
 
 - no Werror, breaks with gcrypt deprecation warnings
 - dont check for pcap-bpf.h, not installed on openbsd
 - in rrdtool the main librrd.so is now threadsafe, there is no more librrd_th.so
 
---- configure.orig	Wed May 27 08:51:50 2015
-+++ configure	Fri Apr 22 16:21:02 2016
-@@ -17312,7 +17312,7 @@ SAVE_CFLAGS="$CFLAGS"
+--- configure.orig	Fri Jan 22 10:55:47 2016
++++ configure	Mon Jun  6 09:18:40 2016
+@@ -17470,7 +17470,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
  then
@@ -15,31 +15,7 @@ $OpenBSD: patch-configure,v 1.9 2016/04/22 15:27:45 sthen Exp $
  fi
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for strtok_r" >&5
-@@ -23486,23 +23486,7 @@ fi
- done
- 
- fi
--if test "x$with_libpcap" = "xyes"
--then
--	for ac_header in pcap-bpf.h
--do :
--  ac_fn_c_check_header_mongrel "$LINENO" "pcap-bpf.h" "ac_cv_header_pcap_bpf_h" "$ac_includes_default"
--if test "x$ac_cv_header_pcap_bpf_h" = xyes; then :
--  cat >>confdefs.h <<_ACEOF
--#define HAVE_PCAP_BPF_H 1
--_ACEOF
- 
--else
--  with_libpcap="no (pcap-bpf.h not found)"
--fi
--
--done
--
--fi
- if test "x$with_libpcap" = "xyes"
- then
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libpcap has PCAP_ERROR_IFACE_NOT_UP" >&5
-@@ -25067,7 +25051,7 @@ then
+@@ -25194,7 +25194,7 @@ then
  
  
  fi

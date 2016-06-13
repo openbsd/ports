@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_processes_c,v 1.4 2016/06/13 09:12:40 landry Exp $
+
+https://github.com/collectd/collectd/issues/1674
+
+--- src/processes.c.orig	Mon Jun  6 10:05:24 2016
++++ src/processes.c	Mon Jun  6 10:05:35 2016
+@@ -2046,9 +2046,6 @@ static int ps_read (void)
+ 			pse.io_syscr = -1;
+ 			pse.io_syscw = -1;
+ 
+-			pse.cswitch_vol = -1;
+-			pse.cswitch_invol = -1;
+-
+ 			ps_list_add (procs[i].p_comm, have_cmdline ? cmdline : NULL, &pse);
+ 
+ 			switch (procs[i].p_stat)

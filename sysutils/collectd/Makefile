@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/04/22 15:27:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/06/13 09:12:40 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -10,15 +10,7 @@ COMMENT-python =	collectd python plugin
 COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
-V =			5.5.0
-REVISION-main =		3
-REVISION-nut =		0
-REVISION-rrdtool =	1
-REVISION-virt =		1
-REVISION-python =	0
-REVISION-memcachec =	0
-REVISION-pgsql =	0
-REVISION-mysql =	0
+V =			5.5.1
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -121,7 +113,7 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			target_notification target_replace target_scale \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
 			users uuid write_http write_graphite pf python virt memcachec nut \
-			aggregation curl_json fhcount log_logstash memcached \
+			aggregation curl_json log_logstash memcached \
 			threshold write_log write_riemann
 
 .for _plugin in ${ENABLED_PLUGINS}

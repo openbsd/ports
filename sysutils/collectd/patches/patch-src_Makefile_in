@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2015/07/23 07:33:17 landry Exp $
---- src/Makefile.in.orig	Wed Jun  3 00:09:27 2015
-+++ src/Makefile.in	Wed Jun  3 00:13:09 2015
+$OpenBSD: patch-src_Makefile_in,v 1.9 2016/06/13 09:12:40 landry Exp $
+--- src/Makefile.in.orig	Fri Jan 22 10:55:46 2016
++++ src/Makefile.in	Mon Jun  6 09:18:40 2016
 @@ -80,7 +80,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.8 2015/07/23 07:33:17 landry Exp $
  sbin_PROGRAMS = collectdmon$(EXEEXT)
  bin_PROGRAMS = collectd-nagios$(EXEEXT) collectdctl$(EXEEXT) \
  	collectd-tg$(EXEEXT)
-@@ -2430,11 +2430,11 @@ top_builddir = @top_builddir@
+@@ -2422,11 +2422,11 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = libcollectdclient $(am__append_1) daemon
  PLUGIN_LDFLAGS = -module -avoid-version -export-symbols-regex '\<module_register\>'
@@ -24,8 +24,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.8 2015/07/23 07:33:17 landry Exp $
  	$(am__append_2) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  AUTOMAKE_OPTIONS = subdir-objects
-@@ -5190,13 +5190,8 @@ uninstall-man: uninstall-man1 uninstall-man5
- @HAVE_PROTOC_C_TRUE@	protoc-c -I$(srcdir) --c_out . $(srcdir)/riemann.proto
+@@ -5120,13 +5120,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @BUILD_PLUGIN_WRITE_RIEMANN_TRUE@	$(AM_V_PROTOC_C)protoc-c -I$(srcdir) --c_out . $(srcdir)/riemann.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
