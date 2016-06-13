@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2016/04/26 10:53:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2016/06/13 08:45:39 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -400,6 +400,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/kernel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/memory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/platform_version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/virtualization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/processor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/properties.rb
@@ -417,6 +418,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/stdxxx_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/ssh/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/ssh/build_command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/alpine/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/alpine/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/package_spec.rb
@@ -501,6 +504,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helper/set_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/aix/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/aix/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/base/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/base/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/
