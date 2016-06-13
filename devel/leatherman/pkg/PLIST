@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/30 13:07:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/13 08:25:34 jasper Exp $
 include/boost/
 include/boost/nowide/
 include/boost/nowide/args.hpp
@@ -129,5 +129,5 @@ lib/leatherman_util.a
 share/locale/
 share/locale/fr/
 share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/leatherman_locale.mo
 share/locale/fr/LC_MESSAGES/leatherman_logging.mo
-share/locale/fr/LC_MESSAGES/leatherman_test.mo
