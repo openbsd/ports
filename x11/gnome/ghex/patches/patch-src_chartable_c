@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_chartable_c,v 1.1 2016/06/14 08:01:46 jasper Exp $
+$OpenBSD: patch-src_chartable_c,v 1.2 2016/06/14 08:36:37 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=767638
+
 --- src/chartable.c.orig	Tue Jun 14 09:33:22 2016
 +++ src/chartable.c	Tue Jun 14 09:54:18 2016
 @@ -186,10 +186,14 @@ GtkWidget *create_char_table()

@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_ghex-window_c,v 1.1 2016/06/14 08:01:46 jasper Exp $
+$OpenBSD: patch-src_ghex-window_c,v 1.2 2016/06/14 08:36:37 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=767638
+
 --- src/ghex-window.c.orig	Tue Jun 14 09:53:18 2016
 +++ src/ghex-window.c	Tue Jun 14 09:55:25 2016
 @@ -781,8 +781,10 @@ ghex_window_update_status_message(GHexWindow *win)
