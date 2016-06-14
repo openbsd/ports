@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2016/05/21 10:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.428 2016/06/14 19:05:12 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -40,6 +40,7 @@
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
      SUBDIR += easy-rsa
+     SUBDIR += emldump
      SUBDIR += encfs
      SUBDIR += erl-bcrypt
      SUBDIR += fcrackzip
