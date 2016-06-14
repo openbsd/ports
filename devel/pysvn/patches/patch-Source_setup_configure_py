@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
+$OpenBSD: patch-Source_setup_configure_py,v 1.3 2016/06/14 08:39:23 czarkoff Exp $
 
 1) Fix broken lib auto-detection. The configure script will try to stat a
    shared library file, but we don't know the exact filename because it depends
@@ -7,9 +7,9 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
 
 2) Add missing OpenBSD-specific bits.
 
---- Source/setup_configure.py.orig	Sun Aug 18 14:11:41 2013
-+++ Source/setup_configure.py	Wed Oct  9 16:02:28 2013
-@@ -182,6 +182,9 @@ class Setup:
+--- Source/setup_configure.py.orig	Wed Jun  1 02:38:57 2016
++++ Source/setup_configure.py	Wed Jun  1 02:44:21 2016
+@@ -184,6 +184,9 @@ class Setup:
              elif sys.platform.startswith('freebsd'):
                  self.platform = 'freebsd'
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
              elif sys.platform == 'cygwin':
                  self.platform = 'cygwin'
  
-@@ -204,6 +207,10 @@ class Setup:
+@@ -206,6 +209,10 @@ class Setup:
              self.c_utils = FreeBsdCompilerGCC( self )
              self.c_pysvn = FreeBsdCompilerGCC( self )
  
@@ -30,16 +30,16 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
          elif self.platform == 'cygwin':
              self.c_utils = CygwinCompilerGCC( self )
              self.c_pysvn = CygwinCompilerGCC( self )
-@@ -1129,7 +1136,7 @@ class UnixCompilerGCC(CompilerGCC):
+@@ -1206,6 +1213,8 @@ class UnixCompilerGCC(CompilerGCC):
+     def get_lib_name_for_platform( self, libname ):
          if self.setup.platform == 'cygwin':
-             return '%s.dll.a' % libname
+             return ['%s.dll.a' % libname]
++        elif self.setup.platform == 'openbsd':
++            return ['%s.la' % libname]
          else:
--            return '%s.so' % libname
-+            return '%s.la' % libname
+             return ['%s.so' % libname]
  
-     def setupUtilities( self ):
-         self._addVar( 'CCCFLAGS',
-@@ -1213,6 +1220,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
+@@ -1298,6 +1307,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
                  '-lcom_err',
                  '-lexpat',
                  '-lneon',

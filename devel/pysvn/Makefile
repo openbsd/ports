@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/10 09:56:32 stsp Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/14 08:39:22 czarkoff Exp $
 
 COMMENT =		python interface to subversion
 
-MODPY_EGG_VERSION =	1.7.8
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME = 		pysvn-${MODPY_EGG_VERSION}
 PKGNAME = 		py-pysvn-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -32,6 +32,7 @@ CONFIGURE_FLAGS = 	--apr-inc-dir=${LOCALBASE}/include/apr-1 \
 			--svn-lib-dir=${LOCALBASE}/lib
 
 do-configure:
+	sed -i 's|#!/bin/bash|#!/bin/sh|' ${WRKDIST}/Tests/test-??.sh
 	cd ${WRKSRC} && ${MODPY_BIN} ./${MODPY_SETUP} configure ${CONFIGURE_FLAGS}
 
 do-build:
@@ -45,6 +46,6 @@ do-install:
 		${WRKINST}/${MODPY_SITEPKG}/pysvn/_pysvn_${_PYSVN_PYVERSION}.so
 
 do-test:
-	cd ${WRKDIST}/Tests && ${MAKE_PROGRAM}
+	cd ${WRKDIST}/Tests && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
