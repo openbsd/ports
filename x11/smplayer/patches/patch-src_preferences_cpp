@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_preferences_cpp,v 1.9 2016/04/15 15:11:38 gonzalo Exp $
---- src/preferences.cpp.orig	Fri Mar 18 23:20:20 2016
-+++ src/preferences.cpp	Wed Apr 13 00:24:15 2016
-@@ -150,7 +150,7 @@ void Preferences::reset() {
+$OpenBSD: patch-src_preferences_cpp,v 1.10 2016/06/14 23:15:58 gonzalo Exp $
+--- src/preferences.cpp.orig	Sun Jun  5 17:52:14 2016
++++ src/preferences.cpp	Sat Jun 11 18:36:58 2016
+@@ -154,7 +154,7 @@ void Preferences::reset() {
  	softvol_max = 110; // 110 = default value in mplayer
  	use_scaletempo = Detect;
  	use_hwac3 = false;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_preferences_cpp,v 1.9 2016/04/15 15:11:38 gonzalo Exp $
  
  	global_volume = true;
  	volume = 50;
-@@ -180,8 +180,8 @@ void Preferences::reset() {
+@@ -188,8 +188,8 @@ void Preferences::reset() {
         Drives (CD/DVD)
         *************** */
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_preferences_cpp,v 1.9 2016/04/15 15:11:38 gonzalo Exp $
  #ifdef BLURAY_SUPPORT
  	bluray_device = "";
  #endif
-@@ -298,13 +298,13 @@ void Preferences::reset() {
+@@ -311,13 +311,13 @@ void Preferences::reset() {
      mplayer_additional_audio_filters="";
  
  #ifdef LOG_MPLAYER
