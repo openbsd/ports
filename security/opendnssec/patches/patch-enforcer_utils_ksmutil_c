@@ -1,0 +1,12 @@
+$OpenBSD: patch-enforcer_utils_ksmutil_c,v 1.1 2016/06/14 11:29:46 jca Exp $
+--- enforcer/utils/ksmutil.c.orig	Wed May  4 21:09:00 2016
++++ enforcer/utils/ksmutil.c	Wed May  4 21:09:22 2016
+@@ -6878,7 +6878,7 @@ int ListKeys(int zone_id)
+     hsm_key_t *key = NULL;
+     ldns_rr *dnskey_rr = NULL;
+     hsm_sign_params_t *sign_params = NULL;
+-    hsm_ctx_t* ctx;
++    hsm_ctx_t* ctx = NULL;
+ 
+     if (verbose_flag) {
+         /* connect to the HSM */
