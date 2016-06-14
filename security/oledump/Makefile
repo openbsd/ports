@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/07 21:06:43 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/14 19:11:34 rpointel Exp $
 
 COMMENT =	analyze OLE files
 
-MODPY_EGG_VERSION =	0.0.23
+MODPY_EGG_VERSION =	0.0.24
 DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	oledump-${MODPY_EGG_VERSION}
 
