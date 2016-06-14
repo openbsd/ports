@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/14 18:59:52 danj Exp $
+include/snappy-c.h
+include/snappy-sinksource.h
+include/snappy-stubs-public.h
+include/snappy.h
+lib/libsnappy.a
+lib/libsnappy.la
+@lib lib/libsnappy.so.${LIBsnappy_VERSION}
+share/doc/snappy/
+share/doc/snappy/COPYING
+share/doc/snappy/ChangeLog
+share/doc/snappy/INSTALL
+share/doc/snappy/NEWS
+share/doc/snappy/README
+share/doc/snappy/format_description.txt
+share/doc/snappy/framing_format.txt
