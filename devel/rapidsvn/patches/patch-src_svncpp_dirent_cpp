@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_svncpp_dirent_cpp,v 1.1 2016/06/14 08:42:46 czarkoff Exp $
+--- src/svncpp/dirent.cpp.orig	Thu Jun 28 08:39:33 2012
++++ src/svncpp/dirent.cpp	Wed Jun  1 04:27:23 2016
+@@ -47,7 +47,7 @@ namespace svn (public)
+     {
+     }
+ 
+-    Data(const char * _name, svn_dirent_t * dirEntry)
++    Data(const char * _name, const svn_dirent_t * dirEntry)
+         : name(_name), kind(dirEntry->kind), size(dirEntry->size),
+         hasProps(dirEntry->has_props != 0),
+         createdRev(dirEntry->created_rev), time(dirEntry->time)
+@@ -78,7 +78,7 @@ namespace svn (public)
+   {
+   }
+ 
+-  DirEntry::DirEntry(const char * name, svn_dirent_t * DirEntry)
++  DirEntry::DirEntry(const char * name, const svn_dirent_t * DirEntry)
+       : m(new Data(name, DirEntry))
+   {
+   }
+@@ -151,3 +151,4 @@ namespace svn (public)
+  * eval: (load-file "../../rapidsvn-dev.el")
+  * end:
+  */
++
