@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1503 2016/06/10 12:56:30 awolk Exp $
+# $OpenBSD: Makefile,v 1.1504 2016/06/14 09:06:22 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1361,7 +1361,6 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap
-     SUBDIR += py-subvertpy
      SUBDIR += py-suds
      SUBDIR += py-symboltype
      SUBDIR += py-test
