@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/10 20:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/14 16:15:55 czarkoff Exp $
 
 COMMENT =		library for real-time audio and video processing
 
@@ -20,7 +20,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/rem
 	${INSTALL_DATA} ${WRKBUILD}/include/*.h ${PREFIX}/include/rem
 	${INSTALL_DATA} ${WRKBUILD}/librem.a ${PREFIX}/lib
-	[ -f ${WRKBUILD}/librem.so.${LIBrem_VERSION} ] && ${INSTALL_DATA} \
-		${WRKBUILD}/librem.so.${LIBrem_VERSION} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKBUILD}/librem.so.${LIBrem_VERSION} ${PREFIX}/lib
 
 .include <bsd.port.mk>

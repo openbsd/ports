@@ -1,12 +1,12 @@
-$OpenBSD: patch-modules_zrtp_module_mk,v 1.2 2016/01/12 09:22:07 czarkoff Exp $
---- modules/zrtp/module.mk.orig	Tue Dec  1 13:09:48 2015
-+++ modules/zrtp/module.mk	Wed Dec  2 10:36:02 2015
+$OpenBSD: patch-modules_zrtp_module_mk,v 1.3 2016/06/14 16:15:55 czarkoff Exp $
+--- modules/zrtp/module.mk.orig	Fri May 20 17:57:56 2016
++++ modules/zrtp/module.mk	Tue Jun 14 15:16:42 2016
 @@ -6,7 +6,7 @@
  
  MOD		:= zrtp
  $(MOD)_SRCS	+= zrtp.c
 -$(MOD)_LFLAGS	+= -lzrtp -lbn
 +$(MOD)_LFLAGS	+= -lzrtp
- $(MOD)_CFLAGS   += -I/usr/local/include/libzrtp
+ $(MOD)_CFLAGS   += -isystem /usr/local/include/libzrtp
  $(MOD)_CFLAGS   += -Wno-strict-prototypes
  
