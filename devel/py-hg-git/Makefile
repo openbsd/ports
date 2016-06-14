@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/18 21:58:51 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.23 2016/06/14 10:01:31 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
-MODPY_EGG_VERSION =	0.8.4
-DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	0.8.5
+DISTNAME =		${MODPY_PY_PREFIX}hg-git-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
 

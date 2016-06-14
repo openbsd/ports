@@ -1,0 +1,21 @@
+$OpenBSD: patch-hggit_overlay_py,v 1.1 2016/06/14 10:01:31 czarkoff Exp $
+--- hggit/overlay.py.orig	Tue Feb  2 01:56:40 2016
++++ hggit/overlay.py	Sat Jun  4 11:52:45 2016
+@@ -6,6 +6,7 @@
+ 
+ from mercurial import (
+     ancestor,
++    changelog,
+     manifest,
+     context,
+ )
+@@ -323,6 +324,9 @@ class overlaychangelog(overlayrevlog):
+             return self.base.read(sha)
+         except LookupError:
+             return overlaychangectx(self.repo, sha).totuple()
++
++    def changelogrevision(self, noderev):
++        return changelog._changelogrevision(*self.read(noderev))
+ 
+ class overlayrepo(object):
+     def __init__(self, handler, commits, refs):
