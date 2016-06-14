@@ -1,0 +1,4 @@
+emldump is a tool to analyze MIME files.  The MIME file can be provided as an
+argument, via stdin (piping) and it may also be contained in a (password
+protected) ZIP file.  When emldump runs on a MIME file without any options, it
+reports the different parts in the MIME file.
