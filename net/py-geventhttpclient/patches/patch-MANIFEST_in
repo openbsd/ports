@@ -1,9 +1,0 @@
-$OpenBSD: patch-MANIFEST_in,v 1.1.1.1 2014/10/12 20:45:56 juanfra Exp $
---- MANIFEST.in.orig	Mon Oct  6 16:56:43 2014
-+++ MANIFEST.in	Mon Oct  6 16:56:46 2014
-@@ -1,5 +1,4 @@
- include src/geventhttpclient/*.py
--include src/geventhttpclient/cacert.pem
- include ext/*.c
- include ext/*.h
- 
