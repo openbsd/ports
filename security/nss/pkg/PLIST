@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/09/29 08:52:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/06/14 14:48:51 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -33,6 +33,8 @@ include/nss/key.h
 include/nss/keyhi.h
 include/nss/keyt.h
 include/nss/keythi.h
+include/nss/lowkeyi.h
+include/nss/lowkeyti.h
 include/nss/nss.h
 include/nss/nssb64.h
 include/nss/nssb64t.h
