@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-gnome-keyring,v 1.3 2012/04/28 09:53:38 sthen Exp $
+@comment $OpenBSD: PLIST-gnome-keyring,v 1.4 2016/06/14 08:36:29 czarkoff Exp $
 @pkgpath subversion,gnome_keyring
 @conflict subversion-*-gnome_keyring
 @comment lib/libsvn_auth_gnome_keyring-1.a
 @comment lib/libsvn_auth_gnome_keyring-1.la
 @lib lib/libsvn_auth_gnome_keyring-1.so.${LIBsvn_auth_gnome_keyring-1_VERSION}
+share/pkgconfig/libsvn_auth_gnome_keyring.pc

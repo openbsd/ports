@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2016/05/29 17:42:22 jung Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2016/06/14 08:36:29 czarkoff Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
@@ -7,16 +7,14 @@
 @comment @bin bin/diff3
 @comment @bin bin/diff4
 @bin bin/fsfs-access-map
-@bin bin/fsfs-reorg
-@bin bin/fsfs-stats
 @bin bin/svn
-@bin bin/svn-bench
 @bin bin/svn-populate-node-origins-index
-@bin bin/svn-rep-sharing-stats
 @bin bin/svnadmin
 @bin bin/svnauthz
 @bin bin/svnauthz-validate
+@bin bin/svnbench
 @bin bin/svndumpfilter
+@bin bin/svnfsfs
 @bin bin/svnlook
 @bin bin/svnmucc
 @bin bin/svnraisetreeconflict
@@ -24,6 +22,7 @@
 @bin bin/svnserve
 @bin bin/svnsync
 @bin bin/svnversion
+@bin bin/x509-parser
 include/subversion-1/
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
@@ -66,6 +65,7 @@ include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
+include/subversion-1/svn_x509.h
 include/subversion-1/svn_xml.h
 @comment lib/apache2/
 lib/libsvn_client-1.a
@@ -89,6 +89,9 @@ lib/libsvn_fs_fs-1.la
 lib/libsvn_fs_util-1.a
 lib/libsvn_fs_util-1.la
 @lib lib/libsvn_fs_util-1.so.${LIBsvn_fs_util-1_VERSION}
+lib/libsvn_fs_x-1.a
+lib/libsvn_fs_x-1.la
+@lib lib/libsvn_fs_x-1.so.${LIBsvn_fs_x-1_VERSION}
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 @lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
@@ -128,6 +131,9 @@ lib/libsvn_wc-1.la
 @man man/man8/svnserve.8
 share/examples/subversion/
 @sample ${SYSCONFDIR}/subversion/
+share/examples/subversion/ExampleAuthn.java
+share/examples/subversion/ExampleAuthnOld.java
+share/examples/subversion/ExampleAuthnVeryOld.java
 share/examples/subversion/SvnCLBrowse
 share/examples/subversion/backup/
 share/examples/subversion/backup/hot-backup.py
@@ -143,19 +149,23 @@ share/examples/subversion/check-modified.py
 share/examples/subversion/client-side/
 share/examples/subversion/client-side/bash_completion
 share/examples/subversion/client-side/change-svn-wc-format.py
+share/examples/subversion/client-side/detach.py
 share/examples/subversion/client-side/emacs/
+share/examples/subversion/client-side/mergeinfo-sanitizer.py
 share/examples/subversion/client-side/server-version.py
-share/examples/subversion/client-side/showchange.pl
 share/examples/subversion/client-side/svn-graph.pl
+share/examples/subversion/client-side/svn-ssl-fingerprints.sh
+share/examples/subversion/client-side/svn-vendor.py
+share/examples/subversion/client-side/svn-viewspec.py
 share/examples/subversion/client-side/svn2cl/
 share/examples/subversion/client-side/svn_load_dirs/
+share/examples/subversion/client-side/wcfind
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py
 share/examples/subversion/getlocks_test.c
 share/examples/subversion/geturl.py
 share/examples/subversion/headrev.c
-share/examples/subversion/info.rb
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
 share/examples/subversion/hook-scripts/commit-access-control.pl
@@ -175,6 +185,7 @@ share/examples/subversion/hook-scripts/svn2feed.py
 share/examples/subversion/hook-scripts/svnperms.conf.example
 share/examples/subversion/hook-scripts/svnperms.py
 share/examples/subversion/hook-scripts/verify-po.py
+share/examples/subversion/info.rb
 share/examples/subversion/minimal_client.c
 share/examples/subversion/putfile.py
 share/examples/subversion/revplist.py
@@ -211,4 +222,19 @@ share/locale/pt_BR/LC_MESSAGES/subversion.mo
 share/locale/sv/LC_MESSAGES/subversion.mo
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
 share/locale/zh_TW/LC_MESSAGES/subversion.mo
+share/pkgconfig/libsvn_client.pc
+share/pkgconfig/libsvn_delta.pc
+share/pkgconfig/libsvn_diff.pc
+share/pkgconfig/libsvn_fs.pc
+share/pkgconfig/libsvn_fs_base.pc
+share/pkgconfig/libsvn_fs_fs.pc
+share/pkgconfig/libsvn_fs_util.pc
+share/pkgconfig/libsvn_fs_x.pc
+share/pkgconfig/libsvn_ra.pc
+share/pkgconfig/libsvn_ra_local.pc
+share/pkgconfig/libsvn_ra_serf.pc
+share/pkgconfig/libsvn_ra_svn.pc
+share/pkgconfig/libsvn_repos.pc
+share/pkgconfig/libsvn_subr.pc
+share/pkgconfig/libsvn_wc.pc
 @rcscript ${RCDIR}/svnserve

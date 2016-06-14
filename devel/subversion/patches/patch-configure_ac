@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.9 2016/04/28 16:03:01 stsp Exp $
---- configure.ac.orig	Sat Feb 14 05:00:33 2015
-+++ configure.ac	Thu Apr 28 17:16:21 2016
+$OpenBSD: patch-configure_ac,v 1.10 2016/06/14 08:36:29 czarkoff Exp $
+--- configure.ac.orig	Mon Jul 27 01:03:10 2015
++++ configure.ac	Thu May  5 15:04:58 2016
 @@ -23,7 +23,7 @@ AC_PREREQ(2.59)
  dnl Get the version of Subversion, using m4's esyscmd() command to do this
  dnl at m4-time, since AC_INIT() requires it then.
@@ -10,12 +10,12 @@ $OpenBSD: patch-configure_ac,v 1.9 2016/04/28 16:03:01 stsp Exp $
       [http://subversion.apache.org/])
  
  AC_CONFIG_SRCDIR(subversion/include/svn_types.h)
-@@ -1225,7 +1225,7 @@ AS_HELP_STRING([--enable-gprof],
+@@ -1271,7 +1271,7 @@ AS_HELP_STRING([--enable-gprof],
  # Python: Used for testsuite, and bindings
  
  
 -PYTHON="`$abs_srcdir/build/find_python.sh`"
 +PYTHON=${MODPY_BIN}
  if test -z "$PYTHON"; then
-   AC_MSG_WARN([Python 2.5 or later is required to run the testsuite])
+   AC_MSG_WARN([Python 2.7 or later is required to run the testsuite])
    AC_MSG_WARN([or to use the Subversion Python bindings])

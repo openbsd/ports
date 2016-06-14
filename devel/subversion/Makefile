@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/05/29 17:42:22 jung Exp $
+# $OpenBSD: Makefile,v 1.149 2016/06/14 08:36:29 czarkoff Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,7 +7,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.8.15
+VERSION=		1.9.4
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -21,14 +21,10 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=		1
-REVISION-ruby=		0
-REVISION-ap2=		0
-
-SO_VERSION=	1.4
+SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
-		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 \
-		svn_ra_serf-1 svn_ra_local-1 \
+		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
+		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
 		svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1 \
 		svn_auth_gnome_keyring-1
@@ -83,7 +79,8 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 # There's also 'mailer', but we handle it separately, see post-install
 
 TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
-	server-version.py showchange.pl svn-graph.pl
+	detach.py mergeinfo-sanitizer.py server-version.py svn-graph.pl \
+	svn-ssl-fingerprints.sh svn-vendor.py svn-viewspec.py wcfind
 
 WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
@@ -298,9 +295,12 @@ post-install:
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/tests/* \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
-	find ${PREFIX}/share/examples/subversion -type f | xargs perl -pi \
-		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN},;" \
-		-e "s,.*env python.*,#!${MODPY_BIN},;"
+	find ${PREFIX}/share/examples/subversion -type f -exec sed -Ei \
+		-e "s,.*/usr/bin/ruby.*,#!${RUBY}," \
+		-e "s,.*env ruby.*,#!${RUBY}," \
+		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN}," \
+		-e "s,.*env python.*,#!${MODPY_BIN}," \
+			{} +
 	find ${PREFIX}/share/examples/subversion -type f -name '*\.orig' \
 		-exec rm -f {} \;
 
