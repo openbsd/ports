@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/12/21 22:12:23 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/06/14 09:55:31 czarkoff Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
 bin/dulwich
@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/dulwich/_compat.py
-lib/python${MODPY_VERSION}/site-packages/dulwich/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/_diff_tree.c
 lib/python${MODPY_VERSION}/site-packages/dulwich/_diff_tree.so
 lib/python${MODPY_VERSION}/site-packages/dulwich/_objects.c
