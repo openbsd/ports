@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/14 05:10:00 zhuk Exp $
 
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kdesdk-kioslaves
@@ -16,9 +16,9 @@ WANTLIB +=
 
 MODKDE4_USE =	libs
 
-RUN_DEPENDS =	x11/gtk+3,-guic
-
 LIB_DEPENDS =	devel/subversion
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SVN=Yes
 
 post-patch:
 	perl -pi -e 's/kio_svn_helper/kio_svn_helper4/' \
