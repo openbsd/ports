@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_chartable_c,v 1.1 2016/06/14 08:01:46 jasper Exp $
+--- src/chartable.c.orig	Tue Jun 14 09:33:22 2016
++++ src/chartable.c	Tue Jun 14 09:54:18 2016
+@@ -186,10 +186,14 @@ GtkWidget *create_char_table()
+ 		else
+ 			row[0] = "";
+ 		for(col = 1; col < 4; col++) {
++#if defined(__GNUC__) && (__GNUC__ > 4)
+ #pragma GCC diagnostic push
+ #pragma GCC diagnostic ignored "-Wformat-nonliteral"
++#endif
+ 			label = g_strdup_printf(fmt[col], i);
++#if defined(__GNUC__) && (__GNUC__ > 4)
+ #pragma GCC diagnostic pop
++#endif
+ 			row[col] = label;
+ 		}
+ 		for(col = 0; col < 8; col++) {
