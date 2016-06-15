@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/14 09:51:29 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/06/15 08:23:44 czarkoff Exp $
 lib/python${MODPY_VERSION}/site-packages/certifi/
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,8 +6,8 @@ lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/certifi/__init__.py
-lib/python${MODPY_VERSION}/site-packages/certifi/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certifi/__main__.py
-lib/python${MODPY_VERSION}/site-packages/certifi/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certifi/core.py
-lib/python${MODPY_VERSION}/site-packages/certifi/core.pyc
+lib/python${MODPY_VERSION}/site-packages/certifi/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
