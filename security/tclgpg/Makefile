@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/15 15:09:25 czarkoff Exp $
 
 COMMENT =		Tcl interface to GNU Privacy Guard
-DISTNAME =		tclgpg-20160113
+DISTNAME =		tclgpg-20160615
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # and chooses checkin to serve based on "uuid" query key
 MASTER_SITES =		${HOMEPAGE:=tarball/}
 _FILENAME =		${DISTNAME}${EXTRACT_SUFX}
-UUID =			09a9f954b2d39b841a2685faa917f892f2d07c98
+UUID =			ffd35a07693f3216ba0b398cca9c7497a288c7aa
 DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}
 
 MODULES =		lang/tcl
