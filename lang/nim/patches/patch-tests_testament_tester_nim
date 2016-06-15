@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_testament_tester_nim,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
+$OpenBSD: patch-tests_testament_tester_nim,v 1.2 2016/06/15 00:19:59 juanfra Exp $
 
 "compiler/nodejs" breaks the tests:
 
@@ -7,23 +7,23 @@ nim cc --taintMode:on tests/testament/tester
 FAILURE
 Error 1 in . (Makefile:42 'do-test')"
 
---- tests/testament/tester.nim.orig	Sat Apr 25 23:17:00 2015
-+++ tests/testament/tester.nim	Fri Oct  9 03:17:22 2015
+--- tests/testament/tester.nim.orig	Tue Jun  7 00:38:57 2016
++++ tests/testament/tester.nim	Thu Jun  9 19:50:01 2016
 @@ -12,7 +12,7 @@
  import
    parseutils, strutils, pegs, os, osproc, streams, parsecfg, json,
    marshal, backend, parseopt, specs, htmlgen, browsers, terminal,
--  algorithm, compiler/nodejs
-+  algorithm
+-  algorithm, compiler/nodejs, re, times
++  algorithm, re, times
  
  const
    resultsFile = "testresults.html"
-@@ -224,7 +224,7 @@ proc testSpec(r: var TResults, test: TTest) =
-         else:
-           exeFile = changeFileExt(tname, ExeExt)
-         if existsFile(exeFile):
--          let nodejs = findNodeJs()
-+          let nodejs = ""
-           if test.target == targetJS and nodejs == "":
-             r.addResult(test, expected.outp, "nodejs binary not in PATH",
-                         reExeNotFound)
+@@ -325,7 +325,7 @@ proc testSpec(r: var TResults, test: TTest) =
+       r.addResult(test, expected.outp, "executable not found", reExeNotFound)
+       return
+ 
+-    let nodejs = if isJsTarget: findNodeJs() else: ""
++    let nodejs = if isJsTarget: "" else: ""
+     if isJsTarget and nodejs == "":
+       r.addResult(test, expected.outp, "nodejs binary not in PATH",
+                   reExeNotFound)

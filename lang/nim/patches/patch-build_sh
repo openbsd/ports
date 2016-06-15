@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_sh,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
---- build.sh.orig	Sun Sep 13 00:49:57 2015
-+++ build.sh	Sun Sep 13 00:52:17 2015
+$OpenBSD: patch-build_sh,v 1.2 2016/06/15 00:19:59 juanfra Exp $
+--- build.sh.orig	Tue Jun  7 00:38:53 2016
++++ build.sh	Thu Jun  9 19:43:03 2016
 @@ -26,9 +26,9 @@ do
    esac
  done
  
 -CC="gcc"
 -LINKER="gcc"
--COMP_FLAGS="-w -O3 -fno-strict-aliasing$extraBuildArgs"
+-COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -O3 -fno-strict-aliasing$extraBuildArgs"
 +#CC="gcc"
 +#LINKER="gcc"
-+COMP_FLAGS="-w -fno-strict-aliasing$extraBuildArgs $COMP_FLAGS"
- LINK_FLAGS=""
++COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fno-strict-aliasing$extraBuildArgs"
+ LINK_FLAGS="${LDFLAGS:-} "
+ PS4=""
  # platform detection
- ucpu=`uname -m`

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/22 19:40:48 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/15 00:19:59 juanfra Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		statically typed, imperative programming language
 
-VERSION =		0.11.2
+VERSION =		0.14.2
 DISTNAME =		nim-${VERSION}
-REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
@@ -19,12 +18,23 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m
 
+post-patch:
+	mkdir -p ${WRKSRC}/nimcache-port
+	mkdir -p ${WRKSRC}/nimcache-port-test
+	perl -i -pe "s#NIM_PORT_PATH#${PATH}#" ${WRKSRC}/koch.nim
+	perl -i -pe "s#NIM_PORT_CACHE#${WRKSRC}/nimcache-port-test#" \
+		${WRKSRC}/koch.nim
+
 do-build:
-	cd ${WRKDIST} && ${SETENV} CC="${CC}" LINKER="${CC}" \
-		COMP_FLAGS="${CFLAGS}" sh build.sh
+	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
+		CFLAGS="${CFLAGS}" sh build.sh
 	# slow machines can get a head of themselves and fail to link
-	cd ${WRKSRC} && ${SETENV} bin/nim c --parallelBuild:1 koch
-	cd ${WRKSRC} && ${SETENV} ./koch boot -d:release --parallelBuild:1
+	cd ${WRKSRC} && bin/nim c -d:release --parallelBuild:1 \
+		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
+		--listCmd --putenv:"PATH=${PATH}" koch
+	cd ${WRKSRC} && ./koch boot -d:release --parallelBuild:1 \
+		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
+		--listCmd --putenv:"PATH=${PATH}"
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
@@ -38,6 +48,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release --parallelBuild:1
+	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release \
+		--parallelBuild:1 --listFullPaths --listCmd \
+		--nimcache:"${WRKSRC}/nimcache-port-test" \
+		--putenv:"PATH=${PATH}"
 
 .include <bsd.port.mk>

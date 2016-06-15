@@ -1,0 +1,12 @@
+$OpenBSD: patch-koch_nim,v 1.1 2016/06/15 00:19:59 juanfra Exp $
+--- koch.nim.orig	Thu Jun  9 12:44:46 2016
++++ koch.nim	Fri Jun 10 00:59:06 2016
+@@ -364,7 +364,7 @@ proc tests(args: string) =
+   exec nimexe & " cc --taintMode:on tests/testament/tester"
+   # Since tests take a long time (on my machine), and we want to defy Murhpys
+   # law - lets make sure the compiler really is freshly compiled!
+-  exec nimexe & " c --lib:lib -d:release --opt:speed compiler/nim.nim"
++  exec nimexe & " c --lib:lib -d:release --opt:speed --listFullPaths --listCmd --putenv:PATH=NIM_PORT_PATH --nimcache:NIM_PORT_CACHE compiler/nim.nim"
+   let tester = quoteShell(getCurrentDir() / "tests/testament/tester".exe)
+   let success = tryExec tester & " " & (args|"all")
+   if not existsEnv("TRAVIS") and not existsEnv("APPVEYOR"):
