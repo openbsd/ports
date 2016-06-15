@@ -1,7 +1,7 @@
-$OpenBSD: patch-auto_def,v 1.5 2015/11/04 21:43:40 jturner Exp $
---- auto.def.orig	Mon Nov  2 12:35:44 2015
-+++ auto.def	Wed Nov  4 16:26:37 2015
-@@ -121,7 +121,7 @@ if {[opt-bool with-th1-hooks]} {
+$OpenBSD: patch-auto_def,v 1.6 2016/06/15 17:13:36 jturner Exp $
+--- auto.def.orig	Wed Jun 15 09:58:56 2016
++++ auto.def	Wed Jun 15 09:59:12 2016
+@@ -184,7 +184,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
      # XXX: This will not work on all systems.
