@@ -1,0 +1,37 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2016/06/15 19:49:40 rpointel Exp $
+
+COMMENT =	tools to work with android .dex and java .class files
+
+DISTNAME =	dex2jar-2.0
+
+CATEGORIES =	devel security
+
+HOMEPAGE =	https://github.com/pxb1988/dex2jar
+
+MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+
+# Apachev2
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dex2jar/}
+
+EXTRACT_SUFX =	.zip
+
+MODULES =	java
+MODJAVA_VER =	1.7
+MODJAVA_JRERUN =Yes
+
+RUN_DEPENDS =	java/javaPathHelper
+
+NO_BUILD =	Yes
+NO_TEST =	Yes
+
+do-install:
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/dex2jar/
+	cp -r ${WRKSRC}/lib/ ${PREFIX}/share/dex2jar/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${PREFIX}/share/dex2jar/
+.for i in baksmali dex-recompute-checksum dex2jar dex2smali jar2dex jar2jasmin jasmin2jar smali std-apk
+	ln -s ${TRUEPREFIX}/share/dex2jar/d2j-${i}.sh ${PREFIX}/bin/${i}
+.endfor
+
+.include <bsd.port.mk>

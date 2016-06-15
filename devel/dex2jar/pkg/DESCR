@@ -1,0 +1,11 @@
+dex2jar contains following compment
+* dex-reader is designed to read the Dalvik Executable (.dex/.odex) format. It
+has a light weight API similar with ASM.
+* dex-translator is designed to do the convert job. It reads the dex instruction
+to dex-ir format, after some optimize, convert to ASM format.
+* dex-ir used by dex-translator, is designed to represent the dex instruction
+dex-tools tools to work with .class files.
+* d2j-smali disassemble dex to smali files and assemble dex from smali files.
+different implementation to smali/baksmali, same syntax, but we support escape
+in type desc "Lcom/dex2jar\t\u1234;"
+* dex-writer write dex same way as dex-reader.
