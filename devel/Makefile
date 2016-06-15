@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1504 2016/06/14 09:06:22 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1505 2016/06/15 19:13:21 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -290,6 +290,7 @@
      SUBDIR += jam
      SUBDIR += jansson
      SUBDIR += javahelp
+     SUBDIR += jd-gui
      SUBDIR += jdk
      SUBDIR += jenkins
      SUBDIR += jimarc4random
