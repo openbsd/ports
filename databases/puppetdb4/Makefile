@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/01 12:11:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/15 07:47:30 sebastia Exp $
 
 PORTROACH=	limit:^4
 
@@ -6,6 +6,7 @@ COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
 V=		4.1.0
+REVISION=	0
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-termini-$V
@@ -22,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	java \
 		lang/ruby
-MODJAVA_VER=	1.7+
+MODJAVA_VER=	1.8+
 
 MULTI_PACKAGES= -main -plugin
 
