@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1506 2016/06/15 19:24:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1507 2016/06/15 19:50:18 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -96,6 +96,7 @@
      SUBDIR += dee
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
+     SUBDIR += dex2jar
      SUBDIR += dfu-programmer
      SUBDIR += dissy
      SUBDIR += distcc
