@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.210 2016/05/22 15:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.211 2016/06/15 06:42:51 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		2.1.3
+VERSION=		2.1.4
 DISTNAME=		cups-${VERSION}-source
-EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
-
-REVISION-main=		1
-REVISION-libs=		1
 
 CATEGORIES=		print sysutils
 
@@ -34,7 +30,7 @@ WANTLIB += avahi-client avahi-common gnutls iconv m pthread stdc++ z
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
 
-MASTER_SITES=		${HOMEPAGE}software/${VERSION}/
+MASTER_SITES=		https://github.com/apple/cups/releases/download/release-${VERSION}/
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 
