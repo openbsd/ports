@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/15 00:19:59 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/15 17:10:59 juanfra Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -11,7 +11,8 @@ EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		lang
 
 HOMEPAGE =		http://nim-lang.org/
-MASTER_SITES =		http://nim-lang.org/download/
+MASTER_SITES =		http://nim-lang.org/download/ \
+			http://download.tuxfamily.org/jod/lang/nim/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
