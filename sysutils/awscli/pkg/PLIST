@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/06/11 09:50:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/06/15 05:44:12 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1010,6 +1010,39 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/importexport/get-shippi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/importexport/get-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/importexport/list-jobs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/importexport/update-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/add-attributes-to-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/create-assessment-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/create-assessment-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/create-resource-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/delete-assessment-run.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/delete-assessment-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/delete-assessment-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-assessment-runs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-assessment-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-assessment-templates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-cross-account-access-role.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-resource-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/describe-rules-packages.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/get-telemetry-metadata.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-assessment-run-agents.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-assessment-runs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-assessment-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-assessment-templates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-event-subscriptions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-rules-packages.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/preview-agents.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/register-cross-account-access-role.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/remove-attributes-from-findings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/set-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/start-assessment-run.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/stop-assessment-run.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/subscribe-to-event.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/unsubscribe-from-event.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/inspector/update-assessment-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/create-certificate-from-csr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/
