@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/15 19:22:31 rpointel Exp $
+@bin bin/kstool
+include/keystone/
+include/keystone/arm.h
+include/keystone/arm64.h
+include/keystone/hexagon.h
+include/keystone/keystone.h
+include/keystone/mips.h
+include/keystone/ppc.h
+include/keystone/sparc.h
+include/keystone/systemz.h
+include/keystone/x86.h
+@lib lib/libkeystone.so.${LIBkeystone_VERSION}
