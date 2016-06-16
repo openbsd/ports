@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.975 2016/06/06 22:30:19 gsoares Exp $
+# $OpenBSD: Makefile,v 1.976 2016/06/16 07:35:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -257,6 +257,7 @@
      SUBDIR += mygpoclient
      SUBDIR += nagios
      SUBDIR += nam
+     SUBDIR += nanomsg
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
