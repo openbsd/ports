@@ -1,10 +1,10 @@
-$OpenBSD: patch-bin_logstash_lib_sh,v 1.1 2016/04/26 13:31:25 jasper Exp $
+$OpenBSD: patch-bin_logstash_lib_sh,v 1.2 2016/06/16 09:55:58 jasper Exp $
 
 Revert: 44edf5bd00c116d356acbcd21369e4cebcbae5f9
 See: https://github.com/elastic/logstash/pull/4303#issuecomment-162823365
 
---- bin/logstash.lib.sh.orig	Mon Dec  7 18:59:31 2015
-+++ bin/logstash.lib.sh	Tue Dec  8 10:15:38 2015
+--- bin/logstash.lib.sh.orig	Wed Jun 15 19:05:21 2016
++++ bin/logstash.lib.sh	Thu Jun 16 10:10:27 2016
 @@ -62,8 +62,7 @@ setup_java() {
      # Causes the JVM to dump its heap on OutOfMemory.
      JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
@@ -15,7 +15,7 @@ See: https://github.com/elastic/logstash/pull/4303#issuecomment-162823365
    fi
  
    if [ "$LS_JAVA_OPTS" ] ; then
-@@ -130,7 +129,7 @@ setup_vendored_jruby() {
+@@ -133,7 +132,7 @@ setup_vendored_jruby() {
  }
  
  setup_ruby() {
@@ -24,7 +24,7 @@ See: https://github.com/elastic/logstash/pull/4303#issuecomment-162823365
    VENDORED_JRUBY=
  }
  
-@@ -176,8 +175,8 @@ ruby_exec() {
+@@ -179,8 +178,8 @@ ruby_exec() {
      # $VENDORED_JRUBY is non-empty so use the vendored JRuby
  
      if [ "$DEBUG" ] ; then
