@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/05/28 13:40:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/06/16 18:01:50 czarkoff Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =		Yes
 
-BUILD_DEPENDS=		archivers/gtar
 MODULES=		lang/python
 
 FLAVORS=		python3
@@ -28,9 +27,6 @@ TEST_DEPENDS+=		devel/py-twisted/core
 .endif
 
 MODPY_SETUPTOOLS=	Yes
-
-# problem with upstream tar and our tar
-TAR=${LOCALBASE}/bin/gtar
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}nose
