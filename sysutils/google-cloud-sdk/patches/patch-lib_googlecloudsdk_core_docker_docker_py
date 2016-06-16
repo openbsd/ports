@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.5 2016/06/02 07:19:21 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.6 2016/06/16 06:00:49 ajacoutot Exp $
 --- lib/googlecloudsdk/core/docker/docker.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/docker/docker.py	Thu Jun  2 09:15:25 2016
-@@ -35,7 +35,7 @@ from googlecloudsdk.third_party.py27 import py27_subpr
++++ lib/googlecloudsdk/core/docker/docker.py	Thu Jun 16 07:56:56 2016
+@@ -36,7 +36,7 @@ from googlecloudsdk.third_party.py27 import py27_subpr
  
  _USERNAME = 'oauth2accesstoken'
  _EMAIL = 'not@val.id'
