@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_extensions_py,v 1.10 2016/03/11 02:27:01 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.11 2016/06/16 22:59:23 sthen Exp $
 
 - fix various header search paths
 - don't override compiler optimizer levels
@@ -9,8 +9,8 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk,
 and don't allow an updated patch to change the python shebang line,
 it's correct with "env" here (handled in infrastructure).
 
---- setup/extensions.py.orig	Fri Feb 26 03:04:36 2016
-+++ setup/extensions.py	Fri Mar 11 02:26:23 2016
+--- setup/extensions.py.orig	Fri Jun  3 04:16:08 2016
++++ setup/extensions.py	Thu Jun 16 22:57:22 2016
 @@ -9,7 +9,7 @@ __docformat__ = 'restructuredtext en'
  import textwrap, os, shlex, subprocess, glob, shutil, re, sys
  from distutils import sysconfig
@@ -19,8 +19,8 @@ it's correct with "env" here (handled in infrastructure).
 +from setup import Command, islinux, isbsd, isosx, SRC, iswindows, isopenbsd, __version__
  from setup.build_environment import (
      chmlib_inc_dirs, podofo_inc, podofo_lib, podofo_error, pyqt, NMAKE, QMAKE,
-     msvc, win_inc, win_lib, magick_inc_dirs, magick_lib_dirs, magick_libs,
-@@ -45,13 +45,6 @@ class Extension(object):
+     msvc, win_inc, win_lib, chmlib_lib_dirs, sqlite_inc_dirs, icu_inc_dirs,
+@@ -44,13 +44,6 @@ class Extension(object):
          self.cflags = kwargs.get('cflags', [])
          self.ldflags = kwargs.get('ldflags', [])
          self.optional = kwargs.get('optional', False)
@@ -34,7 +34,7 @@ it's correct with "env" here (handled in infrastructure).
          self.qt_private_headers = kwargs.get('qt_private', [])
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
-@@ -303,9 +296,10 @@ if isosx:
+@@ -300,9 +293,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -46,7 +46,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['usb-1.0']
      ))
  
-@@ -319,6 +313,7 @@ if islinux or isosx:
+@@ -316,6 +310,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -54,7 +54,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['mtp']
      ))
  
-@@ -346,8 +341,8 @@ if isbsd:
+@@ -343,8 +338,8 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())

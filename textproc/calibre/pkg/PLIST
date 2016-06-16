@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/05/06 21:52:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/06/16 22:59:23 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -275,6 +275,11 @@ lib/calibre/calibre/devices/nuut2/__init__.py
 lib/calibre/calibre/devices/nuut2/__init__.pyc
 lib/calibre/calibre/devices/nuut2/driver.py
 lib/calibre/calibre/devices/nuut2/driver.pyc
+lib/calibre/calibre/devices/paladin/
+lib/calibre/calibre/devices/paladin/__init__.py
+lib/calibre/calibre/devices/paladin/__init__.pyc
+lib/calibre/calibre/devices/paladin/driver.py
+lib/calibre/calibre/devices/paladin/driver.pyc
 lib/calibre/calibre/devices/prs505/
 lib/calibre/calibre/devices/prs505/__init__.py
 lib/calibre/calibre/devices/prs505/__init__.pyc
@@ -1631,8 +1636,6 @@ lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.pyc
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.pyc
-lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
-lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.pyc
 lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/authors_edit.pyc
 lib/calibre/calibre/gui2/dialogs/book_info.py
@@ -2295,6 +2298,8 @@ lib/calibre/calibre/gui2/tweak_book/spell.py
 lib/calibre/calibre/gui2/tweak_book/spell.pyc
 lib/calibre/calibre/gui2/tweak_book/templates.py
 lib/calibre/calibre/gui2/tweak_book/templates.pyc
+lib/calibre/calibre/gui2/tweak_book/text_search.py
+lib/calibre/calibre/gui2/tweak_book/text_search.pyc
 lib/calibre/calibre/gui2/tweak_book/toc.py
 lib/calibre/calibre/gui2/tweak_book/toc.pyc
 lib/calibre/calibre/gui2/tweak_book/ui.py
@@ -2348,6 +2353,8 @@ lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/widgets.pyc
 lib/calibre/calibre/gui2/widgets2.py
 lib/calibre/calibre/gui2/widgets2.pyc
+lib/calibre/calibre/gui2/win_file_dialogs.py
+lib/calibre/calibre/gui2/win_file_dialogs.pyc
 lib/calibre/calibre/gui2/wizard/
 lib/calibre/calibre/gui2/wizard/__init__.py
 lib/calibre/calibre/gui2/wizard/__init__.pyc
@@ -2455,12 +2462,12 @@ lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
+lib/calibre/calibre/plugins/imageops.so
 lib/calibre/calibre/plugins/libheadless.so
 lib/calibre/calibre/plugins/libmtp.so
 lib/calibre/calibre/plugins/libusb.so
 lib/calibre/calibre/plugins/lzma_binding.so
 lib/calibre/calibre/plugins/lzx.so
-lib/calibre/calibre/plugins/magick.so
 lib/calibre/calibre/plugins/matcher.so
 lib/calibre/calibre/plugins/monotonic.so
 lib/calibre/calibre/plugins/msdes.so
@@ -2722,8 +2729,8 @@ lib/calibre/calibre/utils/magick/__init__.py
 lib/calibre/calibre/utils/magick/__init__.pyc
 lib/calibre/calibre/utils/magick/draw.py
 lib/calibre/calibre/utils/magick/draw.pyc
-lib/calibre/calibre/utils/magick/generate.py
-lib/calibre/calibre/utils/magick/generate.pyc
+lib/calibre/calibre/utils/magick/legacy.py
+lib/calibre/calibre/utils/magick/legacy.pyc
 lib/calibre/calibre/utils/matcher.py
 lib/calibre/calibre/utils/matcher.pyc
 lib/calibre/calibre/utils/mdns.py
@@ -2804,6 +2811,8 @@ lib/calibre/calibre/utils/socket_inheritance.py
 lib/calibre/calibre/utils/socket_inheritance.pyc
 lib/calibre/calibre/utils/soupparser.py
 lib/calibre/calibre/utils/soupparser.pyc
+lib/calibre/calibre/utils/speedups.py
+lib/calibre/calibre/utils/speedups.pyc
 lib/calibre/calibre/utils/spell/
 lib/calibre/calibre/utils/spell/__init__.py
 lib/calibre/calibre/utils/spell/__init__.pyc
@@ -2863,6 +2872,8 @@ lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/__init__.pyc
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/simple.pyc
+lib/calibre/calibre/web/fetch/utils.py
+lib/calibre/calibre/web/fetch/utils.pyc
 lib/calibre/chardet/
 lib/calibre/chardet/__init__.py
 lib/calibre/chardet/__init__.pyc
@@ -3211,6 +3222,8 @@ share/calibre/content-server/empty.html
 share/calibre/content-server/index-generated.html
 share/calibre/content-server/index.html
 share/calibre/content-server/locales.zip
+share/calibre/content-server/mathjax.version
+share/calibre/content-server/mathjax.zip.xz
 share/calibre/content-server/mobile.css
 share/calibre/content-server/reset.css
 share/calibre/content_server/
