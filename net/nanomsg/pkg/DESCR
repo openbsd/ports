@@ -1,0 +1,15 @@
+nanomsg is a socket library that provides several common communication
+patterns. It aims to make the networking layer fast, scalable, and easy
+to use.
+
+The following scalability protocols are currently available:
+
+    PAIR - simple one-to-one communication
+    BUS - simple many-to-many communication
+    REQREP - allows to build clusters of stateless services to process
+    	     user requests
+    PUBSUB - distributes messages to large sets of interested
+    	     subscribers
+    PIPELINE - aggregates messages from multiple sources and load
+    	       balances them among many destinations
+    SURVEY - allows to query state of multiple applications in one go

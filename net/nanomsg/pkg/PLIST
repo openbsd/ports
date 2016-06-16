@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/16 07:32:48 jasper Exp $
+@bin bin/nanocat
+include/nanomsg/
+include/nanomsg/bus.h
+include/nanomsg/inproc.h
+include/nanomsg/ipc.h
+include/nanomsg/nn.h
+include/nanomsg/pair.h
+include/nanomsg/pipeline.h
+include/nanomsg/pubsub.h
+include/nanomsg/reqrep.h
+include/nanomsg/survey.h
+include/nanomsg/tcp.h
+include/nanomsg/ws.h
+@lib lib/libnanomsg.so.${LIBnanomsg_VERSION}
+lib/pkgconfig/nanomsg.pc
