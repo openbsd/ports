@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ascmagic_c,v 1.1 2016/06/16 14:17:52 giovanni Exp $
+possible memory leak
+--- src/ascmagic.c.orig	Tue May  3 18:10:37 2016
++++ src/ascmagic.c	Thu Jun 16 12:16:54 2016
+@@ -144,8 +144,10 @@ file_ascmagic_with_encoding(struct magic_set *ms, cons
+ 		    (size_t)(utf8_end - utf8_buf), NULL, NULL,
+ 		    TEXTTEST, text)) == 0)
+ 			rv = -1;
+-		if ((ms->flags & (MAGIC_APPLE|MAGIC_EXTENSION)))
+-			return rv == -1 ? 0 : 1;
++		if ((ms->flags & (MAGIC_APPLE|MAGIC_EXTENSION))) {
++			rv = rv == -1 ? 0 : 1;
++			goto done;
++		}
+ 	}
+ 	if ((ms->flags & (MAGIC_APPLE|MAGIC_EXTENSION)))
+ 		return 0;
