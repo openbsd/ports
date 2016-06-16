@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/27 08:23:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/16 11:01:34 jasper Exp $
 
 # XXX: PORTROACH set below to override the value from ../Makefile.inc
 
@@ -26,7 +26,8 @@ MODULES =		devel/cmake \
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/gobject-introspection \
-			textproc/libxslt
+			textproc/libxslt \
+			x11/dbus-python
 LIB_DEPENDS =		net/telepathy/telepathy-farstream \
 			net/telepathy/telepathy-glib
 
