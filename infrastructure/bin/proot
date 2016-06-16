@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.52 2016/06/06 22:14:20 espie Exp $
+# $OpenBSD: proot,v 1.53 2016/06/16 18:17:44 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -31,18 +31,6 @@ use OpenBSD::Paths;
 use OpenBSD::State;
 use OpenBSD::ProgressMeter;
 use DPB::User;
-
-package OpenBSD::ProgressMeter::Term;
-sub changed
-{
-	my $self = shift;
-	$self->{lastdisplay} = ' 'x($self->{width}-1);
-}
-
-package OpenBSD::ProgressMeter;
-sub changed
-{
-}
 
 package MyUser;
 our @ISA = qw(DPB::User);
@@ -426,7 +414,9 @@ sub run_chroot
 		$self->fatal("Running task failed");
 	}
 	# XXX fork'd so we don't know what we showed
-	$self->{progressmeter}->changed;
+	eval {
+		$self->{progressmeter}->forked;
+	};
 
 	$self->{progressmeter}->next;
 }
