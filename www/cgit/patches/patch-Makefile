@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.6 2016/01/14 22:09:15 sthen Exp $
---- Makefile.orig	Thu Jan 14 14:43:54 2016
-+++ Makefile	Thu Jan 14 14:53:04 2016
+$OpenBSD: patch-Makefile,v 1.7 2016/06/17 07:22:39 landry Exp $
+--- Makefile.orig	Tue Jun  7 14:45:04 2016
++++ Makefile	Fri Jun 17 07:30:53 2016
 @@ -2,11 +2,11 @@ all::
  
- CGIT_VERSION = v0.12
+ CGIT_VERSION = v1.0
  CGIT_SCRIPT_NAME = cgit.cgi
 -CGIT_SCRIPT_PATH = /var/www/htdocs/cgit
 -CGIT_DATA_PATH = $(CGIT_SCRIPT_PATH)

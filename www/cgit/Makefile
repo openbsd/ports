@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/29 09:40:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/06/17 07:22:39 landry Exp $
 
 COMMENT =	web frontend for git repositories
 
-DISTNAME =	cgit-0.12
-REVISION =	1
+DISTNAME =	cgit-1.0
 CATEGORIES =	www devel
 
 DISTFILES =	${DISTNAME}.tar.gz:0 \
-		git-2.7.2.tar.gz:1
+		git-2.8.3.tar.gz:1
 
 MASTER_SITES0 =		http://git.zx2c4.com/cgit/snapshot/
 MASTER_SITES1 =		https://www.kernel.org/pub/software/scm/git/
@@ -15,8 +14,6 @@ HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-
-WANTLIB =	iconv
 
 USE_GMAKE =	yes
 
