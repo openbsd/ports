@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.59 2016/06/13 09:22:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/06/17 18:32:38 jasper Exp $
+
+# XXX: PORTROACH overriden at end of this file.
 
 TRACKER_API=	1.0
 
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.1
-REVISION=	1
+GNOME_VERSION=	0.3.2
 
 API=		0.3
 SUBST_VARS=	API
@@ -47,3 +48,6 @@ post-install:
 	rm ${PREFIX}/lib/grilo-${API}/*.{a,la}
 
 .include <bsd.port.mk>
+
+# Override PORTROACH from gnome.port.mk since we track 0.3.x
+PORTROACH=      #empty
