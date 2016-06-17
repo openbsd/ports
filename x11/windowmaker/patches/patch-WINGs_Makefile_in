@@ -1,21 +1,11 @@
-$OpenBSD: patch-WINGs_Makefile_in,v 1.7 2005/11/01 17:28:34 wilfried Exp $
---- WINGs/Makefile.in.orig	Sun Jun 19 05:23:00 2005
-+++ WINGs/Makefile.in	Mon Oct 31 18:34:05 2005
-@@ -114,7 +114,7 @@ wprefs_datadir = @wprefs_datadir@
+$OpenBSD: patch-WINGs_Makefile_in,v 1.8 2016/06/17 11:49:33 dcoppa Exp $
+--- WINGs/Makefile.in.orig	Tue Aug 11 20:52:19 2015
++++ WINGs/Makefile.in	Wed Jun  8 10:03:21 2016
+@@ -513,6 +513,7 @@ libWUtil_la_SOURCES = \
  
- AUTOMAKE_OPTIONS = no-dependencies
+ AM_CFLAGS = 
+ AM_CPPFLAGS = -DRESOURCE_PATH=\"$(datadir)/WINGs\" \
++	 -DPREFIX=\"$(prefix)\" \
+ 	 -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src \
+ 	@XFTFLAGS@ @HEADER_SEARCH_PATH@
  
--SUBDIRS = WINGs . po Documentation Resources Examples Extras Tests
-+SUBDIRS = WINGs . po Documentation Resources Extras
- 
- #libWINGs_la_LDFLAGS = -version-info 1:1:0
- 
-@@ -138,7 +138,7 @@ AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\"
- 
- AM_CFLAGS = @NOSTRICTALIASING@
- 
--INCLUDES = -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @XFTFLAGS@ @HEADER_SEARCH_PATH@ -DDEBUG
-+INCLUDES = -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @XFTFLAGS@ @HEADER_SEARCH_PATH@
- 
- 
- DISTCLEANFILES = WINGs.pc

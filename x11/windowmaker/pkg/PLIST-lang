@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.5 2005/12/27 23:12:24 naddy Exp $
+@comment $OpenBSD: PLIST-lang,v 1.6 2016/06/17 11:49:33 dcoppa Exp $
 share/WindowMaker/menu.bg
 share/WindowMaker/menu.ca
 share/WindowMaker/menu.cs
@@ -8,6 +8,7 @@ share/WindowMaker/menu.el
 share/WindowMaker/menu.es
 share/WindowMaker/menu.fi
 share/WindowMaker/menu.fr
+share/WindowMaker/menu.fy
 share/WindowMaker/menu.gl
 share/WindowMaker/menu.he
 share/WindowMaker/menu.hr
@@ -33,10 +34,12 @@ share/WindowMaker/plmenu.de
 share/WindowMaker/plmenu.es
 share/WindowMaker/plmenu.fi
 share/WindowMaker/plmenu.fr
+share/WindowMaker/plmenu.fy
 share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
 share/WindowMaker/plmenu.ja
 share/WindowMaker/plmenu.ko
+share/WindowMaker/plmenu.nl
 share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
@@ -59,9 +62,11 @@ share/locale/da/LC_MESSAGES/WindowMaker.mo
 share/locale/de/LC_MESSAGES/WINGs.mo
 share/locale/de/LC_MESSAGES/WPrefs.mo
 share/locale/de/LC_MESSAGES/WindowMaker.mo
+share/locale/de/LC_MESSAGES/wmgenmenu.mo
 share/locale/el/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/es/LC_MESSAGES/wmgenmenu.mo
 share/locale/et/LC_MESSAGES/WPrefs.mo
 share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
@@ -69,11 +74,22 @@ share/locale/fi/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WINGs.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
+share/locale/fr/LC_MESSAGES/wmgenmenu.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/WINGs.mo
+share/locale/fy/LC_MESSAGES/WPrefs.mo
+share/locale/fy/LC_MESSAGES/WindowMaker.mo
+share/locale/fy/LC_MESSAGES/wmgenmenu.mo
 share/locale/gl/LC_MESSAGES/WindowMaker.mo
 share/locale/hr/LC_MESSAGES/WPrefs.mo
 share/locale/hr/LC_MESSAGES/WindowMaker.mo
+share/locale/hu/LC_MESSAGES/WINGs.mo
 share/locale/hu/LC_MESSAGES/WPrefs.mo
 share/locale/hu/LC_MESSAGES/WindowMaker.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/WindowMaker.mo
 share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
 share/locale/ja/LC_MESSAGES/WPrefs.mo
@@ -83,11 +99,15 @@ share/locale/ko/LC_MESSAGES/WindowMaker.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/WindowMaker.mo
+share/locale/nl/LC_MESSAGES/WINGs.mo
+share/locale/nl/LC_MESSAGES/WPrefs.mo
 share/locale/nl/LC_MESSAGES/WindowMaker.mo
+share/locale/nl/LC_MESSAGES/wmgenmenu.mo
 share/locale/no/LC_MESSAGES/WindowMaker.mo
 share/locale/pl/LC_MESSAGES/WindowMaker.mo
 share/locale/pt/LC_MESSAGES/WPrefs.mo
 share/locale/pt/LC_MESSAGES/WindowMaker.mo
+share/locale/pt/LC_MESSAGES/wmgenmenu.mo
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
@@ -96,6 +116,8 @@ share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
 share/locale/sv/LC_MESSAGES/WindowMaker.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
+share/locale/uk/LC_MESSAGES/WPrefs.mo
+share/locale/uk/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_TW/LC_MESSAGES/WPrefs.mo

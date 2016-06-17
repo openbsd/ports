@@ -1,29 +1,26 @@
-$OpenBSD: patch-WPrefs_app_Menu_c,v 1.4 2007/08/25 09:27:12 mglocker Exp $
---- WPrefs.app/Menu.c.orig	Tue Oct 26 04:23:39 2004
-+++ WPrefs.app/Menu.c	Fri Aug 17 20:58:09 2007
-@@ -577,7 +577,7 @@ createPanel(_Panel *p)
-         data->param.exec.command = "xv";
+$OpenBSD: patch-WPrefs_app_Menu_c,v 1.5 2016/06/17 11:49:33 dcoppa Exp $
+--- WPrefs.app/Menu.c.orig	Tue Aug 11 20:41:14 2015
++++ WPrefs.app/Menu.c	Wed Jun  8 09:52:32 2016
+@@ -517,19 +517,19 @@ static void createPanel(_Panel * p)
+ 		data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
+ 		data->param.directory.command = "setstyle";
+ 		data->param.directory.directory =
+-		    "/usr/share/WindowMaker/Themes /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
++		    "/usr/share/WindowMaker/Themes " PREFIX "/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
+ 		data->param.directory.stripExt = 1;
  
-         data = putNewItem(panel, pad, ExecInfo, _("Acrobat Reader"));
--        data->param.exec.command = "acroread || /usr/local/Acrobat4/bin/acroread";
-+        data->param.exec.command = "acroread";
+ 		data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));
+ 		data->param.directory.command = "wmsetbg -u -s";
+ 		data->param.directory.directory =
+-		    "/opt/kde2/share/wallpapers /usr/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds";
++		    "/opt/kde2/share/wallpapers " PREFIX "/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds";
+ 		data->param.directory.stripExt = 1;
  
-         data = putNewItem(panel, pad, ExecInfo, _("ghostview"));
-         data->param.exec.command = "gv";
-@@ -616,7 +616,7 @@ createPanel(_Panel *p)
+ 		data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (tile)"));
+ 		data->param.directory.command = "wmsetbg -u -t";
+ 		data->param.directory.directory =
+-		    "/opt/kde2/share/wallpapers /usr/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds";
++		    "/opt/kde2/share/wallpapers " PREFIX "/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds";
+ 		data->param.directory.stripExt = 1;
  
-         data = putNewItem(panel, pad, DirectoryInfo, _("Themes"));
-         data->param.directory.command = "setstyle";
--        data->param.directory.directory = "/usr/share/WindowMaker/Themes /usr/local/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
-+        data->param.directory.directory = "/usr/share/WindowMaker/Themes %%PREFIX%%/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes";
-         data->param.directory.stripExt = 1;
- 
-         data = putNewItem(panel, pad, DirectoryInfo, _("Bg Images (scale)"));
-@@ -1068,7 +1068,6 @@ parseCommand(WMPropList *item)
- 
-                 for (i = 0, j = 0; i < tokn; i++) {
-                     if (strcmp(tokens[i], "-noext") == 0) {
--                        wfree(tokens[i]);
-                         data->param.directory.stripExt = 1;
-                     } else {
-                         ctokens[j++] = tokens[i];
+ 		smenu = putNewSubmenu(pad, _("Assorted XTerms"));

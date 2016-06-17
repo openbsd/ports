@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2015/05/22 11:31:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/06/17 11:49:33 dcoppa Exp $
 @pkgpath x11/windowmaker
 GNUstep/
 GNUstep/Applications/
@@ -19,49 +19,86 @@ bin/wm-oldmenu2new
 @bin bin/wmagnify
 @bin bin/wmaker
 bin/wmaker.inst
+@bin bin/wmgenmenu
+@bin bin/wmiv
+@bin bin/wmmenugen
 @bin bin/wmsetbg
-@bin bin/wmsetup
 @bin bin/wxcopy
 @bin bin/wxpaste
 include/WINGs/
 include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
-include/WINGs/proplist-compat.h
-include/WINGs/wtabledelegates.h
-include/WINGs/wtableview.h
 include/WMaker.h
 include/wraster.h
-lib/libExtraWINGs.a
 lib/libWINGs.a
+lib/libWINGs.la
+@lib lib/libWINGs.so.${LIBWINGs_VERSION}
 lib/libWMaker.a
+lib/libWMaker.la
+@lib lib/libWMaker.so.${LIBWMaker_VERSION}
 lib/libWUtil.a
+lib/libWUtil.la
+@lib lib/libWUtil.so.${LIBWUtil_VERSION}
 lib/libwraster.a
 lib/libwraster.la
 @lib lib/libwraster.so.${LIBwraster_VERSION}
 lib/pkgconfig/WINGs.pc
-lib/pkgconfig/wmlib.pc
+lib/pkgconfig/WUtil.pc
 lib/pkgconfig/wrlib.pc
-@man man/man1/geticonset.1x
-@man man/man1/getstyle.1x
-@man man/man1/seticons.1x
-@man man/man1/setstyle.1x
-@man man/man1/wdwrite.1x
-@man man/man1/wmaker.1x
-@man man/man1/wmsetbg.1x
-@man man/man1/wxcopy.1x
-@man man/man1/wxpaste.1x
-man/sk/
-man/sk/man1/
-@man man/sk/man1/geticonset.1x
-@man man/sk/man1/getstyle.1x
-@man man/sk/man1/seticons.1x
-@man man/sk/man1/setstyle.1x
-@man man/sk/man1/wdwrite.1x
-@man man/sk/man1/wmaker.1x
-@man man/sk/man1/wmsetbg.1x
-@man man/sk/man1/wxcopy.1x
-@man man/sk/man1/wxpaste.1x
+@comment man/cs/
+@comment man/cs/man1/
+@comment man/cs/man1/geticonset.1
+@comment man/cs/man1/getstyle.1
+@comment man/cs/man1/seticons.1
+@comment man/cs/man1/setstyle.1
+@comment man/cs/man1/wdwrite.1
+@comment man/cs/man1/wmaker.1
+@comment man/cs/man1/wmsetbg.1
+@comment man/cs/man1/wxcopy.1
+@comment man/cs/man1/wxpaste.1
+@man man/man1/WPrefs.1
+@man man/man1/WindowMaker.1
+@man man/man1/get-wings-flags.1
+@man man/man1/get-wraster-flags.1
+@man man/man1/get-wutil-flags.1
+@man man/man1/geticonset.1
+@man man/man1/getstyle.1
+@man man/man1/seticons.1
+@man man/man1/setstyle.1
+@man man/man1/wdread.1
+@man man/man1/wdwrite.1
+@man man/man1/wmagnify.1
+@man man/man1/wmaker.1
+@man man/man1/wmgenmenu.1
+@man man/man1/wmiv.1
+@man man/man1/wmmenugen.1
+@man man/man1/wmsetbg.1
+@man man/man1/wxcopy.1
+@man man/man1/wxpaste.1
+@man man/man8/upgrade-windowmaker-defaults.8
+@comment man/ru/
+@comment man/ru/man1/
+@comment man/ru/man1/geticonset.1
+@comment man/ru/man1/getstyle.1
+@comment man/ru/man1/seticons.1
+@comment man/ru/man1/setstyle.1
+@comment man/ru/man1/wdwrite.1
+@comment man/ru/man1/wmaker.1
+@comment man/ru/man1/wmsetbg.1
+@comment man/ru/man1/wxcopy.1
+@comment man/ru/man1/wxpaste.1
+@comment man/sk/
+@comment man/sk/man1/
+@comment man/sk/man1/geticonset.1
+@comment man/sk/man1/getstyle.1
+@comment man/sk/man1/seticons.1
+@comment man/sk/man1/setstyle.1
+@comment man/sk/man1/wdwrite.1
+@comment man/sk/man1/wmaker.1
+@comment man/sk/man1/wmsetbg.1
+@comment man/sk/man1/wxcopy.1
+@comment man/sk/man1/wxpaste.1
 share/WINGs/
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
@@ -78,7 +115,9 @@ share/WPrefs/tiff/clip.tiff
 share/WPrefs/tiff/configs.tiff
 share/WPrefs/tiff/cycleworkspaces.tiff
 share/WPrefs/tiff/dock.tiff
+share/WPrefs/tiff/dockclipdrawersection.tiff
 share/WPrefs/tiff/dontlinkworkspaces.tiff
+share/WPrefs/tiff/drawer.tiff
 share/WPrefs/tiff/ergonomic.tiff
 share/WPrefs/tiff/expert.tiff
 share/WPrefs/tiff/fonts.tiff
@@ -90,6 +129,7 @@ share/WPrefs/tiff/menualign1.tiff
 share/WPrefs/tiff/menualign2.tiff
 share/WPrefs/tiff/menuprefs.tiff
 share/WPrefs/tiff/menus.tiff
+share/WPrefs/tiff/miscprefs2.tiff
 share/WPrefs/tiff/moreanim.tiff
 share/WPrefs/tiff/mousesettings.tiff
 share/WPrefs/tiff/mousespeed.tiff
@@ -97,10 +137,14 @@ share/WPrefs/tiff/msty1.tiff
 share/WPrefs/tiff/msty2.tiff
 share/WPrefs/tiff/msty3.tiff
 share/WPrefs/tiff/newstyle.tiff
+share/WPrefs/tiff/nextstyle.tiff
 share/WPrefs/tiff/nonopaque.tiff
+share/WPrefs/tiff/noopaqueresize.tiff
 share/WPrefs/tiff/oldstyle.tiff
 share/WPrefs/tiff/opaque.tiff
+share/WPrefs/tiff/opaqueresize.tiff
 share/WPrefs/tiff/paths.tiff
+share/WPrefs/tiff/smallwindow.tiff
 share/WPrefs/tiff/smooth.tiff
 share/WPrefs/tiff/sound.tiff
 share/WPrefs/tiff/speed0.tiff
@@ -115,6 +159,7 @@ share/WPrefs/tiff/speed4.tiff
 share/WPrefs/tiff/speed4s.tiff
 share/WPrefs/tiff/tdel.tiff
 share/WPrefs/tiff/tedit.tiff
+share/WPrefs/tiff/temp.tiff
 share/WPrefs/tiff/textr.tiff
 share/WPrefs/tiff/theme.tiff
 share/WPrefs/tiff/timer0.tiff
@@ -135,7 +180,6 @@ share/WPrefs/tiff/windowfocus.tiff
 share/WPrefs/tiff/workspace.tiff
 share/WPrefs/tiff/workspacename.tiff
 share/WPrefs/tiff/xis.tiff
-share/WPrefs/xpm/
 share/WindowMaker/
 share/WindowMaker/Backgrounds/
 share/WindowMaker/Backgrounds/BlueImage.jpeg
@@ -144,7 +188,9 @@ share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/BitchX.xpm
-share/WindowMaker/Icons/DefaultAppIcon.tiff
+share/WindowMaker/Icons/Drawer.tiff
+share/WindowMaker/Icons/Drawer.xpm
+share/WindowMaker/Icons/Ear.png
 share/WindowMaker/Icons/Ftp.png
 share/WindowMaker/Icons/GNUstep.tiff
 share/WindowMaker/Icons/GNUstep.xpm
@@ -157,10 +203,13 @@ share/WindowMaker/Icons/GNUterm.xpm
 share/WindowMaker/Icons/GreenWilber.png
 share/WindowMaker/Icons/ICQ.png
 share/WindowMaker/Icons/Jabber.png
+share/WindowMaker/Icons/Magnify.tiff
+share/WindowMaker/Icons/Magnify.xpm
+share/WindowMaker/Icons/Mouth.png
 share/WindowMaker/Icons/Mozilla.png
-share/WindowMaker/Icons/Netscape.png
 share/WindowMaker/Icons/Pen.png
 share/WindowMaker/Icons/Pencil.png
+share/WindowMaker/Icons/README
 share/WindowMaker/Icons/Real.png
 share/WindowMaker/Icons/Shell.png
 share/WindowMaker/Icons/Speaker.png
@@ -170,6 +219,7 @@ share/WindowMaker/Icons/TerminalGNUstep.tiff
 share/WindowMaker/Icons/TerminalGNUstep.xpm
 share/WindowMaker/Icons/TerminalLinux.tiff
 share/WindowMaker/Icons/TerminalLinux.xpm
+share/WindowMaker/Icons/Wine.png
 share/WindowMaker/Icons/XChat.png
 share/WindowMaker/Icons/clip.tiff
 share/WindowMaker/Icons/clip.xpm
@@ -193,8 +243,6 @@ share/WindowMaker/Icons/real.tiff
 share/WindowMaker/Icons/real.xpm
 share/WindowMaker/Icons/sgiterm.tiff
 share/WindowMaker/Icons/sgiterm.xpm
-share/WindowMaker/Icons/sound.tiff
-share/WindowMaker/Icons/sound.xpm
 share/WindowMaker/Icons/staroffice2.tiff
 share/WindowMaker/Icons/staroffice2.xpm
 share/WindowMaker/Icons/timer.tiff
@@ -253,16 +301,18 @@ share/WindowMaker/Styles/Summer.style
 share/WindowMaker/Styles/Traditional.style
 share/WindowMaker/Styles/VioletBlue.style
 share/WindowMaker/Themes/
+share/WindowMaker/Themes/Blau.style
 share/WindowMaker/Themes/Default.style
 share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
 share/WindowMaker/Themes/SteelBlueSilk.style
+share/WindowMaker/appearance.menu
 share/WindowMaker/autostart.sh
+share/WindowMaker/background.menu
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
-share/WindowMaker/xtree.dat
 share/examples/WindowMaker/
 @sample ${SYSCONFDIR}/WindowMaker/
 share/examples/WindowMaker/WMGLOBAL

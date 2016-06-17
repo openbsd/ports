@@ -1,12 +1,12 @@
-$OpenBSD: patch-WINGs_wapplication_c,v 1.4 2010/05/20 10:58:08 espie Exp $
---- WINGs/wapplication.c.orig	Sun Oct 24 05:13:29 2004
-+++ WINGs/wapplication.c	Thu May 20 12:50:56 2010
-@@ -175,7 +175,7 @@ WMPathForResourceOfType(char *resource, char *ext)
-         }
-     }
+$OpenBSD: patch-WINGs_wapplication_c,v 1.5 2016/06/17 11:49:33 dcoppa Exp $
+--- WINGs/wapplication.c.orig	Tue Aug 11 20:41:14 2015
++++ WINGs/wapplication.c	Wed Jun  8 09:52:32 2016
+@@ -187,7 +187,7 @@ char *WMPathForResourceOfType(const char *resource, co
+ 	if (path)
+ 		goto out;
  
--    path = checkFile("/usr/local/GNUstep", appdir, ext, resource);
-+    path = checkFile("%%PREFIX%%/GNUstep", appdir, ext, resource);
-     if (path) {
-         wfree(appdir);
-         return path;
+-	path = checkFile("/usr/local/GNUstep", appdir, ext, resource);
++	path = checkFile(PREFIX "/GNUstep", appdir, ext, resource);
+ 	if (path)
+ 		goto out;
+ 

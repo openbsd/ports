@@ -1,0 +1,15 @@
+$OpenBSD: patch-WPrefs_app_Appearance_c,v 1.1 2016/06/17 11:49:33 dcoppa Exp $
+
+On OpenBSD, time_t is long long.
+
+--- WPrefs.app/Appearance.c.orig	Wed Jun  8 13:11:47 2016
++++ WPrefs.app/Appearance.c	Wed Jun  8 13:13:05 2016
+@@ -923,7 +923,7 @@ static char *makeFileName(const char *prefix)
+ 		char buf[30];
+ 
+ 		wfree(fname);
+-		sprintf(buf, "%08lx.cache", time(NULL));
++		sprintf(buf, "%08llx.cache", (long long)time(NULL));
+ 		fname = wstrconcat(prefix, buf);
+ 	}
+ 

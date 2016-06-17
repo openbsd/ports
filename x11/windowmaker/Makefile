@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.93 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2016/06/17 11:49:33 dcoppa Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 
-V=			0.92.0
+V =			0.95.7
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
-REVISION-main=		56
 FULLPKGNAME-lang=	windowmaker-lang-${V}
-REVISION-lang=		5
 
-SHARED_LIBS +=	wraster              5.0      # 4.0
+SHARED_LIBS +=  WINGs                     0.0 # 2.1
+SHARED_LIBS +=  WMaker                    0.0 # 1.1
+SHARED_LIBS +=  WUtil                     0.0 # 3.0
+SHARED_LIBS +=  wraster                   5.1 # 4.1
 
 CATEGORIES=		x11 x11/windowmaker
 
@@ -19,22 +20,27 @@ HOMEPAGE=		http://windowmaker.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xpm Xrender c expat fontconfig
-WANTLIB += freetype jpeg m png pthread-stubs tiff gif xcb z
+WANTLIB += ICE SM X11 Xmu Xext Xft Xinerama Xpm Xrandr Xrender
+WANTLIB += Xt c expat fontconfig freetype gif jpeg kvm m png
+WANTLIB += pthread pthread-stubs tiff xcb z
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
-EXTRACT_SUFX=		.tar.bz2
 
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-static \
+CONFIGURE_ARGS+=	--disable-magick \
+			--disable-webp \
+			--enable-randr \
+			--enable-static \
 			--enable-xinerama \
-			--with-datadir="${LOCALBASE}/share/WindowMaker" \
-			--with-nlsdir="${LOCALBASE}/share/locale"
+			--localedir="${LOCALBASE}/share/locale"
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
-			LINGUAS='be bg bs ca cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW'
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+			LINGUAS='*' \
+			ac_cv_lib_exif_exif_data_new_from_file=no \
+			wm_cv_func_secure_getenv=no
 
 MULTI_PACKAGES=		-main -lang
 
@@ -43,27 +49,24 @@ LIB_DEPENDS=		graphics/tiff \
 			graphics/png \
 			graphics/giflib
 
-RUN_DEPENDS-lang=	x11/windowmaker>=0.90.0
+RUN_DEPENDS-lang =	x11/windowmaker>=${V}
 LIB_DEPENDS-lang=
 WANTLIB-lang=
 
-post-patch:
-# Rename wrongly named locale files
-	@mv ${WRKSRC}/WindowMaker/menu.cz ${WRKSRC}/WindowMaker/menu.cs
-	@mv ${WRKSRC}/WindowMaker/menu.se ${WRKSRC}/WindowMaker/menu.sv
+WMAKER_SHARE =		${PREFIX}/share/WindowMaker
 
 pre-configure:
-	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
-	${WRKSRC}/WINGs/wapplication.c \
-	${WRKSRC}/WPrefs.app/Menu.c \
-	${WRKSRC}/WPrefs.app/Paths.c \
-	${WRKSRC}/WindowMaker/Defaults/WMWindowAttributes.in \
-	${WRKSRC}/WindowMaker/Defaults/WindowMaker.in
+	@touch ${WRKSRC}/configure.ac ${WRKSRC}/aclocal.m4 \
+		${WRKSRC}/configure ${WRKSRC}/Makefile.am \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	mv ${WRKINST}/${SYSCONFDIR}/WindowMaker ${PREFIX}/share/examples/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/WindowMaker/Sounds
 	${INSTALL_DATA_DIR} ${PREFIX}/GNUstep/Applications
 	ln -s ${LOCALBASE}/share/WPrefs ${PREFIX}/GNUstep/Applications/WPrefs.app
+# Rename wrongly named locale files
+	@mv ${WMAKER_SHARE}/menu.cz ${WMAKER_SHARE}/menu.cs
+	@mv ${WMAKER_SHARE}/menu.se ${WMAKER_SHARE}/menu.sv
 
 .include <bsd.port.mk>

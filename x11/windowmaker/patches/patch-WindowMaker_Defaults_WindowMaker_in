@@ -1,21 +1,29 @@
-$OpenBSD: patch-WindowMaker_Defaults_WindowMaker_in,v 1.1 2005/11/01 17:28:34 wilfried Exp $
---- WindowMaker/Defaults/WindowMaker.in.orig	Wed Oct 27 05:01:38 2004
-+++ WindowMaker/Defaults/WindowMaker.in	Mon Oct 31 18:52:02 2005
-@@ -15,7 +15,7 @@
-     "/usr/X11R6/include/X11/pixmaps",
+$OpenBSD: patch-WindowMaker_Defaults_WindowMaker_in,v 1.2 2016/06/17 11:49:33 dcoppa Exp $
+--- WindowMaker/Defaults/WindowMaker.in.orig	Tue Aug 11 20:41:14 2015
++++ WindowMaker/Defaults/WindowMaker.in	Wed Jun  8 09:52:32 2016
+@@ -13,12 +13,10 @@
+     "~/GNUstep/Library/Icons",
+     "#pkgdatadir#/Icons",
+     "#pkgdatadir#/Pixmaps",
+-    "/usr/include/X11/pixmaps",
      "~/GNUstep/Library/WindowMaker/Pixmaps",
-     "/usr/share/icons",
+     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
+-    "/usr/share/icons",
 -    "/usr/local/share/pixmaps",
-+    "%%PREFIX%%/share/pixmaps",
-     "/usr/share/pixmaps"
+-    "/usr/share/pixmaps"
++    "#prefix#/share/icons",
++    "#prefix#/share/pixmaps"
    );
    PixmapPath = (
-@@ -24,7 +24,7 @@
+     "~/GNUstep/Library/WindowMaker/Pixmaps",
+@@ -26,9 +24,7 @@
+     "~/GNUstep/Library/WindowMaker/CachedPixmaps",
      "#pkgdatadir#/Pixmaps",
      "#pkgdatadir#/Backgrounds",
-     "/usr/X11R6/include/X11/pixmaps",
+-    "/usr/include/X11/pixmaps",
 -    "/usr/local/share/pixmaps",
-+    "%%PREFIX%%/share/pixmaps",
-     "/usr/share/pixmaps"
+-    "/usr/share/pixmaps"
++    "#prefix#/share/pixmaps"
    );
    WindowTitleBalloons = YES;
+   IconSize = 64;

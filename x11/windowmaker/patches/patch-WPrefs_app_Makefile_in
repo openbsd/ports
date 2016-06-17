@@ -1,0 +1,11 @@
+$OpenBSD: patch-WPrefs_app_Makefile_in,v 1.1 2016/06/17 11:49:33 dcoppa Exp $
+--- WPrefs.app/Makefile.in.orig	Tue Aug 11 20:52:19 2015
++++ WPrefs.app/Makefile.in	Wed Jun  8 10:03:29 2016
+@@ -455,6 +455,7 @@ WPrefs_SOURCES = \
+ #	Themes.c
+ AM_CFLAGS = 
+ AM_CPPFLAGS = -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
++	 -DPREFIX=\"$(prefix)\" \
+ 	 -I$(top_srcdir)/wrlib -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
+ 
+ WPrefs_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la

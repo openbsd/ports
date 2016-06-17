@@ -1,0 +1,14 @@
+$OpenBSD: patch-WindowMaker_Defaults_Makefile_in,v 1.1 2016/06/17 11:49:33 dcoppa Exp $
+--- WindowMaker/Defaults/Makefile.in.orig	Tue Aug 11 20:52:19 2015
++++ WindowMaker/Defaults/Makefile.in	Wed Jun  8 09:52:32 2016
+@@ -542,7 +542,9 @@ WMWindowAttributes: $(srcdir)/WMWindowAttributes.in
+ 	chmod 644 WMWindowAttributes
+ 
+ WindowMaker: $(srcdir)/WindowMaker.in
+-	$(AM_V_GEN)sed -e "s:#pkgdatadir#:$(pkgdatadir):" $(srcdir)/WindowMaker.in \
++	$(AM_V_GEN)sed -e "s:#pkgdatadir#:$(pkgdatadir):" \
++		-e "s:#prefix#:$(prefix):" \
++		$(srcdir)/WindowMaker.in \
+ 		> WindowMaker ; \
+ 	chmod 644 WindowMaker
+ 
