@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/10 19:12:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/17 18:37:41 jasper Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
-DISTNAME=	datalog-2.5
+DISTNAME=	datalog-2.6
 SHARED_LIBS +=  datalog                   0.0 # 0.0
 CATEGORIES=	lang
 
