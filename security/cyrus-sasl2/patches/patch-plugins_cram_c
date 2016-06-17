@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_cram_c,v 1.1 2016/06/17 09:43:35 ajacoutot Exp $
+
+64-bit time_t
+
+--- plugins/cram.c.orig	Fri Jun 17 11:35:21 2016
++++ plugins/cram.c	Fri Jun 17 11:35:27 2016
+@@ -137,7 +137,7 @@ static char *gettime(sasl_server_params_t *sparams)
+     
+     /* the bottom bits are really the only random ones so if
+        we overflow we don't want to loose them */
+-    snprintf(ret,15,"%lu",t%(0xFFFFFF));
++    snprintf(ret,15,"%lld",t%(0xFFFFFF));
+     
+     return ret;
+ }

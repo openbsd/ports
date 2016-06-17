@@ -1,0 +1,12 @@
+$OpenBSD: patch-pwcheck_pwcheck_getpwnam_c,v 1.1 2016/06/17 09:43:35 ajacoutot Exp $
+--- pwcheck/pwcheck_getpwnam.c.orig	Fri Jun 17 11:18:35 2016
++++ pwcheck/pwcheck_getpwnam.c	Fri Jun 17 11:18:52 2016
+@@ -34,7 +34,7 @@ char *password;
+     char* r;
+     struct passwd *pwd;
+ 
+-    pwd = getpwnam(userid);
++    pwd = getpwnam_shadow(userid);
+     if (!pwd) {
+ 	r = "Userid not found";
+     }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-saslauthd_auth_getpwent_c,v 1.1 2016/06/17 09:43:35 ajacoutot Exp $
+--- saslauthd/auth_getpwent.c.orig	Fri Jun 17 11:13:38 2016
++++ saslauthd/auth_getpwent.c	Fri Jun 17 11:14:11 2016
+@@ -81,7 +81,7 @@ auth_getpwent (
+     /* END VARIABLES */
+   
+     errno = 0;
+-    pw = getpwnam(login);
++    pw = getpwnam_shadow(login);
+     errnum = errno;
+     endpwent();
+ 

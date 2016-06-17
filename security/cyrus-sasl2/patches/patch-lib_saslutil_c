@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_saslutil_c,v 1.2 2016/06/17 09:43:35 ajacoutot Exp $
+
+64-bit time_t
+
+--- lib/saslutil.c.orig	Fri Jun 17 11:34:42 2016
++++ lib/saslutil.c	Fri Jun 17 11:37:28 2016
+@@ -288,9 +288,9 @@ int sasl_mkchal(sasl_conn_t *conn,
+   time(&now);
+ 
+   if (hostflag && conn->serverFQDN)
+-    snprintf(buf,maxlen, "<%lu.%lu@%s>", randnum, now, conn->serverFQDN);
++    snprintf(buf,maxlen, "<%lu.%lld@%s>", randnum, now, conn->serverFQDN);
+   else
+-    snprintf(buf,maxlen, "<%lu.%lu>", randnum, now);
++    snprintf(buf,maxlen, "<%lu.%lld>", randnum, now);
+ 
+   return (int) strlen(buf);
+ }
