@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.41 2016/04/28 09:37:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2016/06/17 18:32:29 jasper Exp $
+
+# XXX: PORTROACH overriden at end of this file.
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.0
+GNOME_VERSION=	0.3.1
 API=		0.3
-REVISION=		0
 
 SUBST_VARS=	API
 
-SHARED_LIBS +=  grilo-0.3            0.0      # 0.0
+SHARED_LIBS +=  grilo-0.3            0.1      # 0.0
 SHARED_LIBS +=  grlnet-0.3           0.0      # 0.0
 SHARED_LIBS +=	grlpls-0.3           0.0      # 0.0
 
@@ -44,3 +45,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/grilo-${API}
 
 .include <bsd.port.mk>
+
+# Override PORTROACH from gnome.port.mk since we track 0.3.x
+PORTROACH=	#empty
