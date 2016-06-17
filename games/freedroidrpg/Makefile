@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/04 19:35:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/06/17 18:55:42 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
-DISTNAME =	freedroidRPG-0.16
+DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ogg png pthread vorbis z
 
-MASTER_SITES =	ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME}/
+MASTER_SITES =	ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/
 
 WRKDIST =	${WRKDIR}/${DISTNAME:L}
 

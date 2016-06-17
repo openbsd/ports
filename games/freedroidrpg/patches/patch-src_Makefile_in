@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2011/12/03 08:19:08 ajacoutot Exp $
---- src/Makefile.in.orig	Wed Nov 23 20:32:28 2011
-+++ src/Makefile.in	Sat Dec  3 08:59:27 2011
-@@ -353,7 +353,7 @@ clean-binPROGRAMS:
- 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+$OpenBSD: patch-src_Makefile_in,v 1.6 2016/06/17 18:55:42 jasper Exp $
+--- src/Makefile.in.orig	Sat Apr  2 18:17:51 2016
++++ src/Makefile.in	Fri Jun 17 20:49:23 2016
+@@ -517,7 +517,7 @@ widgets/widget_text_list.$(OBJEXT): widgets/$(am__dirs
+ 	widgets/$(DEPDIR)/$(am__dirstamp)
  freedroidRPG$(EXEEXT): $(freedroidRPG_OBJECTS) $(freedroidRPG_DEPENDENCIES) 
  	@rm -f freedroidRPG$(EXEEXT)
 -	$(LINK) $(freedroidRPG_OBJECTS) $(freedroidRPG_LDADD) $(LIBS)
