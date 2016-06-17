@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_libv4lconvert_Makefile_in,v 1.1 2016/01/23 14:03:11 feinerer Exp $
+$OpenBSD: patch-lib_libv4lconvert_Makefile_in,v 1.2 2016/06/17 05:25:51 feinerer Exp $
 
 OpenBSD does not have an rt library.
 
---- lib/libv4lconvert/Makefile.in.orig	Sat Jan 23 04:46:21 2016
-+++ lib/libv4lconvert/Makefile.in	Sat Jan 23 04:46:27 2016
-@@ -491,7 +491,7 @@ libv4lconvert_la_SOURCES = libv4lconvert.c tinyjpeg.c 
+--- lib/libv4lconvert/Makefile.in.orig	Wed Jun 15 20:59:32 2016
++++ lib/libv4lconvert/Makefile.in	Thu Jun 16 06:50:24 2016
+@@ -492,7 +492,7 @@ libv4lconvert_la_SOURCES = libv4lconvert.c tinyjpeg.c 
  	libv4lconvert-priv.h libv4lsyscall-priv.h tinyjpeg.h \
  	tinyjpeg-internal.h $(am__append_1)
  libv4lconvert_la_CPPFLAGS = $(CFLAG_VISIBILITY) $(ENFORCE_LIBV4L_STATIC)
