@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/03 11:28:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/06/18 12:39:03 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-screenshot
 @man man/man1/gnome-screenshot.1
@@ -8,8 +8,6 @@ share/GConf/gsettings/gnome-screenshot.convert
 share/appdata/
 share/appdata/org.gnome.Screenshot.appdata.xml
 share/applications/org.gnome.Screenshot.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Screenshot.service
 share/glib-2.0/schemas/org.gnome.gnome-screenshot.gschema.xml
 share/locale/af/LC_MESSAGES/gnome-screenshot.mo
@@ -24,14 +22,10 @@ share/locale/be@latin/LC_MESSAGES/gnome-screenshot.mo
 share/locale/bg/LC_MESSAGES/gnome-screenshot.mo
 share/locale/bn/LC_MESSAGES/gnome-screenshot.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-screenshot.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-screenshot.mo
 share/locale/bs/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ca/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-screenshot.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-screenshot.mo
 share/locale/cs/LC_MESSAGES/gnome-screenshot.mo
 share/locale/cy/LC_MESSAGES/gnome-screenshot.mo
@@ -49,12 +43,8 @@ share/locale/eu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fa/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fi/LC_MESSAGES/gnome-screenshot.mo
 share/locale/fr/LC_MESSAGES/gnome-screenshot.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ga/LC_MESSAGES/gnome-screenshot.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/gnome-screenshot.mo
 share/locale/gl/LC_MESSAGES/gnome-screenshot.mo
 share/locale/gu/LC_MESSAGES/gnome-screenshot.mo
@@ -68,8 +58,6 @@ share/locale/it/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ja/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ka/LC_MESSAGES/gnome-screenshot.mo
 share/locale/kk/LC_MESSAGES/gnome-screenshot.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-screenshot.mo
 share/locale/kn/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ko/LC_MESSAGES/gnome-screenshot.mo
