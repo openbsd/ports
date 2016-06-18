@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.117 2016/05/07 08:20:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2016/06/18 09:13:10 ajacoutot Exp $
 
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.29
+GOFFICE_VERSION=	0.10.30
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.29
+GNOME_VERSION=		1.12.30
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -24,13 +24,12 @@ WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 dbus-1
 WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
-WANTLIB += jpeg lzma m nettle p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre perl pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 spectre tasn1 util xcb xcb-render xcb-shm xml2
-WANTLIB += xslt z idn
+WANTLIB += iconv idn intl jpeg lzma m nettle p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += pthread pthread-stubs rsvg-2 spectre tasn1 util xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}
