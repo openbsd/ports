@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2016/05/07 08:20:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2016/06/18 09:12:44 ajacoutot Exp $
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.29
+GNOME_VERSION=	0.10.30
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -25,13 +25,13 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-common bz2 cairo cairo-gobject croco-0.6 dbus-1
 WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2
-WANTLIB += gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed jpeg lzma
-WANTLIB += m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 spectre
-WANTLIB += tasn1 xcb xcb-render xcb-shm xml2 xslt z idn
+WANTLIB += gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed iconv idn
+WANTLIB += intl jpeg lzma m nettle p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += rsvg-2 spectre tasn1 xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/libgsf \
 			print/libspectre \
