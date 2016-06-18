@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2016/05/31 05:51:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2016/06/18 09:12:15 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.37
+GNOME_VERSION=		1.14.38
 
 CATEGORIES=		devel
 
@@ -16,11 +16,10 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += bz2 c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 lzma m pcre png pthread xml2 z
+WANTLIB += gobject-2.0 iconv intl lzma m pcre png pthread xml2
+WANTLIB += z
 
-MODULES=		devel/gettext \
-			textproc/intltool \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
 
