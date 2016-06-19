@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/15 08:53:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/06/19 12:17:06 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pexpect/
 lib/python${MODPY_VERSION}/site-packages/pexpect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pexpect/ANSI.py
@@ -20,7 +20,8 @@ lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}run.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}screen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}spawnbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pexpect/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pexpect/async.py
+lib/python${MODPY_VERSION}/site-packages/pexpect/async.py
+lib/python${MODPY_VERSION}/site-packages/pexpect/bashrc.sh
 lib/python${MODPY_VERSION}/site-packages/pexpect/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pexpect/expect.py
 lib/python${MODPY_VERSION}/site-packages/pexpect/fdpexpect.py

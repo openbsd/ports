@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/17 07:37:29 shadchin Exp $
+# $OpenBSD: Makefile,v 1.24 2016/06/19 12:17:06 shadchin Exp $
 
-COMMENT=	pure Python Expect-like module
+COMMENT=		pure Python Expect-like module
 
-MODPY_EGG_VERSION=	4.0.1
-DISTNAME=	pexpect-${MODPY_EGG_VERSION}
-PKGNAME=	py-${DISTNAME}
-CATEGORIES=	devel
-REVISION=	2
+MODPY_EGG_VERSION=	4.1.0
+DISTNAME=		pexpect-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=		devel
 
-HOMEPAGE=	http://pexpect.sourceforge.net/
+HOMEPAGE=		http://pexpect.sourceforge.net/
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =		Yes
 
-MODULES=	lang/python
+MODULES=		lang/python
 
 RUN_DEPENDS =		devel/py-ptyprocess${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
@@ -29,10 +30,10 @@ FLAVOR ?=
 
 MODPY_ADJ_FILES =	tests/fakessh/ssh
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}pexpect
-DOCDIR=		${PREFIX}/share/doc/${MODPY_PY_PREFIX}pexpect
+EXAMPLESDIR=		${PREFIX}/share/examples/${MODPY_PY_PREFIX}pexpect
+DOCDIR=			${PREFIX}/share/doc/${MODPY_PY_PREFIX}pexpect
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC} SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+MAKE_ENV +=		PYTHONPATH=${WRKSRC}
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/pexpect/replwrap.py
@@ -42,7 +43,8 @@ pre-build:
 	${SUBST_CMD} ${WRKSRC}/tests/test_run.py
 
 post-build:
-	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html \
+	    SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
