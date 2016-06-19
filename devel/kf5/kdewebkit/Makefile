@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/19 20:03:59 sthen Exp $
 
 COMMENT =	integration of the HTML rendering engine WebKit into KDE
 DISTNAME =	kdewebkit-${VERSION}
@@ -19,5 +19,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/kwallet
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 .include <bsd.port.mk>
