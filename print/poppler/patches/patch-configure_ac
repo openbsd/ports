@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.18 2016/05/01 12:33:24 kili Exp $
---- configure.ac.orig	Fri Apr 29 00:30:06 2016
-+++ configure.ac	Fri Apr 29 20:48:31 2016
-@@ -679,6 +679,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
+$OpenBSD: patch-configure_ac,v 1.19 2016/06/19 19:42:26 kili Exp $
+--- configure.ac.orig	Fri Jun 17 00:12:16 2016
++++ configure.ac	Fri Jun 17 21:01:05 2016
+@@ -680,6 +680,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
  
  GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2016/05/01 12:33:24 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -771,31 +789,35 @@ if test x$enable_poppler_qt5 = xyes; then
+@@ -772,31 +790,35 @@ if test x$enable_poppler_qt5 = xyes; then
    AC_CHECK_TOOL(MOCQT5, moc)
    AC_MSG_CHECKING([for Qt5 moc])
    mocversion=`$MOCQT5 -v 2>&1`
@@ -75,7 +75,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2016/05/01 12:33:24 kili Exp $
    AC_SUBST(MOCQT5)
    AC_MSG_RESULT([$MOCQT5])
  fi
-@@ -996,6 +1018,9 @@ glib/reference/Makefile
+@@ -997,6 +1019,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile
@@ -85,7 +85,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2016/05/01 12:33:24 kili Exp $
  qt4/Makefile
  qt4/src/Makefile
  qt4/tests/Makefile
-@@ -1031,6 +1056,7 @@ if test x$enable_cmyk = xyes;then
+@@ -1032,6 +1057,7 @@ if test x$enable_cmyk = xyes;then
          echo "      with CMYK support"
  fi
  echo "  cairo output:        $use_cairo"
