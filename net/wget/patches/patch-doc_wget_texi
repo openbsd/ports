@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_wget_texi,v 1.10 2016/03/27 03:26:11 danj Exp $
---- doc/wget.texi.orig	Thu Dec 10 23:25:14 2015
-+++ doc/wget.texi	Sat Mar 26 12:24:37 2016
+$OpenBSD: patch-doc_wget_texi,v 1.11 2016/06/19 20:42:57 danj Exp $
+--- doc/wget.texi.orig	Fri Jun  3 13:55:13 2016
++++ doc/wget.texi	Sun Jun 19 10:57:35 2016
 @@ -191,14 +191,14 @@ gauge can be customized to your preferences.
  Most of the features are fully configurable, either through command line
  options, or via the initialization file @file{.wgetrc} (@pxref{Startup
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_wget_texi,v 1.10 2016/03/27 03:26:11 danj Exp $
  Default location of the @dfn{global} startup file.
  
  @item .wgetrc
-@@ -3036,9 +3036,8 @@ commands.
+@@ -3067,9 +3067,8 @@ commands.
  @cindex location of wgetrc
  
  When initializing, Wget will look for a @dfn{global} startup file,
@@ -30,7 +30,7 @@ $OpenBSD: patch-doc_wget_texi,v 1.10 2016/03/27 03:26:11 danj Exp $
  
  Then it will look for the user's file.  If the environmental variable
  @code{WGETRC} is set, Wget will try to load that file.  Failing that, no
-@@ -3048,7 +3047,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
+@@ -3079,7 +3078,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
  
  The fact that user's settings are loaded after the system-wide ones
  means that in case of collision user's wgetrc @emph{overrides} the
