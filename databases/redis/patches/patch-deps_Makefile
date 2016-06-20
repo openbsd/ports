@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_Makefile,v 1.8 2016/05/10 09:38:48 dcoppa Exp $
+$OpenBSD: patch-deps_Makefile,v 1.9 2016/06/20 10:49:38 dcoppa Exp $
 --- deps/Makefile.orig	Fri May  6 09:11:36 2016
 +++ deps/Makefile	Tue May 10 09:51:32 2016
 @@ -35,7 +35,6 @@ endif
@@ -48,7 +48,7 @@ $OpenBSD: patch-deps_Makefile,v 1.8 2016/05/10 09:38:48 dcoppa Exp $
  
  jemalloc: .make-prerequisites
 -	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
- 	cd jemalloc && ./configure --with-jemalloc-prefix=je_ --enable-cc-silence CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)"
+ 	cd jemalloc && ./configure --with-lg-quantum=3 --with-jemalloc-prefix=je_ --enable-cc-silence CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)"
  	cd jemalloc && $(MAKE) CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" lib/libjemalloc.a
  
  .PHONY: jemalloc

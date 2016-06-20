@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
---- redis.conf.orig	Fri May  6 09:11:36 2016
-+++ redis.conf	Tue May 10 10:20:13 2016
+$OpenBSD: patch-redis_conf,v 1.18 2016/06/20 10:49:38 dcoppa Exp $
+--- redis.conf.orig	Fri Jun 17 15:15:21 2016
++++ redis.conf	Mon Jun 20 11:58:24 2016
 @@ -98,8 +98,8 @@ tcp-backlog 511
  # incoming connections. There is no default, so Redis will not listen
  # on a unix socket when not specified.
@@ -12,7 +12,7 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  
  # Close the connection after a client is idle for N seconds (0 to disable)
  timeout 0
-@@ -123,8 +123,9 @@ tcp-keepalive 0
+@@ -124,8 +124,9 @@ tcp-keepalive 300
  ################################# GENERAL #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
@@ -24,7 +24,7 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  
  # If you run Redis from upstart or systemd, Redis can interact with your
  # supervision tree. Options:
-@@ -142,11 +143,11 @@ supervised no
+@@ -143,11 +144,11 @@ supervised no
  #
  # When the server runs non daemonized, no pid file is created if none is
  # specified in the configuration. When the server is daemonized, the pid file
@@ -33,12 +33,12 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  #
  # Creating a pid file is best effort: if Redis is not able to create it
  # nothing bad happens, the server will start and run normally.
--pidfile /var/run/redis.pid
-+pidfile /var/run/redis/redis.pid
+-pidfile /var/run/redis_6379.pid
++pidfile /var/run/redis/redis_6379.pid
  
  # Specify the server verbosity level.
  # This can be one of:
-@@ -159,17 +160,18 @@ loglevel notice
+@@ -160,17 +161,18 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -62,7 +62,7 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  
  # Set the number of databases. The default database is DB 0, you can select
  # a different one on a per-connection basis using SELECT <dbid> where
-@@ -243,7 +245,7 @@ dbfilename dump.rdb
+@@ -244,7 +246,7 @@ dbfilename dump.rdb
  # The Append Only File will also be created inside this directory.
  #
  # Note that you must specify a directory here, not a file name.
@@ -71,7 +71,7 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -447,7 +449,7 @@ slave-priority 100
+@@ -448,7 +450,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
@@ -80,7 +80,7 @@ $OpenBSD: patch-redis_conf,v 1.17 2016/05/10 09:38:48 dcoppa Exp $
  
  # Command renaming.
  #
-@@ -480,6 +482,7 @@ slave-priority 100
+@@ -481,6 +483,7 @@ slave-priority 100
  # an error 'max number of clients reached'.
  #
  # maxclients 10000
