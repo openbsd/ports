@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2016/06/01 09:19:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2016/06/20 12:19:33 dcoppa Exp $
 
 COMMENT =		large library of utility functions
 
-DISTNAME =		MissingH-1.4.0.0
+DISTNAME =		MissingH-1.4.0.1
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
 
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	5tbOE4kIGmeE5xdS7m0A0P
+MODGHC_PACKAGE_KEY =	7uUDZ5ND6ltIntBQrnfTtc
 
 RUN_DEPENDS +=		devel/hs-hslogger \
 			devel/hs-HUnit \
