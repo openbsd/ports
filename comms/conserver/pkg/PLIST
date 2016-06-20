@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/10/07 12:51:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/06/20 15:08:44 sthen Exp $
 @newgroup _conserver:736
 @newuser _conserver:736:_conserver:daemon:Serial console server:/nonexistent:/sbin/nologin
 @extra /var/log/conserver
@@ -25,7 +25,7 @@ share/examples/conserver/console.cf
 @mode 755
 @owner _conserver
 @group wheel
-@sample /var/consoles/
+@sample /var/log/consoles/
 @mode
 @group
 @owner
