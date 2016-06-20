@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/28 21:16:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/06/20 09:07:43 sthen Exp $
 
 PORTROACH =	limitw:1,even
 
@@ -8,12 +8,11 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r3.2.6
-REVISION =	0
+DISTNAME =	mongodb-src-r3.2.7
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
 
-HOMEPAGE =	http://www.mongodb.org/
+HOMEPAGE =	https://www.mongodb.com/
 
 # mongodb itself: AGPLv3
 # client/utils:   Apache 2.0
@@ -24,7 +23,7 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += execinfo kvm m pcap pcre pcrecpp pthread ssl yaml-cpp
 WANTLIB += z
 
-MASTER_SITES =	http://downloads.mongodb.org/src/
+MASTER_SITES =	https://fastdl.mongodb.org/src/
 
 MODULES =	gcc4 \
 		devel/scons \
