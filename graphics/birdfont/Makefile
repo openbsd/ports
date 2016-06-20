@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2016/06/17 18:28:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2016/06/20 10:27:56 jasper Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-2.16.2
+DISTNAME =	birdfont-2.16.4
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
@@ -14,26 +14,28 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-3 javascriptcoregtk-3.0 m notify pango-1.0 pangocairo-1.0
-WANTLIB += pthread soup-2.4 sqlite3 webkitgtk-3.0 xmlbird z
 
 MASTER_SITES =	http://birdfont.org/releases/
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	devel/gettext \
-		lang/python
+WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 intl javascriptcoregtk-4.0 m notify pango-1.0
+WANTLIB += pangocairo-1.0 soup-2.4 sqlite3 webkit2gtk-4.0 xmlbird
+WANTLIB += z
+
+MODULES =	lang/python
 
 MODPY_ADJ_FILES =	configure install.py
 
-BUILD_DEPENDS =	devel/py-doit \
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/py-doit \
 		lang/vala
 
 LIB_DEPENDS =	devel/libgee \
 		devel/libnotify \
 		textproc/libxmlbird \
-		www/webkit,gtk3
+		www/webkitgtk4
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/roboto-fonts \
@@ -56,5 +58,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ./install.py --nogzip=1
+	# Remove bundled font files
+	rm ${PREFIX}/share/birdfont/*.ttf
 
 .include <bsd.port.mk>
