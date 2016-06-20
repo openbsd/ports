@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2016/04/07 16:05:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2016/06/20 15:40:47 naddy Exp $
 
 COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.3.1
+REVISION=	0
 CATEGORIES=	audio archivers
 HOMEPAGE=	https://www.xiph.org/flac/
 SHARED_LIBS +=  FLAC                 10.0     # 11.0
@@ -26,6 +27,7 @@ BUILD_DEPENDS+=	devel/nasm
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-altivec \
+		--disable-doxygen-docs \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
