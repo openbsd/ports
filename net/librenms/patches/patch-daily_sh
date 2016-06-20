@@ -1,12 +1,12 @@
-$OpenBSD: patch-daily_sh,v 1.10 2016/04/18 09:36:03 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.11 2016/06/20 15:12:42 sthen Exp $
 
 - use ksh
 - patch php binary name
 - avoid ${cnf,,} bashism (converts to lowercase); actually the
 result was being ignored anyway
 
---- daily.sh.orig	Mon Apr 18 10:20:48 2016
-+++ daily.sh	Mon Apr 18 10:25:14 2016
+--- daily.sh.orig	Mon Jun 20 14:49:32 2016
++++ daily.sh	Mon Jun 20 14:50:42 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
@@ -44,7 +44,7 @@ result was being ignored anyway
      if [ -z "$cnf" ] || [ "$cnf" == "0" ] || [ "$cnf" == "false" ]; then
          # Call ourself again in case above pull changed or added something to daily.sh
          $0 post-pull
-@@ -55,26 +55,26 @@ else
+@@ -55,27 +55,27 @@ else
          no-code-update)
              # Updates of the code are disabled, just check for schema updates
              # and clean up the db.
@@ -70,6 +70,7 @@ result was being ignored anyway
 -            php daily.php -f device_perf
 -            php daily.php -f purgeusers
 -            php daily.php -f bill_data
+-            php daily.php -f alert_log
 +            %PHP% daily.php -f syslog
 +            %PHP% daily.php -f eventlog
 +            %PHP% daily.php -f authlog
@@ -78,10 +79,11 @@ result was being ignored anyway
 +            %PHP% daily.php -f device_perf
 +            %PHP% daily.php -f purgeusers
 +            %PHP% daily.php -f bill_data
++            %PHP% daily.php -f alert_log
          ;;
          submodules)
              # Init+Update our submodules
-@@ -83,7 +83,7 @@ else
+@@ -84,7 +84,7 @@ else
          ;;
          notifications)
              # Get notifications

@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_distro,v 1.5 2016/05/06 19:31:08 sthen Exp $
---- scripts/distro.orig	Tue May  3 12:24:48 2016
-+++ scripts/distro	Tue May  3 12:25:20 2016
-@@ -1,94 +1,2 @@
+$OpenBSD: patch-scripts_distro,v 1.6 2016/06/20 15:12:42 sthen Exp $
+--- scripts/distro.orig	Mon Jun 20 14:49:40 2016
++++ scripts/distro	Mon Jun 20 14:50:03 2016
+@@ -1,96 +1,2 @@
 -#!/usr/bin/env bash
 -# Detects which OS and if it is Linux then it will detect which Linux Distribution.
 -
@@ -71,10 +71,12 @@ $OpenBSD: patch-scripts_distro,v 1.5 2016/05/06 19:31:08 sthen Exp $
 -  fi
 -
 -  if [ -f /etc/lsb-release -a "${IGNORE_LSB}" != 1 ] ; then
--    LSB_DIST="`cat /etc/lsb-release | grep DISTRIB_ID | cut -d "=" -f2`"
--    LSB_REV="`cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d "=" -f2`"
+-    LSB_DIST=$(lsb_release -si)
+-    LSB_REV=$(lsb_release -sr)
 -    if [ "$LSB_DIST" != "" ] ; then
 -      DIST=$LSB_DIST
+-    fi
+-    if [ "$LSB_REV" != "" ] ; then
 -      REV=$LSB_REV
 -    fi
 -  fi
