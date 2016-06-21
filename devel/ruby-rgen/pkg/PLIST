@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/06/13 08:24:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/06/21 01:30:00 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -123,7 +123,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-bg_
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-icons_${GEM_BIN_SUFFIX}${GEM_BIN_SUFFIX}${GEM_BIN_SUFFIX}_256x240.png
+${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-icons_222222_256x240.png
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-icons_2e83ff_256x240.png
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-icons_454545_256x240.png
 ${GEM_LIB}/gems/${DISTNAME}/test/coverage/assets/0.10.0/smoothness/images/ui-icons_888888_256x240.png
