@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/05 16:26:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2016/06/21 18:06:39 dcoppa Exp $
 
 COMMENT =	command line todo list manager
 
@@ -11,9 +11,9 @@ HOMEPAGE =	http://www.taskwarrior.org/
 
 MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
 
-MASTER_SITES =	${HOMEPAGE}/download/
+MASTER_SITES =	${HOMEPAGE}download/
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
 # Needs C++11; linker issues with clang
