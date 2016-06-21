@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2016/06/14 08:36:29 czarkoff Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2016/06/21 21:55:08 jung Exp $
+@newgroup _svnserve:777
+@newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
