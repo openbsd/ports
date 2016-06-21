@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/05/06 08:52:28 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/06/21 18:21:52 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -974,6 +974,7 @@ lib/R/library/nlme/
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
+lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
@@ -1034,6 +1035,7 @@ lib/R/library/nlme/scripts/ch04.R
 lib/R/library/nlme/scripts/ch05.R
 lib/R/library/nlme/scripts/ch06.R
 lib/R/library/nlme/scripts/ch08.R
+lib/R/library/nlme/scripts/runme.R
 lib/R/library/nlme/scripts/sims.rda
 lib/R/library/nnet/
 lib/R/library/nnet/CITATION
