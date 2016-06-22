@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/18 09:48:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/22 21:33:55 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -3926,5 +3926,6 @@ icinga-web2/tmp/
 @mode
 @owner
 @group
-@cwd /usr/local/share/doc/pkg-readmes
-${FULLPKGNAME}
+@cwd /usr/local
+share/doc/pkg-readmes/${FULLPKGNAME}
+bin/icingacli

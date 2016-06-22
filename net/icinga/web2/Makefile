@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/29 09:14:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/06/22 21:33:55 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
 V =		2.3.2
+REVISION =	0
 DISTNAME =	icinga-web2-$V
 DISTFILES =	${DISTNAME}{v$V}.tar.gz
 WRKDIST =	${WRKDIR}/icingaweb2-$V
@@ -28,5 +29,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2
 	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/
 	find ${PREFIX}/icinga-web2 -name '*.orig' | xargs rm
+	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli \
+	    ${WRKINST}/usr/local/bin/
 
 .include <bsd.port.mk>
