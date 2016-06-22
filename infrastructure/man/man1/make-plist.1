@@ -1,4 +1,4 @@
-.\"	$OpenBSD: make-plist.1,v 1.5 2015/09/10 20:11:27 schwarze Exp $
+.\"	$OpenBSD: make-plist.1,v 1.6 2016/06/22 10:13:17 ajacoutot Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 10 2015 $
+.Dd $Mdocdate: June 22 2016 $
 .Dt MAKE-PLIST 1
 .Os
 .Sh NAME
@@ -96,11 +96,6 @@ In addition,
 will complain if it doesn't find the corresponding
 .Ar LIBname_VERSION=value
 assignment.
-.Pp
-.Nm
-will separate shared files fragments unless
-.Ev SHARED_ONLY
-is set.
 .Pp
 .Nm
 also has limited understanding of existing fragments, and will try to

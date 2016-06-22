@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.9 2015/07/19 17:31:44 naddy Exp $
+# $OpenBSD: make-plist,v 1.10 2016/06/22 10:13:17 ajacoutot Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -128,7 +128,7 @@ my %plistname;
 my %mtree;
 my @subs;
 my $baseprefix=$ENV{PREFIX};
-my $shared_only;
+my $shared_only = 1;
 my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
 my $portsdir_path = $ENV{PORTSDIR_PATH};
