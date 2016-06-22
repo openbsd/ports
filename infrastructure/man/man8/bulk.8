@@ -1,4 +1,4 @@
-.\"	$OpenBSD: bulk.8,v 1.8 2016/06/15 15:12:33 espie Exp $
+.\"	$OpenBSD: bulk.8,v 1.9 2016/06/22 23:25:57 sthen Exp $
 .\"
 .\"	Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-.Dd $Mdocdate: June 15 2016 $
+.Dd $Mdocdate: June 22 2016 $
 .Dt BULK 8
 .Os
 .Sh NAME
@@ -122,7 +122,7 @@ for details.
 .Pp
 If your WRKOBJDIR is a temporary partition, make sure it
 belongs to _pbuild:_pbuild after a reboot.
-.Ss 3. Add slaves and do a fulk bulk
+.Ss 3. Add slaves and do a full bulk
 Create identical slave machines with the same release material.
 Have them import the NFS partitions from the master, they
 don't need root access to the partitions.
