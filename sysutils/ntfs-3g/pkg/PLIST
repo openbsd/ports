@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/20 05:32:02 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/06/22 09:51:34 dcoppa Exp $
 @bin bin/ntfs-3g
 @bin bin/ntfs-3g.probe
 @bin bin/ntfs-3g.secaudit
@@ -9,6 +9,9 @@
 @bin bin/ntfsfix
 @bin bin/ntfsinfo
 @bin bin/ntfsls
+@bin bin/ntfsrecover
+@bin bin/ntfstruncate
+@bin bin/ntfswipe
 include/ntfs-3g/
 include/ntfs-3g/acls.h
 include/ntfs-3g/attrib.h
@@ -72,6 +75,7 @@ lib/pkgconfig/libntfs-3g.pc
 @man man/man8/ntfslabel.8
 @man man/man8/ntfsls.8
 @man man/man8/ntfsprogs.8
+@man man/man8/ntfsrecover.8
 @man man/man8/ntfsresize.8
 @man man/man8/ntfstruncate.8
 @man man/man8/ntfsundelete.8

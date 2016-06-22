@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2015/11/20 05:32:02 pirofti Exp $
---- src/Makefile.in.orig	Sat Mar 14 15:10:28 2015
-+++ src/Makefile.in	Sun Jul 19 19:03:42 2015
+$OpenBSD: patch-src_Makefile_in,v 1.5 2016/06/22 09:51:34 dcoppa Exp $
+--- src/Makefile.in.orig	Mon Feb 22 08:34:49 2016
++++ src/Makefile.in	Wed Jun  1 07:54:54 2016
 @@ -83,8 +83,7 @@ target_triplet = @target@
  @ENABLE_NTFS_3G_TRUE@bin_PROGRAMS = ntfs-3g.probe$(EXEEXT) \
  @ENABLE_NTFS_3G_TRUE@	ntfs-3g.usermap$(EXEEXT) \
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2015/11/20 05:32:02 pirofti Exp $
  	    } \
  	; done
  
-@@ -1041,7 +1040,7 @@ uninstall-man: uninstall-man8
+@@ -1043,7 +1042,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
@@ -28,4 +28,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2015/11/20 05:32:02 pirofti Exp $
 +@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(LN_S) -f "$(DESTDIR)/sbin/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(LN_S) -f "$(rootbindir)/lowntfs-3g" "$(DESTDIR)/sbin/mount.lowntfs-3g"
  
- @ENABLE_NTFS_3G_TRUE@install-data-local:	install-man8
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-data-local:	install-man8
