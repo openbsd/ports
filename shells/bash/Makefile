@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2016/04/05 20:03:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.99 2016/06/22 21:10:27 naddy Exp $
 
 BROKEN-sparc=	Segmentation fault on any non-trivial script
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.3.30
-PKGNAME=	bash-4.3.42
-REVISION=	0
+PKGNAME=	bash-4.3.46
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-4.3-patches/}
 DIST_SUBDIR=	bash
-.for i in 31 32 33 34 35 36 37 38 39 40 41 42
+.for i in 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
 PATCHFILES+=	bash43-0$i:0
 .endfor
 
