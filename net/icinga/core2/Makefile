@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/05/20 08:13:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2016/06/22 21:42:49 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -9,7 +9,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.4.9
+V =		2.4.10
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
