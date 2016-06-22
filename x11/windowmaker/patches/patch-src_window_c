@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_window_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit 65802d3402dec0cfc995ec5cd1d50078fd35c183
+Author: Doug Torrance <dtorrance@piedmont.edu>
+Date:   Mon Jan 18 20:52:17 2016 -0500
+
+wmaker: Use window placement settings on other workspaces.
+
+Previously, if a window was placed on a workspace other than the current one,
+the window placement settings (given by WindowPlacement) were ignored and
+the window was drawn in the upper left hand corner.
+
+--- src/window.c.orig	Tue Aug 11 20:41:14 2015
++++ src/window.c	Wed Jun 22 10:43:16 2016
+@@ -964,9 +964,8 @@ WWindow *wManageWindow(WScreen *scr, Window window)
+ 	wWindowConstrainSize(wwin, &width, &height);
+ 
+ 	/* do not ask for window placement if the window is
+-	 * transient, during startup, if the initial workspace is another one
+-	 * or if the window wants to start iconic.
+-	 * If geometry was saved, restore it. */
++	 * transient, during startup, or if the window wants
++	 * to start iconic.  If geometry was saved, restore it. */
+ 	{
+ 		Bool dontBring = False;
+ 
+@@ -975,7 +974,6 @@ WWindow *wManageWindow(WScreen *scr, Window window)
+ 			y = win_state->state->y;
+ 		} else if ((wwin->transient_for == None || wPreferences.window_placement != WPM_MANUAL)
+ 			   && !scr->flags.startup
+-			   && workspace == scr->current_workspace
+ 			   && !wwin->flags.miniaturized
+ 			   && !wwin->flags.maximized && !(wwin->normal_hints->flags & (USPosition | PPosition))) {
+ 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-util_wmmenugen_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit 2ea61626296de392b4f72468d294bc62bf05fc9c
+Author: Doug Torrance <dtorrance@piedmont.edu>
+Date:   Sun Apr 24 18:40:45 2016 -0400
+
+wmmenugen: Fix segfault; argv[argc] doesn't exist.
+
+--- util/wmmenugen.c.orig	Tue Aug 11 20:41:14 2015
++++ util/wmmenugen.c	Wed Jun 22 09:37:29 2016
+@@ -106,7 +106,7 @@ int main(int argc, char **argv)
+ 	parse_locale(NULL, &env_lang, &env_ctry, &env_enc, &env_mod);
+ 	terminal = find_terminal_emulator();
+ 
+-	for (i = 1; i <= argc; i++)
++	for (i = 1; i < argc; i++)
+ 	{
+ 		if (strncmp(argv[i], "-parser", 7) == 0 &&
+ 		    (argv[i][7] == '=' ||

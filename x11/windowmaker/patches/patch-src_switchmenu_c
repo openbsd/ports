@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_switchmenu_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit 2f33b3c2bc42ee88e6b6055a2f41367c296ef481
+Author: Doug Torrance <dtorrance@piedmont.edu>
+Date:   Sat Jan 16 00:22:34 2016 -0500
+
+wmaker: Maintain sorting of windows by workspace in switch menu.
+
+Previously, this sorting failed when one window was moved to another
+workspace.
+
+--- src/switchmenu.c.orig	Tue Aug 11 20:41:14 2015
++++ src/switchmenu.c	Wed Jun 22 09:36:24 2016
+@@ -149,27 +149,22 @@ void OpenSwitchMenu(WScreen * scr, int x, int y, int k
+ 
+ static int menuIndexForWindow(WMenu * menu, WWindow * wwin, int old_pos)
+ {
+-	int idx;
++	int idx, move_down;
+ 
+ 	if (menu->entry_no <= old_pos)
+ 		return -1;
+ 
+-#define WS(i)  ((WWindow*)menu->entries[i]->clientdata)->frame->workspace
+-	if (old_pos >= 0) {
+-		if (WS(old_pos) >= wwin->frame->workspace
+-		    && (old_pos == 0 || WS(old_pos - 1) <= wwin->frame->workspace)) {
+-			return old_pos;
+-		}
+-	}
+-#undef WS
+-
+-	for (idx = 0; idx < menu->entry_no; idx++) {
++	for (idx = 0, move_down = 0; idx < menu->entry_no; idx++) {
+ 		WWindow *tw = (WWindow *) menu->entries[idx]->clientdata;
+ 
+-		if (!IS_OMNIPRESENT(tw)
+-		    && tw->frame->workspace > wwin->frame->workspace) {
+-			break;
+-		}
++		/* Is the window moving down in the menu?  If so, we'll need to
++		   adjust its new index by 1. */
++		if (tw == wwin)
++			move_down = 1;
++
++		if (IS_OMNIPRESENT(tw) || (tw != wwin &&
++					   tw->frame->workspace >= wwin->frame->workspace))
++			return idx - move_down;
+ 	}
+ 
+ 	return idx;
+@@ -215,7 +210,7 @@ void UpdateSwitchMenu(WScreen * scr, WWindow * wwin, i
+ 		if (IS_OMNIPRESENT(wwin))
+ 			idx = -1;
+ 		else {
+-			idx = menuIndexForWindow(switchmenu, wwin, -1);
++			idx = menuIndexForWindow(switchmenu, wwin, 0);
+ 		}
+ 
+ 		entry = wMenuInsertCallback(switchmenu, idx, t, focusWindow, wwin);

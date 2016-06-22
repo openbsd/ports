@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_icon_h,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit 7a2eb68aa47a35eede44457db5d300719be4dcdd
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:59 2015 +0200
+
+Remove cache icon when detached
+
+This pach removes the icon from the icon cache when the icon is
+detached from the dock/clip.
+
+That helps to hold tidy the icon cache folder.
+
+--- src/icon.h.orig	Tue Aug 11 20:41:14 2015
++++ src/icon.h	Wed Jun 22 09:58:12 2016
+@@ -80,4 +80,5 @@ void wIconSetHighlited(WIcon *icon, Bool flag);
+ void set_icon_image_from_image(WIcon *icon, RImage *image);
+ void set_icon_minipreview(WIcon *icon, RImage *image);
+ 
++void remove_cache_icon(char *filename);
+ #endif /* WMICON_H_ */

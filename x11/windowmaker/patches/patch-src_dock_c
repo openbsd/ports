@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_dock_c,v 1.4 2016/06/22 10:05:28 dcoppa Exp $
+
+commit e11800652ea226528088bcbfd74677fce233600e
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:56 2015 +0200
+
+Avoid recreate Cached icon moving between docks
+
+This patch avoids to create again the icon in the Cache if the icon
+was in other Dock/Clip/Drawer, becasue the icon was previously created
+and exits.
+
+commit 7a2eb68aa47a35eede44457db5d300719be4dcdd
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:59 2015 +0200
+
+Remove cache icon when detached
+
+This pach removes the icon from the icon cache when the icon is
+detached from the dock/clip.
+
+That helps to hold tidy the icon cache folder.
+
+--- src/dock.c.orig	Tue Aug 11 20:41:14 2015
++++ src/dock.c	Wed Jun 22 10:05:50 2016
+@@ -2344,7 +2344,6 @@ Bool wDockMoveIconBetweenDocks(WDock *src, WDock *dest
+ 			icon->icon->shadowed = 0;
+ 			update_icon = True;
+ 		}
+-		save_appicon(icon, True);
+ 	}
+ 
+ 	if (src->auto_collapse || src->auto_raise_lower)
+@@ -2425,6 +2424,9 @@ void wDockDetach(WDock *dock, WAppIcon *icon)
+ 	icon->xindex = -1;
+ 
+ 	dock->icon_count--;
++
++	/* Remove the Cached Icon */
++	remove_cache_icon(icon->icon->file);
+ 
+ 	/* if the dock is not attached to an application or
+ 	 * the application did not set the appropriate hints yet,

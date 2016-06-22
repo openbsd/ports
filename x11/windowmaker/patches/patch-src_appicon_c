@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_appicon_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit b2815873977e364d3fd8f27b4dae82c37a23bad6
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:53 2015 +0200
+
+create_appicon_from_dock checks if no_appicon flag is set
+
+In previous versions when application attributes are set with
+"NoAppIcon = Yes;" ("No application icon" option in attributes
+window), it was possible to launch multiple instances of the
+application from wmdock using double-click.
+
+commit 9c4b19d8aaee2f80f03853e62c753298edf12ceb
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:54 2015 +0200
+
+New applications do not create Cached Icon
+
+This patch avoids to create Cached Icons for all applications. Only
+the applications docked should create it.
+
+commit 54db8d6c43e23ec0404875a7e2d0a1454659bd9a
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:57 2015 +0200
+
+Avoid create again a docked application cache icon
+
+This patch avoids to create again the cache icon for a docked application.
+If the application is docked, then the icon was previosly created.
+
+--- src/appicon.c.orig	Tue Aug 11 20:41:14 2015
++++ src/appicon.c	Wed Jun 22 10:11:57 2016
+@@ -159,9 +159,6 @@ void create_appicon_for_application(WApplication *wapp
+ 		if (!WFLAGP(wapp->main_window_desc, no_appicon))
+ 			paint_app_icon(wapp);
+ 	}
+-
+-	/* Save the app_icon in a file */
+-	save_appicon(wapp->app_icon, False);
+ }
+ 
+ void unpaint_app_icon(WApplication *wapp)
+@@ -443,7 +440,7 @@ void save_appicon(WAppIcon *aicon, Bool dock)
+ 	if (!aicon)
+ 		return;
+ 
+-	if (dock && (!aicon->docked || aicon->attracted))
++	if (!aicon->docked || aicon->attracted)
+ 		return;
+ 
+ 	path = wIconStore(aicon->icon);
+@@ -1180,7 +1177,7 @@ static void create_appicon_from_dock(WWindow *wwin, WA
+ 	}
+ 
+ 	/* If created, then set some flags */
+-	if (wapp->app_icon) {
++	if (wapp->app_icon && !WFLAGP(wapp->main_window_desc, no_appicon)) {
+ 		WWindow *mainw = wapp->main_window_desc;
+ 
+ 		wapp->app_icon->running = 1;
+@@ -1193,7 +1190,6 @@ static void create_appicon_from_dock(WWindow *wwin, WA
+ 
+ 		/* Paint it */
+ 		wAppIconPaint(wapp->app_icon);
+-		save_appicon(wapp->app_icon, True);
+ 	}
+ }
+ 

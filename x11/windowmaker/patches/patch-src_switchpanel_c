@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_switchpanel_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit 88393f4a6c335c2ec8e6ecd8c18d2e553bc3fb5f
+Author: Satya Mishra <qufgmx@gmail.com>
+Date:   Fri Sep 25 15:22:00 2015 -0700
+
+wmaker: fixed infinite loop in switching within group
+
+--- src/switchpanel.c.orig	Tue Aug 11 20:41:14 2015
++++ src/switchpanel.c	Wed Jun 22 09:35:24 2016
+@@ -366,8 +366,10 @@ static WMArray *makeWindowListArray(WScreen *scr, int 
+ 		if ((canReceiveFocus(wwin) != 0) &&
+ 		    (wwin->flags.mapped || wwin->flags.shaded || include_unmapped)) {
+ 			if (class_only)
+-				if (!sameWindowClass(scr->focused_window, wwin))
++				if (!sameWindowClass(scr->focused_window, wwin)) {
++					wwin = wwin->prev;
+ 					continue;
++				}
+ 			if (!WFLAGP(wwin, skip_switchpanel))
+ 				WMAddToArray(windows, wwin);
+ 		}

@@ -1,0 +1,129 @@
+$OpenBSD: patch-src_icon_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit b2815873977e364d3fd8f27b4dae82c37a23bad6
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:53 2015 +0200
+
+create_appicon_from_dock checks if no_appicon flag is set
+
+In previous versions when application attributes are set with
+"NoAppIcon = Yes;" ("No application icon" option in attributes
+window), it was possible to launch multiple instances of the
+application from wmdock using double-click.
+
+commit 8a822004eef716d3a154a78960773d52d9cc8253
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:58 2015 +0200
+
+Save the icon filename instead of the full path
+
+This patch saves the icon filename in the database and in the disk. wmaker
+can find the icon in the different folders, including the cache folder.
+
+commit 7a2eb68aa47a35eede44457db5d300719be4dcdd
+Author: Rodolfo Garcia Penas (kix) <kix@kix.es>
+Date:   Sun Aug 23 20:56:59 2015 +0200
+
+Remove cache icon when detached
+
+This pach removes the icon from the icon cache when the icon is
+detached from the dock/clip.
+
+That helps to hold tidy the icon cache folder.
+
+--- src/icon.c.orig	Tue Aug 11 20:41:14 2015
++++ src/icon.c	Wed Jun 22 09:58:14 2016
+@@ -470,7 +470,7 @@ static RImage *get_wwindow_image_from_wmhints(WWindow 
+  */
+ char *wIconStore(WIcon *icon)
+ {
+-	char *path, *dir_path, *file;
++	char *path, *dir_path, *file, *filename;
+ 	int len = 0;
+ 	RImage *image = NULL;
+ 	WWindow *wwin = icon->owner;
+@@ -488,15 +488,23 @@ char *wIconStore(WIcon *icon)
+ 		return NULL;
+ 	}
+ 
+-	len = strlen(dir_path) + strlen(file) + 5;
++	/* Create the file name */
++	len = strlen(file) + 5;
++	filename = wmalloc(len);
++	snprintf(filename, len, "%s.xpm", file);
++	wfree(file);
++
++	/* Create the full path, including the filename */
++	len = strlen(dir_path) + strlen(filename) + 1;
+ 	path = wmalloc(len);
+-	snprintf(path, len, "%s%s.xpm", dir_path, file);
++	snprintf(path, len, "%s%s", dir_path, filename);
+ 	wfree(dir_path);
+-	wfree(file);
+ 
+ 	/* If icon exists, exit */
+-	if (access(path, F_OK) == 0)
+-		return path;
++	if (access(path, F_OK) == 0) {
++		wfree(path);
++		return filename;
++	}
+ 
+ 	if (wwin->net_icon_image)
+ 		image = RRetainImage(wwin->net_icon_image);
+@@ -505,19 +513,40 @@ char *wIconStore(WIcon *icon)
+ 
+ 	if (!image) {
+ 		wfree(path);
++		wfree(filename);
+ 		return NULL;
+ 	}
+ 
+ 	if (!RSaveImage(image, path, "XPM")) {
+ 		wfree(path);
++		wfree(filename);
+ 		path = NULL;
+ 	}
+ 
++	wfree(path);
+ 	RReleaseImage(image);
+ 
+-	return path;
++	return filename;
+ }
+ 
++void remove_cache_icon(char *filename)
++{
++	char *cachepath;
++
++	if (!filename)
++		return;
++
++	cachepath = get_icon_cache_path();
++	if (!cachepath)
++		return;
++
++	/* Filename check/parse could be here */
++	if (!strncmp(filename, cachepath, strlen(cachepath)))
++		unlink(filename);
++
++	wfree(cachepath);
++}
++
+ static void cycleColor(void *data)
+ {
+ 	WIcon *icon = (WIcon *) data;
+@@ -748,7 +777,12 @@ RImage *get_rimage_icon_from_wm_hints(WIcon *icon)
+ {
+ 	RImage *image = NULL;
+ 	unsigned int w, h, d;
+-	WWindow *wwin = icon->owner;
++	WWindow *wwin;
++
++	if ((!icon) || (!icon->owner))
++		return NULL;
++
++	wwin = icon->owner;
+ 
+ 	if (!getSize(wwin->wm_hints->icon_pixmap, &w, &h, &d)) {
+ 		icon->owner->wm_hints->flags &= ~IconPixmapHint;

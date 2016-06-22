@@ -1,0 +1,72 @@
+$OpenBSD: patch-util_getstyle_c,v 1.1 2016/06/22 10:05:28 dcoppa Exp $
+
+commit b7a1528833cf1abbe33067570f4f0d4a09f80ebc
+Author: Alexandru Lazar <alazar@startmail.com>
+Date:   Wed Apr 20 21:21:33 2016 +0300
+
+getstyle: fix wcopy_file paths
+
+Some (presumably stale) calls to wcopy_file used what appears to
+be an incorrect destination which did not always exist. This patch
+forces assets to be copied under <themedir>/<asset>, rather than
+<themedir><absolute path of asset>. It works by first getting the
+"new" path (i.e. the one that will be inserted in the property
+list), which is relative to <themedir> (and appears to be always
+in the root directory, too); it then copies the file to that path.
+
+This *may* have been the original intended behaviour, as the one
+it replaces clutters the path and leaks configuration data. In
+addition, the style file seems to store only the file's name, not
+the path relative to <themedir>, even when the file is copied with
+its full hierarchy.
+
+--- util/getstyle.c.orig	Tue Aug 11 20:41:14 2015
++++ util/getstyle.c	Wed Jun 22 09:38:31 2016
+@@ -171,7 +171,7 @@ static void findCopyFile(const char *dir, const char *
+ 			(void)wrmdirhier(ThemePath);
+ 		return;
+ 	}
+-	wcopy_file(dir, fullPath, fullPath);
++	wcopy_file(dir, fullPath, file);
+ 	wfree(fullPath);
+ }
+ 
+@@ -234,9 +234,10 @@ static void makeThemePack(WMPropList * style, const ch
+ 
+ 				p = strrchr(WMGetFromPLString(file), '/');
+ 				if (p) {
+-					wcopy_file(themeDir, WMGetFromPLString(file), WMGetFromPLString(file));
+-
+ 					newPath = wstrdup(p + 1);
++
++					wcopy_file(themeDir, WMGetFromPLString(file), newPath);
++
+ 					WMDeleteFromPLArray(value, 1);
+ 					WMInsertInPLArray(value, 1, WMCreatePLString(newPath));
+ 					free(newPath);
+@@ -253,9 +254,10 @@ static void makeThemePack(WMPropList * style, const ch
+ 
+ 				p = strrchr(WMGetFromPLString(file), '/');
+ 				if (p) {
+-					wcopy_file(themeDir, WMGetFromPLString(file), WMGetFromPLString(file));
+-
+ 					newPath = wstrdup(p + 1);
++
++					wcopy_file(themeDir, WMGetFromPLString(file), newPath);
++
+ 					WMDeleteFromPLArray(value, 1);
+ 					WMInsertInPLArray(value, 1, WMCreatePLString(newPath));
+ 					free(newPath);
+@@ -267,9 +269,10 @@ static void makeThemePack(WMPropList * style, const ch
+ 
+ 				p = strrchr(WMGetFromPLString(file), '/');
+ 				if (p) {
+-					wcopy_file(themeDir, WMGetFromPLString(file), WMGetFromPLString(file));
+-
+ 					newPath = wstrdup(p + 1);
++
++					wcopy_file(themeDir, WMGetFromPLString(file), newPath);
++
+ 					WMDeleteFromPLArray(value, 2);
+ 					WMInsertInPLArray(value, 2, WMCreatePLString(newPath));
+ 					free(newPath);
