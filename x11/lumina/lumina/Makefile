@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/02/27 12:41:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/22 09:54:45 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
 GH_PROJECT=	lumina
+PATCHSET=	1
 
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
@@ -24,12 +25,12 @@ MAKE_FLAGS=	LIBLuminaUtils_VERSION=${LIBLuminaUtils_VERSION}
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/libLumina/LuminaXDG.cpp \
-		${WRKSRC}/lumina-config/mainUI.cpp \
-		${WRKSRC}/lumina-desktop/SettingsMenu.cpp
-	perl -pi -e 's,/etc/luminaDesktop.conf,${SYSCONFDIR}/luminaDesktop.conf,g' \
-		${WRKSRC}/libLumina/LuminaUtils.cpp
+	sed -i 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/src-qt5/core/libLumina/LuminaXDG.cpp \
+		${WRKSRC}/src-qt5/core-utils/lumina-config/mainUI.cpp \
+		${WRKSRC}/src-qt5/core/lumina-desktop/SettingsMenu.cpp
+	sed -i 's,/etc/luminaDesktop.conf,${SYSCONFDIR}/luminaDesktop.conf,g' \
+		${WRKSRC}/src-qt5/core/libLumina/LuminaUtils.cpp
 
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake-qt5 CONFIG+="configure NO_I18N"

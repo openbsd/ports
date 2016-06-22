@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/02/27 12:41:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/06/22 09:54:45 ajacoutot Exp $
 @pkgpath x11/lumina
 @bin bin/Lumina-DE
 @bin bin/lumina-config
@@ -8,7 +8,9 @@
 @bin bin/lumina-open
 @bin bin/lumina-screenshot
 @bin bin/lumina-search
+@bin bin/lumina-textedit
 @bin bin/lumina-xconfig
+@bin bin/start-lumina-desktop
 include/LuminaOS.h
 include/LuminaSingleApplication.h
 include/LuminaThemes.h
@@ -35,8 +37,6 @@ share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/fluxbox-init-rc
 share/Lumina-DE/fluxbox-keys
 share/Lumina-DE/luminaDesktop.conf
-share/Lumina-DE/quickplugins/
-share/Lumina-DE/quickplugins/quick-sample.qml
 share/Lumina-DE/themes/
 share/Lumina-DE/themes/Lumina-default.qss.template
 share/Lumina-DE/themes/None.qss.template
@@ -45,15 +45,19 @@ share/applications/lumina-info.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-support.desktop
+share/applications/lumina-textedit.desktop
 share/examples/lumina/
 share/examples/lumina/luminaDesktop.conf.dist
 @sample ${SYSCONFDIR}/luminaDesktop.conf
-share/pixmaps/Insight-FileManager.png
 share/pixmaps/Lumina-DE.png
 share/wallpapers/
 share/wallpapers/Lumina-DE/
+share/wallpapers/Lumina-DE/Lumina_Wispy_blue-grey-zoom.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_blue-grey.jpg
 share/wallpapers/Lumina-DE/Lumina_Wispy_gold.jpg
 share/wallpapers/Lumina-DE/Lumina_Wispy_green.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_grey-blue-zoom.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_grey-blue.jpg
 share/wallpapers/Lumina-DE/Lumina_Wispy_purple.jpg
 share/wallpapers/Lumina-DE/Lumina_Wispy_red.jpg
 share/xsessions/

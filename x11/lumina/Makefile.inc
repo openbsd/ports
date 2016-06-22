@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/02/27 12:41:11 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/06/22 09:54:45 ajacoutot Exp $
 
-V=			0.8.8
-GH_ACCOUNT=		pcbsd
+V=			0.9.0
+GH_ACCOUNT=		trueos
 GH_TAGNAME=		v${V}-Release
 DISTNAME=		${GH_PROJECT}-${V}
 HOMEPAGE=		http://lumina-desktop.org/
+
+.if defined(PATCHSET)
+GH_TAGNAME=		v${V}-Release-p${PATCHSET}
+DISTNAME=		${GH_PROJECT}-${V}.${PATCHSET}
+.endif
 
 CATEGORIES ?=		x11 x11/lumina
 
