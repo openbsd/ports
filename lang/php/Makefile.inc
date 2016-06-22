@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.84 2016/04/28 18:19:23 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.85 2016/06/22 21:18:32 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -352,6 +352,7 @@ SUHOSIN_V=		0.9.38
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0
 .else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
+PATCH_LIST=		patch-* suhosin-*
 CONFIGURE_ARGS+=	--enable-suhosin
 
 pre-patch:

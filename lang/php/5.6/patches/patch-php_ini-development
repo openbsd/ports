@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-development,v 1.4 2016/05/06 19:59:32 sthen Exp $
---- php.ini-development.orig.port	Thu Apr 28 01:33:49 2016
-+++ php.ini-development	Fri Apr 29 14:02:27 2016
+$OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
+--- php.ini-development.orig.port	Thu May 26 02:08:57 2016
++++ php.ini-development	Fri Jun  3 09:36:21 2016
 @@ -707,11 +707,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2016/05/06 19:59:32 sthen Exp $
  
  ; http://php.net/date.default-latitude
  ;date.default_latitude = 31.7667
-@@ -1010,16 +1008,6 @@ pdo_mysql.default_socket=
+@@ -1011,16 +1009,6 @@ pdo_mysql.default_socket=
  ;phar.cache_list =
  
  [mail function]

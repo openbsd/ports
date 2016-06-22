@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_suhosin_execute_c,v 1.1 2016/02/06 23:31:20 sthen Exp $
+$OpenBSD: suhosin-ext_suhosin_execute_c,v 1.1 2016/06/22 21:18:33 sthen Exp $
 --- ext/suhosin/execute.c.orig.port	Mon Feb  1 23:04:02 2016
 +++ ext/suhosin/execute.c	Mon Feb  1 23:38:49 2016
 @@ -1312,6 +1312,9 @@ static php_uint32 suhosin_mt_rand(TSRMLS_D)
