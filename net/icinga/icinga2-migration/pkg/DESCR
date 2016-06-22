@@ -1,8 +1,0 @@
-This standalone script allows you to migrate the basic Icinga 1.x object
-configuration into native Icinga 2 configuration objects. This project
-will be merged into the upstream CLI once there is a stable release.
-Meanwhile it acts as standalone helper tool for migrating to Icinga 2.
-
-You are highly advised to read the Icinga 2 Migration documentation
-and understand the new dynamic configuration syntax. Check the manual
-migration hints in the documentation (http://docs.icinga.org/icinga2/latest/).

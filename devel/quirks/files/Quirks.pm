@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.405 2016/06/14 09:16:42 czarkoff Exp $
+# $OpenBSD: Quirks.pm,v 1.406 2016/06/22 21:02:13 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -824,6 +824,7 @@ my $obsolete_reason = {
 	'qinx' => 6,
 	'quadkonsole' => 6,
 	'taskjuggler' => 6,
+	'icinga2-migration' => 3,
 };
 
 # reasons for obsolete packages
