@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/05/28 18:38:16 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/06/23 20:56:23 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -60,6 +60,7 @@ include/AppKit/NSActionCell.h
 include/AppKit/NSAffineTransform.h
 include/AppKit/NSAlert.h
 include/AppKit/NSAnimation.h
+include/AppKit/NSAnimationContext.h
 include/AppKit/NSApplication.h
 include/AppKit/NSArrayController.h
 include/AppKit/NSAttributedString.h
@@ -372,9 +373,16 @@ lib/GNUstep/Images/GSStop.tiff
 lib/GNUstep/Images/LogoGNUstep.tiff
 lib/GNUstep/Images/MagnifyGlass.tiff
 lib/GNUstep/Images/NSAddTemplate.tiff
+lib/GNUstep/Images/NSAdvanced.tiff
+lib/GNUstep/Images/NSCaution.tiff
+lib/GNUstep/Images/NSColorPanel.tiff
 lib/GNUstep/Images/NSComboArrow.tiff
+lib/GNUstep/Images/NSFontPanel.tiff
+lib/GNUstep/Images/NSInfo.tiff
+lib/GNUstep/Images/NSPreferencesGeneral.tiff
 lib/GNUstep/Images/NSRatingLevelIndicator.tiff
 lib/GNUstep/Images/NSRemoveTemplate.tiff
+lib/GNUstep/Images/NSUserAccounts.tiff
 lib/GNUstep/Images/common_2DCheckMark.tiff
 lib/GNUstep/Images/common_2DDash.tiff
 lib/GNUstep/Images/common_3DArrowDown.tiff
@@ -382,6 +390,7 @@ lib/GNUstep/Images/common_3DArrowLeft.tiff
 lib/GNUstep/Images/common_3DArrowRight.tiff
 lib/GNUstep/Images/common_3DArrowRightH.tiff
 lib/GNUstep/Images/common_3DArrowUp.tiff
+lib/GNUstep/Images/common_ApplicationFolder.tiff
 lib/GNUstep/Images/common_ArrowDown.tiff
 lib/GNUstep/Images/common_ArrowDownH.tiff
 lib/GNUstep/Images/common_ArrowLeft.tiff
@@ -420,6 +429,7 @@ lib/GNUstep/Images/common_MiniWindowTile.tiff
 lib/GNUstep/Images/common_Miniaturize.tiff
 lib/GNUstep/Images/common_MiniaturizeH.tiff
 lib/GNUstep/Images/common_Mount.tiff
+lib/GNUstep/Images/common_MultipleSelection.tiff
 lib/GNUstep/Images/common_MusicFolder.tiff
 lib/GNUstep/Images/common_Nibble.tiff
 lib/GNUstep/Images/common_OpenHandCursor.tiff
@@ -440,6 +450,8 @@ lib/GNUstep/Images/common_ProgressSpinning_7.tiff
 lib/GNUstep/Images/common_ProgressSpinning_8.tiff
 lib/GNUstep/Images/common_RadioOff.tiff
 lib/GNUstep/Images/common_RadioOn.tiff
+lib/GNUstep/Images/common_RecyclerEmpty.tiff
+lib/GNUstep/Images/common_RecyclerFull.tiff
 lib/GNUstep/Images/common_Right.tiff
 lib/GNUstep/Images/common_RightH.tiff
 lib/GNUstep/Images/common_RightTabStop.tiff
@@ -482,6 +494,7 @@ lib/GNUstep/Images/common_UnknownApplication.tiff
 lib/GNUstep/Images/common_UnknownTool.tiff
 lib/GNUstep/Images/common_Unmount.tiff
 lib/GNUstep/Images/common_UpAndDownArrowSmall.tiff
+lib/GNUstep/Images/common_VideoFolder.tiff
 lib/GNUstep/Images/common_copyCursor.tiff
 lib/GNUstep/Images/common_linkCursor.tiff
 lib/GNUstep/Images/common_noCursor.tiff
@@ -533,6 +546,8 @@ ${LIBDIR}/Resources/German.lproj/Localizable.strings
 ${LIBDIR}/Resources/Info-gnustep.plist
 ${LIBDIR}/Resources/Italian.lproj/
 ${LIBDIR}/Resources/Italian.lproj/Localizable.strings
+${LIBDIR}/Resources/Korean.lproj/
+${LIBDIR}/Resources/Korean.lproj/Localizable.strings
 ${LIBDIR}/Resources/Lojban.lproj/
 ${LIBDIR}/Resources/Lojban.lproj/Localizable.strings
 ${LIBDIR}/Resources/Spanish.lproj/
