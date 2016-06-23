@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_cairo-xlib-surface_c,v 1.10 2016/06/23 07:34:07 ajacoutot Exp $
+
+From d69dd6b341594c338fa6c7b327fd7f201eb37bc1 Mon Sep 17 00:00:00 2001
+From: Uli Schlachter <psychon@znc.in>
+Date: Sat, 18 Jun 2016 15:08:52 +0200
+Subject: xlib: Fix double free in _get_image_surface()
+
+--- src/cairo-xlib-surface.c.orig	Tue Oct 27 22:04:30 2015
++++ src/cairo-xlib-surface.c	Thu Jun 23 09:27:19 2016
+@@ -807,6 +807,7 @@ _get_image_surface (cairo_xlib_surface_t    *surface,
+ 	    }
+ 
+ 	    cairo_surface_destroy (&image->base);
++	    image = NULL;
+ 	}
+     }
+ 
+@@ -1011,7 +1012,8 @@ _get_image_surface (cairo_xlib_surface_t    *surface,
+     cairo_device_release (&display->base);
+ 
+     if (unlikely (status)) {
+-	cairo_surface_destroy (&image->base);
++	if (image)
++	    cairo_surface_destroy (&image->base);
+ 	return _cairo_surface_create_in_error (status);
+     }
+ 

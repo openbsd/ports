@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2016/04/04 16:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2016/06/23 07:34:07 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.14.6
-REVISION=		0
+REVISION=		1
+
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
@@ -16,16 +17,14 @@ HOMEPAGE=		http://cairographics.org/
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-WANTLIB += X11 Xau Xdmcp Xext Xrender c expat ffi fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 lzo2 m pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
-
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://cairographics.org/releases/
+WANTLIB += X11 Xau Xdmcp Xext Xrender c expat ffi fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 iconv intl lzo2 m pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=		devel/gettext
+MASTER_SITES=		http://cairographics.org/releases/
 
 USE_GMAKE=		Yes
 
@@ -35,6 +34,7 @@ LIB_DEPENDS=		archivers/lzo2 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ARGS=		--disable-valgrind
 
 # needed for firefox
 CONFIGURE_ARGS +=	--enable-tee
