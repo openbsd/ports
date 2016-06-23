@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.80 2016/05/28 21:16:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2016/06/23 04:07:49 bentley Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.5.3
-REVISION=	0
+DISTNAME=	nano-2.6.0
 CATEGORIES=	editors
-HOMEPAGE=	http://www.nano-editor.org/
+HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	http://www.nano-editor.org/dist/v2.5/ \
-		${MASTER_SITE_GNU:=nano/}
+MASTER_SITES=	https://www.nano-editor.org/dist/v2.6/
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 LIB_DEPENDS=	devel/gettext
