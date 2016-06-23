@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2016/05/26 20:42:59 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2016/06/23 20:19:36 naddy Exp $
 
 Skip libc crypto tests.  If these succeed, the libcrypto tests for
 additional functions will never be run.
 
---- configure.orig	Sat Apr 30 06:44:10 2016
-+++ configure	Thu May 26 21:29:04 2016
-@@ -17806,7 +17806,7 @@ fi
+--- configure.orig	Mon Jun 20 04:53:28 2016
++++ configure	Thu Jun 23 21:24:58 2016
+@@ -17823,7 +17823,7 @@ fi
  
  
  case "$host_os" in
