@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/27 12:53:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/06/23 13:19:43 sthen Exp $
 
 COMMENT =	network switch style shell
 
-DISTNAME =	nsh-1.0.20160527
+DISTNAME =	nsh-1.0.20160605
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
-GH_COMMIT =	386f8ce0559d043e0dc5fa96a8015c3744bd1c69
+GH_COMMIT =	ef0ff429c8b61365b070fc4feee00a4c0dbc9960
 
 CATEGORIES =	shells net
 HOMEPAGE =	http://www.nmedia.net/nsh/
@@ -20,6 +20,7 @@ FLAVORS =	static
 FLAVOR ?=
 
 MAKE_FLAGS =	CC="${CC}"
+
 .if ${FLAVOR:Mstatic}
 MAKE_FLAGS +=	LDADD="-ledit -ltermcap -lsqlite3 -static"
 .endif
