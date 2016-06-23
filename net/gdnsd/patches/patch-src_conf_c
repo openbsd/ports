@@ -1,9 +1,9 @@
-$OpenBSD: patch-gdnsd_conf_c,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
---- gdnsd/conf.c.orig	Sat Jul 26 06:35:00 2014
-+++ gdnsd/conf.c	Sat Jul 26 06:35:10 2014
-@@ -44,7 +44,7 @@
- static unsigned num_mon_lists = 0;
- static mon_list_t** mon_lists = NULL;
+$OpenBSD: patch-src_conf_c,v 1.1 2016/06/23 16:15:58 sthen Exp $
+--- src/conf.c.orig	Thu Jun 23 16:40:28 2016
++++ src/conf.c	Thu Jun 23 16:40:38 2016
+@@ -38,7 +38,7 @@
+ // Global config, read-only
+ const cfg_t* gcfg = NULL;
  
 -static const char DEF_USERNAME[] = PACKAGE_NAME;
 +static const char DEF_USERNAME[] = "_gdnsd";

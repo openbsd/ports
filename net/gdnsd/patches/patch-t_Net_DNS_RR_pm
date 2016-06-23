@@ -1,0 +1,21 @@
+$OpenBSD: patch-t_Net_DNS_RR_pm,v 1.1 2016/06/23 16:15:58 sthen Exp $
+--- t/Net/DNS/RR.pm.orig	Thu Jun 23 16:44:01 2016
++++ t/Net/DNS/RR.pm	Thu Jun 23 16:44:35 2016
+@@ -99,17 +99,6 @@ BEGIN {
+ 		$RR{'SIG'} = 1;
+ 		eval {
+ 		    local $SIG{'__DIE__'} = 'DEFAULT';
+-		    require Net::DNS::RR::NXT;
+-		};
+-
+-		unless ($@) {
+-		    $RR{'NXT'}	= 1;
+-		} else {
+-		    die $@;
+-		}
+-
+-		eval {
+-		    local $SIG{'__DIE__'} = 'DEFAULT';
+ 		    require Net::DNS::RR::KEY;
+ 		};
+ 

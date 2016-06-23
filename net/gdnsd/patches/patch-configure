@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2016/06/23 16:15:58 sthen Exp $
+
+Silence warnings about base headers, drowning real warnings.
+
+--- configure.orig	Thu Jun 23 16:36:23 2016
++++ configure	Thu Jun 23 16:36:28 2016
+@@ -14328,7 +14328,6 @@ for flag in \
+     -Wmissing-prototypes \
+     -Wold-style-definition \
+     -Wpointer-arith \
+-    -Wredundant-decls \
+     -Wshadow \
+     -Wsign-conversion \
+     -Wstrict-overflow=5 \
