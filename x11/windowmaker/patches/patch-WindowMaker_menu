@@ -1,4 +1,4 @@
-$OpenBSD: patch-WindowMaker_menu,v 1.4 2016/06/17 11:49:33 dcoppa Exp $
+$OpenBSD: patch-WindowMaker_menu,v 1.5 2016/06/23 20:25:33 sebastia Exp $
 --- WindowMaker/menu.orig	Tue Aug 11 20:41:14 2015
 +++ WindowMaker/menu	Wed Jun  8 09:52:32 2016
 @@ -208,7 +208,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-WindowMaker_menu,v 1.4 2016/06/17 11:49:33 dcoppa Exp $
  		"Save Theme" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name,Enter file name:)"
  		"Save IconSet" SHEXEC geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/"%a(IconSet name,Enter file name:)"
 -		"Preferences Utility" EXEC /usr/local/GNUstep/Applications/WPrefs.app/WPrefs
-+		"Preferences Utility" EXEC PREFIX/GNUstep/Applications/WPrefs.app/WPrefs
++		"Preferences Utility" EXEC ${TRUEPREFIX}/GNUstep/Applications/WPrefs.app/WPrefs
  	"Appearance" END
  
  	"Session" MENU
