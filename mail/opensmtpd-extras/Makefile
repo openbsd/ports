@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/21 21:58:09 jung Exp $
+# $OpenBSD: Makefile,v 1.14 2016/06/23 10:15:27 giovanni Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -9,7 +9,7 @@ COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 COMMENT-spamassassin=	extras with spamassassin support for smtpd
 
-V=			201606212257
+V=			201606230001
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-clamav=		opensmtpd-extras-clamav-${V}
@@ -66,19 +66,19 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			    -I${PREFIX}/include/postgresql" \
 			--with-lua-type=lua${MODLUA_VERSION:S/.//g} \
 			--with-python-type=python${MODPY_VERSION} \
-			--with-filter-clamav \
-			--with-filter-dkim-signer \
-			--with-filter-dnsbl \
-			--with-filter-lua \
-			--with-filter-monkey \
-			--with-filter-pause \
-			--with-filter-perl \
-			--with-filter-python \
-			--with-filter-regex \
-			--with-filter-spamassassin \
-			--with-filter-stub \
-			--with-filter-trace \
-			--with-filter-void \
+			--with-experimental-filter-clamav \
+			--with-experimental-filter-dkim-signer \
+			--with-experimental-filter-dnsbl \
+			--with-experimental-filter-lua \
+			--with-experimental-filter-monkey \
+			--with-experimental-filter-pause \
+			--with-experimental-filter-perl \
+			--with-experimental-filter-python \
+			--with-experimental-filter-regex \
+			--with-experimental-filter-spamassassin \
+			--with-experimental-filter-stub \
+			--with-experimental-filter-trace \
+			--with-experimental-filter-void \
 			--with-queue-null \
 			--with-queue-python \
 			--with-queue-ram \
@@ -103,7 +103,7 @@ post-install:
 			${INSTALL_DATA_DIR} \
 			    ${PREFIX}/share/examples/opensmtpd-extras
 			cd ${WRKSRC} && ${INSTALL_DATA} \
-			    extras/wip/filters/filter-*/filter-*.conf \
+			    extras/filters/filter-*/filter-*.conf \
 			    ${PREFIX}/share/examples/opensmtpd-extras
 
 .include <bsd.port.mk>
