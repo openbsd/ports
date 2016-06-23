@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1 2016/06/23 13:54:25 krw Exp $
+%%native%%
+@bin bin/ocamlbuild
+@bin bin/ocamlbuild.byte
+lib/ocaml/ocamlbuild/
+lib/ocaml/ocamlbuild/META
+lib/ocaml/ocamlbuild/ocamlbuild.cmo
+lib/ocaml/ocamlbuild/ocamlbuild_executor.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_pack.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmi
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmi
+lib/ocaml/ocamlbuild/ocamlbuildlib.cma
+lib/ocaml/ocamlbuild/signatures.mli
+@man man/man1/ocamlbuild.1

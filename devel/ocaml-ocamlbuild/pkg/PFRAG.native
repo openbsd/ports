@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.native,v 1.1 2016/06/23 13:54:25 krw Exp $
+@bin bin/ocamlbuild.native
+lib/ocaml/ocamlbuild/ocamlbuild.o
+lib/ocaml/ocamlbuild/ocamlbuild.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_executor.o
+lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.o
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_pack.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
+lib/ocaml/ocamlbuild/ocamlbuildlib.a
+lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa

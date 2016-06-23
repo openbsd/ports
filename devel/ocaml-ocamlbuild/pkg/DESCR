@@ -1,0 +1,2 @@
+OCamlbuild is a generic build tool, that has built-in rules for
+building OCaml libraries and programs.

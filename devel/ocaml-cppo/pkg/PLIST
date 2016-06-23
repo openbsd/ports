@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1 2016/06/23 13:54:26 krw Exp $
+%%native%%
+@bin bin/cppo
+lib/ocaml/cppo_ocamlbuild/
+lib/ocaml/cppo_ocamlbuild/META
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cma
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+share/doc/ocaml-cppo/
+share/doc/ocaml-cppo/Changes
+share/doc/ocaml-cppo/README.md
