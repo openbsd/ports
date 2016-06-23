@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/06/22 21:33:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/06/23 13:32:28 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -3493,6 +3493,8 @@ icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
 icinga-web2/modules/monitoring/test/php/regression/
+icinga-web2/modules/monitoring/test/php/regression/Bug11728Test.php
+icinga-web2/modules/monitoring/test/php/regression/Bug11796Test.php
 icinga-web2/modules/monitoring/test/php/regression/Bug6088Test.php
 icinga-web2/modules/monitoring/test/php/regression/Bug7043Test.php
 icinga-web2/modules/setup/
@@ -3780,6 +3782,7 @@ icinga-web2/public/img/logo_icinga-inv.png
 icinga-web2/public/img/logo_icinga.png
 icinga-web2/public/img/logo_icinga_big.png
 icinga-web2/public/img/logo_icinga_big_dark.png
+icinga-web2/public/img/touch-icon.png
 icinga-web2/public/img/tree/
 icinga-web2/public/img/tree/tree-minus.gif
 icinga-web2/public/img/tree/tree-plus.gif
@@ -3903,6 +3906,7 @@ icinga-web2/test/php/library/Icinga/Web/Widget/
 icinga-web2/test/php/library/Icinga/Web/Widget/DashboardTest.php
 icinga-web2/test/php/library/Icinga/Web/Widget/SearchDashboardTest.php
 icinga-web2/test/php/regression/
+icinga-web2/test/php/regression/Bug11831Test.php
 icinga-web2/test/php/regression/Bug4102Test.php
 icinga-web2/test/php/regression/Bug6284Test.php
 icinga-web2/test/php/regression/Bug6432Test.php
