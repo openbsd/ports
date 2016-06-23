@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/31 12:14:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/23 19:23:54 krw Exp $
 
 MULTI_PACKAGES =	-main -lib
 
@@ -12,6 +12,7 @@ GH_ACCOUNT =		ocaml
 GH_PROJECT =		opam
 GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
+REVISION =		0
 
 PKGNAME-main =		opam-${V}
 PKGNAME-lib =		opam-lib-${V}
@@ -28,6 +29,7 @@ WANTLIB-main =		c m
 MODULES =		lang/ocaml
 BUILD_DEPENDS =		devel/git \
 			sysutils/findlib \
+			devel/ocaml-ocamlbuild \
 			devel/cudf,-ocaml \
 			devel/ocaml-cmdliner \
 			devel/ocaml-dose \

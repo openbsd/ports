@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/29 11:27:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocsigen
 GH_PROJECT =	lwt
 GH_TAGNAME =	2.4.8
-REVISION =	1
+REVISION =	2
 # This is not the latest upstream version, but the last one that is most
 # compatible due to an API change. Be careful about upgrading to lwt-2.5.0
 # without checking that no in-tree ports break due to new buffer APIs.
@@ -26,7 +26,8 @@ MYDEPENDS =	devel/ocaml-react \
 		textproc/ocaml-text \
 		security/ocaml-ssl \
 		devel/ocaml-ppx-tools
-BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib lang/ocaml-camlp4
+BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib lang/ocaml-camlp4 \
+		devel/ocaml-ocamlbuild
 RUN_DEPENDS =	${MYDEPENDS}
 LIB_DEPENDS =	devel/glib2 devel/libev
 

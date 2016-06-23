@@ -1,6 +1,5 @@
-@comment $OpenBSD: PFRAG.native-main,v 1.4 2015/08/30 15:38:32 avsm Exp $
+@comment $OpenBSD: PFRAG.native-main,v 1.5 2016/06/23 19:23:54 krw Exp $
 %%dynlink%%
-@bin bin/ocamlbuild.native
 @bin bin/ocamlc.opt
 @bin bin/ocamldep.opt
 @bin bin/ocamldoc.opt
@@ -138,17 +137,6 @@ lib/ocaml/nums.a
 lib/ocaml/nums.cmxa
 lib/ocaml/obj.cmx
 lib/ocaml/obj.p.cmx
-lib/ocaml/ocamlbuild/ocamlbuild.cmx
-lib/ocaml/ocamlbuild/ocamlbuild.o
-lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
-lib/ocaml/ocamlbuild/ocamlbuild_executor.o
-lib/ocaml/ocamlbuild/ocamlbuild_pack.cmx
-lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmx
-lib/ocaml/ocamlbuild/ocamlbuild_plugin.o
-lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
-lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
-lib/ocaml/ocamlbuild/ocamlbuildlib.a
-lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa
 lib/ocaml/ocamldoc/odoc_info.a
 lib/ocaml/ocamldoc/odoc_info.cmxa
 lib/ocaml/oo.cmx

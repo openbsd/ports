@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/25 08:14:35 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2016/06/23 19:23:54 krw Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
 DISTNAME =	hevea-2.23
+REVISION = 	0
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
@@ -19,6 +20,8 @@ HOMEPAGE=	http://para.inria.fr/%7Emaranget/hevea/
 NO_TEST =	Yes
 
 MODULES +=	lang/ocaml
+
+BUILD_DEPENDS = devel/ocaml-ocamlbuild
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}

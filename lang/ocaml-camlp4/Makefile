@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/23 19:23:54 krw Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
@@ -9,6 +9,7 @@ GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}
 WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/+/-/}
 PKGNAME =	ocaml-${DISTNAME}
+REVISION = 	0
 # No dynlink compatibility between releases
 PKGSPEC =	ocaml-camlp4-=${V}
 
@@ -26,6 +27,8 @@ WANTLIB +=		c m
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
+
+BUILD_DEPENDS =         devel/ocaml-ocamlbuild
 
 MAKE_ENV =		DESTDIR=${WRKINST}
 

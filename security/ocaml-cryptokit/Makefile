@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/29 11:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/06/23 19:23:54 krw Exp $
 
 COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.10
 PKGNAME=	ocaml-${DISTNAME}
-REVISION=	0
+REVISION=	1
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1493/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -19,6 +19,8 @@ WANTLIB=	z
 MODULES=	lang/ocaml
 
 CONFIGURE_STYLE =	oasis
+
+BUILD_DEPENDS = devel/ocaml-ocamlbuild
 
 post-build:
 	cp -R ${WRKDIST}/api-cryptokit.docdir ${WRKDIST}/cryptokit.mli

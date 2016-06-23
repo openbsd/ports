@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/08/30 15:43:47 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/06/23 19:23:54 krw Exp $
 %%native%%
 @bin bin/ocamlfind
 @bin bin/safe_camlp4
@@ -35,7 +35,8 @@ lib/ocaml/num-top/num_top.cma
 lib/ocaml/num-top/num_top.cmi
 lib/ocaml/num-top/num_top_printers.cmi
 lib/ocaml/num/META
-lib/ocaml/ocamlbuild/META
+@comment will be installed by devel/ocaml-ocamlbuild
+@comment lib/ocaml/ocamlbuild/META
 lib/ocaml/stdlib/
 lib/ocaml/stdlib/META
 lib/ocaml/str/

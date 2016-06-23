@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2016/04/11 11:21:31 jca Exp $
+# $OpenBSD: Makefile,v 1.73 2016/06/23 19:23:54 krw Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -9,7 +9,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=4.02.3
-REVISION=		1
+REVISION=		2
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -32,7 +32,7 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	simple dest
-CONFIGURE_ARGS+=-prefix ${PREFIX} 
+CONFIGURE_ARGS+=-prefix ${PREFIX} -no-ocamlbuild
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
@@ -70,9 +70,6 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* \
 		${PREFIX}/share/doc/ocaml/html/libref
-	${INSTALL_DATA} \
-		${WRKSRC}/ocamlbuild/man/ocamlbuild.1 \
-		${PREFIX}/man/man1/
 	@${INSTALL_DATA} \
 		${WRKSRC}/{LICENSE,Changes} \
 		${PREFIX}/share/doc/ocaml

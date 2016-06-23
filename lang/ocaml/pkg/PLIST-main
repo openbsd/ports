@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/03/29 11:27:00 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/06/23 19:23:54 krw Exp $
 %%native%%
 @bin bin/ocaml
-@bin bin/ocamlbuild
-@bin bin/ocamlbuild.byte
 @bin bin/ocamlc
 @bin bin/ocamlcp
 @bin bin/ocamldebug
@@ -486,13 +484,6 @@ lib/ocaml/obj.cmti
 lib/ocaml/obj.ml
 lib/ocaml/obj.mli
 @bin lib/ocaml/objinfo_helper
-lib/ocaml/ocamlbuild/
-lib/ocaml/ocamlbuild/ocamlbuild.cmo
-lib/ocaml/ocamlbuild/ocamlbuild_executor.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_pack.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmi
-lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmi
-lib/ocaml/ocamlbuild/ocamlbuildlib.cma
 lib/ocaml/ocamldoc/
 lib/ocaml/ocamldoc/custom/
 lib/ocaml/ocamldoc/ocamldoc.hva
@@ -681,7 +672,6 @@ lib/ocaml/weak.cmti
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 @man man/man1/ocaml.1
-@man man/man1/ocamlbuild.1
 @man man/man1/ocamlc.1
 @man man/man1/ocamlc.opt.1
 @man man/man1/ocamlcp.1
@@ -1098,7 +1088,6 @@ share/doc/ocaml/html/names.html
 share/doc/ocaml/html/native.html
 share/doc/ocaml/html/next_motif.gif
 share/doc/ocaml/html/objectexamples.html
-share/doc/ocaml/html/ocamlbuild.html
 share/doc/ocaml/html/ocamldoc.html
 share/doc/ocaml/html/patterns.html
 share/doc/ocaml/html/previous_motif.gif

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/30 16:23:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	functional reactive programming (FRP) for OCaml
 CATEGORIES =	devel
 
 V =		1.2.0
-REVISION =      1
+REVISION =      2
 NAME =		react
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild
 RUN_DEPENDS =	lang/ocaml
 
 ALL_TARGET =	${NAME}.{cma,cmi,mli}

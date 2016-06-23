@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/23 19:23:53 krw Exp $
 
 # Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1110 of file gc.c
 ONLY_FOR_ARCHS= i386
@@ -32,7 +32,8 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS =	x11/gtksourceview
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		${MODTCL_BUILD_DEPENDS}
+		${MODTCL_BUILD_DEPENDS} \
+		devel/ocaml-ocamlbuild
 RUN_DEPENDS =	STEM->=2.14.2p1:x11/lablgtk2
 
 USE_GMAKE =		Yes

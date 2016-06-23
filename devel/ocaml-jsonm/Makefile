@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/30 16:23:06 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	non-blocking streaming JSON codec
 CATEGORIES =	devel
@@ -9,7 +9,7 @@ DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://erratique.ch/software/${NAME}/releases/
-REVISION =      1
+REVISION =      2
 
 HOMEPAGE =	http://erratique.ch/software/${NAME}
 
@@ -22,7 +22,7 @@ MODULES =		lang/ocaml
 WANTLIB +=		c m
 
 RUN_DEPENDS =		devel/ocaml-uutf
-BUILD_DEPENDS =		devel/ocaml-uutf
+BUILD_DEPENDS =		devel/ocaml-uutf devel/ocaml-ocamlbuild
 
 CONFIGURE_STYLE =	oasis
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/30 16:33:02 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/23 19:23:54 krw Exp $
 
 COMMENT =	streaming XML input/output for OCaml
 CATEGORIES =	textproc
@@ -6,6 +6,7 @@ CATEGORIES =	textproc
 V =		1.2.0
 NAME =		xmlm
 DISTNAME =	${NAME}-${V}
+REVISION = 	0
 PKGNAME =	ocaml-${DISTNAME}
 EXTRACT_SUFX =	.tbz
 MASTER_SITES =	http://erratique.ch/software/xmlm/releases/
@@ -19,9 +20,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MODULES =	lang/ocaml
 
 WANTLIB =	c m
-BUILD_DEPENDS =	sysutils/findlib
-
-BUILD_DEPENDS = sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild
 
 ALL_TARGET = ${NAME}.{cma,cmi,mli}
 INSTALL_TARGET = ${ALL_TARGET} ${NAME}.cmt

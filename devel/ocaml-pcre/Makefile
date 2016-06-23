@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/29 11:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild
 LIB_DEPENDS =	devel/pcre
 WANTLIB =	pcre
 

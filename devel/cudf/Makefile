@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/27 12:36:32 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/23 19:23:53 krw Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -25,6 +25,7 @@ MODULES =		lang/ocaml
 BUILD_DEPENDS =		devel/ocaml-extlib \
 			lang/ocaml-camlp4 \
 			sysutils/findlib \
+			devel/ocaml-ocamlbuild \
 			devel/glib2
 RUN_DEPENDS =		devel/ocaml-extlib
 TEST_DEPENDS =		devel/ounit

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/30 16:04:24 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	non-blocking streaming unicode codec
 CATEGORIES =	devel
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild
 
 ALL_TARGET =	${NAME}.{cma,cmi,mli}
 .include <bsd.port.arch.mk>

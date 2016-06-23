@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/30 15:57:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	declarative definition of command line interfaces
 CATEGORIES =	devel
@@ -9,6 +9,7 @@ DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://erratique.ch/software/${NAME}/releases/
+REVISION = 	0
 
 HOMEPAGE =	http://erratique.ch/software/${NAME}
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild
 RUN_DEPENDS =	lang/ocaml
 
 ALL_TARGET =	${NAME}.{cma,cmi,mli}

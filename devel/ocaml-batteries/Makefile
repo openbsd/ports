@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/30 15:52:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.15 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
@@ -9,6 +9,7 @@ GH_PROJECT =	batteries-included
 GH_TAGNAME =	v$V
 DISTNAME =	${GH_PROJECT}-$V
 PKGNAME =	ocaml-batteries-$V
+REVISION =	0
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MODULES =		lang/ocaml
 
 RUN_DEPENDS =		devel/ocaml-camomile
-BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib
+BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib devel/ocaml-ocamlbuild
 # ocaml-test not available yet
 #TEST_DEPENDS = 	devel/ounit devel/ocaml-qtest
 TEST_DEPENDS = 	devel/ounit

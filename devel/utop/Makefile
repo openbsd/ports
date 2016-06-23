@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/31 11:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/23 19:23:53 krw Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -8,7 +8,7 @@ GH_ACCOUNT =	diml
 GH_PROJECT =	utop
 GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-$V
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
@@ -20,7 +20,8 @@ CONFIGURE_ARGS +=	--enable-tests
 
 MODULES =		lang/ocaml
 RUN_DEPENDS =		devel/ocaml-lambda-term
-BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib lang/ocaml-camlp4
+BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib lang/ocaml-camlp4 \
+			devel/ocaml-ocamlbuild
 
 # silence a warning
 post-extract:
