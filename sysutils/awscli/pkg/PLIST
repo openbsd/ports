@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/06/15 05:44:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/06/23 07:41:24 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -322,6 +322,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-rest-api
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-sdk.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-stages.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/delete-scaling-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/deregister-scalable-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/describe-scalable-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/describe-scaling-activities.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/describe-scaling-policies.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/put-scaling-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/register-scalable-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-load-balancers.rst
