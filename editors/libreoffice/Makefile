@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2016/04/08 20:42:14 robert Exp $
+# $OpenBSD: Makefile,v 1.146 2016/06/24 14:06:27 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		5.1
-VERSION=	${BV}.2.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -148,6 +148,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		shells/bash \
 		archivers/p5-Archive-Zip \
 		misc/findutils \
+		print/poppler \
 		security/nss \
 		sysutils/coreutils \
 		textproc/clucene \
@@ -183,7 +184,6 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/raptor \
 		net/curl \
 		net/neon \
-		print/poppler \
 		textproc/icu4c \
 		textproc/redland \
 		textproc/hunspell
@@ -206,7 +206,6 @@ WANTLIB-main+=	cups exslt gcrypt gpg-error lcms2
 WANTLIB-main+=	nspr4 nss3 plc4 plds4 smime3 softokn3 ssl3
 WANTLIB-main+=	png raptor2
 WANTLIB-main+=	lber ldap
-WANTLIB-main+=	poppler
 WANTLIB-main+=	GLEW
 WANTLIB-main+=	GL GLU harfbuzz harfbuzz-icu
 WANTLIB-main+=	lzma
@@ -218,6 +217,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			graphics/glew \
 			misc/shared-mime-info \
 			security/nss \
+			print/poppler \
 			textproc/clucene \
 			x11/gtk+3 \
 			x11/gtk+3,-guic

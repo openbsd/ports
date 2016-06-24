@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2016/03/13 10:31:16 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2016/06/24 14:06:27 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -330,6 +330,10 @@ lib/libreoffice/program/opengl/basicFragmentShader.glsl
 lib/libreoffice/program/opengl/basicVertexShader.glsl
 lib/libreoffice/program/opengl/blendedTextureFragmentShader.glsl
 lib/libreoffice/program/opengl/blendedTextureVertexShader.glsl
+lib/libreoffice/program/opengl/combinedFragmentShader.glsl
+lib/libreoffice/program/opengl/combinedTextureFragmentShader.glsl
+lib/libreoffice/program/opengl/combinedTextureVertexShader.glsl
+lib/libreoffice/program/opengl/combinedVertexShader.glsl
 lib/libreoffice/program/opengl/commonFragmentShader.glsl
 lib/libreoffice/program/opengl/commonVertexShader.glsl
 lib/libreoffice/program/opengl/convolutionFragmentShader.glsl
@@ -348,6 +352,8 @@ lib/libreoffice/program/opengl/honeycombFragmentShader.glsl
 lib/libreoffice/program/opengl/honeycombGeometryShader.glsl
 lib/libreoffice/program/opengl/honeycombVertexShader.glsl
 lib/libreoffice/program/opengl/invert50FragmentShader.glsl
+lib/libreoffice/program/opengl/lineFragmentShader.glsl
+lib/libreoffice/program/opengl/lineVertexShader.glsl
 lib/libreoffice/program/opengl/linearGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/linearMultiColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/linearTwoColorGradientFragmentShader.glsl
