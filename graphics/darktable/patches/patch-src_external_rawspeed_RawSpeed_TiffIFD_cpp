@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_external_rawspeed_RawSpeed_TiffIFD_cpp,v 1.1 2016/06/24 13:56:57 sthen Exp $
+
+Fix crash; buffer might not be 0-terminated
+https://redmine.darktable.org/issues/11059
+
+--- src/external/rawspeed/RawSpeed/TiffIFD.cpp.orig	Tue May  3 19:58:43 2016
++++ src/external/rawspeed/RawSpeed/TiffIFD.cpp	Fri Jun 24 14:13:08 2016
+@@ -118,9 +118,10 @@ TiffIFD* TiffIFD::parseDngPrivateData(TiffEntry *t) {
+   */
+   uint32 size = t->count;
+   const uchar8 *data = t->getData();
+-  string id((const char*)data);
+-  if (0 != id.compare("Adobe"))
++  const char *const ADOBE = "Adobe";
++  if (0 != strncmp((const char *)data, ADOBE, strlen(ADOBE))) {
+     ThrowTPE("Not Adobe Private data");
++  }
+ 
+   data+=6;
+   if (!(data[0] == 'M' && data[1] == 'a' && data[2] == 'k' &&data[3] == 'N' ))
+@@ -161,7 +162,7 @@ TiffIFD* TiffIFD::parseDngPrivateData(TiffEntry *t) {
+   memcpy(&maker_data[org_offset],data, count);
+   FileMap *maker_map = new FileMap(maker_data, org_offset+count);
+ 
+-  TiffIFD *maker_ifd;
++  TiffIFD *maker_ifd = 0;
+   try {
+     maker_ifd = parseMakerNote(maker_map, org_offset, makernote_endian);
+   } catch (TiffParserException &e) {
