@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu May 19 21:55:55 2016
++++ Makefile.in	Thu May 19 21:56:08 2016
+@@ -78,7 +78,7 @@
+ 
+ 
+ INSTALL_STUFF = META 
+-INSTALL_STUFF += $(wildcard _build/*.cma _build/*.cmxa _build/*.cmxs)
++INSTALL_STUFF += $(wildcard _build/*.cma _build/*.cmx _build/*.cmxa _build/*.cmxs)
+ INSTALL_STUFF += $(filter-out $(wildcard _build/myocamlbuild.*),$(wildcard _build/*.mli _build/*.cmi))
+ INSTALL_STUFF += $(wildcard _build/*.so _build/*.a)
+ 

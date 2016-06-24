@@ -1,4 +1,8 @@
-@comment $OpenBSD: PFRAG.native,v 1.1 2015/09/17 17:18:35 jca Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2016/06/24 15:59:12 krw Exp $
 %%dynlink%%
 lib/ocaml/parmap/parmap.a
+lib/ocaml/parmap/bytearray.cmx
+lib/ocaml/parmap/parmap.cmx
 lib/ocaml/parmap/parmap.cmxa
+lib/ocaml/parmap/parmap_utils.cmx
+lib/ocaml/parmap/setcore.cmx

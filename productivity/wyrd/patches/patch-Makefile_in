@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sat Feb  2 22:40:39 2013
++++ Makefile.in	Tue Jun 14 19:33:34 2016
+@@ -93,7 +93,12 @@
+ 
+ 
+ $(CURSES_CMA) $(CURSES_CMXA) .stamp_built_curses:
++ifeq ($(OCAMLBEST),opt)
+ 	$(MAKE) -C curses byte opt && touch .stamp_built_curses
++else
++	$(MAKE) -C curses byte && touch .stamp_built_curses
++endif
++
+ 
+ $(CMO) $(CMX): .stamp_built_curses
+ 

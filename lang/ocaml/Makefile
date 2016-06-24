@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2016/06/23 19:23:54 krw Exp $
+# $OpenBSD: Makefile,v 1.74 2016/06/24 15:59:12 krw Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -8,8 +8,8 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
-VERSION=4.02.3
-REVISION=		2
+VERSION=4.03.0
+REVISION=		0
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -32,7 +32,7 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	simple dest
-CONFIGURE_ARGS+=-prefix ${PREFIX} -no-ocamlbuild
+CONFIGURE_ARGS+=-prefix ${PREFIX}
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"

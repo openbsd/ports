@@ -1,0 +1,7 @@
+--- parmap.mldylib.orig	Thu Sep 17 10:34:21 2015
++++ parmap.mldylib	Thu May 19 21:58:28 2016
+@@ -1,3 +1,4 @@
+ Parmap
+ Bytearray
+ Parmap_utils
++Setcore

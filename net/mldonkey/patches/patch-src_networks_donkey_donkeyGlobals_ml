@@ -1,0 +1,10 @@
+--- src/networks/donkey/donkeyGlobals.ml.orig	Wed May 18 21:26:47 2016
++++ src/networks/donkey/donkeyGlobals.ml	Wed May 18 21:27:00 2016
+@@ -781,7 +781,6 @@
+       c.client_md4 <- md4;
+     end
+ 
+-exception ClientFound of client
+ let find_client_by_name name =
+   try
+     H.iter (fun c ->

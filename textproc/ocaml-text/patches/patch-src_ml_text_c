@@ -1,0 +1,28 @@
+--- src/ml_text.c.orig	Thu May 19 19:07:59 2016
++++ src/ml_text.c	Thu May 19 19:08:34 2016
+@@ -11,6 +11,7 @@
+ #include <errno.h>
+ #include <iconv.h>
+ #include <locale.h>
++#include <stdint.h>
+ #include <string.h>
+ #include <strings.h>
+ #include <wctype.h>
+@@ -107,7 +108,7 @@
+ {
+   CAMLparam4(cd_val, buf_val, pos_val, len_val);
+ 
+-  uint32 code;
++  uint32_t code;
+   size_t len = Long_val(len_val);
+   size_t in_left = len;
+   char *in_bytes = String_val(buf_val) + Long_val(pos_val);
+@@ -152,7 +153,7 @@
+ {
+   CAMLparam5(cd_val, buf_val, pos_val, len_val, code_val);
+ 
+-  uint32 code = Int_val(code_val);
++  uint32_t code = Int_val(code_val);
+   size_t len = Long_val(len_val);
+   size_t in_left = 4;
+   char *in_bytes = (char*)&code;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/08/30 15:52:33 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/06/24 15:59:12 krw Exp $
 %%native%%
 lib/ocaml/batteries/
 lib/ocaml/batteries/META
@@ -30,6 +30,8 @@ lib/ocaml/batteries/batCharParser.cmi
 lib/ocaml/batteries/batCharParser.mli
 lib/ocaml/batteries/batComplex.cmi
 lib/ocaml/batteries/batComplex.mli
+lib/ocaml/batteries/batConcreteQueue_403.cmi
+lib/ocaml/batteries/batConcreteQueue_403.mli
 lib/ocaml/batteries/batConcurrent.cmi
 lib/ocaml/batteries/batConcurrent.mli
 lib/ocaml/batteries/batDeque.cmi
@@ -297,11 +299,12 @@ share/doc/ocaml-batteries/html/api/BatHeap.Make.html
 share/doc/ocaml-batteries/html/api/BatHeap.html
 share/doc/ocaml-batteries/html/api/BatIMap.Infix.html
 share/doc/ocaml-batteries/html/api/BatIMap.html
-share/doc/ocaml-batteries/html/api/BatIO.Incubator.Array.html
-share/doc/ocaml-batteries/html/api/BatIO.Incubator.Enum.html
-share/doc/ocaml-batteries/html/api/BatIO.Incubator.List.html
-share/doc/ocaml-batteries/html/api/BatIO.Incubator.html
+share/doc/ocaml-batteries/html/api/BatIO.BigEndian.html
 share/doc/ocaml-batteries/html/api/BatIO.html
+share/doc/ocaml-batteries/html/api/BatIO.in_channel-c.html
+share/doc/ocaml-batteries/html/api/BatIO.in_chars-c.html
+share/doc/ocaml-batteries/html/api/BatIO.out_channel-c.html
+share/doc/ocaml-batteries/html/api/BatIO.out_chars-c.html
 share/doc/ocaml-batteries/html/api/BatISet.html
 share/doc/ocaml-batteries/html/api/BatInnerIO.Input.html
 share/doc/ocaml-batteries/html/api/BatInnerIO.Output.html
@@ -315,6 +318,8 @@ share/doc/ocaml-batteries/html/api/BatInt.Safe_int.Compare.html
 share/doc/ocaml-batteries/html/api/BatInt.Safe_int.Infix.html
 share/doc/ocaml-batteries/html/api/BatInt.Safe_int.html
 share/doc/ocaml-batteries/html/api/BatInt.html
+share/doc/ocaml-batteries/html/api/BatInt32.Compare.html
+share/doc/ocaml-batteries/html/api/BatInt32.Infix.html
 share/doc/ocaml-batteries/html/api/BatInt32.html
 share/doc/ocaml-batteries/html/api/BatInt64.Compare.html
 share/doc/ocaml-batteries/html/api/BatInt64.Infix.html
@@ -372,16 +377,12 @@ share/doc/ocaml-batteries/html/api/BatNumber.Bounded.html
 share/doc/ocaml-batteries/html/api/BatNumber.Compare.html
 share/doc/ocaml-batteries/html/api/BatNumber.Discrete.html
 share/doc/ocaml-batteries/html/api/BatNumber.Infix.html
-share/doc/ocaml-batteries/html/api/BatNumber.MakeCompare.html
-share/doc/ocaml-batteries/html/api/BatNumber.MakeInfix.html
-share/doc/ocaml-batteries/html/api/BatNumber.MakeNumeric.html
-share/doc/ocaml-batteries/html/api/BatNumber.MakeRefOps.html
-share/doc/ocaml-batteries/html/api/BatNumber.NUMERIC_BASE.html
 share/doc/ocaml-batteries/html/api/BatNumber.Numeric.Compare.html
 share/doc/ocaml-batteries/html/api/BatNumber.Numeric.Infix.html
 share/doc/ocaml-batteries/html/api/BatNumber.Numeric.html
 share/doc/ocaml-batteries/html/api/BatNumber.RefOps.html
 share/doc/ocaml-batteries/html/api/BatNumber.html
+share/doc/ocaml-batteries/html/api/BatOo.Internal.html
 share/doc/ocaml-batteries/html/api/BatOo.html
 share/doc/ocaml-batteries/html/api/BatOptParse.Formatter.html
 share/doc/ocaml-batteries/html/api/BatOptParse.Opt.html
@@ -439,10 +440,15 @@ share/doc/ocaml-batteries/html/api/BatSeq.Exceptionless.html
 share/doc/ocaml-batteries/html/api/BatSeq.Infix.html
 share/doc/ocaml-batteries/html/api/BatSeq.html
 share/doc/ocaml-batteries/html/api/BatSet.Incubator.html
+share/doc/ocaml-batteries/html/api/BatSet.Infix.html
 share/doc/ocaml-batteries/html/api/BatSet.Make.html
+share/doc/ocaml-batteries/html/api/BatSet.Make2.Product.html
+share/doc/ocaml-batteries/html/api/BatSet.Make2.html
 share/doc/ocaml-batteries/html/api/BatSet.OrderedType.html
+share/doc/ocaml-batteries/html/api/BatSet.PSet.Infix.html
 share/doc/ocaml-batteries/html/api/BatSet.PSet.html
 share/doc/ocaml-batteries/html/api/BatSet.S.Exceptionless.html
+share/doc/ocaml-batteries/html/api/BatSet.S.Infix.html
 share/doc/ocaml-batteries/html/api/BatSet.S.Labels.html
 share/doc/ocaml-batteries/html/api/BatSet.S.html
 share/doc/ocaml-batteries/html/api/BatSet.html
@@ -485,6 +491,8 @@ share/doc/ocaml-batteries/html/api/BatUnit.html
 share/doc/ocaml-batteries/html/api/BatUnix.LargeFile.html
 share/doc/ocaml-batteries/html/api/BatUnix.html
 share/doc/ocaml-batteries/html/api/BatUref.html
+share/doc/ocaml-batteries/html/api/BatVect.Make.html
+share/doc/ocaml-batteries/html/api/BatVect.RANDOMACCESS.html
 share/doc/ocaml-batteries/html/api/BatVect.html
 share/doc/ocaml-batteries/html/api/Batteries.Array.html
 share/doc/ocaml-batteries/html/api/Batteries.Base64.html
@@ -521,7 +529,6 @@ share/doc/ocaml-batteries/html/api/Batteries.ISet.html
 share/doc/ocaml-batteries/html/api/Batteries.Incubator.Bounded.html
 share/doc/ocaml-batteries/html/api/Batteries.Incubator.Log.html
 share/doc/ocaml-batteries/html/api/Batteries.Incubator.PathGen.html
-share/doc/ocaml-batteries/html/api/Batteries.Incubator.Substring.html
 share/doc/ocaml-batteries/html/api/Batteries.Incubator.html
 share/doc/ocaml-batteries/html/api/Batteries.Int.html
 share/doc/ocaml-batteries/html/api/Batteries.Int32.html
@@ -602,6 +609,7 @@ share/doc/ocaml-batteries/html/api/Batteries.Splay.html
 share/doc/ocaml-batteries/html/api/Batteries.Stack.html
 share/doc/ocaml-batteries/html/api/Batteries.Stream.html
 share/doc/ocaml-batteries/html/api/Batteries.String.html
+share/doc/ocaml-batteries/html/api/Batteries.Substring.html
 share/doc/ocaml-batteries/html/api/Batteries.Sys.html
 share/doc/ocaml-batteries/html/api/Batteries.Text.html
 share/doc/ocaml-batteries/html/api/Batteries.Tuple.html
@@ -782,11 +790,12 @@ share/doc/ocaml-batteries/html/api/type_BatHeap.Make.html
 share/doc/ocaml-batteries/html/api/type_BatHeap.html
 share/doc/ocaml-batteries/html/api/type_BatIMap.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatIMap.html
-share/doc/ocaml-batteries/html/api/type_BatIO.Incubator.Array.html
-share/doc/ocaml-batteries/html/api/type_BatIO.Incubator.Enum.html
-share/doc/ocaml-batteries/html/api/type_BatIO.Incubator.List.html
-share/doc/ocaml-batteries/html/api/type_BatIO.Incubator.html
+share/doc/ocaml-batteries/html/api/type_BatIO.BigEndian.html
 share/doc/ocaml-batteries/html/api/type_BatIO.html
+share/doc/ocaml-batteries/html/api/type_BatIO.in_channel.html
+share/doc/ocaml-batteries/html/api/type_BatIO.in_chars.html
+share/doc/ocaml-batteries/html/api/type_BatIO.out_channel.html
+share/doc/ocaml-batteries/html/api/type_BatIO.out_chars.html
 share/doc/ocaml-batteries/html/api/type_BatISet.html
 share/doc/ocaml-batteries/html/api/type_BatInnerIO.Input.html
 share/doc/ocaml-batteries/html/api/type_BatInnerIO.Output.html
@@ -800,6 +809,8 @@ share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatInt.Safe_int.html
 share/doc/ocaml-batteries/html/api/type_BatInt.html
+share/doc/ocaml-batteries/html/api/type_BatInt32.Compare.html
+share/doc/ocaml-batteries/html/api/type_BatInt32.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatInt32.html
 share/doc/ocaml-batteries/html/api/type_BatInt64.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatInt64.Infix.html
@@ -857,16 +868,12 @@ share/doc/ocaml-batteries/html/api/type_BatNumber.Bounded.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Discrete.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Infix.html
-share/doc/ocaml-batteries/html/api/type_BatNumber.MakeCompare.html
-share/doc/ocaml-batteries/html/api/type_BatNumber.MakeInfix.html
-share/doc/ocaml-batteries/html/api/type_BatNumber.MakeNumeric.html
-share/doc/ocaml-batteries/html/api/type_BatNumber.MakeRefOps.html
-share/doc/ocaml-batteries/html/api/type_BatNumber.NUMERIC_BASE.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Numeric.Compare.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Numeric.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.Numeric.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.RefOps.html
 share/doc/ocaml-batteries/html/api/type_BatNumber.html
+share/doc/ocaml-batteries/html/api/type_BatOo.Internal.html
 share/doc/ocaml-batteries/html/api/type_BatOo.html
 share/doc/ocaml-batteries/html/api/type_BatOptParse.Formatter.html
 share/doc/ocaml-batteries/html/api/type_BatOptParse.Opt.html
@@ -924,10 +931,15 @@ share/doc/ocaml-batteries/html/api/type_BatSeq.Exceptionless.html
 share/doc/ocaml-batteries/html/api/type_BatSeq.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatSeq.html
 share/doc/ocaml-batteries/html/api/type_BatSet.Incubator.html
+share/doc/ocaml-batteries/html/api/type_BatSet.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatSet.Make.html
+share/doc/ocaml-batteries/html/api/type_BatSet.Make2.Product.html
+share/doc/ocaml-batteries/html/api/type_BatSet.Make2.html
 share/doc/ocaml-batteries/html/api/type_BatSet.OrderedType.html
+share/doc/ocaml-batteries/html/api/type_BatSet.PSet.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatSet.PSet.html
 share/doc/ocaml-batteries/html/api/type_BatSet.S.Exceptionless.html
+share/doc/ocaml-batteries/html/api/type_BatSet.S.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatSet.S.Labels.html
 share/doc/ocaml-batteries/html/api/type_BatSet.S.html
 share/doc/ocaml-batteries/html/api/type_BatSet.html
@@ -970,6 +982,8 @@ share/doc/ocaml-batteries/html/api/type_BatUnit.html
 share/doc/ocaml-batteries/html/api/type_BatUnix.LargeFile.html
 share/doc/ocaml-batteries/html/api/type_BatUnix.html
 share/doc/ocaml-batteries/html/api/type_BatUref.html
+share/doc/ocaml-batteries/html/api/type_BatVect.Make.html
+share/doc/ocaml-batteries/html/api/type_BatVect.RANDOMACCESS.html
 share/doc/ocaml-batteries/html/api/type_BatVect.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Array.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Base64.html
@@ -1006,7 +1020,6 @@ share/doc/ocaml-batteries/html/api/type_Batteries.ISet.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Incubator.Bounded.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Incubator.Log.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Incubator.PathGen.html
-share/doc/ocaml-batteries/html/api/type_Batteries.Incubator.Substring.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Incubator.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Int.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Int32.html
@@ -1087,6 +1100,7 @@ share/doc/ocaml-batteries/html/api/type_Batteries.Splay.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Stack.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Stream.html
 share/doc/ocaml-batteries/html/api/type_Batteries.String.html
+share/doc/ocaml-batteries/html/api/type_Batteries.Substring.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Sys.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Text.html
 share/doc/ocaml-batteries/html/api/type_Batteries.Tuple.html

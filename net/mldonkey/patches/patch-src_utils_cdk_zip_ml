@@ -1,0 +1,11 @@
+--- src/utils/cdk/zip.ml.orig	Wed May 18 21:06:49 2016
++++ src/utils/cdk/zip.ml	Wed May 18 21:07:02 2016
+@@ -72,8 +72,6 @@
+     mutable of_entries: entry list;
+     of_comment: string }
+ 
+-exception Error of string * string * string
+-
+ (* Return the position of the last occurrence of s1 in s2, or -1 if not
+    found. *)
+ 

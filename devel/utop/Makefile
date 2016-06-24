@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/24 15:59:12 krw Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
 
-V =		1.15
+V =		1.19.2
 GH_ACCOUNT =	diml
 GH_PROJECT =	utop
 GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-$V
-REVISION =	2
+REVISION =	0
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
@@ -21,12 +21,7 @@ CONFIGURE_ARGS +=	--enable-tests
 MODULES =		lang/ocaml
 RUN_DEPENDS =		devel/ocaml-lambda-term
 BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib lang/ocaml-camlp4 \
-			devel/ocaml-ocamlbuild
-
-# silence a warning
-post-extract:
-	# already shipped by the OCaml package
-	rm ${WRKBUILD}/src/lib/errors.mli
+			devel/ocaml-cppo
 
 post-install:
 	${INSTALL_DATA} \

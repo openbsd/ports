@@ -1,0 +1,19 @@
+--- src/utils/cdk/gdstubs.c.orig	Wed May 18 21:11:18 2016
++++ src/utils/cdk/gdstubs.c	Wed May 18 21:11:50 2016
+@@ -23,6 +23,7 @@
+ #include "../../../config/config.h"
+ 
+ #include <stdio.h>
++#include <stdint.h>
+ #include <stdlib.h>
+ 
+ #include <caml/mlvalues.h>
+@@ -489,7 +490,7 @@
+   CAMLlocal1 (v);
+ #ifdef HAVE_PNGVERSION
+   #include <png.h>
+-  v = copy_int32 ((int32)png_access_version_number());
++  v = copy_int32 ((int32_t)png_access_version_number());
+   CAMLreturn (v);
+ #else
+   raise_constant(*(value *)caml_named_value("gd type not supported"));

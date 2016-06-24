@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/01 13:07:51 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/06/24 15:59:12 krw Exp $
 %%native%%
 bin/utop
 bin/utop-full
 lib/ocaml/utop/
 lib/ocaml/utop/META
+lib/ocaml/utop/uTop.annot
 lib/ocaml/utop/uTop.cmi
+lib/ocaml/utop/uTop.cmt
+lib/ocaml/utop/uTop.cmti
 lib/ocaml/utop/uTop.mli
-lib/ocaml/utop/uTop_camlp4.cmi
-lib/ocaml/utop/uTop_camlp4.mli
+lib/ocaml/utop/uTop_main.annot
 lib/ocaml/utop/uTop_main.cmi
+lib/ocaml/utop/uTop_main.cmt
+lib/ocaml/utop/uTop_main.cmti
 lib/ocaml/utop/uTop_main.mli
-lib/ocaml/utop/utop-camlp4.cma
 lib/ocaml/utop/utop.cma
 @man man/man1/utop-full.1
 @man man/man1/utop.1
@@ -38,4 +41,6 @@ share/doc/utop/api/type_UTop.html
 share/doc/utop/api/type_UTop_main.html
 share/doc/utop/utoprc-dark
 share/doc/utop/utoprc-light
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/utop.el

@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/20 16:12:23 naddy Exp $
-
-BROKEN-alpha =	yes_prepare_ocamlcocci.cmi does not exist
-BROKEN-powerpc = yes_prepare_ocamlcocci.cmi does not exist
-BROKEN-sparc64 = yes_prepare_ocamlcocci.cmi does not exist
+# $OpenBSD: Makefile,v 1.32 2016/06/24 15:59:11 krw Exp $
 
 COMMENT =	program matching and transformation engine
 

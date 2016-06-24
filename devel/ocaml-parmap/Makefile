@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/24 15:59:12 krw Exp $
 
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
@@ -27,5 +27,8 @@ FAKE_FLAGS =	DESTDIR=${WRKINST}${TRUEPREFIX}
 
 TEST_TARGET =	tests
 TEST_DEPENDS =	${BASE_PKGPATH}
+
+post-patch:
+	cp ${WRKSRC}/setcore.mli ${WRKSRC}/setcore.ml
 
 .include <bsd.port.mk>

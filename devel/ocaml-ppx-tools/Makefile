@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2016/02/27 22:50:39 mmcc Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/24 15:59:12 krw Exp $
 
 COMMENT =	tools for authors of OCaml ppx rewriters
 CATEGORIES =	devel
 
-V =		0.99.2
+V =		4.03.0
 GH_ACCOUNT =	alainfrisch
 GH_PROJECT =	ppx_tools
-GH_TAGNAME =	ppx_tools_${V}
+GH_TAGNAME =	v${V}
 PKGNAME =	ocaml-ppx-tools-${V}
+
+MODULES =	lang/ocaml
+BUILD_DEPENDS =	sysutils/findlib
+USE_GMAKE =	Yes
+NO_TEST = 	Yes
 
 ALL_TARGET =    byte
 .include <bsd.port.arch.mk>
@@ -21,9 +26,5 @@ ALL_TARGET +=   dyn
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =	lang/ocaml
-BUILD_DEPENDS =	sysutils/findlib
-USE_GMAKE =	Yes
-NO_TEST = 	Yes
 
 .include <bsd.port.mk>

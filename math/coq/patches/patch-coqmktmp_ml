@@ -1,0 +1,19 @@
+--- scripts/coqmktop.ml.orig	Wed Jun  1 19:03:26 2016
++++ scripts/coqmktop.ml	Wed Jun  1 19:05:51 2016
+@@ -269,14 +269,14 @@
+       (* native code *)
+       if !top then failwith "no custom toplevel in native code !";
+       let ocamloptexec = Filename.quote (Filename.concat camlbin "ocamlopt") in
+-        ocamloptexec^" -linkall"
++        ocamloptexec^" -linkall -warn-error -a"
+     end else
+       (* bytecode (we shunt ocamlmktop script which fails on win32) *)
+       let ocamlmktoplib = if is_ocaml4
+ 	then " ocamlcommon.cma ocamlbytecomp.cma ocamltoplevel.cma"
+ 	else " toplevellib.cma" in
+       let ocamlcexec = Filename.quote (Filename.concat camlbin "ocamlc") in
+-      let ocamlccustom = Printf.sprintf "%s %s -linkall "
++      let ocamlccustom = Printf.sprintf "%s %s -linkall -warn-error -a "
+         ocamlcexec Coq_config.coqrunbyteflags in
+       (if !top then ocamlccustom^ocamlmktoplib else ocamlccustom)
+   in

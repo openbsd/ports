@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/28 14:48:02 okan Exp $
+# $OpenBSD: Makefile,v 1.23 2016/06/24 15:59:13 krw Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -19,6 +19,13 @@ WANTLIB=		c m ncurses
 MODULES=		lang/ocaml
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+CONFIGURE_ENV += ""
+.else
+CONFIGURE_ENV += OCAMLOPT=no
+.endif
 
 BUILD_DEPENDS=		${RUN_DEPENDS} lang/ocaml-camlp4
 RUN_DEPENDS=		misc/remind

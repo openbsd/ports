@@ -1,0 +1,11 @@
+--- src/netsys/netlog.ml.orig	Thu May 19 12:19:50 2016
++++ src/netsys/netlog.ml	Thu May 19 12:20:06 2016
+@@ -95,8 +95,6 @@
+ let channel_logger ch max_lev lev msg = 
+   if level_weight lev <= level_weight max_lev then (
+     let (sec,ns) =
+-      try Netsys_posix.clock_gettime Netsys_posix.CLOCK_REALTIME
+-      with Invalid_argument _ ->
+ 	(Unix.gettimeofday(), 0) in
+     let s =   (* Netdate is unavailable here *)
+       sprintf
