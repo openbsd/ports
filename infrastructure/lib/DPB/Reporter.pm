@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.27 2015/05/07 12:30:46 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.28 2016/06/24 12:52:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -124,6 +124,7 @@ sub make_singleton
 	$singleton = bless {msg => '',
 	    producers => $class->filter_can(\@_, $class->filter),
 	    timeout => $state->{display_timeout} // 10,
+	    state => $state,
 	    continued => 0}, $class;
     	if ($state->{record}) {
 		$singleton->{record} =

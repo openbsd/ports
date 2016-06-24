@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.10 2016/05/14 18:14:27 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.11 2016/06/24 12:52:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,7 +65,7 @@ sub handle_window
 
 sub create_terminal
 {
-	my ($self, $o) = @_;
+	my $self = shift;
 	my $oldfh = select(STDOUT);
 	$| = 1;
 	# XXX go back to totally non-buffered raw shit
@@ -82,13 +82,13 @@ sub create_terminal
 	$self->{down} = $self->{terminal}->Tputs("do", 1);
 	$self->{glitch} = exists $self->{terminal}{_xn};
 	$self->{cleareol} = $self->{terminal}->Tputs("ce", 1);
-	if ($o->{color}) {
+	if ($self->{state}{color}) {
 		$self->{bg} = $self->{terminal}->Tputs('AB', 1);
 		$self->{fg} = $self->{terminal}->Tputs('AF', 1);
 		$self->{blink} = $self->{terminal}->Tputs('mb', 1);
 		$self->{dontblink} = $self->{terminal}->Tputs('me', 1);
 	}
-	if ($o->{nocursor}) {
+	if ($self->{state}{nocursor}) {
 		$self->{invisible} = 
 		    $self->{terminal}->Tputs("vi", 1);
 		$self->{visible} = 

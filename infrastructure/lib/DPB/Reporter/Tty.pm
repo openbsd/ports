@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.4 2013/10/15 16:02:09 espie Exp $
+# $OpenBSD: Tty.pm,v 1.5 2016/06/24 12:52:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -52,7 +52,7 @@ sub new
 	my $class = shift;
 	my $state = shift;
 	my $self = $class->make_singleton($state, @_);
-	$self->create_terminal($state);
+	$self->create_terminal;
 	$self->set_sig_handlers;
 	# no cursor, to avoid flickering
 	$self->set_cursor;
