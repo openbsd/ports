@@ -1,12 +1,30 @@
-$OpenBSD: patch-WindowMaker_plmenu,v 1.5 2016/06/23 20:25:33 sebastia Exp $
+$OpenBSD: patch-WindowMaker_plmenu,v 1.6 2016/06/24 09:53:54 dcoppa Exp $
 --- WindowMaker/plmenu.orig	Tue Aug 11 20:41:14 2015
-+++ WindowMaker/plmenu	Wed Jun  8 09:52:32 2016
-@@ -93,7 +93,7 @@
++++ WindowMaker/plmenu	Fri Jun 24 11:11:53 2016
+@@ -65,9 +65,9 @@
+   ("Lock", EXEC, "xlock -allowroot -usefirst")
+  ),
+  ("Appearance",
+-  ("Themes", OPEN_MENU, "-noext #wmdatadir#/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"),
+-  ("Styles", OPEN_MENU, "-noext #wmdatadir#/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"),
+-  ("Icon Sets", OPEN_MENU, "-noext #wmdatadir#/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"),
++  ("Themes", OPEN_MENU, "-noext ${TRUEPREFIX}/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"),
++  ("Styles", OPEN_MENU, "-noext ${TRUEPREFIX}/share/WindowMaker/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"),
++  ("Icon Sets", OPEN_MENU, "-noext ${TRUEPREFIX}/share/WindowMaker/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"),
+   ("Background",
+    ("Solid",
+ 	("Black", EXEC, "wdwrite WindowMaker WorkspaceBack '(solid, black)'"),
+@@ -89,11 +89,11 @@
+ 	("Grey Shades",   EXEC, "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#636380\", \"#131318\")'"),
+ 	("Wine Shades",   EXEC, "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#600040\", \"#180010\")'")
+    ),
+-   ("Images", OPEN_MENU, "-noext #wmdatadir#/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t")
++   ("Images", OPEN_MENU, "-noext ${TRUEPREFIX}/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t")
     ),
     ("Save Theme", SHEXEC, "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""),
     ("Save IconSet", SHEXEC, "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""),
 -   ("Preferences Utility", EXEC, "/usr/local/GNUstep/Applications/WPrefs.app/WPrefs")
-+   ("Preferences Utility", EXEC, "${TRUEPREFIX}/GNUstep/Applications/WPrefs.app/WPrefs")
++   ("Preferences Utility", EXEC, "${TRUEPREFIX}/bin/WPrefs")
     ),
     ("Session",
      ("Save Session", SAVE_SESSION),
