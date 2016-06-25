@@ -1,22 +1,21 @@
-$OpenBSD: patch-ext_mcrypt_mcrypt_c,v 1.1 2016/02/06 23:31:20 sthen Exp $
+$OpenBSD: patch-ext_mcrypt_mcrypt_c,v 1.2 2016/06/25 18:54:15 sthen Exp $
 
 mcrypt IV creation. no /dev/{u,}random? yes, it is using the last hunk.
 
---- ext/mcrypt/mcrypt.c.orig.port	Tue Feb  2 13:33:56 2016
-+++ ext/mcrypt/mcrypt.c	Sat Feb  6 11:40:43 2016
-@@ -1402,6 +1402,11 @@ PHP_FUNCTION(mcrypt_create_iv)
- 	}
- 	
+--- ext/mcrypt/mcrypt.c.orig.port	Tue Jun 21 12:11:59 2016
++++ ext/mcrypt/mcrypt.c	Sat Jun 25 13:41:19 2016
+@@ -1411,6 +1411,10 @@ PHP_FUNCTION(mcrypt_create_iv)
+ 
  	iv = ecalloc(size + 1, 1);
-+
+ 
 +#if defined(__OpenBSD__)
-+		arc4random_buf(iv, (size_t) size);
-+		n = size;
++	arc4random_buf(iv, (size_t) size);
++	n = size;
 +#else
- 	
  	if (source == RANDOM || source == URANDOM) {
  #if PHP_WIN32
-@@ -1447,6 +1452,7 @@ PHP_FUNCTION(mcrypt_create_iv)
+ 		/* random/urandom equivalent on Windows */
+@@ -1455,6 +1459,7 @@ PHP_FUNCTION(mcrypt_create_iv)
  			iv[--size] = (char) (255.0 * php_rand(TSRMLS_C) / RAND_MAX);
  		}
  	}
