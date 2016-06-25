@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/26 14:37:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/06/25 22:57:18 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -146,6 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MO
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}x963kdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/concatkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/hkdf.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/kbkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/pbkdf2.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/x963kdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/keywrap.py

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/26 14:37:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/25 22:57:18 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -148,6 +148,31 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/FIP
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/FIPS_186-2/SigVerPSS_186-3.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/FIPS_186-2/SigVerRSA.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/SigVer15EMTest.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha1-sha224.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha1-sha256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha1-sha384.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha1-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha224-sha1.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha224-sha224.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha224-sha256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha224-sha384.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha224-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha256-sha1.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha256-sha224.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha256-sha256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha256-sha384.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha256-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha384-sha1.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha384-sha224.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha384-sha256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha384-sha384.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha384-sha512.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha1.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha224.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha256.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha384.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/oaep-custom/oaep-sha512-sha512.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/oaep-int.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/RSA/pkcs-1v2-1d2-vec/oaep-vect.txt
@@ -444,6 +469,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512Monte.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512Monte.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blake2b.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blake2s.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/ripemd160/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/ripemd160/ripevectors.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/whirlpool/
