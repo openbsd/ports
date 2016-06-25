@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_libv4lconvert_jpeg_memsrcdest_h,v 1.1 2016/06/25 12:37:55 sthen Exp $
+
+Adapt for jpeg-turbo 1.5.0 jpeg_mem_src() API change
+
+--- lib/libv4lconvert/jpeg_memsrcdest.h.orig	Wed Jun 15 18:13:59 2016
++++ lib/libv4lconvert/jpeg_memsrcdest.h	Wed Jun 15 18:15:56 2016
+@@ -3,7 +3,7 @@
+ #if JPEG_LIB_VERSION < 80
+ 
+ void
+-jpeg_mem_src (j_decompress_ptr cinfo, unsigned char * buffer,
++jpeg_mem_src (j_decompress_ptr cinfo, const unsigned char * buffer,
+ 	unsigned long bufsize);
+ 
+ void
