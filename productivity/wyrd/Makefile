@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/06/24 15:59:13 krw Exp $
+# $OpenBSD: Makefile,v 1.24 2016/06/25 13:42:37 krw Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -21,9 +21,7 @@ CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-CONFIGURE_ENV += ""
-.else
+.if ! ${PROPERTIES:Mocaml_native}
 CONFIGURE_ENV += OCAMLOPT=no
 .endif
 
