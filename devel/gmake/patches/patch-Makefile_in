@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2014/11/26 20:01:23 naddy Exp $
---- Makefile.in.orig	Sun Oct  5 18:25:22 2014
-+++ Makefile.in	Tue Nov 25 02:42:23 2014
-@@ -462,7 +462,7 @@ EXTRA_make_SOURCES = vmsjobs.c remote-stub.c remote-cs
+$OpenBSD: patch-Makefile_in,v 1.4 2016/06/25 19:47:11 naddy Exp $
+--- Makefile.in.orig	Sat Jun 11 01:03:22 2016
++++ Makefile.in	Fri Jun 24 18:19:09 2016
+@@ -481,7 +481,7 @@ EXTRA_make_SOURCES = vmsjobs.c remote-stub.c remote-cs
  noinst_HEADERS = commands.h dep.h filedef.h job.h makeint.h rule.h variable.h \
- 		debug.h getopt.h gettext.h hash.h output.h
+ 		debug.h getopt.h gettext.h hash.h output.h os.h
  
 -make_LDADD = @LIBOBJS@ @ALLOCA@ $(GLOBLIB) @GETLOADAVG_LIBS@ @LIBINTL@ \
 +make_LDADD = @LIBOBJS@ @ALLOCA@ $(GLOBLIB) @GETLOADAVG_LIBS@ @LTLIBINTL@ \
