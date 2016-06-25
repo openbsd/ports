@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.85 2016/06/22 21:18:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.86 2016/06/25 18:55:11 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -44,7 +44,9 @@ INI_TEMPLATES?=		development production
 # don't have.
 USE_LIBTOOL?=		No
 
+.if ${PV} != "7.0"
 FLAVORS=		no_suhosin
+.endif
 FLAVOR?=
 
 PATCHORIG=		.orig.port
