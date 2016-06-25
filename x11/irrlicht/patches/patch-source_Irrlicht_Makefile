@@ -1,10 +1,10 @@
-$OpenBSD: patch-source_Irrlicht_Makefile,v 1.4 2015/09/10 18:38:53 pascal Exp $
---- source/Irrlicht/Makefile.orig	Thu Sep 10 19:08:46 2015
-+++ source/Irrlicht/Makefile	Thu Sep 10 19:09:40 2015
+$OpenBSD: patch-source_Irrlicht_Makefile,v 1.5 2016/06/25 11:10:23 pascal Exp $
+--- source/Irrlicht/Makefile.orig	Sat Jun 18 17:43:40 2016
++++ source/Irrlicht/Makefile	Sat Jun 18 18:14:52 2016
 @@ -2,7 +2,7 @@ VERSION_MAJOR = 1
  VERSION_MINOR = 8
- VERSION_RELEASE = 2
- # Irrlicht Engine 1.8.2
+ VERSION_RELEASE = 3
+ # Irrlicht Engine 1.8.3
 -# Makefile for Linux
 +# Makefile for OpenBSD
  #
@@ -45,7 +45,7 @@ $OpenBSD: patch-source_Irrlicht_Makefile,v 1.4 2015/09/10 18:38:53 pascal Exp $
  CXXFLAGS += -pg
  endif
 -CFLAGS := -O3 -fexpensive-optimizations -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
-+CFLAGS += -fexpensive-optimizations -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
++CFLAGS := -fexpensive-optimizations -DPNG_THREAD_UNSAFE_OK -DPNG_NO_MMX_CODE -DPNG_NO_MNG_FEATURES
  
  sharedlib sharedlib_osx: CXXFLAGS += -fPIC
  sharedlib sharedlib_osx: CFLAGS += -fPIC
