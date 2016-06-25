@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2016/01/20 16:19:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2016/06/25 13:38:16 sthen Exp $
 
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-core-sounds
@@ -16,10 +16,13 @@ PLIST =         ${PKGDIR}/PLIST-${MODAS_LANG}
 #CHECKSUM_FILE = ${.CURDIR}/../distinfo
 
 post-install:
-	-cd ${PREFIX}/${MODAS_INST} && for i in \
+	-cd ${PREFIX}/${MODAS_INST} && \
+	for i in CHANGES CREDITS LICENSE; do mv \
+	    $$i-asterisk-core-${MODAS_LANG}-1.4.27 \
+	    $$i-asterisk-core-${MODAS_LANG}-1.5; done; \
+	for i in \
 	    CHANGES-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
 	    CREDITS-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
 	    LICENSE-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
 	    core-sounds-${MODAS_LANG}.txt \
-	    core-sounds-${MODAS_LANG}; \
-	do mv $$i $$i-${MODAS_CODEC}; done
+	    core-sounds-${MODAS_LANG}; do mv $$i $$i-${MODAS_CODEC}; done
