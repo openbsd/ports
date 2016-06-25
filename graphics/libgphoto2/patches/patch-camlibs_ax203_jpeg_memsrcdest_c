@@ -1,0 +1,15 @@
+$OpenBSD: patch-camlibs_ax203_jpeg_memsrcdest_c,v 1.1 2016/06/25 12:35:56 sthen Exp $
+
+Adapt for jpeg-turbo 1.5.0 jpeg_mem_src() API change
+
+--- camlibs/ax203/jpeg_memsrcdest.c.orig	Sat Aug  8 11:57:29 2015
++++ camlibs/ax203/jpeg_memsrcdest.c	Sun Jun 19 17:42:12 2016
+@@ -26,7 +26,7 @@
+ 
+ /* libjpeg8 and later come with their own (API compatible) memory source
+    and dest */
+-#if JPEG_LIB_VERSION < 80
++#if JPEG_LIB_VERSION < 80 && !defined(MEM_SRCDST_SUPPORTED)
+ 
+ /* Expanded data source object for memory input */
+ 

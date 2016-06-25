@@ -1,0 +1,20 @@
+$OpenBSD: patch-camlibs_jl2005c_jpeg_memsrcdest_h,v 1.1 2016/06/25 12:35:56 sthen Exp $
+
+Adapt for jpeg-turbo 1.5.0 jpeg_mem_src() API change
+
+--- camlibs/jl2005c/jpeg_memsrcdest.h.orig	Sat Aug  8 11:57:29 2015
++++ camlibs/jl2005c/jpeg_memsrcdest.h	Sun Jun 19 17:41:44 2016
+@@ -1,5 +1,7 @@
+ #include <jpeglib.h>
+ 
++#if JPEG_LIB_VERSION < 80 && !defined(MEM_SRCDST_SUPPORTED)
++
+ void
+ jpeg_mem_src (j_decompress_ptr cinfo, unsigned char * buffer,
+ 	unsigned long bufsize);
+@@ -7,3 +9,5 @@ jpeg_mem_src (j_decompress_ptr cinfo, unsigned char * 
+ void
+ jpeg_mem_dest (j_compress_ptr cinfo, unsigned char ** outbuffer,
+ 	unsigned long * outsize);
++
++#endif
