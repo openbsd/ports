@@ -1,15 +1,17 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.12 2016/04/09 14:19:02 robert Exp $
---- mono/profiler/Makefile.in.orig	Tue Mar 15 12:32:54 2016
-+++ mono/profiler/Makefile.in	Sat Apr  9 16:18:04 2016
-@@ -511,14 +511,14 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.13 2016/06/26 10:40:28 robert Exp $
+--- mono/profiler/Makefile.in.orig	Thu Jun 23 19:32:14 2016
++++ mono/profiler/Makefile.in	Thu Jun 23 19:32:42 2016
+@@ -505,16 +505,16 @@ AM_CPPFLAGS = \
  @DISABLE_EXECUTABLES_FALSE@@SHARED_MONO_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_STATIC_LIBS)
  
  libmono_profiler_aot_la_SOURCES = mono-profiler-aot.c
 -libmono_profiler_aot_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
 +libmono_profiler_aot_la_LIBADD = $(LIBMONO) $(LIBICONV)
+ @BITCODE_TRUE@libmono_profiler_aot_la_LDFLAGS = -no-undefined
  libmono_profiler_iomap_la_SOURCES = mono-profiler-iomap.c
 -libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
 +libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(LIBICONV)
+ @BITCODE_TRUE@libmono_profiler_iomap_la_LDFLAGS = -no-undefined
  libmono_profiler_log_la_SOURCES = proflog.c
 -libmono_profiler_log_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(Z_LIBS)
 +libmono_profiler_log_la_LIBADD = $(LIBMONO) $(Z_LIBS)

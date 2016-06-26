@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_mini_main_c,v 1.3 2014/07/09 11:39:17 robert Exp $
---- mono/mini/main.c.orig	Mon Mar 31 22:25:10 2014
-+++ mono/mini/main.c	Tue Jul  8 10:25:55 2014
-@@ -113,10 +113,14 @@ main (void)
+$OpenBSD: patch-mono_mini_main_c,v 1.4 2016/06/26 10:40:28 robert Exp $
+--- mono/mini/main.c.orig	Thu Jun  9 17:01:57 2016
++++ mono/mini/main.c	Thu Jun 23 19:29:27 2016
+@@ -167,10 +167,14 @@ main (void)
  }
  
  #else
@@ -15,5 +15,5 @@ $OpenBSD: patch-mono_mini_main_c,v 1.3 2014/07/09 11:39:17 robert Exp $
 +  sched_setaffinity(0, sizeof(mask), &mask);
 +#endif
  	mono_build_date = build_date;
- 	
- 	return mono_main_with_options (argc, argv);
+ 
+ 	probe_embedded (argv [0], &argc, &argv);

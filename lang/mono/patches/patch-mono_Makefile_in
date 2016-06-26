@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_Makefile_in,v 1.5 2016/04/09 14:19:02 robert Exp $
---- mono/Makefile.in.orig	Tue Mar 15 12:32:52 2016
-+++ mono/Makefile.in	Sat Apr  9 16:18:04 2016
-@@ -395,10 +395,10 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-mono_Makefile_in,v 1.6 2016/06/26 10:40:28 robert Exp $
+--- mono/Makefile.in.orig	Thu Jun  9 17:10:53 2016
++++ mono/Makefile.in	Thu Jun 23 19:29:32 2016
+@@ -381,10 +381,10 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  @SUPPORT_SGEN_TRUE@sgen_dirs = sgen
