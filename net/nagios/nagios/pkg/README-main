@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2015/10/05 12:58:44 kirby Exp $
+$OpenBSD: README-main,v 1.9 2016/06/26 11:44:09 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,7 +31,8 @@ To start nagios, reboot or start it manually:
 Web User-Interface
 ==================
 
-To enable nagios-web, link the provided httpd.conf snippet:
+If using Apache, you can enable nagios-web by linking the provided
+httpd.conf snippet:
 
       # ln -s /var/www/conf/modules.sample/nagios.conf \
          /var/www/conf/modules
@@ -44,7 +45,7 @@ authentication; you can create the password file as follows:
 
 When done, restart the web server:
 
-      # /etc/rc.d/httpd restart
+      # /etc/rc.d/apache2 restart
 
 You should then be able to access the web interface at
 http://localhost/nagios/
