@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.53 2016/06/16 18:17:44 espie Exp $
+# $OpenBSD: proot,v 1.54 2016/06/26 22:10:03 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -837,6 +837,10 @@ sub regen_devs
 			$state->chdir($state->chroot("/dev"));
 		    }, '/bin/sh', './MAKEDEV', 'all');
 		$state->add_preserved('/dev');
+	    });
+	$state->run_chroot("Generating devices db",
+	    sub {
+	    	$state->system("/usr/sbin/dev_mkdb");
 	    });
 }
 
