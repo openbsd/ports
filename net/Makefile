@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.976 2016/06/16 07:35:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.977 2016/06/26 21:40:36 awolk Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -201,6 +201,7 @@
      SUBDIR += libircclient
      SUBDIR += libktorrent
      SUBDIR += libkvkontakte
+     SUBDIR += libmaxminddb
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
      SUBDIR += libnice
