@@ -1,0 +1,12 @@
+$OpenBSD: patch-MySession_cpp,v 1.4 2016/06/26 10:11:03 robert Exp $
+--- MySession.cpp.orig	Sun Jun 26 12:07:37 2016
++++ MySession.cpp	Sun Jun 26 12:07:40 2016
+@@ -867,7 +867,7 @@ MySession::OnSshEvent(wxCommandEvent &event)
+                     break;
+                 case STATE_HELLO:
+                     m_pDlg->SetStatusText(_("Authenticating"));
+-                    printSsh(wxT("hello NXCLIENT - Version ") + m_sProtocolVersion);
++                    printSsh(wxT("hello NXCLIENT - Version " NX_PROTOCOL_VERSION));
+                     m_eConnectState = STATE_SHELLMODE;
+                     break;
+                 case STATE_SHELLMODE:
