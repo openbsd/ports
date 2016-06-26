@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_augeas_extconf_rb,v 1.1 2016/06/26 20:39:13 jeremy Exp $
+--- ext/augeas/extconf.rb.orig	Wed Dec 31 16:00:00 1969
++++ ext/augeas/extconf.rb	Mon Jun 20 18:55:11 2016
+@@ -23,12 +23,8 @@ require 'mkmf'
+ 
+ extension_name = '_augeas'
+ 
+-unless pkg_config("augeas")
+-    raise "augeas-devel not installed"
+-end
+-
+-unless pkg_config("libxml-2.0")
+-    raise "libxml2-devel not installed"
+-end
++have_library('augeas')
++have_library('xml2')
++$CPPFLAGS << " -I${LOCALBASE}/include/libxml2"
+ 
+ create_makefile(extension_name)
