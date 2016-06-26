@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-db,v 1.1.1.1 2016/06/26 21:38:36 awolk Exp $
+share/examples/libmaxminddb/
+@sample ${LOCALSTATEDIR}/db/GeoIP/
+share/examples/libmaxminddb/GeoLite2-Country.mmdb
+@sample ${LOCALSTATEDIR}/db/GeoIP/GeoLite2-Country.mmdb
+share/examples/libmaxminddb/README
