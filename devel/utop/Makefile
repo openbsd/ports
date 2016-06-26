@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/24 15:59:12 krw Exp $
+# $OpenBSD: Makefile,v 1.13 2016/06/26 13:31:10 krw Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -21,6 +21,7 @@ CONFIGURE_ARGS +=	--enable-tests
 MODULES =		lang/ocaml
 RUN_DEPENDS =		devel/ocaml-lambda-term
 BUILD_DEPENDS =		${RUN_DEPENDS} sysutils/findlib lang/ocaml-camlp4 \
+			devel/ocaml-ocamlbuild \
 			devel/ocaml-cppo
 
 post-install:
