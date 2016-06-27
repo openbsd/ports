@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/09/24 06:17:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/06/27 11:36:42 jasper Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -52,6 +52,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_line.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/bin_spec.rb
@@ -97,8 +98,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_strings/variables_not
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_variables/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_variables/variable_contains_dash_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/140chars_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/2sp_soft_tabs_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/80chars_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/arrow_alignment_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/hard_tabs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_whitespace/trailing_whitespace_spec.rb
