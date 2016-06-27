@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.105 2016/05/10 06:54:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.106 2016/06/27 10:59:31 jasper Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		8.0.1
+GNOME_VERSION=		9.0.0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -24,7 +24,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 
 BUILD_DEPENDS=		archivers/unzip \
-			textproc/unicode-ucd
+			textproc/unicode-ucd>=${GNOME_VERSION}
 LIB_DEPENDS=		x11/gtk+3,-main
 
 CONFIGURE_ARGS +=	--with-unicode-data=${LOCALBASE}/share/unicode/ucd/
