@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2016/06/27 16:12:20 robert Exp $
+--- configure.orig	Mon Jun 27 18:04:11 2016
++++ configure	Mon Jun 27 18:04:24 2016
+@@ -3096,7 +3096,7 @@ fi
+ 		{ $as_echo "$as_me:$LINENO: checking for Mono 2.0 GAC for $asm.dll" >&5
+ $as_echo_n "checking for Mono 2.0 GAC for $asm.dll... " >&6; }
+ 		if test \
+-			-e "$($PKG_CONFIG --variable=libdir mono)/mono/2.0/$asm.dll" -o \
++			-e "$($PKG_CONFIG --variable=libdir mono)/mono/2.0-api/$asm.dll" -o \
+ 			-e "$($PKG_CONFIG --variable=prefix mono)/lib/mono/2.0/$asm.dll"; \
+ 			then \
+ 			{ $as_echo "$as_me:$LINENO: result: found" >&5
