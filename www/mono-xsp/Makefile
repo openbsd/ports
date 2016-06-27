@@ -5,6 +5,7 @@ COMMENT=	ASP.NET implementations for Mono
 V=		3.8
 DISTNAME=	${GH_PROJECT}-${V}
 PKGNAME=	mono-xsp-${V}
+REVISION=	0
 
 SHARED_LIBS +=  fpm_helper		0.0 # 0.0
 

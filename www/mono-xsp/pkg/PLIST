@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/03 11:54:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/06/27 16:08:31 robert Exp $
 bin/asp-state
 bin/asp-state2
 bin/asp-state4
@@ -120,10 +120,7 @@ lib/xsp/test/1.1/webcontrols/
 lib/xsp/test/1.1/webcontrols/calendar.aspx
 lib/xsp/test/1.1/webcontrols/datalist.aspx
 lib/xsp/test/1.1/webcontrols/dbpage1.aspx
-lib/xsp/test/1.1/webcontrols/dbpage1.sqlite
 lib/xsp/test/1.1/webcontrols/dbpage2.aspx
-lib/xsp/test/1.1/webcontrols/dbpage2.sqlite
-lib/xsp/test/1.1/webcontrols/dbpage_test_setup.exe
 lib/xsp/test/1.1/webcontrols/index.aspx
 lib/xsp/test/1.1/webcontrols/listitem.aspx
 lib/xsp/test/1.1/webcontrols/people.xml
