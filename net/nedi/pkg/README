@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/07/22 10:55:41 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,11 +28,6 @@ Create a symbolic link in the Apache DocumentRoot:
 Enable short tags in PHP:
 	vi ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
 	'short_open_tag = Off' -> 'short_open_tag = On'
-
-Startup Apache in non-chroot mode:
-	vi /etc/rc.conf.local
-	'httpd_flags=-u'
-	/etc/rc.d/httpd restart
 
 Login to NeDi with user 'admin' and password 'admin':
 	http://localhost/nedi/

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/11/23 08:48:27 landry Exp $
+$OpenBSD: README,v 1.6 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -61,7 +61,7 @@ directory. You can configure this as follows:
 
 # ln -s ../modules.sample/davical.conf \
         /var/www/conf/modules
-# /etc/rc.d/httpd restart
+# /etc/rc.d/apache2 restart
 
 Then point your browser at:
     http://<hostname>/davical/

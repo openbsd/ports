@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/09/01 21:02:32 landry Exp $
+$OpenBSD: README,v 1.5 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -45,15 +45,15 @@ Finally, install p5-Apache-Gallery and all its deps in the chroot
 
 # env PKG_DBDIR=/var/www/var/db/pkg pkg_add -B /var/www p5-Apache-Gallery
 
-Setting up httpd
-================
+Setting up Apache
+=================
 
 To enable gallery you need to edit /var/www/conf/modules.sample/apache-gallery.conf
 to fit your needs then create a symlink like this :
 
 # ln -s ../modules.sample/apache-gallery.conf \
         /var/www/conf/modules
-# /etc/rc.d/httpd restart
+# /etc/rc.d/apache2 restart
 
 Finally, create a /var/www/htdocs/gallery directory, put your favourite
 pictures inside it, and browse to your.server.tld/gallery.

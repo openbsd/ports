@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+$OpenBSD: README,v 1.2 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ Basic configuration
 You need to add hosts to backup to the 'hosts' file, and at least set
 XferMethod and CgiURL configuration directives in config.pl. If you want
 to configure BackupPC through the webinterface, you should also set the
-CgiAdminUsers configuration directive, and configure httpd to
+CgiAdminUsers configuration directive, and configure Apache to
 authenticate the corresponding users using plain httpd auth mechanism.
 
 Refer to http://backuppc.sourceforge.net/faq/BackupPC.html for detailed
@@ -26,11 +26,11 @@ to remote hosts using ssh keys without passphrases.
 BackupPC_Admin configuration
 ============================
 
-To enable BackupPC_Admin web interface within httpd once wwbackuppc.fcgi
+To enable BackupPC_Admin web interface within Apache once wwbackuppc.fcgi
 has been spawned, please create a symbolic link like this:
 
 # ln -s /var/www/conf/modules.sample/backuppc.conf \
         /var/www/conf/modules
-# /etc/rc.d/httpd restart
+# /etc/rc.d/apache2 restart
 
 BackupPC_Admin should be available at http://domain.tld/BackupPC_Admin/

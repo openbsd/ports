@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/02/14 10:02:52 giovanni Exp $
+$OpenBSD: README,v 1.4 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ If using Apache, you can make this accessible to clients by enabling
 the configuration file:
 
     # ln -s ../modules.sample/phpmyadmin.conf /var/www/conf/modules/
-    # /etc/rc.d/httpd restart
+    # /etc/rc.d/apache2 restart
 
 By default, this sets an alias for /phpMyAdmin and restricts access
 to connections coming from localhost.

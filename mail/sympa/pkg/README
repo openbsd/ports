@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2015/01/28 21:21:13 landry Exp $
+$OpenBSD: README,v 1.8 2016/06/27 19:36:50 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,7 +22,7 @@ and p5-SOAP-Lite package is needed if you plan to use sympa_soap_server.
 WWSympa configuration
 =====================
 
-To enable WWSympa within httpd once wwsympa.fcgi has been spawned,
+To enable WWSympa within Apache once wwsympa.fcgi has been spawned,
 please create a symbolic link from /var/www/conf/modules.sample/sympa.conf
 to /var/www/conf/modules/sympa.conf
 
