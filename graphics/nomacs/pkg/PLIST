@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/24 10:06:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/27 05:25:40 landry Exp $
 @bin bin/nomacs
-lib/libnomacslib.so
+@lib lib/libnomacsCore.so.${LIBnomacsCore_VERSION}
+@lib lib/libnomacsGui.so.${LIBnomacsGui_VERSION}
+@lib lib/libnomacsLoader.so.${LIBnomacsLoader_VERSION}
 @man man/man1/nomacs.1
 share/applications/nomacs.desktop
 share/nomacs/
@@ -28,6 +30,6 @@ share/nomacs/translations/nomacs_sr.qm
 share/nomacs/translations/nomacs_uk.qm
 share/nomacs/translations/nomacs_zh.qm
 share/pixmaps/
-share/pixmaps/nomacs.png
+share/pixmaps/nomacs.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
