@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/02/25 07:36:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2016/06/27 11:23:39 jasper Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
-GNOME_VERSION=		0.10.4
+GNOME_VERSION=		0.10.5
 
 SHARED_LIBS +=	gupnp-dlna-2.0            0.0 # 3.0
 SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0

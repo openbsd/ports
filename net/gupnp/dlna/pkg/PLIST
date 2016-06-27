@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/02/25 07:36:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/06/27 11:23:39 jasper Exp $
 @bin bin/gupnp-dlna-info-2.0
 @bin bin/gupnp-dlna-ls-profiles-2.0
 include/gupnp-dlna-2.0/
@@ -18,7 +18,6 @@ include/gupnp-dlna-2.0/libgupnp-dlna/gupnp-dlna-video-information.h
 include/gupnp-dlna-2.0/libgupnp-dlna/gupnp-dlna.h
 include/gupnp-dlna-2.0/libgupnp-dlna/metadata/
 include/gupnp-dlna-2.0/libgupnp-dlna/metadata/gupnp-dlna-metadata-extractor.h
-lib/girepository-1.0/
 lib/girepository-1.0/GUPnPDLNA-2.0.typelib
 lib/girepository-1.0/GUPnPDLNAGst-2.0.typelib
 lib/gupnp-dlna/
@@ -34,11 +33,8 @@ lib/libgupnp-dlna-gst-2.0.la
 lib/pkgconfig/gupnp-dlna-2.0.pc
 lib/pkgconfig/gupnp-dlna-gst-2.0.pc
 lib/pkgconfig/gupnp-dlna-metadata-2.0.pc
-share/gir-1.0/
 share/gir-1.0/GUPnPDLNA-2.0.gir
 share/gir-1.0/GUPnPDLNAGst-2.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gupnp-dlna/
 share/gtk-doc/html/gupnp-dlna-gst/
 share/gtk-doc/html/gupnp-dlna-gst/annotation-glossary.html
@@ -109,8 +105,6 @@ share/gupnp-dlna-2.0/dlna-profiles/mpeg1.xml
 share/gupnp-dlna-2.0/dlna-profiles/mpeg4.xml
 share/gupnp-dlna-2.0/dlna-profiles/png.xml
 share/gupnp-dlna-2.0/dlna-profiles/wma.xml
-share/vala/
-share/vala/vapi/
 share/vala/vapi/gupnp-dlna-2.0.deps
 share/vala/vapi/gupnp-dlna-2.0.vapi
 share/vala/vapi/gupnp-dlna-gst-2.0.deps
