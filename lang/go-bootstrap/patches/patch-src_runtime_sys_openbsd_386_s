@@ -1,7 +1,26 @@
-$OpenBSD: patch-src_runtime_sys_openbsd_386_s,v 1.1 2016/05/11 15:53:26 jsing Exp $
---- src/runtime/sys_openbsd_386.s.orig	Thu Apr 28 23:41:36 2016
-+++ src/runtime/sys_openbsd_386.s	Thu Apr 28 23:42:05 2016
-@@ -186,7 +186,7 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$44
+$OpenBSD: patch-src_runtime_sys_openbsd_386_s,v 1.2 2016/06/27 15:54:59 jsing Exp $
+--- src/runtime/sys_openbsd_386.s.orig	Wed Sep 23 14:37:37 2015
++++ src/runtime/sys_openbsd_386.s	Mon Jun 20 21:02:29 2016
+@@ -70,14 +70,15 @@ TEXT runtime·usleep(SB),NOSPLIT,$24
+ 	INT	$0x80
+ 	RET
+ 
+-TEXT runtime·raise(SB),NOSPLIT,$12
++TEXT runtime·raise(SB),NOSPLIT,$16
+ 	MOVL	$299, AX		// sys_getthrid
+ 	INT	$0x80
+ 	MOVL	$0, 0(SP)
+-	MOVL	AX, 4(SP)		// arg 1 - pid
++	MOVL	AX, 4(SP)		// arg 1 - tid
+ 	MOVL	sig+0(FP), AX
+ 	MOVL	AX, 8(SP)		// arg 2 - signum
+-	MOVL	$37, AX			// sys_kill
++	MOVL	$0, 12(SP)		// arg 3 - tcb
++	MOVL	$119, AX		// sys_thrkill
+ 	INT	$0x80
+ 	RET
+ 
+@@ -186,7 +187,7 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$44
  	MOVL	BX, 0(SP)
  	MOVL	$runtime·badsignal(SB), AX
  	CALL	AX
@@ -10,7 +29,7 @@ $OpenBSD: patch-src_runtime_sys_openbsd_386_s,v 1.1 2016/05/11 15:53:26 jsing Ex
  
  	// save g
  	MOVL	DI, 20(SP)
-@@ -211,15 +211,6 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$44
+@@ -211,15 +212,6 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$44
  	get_tls(CX)
  	MOVL	20(SP), BX
  	MOVL	BX, g(CX)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/11 15:53:26 jsing Exp $
+# $OpenBSD: Makefile,v 1.4 2016/06/27 15:54:58 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,7 +8,7 @@ VERSION =		1.4.3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-bootstrap-${VERSION}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang
 
 HOMEPAGE =		https://golang.org/
