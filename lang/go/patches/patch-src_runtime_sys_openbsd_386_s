@@ -1,7 +1,35 @@
-$OpenBSD: patch-src_runtime_sys_openbsd_386_s,v 1.1 2016/05/13 13:49:26 jsing Exp $
---- src/runtime/sys_openbsd_386.s.orig	Thu May  5 01:27:04 2016
-+++ src/runtime/sys_openbsd_386.s	Thu May  5 01:27:41 2016
-@@ -214,14 +214,6 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$12
+$OpenBSD: patch-src_runtime_sys_openbsd_386_s,v 1.2 2016/06/27 15:57:17 jsing Exp $
+--- src/runtime/sys_openbsd_386.s.orig	Wed Apr 20 09:50:09 2016
++++ src/runtime/sys_openbsd_386.s	Tue Jun 21 19:08:25 2016
+@@ -79,14 +79,15 @@ TEXT runtime·usleep(SB),NOSPLIT,$24
+ 	INT	$0x80
+ 	RET
+ 
+-TEXT runtime·raise(SB),NOSPLIT,$12
++TEXT runtime·raise(SB),NOSPLIT,$16
+ 	MOVL	$299, AX		// sys_getthrid
+ 	INT	$0x80
+ 	MOVL	$0, 0(SP)
+-	MOVL	AX, 4(SP)		// arg 1 - pid
++	MOVL	AX, 4(SP)		// arg 1 - tid
+ 	MOVL	sig+0(FP), AX
+ 	MOVL	AX, 8(SP)		// arg 2 - signum
+-	MOVL	$37, AX			// sys_kill
++	MOVL	$0, 12(SP)		// arg 3 - tcb
++	MOVL	$119, AX		// sys_thrkill
+ 	INT	$0x80
+ 	RET
+ 
+@@ -97,7 +98,7 @@ TEXT runtime·raiseproc(SB),NOSPLIT,$12
+ 	MOVL	AX, 4(SP)		// arg 1 - pid
+ 	MOVL	sig+0(FP), AX
+ 	MOVL	AX, 8(SP)		// arg 2 - signum
+-	MOVL	$37, AX			// sys_kill
++	MOVL	$122, AX		// sys_kill
+ 	INT	$0x80
+ 	RET
+ 
+@@ -214,14 +215,6 @@ TEXT runtime·sigtramp(SB),NOSPLIT,$12
  	MOVL	context+8(FP), BX
  	MOVL	BX, 8(SP)
  	CALL	runtime·sigtrampgo(SB)

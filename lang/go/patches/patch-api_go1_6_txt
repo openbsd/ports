@@ -1,0 +1,11 @@
+$OpenBSD: patch-api_go1_6_txt,v 1.1 2016/06/27 15:57:17 jsing Exp $
+--- api/go1.6.txt.orig	Wed Jun 22 10:23:21 2016
++++ api/go1.6.txt	Wed Jun 22 10:24:13 2016
+@@ -273,3 +273,7 @@ pkg text/template, method (ExecError) Error() string
+ pkg text/template, type ExecError struct
+ pkg text/template, type ExecError struct, Err error
+ pkg text/template, type ExecError struct, Name string
++pkg syscall (openbsd-386), const SYS_KILL = 122
++pkg syscall (openbsd-386-cgo), const SYS_KILL = 122
++pkg syscall (openbsd-amd64), const SYS_KILL = 122
++pkg syscall (openbsd-amd64-cgo), const SYS_KILL = 122
