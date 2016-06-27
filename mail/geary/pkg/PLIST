@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/05/26 07:01:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/06/27 19:56:15 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -135,6 +135,32 @@ share/gnome/help/geary/it/search.page
 share/gnome/help/geary/it/shortcuts.page
 share/gnome/help/geary/it/star.page
 share/gnome/help/geary/it/write.page
+share/gnome/help/geary/pl/
+share/gnome/help/geary/pl/accounts.page
+share/gnome/help/geary/pl/archive.page
+share/gnome/help/geary/pl/bugs.page
+share/gnome/help/geary/pl/index.page
+share/gnome/help/geary/pl/label.page
+share/gnome/help/geary/pl/limits.page
+share/gnome/help/geary/pl/overview.page
+share/gnome/help/geary/pl/preferences.page
+share/gnome/help/geary/pl/search.page
+share/gnome/help/geary/pl/shortcuts.page
+share/gnome/help/geary/pl/star.page
+share/gnome/help/geary/pl/write.page
+share/gnome/help/geary/pt_BR/
+share/gnome/help/geary/pt_BR/accounts.page
+share/gnome/help/geary/pt_BR/archive.page
+share/gnome/help/geary/pt_BR/bugs.page
+share/gnome/help/geary/pt_BR/index.page
+share/gnome/help/geary/pt_BR/label.page
+share/gnome/help/geary/pt_BR/limits.page
+share/gnome/help/geary/pt_BR/overview.page
+share/gnome/help/geary/pt_BR/preferences.page
+share/gnome/help/geary/pt_BR/search.page
+share/gnome/help/geary/pt_BR/shortcuts.page
+share/gnome/help/geary/pt_BR/star.page
+share/gnome/help/geary/pt_BR/write.page
 share/icons/hicolor/16x16/apps/geary.png
 share/icons/hicolor/24x24/apps/geary.png
 share/icons/hicolor/256x256/apps/geary.png
