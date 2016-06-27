@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_sockunion_c,v 1.1 2016/06/27 19:55:48 jca Exp $
+
+  https://lists.quagga.net/pipermail/quagga-dev/2015-May/012321.html
+
+--- lib/sockunion.c.orig	Mon Jun 27 08:27:31 2016
++++ lib/sockunion.c	Mon Jun 27 08:27:50 2016
+@@ -513,13 +513,13 @@ sockopt_minttl (int family, int sock, int minttl)
+       return ret;
+     }
+ #endif /* IP_MINTTL */
+-#ifdef IPV6_MINHOPCNT
++#ifdef IPV6_MINHOPCOUNT
+   if (family == AF_INET6)
+     {
+-      int ret = setsockopt (sock, IPPROTO_IPV6, IPV6_MINHOPCNT, &minttl, sizeof(minttl));
++      int ret = setsockopt (sock, IPPROTO_IPV6, IPV6_MINHOPCOUNT, &minttl, sizeof(minttl));
+       if (ret < 0)
+ 	  zlog (NULL, LOG_WARNING,
+-		"can't set sockopt IPV6_MINHOPCNT to %d on socket %d: %s",
++		"can't set sockopt IPV6_MINHOPCOUNT to %d on socket %d: %s",
+ 		minttl, sock, safe_strerror (errno));
+       return ret;
+     }
