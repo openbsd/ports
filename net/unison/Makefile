@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/09 10:10:43 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2016/06/27 13:34:49 giovanni Exp $
 
 COMMENT=	multi-platform file synchronization tool
 CATEGORIES=	net
 
-V=		2.48.3
+V=		2.48.4
 DISTNAME=	unison-${V}
 MASTER_SITES=	${HOMEPAGE}download/releases/stable/
 
@@ -37,7 +37,6 @@ WANTLIB += Xrandr Xrender fontconfig freetype
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0 atk-1.0 cairo z
-WANTLIB += pthread
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
@@ -52,6 +51,8 @@ PORTHOME=	${WRKDIR}
 ALL_TARGET=	unison
 
 DOCS=		BUGS.txt NEWS README
+
+WRKDIST=	${WRKDIR}/src
 
 # Avoid the nightmare of their Makefile install target.
 # Do not use INSTALL_PROGRAM, as the bytecode version must not be stripped!
