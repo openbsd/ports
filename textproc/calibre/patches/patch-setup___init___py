@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup___init___py,v 1.4 2015/12/15 22:03:59 sthen Exp $
---- setup/__init__.py.orig	Sun Nov 15 04:15:13 2015
-+++ setup/__init__.py	Mon Nov 23 22:40:02 2015
+$OpenBSD: patch-setup___init___py,v 1.5 2016/06/27 23:05:11 sthen Exp $
+--- setup/__init__.py.orig	Fri Jun 24 02:54:27 2016
++++ setup/__init__.py	Mon Jun 27 23:55:25 2016
 @@ -14,7 +14,8 @@ isosx = 'darwin' in sys.platform
  isfreebsd = 'freebsd' in sys.platform
  isnetbsd = 'netbsd' in sys.platform
@@ -9,5 +9,5 @@ $OpenBSD: patch-setup___init___py,v 1.4 2015/12/15 22:03:59 sthen Exp $
 +isopenbsd = 'openbsd' in sys.platform
 +isbsd = isnetbsd or isfreebsd or isopenbsd or isdragonflybsd
  islinux = not isosx and not iswindows and not isbsd
- SRC = os.path.abspath('src')
- sys.path.insert(0, SRC)
+ sys.setup_dir = os.path.dirname(os.path.abspath(__file__))
+ SRC = os.path.abspath(os.path.join(os.path.dirname(sys.setup_dir), 'src'))

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/06/16 22:59:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/06/27 23:05:11 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -222,6 +222,8 @@ lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/books.pyc
 lib/calibre/calibre/devices/kobo/driver.py
 lib/calibre/calibre/devices/kobo/driver.pyc
+lib/calibre/calibre/devices/kobo/kobotouch_config.py
+lib/calibre/calibre/devices/kobo/kobotouch_config.pyc
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/manager.pyc
 lib/calibre/calibre/devices/mime.py
@@ -750,8 +752,14 @@ lib/calibre/calibre/ebooks/metadata/mobi.py
 lib/calibre/calibre/ebooks/metadata/mobi.pyc
 lib/calibre/calibre/ebooks/metadata/odt.py
 lib/calibre/calibre/ebooks/metadata/odt.pyc
+lib/calibre/calibre/ebooks/metadata/opf.py
+lib/calibre/calibre/ebooks/metadata/opf.pyc
 lib/calibre/calibre/ebooks/metadata/opf2.py
 lib/calibre/calibre/ebooks/metadata/opf2.pyc
+lib/calibre/calibre/ebooks/metadata/opf3.py
+lib/calibre/calibre/ebooks/metadata/opf3.pyc
+lib/calibre/calibre/ebooks/metadata/opf3_test.py
+lib/calibre/calibre/ebooks/metadata/opf3_test.pyc
 lib/calibre/calibre/ebooks/metadata/pdb.py
 lib/calibre/calibre/ebooks/metadata/pdb.pyc
 lib/calibre/calibre/ebooks/metadata/pdf.py
@@ -813,6 +821,8 @@ lib/calibre/calibre/ebooks/metadata/topaz.py
 lib/calibre/calibre/ebooks/metadata/topaz.pyc
 lib/calibre/calibre/ebooks/metadata/txt.py
 lib/calibre/calibre/ebooks/metadata/txt.pyc
+lib/calibre/calibre/ebooks/metadata/utils.py
+lib/calibre/calibre/ebooks/metadata/utils.pyc
 lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/worker.pyc
 lib/calibre/calibre/ebooks/metadata/xisbn.py
@@ -1006,6 +1016,8 @@ lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.pyc
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.pyc
+lib/calibre/calibre/ebooks/oeb/polish/tests/structure.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/structure.pyc
 lib/calibre/calibre/ebooks/oeb/polish/toc.py
 lib/calibre/calibre/ebooks/oeb/polish/toc.pyc
 lib/calibre/calibre/ebooks/oeb/polish/utils.py
@@ -1629,6 +1641,8 @@ lib/calibre/calibre/gui2/device_drivers/mtp_config.py
 lib/calibre/calibre/gui2/device_drivers/mtp_config.pyc
 lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.py
 lib/calibre/calibre/gui2/device_drivers/mtp_folder_browser.pyc
+lib/calibre/calibre/gui2/device_drivers/tabbed_device_config.py
+lib/calibre/calibre/gui2/device_drivers/tabbed_device_config.pyc
 lib/calibre/calibre/gui2/dialogs/
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/__init__.pyc
@@ -1636,6 +1650,8 @@ lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.pyc
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.pyc
+lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.py
+lib/calibre/calibre/gui2/dialogs/add_from_isbn_ui.pyc
 lib/calibre/calibre/gui2/dialogs/authors_edit.py
 lib/calibre/calibre/gui2/dialogs/authors_edit.pyc
 lib/calibre/calibre/gui2/dialogs/book_info.py
@@ -2712,6 +2728,8 @@ lib/calibre/calibre/utils/iphlpapi.py
 lib/calibre/calibre/utils/iphlpapi.pyc
 lib/calibre/calibre/utils/ipython.py
 lib/calibre/calibre/utils/ipython.pyc
+lib/calibre/calibre/utils/iso8601.py
+lib/calibre/calibre/utils/iso8601.pyc
 lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/linux_trash.pyc
 lib/calibre/calibre/utils/localization.py
@@ -2791,6 +2809,8 @@ lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/resources.pyc
 lib/calibre/calibre/utils/rss_gen.py
 lib/calibre/calibre/utils/rss_gen.pyc
+lib/calibre/calibre/utils/run_tests.py
+lib/calibre/calibre/utils/run_tests.pyc
 lib/calibre/calibre/utils/search_query_parser.py
 lib/calibre/calibre/utils/search_query_parser.pyc
 lib/calibre/calibre/utils/serve_coffee.py
@@ -3792,7 +3812,6 @@ share/calibre/recipes/blues.png
 share/calibre/recipes/blues.recipe
 share/calibre/recipes/boortz.png
 share/calibre/recipes/boortz.recipe
-share/calibre/recipes/borba.png
 share/calibre/recipes/borse_online.recipe
 share/calibre/recipes/boston.com.recipe
 share/calibre/recipes/brand_eins.recipe
@@ -3935,7 +3954,6 @@ share/calibre/recipes/cracked_com.recipe
 share/calibre/recipes/craigslist.recipe
 share/calibre/recipes/credit_slips.png
 share/calibre/recipes/credit_slips.recipe
-share/calibre/recipes/criticadigital.png
 share/calibre/recipes/csid.png
 share/calibre/recipes/csid.recipe
 share/calibre/recipes/ct24.recipe
@@ -4166,9 +4184,7 @@ share/calibre/recipes/ele.png
 share/calibre/recipes/ele.recipe
 share/calibre/recipes/elektroda_pl.png
 share/calibre/recipes/elektroda_pl.recipe
-share/calibre/recipes/elektrolese.png
 share/calibre/recipes/elet_es_irodalom.recipe
-share/calibre/recipes/elguardian.png
 share/calibre/recipes/elmundo.png
 share/calibre/recipes/elmundo.recipe
 share/calibre/recipes/elpais_impreso.png
@@ -4187,7 +4203,6 @@ share/calibre/recipes/eltribuno_jujuy_impreso.png
 share/calibre/recipes/eltribuno_jujuy_impreso.recipe
 share/calibre/recipes/eltribuno_salta_impreso.png
 share/calibre/recipes/eltribuno_salta_impreso.recipe
-share/calibre/recipes/eluniversal.png
 share/calibre/recipes/eluniversal_ve.png
 share/calibre/recipes/eluniversal_ve.recipe
 share/calibre/recipes/eluniversalimpresa.recipe
@@ -4320,7 +4335,6 @@ share/calibre/recipes/fria.recipe
 share/calibre/recipes/frontlineonnet.recipe
 share/calibre/recipes/fstream.png
 share/calibre/recipes/fstream.recipe
-share/calibre/recipes/ftd.png
 share/calibre/recipes/fudzilla.png
 share/calibre/recipes/fudzilla.recipe
 share/calibre/recipes/furstenfeldbrucker_tagblatt.recipe
@@ -4409,7 +4423,6 @@ share/calibre/recipes/grandes_corresponsales_es.recipe
 share/calibre/recipes/granma.png
 share/calibre/recipes/granma.recipe
 share/calibre/recipes/grantland.recipe
-share/calibre/recipes/greenlinux_pl.png
 share/calibre/recipes/greensboro_news_and_record.png
 share/calibre/recipes/greensboro_news_and_record.recipe
 share/calibre/recipes/grid_to.recipe
@@ -4431,7 +4444,6 @@ share/calibre/recipes/h1.recipe
 share/calibre/recipes/h2.recipe
 share/calibre/recipes/h3.recipe
 share/calibre/recipes/h7_tumspor.recipe
-share/calibre/recipes/haaretz.png
 share/calibre/recipes/haaretz_en.png
 share/calibre/recipes/haaretz_en.recipe
 share/calibre/recipes/haber7.recipe
@@ -4439,6 +4451,7 @@ share/calibre/recipes/hackernews.recipe
 share/calibre/recipes/haksoz.recipe
 share/calibre/recipes/hallo_assen.recipe
 share/calibre/recipes/hamilton_spectator.recipe
+share/calibre/recipes/handelsblatt.png
 share/calibre/recipes/handelsblatt.recipe
 share/calibre/recipes/hankyoreh.recipe
 share/calibre/recipes/hankyoreh21.recipe
@@ -4496,7 +4509,7 @@ share/calibre/recipes/hotcity.recipe
 share/calibre/recipes/hotnews.png
 share/calibre/recipes/hotnews.recipe
 share/calibre/recipes/house_news.recipe
-share/calibre/recipes/houston_chronicle-2.png
+share/calibre/recipes/houston_chronicle.png
 share/calibre/recipes/houston_chronicle.recipe
 share/calibre/recipes/howtogeek.png
 share/calibre/recipes/howtogeek.recipe
@@ -4831,7 +4844,7 @@ share/calibre/recipes/mail_and_guardian.recipe
 share/calibre/recipes/mainichi.png
 share/calibre/recipes/mainichi.recipe
 share/calibre/recipes/mainichi_en.recipe
-share/calibre/recipes/mainichi_it_news.png
+share/calibre/recipes/mainichi_science_news.png
 share/calibre/recipes/mainichi_science_news.recipe
 share/calibre/recipes/malaya_business_insight.recipe
 share/calibre/recipes/malaysian_mirror.recipe
@@ -4871,8 +4884,8 @@ share/calibre/recipes/miami_herald.png
 share/calibre/recipes/miami_herald.recipe
 share/calibre/recipes/michalkiewicz.png
 share/calibre/recipes/michalkiewicz.recipe
+share/calibre/recipes/michellemalkin.png
 share/calibre/recipes/michellemalkin.recipe
-share/calibre/recipes/michellemalkin_icon.png
 share/calibre/recipes/miesbacher_merkur.recipe
 share/calibre/recipes/milenio.recipe
 share/calibre/recipes/military_times.recipe
@@ -5002,11 +5015,6 @@ share/calibre/recipes/nikkei_free.recipe
 share/calibre/recipes/nikkei_news.recipe
 share/calibre/recipes/nikkei_sub.png
 share/calibre/recipes/nikkei_sub.recipe
-share/calibre/recipes/nikkei_sub_economy.png
-share/calibre/recipes/nikkei_sub_industry.png
-share/calibre/recipes/nikkei_sub_life.png
-share/calibre/recipes/nikkei_sub_main.png
-share/calibre/recipes/nikkei_sub_sports.png
 share/calibre/recipes/nin.recipe
 share/calibre/recipes/njp.recipe
 share/calibre/recipes/njuz_net.png
@@ -5049,8 +5057,8 @@ share/calibre/recipes/nrc-nl-epub.recipe
 share/calibre/recipes/nrc.nl.png
 share/calibre/recipes/nrc.nl.recipe
 share/calibre/recipes/nrc_handelsblad.recipe
+share/calibre/recipes/nrc_next.png
 share/calibre/recipes/nrc_next.recipe
-share/calibre/recipes/nrcnext.png
 share/calibre/recipes/nsfw_corp.png
 share/calibre/recipes/nsfw_corp.recipe
 share/calibre/recipes/nspm.png
@@ -5630,7 +5638,6 @@ share/calibre/recipes/tovima.recipe
 share/calibre/recipes/toyokeizai.recipe
 share/calibre/recipes/tpm_uk.png
 share/calibre/recipes/tpm_uk.recipe
-share/calibre/recipes/tr.recipe
 share/calibre/recipes/tri_city_herald.recipe
 share/calibre/recipes/trojmiasto_pl.png
 share/calibre/recipes/trojmiasto_pl.recipe
@@ -5728,7 +5735,6 @@ share/calibre/recipes/wash_post.png
 share/calibre/recipes/wash_post.recipe
 share/calibre/recipes/wash_times.recipe
 share/calibre/recipes/watchingamerica.recipe
-share/calibre/recipes/webhosting_pl.png
 share/calibre/recipes/weblogs_sl.recipe
 share/calibre/recipes/websecurity_pl.png
 share/calibre/recipes/websecurity_pl.recipe
@@ -5752,7 +5758,6 @@ share/calibre/recipes/wired.recipe
 share/calibre/recipes/wired_daily.png
 share/calibre/recipes/wired_daily.recipe
 share/calibre/recipes/wired_it.recipe
-share/calibre/recipes/wired_uk.png
 share/calibre/recipes/wirtscafts_woche.recipe
 share/calibre/recipes/wirtualnemedia_pl.png
 share/calibre/recipes/wirtualnemedia_pl.recipe
@@ -5825,6 +5830,7 @@ share/calibre/templates/html_export_default_index.tmpl
 share/calibre/templates/inline_toc_styles.css
 share/calibre/templates/lrf.xsl
 share/calibre/templates/new_book.html
+share/calibre/templates/new_nav.html
 share/calibre/templates/rtf.xsl
 share/calibre/tracer.epub
 share/calibre/user-manual-translation-stats.json
