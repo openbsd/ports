@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/06/27 11:52:17 jasper Exp $
 
 COMMENT=		Erlang build tool
 
@@ -19,15 +19,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 FLAVORS =		erlang16 erlang17 erlang18
 FLAVOR ?=		erlang16
 
-.if ${FLAVOR:Merlang16}
-RUN_DEPENDS =		lang/erlang/16
-ERL_VERSION =		16
-.elif ${FLAVOR:Merlang17}
-RUN_DEPENDS =		lang/erlang/17
-ERL_VERSION =		17
-.elif ${FLAVOR:Merlang18}
-RUN_DEPENDS =		lang/erlang/18
-ERL_VERSION =		18
+.if ${FLAVOR:Merlang16} || ${FLAVOR:Merlang17} || ${FLAVOR:Merlang18} \
+  || ${FLAVOR:Merlang19}
+_EV =			${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
+RUN_DEPENDS =		lang/erlang/${_EV}
+ERL_VERSION =		${_EV}
 .else
 ERRORS +=		"Invalid FLAVOR set: ${FLAVOR}"
 .endif
