@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2016/01/25 20:32:15 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/06/27 20:35:31 sthen Exp $
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
@@ -694,6 +694,7 @@ share/freeradius/dictionary.3gpp2
 share/freeradius/dictionary.acc
 share/freeradius/dictionary.acme
 share/freeradius/dictionary.actelis
+share/freeradius/dictionary.adtran
 share/freeradius/dictionary.aerohive
 share/freeradius/dictionary.airespace
 share/freeradius/dictionary.alcatel
@@ -728,6 +729,7 @@ share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
 share/freeradius/dictionary.camiant
+share/freeradius/dictionary.checkpoint
 share/freeradius/dictionary.chillispot
 share/freeradius/dictionary.cisco
 share/freeradius/dictionary.cisco.asa
@@ -852,6 +854,7 @@ share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
 share/freeradius/dictionary.ruckus
 share/freeradius/dictionary.ruggedcom
+share/freeradius/dictionary.sangoma
 share/freeradius/dictionary.sg
 share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva

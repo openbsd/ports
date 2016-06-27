@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/06/27 20:35:31 sthen Exp $
+
+XXX apply to patch-configure when moving back to a (non snapshot) release
+
+--- configure.ac.orig	Mon Jun 27 21:02:22 2016
++++ configure.ac	Mon Jun 27 21:04:13 2016
+@@ -900,7 +900,7 @@ AC_ARG_WITH(collectdclient-include-dir,
+ 
+ smart_try_dir="$collectdclient_lib_dir"
+ FR_SMART_CHECK_LIB(collectdclient, lcc_connect)
+-if test "x$ac_cv_lib_collectdclient_lcc_connect" != "xyes"; then
++if true || test "x$ac_cv_lib_collectdclient_lcc_connect" != "xyes"; then
+   AC_MSG_WARN([collectdclient library not found. Use --with-collectdclient-lib-dir=<path>.])
+ else
+   COLLECTDC_LIBS="${smart_lib}"

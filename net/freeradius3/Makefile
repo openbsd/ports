@@ -1,32 +1,49 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/27 20:35:31 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
 COMMENT-main=	RADIUS server implementation
+COMMENT-freetds= freeradius freetds rlm addon
 COMMENT-iodbc=	freeradius iodbc rlm addon
+COMMENT-ldap=	freeradius ldap rlm addon
 COMMENT-memcached= freeradius memcached rlm addon
 COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
-COMMENT-ldap=	freeradius ldap rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.11
+V=		3.0.12pre20160627
 DISTNAME=	freeradius-server-$V
-EXTRACT_SUFX=	.tar.bz2
+#EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
+PKGNAME-freetds= freeradius-iodbc-$V
 PKGNAME-iodbc=	freeradius-iodbc-$V
+PKGNAME-ldap=	freeradius-ldap-$V
 PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
-PKGNAME-ldap=	freeradius-ldap-$V
 
 CATEGORIES=	net security
 
-MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
-		ftp://ftp.freeradius.org/pub/radius/ \
-		ftp://ftp.freeradius.org/pub/radius/old/
+####
+#MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
+#		ftp://ftp.freeradius.org/pub/radius/ \
+#		ftp://ftp.freeradius.org/pub/radius/old/
+GH_ACCOUNT=     FreeRADIUS
+GH_PROJECT=     freeradius-server
+GH_COMMIT=      63021dab84322eb0f899785f83fc4f8f85af763f
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
+BUILD_DEPENDS=  ${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/autoconf-archive
+post-patch:
+	cd ${WRKSRC}; \
+	cp ${LOCALBASE}/share/aclocal/ax_{prog_ruby_version,ruby_devel}.m4 m4; \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+####
 
 HOMEPAGE=	http://www.freeradius.org/
 
@@ -51,9 +68,11 @@ TEST_TARGET=	test
 TEST_DEPENDS=	freeradius-$V:${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
-MODULES=	lang/python
+MODULES=	gcc4 \
+		lang/python
+MODGCC4_ARCHS=	*
 
-MULTI_PACKAGES=	-main -python -ldap -iodbc -memcached -mysql -pgsql
+MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	no#...has its own _special_ libtool.
@@ -78,7 +97,8 @@ WANTLIB-main += c crypto curl execinfo gdbm hiredis idn json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc termcap
 WANTLIB-main += util ykclient yubikey z
 
-PSEUDO_FLAVORS=	no_python no_ldap no_iodbc no_memcached no_mysql no_pgsql
+PSEUDO_FLAVORS= no_freetds no_iodbc no_ldap no_memcached no_mysql \
+		no_pgsql no_python
 FLAVOR?=
 
 .include <bsd.port.arch.mk>
@@ -101,6 +121,16 @@ CONFIGURE_ARGS+=	--without-rlm_ldap
 LIB_DEPENDS-ldap=	databases/openldap
 WANTLIB-ldap=		ldap
 RUN_DEPENDS-ldap=	#empty
+
+# rlm_sql_freetds
+.if ${BUILD_PACKAGES:M-freetds}
+CONFIGURE_ARGS+=	--with-freetds-lib-dir=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-freetds-include-dir=${LOCALBASE}/include
+.else
+CONFIGURE_ARGS+=	--without-rlm_sql_freetds
+.endif
+LIB_DEPENDS-freetds=	databases/freetds
+WANTLIB-freetds=	ct
 
 # rlm_sql_iodbc
 .if ${BUILD_PACKAGES:M-iodbc}
