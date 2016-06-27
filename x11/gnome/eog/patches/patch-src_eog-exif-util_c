@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_eog-exif-util_c,v 1.5 2016/06/27 11:20:01 jasper Exp $
+
+error: #pragma GCC diagnostic not allowed inside functions
+
+--- src/eog-exif-util.c.orig	Mon Jun 27 13:14:25 2016
++++ src/eog-exif-util.c	Mon Jun 27 13:14:56 2016
+@@ -118,11 +118,15 @@ eog_exif_util_format_date_with_strptime (const gchar *
+ 		if (!GPOINTER_TO_BOOLEAN (strptime_updates_wday.retval))
+ 			_calculate_wday_yday (&tm);
+ 
++#if defined(__GNUC__) && (__GNUC__ > 4)
+ #pragma GCC diagnostic push
+ #pragma GCC diagnostic ignored "-Wformat-nonliteral"
++#endif
+ 		/* A strftime-formatted string, to display the date the image was taken.  */
+ 		dlen = strftime (tmp_date, DATE_BUF_SIZE * sizeof(gchar), format, &tm);
++#if defined(__GNUC__) && (__GNUC__ > 4)
+ #pragma GCC diagnostic pop
++#endif
+ 		new_date = g_strndup (tmp_date, dlen);
+ 	}
+ 
