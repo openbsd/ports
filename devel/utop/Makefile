@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/26 13:31:10 krw Exp $
+# $OpenBSD: Makefile,v 1.14 2016/06/27 11:50:08 edd Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -8,9 +8,7 @@ GH_ACCOUNT =	diml
 GH_PROJECT =	utop
 GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-$V
-REVISION =	0
-
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+REVISION =	1
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
