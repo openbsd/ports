@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.13 2016/06/04 11:58:36 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.14 2016/06/27 06:29:07 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 4 2016 $
+.Dd $Mdocdate: June 27 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -102,7 +102,9 @@ See
 for details.
 .It Cm devs
 Regenerate devices using
-.Xr MAKEDEV 8 .
+.Xr MAKEDEV 8
+and
+.Xr dev_mkdb 8 .
 .It Cm checkout_ports
 Check out a ports tree from cvs using a provided
 .Ar portscvs
