@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/04/26 13:16:42 jca Exp $
+@comment $OpenBSD: PLIST,v 1.27 2016/06/27 09:05:05 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -86,6 +86,7 @@ ${P5SITE}/Image/ExifTool/HtmlDump.pm
 ${P5SITE}/Image/ExifTool/ICC_Profile.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
 ${P5SITE}/Image/ExifTool/IPTC.pm
+${P5SITE}/Image/ExifTool/ISO.pm
 ${P5SITE}/Image/ExifTool/ITC.pm
 ${P5SITE}/Image/ExifTool/Import.pm
 ${P5SITE}/Image/ExifTool/InDesign.pm
@@ -145,6 +146,7 @@ ${P5SITE}/Image/ExifTool/PDF.pm
 ${P5SITE}/Image/ExifTool/PGF.pm
 ${P5SITE}/Image/ExifTool/PICT.pm
 ${P5SITE}/Image/ExifTool/PLIST.pm
+${P5SITE}/Image/ExifTool/PLUS.pm
 ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
 ${P5SITE}/Image/ExifTool/PSP.pm
@@ -253,6 +255,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::ICC_Profile.3p
 @man man/man3p/Image::ExifTool::ID3.3p
 @man man/man3p/Image::ExifTool::IPTC.3p
+@man man/man3p/Image::ExifTool::ISO.3p
 @man man/man3p/Image::ExifTool::ITC.3p
 @man man/man3p/Image::ExifTool::Import.3p
 @man man/man3p/Image::ExifTool::InDesign.3p
@@ -311,6 +314,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::PGF.3p
 @man man/man3p/Image::ExifTool::PICT.3p
 @man man/man3p/Image::ExifTool::PLIST.3p
+@man man/man3p/Image::ExifTool::PLUS.3p
 @man man/man3p/Image::ExifTool::PNG.3p
 @man man/man3p/Image::ExifTool::PPM.3p
 @man man/man3p/Image::ExifTool::PSP.3p
