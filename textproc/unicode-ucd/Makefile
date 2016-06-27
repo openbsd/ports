@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/25 12:26:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/06/27 10:59:00 jasper Exp $
 
 COMMENT =		Unicode Character Database (UCD)
 
-V =			8.0.0
+V =			9.0.0
 DISTNAME =		UCD
 PKGNAME =		unicode-ucd-$V
 CATEGORIES =		textproc
