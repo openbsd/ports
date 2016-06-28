@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unittest_test_serialization_cpp,v 1.1 2015/09/24 09:50:24 sthen Exp $
---- src/unittest/test_serialization.cpp.orig	Thu Sep 24 03:40:40 2015
-+++ src/unittest/test_serialization.cpp	Thu Sep 24 03:40:44 2015
-@@ -289,7 +289,7 @@ void TestSerialization::testStreamRead()
+$OpenBSD: patch-src_unittest_test_serialization_cpp,v 1.2 2016/06/28 13:56:58 landry Exp $
+--- src/unittest/test_serialization.cpp.orig	Sun May 15 14:49:15 2016
++++ src/unittest/test_serialization.cpp	Tue Jun 28 15:56:19 2016
+@@ -295,7 +295,7 @@ void TestSerialization::testStreamRead()
  	UASSERT(readU8(is) == 0x11);
  	UASSERT(readU16(is) == 0x2233);
  	UASSERT(readU32(is) == 0x44556677);
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_unittest_test_serialization_cpp,v 1.1 2015/09/24 09:50:24 st
  
  	UASSERT(readS8(is) == -128);
  	UASSERT(readS16(is) == 30000);
-@@ -330,7 +330,7 @@ void TestSerialization::testStreamWrite()
+@@ -336,7 +336,7 @@ void TestSerialization::testStreamWrite()
  	writeU8(os, 0x11);
  	writeU16(os, 0x2233);
  	writeU32(os, 0x44556677);

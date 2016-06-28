@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.11 2015/09/17 22:06:30 landry Exp $
---- src/CMakeLists.txt.orig	Thu Aug 20 04:02:00 2015
-+++ src/CMakeLists.txt	Thu Sep 17 23:23:34 2015
-@@ -46,6 +46,8 @@ set(USE_GETTEXT FALSE)
+$OpenBSD: patch-src_CMakeLists_txt,v 1.12 2016/06/28 13:56:58 landry Exp $
+--- src/CMakeLists.txt.orig	Sun May 15 14:49:15 2016
++++ src/CMakeLists.txt	Tue Jun 28 15:56:19 2016
+@@ -61,6 +61,8 @@ set(USE_GETTEXT FALSE)
  
  if(ENABLE_GETTEXT)
  	find_package(GettextLib)
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.11 2015/09/17 22:06:30 landry Exp $
  	if(GETTEXT_FOUND)
  		if(WIN32)
  			message(STATUS "GetText library: ${GETTEXT_LIBRARY}")
-@@ -262,7 +264,10 @@ else()
+@@ -306,7 +308,10 @@ else()
  	if(APPLE)
  		set(PLATFORM_LIBS "-framework CoreFoundation" ${PLATFORM_LIBS})
  	else()
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.11 2015/09/17 22:06:30 landry Exp $
  	endif(APPLE)
  
  	# This way Xxf86vm is found on OpenBSD too
-@@ -503,7 +508,8 @@ if(BUILD_CLIENT)
+@@ -550,7 +555,8 @@ if(BUILD_CLIENT)
  		${BZIP2_LIBRARIES}
  		${PNG_LIBRARIES}
  		${X11_LIBRARIES}
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.11 2015/09/17 22:06:30 landry Exp $
  		${SOUND_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${LUA_LIBRARY}
-@@ -562,7 +568,8 @@ if(BUILD_SERVER)
+@@ -612,7 +618,8 @@ if(BUILD_SERVER)
  		${ZLIB_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${JSON_LIBRARY}
@@ -42,7 +42,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.11 2015/09/17 22:06:30 landry Exp $
  		${LUA_LIBRARY}
  		${GMP_LIBRARY}
  		${PLATFORM_LIBS}
-@@ -629,14 +636,12 @@ else()
+@@ -682,14 +689,12 @@ else()
  		set(OTHER_FLAGS "-mthreads -fexceptions")
  	endif()
  
