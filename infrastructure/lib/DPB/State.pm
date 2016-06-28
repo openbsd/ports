@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.17 2016/05/08 12:52:58 espie Exp $
+# $OpenBSD: State.pm,v 1.18 2016/06/28 15:28:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -382,4 +382,12 @@ sub handle_build_files
 	$state->heuristics->finished_parsing;
 }
 
+sub find_window_size
+{
+	my ($state, $cont) = @_;
+	$state->SUPER::find_window_size;
+	if (defined $state->{reporter}) {
+		$state->{reporter}->sig_received($cont);
+	}
+}
 1;

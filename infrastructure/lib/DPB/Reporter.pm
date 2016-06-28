@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.28 2016/06/24 12:52:12 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.29 2016/06/28 15:28:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -70,12 +70,17 @@ sub set_sig_handlers
 {
 	my $self = shift;
 	$self->set_sigtstp;
-	$SIG{'CONT'} = sub {
+}
+
+sub sig_received
+{
+	my ($self, $iscont) = @_;
+	if ($iscont) {
 		$self->set_sigtstp;
 		$self->{continued} = 1;
 		DPB::Clock->restart;
-		$self->handle_window;
-	};
+	}
+	$self->handle_window;
 }
 
 sub refresh
@@ -126,6 +131,7 @@ sub make_singleton
 	    timeout => $state->{display_timeout} // 10,
 	    state => $state,
 	    continued => 0}, $class;
+	$state->{reporter} = $singleton;
     	if ($state->{record}) {
 		$singleton->{record} =
 		    $state->{log_user}->open('>>', $state->{record});

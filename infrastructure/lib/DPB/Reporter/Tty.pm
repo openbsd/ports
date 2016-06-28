@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.5 2016/06/24 12:52:12 espie Exp $
+# $OpenBSD: Tty.pm,v 1.6 2016/06/28 15:28:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -35,9 +35,6 @@ sub set_sig_handlers
 {
 	my $self = shift;
 	$self->SUPER::set_sig_handlers;
-	$SIG{'WINCH'} = sub {
-		$self->handle_window;
-	};
 	OpenBSD::Handler->register(sub {
 		$self->reset_cursor; });
 }

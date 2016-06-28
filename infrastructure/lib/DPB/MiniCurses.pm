@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.11 2016/06/24 12:52:12 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.12 2016/06/28 15:28:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,19 +30,6 @@ use constant {
 	TURQUOISE => 6,
 	WHITE => 7 };
 
-sub find_window_size
-{
-	my $self = shift;
-	my @l = Term::ReadKey::GetTermSizeGWINSZ(\*STDOUT);
-	if (@l != 4) {
-		$self->{width} = 80;
-		$self->{height} = 24;
-	} else {
-		$self->{width} = $l[0];
-		$self->{height} = $l[1];
-	}
-}
-
 sub term_send
 {
 	my ($self, $seq) = @_;
@@ -59,8 +46,19 @@ sub refresh
 sub handle_window
 {
 	my $self = shift;
-	$self->find_window_size;
 	$self->refresh;
+}
+
+sub width
+{
+	my $self = shift;
+	return $self->{state}->width;
+}
+
+sub height
+{
+	my $self = shift;
+	return $self->{state}->height;
 }
 
 sub create_terminal
@@ -76,7 +74,6 @@ sub create_terminal
 	$termios->getattr(0);
 	$self->{terminal} = Term::Cap->Tgetent({ OSPEED =>
 	    $termios->getospeed });
-	$self->find_window_size;
 	$self->{home} = $self->{terminal}->Tputs("ho", 1);
 	$self->{clear} = $self->{terminal}->Tputs("cl", 1);
 	$self->{down} = $self->{terminal}->Tputs("do", 1);
@@ -108,7 +105,7 @@ sub write_clear
 	$self->{oldlines} = [$self->cut_lines($msg)];
 	my $n = 2;
 	for my $line (@{$self->{oldlines}}) {
-		last if $n++ > $self->{height};
+		last if $n++ > $self->height;
 		$r .= $self->clamped($line);
 	}
 	print $r;
@@ -119,9 +116,9 @@ sub cut_lines
 	my ($self, $msg) = @_;
 	my @lines = ();
 	for my $line (split("\n", $msg)) {
-		while (length $line > $self->{width}) {
-			push(@lines, substr($line, 0, $self->{width}));
-			$line = substr($line, $self->{width});
+		while (length $line > $self->width) {
+			push(@lines, substr($line, 0, $self->width));
+			$line = substr($line, $self->width);
 		}
 		push(@lines, $line);
 	}
@@ -206,7 +203,7 @@ sub clamped
 	if (defined $self->{fg}) {
 		$l2 = $self->mogrify($l2);
 	}
-	if (!$self->{glitch} && length $line == $self->{width}) {
+	if (!$self->{glitch} && length $line == $self->width) {
 		return $l2;
 	} else {
 		return $l2."\n";
@@ -220,7 +217,7 @@ sub clear_clamped
 	if (defined $self->{fg}) {
 		$l2 = $self->mogrify($l2);
 	}
-	if (!$self->{glitch} && length $line == $self->{width}) {
+	if (!$self->{glitch} && length $line == $self->width) {
 		return $l2;
 	} else {
 		return $self->{cleareol}.$l2."\n";
@@ -254,7 +251,7 @@ sub lines
 	my $r = '';
 
 	while (@new > 0) {
-		return $r if $n++ > $self->{height};
+		return $r if $n++ > $self->height;
 		$r .= $self->do_line(shift @new, shift @{$self->{oldlines}});
 	}
 	# extra lines must disappear
@@ -266,7 +263,7 @@ sub lines
 			$line = " "x (length $line);
 			$r .= $self->clamped($line);
 		}
-		last if $n++ > $self->{height};
+		last if $n++ > $self->height;
 	}
 	return $r;
 }
