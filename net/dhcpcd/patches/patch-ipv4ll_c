@@ -1,0 +1,40 @@
+$OpenBSD: patch-ipv4ll_c,v 1.1 2016/06/28 20:09:28 sthen Exp $
+
+http://roy.marples.name/projects/dhcpcd/vpatch?from=c1fd142a5b6f41ab&to=824b648f67e9f33d
+
+Check we have an assigned address when an ARP conflict occurs to avoid a
+NULL pointer deference.
+
+http://roy.marples.name/projects/dhcpcd/info/61803be50b
+
+--- ipv4ll.c.orig	Fri Jun 17 20:08:33 2016
++++ ipv4ll.c	Tue Jun 28 21:07:40 2016
+@@ -244,7 +244,6 @@ ipv4ll_conflicted(struct arp_state *astate, const stru
+ 	ifp = astate->iface;
+ 	state = IPV4LL_STATE(ifp);
+ 	assert(state != NULL);
+-	assert(state->addr != NULL);
+ 
+ 	fail = 0;
+ 	/* RFC 3927 2.2.1, Probe Conflict Detection */
+@@ -254,7 +253,8 @@ ipv4ll_conflicted(struct arp_state *astate, const stru
+ 		fail = astate->addr.s_addr;
+ 
+ 	/* RFC 3927 2.5, Conflict Defense */
+-	if (IN_LINKLOCAL(ntohl(state->addr->addr.s_addr)) &&
++	if (state->addr != NULL &&
++	    IN_LINKLOCAL(ntohl(state->addr->addr.s_addr)) &&
+ 	    amsg && amsg->sip.s_addr == state->addr->addr.s_addr)
+ 		fail = state->addr->addr.s_addr;
+ 
+@@ -264,7 +264,9 @@ ipv4ll_conflicted(struct arp_state *astate, const stru
+ 	astate->failed.s_addr = fail;
+ 	arp_report_conflicted(astate, amsg);
+ 
+-	if (astate->failed.s_addr == state->addr->addr.s_addr) {
++	if (state->addr != NULL &&
++	    astate->failed.s_addr == state->addr->addr.s_addr)
++	{
+ 		struct timespec now, defend;
+ 
+ 		/* RFC 3927 Section 2.5 says a defence should
