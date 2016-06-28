@@ -1,18 +1,22 @@
-$OpenBSD: README,v 1.2 2016/05/27 23:44:14 abieber Exp $
+$OpenBSD: README,v 1.3 2016/06/28 14:22:51 abieber Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-To play ioquake3 on OpenBSD, you need the original game CD key and
-*.pk3 files.
+To play ioquake3 on OpenBSD, you need the original game CD key and *.pk3 files.
 
-Copy the game data (pak0-8.pk3) to ~/.q3a/baseq3/ then start up ioquake3
-and add your CD key under Setup -> CD Key.
+Copy the game data (pak0-8.pk3) to ~/.q3a/baseq3/ (for single user mode) or
+${TRUEPREFIX}/share/ioquake3/baseq3 (for system wide usage) then start up
+ioquake3 and add your CD key under Setup -> CD Key.
 
-If you want to run the dedicated server (ioq3ded) you will need to copy
-.q3a/baseq3 to /var/ioq3/. The server map can be overwritten by setting
-"+map" to something like q3dm16 in ioq3ded_flags.
+If you want to run the dedicated server (ioq3ded), the pk3 files need to
+either be in ${TRUEPREFIX}/share/ioquake3/baseq3 or /var/ioq3/.q3a/baseq3/.
+The server map can be overwritten by setting "+map" to something else in
+ioq3ded_flags:
+
+rcctl enable ioq3ded && rcctl set ioq3ded flags +map q3dm16
 
 For more information on the dedicated server see here:
 http://wiki.ioquake3.org/Sys_Admin_Guide#Configuration_Files
+

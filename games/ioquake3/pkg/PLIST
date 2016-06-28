@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/27 23:44:14 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/06/28 14:22:51 abieber Exp $
 @newgroup _ioq3:776
 @newuser _ioq3:776:_ioq3:daemon:ioquake3 Server:/var/ioq3:/sbin/nologin
 @bin bin/ioq3ded
@@ -357,8 +357,6 @@ share/ioquake3/client/be_ea.d
 share/ioquake3/client/be_ea.o
 share/ioquake3/client/be_interface.d
 share/ioquake3/client/be_interface.o
-share/ioquake3/client/bitwise.d
-share/ioquake3/client/bitwise.o
 share/ioquake3/client/cl_avi.d
 share/ioquake3/client/cl_avi.o
 share/ioquake3/client/cl_cgame.d
@@ -407,8 +405,6 @@ share/ioquake3/client/cvar.d
 share/ioquake3/client/cvar.o
 share/ioquake3/client/files.d
 share/ioquake3/client/files.o
-share/ioquake3/client/framing.d
-share/ioquake3/client/framing.o
 share/ioquake3/client/ftola.d
 share/ioquake3/client/ftola.o
 share/ioquake3/client/http.d
