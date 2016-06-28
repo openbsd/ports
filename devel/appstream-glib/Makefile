@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:16 naddy Exp $
-
-PORTROACH=		limitw:1,even
+# $OpenBSD: Makefile,v 1.12 2016/06/28 08:46:58 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.4.1
+DISTNAME=		appstream-glib-0.5.16
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       1.0      # 7.5
-SHARED_LIBS +=  appstream-builder    1.0      # 7.5
+SHARED_LIBS +=  appstream-glib       2.0      # 7.5
+SHARED_LIBS +=  appstream-builder    2.0      # 7.5
 
 CATEGORIES=		devel
 
@@ -21,18 +19,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 epoxy expat
-WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz lzma lzo2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 yaml-0
-WANTLIB += z
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
+WANTLIB += expat ffi fontconfig freetype gcab-1.0 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
+WANTLIB += lz4 lzma lzo2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += uuid xcb xcb-render xcb-shm xml2 yaml-0 z
 
 MASTER_SITES=		http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 
-MODULES=		devel/gettext \
-			textproc/intltool \
+MODULES=		textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
@@ -45,8 +42,10 @@ BUILD_DEPENDS=		archivers/gcab \
 RUN_DEPENDS=		archivers/gcab
 
 LIB_DEPENDS=		archivers/libarchive \
+			devel/json-glib \
 			devel/libsoup \
 			devel/libyaml \
+			sysutils/e2fsprogs \
 			x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
@@ -57,6 +56,6 @@ CONFIGURE_ARGS=		--disable-ostree \
 MAKE_FLAGS=		WARNINGFLAGS_C=
 
 post-install:
-	rm ${PREFIX}/lib/asb-plugins-2/*.{a,la}
+	rm ${PREFIX}/lib/asb-plugins-5/*.{a,la}
 
 .include <bsd.port.mk>

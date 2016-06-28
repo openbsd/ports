@@ -1,46 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/27 06:49:50 ajacoutot Exp $
-@bin bin/appdata-validate
+@comment $OpenBSD: PLIST,v 1.3 2016/06/28 08:46:58 ajacoutot Exp $
 @bin bin/appstream-builder
+@bin bin/appstream-compose
 @bin bin/appstream-util
 include/libappstream-builder/
 include/libappstream-builder/appstream-builder.h
 include/libappstream-builder/asb-app.h
 include/libappstream-glib/
 include/libappstream-glib/appstream-glib.h
+include/libappstream-glib/as-app-builder.h
 include/libappstream-glib/as-app.h
 include/libappstream-glib/as-bundle.h
+include/libappstream-glib/as-checksum.h
+include/libappstream-glib/as-content-rating.h
 include/libappstream-glib/as-enums.h
 include/libappstream-glib/as-icon.h
 include/libappstream-glib/as-image.h
 include/libappstream-glib/as-inf.h
+include/libappstream-glib/as-markup.h
 include/libappstream-glib/as-node.h
 include/libappstream-glib/as-problem.h
+include/libappstream-glib/as-profile.h
 include/libappstream-glib/as-provide.h
 include/libappstream-glib/as-release.h
 include/libappstream-glib/as-screenshot.h
 include/libappstream-glib/as-store.h
 include/libappstream-glib/as-tag.h
+include/libappstream-glib/as-translation.h
 include/libappstream-glib/as-utils.h
 include/libappstream-glib/as-version.h
-lib/asb-plugins-2/
-lib/asb-plugins-2/libasb_plugin_absorb.so
-lib/asb-plugins-2/libasb_plugin_appdata.so
-lib/asb-plugins-2/libasb_plugin_blacklist.so
-lib/asb-plugins-2/libasb_plugin_dbus.so
-lib/asb-plugins-2/libasb_plugin_desktop.so
-lib/asb-plugins-2/libasb_plugin_firmware.so
-lib/asb-plugins-2/libasb_plugin_font.so
-lib/asb-plugins-2/libasb_plugin_gettext.so
-lib/asb-plugins-2/libasb_plugin_gir.so
-lib/asb-plugins-2/libasb_plugin_gresource.so
-lib/asb-plugins-2/libasb_plugin_gstreamer.so
-lib/asb-plugins-2/libasb_plugin_hardcoded.so
-lib/asb-plugins-2/libasb_plugin_ibus_sql.so
-lib/asb-plugins-2/libasb_plugin_ibus_xml.so
-lib/asb-plugins-2/libasb_plugin_kde_notifyrc.so
-lib/asb-plugins-2/libasb_plugin_kde_services.so
-lib/asb-plugins-2/libasb_plugin_metainfo.so
-lib/asb-plugins-2/libasb_plugin_nm.so
+lib/asb-plugins-5/
+lib/asb-plugins-5/libasb_plugin_absorb.so
+lib/asb-plugins-5/libasb_plugin_appdata.so
+lib/asb-plugins-5/libasb_plugin_desktop.so
+lib/asb-plugins-5/libasb_plugin_font.so
+lib/asb-plugins-5/libasb_plugin_gettext.so
+lib/asb-plugins-5/libasb_plugin_hardcoded.so
+lib/asb-plugins-5/libasb_plugin_shell_extension.so
 lib/libappstream-builder.a
 lib/libappstream-builder.la
 @lib lib/libappstream-builder.so.${LIBappstream-builder_VERSION}
@@ -50,13 +45,19 @@ lib/libappstream-glib.la
 lib/pkgconfig/appstream-builder.pc
 lib/pkgconfig/appstream-glib.pc
 @man man/man1/appstream-builder.1
+@man man/man1/appstream-compose.1
 @man man/man1/appstream-util.1
 share/aclocal/appdata-xml.m4
 share/aclocal/appstream-xml.m4
 share/bash-completion/completions/appstream-builder
 share/bash-completion/completions/appstream-util
+share/gettext/its/appdata.its
+share/gettext/its/appdata.loc
 share/gtk-doc/html/appstream-glib/
 share/gtk-doc/html/appstream-glib/AsApp.html
+share/gtk-doc/html/appstream-glib/AsBundle.html
+share/gtk-doc/html/appstream-glib/AsChecksum.html
+share/gtk-doc/html/appstream-glib/AsContentRating.html
 share/gtk-doc/html/appstream-glib/AsIcon.html
 share/gtk-doc/html/appstream-glib/AsImage.html
 share/gtk-doc/html/appstream-glib/AsProblem.html
@@ -64,8 +65,10 @@ share/gtk-doc/html/appstream-glib/AsProvide.html
 share/gtk-doc/html/appstream-glib/AsRelease.html
 share/gtk-doc/html/appstream-glib/AsScreenshot.html
 share/gtk-doc/html/appstream-glib/AsStore.html
+share/gtk-doc/html/appstream-glib/AsTranslation.html
 share/gtk-doc/html/appstream-glib/annotation-glossary.html
 share/gtk-doc/html/appstream-glib/appstream-glib-as-enums.html
+share/gtk-doc/html/appstream-glib/appstream-glib-as-markup.html
 share/gtk-doc/html/appstream-glib/appstream-glib-as-node.html
 share/gtk-doc/html/appstream-glib/appstream-glib-as-tag.html
 share/gtk-doc/html/appstream-glib/appstream-glib-as-utils.html
@@ -73,7 +76,6 @@ share/gtk-doc/html/appstream-glib/appstream-glib-as-version.html
 share/gtk-doc/html/appstream-glib/appstream-glib.devhelp2
 share/gtk-doc/html/appstream-glib/home.png
 share/gtk-doc/html/appstream-glib/index.html
-share/gtk-doc/html/appstream-glib/index.sgml
 share/gtk-doc/html/appstream-glib/left-insensitive.png
 share/gtk-doc/html/appstream-glib/left.png
 share/gtk-doc/html/appstream-glib/libappstream-glib.html
@@ -86,4 +88,29 @@ share/installed-tests/
 share/installed-tests/appstream-glib/
 share/installed-tests/appstream-glib/appdata-validate.test
 share/installed-tests/appstream-glib/destdir-check.test
+share/locale/ca/LC_MESSAGES/appstream-glib.mo
+share/locale/cs/LC_MESSAGES/appstream-glib.mo
+share/locale/da/LC_MESSAGES/appstream-glib.mo
+share/locale/de/LC_MESSAGES/appstream-glib.mo
+share/locale/en_GB/LC_MESSAGES/appstream-glib.mo
+share/locale/es/LC_MESSAGES/appstream-glib.mo
+share/locale/fi/LC_MESSAGES/appstream-glib.mo
+share/locale/fr/LC_MESSAGES/appstream-glib.mo
+share/locale/gl/LC_MESSAGES/appstream-glib.mo
+share/locale/hu/LC_MESSAGES/appstream-glib.mo
+share/locale/it/LC_MESSAGES/appstream-glib.mo
+share/locale/ko/LC_MESSAGES/appstream-glib.mo
+share/locale/oc/LC_MESSAGES/appstream-glib.mo
+share/locale/pl/LC_MESSAGES/appstream-glib.mo
+share/locale/pt/LC_MESSAGES/appstream-glib.mo
+share/locale/pt_BR/LC_MESSAGES/appstream-glib.mo
 share/locale/ru/LC_MESSAGES/appstream-glib.mo
+share/locale/sk/LC_MESSAGES/appstream-glib.mo
+share/locale/sl/LC_MESSAGES/appstream-glib.mo
+share/locale/sr/LC_MESSAGES/appstream-glib.mo
+share/locale/sr@latin/LC_MESSAGES/appstream-glib.mo
+share/locale/sv/LC_MESSAGES/appstream-glib.mo
+share/locale/tr/LC_MESSAGES/appstream-glib.mo
+share/locale/uk/LC_MESSAGES/appstream-glib.mo
+share/locale/zh_CN/LC_MESSAGES/appstream-glib.mo
+share/locale/zh_TW/LC_MESSAGES/appstream-glib.mo
