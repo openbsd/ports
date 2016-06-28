@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/15 16:36:10 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/28 17:07:35 shadchin Exp $
 
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_EGG_VERSION =	0.5.4
+MODPY_EGG_VERSION =	0.5.6
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =   		textproc
