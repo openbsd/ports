@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/28 10:39:36 nigel Exp $
+# $OpenBSD: Makefile,v 1.13 2016/06/28 12:24:38 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -37,7 +37,8 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS=  ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/autoconf-archive
+		devel/autoconf-archive \
+		devel/libtool
 post-patch:
 	cd ${WRKSRC}; \
 	cp ${LOCALBASE}/share/aclocal/ax_{prog_ruby_version,ruby_devel}.m4 m4; \
