@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2016/06/28 23:05:39 sthen Exp $
 
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
-REVISION=	4
+REVISION=	5
 CATEGORIES=	mail
 
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
@@ -25,5 +25,8 @@ post-configure:
 
 pre-install:
 	rm ${WRKSRC}/bin/*.orig
+
+post-install:
+	mv ${PREFIX}/man/man4/mailcap.4 ${PREFIX}/man/man5/mailcap.5
 
 .include <bsd.port.mk>
