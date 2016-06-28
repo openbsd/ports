@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: lldpd.rc,v 1.3 2016/06/28 15:50:27 sthen Exp $
+# $OpenBSD: lldpd.rc,v 1.4 2016/06/28 17:03:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/lldpd"
-rc_reload=NO
 
 . /etc/rc.d/rc.subr
 
 pexp="lldpd: monitor."
+rc_reload=NO
 
 rc_pre() {
 	install -d -o _lldpd /var/run/lldpd
