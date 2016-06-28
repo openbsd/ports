@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: q2ded.rc,v 1.1 2016/06/28 20:50:22 awolk Exp $
+
+daemon="${TRUEPREFIX}/bin/q2ded"
+daemon_user="_yquake2"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

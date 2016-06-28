@@ -1,3 +1,0 @@
-#!/bin/sh
-cd /usr/local/share/yquake2
-exec /usr/local/share/yquake2/quake2 "$@"
