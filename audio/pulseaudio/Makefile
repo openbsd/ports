@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.77 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2016/06/28 08:47:18 ajacoutot Exp $
 
 # XXX
-# util.c: implement pa_get_binary_name()
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		8.0
+VERSION=		9.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
-SHARED_LIBS +=  pulse                5.0      # .19.0
+SHARED_LIBS +=  pulse                6.0      # .19.0
 SHARED_LIBS +=  pulse-simple         1.0      # .1.0
 SHARED_LIBS +=  pulse-mainloop-glib  1.0      # .0.5
 
@@ -28,13 +26,18 @@ HOMEPAGE=		http://www.pulseaudio.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
-WANTLIB += execinfo gdbm glib-2.0 json-c ltdl m ogg pcre pthread
-WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb
+WANTLIB += execinfo gdbm glib-2.0 iconv intl json-c ltdl m ogg
+WANTLIB += pcre pthread sndfile sndio speexdsp ssl vorbis vorbisenc
+WANTLIB += xcb
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=		textproc/intltool
+
+# C++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 USE_GMAKE=		Yes
 

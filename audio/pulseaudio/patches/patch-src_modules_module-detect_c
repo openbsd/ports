@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.9 2015/03/15 08:45:10 ajacoutot Exp $
---- src/modules/module-detect.c.orig	Thu Feb 12 15:10:35 2015
-+++ src/modules/module-detect.c	Mon Feb 16 14:45:37 2015
+$OpenBSD: patch-src_modules_module-detect_c,v 1.10 2016/06/28 08:47:18 ajacoutot Exp $
+--- src/modules/module-detect.c.orig	Tue May 10 14:28:04 2016
++++ src/modules/module-detect.c	Tue Jun 28 09:57:18 2016
 @@ -32,6 +32,10 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -12,17 +12,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.9 2015/03/15 08:45:10 ajacoutot 
  #include <pulsecore/core-error.h>
  #include <pulsecore/module.h>
  #include <pulsecore/modargs.h>
-@@ -46,7 +50,9 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
- PA_MODULE_VERSION(PACKAGE_VERSION);
- PA_MODULE_LOAD_ONCE(true);
- PA_MODULE_USAGE("just-one=<boolean>");
-+#ifdef __linux__
- PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");
-+#endif
- 
- static const char* const valid_modargs[] = {
-     "just-one",
-@@ -203,6 +209,19 @@ static int detect_solaris(pa_core *c, int just_one) {
+@@ -206,6 +210,19 @@ static int detect_solaris(pa_core *c, int just_one) {
  }
  #endif
  
@@ -42,7 +32,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.9 2015/03/15 08:45:10 ajacoutot 
  #ifdef OS_IS_WIN32
  static int detect_waveout(pa_core *c, int just_one) {
      /*
-@@ -244,6 +263,9 @@ int pa__init(pa_module*m) {
+@@ -247,6 +264,9 @@ int pa__init(pa_module*m) {
  #endif
  #ifdef OS_IS_WIN32
      if ((n = detect_waveout(m->core, just_one)) <= 0)
