@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2014/10/20 03:41:25 bcallah Exp $
---- configure.orig	Sun Oct 19 13:21:48 2014
-+++ configure	Sun Oct 19 23:28:59 2014
-@@ -4332,10 +4332,10 @@ $as_echo "yes" >&6; }
+$OpenBSD: patch-configure,v 1.5 2016/06/28 12:26:38 jasper Exp $
+--- configure.orig	Sat Jun 11 22:51:49 2016
++++ configure	Tue Jun 28 14:01:30 2016
+@@ -4341,10 +4341,10 @@ $as_echo "yes" >&6; }
  		*BSD*)
  			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.4 2014/10/20 03:41:25 bcallah Exp $
                          ;;
  
  		Darwin*)
-@@ -4369,7 +4369,7 @@ if test -n "$GCC"; then
+@@ -4378,7 +4378,7 @@ if test -n "$GCC"; then
  	CFLAGS="-Wall $CFLAGS"
  
  	if test "x$OPTIM" = x; then
