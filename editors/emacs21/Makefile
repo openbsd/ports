@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/06/28 14:06:59 kettenis Exp $
+# $OpenBSD: Makefile,v 1.87 2016/06/28 21:00:25 kettenis Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -40,7 +40,8 @@ CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 .if ${MACHINE_ARCH} == "powerpc"
 ARCH_LDFLAGS =		-Wl,-G0
 CFLAGS +=		-mno-sdata
-.elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+.elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "hppa" || \
+    ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
 ARCH_LDFLAGS =
 .else
 ARCH_LDFLAGS =		-Z
