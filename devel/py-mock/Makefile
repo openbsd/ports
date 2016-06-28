@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/06/14 18:49:04 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2016/06/28 16:34:10 shadchin Exp $
 
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	1.3.0
+MODPY_EGG_VERSION=	2.0.0
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
@@ -11,8 +11,6 @@ HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODPY_PI =		Yes
 
 MODULES=		lang/python
 BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
@@ -23,6 +21,7 @@ TEST_DEPENDS=		${RUN_DEPENDS}
 FLAVORS =		python3
 FLAVOR ?=
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 
 .if !${FLAVOR:Mpython3}
