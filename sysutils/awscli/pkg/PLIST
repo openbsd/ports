@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/06/23 07:41:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/06/28 07:11:12 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -552,8 +552,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-pu
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-identity-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-locations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-gateways.rst
@@ -665,6 +667,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-tas
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-id-format.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-identity-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-images.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-attribute.rst
@@ -730,6 +733,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-id-format.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-identity-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
