@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libopensc_pkcs15_c,v 1.1 2016/06/28 11:39:13 dcoppa Exp $
+
+commit 72dda66be8c3261aae5af54807afdedfa94f4c67
+Author: Frank Morgner <frankmorgner@gmail.com>
+Date:   Sun Jun 5 21:51:16 2016 +0200
+
+fix possible loss of data
+
+--- src/libopensc/pkcs15.c.orig	Fri Jun  3 11:19:51 2016
++++ src/libopensc/pkcs15.c	Tue Jun 28 12:17:23 2016
+@@ -2221,7 +2221,8 @@ sc_pkcs15_encode_unusedspace(struct sc_context *ctx, s
+ 		sc_format_asn1_entry(asn1_unusedspace + c, asn1_values + 3*c, NULL, 1);
+ 		sc_copy_asn1_entry(c_asn1_unusedspace_values, asn1_values + 3*c);
+ 		sc_format_asn1_entry(asn1_values + 3*c, &unusedspace->path, NULL, 1);
+-		sc_format_asn1_entry(asn1_values + 3*c+1, &unusedspace->auth_id, NULL, unusedspace->auth_id.len);
++		sc_format_asn1_entry(asn1_values + 3*c+1, &unusedspace->auth_id, NULL,
++			   unusedspace->auth_id.len > 0 ? 1 : 0);
+ 		c++;
+ 	}
+ 	asn1_unusedspace[c].name = NULL;

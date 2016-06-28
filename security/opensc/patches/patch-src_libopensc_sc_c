@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_libopensc_sc_c,v 1.1 2016/06/28 11:39:13 dcoppa Exp $
+
+commit 050c62f7dfa0b6d76c0c57fbc0e41efba5864079
+Author: Frank Morgner <frankmorgner@gmail.com>
+Date:   Sun Jun 5 21:18:38 2016 +0200
+
+add parameter checking to `sc_right_trim`
+
+fix conversion from 'size_t' to 'long', possible loss of data
+
+--- src/libopensc/sc.c.orig	Fri Jun  3 11:19:51 2016
++++ src/libopensc/sc.c	Tue Jun 28 13:01:06 2016
+@@ -126,15 +126,20 @@ int sc_bin_to_hex(const u8 *in, size_t in_len, char *o
+  */
+ size_t sc_right_trim(u8 *buf, size_t len) {
+ 
+-	long i;
++	size_t i;
+ 
+-	for(i=len-1; i >=0; i--) {
+-		if(!isprint(buf[i])) {
+-			buf[i] = '\0';
+-			len--;
+-			continue;
++	if (!buf)
++		return 0;
++
++	if (len > 0) {
++		for(i = len-1; i > 0; i--) {
++			if(!isprint(buf[i])) {
++				buf[i] = '\0';
++				len--;
++				continue;
++			}
++			break;
+ 		}
+-		break;
+ 	}
+ 	return len;
+ }
