@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_cmd_connect_c,v 1.1 2016/06/28 21:11:10 sthen Exp $
+
+CS_TDS_80 used to be #defined to CS_TDS_71 but has now been removed.
+
+--- src/cmd_connect.c.orig	Tue Jun 28 22:07:55 2016
++++ src/cmd_connect.c	Tue Jun 28 22:09:22 2016
+@@ -861,7 +861,7 @@ int cmd_connect( argc, argv )
+         else if (strcmp(tds_version, "7.0") == 0)
+             version = CS_TDS_70;
+         else if (strcmp(tds_version, "8.0") == 0)
+-            version = CS_TDS_80;
++            version = CS_TDS_71;
+ #endif
+         else version = CS_TDS_50; /* default version */
+ 
+@@ -1258,7 +1258,7 @@ int cmd_connect( argc, argv )
+                 case CS_TDS_70:
+                     env_set( g_env, "tds_version", "7.0" );
+                     break;
+-                case CS_TDS_80:
++                case CS_TDS_71:
+                     env_set( g_env, "tds_version", "8.0" );
+                     break;
+ #endif
