@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.31 2016/05/23 06:51:04 shadchin Exp $
+# $OpenBSD: Makefile,v 1.32 2016/06/28 17:03:09 shadchin Exp $
 
 COMMENT =		Python parsing module
 
-MODPY_EGG_VERSION =	2.1.4
+MODPY_EGG_VERSION =	2.1.5
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 
 HOMEPAGE =		http://pyparsing.wikispaces.com/
 
-MAINTAINER =	Alexandr Shadchin <shadchin@openbsd.org>
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pyparsing/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyparsing/}
 
-MODULES =	lang/python
+MODULES =		lang/python
 
-FLAVORS =	python3
+MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
 FLAVOR ?=
 
-NO_TEST =	Yes
+NO_TEST =		Yes
 
-DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}parsing
-EXAMPLESDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}parsing
-
-MODPY_SETUPTOOLS = Yes
+DOCSDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}parsing
+EXAMPLESDIR =		${PREFIX}/share/examples/${MODPY_PY_PREFIX}parsing
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}

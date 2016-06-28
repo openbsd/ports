@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/01/05 12:58:00 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/06/28 17:03:09 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -69,6 +69,7 @@ share/examples/${MODPY_PY_PREFIX}parsing/matchPreviousDemo.py
 share/examples/${MODPY_PY_PREFIX}parsing/mozilla.ics
 share/examples/${MODPY_PY_PREFIX}parsing/mozillaCalendarParser.py
 share/examples/${MODPY_PY_PREFIX}parsing/nested.py
+share/examples/${MODPY_PY_PREFIX}parsing/numerics.py
 share/examples/${MODPY_PY_PREFIX}parsing/oc.py
 share/examples/${MODPY_PY_PREFIX}parsing/parseListString.py
 share/examples/${MODPY_PY_PREFIX}parsing/parsePythonValue.py
