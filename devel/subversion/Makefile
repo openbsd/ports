@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2016/06/21 21:55:08 jung Exp $
+# $OpenBSD: Makefile,v 1.151 2016/06/28 19:46:02 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -46,7 +46,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
-PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby
+PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring
 FLAVORS=	maintainer_mode
 FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
@@ -135,7 +135,6 @@ AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE} \
-		--with-gnome-keyring \
 		--without-jikes \
 		--without-jdk \
 		--without-libmagic
@@ -169,6 +168,12 @@ CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2 \
 BUILD_DEPENDS+=		www/apache-httpd
 .else
 CONFIGURE_ARGS+=--without-apxs
+.endif
+
+.if ${BUILD_PACKAGES:M-gnome-keyring}
+CONFIGURE_ARGS+=--with-gnome-keyring
+.else
+CONFIGURE_ARGS+=--without-gnome-keyring
 .endif
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
