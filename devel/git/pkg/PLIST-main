@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.72 2016/06/21 21:56:43 jung Exp $
+@comment $OpenBSD: PLIST-main,v 1.73 2016/06/28 07:27:14 benoit Exp $
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/git
@@ -187,6 +187,7 @@ libexec/git/mergetools/diffmerge
 libexec/git/mergetools/diffuse
 libexec/git/mergetools/ecmerge
 libexec/git/mergetools/emerge
+libexec/git/mergetools/examdiff
 libexec/git/mergetools/gvimdiff
 libexec/git/mergetools/gvimdiff2
 libexec/git/mergetools/gvimdiff3
