@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/27 20:35:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/06/28 10:39:36 nigel Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -79,7 +79,7 @@ USE_LIBTOOL=	no#...has its own _special_ libtool.
 
 # Not really trying to build with this, but --without-rlm_pam doesn't disable
 # it, so just list as a bdep to avoid risk of broken bulk builds.
-BUILD_DEPENDS=	security/openpam
+BUILD_DEPENDS+=	security/openpam
 
 RUN_DEPENDS-main=	#empty
 LIB_DEPENDS-main=	databases/gdbm \
