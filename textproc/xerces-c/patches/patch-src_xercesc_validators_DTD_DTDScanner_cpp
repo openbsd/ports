@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_xercesc_validators_DTD_DTDScanner_cpp,v 1.1 2016/06/28 09:34:08 jasper Exp $
+
+Security fix for CVE-2016-2099
+https://issues.apache.org/jira/browse/XERCESC-2066
+
+--- src/xercesc/validators/DTD/DTDScanner.cpp.orig	Tue Jun 28 11:07:22 2016
++++ src/xercesc/validators/DTD/DTDScanner.cpp	Tue Jun 28 11:08:49 2016
+@@ -2913,7 +2913,15 @@ bool DTDScanner::scanInternalSubset()
+     bool noErrors = true;
+     while (true)
+     {
+-        const XMLCh nextCh = fReaderMgr->peekNextChar();
++        XMLCh nextCh;
++                
++        try {
++                nextCh = fReaderMgr->peekNextChar();
++        }
++        catch (XMLException& ex) {
++                fScanner->emitError(XMLErrs::XMLException_Fatal, ex.getCode(), ex.getMessage(), NULL, NULL);
++                nextCh = chNull;
++        }
+ 
+         //
+         //  If we get an end of file marker, just unget it and return a
