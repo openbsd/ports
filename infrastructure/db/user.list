@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.275 2016/06/02 18:32:26 jung Exp $
+$OpenBSD: user.list,v 1.276 2016/06/28 20:32:14 awolk Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -287,3 +287,4 @@ id  user		group		port options
 776 _ioq3		_ioq3		games/ioquake3
 777 _svnserve		_svnserve	devel/subversion
 778 _gitdaemon		_gitdaemon	devel/git
+779 _yquake2		_yquake2	games/yquake2
