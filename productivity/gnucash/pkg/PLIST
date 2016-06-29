@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/03/30 07:42:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/06/29 08:08:35 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -275,7 +275,6 @@ libexec/gnucash/
 libexec/gnucash/overrides/
 libexec/gnucash/overrides/gnucash-env
 libexec/gnucash/overrides/gnucash-make-guids
-libexec/gnucash/overrides/guile
 libexec/gnucash/src/
 libexec/gnucash/src/libqof/
 libexec/gnucash/src/libqof/qof/
@@ -516,6 +515,7 @@ share/gnome/help/gnucash-guide/C/figures/invest_newaccount.png
 share/gnome/help/gnucash-guide/C/figures/invest_newsecurity.png
 share/gnome/help/gnucash-guide/C/figures/invest_peditor.png
 share/gnome/help/gnucash-guide/C/figures/invest_peditor2.png
+share/gnome/help/gnucash-guide/C/figures/invest_ret_of_cap.png
 share/gnome/help/gnucash-guide/C/figures/invest_selectsecurity.png
 share/gnome/help/gnucash-guide/C/figures/invest_sellstock.png
 share/gnome/help/gnucash-guide/C/figures/invest_sellstock2.png
@@ -1626,6 +1626,7 @@ share/gnucash/accounts/es_MX/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/fi_FI/
 share/gnucash/accounts/fi_FI/acctchrt_common.gnucash-xea
 share/gnucash/accounts/fi_FI/acctchrt_ry.gnucash-xea
+share/gnucash/accounts/fi_FI/acctchrt_sbr-xbrl.gnucash-xea
 share/gnucash/accounts/fr_CA/
 share/gnucash/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_automobile.gnucash-xea
@@ -1854,9 +1855,11 @@ share/gnucash/accounts/sk/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/sv_AX/
 share/gnucash/accounts/sv_AX/acctchrt_common.gnucash-xea
 share/gnucash/accounts/sv_AX/acctchrt_rf.gnucash-xea
+share/gnucash/accounts/sv_AX/acctchrt_sbr-xbrl.gnucash-xea
 share/gnucash/accounts/sv_FI/
 share/gnucash/accounts/sv_FI/acctchrt_common.gnucash-xea
 share/gnucash/accounts/sv_FI/acctchrt_rf.gnucash-xea
+share/gnucash/accounts/sv_FI/acctchrt_sbr-xbrl.gnucash-xea
 share/gnucash/accounts/sv_SE/
 share/gnucash/accounts/sv_SE/acctchrt_common.gnucash-xea
 share/gnucash/accounts/sv_SE/bas_2012.gnucash-xea
