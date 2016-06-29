@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_modules_CMakePascalInformation_cmake,v 1.1 2016/06/29 15:11:45 dcoppa Exp $
+--- cmake_modules/CMakePascalInformation.cmake.orig	Thu Oct  2 17:53:26 2014
++++ cmake_modules/CMakePascalInformation.cmake	Wed Jun 29 16:58:20 2016
+@@ -191,8 +191,13 @@ if(NOT CMAKE_Pascal_COMPILE_OBJECT)
+     endif(UNIX)
+ 
+     #-Cn is mandatory as it's what creates the ppas.* script
+-    set(CMAKE_Pascal_COMPILE_OBJECT
+-        "<CMAKE_Pascal_COMPILER> -Cn -FE${EXECUTABLE_OUTPUT_PATH} -FU${CMAKE_CURRENT_BINARY_DIR}/<OBJECT_DIR> ${CMAKE_Pascal_UNIX_FLAGS} <FLAGS> <CMAKE_Pascal_LINK_FLAGS> <SOURCE>")
++    if(CMAKE_GENERATOR MATCHES "Ninja")
++        set(CMAKE_Pascal_COMPILE_OBJECT
++            "<CMAKE_Pascal_COMPILER> -Cn -FE${EXECUTABLE_OUTPUT_PATH} -Fi${CMAKE_CURRENT_BINARY_DIR} -FU${CMAKE_BINARY_DIR}/<OBJECT_DIR> ${CMAKE_Pascal_UNIX_FLAGS} <FLAGS> <CMAKE_Pascal_LINK_FLAGS> <SOURCE>")
++    else()
++        set(CMAKE_Pascal_COMPILE_OBJECT
++            "<CMAKE_Pascal_COMPILER> -Cn -FE${EXECUTABLE_OUTPUT_PATH} -FU${CMAKE_CURRENT_BINARY_DIR}/<OBJECT_DIR> ${CMAKE_Pascal_UNIX_FLAGS} <FLAGS> <CMAKE_Pascal_LINK_FLAGS> <SOURCE>")
++    endif()
+ endif(NOT CMAKE_Pascal_COMPILE_OBJECT)
+ 
+ # link Pascal objects in a single executable

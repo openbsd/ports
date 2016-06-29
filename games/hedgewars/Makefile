@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/29 15:11:45 dcoppa Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -39,7 +39,6 @@ MODULES =		devel/cmake \
 			x11/qt4 \
 			lang/lua \
 			converters/libiconv
-USE_NINJA =		No
 BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-ttf \
