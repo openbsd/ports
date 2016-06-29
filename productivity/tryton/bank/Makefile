@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/29 08:11:28 ajacoutot Exp $
 
 MODPY_EGG_VERSION =	3.2.2
 
 TRYTOND_MODULE =	bank
-REVISION =		0
+REVISION =		1
 
-RUN_DEPENDS =		productivity/tryton/currency \
+RUN_DEPENDS =		devel/py-stdnum \
+			productivity/tryton/currency \
 			productivity/tryton/party
 
 .include <bsd.port.mk>
