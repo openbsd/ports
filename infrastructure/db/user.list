@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.276 2016/06/28 20:32:14 awolk Exp $
+$OpenBSD: user.list,v 1.277 2016/06/29 23:15:06 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -283,7 +283,7 @@ id  user		group		port options
 772 _vault		_vault		security/vault
 773 _consul		_consul		sysutils/consul
 774 _facette		_facette	sysutils/facette
-775 _letskencrypt	_letskencrypt	security/letskencrypt
+#775 _letskencrypt	_letskencrypt	security/letskencrypt
 776 _ioq3		_ioq3		games/ioquake3
 777 _svnserve		_svnserve	devel/subversion
 778 _gitdaemon		_gitdaemon	devel/git
