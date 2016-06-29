@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2014/11/01 00:09:24 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2016/06/29 16:14:40 espie Exp $
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-REVISION=	11
+REVISION=	12
 PKGSPEC=	automake->=${VERSION},<1.10
 
 MODULES=		lang/python

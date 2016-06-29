@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/10/20 09:20:50 pea Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/06/29 16:14:44 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict gnupg->=2
 @bin bin/dirmngr
 @bin bin/dirmngr-client

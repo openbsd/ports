@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.136 2016/06/16 10:17:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.137 2016/06/29 16:14:44 espie Exp $
 
 PORTROACH=		limit:^3
 
 VERSION=		3.8.7
-REVISION=		5
+REVISION=		6
 
 RUN_DEPENDS+=		databases/ruby-hiera,${MODRUBY_FLAVOR} \
 			sysutils/ruby-facter>=2.0.1p0

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2013/12/25 15:47:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2016/06/29 16:14:45 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict kdelibs-<4
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4

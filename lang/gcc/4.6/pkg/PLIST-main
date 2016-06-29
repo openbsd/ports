@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/07/02 00:22:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/06/29 16:14:41 espie Exp $
+@option is-branch
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcov

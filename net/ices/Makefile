@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/10 21:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2016/06/29 16:14:43 espie Exp $
 
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
@@ -6,7 +6,7 @@ PORTROACH_COMMENT=	ices2 is a different port
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-REVISION=	10
+REVISION=	11
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php

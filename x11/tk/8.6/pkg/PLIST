@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/15 21:13:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/06/29 16:14:45 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict tk->=8.6,<8.7
 @bin bin/wish8.6
 include/tk8.6/

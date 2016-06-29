@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-idle,v 1.6 2015/12/17 19:16:51 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.7 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python-idle->=2.7,<2.8
 @comment bin/idle
 bin/idle2.7

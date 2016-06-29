@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/10 00:39:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/06/29 16:14:39 espie Exp $
 @option no-default-conflict
+@option is-branch
 bin/autoconf${SUFFIX}
 bin/autoheader${SUFFIX}
 bin/autom4te${SUFFIX}

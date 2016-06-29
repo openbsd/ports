@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/06/18 18:08:49 alek Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/06/29 16:14:43 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict ices-0.*
 bin/ices
 @man man/man1/ices.1

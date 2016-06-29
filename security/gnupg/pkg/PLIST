@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.30 2015/03/01 12:12:55 jca Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/06/29 16:14:44 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict gnupg-<2
 @pkgpath ${BASE_PKGPATH},idea
 @bin bin/gpg

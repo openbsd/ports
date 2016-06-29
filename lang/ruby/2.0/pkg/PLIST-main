@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/03/16 19:37:14 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict ruby->=2.0,<2.1
 bin/erb20
 bin/gem20

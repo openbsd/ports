@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tools,v 1.7 2015/12/17 19:16:51 rpointel Exp $
+@comment $OpenBSD: PLIST-tools,v 1.8 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python-tools->=2.7,<2.8
 lib/python2.7/Tools/
 lib/python2.7/Tools/README

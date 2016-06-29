@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/29 16:14:38 espie Exp $
 
 VERSION =	2.13
-REVISION =	3
+REVISION =	4
 
 CONFIGURE_STYLE = gnu dest
 

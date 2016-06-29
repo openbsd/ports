@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2015/09/24 08:51:49 sthen Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2016/06/29 16:14:41 espie Exp $
+@option is-branch
 @conflict gcc-libs->=4.10
 @bin bin/ec++
 @bin bin/eg++

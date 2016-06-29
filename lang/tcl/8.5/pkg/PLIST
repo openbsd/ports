@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/03/15 21:13:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/06/29 16:14:43 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict tcl->=8.5,<8.6
 @bin bin/tclsh8.5
 include/tcl8.5/

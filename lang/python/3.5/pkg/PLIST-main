@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/05/11 22:43:49 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python->=3.5,<3.6
 @pkgpath lang/python3/3.5,-main
 @comment bin/pip3

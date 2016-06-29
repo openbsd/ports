@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/08/27 07:30:25 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/06/29 16:14:45 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict kdelibs->=4
 @pkgpath x11/kde4/libs
 bin/checkXML4

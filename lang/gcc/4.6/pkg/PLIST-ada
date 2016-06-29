@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ada,v 1.1.1.1 2011/11/14 13:00:55 pascal Exp $
+@comment $OpenBSD: PLIST-ada,v 1.2 2016/06/29 16:14:41 espie Exp $
+@option is-branch
 @bin bin/gnat
 @bin bin/gnatbind
 @bin bin/gnatchop

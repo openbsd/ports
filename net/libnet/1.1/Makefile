@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/06/29 16:14:44 espie Exp $
 
 REV=		1.1
 VERSION=	${REV}.2.1
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 SHARED_LIBS=	net	11.0
 PKGSPEC=	libnet->=1.1v0,<1.2v0

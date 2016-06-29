@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/06/29 16:14:40 espie Exp $
 
 VERSION=	1.8
 DISTNAME=	automake-${VERSION}.5
-REVISION=	8
+REVISION=	9
 PKGSPEC=	automake->=${VERSION},<1.9
 
 AUTOCONF_VERSION=	2.59

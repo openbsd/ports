@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/11/08 23:40:05 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict ruby->=1.8,<1.9
 @pkgpath lang/ruby,-main
 bin/erb18

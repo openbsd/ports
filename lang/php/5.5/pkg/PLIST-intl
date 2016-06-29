@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-intl,v 1.1 2013/10/24 18:20:39 landry Exp $
+@comment $OpenBSD: PLIST-intl,v 1.2 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict php-intl->=5.5,<5.6
 lib/php-${PV}/modules/intl.so
 share/examples/php-${PV}/intl.ini

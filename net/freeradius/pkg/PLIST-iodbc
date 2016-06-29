@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-iodbc,v 1.5 2015/11/12 13:00:27 sthen Exp $
+@comment $OpenBSD: PLIST-iodbc,v 1.6 2016/06/29 16:14:43 espie Exp $
+@option is-branch
 @conflict freeradius-iodbc-*
 lib/freeradius/rlm_sql_iodbc.so
 share/doc/freeradius/mssql

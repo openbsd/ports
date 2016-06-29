@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tests,v 1.6 2015/12/23 07:18:12 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.7 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python-tests->=3.4,<3.5
 @pkgpath lang/python3/3.4,-tests
 lib/python3.4/test/

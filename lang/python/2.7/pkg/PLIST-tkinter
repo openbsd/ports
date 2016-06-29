@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.4 2014/12/14 08:32:55 rpointel Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.5 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python-tkinter->=2.7,<2.8
 lib/python2.7/lib-dynload/_tkinter.so
 lib/python2.7/lib-tk/

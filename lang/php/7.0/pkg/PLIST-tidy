@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tidy,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+@comment $OpenBSD: PLIST-tidy,v 1.2 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict php-tidy->=7.0,<7.1
 @conflict php5-tidy->=5.2
 lib/php-${PV}/modules/tidy.so

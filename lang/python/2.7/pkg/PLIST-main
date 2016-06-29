@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2016/05/11 22:43:49 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
 @pkgpath lang/python/2.7

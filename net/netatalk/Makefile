@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2016/06/29 16:14:44 espie Exp $
 
 PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.5
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2

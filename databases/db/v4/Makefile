@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2016/03/12 16:45:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2016/06/29 16:14:38 espie Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -12,11 +12,11 @@ PKGSPEC-tcl =   db-tcl->=4,<5|db-tcl->=4v0,<5v0
 PKGNAME-java=	db-java-${VERSION}
 PKGNAME-tcl=	db-tcl-${VERSION}
 EPOCH-main=	0
-REVISION-main = 2
+REVISION-main = 3
 EPOCH-java=	0
 EPOCH-tcl=	0
-REVISION-java =	3
-REVISION-tcl =	0
+REVISION-java =	4
+REVISION-tcl =	1
 DBLIBDIR=	lib/db4
 
 # XXX LIBdb_VERSION is used by x11/gnome/libgda

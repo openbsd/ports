@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mysql,v 1.9 2015/11/12 13:00:27 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.10 2016/06/29 16:14:43 espie Exp $
+@option is-branch
 @conflict freeradius-mysql-*
 @conflict freeradius-server-<2.2.9p1
 lib/freeradius/rlm_sql_mysql.so

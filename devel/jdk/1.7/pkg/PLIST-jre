@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-jre,v 1.15 2015/05/11 14:47:45 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.16 2016/06/29 16:14:40 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 @pkgpath devel/jdk/1.6,-jre
 ${JREHOME}/

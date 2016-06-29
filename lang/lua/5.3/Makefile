@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/06/17 18:55:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/06/29 16:14:42 espie Exp $
 
 PORTROACH=	limit:^5\.3
 
 VERSION=	5.3.3
 PKGSPEC=	lua->=5.3,<5.4
+REVISION =	0
 
 SHARED_LIBS=	lua5.3 ${VERSION:R}
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/10 10:58:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/06/29 16:14:44 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict libnet-1.1->=1.1
 @conflict libnet-1.1->=1.1v0
 @conflict libnet->=1.1,<1.0v0

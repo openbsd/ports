@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/12/22 19:24:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.32 2016/06/29 16:14:45 espie Exp $
+@option is-branch
 @bin bin/atlantik
 @bin bin/kasteroids
 @bin bin/katomic

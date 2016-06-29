@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/31 18:48:02 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/06/29 16:14:45 espie Exp $
+@option is-branch
 @bin bin/enlightenment
 @bin bin/enlightenment_filemanager
 @bin bin/enlightenment_imc

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2016/02/25 10:03:58 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2016/06/29 16:14:44 espie Exp $
+@option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*

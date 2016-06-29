@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/06/29 16:14:41 espie Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
 PORTROACH =		limit:^1
-REVISION =		5
+REVISION =		6
 SUBST_VARS =		MODRUBY_FLAVOR MODRUBY_PREFIX
 
 # When you have two different versions of a ruby gem installed, the

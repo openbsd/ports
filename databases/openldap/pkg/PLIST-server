@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2011/01/07 10:24:30 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2016/06/29 16:14:38 espie Exp $
+@option is-branch
 @conflict openldap-client->=2.3.11,<=2.3.11p3
 @pkgpath databases/openldap,-server,bdb
 @ask-update openldap-server-<2.4 Make sure your existing database is backed up

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tests,v 1.10 2015/05/31 07:56:10 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.11 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
 lib/python2.7/test/185test.db

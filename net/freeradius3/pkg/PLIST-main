@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/06/27 20:35:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:43 espie Exp $
+@option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*

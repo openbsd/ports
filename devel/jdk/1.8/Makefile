@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/06/29 16:14:40 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -10,6 +10,7 @@ B=		b15
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
+REVISION =	0
 EPOCH=		0
 
 DIST_SUBDIR=	jdk

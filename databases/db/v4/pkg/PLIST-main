@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/03/12 16:45:57 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/06/29 16:14:38 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict db->=4,<5
 @pkgpath databases/db/v4,no_tcl
 @pkgpath databases/db/v4

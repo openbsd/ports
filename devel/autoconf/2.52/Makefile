@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/06/29 16:14:39 espie Exp $
 
 VERSION =	2.52
-REVISION =	5
+REVISION =	6
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 

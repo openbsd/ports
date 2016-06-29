@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/03/17 16:54:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:42 espie Exp $
 @option no-default-conflict
+@option is-branch
 @conflict php->=7.0,<7.1
 @conflict php-fpm->=7.0,<7.1
 @conflict php5-core->=5.2
