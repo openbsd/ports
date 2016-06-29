@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2016/06/29 09:17:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2016/06/29 13:17:33 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.95.95
+REVISION=	0
 # 1.00 releases have problems with at least sqsh, libdbi-drivers, p5-sybperl
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
@@ -20,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gmp gnutls hogweed idn intl iodbc iodbcinst ncurses
 WANTLIB += nettle p11-kit pthread readline tasn1 z
+WANTLIB += gcrypt gpg-error
 
 MODULES=	converters/libiconv
 
@@ -33,7 +35,8 @@ BUILD_DEPENDS+=	devel/gettext \
 ### end of AUTOHELL
 
 LIB_DEPENDS=	databases/iodbc,-main \
-		security/gnutls
+		security/gnutls \
+		security/libgcrypt
 
 # requires database server
 TEST_IS_INTERACTIVE=Yes
