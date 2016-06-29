@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2016/03/27 15:09:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2016/06/29 09:17:41 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-0.95.89
+DISTNAME=	freetds-0.95.95
+# 1.00 releases have problems with at least sqsh, libdbi-drivers, p5-sybperl
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
 SHARED_LIBS +=  sybdb                8.0      # 6.0
@@ -11,18 +12,14 @@ SHARED_LIBS +=  tdsodbc              2.0      # unknown
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.freetds.org/
-# also http://freetds.schemamania.org/ http://freetds.sourceforge.net/
 
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
-# No specific exception for OpenSSL, however the GPL has a special
-# exception for "anything that is normally distributed...with the major
-# components...of the operating system on which the executable runs,
-# unless that component itself accompanies the executable."
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto iodbc iodbcinst ncurses pthread readline ssl
+WANTLIB += c ffi gmp gnutls hogweed idn intl iodbc iodbcinst ncurses
+WANTLIB += nettle p11-kit pthread readline tasn1 z
 
 MODULES=	converters/libiconv
 
@@ -35,19 +32,18 @@ BUILD_DEPENDS+=	devel/gettext \
 		${MODGNU_AUTOMAKE_DEPENDS}
 ### end of AUTOHELL
 
-LIB_DEPENDS=	databases/iodbc,-main
+LIB_DEPENDS=	databases/iodbc,-main \
+		security/gnutls
 
 # requires database server
 TEST_IS_INTERACTIVE=Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=
-# --disable-threadsafe required by databases/ruby-tiny_tds
-CONFIGURE_ARGS=	--disable-threadsafe \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-openssl \
+		--with-gnutls \
 		--with-tdsver=7.3
 
 # picks up com_err.h from e2fsprogs for gssapi support
