@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2016/06/29 12:45:23 ajacoutot Exp $
+
+Unbreak with mono >=4.4
+
+--- configure.orig	Wed Jun 29 14:44:22 2016
++++ configure	Wed Jun 29 14:44:08 2016
+@@ -15696,8 +15696,8 @@ fi
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for Mono 2.0 GAC for $asm.dll" >&5
+ $as_echo_n "checking for Mono 2.0 GAC for $asm.dll... " >&6; }
+ 		if test \
+-			-e "$($PKG_CONFIG --variable=libdir mono)/mono/2.0/$asm.dll" -o \
+-			-e "$($PKG_CONFIG --variable=prefix mono)/lib/mono/2.0/$asm.dll"; \
++			-e "$($PKG_CONFIG --variable=libdir mono)/mono/2.0-api/$asm.dll" -o \
++			-e "$($PKG_CONFIG --variable=prefix mono)/lib/mono/2.0-api/$asm.dll"; \
+ 			then \
+ 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found" >&5
+ $as_echo "found" >&6; }
