@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_m4_shamrock_mono_m4,v 1.1 2016/06/29 14:58:57 robert Exp $
+--- build/m4/shamrock/mono.m4.orig	Wed Jun 29 16:56:23 2016
++++ build/m4/shamrock/mono.m4	Wed Jun 29 16:56:43 2016
+@@ -36,7 +36,7 @@ AC_DEFUN([_SHAMROCK_CHECK_MONO_GAC_ASSEMBLIES],
+ 	do
+ 		AC_MSG_CHECKING([for Mono $1 GAC for $asm.dll])
+ 		if test \
+-			-e "$($PKG_CONFIG --variable=libdir mono)/mono/$1/$asm.dll" -o \
++			-e "$($PKG_CONFIG --variable=libdir mono)/mono/$1-api/$asm.dll" -o \
+ 			-e "$($PKG_CONFIG --variable=prefix mono)/lib/mono/$1/$asm.dll"; \
+ 			then \
+ 			AC_MSG_RESULT([found])
