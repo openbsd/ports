@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2016/03/16 20:02:11 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2016/06/30 07:19:23 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -66,7 +66,9 @@ gen-versions: extract
 	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }' | sort
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/make/install_bin ${WRKSRC}/erts/etc/common/escript.c
+	${SUBST_CMD} ${WRKSRC}/make/install_bin \
+		     ${WRKSRC}/erts/etc/common/escript.c \
+		     ${WRKSRC}/lib/wx/configure.in
 
 post-install:
 	ln -sf ../lib/erlang${MAJ_V}/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
