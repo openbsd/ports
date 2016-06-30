@@ -1,7 +1,0 @@
-Gives a site owner options to disable specific messages shown to end
-users. The core drupal message system as offered by drupal_set_message
-is an excellent way for modules to send out messages to the end users.
-However not all drupal site owners are keen to show all the messages
-sent out by drupal core and all modules to their users. This module
-gives site administrators a reasonably powerful way to filter out
-messages shown to the end users.
