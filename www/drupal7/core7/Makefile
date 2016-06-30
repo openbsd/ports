@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/30 11:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/30 12:05:37 espie Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
