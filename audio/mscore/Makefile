@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/06/30 08:28:42 dcoppa Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
@@ -26,8 +26,6 @@ MASTER_SITES =	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5
-# pch confuses Ninja
-USE_NINJA =	No
 
 BUILD_DEPENDS =	audio/lame \
 		misc/findutils
