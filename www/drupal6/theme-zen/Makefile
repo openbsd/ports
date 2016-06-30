@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/28 11:33:34 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/06/30 11:48:27 espie Exp $
 
 COMMENT =	flexible, semantically correct XHTML theme for drupal
 DISTNAME=	zen-6.x-2.0
 PKGNAME =	drupal6-theme-zen-2.0
-REVISION =	2
+REVISION =	4
 
 HOMEPAGE =	http://drupal.org/project/zen
 

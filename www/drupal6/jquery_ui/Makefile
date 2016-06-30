@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/25 07:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/06/30 11:48:25 espie Exp $
 
 COMMENT =	wrapper module around the jQuery UI effects library
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -6,6 +6,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 DISTNAME = 	jquery_ui-6.x-1.5
 DISTNAME0 = 	jquery.ui-1.6
 PKGNAME =	drupal6-jquery_ui-1.5
+REVISION =	0
 
 EXTRACT_SUFX0 =	.zip
 
