@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/16 13:48:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/06/30 08:03:35 jasper Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -57,10 +57,8 @@ share/gtk-doc/html/spice-gtk/
 share/gtk-doc/html/spice-gtk/SpiceAudio.html
 share/gtk-doc/html/spice-gtk/SpiceChannel.html
 share/gtk-doc/html/spice-gtk/SpiceCursorChannel.html
-share/gtk-doc/html/spice-gtk/SpiceDisplay.html
 share/gtk-doc/html/spice-gtk/SpiceDisplayChannel.html
 share/gtk-doc/html/spice-gtk/SpiceFileTransferTask.html
-share/gtk-doc/html/spice-gtk/SpiceGtkSession.html
 share/gtk-doc/html/spice-gtk/SpiceInputsChannel.html
 share/gtk-doc/html/spice-gtk/SpiceMainChannel.html
 share/gtk-doc/html/spice-gtk/SpicePlaybackChannel.html
@@ -70,7 +68,6 @@ share/gtk-doc/html/spice-gtk/SpiceSession.html
 share/gtk-doc/html/spice-gtk/SpiceSmartcardChannel.html
 share/gtk-doc/html/spice-gtk/SpiceSmartcardManager.html
 share/gtk-doc/html/spice-gtk/SpiceUsbDeviceManager.html
-share/gtk-doc/html/spice-gtk/SpiceUsbDeviceWidget.html
 share/gtk-doc/html/spice-gtk/SpiceUsbredirChannel.html
 share/gtk-doc/html/spice-gtk/SpiceWebdavChannel.html
 share/gtk-doc/html/spice-gtk/annotation-glossary.html
@@ -83,13 +80,15 @@ share/gtk-doc/html/spice-gtk/ch02.html
 share/gtk-doc/html/spice-gtk/ch03.html
 share/gtk-doc/html/spice-gtk/home.png
 share/gtk-doc/html/spice-gtk/index.html
-share/gtk-doc/html/spice-gtk/index.sgml
 share/gtk-doc/html/spice-gtk/left-insensitive.png
 share/gtk-doc/html/spice-gtk/left.png
 share/gtk-doc/html/spice-gtk/object-tree.html
 share/gtk-doc/html/spice-gtk/right-insensitive.png
 share/gtk-doc/html/spice-gtk/right.png
+share/gtk-doc/html/spice-gtk/spice-gtk-SpiceDisplay.html
+share/gtk-doc/html/spice-gtk/spice-gtk-SpiceGtkSession.html
 share/gtk-doc/html/spice-gtk/spice-gtk-SpiceURI.html
+share/gtk-doc/html/spice-gtk/spice-gtk-SpiceUsbDeviceWidget.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Utilities.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Version-Information.html
 share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
