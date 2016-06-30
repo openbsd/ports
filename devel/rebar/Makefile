@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/06/27 11:52:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/06/30 07:23:12 jasper Exp $
 
 COMMENT=		Erlang build tool
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # This port cannot use the erlang module for the module depends on this port.
 # Keep in sync with erlang.port.mk
-FLAVORS =		erlang16 erlang17 erlang18
+FLAVORS =		erlang16 erlang17 erlang18 erlang19
 FLAVOR ?=		erlang16
 
 .if ${FLAVOR:Merlang16} || ${FLAVOR:Merlang17} || ${FLAVOR:Merlang18} \
