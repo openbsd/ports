@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/30 11:50:25 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}user_readonly/
+${DRUPAL_MODS}user_readonly/LICENSE.txt
+${DRUPAL_MODS}user_readonly/README.txt
+${DRUPAL_MODS}user_readonly/user_readonly.info
+${DRUPAL_MODS}user_readonly/user_readonly.module
