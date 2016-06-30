@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gd_crop_c,v 1.1 2016/06/30 13:27:42 jasper Exp $
+
+CVE-2016-6128
+https://bugs.php.net/bug.php?id=72494 
+https://github.com/libgd/libgd/compare/3fe0a7128bac5000fdcfab888bd2a75ec0c9447d...fd623025505e87bba7ec8555eeb72dae4fb0afd
+
+--- src/gd_crop.c.orig	Thu Jun 30 15:23:49 2016
++++ src/gd_crop.c	Thu Jun 30 15:24:14 2016
+@@ -136,6 +136,10 @@ BGD_DECLARE(gdImagePtr) gdImageCropThreshold(gdImagePt
+ 		return NULL;
+ 	}
+ 
++	if (!gdImageTrueColor(im) && color >= gdImageColorsTotal(im)) {
++		return NULL;
++	}
++	
+ 	/* TODO: Add gdImageGetRowPtr and works with ptr at the row level
+ 	 * for the true color and palette images
+ 	 * new formats will simply work with ptr
