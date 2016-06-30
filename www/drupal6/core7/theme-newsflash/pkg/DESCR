@@ -1,0 +1,7 @@
+NewsFlash features 12 regions divided into fully collapsible sidebars
+and horizontal sections. This means that NewsFlash automatically
+sizes and places blocks depending on the blocks that you wish to
+display on any page. NewsFlash can be configured for fluid or fixed
+widths using the easy configuration panel. When using fluid widths,
+the content and page layout automatically resize to fill the user's
+screen.

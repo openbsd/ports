@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/30 11:49:21 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}disable_messages/
+${DRUPAL_MODS}disable_messages/LICENSE.txt
+${DRUPAL_MODS}disable_messages/README.txt
+${DRUPAL_MODS}disable_messages/disable_messages.info
+${DRUPAL_MODS}disable_messages/disable_messages.install
+${DRUPAL_MODS}disable_messages/disable_messages.module

@@ -1,0 +1,18 @@
+${DRUPAL_LANG} translation of drupal 7 modules,includes :
+- drupal 7.11
+- auto_nodetitle 1.0
+- backup_migrate 2.2
+- compact-forms 1.0
+- ctools 1.0
+- date 2.3
+- devel 1.2
+- globalredirect 1.4
+- nodeaccess userreference 3.6
+- references 2.0
+- rules 2.1
+- securelogin 1.2
+- scheduler 1.0
+- token 1.0
+- user readonly 1.3
+- views 3.3
+- webform 3.17
