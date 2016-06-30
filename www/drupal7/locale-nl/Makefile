@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/17 14:29:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/30 11:51:06 espie Exp $
 
 DRUPAL_LANG =	nl
 EXTRACT_ONLY =
 
 DISTNAME =	drupal7-${DRUPAL_LANG}-7.14
-REVISION =	0
+REVISION =	1
 
 DISTFILES =	drupal/drupal-7.14.${DRUPAL_LANG}.po
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/30 15:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:07 espie Exp $
 
 COMMENT =	nice theme for content heavy sites
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 DISTNAME=	newsflash-7.x-2.4
 PKGNAME =	drupal7-theme-newsflash-2.4
+REVISION =	0
 
 # still GPL
 HOMEPAGE =	http://www.roopletheme.com/

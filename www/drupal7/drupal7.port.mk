@@ -1,4 +1,4 @@
-# $OpenBSD: drupal7.port.mk,v 1.2 2012/04/12 08:16:06 naddy Exp $
+# $OpenBSD: drupal7.port.mk,v 1.3 2016/06/30 11:51:06 espie Exp $
 
 
 # three types of things we can install, by default plugin
@@ -67,4 +67,4 @@ MODDRUPAL_INSTALL = \
 		chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_MODS} 
 .endif
 
-RUN_DEPENDS ?=	drupal->=7,<8:www/drupal7/core
+RUN_DEPENDS ?=	drupal->=7,<8:www/drupal7/core7

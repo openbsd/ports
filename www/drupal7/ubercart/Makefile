@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/17 14:29:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:07 espie Exp $
 
 COMMENT =	e-commerce suite for Drupal
 
 DISTNAME = 	ubercart-7.x-3.1
 PKGNAME =	drupal7-ubercart-3.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.ubercart.org/
 

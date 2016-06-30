@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/02/08 21:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/30 11:51:06 espie Exp $
 
 COMMENT =	CKeditor for drupal
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -10,6 +10,7 @@ ED =		ckeditor_$V_standard.tar.gz
 DISTFILES =	${DISTNAME}.tar.gz \
 		${ED}:0
 EXTRACT_ONLY =	${DISTNAME}.tar.gz
+REVISION =	0
 
 MASTER_SITES0 = http://download.cksource.com/CKEditor/CKEditor/CKEditor%20$V/
 

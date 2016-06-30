@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/01/30 15:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/06/30 11:51:06 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -19,7 +19,7 @@ SUBDIR += colorbox
 SUBDIR += compact_forms
 #SUBDIR += contemplate
 SUBDIR += content_access	#1.2beta1
-SUBDIR += core
+SUBDIR += core7
 SUBDIR += ctools
 SUBDIR += date
 SUBDIR += devel

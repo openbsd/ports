@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/02/08 19:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2016/06/30 11:51:06 espie Exp $
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 DRUPAL_LANG =		fr
@@ -33,5 +33,6 @@ LANGFILES +=	ubercart 3.1
 LANGFILES +=	user_readonly 1.4
 LANGFILES += 	views 3.7
 LANGFILES +=	webform 3.19
+REVISION =	0
 
 .include <bsd.port.mk>
