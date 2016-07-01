@@ -1,10 +1,11 @@
-$OpenBSD: patch-amavisd,v 1.13 2016/03/02 14:30:50 sthen Exp $
+$OpenBSD: patch-amavisd,v 1.14 2016/07/01 13:19:29 giovanni Exp $
 
 Hunks 1, 3: Disable File::LibMagic in favour of safer file(1) from base.
+Hunk 4: fix DKIM signing
 
---- amavisd.orig	Sun Oct 26 00:06:00 2014
-+++ amavisd	Tue Feb  2 22:08:33 2016
-@@ -12557,7 +12557,7 @@ sub after_chroot_init() {
+--- amavisd.orig	Tue Apr 26 21:24:33 2016
++++ amavisd	Fri Jul  1 01:03:15 2016
+@@ -12928,7 +12928,7 @@ sub after_chroot_init() {
                 grep(/\.pm\z/, keys %INC)) {
      next  if !grep($_ eq $m, qw(Amavis::Conf
        Archive::Tar Archive::Zip Compress::Zlib Compress::Raw::Zlib
@@ -13,7 +14,7 @@ Hunks 1, 3: Disable File::LibMagic in favour of safer file(1) from base.
        MIME::Entity MIME::Parser MIME::Tools Mail::Header Mail::Internet
        Digest::MD5 Digest::SHA Digest::SHA1 Crypt::OpenSSL::RSA
        Authen::SASL Authen::SASL::XS Authen::SASL::Cyrus Authen::SASL::Perl
-@@ -29847,7 +29847,7 @@ sub new_SpamAssassin_instance {
+@@ -30584,7 +30584,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
  #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
@@ -22,7 +23,7 @@ Hunks 1, 3: Disable File::LibMagic in favour of safer file(1) from base.
  #see Mail::SpamAssassin man page for other options
    };
    if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})
-@@ -30595,17 +30595,8 @@ BEGIN {
+@@ -31348,17 +31348,8 @@ BEGIN {
    import Amavis::Unpackers::NewFilename qw(consumed_bytes);
  }
  
@@ -40,3 +41,11 @@ Hunks 1, 3: Disable File::LibMagic in favour of safer file(1) from base.
  
  use subs @EXPORT_OK;
  
+@@ -34338,6 +34329,7 @@ sub collect_some_dkim_info($) {
+     $sig_ind++;
+   }
+   Amavis::load_policy_bank($_,$msginfo) for @bank_names;
++  $msginfo->originating(c('originating'));
+   $msginfo->dkim_signatures_valid(\@signatures_valid)  if @signatures_valid;
+ # if (ll(5) && $sig_ind > 0) {
+ #   # show which header fields are covered by which signature
