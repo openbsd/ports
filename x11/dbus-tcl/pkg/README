@@ -1,12 +1,8 @@
-$OpenBSD: README,v 1.2 2015/07/13 00:56:55 stu Exp $
+$OpenBSD: README,v 1.3 2016/07/01 11:57:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
-
-If used with non-threaded Tcl or an executable that is
-not linked with libpthread then it will be necessary to
-set "LD_PRELOAD=/usr/lib/libpthread.so" in the environment.
 
 As of version 2.0:
 The 'dbus-tcl' Tcl package is now called 'dbus'.

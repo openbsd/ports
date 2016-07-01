@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/07/01 11:57:40 sthen Exp $
 
 COMMENT =	dbus bindings for Tcl
 
 V =		2.1
+REVISION =	0
 DISTNAME =	dbus-tcl-${V}
 CATEGORIES =	x11
 HOMEPAGE =	http://dbus-tcl.sourceforge.net/
@@ -24,7 +25,6 @@ FAKE_FLAGS =	INSTALL_PROGRAM='$${INSTALL_DATA}' \
 		PACKAGE_TARNAME=dbus-tcl \
 		pkglibdir='$$(libdir)/tcl/$$(PACKAGE_NAME)'
 
-TEST_FLAGS =	LD_PRELOAD=/usr/lib/libpthread.so
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
