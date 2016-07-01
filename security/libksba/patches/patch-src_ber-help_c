@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ber-help_c,v 1.1 2016/07/01 07:40:23 jasper Exp $
+
+CVE-2016-4579
+http://git.gnupg.org/cgi-bin/gitweb.cgi?p=libksba.git;a=commit;h=a7eed17a0b2a1c09ef986f3b4b323cd31cea2b64
+
+--- src/ber-help.c.orig	Fri Mar 15 20:26:38 2013
++++ src/ber-help.c	Thu Jun 30 15:58:00 2016
+@@ -285,8 +285,14 @@ _ksba_ber_parse_tl (unsigned char const **buffer, size
+           ti->buf[ti->nhdr++] = c;
+           len |= c & 0xff;
+         }
++      /* Sanity check for the length: This is done so that we can take
++       * the value for malloc plus some additional bytes without
++       * risking an overflow.  */
++      if (len > (1 << 30))
++        return gpg_error (GPG_ERR_BAD_BER);
+       ti->length = len;
+     }
++
+ 
+   /* Without this kludge some example certs can't be parsed */
+   if (ti->class == CLASS_UNIVERSAL && !ti->tag)

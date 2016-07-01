@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_name_c,v 1.1 2016/07/01 07:40:23 jasper Exp $
+
+
+CVE-2016-4579
+http://git.gnupg.org/cgi-bin/gitweb.cgi?p=libksba.git;a=commit;h=a7eed17a0b2a1c09ef986f3b4b323cd31cea2b64
+
+--- src/name.c.orig	Fri Mar 15 20:26:38 2013
++++ src/name.c	Thu Jun 30 15:58:00 2016
+@@ -113,7 +113,7 @@ _ksba_name_new_from_der (ksba_name_t *r_name,
+ 
+   *r_name = NULL;
+ 
+-  /* count and check for encoding errors - we won;t do this again
++  /* Count and check for encoding errors - we won't do this again
+      during the second pass */
+   der = image;
+   derlen = imagelen;

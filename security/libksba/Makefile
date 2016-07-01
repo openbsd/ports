@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/07/01 07:40:23 jasper Exp $
 
 COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.3.3
+REVISION =	0
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 0.2	#19
