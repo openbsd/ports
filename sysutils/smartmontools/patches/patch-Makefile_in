@@ -1,6 +1,6 @@
---- Makefile.in.orig    2015-09-22 14:43:49.000000000 -0500
-+++ Makefile.in 2015-09-22 14:45:08.000000000 -0500
-@@ -345,8 +345,8 @@
+--- Makefile.in.orig	Sat May  7 13:18:28 2016
++++ Makefile.in	Wed Jun 29 23:50:43 2016
+@@ -352,8 +352,8 @@ man5dir = $(mandir)/man5
  man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
@@ -9,11 +9,11 @@
 +DATA = $(docs_DATA) $(drivedb_DATA) $(examples_DATA) \
 +	$(systemdsystemunit_DATA)
  am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
-        $(LISP)config.h.in
+ 	$(LISP)config.h.in
  # Read a list of newline-separated strings from the standard input,
-@@ -587,16 +587,7 @@
+@@ -604,16 +604,7 @@ nodist_EXTRA_smartd_SOURCES = os_solaris_ata.s
  @OS_SOLARIS_FALSE@man_MANS = smartd.conf.5 smartctl.8 smartd.8 \
- @OS_SOLARIS_FALSE@     $(am__append_23)
+ @OS_SOLARIS_FALSE@	$(am__append_23)
  docsdir = $(docdir)
 -docs_DATA = \
 -        AUTHORS \
@@ -26,17 +26,17 @@
 -        TODO \
 -        smartd.conf
 +docs_DATA = smartd.conf
-
+ 
  examplesdir = $(exampledir)
  examples_DATA = \
-@@ -608,10 +599,11 @@
+@@ -625,10 +616,11 @@ examples_SCRIPTS = \
          examplescripts/Example3 \
          examplescripts/Example4 \
          examplescripts/Example5 \
 -        examplescripts/Example6
 +        examplescripts/Example6 \
 +        smartd_warning.sh
-
+ 
  sysconf_DATA = smartd.conf
 -smartdscript_SCRIPTS = smartd_warning.sh
 +smartdscript_SCRIPTS =
