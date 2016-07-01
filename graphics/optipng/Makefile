@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/20 03:17:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2016/07/01 07:44:19 jasper Exp $
 
 COMMENT =		lossless PNG optimizer
-DISTNAME =		optipng-0.7.5
+DISTNAME =		optipng-0.7.6
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://optipng.sourceforge.net/
