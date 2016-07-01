@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2016/07/01 08:46:52 landry Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-1.40.1
+DISTNAME=	xfe-1.41
 CATEGORIES=	x11
-REVISION=	0
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
 
@@ -30,8 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${X11BASE}/include/freetype2" \
 		LDFLAGS="-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib -lXft -pthread"
-
-MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} -DHAVE_XFT_H"
 
 pre-configure:
 	sed -i "s,-O2,,g" ${WRKSRC}/configure
