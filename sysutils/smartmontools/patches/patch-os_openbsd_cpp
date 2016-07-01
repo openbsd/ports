@@ -1,0 +1,12 @@
+$OpenBSD: patch-os_openbsd_cpp,v 1.3 2016/07/01 16:51:16 giovanni Exp $
+--- os_openbsd.cpp.orig	Wed Jun 29 23:52:24 2016
++++ os_openbsd.cpp	Wed Jun 29 23:53:37 2016
+@@ -132,7 +132,7 @@ get_dev_names(char ***names, const char *prefix)
+     n++;
+   }
+ 
+-  void * tmp = (char **)realloc(mp, n * (sizeof(char *)));
++  char ** tmp = (char **)realloc(mp, n * (sizeof(char *)));
+   if (NULL == tmp) {
+     pout("Out of memory constructing scan device list\n");
+     free(mp);
