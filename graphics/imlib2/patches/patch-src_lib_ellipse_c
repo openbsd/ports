@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_lib_ellipse_c,v 1.1 2016/07/01 13:04:32 jasper Exp $
+
+CVE-2011-5326
+https://git.enlightenment.org/legacy/imlib2.git/commit/?id=c94d83ccab15
+
+--- src/lib/ellipse.c.orig	Sun Dec 22 05:20:31 2013
++++ src/lib/ellipse.c	Fri Jul  1 14:58:32 2016
+@@ -71,6 +71,9 @@ __imlib_Ellipse_DrawToData(int xc, int yc, int a, int 
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(color, bp + len);
+ 
++        if (dx < 1)
++           dx = 1;
++
+         dy += b2;
+         yy -= ((dy << 16) / dx);
+         lx--;
+@@ -123,6 +126,9 @@ __imlib_Ellipse_DrawToData(int xc, int yc, int a, int 
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(color, bp + len);
+ 
++        if (dy < 1)
++           dy = 1;
++
+         dx -= a2;
+         xx += ((dx << 16) / dy);
+         ty++;
+@@ -222,6 +228,9 @@ __imlib_Ellipse_DrawToData_AA(int xc, int yc, int a, i
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(col1, bp + len);
+ 
++        if (dx < 1)
++           dx = 1;
++
+         dy += b2;
+         yy -= ((dy << 16) / dx);
+         lx--;
+@@ -295,6 +304,9 @@ __imlib_Ellipse_DrawToData_AA(int xc, int yc, int a, i
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(col1, bp + len);
+ 
++        if (dy < 1)
++           dy = 1;
++
+         dx -= a2;
+         xx += ((dx << 16) / dy);
+         ty++;
+@@ -395,6 +407,9 @@ __imlib_Ellipse_FillToData(int xc, int yc, int a, int 
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(color, bp + len);
+ 
++        if (dx < 1)
++           dx = 1;
++
+         dy += b2;
+         yy -= ((dy << 16) / dx);
+         lx--;
+@@ -453,6 +468,9 @@ __imlib_Ellipse_FillToData(int xc, int yc, int a, int 
+         if (((unsigned)by < (unsigned)clh) && (len > 0))
+            sfunc(color, bpp, len);
+ 
++        if (dy < 1)
++           dy = 1;
++
+         dx -= a2;
+         xx += ((dx << 16) / dy);
+         ty++;
+@@ -556,6 +574,9 @@ __imlib_Ellipse_FillToData_AA(int xc, int yc, int a, i
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(col1, bp + len);
+ 
++        if (dx < 1)
++           dx = 1;
++
+         dy += b2;
+         yy -= ((dy << 16) / dx);
+         lx--;
+@@ -628,6 +649,9 @@ __imlib_Ellipse_FillToData_AA(int xc, int yc, int a, i
+            pfunc(col1, bp);
+         if (IN_RANGE(rx, by, clw, clh))
+            pfunc(col1, bp + len);
++
++        if (dy < 1)
++           dy = 1;
+ 
+         dx -= a2;
+         xx += ((dx << 16) / dy);

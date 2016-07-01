@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_modules_loaders_loader_gif_c,v 1.6 2016/07/01 13:04:32 jasper Exp $
+
+CVE-2016-3994
+https://git.enlightenment.org/legacy/imlib2.git/commit/?id=37a96801663b7b4cd3fbe56cc0eb8b6a17e766a8
+
+--- src/modules/loaders/loader_gif.c.orig	Sat Dec 20 17:39:11 2014
++++ src/modules/loaders/loader_gif.c	Fri Jul  1 14:57:48 2016
+@@ -141,8 +141,24 @@ load(ImlibImage * im, ImlibProgressFunction progress, 
+ 
+    if (im->loader || immediate_load || progress)
+      {
++        DATA32 colormap[256];
++
+         bg = gif->SBackGroundColor;
+         cmap = (gif->Image.ColorMap ? gif->Image.ColorMap : gif->SColorMap);
++        memset (colormap, 0, sizeof(colormap));
++        if (cmap != NULL)
++           {
++              for (i = cmap->ColorCount > 256 ? 256 : cmap->ColorCount; i-- > 0;)
++                 {
++                    r = cmap->Colors[i].Red;
++                    g = cmap->Colors[i].Green;
++                    b = cmap->Colors[i].Blue;
++                    colormap[i] = (0xff << 24) | (r << 16) | (g << 8) | b;
++                 }
++              /* if bg > cmap->ColorCount, it is transparent black already */
++              if (transp >= 0 && transp < 256)
++                 colormap[transp] = bg >= 0 && bg < 256 ? colormap[bg] & 0x00ffffff : 0x00000000;
++           }
+         im->data = (DATA32 *) malloc(sizeof(DATA32) * w * h);
+         if (!im->data)
+            goto quit;
+@@ -161,20 +177,7 @@ load(ImlibImage * im, ImlibProgressFunction progress, 
+           {
+              for (j = 0; j < w; j++)
+                {
+-                  if (rows[i][j] == transp)
+-                    {
+-                       r = cmap->Colors[bg].Red;
+-                       g = cmap->Colors[bg].Green;
+-                       b = cmap->Colors[bg].Blue;
+-                       *ptr++ = 0x00ffffff & ((r << 16) | (g << 8) | b);
+-                    }
+-                  else
+-                    {
+-                       r = cmap->Colors[rows[i][j]].Red;
+-                       g = cmap->Colors[rows[i][j]].Green;
+-                       b = cmap->Colors[rows[i][j]].Blue;
+-                       *ptr++ = (0xff << 24) | (r << 16) | (g << 8) | b;
+-                    }
++                  *ptr++ = colormap[rows[i][j]];
+                   per += per_inc;
+                   if (progress && (((int)per) != last_per)
+                       && (((int)per) % progress_granularity == 0))

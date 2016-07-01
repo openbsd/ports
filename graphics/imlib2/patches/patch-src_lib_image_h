@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_lib_image_h,v 1.1 2016/07/01 13:04:32 jasper Exp $
+
+CVE-2016-4024
+https://git.enlightenment.org/legacy/imlib2.git/commit/?id=7eba2e4c8ac0e20838947f10f29d0efe1add8227
+
+--- src/lib/image.h.orig	Fri Jul  1 14:59:56 2016
++++ src/lib/image.h	Fri Jul  1 15:00:21 2016
+@@ -188,7 +188,8 @@ void                __imlib_SaveImage(ImlibImage * im,
+ 
+ /* The maximum pixmap dimension is 65535. */
+ /* However, for now, use 46340 (46340^2 < 2^31) to avoid buffer overflow issues. */
+-#define X_MAX_DIM 46340
++/* Reduced further to 32767, so that (w * h * sizeof(DATA32)) won't exceed ULONG_MAX */
++#define X_MAX_DIM 32767
+ 
+ #define IMAGE_DIMENSIONS_OK(w, h) \
+    ( ((w) > 0) && ((h) > 0) && ((w) < X_MAX_DIM) && ((h) < X_MAX_DIM) )
