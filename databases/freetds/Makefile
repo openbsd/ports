@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2016/06/29 13:17:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2016/07/01 11:35:51 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.95.95
-REVISION=	0
+REVISION=	1
 # 1.00 releases have problems with at least sqsh, libdbi-drivers, p5-sybperl
 
 SHARED_LIBS +=  ct                   6.0      # 4.0

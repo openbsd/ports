@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/11/04 23:18:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/07/01 11:35:51 sthen Exp $
 @pkgpath databases/freetds,-msdblib
 @pkgpath databases/freetds,-openssl
 @bin bin/bsqldb
@@ -39,7 +39,6 @@ lib/libtdsodbc.la
 @man man/man1/osql.1
 @man man/man1/tsql.1
 @man man/man5/freetds.conf.5
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/freetds/
 share/examples/freetds/freetds.conf
 @sample ${SYSCONFDIR}/freetds.conf
