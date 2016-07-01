@@ -1,5 +1,0 @@
-The Redland::RDF Perl bindings require pthread functions, but the perl binary
-on OpenBSD is not yet linked with pthreads. To use the Redland::RDF bindings
-you will need to preload the thread library like this:
-
-env LD_PRELOAD=/usr/lib/libpthread.so perl
