@@ -1,10 +1,7 @@
 #!/bin/sh
 #
-# $OpenBSD: run_tests.sh,v 1.1 2012/08/31 19:50:01 edd Exp $
+# $OpenBSD: run_tests.sh,v 1.2 2016/07/01 14:25:17 sthen Exp $
 # Simple regression tests for the OpenBSD graphviz port
-
-# Required due to single threaded interpreters (see README)
-export LD_PRELOAD=/usr/lib/libpthread.so
 
 # Silence deprecated guile constructs
 export GUILE_WARN_DEPRECATED=no

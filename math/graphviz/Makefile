@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2016/04/04 22:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2016/07/01 14:25:17 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.36.0
-REVISION=	5
+REVISION=	6
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -151,7 +151,7 @@ TEST_TMP=${WRKDIR}/test_tmp
 do-test:
 	mkdir -p ${TEST_TMP}
 	cd ${FILESDIR}/tests && for i in *-test.* run_tests.sh; do \
-		${SUBST_CMD} -c $${i} ${TEST_TMP}/$${i}; \
+		${SUBST_CMD} -m 0644 -c $${i} ${TEST_TMP}/$${i}; \
 	done
 	cd ${TEST_TMP} && /bin/sh ./run_tests.sh
 

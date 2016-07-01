@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/04/04 22:57:45 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2016/07/01 14:25:17 sthen Exp $
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
@@ -453,7 +453,6 @@ share/doc/graphviz/pdf/twopi.1.pdf
 share/doc/graphviz/pdf/unflatten.1.pdf
 share/doc/graphviz/pdf/vimdot.1.pdf
 share/doc/graphviz/pdf/xdot.3.pdf
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/graphviz/
 share/examples/graphviz/demo/
 share/examples/graphviz/demo/doted.tcl
