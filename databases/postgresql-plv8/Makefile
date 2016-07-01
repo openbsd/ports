@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/13 14:36:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/07/01 11:38:35 sthen Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		PostgreSQL V8 javascript procedual language
 
 VERSION =		1.4.2
-REVISION =		1
+REVISION =		2
 DISTNAME =		plv8-${VERSION}
 PKGNAME =		postgresql-${DISTNAME}
 
