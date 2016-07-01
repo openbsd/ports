@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/13 00:57:06 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2016/07/01 11:58:26 sthen Exp $
 
 COMMENT =	high level interface to dbus-tcl
 
 V =		1.2
+REVISION =	0
 DISTNAME =	dbus-intf-${V}
 CATEGORIES =	x11
 HOMEPAGE =	http://dbus-tcl.sourceforge.net/
