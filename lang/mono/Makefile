@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2016/06/26 10:40:28 robert Exp $
+# $OpenBSD: Makefile,v 1.98 2016/07/02 10:22:30 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.4.0
 DISTNAME=	mono-${V}.182
+REVISION=	0
 
 CATEGORIES=	lang devel
 
@@ -90,6 +91,7 @@ pre-configure:
 
 	@ln -fs /usr/local/bin/bash ${WRKDIR}/bin/bash
 	@ln -fs /usr/local/bin/gawk ${WRKDIR}/bin/gawk
+	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 # Force using the internal mcs compiler
 pre-build:
