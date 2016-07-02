@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2015/09/03 20:33:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2016/07/02 10:50:34 sthen Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 DISTNAME=	puppet-dashboard-1.2.23
-REVISION=	17
+REVISION=	18
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	https://github.com/sodabrew/puppet-dashboard/
-
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes

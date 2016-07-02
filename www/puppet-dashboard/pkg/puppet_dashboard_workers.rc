@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppet_dashboard_workers.rc,v 1.4 2015/09/03 20:33:42 jasper Exp $
+# $OpenBSD: puppet_dashboard_workers.rc,v 1.5 2016/07/02 10:50:34 sthen Exp $
 
 daemon="./script/delayed_job"
 daemon_flags="-p dashboard -n 4 -m"
@@ -17,7 +17,7 @@ rc_check() {
 
 rc_start() {
 	${rcexec} "cd ${INSTDIR} && \
-		env RAILS_ENV=production LD_PRELOAD=libpthread.so ${daemon} ${daemon_flags} start"
+		env RAILS_ENV=production ${daemon} ${daemon_flags} start"
 }
 
 rc_stop() {

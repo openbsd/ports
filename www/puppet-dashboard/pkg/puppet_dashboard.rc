@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppet_dashboard.rc,v 1.4 2015/07/15 14:59:15 ajacoutot Exp $
+# $OpenBSD: puppet_dashboard.rc,v 1.5 2016/07/02 10:50:34 sthen Exp $
 
 daemon="./script/server -d"
 daemon_flags="-e production"
@@ -12,7 +12,7 @@ pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "cd ${INSTDIR} && env LD_PRELOAD=libpthread.so ${daemon} ${daemon_flags}"
+	${rcexec} "cd ${INSTDIR} && ${daemon} ${daemon_flags}"
 }
 
 rc_stop() {
