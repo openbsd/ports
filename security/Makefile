@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.428 2016/06/14 19:05:12 rpointel Exp $
+# $OpenBSD: Makefile,v 1.429 2016/07/02 15:59:35 danj Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -83,6 +83,7 @@
      SUBDIR += keepassx
      SUBDIR += keychain
      SUBDIR += klaxon
+     SUBDIR += knockpy
      SUBDIR += kpcli
      SUBDIR += kqoauth
      SUBDIR += l0phtcrack
