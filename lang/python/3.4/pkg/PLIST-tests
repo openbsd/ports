@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.7 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-tests,v 1.8 2016/07/03 18:16:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.4,<3.5
@@ -930,10 +930,12 @@ lib/python3.4/test/badsyntax_pep3120.py
 lib/python3.4/test/buffer_tests.py
 lib/python3.4/test/bytecode_helper.py
 lib/python3.4/test/capath/
+lib/python3.4/test/capath/0e4015b9.0
 lib/python3.4/test/capath/4e1295a3.0
 lib/python3.4/test/capath/5ed36f99.0
 lib/python3.4/test/capath/6e88d7b8.0
 lib/python3.4/test/capath/99d0fa06.0
+lib/python3.4/test/capath/ce7b8643.0
 lib/python3.4/test/cfgparser.1
 lib/python3.4/test/cfgparser.2
 lib/python3.4/test/cfgparser.3
@@ -1144,7 +1146,6 @@ lib/python3.4/test/formatfloat_testcases.txt
 lib/python3.4/test/future_test1.py
 lib/python3.4/test/future_test2.py
 lib/python3.4/test/gdb_sample.py
-lib/python3.4/test/https_svn_python_org_root.pem
 lib/python3.4/test/ieee754.txt
 lib/python3.4/test/imghdrdata/
 lib/python3.4/test/imghdrdata/python.bmp

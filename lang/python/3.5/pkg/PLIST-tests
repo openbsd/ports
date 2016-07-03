@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2016/07/03 18:16:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.5,<3.6
@@ -24,9 +24,6 @@ lib/python3.5/test/__pycache__/audiotests.cpython-35.pyc
 lib/python3.5/test/__pycache__/autotest.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/autotest.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/autotest.cpython-35.pyc
-lib/python3.5/test/__pycache__/buffer_tests.cpython-35.opt-1.pyc
-lib/python3.5/test/__pycache__/buffer_tests.cpython-35.opt-2.pyc
-lib/python3.5/test/__pycache__/buffer_tests.cpython-35.pyc
 lib/python3.5/test/__pycache__/bytecode_helper.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/bytecode_helper.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/bytecode_helper.cpython-35.pyc
@@ -801,6 +798,9 @@ lib/python3.5/test/__pycache__/test_operator.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_optparse.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_optparse.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_optparse.cpython-35.pyc
+lib/python3.5/test/__pycache__/test_ordered_dict.cpython-35.opt-1.pyc
+lib/python3.5/test/__pycache__/test_ordered_dict.cpython-35.opt-2.pyc
+lib/python3.5/test/__pycache__/test_ordered_dict.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_os.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_os.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_os.cpython-35.pyc
@@ -828,9 +828,6 @@ lib/python3.5/test/__pycache__/test_pep247.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_pep277.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_pep277.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_pep277.cpython-35.pyc
-lib/python3.5/test/__pycache__/test_pep292.cpython-35.opt-1.pyc
-lib/python3.5/test/__pycache__/test_pep292.cpython-35.opt-2.pyc
-lib/python3.5/test/__pycache__/test_pep292.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_pep3120.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_pep3120.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_pep3120.cpython-35.pyc
@@ -1185,6 +1182,9 @@ lib/python3.5/test/__pycache__/test_ttk_textonly.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_tuple.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_tuple.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_tuple.cpython-35.pyc
+lib/python3.5/test/__pycache__/test_turtle.cpython-35.opt-1.pyc
+lib/python3.5/test/__pycache__/test_turtle.cpython-35.opt-2.pyc
+lib/python3.5/test/__pycache__/test_turtle.cpython-35.pyc
 lib/python3.5/test/__pycache__/test_typechecks.cpython-35.opt-1.pyc
 lib/python3.5/test/__pycache__/test_typechecks.cpython-35.opt-2.pyc
 lib/python3.5/test/__pycache__/test_typechecks.cpython-35.pyc
@@ -1386,13 +1386,14 @@ lib/python3.5/test/badsyntax_future7.py
 lib/python3.5/test/badsyntax_future8.py
 lib/python3.5/test/badsyntax_future9.py
 lib/python3.5/test/badsyntax_pep3120.py
-lib/python3.5/test/buffer_tests.py
 lib/python3.5/test/bytecode_helper.py
 lib/python3.5/test/capath/
+lib/python3.5/test/capath/0e4015b9.0
 lib/python3.5/test/capath/4e1295a3.0
 lib/python3.5/test/capath/5ed36f99.0
 lib/python3.5/test/capath/6e88d7b8.0
 lib/python3.5/test/capath/99d0fa06.0
+lib/python3.5/test/capath/ce7b8643.0
 lib/python3.5/test/cfgparser.1
 lib/python3.5/test/cfgparser.2
 lib/python3.5/test/cfgparser.3
@@ -1612,7 +1613,6 @@ lib/python3.5/test/formatfloat_testcases.txt
 lib/python3.5/test/future_test1.py
 lib/python3.5/test/future_test2.py
 lib/python3.5/test/gdb_sample.py
-lib/python3.5/test/https_svn_python_org_root.pem
 lib/python3.5/test/ieee754.txt
 lib/python3.5/test/imghdrdata/
 lib/python3.5/test/imghdrdata/python.bmp
@@ -2547,6 +2547,7 @@ lib/python3.5/test/test_opcodes.py
 lib/python3.5/test/test_openpty.py
 lib/python3.5/test/test_operator.py
 lib/python3.5/test/test_optparse.py
+lib/python3.5/test/test_ordered_dict.py
 lib/python3.5/test/test_os.py
 lib/python3.5/test/test_ossaudiodev.py
 lib/python3.5/test/test_osx_env.py
@@ -2556,7 +2557,6 @@ lib/python3.5/test/test_pdb.py
 lib/python3.5/test/test_peepholer.py
 lib/python3.5/test/test_pep247.py
 lib/python3.5/test/test_pep277.py
-lib/python3.5/test/test_pep292.py
 lib/python3.5/test/test_pep3120.py
 lib/python3.5/test/test_pep3131.py
 lib/python3.5/test/test_pep3151.py
@@ -2675,6 +2675,7 @@ lib/python3.5/test/test_tracemalloc.py
 lib/python3.5/test/test_ttk_guionly.py
 lib/python3.5/test/test_ttk_textonly.py
 lib/python3.5/test/test_tuple.py
+lib/python3.5/test/test_turtle.py
 lib/python3.5/test/test_typechecks.py
 lib/python3.5/test/test_types.py
 lib/python3.5/test/test_typing.py
@@ -2743,6 +2744,7 @@ lib/python3.5/test/tracedmodules/__pycache__/testmod.cpython-35.opt-2.pyc
 lib/python3.5/test/tracedmodules/__pycache__/testmod.cpython-35.pyc
 lib/python3.5/test/tracedmodules/testmod.py
 lib/python3.5/test/win_console_handler.py
+lib/python3.5/test/wrongcert.pem
 lib/python3.5/test/xmltestdata/
 lib/python3.5/test/xmltestdata/simple-ns.xml
 lib/python3.5/test/xmltestdata/simple.xml

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2016/07/03 18:16:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=2.7,<2.8
@@ -1375,8 +1375,8 @@ lib/python2.7/ensurepip/__main__.py
 lib/python2.7/ensurepip/__main__.pyc
 lib/python2.7/ensurepip/__main__.pyo
 lib/python2.7/ensurepip/_bundled/
-lib/python2.7/ensurepip/_bundled/pip-7.1.2-py2.py3-none-any.whl
-lib/python2.7/ensurepip/_bundled/setuptools-18.2-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
 lib/python2.7/ensurepip/_uninstall.py
 lib/python2.7/ensurepip/_uninstall.pyc
 lib/python2.7/ensurepip/_uninstall.pyo
@@ -1550,7 +1550,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.11-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.12-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1613,9 +1613,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.11.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.12.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.11.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.12.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo

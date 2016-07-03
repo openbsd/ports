@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.11 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-tests,v 1.12 2016/07/03 18:16:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=2.7,<2.8
@@ -45,14 +45,13 @@ lib/python2.7/test/badsyntax_future7.py
 lib/python2.7/test/badsyntax_future8.py
 lib/python2.7/test/badsyntax_future9.py
 lib/python2.7/test/badsyntax_nocaret.py
-lib/python2.7/test/buffer_tests.py
-lib/python2.7/test/buffer_tests.pyc
-lib/python2.7/test/buffer_tests.pyo
 lib/python2.7/test/capath/
+lib/python2.7/test/capath/0e4015b9.0
 lib/python2.7/test/capath/4e1295a3.0
 lib/python2.7/test/capath/5ed36f99.0
 lib/python2.7/test/capath/6e88d7b8.0
 lib/python2.7/test/capath/99d0fa06.0
+lib/python2.7/test/capath/ce7b8643.0
 lib/python2.7/test/cfgparser.1
 lib/python2.7/test/check_soundcard.vbs
 lib/python2.7/test/cjkencodings/
@@ -254,7 +253,6 @@ lib/python2.7/test/gdb_sample.py
 lib/python2.7/test/gdb_sample.pyc
 lib/python2.7/test/gdb_sample.pyo
 lib/python2.7/test/greyrgb.uue
-lib/python2.7/test/https_svn_python_org_root.pem
 lib/python2.7/test/ieee754.txt
 lib/python2.7/test/imghdrdata/
 lib/python2.7/test/imghdrdata/python.bmp
@@ -580,9 +578,6 @@ lib/python2.7/test/test_codecs.pyo
 lib/python2.7/test/test_codeop.py
 lib/python2.7/test/test_codeop.pyc
 lib/python2.7/test/test_codeop.pyo
-lib/python2.7/test/test_coding.py
-lib/python2.7/test/test_coding.pyc
-lib/python2.7/test/test_coding.pyo
 lib/python2.7/test/test_coercion.py
 lib/python2.7/test/test_coercion.pyc
 lib/python2.7/test/test_coercion.pyo
@@ -1098,6 +1093,9 @@ lib/python2.7/test/test_operator.pyo
 lib/python2.7/test/test_optparse.py
 lib/python2.7/test/test_optparse.pyc
 lib/python2.7/test/test_optparse.pyo
+lib/python2.7/test/test_ordered_dict.py
+lib/python2.7/test/test_ordered_dict.pyc
+lib/python2.7/test/test_ordered_dict.pyo
 lib/python2.7/test/test_os.py
 lib/python2.7/test/test_os.pyc
 lib/python2.7/test/test_os.pyo
@@ -1116,15 +1114,9 @@ lib/python2.7/test/test_peepholer.pyo
 lib/python2.7/test/test_pep247.py
 lib/python2.7/test/test_pep247.pyc
 lib/python2.7/test/test_pep247.pyo
-lib/python2.7/test/test_pep263.py
-lib/python2.7/test/test_pep263.pyc
-lib/python2.7/test/test_pep263.pyo
 lib/python2.7/test/test_pep277.py
 lib/python2.7/test/test_pep277.pyc
 lib/python2.7/test/test_pep277.pyo
-lib/python2.7/test/test_pep292.py
-lib/python2.7/test/test_pep292.pyc
-lib/python2.7/test/test_pep292.pyo
 lib/python2.7/test/test_pep352.py
 lib/python2.7/test/test_pep352.pyc
 lib/python2.7/test/test_pep352.pyo
@@ -1308,6 +1300,9 @@ lib/python2.7/test/test_softspace.pyo
 lib/python2.7/test/test_sort.py
 lib/python2.7/test/test_sort.pyc
 lib/python2.7/test/test_sort.pyo
+lib/python2.7/test/test_source_encoding.py
+lib/python2.7/test/test_source_encoding.pyc
+lib/python2.7/test/test_source_encoding.pyo
 lib/python2.7/test/test_spwd.py
 lib/python2.7/test/test_spwd.pyc
 lib/python2.7/test/test_spwd.pyo
@@ -1455,6 +1450,9 @@ lib/python2.7/test/test_ttk_textonly.pyo
 lib/python2.7/test/test_tuple.py
 lib/python2.7/test/test_tuple.pyc
 lib/python2.7/test/test_tuple.pyo
+lib/python2.7/test/test_turtle.py
+lib/python2.7/test/test_turtle.pyc
+lib/python2.7/test/test_turtle.pyo
 lib/python2.7/test/test_typechecks.py
 lib/python2.7/test/test_typechecks.pyc
 lib/python2.7/test/test_typechecks.pyo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.3 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-idle,v 1.4 2016/07/03 18:16:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.5,<3.6
@@ -295,6 +295,9 @@ lib/python3.5/idlelib/idle_test/__pycache__/test_autoexpand.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_calltips.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_calltips.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_calltips.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_config_help.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_config_help.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_config_help.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_config_name.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_config_name.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_config_name.cpython-35.pyc
@@ -304,6 +307,9 @@ lib/python3.5/idlelib/idle_test/__pycache__/test_configdialog.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_delegator.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_delegator.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_delegator.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_editmenu.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_editmenu.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_editmenu.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_editor.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_editor.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_editor.cpython-35.pyc
@@ -328,9 +334,18 @@ lib/python3.5/idlelib/idle_test/__pycache__/test_parenmatch.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_percolator.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_percolator.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_percolator.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_replacedialog.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_replacedialog.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_replacedialog.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_rstrip.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_rstrip.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_rstrip.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialog.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialog.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialog.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialogbase.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialogbase.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_searchdialogbase.cpython-35.pyc
@@ -343,6 +358,9 @@ lib/python3.5/idlelib/idle_test/__pycache__/test_text.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_textview.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_textview.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_textview.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_undodelegator.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_undodelegator.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_undodelegator.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_warning.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_warning.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_warning.cpython-35.pyc
@@ -355,9 +373,11 @@ lib/python3.5/idlelib/idle_test/mock_tk.py
 lib/python3.5/idlelib/idle_test/test_autocomplete.py
 lib/python3.5/idlelib/idle_test/test_autoexpand.py
 lib/python3.5/idlelib/idle_test/test_calltips.py
+lib/python3.5/idlelib/idle_test/test_config_help.py
 lib/python3.5/idlelib/idle_test/test_config_name.py
 lib/python3.5/idlelib/idle_test/test_configdialog.py
 lib/python3.5/idlelib/idle_test/test_delegator.py
+lib/python3.5/idlelib/idle_test/test_editmenu.py
 lib/python3.5/idlelib/idle_test/test_editor.py
 lib/python3.5/idlelib/idle_test/test_formatparagraph.py
 lib/python3.5/idlelib/idle_test/test_grep.py
@@ -366,11 +386,15 @@ lib/python3.5/idlelib/idle_test/test_idlehistory.py
 lib/python3.5/idlelib/idle_test/test_io.py
 lib/python3.5/idlelib/idle_test/test_parenmatch.py
 lib/python3.5/idlelib/idle_test/test_pathbrowser.py
+lib/python3.5/idlelib/idle_test/test_percolator.py
+lib/python3.5/idlelib/idle_test/test_replacedialog.py
 lib/python3.5/idlelib/idle_test/test_rstrip.py
+lib/python3.5/idlelib/idle_test/test_searchdialog.py
 lib/python3.5/idlelib/idle_test/test_searchdialogbase.py
 lib/python3.5/idlelib/idle_test/test_searchengine.py
 lib/python3.5/idlelib/idle_test/test_text.py
 lib/python3.5/idlelib/idle_test/test_textview.py
+lib/python3.5/idlelib/idle_test/test_undodelegator.py
 lib/python3.5/idlelib/idle_test/test_warning.py
 lib/python3.5/idlelib/idle_test/test_widgetredir.py
 lib/python3.5/idlelib/idlever.py
