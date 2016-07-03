@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ircd_c,v 1.11 2016/03/07 07:13:20 ajacoutot Exp $
---- src/ircd.c.orig	Wed Feb 24 08:06:07 2016
-+++ src/ircd.c	Sun Mar  6 21:07:09 2016
-@@ -354,7 +354,6 @@ make_daemon(void)
+$OpenBSD: patch-src_ircd_c,v 1.12 2016/07/03 06:22:38 ajacoutot Exp $
+--- src/ircd.c.orig	Wed Jun 22 13:16:24 2016
++++ src/ircd.c	Sat Jul  2 18:59:13 2016
+@@ -338,7 +338,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_ircd_c,v 1.11 2016/03/07 07:13:20 ajacoutot Exp $
      exit(EXIT_SUCCESS);
    }
  
-@@ -367,8 +366,19 @@ main(int argc, char *argv[])
+@@ -351,8 +350,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
    if (!geteuid())
    {

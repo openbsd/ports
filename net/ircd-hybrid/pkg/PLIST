@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/12/17 10:30:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/07/03 06:22:38 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -87,6 +87,8 @@ lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svshost.la
+lib/ircd-hybrid/modules/autoload/m_svshost.so
 lib/ircd-hybrid/modules/autoload/m_svsjoin.la
 lib/ircd-hybrid/modules/autoload/m_svsjoin.so
 lib/ircd-hybrid/modules/autoload/m_svskill.la
