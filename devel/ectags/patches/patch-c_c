@@ -1,0 +1,56 @@
+$OpenBSD: patch-c_c,v 1.1 2016/07/03 14:22:51 shadchin Exp $
+
+adding support for this new C++11 syntax:
+using <Type> = <type definition>;
+
+https://sourceforge.net/p/ctags/patches/84/
+
+--- c.c.orig	Sun Jul  5 06:02:43 2009
++++ c.c	Sat Jul  2 19:29:15 2016
+@@ -130,6 +130,7 @@ typedef enum eTagScope {
+ 	SCOPE_EXTERN,        /* external storage class */
+ 	SCOPE_FRIEND,        /* declares access only */
+ 	SCOPE_TYPEDEF,       /* scoping depends upon context */
++	SCOPE_USING,	     /* scoping depends upon context */
+ 	SCOPE_COUNT
+ } tagScope;
+ 
+@@ -1220,6 +1221,8 @@ static void qualifyFunctionDeclTag (const statementInf
+ 		qualifyFunctionTag (st, nameToken);
+ 	else if (st->scope == SCOPE_TYPEDEF)
+ 		makeTag (nameToken, st, TRUE, TAG_TYPEDEF);
++	else if (st->scope == SCOPE_USING && st->assignment)
++		makeTag (nameToken, st, TRUE, TAG_TYPEDEF);
+ 	else if (isValidTypeSpecifier (st->declaration) && ! isLanguage (Lang_csharp))
+ 		makeTag (nameToken, st, TRUE, TAG_PROTOTYPE);
+ }
+@@ -1269,6 +1272,8 @@ static void qualifyVariableTag (const statementInfo *c
+ 		;
+ 	else if (st->scope == SCOPE_TYPEDEF)
+ 		makeTag (nameToken, st, TRUE, TAG_TYPEDEF);
++	else if (st->scope == SCOPE_USING && st->assignment)
++		makeTag (nameToken, st, TRUE, TAG_TYPEDEF);
+ 	else if (st->declaration == DECL_EVENT)
+ 		makeTag (nameToken, st, (boolean) (st->member.access == ACCESS_PRIVATE),
+ 				TAG_EVENT);
+@@ -1757,7 +1762,10 @@ static void processToken (tokenInfo *const token, stat
+ 		case KEYWORD_THROWS:    discardTypeList (token);                break;
+ 		case KEYWORD_UNION:     st->declaration = DECL_UNION;           break;
+ 		case KEYWORD_UNSIGNED:  st->declaration = DECL_BASE;            break;
+-		case KEYWORD_USING:     skipStatement (st);                     break;
++		case KEYWORD_USING:
++			reinitStatement (st, FALSE);
++			st->scope = SCOPE_USING;
++			break;
+ 		case KEYWORD_VOID:      st->declaration = DECL_BASE;            break;
+ 		case KEYWORD_VOLATILE:  st->declaration = DECL_BASE;            break;
+ 		case KEYWORD_VIRTUAL:   st->implementation = IMP_VIRTUAL;       break;
+@@ -2323,7 +2331,7 @@ static void analyzeParens (statementInfo *const st)
+ 			st->gotArgs = TRUE;
+ 			setToken (st, TOKEN_ARGS);
+ 			advanceToken (st);
+-			if (st->scope != SCOPE_TYPEDEF)
++			if (st->scope != SCOPE_TYPEDEF && st->scope != SCOPE_USING)
+ 				analyzePostParens (st, &info);
+ 		}
+ 		else
