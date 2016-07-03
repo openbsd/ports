@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.223 2016/05/31 18:50:41 landry Exp $
+# $OpenBSD: Makefile,v 1.224 2016/07/03 17:34:02 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	45.1.1
+MOZILLA_VERSION =	45.2.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -13,7 +13,7 @@ EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-4.7.1.1
+PKGNAME-lightning =	lightning-4.7.2.0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
