@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_pyexpat_c,v 1.1.1.1 2014/04/13 07:10:12 rpointel Exp $
---- Modules/pyexpat.c.orig	Mon Mar 17 03:31:31 2014
-+++ Modules/pyexpat.c	Sat Apr  5 09:24:14 2014
-@@ -373,6 +373,11 @@ call_character_handler(xmlparseobject *self, const XML
+$OpenBSD: patch-Modules_pyexpat_c,v 1.2 2016/07/03 20:10:33 rpointel Exp $
+--- Modules/pyexpat.c.orig	Sat Jun 25 23:52:32 2016
++++ Modules/pyexpat.c	Fri Jul  1 10:46:42 2016
+@@ -267,6 +267,11 @@ call_character_handler(xmlparseobject *self, const XML
                                      noop_character_data_handler);
          return -1;
      }

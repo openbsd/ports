@@ -1,11 +1,11 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.8 2016/05/24 09:57:50 sthen Exp $
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.9 2016/07/03 20:10:33 rpointel Exp $
 
 - test_bsddb and test_bsddb3 are in the list below as they are only available
   on i386 and amd64.
 
---- Lib/test/regrtest.py.orig	Wed Dec 10 16:59:41 2014
-+++ Lib/test/regrtest.py	Sat Dec 13 12:13:40 2014
-@@ -1427,22 +1427,16 @@ _expectations = {
+--- Lib/test/regrtest.py.orig	Sat Jun 25 23:49:31 2016
++++ Lib/test/regrtest.py	Fri Jul  1 10:35:01 2016
+@@ -1465,22 +1465,16 @@ _expectations = {
          """,
      'openbsd3':
          """
@@ -30,7 +30,7 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.8 2016/05/24 09:57:50 sthen Exp $
          """,
      'netbsd3':
          """
-@@ -1469,6 +1463,9 @@ _expectations['freebsd5'] = _expectations['freebsd4']
+@@ -1507,6 +1501,9 @@ _expectations['freebsd5'] = _expectations['freebsd4']
  _expectations['freebsd6'] = _expectations['freebsd4']
  _expectations['freebsd7'] = _expectations['freebsd4']
  _expectations['freebsd8'] = _expectations['freebsd4']
