@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/07/04 07:35:47 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-core->=2,<4
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}
@@ -52,6 +52,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/progress_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/protocol.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/snippet_extractor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/hooks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/invocations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/memoized_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/metadata_filter.rb
