@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/07/04 07:36:10 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
@@ -34,6 +34,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/string_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/with_isolated_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/with_isolated_stderr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/version_checker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/warnings.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
