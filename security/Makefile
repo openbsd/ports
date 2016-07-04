@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2016/07/02 15:59:35 danj Exp $
+# $OpenBSD: Makefile,v 1.430 2016/07/04 21:04:08 awolk Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -287,6 +287,7 @@
      SUBDIR += rdp
      SUBDIR += regripper
      SUBDIR += reop
+     SUBDIR += routersploit
      SUBDIR += ruby-akami
      SUBDIR += ruby-bcrypt,ruby21
      SUBDIR += ruby-bcrypt,ruby22
