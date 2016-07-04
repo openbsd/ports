@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/13 08:25:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/07/04 08:53:10 jasper Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		leatherman
-GH_TAGNAME =		0.7.2
+GH_TAGNAME =		0.7.4
 
 CATEGORIES =		devel
 
