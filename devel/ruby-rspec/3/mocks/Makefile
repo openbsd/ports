@@ -1,7 +1,7 @@
-#  $OpenBSD: Makefile,v 1.10 2016/01/11 07:36:09 jasper Exp $
+#  $OpenBSD: Makefile,v 1.11 2016/07/04 07:35:35 jasper Exp $
 
 COMMENT =		rspec stubbing and mocking
-DISTNAME =		rspec-mocks-3.4.1
+DISTNAME =		rspec-mocks-3.5.0
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-diff-lcs,${MODRUBY_FLAVOR} \

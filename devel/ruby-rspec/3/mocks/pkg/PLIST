@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/07/04 07:35:35 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-mocks->=2,<4
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -40,6 +40,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/message_chain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/message_expectation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/method_double.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/method_reference.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/minitest_integration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/mutate_const.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/object_reference.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/mocks/order_group.rb
