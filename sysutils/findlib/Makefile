@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2016/06/23 19:23:54 krw Exp $
+# $OpenBSD: Makefile,v 1.33 2016/07/04 19:01:55 krw Exp $
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.5.5
+DISTNAME=	findlib-1.6.2
 REVISION=	1
 
 MASTER_SITES=	http://download.camlcity.org/download/
@@ -21,7 +21,7 @@ BUILD_DEPENDS +=	lang/ocaml lang/ocaml-camlp4
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS= -no-custom \
-		-sitelib "/usr/local/lib/ocaml" \
+		-sitelib "${PREFIX}/lib/ocaml" \
 		-config ${SYSCONFDIR}/findlib.conf
 
 USE_GMAKE=	Yes

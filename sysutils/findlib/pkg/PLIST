@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/06/23 19:23:54 krw Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/07/04 19:01:55 krw Exp $
 %%native%%
 @bin bin/ocamlfind
-@bin bin/safe_camlp4
+bin/safe_camlp4
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
 lib/ocaml/bytes/
@@ -18,7 +18,12 @@ lib/ocaml/findlib/Makefile.config
 lib/ocaml/findlib/findlib.cma
 lib/ocaml/findlib/findlib.cmi
 lib/ocaml/findlib/findlib.mli
+lib/ocaml/findlib/findlib_dynload.a
+lib/ocaml/findlib/findlib_dynload.cma
+lib/ocaml/findlib/findlib_dynload.cmxa
 lib/ocaml/findlib/findlib_top.cma
+lib/ocaml/findlib/fl_dynload.cmi
+lib/ocaml/findlib/fl_dynload.mli
 lib/ocaml/findlib/fl_metascanner.cmi
 lib/ocaml/findlib/fl_metascanner.mli
 lib/ocaml/findlib/fl_metatoken.cmi
@@ -37,6 +42,7 @@ lib/ocaml/num-top/num_top_printers.cmi
 lib/ocaml/num/META
 @comment will be installed by devel/ocaml-ocamlbuild
 @comment lib/ocaml/ocamlbuild/META
+lib/ocaml/ocamldoc/META
 lib/ocaml/stdlib/
 lib/ocaml/stdlib/META
 lib/ocaml/str/
