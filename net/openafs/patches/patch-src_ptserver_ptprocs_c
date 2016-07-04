@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_ptserver_ptprocs_c,v 1.1 2016/07/04 07:48:23 jasper Exp $
+
+CVE-2016-2860:
+http://openafs.org/pages/security/OPENAFS-SA-2016-001.txt
+
+--- src/ptserver/ptprocs.c.orig	Thu Jun 30 16:11:09 2016
++++ src/ptserver/ptprocs.c	Thu Jun 30 16:13:42 2016
+@@ -344,13 +344,19 @@ newEntry(call, aname, flag, oid, aid, cid)
+      * automatic id assignment.
+      */
+     code = WhoIsThisWithName(call, tt, cid, cname);
+-    if (code != 2) {		/* 2 specifies that this is a foreign cell request */
+-	if (code)
+-	    ABORT_WITH(tt, PRPERM);
+-	admin = IsAMemberOf(tt, *cid, SYSADMINID);
+-    } else {
+-	admin = ((!restricted && !strcmp(aname, cname))) || IsAMemberOf(tt, *cid, SYSADMINID);
+-	oid = *cid = SYSADMINID;
++    if (code && code != 2)
++    	ABORT_WITH(tt, PRPERM);
++    admin = IsAMemberOf(tt, *cid, SYSADMINID);
++    if (code == 2 /* foreign cell request */) {
++        if (!restricted && (strcmp(aname, cname) == 0)) {
++            /* can't autoregister while providing an owner id */
++            if (oid != 0)
++	        ABORT_WITH(tt, PRPERM);
++
++            admin = 1;
++            oid = SYSADMINID;
++            *cid = SYSADMINID;
++        }
+     }
+     if (!CreateOK(tt, *cid, oid, flag, admin))
+ 	ABORT_WITH(tt, PRPERM);
