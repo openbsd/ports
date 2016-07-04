@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.51 2016/07/04 16:57:46 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2016/07/04 17:38:40 landry Exp $
 
 # XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11
+CXXFLAGS +=	-std=c++11
 
-COMMENT=	SVG vector drawing application
+COMMENT =	SVG vector drawing application
 
-DISTNAME=	inkscape-0.91
-CATEGORIES=	graphics
-REVISION=	9
+DISTNAME =	inkscape-0.91
+CATEGORIES =	graphics
+REVISION =	9
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
-HOMEPAGE=	http://www.inkscape.org/
+HOMEPAGE =	http://www.inkscape.org/
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # GPLv2 and LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16
 WANTLIB += SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
@@ -35,9 +35,9 @@ MODULES=	textproc/intltool \
 		lang/ruby
 
 # c++11
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+MODULES +=	gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	c++
 
 # We are just substituting paths at build time
 MODPY_BUILDDEP =	No
@@ -48,8 +48,9 @@ MODRUBY_BUILDDEP =	No
 # Note that Python is already pulled in indirectly by py-lxml.
 MODRUBY_RUNDEP =	No
 
-BUILD_DEPENDS=	devel/boost
-LIB_DEPENDS=	devel/boehm-gc \
+BUILD_DEPENDS =	devel/boost
+
+LIB_DEPENDS =	devel/boehm-gc \
 		devel/gsl \
 		devel/popt \
 		graphics/ImageMagick \
@@ -61,23 +62,25 @@ LIB_DEPENDS=	devel/boehm-gc \
 		textproc/gtkspell \
 		textproc/libxslt \
 		x11/gtk2mm>=2.24.4
-RUN_DEPENDS=	devel/desktop-file-utils \
+
+RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-lxml \
 		x11/gtk+3,-guic
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-#AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS=	--without-gnome-vfs
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
+USE_GMAKE =	Yes
+CONFIGURE_STYLE = gnu
+AUTOCONF_VERSION = 2.69
+
+CONFIGURE_ARGS =	-without-gnome-vfs
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-NO_TEST=	Yes
+NO_TEST =	Yes
 
 # As discussed on the ports mailing list, remove internationalised manual
 # pages, as our mandoc implementation does not yet deal with them properly.
-RM_MANS=	man/el man/fr man/ja man/man1/inkscape.*.1 \
+RM_MANS =	man/el man/fr man/ja man/man1/inkscape.*.1 \
 		man/sk man/zh_TW
 
 SUBST_VARS +=	RUBY MODRUBY_REV
