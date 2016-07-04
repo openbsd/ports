@@ -1,0 +1,92 @@
+$OpenBSD: patch-src_2geom_line_cpp,v 1.1 2016/07/04 16:57:46 landry Exp $
+
+null check for boost::optional<Geom::Crossing> and return empty OptCrossing
+
+--- src/2geom/line.cpp.orig	Sun Nov 30 19:45:32 2014
++++ src/2geom/line.cpp	Sat Jul  2 18:54:28 2016
+@@ -246,12 +246,16 @@ OptCrossing intersection_impl( LineSegment const& ls1,
+     if ( are_near(r2.origin(), ls1) )
+     {
+         bool eqvs = (dot(direction, r2.versor()) > 0);
+-        if ( are_near(ls1.initialPoint(), r2.origin()) && !eqvs  )
++        if ( are_near(ls1.initialPoint(), r2.origin())
++             && !eqvs
++             && crossing )
+         {
+             crossing->ta = crossing->tb = 0;
+             return crossing;
+         }
+-        else if ( are_near(ls1.finalPoint(), r2.origin()) && eqvs )
++        else if ( are_near(ls1.finalPoint(), r2.origin())
++                  && eqvs
++                  && crossing )
+         {
+             if (i == 0)
+             {
+@@ -300,7 +304,8 @@ OptCrossing intersection(Line const& l1, Line const& l
+     }
+     else
+     {
+-        return crossing;
++        OptCrossing no_crossing;
++        return no_crossing;
+     }
+ }
+ 
+@@ -328,7 +333,8 @@ OptCrossing intersection(Ray const& r1, Ray const& r2)
+     if ( are_near(r1.origin(), r2) || are_near(r2.origin(), r1) )
+     {
+         if ( are_near(r1.origin(), r2.origin())
+-             && !are_near(r1.versor(), r2.versor()) )
++             && !are_near(r1.versor(), r2.versor())
++             && crossing)
+         {
+             crossing->ta = crossing->tb = 0;
+             return crossing;
+@@ -368,19 +374,24 @@ OptCrossing intersection( LineSegment const& ls1, Line
+         }
+         else
+         {
+-            return crossing;
++            OptCrossing no_crossing;
++            return no_crossing;
+         }
+     }
+ 
+     bool eqvs = (dot(direction1, direction2) > 0);
+     if ( are_near(ls2.initialPoint(), ls1) )
+     {
+-        if ( are_near(ls1.initialPoint(), ls2.initialPoint()) && !eqvs )
++        if ( are_near(ls1.initialPoint(), ls2.initialPoint())
++             && !eqvs
++             && crossing )
+         {
+             crossing->ta = crossing->tb = 0;
+             return crossing;
+         }
+-        else if ( are_near(ls1.finalPoint(), ls2.initialPoint()) && eqvs )
++        else if ( are_near(ls1.finalPoint(), ls2.initialPoint())
++                  && eqvs
++                  && crossing )
+         {
+             crossing->ta = 1;
+             crossing->tb = 0;
+@@ -393,12 +404,16 @@ OptCrossing intersection( LineSegment const& ls1, Line
+     }
+     else if ( are_near(ls2.finalPoint(), ls1) )
+     {
+-        if ( are_near(ls1.finalPoint(), ls2.finalPoint()) && !eqvs )
++        if ( are_near(ls1.finalPoint(), ls2.finalPoint())
++             && !eqvs
++             && crossing )
+         {
+             crossing->ta = crossing->tb = 1;
+             return crossing;
+         }
+-        else if ( are_near(ls1.initialPoint(), ls2.finalPoint()) && eqvs )
++        else if ( are_near(ls1.initialPoint(), ls2.finalPoint())
++                  && eqvs
++                  && crossing )
+         {
+             crossing->ta = 0;
+             crossing->tb = 1;
