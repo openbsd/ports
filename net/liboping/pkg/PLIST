@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/01 08:18:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/07/05 09:07:43 landry Exp $
 @mode 4555
 @bin bin/noping
 @bin bin/oping
@@ -9,8 +9,8 @@ lib/liboping.la
 @lib lib/liboping.so.${LIBoping_VERSION}
 lib/pkgconfig/liboping.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Oping.pm
