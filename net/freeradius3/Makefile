@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/29 16:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2016/07/05 12:04:41 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,7 +11,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.12pre20160627
+V=		3.0.12pre20160630
 DISTNAME=	freeradius-server-$V
 #EXTRACT_SUFX=	.tar.bz2
 
@@ -23,7 +23,6 @@ PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
-REVISION =	0
 
 CATEGORIES=	net security
 
@@ -33,16 +32,14 @@ CATEGORIES=	net security
 #		ftp://ftp.freeradius.org/pub/radius/old/
 GH_ACCOUNT=     FreeRADIUS
 GH_PROJECT=     freeradius-server
-GH_COMMIT=      63021dab84322eb0f899785f83fc4f8f85af763f
+GH_COMMIT=      f982311f75b704c3ed1581c4fca69dd0ae7fd82d
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS=  ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/autoconf-archive \
 		devel/libtool
 post-patch:
 	cd ${WRKSRC}; \
-	cp ${LOCALBASE}/share/aclocal/ax_{prog_ruby_version,ruby_devel}.m4 m4; \
 	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 ####

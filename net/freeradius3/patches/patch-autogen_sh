@@ -1,12 +1,12 @@
-$OpenBSD: patch-autogen_sh,v 1.1 2016/06/27 20:35:31 sthen Exp $
---- autogen.sh.orig	Mon Jun 27 10:29:45 2016
-+++ autogen.sh	Mon Jun 27 13:40:34 2016
+$OpenBSD: patch-autogen_sh,v 1.2 2016/07/05 12:04:41 sthen Exp $
+--- autogen.sh.orig	Mon Jun 27 10:31:45 2016
++++ autogen.sh	Tue Jul  5 12:53:54 2016
 @@ -16,6 +16,6 @@ mysubdirs=`echo $mysubdirs`
  for F in $mysubdirs
  do
  	echo "Configuring in $F..."
 -	(cd $F && grep "^AC_CONFIG_HEADER" configure.ac > /dev/null || exit 0; autoheader -I$parentdir)
 -	(cd $F && autoconf -I$parentdir)
-+	(cd $F && grep "^AC_CONFIG_HEADER" configure.ac > /dev/null || exit 0; autoheader -I$parentdir -I$parentdir/m4)
-+	(cd $F && autoconf -I$parentdir -I$parentdir/m4)
++	(cd $F && grep "^AC_CONFIG_HEADER" configure.ac > /dev/null || exit 0; autoheader -Im4 -I$parentdir -I$parentdir/m4)
++	(cd $F && autoconf -Im4 -I$parentdir -I$parentdir/m4)
  done
