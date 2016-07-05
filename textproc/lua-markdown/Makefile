@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/23 22:23:18 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/07/05 17:00:21 jasper Exp $
 
 COMMENT =	Markdown markup system implementation in pure Lua
 
 V =		0.33
 PKGNAME =	lua-markdown-${V}
+REVISION =	0
 
 GH_ACCOUNT =	mpeterv
 GH_PROJECT =	markdown

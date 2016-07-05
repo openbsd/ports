@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/09 15:39:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.16 2016/07/05 17:00:21 jasper Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 
@@ -9,6 +9,7 @@ VERSION=	2015.01.24
 GH_ACCOUNT=	mason-larobina
 GH_COMMIT=	16f8b89eb7cbcb3ff3a22eb06eb677e46430b1cb
 GH_PROJECT=	luakit
+REVISION=	0
 
 EPOCH=		0
 
@@ -37,7 +38,8 @@ MODULES = lang/lua \
 
 BUILD_DEPENDS=	devel/help2man
 
-RUN_DEPENDS=	devel/luafs
+RUN_DEPENDS=	devel/luafs \
+		textproc/lua-markdown
 
 LIB_DEPENDS=	lang/luajit \
 		devel/libunique \
@@ -73,6 +75,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/extras/luakit.png ${PIXDIR}
 	${INSTALL_MAN} ${WRKSRC}/luakit.1 ${PREFIX}/man/man1/luakit.1
 	cp -R ${WRKSRC}/lib/*.lua ${MODLUA_DATADIR}
+	# Already provided by dependency
+	rm ${MODLUA_DATADIR}/markdown.lua
 	cp -R ${WRKSRC}/lib/lousy ${MODLUA_DATADIR}
 	cp -R ${WRKSRC}/lib/*.js ${JQDIR}
 	cp -R ${WRKSRC}/config/*.lua ${PREFIX}/share/examples/luakit/

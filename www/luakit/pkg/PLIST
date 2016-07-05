@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/28 23:43:00 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/07/05 17:00:21 jasper Exp $
 @bin bin/luakit
 @man man/man1/luakit.1
 share/doc/luakit/
@@ -54,7 +54,6 @@ share/lua/${MODLUA_VERSION}/lousy/widget/
 share/lua/${MODLUA_VERSION}/lousy/widget/init.lua
 share/lua/${MODLUA_VERSION}/lousy/widget/menu.lua
 share/lua/${MODLUA_VERSION}/lousy/widget/tablist.lua
-share/lua/${MODLUA_VERSION}/markdown.lua
 share/lua/${MODLUA_VERSION}/noscript.lua
 share/lua/${MODLUA_VERSION}/proxy.lua
 share/lua/${MODLUA_VERSION}/quickmarks.lua
