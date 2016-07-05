@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.4 2016/07/05 16:24:46 krw Exp $
 
 COMMENT =	declarative definition of command line interfaces
 CATEGORIES =	devel
 
-V =		0.9.7
+V =		0.9.8
 NAME =		cmdliner
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://erratique.ch/software/${NAME}/releases/
-REVISION = 	0
 
 HOMEPAGE =	http://erratique.ch/software/${NAME}
 
