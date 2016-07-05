@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2016/04/30 09:06:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2016/07/05 07:22:24 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	3.2.15
+MODPY_EGG_VERSION =	3.2.16
 
 COMMENT =		server of the Tryton application platform
 
@@ -30,7 +30,7 @@ MODPOSTGRESQL_TEST_CMD = ${MODPY_TEST_TARGET}
 MAKE_ENV =		DB_NAME=trytond_test
 
 pre-configure:
-	perl -pi -e 's,/var/lib,/var/db,,' ${WRKSRC}/trytond/config.py
+	sed -i 's,/var/lib,/var/db,' ${WRKSRC}/trytond/config.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trytond
