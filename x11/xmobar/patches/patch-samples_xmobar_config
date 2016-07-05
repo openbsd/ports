@@ -1,6 +1,19 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.9 2015/03/18 15:32:02 dcoppa Exp $
---- samples/xmobar.config.orig	Sun Mar  8 08:08:58 2015
-+++ samples/xmobar.config	Wed Mar 18 10:19:16 2015
+$OpenBSD: patch-samples_xmobar_config,v 1.10 2016/07/05 10:08:07 dcoppa Exp $
+
+commit 24867808e017e23dee1273956c434cbeddc7f5b9
+Author: jao <jao@gnu.org>
+Date:   Mon May 11 17:32:21 2015 +0200
+
+Typo: addtionalFonts -> additionalFonts
+
+commit 986aaad363ceb3fb946929648b7e496f03491f1a
+Author: Ben Boeckel <mathstuf@gmail.com>
+Date:   Sat Sep 26 15:12:52 2015 -0400
+
+Fix whitespace
+
+--- samples/xmobar.config.orig	Tue Apr 14 19:08:19 2015
++++ samples/xmobar.config	Tue Jul  5 11:49:52 2016
 @@ -1,5 +1,5 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 -       , addtionalFonts = []
@@ -23,7 +36,8 @@ $OpenBSD: patch-samples_xmobar_config,v 1.9 2015/03/18 15:32:02 dcoppa Exp $
 -                    , Run Swap [] 10
 +                    , Run Battery ["-t","AC: <status> Batt: <left> <minleft>"] 10
                      , Run Com "uname" ["-s","-r"] "" 36000
-     		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+-    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
++                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                      ]
         , sepChar = "%"
         , alignSep = "}{"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmobar_cabal,v 1.15 2016/01/26 02:11:26 abieber Exp $
---- xmobar.cabal.orig	Tue Apr 14 11:08:19 2015
-+++ xmobar.cabal	Tue Dec  8 16:43:17 2015
+$OpenBSD: patch-xmobar_cabal,v 1.16 2016/07/05 10:08:07 dcoppa Exp $
+--- xmobar.cabal.orig	Tue Apr 14 19:08:19 2015
++++ xmobar.cabal	Tue Jul  5 11:49:38 2016
 @@ -93,10 +93,12 @@ executable xmobar
        Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
@@ -20,6 +20,6 @@ $OpenBSD: patch-xmobar_cabal,v 1.15 2016/01/26 02:11:26 abieber Exp $
         other-modules: Plugins.Mail, Plugins.MBox
         cpp-options: -DINOTIFY
 +       ld-options: -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
-
+ 
      if flag(with_iwlib) || flag(all_extensions)
         extra-libraries: iw
