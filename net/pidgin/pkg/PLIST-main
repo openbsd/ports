@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2016/01/03 09:06:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2016/07/05 07:13:59 ajacoutot Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -297,6 +297,7 @@ share/pixmaps/pidgin/emblems/16/game.png
 share/pixmaps/pidgin/emblems/16/half-operator.png
 share/pixmaps/pidgin/emblems/16/hiptop.png
 share/pixmaps/pidgin/emblems/16/male.png
+share/pixmaps/pidgin/emblems/16/mobile.png
 share/pixmaps/pidgin/emblems/16/not-authorized.png
 share/pixmaps/pidgin/emblems/16/operator.png
 share/pixmaps/pidgin/emblems/16/secure.png

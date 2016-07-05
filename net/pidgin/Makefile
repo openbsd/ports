@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.130 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.131 2016/07/05 07:13:59 ajacoutot Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.12
+VERSION=	2.11.0
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -16,14 +16,11 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-finch=	0
-REVISION-libpurple=0
-REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
-		purple		6.2 \
-		purple-client	6.2 \
+		purple		6.3 \
+		purple-client	6.3 \
 		gnt		6.2 \
 		ymsg		0.0
 

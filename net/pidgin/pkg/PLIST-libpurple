@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.23 2016/01/03 09:06:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.24 2016/07/05 07:13:59 ajacoutot Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -123,35 +123,9 @@ share/aclocal/purple.m4
 share/dbus-1/services/purple.service
 share/purple/
 share/purple/ca-certs/
-share/purple/ca-certs/AOL_Member_CA.pem
-share/purple/ca-certs/AddTrust_External_Root.pem
-share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
-share/purple/ca-certs/Baltimore_CyberTrust_Root.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
-share/purple/ca-certs/Certum_Root_CA.pem
-share/purple/ca-certs/Certum_Trusted_Network_CA.pem
-share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem
-share/purple/ca-certs/DigiCertHighAssuranceCA-3.pem
-share/purple/ca-certs/DigiCertHighAssuranceEVRootCA.pem
-share/purple/ca-certs/Entrust.net_2048.pem
-share/purple/ca-certs/Entrust.net_Secure_Server_CA.pem
-share/purple/ca-certs/Equifax_Secure_CA.pem
-share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
-share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
-share/purple/ca-certs/Go_Daddy_Class_2_CA.pem
-share/purple/ca-certs/Microsoft_Internet_Authority_2010.pem
-share/purple/ca-certs/Microsoft_Secure_Server_Authority_2010.pem
-share/purple/ca-certs/StartCom_Certification_Authority.pem
-share/purple/ca-certs/Thawte_Premium_Server_CA.pem
-share/purple/ca-certs/Thawte_Primary_Root_CA.pem
-share/purple/ca-certs/ValiCert_Class_2_VA.pem
-share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
-share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G2.pem
-share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5-2.pem
-share/purple/ca-certs/VeriSign_Class_3_Primary_CA-G5.pem
-share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
-share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/purple/ca-certs/mozilla.pem
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/purple.schemas
