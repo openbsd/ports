@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/02/25 00:50:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/07/05 13:24:07 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -415,22 +415,6 @@ lib/python${MODPY_VERSION}/site-packages/trac/templates/progress_bar_grouped.htm
 lib/python${MODPY_VERSION}/site-packages/trac/templates/theme.html
 lib/python${MODPY_VERSION}/site-packages/trac/test.py
 lib/python${MODPY_VERSION}/site-packages/trac/test.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/better_twill.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/better_twill.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/compat.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/compat.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/svntestenv.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/svntestenv.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testcases.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testcases.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testenv.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testenv.pyc
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/tester.py
-lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/tester.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trac/ticket/__init__.pyc
