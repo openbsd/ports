@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2016/04/28 18:22:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2016/07/05 14:32:16 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @pkgpath www/apache-httpd-openbsd
 @bin bin/ab
@@ -147,6 +147,7 @@ lib/apache2/mod_proxy_express.so
 lib/apache2/mod_proxy_fcgi.so
 lib/apache2/mod_proxy_fdpass.so
 lib/apache2/mod_proxy_ftp.so
+lib/apache2/mod_proxy_hcheck.so
 lib/apache2/mod_proxy_html.so
 lib/apache2/mod_proxy_http.so
 lib/apache2/mod_proxy_scgi.so
@@ -304,6 +305,7 @@ share/doc/apache2/expr.html.fr
 share/doc/apache2/faq/
 share/doc/apache2/faq/index.html
 share/doc/apache2/faq/index.html.en
+share/doc/apache2/faq/index.html.es
 share/doc/apache2/faq/index.html.fr
 share/doc/apache2/faq/index.html.tr.utf8
 share/doc/apache2/faq/index.html.zh-cn.utf8
@@ -354,6 +356,8 @@ share/doc/apache2/howto/htaccess.html.fr
 share/doc/apache2/howto/htaccess.html.ja.utf8
 share/doc/apache2/howto/htaccess.html.ko.euc-kr
 share/doc/apache2/howto/htaccess.html.pt-br
+share/doc/apache2/howto/http2.html
+share/doc/apache2/howto/http2.html.en
 share/doc/apache2/howto/index.html
 share/doc/apache2/howto/index.html.en
 share/doc/apache2/howto/index.html.fr
@@ -837,12 +841,16 @@ share/doc/apache2/mod/mod_proxy_fdpass.html.fr
 share/doc/apache2/mod/mod_proxy_ftp.html
 share/doc/apache2/mod/mod_proxy_ftp.html.en
 share/doc/apache2/mod/mod_proxy_ftp.html.fr
+share/doc/apache2/mod/mod_proxy_hcheck.html
+share/doc/apache2/mod/mod_proxy_hcheck.html.en
 share/doc/apache2/mod/mod_proxy_html.html
 share/doc/apache2/mod/mod_proxy_html.html.en
 share/doc/apache2/mod/mod_proxy_html.html.fr
 share/doc/apache2/mod/mod_proxy_http.html
 share/doc/apache2/mod/mod_proxy_http.html.en
 share/doc/apache2/mod/mod_proxy_http.html.fr
+share/doc/apache2/mod/mod_proxy_http2.html
+share/doc/apache2/mod/mod_proxy_http2.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html
 share/doc/apache2/mod/mod_proxy_scgi.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html.fr
