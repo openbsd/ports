@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2016/07/05 14:32:12 sthen Exp $
 
 COMMENT=		AFP file and print services for IP networks
 
 V=			3.1.8
-REVISION=		1
+REVISION=		2
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC =               netatalk->=3,<4
