@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/01 22:36:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/07/06 21:08:57 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash-ROM programmer for BIOS etc
 
 DISTNAME=	flashrom-0.9.9
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	sysutils
@@ -16,7 +17,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ftdi pthread usb z
+WANTLIB=	c ftdi usb-1.0 usb z
 
 MASTER_SITES=	http://download.flashrom.org/releases/
 
