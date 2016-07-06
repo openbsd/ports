@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/07/06 10:29:51 jasper Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
 DISTNAME=	tcpreplay-4.0.5
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://tcpreplay.appneta.com/	
 

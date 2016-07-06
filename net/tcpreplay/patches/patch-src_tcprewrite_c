@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tcprewrite_c,v 1.1 2016/07/06 10:29:51 jasper Exp $
+
+CVE-2016-6160
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=829350
+
+--- src/tcprewrite.c.orig	Fri May  9 19:28:13 2014
++++ src/tcprewrite.c	Wed Jul  6 10:54:06 2016
+@@ -250,6 +250,8 @@ rewrite_packets(tcpedit_t *tcpedit, pcap_t *pin, pcap_
+         packetnum++;
+         dbgx(2, "packet " COUNTER_SPEC " caplen %d", packetnum, pkthdr.caplen);
+ 
++        if (pkthdr.caplen > MAXPACKET)
++            errx(-1, "Frame too big, caplen %d exceeds %d", pkthdr.caplen, MAXPACKET);
+         /* 
+          * copy over the packet so we can pad it out if necessary and
+          * because pcap_next() returns a const ptr

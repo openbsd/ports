@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_defines_h_in,v 1.1 2016/07/06 10:29:51 jasper Exp $
+
+CVE-2016-6160
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=829350
+
+--- src/defines.h.in.orig	Fri May  9 19:28:13 2014
++++ src/defines.h.in	Wed Jul  6 10:54:28 2016
+@@ -145,7 +145,7 @@ typedef struct tcpr_speed_s {
+ #define DEFAULT_MTU 1500        /* Max Transmission Unit of standard ethernet
+                                  * don't forget *frames* are MTU + L2 header! */
+ 
+-#define MAXPACKET 65535         /* was 16436 linux loopback, but maybe something is bigger then
++#define MAXPACKET 65549         /* was 16436 linux loopback, but maybe something is bigger then
+                                    linux loopback */
+ 
+ #define MAX_SNAPLEN 65535       /* tell libpcap to capture the entire packet */
