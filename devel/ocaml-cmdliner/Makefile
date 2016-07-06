@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/07/05 16:24:46 krw Exp $
+# $OpenBSD: Makefile,v 1.5 2016/07/06 16:11:52 krw Exp $
 
 COMMENT =	declarative definition of command line interfaces
 CATEGORIES =	devel
 
+# When V changes, remember to bump REVISION for build dependents like opam!
 V =		0.9.8
 NAME =		cmdliner
 DISTNAME =	${NAME}-${V}
