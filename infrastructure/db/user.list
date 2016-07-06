@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.277 2016/06/29 23:15:06 sthen Exp $
+$OpenBSD: user.list,v 1.278 2016/07/06 09:40:42 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -30,9 +30,9 @@ id  user		group		port options
 519 _news				news/leafnode
 520 _majordomo		_majordomo	mail/majordomo
 521 _exim		_exim		mail/exim
-522 _xcept		_xcept		comms/xcept
+#522 _xcept		_xcept		comms/xcept
 523 _ffproxy		_ffproxy	www/ffproxy
-524			_mail		mail/openwebmail
+#524			_mail		mail/openwebmail
 525 _quagga		_quagga		net/quagga
 526 _tomcat		_tomcat		www/tomcat
 527 _milter-regex	_milter-regex	mail/milter-regex
@@ -42,7 +42,7 @@ id  user		group		port options
 531 _cnupm		_cnupm		net/cnupm
 532 _milter-spamd	_milter-spamd	mail/milter-spamd
 533 _jabberd		_jabberd	net/jabberd
-534 _zope		_zope		www/zope
+#534 _zope		_zope		www/zope
 535 _symon		_symon		sysutils/symon
 536 _nostromo		_nostromo	www/nostromo
 537 _maradns		_maradns	net/maradns
@@ -72,8 +72,8 @@ id  user		group		port options
 561 _rbldns		_rbldns		net/rbldnsd
 562 _smokeping		_smokeping	net/smokeping
 563 _postgrey		_postgrey	mail/postgrey
-564 _prelude		_prelude	security/prelude
-565 _pfflowd		_pfflowd	net/pfflowd
+#564 _prelude		_prelude	security/prelude
+#565 _pfflowd		_pfflowd	net/pfflowd
 566 _tor		_tor		net/tor
 #567 _dk-milter		_dk-milter	mail/dk-milter
 568 _milter-greylist			mail/milter-greylist
@@ -97,23 +97,23 @@ id  user		group		port options
 586 _gnugk		_gnugk		net/gnugk
 587 _darkstat		_darkstat	net/darkstat
 588 _dansguardian	_dansguardian	www/dansguardian
-589 _sdpd		_sdpd		net/bluetooth-tools
+#589 _sdpd		_sdpd		net/bluetooth-tools
 590 _smsd		_smsd		comms/smstools
 591 _bacula		_bacula		sysutils/bacula
 592 _imapproxy		_imapproxy	mail/imapproxy
 #593 _nginx		_nginx		www/nginx
 594 _ejabberd		_ejabberd	net/ejabberd
 595 _poppassd		_poppassd	sysutils/openpoppassd
-596 _heartbeat		_heartbeat	sysutils/heartbeat
+#596 _heartbeat		_heartbeat	sysutils/heartbeat
 #597			_kqemu		emulators/kqemu
 598 _iodine		_iodine		net/iodine
 599 _bacula-sd				sysutils/bacula
-600 _ntlmaps		_ntlmaps	www/ntlmaps
-601 _unbound		_unbound	net/unbound
+#600 _ntlmaps		_ntlmaps	www/ntlmaps
+#601 _unbound		_unbound	net/unbound
 602 _havp		_havp		www/havp
 603 _argus		_argus		net/argus
 604 _haproxy		_haproxy	net/haproxy
-605 _hudson		_hudson		devel/hudson
+#605 _hudson		_hudson		devel/hudson
 606 _ladvd		_ladvd		net/ladvd
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
 608 _cherokee		_cherokee	www/cherokee
@@ -122,7 +122,7 @@ id  user		group		port options
 611 _icecast		_icecast	net/icecast
 612 _ipguard		_ipguard	security/ipguard
 613 _rancid		_rancid		sysutils/rancid
-614 _openct		_openct		security/openct
+#614 _openct		_openct		security/openct
 615 _iftop		_iftop		net/iftop
 616 _ircd-hybrid	_ircd-hybrid	net/ircd-hybrid
 617 _tinyproxy		_tinyproxy	www/tinyproxy
@@ -165,13 +165,13 @@ id  user		group		port options
 654 _spectrum		_spectrum	net/spectrum
 655 _minbif		_minbif		net/minbif
 656 _mediatomb		_mediatomb	multimedia/mediatomb
-657 _ircd-seven		_ircd-seven	net/ircd-seven
+#657 _ircd-seven		_ircd-seven	net/ircd-seven
 658 _vnstat		_vnstat		net/vnstat
 659 _sogo		_sogo		www/sogo
 660 _srcpd		_srcpd		misc/srcpd
 661 _aox		_aox		mail/archiveopteryx
 662 _transmission	_transmission	net/transmission
-663 _tproxy		_tproxy		www/transproxy
+#663 _tproxy		_tproxy		www/transproxy
 664 _mdnsd		_mdnsd		net/openmdns
 665 _hgd		_hgd		audio/hgd
 666 _dovenull		_dovenull	mail/dovecot
@@ -197,7 +197,7 @@ id  user		group		port options
 686 _redis		_redis		databases/redis
 687 _lcdproc		_lcdproc	comms/lcdproc
 688 _dnscrypt-proxy	_dnscrypt-proxy	net/dnscrypt-proxy
-689 _hoogle		_hoogle		devel/hs-hoogle
+#689 _hoogle		_hoogle		devel/hs-hoogle
 690 _pgpool		_pgpool		databases/pgpool
 691 _natpmpd		_natpmpd	net/natpmpd
 692 _cntlm		_cntlm		www/cntlm
@@ -260,7 +260,7 @@ id  user		group		port options
 749 _ocserv		_ocserv		net/ocserv
 750 _ddclient		_ddclient	net/ddclient
 751 _knot		_knot		net/knot
-752 _logstash		_logstash	sysutils/logstash/logstash
+752 _logstash		_logstash	sysutils/logstash
 753 _mosquitto		_mosquitto	net/mosquitto
 754 _geomyidae		_geomyidae	net/geomyidae
 755 _librenms		_librenms	net/librenms
@@ -282,7 +282,7 @@ id  user		group		port options
 771 _serf		_serf		sysutils/serf
 772 _vault		_vault		security/vault
 773 _consul		_consul		sysutils/consul
-774 _facette		_facette	sysutils/facette
+#774 _facette		_facette	sysutils/facette
 #775 _letskencrypt	_letskencrypt	security/letskencrypt
 776 _ioq3		_ioq3		games/ioquake3
 777 _svnserve		_svnserve	devel/subversion
