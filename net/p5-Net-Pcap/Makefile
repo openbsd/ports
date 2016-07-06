@@ -1,14 +1,15 @@
-#   $OpenBSD: Makefile,v 1.28 2016/04/15 20:09:31 sthen Exp $
+#   $OpenBSD: Makefile,v 1.29 2016/07/06 21:06:21 sthen Exp $
 
 COMMENT=	module for pcap access
 
 MODULES=	cpan
 DISTNAME=	Net-Pcap-0.17
+REVISION=	0
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pcap perl
+WANTLIB += c m pcap perl pthread
 
 RUN_DEPENDS=		net/p5-IO-Interface
 

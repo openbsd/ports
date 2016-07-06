@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/14 22:21:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/07/06 21:06:21 sthen Exp $
 
 COMMENT =	coroutines for perl
 
 MODULES =	cpan
 DISTNAME =	Coro-6.49
+REVISION =	0
 CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c perl
+WANTLIB += c perl pthread
 
 BUILD_DEPENDS = ${RUN_DEPENDS} \
 		devel/p5-Canary-Stability
