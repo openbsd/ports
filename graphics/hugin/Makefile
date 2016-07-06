@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.46 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2016/07/06 21:25:23 sthen Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
-COMMENT =		panorama image stitcher
+COMMENT =	panorama image stitcher
 
-DISTNAME =		hugin-2014.0.0
-EXTRACT_SUFX =		.tar.bz2
+DISTNAME =	hugin-2014.0.0
+REVISION =	0
+EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
-PKGNAME =		${DISTNAME:S/_//:L}
-WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
+PKGNAME =	${DISTNAME:S/_//:L}
+WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS +=  celeste                   2.0
 SHARED_LIBS +=  flann_cpp                 2.0
@@ -22,19 +23,19 @@ SHARED_LIBS +=  localfeatures             2.0
 SHARED_LIBS +=  makefilelib               2.0
 SHARED_LIBS +=  hugin_python_interface    1.0
 
-CATEGORIES =		graphics x11
+CATEGORIES =	graphics x11
 
-HOMEPAGE =		http://hugin.sourceforge.net/
+HOMEPAGE =	http://hugin.sourceforge.net/
 
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
 WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread Xi Xmu
-WANTLIB += boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_regex-mt boost_signals-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_chrono-mt
+WANTLIB += boost_iostreams-mt boost_regex-mt boost_atomic-mt
 WANTLIB += boost_system-mt boost_thread-mt c exiv2 glut>=4.1
 WANTLIB += jpeg lensfun m pano13>=3.0 png pthread stdc++ tiff
 WANTLIB += wx_base>=3 wx_base_net>=3 wx_base_xml>=3
