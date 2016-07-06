@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/01/23 22:26:47 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/07/06 19:56:36 ajacoutot Exp $
 @bin bin/goaccess
 @man man/man1/goaccess.1
-share/goaccess/
-share/goaccess/goaccess.conf
+share/examples/goaccess/
+share/examples/goaccess/goaccess.conf
 @sample ${SYSCONFDIR}/goaccess.conf

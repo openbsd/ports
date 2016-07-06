@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/10 08:40:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2016/07/06 19:56:36 ajacoutot Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-0.9.8
+DISTNAME =		goaccess-1.0
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -21,23 +21,18 @@ MASTER_SITES =		http://tar.goaccess.io/
 LIB_DEPENDS =		databases/tokyocabinet \
 			net/GeoIP
 
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION = 	2.69
-CONFIGURE_ARGS +=	--enable-geoip \
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-geoip \
 			--enable-utf8 \
 			--enable-tcb=btree
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-build:
-	@perl -pi -e s,ncursesw/curses.h,curses.h, ${WRKSRC}/src/*.[ch]
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/goaccess ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/goaccess.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/goaccess/
-	${INSTALL_DATA} ${WRKSRC}/config/goaccess.conf ${PREFIX}/share/goaccess/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/goaccess/
+	${INSTALL_DATA} ${WRKSRC}/config/goaccess.conf ${PREFIX}/share/examples/goaccess/
 
 .include <bsd.port.mk>
