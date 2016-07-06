@@ -1,6 +1,5 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.30 2016/05/24 07:53:23 ajacoutot Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Fri Feb 12 17:51:41 2016
-+++ tools/clang/lib/Driver/Tools.cpp	Tue May 17 14:45:22 2016
+--- tools/clang/lib/Driver/Tools.cpp.orig	Fri Feb 12 23:51:41 2016
++++ tools/clang/lib/Driver/Tools.cpp	Sun Jun 26 20:24:44 2016
 @@ -78,7 +78,7 @@ static const char *getSparcAsmModeForCPU(StringRef Nam
            .Case("niagara2", "-Av9b")
            .Case("niagara3", "-Av9d")
@@ -10,7 +9,18 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.30 2016/05/24 07:53:23 ajac
    } else {
      return llvm::StringSwitch<const char *>(Name)
            .Case("v8", "-Av8")
-@@ -7611,15 +7611,17 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -7600,6 +7600,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+       if (Args.hasArg(options::OPT_pg))
+         CmdArgs.push_back(
+             Args.MakeArgString(getToolChain().GetFilePath("gcrt0.o")));
++      else if (Args.hasArg(options::OPT_static) &&
++               !Args.hasArg(options::OPT_nopie))
++        CmdArgs.push_back(
++            Args.MakeArgString(getToolChain().GetFilePath("rcrt0.o")));
+       else
+         CmdArgs.push_back(
+             Args.MakeArgString(getToolChain().GetFilePath("crt0.o")));
+@@ -7611,15 +7615,17 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      }
    }
  
