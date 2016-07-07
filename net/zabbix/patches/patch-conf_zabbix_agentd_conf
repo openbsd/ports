@@ -1,15 +1,15 @@
-$OpenBSD: patch-conf_zabbix_agentd_conf,v 1.1 2012/10/10 22:04:57 robert Exp $
---- conf/zabbix_agentd.conf.orig	Wed Oct 10 19:55:23 2012
-+++ conf/zabbix_agentd.conf	Wed Oct 10 19:55:43 2012
+$OpenBSD: patch-conf_zabbix_agentd_conf,v 1.2 2016/07/07 18:47:33 robert Exp $
+--- conf/zabbix_agentd.conf.orig	Wed May 18 14:59:35 2016
++++ conf/zabbix_agentd.conf	Fri Jun 24 16:09:28 2016
 @@ -9,6 +9,7 @@
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_agentd.pid
 +PidFile=/var/run/zabbix/zabbix_agentd.pid
  
- ### Option: LogFile
- #	Name of log file.
-@@ -18,7 +19,7 @@
+ ### Option: LogType
+ #	Specifies where log messages are written to:
+@@ -27,7 +28,7 @@
  # Default:
  # LogFile=
  

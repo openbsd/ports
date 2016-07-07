@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.17 2015/09/01 19:40:18 robert Exp $
---- configure.orig	Tue Sep  1 13:13:11 2015
-+++ configure	Tue Sep  1 13:13:45 2015
-@@ -9146,7 +9146,7 @@ $as_echo "yes" >&6; }
+$OpenBSD: patch-configure,v 1.18 2016/07/07 18:47:33 robert Exp $
+--- configure.orig	Wed May 18 15:08:43 2016
++++ configure	Fri Jun 24 16:09:28 2016
+@@ -9202,7 +9202,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.17 2015/09/01 19:40:18 robert Exp $
  
  fi
         else
-@@ -9156,7 +9156,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9212,7 +9212,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_zabbix_proxy_proxy_c,v 1.5 2015/04/03 21:06:20 robert Exp $
---- src/zabbix_proxy/proxy.c.orig	Mon Feb 23 13:28:13 2015
-+++ src/zabbix_proxy/proxy.c	Fri Apr  3 22:58:55 2015
-@@ -691,7 +691,7 @@ int	main(int argc, char **argv)
- 	}
+$OpenBSD: patch-src_zabbix_proxy_proxy_c,v 1.6 2016/07/07 18:47:33 robert Exp $
+--- src/zabbix_proxy/proxy.c.orig	Fri Jun 24 16:13:38 2016
++++ src/zabbix_proxy/proxy.c	Fri Jun 24 16:13:46 2016
+@@ -55,7 +55,7 @@
+ #include "setproctitle.h"
+ #include "../libs/zbxcrypto/tls.h"
  
- 	if (NULL == CONFIG_FILE)
--		CONFIG_FILE = zbx_strdup(CONFIG_FILE, SYSCONFDIR "/zabbix_proxy.conf");
-+		CONFIG_FILE = zbx_strdup(CONFIG_FILE, SYSCONFDIR "/zabbix/zabbix_proxy.conf");
+-#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix_proxy.conf"
++#define DEFAULT_CONFIG_FILE	SYSCONFDIR "/zabbix/zabbix_proxy.conf"
  
- 	/* required for simple checks */
- 	init_metrics();
+ const char	*progname = NULL;
+ const char	title_message[] = "zabbix_proxy";

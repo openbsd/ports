@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
---- conf/zabbix_proxy.conf.orig	Mon Feb 23 13:28:13 2015
-+++ conf/zabbix_proxy.conf	Fri Apr  3 22:58:55 2015
-@@ -74,7 +74,7 @@ Hostname=Zabbix proxy
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.6 2016/07/07 18:47:33 robert Exp $
+--- conf/zabbix_proxy.conf.orig	Fri Jun 24 16:09:54 2016
++++ conf/zabbix_proxy.conf	Fri Jun 24 16:11:12 2016
+@@ -82,7 +82,7 @@ Hostname=Zabbix proxy
  # Default:
  # LogFile=
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
-@@ -104,6 +104,7 @@ LogFile=/tmp/zabbix_proxy.log
+@@ -113,6 +113,7 @@ LogFile=/tmp/zabbix_proxy.log
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_proxy.pid
@@ -18,16 +18,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
  
  ### Option: DBHost
  #	Database host name.
-@@ -138,7 +139,7 @@ DBName=zabbix_proxy
- # Default:
- # DBUser=
- 
--DBUser=root
-+DBUser=zabbix
- 
- ### Option: DBPassword
- #	Database password. Ignored for SQLite.
-@@ -154,6 +155,7 @@ DBUser=root
+@@ -163,6 +164,7 @@ DBUser=zabbix
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -35,7 +26,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -456,6 +458,7 @@ DBUser=root
+@@ -470,6 +472,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -43,7 +34,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -464,6 +467,7 @@ DBUser=root
+@@ -478,6 +481,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -51,7 +42,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.5 2015/04/03 21:06:20 robert Exp $
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -473,6 +477,7 @@ DBUser=root
+@@ -487,6 +491,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
