@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/28 13:25:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.12 2016/07/08 10:32:34 jasper Exp $
 
 COMMENT	=	spaced learning system
 
-DISTNAME =	anki-2.0.33
+DISTNAME =	anki-2.0.36
 
 CATEGORIES =	education
 
