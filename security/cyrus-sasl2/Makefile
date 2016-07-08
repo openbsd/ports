@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2016/06/17 09:43:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2016/07/08 13:17:35 ajacoutot Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		--enable-sql \
 			--enable-static \
 			--without-pam \
+			--without-sqlite \
 			--with-saslauthd="/var/sasl2" \
 			--with-sqlite3 \
 			--with-plugindir=${PREFIX}/lib/sasl2 \
