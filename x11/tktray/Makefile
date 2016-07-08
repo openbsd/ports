@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/18 23:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/07/08 10:37:54 czarkoff Exp $
 
 COMMENT =	system tray icon support for Tk
 
 DISTNAME =	tktray1.3.9
 PKGNAME =	tktray-1.3.9
-REVISION =	1
+REVISION =	2
 SHARED_LIBS =	tktray139 0.0
 CATEGORIES =	x11
 HOMEPAGE =	https://code.google.com/p/tktray/

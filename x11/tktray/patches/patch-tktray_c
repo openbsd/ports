@@ -1,0 +1,22 @@
+$OpenBSD: patch-tktray_c,v 1.1 2016/07/08 10:37:55 czarkoff Exp $
+
+Fix FreeDesktop specification compliance issue
+(https://code.google.com/archive/p/tktray/issues/6)
+
+--- tktray.c.orig	Fri Jun 25 20:47:44 2010
++++ tktray.c	Tue Jul  5 13:15:15 2016
+@@ -412,12 +412,12 @@ static void XembedRequestDock(DockIcon *icon)
+     ev.xclient.window = icon->myManager;
+     ev.xclient.message_type = icon->a_NET_SYSTEM_TRAY_OPCODE;
+     ev.xclient.format = 32;
+-    ev.xclient.data.l[0]=0;
++    ev.xclient.data.l[0]=CurrentTime;
+     ev.xclient.data.l[1]=SYSTEM_TRAY_REQUEST_DOCK;
+     ev.xclient.data.l[2]=icon->wrapper;
+     ev.xclient.data.l[3]=0;
+     ev.xclient.data.l[4]=0;
+-    XSendEvent(dpy, icon->myManager, True, StructureNotifyMask|SubstructureNotifyMask, &ev);
++    XSendEvent(dpy, icon->myManager, False, NoEventMask, &ev);
+  }
+ 
+ static void CheckArgbVisual(DockIcon *icon)
