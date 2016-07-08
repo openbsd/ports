@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2016/06/05 21:06:58 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2016/07/08 16:53:23 sthen Exp $
 
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.2.0
+REVISION=	0
 CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
@@ -30,7 +31,7 @@ LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.5.3 \
 		textproc/enchant \
 		textproc/aspell/core
 
-WANTLIB += lib/qt4/QtGui>=8 aspell c m pthread stdc++ z
+WANTLIB += lib/qt4/QtGui>=8 lib/qt4/QtSvg aspell c m pthread stdc++ z
 WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
 WANTLIB += glib-2.0 gmodule-2.0 enchant magic
 
