@@ -1,0 +1,12 @@
+$OpenBSD: patch-missing,v 1.1 2016/07/08 14:03:15 giovanni Exp $
+--- missing.orig	Fri Jul  8 09:51:12 2016
++++ missing	Fri Jul  8 09:51:33 2016
+@@ -163,7 +163,7 @@ give_advice ()
+       echo "the 'autom4te' program to be rebuilt."
+       program_details 'autom4te'
+       ;;
+-    bison*|yacc*)
++    yacc*|bison*)
+       echo "You should only need it if you modified a '.y' file."
+       echo "You may want to install the GNU Bison package:"
+       echo "<$gnu_software_URL/bison/>"
