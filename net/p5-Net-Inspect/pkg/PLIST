@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/29 18:38:00 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/07/08 14:23:45 bluhm Exp $
 ${P5SITE}/Net/Inspect/
 ${P5SITE}/Net/Inspect.pm
 ${P5SITE}/Net/Inspect/Connection.pm
@@ -23,6 +23,7 @@ ${P5SITE}/Net/Inspect/L7/HTTP/Request/
 ${P5SITE}/Net/Inspect/L7/HTTP/Request/InspectChain.pm
 ${P5SITE}/Net/Inspect/L7/HTTP/Request/Simple.pm
 ${P5SITE}/Net/Inspect/L7/HTTP/WebSocket.pm
+${P5SITE}/Net/Inspect/L7/SMTP.pm
 @man man/man3p/Net::Inspect.3p
 @man man/man3p/Net::Inspect::Connection.3p
 @man man/man3p/Net::Inspect::Debug.3p
@@ -39,3 +40,4 @@ ${P5SITE}/Net/Inspect/L7/HTTP/WebSocket.pm
 @man man/man3p/Net::Inspect::L7::HTTP::Request::InspectChain.3p
 @man man/man3p/Net::Inspect::L7::HTTP::Request::Simple.3p
 @man man/man3p/Net::Inspect::L7::HTTP::WebSocket.3p
+@man man/man3p/Net::Inspect::L7::SMTP.3p
