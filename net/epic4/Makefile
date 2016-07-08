@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2014/09/13 14:05:24 brad Exp $
+# $OpenBSD: Makefile,v 1.74 2016/07/08 16:48:21 sthen Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.10.5
+REVISION=	0
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
@@ -16,7 +17,7 @@ MAINTAINER=	Adam Jeanguenat <avj@6v6.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m ncurses perl ssl util
+WANTLIB=	c crypto m ncurses perl pthread ssl
 
 FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"

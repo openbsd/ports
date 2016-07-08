@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2016/07/08 16:48:21 sthen Exp $
 
 COMMENT=	programmable ncurses-based AIM client
 DISTNAME=	pork-0.99.8.1
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
@@ -10,7 +11,7 @@ HOMEPAGE=	http://ojnk.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m ncurses perl util
+WANTLIB=	c m ncurses perl pthread
 
 CONFIGURE_STYLE=	gnu
 
