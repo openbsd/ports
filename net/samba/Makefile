@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.226 2016/07/06 16:43:16 jca Exp $
+# $OpenBSD: Makefile,v 1.227 2016/07/08 18:39:50 jca Exp $
 
-VERSION =		4.4.4
+VERSION =		4.4.5
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -28,7 +28,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			dcerpc			0.0 \
 			dcerpc-binding		1.0 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		0.0 \
+			dcerpc-server		1.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
