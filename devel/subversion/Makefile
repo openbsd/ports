@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2016/06/28 19:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2016/07/08 16:50:36 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,6 +21,7 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
+REVISION-ap2=	0
 REVISION-main=	0
 
 SO_VERSION=	2.0
@@ -84,7 +85,7 @@ TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 	detach.py mergeinfo-sanitizer.py server-version.py svn-graph.pl \
 	svn-ssl-fingerprints.sh svn-vendor.py svn-viewspec.py wcfind
 
-WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3
+WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3 svn_fs_x-1
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
