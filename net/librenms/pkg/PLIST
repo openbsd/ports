@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/06/20 15:12:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/07/08 16:07:22 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
@@ -49,6 +49,7 @@ librenms/doc/Extensions/
 librenms/doc/Extensions/Agent-Setup.md
 librenms/doc/Extensions/Alerting.md
 librenms/doc/Extensions/Authentication.md
+librenms/doc/Extensions/Auto-Discovery.md
 librenms/doc/Extensions/Billing-Module.md
 librenms/doc/Extensions/Component.md
 librenms/doc/Extensions/Device-Groups.md
@@ -1678,6 +1679,7 @@ librenms/html/images/os/oki.png
 librenms/html/images/os/openbsd.png
 librenms/html/images/os/openindiana.png
 librenms/html/images/os/opensolaris.png
+librenms/html/images/os/oracle.png
 librenms/html/images/os/panos.png
 librenms/html/images/os/papouch-tme.png
 librenms/html/images/os/pbn.png
@@ -1827,6 +1829,7 @@ librenms/html/includes/forms/discovery-module-update.inc.php
 librenms/html/includes/forms/edit-dashboard.inc.php
 librenms/html/includes/forms/health-update.inc.php
 librenms/html/includes/forms/notifications.inc.php
+librenms/html/includes/forms/open-proc.inc.php
 librenms/html/includes/forms/override-config.inc.php
 librenms/html/includes/forms/parse-alert-map.inc.php
 librenms/html/includes/forms/parse-alert-rule.inc.php
@@ -1852,6 +1855,7 @@ librenms/html/includes/forms/update-alert-rule.inc.php
 librenms/html/includes/forms/update-config-item.inc.php
 librenms/html/includes/forms/update-dashboard-config.inc.php
 librenms/html/includes/forms/update-ifalias.inc.php
+librenms/html/includes/forms/update-ifspeed.inc.php
 librenms/html/includes/forms/update-notes.inc.php
 librenms/html/includes/forms/update-port-notes.inc.php
 librenms/html/includes/forms/update-ports.inc.php
@@ -3196,6 +3200,7 @@ librenms/includes/discovery/os/f5.inc.php
 librenms/includes/discovery/os/fabos.inc.php
 librenms/includes/discovery/os/fiberhome.inc.php
 librenms/includes/discovery/os/fireware.inc.php
+librenms/includes/discovery/os/flareos.inc.php
 librenms/includes/discovery/os/fortigate.inc.php
 librenms/includes/discovery/os/fortios.inc.php
 librenms/includes/discovery/os/freebsd.inc.php
@@ -3203,11 +3208,13 @@ librenms/includes/discovery/os/ftos.inc.php
 librenms/includes/discovery/os/gamatronicups.inc.php
 librenms/includes/discovery/os/hikvision.inc.php
 librenms/includes/discovery/os/hp3par.inc.php
+librenms/includes/discovery/os/hpblmos.inc.php
 librenms/includes/discovery/os/hpmsm.inc.php
 librenms/includes/discovery/os/hpvc.inc.php
 librenms/includes/discovery/os/huaweiups.inc.php
 librenms/includes/discovery/os/hwg-poseidon.inc.php
 librenms/includes/discovery/os/hwg-ste.inc.php
+librenms/includes/discovery/os/ibm-amm.inc.php
 librenms/includes/discovery/os/ibm-imm.inc.php
 librenms/includes/discovery/os/ibmnos.inc.php
 librenms/includes/discovery/os/ibmtl.inc.php
@@ -3254,6 +3261,7 @@ librenms/includes/discovery/os/nxos.inc.php
 librenms/includes/discovery/os/okilan.inc.php
 librenms/includes/discovery/os/onefs.inc.php
 librenms/includes/discovery/os/openbsd.inc.php
+librenms/includes/discovery/os/oracle-ilom.inc.php
 librenms/includes/discovery/os/packetshaper.inc.php
 librenms/includes/discovery/os/panos.inc.php
 librenms/includes/discovery/os/papouch-tme.inc.php
@@ -3285,11 +3293,13 @@ librenms/includes/discovery/os/screenos.inc.php
 librenms/includes/discovery/os/sentry3.inc.php
 librenms/includes/discovery/os/serveriron.inc.php
 librenms/includes/discovery/os/siklu.inc.php
+librenms/includes/discovery/os/smartax.inc.php
 librenms/includes/discovery/os/solaris.inc.php
 librenms/includes/discovery/os/sonicwall.inc.php
 librenms/includes/discovery/os/speedtouch.inc.php
 librenms/includes/discovery/os/sub10.inc.php
 librenms/includes/discovery/os/supermicro-switch.inc.php
+librenms/includes/discovery/os/swos.inc.php
 librenms/includes/discovery/os/symbol.inc.php
 librenms/includes/discovery/os/tplink.inc.php
 librenms/includes/discovery/os/tranzeo.inc.php
@@ -3375,6 +3385,7 @@ librenms/includes/discovery/sensors/fanspeeds/dell.inc.php
 librenms/includes/discovery/sensors/fanspeeds/drac.inc.php
 librenms/includes/discovery/sensors/fanspeeds/equallogic.inc.php
 librenms/includes/discovery/sensors/fanspeeds/extreme.inc.php
+librenms/includes/discovery/sensors/fanspeeds/ibm-amm.inc.php
 librenms/includes/discovery/sensors/fanspeeds/lmsensors.inc.php
 librenms/includes/discovery/sensors/fanspeeds/mikrotik.inc.php
 librenms/includes/discovery/sensors/fanspeeds/netonix.inc.php
@@ -3426,6 +3437,8 @@ librenms/includes/discovery/sensors/states/dell.inc.php
 librenms/includes/discovery/sensors/states/drac.inc.php
 librenms/includes/discovery/sensors/states/dsm.inc.php
 librenms/includes/discovery/sensors/states/equallogic.inc.php
+librenms/includes/discovery/sensors/states/hwg-ste.inc.php
+librenms/includes/discovery/sensors/states/ibm-amm.inc.php
 librenms/includes/discovery/sensors/states/ironware.inc.php
 librenms/includes/discovery/sensors/states/juniper.inc.php
 librenms/includes/discovery/sensors/states/netonix.inc.php
@@ -3456,6 +3469,8 @@ librenms/includes/discovery/sensors/temperatures/fiberhome.inc.php
 librenms/includes/discovery/sensors/temperatures/ftos-c-series.inc.php
 librenms/includes/discovery/sensors/temperatures/ftos-e-series.inc.php
 librenms/includes/discovery/sensors/temperatures/hpilo.inc.php
+librenms/includes/discovery/sensors/temperatures/hwg-ste.inc.php
+librenms/includes/discovery/sensors/temperatures/ibm-amm.inc.php
 librenms/includes/discovery/sensors/temperatures/ibmnos.inc.php
 librenms/includes/discovery/sensors/temperatures/ipoman.inc.php
 librenms/includes/discovery/sensors/temperatures/ironware.inc.php
@@ -3474,6 +3489,7 @@ librenms/includes/discovery/sensors/temperatures/powerconnect.inc.php
 librenms/includes/discovery/sensors/temperatures/qnap.inc.php
 librenms/includes/discovery/sensors/temperatures/rfc1628.inc.php
 librenms/includes/discovery/sensors/temperatures/sentry3.inc.php
+librenms/includes/discovery/sensors/temperatures/sentry4.inc.php
 librenms/includes/discovery/sensors/temperatures/serveriron.inc.php
 librenms/includes/discovery/sensors/temperatures/siklu.inc.php
 librenms/includes/discovery/sensors/temperatures/sub10.inc.php
@@ -3668,6 +3684,7 @@ librenms/includes/polling/os/fabos.inc.php
 librenms/includes/polling/os/fiberhome.inc.php
 librenms/includes/polling/os/firebox.inc.php
 librenms/includes/polling/os/fireware.inc.php
+librenms/includes/polling/os/flareos.inc.php
 librenms/includes/polling/os/fortigate.inc.php
 librenms/includes/polling/os/fortios.inc.php
 librenms/includes/polling/os/ftos.inc.php
@@ -3711,6 +3728,7 @@ librenms/includes/polling/os/nrg.inc.php
 librenms/includes/polling/os/nxos.inc.php
 librenms/includes/polling/os/okilan.inc.php
 librenms/includes/polling/os/onefs.inc.php
+librenms/includes/polling/os/oracle-ilom.inc.php
 librenms/includes/polling/os/panos.inc.php
 librenms/includes/polling/os/pbn.inc.php
 librenms/includes/polling/os/perle.inc.php
@@ -8027,6 +8045,7 @@ librenms/mibs/BAY-STACK-VRRP-EXT-MIB
 librenms/mibs/BGP4-MIB
 librenms/mibs/BGP4V2-MIB
 librenms/mibs/BGP4V2-TC-MIB
+librenms/mibs/BLADE-MIB
 librenms/mibs/BLADETYPE2-ACL-MIB
 librenms/mibs/BLADETYPE2-NETWORK-MIB
 librenms/mibs/BLADETYPE2-PHYSICAL-MIB
@@ -8944,6 +8963,7 @@ librenms/mibs/SAMSUNG-HOST-RESOURCES-EXT-MIB
 librenms/mibs/SAMSUNG-HOST-RESOURCES-EXT-TC
 librenms/mibs/SAMSUNG-PRINTER-EXT-MIB
 librenms/mibs/SAMSUNG-PRINTER-EXT-TC
+librenms/mibs/SCTP-MIB
 librenms/mibs/SEMI-MIB
 librenms/mibs/SENAO-ENTERPRISE-INDOOR-AP-CB-MIB
 librenms/mibs/SENAO-EOR7550-MIB
@@ -9002,6 +9022,7 @@ librenms/mibs/SYSAPPL-MIB
 librenms/mibs/SYSTEM-MIB
 librenms/mibs/SYSTEM-RESOURCE-MIB
 librenms/mibs/Sentry3-MIB
+librenms/mibs/Sentry4.mib
 librenms/mibs/StorageManagement-MIB
 librenms/mibs/TCP-MIB
 librenms/mibs/TELESYN-ATI-TC
@@ -10160,6 +10181,11 @@ librenms/sql-schema/113.sql
 librenms/sql-schema/114.sql
 librenms/sql-schema/115.sql
 librenms/sql-schema/116.sql
+librenms/sql-schema/117.sql
+librenms/sql-schema/118.sql
+librenms/sql-schema/119.sql
+librenms/sql-schema/120.sql
+librenms/sql-schema/121.sql
 librenms/syslog.php
 librenms/tests/
 librenms/tests/SyslogTest.php

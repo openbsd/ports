@@ -1,6 +1,6 @@
-$OpenBSD: patch-validate_php,v 1.5 2016/02/25 00:46:35 sthen Exp $
---- validate.php.orig	Sun Feb 14 14:40:29 2016
-+++ validate.php	Sun Feb 14 14:40:29 2016
+$OpenBSD: patch-validate_php,v 1.6 2016/07/08 16:07:22 sthen Exp $
+--- validate.php.orig	Wed Jul  6 15:38:01 2016
++++ validate.php	Wed Jul  6 15:38:01 2016
 @@ -33,7 +33,7 @@ if (isset($options['h'])) {
      exit;
  }
@@ -9,4 +9,4 @@ $OpenBSD: patch-validate_php,v 1.5 2016/02/25 00:46:35 sthen Exp $
 +if (strstr(`%PHP% -ln config.php`, 'No syntax errors detected')) {
      $first_line = `head -n1 config.php`;
      $last_lines = explode(PHP_EOL, `tail -n2 config.php`);
-     if (strstr($first_line, '\<\?php')) {
+     if (substr($first_line, 0, 5) !== '<?php') {
