@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.18 2016/01/19 22:51:09 sthen Exp $
---- configure.orig	Fri Jan 15 16:57:18 2016
-+++ configure	Mon Jan 18 13:07:24 2016
+$OpenBSD: patch-configure,v 1.19 2016/07/08 12:59:13 sthen Exp $
+--- configure.orig	Wed Jul  6 20:03:41 2016
++++ configure	Fri Jul  8 13:41:32 2016
 @@ -4808,7 +4808,7 @@ $as_echo "no" >&6; }
  fi
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.18 2016/01/19 22:51:09 sthen Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30714,6 +30714,7 @@ netbsd)
+@@ -30736,6 +30736,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.18 2016/01/19 22:51:09 sthen Exp $
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -30732,6 +30733,7 @@ openbsd)
+@@ -30754,6 +30755,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
