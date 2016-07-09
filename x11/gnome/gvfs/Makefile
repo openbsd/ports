@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2016/05/10 05:34:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2016/07/09 08:46:25 sthen Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -8,6 +8,7 @@ COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
 GNOME_VERSION=		1.28.2
+REVISION-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -33,7 +34,7 @@ WANTLIB-main += gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0 gpg-error
 WANTLIB-main += graphite2 gthread-2.0 gtk-3 harfbuzz lzma lzo2 m p11-kit
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-main += pthread-stubs secret-1 soup-2.4 sqlite3 xcb xcb-render
-WANTLIB-main += xcb-shm xml2
+WANTLIB-main += xcb-shm xml2 crypto lz4
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/04/06 21:41:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2016/07/09 08:46:24 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
@@ -6,6 +6,7 @@ COMMENT-eximon =	X11 monitor tool for Exim MTA
 VERSION =		4.87
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
+REVISION-main =		0
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
 
@@ -17,7 +18,7 @@ HOMEPAGE =		http://www.exim.org/
 PERMIT_PACKAGE_CDROM =   Yes
 
 cWANTLIB =		c m
-WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl ssl util pcre
+WANTLIB-main =		${WANTLIB} ${cWANTLIB} crypto perl pthread pcre ssl
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
 
 MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.154 2016/04/28 11:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2016/07/09 08:46:24 sthen Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.3.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -31,7 +31,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 plist png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 stdc++ tdb totem-plparser webkit2gtk-4.0 webp
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z crypto lz4
 
 MODULES=		devel/dconf \
 			devel/gettext \

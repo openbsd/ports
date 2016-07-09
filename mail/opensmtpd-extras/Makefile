@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/23 10:15:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.15 2016/07/09 08:46:25 sthen Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -10,6 +10,7 @@ COMMENT-redis=		redis based smtpd table support
 COMMENT-spamassassin=	extras with spamassassin support for smtpd
 
 V=			201606230001
+REVISION-main=		0
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-clamav=		opensmtpd-extras-clamav-${V}
@@ -33,7 +34,7 @@ MULTI_PACKAGES=		-main -clamav -lua -mysql -pgsql -python -redis \
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto event ssl m util sqlite3 perl
+WANTLIB=		c crypto event ssl m pthread sqlite3 perl
 WANTLIB-clamav=		c crypto event ssl
 WANTLIB-lua=		c crypto event ssl m ${MODLUA_WANTLIB}
 WANTLIB-mysql=		c crypto event ssl m z pthread stdc++ mysqlclient
