@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/06/24 14:06:27 robert Exp $
+# $OpenBSD: Makefile,v 1.147 2016/07/09 09:09:08 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -19,6 +19,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
 EPOCH=		0
+REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -180,6 +181,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		graphics/lcms2 \
 		${MODGCC4_CPPLIBDEP} \
 		print/cups,-libs \
+		print/poppler \
 		textproc/libxslt \
 		textproc/raptor \
 		net/curl \
@@ -211,13 +213,13 @@ WANTLIB-main+=	GL GLU harfbuzz harfbuzz-icu
 WANTLIB-main+=	lzma
 WANTLIB-main+=	cairo-gobject gmodule-2.0
 WANTLIB-main+=	dconf gdk-3 gtk-3
+WANTLIB-main+=	poppler
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
 			graphics/glew \
 			misc/shared-mime-info \
 			security/nss \
-			print/poppler \
 			textproc/clucene \
 			x11/gtk+3 \
 			x11/gtk+3,-guic

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/07/09 09:09:10 sthen Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
@@ -7,6 +7,7 @@ GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
 
 DISTNAME =	pgrouting-2.1.0
+REVISION =	0
 CATEGORIES =	geo databases
 
 HOMEPAGE =	http://pgrouting.org/
@@ -15,6 +16,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB +=	CGAL boost_system-mt boost_thread-mt gmp m pthread
+WANTLIB +=	boost_atomic-mt boost_chrono-mt boost_date_time-mt
 
 MODULES =	databases/postgresql devel/cmake gcc4
 MODGCC4_ARCHS =	*
@@ -25,7 +29,6 @@ RUN_DEPENDS =	geo/postgis
 BUILD_DEPENDS =	databases/postgresql,-server
 TEST_DEPENDS =	${BUILD_PKGPATH}
 TEST_ENV =	LD_PRELOAD=libpthread.so
-WANTLIB +=	CGAL boost_system-mt boost_thread-mt gmp m stdc++ pthread
 
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \

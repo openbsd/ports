@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/09 19:18:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/07/09 09:09:09 sthen Exp $
 
 COMMENT=	motion detection software for video
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
 GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
 V=		3.4.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--without-v4l
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=		databases/mariadb
-WANTLIB+=		lib/mysql/mysqlclient
+WANTLIB+=		lib/mysql/mysqlclient z
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif

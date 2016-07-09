@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/01 16:24:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.51 2016/07/09 09:09:09 sthen Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	9
+REVISION =	10
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -51,7 +51,7 @@ SHARED_LIBS +=	systemsettingsview		51.0
 SHARED_LIBS +=	taskmanager			51.0 # 4.7
 SHARED_LIBS +=	weather_ion			51.0 # 6.0
 
-WANTLIB =  c m pthread util z
+WANTLIB =  c m pthread util z intl
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86vm
 WANTLIB += fontconfig freetype xkbfile
