@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/07/09 12:14:28 sthen Exp $
 @newgroup _ntopng:767
 @newuser _ntopng:767:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/ntopng/*
@@ -7,6 +7,7 @@
 share/doc/ntopng/
 share/doc/ntopng/README.FreeBSD
 share/doc/ntopng/README.IPv6
+share/doc/ntopng/README.LDAP
 share/doc/ntopng/README.SSL
 share/doc/ntopng/README.bridging
 share/doc/ntopng/README.cento
@@ -24,6 +25,7 @@ share/doc/ntopng/README.pfsense
 share/doc/ntopng/README.redis
 share/doc/ntopng/README.users
 share/doc/ntopng/README.vagrant
+share/doc/ntopng/README.valgrind
 share/doc/ntopng/README.windows
 share/doc/ntopng/README.zmq
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -255,6 +257,7 @@ share/ntopng/httpdocs/js/pdfmake.js
 share/ntopng/httpdocs/js/pie-chart.js
 share/ntopng/httpdocs/js/prettify.js
 share/ntopng/httpdocs/js/rickshaw.js
+share/ntopng/httpdocs/js/ripe_widget_api.js
 share/ntopng/httpdocs/js/sankey.js
 share/ntopng/httpdocs/js/sequence_sunburst.js
 share/ntopng/httpdocs/js/springy-ntop.js
@@ -357,6 +360,7 @@ share/ntopng/scripts/lua/iface_hosts_list.lua
 share/ntopng/scripts/lua/iface_local_stats.lua
 share/ntopng/scripts/lua/iface_ndpi_stats.lua
 share/ntopng/scripts/lua/iface_ports_list.lua
+share/ntopng/scripts/lua/iface_tcp_stats.lua
 share/ntopng/scripts/lua/inc/
 share/ntopng/scripts/lua/inc/add_user_dialog.lua
 share/ntopng/scripts/lua/inc/change_user_password_form.lua
@@ -412,7 +416,7 @@ share/ntopng/scripts/lua/protocols/
 share/ntopng/scripts/lua/protocols/dns_aggregations.lua
 share/ntopng/scripts/lua/protocols/epp_aggregations.lua
 share/ntopng/scripts/lua/resolve_address.lua
-share/ntopng/scripts/lua/set_active_interface.lua
+share/ntopng/scripts/lua/runtime.lua
 share/ntopng/scripts/lua/set_if_prefs.lua
 share/ntopng/scripts/lua/sflow_tree.lua
 share/ntopng/scripts/lua/sflows_stats.lua

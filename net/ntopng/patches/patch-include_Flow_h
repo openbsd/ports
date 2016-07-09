@@ -1,16 +1,16 @@
-$OpenBSD: patch-include_Flow_h,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- include/Flow.h.orig	Mon Apr 25 09:27:48 2016
-+++ include/Flow.h	Tue Apr 26 17:53:54 2016
-@@ -137,7 +137,7 @@ class Flow : public GenericHashEntry {
+$OpenBSD: patch-include_Flow_h,v 1.2 2016/07/09 12:14:28 sthen Exp $
+--- include/Flow.h.orig	Mon Jun 27 20:31:18 2016
++++ include/Flow.h	Sat Jul  9 12:55:43 2016
+@@ -155,7 +155,7 @@ class Flow : public GenericHashEntry {
    void checkFlowCategory();
    void setBittorrentHash(char *hash);
    bool isLowGoodput();
 -  void updatePacketStats(InterarrivalStats *stats, const struct timeval *when);
 +  void updatePacketStats(InterarrivalStats *stats, const struct bpf_timeval *when);
    void dumpPacketStats(lua_State* vm, bool cli2srv_direction);
- 
-  public:
-@@ -182,8 +182,8 @@ class Flow : public GenericHashEntry {
+   inline u_int32_t getCurrentInterArrivalTime(time_t now, bool cli2srv_direction) {
+     return(1000 /* msec */ 
+@@ -215,8 +215,8 @@ class Flow : public GenericHashEntry {
    void setDetectedProtocol(ndpi_protocol proto_id);
    void setJSONInfo(const char *json);
    bool isFlowPeer(char *numIP, u_int16_t vlanId);

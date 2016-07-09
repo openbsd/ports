@@ -1,17 +1,17 @@
-$OpenBSD: patch-nDPI_example_ndpi_util_c,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- nDPI/example/ndpi_util.c.orig	Tue Apr 26 17:12:52 2016
-+++ nDPI/example/ndpi_util.c	Tue Apr 26 17:13:04 2016
-@@ -612,11 +612,13 @@ void ndpi_workflow_process_packet (struct ndpi_workflo
-       }
-       break;
+$OpenBSD: patch-nDPI_example_ndpi_util_c,v 1.2 2016/07/09 12:14:28 sthen Exp $
+--- nDPI/example/ndpi_util.c.orig	Mon Jun 27 20:31:24 2016
++++ nDPI/example/ndpi_util.c	Sat Jul  9 12:56:31 2016
+@@ -628,11 +628,13 @@ void ndpi_workflow_process_packet (struct ndpi_workflo
+     }
+     break;
  
 +#ifdef DLT_LINUX_SLL
-       /* Linux Cooked Capture - 113 */
-     case DLT_LINUX_SLL :
-       type = (packet[eth_offset+14] << 8) + packet[eth_offset+15];
-       ip_offset = 16 + eth_offset;
-       break;
+     /* Linux Cooked Capture - 113 */
+   case DLT_LINUX_SLL :
+     type = (packet[eth_offset+14] << 8) + packet[eth_offset+15];
+     ip_offset = 16 + eth_offset;
+     break;
 +#endif
  
-       /* Radiotap link-layer - 127 */
-     case DLT_IEEE802_11_RADIO :
+     /* Radiotap link-layer - 127 */
+   case DLT_IEEE802_11_RADIO :

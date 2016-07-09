@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Utils_cpp,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- src/Utils.cpp.orig	Tue Apr 26 17:45:12 2016
-+++ src/Utils.cpp	Tue Apr 26 17:45:48 2016
-@@ -201,7 +201,19 @@ float Utils::timeval2ms(struct timeval *tv) {
+$OpenBSD: patch-src_Utils_cpp,v 1.2 2016/07/09 12:14:28 sthen Exp $
+--- src/Utils.cpp.orig	Mon Jun 27 20:31:18 2016
++++ src/Utils.cpp	Sat Jul  9 12:55:43 2016
+@@ -204,7 +204,19 @@ float Utils::timeval2ms(struct timeval *tv) {
  
  /* ****************************************************** */
  

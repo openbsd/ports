@@ -1,7 +1,7 @@
-$OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- nDPI/example/ndpiReader.c.orig	Tue Apr 26 17:09:12 2016
-+++ nDPI/example/ndpiReader.c	Tue Apr 26 17:11:57 2016
-@@ -62,7 +62,7 @@ static char *_pcap_file[MAX_NUM_READER_THREADS]; /**< 
+$OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.2 2016/07/09 12:14:28 sthen Exp $
+--- nDPI/example/ndpiReader.c.orig	Mon Jun 27 20:31:24 2016
++++ nDPI/example/ndpiReader.c	Sat Jul  9 12:55:43 2016
+@@ -56,7 +56,7 @@ static char *_pcap_file[MAX_NUM_READER_THREADS]; /**< 
  static FILE *playlist_fp[MAX_NUM_READER_THREADS] = { NULL }; /**< Ingress playlist */
  static FILE *results_file = NULL;
  static char *results_path = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.1.1.1 2016/04/26 20:56:01 sthen Ex
  static char *_protoFilePath   = NULL; /**< Protocol file path  */
  #ifdef HAVE_JSON_C
  static char *_jsonFilePath    = NULL; /**< JSON file path  */
-@@ -180,7 +180,7 @@ static void parseOptions(int argc, char **argv) {
+@@ -174,7 +174,7 @@ static void parseOptions(int argc, char **argv) {
        break;
  
      case 'f':
@@ -19,7 +19,7 @@ $OpenBSD: patch-nDPI_example_ndpiReader_c,v 1.1.1.1 2016/04/26 20:56:01 sthen Ex
        break;
  
      case 'g':
-@@ -1083,16 +1083,16 @@ static int getNextPcapFileFromPlaylist(u_int16_t threa
+@@ -1054,16 +1054,16 @@ static int getNextPcapFileFromPlaylist(u_int16_t threa
   */ 
  static void configurePcapHandle(pcap_t * pcap_handle) {
  

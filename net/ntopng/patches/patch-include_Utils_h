@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_Utils_h,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- include/Utils.h.orig	Mon Apr 25 09:27:48 2016
-+++ include/Utils.h	Tue Apr 26 17:56:40 2016
+$OpenBSD: patch-include_Utils_h,v 1.2 2016/07/09 12:14:28 sthen Exp $
+--- include/Utils.h.orig	Mon Jun 27 20:31:18 2016
++++ include/Utils.h	Sat Jul  9 12:55:43 2016
 @@ -47,6 +47,7 @@ class Utils {
    static char* trim(char *s);
    static u_int32_t hashString(char *s);
@@ -9,11 +9,11 @@ $OpenBSD: patch-include_Utils_h,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
    static bool file_exists(const char *path);
    static bool mkdir_tree(char *path);
    static const char* trend2str(ValueTrend t);
-@@ -81,6 +82,7 @@ class Utils {
+@@ -82,6 +83,7 @@ class Utils {
    static char* intoaV4(unsigned int addr, char* buf, u_short bufLen);
    static char* intoaV6(struct ndpi_in6_addr ipv6, u_int8_t bitmask, char* buf, u_short bufLen);
    static u_int32_t timeval2usec(const struct timeval *tv);
 +  static u_int32_t timeval2usec(const struct bpf_timeval *tv);
    static void xor_encdec(u_char *data, int data_len, u_char *key);
    static bool isPrintableChar(u_char c);
- };
+   static const char* flowstatus2str(FlowStatus s);
