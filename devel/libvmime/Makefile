@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2016/07/09 08:57:11 sthen Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,7 +7,7 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS+=  vmime    2.0     # 0.0
 
@@ -33,7 +33,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gmp gnutls hogweed m nettle p11-kit pthread stdc++
+WANTLIB += ffi gmp gnutls hogweed idn m nettle p11-kit pthread stdc++
 WANTLIB += tasn1 z
 
 MODULES=	devel/gettext
