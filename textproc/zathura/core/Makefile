@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2016/02/04 18:08:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2016/07/09 17:28:30 tobiasu Exp $
 
 V =			0.3.3
-REVISION =		0
+REVISION =		1
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -30,7 +30,8 @@ MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
 		DESKTOPPREFIX=${PREFIX}/share/applications \
 		TPUT=true \
 		CC="${CC}" \
-		VERBOSE=1
+		VERBOSE=1 \
+		WITH_SYSTEM_SYNCTEX=0
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 USE_GMAKE =	Yes
