@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2016/06/19 19:42:26 kili Exp $
+# $OpenBSD: Makefile,v 1.108 2016/07/09 15:37:46 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -16,7 +16,9 @@ PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
 OLDSHIT =	poppler-0.16.7
 
-SHARED_LIBS +=	poppler              38.0     # 62.0
+REVISION=	0
+
+SHARED_LIBS +=	poppler              39.0     # 62.0
 SHARED_LIBS +=	poppler-glib         15.0     # 15.0
 SHARED_LIBS +=	poppler-qt           12.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          18.0     # 13.0
@@ -45,8 +47,7 @@ MULTI_PACKAGES=-main -qt -qt4 -qt5 -utils
 
 .include <bsd.port.arch.mk>
 
-cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z stdc++ \
-		nspr4 nss3 nss3 plc4 plds4 smime3 
+cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z stdc++
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=	x11/qt3
@@ -79,48 +80,42 @@ LIB_DEPENDS-main= \
 		graphics/lcms2 \
 		graphics/openjpeg \
 		graphics/png \
-		graphics/tiff \
-		security/nss
+		graphics/tiff
 
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
-		print/poppler \
-		security/nss
+		print/poppler
 
 LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
-		print/poppler \
-		security/nss
+		print/poppler
 
 LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
-		print/poppler \
-		security/nss
+		print/poppler
 
-LIB_DEPENDS-utils= print/poppler \
-		security/nss
+LIB_DEPENDS-utils= print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjpeg X11 Xrender cairo pcre \
 		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
-		iconv intl nssutil3 plds4 softokn3 sqlite3 ssl3
+		iconv intl
 
 WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png pthread-stubs \
-		softokn3 ssl3 ${MODQT3_WANTLIB}
+		${MODQT3_WANTLIB}
 
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjpeg \
-		png poppler pcre pthread-stubs xcb softokn3 ssl3
+		png poppler pcre pthread-stubs xcb
 
 WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo ffi glapi \
 		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
 		iconv icudata icui18n icuuc intl lcms2 openjpeg pcre \
-		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx \
-		softokn3 ssl3
+		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
 		
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
-		poppler z ${cWANTLIB} softokn3 ssl3
+		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
@@ -128,7 +123,8 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 		--enable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib \
-		--disable-gtk-test
+		--disable-gtk-test \
+		--disable-libnss
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
