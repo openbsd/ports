@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2016/05/27 12:48:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.38 2016/07/09 11:47:56 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -274,7 +274,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/carousel.6
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
-@man man/man6/circuit.6
 @man man/man6/cityflow.6
 @man man/man6/cloudlife.6
 @man man/man6/companioncube.6
@@ -458,7 +457,8 @@ libexec/xscreensaver/webcollage
 @man man/man6/xmatrix.6
 @man man/man6/xrayswarm.6
 @man man/man6/xscreensaver-gl-helper.6
-@man man/man6/xscrensaver-deco.6
+@man man/man6/xscreensaver-circuit.6
+@man man/man6/xscreensaver-deco.6
 @man man/man6/xspirograph.6
 @man man/man6/zoom.6
 share/applications/screensavers/

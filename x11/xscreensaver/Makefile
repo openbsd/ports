@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2016/05/27 12:48:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2016/07/09 11:47:56 sthen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 DISTNAME=		xscreensaver-5.35
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -56,8 +57,10 @@ pre-configure:
 	perl -pi -e 's,gnome-open,xdg-open,g' ${WRKSRC}/configure
 
 post-install:
-# remove conflict on misc/deco
-	mv ${PREFIX}/man/man6/deco.6 ${PREFIX}/man/man6/xscrensaver-deco.6
+# remove conflicts (misc/deco, games/circuit)
+.for i in deco circuit
+	mv ${PREFIX}/man/man6/$i.6 ${PREFIX}/man/man6/xscreensaver-$i.6
+.endfor
 
 # create dot.desktop files from xscreensaver xml files for use
 # by freedesktop compliant screensavers
