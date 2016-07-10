@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/07/09 09:09:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2016/07/10 12:03:49 sthen Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
@@ -35,7 +35,7 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
 WANTLIB += softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++
 WANTLIB += vorbis vorbisfile webkitgtk-3.0 webp xcb xcb-render
 WANTLIB += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
-WANTLIB += xcb-xfixes xcb-shm xml2 xslt z json-glib
+WANTLIB += xcb-xfixes xcb-shm xml2 xslt z json-glib-1.0
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
