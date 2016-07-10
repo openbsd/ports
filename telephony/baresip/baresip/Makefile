@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/14 16:15:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.12 2016/07/10 19:39:29 czarkoff Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
@@ -48,11 +48,11 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			USE_AMR=yes USE_AVCODEC=yes USE_AVFORMAT=yes \
 			USE_CONS=yes USE_DTLS=yes USE_DTLS_SRTP=yes \
 			USE_FFMPEG=yes USE_G711=yes USE_G722=yes USE_G726=yes \
-			USE_GSM=yes USE_H265=yes USE_L16=yes USE_MPA=yes USE_OPUS=yes USE_PLC=yes \
-			USE_SNDFILE=yes USE_SNDIO=yes USE_SPEEX=yes \
-			USE_SPEEX_AEC=yes USE_SPEEX_PP=yes USE_SRTP=yes \
-			USE_STDIO=yes USE_SYSLOG=yes USE_UUID=yes USE_V4L2=yes \
-			USE_VPX=yes USE_X11=yes USE_ZRTP=yes \
+			USE_GSM=yes USE_H265=yes USE_L16=yes USE_MPA=yes \
+			USE_OPUS=yes USE_PLC=yes USE_SNDFILE=yes USE_SNDIO=yes \
+			USE_SPEEX=yes USE_SPEEX_AEC=yes USE_SPEEX_PP=yes \
+			USE_SRTP=yes USE_STDIO=yes USE_SYSLOG=yes USE_UUID=yes \
+			USE_V4L2=yes USE_VPX=yes USE_X11=yes USE_ZRTP=yes \
 			HAVE_LIBV4L2=yes HAVE_SPEEXDSP=yes
 #			EXTRA_MODULES="echo daala snapshot sndio zrtp" \
 
@@ -73,7 +73,7 @@ MAKE_FLAGS +=		USE_GST1=yes USE_GST_VIDEO1=yes USE_GTK=yes
 
 # Ideally these should be enabled, but it doesn't seem to be possibe ATM, as
 # the required dependencies are not in place.
-#MAKE_FLAGS +=	USE_BV32=yes # XXX http://www.broadcom.com/support/broadvoice/downloads.php
+#MAKE_FLAGS +=	USE_BV32=yes # XXX http://www.broadcom.com/support/broadvoice
 #MAKE_FLAGS +=	USE_G722_1=yes # XXX FreeSWITCH???
 #MAKE_FLAGS +=	USE_ILBC=yes # XXX http://ilbcfreeware.org/
 #MAKE_FLAGS +=	USE_ISAC=yes # XXX FreeSWITCH??? (was used in Google Talk)
