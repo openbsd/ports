@@ -1,0 +1,60 @@
+$OpenBSD: patch-mocp_1,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
+
+Fix paths in manual.
+
+--- mocp.1.orig	Sun Apr 24 06:23:30 2016
++++ mocp.1	Sun Jun  5 13:16:37 2016
+@@ -58,10 +58,8 @@ Implies \fB\-S\fP.  Run the server in foreground and l
+ .TP
+ \fB\-R\fP \fINAME\fP[\fB:\fP...], \
+ \fB\-\-sound\-driver\fP \fINAME\fP[\fB:\fP...]
+-Use the specified sound driver(s).  They can be \fBOSS\fP, \fBALSA\fP,
+-\fBJACK\fP, \fBSNDIO\fP or \fBnull\fP (for debugging).  Some of the drivers
+-may not have been compiled in.  This option is called \fBSoundDriver\fP in
+-the configuration file.
++Use the specified sound driver(s).  They can be \fBSNDIO\fP or \fBnull\fP (for
++debugging).  This option is called \fBSoundDriver\fP in the configuration file.
+ .LP
+ .TP
+ \fB\-m\fP, \fB\-\-music\-dir\fP
+@@ -123,7 +121,7 @@ file currently being played.
+ .TP
+ \fB\-T\fP \fITHEME\fP, \fB\-\-theme\fP \fITHEME\fP
+ Use a theme file.  If the path is not absolute, the file will be searched
+-for in \fB/usr/share/moc/themes/\fP (depends on installation prefix),
++for in \fB${TRUEPREFIX}/share/moc/themes/\fP,
+ \fB~/.moc/themes/\fP and the current directory.
+ .LP
+ .TP
+@@ -143,7 +141,7 @@ allows the new values to be picked up by substitutions
+ options are overridden afterwards (which gives the choice of whether the
+ configured values are replaced or added to).
+ .IP
+-See the example configuration file (\fBconfig.example\fP) for a description
++See the example configuration file (\fB${TRUEPREFIX}/share/examples/moc/config.example\fP) for a description
+ of the options available.
+ .LP
+ .RS
+@@ -261,7 +259,7 @@ MOC directory for the configuration file, socket, the 
+ .TP
+ .B ~/.moc/config
+ Configuration file for MOC.  The format is very simple; to see how to use
+-it look at the example configuration file (\fBconfig.example\fP) distributed
++it look at the example configuration file (\fB${TRUEPREFIX}/share/examples/moc/config.example\fP) distributed
+ with the program.  The example file fully describes all the configuration
+ options, and so is a useful reference when using the \fB\-O\fP option.  As
+ this file can specify commands which invoke other applications MOC will
+@@ -271,11 +269,11 @@ it is writable by anyone other than its owner.
+ .TP
+ .B ~/.moc/themes
+ .TQ
+-.B /usr/share/moc/themes
++.B ${TRUEPREFIX}/share/moc/themes
+ Default directories for the theme files.
+ .LP
+ .TP
+-.B /usr/share/moc/decoder_plugins
++.B ${TRUEPREFIX}/lib/moc/decoder_plugins
+ Default directories for the audio decoder plugins.
+ .LP
+ .TP

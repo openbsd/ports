@@ -1,0 +1,40 @@
+$OpenBSD: patch-config_example_in,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
+
+Remove audio choices that are irrelevant on OpenBSD.
+
+--- config.example.in.orig	Mon Jun 29 12:07:21 2015
++++ config.example.in	Mon Jun 29 12:08:03 2015
+@@ -121,32 +121,10 @@
+ #
+ #HTTPProxy =
+ 
+-# Sound driver - OSS, ALSA, JACK, SNDIO (on OpenBSD) or null (only for
++# Sound driver - SNDIO (on OpenBSD) or null (only for
+ # debugging).  You can enter more than one driver as a colon-separated
+ # list.  The first working driver will be used.
+ #SoundDriver = @SOUNDDRIVER@
+-
+-# Jack output settings.
+-#JackClientName = "moc"
+-#JackStartServer = no
+-#JackOutLeft = "system:playback_1"
+-#JackOutRight = "system:playback_2"
+-
+-# OSS output settings.
+-#OSSDevice = /dev/dsp
+-#OSSMixerDevice = /dev/mixer
+-#OSSMixerChannel1 = pcm             # 'pcm', 'master' or 'speaker'
+-#OSSMixerChannel2 = master          # 'pcm', 'master' or 'speaker'
+-
+-# ALSA output settings.  If you need to dump the audio produced by MOC
+-# to a file for diagnostic purposes, the following setting of 'ALSADevice'
+-# should do that:
+-#
+-#    ALSADevice=tee:hw,'/tmp/out.wav',wav
+-#
+-#ALSADevice = default
+-#ALSAMixer1 = PCM
+-#ALSAMixer2 = Master
+ 
+ # Save software mixer state?
+ # If enabled, a file 'softmixer' will be created in '~/.moc/' storing the

@@ -1,0 +1,16 @@
+$OpenBSD: patch-playlist_c,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
+
+Replace rand(3)-based computation with arc4random_uniform(3).
+
+--- playlist.c.orig	Sun Jun  5 13:54:04 2016
++++ playlist.c	Sun Jun  5 13:58:53 2016
+@@ -774,8 +774,7 @@ void plist_shuffle (struct plist *plist)
+ 	int i;
+ 
+ 	for (i = 0; i < plist->num; i++)
+-		plist_swap (plist, i,
+-				(rand()/(float)RAND_MAX) * (plist->num - 1));
++		plist_swap (plist, i, arc4random_uniform(plist->num));
+ 
+ 	rb_clear (&plist->search_tree);
+ 

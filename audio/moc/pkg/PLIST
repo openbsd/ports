@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
+@bin bin/mocp
+lib/moc/
+lib/moc/decoder_plugins/
+lib/moc/decoder_plugins/libaac_decoder.so
+lib/moc/decoder_plugins/libffmpeg_decoder.so
+lib/moc/decoder_plugins/libflac_decoder.so
+lib/moc/decoder_plugins/libmp3_decoder.so
+lib/moc/decoder_plugins/libmusepack_decoder.so
+lib/moc/decoder_plugins/libsndfile_decoder.so
+lib/moc/decoder_plugins/libspeex_decoder.so
+lib/moc/decoder_plugins/libvorbis_decoder.so
+lib/moc/decoder_plugins/libwavpack_decoder.so
+@man man/man1/mocp.1
+share/doc/moc/
+share/doc/moc/README
+share/doc/moc/README_equalizer
+share/doc/moc/THANKS
+share/examples/moc/
+share/examples/moc/config.example
+share/examples/moc/keymap.example
+share/moc/
+share/moc/themes/
+share/moc/themes/black_theme
+share/moc/themes/darkdot_theme
+share/moc/themes/example_theme
+share/moc/themes/green_theme
+share/moc/themes/moca_theme
+share/moc/themes/nightly_theme
+share/moc/themes/red_theme
+share/moc/themes/transparent-background
+share/moc/themes/yellow_red_theme
