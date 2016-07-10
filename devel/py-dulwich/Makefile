@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2016/06/14 09:55:31 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.24 2016/07/10 22:28:20 czarkoff Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.13.0
+MODPY_EGG_VERSION =	0.14.0
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 
@@ -24,8 +24,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		net/py-geventhttpclient
 
 # One test fails due to the lack of OpenStack SWIFT.
-# The other failed tests are related to this bug:
-# https://github.com/surfly/gevent/issues/446
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
 			devel/git,-main
