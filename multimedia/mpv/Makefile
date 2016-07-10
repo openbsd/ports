@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/05/04 09:13:10 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.28 2016/07/10 15:27:55 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -7,8 +7,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.17.0
-REVISION =		0
+GH_TAGNAME =		v0.18.0
 
 CATEGORIES =		multimedia x11
 
@@ -29,7 +28,7 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi jpeg lcms2 m opus postproc
+WANTLIB += fontconfig freetype fribidi gbm jpeg lcms2 m opus postproc
 WANTLIB += pthread pthread-stubs smbclient sndio speex swresample
 WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
@@ -69,9 +68,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-zsh-comp \
 			--disable-alsa \
 			--disable-caca \
-			--disable-dxva2-hwaccel \
 			--disable-enca \
-			--disable-gpl3 \
 			--disable-jack \
 			--disable-libarchive \
 			--disable-libguess \
@@ -96,12 +93,14 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-videotoolbox-gl \
 			--disable-wayland
 
-MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include"
+MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
+
+WRKBUILD =		${WRKSRC}/${MACHINE_ARCH}
 
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS +=		-march=i586
