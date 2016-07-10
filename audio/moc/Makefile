@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/07/10 12:03:06 ajacoutot Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -6,19 +6,18 @@ CATEGORIES =	audio
 HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
 
 # uses pledge()
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db estdc++
-WANTLIB += faad gsm id3tag idn ltdl m mad magic mp3lame mpcdec
-WANTLIB += ncursesw nghttp2 ogg opus pthread samplerate sndfile
-WANTLIB += sndio speex ssl stdc++ swresample tag tag_c vorbis
-WANTLIB += vorbisenc vorbisfile vpx wavpack x264 x265 xvidcore
+WANTLIB += faad gsm iconv id3tag idn intl ltdl m mad magic mp3lame
+WANTLIB += mpcdec ncursesw nghttp2 ogg opus pthread samplerate
+WANTLIB += sndfile sndio speex ssl stdc++ swresample tag tag_c
+WANTLIB += vorbis vorbisenc vorbisfile vpx wavpack x264 x265 xvidcore
 WANTLIB += z
-
-MODULES =	devel/gettext
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
@@ -40,7 +39,7 @@ LIB_DEPENDS =	audio/faad \
 SEPARATE_BUILD = Yes
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
+CONFIGURE_ARGS += \
 		--with-sndio \
 		--without-jack \
 		--without-oss \
