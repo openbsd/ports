@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/14 09:57:42 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2016/07/10 20:38:39 czarkoff Exp $
 
 COMMENT =		high performance, concurrent HTTP client library
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		geventhttpclient-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES =		net devel
@@ -21,7 +21,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-backports-ssl-match-hostname \
 			devel/py-gevent \
-			devel/py-certifi
+			devel/py-certifi \
+			devel/py-six
 
 NO_TEST =		Yes
 
