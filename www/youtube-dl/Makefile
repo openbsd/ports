@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.154 2016/06/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2016/07/10 11:56:17 rpointel Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2016.06.23.1
+VERSION =	2016.07.09.2
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
@@ -21,7 +21,11 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-NO_TEST =	Yes
+TEST_DEPENDS +=	devel/flake8 \
+		devel/py-nose
+
+do-test:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} ${TEST_TARGET}
 
 PKG_ARCH =	*
 
