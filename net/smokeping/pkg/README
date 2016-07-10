@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2016/04/25 00:03:04 sthen Exp $
+$OpenBSD: README,v 1.7 2016/07/10 12:07:26 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ Smokeping is split into two main parts, the daemon (running the probes
 and updating RRD files) and the part responsible for generating website
 graphs.
 
-Edit ${SYSCONFDIR}/smokeping/config (at least add some hosts to
+Edit ${SYSCONFDIR}/config (at least add some hosts to
 monitor) and enable the daemon:
 
     rcctl enable smokeping
