@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2016/06/16 08:53:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2016/07/10 08:50:35 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -17,7 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2016.3.1
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 

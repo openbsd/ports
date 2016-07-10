@@ -1,0 +1,16 @@
+$OpenBSD: patch-salt_states_archive_py,v 1.1 2016/07/10 08:50:35 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/34572
+
+--- salt/states/archive.py.orig	Sun Jul 10 10:47:47 2016
++++ salt/states/archive.py	Sun Jul 10 10:47:54 2016
+@@ -350,6 +350,9 @@ def extracted(name,
+                         append_opt = append_opt.replace('x', '').replace('f', '')
+                         tar_shortopts = tar_shortopts + append_opt
+ 
++            if __grains__['os'] == 'OpenBSD':
++                tar_shortopts = '-' + tar_shortopts
++
+             tar_cmd.append(tar_shortopts)
+             tar_cmd.extend(tar_longopts)
+             tar_cmd.extend(['-f', filename])
