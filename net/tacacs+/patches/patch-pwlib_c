@@ -1,0 +1,12 @@
+$OpenBSD: patch-pwlib_c,v 1.1 2016/07/11 10:28:16 sthen Exp $
+--- pwlib.c.orig	Mon Jul 11 11:26:06 2016
++++ pwlib.c	Mon Jul 11 11:27:28 2016
+@@ -202,7 +202,7 @@ struct authen_data *data;
+     data->status = TAC_PLUS_AUTHEN_STATUS_FAIL;
+ 
+     setpwent();
+-    pw = getpwnam(user);
++    pw = getpwnam_shadow(user);
+     endpwent();
+ 
+     if (pw == NULL) {

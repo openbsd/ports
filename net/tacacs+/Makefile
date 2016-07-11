@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 16:06:58 mmcc Exp $
+# $OpenBSD: Makefile,v 1.16 2016/07/11 10:28:15 sthen Exp $
 
 COMMENT=	Cisco AAA protocol daemon
 
 DISTNAME=	tac_plus.F4.0.4.alpha
 PKGNAME=	tacacs+-4.0.4a
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net security
 
 HOMEPAGE=       http://www.gazi.edu.tr/tacacs/
