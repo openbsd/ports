@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1 2016/07/11 09:23:17 yasuoka Exp $
+@man man/man8/dumpexfat.8
+@man man/man8/exfatfsck.8
+@man man/man8/exfatlabel.8
+@man man/man8/mkexfatfs.8
+@man man/man8/mount.exfat-fuse.8
+@bin sbin/dumpexfat
+@bin sbin/exfatfsck
+@bin sbin/exfatlabel
+sbin/fsck.exfat
+@bin sbin/mkexfatfs
+sbin/mkfs.exfat
+sbin/mount.exfat
+@bin sbin/mount.exfat-fuse
