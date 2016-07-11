@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2016/05/23 20:24:11 sebastia Exp $
+$OpenBSD: README-main,v 1.3 2016/07/11 09:17:45 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running pnp4nagios on OpenBSD
@@ -46,9 +46,9 @@ Prepare the chroot environment
  - follow the instructions in the rrdtool package README
    to chroot rrdtool
  - copy /bin/sh to ${VARBASE}/www/bin
- - copy ${SYSCONFDIR}/pnp4nagios ${VARBASE}/www${SYSCONFDIR}/pnp4nagios
+ - copy ${SYSCONFDIR} ${VARBASE}/www${SYSCONFDIR}
  - copy ${LOCALBASE}/lib/kohana/system ${VARBASE}/www${LOCALBASE}/lib/kohana/system
- - edit ${VARBASE}/www${SYSCONFDIR}/pnp4nagios/config.php
+ - edit ${VARBASE}/www${SYSCONFDIR}/config.php
    - ensure: $conf['rrdbase'] = "/pnp4nagios/rrd/";
    - ensure: $conf['nagios_base'] = "/icingaweb2";
 
@@ -59,11 +59,11 @@ With Icinga2 enable the perfdata feature:
 # icinga2 feature enable perfdata
 
 Pnp4nagios will use the npcd daemon, and work in the 'bulk' mode.
-In ${SYSCONFDIR}/pnp4nagios/npcd.cfg update the 'perfdata_spool_dir'
+In ${SYSCONFDIR}/npcd.cfg update the 'perfdata_spool_dir'
 to point to '${VARBASE}/spool/icinga2/perfdata'. Additionally ensure
 the 'perfdata_file_run_cmd_args' has a '--bulk' argument specified.
 
-In ${SYSCONFDIR}/pnp4nagios/process_perfdata.cfg ensure the
+In ${SYSCONFDIR}/process_perfdata.cfg ensure the
 RRDPATH setting points to '${VARBASE}/www/pnp4nagios/rrd'.
 
 Finally enable npcd:
