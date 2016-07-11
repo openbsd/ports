@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.395 2016/06/01 16:42:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.396 2016/07/11 09:25:18 yasuoka Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -60,6 +60,7 @@
      SUBDIR += ec2-api-tools
      SUBDIR += entr
      SUBDIR += eventlog
+     SUBDIR += exfat-fuse
      SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += faubackup
