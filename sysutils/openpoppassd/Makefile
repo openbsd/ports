@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/03 13:02:45 mpi Exp $
+# $OpenBSD: Makefile,v 1.15 2016/07/11 12:06:26 ajacoutot Exp $
 
 COMMENT=		daemon for changing passwords
 
 DISTNAME=		openpoppassd-1.1
-REVISION =		8
+REVISION =		9
 
 CATEGORIES=		sysutils mail
 
