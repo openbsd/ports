@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_states_archive_py,v 1.1 2016/07/10 08:50:35 ajacoutot Exp $
+$OpenBSD: patch-salt_states_archive_py,v 1.2 2016/07/11 14:24:32 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/34572
+https://github.com/saltstack/salt/commit/701f4d13abb26236f31bbfcf2cd2a9dfad26d43f
 
 --- salt/states/archive.py.orig	Sun Jul 10 10:47:47 2016
 +++ salt/states/archive.py	Sun Jul 10 10:47:54 2016
