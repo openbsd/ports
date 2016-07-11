@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2016/06/13 09:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.342 2016/07/11 10:15:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -173,7 +173,6 @@
      SUBDIR += pop3d
      SUBDIR += popa3d
      SUBDIR += popclient
-     SUBDIR += poppassd
      SUBDIR += poppy
      SUBDIR += postfix
      SUBDIR += postfwd
