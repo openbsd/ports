@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/25 18:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/07/13 07:48:42 ajacoutot Exp $
+
+BROKEN=			https://bugzilla.gnome.org/show_bug.cgi?id=764841
 
 COMMENT=		map application for GNOME
 
