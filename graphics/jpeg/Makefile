@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2016/06/25 12:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/07/13 09:43:39 ajacoutot Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
 V=		1.5.0
 DISTNAME=	jpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS+=	jpeg		68.1	# 64.0
@@ -41,5 +42,7 @@ post-install:
 	    ${PREFIX}/share/doc/jpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jpeg
 	${INSTALL_DATA} ${WRKSRC}/example.c ${PREFIX}/share/examples/jpeg
+	# the turbojpeg wrapper library is disabled
+	rm ${PREFIX}/lib/pkgconfig/libturbojpeg.pc
 
 .include <bsd.port.mk>

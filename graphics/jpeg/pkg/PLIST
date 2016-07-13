@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/06/25 12:34:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/07/13 09:43:39 ajacoutot Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
@@ -12,7 +12,6 @@ lib/libjpeg.a
 lib/libjpeg.la
 @lib lib/libjpeg.so.${LIBjpeg_VERSION}
 lib/pkgconfig/libjpeg.pc
-lib/pkgconfig/libturbojpeg.pc
 @man man/man1/cjpeg.1
 @man man/man1/djpeg.1
 @man man/man1/jpegtran.1
