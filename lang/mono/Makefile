@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2016/07/13 08:21:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2016/07/13 14:04:22 ajacoutot Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.4.0
 DISTNAME=	mono-${V}.182
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	lang devel
 
@@ -42,6 +42,8 @@ BUILD_DEPENDS=	devel/bison \
 		shells/bash \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/libgdiplus
+
+LIB_DEPENDS=	converters/libiconv
 
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
