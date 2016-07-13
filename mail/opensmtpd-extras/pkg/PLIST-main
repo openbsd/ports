@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/02/04 22:27:38 jung Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/07/13 20:23:40 jung Exp $
 @bin bin/tool-stats
 libexec/smtpd/
-@bin libexec/smtpd/filter-dkim-signer
-@bin libexec/smtpd/filter-dnsbl
 @bin libexec/smtpd/filter-monkey
-@bin libexec/smtpd/filter-pause
-@bin libexec/smtpd/filter-perl
-@bin libexec/smtpd/filter-regex
 @bin libexec/smtpd/filter-stub
 @bin libexec/smtpd/filter-trace
 @bin libexec/smtpd/filter-void
@@ -22,15 +17,10 @@ libexec/smtpd/
 @bin libexec/smtpd/table-stub
 @man man/man3/filter_api.3
 @man man/man5/filter-monkey.conf.5
-@man man/man5/filter-regex.conf.5
 @man man/man5/table-passwd.5
 @man man/man5/table-socketmap.5
 @man man/man5/table-sqlite.5
-@man man/man8/filter-dkim-signer.8
-@man man/man8/filter-dnsbl.8
 @man man/man8/filter-monkey.8
-@man man/man8/filter-pause.8
-@man man/man8/filter-regex.8
 @man man/man8/filter-stub.8
 @man man/man8/filter-trace.8
 @man man/man8/filter-void.8
@@ -38,5 +28,3 @@ libexec/smtpd/
 share/examples/opensmtpd-extras/
 share/examples/opensmtpd-extras/filter-monkey.conf
 @sample ${SYSCONFDIR}/mail/filter-monkey.conf
-share/examples/opensmtpd-extras/filter-regex.conf
-@sample ${SYSCONFDIR}/mail/filter-regex.conf

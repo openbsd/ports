@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-clamav,v 1.1 2015/11/30 19:47:32 jung Exp $
-@bin libexec/smtpd/filter-clamav
-@man man/man8/filter-clamav.8
