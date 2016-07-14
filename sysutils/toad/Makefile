@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2016/02/25 13:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/07/14 16:58:29 ajacoutot Exp $
+
+BROKEN=			needs sysctl kern.usermount
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
