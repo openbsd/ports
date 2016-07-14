@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/07/14 16:57:55 ajacoutot Exp $
 
 COMMENT =	simple password store
 
 DISTNAME =	password-store-1.6.5
 CATEGORIES =	security
+REVISION =	0
 
 HOMEPAGE =	http://www.passwordstore.org/
 
