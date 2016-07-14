@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Video_DVDRip_Project_pm,v 1.1 2013/04/06 18:36:21 stsp Exp $
+$OpenBSD: patch-lib_Video_DVDRip_Project_pm,v 1.2 2016/07/14 16:57:20 ajacoutot Exp $
 Fix DVD mounting so that IFO file copying works.
 --- lib/Video/DVDRip/Project.pm.orig	Sat Feb 28 19:28:00 2009
-+++ lib/Video/DVDRip/Project.pm	Sat Apr  6 14:03:47 2013
++++ lib/Video/DVDRip/Project.pm	Thu Jul 14 17:52:25 2016
 @@ -21,6 +21,7 @@ use Data::Dumper;
  use File::Basename;
  use File::Path;
@@ -18,7 +18,7 @@ Fix DVD mounting so that IFO file copying works.
      }, $class;
  
      my $content = Video::DVDRip::Content->new( project => $self );
-@@ -367,14 +369,25 @@ sub get_mount_dir_from_mtab {
+@@ -367,14 +369,24 @@ sub get_mount_dir_from_mtab {
      return $mount_dir;
  }
  
@@ -26,7 +26,6 @@ Fix DVD mounting so that IFO file copying works.
 +    my $self = shift;
 +
 +    if ( not $self->{tmp_mount_point} ) {
-+        # mount at temporary directory; assumes sysctl.usermount=1
 +        $self->{tmp_mount_point} = File::Temp->newdir("/tmp/dvdrip-XXXXXXXX");
 +    }
 +
@@ -46,7 +45,7 @@ Fix DVD mounting so that IFO file copying works.
  
      return $dvd_mount_point;
  }
-@@ -446,13 +459,18 @@ sub mount_dvd {
+@@ -446,7 +458,12 @@ sub mount_dvd {
          )
      );
  
@@ -55,15 +54,8 @@ Fix DVD mounting so that IFO file copying works.
 +    if ( $self->{tmp_mount_point} ) {
 +        $dvd_device = $self->dvd_device;
 +    }
- 
-+    my $mount = qx[ mount $dvd_device $dvd_mount_point 2>&1 && echo EXECFLOW_OK ];
 +
++    my $mount = qx[ mount $dvd_device $dvd_mount_point 2>&1 && echo EXECFLOW_OK ];
+ 
      $mount =~ s/\s$//;
  
-     croak "msg:"
-         . __x(
--        "Failed to mount DVD at {mount_point} ({mount_error})",
-+        "Failed to mount DVD at {mount_point} ({mount_error}) (perhaps try again with sysctl kern.usermount=1)",
-         mount_point => $dvd_mount_point,
-         mount_error => $mount
-         )

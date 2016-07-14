@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2016/07/09 08:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.160 2016/07/14 16:57:20 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -99,7 +99,7 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
-# XXX gvfsfusedaemon.c:47:27: error: fuse_lowlevel.h: No such file or director
+# needs sysctl kern.usermount to be really useful
 CONFIGURE_ARGS +=	--disable-fuse
 
 MULTI_PACKAGES=		-main -goa -nfs -smb -google

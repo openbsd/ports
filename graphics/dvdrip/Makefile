@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/07/14 16:57:20 ajacoutot Exp $
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.11
-REVISION=	1
+REVISION=	2
 DISTNAME=	dvdrip-${VERSION}
 CATEGORIES=	graphics audio multimedia perl5
 
