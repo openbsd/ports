@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
---- gcc/config/rs6000/sysv4.h.orig	Mon Feb 10 15:46:24 2014
-+++ gcc/config/rs6000/sysv4.h	Wed Apr 23 12:49:02 2014
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.2 2016/07/14 07:22:31 tobiasu Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Thu Jul 24 19:25:19 2014
++++ gcc/config/rs6000/sysv4.h	Fri Jul  8 18:18:15 2016
 @@ -381,6 +381,7 @@ do {									\
    asm_fprintf (FILE, "%L%s", PREFIX)
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2014/06/26 16:30:17 pascal E
  #define GLOBAL_ASM_OP "\t.globl "
  
  /* This says how to output assembler code to declare an
-@@ -813,7 +814,7 @@ ncrtn.o%s"
+@@ -813,13 +814,14 @@ ncrtn.o%s"
  
  /* OpenBSD support.  */
  #ifndef	LIB_OPENBSD_SPEC
@@ -18,7 +18,16 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2014/06/26 16:30:17 pascal E
  #endif
  
  #ifndef	STARTFILE_OPENBSD_SPEC
-@@ -836,7 +837,7 @@ ncrtn.o%s"
+ #define	STARTFILE_OPENBSD_SPEC "\
+-%{!shared: %{pg:gcrt0.o%s} %{!pg:%{p:gcrt0.o%s} %{!p:crt0.o%s}}} \
+-%{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}"
++%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} \
++%{!p:%{!static:crt0%O%s} %{static:%{nopie:crt0%O%s} %{!nopie:rcrt0%O%s}}}} \
++crtbegin%O%s} %{shared:crtbeginS%O%s}"
+ #endif
+ 
+ #ifndef	ENDFILE_OPENBSD_SPEC
+@@ -836,7 +838,7 @@ ncrtn.o%s"
  #endif
  
  #ifndef CPP_OS_OPENBSD_SPEC
