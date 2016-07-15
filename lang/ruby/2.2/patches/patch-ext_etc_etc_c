@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_etc_etc_c,v 1.1 2016/07/15 15:39:04 jeremy Exp $
+
+Use shadow versions of password functions.
+
+--- ext/etc/etc.c.orig	Tue Jul 12 11:14:25 2016
++++ ext/etc/etc.c	Tue Jul 12 11:15:05 2016
+@@ -187,7 +187,7 @@ etc_getpwuid(int argc, VALUE *argv, VALUE obj)
+     else {
+ 	uid = getuid();
+     }
+-    pwd = getpwuid(uid);
++    pwd = getpwuid_shadow(uid);
+     if (pwd == 0) rb_raise(rb_eArgError, "can't find user for %d", (int)uid);
+     return setup_passwd(pwd);
+ #else
+@@ -217,7 +217,7 @@ etc_getpwnam(VALUE obj, VALUE nam)
+     struct passwd *pwd;
+ 
+     SafeStringValue(nam);
+-    pwd = getpwnam(RSTRING_PTR(nam));
++    pwd = getpwnam_shadow(RSTRING_PTR(nam));
+     if (pwd == 0) rb_raise(rb_eArgError, "can't find user for %"PRIsVALUE, nam);
+     return setup_passwd(pwd);
+ #else
