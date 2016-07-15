@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/15 15:39:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/07/15 15:53:05 jeremy Exp $
 
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 BROKEN-powerpc =		OOM when building ext/ripper/ripper.c
@@ -19,11 +19,9 @@ PKGNAME-gdbm =		ruby23-gdbm-${VERSION}
 PKGNAME-tk =		ruby23-tk-${VERSION}
 PKGNAME-ri_docs =	ruby23-ri_docs-${VERSION}
 
-REVISION-main =		0
+REVISION-main =		1
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
-
-REVISION-main =		0
 
 NEXTVER =		2.4
 PKGSPEC-main =		ruby->=${RUBYLIBREV},<${NEXTVER}
