@@ -1,0 +1,12 @@
+$OpenBSD: patch-kcheckpass_kcheckpass_h,v 1.1 2016/07/16 10:38:50 zhuk Exp $
+Add BSD auth support.
+--- kcheckpass/kcheckpass.h.orig	Tue Jul 12 18:06:50 2016
++++ kcheckpass/kcheckpass.h	Tue Jul 12 18:05:14 2016
+@@ -72,6 +72,7 @@
+ #if defined(HAVE_PAM)
+ # undef HAVE_OSF_C2_PASSWD
+ #elif defined(HAVE_OSF_C2_PASSWD)
++#elif defined(HAVE_BSDAUTH)
+ #elif defined(_AIX)
+ # define HAVE_AIX_AUTH
+ #elif defined(HAVE_GETSPNAM)

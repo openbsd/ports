@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/08/27 07:30:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/07/16 10:38:50 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
@@ -2517,6 +2517,13 @@ share/sounds/pop-kde4.wav
 share/wallpapers/
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
+@owner _kdm
+@group _kdm
+@mode 0600
+@sample ${LOCALSTATEDIR}/kdm/
+@owner
+@group
+@mode
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black

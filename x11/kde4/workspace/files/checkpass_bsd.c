@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: checkpass_bsd.c,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+ * $OpenBSD: checkpass_bsd.c,v 1.2 2016/07/16 10:38:50 zhuk Exp $
  *
  * Copyright (c) 2012 Vadim Zhukov <persgray@gmail.com>
  *
@@ -25,19 +25,24 @@
  *******************************************************************/
 
 #include <sys/types.h>
+#include <string.h>
+
 #include <login_cap.h>
 #include <bsd_auth.h>
 
 
-AuthReturn Authenticate(const char *login,
+AuthReturn Authenticate(const char *method, const char *login,
         char *(*conv) (ConvRequest, const char *))
 {
   char *passwd;
 
+  if (strcmp(method, "classic"))
+    return AuthError;
+
   if (!(passwd = conv(ConvGetHidden, 0)))
     return AuthAbort;
 
-  return (auth_userokay(login, "passwd", NULL, passwd) ? AuthOk : AuthBad);
+  return (auth_userokay((char*)login, (char*)"passwd", NULL, passwd) ? AuthOk : AuthBad);
 }
 
 #endif
