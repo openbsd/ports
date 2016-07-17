@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2016/07/09 09:09:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2016/07/17 21:00:16 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,7 +13,7 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		42
+REVISION-main =		43
 REVISION-samba =	21
 REVISION-en_US =	2
 REVISION-locale =	2
@@ -108,6 +108,9 @@ CONFIGURE_ENV +=	CPPFLAGS="`pkg-config --cflags smbclient`"
 
 SEPARATE_BUILD =	flavored
 SUBST_VARS =		PREFIX
+
+post-extract:
+	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/${MODKDE_CONFIG_SUBDIR}

@@ -1,7 +1,29 @@
-$OpenBSD: patch-configure_in,v 1.18 2012/12/17 18:42:13 naddy Exp $
---- configure.in.orig	Wed Dec 12 14:49:07 2012
-+++ configure.in	Wed Dec 12 14:50:28 2012
-@@ -1858,7 +1858,7 @@ if test "$ac_use_openpty" = "yes"; then
+$OpenBSD: patch-configure_in,v 1.19 2016/07/17 21:00:16 zhuk Exp $
+Add BSD authentication support.
+Fix build.
+--- configure.in.orig	Wed Aug 20 20:00:04 2008
++++ configure.in	Sun Jul 17 14:39:32 2016
+@@ -159,6 +159,8 @@ AC_MSG_CHECKING([if it's safe to enable UTMP])
+ case "$host_os" in
+ linux*) utmp_support=yes;
+      ;;
++openbsd*) utmp_support=yes;
++     ;;
+ freebsd*) utmp_support=yes;
+      ;;
+ kfreebsd*-gnu) utmp_support=yes;
+@@ -1137,7 +1139,9 @@ else
+     [ AC_MSG_ERROR([--with-rpcauth requires Sun RPC header files.])])
+ fi
+ 
+-if test "x$use_pam" = xyes; then
++if test "x$use_bsdauth" = xyes; then
++    AC_DEFINE(USE_BSDAUTH, 1, [Define if kdm should use BSD auth])
++elif test "x$use_pam" = xyes; then
+     AC_DEFINE(USE_PAM, 1, [Define if kdm should use PAM])
+ elif test "x$use_shadow" = xyes; then
+     AC_DEFINE(USESHADOW, 1, [Define if kdm should use shadow passwords])
+@@ -1858,7 +1862,7 @@ if test "$ac_use_openpty" = "yes"; then
  	kde_safe_LIBS=$LIBS
  	LIBS="$LIBS $LIBUTIL"
  	AC_TRY_RUN([

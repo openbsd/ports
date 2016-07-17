@@ -1,6 +1,6 @@
-$OpenBSD: patch-acinclude_m4,v 1.5 2013/10/22 11:34:10 zhuk Exp $
---- acinclude.m4.orig	Wed Aug 20 20:05:01 2008
-+++ acinclude.m4	Wed Oct  9 18:12:08 2013
+$OpenBSD: patch-acinclude_m4,v 1.6 2016/07/17 21:00:16 zhuk Exp $
+--- acinclude.m4.orig	Wed Aug 20 20:00:01 2008
++++ acinclude.m4	Sun Jul 17 14:38:00 2016
 @@ -614,11 +614,11 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
          if test -n "$MEINPROC" -a "$MEINPROC" != "compiled"; then
   	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/kde3/share /opt/kde/share $prefix/share"
@@ -24,16 +24,53 @@ $OpenBSD: patch-acinclude_m4,v 1.5 2013/10/22 11:34:10 zhuk Exp $
  else
    kde_check_header="ksharedptr.h"
    kde_check_lib="libkio.la"
-@@ -1830,7 +1830,7 @@ So, check this please and use another prefix!])
+@@ -1830,8 +1830,8 @@ So, check this please and use another prefix!])
  fi
  
  kde_libdirs="$kde_libs_prefix/lib${kdelibsuff} /usr/lib/kde/lib${kdelibsuff} /usr/local/kde/lib${kdelibsuff} /usr/kde/lib${kdelibsuff} /usr/lib${kdelibsuff}/kde /usr/lib${kdelibsuff}/kde3 /usr/lib${kdelibsuff} /usr/X11R6/lib${kdelibsuff} /usr/local/lib${kdelibsuff} /opt/kde3/lib${kdelibsuff} /opt/kde/lib${kdelibsuff} /usr/X11R6/kde/lib${kdelibsuff}"
 -test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${kdelibsuff} $KDEDIR $kde_libdirs"
+-kde_libdirs="$ac_kde_libraries $libdir $kde_libdirs"
 +test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib${kdelibsuff}/kde3 $KDEDIR/lib${kdelibsuff} $KDEDIR $kde_libdirs"
- kde_libdirs="$ac_kde_libraries $libdir $kde_libdirs"
++kde_libdirs="$kde_libdirs $ac_kde_libraries $libdir"
  AC_FIND_FILE($kde_check_lib, $kde_libdirs, kde_libdir)
  ac_kde_libraries="$kde_libdir"
-@@ -4419,7 +4419,10 @@ AC_DEFUN([KDE_CHECK_LIBPTHREAD],
+ 
+@@ -4238,12 +4238,24 @@ AC_DEFUN([KDE_SHADOWPASSWD], [
+ 
+ ])
+ 
++AC_DEFUN([KDE_BSDAUTH], [
++  case $host in
++  *-*-freebsd* | *-*-netbsd* | *-*-openbsd*)
++    use_bsdauth=yes ;;
++  *)
++    use_bsdauth=no ;;
++  esac
++])
++
+ AC_DEFUN([KDE_PASSWDLIBS], [
+   AC_REQUIRE([KDE_MISC_TESTS]) dnl for LIBCRYPT
+   AC_REQUIRE([KDE_PAM])
+   AC_REQUIRE([KDE_SHADOWPASSWD])
++  AC_REQUIRE([KDE_BSDAUTH])
+ 
+-  if test "x$use_pam" = "xyes"; then 
++  if test "x$use_bsdauth" = "xyes"; then 
++    PASSWDLIBS=
++  elif test "x$use_pam" = "xyes"; then 
+     PASSWDLIBS="$PAMLIBS"
+   else
+     PASSWDLIBS="$LIBCRYPT $LIBSHADOW $LIBGEN"
+@@ -4254,7 +4266,7 @@ AC_DEFUN([KDE_PASSWDLIBS], [
+   dnl root to read, so kcheckpass needs to be root (even when using pam, since pam
+   dnl may need to read /etc/master.passwd).
+   case $host in
+-  *-*-freebsd*)
++  *-*-freebsd*|*-*-openbsd*)
+     SETUIDFLAGS="-m 4755 -o root"
+     ;;
+   *)
+@@ -4419,7 +4431,10 @@ AC_DEFUN([KDE_CHECK_LIBPTHREAD],
  
    dnl Un-special-case for FreeBSD.
    if test "x$LIBPTHREAD" = "xPTHREAD" ; then
@@ -45,11 +82,11 @@ $OpenBSD: patch-acinclude_m4,v 1.5 2013/10/22 11:34:10 zhuk Exp $
    fi
  
    AC_SUBST(LIBPTHREAD)
-@@ -4650,2 +4653,3 @@ fi
+@@ -4650,2 +4665,3 @@ fi
  AC_DEFUN([KDE_CHECK_PYTHON],
  [
 +  KDE_CHECK_PYTHON_INTERN("2.7", [
-@@ -4663,2 +4667,3 @@ AC_DEFUN([KDE_CHECK_PYTHON],
+@@ -4663,2 +4679,3 @@ AC_DEFUN([KDE_CHECK_PYTHON],
          ])
 +       ])
        ])

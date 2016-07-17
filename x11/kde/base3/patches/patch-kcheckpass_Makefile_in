@@ -1,0 +1,39 @@
+$OpenBSD: patch-kcheckpass_Makefile_in,v 1.1 2016/07/17 21:00:16 zhuk Exp $
+Add BSD authentication support.
+--- kcheckpass/Makefile.in.orig	Sat Jul 16 13:09:02 2016
++++ kcheckpass/Makefile.in	Sat Jul 16 13:10:22 2016
+@@ -51,14 +51,14 @@ am__installdirs = "$(DESTDIR)$(bindir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_kcheckpass_OBJECTS = kcheckpass.$(OBJEXT) \
+-	checkpass_etcpasswd.$(OBJEXT) checkpass_pam.$(OBJEXT) \
++	checkpass_bsd.$(OBJEXT) checkpass_etcpasswd.$(OBJEXT) checkpass_pam.$(OBJEXT) \
+ 	checkpass_shadow.$(OBJEXT) checkpass_osfc2passwd.$(OBJEXT) \
+ 	checkpass_aix.$(OBJEXT)
+ #>- kcheckpass_OBJECTS = $(am_kcheckpass_OBJECTS)
+ #>+ 7
+-kcheckpass_final_OBJECTS = kcheckpass.o checkpass_etcpasswd.o checkpass_pam.o checkpass_shadow.o checkpass_osfc2passwd.o checkpass_aix.o 
++kcheckpass_final_OBJECTS = kcheckpass.o checkpass_bsd.o checkpass_etcpasswd.o checkpass_pam.o checkpass_shadow.o checkpass_osfc2passwd.o checkpass_aix.o 
+ kcheckpass_nofinal_OBJECTS = kcheckpass.$(OBJEXT) \
+-	checkpass_etcpasswd.$(OBJEXT) checkpass_pam.$(OBJEXT) \
++	checkpass_bsd.$(OBJEXT) checkpass_etcpasswd.$(OBJEXT) checkpass_pam.$(OBJEXT) \
+ 	checkpass_shadow.$(OBJEXT) checkpass_osfc2passwd.$(OBJEXT) \
+ 	checkpass_aix.$(OBJEXT)
+ @KDE_USE_FINAL_FALSE@kcheckpass_OBJECTS = $(kcheckpass_nofinal_OBJECTS)
+@@ -435,7 +435,7 @@ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+ INCLUDES = $(KDE_USE_FPIE) $(all_includes)
+ kcheckpass_SOURCES = kcheckpass.c \
+-	checkpass_etcpasswd.c checkpass_pam.c checkpass_shadow.c \
++	checkpass_bsd.c checkpass_etcpasswd.c checkpass_pam.c checkpass_shadow.c \
+ 	checkpass_osfc2passwd.c checkpass_aix.c
+ 
+ kcheckpass_LDADD = -lkdefakes $(PASSWDLIBS) $(LIBSOCKET)
+@@ -530,6 +530,7 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpass_aix.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpass_bsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpass_etcpasswd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpass_osfc2passwd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpass_pam.Po@am__quote@

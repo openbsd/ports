@@ -1,0 +1,54 @@
+$OpenBSD: patch-kdm_backend_client_c,v 1.6 2016/07/17 21:00:16 zhuk Exp $
+Add BSD authentication support.
+--- kdm/backend/client.c.orig	Wed Feb 13 12:40:49 2008
++++ kdm/backend/client.c	Sun Jul 17 17:37:25 2016
+@@ -440,7 +440,9 @@ AccNoPass( const char *un, struct passwd *pw )
+ int
+ Verify( GConvFunc gconv, int rootok )
+ {
+-#ifdef USE_PAM
++#if defined(USE_BSDAUTH)
++	char *bsdstyle;
++#elif defined(USE_PAM)
+ 	const char *psrv;
+ 	struct pam_data pdata;
+ 	int pretc, pnopass;
+@@ -463,8 +465,19 @@ Verify( GConvFunc gconv, int rootok )
+ 
+ 	Debug( "Verify ...\n" );
+ 
+-#ifdef USE_PAM
++#ifdef USE_BSDAUTH
+ 
++	if (!curuser)
++		curuser = gconv(GCONV_USER, 0);
++	if (!curpass)
++		curpass = gconv(GCONV_PASS, 0);
++	if (curtype != NULL && strcmp(curtype, "classic"))
++		bsdstyle = curtype;
++	if (!auth_userokay(curuser, bsdstyle, NULL, curpass))
++		V_AUTH;
++
++#elif defined(USE_PAM)
++
+ 	pnopass = FALSE;
+ 	if (!strcmp( curtype, "classic" )) {
+ 		if (!gconv( GCONV_USER, 0 ))
+@@ -780,7 +793,7 @@ Verify( GConvFunc gconv, int rootok )
+ 	p->pw_shell = login_getcapstr( lc, "shell", p->pw_shell, p->pw_shell );
+ # endif
+ 
+-# ifndef USE_PAM
++# if !defined(USE_PAM) && !defined(USE_BSDAUTH)
+ 
+ /* restrict_expired */
+ #  if defined(HAVE_STRUCT_PASSWD_PW_EXPIRE) || defined(USESHADOW)
+@@ -942,7 +955,7 @@ Verify( GConvFunc gconv, int rootok )
+ 	}
+ #  endif
+ 
+-# endif /* !USE_PAM */
++# endif /* !USE_PAM && !USE_BSDAUTH */
+ 
+ /* restrict_nohome */
+ # ifdef HAVE_SETUSERCONTEXT
