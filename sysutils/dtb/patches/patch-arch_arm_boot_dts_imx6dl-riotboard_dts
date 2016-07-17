@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_arm_boot_dts_imx6dl-riotboard_dts,v 1.1 2016/07/17 15:09:39 jsg Exp $
+--- arch/arm/boot/dts/imx6dl-riotboard.dts.orig	Sun Jul 17 12:53:52 2016
++++ arch/arm/boot/dts/imx6dl-riotboard.dts	Sun Jul 17 12:54:40 2016
+@@ -19,6 +19,10 @@
+ 		reg = <0x10000000 0x40000000>;
+ 	};
+ 
++	chosen {
++		stdout-path = &uart2;
++	};
++
+ 	regulators {
+ 		compatible = "simple-bus";
+ 		#address-cells = <1>;
