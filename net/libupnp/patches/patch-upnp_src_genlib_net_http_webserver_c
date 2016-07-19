@@ -1,0 +1,16 @@
+$OpenBSD: patch-upnp_src_genlib_net_http_webserver_c,v 1.1 2016/07/19 14:45:18 semarie Exp $
+Don't allow unhandled POSTs to write to the filesystem.
+http://www.openwall.com/lists/oss-security/2016/07/18/13
+--- upnp/src/genlib/net/http/webserver.c.orig	Tue Jul 19 06:47:12 2016
++++ upnp/src/genlib/net/http/webserver.c	Tue Jul 19 06:47:22 2016
+@@ -1368,9 +1368,7 @@ static int http_RecvPostMessage(
+ 		if (Fp == NULL)
+ 			return HTTP_INTERNAL_SERVER_ERROR;
+ 	} else {
+-		Fp = fopen(filename, "wb");
+-		if (Fp == NULL)
+-			return HTTP_UNAUTHORIZED;
++		return HTTP_NOT_FOUND;
+ 	}
+ 	parser->position = POS_ENTITY;
+ 	do {

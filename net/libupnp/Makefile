@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/19 18:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/07/19 14:45:18 semarie Exp $
 
 COMMENT=	Universal Plug and Play SDK
 
 DISTNAME=	libupnp-1.6.19
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net devel
