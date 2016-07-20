@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/06/13 20:01:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/07/20 18:35:00 rpointel Exp $
 ${MODPY_COMMENT}@conflict py3-django-lts-*
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
@@ -1379,6 +1379,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/vendor/jquery/jquery.min.js
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/vendor/xregexp/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/vendor/xregexp/xregexp.js
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/static/admin/js/vendor/xregexp/xregexp.min.js
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/
@@ -3127,9 +3128,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/${MODPY_PYCACHE}aggregates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/${MODPY_PYCACHE}conversion.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/aggregates.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/db/models/sql/conversion.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/feeds.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/forms/
@@ -6651,6 +6650,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.12.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.13.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.14.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.4.txt
@@ -6666,6 +6666,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.4.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.5.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.6.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.7.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/index.txt

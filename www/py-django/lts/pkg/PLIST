@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/06/13 20:01:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/07/20 18:34:59 rpointel Exp $
 @conflict py3-django->=1.9,<1.10
 @comment bin/django-admin
 bin/${LNAME}-admin.py
@@ -3135,9 +3135,7 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/__init__.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/${MODPY_PYCACHE}aggregates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/${MODPY_PYCACHE}conversion.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/aggregates.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/db/models/sql/conversion.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/feeds.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/gis/forms/
@@ -6561,6 +6559,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.12.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.3.txt
