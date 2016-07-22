@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/04/05 19:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/07/22 12:27:42 sthen Exp $
 
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.32
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  idn                  17.2     # 17.14
 
@@ -31,5 +31,11 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux
 
 post-extract:
 	rm ${WRKSRC}/contrib/doxygen/*.orig
+
+# prevent autotools rebuild cascade
+post-patch:
+.for i in lib/idna.c lib/nfkc.c src/idn.c
+	@touch -r ${WRKSRC}/$i.orig ${WRKSRC}/$i
+.endfor
 
 .include <bsd.port.mk>
