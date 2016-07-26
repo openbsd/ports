@@ -1,4 +1,4 @@
-$OpenBSD: patch-vendor_github_com_fsouza_go-dockerclient_external_github_com_docker_docker_pkg_system_stat_openbsd_go,v 1.1.1.1 2016/05/14 13:49:47 ajacoutot Exp $
+$OpenBSD: patch-temporary_hack-stat_openbsd_go,v 1.1 2016/07/26 12:42:03 ajacoutot Exp $
 
 https://github.com/docker/docker/pull/21325/commits/719a43ca3530c424c3875d8c066f7ab09195dfdc
 
