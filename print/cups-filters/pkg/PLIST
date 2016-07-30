@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/03/24 07:30:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/07/30 14:18:35 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -33,6 +33,7 @@ lib/pkgconfig/libfontembed.pc
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
 @bin libexec/cups/filter/foomatic-rip
+libexec/cups/filter/gstopdf
 libexec/cups/filter/gstopxl
 @bin libexec/cups/filter/gstoraster
 @bin libexec/cups/filter/imagetopdf
@@ -43,16 +44,16 @@ libexec/cups/filter/imagetops
 @bin libexec/cups/filter/pdftopdf
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
-libexec/cups/filter/pstopdf
 libexec/cups/filter/pstopxl
 libexec/cups/filter/pstoraster
 @bin libexec/cups/filter/rastertoescpx
 @bin libexec/cups/filter/rastertopclx
 @bin libexec/cups/filter/rastertopdf
+@bin libexec/cups/filter/rastertops
 @bin libexec/cups/filter/sys5ippprinter
-libexec/cups/filter/textonly
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
+@bin libexec/cups/filter/texttotext
 @bin libexec/cups/filter/urftopdf
 @man man/man1/foomatic-rip.1
 @man man/man5/cups-browsed.conf.5
@@ -112,5 +113,4 @@ share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
-share/ppd/cupsfilters/textonly.ppd
 @rcscript ${RCDIR}/cups_browsed

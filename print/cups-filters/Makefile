@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.90 2016/07/09 15:39:45 kili Exp $
+# $OpenBSD: Makefile,v 1.91 2016/07/30 14:18:35 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.9.0
+DISTNAME=	cups-filters-1.10.0
 CATEGORIES=	print
-
-REVISION=	0
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
 SHARED_LIBS +=  fontembed            0.0      # 1.0
@@ -22,10 +20,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += avahi-client avahi-common avahi-glib c cups cupsimage
 WANTLIB += dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 hogweed idn ijs
-WANTLIB += jpeg lcms2 m nettle openjpeg p11-kit pcre
-WANTLIB += png poppler pthread pthread-stubs qpdf
-WANTLIB += tasn1 tiff z
+WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 hogweed iconv idn
+WANTLIB += ijs intl jpeg lcms2 m nettle openjpeg p11-kit pcre
+WANTLIB += png poppler pthread pthread-stubs qpdf tasn1 tiff z
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -40,7 +37,6 @@ CFLAGS +=	-O0
 
 BUILD_DEPENDS=	print/ghostscript/gnu
 
-MODULES +=	devel/gettext
 LIB_DEPENDS=	print/cups,-libs \
 		print/ijs \
 		print/poppler \
@@ -92,7 +88,6 @@ pre-configure:
 		${WRKSRC}/filter/foomatic-rip/spooler.c
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
-	sed -i 's,/bin/bash,/bin/ksh,g' ${WRKSRC}/filter/textonly
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d
