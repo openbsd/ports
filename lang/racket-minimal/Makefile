@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/07/05 22:30:11 juanfra Exp $
+# $OpenBSD: Makefile,v 1.25 2016/07/30 18:47:28 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -7,8 +7,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.5
-REVISION =		2
+V =			6.6
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -96,11 +95,14 @@ CONFIGURE_ARGS +=	--disable-jit \
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--enable-jit \
+			--disable-places \
+			--disable-futures
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
 			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 .else
