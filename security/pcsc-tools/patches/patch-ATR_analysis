@@ -1,18 +1,17 @@
-$OpenBSD: patch-ATR_analysis,v 1.1 2015/11/12 16:41:04 sthen Exp $
---- ATR_analysis.orig	Tue Nov 10 15:52:54 2015
-+++ ATR_analysis	Tue Nov 10 15:56:11 2015
-@@ -240,15 +240,7 @@ sub update_smartcard_list($$)
- 	if ($old)
+$OpenBSD: patch-ATR_analysis,v 1.2 2016/07/30 21:14:00 sthen Exp $
+--- ATR_analysis.orig	Sat Jul  2 17:24:38 2016
++++ ATR_analysis	Sat Jul 30 22:12:56 2016
+@@ -241,14 +241,7 @@ sub update_smartcard_list($$)
  	{
  		print "Updating $file using $url\n";
--
+ 
 -		if ($^O =~ "darwin")
 -		{
 -			system("curl $url --output $file");
 -		}
 -		else
 -		{
--			system("wget $url --output-document=$file ; touch $file");
+-			system("wget --quiet $url --output-document=$file ; touch $file");
 -		}
 +		system("ftp -o $file $url");
  
