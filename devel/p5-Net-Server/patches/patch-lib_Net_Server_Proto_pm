@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Net_Server_Proto_pm,v 1.1 2016/07/30 21:36:45 sthen Exp $
+
+We don't have the sysctl any more, resulting in this binding to v6 only.
+
+--- lib/Net/Server/Proto.pm.orig	Sat Jul 30 22:30:09 2016
++++ lib/Net/Server/Proto.pm	Sat Jul 30 22:31:49 2016
+@@ -166,10 +166,7 @@ sub get_addr_info {
+ }
+ 
+ sub _bindv6only {
+-    my $class = shift;
+-    my $val = $class->_sysctl('net.ipv6.bindv6only'); # linux
+-    $val = $class->_sysctl('net.inet6.ip6.v6only') if ! length($val); # bsd
+-    return $val;
++    return '1'; # OpenBSD requires separate binds for v4 and v6.
+ }
+ 
+ sub _sysctl {
