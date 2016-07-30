@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/25 12:42:08 semarie Exp $
+# $OpenBSD: Makefile,v 1.18 2016/07/30 18:08:46 ajacoutot Exp $
 
 COMMENT=	proxy IRC client with ICB server
 
 DISTNAME=	icbirc-2.1
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.ch/
 
 HOMEPAGE=	http://www.benzedrine.ch/icbirc.html
-
-MAINTAINER=	Sebastien Marie <semarie@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
