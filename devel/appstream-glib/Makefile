@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/28 08:46:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/07/30 14:17:14 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.5.16
+DISTNAME=		appstream-glib-0.5.17
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       2.0      # 7.5
-SHARED_LIBS +=  appstream-builder    2.0      # 7.5
+SHARED_LIBS +=  appstream-glib       2.0      # 8.8
+SHARED_LIBS +=  appstream-builder    2.0      # 8.8
 
 CATEGORIES=		devel
 
@@ -51,6 +51,9 @@ LIB_DEPENDS=		archivers/libarchive \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-ostree \
 			--disable-rpm
+
+# requires libstemmer
+CONFIGURE_ARGS +=	--disable-stemmer
 
 # our old gcc does not handle some of the warning flags
 MAKE_FLAGS=		WARNINGFLAGS_C=
