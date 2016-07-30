@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.44 2016/04/26 12:05:19 ajacoutot Exp $
+$OpenBSD: README,v 1.45 2016/07/30 14:25:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,13 +8,12 @@ ownCloud is installed under
     ${INSTDIR}
 
 Official documentation is available at:
-    http://doc.owncloud.org/server/${VR}/admin_manual/
+    https://doc.owncloud.org/server/${VR}/admin_manual/
 
 Post-installation instructions
 ==============================
 
-*** It is highly recommended to use SSL on the webserver so that access is done
-*** over https instead of http!
+*** It is highly recommended to use SSL on the webserver (HTTPS).
 
 chroot(2)
 ---------
@@ -28,19 +27,17 @@ run the following as root:
 
 OpenBSD HTTP daemon
 -------------------
-TBD
 See:
     https://github.com/reyk/httpd/wiki/Running-ownCloud-with-httpd-on-OpenBSD
 
 nginx
 -----
-TBD
 See:
-    https://doc.owncloud.org/server/${VR}/admin_manual/installation/nginx_configuration.html
+    https://doc.owncloud.org/server/${VR}/admin_manual/installation/nginx_owncloud_9x.html
 
-Apache2
--------
-Apache2 configuration for ownCloud is stored under:
+Apache HTTPD
+------------
+Apache configuration for ownCloud is stored under:
     ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
 It needs to be enabled by running the following command after the apache-httpd
@@ -50,17 +47,17 @@ package is installed:
 
 PHP
 ---
-Default PHP values for Apache2 are set under:
+Default PHP values for Apache are set under:
     ${TINSTDIR}/config/.htaccess
 
-OpenBSD HTTP daemon users can match these .htaccess file values by
-editing ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
+OpenBSD HTTP daemon users can match these .htaccess file values by editing
+${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
 
-nginx users can match these .htaccess file values by configuring
-fastcgi_param with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
+nginx users can match these .htaccess file values by configuring fastcgi_param
+with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
-For enhanced performance, a PHP opcode cache can be used, either
-use "opcache" (built-in to PHP 5.5+, enable "opcache.ini" to use it)
+For enhanced performance, a PHP opcode cache can be used, either use "opcache"
+(built-in to PHP 5.5+, enable "opcache.ini" to use it)
 or install xcache.
 
 Database configuration
@@ -74,6 +71,8 @@ another database, the corresponding package needs to be installed
 *before* setting up ownCloud:
     php-pdo_pgsql or php-pdo_mysql
 
+Configuration file
+------------------
 Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
@@ -85,9 +84,9 @@ Cron job
 ownCloud needs to run background jobs on a regular basis. By default, it
 will execute one task with each page loaded ("AJAX" option in the admin
 interface). The prefered way is to use a cron(8) job instead.
-(see http://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
+(see https://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
 e.g.
-*/15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/owncloud/cron.php >/dev/null
+*/15	*	*	*	*	/usr/bin/ftp -Vo - https://<hostname>/owncloud/cron.php >/dev/null
 
 Memory caching
 --------------
@@ -120,13 +119,13 @@ Finishing and validating the installation
 Make sure the web server can resolve its hostname (e.g. if chrooted, by
 creating /var/www/etc/hosts and/or /var/www/etc/resolv.conf).
 
-Accessing http://<hostname>/owncloud with a Web browser will finish the
+Accessing https://<hostname>/owncloud with a Web browser will finish the
 installation and create a new admin user.
 
 Updating
 ========
 Before updating to a new release, read:
-    http://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
+    https://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
 
 When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
 must be installed to properly upgrade the database:
@@ -137,7 +136,7 @@ WebDAV access
 The personal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
-    http://<hostname>/owncloud/remote.php/webdav/
+    https://<hostname>/owncloud/remote.php/webdav/
 
 Synchronization
 ===============
