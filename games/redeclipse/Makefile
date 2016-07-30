@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/29 04:04:04 jsg Exp $
+# $OpenBSD: Makefile,v 1.12 2016/07/30 15:41:37 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -13,17 +13,19 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.5.3
+V=		1.5.5
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
 
 DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX}
 
-SM=	acerspyro actors appleflap blendbrush caustics crosshairs elyvisions \
-	fonts freezurbern john jojo jwin luckystrike maps mayhem mikeplus64 \
-	misc nobiax particles philipk projectiles props skyboxes sounds \
-	textures torley trak ulukai unnamed vanities vegetation weapons wicked 
+
+SM=	acerspyro actors appleflap blendbrush caustics crosshairs dziq \
+	elyvisions fonts freezurbern john jojo jwin luckystrike maps mayhem \
+	mikeplus64 misc nieb nobiax particles philipk projectiles props \
+	skyboxes snipergoth sounds textures torley trak ulukai unnamed \
+	vanities vegetation weapons wicked
 
 .for MOD in ${SM}
 DISTFILES+=	redeclipse-data-${MOD}-{${MOD}/archive/v}${V}${EXTRACT_SUFX}
@@ -39,10 +41,11 @@ RUN_DEPENDS-main +=	${BASE_PKGPATH},-data>=${V} \
 			x11/gtk+3,-guic
 
 BUILD_DEPENDS=		graphics/GraphicsMagick
-LIB_DEPENDS-main=	devel/sdl-mixer \
-			devel/sdl-image \
+LIB_DEPENDS-main=	devel/sdl2-mixer \
+			devel/sdl2-image \
 			net/enet>=1.3.12
-WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
+WANTLIB-main+=		GL X11 SDL2 SDL2_image SDL2_mixer c enet m pthread \
+			stdc++ z
 
 WRKDIST=		${WRKDIR}/base-${V}/src
 USE_GMAKE=		Yes
@@ -55,7 +58,9 @@ INSTALL_TARGET=		system-install
 post-extract:
 .for MOD in ${SM}
 	rm -f ${WRKDIR}/${MOD}-${V}/.gitattributes
+	rm -rf ${WRKDIR}/${MOD}-${V}/.github
 	rm -f ${WRKDIR}/${MOD}-${V}/.gitignore
+	rm -f ${WRKDIR}/${MOD}-${V}/.gitmodules
 	rmdir ${WRKDIR}/base-${V}/data/${MOD}
 	mv ${WRKDIR}/${MOD}-${V} ${WRKDIR}/base-${V}/data/${MOD}
 .endfor
