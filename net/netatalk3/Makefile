@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/05 14:32:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/07/30 14:28:40 ajacoutot Exp $
 
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.8
-REVISION=		2
+V=			3.1.9
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC =               netatalk->=3,<4
@@ -21,13 +20,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += avahi-client avahi-common c crypto db dbus-1 dbus-glib-1
 WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 pcre
-WANTLIB += pthread tdb z
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 iconv
+WANTLIB += intl pcre pthread tdb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=netatalk/}
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	contrib/shell_utils/afpstats
