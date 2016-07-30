@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2016/05/21 07:12:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2016/07/30 14:19:13 ajacoutot Exp $
 
 # WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
 # map_refresh on every lock which will incure a performance penalty
@@ -7,7 +7,7 @@
 
 COMMENT=	Cyrus IMAP server
 
-V=		2.5.8
+V=		2.5.9
 DISTNAME=	cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0

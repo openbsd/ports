@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.27 2016/05/21 07:12:16 ajacoutot Exp $
---- configure.orig	Fri May 20 08:01:17 2016
-+++ configure	Sat May 21 09:01:23 2016
+$OpenBSD: patch-configure,v 1.28 2016/07/30 14:19:13 ajacoutot Exp $
+--- configure.orig	Fri Jul 22 04:15:23 2016
++++ configure	Mon Jul 25 13:41:16 2016
 @@ -13850,9 +13850,7 @@ CFLAGS=$save_CFLAGS
  fi
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.27 2016/05/21 07:12:16 ajacoutot Exp $
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
  $as_echo "#define HAVE_BDB /**/" >>confdefs.h
-@@ -20490,7 +20488,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
+@@ -20515,7 +20513,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
  elif test "${with_perl}" != "no"; then
      PERL="${with_perl}"
      case "${target_os}" in

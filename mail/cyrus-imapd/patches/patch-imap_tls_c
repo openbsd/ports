@@ -1,0 +1,12 @@
+$OpenBSD: patch-imap_tls_c,v 1.1 2016/07/30 14:19:13 ajacoutot Exp $
+--- imap/tls.c.orig	Mon Jul 25 14:00:32 2016
++++ imap/tls.c	Mon Jul 25 14:02:00 2016
+@@ -222,7 +222,7 @@ static RSA *tmp_rsa_cb(SSL * s __attribute__((unused))
+ }
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ /* replacements for new 1.1 API accessors */
+ /* XXX probably put these somewhere central */
+ static int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)

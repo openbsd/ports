@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/05/21 07:12:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/07/30 14:19:13 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -325,7 +325,9 @@ share/doc/cyrus-imapd/man/timsieved.8.html
 share/doc/cyrus-imapd/man/tls_prune.8.html
 share/doc/cyrus-imapd/man/unexpunge.8.html
 share/doc/cyrus-imapd/murder.fig
+share/doc/cyrus-imapd/murder.png
 share/doc/cyrus-imapd/netnews.fig
+share/doc/cyrus-imapd/netnews.png
 share/doc/cyrus-imapd/notes.html
 share/doc/cyrus-imapd/os.html
 share/doc/cyrus-imapd/overview.html
@@ -344,6 +346,8 @@ share/examples/cyrus-imapd/normal.conf
 share/examples/cyrus-imapd/prefork.conf
 share/examples/cyrus-imapd/small.conf
 share/examples/cyrus-imapd/tools/
+share/examples/cyrus-imapd/tools/.deps/
+share/examples/cyrus-imapd/tools/.deps/htmlstrip.Po
 share/examples/cyrus-imapd/tools/arbitronsort.pl
 share/examples/cyrus-imapd/tools/compile_st.pl
 share/examples/cyrus-imapd/tools/config2header
@@ -351,6 +355,7 @@ share/examples/cyrus-imapd/tools/config2man
 share/examples/cyrus-imapd/tools/convert-sieve.pl
 share/examples/cyrus-imapd/tools/dohash
 share/examples/cyrus-imapd/tools/fixsearchpath.pl
+share/examples/cyrus-imapd/tools/htmlstrip.c
 share/examples/cyrus-imapd/tools/jenkins-build.sh
 share/examples/cyrus-imapd/tools/masssievec
 share/examples/cyrus-imapd/tools/migrate-metadata
