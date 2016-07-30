@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/14 13:31:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/07/30 21:22:46 sthen Exp $
 
 COMMENT=	navigation scripting and testing utility for PhantomJS
 
 GH_ACCOUNT=	casperjs
 GH_PROJECT=	casperjs
-GH_TAGNAME=	1.1.1
+GH_TAGNAME=	1.1.3
 
 CATEGORIES=	www
 
