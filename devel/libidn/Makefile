@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/07/22 12:27:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/07/30 14:22:43 ajacoutot Exp $
 
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.32
-REVISION=		1
+DISTNAME=		libidn-1.33
 
-SHARED_LIBS +=  idn                  17.2     # 17.14
+SHARED_LIBS +=  idn                  17.2     # 17.16
 
 CATEGORIES=		devel
 
@@ -25,17 +24,10 @@ LIB_DEPENDS=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-csharp \
-			--disable-java
-
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux
+			--disable-java \
+			--disable-valgrind-tests
 
 post-extract:
 	rm ${WRKSRC}/contrib/doxygen/*.orig
-
-# prevent autotools rebuild cascade
-post-patch:
-.for i in lib/idna.c lib/nfkc.c src/idn.c
-	@touch -r ${WRKSRC}/$i.orig ${WRKSRC}/$i
-.endfor
 
 .include <bsd.port.mk>
