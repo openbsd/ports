@@ -1,7 +1,8 @@
-#	$OpenBSD: Makefile,v 1.3 2016/07/12 12:35:44 jsg Exp $
+#	$OpenBSD: Makefile,v 1.4 2016/07/30 14:22:19 jsg Exp $
 
 COMMENT=	U-Boot firmware
 DISTNAME=	u-boot-2016.07
+REVISION=	0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -25,11 +26,13 @@ BOARDS=\
 	am335x_boneblack \
 	am57xx_evm \
 	A10-OLinuXino-Lime \
+	A10s-OLinuXino-M \
 	A20-OLinuXino-Lime \
 	A20-OLinuXino-Lime2 \
 	A20-OLinuXino_MICRO \
 	Bananapi \
 	Bananapro \
+	CHIP \
 	Cubieboard \
 	Cubieboard2 \
 	Cubietruck \
@@ -39,8 +42,10 @@ BOARDS=\
 	Linksprite_pcDuino3_Nano \
 	cm_fx6 \
 	mx6cuboxi \
+	mx6qsabrelite \
 	nitrogen6q \
 	novena \
+	riotboard \
 	udoo \
 	wandboard \
 	clearfog \

@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/29 01:35:33 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/07/30 14:22:19 jsg Exp $
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
 share/u-boot/A10-OLinuXino-Lime/u-boot
 share/u-boot/A10-OLinuXino-Lime/u-boot-sunxi-with-spl.bin
 share/u-boot/A10-OLinuXino-Lime/u-boot.bin
 share/u-boot/A10-OLinuXino-Lime/u-boot.img
+share/u-boot/A10s-OLinuXino-M/
+share/u-boot/A10s-OLinuXino-M/u-boot
+share/u-boot/A10s-OLinuXino-M/u-boot-sunxi-with-spl.bin
+share/u-boot/A10s-OLinuXino-M/u-boot.bin
+share/u-boot/A10s-OLinuXino-M/u-boot.img
 share/u-boot/A20-OLinuXino-Lime/
 share/u-boot/A20-OLinuXino-Lime/u-boot
 share/u-boot/A20-OLinuXino-Lime/u-boot-sunxi-with-spl.bin
@@ -30,6 +35,11 @@ share/u-boot/Bananapro/u-boot
 share/u-boot/Bananapro/u-boot-sunxi-with-spl.bin
 share/u-boot/Bananapro/u-boot.bin
 share/u-boot/Bananapro/u-boot.img
+share/u-boot/CHIP/
+share/u-boot/CHIP/u-boot
+share/u-boot/CHIP/u-boot-sunxi-with-spl.bin
+share/u-boot/CHIP/u-boot.bin
+share/u-boot/CHIP/u-boot.img
 share/u-boot/Cubieboard/
 share/u-boot/Cubieboard/u-boot
 share/u-boot/Cubieboard/u-boot-sunxi-with-spl.bin
@@ -90,6 +100,10 @@ share/u-boot/mx6cuboxi/SPL
 share/u-boot/mx6cuboxi/u-boot
 share/u-boot/mx6cuboxi/u-boot.bin
 share/u-boot/mx6cuboxi/u-boot.img
+share/u-boot/mx6qsabrelite/
+share/u-boot/mx6qsabrelite/u-boot
+share/u-boot/mx6qsabrelite/u-boot.bin
+share/u-boot/mx6qsabrelite/u-boot.imx
 share/u-boot/nitrogen6q/
 share/u-boot/nitrogen6q/u-boot
 share/u-boot/nitrogen6q/u-boot.bin
@@ -109,6 +123,10 @@ share/u-boot/omap4_panda/MLO
 share/u-boot/omap4_panda/u-boot
 share/u-boot/omap4_panda/u-boot.bin
 share/u-boot/omap4_panda/u-boot.img
+share/u-boot/riotboard/
+share/u-boot/riotboard/u-boot
+share/u-boot/riotboard/u-boot.bin
+share/u-boot/riotboard/u-boot.imx
 share/u-boot/rpi_2/
 share/u-boot/rpi_2/u-boot
 share/u-boot/rpi_2/u-boot.bin
