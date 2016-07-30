@@ -1,0 +1,12 @@
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.1 2016/07/30 21:12:15 sthen Exp $
+--- res/res_rtp_asterisk.c.orig	Fri Jul 29 12:22:30 2016
++++ res/res_rtp_asterisk.c	Fri Jul 29 12:23:03 2016
+@@ -1357,7 +1357,7 @@ static int ast_rtp_dtls_set_configuration(struct ast_r
+ 		return 0;
+ 	}
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10002000L
++#if OPENSSL_VERSION_NUMBER < 0x10002000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	rtp->ssl_ctx = SSL_CTX_new(DTLSv1_method());
+ #else
+ 	rtp->ssl_ctx = SSL_CTX_new(DTLS_method());

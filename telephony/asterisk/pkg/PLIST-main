@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.62 2016/05/14 13:45:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.63 2016/07/30 21:12:15 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -130,6 +130,7 @@ include/asterisk/mixmonitor.h
 include/asterisk/mod_format.h
 include/asterisk/module.h
 include/asterisk/monitor.h
+include/asterisk/multicast_rtp.h
 include/asterisk/musiconhold.h
 include/asterisk/named_locks.h
 include/asterisk/netsock.h
@@ -312,8 +313,8 @@ lib/asterisk/modules/chan_console.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_mgcp.so
 lib/asterisk/modules/chan_motif.so
-lib/asterisk/modules/chan_multicast_rtp.so
 lib/asterisk/modules/chan_pjsip.so
+lib/asterisk/modules/chan_rtp.so
 lib/asterisk/modules/chan_sip.so
 lib/asterisk/modules/chan_skinny.so
 lib/asterisk/modules/chan_unistim.so
@@ -453,6 +454,7 @@ lib/asterisk/modules/res_pjsip_dialog_info_body_generator.so
 lib/asterisk/modules/res_pjsip_diversion.so
 lib/asterisk/modules/res_pjsip_dlg_options.so
 lib/asterisk/modules/res_pjsip_dtmf_info.so
+lib/asterisk/modules/res_pjsip_empty_info.so
 lib/asterisk/modules/res_pjsip_endpoint_identifier_anonymous.so
 lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
 lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
