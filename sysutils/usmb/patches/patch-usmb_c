@@ -1,0 +1,14 @@
+$OpenBSD: patch-usmb_c,v 1.1 2016/07/31 13:48:55 jca Exp $
+--- usmb.c.orig	Tue Jul 19 17:08:24 2016
++++ usmb.c	Tue Jul 19 17:08:55 2016
+@@ -315,8 +315,8 @@ int main (int argc, char **argv)
+
+   if (umount)
+   {
+-    execlp ("fusermount", "fusermount", "-u", mountpoint, NULL);
+-    perror ("Failed to execute fusermount");
++    execlp ("umount", "umount", mountpoint, NULL);
++    perror ("Failed to execute umount");
+   }
+
+   else if (create_share_name (server, sharename) && get_context())
