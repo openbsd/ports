@@ -1,14 +1,14 @@
-$OpenBSD: patch-storage_connect_reldef_cpp,v 1.5 2016/03/15 12:42:08 sthen Exp $
---- storage/connect/reldef.cpp.orig	Wed Feb 17 15:59:55 2016
-+++ storage/connect/reldef.cpp	Sat Mar  5 22:19:34 2016
-@@ -516,6 +516,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
+$OpenBSD: patch-storage_connect_reldef_cpp,v 1.6 2016/07/31 21:30:06 sthen Exp $
+--- storage/connect/reldef.cpp.orig	Thu Jun 23 05:24:43 2016
++++ storage/connect/reldef.cpp	Sun Jul  3 01:07:06 2016
+@@ -515,6 +515,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
+ #else   // !__WIN__
    const char *error = NULL;
-   Dl_info dl_info;
      
 +#ifndef RTLD_NOLOAD
 +#define RTLD_NOLOAD 0
 +#endif
 +
  #if 0  // Don't know what all this stuff does
-   // The OEM lib must retrieve exported CONNECT variables
-   if (dladdr(&connect_hton, &dl_info)) {
+ 	Dl_info dl_info;
+ 

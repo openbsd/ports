@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2016/03/15 12:42:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2016/07/31 21:30:06 sthen Exp $
 @conflict mysql-client-*
 @conflict mysql-server-*
 @pkgpath databases/mysql,-main
@@ -71,6 +71,7 @@ include/mysql/private/atomic/rwlock.h
 include/mysql/private/atomic/solaris.h
 include/mysql/private/atomic/x86-gcc.h
 include/mysql/private/base64.h
+include/mysql/private/config.h
 include/mysql/private/ft_global.h
 include/mysql/private/hash.h
 include/mysql/private/heap.h
@@ -107,6 +108,7 @@ include/mysql/private/mysqld_default_groups.h
 include/mysql/private/mysys_err.h
 include/mysql/private/password.h
 include/mysql/private/probes_mysql.h
+include/mysql/private/probes_mysql_nodtrace.h
 include/mysql/private/queues.h
 include/mysql/private/rijndael.h
 include/mysql/private/service_versions.h

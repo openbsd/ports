@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.22 2016/05/04 07:37:22 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.23 2016/07/31 21:30:06 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -675,6 +675,7 @@ share/mysql-test/mysql-test-run.pl
 share/mysql-test/plugin/
 share/mysql-test/plugin/connect/
 share/mysql-test/plugin/connect/connect/
+share/mysql-test/plugin/connect/connect/disabled.def
 share/mysql-test/plugin/connect/connect/my.cnf
 share/mysql-test/plugin/connect/connect/r/
 share/mysql-test/plugin/connect/connect/r/alter.result
@@ -694,6 +695,10 @@ share/mysql-test/plugin/connect/connect/r/grant3.result
 share/mysql-test/plugin/connect/connect/r/index.result
 share/mysql-test/plugin/connect/connect/r/ini.result
 share/mysql-test/plugin/connect/connect/r/ini_grant.result
+share/mysql-test/plugin/connect/connect/r/jdbc.result
+share/mysql-test/plugin/connect/connect/r/jdbc_new.result
+share/mysql-test/plugin/connect/connect/r/jdbc_oracle.result
+share/mysql-test/plugin/connect/connect/r/jdbc_postgresql.result
 share/mysql-test/plugin/connect/connect/r/json.result
 share/mysql-test/plugin/connect/connect/r/json_udf.result
 share/mysql-test/plugin/connect/connect/r/json_udf_bin.result
@@ -749,6 +754,7 @@ share/mysql-test/plugin/connect/connect/std_data/expense.json
 share/mysql-test/plugin/connect/connect/std_data/expenses.txt
 share/mysql-test/plugin/connect/connect/std_data/funny.txt
 share/mysql-test/plugin/connect/connect/std_data/funny2.txt
+share/mysql-test/plugin/connect/connect/std_data/girls.txt
 share/mysql-test/plugin/connect/connect/std_data/gloss.json
 share/mysql-test/plugin/connect/connect/std_data/latin1.xml
 share/mysql-test/plugin/connect/connect/std_data/mulexp3.json
@@ -786,6 +792,12 @@ share/mysql-test/plugin/connect/connect/t/have_odbc_sqlite3.inc
 share/mysql-test/plugin/connect/connect/t/index.test
 share/mysql-test/plugin/connect/connect/t/ini.test
 share/mysql-test/plugin/connect/connect/t/ini_grant.test
+share/mysql-test/plugin/connect/connect/t/jdbc.test
+share/mysql-test/plugin/connect/connect/t/jdbc_new.test
+share/mysql-test/plugin/connect/connect/t/jdbc_oracle.test
+share/mysql-test/plugin/connect/connect/t/jdbc_postgresql.test
+share/mysql-test/plugin/connect/connect/t/jdbconn.inc
+share/mysql-test/plugin/connect/connect/t/jdbconn_cleanup.inc
 share/mysql-test/plugin/connect/connect/t/json.test
 share/mysql-test/plugin/connect/connect/t/json_udf.inc
 share/mysql-test/plugin/connect/connect/t/json_udf.test
@@ -1869,6 +1881,7 @@ share/mysql-test/r/information_schema_inno.result
 share/mysql-test/r/information_schema_parameters.result
 share/mysql-test/r/information_schema_part.result
 share/mysql-test/r/information_schema_routines.result
+share/mysql-test/r/information_schema_stats.result
 share/mysql-test/r/init_connect.result
 share/mysql-test/r/init_connection_query_cache.result
 share/mysql-test/r/init_file.result
@@ -2236,6 +2249,7 @@ share/mysql-test/r/ssl_7937,nossl.result
 share/mysql-test/r/ssl_7937.result
 share/mysql-test/r/ssl_8k_key.result
 share/mysql-test/r/ssl_and_innodb.result
+share/mysql-test/r/ssl_ca.result
 share/mysql-test/r/ssl_cert_verify.result
 share/mysql-test/r/ssl_cipher.result
 share/mysql-test/r/ssl_compress.result
@@ -4338,6 +4352,7 @@ share/mysql-test/suite/innodb/r/innodb-corrupted-table.result
 share/mysql-test/suite/innodb/r/innodb-dict.result
 share/mysql-test/suite/innodb/r/innodb-fk-warnings.result
 share/mysql-test/suite/innodb/r/innodb-fk.result
+share/mysql-test/suite/innodb/r/innodb-fkcheck.result
 share/mysql-test/suite/innodb/r/innodb-get-fk.result
 share/mysql-test/suite/innodb/r/innodb-index.result
 share/mysql-test/suite/innodb/r/innodb-index_ucs2.result
@@ -4515,6 +4530,7 @@ share/mysql-test/suite/innodb/t/innodb-corrupted-table.test
 share/mysql-test/suite/innodb/t/innodb-dict.test
 share/mysql-test/suite/innodb/t/innodb-fk-warnings.test
 share/mysql-test/suite/innodb/t/innodb-fk.test
+share/mysql-test/suite/innodb/t/innodb-fkcheck.test
 share/mysql-test/suite/innodb/t/innodb-get-fk.test
 share/mysql-test/suite/innodb/t/innodb-index.test
 share/mysql-test/suite/innodb/t/innodb-index_ucs2.test
@@ -6050,6 +6066,7 @@ share/mysql-test/suite/perfschema/r/table_lock_aggregate_thread_2u_2t.result
 share/mysql-test/suite/perfschema/r/table_lock_aggregate_thread_2u_3t.result
 share/mysql-test/suite/perfschema/r/table_lock_aggregate_thread_4u_2t.result
 share/mysql-test/suite/perfschema/r/table_lock_aggregate_thread_4u_3t.result
+share/mysql-test/suite/perfschema/r/table_name.result
 share/mysql-test/suite/perfschema/r/table_schema.result
 share/mysql-test/suite/perfschema/r/tampered_perfschema_table1.result
 share/mysql-test/suite/perfschema/r/temp_table_io.result
@@ -6471,6 +6488,7 @@ share/mysql-test/suite/perfschema/t/table_lock_aggregate_thread_2u_2t.test
 share/mysql-test/suite/perfschema/t/table_lock_aggregate_thread_2u_3t.test
 share/mysql-test/suite/perfschema/t/table_lock_aggregate_thread_4u_2t.test
 share/mysql-test/suite/perfschema/t/table_lock_aggregate_thread_4u_3t.test
+share/mysql-test/suite/perfschema/t/table_name.test
 share/mysql-test/suite/perfschema/t/table_schema.test
 share/mysql-test/suite/perfschema/t/tampered_perfschema_table1-master.opt
 share/mysql-test/suite/perfschema/t/tampered_perfschema_table1.test
@@ -6611,10 +6629,14 @@ share/mysql-test/suite/roles/revoke_all.result
 share/mysql-test/suite/roles/revoke_all.test
 share/mysql-test/suite/roles/rpl_definer.result
 share/mysql-test/suite/roles/rpl_definer.test
+share/mysql-test/suite/roles/rpl_grant_revoke_current_role-8638.result
+share/mysql-test/suite/roles/rpl_grant_revoke_current_role-8638.test
 share/mysql-test/suite/roles/set_and_drop.result
 share/mysql-test/suite/roles/set_and_drop.test
 share/mysql-test/suite/roles/set_role-5232.result
 share/mysql-test/suite/roles/set_role-5232.test
+share/mysql-test/suite/roles/set_role-9614.result
+share/mysql-test/suite/roles/set_role-9614.test
 share/mysql-test/suite/roles/set_role-database-recursive.result
 share/mysql-test/suite/roles/set_role-database-recursive.test
 share/mysql-test/suite/roles/set_role-database-simple.result
@@ -9734,6 +9756,7 @@ share/mysql-test/t/information_schema_inno.test
 share/mysql-test/t/information_schema_parameters.test
 share/mysql-test/t/information_schema_part.test
 share/mysql-test/t/information_schema_routines.test
+share/mysql-test/t/information_schema_stats.test
 share/mysql-test/t/init_connect-master.opt
 share/mysql-test/t/init_connect.test
 share/mysql-test/t/init_connection_query_cache-master.opt
@@ -10167,6 +10190,7 @@ share/mysql-test/t/ssl_7937.test
 share/mysql-test/t/ssl_8k_key-master.opt
 share/mysql-test/t/ssl_8k_key.test
 share/mysql-test/t/ssl_and_innodb.test
+share/mysql-test/t/ssl_ca.test
 share/mysql-test/t/ssl_cert_verify.test
 share/mysql-test/t/ssl_cipher-master.opt
 share/mysql-test/t/ssl_cipher.test
