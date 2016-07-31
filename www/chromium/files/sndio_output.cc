@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 #include "base/logging.h"
-#include "media/audio/audio_parameters.h"
 #include "media/audio/audio_manager_base.h"
 #include "media/audio/sndio/sndio_output.h"
 

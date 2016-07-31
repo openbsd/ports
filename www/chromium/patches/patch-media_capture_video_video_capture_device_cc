@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_cc,v 1.5 2016/05/27 06:28:21 robert Exp $
---- media/capture/video/video_capture_device.cc.orig.port	Wed May 25 21:01:03 2016
-+++ media/capture/video/video_capture_device.cc	Thu May 26 08:09:47 2016
+$OpenBSD: patch-media_capture_video_video_capture_device_cc,v 1.6 2016/07/31 13:11:44 robert Exp $
+--- media/capture/video/video_capture_device.cc.orig.port	Wed Jul 20 21:03:25 2016
++++ media/capture/video/video_capture_device.cc	Thu Jul 21 10:25:30 2016
 @@ -35,7 +35,7 @@ VideoCaptureDevice::Name::Name(const std::string& name
      : device_name_(name), unique_id_(id) {
  }
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_cc,v 1.5 2016/05/27 06:
  VideoCaptureDevice::Name::Name(const std::string& name,
                                 const std::string& id,
                                 const CaptureApiType api_type)
-@@ -78,7 +78,7 @@ VideoCaptureDevice::Name::Name(const std::string& name
+@@ -80,7 +80,7 @@ VideoCaptureDevice::Name::Name(const Name& other) = de
  VideoCaptureDevice::Name::~Name() {
  }
  

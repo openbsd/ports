@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.29 2016/05/27 06:28:21 robert Exp $
---- third_party/libjingle/libjingle.gyp.orig.port	Wed May 25 21:01:12 2016
-+++ third_party/libjingle/libjingle.gyp	Thu May 26 08:09:48 2016
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.30 2016/07/31 13:11:44 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Wed Jul 20 21:03:43 2016
++++ third_party/libjingle/libjingle.gyp	Thu Jul 21 10:25:32 2016
 @@ -121,6 +121,8 @@
          ['os_bsd==1', {
            'defines': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.29 2016/05/27 06:28:21 r
            ],
          }],
          ['OS=="openbsd"', {
-@@ -191,6 +193,8 @@
+@@ -184,6 +186,8 @@
        ['os_bsd==1', {
          'defines': [
            'BSD',

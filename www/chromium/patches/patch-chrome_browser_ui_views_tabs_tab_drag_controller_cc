@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.12 2016/05/27 06:28:20 robert Exp $
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Wed May 25 21:00:58 2016
-+++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Thu May 26 08:09:42 2016
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.13 2016/07/31 13:11:44 robert Exp $
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Wed Jul 20 21:03:21 2016
++++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Thu Jul 21 10:25:28 2016
 @@ -269,7 +269,7 @@ void TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - Ash
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.12 2016/
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_tab_offset, mouse_offset.y());
-@@ -627,7 +627,7 @@ TabDragController::DragBrowserToNewTabStrip(
+@@ -609,7 +609,7 @@ TabDragController::DragBrowserToNewTabStrip(
      // that to effect the position of any windows.
      SetWindowPositionManaged(browser_widget->GetNativeWindow(), false);
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.12 2016/
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1817,7 +1817,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -1799,7 +1799,7 @@ TabDragController::Liveness TabDragController::GetLoca
      if (dragged_window)
        exclude.insert(dragged_window);
    }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.14 2016/05/27 06:28:20 robert Exp $
---- chrome/browser/ui/browser_command_controller.cc.orig.port	Wed May 25 21:00:58 2016
-+++ chrome/browser/ui/browser_command_controller.cc	Thu May 26 08:09:41 2016
-@@ -77,7 +77,7 @@
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.15 2016/07/31 13:11:44 robert Exp $
+--- chrome/browser/ui/browser_command_controller.cc.orig.port	Wed Jul 20 21:03:20 2016
++++ chrome/browser/ui/browser_command_controller.cc	Thu Jul 21 10:25:28 2016
+@@ -78,7 +78,7 @@
  #include "chrome/browser/ui/browser_commands_chromeos.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.14 2016/05/2
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -217,7 +217,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -222,7 +222,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
    if (window()->IsFullscreen() && command_id == IDC_FULLSCREEN)
      return true;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.14 2016/05/2
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -410,7 +410,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+@@ -429,7 +429,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.14 2016/05/2
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = browser_->profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -806,7 +806,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -822,7 +822,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

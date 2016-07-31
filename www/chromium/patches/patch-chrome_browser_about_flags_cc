@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.26 2016/05/27 06:28:20 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Wed May 25 21:00:57 2016
-+++ chrome/browser/about_flags.cc	Thu May 26 08:09:40 2016
-@@ -651,7 +651,7 @@ const FeatureEntry kFeatureEntries[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.27 2016/07/31 13:11:44 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Wed Jul 20 21:03:19 2016
++++ chrome/browser/about_flags.cc	Thu Jul 21 10:25:26 2016
+@@ -676,7 +676,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
                                 switches::kDisableSmoothScrolling)},
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.26 2016/05/27 06:28:20 robert 
      {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
       // Uses the system preference on Mac (a different implementation).
-@@ -1691,7 +1691,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1717,7 +1717,7 @@ const FeatureEntry kFeatureEntries[] = {
       IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
       SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
  #endif

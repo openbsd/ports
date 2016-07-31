@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_tools_get_server_time_get_server_time_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
---- net/tools/get_server_time/get_server_time.cc.orig.port	Sat May 23 00:59:48 2015
-+++ net/tools/get_server_time/get_server_time.cc	Sat May 23 01:15:24 2015
-@@ -43,7 +43,7 @@
+$OpenBSD: patch-net_tools_get_server_time_get_server_time_cc,v 1.2 2016/07/31 13:11:44 robert Exp $
+--- net/tools/get_server_time/get_server_time.cc.orig.port	Wed Jul 20 21:03:27 2016
++++ net/tools/get_server_time/get_server_time.cc	Thu Jul 21 10:25:31 2016
+@@ -44,7 +44,7 @@
  
  #if defined(OS_MACOSX)
  #include "base/mac/scoped_nsautorelease_pool.h"
@@ -10,9 +10,9 @@ $OpenBSD: patch-net_tools_get_server_time_get_server_time_cc,v 1.1 2015/05/24 15
  #include "net/proxy/proxy_config.h"
  #include "net/proxy/proxy_config_service_fixed.h"
  #endif
-@@ -138,7 +138,7 @@ class PrintingLogObserver : public net::NetLog::Thread
- scoped_ptr<net::URLRequestContext>
- BuildURLRequestContext(net::NetLog* net_log) {
+@@ -139,7 +139,7 @@ class PrintingLogObserver : public net::NetLog::Thread
+ std::unique_ptr<net::URLRequestContext> BuildURLRequestContext(
+     net::NetLog* net_log) {
    net::URLRequestContextBuilder builder;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

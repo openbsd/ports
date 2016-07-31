@@ -1,0 +1,30 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.1 2016/07/31 13:11:44 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig.port	Thu Jul 21 12:42:29 2016
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	Thu Jul 21 12:42:50 2016
+@@ -46,7 +46,7 @@
+ #include "wtf/text/CString.h"
+ #include "wtf/text/StringImpl.h"
+ 
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+ #include "platform/fonts/linux/FontRenderStyle.h"
+ #endif // OS(LINUX) || OS(ANDROID)
+ 
+@@ -126,7 +126,7 @@ class PLATFORM_EXPORT FontPlatformData { (public)
+     PassRefPtr<OpenTypeVerticalData> verticalData() const;
+     PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
+ 
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+     // The returned styles are all actual styles without FontRenderStyle::NoPreference.
+     const FontRenderStyle& getFontRenderStyle() const { return m_style; }
+ #endif
+@@ -152,7 +152,7 @@ class PLATFORM_EXPORT FontPlatformData { (public)
+     bool m_syntheticItalic;
+     FontOrientation m_orientation;
+ private:
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+     FontRenderStyle m_style;
+ #endif
+ 

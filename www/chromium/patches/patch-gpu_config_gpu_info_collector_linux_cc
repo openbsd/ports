@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_config_gpu_info_collector_linux_cc,v 1.5 2016/03/06 10:51:14 robert Exp $
---- gpu/config/gpu_info_collector_linux.cc.orig.port	Wed Feb 24 00:02:01 2016
-+++ gpu/config/gpu_info_collector_linux.cc	Thu Mar  3 09:43:26 2016
-@@ -81,6 +81,10 @@ const uint32_t kVendorIDAMD = 0x1002;
+$OpenBSD: patch-gpu_config_gpu_info_collector_linux_cc,v 1.6 2016/07/31 13:11:44 robert Exp $
+--- gpu/config/gpu_info_collector_linux.cc.orig.port	Wed Jul 20 21:03:25 2016
++++ gpu/config/gpu_info_collector_linux.cc	Thu Jul 21 10:25:30 2016
+@@ -80,6 +80,10 @@ const uint32_t kVendorIDAMD = 0x1002;
  CollectInfoResult CollectPCIVideoCardInfo(GPUInfo* gpu_info) {
    DCHECK(gpu_info);
  

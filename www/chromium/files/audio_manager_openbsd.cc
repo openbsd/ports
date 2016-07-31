@@ -4,6 +4,7 @@
 
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 
+#include "media/audio/audio_device_description.h"
 #include "media/audio/audio_output_dispatcher.h"
 #include "media/audio/sndio/sndio_input.h"
 #include "media/audio/sndio/sndio_output.h"
@@ -20,8 +21,7 @@ static const int kDefaultSampleRate = 48000;
 
 void AddDefaultDevice(AudioDeviceNames* device_names) {
   DCHECK(device_names->empty());
-  device_names->push_front(AudioDeviceName(AudioManager::GetDefaultDeviceName(),
-                                           AudioManagerBase::kDefaultDeviceId));
+  device_names->push_front(AudioDeviceName::CreateDefault());
 }
 
 bool AudioManagerOpenBSD::HasAudioOutputDevices() {
@@ -60,8 +60,13 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
       kDefaultSampleRate, 16, buffer_size);
 }
 
-AudioManagerOpenBSD::AudioManagerOpenBSD(AudioLogFactory* audio_log_factory)
-    : AudioManagerBase(audio_log_factory) {
+AudioManagerOpenBSD::AudioManagerOpenBSD(
+    scoped_refptr<base::SingleThreadTaskRunner> task_runner,
+    scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+    AudioLogFactory* audio_log_factory)
+    : AudioManagerBase(std::move(task_runner),
+                       std::move(worker_task_runner),
+                       audio_log_factory) {
   DLOG(WARNING) << "AudioManagerOpenBSD";
   SetMaxOutputStreamsAllowed(kMaxOutputStreams);
 }
@@ -127,7 +132,7 @@ AudioInputStream* AudioManagerOpenBSD::MakeInputStream(
     const AudioParameters& params) {
   DLOG(WARNING) << "MakeInputStream";
   return new SndioAudioInputStream(this,
-             AudioManagerBase::kDefaultDeviceId, params);
+             AudioDeviceDescription::kDefaultDeviceId, params);
 }
 
 AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
@@ -136,11 +141,14 @@ AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
   return new SndioAudioOutputStream(params, this);
 }
 
-// TODO(xians): Merge AudioManagerOpenBSD with AudioManagerPulse;
-// static
-AudioManager* CreateAudioManager(AudioLogFactory* audio_log_factory) {
+ScopedAudioManagerPtr CreateAudioManager(
+    scoped_refptr<base::SingleThreadTaskRunner> task_runner,
+    scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+    AudioLogFactory* audio_log_factory) {
   DLOG(WARNING) << "CreateAudioManager";
-  return new AudioManagerOpenBSD(audio_log_factory);
+  return ScopedAudioManagerPtr(
+      new AudioManagerOpenBSD(std::move(task_runner),
+                              std::move(worker_task_runner),audio_log_factory));
 }
 
 }  // namespace media

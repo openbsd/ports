@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_message_center_views_message_center_button_bar_h,v 1.5 2016/04/16 19:08:46 robert Exp $
---- ui/message_center/views/message_center_button_bar.h.orig.port	Fri Apr  8 18:02:15 2016
-+++ ui/message_center/views/message_center_button_bar.h	Thu Apr 14 08:25:16 2016
-@@ -73,7 +73,7 @@ class MessageCenterButtonBar : public views::View,
+$OpenBSD: patch-ui_message_center_views_message_center_button_bar_h,v 1.6 2016/07/31 13:11:44 robert Exp $
+--- ui/message_center/views/message_center_button_bar.h.orig.port	Wed Jul 20 21:03:46 2016
++++ ui/message_center/views/message_center_button_bar.h	Thu Jul 21 10:25:33 2016
+@@ -76,7 +76,7 @@ class MessageCenterButtonBar : public views::View,
    // close-on-deactivation is off. This is a tentative solution. Once pkotwicz
    // Fixes the problem of focus-follow-mouse, close-on-deactivation will be
    // back and this field will be removed. See crbug.com/319516.

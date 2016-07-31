@@ -8,13 +8,17 @@
 #include <set>
 
 #include "base/compiler_specific.h"
+#include "base/memory/ref_counted.h"
 #include "media/audio/audio_manager_base.h"
 
 namespace media {
 
 class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
  public:
-  AudioManagerOpenBSD(AudioLogFactory* audio_log_factory);
+  AudioManagerOpenBSD(
+      scoped_refptr<base::SingleThreadTaskRunner> task_runner,
+      scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+      AudioLogFactory* audio_log_factory);
 
   // Implementation of AudioManager.
   bool HasAudioOutputDevices() override;

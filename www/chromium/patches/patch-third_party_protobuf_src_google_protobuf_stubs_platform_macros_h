@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_platform_macros_h,v 1.1 2016/07/31 13:11:44 robert Exp $
+--- third_party/protobuf/src/google/protobuf/stubs/platform_macros.h.orig.port	Thu Jul 21 10:53:45 2016
++++ third_party/protobuf/src/google/protobuf/stubs/platform_macros.h	Thu Jul 21 10:55:14 2016
+@@ -111,7 +111,7 @@ GOOGLE_PROTOBUF_PLATFORM_ERROR
+ 
+ #undef GOOGLE_PROTOBUF_PLATFORM_ERROR
+ 
+-#if defined(GOOGLE_PROTOBUF_OS_ANDROID) || defined(GOOGLE_PROTOBUF_OS_APPLE)
++#if defined(GOOGLE_PROTOBUF_OS_ANDROID) || defined(GOOGLE_PROTOBUF_OS_APPLE) || defined(__OpenBSD__)
+ // Android ndk does not support the __thread keyword very well yet. Here
+ // we use pthread_key_create()/pthread_getspecific()/... methods for
+ // TLS support on android.

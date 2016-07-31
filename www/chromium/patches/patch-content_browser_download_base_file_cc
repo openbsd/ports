@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_download_base_file_cc,v 1.7 2016/05/27 06:28:21 robert Exp $
---- content/browser/download/base_file.cc.orig.port	Thu May 26 08:29:17 2016
-+++ content/browser/download/base_file.cc	Thu May 26 08:29:24 2016
-@@ -186,7 +186,7 @@ scoped_ptr<crypto::SecureHash> BaseFile::Finish() {
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.8 2016/07/31 13:11:44 robert Exp $
+--- content/browser/download/base_file.cc.orig.port	Wed Jul 20 21:03:24 2016
++++ content/browser/download/base_file.cc	Thu Jul 21 10:25:29 2016
+@@ -186,7 +186,7 @@ std::unique_ptr<crypto::SecureHash> BaseFile::Finish()
  }
  
  // OS_WIN, OS_MACOSX and OS_LINUX have specialized implementations.

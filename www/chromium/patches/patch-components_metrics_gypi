@@ -1,7 +1,7 @@
-$OpenBSD: patch-components_metrics_gypi,v 1.4 2016/05/27 06:28:21 robert Exp $
---- components/metrics.gypi.orig.port	Wed May 25 21:00:59 2016
-+++ components/metrics.gypi	Thu May 26 08:09:45 2016
-@@ -75,7 +75,6 @@
+$OpenBSD: patch-components_metrics_gypi,v 1.5 2016/07/31 13:11:44 robert Exp $
+--- components/metrics.gypi.orig.port	Wed Jul 20 21:03:23 2016
++++ components/metrics.gypi	Thu Jul 21 10:25:29 2016
+@@ -77,7 +77,6 @@
          'metrics/stability_metrics_helper.cc',
          'metrics/stability_metrics_helper.h',
          'metrics/system_memory_stats_recorder.h',

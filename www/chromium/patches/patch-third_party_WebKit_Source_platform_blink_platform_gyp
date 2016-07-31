@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.15 2016/05/27 06:28:21 robert Exp $
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Thu May 26 08:30:19 2016
-+++ third_party/WebKit/Source/platform/blink_platform.gyp	Thu May 26 08:30:43 2016
-@@ -222,7 +222,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.16 2016/07/31 13:11:44 robert Exp $
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Wed Jul 20 21:03:41 2016
++++ third_party/WebKit/Source/platform/blink_platform.gyp	Thu Jul 21 10:25:31 2016
+@@ -233,7 +233,7 @@
            ['include', 'graphics/cpu/x86/WebGLImageConversionSSE\\.h$'],
          ],
        }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.15 201
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
          ]
-@@ -301,7 +301,7 @@
+@@ -314,7 +314,7 @@
            ['exclude', 'scroll/ScrollbarThemeMac'],
          ],
        }],

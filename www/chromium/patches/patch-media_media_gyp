@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
---- media/media.gyp.orig.port	Wed May 25 21:01:03 2016
-+++ media/media.gyp	Thu May 26 08:09:47 2016
+$OpenBSD: patch-media_media_gyp,v 1.46 2016/07/31 13:11:44 robert Exp $
+--- media/media.gyp.orig.port	Wed Jul 20 21:03:26 2016
++++ media/media.gyp	Thu Jul 21 10:25:30 2016
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
@@ -21,7 +21,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
        # low memory buffer is used in non-Android based chromecast build due to hardware limitation.
        ['chromecast==1 and OS!="android"', {
          'use_low_memory_buffer%': 1,
-@@ -191,6 +195,8 @@
+@@ -199,6 +203,8 @@
          'audio/mac/audio_manager_mac.h',
          'audio/null_audio_sink.cc',
          'audio/null_audio_sink.h',
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
          'audio/pulse/audio_manager_pulse.cc',
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_input.cc',
-@@ -199,6 +205,10 @@
+@@ -207,6 +213,10 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
@@ -41,7 +41,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -745,6 +755,24 @@
+@@ -758,6 +768,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -66,7 +66,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -760,7 +788,7 @@
+@@ -773,7 +801,7 @@
              ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
@@ -75,7 +75,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -812,7 +840,7 @@
+@@ -826,7 +854,7 @@
              }],
            ],
          }],
@@ -84,7 +84,7 @@ $OpenBSD: patch-media_media_gyp,v 1.45 2016/05/27 06:28:21 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1059,7 +1087,7 @@
+@@ -1073,7 +1101,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],

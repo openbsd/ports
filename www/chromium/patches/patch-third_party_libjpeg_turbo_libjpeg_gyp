@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libjpeg_turbo_libjpeg_gyp,v 1.6 2016/01/27 20:05:23 robert Exp $
---- third_party/libjpeg_turbo/libjpeg.gyp.orig.port	Wed Jan 20 21:02:14 2016
-+++ third_party/libjpeg_turbo/libjpeg.gyp	Wed Jan 27 17:56:11 2016
-@@ -246,7 +246,7 @@
+$OpenBSD: patch-third_party_libjpeg_turbo_libjpeg_gyp,v 1.7 2016/07/31 13:11:44 robert Exp $
+--- third_party/libjpeg_turbo/libjpeg.gyp.orig.port	Wed Jul 20 21:04:42 2016
++++ third_party/libjpeg_turbo/libjpeg.gyp	Thu Jul 21 10:25:32 2016
+@@ -244,7 +244,7 @@
              ],
            },
          }],

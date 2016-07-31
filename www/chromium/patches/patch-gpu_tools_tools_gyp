@@ -1,6 +1,6 @@
-$OpenBSD: patch-gpu_tools_tools_gyp,v 1.2 2015/05/24 15:51:53 robert Exp $
---- gpu/tools/tools.gyp.orig.port	Thu May 14 00:23:07 2015
-+++ gpu/tools/tools.gyp	Wed May 20 08:34:56 2015
+$OpenBSD: patch-gpu_tools_tools_gyp,v 1.3 2016/07/31 13:11:44 robert Exp $
+--- gpu/tools/tools.gyp.orig.port	Wed Jul 20 21:03:25 2016
++++ gpu/tools/tools.gyp	Thu Jul 21 10:25:30 2016
 @@ -9,7 +9,7 @@
    'targets': [
    ],
@@ -10,7 +10,7 @@ $OpenBSD: patch-gpu_tools_tools_gyp,v 1.2 2015/05/24 15:51:53 robert Exp $
        'targets': [
          {
            # GN version: //gpu/tools/compositor_model_bench
-@@ -22,7 +22,6 @@
+@@ -23,7 +23,6 @@
            ],
            'libraries': [
              '-lGL',

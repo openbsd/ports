@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.6 2016/05/27 06:28:20 robert Exp $
---- chrome/browser/ui/views/frame/browser_view.cc.orig.port	Wed May 25 21:00:58 2016
-+++ chrome/browser/ui/views/frame/browser_view.cc	Thu May 26 08:09:42 2016
-@@ -187,7 +187,7 @@
- #include "content/public/common/mojo_shell_connection.h"
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.7 2016/07/31 13:11:44 robert Exp $
+--- chrome/browser/ui/views/frame/browser_view.cc.orig.port	Wed Jul 20 21:03:20 2016
++++ chrome/browser/ui/views/frame/browser_view.cc	Thu Jul 21 10:25:28 2016
+@@ -181,7 +181,7 @@
+ #include "chrome/browser/ui/ash/multi_user/multi_user_window_manager.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.6 2016/05/27 0
  #include "ui/native_theme/native_theme_dark_aura.h"
  #endif
  
-@@ -1977,7 +1977,7 @@ void BrowserView::OnThemeChanged() {
+@@ -2001,7 +2001,7 @@ void BrowserView::OnThemeChanged() {
  #if defined(OS_WIN)
      ui::NativeThemeDarkWin::instance()->NotifyObservers();
      ui::NativeThemeWin::instance()->NotifyObservers();

@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.30 2016/05/27 06:28:21 robert Exp $
---- content/content_common.gypi.orig.port	Wed May 25 21:01:01 2016
-+++ content/content_common.gypi	Thu May 26 08:09:46 2016
-@@ -515,6 +515,8 @@
-       'common/resource_request_body.h',
+$OpenBSD: patch-content_content_common_gypi,v 1.31 2016/07/31 13:11:44 robert Exp $
+--- content/content_common.gypi.orig.port	Wed Jul 20 21:03:24 2016
++++ content/content_common.gypi	Thu Jul 21 10:25:30 2016
+@@ -483,6 +483,8 @@
+       'common/resource_request_completion_status.h',
        'common/sandbox_init_mac.cc',
        'common/sandbox_init_mac.h',
 +      'common/sandbox_init_openbsd.cc',
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_content_common_gypi,v 1.30 2016/05/27 06:28:21 robert Ex
        'common/sandbox_init_win.cc',
        'common/sandbox_linux/android/sandbox_bpf_base_policy_android.cc',
        'common/sandbox_linux/android/sandbox_bpf_base_policy_android.h',
-@@ -671,6 +673,34 @@
+@@ -585,6 +587,34 @@
       'dependencies': [
          'content.gyp:content_jni_headers',
          'content.gyp:common_aidl',

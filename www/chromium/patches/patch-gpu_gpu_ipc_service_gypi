@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_gpu_ipc_service_gypi,v 1.1 2016/05/27 06:28:21 robert Exp $
---- gpu/gpu_ipc_service.gypi.orig.port	Thu May 26 14:22:29 2016
-+++ gpu/gpu_ipc_service.gypi	Thu May 26 14:22:40 2016
-@@ -82,7 +82,7 @@
+$OpenBSD: patch-gpu_gpu_ipc_service_gypi,v 1.2 2016/07/31 13:11:44 robert Exp $
+--- gpu/gpu_ipc_service.gypi.orig.port	Wed Jul 20 21:03:25 2016
++++ gpu/gpu_ipc_service.gypi	Thu Jul 21 10:25:30 2016
+@@ -76,7 +76,7 @@
          ],
        },
      }],
