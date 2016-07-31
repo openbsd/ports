@@ -1,0 +1,73 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+--- CMakeLists.txt.orig	Thu Sep 10 23:16:02 2015
++++ CMakeLists.txt	Wed Jun 22 14:18:20 2016
+@@ -32,6 +32,10 @@ endif(NOT CMAKE_BUILD_TYPE)
+ 
+ set(ENABLE_SDL2 0
+     CACHE BOOL "Enable building with libSDL2 instead of v1.2")
++set(ENABLE_PORTAUDIO 0
++    CACHE BOOL "Enable building with portaudio to enable microphone input in Falcon mode")
++set(ENABLE_CAPSIMAGE 0
++    CACHE BOOL "Enable building with capsimage for using .IPF, .RAW and .CTR disk images")
+ set(ENABLE_DSP_EMU 1
+     CACHE BOOL "Enable DSP 56k emulator for Falcon mode")
+ set(ENABLE_TRACING 1
+@@ -125,15 +129,19 @@ if (NOT ENABLE_OSX_BUNDLE)
+ 	endif(X11_FOUND)
+ endif()
+ 
+-find_package(PortAudio)
+-if(PORTAUDIO_FOUND)
+-	set(HAVE_PORTAUDIO 1)
+-endif(PORTAUDIO_FOUND)
++if(ENABLE_PORTAUDIO)
++	find_package(PortAudio)
++	if(PORTAUDIO_FOUND)
++		set(HAVE_PORTAUDIO 1)
++	endif(PORTAUDIO_FOUND)
++endif(ENABLE_PORTAUDIO)
+ 
+-find_package(CapsImage)
+-if(CAPSIMAGE_FOUND)
+-	set(HAVE_CAPSIMAGE 1)
+-endif(CAPSIMAGE_FOUND)
++if(ENABLE_CAPSIMAGE)
++	find_package(CapsImage)
++	if(CAPSIMAGE_FOUND)
++		set(HAVE_CAPSIMAGE 1)
++	endif(CAPSIMAGE_FOUND)
++endif(ENABLE_CAPSIMAGE)
+ 
+ # ################
+ # CPP Definitions:
+@@ -344,17 +352,20 @@ else()
+   message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
+ endif(PNG_FOUND)
+ 
+-if(PORTAUDIO_FOUND)
+-  message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
+-else()
+-  message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
+-endif(PORTAUDIO_FOUND)
++if(ENABLE_PORTAUDIO)
++  if(PORTAUDIO_FOUND)
++    message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
++  else()
++    message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
++  endif(PORTAUDIO_FOUND)
++endif(ENABLE_PORTAUDIO)
+ 
+-if(CAPSIMAGE_FOUND)
+-  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
+-else()
+-  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} not found, install it to use .IPF, .RAW and .CTR disk images" )
+-endif(CAPSIMAGE_FOUND)
++if(ENABLE_CAPSIMAGE)
++  if(CAPSIMAGE_FOUND)
++  else()
++    message( "  - capsimage :\tv${CAPSIMAGE_VERSION} not found, install it to use .IPF, .RAW and .CTR disk images" )
++  endif(CAPSIMAGE_FOUND)
++endif(ENABLE_CAPSIMAGE)
+ 
+ message( "" )
+ 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-tools_CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+--- tools/CMakeLists.txt.orig	Thu Sep 10 23:16:03 2015
++++ tools/CMakeLists.txt	Thu Jun 23 21:49:16 2016
+@@ -8,7 +8,6 @@ if(PYTHONINTERP_FOUND)
+ endif(PYTHONINTERP_FOUND)
+ 
+ install(PROGRAMS atari-convert-dir.py DESTINATION ${BINDIR} RENAME atari-convert-dir)
+-install(PROGRAMS atari-hd-image.sh DESTINATION ${BINDIR} RENAME atari-hd-image)
+ install(PROGRAMS zip2st.sh DESTINATION ${BINDIR} RENAME zip2st)
+ 
+ # if(UNIX)
+@@ -17,12 +16,6 @@ install(PROGRAMS zip2st.sh DESTINATION ${BINDIR} RENAM
+ 		COMMAND gzip -c -9 ${CMAKE_CURRENT_SOURCE_DIR}/atari-convert-dir.1 > ${CMAKE_CURRENT_BINARY_DIR}/atari-convert-dir.1.gz
+ 		DEPENDS atari-convert-dir.1)
+ 	INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/atari-convert-dir.1.gz DESTINATION ${MANDIR})
+-
+-	add_custom_target(atari_hd_image_man ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/atari-hd-image.1.gz)
+-	add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/atari-hd-image.1.gz
+-		COMMAND gzip -c -9 ${CMAKE_CURRENT_SOURCE_DIR}/atari-hd-image.1 > ${CMAKE_CURRENT_BINARY_DIR}/atari-hd-image.1.gz
+-		DEPENDS atari-hd-image.1)
+-	INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/atari-hd-image.1.gz DESTINATION ${MANDIR})
+ 
+ 	add_custom_target(zip2st_man ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/zip2st.1.gz)
+ 	add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/zip2st.1.gz

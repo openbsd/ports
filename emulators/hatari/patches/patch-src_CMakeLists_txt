@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+--- src/CMakeLists.txt.orig	Fri Jun  3 01:15:03 2016
++++ src/CMakeLists.txt	Fri Jun  3 01:15:35 2016
+@@ -41,8 +41,8 @@ else()
+ 	set(CPUDIR uae-cpu)
+ endif(ENABLE_WINUAE_CPU)
+ 
+-include_directories(${CMAKE_BINARY_DIR} ${SDL_INCLUDE_DIR} ${CPUDIR}
+-		    includes debug falcon)
++include_directories(includes debug falcon
++		    ${CMAKE_BINARY_DIR} ${SDL_INCLUDE_DIR} ${CPUDIR})
+ 
+ if(ZLIB_FOUND)
+ 	include_directories(${ZLIB_INCLUDE_DIR})

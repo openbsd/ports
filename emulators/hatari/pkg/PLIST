@@ -1,0 +1,114 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+bin/atari-convert-dir
+@bin bin/gst2ascii
+@bin bin/hatari
+bin/hatari_profile.py
+bin/hatariui
+@bin bin/hmsa
+bin/zip2st
+@man man/man1/atari-convert-dir.1
+@man man/man1/gst2ascii.1
+@man man/man1/hatari.1
+@man man/man1/hatari_profile.1
+@man man/man1/hatariui.1
+@man man/man1/hconsole.1
+@man man/man1/hmsa.1
+@man man/man1/zip2st.1
+share/applications/hatari.desktop
+share/applications/hatariui.desktop
+share/doc/hatari/
+share/doc/hatari/authors.txt
+share/doc/hatari/compatibility.html
+share/doc/hatari/emutos.txt
+share/doc/hatari/images/
+share/doc/hatari/images/callgraph.png
+share/doc/hatari/images/callgraph.svg
+share/doc/hatari/images/devices.png
+share/doc/hatari/images/fileselector.png
+share/doc/hatari/images/floppydisks.png
+share/doc/hatari/images/harddisks.png
+share/doc/hatari/images/joystick.png
+share/doc/hatari/images/kcachegrind.png
+share/doc/hatari/images/keyboard.png
+share/doc/hatari/images/main.png
+share/doc/hatari/images/memory.png
+share/doc/hatari/images/monitor.png
+share/doc/hatari/images/newfloppy.png
+share/doc/hatari/images/screen.png
+share/doc/hatari/images/sound.png
+share/doc/hatari/images/system.png
+share/doc/hatari/images/tos.png
+share/doc/hatari/keymap-sample.txt
+share/doc/hatari/manual.html
+share/doc/hatari/memory-usage.txt
+share/doc/hatari/midi-linux.txt
+share/doc/hatari/release-notes.txt
+share/doc/hatari/todo.txt
+share/hatari/
+share/hatari/hatari-icon.bmp
+share/hatari/hatariui/
+share/hatari/hatariui/README
+share/hatari/hatariui/TODO
+share/hatari/hatariui/config.py
+share/hatari/hatariui/config.pyc
+share/hatari/hatariui/conftypes.py
+share/hatari/hatariui/conftypes.pyc
+share/hatari/hatariui/debugui.py
+share/hatari/hatariui/debugui.pyc
+share/hatari/hatariui/dialogs.py
+share/hatari/hatariui/dialogs.pyc
+share/hatari/hatariui/hatari-icon.png
+share/hatari/hatariui/hatari-logo.png
+share/hatari/hatariui/hatari.py
+share/hatari/hatariui/hatari.pyc
+share/hatari/hatariui/hatariui.py
+share/hatari/hatariui/hatariui.pyc
+share/hatari/hatariui/release-notes.txt
+share/hatari/hatariui/uihelpers.py
+share/hatari/hatariui/uihelpers.pyc
+share/hatari/hconsole/
+share/hatari/hconsole/example-commands
+share/hatari/hconsole/example-debugger
+share/hatari/hconsole/example.py
+share/hatari/hconsole/example.pyc
+share/hatari/hconsole/hconsole.py
+share/hatari/hconsole/hconsole.pyc
+share/hatari/hconsole/release-notes.txt
+share/hatari/tos.img
+share/icons/hicolor/128x128/apps/hatari.png
+share/icons/hicolor/128x128/mimetypes/application-vnd.fastcopy-disk-image.png
+share/icons/hicolor/128x128/mimetypes/application-vnd.msa-disk-image.png
+share/icons/hicolor/128x128/mimetypes/application-x-st-disk-image.png
+share/icons/hicolor/128x128/mimetypes/application-x-stx-disk-image.png
+share/icons/hicolor/256x256/apps/hatari.png
+share/icons/hicolor/256x256/mimetypes/application-vnd.fastcopy-disk-image.png
+share/icons/hicolor/256x256/mimetypes/application-vnd.msa-disk-image.png
+share/icons/hicolor/256x256/mimetypes/application-x-st-disk-image.png
+share/icons/hicolor/256x256/mimetypes/application-x-stx-disk-image.png
+share/icons/hicolor/32x32/apps/hatari.png
+share/icons/hicolor/32x32/mimetypes/application-vnd.fastcopy-disk-image.png
+share/icons/hicolor/32x32/mimetypes/application-vnd.msa-disk-image.png
+share/icons/hicolor/32x32/mimetypes/application-x-st-disk-image.png
+share/icons/hicolor/32x32/mimetypes/application-x-stx-disk-image.png
+share/icons/hicolor/48x48/apps/hatari.png
+share/icons/hicolor/48x48/mimetypes/application-vnd.fastcopy-disk-image.png
+share/icons/hicolor/48x48/mimetypes/application-vnd.msa-disk-image.png
+share/icons/hicolor/48x48/mimetypes/application-x-st-disk-image.png
+share/icons/hicolor/48x48/mimetypes/application-x-stx-disk-image.png
+share/icons/hicolor/64x64/apps/hatari.png
+share/icons/hicolor/64x64/mimetypes/application-vnd.fastcopy-disk-image.png
+share/icons/hicolor/64x64/mimetypes/application-vnd.msa-disk-image.png
+share/icons/hicolor/64x64/mimetypes/application-x-st-disk-image.png
+share/icons/hicolor/64x64/mimetypes/application-x-stx-disk-image.png
+share/icons/hicolor/scalable/apps/hatari.svg
+share/icons/hicolor/scalable/mimetypes/application-vnd.fastcopy-disk-image.svg
+share/icons/hicolor/scalable/mimetypes/application-vnd.msa-disk-image.svg
+share/icons/hicolor/scalable/mimetypes/application-x-st-disk-image.svg
+share/icons/hicolor/scalable/mimetypes/application-x-stx-disk-image.svg
+share/mime/packages/hatari.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
