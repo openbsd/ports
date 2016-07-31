@@ -1,16 +1,16 @@
-$OpenBSD: patch-config_def_h,v 1.3 2016/01/18 22:32:12 czarkoff Exp $
---- config.def.h.orig	Tue Nov 24 23:18:06 2015
-+++ config.def.h	Sat Dec  5 14:51:10 2015
-@@ -25,7 +25,7 @@ static const char *preferedlanguages[] = { NULL };
- 
- /* Webkit default features */
- static int enablescrollbars      = 1;
--static int enablecaretbrowsing   = 1;
-+static int enablecaretbrowsing   = 0;
- static int enablecache           = 1;
- static int enableplugins         = 1;
- static int enablescripts         = 1;
-@@ -43,7 +43,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
+$OpenBSD: patch-config_def_h,v 1.4 2016/07/31 17:54:37 czarkoff Exp $
+--- config.def.h.orig	Fri Jul  8 15:02:42 2016
++++ config.def.h	Sun Jul 31 19:32:54 2016
+@@ -30,7 +30,7 @@ static Parameter defconfig[ParameterLast] = {
+ 	SETB(SiteQuirks,         1),
+ 	SETB(SpellChecking,      0),
+ 	SETV(SpellLanguages,     ((char *[]){ "en_US", NULL })),
+-	SETB(StrictSSL,          0),
++	SETB(StrictSSL,          1),
+ 	SETB(Style,              1),
+ 	SETF(ZoomLevel,          1.0),
+ };
+@@ -48,7 +48,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
  #define SETPROP(p, q) { \
          .v = (const char *[]){ "/bin/sh", "-c", \
               "prop=\"`xprop -id $2 $0 " \
@@ -19,16 +19,17 @@ $OpenBSD: patch-config_def_h,v 1.3 2016/01/18 22:32:12 czarkoff Exp $
               "| xargs -0 printf %b | dmenu`\" &&" \
               "xprop -id $2 -f $1 8s -set $1 \"$prop\"", \
               p, q, winid, NULL \
-@@ -53,9 +53,9 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
+@@ -58,9 +58,10 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
  /* DOWNLOAD(URI, referer) */
  #define DOWNLOAD(d, r) { \
          .v = (const char *[]){ "/bin/sh", "-c", \
--             "st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
+-             "st -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
 -             " --referer '$2' -b $3 -c $3 '$0';" \
 -             " sleep 5;\"", \
-+             "uxterm -e /bin/sh -c \"cd \"${XDG_DOWNLOAD_DIR}\"; echo '$0'; " \
-+             "curl -LJO --user-agent '$1' --referer '$2' -b $3 -c $3 '$0'; " \
-+             "echo '\aPress ENTER to close this window'; read dismiss;\"", \
++             "uxterm -e /bin/sh -c \"cd \'${XDG_DOWNLOAD_DIR}\';" \
++             " curl -gLJO --user-agent '$1' --referer '$2' -b $3 -c $3" \
++             " -w \'Saved to \"%{filename_effective}\".\' '$0';" \
++             " read dismiss;\"", \
               d, useragent, r, cookiefile, NULL \
          } \
  }
