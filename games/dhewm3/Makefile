@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/07/31 14:02:05 jsg Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open-source version of Doom 3
-
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -20,7 +18,7 @@ WANTLIB += z
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.4.0
+GH_TAGNAME =		1.4.1
 
 MODULES =		devel/cmake gcc4
 MODGCC4_LANGS =		c c++
