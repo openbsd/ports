@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2016/04/25 09:20:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2016/07/31 07:19:39 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -25,6 +25,7 @@ lib/libyelp.la
 lib/yelp/
 lib/yelp/web-extensions/
 lib/yelp/web-extensions/libyelpwebextension.so
+libexec/yelp-groff
 share/applications/yelp.desktop
 share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 share/gtk-doc/html/libyelp/

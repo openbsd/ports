@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2016/04/25 09:20:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2016/07/31 07:19:39 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.20.1
+REVISION=		0
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -38,7 +39,13 @@ LIB_DEPENDS=		archivers/xz \
 
 MODGNOME_TOOLS=		desktop-file-utils
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libyelp/yelp-man-parser.c
+
 post-install:
+# https://bugzilla.gnome.org/show_bug.cgi?id=648854
+	${INSTALL_SCRIPT} ${FILESDIR}/yelp-groff \
+		${PREFIX}/libexec/yelp-groff
 	rm ${PREFIX}/lib/yelp/web-extensions/*.{a,la}
 
 .include <bsd.port.mk>
