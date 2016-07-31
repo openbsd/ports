@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/07/30 14:23:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2016/07/31 21:35:11 sthen Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
@@ -25,7 +25,9 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+			devel/libtool \
+			devel/help2man
+
 pre-configure:
 	cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
