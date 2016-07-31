@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2016/07/13 07:48:42 ajacoutot Exp $
-
-BROKEN=			https://bugzilla.gnome.org/show_bug.cgi?id=764841
+# $OpenBSD: Makefile,v 1.27 2016/07/31 06:15:57 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.20.1
+GNOME_VERSION=		3.20.2
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
