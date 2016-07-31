@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2016/07/13 07:48:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2016/07/31 06:16:43 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -68,7 +68,6 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 			x11/gnome/gvfs,-google, \
 			x11/gnome/gvfs,-smb,
 
-# XXX re-add x11/gnome/maps when unBROKEN
 # "Make it fancy!"
 RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/calendar \
@@ -77,6 +76,7 @@ RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/eog-plugins \
 			x11/gnome/gedit-plugins \
 			x11/gnome/grilo-plugins \
+			x11/gnome/maps \
 			x11/gnome/music \
 			x11/gnome/nautilus-sendto \
 			x11/gnome/photos \
