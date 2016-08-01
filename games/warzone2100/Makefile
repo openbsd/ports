@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2016/04/19 11:20:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.28 2016/08/01 10:25:02 kirby Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-3.1.5
+DISTNAME=	warzone2100-3.2.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
@@ -14,18 +14,20 @@ HOMEPAGE=	http://wz2100.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLEW GLU QtNetwork QtScript SDL X11 Xrandr c fontconfig
-WANTLIB += freetype fribidi iconv intl m ogg openal physfs png pthread
-WANTLIB += stdc++ theora vorbis vorbisfile z
+WANTLIB += GL GLEW GLU Qt5Core Qt5Gui Qt5Script Qt5Widgets SDL2 X11
+WANTLIB += Xrandr c crypto fontconfig freetype fribidi iconv intl m
+WANTLIB += ogg openal physfs png pthread theora vorbis vorbisfile z
 
-MODULES=	x11/qt4
+MODULES=	x11/qt5 gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS +=c++
 
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
 		audio/openal>=20110627 \
 		devel/fribidi \
 		devel/physfs \
-		devel/sdl \
+		devel/sdl2 \
 		graphics/glew \
 		graphics/png \
 		multimedia/libtheora

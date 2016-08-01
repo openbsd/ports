@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2016/04/19 11:20:42 kirby Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2016/08/01 10:25:02 kirby Exp $
 
 Fix SEPARATE_BUILD
 
---- src/Makefile.in.orig	Mon Apr 18 00:44:32 2016
-+++ src/Makefile.in	Mon Apr 18 00:45:10 2016
-@@ -1189,7 +1189,7 @@ uninstall-am: uninstall-binPROGRAMS
+--- src/Makefile.in.orig	Sun Jul 10 20:36:18 2016
++++ src/Makefile.in	Wed Jul 27 11:56:25 2016
+@@ -1236,7 +1236,7 @@ uninstall-am: uninstall-binPROGRAMS
  .PHONY: autorevision.h
  
  autorevision.h autorevision.cache:
