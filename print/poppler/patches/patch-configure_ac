@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.19 2016/06/19 19:42:26 kili Exp $
---- configure.ac.orig	Fri Jun 17 00:12:16 2016
-+++ configure.ac	Fri Jun 17 21:01:05 2016
+$OpenBSD: patch-configure_ac,v 1.20 2016/08/01 18:35:40 kili Exp $
+--- configure.ac.orig	Mon Jul 25 00:03:53 2016
++++ configure.ac	Sat Jul 30 22:48:42 2016
 @@ -680,6 +680,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
  
  GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
@@ -26,56 +26,16 @@ $OpenBSD: patch-configure_ac,v 1.19 2016/06/19 19:42:26 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -772,31 +790,35 @@ if test x$enable_poppler_qt5 = xyes; then
-   AC_CHECK_TOOL(MOCQT5, moc)
-   AC_MSG_CHECKING([for Qt5 moc])
-   mocversion=`$MOCQT5 -v 2>&1`
--  mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
--  if test x"$mocversiongrep" != x"$mocversion"; then
-+  case $mocversion in
-+  *Qt\ 5*|*moc\ 5*)
-+    ;;
-+  *)
-     AC_MSG_RESULT([no])
-     # moc was not the qt5 one, try with moc-qt5
+@@ -779,7 +797,7 @@ if test x$enable_poppler_qt5 = xyes; then
      AC_CHECK_TOOL(MOCQT52, moc-qt5)
      AC_MSG_CHECKING([for Qt5 moc-qt5])
      mocversion=`$MOCQT52 -v 2>&1`
 -    mocversiongrep=`echo $mocversion | grep "Qt 5\|moc-qt5 5\|moc 5"`
--    if test x"$mocversiongrep" != x"$mocversion"; then
-+    case $mocversion in
-+    *Qt\ 5*|*moc\ 5*|*moc-qt5\ 5*)
-+      MOCQT5=$MOCQT52
-+      ;;
-+    *)
++    mocversiongrep=`echo $mocversion | grep -E "Qt 5|moc-qt5 5|moc 5"`
+     if test x"$mocversiongrep" != x"$mocversion"; then
        AC_CHECK_TOOL(QTCHOOSER, qtchooser)
        AC_MSG_CHECKING([for qtchooser])
-       qt5tooldir=`QT_SELECT=qt5 qtchooser -print-env | grep QTTOOLDIR | cut -d '=' -f 2 | cut -d \" -f 2`
-       mocversion=`$qt5tooldir/moc -v 2>&1`
--      mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
--      if test x"$mocversiongrep" != x"$mocversion"; then
-+      case $mocversion in
-+      *Qt\ 5*|*moc\ 5*)
-+        MOCQT5=$qt5tooldir/moc
-+        ;;
-+      *)
-         # no valid moc found
-         enable_poppler_qt5=no;
-         MOCQT5="not found"
--      else
--        MOCQT5=$qt5tooldir/moc
--      fi
--    else
--      MOCQT5=$MOCQT52
--    fi
--  fi
-+      esac
-+    esac
-+  esac
-   AC_SUBST(MOCQT5)
-   AC_MSG_RESULT([$MOCQT5])
- fi
-@@ -997,6 +1019,9 @@ glib/reference/Makefile
+@@ -997,6 +1015,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile
@@ -85,7 +45,7 @@ $OpenBSD: patch-configure_ac,v 1.19 2016/06/19 19:42:26 kili Exp $
  qt4/Makefile
  qt4/src/Makefile
  qt4/tests/Makefile
-@@ -1032,6 +1057,7 @@ if test x$enable_cmyk = xyes;then
+@@ -1032,6 +1053,7 @@ if test x$enable_cmyk = xyes;then
          echo "      with CMYK support"
  fi
  echo "  cairo output:        $use_cairo"

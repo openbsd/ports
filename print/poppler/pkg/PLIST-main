@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2016/07/09 15:37:46 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2016/08/01 18:35:40 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -191,6 +191,7 @@ share/gtk-doc/html/poppler/api-index-0-20.html
 share/gtk-doc/html/poppler/api-index-0-22.html
 share/gtk-doc/html/poppler/api-index-0-26.html
 share/gtk-doc/html/poppler/api-index-0-33.html
+share/gtk-doc/html/poppler/api-index-0-46.html
 share/gtk-doc/html/poppler/api-index-deprecated.html
 share/gtk-doc/html/poppler/api-index-full.html
 share/gtk-doc/html/poppler/ch01.html

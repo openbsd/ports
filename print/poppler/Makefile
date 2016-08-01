@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/07/09 15:37:46 kili Exp $
+# $OpenBSD: Makefile,v 1.109 2016/08/01 18:35:40 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -6,7 +6,7 @@ COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.45.0
+V=		0.46.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -16,14 +16,12 @@ PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
 OLDSHIT =	poppler-0.16.7
 
-REVISION=	0
-
-SHARED_LIBS +=	poppler              39.0     # 62.0
-SHARED_LIBS +=	poppler-glib         15.0     # 15.0
+SHARED_LIBS +=	poppler              40.0     # 63.0
+SHARED_LIBS +=	poppler-glib         16.0     # 16.0
 SHARED_LIBS +=	poppler-qt           12.0     # 3.0
-SHARED_LIBS +=	poppler-qt4          18.0     # 13.0
-SHARED_LIBS +=	poppler-qt5          0.0      # 7.0
-SHARED_LIBS +=	poppler-cpp          7.0      # 2.1
+SHARED_LIBS +=	poppler-qt4          19.0     # 14.0
+SHARED_LIBS +=	poppler-qt5          1.0      # 8.0
+SHARED_LIBS +=	poppler-cpp          8.0      # 3.0
 
 DISTFILES = ${DISTNAME}.tar.xz ${OLDSHIT}.tar.gz
 
@@ -129,8 +127,7 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBJPEG_CFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_prog_MOCQT4=${MODQT4_MOC} \
-		ac_cv_prog_MOCQT5=${MODQT5_MOC}
+		ac_cv_prog_MOCQT4=${MODQT4_MOC}
 
 USE_GMAKE=	Yes
 
