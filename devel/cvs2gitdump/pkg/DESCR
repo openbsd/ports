@@ -1,0 +1,3 @@
+A small python script which imports a cvs tree into a git or svn repository.
+It has a small footprint, is fast, and supports incremental import, but does
+not support branches.
