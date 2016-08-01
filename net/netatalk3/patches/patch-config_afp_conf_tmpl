@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_afp_conf_tmpl,v 1.2 2016/07/30 14:28:40 ajacoutot Exp $
+$OpenBSD: patch-config_afp_conf_tmpl,v 1.3 2016/08/01 14:13:28 ajacoutot Exp $
 --- config/afp.conf.tmpl.orig	Mon Jun  6 13:21:51 2016
-+++ config/afp.conf.tmpl	Fri Jul 29 15:06:49 2016
-@@ -4,12 +4,18 @@
++++ config/afp.conf.tmpl	Mon Aug  1 16:12:44 2016
+@@ -4,6 +4,7 @@
  
  [Global]
  ; Global server settings
@@ -9,14 +9,8 @@ $OpenBSD: patch-config_afp_conf_tmpl,v 1.2 2016/07/30 14:28:40 ajacoutot Exp $
  
  ; [Homes]
  ; basedir regex = /xxxx
- 
- ; [My AFP Volume]
- ; path = /path/to/volume
-+
-+; [TimeMachine]
-+; path = /path/to/backups
-+; valid users = @users
-+; time machine = yes
- 
+@@ -14,3 +15,4 @@
  ; [My Time Machine Volume]
  ; path = /path/to/backup
+ ; time machine = yes
++; valid users = @users
