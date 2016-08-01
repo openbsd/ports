@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2016/07/09 21:33:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2016/08/01 21:44:37 zhuk Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2016.1.3
+V=			2016.2
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
-MAINTAINER=		Vadim Zhukov <zhuk@openbsd.org>
+MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>
 
 # Apache v2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ NO_TEST=		Yes
 
 SUBST_VARS+=		JAVA_HOME
 
-WRKDIST=		${WRKDIR}/idea-IC-145.1617.8
+WRKDIST=		${WRKDIR}/idea-IC-162.1121.32
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
