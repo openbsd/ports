@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/10 06:04:42 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/01 18:31:29 bentley Exp $
 @bin bin/fceux
 @bin bin/fceux-net-server
 @man man/man6/fceux-net-server.6
@@ -78,6 +78,13 @@ share/fceux/palettes/BMF_final3.pal
 share/fceux/palettes/FCEU-13-default_nitsuja.pal
 share/fceux/palettes/FCEU-15-nitsuja_new.pal
 share/fceux/palettes/FCEUX.pal
+share/fceux/palettes/RP2C03.pal
+share/fceux/palettes/RP2C04_0001.pal
+share/fceux/palettes/RP2C04_0002.pal
+share/fceux/palettes/RP2C04_0003.pal
+share/fceux/palettes/RP2C04_0004.pal
+share/fceux/palettes/SONY_CXA2025AS_US.pal
+share/fceux/palettes/Unsaturated-V6.pal
 share/fceux/palettes/nestopia_rgb.pal
 share/fceux/palettes/nestopia_yuv.pal
 share/fceux/taseditor.chm
