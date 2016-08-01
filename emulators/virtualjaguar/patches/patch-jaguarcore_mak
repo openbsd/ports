@@ -1,0 +1,12 @@
+$OpenBSD: patch-jaguarcore_mak,v 1.1.1.1 2016/08/01 00:16:53 awolk Exp $
+--- jaguarcore.mak.orig	Sat Jun  4 17:22:32 2016
++++ jaguarcore.mak	Sat Jun  4 17:22:42 2016
+@@ -21,7 +21,7 @@ SYSTYPE    := __GCCUNIX__
+ ifneq "$(CROSS)" ""
+ SYSTYPE    := __GCCWIN32__
+ else
+-OSTYPE := $(shell uname -o)
++OSTYPE := $(shell uname)
+ ifeq "$(OSTYPE)" "Msys"
+ SYSTYPE    := __GCCWIN32__
+ endif

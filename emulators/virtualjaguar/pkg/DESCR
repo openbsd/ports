@@ -1,0 +1,5 @@
+Virtual Jaguar is a portable Atari Jaguar emulator. The software was
+originally developed by David Raingeard of Potato Emulation.
+
+Currently all the major subsystems found in a real Jaguar are emulated
+to some degree.
