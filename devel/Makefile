@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1510 2016/06/29 08:10:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1511 2016/08/01 08:39:05 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -80,6 +80,7 @@
      SUBDIR += cutils
      SUBDIR += cvs20hg
      SUBDIR += cvs2cl
+     SUBDIR += cvs2gitdump
      SUBDIR += cvs2svn
      SUBDIR += cvsgraph
      SUBDIR += cvslock
