@@ -1,7 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2015/08/20 07:25:59 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/08/01 18:30:00 bentley Exp $
 @bin bin/mgba
 @lib lib/libmgba.so.${LIBmgba_VERSION}
 @man man/man6/mgba.6
 share/doc/mGBA/
 share/doc/mGBA/CHANGES
 share/doc/mGBA/README.md
+share/mgba/
+share/mgba/nointro.dat
+share/mgba/shaders/
+share/mgba/shaders/agb001.shader/
+share/mgba/shaders/agb001.shader/agb001.fs
+share/mgba/shaders/agb001.shader/manifest.ini
+share/mgba/shaders/ags001.shader/
+share/mgba/shaders/ags001.shader/ags001-light.fs
+share/mgba/shaders/ags001.shader/ags001.fs
+share/mgba/shaders/ags001.shader/manifest.ini
+share/mgba/shaders/pixelate.shader/
+share/mgba/shaders/pixelate.shader/manifest.ini
+share/mgba/shaders/xbr.shader/
+share/mgba/shaders/xbr.shader/manifest.ini
+share/mgba/shaders/xbr.shader/xbr.fs
+share/mgba/shaders/xbr.shader/xbr.vs

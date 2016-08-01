@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/05/06 21:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/01 18:30:00 bentley Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
 
-V =			0.3.2
+V =			0.4.1
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
-REVISION-main =		1
-REVISION-qt =		1
 
 MULTI_PACKAGES =	-main -qt
 
@@ -18,7 +16,7 @@ SHARED_LIBS +=  mgba                      0.0 # 0.1
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		https://endrift.com/mgba/
+HOMEPAGE =		https://mgba.io/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -27,7 +25,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 			avcodec avformat avresample avutil c edit m png \
-			pthread swscale termcap z zip
+			pthread swscale termcap z zip epoxy
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
