@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2016/08/01 12:29:36 awolk Exp $
 
 COMMENT=	multi-window tail(1) utility
 
-DISTNAME=	multitail-5.2.9
+DISTNAME=	multitail-6.4.2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/
+
+MAINTAINER=	Adam Wolk <awolk@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,10 +19,11 @@ WANTLIB=	c m ncurses util panel
 
 NO_TEST=	Yes
 
-MAKE_FLAGS=	CC='${CC}' \
-		CFLAGS='${CFLAGS} -funsigned-char -DVERSION=\"$${VERSION}\" \
-			-DCONFIG_FILE=\"${SYSCONFDIR}/multitail.conf\"' \
-		LDFLAGS='-lpanel -lncurses -lutil -lm'
+MAKE_FLAGS=	UTF8_SUPPORT='no'
+USE_GMAKE=	Yes
+
+pre-configure:
+	@sed -i 's,-O3,,' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/multitail ${PREFIX}/bin
@@ -34,7 +37,7 @@ do-install:
 	@perl -i -pe \
 		's:/etc/multitail/:${TRUEPREFIX}/share/examples/multitail/:' \
 		${PREFIX}/share/examples/multitail/multitail.conf
-	${INSTALL_DATA} ${WRKSRC}/convert-* ${WRKSRC}/colors-* \
+	${INSTALL_DATA} ${WRKSRC}/conversion-scripts/* \
 		${PREFIX}/share/examples/multitail
 
 .include <bsd.port.mk>

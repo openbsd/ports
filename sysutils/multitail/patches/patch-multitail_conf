@@ -1,7 +1,7 @@
-$OpenBSD: patch-multitail_conf,v 1.9 2008/05/22 19:45:19 naddy Exp $
---- multitail.conf.orig	Mon May 19 11:19:09 2008
-+++ multitail.conf	Wed May 21 21:58:29 2008
-@@ -917,8 +917,8 @@ tab_stop:8
+$OpenBSD: patch-multitail_conf,v 1.10 2016/08/01 12:29:36 awolk Exp $
+--- multitail.conf.orig	Wed Jun 24 15:17:48 2015
++++ multitail.conf	Sun Jul 17 22:00:04 2016
+@@ -1001,8 +1001,8 @@ tab_stop:8
  # what program to start when the user presses a key
  # ...:x:...  just that key
  # ...:^x:... that key with control
