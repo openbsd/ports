@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/29 16:14:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/01 21:45:30 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -55,10 +55,10 @@ BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
 		print/cups,-libs \
 		shells/bash
 
-LIB_DEPENDS=	graphics/giflib
+LIB_DEPENDS=	converters/libiconv \
+		graphics/giflib
 
-MODULES=	converters/libiconv
-WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif m pthread stdc++ z
+WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv m pthread stdc++ z
 
 USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake
