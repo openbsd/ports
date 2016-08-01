@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/06/05 11:28:25 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/08/01 19:19:46 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -164,6 +164,7 @@ share/openttd/lang/simplified_chinese.lng
 share/openttd/lang/slovak.lng
 share/openttd/lang/slovenian.lng
 share/openttd/lang/spanish.lng
+share/openttd/lang/spanish_MX.lng
 share/openttd/lang/swedish.lng
 share/openttd/lang/tamil.lng
 share/openttd/lang/thai.lng
