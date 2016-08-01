@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/07/06 19:56:36 ajacoutot Exp $
-
-PORTROACH = 		skipv:0.11,0.12
+# $OpenBSD: Makefile,v 1.13 2016/08/01 15:04:40 ajacoutot Exp $
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.0
+DISTNAME =		goaccess-1.0.2
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
