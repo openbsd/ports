@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2016/05/28 09:10:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/08/01 08:56:40 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.1.0
+V =		2.1.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -13,9 +13,7 @@ PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
 
-REVISION-main =	0
-
-SHARED_LIBS =	gdal 25.0 #21.0
+SHARED_LIBS =	gdal 26.0 #21.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -109,9 +107,6 @@ CONFIGURE_ARGS =--without-hdf5 \
 
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
-
-post-install:
-	rm ${PREFIX}/man/man1/_home_rouault_dist_wrk_gdal_apps_.1
 
 do-test:
 	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} run_all.py
