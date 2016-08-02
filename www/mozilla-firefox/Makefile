@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.299 2016/07/10 10:04:44 landry Exp $
+# $OpenBSD: Makefile,v 1.300 2016/08/02 17:50:03 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	47.0.1
+MOZILLA_VERSION =	48.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
-SO_VERSION =	65.0
+SO_VERSION =	66.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozavcodec mozavutil mozgtk mozsqlite3 xul clearkey lgpllibs
@@ -43,7 +43,8 @@ MOZILLA_USE_GTK3 = Yes
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
 # to be able to link when building with clang on i386 or gcc on ppc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
@@ -57,8 +58,6 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 LIB_DEPENDS +=	textproc/icu4c
 CONFIGURE_ARGS += --with-system-icu
 WANTLIB += icudata icui18n icuuc
-
-CONFIGURE_ARGS +=	--disable-gstreamer
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie

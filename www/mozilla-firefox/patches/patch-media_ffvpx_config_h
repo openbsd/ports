@@ -1,10 +1,10 @@
-$OpenBSD: patch-media_ffvpx_config_h,v 1.1 2016/04/27 13:50:27 landry Exp $
+$OpenBSD: patch-media_ffvpx_config_h,v 1.2 2016/08/02 17:50:03 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1239550#c13
 
---- media/ffvpx/config.h.orig	Fri Apr  8 03:19:22 2016
-+++ media/ffvpx/config.h	Sat Apr  9 11:43:17 2016
-@@ -26,4 +26,9 @@
+--- media/ffvpx/config.h.orig	Mon Jun  6 22:14:57 2016
++++ media/ffvpx/config.h	Wed Jun  8 22:49:16 2016
+@@ -40,4 +40,9 @@
  #endif
  #endif
  #include "config_common.h"
