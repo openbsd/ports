@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/19 11:20:42 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/08/02 10:19:55 kirby Exp $
 @bin bin/warzone2100
 @man man/man6/warzone2100.6
+share/appdata/
 share/applications/warzone2100.desktop
 share/doc/warzone2100/
 @comment share/doc/warzone2100/AUTHORS

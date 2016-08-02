@@ -1,0 +1,11 @@
+$OpenBSD: patch-icons_Makefile_in,v 1.1 2016/08/02 10:19:55 kirby Exp $
+--- icons/Makefile.in.orig	Mon Aug  1 18:02:40 2016
++++ icons/Makefile.in	Mon Aug  1 18:02:56 2016
+@@ -520,7 +520,6 @@ install-data-local:
+ 	$(MKDIR_P) $(DESTDIR)$(appdatadir)
+ 	$(INSTALL_DATA) $(srcdir)/warzone2100.png $(DESTDIR)$(icondir)/warzone2100.png
+ 	$(INSTALL_DATA) $(srcdir)/warzone2100.desktop $(DESTDIR)$(applicationdir)/warzone2100.desktop
+-	$(INSTALL_DATA) $(srcdir)/warzone2100.appdata.xml $(DESTDIR)$(appdatadir)/warzone2100.appdata.xml
+ 
+ uninstall-local:
+ 	$(RM) $(DESTDIR)$(icondir)/warzone2100.png

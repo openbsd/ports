@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2016/08/01 10:25:02 kirby Exp $
---- configure.ac.orig	Sun Jul 10 20:36:14 2016
-+++ configure.ac	Wed Jul 27 11:56:25 2016
-@@ -281,7 +281,7 @@ fi
+$OpenBSD: patch-configure_ac,v 1.10 2016/08/02 10:19:55 kirby Exp $
+--- configure.ac.orig	Thu Jul 28 11:16:04 2016
++++ configure.ac	Mon Aug  1 18:02:15 2016
+@@ -285,7 +285,7 @@ fi
  
  WZ_WARNINGS_GCC="-Wall -Wextra ${WZ_Wno_}unused-parameter ${WZ_Wno_}sign-compare -Wcast-align -Wwrite-strings -Wpointer-arith ${WZ_Wno_}format-security"
  WZ_WARNINGS_GCC_C="${WZ_WARNINGS_GCC} -Wstrict-prototypes -Wdeclaration-after-statement ${CFLAGS_IGNORE_WARNINGS}"
