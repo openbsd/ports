@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/24 09:13:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2016/08/02 10:10:13 kirby Exp $
 
 COMMENT =		minimalistic Mumble server
 
-V =			0.2.16a
 GH_ACCOUNT =		fatbob313
 GH_PROJECT =		umurmur
-GH_TAGNAME =		${V}
-DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		3
+GH_TAGNAME =		0.2.16a
+REVISION =		4
 CATEGORIES =		audio
 
-HOMEPAGE =		https://code.google.com/p/umurmur/
+HOMEPAGE =		http://umurmur.net/
 
 MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
