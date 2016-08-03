@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/11/30 22:27:13 edd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/08/03 09:24:15 sthen Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
 lib/python${MODPY_VERSION}/site-packages/offlineimap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/bundled_imaplib2.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/bundled_imaplib2.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/emailutil.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/emailutil.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/error.py
@@ -33,8 +35,6 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/globals.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/globals.pyc
-lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.py
-lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplibutil.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplibutil.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imapserver.py
@@ -62,8 +62,6 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Maildir.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/Maildir.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/repository/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/offlineimap/syncmaster.py
-lib/python${MODPY_VERSION}/site-packages/offlineimap/syncmaster.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/threadutil.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/threadutil.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/
@@ -90,6 +88,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/distro.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/distro.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/stacktrace.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/utils/stacktrace.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/virtual_imaplib2.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/virtual_imaplib2.pyc
 @man man/man1/offlineimap.1
 @man man/man7/offlineimapui.7
 share/examples/offlineimap/
