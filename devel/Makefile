@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1512 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1513 2016/08/03 09:30:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -78,6 +78,7 @@
      SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
+     SUBDIR += cvs-fast-export
      SUBDIR += cvs20hg
      SUBDIR += cvs2cl
      SUBDIR += cvs2gitdump
