@@ -1,0 +1,35 @@
+'reposurgeon' enables risky operations that version-control systems
+don't want to let you do, such as (a) editing past comments and metadata,
+(b) excising commits, (c) coalescing commits, and (d) removing files and
+subtrees from repo history. The original motivation for 'reposurgeon'
+was to clean up artifacts created by repository conversions.
+
+'reposurgeon' is also useful for scripting very high-quality conversions
+from Subversion.  It is better than 'git-svn' at tag lifting,
+automatically cleaning up 'cvs2svn' conversion artifacts, dealing with
+nonstandard repository layouts, recognizing branch merges, handling
+mixed-branch commits, and generally at coping with Subversion's many
+odd corner cases.  Normally Subversion repos should be analyzed at a
+rate of upwards of ten thousand commits per minute.
+
+'repodiffer' is a program that reports differences between repository
+histories. It uses a 'diff(1)'-like algorithm to identify spans of
+identical revisions, and to pick out revisions that have been
+changed or deleted or inserted. It may be useful for comparing the
+output of different repository-conversion tools in detail.
+
+Another auxiliary program, 'repotool', performs various useful
+operations such as checkouts and tag listing in a VCS-independent
+manner.  Yet another, 'repomapper', assists in automatically preparing
+contributor maps of CVS and SVN repositories.
+
+The 'repocutter' program is available for some specialized operations on
+Subversion dumpfiles; it may be useful in extracting portions of
+particularly gnarly Subversion repositories for conversion witth
+reposurgeon.
+
+A 'patchpipe' program supports converting among version-control patch
+formats.
+
+This distribution supports a generic conversion workflow using these
+tools, and includes the DVCS Migration Guide that describes how to use it.
