@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/03 09:30:15 sthen Exp $
+--- Makefile.orig	Sun Feb 28 20:03:13 2016
++++ Makefile	Fri Jun 17 01:47:55 2016
+@@ -37,10 +37,11 @@ CPPFLAGS += -DVERSION=\"$(VERSION)\"
+ 
+ # Enable this for multithreading.
+ CFLAGS += -pthread
++LDFLAGS += -pthread
+ CPPFLAGS += -DTHREADS
+ 
+ # Optimizing for speed. Comment this out for distribution builds
+-CFLAGS += -march=native
++#CFLAGS += -march=native
+ 
+ # To enable debugging of the Yacc grammar, uncomment the following line
+ #CPPFLAGS += -DYYDEBUG=1
+@@ -72,7 +73,6 @@ CPPFLAGS+=-Drestrict=__restrict__
+ # To enable profiling, uncomment the following line
+ # Note: the profiler gets confused if you don't also turn off -O flags.
+ # CFLAGS += -pg
+-CFLAGS += -O3
+ # If your toolchain supports link time optimization this is a cheap speedup
+ # CFLAGS += -flto
+ # CFLAGS += -g
+@@ -138,10 +138,10 @@ install-bin: cvs-fast-export cvssync cvsconvert
+ 	$(INSTALL) -d "$(target)/bin"
+ 	$(INSTALL) $^ "$(target)/bin"
+ install-man: man
+-	$(INSTALL) -d "$(target)/share/man/man1"
+-	$(INSTALL) -m 644 cvs-fast-export.1 "$(target)/share/man/man1"
+-	$(INSTALL) -m 644 cvssync.1 "$(target)/share/man/man1"
+-	$(INSTALL) -m 644 cvsconvert.1 "$(target)/share/man/man1"
++	$(INSTALL) -d "$(target)/man/man1"
++	$(INSTALL) -m 644 cvs-fast-export.1 "$(target)/man/man1"
++	$(INSTALL) -m 644 cvssync.1 "$(target)/man/man1"
++	$(INSTALL) -m 644 cvsconvert.1 "$(target)/man/man1"
+ 
+ PROFILE_REPO = ~/software/groff-conversion/groff-mirror/groff
+ gmon.out: cvs-fast-export

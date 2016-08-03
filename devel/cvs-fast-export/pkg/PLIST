@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/03 09:30:15 sthen Exp $
+@bin bin/cvs-fast-export
+bin/cvsconvert
+bin/cvssync
+@man man/man1/cvs-fast-export.1
+@man man/man1/cvsconvert.1
+@man man/man1/cvssync.1

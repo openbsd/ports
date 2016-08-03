@@ -1,0 +1,12 @@
+$OpenBSD: patch-lex_l,v 1.1.1.1 2016/08/03 09:30:15 sthen Exp $
+--- lex.l.orig	Mon Aug  1 10:49:44 2016
++++ lex.l	Mon Aug  1 10:50:08 2016
+@@ -333,7 +333,7 @@ static void fast_export_sanitize(yyscan_t yyscanner, c
+ {
+     char *sp, *tp;
+ 
+-#define SUFFIX(a, s)	(strcmp(a + strlen(a) - strlen(s), s) == 0) 
++#define SUFFIX(a, s)	(!(strlen(a) < strlen(s)) && strcmp(a + strlen(a) - strlen(s), s) == 0) 
+ #define BADCHARS	"~^\\*?"
+     for (sp = tp = yyget_text(yyscanner); *sp; sp++) {
+ 	if (isgraph((unsigned char)*sp) && strchr(BADCHARS, *sp) == NULL) {

@@ -1,0 +1,11 @@
+cvs-fast-export analyzes a collection of RCS files and, when possible,
+emits an equivalent history in the form of a git fast-import stream.
+Not all possible histories can be rendered this way; the program tries
+to emit useful warnings when it can't.
+
+A wrapper script called cvsconvert runs a conversion to git and
+looks for content mismatches with the original CVS.
+
+The analysis stage of this code originally travelled as "parsecvs" and
+was written by Keith Packard in early 2006. It was briefly maintained by
+Bart Massey before passing to Eric S. Raymond in late 2012.
