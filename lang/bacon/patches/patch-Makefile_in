@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
+--- Makefile.in.orig	Thu Jun 30 15:00:30 2016
++++ Makefile.in	Tue Jul 12 00:05:41 2016
+@@ -3,7 +3,7 @@ exec_prefix     = @exec_prefix@
+ BINDIR          = @bindir@
+ LIBDIR          = @libdir@
+ DATADIR         = $(prefix)/share
+-MANDIR          = $(DATADIR)/man
++MANDIR          = $(prefix)/man
+ STRIP           = @STRIP@
+ CC              = @CC@
+ RANLIB          = @RANLIB@
+@@ -31,16 +31,16 @@ install :
+ 	$(INSTALL) build/bacon $(DESTDIR)$(BINDIR)
+ 	@if [ $(GUI) = "true" ]; then \
+ 	    $(INSTALL) build/bacongui $(DESTDIR)$(BINDIR); \
++	    mkdir -p $(DESTDIR)$(DATADIR)/applications; \
++	    $(INSTALL) -m 644 bacongui.desktop $(DESTDIR)$(DATADIR)/applications; \
++	    mkdir -p $(DESTDIR)$(DATADIR)/pixmaps; \
++	    $(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/pixmaps; \
+ 	fi;
+ 	$(INSTALL) bacon.sh $(DESTDIR)$(BINDIR)
+ 	mkdir -p $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 644 build/libbacon.a $(DESTDIR)$(LIBDIR)
+ 	mkdir -p $(DESTDIR)$(MANDIR)/man1
+ 	$(INSTALL) -m 644 bacon.1 $(DESTDIR)$(MANDIR)/man1
+-	mkdir -p $(DESTDIR)$(DATADIR)/applications
+-	$(INSTALL) -m 644 bacongui.desktop $(DESTDIR)$(DATADIR)/applications
+-	mkdir -p $(DESTDIR)$(DATADIR)/pixmaps
+-	$(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/pixmaps
+ 	mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl
+ 	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl
+ 

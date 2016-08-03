@@ -1,0 +1,4 @@
+BaCon is a BASIC to C translator for Unix-based systems. It intends to be a
+programming aid in creating tools which can be compiled on different platforms
+(including 64bit environments), while trying to revive the days of the good old
+BASIC.

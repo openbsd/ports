@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
+@bin bin/bacon
+bin/bacon.sh
+lib/libbacon.a
+@man man/man1/bacon.1
+share/enscript/
+share/enscript/hl/
+share/enscript/hl/bacon.st
