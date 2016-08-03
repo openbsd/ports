@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2016/06/16 06:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2016/08/03 08:44:51 ajacoutot Exp $
+
+PORTROACH=	skipv:4.2-2
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
