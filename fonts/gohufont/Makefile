@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/03 13:21:13 benoit Exp $
 
 COMMENT = 	monospace bitmap font for programming and terminal use
 PKG_ARCH =	*
-DISTNAME =	gohufont-2.0
+DISTNAME =	gohufont-2.1
 CATEGORIES =	fonts x11
 MAINTAINER =	Tobias Ulmer <tobiasu@tmux.org>
-REVISION =	1
 
 HOMEPAGE =	http://font.gohu.eu
 MASTER_SITES =	${HOMEPAGE}/
@@ -27,7 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/*.pcf.gz ${FONTDIR}
 	${INSTALL_DATA} ${WRKBUILD}/fonts.alias ${FONTDIR}/fonts.alias-gohufont
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gohufont
-	${INSTALL_DATA} ${WRKDIST}/{COPYING-LICENSE,README} \
+	${INSTALL_DATA} ${WRKDIST}/{COPYING-LICENSE,README.md} \
 		${PREFIX}/share/doc/gohufont
 
 .include <bsd.port.mk>
