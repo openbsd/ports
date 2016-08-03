@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/03/07 09:06:18 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/08/03 07:33:31 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -45,6 +45,7 @@ share/highlight/langDefs/c.lang
 share/highlight/langDefs/ceylon.lang
 share/highlight/langDefs/charmm.lang
 share/highlight/langDefs/chill.lang
+share/highlight/langDefs/chpl.lang
 share/highlight/langDefs/clean.lang
 share/highlight/langDefs/clearbasic.lang
 share/highlight/langDefs/clipper.lang
@@ -207,6 +208,7 @@ share/highlight/langDefs/vhd.lang
 share/highlight/langDefs/xml.lang
 share/highlight/langDefs/xpp.lang
 share/highlight/langDefs/yaiff.lang
+share/highlight/langDefs/yaml.lang
 share/highlight/langDefs/yang.lang
 share/highlight/langDefs/znn.lang
 share/highlight/themes/

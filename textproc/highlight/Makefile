@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/07 09:06:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.37 2016/08/03 07:33:31 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.28
+DISTNAME =		highlight-3.31
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -26,10 +26,15 @@ MODLUA_VERSION =	5.2
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
 
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
+
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CXX=${CXX} \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			CFLAGS+="`pkg-config --cflags ${MODLUA_DEP}`" \
+			CFLAGS+="`pkg-config --cflags ${MODLUA_DEP}` -std=c++11 " \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 NO_TEST =		Yes
