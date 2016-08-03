@@ -1,21 +1,21 @@
-$OpenBSD: patch-configure,v 1.6 2010/06/06 09:03:13 benoit Exp $
---- configure.orig	Sat Jun  5 22:39:12 2010
-+++ configure	Sun Jun  6 07:53:24 2010
-@@ -790,7 +790,7 @@
+$OpenBSD: patch-configure,v 1.7 2016/08/03 06:38:47 benoit Exp $
+--- configure.orig	Mon Jul 25 23:09:47 2016
++++ configure	Tue Aug  2 12:36:59 2016
+@@ -827,7 +827,7 @@
  datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
 -localstatedir='${prefix}/var'
 +localstatedir='/var'
+ runstatedir='${localstatedir}/run'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
- docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
-@@ -6460,7 +6460,7 @@
+@@ -7003,7 +7003,7 @@
  
  
  saved_CFLAGS="$CFLAGS"
 -CFLAGS="$CFLAGS $AIDE_DEFS"
 +CFLAGS="$CFLAGS"
- # The cast to long int works around a bug in the HP C Compiler
- # version HP92453-01 B.11.11.23709.GP, which incorrectly rejects
- # declarations like `int a3[[(sizeof (unsigned char)) >= 0]];'.
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for LFS ino_t" >&5
+ $as_echo_n "checking for LFS ino_t... " >&6; }
+ if ${ac_cv_ino_type+:} false; then :

@@ -1,15 +1,15 @@
-$OpenBSD: patch-doc_aide_1_in,v 1.1 2010/05/05 05:32:24 ajacoutot Exp $
---- doc/aide.1.in.orig	Tue May  4 16:53:01 2010
-+++ doc/aide.1.in	Tue May  4 16:53:49 2010
-@@ -75,9 +75,9 @@ SIGTERM. Use SIGKILL to terminate.
+$OpenBSD: patch-doc_aide_1_in,v 1.2 2016/08/03 06:38:47 benoit Exp $
+--- doc/aide.1.in.orig	Mon Jul 25 22:58:12 2016
++++ doc/aide.1.in	Tue Aug  2 14:40:57 2016
+@@ -103,9 +103,9 @@
  .SH FILES
- .B @sysconfdir@/aide.conf
+ .IP \fB@sysconfdir@/aide.conf\fR
  Default aide configuration file.
--.B @sysconfdir@/aide.db
-+.B /var/db/aide.db
+-.IP \fB@sysconfdir@/aide.db\fR
++.IP \fB/var/db/aide.db\fR
  Default aide database.
--.B @sysconfdir@/aide.db.new
-+.B /var/db/aide.db.new
+-.IP \fB@sysconfdir@/aide.db.new\fR
++.IP \fB/var/db/aide.db.new\fR
  Default aide output database.
  .SH SEE ALSO
  .BR aide.conf (5)

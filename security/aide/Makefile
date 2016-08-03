@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2016/08/03 06:38:47 benoit Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
-DISTNAME=		aide-0.15.1
-REVISION=		1
+DISTNAME=		aide-0.16
 CATEGORIES=		security
 
 HOMEPAGE=		http://sourceforge.net/projects/aide
-
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
