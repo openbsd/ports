@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/14 09:55:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/03 09:34:39 ajacoutot Exp $
 
 COMMENT=		decentralized service discovery and orchestration
 
@@ -8,7 +8,7 @@ GH_PROJECT=		serf
 PKGNAME=		${GH_ACCOUNT}-${DISTNAME}
 DIST_SUBDIR=		${GH_PROJECT}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils net
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/21 22:20:08 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/03 09:34:39 ajacoutot Exp $
 
 PORTROACH =		ignore:1
 
-REVISION =		0
+REVISION =		1
 COMMENT =		library for reading and writing XLSX files
 DISTNAME =		go-xlsx-20151010
 CATEGORIES =		textproc converters

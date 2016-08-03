@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/21 01:14:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/03 09:34:39 ajacoutot Exp $
 
 COMMENT =	Go text processing support
 DISTNAME =	go-text-20160510
@@ -6,6 +6,7 @@ GH_ACCOUNT =	golang
 GH_PROJECT =	text
 GH_COMMIT =	f773ec03ce334298742df7f3108fc0d402646d22
 CATEGORIES =	textproc devel
+REVISION =	0
 
 HOMEPAGE =	https://godoc.org/golang.org/x/text
 

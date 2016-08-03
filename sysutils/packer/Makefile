@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/25 13:20:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/08/03 09:34:39 ajacoutot Exp $
 
 COMMENT=		tool for building machine images
 
 GH_TAGNAME=		v0.10.1
 GH_ACCOUNT=		mitchellh
 GH_PROJECT=		packer
+REVISION=		0
 
 CATEGORIES=		sysutils
 
