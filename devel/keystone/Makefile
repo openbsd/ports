@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/15 19:22:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/03 11:14:16 benoit Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
 GH_ACCOUNT =	keystone-engine
 GH_PROJECT =	keystone
-GH_TAGNAME =	0.9
+GH_TAGNAME =	0.9.1
 
-SHARED_LIBS =	keystone	0.0
+SHARED_LIBS =	keystone	1.0
 
 CATEGORIES =	devel
 
