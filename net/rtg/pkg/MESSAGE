@@ -1,4 +1,4 @@
-To have rtgpoll start at boot time, you must edit 
+To have rtgpoll start at boot time, you must edit
 ${SYSCONFDIR}/rtg/rtg.conf
 and insert the following in /etc/rc.local.
 
@@ -10,7 +10,7 @@ and insert the following in /etc/rc.local.
 
 This will start snmpd and use ${SYSCONFDIR}/rtg/rtg.conf for the
 configuration. Be sure to read the manualpages of rtgpoll(1) and
-rtgplot(1) to create a target_file. 
+rtgplot(1) to create a target_file.
 
 Example files for the webfrontend of rtgplot have been installed to
 /usr/local/share/examples/rtg/web/.

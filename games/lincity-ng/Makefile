@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/06/21 11:54:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/03 13:06:41 ajacoutot Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 

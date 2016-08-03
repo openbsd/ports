@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/03 13:06:42 ajacoutot Exp $
 
 COMMENT =		SNMP statistics monitoring system
 
 DISTNAME =		rtg-0.7.4
-REVISION =		10
+REVISION =		11
 CATEGORIES =		net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rtg/}
 

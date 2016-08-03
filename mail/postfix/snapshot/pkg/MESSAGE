@@ -10,4 +10,3 @@ using the following command:
 If you want to restore sendmail, this is done using the following command:
 
     ${PREFIX}/sbin/postfix-disable
-    

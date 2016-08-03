@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:48:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/08/03 13:06:41 ajacoutot Exp $
 
 COMMENT=	receive/send files via ZMODEM protocol (unrestricted)
 
 DISTNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
+REVISION=	0
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
