@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
---- src/config.c.orig	Fri May 20 17:57:56 2016
-+++ src/config.c	Tue Jun 14 15:18:33 2016
-@@ -552,28 +552,24 @@ int config_write_template(const char *file, const stru
+$OpenBSD: patch-src_config_c,v 1.7 2016/08/03 09:21:30 czarkoff Exp $
+--- src/config.c.orig	Fri Jul 22 21:17:45 2016
++++ src/config.c	Wed Aug  3 11:00:53 2016
+@@ -592,28 +592,24 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stdio" MOD_EXT "\n");
  #endif
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cons" MOD_EXT "\n");
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "plc" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Audio driver Modules\n");
-@@ -591,8 +587,8 @@ int config_write_template(const char *file, const stru
+@@ -631,8 +627,8 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
  #endif
@@ -50,14 +50,15 @@ $OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
  
  #ifdef USE_VIDEO
  
-@@ -602,10 +598,13 @@ int config_write_template(const char *file, const stru
+@@ -642,10 +638,14 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "avcodec" MOD_EXT "\n");
  #endif
--	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vpx" MOD_EXT "\n");
-+	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "daala" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vp8" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vp8" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vp9" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "h265" MOD_EXT "\n");
-+	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vpx" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "daala" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Video filter Modules (in encoding order)\n");
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "selfview" MOD_EXT "\n");
@@ -66,7 +67,7 @@ $OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
  
  	(void)re_fprintf(f, "\n# Video source modules\n");
  #if defined (DARWIN)
-@@ -617,38 +616,33 @@ int config_write_template(const char *file, const stru
+@@ -657,38 +657,33 @@ int config_write_template(const char *file, const stru
  #endif
  
  #else
@@ -115,7 +116,7 @@ $OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
  	(void)re_fprintf(f, "\n");
  
  	(void)re_fprintf(f, "\n#------------------------------------"
-@@ -665,14 +659,22 @@ int config_write_template(const char *file, const stru
+@@ -705,14 +700,22 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "\n");
  	(void)re_fprintf(f, "module_app\t\t" MOD_PRE "auloop"MOD_EXT"\n");
  	(void)re_fprintf(f, "module_app\t\t"  MOD_PRE "contact"MOD_EXT"\n");
@@ -139,7 +140,7 @@ $OpenBSD: patch-src_config_c,v 1.6 2016/06/14 16:15:55 czarkoff Exp $
  	(void)re_fprintf(f, "\n");
  
  	(void)re_fprintf(f, "\n#------------------------------------"
-@@ -685,9 +687,6 @@ int config_write_template(const char *file, const stru
+@@ -725,9 +728,6 @@ int config_write_template(const char *file, const stru
  
  	(void)re_fprintf(f, "\n");
  	(void)re_fprintf(f, "http_listen\t\t0.0.0.0:8000\n");

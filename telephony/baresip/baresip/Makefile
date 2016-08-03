@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/07/10 19:39:29 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/03 09:21:30 czarkoff Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.4.19
+V =			0.4.20
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
@@ -78,7 +78,6 @@ MAKE_FLAGS +=		USE_GST1=yes USE_GST_VIDEO1=yes USE_GTK=yes
 #MAKE_FLAGS +=	USE_ILBC=yes # XXX http://ilbcfreeware.org/
 #MAKE_FLAGS +=	USE_ISAC=yes # XXX FreeSWITCH??? (was used in Google Talk)
 #MAKE_FLAGS +=	USE_SDL2=yes # XXX Appears to be broken
-
 
 #CFLAGS +=		-I${LOCALBASE}/include/re
 
