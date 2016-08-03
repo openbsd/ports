@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/25 16:52:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/08/03 08:40:58 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/boto3/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2015-04-15/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2015-04-15/resources-1.json
 lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2015-10-01/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2015-10-01/resources-1.json
+lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2016-04-01/
+lib/python${MODPY_VERSION}/site-packages/boto3/data/ec2/2016-04-01/resources-1.json
 lib/python${MODPY_VERSION}/site-packages/boto3/data/glacier/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/glacier/2012-06-01/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/glacier/2012-06-01/resources-1.json
