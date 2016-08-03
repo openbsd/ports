@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/03 18:55:49 naddy Exp $
 @conflict openmotif-*
 @conflict openmotif-demos-*
 @pkgpath x11/openmotif,-main
@@ -282,23 +282,17 @@ lib/X11/bindings/sun
 lib/X11/bindings/sun_at
 lib/X11/bindings/tek
 lib/X11/bindings/xmbind.alias
-lib/X11/config/
-lib/X11/config/Motif.rules
-lib/X11/config/Motif.tmpl
 lib/X11/system.mwmrc
 lib/Xm/
 lib/Xm/ButtonBox/
-lib/Xm/ButtonBox/Imakefile
 @bin lib/Xm/ButtonBox/bboxdemo
 lib/Xm/ButtonBox/bboxdemo.c
 lib/Xm/Color/
-lib/Xm/Color/Imakefile
 @bin lib/Xm/Color/colordemo
 lib/Xm/Color/colordemo.c
 lib/Xm/Color/util-c.c
 lib/Xm/Column/
 lib/Xm/Column/Column.ad
-lib/Xm/Column/Imakefile
 @bin lib/Xm/Column/column
 lib/Xm/Column/column.c
 lib/Xm/Exm/
@@ -310,7 +304,6 @@ lib/Xm/Exm/simple_app/README
 @bin lib/Xm/Exm/simple_app/simpleDemo
 lib/Xm/Exm/simple_app/simpleDemo.man
 lib/Xm/Ext18list/
-lib/Xm/Ext18list/Imakefile
 lib/Xm/Ext18list/callbacks-c.c
 lib/Xm/Ext18list/creation.c
 @bin lib/Xm/Ext18list/ext18list
@@ -324,22 +317,18 @@ lib/Xm/Ext18list/pixmaps/porsche.xpm
 lib/Xm/Ext18list/pixmaps/stopsign.xpm
 lib/Xm/Ext18list/util-c.c
 lib/Xm/Icon/
-lib/Xm/Icon/Imakefile
 @bin lib/Xm/Icon/iconbuttondemo
 lib/Xm/Icon/iconbuttondemo.c
 lib/Xm/Icon/misc.c
 lib/Xm/Icon/small.bm
 lib/Xm/Outline/
-lib/Xm/Outline/Imakefile
 @bin lib/Xm/Outline/outline
 lib/Xm/Outline/outline.c
 lib/Xm/Paned2/
-lib/Xm/Paned2/Imakefile
 lib/Xm/Paned2/creation-c.c
 @bin lib/Xm/Paned2/paned
 lib/Xm/Paned2/paned.c
 lib/Xm/Tabstack/
-lib/Xm/Tabstack/Imakefile
 lib/Xm/Tabstack/bxutils.c
 lib/Xm/Tabstack/callbacks.c
 lib/Xm/Tabstack/creation.c
@@ -347,12 +336,10 @@ lib/Xm/Tabstack/creation.h
 lib/Xm/Tabstack/main.c
 @bin lib/Xm/Tabstack/tabstack
 lib/Xm/Tree/
-lib/Xm/Tree/Imakefile
 lib/Xm/Tree/bxutil-c.c
 @bin lib/Xm/Tree/tree
 lib/Xm/Tree/tree.c
 lib/Xm/airport/
-lib/Xm/airport/Imakefile
 lib/Xm/airport/README
 lib/Xm/airport/XmdAirport.ad
 @bin lib/Xm/airport/airport
@@ -364,7 +351,6 @@ lib/Xm/airport/dropsite.h
 lib/Xm/airport/main.c
 lib/Xm/airport/main.h
 lib/Xm/animate/
-lib/Xm/animate/Imakefile
 lib/Xm/animate/README
 lib/Xm/animate/XmdAnimate.ad
 lib/Xm/animate/animate.help
@@ -387,14 +373,12 @@ lib/Xm/animate/xmanimate.man
 lib/Xm/animate/xmanimate.uid
 lib/Xm/animate/xmanimate.uil
 lib/Xm/autopopups/
-lib/Xm/autopopups/Imakefile
 lib/Xm/autopopups/README
 @bin lib/Xm/autopopups/autopopups
 lib/Xm/autopopups/autopopups.c
 lib/Xm/autopopups/autopopups.man
 lib/Xm/combo2/
 lib/Xm/combo2/Combo.ad
-lib/Xm/combo2/Imakefile
 @bin lib/Xm/combo2/combo
 lib/Xm/combo2/combo.c
 lib/Xm/drag_and_drop/
@@ -402,13 +386,11 @@ lib/Xm/drag_and_drop/
 lib/Xm/drag_and_drop/DNDDemo.c
 lib/Xm/drag_and_drop/DNDDemo.man
 lib/Xm/drag_and_drop/DNDDraw.c
-lib/Xm/drag_and_drop/Imakefile
 lib/Xm/drag_and_drop/README
 @bin lib/Xm/drag_and_drop/simpledrop
 lib/Xm/drag_and_drop/simpledrop.c
 lib/Xm/drag_and_drop/simpledrop.man
 lib/Xm/draw/
-lib/Xm/draw/Imakefile
 lib/Xm/draw/README
 lib/Xm/draw/XmdDraw.ad
 @bin lib/Xm/draw/draw
@@ -416,14 +398,12 @@ lib/Xm/draw/draw.c
 lib/Xm/draw/draw.help
 lib/Xm/draw/draw.man
 lib/Xm/earth/
-lib/Xm/earth/Imakefile
 lib/Xm/earth/README
 @bin lib/Xm/earth/earth
 lib/Xm/earth/earth.c
 lib/Xm/earth/earth.man
 lib/Xm/earth/terre.xbm
 lib/Xm/filemanager/
-lib/Xm/filemanager/Imakefile
 lib/Xm/filemanager/XmdFilemanager.ad
 lib/Xm/filemanager/actions.c
 lib/Xm/filemanager/code.xpm
@@ -470,21 +450,18 @@ lib/Xm/fileview/text.c
 lib/Xm/fileview/text.h
 lib/Xm/fileview/textE.h
 lib/Xm/fontsel/
-lib/Xm/fontsel/Imakefile
 lib/Xm/fontsel/callbacks-c.c
 lib/Xm/fontsel/creation-c.c
 @bin lib/Xm/fontsel/fontsel
 lib/Xm/fontsel/fontsel.c
 lib/Xm/fontsel/fontsel.h
 lib/Xm/getsubres/
-lib/Xm/getsubres/Imakefile
 lib/Xm/getsubres/README
 @bin lib/Xm/getsubres/getsubres
 lib/Xm/getsubres/getsubres.c
 lib/Xm/getsubres/getsubres.help
 lib/Xm/getsubres/getsubres.man
 lib/Xm/helloint/
-lib/Xm/helloint/Imakefile
 lib/Xm/helloint/README
 @bin lib/Xm/helloint/helloint
 lib/Xm/helloint/helloint.c
@@ -492,14 +469,12 @@ lib/Xm/helloint/helloint.man
 lib/Xm/helloint/helloint.uid
 lib/Xm/helloint/helloint.uil
 lib/Xm/hellomotif/
-lib/Xm/hellomotif/Imakefile
 lib/Xm/hellomotif/README
 @bin lib/Xm/hellomotif/hellomotif
 lib/Xm/hellomotif/hellomotif.c
 lib/Xm/hellomotif/hellomotif.uid
 lib/Xm/hellomotif/hellomotif.uil
 lib/Xm/i18ninput/
-lib/Xm/i18ninput/Imakefile
 lib/Xm/i18ninput/README
 lib/Xm/i18ninput/XmdI18nInput.ad
 @bin lib/Xm/i18ninput/i18ninput
@@ -508,13 +483,11 @@ lib/Xm/i18ninput/i18ninput.help
 lib/Xm/i18ninput/i18ninput.man
 lib/Xm/i18ninput/input.c
 lib/Xm/panner/
-lib/Xm/panner/Imakefile
 lib/Xm/panner/README
 @bin lib/Xm/panner/panner
 lib/Xm/panner/panner.c
 lib/Xm/panner/panner.man
 lib/Xm/periodic/
-lib/Xm/periodic/Imakefile
 lib/Xm/periodic/README
 lib/Xm/periodic/XmdPeriodic.ad
 @bin lib/Xm/periodic/periodic
@@ -523,7 +496,6 @@ lib/Xm/periodic/periodic.uid
 lib/Xm/periodic/periodic.uil
 lib/Xm/periodic/periodic_l.uil
 lib/Xm/piano/
-lib/Xm/piano/Imakefile
 lib/Xm/piano/Inv8_part1.piano
 lib/Xm/piano/Inv8_part2.piano
 lib/Xm/piano/README
@@ -538,7 +510,6 @@ lib/Xm/pixmaps/eye.xpm
 lib/Xm/pixmaps/porsche.xpm
 lib/Xm/pixmaps/stopsign.xpm
 lib/Xm/sampler2_0/
-lib/Xm/sampler2_0/Imakefile
 lib/Xm/sampler2_0/README
 lib/Xm/sampler2_0/XmdSampler2_0.ad
 lib/Xm/sampler2_0/bee.xpm
@@ -559,14 +530,12 @@ lib/Xm/sampler2_0/spir.xpm
 lib/Xm/sampler2_0/stack.xpm
 lib/Xm/sampler2_0/text.xpm
 lib/Xm/setDate/
-lib/Xm/setDate/Imakefile
 lib/Xm/setDate/README
 lib/Xm/setDate/XmdSetDate.ad
 @bin lib/Xm/setDate/setDate
 lib/Xm/setDate/setDate.c
 lib/Xm/setDate/setDate.man
 lib/Xm/todo/
-lib/Xm/todo/Imakefile
 lib/Xm/todo/README
 lib/Xm/todo/XmdTodo.ad
 lib/Xm/todo/actions.c
@@ -578,11 +547,9 @@ lib/Xm/todo/todo.c
 lib/Xm/todo/todo.help
 lib/Xm/todo/todo.man
 lib/Xm/tooltips/
-lib/Xm/tooltips/Imakefile
 @bin lib/Xm/tooltips/tooltips
 lib/Xm/tooltips/tooltips.c
 lib/Xm/wsm/
-lib/Xm/wsm/Imakefile
 lib/Xm/wsm/README
 lib/Xm/wsm/client_win.c
 lib/Xm/wsm/command_ui.c

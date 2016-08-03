@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/03 18:55:49 naddy Exp $
 
 COMMENT=	Motif toolkit
 
-DISTNAME=	motif-2.3.5
+DISTNAME=	motif-2.3.6
 
 SHARED_LIBS=	Mrm	4.1 \
 		Uil	5.0 \
@@ -36,11 +36,6 @@ CONFIGURE_ENV=	CPPFLAGS='-I${X11BASE}/include -I${LOCALBASE}/include \
 		LDFLAGS='-L${LOCALBASE}/lib'
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/config
-	${INSTALL_DATA} ${WRKSRC}/config/cf/Motif.rules \
-	    ${PREFIX}/lib/X11/config/Motif.rules
-	${INSTALL_DATA} ${WRKSRC}/config/cf/Motif.tmpl \
-	    ${PREFIX}/lib/X11/config/Motif.tmpl
 # fix sections
 	cd ${PREFIX}/man/man1 && sed -i '/^\.TH/s|user cmd|1|' *.1
 	cd ${PREFIX}/man/man3 && sed -i '/^\.TH/s|library call|3|' *.3

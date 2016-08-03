@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Xm_TextF_c,v 1.1.1.1 2016/05/05 19:33:08 naddy Exp $
---- lib/Xm/TextF.c.orig	Wed Mar 16 20:51:57 2016
-+++ lib/Xm/TextF.c	Thu Apr 28 14:59:16 2016
-@@ -86,7 +86,7 @@ static char rcsid[] = "$TOG: TextF.c /main/65 1999/09/
+$OpenBSD: patch-lib_Xm_TextF_c,v 1.2 2016/08/03 18:55:49 naddy Exp $
+--- lib/Xm/TextF.c.orig	Sat Jun 11 01:53:16 2016
++++ lib/Xm/TextF.c	Tue Aug  2 20:37:12 2016
+@@ -82,7 +82,7 @@ static char rcsid[] = "$TOG: TextF.c /main/65 1999/09/
  #define FIX_1409
  
  #if (defined(__FreeBSD__) && (__FreeBSD__ < 4)) || \
