@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/22 14:24:30 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/03 09:26:00 sthen Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
 GH_ACCOUNT =	ansilove
 GH_PROJECT =	ansilove
-GH_TAGNAME =	3.0.2
+GH_TAGNAME =	3.0.4
 
 CATEGORIES =	graphics
 
@@ -20,8 +20,5 @@ LIB_DEPENDS =	graphics/gd
 
 MODULES =	devel/cmake
 NO_TEST =	Yes
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/ansilove.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
