@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/31 10:03:18 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2016/08/04 11:44:37 shadchin Exp $
 
 COMMENT =		library for stubbing in Python
 
-MODPY_EGG_VERSION =	2.2.1
+MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
