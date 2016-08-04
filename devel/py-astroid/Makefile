@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/13 10:59:56 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/04 12:35:11 shadchin Exp $
 
 COMMENT =		common base representation of Python source code
 
-MODPY_EGG_VERSION =	1.4.6
+MODPY_EGG_VERSION =	1.4.8
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
