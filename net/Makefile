@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.978 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.979 2016/08/04 09:35:11 pea Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -550,6 +550,7 @@
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
+     SUBDIR += py-nbxmpp
      SUBDIR += py-netaddr
      SUBDIR += py-netifaces
      SUBDIR += py-netifaces,python3
