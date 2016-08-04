@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2012/01/09 18:25:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/08/04 14:14:41 ajacoutot Exp $
 @pkgpath converters/libpst
 @bin bin/lspst
 @bin bin/nick2ldif
@@ -145,9 +145,6 @@ share/doc/libpst/devel/structpst__id2__tree__coll__graph.map
 share/doc/libpst/devel/structpst__id2__tree__coll__graph.md5
 share/doc/libpst/devel/structpst__id2__tree__coll__graph.png
 share/doc/libpst/devel/structpst__index__ll.html
-share/doc/libpst/devel/structpst__index__ll__coll__graph.map
-share/doc/libpst/devel/structpst__index__ll__coll__graph.md5
-share/doc/libpst/devel/structpst__index__ll__coll__graph.png
 share/doc/libpst/devel/structpst__item.html
 share/doc/libpst/devel/structpst__item__appointment.html
 share/doc/libpst/devel/structpst__item__appointment__coll__graph.map

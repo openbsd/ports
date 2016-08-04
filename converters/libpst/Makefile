@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.42 2016/04/29 10:57:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2016/08/04 14:14:41 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
-DISTNAME=		libpst-0.6.66
-REVISION-main=		0
-REVISION-python=	0
+DISTNAME=		libpst-0.6.67
 
-SHARED_LIBS +=  pst                  3.0      # 5.11
+SHARED_LIBS +=  pst                  3.0      # 5.12
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
