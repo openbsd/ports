@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/02 04:53:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/04 11:39:10 shadchin Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
-MODPY_EGG_VERSION =	1.1
+MODPY_EGG_VERSION =	1.2
 DISTNAME =		pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
