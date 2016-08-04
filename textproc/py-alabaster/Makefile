@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/15 18:10:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/04 11:47:58 shadchin Exp $
 
 COMMENT =		configurable sidebar-enabled Sphinx theme
 
-MODPY_EGG_VERSION =	0.7.8
+MODPY_EGG_VERSION =	0.7.9
 DISTNAME =		alabaster-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
