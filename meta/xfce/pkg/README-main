@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2015/08/15 11:48:28 ajacoutot Exp $
+$OpenBSD: README-main,v 1.8 2016/08/04 12:58:30 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,6 +7,21 @@ $OpenBSD: README-main,v 1.7 2015/08/15 11:48:28 ajacoutot Exp $
 The Xfce desktop is composed of 2 meta-packages:
     * xfce, for a base Xfce installation
     * xfce-extras, for a full Xfce installation.
+
+xfsettingsd Bug
+===============
+Note that there is currently a bug in xfsettingsd, whereby it crashes if
+there is no systemwide D-Bus running. If you find that appearance
+setting don't apply, or that keyboard shortcuts don't work, you have
+been bitten!
+ 
+For the time being, (until a fix is devised) you are advised to run a
+systemwide D-Bus (add 'messagebus' to pkg_scripts in rc.conf.local).
+
+For more information see:
+
+ * https://bugzilla.xfce.org/show_bug.cgi?id=11773
+ * https://bugs.freedesktop.org/show_bug.cgi?id=95350
 
 Startup
 =======
@@ -23,10 +38,10 @@ If your installation supports complete shutdown, clicking on the logout
 button on panel will permit you to either logout, rebooting or halt
 the computer.
 
-Halting and rebooting require consolekit2 and polkit: you'll need to
-run a systemwide D-BUS service (add messagebus to pkg_scripts in
-rc.local) and pass --with-ck-launch argument to startxfce4. If you run
-a systemwide D-BUS service, have consolekit2/polkit installed and
+Halting and rebooting require consolekit2 and polkit: you'll need to run
+a systemwide D-BUS service (add messagebus to pkg_scripts in
+rc.conf.local) and pass --with-ck-launch argument to startxfce4. If you
+run a systemwide D-BUS service, have consolekit2/polkit installed and
 don't use --with-ck-launch you will not be able to shutdown/reboot.
 
 Power management
