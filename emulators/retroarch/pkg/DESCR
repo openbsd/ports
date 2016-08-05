@@ -1,0 +1,15 @@
+RetroArch is the reference frontend for the libretro API. Popular examples
+of implementations for this API includes videogame system emulators and game
+engines, but also more generalized 3D programs. These programs are
+instantiated as dynamic libraries, or "libretro cores".
+
+libretro is an API that exposes generic audio/video/input callbacks. A
+frontend for libretro (such as RetroArch) handles video output, audio
+output, input and application lifecycle. A libretro core written in portable
+C or C++ can run seamlessly on many platforms with very little/no porting
+effort.
+
+RetroArch attempts to be small and lean, while still having all the useful
+core features expected from an emulator. It is designed to be very portable
+and features a gamepad-centric UI. It also has a full-featured command-line
+interface.

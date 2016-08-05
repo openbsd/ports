@@ -1,0 +1,12 @@
+$OpenBSD: patch-retroarch_cfg,v 1.1.1.1 2016/08/05 05:27:52 bentley Exp $
+--- retroarch.cfg.orig	Sat Jul 16 00:44:03 2016
++++ retroarch.cfg	Sat Jul 16 00:44:39 2016
+@@ -35,7 +35,7 @@
+ # libretro_path = "/path/to/libretro.so"
+ 
+ # A directory for where to search for libretro core implementations.
+-# libretro_directory =
++libretro_directory = "${PREFIX}/lib/libretro"
+ 
+ # A directory for where to search for libretro core information.
+ # libretro_info_path =

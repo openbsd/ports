@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/05 05:27:52 bentley Exp $
+retroarch-cg2glsl depends on the closed-source NVidia Cg Toolkit,
+which will never run on OpenBSD.
+--- Makefile.orig	Sat Jul 16 00:58:27 2016
++++ Makefile	Sat Jul 16 00:58:34 2016
+@@ -166,11 +166,9 @@ install: $(TARGET)
+ 	mkdir -p $(DESTDIR)$(MAN_DIR) 2>/dev/null || /bin/true
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/pixmaps 2>/dev/null || /bin/true
+ 	install -m755 $(TARGET) $(DESTDIR)$(PREFIX)/bin 
+-	install -m755 tools/cg2glsl.py $(DESTDIR)$(PREFIX)/bin/retroarch-cg2glsl
+ 	install -m644 retroarch.cfg $(DESTDIR)$(GLOBAL_CONFIG_DIR)/retroarch.cfg
+ 	install -m644 retroarch.desktop $(DESTDIR)$(PREFIX)/share/applications
+ 	install -m644 docs/retroarch.1 $(DESTDIR)$(MAN_DIR)
+-	install -m644 docs/retroarch-cg2glsl.1 $(DESTDIR)$(MAN_DIR)
+ 	install -m644 media/retroarch.svg $(DESTDIR)$(PREFIX)/share/pixmaps
+ 
+ uninstall:
