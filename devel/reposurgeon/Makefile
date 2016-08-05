@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/03 12:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/05 17:53:40 kili Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -22,6 +22,7 @@ USE_GMAKE=	Yes
 MODULES=	lang/python
 CONFIGURE_STYLE= x	# bad python.port.mk
 BUILD_DEPENDS=	lang/cython \
+		textproc/asciidoc \
 		textproc/xmlto
 
 MAKE_FLAGS=	mandir=man
