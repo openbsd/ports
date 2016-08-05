@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/05 23:22:00 juanfra Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-3.3.1
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -32,5 +33,9 @@ NO_TEST =		Yes
 post-build:
 	cd ${WRKBUILD} && \
 	./build/bacon -y -a -c cc -r ranlib -d build bacon.bac
+
+# The man page is broken.
+post-install:
+	rm "${PREFIX}/man/man1/bacon.1"
 
 .include <bsd.port.mk>
