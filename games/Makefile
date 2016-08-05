@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.334 2016/06/08 17:50:48 jca Exp $
+# $OpenBSD: Makefile,v 1.335 2016/08/05 05:39:25 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
      SUBDIR += abuse
+     SUBDIR += ace
      SUBDIR += afternoonstalker
      SUBDIR += agm
      SUBDIR += alephone
