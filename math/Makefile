@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2016/04/25 08:42:10 daniel Exp $
+# $OpenBSD: Makefile,v 1.129 2016/08/05 05:45:34 bentley Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -54,6 +54,8 @@
      SUBDIR += minisat
      SUBDIR += moo
      SUBDIR += netcdf
+     SUBDIR += nonogram
+     SUBDIR += nonolib
      SUBDIR += ntl
      SUBDIR += octave
      SUBDIR += openfst
