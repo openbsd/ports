@@ -1,0 +1,25 @@
+$OpenBSD: patch-libretro_Makefile,v 1.1 2016/08/05 05:26:42 bentley Exp $
+--- libretro/Makefile.orig	Sat Jan  9 19:07:11 2016
++++ libretro/Makefile	Sat Jul 16 02:11:01 2016
+@@ -32,7 +32,7 @@ TARGET_NAME := nestopia
+ ifeq ($(platform), unix)
+ 	TARGET := $(TARGET_NAME)_libretro.so
+ 	fpic := -fPIC
+-	SHARED := -shared -Wl,-version-script=link.T -Wl,-no-undefined
++	SHARED := -shared -Wl,-version-script=link.T
+ 
+ # OS X
+ else ifeq ($(platform), osx)
+@@ -259,10 +259,10 @@ else
+ endif
+ 
+ %.o: %.cpp
+-	$(CXX) -c -o $@ $< $(CXXFLAGS) $(INCDIRS)
++	$(CXX) -c -o $@ $< $(fpic) $(CXXFLAGS) $(INCDIRS)
+ 
+ %.o: %.c
+-	$(CC) -c -o $@ $< $(CFLAGS) $(INCDIRS)
++	$(CC) -c -o $@ $< $(fpic) $(CFLAGS) $(INCDIRS)
+ 
+ clean-objs:
+ 	rm -f $(OBJS)

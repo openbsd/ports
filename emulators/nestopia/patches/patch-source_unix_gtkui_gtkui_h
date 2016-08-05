@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_unix_gtkui_gtkui_h,v 1.1 2016/01/12 17:31:38 sthen Exp $
---- source/unix/gtkui/gtkui.h.orig     Sat Jan  9 20:34:22 2016
-+++ source/unix/gtkui/gtkui.h  Sat Jan  9 20:34:41 2016
+$OpenBSD: patch-source_unix_gtkui_gtkui_h,v 1.2 2016/08/05 05:26:42 bentley Exp $
+--- source/unix/gtkui/gtkui.h.orig	Sat Jan  9 19:07:11 2016
++++ source/unix/gtkui/gtkui.h	Sat Jul 16 01:49:02 2016
 @@ -8,7 +8,9 @@
  #elif _APPLE
  #else
@@ -9,5 +9,5 @@ $OpenBSD: patch-source_unix_gtkui_gtkui_h,v 1.1 2016/01/12 17:31:38 sthen Exp $
  #include <gdk/gdkwayland.h>
 +#endif
  #endif
-       
+ 
  void gtkui_init(int argc, char *argv[]);
