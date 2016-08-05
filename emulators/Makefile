@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/08/01 00:20:00 awolk Exp $
+# $OpenBSD: Makefile,v 1.83 2016/08/05 05:29:13 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -30,6 +30,7 @@
     SUBDIR += openmsx
     SUBDIR += pcsxr
     SUBDIR += qemu
+    SUBDIR += retroarch
     SUBDIR += sdlmame
     SUBDIR += sdlmess
     SUBDIR += simh
