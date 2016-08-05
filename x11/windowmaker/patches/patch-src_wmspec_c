@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_wmspec_c,v 1.5 2016/08/05 13:23:09 dcoppa Exp $
+
+commit 6429847494fbcd84e2bab026c3fd9239c7cf8927
+Author: Bjorn Mork <bjorn@mork.no>
+Date:   Tue Jul 12 23:49:46 2016 +0200
+
+wmaker: fix stacking order of dock and fullscreen
+
+This reverts the commits:
+ 311ab6b08ccf ("Raise fullscreened window")
+ a504370f3b27 ("Remove WMFullscreenLevel")
+
+Removing WMFullscreenLevel had the side effect that a dock or panel
+having the _NET_WM_WINDOW_TYPE_DOCK type would stack on top of
+fullscreen windows, obscuring part of them.  This is unwanted. No
+other window should cover a focused fullscreen window:.
+https://specifications.freedesktop.org/wm-spec/latest/ar01s09.html#STACKINGORDER
+
+Simply raising the fullscreen window to the top of the stack of normal
+windows is not sufficient if there are windows with higher stacking
+levels present.  The separate WMFullscreenLevel is needed.
+
+Cc: Amadeusz Slawinski <amade@asmblr.net>
+Signed-off-by: Bjorn Mork <bjorn@mork.no>
+
+--- src/wmspec.c.orig	Tue Aug 11 20:41:14 2015
++++ src/wmspec.c	Fri Aug  5 15:03:49 2016
+@@ -1057,7 +1057,7 @@ static int getWindowLayer(WWindow *wwin)
+ 		if (wwin->transient_for) {
+ 			WWindow *parent = wWindowFor(wwin->transient_for);
+ 			if (parent && parent->flags.fullscreen)
+-				layer = WMNormalLevel;
++				layer = WMFullscreenLevel;
+ 		}
+ 		/* //layer = WMPopUpLevel; // this seems a bad idea -Dan */
+ 	} else if (wwin->type == net_wm_window_type_dropdown_menu) {
