@@ -1,6 +1,6 @@
-$OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
---- ls.c.orig	Tue Dec  1 19:36:13 2015
-+++ ls.c	Wed Apr  6 20:33:39 2016
+$OpenBSD: patch-ls_c,v 1.17 2016/08/05 19:52:19 naddy Exp $
+--- ls.c.orig	Fri Aug  5 21:32:46 2016
++++ ls.c	Fri Aug  5 21:41:30 2016
 @@ -50,6 +50,10 @@
  #include <limits.h>
  #include <locale.h>
@@ -30,7 +30,7 @@ $OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
  
 @@ -103,6 +116,11 @@ ls_main(int argc, char *argv[])
  	int ch, fts_options, notused;
- 	int kflag = 0, width = 0;
+ 	int kflag = 0;
  	char *p;
 +#ifdef COLORLS
 +	char termcapbuf[1024];	/* termcap definition buffer */
@@ -40,9 +40,9 @@ $OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
  
  #ifndef SMALL
  	setlocale(LC_CTYPE, "");
-@@ -128,7 +146,11 @@ ls_main(int argc, char *argv[])
- 			termwidth = width;
- 	}
+@@ -124,7 +142,11 @@ ls_main(int argc, char *argv[])
+ 	if (termwidth == 0)
+ 		termwidth = 80;
  
 +#ifdef COLORLS
 +	if (pledge("stdio rpath getpw tty", NULL) == -1)
@@ -52,7 +52,7 @@ $OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
  		err(1, "pledge");
  
  	/* Root is -A automatically. */
-@@ -136,7 +158,7 @@ ls_main(int argc, char *argv[])
+@@ -132,7 +154,7 @@ ls_main(int argc, char *argv[])
  		f_listdot = 1;
  
  	fts_options = FTS_PHYSICAL;
@@ -61,7 +61,7 @@ $OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
  		switch (ch) {
  		/*
  		 * The -1, -C and -l, -m, -n and -x options all override each
-@@ -190,6 +212,9 @@ ls_main(int argc, char *argv[])
+@@ -186,6 +208,9 @@ ls_main(int argc, char *argv[])
  		case 'F':
  			f_type = 1;
  			break;
@@ -71,7 +71,7 @@ $OpenBSD: patch-ls_c,v 1.16 2016/04/06 18:53:16 naddy Exp $
  		case 'H':
  			fts_options |= FTS_COMFOLLOW;
  			break;
-@@ -262,19 +287,59 @@ ls_main(int argc, char *argv[])
+@@ -258,19 +283,59 @@ ls_main(int argc, char *argv[])
  	if (f_grouponly == -1)
  		f_grouponly = 0;
  

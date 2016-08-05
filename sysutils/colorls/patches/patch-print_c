@@ -1,12 +1,6 @@
-$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $
---- print.c.orig	Tue Dec  1 19:36:13 2015
-+++ print.c	Wed Apr  6 20:47:37 2016
-@@ -1,4 +1,4 @@
--/*	$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $	*/
-+/*	$OpenBSD: patch-print_c,v 1.14 2016/04/06 18:53:16 naddy Exp $	*/
- /*	$NetBSD: print.c,v 1.15 1996/12/11 03:25:39 thorpej Exp $	*/
- 
- /*
+$OpenBSD: patch-print_c,v 1.15 2016/08/05 19:52:19 naddy Exp $
+--- print.c.orig	Fri Aug  5 21:32:46 2016
++++ print.c	Fri Aug  5 21:41:30 2016
 @@ -48,6 +48,10 @@
  #include <unistd.h>
  #include <limits.h>
