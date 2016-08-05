@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/05 05:44:10 bentley Exp $
+include/nonogram.h
+include/nonogram_version.h
+lib/libnonogram.a

@@ -1,0 +1,21 @@
+$OpenBSD: patch-puzzle_c,v 1.1.1.1 2016/08/05 05:44:10 bentley Exp $
+--- puzzle.c.orig	Wed Jan 13 19:33:36 2016
++++ puzzle.c	Wed Jan 13 19:33:42 2016
+@@ -110,7 +110,7 @@ int nonogram_fscanpuzzle_ef(nonogram_puzzle *p, FILE *
+   return 0;
+ }
+ 
+-static const char *getline(const char **s, const char *e,
++static const char *getline_(const char **s, const char *e,
+ 			   const char **st, const char **en)
+ {
+   if (*s >= e || !**s)
+@@ -152,7 +152,7 @@ int nonogram_spscanpuzzle_ef(nonogram_puzzle *p,
+ 
+   while (((ctxt.noheight || ctxt.rowno < p->height) ||
+ 	  (ctxt.nowidth || ctxt.colno < p->width)) &&
+-	 getline(s, e, &line, &end) &&
++	 getline_(s, e, &line, &end) &&
+ 	 (rc = scanline(p, &ctxt, line, end, ef, eh)))
+     ctxt.lineno++;
+ 
