@@ -1,10 +1,10 @@
-$OpenBSD: patch-amavisd,v 1.14 2016/07/01 13:19:29 giovanni Exp $
+$OpenBSD: patch-amavisd,v 1.15 2016/08/05 12:53:57 giovanni Exp $
 
-Hunks 1, 3: Disable File::LibMagic in favour of safer file(1) from base.
-Hunk 4: fix DKIM signing
+Hunks 1, 4: Disable File::LibMagic in favour of safer file(1) from base.
+Hunks 2, 5: fix DKIM signing
 
 --- amavisd.orig	Tue Apr 26 21:24:33 2016
-+++ amavisd	Fri Jul  1 01:03:15 2016
++++ amavisd	Fri Aug  5 12:32:39 2016
 @@ -12928,7 +12928,7 @@ sub after_chroot_init() {
                 grep(/\.pm\z/, keys %INC)) {
      next  if !grep($_ eq $m, qw(Amavis::Conf
@@ -14,7 +14,15 @@ Hunk 4: fix DKIM signing
        MIME::Entity MIME::Parser MIME::Tools Mail::Header Mail::Internet
        Digest::MD5 Digest::SHA Digest::SHA1 Crypt::OpenSSL::RSA
        Authen::SASL Authen::SASL::XS Authen::SASL::Cyrus Authen::SASL::Perl
-@@ -30584,7 +30584,7 @@ sub new_SpamAssassin_instance {
+@@ -22806,6 +22806,7 @@ sub process_smtp_request($$$$) {
+         }
+         # load policy banks from the 'client_ipaddr_policy' lookup
+         Amavis::load_policy_bank($_,$msginfo) for @bank_names_cl;
++        $msginfo->originating(c('originating'));
+ 
+         $msginfo->client_addr($cl_ip);      # ADDR
+         $msginfo->client_port($cl_port);    # PORT
+@@ -30584,7 +30585,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
  #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
@@ -23,7 +31,7 @@ Hunk 4: fix DKIM signing
  #see Mail::SpamAssassin man page for other options
    };
    if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})
-@@ -31348,17 +31348,8 @@ BEGIN {
+@@ -31348,17 +31349,8 @@ BEGIN {
    import Amavis::Unpackers::NewFilename qw(consumed_bytes);
  }
  
@@ -41,7 +49,7 @@ Hunk 4: fix DKIM signing
  
  use subs @EXPORT_OK;
  
-@@ -34338,6 +34329,7 @@ sub collect_some_dkim_info($) {
+@@ -34338,6 +34330,7 @@ sub collect_some_dkim_info($) {
      $sig_ind++;
    }
    Amavis::load_policy_bank($_,$msginfo) for @bank_names;

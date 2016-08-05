@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2016/07/01 13:19:29 giovanni Exp $
+# $OpenBSD: Makefile,v 1.44 2016/08/05 12:53:57 giovanni Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 
 V=			2.11.0
 DISTNAME=		amavisd-new-${V}
-REVISION=		0
+REVISION=		1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
