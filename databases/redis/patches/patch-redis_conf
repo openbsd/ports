@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.18 2016/06/20 10:49:38 dcoppa Exp $
---- redis.conf.orig	Fri Jun 17 15:15:21 2016
-+++ redis.conf	Mon Jun 20 11:58:24 2016
+$OpenBSD: patch-redis_conf,v 1.19 2016/08/05 11:23:42 dcoppa Exp $
+--- redis.conf.orig	Tue Aug  2 11:00:29 2016
++++ redis.conf	Fri Aug  5 13:04:15 2016
 @@ -98,8 +98,8 @@ tcp-backlog 511
  # incoming connections. There is no default, so Redis will not listen
  # on a unix socket when not specified.
@@ -71,7 +71,7 @@ $OpenBSD: patch-redis_conf,v 1.18 2016/06/20 10:49:38 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -448,7 +450,7 @@ slave-priority 100
+@@ -477,7 +479,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
@@ -80,7 +80,7 @@ $OpenBSD: patch-redis_conf,v 1.18 2016/06/20 10:49:38 dcoppa Exp $
  
  # Command renaming.
  #
-@@ -481,6 +483,7 @@ slave-priority 100
+@@ -510,6 +512,7 @@ slave-priority 100
  # an error 'max number of clients reached'.
  #
  # maxclients 10000
