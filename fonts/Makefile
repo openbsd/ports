@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/06/26 21:06:54 awolk Exp $
+# $OpenBSD: Makefile,v 1.34 2016/08/05 05:34:56 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -44,6 +44,7 @@
      SUBDIR += linuxlibertine-fonts-ttf
      SUBDIR += lohit-fonts
      SUBDIR += mftrace
+     SUBDIR += mplus-fonts
      SUBDIR += msctfonts
      SUBDIR += msttcorefonts
      SUBDIR += noto
