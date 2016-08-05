@@ -1,4 +1,20 @@
-$OpenBSD: patch-src_actions_c,v 1.7 2016/08/05 13:23:09 dcoppa Exp $
+$OpenBSD: patch-src_actions_c,v 1.8 2016/08/05 13:55:33 dcoppa Exp $
+
+commit 5561199c871293cca0b3dc2c6feff0d7783111c6
+Author: Bjorn Mork <bjorn@mork.no>
+Date:   Tue Jul 12 23:49:47 2016 +0200
+
+wmaker: allow alt+tabbed windows over fullscreen
+
+Fullscreen windows should only be on top when they are in focus. Change
+the stacking level temporarily back to WMNormalLevel if the fullscreen
+window loses focus due to an alt+tab operation.
+
+Change the stacking level back to WMFullscreenLevel if the fullscreen
+window receives the focus again.
+
+Cc: Amadeusz Slawinski <amade@asmblr.net>
+Signed-off-by: Bjorn Mork <bjorn@mork.no>
 
 commit 6429847494fbcd84e2bab026c3fd9239c7cf8927
 Author: Bjorn Mork <bjorn@mork.no>
@@ -24,8 +40,19 @@ Cc: Amadeusz Slawinski <amade@asmblr.net>
 Signed-off-by: Bjorn Mork <bjorn@mork.no>
 
 --- src/actions.c.orig	Tue Aug 11 20:41:14 2015
-+++ src/actions.c	Fri Aug  5 15:03:49 2016
-@@ -726,8 +726,7 @@ void wFullscreenWindow(WWindow *wwin)
++++ src/actions.c	Fri Aug  5 15:39:23 2016
+@@ -216,6 +216,10 @@ void wSetFocusTo(WScreen *scr, WWindow *wwin)
+ 			if (wPreferences.highlight_active_app)
+ 				wApplicationDeactivate(oapp);
+ 		}
++
++		/* reset fullscreen if temporarily removed due to lost focus*/
++		if (wwin->flags.fullscreen)
++			ChangeStackingLevel(wwin->frame->core, WMFullscreenLevel);
+ 	}
+ 
+ 	wWindowFocus(wwin, focused);
+@@ -726,8 +730,7 @@ void wFullscreenWindow(WWindow *wwin)
  
  	wWindowConfigureBorders(wwin);
  
@@ -35,7 +62,7 @@ Signed-off-by: Bjorn Mork <bjorn@mork.no>
  
  	wwin->bfs_geometry.x = wwin->frame_x;
  	wwin->bfs_geometry.y = wwin->frame_y;
-@@ -751,10 +750,15 @@ void wUnfullscreenWindow(WWindow *wwin)
+@@ -751,10 +754,15 @@ void wUnfullscreenWindow(WWindow *wwin)
  
  	wwin->flags.fullscreen = False;
  

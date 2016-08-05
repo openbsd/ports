@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_cycling_c,v 1.1 2016/08/05 13:55:33 dcoppa Exp $
+
+commit 5561199c871293cca0b3dc2c6feff0d7783111c6
+Author: Bjorn Mork <bjorn@mork.no>
+Date:   Tue Jul 12 23:49:47 2016 +0200
+
+wmaker: allow alt+tabbed windows over fullscreen
+
+Fullscreen windows should only be on top when they are in focus. Change
+the stacking level temporarily back to WMNormalLevel if the fullscreen
+window loses focus due to an alt+tab operation.
+
+Change the stacking level back to WMFullscreenLevel if the fullscreen
+window receives the focus again.
+
+Cc: Amadeusz Slawinski <amade@asmblr.net>
+Signed-off-by: Bjorn Mork <bjorn@mork.no>
+
+--- src/cycling.c.orig	Fri Aug  5 15:39:56 2016
++++ src/cycling.c	Fri Aug  5 15:40:49 2016
+@@ -62,6 +62,10 @@ static WWindow *change_focus_and_raise(WWindow *newFoc
+ 	if (!newFocused)
+ 		return oldFocused;
+ 
++	/* allow the focused window to float on top of a fullscreen window */
++	if (oldFocused->flags.fullscreen)
++		ChangeStackingLevel(oldFocused->frame->core, WMNormalLevel);
++
+ 	wWindowFocus(newFocused, oldFocused);
+ 	oldFocused = newFocused;
+ 
