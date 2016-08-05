@@ -1,0 +1,2 @@
+libretro-mgba provides a Nintendo Game Boy Advance emulation core to the
+RetroArch emulator frontend, based on mGBA.

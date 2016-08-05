@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/01 18:30:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/05 05:23:59 bentley Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
+COMMENT-libretro =	Game Boy Advance core for retroarch
 
 V =			0.4.1
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
+PKGNAME-libretro =	libretro-mgba-$V
 
-MULTI_PACKAGES =	-main -qt
+MULTI_PACKAGES =	-main -qt -libretro
 
 .include <bsd.port.arch.mk>
 
@@ -29,6 +31,7 @@ cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
+WANTLIB-libretro =	m pthread
 
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
@@ -45,13 +48,20 @@ LIB_DEPENDS-main =	archivers/libzip \
 LIB_DEPENDS-qt =	${LIB_DEPENDS-main} \
 			${MODQT_LIB_DEPENDS} \
 			emulators/mgba,-main
+LIB_DEPENDS-libretro =
 RUN_DEPENDS-qt =	devel/desktop-file-utils \
 			x11/gtk+3,-guic
+
+CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt5
 .endif
 
 NO_TEST =		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/libretro
+	${INSTALL_DATA} ${WRKBUILD}/mgba_libretro.so ${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
