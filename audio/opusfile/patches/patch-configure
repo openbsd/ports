@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2014/07/09 14:55:24 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2016/08/05 14:33:35 naddy Exp $
 
 Do not disable HTTP support despite missing ftime() since we replace
 it with gettimeofday().
 
---- configure.orig	Wed Jun 11 19:30:40 2014
-+++ configure	Tue Jul  8 18:10:27 2014
-@@ -11952,7 +11952,7 @@ if test "$ac_res" != no; then :
+--- configure.orig	Wed Jul  6 19:38:02 2016
++++ configure	Thu Aug  4 17:29:10 2016
+@@ -12545,7 +12545,7 @@ if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
  
  else

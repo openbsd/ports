@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_http_c,v 1.1.1.1 2014/05/23 20:46:05 naddy Exp $
+$OpenBSD: patch-src_http_c,v 1.2 2016/08/05 14:33:35 naddy Exp $
 
 No struct timeb / ftime(3) support; libcompat is gone.
 Replace with struct timeval / gettimeofday(2).
 
---- src/http.c.orig	Thu Dec  5 17:49:13 2013
-+++ src/http.c	Thu May 22 19:55:42 2014
+--- src/http.c.orig	Wed Jul  6 19:14:49 2016
++++ src/http.c	Thu Aug  4 18:22:46 2016
 @@ -347,7 +347,7 @@ typedef int op_sock;
  #  define op_reset_errno() (errno=0)
  
@@ -68,7 +68,60 @@ Replace with struct timeval / gettimeofday(2).
    read_delta_ms=op_time_diff_ms(&read_time,&_conn->read_time);
    read_rate=_conn->read_rate;
    read_delta_ms=OP_MAX(read_delta_ms,1);
-@@ -1902,7 +1901,7 @@ static int op_sock_connect_next(op_sock _fd,
+@@ -1517,14 +1516,14 @@ static long op_bio_retry_ctrl(BIO *_b,int _cmd,long _n
+   return ret;
+ }
+ 
+-# if OPENSSL_VERSION_NUMBER<0x10100000L
++# if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #  define BIO_set_data(_b,_ptr) ((_b)->ptr=(_ptr))
+ #  define BIO_set_init(_b,_init) ((_b)->init=(_init))
+ # endif
+ 
+ static int op_bio_retry_new(BIO *_b){
+   BIO_set_init(_b,1);
+-# if OPENSSL_VERSION_NUMBER<0x10100000L
++# if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+   _b->num=0;
+ # endif
+   BIO_set_data(_b,NULL);
+@@ -1535,7 +1534,7 @@ static int op_bio_retry_free(BIO *_b){
+   return _b!=NULL;
+ }
+ 
+-# if OPENSSL_VERSION_NUMBER<0x10100000L
++# if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ /*This is not const because OpenSSL doesn't allow it, even though it won't
+    write to it.*/
+ static BIO_METHOD op_bio_retry_method={
+@@ -1556,7 +1555,7 @@ static BIO_METHOD op_bio_retry_method={
+    proxying https URL requests.*/
+ static int op_http_conn_establish_tunnel(OpusHTTPStream *_stream,
+  OpusHTTPConn *_conn,op_sock _fd,SSL *_ssl_conn,BIO *_ssl_bio){
+-# if OPENSSL_VERSION_NUMBER>=0x10100000L
++# if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+   BIO_METHOD *bio_retry_method;
+ # endif
+   BIO  *retry_bio;
+@@ -1569,7 +1568,7 @@ static int op_http_conn_establish_tunnel(OpusHTTPStrea
+   ret=op_http_conn_write_fully(_conn,
+    _stream->proxy_connect.buf,_stream->proxy_connect.nbuf);
+   if(OP_UNLIKELY(ret<0))return ret;
+-# if OPENSSL_VERSION_NUMBER>=0x10100000L
++# if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+   bio_retry_method=BIO_meth_new(BIO_TYPE_NULL,"retry");
+   if(bio_retry_method==NULL)return OP_EFAULT;
+   BIO_meth_set_write(bio_retry_method,op_bio_retry_write);
+@@ -1592,7 +1591,7 @@ static int op_http_conn_establish_tunnel(OpusHTTPStrea
+   /*This shouldn't succeed, since we can't read yet.*/
+   OP_ALWAYS_TRUE(SSL_connect(_ssl_conn)<0);
+   SSL_set_bio(_ssl_conn,_ssl_bio,_ssl_bio);
+-# if OPENSSL_VERSION_NUMBER>=0x10100000L
++# if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+   BIO_meth_free(bio_retry_method);
+ # endif
+   /*Only now do we disable write coalescing, to allow the CONNECT
+@@ -1933,7 +1932,7 @@ static int op_sock_connect_next(op_sock _fd,
  # define OP_NPROTOS (2)
  
  static int op_http_connect_impl(OpusHTTPStream *_stream,OpusHTTPConn *_conn,
@@ -77,7 +130,7 @@ Replace with struct timeval / gettimeofday(2).
    const struct addrinfo *addr;
    const struct addrinfo *addrs[OP_NPROTOS];
    struct pollfd          fds[OP_NPROTOS];
-@@ -1932,7 +1931,7 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
+@@ -1963,7 +1962,7 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
    _stream->free_head=_conn->next;
    _conn->next=_stream->lru_head;
    _stream->lru_head=_conn;
@@ -86,7 +139,7 @@ Replace with struct timeval / gettimeofday(2).
    *&_conn->read_time=*_start_time;
    _conn->read_bytes=0;
    _conn->read_rate=0;
-@@ -2034,14 +2033,14 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
+@@ -2065,14 +2064,14 @@ static int op_http_connect_impl(OpusHTTPStream *_strea
  }
  
  static int op_http_connect(OpusHTTPStream *_stream,OpusHTTPConn *_conn,
@@ -104,7 +157,7 @@ Replace with struct timeval / gettimeofday(2).
    if(_addrs!=&_stream->addr_info||op_time_diff_ms(&resolve_time,
     &_stream->resolve_time)>=OP_RESOLVE_CACHE_TIMEOUT_MS){
      new_addrs=op_resolve(_stream->connect_host,_stream->connect_port);
-@@ -2191,8 +2190,8 @@ static int op_http_stream_open(OpusHTTPStream *_stream
+@@ -2222,8 +2221,8 @@ static int op_http_stream_open(OpusHTTPStream *_stream
    addrs=NULL;
    for(nredirs=0;nredirs<OP_REDIRECT_LIMIT;nredirs++){
      OpusParsedURL  next_url;
@@ -115,7 +168,16 @@ Replace with struct timeval / gettimeofday(2).
      char          *next;
      char          *status_code;
      int            minor_version_pos;
-@@ -2321,7 +2320,7 @@ static int op_http_stream_open(OpusHTTPStream *_stream
+@@ -2231,7 +2230,7 @@ static int op_http_stream_open(OpusHTTPStream *_stream
+     /*Initialize the SSL library if necessary.*/
+     if(OP_URL_IS_SSL(&_stream->url)&&_stream->ssl_ctx==NULL){
+       SSL_CTX *ssl_ctx;
+-# if OPENSSL_VERSION_NUMBER<0x10100000L
++# if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #  if !defined(OPENSSL_NO_LOCKING)
+       /*The documentation says SSL_library_init() is not reentrant.
+         We don't want to add our own depenencies on a threading library, and it
+@@ -2357,7 +2356,7 @@ static int op_http_stream_open(OpusHTTPStream *_stream
      if(OP_UNLIKELY(ret<0))return ret;
      ret=op_http_conn_read_response(_stream->conns+0,&_stream->response);
      if(OP_UNLIKELY(ret<0))return ret;
@@ -124,7 +186,7 @@ Replace with struct timeval / gettimeofday(2).
      next=op_http_parse_status_line(&v1_1_compat,&status_code,
       _stream->response.buf);
      if(OP_UNLIKELY(next==NULL))return OP_FALSE;
-@@ -2733,18 +2732,18 @@ static int op_http_conn_handle_response(OpusHTTPStream
+@@ -2769,18 +2768,18 @@ static int op_http_conn_handle_response(OpusHTTPStream
                  converted into a request for the rest.*/
  static int op_http_conn_open_pos(OpusHTTPStream *_stream,
   OpusHTTPConn *_conn,opus_int64 _pos,opus_int32 _chunk_size){
@@ -149,7 +211,7 @@ Replace with struct timeval / gettimeofday(2).
    _stream->cur_conni=_conn-_stream->conns;
    OP_ASSERT(_stream->cur_conni>=0&&_stream->cur_conni<OP_NCONNS_MAX);
    /*The connection has been successfully opened.
-@@ -2996,7 +2995,7 @@ static int op_http_conn_read_ahead(OpusHTTPStream *_st
+@@ -3032,7 +3031,7 @@ static int op_http_conn_read_ahead(OpusHTTPStream *_st
  }
  
  static int op_http_stream_seek(void *_stream,opus_int64 _offset,int _whence){
@@ -158,7 +220,7 @@ Replace with struct timeval / gettimeofday(2).
    OpusHTTPStream  *stream;
    OpusHTTPConn    *conn;
    OpusHTTPConn   **pnext;
-@@ -3037,7 +3036,7 @@ static int op_http_stream_seek(void *_stream,opus_int6
+@@ -3073,7 +3072,7 @@ static int op_http_stream_seek(void *_stream,opus_int6
      op_http_conn_read_rate_update(stream->conns+ci);
      *&seek_time=*&stream->conns[ci].read_time;
    }
