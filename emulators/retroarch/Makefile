@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/05 05:27:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/05 05:47:37 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
@@ -39,7 +39,7 @@ FAKE_FLAGS =		GLOBAL_CONFIG_DIR=${PREFIX}/share/examples
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		MAN_DIR=${PREFIX}/man/man1 \
-			INCLUDE_DIRS="-I${X11BASE}/include" \
+			INCLUDE_DIRS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LIBRARY_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS +=	--disable-jack \
 			--disable-pulse \
