@@ -1,21 +1,29 @@
-$OpenBSD: patch-lib_angelscript_source_as_callfunc_x64_gcc_cpp,v 1.1 2015/11/29 07:46:29 pascal Exp $
---- lib/angelscript/source/as_callfunc_x64_gcc.cpp.orig	Sat Nov  7 11:50:18 2015
-+++ lib/angelscript/source/as_callfunc_x64_gcc.cpp	Sat Nov  7 12:24:20 2015
-@@ -79,8 +79,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+$OpenBSD: patch-lib_angelscript_source_as_callfunc_x64_gcc_cpp,v 1.2 2016/08/05 23:27:27 pascal Exp $
+--- lib/angelscript/source/as_callfunc_x64_gcc.cpp.orig	Thu May 12 01:31:36 2016
++++ lib/angelscript/source/as_callfunc_x64_gcc.cpp	Fri Jul  1 05:07:28 2016
+@@ -79,12 +79,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
  
  	// Backup stack pointer in R15 that is guaranteed to maintain its value over function calls
  		"  movq %%rsp, %%r15 \n"
+-#ifdef __OPTIMIZE__
 -	// Make sure the stack unwind logic knows we've backed up the stack pointer in register r15
+-	// This should only be done if any optimization is done. If no optimization (-O0) is used,
+-	// then the compiler already backups the rsp before entering the inline assembler code
 -		" .cfi_def_cfa_register r15 \n"
+-#endif
  
  	// Skip the first 128 bytes on the stack frame, called "red zone",  
  	// that might be used by the compiler to store temporary values
-@@ -132,8 +130,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+@@ -136,12 +130,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
  
  	// Restore stack pointer
  		"  mov %%r15, %%rsp \n"
+-#ifdef __OPTIMIZE__
 -	// Inform the stack unwind logic that the stack pointer has been restored
+-	// This should only be done if any optimization is done. If no optimization (-O0) is used,
+-	// then the compiler already backups the rsp before entering the inline assembler code
 -		" .cfi_def_cfa_register rsp \n"
+-#endif
  
  	// Put return value in retQW1 and retQW2, using either RAX:RDX or XMM0:XMM1 depending on type of return value
  		"  movl %5, %%ecx \n"
