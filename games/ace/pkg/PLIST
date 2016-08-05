@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/05 05:38:56 bentley Exp $
+@conflict spider-*
+@bin bin/canfield
+@bin bin/freecell
+@bin bin/golf
+@bin bin/mastermind
+@bin bin/merlin
+@bin bin/minesweeper
+@bin bin/pegged
+@bin bin/penguins
+@bin bin/solitaire
+@bin bin/spider
+@bin bin/taipedit
+@bin bin/taipei
+@bin bin/thornq
+lib/libcards.a
+lib/libcards.la
+@lib lib/libcards.so.${LIBcards_VERSION}

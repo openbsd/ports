@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_make-imglib_c,v 1.1.1.1 2016/08/05 05:38:56 bentley Exp $
+--- lib/make-imglib.c.orig	Wed Oct 23 00:26:32 2013
++++ lib/make-imglib.c	Wed Oct 23 00:27:03 2013
+@@ -86,7 +86,7 @@ scan_image_directory ()
+     png_ptr = png_create_read_struct (PNG_LIBPNG_VER_STRING, 0, 0, 0);
+     info_ptr = png_create_info_struct (png_ptr);
+ 
+-    if (setjmp (png_ptr->jmpbuf)) {
++    if (setjmp (png_jmpbuf(png_ptr))) {
+       fclose (f);
+       continue;
+     }
