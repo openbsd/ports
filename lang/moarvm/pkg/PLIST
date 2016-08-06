@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/12/27 20:35:41 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/08/06 16:30:07 pascal Exp $
 @bin bin/moar
-include/libtommath/
 include/libuv/
 include/libuv/android-ifaddrs.h
 include/libuv/pthread-fixes.h
@@ -79,6 +78,7 @@ include/moar/core/args.h
 include/moar/core/bytecode.h
 include/moar/core/bytecodedump.h
 include/moar/core/callsite.h
+include/moar/core/callstack.h
 include/moar/core/coerce.h
 include/moar/core/compunit.h
 include/moar/core/continuation.h
@@ -154,6 +154,7 @@ include/moar/platform/sys.h
 include/moar/platform/threads.h
 include/moar/platform/time.h
 include/moar/profiler/
+include/moar/profiler/heapsnapshot.h
 include/moar/profiler/instrument.h
 include/moar/profiler/log.h
 include/moar/profiler/profile.h
@@ -187,13 +188,6 @@ include/moar/strings/utf8_c8.h
 include/moar/strings/windows1252.h
 include/moar/types.h
 include/moar/uthash.h
-include/msinttypes/
-include/msinttypes/inttypes.h
-include/msinttypes/stdint.h
-include/sha1/
-include/sha1/sha1.h
-include/tinymt/
-include/tinymt/tinymt64.h
 @lib lib/libmoar.so.${LIBmoar_VERSION}
 share/nqp/
 share/nqp/lib/

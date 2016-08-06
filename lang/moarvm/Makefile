@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/06 16:30:07 pascal Exp $
 
+ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
-BROKEN-hppa =		dyncall_callvm.c:68:4: error: \#error unsupported platform
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2015.12
+V =			2016.07
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
-REVISION =		0
 
-SHARED_LIBS =		moar	5.0
+SHARED_LIBS =		moar	6.0
 
 CATEGORIES =		lang
 
