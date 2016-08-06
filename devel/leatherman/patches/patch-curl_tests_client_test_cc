@@ -1,0 +1,206 @@
+$OpenBSD: patch-curl_tests_client_test_cc,v 1.1 2016/08/06 15:18:52 naddy Exp $
+
+Fix compilation with curl 7.50.0
+https://github.com/puppetlabs/leatherman/commit/d9892ac7ac49959cd5be3bf1ec475fca0c7fdad9
+
+--- curl/tests/client_test.cc.orig	Mon Jun 27 21:10:12 2016
++++ curl/tests/client_test.cc	Fri Aug  5 17:05:58 2016
+@@ -45,28 +45,28 @@ namespace leatherman { namespace curl {
+         SECTION("HTTP method is set to GET given a GET request") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->method == curl_impl::http_method::get);
+         }
+ 
+         SECTION("HTTP method is set to POST given a POST request") {
+             auto resp = test_client.post(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->method == curl_impl::http_method::post);
+         }
+ 
+         SECTION("HTTP method is set to PUT given a PUT request") {
+             auto resp = test_client.put(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->method == curl_impl::http_method::put);
+         }
+ 
+         SECTION("cURL should receive the URL specified in the request") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->request_url == "http://valid.com");
+         }
+     }
+@@ -82,7 +82,7 @@ namespace leatherman { namespace curl {
+             test_request.add_header("header_name", "header_value");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->header);
+             REQUIRE(test_impl->header->data == string("header_name: header_value"));
+         }
+@@ -91,7 +91,7 @@ namespace leatherman { namespace curl {
+             request test_request {"http://response-delimiter.com/"};
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             int headers = 0;
+             resp.each_header([&](string const& name, string const& value) {
+                 ++headers;
+@@ -104,7 +104,7 @@ namespace leatherman { namespace curl {
+             request test_request {"http://nonstd-header.com/"};
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(resp.header("nonstd_header_name"));
+             REQUIRE(*(resp.header("nonstd_header_name")) == "nonstd_header_value");
+         }
+@@ -113,7 +113,7 @@ namespace leatherman { namespace curl {
+             request test_request {"http://invalid-header.com/"};
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             int headers = 0;
+             resp.each_header([&](string const& name, string const& value) {
+                 ++headers;
+@@ -130,13 +130,13 @@ namespace leatherman { namespace curl {
+             test_request.body("Hello, I am a request body!", "message");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->read_buffer == "Hello, I am a request body!");
+         }
+ 
+         SECTION("Response body should be what is in the data part of the cURL response") {
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             test_impl->resp_body = "Hello, I am a response body!";
+             request test_request {"http://valid.com"};
+             auto resp = test_client.get(test_request);
+@@ -151,7 +151,7 @@ namespace leatherman { namespace curl {
+         SECTION("There should be no cookies in the request by default") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cookie == "");
+         }
+ 
+@@ -159,7 +159,7 @@ namespace leatherman { namespace curl {
+             test_request.add_cookie("cookie_name", "cookie_val");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cookie == "cookie_name=cookie_val");
+         }
+ 
+@@ -169,7 +169,7 @@ namespace leatherman { namespace curl {
+             test_request.remove_cookie("cookie_1");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cookie == "cookie_0=cookie_val_0");
+         }
+ 
+@@ -178,7 +178,7 @@ namespace leatherman { namespace curl {
+             test_request.add_cookie("cookie_1", "cookie_val_1");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cookie == "cookie_0=cookie_val_0; cookie_1=cookie_val_1");
+         }
+     }
+@@ -190,7 +190,7 @@ namespace leatherman { namespace curl {
+         SECTION("Path to CA certificate should be unspecified by default") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cacert == "");
+         }
+ 
+@@ -198,14 +198,14 @@ namespace leatherman { namespace curl {
+             test_client.set_ca_cert("cacert");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->cacert == "cacert");
+         }
+ 
+         SECTION("Client cert name should be unspecified by default") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->client_cert == "");
+         }
+ 
+@@ -213,14 +213,14 @@ namespace leatherman { namespace curl {
+             test_client.set_client_cert("cert", "key");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->client_cert == "cert");
+         }
+ 
+         SECTION("Private keyfile name should be unspecified by default") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->client_key == "");
+         }
+ 
+@@ -228,7 +228,7 @@ namespace leatherman { namespace curl {
+             test_client.set_client_cert("cert", "key");
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->client_key == "key");
+         }
+ 
+@@ -236,14 +236,14 @@ namespace leatherman { namespace curl {
+             test_client.set_supported_protocols(CURLPROTO_HTTP);
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->protocols == CURLPROTO_HTTP);
+         }
+ 
+         SECTION("cURL defaults to all protocols if no protocols are specified") {
+             auto resp = test_client.get(test_request);
+             CURL* const& handle = test_client.get_handle();
+-            auto test_impl = static_cast<curl_impl* const>(handle);
++            auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+             REQUIRE(test_impl->protocols == CURLPROTO_ALL);
+         }
+     }
+@@ -252,7 +252,7 @@ namespace leatherman { namespace curl {
+         mock_client test_client;
+         request test_request {"http://valid.com/"};
+         CURL* const& handle = test_client.get_handle();
+-        auto test_impl = static_cast<curl_impl* const>(handle);
++        auto test_impl = reinterpret_cast<curl_impl* const>(handle);
+ 
+         /*
+          * Note: we do not currently test the case where cURL errors

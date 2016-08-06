@@ -1,0 +1,43 @@
+$OpenBSD: patch-curl_tests_mock_curl_cc,v 1.1 2016/08/06 15:18:52 naddy Exp $
+
+Fix compilation with curl 7.50.0
+https://github.com/puppetlabs/leatherman/commit/d9892ac7ac49959cd5be3bf1ec475fca0c7fdad9
+
+--- curl/tests/mock_curl.cc.orig	Mon Jun 27 21:10:12 2016
++++ curl/tests/mock_curl.cc	Fri Aug  5 17:05:58 2016
+@@ -47,7 +47,7 @@ CURLcode curl_global_init(long flags)
+  */
+ void curl_free(void *p)
+ {
+-    delete static_cast<curl_impl*>(p);
++    delete reinterpret_cast<curl_impl*>(p);
+ }
+ 
+ /*
+@@ -79,7 +79,7 @@ CURL *curl_easy_init()
+     if (test_failure_mode == easy_init_error) {
+         return nullptr;
+     } else {
+-        return new curl_impl();
++        return reinterpret_cast<CURL*>(new curl_impl());
+     }
+ }
+ 
+@@ -97,7 +97,7 @@ CURL *curl_easy_init()
+  */
+ CURLcode curl_easy_setopt(CURL *handle, CURLoption option, ...)
+ {
+-    auto h = static_cast<curl_impl*>(handle);
++    auto h = reinterpret_cast<curl_impl*>(handle);
+     va_list vl;
+     va_start(vl, option);
+ 
+@@ -247,7 +247,7 @@ CURLcode curl_easy_setopt(CURL *handle, CURLoption opt
+  */
+ CURLcode curl_easy_perform(CURL * easy_handle)
+ {
+-    auto h = static_cast<curl_impl*>(easy_handle);
++    auto h = reinterpret_cast<curl_impl*>(easy_handle);
+     if (h->test_failure_mode == curl_impl::error_mode::easy_perform_error) {
+         return CURLE_COULDNT_CONNECT;
+     }
