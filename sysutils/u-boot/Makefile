@@ -1,4 +1,6 @@
-#	$OpenBSD: Makefile,v 1.4 2016/07/30 14:22:19 jsg Exp $
+#	$OpenBSD: Makefile,v 1.5 2016/08/06 06:40:05 landry Exp $
+
+BROKEN-powerpc=	Error: FDT_ERR_BADMAGIC
 
 COMMENT=	U-Boot firmware
 DISTNAME=	u-boot-2016.07
