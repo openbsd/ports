@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/06 16:30:53 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
-V =			2015.12
+V =			2016.07
 DISTNAME =		nqp-$V
-REVISION =		0
 
-MOAR_VERSION =		2015.12
+MOAR_VERSION =		2016.07
 
 PATCHORIG =		.orig.port
 
