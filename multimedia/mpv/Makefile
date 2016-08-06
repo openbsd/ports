@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2016/07/10 15:27:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.29 2016/08/06 06:47:46 landry Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
+BROKEN-powerpc =	atomics detection fails
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
