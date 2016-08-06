@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_configs_ti_omap5_common_h,v 1.1 2016/06/18 03:04:44 jsg Exp $
---- include/configs/ti_omap5_common.h.orig	Tue May 17 00:40:32 2016
-+++ include/configs/ti_omap5_common.h	Wed Jun 15 15:52:24 2016
+$OpenBSD: patch-include_configs_ti_omap5_common_h,v 1.2 2016/08/06 08:07:51 jsg Exp $
+--- include/configs/ti_omap5_common.h.orig	Tue Jul 12 05:01:01 2016
++++ include/configs/ti_omap5_common.h	Sat Aug  6 17:10:52 2016
 @@ -66,6 +66,18 @@
  #define DFUARGS
  #endif
@@ -20,7 +20,7 @@ $OpenBSD: patch-include_configs_ti_omap5_common_h,v 1.1 2016/06/18 03:04:44 jsg 
  #ifndef CONFIG_SPL_BUILD
  #define CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG
  #define CONFIG_EXTRA_ENV_SETTINGS \
-@@ -111,21 +123,8 @@
+@@ -115,21 +127,8 @@
  	"loadfdt=load mmc ${bootpart} ${fdtaddr} ${bootdir}/${fdtfile};\0" \
  	DFUARGS \
  	NETARGS \
