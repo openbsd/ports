@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.30 2016/08/06 16:31:37 pascal Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
-V =			2015.12
+V =			2016.07.1
 DISTNAME =		rakudo-$V
-REVISION =		2
 
-NQP_VERSION =		2015.12
+NQP_VERSION =		2016.07
 
 CATEGORIES =		lang perl6
 
