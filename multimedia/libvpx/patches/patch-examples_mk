@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_mk,v 1.5 2015/11/13 07:14:26 ajacoutot Exp $
---- examples.mk.orig	Mon Nov  9 17:12:38 2015
-+++ examples.mk	Thu Nov 12 01:26:27 2015
-@@ -294,7 +294,7 @@ else
+$OpenBSD: patch-examples_mk,v 1.6 2016/08/07 01:33:52 ajacoutot Exp $
+--- examples.mk.orig	Wed Jul 20 21:15:41 2016
++++ examples.mk	Fri Aug  5 18:45:04 2016
+@@ -305,7 +305,7 @@ else
  SHARED_LIB_SUF=.so
  endif
  endif

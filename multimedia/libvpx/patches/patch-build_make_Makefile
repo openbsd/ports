@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_make_Makefile,v 1.8 2015/11/13 07:14:26 ajacoutot Exp $
---- build/make/Makefile.orig	Mon Nov  9 17:12:38 2015
-+++ build/make/Makefile	Thu Nov 12 01:23:15 2015
-@@ -298,8 +298,7 @@ define so_template
+$OpenBSD: patch-build_make_Makefile,v 1.9 2016/08/07 01:33:52 ajacoutot Exp $
+--- build/make/Makefile.orig	Wed Jul 20 21:15:41 2016
++++ build/make/Makefile	Fri Aug  5 18:45:04 2016
+@@ -294,8 +294,7 @@ define so_template
  # This needs further abstraction for dealing with non-GNU linkers.
  $(1):
  	$(if $(quiet),@echo "    [LD] $$@")
@@ -11,7 +11,7 @@ $OpenBSD: patch-build_make_Makefile,v 1.8 2015/11/13 07:14:26 ajacoutot Exp $
              -Wl,--version-script,$$(EXPORTS_FILE) -o $$@ \
              $$(filter %.o,$$^) $$(extralibs)
  endef
-@@ -384,7 +383,7 @@ LIBS=$(call enabled,LIBS)
+@@ -380,7 +379,7 @@ LIBS=$(call enabled,LIBS)
  .libs: $(LIBS)
  	@touch $@
  $(foreach lib,$(filter %_g.a,$(LIBS)),$(eval $(call archive_template,$(lib))))

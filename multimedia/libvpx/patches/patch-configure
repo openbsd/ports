@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.11 2015/11/13 07:14:26 ajacoutot Exp $
---- configure.orig	Mon Nov  9 17:12:38 2015
-+++ configure	Thu Nov 12 01:25:23 2015
-@@ -111,6 +111,7 @@ all_platforms="${all_platforms} armv7-win32-vs14"
- all_platforms="${all_platforms} armv7s-darwin-gcc"
+$OpenBSD: patch-configure,v 1.12 2016/08/07 01:33:52 ajacoutot Exp $
+--- configure.orig	Wed Jul 20 21:15:41 2016
++++ configure	Fri Aug  5 18:46:34 2016
+@@ -114,6 +114,7 @@ all_platforms="${all_platforms} armv7s-darwin-gcc"
+ all_platforms="${all_platforms} armv8-linux-gcc"
  all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
 +all_platforms="${all_platforms} sparc-linux-gcc"
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -176,19 +177,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -181,19 +182,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -27,24 +27,14 @@ $OpenBSD: patch-configure,v 1.11 2015/11/13 07:14:26 ajacoutot Exp $
 -fi
 -
  # disable codecs when their source directory does not exist
- [ -d "${source_path}/vp8" ] || disable_feature vp8
- [ -d "${source_path}/vp9" ] || disable_feature vp9
-@@ -503,18 +491,6 @@ EOF
- }
- 
- process_detect() {
--    if enabled shared; then
--        # Can only build shared libs on a subset of platforms. Doing this check
--        # here rather than at option parse time because the target auto-detect
--        # magic happens after the command line has been parsed.
--        if ! enabled linux && ! enabled os2; then
--            if enabled gnu; then
--                echo "--enable-shared is only supported on ELF; assuming this is OK"
--            else
--                die "--enable-shared only supported on ELF and OS/2 for now"
--            fi
--        fi
--    fi
-     if [ -z "$CC" ] || enabled external_build; then
-         echo "Bypassing toolchain for environment detection."
-         enable_feature external_build
+ [ -d "${source_path}/vp8" ] || disable_codec vp8
+ [ -d "${source_path}/vp9" ] || disable_codec vp9
+@@ -505,7 +493,7 @@ process_detect() {
+         # here rather than at option parse time because the target auto-detect
+         # magic happens after the command line has been parsed.
+         case "${tgt_os}" in
+-        linux|os2|darwin*|iphonesimulator*)
++        linux|*bsd|os2|darwin*|iphonesimulator*)
+             # Supported platforms
+             ;;
+         *)

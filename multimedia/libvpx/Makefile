@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/10 22:51:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/07 01:33:52 ajacoutot Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
-DISTNAME=	libvpx-1.5.0
+DISTNAME=	libvpx-1.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://storage.googleapis.com/downloads.webmproject.org/releases/webm/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
-SHARED_LIBS=	vpx	7.0
+SHARED_LIBS=	vpx	8.0
 
 HOMEPAGE=	http://www.webmproject.org/
 

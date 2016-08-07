@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_mk,v 1.10 2015/11/13 07:14:26 ajacoutot Exp $
---- libs.mk.orig	Mon Nov  9 17:12:38 2015
-+++ libs.mk	Thu Nov 12 01:31:23 2015
-@@ -277,21 +277,16 @@ EXPORT_FILE             := libvpx.def
+$OpenBSD: patch-libs_mk,v 1.11 2016/08/07 01:33:52 ajacoutot Exp $
+--- libs.mk.orig	Wed Jul 20 21:15:41 2016
++++ libs.mk	Fri Aug  5 19:19:11 2016
+@@ -252,22 +252,17 @@ EXPORT_FILE             := libvpx.def
  LIBVPX_SO_SYMLINKS      :=
  LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
@@ -14,6 +14,7 @@ $OpenBSD: patch-libs_mk,v 1.10 2015/11/13 07:14:26 ajacoutot Exp $
 -                             libvpx.so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR))
  endif
  endif
+ endif
  
  LIBS-$(CONFIG_SHARED) += $(BUILD_PFX)$(LIBVPX_SO)\
 -                           $(notdir $(LIBVPX_SO_SYMLINKS)) \
@@ -24,7 +25,7 @@ $OpenBSD: patch-libs_mk,v 1.10 2015/11/13 07:14:26 ajacoutot Exp $
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
-@@ -326,15 +321,7 @@ $(1): $(2)
+@@ -302,15 +297,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  
