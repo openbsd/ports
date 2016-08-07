@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.13 2016/05/27 12:08:46 jca Exp $
+$OpenBSD: patch-configure,v 1.14 2016/08/07 21:40:20 naddy Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 
---- configure.orig	Mon May 23 17:35:33 2016
-+++ configure	Mon May 23 17:37:08 2016
-@@ -48415,7 +48415,7 @@ fi
+--- configure.orig	Fri Jul 15 12:43:04 2016
++++ configure	Thu Jul 21 05:20:48 2016
+@@ -48435,7 +48435,7 @@ fi
  	    readline_include_dir="$readline_include_dir/readline"
  	fi
          readline_ld_flags="-L$readline_prefix/lib"
