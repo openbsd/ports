@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/25 16:46:10 awolk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/07 16:01:35 awolk Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
 GH_ACCOUNT =		baedert
 GH_PROJECT =		corebird
-GH_TAGNAME =		1.2.2
+GH_TAGNAME =		1.3
 
 CATEGORIES =		net
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstbase-1.0 gstreamer-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz json-glib-1.0
 WANTLIB += lzma m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -39,7 +39,6 @@ MODGNOME_TOOLS =	desktop-file-utils \
 			vala
 
 LIB_DEPENDS =		devel/json-glib \
-			devel/libgee \
 			devel/libsoup>=2.4 \
 			devel/orc \
 			net/librest>=0.7.91 \

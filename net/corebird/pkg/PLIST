@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/02 16:52:57 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/07 16:01:35 awolk Exp $
 @bin bin/corebird
 @man man/man1/corebird.1
 share/appdata/
@@ -33,6 +33,12 @@ share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/corebird.mo
 share/locale/es/LC_MESSAGES/corebird.mo
+share/locale/es_419/
+share/locale/es_419/LC_MESSAGES/
+share/locale/es_419/LC_MESSAGES/corebird.mo
+share/locale/es_MX/
+share/locale/es_MX/LC_MESSAGES/
+share/locale/es_MX/LC_MESSAGES/corebird.mo
 share/locale/es_VE/
 share/locale/es_VE/LC_MESSAGES/
 share/locale/es_VE/LC_MESSAGES/corebird.mo
@@ -41,20 +47,30 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/corebird.mo
 share/locale/fi/LC_MESSAGES/corebird.mo
 share/locale/fr/LC_MESSAGES/corebird.mo
+share/locale/hi/LC_MESSAGES/corebird.mo
 share/locale/hu/LC_MESSAGES/corebird.mo
-share/locale/id_ID/
-share/locale/id_ID/LC_MESSAGES/
-share/locale/id_ID/LC_MESSAGES/corebird.mo
+share/locale/id/
+share/locale/id/LC_MESSAGES/
+share/locale/id/LC_MESSAGES/corebird.mo
 share/locale/it/LC_MESSAGES/corebird.mo
 share/locale/ja/LC_MESSAGES/corebird.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/corebird.mo
+share/locale/ko/LC_MESSAGES/corebird.mo
 share/locale/nl/LC_MESSAGES/corebird.mo
 share/locale/pl/LC_MESSAGES/corebird.mo
+share/locale/pt/LC_MESSAGES/corebird.mo
 share/locale/pt_BR/LC_MESSAGES/corebird.mo
+share/locale/ro/LC_MESSAGES/corebird.mo
 share/locale/ru/LC_MESSAGES/corebird.mo
+share/locale/sr/LC_MESSAGES/corebird.mo
+share/locale/tr/LC_MESSAGES/corebird.mo
+share/locale/uk_UA/
+share/locale/uk_UA/LC_MESSAGES/
+share/locale/uk_UA/LC_MESSAGES/corebird.mo
 share/locale/zh_CN/LC_MESSAGES/corebird.mo
+share/locale/zh_TW/LC_MESSAGES/corebird.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
