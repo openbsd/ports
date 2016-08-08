@@ -1,6 +1,6 @@
 Motion is a C program that monitors the video signal from one or
 more V4L2/video(4) cameras or network-based webcams, and is able to
-detect if a significant part of the picture has changed. Or in
+detect whether a significant part of the picture has changed. Or in
 other words, it can detect motion.
 
 Motion is a command line based tool. It has absolutely no graphical
