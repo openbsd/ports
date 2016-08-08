@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/14 12:26:07 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/08 10:53:52 jca Exp $
 
 COMMENT =		simple bandwidth monitor
-DISTNAME =		sbm-0.6
+DISTNAME =		sbm-0.8
 CATEGORIES =		net
 HOMEPAGE =		http://git.2f30.org/sbm/
 MAINTAINER =		Dimitris Papastamos <sin@2f30.org>
