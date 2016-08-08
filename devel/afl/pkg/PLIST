@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/02/25 02:25:10 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/08/08 09:06:46 jsg Exp $
 @bin bin/afl-analyze
 bin/afl-clang
 bin/afl-clang++
@@ -15,19 +15,20 @@ libexec/afl/
 @bin libexec/afl/afl-as
 libexec/afl/as
 share/afl/
+share/afl/dictionaries/
+share/afl/dictionaries/README.dictionaries
+share/afl/dictionaries/gif.dict
+share/afl/dictionaries/html_tags.dict
+share/afl/dictionaries/jpeg.dict
+share/afl/dictionaries/js.dict
+share/afl/dictionaries/pdf.dict
+share/afl/dictionaries/png.dict
+share/afl/dictionaries/sql.dict
+share/afl/dictionaries/tiff.dict
+share/afl/dictionaries/webp.dict
+share/afl/dictionaries/xml.dict
 share/afl/testcases/
 share/afl/testcases/README.testcases
-share/afl/testcases/_extras/
-share/afl/testcases/_extras/gif.dict
-share/afl/testcases/_extras/html_tags.dict
-share/afl/testcases/_extras/jpeg.dict
-share/afl/testcases/_extras/js.dict
-share/afl/testcases/_extras/pdf.dict
-share/afl/testcases/_extras/png.dict
-share/afl/testcases/_extras/sql.dict
-share/afl/testcases/_extras/tiff.dict
-share/afl/testcases/_extras/webp.dict
-share/afl/testcases/_extras/xml.dict
 share/afl/testcases/archives/
 share/afl/testcases/archives/common/
 share/afl/testcases/archives/common/ar/
@@ -115,6 +116,7 @@ share/doc/afl/QuickStartGuide.txt
 share/doc/afl/README
 share/doc/afl/env_variables.txt
 share/doc/afl/historical_notes.txt
+share/doc/afl/life_pro_tips.txt
 share/doc/afl/notes_for_asan.txt
 share/doc/afl/parallel_fuzzing.txt
 share/doc/afl/perf_tips.txt
