@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
---- Modules/FindJNI.cmake.orig	Fri Dec  4 11:03:50 2015
-+++ Modules/FindJNI.cmake	Fri Dec  4 11:03:15 2015
+$OpenBSD: patch-Modules_FindJNI_cmake,v 1.18 2016/08/08 07:44:48 dcoppa Exp $
+--- Modules/FindJNI.cmake.orig	Fri Jul 22 15:50:22 2016
++++ Modules/FindJNI.cmake	Thu Aug  4 13:08:52 2016
 @@ -35,6 +35,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -23,7 +23,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
      endif()
  
      # Sometimes ${CMAKE_SYSTEM_PROCESSOR} is added to the list to prefer
-@@ -113,54 +117,69 @@ if(_JAVA_HOME_EXPLICIT)
+@@ -117,58 +121,73 @@ if(_JAVA_HOME_EXPLICIT)
    set(CMAKE_FIND_FRAMEWORK NEVER)
  endif()
  
@@ -86,6 +86,10 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 +    /usr/lib/jvm/default-java/jre/lib/{libarch}
 +    /usr/lib/jvm/default-java/jre/lib
 +    /usr/lib/jvm/default-java/lib
++    # Ubuntu specific paths for default JVM
++    /usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
++    /usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
++    /usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
 +    # OpenBSD specific paths for default JVM
 +    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
 +    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
@@ -125,6 +129,10 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 -  /usr/lib/jvm/default-java/jre/lib/{libarch}
 -  /usr/lib/jvm/default-java/jre/lib
 -  /usr/lib/jvm/default-java/lib
+-  # Ubuntu specific paths for default JVM
+-  /usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
+-  /usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
+-  /usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib/{libarch}     # Ubuntu 15.10
 -  # OpenBSD specific paths for default JVM
 -  /usr/local/jdk-1.7.0/jre/lib/{libarch}
 -  /usr/local/jre-1.7.0/lib/{libarch}
@@ -138,7 +146,7 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
  set(JAVA_JVM_LIBRARY_DIRECTORIES)
  foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
    list(APPEND JAVA_JVM_LIBRARY_DIRECTORIES
-@@ -173,35 +192,48 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
+@@ -181,41 +200,55 @@ foreach(dir ${JAVA_AWT_LIBRARY_DIRECTORIES})
      )
  endforeach()
  
@@ -150,6 +158,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/include"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/include"
 -  "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
+-)
+-
+-JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_INCLUDE_DIRECTORIES
 -  /usr/include
 -  /usr/local/include
 -  /usr/lib/java/include
@@ -159,6 +170,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 -  /usr/lib/jvm/java-1.5.0-sun/include
 -  /usr/lib/jvm/java-6-sun-1.6.0.00/include       # can this one be removed according to #8821 ? Alex
 -  /usr/lib/jvm/java-6-openjdk/include
+-  /usr/lib/jvm/java-8-openjdk-{libarch}/include  # ubuntu 15.10
+-  /usr/lib/jvm/java-7-openjdk-{libarch}/include  # ubuntu 15.10
+-  /usr/lib/jvm/java-6-openjdk-{libarch}/include  # ubuntu 15.10
 -  /usr/local/share/java/include
 -  /usr/lib/j2sdk1.4-sun/include
 -  /usr/lib/j2sdk1.5-sun/include
@@ -170,15 +184,14 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 -  /usr/local/jdk-1.6.0/include
 -  # SuSE specific paths for default JVM
 -  /usr/lib64/jvm/java/include
--  )
 +if(MODJAVA_VER)
 +  set(JAVA_AWT_INCLUDE_DIRECTORIES)
 +  if(MODJAVA_VER MATCHES "^1\\.8\\+?$")
-+    list(APPEND JAVA_AWT_INCLUDE_DIRECTORIES
++    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_INCLUDE_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.8.0/include
 +      )
 +  else()
-+    list(APPEND JAVA_AWT_INCLUDE_DIRECTORIES
++    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_INCLUDE_DIRECTORIES
 +      ${LOCALBASE}/jdk-1.7.0/include
 +      )
 +  endif()
@@ -191,6 +204,10 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/include"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/include"
 +    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
++    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\${java_install_version};JavaHome]/include"
+   )
++
++  JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_INCLUDE_DIRECTORIES
 +    /usr/include
 +    /usr/local/include
 +    /usr/lib/java/include
@@ -200,6 +217,9 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.17 2015/12/08 17:18:59 dcoppa Exp $
 +    /usr/lib/jvm/java-1.5.0-sun/include
 +    /usr/lib/jvm/java-6-sun-1.6.0.00/include       # can this one be removed according to #8821 ? Alex
 +    /usr/lib/jvm/java-6-openjdk/include
++    /usr/lib/jvm/java-8-openjdk-{libarch}/include  # ubuntu 15.10
++    /usr/lib/jvm/java-7-openjdk-{libarch}/include  # ubuntu 15.10
++    /usr/lib/jvm/java-6-openjdk-{libarch}/include  # ubuntu 15.10
 +    /usr/local/share/java/include
 +    /usr/lib/j2sdk1.4-sun/include
 +    /usr/lib/j2sdk1.5-sun/include

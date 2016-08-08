@@ -1,53 +1,47 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.15 2016/04/29 10:34:33 dcoppa Exp $
---- Source/cmComputeLinkInformation.cxx.orig	Fri Apr 15 15:41:21 2016
-+++ Source/cmComputeLinkInformation.cxx	Wed Apr 27 10:55:08 2016
-@@ -698,10 +698,19 @@ void cmComputeLinkInformation::AddItem(std::string con
-         }
-       else
-         {
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.16 2016/08/08 07:44:48 dcoppa Exp $
+--- Source/cmComputeLinkInformation.cxx.orig	Thu Aug  4 11:56:19 2016
++++ Source/cmComputeLinkInformation.cxx	Thu Aug  4 11:59:28 2016
+@@ -631,10 +631,16 @@ void cmComputeLinkInformation::AddItem(std::string con
+         // This is a directory.
+         this->AddDirectoryItem(item);
+       } else {
 -        // Use the full path given to the library file.
          this->Depends.push_back(item);
 -        this->AddFullItem(item);
 -        this->AddLibraryRuntimeInfo(item);
-+        if(!this->OpenBSD)
-+          {
++        if (!this->OpenBSD) {
 +          // Use the full path given to the library file.
 +          this->AddFullItem(item);
 +          this->AddLibraryRuntimeInfo(item);
-+          }
-+        else
-+          {
++        } else {
 +          std::string file = cmSystemTools::GetFilenameName(item);
 +          this->AddUserItem(file, false);
 +          this->OrderLinkerSearchPath->AddLinkLibrary(item);
-+          }
-         }
++        }
        }
-     else
-@@ -1095,12 +1104,21 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+     } else {
+       // This is a library or option specified by the user.
+@@ -977,11 +983,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
-     }
+   }
  
 -  // Handle case of an imported shared library with no soname.
--  if(this->NoSONameUsesPath &&
--     target->IsImportedSharedLibWithoutSOName(this->Config))
-+  if(this->OpenBSD)
-     {
+-  if (this->NoSONameUsesPath &&
+-      target->IsImportedSharedLibWithoutSOName(this->Config)) {
 -    this->AddSharedLibNoSOName(item);
 -    return;
-+    if(target->GetType() == cmState::SHARED_LIBRARY)
-+      {
++  if (this->OpenBSD) {
++    if (target->GetType() == cmState::SHARED_LIBRARY) {
 +      this->AddSharedLibNoSOName(item);
 +      return;
-+      }
-+    } else {
++    }
++  } else {
 +    // Handle case of an imported shared library with no soname.
-+    if(this->NoSONameUsesPath &&
-+       target->IsImportedSharedLibWithoutSOName(this->Config))
-+      {
++    if (this->NoSONameUsesPath &&
++        target->IsImportedSharedLibWithoutSOName(this->Config)) {
 +      this->AddSharedLibNoSOName(item);
 +      return;
-+      }
-     }
++    }
+   }
  
    // If this platform wants a flag before the full path, add it.

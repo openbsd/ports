@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2016/04/29 10:34:33 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.35 2016/08/08 07:44:48 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -21,7 +21,6 @@
 @man man/man7/cmake-qt.7
 @man man/man7/cmake-toolchains.7
 @man man/man7/cmake-variables.7
-share/aclocal/
 share/aclocal/cmake.m4
 share/cmake/
 share/cmake/Help/
@@ -319,6 +318,7 @@ share/cmake/Help/module/FindKDE3.rst
 share/cmake/Help/module/FindKDE4.rst
 share/cmake/Help/module/FindLAPACK.rst
 share/cmake/Help/module/FindLATEX.rst
+share/cmake/Help/module/FindLTTngUST.rst
 share/cmake/Help/module/FindLibArchive.rst
 share/cmake/Help/module/FindLibLZMA.rst
 share/cmake/Help/module/FindLibXml2.rst
@@ -533,6 +533,7 @@ share/cmake/Help/prop_dir/TEST_INCLUDE_FILE.rst
 share/cmake/Help/prop_dir/VARIABLES.rst
 share/cmake/Help/prop_dir/VS_GLOBAL_SECTION_POST_section.rst
 share/cmake/Help/prop_dir/VS_GLOBAL_SECTION_PRE_section.rst
+share/cmake/Help/prop_dir/VS_STARTUP_PROJECT.rst
 share/cmake/Help/prop_gbl/
 share/cmake/Help/prop_gbl/ALLOW_DUPLICATE_CUSTOM_TARGETS.rst
 share/cmake/Help/prop_gbl/AUTOGEN_TARGETS_FOLDER.rst
@@ -614,6 +615,7 @@ share/cmake/Help/prop_test/RESOURCE_LOCK.rst
 share/cmake/Help/prop_test/RUN_SERIAL.rst
 share/cmake/Help/prop_test/SKIP_RETURN_CODE.rst
 share/cmake/Help/prop_test/TIMEOUT.rst
+share/cmake/Help/prop_test/TIMEOUT_AFTER_MATCH.rst
 share/cmake/Help/prop_test/WILL_FAIL.rst
 share/cmake/Help/prop_test/WORKING_DIRECTORY.rst
 share/cmake/Help/prop_tgt/
@@ -675,6 +677,7 @@ share/cmake/Help/prop_tgt/C_STANDARD.rst
 share/cmake/Help/prop_tgt/C_STANDARD_REQUIRED.rst
 share/cmake/Help/prop_tgt/DEBUG_POSTFIX.rst
 share/cmake/Help/prop_tgt/DEFINE_SYMBOL.rst
+share/cmake/Help/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.rst
 share/cmake/Help/prop_tgt/ENABLE_EXPORTS.rst
 share/cmake/Help/prop_tgt/EXCLUDE_FROM_ALL.rst
 share/cmake/Help/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst
@@ -730,6 +733,7 @@ share/cmake/Help/prop_tgt/IOS_INSTALL_COMBINED.rst
 share/cmake/Help/prop_tgt/JOB_POOL_COMPILE.rst
 share/cmake/Help/prop_tgt/JOB_POOL_LINK.rst
 share/cmake/Help/prop_tgt/LABELS.rst
+share/cmake/Help/prop_tgt/LANG_CLANG_TIDY.rst
 share/cmake/Help/prop_tgt/LANG_COMPILER_LAUNCHER.rst
 share/cmake/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
 share/cmake/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
@@ -793,6 +797,7 @@ share/cmake/Help/prop_tgt/SUFFIX.rst
 share/cmake/Help/prop_tgt/TYPE.rst
 share/cmake/Help/prop_tgt/VERSION.rst
 share/cmake/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
+share/cmake/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
 share/cmake/Help/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.rst
 share/cmake/Help/prop_tgt/VS_DOTNET_REFERENCES.rst
 share/cmake/Help/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.rst
@@ -825,6 +830,7 @@ share/cmake/Help/release/3.2.rst
 share/cmake/Help/release/3.3.rst
 share/cmake/Help/release/3.4.rst
 share/cmake/Help/release/3.5.rst
+share/cmake/Help/release/3.6.rst
 share/cmake/Help/release/dev.txt
 share/cmake/Help/release/index.rst
 share/cmake/Help/variable/
@@ -899,8 +905,13 @@ share/cmake/Help/variable/CMAKE_C_STANDARD.rst
 share/cmake/Help/variable/CMAKE_C_STANDARD_REQUIRED.rst
 share/cmake/Help/variable/CMAKE_DEBUG_POSTFIX.rst
 share/cmake/Help/variable/CMAKE_DEBUG_TARGET_PROPERTIES.rst
+share/cmake/Help/variable/CMAKE_DEPENDS_IN_PROJECT_ONLY.rst
 share/cmake/Help/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.rst
 share/cmake/Help/variable/CMAKE_DL_LIBS.rst
+share/cmake/Help/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.rst
+share/cmake/Help/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.rst
+share/cmake/Help/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.rst
+share/cmake/Help/variable/CMAKE_ECLIPSE_VERSION.rst
 share/cmake/Help/variable/CMAKE_EDIT_COMMAND.rst
 share/cmake/Help/variable/CMAKE_ENABLE_EXPORTS.rst
 share/cmake/Help/variable/CMAKE_ERROR_DEPRECATED.rst
@@ -939,6 +950,7 @@ share/cmake/Help/variable/CMAKE_GENERATOR_TOOLSET.rst
 share/cmake/Help/variable/CMAKE_GNUtoMS.rst
 share/cmake/Help/variable/CMAKE_HOME_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_HOST_APPLE.rst
+share/cmake/Help/variable/CMAKE_HOST_SOLARIS.rst
 share/cmake/Help/variable/CMAKE_HOST_SYSTEM.rst
 share/cmake/Help/variable/CMAKE_HOST_SYSTEM_NAME.rst
 share/cmake/Help/variable/CMAKE_HOST_SYSTEM_PROCESSOR.rst
@@ -966,6 +978,7 @@ share/cmake/Help/variable/CMAKE_JOB_POOL_LINK.rst
 share/cmake/Help/variable/CMAKE_LANG_ARCHIVE_APPEND.rst
 share/cmake/Help/variable/CMAKE_LANG_ARCHIVE_CREATE.rst
 share/cmake/Help/variable/CMAKE_LANG_ARCHIVE_FINISH.rst
+share/cmake/Help/variable/CMAKE_LANG_CLANG_TIDY.rst
 share/cmake/Help/variable/CMAKE_LANG_COMPILER.rst
 share/cmake/Help/variable/CMAKE_LANG_COMPILER_ABI.rst
 share/cmake/Help/variable/CMAKE_LANG_COMPILER_EXTERNAL_TOOLCHAIN.rst
@@ -1003,6 +1016,8 @@ share/cmake/Help/variable/CMAKE_LANG_SIMULATE_ID.rst
 share/cmake/Help/variable/CMAKE_LANG_SIMULATE_VERSION.rst
 share/cmake/Help/variable/CMAKE_LANG_SIZEOF_DATA_PTR.rst
 share/cmake/Help/variable/CMAKE_LANG_SOURCE_FILE_EXTENSIONS.rst
+share/cmake/Help/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.rst
+share/cmake/Help/variable/CMAKE_LANG_STANDARD_LIBRARIES.rst
 share/cmake/Help/variable/CMAKE_LANG_VISIBILITY_PRESET.rst
 share/cmake/Help/variable/CMAKE_LIBRARY_ARCHITECTURE.rst
 share/cmake/Help/variable/CMAKE_LIBRARY_ARCHITECTURE_REGEX.rst
@@ -1030,6 +1045,7 @@ share/cmake/Help/variable/CMAKE_MINOR_VERSION.rst
 share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS.rst
 share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG.rst
 share/cmake/Help/variable/CMAKE_MODULE_PATH.rst
+share/cmake/Help/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.rst
 share/cmake/Help/variable/CMAKE_NOT_USING_CONFIG_FLAGS.rst
 share/cmake/Help/variable/CMAKE_NO_BUILTIN_CHRPATH.rst
 share/cmake/Help/variable/CMAKE_NO_SYSTEM_FROM_IMPORTED.rst
@@ -1068,7 +1084,6 @@ share/cmake/Help/variable/CMAKE_SKIP_INSTALL_RULES.rst
 share/cmake/Help/variable/CMAKE_SKIP_RPATH.rst
 share/cmake/Help/variable/CMAKE_SOURCE_DIR.rst
 share/cmake/Help/variable/CMAKE_STAGING_PREFIX.rst
-share/cmake/Help/variable/CMAKE_STANDARD_LIBRARIES.rst
 share/cmake/Help/variable/CMAKE_STATIC_LIBRARY_PREFIX.rst
 share/cmake/Help/variable/CMAKE_STATIC_LIBRARY_SUFFIX.rst
 share/cmake/Help/variable/CMAKE_STATIC_LINKER_FLAGS.rst
@@ -1087,6 +1102,8 @@ share/cmake/Help/variable/CMAKE_SYSTEM_PROGRAM_PATH.rst
 share/cmake/Help/variable/CMAKE_SYSTEM_VERSION.rst
 share/cmake/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 share/cmake/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
+share/cmake/Help/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.rst
+share/cmake/Help/variable/CMAKE_TRY_COMPILE_TARGET_TYPE.rst
 share/cmake/Help/variable/CMAKE_TWEAK_VERSION.rst
 share/cmake/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE.rst
 share/cmake/Help/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.rst
@@ -1098,7 +1115,6 @@ share/cmake/Help/variable/CMAKE_VS_DEVENV_COMMAND.rst
 share/cmake/Help/variable/CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD.rst
 share/cmake/Help/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_MSBUILD_COMMAND.rst
-share/cmake/Help/variable/CMAKE_VS_MSDEV_COMMAND.rst
 share/cmake/Help/variable/CMAKE_VS_NsightTegra_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_PLATFORM_NAME.rst
 share/cmake/Help/variable/CMAKE_VS_PLATFORM_TOOLSET.rst
@@ -1158,6 +1174,7 @@ share/cmake/Help/variable/CTEST_DROP_SITE_PASSWORD.rst
 share/cmake/Help/variable/CTEST_DROP_SITE_USER.rst
 share/cmake/Help/variable/CTEST_EXTRA_COVERAGE_GLOB.rst
 share/cmake/Help/variable/CTEST_GIT_COMMAND.rst
+share/cmake/Help/variable/CTEST_GIT_INIT_SUBMODULES.rst
 share/cmake/Help/variable/CTEST_GIT_UPDATE_CUSTOM.rst
 share/cmake/Help/variable/CTEST_GIT_UPDATE_OPTIONS.rst
 share/cmake/Help/variable/CTEST_HG_COMMAND.rst
@@ -1333,9 +1350,7 @@ share/cmake/Modules/CMakeTestGNU.c
 share/cmake/Modules/CMakeTestJavaCompiler.cmake
 share/cmake/Modules/CMakeTestRCCompiler.cmake
 share/cmake/Modules/CMakeTestSwiftCompiler.cmake
-share/cmake/Modules/CMakeTestWatcomVersion.c
 share/cmake/Modules/CMakeUnixFindMake.cmake
-share/cmake/Modules/CMakeVS6BackwardCompatibility.cmake
 share/cmake/Modules/CMakeVS7BackwardCompatibility.cmake
 share/cmake/Modules/CMakeVerifyManifest.cmake
 share/cmake/Modules/CPack.DS_Store.in
@@ -1413,6 +1428,8 @@ share/cmake/Modules/Compiler/AppleClang-CXX-FeatureTests.cmake
 share/cmake/Modules/Compiler/AppleClang-CXX.cmake
 share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/Bruce-C.cmake
 share/cmake/Modules/Compiler/CCur-Fortran.cmake
 share/cmake/Modules/Compiler/Clang-ASM.cmake
 share/cmake/Modules/Compiler/Clang-C-FeatureTests.cmake
@@ -1452,6 +1469,7 @@ share/cmake/Modules/Compiler/G95-Fortran.cmake
 share/cmake/Modules/Compiler/GHS-C.cmake
 share/cmake/Modules/Compiler/GHS-CXX.cmake
 share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake
+share/cmake/Modules/Compiler/GHS.cmake
 share/cmake/Modules/Compiler/GNU-ASM.cmake
 share/cmake/Modules/Compiler/GNU-C-FeatureTests.cmake
 share/cmake/Modules/Compiler/GNU-C.cmake
@@ -1474,7 +1492,9 @@ share/cmake/Modules/Compiler/IAR.cmake
 share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake
 share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake
 share/cmake/Modules/Compiler/Intel-ASM.cmake
+share/cmake/Modules/Compiler/Intel-C-FeatureTests.cmake
 share/cmake/Modules/Compiler/Intel-C.cmake
+share/cmake/Modules/Compiler/Intel-CXX-FeatureTests.cmake
 share/cmake/Modules/Compiler/Intel-CXX.cmake
 share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/Intel-Fortran.cmake
@@ -1535,7 +1555,6 @@ share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake
 share/cmake/Modules/CompilerId/
 share/cmake/Modules/CompilerId/VS-10.vcxproj.in
-share/cmake/Modules/CompilerId/VS-6.dsp.in
 share/cmake/Modules/CompilerId/VS-7.vcproj.in
 share/cmake/Modules/CompilerId/VS-Intel.vfproj.in
 share/cmake/Modules/CompilerId/VS-NsightTegra.vcxproj.in
@@ -1550,6 +1569,8 @@ share/cmake/Modules/Documentation.cmake
 share/cmake/Modules/DummyCXXFile.cxx
 share/cmake/Modules/ExternalData.cmake
 share/cmake/Modules/ExternalData_config.cmake.in
+share/cmake/Modules/ExternalProject-download.cmake.in
+share/cmake/Modules/ExternalProject-verify.cmake.in
 share/cmake/Modules/ExternalProject.cmake
 share/cmake/Modules/FLTKCompatibility.cmake
 share/cmake/Modules/FeatureSummary.cmake
@@ -1617,6 +1638,7 @@ share/cmake/Modules/FindKDE4.cmake
 share/cmake/Modules/FindLAPACK.cmake
 share/cmake/Modules/FindLATEX.cmake
 share/cmake/Modules/FindLCMS.cmake
+share/cmake/Modules/FindLTTngUST.cmake
 share/cmake/Modules/FindLibArchive.cmake
 share/cmake/Modules/FindLibLZMA.cmake
 share/cmake/Modules/FindLibXml2.cmake
@@ -1796,6 +1818,8 @@ share/cmake/Modules/Platform/BlueGeneQ-static-XL-CXX.cmake
 share/cmake/Modules/Platform/BlueGeneQ-static-XL-Fortran.cmake
 share/cmake/Modules/Platform/BlueGeneQ-static.cmake
 share/cmake/Modules/Platform/CYGWIN-CXX.cmake
+share/cmake/Modules/Platform/CYGWIN-Clang-C.cmake
+share/cmake/Modules/Platform/CYGWIN-Clang-CXX.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-C.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-CXX.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-Fortran.cmake
@@ -1900,6 +1924,10 @@ share/cmake/Modules/Platform/SunOS-GNU-C.cmake
 share/cmake/Modules/Platform/SunOS-GNU-CXX.cmake
 share/cmake/Modules/Platform/SunOS-GNU-Fortran.cmake
 share/cmake/Modules/Platform/SunOS-GNU.cmake
+share/cmake/Modules/Platform/SunOS-PathScale-C.cmake
+share/cmake/Modules/Platform/SunOS-PathScale-CXX.cmake
+share/cmake/Modules/Platform/SunOS-PathScale-Fortran.cmake
+share/cmake/Modules/Platform/SunOS-PathScale.cmake
 share/cmake/Modules/Platform/SunOS.cmake
 share/cmake/Modules/Platform/Tru64.cmake
 share/cmake/Modules/Platform/ULTRIX.cmake
@@ -1996,20 +2024,12 @@ share/cmake/Templates/
 share/cmake/Templates/AppleInfo.plist
 share/cmake/Templates/CMakeVSMacros1.vsmacros
 share/cmake/Templates/CMakeVSMacros2.vsmacros
-share/cmake/Templates/CMakeVisualStudio6Configurations.cmake
 share/cmake/Templates/CPack.GenericDescription.txt
 share/cmake/Templates/CPack.GenericLicense.txt
 share/cmake/Templates/CPack.GenericWelcome.txt
 share/cmake/Templates/CPackConfig.cmake.in
 share/cmake/Templates/CTestScript.cmake.in
-share/cmake/Templates/DLLFooter.dsptemplate
-share/cmake/Templates/DLLHeader.dsptemplate
-share/cmake/Templates/EXEFooter.dsptemplate
-share/cmake/Templates/EXEHeader.dsptemplate
-share/cmake/Templates/EXEWinHeader.dsptemplate
 share/cmake/Templates/TestDriver.cxx.in
-share/cmake/Templates/UtilityFooter.dsptemplate
-share/cmake/Templates/UtilityHeader.dsptemplate
 share/cmake/Templates/Windows/
 share/cmake/Templates/Windows/ApplicationIcon.png
 share/cmake/Templates/Windows/Logo.png
@@ -2019,8 +2039,6 @@ share/cmake/Templates/Windows/SplashScreen.png
 share/cmake/Templates/Windows/StoreLogo.png
 share/cmake/Templates/Windows/Windows_TemporaryKey.pfx
 share/cmake/Templates/cygwin-package.sh.in
-share/cmake/Templates/staticLibFooter.dsptemplate
-share/cmake/Templates/staticLibHeader.dsptemplate
 share/cmake/completions/
 share/cmake/completions/cmake
 share/cmake/completions/cpack
@@ -2326,6 +2344,7 @@ share/doc/cmake/html/_sources/module/FindKDE3.txt
 share/doc/cmake/html/_sources/module/FindKDE4.txt
 share/doc/cmake/html/_sources/module/FindLAPACK.txt
 share/doc/cmake/html/_sources/module/FindLATEX.txt
+share/doc/cmake/html/_sources/module/FindLTTngUST.txt
 share/doc/cmake/html/_sources/module/FindLibArchive.txt
 share/doc/cmake/html/_sources/module/FindLibLZMA.txt
 share/doc/cmake/html/_sources/module/FindLibXml2.txt
@@ -2538,6 +2557,7 @@ share/doc/cmake/html/_sources/prop_dir/TEST_INCLUDE_FILE.txt
 share/doc/cmake/html/_sources/prop_dir/VARIABLES.txt
 share/doc/cmake/html/_sources/prop_dir/VS_GLOBAL_SECTION_POST_section.txt
 share/doc/cmake/html/_sources/prop_dir/VS_GLOBAL_SECTION_PRE_section.txt
+share/doc/cmake/html/_sources/prop_dir/VS_STARTUP_PROJECT.txt
 share/doc/cmake/html/_sources/prop_gbl/
 share/doc/cmake/html/_sources/prop_gbl/ALLOW_DUPLICATE_CUSTOM_TARGETS.txt
 share/doc/cmake/html/_sources/prop_gbl/AUTOGEN_TARGETS_FOLDER.txt
@@ -2619,6 +2639,7 @@ share/doc/cmake/html/_sources/prop_test/RESOURCE_LOCK.txt
 share/doc/cmake/html/_sources/prop_test/RUN_SERIAL.txt
 share/doc/cmake/html/_sources/prop_test/SKIP_RETURN_CODE.txt
 share/doc/cmake/html/_sources/prop_test/TIMEOUT.txt
+share/doc/cmake/html/_sources/prop_test/TIMEOUT_AFTER_MATCH.txt
 share/doc/cmake/html/_sources/prop_test/WILL_FAIL.txt
 share/doc/cmake/html/_sources/prop_test/WORKING_DIRECTORY.txt
 share/doc/cmake/html/_sources/prop_tgt/
@@ -2679,6 +2700,7 @@ share/doc/cmake/html/_sources/prop_tgt/C_STANDARD.txt
 share/doc/cmake/html/_sources/prop_tgt/C_STANDARD_REQUIRED.txt
 share/doc/cmake/html/_sources/prop_tgt/DEBUG_POSTFIX.txt
 share/doc/cmake/html/_sources/prop_tgt/DEFINE_SYMBOL.txt
+share/doc/cmake/html/_sources/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.txt
 share/doc/cmake/html/_sources/prop_tgt/ENABLE_EXPORTS.txt
 share/doc/cmake/html/_sources/prop_tgt/EXCLUDE_FROM_ALL.txt
 share/doc/cmake/html/_sources/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.txt
@@ -2733,6 +2755,7 @@ share/doc/cmake/html/_sources/prop_tgt/IOS_INSTALL_COMBINED.txt
 share/doc/cmake/html/_sources/prop_tgt/JOB_POOL_COMPILE.txt
 share/doc/cmake/html/_sources/prop_tgt/JOB_POOL_LINK.txt
 share/doc/cmake/html/_sources/prop_tgt/LABELS.txt
+share/doc/cmake/html/_sources/prop_tgt/LANG_CLANG_TIDY.txt
 share/doc/cmake/html/_sources/prop_tgt/LANG_COMPILER_LAUNCHER.txt
 share/doc/cmake/html/_sources/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.txt
 share/doc/cmake/html/_sources/prop_tgt/LANG_VISIBILITY_PRESET.txt
@@ -2795,6 +2818,7 @@ share/doc/cmake/html/_sources/prop_tgt/SUFFIX.txt
 share/doc/cmake/html/_sources/prop_tgt/TYPE.txt
 share/doc/cmake/html/_sources/prop_tgt/VERSION.txt
 share/doc/cmake/html/_sources/prop_tgt/VISIBILITY_INLINES_HIDDEN.txt
+share/doc/cmake/html/_sources/prop_tgt/VS_CONFIGURATION_TYPE.txt
 share/doc/cmake/html/_sources/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.txt
 share/doc/cmake/html/_sources/prop_tgt/VS_DOTNET_REFERENCES.txt
 share/doc/cmake/html/_sources/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.txt
@@ -2825,6 +2849,7 @@ share/doc/cmake/html/_sources/release/3.2.txt
 share/doc/cmake/html/_sources/release/3.3.txt
 share/doc/cmake/html/_sources/release/3.4.txt
 share/doc/cmake/html/_sources/release/3.5.txt
+share/doc/cmake/html/_sources/release/3.6.txt
 share/doc/cmake/html/_sources/release/index.txt
 share/doc/cmake/html/_sources/variable/
 share/doc/cmake/html/_sources/variable/APPLE.txt
@@ -2898,8 +2923,13 @@ share/doc/cmake/html/_sources/variable/CMAKE_C_STANDARD.txt
 share/doc/cmake/html/_sources/variable/CMAKE_C_STANDARD_REQUIRED.txt
 share/doc/cmake/html/_sources/variable/CMAKE_DEBUG_POSTFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_DEBUG_TARGET_PROPERTIES.txt
+share/doc/cmake/html/_sources/variable/CMAKE_DEPENDS_IN_PROJECT_ONLY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.txt
 share/doc/cmake/html/_sources/variable/CMAKE_DL_LIBS.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ECLIPSE_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_EDIT_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ENABLE_EXPORTS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ERROR_DEPRECATED.txt
@@ -2937,6 +2967,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_GENERATOR_TOOLSET.txt
 share/doc/cmake/html/_sources/variable/CMAKE_GNUtoMS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOME_DIRECTORY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_APPLE.txt
+share/doc/cmake/html/_sources/variable/CMAKE_HOST_SOLARIS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SYSTEM.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SYSTEM_NAME.txt
 share/doc/cmake/html/_sources/variable/CMAKE_HOST_SYSTEM_PROCESSOR.txt
@@ -2964,6 +2995,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_LINK.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ARCHIVE_APPEND.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ARCHIVE_CREATE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ARCHIVE_FINISH.txt
+share/doc/cmake/html/_sources/variable/CMAKE_LANG_CLANG_TIDY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_COMPILER.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_COMPILER_ABI.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_COMPILER_EXTERNAL_TOOLCHAIN.txt
@@ -3001,6 +3033,8 @@ share/doc/cmake/html/_sources/variable/CMAKE_LANG_SIMULATE_ID.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_SIMULATE_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_SIZEOF_DATA_PTR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_SOURCE_FILE_EXTENSIONS.txt
+share/doc/cmake/html/_sources/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.txt
+share/doc/cmake/html/_sources/variable/CMAKE_LANG_STANDARD_LIBRARIES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_VISIBILITY_PRESET.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LIBRARY_ARCHITECTURE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LIBRARY_ARCHITECTURE_REGEX.txt
@@ -3028,6 +3062,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_MINOR_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_PATH.txt
+share/doc/cmake/html/_sources/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NOT_USING_CONFIG_FLAGS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NO_BUILTIN_CHRPATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NO_SYSTEM_FROM_IMPORTED.txt
@@ -3065,7 +3100,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_SKIP_INSTALL_RULES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_SKIP_RPATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_SOURCE_DIR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_STAGING_PREFIX.txt
-share/doc/cmake/html/_sources/variable/CMAKE_STANDARD_LIBRARIES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_STATIC_LIBRARY_PREFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_STATIC_LIBRARY_SUFFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_STATIC_LINKER_FLAGS.txt
@@ -3084,6 +3118,8 @@ share/doc/cmake/html/_sources/variable/CMAKE_SYSTEM_PROGRAM_PATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_SYSTEM_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TOOLCHAIN_FILE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TRY_COMPILE_CONFIGURATION.txt
+share/doc/cmake/html/_sources/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.txt
+share/doc/cmake/html/_sources/variable/CMAKE_TRY_COMPILE_TARGET_TYPE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_TWEAK_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_USER_MAKE_RULES_OVERRIDE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.txt
@@ -3095,7 +3131,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_VS_DEVENV_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_MSBUILD_COMMAND.txt
-share/doc/cmake/html/_sources/variable/CMAKE_VS_MSDEV_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_NsightTegra_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_PLATFORM_NAME.txt
 share/doc/cmake/html/_sources/variable/CMAKE_VS_PLATFORM_TOOLSET.txt
@@ -3154,6 +3189,7 @@ share/doc/cmake/html/_sources/variable/CTEST_DROP_SITE_PASSWORD.txt
 share/doc/cmake/html/_sources/variable/CTEST_DROP_SITE_USER.txt
 share/doc/cmake/html/_sources/variable/CTEST_EXTRA_COVERAGE_GLOB.txt
 share/doc/cmake/html/_sources/variable/CTEST_GIT_COMMAND.txt
+share/doc/cmake/html/_sources/variable/CTEST_GIT_INIT_SUBMODULES.txt
 share/doc/cmake/html/_sources/variable/CTEST_GIT_UPDATE_CUSTOM.txt
 share/doc/cmake/html/_sources/variable/CTEST_GIT_UPDATE_OPTIONS.txt
 share/doc/cmake/html/_sources/variable/CTEST_HG_COMMAND.txt
@@ -3530,6 +3566,7 @@ share/doc/cmake/html/module/FindKDE3.html
 share/doc/cmake/html/module/FindKDE4.html
 share/doc/cmake/html/module/FindLAPACK.html
 share/doc/cmake/html/module/FindLATEX.html
+share/doc/cmake/html/module/FindLTTngUST.html
 share/doc/cmake/html/module/FindLibArchive.html
 share/doc/cmake/html/module/FindLibLZMA.html
 share/doc/cmake/html/module/FindLibXml2.html
@@ -3743,6 +3780,7 @@ share/doc/cmake/html/prop_dir/TEST_INCLUDE_FILE.html
 share/doc/cmake/html/prop_dir/VARIABLES.html
 share/doc/cmake/html/prop_dir/VS_GLOBAL_SECTION_POST_section.html
 share/doc/cmake/html/prop_dir/VS_GLOBAL_SECTION_PRE_section.html
+share/doc/cmake/html/prop_dir/VS_STARTUP_PROJECT.html
 share/doc/cmake/html/prop_gbl/
 share/doc/cmake/html/prop_gbl/ALLOW_DUPLICATE_CUSTOM_TARGETS.html
 share/doc/cmake/html/prop_gbl/AUTOGEN_TARGETS_FOLDER.html
@@ -3824,6 +3862,7 @@ share/doc/cmake/html/prop_test/RESOURCE_LOCK.html
 share/doc/cmake/html/prop_test/RUN_SERIAL.html
 share/doc/cmake/html/prop_test/SKIP_RETURN_CODE.html
 share/doc/cmake/html/prop_test/TIMEOUT.html
+share/doc/cmake/html/prop_test/TIMEOUT_AFTER_MATCH.html
 share/doc/cmake/html/prop_test/WILL_FAIL.html
 share/doc/cmake/html/prop_test/WORKING_DIRECTORY.html
 share/doc/cmake/html/prop_tgt/
@@ -3884,6 +3923,7 @@ share/doc/cmake/html/prop_tgt/C_STANDARD.html
 share/doc/cmake/html/prop_tgt/C_STANDARD_REQUIRED.html
 share/doc/cmake/html/prop_tgt/DEBUG_POSTFIX.html
 share/doc/cmake/html/prop_tgt/DEFINE_SYMBOL.html
+share/doc/cmake/html/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.html
 share/doc/cmake/html/prop_tgt/ENABLE_EXPORTS.html
 share/doc/cmake/html/prop_tgt/EXCLUDE_FROM_ALL.html
 share/doc/cmake/html/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.html
@@ -3938,6 +3978,7 @@ share/doc/cmake/html/prop_tgt/IOS_INSTALL_COMBINED.html
 share/doc/cmake/html/prop_tgt/JOB_POOL_COMPILE.html
 share/doc/cmake/html/prop_tgt/JOB_POOL_LINK.html
 share/doc/cmake/html/prop_tgt/LABELS.html
+share/doc/cmake/html/prop_tgt/LANG_CLANG_TIDY.html
 share/doc/cmake/html/prop_tgt/LANG_COMPILER_LAUNCHER.html
 share/doc/cmake/html/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.html
 share/doc/cmake/html/prop_tgt/LANG_VISIBILITY_PRESET.html
@@ -4000,6 +4041,7 @@ share/doc/cmake/html/prop_tgt/SUFFIX.html
 share/doc/cmake/html/prop_tgt/TYPE.html
 share/doc/cmake/html/prop_tgt/VERSION.html
 share/doc/cmake/html/prop_tgt/VISIBILITY_INLINES_HIDDEN.html
+share/doc/cmake/html/prop_tgt/VS_CONFIGURATION_TYPE.html
 share/doc/cmake/html/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.html
 share/doc/cmake/html/prop_tgt/VS_DOTNET_REFERENCES.html
 share/doc/cmake/html/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.html
@@ -4030,6 +4072,7 @@ share/doc/cmake/html/release/3.2.html
 share/doc/cmake/html/release/3.3.html
 share/doc/cmake/html/release/3.4.html
 share/doc/cmake/html/release/3.5.html
+share/doc/cmake/html/release/3.6.html
 share/doc/cmake/html/release/index.html
 share/doc/cmake/html/search.html
 share/doc/cmake/html/searchindex.js
@@ -4105,8 +4148,13 @@ share/doc/cmake/html/variable/CMAKE_C_STANDARD.html
 share/doc/cmake/html/variable/CMAKE_C_STANDARD_REQUIRED.html
 share/doc/cmake/html/variable/CMAKE_DEBUG_POSTFIX.html
 share/doc/cmake/html/variable/CMAKE_DEBUG_TARGET_PROPERTIES.html
+share/doc/cmake/html/variable/CMAKE_DEPENDS_IN_PROJECT_ONLY.html
 share/doc/cmake/html/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.html
 share/doc/cmake/html/variable/CMAKE_DL_LIBS.html
+share/doc/cmake/html/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.html
+share/doc/cmake/html/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.html
+share/doc/cmake/html/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.html
+share/doc/cmake/html/variable/CMAKE_ECLIPSE_VERSION.html
 share/doc/cmake/html/variable/CMAKE_EDIT_COMMAND.html
 share/doc/cmake/html/variable/CMAKE_ENABLE_EXPORTS.html
 share/doc/cmake/html/variable/CMAKE_ERROR_DEPRECATED.html
@@ -4144,6 +4192,7 @@ share/doc/cmake/html/variable/CMAKE_GENERATOR_TOOLSET.html
 share/doc/cmake/html/variable/CMAKE_GNUtoMS.html
 share/doc/cmake/html/variable/CMAKE_HOME_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_HOST_APPLE.html
+share/doc/cmake/html/variable/CMAKE_HOST_SOLARIS.html
 share/doc/cmake/html/variable/CMAKE_HOST_SYSTEM.html
 share/doc/cmake/html/variable/CMAKE_HOST_SYSTEM_NAME.html
 share/doc/cmake/html/variable/CMAKE_HOST_SYSTEM_PROCESSOR.html
@@ -4171,6 +4220,7 @@ share/doc/cmake/html/variable/CMAKE_JOB_POOL_LINK.html
 share/doc/cmake/html/variable/CMAKE_LANG_ARCHIVE_APPEND.html
 share/doc/cmake/html/variable/CMAKE_LANG_ARCHIVE_CREATE.html
 share/doc/cmake/html/variable/CMAKE_LANG_ARCHIVE_FINISH.html
+share/doc/cmake/html/variable/CMAKE_LANG_CLANG_TIDY.html
 share/doc/cmake/html/variable/CMAKE_LANG_COMPILER.html
 share/doc/cmake/html/variable/CMAKE_LANG_COMPILER_ABI.html
 share/doc/cmake/html/variable/CMAKE_LANG_COMPILER_EXTERNAL_TOOLCHAIN.html
@@ -4208,6 +4258,8 @@ share/doc/cmake/html/variable/CMAKE_LANG_SIMULATE_ID.html
 share/doc/cmake/html/variable/CMAKE_LANG_SIMULATE_VERSION.html
 share/doc/cmake/html/variable/CMAKE_LANG_SIZEOF_DATA_PTR.html
 share/doc/cmake/html/variable/CMAKE_LANG_SOURCE_FILE_EXTENSIONS.html
+share/doc/cmake/html/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.html
+share/doc/cmake/html/variable/CMAKE_LANG_STANDARD_LIBRARIES.html
 share/doc/cmake/html/variable/CMAKE_LANG_VISIBILITY_PRESET.html
 share/doc/cmake/html/variable/CMAKE_LIBRARY_ARCHITECTURE.html
 share/doc/cmake/html/variable/CMAKE_LIBRARY_ARCHITECTURE_REGEX.html
@@ -4235,6 +4287,7 @@ share/doc/cmake/html/variable/CMAKE_MINOR_VERSION.html
 share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS.html
 share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG.html
 share/doc/cmake/html/variable/CMAKE_MODULE_PATH.html
+share/doc/cmake/html/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.html
 share/doc/cmake/html/variable/CMAKE_NOT_USING_CONFIG_FLAGS.html
 share/doc/cmake/html/variable/CMAKE_NO_BUILTIN_CHRPATH.html
 share/doc/cmake/html/variable/CMAKE_NO_SYSTEM_FROM_IMPORTED.html
@@ -4272,7 +4325,6 @@ share/doc/cmake/html/variable/CMAKE_SKIP_INSTALL_RULES.html
 share/doc/cmake/html/variable/CMAKE_SKIP_RPATH.html
 share/doc/cmake/html/variable/CMAKE_SOURCE_DIR.html
 share/doc/cmake/html/variable/CMAKE_STAGING_PREFIX.html
-share/doc/cmake/html/variable/CMAKE_STANDARD_LIBRARIES.html
 share/doc/cmake/html/variable/CMAKE_STATIC_LIBRARY_PREFIX.html
 share/doc/cmake/html/variable/CMAKE_STATIC_LIBRARY_SUFFIX.html
 share/doc/cmake/html/variable/CMAKE_STATIC_LINKER_FLAGS.html
@@ -4291,6 +4343,8 @@ share/doc/cmake/html/variable/CMAKE_SYSTEM_PROGRAM_PATH.html
 share/doc/cmake/html/variable/CMAKE_SYSTEM_VERSION.html
 share/doc/cmake/html/variable/CMAKE_TOOLCHAIN_FILE.html
 share/doc/cmake/html/variable/CMAKE_TRY_COMPILE_CONFIGURATION.html
+share/doc/cmake/html/variable/CMAKE_TRY_COMPILE_PLATFORM_VARIABLES.html
+share/doc/cmake/html/variable/CMAKE_TRY_COMPILE_TARGET_TYPE.html
 share/doc/cmake/html/variable/CMAKE_TWEAK_VERSION.html
 share/doc/cmake/html/variable/CMAKE_USER_MAKE_RULES_OVERRIDE.html
 share/doc/cmake/html/variable/CMAKE_USER_MAKE_RULES_OVERRIDE_LANG.html
@@ -4302,7 +4356,6 @@ share/doc/cmake/html/variable/CMAKE_VS_DEVENV_COMMAND.html
 share/doc/cmake/html/variable/CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD.html
 share/doc/cmake/html/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.html
 share/doc/cmake/html/variable/CMAKE_VS_MSBUILD_COMMAND.html
-share/doc/cmake/html/variable/CMAKE_VS_MSDEV_COMMAND.html
 share/doc/cmake/html/variable/CMAKE_VS_NsightTegra_VERSION.html
 share/doc/cmake/html/variable/CMAKE_VS_PLATFORM_NAME.html
 share/doc/cmake/html/variable/CMAKE_VS_PLATFORM_TOOLSET.html
@@ -4361,6 +4414,7 @@ share/doc/cmake/html/variable/CTEST_DROP_SITE_PASSWORD.html
 share/doc/cmake/html/variable/CTEST_DROP_SITE_USER.html
 share/doc/cmake/html/variable/CTEST_EXTRA_COVERAGE_GLOB.html
 share/doc/cmake/html/variable/CTEST_GIT_COMMAND.html
+share/doc/cmake/html/variable/CTEST_GIT_INIT_SUBMODULES.html
 share/doc/cmake/html/variable/CTEST_GIT_UPDATE_CUSTOM.html
 share/doc/cmake/html/variable/CTEST_GIT_UPDATE_OPTIONS.html
 share/doc/cmake/html/variable/CTEST_HG_COMMAND.html
