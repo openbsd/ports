@@ -1,0 +1,12 @@
+$OpenBSD: patch-ctlrender_tiff_file_cc,v 1.1 2016/08/08 07:35:38 dcoppa Exp $
+--- ctlrender/tiff_file.cc.orig	Sun Aug  7 22:09:18 2016
++++ ctlrender/tiff_file.cc	Sun Aug  7 22:09:47 2016
+@@ -61,7 +61,7 @@
+ #include <sys/param.h>
+ #include <math.h>
+ #include <Iex.h>
+-#include <alloca.h>
++#include <stdlib.h>
+ 
+ void tiff_read_multiplane(TIFF *t, float scale, ctl::dpx::fb<float> * pixels);
+ void tiff_read_interleaved(TIFF *t, float scale, ctl::dpx::fb<float> * pixels);
