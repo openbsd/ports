@@ -1,9 +1,0 @@
-$OpenBSD: patch-scripts_pyuic4-wrapper_sh,v 1.1 2016/03/02 14:39:10 landry Exp $
---- scripts/pyuic4-wrapper.sh.orig	Tue Mar  1 16:28:08 2016
-+++ scripts/pyuic4-wrapper.sh	Tue Mar  1 16:28:20 2016
-@@ -7,4 +7,4 @@ shift 3
- 
- export LD_LIBRARY_PATH PYTHONPATH
- 
--exec python $(dirname $0)/pyuic4-wrapper.py $@
-+exec ${MODPY_BIN} $(dirname $0)/pyuic4-wrapper.py $@

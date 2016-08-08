@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.52 2016/06/01 14:05:22 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2016/08/08 17:45:40 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.14.3
+DISTNAME =	qgis-2.16.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	11.0 \
-		qgis_app	1.0 \
-		qgis_gui	10.0 \
+SHARED_LIBS =	qgis_core	12.0 \
+		qgis_app	2.0 \
+		qgis_gui	11.0 \
 		qgis_analysis	6.0 \
-		qgis_server	3.0 \
-		qgispython	3.0 \
+		qgis_server	4.0 \
+		qgispython	4.0 \
 		qgis_networkanalysis 1.0
 
 HOMEPAGE =	http://www.qgis.org/
@@ -52,6 +52,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		geo/spatialite/libspatialite \
 		geo/spatialindex \
 		devel/gsl \
+		devel/qjson \
 		security/qca2 \
 		databases/postgresql
 
@@ -60,7 +61,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		mng png pthread util stdc++ z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca2 \
-		QtTest spatialindex spatialite sqlite3 qscintilla2
+		QtTest spatialindex spatialite sqlite3 qscintilla2 qjson
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 
 CONFIGURE_ENV+=	VERBOSE=1
@@ -70,7 +71,6 @@ pre-configure:
 		# otherwise takes precedence over systemwide file
 		rm -f ${WRKSRC}/cmake/FindIconv.cmake
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
-		${SUBST_CMD} ${WRKSRC}/scripts/pyuic4-wrapper.{py,sh}
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}

@@ -1,0 +1,115 @@
+$OpenBSD: patch-utf,v 1.1 2016/08/08 17:45:40 landry Exp $
+
+Revert selected chunks of
+https://github.com/qgis/QGIS/commit/c9838ccea481c8ca87c4e1647099cfe78777e795
+sip blows at runtime when accessing QGIS_VERSION. Sigh.
+
+http://hub.qgis.org/issues/15347
+
+From c9838ccea481c8ca87c4e1647099cfe78777e795 Mon Sep 17 00:00:00 2001
+From: "Juergen E. Fischer" <jef@norbit.de>
+Date: Sun, 10 Jul 2016 12:09:02 +0200
+Subject: [PATCH] support utf-8 encoded release names
+
+---
+ cmake/Txt2Tags.cmake                        | 2 +-
+ doc/INSTALL.html                            | 4 ++--
+ doc/news.html                               | 4 ++--
+ python/core/qgis.sip                        | 6 +++---
+ src/app/qgisapp.cpp                         | 4 ++--
+ src/app/qgspluginregistry.cpp               | 2 +-
+ src/core/qgis.cpp                           | 4 ++--
+ src/core/qgis.h                             | 4 ++--
+ src/core/qgsmaplayer.cpp                    | 2 +-
+ tests/src/core/testqgsexpressioncontext.cpp | 4 ++--
+ 10 files changed, 18 insertions(+), 18 deletions(-)
+
+--- python/core/qgis.sip.orig
++++ python/core/qgis.sip
+@@ -31,7 +31,7 @@ class QGis
+     // Version constants
+     //
+     // Version string
+-    static QString QGIS_VERSION;
++    static const char* QGIS_VERSION;
+     // Version number used for comparing versions using the "Check QGIS Version" function
+     static const int QGIS_VERSION_INT;
+     // Release name
+ 
+--- src/app/qgisapp.cpp.orig
++++ src/app/qgisapp.cpp
+@@ -376,7 +376,7 @@ static void setTitleBarText_( QWidget & qgisApp )
+ {
+   QString caption = QgisApp::tr( "QGIS " );
+ 
+-  if ( QGis::QGIS_VERSION.endsWith( "Master" ) )
++  if ( QString( QGis::QGIS_VERSION ).endsWith( "Master" ) )
+   {
+     caption += QString( "%1" ).arg( QGis::QGIS_DEV_VERSION );
+   }
+@@ -8114,7 +8114,7 @@ void QgisApp::duplicateVectorStyle( QgsVectorLayer* srcLayer, QgsVectorLayer* de
+         "qgis", "http://mrcc.com/qgis.dtd", "SYSTEM" );
+     QDomDocument doc( documentType );
+     QDomElement rootNode = doc.createElement( "qgis" );
+-    rootNode.setAttribute( "version", QGis::QGIS_VERSION );
++    rootNode.setAttribute( "version", QString( "%1" ).arg( QGis::QGIS_VERSION ) );
+     doc.appendChild( rootNode );
+     QString errorMsg;
+     srcLayer->writeSymbology( rootNode, doc, errorMsg );
+--- src/app/qgspluginregistry.cpp.orig
++++ src/app/qgspluginregistry.cpp
+@@ -237,7 +237,7 @@ bool QgsPluginRegistry::checkQgisVersion( const QString& minVersion, const QStri
+   }
+ 
+   // our qgis version - cut release name after version number
+-  QString qgisVersion = QGis::QGIS_VERSION.section( '-', 0, 0 );
++  QString qgisVersion = QString( QGis::QGIS_VERSION ).section( '-', 0, 0 );
+ 
+   QStringList qgisVersionParts = qgisVersion.split( '.' );
+ 
+--- src/core/qgis.cpp.orig
++++ src/core/qgis.cpp
+@@ -36,7 +36,7 @@
+ //
+ 
+ // Version string
+-QString QGis::QGIS_VERSION( QString::fromUtf8( VERSION ) );
++const char* QGis::QGIS_VERSION = VERSION;
+ 
+ // development version
+ const char* QGis::QGIS_DEV_VERSION = QGSVERSION;
+--- src/core/qgis.h.orig
++++ src/core/qgis.h
+@@ -43,7 +43,7 @@ class CORE_EXPORT QGis
+     // Version constants
+     //
+     // Version string
+-    static QString QGIS_VERSION;
++    static const char* QGIS_VERSION;
+     // Version number used for comparing versions using the "Check QGIS Version" function
+     static const int QGIS_VERSION_INT;
+     // Release name
+ 
+--- src/core/qgsmaplayer.cpp.orig
++++ src/core/qgsmaplayer.cpp
+@@ -1258,7 +1258,7 @@ void QgsMapLayer::exportNamedStyle( QDomDocument &doc, QString &errorMsg )
+   QDomDocument myDocument( documentType );
+ 
+   QDomElement myRootNode = myDocument.createElement( "qgis" );
+-  myRootNode.setAttribute( "version", QGis::QGIS_VERSION );
++  myRootNode.setAttribute( "version", QString( "%1" ).arg( QGis::QGIS_VERSION ) );
+   myDocument.appendChild( myRootNode );
+ 
+   myRootNode.setAttribute( "hasScaleBasedVisibilityFlag", hasScaleBasedVisibility() ? 1 : 0 );
+--- tests/src/core/testqgsexpressioncontext.cpp.orig
++++ tests/src/core/testqgsexpressioncontext.cpp
+@@ -495,7 +495,7 @@ void TestQgsExpressionContext::globalScope()
+   QgsExpression expOsName( "var('qgis_os_name')" );
+   QgsExpression expPlatform( "var('qgis_platform')" );
+ 
+-  QCOMPARE( expVersion.evaluate( &context ).toString(), QGis::QGIS_VERSION );
++  QCOMPARE( expVersion.evaluate( &context ).toString(), QString( QGis::QGIS_VERSION ) );
+   QCOMPARE( expVersionNo.evaluate( &context ).toInt(), QGis::QGIS_VERSION_INT );
+   QCOMPARE( expReleaseName.evaluate( &context ).toString(), QString( QGis::QGIS_RELEASE_NAME ) );
+   QCOMPARE( expAccountName.evaluate( &context ).toString(), QgsApplication::userLoginName() );
+

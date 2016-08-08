@@ -1,0 +1,36 @@
+$OpenBSD: patch-python_core___init___py,v 1.1 2016/08/08 17:45:40 landry Exp $
+
+Revert https://github.com/qgis/QGIS/commit/1bc17e6c4f40ab64a7d3443886e13f926dab23b7
+http://hub.qgis.org/issues/15347
+
+--- python/core/__init__.py.orig	Wed Aug  3 14:27:13 2016
++++ python/core/__init__.py	Wed Aug  3 14:33:26 2016
+@@ -30,7 +30,7 @@ import string
+ from qgis._core import *
+ 
+ 
+-def register_function(function, arg_count, group, usesgeometry=False, referenced_columns=[QgsFeatureRequest.AllAttributes], **kwargs):
++def register_function(function, arg_count, group, usesgeometry=False, **kwargs):
+     """
+     Register a Python function to be used as a expression function.
+ 
+@@ -59,8 +59,8 @@ def register_function(function, arg_count, group, uses
+     """
+     class QgsExpressionFunction(QgsExpression.Function):
+ 
+-        def __init__(self, func, name, args, group, helptext='', usesgeometry=True, referencedColumns=QgsFeatureRequest.AllAttributes, expandargs=False):
+-            QgsExpression.Function.__init__(self, name, args, group, helptext, usesgeometry, referencedColumns)
++        def __init__(self, func, name, args, group, helptext='', usesgeometry=True, expandargs=False):
++            QgsExpression.Function.__init__(self, name, args, group, helptext, usesgeometry)
+             self.function = func
+             self.expandargs = expandargs
+ 
+@@ -100,7 +100,7 @@ def register_function(function, arg_count, group, uses
+ 
+     function.__name__ = name
+     helptext = helptemplate.safe_substitute(name=name, doc=helptext)
+-    f = QgsExpressionFunction(function, name, arg_count, group, helptext, usesgeometry, referenced_columns, expandargs)
++    f = QgsExpressionFunction(function, name, arg_count, group, helptext, usesgeometry, expandargs)
+ 
+     # This doesn't really make any sense here but does when used from a decorator context
+     # so it can stay.
