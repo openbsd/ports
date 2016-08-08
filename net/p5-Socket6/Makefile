@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/24 14:57:34 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2016/08/08 13:09:35 bluhm Exp $
 
 COMMENT =		Perl defines relating to AF_INET6 sockets
 
-DISTNAME =		Socket6-0.27
+DISTNAME =		Socket6-0.28
 
 CATEGORIES =		net devel
 
