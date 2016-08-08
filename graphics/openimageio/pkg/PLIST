@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/10/04 12:59:15 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/08/08 14:14:01 pascal Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -12,12 +12,14 @@ include/OpenImageIO/SHA1.h
 include/OpenImageIO/argparse.h
 include/OpenImageIO/array_view.h
 include/OpenImageIO/color.h
+include/OpenImageIO/coordinate.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/errorhandler.h
 include/OpenImageIO/export.h
 include/OpenImageIO/filesystem.h
 include/OpenImageIO/filter.h
 include/OpenImageIO/fmath.h
+include/OpenImageIO/fstream_mingw.h
 include/OpenImageIO/hash.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
@@ -38,7 +40,6 @@ include/OpenImageIO/pugixml.hpp
 include/OpenImageIO/refcnt.h
 include/OpenImageIO/simd.h
 include/OpenImageIO/strided_ptr.h
-include/OpenImageIO/string_ref.h
 include/OpenImageIO/string_view.h
 include/OpenImageIO/strutil.h
 include/OpenImageIO/sysutil.h
@@ -54,7 +55,7 @@ include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
 @lib lib/libOpenImageIO_Util.so.${LIBOpenImageIO_Util_VERSION}
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.3.0
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION}
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1
@@ -66,3 +67,12 @@ share/doc/OpenImageIO/
 share/doc/OpenImageIO/CHANGES
 share/doc/OpenImageIO/LICENSE
 share/doc/OpenImageIO/openimageio.pdf
+share/fonts/
+share/fonts/oiio/
+share/fonts/oiio/DroidSans-Bold.ttf
+share/fonts/oiio/DroidSans.ttf
+share/fonts/oiio/DroidSansMono.ttf
+share/fonts/oiio/DroidSerif-Bold.ttf
+share/fonts/oiio/DroidSerif-BoldItalic.ttf
+share/fonts/oiio/DroidSerif-Italic.ttf
+share/fonts/oiio/DroidSerif.ttf

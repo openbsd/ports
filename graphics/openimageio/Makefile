@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2016/07/06 21:30:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/08/08 14:14:01 pascal Exp $
 
 COMMENT =		library for reading and writing images
 
 GH_ACCOUNT = 		OpenImageIO
 GH_PROJECT = 		oiio
-V =			1.5.20
+V =			1.6.16
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		1
 
-SHARED_LIBS +=		OpenImageIO		3.0 # 1.0
-SHARED_LIBS +=  	OpenImageIO_Util	0.0 # 1.5
+SHARED_LIBS +=		OpenImageIO		4.0 # 1.0
+SHARED_LIBS +=  	OpenImageIO_Util	1.0 # 1.5
 
 CATEGORIES =		graphics devel
 
@@ -30,7 +29,11 @@ WANTLIB += raw_r stdc++ swscale tiff webp z
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt4
+			x11/qt4 \
+			gcc4
+
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 
 BUILD_DEPENDS =		textproc/txt2man
 
@@ -47,7 +50,6 @@ LIB_DEPENDS =		devel/boost \
 			graphics/libraw
 
 CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages" \
-			-DNOTHREADS=ON \
 			-DUSE_OPENCV=OFF
 
 CXXFLAGS +=		-pthread
