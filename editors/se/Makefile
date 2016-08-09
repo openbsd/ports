@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/04 15:13:47 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/09 01:35:01 jturner Exp $
 
 COMMENT =		screen oriented version of the classic text editor ed
 
 DISTNAME =		se-3.0.1
+REVISION =		0
 CATEGORIES =		editors
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://se-editor.org/
 MASTER_SITES =		http://se-editor.org/dist/
