@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/09 01:34:05 jturner Exp $
 
 COMMENT =		C++ MIME library
 
 DISTNAME =		mimetic-0.9.8
 CATEGORIES =		mail devel
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		mimetic	1.0 #0.0
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://www.codesink.org/mimetic_mime_library.html
 MASTER_SITES =		http://www.codesink.org/download/

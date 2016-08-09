@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/06/13 09:22:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/09 01:34:05 jturner Exp $
 
 PORTROACH =		limit:^0
 
@@ -6,9 +6,7 @@ COMMENT =		console-based e-mail client with Lua scripting support
 
 DISTNAME =		lumail-0.26
 CATEGORIES =		mail
-REVISION =		3
-
-MAINTAINER =		James Turner <james@calminferno.net>
+REVISION =		4
 
 HOMEPAGE =		http://lumail.org/
 MASTER_SITES =		http://lumail.org/download/
