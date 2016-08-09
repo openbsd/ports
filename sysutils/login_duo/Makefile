@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/24 00:33:25 jturner Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/09 02:11:26 jturner Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
-V =			1.9.18
+V =			1.9.19
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
 CATEGORIES =		sysutils
@@ -29,10 +29,10 @@ FAKE_FLAGS =		docdir="${PREFIX}/share/doc/login_duo" \
 			sbindir="${PREFIX}/sbin" \
 			sysconfdir="${PREFIX}/share/examples/login_duo"
 
-TEST_DEPENDS =		${MODPY_RUN_DEPENDS}
+# Broken on OpenBSD
+NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/login_duo/login_duo.8
-	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' ${WRKSRC}/tests/*.py
 
 .include <bsd.port.mk>
