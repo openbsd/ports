@@ -1,0 +1,32 @@
+$OpenBSD: patch-app_core_gimptagcache_c,v 1.1 2016/08/09 12:00:00 tb Exp $
+--- app/core/gimptagcache.c.orig	Fri Aug 21 00:57:25 2015
++++ app/core/gimptagcache.c	Tue Aug  9 03:58:01 2016
+@@ -404,8 +404,8 @@ gimp_tag_cache_save (GimpTagCache *cache)
+ 
+       identifier_string = g_markup_escape_text (g_quark_to_string (cache_rec->identifier), -1);
+       g_string_append_printf (buf, "\n  <resource identifier=\"%s\" checksum=\"%s\">\n",
+-                              identifier_string,
+-                              g_quark_to_string (cache_rec->checksum));
++                              identifier_string ? identifier_string : "(NULL)",
++                              cache_rec->checksum ? g_quark_to_string (cache_rec->checksum) : "(NULL)");
+       g_free (identifier_string);
+ 
+       for (tag_iterator = cache_rec->tags;
+@@ -494,7 +494,7 @@ gimp_tag_cache_load (GimpTagCache *cache)
+   else
+     {
+       g_printerr ("Failed to parse tag cache: %s\n",
+-                  error ? error->message : NULL);
++                  error ? error->message : "(NULL)");
+     }
+ 
+   g_free (filename);
+@@ -591,7 +591,7 @@ gimp_tag_cache_load_text (GMarkupParseContext  *contex
+       else
+         {
+           g_warning ("dropping invalid tag '%s' from '%s'\n", buffer,
+-                     g_quark_to_string (parse_data->current_record.identifier));
++                     parse_data->current_record.identifier ? g_quark_to_string (parse_data->current_record.identifier) : "(NULL)");
+         }
+     }
+ }
