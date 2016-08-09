@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.14 2016/06/27 06:29:07 espie Exp $
+.\"	$OpenBSD: proot.1,v 1.15 2016/08/09 13:45:01 schwarze Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 27 2016 $
+.Dd $Mdocdate: August 9 2016 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -22,71 +22,70 @@
 .Nd ports chroot builder
 .Sh SYNOPSIS
 .Nm proot
-.Bk -words
 .Op Fl B Ar chroot
 .Op Fl c Ar configfile
 .Op Fl S Ar srcroot
-.Op Ar key Ns = Ns Ar value ...
-.Ek
+.Op Ar attribute Ns = Ns Ar value ...
 .Sh DESCRIPTION
 .Nm
 can fill up a chroot directory for ports building usage.
 It will perform a set of
 .Cm actions
 that should fill up a destination
-.Fl B Ar chroot
-from the base system
-.Po
-or an optional
-.Fl S Ar srcroot
-.Pc .
+.Ar chroot
+directory from the base system (or an optional
+.Ar srcroot ) .
 .Pp
 As far as possible,
 .Nm
 will create hardlinks instead of copying files, so that cloning an existing
 chroot will often only consume i-nodes.
 .Pp
-Attribute values can be specified on the command line
-.Ar key Ns = Ns Ar value .
-Some attribute take several values.
+Some attributes can take multiple values.
 As a shorthand, several values can be specified in a row without having
 to repeat the
-.Ar key ,
-for instance:
-.Bd -literal -offset indent
-.Nm Fl B Ar /build Ar actions Ns = Ns Ar unpopulate_light Ar check_symlinks
-.Ed
+.Ar attribute
+name, for instance:
+.Pp
+.Dl proot -B /build actions=unpopulate_light check_symlinks
 .Pp
 A
-.Fl c Ar configfile
-mostly contains one key=value per line, with comments starting
-with a #.
+.Ar configfile
+mostly contains one
+.Ar attribute Ns = Ns Ar value
+assignment per line, with comments starting with a
+.Sq #
+character.
 .Pp
-Possible actions (in order of execution) are as follows:
-.Bl -tag -width Dssssssssssss -compact -offset indent
+Possible
+.Cm actions
+(in the order of execution) are as follows:
+.Pp
+.Bl -tag -width unpopulate_light -compact -offset indent
 .It Cm check_mount
 Verify the state of mount points in the system, specifically whether
 the chroot area is not nodev.
 .It Cm unpopulate
 Remove everything from the chroot apart from selected data.
 See
-.Sq PRESERVED AREAS AND UNPOPULATE
+.Sx Preserved areas and unpopulate
 for details.
 .It Cm snapshot
-Copy things from a
-.Ar snapshot ,
-to retrieve from an url, or from the local filesystem.
+Copy things from a snapshot,
+to be retrieved from an url or from the local filesystem.
 .It Cm locate
-Copy things from the base system, perusing the system locate databases.
+Copy things from the base system, perusing the system
+.Xr locate 1
+databases.
 .Bf Sy
 Note that this might erase data, in case it doesn't match the base system
 and is in the way.
 .Ef
 .It Cm resolv
 Copy the system
-.Pa resolv.conf
+.Xr resolv.conf 5
 and
-.Pa hosts
+.Xr hosts 5
 files.
 .It Cm copy_ports
 Copy the ports tree.
@@ -98,7 +97,7 @@ Rerun
 .It Cm unpopulate_light
 Remove everything from the chroot apart from selected data.
 See
-.Sq PRESERVED AREAS AND UNPOPULATE
+.Sx Preserved areas and unpopulate
 for details.
 .It Cm devs
 Regenerate devices using
@@ -107,13 +106,13 @@ and
 .Xr dev_mkdb 8 .
 .It Cm checkout_ports
 Check out a ports tree from cvs using a provided
-.Ar portscvs
-location .
+.Cm portscvs
+location.
 .It Cm ports_subdirs
 Create ports infrastructure subdirs, according to users required for
 .Xr dpb 1 .
 If
-.Ar chown_all
+.Cm chown_all
 is set to 1,
 .Xr chown 2
 any content within to the appropriate users.
@@ -122,7 +121,7 @@ Double-check filled up chroot for files we don't know about.
 .It Cm write_mk
 If some directory values are different from the default,
 write a skeleton
-.Pa mk.conf
+.Xr mk.conf 5
 file.
 .It Cm check_symlinks
 Report absolute symlinks that exist under the
@@ -133,7 +132,8 @@ white-listing known base system links.
 By default,
 .Nm
 will run
-.Cm check_mount , unpopulate_light , devs , ldconfig , ports_subdirs , resolv , write_mk .
+.Cm check_mount , unpopulate_light , devs , ldconfig , ports_subdirs ,
+.Cm resolv , write_mk .
 If
 .Cm unpopulate
 is used,
@@ -147,102 +147,101 @@ or
 otherwise.
 .Pp
 Add actions with
-.Ar actions Ns = Ns value ,
+.Cm actions Ns = Ns Ar value ,
 remove them with
-.Ar actions Ns = Ns - Ns value .
+.Cm actions Ns =- Ns Ar value .
 .Pp
 Other attributes are:
-.Bl -tag -width Dssssssssss -offset indent -compact
-.It Ar chroot
+.Pp
+.Bl -tag -width mkconf_lines -offset indent -compact
+.It Cm chroot
 same as
 .Fl B Ar chroot
-.It Ar srcroot
+.It Cm srcroot
 same as
 .Fl S Ar srcroot
-.It Ar PORT_USER
+.It Cm PORT_USER
 Who the ports tree should belong to
-.It Ar BUILD_USER
+.It Cm BUILD_USER
 Who to build as (defaults to _pbuild)
-.It Ar FETCH_USER
+.It Cm FETCH_USER
 Who to fetch as (defaults to _pfetch)
-.It Ar LOG_USER
-Who to write log as
-.Po
-defaults to
-.Ar BUILD_USER
-.Pc
-.It Ar PORTSDIR
-.It Ar DISTDIR
-.It Ar PACKAGE_REPOSITORY
-.It Ar PLIST_REPOSITORY
-.It Ar LOCKDIR
-.It Ar WRKOBJDIR
+.It Cm LOG_USER
+Who to write log as (defaults to
+.Cm BUILD_USER )
+.It Cm PORTSDIR
+.It Cm DISTDIR
+.It Cm PACKAGE_REPOSITORY
+.It Cm PLIST_REPOSITORY
+.It Cm LOCKDIR
+.It Cm WRKOBJDIR
 same as in
 .Xr bsd.port.mk 5
 .Pp
-.It Ar chown_all
-set to 1 to have action
+.It Cm chown_all
+set to 1 to have the action
 .Cm ports_subdirs
 change owners of every content.
-.It Ar extra
+.It Cm extra
 extra file to copy into the
 .Ar chroot .
-.It Ar key
+.It Cm key
 Name of a
 .Xr signify 1
 signing key.
 Just give the stem, as in
-.Ar key Ns = Ns stem .
+.Cm key Ns = Ns Ar stem .
 This will copy
 .Pa /etc/signify/stem-pkg.{pub,sec}
 and set
 .Va SIGNING_PARAMETERS
-in generated
+in the generated
 .Pa /etc/mk.conf
-accordingly.
-.It Ar mkconf_lines
+file accordingly.
+.It Cm mkconf_lines
 Add lines to the generated
 .Pa /etc/mk.conf .
-.It Ar mkconf_tail
+.It Cm mkconf_tail
 Add file to the generated
 .Pa /etc/mk.conf .
-.It Ar preserve
+.It Cm preserve
 Supplemental directory to preserve during
 .Cm unpopulate .
-.It Ar sets
+.It Cm sets
 Add or remove sets compared to the default list required to build ports
 (defaults to base comp etc xbase xfont xshare xetc).
-.It Ar snapshot
+.It Cm snapshot
 Location of snapshot for the
 .Cm snapshot
 action.
-.It Ar portscvs
+.It Cm portscvs
 Where to get a ports snapshot for the
 .Cm checkout_ports
 action.
 .El
-.Ss PRESERVED AREAS AND UNPOPULATE
+.Ss Preserved areas and unpopulate
 The following entries won't be erased during a
 .Cm locate
 or
 .Cm unpopulate*
 action:
+.Pp
 .Bl -dash -compact -offset indent
 .It
 Items explicitly marked with the
-.Ar preserve
+.Cm preserve
 attribute.
 .It
 A
-.Ar snapshot
+.Cm snapshot
 directory containing the base sets.
 .It
 All the ports specific sub directories if they are defined,
 namely
-.Ar DISTDIR , WRKOBJDIR, LOGDIR, PACKAGE_REPOSITORY , PLIST_REPOSITY , LOCKDIR .
+.Cm DISTDIR , WRKOBJDIR, LOGDIR, PACKAGE_REPOSITORY , PLIST_REPOSITY , LOCKDIR .
 .It
 The
-.Ar PORTSDIR
+.Cm PORTSDIR
 itself, unless
 .Cm copy_ports
 is used.
@@ -250,7 +249,7 @@ is used.
 Any mountpoint.
 .It
 Data explicitly copied through other actions, e.g.,
-.Ar extra
+.Cm extra
 files, key files...
 .El
 .Sh EXAMPLES
@@ -286,9 +285,8 @@ is a startup script for
 .Xr dpb 1 .
 .Pp
 Initial invocation on the master could be
-.Bd -offset indent
-.Nm Fl c Ar configfile Ar chown_all Ns = Ns Ar 1
-.Ed
+.Pp
+.D1 Nm Fl c Ar configfile Cm chown_all Ns =1
 .Pp
 to ensure correct permissions for existing data under various
 ports directories.
