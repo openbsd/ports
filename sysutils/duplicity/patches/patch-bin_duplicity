@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_duplicity,v 1.8 2016/05/25 17:41:36 danj Exp $
---- bin/duplicity.orig	Tue Apr 19 13:38:57 2016
-+++ bin/duplicity	Mon Apr 25 17:23:16 2016
-@@ -1262,10 +1262,12 @@ def check_resources(action):
+$OpenBSD: patch-bin_duplicity,v 1.9 2016/08/09 11:16:53 danj Exp $
+--- bin/duplicity.orig	Sun Jul 24 18:27:49 2016
++++ bin/duplicity	Wed Aug  3 18:47:34 2016
+@@ -1268,10 +1268,12 @@ def check_resources(action):
                             log.ErrorCode.get_ulimit_failed)
          maxopen = min([l for l in (soft, hard) if l > -1])
          if maxopen < 1024:
