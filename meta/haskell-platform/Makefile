@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/20 16:28:54 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/09 17:44:00 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
 PKGNAME =	haskell-platform-7.10.3
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://hackage.haskell.org/platform/
 
@@ -29,11 +29,13 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # haskell platform: bin-package-db-0.0.0.0, binary-0.7.5.0,
 # ghc-prim-0.4.0.0, haskeline-0.7.2.1, hoopl-3.10.0.2, integer-gmp-1.0.0.0,
 # terminfo-0.4.0.1, unix-2.7.1.0.
+#
+# Deliberately changed: devel/hs-async (from 2.0.2 to 2.1.0).
 
 RUN_DEPENDS +=	lang/ghc=7.10.3
 
 # Additional libraries required for haskell platform:
-RUN_DEPENDS +=	devel/hs-async=2.0.2 \
+RUN_DEPENDS +=	devel/hs-async=2.1.0 \
 		textproc/hs-attoparsec=0.13.0.1 \
 		devel/hs-case-insensitive=1.2.0.5 \
 		www/hs-cgi=3001.2.2.2 \
