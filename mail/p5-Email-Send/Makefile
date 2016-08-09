@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/09 07:38:20 matthieu Exp $
 
 COMMENT= 	simply sending email
 
@@ -6,12 +6,14 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 DISTNAME=	Email-Send-2.201
+REVISION=	0
 CATEGORIES=	mail
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-Return-Value \
+RUN_DEPENDS=	devel/p5-Module-Pluggable \
+		devel/p5-Return-Value \
 		mail/p5-Email-Address \
 		mail/p5-Email-Simple
 
