@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/08 16:09:41 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/09 18:52:59 danj Exp $
 
 COMMENT =		deduplicating backup program
 
 MODPY_EGG_VERSION =	1.0.6
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
+REVISION =		0
 
 MODPY_PI =		Yes
 
 CATEGORIES =		sysutils
 
-MAINTAINER =		Michael Reed <m.reed@mykolab.com>
+MAINTAINER =		Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
 # BSD-3
 PERMIT_PACKAGE_CDROM =	Yes
