@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/02/01 14:24:02 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/09 08:25:20 dcoppa Exp $
 
 COMMENT =		shell-like programming in Haskell
 
 DISTNAME =		shelly-1.6.5
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
@@ -11,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	FQwPgYmtUonBRg4nimRsDk
+MODGHC_PACKAGE_KEY =	Ch98gf1jZ072OFqT0kkV5B
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

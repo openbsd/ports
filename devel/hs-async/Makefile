@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/09 08:25:20 dcoppa Exp $
 
 COMMENT =		asynchronous IO operations
 
@@ -6,8 +6,7 @@ COMMENT =		asynchronous IO operations
 # Please do *not* update without thinking.
 PORTROACH =		ignore:1
 
-DISTNAME =		async-2.0.2
-REVISION =		1
+DISTNAME =		async-2.1.0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -19,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	DTdw00O3YMaL0S98EkJDXS
+MODGHC_PACKAGE_KEY =	5jwpzKVjQQAElehhWvNUXP
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-stm>=2.2,<2.5
