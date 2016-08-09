@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.265 2016/08/08 12:17:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.266 2016/08/09 12:43:02 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.20.5
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -23,27 +24,14 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
-WANTLIB += canberra canberra-gtk3 crypto cryptui db dbus-1 dbus-glib-1
-WANTLIB += drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
-WANTLIB += edata-book-1.2 edataserver-1.2 edataserverui-1.2 enchant
-WANTLIB += epoxy expat ffi fontconfig freetype gailutil-3 gbm
-WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += geocode-glib gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkspell3-3
-WANTLIB += gweather-3 harfbuzz harfbuzz-icu ical icalss icalvcal
-WANTLIB += iconv icudata icui18n icuuc intl javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 lber-2.4 ldap-2.4 ltdl lzma m notify
-WANTLIB += nspr4 nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pst pthread
-WANTLIB += pthread-stubs sasl2 secret-1 smime3 softokn3 soup-2.4
-WANTLIB += sqlite3 ssl ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0
-WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-xfixes xml2 xslt z
+WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
+WANTLIB += cryptui ebook-1.2 ebook-contacts-1.2 ecal-1.2 edataserver-1.2
+WANTLIB += edataserverui-1.2 enchant gailutil-3 gcr-base-3 gcr-ui-3
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 gtk-3 gtkspell3-3 gweather-3 ical icalvcal
+WANTLIB += intl ldap-2.4 m notify nspr4 nss3 pango-1.0 pangocairo-1.0
+WANTLIB += pst pthread secret-1 smime3 soup-2.4 sqlite3 webkitgtk-3.0
+WANTLIB += xml2
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -69,6 +57,8 @@ RUN_DEPENDS +=		textproc/highlight
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+# without --as-needed, evolution takes ages to start
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
 YACC=			bison
 
