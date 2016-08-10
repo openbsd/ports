@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/03 14:20:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/10 20:53:27 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 DPB_PROPERTIES =	parallel nojunk
@@ -7,9 +7,8 @@ COMMENT =		convert HTML to PDF using Webkit
 
 GH_ACCOUNT =		wkhtmltopdf
 GH_PROJECT =		wkhtmltopdf
-GH_TAGNAME =		0.12.2.4
-REVISION =		3
-QT_COMMIT =		7e48a1fac7e0f9aefccd01e9871f987da3a62fda
+GH_TAGNAME =		0.12.3.2
+QT_COMMIT =		8dae19a82231e87366d81c683bafcb025aea9c1d
 MASTER_SITES0 =		https://github.com/wkhtmltopdf/qt/archive/
 DISTFILES =		${DISTNAME}.tar.gz \
 			wkhtmltopdf-qt-${QT_COMMIT}{${QT_COMMIT}}.tar.gz:0
