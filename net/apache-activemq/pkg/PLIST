@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/05/03 18:23:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/08/10 13:39:49 jasper Exp $
 @newgroup _activemq:714
 @newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/db/activemq:/sbin/nologin
 @comment needs a RW homedir to prevent java.io.IOException
@@ -276,9 +276,6 @@ activemq/examples/openwire/swissarmy/src/TopicListener.java
 activemq/examples/openwire/swissarmy/src/TopicPublisher.java
 activemq/examples/openwire/swissarmy/src/jndi.properties
 activemq/examples/openwire/swissarmy/src/log4j-jms.properties
-activemq/examples/other/
-activemq/examples/other/perfharness/
-activemq/examples/other/perfharness/perfharness-activemq.sh
 activemq/examples/stomp/
 activemq/examples/stomp/cpp/
 activemq/examples/stomp/cpp/Listener.cpp
@@ -363,11 +360,11 @@ activemq/lib/activemq-spring-${V}.jar
 activemq/lib/activemq-web-${V}.jar
 activemq/lib/camel/
 activemq/lib/camel/activemq-camel-${V}.jar
-activemq/lib/camel/camel-core-2.16.2.jar
-activemq/lib/camel/camel-jms-2.16.2.jar
-activemq/lib/camel/camel-spring-2.16.2.jar
+activemq/lib/camel/camel-core-2.16.3.jar
+activemq/lib/camel/camel-jms-2.16.3.jar
+activemq/lib/camel/camel-spring-2.16.3.jar
 activemq/lib/extra/
-activemq/lib/extra/mqtt-client-1.12.jar
+activemq/lib/extra/mqtt-client-1.13.jar
 activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
 activemq/lib/geronimo-jms_1.1_spec-1.1.1.jar
 activemq/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
@@ -387,12 +384,12 @@ activemq/lib/optional/activemq-pool-${V}.jar
 activemq/lib/optional/activemq-runtime-config-${V}.jar
 activemq/lib/optional/activemq-shiro-${V}.jar
 activemq/lib/optional/activemq-stomp-${V}.jar
-activemq/lib/optional/commons-beanutils-1.8.3.jar
+activemq/lib/optional/commons-beanutils-1.9.2.jar
 activemq/lib/optional/commons-codec-1.9.jar
 activemq/lib/optional/commons-collections-3.2.2.jar
 activemq/lib/optional/commons-dbcp2-2.1.1.jar
 activemq/lib/optional/commons-lang-2.6.jar
-activemq/lib/optional/commons-net-3.3.jar
+activemq/lib/optional/commons-net-3.5.jar
 activemq/lib/optional/commons-pool2-2.4.2.jar
 activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
 activemq/lib/optional/guava-12.0.jar
@@ -420,7 +417,7 @@ activemq/lib/optional/log4j-1.2.17.jar
 activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
 activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-activemq/lib/optional/proton-j-0.12.1.jar
+activemq/lib/optional/proton-j-0.13.1.jar
 activemq/lib/optional/scala-library-2.11.0.jar
 activemq/lib/optional/shiro-core-1.2.4.jar
 activemq/lib/optional/shiro-spring-1.2.4.jar
@@ -577,6 +574,7 @@ activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/Delete
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteSubscriber.class
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/MoveMessage.class
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/PurgeDestination.class
+activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/RetryMessage.class
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/SendMessage.class
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/
 activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$1.class
@@ -696,22 +694,6 @@ activemq/webapps/api/WEB-INF/classes/
 activemq/webapps/api/WEB-INF/classes/jolokia-access.xml
 activemq/webapps/api/WEB-INF/web.xml
 activemq/webapps/favicon.ico
-activemq/webapps/fileserver/
-activemq/webapps/fileserver/META-INF/
-activemq/webapps/fileserver/META-INF/LICENSE
-activemq/webapps/fileserver/META-INF/NOTICE
-activemq/webapps/fileserver/WEB-INF/
-activemq/webapps/fileserver/WEB-INF/classes/
-activemq/webapps/fileserver/WEB-INF/classes/org/
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter$GuardedHttpServletRequest.class
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter.class
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/IOHelper.class
-activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/RestFilter.class
-activemq/webapps/fileserver/WEB-INF/web.xml
-activemq/webapps/fileserver/index.html
 activemq/webapps/images/
 activemq/webapps/images/activemq-logo.png
 activemq/webapps/images/asf-logo.png
@@ -778,6 +760,8 @@ share/examples/activemq/conf/credentials.properties
 @sample ${SYSCONFDIR}/activemq/credentials.properties
 share/examples/activemq/conf/groups.properties
 @sample ${SYSCONFDIR}/activemq/groups.properties
+share/examples/activemq/conf/java.security
+@sample ${SYSCONFDIR}/activemq/java.security
 share/examples/activemq/conf/jetty-realm.properties
 @sample ${SYSCONFDIR}/activemq/jetty-realm.properties
 share/examples/activemq/conf/jetty.xml
