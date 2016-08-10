@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+@bin bin/sysmon
+@bin bin/sysmond
+@man man/man1/sysmon.1
+@man man/man5/sysmon.conf.5
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/sysmon/
+share/doc/sysmon/Changes.html
+share/doc/sysmon/LICENSE
+share/doc/sysmon/README
+share/doc/sysmon/binaries.html
+share/doc/sysmon/config.html
+share/doc/sysmon/docs.html
+share/doc/sysmon/index.html
+share/doc/sysmon/jclient.jpg
+share/doc/sysmon/net-example.png
+share/doc/sysmon/reporting.xml-spec.txt
+share/doc/sysmon/sysmon.conf.man.html
+share/doc/sysmon/sysmon.jpg
+share/doc/sysmon/sysmon.man.html
+share/examples/sysmon/
+share/examples/sysmon/sysmon.conf.dist
+@sample ${SYSCONFDIR}/sysmond.conf
+@rcscript ${RCDIR}/sysmond

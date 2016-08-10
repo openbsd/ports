@@ -1,0 +1,39 @@
+$OpenBSD: README,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Sysmon is a lightweight, customizable and scalable remote monitoring tool that
+doesn't require any software installs or changes on the monitored target.
+
+There are two compiled programs that come with sysutils/sysmon: sysmon(1) and
+sysmond.
+
+sysmon(1) is a utility that can be run from the shell to check a remote host.
+For instance, to check port 80 on the OpenBSD web site:
+
+    $ sysmon http://www.openbsd.org 80
+
+sysmond is the daemon component of the port. It requires a correctly configured
+sysmon.conf(5) file, particulary as it is generally setup with hierarchical list
+of dependent hosts, normally starting with sysmond's default gateway, i.e., the
+"root" knob.
+
+${PREFIX}/share/examples/sysmon/sysmon.conf.dist provides a useful template to
+start with. Dispersed infrastructures, clients and staffs can be accomodated.
+
+To understand the syntax for each included check, refer to
+${PREFIX}/share/doc/sysmon/config.html.
+
+For instance, one might set the following in sysmond.conf(5), and use the
+variables to populate the "contact" setting for particular remote host(s):
+
+        set client0 = "client0@client0.tld";
+	set nyc-noc = "nyc-noc@entity.tld";
+
+To further scale sysmon, consider using separate configuration files per entity,
+client or other data-normalized category in the main sysmon.conf(5) file:
+
+        include "/etc/sysmon/client0.conf";
+	include "/etc/sysmon/nyc-colo.conf";

@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: sysmond.rc,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/sysmond"
+daemon_flags="-f ${SYSCONFDIR}/sysmon.conf"
+daemon_timeout="60"
+
+. /etc/rc.d/rc.subr
+
+rc_reload() {
+	${daemon} ${daemon_flags} -t && pkill -HUP -xf "${pexp}"
+}
+
+rc_cmd $1
