@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.398 2016/08/10 20:53:14 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -238,6 +238,7 @@
      SUBDIR += sysclean
      SUBDIR += sysgen
      SUBDIR += syslog-ng
+     SUBDIR += sysmon
      SUBDIR += tabled
      SUBDIR += tarsnap
      SUBDIR += tarsnap-gui
