@@ -1,0 +1,17 @@
+$OpenBSD: patch-runtime_gvim_desktop,v 1.1 2016/08/10 15:54:29 sthen Exp $
+--- runtime/gvim.desktop.orig	Sun Aug  7 20:20:50 2016
++++ runtime/gvim.desktop	Mon Aug  8 02:02:56 2016
+@@ -71,11 +71,11 @@ Comment[wa]=Asspougnî des fitchîs tecses
+ Comment[zh_CN]=编辑文本文件
+ Comment[zh_TW]=編輯文字檔
+ TryExec=gvim
+-Exec=gvim -f %F
++Exec=${TRUEPREFIX}/bin/gvim -f %F
+ Terminal=false
+ Type=Application
+ Keywords=Text;editor;
+-Icon=gvim
++Icon=vim
+ Categories=Utility;TextEditor;
+ StartupNotify=true
+ MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.149 2016/05/29 12:26:23 natano Exp $
+# $OpenBSD: Makefile,v 1.150 2016/08/10 15:54:29 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		7.4.1467
+V=		7.4.2181
 DISTNAME=	vim-$V
 DISTFILES=	vim-$V{v$V}.tar.gz
 PKGNAME-main=	vim-$V
 PKGNAME-lang=	vim-lang-$V
-REVISION-main=	1
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vim/vim/archive/
@@ -157,11 +156,11 @@ post-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
-	    ${PREFIX}/share/vim/vimfiles/syntax/
+		${PREFIX}/share/vim/vimfiles/syntax/
 
 .if ! ${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_DATA} ${FILESDIR}/gvim.desktop \
+	${SUBST_DATA} ${WRKDIST}/runtime/gvim.desktop \
 		${PREFIX}/share/applications/gvim.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKDIST}/runtime/vim48x48.png ${PREFIX}/share/pixmaps/vim.png
