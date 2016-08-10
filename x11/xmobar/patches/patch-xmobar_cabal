@@ -1,25 +1,24 @@
-$OpenBSD: patch-xmobar_cabal,v 1.16 2016/07/05 10:08:07 dcoppa Exp $
---- xmobar.cabal.orig	Tue Apr 14 19:08:19 2015
-+++ xmobar.cabal	Tue Jul  5 11:49:38 2016
-@@ -93,10 +93,12 @@ executable xmobar
-       Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
+$OpenBSD: patch-xmobar_cabal,v 1.17 2016/08/10 08:50:24 dcoppa Exp $
+--- xmobar.cabal.orig	Mon Aug  8 23:40:59 2016
++++ xmobar.cabal	Wed Aug 10 10:22:49 2016
+@@ -103,9 +103,10 @@ executable xmobar
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
        Plugins.Monitors.Uptime, Plugins.Monitors.Weather,
--      Plugins.Monitors.Bright, Plugins.Monitors.CatInt
-+      Plugins.Monitors.Bright, Plugins.Monitors.CatInt,
-+      Plugins.Monitors.Batt.Binding
+       Plugins.Monitors.Bright, Plugins.Monitors.CatInt,
+-      Plugins.Monitors.UVMeter
++      Plugins.Monitors.UVMeter, Plugins.Monitors.Batt.Binding
  
-     ghc-prof-options:   -prof -auto-all
      ghc-options: -funbox-strict-fields -Wall -fno-warn-unused-do-bind
 +    c-sources: src/Plugins/Monitors/Batt/apm.c
      extra-libraries: Xrandr Xrender
  
      build-depends:
-@@ -140,6 +142,7 @@ executable xmobar
+@@ -154,6 +155,8 @@ executable xmobar
         build-depends: hinotify == 0.3.*
         other-modules: Plugins.Mail, Plugins.MBox
         cpp-options: -DINOTIFY
-+       ld-options: -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
++       ld-options: -Wl,-rpath=${LOCALBASE}/lib/inotify
++       extra-libraries: inotify
  
      if flag(with_iwlib) || flag(all_extensions)
         extra-libraries: iw
