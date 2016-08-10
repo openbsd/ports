@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/10 14:30:39 jasper Exp $
 
 COMMENT =	python package to parse and build CSS
 
 CATEGORIES =	textproc
 
-MODPY_EGG_VERSION =	0.9.10
+MODPY_EGG_VERSION =	1.0.1
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 MODPY_PI =	Yes
-REVISION =	0
-
-EXTRACT_SUFX =	.zip
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +17,12 @@ HOMEPAGE =	http://cthedot.de/cssutils/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =	python3
+FLAVOR ?=
+
+# Requires older of devel/py-pbr
+NO_TEST =		Yes
 
 post-install:
 	chmod 444 ${WRKINST}/${MODPY_SITEPKG}/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
