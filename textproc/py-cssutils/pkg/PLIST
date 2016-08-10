@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/08/10 14:30:39 jasper Exp $
-bin/csscapture
-bin/csscombine
-bin/cssparse
+@comment $OpenBSD: PLIST,v 1.6 2016/08/10 14:51:27 jasper Exp $
+bin/csscapture${MODPY_BIN_SUFFIX}
+bin/csscombine${MODPY_BIN_SUFFIX}
+bin/cssparse${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/cssutils/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

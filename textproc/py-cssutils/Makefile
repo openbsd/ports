@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/10 14:30:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/10 14:51:27 jasper Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -26,5 +26,8 @@ NO_TEST =		Yes
 
 post-install:
 	chmod 444 ${WRKINST}/${MODPY_SITEPKG}/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
+.for b in csscapture csscombine cssparse
+	mv -f ${PREFIX}/bin/$b ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}
+.endfor
 
 .include <bsd.port.mk>
