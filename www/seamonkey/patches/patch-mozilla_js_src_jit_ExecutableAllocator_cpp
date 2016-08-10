@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_js_src_jit_ExecutableAllocator_cpp,v 1.1 2016/08/10 20:19:45 naddy Exp $
+--- mozilla/js/src/jit/ExecutableAllocator.cpp.orig	Tue Jan 19 03:47:37 2016
++++ mozilla/js/src/jit/ExecutableAllocator.cpp	Mon Aug  8 21:59:32 2016
+@@ -88,7 +88,7 @@ ExecutableAllocator::addSizeOfCode(JS::CodeSizes* size
+     }
+ }
+ 
+-#if TARGET_OS_IPHONE
++#if defined(__OpenBSD__) || TARGET_OS_IPHONE
+ bool ExecutableAllocator::nonWritableJitCode = true;
+ #else
+ bool ExecutableAllocator::nonWritableJitCode = false;

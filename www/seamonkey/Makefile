@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2016/03/17 19:39:38 landry Exp $
+# $OpenBSD: Makefile,v 1.188 2016/08/10 20:19:45 naddy Exp $
 
 BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
 
@@ -16,6 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-4.5
+REVISION-main =		0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
