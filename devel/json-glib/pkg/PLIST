@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/04/20 06:19:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/08/11 07:34:30 jasper Exp $
 @bin bin/json-glib-format
 @bin bin/json-glib-validate
 include/json-glib-1.0/
@@ -40,7 +40,6 @@ share/gtk-doc/html/json-glib/ch04.html
 share/gtk-doc/html/json-glib/ch06.html
 share/gtk-doc/html/json-glib/home.png
 share/gtk-doc/html/json-glib/index.html
-share/gtk-doc/html/json-glib/index.sgml
 share/gtk-doc/html/json-glib/ix01.html
 share/gtk-doc/html/json-glib/ix02.html
 share/gtk-doc/html/json-glib/ix03.html
