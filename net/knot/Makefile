@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/11 12:04:17 jca Exp $
 
 PORTROACH =		limit:^1\.
 PORTROACH_COMMENT =	knot-2.x uses __thread and lmdb
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-1.6.7
+DISTNAME =		knot-1.6.8
 
 SHARED_LIBS +=  zscanner             0.0      # .0.1
 SHARED_LIBS +=  knot                 0.0      # .0.1
