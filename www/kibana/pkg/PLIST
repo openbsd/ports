@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/07/15 11:10:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/11 10:59:08 jasper Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 kibana/
@@ -320,6 +320,15 @@ kibana/node_modules/angular-route/angular-route.min.js.map
 kibana/node_modules/angular-route/bower.json
 kibana/node_modules/angular-route/index.js
 kibana/node_modules/angular-route/package.json
+kibana/node_modules/angular-sanitize/
+kibana/node_modules/angular-sanitize/LICENSE.md
+kibana/node_modules/angular-sanitize/README.md
+kibana/node_modules/angular-sanitize/angular-sanitize.js
+kibana/node_modules/angular-sanitize/angular-sanitize.min.js
+kibana/node_modules/angular-sanitize/angular-sanitize.min.js.map
+kibana/node_modules/angular-sanitize/bower.json
+kibana/node_modules/angular-sanitize/index.js
+kibana/node_modules/angular-sanitize/package.json
 kibana/node_modules/angular/README.md
 kibana/node_modules/angular/angular-csp.css
 kibana/node_modules/angular/angular.js
@@ -1086,7 +1095,6 @@ kibana/node_modules/babel-core/node_modules/core-js/
 kibana/node_modules/babel-core/node_modules/core-js/CHANGELOG.md
 kibana/node_modules/babel-core/node_modules/core-js/Gruntfile.js
 kibana/node_modules/babel-core/node_modules/core-js/LICENSE
-kibana/node_modules/babel-core/node_modules/core-js/README.md
 kibana/node_modules/babel-core/node_modules/core-js/bower.json
 kibana/node_modules/babel-core/node_modules/core-js/build/
 kibana/node_modules/babel-core/node_modules/core-js/build/Gruntfile.ls
@@ -2657,7 +2665,6 @@ kibana/node_modules/babel-runtime/node_modules/core-js/
 kibana/node_modules/babel-runtime/node_modules/core-js/CHANGELOG.md
 kibana/node_modules/babel-runtime/node_modules/core-js/Gruntfile.js
 kibana/node_modules/babel-runtime/node_modules/core-js/LICENSE
-kibana/node_modules/babel-runtime/node_modules/core-js/README.md
 kibana/node_modules/babel-runtime/node_modules/core-js/bower.json
 kibana/node_modules/babel-runtime/node_modules/core-js/build/
 kibana/node_modules/babel-runtime/node_modules/core-js/build/Gruntfile.ls
@@ -9469,6 +9476,7 @@ kibana/node_modules/lodash/utility/uniqueId.js
 kibana/node_modules/marked/
 kibana/node_modules/marked/.npmignore
 kibana/node_modules/marked/.travis.yml
+kibana/node_modules/marked/Gulpfile.js
 kibana/node_modules/marked/LICENSE
 kibana/node_modules/marked/Makefile
 kibana/node_modules/marked/README.md
@@ -12060,11 +12068,9 @@ kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browseri
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/README.md
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/
-kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/Gruntfile.js
-kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/HISTORY.md
+kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/CHANGELOG.md
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/LICENSE
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/README.md
-kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/bower.json
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako.js
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako.min.js
@@ -12072,8 +12078,6 @@ kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browseri
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_deflate.min.js
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_inflate.js
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/dist/pako_inflate.min.js
-kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/doc/
-kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/doc/index.html
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/index.js
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/lib/
 kibana/node_modules/webpack/node_modules/node-libs-browser/node_modules/browserify-zlib/node_modules/pako/lib/deflate.js
@@ -12942,6 +12946,9 @@ kibana/node_modules/wreck/package.json
 @owner _kibana
 @group _kibana
 kibana/optimize/
+@mode 0644
+kibana/optimize/.babelcache.json
+@mode
 kibana/optimize/bundles/
 @mode 0644
 kibana/optimize/bundles/commons.bundle.js
