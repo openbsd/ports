@@ -1,11 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 20:28:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/11 10:27:33 sthen Exp $
 
-COMMENT=	BIND stub resolver library
+COMMENT=	BIND stub resolver library for special use cases
+
+# XXX As mentioned in pkg/DESCR:
+#
+# This port is not for general purpose use and has known issues; it is
+# intended *only* for special cases where software relies on resolver
+# internals and cannot be adapted to the standard resolver in libc
+# or use an alternative library. There are symbol conflicts; expect
+# crashes and corruption in some cases.
 
 V=		6.0
 DISTNAME=	libbind-6.0
 EPOCH=		0
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	bind                      5.0 # 6.1
 
