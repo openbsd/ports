@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/30 10:01:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/11 07:42:52 bentley Exp $
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 
@@ -33,7 +33,7 @@ LIB_DEPENDS =	archivers/zziplib \
 		x11/gtk+2
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded"
 
 MODULES =	devel/gettext \
 		gcc4 \
