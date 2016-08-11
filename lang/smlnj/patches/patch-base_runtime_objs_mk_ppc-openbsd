@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_runtime_objs_mk_ppc-openbsd,v 1.2 2014/03/09 19:49:12 jasper Exp $
+$OpenBSD: patch-base_runtime_objs_mk_ppc-openbsd,v 1.3 2016/08/11 11:34:13 jca Exp $
 
 Add support for OpenBSD/powerpc.
 
---- base/runtime/objs/mk.ppc-openbsd.orig	Sun Feb  2 12:28:30 2014
-+++ base/runtime/objs/mk.ppc-openbsd	Sun Feb  2 12:28:45 2014
+--- base/runtime/objs/mk.ppc-openbsd.orig	Thu Aug 11 12:40:29 2016
++++ base/runtime/objs/mk.ppc-openbsd	Thu Aug 11 12:57:49 2016
 @@ -0,0 +1,25 @@
 +# mk.ppc-openbsd
 +#
@@ -21,7 +21,7 @@ Add support for OpenBSD/powerpc.
 +
 +XOBJS =
 +XLIBS =		../c-libs/dl/libunix-dynload.a
-+LD_LIBS =
++LD_LIBS =	-Wl,-z,wxneeded
 +BASE_DEFS =	
 +DEFS =          $(XDEFS) $(BASE_DEFS) -DHOST_PPC -DTARGET_PPC -DOPSYS_UNIX -DOPSYS_OPENBSD -DDLOPEN
 +TARGET =	PPC

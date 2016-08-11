@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_runtime_objs_mk_x86-openbsd,v 1.1 2013/12/08 13:23:47 jasper Exp $
+$OpenBSD: patch-base_runtime_objs_mk_x86-openbsd,v 1.2 2016/08/11 11:34:13 jca Exp $
 
 Honor CC/CFLAGS.
 
---- base/runtime/objs/mk.x86-openbsd.orig	Sun Dec  8 14:19:27 2013
-+++ base/runtime/objs/mk.x86-openbsd	Sun Dec  8 14:19:57 2013
-@@ -8,9 +8,9 @@ SHELL =		/bin/sh
+--- base/runtime/objs/mk.x86-openbsd.orig	Tue Dec  2 17:50:18 2008
++++ base/runtime/objs/mk.x86-openbsd	Thu Aug 11 12:46:54 2016
+@@ -8,14 +8,14 @@ SHELL =		/bin/sh
  MAKE =		gmake
  
  ARFLAGS =	Trcv
@@ -17,3 +17,9 @@ Honor CC/CFLAGS.
  #CPP =		/usr/bin/cpp -P
  
  XOBJS =
+ XLIBS =		../c-libs/dl/libunix-dynload.a
+-LD_LIBS =
++LD_LIBS =	-Wl,-z,wxneeded
+ BASE_DEFS =	
+ DEFS =          $(XDEFS) $(BASE_DEFS) -DHOST_X86 -DTARGET_X86 -DOPSYS_UNIX -DOPSYS_OPENBSD -DDLOPEN
+ TARGET =	X86
