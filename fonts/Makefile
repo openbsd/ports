@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/08/05 05:34:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2016/08/11 08:18:02 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -24,6 +24,7 @@
      SUBDIR += freefarsi-ttf
      SUBDIR += freefont-ttf
      SUBDIR += freefonts
+     SUBDIR += gentium
      SUBDIR += gohufont
      SUBDIR += hack-fonts
      SUBDIR += hermit-font
