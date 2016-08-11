@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.8 2016/08/11 09:12:22 jasper Exp $
+
+Set correct API version.
+
+--- configure.orig	Thu Aug 11 10:52:58 2016
++++ configure	Thu Aug 11 10:53:06 2016
+@@ -78,7 +78,7 @@ def configure(gtk, libbgee, valac):
+ 				'gio-2.0', 
+ 				'glib-2.0', 
+ 				'gtk+-3.0',
+-				'webkit2gtk-3.0', 
++				'webkit2gtk-4.0', 
+ 				'libsoup-2.4',
+ 				'libnotify',
+ 				'sqlite3',
