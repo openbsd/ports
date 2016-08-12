@@ -1,0 +1,12 @@
+$OpenBSD: patch-cvs2gitdump_1,v 1.1 2016/08/12 16:40:48 juanfra Exp $
+--- cvs2gitdump.1.orig	Fri Aug 12 17:44:47 2016
++++ cvs2gitdump.1	Fri Aug 12 17:45:15 2016
+@@ -21,7 +21,7 @@
+ is a small python script which imports a cvs tree into a git repository.
+ .Nm
+ has a small footprint, supports incremental imports and converts tags to HEAD.
+-It's very fast because the conversion is done on memory.
++It's very fast because the conversion is done in memory.
+ .Pp
+ Options:
+ .Bl -tag -width Ds

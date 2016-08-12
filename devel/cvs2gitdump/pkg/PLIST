@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/01 08:38:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/12 16:40:48 juanfra Exp $
 bin/cvs2gitdump
 bin/cvs2svndump
-share/doc/cvs2gitdump/
-share/doc/cvs2gitdump/README.md
-share/doc/cvs2gitdump/TODO.md
+@man man/man1/cvs2gitdump.1
+@man man/man1/cvs2svndump.1

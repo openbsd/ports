@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/01 08:38:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/12 16:40:48 juanfra Exp $
 
 COMMENT =		import cvs tree into git or subversion
 
-DISTNAME =		cvs2gitdump-20160420
+DISTNAME =		cvs2gitdump-20160808
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		cvs2gitdump
-GH_COMMIT =		be9ce4de19ebd34ca42aa45a560220e9f2f2c885
+GH_COMMIT =		a37cb15738b1dd9e8efa10072e02bdfb7b3969de
 
 CATEGORIES =		devel
 
@@ -24,7 +24,6 @@ do-install:
 .for i in git svn
 	${INSTALL_SCRIPT} ${WRKSRC}/cvs2$idump.py ${PREFIX}/bin/cvs2$idump
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cvs2gitdump
-	${INSTALL_DATA} ${WRKSRC}/*.md ${PREFIX}/share/doc/cvs2gitdump/
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
