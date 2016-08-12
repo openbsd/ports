@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/06/01 22:22:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/08/12 08:09:34 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_VERSION=	2.2.0
+WAPP_VERSION=	2.2.1
 EPOCH=		0
 
 PLUGINS_WITH_DEFCONF= \
@@ -21,8 +21,8 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		lang \
 		quickitems
 
-MINOR=		414
-RPMVER=		185.1
+MINOR=		43
+RPMVER=		199.1
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
@@ -45,7 +45,7 @@ MODPHP_BUILDDEP=No
 MODPHP_RUNDEP=	No
 
 BUILD_DEPENDS=	converters/rpm2cpio
-RUN_DEPENDS=	mail/zarafa/zarafa,-web # php-mapi
+RUN_DEPENDS=	mail/zarafa/zarafa,-mapi # php-mapi
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
