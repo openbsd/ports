@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/06/30 07:25:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/08/12 19:28:10 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -364,10 +364,10 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Protocols.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Xref.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.Yecc.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Compile.beam
-lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Check.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Clean.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Compile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Get.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Loadpaths.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Precompile.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Tree.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Deps.Unlock.beam
