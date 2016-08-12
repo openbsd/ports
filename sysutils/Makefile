@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2016/08/10 20:53:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.399 2016/08/12 23:24:56 juanfra Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -16,6 +16,7 @@
      SUBDIR += bchunk
      SUBDIR += beats
      SUBDIR += binwalk
+     SUBDIR += bitrot
      SUBDIR += borgbackup
      SUBDIR += bubblemon-dockapp
      SUBDIR += cdrtools
