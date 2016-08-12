@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.278 2016/07/06 09:40:42 sthen Exp $
+$OpenBSD: user.list,v 1.279 2016/08/12 11:32:48 edd Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -173,7 +173,7 @@ id  user		group		port options
 662 _transmission	_transmission	net/transmission
 #663 _tproxy		_tproxy		www/transproxy
 664 _mdnsd		_mdnsd		net/openmdns
-665 _hgd		_hgd		audio/hgd
+#665 _hgd		_hgd		audio/hgd
 666 _dovenull		_dovenull	mail/dovecot
 667 _icinga		_icinga		net/icinga/core
 668 _jenkins		_jenkins	devel/jenkins
