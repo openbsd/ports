@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/26 13:03:36 ajacoutot Exp $
-@bin bin/sip
-include/python${MODPY_VERSION}/sip.h
+@comment $OpenBSD: PLIST,v 1.7 2016/08/12 08:37:37 jasper Exp $
+@bin bin/sip${MODPY_BIN_SUFFIX}
+include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/sip.h
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sipconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sipdistutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
-lib/python${MODPY_VERSION}/site-packages/sipconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
-lib/python${MODPY_VERSION}/site-packages/sipdistutils.pyc
 share/doc/${MODPY_PY_PREFIX}sip/
 share/doc/${MODPY_PY_PREFIX}sip/annotations.txt
 share/doc/${MODPY_PY_PREFIX}sip/build_system.txt
