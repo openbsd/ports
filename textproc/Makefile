@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2016/08/10 14:31:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.506 2016/08/12 08:39:42 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -332,6 +332,8 @@
      SUBDIR += py-ICU,python3
      SUBDIR += py-MarkupSafe
      SUBDIR += py-MarkupSafe,python3
+     SUBDIR += py-PEG2
+     SUBDIR += py-PEG2,python3
      SUBDIR += py-alabaster
      SUBDIR += py-alabaster,python3
      SUBDIR += py-chardet
