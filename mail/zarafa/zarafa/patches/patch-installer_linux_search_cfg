@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.7 2016/04/01 18:08:10 robert Exp $
---- installer/linux/search.cfg.orig	Wed Mar 23 12:14:33 2016
-+++ installer/linux/search.cfg	Fri Apr  1 13:20:45 2016
+$OpenBSD: patch-installer_linux_search_cfg,v 1.8 2016/08/12 08:09:05 robert Exp $
+--- installer/linux/search.cfg.orig	Mon Aug  8 09:23:22 2016
++++ installer/linux/search.cfg	Mon Aug  8 09:24:29 2016
 @@ -2,19 +2,19 @@
  # INDEXED SEARCH SERVICE SETTINGS
  
@@ -48,12 +48,3 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.7 2016/04/01 18:08:10 robert Exp 
  
  ##############################################################
  # LOG SETTINGS
-@@ -91,7 +91,7 @@ index_attachments	= no
- index_attachment_max_size = 5M
- 
- # Scripts to attachment to text parser
--index_attachment_parser = /etc/zarafa/searchscripts/attachments_parser
-+index_attachment_parser = ${SYSCONFDIR}/zarafa/searchscripts/attachments_parser
- 
- # Maximum amount of memory which a parser may use in bytes (set to 0 for unlimited)
- # If this maximum is exceeded the parser will be killed

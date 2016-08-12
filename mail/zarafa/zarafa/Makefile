@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.198 2016/04/01 18:30:48 robert Exp $
+# $OpenBSD: Makefile,v 1.199 2016/08/12 08:09:05 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
-COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
+COMMENT-mapi=	zarafa MAPI extensions for PHP
 
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
-PKGNAME-web=	zarafa-webaccess-${V}
+PKGNAME-mapi=	zarafa-mapi-${V}
 
 CATEGORIES=	mail www productivity
 
@@ -29,7 +29,7 @@ SHARED_LIBS +=  zcp_common_util      0.0 # 0.0
 SHARED_LIBS +=  zcp_pyconv           0.0 # 0.0
 SHARED_LIBS +=  zcp_pydirector       0.0 # 0.0
 
-MULTI_PACKAGES=	-main -web
+MULTI_PACKAGES=	-main -mapi
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -74,14 +74,14 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		textproc/libical \
 		textproc/libxml
 
-WANTLIB-web += ${WANTLIB}
-WANTLIB-web += freebusy ical icalmapi icalss inetmapi mapi
-WANTLIB-web += xml2
-WANTLIB-web += ffi gmp gnutls hogweed nettle p11-kit stdc++ tasn1
-WANTLIB-web += zcp_common_mapi zcp_common_util
+WANTLIB-mapi += ${WANTLIB}
+WANTLIB-mapi += freebusy ical icalmapi icalss inetmapi mapi
+WANTLIB-mapi += xml2
+WANTLIB-mapi += ffi gmp gnutls hogweed nettle p11-kit stdc++ tasn1
+WANTLIB-mapi += zcp_common_mapi zcp_common_util
 
-LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
-RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
+LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
+RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS} \
 		 ${MODGETTEXT_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
@@ -93,13 +93,6 @@ MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		installer/linux/zarafa7-upgrade \
 		ECtools/utils/zarafa-mailbox-permissions \
 		ECtools/utils/zarafa-set-oof
-
-WEBROOT=	${VARBASE}/www
-
-PREFIX-web=	${WEBROOT}
-INSTDIR=	${PREFIX-web}/zarafa-webaccess
-
-SUBST_VARS=	INSTDIR PREFIX-web
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
@@ -149,15 +142,13 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 WRKDIST=	${WRKDIR}/zcp-${V}.${BUILD}/
 
 post-patch:
-	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \
-		${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg.dist
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/gcp ${WRKDIR}/bin/cp
 	ln -sf ${LOCALBASE}/bin/gmv ${WRKDIR}/bin/mv
 
 pre-configure:
 	cd ${WRKSRC}/installer/linux && \
-		for i in *.cfg createuser.dotforward ; do \
+		for i in *.cfg ldap.m4 createuser.dotforward ; do \
 			${SUBST_CMD} $$i; \
 			perl -pi -e 's/\r\n/\n/;' $$i; done
 	for i in ${SUB_SCRIPTS}; do \
@@ -175,25 +166,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
-	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/include \
-		${PREFIX}/share/examples/php-${MODPHP_VERSION}
-
-	${SUBST_CMD} ${WRKBUILD}/php-webclient-ajax/config.php.dist
-	find ${WRKBUILD}/php-webclient-ajax -name \*.orig -or -name \*.bak \
-		-or -name \*.beforesubst | xargs rm
-	cd ${WRKBUILD}/php-webclient-ajax && tar cf - ./ | \
-		tar -xf - -C ${WRKINST}${INSTDIR}
-	mv ${WRKINST}${INSTDIR}/debug.php \
-		${WRKINST}${INSTDIR}/debug.php.disabled
-	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa.conf \
-		${WRKINST}/${INSTDIR}/zarafa.conf.dist
-	find ${PREFIX}/share/php -type f \
-		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
-	for i in ${WRKINST}${INSTDIR}/server/language/* ; do \
-		msgfmt -f -v -o $$i/LC_MESSAGES/zarafa_webaccess.mo $$i/LC_MESSAGES/zarafa_webaccess.po ; \
-		rm $$i/LC_MESSAGES/zarafa_webaccess.po ; \
-	done
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
@@ -209,7 +182,6 @@ post-install:
 		${PREFIX}/share/examples/zarafa
 	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODPHP_DO_SAMPLE}.ini
-	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
 	rm ${PREFIX}/share/examples/cron.daily/zarafa-client-update
 	rm ${PREFIX}/share/examples/zarafa/unix.cfg
 	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh

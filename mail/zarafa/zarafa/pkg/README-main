@@ -1,11 +1,11 @@
-$OpenBSD: README-main,v 1.24 2015/11/02 11:06:34 robert Exp $
+$OpenBSD: README-main,v 1.25 2016/08/12 08:09:05 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 *** Upgrading users: refer to zarafa documentation on the web to check
-*** if any particular step is required after upgrading to a new version. 
+*** if any particular step is required after upgrading to a new version.
 
 6.40 -> 7.0 upgrade
 ===================
@@ -52,7 +52,7 @@ See the following URL for other MTA integration:
 Alternatively add the following .forward file under the user(s) home
 directory that will use Zarafa:
 "|${TRUEPREFIX}/sbin/zarafa-dagent <username>"
- 
+
 You can automate this step by copying
     ${TRUEPREFIX}/share/examples/zarafa/createuser.dotforward
 to
@@ -63,35 +63,8 @@ Zarafa.
 Zarafa webaccess
 ================
 
-Zarafa webaccess is installed under
-    ${INSTDIR}
-
-Configuration is done in the file
-    ${INSTDIR}/config.php
-
-With Apache, AllowOverride settings are required on the ${INSTDIR}
-directory. You can configure this as follows:
-    # ln -sf ${PREFIX-web}/conf/modules.sample/zarafa.conf /var/www/conf/modules
-
-If you want to debug the webaccess, copy the following file
-   ${INSTDIR}/debug.php.disabled
-to
-   ${INSTDIR}/debug.php
-The debugging output will then be available under:
-   ${INSTDIR}/debug.txt
-
-The Zarafa webaccess will be accessible from
-    http://<hostname>/webaccess/
-
-HTTP server locale
-------------------
-LANG needs to be set to an UTF-8 compliant locale on the Web server.
-When using httpd(8), create a login(1) class under /etc/login.conf(5)
-called after the Apache rc.d(8) script, i.e. "httpd":
-
-httpd:\
-	:setenv=LANG=en_US.UTF-8:\
-	:tc=daemon:
+Zarafa Webaccess is obsolete and has been removed. Please
+use zarafa-webapp.
 
 Documentation and help
 ======================

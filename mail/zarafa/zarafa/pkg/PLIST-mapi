@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST-mapi,v 1.1 2016/08/12 08:09:05 robert Exp $
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
+@conflict php5-mapi-*
+@pkgpath mail/zarafa/webaccess
+@pkgpath mail/zarafa/zarafa,-php
+@pkgpath mail/zarafa/zarafa,-web
+lib/php-${MODPHP_VERSION}/
+lib/php-${MODPHP_VERSION}/modules/
+lib/php-${MODPHP_VERSION}/modules/mapi.la
+lib/php-${MODPHP_VERSION}/modules/mapi.so
+share/examples/php-${MODPHP_VERSION}/
+share/examples/php-${MODPHP_VERSION}/mapi.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapi.ini
+share/php/
+share/php/mapi/
+share/php/mapi/class.baseexception.php
+share/php/mapi/class.baserecurrence.php
+share/php/mapi/class.freebusypublish.php
+share/php/mapi/class.mapiexception.php
+share/php/mapi/class.meetingrequest.php
+share/php/mapi/class.recurrence.php
+share/php/mapi/class.taskrecurrence.php
+share/php/mapi/class.taskrequest.php
+share/php/mapi/mapi.util.php
+share/php/mapi/mapicode.php
+share/php/mapi/mapidefs.php
+share/php/mapi/mapiguid.php
+share/php/mapi/mapitags.php

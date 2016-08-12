@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
---- common/ECLogger.cpp.orig	Wed Apr 20 13:13:54 2016
-+++ common/ECLogger.cpp	Wed Apr 20 20:27:28 2016
+$OpenBSD: patch-common_ECLogger_cpp,v 1.23 2016/08/12 08:09:05 robert Exp $
+--- common/ECLogger.cpp.orig	Mon Aug  8 09:19:14 2016
++++ common/ECLogger.cpp	Mon Aug  8 09:23:17 2016
 @@ -27,6 +27,10 @@
  #include <zarafa/stringutil.h>
  #include "charset/localeutil.h"
@@ -79,9 +79,9 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
  #else
  	char msgbuffer[_LOG_BUFSIZE];
 +#ifndef __OpenBSD__
-+	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, va);
-+#else
  	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, datalocale, va);
++#else
++	_vsnprintf_l(msgbuffer, sizeof msgbuffer, format, va);
 +#endif
  	syslog(levelmap[loglevel & EC_LOGLEVEL_MASK], "%s", msgbuffer);
  #endif
@@ -103,7 +103,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%p] ", pthread_self());
  #else
 -	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (unsigned int)pthread_self());
-+	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%016lX] ", (uintptr_t)pthread_self());
++	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (uintptr_t)pthread_self());
  #endif
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%5d] ", getpid());
@@ -112,7 +112,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%p] ", pthread_self());
  #else
 -	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (unsigned int)pthread_self());
-+	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%016lX] ", (uintptr_t)pthread_self());
++	len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[0x%08x] ", (uintptr_t)pthread_self());
  #endif
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer + off, sizeof msgbuffer - off, "[%5d] ", getpid());
@@ -145,7 +145,7 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
 @@ -1202,8 +1236,12 @@ void generic_sigsegv_handler(ECLogger *lpLogger, const
  #endif
  	ec_log_crit("Signal errno: %s, signal code: %d", strerror(si->si_errno), si->si_code);
- 	ec_log_crit("Sender pid: %d, sender uid: %d, si_satus: %d", si->si_pid, si->si_uid, si->si_status);
+ 	ec_log_crit("Sender pid: %d, sender uid: %d, si_status: %d", si->si_pid, si->si_uid, si->si_status);
 -	ec_log_crit("User time: %ld, system time: %ld, signal value: %d", si->si_utime, si->si_stime, si->si_value.sival_int);
 +	ec_log_crit("User time: %lld, system time: %lld, signal value: %d", si->si_utime, si->si_stime, si->si_value.sival_int);
 +#ifndef __OpenBSD__
@@ -155,4 +155,4 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.22 2016/04/20 18:38:41 robert Exp $
 +#endif
  	lpLogger->Log(EC_LOGLEVEL_FATAL, "When reporting this traceback, please include Linux distribution name (and version), system architecture and Zarafa version.");
  #ifndef _WIN32
- 	kill(getpid(), signr);
+ 	/*
