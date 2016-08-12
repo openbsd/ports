@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/08/12 22:53:35 bluhm Exp $
 
 COMMENT =		make URLs for Gravatars from an email address
 
-DISTNAME =		Gravatar-URL-1.06
-REVISION =		0
+DISTNAME =		Gravatar-URL-1.07
 
 CATEGORIES =		www mail
 
@@ -16,10 +15,10 @@ CPAN_AUTHOR =		MSCHWERN
 
 MODULES =		cpan
 PKG_ARCH =		*
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/p5-Test-Warn
-RUN_DEPENDS =		net/p5-Net-DNS \
+RUN_DEPENDS =		net/p5-Net-DNS>=1.01 \
 			www/p5-URI
+TEST_DEPENDS =		devel/p5-Test-Warn \
+			devel/p5-Test-MockRandom
 
 CONFIGURE_STYLE =	modbuild
 
