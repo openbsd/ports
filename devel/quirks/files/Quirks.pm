@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.410 2016/08/09 02:30:06 jturner Exp $
+# $OpenBSD: Quirks.pm,v 1.411 2016/08/12 08:11:20 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -404,6 +404,8 @@ my $stem_extensions = {
 	'openmotif' => 'motif',
 	'go-websocket' => 'go-net',
 	'letsencrypt' => 'certbot',
+# 6.1
+ 	'zarafa-webaccess' => 'zarafa-mapi',
 };
 
 my $obsolete_reason = {
