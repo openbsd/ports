@@ -1,19 +1,12 @@
-$OpenBSD: patch-config_php,v 1.8 2015/09/07 18:56:59 robert Exp $
---- config.php.orig	Thu Sep  3 01:04:22 2015
-+++ config.php	Mon Sep  7 20:54:16 2015
-@@ -72,7 +72,7 @@
- /**********************************************************************************
-  *  Default FileStateMachine settings
+$OpenBSD: patch-config_php,v 1.9 2016/08/12 08:09:57 robert Exp $
+--- config.php.orig	Mon Aug  8 10:30:31 2016
++++ config.php	Mon Aug  8 10:30:38 2016
+@@ -79,7 +79,7 @@
+  *           State migration script is available, more informations: https://wiki.z-hub.io/x/xIAa
   */
+     define('STATE_MACHINE', 'FILE');
 -    define('STATE_DIR', '/var/lib/z-push/');
 +    define('STATE_DIR', '/var/db/z-push/');
  
- 
  /**********************************************************************************
-@@ -282,4 +282,4 @@
- */
-     );
- 
--?>
-\ No newline at end of file
-+?>
+  *  IPC - InterProcessCommunication

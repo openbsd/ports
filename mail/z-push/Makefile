@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2016/05/06 17:48:37 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2016/08/12 08:09:56 robert Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
-V=		2.2.10
+V=		2.3.0
 DISTNAME=	z-push-${V}
 
 CATEGORIES=	mail www
@@ -26,7 +26,7 @@ TINSTDIR=	${TRUEPREFIX}/z-push
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
-RUN_DEPENDS=	mail/zarafa/zarafa,-web \
+RUN_DEPENDS=	mail/zarafa/zarafa,-mapi \
 		lang/php/${MODPHP_VERSION},-imap
 
 do-install:
