@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/01 10:13:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.36 2016/08/12 07:10:18 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.22
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	X11 Xft Xmu Xrender Xt c fontconfig freetype \
 		gdk_pixbuf-2.0 glib-2.0 gobject-2.0 m perl \
-		pthread startup-notification-1 util z
+		pthread startup-notification-1 z
 
 MODULES =	devel/gettext
 
