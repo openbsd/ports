@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_argus_util_c,v 1.4 2015/01/26 13:13:58 steven Exp $
---- common/argus_util.c.orig	Tue Aug 19 23:13:08 2014
-+++ common/argus_util.c	Mon Sep 29 23:50:59 2014
-@@ -22553,8 +22553,8 @@ ArgusLog (int priority, char *fmt, ...)
+$OpenBSD: patch-common_argus_util_c,v 1.5 2016/08/12 21:39:14 steven Exp $
+--- common/argus_util.c.orig	Wed Jun  1 21:17:28 2016
++++ common/argus_util.c	Fri Jun  3 19:23:33 2016
+@@ -22679,8 +22679,8 @@ ArgusLog (int priority, char *fmt, ...)
              *tptr++ = buf[i];
           }
  
