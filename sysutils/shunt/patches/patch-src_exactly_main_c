@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_exactly_main_c,v 1.1 2016/08/12 22:12:13 jca Exp $
+--- src/exactly/main.c.orig	Wed Apr 27 19:08:28 2016
++++ src/exactly/main.c	Wed Apr 27 19:10:31 2016
+@@ -142,6 +142,10 @@ decipher_command_line(int argc, char** argv)
+ 
+ int main(int argc, char* argv[])
+ {
++    if (pledge("stdio", NULL) == -1) {
++	perror("pledge");
++	exit(2);
++    }
+     char* block = NULL;
+     unsigned long int i = 0;
+     unsigned long int rcount = 0;

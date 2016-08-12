@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_flyisofs_main_c,v 1.1 2016/08/12 22:12:13 jca Exp $
+--- src/flyisofs/main.c.orig	Wed Apr 27 19:20:22 2016
++++ src/flyisofs/main.c	Wed Apr 27 19:23:33 2016
+@@ -879,6 +879,10 @@ write_padding(void)
+ 
+ int main(int argc, char* argv[])
+ {
++    if (pledge("stdio", NULL) == -1) {
++	perror("pledge");
++	exit(2);
++    }
+     int rv = 0;
+     unsigned long int i = 0;
+     unsigned long int max_files_needed = 0;

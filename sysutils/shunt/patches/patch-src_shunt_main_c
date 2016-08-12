@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_shunt_main_c,v 1.1 2016/08/12 22:12:13 jca Exp $
+--- src/shunt/main.c.orig	Tue Apr 19 22:53:34 2011
++++ src/shunt/main.c	Wed Apr 27 19:48:00 2016
+@@ -693,6 +693,10 @@ is_child_running()
+ int
+ main(int argc, char* argv[])
+ {
++    if (pledge("stdio proc exec", NULL) == -1) {
++	perror("pledge");
++	exit(2);
++    }
+     int rv = 0;
+ 
+     znum_initialize();

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/12 22:12:13 jca Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
 DISTNAME=	shunt-1.7.3
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.serice.net/shunt/
@@ -14,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+# uses pledge()
 WANTLIB=	c
 
 USE_GMAKE=	Yes
