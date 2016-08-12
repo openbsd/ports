@@ -1,7 +1,7 @@
-$OpenBSD: patch-argus_ArgusModeler_c,v 1.1 2015/11/05 12:25:49 jca Exp $
---- argus/ArgusModeler.c.orig	Wed Nov  4 19:15:34 2015
-+++ argus/ArgusModeler.c	Wed Nov  4 19:15:55 2015
-@@ -2281,7 +2281,7 @@ ArgusUpdateBasicFlow (struct ArgusModelerStruct *model
+$OpenBSD: patch-argus_ArgusModeler_c,v 1.2 2016/08/12 21:38:52 steven Exp $
+--- argus/ArgusModeler.c.orig	Wed Jun  1 19:27:04 2016
++++ argus/ArgusModeler.c	Fri Jun  3 19:21:11 2016
+@@ -2320,7 +2320,7 @@ ArgusUpdateBasicFlow (struct ArgusModelerStruct *model
                 bcopy ((char *)&model->ArgusThisEpHdr->ether_dhost, 
                        (char *)&mac->mac.mac_union.ether.ehdr.ether_shost, sizeof(struct ether_addr));
                 bcopy ((char *)&model->ArgusThisEpHdr->ether_shost, 
