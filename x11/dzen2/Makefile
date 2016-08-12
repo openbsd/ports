@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/23 07:26:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/12 02:44:36 jcs Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -7,7 +7,7 @@ V=			0.9.5
 DISTNAME=		dzen2-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-gadgets=	dzen2-gadgets-$V
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/robm/dzen
@@ -26,10 +26,21 @@ GH_PROJECT=		dzen
 
 RUN_DEPENDS-gadgets=	x11/dzen2
 
+FLAVORS=		xft
+FLAVOR?=
+
+.if ${FLAVOR:Mxft}
+WANTLIB-main+=		Xft
+XFT_CFLAGS=		-DDZEN_XFT `pkg-config --cflags xft`
+XFT_LDFLAGS=		`pkg-config --libs xft`
+.endif
+
 MAKE_FLAGS=		CC=${CC} \
 			CFLAGS="${CFLAGS} -I${X11BASE}/include \
 				-DVERSION=\\\"$V\\\" -DDZEN_XINERAMA \
-				-DDZEN_XPM" \
+				-DDZEN_XPM ${XFT_CFLAGS}" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 \
+				-lXinerama -lXpm ${XFT_LDFLAGS}" \
 			X11LIB=${X11BASE}/lib
 
 GADGETS=		dbar gdbar gcpubar textwidth

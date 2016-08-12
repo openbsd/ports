@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.572 2016/05/26 17:53:12 jung Exp $
+# $OpenBSD: Makefile,v 1.573 2016/08/12 02:44:36 jcs Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -48,6 +48,7 @@
      SUBDIR += dunst
      SUBDIR += dwm
      SUBDIR += dzen2
+     SUBDIR += dzen2,xft
      SUBDIR += e16keyedit
      SUBDIR += e17
      SUBDIR += echinus
