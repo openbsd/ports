@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1517 2016/08/12 14:40:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.1518 2016/08/12 22:04:32 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1050,6 +1050,7 @@
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
+     SUBDIR += p5-Test-MockRandom
      SUBDIR += p5-Test-MockSleep
      SUBDIR += p5-Test-MockTime
      SUBDIR += p5-Test-Most
