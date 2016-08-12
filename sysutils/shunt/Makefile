@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/08/12 22:12:13 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/12 22:12:44 jca Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
@@ -19,6 +19,8 @@ MASTER_SITES=	${HOMEPAGE}
 WANTLIB=	c
 
 USE_GMAKE=	Yes
+
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/* /${PREFIX}/bin
