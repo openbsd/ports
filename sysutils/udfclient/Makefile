@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/12 22:03:40 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/12 22:05:14 jca Exp $
 
 COMMENT =	userland implementation of the UDF filesystem
 
@@ -20,5 +20,7 @@ MASTER_SITES =	http://www.13thmonkey.org/udfclient/releases/
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
