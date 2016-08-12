@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/18 09:53:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/08/12 11:45:17 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.10
+DISTNAME=	libsodium-1.0.11
 
-SHARED_LIBS +=	sodium         7.1            # .19.0
+SHARED_LIBS +=	sodium         7.1            # .19.1
 
 CATEGORIES=	security net
 
