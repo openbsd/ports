@@ -1,0 +1,3 @@
+pyPEG is a plain and simple intrinsic parser interpreter framework for
+Python version 2.7 and 3.x. It is based on Parsing Expression Grammar,
+PEG. With pyPEG you can parse many formal languages in a very easy way.
