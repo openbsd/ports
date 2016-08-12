@@ -1,14 +1,12 @@
-$OpenBSD: patch-src_xz_main_c,v 1.5 2016/01/17 20:28:36 naddy Exp $
---- src/xz/main.c.orig	Thu Feb 26 15:54:33 2015
-+++ src/xz/main.c	Sun Oct 18 02:05:53 2015
-@@ -163,12 +163,29 @@ main(int argc, char **argv)
+$OpenBSD: patch-src_xz_main_c,v 1.6 2016/08/12 20:52:26 naddy Exp $
+--- src/xz/main.c.orig	Tue Sep 29 12:57:36 2015
++++ src/xz/main.c	Fri Aug 12 22:49:04 2016
+@@ -163,12 +163,25 @@ main(int argc, char **argv)
  	// on the command line, thus this must be done before args_parse().
  	hardware_init();
  
-+#ifdef __OpenBSD__
 +	if (pledge("stdio rpath wpath cpath fattr proc", NULL) == -1)
 +		message_fatal(_("pledge"));
-+#endif
 +
  	// Parse the command line arguments and get an array of filenames.
  	// This doesn't return if something is wrong with the command line
@@ -17,7 +15,6 @@ $OpenBSD: patch-src_xz_main_c,v 1.5 2016/01/17 20:28:36 naddy Exp $
  	args_info args;
  	args_parse(&args, argc, argv);
 +
-+#ifdef __OpenBSD__
 +	// No files on the command line and no --files.
 +	if ((args.arg_count == 1 && strcmp(args.arg_names[0], "-") == 0) &&
 +	    args.files_name == NULL) {
@@ -27,7 +24,6 @@ $OpenBSD: patch-src_xz_main_c,v 1.5 2016/01/17 20:28:36 naddy Exp $
 +		if (pledge("stdio rpath proc", NULL) == -1)
 +			message_fatal(_("pledge"));
 +	}
-+#endif
  
  	if (opt_mode != MODE_LIST && opt_robot)
  		message_fatal(_("Compression and decompression with --robot "
