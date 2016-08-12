@@ -1,22 +1,10 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.15 2016/06/01 07:02:02 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.16 2016/08/12 08:42:52 jasper Exp $
 
-- From fbb7625c044091f5de8525e85f714999eb79e81a Mon Sep 17 00:00:00 2001
-  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-  Date: Mon, 30 May 2016 18:56:21 +0200
-  Subject: [PATCH] (FACT-1432) Fixup OpenBSD networking facts
 - Override library version
 
---- lib/CMakeLists.txt.orig	Fri May 20 18:36:55 2016
-+++ lib/CMakeLists.txt	Mon May 30 16:42:26 2016
-@@ -202,6 +202,7 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
-         "src/facts/openbsd/collection.cc"
-         "src/facts/glib/load_average_resolver.cc"
-         "src/facts/bsd/filesystem_resolver.cc"
-+        "src/facts/bsd/networking_resolver.cc"
-         "src/facts/bsd/uptime_resolver.cc"
-         "src/facts/openbsd/dmi_resolver.cc"
-         "src/facts/openbsd/networking_resolver.cc"
-@@ -282,7 +283,7 @@ link_directories(
+--- lib/CMakeLists.txt.orig	Wed Aug 10 23:43:54 2016
++++ lib/CMakeLists.txt	Thu Aug 11 10:28:04 2016
+@@ -287,7 +287,7 @@ link_directories(
  add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOURCES} ${LIBFACTER_STANDARD_SOURCES} ${LIBFACTER_PLATFORM_SOURCES})
  set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
  add_library(libfacter SHARED $<TARGET_OBJECTS:libfactersrc>)

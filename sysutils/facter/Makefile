@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2016/08/10 14:06:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/08/12 08:42:52 jasper Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-DISTNAME =		facter-3.3.0
+DISTNAME =		facter-3.4.0
 SHARED_LIBS +=  	facter                    3.0 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -30,7 +30,8 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			devel/yaml-cpp \
 			net/curl
 
-BUILD_DEPENDS =		devel/leatherman
+BUILD_DEPENDS =		devel/cpp-hocon \
+			devel/leatherman
 
 CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
 			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}" \
