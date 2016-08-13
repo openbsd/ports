@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2016/08/10 07:08:28 kili Exp $
+# $OpenBSD: Makefile,v 1.140 2016/08/13 18:54:58 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -102,16 +102,12 @@ CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
-#      CONF_GCC_LD_OPTS_STAGE? are probably bogus.
 CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE1="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE2="-fno-pie -nopie" \
 			CONF_GCC_LINKER_OPTS_STAGE0="-fno-pie -nopie" \
 			CONF_GCC_LINKER_OPTS_STAGE1="-fno-pie -nopie -Wl,-z,wxneeded" \
-			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie -nopie -Wl,-z,wxneeded" \
-			CONF_GCC_LD_OPTS_STAGE0="-nopie" \
-			CONF_GCC_LD_OPTS_STAGE1="-nopie" \
-			CONF_GCC_LD_OPTS_STAGE2="-nopie"
+			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie -nopie -Wl,-z,wxneeded"
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
