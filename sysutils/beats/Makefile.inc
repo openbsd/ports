@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/05/09 08:55:45 czarkoff Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/08/13 08:42:22 jasper Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -13,8 +13,7 @@ MODULES +=	     	lang/go
 
 ELASTIC_BEAT ?=	     	Yes
 
-MODGO_ENV =		GO15VENDOREXPERIMENT=1 PATH="${PORTPATH}" \
-			CFLAGS="${CFLAGS}"
+MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 
 .if ${ELASTIC_BEAT:L} == "yes"
 HOMEPAGE ?=		https://www.elastic.co/products/beats/${BEAT}
