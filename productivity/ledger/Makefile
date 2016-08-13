@@ -1,44 +1,61 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/04 16:09:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/08/13 19:22:05 jasper Exp $
 
-COMMENT=	command line double-entry accounting ledger
+COMMENT =		command line double-entry accounting ledger
 
-DISTNAME=	ledger-2.6.3
-REVISION=	3
-CATEGORIES=	productivity
+GH_TAGNAME =		v3.1.1
+GH_ACCOUNT =		ledger
+GH_PROJECT =		ledger
 
-HOMEPAGE=	http://www.ledger-cli.org/
+SHARED_LIBS +=  ledger                    0.0 # 3.0
 
-MAINTAINER=	Sergey Bronnikov <estetus@gmail.com>
+CATEGORIES =		productivity
 
-SHARED_LIBS=	amounts	0.0
+HOMEPAGE =		http://www.ledger-cli.org/
+
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=	https://github.com/downloads/jwiegley/ledger/
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_unit_test_framework-mt
+WANTLIB += c gmp m mpfr pthread
 
-WANTLIB=	c gmp>=4 m pcre stdc++
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS +=	c++
 
-LIB_DEPENDS=	devel/gmp \
-		devel/pcre
+MODULES =		devel/cmake \
+			lang/python \
+			gcc4
 
-SEPARATE_BUILD=	Yes
+BUILD_DEPENDS =		devel/utfcpp
+LIB_DEPENDS =		devel/boost \
+			devel/gmp \
+			devel/mpfr
 
+LIBledger_MAJOR =	${LIBledger_VERSION:R}
+LIBledger_MINOR =	${LIBledger_VERSION:E}
+SUBST_VARS +=		LIBledger_MAJOR LIBledger_MINOR
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		EMACS=no
-CONFIGURE_ARGS=	--disable-xml \
-		--disable-ofx
+# Use this to make sure version.info gets generated, the actual
+# installation bits are removed as the remaining .info files are
+# not generated...see post-install below.
+CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ledger
-	${INSTALL_DATA} ${WRKSRC}/scripts/* ${PREFIX}/share/doc/ledger
-.for f in ledger.texi ledger.vim
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ledger
+.for i in ledger3 ledger-mode
+	cd ${WRKBUILD}/doc/ && \
+		cp ${WRKSRC}/doc/$i.texi . && \
+		makeinfo --force --no-split -o ${PREFIX}/info/$i.info $i.texi
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ledger/
+.for d in LICENSE.md doc/GLOSSARY.md
+	${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/share/doc/ledger/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ledger
-	${INSTALL_DATA} ${WRKSRC}/sample.dat ${PREFIX}/share/examples/ledger
+	cd ${WRKSRC}/contrib && umask 022 && pax -rw . ${PREFIX}/share/examples/ledger
 
 .include <bsd.port.mk>
