@@ -1,0 +1,11 @@
+$OpenBSD: patch-js_xpconnect_shell_Makefile_in,v 1.1 2016/08/13 19:10:21 naddy Exp $
+--- js/xpconnect/shell/Makefile.in.orig	Mon Aug  8 22:41:50 2016
++++ js/xpconnect/shell/Makefile.in	Mon Aug  8 22:50:59 2016
+@@ -89,3 +89,7 @@ ifdef JS_READLINE
+ DEFINES += -DEDITLINE
+ LIBS += -lreadline $(JS_READLINE_EXTRA_LIBS)
+ endif
++
++ifeq ($(OS_ARCH),OpenBSD)
++LDFLAGS += -Wl,-z,wxneeded
++endif
