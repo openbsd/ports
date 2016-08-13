@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/17 17:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/13 08:51:21 jasper Exp $
 
 COMMENT=		recursively merge hashes
 
-DISTNAME=		deep_merge-1.0.1
+DISTNAME=		deep_merge-1.1.1
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
