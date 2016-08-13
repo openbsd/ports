@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/12 13:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/08/13 07:40:43 landry Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.9.0
 BV =			${V}-20160608
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
 SUBST_VARS +=		RUST_HASH
@@ -23,8 +24,6 @@ MULTI_PACKAGES =	-main -doc
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.rust-lang.org/
-
-MAINTAINER =		Sebastien Marie <semarie@openbsd.org>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses

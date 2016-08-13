@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/13 07:40:43 landry Exp $
 COMMENT = package manager for Rust language
 
 # cargo version
@@ -21,11 +21,10 @@ REGISTRY_INDEX =	88ac128001ac3a9a
 
 
 DISTNAME =	cargo-${CARGO_VERSION}
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://doc.crates.io/
-
-MAINTAINER =	Sebastien Marie <semarie@openbsd.org>
 
 # cargo is dual licensed MIT/Apache-2.0
 # third-parties (detail below):
