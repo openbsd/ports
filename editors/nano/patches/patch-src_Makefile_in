@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.7 2016/06/23 04:07:49 bentley Exp $
---- src/Makefile.in.orig	Fri Jun 17 07:44:24 2016
-+++ src/Makefile.in	Wed Jun 22 12:15:37 2016
-@@ -305,7 +305,7 @@ nano_SOURCES = browser.c \
+$OpenBSD: patch-src_Makefile_in,v 1.8 2016/08/13 03:54:35 gonzalo Exp $
+--- src/Makefile.in.orig	Mon Jun 27 06:53:40 2016
++++ src/Makefile.in	Tue Jul  5 21:29:31 2016
+@@ -316,7 +316,7 @@ nano_SOURCES = browser.c \
  		utils.c \
  		winio.c 
  
