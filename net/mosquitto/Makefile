@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 09:30:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/13 15:18:58 jasper Exp $
 
 COMMENT =		opensource MQTT broker
-DISTNAME =		mosquitto-1.4.2
-REVISION =		1
+DISTNAME =		mosquitto-1.4.9
 
 SHARED_LIBS +=  mosquitto                 0.0 # 1.4
 SHARED_LIBS +=  mosquittopp               0.0 # 1.4
@@ -11,14 +10,12 @@ CATEGORIES =		net
 HOMEPAGE =		http://mosquitto.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-# 3-clause BSD
+# EPL/EDL
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c crypto m pthread ssl stdc++ uuid
 
-# No EPROTO in OpenBSD.
-CFLAGS +=		-DEPROTO=ECONNABORTED \
-			-I${LOCALBASE}/include
+CFLAGS +=		-I${LOCALBASE}/include
 MASTER_SITES =		http://mosquitto.org/files/source/
 
 MODULES =		devel/cmake

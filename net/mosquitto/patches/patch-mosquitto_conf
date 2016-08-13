@@ -1,6 +1,6 @@
-$OpenBSD: patch-mosquitto_conf,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
---- mosquitto.conf.orig	Mon May 18 00:24:50 2015
-+++ mosquitto.conf	Mon May 18 00:29:59 2015
+$OpenBSD: patch-mosquitto_conf,v 1.2 2016/08/13 15:18:58 jasper Exp $
+--- mosquitto.conf.orig	Thu Jun  2 23:20:22 2016
++++ mosquitto.conf	Fri Jul 15 20:46:12 2016
 @@ -32,7 +32,7 @@
  # This should be set to /var/run/mosquitto.pid if mosquitto is
  # being run automatically on boot with an init script and 
@@ -19,7 +19,7 @@ $OpenBSD: patch-mosquitto_conf,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
  
  # The maximum number of QoS 1 and 2 messages currently inflight per 
  # client.
-@@ -459,7 +459,7 @@
+@@ -461,7 +461,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.
