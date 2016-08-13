@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_config_mk,v 1.1 2016/08/13 10:43:02 jasper Exp $
+--- config/config.mk.orig	Tue Oct 29 21:40:26 2013
++++ config/config.mk	Thu Aug 11 21:18:19 2016
+@@ -229,6 +229,10 @@ else
+ MOZ_GLUE_PROGRAM_LDFLAGS=$(MOZ_GLUE_LDFLAGS)
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++OS_LDFLAGS += -Wl,-z,wxneeded
++endif
++
+ #
+ # Build using PIC by default
+ #

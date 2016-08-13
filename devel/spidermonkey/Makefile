@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/08/13 10:43:02 jasper Exp $
 
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
@@ -15,7 +15,7 @@ DISTNAME =		mozjs-${MOZILLA_VERSION}.2.0
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.2.0
 PKGSPEC =		spidermonkey->=24.0,<25.0
-REVISION =		4
+REVISION =		5
 
 SO_VERSION =		0.0
 SHARED_LIBS =		mozjs-24 ${SO_VERSION}
