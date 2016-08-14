@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/19 09:49:51 jung Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/14 15:35:14 jca Exp $
 
 COMMENT=		simple irc client
 
 DISTNAME=		sic-1.2
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -13,6 +14,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB=		c
 
 MASTER_SITES=		http://dl.suckless.org/tools/

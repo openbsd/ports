@@ -1,0 +1,12 @@
+$OpenBSD: patch-sic_c,v 1.3 2016/08/14 15:35:14 jca Exp $
+--- sic.c.orig	Fri Aug 12 21:45:07 2016
++++ sic.c	Fri Aug 12 21:54:39 2016
+@@ -173,6 +173,8 @@ main(int argc, char *argv[]) {
+ 	fflush(srv);
+ 	setbuf(stdout, NULL);
+ 	setbuf(srv, NULL);
++	if (pledge("stdio", NULL) == -1)
++		eprint("error: pledge:");
+ 	for(;;) { /* main loop */
+ 		FD_ZERO(&rd);
+ 		FD_SET(0, &rd);
