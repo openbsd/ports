@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/07 17:41:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/14 11:05:20 jasper Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
-REVISION=		3
+REVISION=		4
 CATEGORIES=		sysutils
-HOMEPAGE=		http://www.sentia.org/projects/dmassage/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.sentia.org/downloads/
+MASTER_SITES=		https://distfiles.nl/
 
 NO_TEST=		Yes
 NO_BUILD=		Yes
