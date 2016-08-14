@@ -1,9 +1,9 @@
-$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.2 2016/01/31 22:29:37 sthen Exp $
+$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.3 2016/08/14 16:29:20 jca Exp $
 
 Pledge self-extracting archives
 
---- CPP/7zip/Bundles/SFXCon/SfxCon.cpp.orig	Sat Sep  5 16:22:56 2015
-+++ CPP/7zip/Bundles/SFXCon/SfxCon.cpp	Sun Jan 24 15:59:24 2016
+--- CPP/7zip/Bundles/SFXCon/SfxCon.cpp.orig	Fri May 20 04:38:40 2016
++++ CPP/7zip/Bundles/SFXCon/SfxCon.cpp	Fri Jul 15 07:49:33 2016
 @@ -250,6 +250,21 @@ int Main2(
    #endif
  )
@@ -26,23 +26,24 @@ Pledge self-extracting archives
    #if defined(_WIN32) && !defined(UNDER_CE)
    SetFileApisToOEM();
    #endif
-@@ -371,6 +386,19 @@ int Main2(
-     HRESULT result = codecs->Load();
-     if (result != S_OK)
-       throw CSystemException(result);
-+
+@@ -372,6 +387,20 @@ int Main2(
+       HRESULT result = codecs->Load();
+       if (result != S_OK)
+         throw CSystemException(result);
 +#ifdef EXTERNAL_CODECS
 +
 +#ifdef PLEDGE_DEBUG
-+  printf("pledge: 7z SFX\n");
++
++      printf("pledge: 7z SFX\n");
++
 +#endif //PLEDGE_DEBUG
 +
-+  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
-+    perror("pledge");
-+    exit(2);
-+  }
++      if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
++	perror("pledge");
++	exit(2);
++      }
 +
 +#endif
+     }
  
      if (command.CommandType != NCommandType::kList)
-     {
