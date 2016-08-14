@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2016/06/02 13:22:52 robert Exp $
+# $OpenBSD: Makefile,v 1.99 2016/08/14 10:52:07 jasper Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -7,6 +7,7 @@ COMMENT=	robust and small HTTP server and mail proxy server
 
 VERSION=	1.10.1
 DISTNAME=	nginx-${VERSION}
+REVISION=	0
 CATEGORIES=	www
 
 MASTER_SITES=	http://nginx.org/download/
@@ -31,7 +32,7 @@ NGINX_DIR=	/var/www
 SUBST_VARS=	NGINX_DIR
 CFLAGS+=	-Wall -Wpointer-arith
 
-FLAVORS=	lua naxsi passenger
+FLAVORS=	lua mailproxy naxsi passenger
 FLAVOR?=
 
 .if !${FLAVOR:Mpassenger}
@@ -73,10 +74,13 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-mail \
 			--with-mail_ssl_module \
 			--with-ipv6 \
-			--with-stream \
-			--without-mail_pop3_module \
+			--with-stream
+
+.if !${FLAVOR:Mmailproxy}
+CONFIGURE_ARGS+=	--without-mail_pop3_module \
 			--without-mail_imap_module \
 			--without-mail_smtp_module
+.endif
 
 DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
 PATCHFILES+=		nginx-${VERSION}-chroot.patch:3
@@ -115,19 +119,15 @@ SUPDISTFILES+=		${LUADISTFILES}
 NO_TEST=		Yes
 ALL_TARGET=
 
-.if ${FLAVOR:Mnaxsi}
 pre-patch:
+.if ${FLAVOR:Mnaxsi}
 	cd ${WRKSRC} && \
 	    mv ../naxsi-* naxsi
-
 .endif
-
 .if ${FLAVOR:Mlua}
-pre-patch:
 	cd ${WRKSRC} && \
 	    mv ../ngx_devel_kit-* ngx_devel_kit && \
 	    mv ../lua-nginx-module-${LUAV} lua-nginx-module
-
 .endif
 
 pre-configure:

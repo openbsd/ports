@@ -18,10 +18,14 @@ Available FLAVORs:
 into the nginx core and integrates the powerful Lua threads (aka Lua
 coroutines) into the nginx event model by means of nginx subrequests.
 
+	mailproxy - enables the mail proxy features of nginx (specifically
+the mail_pop3_module, the mail_imap_module, and the mail_smtp_module).
+
+	naxsi - This Nginx module embeds Naxsi into nginx core. Naxsi is
+a high performance, low rules maintenance, Web Application Firewall module.
+
 	passenger - Phusion Passenger(R) a.k.a. mod_rails or mod_rack makes
 deployment of Ruby web applications, such as those built on the revolutionary
 Ruby on Rails web framework, a breeze. It follows the usual Ruby on Rails
 conventions, such as "Don't-Repeat-Yourself".
 
-	naxsi - This Nginx module embeds Naxsi into nginx core. Naxsi is
-a high performance, low rules maintenance, Web Application Firewall module.
