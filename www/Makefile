@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.788 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.789 2016/08/14 10:53:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -111,6 +111,7 @@
      SUBDIR += nghttp2
      SUBDIR += nginx
      SUBDIR += nginx,lua
+     SUBDIR += nginx,mailproxy
      SUBDIR += nginx,naxsi
      SUBDIR += nginx,passenger
      SUBDIR += nostromo
