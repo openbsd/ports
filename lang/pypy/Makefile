@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/06/13 08:44:17 edd Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/15 09:16:40 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -18,7 +18,7 @@ COMMENT =		fast implementation of the Python language
 # You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
 # CPython to build PyPy instead. Note this is slower.
 
-V =			5.3.0
+V =			5.3.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2-v${V}-src
 PKGNAME =		pypy-${V}
@@ -95,7 +95,8 @@ do-build:
 	  pypy --jit loop_longevity=300 \
 	  ../../rpython/bin/rpython --source --opt=jit
 .endif
-	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} LDFLAGS_LINK="-Wl,-z,wxneeded -pthread"
 
 PYPY_INST_LIB_DIR = ${PREFIX}/pypy/lib
 PYPY_LD_LIBRARY_PATH = LD_LIBRARY_PATH=${PYPY_INST_LIB_DIR}
