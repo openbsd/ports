@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/05/14 12:52:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/08/15 10:32:33 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -150,6 +150,7 @@ share/augeas/lenses/dist/phpvars.aug
 share/augeas/lenses/dist/postfix_access.aug
 share/augeas/lenses/dist/postfix_main.aug
 share/augeas/lenses/dist/postfix_master.aug
+share/augeas/lenses/dist/postfix_passwordmap.aug
 share/augeas/lenses/dist/postfix_sasl_smtpd.aug
 share/augeas/lenses/dist/postfix_transport.aug
 share/augeas/lenses/dist/postfix_virtual.aug
@@ -339,6 +340,7 @@ share/augeas/lenses/dist/tests/test_phpvars.aug
 share/augeas/lenses/dist/tests/test_postfix_access.aug
 share/augeas/lenses/dist/tests/test_postfix_main.aug
 share/augeas/lenses/dist/tests/test_postfix_master.aug
+share/augeas/lenses/dist/tests/test_postfix_passwordmap.aug
 share/augeas/lenses/dist/tests/test_postfix_sasl_smtpd.aug
 share/augeas/lenses/dist/tests/test_postfix_transport.aug
 share/augeas/lenses/dist/tests/test_postfix_virtual.aug
