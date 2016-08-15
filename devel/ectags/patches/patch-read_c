@@ -1,7 +1,7 @@
-$OpenBSD: patch-read_c,v 1.1 2016/08/12 06:13:54 shadchin Exp $
+$OpenBSD: patch-read_c,v 1.2 2016/08/15 14:55:48 shadchin Exp $
 --- read.c.orig	Sat Jul  4 11:29:02 2009
-+++ read.c	Fri Aug 12 11:07:47 2016
-@@ -526,13 +526,20 @@ extern char *readLine (vString *const vLine, FILE *con
++++ read.c	Mon Aug 15 19:47:23 2016
+@@ -526,9 +526,9 @@ extern char *readLine (vString *const vLine, FILE *con
  				vStringSetLength (vLine);
  				/* canonicalize new line */
  				eol = vStringValue (vLine) + vStringLength (vLine) - 1;
@@ -13,14 +13,3 @@ $OpenBSD: patch-read_c,v 1.1 2016/08/12 06:13:54 shadchin Exp $
  				{
  					*(eol - 1) = '\n';
  					*eol = '\0';
- 					--vLine->length;
-+				}
-+				else if (vStringSize (vLine) > 1)
-+				{
-+					eol = vStringValue (vLine);
-+					*eol = '\n';
-+					*(eol + 1) = '\0';
-+					vStringSetLength (vLine);
- 				}
- 			}
- 		} while (reReadLine);

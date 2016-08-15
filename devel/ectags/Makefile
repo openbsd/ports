@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/12 06:13:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2016/08/15 14:55:48 shadchin Exp $
 
 COMMENT=	multilanguage implementation of ctags
 
 DISTNAME=	ctags-5.8
-REVISION=	1
+REVISION=	2
 PKGNAME=	e${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	http://ctags.sourceforge.net/
