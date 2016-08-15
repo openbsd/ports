@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/29 23:14:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/08/15 19:34:04 sthen Exp $
 
 COMMENT=	privilege-separated letsencrypt client
 
-V=		0.1.7
+V=		0.1.9
 GH_ACCOUNT=	kristapsdz
 GH_PROJECT=	letskencrypt
 GH_TAGNAME=	VERSION_${V:S/./_/g}
