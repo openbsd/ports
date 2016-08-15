@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/08/08 14:14:01 pascal Exp $
+# $OpenBSD: Makefile,v 1.22 2016/08/15 09:24:45 pascal Exp $
 
 COMMENT =		library for reading and writing images
 
@@ -53,6 +53,9 @@ CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages"
 			-DUSE_OPENCV=OFF
 
 CXXFLAGS +=		-pthread
+.if ${MACHINE_ARCH} == "i386"
+CXXFLAGS +=		-march=i686
+.endif
 WRKDIST =		${WRKDIR}/oiio-Release-$V
 
 pre-configure:
