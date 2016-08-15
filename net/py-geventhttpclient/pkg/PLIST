@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/12 20:45:56 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/15 23:29:08 czarkoff Exp $
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,30 @@ lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/oncert.pem
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/server.crt
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/server.key
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_client.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_client.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_headers.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_headers.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_httplib.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_httplib.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_keep_alive.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_keep_alive.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_network_failures.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_network_failures.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_no_module_ssl.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_no_module_ssl.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_parser.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_ssl.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_ssl.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_url.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_url.pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_useragent.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_useragent.pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/useragent.py
