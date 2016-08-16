@@ -1,6 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/08/23 20:45:10 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/08/16 19:59:58 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pyusb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/usb.so
-share/examples/pyusb/
-share/examples/pyusb/usbenum.py
-share/examples/pyusb/usbprint.py
+lib/python${MODPY_VERSION}/site-packages/usb/
+lib/python${MODPY_VERSION}/site-packages/usb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/usb/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/_debug.py
+lib/python${MODPY_VERSION}/site-packages/usb/_debug.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/_interop.py
+lib/python${MODPY_VERSION}/site-packages/usb/_interop.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/_lookup.py
+lib/python${MODPY_VERSION}/site-packages/usb/_lookup.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/_objfinalizer.py
+lib/python${MODPY_VERSION}/site-packages/usb/_objfinalizer.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/backend/
+lib/python${MODPY_VERSION}/site-packages/usb/backend/__init__.py
+lib/python${MODPY_VERSION}/site-packages/usb/backend/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/backend/libusb0.py
+lib/python${MODPY_VERSION}/site-packages/usb/backend/libusb0.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/backend/libusb1.py
+lib/python${MODPY_VERSION}/site-packages/usb/backend/libusb1.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/backend/openusb.py
+lib/python${MODPY_VERSION}/site-packages/usb/backend/openusb.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/control.py
+lib/python${MODPY_VERSION}/site-packages/usb/control.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/core.py
+lib/python${MODPY_VERSION}/site-packages/usb/core.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/legacy.py
+lib/python${MODPY_VERSION}/site-packages/usb/legacy.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/libloader.py
+lib/python${MODPY_VERSION}/site-packages/usb/libloader.pyc
+lib/python${MODPY_VERSION}/site-packages/usb/util.py
+lib/python${MODPY_VERSION}/site-packages/usb/util.pyc
