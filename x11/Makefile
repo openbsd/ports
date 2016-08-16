@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.573 2016/08/12 02:44:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.574 2016/08/16 06:44:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -219,6 +219,7 @@
      SUBDIR += py-pyglet
      SUBDIR += py-qt4
      SUBDIR += py-qt5
+     SUBDIR += py-qt5,python3
      SUBDIR += py-wxPython
      SUBDIR += qrfcview
      SUBDIR += qt3
