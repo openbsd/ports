@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.148 2016/05/13 07:20:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2016/08/16 10:59:47 bluhm Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.6.0
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -31,7 +32,8 @@ MODULES=	lang/python \
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
-BUILD_DEPENDS=	textproc/texi2html
+BUILD_DEPENDS=	devel/gettext-tools \
+		textproc/texi2html
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
 		devel/dtc \
@@ -57,7 +59,7 @@ MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
 EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded
 
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
