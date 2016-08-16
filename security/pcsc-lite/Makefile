@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2016/06/01 07:37:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2016/08/16 08:39:42 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
-V=		1.8.17
+V=		1.8.18
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
