@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2016/06/13 08:45:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2016/08/16 09:51:50 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -134,10 +134,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/package.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/ppa.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/esxi/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/esxi.rb
@@ -305,6 +307,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/ipfilter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/ipnat.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/kernel_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/solaris/base/service.rb
@@ -395,6 +398,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/domain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/ec2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/filesystem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/fqdn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/hostname.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/kernel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/memory.rb
@@ -429,7 +433,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/localhost_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/command/base/mail_alias.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/base/mail_alias_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/user_spec.rb
@@ -440,10 +444,14 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/service_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian8/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian8/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/factory_spec.rb
@@ -505,6 +513,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/aix/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/aix/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/base/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/base/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/base/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/filesystem_spec.rb
