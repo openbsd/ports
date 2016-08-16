@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/20 00:04:52 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/16 11:48:20 czarkoff Exp $
 bin/scour
 lib/python${MODPY_VERSION}/site-packages/scour/
 lib/python${MODPY_VERSION}/site-packages/scour-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,12 +10,13 @@ lib/python${MODPY_VERSION}/site-packages/scour-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/scour-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/scour-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/scour/__init__.py
-lib/python${MODPY_VERSION}/site-packages/scour/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}scour.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}svg_regex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}svg_transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/scour/${MODPY_PYCACHE}yocto_css.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scour/scour.py
-lib/python${MODPY_VERSION}/site-packages/scour/scour.pyc
 lib/python${MODPY_VERSION}/site-packages/scour/svg_regex.py
-lib/python${MODPY_VERSION}/site-packages/scour/svg_regex.pyc
 lib/python${MODPY_VERSION}/site-packages/scour/svg_transform.py
-lib/python${MODPY_VERSION}/site-packages/scour/svg_transform.pyc
 lib/python${MODPY_VERSION}/site-packages/scour/yocto_css.py
-lib/python${MODPY_VERSION}/site-packages/scour/yocto_css.pyc

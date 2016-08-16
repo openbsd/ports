@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/29 18:16:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/16 11:48:20 czarkoff Exp $
 
 COMMENT =		SVG scrubber
-MODPY_EGG_VERSION =	0.33
+MODPY_EGG_VERSION =	0.34
 CATEGORIES =		graphics
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 HOMEPAGE =		http://www.codedread.com/scour/
@@ -14,6 +14,7 @@ GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+RUN_DEPENDS =		devel/py-six
 
 do-test:
 	@cd ${WRKDIST} && ${MODPY_BIN} testscour.py
