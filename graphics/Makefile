@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.417 2016/08/17 17:21:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -97,7 +97,6 @@
      SUBDIR += iec16022
      SUBDIR += ilmbase
      SUBDIR += img2pdf
-     SUBDIR += imlib
      SUBDIR += imlib2
      SUBDIR += imv
      SUBDIR += indexpage
