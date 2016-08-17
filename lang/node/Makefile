@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/08/03 13:56:56 abieber Exp $
+# $OpenBSD: Makefile,v 1.49 2016/08/17 01:05:38 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -9,6 +9,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc
 COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v4.4.7
+REVISION=	0
 
 PLEDGE_VER=	1.1.0
 DISTFILES=	node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
@@ -67,7 +68,8 @@ SUBST_VARS+= 	LOCALBASE
 SUBST_VARS+= 	PREFIX
 SUBST_VARS+= 	WRKDIST
 
-MAKE_ENV+=	V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded"
 
 do-extract:
 	mkdir ${WRKSRC}; \

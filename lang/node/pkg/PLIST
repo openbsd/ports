@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2016/08/03 13:56:56 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/08/17 01:05:38 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -2793,11 +2793,11 @@ lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/priv
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/signature.js
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/ssh-buffer.js
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/utils.js
-lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/
-lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-conv.1
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-sign.1
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-verify.1
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-conv.1
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-sign.1
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-verify.1
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/.npmignore
