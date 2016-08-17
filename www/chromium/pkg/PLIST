@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2016/07/31 13:11:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.62 2016/08/17 11:06:51 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -7,7 +7,6 @@ chrome/chrome_100_percent.pak
 chrome/chrome_200_percent.pak
 chrome/chrome_material_100_percent.pak
 chrome/chrome_material_200_percent.pak
-chrome/content_resources.pak
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/locales/
@@ -26,6 +25,7 @@ chrome/locales/es-419.pak
 chrome/locales/es.pak
 chrome/locales/et.pak
 chrome/locales/fa.pak
+chrome/locales/fake-bidi.pak
 chrome/locales/fi.pak
 chrome/locales/fil.pak
 chrome/locales/fr.pak
@@ -64,16 +64,16 @@ chrome/locales/uk.pak
 chrome/locales/vi.pak
 chrome/locales/zh-CN.pak
 chrome/locales/zh-TW.pak
+chrome/mash_wm_resources.pak
 chrome/mksnapshot
+chrome/mus_app_resources_100.pak
+chrome/mus_app_resources_200.pak
+chrome/mus_app_resources_strings.pak
+chrome/natives_blob.bin
 chrome/product_logo_48.png
 chrome/protoc
-chrome/pseudo_locales/
-chrome/pseudo_locales/fake-bidi.pak
 chrome/resources/
 chrome/resources.pak
-chrome/resources/extension/
-chrome/resources/extension/demo/
-chrome/resources/extension/demo/library.js
 chrome/resources/inspector/
 chrome/resources/inspector/Images/
 chrome/resources/inspector/Images/accelerometer-back.png
@@ -225,7 +225,8 @@ chrome/resources/inspector/timeline_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy_module.js
-chrome/shell_resources.pak
+chrome/snapshot_blob.bin
+chrome/views_mus_resources.pak
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

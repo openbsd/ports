@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig.port	Mon Aug 15 16:19:27 2016
++++ third_party/webrtc/modules/audio_device/BUILD.gn	Mon Aug 15 16:19:40 2016
+@@ -94,7 +94,7 @@ source_set("audio_device") {
+         "OpenSLES",
+       ]
+     }
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       sources += [
+         "linux/alsasymboltable_linux.cc",
+         "linux/alsasymboltable_linux.h",

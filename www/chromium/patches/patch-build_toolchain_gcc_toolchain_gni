@@ -1,0 +1,22 @@
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/toolchain/gcc_toolchain.gni.orig.port	Sun Aug 14 16:27:22 2016
++++ build/toolchain/gcc_toolchain.gni	Sun Aug 14 16:54:40 2016
+@@ -262,7 +262,7 @@ template("gcc_toolchain") {
+       # POSIX-like toolchains such as NaCl on Windows).
+       ar_wrapper =
+           rebase_path("//build/toolchain/gcc_ar_wrapper.py", root_build_dir)
+-      command = "$python_path \"$ar_wrapper\" --output={{output}} --ar=\"$ar\" {{arflags}} rcsD @\"$rspfile\""
++      command = "$python_path \"$ar_wrapper\" --output={{output}} --ar=\"$ar\" {{arflags}} rcs @\"$rspfile\""
+       description = "AR {{output}}"
+       rspfile_content = "{{inputs}}"
+       outputs = [
+@@ -502,8 +502,7 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("//third_party/llvm-build/Release+Asserts/bin",
+-                         root_build_dir)
++    prefix = "/usr/local/bin"
+     cc = "$prefix/clang"
+     cxx = "$prefix/clang++"
+     ld = cxx

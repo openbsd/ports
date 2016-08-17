@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- third_party/ffmpeg/BUILD.gn.orig.port	Mon Aug 15 16:10:00 2016
++++ third_party/ffmpeg/BUILD.gn	Mon Aug 15 16:10:06 2016
+@@ -264,7 +264,7 @@ source_set("ffmpeg_internal") {
+       # all unwinder-providing libraries).
+ 
+       # librt for clock_gettime on precise
+-      libs += [ "m", "z", "rt" ]
++      libs += [ "m", "z" ]
+     }
+     if (is_component_ffmpeg) {
+       # Export all symbols when building as component.

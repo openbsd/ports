@@ -1,0 +1,21 @@
+$OpenBSD: patch-build_config_features_gni,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/config/features.gni.orig.port	Sun Aug 14 19:35:10 2016
++++ build/config/features.gni	Sun Aug 14 20:01:20 2016
+@@ -98,7 +98,7 @@ declare_args() {
+   enable_wifi_display = false
+ 
+   # libudev usage. This currently only affects the content layer.
+-  use_udev = is_linux && !is_chromecast
++  use_udev = is_linux && !is_chromecast && !is_openbsd
+ 
+   use_dbus = is_linux && !is_chromecast
+ 
+@@ -135,7 +135,7 @@ enable_pepper_cdms =
+ use_seccomp_bpf =
+     (is_linux || is_android) &&
+     (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
+-     current_cpu == "arm64" || current_cpu == "mipsel")
++     current_cpu == "arm64" || current_cpu == "mipsel") && !is_openbsd
+ 
+ # Enable notifications everywhere except iOS.
+ enable_notifications = !is_ios

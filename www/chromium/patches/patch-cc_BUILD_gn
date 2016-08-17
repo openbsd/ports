@@ -1,0 +1,22 @@
+$OpenBSD: patch-cc_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- cc/BUILD.gn.orig.port	Sun Aug 14 17:30:13 2016
++++ cc/BUILD.gn	Sun Aug 14 17:30:19 2016
+@@ -753,7 +753,6 @@ source_set("test_support") {
+     "//skia",
+     "//testing/gmock",
+     "//testing/gtest",
+-    "//third_party/mesa:osmesa",
+     "//ui/gfx",
+     "//ui/gfx:test_support",
+     "//ui/gfx/geometry",
+@@ -959,10 +958,6 @@ test("cc_unittests") {
+     "//ui/gfx/geometry",
+     "//ui/gl",
+     "//ui/gl:test_support",
+-  ]
+-
+-  data_deps = [
+-    "//third_party/mesa:osmesa",
+   ]
+ }
+ 

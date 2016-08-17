@@ -1,0 +1,17 @@
+$OpenBSD: patch-device_hid_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- device/hid/BUILD.gn.orig.port	Mon Aug 15 09:43:54 2016
++++ device/hid/BUILD.gn	Mon Aug 15 09:46:51 2016
+@@ -43,6 +43,13 @@ source_set("hid") {
+     "//net",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++  }
++
+   if (is_linux && use_udev) {
+     sources += [
+       "device_monitor_linux.cc",

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_common_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- chrome/common/BUILD.gn.orig.port	Mon Aug 15 10:21:28 2016
++++ chrome/common/BUILD.gn	Mon Aug 15 10:22:05 2016
+@@ -127,6 +127,10 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "component_flash_hint_file_linux.cc" ]
++  }
++
+   if (is_ios) {
+     sources += [
+       # Use this Mac file that was filtered out.

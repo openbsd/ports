@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_gn_bootstrap_build_ninja_template,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- tools/gn/bootstrap/build.ninja.template.orig.port	Sat Aug 13 16:23:47 2016
++++ tools/gn/bootstrap/build.ninja.template	Sat Aug 13 16:23:51 2016
+@@ -17,7 +17,7 @@ rule cxx
+   deps = gcc
+ 
+ rule alink_thin
+-  command = rm -f $out && $ar rcsT $out $in
++  command = rm -f $out && $ar rcs $out $in
+   description = AR $out
+ 
+ rule link

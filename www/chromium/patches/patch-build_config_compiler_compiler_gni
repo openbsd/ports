@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/config/compiler/compiler.gni.orig.port	Sun Aug 14 20:05:48 2016
++++ build/config/compiler/compiler.gni	Sun Aug 14 20:07:26 2016
+@@ -36,7 +36,7 @@ declare_args() {
+ 
+ declare_args() {
+   # Whether to use the gold linker from binutils instead of lld or bfd.
+-  use_gold = !use_lld && !(is_chromecast && is_linux &&
++  use_gold = !is_openbsd && !use_lld && !(is_chromecast && is_linux &&
+                            (current_cpu == "arm" || current_cpu == "mipsel")) &&
+              ((is_linux && (current_cpu == "x64" || current_cpu == "x86" ||
+                             current_cpu == "arm")) ||

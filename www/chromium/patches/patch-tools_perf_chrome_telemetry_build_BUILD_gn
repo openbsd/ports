@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig.port	Sun Aug 14 19:01:13 2016
++++ tools/perf/chrome_telemetry_build/BUILD.gn	Sun Aug 14 19:01:28 2016
+@@ -54,7 +54,7 @@ group("telemetry_chrome_test") {
+     data += [ "//components/crash/content/tools/generate_breakpad_symbols.py" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     data_deps += [
+       "//tools/xdisplaycheck",
+       "//breakpad:dump_syms($host_toolchain)",

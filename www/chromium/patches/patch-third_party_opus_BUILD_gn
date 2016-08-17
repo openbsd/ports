@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- third_party/opus/BUILD.gn.orig.port	Sun Aug 14 17:48:32 2016
++++ third_party/opus/BUILD.gn	Sun Aug 14 17:48:41 2016
+@@ -57,7 +57,7 @@ if (use_opus_rtcd) {
+ }
+ 
+ config("opus_warnings") {
+-  if (is_clang && !is_nacl) {
++  if (is_clang && !is_nacl && !is_openbsd) {
+     # TODO(thakis): Remove once silk/macros.h has been fixed
+     cflags = [ "-Wno-expansion-to-defined" ]
+   }

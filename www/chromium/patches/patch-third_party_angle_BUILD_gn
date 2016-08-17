@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- third_party/angle/BUILD.gn.orig.port	Mon Aug 15 16:10:15 2016
++++ third_party/angle/BUILD.gn	Mon Aug 15 16:10:21 2016
+@@ -398,7 +398,6 @@ static_library("angle_util") {
+ 
+   if (is_linux) {
+     sources += rebase_path(util_gypi.util_linux_sources, ".", "util")
+-    libs = [ "rt" ]
+   }
+ 
+   if (is_mac) {

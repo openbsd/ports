@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_common_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- content/common/BUILD.gn.orig.port	Sun Aug 14 20:00:41 2016
++++ content/common/BUILD.gn	Mon Aug 15 11:47:05 2016
+@@ -121,6 +121,17 @@ source_set("common") {
+     libs += [ "android" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "sandbox_linux/sandbox_linux.cc",
++      "sandbox_linux/sandbox_seccomp_bpf_linux.cc",
++      "sandbox_linux/sandbox_debug_handling_linux.cc"
++    ]
++    sources += [
++      "sandbox_init_openbsd.cc"
++    ]
++  }
++
+   if (is_debug && !is_component_build && enable_plugins) {
+     # Content depends on the PPAPI message logging stuff; if this isn't here,
+     # some unit test binaries won't compile. This only worked in release mode

@@ -1,0 +1,19 @@
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- sandbox/linux/BUILD.gn.orig.port	Sun Aug 14 18:20:55 2016
++++ sandbox/linux/BUILD.gn	Sun Aug 14 22:26:12 2016
+@@ -11,12 +11,12 @@ if (is_android) {
+ }
+ 
+ declare_args() {
+-  compile_suid_client = is_linux
++  compile_suid_client = is_linux && !is_openbsd
+ 
+-  compile_credentials = is_linux
++  compile_credentials = is_linux && !is_openbsd
+ 
+   # On Android, use plain GTest.
+-  use_base_test_suite = is_linux
++  use_base_test_suite = is_linux && !is_openbsd
+ }
+ 
+ if (is_nacl_nonsfi) {

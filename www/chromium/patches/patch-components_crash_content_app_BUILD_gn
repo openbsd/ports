@@ -1,0 +1,21 @@
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- components/crash/content/app/BUILD.gn.orig.port	Sun Aug 14 18:58:08 2016
++++ components/crash/content/app/BUILD.gn	Sun Aug 14 23:35:01 2016
+@@ -109,7 +109,7 @@ source_set("app_non_mac_win") {
+     libs = [ "log" ]
+   }
+ 
+-  if (is_android || is_linux) {
++  if (is_android || (is_linux && !is_openbsd)) {
+     # Want these files on both Linux and Android.
+     set_sources_assignment_filter([])
+     sources += [
+@@ -141,7 +141,7 @@ source_set("app_non_mac_win") {
+ 
+       #'../breakpad/breakpad.gyp:breakpad_sender',  TODO(GYP)
+     ]
+-  } else if (is_posix && !is_ios) {
++  } else if (is_posix && !is_ios && !is_openbsd) {
+     deps += [ "//breakpad:client" ]
+   }
+ }

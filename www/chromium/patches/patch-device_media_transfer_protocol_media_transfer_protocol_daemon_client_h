@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_media_transfer_protocol_media_transfer_protocol_daemon_client_h,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- device/media_transfer_protocol/media_transfer_protocol_daemon_client.h.orig.port	Sun Aug 14 22:49:26 2016
++++ device/media_transfer_protocol/media_transfer_protocol_daemon_client.h	Sun Aug 14 22:49:33 2016
+@@ -19,7 +19,7 @@
+ #include "base/macros.h"
+ #include "build/build_config.h"
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ #error "Only used on Linux and ChromeOS"
+ #endif
+ 

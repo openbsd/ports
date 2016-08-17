@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- chrome/browser/extensions/BUILD.gn.orig.port	Mon Aug 15 10:07:52 2016
++++ chrome/browser/extensions/BUILD.gn	Mon Aug 15 10:08:36 2016
+@@ -116,6 +116,10 @@ source_set("extensions") {
+                     "//chrome")
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += rebase_path(
+             gypi_values.chrome_browser_extensions_service_discovery_sources,

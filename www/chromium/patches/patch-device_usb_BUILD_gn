@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_usb_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- device/usb/BUILD.gn.orig.port	Mon Aug 15 08:43:58 2016
++++ device/usb/BUILD.gn	Mon Aug 15 08:44:25 2016
+@@ -81,7 +81,7 @@ source_set("usb") {
+     deps += [ "//third_party/libusb" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_openbsd) || is_chromeos) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",

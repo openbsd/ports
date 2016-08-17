@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- ui/gl/BUILD.gn.orig.port	Sun Aug 14 17:29:00 2016
++++ ui/gl/BUILD.gn	Sun Aug 14 17:29:14 2016
+@@ -169,7 +169,7 @@ component("gl") {
+       "gl_implementation_osmesa.h",
+     ]
+   }
+-  if (!is_android) {  # TODO(GYP) Enable on Android when osmesa links.
++  if (!is_android && !is_openbsd) {  # TODO(GYP) Enable on Android when osmesa links.
+     deps += [ "//third_party/mesa:osmesa" ]
+   }
+   if (use_x11) {

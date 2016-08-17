@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_config_allocator_gni,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/config/allocator.gni.orig.port	Sun Aug 14 16:44:39 2016
++++ build/config/allocator.gni	Sun Aug 14 16:44:57 2016
+@@ -11,7 +11,7 @@ if (is_android || current_cpu == "mipsel" || is_mac ||
+   _default_allocator = "tcmalloc"
+ }
+ 
+-if ((is_linux || is_android) && !is_asan && !is_lsan && !is_tsan && !is_msan) {
++if ((is_linux || is_android) && !is_asan && !is_lsan && !is_tsan && !is_msan && !is_openbsd) {
+   _default_use_experimental_allocator_shim = true
+ } else {
+   _default_use_experimental_allocator_shim = false

@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- chrome/browser/BUILD.gn.orig.port	Mon Aug 15 08:47:12 2016
++++ chrome/browser/BUILD.gn	Mon Aug 15 10:12:25 2016
+@@ -732,6 +732,17 @@ source_set("browser") {
+                            "//chrome")
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "media_galleries/linux/mtp_device_delegate_impl_linux.cc",
++      "media_galleries/linux/mtp_device_object_enumerator.cc",
++      "media_galleries/linux/mtp_device_task_helper.cc",
++      "media_galleries/linux/mtp_device_task_helper_map_service.cc",
++      "media_galleries/linux/mtp_read_file_worker.cc",
++      "media_galleries/linux/snapshot_file_details.cc",
++    ]
++  }
++
+   if (!is_chrome_branded) {
+     sources += [
+       "search/local_files_ntp_source.cc",

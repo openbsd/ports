@@ -1,0 +1,39 @@
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Sun Aug 14 16:36:26 2016
++++ build/config/compiler/BUILD.gn	Sun Aug 14 23:12:50 2016
+@@ -35,7 +35,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      is_linux && (current_cpu == "x64" || current_cpu == "x86")
++      (is_linux && !is_openbsd) && (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+ 
+@@ -206,7 +206,7 @@ config("compiler") {
+ 
+     # Linker warnings.
+     if (!(is_chromeos && current_cpu == "arm") &&
+-        !(is_android && use_order_profiling) && !is_mac && !is_ios) {
++        !(is_android && use_order_profiling) && !is_mac && !is_ios && !is_openbsd) {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+       # crbug.com/485542
+@@ -288,7 +288,7 @@ config("compiler") {
+       "-Wl,-z,now",
+       "-Wl,-z,relro",
+     ]
+-    if (!using_sanitizer && !use_cfi_diag) {
++    if (!using_sanitizer && !use_cfi_diag && !is_openbsd) {
+       ldflags += [ "-Wl,-z,defs" ]
+     }
+   }
+@@ -977,7 +977,7 @@ config("default_warnings") {
+     # NaCl's Clang compiler and Chrome's hermetic Clang compiler will almost
+     # always have different versions. Certain flags may not be recognized by
+     # one version or the other.
+-    if (!is_nacl) {
++    if (!is_nacl && !is_openbsd) {
+       # Flags NaCl (Clang 3.7) does not recognize.
+       cflags += [
+         # TODO(thakis): Enable this, crbug.com/507717

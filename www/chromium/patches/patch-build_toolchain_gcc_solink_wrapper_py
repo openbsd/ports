@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.1 2016/08/17 11:06:50 robert Exp $
+--- build/toolchain/gcc_solink_wrapper.py.orig.port	Sun Aug 14 23:16:08 2016
++++ build/toolchain/gcc_solink_wrapper.py	Sun Aug 14 23:16:21 2016
+@@ -47,7 +47,7 @@ def CollectDynSym(args):
+   """Replaces: nm --format=posix -g -D $sofile | cut -f1-2 -d' '"""
+   toc = ''
+   nm = subprocess.Popen(CommandToRun([
+-      args.nm, '--format=posix', '-g', '-D', args.sofile]),
++      args.nm, '-g', '-D', args.sofile]),
+                         stdout=subprocess.PIPE, bufsize=-1)
+   for line in nm.stdout:
+     toc += ' '.join(line.split(' ', 2)[:2]) + '\n'
