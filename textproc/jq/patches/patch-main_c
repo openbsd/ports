@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_c,v 1.1 2016/08/16 06:48:19 jasper Exp $
---- main.c.orig	Mon May  2 13:27:48 2016
-+++ main.c	Mon May  2 13:50:26 2016
+$OpenBSD: patch-main_c,v 1.2 2016/08/17 13:48:33 jasper Exp $
+--- main.c.orig	Sun Aug 16 06:37:35 2015
++++ main.c	Tue Aug 16 11:41:44 2016
 @@ -195,6 +195,11 @@ int main(int argc, char* argv[]) {
    }
  #endif
  
-+  if (pledge("stdio rpath", NULL) == -1) {
++  if (pledge("stdio getpw rpath", NULL) == -1) {
 +    fprintf(stderr, "pledge\n");
 +    die();
 +  }
@@ -13,16 +13,3 @@ $OpenBSD: patch-main_c,v 1.1 2016/08/16 06:48:19 jasper Exp $
    if (argc) progname = argv[0];
  
    jq = jq_init();
-@@ -526,6 +530,12 @@ int main(int argc, char* argv[]) {
-     jv value;
-     while (jq_util_input_errors(input_state) == 0 &&
-            (jv_is_valid((value = jq_util_input_next_input(input_state))) || jv_invalid_has_msg(jv_copy(value)))) {
-+      // Now that all files have been read, drop 'rpath'.
-+      if (pledge("stdio", NULL) == -1) {
-+        fprintf(stderr, "pledge\n");
-+        die();
-+      }
-+
-       if (jv_is_valid(value)) {
-         ret = process(jq, value, jq_flags, dumpopts);
-         continue;

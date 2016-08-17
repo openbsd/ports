@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/16 06:48:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/17 13:48:33 jasper Exp $
 
 COMMENT =		lightweight and flexible command-line JSON processor
 
 V =			1.5
-REVISION =		1
+REVISION =		2
 DISTNAME =		jq-$V
 
 SHARED_LIBS +=	jq                        1.0 # 1.4
