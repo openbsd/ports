@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/16 06:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/17 07:02:31 jasper Exp $
 
 COMMENT =		MQTT Python client library
 
@@ -22,7 +22,6 @@ FLAVOR ?=
 MODPY_ADJ_FILES =	examples/*.py
 
 post-install:
-	${MODPY_
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py \
 		${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
