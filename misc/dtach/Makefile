@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/17 14:02:48 jasper Exp $
 
 COMMENT=		tiny program emulating the detach feature of screen
-DISTNAME=		dtach-0.8
-REVISION=		1
+DISTNAME=		dtach-0.9
 CATEGORIES=		misc
 
 HOMEPAGE=		http://dtach.sourceforge.net/

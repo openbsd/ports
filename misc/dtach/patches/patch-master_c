@@ -1,22 +1,7 @@
-$OpenBSD: patch-master_c,v 1.2 2012/07/18 11:15:30 jasper Exp $
-
-Last chunk:
-Security fix for CVE-2012-3368
-Memory portion (random stack data) disclosure to the client by unclean client disconnect 
-
-Patch from upstream CVS.
-
---- master.c.orig	Thu Jan 31 06:59:54 2008
-+++ master.c	Wed Jul 18 13:14:08 2012
-@@ -17,6 +17,7 @@
-     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
- #include "dtach.h"
-+#define HAVE_OPENPTY
- 
- /* The pty struct - The pty information is stored here. */
- struct pty
-@@ -189,7 +190,7 @@ create_socket(char *name)
+$OpenBSD: patch-master_c,v 1.3 2016/08/17 14:02:48 jasper Exp $
+--- master.c.orig	Mon May  9 03:34:34 2016
++++ master.c	Wed Aug 17 16:00:11 2016
+@@ -195,7 +196,7 @@ create_socket(char *name)
  	if (s < 0)
  		return -1;
  	sockun.sun_family = AF_UNIX;
@@ -25,15 +10,3 @@ Patch from upstream CVS.
  	if (bind(s, (struct sockaddr*)&sockun, sizeof(sockun)) < 0)
  	{
  		close(s);
-@@ -351,7 +352,10 @@ client_activity(struct client *p)
- 
- 	/* Push out data to the program. */
- 	if (pkt.type == MSG_PUSH)
--		write(the_pty.fd, pkt.u.buf, pkt.len);
-+	{
-+		if (pkt.len <= sizeof(pkt.u.buf))
-+			write(the_pty.fd, pkt.u.buf, pkt.len);
-+	}
- 
- 	/* Attach or detach from the program. */
- 	else if (pkt.type == MSG_ATTACH)
