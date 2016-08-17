@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.14 2016/05/13 14:27:48 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.15 2016/08/17 09:43:46 pea Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -64,7 +64,6 @@ lib/postgresql/uuid-ossp.so
 @man man/man1/pg_upgrade.1
 @man man/man1/pgbench.1
 @man man/man1/vacuumlo.1
-share/postgresql/extension/
 share/postgresql/extension/adminpack--1.0.sql
 share/postgresql/extension/adminpack.control
 share/postgresql/extension/autoinc--1.0.sql
