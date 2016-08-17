@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/12 20:24:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/08/17 14:17:11 jasper Exp $
 @bin bin/yad
 @man man/man1/yad.1
-share/aclocal/
 share/aclocal/yad.m4
 share/icons/hicolor/128x128/apps/yad.png
 share/icons/hicolor/16x16/apps/yad.png

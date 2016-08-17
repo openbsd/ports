@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/12 20:29:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/17 14:17:11 jasper Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
-DISTNAME=		yad-0.32.0
+DISTNAME=		yad-0.37.0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
@@ -28,7 +28,7 @@ RUN_DEPENDS=		x11/gtk+3,-guic
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=gtk3 \
 			--disable-html \
-			--with-rgb=${X11BASE}/share/X11/rgb.txt 
+			--with-rgb=${X11BASE}/share/X11/rgb.txt
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
