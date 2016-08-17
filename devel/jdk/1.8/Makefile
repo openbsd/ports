@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/01 21:45:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/17 21:58:36 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -10,7 +10,7 @@ B=		b15
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
-REVISION =	0
+REVISION=	1
 EPOCH=		0
 
 DIST_SUBDIR=	jdk
@@ -106,6 +106,8 @@ JREIMAGEDIR=	${BUILDDIR}/j2re-image
  
 post-extract:
 	chmod +x ${WRKDIST}/configure
+	printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded $$*\n' > ${WRKDIR}/bin/ld; \
+		chmod 755 ${WRKDIR}/bin/ld
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8 \
