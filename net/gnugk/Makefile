@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/08/03 08:44:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2016/08/17 20:58:19 sthen Exp $
 
 PORTROACH=	skipv:4.2-2
 
@@ -8,6 +8,7 @@ COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-4.2-2
 PKGNAME=	gnugk-4.2.2
+REVISION=	0
 WRKDIST=	${WRKDIR}/gnugk-4.2
 
 CATEGORIES=	net telephony

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/23 16:15:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/17 20:58:19 sthen Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.2.4
+REVISION=		0
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 

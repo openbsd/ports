@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/06/09 14:30:20 florian Exp $
+# $OpenBSD: Makefile,v 1.46 2016/08/17 20:58:19 sthen Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -9,6 +9,7 @@ COMMENT-pgsql=		PGSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP module for PowerDNS
 
 V=			3.4.9
+REVISION-main=		0
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-${V}
