@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/10 21:29:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/18 10:55:18 jca Exp $
 
 COMMENT =	ncurses Git repository browser
 
-DISTNAME =	tig-2.1.1
-REVISION =	2
+DISTNAME =	tig-2.2
 
 CATEGORIES =	devel
 
@@ -31,13 +30,13 @@ ALL_TARGET =	all doc-man doc-html
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += --with-libiconv=${LOCALBASE} DOCBOOK2PDF=false
 
+FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/tig
+
 NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tig
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/tig
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tig
-	${INSTALL_DATA} ${WRKSRC}/tigrc ${PREFIX}/share/examples/tig
 	${INSTALL_MAN} ${WRKSRC}/doc/tig.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/tigrc.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/tigmanual.7 ${PREFIX}/man/man7
