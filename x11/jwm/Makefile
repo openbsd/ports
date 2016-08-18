@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/14 13:50:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/08/18 13:42:26 jasper Exp $
 
-COMMENT=		Joe's Window Manager
+COMMENT=		Joe's Window Manager#'
 
-DISTNAME=		jwm-2.3.5
+DISTNAME=		jwm-2.3.6
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.joewing.net/projects/jwm/index.shtml
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo freetype
