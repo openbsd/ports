@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.18 2016/03/20 20:03:07 naddy Exp $
+# $OpenBSD: Info.pm,v 1.19 2016/08/18 12:28:53 sthen Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -95,6 +95,7 @@ our $vars = {
     USE_GMAKE => 'YesNoVar',
     USE_GROFF => 'YesNoVar',
     USE_LIBTOOL => 'YesNoGnuVar',
+    USE_WXNEEDED => 'YesNoVar',
     WANTLIB => 'WantlibVar',
     # XXX those variables are part of the dump for dpb, but really should
     # not end up in sqlports. But make sure we know about them.

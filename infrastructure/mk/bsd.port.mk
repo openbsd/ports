@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1319 2016/07/10 18:51:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1320 2016/08/18 12:28:53 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -110,7 +110,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
-	PORTROACH_COMMENT MAKEFILE_LIST
+	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -361,6 +361,7 @@ BASELOCALSTATEDIR ?= ${VARBASE}
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
 RCDIR ?= /etc/rc.d
+USE_WXNEEDED ?= No
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
 BUILD_DEPENDS += devel/gmake
@@ -2595,6 +2596,10 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 		if $$error; then exit 1; fi; \
 	fi
 # End of PATCH.
+.endif
+.if ${USE_WXNEEDED:L} == "yes"
+	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded $$@\n' > ${WRKDIR}/bin/ld
+	@chmod 555 ${WRKDIR}/bin/ld
 .endif
 .if target(post-patch)
 	@${_MAKESYS} post-patch
