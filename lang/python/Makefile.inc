@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.116 2016/08/12 09:55:28 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.117 2016/08/18 12:50:42 jasper Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -123,10 +123,12 @@ CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' CPPFLAGS='-I${LOCALBASE}/include' \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV +=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
+MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC}'
+FAKE_FLAGS +=	RANLIB=:
+
 # Python itself is clean, but some extensions e.g. py-cryptography
 # and QtWebKit require W|X mappings.
-MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC} -Wl,-z,wxneeded'
-FAKE_FLAGS +=	RANLIB=:
+USE_WXNEEDED = Yes
 
 ALL_TARGET =	all ./Lib/plat-openbsd6
 
