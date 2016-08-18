@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2016/05/15 18:13:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.28 2016/08/18 04:53:30 shadchin Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.6.1
+MODPY_EGG_VERSION =	2.6.2
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
@@ -17,14 +17,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pq pthread
 
-MODPY_PI =	Yes
-
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	databases/postgresql
 BUILD_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR} \
 		textproc/py-sphinx${MODPY_FLAVOR}
 TEST_DEPENDS = ${RUN_DEPENDS}
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
 FLAVORS = 	python3
 FLAVOR ?=
