@@ -1,25 +1,38 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
---- Makefile.orig	Tue Jul 14 05:58:57 2015
-+++ Makefile	Fri Jul 17 23:23:49 2015
+$OpenBSD: patch-Makefile,v 1.2 2016/08/18 18:30:57 czarkoff Exp $
+--- Makefile.orig	Fri Jul  8 15:02:42 2016
++++ Makefile	Thu Aug 18 19:08:42 2016
 @@ -6,7 +6,7 @@ include config.mk
  SRC = surf.c
  OBJ = ${SRC:.c=.o}
  
 -all: options surf
-+all: options surf2
++all: surf2
  
  options:
  	@echo surf build options:
-@@ -24,7 +24,7 @@ config.h:
+@@ -15,8 +15,7 @@ options:
+ 	@echo "CC       = ${CC}"
+ 
+ .c.o:
+-	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ ${OBJ}: config.h config.mk
+ 
+@@ -24,9 +23,8 @@ config.h:
  	@echo creating $@ from config.def.h
  	@cp config.def.h $@
  
 -surf: ${OBJ}
+-	@echo CC -o $@
+-	@${CC} -o $@ surf.o ${LDFLAGS}
 +surf2: ${OBJ}
- 	@echo CC -o $@
- 	@${CC} -o $@ surf.o ${LDFLAGS}
++	${CC} -o $@ surf.o ${LDFLAGS}
  
-@@ -45,12 +45,12 @@ dist: clean
+ clean:
+ 	@echo cleaning
+@@ -45,12 +43,12 @@ dist: clean
  install: all
  	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
  	@mkdir -p ${DESTDIR}${PREFIX}/bin

@@ -1,6 +1,15 @@
-$OpenBSD: patch-config_def_h,v 1.4 2016/07/31 17:54:37 czarkoff Exp $
+$OpenBSD: patch-config_def_h,v 1.5 2016/08/18 18:30:57 czarkoff Exp $
 --- config.def.h.orig	Fri Jul  8 15:02:42 2016
-+++ config.def.h	Sun Jul 31 19:32:54 2016
++++ config.def.h	Thu Aug 18 19:02:53 2016
+@@ -17,7 +17,7 @@ static Parameter defconfig[ParameterLast] = {
+ 	SETB(FrameFlattening,    0),
+ 	SETB(Geolocation,        0),
+ 	SETB(HideBackground,     0),
+-	SETB(Inspector,          0),
++	SETB(Inspector,          1),
+ 	SETB(JavaScript,         1),
+ 	SETB(KioskMode,          0),
+ 	SETB(LoadImages,         1),
 @@ -30,7 +30,7 @@ static Parameter defconfig[ParameterLast] = {
  	SETB(SiteQuirks,         1),
  	SETB(SpellChecking,      0),
