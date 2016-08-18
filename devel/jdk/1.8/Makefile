@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/17 21:58:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/18 12:29:32 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_WXNEEDED=	Yes
 
 COMMENT-main=	OpenJDK Software Development Kit v${V}
 COMMENT-jre=	OpenJDK Runtime Environment v${V}
@@ -106,8 +107,6 @@ JREIMAGEDIR=	${BUILDDIR}/j2re-image
  
 post-extract:
 	chmod +x ${WRKDIST}/configure
-	printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded $$*\n' > ${WRKDIR}/bin/ld; \
-		chmod 755 ${WRKDIR}/bin/ld
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8 \

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.82 2016/08/17 21:36:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2016/08/18 12:29:32 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_WXNEEDED=	Yes
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
@@ -136,8 +137,6 @@ COPYFILES=	hotspot/src/os/linux/vm/decoder_linux.cpp \
 
 # create initial bsd src from linux src
 post-extract:
-	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded $$*\n' > ${WRKDIR}/bin/ld
-	@chmod 755 ${WRKDIR}/bin/ld
 	@for f in ${COPYFILES}; do \
 		t=`echo $$f | sed 's/linux/bsd/g'`; \
 		sed 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
