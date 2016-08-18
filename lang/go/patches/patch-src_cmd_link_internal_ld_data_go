@@ -1,30 +1,30 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_data_go,v 1.1 2016/05/16 13:50:02 jsing Exp $
---- src/cmd/link/internal/ld/data.go.orig	Thu Feb 18 07:35:20 2016
-+++ src/cmd/link/internal/ld/data.go	Sat May 14 02:18:17 2016
-@@ -385,7 +385,7 @@ func relocsym(s *LSym) {
+$OpenBSD: patch-src_cmd_link_internal_ld_data_go,v 1.2 2016/08/18 17:23:03 jsing Exp $
+--- src/cmd/link/internal/ld/data.go.orig	Tue Aug  9 05:18:29 2016
++++ src/cmd/link/internal/ld/data.go	Fri Aug 12 02:51:14 2016
+@@ -400,7 +400,7 @@ func relocsym(s *LSym) {
  		case obj.R_TLS_LE:
- 			isAndroidX86 := goos == "android" && (Thearch.Thechar == '6' || Thearch.Thechar == '8')
+ 			isAndroidX86 := goos == "android" && (SysArch.InFamily(sys.AMD64, sys.I386))
  
 -			if Linkmode == LinkExternal && Iself && HEADTYPE != obj.Hopenbsd && !isAndroidX86 {
 +			if Linkmode == LinkExternal && Iself && !isAndroidX86 {
  				r.Done = 0
  				if r.Sym == nil {
  					r.Sym = Ctxt.Tlsg
-@@ -419,7 +419,7 @@ func relocsym(s *LSym) {
+@@ -434,7 +434,7 @@ func relocsym(s *LSym) {
  		case obj.R_TLS_IE:
- 			isAndroidX86 := goos == "android" && (Thearch.Thechar == '6' || Thearch.Thechar == '8')
+ 			isAndroidX86 := goos == "android" && (SysArch.InFamily(sys.AMD64, sys.I386))
  
 -			if Linkmode == LinkExternal && Iself && HEADTYPE != obj.Hopenbsd && !isAndroidX86 {
 +			if Linkmode == LinkExternal && Iself && !isAndroidX86 {
  				r.Done = 0
  				if r.Sym == nil {
  					r.Sym = Ctxt.Tlsg
-@@ -1413,7 +1413,7 @@ func dodata() {
- 	}
+@@ -1489,7 +1489,7 @@ func dodata() {
  
- 	if s != nil && s.Type == obj.STLSBSS {
+ 	if len(data[obj.STLSBSS]) > 0 {
+ 		var sect *Section
 -		if Iself && (Linkmode == LinkExternal || Debug['d'] == 0) && HEADTYPE != obj.Hopenbsd {
 +		if Iself && (Linkmode == LinkExternal || Debug['d'] == 0) {
  			sect = addsection(&Segdata, ".tbss", 06)
- 			sect.Align = int32(Thearch.Ptrsize)
+ 			sect.Align = int32(SysArch.PtrSize)
  			sect.Vaddr = 0

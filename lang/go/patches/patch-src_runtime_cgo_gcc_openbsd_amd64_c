@@ -1,22 +1,29 @@
-$OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 jsing Exp $
---- src/runtime/cgo/gcc_openbsd_amd64.c.orig	Thu Feb 18 07:35:22 2016
-+++ src/runtime/cgo/gcc_openbsd_amd64.c	Sat May 14 02:21:07 2016
-@@ -5,8 +5,6 @@
- // +build cgo
+$OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.2 2016/08/18 17:23:03 jsing Exp $
+--- src/runtime/cgo/gcc_openbsd_amd64.c.orig	Tue Aug  9 05:18:30 2016
++++ src/runtime/cgo/gcc_openbsd_amd64.c	Fri Aug 12 03:12:24 2016
+@@ -3,8 +3,7 @@
+ // license that can be found in the LICENSE file.
  
  #include <sys/types.h>
 -#include <dlfcn.h>
 -#include <errno.h>
++#include <sys/signal.h>
  #include <pthread.h>
  #include <signal.h>
  #include <string.h>
-@@ -15,102 +13,6 @@
+@@ -13,125 +12,6 @@
  static void* threadentry(void*);
  static void (*setg_gcc)(void*);
  
--// TCB_SIZE is sizeof(struct thread_control_block),
--// as defined in /usr/src/lib/librthread/tcb.h
+-// TCB_SIZE is sizeof(struct thread_control_block), as defined in
+-// /usr/src/lib/librthread/tcb.h on OpenBSD 5.9 and earlier.
 -#define TCB_SIZE (4 * sizeof(void *))
+-
+-// TIB_SIZE is sizeof(struct tib), as defined in
+-// /usr/include/tib.h on OpenBSD 6.0 and later.
+-#define TIB_SIZE (4 * sizeof(void *) + 6 * sizeof(int))
+-
+-// TLS_SIZE is the size of TLS needed for Go.
 -#define TLS_SIZE (2 * sizeof(void *))
 -
 -void *__get_tcb(void);
@@ -30,25 +37,38 @@ $OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 js
 -	void *arg;
 -};
 -
+-static int has_tib = 0;
+-
 -static void
 -tcb_fixup(int mainthread)
 -{
--	void *newtcb, *oldtcb;
+-	void *tls, *newtcb, *oldtcb;
+-	size_t tls_size, tcb_size;
+-
+-	// TODO(jsing): Remove once OpenBSD 6.1 is released and OpenBSD 5.9 is
+-	// no longer supported.
 -
 -	// The OpenBSD ld.so(1) does not currently support PT_TLS. As a result,
 -	// we need to allocate our own TLS space while preserving the existing
--	// TCB that has been setup via librthread.
+-	// TCB or TIB that has been setup via librthread.
 -
--	newtcb = malloc(TCB_SIZE + TLS_SIZE);
--	if(newtcb == NULL)
+-	tcb_size = has_tib ? TIB_SIZE : TCB_SIZE;
+-	tls_size = TLS_SIZE + tcb_size;
+-	tls = malloc(tls_size);
+-	if(tls == NULL)
 -		abort();
 -
 -	// The signal trampoline expects the TLS slots to be zeroed.
--	bzero(newtcb, TLS_SIZE);
+-	bzero(tls, TLS_SIZE);
 -
 -	oldtcb = __get_tcb();
--	bcopy(oldtcb, newtcb + TLS_SIZE, TCB_SIZE);
--	__set_tcb(newtcb + TLS_SIZE);
+-	newtcb = tls + TLS_SIZE;
+-	bcopy(oldtcb, newtcb, tcb_size);
+-	if(has_tib) {
+-		 // Fix up self pointer.
+-		*(uintptr_t *)(newtcb) = (uintptr_t)newtcb;
+-	}
+-	__set_tcb(newtcb);
 -
 -	// NOTE(jsing, minux): we can't free oldtcb without causing double-free
 -	// problem. so newtcb will be memory leaks. Get rid of this when OpenBSD
@@ -79,6 +99,10 @@ $OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 js
 -	if(sys_pthread_create == NULL) {
 -		fprintf(stderr, "runtime/cgo: dlsym failed to find pthread_create: %s\n", dlerror());
 -		abort();
+-	}
+-	// _rthread_init is hidden in OpenBSD librthread that has TIB.
+-	if(dlsym(handle, "_rthread_init") == NULL) {
+-		has_tib = 1;
 -	}
 -	dlclose(handle);
 -}
@@ -113,7 +137,7 @@ $OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 js
  void
  x_cgo_init(G *g, void (*setg)(void*))
  {
-@@ -122,13 +24,6 @@ x_cgo_init(G *g, void (*setg)(void*))
+@@ -143,16 +23,8 @@ x_cgo_init(G *g, void (*setg)(void*))
  	pthread_attr_getstacksize(&attr, &size);
  	g->stacklo = (uintptr)&attr - size + 4096;
  	pthread_attr_destroy(&attr);
@@ -126,8 +150,11 @@ $OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 js
 -	tcb_fixup(1);
  }
  
- 
-@@ -149,7 +44,7 @@ _cgo_sys_thread_start(ThreadStart *ts)
+-
+ void
+ _cgo_sys_thread_start(ThreadStart *ts)
+ {
+@@ -170,7 +42,7 @@ _cgo_sys_thread_start(ThreadStart *ts)
  
  	// Leave stacklo=0 and set stackhi=size; mstack will do the rest.
  	ts->g->stackhi = size;
@@ -136,7 +163,7 @@ $OpenBSD: patch-src_runtime_cgo_gcc_openbsd_amd64_c,v 1.1 2016/05/16 13:50:02 js
  
  	pthread_sigmask(SIG_SETMASK, &oset, nil);
  
-@@ -163,8 +58,6 @@ static void*
+@@ -184,8 +56,6 @@ static void*
  threadentry(void *v)
  {
  	ThreadStart ts;
