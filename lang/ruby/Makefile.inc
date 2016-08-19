@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2016/03/16 20:02:11 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2016/08/19 19:09:34 jeremy Exp $
 
 DISTNAME ?=	ruby-${VERSION}-p${PATCHLEVEL}
 
@@ -20,6 +20,10 @@ CONFIGURE_ARGS +=	--enable-shared
 CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Ruby itself is clean, but some extensions (e.g. devel/ruby-therubyracer)
+# need W|X mappings.
+USE_WXNEEDED ?=		Yes
 
 REV ?=			${VERSION:R}
 SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd

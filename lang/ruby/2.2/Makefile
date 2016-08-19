@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/07/15 15:53:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/08/19 19:09:34 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -15,7 +15,7 @@ PKGNAME-gdbm =		ruby22-gdbm-${VERSION}
 PKGNAME-tk =		ruby22-tk-${VERSION}
 PKGNAME-ri_docs =	ruby22-ri_docs-${VERSION}
 
-REVISION-main =		1
+REVISION-main =		2
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
 
