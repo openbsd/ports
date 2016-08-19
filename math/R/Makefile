@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.84 2016/06/21 18:21:52 feinerer Exp $
+# $OpenBSD: Makefile,v 1.85 2016/08/19 07:02:47 dcoppa Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.3.1
+REVISION=	0
 
 SO_VERSION=	32.0
 .for _lib in R Rblas Rlapack
@@ -66,6 +67,7 @@ RUN_DEPENDS=	archivers/gtar \
 		archivers/zip \
 		devel/gmake \
 		devel/xdg-utils \
+		lang/gcc/4.9,-f95 \
 		print/texlive/base>=2014p1
 
 CONFIGURE_STYLE=gnu
@@ -78,7 +80,9 @@ CONFIGURE_ARGS= --disable-java \
 		--with-tcl-config=${MODTCL_CONFIG} \
 		--with-tk-config=${MODTK_CONFIG}
 
-CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
+CONFIGURE_ENV=	F77="${LOCALBASE}/bin/egfortran" \
+		FC="${LOCALBASE}/bin/egfortran" \
+		FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2015/12/14 16:49:02 feinerer Exp $
+$OpenBSD: README,v 1.5 2016/08/19 07:02:47 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,8 +22,7 @@ Customizing package compilation
 Make variables to be used by R packages compiling code at installation time
 can be customized via ~/.R/Makevars
 (https://cran.r-project.org/doc/manuals/r-release/R-admin.html#Customizing-package-compilation).
-E.g., for using recent compilers (packages g++, g95, and gcc) add
+E.g., for using recent compilers (packages g++ and gcc) add
 
 CC=egcc -std=gnu99
 CXX=eg++
-F77=egfortran
