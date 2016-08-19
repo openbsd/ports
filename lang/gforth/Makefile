@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2016/06/13 11:22:09 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/19 14:08:44 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
+USE_WXNEEDED =		Yes
 
 COMMENT =		ANSI/200x Forth interpreter and compiler
 
@@ -26,7 +27,7 @@ LIB_DEPENDS =		devel/ffcall \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-z,wxneeded"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS +=		-Dunix
 FAKE_FLAGS+=		DESTDIR="${WRKINST}"
