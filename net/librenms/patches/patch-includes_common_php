@@ -1,13 +1,16 @@
-$OpenBSD: patch-includes_common_php,v 1.4 2016/07/08 16:07:22 sthen Exp $
---- includes/common.php.orig	Wed Jul  6 15:37:58 2016
-+++ includes/common.php	Wed Jul  6 15:39:37 2016
-@@ -1036,14 +1036,14 @@ function version_info($remote=true) {
+$OpenBSD: patch-includes_common_php,v 1.5 2016/08/19 14:39:04 sthen Exp $
+--- includes/common.php.orig	Fri Aug 12 14:22:24 2016
++++ includes/common.php	Fri Aug 12 14:24:53 2016
+@@ -1038,16 +1038,15 @@ function version_info($remote=true) {
          curl_setopt($api, CURLOPT_RETURNTRANSFER, 1);
          $output['github'] = json_decode(curl_exec($api),true);
      }
--    $output['local_sha']    = rtrim(`git rev-parse HEAD`);
+-    list($local_sha, $local_date) = explode('|', rtrim(`git show --pretty='%H|%ci' -s HEAD`));
+-    $output['local_sha']    = $local_sha;
+-    $output['local_date']   = $local_date;
 -    $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
 +    $output['local_sha']    = '';
++    $output['local_date']   = '';
 +    $output['local_branch'] = '';
  
      $output['db_schema']   = dbFetchCell('SELECT version FROM dbSchema');

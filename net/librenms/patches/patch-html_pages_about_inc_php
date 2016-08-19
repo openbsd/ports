@@ -1,12 +1,12 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.2 2016/02/25 00:46:35 sthen Exp $
---- html/pages/about.inc.php.orig	Sun Feb 14 14:40:26 2016
-+++ html/pages/about.inc.php	Sun Feb 14 14:40:29 2016
-@@ -160,7 +160,7 @@ $version         = `git rev-parse --short HEAD`;
+$OpenBSD: patch-html_pages_about_inc_php,v 1.3 2016/08/19 14:39:04 sthen Exp $
+--- html/pages/about.inc.php.orig	Fri Aug 12 14:22:24 2016
++++ html/pages/about.inc.php	Fri Aug 12 14:23:51 2016
+@@ -160,7 +160,7 @@ $version_date    = $versions['local_date'];
  echo "
  <div class='table-responsive'>
      <table class='table table-condensed' border='0'>
--      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$version</a></td></tr>
-+      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$project_version</a></td></tr>
+-      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$version - <span id='version_date'>$version_date</span></a></td></tr>
++      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$project_version - <span id='version_date'>$version_date</span></a></td></tr>
        <tr><td><b>DB Schema</b></td><td>#$schema_version</td></tr>
        <tr><td><b>Apache</b></td><td>$apache_version</td></tr>
        <tr><td><b>PHP</b></td><td>$php_version</td></tr>

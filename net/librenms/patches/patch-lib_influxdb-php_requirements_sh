@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_influxdb-php_requirements_sh,v 1.1 2016/08/19 14:39:04 sthen Exp $
+--- lib/influxdb-php/requirements.sh.orig	Fri Aug 12 14:20:40 2016
++++ lib/influxdb-php/requirements.sh	Fri Aug 12 14:20:54 2016
+@@ -1,6 +1,4 @@
+-#!/usr/local/bin/bash
+-
+-#!/usr/local/bin/bash
++#!/bin/sh
+ 
+ GLEXEC=$(which ansible-galaxy)
+ 
