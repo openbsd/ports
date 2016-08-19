@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2014/09/02 08:44:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2016/08/19 05:04:38 dcoppa Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.24
+VER=			0.25
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
@@ -14,9 +14,11 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c glib-2.0 mpdclient>=1 ncursesw pthread
+WANTLIB=		c glib-2.0 mpdclient>=1 ncursesw
+
 LIB_DEPENDS=		devel/glib2 \
 			audio/libmpdclient>=2.4
+
 MODULES=		devel/gettext
 
 MASTER_SITES=		http://www.musicpd.org/download/ncmpc/${VER:R}/
