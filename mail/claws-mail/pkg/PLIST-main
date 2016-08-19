@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2016/03/02 12:38:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2016/08/19 16:52:38 danj Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -49,6 +49,7 @@ include/claws-mail/common/log.h
 include/claws-mail/common/md5.h
 include/claws-mail/common/mgutils.h
 include/claws-mail/common/passcrypt.h
+include/claws-mail/common/pkcs5_pbkdf2.h
 include/claws-mail/common/plugin.h
 include/claws-mail/common/prefs.h
 include/claws-mail/common/progressindicator.h
@@ -174,6 +175,9 @@ include/claws-mail/news.h
 include/claws-mail/news_gtk.h
 include/claws-mail/noticeview.h
 include/claws-mail/partial_download.h
+include/claws-mail/password.h
+include/claws-mail/password_gtk.h
+include/claws-mail/passwordstore.h
 include/claws-mail/pine.h
 include/claws-mail/plugins/
 include/claws-mail/plugins/claws-mail/
@@ -226,6 +230,7 @@ include/claws-mail/prefs_image_viewer.h
 include/claws-mail/prefs_logging.h
 include/claws-mail/prefs_matcher.h
 include/claws-mail/prefs_message.h
+include/claws-mail/prefs_migration.h
 include/claws-mail/prefs_msg_colors.h
 include/claws-mail/prefs_other.h
 include/claws-mail/prefs_quote.h
@@ -363,6 +368,7 @@ share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/apps/claws-mail.png
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
+share/locale/da/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
@@ -370,14 +376,17 @@ share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
 share/locale/he/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
+share/locale/id_ID/
+share/locale/id_ID/LC_MESSAGES/
+share/locale/id_ID/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
-share/locale/lt/LC_MESSAGES/claws-mail.mo
 share/locale/nb/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
+share/locale/tr/LC_MESSAGES/claws-mail.mo
 share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

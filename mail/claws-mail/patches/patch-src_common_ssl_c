@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_common_ssl_c,v 1.1 2016/08/03 18:47:57 edd Exp $
+$OpenBSD: patch-src_common_ssl_c,v 1.2 2016/08/19 16:52:38 danj Exp $
 
 Add OpenBSD CA cert path.
 
---- src/common/ssl.c.orig	Tue Jan 19 11:02:30 2016
-+++ src/common/ssl.c	Sun Jul 31 12:31:11 2016
-@@ -115,6 +115,7 @@ const gchar *claws_ssl_get_cert_file(void)
+--- src/common/ssl.c.orig	Sun Aug  7 10:08:05 2016
++++ src/common/ssl.c	Wed Aug 10 11:11:31 2016
+@@ -119,6 +119,7 @@ const gchar *claws_ssl_get_cert_file(void)
  {
  #ifndef G_OS_WIN32
  	const char *cert_files[]={
