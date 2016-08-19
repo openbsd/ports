@@ -1,15 +1,7 @@
-$OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.2 2016/08/19 19:58:47 robert Exp $
 --- BUILD.gn.orig.port	Wed Aug  3 21:02:09 2016
-+++ BUILD.gn	Mon Aug 15 21:08:15 2016
-@@ -118,7 +118,6 @@ group("both_gn_and_gyp") {
-   deps = [
-     "//base:base_unittests",
-     "//chrome/installer",
--    "//components:components_unittests",
-     "//net:net_unittests",
-     "//skia:skia_unittests",
-     "//sql:sql_unittests",
-@@ -136,7 +135,7 @@ group("both_gn_and_gyp") {
++++ BUILD.gn	Wed Aug 17 19:39:57 2016
+@@ -136,7 +136,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -18,33 +10,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
      deps += [
        "//chrome",
        "//chrome/test:browser_tests",
-@@ -205,7 +204,6 @@ group("both_gn_and_gyp") {
-       "//content/test:content_perftests",
-       "//content/test:content_unittests",
-       "//device:device_unittests",
--      "//gpu:gpu_unittests",
-       "//gpu/ipc/service:gpu_ipc_service_unittests",
-       "//ipc:ipc_tests",
-       "//ipc/mojo:ipc_mojo_unittests",
-@@ -279,6 +277,17 @@ group("both_gn_and_gyp") {
-     ]
-   }
- 
-+  if (is_openbsd) {
-+    deps -= [
-+      "//extensions/shell:app_shell_unittests",
-+      "//gpu/ipc/service:gpu_ipc_service_unittests",
-+      "//ui/app_list:app_list_unittests",
-+      "//ui/aura:aura_unittests",
-+      "//ui/base:ui_base_unittests",
-+      "//ui/touch_selection:ui_touch_selection_unittests"
-+    ]
-+  }
-+
-   if (use_ozone) {
-     deps += [ "//ui/ozone" ]
-   }
-@@ -365,7 +374,7 @@ group("both_gn_and_gyp") {
+@@ -365,7 +365,7 @@ group("both_gn_and_gyp") {
      }
    }
  
@@ -53,7 +19,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
      deps += [
        "//breakpad:breakpad_unittests",
        "//breakpad:core-2-minidump",
-@@ -402,8 +411,6 @@ group("both_gn_and_gyp") {
+@@ -402,8 +402,6 @@ group("both_gn_and_gyp") {
        "//net:flip_in_mem_edsm_server_unittests",
        "//net:quic_client",
        "//net:quic_server",
@@ -62,15 +28,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
      ]
  
      if (is_chromeos || use_ash) {
-@@ -435,7 +442,6 @@ group("both_gn_and_gyp") {
-       "//gin:gin_shell",
-       "//gin:gin_unittests",
-       "//google_apis/gcm:mcs_probe",
--      "//gpu:gl_tests",
-       "//gpu:gpu_perftests",
-       "//ipc:ipc_perftests",
-       "//media:media_perftests",
-@@ -454,10 +460,6 @@ group("both_gn_and_gyp") {
+@@ -454,10 +452,6 @@ group("both_gn_and_gyp") {
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
@@ -81,24 +39,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -471,11 +473,15 @@ group("both_gn_and_gyp") {
-         "//net:tld_cleanup",
-         "//ppapi:pepper_hash_for_uma",
-         "//ppapi:ppapi_perftests",
--        "//third_party/angle/src/tests:angle_unittests",
-         "//third_party/leveldatabase:env_chromium_unittests",
-         "//third_party/libaddressinput:libaddressinput_unittests",
-       ]
-     }
-+    if (is_openbsd) {
-+      deps -= [
-+        "//ui/compositor:compositor_unittests"
-+      ]
-+    }
-     if (!is_android && !is_linux) {
-       # TODO(dpranke): Re-enable this once
-       # https://chromium-review.googlesource.com/#/c/312298/1 is rolled
-@@ -507,10 +513,6 @@ group("both_gn_and_gyp") {
+@@ -507,10 +501,6 @@ group("both_gn_and_gyp") {
  
    if (is_android || (is_linux && !is_chromeos)) {
      deps += [
@@ -109,15 +50,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
        "//components/network_hints/browser",
        "//content/public/app:browser",
        "//content/public/app:child",
-@@ -523,7 +525,6 @@ group("both_gn_and_gyp") {
-     if (!is_android) {
-       deps += [
-         "//build/sanitizers:copy_llvm_symbolizer",
--        "//chrome/test:chrome_app_unittests",
-         "//gpu/khronos_glcts_support:khronos_glcts_test",
-         "//media/cast:cast_benchmarks",
-         "//media/cast:tap_proxy",
-@@ -595,7 +596,7 @@ group("both_gn_and_gyp") {
+@@ -595,7 +585,7 @@ group("both_gn_and_gyp") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -126,25 +59,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -640,7 +641,7 @@ group("gn_only") {
-     deps += [ "//components/proximity_auth:proximity_auth_unittests" ]
-   }
- 
--  if (is_win || is_linux) {
-+  if (is_win || (is_linux && !is_openbsd)) {
-     deps += [
-       "//components/mus/demo",
-       "//components/mus/ws:tests",
-@@ -653,7 +654,7 @@ group("gn_only") {
-     ]
-   }
- 
--  if (is_linux && !is_chromeos && !is_chromecast) {
-+  if ((is_linux && !is_openbsd) && !is_chromeos && !is_chromecast) {
-     # TODO(GYP): Figure out if any of these should be in gn_all
-     # and figure out how cross-platform they are
-     deps += [
-@@ -839,7 +840,7 @@ if (!is_ios) {
+@@ -839,7 +829,7 @@ if (!is_ios) {
        ]
      }
  
@@ -153,7 +68,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
        deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -850,7 +851,7 @@ if (!is_ios) {
+@@ -850,7 +840,7 @@ if (!is_ios) {
        ]
      }
  
@@ -162,7 +77,7 @@ $OpenBSD: patch-BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
        deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
    }
-@@ -898,7 +899,6 @@ group("chromium_builder_perf") {
+@@ -898,7 +888,6 @@ group("chromium_builder_perf") {
          "//chrome/installer/mini_installer:mini_installer",
        ]
      } else {
