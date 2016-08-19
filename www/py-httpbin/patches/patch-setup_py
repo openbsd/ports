@@ -1,9 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2016/01/05 12:39:47 shadchin Exp $
---- setup.py.orig	Thu Dec 17 23:23:35 2015
-+++ setup.py	Thu Dec 17 23:24:10 2015
-@@ -3,8 +3,8 @@ import codecs
+$OpenBSD: patch-setup_py,v 1.2 2016/08/19 07:39:05 shadchin Exp $
+--- setup.py.orig	Thu Aug 11 05:49:19 2016
++++ setup.py	Thu Aug 18 10:14:50 2016
+@@ -1,8 +1,9 @@
+ from setuptools import setup, find_packages
  import os
- import re
++import codecs
  
 -long_description = open(
 -    os.path.join(os.path.dirname(__file__), 'README.rst')).read()
