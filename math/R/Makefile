@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/08/19 07:02:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.86 2016/08/19 13:54:40 dcoppa Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.3.1
@@ -48,8 +48,7 @@ BUILD_DEPENDS=	archivers/gtar \
 		print/texinfo \
 		print/texlive/base>=2014p1
 
-LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
-		${MODTK_LIB_DEPENDS} \
+LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
 		archivers/xz \
 		devel/glib2 \
