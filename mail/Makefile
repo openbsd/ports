@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.343 2016/08/18 22:41:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.344 2016/08/19 22:47:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -96,11 +96,12 @@
      SUBDIR += msmtp
      SUBDIR += mu
      SUBDIR += mutt
-     SUBDIR += mutt,compressed
-     SUBDIR += mutt,compressed,sasl
-     SUBDIR += mutt,compressed,sasl,slang
+     SUBDIR += mutt,compressed,sidebar
+     SUBDIR += mutt,compressed,sidebar,sasl
+     SUBDIR += mutt,compressed,sidebar,sasl,slang
      SUBDIR += mutt,gpgme
      SUBDIR += mutt,sasl
+     SUBDIR += mutt,slang
      SUBDIR += nmh
      SUBDIR += nmh,sasl
      SUBDIR += nmzmail

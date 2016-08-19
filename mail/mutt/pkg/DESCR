@@ -13,3 +13,5 @@ Flavors:
 	slang	   - use S-Lang instead of curses for screen handling
 	compressed - build with compressed folder support
 		     (see: http://www.spinnaker.de/mutt/compressed/)
+	sidebar	   - adds a sidebar that has a folder list
+		     (see: http://thomer.com/mutt/)
