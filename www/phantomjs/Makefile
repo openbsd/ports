@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2016/08/19 09:49:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/19 19:36:01 sthen Exp $
 
-USE_WXNEEDED =		Yes
+USE_WXNEEDED =		Yes # bundled webkit
 
 ONLY_FOR_ARCHS =	i386 amd64
 DPB_PROPERTIES =	parallel nojunk
