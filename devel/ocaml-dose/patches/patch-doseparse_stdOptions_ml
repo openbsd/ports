@@ -1,7 +1,6 @@
-$OpenBSD: patch-doseparse_stdOptions_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
---- doseparse/stdOptions.ml.orig	Tue Nov 18 11:42:46 2014
-+++ doseparse/stdOptions.ml	Mon Aug  3 18:07:28 2015
-@@ -15,7 +15,7 @@
+--- doseparse/stdOptions.ml.orig	Tue Nov 18 06:42:46 2014
++++ doseparse/stdOptions.ml	Wed Jul  6 08:55:26 2016
+@@ -15,11 +15,12 @@
  open ExtLib
  open Common
  
@@ -10,3 +9,8 @@ $OpenBSD: patch-doseparse_stdOptions_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
  
  module type Ot = sig
    val options :
+     ?usage:string ->
++    ?status:int ->
+     ?version:string ->
+     ?suppress_usage:bool ->
+     ?suppress_help:bool ->

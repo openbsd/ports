@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/05 16:24:46 krw Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/19 12:51:19 krw Exp $
 
 MULTI_PACKAGES =	-main -lib
 
@@ -12,7 +12,7 @@ GH_ACCOUNT =		ocaml
 GH_PROJECT =		opam
 GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		1
+REVISION =		2
 
 PKGNAME-main =		opam-${V}
 PKGNAME-lib =		opam-lib-${V}

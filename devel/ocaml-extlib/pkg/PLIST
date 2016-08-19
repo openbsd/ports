@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/04 07:43:56 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/19 12:51:19 krw Exp $
 %%native%%
 lib/ocaml/extlib/
 lib/ocaml/extlib/IO.cmi
@@ -16,6 +16,10 @@ lib/ocaml/extlib/enum.cmi
 lib/ocaml/extlib/enum.mli
 lib/ocaml/extlib/extArray.cmi
 lib/ocaml/extlib/extArray.mli
+lib/ocaml/extlib/extBuffer.cmi
+lib/ocaml/extlib/extBuffer.mli
+lib/ocaml/extlib/extBytes.cmi
+lib/ocaml/extlib/extBytes.mli
 lib/ocaml/extlib/extHashtbl.cmi
 lib/ocaml/extlib/extHashtbl.mli
 lib/ocaml/extlib/extLib.cma
@@ -44,7 +48,7 @@ lib/ocaml/extlib/unzip.cmi
 lib/ocaml/extlib/unzip.mli
 share/doc/ocaml-extlib/
 share/doc/ocaml-extlib/LICENSE
-share/doc/ocaml-extlib/README.txt
+share/doc/ocaml-extlib/README
 share/doc/ocaml-extlib/html/
 share/doc/ocaml-extlib/html/Base64.html
 share/doc/ocaml-extlib/html/BitSet.html
@@ -53,9 +57,14 @@ share/doc/ocaml-extlib/html/DynArray.html
 share/doc/ocaml-extlib/html/Enum.html
 share/doc/ocaml-extlib/html/ExtArray.Array.html
 share/doc/ocaml-extlib/html/ExtArray.html
+share/doc/ocaml-extlib/html/ExtBuffer.Buffer.html
+share/doc/ocaml-extlib/html/ExtBuffer.html
+share/doc/ocaml-extlib/html/ExtBytes.Bytes.html
+share/doc/ocaml-extlib/html/ExtBytes.html
 share/doc/ocaml-extlib/html/ExtHashtbl.Hashtbl.html
 share/doc/ocaml-extlib/html/ExtHashtbl.html
 share/doc/ocaml-extlib/html/ExtLib.Array.html
+share/doc/ocaml-extlib/html/ExtLib.Buffer.html
 share/doc/ocaml-extlib/html/ExtLib.Hashtbl.html
 share/doc/ocaml-extlib/html/ExtLib.List.html
 share/doc/ocaml-extlib/html/ExtLib.String.html
@@ -104,9 +113,14 @@ share/doc/ocaml-extlib/html/type_DynArray.html
 share/doc/ocaml-extlib/html/type_Enum.html
 share/doc/ocaml-extlib/html/type_ExtArray.Array.html
 share/doc/ocaml-extlib/html/type_ExtArray.html
+share/doc/ocaml-extlib/html/type_ExtBuffer.Buffer.html
+share/doc/ocaml-extlib/html/type_ExtBuffer.html
+share/doc/ocaml-extlib/html/type_ExtBytes.Bytes.html
+share/doc/ocaml-extlib/html/type_ExtBytes.html
 share/doc/ocaml-extlib/html/type_ExtHashtbl.Hashtbl.html
 share/doc/ocaml-extlib/html/type_ExtHashtbl.html
 share/doc/ocaml-extlib/html/type_ExtLib.Array.html
+share/doc/ocaml-extlib/html/type_ExtLib.Buffer.html
 share/doc/ocaml-extlib/html/type_ExtLib.Hashtbl.html
 share/doc/ocaml-extlib/html/type_ExtLib.List.html
 share/doc/ocaml-extlib/html/type_ExtLib.String.html
