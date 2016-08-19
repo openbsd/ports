@@ -1,15 +1,20 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/09 01:34:05 jturner Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/19 10:15:24 sthen Exp $
+
+# ld wrapper doesn't actually fix build, but setting USE_WXNEEDED for
+# documentation purposes.  see CONFIGURE_ARGS.
+USE_WXNEEDED =		Yes # QtWebKit
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.6
 REVISION =		0
 
-CATEGORIES =		mail x11
-
 SHARED_LIBS =		trojita_plugins	1.0 # 1.0
 
+CATEGORIES =		mail x11
+
 HOMEPAGE =		http://trojita.flaska.net/
+MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=trojita/}
 EXTRACT_SUFX =		.tar.bz2
 
@@ -31,7 +36,8 @@ CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
 			-DWITH_QT5=OFF \
 			-DWITH_QTKEYCHAIN_PLUGIN=OFF \
-			-DGIT_EXECUTABLE=""
+			-DGIT_EXECUTABLE="" \
+			-DCMAKE_EXE_LINKER_FLAGS="-Wl,-z,wxneeded"
 
 TEST_IS_INTERACTIVE =	X11
 
