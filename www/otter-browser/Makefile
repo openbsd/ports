@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/21 09:03:45 awolk Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/20 17:00:57 awolk Exp $
+
+USE_WXNEEDED =		Yes
+
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=otter-browser/}
-DISTNAME =		otter-browser-0.9.11-dev129
+DISTNAME =		otter-browser-0.9.11-dev135
 PKGNAME =		${DISTNAME:S/-dev/pre/}
 
 EXTRACT_SUFX =		.tar.bz2
@@ -27,6 +30,8 @@ LIB_DEPENDS =		security/libgcrypt \
 			textproc/hunspell
 
 MODULES =		devel/cmake x11/qt5
+
+CONFIGURE_ENV +=	LDFLAGS="-Wl,-z,wxneeded"
 
 NO_TEST =	Yes
 
