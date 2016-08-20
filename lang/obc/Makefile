@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/20 09:09:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/20 09:09:54 jasper Exp $
 
 # Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1110 of file gc.c
 ONLY_FOR_ARCHS= i386
@@ -7,7 +7,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	Oxford Oberon-2 compiler
 
 DISTNAME =	obc-2.9.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	lang
 
 HOMEPAGE =	http://spivey.oriel.ox.ac.uk/corner/Oxford_Oberon-2_compiler
