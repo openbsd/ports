@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2016/04/03 09:39:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2016/08/20 13:38:52 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -283,6 +283,15 @@ lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TA
 lib/rhythmbox/plugins/soundcloud/${MODPY_PYCACHE}soundcloud.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/soundcloud/soundcloud.plugin
 lib/rhythmbox/plugins/soundcloud/soundcloud.py
+lib/rhythmbox/plugins/webremote/
+lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}/
+lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}siphash.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}siphash.${MODPY_PYC_MAGIC_TAG}pyo
+lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}webremote.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/webremote/${MODPY_PYCACHE}webremote.${MODPY_PYC_MAGIC_TAG}pyo
+lib/rhythmbox/plugins/webremote/siphash.py
+lib/rhythmbox/plugins/webremote/webremote.plugin
+lib/rhythmbox/plugins/webremote/webremote.py
 lib/rhythmbox/sample-plugins/
 lib/rhythmbox/sample-plugins/sample/
 lib/rhythmbox/sample-plugins/sample-python/
@@ -366,7 +375,6 @@ share/gtk-doc/html/rhythmbox/ch06.html
 share/gtk-doc/html/rhythmbox/ch07.html
 share/gtk-doc/html/rhythmbox/home.png
 share/gtk-doc/html/rhythmbox/index.html
-share/gtk-doc/html/rhythmbox/index.sgml
 share/gtk-doc/html/rhythmbox/left-insensitive.png
 share/gtk-doc/html/rhythmbox/left.png
 share/gtk-doc/html/rhythmbox/rhythmbox-RBDeviceSource.html
@@ -794,7 +802,6 @@ share/icons/hicolor/24x24/apps/rhythmbox.png
 share/icons/hicolor/256x256/apps/rhythmbox.png
 share/icons/hicolor/32x32/apps/rhythmbox.png
 share/icons/hicolor/48x48/apps/rhythmbox.png
-share/icons/hicolor/48x48/status/rhythmbox-missing-artwork.png
 share/icons/hicolor/scalable/apps/rhythmbox-symbolic.svg
 share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
@@ -877,37 +884,7 @@ share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_HK/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 share/rhythmbox/
-share/rhythmbox/app-menu.ui
-share/rhythmbox/browser-popup.ui
-share/rhythmbox/create-playlist.ui
-share/rhythmbox/display-page-add-menu.ui
-share/rhythmbox/edit-menu.ui
-share/rhythmbox/encoding-settings.ui
-share/rhythmbox/general-prefs.ui
-share/rhythmbox/icons/
-share/rhythmbox/icons/hicolor/
-share/rhythmbox/icons/hicolor/16x16/
-share/rhythmbox/icons/hicolor/16x16/status/
-share/rhythmbox/icons/hicolor/16x16/status/rhythmbox-no-star.png
-share/rhythmbox/icons/hicolor/16x16/status/rhythmbox-set-star.png
-share/rhythmbox/icons/hicolor/16x16/status/rhythmbox-unset-star.png
-share/rhythmbox/import-dialog.ui
-share/rhythmbox/import-errors-popup.ui
-share/rhythmbox/library-prefs.ui
-share/rhythmbox/library-toolbar.ui
-share/rhythmbox/main-toolbar.ui
-share/rhythmbox/media-player-properties.ui
-share/rhythmbox/missing-files-popup.ui
-share/rhythmbox/playback-prefs.ui
-share/rhythmbox/playlist-menu.ui
-share/rhythmbox/playlist-popup.ui
-share/rhythmbox/playlist-save.ui
-share/rhythmbox/playlist-toolbar.ui
-share/rhythmbox/playlists.xml
 share/rhythmbox/plugins/
-share/rhythmbox/plugins/audiocd/
-share/rhythmbox/plugins/audiocd/album-info.ui
-share/rhythmbox/plugins/audiocd/audiocd-toolbar.ui
 share/rhythmbox/plugins/audioscrobbler/
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-preferences.ui
 share/rhythmbox/plugins/audioscrobbler/audioscrobbler-profile.ui
@@ -930,18 +907,6 @@ share/rhythmbox/plugins/context/tmpl/links-tmpl.html
 share/rhythmbox/plugins/context/tmpl/loading.html
 share/rhythmbox/plugins/context/tmpl/lyrics-tmpl.html
 share/rhythmbox/plugins/context/tmpl/main.css
-share/rhythmbox/plugins/generic-player/
-share/rhythmbox/plugins/generic-player/generic-player-info.ui
-share/rhythmbox/plugins/generic-player/generic-player-toolbar.ui
-share/rhythmbox/plugins/ipod/
-share/rhythmbox/plugins/ipod/ipod-info.ui
-share/rhythmbox/plugins/ipod/ipod-init.ui
-share/rhythmbox/plugins/ipod/ipod-toolbar.ui
-share/rhythmbox/plugins/iradio/
-share/rhythmbox/plugins/iradio/iradio-initial.xspf
-share/rhythmbox/plugins/iradio/iradio-popup.ui
-share/rhythmbox/plugins/iradio/iradio-toolbar.ui
-share/rhythmbox/plugins/iradio/station-properties.ui
 share/rhythmbox/plugins/lyrics/
 share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 share/rhythmbox/plugins/magnatune/
@@ -964,21 +929,9 @@ share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/places/
 share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/places/soundcloud-symbolic.svg
 share/rhythmbox/plugins/soundcloud/powered-by-soundcloud.png
 share/rhythmbox/plugins/soundcloud/soundcloud.ui
-share/rhythmbox/podcast-add-dialog.ui
-share/rhythmbox/podcast-feed-properties.ui
-share/rhythmbox/podcast-popups.ui
-share/rhythmbox/podcast-prefs.ui
-share/rhythmbox/podcast-properties.ui
-share/rhythmbox/podcast-toolbar.ui
-share/rhythmbox/queue-popups.ui
-share/rhythmbox/queue-toolbar.ui
+share/rhythmbox/plugins/webremote/
+share/rhythmbox/plugins/webremote/webremote-config.ui
 share/rhythmbox/rhythmbox.gep
-share/rhythmbox/song-info-multiple.ui
-share/rhythmbox/song-info.ui
-share/rhythmbox/style.css
-share/rhythmbox/sync-dialog.ui
-share/rhythmbox/sync-state.ui
-share/rhythmbox/uri-new.ui
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

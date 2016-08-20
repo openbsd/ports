@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.155 2016/07/09 08:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2016/08/20 13:38:52 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.3.1
-REVISION=		2
+GNOME_VERSION=		3.4
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -16,25 +15,21 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 with exception clause
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm archive
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 c cairo cairo-gobject
-WANTLIB += dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
-WANTLIB += freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glapi glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpod graphite2 grilo-0.3 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstcontroller-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
+WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gpod graphite2 grilo-0.3 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstcontroller-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += harfbuzz-icu hyphen icudata icui18n icuuc javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lzma lzo2 m notify orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
-WANTLIB += pixman-1 plist png pthread pthread-stubs secret-1 soup-2.4
-WANTLIB += sqlite3 stdc++ tdb totem-plparser webkit2gtk-4.0 webp
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z crypto lz4
+WANTLIB += iconv intl json-glib-1.0 lz4 lzma lzo2 m notify orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
+WANTLIB += peas-gtk-1.0 pixman-1 plist png pthread pthread-stubs
+WANTLIB += soup-2.4 sqlite3 tdb totem-plparser xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			lang/python \
 			x11/gnome
 
@@ -49,8 +44,8 @@ LIB_DEPENDS=		audio/libgpod \
 			devel/json-glib \
 			devel/libnotify \
 			devel/libpeas \
-			www/webkitgtk4 \
-			x11/gnome/grilo>=0.3.0 \
+			multimedia/gstreamer1/plugins-base \
+			x11/gnome/grilo \
 			x11/gnome/totem-pl-parser
 
 # context plugin
