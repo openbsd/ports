@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/20 09:09:13 jasper Exp $
 
 # Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1110 of file gc.c
 ONLY_FOR_ARCHS= i386
+USE_WXNEEDED =	Yes
 
 COMMENT =	Oxford Oberon-2 compiler
 
