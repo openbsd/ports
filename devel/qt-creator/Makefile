@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/20 21:46:18 jca Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
+USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
 PKGNAME =		qt-creator-${V}
-REVISION =		6
+REVISION =		7
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
