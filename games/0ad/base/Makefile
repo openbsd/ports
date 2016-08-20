@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2016/05/05 02:29:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2016/08/20 00:18:41 bentley Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
+
+# XXX see patches/patch-build_premake_premake4_lua
+USE_WXNEEDED =		Yes
 
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}
