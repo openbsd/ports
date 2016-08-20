@@ -1,14 +1,44 @@
-$OpenBSD: patch-Makefile_common,v 1.1.1.1 2012/07/17 21:29:50 rfreeman Exp $
-
-Use default optimisation options.
-
---- Makefile.common.orig	Fri Mar  9 06:15:40 2012
-+++ Makefile.common	Fri Mar  9 06:16:13 2012
-@@ -89,7 +89,6 @@ endif
+$OpenBSD: patch-Makefile_common,v 1.2 2016/08/20 05:16:02 bentley Exp $
+--- Makefile.common.orig	Sat Jun  4 22:46:28 2016
++++ Makefile.common	Fri Aug 19 22:49:13 2016
+@@ -28,14 +20,6 @@ PKG_CONFIG=pkg-config
+ DONT_PRINT = > /dev/null 2>&1
+ DONT_FAIL = ; exit 0
  
- ifneq (0,$(RELEASE))
-     # Debugging disabled
--    debug+= -O$(OPTLEVEL)
-     ifneq ($(CC),clang)
-         debug+= -funswitch-loops
+-# Override defaults that absolutely will not work.
+-ifeq ($(CC),cc)
+-    override CC=gcc
+-endif
+-ifeq ($(AS),as)
+-    override AS=nasm
+-endif
+-
+ COBJC=$(CC) -x objective-c
+ COBJCXX=$(CXX) -x objective-c++
+ L_CC=$(CC)
+@@ -283,14 +267,9 @@ GUI_LIBS=
+ LIBDIRS=
+ 
+ ifeq (1,$(strip $(shell expr $(GCC_MAJOR) \>= 4)))
+-    F_NO_STACK_PROTECTOR := -fno-stack-protector
+-    # there are some link-time issues with stack protectors, so make it possible to override
+-    F_STACK_PROTECTOR_ALL ?= -fstack-protector-all
+     ifeq (0,$(CLANG))
+         F_JUMP_TABLES := -fjump-tables
      endif
+-    M_TUNE_GENERIC := -mtune=generic
+-    M_STACKREALIGN := -mstackrealign
+ endif
+ 
+ W_STRICT_OVERFLOW := -Wno-strict-overflow
+@@ -663,10 +642,6 @@ DLLSUFFIX=.so
+ 
+ SDL_TARGET ?= 2
+ SDL_FRAMEWORK ?= 0
+-
+-ifeq (1,$(strip $(shell expr $(GCC_MAJOR) \>= 4)))
+-    L_SSP := -lssp
+-endif
+ 
+ # ifeq (1,$(strip $(shell expr $(GCC_MAJOR) \>= 5)))
+ #     ifneq (0,$(LTO))
