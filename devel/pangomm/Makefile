@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/18 06:50:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/08/20 11:57:41 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.40.0
+GNOME_VERSION =		2.40.1
 
 CATEGORIES =		devel x11
 
@@ -30,7 +30,7 @@ MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
 
 LIB_DEPENDS =		devel/glib2mm \
-			devel/pango>=1.40.0 \
+			devel/pango \
 			graphics/cairomm
 
 CONFIGURE_STYLE=	gnu
