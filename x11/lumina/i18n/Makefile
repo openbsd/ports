@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2015/08/12 06:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/20 12:57:18 ajacoutot Exp $
 
 COMMENT=	Lumina DE localization files
 
 GH_PROJECT=	lumina-i18n
+REVISION=	0
 
 BUILD_DEPENDS=	archivers/xz
 RUN_DEPENDS=	x11/lumina/lumina

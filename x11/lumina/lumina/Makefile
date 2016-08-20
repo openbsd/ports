@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/20 12:19:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/20 12:57:18 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
 GH_PROJECT=	lumina
 PATCHSET=	1
+REVISION=	0
 
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
