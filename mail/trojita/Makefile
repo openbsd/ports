@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/19 10:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/08/20 11:17:38 naddy Exp $
 
 # ld wrapper doesn't actually fix build, but setting USE_WXNEEDED for
 # documentation purposes.  see CONFIGURE_ARGS.
@@ -7,7 +7,7 @@ USE_WXNEEDED =		Yes # QtWebKit
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.6
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		trojita_plugins	1.0 # 1.0
 
