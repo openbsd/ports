@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2016/06/19 05:59:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2016/08/20 12:02:01 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-9.2.0
+DISTNAME=	mkvtoolnix-9.3.1
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
 EXTRACT_SUFX=	.tar.xz
@@ -32,8 +32,8 @@ LIB_DEPENDS=	audio/flac \
 		audio/libvorbis \
 		devel/boost \
 		devel/libmagic \
-		multimedia/libmatroska>=1.4.4 \
-		textproc/libebml>=1.3.3
+		multimedia/libmatroska>=1.4.5 \
+		textproc/libebml>=1.3.4
 
 MAKE_ENV+=	V=1
 
