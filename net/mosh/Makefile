@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/11 17:57:13 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/20 19:05:25 jca Exp $
 
 COMMENT =		mobile shell
 
-DISTNAME =		mosh-1.2.5
+DISTNAME =		mosh-1.2.6
 
 CATEGORIES =		net
 
-HOMEPAGE =		http://mosh.mit.edu/
+HOMEPAGE =		https://mosh.org/
 
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
