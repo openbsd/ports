@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/08/08 17:45:40 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2016/08/20 20:50:31 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -23,9 +23,12 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES =	${HOMEPAGE}/downloads/
 
-MODULES =	devel/cmake \
+MODULES =	gcc4 \
+		devel/cmake \
 		devel/gettext \
 		lang/python
+MODGCC4_ARCHS =	i386 # base GCC uses too much RAM
+MODGCC4_LANGS =	c++
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca-ossl \
