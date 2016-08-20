@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/20 16:41:47 ajacoutot Exp $
 
 COMMENT =	lightweight network monitoring tool
 DISTNAME =	sysmon-0.93
@@ -6,6 +6,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	http://puck.nether.net/sysmon/
 MAINTAINER =	George Rosamond <george@nycbug.org>
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
