@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/06/22 09:54:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/08/20 12:19:14 ajacoutot Exp $
 @pkgpath x11/lumina
-@bin bin/Lumina-DE
+bin/lte
 @bin bin/lumina-config
+@bin bin/lumina-desktop
 @bin bin/lumina-fileinfo
 @bin bin/lumina-fm
 @bin bin/lumina-info
@@ -18,37 +19,45 @@ include/LuminaUtils.h
 include/LuminaX11.h
 include/LuminaXDG.h
 @lib lib/libLuminaUtils.so.${LIBLuminaUtils_VERSION}
-share/Lumina-DE/
-share/Lumina-DE/Login.ogg
-share/Lumina-DE/Logout.ogg
-share/Lumina-DE/colors/
-share/Lumina-DE/colors/Black.qss.colors
-share/Lumina-DE/colors/Blue-Light.qss.colors
-share/Lumina-DE/colors/Grey-Dark.qss.colors
-share/Lumina-DE/colors/Lumina-Glass.qss.colors
-share/Lumina-DE/colors/Lumina-Gold.qss.colors
-share/Lumina-DE/colors/Lumina-Green.qss.colors
-share/Lumina-DE/colors/Lumina-Purple.qss.colors
-share/Lumina-DE/colors/Lumina-Red.qss.colors
-share/Lumina-DE/colors/PCBSD10-Default.qss.colors
-share/Lumina-DE/colors/Solarized-Dark.qss.colors
-share/Lumina-DE/colors/Solarized-Light.qss.colors
-share/Lumina-DE/desktop-background.jpg
-share/Lumina-DE/fluxbox-init-rc
-share/Lumina-DE/fluxbox-keys
-share/Lumina-DE/luminaDesktop.conf
-share/Lumina-DE/themes/
-share/Lumina-DE/themes/Lumina-default.qss.template
-share/Lumina-DE/themes/None.qss.template
+share/applications/lumina-config.desktop
+share/applications/lumina-fileinfo.desktop
 share/applications/lumina-fm.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-support.desktop
 share/applications/lumina-textedit.desktop
+share/applications/lumina-xconfig.desktop
 share/examples/lumina/
 share/examples/lumina/luminaDesktop.conf.dist
 @sample ${SYSCONFDIR}/luminaDesktop.conf
+share/lumina-desktop/
+share/lumina-desktop/Login.ogg
+share/lumina-desktop/Logout.ogg
+share/lumina-desktop/colors/
+share/lumina-desktop/colors/Black.qss.colors
+share/lumina-desktop/colors/Blue-Light.qss.colors
+share/lumina-desktop/colors/Grey-Dark.qss.colors
+share/lumina-desktop/colors/Lumina-Glass.qss.colors
+share/lumina-desktop/colors/Lumina-Gold.qss.colors
+share/lumina-desktop/colors/Lumina-Green.qss.colors
+share/lumina-desktop/colors/Lumina-Purple.qss.colors
+share/lumina-desktop/colors/Lumina-Red.qss.colors
+share/lumina-desktop/colors/PCBSD10-Default.qss.colors
+share/lumina-desktop/colors/Solarized-Dark.qss.colors
+share/lumina-desktop/colors/Solarized-Light.qss.colors
+share/lumina-desktop/compton.conf
+share/lumina-desktop/desktop-background.jpg
+share/lumina-desktop/fluxbox-init-rc
+share/lumina-desktop/fluxbox-keys
+share/lumina-desktop/luminaDesktop.conf
+share/lumina-desktop/menu-scripts/
+share/lumina-desktop/menu-scripts/ls.json.sh
+share/lumina-desktop/themes/
+share/lumina-desktop/themes/Glass.qss.template
+share/lumina-desktop/themes/Lumina-default.qss.template
+share/lumina-desktop/themes/None.qss.template
+share/pixmaps/Insight-FileManager.png
 share/pixmaps/Lumina-DE.png
 share/wallpapers/
 share/wallpapers/Lumina-DE/

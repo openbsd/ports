@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/06/22 09:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2016/08/20 12:19:14 ajacoutot Exp $
 
-V=			0.9.0
+V=			1.0.0
 GH_ACCOUNT=		trueos
 GH_TAGNAME=		v${V}-Release
 DISTNAME=		${GH_PROJECT}-${V}
