@@ -1,0 +1,81 @@
+$OpenBSD: patch-posix-common_scm,v 1.1 2016/08/20 08:56:19 jasper Exp $
+fix buffer overflow and mem leak in execvp/execve wrappers
+see CVE-2016-6830 and CVE-2016-6831.
+--- posix-common.scm.orig	Mon Aug 15 16:24:59 2016
++++ posix-common.scm	Mon Aug 15 16:30:27 2016
+@@ -25,7 +25,8 @@
+ 
+ 
+ (declare 
+-  (hide ##sys#stat posix-error check-time-vector ##sys#find-files)
++  (hide ##sys#stat posix-error check-time-vector ##sys#find-files
++       list->c-string-buffer free-c-string-buffer call-with-exec-args)
+   (foreign-declare #<<EOF
+ 
+ #include <signal.h>
+@@ -679,3 +680,65 @@ EOF
+           (if (fx= epid -1)
+               (posix-error #:process-error 'process-wait "waiting for child process failed" pid)
+               (values epid enorm ecode) ) ) ) ) ) )
++
++;; This can construct argv or envp for process-execute or process-run
++(define list->c-string-buffer
++  (let* ((c-string->allocated-pointer
++         (foreign-lambda* c-pointer ((scheme-object o))
++           "char *ptr = malloc(C_header_size(o)); \n"
++           "if (ptr != NULL) {\n"
++           "  C_memcpy(ptr, C_data_pointer(o), C_header_size(o)); \n"
++           "}\n"
++           "C_return(ptr);")) )
++    (lambda (string-list convert loc)
++      (##sys#check-list string-list loc)
++
++      (let* ((string-count (##sys#length string-list))
++            ;; NUL-terminated, so we must add one
++            (buffer (make-pointer-vector (add1 string-count) #f)))
++
++       (handle-exceptions exn
++           ;; Free to avoid memory leak, then reraise
++           (begin (free-c-string-buffer buffer) (signal exn))
++
++         (do ((sl string-list (cdr sl))
++              (i 0 (fx+ i 1)) )
++             ((or (null? sl) (fx= i string-count))) ; Should coincide
++
++           (##sys#check-string (car sl) loc)
++           ;; This avoids embedded NULs and appends a NUL, so "cs" is
++           ;; safe to copy and use as-is in the pointer-vector.
++           (let* ((cs (##sys#make-c-string (convert (car sl)) loc))
++                  (csp (c-string->allocated-pointer cs)))
++             (unless csp (error loc "Out of memory"))
++             (pointer-vector-set! buffer i csp)) )
++
++         buffer) ) ) ) )
++
++(define (free-c-string-buffer buffer-array)
++  (let ((size (pointer-vector-length buffer-array)))
++    (do ((i 0 (fx+ i 1)))
++       ((fx= i size))
++      (and-let* ((s (pointer-vector-ref buffer-array i)))
++       (free s)))))
++
++(define call-with-exec-args
++  (let ((pathname-strip-directory pathname-strip-directory)
++       (nop (lambda (x) x)))
++    (lambda (loc filename argconv arglist envlist proc)
++      (let* ((stripped-filename (pathname-strip-directory filename))
++            (args (cons stripped-filename arglist)) ; Add argv[0]
++            (argbuf (list->c-string-buffer args argconv loc))
++            (envbuf #f))
++
++       (handle-exceptions exn
++           ;; Free to avoid memory leak, then reraise
++           (begin (free-c-string-buffer argbuf)
++                  (when envbuf (free-c-string-buffer envbuf))
++                  (signal exn))
++
++         ;; Envlist is never converted, so we always use nop here
++         (when envlist
++           (set! envbuf (list->c-string-buffer envlist nop loc)))
++
++         (proc (##sys#make-c-string filename loc) argbuf envbuf) )))))

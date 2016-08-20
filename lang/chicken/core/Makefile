@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/08 01:24:45 juanfra Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/20 08:56:19 jasper Exp $
+
+REVISION=	0
 
 SHARED_LIBS=	chicken	5.0 # 8
 

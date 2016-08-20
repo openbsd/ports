@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.7 2016/06/08 01:24:45 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2016/08/20 08:56:18 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
 V=		4.11.0
 DISTNAME=	chicken-${V}
+REVISION=       0
 
 MAINTAINER=	Timo Myyra <timo.myyra@wickedbsd.net>
 
@@ -32,4 +33,3 @@ pre-build:
 .if ${MACHINE_ARCH} == "hppa"
 	sed -i 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' "${WRKSRC}/Makefile.bsd"
 .endif
-

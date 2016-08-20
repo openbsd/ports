@@ -1,0 +1,129 @@
+$OpenBSD: patch-posixunix_scm,v 1.1 2016/08/20 08:56:19 jasper Exp $
+fix buffer overflow and mem leak in execvp/execve wrappers
+see CVE-2016-6830 and CVE-2016-6831.
+
+--- posixunix.scm.orig	Sat May 28 14:48:08 2016
++++ posixunix.scm	Mon Aug 15 16:32:17 2016
+@@ -27,7 +27,7 @@
+ 
+ (declare
+   (unit posix)
+-  (uses scheduler irregex extras files ports)
++  (uses scheduler irregex extras files ports lolevel)
+   (disable-interrupts)
+   (hide group-member _get-groups _ensure-groups posix-error ##sys#terminal-check)
+   (not inline ##sys#interrupt-hook ##sys#user-interrupt-hook))
+@@ -88,10 +88,6 @@ static C_TLS int C_wait_status;
+ # define O_TEXT          0
+ #endif
+ 
+-#ifndef ARG_MAX
+-# define ARG_MAX 256
+-#endif
+-
+ #ifndef MAP_FILE
+ # define MAP_FILE    0
+ #endif
+@@ -110,16 +106,10 @@ extern char **environ;
+ # define C_getenventry(i)       (environ[ i ])
+ #endif
+ 
+-#ifndef ENV_MAX
+-# define ENV_MAX        1024
+-#endif
+-
+ #ifndef FILENAME_MAX
+ # define FILENAME_MAX          1024
+ #endif
+ 
+-static C_TLS char *C_exec_args[ ARG_MAX ];
+-static C_TLS char *C_exec_env[ ENV_MAX ];
+ static C_TLS struct utsname C_utsname;
+ static C_TLS struct flock C_flock;
+ static C_TLS DIR *temphandle;
+@@ -199,30 +189,9 @@ static C_TLS struct stat C_statbuf;
+ 
+ #define C_lstat(fn)         C_fix(lstat((char *)C_data_pointer(fn), &C_statbuf))
+ 
+-static void C_fcall C_set_arg_string(char **where, int i, char *a, int len) {
+-  char *ptr;
+-  if(a != NULL) {
+-    ptr = (char *)C_malloc(len + 1);
+-    C_memcpy(ptr, a, len);
+-    ptr[ len ] = '\0';
+-    /* Can't barf() here, so the NUL byte check happens in Scheme */
+-  }
+-  else ptr = NULL;
+-  where[ i ] = ptr;
+-}
++#define C_u_i_execvp(f,a)   C_fix(execvp(C_data_pointer(f), (char *const *)C_c_pointer_vector_or_null(a)))
++#define C_u_i_execve(f,a,e) C_fix(execve(C_data_pointer(f), (char *const *)C_c_pointer_vector_or_null(a), (char *const *)C_c_pointer_vector_or_null(e)))
+ 
+-static void C_fcall C_free_arg_string(char **where) {
+-  while((*where) != NULL) C_free(*(where++));
+-}
+-
+-#define C_set_exec_arg(i, a, len)	C_set_arg_string(C_exec_args, i, a, len)
+-#define C_free_exec_args()		C_free_arg_string(C_exec_args)
+-#define C_set_exec_env(i, a, len)	C_set_arg_string(C_exec_env, i, a, len)
+-#define C_free_exec_env()		C_free_arg_string(C_exec_env)
+-
+-#define C_execvp(f)         C_fix(execvp(C_data_pointer(f), C_exec_args))
+-#define C_execve(f)         C_fix(execve(C_data_pointer(f), C_exec_args, C_exec_env))
+-
+ #if defined(__FreeBSD__) || defined(C_MACOSX) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__sgi__) || defined(sgi) || defined(__DragonFly__) || defined(__SUNPRO_C)
+ static C_TLS int C_uw;
+ # define C_WIFEXITED(n)      (C_uw = C_unfix(n), C_mk_bool(WIFEXITED(C_uw)))
+@@ -1591,43 +1560,15 @@ EOF
+ 	       (exit 0)))
+ 	    pid)))))
+ 
+-(define process-execute
+-  ;; NOTE: We use c-string here instead of scheme-object.
+-  ;; Because set_exec_* make a copy, this implies a double copy.
+-  ;; At least it's secure, we can worry about performance later, if at all
+-  (let ([setarg (foreign-lambda void "C_set_exec_arg" int c-string int)]
+-        [freeargs (foreign-lambda void "C_free_exec_args")]
+-        [setenv (foreign-lambda void "C_set_exec_env" int c-string int)]
+-        [freeenv (foreign-lambda void "C_free_exec_env")]
+-        [pathname-strip-directory pathname-strip-directory] )
+-    (lambda (filename #!optional (arglist '()) envlist)
+-      (##sys#check-string filename 'process-execute)
+-      (##sys#check-list arglist 'process-execute)
+-      (let ([s (pathname-strip-directory filename)])
+-        (setarg 0 s (##sys#size s)) )
+-      (do ([al arglist (cdr al)]
+-           [i 1 (fx+ i 1)] )
+-          ((null? al)
+-           (setarg i #f 0)
+-           (when envlist
+-             (##sys#check-list envlist 'process-execute)
+-             (do ([el envlist (cdr el)]
+-                  [i 0 (fx+ i 1)] )
+-                 ((null? el) (setenv i #f 0))
+-               (let ([s (car el)])
+-                 (##sys#check-string s 'process-execute)
+-                 (setenv i s (##sys#size s)) ) ) )
+-           (let* ([prg (##sys#make-c-string filename 'process-execute)]
+-                  [r (if envlist
+-                         (##core#inline "C_execve" prg)
+-                         (##core#inline "C_execvp" prg) )] )
+-             (when (fx= r -1)
+-               (freeargs)
+-               (freeenv)
+-               (posix-error #:process-error 'process-execute "cannot execute process" filename) ) ) )
+-        (let ([s (car al)])
+-          (##sys#check-string s 'process-execute)
+-          (setarg i s (##sys#size s)) ) ) ) ) )
++(define (process-execute filename #!optional (arglist '()) envlist)
++  (call-with-exec-args
++   'process-execute filename (lambda (x) x) arglist envlist
++   (lambda (prg argbuf envbuf)
++     (let ((r (if envbuf
++		  (##core#inline "C_u_i_execve" prg argbuf envbuf)
++		  (##core#inline "C_u_i_execvp" prg argbuf) )) )
++       (when (fx= r -1)
++	 (posix-error #:process-error 'process-execute "cannot execute process" filename) ) )))  )
+ 
+ (define-foreign-variable _wnohang int "WNOHANG")
+ (define-foreign-variable _wait-status int "C_wait_status")
