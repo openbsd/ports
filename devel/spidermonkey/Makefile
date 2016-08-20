@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/08/13 10:43:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2016/08/20 08:37:12 jasper Exp $
 
 # jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
@@ -40,6 +40,9 @@ WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 z
 MODPY_RUNDEP =		No
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS}
 LIB_DEPENDS =		devel/nspr
+
+# XXX: see patches/patch-config_config_mk
+USE_WXNEEDED =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME}/js/src
 USE_GMAKE =		yes
