@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/21 01:15:09 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/21 14:23:05 czarkoff Exp $
 @bin bin/colcmp
 go-pkg/
 go-pkg/pkg/
@@ -25,7 +25,9 @@ ${MODGO_PACKAGES}/golang.org/x/text/encoding/japanese.a
 ${MODGO_PACKAGES}/golang.org/x/text/encoding/korean.a
 ${MODGO_PACKAGES}/golang.org/x/text/encoding/simplifiedchinese.a
 ${MODGO_PACKAGES}/golang.org/x/text/encoding/traditionalchinese.a
+${MODGO_PACKAGES}/golang.org/x/text/encoding/unicode/
 ${MODGO_PACKAGES}/golang.org/x/text/encoding/unicode.a
+${MODGO_PACKAGES}/golang.org/x/text/encoding/unicode/utf32.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/
 ${MODGO_PACKAGES}/golang.org/x/text/internal.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/colltab.a
@@ -48,6 +50,7 @@ ${MODGO_PACKAGES}/golang.org/x/text/runes.a
 ${MODGO_PACKAGES}/golang.org/x/text/search.a
 ${MODGO_PACKAGES}/golang.org/x/text/secure/
 ${MODGO_PACKAGES}/golang.org/x/text/secure.a
+${MODGO_PACKAGES}/golang.org/x/text/secure/bidirule.a
 ${MODGO_PACKAGES}/golang.org/x/text/secure/precis.a
 ${MODGO_PACKAGES}/golang.org/x/text/transform.a
 ${MODGO_PACKAGES}/golang.org/x/text/unicode/
@@ -194,6 +197,7 @@ ${MODGO_SOURCES}/golang.org/x/text/encoding/simplifiedchinese/tables.go
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/candide-gb18030.txt
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/candide-utf-16le.txt
+${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/candide-utf-32be.txt
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/candide-utf-8.txt
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/candide-windows-1252.txt
 ${MODGO_SOURCES}/golang.org/x/text/encoding/testdata/rashomon-euc-jp.txt
@@ -217,6 +221,9 @@ ${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/
 ${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/override.go
 ${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/unicode.go
 ${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/unicode_test.go
+${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/utf32/
+${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/utf32/utf32.go
+${MODGO_SOURCES}/golang.org/x/text/encoding/unicode/utf32/utf32_test.go
 ${MODGO_SOURCES}/golang.org/x/text/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/
 ${MODGO_SOURCES}/golang.org/x/text/internal/colltab/
@@ -242,9 +249,13 @@ ${MODGO_SOURCES}/golang.org/x/text/internal/match_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/common.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/data_test.go
+${MODGO_SOURCES}/golang.org/x/text/internal/number/decimal.go
+${MODGO_SOURCES}/golang.org/x/text/internal/number/extfloat.go
+${MODGO_SOURCES}/golang.org/x/text/internal/number/ftoa.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/gen_common.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/gen_plural.go
+${MODGO_SOURCES}/golang.org/x/text/internal/number/itoa.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/number.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/number_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/number/pattern.go
@@ -263,6 +274,10 @@ ${MODGO_SOURCES}/golang.org/x/text/internal/tag/tag_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/testtext/
 ${MODGO_SOURCES}/golang.org/x/text/internal/testtext/codesize.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/testtext/flag.go
+${MODGO_SOURCES}/golang.org/x/text/internal/testtext/gc.go
+${MODGO_SOURCES}/golang.org/x/text/internal/testtext/gccgo.go
+${MODGO_SOURCES}/golang.org/x/text/internal/testtext/go1_6.go
+${MODGO_SOURCES}/golang.org/x/text/internal/testtext/go1_7.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/testtext/text.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/triegen/
 ${MODGO_SOURCES}/golang.org/x/text/internal/triegen/compact.go
@@ -329,15 +344,23 @@ ${MODGO_SOURCES}/golang.org/x/text/search/pattern_test.go
 ${MODGO_SOURCES}/golang.org/x/text/search/search.go
 ${MODGO_SOURCES}/golang.org/x/text/search/tables.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/
+${MODGO_SOURCES}/golang.org/x/text/secure/bidirule/
+${MODGO_SOURCES}/golang.org/x/text/secure/bidirule/bidirule.go
+${MODGO_SOURCES}/golang.org/x/text/secure/bidirule/bidirule_test.go
+${MODGO_SOURCES}/golang.org/x/text/secure/bidirule/go1_6_test.go
+${MODGO_SOURCES}/golang.org/x/text/secure/bidirule/go1_7_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/doc.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/benchmark_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/class.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/class_test.go
+${MODGO_SOURCES}/golang.org/x/text/secure/precis/context.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/doc.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/enforce_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/gen_trieval.go
+${MODGO_SOURCES}/golang.org/x/text/secure/precis/go1_6_test.go
+${MODGO_SOURCES}/golang.org/x/text/secure/precis/go1_7_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/nickname.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/options.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/profile.go
@@ -359,6 +382,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/core_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/gen_ranges.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/gen_trieval.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/prop.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/ranges_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables_test.go
@@ -383,6 +407,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/composition.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/composition_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/example_iter_test.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/norm/example_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/forminfo.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/forminfo_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/input.go
