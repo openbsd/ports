@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/05/27 13:54:49 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/08/21 13:45:46 rpe Exp $
 bin/ansible
 bin/ansible-console
 bin/ansible-doc
@@ -1669,6 +1669,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/playbook/conditional.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/conditional.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler_task_include.py
+lib/python${MODPY_VERSION}/site-packages/ansible/playbook/handler_task_include.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/helpers.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/helpers.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/included_file.py
