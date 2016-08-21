@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/20 11:17:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/21 22:20:48 dcoppa Exp $
 
-# ld wrapper doesn't actually fix build, but setting USE_WXNEEDED for
-# documentation purposes.  see CONFIGURE_ARGS.
 USE_WXNEEDED =		Yes # QtWebKit
 
 COMMENT =		fast Qt IMAP e-mail client
@@ -36,8 +34,7 @@ CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
 			-DWITH_QT5=OFF \
 			-DWITH_QTKEYCHAIN_PLUGIN=OFF \
-			-DGIT_EXECUTABLE="" \
-			-DCMAKE_EXE_LINKER_FLAGS="-Wl,-z,wxneeded"
+			-DGIT_EXECUTABLE=""
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/20 17:00:57 awolk Exp $
+# $OpenBSD: Makefile,v 1.16 2016/08/21 22:20:48 dcoppa Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -30,8 +30,6 @@ LIB_DEPENDS =		security/libgcrypt \
 			textproc/hunspell
 
 MODULES =		devel/cmake x11/qt5
-
-CONFIGURE_ENV +=	LDFLAGS="-Wl,-z,wxneeded"
 
 NO_TEST =	Yes
 
