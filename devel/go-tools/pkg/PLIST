@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/05/21 01:29:09 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/21 14:29:06 czarkoff Exp $
 @conflict stress-*
 @pkgpath textproc/godoc
 @bin bin/benchcmp
@@ -13,9 +13,11 @@
 @bin bin/gomvpkg
 @bin bin/gorename
 @bin bin/gotype
+@bin bin/guru
+@bin bin/heapview
 @bin bin/html2article
-@bin bin/oracle
 @bin bin/ssadump
 @bin bin/stress
 @bin bin/stringer
+share/doc/pkg-readmes/${FULLPKGNAME}
 @rcscript ${RCDIR}/godoc

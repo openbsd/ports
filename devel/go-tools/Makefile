@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/03 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/21 14:29:06 czarkoff Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools
-GH_COMMIT = 		c887be1b2ebd11663d4bf2fbca508c449172339e
-DISTNAME =		go-tools-1.6.20160204
+GH_COMMIT = 		26c35b4dcf6dfcb924e26828ed9f4d028c5ce05a
+DISTNAME =		go-tools-1.7.20160815
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
-REVISION =		0
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -25,9 +24,23 @@ RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 GODOC_TARGET = 		golang.org/x/tools/cmd/godoc
 
 _MAIN =			golang.org/x/tools
-_SUBPKGS =		benchcmp bundle callgraph digraph eg fiximports \
-			godex goimports gomvpkg gorename gotype \
-			html2article oracle ssadump stress stringer
+_SUBPKGS =		benchcmp \
+			bundle \
+			callgraph \
+			digraph \
+			eg \
+			fiximports \
+			godex \
+			goimports \
+			gomvpkg \
+			gorename \
+			gotype \
+			guru \
+			heapview \
+			html2article \
+			ssadump \
+			stress \
+			stringer
 ALL_TARGET =		${_SUBPKGS:%=${_MAIN}/cmd/%}
 WRKSRC =		${MODGO_WORKSPACE}/src/${_MAIN}
 

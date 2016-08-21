@@ -1,0 +1,19 @@
+$OpenBSD: README,v 1.1 2016/08/21 14:29:06 czarkoff Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+When started via the rc script, by default godoc will only show
+documentation for the go distribution itself.  If serving documentation
+for packages in other workspaces is desired, the GOPATH environment
+variable should be set.  This can be achieved without affecting other
+daemons by creating a separate login class for the godoc rc script.
+
+Example login.conf(5) fragment:
+
+godoc:\
+	:setenv=GOPATH=${TRUEPREFIX}/go-pkg:\
+	:tc=daemon:
+
+(Refer to getcap(3), login.conf(5) and rc.d(8) for details.)
