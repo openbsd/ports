@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/03 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/21 14:31:26 czarkoff Exp $
 
 COMMENT =		testing library for the Go language
-DISTNAME =		go-check-v1-20150611
-REVISION =		1
+DISTNAME =		go-check-v1-20160105
 CATEGORIES =		devel
 HOMEPAGE =		http://labix.org/gocheck
 
@@ -13,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		go-check
 GH_PROJECT =		check
-GH_COMMIT =		8d49746f13e4c654088c52685541fcf4cbc8fa59
+GH_COMMIT =		4f90aeace3a26ad7021961c297b22c42160c7b25
 
 MODULES =		lang/go
 MODGO_TYPE =		lib
