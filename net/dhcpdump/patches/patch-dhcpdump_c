@@ -1,0 +1,49 @@
+$OpenBSD: patch-dhcpdump_c,v 1.1.1.1 2016/08/21 09:50:17 jasper Exp $
+--- dhcpdump.c.orig	Tue Jun 24 05:26:52 2008
++++ dhcpdump.c	Fri Aug 19 14:33:57 2016
+@@ -11,10 +11,16 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
++#ifndef __OpenBSD__
+ #include <net/ethernet.h>
++#endif
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
+ #include <netinet/ip.h>
++#ifdef __OpenBSD__
++#include <net/if.h>
++#include <netinet/if_ether.h>
++#endif
+ #include <netinet/udp.h>
+ #include <arpa/inet.h>
+ #include <stdio.h>
+@@ -26,10 +32,6 @@
+ #include <regex.h>
+ #include "dhcp_options.h"
+ 
+-#ifndef HAVE_STRSEP
+-#include "strsep.c"
+-#endif
+-
+ #define SPERW	(7 * 24 * 3600)
+ #define SPERD	(24 * 3600)
+ #define SPERH	(3600)
+@@ -156,12 +158,12 @@ void pcap_callback(u_char *user, const struct pcap_pkt
+ 		    tp.tv_usec / 1000);
+ 	}
+ 
+-	strcpy(mac_origin, ether_ntoa((struct ether_addr *)eh->ether_shost));
+-	strcpy(mac_destination,
+-	    ether_ntoa((struct ether_addr *)eh->ether_dhost));
++	strlcpy(mac_origin, ether_ntoa((struct ether_addr *)eh->ether_shost), sizeof(mac_origin));
++	strlcpy(mac_destination,
++	    ether_ntoa((struct ether_addr *)eh->ether_dhost), sizeof(mac_destination));
+ 
+-	strcpy(ip_origin, (u_char *)inet_ntoa(ip->ip_src));
+-	strcpy(ip_destination, (u_char *)inet_ntoa(ip->ip_dst));
++	strlcpy(ip_origin, (u_char *)inet_ntoa(ip->ip_src), sizeof(ip_origin));
++	strlcpy(ip_destination, (u_char *)inet_ntoa(ip->ip_dst), sizeof(ip_destination));
+ 
+ 	if (hmask && check_ch((u_char *)(sp + offset), ntohs(udp->uh_ulen)))
+ 		return;
