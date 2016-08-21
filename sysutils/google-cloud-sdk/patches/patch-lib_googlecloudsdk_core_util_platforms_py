@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.1 2016/04/02 11:30:45 ajacoutot Exp $
---- lib/googlecloudsdk/core/util/platforms.py.orig	Sat Apr  2 13:26:36 2016
-+++ lib/googlecloudsdk/core/util/platforms.py	Sat Apr  2 13:27:22 2016
-@@ -65,7 +65,8 @@ class OperatingSystem(object):
+$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.2 2016/08/21 15:15:41 ajacoutot Exp $
+--- lib/googlecloudsdk/core/util/platforms.py.orig	Tue Jan  1 09:00:00 1980
++++ lib/googlecloudsdk/core/util/platforms.py	Sun Aug 21 17:09:38 2016
+@@ -66,7 +66,8 @@ class OperatingSystem(object):
    LINUX = _OS('LINUX', 'Linux', 'linux')
    CYGWIN = _OS('CYGWIN', 'Cygwin', 'cygwin')
    MSYS = _OS('MSYS', 'Msys', 'msys')
@@ -11,7 +11,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.1 2016/04/02 11:30
  
    @staticmethod
    def AllValues():
-@@ -118,6 +119,8 @@ class OperatingSystem(object):
+@@ -119,6 +120,8 @@ class OperatingSystem(object):
        return OperatingSystem.MACOSX
      elif 'cygwin' in sys.platform:
        return OperatingSystem.CYGWIN
@@ -20,7 +20,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.1 2016/04/02 11:30
      # TODO(user): More reliable handling of OS types
      # TODO(user): What happens when we use jython, does it actually use the
      # 'java' os name?
-@@ -139,7 +142,7 @@ class Architecture(object):
+@@ -140,7 +143,7 @@ class Architecture(object):
    x86_64 = _ARCH('x86_64', 'x86_64', 'x86_64')
    ppc = _ARCH('PPC', 'PPC', 'ppc')
    _ALL = [x86, x86_64, ppc]
@@ -29,7 +29,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.1 2016/04/02 11:30
                                'i386': x86, 'i686': x86, 'x86': x86,
                                'Power Macintosh': ppc}
  
-@@ -251,6 +254,9 @@ class Platform(object):
+@@ -252,6 +255,9 @@ class Platform(object):
                       if self.architecture == Architecture.ppc else 'Intel')
        return format_string.format(
            name=arch_string, version=platform.release())
