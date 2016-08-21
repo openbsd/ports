@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/03/23 07:11:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/08/21 12:07:56 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -383,7 +383,6 @@ share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/goffice-${GOFFICE_API_VERSION}
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/gsf-index.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/home.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/index.html
-share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/index.sgml
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/left-insensitive.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/left.png
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/pt01.html
