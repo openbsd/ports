@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/21 01:08:26 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/21 14:21:55 czarkoff Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
@@ -63,6 +63,11 @@ ${MODGO_SOURCES}/golang.org/x/crypto/LICENSE
 ${MODGO_SOURCES}/golang.org/x/crypto/PATENTS
 ${MODGO_SOURCES}/golang.org/x/crypto/README
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/autocert.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/autocert_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/internal/
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/internal/acme/
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/internal/acme/acme.go
@@ -127,6 +132,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/box.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/box/box_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/secretbox.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/secretbox_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ocsp/
