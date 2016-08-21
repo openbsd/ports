@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/05/31 05:51:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/08/21 12:07:38 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -95,7 +95,6 @@ share/gtk-doc/html/gsf/gsf.devhelp2
 share/gtk-doc/html/gsf/history.html
 share/gtk-doc/html/gsf/home.png
 share/gtk-doc/html/gsf/index.html
-share/gtk-doc/html/gsf/index.sgml
 share/gtk-doc/html/gsf/intro.html
 share/gtk-doc/html/gsf/io.html
 share/gtk-doc/html/gsf/left-insensitive.png
