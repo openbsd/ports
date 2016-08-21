@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2016/07/30 14:17:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/21 12:27:46 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.5.17
+DISTNAME=		appstream-glib-0.6.1
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  appstream-glib       2.0      # 8.8
-SHARED_LIBS +=  appstream-builder    2.0      # 8.8
+SHARED_LIBS +=  appstream-glib       2.1      # 8.9
+SHARED_LIBS +=  appstream-builder    2.0      # 8.9
 
 CATEGORIES=		devel
 
@@ -49,8 +49,7 @@ LIB_DEPENDS=		archivers/libarchive \
 			x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-ostree \
-			--disable-rpm
+CONFIGURE_ARGS=		--disable-rpm
 
 # requires libstemmer
 CONFIGURE_ARGS +=	--disable-stemmer
