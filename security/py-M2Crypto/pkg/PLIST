@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/10/25 15:29:13 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/21 15:18:14 rpe Exp $
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ASN1.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ASN1.pyc
@@ -90,6 +91,8 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2xmlrpclib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2xmlrpclib.pyc
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/six.py
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/six.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/threading.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/threading.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/util.py
