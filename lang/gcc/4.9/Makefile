@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2016/07/14 07:22:31 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.34 2016/08/21 21:01:03 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.3
-REVISION = 9
+REVISION = 10
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -136,8 +136,6 @@ CONFIGURE_ARGS += \
 	--disable-libmudflap \
 	--disable-libgomp \
 	--disable-tls \
-	--with-as=/usr/bin/as \
-	--with-ld=/usr/bin/ld \
 	--with-gnu-ld \
 	--with-gnu-as \
 	--enable-threads=posix \
