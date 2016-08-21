@@ -1,11 +1,11 @@
-# $OpenBSD: go.port.mk,v 1.12 2016/08/03 09:34:10 ajacoutot Exp $
+# $OpenBSD: go.port.mk,v 1.13 2016/08/21 14:08:25 czarkoff Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
 MODGO_BUILDDEP ?=	Yes
 
 MODGO_RUN_DEPENDS =	lang/go
-MODGO_BUILD_DEPENDS =	lang/go>=1.6
+MODGO_BUILD_DEPENDS =	lang/go
 
 .if ${NO_BUILD:L} == "no" && ${MODGO_BUILDDEP:L} == "yes"
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
@@ -63,6 +63,10 @@ MODGO_INSTALL_TARGET +=	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH} && \
 			find src pkg -type f -exec ${INSTALL_DATA} -p \
 				${MODGO_WORKSPACE}/{} \
 				${MODGO_PACKAGE_PATH}/{} \;
+
+# This is required to force rebuilding of go libraries upon changes in
+# toolchain.
+RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
 .endif
 
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
