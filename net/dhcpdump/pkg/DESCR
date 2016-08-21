@@ -1,2 +1,2 @@
-dhcpdump provides an easy way for analyzing DHCP traffic easier checking
-and debugging.
+dhcpdump captures DHCP traffic and displays it in a simple format with
+many options decoded, allowing simple checking and debugging.

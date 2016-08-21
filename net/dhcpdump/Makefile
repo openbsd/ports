@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/21 09:50:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/21 09:53:59 jasper Exp $
 
 COMMENT =		DHCP packet dumper
 
 DISTNAME =		dhcpdump-1.8
+REVISION =		0
 
 CATEGORIES =		net
 
