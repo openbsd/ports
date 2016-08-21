@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2016/03/23 07:10:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2016/08/21 12:08:21 ajacoutot Exp $
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert
@@ -23,6 +23,7 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/complete-sheet.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/complete.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/complex.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/consolidate.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/criteria.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/dependent.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/expr-impl.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/expr-name.h
