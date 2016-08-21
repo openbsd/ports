@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/28 16:56:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/21 17:02:48 ajacoutot Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
@@ -46,9 +46,6 @@ share/examples/gtkwave/gtkwaverc
 share/examples/gtkwave/transaction.c
 share/examples/gtkwave/transaction.fst
 share/examples/gtkwave/transaction.gtkw
-share/icons/gnome/
-share/icons/gnome/16x16/
-share/icons/gnome/16x16/mimetypes/
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -61,8 +58,6 @@ share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gnome/16x16/mimetypes/gtkwave.png
-share/icons/gnome/32x32/
-share/icons/gnome/32x32/mimetypes/
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -75,8 +70,6 @@ share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gnome/32x32/mimetypes/gtkwave.png
-share/icons/gnome/48x48/
-share/icons/gnome/48x48/mimetypes/
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -89,6 +82,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gnome/48x48/mimetypes/gtkwave.png
+share/icons/hicolor/scalable/apps/gtkwave.svg
 share/mime/packages/x-gtkwave-extension-ae2.xml
 share/mime/packages/x-gtkwave-extension-aet.xml
 share/mime/packages/x-gtkwave-extension-evcd.xml
