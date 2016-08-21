@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.47 2016/05/13 07:20:46 ajacoutot Exp $
---- configure.orig	Mon May  2 13:29:24 2016
-+++ configure	Mon May  2 19:08:15 2016
-@@ -4515,10 +4515,6 @@ fi
+$OpenBSD: patch-configure,v 1.48 2016/08/21 12:04:23 ajacoutot Exp $
+--- configure.orig	Wed Aug 17 11:26:51 2016
++++ configure	Fri Aug 19 19:57:21 2016
+@@ -4516,10 +4516,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
