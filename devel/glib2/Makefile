@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.253 2016/05/10 10:02:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.254 2016/08/21 12:39:47 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.48.1
+GNOME_VERSION=		2.48.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -16,24 +16,24 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4200.3   # 4800.1
-SHARED_LIBS +=  gmodule-2.0          4200.3   # 4800.1
-SHARED_LIBS +=  gthread-2.0          4200.3   # 4800.1
-SHARED_LIBS +=  gobject-2.0          4200.3   # 4800.1
-SHARED_LIBS +=  gio-2.0              4200.3   # 4800.1
+SHARED_LIBS +=  glib-2.0             4200.3   # 4800.2
+SHARED_LIBS +=  gmodule-2.0          4200.3   # 4800.2
+SHARED_LIBS +=  gthread-2.0          4200.3   # 4800.2
+SHARED_LIBS +=  gobject-2.0          4200.3   # 4800.2
+SHARED_LIBS +=  gio-2.0              4200.3   # 4800.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c elf ffi pcre pthread z
+WANTLIB += c elf ffi iconv intl pcre pthread z
 
-MODULES=		devel/gettext \
-			lang/python \
+MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		devel/gettext \
+			devel/pcre \
 			devel/libelf \
 			devel/libffi
 
