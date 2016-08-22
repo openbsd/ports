@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/08/22 05:43:33 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2016/08/22 05:44:54 jca Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN =		mmap W^X violations but doesnt seem to use ld(1)
+USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
