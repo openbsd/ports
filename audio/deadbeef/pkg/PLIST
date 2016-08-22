@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/23 13:44:04 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/08/22 09:06:40 mpi Exp $
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/deadbeef.h
@@ -9,7 +9,7 @@ lib/deadbeef/alac.so
 lib/deadbeef/artwork.so
 lib/deadbeef/cdda.so
 lib/deadbeef/converter.so
-lib/deadbeef/converter_gtk2.so
+lib/deadbeef/converter_gtk3.so
 lib/deadbeef/convpresets/
 lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
 lib/deadbeef/convpresets/ALAC.txt
@@ -26,7 +26,7 @@ lib/deadbeef/convpresets/WavPack.txt
 lib/deadbeef/dca.so
 lib/deadbeef/ddb_ao.so
 lib/deadbeef/ddb_dumb.so
-lib/deadbeef/ddb_gui_GTK2.so
+lib/deadbeef/ddb_gui_GTK3.so
 lib/deadbeef/ddb_shn.so
 lib/deadbeef/ffap.so
 lib/deadbeef/ffmpeg.so
@@ -39,9 +39,9 @@ lib/deadbeef/mpgmad.so
 lib/deadbeef/musepack.so
 lib/deadbeef/notify.so
 lib/deadbeef/nullout.so
-lib/deadbeef/pltbrowser_gtk2.so
+lib/deadbeef/pltbrowser_gtk3.so
 lib/deadbeef/shellexec.so
-lib/deadbeef/shellexecui_gtk2.so
+lib/deadbeef/shellexecui_gtk3.so
 lib/deadbeef/sndfile.so
 lib/deadbeef/sndio.so
 lib/deadbeef/tta.so
@@ -104,8 +104,6 @@ share/locale/it/LC_MESSAGES/deadbeef.mo
 share/locale/ja/LC_MESSAGES/deadbeef.mo
 share/locale/kk/LC_MESSAGES/deadbeef.mo
 share/locale/km/LC_MESSAGES/deadbeef.mo
-share/locale/lg/
-share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/deadbeef.mo
 share/locale/lt/LC_MESSAGES/deadbeef.mo
 share/locale/nl/LC_MESSAGES/deadbeef.mo

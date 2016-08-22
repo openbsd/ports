@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/08/22 09:06:40 mpi Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.6.2
-REVISION =		7
+REVISION =		8
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -10,22 +10,21 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 avcodec avformat
-WANTLIB += avutil c cairo cddb cdio crypto curl dbus-1 expat faad
-WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz idn m mad mms mp4ff mpcdec nghttp2 ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs sndfile sndio ssl vorbis vorbisenc
-WANTLIB += vorbisfile wavpack xcb xcb-render xcb-shm z zip
+WANTLIB += FLAC ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += atspi avcodec avformat avutil c cairo cairo-gobject
+WANTLIB += cddb cdio crypto curl dbus-1 epoxy expat faad ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += idn intl m mad mms mp4ff mpcdec nghttp2 ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sndfile sndio ssl vorbis vorbisenc vorbisfile
+WANTLIB += wavpack xcb xcb-render xcb-shm z zip
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/gettext \
-			textproc/intltool
+MODULES =		textproc/intltool
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
@@ -52,7 +51,7 @@ LIB_DEPENDS =		archivers/libzip \
 			multimedia/libmms \
 			net/curl \
 			x11/dbus \
-			x11/gtk+2
+			x11/gtk+3
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		gnu
@@ -70,7 +69,7 @@ CONFIGURE_ARGS +=	--disable-static \
 			--disable-alsa \
 			--disable-coreaudio \
 			--disable-gme \
-			--disable-gtk3 \
+			--disable-gtk2 \
 			--disable-mono2stereo \
 			--disable-oss \
 			--disable-pulse \
