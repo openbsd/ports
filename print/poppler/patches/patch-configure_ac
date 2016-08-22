@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.20 2016/08/01 18:35:40 kili Exp $
+$OpenBSD: patch-configure_ac,v 1.21 2016/08/22 21:31:54 kili Exp $
 --- configure.ac.orig	Mon Jul 25 00:03:53 2016
 +++ configure.ac	Sat Jul 30 22:48:42 2016
 @@ -680,6 +680,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
@@ -26,15 +26,6 @@ $OpenBSD: patch-configure_ac,v 1.20 2016/08/01 18:35:40 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -779,7 +797,7 @@ if test x$enable_poppler_qt5 = xyes; then
-     AC_CHECK_TOOL(MOCQT52, moc-qt5)
-     AC_MSG_CHECKING([for Qt5 moc-qt5])
-     mocversion=`$MOCQT52 -v 2>&1`
--    mocversiongrep=`echo $mocversion | grep "Qt 5\|moc-qt5 5\|moc 5"`
-+    mocversiongrep=`echo $mocversion | grep -E "Qt 5|moc-qt5 5|moc 5"`
-     if test x"$mocversiongrep" != x"$mocversion"; then
-       AC_CHECK_TOOL(QTCHOOSER, qtchooser)
-       AC_MSG_CHECKING([for qtchooser])
 @@ -997,6 +1015,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
