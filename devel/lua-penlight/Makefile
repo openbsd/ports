@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/08/16 08:22:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/22 12:44:49 dcoppa Exp $
 
 COMMENT =	pure Lua libraries focusing on input data handling
 
 GH_ACCOUNT =	stevedonovan
 GH_PROJECT =	Penlight
-GH_TAGNAME =	1.4.0
+GH_TAGNAME =	1.4.1
 PKGNAME =	lua-penlight-${GH_TAGNAME}
 CATEGORIES =	devel
 
