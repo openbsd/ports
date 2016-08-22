@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.147 2016/07/09 09:09:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2016/08/22 23:56:41 sthen Exp $
+
+USE_WXNEEDED=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -19,7 +21,9 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
 EPOCH=		0
-REVISION-main=	0
+REVISION-main=	1
+REVISION-kde=	0
+REVISION-java=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
