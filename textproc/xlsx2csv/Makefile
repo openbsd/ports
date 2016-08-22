@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/03 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/22 12:19:27 czarkoff Exp $
 
 COMMENT =		convert XLSX files to CSV
-DISTNAME =		xlsx2csv-20150225
-REVISION =		2
+DISTNAME =		xlsx2csv-20150318
 CATEGORIES =		textproc converters
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -12,7 +11,7 @@ BUILD_DEPENDS =		textproc/go-xlsx
 
 GH_ACCOUNT =		tealeg
 GH_PROJECT =		xlsx2csv
-GH_COMMIT =		4d67bed54074c9f55a5443623155e57d4723901b
+GH_COMMIT =		d8ea142750f57ca9998a632d2b6c61f818f0c5a9
 
 MODULES =		lang/go
 
