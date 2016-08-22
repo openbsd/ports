@@ -1,0 +1,68 @@
+$OpenBSD: patch-common_version_c,v 1.1 2016/08/22 13:45:09 dcoppa Exp $
+
+commit a93dc75cd677d3eb7dc06fb9e055f6422d444f44
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Nov 19 17:15:48 2015 +0100
+
+Remove useless information from awesome -v
+
+Most of this information isn't interesting. If you are getting awesome from a
+distro, then the time, hostname and username of the build are likely 'random
+stuff' and if you are building awesome yourself, then the hostname and username
+are obviously yours and the time can still be interfered based on the awesome's
+binary ctime.
+
+The GCC version shouldn't make any difference at all.
+
+Closes https://github.com/awesomeWM/awesome/pull/566.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- common/version.c.orig	Sun Mar  6 15:05:54 2016
++++ common/version.c	Mon Aug 22 15:31:12 2016
+@@ -35,34 +35,24 @@
+ void
+ eprint_version(void)
+ {
+-    printf("awesome " AWESOME_VERSION
+-	   " (" AWESOME_RELEASE ")\n"
+-	   " • Build:");
+-#if defined(__DATE__) && defined(__TIME__)
+-    printf(" " __DATE__ " " __TIME__);
+-#endif
+-    printf(" for %s", AWESOME_COMPILE_MACHINE);
+-#if defined(__GNUC__)				\
+-    && defined(__GNUC_MINOR__)			\
+-    && defined(__GNUC_PATCHLEVEL__)
+-    printf(" by gcc version %d.%d.%d",
+-	   __GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__);
+-#endif
+-    printf(" (%s@%s)\n", AWESOME_COMPILE_BY, AWESOME_COMPILE_HOSTNAME);
+-
+     lua_State *L = luaL_newstate();
+     luaopen_base(L);
+     lua_getglobal(L, "_VERSION");
+-    printf(" • Compiled against "  LUA_RELEASE
+-           " (running with %s)\n", lua_tostring(L, -1));
+-    lua_close(L);
+ 
+-    printf(" • D-Bus support: ");
+ #ifdef WITH_DBUS
+-    printf("✔\n");
++    const char *has_dbus = "✔";
+ #else
+-    printf("✘\n");
++    const char *has_dbus = "✘";
+ #endif
++
++    printf("awesome %s (%s)\n"
++           " • Compiled against %s (running with %s)\n"
++           " • D-Bus support: %s\n",
++           AWESOME_VERSION, AWESOME_RELEASE,
++           LUA_RELEASE, lua_tostring(L, -1),
++           has_dbus);
++    lua_close(L);
++
+     exit(EXIT_SUCCESS);
+ }
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
---- awesomeConfig.cmake.orig	Fri Jan 15 16:51:19 2016
-+++ awesomeConfig.cmake	Mon Jan 18 09:47:55 2016
+$OpenBSD: patch-awesomeConfig_cmake,v 1.18 2016/08/22 13:45:09 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Sun Mar  6 15:05:54 2016
++++ awesomeConfig.cmake	Mon Aug 22 15:33:26 2016
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_DOC "generate API documentation" ON)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
  # }}}
  
  # {{{ Endianness
-@@ -43,9 +42,6 @@ macro(a_find_program var prg req)
+@@ -43,29 +42,21 @@ macro(a_find_program var prg req)
      endif()
  endmacro()
  
@@ -27,9 +27,9 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
 -a_find_program(LN_EXECUTABLE ln TRUE)
 -a_find_program(GREP_EXECUTABLE grep TRUE)
  a_find_program(GIT_EXECUTABLE git FALSE)
- a_find_program(HOSTNAME_EXECUTABLE hostname FALSE)
+-a_find_program(HOSTNAME_EXECUTABLE hostname FALSE)
  # programs needed for man pages
-@@ -53,19 +49,15 @@ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
+ a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
  a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
  a_find_program(GZIP_EXECUTABLE gzip FALSE)
  # lua documentation
@@ -52,7 +52,22 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
  # }}}
  
  # {{{ Check if documentation can be build
-@@ -189,7 +181,7 @@ else()
+@@ -113,14 +104,6 @@ elseif( EXISTS ${SOURCE_DIR}/.version_stamp )
+ endif()
+ # }}}
+ 
+-# {{{ Get hostname
+-execute_process(
+-    COMMAND ${HOSTNAME_EXECUTABLE}
+-    WORKING_DIRECTORY ${SOURCE_DIR}
+-    OUTPUT_VARIABLE BUILDHOSTNAME
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-# }}}
+-
+ # {{{ Required libraries
+ #
+ # this sets up:
+@@ -189,7 +172,7 @@ else()
  endif()
  
  # Error check
@@ -61,7 +76,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
      message(FATAL_ERROR "lua library not found")
  endif()
  
-@@ -264,7 +256,7 @@ endif()
+@@ -264,16 +247,13 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
@@ -70,3 +85,12 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.17 2016/01/18 09:50:09 dcoppa Exp $
  endif()
  
  # Hide to avoid confusion
+ mark_as_advanced(CMAKE_INSTALL_CMAKE_INSTALL_PREFIX)
+ 
+ set(AWESOME_VERSION          ${VERSION})
+-set(AWESOME_COMPILE_MACHINE  ${CMAKE_SYSTEM_PROCESSOR})
+-set(AWESOME_COMPILE_HOSTNAME ${BUILDHOSTNAME})
+-set(AWESOME_COMPILE_BY       $ENV{USER})
+ set(AWESOME_RELEASE          ${CODENAME})
+ set(AWESOME_SYSCONFDIR       ${XDG_CONFIG_DIR}/${PROJECT_AWE_NAME})
+ set(AWESOME_LUA_LIB_PATH     ${AWESOME_DATA_PATH}/lib)

@@ -1,0 +1,32 @@
+$OpenBSD: patch-awesome-version-internal_h_in,v 1.1 2016/08/22 13:45:09 dcoppa Exp $
+
+commit a93dc75cd677d3eb7dc06fb9e055f6422d444f44
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Nov 19 17:15:48 2015 +0100
+
+Remove useless information from awesome -v
+
+Most of this information isn't interesting. If you are getting awesome from a
+distro, then the time, hostname and username of the build are likely 'random
+stuff' and if you are building awesome yourself, then the hostname and username
+are obviously yours and the time can still be interfered based on the awesome's
+binary ctime.
+
+The GCC version shouldn't make any difference at all.
+
+Closes https://github.com/awesomeWM/awesome/pull/566.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- awesome-version-internal.h.in.orig	Sun Mar  6 15:05:54 2016
++++ awesome-version-internal.h.in	Mon Aug 22 15:31:12 2016
+@@ -2,9 +2,6 @@
+ #define _AWE_VERSION_INTERNAL_H_
+ 
+ #define AWESOME_VERSION             "@AWESOME_VERSION@"
+-#define AWESOME_COMPILE_MACHINE     "@AWESOME_COMPILE_MACHINE@"
+-#define AWESOME_COMPILE_BY          "@AWESOME_COMPILE_BY@"
+-#define AWESOME_COMPILE_HOSTNAME    "@AWESOME_COMPILE_HOSTNAME@"
+ #define AWESOME_RELEASE             "@AWESOME_RELEASE@"
+ 
+ #endif //_AWE_VERSION_INTERNAL_H_
