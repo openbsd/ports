@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/04/25 18:49:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/08/23 07:43:50 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -51,6 +51,7 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-sharpright-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightleft-symbolic.svg
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.svg
+share/gnome-maps/maps-service.json
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
 share/gnome-maps/org.gnome.Maps.src.gresource
