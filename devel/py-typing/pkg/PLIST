@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/23 12:53:23 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/typing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/typing.py
+lib/python${MODPY_VERSION}/site-packages/typing.pyc
