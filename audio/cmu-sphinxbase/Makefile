@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/27 20:53:34 eric Exp $
+# $OpenBSD: Makefile,v 1.12 2016/08/24 05:02:20 dcoppa Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
@@ -29,7 +29,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-python
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include	\
 			LDFLAGS=-L${LOCALBASE}/lib 	\
-			LIBS="-lblas -lm -lg2c -lsndio"
+			LIBS="-lblas -lm -lg2c -lsndio" \
+			HAVE_DOXYGEN="no"
 
 pre-build:
 	@cp ${FILESDIR}/ad_sndio.c ${WRKSRC}/src/libsphinxad/
