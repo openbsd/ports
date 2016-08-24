@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/03 13:34:03 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/24 19:47:03 gonzalo Exp $
+@group wheel
 bin/lynis
 @man man/man8/lynis.8
 share/doc/lynis/
-share/doc/lynis/CHANGELOG
+share/doc/lynis/CHANGELOG.md
 share/doc/lynis/CONTRIBUTORS
 share/doc/lynis/FAQ
 share/doc/lynis/INSTALL
@@ -18,9 +19,27 @@ share/lynis/db/
 share/lynis/db/fileperms.db
 share/lynis/db/hints.db
 share/lynis/db/integrity.db
+share/lynis/db/languages/
+share/lynis/db/languages/br
+share/lynis/db/languages/cn
+share/lynis/db/languages/de
+share/lynis/db/languages/en
+share/lynis/db/languages/en-GB
+share/lynis/db/languages/en-US
+share/lynis/db/languages/es
+share/lynis/db/languages/fr
+share/lynis/db/languages/hu
+share/lynis/db/languages/it
+share/lynis/db/languages/nl
+share/lynis/db/languages/nl-BE
+share/lynis/db/languages/nl-NL
+share/lynis/db/languages/pl
+share/lynis/db/languages/pt
+share/lynis/db/languages/ru
 share/lynis/db/malware-susp.db
 share/lynis/db/malware.db
 share/lynis/db/sbl.db
+share/lynis/db/tests.db
 @mode 0755
 share/lynis/include/
 @mode 0600
@@ -31,6 +50,9 @@ share/lynis/include/consts
 share/lynis/include/data_upload
 share/lynis/include/functions
 share/lynis/include/helper_audit_dockerfile
+share/lynis/include/helper_configure
+share/lynis/include/helper_show
+share/lynis/include/helper_system_remote_scan
 share/lynis/include/helper_update
 share/lynis/include/osdetection
 share/lynis/include/parameters

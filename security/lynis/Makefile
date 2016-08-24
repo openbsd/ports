@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/03 13:34:03 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/24 19:47:03 gonzalo Exp $
 
 COMMENT=	security auditing tool
 
-DISTNAME =	lynis-2.2.0
+DISTNAME =	lynis-2.3.2
 
 CATEGORIES=	security
 
@@ -30,7 +30,7 @@ do-install:
 	@cp -r ${WRKDIST}/{plugins,db,include} \
 		${PREFIX}/share/lynis/
 	cd ${WRKSRC}; ${INSTALL_DATA} CONTRIBUTORS LICENSE \
-		FAQ CHANGELOG README INSTALL \
+		FAQ CHANGELOG.md README INSTALL \
 		${PREFIX}/share/doc/lynis/
 	${INSTALL_DATA} ${WRKSRC}/default.prf \
 		${PREFIX}/share/examples/lynis/
