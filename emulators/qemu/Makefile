@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.150 2016/08/21 12:04:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2016/08/25 08:56:12 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
+
+# XXX: Doesn't work, see EXTRA_LDFLAGS below
+USE_WXNEEDED =	Yes
 
 COMMENT=	multi system emulator
 
