@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.151 2016/08/25 08:56:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.152 2016/08/25 15:59:58 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
-# XXX: Doesn't work, see EXTRA_LDFLAGS below
 USE_WXNEEDED =	Yes
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.6.1
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -61,7 +61,7 @@ MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
 EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded
+EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
