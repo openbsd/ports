@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2016/08/21 15:15:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/08/25 07:17:39 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -43,8 +43,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_client.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/browser_dispatcher.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/browser_dispatcher.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/cloud_build.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/cloud_build.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/cloud_endpoints.py
@@ -79,6 +77,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/region_util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/region_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtimes/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtimes/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtimes/__init__.pyc
@@ -532,6 +532,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/browser_dispatcher.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/app/browser_dispatcher.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/checks.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/checks.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py
@@ -1234,7 +1236,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha3/ml_v1alpha3_cli
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha3/ml_v1alpha3_client.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha3/ml_v1alpha3_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1alpha3/ml_v1alpha3_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml_v1alpha3.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/__init__.pyc
@@ -1628,6 +1638,11 @@ google-cloud-sdk/lib/surface/app/modules/stop.py
 google-cloud-sdk/lib/surface/app/modules/stop.pyc
 google-cloud-sdk/lib/surface/app/open_console.py
 google-cloud-sdk/lib/surface/app/open_console.pyc
+google-cloud-sdk/lib/surface/app/regions/
+google-cloud-sdk/lib/surface/app/regions/__init__.py
+google-cloud-sdk/lib/surface/app/regions/__init__.pyc
+google-cloud-sdk/lib/surface/app/regions/list.py
+google-cloud-sdk/lib/surface/app/regions/list.pyc
 google-cloud-sdk/lib/surface/app/services/
 google-cloud-sdk/lib/surface/app/services/__init__.py
 google-cloud-sdk/lib/surface/app/services/__init__.pyc
@@ -3101,6 +3116,11 @@ google-cloud-sdk/lib/surface/ml/jobs/describe.py
 google-cloud-sdk/lib/surface/ml/jobs/describe.pyc
 google-cloud-sdk/lib/surface/ml/jobs/list.py
 google-cloud-sdk/lib/surface/ml/jobs/list.pyc
+google-cloud-sdk/lib/surface/ml/jobs/submit/
+google-cloud-sdk/lib/surface/ml/jobs/submit/__init__.py
+google-cloud-sdk/lib/surface/ml/jobs/submit/__init__.pyc
+google-cloud-sdk/lib/surface/ml/jobs/submit/training.py
+google-cloud-sdk/lib/surface/ml/jobs/submit/training.pyc
 google-cloud-sdk/lib/surface/ml/models/
 google-cloud-sdk/lib/surface/ml/models/__init__.py
 google-cloud-sdk/lib/surface/ml/models/__init__.pyc
@@ -4741,7 +4761,6 @@ google-cloud-sdk/platform/ext-runtime/ruby/test/
 google-cloud-sdk/platform/ext-runtime/ruby/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/ruby/test/runtime_test.pyc
 google-cloud-sdk/platform/gsutil/
-google-cloud-sdk/platform/gsutil/.travis.yml
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
 google-cloud-sdk/platform/gsutil/CONTRIBUTING.md
@@ -4843,6 +4862,8 @@ google-cloud-sdk/platform/gsutil/gslib/commands/hash.py
 google-cloud-sdk/platform/gsutil/gslib/commands/hash.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/help.py
 google-cloud-sdk/platform/gsutil/gslib/commands/help.pyc
+google-cloud-sdk/platform/gsutil/gslib/commands/iam.py
+google-cloud-sdk/platform/gsutil/gslib/commands/iam.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/lifecycle.py
 google-cloud-sdk/platform/gsutil/gslib/commands/lifecycle.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/logging.py
@@ -4909,8 +4930,14 @@ google-cloud-sdk/platform/gsutil/gslib/hashing_helper.py
 google-cloud-sdk/platform/gsutil/gslib/hashing_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/help_provider.py
 google-cloud-sdk/platform/gsutil/gslib/help_provider.pyc
+google-cloud-sdk/platform/gsutil/gslib/iamhelpers.py
+google-cloud-sdk/platform/gsutil/gslib/iamhelpers.pyc
 google-cloud-sdk/platform/gsutil/gslib/ls_helper.py
 google-cloud-sdk/platform/gsutil/gslib/ls_helper.pyc
+google-cloud-sdk/platform/gsutil/gslib/metrics.py
+google-cloud-sdk/platform/gsutil/gslib/metrics.pyc
+google-cloud-sdk/platform/gsutil/gslib/metrics_reporter.py
+google-cloud-sdk/platform/gsutil/gslib/metrics_reporter.pyc
 google-cloud-sdk/platform/gsutil/gslib/name_expansion.py
 google-cloud-sdk/platform/gsutil/gslib/name_expansion.pyc
 google-cloud-sdk/platform/gsutil/gslib/no_op_auth_plugin.py
@@ -4923,6 +4950,8 @@ google-cloud-sdk/platform/gsutil/gslib/parallelism_framework_util.py
 google-cloud-sdk/platform/gsutil/gslib/parallelism_framework_util.pyc
 google-cloud-sdk/platform/gsutil/gslib/plurality_checkable_iterator.py
 google-cloud-sdk/platform/gsutil/gslib/plurality_checkable_iterator.pyc
+google-cloud-sdk/platform/gsutil/gslib/posix_util.py
+google-cloud-sdk/platform/gsutil/gslib/posix_util.pyc
 google-cloud-sdk/platform/gsutil/gslib/progress_callback.py
 google-cloud-sdk/platform/gsutil/gslib/progress_callback.pyc
 google-cloud-sdk/platform/gsutil/gslib/project_id.py
@@ -4992,6 +5021,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_hashing_helper.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_hashing_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_help.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_help.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_iam.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_iam.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_lifecycle.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_lifecycle.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_logging.py
@@ -5000,6 +5031,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_ls.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_ls.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mb.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mb.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_metrics.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_metrics.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mv.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_mv.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_naming.py
@@ -5042,6 +5075,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_trace.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_trace.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_tracker_file.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_tracker_file.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_ui.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_ui.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_update.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_update.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_util.py
@@ -5075,10 +5110,14 @@ google-cloud-sdk/platform/gsutil/gslib/third_party/storage_apitools/storage_v1_c
 google-cloud-sdk/platform/gsutil/gslib/third_party/storage_apitools/storage_v1_client.pyc
 google-cloud-sdk/platform/gsutil/gslib/third_party/storage_apitools/storage_v1_messages.py
 google-cloud-sdk/platform/gsutil/gslib/third_party/storage_apitools/storage_v1_messages.pyc
+google-cloud-sdk/platform/gsutil/gslib/thread_message.py
+google-cloud-sdk/platform/gsutil/gslib/thread_message.pyc
 google-cloud-sdk/platform/gsutil/gslib/tracker_file.py
 google-cloud-sdk/platform/gsutil/gslib/tracker_file.pyc
 google-cloud-sdk/platform/gsutil/gslib/translation_helper.py
 google-cloud-sdk/platform/gsutil/gslib/translation_helper.pyc
+google-cloud-sdk/platform/gsutil/gslib/ui_controller.py
+google-cloud-sdk/platform/gsutil/gslib/ui_controller.pyc
 google-cloud-sdk/platform/gsutil/gslib/util.py
 google-cloud-sdk/platform/gsutil/gslib/util.pyc
 google-cloud-sdk/platform/gsutil/gslib/wildcard_iterator.py
@@ -5088,6 +5127,12 @@ google-cloud-sdk/platform/gsutil/gsutil.py
 google-cloud-sdk/platform/gsutil/gsutil.pyc
 google-cloud-sdk/platform/gsutil/setup.py
 google-cloud-sdk/platform/gsutil/setup.pyc
+google-cloud-sdk/platform/gsutil/test/
+google-cloud-sdk/platform/gsutil/test/__init__.py
+google-cloud-sdk/platform/gsutil/test/__init__.pyc
+google-cloud-sdk/platform/gsutil/test/gsutil_measure_imports
+google-cloud-sdk/platform/gsutil/test/gsutil_measure_imports.py
+google-cloud-sdk/platform/gsutil/test/gsutil_measure_imports.pyc
 google-cloud-sdk/platform/gsutil/third_party/
 google-cloud-sdk/platform/gsutil/third_party/apitools/
 google-cloud-sdk/platform/gsutil/third_party/apitools/.coveragerc
@@ -6123,8 +6168,8 @@ google-cloud-sdk/platform/gsutil/third_party/boto/requirements.txt
 google-cloud-sdk/platform/gsutil/third_party/boto/scripts/
 google-cloud-sdk/platform/gsutil/third_party/boto/scripts/git-release-notes.py
 google-cloud-sdk/platform/gsutil/third_party/boto/scripts/git-release-notes.pyc
-google-cloud-sdk/platform/gsutil/third_party/boto/scripts/rebuild_endpoints.py
-google-cloud-sdk/platform/gsutil/third_party/boto/scripts/rebuild_endpoints.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/scripts/rebuild-endpoints.py
+google-cloud-sdk/platform/gsutil/third_party/boto/scripts/rebuild-endpoints.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/setup.cfg
 google-cloud-sdk/platform/gsutil/third_party/boto/setup.py
 google-cloud-sdk/platform/gsutil/third_party/boto/setup.pyc
@@ -6769,6 +6814,16 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/__init__.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_connection.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_connection.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_locale_qualification_in.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_locale_qualification_in.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_locale_qualification_notin.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_locale_qualification_notin.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_doesnotexist.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_doesnotexist.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_exists.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_exists.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_qualtypewithscore_in.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mturk/test_qualification_qualtypewithscore_in.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/__init__.pyc
@@ -6781,6 +6836,11 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/__init__.p
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/__init__.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/test_provider.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/test_provider.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/pyami/
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/pyami/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/pyami/__init__.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/pyami/test_config.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/pyami/test_config.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/__init__.pyc
@@ -6805,6 +6865,8 @@ google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/__init__.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/__init__.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_bucket.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_bucket.pyc
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_bucketlistresultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_bucketlistresultset.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_connection.py
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_connection.pyc
 google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_cors_configuration.py
