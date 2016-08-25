@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/15 19:19:46 abieber Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/25 08:30:22 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.12.19
-REVISION=	2
+REVISION=	4
 EPOCH=		0
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
@@ -37,6 +37,8 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=	python.port.mk
 MODULES=		lang/python
 
+USE_WXNEEDED=	Yes
+
 SUBST_VARS+= 	WRKDIR
 SUBST_VARS+= 	V8_ARCH
 
@@ -45,7 +47,7 @@ MAKE_FLAGS+=	library=shared ARCHES=${V8_ARCH} MODES=${V8_RELEASE} \
 
 MAKE_ENV+=	V=1 CXX=c++ CCFLAGS+="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
 
 NO_CCACHE=	Yes
