@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_libsm_sm-common_c,v 1.1 2016/08/25 13:21:26 dcoppa Exp $
+
+commit e98315a1966d73d4b6be733cc0a94a85ebfa7916
+Author: Frank Morgner <frankmorgner@gmail.com>
+Date:   Thu Jun 30 21:50:22 2016 +0200
+
+libsm: fixed out of bounds write
+
+'sm_incr_ssc' performed an out of bounds write when 'ssc' is bigger than
+255. The local variable 'ii' needs to be decremented instead of
+incremented in the 'for'-loop.
+
+--- src/libsm/sm-common.c.orig	Fri Jun  3 11:19:51 2016
++++ src/libsm/sm-common.c	Thu Aug 25 14:47:05 2016
+@@ -359,7 +359,7 @@ sm_incr_ssc(unsigned char *ssc, size_t ssc_len)
+ 	if (!ssc)
+ 		return;
+ 
+-	for (ii = ssc_len - 1;ii >= 0; ii++)   {
++	for (ii = ssc_len - 1; ii >= 0; ii--)   {
+ 		*(ssc + ii) += 1;
+ 		if (*(ssc + ii) != 0)
+ 			break;
