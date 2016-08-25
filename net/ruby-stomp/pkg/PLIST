@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/06/13 08:16:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/08/25 06:22:26 jasper Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -42,6 +42,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/publish_file_conn.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/publisher.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/put11conn_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/putget11_rh1.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/ssl_common.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_ctxoptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_newparm.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/ssl_uc1.rb
@@ -89,6 +90,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/stomp.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/test/funcs.sh
 ${GEM_LIB}/gems/${DISTNAME}/test/test_anonymous.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_client.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_codec.rb
@@ -99,4 +101,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_message.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_ssl.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_urlogin.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tlogger.rb
+${GEM_LIB}/gems/${DISTNAME}/test/unitst.sh
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
