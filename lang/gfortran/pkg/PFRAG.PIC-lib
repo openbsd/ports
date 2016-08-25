@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.PIC-lib,v 1.1.1.1 2010/10/10 17:39:06 steven Exp $
-lib/fpic/
-lib/fpic/libgfortran.a
-lib/fpic/libgfortran.la
-@lib lib/fpic/libgfortran.so.${LIBgfortran_VERSION}
-lib/gcc/${CONFIG}/${V}/fpic/
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.a
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.la

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2016/08/12 23:21:25 juanfra Exp $
+# $OpenBSD: Makefile,v 1.188 2016/08/25 15:42:20 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -27,7 +27,6 @@
      SUBDIR += gawk
      SUBDIR += gcc
      SUBDIR += gforth
-     SUBDIR += gfortran
      SUBDIR += ghc
      SUBDIR += go
      SUBDIR += go-bootstrap
