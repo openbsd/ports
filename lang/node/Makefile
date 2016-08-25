@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2016/08/17 01:05:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.50 2016/08/25 08:42:08 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
+
+# XXX: see MAKE_ENV below. at least mksnapshot gets built w/o wxneeded
+USE_WXNEEDED =	Yes
 
 COMMENT=	V8 JavaScript for clients and servers
 
