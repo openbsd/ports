@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.6 2016/04/19 06:05:36 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.7 2016/08/25 11:38:59 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
 Undefined references to libc functions.
 
---- Source/cmake/OptionsCommon.cmake.orig	Thu Apr 14 10:45:24 2016
-+++ Source/cmake/OptionsCommon.cmake	Sat Apr 16 13:02:54 2016
+--- Source/cmake/OptionsCommon.cmake.orig	Tue Aug 23 14:29:18 2016
++++ Source/cmake/OptionsCommon.cmake	Thu Aug 25 08:10:31 2016
 @@ -17,10 +17,10 @@ endif ()
  
  execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
@@ -21,7 +21,7 @@ Undefined references to libc functions.
  endif ()
  
  set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-@@ -120,9 +120,9 @@ if (NOT MSVC)
+@@ -139,9 +139,9 @@ if (NOT MSVC)
      string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
  endif ()
  
