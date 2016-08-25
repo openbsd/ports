@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.303 2016/08/19 19:58:47 robert Exp $
+# $OpenBSD: Makefile,v 1.304 2016/08/25 20:00:07 sthen Exp $
+
+USE_WXNEEDED=		Yes
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,7 +10,7 @@ COMMENT=		Chromium browser
 V=			52.0.2743.116
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
@@ -115,7 +117,7 @@ GN_ARGS=	enable_nacl=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded\"
+		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
