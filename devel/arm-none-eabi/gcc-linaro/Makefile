@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+# $OpenBSD: Makefile,v 1.2 2016/08/25 02:39:06 jsg Exp $
 
 COMMENT=	gcc for arm-none-eabi cross-development, Linaro version
 
-VERSION=	4.9.2015.03
+VERSION=	4.9-2016.02
 #REVISION=	0
-DISTNAME=	gcc-linaro-4.9-2015.03
+DISTNAME=	gcc-linaro-${VERSION}
 EXTRACT_SUFX=	.tar.xz
-PKGNAME=	${CONFIG}-gcc-linaro-${VERSION}
+PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
 
 SUBST_VARS+=	VERSION
 
@@ -21,8 +21,8 @@ MAKE_ADA=	No
 
 # The "base" prefix is somewhat arbitrary, and introduced mostly because
 # portcheck complains about lines longer than 80 characters.
-MASTER_SITE_BASE=http://releases.linaro.org/15.03/components
-MASTER_SITES= 	${MASTER_SITE_BASE}/toolchain/gcc-linaro/4.9/
+MASTER_SITE_BASE=http://releases.linaro.org/components
+MASTER_SITES= 	${MASTER_SITE_BASE}/toolchain/gcc-linaro/${VERSION}/
 
 BUILD_DEPENDS+=	devel/autoconf/2.13	\
 		devel/bison				\
