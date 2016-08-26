@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/16 23:26:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/26 10:19:08 jca Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
 V=		1.1.5
-REVISION=	2
+REVISION=	3
 DISTNAME=	minidlna-$V
 PKGNAME=	minidlna-$V
 
@@ -41,5 +41,7 @@ E=		${PREFIX}/share/examples/minidlna
 post-install:
 	${INSTALL_DATA_DIR} $E
 	${INSTALL_DATA} ${WRKSRC}/minidlna.conf $E
+	${INSTALL_MAN} ${WRKSRC}/minidlnad.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/minidlna.conf.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
