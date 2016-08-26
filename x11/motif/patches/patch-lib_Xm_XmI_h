@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_Xm_XmI_h,v 1.1 2016/08/26 11:57:38 dcoppa Exp $
+
+Description: Disable fix for upstream bug #1565
+
+This patch reverts the changes introduced by upstream's fix for
+upstream bug #1565 and causes pop menus and keyboard navigation in
+menus to revert to their Motif 2.3.3 behaviour.
+
+Upstream's original fix broke keyboard navigation in menus (#730026)
+and upstream's updated fix (applied in motif 2.3.4-5) caused segfaults
+in ddd and xpdf (#781995).
+
+Author: Graham Inggs <graham@nerve.org.za>
+Bug: http://bugs.motifzone.net/show_bug.cgi?id=1565
+Bug-Debian: https://bugs.debian.org/781995
+
+--- lib/Xm/XmI.h.orig	Sat Jun 11 01:52:23 2016
++++ lib/Xm/XmI.h	Wed Aug 24 10:04:23 2016
+@@ -294,7 +294,6 @@ extern Pixel _XmAssignInsensitiveColor(Widget w);
+ #define FIX_1501
+ #define FIX_1521
+ #define FIX_1505
+-#define FIX_1565
+ 
+ #endif /* _XmI_h */
+ /* DON'T ADD ANYTHING AFTER THIS #endif */

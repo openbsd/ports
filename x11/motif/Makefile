@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/03 18:55:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/26 11:57:38 dcoppa Exp $
 
 COMMENT=	Motif toolkit
 
 DISTNAME=	motif-2.3.6
+
+REVISION=	0
 
 SHARED_LIBS=	Mrm	4.1 \
 		Uil	5.0 \
