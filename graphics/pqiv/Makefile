@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/26 07:39:45 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/26 16:59:35 danj Exp $
 
 COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
-GH_TAGNAME=		2.5.1
+GH_TAGNAME=		2.6
 
 CATEGORIES=		graphics
 
 HOMEPAGE=		https://github.com/phillipberndt/pqiv/
+
+MAINTAINER=		Daniel Jakots <obsd@chown.me>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
