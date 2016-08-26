@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2016/08/17 17:21:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.418 2016/08/26 10:17:04 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -229,6 +229,7 @@
      SUBDIR += pycha
      SUBDIR += qimageblitz
      SUBDIR += qiv
+     SUBDIR += quirc
      SUBDIR += quesoglc
      SUBDIR += rawstudio
      SUBDIR += rawtherapee
