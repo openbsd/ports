@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/18 07:19:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/26 14:31:46 jca Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -42,7 +42,7 @@ WRKSRC=		${WRKDIST}/SRC
 pre-configure:
 	cd ${WRKDIST}/manpages/man/manl && \
 		perl -pi -e 's/(\.TH\s+\w+)\s+1(.*)/\1 3f\2/' *.l && \
-	        for m in *.l ; do if ! egrep '^\.TH' $$m >/dev/null ; then \
+	        for m in *.l ; do if ! egrep -q '^\.TH' $$m ; then \
                 perl -pi -e "s/(.SH NAME)/.TH \U$${m%\.l} 3f\n\1/" $$m ; fi ; \
 		mv $$m $${m%\.l}.3f ; done
 	cp ${WRKDIST}/make.inc.example ${WRKDIST}/make.inc
