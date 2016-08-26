@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/08/26 21:30:59 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/08/26 21:34:08 jca Exp $
 
 COMMENT=	utility to test for memory faults
 
 DISTNAME=	memtester-4.3.0
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://pyropus.ca/software/memtester/
