@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/02 13:18:19 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/26 07:51:49 dcoppa Exp $
 bin/ldoc${MODLUA_DEP_VERSION}
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/doc.md
@@ -17,10 +17,13 @@ share/lua/${MODLUA_VERSION}/ldoc/builtin/os.lua
 share/lua/${MODLUA_VERSION}/ldoc/builtin/package.lua
 share/lua/${MODLUA_VERSION}/ldoc/builtin/string.lua
 share/lua/${MODLUA_VERSION}/ldoc/builtin/table.lua
+share/lua/${MODLUA_VERSION}/ldoc/builtin/utf8.lua
 share/lua/${MODLUA_VERSION}/ldoc/config.ld
 share/lua/${MODLUA_VERSION}/ldoc/doc.lua
 share/lua/${MODLUA_VERSION}/ldoc/html/
 share/lua/${MODLUA_VERSION}/ldoc/html.lua
+share/lua/${MODLUA_VERSION}/ldoc/html/_code_css.lua
+share/lua/${MODLUA_VERSION}/ldoc/html/_reset_css.lua
 share/lua/${MODLUA_VERSION}/ldoc/html/ldoc_css.lua
 share/lua/${MODLUA_VERSION}/ldoc/html/ldoc_fixed_css.lua
 share/lua/${MODLUA_VERSION}/ldoc/html/ldoc_ltp.lua
