@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1520 2016/08/23 12:54:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1521 2016/08/26 11:04:14 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1275,6 +1275,7 @@
      SUBDIR += py-greenlet
      SUBDIR += py-guppy
      SUBDIR += py-hg-git
+     SUBDIR += py-hgsubversion
      SUBDIR += py-hgtools
      SUBDIR += py-hgtools,python3
      SUBDIR += py-html5lib
