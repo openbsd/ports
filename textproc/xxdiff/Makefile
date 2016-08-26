@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/26 20:37:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2016/08/26 22:00:58 jca Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
-DISTNAME=	xxdiff-4.0
-REVISION=	0
+DISTNAME=	xxdiff-4.0.1
 CATEGORIES=	textproc x11
 
 HOMEPAGE=	http://furius.ca/xxdiff/

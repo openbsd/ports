@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/08 19:52:55 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/26 22:00:58 jca Exp $
 bin/svn-foreign
 bin/termdiff
 bin/xx-cond-replace
@@ -10,6 +10,7 @@ bin/xx-filter
 bin/xx-find-grep-sed
 bin/xx-hg-merge
 bin/xx-match
+bin/xx-p4-unmerge
 bin/xx-pyline
 bin/xx-rename
 bin/xx-sql-schemas
@@ -26,6 +27,11 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/checkout.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/checkout.pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/condrepl.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/condrepl.pyc
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/postgresql.py
+lib/python${MODPY_VERSION}/site-packages/xxdiff/db/postgresql.pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/editor.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/editor.pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/history.py
@@ -88,5 +94,5 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/utils.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/xxdiff/xformloop.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/xformloop.pyc
-lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-4.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-4.0.1-py${MODPY_VERSION}.egg-info
 @man man/man1/xxdiff.1
