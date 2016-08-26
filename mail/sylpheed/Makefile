@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.110 2016/08/12 11:17:17 edd Exp $
+# $OpenBSD: Makefile,v 1.111 2016/08/26 09:13:59 edd Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
-DISTNAME =		sylpheed-3.4.2
-REVISION =		4
+DISTNAME =		sylpheed-3.5.1
 
-SHARED_LIBS += 	 	sylph-0                   3.0 # 3.0
-SHARED_LIBS += 		sylpheed-plugin-0         3.0 # 3.0
+SHARED_LIBS += 	 	sylph-0                   4.0 # 3.0
+SHARED_LIBS += 		sylpheed-plugin-0         4.0 # 3.0
 
 CATEGORIES =		mail news x11
 HOMEPAGE =		http://sylpheed.sraoss.jp/en
+MAINTAINER =		Amit Kulkarni <amitkulz@gmail.com>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +28,7 @@ WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell assuan ffi graphite2 harfbuzz
 
 RUN_DEPENDS =		devel/desktop-file-utils
-MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.4/
+MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.5/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-compface \

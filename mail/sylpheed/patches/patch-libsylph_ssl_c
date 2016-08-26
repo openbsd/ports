@@ -1,6 +1,6 @@
-$OpenBSD: patch-libsylph_ssl_c,v 1.1 2016/08/12 11:17:17 edd Exp $
---- libsylph/ssl.c.orig	Wed Aug  3 20:08:00 2016
-+++ libsylph/ssl.c	Wed Aug  3 20:09:20 2016
+$OpenBSD: patch-libsylph_ssl_c,v 1.2 2016/08/26 09:13:59 edd Exp $
+--- libsylph/ssl.c.orig	Mon Aug 22 20:24:57 2016
++++ libsylph/ssl.c	Mon Aug 22 20:25:45 2016
 @@ -55,6 +55,7 @@ static gchar *find_certs_file(const gchar *certs_dir)
  }
  
