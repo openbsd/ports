@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2015/05/09 09:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2016/08/27 21:28:18 jca Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.9.7
+REVISION=		0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -16,17 +17,19 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m ncurses pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs vte xcb xcb-render xcb-shm z
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m ncurses
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs vte xcb xcb-render xcb-shm
+WANTLIB += z
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
-LIB_DEPENDS=		devel/vte \
+LIB_DEPENDS=		devel/gettext \
+			devel/vte \
 			x11/dbus-glib
 
-BUILD_DEPENDS=		sysutils/py-lockfile \
+BUILD_DEPENDS=		devel/gettext-tools \
+			sysutils/py-lockfile \
 			textproc/docbook-xsl \
 			textproc/xmlto
 
