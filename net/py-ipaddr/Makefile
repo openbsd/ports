@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/26 13:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/27 08:24:21 jca Exp $
 
 COMMENT =	Python IP address manipulation library
 
-MODPY_EGG_VERSION = 2.1.10
-REVISION =	0
+MODPY_EGG_VERSION = 2.1.11
 DISTNAME =	ipaddr-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	net
