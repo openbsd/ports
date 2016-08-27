@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2016/08/27 21:40:00 jca Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11
+REVISION=		0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roscidus.com/desktop/
@@ -12,19 +13,18 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += gobject-2.0 gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	devel/gettext
 RUN_DEPENDS=	misc/shared-mime-info
-LIB_DEPENDS=	x11/gtk+2
+LIB_DEPENDS=	devel/gettext \
+		x11/gtk+2
 
 NO_TEST=	Yes
 
