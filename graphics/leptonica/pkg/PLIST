@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/13 12:47:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/27 15:20:03 ajacoutot Exp $
 @bin bin/convertfilestopdf
 @bin bin/convertfilestops
 @bin bin/convertformat
@@ -36,6 +36,7 @@ include/leptonica/morph.h
 include/leptonica/pix.h
 include/leptonica/ptra.h
 include/leptonica/queue.h
+include/leptonica/rbtree.h
 include/leptonica/readbarcode.h
 include/leptonica/recog.h
 include/leptonica/regutils.h

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/27 15:20:03 ajacoutot Exp $
 
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.72
-REVISION=	0
+DISTNAME=	leptonica-1.73
 
-SHARED_LIBS +=  lept                 2.1      # 4.3
+SHARED_LIBS +=  lept                 2.2      # 5.0
 
 CATEGORIES=	graphics
 
@@ -14,7 +13,7 @@ HOMEPAGE=	http://www.leptonica.com/
 # BSD-like (see leptonica-license.txt in WRKSRC)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gif jpeg m openjp2 png pthread tiff webp z
+WANTLIB += c gif jpeg m openjp2 png tiff webp z
 
 MASTER_SITES=	${HOMEPAGE}/source/
 
@@ -24,10 +23,6 @@ LIB_DEPENDS=	graphics/libwebp \
 		graphics/tiff
 TEST_DEPENDS=	shells/bash \
 		math/gnuplot
-
-# for non-shared archs...
-LIB_DEPENDS+=	graphics/jpeg \
-		graphics/png
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
