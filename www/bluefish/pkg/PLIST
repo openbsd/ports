@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/02/01 09:30:05 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/08/27 17:27:15 ajacoutot Exp $
 @bin bin/bluefish
 lib/bluefish/
 lib/bluefish/about.so
@@ -89,6 +89,7 @@ share/bluefish/bflib/bflib_python_2.3.xml.gz
 share/bluefish/bflib/bflib_xhtml.xml.gz
 share/bluefish/bluefish_splash.png
 share/bluefish/css_decompressor
+share/bluefish/cssmin.py
 share/bluefish/default_accelmap
 share/bluefish/encodings
 share/bluefish/jsbeautifier/
