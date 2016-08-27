@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/18 21:38:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2016/08/27 21:45:57 jca Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
 VERSION=	0.90.8.1
 DISTNAME=	rep-gtk-${VERSION}
 CATEGORIES=     x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
 
@@ -14,22 +14,21 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs pthread stdc++ xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES=		http://download.tuxfamily.org/librep/rep-gtk/
 EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		lang/librep>=0.92.2
-LIB_DEPENDS= 		x11/gtk+2
-
-MODULES=		devel/gettext
+LIB_DEPENDS= 		devel/gettext \
+			x11/gtk+2
 
 USE_GMAKE=		Yes
 
