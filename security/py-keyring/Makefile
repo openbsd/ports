@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/29 09:26:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/27 17:40:17 ajacoutot Exp $
 
 COMMENT=		store and access your passwords safely
 
-MODPY_EGG_VERSION=	8.5.1
+MODPY_EGG_VERSION=	9.3.1
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -18,7 +18,6 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	keyring/cli.py
 
-#BUILD_DEPENDS=		devel/py-hgtools${MODPY_FLAVOR}
 BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
