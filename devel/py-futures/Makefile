@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/24 13:46:17 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/27 16:09:36 ajacoutot Exp $
 
 COMMENT=	futures implementation for Python
 
-MODPY_EGG_VERSION=	3.0.4
+MODPY_EGG_VERSION=	3.0.5
 DISTNAME=	futures-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
