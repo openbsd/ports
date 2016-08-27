@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/11/05 14:04:09 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/08/27 17:26:49 ajacoutot Exp $
 tcpdf/
 tcpdf/CHANGELOG.TXT
 tcpdf/LICENSE.TXT
-tcpdf/README.TXT
+tcpdf/README.md
 tcpdf/composer.json
 tcpdf/config/
 tcpdf/config/tcpdf_config.php
@@ -174,6 +174,7 @@ tcpdf/fonts/
 tcpdf/fonts/ae_fonts_2.0/
 tcpdf/fonts/ae_fonts_2.0/COPYING
 tcpdf/fonts/ae_fonts_2.0/ChangeLog
+tcpdf/fonts/ae_fonts_2.0/ChangeLog.9745.BAK
 tcpdf/fonts/ae_fonts_2.0/README
 tcpdf/fonts/aealarabiya.ctg.z
 tcpdf/fonts/aealarabiya.php
@@ -189,6 +190,15 @@ tcpdf/fonts/courier.php
 tcpdf/fonts/courierb.php
 tcpdf/fonts/courierbi.php
 tcpdf/fonts/courieri.php
+tcpdf/fonts/dejavu-fonts-ttf-2.33/
+tcpdf/fonts/dejavu-fonts-ttf-2.33/AUTHORS
+tcpdf/fonts/dejavu-fonts-ttf-2.33/BUGS
+tcpdf/fonts/dejavu-fonts-ttf-2.33/LICENSE
+tcpdf/fonts/dejavu-fonts-ttf-2.33/NEWS
+tcpdf/fonts/dejavu-fonts-ttf-2.33/README
+tcpdf/fonts/dejavu-fonts-ttf-2.33/langcover.txt
+tcpdf/fonts/dejavu-fonts-ttf-2.33/status.txt
+tcpdf/fonts/dejavu-fonts-ttf-2.33/unicover.txt
 tcpdf/fonts/dejavu-fonts-ttf-2.34/
 tcpdf/fonts/dejavu-fonts-ttf-2.34/AUTHORS
 tcpdf/fonts/dejavu-fonts-ttf-2.34/BUGS
@@ -261,11 +271,19 @@ tcpdf/fonts/dejavuserifcondensedi.z
 tcpdf/fonts/dejavuserifi.ctg.z
 tcpdf/fonts/dejavuserifi.php
 tcpdf/fonts/dejavuserifi.z
+tcpdf/fonts/freefont-20100919/
+tcpdf/fonts/freefont-20100919/AUTHORS
+tcpdf/fonts/freefont-20100919/COPYING
+tcpdf/fonts/freefont-20100919/CREDITS
+tcpdf/fonts/freefont-20100919/ChangeLog
+tcpdf/fonts/freefont-20100919/INSTALL
+tcpdf/fonts/freefont-20100919/README
 tcpdf/fonts/freefont-20120503/
 tcpdf/fonts/freefont-20120503/AUTHORS
 tcpdf/fonts/freefont-20120503/COPYING
 tcpdf/fonts/freefont-20120503/CREDITS
 tcpdf/fonts/freefont-20120503/ChangeLog
+tcpdf/fonts/freefont-20120503/ChangeLog.10070.BAK
 tcpdf/fonts/freefont-20120503/INSTALL
 tcpdf/fonts/freefont-20120503/README
 tcpdf/fonts/freefont-20120503/TROUBLESHOOTING
