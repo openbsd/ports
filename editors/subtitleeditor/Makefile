@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2016/08/27 16:33:54 ajacoutot Exp $
 
 COMMENT=		GTK+ subtitles editor
 
-V=			0.52.1
+V=			0.53.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		1
 
 CATEGORIES=		graphics editors
 
@@ -24,10 +23,10 @@ WANTLIB += gobject-2.0 graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstcheck-1.0 gstcontroller-1.0 gstfft-1.0 gstnet-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstreamermm-1.0 gstriff-1.0
 WANTLIB += gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB += gtk-3 gtkmm-3.0 harfbuzz lzma m orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sigc-2.0 stdc++ xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z
+WANTLIB += gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=		http://download.gna.org/subtitleeditor/${V:R}/
 
@@ -36,7 +35,7 @@ BUILD_DEPENDS=		devel/iso-codes
 LIB_DEPENDS=		multimedia/gstreamer1/mm \
 			multimedia/gstreamer1/plugins-base \
 			textproc/enchant \
-			textproc/libxml++>=2.40.0 \
+			textproc/libxml++ \
 			x11/gtk3mm
 
 RUN_DEPENDS=		devel/desktop-file-utils \
@@ -45,8 +44,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			multimedia/gstreamer1/plugins-libav \
 			x11/gtk+3,-guic
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=		textproc/intltool
 
 # c++11
 MODULES +=		gcc4

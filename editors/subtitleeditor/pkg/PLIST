@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/06/30 13:54:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/08/27 16:33:54 ajacoutot Exp $
 @bin bin/subtitleeditor
 lib/libsubtitleeditor.a
 lib/libsubtitleeditor.la
@@ -45,6 +45,7 @@ lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
 lib/subtitleeditor/plugins/actions/libstacksubtitles.so
 lib/subtitleeditor/plugins/actions/libstyleeditor.so
 lib/subtitleeditor/plugins/actions/libstylize.so
+lib/subtitleeditor/plugins/actions/libtemplate.so
 lib/subtitleeditor/plugins/actions/libtextcorrection.so
 lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
 lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
@@ -151,6 +152,7 @@ share/subtitleeditor/plugins-description/actions/splitsubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/stacksubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/styleeditor.se-plugin
 share/subtitleeditor/plugins-description/actions/stylize.se-plugin
+share/subtitleeditor/plugins-description/actions/template.se-plugin
 share/subtitleeditor/plugins-description/actions/textcorrection.se-plugin
 share/subtitleeditor/plugins-description/actions/timemodemanagement.se-plugin
 share/subtitleeditor/plugins-description/actions/timingfromplayer.se-plugin
@@ -207,6 +209,8 @@ share/subtitleeditor/plugins-share/styleeditor/
 share/subtitleeditor/plugins-share/styleeditor/dialog-style-editor.ui
 share/subtitleeditor/plugins-share/substationalpha/
 share/subtitleeditor/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
+share/subtitleeditor/plugins-share/template/
+share/subtitleeditor/plugins-share/template/dialog-template-save-as.ui
 share/subtitleeditor/plugins-share/textcorrection/
 share/subtitleeditor/plugins-share/textcorrection/Latn-en-US.common-error.se-pattern
 share/subtitleeditor/plugins-share/textcorrection/Latn-en.capitalization.se-pattern
