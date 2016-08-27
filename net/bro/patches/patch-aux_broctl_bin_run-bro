@@ -1,0 +1,16 @@
+$OpenBSD: patch-aux_broctl_bin_run-bro,v 1.1 2016/08/27 12:58:07 ajacoutot Exp $
+--- aux/broctl/bin/run-bro.orig	Sat Aug 27 10:47:25 2016
++++ aux/broctl/bin/run-bro	Sat Aug 27 10:48:19 2016
+@@ -47,11 +47,10 @@ fi
+ LIMIT=${memlimit:-1572864}
+ ulimit -m $LIMIT
+ ulimit -d $LIMIT
+-ulimit -v $LIMIT
+ ulimit -c unlimited
+ 
+ # show current limits (visible in crash reports and "broctl diag")
+-ulimit -m -d -v -c
++ulimit -m -d -c
+ 
+ echo "PATH=${PATH}" >.env_vars
+ echo "BROPATH=${BROPATH}" >>.env_vars

@@ -1,0 +1,11 @@
+$OpenBSD: patch-aux_broctl_bin_postprocessors_summarize-connections,v 1.1 2016/08/27 12:58:07 ajacoutot Exp $
+--- aux/broctl/bin/postprocessors/summarize-connections.orig	Sat Aug 27 10:47:30 2016
++++ aux/broctl/bin/postprocessors/summarize-connections	Sat Aug 27 10:48:31 2016
+@@ -48,7 +48,6 @@ export PYTHONPATH=${libdirinternal}:$PYTHONPATH
+ # If ${memlimit} is not set, then use 1.5GB.
+ LIMIT=${memlimit:-1572864}
+ ulimit -m $LIMIT
+-ulimit -v $LIMIT
+ 
+ summary_options="-c -r"
+ 
