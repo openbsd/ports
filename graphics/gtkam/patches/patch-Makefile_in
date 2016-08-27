@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2011/11/13 17:16:26 ajacoutot Exp $
---- Makefile.in.orig	Sun Sep 25 22:50:25 2011
-+++ Makefile.in	Sun Nov 13 17:52:03 2011
-@@ -333,7 +333,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.6 2016/08/27 15:37:55 ajacoutot Exp $
+--- Makefile.in.orig	Fri May 27 09:33:16 2016
++++ Makefile.in	Sat Aug 27 17:35:14 2016
+@@ -439,7 +439,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--SUBDIRS = m4m art doc help omf-install packaging pixmaps po src test
-+SUBDIRS = m4m art doc packaging pixmaps po src test
- ACLOCAL_AMFLAGS = -I m4m
+-SUBDIRS = gphoto-m4 art doc help omf-install packaging pixmaps po src test
++SUBDIRS = gphoto-m4 art doc omf-install packaging pixmaps po src test
+ ACLOCAL_AMFLAGS = -I m4 -I gphoto-m4
  
  # disable scrollkeeper for distcheck
