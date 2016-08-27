@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2013/10/11 23:51:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2016/08/27 14:50:19 jca Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
 DISTNAME=	xplanet-1.3.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	astro geo x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -14,13 +14,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xplanet/}
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 c charset expat fontconfig freetype gif glib-2.0
-WANTLIB += gobject-2.0 jpeg m pango-1.0 pangoft2-1.0 png pthread
+WANTLIB += X11 c charset fontconfig freetype gif glib-2.0 gobject-2.0
+WANTLIB += iconv intl jpeg m pango-1.0 pangoft2-1.0 png pthread
 WANTLIB += stdc++ z
 
-MODULES=		devel/gettext
-
-LIB_DEPENDS=		devel/pango \
+LIB_DEPENDS=		devel/gettext \
+			devel/pango \
 			graphics/giflib \
 			graphics/jpeg \
 			graphics/png \
