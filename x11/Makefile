@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.574 2016/08/16 06:44:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.575 2016/08/27 18:22:34 jca Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -310,7 +310,6 @@
      SUBDIR += wmmenu,gdk_pixbuf
      SUBDIR += wmname
      SUBDIR += wmpinboard
-     SUBDIR += wmthemeinstall
      SUBDIR += wmtime
      SUBDIR += wmtz
      SUBDIR += wmweather
