@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/29 09:58:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/27 14:51:36 ajacoutot Exp $
 bin/guild
 @bin bin/guile2
 bin/guile2-config
@@ -116,6 +116,7 @@ include/guile/${V}/libguile/tags.h
 include/guile/${V}/libguile/threads.h
 include/guile/${V}/libguile/throw.h
 include/guile/${V}/libguile/trees.h
+include/guile/${V}/libguile/unicode.h
 include/guile/${V}/libguile/uniform.h
 include/guile/${V}/libguile/validate.h
 include/guile/${V}/libguile/values.h
@@ -198,6 +199,7 @@ lib/guile/${V}/ccache/ice-9/syncase.go
 lib/guile/${V}/ccache/ice-9/threads.go
 lib/guile/${V}/ccache/ice-9/time.go
 lib/guile/${V}/ccache/ice-9/top-repl.go
+lib/guile/${V}/ccache/ice-9/unicode.go
 lib/guile/${V}/ccache/ice-9/vlist.go
 lib/guile/${V}/ccache/ice-9/weak-vector.go
 lib/guile/${V}/ccache/language/
@@ -340,6 +342,7 @@ lib/guile/${V}/ccache/srfi/srfi-19.go
 lib/guile/${V}/ccache/srfi/srfi-2.go
 lib/guile/${V}/ccache/srfi/srfi-26.go
 lib/guile/${V}/ccache/srfi/srfi-27.go
+lib/guile/${V}/ccache/srfi/srfi-28.go
 lib/guile/${V}/ccache/srfi/srfi-31.go
 lib/guile/${V}/ccache/srfi/srfi-34.go
 lib/guile/${V}/ccache/srfi/srfi-35.go
@@ -428,7 +431,7 @@ lib/guile/${V}/ccache/web/uri.go
 lib/libguile-${V}.a
 lib/libguile-${V}.la
 @lib lib/libguile-${V}.so.${LIBguile-2.0_VERSION}
-lib/libguile-${V}.so.0.0-gdb.scm
+lib/libguile-${V}.so.0.1-gdb.scm
 lib/libguilereadline-v-18.a
 lib/libguilereadline-v-18.la
 @lib lib/libguilereadline-v-18.so.${LIBguilereadline-v-18_VERSION}
@@ -508,6 +511,7 @@ share/guile/${V}/ice-9/syncase.scm
 share/guile/${V}/ice-9/threads.scm
 share/guile/${V}/ice-9/time.scm
 share/guile/${V}/ice-9/top-repl.scm
+share/guile/${V}/ice-9/unicode.scm
 share/guile/${V}/ice-9/vlist.scm
 share/guile/${V}/ice-9/weak-vector.scm
 share/guile/${V}/language/
@@ -650,6 +654,7 @@ share/guile/${V}/srfi/srfi-19.scm
 share/guile/${V}/srfi/srfi-2.scm
 share/guile/${V}/srfi/srfi-26.scm
 share/guile/${V}/srfi/srfi-27.scm
+share/guile/${V}/srfi/srfi-28.scm
 share/guile/${V}/srfi/srfi-31.scm
 share/guile/${V}/srfi/srfi-34.scm
 share/guile/${V}/srfi/srfi-35.scm

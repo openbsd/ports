@@ -1,35 +1,38 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/17 05:23:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/27 14:51:36 ajacoutot Exp $
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
-VERSION=		2.0.11
+VERSION=		2.0.12
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:C,.[0-9]+$,,}
 SUBST_VARS=		V
-REVISION=		1
 
 CATEGORIES=		lang
 
 HOMEPAGE=		https://www.gnu.org/software/guile/
 
-SHARED_LIBS +=	guile-2.0                 0.0 # 29.2
-SHARED_LIBS +=	guilereadline-v-18        0.0 # 18.0
+SHARED_LIBS +=  guile-2.0            0.1      # 30.0
+SHARED_LIBS +=  guilereadline-v-18   0.0      # 18.0
 
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gc gmp ltdl m ncurses pthread readline unistring
+WANTLIB += c ffi gc gmp iconv intl ltdl m ncurses pthread readline
+WANTLIB += unistring
 
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
 
-MODULES=		devel/gettext
+# vm-engine.c:40: internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
 
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		devel/slib
 LIB_DEPENDS=		converters/libunistring \
 			devel/boehm-gc \
+			devel/gettext \
 			devel/gmp \
 			devel/libffi \
 			devel/libtool,-ltdl
