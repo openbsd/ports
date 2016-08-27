@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/01 21:58:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/08/27 17:45:04 jca Exp $
 
 COMMENT=        freedesktop-compliant panel
 
 V=		0.12.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
@@ -20,10 +20,13 @@ MASTER_SITES=   https://gitlab.com/o9000/tint2/repository/
 WANTLIB += Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread rsvg-2 startup-notification-1 z
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread rsvg-2 startup-notification-1
+WANTLIB += z
 
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	graphics/imlib2 \
+		devel/gettext \
 		devel/pango \
 		devel/startup-notification \
 		x11/gnome/librsvg \
@@ -32,7 +35,6 @@ RUN_DEPENDS=	x11/py-gtk2 \
 		devel/desktop-file-utils
 
 MODULES=	devel/cmake \
-		devel/gettext \
 		lang/python \
 		x11/gnome
 
