@@ -1,46 +1,48 @@
 Below is a README template for use with ports that need further setup or
 configuration to run on OpenBSD. Please keep an eye out for the following
 details:
-- maximum width of 72 characters per column;
+- maximum width of 80 characters per column;
 - file must start with the RCS ID;
 - no trailing spaces or newlines;
 - rulers should be the length of the above string.
 
 ------------------------8<------------------------
-$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
+$OpenBSD: README.template,v 1.5 2016/08/27 09:47:26 ajacoutot Exp $
 
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 
 Section name 1
 ==============
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non feugiat
-mi. Donec lacinia pretium ligula, quis luctus nunc lobortis non. Nam
-eget justo nunc.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non feugiat mi.
+Donec lacinia pretium ligula, quis luctus nunc lobortis non. Nam eget justo
+nunc.
 
 Subsection name 1.1
 -------------------
-Nulla bibendum viverra eleifend. Fusce sagittis posuere eros. Sed rutrum
-justo vel nulla pellentesque eget tempus nibh consequat. Nam adipiscing
-vehicula quam et porttitor.
+Nulla bibendum viverra eleifend. Fusce sagittis posuere eros. Sed rutrum justo
+vel nulla pellentesque eget tempus nibh consequat. Nam adipiscing vehicula quam
+et porttitor.
 
 Subsection name 1.2
 -------------------
 Etiam vitae nisi id mauris egestas bibendum quis non neque. Phasellus et
-tristique velit. Nulla vitae enim eros. In convallis aliquet magna, at
-tincidunt odio aliquam vitae. Nulla suscipit porta vestibulum. Aliquam
-at leo orci, nec aliquet orci.
+tristique velit. Nulla vitae enim eros. In convallis aliquet magna, at tincidunt
+odio aliquam vitae. Nulla suscipit porta vestibulum. Aliquam at leo orci, nec
+aliquet orci.
 
 Section name 2
 ==============
-Proin mollis eros vel nibh consequat egestas. Quisque a massa augue.
-Donec vel justo lacus. Nam consequat hendrerit tempus. Phasellus rhoncus
-hendrerit purus, eu volutpat erat vulputate non.
+
+Proin mollis eros vel nibh consequat egestas. Quisque a massa augue. Donec vel
+justo lacus. Nam consequat hendrerit tempus. Phasellus rhoncus hendrerit purus,
+eu volutpat erat vulputate non.
 
 Section name 3
 ==============
-Phasellus ut ipsum nulla. Aliquam lacus ligula, vulputate dignissim
-tristique eget, laoreet a risus. Mauris ullamcorper consectetur
-accumsan.
+
+Phasellus ut ipsum nulla. Aliquam lacus ligula, vulputate dignissim tristique
+eget, laoreet a risus. Mauris ullamcorper consectetur accumsan.
 ------------------------8<------------------------
