@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/06/21 09:31:40 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/08/27 17:07:07 ajacoutot Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -96,6 +96,7 @@ ${P5SITE}/SNMP/Info/Layer3/NetSNMP.pm
 ${P5SITE}/SNMP/Info/Layer3/Netscreen.pm
 ${P5SITE}/SNMP/Info/Layer3/Nexus.pm
 ${P5SITE}/SNMP/Info/Layer3/PacketFront.pm
+${P5SITE}/SNMP/Info/Layer3/PaloAlto.pm
 ${P5SITE}/SNMP/Info/Layer3/Passport.pm
 ${P5SITE}/SNMP/Info/Layer3/Pf.pm
 ${P5SITE}/SNMP/Info/Layer3/Pica8.pm
@@ -104,6 +105,7 @@ ${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
 ${P5SITE}/SNMP/Info/Layer3/Tasman.pm
 ${P5SITE}/SNMP/Info/Layer3/Timetra.pm
+${P5SITE}/SNMP/Info/Layer3/VMware.pm
 ${P5SITE}/SNMP/Info/Layer7/
 ${P5SITE}/SNMP/Info/Layer7.pm
 ${P5SITE}/SNMP/Info/Layer7/APC.pm
@@ -207,6 +209,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Netscreen.3p
 @man man/man3p/SNMP::Info::Layer3::Nexus.3p
 @man man/man3p/SNMP::Info::Layer3::PacketFront.3p
+@man man/man3p/SNMP::Info::Layer3::PaloAlto.3p
 @man man/man3p/SNMP::Info::Layer3::Passport.3p
 @man man/man3p/SNMP::Info::Layer3::Pf.3p
 @man man/man3p/SNMP::Info::Layer3::Pica8.3p
@@ -215,6 +218,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
 @man man/man3p/SNMP::Info::Layer3::Tasman.3p
 @man man/man3p/SNMP::Info::Layer3::Timetra.3p
+@man man/man3p/SNMP::Info::Layer3::VMware.3p
 @man man/man3p/SNMP::Info::Layer7.3p
 @man man/man3p/SNMP::Info::Layer7::APC.3p
 @man man/man3p/SNMP::Info::Layer7::Neoteris.3p
