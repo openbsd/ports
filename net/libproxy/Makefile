@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2016/04/18 17:44:40 awolk Exp $
+# $OpenBSD: Makefile,v 1.49 2016/08/27 13:37:40 ajacoutot Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
 
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
-GH_TAGNAME=		0.4.12
-REVISION=		0
-REVISION-main=		1
+GH_TAGNAME=		0.4.13
 SUBST_VARS=		GH_TAGNAME
 
 PKGNAME-main=		${DISTNAME}
@@ -19,12 +17,13 @@ SHARED_LIBS +=  proxy          1.1 # 0.0
 
 HOMEPAGE=		https://libproxy.googlecode.com/
 
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 # order matters: cmake must come before python
 MODULES=		devel/cmake \
-			devel/gettext \
 			lang/python
 
 # cyclic dependency: libproxy,-webkit -> webkit -> gtk+3|libsoup -> glib2-networking -> libproxy
@@ -35,21 +34,19 @@ MULTI_PACKAGES=		-main -webkit
 
 BUILD_DEPENDS=		lang/vala
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/glib2
+RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-main=	devel/glib2
 
-RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-webkit=	# empty
 LIB_DEPENDS-webkit=	STEM->=${GH_TAGNAME}:${BUILD_PKGPATH}, \
 			www/webkitgtk4
 
-cWANTLIB += m stdc++
+WANTLIB += intl m stdc++
 
-WANTLIB-main += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl pthread
 
-WANTLIB-webkit += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-webkit += ${WANTLIB}
 WANTLIB-webkit += glib-2.0 javascriptcoregtk-4.0 proxy pthread
 
 CONFIGURE_ENV=	LIBlibproxy_VERSION=${LIBproxy_VERSION}
@@ -59,6 +56,7 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DWITH_PYTHON:BOOL=ON \
 			-DWITH_PERL:BOOL=ON \
+			-DPERL_LINK_LIBPERL:BOOL=ON \
 			-DWITH_GNOME3:BOOL=ON \
 			-DWITH_VALA:BOOL=ON \
 			-DWITH_DOTNET:BOOL=OFF \
