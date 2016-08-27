@@ -1,6 +1,7 @@
 Hiawatha is a webserver that has been written with 'being secure' as its
 main goal.  Hiawatha has many security features that no other webserver
 has.
+
 Hiawatha does not have all the fancy features, but it is fast and really
 easy to configure.  Rootjail, run CGIs under any uid/gid you want,
 prevention of SQL injection and cross-site scripting, banning of clients
