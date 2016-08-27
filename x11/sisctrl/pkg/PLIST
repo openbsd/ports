@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 11:04:25 winiger Exp $
-bin/sisctrl
+@comment $OpenBSD: PLIST,v 1.2 2016/08/27 19:49:48 jca Exp $
+@bin bin/sisctrl
 @man man/man1/sisctrl.1x
