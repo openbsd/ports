@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/17 09:16:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/27 09:06:12 danj Exp $
 
 COMMENT =	LastPass command line interface tool
 
 GH_ACCOUNT =	lastpass
 GH_PROJECT =	lastpass-cli
-GH_TAGNAME =	v0.9.0
+GH_TAGNAME =	v1.0.0
 CATEGORIES =	security
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
@@ -12,7 +12,7 @@ MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c curl crypto kvm pthread ssl xml2
+WANTLIB =	c curl crypto kvm ssl xml2
 
 BUILD_DEPENDS=	textproc/asciidoc
 LIB_DEPENDS =	net/curl \

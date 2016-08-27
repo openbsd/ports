@@ -1,10 +1,10 @@
-$OpenBSD: patch-upload-queue_c,v 1.4 2016/04/17 09:16:43 landry Exp $
+$OpenBSD: patch-upload-queue_c,v 1.5 2016/08/27 09:06:12 danj Exp $
 
 cope with 64-bit time_t on 32-bit arches
 
---- upload-queue.c.orig	Wed Mar  2 23:03:40 2016
-+++ upload-queue.c	Thu Mar 17 06:08:05 2016
-@@ -128,7 +128,7 @@ static void upload_queue_write_entry(const char *entry
+--- upload-queue.c.orig	Wed Jul 20 14:46:49 2016
++++ upload-queue.c	Tue Aug  2 11:45:58 2016
+@@ -86,7 +86,7 @@ static void upload_queue_write_entry(const char *entry
  
  	for (serial = 0; serial < ULONG_MAX; ++serial) {
  		free(name);
