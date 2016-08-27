@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/27 16:07:07 ajacoutot Exp $
 
-V =		2.0.13
+V =		2.0.14
 COMMENT =	SDL2 TrueType fonts library
 DISTNAME =	SDL2_ttf-${V}
 PKGNAME =	sdl2-ttf-${V}
