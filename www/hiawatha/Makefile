@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2016/08/27 08:08:57 juanfra Exp $
+# $OpenBSD: Makefile,v 1.46 2016/08/27 08:17:54 juanfra Exp $
 
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-9.15
+DISTNAME =		hiawatha-10.3
 CATEGORIES =		www net
 
-SHARED_LIBS +=	mbedcrypto                0.0 # 2.0
-SHARED_LIBS +=	mbedtls                   1.0 # 1.3
-SHARED_LIBS +=	mbedx509                  0.0 # 2.0
+HOMEPAGE =		https://www.hiawatha-webserver.org/
 
-HOMEPAGE =		http://www.hiawatha-webserver.org/
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,9 +15,10 @@ MASTER_SITES =		${HOMEPAGE}files/
 
 MODULES =		devel/cmake
 
-WANTLIB += c pthread xml2 z xslt
+WANTLIB += c mbedcrypto mbedtls mbedx509 pthread xml2 xslt z
 
-LIB_DEPENDS =		textproc/libxslt
+LIB_DEPENDS =		security/polarssl>=2.2.1p0 \
+			textproc/libxslt
 
 CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DWORK_DIR="/var/db/hiawatha" \
@@ -27,7 +26,11 @@ CONFIGURE_ARGS =	-DWEBROOT_DIR="/var/hiawatha" \
 			-DLOG_DIR="/var/log/hiawatha" \
 			-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DENABLE_XSLT=ON \
-			-DPID_DIR="/var/run"
+			-DPID_DIR="/var/run" \
+			-DUSE_SYSTEM_MBEDTLS=ON
+
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
 

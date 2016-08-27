@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_hiawatha_1_in,v 1.6 2015/11/17 14:34:43 ajacoutot Exp $
---- man/hiawatha.1.in.orig	Mon Oct 12 21:03:06 2015
-+++ man/hiawatha.1.in	Tue Nov 17 15:33:02 2015
+$OpenBSD: patch-man_hiawatha_1_in,v 1.7 2016/08/27 08:17:54 juanfra Exp $
+--- man/hiawatha.1.in.orig	Sun Jun  5 10:26:13 2016
++++ man/hiawatha.1.in	Sat Aug 27 01:58:47 2016
 @@ -158,12 +158,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will run the CGI script.
@@ -25,7 +25,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.6 2015/11/17 14:34:43 ajacoutot Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -293,7 +293,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -296,7 +296,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[, <groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
@@ -34,7 +34,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.6 2015/11/17 14:34:43 ajacoutot Exp $
  .TP
  .B ServerString = <text>
  The text behind 'Server:' in the HTTP header of a response. Use 'none' to completely remove the Server string from the HTTP header.
-@@ -631,7 +631,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
+@@ -635,7 +635,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
  .B ShowIndex = yes|no|<XSLT file with full path>|xml
  Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. An example of the XML output can be found in extra/index.xml inside the source package.
  .br
@@ -43,7 +43,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.6 2015/11/17 14:34:43 ajacoutot Exp $
  .br
  
  (requires that Hiawatha was not compiled with -DENABLE_XSLT=off)
-@@ -1011,7 +1011,7 @@ and
+@@ -1021,7 +1021,7 @@ and
  (only valid in the root directory of a website)
  
  .SH MIMETYPES
@@ -52,7 +52,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.6 2015/11/17 14:34:43 ajacoutot Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -1038,13 +1038,13 @@ Unban all IP addresses.
+@@ -1041,13 +1041,13 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with -DENABLE_CACHE=off).
  
  .SH FILES
