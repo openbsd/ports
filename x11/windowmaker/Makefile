@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2016/08/05 13:55:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.100 2016/08/27 17:21:30 jca Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -8,7 +8,7 @@ DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
 
-REVISION-main=		4
+REVISION-main=		5
 
 SHARED_LIBS +=  WINGs                     0.0 # 2.1
 SHARED_LIBS +=  WMaker                    0.0 # 1.1
@@ -22,9 +22,9 @@ HOMEPAGE=		http://windowmaker.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xmu Xext Xft Xinerama Xpm Xrandr Xrender
-WANTLIB += Xt c expat fontconfig freetype gif jpeg kvm m png
-WANTLIB += pthread pthread-stubs tiff xcb z
+WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg
+WANTLIB += kvm m png pthread pthread-stubs tiff xcb z
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 
@@ -46,8 +46,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 MULTI_PACKAGES=		-main -lang
 
-MODULES=		devel/gettext
-LIB_DEPENDS=		graphics/tiff \
+BUILD_DEPENDS=		devel/gettext-tools
+LIB_DEPENDS=		devel/gettext \
+			graphics/tiff \
 			graphics/png \
 			graphics/giflib
 
