@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/06 08:47:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/27 06:01:24 bentley Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -9,6 +9,7 @@ DISTNAME=	glew-1.12.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 SHARED_LIBS=	GLEW	7.0 \
 		GLEWmx	3.0
@@ -25,7 +26,7 @@ WANTLIB += GL GLU X11 Xext Xi Xmu c m pthread
 MAKE_ENV=	LIBGLEW_VERSION=${LIBGLEW_VERSION} \
 		LIBGLEWMX_VERSION=${LIBGLEWmx_VERSION} \
 		GLEW_DEST=${PREFIX}
-MAKE_FLAGS=	LD=${CC} LN= STRIP=
+MAKE_FLAGS=	LD=${CC} LN= STRIP= GLEW_PREFIX=${PREFIX}
 
 USE_GMAKE=	Yes
 
