@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/08/27 10:50:20 jca Exp $
 
 COMMENT=	GNU awk
 
 V=		4.1.3
 DISTNAME=	gawk-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
@@ -13,10 +13,10 @@ HOMEPAGE=	https://www.gnu.org/software/gawk/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c gmp m mpfr readline sigsegv termcap
+WANTLIB += c gmp iconv intl m mpfr readline sigsegv termcap
 
-MODULES=	devel/gettext
-LIB_DEPENDS=	devel/gmp \
+LIB_DEPENDS=	devel/gettext \
+		devel/gmp \
 		devel/libsigsegv \
 		devel/mpfr
 
