@@ -1,7 +1,7 @@
---- Header.pm.orig	Wed May 21 12:15:13 2003
-+++ Header.pm	Fri Dec  8 23:52:44 2006
+--- Header.pm.orig	Sun Jul  3 07:26:27 2016
++++ Header.pm	Sat Aug 27 22:35:20 2016
 @@ -7,7 +7,7 @@ use warnings;
- our $VERSION = '0.03';
+ our $VERSION = '0.05';
  
  use Inline C => 'DATA',
 -					LIBS => '-logg -lvorbis -lvorbisfile',
