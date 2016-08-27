@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/01 20:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/27 17:40:03 ajacoutot Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
-MODPY_EGG_VERSION=	2.1.4
+MODPY_EGG_VERSION=	2.3.0
 DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 
