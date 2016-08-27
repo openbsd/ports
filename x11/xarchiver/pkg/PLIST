@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/05/27 13:06:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/27 15:29:55 jca Exp $
 @bin bin/xarchiver
 libexec/thunar-archive-plugin/
 libexec/thunar-archive-plugin/xarchiver.tap
@@ -54,8 +54,6 @@ share/locale/cs/LC_MESSAGES/xarchiver.mo
 share/locale/da/LC_MESSAGES/xarchiver.mo
 share/locale/de/LC_MESSAGES/xarchiver.mo
 share/locale/el/LC_MESSAGES/xarchiver.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xarchiver.mo
 share/locale/es/LC_MESSAGES/xarchiver.mo
 share/locale/eu/LC_MESSAGES/xarchiver.mo
@@ -74,8 +72,6 @@ share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/xarchiver.mo
 share/locale/ru/LC_MESSAGES/xarchiver.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xarchiver.mo
 share/locale/sv/LC_MESSAGES/xarchiver.mo
 share/locale/tr/LC_MESSAGES/xarchiver.mo
