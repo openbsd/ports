@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/06/25 14:44:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/27 20:44:08 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -69,6 +69,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-mbrola-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-mbrola-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-ng.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/festival.conf
@@ -100,16 +101,7 @@ share/speech-dispatcher/conf/desktop/
 share/speech-dispatcher/conf/desktop/speechd.desktop
 share/speech-dispatcher/conf/modules/
 share/speech-dispatcher/conf/modules/cicero.conf
-share/speech-dispatcher/conf/modules/dtk-generic.conf
-share/speech-dispatcher/conf/modules/epos-generic.conf
-share/speech-dispatcher/conf/modules/espeak-generic.conf
-share/speech-dispatcher/conf/modules/espeak-mbrola-generic.conf
+share/speech-dispatcher/conf/modules/espeak-ng.conf
 share/speech-dispatcher/conf/modules/espeak.conf
 share/speech-dispatcher/conf/modules/festival.conf
-share/speech-dispatcher/conf/modules/flite.conf
-share/speech-dispatcher/conf/modules/ibmtts.conf
-share/speech-dispatcher/conf/modules/ivona.conf
-share/speech-dispatcher/conf/modules/llia_phon-generic.conf
-share/speech-dispatcher/conf/modules/pico-generic.conf
-share/speech-dispatcher/conf/modules/swift-generic.conf
 share/speech-dispatcher/conf/speechd.conf

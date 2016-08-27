@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/27 20:44:08 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
-DISTNAME=	speech-dispatcher-0.8.3
+DISTNAME=	speech-dispatcher-0.8.5
 
 SHARED_LIBS +=  speechd              2.1      # .8.0
 
@@ -14,12 +14,11 @@ HOMEPAGE=	http://devel.freebsoft.org/speechd
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ao c dotconf espeak glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB += ltdl m ogg pcre pthread sndfile vorbis vorbisenc
+WANTLIB += iconv intl ltdl m ogg pcre pthread sndfile vorbis vorbisenc
 
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
-MODULES=	devel/gettext \
-		textproc/intltool \
+MODULES=	textproc/intltool \
 		lang/python
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
