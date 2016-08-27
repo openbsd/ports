@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/27 14:23:11 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/08/27 14:23:35 jca Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -53,7 +53,7 @@ LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
-			LDFLAGS="-L${LOCALBASE}/lib"	
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-qt
 
@@ -77,5 +77,5 @@ post-install:
 	rm ${PREFIX}/bin/pinentry
 	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${FILESDIR}/pinentry-wrapper.in ${PREFIX}/bin/pinentry
-	
+
 .include <bsd.port.mk>
