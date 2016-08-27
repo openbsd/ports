@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/07 19:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/08/27 14:11:13 jca Exp $
 
 COMMENT=	turns your keyboard into a fast pointer mover
 
 DISTNAME=	keynav-0.20101014.3067
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 
 CATEGORIES=	x11
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://semicomplete.googlecode.com/files/
 
-WANTLIB += X11 Xext Xinerama c cairo glib-2.0 pthread xdo
+WANTLIB += X11 Xext Xinerama c cairo glib-2.0 intl xdo
 
-MODULES=	devel/gettext
-LIB_DEPENDS=	devel/glib2 \
+LIB_DEPENDS=	devel/gettext \
+		devel/glib2 \
 		graphics/cairo \
 		x11/xdotool
 
