@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/08/27 16:59:11 ajacoutot Exp $
 
 COMMENT =	verify credit card pins
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Business-CreditCard-0.35
+DISTNAME =	Business-CreditCard-0.36
 CATEGORIES =	misc
 
 # Perl
