@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/27 12:36:35 danj Exp $
 
 COMMENT =	cli browser for keepassx databases
 
-DISTNAME =	kpcli-3.0
+DISTNAME =	kpcli-3.1
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
 HOMEPAGE =	http://kpcli.sourceforge.net/
-REVISION =	2
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
