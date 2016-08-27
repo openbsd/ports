@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/17 21:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/27 17:26:15 jca Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		x11
 
@@ -13,16 +13,16 @@ HOMEPAGE=		https://code.google.com/p/wbar/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Imlib2 X11 Xext c freetype m stdc++ z
+WANTLIB += Imlib2 X11 Xext c freetype intl m stdc++ z
 
 MASTER_SITES =		https://wbar.googlecode.com/files/
 
-MODULES =		devel/gettext \
-			textproc/intltool
+MODULES =		textproc/intltool
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-LIB_DEPENDS =		graphics/imlib2
+LIB_DEPENDS =		devel/gettext \
+			graphics/imlib2
 
 USE_GMAKE =		Yes
 
