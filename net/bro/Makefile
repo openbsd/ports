@@ -1,36 +1,72 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/27 06:39:14 ajacoutot Exp $
 
-COMMENT=	highly flexible sniffer/NIDS
+COMMENT=		network analysis and security monitoring framework
 
-V=		1.4
-DISTNAME=	bro-${V}-release
-PKGNAME=	bro-${V}
+DISTNAME=		bro-2.4.1
 
-REVISION=	6
+SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
-SHARED_LIBS= 	broccoli	0.0	# .2.0
+CATEGORIES=		net security
 
-CATEGORIES=	net security
+HOMEPAGE=		https://www.bro.org/
 
-HOMEPAGE=	https://www.bro.org/
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB=	c crypto m pcap pthread ssl stdc++ termcap z GeoIP>=5 magic>=1
+WANTLIB += GeoIP c crypto m pcap pthread ssl stdc++ z
+WANTLIB += ${MODPY_WANTLIB} lib/libbind/bind
 
-MASTER_SITES=	https://www.bro.org/downloads/archive/
+MASTER_SITES=		https://www.bro.org/downloads/
 
-LIB_DEPENDS=	net/GeoIP \
-		devel/libmagic
+MODULES=		lang/python
 
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.59
+MODPY_ADJ_FILES=	aux/broctl/bin/broctl.in \
+			aux/broctl/bin/stats-to-csv \
+			aux/btest/btest \
+			aux/broctl/aux/trace-summary/trace-summary
 
-WRKDIST=	${WRKDIR}/bro-${V}
+BUILD_DEPENDS=		devel/cmake \
+			devel/swig
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bro
+# share/broctl/scripts
+BUILD_DEPENDS +=	shells/bash
+RUN_DEPENDS +=		shells/bash
 
-NO_TEST=	Yes
+# share/bro/base/utils/active-http.bro
+RUN_DEPENDS +=		net/curl
+
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+			net/GeoIP \
+			net/libbind
+
+CONFIGURE_STYLE=	simple
+
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind -lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
+
+CONFIGURE_ARGS=		--prefix=${PREFIX} \
+			--conf-files-dir=${SYSCONFDIR}/bro \
+			--localstatedir=${LOCALSTATEDIR} \
+			--spooldir=${LOCALSTATEDIR}/spool/bro \
+			--logdir=${LOCALSTATEDIR}/log/bro \
+			--python-install-dir=${PREFIX}/lib/python${MODPY_VERSION}/site-packages \
+			--binary-package
+
+SUBST_VARS=		MODPY_SITEPKG
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/aux/broctl/BroControl/options.py
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${WRKINST}/etc/bro ${PREFIX}/share/examples/bro
+	rm -rf ${WRKINST}/var/{log,spool}/bro
+	mv ${PREFIX}/lib/broctl/BroControl \
+		${WRKINST}/${MODPY_SITEPKG}/
+	mv ${PREFIX}/lib/broctl/plugins \
+		${WRKINST}/${MODPY_SITEPKG}/BroControl/
+	rm ${WRKINST}/${MODPY_SITEPKG}/BroControl/options.py.{beforesubst,orig}
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

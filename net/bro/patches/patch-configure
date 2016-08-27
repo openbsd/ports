@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2016/08/27 06:39:14 ajacoutot Exp $
+--- configure.orig	Fri Aug 26 16:23:22 2016
++++ configure	Fri Aug 26 16:24:16 2016
+@@ -32,6 +32,9 @@ Usage: $0 [OPTION]... [VAR=VALUE]...
+     --logdir=PATH          when using BroControl, path to store log file
+                            [PREFIX/logs]
+     --conf-files-dir=PATH  config files installation directory [PREFIX/etc]
++    --python-install-dir   the desired installation directory for
++                           any auxiliary python modules (if present)
++                           [PREFIX/lib/broctl]
+ 
+   Optional Features:
+     --enable-debug         compile in debugging mode
+@@ -170,6 +173,9 @@ while [ $# -ne 0 ]; do
+             ;;
+         --logdir=*)
+             append_cache_entry BRO_LOG_DIR  PATH   $optarg
++            ;;
++        --python-install-dir=*)
++            append_cache_entry PY_MOD_INSTALL_DIR PATH $optarg
+             ;;
+         --enable-debug)
+             append_cache_entry ENABLE_DEBUG         BOOL   true

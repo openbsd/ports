@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_broxygen_Manager_cc,v 1.1 2016/08/27 06:39:14 ajacoutot Exp $
+--- src/broxygen/Manager.cc.orig	Fri Aug 26 12:40:56 2016
++++ src/broxygen/Manager.cc	Fri Aug 26 12:45:41 2016
+@@ -5,7 +5,7 @@
+ 
+ #include <utility>
+ #include <cstdlib>
+-#include <wordexp.h>
++#include <glob.h>
+ 
+ using namespace broxygen;
+ using namespace std;
+@@ -51,17 +51,19 @@ Manager::Manager(const string& arg_config, const strin
+ 
+ 	const char* env_path = getenv("PATH");
+ 	string path = env_path ? string(env_path) + ":." : ".";
+-	wordexp_t expanded_path;
+-	wordexp(path.c_str(), &expanded_path, WRDE_NOCMD);
++	glob_t expanded_path;
++	glob(path.c_str(), GLOB_ERR, NULL, &expanded_path);
+ 	string path_to_bro;
+ 
+-	if ( expanded_path.we_wordc == 1 )
+-		path_to_bro = find_file(bro_command, expanded_path.we_wordv[0]);
++	if ( expanded_path.gl_pathc == 1 )
++		path_to_bro = find_file(bro_command, expanded_path.gl_pathv[0]);
+ 	else
+ 		{
+ 		reporter->InternalWarning("odd expansion of path: %s\n", path.c_str());
+ 		path_to_bro = find_file(bro_command, path);
+ 		}
++
++	globfree(&expanded_path);
+ 
+ 	struct stat s;
+ 

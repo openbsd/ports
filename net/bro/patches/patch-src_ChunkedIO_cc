@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ChunkedIO_cc,v 1.1 2015/07/19 16:38:48 sthen Exp $
---- src/ChunkedIO.cc.orig	Sat Jul 18 13:34:33 2015
-+++ src/ChunkedIO.cc	Sat Jul 18 13:36:17 2015
-@@ -705,7 +705,7 @@ bool ChunkedIOSSL::Init()
+$OpenBSD: patch-src_ChunkedIO_cc,v 1.2 2016/08/27 06:39:14 ajacoutot Exp $
+--- src/ChunkedIO.cc.orig	Sun Sep  6 21:43:16 2015
++++ src/ChunkedIO.cc	Fri Aug 26 12:29:09 2016
+@@ -709,7 +709,7 @@ bool ChunkedIOSSL::Init()
  		{
  		SSL_load_error_strings();
  

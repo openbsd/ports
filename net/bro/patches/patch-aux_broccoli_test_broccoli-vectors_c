@@ -1,0 +1,11 @@
+$OpenBSD: patch-aux_broccoli_test_broccoli-vectors_c,v 1.1 2016/08/27 06:39:14 ajacoutot Exp $
+--- aux/broccoli/test/broccoli-vectors.c.orig	Fri Aug 26 16:41:55 2016
++++ aux/broccoli/test/broccoli-vectors.c	Fri Aug 26 16:42:28 2016
+@@ -3,6 +3,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <errno.h>
++#include <netinet/in.h> /* warning: 'struct in_addr' declared inside parameter list */
+ #include <arpa/inet.h>
+ #include <sys/select.h>
+ #include <sys/socket.h>

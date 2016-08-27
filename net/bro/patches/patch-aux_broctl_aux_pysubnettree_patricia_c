@@ -1,0 +1,11 @@
+$OpenBSD: patch-aux_broctl_aux_pysubnettree_patricia_c,v 1.1 2016/08/27 06:39:14 ajacoutot Exp $
+--- aux/broctl/aux/pysubnettree/patricia.c.orig	Fri Aug 26 15:57:58 2016
++++ aux/broctl/aux/pysubnettree/patricia.c	Fri Aug 26 15:58:25 2016
+@@ -59,6 +59,7 @@ static char copyright[] =
+ #include <stdio.h> /* sprintf, fprintf, stderr */
+ #include <stdlib.h> /* free, atol, calloc */
+ #include <string.h> /* memcpy, strchr, strlen */
++#include <netinet/in.h> /* warning: 'struct in_addr' declared inside parameter list */
+ #include <arpa/inet.h> /* for inet_addr */
+ #include <sys/types.h> /* for u_short, etc. */
+ 

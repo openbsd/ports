@@ -1,0 +1,12 @@
+$OpenBSD: patch-aux_broctl_BroControl_options_py,v 1.1 2016/08/27 06:39:14 ajacoutot Exp $
+--- aux/broctl/BroControl/options.py.orig	Fri Aug 26 17:29:14 2016
++++ aux/broctl/BroControl/options.py	Fri Aug 26 17:29:07 2016
+@@ -160,7 +160,7 @@ options = [
+ 
+     Option("LibDir", "${BroBase}/lib", "string", Option.AUTOMATIC, False,
+            "Directory for library files."),
+-    Option("LibDirInternal", "${BroBase}/lib/broctl", "string", Option.AUTOMATIC, False,
++    Option("LibDirInternal", "${MODPY_SITEPKG}/BroControl", "string", Option.AUTOMATIC, False,
+            "Directory for broctl-specific library files."),
+     Option("TmpDir", "${SpoolDir}/tmp", "string", Option.AUTOMATIC, False,
+            "Directory for temporary data."),
