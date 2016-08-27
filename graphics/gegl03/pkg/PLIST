@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/25 17:54:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/08/27 15:58:00 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -7,10 +7,10 @@ include/gegl-${API_VERSION}/gegl-buffer-cl-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer.h
 include/gegl-${API_VERSION}/gegl-c.h
-include/gegl-${API_VERSION}/gegl-chant.h
 include/gegl-${API_VERSION}/gegl-color.h
 include/gegl-${API_VERSION}/gegl-cpuaccel.h
 include/gegl-${API_VERSION}/gegl-curve.h
+include/gegl-${API_VERSION}/gegl-debug.h
 include/gegl-${API_VERSION}/gegl-enums.h
 include/gegl-${API_VERSION}/gegl-graph-debug.h
 include/gegl-${API_VERSION}/gegl-init.h
@@ -61,6 +61,7 @@ include/gegl-${API_VERSION}/operation/gegl-operation-composer.h
 include/gegl-${API_VERSION}/operation/gegl-operation-composer3.h
 include/gegl-${API_VERSION}/operation/gegl-operation-context.h
 include/gegl-${API_VERSION}/operation/gegl-operation-filter.h
+include/gegl-${API_VERSION}/operation/gegl-operation-handlers.h
 include/gegl-${API_VERSION}/operation/gegl-operation-meta-json.h
 include/gegl-${API_VERSION}/operation/gegl-operation-meta.h
 include/gegl-${API_VERSION}/operation/gegl-operation-point-composer.h
@@ -145,6 +146,7 @@ lib/gegl-${API_VERSION}/gaussian-blur.so
 lib/gegl-${API_VERSION}/gblur-1d.so
 lib/gegl-${API_VERSION}/gegl-buffer-load-op.so
 lib/gegl-${API_VERSION}/gegl-buffer-save-op.so
+lib/gegl-${API_VERSION}/gegl.so
 lib/gegl-${API_VERSION}/grey.so
 lib/gegl-${API_VERSION}/grey2.json
 lib/gegl-${API_VERSION}/grid.so
