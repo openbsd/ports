@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/08/27 15:56:27 ajacoutot Exp $
 
-COMMENT =		library for reading RAW files
 BROKEN-arm =		undefined reference to __sync_fetch_and_add_4
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc =		undefined reference to __sync_fetch_and_add_4
 
-V =			0.17.1
+COMMENT =		library for reading RAW files
+
+V =			0.17.2
 DISTNAME =		LibRaw-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
@@ -27,5 +28,7 @@ LIB_DEPENDS =		graphics/jasper \
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
