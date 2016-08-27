@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/11/20 18:18:35 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/27 16:57:16 ajacoutot Exp $
 @bin bin/dvdauthor
 bin/dvddirdel
 @bin bin/dvdunauthor
@@ -14,5 +14,6 @@ bin/dvddirdel
 share/doc/dvdauthor/
 share/doc/dvdauthor/README
 share/dvdauthor/
+share/dvdauthor/common.xsd
 share/dvdauthor/dvdauthor.xsd
 share/dvdauthor/spumux.xsd
