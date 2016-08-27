@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/05 17:10:53 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/27 13:41:45 danj Exp $
 @pkgpath www/py3-aiohttp
 lib/python${MODPY_VERSION}/site-packages/aiohttp/
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -15,12 +15,14 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client_reqrep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}file_sender.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}hdrs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}multipart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,12 +45,14 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/client.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client_reqrep.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/connector.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/errors.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/file_sender.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/hdrs.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/helpers.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/log.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/multipart.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/parsers.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/protocol.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/pytest_plugin.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/resolver.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/server.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/signals.py
