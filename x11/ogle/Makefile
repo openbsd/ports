@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/04/26 16:37:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2016/08/28 14:35:54 jca Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,7 @@ CATEGORIES =	x11
 
 COMMENT =	DVD player
 DISTNAME =	ogle-0.9.2
-REVISION =	17
+REVISION =	18
 SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
@@ -21,12 +21,11 @@ CONFIGURE_STYLE =	gnu
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xinerama Xv Xxf86vm a52 c dvdcss dvdread jpeg
-WANTLIB += lzma m mad pthread sndio xcb xml2 z
-
-MODULES =	converters/libiconv
+WANTLIB += ICE SM X11 Xext Xinerama Xv Xxf86vm a52 c dvdread iconv
+WANTLIB += jpeg lzma m mad pthread sndio xcb xml2 z
 
 LIB_DEPENDS =	audio/liba52 \
+		converters/libiconv \
 		devel/libdvdread \
 		textproc/libxml>=2.4.19 \
 		graphics/jpeg \
