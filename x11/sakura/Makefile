@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/27 20:45:06 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/28 10:38:48 naddy Exp $
 
 V =		3.3.4
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
 
