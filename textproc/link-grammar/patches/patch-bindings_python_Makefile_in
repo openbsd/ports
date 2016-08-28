@@ -1,12 +1,18 @@
-$OpenBSD: patch-bindings_python_Makefile_in,v 1.1 2015/11/23 13:28:22 ajacoutot Exp $
---- bindings/python/Makefile.in.orig	Mon Nov 23 14:16:06 2015
-+++ bindings/python/Makefile.in	Mon Nov 23 14:16:26 2015
-@@ -411,7 +411,7 @@ _clinkgrammar_la_CPPFLAGS = \
-    -I$(top_srcdir)                \
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.2 2016/08/28 09:44:07 ajacoutot Exp $
+--- bindings/python/Makefile.in.orig	Sun Aug 28 04:22:56 2016
++++ bindings/python/Makefile.in	Sun Aug 28 11:40:20 2016
+@@ -412,12 +412,9 @@ _clinkgrammar_la_CPPFLAGS = \
     -I$(top_builddir)
  
--_clinkgrammar_la_LDFLAGS = -version-info @VERSION_INFO@ $(PYTHON_LDFLAGS) -module
-+_clinkgrammar_la_LDFLAGS = -avoid-version $(PYTHON_LDFLAGS) -module
- _clinkgrammar_la_LIBADD = $(top_builddir)/link-grammar/liblink-grammar.la
- EXTRA_DIST = \
-    AUTHORS           \
+ 
+-# On Cygwin, a DLL with version is named name-major.dll with no symlink to
+-# it of an unversioned name (at least up and including libtool 2.4.6).
+-# This is bad for Python modules, as they must have an identifier name.
+-@OS_CYGWIN_TRUE@AVOID_VERSION = -avoid-version
++AVOID_VERSION = -avoid-version
+ _clinkgrammar_la_LDFLAGS = \
+-    -version-info @VERSION_INFO@ $(AVOID_VERSION) \
++    $(AVOID_VERSION) \
+     $(PYTHON_LDFLAGS) -module -no-undefined
+ 
+ _clinkgrammar_la_LIBADD = \
