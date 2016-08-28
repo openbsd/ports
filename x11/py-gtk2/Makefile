@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/08/28 10:51:46 jca Exp $
+# $OpenBSD: Makefile,v 1.64 2016/08/28 10:55:33 jca Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -30,8 +30,7 @@ MODULES=	lang/python \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	devel/gettext \
-		devel/libglade2
+LIB_DEPENDS=	devel/libglade2
 RUN_DEPENDS=	graphics/py-cairo>=1.2 \
 		devel/py-gobject>=2.26.0 \
 		math/py-numpy
