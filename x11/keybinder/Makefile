@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/08/28 17:44:09 jca Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -8,8 +8,8 @@ DISTNAME =		keybinder-0.3.0
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
 
-REVISION-main = 	4
-REVISION-python =	4
+REVISION-main = 	5
+REVISION-python =	5
 
 CATEGORIES =		x11 devel
 
@@ -17,7 +17,7 @@ SHARED_LIBS =		keybinder		0.0	# 0.0
 
 HOMEPAGE =		https://github.com/engla/keybinder
 
-# GPLv2+ 
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://mirrors.nycbug.org/pub/distfiles/
@@ -28,13 +28,13 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
 
 WANTLIB-python =	${WANTLIB} keybinder
 
 MODULES =		lang/python \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS =	gobject-introspection
