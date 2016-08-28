@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/28 14:27:24 jca Exp $
 
 COMMENT=	Glade 2.x support for Gtk2-Perl
 
 DISTNAME=	Gtk2-GladeXML-1.007
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	x11
 
@@ -13,11 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += perl xml2 z
+WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += xml2 z
 
-MODULES=	cpan \
-		devel/gettext
+MODULES=	cpan
 
 BUILD_DEPENDS=	devel/p5-ExtUtils-Depends>=0.301 \
 		devel/p5-ExtUtils-PkgConfig \
