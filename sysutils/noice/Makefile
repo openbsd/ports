@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/11 12:57:25 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/28 11:04:12 jca Exp $
 
 COMMENT =		minimalistic file browser
-DISTNAME =		noice-0.5
+DISTNAME =		noice-0.6
 CATEGORIES =		sysutils
 HOMEPAGE =		http://git.2f30.org/noice/
 MAINTAINER =		Dimitris Papastamos <sin@2f30.org>
