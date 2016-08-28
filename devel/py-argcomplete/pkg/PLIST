@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 13:59:06 landry Exp $
-bin/activate-global-python-argcomplete
-bin/python-argcomplete-check-easy-install-script
-bin/register-python-argcomplete
+@comment $OpenBSD: PLIST,v 1.2 2016/08/28 10:55:38 danj Exp $
+bin/activate-global-python-argcomplete${MODPY_BIN_SUFFIX}
+bin/python-argcomplete-check-easy-install-script${MODPY_BIN_SUFFIX}
+bin/register-python-argcomplete${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/argcomplete/
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,12 +10,15 @@ lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/argcomplete/__init__.py
-lib/python${MODPY_VERSION}/site-packages/argcomplete/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}completers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}my_argparse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}my_shlex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/argcomplete/bash_completion.d/
 lib/python${MODPY_VERSION}/site-packages/argcomplete/bash_completion.d/python-argcomplete.sh
+lib/python${MODPY_VERSION}/site-packages/argcomplete/compat.py
 lib/python${MODPY_VERSION}/site-packages/argcomplete/completers.py
-lib/python${MODPY_VERSION}/site-packages/argcomplete/completers.pyc
 lib/python${MODPY_VERSION}/site-packages/argcomplete/my_argparse.py
-lib/python${MODPY_VERSION}/site-packages/argcomplete/my_argparse.pyc
 lib/python${MODPY_VERSION}/site-packages/argcomplete/my_shlex.py
-lib/python${MODPY_VERSION}/site-packages/argcomplete/my_shlex.pyc
