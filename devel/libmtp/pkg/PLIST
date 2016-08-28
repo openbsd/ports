@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/08/28 12:40:41 ajacoutot Exp $
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
 @bin bin/mtp-connect
@@ -162,6 +162,7 @@ share/doc/libmtp/html/struct__PTPStorageInfo.html
 share/doc/libmtp/html/struct__PTPUSBBulkContainer.html
 share/doc/libmtp/html/struct__PTPUSBEventContainer.html
 share/doc/libmtp/html/struct__PTP__USB.html
+share/doc/libmtp/html/structevent__cb__data__struct.html
 share/doc/libmtp/html/structfilemap__struct.html
 share/doc/libmtp/html/structlv__data__header.html
 share/doc/libmtp/html/structlv__framebuffer__desc.html
@@ -170,6 +171,8 @@ share/doc/libmtp/html/structmtpz__rsa__struct.html
 share/doc/libmtp/html/structpropertymap__struct.html
 share/doc/libmtp/html/structptp__chdk__rc__chunk.html
 share/doc/libmtp/html/structptp__chdk__script__msg.html
+share/doc/libmtp/html/structptp__event__cb__data.html
+share/doc/libmtp/html/structptp__opcode__trans__t.html
 share/doc/libmtp/html/structtagptp__chdk__videosettings.html
 share/doc/libmtp/html/structtext__struct.html
 share/doc/libmtp/html/sync_off.png
