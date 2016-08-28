@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2016/04/29 13:23:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2016/08/28 16:29:54 jca Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.18.4
+REVISION =	0
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
@@ -13,16 +14,17 @@ MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/1602/
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 cairo fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
-		glade-2.0 glib-2.0 gnomecanvas-2 gobject-2.0 gtk-x11-2.0 \
-		gtksourceview-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 rsvg-2 xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 cairo fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += glib-2.0 gnomecanvas-2 gobject-2.0 gtk-x11-2.0 gtksourceview-2.0
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 rsvg-2
+WANTLIB += xml2 z
 
 BUILD_DEPENDS =	sysutils/findlib lang/ocaml-camlp4
 
 LIB_DEPENDS =	x11/gtk+2 \
+		devel/gettext \
 		devel/libglade2 \
 		x11/gtksourceview \
 		x11/gnome/libgnomecanvas \
@@ -33,8 +35,7 @@ FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 		DLLDIR=${WRKINST}${PREFIX}/lib/ocaml/stublibs
 
 USE_GMAKE =	Yes
-MODULES =	lang/ocaml \
-		devel/gettext
+MODULES =	lang/ocaml
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	USE_CC=1 ${MODOCAML_NATIVE:S/Yes/USE_DOTOPT=1/:S/No//} \
