@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/07 14:48:39 danj Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.2 2016/08/28 06:41:31 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/aiodns/
 lib/python${MODPY_VERSION}/site-packages/aiodns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/aiodns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
