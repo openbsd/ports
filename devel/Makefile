@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1523 2016/08/28 15:03:34 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1524 2016/08/29 10:47:01 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1197,6 +1197,7 @@
      SUBDIR += py-argcomplete
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
+     SUBDIR += py-argh,python3
      SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules
