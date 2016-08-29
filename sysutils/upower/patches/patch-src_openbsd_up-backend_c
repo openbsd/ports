@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.20 2016/05/04 11:11:55 jasper Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.21 2016/08/29 08:40:38 jasper Exp $
 
 Add missing #include after https://cgit.freedesktop.org/upower/commit/?id=77239cc4470fc515e1c8c6c21005fa08f3b1b04e
 
 Remove pointless upperbound, SENSOR_MAX_TYPES has no meaning here and we
 break from the loop anyway when needed.
+https://bugs.freedesktop.org/show_bug.cgi?id=95257
 
 --- src/openbsd/up-backend.c.orig	Wed Jul 29 14:47:49 2015
 +++ src/openbsd/up-backend.c	Wed May  4 10:44:04 2016
