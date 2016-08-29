@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2016/04/18 06:47:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2016/08/29 13:40:24 ajacoutot Exp $
 @bin bin/pango-view
 include/pango-1.0/
 include/pango-1.0/pango/
@@ -27,6 +27,7 @@ include/pango-1.0/pango/pango-script.h
 include/pango-1.0/pango/pango-tabs.h
 include/pango-1.0/pango/pango-types.h
 include/pango-1.0/pango/pango-utils.h
+include/pango-1.0/pango/pango-version-macros.h
 include/pango-1.0/pango/pango.h
 include/pango-1.0/pango/pangocairo.h
 include/pango-1.0/pango/pangofc-decoder.h
