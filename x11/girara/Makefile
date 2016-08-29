@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/15 07:23:27 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/29 16:13:04 jca Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.2.6
+REVISION =	0
 
 SHARED_LIBS +=	girara-gtk3 0.1 # 2.3
 
@@ -12,16 +13,15 @@ HOMEPAGE =	http://pwmt.org/projects/girara/
 PERMIT_PACKAGE_CDROM =Yes
 
 WANTLIB += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 json-c m notify pango-1.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 intl json-c m notify pango-1.0
 WANTLIB += pangocairo-1.0
 
 MASTER_SITES =	http://pwmt.org/projects/girara/download/
 
+BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/json-c \
 		devel/libnotify
-
-MODULES =	devel/gettext
 
 # c11
 MODULES +=	gcc4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2016/08/29 16:13:05 jca Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
@@ -6,7 +6,7 @@ V =			1.0.9
 DISTNAME =		gnome-mplayer-${V}
 EPOCH =			0
 CATEGORIES =		x11 multimedia
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
@@ -17,15 +17,12 @@ MASTER_SITES =		https://gnome-mplayer.googlecode.com/svn/packages/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xss atk-1.0 c cairo cairo-gobject \
-			dbus-1 dbus-glib-1 fontconfig freetype \
-			gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-			gmlib>=2 gmtk>=2 gobject-2.0 gpod \
-			gthread-2.0 gtk-3 m notify pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += X11 Xss atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib gmtk gobject-2.0
+WANTLIB += gpod gthread-2.0 gtk-3 intl m notify pango-1.0 pangocairo-1.0
+WANTLIB += pthread
 
-MODULES =		devel/gettext \
-			devel/dconf
+MODULES =		devel/dconf
 
 LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			audio/libgpod \
