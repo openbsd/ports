@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.62 2016/08/27 21:40:00 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2016/08/29 08:47:34 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
 
-HOMEPAGE=		http://roscidus.com/desktop/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+HOMEPAGE=		http://rox.sourceforge.net/desktop/ROX-Filer
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
