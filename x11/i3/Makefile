@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.104 2016/03/09 09:25:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.105 2016/08/29 09:13:37 jca Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.12
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -14,13 +15,10 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM =   Yes
 
 # uses pledge()
-WANTLIB =	c cairo ev glib-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pcre pthread \
-		startup-notification-1 xcb xcb-cursor xcb-util \
-		xcb-icccm xcb-keysyms xcb-randr xcb-render \
-		xcb-xinerama xcb-xkb xkbcommon xkbcommon-x11 yajl
-
-MODULES =	devel/gettext
+WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pcre startup-notification-1 xcb xcb-cursor
+WANTLIB += xcb-icccm xcb-keysyms xcb-randr xcb-render xcb-util
+WANTLIB += xcb-xinerama xcb-xkb xkbcommon xkbcommon-x11 yajl
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \

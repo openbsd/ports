@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/08/18 13:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2016/08/29 09:13:37 jca Exp $
 
 COMMENT=		Joe's Window Manager#'
 
 DISTNAME=		jwm-2.3.6
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -13,13 +14,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo freetype
 WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += jpeg m png pthread rsvg-2 z pthread
+WANTLIB += intl jpeg m png rsvg-2 z
 
 MASTER_SITES=		http://www.joewing.net/projects/jwm/releases/
 EXTRACT_SUFX=		.tar.xz
 
-MODULES=		devel/gettext
-
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		devel/fribidi \
 			devel/glib2 \
 			x11/gnome/librsvg

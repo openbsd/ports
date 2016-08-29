@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/21 18:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/08/29 09:13:36 jca Exp $
 
 COMMENT=		GTK+ Object Builder
 
 GNOME_PROJECT=		gob2
 GNOME_VERSION=		2.0.20
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11 devel
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 m pthread
+WANTLIB += c glib-2.0 intl m
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/glib2
 

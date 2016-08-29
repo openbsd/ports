@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/08/29 09:13:37 jca Exp $
 
 COMMENT =		tool for setting pointing devices
 
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
-REVISION =		10
+REVISION =		11
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -17,14 +17,13 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES =		${MASTER_SITE_OSDN_JP:=gsynaptics/45812/}
 
 MODULES =		devel/gconf2 \
-			devel/gettext \
 			textproc/intltool \
 			x11/gnome
 

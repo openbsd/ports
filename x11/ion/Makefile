@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2016/08/29 09:13:37 jca Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -6,7 +6,7 @@ V=		20090110
 DISTNAME=	ion-3-${V}
 PKGNAME=	ion-${V}
 CATEGORIES=	x11
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
 MASTER_SITES=	http://tuomov.iki.fi/software/dl/
@@ -14,13 +14,14 @@ MASTER_SITES=	http://tuomov.iki.fi/software/dl/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE X11 m c SM Xext ${MODLUA_WANTLIB}
+WANTLIB += ICE SM X11 Xext c iconv intl lua5.1 m
 
-MODULES=	devel/gettext \
-		lang/lua
+MODULES=	lang/lua
 MODLUA_SA=	Yes
 
-LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
+BUILD_DEPENDS=	devel/gettext-tools
+LIB_DEPENDS=	${MODLUA_LIB_DEPENDS} \
+		devel/gettext
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

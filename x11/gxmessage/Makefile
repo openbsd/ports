@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/25 09:21:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/08/29 09:13:37 jca Exp $
 
 COMMENT=	GTK+3 based xmessage(1) clone
 
 DISTNAME=	gxmessage-3.4.3
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -13,12 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl pango-1.0 pangocairo-1.0
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=	textproc/intltool
 
 LIB_DEPENDS=	x11/gtk+3
 
