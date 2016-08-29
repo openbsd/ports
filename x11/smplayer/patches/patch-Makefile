@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2015/04/23 14:47:10 gonzalo Exp $
---- Makefile.orig	Thu Nov  1 19:42:16 2012
-+++ Makefile	Mon Jan 26 12:06:01 2015
+$OpenBSD: patch-Makefile,v 1.5 2016/08/29 13:51:44 gonzalo Exp $
+--- Makefile.orig	Sun Jun 19 19:47:15 2016
++++ Makefile	Tue Aug 23 12:06:57 2016
 @@ -5,7 +5,7 @@ PREFIX=/usr/local
  CONF_PREFIX=$(PREFIX)
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-Makefile,v 1.4 2015/04/23 14:47:10 gonzalo Exp $
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -17,15 +17,6 @@ KDE_PREFIX=$(PREFIX)
- KDE_ICONS=$(KDE_PREFIX)/share/icons/hicolor/
- KDE_APPLNK=$(KDE_PREFIX)/share/applications/
+@@ -13,14 +13,6 @@ SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
+ ICONS_DIR=$(PREFIX)/share/icons/hicolor/
+ APPLNK_DIR=$(PREFIX)/share/applications/
  
 -QMAKE=qmake
 -LRELEASE=lrelease
@@ -22,11 +22,10 @@ $OpenBSD: patch-Makefile,v 1.4 2015/04/23 14:47:10 gonzalo Exp $
 -     DOC_PATH=\\\"$(DOC_PATH)\\\" THEMES_PATH=\\\"$(THEMES_PATH)\\\" \
 -     SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
 -
--
- ifdef KDE_SUPPORT
- 
- # KDE paths, change if necessary
-@@ -59,7 +50,7 @@ install: src/smplayer
+ src/smplayer:
+ 	./get_svn_revision.sh
+ 	+cd src && $(QMAKE) $(QMAKE_OPTS) && $(DEFS) make
+@@ -41,7 +33,7 @@ install: src/smplayer
  	install -m 644 Changelog *.txt $(DESTDIR)$(DOC_PATH)
  
  	-install -d $(DESTDIR)$(DOC_PATH)
@@ -35,10 +34,10 @@ $OpenBSD: patch-Makefile,v 1.4 2015/04/23 14:47:10 gonzalo Exp $
  
  	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
  	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
-@@ -88,9 +79,9 @@ install: src/smplayer
- 	-install -d $(DESTDIR)$(KDE_APPLNK)
- 	install -m 644 smplayer.desktop $(DESTDIR)$(KDE_APPLNK)
- 	install -m 644 smplayer_enqueue.desktop $(DESTDIR)$(KDE_APPLNK)
+@@ -70,9 +62,9 @@ install: src/smplayer
+ 	-install -d $(DESTDIR)$(APPLNK_DIR)
+ 	install -m 644 smplayer.desktop $(DESTDIR)$(APPLNK_DIR)
+ 	install -m 644 smplayer_enqueue.desktop $(DESTDIR)$(APPLNK_DIR)
 -	-install -d $(DESTDIR)$(PREFIX)/share/man/man1/
 -	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/share/man/man1/
 -	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
