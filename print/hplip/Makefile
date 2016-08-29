@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2016/07/30 14:20:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2016/08/29 07:48:20 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.16.7
+V=			3.16.8
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -182,6 +182,7 @@ pre-configure:
 		${WRKSRC}/logcapture.py
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hplip/db
 	${SUBST_DATA} ${FILESDIR}/hplip.state \
 		${PREFIX}/share/examples/hplip/db/hplip.state
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
