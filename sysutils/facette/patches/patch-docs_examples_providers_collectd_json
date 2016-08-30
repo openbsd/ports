@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_examples_providers_collectd_json,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+--- docs/examples/providers/collectd.json.orig	Mon May 16 09:55:22 2016
++++ docs/examples/providers/collectd.json	Tue Aug 30 19:23:05 2016
+@@ -1,7 +1,7 @@
+ {
+ 	"connector": {
+ 		"type": "rrd",
+-		"path": "/var/lib/collectd/rrd",
++		"path": "${LOCALSTATEDIR}/collectd/rrd",
+ 		"pattern": "(?P<source>[^/]+)/(?P<metric>.+).rrd"
+ 	},
+ 

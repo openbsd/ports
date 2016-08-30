@@ -1,0 +1,90 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+
+use gsed, otherwise messages.json is empty
+dont use npm install
+fix -X syntax
+dont rebuild binary when installing
+no pandoc, no manpages..
+
+--- Makefile.orig	Mon May 16 09:55:22 2016
++++ Makefile	Tue Aug 30 19:25:11 2016
+@@ -16,8 +16,7 @@ UNAME := $(shell uname -s)
+ 
+ GO ?= go
+ 
+-# might apply to other BSDs
+-ifeq ($(UNAME), NetBSD)
++ifeq ($(filter (OpenBSD NetBSD), $(UNAME)),)
+ SED = gsed
+ else
+ SED = sed
+@@ -63,30 +62,14 @@ mesg_fail = (echo "result: $(shell tty -s && tput seta
+ 
+ path_search = $(firstword $(wildcard $(addsuffix /$(1),$(subst :, ,$(PATH)))))
+ 
+-npm_install = \
+-	$(call mesg_start,main,Installing $(1) via npm...); \
+-	$(NPM) install $(1) >/dev/null 2>&1 && \
+-		$(call mesg_ok) || $(call mesg_fail)
+-
+ all: build
+ 
+ # npm scripts
+ lessc:
+-	@if [ -z "$(call path_search,$(LESSC))" ]; then \
+-		$(call npm_install,$(NPM_LESSC)); \
+-		$(call npm_install,$(NPM_LESSC_PLUGIN_CLEANCSS)); \
+-	fi
+ 
+ uglifyjs:
+-	@if [ -z "$(call path_search,$(UGLIFYJS))" ]; then \
+-		$(call npm_install,$(NPM_UGLIFYJS)); \
+-	fi
+ 
+ jshint:
+-	@if [ -z "$(call path_search,$(JSHINT))" ]; then \
+-		$(call npm_install,$(NPM_JSHINT)); \
+-	fi
+-
+ clean: clean-bin clean-doc clean-static clean-test clean-dist
+ 	@$(call mesg_start,clean,Cleaning source symlink...)
+ 	@rm -rf $(BUILD_DIR)/src && \
+@@ -128,12 +111,12 @@ PKG_LIST = $(wildcard pkg/*)
+ 
+ $(BIN_OUTPUT): $(PKG_SRC) $(BIN_SRC) $(BUILD_DIR)/src/github.com/facette/facette
+ 	@$(call mesg_start,$(notdir $@),Building $(notdir $@)...)
+-	@install -d -m 0755 $(dir $@) && $(GO) build \
++	@install -d -m 0755 $(dir $@) && $(GO) build -x \
+ 			-ldflags " \
+-				-X main.version $(VERSION) \
+-				-X main.buildDate '$(BUILD_DATE)' \
+-				$(PKG_LIST:%=-X github.com/facette/facette/%.version $(VERSION)) \
+-				$(PKG_LIST:%=-X github.com/facette/facette/%.buildDate '$(BUILD_DATE)') \
++				-X main.version=$(VERSION) \
++				-X main.buildDate='$(BUILD_DATE)' \
++				$(PKG_LIST:%=-X github.com/facette/facette/%.version=$(VERSION)) \
++				$(PKG_LIST:%=-X github.com/facette/facette/%.buildDate='$(BUILD_DATE)') \
+ 			" \
+ 			-tags "$(TAGS)" \
+ 			-o $@ cmd/$(notdir $@)/*.go && \
+@@ -147,7 +130,7 @@ clean-bin:
+ build-bin: $(BIN_OUTPUT)
+ 
+ .PHONY: install-bin
+-install-bin: build-bin
++install-bin:
+ 	@$(call mesg_start,install,Installing binaries...)
+ 	@install -d -m 0755 $(PREFIX)/bin && cp $(BIN_OUTPUT) $(PREFIX)/bin && \
+ 		$(call mesg_ok) || $(call mesg_fail)
+@@ -174,10 +157,7 @@ clean-doc:
+ build-doc: $(MAN_OUTPUT)
+ 
+ .PHONY: install-doc
+-install-doc: build-doc
+-	@$(call mesg_start,install,Installing manuals files...)
+-	@install -d -m 0755 $(PREFIX)/share && cp -Rp $(BUILD_DIR)/man $(PREFIX)/share && \
+-		$(call mesg_ok) || $(call mesg_fail)
++install-doc:
+ 	@$(call mesg_start,install,Installing examples files...)
+ 	@install -d -m 0755 $(PREFIX)/share/facette/examples && cp -Rp docs/examples $(PREFIX)/share/facette && \
+ 		$(call mesg_ok) || $(call mesg_fail)

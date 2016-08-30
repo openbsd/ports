@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: facette.rc,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/facette"
+daemon_user="_facette"
+
+# uncomment to enable debugging
+#daemon_flags="-L debug -l ${LOCALSTATEDIR}/facette/log"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

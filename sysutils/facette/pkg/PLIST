@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+@newgroup _facette:774
+@newuser _facette:774:774:daemon:Facette Daemon:/var/empty:/sbin/nologin
+@bin bin/facette
+@bin bin/facettectl
+share/facette/
+share/facette/examples/
+@sample ${SYSCONFDIR}/facette/
+share/facette/examples/facette.apache2
+share/facette/examples/facette.json
+@sample ${SYSCONFDIR}/facette/facette.json
+share/facette/examples/facette.nginx
+share/facette/examples/providers/
+@sample ${SYSCONFDIR}/facette/providers/
+share/facette/examples/providers/collectd.json
+@sample ${SYSCONFDIR}/facette/providers/collectd.json
+share/facette/examples/providers/graphite.json
+share/facette/examples/providers/influxdb.json
+share/facette/examples/providers/kairosdb.json
+share/facette/static/
+share/facette/static/canvg.js
+share/facette/static/facette.js
+share/facette/static/favicon.png
+share/facette/static/fonts/
+share/facette/static/fonts/Lato-Bold.ttf
+share/facette/static/fonts/Lato-Light.ttf
+share/facette/static/fonts/Lato-Regular.ttf
+share/facette/static/fonts/fontawesome-webfont.eot
+share/facette/static/fonts/fontawesome-webfont.svg
+share/facette/static/fonts/fontawesome-webfont.ttf
+share/facette/static/fonts/fontawesome-webfont.woff
+share/facette/static/highcharts.exporting.js
+share/facette/static/highcharts.js
+share/facette/static/i18next.js
+share/facette/static/jquery.datepicker.js
+share/facette/static/jquery.js
+share/facette/static/loader.gif
+share/facette/static/logo-text-light.png
+share/facette/static/logo-text.png
+share/facette/static/messages.json
+share/facette/static/moment.js
+share/facette/static/rgbcolor.js
+share/facette/static/sprintf.js
+share/facette/static/style.css
+share/facette/static/style.print.css
+share/facette/template/
+share/facette/template/admin/
+share/facette/template/admin/catalog_list.html
+share/facette/template/admin/collection_edit.html
+share/facette/template/admin/collection_list.html
+share/facette/template/admin/graph_edit.html
+share/facette/template/admin/graph_edit_linked.html
+share/facette/template/admin/graph_list.html
+share/facette/template/admin/group_edit.html
+share/facette/template/admin/group_list.html
+share/facette/template/admin/index.html
+share/facette/template/admin/layout.html
+share/facette/template/admin/scale_edit.html
+share/facette/template/admin/scale_list.html
+share/facette/template/admin/unit_edit.html
+share/facette/template/admin/unit_list.html
+share/facette/template/browse/
+share/facette/template/browse/collection.html
+share/facette/template/browse/graph.html
+share/facette/template/browse/index.html
+share/facette/template/browse/layout.html
+share/facette/template/browse/search.html
+share/facette/template/common/
+share/facette/template/common/element.html
+share/facette/template/common/graph.html
+share/facette/template/error.html
+share/facette/template/layout.html
+share/facette/template/opensearch.xml
+share/facette/template/show/
+share/facette/template/show/graph.html
+share/facette/template/show/layout.html
+@owner _facette
+@group _facette
+@sample /var/facette/
+@owner
+@group
+@rcscript ${RCDIR}/facette
