@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/08/30 10:19:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2016/08/30 12:29:17 jasper Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -8,7 +8,7 @@ COMMENT=	MPEG-2 and MPEG-4 AAC decoder
 V=		2.7
 DISTNAME=	faad2-${V}
 PKGNAME=	faad-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 EXTRACT_SUFX=	.tar.bz2
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c m
 
-MODULES=	devel/gettext
 # bootstrap checks for libtoolize
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
