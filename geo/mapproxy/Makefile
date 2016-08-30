@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/13 10:58:49 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2016/08/30 16:21:25 landry Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
-GH_TAGNAME =	1.8.2
+GH_TAGNAME =	1.9.0
 GH_PROJECT =	mapproxy
 GH_ACCOUNT =	mapproxy
 
@@ -34,7 +34,7 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 # some tests need mocker from https://labix.org/mocker
 post-patch:
 	# simpler than patching and fixing the patch at each update
-	sed -i -e 's#${GH_TAGNAME}a0#${GH_TAGNAME}#' ${WRKSRC}/setup.py
+	sed -i -e 's#1.8.2a0#${GH_TAGNAME}#' ${WRKSRC}/setup.py
 
 pre-test:
 	# can't be fixed by MODPY_ADJ_FILES since this is not on the 1st line

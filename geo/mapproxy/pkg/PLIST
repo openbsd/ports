@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/10/31 08:20:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/30 16:21:25 landry Exp $
 bin/mapproxy-seed
 bin/mapproxy-util
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${GH_TAGNAME}-py${MODPY_VERSION}-nspkg.pth
@@ -40,6 +40,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/tile.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/client/arcgis.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/client/arcgis.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/cgi.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/cgi.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/http.py
@@ -128,6 +130,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/proj.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/request/arcgis.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/request/arcgis.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/base.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/base.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/tile.py
@@ -250,6 +254,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/service/wmts.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/source/arcgis.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/source/arcgis.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/error.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/error.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/source/mapnik.py
@@ -390,9 +396,19 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/arcgis.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/auth.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache.mbtiles
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_band_merge.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/000/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/000/000/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/000/000/000/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/000/000/000/000/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/000/000/000/000/000/000.png
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/wms_cache_EPSG900913/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/wms_cache_EPSG900913/01/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/wms_cache_EPSG900913/01/000/
@@ -430,6 +446,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapnik_sou
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapproxy_export.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mapserver.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/mixed_mode.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/multi_cache_layers.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/multiapp1.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/multiapp2.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/renderd_client.yaml
@@ -458,10 +475,14 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/wms_versio
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/wmts.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/wmts_dimensions.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/xslt_featureinfo.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_arcgis.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_arcgis.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_behind_proxy.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_behind_proxy.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_band_merge.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_band_merge.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_grid_names.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_grid_names.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_mbtiles.py
@@ -492,6 +513,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mapserver.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mapserver.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mixed_mode_format.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mixed_mode_format.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multi_cache_layers.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multi_cache_layers.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multiapp.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multiapp.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_renderd_client.py
