@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2016/08/12 23:24:56 juanfra Exp $
+# $OpenBSD: Makefile,v 1.400 2016/08/30 17:34:53 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -64,6 +64,7 @@
      SUBDIR += exfat-fuse
      SUBDIR += fabric
      SUBDIR += facter
+     SUBDIR += facette
      SUBDIR += faubackup
      SUBDIR += fdupes
      SUBDIR += findlib
