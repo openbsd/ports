@@ -1,0 +1,14 @@
+$OpenBSD: patch-3rdparty_enricomath_h,v 1.1.1.1 2016/08/30 15:19:49 awolk Exp $
+--- 3rdparty/enricomath.h.orig	Sun Jul 10 22:55:21 2016
++++ 3rdparty/enricomath.h	Sun Jul 10 23:03:34 2016
+@@ -286,8 +286,8 @@ class Matrix3
+ #include <math.h>
+ #include <stdio.h>
+ 
+-#if defined(Q_OS_WIN32) || defined(Q_OS_MAC)
+-//sincos is not defined in win32 and MAC
++#if defined(Q_OS_WIN32) || defined(Q_OS_MAC) || defined(Q_OS_OPENBSD)
++//sincos is not defined in win32, MAC and OpenBSD
+ static inline void sincos(double th, double *s, double *c)
+ {
+     *s = sin(th);

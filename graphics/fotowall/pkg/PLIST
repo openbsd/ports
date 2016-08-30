@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/30 15:19:49 awolk Exp $
+@bin bin/fotowall
+@man man/man1/fotowall.1
+share/applications/fotowall.desktop
+share/pixmaps/
+share/pixmaps/fotowall.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
