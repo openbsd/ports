@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/08/30 10:49:01 jasper Exp $
 
 BROKEN-macppc =	libqalculate/Calculator.cc:7030: internal compiler error
 COMMENT =	applied math library
@@ -39,7 +39,6 @@ AUTOMAKE_VERSION =	1.11
 
 SUBST_VARS +=		DISTNAME
 
-# Adapted from audio/xmms port
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
