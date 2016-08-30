@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/05 17:53:40 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/30 15:05:41 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
-DISTNAME=	reposurgeon-3.37
+DISTNAME=	reposurgeon-3.38
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	devel
@@ -34,7 +34,7 @@ INSTALL_TARGET=	install install-cyreposurgeon
 # but: the pylint check fails (modify the Makefile to skip it or to
 # allow other tests to continue), and the setpython script doesn't
 # work with our sh.
-MO_TEST=	Yes
+NO_TEST=	Yes
 
 TEST_DEPENDS=	devel/pylint \
 		sysutils/coreutils
