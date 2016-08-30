@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:56 espie Exp $
-@comment lib/xmms/Input/libsid.la
-lib/xmms/Input/libsid.so

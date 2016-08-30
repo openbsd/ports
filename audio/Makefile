@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2016/08/12 11:24:36 edd Exp $
+# $OpenBSD: Makefile,v 1.374 2016/08/30 10:36:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -203,7 +203,6 @@
      SUBDIR += py-tagpy
      SUBDIR += py-tagpy,python3
      SUBDIR += py-vorbis
-     SUBDIR += py-xmms
      SUBDIR += pykaraoke
      SUBDIR += pympd
      SUBDIR += quodlibet
@@ -262,19 +261,8 @@
      SUBDIR += xcdplayer
      SUBDIR += xhippo
      SUBDIR += xmcd
-     SUBDIR += xmms
-     SUBDIR += xmms-flac
-     SUBDIR += xmms-fmradio
-     SUBDIR += xmms-mad
-     SUBDIR += xmms-shn
-     SUBDIR += xmms-sid
-     SUBDIR += xmms-speex
-     SUBDIR += xmms-tremor
-     SUBDIR += xmms-wavpack
-     SUBDIR += xmms-xf86audio
      SUBDIR += xmms2
      SUBDIR += xmms2-scrobbler
-     SUBDIR += xmmsctrl
      SUBDIR += xmp
      SUBDIR += zeya
 

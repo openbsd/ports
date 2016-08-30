@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/28 14:36:17 naddy Exp $
-@comment lib/xmms/Input/libxmms-flac.la
-lib/xmms/Input/libxmms-flac.so

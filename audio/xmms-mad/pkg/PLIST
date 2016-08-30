@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/08/07 22:13:37 robert Exp $
-@comment lib/xmms/Input/libxmmsmad.la
-lib/xmms/Input/libxmmsmad.so

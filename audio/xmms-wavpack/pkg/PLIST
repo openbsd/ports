@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/12 16:41:37 naddy Exp $
-@comment lib/xmms/Input/libwavpack.la
-lib/xmms/Input/libwavpack.so

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
-lib/python${MODPY_VERSION}/site-packages/_xmms.so
-lib/python${MODPY_VERSION}/site-packages/xmms.py
-lib/python${MODPY_VERSION}/site-packages/xmms.pyc
-share/doc/py-xmms/
-share/doc/py-xmms/README

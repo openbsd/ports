@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:56 espie Exp $
-lib/xmms/Input/libradio.so
-share/doc/xmms-fmradio/
-share/doc/xmms-fmradio/README
