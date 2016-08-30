@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/30 09:54:14 jasper Exp $
 
 COMMENT-main =		multi-protocol instant messenger for KDE
 COMMENT-sounds =	notification sounds for Kopete
@@ -6,7 +6,7 @@ DISTNAME =		kopete-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-sounds =	kde4-kopete-sounds-${MODKDE4_VERSION}
 PKG_ARCH-sounds =	*
-REVISION-main =		3
+REVISION-main =		4
 REVISION-sounds =	3
 
 CATEGORIES =	net
@@ -43,7 +43,7 @@ WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/ktexteditor
 WANTLIB-main += ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
 WANTLIB-main += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-main += gadu glib-2.0 idn jasper jpeg meanwhile otr qca2
-WANTLIB-main += qimageblitz soprano xml2 xmms xslt
+WANTLIB-main += qimageblitz soprano xml2 xslt
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	pim
@@ -56,7 +56,6 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 
 LIB_DEPENDS-sounds =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			audio/xmms \
 			devel/libidn \
 			graphics/qimageblitz \
 			net/libgadu \

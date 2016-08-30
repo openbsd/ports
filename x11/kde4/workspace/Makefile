@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2016/07/17 16:04:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.54 2016/08/30 09:54:14 jasper Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	12
+REVISION =	13
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -82,7 +82,7 @@ WANTLIB += ${KDE4LIB}/syndication
 
 WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg kvm png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
-WANTLIB += usb xml2 xmms
+WANTLIB += usb xml2
 
 MODULES =	multimedia/phonon lang/python lang/ruby
 MODKDE4_USE =	pim
@@ -103,8 +103,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=	x11/dbus,-suid
 
-LIB_DEPENDS =	audio/xmms \
-		databases/soprano \
+LIB_DEPENDS =	databases/soprano \
 		devel/libusb-compat \
 		devel/qjson \
 		graphics/qimageblitz \
