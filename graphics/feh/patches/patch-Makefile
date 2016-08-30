@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.4 2016/02/25 08:39:14 dcoppa Exp $
---- Makefile.orig	Thu Feb 18 20:52:16 2016
-+++ Makefile	Thu Feb 25 09:34:49 2016
-@@ -77,6 +77,7 @@ install-examples:
+$OpenBSD: patch-Makefile,v 1.5 2016/08/30 14:44:37 dcoppa Exp $
+--- Makefile.orig	Sun Aug 28 22:25:42 2016
++++ Makefile	Tue Aug 30 16:28:12 2016
+@@ -88,6 +88,7 @@ install-examples:
  	@echo installing examples to ${example_dir}
  	@mkdir -p ${example_dir}
  	@cp examples/* ${example_dir}

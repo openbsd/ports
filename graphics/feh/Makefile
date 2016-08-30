@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.76 2016/08/05 11:01:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.77 2016/08/30 14:44:37 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-2.16.2
+DISTNAME=	feh-2.17
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	graphics/imlib2 \
 		graphics/libexif \
 		net/curl
 
-RUN_DEPENDS+=	devel/desktop-file-utils
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${X11BASE}/include

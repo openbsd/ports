@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/05/19 08:45:49 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/08/30 14:44:37 dcoppa Exp $
 @bin bin/feh
 @man man/man1/feh.1
 share/applications/feh.desktop
@@ -31,5 +31,9 @@ share/feh/images/menubg_black.png
 share/feh/images/menubg_brushed.png
 share/feh/images/menubg_default.png
 share/feh/images/menubg_sky.png
+share/icons/hicolor/48x48/apps/feh.png
+share/icons/hicolor/scalable/apps/feh.svg
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
