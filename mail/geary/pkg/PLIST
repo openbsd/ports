@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/06/27 19:56:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/08/30 14:51:56 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -172,6 +172,8 @@ share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
 share/icons/hicolor/scalable/actions/format-text-remove-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-drafts-rtl-symbolic.svg
+share/icons/hicolor/scalable/actions/mail-drafts-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-forward-rtl-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-forward-symbolic.svg
 share/icons/hicolor/scalable/actions/mail-inbox-symbolic.svg

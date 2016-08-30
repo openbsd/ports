@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2016/06/27 19:56:15 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2016/08/30 14:51:56 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
-GNOME_VERSION =	0.11.1
+GNOME_VERSION =	0.11.2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
