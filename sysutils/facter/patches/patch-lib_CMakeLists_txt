@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.16 2016/08/12 08:42:52 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.17 2016/08/30 11:03:33 jasper Exp $
 
 - Override library version
 
---- lib/CMakeLists.txt.orig	Wed Aug 10 23:43:54 2016
-+++ lib/CMakeLists.txt	Thu Aug 11 10:28:04 2016
-@@ -287,7 +287,7 @@ link_directories(
+--- lib/CMakeLists.txt.orig	Tue Aug 23 19:25:37 2016
++++ lib/CMakeLists.txt	Thu Aug 25 10:44:10 2016
+@@ -290,7 +290,7 @@ link_directories(
  add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOURCES} ${LIBFACTER_STANDARD_SOURCES} ${LIBFACTER_PLATFORM_SOURCES})
  set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
  add_library(libfacter SHARED $<TARGET_OBJECTS:libfactersrc>)

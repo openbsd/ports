@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/08/30 11:03:33 jasper Exp $
 @option is-branch
 @conflict facter-<3.0.1
 @bin bin/facter
@@ -22,6 +22,7 @@ include/facter/logging/logging.hpp
 include/facter/ruby/
 include/facter/ruby/ruby.hpp
 include/facter/util/
+include/facter/util/config.hpp
 include/facter/util/string.hpp
 include/facter/version.h
 lib/libfacter.so
