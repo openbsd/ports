@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.131 2016/08/20 11:39:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2016/08/30 10:33:01 ajacoutot Exp $
+
+USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.20.4
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
