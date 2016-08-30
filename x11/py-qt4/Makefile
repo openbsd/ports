@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/20 16:12:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2016/08/30 16:01:02 landry Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
@@ -11,6 +11,7 @@ DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
+REVISION-main=	0
 EPOCH=		0
 
 CATEGORIES=	x11 devel
