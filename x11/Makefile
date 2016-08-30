@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2016/08/27 18:22:34 jca Exp $
+# $OpenBSD: Makefile,v 1.576 2016/08/30 10:43:53 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -90,7 +90,6 @@
      SUBDIR += gpointing-device-settings
      SUBDIR += grantlee
      SUBDIR += gromit
-     SUBDIR += gtk+
      SUBDIR += gtk+2
      SUBDIR += gtk+3
      SUBDIR += gtk-chtheme
