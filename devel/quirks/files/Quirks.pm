@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.414 2016/08/27 18:22:34 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.415 2016/08/30 10:38:14 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -834,6 +834,24 @@ my $obsolete_reason = {
 	'icinga2-migration' => 3,
 	'poppassd' => 0,
 	'wmthemeinstall' => 0,
+	'gkrellmms' => 5,
+	'py-xmms', => 5,
+	'xmms', => 5,
+	'xmms-faad' => 5,
+	'xmms-flac', => 5,
+	'xmms-fmradio', => 5,
+	'xmms-kj' => 5,
+	'xmms-mad', => 5,
+	'xmms-mikmod', => 5,
+	'xmms-mp3', => 5,
+	'xmms-shn', => 5,
+	'xmms-sid', => 5,
+	'xmms-speex', => 5,
+	'xmms-tremor', => 5,
+	'xmms-vorbis', => 5,
+	'xmms-wavpack', => 5,
+	'xmms-xf86audio', => 5,
+	'xmmsctrl', => 5,
 };
 
 # reasons for obsolete packages
