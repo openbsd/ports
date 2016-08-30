@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/10/21 20:23:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/08/30 11:02:41 jasper Exp $
 bin/obb
 bin/obc
 bin/obdb
@@ -18,7 +18,6 @@ lib/obc/Err.k
 lib/obc/Err.m
 lib/obc/Files.k
 lib/obc/Files.m
-lib/obc/Files.so
 lib/obc/GC.k
 lib/obc/GC.m
 lib/obc/In-b.k

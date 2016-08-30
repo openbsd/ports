@@ -1,7 +1,7 @@
-$OpenBSD: patch-debugger_Makefile_in,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
---- debugger/Makefile.in.orig	Fri Jan  7 19:11:07 2011
-+++ debugger/Makefile.in	Thu Jan 13 03:00:28 2011
-@@ -54,10 +54,11 @@ LABLGTK2 = @LABLGTK2@
+$OpenBSD: patch-debugger_Makefile_in,v 1.2 2016/08/30 11:02:41 jasper Exp $
+--- debugger/Makefile.in.orig	Tue Jan 12 19:26:21 2016
++++ debugger/Makefile.in	Thu Aug 25 11:08:03 2016
+@@ -52,10 +52,11 @@ LABLGTK2 = @LABLGTK2@
  
  all: obdb1
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-debugger_Makefile_in,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
  	    -thread -o $@ $(LIBS) $(OBDB1) debprims.o $(MLLINKFLAGS)
  
  DEBUGGER = debconf.cmo binary.cmo info.cmo procio.cmo data.cmo \
-@@ -76,7 +77,7 @@ debprims.o: debprims.c
+@@ -74,7 +75,7 @@ debprims.o: debprims.c
  %.ml: %.mll
  	$(OCAMLLEX) -o $@ $<
  
