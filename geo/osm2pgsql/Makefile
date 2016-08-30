@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/01 20:23:54 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/30 15:22:06 danj Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		0.90.0
+GH_TAGNAME =		0.90.1
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
 
