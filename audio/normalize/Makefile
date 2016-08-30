@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2016/08/30 10:37:37 jasper Exp $
 
 COMMENT=	audio file volume normalizer
 
@@ -21,9 +21,7 @@ WANTLIB=	c m mad>=2 audiofile FLAC ogg
 
 CONFIGURE_STYLE= gnu
 
-# Do not build xmms plugin for now.
-CONFIGURE_ARGS=	--disable-xmms \
-		--with-mad \
+CONFIGURE_ARGS=	--with-mad \
 		--with-audiofile
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

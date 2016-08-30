@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2016/06/20 15:40:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2016/08/30 10:37:37 jasper Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -29,7 +29,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-altivec \
 		--disable-doxygen-docs \
 		--disable-thorough-tests \
-		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
