@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2016/08/16 06:44:39 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/08/30 16:02:17 landry Exp $
 @bin bin/pylupdate5${MODPY_BIN_SUFFIX}
 @bin bin/pyrcc5${MODPY_BIN_SUFFIX}
 bin/pyuic5${MODPY_BIN_SUFFIX}
@@ -41,6 +41,12 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/_QOpenGLFunctions_4_1_Core.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/pylupdate.so
+lib/python${MODPY_VERSION}/site-packages/PyQt5/pylupdate_main.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/${MODPY_PYCACHE}pylupdate_main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/pyrcc.so
+lib/python${MODPY_VERSION}/site-packages/PyQt5/pyrcc_main.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/${MODPY_PYCACHE}pyrcc_main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/Compiler/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/Compiler/__init__.py
@@ -144,10 +150,16 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qbluetoothtransfermanager.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qbluetoothtransferreply.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qbluetoothtransferrequest.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qbluetoothuuid.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergyadvertisingdata.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergyadvertisingparameters.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergycharacteristic.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergycharacteristicdata.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergyconnectionparameters.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergycontroller.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergydescriptor.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergydescriptordata.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergyservice.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qlowenergyservicedata.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qpybluetooth_qlist.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtBluetooth/qpybluetooth_quint128.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/
@@ -268,6 +280,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qurlquery.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/quuid.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qvariant.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qvariantanimation.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qversionnumber.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qwaitcondition.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qwineventnotifier.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtCore/qxmlstream.sip
@@ -380,6 +393,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qrasterwindow.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qrawfont.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qregion.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qrgb.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qrgba64.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qscreen.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qsessionmanager.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/QtGui/qstandarditemmodel.sip
@@ -872,3 +886,7 @@ share/sip/PyQt5${MODPY_BIN_SUFFIX}/_QOpenGLFunctions_2_1/qopenglfunctions_2_1.si
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/_QOpenGLFunctions_4_1_Core/
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/_QOpenGLFunctions_4_1_Core/_QOpenGLFunctions_4_1_Coremod.sip
 share/sip/PyQt5${MODPY_BIN_SUFFIX}/_QOpenGLFunctions_4_1_Core/qopenglfunctions_4_1_core.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/pylupdate/
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/pylupdate/pylupdatemod.sip
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/pyrcc/
+share/sip/PyQt5${MODPY_BIN_SUFFIX}/pyrcc/pyrccmod.sip

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2016/08/12 09:00:10 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2016/08/30 16:02:17 landry Exp $
 share/doc/${MODPY_PY_PREFIX}qt5/
 share/doc/${MODPY_PY_PREFIX}qt5/html/
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/
@@ -402,10 +402,16 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlocalserver.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlocalsocket.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlocation.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlockfile.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergyadvertisingdata.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergyadvertisingparameters.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergycharacteristic.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergycharacteristicdata.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergyconnectionparameters.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergycontroller.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergydescriptor.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergydescriptordata.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergyservice.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qlowenergyservicedata.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qmaccocoaviewcontainer.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qmacpasteboardmime.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qmactoolbar.txt
@@ -612,8 +618,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qqmlpropertymap.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qqmlpropertyvaluesource.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qqmlscriptstring.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquaternion.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickasyncimageprovider.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickframebufferobject.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickimageprovider.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickimageresponse.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickitem.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickitemgrabresult.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qquickpainteditem.txt
@@ -642,6 +650,7 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qregularexpressionmatchiterato
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qregularexpressionvalidator.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qresizeevent.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qresource.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qrgba64.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qrotationfilter.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qrotationreading.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qrotationsensor.txt
@@ -891,6 +900,8 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebdatabase.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebelement.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebelementcollection.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginecertificateerror.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginecontextmenudata.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginecookiestore.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginedownloaditem.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginehistory.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginehistoryitem.txt
@@ -899,6 +910,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineprofile.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginescript.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginescriptcollection.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebenginesettings.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineurlrequestinfo.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineurlrequestinterceptor.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineurlrequestjob.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineurlschemehandler.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebengineview.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebframe.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qwebhistory.txt
@@ -966,6 +981,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qxmlstreamnamespacedeclaration
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qxmlstreamnotationdeclaration.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qxmlstreamreader.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api/qxmlstreamwriter.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api_details/
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api_details/qjsonarray.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api_details/qjsonobject.txt
+share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/api_details/qjsonvalue.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/class_reference.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/dbus.txt
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/deploy_commercial.txt
@@ -1417,10 +1436,16 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlocalserver.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlocalsocket.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlocation.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlockfile.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergyadvertisingdata.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergyadvertisingparameters.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergycharacteristic.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergycharacteristicdata.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergyconnectionparameters.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergycontroller.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergydescriptor.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergydescriptordata.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergyservice.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qlowenergyservicedata.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qmaccocoaviewcontainer.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qmacpasteboardmime.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qmactoolbar.html
@@ -1627,8 +1652,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qqmlpropertymap.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qqmlpropertyvaluesource.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qqmlscriptstring.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquaternion.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickasyncimageprovider.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickframebufferobject.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickimageprovider.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickimageresponse.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickitem.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickitemgrabresult.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qquickpainteditem.html
@@ -1657,6 +1684,7 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qregularexpressionmatchiterator.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qregularexpressionvalidator.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qresizeevent.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qresource.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qrgba64.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qrotationfilter.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qrotationreading.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qrotationsensor.html
@@ -1906,6 +1934,8 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebdatabase.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebelement.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebelementcollection.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginecertificateerror.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginecontextmenudata.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginecookiestore.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginedownloaditem.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginehistory.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginehistoryitem.html
@@ -1914,6 +1944,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineprofile.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginescript.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginescriptcollection.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebenginesettings.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineurlrequestinfo.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineurlrequestinterceptor.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineurlrequestjob.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineurlschemehandler.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebengineview.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebframe.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qwebhistory.html
@@ -1981,6 +2015,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/api/qxmlstreamnamespacedeclaration.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qxmlstreamnotationdeclaration.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qxmlstreamreader.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/api/qxmlstreamwriter.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api_details/
+share/doc/${MODPY_PY_PREFIX}qt5/html/api_details/qjsonarray.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api_details/qjsonobject.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/api_details/qjsonvalue.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/class_reference.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/dbus.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/deploy_commercial.html
@@ -2000,7 +2038,7 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/objects.inv
 share/doc/${MODPY_PY_PREFIX}qt5/html/opengl.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pickle.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/platforms.html
-share/doc/${MODPY_PY_PREFIX}qt5/html/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/${MODPY_PY_PREFIX}modindex.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt4_differences.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt_qsettings.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt_qvariant.html
@@ -2413,10 +2451,16 @@ share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlocalserver.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlocalsocket.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlocation.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlockfile.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergyadvertisingdata.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergyadvertisingparameters.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergycharacteristic.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergycharacteristicdata.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergyconnectionparameters.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergycontroller.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergydescriptor.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergydescriptordata.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergyservice.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qlowenergyservicedata.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qmaccocoaviewcontainer.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qmacpasteboardmime.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qmactoolbar.rst
@@ -2623,8 +2667,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qqmlpropertymap.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qqmlpropertyvaluesource.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qqmlscriptstring.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquaternion.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickasyncimageprovider.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickframebufferobject.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickimageprovider.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickimageresponse.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickitem.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickitemgrabresult.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qquickpainteditem.rst
@@ -2653,6 +2699,7 @@ share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qregularexpressionmatchiterator.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qregularexpressionvalidator.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qresizeevent.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qresource.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qrgba64.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qrotationfilter.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qrotationreading.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qrotationsensor.rst
@@ -2902,6 +2949,8 @@ share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebdatabase.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebelement.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebelementcollection.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginecertificateerror.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginecontextmenudata.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginecookiestore.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginedownloaditem.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginehistory.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginehistoryitem.rst
@@ -2910,6 +2959,10 @@ share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineprofile.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginescript.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginescriptcollection.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebenginesettings.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineurlrequestinfo.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineurlrequestinterceptor.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineurlrequestjob.rst
+share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineurlschemehandler.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebengineview.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebframe.rst
 share/doc/${MODPY_PY_PREFIX}qt5/sphinx/api/qwebhistory.rst

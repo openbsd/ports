@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/16 06:44:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/08/30 16:02:17 landry Exp $
 
 COMMENT-main=	python Qt5 bindings
 COMMENT-docs=	py-qt5 documentation
 
-V=		5.5.1
-DISTNAME=	PyQt-gpl-${V}
+V=		5.7
+DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
 PKGNAME-main=	py-qt5-${V}
 PKGNAME-docs=	py-qt5-docs-${V}
-REVISION-main=	1
 
 CATEGORIES=	x11 devel
 
@@ -44,7 +43,7 @@ FULLPKGPATH-docs=	x11/py-qt5,-docs${MODPY_FLAVOR}
 .endif
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.16.5 \
+RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.18.1 \
 		x11/dbus-python${MODPY_FLAVOR}
 LIB_DEPENDS=	${MODQT5_LIB_DEPENDS}>=5.5 \
 		${MODPY_LIB_DEPENDS}
