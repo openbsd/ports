@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/08 22:38:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/08/30 15:57:09 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/PyQt4/Qsci.pyi
 lib/python${MODPY_VERSION}/site-packages/PyQt4/Qsci.so
-lib/qt4/api/
-lib/qt4/api/python/
-lib/qt4/api/python/QScintilla2.api
+lib/qt4/qsci/api/python/QScintilla2.api
 share/sip/Qsci/
 share/sip/Qsci/qsciabstractapis.sip
 share/sip/Qsci/qsciapis.sip
@@ -10,9 +9,11 @@ share/sip/Qsci/qscicommand.sip
 share/sip/Qsci/qscicommandset.sip
 share/sip/Qsci/qscidocument.sip
 share/sip/Qsci/qscilexer.sip
+share/sip/Qsci/qscilexeravs.sip
 share/sip/Qsci/qscilexerbash.sip
 share/sip/Qsci/qscilexerbatch.sip
 share/sip/Qsci/qscilexercmake.sip
+share/sip/Qsci/qscilexercoffeescript.sip
 share/sip/Qsci/qscilexercpp.sip
 share/sip/Qsci/qscilexercsharp.sip
 share/sip/Qsci/qscilexercss.sip
@@ -31,6 +32,7 @@ share/sip/Qsci/qscilexermatlab.sip
 share/sip/Qsci/qscilexeroctave.sip
 share/sip/Qsci/qscilexerpascal.sip
 share/sip/Qsci/qscilexerperl.sip
+share/sip/Qsci/qscilexerpo.sip
 share/sip/Qsci/qscilexerpostscript.sip
 share/sip/Qsci/qscilexerpov.sip
 share/sip/Qsci/qscilexerproperties.sip
@@ -45,13 +47,11 @@ share/sip/Qsci/qscilexervhdl.sip
 share/sip/Qsci/qscilexerxml.sip
 share/sip/Qsci/qscilexeryaml.sip
 share/sip/Qsci/qscimacro.sip
-share/sip/Qsci/qscimod3.sip
 share/sip/Qsci/qscimod4.sip
 share/sip/Qsci/qscimod5.sip
 share/sip/Qsci/qscimodcommon.sip
 share/sip/Qsci/qsciprinter.sip
 share/sip/Qsci/qsciscintilla.sip
-share/sip/Qsci/qsciscintillabase3.sip
-share/sip/Qsci/qsciscintillabase4.sip
+share/sip/Qsci/qsciscintillabase.sip
 share/sip/Qsci/qscistyle.sip
 share/sip/Qsci/qscistyledtext.sip
