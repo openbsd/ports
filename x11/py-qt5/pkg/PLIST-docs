@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2016/08/30 16:02:17 landry Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2016/08/30 16:14:28 landry Exp $
 share/doc/${MODPY_PY_PREFIX}qt5/
 share/doc/${MODPY_PY_PREFIX}qt5/html/
 share/doc/${MODPY_PY_PREFIX}qt5/html/_sources/
@@ -2038,7 +2038,7 @@ share/doc/${MODPY_PY_PREFIX}qt5/html/objects.inv
 share/doc/${MODPY_PY_PREFIX}qt5/html/opengl.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pickle.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/platforms.html
-share/doc/${MODPY_PY_PREFIX}qt5/html/${MODPY_PY_PREFIX}modindex.html
+share/doc/${MODPY_PY_PREFIX}qt5/html/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt4_differences.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt_qsettings.html
 share/doc/${MODPY_PY_PREFIX}qt5/html/pyqt_qvariant.html
