@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.415 2016/08/30 10:38:14 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.416 2016/08/30 11:06:43 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -852,6 +852,8 @@ my $obsolete_reason = {
 	'xmms-wavpack', => 5,
 	'xmms-xf86audio', => 5,
 	'xmmsctrl', => 5,
+	'glib', => 5,
+	'gtk+', => 5,
 };
 
 # reasons for obsolete packages
