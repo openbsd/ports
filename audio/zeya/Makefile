@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/22 00:22:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/30 10:20:15 jasper Exp $
 
 COMMENT =	html5-powered web music server
 
 MODPY_EGG_VERSION = 0.6
 DISTNAME =	zeya_${MODPY_EGG_VERSION}.orig
 PKGNAME =	zeya-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio www
 
 HOMEPAGE =	http://web.psung.name/zeya/

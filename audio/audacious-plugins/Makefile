@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2016/03/18 21:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.68 2016/08/30 10:20:15 jasper Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.5.2
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		audacious-plugins-$V
 CATEGORIES =		audio multimedia

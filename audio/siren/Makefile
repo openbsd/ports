@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/30 10:20:15 jasper Exp $
 
 COMMENT =		text-based audio player
 DISTNAME =		siren-0.6
+REVISION =		0
 CATEGORIES =		audio
 HOMEPAGE =		http://www.kariliq.nl/siren/
 MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
