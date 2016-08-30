@@ -1,0 +1,2 @@
+bit32 is the native Lua 5.2 bit manipulation library, in the version
+from Lua 5.3; it is compatible with Lua 5.1, 5.2 and 5.3.
