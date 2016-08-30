@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2016/06/03 11:57:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2016/08/30 09:53:27 jasper Exp $
 
 COMMENT=	GNUstep workspace manager
 
-REVISION =	3
+REVISION =	4
 DISTNAME =	gworkspace-0.9.3
 
 CATEGORIES=	x11
@@ -37,7 +37,7 @@ MAKE_ENV+=	FSNode_VERSION=${LIBFSNode_VERSION} \
 
 APP_WRAPPERS +=	ImageMagick LibreOffice LyX abiword bluefish coccinella
 APP_WRAPPERS +=	firefox gedit gimp gnumeric nedit opennx qlandkartegt seamonkey
-APP_WRAPPERS +=	spdrs60 xchat xfig xmms xpdf xtrkcad xv
+APP_WRAPPERS +=	spdrs60 xchat xfig xpdf xtrkcad xv
 
 post-install:
 .for _app in ${APP_WRAPPERS}
