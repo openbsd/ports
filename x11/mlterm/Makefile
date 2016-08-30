@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2016/08/17 15:10:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.53 2016/08/30 10:02:18 dcoppa Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.7.2
+REVISION=	0
 
 SHARED_LIBS+=	kik	12.0 # 16.0
 SHARED_LIBS+=	mkf	15.0 # 17.0
-SHARED_LIBS+=	mlterm_core	1.0
 
 CATEGORIES=	x11
 
@@ -35,6 +35,7 @@ FAKE_FLAGS=	INSTALL_DATA="${INSTALL_DATA}" \
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.65
 CONFIGURE_ARGS=	--disable-canna \
+		--disable-dl-ctl \
 		--disable-fcitx \
 		--disable-ibus \
 		--disable-ind \
@@ -49,8 +50,7 @@ CONFIGURE_ARGS=	--disable-canna \
 		--with-tools=mlclient,mlconfig,mlcc,mlterm-menu,mlimgloader,mlfc
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
-		LIBmkf_VERSION=${LIBmkf_VERSION} \
-		LIBmlterm_core_VERSION=${LIBmlterm_core_VERSION}
+		LIBmkf_VERSION=${LIBmkf_VERSION}
 
 NO_TEST=	Yes
 
