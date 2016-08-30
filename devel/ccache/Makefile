@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2016/07/30 21:08:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/08/30 16:58:45 sthen Exp $
 
 COMMENT =	compiler cache
 
-DISTNAME =	ccache-3.2.7
+DISTNAME =	ccache-3.3
 CATEGORIES =	devel
 
 # The ccache(1) manual page causes ERRORs with mandoc(1),

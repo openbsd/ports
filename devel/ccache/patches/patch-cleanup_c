@@ -1,13 +1,13 @@
-$OpenBSD: patch-cleanup_c,v 1.1 2011/06/22 09:20:02 sthen Exp $
---- cleanup.c.orig	Sun May 29 16:46:03 2011
-+++ cleanup.c	Tue Jun 21 22:17:02 2011
-@@ -17,6 +17,9 @@
-  * Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-  */
+$OpenBSD: patch-cleanup_c,v 1.2 2016/08/30 16:58:45 sthen Exp $
+--- cleanup.c.orig	Sat Aug 27 15:57:18 2016
++++ cleanup.c	Tue Aug 30 17:56:47 2016
+@@ -15,6 +15,9 @@
+ // this program; if not, write to the Free Software Foundation, Inc., 51
+ // Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  
 +#include <sys/types.h>
 +#include <sys/stat.h>
 +
  #include "ccache.h"
  
- /*
+ static struct files {
