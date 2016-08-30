@@ -1,18 +1,12 @@
-$OpenBSD: patch-libdwarf_Makefile_in,v 1.1.1.1 2016/03/26 12:53:31 ajacoutot Exp $
---- libdwarf/Makefile.in.orig	Sat Mar 26 13:42:10 2016
-+++ libdwarf/Makefile.in	Sat Mar 26 13:43:05 2016
-@@ -123,12 +123,12 @@ OBJS= dwarf_abbrev.o \
-         pro_weaks.o
-         
- 
--all: @build_shared@ @build_nonshared@
-+all: libdwarf.so.${LIBdwarf_VERSION} @build_nonshared@
- 
- libdwarf.a: dwarf_names.h dwarf_names.c  $(OBJS) dwarf_names.o
- 	$(AR) $(ARFLAGS) $@ $(OBJS)  dwarf_names.o > ar-output-temp
- 
--libdwarf.so: dwarf_names.h dwarf_names.c $(OBJS) dwarf_names.o
-+libdwarf.so.${LIBdwarf_VERSION}: dwarf_names.h dwarf_names.c $(OBJS) dwarf_names.o
- 	$(CC) $(CFLAGS) -shared $(OBJS)  dwarf_names.o $(dwfzlib) -o $@
- 
- none:
+$OpenBSD: patch-libdwarf_Makefile_in,v 1.2 2016/08/30 15:11:20 jasper Exp $
+--- libdwarf/Makefile.in.orig	Wed Jun  8 17:26:52 2016
++++ libdwarf/Makefile.in	Thu Aug 25 21:19:00 2016
+@@ -54,7 +54,7 @@ INCLUDES =	-I. -I$(srcdir)
+ dwfpic =        @dwfpic@
+ dwfwall =       @dwfwall@
+ dwfzlib =       @dwfzlib@
+-SONAME =        libdwarf.so.1
++SONAME =        libdwarf.so.${LIBdwarf_VERSION}
+ CFLAGS =	$(PREINCS) @CPPFLAGS@ @CFLAGS@ $(INCLUDES) $(dwfpic) $(dwfwall)  $(POSTINCS)
+ LDFLAGS =	$(PRELIBS) @LDFLAGS@ $(POSTLIBS)
+ HOSTCFLAGS =	$(CFLAGS)
