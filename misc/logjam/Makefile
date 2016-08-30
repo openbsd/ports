@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2015/06/04 14:46:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2016/08/30 10:42:22 jasper Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
+REVISION =	0
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
@@ -39,7 +40,6 @@ CONFIGURE_ARGS =	--with-libsoup \
 			--without-librsvg \
 			--without-gtkspell \
 			--without-gtkhtml314 \
-			--without-xmms \
 			--without-banshee
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
