@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/10 21:44:02 sthen Exp $
-include/X11/qt4/
+@comment $OpenBSD: PLIST,v 1.5 2016/08/30 15:56:09 landry Exp $
 include/X11/qt4/Qsci/
 include/X11/qt4/Qsci/qsciabstractapis.h
 include/X11/qt4/Qsci/qsciapis.h
@@ -8,9 +7,11 @@ include/X11/qt4/Qsci/qscicommandset.h
 include/X11/qt4/Qsci/qscidocument.h
 include/X11/qt4/Qsci/qsciglobal.h
 include/X11/qt4/Qsci/qscilexer.h
+include/X11/qt4/Qsci/qscilexeravs.h
 include/X11/qt4/Qsci/qscilexerbash.h
 include/X11/qt4/Qsci/qscilexerbatch.h
 include/X11/qt4/Qsci/qscilexercmake.h
+include/X11/qt4/Qsci/qscilexercoffeescript.h
 include/X11/qt4/Qsci/qscilexercpp.h
 include/X11/qt4/Qsci/qscilexercsharp.h
 include/X11/qt4/Qsci/qscilexercss.h
@@ -29,6 +30,7 @@ include/X11/qt4/Qsci/qscilexermatlab.h
 include/X11/qt4/Qsci/qscilexeroctave.h
 include/X11/qt4/Qsci/qscilexerpascal.h
 include/X11/qt4/Qsci/qscilexerperl.h
+include/X11/qt4/Qsci/qscilexerpo.h
 include/X11/qt4/Qsci/qscilexerpostscript.h
 include/X11/qt4/Qsci/qscilexerpov.h
 include/X11/qt4/Qsci/qscilexerproperties.h
@@ -49,7 +51,7 @@ include/X11/qt4/Qsci/qsciscintillabase.h
 include/X11/qt4/Qsci/qscistyle.h
 include/X11/qt4/Qsci/qscistyledtext.h
 @lib lib/libqscintilla2.so.${LIBqscintilla2_VERSION}
-lib/qt4/
+lib/qt4/mkspecs/features/qscintilla2.prf
 lib/qt4/qsci/
 lib/qt4/qsci/api/
 lib/qt4/qsci/api/python/
@@ -60,10 +62,10 @@ lib/qt4/qsci/api/python/Python-2.7.api
 lib/qt4/qsci/api/python/Python-3.1.api
 lib/qt4/qsci/api/python/Python-3.2.api
 lib/qt4/qsci/api/python/Python-3.3.api
-lib/qt4/translations/
+lib/qt4/qsci/api/python/Python-3.4.api
+lib/qt4/qsci/api/python/Python-3.5.api
 lib/qt4/translations/qscintilla_cs.qm
 lib/qt4/translations/qscintilla_de.qm
 lib/qt4/translations/qscintilla_es.qm
 lib/qt4/translations/qscintilla_fr.qm
 lib/qt4/translations/qscintilla_pt_br.qm
-lib/qt4/translations/qscintilla_ru.qm

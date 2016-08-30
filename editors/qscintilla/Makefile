@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2016/08/30 15:56:09 landry Exp $
 
 COMMENT =	Qt4 port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.8
-DISTNAME =	QScintilla-gpl-${VERSION}
+VERSION =	2.9.3
+DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS =	qscintilla2 4.0
+SHARED_LIBS =	qscintilla2 5.0
 
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
