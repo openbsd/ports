@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.23 2015/03/27 08:16:24 ajacoutot Exp $
+# $OpenBSD: xfce4.port.mk,v 1.24 2016/08/30 13:44:33 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -43,7 +43,7 @@ DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
 PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
 
 MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
-MODXFCE_WANTLIB=	xfce4panel-1.0
+MODXFCE_WANTLIB?=	xfce4panel-1.0
 MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
