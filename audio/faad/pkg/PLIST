@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/03/19 20:25:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/08/30 10:19:51 jasper Exp $
 @conflict playfair-*
 @pkgpath audio/faad
 @pkgpath audio/faad,no_xmms
+@pkgpath audio/faad,-main
+@pkgpath audio/faad,-xmms
 @bin bin/faad
 include/faad.h
 include/mp4ff.h

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-xmms,v 1.4 2013/12/15 19:50:44 naddy Exp $
-@conflict faad-xmms-*
-@comment lib/xmms/
-@comment lib/xmms/Input/
-@comment lib/xmms/Input/libmp4.a
-@comment lib/xmms/Input/libmp4.la
-lib/xmms/Input/libmp4.so

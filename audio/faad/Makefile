@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.57 2015/06/10 21:53:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/08/30 10:19:51 jasper Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
-COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
-COMMENT-xmms=	XMMS input plugin for MP4/M4A/AAC files
+COMMENT=	MPEG-2 and MPEG-4 AAC decoder
 
 V=		2.7
 DISTNAME=	faad2-${V}
-PKGNAME-main=	faad-${V}
-PKGNAME-xmms=	xmms-faad-${V}
-REVISION-main=	0
-REVISION-xmms=	2
+PKGNAME=	faad-${V}
+REVISION=	1
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 EXTRACT_SUFX=	.tar.bz2
@@ -25,9 +22,7 @@ HOMEPAGE=	http://www.audiocoding.com/
 PERMIT_PACKAGE_CDROM=	Patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main=	c m
-WANTLIB-xmms=	X11 Xau Xdmcp Xext Xi faad gdk glib gmodule gtk m mp4ff \
-		pthread pthread-stubs xcb xmms>=3 ${MODGETTEXT_WANTLIB}
+WANTLIB=	c m
 
 MODULES=	devel/gettext
 # bootstrap checks for libtoolize
@@ -35,32 +30,12 @@ BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
-LIB_DEPENDS-main=	# empty
-RUN_DEPENDS-main=	# empty
-
-LIB_DEPENDS-xmms=	${BUILD_PKGPATH} \
-			${MODGETTEXT_LIB_DEPENDS} \
-			audio/xmms
-RUN_DEPENDS-xmms=	${MODGETTEXT_RUN_DEPENDS}
-
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.9
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-PSEUDO_FLAVORS=	no_xmms
-FLAVOR?= no_xmms
-
-MULTI_PACKAGES=-main -xmms
-
-.include <bsd.port.arch.mk>
-
-.if ${BUILD_PACKAGES:M-xmms}
-BUILD_DEPENDS+=	audio/id3lib
-CONFIGURE_ARGS+= --with-xmms
-.endif
 
 post-extract:
 	@mv ${WRKSRC}/frontend/faad.man ${WRKSRC}/frontend/faad.1
