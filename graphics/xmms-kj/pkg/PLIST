@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:12 espie Exp $
-lib/xmms/
-lib/xmms/Visualization/
-lib/xmms/Visualization/libkjofol.so
-share/xmms/
-share/xmms/kjofol/
-share/xmms/kjofol/default.zip

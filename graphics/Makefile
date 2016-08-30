@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.418 2016/08/26 10:17:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.419 2016/08/30 10:12:14 jasper Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -271,7 +271,6 @@
      SUBDIR += xbmbrowser
      SUBDIR += xfig
      SUBDIR += xmedcon
-     SUBDIR += xmms-kj
      SUBDIR += xoris
      SUBDIR += xpaint
      SUBDIR += xsane
