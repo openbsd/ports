@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.23 2016/07/31 21:30:06 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.24 2016/08/31 22:59:53 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -487,7 +487,6 @@ share/mysql-test/include/query_cache_partitions.inc
 share/mysql-test/include/query_cache_sql_prepare.inc
 share/mysql-test/include/read_many_rows.inc
 share/mysql-test/include/relocate_binlogs.inc
-share/mysql-test/include/report-features.test
 share/mysql-test/include/restart_mysqld.inc
 share/mysql-test/include/restart_slave_sql.inc
 share/mysql-test/include/rowid_order.inc
@@ -736,6 +735,7 @@ share/mysql-test/plugin/connect/connect/r/xml_html.result
 share/mysql-test/plugin/connect/connect/r/xml_mdev5261.result
 share/mysql-test/plugin/connect/connect/r/xml_mult.result
 share/mysql-test/plugin/connect/connect/std_data/
+share/mysql-test/plugin/connect/connect/std_data/JdbcMariaDB.jar
 share/mysql-test/plugin/connect/connect/std_data/Testbal.dat
 share/mysql-test/plugin/connect/connect/std_data/beers.xml
 share/mysql-test/plugin/connect/connect/std_data/bib0.json
@@ -1988,6 +1988,7 @@ share/mysql-test/r/myisam-system.result
 share/mysql-test/r/myisam.result
 share/mysql-test/r/myisam_crash_before_flush_keys.result
 share/mysql-test/r/myisam_debug.result
+share/mysql-test/r/myisam_enable_keys-10506.result
 share/mysql-test/r/myisam_explain_non_select_all.result
 share/mysql-test/r/myisam_icp.result
 share/mysql-test/r/myisam_icp_notembedded.result
@@ -2428,6 +2429,7 @@ share/mysql-test/std_data/bug16266.000001
 share/mysql-test/std_data/bug19371.MYD
 share/mysql-test/std_data/bug19371.MYI
 share/mysql-test/std_data/bug19371.frm
+share/mysql-test/std_data/bug20683959loaddata.txt
 share/mysql-test/std_data/bug30435_10k_items.txt
 share/mysql-test/std_data/bug30435_5k.txt
 share/mysql-test/std_data/bug33029-slave-relay-bin.000001
@@ -2755,6 +2757,7 @@ share/mysql-test/suite/binlog/r/binlog_checksum.result
 share/mysql-test/suite/binlog/r/binlog_commit_wait.result
 share/mysql-test/suite/binlog/r/binlog_database.result
 share/mysql-test/suite/binlog/r/binlog_delete_and_flush_index.result
+share/mysql-test/suite/binlog/r/binlog_dmls_on_tmp_tables_readonly.result
 share/mysql-test/suite/binlog/r/binlog_drop_if_exists.result
 share/mysql-test/suite/binlog/r/binlog_format_switch_in_tmp_table.result
 share/mysql-test/suite/binlog/r/binlog_grant.result
@@ -2845,6 +2848,7 @@ share/mysql-test/suite/binlog/t/binlog_commit_wait.test
 share/mysql-test/suite/binlog/t/binlog_database.test
 share/mysql-test/suite/binlog/t/binlog_delete_and_flush_index-master.opt
 share/mysql-test/suite/binlog/t/binlog_delete_and_flush_index.test
+share/mysql-test/suite/binlog/t/binlog_dmls_on_tmp_tables_readonly.test
 share/mysql-test/suite/binlog/t/binlog_drop_if_exists.test
 share/mysql-test/suite/binlog/t/binlog_format_switch_in_tmp_table.test
 share/mysql-test/suite/binlog/t/binlog_grant.test
@@ -4370,6 +4374,7 @@ share/mysql-test/suite/innodb/r/innodb-truncate.result
 share/mysql-test/suite/innodb/r/innodb-ucs2.result
 share/mysql-test/suite/innodb/r/innodb-update-insert.result
 share/mysql-test/suite/innodb/r/innodb-virtual-columns.result
+share/mysql-test/suite/innodb/r/innodb-wl5522,xtradb.rdiff
 share/mysql-test/suite/innodb/r/innodb-wl5522-1.result
 share/mysql-test/suite/innodb/r/innodb-wl5522-debug-zip.result
 share/mysql-test/suite/innodb/r/innodb-wl5522-debug.result
@@ -9367,6 +9372,7 @@ share/mysql-test/suite/vcol/inc/vcol_unsupported_storage_engines.inc
 share/mysql-test/suite/vcol/inc/vcol_view.inc
 share/mysql-test/suite/vcol/r/
 share/mysql-test/suite/vcol/r/alter_inplace-9045.result
+share/mysql-test/suite/vcol/r/charsets.result
 share/mysql-test/suite/vcol/r/innodb_autoinc_vcol.result
 share/mysql-test/suite/vcol/r/load_data.result
 share/mysql-test/suite/vcol/r/not_supported.result
@@ -9403,6 +9409,7 @@ share/mysql-test/suite/vcol/r/vcol_view_innodb.result
 share/mysql-test/suite/vcol/r/vcol_view_myisam.result
 share/mysql-test/suite/vcol/t/
 share/mysql-test/suite/vcol/t/alter_inplace-9045.test
+share/mysql-test/suite/vcol/t/charsets.test
 share/mysql-test/suite/vcol/t/innodb_autoinc_vcol.test
 share/mysql-test/suite/vcol/t/load_data.test
 share/mysql-test/suite/vcol/t/not_supported.test
@@ -9898,6 +9905,7 @@ share/mysql-test/t/myisam.test
 share/mysql-test/t/myisam_crash_before_flush_keys-master.opt
 share/mysql-test/t/myisam_crash_before_flush_keys.test
 share/mysql-test/t/myisam_debug.test
+share/mysql-test/t/myisam_enable_keys-10506.test
 share/mysql-test/t/myisam_explain_non_select_all.test
 share/mysql-test/t/myisam_icp.test
 share/mysql-test/t/myisam_icp_notembedded.test
@@ -10371,4 +10379,5 @@ share/mysql-test/t/xa.test
 share/mysql-test/t/xa_binlog.test
 share/mysql-test/t/xml.test
 share/mysql-test/t/xtradb_mrr.test
+share/mysql-test/unstable-tests
 share/mysql-test/valgrind.supp
