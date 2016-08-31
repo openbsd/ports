@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/04/14 18:10:27 florian Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/08/31 14:25:04 florian Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
@@ -7,17 +7,32 @@
 @newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
 @bin bin/pdns_control
-@bin bin/pdnssec
+@bin bin/pdnsutil
 @bin bin/zone2json
 @bin bin/zone2ldap
 @bin bin/zone2sql
 lib/pdns/
 lib/pdns/libbindbackend.so
-lib/pdns/libgeobackend.so
 lib/pdns/libgsqlite3backend.so
+@man man/man1/calidns.1
+@man man/man1/dnsbulktest.1
+@man man/man1/dnsgram.1
+@man man/man1/dnsreplay.1
+@man man/man1/dnsscan.1
+@man man/man1/dnsscope.1
+@man man/man1/dnstcpbench.1
+@man man/man1/dnswasher.1
+@man man/man1/dumresp.1
+@man man/man1/ixplore.1
+@man man/man1/nproxy.1
+@man man/man1/nsec3dig.1
 @man man/man1/pdns_control.1
+@man man/man1/pdns_notify.1
 @man man/man1/pdns_server.1
-@man man/man1/pdnssec.1
+@man man/man1/pdnsutil.1
+@man man/man1/saxfr.1
+@man man/man1/sdig.1
+@man man/man1/zone2json.1
 @man man/man1/zone2ldap.1
 @man man/man1/zone2sql.1
 @bin sbin/pdns_server

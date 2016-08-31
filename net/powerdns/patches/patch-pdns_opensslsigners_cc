@@ -1,0 +1,14 @@
+$OpenBSD: patch-pdns_opensslsigners_cc,v 1.1 2016/08/31 14:25:04 florian Exp $
+Fix build with LibreSSL, for which OPENSSL_VERSION_NUMBER is irrelevant
+commit 115f658ee2000a4cdcc13e999da50b3634c6a907
+--- pdns/opensslsigners.cc.orig	Fri Jul 29 16:32:32 2016
++++ pdns/opensslsigners.cc	Tue Aug 16 14:11:23 2016
+@@ -12,7 +12,7 @@
+ #include "opensslsigners.hh"
+ #include "dnssecinfra.hh"
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL
++#if (OPENSSL_VERSION_NUMBER < 0x1010000fL || defined LIBRESSL_VERSION_NUMBER)
+ /* OpenSSL < 1.1.0 needs support for threading/locking in the calling application. */
+ static pthread_mutex_t *openssllocks;
+ 
