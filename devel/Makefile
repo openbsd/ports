@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1526 2016/08/30 16:37:21 awolk Exp $
+# $OpenBSD: Makefile,v 1.1527 2016/08/31 15:27:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -76,6 +76,7 @@
      SUBDIR += cryptopp
      SUBDIR += cscope
      SUBDIR += csmith
+     SUBDIR += ctftools
      SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
@@ -110,6 +111,7 @@
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
+     SUBDIR += elftoolchain
      SUBDIR += etl
      SUBDIR += fasm
      SUBDIR += ffcall
