@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/11/22 19:51:28 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/08/31 16:03:19 edd Exp $
 lib/python${MODPY_VERSION}/site-packages/pysqlite-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.py
@@ -27,5 +27,5 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.pyc
-share/doc/py-sqlite2/
-share/doc/py-sqlite2/sqlite3.txt
+share/doc/${MODPY_PY_PREFIX}sqlite2/
+share/doc/${MODPY_PY_PREFIX}sqlite2/sqlite3.txt
