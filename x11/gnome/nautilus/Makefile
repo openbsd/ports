@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.165 2016/07/30 14:24:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2016/08/31 11:08:05 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.20.2
+GNOME_VERSION=		3.20.3
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
