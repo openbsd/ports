@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_roundtrip_test_sh,v 1.1.1.1 2016/08/31 14:20:57 pascal Exp $
+--- tests/roundtrip_test.sh.orig	Wed Sep 23 15:50:25 2015
++++ tests/roundtrip_test.sh	Wed Sep 23 15:50:29 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Roundtrip test for the brotli command-line tool.
+ 

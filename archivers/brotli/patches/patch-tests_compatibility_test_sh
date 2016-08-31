@@ -1,0 +1,9 @@
+$OpenBSD: patch-tests_compatibility_test_sh,v 1.1.1.1 2016/08/31 14:20:57 pascal Exp $
+--- tests/compatibility_test.sh.orig	Wed Sep 23 15:49:29 2015
++++ tests/compatibility_test.sh	Wed Sep 23 15:49:33 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Test that the brotli command-line tool can decompress old brotli-compressed
+ # files.
