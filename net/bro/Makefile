@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/27 12:58:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/08/31 07:58:01 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -28,7 +28,8 @@ MODPY_ADJ_FILES=	aux/broctl/bin/broctl.in \
 			aux/btest/btest \
 			aux/broctl/aux/trace-summary/trace-summary
 
-BUILD_DEPENDS=		devel/cmake \
+BUILD_DEPENDS=		devel/bison \
+			devel/cmake \
 			devel/swig
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
