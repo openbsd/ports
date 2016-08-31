@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/31 08:56:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/31 15:15:31 ajacoutot Exp $
+
 COMMENT =	time series data visualization and graphing software
 
 DISTNAME =	facette-0.3.1pre0
