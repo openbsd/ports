@@ -1,9 +1,9 @@
-$OpenBSD: patch-gettext-tools_tests_lang-c++,v 1.1 2015/07/19 23:46:08 naddy Exp $
+$OpenBSD: patch-gettext-tools_tests_lang-c++,v 1.2 2016/08/31 13:53:11 naddy Exp $
 
 Use pre-installed libasprintf.
 
---- gettext-tools/tests/lang-c++.orig	Tue Dec  9 09:43:46 2014
-+++ gettext-tools/tests/lang-c++	Sun Jul 19 02:41:13 2015
+--- gettext-tools/tests/lang-c++.orig	Fri Jun 10 00:56:00 2016
++++ gettext-tools/tests/lang-c++	Wed Aug 31 13:02:49 2016
 @@ -69,7 +69,7 @@ ${CXX} -I../.. -I../../../gettext-runtime/libasprintf 
  : ${CONFIG_SHELL=${SHELL-/bin/sh}}
  ${CONFIG_SHELL} "$top_builddir"/libtool --quiet --tag=CXX --mode=link \
@@ -11,5 +11,5 @@ Use pre-installed libasprintf.
 -                ../../../gettext-runtime/libasprintf/libasprintf.la \
 +                -lasprintf \
                  ../../gnulib-lib/libgettextlib.la ${LTLIBINTL} \
- 		|| exit 1
+ 		|| Exit 1
  

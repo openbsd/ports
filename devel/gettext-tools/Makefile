@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/16 12:06:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/08/31 13:53:11 naddy Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
-VERSION=	0.19.7
+VERSION=	0.19.8.1
 DISTNAME=	gettext-${VERSION}
 PKGNAME=	gettext-tools-${VERSION}
-REVISION=	1
-SHARED_LIBS +=  gettextlib           7.0      # unknown
-SHARED_LIBS +=  gettextsrc           6.0      # unknown
-SHARED_LIBS +=  gettextpo            8.0      # 5.3
+SHARED_LIBS +=  gettextlib           7.1      # unknown
+SHARED_LIBS +=  gettextsrc           6.1      # unknown
+SHARED_LIBS +=  gettextpo            8.1      # 5.4
 
 SUBST_VARS=	VERSION
 
@@ -44,8 +43,6 @@ CONFIGURE_ARGS=	--disable-csharp \
 		--with-included-libxml \
 		--without-emacs \
 		--without-git
-
-CONFIGURE_ENV +=	gl_cv_have_weak=yes
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKDIST}/build-aux
 

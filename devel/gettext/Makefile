@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2016/04/05 19:05:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2016/08/31 13:53:11 naddy Exp $
 
 COMMENT=	GNU gettext runtime libraries and programs
 
-DISTNAME=	gettext-0.19.7
-SHARED_LIBS +=  intl                 6.0      # 9.4
+DISTNAME=	gettext-0.19.8.1
+SHARED_LIBS +=  intl                 6.0      # 9.5
 SHARED_LIBS +=  asprintf             1.1      # unknown
 
 CATEGORIES=	devel
@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--disable-csharp \
 		--disable-java \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-included-gettext
-
-CONFIGURE_ENV +=	gl_cv_have_weak=yes
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKDIST}/build-aux
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/04/16 12:06:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/08/31 13:53:11 naddy Exp $
 bin/autopoint
 bin/gettextize
 @bin bin/msgattrib
@@ -1783,16 +1783,16 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/po-compat.el
 share/emacs/site-lisp/po-mode.el
 share/emacs/site-lisp/start-po.el
-share/gettext-${VERSION}/
-share/gettext-${VERSION}/its/
-share/gettext-${VERSION}/its/appdata.its
-share/gettext-${VERSION}/its/appdata.loc
-share/gettext-${VERSION}/its/glade.loc
-share/gettext-${VERSION}/its/glade1.its
-share/gettext-${VERSION}/its/glade2.its
-share/gettext-${VERSION}/its/gsettings.its
-share/gettext-${VERSION}/its/gsettings.loc
-share/gettext-${VERSION}/its/gtkbuilder.its
+share/gettext-0.19.8/
+share/gettext-0.19.8/its/
+share/gettext-0.19.8/its/appdata.its
+share/gettext-0.19.8/its/appdata.loc
+share/gettext-0.19.8/its/glade.loc
+share/gettext-0.19.8/its/glade1.its
+share/gettext-0.19.8/its/glade2.its
+share/gettext-0.19.8/its/gsettings.its
+share/gettext-0.19.8/its/gsettings.loc
+share/gettext-0.19.8/its/gtkbuilder.its
 share/gettext/archive.dir.tar.xz
 share/gettext/config.rpath
 share/gettext/gettext.h
