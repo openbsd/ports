@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/08/31 16:18:58 pascal Exp $
+@bin bin/CEGUISampleFramework-0.8
 include/cegui-0/
 include/cegui-0/CEGUI/
 include/cegui-0/CEGUI/Affector.h
@@ -64,6 +65,9 @@ include/cegui-0/CEGUI/ImageCodecModules/
 include/cegui-0/CEGUI/ImageCodecModules/FreeImage/
 include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodec.h
 include/cegui-0/CEGUI/ImageCodecModules/FreeImage/ImageCodecModule.h
+include/cegui-0/CEGUI/ImageCodecModules/SDL2/
+include/cegui-0/CEGUI/ImageCodecModules/SDL2/ImageCodec.h
+include/cegui-0/CEGUI/ImageCodecModules/SDL2/ImageCodecModule.h
 include/cegui-0/CEGUI/ImageFactory.h
 include/cegui-0/CEGUI/ImageManager.h
 include/cegui-0/CEGUI/InjectedInputReceiver.h
@@ -311,9 +315,27 @@ include/cegui-0/CEGUI/widgets/Tree.h
 include/cegui-0/CEGUI/widgets/TreeItem.h
 include/cegui-0/CEGUI/widgets/VerticalLayoutContainer.h
 lib/cegui-0.8/
+lib/cegui-0.8/libCEGUICommonDialogsDemo.so
 lib/cegui-0.8/libCEGUICoreWindowRendererSet.so
+lib/cegui-0.8/libCEGUIDemo6.so
+lib/cegui-0.8/libCEGUIDragDropDemo.so
+lib/cegui-0.8/libCEGUIEditboxValidationDemo.so
+lib/cegui-0.8/libCEGUIEffectsDemo.so
 @lib lib/cegui-0.8/libCEGUIExpatParser.so.${LIBCEGUIExpatParser_VERSION}
+lib/cegui-0.8/libCEGUIFontDemo.so
 @lib lib/cegui-0.8/libCEGUIFreeImageImageCodec.so.${LIBCEGUIFreeImageImageCodec_VERSION}
+lib/cegui-0.8/libCEGUIGameMenuDemo.so
+lib/cegui-0.8/libCEGUIHUDDemo.so
+lib/cegui-0.8/libCEGUIHelloWorldDemo.so
+lib/cegui-0.8/libCEGUIInventoryDemo.so
+lib/cegui-0.8/libCEGUILookNFeelOverviewDemo.so
+lib/cegui-0.8/libCEGUIMinesweeper.so
+lib/cegui-0.8/libCEGUISDL2ImageCodec.so
+lib/cegui-0.8/libCEGUIScrollablePaneDemo.so
+lib/cegui-0.8/libCEGUITabControlDemo.so
+lib/cegui-0.8/libCEGUITextDemo.so
+lib/cegui-0.8/libCEGUITreeDemo.so
+lib/cegui-0.8/libCEGUIWidgetDemo.so
 @lib lib/libCEGUIBase-0.so.${LIBCEGUIBase-0_VERSION}
 @lib lib/libCEGUICommonDialogs-0.so.${LIBCEGUICommonDialogs-0_VERSION}
 @lib lib/libCEGUIIrrlichtRenderer-0.so.${LIBCEGUIIrrlichtRenderer-0_VERSION}
@@ -407,18 +429,19 @@ share/cegui-0/layouts/SampleBrowserLoadScreen.layout
 share/cegui-0/layouts/TabControlDemo.layout
 share/cegui-0/layouts/TabPage.layout
 share/cegui-0/layouts/TabPage1.layout
-share/cegui-0/layouts/TabPage1.layout.orig
 share/cegui-0/layouts/TabPage2.layout
+share/cegui-0/layouts/TaharezLookOverview.layout
 share/cegui-0/layouts/TextDemo.layout
 share/cegui-0/layouts/TreeDemoTaharez.layout
 share/cegui-0/layouts/VanillaConsole.layout
+share/cegui-0/layouts/VanillaLookOverview.layout
 share/cegui-0/layouts/VanillaWindows.layout
+share/cegui-0/layouts/application_templates.layout
 share/cegui-0/looknfeel/
 share/cegui-0/looknfeel/AlfiskoSkin.looknfeel
 share/cegui-0/looknfeel/GameMenu.looknfeel
 share/cegui-0/looknfeel/Generic.looknfeel
 share/cegui-0/looknfeel/HUDDemo.looknfeel
-share/cegui-0/looknfeel/Inherited.looknfeel
 share/cegui-0/looknfeel/InventoryComponents.looknfeel
 share/cegui-0/looknfeel/OgreTray.looknfeel
 share/cegui-0/looknfeel/SampleBrowser.looknfeel
@@ -428,6 +451,8 @@ share/cegui-0/looknfeel/VanillaCommonDialogs.looknfeel
 share/cegui-0/looknfeel/WindowsLook.looknfeel
 share/cegui-0/lua_scripts/
 share/cegui-0/lua_scripts/demo8.lua
+share/cegui-0/samples/
+share/cegui-0/samples/samples.xml
 share/cegui-0/schemes/
 share/cegui-0/schemes/AlfiskoSkin.scheme
 share/cegui-0/schemes/GameMenu.scheme
@@ -436,9 +461,7 @@ share/cegui-0/schemes/HUDDemo.scheme
 share/cegui-0/schemes/OgreTray.scheme
 share/cegui-0/schemes/SampleBrowser.scheme
 share/cegui-0/schemes/TaharezLook.scheme
-share/cegui-0/schemes/TaharezLook.scheme.orig
 share/cegui-0/schemes/VanillaCommonDialogs.scheme
-share/cegui-0/schemes/VanillaCommonDialogs.scheme.orig
 share/cegui-0/schemes/VanillaSkin.scheme
 share/cegui-0/schemes/WindowsLook.scheme
 share/cegui-0/xml_schemas/

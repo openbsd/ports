@@ -1,6 +1,6 @@
-$OpenBSD: patch-cegui_src_DynamicModule_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
---- cegui/src/DynamicModule.cpp.orig.port	Mon Jul  7 09:06:18 2014
-+++ cegui/src/DynamicModule.cpp	Mon Jul 14 09:53:20 2014
+$OpenBSD: patch-cegui_src_DynamicModule_cpp,v 1.2 2016/08/31 16:18:58 pascal Exp $
+--- cegui/src/DynamicModule.cpp.orig.port	Sun Feb 28 00:48:50 2016
++++ cegui/src/DynamicModule.cpp	Fri Apr  1 11:39:44 2016
 @@ -42,7 +42,7 @@
      typedef HMODULE DYNLIB_HANDLE;
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-cegui_src_DynamicModule_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal
  #   include "dlfcn.h"
  #   define DYNLIB_LOAD( a ) dlopen( (a).c_str(), RTLD_LAZY )
  #   define DYNLIB_GETSYM( a, b ) dlsym( a, (b).c_str() )
-@@ -198,7 +198,7 @@ DynamicModule::DynamicModule(const String& name) :
+@@ -200,7 +200,7 @@ DynamicModule::DynamicModule(const String& name) :
  
      d_pimpl->d_handle = DynLibLoad(d_pimpl->d_moduleName);
  

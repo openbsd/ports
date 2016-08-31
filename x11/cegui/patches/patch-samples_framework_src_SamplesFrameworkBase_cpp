@@ -1,6 +1,6 @@
-$OpenBSD: patch-samples_framework_src_SamplesFrameworkBase_cpp,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
---- samples_framework/src/SamplesFrameworkBase.cpp.orig.port	Mon Jul  7 09:06:18 2014
-+++ samples_framework/src/SamplesFrameworkBase.cpp	Sat Jul 12 22:00:56 2014
+$OpenBSD: patch-samples_framework_src_SamplesFrameworkBase_cpp,v 1.2 2016/08/31 16:18:58 pascal Exp $
+--- samples_framework/src/SamplesFrameworkBase.cpp.orig.port	Sun Feb 28 00:48:50 2016
++++ samples_framework/src/SamplesFrameworkBase.cpp	Fri Apr  1 11:39:44 2016
 @@ -34,7 +34,7 @@
  // includes for renderer selector classes
  #if defined( __WIN32__ ) || defined( _WIN32 )
@@ -10,19 +10,12 @@ $OpenBSD: patch-samples_framework_src_SamplesFrameworkBase_cpp,v 1.1.1.1 2014/08
  #   ifdef CEGUI_SAMPLES_USE_GTK2
  #       include "GTK2CEGuiRendererSelector.h"
  #   else
-@@ -168,7 +168,7 @@ bool SamplesFrameworkBase::runApplication()
+@@ -180,7 +180,7 @@ bool SamplesFrameworkBase::initialise
+     d_rendererSelector->setRendererAvailability(Direct3D11GuiRendererType);
  #endif
- 
  
 -#elif defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__HAIKU__)
 +#elif defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__HAIKU__)
      // decide which method to use for renderer selection
  #   ifdef CEGUI_SAMPLES_USE_GTK2
          d_rendererSelector = new GTK2CEGuiRendererSelector();
-@@ -323,4 +323,4 @@ void SamplesFrameworkBase::setApplicationWindowSize(in
- {
-     d_appWindowWidth = width;
-     d_appWindowHeight = height;
--}
-\ No newline at end of file
-+}

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/31 16:18:58 pascal Exp $
 
 COMMENT =		widgets library for graphics engines
 
-V =			0.8.4
+V =			0.8.5
 DISTNAME =		cegui-${V}
-REVISION =		2
 
 PATCHORIG =		.orig.port
 
@@ -25,8 +24,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU ICE Irrlicht OgreMain SM X11 Xext boost_system-mt
-WANTLIB += boost_thread-mt expat freeimage freetype m pcre pthread
+WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
+WANTLIB += boost_thread-mt c expat freeimage freetype m pcre pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=crayzedsgui/}
 EXTRACT_SUFX =		.tar.bz2
@@ -40,7 +39,9 @@ BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =		x11/ogre \
 			x11/irrlicht \
 			devel/pcre \
-			graphics/glew
+			graphics/glew \
+			devel/sdl2-image \
+			devel/ois
 
 CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DCEGUI_BUILD_XMLPARSER_XERCES=OFF \
