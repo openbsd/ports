@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1527 2016/08/31 15:27:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.1528 2016/08/31 16:17:47 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1194,6 +1194,8 @@
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
+     SUBDIR += py-apipkg
+     SUBDIR += py-apipkg,python3
      SUBDIR += py-appdirs
      SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete
