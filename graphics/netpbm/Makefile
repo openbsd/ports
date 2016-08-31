@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2016/04/26 17:59:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2016/08/31 22:12:43 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.74.02
-SHARED_LIBS=	netpbm	3.0
+DISTNAME=	netpbm-10.75.01
+SHARED_LIBS=	netpbm	3.1
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
@@ -45,7 +45,7 @@ TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
 # cp -v, head -c, mv -T, seq
 pre-test:
 	@for i in cp head mv seq; do \
-		ln -s ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
+		ln -sf ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
 	done
 	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \
 	    ${WRKSRC}/test/Execute-Tests ${WRKSRC}/test/*.test

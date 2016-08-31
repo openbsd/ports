@@ -1,0 +1,30 @@
+$OpenBSD: patch-editor_pnmquantall,v 1.1 2016/08/31 22:12:43 naddy Exp $
+--- editor/pnmquantall.orig	Sun Jun 26 19:15:09 2016
++++ editor/pnmquantall	Wed Aug 31 22:49:55 2016
+@@ -151,6 +151,7 @@ sub makeColorMap($$$$) {
+ }
+ 
+ 
++require File::Copy;
+  
+ sub remapFiles($$$$) {
+     my ($fileNamesR, $colorMapFileName, $ext, $errorR) = @_;
+@@ -169,15 +170,15 @@ sub remapFiles($$$$) {
+             my $pnmremapTermStatus = system($pnmremapCmd);
+ 
+             if ($pnmremapTermStatus != 0) {
+-                $errorR =
++                $$errorR =
+                     "Shell command to quantize '$inFileName'  failed:  " .
+                     "'$pnmremapCmd'";
+             } else {
+                 my $newFileName = $inFileName . $ext;
+ 
+                 unlink($newFileName);
+-                rename($outputFileName, $newFileName)
+-                    or $errorR = "Rename to '$newFileName' failed.";
++                File::Copy::move($outputFileName, $newFileName)
++                    or $$errorR = "Rename to '$newFileName' failed.";
+             }
+         }
+         unlink($outputFileName);  # In case something failed

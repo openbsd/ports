@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_pnmquantall_test,v 1.1 2016/08/31 22:12:43 naddy Exp $
+--- test/pnmquantall.test.orig	Wed Aug 31 22:51:46 2016
++++ test/pnmquantall.test	Wed Aug 31 22:58:02 2016
+@@ -14,4 +14,4 @@ done
+ # Should print 1
+ 
+ pnmcat testimg.red testimg.grn testimg.blu -tb | \
+-    pgmhist -m | awk '$2>0 {s++}; END { print s<=20 }'
++    pgmhist -m | awk '$2>0 {s++}; END { print (s<=20) }'
