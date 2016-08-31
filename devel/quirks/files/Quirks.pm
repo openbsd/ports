@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.416 2016/08/30 11:06:43 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.417 2016/08/31 20:32:56 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -854,6 +854,7 @@ my $obsolete_reason = {
 	'xmmsctrl', => 5,
 	'glib', => 5,
 	'gtk+', => 5,
+	'gnome-user-share', => 6,
 };
 
 # reasons for obsolete packages
