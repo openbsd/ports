@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/08/13 07:40:43 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2016/08/31 08:33:19 landry Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,12 +7,12 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.9.0
-BV =			${V}-20160608
+V =			1.11.0
+BV =			1.11.0-20160819
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
-RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
+#RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
+RUST_HASH =		39b92f95
 SUBST_VARS +=		RUST_HASH
 
 PKGNAME =		rust-${V}
@@ -53,7 +53,8 @@ SUBST_VARS +=		TRIPLE_ARCH
 
 MODULES +=		gcc4 \
 			lang/python
-BUILD_DEPENDS +=	devel/llvm
+BUILD_DEPENDS +=	devel/cmake \
+			devel/llvm
 MODPY_RUNDEP =		No
 
 # rustllvm need c++11
@@ -66,10 +67,9 @@ LIBESTDC_VERSION =	17.0
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
-# 		-Z print-link-args : unhide link call
 #       RUST_LOG helper
 MAKE_ENV =		VERBOSE=1 \
-			RUSTFLAGS="-L ${WRKDIR}/modgcc-libs -Z print-link-args" \
+			RUSTFLAGS="-L ${WRKDIR}/modgcc-libs" \
 			RUST_LOG="${RUST_LOG}"
 
 
@@ -85,6 +85,11 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--llvm-root="${LOCALBASE}" \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
+
+# VERSION and BOOTSTRAP are same version
+.if ${V} == ${BV:C/-[0-9]+$//}
+CONFIGURE_ARGS +=	--enable-local-rebuild
+.endif
 
 CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
@@ -108,7 +113,7 @@ pre-configure:
 #   at build time)
 # - copy bootstrap in stage0 (avoid downloading)
 post-configure:
-.for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
+.for _v in CFG_CURL CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
 	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
 	CFG_GDB_VERSION CFG_ADB
 	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk

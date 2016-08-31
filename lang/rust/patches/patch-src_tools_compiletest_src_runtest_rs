@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_tools_compiletest_src_runtest_rs,v 1.1 2016/08/31 08:33:19 landry Exp $
+use gmake to run-make testsuite
+--- src/tools/compiletest/src/runtest.rs.orig	Tue Aug 16 03:54:35 2016
++++ src/tools/compiletest/src/runtest.rs	Fri Aug 19 06:40:11 2016
+@@ -2043,7 +2043,7 @@ actual:\n\
+         }
+         self.create_dir_racy(&tmpdir);
+ 
+-        let mut cmd = Command::new("make");
++        let mut cmd = Command::new("gmake");
+         cmd.current_dir(&self.testpaths.file)
+            .env("TARGET", &self.config.target)
+            .env("PYTHON", &self.config.docck_python)

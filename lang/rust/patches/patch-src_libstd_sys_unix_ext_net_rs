@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.1 2016/05/29 07:26:46 semarie Exp $
+$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.2 2016/08/31 08:33:19 landry Exp $
 Disable 2 failing tests. Needs more investigation.
---- src/libstd/sys/unix/ext/net.rs.orig	Tue May 24 13:38:32 2016
-+++ src/libstd/sys/unix/ext/net.rs	Tue May 24 13:38:34 2016
-@@ -750,6 +750,7 @@ mod test {
+--- src/libstd/sys/unix/ext/net.rs.orig	Mon Jul  4 20:04:09 2016
++++ src/libstd/sys/unix/ext/net.rs	Tue Jul  5 19:01:38 2016
+@@ -808,6 +808,7 @@ mod test {
      }
  
      #[test]
@@ -10,7 +10,7 @@ Disable 2 failing tests. Needs more investigation.
      fn basic() {
          let dir = tmpdir();
          let socket_path = dir.path().join("sock");
-@@ -874,6 +875,7 @@ mod test {
+@@ -932,6 +933,7 @@ mod test {
      }
  
      #[test]

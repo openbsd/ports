@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.10 2016/05/29 07:26:46 semarie Exp $
-Remove requirement for curl or wget.
+$OpenBSD: patch-configure,v 1.11 2016/08/31 08:33:19 landry Exp $
+Remove requirement for curl.
 The snapshot isn't downloaded but copied by post-configure.
---- configure.orig	Mon May 23 18:29:00 2016
-+++ configure	Tue May 24 06:06:32 2016
-@@ -719,7 +719,7 @@ if [ -n "$CFG_ENABLE_ORBIT" ]; then putvar CFG_ENABLE_
+--- configure.orig	Tue Aug 16 03:54:35 2016
++++ configure	Fri Aug 19 06:40:54 2016
+@@ -726,7 +726,7 @@ if [ -n "$CFG_ENABLE_ORBIT" ]; then putvar CFG_ENABLE_
  
  step_msg "looking for build programs"
  
--probe_need CFG_CURLORWGET  curl wget
-+probe CFG_CURLORWGET  curl wget
+-probe_need CFG_CURL curl
++probe CFG_CURL curl
  if [ -z "$CFG_PYTHON_PROVIDED" ]; then
      probe_need CFG_PYTHON      python2.7 python2 python
  fi

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tools_tidy_src_main_rs,v 1.1 2016/08/31 08:33:19 landry Exp $
+Disable cargo_lock check: it requires the source directory to be a git clone.
+--- src/tools/tidy/src/main.rs.orig	Sun Aug 21 09:03:09 2016
++++ src/tools/tidy/src/main.rs	Sun Aug 21 09:03:37 2016
+@@ -35,7 +35,7 @@ mod style;
+ mod errors;
+ mod features;
+ mod cargo;
+-mod cargo_lock;
++//mod cargo_lock;
+ 
+ fn main() {
+     let path = env::args_os().skip(1).next().expect("need an argument");
+@@ -47,7 +47,7 @@ fn main() {
+     errors::check(&path, &mut bad);
+     cargo::check(&path, &mut bad);
+     features::check(&path, &mut bad);
+-    cargo_lock::check(&path, &mut bad);
++    //cargo_lock::check(&path, &mut bad);
+ 
+     if bad {
+         panic!("some tidy checks failed");

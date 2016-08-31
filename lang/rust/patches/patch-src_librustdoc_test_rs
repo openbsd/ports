@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_librustdoc_test_rs,v 1.2 2016/06/09 04:20:10 semarie Exp $
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.3 2016/08/31 08:33:19 landry Exp $
 fallback to CFG_PREFIX as default sysroot.
---- src/librustdoc/test.rs.orig	Mon May 23 18:29:00 2016
-+++ src/librustdoc/test.rs	Tue Jun  7 17:36:10 2016
-@@ -62,9 +62,16 @@ pub fn run(input: &str,
+--- src/librustdoc/test.rs.orig	Tue Aug 16 03:54:35 2016
++++ src/librustdoc/test.rs	Fri Aug 19 06:40:11 2016
+@@ -63,9 +63,16 @@ pub fn run(input: &str,
      let input_path = PathBuf::from(input);
      let input = config::Input::File(input_path.clone());
  
