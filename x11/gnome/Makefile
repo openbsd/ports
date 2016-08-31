@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.254 2016/04/28 14:17:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.255 2016/08/31 20:31:12 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -106,7 +106,6 @@
      SUBDIR += tracker
      SUBDIR += tweak-tool
      SUBDIR += user-docs
-     SUBDIR += user-share
      SUBDIR += vfs2
      SUBDIR += vinagre
      SUBDIR += vino
