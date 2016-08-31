@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2016/06/14 19:02:06 danj Exp $
+# $OpenBSD: Makefile,v 1.81 2016/08/31 14:21:26 pascal Exp $
 
      SUBDIR =
      SUBDIR += arc
+     SUBDIR += brotli
      SUBDIR += bzip2
      SUBDIR += cabextract
      SUBDIR += deco
