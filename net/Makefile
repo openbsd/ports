@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.982 2016/08/21 09:51:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.983 2016/08/31 12:40:22 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -543,6 +543,7 @@
      SUBDIR += py-impacket
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
+     SUBDIR += py-ipaddress,python3
      SUBDIR += py-irclib
      SUBDIR += py-libcloud
      SUBDIR += py-libpcap
