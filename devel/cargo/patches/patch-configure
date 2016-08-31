@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+$OpenBSD: patch-configure,v 1.2 2016/08/31 08:33:37 landry Exp $
 - found python2.7
 - remove need of curl or wget
---- configure.orig	Sun Jan 24 14:12:38 2016
-+++ configure	Sun Jan 24 14:12:46 2016
-@@ -341,8 +341,7 @@ validate_opt
+--- configure.orig	Mon Jul  4 09:44:08 2016
++++ configure	Sun Aug 21 19:54:03 2016
+@@ -342,8 +342,7 @@ validate_opt
  
  step_msg "looking for build programs"
  

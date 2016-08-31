@@ -1,5 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/30 04:30:53 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/08/31 08:33:37 landry Exp $
 @bin bin/cargo
+@man man/man1/cargo-bench.1
+@man man/man1/cargo-build.1
+@man man/man1/cargo-clean.1
+@man man/man1/cargo-doc.1
+@man man/man1/cargo-init.1
+@man man/man1/cargo-install.1
+@man man/man1/cargo-new.1
+@man man/man1/cargo-owner.1
+@man man/man1/cargo-package.1
+@man man/man1/cargo-publish.1
+@man man/man1/cargo-run.1
+@man man/man1/cargo-search.1
+@man man/man1/cargo-test.1
+@man man/man1/cargo-update.1
 @man man/man1/cargo.1
 @comment share/bash-completion/
 @comment share/bash-completion/completions/
@@ -9,4 +23,6 @@ share/doc/cargo/LICENSE-APACHE
 share/doc/cargo/LICENSE-MIT
 share/doc/cargo/LICENSE-THIRD-PARTY
 share/doc/cargo/README.md
+share/zsh/
+share/zsh/site-functions/
 share/zsh/site-functions/_cargo
