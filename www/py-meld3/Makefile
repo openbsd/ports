@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/31 08:16:19 ajacoutot Exp $
 
 COMMENT =		html/xml templating engine
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		meld3-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		www textproc
 
 HOMEPAGE =		https://github.com/supervisor/meld3
 
-MAINTAINER =		frantisek holop <minusf@obiit.org>
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 
