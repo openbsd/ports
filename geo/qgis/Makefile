@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2016/08/20 20:50:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/08/31 13:13:01 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.16.1
+DISTNAME =	qgis-2.16.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -30,6 +30,8 @@ MODULES =	gcc4 \
 MODGCC4_ARCHS =	i386 # base GCC uses too much RAM
 MODGCC4_LANGS =	c++
 
+USE_WXNEEDED =	Yes
+
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca-ossl \
 		editors/py-qscintilla \
@@ -38,6 +40,7 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 
 
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
+		www/py-requests \
 		security/qca-ossl \
 		geo/gdal,-python \
 		databases/py-psycopg2 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/08/08 17:45:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/08/31 13:13:02 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -690,6 +690,25 @@ include/qgis/qgswkbsimplifierptr.h
 include/qgis/qgswkbtypes.h
 include/qgis/qgsxmlutils.h
 include/qgis/qgszonalstatistics.h
+include/qgis/ui_qgsauthauthoritieseditor.h
+include/qgis/ui_qgsauthcertificateinfo.h
+include/qgis/ui_qgsauthcertificatemanager.h
+include/qgis/ui_qgsauthconfigedit.h
+include/qgis/ui_qgsauthconfigeditor.h
+include/qgis/ui_qgsauthconfigidedit.h
+include/qgis/ui_qgsauthconfigselect.h
+include/qgis/ui_qgsauthconfiguriedit.h
+include/qgis/ui_qgsautheditorwidgets.h
+include/qgis/ui_qgsauthidentitieseditor.h
+include/qgis/ui_qgsauthimportcertdialog.h
+include/qgis/ui_qgsauthimportidentitydialog.h
+include/qgis/ui_qgsauthmethodplugins.h
+include/qgis/ui_qgsauthserverseditor.h
+include/qgis/ui_qgsauthsslconfigwidget.h
+include/qgis/ui_qgsauthsslerrorsdialog.h
+include/qgis/ui_qgsauthsslimportdialog.h
+include/qgis/ui_qgsauthsslimporterrors.h
+include/qgis/ui_qgsauthtrustedcasdialog.h
 include/qgis/ui_qgscredentialdialog.h
 include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgsexpressionbuilder.h
