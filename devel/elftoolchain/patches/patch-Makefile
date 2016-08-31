@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/31 15:25:03 jasper Exp $
+
+Bad modifier: tl} == "yes"
+
+--- Makefile.orig	Sun Feb  7 11:39:17 2016
++++ Makefile	Wed Aug 31 11:26:35 2016
+@@ -14,10 +14,11 @@ SUBDIR += libdwarf
+ 
+ # Build additional APIs.
+ SUBDIR += libelftc
+-.if defined(WITH_PE) && ${WITH_PE:tl} == "yes"
++.if defined(WITH_PE) && ${WITH_PE:M} == "yes"
+ SUBDIR += libpe
+ .endif
+ 
++.if defined(WITH_TOOLS) && ${WITH_TOOLS:M} == "yes"
+ # Build tools after the libraries.
+ SUBDIR += addr2line
+ SUBDIR += ar
+@@ -31,20 +32,21 @@ SUBDIR += nm
+ SUBDIR += readelf
+ SUBDIR += size
+ SUBDIR += strings
++.endif
+ 
+ # Build the test suites.
+-.if exists(${.CURDIR}/test) && defined(WITH_TESTS) && ${WITH_TESTS:tl} == "yes"
++.if exists(${.CURDIR}/test) && defined(WITH_TESTS) && ${WITH_TESTS:M} == "yes"
+ SUBDIR += test
+ .endif
+ 
+ # Build additional build tooling.
+-.if defined(WITH_BUILD_TOOLS) && ${WITH_BUILD_TOOLS:tl} == "yes"
++.if defined(WITH_BUILD_TOOLS) && ${WITH_BUILD_TOOLS:M} == "yes"
+ SUBDIR += tools
+ .endif
+ 
+ # Build documentation at the end.
+ .if exists(${.CURDIR}/documentation) && defined(WITH_DOCUMENTATION) && \
+-	${WITH_DOCUMENTATION:tl} == "yes"
++	${WITH_DOCUMENTATION:M} == "yes"
+ SUBDIR += documentation
+ .endif
+ 
+@@ -55,7 +57,7 @@ SUBDIR += documentation
+ #
+ 
+ # Run the test suites.
+-.if exists(${.CURDIR}/test) && defined(WITH_TESTS) && ${WITH_TESTS:tl} == "yes"
++.if exists(${.CURDIR}/test) && defined(WITH_TESTS) && ${WITH_TESTS:M} == "yes"
+ run-tests:	all .PHONY
+ 	(cd ${.CURDIR}/test; ${MAKE} test)
+ .endif
