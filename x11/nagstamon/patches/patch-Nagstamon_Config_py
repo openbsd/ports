@@ -1,7 +1,7 @@
-$OpenBSD: patch-Nagstamon_Config_py,v 1.6 2015/05/26 19:19:57 rpe Exp $
---- Nagstamon/Config.py.orig	Mon Jul 28 10:46:23 2014
-+++ Nagstamon/Config.py	Mon Jul 28 16:13:32 2014
-@@ -681,15 +681,15 @@ class Config(object):
+$OpenBSD: patch-Nagstamon_Config_py,v 1.7 2016/08/31 13:10:14 ajacoutot Exp $
+--- Nagstamon/Config.py.orig	Tue Aug 30 07:44:58 2016
++++ Nagstamon/Config.py	Wed Aug 31 14:45:36 2016
+@@ -672,15 +672,15 @@ class Config(object):
          else:
              # the Linux settings
              defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",

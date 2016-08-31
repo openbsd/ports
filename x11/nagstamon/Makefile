@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/26 19:19:57 rpe Exp $
+# $OpenBSD: Makefile,v 1.17 2016/08/31 13:10:14 ajacoutot Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_EGG_VERSION=	2.0
 DISTNAME=		Nagstamon-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/Nagstamon
@@ -22,16 +22,21 @@ PKG_ARCH=		*
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		audio/sox \
-			security/py-keyring \
-			textproc/py-lxml \
-			x11/py-gtk2
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS=	Yes
+
+BUILD_DEPENDS=		x11/py-qt5${MODPY_FLAVOR}
+
+RUN_DEPENDS=		devel/desktop-file-utils \
+			sysutils/py-psutil${MODPY_FLAVOR} \
+			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
+			x11/py-qt5${MODPY_FLAVOR}
 
 NO_TEST=		Yes
 
-MODPY_ADJ_FILES=	nagstamon.py
-
 post-install:
 	cd ${PREFIX}/bin && mv nagstamon.py nagstamon
+	gunzip ${PREFIX}/man/man1/nagstamon.1.gz
 
 .include <bsd.port.mk>

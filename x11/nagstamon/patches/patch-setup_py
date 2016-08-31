@@ -1,11 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.4 2014/08/10 08:11:06 ajacoutot Exp $
---- setup.py.orig	Mon Jul 28 10:46:23 2014
-+++ setup.py	Mon Jul 28 16:11:31 2014
-@@ -50,6 +50,6 @@ setup(name = 'nagstamon',
-     packages = ['Nagstamon', 'Nagstamon.Server', 'Nagstamon.thirdparty'],
-     package_dir = {'Nagstamon':'Nagstamon'},
-     package_data = {'Nagstamon':['resources/*']},
--    data_files = [('%s/share/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1'])]
-+    data_files = [('%s/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1'])]
- )
- 
+$OpenBSD: patch-setup_py,v 1.5 2016/08/31 13:10:14 ajacoutot Exp $
+--- setup.py.orig	Tue Aug 30 07:44:58 2016
++++ setup.py	Wed Aug 31 14:45:57 2016
+@@ -140,7 +140,7 @@ setup(name=NAME,
+                   'Nagstamon.thirdparty.keyring.util'],
+       package_dir={'Nagstamon':'Nagstamon'},
+       package_data={'Nagstamon':['resources/*']},
+-      data_files=[('%s/share/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1.gz']),
++      data_files=[('%s/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1.gz']),
+                     ('%s/share/pixmaps' % sys.prefix, ['Nagstamon/resources/nagstamon.svg']),
+                     ('%s/share/applications' % sys.prefix, ['Nagstamon/resources/nagstamon.desktop'])],
+       options=dict(build_exe=build_exe_options,
