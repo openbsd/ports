@@ -1,7 +1,7 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.16 2015/11/22 08:06:36 ajacoutot Exp $
---- python/tests/Makefile.in.orig	Fri Nov 20 10:49:34 2015
-+++ python/tests/Makefile.in	Sat Nov 21 09:05:39 2015
-@@ -421,7 +421,6 @@ PYTESTS = \
+$OpenBSD: patch-python_tests_Makefile_in,v 1.17 2016/09/01 21:56:59 jasper Exp $
+--- python/tests/Makefile.in.orig	Mon May 23 10:00:36 2016
++++ python/tests/Makefile.in	Tue Aug 30 14:16:12 2016
+@@ -423,7 +423,6 @@ PYTESTS = \
      readererr.py\
      relaxng.py	\
      schema.py	\

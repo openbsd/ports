@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2015/11/22 08:06:36 ajacoutot Exp $
---- Makefile.in.orig	Fri Nov 20 10:49:34 2015
-+++ Makefile.in	Sat Nov 21 09:05:39 2015
-@@ -844,7 +844,7 @@ cmake_DATA = libxml2-config.cmake
+$OpenBSD: patch-Makefile_in,v 1.7 2016/09/01 21:56:59 jasper Exp $
+--- Makefile.in.orig	Mon May 23 10:00:36 2016
++++ Makefile.in	Tue Aug 30 14:16:12 2016
+@@ -846,7 +846,7 @@ cmake_DATA = libxml2-config.cmake
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2015/11/22 08:06:36 ajacoutot Exp $
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  
  #
-@@ -1905,7 +1905,7 @@ testapi.c: $(srcdir)/gentest.py
+@@ -1907,7 +1907,7 @@ testapi.c: $(srcdir)/gentest.py
  runtests:
  	[ -d test   ] || $(LN_S) $(srcdir)/test   .
  	[ -d result ] || $(LN_S) $(srcdir)/result .
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2015/11/22 08:06:36 ajacoutot Exp $
  	@(if [ "$(PYTHON_SUBDIR)" != "" ] ; then cd python ; \
  	    $(MAKE) tests ; fi)
  
-@@ -2405,6 +2405,7 @@ SVGtests : xmllint$(EXEEXT)
+@@ -2411,6 +2411,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \
