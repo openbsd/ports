@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgcc_config_host,v 1.4 2015/09/24 22:29:59 tobiasu Exp $
---- libgcc/config.host.orig	Thu Mar 27 16:40:31 2014
-+++ libgcc/config.host	Thu Sep 17 08:19:38 2015
+$OpenBSD: patch-libgcc_config_host,v 1.5 2016/09/01 17:30:33 pascal Exp $
+--- libgcc/config.host.orig	Tue May 17 08:22:28 2016
++++ libgcc/config.host	Sat Aug  6 19:19:20 2016
 @@ -364,6 +364,10 @@ arm-wrs-vxworks)
  arm*-*-netbsdelf*)
  	tmake_file="$tmake_file arm/t-arm arm/t-netbsd t-slibgcc-gld-nover"
@@ -25,7 +25,7 @@ $OpenBSD: patch-libgcc_config_host,v 1.4 2015/09/24 22:29:59 tobiasu Exp $
  mips*-*-linux*)				# Linux MIPS, either endian.
  	extra_parts="$extra_parts crtfastmath.o"
  	tmake_file="${tmake_file} t-crtfm"
-@@ -947,6 +957,9 @@ powerpc*-*-freebsd*)
+@@ -942,6 +952,9 @@ powerpc*-*-freebsd*)
  powerpc-*-netbsd*)
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
  	;;
@@ -35,7 +35,7 @@ $OpenBSD: patch-libgcc_config_host,v 1.4 2015/09/24 22:29:59 tobiasu Exp $
  powerpc-*-eabispe*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"
  	extra_parts="$extra_parts crtbegin.o crtend.o crtbeginS.o crtendS.o crtbeginT.o ecrti.o ecrtn.o ncrti.o ncrtn.o"
-@@ -1093,6 +1106,8 @@ sh-wrs-vxworks)
+@@ -1088,6 +1101,8 @@ sh-wrs-vxworks)
  	tmake_file="$tmake_file sh/t-sh t-crtstuff-pic t-fdpbit"
  	;;
  sparc-*-netbsdelf*)

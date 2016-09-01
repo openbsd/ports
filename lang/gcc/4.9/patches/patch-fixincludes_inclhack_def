@@ -1,7 +1,7 @@
-$OpenBSD: patch-fixincludes_inclhack_def,v 1.1.1.1 2014/06/26 16:30:15 pascal Exp $
---- fixincludes/inclhack.def.orig	Sun Dec  8 22:55:46 2013
-+++ fixincludes/inclhack.def	Fri Feb 14 20:24:53 2014
-@@ -3293,9 +3293,9 @@ fix = {
+$OpenBSD: patch-fixincludes_inclhack_def,v 1.2 2016/09/01 17:30:33 pascal Exp $
+--- fixincludes/inclhack.def.orig	Mon Feb  1 21:27:47 2016
++++ fixincludes/inclhack.def	Sat Aug  6 19:19:03 2016
+@@ -3307,9 +3307,9 @@ fix = {
      mach      = "*-*-solaris2.*";
      files     = complex.h;
      sed	      = "/#if[ \t]*!defined(__cplusplus)/c\\\n"

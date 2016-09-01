@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2015/12/05 22:00:29 tobiasu Exp $
---- gcc/ada/gcc-interface/Makefile.in.orig	Mon Jan  5 11:17:28 2015
-+++ gcc/ada/gcc-interface/Makefile.in	Mon Nov 23 02:00:51 2015
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.5 2016/09/01 17:30:33 pascal Exp $
+--- gcc/ada/gcc-interface/Makefile.in.orig	Sun Dec  6 15:11:54 2015
++++ gcc/ada/gcc-interface/Makefile.in	Sat Aug  6 19:19:04 2016
 @@ -431,6 +431,10 @@ ATOMICS_TARGET_PAIRS = \
    a-szunau.adb<a-szunau-shared.adb \
    a-szuzti.adb<a-szuzti-shared.adb
@@ -12,7 +12,7 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.4 2015/12/05 22:00:29 tobi
  ATOMICS_BUILTINS_TARGET_PAIRS = \
    s-atocou.adb<s-atocou-builtin.adb
  
-@@ -1378,6 +1382,249 @@ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cp
+@@ -1374,6 +1378,249 @@ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cp
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc

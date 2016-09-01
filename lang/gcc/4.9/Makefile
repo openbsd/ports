@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.35 2016/09/01 10:56:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2016/09/01 17:30:33 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
-V = 4.9.3
-REVISION = 10
+V = 4.9.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 80.0
+ADASTRAP_LIBC-amd64 = 88.0
 ADASTRAP_LIBM-amd64 = 9.0
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
-ADASTRAP_LIBC-arm = 84.1
+ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
 ADASTRAP_LIBC-hppa = 80.0
 ADASTRAP_LIBM-hppa = 9.0
-ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
+ADASTRAP-hppa = adastrap-hppa-4.9.3-0.tar.xz
 ADASTRAP_LIBC-i386 = 80.0
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP-i386 = adastrap-i386-4.9.3-0.tar.xz
 ADASTRAP_LIBC-mips64 = 83.0
 ADASTRAP_LIBM-mips64 = 9.0
-ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
+ADASTRAP-mips64 = adastrap-mips64-4.9.3-0.tar.xz
 ADASTRAP_LIBC-powerpc = 83.0
 ADASTRAP_LIBM-powerpc = 9.0
-ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 80.0
+ADASTRAP-powerpc = adastrap-powerpc-4.9.3-0.tar.xz
+ADASTRAP_LIBC-sparc64 = 88.0
 ADASTRAP_LIBM-sparc64 = 9.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
@@ -86,7 +85,8 @@ TEST_DEPENDS = 	devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=4.9,<4.10
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	https://spacehopper.org/mirrors/ \
+MASTER_SITES0 =	http://distfiles.stumpf.co/ \
+		https://spacehopper.org/mirrors/ \
 		http://distfiles.tmux.org/adastrap/ \
 		https://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
