@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/06/13 11:16:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/01 12:36:03 shadchin Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-MODPY_EGG_VERSION=	1.5.6
+MODPY_EGG_VERSION=	1.6.4
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
@@ -24,6 +24,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS=		devel/py-astroid${MODPY_FLAVOR} \
+			devel/py-isort${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
@@ -38,6 +39,8 @@ FULLPKGNAME-main=	${PKGNAME-main:S/pylint/pylint3/}
 FULLPKGPATH-main=	devel/pylint,-main${MODPY_FLAVOR}
 FULLPKGNAME-gui=	${PKGNAME-gui:S/pylint/pylint3/}
 FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
+.else
+RUN_DEPENDS=		devel/py-backports-functools-lru-cache
 .endif
 
 # Note: pytest here is not the same as in devel/py-test
