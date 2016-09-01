@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.5 2016/05/26 09:29:23 dcoppa Exp $
---- setup.py.orig	Mon May  4 17:17:36 2015
-+++ setup.py	Thu Jun  4 09:25:06 2015
+$OpenBSD: patch-setup_py,v 1.6 2016/09/01 12:21:05 dcoppa Exp $
+--- setup.py.orig	Tue Jun 28 19:26:31 2016
++++ setup.py	Thu Sep  1 08:05:39 2016
 @@ -21,9 +21,6 @@ setup(name = PACKAGE_NAME,
        platforms = ["Unix","Windows"],
-       packages = ['impacket', 'impacket.dcerpc', 'impacket.examples', 'impacket.dcerpc.v5', 'impacket.dcerpc.v5.dcom', 'impacket.krb5'],
+       packages = ['impacket', 'impacket.dcerpc', 'impacket.examples', 'impacket.dcerpc.v5', 'impacket.dcerpc.v5.dcom', 'impacket.krb5', 'impacket.ldap', 'impacket.examples.ntlmrelayx', 'impacket.examples.ntlmrelayx.clients', 'impacket.examples.ntlmrelayx.servers', 'impacket.examples.ntlmrelayx.utils'],
        scripts = glob.glob(os.path.join('examples', '*.py')),
 -      data_files = [(os.path.join('share', 'doc', PACKAGE_NAME), ['README.md', 'LICENSE']+glob.glob('doc/*')),
 -                    (os.path.join('share', 'doc', PACKAGE_NAME, 'testcases', 'dot11'),glob.glob('impacket/testcases/dot11/*')),

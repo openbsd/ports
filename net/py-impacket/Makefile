@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/05/26 09:51:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/01 12:21:05 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.14
+MODPY_EGG_VERSION =	0.9.15
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 EPOCH =			0
 CATEGORIES =   		net security
 
@@ -20,6 +19,14 @@ MODULES =		lang/python
 
 MODPY_ADJ_FILES =	impacket/ese.py \
 			impacket/examples/logger.py \
+			impacket/examples/ntlmrelayx/clients/httprelayclient.py \
+			impacket/examples/ntlmrelayx/clients/ldaprelayclient.py \
+			impacket/examples/ntlmrelayx/clients/mssqlrelayclient.py \
+			impacket/examples/ntlmrelayx/clients/smbrelayclient.py \
+			impacket/examples/ntlmrelayx/servers/httprelayserver.py \
+			impacket/examples/ntlmrelayx/servers/smbrelayserver.py \
+			impacket/examples/ntlmrelayx/utils/config.py \
+			impacket/examples/ntlmrelayx/utils/targetsutils.py \
 			impacket/tds.py
 
 # one example also uses python-tkinter, but it's pretty heavy and

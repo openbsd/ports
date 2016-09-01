@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/26 09:29:23 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/09/01 12:21:05 dcoppa Exp $
 lib/python${MODPY_VERSION}/site-packages/impacket/
 lib/python${MODPY_VERSION}/site-packages/impacket-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/impacket/Dot11Crypto.py
@@ -99,6 +99,34 @@ lib/python${MODPY_VERSION}/site-packages/impacket/examples/__init__.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/logger.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/logger.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/httprelayclient.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/httprelayclient.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/ldaprelayclient.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/ldaprelayclient.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/mssqlrelayclient.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/mssqlrelayclient.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/smbrelayclient.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/clients/smbrelayclient.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/httprelayserver.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/httprelayserver.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/smbrelayserver.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/servers/smbrelayserver.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/config.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/config.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/targetsutils.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/ntlmrelayx/utils/targetsutils.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/remcomsvc.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/remcomsvc.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/serviceinstall.py
@@ -124,6 +152,13 @@ lib/python${MODPY_VERSION}/site-packages/impacket/krb5/kerberosv5.py
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/kerberosv5.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/types.py
 lib/python${MODPY_VERSION}/site-packages/impacket/krb5/types.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/ldap.py
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/ldap.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/ldapasn1.py
+lib/python${MODPY_VERSION}/site-packages/impacket/ldap/ldapasn1.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/nmb.py
 lib/python${MODPY_VERSION}/site-packages/impacket/nmb.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/nt_errors.py
@@ -164,6 +199,7 @@ share/doc/py-impacket/
 share/doc/py-impacket/LICENSE
 share/doc/py-impacket/README.md
 share/examples/py-impacket/
+share/examples/py-impacket/GetUserSPNs.py
 share/examples/py-impacket/atexec.py
 share/examples/py-impacket/esentutl.py
 share/examples/py-impacket/goldenPac.py
@@ -176,6 +212,7 @@ share/examples/py-impacket/mssqlinstance.py
 share/examples/py-impacket/netview.py
 share/examples/py-impacket/nmapAnswerMachine.py
 share/examples/py-impacket/ntfs-read.py
+share/examples/py-impacket/ntlmrelayx.py
 share/examples/py-impacket/opdump.py
 share/examples/py-impacket/os_ident.py
 share/examples/py-impacket/ping.py
