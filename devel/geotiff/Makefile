@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/25 15:13:34 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/01 16:44:12 landry Exp $
 
 COMMENT=	GIS TIFF interchange library
 
-DISTNAME=	libgeotiff-1.4.1
+DISTNAME=	libgeotiff-1.4.2
 CATEGORIES=	devel geo
-SHARED_LIBS=	geotiff 1.4
+SHARED_LIBS=	geotiff 2.0
 
 HOMEPAGE=	http://trac.osgeo.org/geotiff/
 

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/25 15:13:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/09/01 16:44:12 landry Exp $
 @bin bin/applygeo
 @bin bin/geotifcp
 @bin bin/listgeo
-@bin bin/makegeo
 include/cpl_serv.h
 include/epsg_datum.inc
 include/epsg_ellipse.inc
@@ -29,6 +28,8 @@ include/xtiffio.h
 lib/libgeotiff.a
 lib/libgeotiff.la
 @lib lib/libgeotiff.so.${LIBgeotiff_VERSION}
+@man man/man1/applygeo.1
+@man man/man1/geotifcp.1
 @man man/man1/listgeo.1
 share/epsg_csv/
 share/epsg_csv/alias.csv
