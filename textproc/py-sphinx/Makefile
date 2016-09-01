@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/15 08:46:34 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/01 05:49:57 danj Exp $
 
 COMMENT =		python documentation generator
 
-MODPY_EGG_VERSION =	1.4
+MODPY_EGG_VERSION =	1.4.6
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
 
@@ -26,7 +26,8 @@ RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-sphinx_rtd_theme${MODPY_FLAVOR} \
 			textproc/py-snowballstemmer${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+			www/py-jinja2${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \

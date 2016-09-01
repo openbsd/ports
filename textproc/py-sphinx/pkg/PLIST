@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/15 08:46:34 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/09/01 05:49:57 danj Exp $
 bin/sphinx-apidoc${MODPY_BIN_SUFFIX}
 bin/sphinx-autogen${MODPY_BIN_SUFFIX}
 bin/sphinx-build${MODPY_BIN_SUFFIX}
@@ -190,6 +190,11 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cs/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cs/LC_MESSAGES/sphinx.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cs/LC_MESSAGES/sphinx.mo
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cs/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cy/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cy/LC_MESSAGES/sphinx.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cy/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/cy/LC_MESSAGES/sphinx.po
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/da/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/da/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/da/LC_MESSAGES/sphinx.js
@@ -200,6 +205,16 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/de/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/de/LC_MESSAGES/sphinx.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/de/LC_MESSAGES/sphinx.mo
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/de/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/el/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/el/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/el/LC_MESSAGES/sphinx.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/el/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/el/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/eo/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/eo/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/eo/LC_MESSAGES/sphinx.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/eo/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/eo/LC_MESSAGES/sphinx.po
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/es/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/es/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/es/LC_MESSAGES/sphinx.js
@@ -235,6 +250,11 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/he/LC_MESSAGES/sphinx.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/he/LC_MESSAGES/sphinx.mo
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/he/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hi/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hi/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hi/LC_MESSAGES/sphinx.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hi/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hi/LC_MESSAGES/sphinx.po
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hr/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/hr/LC_MESSAGES/sphinx.js
@@ -310,6 +330,11 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/pt_PT/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/pt_PT/LC_MESSAGES/sphinx.js
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/pt_PT/LC_MESSAGES/sphinx.mo
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/pt_PT/LC_MESSAGES/sphinx.po
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ro/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ro/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ro/LC_MESSAGES/sphinx.js
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ro/LC_MESSAGES/sphinx.mo
+lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ro/LC_MESSAGES/sphinx.po
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinx/locale/ru/LC_MESSAGES/sphinx.js
@@ -364,7 +389,9 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.
 lib/python${MODPY_VERSION}/site-packages/sphinx/make_mode.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/parsers.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/
+lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2.pickle
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2.txt
+lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py3.pickle
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py3.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/${MODPY_PYCACHE}/
@@ -450,6 +477,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/setup_command.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/Makefile
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/fncychap.sty
+lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/iftex.sty
+lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/needspace.sty
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/newfloat.sty
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/python.ist
 lib/python${MODPY_VERSION}/site-packages/sphinx/texinputs/sphinx.sty
