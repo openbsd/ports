@@ -1,14 +1,17 @@
-$OpenBSD: patch-editor_pnmquantall,v 1.1 2016/08/31 22:12:43 naddy Exp $
+$OpenBSD: patch-editor_pnmquantall,v 1.2 2016/09/01 08:56:49 naddy Exp $
+
+Upstream r2812, r2815
+
 --- editor/pnmquantall.orig	Sun Jun 26 19:15:09 2016
-+++ editor/pnmquantall	Wed Aug 31 22:49:55 2016
-@@ -151,6 +151,7 @@ sub makeColorMap($$$$) {
- }
++++ editor/pnmquantall	Thu Sep  1 09:50:43 2016
+@@ -56,6 +56,7 @@ use strict;
+ use warnings;
+ use English;
+ use Fcntl;  # gets open flags
++use File::Copy;
  
+ my $TRUE=1; my $FALSE = 0;
  
-+require File::Copy;
-  
- sub remapFiles($$$$) {
-     my ($fileNamesR, $colorMapFileName, $ext, $errorR) = @_;
 @@ -169,15 +170,15 @@ sub remapFiles($$$$) {
              my $pnmremapTermStatus = system($pnmremapCmd);
  
