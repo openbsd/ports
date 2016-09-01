@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2016/08/21 21:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/09/01 10:56:58 jasper Exp $
 
-ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.3
@@ -26,9 +26,6 @@ ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
 ADASTRAP_LIBC-powerpc = 83.0
 ADASTRAP_LIBM-powerpc = 9.0
 ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
-ADASTRAP_LIBC-sparc = 83.0
-ADASTRAP_LIBM-sparc = 9.0
-ADASTRAP-sparc = adastrap-sparc-$V-0.tar.xz
 ADASTRAP_LIBC-sparc64 = 80.0
 ADASTRAP_LIBM-sparc64 = 9.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
@@ -59,7 +56,7 @@ SHARED_LIBS =	estdc++		17.0 \
 PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 arm hppa i386 mips64 powerpc sparc sparc64
+ONLY_FOR_ARCHS-ada = amd64 arm hppa i386 mips64 powerpc sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
@@ -74,7 +71,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
 		${ADASTRAP-i386}:0 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
-		${ADASTRAP-sparc}:0 ${ADASTRAP-sparc64}:0 ${ECJ}:1
+		${ADASTRAP-sparc64}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 BUILD_DEPENDS +=	devel/bison \
@@ -179,7 +176,7 @@ PKG_ARGS += -DX86=0
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
 	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sh" || \
-	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+	${MACHINE_ARCH} == "sparc64"
 PKG_ARGS += -DITM=1
 .else
 PKG_ARGS += -DITM=0

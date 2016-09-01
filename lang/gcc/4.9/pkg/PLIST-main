@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/06/29 16:14:41 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2016/09/01 10:56:58 jasper Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -252,7 +252,6 @@ lib/libssp_nonshared.la
 %%mips64%%
 %%mips64el%%
 %%powerpc%%
-%%sparc%%
 %%sparc64%%
 %%CILKRTS%%
 %%X86%%
