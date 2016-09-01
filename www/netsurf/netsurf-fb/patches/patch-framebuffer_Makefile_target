@@ -1,0 +1,35 @@
+$OpenBSD: patch-framebuffer_Makefile_target,v 1.1.1.1 2016/09/01 00:29:34 bentley Exp $
+--- framebuffer/Makefile.target.orig	Wed Apr  6 04:39:35 2016
++++ framebuffer/Makefile.target	Wed Aug 31 01:14:01 2016
+@@ -31,10 +31,7 @@ CFLAGS += '-DNETSURF_FB_FONT_CURSIVE="$(NETSURF_FB_FON
+ CFLAGS += '-DNETSURF_FB_FONT_FANTASY="$(NETSURF_FB_FONT_FANTASY)"'
+ 
+ CFLAGS += -std=c99 -g -Dsmall \
+-	  -D_BSD_SOURCE \
+-	  -D_DEFAULT_SOURCE \
+-	  -D_XOPEN_SOURCE=600 \
+-	  -D_POSIX_C_SOURCE=200112L
++	  -D_POSIX_C_SOURCE=200809L
+ 
+ LDFLAGS += -lm
+ 
+@@ -65,6 +62,8 @@ $(eval $(call pkg_config_find_and_add_enabled,PNG,libp
+ $(eval $(call pkg_config_find_and_add_enabled,ROSPRITE,librosprite,Sprite))
+ $(eval $(call pkg_config_find_and_add_enabled,BMP,libnsbmp,BMP))
+ $(eval $(call pkg_config_find_and_add_enabled,GIF,libnsgif,GIF))
++$(eval $(call pkg_config_find_and_add_enabled,RSVG,librsvg-2.0,SVG))
++$(eval $(call pkg_config_find_and_add_enabled,NSSVG,libsvgtiny,SVG))
+ $(eval $(call pkg_config_find_and_add_enabled,MOZJS,mozjs185,JavaScript))
+ $(eval $(call pkg_config_find_and_add_enabled,JS,mozilla-js,JavaScript))
+ 
+@@ -201,8 +200,8 @@ NETSURF_FRAMEBUFFER_RESOURCE_LIST := adblock.css credi
+ install-framebuffer:
+ 	$(Q)mkdir -p $(DESTDIR)$(NETSURF_FRAMEBUFFER_BIN)
+ 	$(Q)mkdir -p $(DESTDIR)$(NETSURF_FRAMEBUFFER_RESOURCES)
+-	$(Q)cp -v $(EXETARGET) $(DESTDIR)/$(NETSURF_FRAMEBUFFER_BIN)netsurf$(SUBTARGET)
+-	$(Q)for F in $(NETSURF_FRAMEBUFFER_RESOURCE_LIST); do cp -vL framebuffer/res/$$F $(DESTDIR)/$(NETSURF_FRAMEBUFFER_RESOURCES); done
++	$(Q)cp $(EXETARGET) $(DESTDIR)/$(NETSURF_FRAMEBUFFER_BIN)netsurf$(SUBTARGET)
++	$(Q)for F in $(NETSURF_FRAMEBUFFER_RESOURCE_LIST); do cp -L framebuffer/res/$$F $(DESTDIR)/$(NETSURF_FRAMEBUFFER_RESOURCES); done
+ 	$(Q)$(SPLIT_MESSAGES) -l en -p fb -f messages resources/FatMessages | gzip -9n > $(DESTDIR)$(NETSURF_FRAMEBUFFER_RESOURCES)messages
+ 
+ # ----------------------------------------------------------------------------
