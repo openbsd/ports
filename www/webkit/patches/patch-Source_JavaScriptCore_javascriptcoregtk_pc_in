@@ -1,0 +1,10 @@
+$OpenBSD: patch-Source_JavaScriptCore_javascriptcoregtk_pc_in,v 1.1 2016/09/01 15:50:30 ajacoutot Exp $
+--- Source/JavaScriptCore/javascriptcoregtk.pc.in.orig	Thu Sep  1 17:47:13 2016
++++ Source/JavaScriptCore/javascriptcoregtk.pc.in	Thu Sep  1 17:48:19 2016
+@@ -7,5 +7,5 @@ Name: JavaScriptCoreGTK+
+ Description: GTK+ version of the JavaScriptCore engine
+ Version: @VERSION@
+ Requires: glib-2.0
+-Libs: -L${libdir} -ljavascriptcoregtk-@WEBKITGTK_API_VERSION@
++Libs: -L${libdir} -ljavascriptcoregtk-@WEBKITGTK_API_VERSION@ -Wl,-z,wxneeded
+ Cflags: -I${includedir}/webkitgtk-@WEBKITGTK_API_VERSION@

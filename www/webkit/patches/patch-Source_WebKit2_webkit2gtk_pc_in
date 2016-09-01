@@ -1,0 +1,10 @@
+$OpenBSD: patch-Source_WebKit2_webkit2gtk_pc_in,v 1.1 2016/09/01 15:50:30 ajacoutot Exp $
+--- Source/WebKit2/webkit2gtk.pc.in.orig	Thu Sep  1 17:47:07 2016
++++ Source/WebKit2/webkit2gtk.pc.in	Thu Sep  1 17:48:13 2016
+@@ -7,5 +7,5 @@ Name: WebKit2
+ Description: Web content engine for GTK+
+ Version: @VERSION@
+ Requires: glib-2.0 gtk+-@GTK_API_VERSION@ libsoup-2.4 javascriptcoregtk-@WEBKITGTK_API_VERSION@
+-Libs: -L${libdir} -lwebkit2gtk-@WEBKITGTK_API_VERSION@
++Libs: -L${libdir} -lwebkit2gtk-@WEBKITGTK_API_VERSION@ -Wl,-z,wxneeded
+ Cflags: -I${includedir}/webkitgtk-@WEBKITGTK_API_VERSION@

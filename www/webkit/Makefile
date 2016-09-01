@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.148 2016/04/22 12:02:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.149 2016/09/01 15:50:30 ajacoutot Exp $
+
+USE_WXNEEDED =	Yes
 
 PORTROACH =	limit:^2\.4
 
@@ -13,6 +15,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
+REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
