@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/19 19:09:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/01 14:23:58 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -49,7 +49,7 @@ LIB_DEPENDS-main =	devel/gmp \
 
 PSEUDO_FLAVORS=		no_tk no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa}
 FLAVOR?=		no_ri_docs bootstrap
 .else
 FLAVOR?=
