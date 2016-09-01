@@ -1,0 +1,15 @@
+$OpenBSD: patch-libupower-glib_up-client_h,v 1.1 2016/09/01 10:11:47 landry Exp $
+
+Backport https://cgit.freedesktop.org/upower/patch/?id=932a6a39e35754be571e1274aec4730fd42dba13
+https://bugs.freedesktop.org/show_bug.cgi?id=95350
+
+--- libupower-glib/up-client.h.orig	Wed Apr 22 11:57:08 2015
++++ libupower-glib/up-client.h	Wed Aug 31 12:31:10 2016
+@@ -72,6 +72,7 @@ typedef struct
+ /* general */
+ GType		 up_client_get_type			(void);
+ UpClient	*up_client_new				(void);
++UpClient	*up_client_new_full			(GCancellable *cancellable, GError **error);
+ 
+ /* sync versions */
+ UpDevice *	 up_client_get_display_device		(UpClient *client);
