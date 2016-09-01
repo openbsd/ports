@@ -1,0 +1,9 @@
+LibNSFB is a framebuffer abstraction library, written in C. It is currently
+in development for use with NetSurf and is intended to be suitable for use
+in other projects too.
+
+The overall idea of the library is to provide a generic abstraction to a
+linear section of memory which corresponds to a visible array of pixel
+elements on a display device. Different colour depths are supported and the
+library provides routines for tasks such as drawing onto the framebuffer and
+rectangle copy operations.

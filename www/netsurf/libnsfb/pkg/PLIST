@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/01 00:25:40 bentley Exp $
+include/libnsfb.h
+include/libnsfb_cursor.h
+include/libnsfb_event.h
+include/libnsfb_plot.h
+include/libnsfb_plot_util.h
+@lib lib/libnsfb.so.${LIBnsfb_VERSION}
+lib/pkgconfig/libnsfb.pc
