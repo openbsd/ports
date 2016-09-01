@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/08/27 13:42:09 jca Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/09/01 10:53:26 jasper Exp $
 
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
 # We need to figure out which of the following arches work and fix ones
 # that don't. We know powerpc is busted.
-#ONLY_FOR_ARCHS ?=	arm mips64 mips64el powerpc sparc sparc64
+#ONLY_FOR_ARCHS ?=	arm mips64 mips64el powerpc sparc64
 
 V ?=			0.8.8
 SUBST_VARS +=		V

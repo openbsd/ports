@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/01 10:53:27 jasper Exp $
 
 # see md.h, add others
-ONLY_FOR_ARCHS =	amd64 alpha i386 sparc
+ONLY_FOR_ARCHS =	amd64 alpha i386
 
 COMMENT =		threaded library for writing Internet applications
 

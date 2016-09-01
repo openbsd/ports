@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/01 10:53:26 jasper Exp $
 
 COMMENT=	talk to modem devices connected via serial port
 
@@ -14,9 +14,5 @@ MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c perl
-
-.if ${MACHINE_ARCH} == "sparc"
-CONFIGURE_ARGS= TESTPORT=/dev/cuaa
-.endif
 
 .include <bsd.port.mk>

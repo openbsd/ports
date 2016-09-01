@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/09/01 10:53:27 jasper Exp $
 
-NOT_FOR_ARCHS =		sparc m88k
+NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools
 

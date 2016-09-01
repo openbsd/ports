@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2016/06/13 17:42:36 jca Exp $
-
-# sparc: fPIC version of libgcc.a needed but not available
-NOT_FOR_ARCHS =	sparc
+# $OpenBSD: Makefile,v 1.89 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT =	high-level language for numerical computations
 

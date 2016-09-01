@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/09/01 10:53:26 jasper Exp $
 
 # arm: doesn't build super-old and broken assember files
-ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc64
 
 COMMENT=	foreign function call libraries
 
@@ -20,9 +20,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
-.if ${MACHINE_ARCH} == "sparc"
-CONFIGURE_ENV +=	cl_cv_c_struct_return_small=no
-.elif ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ENV +=	cl_cv_c_struct_return_small=yes
 .endif
 

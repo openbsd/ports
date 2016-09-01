@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 20:28:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/01 10:53:27 jasper Exp $
 
 # varargs misuse, and unportable software
-ONLY_FOR_ARCHS= 	i386 sparc sparc64
+ONLY_FOR_ARCHS= 	i386 sparc64
 
 COMMENT=		Plan 9 compatibility libraries
 

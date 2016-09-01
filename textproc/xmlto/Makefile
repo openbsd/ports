@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/19 18:34:40 jasper Exp $
-
-BROKEN-sparc=	Bus Error
+# $OpenBSD: Makefile,v 1.19 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 

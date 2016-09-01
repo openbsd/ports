@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2016/05/24 08:07:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2016/09/01 10:53:26 jasper Exp $
 
 BROKEN-arm =	undefined reference to __sync atomic ops
 BROKEN-hppa =	undefined reference to __sync atomic ops
-BROKEN-sparc =	undefined reference to __sync atomic ops
 
 COMMENT =	cross-platform 3D audio API
 

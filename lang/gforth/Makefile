@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/19 14:08:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/01 10:53:27 jasper Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
 USE_WXNEEDED =		Yes
 
 COMMENT =		ANSI/200x Forth interpreter and compiler

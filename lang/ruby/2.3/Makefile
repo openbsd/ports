@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/19 19:09:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/09/01 10:53:27 jasper Exp $
 
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 BROKEN-powerpc =		OOM when building ext/ripper/ripper.c
-BROKEN-sparc=		exceeds MAXDSIZ
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -53,7 +52,7 @@ LIB_DEPENDS-main =	devel/gmp \
 
 PSEUDO_FLAVORS=		no_tk no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa}
 FLAVOR?=		no_ri_docs bootstrap
 .else
 FLAVOR?=

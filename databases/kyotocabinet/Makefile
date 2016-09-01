@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/01 10:53:26 jasper Exp $
 
 BROKEN-arm=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
-BROKEN-sparc=	undefined reference to `__sync_fetch_and_add_8'
 
 # requires C++ tr1 headers
 NOT_FOR_ARCHS=		${GCC3_ARCHS}

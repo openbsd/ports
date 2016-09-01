@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/01 10:53:27 jasper Exp $
 # losely based on the FreeBSD port
 
-.for m in alpha powerpc sparc sparc64
+.for m in alpha powerpc sparc64
 BROKEN-$m =	segfaults in longjump return while testing continuations
 .endfor
 

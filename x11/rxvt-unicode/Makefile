@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/08/27 21:14:12 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS =	--enable-256-color \
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include" \
 			pt_cv_tty_group=yes
 
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "arm"
 CXXFLAGS +=	-DEV_NO_SMP
 .endif
 

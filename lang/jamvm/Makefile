@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/01 14:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/01 10:53:27 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread z
 
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64"
 WANTLIB+=	ffi
 
 LIB_DEPENDS=	devel/libffi
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include/jamvm \
 		--libdir=${LOCALBASE}/lib/jamvm \
 		--with-classpath-install-dir=${LOCALBASE} \
 		--disable-tls
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif

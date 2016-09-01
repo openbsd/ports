@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/18 17:11:47 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/01 10:53:26 jasper Exp $
 
 COMMENT =	high-performance event loop library
 
@@ -20,7 +20,7 @@ WANTLIB =		m
 
 CONFIGURE_STYLE =	gnu
 
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "arm"
 CFLAGS +=	-DEV_NO_SMP
 .endif
 

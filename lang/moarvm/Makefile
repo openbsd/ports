@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/06 16:30:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/01 10:53:27 jasper Exp $
 
-ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc64
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 

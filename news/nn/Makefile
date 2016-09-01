@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/14 06:43:09 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
@@ -33,8 +33,6 @@ MFILE =			m-m88000.h
 MFILE = 		m-powerpc.h
 .elif "${MACHINE_ARCH}" == "mips64"
 MFILE =			m-mips.h
-.elif "${MACHINE_ARCH}" == "sparc"
-MFILE =			m-sparc.h
 .elif "${MACHINE_ARCH}" == "sparc64"
 MFILE =			m-sparc.h
 .else

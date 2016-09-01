@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/08 13:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/09/01 10:53:26 jasper Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
-ONLY_FOR_ARCHS =	amd64 arm i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 arm i386 powerpc sparc64
 
 MODPY_EGG_VERSION = 0.4.9
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}

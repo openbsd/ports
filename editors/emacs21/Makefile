@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2016/06/29 16:14:41 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 ARCH_LDFLAGS =		-Wl,-G0
 CFLAGS +=		-mno-sdata
 .elif ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "sparc64"
 ARCH_LDFLAGS =
 .else
 ARCH_LDFLAGS =		-Z

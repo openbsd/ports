@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/09/01 10:53:27 jasper Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
 BROKEN-mips64 =	ecl_min fails
-BROKEN-sparc =	infinite loop while building
 BROKEN-arm =	infinite loop while building
 
 V =		16.1.2

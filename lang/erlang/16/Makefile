@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/29 16:14:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/01 10:53:27 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
-BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 
 COMMENT-main =	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
