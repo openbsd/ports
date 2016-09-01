@@ -1,30 +1,39 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/01 12:47:22 fcambus Exp $
 
-COMMENT =	free module tracker editor and player
-DISTNAME =	schismtracker-20150425
-EXTRACT_SUFX =	.tar.bz2
+COMMENT =	open-source reimplementation of Impulse Tracker
+
+GH_ACCOUNT =	schismtracker
+GH_PROJECT =	schismtracker
+GH_TAGNAME =	20160521
+
 CATEGORIES =	audio x11
-REVISION =	0
 
 HOMEPAGE =	http://schismtracker.org/
+
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL X11 Xext Xv c m pthread
-
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+WANTLIB +=	SDL X11 Xext Xv c m pthread
 
 MODULES =	lang/python
 
 MODPY_RUNDEP =	No
 
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
 LIB_DEPENDS =	devel/sdl
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-mercurial
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin
+pre-configure:
+	@cd ${WRKSRC} && \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	autoreconf -i
 
 .include <bsd.port.mk>

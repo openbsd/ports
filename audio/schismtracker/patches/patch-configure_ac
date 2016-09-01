@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/09/01 12:47:22 fcambus Exp $
+
+- Prevent calling Git to obtain date of the last commit, and hardcode
+  [last_git_commit] value to match package version
+- Fix log2() function detection
+
+--- configure.ac.orig	Sat May 21 16:40:41 2016
++++ configure.ac	Fri Aug 19 22:54:30 2016
+@@ -21,9 +21,7 @@ dnl You should have received a copy of the GNU General
+ dnl along with this program; if not, write to the Free Software
+ dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+-dnl PACKAGE_VERSION will be either " " if not using git, or date of the last git commit in the form YYYYMMDD
+-m4_define([last_git_commit], patsubst(m4_esyscmd([git log -n 1 --date=short --format=format:%cd]), [[^0-9]]))
+-AC_INIT([schismtracker], [last_git_commit])
++AC_INIT([schismtracker], [20160521])
+ 
+ AC_CONFIG_SRCDIR([schism/main.c])
+ 
+@@ -58,6 +56,7 @@ dnl Check for SDL libs
+ AM_PATH_SDL(1.2.10, , AC_MSG_ERROR([*** SDL version >= 1.2.10 not found.]))
+ 
+ dnl Functions
++AC_CHECK_LIB([m], [log2])
+ AC_CHECK_FUNCS(strchr memmove strerror strtol strcasecmp strncasecmp strverscmp stricmp strnicmp strcasestr strptime asprintf vasprintf memcmp mmap nice unsetenv dup fnmatch log2 mkstemp)
+ AM_CONDITIONAL([NEED_ASPRINTF], [test "$ac_cv_func_asprintf" = "no"])
+ AM_CONDITIONAL([NEED_VASPRINTF], [test "$ac_cv_func_vasprintf" = "no"])
