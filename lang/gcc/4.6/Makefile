@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2016/08/21 21:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2016/09/01 11:01:32 jasper Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a more recent gcc port
@@ -168,7 +168,7 @@ ALL_TARGET = bootstrap2
 
 MAKE_FLAGS += libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
-.if ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64"
 PIC = 1
 PKG_ARGS += -DPIC=1
 .else
