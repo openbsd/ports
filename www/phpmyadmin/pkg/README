@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/06/27 19:36:50 sthen Exp $
+$OpenBSD: README,v 1.5 2016/09/01 15:23:55 giovanni Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ to connections coming from localhost.
 It also restricts access from search engine bots.
 
 If you need to allow wider access, after considering security
-implications, edit /var/www/conf/modules.sample/phpmyadmin.conf
+implications, edit ${VARBASE}/www/conf/modules.sample/phpmyadmin.conf
 and restart Apache.
 
 You can check that you have a working installation by accessing:
