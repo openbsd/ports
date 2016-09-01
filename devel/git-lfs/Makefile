@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/16 06:53:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/01 09:22:42 jasper Exp $
 
 COMMENT =		Git extension for versioning large files
 
 GH_PROJECT =		git-lfs
 GH_ACCOUNT =		github
-GH_TAGNAME =		v1.3.1
+GH_TAGNAME =		v1.4.1
 
 CATEGORIES =		devel
 
@@ -21,6 +21,7 @@ MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS =		textproc/ruby-ronn
+RUN_DEPENDS =		devel/git
 
 # Convert the manpages with ronn instead of mangen.go
 post-build:
