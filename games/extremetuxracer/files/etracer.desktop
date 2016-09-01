@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Extreme Tux Racer
-Exec=etracer
-Icon=etracericon_48.png
-Terminal=false
-Type=Application
-Categories=Application;Game;
-StartupNotify=false
