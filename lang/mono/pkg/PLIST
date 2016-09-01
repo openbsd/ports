@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/06/26 10:40:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/09/01 15:40:29 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -565,6 +565,7 @@ lib/mono/4.5/Facades/System.Diagnostics.Tools.dll
 lib/mono/4.5/Facades/System.Diagnostics.TraceEvent.dll
 lib/mono/4.5/Facades/System.Diagnostics.TraceSource.dll
 lib/mono/4.5/Facades/System.Diagnostics.Tracing.dll
+lib/mono/4.5/Facades/System.Drawing.Primitives.dll
 lib/mono/4.5/Facades/System.Dynamic.Runtime.dll
 lib/mono/4.5/Facades/System.Globalization.Calendars.dll
 lib/mono/4.5/Facades/System.Globalization.Extensions.dll
@@ -624,6 +625,7 @@ lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll
 lib/mono/4.5/Facades/System.Runtime.dll
 lib/mono/4.5/Facades/System.Security.AccessControl.dll
 lib/mono/4.5/Facades/System.Security.Claims.dll
+lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.DeriveBytes.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encoding.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encryption.Aes.dll
@@ -632,6 +634,7 @@ lib/mono/4.5/Facades/System.Security.Cryptography.Encryption.ECDsa.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encryption.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Hashing.Algorithms.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Hashing.dll
+lib/mono/4.5/Facades/System.Security.Cryptography.Primitives.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.ProtectedData.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.RSA.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.RandomNumberGenerator.dll
@@ -645,6 +648,7 @@ lib/mono/4.5/Facades/System.ServiceModel.NetTcp.dll
 lib/mono/4.5/Facades/System.ServiceModel.Primitives.dll
 lib/mono/4.5/Facades/System.ServiceModel.Security.dll
 lib/mono/4.5/Facades/System.ServiceProcess.ServiceController.dll
+lib/mono/4.5/Facades/System.Text.Encoding.CodePages.dll
 lib/mono/4.5/Facades/System.Text.Encoding.Extensions.dll
 lib/mono/4.5/Facades/System.Text.Encoding.dll
 lib/mono/4.5/Facades/System.Text.RegularExpressions.dll
@@ -760,8 +764,10 @@ lib/mono/4.5/System.Reactive.Providers.dll
 lib/mono/4.5/System.Reactive.Runtime.Remoting.dll
 lib/mono/4.5/System.Reactive.Windows.Forms.dll
 lib/mono/4.5/System.Reactive.Windows.Threading.dll
+lib/mono/4.5/System.Reflection.Context.dll
 lib/mono/4.5/System.Runtime.Caching.dll
 lib/mono/4.5/System.Runtime.DurableInstancing.dll
+lib/mono/4.5/System.Runtime.InteropServices.RuntimeInformation.dll
 lib/mono/4.5/System.Runtime.Remoting.dll
 lib/mono/4.5/System.Runtime.Serialization.Formatters.Soap.dll
 lib/mono/4.5/System.Runtime.Serialization.dll
@@ -1338,6 +1344,10 @@ lib/mono/gac/System.Reactive.Windows.Threading/
 lib/mono/gac/System.Reactive.Windows.Threading/2.2.0.0__31bf3856ad364e35/
 lib/mono/gac/System.Reactive.Windows.Threading/2.2.0.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll
 lib/mono/gac/System.Reactive.Windows.Threading/2.2.0.0__31bf3856ad364e35/System.Reactive.Windows.Threading.dll.mdb
+lib/mono/gac/System.Reflection.Context/
+lib/mono/gac/System.Reflection.Context/4.0.0.0__b03f5f7f11d50a3a/
+lib/mono/gac/System.Reflection.Context/4.0.0.0__b03f5f7f11d50a3a/System.Reflection.Context.dll
+lib/mono/gac/System.Reflection.Context/4.0.0.0__b03f5f7f11d50a3a/System.Reflection.Context.dll.mdb
 lib/mono/gac/System.Runtime.Caching/
 lib/mono/gac/System.Runtime.Caching/4.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/System.Runtime.Caching/4.0.0.0__b03f5f7f11d50a3a/System.Runtime.Caching.dll
@@ -1346,6 +1356,10 @@ lib/mono/gac/System.Runtime.DurableInstancing/
 lib/mono/gac/System.Runtime.DurableInstancing/4.0.0.0__31bf3856ad364e35/
 lib/mono/gac/System.Runtime.DurableInstancing/4.0.0.0__31bf3856ad364e35/System.Runtime.DurableInstancing.dll
 lib/mono/gac/System.Runtime.DurableInstancing/4.0.0.0__31bf3856ad364e35/System.Runtime.DurableInstancing.dll.mdb
+lib/mono/gac/System.Runtime.InteropServices.RuntimeInformation/
+lib/mono/gac/System.Runtime.InteropServices.RuntimeInformation/4.0.0.0__b03f5f7f11d50a3a/
+lib/mono/gac/System.Runtime.InteropServices.RuntimeInformation/4.0.0.0__b03f5f7f11d50a3a/System.Runtime.InteropServices.RuntimeInformation.dll
+lib/mono/gac/System.Runtime.InteropServices.RuntimeInformation/4.0.0.0__b03f5f7f11d50a3a/System.Runtime.InteropServices.RuntimeInformation.dll.mdb
 lib/mono/gac/System.Runtime.Remoting/
 lib/mono/gac/System.Runtime.Remoting/4.0.0.0__b77a5c561934e089/
 lib/mono/gac/System.Runtime.Remoting/4.0.0.0__b77a5c561934e089/System.Runtime.Remoting.dll
