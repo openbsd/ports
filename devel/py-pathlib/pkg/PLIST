@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/04/15 08:53:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/09/01 16:55:55 danj Exp $
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -15,6 +15,7 @@ share/doc/${MODPY_PY_PREFIX}pathlib/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/comment.png
+share/doc/${MODPY_PY_PREFIX}pathlib/_static/custom.css
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}pathlib/_static/down.png
