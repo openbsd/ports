@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/08/28 12:57:32 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/09/01 06:56:46 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pexpect/
 lib/python${MODPY_VERSION}/site-packages/pexpect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pexpect/ANSI.py
@@ -118,6 +118,5 @@ share/examples/${MODPY_PY_PREFIX}pexpect/python.py
 share/examples/${MODPY_PY_PREFIX}pexpect/script.py
 share/examples/${MODPY_PY_PREFIX}pexpect/ssh_tunnel.py
 share/examples/${MODPY_PY_PREFIX}pexpect/table_test.html
-share/examples/${MODPY_PY_PREFIX}pexpect/telnet.py
 share/examples/${MODPY_PY_PREFIX}pexpect/topip.py
 share/examples/${MODPY_PY_PREFIX}pexpect/uptime.py
