@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2016/07/31 17:49:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2016/09/01 17:32:16 pascal Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -9,6 +9,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.8.1
+REVISION =	0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 CATEGORIES =	devel
@@ -63,7 +64,7 @@ CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,--relax -nopie"
 TEST_TARGET =		check
 
 # XXX sync
-GCC_VER =		4.9.3
+GCC_VER =		4.9.4
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
