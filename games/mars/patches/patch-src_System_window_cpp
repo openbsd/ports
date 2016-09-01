@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_System_window_cpp,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
+$OpenBSD: patch-src_System_window_cpp,v 1.2 2016/09/01 16:50:56 pascal Exp $
 
 No joystick support in SFML on OpenBSD.
 
@@ -7,9 +7,17 @@ From:
 https://github.com/kenkeiras/M.A.R.S./commit/a97d0d6a19b5b43e3c53081e36f1f1747b6674e6
 but not merged in main tree.
 
---- src/System/window.cpp.orig	Fri Jun 29 10:43:13 2012
-+++ src/System/window.cpp	Sun Sep 14 21:22:58 2014
-@@ -131,26 +131,6 @@ namespace window {
+--- src/System/window.cpp.orig	Fri Jun 29 15:43:13 2012
++++ src/System/window.cpp	Wed Aug 31 17:48:23 2016
+@@ -31,6 +31,7 @@ this program.  If not, see <http://www.gnu.org/license
+ # include "defines.hpp"
+ 
+ # include <SFML/OpenGL.hpp>
++# include <GL/glu.h>
+ # include <sstream>
+ # include <time.h>
+ # include <sys/stat.h>
+@@ -131,26 +132,6 @@ namespace window {
                      if (menus::visible() && event.mouseButton.button == sf::Mouse::Left)
                          menus::mouseLeft(false);
                  }
@@ -36,7 +44,7 @@ but not merged in main tree.
                  else if (event.type == sf::Event::MouseWheelMoved) {
                      if (menus::visible())
                          menus::mouseWheelMoved(Vector2f(event.mouseWheel.x - (window_.getSize().x - viewPort_.x_)/2, event.mouseWheel.y - (window_.getSize().y - viewPort_.y_)/2), event.mouseWheel.delta);
-@@ -307,13 +287,11 @@ namespace window {
+@@ -307,13 +288,11 @@ namespace window {
          window_.setActive(true);
          glEnable(GL_TEXTURE_2D);
  
@@ -52,7 +60,7 @@ but not merged in main tree.
  
          window_.popGLStates();
          glPopMatrix();
-@@ -327,17 +305,6 @@ namespace window {
+@@ -327,17 +306,6 @@ namespace window {
                      return 100;
                  break;
  
@@ -70,7 +78,7 @@ but not merged in main tree.
          }
          return 0;
      }
-@@ -362,7 +329,7 @@ namespace window {
+@@ -362,7 +330,7 @@ namespace window {
          std::stringstream filename;
          filename << "ScreenShot_" << timeinfo->tm_year << timeinfo->tm_mon << timeinfo->tm_mday << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "." << settings::C_screenShotFormat;
  
