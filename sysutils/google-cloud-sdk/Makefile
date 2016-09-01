@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2016/08/25 07:17:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2016/09/01 09:06:41 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 
-V=			123.0.0
+V=			124.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -55,8 +55,9 @@ do-install:
 		-exec rm '{}' \+
 
 	find ${PREFIX} -type d -name python3 -exec rm -rf '{}' \+
+# XXX ||true: ignore python >=3.5 syntax in unused examples
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/google-cloud-sdk/{lib,platform}
+		${PREFIX}/google-cloud-sdk/{lib,platform} || true
 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/google-cloud-sdk
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/google-cloud-sdk/bin

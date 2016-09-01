@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.2 2016/08/21 15:15:41 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.3 2016/09/01 09:06:41 ajacoutot Exp $
 --- lib/googlecloudsdk/core/util/platforms.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/util/platforms.py	Sun Aug 21 17:09:38 2016
++++ lib/googlecloudsdk/core/util/platforms.py	Thu Sep  1 10:28:34 2016
 @@ -66,7 +66,8 @@ class OperatingSystem(object):
    LINUX = _OS('LINUX', 'Linux', 'linux')
    CYGWIN = _OS('CYGWIN', 'Cygwin', 'cygwin')
@@ -20,7 +20,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.2 2016/08/21 15:15
      # TODO(user): More reliable handling of OS types
      # TODO(user): What happens when we use jython, does it actually use the
      # 'java' os name?
-@@ -140,7 +143,7 @@ class Architecture(object):
+@@ -145,7 +148,7 @@ class Architecture(object):
    x86_64 = _ARCH('x86_64', 'x86_64', 'x86_64')
    ppc = _ARCH('PPC', 'PPC', 'ppc')
    _ALL = [x86, x86_64, ppc]
@@ -29,7 +29,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.2 2016/08/21 15:15
                                'i386': x86, 'i686': x86, 'x86': x86,
                                'Power Macintosh': ppc}
  
-@@ -252,6 +255,9 @@ class Platform(object):
+@@ -257,6 +260,9 @@ class Platform(object):
                       if self.architecture == Architecture.ppc else 'Intel')
        return format_string.format(
            name=arch_string, version=platform.release())
