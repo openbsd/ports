@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/08/31 08:33:19 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2016/09/01 09:41:40 ajacoutot Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.11.0
 BV =			1.11.0-20160819
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
 RUST_HASH =		39b92f95
@@ -88,7 +89,8 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 
 # VERSION and BOOTSTRAP are same version
 .if ${V} == ${BV:C/-[0-9]+$//}
-CONFIGURE_ARGS +=	--enable-local-rebuild
+CONFIGURE_ARGS +=	--enable-local-rebuild \
+			--local-rust-root="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}"
 .endif
 
 CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
@@ -111,7 +113,7 @@ pre-configure:
 # - copy libestdc++ from MODGCC4 to specific directory
 #   in order to disambiguate version linking (having multiple libestdc++
 #   at build time)
-# - copy bootstrap in stage0 (avoid downloading)
+# - copy bootstrap in stage0 (permit copying bootstrapped libs in stage0)
 post-configure:
 .for _v in CFG_CURL CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
 	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
