@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/08/04 12:58:29 edd Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/01 10:19:16 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
@@ -8,7 +8,7 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-main =		4
+REVISION-main =		5
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -46,6 +46,7 @@ RUN_DEPENDS-main += \
 # extra apps
 RUN_DEPENDS-extras += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
+		x11/xfce4/xfdashboard \
 		x11/xfce4/xfmpc \
 		x11/xfce4/parole
 
@@ -60,6 +61,7 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-battery \
 		x11/xfce4/xfce4-clipman \
 		x11/xfce4/xfce4-cpugraph \
+		x11/xfce4/xfce4-datetime \
 		x11/xfce4/xfce4-dict \
 		x11/xfce4/xfce4-diskperf \
 		x11/xfce4/xfce4-fsguard \

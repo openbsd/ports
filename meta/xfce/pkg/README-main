@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2016/08/04 12:58:30 edd Exp $
+$OpenBSD: README-main,v 1.9 2016/09/01 10:19:16 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,21 +7,6 @@ $OpenBSD: README-main,v 1.8 2016/08/04 12:58:30 edd Exp $
 The Xfce desktop is composed of 2 meta-packages:
     * xfce, for a base Xfce installation
     * xfce-extras, for a full Xfce installation.
-
-xfsettingsd Bug
-===============
-Note that there is currently a bug in xfsettingsd, whereby it crashes if
-there is no systemwide D-Bus running. If you find that appearance
-setting don't apply, or that keyboard shortcuts don't work, you have
-been bitten!
- 
-For the time being, (until a fix is devised) you are advised to run a
-systemwide D-Bus (add 'messagebus' to pkg_scripts in rc.conf.local).
-
-For more information see:
-
- * https://bugzilla.xfce.org/show_bug.cgi?id=11773
- * https://bugs.freedesktop.org/show_bug.cgi?id=95350
 
 Startup
 =======
