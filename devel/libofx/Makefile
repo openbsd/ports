@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/01 14:53:54 landry Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.9.10
+DISTNAME=	libofx-0.9.11
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
