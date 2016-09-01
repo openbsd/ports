@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/01 12:21:05 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/01 15:13:49 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
 MODPY_EGG_VERSION =	0.9.15
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 EPOCH =			0
 CATEGORIES =   		net security
 
-HOMEPAGE =		https://github.com/CoreSecurity/impacket
+HOMEPAGE =		https://www.coresecurity.com/corelabs-research/open-source-tools/impacket
 
 # Apache modified
 PERMIT_PACKAGE_CDROM =	Yes
