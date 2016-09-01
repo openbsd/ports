@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/31 07:58:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/01 13:14:00 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -56,6 +56,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--spooldir=${LOCALSTATEDIR}/spool/bro \
 			--logdir=${LOCALSTATEDIR}/log/bro \
 			--python-install-dir=${PREFIX}/lib/python${MODPY_VERSION}/site-packages \
+			--with-python=${MODPY_BIN} \
 			--binary-package
 
 SUBST_VARS=		MODPY_SITEPKG
