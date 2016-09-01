@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.136 2016/08/31 16:48:33 fcambus Exp $
+# $OpenBSD: OpenBSD,v 1.137 2016/09/01 11:17:54 akfaew Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -108,6 +108,7 @@
 49.48		8.42		"naddy"		# Christian Weisgerber
 49.5557300	22.2056000	"awolk"		# Adam Wolk
 50.0412		21.9991		"fcambus"	# Frederic Cambus
+50.0412		21.9991		"akfaew"	# Michal Mazurek
 50.342651	7.584064	"pascal"	# Pascal Stumpf
 50.752		-3.276		"sthen"		# Stuart Henderson
 50.76859	6.10157		"mpi"		# Martin Pieuchot
