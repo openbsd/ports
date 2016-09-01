@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/31 05:12:47 gonzalo Exp $
-
-USE_WXNEEDED=		Yes
+# $OpenBSD: Makefile,v 1.17 2016/09/01 15:51:08 ajacoutot Exp $
 
 COMMENT=		vi-like minimalists web browser
 V=			1.6.4
@@ -10,7 +8,7 @@ GH_PROJECT=		xombrero
 DISTNAME=		${GH_PROJECT}-${V}
 CATEGORIES=		www
 EPOCH=			1
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://github.com/conformal/xombrero
 
