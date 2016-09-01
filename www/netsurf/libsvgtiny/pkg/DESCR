@@ -1,0 +1,7 @@
+Libsvgtiny is an implementation of SVG Tiny, written in C. It is currently
+in development for use with NetSurf and is intended to be suitable for use
+in other projects too.
+
+The overall idea of the library is to take some SVG as input, and return a
+list of paths and texts which can be rendered easily. The library does not
+do the actual rendering.
