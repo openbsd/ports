@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/25 11:10:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/01 11:11:09 pascal Exp $
 
 COMMENT =		fast, real time 3D engine
-DISTNAME =		irrlicht-1.8.3
+DISTNAME =		irrlicht-1.8.4
 
-SO_VERSION =		2.0
+SO_VERSION =		3.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
 
 CATEGORIES =		x11 games
