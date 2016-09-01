@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_SFML_Window_WindowHandle_hpp,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
---- include/SFML/Window/WindowHandle.hpp.orig	Wed Mar 19 23:34:17 2014
-+++ include/SFML/Window/WindowHandle.hpp	Wed Mar 19 23:34:30 2014
-@@ -46,7 +46,7 @@ namespace sf
+$OpenBSD: patch-include_SFML_Window_WindowHandle_hpp,v 1.2 2016/09/01 16:50:14 pascal Exp $
+--- include/SFML/Window/WindowHandle.hpp.orig	Wed Aug 31 17:33:32 2016
++++ include/SFML/Window/WindowHandle.hpp	Wed Aug 31 17:33:36 2016
+@@ -42,7 +42,7 @@ namespace sf
      // Window handle is HWND (HWND__*) on Windows
      typedef HWND__* WindowHandle;
  

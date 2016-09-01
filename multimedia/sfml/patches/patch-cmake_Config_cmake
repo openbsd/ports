@@ -1,13 +1,23 @@
-$OpenBSD: patch-cmake_Config_cmake,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
---- cmake/Config.cmake.orig	Wed Mar 19 23:29:50 2014
-+++ cmake/Config.cmake	Wed Mar 19 23:30:08 2014
-@@ -18,6 +18,9 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
- elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-     # FreeBSD compile path is the same as Linux
-     set(LINUX 1)
-+elseif(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
-+    # OpenBSD compile path is the same as Linux
-+    set(LINUX 1)
- elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-     set(MACOSX 1)
- 
+$OpenBSD: patch-cmake_Config_cmake,v 1.2 2016/09/01 16:50:14 pascal Exp $
+--- cmake/Config.cmake.orig	Wed Aug 31 17:33:23 2016
++++ cmake/Config.cmake	Wed Aug 31 17:34:48 2016
+@@ -31,6 +31,10 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+     set(SFML_OS_FREEBSD 1)
+     # don't use the OpenGL ES implementation on FreeBSD
+     set(OPENGL_ES 0)
++elseif(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
++    set(SFML_OS_OPENBSD 1)
++    # don't use the OpenGL ES implementation on OpenBSD
++    set(OPENGL_ES 0)
+ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+     if(IOS)
+         set(SFML_OS_IOS 1)
+@@ -112,7 +116,7 @@ endif()
+ # define the install directory for miscellaneous files
+ if(SFML_OS_WINDOWS OR SFML_OS_IOS)
+     set(INSTALL_MISC_DIR .)
+-elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_MACOSX)
++elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_MACOSX OR SFML_OS_OPENBSD)
+     set(INSTALL_MISC_DIR share/SFML)
+ elseif(SFML_OS_ANDROID)
+     set(INSTALL_MISC_DIR ${ANDROID_NDK}/sources/sfml)

@@ -1,31 +1,43 @@
-$OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.1.1.1 2014/09/14 21:01:52 pascal Exp $
---- src/SFML/Window/CMakeLists.txt.orig	Thu Mar 20 02:16:11 2014
-+++ src/SFML/Window/CMakeLists.txt	Thu Mar 20 02:17:41 2014
-@@ -14,11 +14,11 @@ set(SRC
-     ${INCROOT}/ContextSettings.hpp
-     ${INCROOT}/Event.hpp
-     ${SRCROOT}/InputImpl.hpp
--    ${INCROOT}/Joystick.hpp
--    ${SRCROOT}/Joystick.cpp
--    ${SRCROOT}/JoystickImpl.hpp
--    ${SRCROOT}/JoystickManager.cpp
--    ${SRCROOT}/JoystickManager.hpp
-+#   ${INCROOT}/Joystick.hpp
-+#   ${SRCROOT}/Joystick.cpp
-+#   ${SRCROOT}/JoystickImpl.hpp
-+#   ${SRCROOT}/JoystickManager.cpp
-+#   ${SRCROOT}/JoystickManager.hpp
-     ${INCROOT}/Keyboard.hpp
-     ${SRCROOT}/Keyboard.cpp
-     ${INCROOT}/Mouse.hpp
-@@ -57,8 +57,8 @@ elseif(LINUX)
-         ${SRCROOT}/Linux/GlxContext.hpp
-         ${SRCROOT}/Linux/InputImpl.cpp
-         ${SRCROOT}/Linux/InputImpl.hpp
--        ${SRCROOT}/Linux/JoystickImpl.cpp
--        ${SRCROOT}/Linux/JoystickImpl.hpp
-+#       ${SRCROOT}/Linux/JoystickImpl.cpp
-+#       ${SRCROOT}/Linux/JoystickImpl.hpp
-         ${SRCROOT}/Linux/VideoModeImpl.cpp
-         ${SRCROOT}/Linux/WindowImplX11.cpp
-         ${SRCROOT}/Linux/WindowImplX11.hpp
+$OpenBSD: patch-src_SFML_Window_CMakeLists_txt,v 1.2 2016/09/01 16:50:14 pascal Exp $
+--- src/SFML/Window/CMakeLists.txt.orig	Wed Aug 31 17:33:33 2016
++++ src/SFML/Window/CMakeLists.txt	Wed Aug 31 17:33:36 2016
+@@ -69,7 +69,7 @@ if(SFML_OS_WINDOWS)
+ 
+     # make sure that we use the Unicode version of the Win API functions
+     add_definitions(-DUNICODE -D_UNICODE)
+-elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD)
++elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_OPENBSD)
+     set(PLATFORM_SRC
+         ${SRCROOT}/Unix/Display.cpp
+         ${SRCROOT}/Unix/Display.hpp
+@@ -104,6 +104,12 @@ elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD)
+             ${SRCROOT}/FreeBSD/JoystickImpl.cpp
+             ${SRCROOT}/FreeBSD/JoystickImpl.hpp
+         )
++    elseif(SFML_OS_OPENBSD)
++        set(PLATFORM_SRC
++            ${PLATFORM_SRC}
++            ${SRCROOT}/Android/JoystickImpl.cpp
++            ${SRCROOT}/Android/JoystickImpl.hpp
++        )
+     endif()
+     source_group("unix" FILES ${PLATFORM_SRC})
+ elseif(SFML_OS_MACOSX)
+@@ -205,7 +211,7 @@ endif()
+ if(NOT SFML_OPENGL_ES)
+     find_package(OpenGL REQUIRED)
+     include_directories(${OPENGL_INCLUDE_DIR})
+-    if(SFML_OS_LINUX OR SFML_OS_FREEBSD)
++    if(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_OPENBSD)
+         find_package(XCB COMPONENTS xlib_xcb image randr REQUIRED)
+         if(NOT LIBXCB_FOUND)
+             message(FATAL_ERROR "Xcb library not found")
+@@ -234,6 +240,8 @@ elseif(SFML_OS_LINUX)
+     list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} ${UDEV_LIBRARIES})
+ elseif(SFML_OS_FREEBSD)
+     list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES} usbhid)
++elseif(SFML_OS_OPENBSD)
++    list(APPEND WINDOW_EXT_LIBS ${X11_X11_LIB} ${LIBXCB_LIBRARIES})
+ elseif(SFML_OS_MACOSX)
+     list(APPEND WINDOW_EXT_LIBS "-framework Foundation -framework AppKit -framework IOKit -framework Carbon")
+ elseif(SFML_OS_IOS)
