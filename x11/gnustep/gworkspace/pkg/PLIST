@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/08/30 09:53:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/09/01 20:51:23 sebastia Exp $
 bin/GWorkspace
 bin/MDFinder
 bin/Recycler
@@ -8,7 +8,6 @@ bin/Recycler
 @bin bin/lsfupdater
 @bin bin/mdextractor
 @bin bin/mdfind
-@bin bin/resizer
 @bin bin/searchtool
 @bin bin/wopen
 include/DBKit/
@@ -227,7 +226,15 @@ lib/GNUstep/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/OpenOfficeExtractor.extr/stamp.make
 lib/GNUstep/Bundles/Role.extinfo/
 lib/GNUstep/Bundles/Role.extinfo/Resources/
+lib/GNUstep/Bundles/Role.extinfo/Resources/English.lproj/
+lib/GNUstep/Bundles/Role.extinfo/Resources/English.lproj/Localizable.strings
+lib/GNUstep/Bundles/Role.extinfo/Resources/French.lproj/
+lib/GNUstep/Bundles/Role.extinfo/Resources/French.lproj/Localizable.strings
+lib/GNUstep/Bundles/Role.extinfo/Resources/German.lproj/
+lib/GNUstep/Bundles/Role.extinfo/Resources/German.lproj/Localizable.strings
 lib/GNUstep/Bundles/Role.extinfo/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/Role.extinfo/Resources/Italian.lproj/
+lib/GNUstep/Bundles/Role.extinfo/Resources/Italian.lproj/Localizable.strings
 @bin lib/GNUstep/Bundles/Role.extinfo/Role
 lib/GNUstep/Bundles/Role.extinfo/stamp.make
 lib/GNUstep/Bundles/RtfExtractor.extr/
@@ -292,17 +299,20 @@ lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/FSNTextCell.h
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/FSNode.h
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/FSNodeRep.h
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/
-lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/ArrowRight.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/FolderOpen.tiff
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/French.lproj/
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/French.lproj/Localizable.strings
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/German.lproj/
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/German.lproj/Localizable.strings
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/HardDisk.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/HardDiskOpen.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Info-gnustep.plist
-lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/MultipleSelection.tiff
-lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Recycler.tiff
-lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/RecyclerFull.tiff
-lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Workspace.tiff
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Italian.lproj/
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Italian.lproj/Localizable.strings
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Spanish.lproj/
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Spanish.lproj/Localizable.strings
 @lib lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/libFSNode.so.${LIBFSNode_VERSION}
 lib/GNUstep/Frameworks/FSNode.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/FSNode.framework/libFSNode.so.${LIBFSNode_VERSION}
@@ -346,7 +356,6 @@ lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/InspectorWin.gorm/data.classes
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/InspectorWin.gorm/data.info
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/InspectorWin.gorm/objects.gorm
-lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/Tools.gorm/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/Tools.gorm/data.classes
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/English.lproj/Tools.gorm/data.info
@@ -382,7 +391,6 @@ lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Month-7.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Month-8.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Month-9.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Month.tiff
-lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/MultipleSelection.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Pboard.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Weekday-0.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Weekday-1.tiff
@@ -511,10 +519,6 @@ lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Operation.tiff
 @lib lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/libOperation.so.${LIBOperation_VERSION}
 lib/GNUstep/Frameworks/Operation.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/Operation.framework/libOperation.so.${LIBOperation_VERSION}
-lib/GNUstep/Services/thumbnailer.service/
-lib/GNUstep/Services/thumbnailer.service/Resources/
-lib/GNUstep/Services/thumbnailer.service/Resources/Info-gnustep.plist
-@bin lib/GNUstep/Services/thumbnailer.service/thumbnailer
 @lib lib/libDBKit.so.${LIBDBKit_VERSION}
 @lib lib/libFSNode.so.${LIBFSNode_VERSION}
 @lib lib/libInspector.so.${LIBInspector_VERSION}
@@ -667,13 +671,6 @@ libexec/GNUstep/GWorkspace.app/Resources/Esperanto.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Esperanto.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/FFArrow.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FFArrow_disabled.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_Small.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_alt.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_osx.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
-libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_osx.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileIcon_WebLink.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileManager.tiff
 libexec/GNUstep/GWorkspace.app/Resources/French.lproj/
@@ -724,7 +721,6 @@ libexec/GNUstep/GWorkspace.app/Resources/Month-7.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Month-8.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Month-9.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Month.tiff
-libexec/GNUstep/GWorkspace.app/Resources/MultipleSelection.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Norvegian.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Norvegian.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Pboard.tiff
@@ -732,8 +728,6 @@ libexec/GNUstep/GWorkspace.app/Resources/Portuguese.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/REWArrow.tiff
 libexec/GNUstep/GWorkspace.app/Resources/REWArrow_disabled.tiff
-libexec/GNUstep/GWorkspace.app/Resources/Recycler.tiff
-libexec/GNUstep/GWorkspace.app/Resources/RecyclerFull.tiff
 libexec/GNUstep/GWorkspace.app/Resources/RightArr.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Romanian.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Romanian.lproj/Localizable.strings
