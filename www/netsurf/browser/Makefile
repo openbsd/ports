@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/06 11:51:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/01 00:32:37 bentley Exp $
 
-COMMENT =		lightweight web browser
+COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.5
+REVISION =		0
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -33,7 +34,8 @@ WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread
 WANTLIB += rsvg-2 ssl utf8proc wapcaplet z nsutils
 
-MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
+MAKE_FLAGS +=		CC="${CC}" \
+			NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
 			NETSURF_USE_RSVG=YES \
 			NETSURF_USE_NSSVG=NO \
@@ -51,6 +53,8 @@ post-patch:
 		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
 		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/gtk/res/options.gtk2.ui ; done
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/Docs/netsurf-gtk.1 \
+		${PREFIX}/man/man1/netsurf.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gtk/res/netsurf-gtk.desktop \
 		${PREFIX}/share/applications/netsurf.desktop

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/06/06 11:51:00 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/09/01 00:32:37 bentley Exp $
 @bin bin/netsurf
+@man man/man1/netsurf.1
 share/applications/netsurf.desktop
 share/netsurf/
 share/netsurf/C

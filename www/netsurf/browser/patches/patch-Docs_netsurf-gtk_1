@@ -1,0 +1,12 @@
+$OpenBSD: patch-Docs_netsurf-gtk_1,v 1.1 2016/09/01 00:32:37 bentley Exp $
+--- Docs/netsurf-gtk.1.orig	Tue Aug 30 02:10:36 2016
++++ Docs/netsurf-gtk.1	Tue Aug 30 02:10:40 2016
+@@ -13,7 +13,7 @@
+ .Nm netsurf
+ .Nd a small fast web browser
+ .Sh SYNOPSIS
+-.Nm netsurf-gtk
++.Nm netsurf
+ .Op Ar options
+ .Op Ar url
+ .Sh DESCRIPTION
