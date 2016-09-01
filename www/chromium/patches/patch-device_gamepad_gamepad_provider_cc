@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_gamepad_gamepad_provider_cc,v 1.4 2016/07/31 13:11:44 robert Exp $
---- content/browser/gamepad/gamepad_provider.cc.orig.port	Wed Jul 20 21:03:24 2016
-+++ content/browser/gamepad/gamepad_provider.cc	Thu Jul 21 10:25:29 2016
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.1 2016/09/01 16:28:11 robert Exp $
+--- device/gamepad/gamepad_provider.cc.orig.port	Thu Sep  1 11:26:14 2016
++++ device/gamepad/gamepad_provider.cc	Thu Sep  1 11:26:21 2016
 @@ -136,7 +136,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
    pad_states_.reset(new PadState[WebGamepads::itemsLengthCap]);
  

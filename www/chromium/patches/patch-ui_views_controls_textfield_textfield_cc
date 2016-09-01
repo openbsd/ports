@@ -1,42 +1,33 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.16 2016/07/31 13:11:44 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Thu Jul 21 10:46:28 2016
-+++ ui/views/controls/textfield/textfield.cc	Thu Jul 21 10:48:01 2016
-@@ -48,7 +48,7 @@
- #include "base/win/win_util.h"
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.17 2016/09/01 16:28:11 robert Exp $
+--- ui/views/controls/textfield/textfield.cc.orig.port	Thu Sep  1 11:39:12 2016
++++ ui/views/controls/textfield/textfield.cc	Thu Sep  1 11:40:39 2016
+@@ -50,7 +50,7 @@
+ #include "ui/base/win/osk_display_manager.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
  #include "base/strings/utf_string_conversions.h"
- #include "ui/events/linux/text_edit_command_auralinux.h"
- #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -131,14 +131,14 @@ int GetCommandForKeyEvent(const ui::KeyEvent& event) {
+ #include "ui/base/ime/linux/text_edit_command_auralinux.h"
+ #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+@@ -143,14 +143,14 @@ ui::TextEditCommand GetCommandForKeyEvent(const ui::Ke
      case ui::VKEY_BACK:
        if (!control)
-         return IDS_DELETE_BACKWARD;
+         return ui::TextEditCommand::DELETE_BACKWARD;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        // Only erase by line break on Linux and ChromeOS.
        if (shift)
-         return IDS_DELETE_TO_BEGINNING_OF_LINE;
+         return ui::TextEditCommand::DELETE_TO_BEGINNING_OF_LINE;
  #endif
-       return IDS_DELETE_WORD_BACKWARD;
+       return ui::TextEditCommand::DELETE_WORD_BACKWARD;
      case ui::VKEY_DELETE:
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        // Only erase by line break on Linux and ChromeOS.
        if (shift && control)
-         return IDS_DELETE_TO_END_OF_LINE;
-@@ -155,7 +155,7 @@ int GetCommandForKeyEvent(const ui::KeyEvent& event) {
-   }
- }
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- // Convert a custom text edit |command| to the equivalent views command ID.
- int GetViewsCommand(const ui::TextEditCommandAuraLinux& command, bool rtl) {
-   const bool select = command.extend_selection();
-@@ -643,7 +643,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+         return ui::TextEditCommand::DELETE_TO_END_OF_LINE;
+@@ -583,7 +583,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
        OnAfterUserAction();
      }
  
@@ -45,7 +36,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.16 2016/07/31 13:11
      if (event.IsOnlyMiddleMouseButton()) {
        if (GetRenderText()->IsPointInSelection(event.location())) {
          OnBeforeUserAction();
-@@ -712,7 +712,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -652,7 +652,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -54,7 +45,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.16 2016/07/31 13:11
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -847,7 +847,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -792,7 +792,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -63,7 +54,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.16 2016/07/31 13:11
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1106,7 +1106,7 @@ void Textfield::WriteDragDataForView(View* sender,
+@@ -1052,7 +1052,7 @@ void Textfield::WriteDragDataForView(View* sender,
    std::unique_ptr<gfx::Canvas> canvas(
        GetCanvasForDragImage(GetWidget(), label.size()));
    label.SetEnabledColor(GetTextColor());
@@ -72,7 +63,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.16 2016/07/31 13:11
    // Desktop Linux Aura does not yet support transparency in drag images.
    canvas->DrawColor(GetBackgroundColor());
  #endif
-@@ -1908,7 +1908,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
+@@ -1947,7 +1947,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
  }
  
  void Textfield::UpdateSelectionClipboard() const {

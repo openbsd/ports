@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.7 2016/03/06 10:51:14 robert Exp $
---- net/proxy/proxy_config_service_linux.cc.orig.port	Wed Feb 24 21:01:33 2016
-+++ net/proxy/proxy_config_service_linux.cc	Thu Mar  3 09:43:26 2016
+$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.8 2016/09/01 16:28:11 robert Exp $
+--- net/proxy/proxy_config_service_linux.cc.orig.port	Thu Sep  1 11:33:23 2016
++++ net/proxy/proxy_config_service_linux.cc	Thu Sep  1 11:34:49 2016
 @@ -11,7 +11,9 @@
  #include <limits.h>
  #include <stdio.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.7 2016/03/06 10:51:1
  #include <unistd.h>
  
  #include <map>
-@@ -851,6 +853,7 @@ bool SettingGetterImplGSettings::LoadAndCheckVersion(
+@@ -855,6 +857,7 @@ bool SettingGetterImplGSettings::LoadAndCheckVersion(
  }
  #endif  // defined(USE_GIO)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.7 2016/03/06 10:51:1
  // This is the KDE version that reads kioslaverc and simulates gconf.
  // Doing this allows the main Delegate code, as well as the unit tests
  // for it, to stay the same - and the settings map fairly well besides.
-@@ -1355,6 +1358,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -1359,6 +1362,7 @@ class SettingGetterImplKDE : public ProxyConfigService
  
    DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
  };
@@ -27,12 +27,12 @@ $OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.7 2016/03/06 10:51:1
  
  }  // namespace
  
-@@ -1555,8 +1559,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(base::Envi
+@@ -1560,8 +1564,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:
 +#if !defined(OS_BSD)
-       setting_getter_.reset(new SettingGetterImplKDE(env_var_getter));
+       setting_getter_.reset(new SettingGetterImplKDE(env_var_getter_.get()));
        break;
 +#endif
      case base::nix::DESKTOP_ENVIRONMENT_XFCE:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.1 2016/08/17 11:06:50 robert Exp $
---- tools/gn/bootstrap/bootstrap.py.orig.port	Sun Aug 14 16:09:53 2016
-+++ tools/gn/bootstrap/bootstrap.py	Sun Aug 14 16:19:14 2016
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- tools/gn/bootstrap/bootstrap.py.orig.port	Thu Sep  1 00:03:52 2016
++++ tools/gn/bootstrap/bootstrap.py	Thu Sep  1 11:12:25 2016
 @@ -31,7 +31,8 @@ SRC_ROOT = os.path.dirname(os.path.dirname(GN_ROOT))
  
  is_linux = sys.platform.startswith('linux')
@@ -11,7 +11,7 @@ $OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.1 2016/08/17 11:06:50 robert
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -383,6 +384,35 @@ def write_ninja(path, root_gen_dir, options):
+@@ -385,6 +386,35 @@ def write_ninja(path, root_gen_dir, options):
          'include_dirs': [],
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2016/08/25 20:00:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.305 2016/09/01 16:28:11 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,10 +7,9 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			52.0.2743.116
+V=			53.0.2785.89
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		2
 
 CATEGORIES=		www
 
@@ -54,7 +53,6 @@ WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += nspr4 nss3 nssutil3 smime3
 WANTLIB += atk-1.0 gmodule-2.0
-WANTLIB += pthread-stubs
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -106,7 +104,7 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
-		enable_webrtc=true \
+		enable_webrtc=false \
 		enable_one_click_signin=true \
 		use_kerberos=false \
 		use_sndio=true \

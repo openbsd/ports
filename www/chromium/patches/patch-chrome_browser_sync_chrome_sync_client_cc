@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.4 2016/07/31 13:11:44 robert Exp $
---- chrome/browser/sync/chrome_sync_client.cc.orig.port	Wed Jul 20 21:03:20 2016
-+++ chrome/browser/sync/chrome_sync_client.cc	Thu Jul 21 10:25:28 2016
-@@ -578,7 +578,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.5 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/sync/chrome_sync_client.cc.orig.port	Thu Sep  1 00:03:28 2016
++++ chrome/browser/sync/chrome_sync_client.cc	Thu Sep  1 11:12:20 2016
+@@ -582,7 +582,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
    }
  #endif
  

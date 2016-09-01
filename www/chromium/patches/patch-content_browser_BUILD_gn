@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- content/browser/BUILD.gn.orig.port	Mon Aug 15 10:25:56 2016
-+++ content/browser/BUILD.gn	Mon Aug 15 10:26:26 2016
-@@ -146,6 +146,10 @@ source_set("browser") {
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- content/browser/BUILD.gn.orig.port	Thu Sep  1 00:03:31 2016
++++ content/browser/BUILD.gn	Thu Sep  1 11:12:22 2016
+@@ -150,6 +150,10 @@ source_set("browser") {
      deps += [ "//ui/events" ]
    }
  

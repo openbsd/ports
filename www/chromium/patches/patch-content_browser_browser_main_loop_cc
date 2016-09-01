@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.38 2016/07/31 13:11:44 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Jul 20 21:03:24 2016
-+++ content/browser/browser_main_loop.cc	Thu Jul 21 10:25:29 2016
-@@ -195,6 +195,10 @@
- #include "gpu/vulkan/vulkan_implementation.h"
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.39 2016/09/01 16:28:11 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Thu Sep  1 00:03:31 2016
++++ content/browser/browser_main_loop.cc	Thu Sep  1 11:12:22 2016
+@@ -197,6 +197,10 @@
  #endif
+ 
  
 +#if defined(OS_BSD)
 +#include "content/common/child_process_sandbox_support_impl_linux.h"
@@ -12,7 +12,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.38 2016/07/31 13:11:44 
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -203,7 +207,7 @@
+@@ -205,7 +209,7 @@
  namespace content {
  namespace {
  
@@ -20,10 +20,10 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.38 2016/07/31 13:11:44 
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
-   base::FilePath sandbox_binary;
-@@ -467,10 +471,15 @@ void BrowserMainLoop::EarlyInitialization() {
+ 
+@@ -443,10 +447,15 @@ void BrowserMainLoop::Init() {
+ void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
-   TRACK_SCOPED_REGION("Startup", "BrowserMainLoop::EarlyInitialization");
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)

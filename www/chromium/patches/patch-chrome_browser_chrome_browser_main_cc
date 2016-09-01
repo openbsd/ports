@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.8 2016/07/31 13:11:44 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Wed Jul 20 21:03:19 2016
-+++ chrome/browser/chrome_browser_main.cc	Thu Jul 21 10:25:26 2016
-@@ -178,7 +178,7 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.9 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Thu Sep  1 00:03:27 2016
++++ chrome/browser/chrome_browser_main.cc	Thu Sep  1 11:12:19 2016
+@@ -176,7 +176,7 @@
  #include "chrome/browser/feedback/feedback_profile_observer.h"
  #endif  // defined(OS_ANDROID)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.8 2016/07/31 13:11:44 
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -1121,7 +1121,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1159,7 +1159,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  

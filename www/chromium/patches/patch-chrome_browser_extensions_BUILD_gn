@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- chrome/browser/extensions/BUILD.gn.orig.port	Mon Aug 15 10:07:52 2016
-+++ chrome/browser/extensions/BUILD.gn	Mon Aug 15 10:08:36 2016
-@@ -116,6 +116,10 @@ source_set("extensions") {
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/extensions/BUILD.gn.orig.port	Thu Sep  1 00:03:27 2016
++++ chrome/browser/extensions/BUILD.gn	Thu Sep  1 11:12:20 2016
+@@ -121,6 +121,10 @@ static_library("extensions") {
                      "//chrome")
    }
  

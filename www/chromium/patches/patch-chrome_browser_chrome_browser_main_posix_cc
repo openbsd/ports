@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.11 2016/03/06 10:51:14 robert Exp $
---- chrome/browser/chrome_browser_main_posix.cc.orig.port	Wed Feb 24 00:01:58 2016
-+++ chrome/browser/chrome_browser_main_posix.cc	Thu Mar  3 09:43:25 2016
-@@ -274,6 +274,11 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.12 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/chrome_browser_main_posix.cc.orig.port	Thu Sep  1 00:03:27 2016
++++ chrome/browser/chrome_browser_main_posix.cc	Thu Sep  1 11:12:19 2016
+@@ -275,6 +275,11 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
      g_pipe_pid = getpid();
      g_shutdown_pipe_read_fd = pipefd[0];
      g_shutdown_pipe_write_fd = pipefd[1];
@@ -13,7 +13,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.11 2016/03/06 10
  #if !defined(ADDRESS_SANITIZER) && !defined(KEEP_SHADOW_STACKS)
      const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN * 2;
  #else
-@@ -281,6 +286,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+@@ -282,6 +287,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
      // shadow stacks) bloat the stack frames, so we need to increase the stack
      // size to avoid hitting the guard page.
      const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN * 4;

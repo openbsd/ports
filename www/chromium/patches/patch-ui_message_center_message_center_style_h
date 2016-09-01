@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_message_center_message_center_style_h,v 1.6 2016/07/31 13:11:44 robert Exp $
---- ui/message_center/message_center_style.h.orig.port	Wed Jul 20 21:03:46 2016
-+++ ui/message_center/message_center_style.h	Thu Jul 21 10:25:33 2016
-@@ -113,7 +113,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
+$OpenBSD: patch-ui_message_center_message_center_style_h,v 1.7 2016/09/01 16:28:11 robert Exp $
+--- ui/message_center/message_center_style.h.orig.port	Thu Sep  1 00:03:52 2016
++++ ui/message_center/message_center_style.h	Thu Sep  1 11:12:25 2016
+@@ -117,7 +117,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

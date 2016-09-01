@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- third_party/webrtc/BUILD.gn.orig.port	Sun Aug 14 22:10:59 2016
-+++ third_party/webrtc/BUILD.gn	Sun Aug 14 22:11:22 2016
-@@ -47,6 +47,9 @@ config("common_inherited_config") {
+$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- third_party/webrtc/BUILD.gn.orig.port	Thu Sep  1 00:05:08 2016
++++ third_party/webrtc/BUILD.gn	Thu Sep  1 11:12:24 2016
+@@ -58,6 +58,9 @@ config("common_inherited_config") {
    if (is_linux) {
      defines += [ "WEBRTC_LINUX" ]
    }

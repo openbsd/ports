@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- third_party/webrtc/system_wrappers/BUILD.gn.orig.port	Mon Aug 15 16:10:42 2016
-+++ third_party/webrtc/system_wrappers/BUILD.gn	Mon Aug 15 16:10:49 2016
-@@ -108,8 +108,6 @@ static_library("system_wrappers") {
+$OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig.port	Thu Sep  1 00:05:08 2016
++++ third_party/webrtc/system_wrappers/BUILD.gn	Thu Sep  1 11:12:25 2016
+@@ -111,8 +111,6 @@ source_set("system_wrappers") {
      if (!build_with_chromium) {
        deps += [ ":cpu_features_linux" ]
      }
@@ -9,4 +9,4 @@ $OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.1 2016/08/17 11:
 -    libs += [ "rt" ]
    }
  
-   if (!is_mac && !is_ios) {
+   if (is_linux || is_android) {

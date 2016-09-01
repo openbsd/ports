@@ -1,0 +1,12 @@
+$OpenBSD: patch-components_mus_public_cpp_lib_gles2_context_cc,v 1.1 2016/09/01 16:28:11 robert Exp $
+--- components/mus/public/cpp/lib/gles2_context.cc.orig.port	Thu Sep  1 11:33:08 2016
++++ components/mus/public/cpp/lib/gles2_context.cc	Thu Sep  1 11:33:17 2016
+@@ -71,7 +71,7 @@ bool GLES2Context::Initialize(const std::vector<int32_
+     gpu_control = command_buffer_proxy_impl_.get();
+   }
+ 
+-  constexpr gpu::SharedMemoryLimits default_limits;
++  constexpr gpu::SharedMemoryLimits default_limits = gpu::SharedMemoryLimits();
+   gles2_helper_.reset(new gpu::gles2::GLES2CmdHelper(command_buffer));
+   if (!gles2_helper_->Initialize(default_limits.command_buffer_size))
+     return false;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- base/BUILD.gn.orig.port	Wed Aug  3 21:02:10 2016
-+++ base/BUILD.gn	Tue Aug 16 22:18:41 2016
-@@ -1347,6 +1347,28 @@ component("base") {
+$OpenBSD: patch-base_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- base/BUILD.gn.orig.port	Thu Sep  1 00:03:26 2016
++++ base/BUILD.gn	Thu Sep  1 11:12:17 2016
+@@ -1358,6 +1358,28 @@ component("base") {
      }
    }
  

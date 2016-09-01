@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.29 2016/07/31 13:11:44 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Wed Jul 20 21:03:24 2016
-+++ content/browser/child_process_launcher.cc	Thu Jul 21 10:25:29 2016
-@@ -258,7 +258,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.30 2016/09/01 16:28:11 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Thu Sep  1 00:03:31 2016
++++ content/browser/child_process_launcher.cc	Thu Sep  1 11:12:22 2016
+@@ -256,7 +256,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
    // We need to close the client end of the IPC channel to reliably detect
    // child termination.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.29 2016/07/31 13:1
    ZygoteHandle* zygote_handle = delegate->GetZygote();
    // If |zygote_handle| is null, a zygote should not be used.
    if (zygote_handle) {
-@@ -364,7 +364,7 @@ void TerminateOnLauncherThread(ZygoteHandle zygote, ba
+@@ -362,7 +362,7 @@ void TerminateOnLauncherThread(ZygoteHandle zygote, ba
    process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.29 2016/07/31 13:1
    if (zygote) {
      // If the renderer was created via a zygote, we have to proxy the reaping
      // through the zygote process.
-@@ -468,7 +468,7 @@ void ChildProcessLauncher::Launch(
+@@ -481,7 +481,7 @@ void ChildProcessLauncher::Launch(
  
  void ChildProcessLauncher::UpdateTerminationStatus(bool known_dead) {
    DCHECK(CalledOnValidThread());
@@ -28,8 +28,8 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.29 2016/07/31 13:1
    if (zygote_) {
      termination_status_ = zygote_->GetTerminationStatus(
          process_.Handle(), known_dead, &exit_code_);
-@@ -548,7 +548,7 @@ void ChildProcessLauncher::Notify(ZygoteHandle zygote,
-                                     mojo_platform_channel_.PassServerHandle());
+@@ -563,7 +563,7 @@ void ChildProcessLauncher::Notify(ZygoteHandle zygote,
+                                     process_error_callback_);
    }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)

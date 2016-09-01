@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.8 2016/07/31 13:11:44 robert Exp $
---- ui/views/window/dialog_delegate.cc.orig.port	Wed Jul 20 21:03:46 2016
-+++ ui/views/window/dialog_delegate.cc	Thu Jul 21 10:25:33 2016
-@@ -51,7 +51,7 @@ Widget* DialogDelegate::CreateDialogWidgetWithBounds(W
+$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.9 2016/09/01 16:28:11 robert Exp $
+--- ui/views/window/dialog_delegate.cc.orig.port	Thu Sep  1 00:03:53 2016
++++ ui/views/window/dialog_delegate.cc	Thu Sep  1 11:12:25 2016
+@@ -55,7 +55,7 @@ Widget::InitParams DialogDelegate::GetDialogWidgetInit
    params.bounds = bounds;
    DialogDelegate* dialog = delegate->AsDialogDelegate();
  

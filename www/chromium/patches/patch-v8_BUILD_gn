@@ -1,6 +1,6 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.1 2016/08/17 11:06:51 robert Exp $
---- v8/BUILD.gn.orig.port	Wed Aug  3 21:04:09 2016
-+++ v8/BUILD.gn	Mon Aug 15 21:28:51 2016
+$OpenBSD: patch-v8_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- v8/BUILD.gn.orig.port	Thu Sep  1 00:05:12 2016
++++ v8/BUILD.gn	Thu Sep  1 11:12:25 2016
 @@ -1928,13 +1928,16 @@ v8_source_set("v8_libbase") {
      sources += [ "src/base/platform/platform-posix.cc" ]
    }
@@ -19,9 +19,9 @@ $OpenBSD: patch-v8_BUILD_gn,v 1.1 2016/08/17 11:06:51 robert Exp $
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -2015,6 +2018,8 @@ v8_source_set("fuzzer_support") {
- if (current_toolchain == snapshot_toolchain) {
-   executable("mksnapshot") {
+@@ -2038,6 +2041,8 @@ v8_source_set("simple_fuzzer") {
+ if (current_toolchain == v8_snapshot_toolchain) {
+   v8_executable("mksnapshot") {
      visibility = [ ":*" ]  # Only targets in this file can depend on this.
 +
 +    libs = [ "execinfo" ]

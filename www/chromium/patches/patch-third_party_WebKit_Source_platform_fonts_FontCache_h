@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.2 2016/07/31 13:11:44 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontCache.h.orig.port	Wed Jul 20 21:03:41 2016
-+++ third_party/WebKit/Source/platform/fonts/FontCache.h	Thu Jul 21 10:25:31 2016
-@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontCache { (private)
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.3 2016/09/01 16:28:11 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig.port	Thu Sep  1 00:03:48 2016
++++ third_party/WebKit/Source/platform/fonts/FontCache.h	Thu Sep  1 11:12:24 2016
+@@ -179,7 +179,7 @@ class PLATFORM_EXPORT FontCache { (private)
      // Implemented on skia platforms.
      PassRefPtr<SkTypeface> createTypeface(const FontDescription&, const FontFaceCreationParams&, CString& name);
  

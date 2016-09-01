@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.12 2016/07/31 13:11:44 robert Exp $
---- chrome/app/generated_resources.grd.orig.port	Wed Jul 20 21:03:19 2016
-+++ chrome/app/generated_resources.grd	Thu Jul 21 10:25:26 2016
-@@ -6685,7 +6685,7 @@ Keep your key file in a safe place. You will need it t
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.13 2016/09/01 16:28:11 robert Exp $
+--- chrome/app/generated_resources.grd.orig.port	Thu Sep  1 00:03:26 2016
++++ chrome/app/generated_resources.grd	Thu Sep  1 11:12:19 2016
+@@ -6813,7 +6813,7 @@ Keep your key file in a safe place. You will need it t
        <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
            Right-to-left
        </message>

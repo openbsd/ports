@@ -1,6 +1,6 @@
-$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.2 2015/04/27 16:38:25 robert Exp $
---- gpu/config/gpu_info_collector_x11.cc.orig.port	Wed Apr 15 00:18:55 2015
-+++ gpu/config/gpu_info_collector_x11.cc	Wed Apr 15 15:34:00 2015
+$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.3 2016/09/01 16:28:11 robert Exp $
+--- gpu/config/gpu_info_collector_x11.cc.orig.port	Thu Sep  1 00:03:32 2016
++++ gpu/config/gpu_info_collector_x11.cc	Thu Sep  1 14:34:35 2016
 @@ -8,8 +8,17 @@
  #include "gpu/config/gpu_info_collector_linux.h"
  #include "third_party/libXNVCtrl/NVCtrl.h"
@@ -34,7 +34,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.2 2015/04/27 16:38:25 r
 +  }
 +
 +  bool initialized =
-+      gfx::InitializeStaticGLBindings(gfx::kGLImplementationDesktopGL);
++      gl::InitializeStaticGLBindings(gl::kGLImplementationDesktopGL);
 +
 +  if (!initialized)
 +    return kCollectInfoNonFatalFailure;
@@ -56,7 +56,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.2 2015/04/27 16:38:25 r
 +  }
 +
 +  if (initialized)
-+    gfx::ClearGLBindings();
++    gl::ClearGLBindings();
 +
 +  return kCollectInfoSuccess;
 + }

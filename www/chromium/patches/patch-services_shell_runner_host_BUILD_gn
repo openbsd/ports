@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_shell_runner_host_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- services/shell/runner/host/BUILD.gn.orig.port	Sun Aug 14 19:10:15 2016
-+++ services/shell/runner/host/BUILD.gn	Sun Aug 14 19:10:24 2016
-@@ -84,7 +84,7 @@ source_set("lib") {
-     "//services/shell/public/interfaces",
+$OpenBSD: patch-services_shell_runner_host_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- services/shell/runner/host/BUILD.gn.orig.port	Thu Sep  1 00:03:34 2016
++++ services/shell/runner/host/BUILD.gn	Thu Sep  1 11:12:23 2016
+@@ -51,7 +51,7 @@ source_set("child_process_base") {
+     "//services/shell/runner/common",
    ]
  
 -  if (is_linux && !is_android) {

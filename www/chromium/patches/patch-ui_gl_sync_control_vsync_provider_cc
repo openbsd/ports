@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.4 2016/07/31 13:11:44 robert Exp $
---- ui/gl/sync_control_vsync_provider.cc.orig.port	Wed Jul 20 21:03:46 2016
-+++ ui/gl/sync_control_vsync_provider.cc	Thu Jul 21 12:30:13 2016
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.5 2016/09/01 16:28:11 robert Exp $
+--- ui/gl/sync_control_vsync_provider.cc.orig.port	Thu Sep  1 11:38:47 2016
++++ ui/gl/sync_control_vsync_provider.cc	Thu Sep  1 11:39:07 2016
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
@@ -11,9 +11,9 @@ $OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.4 2016/07/31 13:11:44 r
  // Calculating refreshes out of this range will be considered a fatal error.
  const int64_t kMinVsyncIntervalUs = base::Time::kMicrosecondsPerSecond / 400;
 @@ -26,7 +26,7 @@ const double kRelativeIntervalDifferenceThreshold = 0.
- namespace gfx {
+ namespace gl {
  
- SyncControlVSyncProvider::SyncControlVSyncProvider() : VSyncProvider() {
+ SyncControlVSyncProvider::SyncControlVSyncProvider() : gfx::VSyncProvider() {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // On platforms where we can't get an accurate reading on the refresh

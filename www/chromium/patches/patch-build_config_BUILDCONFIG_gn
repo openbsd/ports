@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- build/config/BUILDCONFIG.gn.orig.port	Wed Aug  3 21:02:10 2016
-+++ build/config/BUILDCONFIG.gn	Sun Aug 14 16:16:34 2016
-@@ -118,12 +118,13 @@ declare_args() {
-   is_debug = true
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- build/config/BUILDCONFIG.gn.orig.port	Thu Sep  1 00:03:26 2016
++++ build/config/BUILDCONFIG.gn	Thu Sep  1 11:12:18 2016
+@@ -127,12 +127,13 @@ declare_args() {
+   is_debug = !is_official_build
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
@@ -17,7 +17,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  
    # Allows the path to a custom target toolchain to be injected as a single
    # argument, and set as the default toolchain.
-@@ -167,6 +168,8 @@ if (host_toolchain == "") {
+@@ -178,6 +179,8 @@ if (host_toolchain == "") {
      } else {
        host_toolchain = "//build/toolchain/linux:$host_cpu"
      }
@@ -26,7 +26,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
    } else if (host_os == "mac") {
      host_toolchain = "//build/toolchain/mac:clang_$host_cpu"
    } else if (host_os == "win") {
-@@ -209,6 +212,8 @@ if (target_os == "android") {
+@@ -220,6 +223,8 @@ if (target_os == "android") {
    } else {
      _default_toolchain = "//build/toolchain/linux:$target_cpu"
    }
@@ -35,7 +35,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (target_os == "mac") {
    assert(host_os == "mac", "Mac cross-compiles are unsupported.")
    _default_toolchain = host_toolchain
-@@ -262,6 +267,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -273,6 +278,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_mac = false
    is_nacl = false
    is_posix = false
@@ -43,7 +43,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
    is_win = true
  } else if (current_os == "mac") {
    is_android = false
-@@ -272,6 +278,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -283,6 +289,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false
@@ -51,7 +51,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (current_os == "android") {
    is_android = true
    is_chromeos = false
-@@ -281,6 +288,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -292,6 +299,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false
@@ -59,7 +59,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (current_os == "chromeos") {
    is_android = false
    is_chromeos = true
-@@ -290,6 +298,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -301,6 +309,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false
@@ -67,7 +67,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
    # It is not set by default or on the command line. We treat is as a
-@@ -302,6 +311,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -313,6 +322,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = true
    is_posix = true
    is_win = false
@@ -75,7 +75,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (current_os == "ios") {
    is_android = false
    is_chromeos = false
-@@ -311,6 +321,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -322,6 +332,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false
@@ -83,7 +83,7 @@ $OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/08/17 11:06:50 robert Exp
  } else if (current_os == "linux") {
    is_android = false
    is_chromeos = false
-@@ -320,6 +331,17 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -331,6 +342,17 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false

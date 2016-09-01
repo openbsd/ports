@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.1 2016/08/17 11:06:50 robert Exp $
---- build/toolchain/gcc_toolchain.gni.orig.port	Sun Aug 14 16:27:22 2016
-+++ build/toolchain/gcc_toolchain.gni	Sun Aug 14 16:54:40 2016
-@@ -262,7 +262,7 @@ template("gcc_toolchain") {
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- build/toolchain/gcc_toolchain.gni.orig.port	Thu Sep  1 11:17:44 2016
++++ build/toolchain/gcc_toolchain.gni	Thu Sep  1 11:18:02 2016
+@@ -257,7 +257,7 @@ template("gcc_toolchain") {
        # POSIX-like toolchains such as NaCl on Windows).
        ar_wrapper =
            rebase_path("//build/toolchain/gcc_ar_wrapper.py", root_build_dir)
@@ -10,12 +10,11 @@ $OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.1 2016/08/17 11:06:50 robe
        description = "AR {{output}}"
        rspfile_content = "{{inputs}}"
        outputs = [
-@@ -502,8 +502,7 @@ template("clang_toolchain") {
+@@ -511,7 +511,7 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
--    prefix = rebase_path("//third_party/llvm-build/Release+Asserts/bin",
--                         root_build_dir)
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 +    prefix = "/usr/local/bin"
      cc = "$prefix/clang"
      cxx = "$prefix/clang++"

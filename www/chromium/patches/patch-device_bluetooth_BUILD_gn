@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- device/bluetooth/BUILD.gn.orig.port	Sun Aug 14 22:20:58 2016
-+++ device/bluetooth/BUILD.gn	Sun Aug 14 22:22:45 2016
-@@ -176,7 +176,7 @@ component("bluetooth") {
+$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- device/bluetooth/BUILD.gn.orig.port	Thu Sep  1 00:03:32 2016
++++ device/bluetooth/BUILD.gn	Thu Sep  1 11:12:23 2016
+@@ -181,7 +181,7 @@ component("bluetooth") {
      ]
    }
  

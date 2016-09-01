@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_safe_browsing_permission_reporter_cc,v 1.1 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/safe_browsing/permission_reporter.cc.orig.port	Thu Sep  1 14:15:47 2016
++++ chrome/browser/safe_browsing/permission_reporter.cc	Thu Sep  1 14:15:55 2016
+@@ -109,7 +109,7 @@ bool PermissionReporter::BuildReport(const GURL& origi
+ #if defined(OS_ANDROID)
+   report.set_platform_type(PermissionReport::ANDROID_PLATFORM);
+ #elif defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_CHROMEOS) || \
+-    defined(OS_LINUX)
++    defined(OS_LINUX) || defined(OS_BSD)
+   report.set_platform_type(PermissionReport::DESKTOP_PLATFORM);
+ #else
+ #error Unsupported platform.

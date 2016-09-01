@@ -1,12 +1,12 @@
-$OpenBSD: patch-components_mus_surfaces_surfaces_context_provider_cc,v 1.1 2016/08/17 11:06:50 robert Exp $
---- components/mus/surfaces/surfaces_context_provider.cc.orig.port	Mon Aug 15 15:44:03 2016
-+++ components/mus/surfaces/surfaces_context_provider.cc	Mon Aug 15 15:44:11 2016
-@@ -46,7 +46,7 @@ bool SurfacesContextProvider::BindToCurrentThread() {
-   if (!command_buffer_local_->Initialize())
-     return false;
+$OpenBSD: patch-components_mus_surfaces_surfaces_context_provider_cc,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- components/mus/surfaces/surfaces_context_provider.cc.orig.port	Thu Sep  1 11:24:33 2016
++++ components/mus/surfaces/surfaces_context_provider.cc	Thu Sep  1 11:24:50 2016
+@@ -104,7 +104,7 @@ bool SurfacesContextProvider::BindToCurrentThread() {
+   }
  
+   gles2_helper_.reset(new gpu::gles2::GLES2CmdHelper(command_buffer));
 -  constexpr gpu::SharedMemoryLimits default_limits;
 +  constexpr gpu::SharedMemoryLimits default_limits = gpu::SharedMemoryLimits();
-   gles2_helper_.reset(
-       new gpu::gles2::GLES2CmdHelper(command_buffer_local_));
    if (!gles2_helper_->Initialize(default_limits.command_buffer_size))
+     return false;
+   gles2_helper_->SetAutomaticFlushes(false);

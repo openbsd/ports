@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.1 2016/07/31 13:11:44 robert Exp $
---- ui/gl/sync_control_vsync_provider.h.orig.port	Thu Jul 21 12:29:56 2016
-+++ ui/gl/sync_control_vsync_provider.h	Thu Jul 21 12:30:01 2016
-@@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public VSyncProvider 
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.2 2016/09/01 16:28:11 robert Exp $
+--- ui/gl/sync_control_vsync_provider.h.orig.port	Thu Sep  1 00:03:52 2016
++++ ui/gl/sync_control_vsync_provider.h	Thu Sep  1 11:12:25 2016
+@@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    virtual bool GetMscRate(int32_t* numerator, int32_t* denominator) = 0;
  
   private:

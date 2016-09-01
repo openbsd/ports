@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_device_sensors_data_fetcher_shared_memory_h,v 1.1 2016/09/01 16:28:11 robert Exp $
+--- content/browser/device_sensors/data_fetcher_shared_memory.h.orig.port	Thu Sep  1 14:41:57 2016
++++ content/browser/device_sensors/data_fetcher_shared_memory.h	Thu Sep  1 14:42:06 2016
+@@ -45,7 +45,7 @@ class CONTENT_EXPORT DataFetcherSharedMemory
+   bool Start(ConsumerType consumer_type, void* buffer) override;
+   bool Stop(ConsumerType consumer_type) override;
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ #if !defined(OS_CHROMEOS)
+   DeviceMotionHardwareBuffer* motion_buffer_ = nullptr;
+   DeviceOrientationHardwareBuffer* orientation_buffer_ = nullptr;

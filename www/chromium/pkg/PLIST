@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.62 2016/08/17 11:06:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.63 2016/09/01 16:28:11 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/chrome_200_percent.pak
-chrome/chrome_material_100_percent.pak
-chrome/chrome_material_200_percent.pak
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/locales/
@@ -64,7 +62,6 @@ chrome/locales/uk.pak
 chrome/locales/vi.pak
 chrome/locales/zh-CN.pak
 chrome/locales/zh-TW.pak
-chrome/mash_wm_resources.pak
 chrome/mksnapshot
 chrome/mus_app_resources_100.pak
 chrome/mus_app_resources_200.pak
@@ -221,6 +218,7 @@ chrome/resources/inspector/snippets_module.js
 chrome/resources/inspector/source_frame_module.js
 chrome/resources/inspector/sources_module.js
 chrome/resources/inspector/temp_storage_shared_worker.js
+chrome/resources/inspector/timeline_model_module.js
 chrome/resources/inspector/timeline_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js

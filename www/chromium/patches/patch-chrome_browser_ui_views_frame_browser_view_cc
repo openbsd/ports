@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.7 2016/07/31 13:11:44 robert Exp $
---- chrome/browser/ui/views/frame/browser_view.cc.orig.port	Wed Jul 20 21:03:20 2016
-+++ chrome/browser/ui/views/frame/browser_view.cc	Thu Jul 21 10:25:28 2016
-@@ -181,7 +181,7 @@
- #include "chrome/browser/ui/ash/multi_user/multi_user_window_manager.h"
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.8 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/ui/views/frame/browser_view.cc.orig.port	Thu Sep  1 00:03:28 2016
++++ chrome/browser/ui/views/frame/browser_view.cc	Thu Sep  1 11:12:21 2016
+@@ -177,7 +177,7 @@
+ #include "chrome/browser/ui/views/sync/one_click_signin_dialog_view.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.7 2016/07/31 1
  #include "ui/native_theme/native_theme_dark_aura.h"
  #endif
  
-@@ -2001,7 +2001,7 @@ void BrowserView::OnThemeChanged() {
+@@ -1980,7 +1980,7 @@ void BrowserView::OnThemeChanged() {
  #if defined(OS_WIN)
      ui::NativeThemeDarkWin::instance()->NotifyObservers();
      ui::NativeThemeWin::instance()->NotifyObservers();

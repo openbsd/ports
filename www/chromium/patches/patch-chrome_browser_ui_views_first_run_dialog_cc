@@ -1,20 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.5 2016/05/27 06:28:20 robert Exp $
---- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Wed May 25 04:54:10 2016
-+++ chrome/browser/ui/views/first_run_dialog.cc	Thu May 26 08:09:42 2016
-@@ -116,12 +116,16 @@ views::View* FirstRunDialog::CreateExtraView() {
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.6 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/ui/views/first_run_dialog.cc.orig.port	Thu Sep  1 11:22:33 2016
++++ chrome/browser/ui/views/first_run_dialog.cc	Thu Sep  1 11:23:58 2016
+@@ -116,8 +116,10 @@ views::View* FirstRunDialog::CreateExtraView() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  
 +#if !defined(OS_BSD)
-   if (report_crashes_ && report_crashes_->checked()) {
-     if (GoogleUpdateSettings::SetCollectStatsConsent(true))
-       breakpad::InitCrashReporter(std::string());
-   } else {
-     GoogleUpdateSettings::SetCollectStatsConsent(false);
-   }
-+#else
-+  GoogleUpdateSettings::SetCollectStatsConsent(false);
+   InitiateMetricsReportingChange(report_crashes_->checked(),
+                                  base::Bind(&InitCrashReporterIfEnabled));
 +#endif
  
-   if (make_default_ && make_default_->checked())
+   if (make_default_->checked())
      shell_integration::SetAsDefaultBrowser();

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.7 2016/04/16 19:08:45 robert Exp $
---- chrome/browser/process_singleton_posix.cc.orig.port	Fri Apr  8 18:02:07 2016
-+++ chrome/browser/process_singleton_posix.cc	Thu Apr 14 08:25:09 2016
-@@ -87,11 +87,11 @@
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.8 2016/09/01 16:28:11 robert Exp $
+--- chrome/browser/process_singleton_posix.cc.orig.port	Thu Sep  1 00:03:27 2016
++++ chrome/browser/process_singleton_posix.cc	Thu Sep  1 11:12:20 2016
+@@ -90,11 +90,11 @@
  #include "net/base/network_interfaces.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.7 2016/04/16 19:08
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -315,7 +315,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -318,7 +318,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return false;
  

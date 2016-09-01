@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.6 2016/07/31 13:11:44 robert Exp $
---- media/capture/video/video_capture_device.h.orig.port	Wed Jul 20 21:03:25 2016
-+++ media/capture/video/video_capture_device.h	Thu Jul 21 10:25:30 2016
-@@ -51,7 +51,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.7 2016/09/01 16:28:11 robert Exp $
+--- media/capture/video/video_capture_device.h.orig.port	Thu Sep  1 00:03:32 2016
++++ media/capture/video/video_capture_device.h	Thu Sep  1 11:12:23 2016
+@@ -55,7 +55,7 @@ class CAPTURE_EXPORT VideoCaptureDevice {
      Name();
      Name(const std::string& name, const std::string& id);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.6 2016/07/31 13:1
      // Linux/CrOS targets Capture Api type: it can only be set on construction.
      enum CaptureApiType {
        V4L2_SINGLE_PLANE,
-@@ -82,7 +82,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -86,7 +86,7 @@ class CAPTURE_EXPORT VideoCaptureDevice {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.6 2016/07/31 13:1
      Name(const std::string& name,
           const std::string& id,
           const CaptureApiType api_type);
-@@ -120,7 +120,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -124,7 +124,7 @@ class CAPTURE_EXPORT VideoCaptureDevice {
      bool operator<(const Name& other) const { return unique_id_ < other.id(); }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.6 2016/07/31 13:1
      CaptureApiType capture_api_type() const {
        return capture_api_class_.capture_api_type();
      }
-@@ -140,7 +140,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -144,7 +144,7 @@ class CAPTURE_EXPORT VideoCaptureDevice {
      std::string device_name_;
      std::string unique_id_;
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
