@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1530 2016/09/01 10:17:00 edd Exp $
+# $OpenBSD: Makefile,v 1.1531 2016/09/01 11:40:43 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1214,6 +1214,7 @@
      SUBDIR += py-backports-abc
      SUBDIR += py-backports-abc,python3
      SUBDIR += py-backports
+     SUBDIR += py-backports-functools-lru-cache
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-blessings
@@ -1295,6 +1296,8 @@
      SUBDIR += py-ipython_genutils,python3
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
+     SUBDIR += py-isort
+     SUBDIR += py-isort,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
