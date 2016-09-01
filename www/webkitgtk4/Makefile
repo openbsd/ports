@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2016/08/25 11:40:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2016/09/01 08:27:17 ajacoutot Exp $
+
+# patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
+# patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
+# patches/patch-Source_WebKit2_webkit2gtk_pc_in
+USE_WXNEEDED =		Yes
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
-USE_WXNEEDED =		Yes
 
 PORTROACH =		limitw:1,even
 
