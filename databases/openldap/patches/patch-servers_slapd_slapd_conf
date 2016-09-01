@@ -1,6 +1,6 @@
-$OpenBSD: patch-servers_slapd_slapd_conf,v 1.1 2008/02/13 09:45:54 landry Exp $
---- servers/slapd/slapd.conf.orig	Tue Feb 12 09:23:24 2008
-+++ servers/slapd/slapd.conf	Tue Feb 12 09:24:11 2008
+$OpenBSD: patch-servers_slapd_slapd_conf,v 1.2 2016/09/01 16:50:35 landry Exp $
+--- servers/slapd/slapd.conf.orig	Sat Feb  6 00:57:45 2016
++++ servers/slapd/slapd.conf	Thu Sep  1 18:40:16 2016
 @@ -10,8 +10,8 @@ include		%SYSCONFDIR%/schema/core.schema
  # service AND an understanding of referrals.
  #referral	ldap://root.openldap.org
@@ -12,3 +12,17 @@ $OpenBSD: patch-servers_slapd_slapd_conf,v 1.1 2008/02/13 09:45:54 landry Exp $
  
  # Load dynamic backend modules:
  # modulepath	%MODULEDIR%
+@@ -46,11 +46,10 @@ argsfile	%LOCALSTATEDIR%/run/slapd.args
+ # rootdn can always read and write EVERYTHING!
+ 
+ #######################################################################
+-# MDB database definitions
++# BDB database definitions
+ #######################################################################
+ 
+-database	mdb
+-maxsize		1073741824
++database	bdb
+ suffix		"dc=my-domain,dc=com"
+ rootdn		"cn=Manager,dc=my-domain,dc=com"
+ # Cleartext passwords, especially for the rootdn, should
