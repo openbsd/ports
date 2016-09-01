@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2016/02/27 22:50:39 mmcc Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/01 17:21:43 yasuoka Exp $
 
 COMMENT =		watch the command output with interval timer
 
-V = 			1.0.3
+V = 			1.0.4
 GH_ACCOUNT =		iij
 GH_PROJECT =		iwatch
 GH_TAGNAME =		v${V}
 DISTNAME =      	${GH_PROJECT}-${V}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
