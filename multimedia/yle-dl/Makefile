@@ -1,37 +1,42 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/09 14:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/01 13:33:05 sthen Exp $
 
-V =			2.2.1
-REVISION =		0
+V =			2.11
 COMMENT =		download videos from YLE Areena
 DISTNAME =		aajanki-yle-$V
 PKGNAME =		yle-dl-$V
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://aajanki.github.io/yle-dl/
+MAINTAINER =		Timo Myyra <timo.myyra@wickedbsd.net>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/aajanki/yle-dl/tarball/${V}/
 
-MODULES =		lang/python
-RUN_DEPENDS =		net/rtmpdump \
-			security/py-crypto
+MODULES =		lang/python \
+			lang/php
 
+RUN_DEPENDS =		net/rtmpdump \
+			security/py-crypto \
+			lang/php/${MODPHP_VERSION},-curl \
+			lang/php/${MODPHP_VERSION},-mcrypt
+			
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/aajanki-yle-dl-b2b1869
+WRKDIST =		${WRKDIR}/aajanki-yle-dl-23c7d98
 
+MODPY_SETUPTOOLS =	Yes
 MODPY_ADJ_FILES =	yle-dl
 
-do-build:
-	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		-f ${MAKE_FILE} ${ALL_TARGET}
+SUBST_VARS +=		MODPHP_BIN
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/yle-dl ${PREFIX}/bin/yle-dl
+	${SUBST_PROGRAM} ${WRKSRC}/yle-dl ${PREFIX}/bin/yle-dl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/yle-dl
+	${INSTALL_DATA} ${WRKSRC}/AdobeHDS.php ${PREFIX}/share/yle-dl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yle-dl
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README.fi \
-		${PREFIX}/share/doc/yle-dl
+		${WRKSRC}/README.md ${PREFIX}/share/doc/yle-dl
 
 .include <bsd.port.mk>
