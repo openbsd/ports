@@ -1,0 +1,24 @@
+$OpenBSD: patch-mapscript_php_error_c,v 1.1 2016/09/02 15:28:24 landry Exp $
+
+Fix build with php 5.6.25
+
+https://github.com/mapserver/mapserver/issues/5318
+
+--- mapscript/php/error.c.orig	Fri Sep  2 17:23:55 2016
++++ mapscript/php/error.c	Fri Sep  2 17:24:26 2016
+@@ -31,6 +31,15 @@
+ 
+ #include "php_mapscript.h"
+ 
++#undef ZVAL_STRING
++#define ZVAL_STRING(z, s, duplicate) do {       \
++                const char *__s=(s);                            \
++                zval *__z = (z);                                        \
++                Z_STRLEN_P(__z) = strlen(__s);          \
++                Z_STRVAL_P(__z) = (duplicate?estrndup(__s, Z_STRLEN_P(__z)):(char*)__s);\
++                Z_TYPE_P(__z) = IS_STRING;                      \
++        } while (0)
++
+ zend_class_entry *mapscript_ce_error;
+ 
+ ZEND_BEGIN_ARG_INFO_EX(error___get_args, 0, 0, 1)
