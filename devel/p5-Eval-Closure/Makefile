@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/02 22:33:50 ajacoutot Exp $
 
 COMMENT =		safely and cleanly create closures via string eval 
 
-DISTNAME =		Eval-Closure-0.13
+DISTNAME =		Eval-Closure-0.14
 CATEGORIES =		devel
 
 # perl
@@ -15,7 +15,9 @@ PKG_ARCH =		*
 
 RUN_DEPENDS =		devel/p5-Try-Tiny
 
-TEST_DEPENDS =		devel/p5-Test-Fatal \
+TEST_DEPENDS =		devel/p5-PadWalker \
+			devel/p5-Test-Fatal \
+			devel/p5-Test-Output \
 			devel/p5-Test-Requires
 
 .include <bsd.port.mk>
