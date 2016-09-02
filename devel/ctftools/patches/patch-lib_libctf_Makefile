@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_libctf_Makefile,v 1.1 2016/09/02 11:09:56 jasper Exp $
+--- lib/libctf/Makefile.orig	Fri Sep  2 10:33:22 2016
++++ lib/libctf/Makefile	Fri Sep  2 10:33:29 2016
+@@ -29,7 +29,7 @@ CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensol
+ 		-I${OPENSOLARIS_USR_DISTDIR}/lib/libctf/common \
+ 		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common \
+ 		-I/usr/local/include/ \
+-		-I/usr/local/include/elftoolchain
++		-I/usr/local/include/libelf
+ 
+ LIBADD+=	z
+ 

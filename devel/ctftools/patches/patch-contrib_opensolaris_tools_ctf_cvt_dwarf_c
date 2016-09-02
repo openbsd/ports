@@ -1,0 +1,85 @@
+$OpenBSD: patch-contrib_opensolaris_tools_ctf_cvt_dwarf_c,v 1.1 2016/09/02 11:09:56 jasper Exp $
+
+Don't use custom Solaris libdwarf functions.
+
+--- contrib/opensolaris/tools/ctf/cvt/dwarf.c.orig	Fri Sep  2 12:07:04 2016
++++ contrib/opensolaris/tools/ctf/cvt/dwarf.c	Fri Sep  2 12:46:22 2016
+@@ -349,8 +349,11 @@ static int
+ die_signed(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, Dwarf_Signed *valp,
+     int req)
+ {
++	Dwarf_Attribute attr;
+ 	*valp = 0;
+-	if (dwarf_attrval_signed(die, name, valp, &dw->dw_err) != DW_DLV_OK) {
++
++	if ((dwarf_attr(die, name, &attr, &dw->dw_err) != DW_DLV_OK) ||
++	    (dwarf_formsdata(attr, valp, &dw->dw_err) != DW_DLV_OK)) {
+ 		if (req) 
+ 			terminate("die %llu: failed to get signed: %s\n",
+ 			    die_off(dw, die), dwarf_errmsg(dw->dw_err));
+@@ -364,8 +367,11 @@ static int
+ die_unsigned(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, Dwarf_Unsigned *valp,
+     int req)
+ {
++	Dwarf_Attribute attr;
+ 	*valp = 0;
+-	if (dwarf_attrval_unsigned(die, name, valp, &dw->dw_err) != DW_DLV_OK) {
++
++	if ((dwarf_attr(die, name, &attr, &dw->dw_err) != DW_DLV_OK) ||
++	    (dwarf_formudata(attr, valp, &dw->dw_err) != DW_DLV_OK)) {
+ 		if (req) 
+ 			terminate("die %llu: failed to get unsigned: %s\n",
+ 			    die_off(dw, die), dwarf_errmsg(dw->dw_err));
+@@ -378,9 +384,11 @@ die_unsigned(dwarf_t *dw, Dwarf_Die die, Dwarf_Half na
+ static int
+ die_bool(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, Dwarf_Bool *valp, int req)
+ {
++	Dwarf_Attribute attr;
+ 	*valp = 0;
+ 
+-	if (dwarf_attrval_flag(die, name, valp, &dw->dw_err) != DW_DLV_OK) {
++	if ((dwarf_attr(die, name, &attr, &dw->dw_err) != DW_DLV_OK) ||
++	    (dwarf_formflag(attr, valp, &dw->dw_err) != DW_DLV_OK)) {
+ 		if (req) 
+ 			terminate("die %llu: failed to get flag: %s\n",
+ 			    die_off(dw, die), dwarf_errmsg(dw->dw_err));
+@@ -393,11 +401,12 @@ die_bool(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, 
+ static int
+ die_string(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, char **strp, int req)
+ {
+-	const char *str = NULL;
++	Dwarf_Attribute attr;
++	char *str = NULL;
+ 
+-	if (dwarf_attrval_string(die, name, &str, &dw->dw_err) != DW_DLV_OK ||
+-	    str == NULL) {
+-		if (req) 
++	if ((dwarf_attr(die, name, &attr, &dw->dw_err) != DW_DLV_OK) ||
++	    (dwarf_formstring(attr, &str, &dw->dw_err) != DW_DLV_OK)) {
++		if (req)
+ 			terminate("die %llu: failed to get string: %s\n",
+ 			    die_off(dw, die), dwarf_errmsg(dw->dw_err));
+ 		else
+@@ -412,9 +421,11 @@ die_string(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name
+ static Dwarf_Off
+ die_attr_ref(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name)
+ {
++	Dwarf_Attribute attr;
+ 	Dwarf_Off off;
+ 
+-	if (dwarf_attrval_unsigned(die, name, &off, &dw->dw_err) != DW_DLV_OK) {
++	if ((dwarf_attr(die, name, &attr, &dw->dw_err) != DW_DLV_OK) ||
++	    (dwarf_formref(attr, &off, &dw->dw_err) != DW_DLV_OK)) {
+ 		terminate("die %llu: failed to get ref: %s\n",
+ 		    die_off(dw, die), dwarf_errmsg(dw->dw_err));
+ 	}
+@@ -546,8 +557,7 @@ die_mem_offset(dwarf_t *dw, Dwarf_Die die, Dwarf_Half 
+ 		 * GCC conform to DWARF4 standard and only use the form
+ 		 * DW_FORM_sec_offset for section offset.
+ 		 */
+-		if (dwarf_attrval_unsigned(die, name, valp, &dw->dw_err) !=
+-		    DW_DLV_OK)
++		if (dwarf_formudata(at, valp, &dw->dw_err) != DW_DLV_OK)
+ 			return (0);
+ 		break;
+ 
