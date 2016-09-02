@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/02 10:06:25 pascal Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-3.4.0
-REVISION =		2
+DISTNAME =		simgear-2016.2.1
 
-SHARED_LIBS +=  SimGearCore               2.0 # 2.10
-SHARED_LIBS +=  SimGearScene              2.0 # 2.10
+SHARED_LIBS +=  SimGearCore               3.0 # 2.10
+SHARED_LIBS +=  SimGearScene              3.0 # 2.10
 
 CATEGORIES =		graphics
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
-HOMEPAGE =		http://simgear.sourceforge.net/
+HOMEPAGE =		http://www.flightgear.org
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flightgear/}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB += GL GLU OpenThreads expat m openal osg osgDB osgGA osgParticle
+WANTLIB += GL GLU OpenThreads curl expat m openal osg osgDB osgGA osgParticle
 WANTLIB += osgSim osgText osgUtil osgViewer pthread z
 
 MODULES =		devel/cmake gcc4

@@ -1,0 +1,13 @@
+$OpenBSD: patch-simgear_compiler_h,v 1.1 2016/09/02 10:06:25 pascal Exp $
+--- simgear/compiler.h.orig	Thu Sep  1 13:44:23 2016
++++ simgear/compiler.h	Thu Sep  1 13:44:57 2016
+@@ -180,7 +180,8 @@ inline int (isnan)(double r) { return !(r <= 0 || r >=
+ #  define SG_WINDOWS
+ #endif
+ 
+-#if defined(__linux__) || defined(_AIX) || defined ( sgi )
++#if defined(__linux__) || defined(_AIX) || defined ( sgi ) || \
++	defined(__OpenBSD__)
+ #  define SG_UNIX
+ #endif
+ 

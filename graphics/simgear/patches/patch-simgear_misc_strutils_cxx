@@ -1,0 +1,12 @@
+$OpenBSD: patch-simgear_misc_strutils_cxx,v 1.1 2016/09/02 10:06:25 pascal Exp $
+--- simgear/misc/strutils.cxx.orig	Thu Sep  1 13:39:58 2016
++++ simgear/misc/strutils.cxx	Thu Sep  1 13:53:14 2016
+@@ -615,7 +615,7 @@ std::string error_string(int errnum)
+   retcode = strerror_s(buf, sizeof(buf), errnum);
+ #elif defined(_GNU_SOURCE)
+   return std::string(strerror_r(errnum, buf, sizeof(buf)));
+-#elif (_POSIX_C_SOURCE >= 200112L) || defined(SG_MAC)
++#elif (_POSIX_C_SOURCE >= 200112L) || defined(SG_MAC) || defined(__OpenBSD__)
+   int retcode;
+   // POSIX.1-2001 and POSIX.1-2008
+   retcode = strerror_r(errnum, buf, sizeof(buf));
