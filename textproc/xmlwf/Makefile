@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/02 22:25:25 jasper Exp $
 
 COMMENT=	verifies XML documents
-V=		2.0.1
+V=		2.1.0
 
 PKGNAME=	xmlwf-$V
 DISTNAME=	expat-$V
@@ -19,10 +19,10 @@ WRKSRC=			${WRKDIR}/expat-$V/xmlwf
 WANTLIB=		c expat
 NO_TEST=		Yes
 
-do-configure:		
+do-configure:
 	ln -s ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN}	${WRKSRC}/../doc/xmlwf.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/xmlwf.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
