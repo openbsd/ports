@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/13 14:23:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/02 09:18:20 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.event-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope.event-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,12 +11,13 @@ lib/python${MODPY_VERSION}/site-packages/zope.event-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/zope.event-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zope/event/
 lib/python${MODPY_VERSION}/site-packages/zope/event/__init__.py
-lib/python${MODPY_VERSION}/site-packages/zope/event/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/event/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/zope/event/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/event/${MODPY_PYCACHE}classhandler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/event/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/event/classhandler.py
-lib/python${MODPY_VERSION}/site-packages/zope/event/classhandler.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/zope/event/classhandler.py~
 @comment lib/python${MODPY_VERSION}/site-packages/zope/event/classhandler.rst~
 @comment lib/python${MODPY_VERSION}/site-packages/zope/event/classhandlers.py~
 lib/python${MODPY_VERSION}/site-packages/zope/event/tests.py
-lib/python${MODPY_VERSION}/site-packages/zope/event/tests.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/zope/event/tests.py~
