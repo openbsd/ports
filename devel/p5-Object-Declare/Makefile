@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/02 22:55:37 ajacoutot Exp $
 
 COMMENT= 	declarative object constructor
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Object-Declare-0.22
-REVISION=	0
+DISTNAME=	Object-Declare-0.23
 CATEGORIES=	www devel
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-
-RUN_DEPENDS=	devel/p5-Sub-Override
 
 .include <bsd.port.mk>
