@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/18 15:51:38 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/02 18:00:40 sthen Exp $
 
 COMMENT =		manage SQL database schemas via config files
 
-VERSION =		3.4.2
+VERSION =		3.5.1
 DISTNAME =		liquibase-${VERSION}-bin
 PKGNAME =		liquibase-${VERSION}
 WRKDIST =		${WRKDIR}
