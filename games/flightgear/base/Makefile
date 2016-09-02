@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/02 10:07:53 pascal Exp $
 
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
-REVISION =		1
 
 WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
-WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c fltk fltk_forms
+WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c curl fltk fltk_forms
 WANTLIB += fltk_gl fltk_images glut m openal osg osgDB osgFX osgGA
 WANTLIB += osgParticle osgSim osgText osgUtil osgViewer png pthread
 WANTLIB += sqlite3 z
 
-MASTER_SITES =	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
-		http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Source/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
 
 MODULES =	devel/cmake gcc4
 MODGCC4_ARCHS =	*
@@ -28,7 +26,8 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear" \
 			-DSYSTEM_SQLITE=ON \
 			-DENABLE_IAX=OFF \
-			-DENABLE_FGCOM=OFF
+			-DENABLE_FGCOM=OFF \
+			-DENABLE_QT=OFF
 
 NO_TEST =	Yes
 

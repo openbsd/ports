@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/09/02 10:07:53 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-V =			3.4.0
+V =			2016.2.1
 
 CATEGORIES =		games
 

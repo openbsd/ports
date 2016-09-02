@@ -1,12 +1,12 @@
-$OpenBSD: patch-3rdparty_hts_engine_API_lib_HTS_misc_c,v 1.1 2015/03/20 19:58:35 pascal Exp $
---- 3rdparty/hts_engine_API/lib/HTS_misc.c.orig	Wed Feb 18 21:10:05 2015
-+++ 3rdparty/hts_engine_API/lib/HTS_misc.c	Thu Feb 19 22:13:56 2015
+$OpenBSD: patch-3rdparty_hts_engine_API_lib_HTS_misc_c,v 1.2 2016/09/02 10:07:53 pascal Exp $
+--- 3rdparty/hts_engine_API/lib/HTS_misc.c.orig	Tue May 17 09:36:25 2016
++++ 3rdparty/hts_engine_API/lib/HTS_misc.c	Thu Sep  1 15:52:30 2016
 @@ -245,7 +245,7 @@ size_t HTS_ftell(HTS_File * fp)
     } else if (fp->type == HTS_FILE) {
        fpos_t pos;
        fgetpos((FILE *) fp->pointer, &pos);
--#if defined(_WIN32) || defined(__CYGWIN__) || defined(__APPLE__) || defined(__ANDROID__) || defined(__FreeBSD__)
-+#if defined(_WIN32) || defined(__CYGWIN__) || defined(__APPLE__) || defined(__ANDROID__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+-#if defined(_WIN32) || defined(__CYGWIN__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__ANDROID__)
++#if defined(_WIN32) || defined(__CYGWIN__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__ANDROID__) || defined(__OpenBSD__)
        return (size_t) pos;
  #else
        return (size_t) pos.__pos;

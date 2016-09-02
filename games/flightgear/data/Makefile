@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/02 10:07:53 pascal Exp $
 
 COMMENT =		data files for flightgear
 
-DISTNAME =		FlightGear-data-${V}
+DISTNAME =		FlightGear-${V}-data
 PKGNAME =		flightgear-data-${V}
-REVISION =		0
 
-MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
-		http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
-		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
 
 BUILD_DEPENDS =	archivers/bzip2
 EXTRACT_SUFX =	.tar.bz2
