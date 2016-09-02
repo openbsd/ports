@@ -1,0 +1,13 @@
+$OpenBSD: patch-show_c,v 1.5 2016/09/02 15:42:07 sthen Exp $
+--- show.c.orig	Fri Sep  2 16:41:35 2016
++++ show.c	Fri Sep  2 16:41:42 2016
+@@ -79,7 +79,9 @@ static const struct bits bits[] = {
+ 	{ RTF_DYNAMIC,	'D' },
+ 	{ RTF_MODIFIED,	'M' },
+ 	{ RTF_DONE,	'd' }, /* Completed -- for routing messages only */
++#ifdef RTF_MASK
+ 	{ RTF_MASK,	'm' }, /* Mask Present -- for routing messages only */
++#endif
+ 	{ RTF_CLONING,	'C' },
+ 	{ RTF_LLINFO,	'L' },
+ 	{ RTF_STATIC,	'S' },
