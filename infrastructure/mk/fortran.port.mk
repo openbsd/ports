@@ -1,4 +1,4 @@
-# $OpenBSD: fortran.port.mk,v 1.13 2016/08/25 14:53:46 dcoppa Exp $
+# $OpenBSD: fortran.port.mk,v 1.14 2016/09/02 13:02:24 dcoppa Exp $
 
 MODFORTRAN_COMPILER ?= g77
 
@@ -14,7 +14,7 @@ MODFORTRAN_WANTLIB += g2c
 MODULES += gcc4
 MODGCC4_ARCHS ?= *
 MODGCC4_LANGS += fortran
-MODFORTRAN_BUILD_DEPENDS += lang/gcc/4.9,-f95>=4.9,<4.10
+MODFORTRAN_BUILD_DEPENDS += lang/gcc/4.9,-f95>=4.9.4p0,<4.10
 MODFORTRAN_LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 MODFORTRAN_WANTLIB += gfortran>=3
 .  if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.86 2016/08/19 13:54:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.87 2016/09/02 13:02:24 dcoppa Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.3.1
-REVISION=	0
+REVISION=	1
 
 SO_VERSION=	32.0
 .for _lib in R Rblas Rlapack
@@ -35,13 +35,13 @@ MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 		http://cran.us.r-project.org/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
-MODULES=	gcc4 \
+MODULES=	fortran \
 		x11/tk
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	fortran
+MODFORTRAN_COMPILER = gfortran
 
-BUILD_DEPENDS=	archivers/gtar \
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
+		archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/xdg-utils \
@@ -61,12 +61,12 @@ LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		net/curl \
 		textproc/icu4c
 
-RUN_DEPENDS=	archivers/gtar \
+RUN_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
+		archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/gmake \
 		devel/xdg-utils \
-		lang/gcc/4.9,-f95 \
 		print/texlive/base>=2014p1
 
 CONFIGURE_STYLE=gnu
@@ -79,8 +79,8 @@ CONFIGURE_ARGS= --disable-java \
 		--with-tcl-config=${MODTCL_CONFIG} \
 		--with-tk-config=${MODTK_CONFIG}
 
-CONFIGURE_ENV=	F77="${LOCALBASE}/bin/egfortran" \
-		FC="${LOCALBASE}/bin/egfortran" \
+CONFIGURE_ENV=	F77="${MODFORTRAN_COMPILER}" \
+		FC="${MODFORTRAN_COMPILER}" \
 		FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
