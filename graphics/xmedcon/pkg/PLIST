@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/14 10:04:29 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/09/02 22:13:45 jasper Exp $
 @bin bin/medcon
 @bin bin/xmedcon
 bin/xmedcon-config
@@ -52,5 +52,7 @@ lib/libmdc.la
 @man man/man4/m-intf.4
 @man man/man4/m-inw.4
 share/aclocal/xmedcon.m4
+share/appdata/
+share/appdata/xmedcon.appdata.xml
 share/examples/xmedcon/
 share/examples/xmedcon/xmedconrc
