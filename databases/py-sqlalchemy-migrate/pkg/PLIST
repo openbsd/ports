@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/19 19:23:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/02 09:08:36 landry Exp $
 bin/migrate
 bin/migrate-repository
 lib/python${MODPY_VERSION}/site-packages/migrate/
@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/__init__.py
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/firebird.py
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/firebird.pyc
+lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/ibmdb2.py
+lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/ibmdb2.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/mysql.py
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/mysql.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/oracle.py
@@ -28,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/visitor.py
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/databases/visitor.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/schema.py
 lib/python${MODPY_VERSION}/site-packages/migrate/changeset/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/migrate/changeset/util.py
+lib/python${MODPY_VERSION}/site-packages/migrate/changeset/util.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/migrate/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/
@@ -36,6 +40,11 @@ lib/python${MODPY_VERSION}/site-packages/migrate/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/__init__.py
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/databases/
+lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/databases/__init__.py
+lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/databases/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/databases/test_ibmdb2.py
+lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/databases/test_ibmdb2.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/test_changeset.py
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/test_changeset.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/tests/changeset/test_constraint.py
@@ -174,5 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy_migrate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

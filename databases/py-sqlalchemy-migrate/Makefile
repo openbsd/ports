@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/02 09:08:36 landry Exp $
 
 COMMENT =		schema migration tools for SQLAlchemy
 
-MODPY_EGG_VERSION =	0.7.2
+MODPY_EGG_VERSION =	0.10.0
 DISTNAME =		sqlalchemy-migrate-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		databases
-
-HOMEPAGE =		https://code.google.com/p/sqlalchemy-migrate/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://sqlalchemy-migrate.googlecode.com/files/
-
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 
 RUN_DEPENDS =		databases/py-sqlalchemy \
+			databases/py-sqlparse \
+			devel/py-pbr \
 			devel/py-decorator \
+			devel/py-six \
 			www/py-tempita
 
-# test needs unported py-cfgparse & py-scripttest
+# test needs unported tempest, py-cfgparse & py-scripttest
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
