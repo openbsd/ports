@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/02 23:04:27 ajacoutot Exp $
 
 COMMENT=		perl6-like method signature parser
 
-DISTNAME =		Parse-Method-Signatures-1.003016
+DISTNAME =		Parse-Method-Signatures-1.003017
 
 CATEGORIES=		devel
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			textproc/p5-PPI
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/p5-aliased \
+TEST_DEPENDS=		devel/p5-aliased \
 			devel/p5-Test-Differences \
 			devel/p5-Test-Exception
 
