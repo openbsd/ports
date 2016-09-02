@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/02 22:51:59 jasper Exp $
 
 COMMENT=	fast shared data cache using memory mapped files
 
 MODULES=	cpan
-DISTNAME =	Cache-FastMmap-1.43
+DISTNAME =	Cache-FastMmap-1.44
 CATEGORIES=	devel
 
 # perl
