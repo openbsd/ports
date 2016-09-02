@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/10/15 13:53:56 jasper Exp $
+$OpenBSD: README,v 1.3 2016/09/02 10:24:29 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,10 +15,6 @@ ${SYSCONFDIR}/fookebox/config.ini. If you ever need to regenerate,
 please use the command below:
 
 	paster make-config fookebox ${SYSCONFDIR}/fookebox/config.ini
-
-Adjust the configuration if needed. Create the initial database with:
-
-	touch /var/db/fookebox/fookebox.sqlite
 
 Now setup the application:
 

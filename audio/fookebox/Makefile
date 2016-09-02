@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/02 10:24:29 landry Exp $
 
 COMMENT=		jukebox frontend to mpd
 
-MODPY_EGG_VERSION=	0.7.1
+MODPY_EGG_VERSION=	0.7.3
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
-REVISION=		2
-GH_TAGNAME=		${MODPY_EGG_VERSION}
+GH_COMMIT=		2ddfe6780f04361d88fa51b0e7bac91dfb8d9018
 GH_ACCOUNT=		cockroach
 GH_PROJECT=		fookebox
 CATEGORIES=		audio www
@@ -19,8 +18,6 @@ SUBST_VARS+=		MODPY_SITEPKG
 
 BUILD_DEPENDS=		www/py-paste-script
 RUN_DEPENDS=		audio/py-mpd \
-			databases/py-sqlalchemy \
-			www/py-formencode>=1.2.4 \
 			www/py-paste-script \
 			www/py-pylons>0.9.7 \
 			www/py-routes>=1.12.3
