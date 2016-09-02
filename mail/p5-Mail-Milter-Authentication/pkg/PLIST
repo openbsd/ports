@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/27 16:28:44 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/02 12:25:36 giovanni Exp $
 @newgroup _milter-auth:770
 @newuser _milter-auth:770:_milter-auth:daemon:Milter Authentication Daemon:/var/empty:/sbin/nologin
 bin/authentication_milter
@@ -9,7 +9,6 @@ ${P5SITE}/Mail/Milter/Authentication.pm
 ${P5SITE}/Mail/Milter/Authentication/Client.pm
 ${P5SITE}/Mail/Milter/Authentication/Config.pm
 ${P5SITE}/Mail/Milter/Authentication/Constants.pm
-${P5SITE}/Mail/Milter/Authentication/DNSCache.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/
 ${P5SITE}/Mail/Milter/Authentication/Handler.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/AddID.pm
@@ -25,6 +24,7 @@ ${P5SITE}/Mail/Milter/Authentication/Handler/Sanitize.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/SenderID.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/TLS.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/TrustedIP.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/XGoogleDKIM.pm
 ${P5SITE}/Mail/Milter/Authentication/Protocol/
 ${P5SITE}/Mail/Milter/Authentication/Protocol/Milter.pm
 ${P5SITE}/Mail/Milter/Authentication/Protocol/SMTP.pm
@@ -40,7 +40,6 @@ ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/mail-dmarc.ini
 @man man/man3p/Mail::Milter::Authentication::Client.3p
 @man man/man3p/Mail::Milter::Authentication::Config.3p
 @man man/man3p/Mail::Milter::Authentication::Constants.3p
-@man man/man3p/Mail::Milter::Authentication::DNSCache.3p
 @man man/man3p/Mail::Milter::Authentication::Handler.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::AddID.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::Auth.3p
@@ -55,6 +54,7 @@ ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/mail-dmarc.ini
 @man man/man3p/Mail::Milter::Authentication::Handler::SenderID.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::TLS.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::TrustedIP.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::XGoogleDKIM.3p
 @man man/man3p/Mail::Milter::Authentication::Protocol::Milter.3p
 @man man/man3p/Mail::Milter::Authentication::Protocol::SMTP.3p
 @rcscript ${RCDIR}/mail_milter_authentication
