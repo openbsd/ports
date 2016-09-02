@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/25 17:22:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/02 22:10:31 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
-GNOME_VERSION=		3.20.0
+GNOME_VERSION=		3.20.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
