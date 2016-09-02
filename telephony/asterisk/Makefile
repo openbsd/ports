@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2016/09/02 10:34:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.238 2016/09/02 11:09:37 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
@@ -6,6 +6,13 @@ VER=			13.11.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+REVISION-calendar=	0
+REVISION-http_post=	0
+REVISION-ldap=		0
+REVISION-pgsql=		0
+REVISION-snmp=		0
+REVISION-speex=		0
+REVISION-tds=		0
 
 CATEGORIES=		telephony
 
@@ -138,7 +145,7 @@ CONFIGURE_ARGS+=	--with-imap=no
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
 WANTLIB-calendar=	crypto expat ical iconv intl iksemel
-WANTLIB-calendar+=	m neon proxy ssl xml2 z
+WANTLIB-calendar+=	m neon proxy pthread ssl xml2 z
 
 LIB_DEPENDS-calendar=	devel/gettext \
 			net/neon \
@@ -150,7 +157,7 @@ CONFIGURE_ARGS+=	--with-ical=no
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
 LIB_DEPENDS-http_post=	devel/gettext mail/gmime
-WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl
+WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl pthread
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
 .endif
@@ -158,7 +165,7 @@ CONFIGURE_ARGS+=	--with-gmime=no
 # ldap
 COMMENT-ldap=		LDAP support for Asterisk
 LIB_DEPENDS-ldap=	databases/openldap,-main
-WANTLIB-ldap=		ldap
+WANTLIB-ldap=		ldap pthread
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif
@@ -166,7 +173,7 @@ CONFIGURE_ARGS+=	--with-ldap=no
 # freetds
 COMMENT-tds=		MSSQL/Sybase support for Asterisk
 LIB_DEPENDS-tds=	databases/freetds
-WANTLIB-tds=		sybdb
+WANTLIB-tds=		pthread sybdb
 .if !${BUILD_PACKAGES:M-tds}
 CONFIGURE_ARGS+=	--with-tds=no
 .else
@@ -184,7 +191,7 @@ CONFIGURE_ARGS+=	--with-iodbc=no \
 
 # postgresql
 COMMENT-pgsql=		PostgreSQL support for Asterisk
-WANTLIB-pgsql=		pq z
+WANTLIB-pgsql=		pq pthread z
 LIB_DEPENDS-pgsql=	databases/postgresql
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-postgres=no
@@ -192,7 +199,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 
 # snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
-WANTLIB-snmp=		m netsnmp netsnmpagent netsnmpmibs crypto kvm
+WANTLIB-snmp=		crypto kvm m netsnmp netsnmpagent netsnmpmibs pthread
 LIB_DEPENDS-snmp=	net/net-snmp
 .if !${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=no
@@ -200,7 +207,7 @@ CONFIGURE_ARGS+=	--with-snmp=no
 
 # speex
 COMMENT-speex=		Speex codec for Asterisk
-WANTLIB-speex=		m speex speexdsp
+WANTLIB-speex=		m pthread speex speexdsp
 LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 .if !${BUILD_PACKAGES:M-speex}
 CONFIGURE_ARGS+=	--with-speex=no
