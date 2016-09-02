@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/02 22:29:21 jasper Exp $
 
 COMMENT =		pragma to call methods on native types
 
-DISTNAME =		autobox-2.83
+DISTNAME =		autobox-2.84
 
 CATEGORIES =		devel
 
