@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_Makefile_in,v 1.1 2016/09/02 09:30:37 sthen Exp $
+--- contrib/Makefile.in.orig	Thu Sep  1 18:22:03 2016
++++ contrib/Makefile.in	Thu Sep  1 18:22:40 2016
+@@ -491,7 +491,7 @@ install-data-local:
+ 		$(INSTALL) -d -m 755 $(DESTDIR)$(docdir)/$$d ;\
+ 		for f in $(srcdir)/$$d/*; do	\
+ 			echo "Installing $$f" ;	\
+-			$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/$$d ; \
++			[ -f $$f ] && $(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/$$d ; \
+ 		done \
+ 	done
+ 
