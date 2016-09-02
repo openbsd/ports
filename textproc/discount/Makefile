@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/02 22:20:50 jasper Exp $
 
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-2.1.8a
-REVISION =		0
+DISTNAME =		discount-2.2.0
 
 CATEGORIES =		textproc
 
