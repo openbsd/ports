@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/02 23:00:15 ajacoutot Exp $
 
 COMMENT =	simple prefork server framework
 
-DISTNAME =	Parallel-Prefork-0.17
+DISTNAME =	Parallel-Prefork-0.18
 CATEGORIES =	devel
 
 # Perl
@@ -17,6 +17,7 @@ RUN_DEPENDS =	devel/p5-Class-Accessor-Lite \
 		sysutils/p5-Proc-Wait3 \
 		devel/p5-Signal-Mask
 BUILD_DEPENDS =	${RUN_DEPENDS}
-TEST_DEPENDS =	devel/p5-Test-Requires
+TEST_DEPENDS =	devel/p5-Test-Requires \
+		devel/p5-Test-SharedFork
 
 .include <bsd.port.mk>
