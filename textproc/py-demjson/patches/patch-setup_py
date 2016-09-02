@@ -1,0 +1,34 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/09/02 14:12:20 edd Exp $
+
+Use setup tools always for both Python 2 and 3.
+
+(Using different tools would be asking for PLIST problems)
+
+--- setup.py.orig	Fri Sep  2 12:20:57 2016
++++ setup.py	Fri Sep  2 12:21:18 2016
+@@ -9,23 +9,8 @@ try:
+ except AttributeError:
+     py_major = sys.version_info[0]
+ 
+-distmech = None
+-if py_major >= 3:
+-    # Python 3, use setuptools first
+-    try:
+-        from setuptools import setup
+-        distmech = 'setuptools'
+-    except ImportError:
+-        from distutils.core import setup
+-        distmech = 'distutils'
+-else:
+-    # Python 2, use distutils first
+-    try:
+-        from distutils.core import setup
+-        distmech = 'distutils'
+-    except ImportError:
+-        from setuptools import setup
+-        distmech = 'setuptools'
++from setuptools import setup
++distmech = 'setuptools'
+ 
+ if False:
+     sys.stdout.write("Using Python:    %s\n" % sys.version.split(None,1)[0])
