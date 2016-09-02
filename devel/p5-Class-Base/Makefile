@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/02 22:52:44 jasper Exp $
 
 COMMENT= 	abstract class for constructing hashes
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Class-Base-0.06
+DISTNAME =	Class-Base-0.08
 CATEGORIES=	devel
 
 # Artistic
