@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.316 2016/09/02 08:53:45 landry Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -193,6 +193,7 @@
      SUBDIR += py-sqlite
      SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject
+     SUBDIR += py-sqlparse
      SUBDIR += py-storm
      SUBDIR += py-sybase
      SUBDIR += py-whisper
