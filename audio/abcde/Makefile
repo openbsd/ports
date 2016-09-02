@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/23 19:48:58 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/02 22:22:07 ajacoutot Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-DISTNAME=	abcde-2.7.1
+DISTNAME=	abcde-2.7.2
 CATEGORIES=	audio
 
 HOMEPAGE=	http://abcde.einval.com/
@@ -23,9 +23,10 @@ RUN_DEPENDS=	audio/cdparanoia \
 
 NO_TEST=	Yes
 
-do-configure:
-	sed -i 's,/etc/,${SYSCONFDIR}/,' ${WRKSRC}/abcde
-	${SUBST_CMD} ${WRKSRC}/abcde ${WRKSRC}/cddb-tool
+pre-configure:
+	sed -i "s,/bin/bash,/usr/bin/env bash," \
+		${WRKSRC}/abcde ${WRKSRC}/cddb-tool
+	sed -i "s,/etc/,${SYSCONFDIR}/," ${WRKSRC}/abcde
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
