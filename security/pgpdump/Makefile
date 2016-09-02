@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/23 09:45:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/02 22:18:13 jasper Exp $
 
 COMMENT=	PGP packet visualizer
 
-DISTNAME =	pgpdump-0.29
+DISTNAME =	pgpdump-0.31
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.mew.org/~kazu/proj/pgpdump/
@@ -11,11 +11,11 @@ HOMEPAGE=	http://www.mew.org/~kazu/proj/pgpdump/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c z
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE}
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 
-NO_TEST=	Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
