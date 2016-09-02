@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2016/09/01 11:01:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2016/09/02 12:14:06 dcoppa Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a more recent gcc port
@@ -30,7 +30,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION = 19
+REVISION = 20
 
 SHARED_LIBS =	estdc++		14.0 \
 		gfortran	3.0 \
@@ -232,6 +232,10 @@ post-install:
 .if ${BUILD_PACKAGES:M-ada}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
+.endif
+.if ${BUILD_PACKAGES:M-f95}
+	ln -sf ${TRUEPREFIX}/bin/egfortran ${PREFIX}/bin/gfortran
+	ln -sf ${TRUEPREFIX}/bin/${CONFIG}-egfortran ${PREFIX}/bin/${CONFIG}-gfortran
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed

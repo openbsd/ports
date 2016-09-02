@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2016/09/01 17:30:33 pascal Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/02 12:14:06 dcoppa Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.4
+REVISION = 0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -245,6 +246,10 @@ post-install:
 .if ${BUILD_PACKAGES:M-ada}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
+.endif
+.if ${BUILD_PACKAGES:M-f95}
+	ln -sf ${TRUEPREFIX}/bin/egfortran ${PREFIX}/bin/gfortran
+	ln -sf ${TRUEPREFIX}/bin/${CONFIG}-egfortran ${PREFIX}/bin/${CONFIG}-gfortran
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed
