@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/18 09:10:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/02 22:48:23 ajacoutot Exp $
 bin/treescan
-${P5ARCH}/
 ${P5ARCH}/IO/
 ${P5ARCH}/IO/AIO.pm
 ${P5ARCH}/auto/
