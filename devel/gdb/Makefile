@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/09/03 13:48:39 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2016/09/03 13:51:09 jca Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -33,6 +33,7 @@ USE_GMAKE=	Yes
 
 MODULES +=	lang/python
 LIB_DEPENDS += 	${MODPY_LIB_DEPENDS}
+TEST_DEPENDS +=	devel/dejagnu
 MODPY_BUILDDEP = No
 
 .include <bsd.port.mk>
