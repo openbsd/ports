@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/03 11:03:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/03 12:21:36 giovanni Exp $
 
 COMMENT =	elasticsearch perl module
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Search-Elasticsearch-2.03
+REVISION =	0
 CATEGORIES =	devel
+
+MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,6 +22,7 @@ RUN_DEPENDS =	converters/p5-JSON-MaybeXS \
 		www/p5-Hijk
 
 TEST_DEPENDS =	devel/p5-Log-Any \
+		devel/p5-Log-Any-Adapter-Callback \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Exception \
 		devel/p5-Test-SharedFork \
