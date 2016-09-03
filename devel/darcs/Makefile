@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/02/01 20:06:50 kili Exp $
+# $OpenBSD: Makefile,v 1.64 2016/09/03 10:28:22 kili Exp $
 
 # Needs template Haskell in Setup.lhs, which doesn't work on i386.
 NOT_FOR_ARCHS =		i386
@@ -10,11 +10,12 @@ DISTNAME =		darcs-2.10.3
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
-WANTLIB =		c curl>=2 m ncursesw pthread util z
-MODULES =		lang/ghc converters/libiconv
+WANTLIB =		c curl>=2 iconv m ncursesw pthread util z
+MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS =-f 'curl -http -library' --enable-tests
-LIB_DEPENDS =		net/curl
+LIB_DEPENDS =		converters/libiconv \
+			net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
