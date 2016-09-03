@@ -1,5 +1,0 @@
-To complete the installation, you need to configure cherokee. As root:
-
-    # ${TRUEPREFIX}/sbin/cherokee-admin -b[IP] -p[PORT]
-
-(by default it will bind to 127.0.0.1 on port 9090).

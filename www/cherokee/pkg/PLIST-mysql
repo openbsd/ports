@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mysql,v 1.4 2012/12/12 02:17:40 brad Exp $
-lib/cherokee/libplugin_dbslayer.so
-lib/cherokee/libplugin_mysql.so
