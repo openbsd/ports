@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.64 2016/09/03 10:28:22 kili Exp $
+# $OpenBSD: Makefile,v 1.65 2016/09/03 10:43:21 kili Exp $
 
 # Needs template Haskell in Setup.lhs, which doesn't work on i386.
 NOT_FOR_ARCHS =		i386
 
+USE_WXNEEDED =		Yes
+
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.10.3
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
