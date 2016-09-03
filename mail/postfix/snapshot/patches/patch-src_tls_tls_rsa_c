@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tls_tls_rsa_c,v 1.1 2016/09/03 15:39:23 sthen Exp $
+--- src/tls/tls_rsa.c.orig	Thu Sep  1 21:57:15 2016
++++ src/tls/tls_rsa.c	Thu Sep  1 21:58:11 2016
+@@ -57,7 +57,7 @@
+  /*
+   * 2015-12-05: Ephemeral RSA removed from OpenSSL 1.1.0-dev
+   */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+ /* tls_tmp_rsa_cb - call-back to generate ephemeral RSA key */
+ 
+@@ -109,7 +109,7 @@ int     main(int unused_argc, char *const argv[])
+     /*
+      * 2015-12-05: Ephemeral RSA removed from OpenSSL 1.1.0-dev
+      */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     RSA    *rsa;
+ 
+     msg_vstream_init(argv[0], VSTREAM_ERR);

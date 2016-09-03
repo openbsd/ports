@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tls_tls_dane_c,v 1.1 2016/09/03 15:39:23 sthen Exp $
+--- src/tls/tls_dane.c.orig	Thu Sep  1 21:56:25 2016
++++ src/tls/tls_dane.c	Thu Sep  1 21:56:58 2016
+@@ -2163,7 +2163,7 @@ static SSL_CTX *ctx_init(const char *CAfile)
+     tls_param_init();
+     tls_check_version();
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+     SSL_load_error_strings();
+     SSL_library_init();
+ #endif
