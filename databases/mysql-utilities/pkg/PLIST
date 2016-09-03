@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/08 22:12:42 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/09/03 16:54:15 giovanni Exp $
 bin/mysqlauditadmin
 bin/mysqlauditgrep
+bin/mysqlbinlogmove
+bin/mysqlbinlogpurge
+bin/mysqlbinlogrotate
 bin/mysqldbcompare
 bin/mysqldbcopy
 bin/mysqldbexport
 bin/mysqldbimport
 bin/mysqldiff
 bin/mysqldiskusage
-bin/mysqlfabric
 bin/mysqlfailover
 bin/mysqlfrm
+bin/mysqlgrants
 bin/mysqlindexcheck
 bin/mysqlmetagrep
 bin/mysqlprocgrep
@@ -21,6 +24,7 @@ bin/mysqlrplshow
 bin/mysqlrplsync
 bin/mysqlserverclone
 bin/mysqlserverinfo
+bin/mysqlslavetrx
 bin/mysqluc
 bin/mysqluserclone
 lib/python${MODPY_VERSION}/site-packages/mysql/
@@ -29,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/mysql/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/abstracts.py
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/abstracts.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/authentication.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/authentication.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/catch23.py
@@ -37,12 +43,16 @@ lib/python${MODPY_VERSION}/site-packages/mysql/connector/charsets.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/charsets.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/connection.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/connection_cext.py
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/connection_cext.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/constants.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/conversion.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/conversion.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/cursor.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/cursor.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/cursor_cext.py
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/cursor_cext.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/custom_types.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/custom_types.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/dbapi.py
@@ -58,8 +68,12 @@ lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/compiler.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/compiler.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/creation.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/creation.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/features.py
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/features.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/introspection.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/introspection.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/operations.py
+lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/operations.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/schema.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/schema.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/django/validation.py
@@ -97,102 +111,6 @@ lib/python${MODPY_VERSION}/site-packages/mysql/connector/utils.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/version.py
 lib/python${MODPY_VERSION}/site-packages/mysql/connector/version.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/backup.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/backup.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/checkpoint.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/checkpoint.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/command.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/command.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/config.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/config.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/credentials.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/credentials.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/error_log.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/error_log.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/errors.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/errors.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/events.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/events.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/executor.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/executor.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/failure_detector.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/failure_detector.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/group_replication.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/group_replication.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/handler.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/handler.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/machine.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/machine.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/node.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/node.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/options.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/options.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/persistence.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/persistence.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/mysqlrpc.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/mysqlrpc.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/xmlrpc.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/protocols/xmlrpc.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/provider.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/provider.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/null.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/null.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/openstack.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/providers/openstack.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/recovery.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/recovery.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/replication.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/replication.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/scheduler.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/scheduler.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/server.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/server.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/server_utils.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/server_utils.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/event.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/event.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/failure_tracker.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/failure_tracker.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/handler.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/handler.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/health.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/health.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/highavailability.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/highavailability.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/machine.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/machine.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/manage.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/manage.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/provider.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/provider.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/provisioning.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/provisioning.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/resharding.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/resharding.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/server.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/server.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/sharding.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/sharding.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/utils.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/services/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/sharding.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/sharding.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/sharding_datatype.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/sharding_datatype.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/utils.py
-lib/python${MODPY_VERSION}/site-packages/mysql/fabric/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/__init__.pyc
@@ -201,6 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/audit_log.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/audit_log.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/binlog_admin.py
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/binlog_admin.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/check_rpl.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/check_rpl.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/dbcompare.py
@@ -219,6 +139,8 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/failover_consol
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/failover_console.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/failover_daemon.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/failover_daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/grants.py
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/grants.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/grep.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/grep.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/command/indexcheck.py
@@ -250,6 +172,10 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/audit_log_parser
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/audit_log_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/audit_log_reader.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/audit_log_reader.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/binary_log_file.py
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/binary_log_file.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/binlog.py
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/binlog.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/charsets.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/charsets.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/console.py
@@ -264,6 +190,8 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/format.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/format.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/frm_reader.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/frm_reader.pyc
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/grants_info.py
+lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/grants_info.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/gtid.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/gtid.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/ip_parser.py
@@ -311,6 +239,9 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/exception.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql_utilities-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 @man man/man1/mysqlauditadmin.1
 @man man/man1/mysqlauditgrep.1
+@man man/man1/mysqlbinlogmove.1
+@man man/man1/mysqlbinlogpurge.1
+@man man/man1/mysqlbinlogrotate.1
 @man man/man1/mysqldbcompare.1
 @man man/man1/mysqldbcopy.1
 @man man/man1/mysqldbexport.1
@@ -318,17 +249,19 @@ lib/python${MODPY_VERSION}/site-packages/mysql_utilities-${MODPY_EGG_VERSION}-py
 @man man/man1/mysqldiff.1
 @man man/man1/mysqldiskusage.1
 @man man/man1/mysqlfailover.1
+@man man/man1/mysqlfrm.1
+@man man/man1/mysqlgrants.1
 @man man/man1/mysqlindexcheck.1
 @man man/man1/mysqlmetagrep.1
 @man man/man1/mysqlprocgrep.1
 @man man/man1/mysqlreplicate.1
 @man man/man1/mysqlrpladmin.1
 @man man/man1/mysqlrplcheck.1
+@man man/man1/mysqlrplms.1
 @man man/man1/mysqlrplshow.1
+@man man/man1/mysqlrplsync.1
 @man man/man1/mysqlserverclone.1
 @man man/man1/mysqlserverinfo.1
+@man man/man1/mysqlslavetrx.1
 @man man/man1/mysqluc.1
 @man man/man1/mysqluserclone.1
-share/examples/mysql-utilities/
-share/examples/mysql-utilities/fabric.cfg
-share/examples/mysql-utilities/mysql-fabric-doctrine-1.4.0.zip
