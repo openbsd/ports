@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pskc,v 1.4 2015/08/11 20:54:01 sthen Exp $
+@comment $OpenBSD: PLIST-pskc,v 1.5 2016/09/03 14:23:38 sthen Exp $
 @bin bin/pskctool
 include/pskc/
 include/pskc/container.h
@@ -29,7 +29,6 @@ lib/pkgconfig/libpskc.pc
 @man man/man3/pskc_get_device_startdate.3
 @man man/man3/pskc_get_device_userid.3
 @man man/man3/pskc_get_id.3
-@man man/man3/pskc_get_keypackage.3
 @man man/man3/pskc_get_key_algorithm.3
 @man man/man3/pskc_get_key_algparm_chall_checkdigits.3
 @man man/man3/pskc_get_key_algparm_chall_encoding.3
@@ -61,6 +60,7 @@ lib/pkgconfig/libpskc.pc
 @man man/man3/pskc_get_key_profileid.3
 @man man/man3/pskc_get_key_reference.3
 @man man/man3/pskc_get_key_userid.3
+@man man/man3/pskc_get_keypackage.3
 @man man/man3/pskc_get_signed_p.3
 @man man/man3/pskc_get_version.3
 @man man/man3/pskc_global_done.3
