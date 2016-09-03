@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.58 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/09/03 09:33:19 sthen Exp $
 
 COMMENT=	graphics and text browser
-VER=		2.12
-REVISION=	0
+VER=		2.13
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
 
 HOMEPAGE=	http://links.twibright.com/
+
+MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,15 +27,14 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 .if !${FLAVOR:Mno_x11}
-MODULES+=	devel/gettext
 LIB_DEPENDS+=	graphics/jpeg \
 		graphics/png \
 		x11/gnome/librsvg \
 		graphics/tiff
 CONFIGURE_ARGS+= --with-x --enable-graphics
 WANTLIB+=	X11 jpeg>=62 m png>=2 tiff>=35
-WANTLIB +=	cairo event gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB +=	rsvg-2
+WANTLIB+=	cairo event fontconfig gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB+=	gobject-2.0 intl rsvg-2
 
 MESSAGE=	${PKGDIR}/MESSAGE.x11
 .endif
