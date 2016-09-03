@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2016/08/13 03:54:35 gonzalo Exp $
---- src/Makefile.in.orig	Mon Jun 27 06:53:40 2016
-+++ src/Makefile.in	Tue Jul  5 21:29:31 2016
+$OpenBSD: patch-src_Makefile_in,v 1.9 2016/09/03 11:27:34 naddy Exp $
+--- src/Makefile.in.orig	Thu Sep  1 12:41:27 2016
++++ src/Makefile.in	Sat Sep  3 13:01:01 2016
 @@ -316,7 +316,7 @@ nano_SOURCES = browser.c \
  		utils.c \
  		winio.c 
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.8 2016/08/13 03:54:35 gonzalo Exp $
  all: all-am
  
  .SUFFIXES:
+@@ -645,7 +645,7 @@ uninstall-am: uninstall-binPROGRAMS
+ nano.o: revision.h
+ winio.o: revision.h
+ 
+-revision.h: update_revision
++revision.h:
+ 	@[ -f $@ ] || touch $@
+ 	@echo "#define $(SOMETHING)" | cmp -s $@ - || \
+ 	echo "#define $(SOMETHING)" > $@
