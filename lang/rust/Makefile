@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/09/01 09:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/09/03 19:51:47 naddy Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,7 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.11.0
 BV =			1.11.0-20160819
 DISTNAME =		rustc-${V}-src
-REVISION =		0
+REVISION =		1
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
 RUST_HASH =		39b92f95
