@@ -1,0 +1,3 @@
+This adapter is used for customized logging, and is mostly a
+convenient construct to save a few lines of code. You could achieve
+the same effect by creating a full Log::Any adapter class.
