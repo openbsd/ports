@@ -1,0 +1,14 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2016/09/03 10:44:38 fcambus Exp $
+--- makefile.orig	Wed Jul 23 23:58:44 2014
++++ makefile	Fri Sep  2 12:40:02 2016
+@@ -2,8 +2,8 @@
+ # Linux makefile
+ #
+ 
+-CFLAGS=`sdl-config --cflags`
+-PREFIX=../linux/
++CFLAGS+=`sdl-config --cflags`
++PREFIX=../bin/
+ SUFFIX=
+ LIBS=`sdl-config --libs`
+ 
