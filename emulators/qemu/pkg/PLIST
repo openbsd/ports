@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2016/05/13 07:20:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2016/09/03 15:31:07 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -56,6 +56,7 @@ share/examples/qemu/qemu-ifup
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
+share/locale/bg/LC_MESSAGES/qemu.mo
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
 share/locale/de_DE/LC_MESSAGES/qemu.mo
@@ -74,11 +75,13 @@ share/qemu/bamboo.dtb
 share/qemu/bios-256k.bin
 share/qemu/bios.bin
 share/qemu/efi-e1000.rom
+share/qemu/efi-e1000e.rom
 share/qemu/efi-eepro100.rom
 share/qemu/efi-ne2k_pci.rom
 share/qemu/efi-pcnet.rom
 share/qemu/efi-rtl8139.rom
 share/qemu/efi-virtio.rom
+share/qemu/efi-vmxnet3.rom
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
@@ -119,6 +122,7 @@ share/qemu/keymaps/th
 share/qemu/keymaps/tr
 share/qemu/kvmvapic.bin
 share/qemu/linuxboot.bin
+share/qemu/linuxboot_dma.bin
 share/qemu/multiboot.bin
 share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
@@ -139,7 +143,7 @@ share/qemu/s390-ccw.img
 share/qemu/sgabios.bin
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
-share/qemu/trace-events
+share/qemu/trace-events-all
 share/qemu/u-boot.e500
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin
