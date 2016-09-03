@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/23 19:23:54 krw Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/03 10:12:00 sthen Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -10,7 +10,8 @@ WANTLIB=		c m
 
 DISTNAME =	hevea-2.23
 REVISION = 	0
-MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
+MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/ \
+		https://spacehopper.org/mirrors/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
 
