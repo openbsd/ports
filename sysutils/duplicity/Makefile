@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2016/08/09 11:16:53 danj Exp $
+# $OpenBSD: Makefile,v 1.39 2016/09/03 08:45:52 danj Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.09
+MODPY_EGG_VERSION = 0.7.10
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -33,13 +33,22 @@ RUN_DEPENDS +=	devel/py-pexpect \
 		gnupg-<2:security/gnupg \
 		sysutils/py-lockfile
 
+TEST_DEPENDS =	archivers/gtar \
+		archivers/par2cmdline \
+		devel/py-mock \
+		devel/py-pexpect \
+		sysutils/py-lockfile
+
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
-MODPY_ADJ_FILES = bin/duplicity bin/rdiffdir
-
-# Some regression tests are hanging
-# TEST_DEPENDS =	devel/py-mock
-NO_TEST =	Yes
+MODPY_ADJ_FILES =	bin/duplicity bin/rdiffdir \
+			testing/manual/backendtest \
+			testing/overrides/bin/hsi \
+			testing/overrides/bin/lftp \
+			testing/overrides/bin/ncftpget \
+			testing/overrides/bin/ncftpls \
+			testing/overrides/bin/ncftpput \
+			testing/overrides/bin/tahoe
 
 post-extract:
 	chmod 644 ${WRKSRC}/bin/*.1
