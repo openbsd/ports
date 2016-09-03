@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tls_tls_client_c,v 1.1 2016/09/03 15:39:58 sthen Exp $
+--- src/tls/tls_client.c.orig	Thu Sep  1 21:53:17 2016
++++ src/tls/tls_client.c	Thu Sep  1 21:55:50 2016
+@@ -299,7 +299,7 @@ TLS_APPL_STATE *tls_client_init(const TLS_CLIENT_INIT_
+      */
+     tls_check_version();
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+     /*
+      * Initialize the OpenSSL library by the book! To start with, we must
+@@ -441,7 +441,7 @@ TLS_APPL_STATE *tls_client_init(const TLS_CLIENT_INIT_
+     /*
+      * 2015-12-05: Ephemeral RSA removed from OpenSSL 1.1.0-dev
+      */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+     /*
+      * According to the OpenSSL documentation, temporary RSA key is needed
