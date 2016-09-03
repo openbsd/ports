@@ -1,6 +1,6 @@
-scamper is a program that is able to conduct Internet measurement
-tasks to large numbers of IPv4 and IPv6 addresses, in parallel, to
-fill a specified packets-per-second rate. Currently, it supports
-the well-known ping and traceroute techniques, as well as radargun,
-ally and mercator. (On some other OS it also supports sting, and
-parts of tbit).
+scamper is a program that is able to conduct Internet measurement tasks to
+large numbers of IPv4 and IPv6 addresses, in parallel, to fill a specified
+packets-per-second rate.
+
+It supports the standard ping and traceroute techniques, but also Paris and
+MDA traceroute, radargun, ally, mercator, sting, speedtrap, and parts of tbit.
