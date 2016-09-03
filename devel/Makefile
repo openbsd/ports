@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1534 2016/09/02 17:05:58 edd Exp $
+# $OpenBSD: Makefile,v 1.1535 2016/09/03 12:16:04 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -822,6 +822,7 @@
      SUBDIR += p5-LockFile-Simple
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-Log-Any
+     SUBDIR += p5-Log-Any-Adapter-Callback
      SUBDIR += p5-Log-Dispatch
      SUBDIR += p5-Log-Dispatch-Binlog
      SUBDIR += p5-Log-Dispatch-Config
