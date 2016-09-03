@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2016/08/30 10:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.577 2016/09/03 20:04:42 naddy Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -54,7 +54,6 @@
      SUBDIR += echinus
      SUBDIR += ede
      SUBDIR += emelfm2
-     SUBDIR += emiclock
      SUBDIR += enlightenment
      SUBDIR += eterm
      SUBDIR += eterm,kanji
