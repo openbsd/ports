@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2016/07/09 08:57:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/09/03 14:23:37 sthen Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.20
+VERSION=	1.2.22
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
@@ -11,13 +11,11 @@ CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-openssl	4.0 \
 		xmlsec1-gcrypt	0.0 \
-		xmlsec1		6.0
-REVISION-docs=	0
-REVISION-main=	2
+		xmlsec1		7.0
 
-HOMEPAGE=	http://www.aleksey.com/xmlsec/
+HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
-# MIT Licence
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed idn ltdl m
@@ -40,7 +38,7 @@ LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/libxslt \
 			security/gnutls
 
-# USE_GROFF =		Yes
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-nss \
@@ -52,7 +50,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # see /usr/local/include/libxml2/libxml/xmlversion.h:413
 CONFIGURE_ENV +=	ac_cv_header_ansidecl_h=no
 
-TEST_DEPENDS=		security/xmlsec
+TEST_DEPENDS=		xmlsec-${VERSION}:security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
 .include <bsd.port.mk>

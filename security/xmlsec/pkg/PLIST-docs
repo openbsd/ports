@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2011/04/03 10:59:50 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2016/09/03 14:23:37 sthen Exp $
 share/doc/xmlsec1/
 share/doc/xmlsec1/api/
 share/doc/xmlsec1/api/home.png
@@ -13,7 +13,6 @@ share/doc/xmlsec1/api/images/transform.png
 share/doc/xmlsec1/api/images/transforms-chain.png
 share/doc/xmlsec1/api/images/verif-dec-model.png
 share/doc/xmlsec1/api/index.html
-share/doc/xmlsec1/api/index.sgml
 share/doc/xmlsec1/api/left.png
 share/doc/xmlsec1/api/right.png
 share/doc/xmlsec1/api/up.png
@@ -37,13 +36,10 @@ share/doc/xmlsec1/api/xmlsec-examples.html
 share/doc/xmlsec1/api/xmlsec-gcrypt-app.html
 share/doc/xmlsec1/api/xmlsec-gcrypt-crypto.html
 share/doc/xmlsec1/api/xmlsec-gcrypt-ref.html
-share/doc/xmlsec1/api/xmlsec-gcrypt.sgml
 share/doc/xmlsec1/api/xmlsec-gnutls-app.html
 share/doc/xmlsec1/api/xmlsec-gnutls-crypto.html
 share/doc/xmlsec1/api/xmlsec-gnutls-ref.html
-share/doc/xmlsec1/api/xmlsec-gnutls.sgml
 share/doc/xmlsec1/api/xmlsec-index.html
-share/doc/xmlsec1/api/xmlsec-index.sgml
 share/doc/xmlsec1/api/xmlsec-io.html
 share/doc/xmlsec1/api/xmlsec-keyinfo.html
 share/doc/xmlsec1/api/xmlsec-keys.html
@@ -57,7 +53,6 @@ share/doc/xmlsec1/api/xmlsec-mscrypto-crypto.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-keysstore.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-ref.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-x509.html
-share/doc/xmlsec1/api/xmlsec-mscrypto.sgml
 share/doc/xmlsec1/api/xmlsec-nodeset.html
 share/doc/xmlsec1/api/xmlsec-notes-compiling-others.html
 share/doc/xmlsec1/api/xmlsec-notes-compiling-unix.html
@@ -104,14 +99,12 @@ share/doc/xmlsec1/api/xmlsec-nss-keysstore.html
 share/doc/xmlsec1/api/xmlsec-nss-pkikeys.html
 share/doc/xmlsec1/api/xmlsec-nss-ref.html
 share/doc/xmlsec1/api/xmlsec-nss-x509.html
-share/doc/xmlsec1/api/xmlsec-nss.sgml
 share/doc/xmlsec1/api/xmlsec-openssl-app.html
 share/doc/xmlsec1/api/xmlsec-openssl-bn.html
 share/doc/xmlsec1/api/xmlsec-openssl-crypto.html
 share/doc/xmlsec1/api/xmlsec-openssl-evp.html
 share/doc/xmlsec1/api/xmlsec-openssl-ref.html
 share/doc/xmlsec1/api/xmlsec-openssl-x509.html
-share/doc/xmlsec1/api/xmlsec-openssl.sgml
 share/doc/xmlsec1/api/xmlsec-parser.html
 share/doc/xmlsec1/api/xmlsec-ref.html
 share/doc/xmlsec1/api/xmlsec-reference.html
@@ -128,13 +121,13 @@ share/doc/xmlsec1/api/xmlsec-xmldsig.html
 share/doc/xmlsec1/api/xmlsec-xmlenc.html
 share/doc/xmlsec1/api/xmlsec-xmlsec.html
 share/doc/xmlsec1/api/xmlsec-xmltree.html
-share/doc/xmlsec1/api/xmlsec.sgml
 share/doc/xmlsec1/authors.html
 share/doc/xmlsec1/bugs.html
 share/doc/xmlsec1/c14n.html
 share/doc/xmlsec1/documentation.html
 share/doc/xmlsec1/download.html
 share/doc/xmlsec1/faq.html
+share/doc/xmlsec1/favicon.ico
 share/doc/xmlsec1/images/
 share/doc/xmlsec1/images/bart.gif
 share/doc/xmlsec1/images/libxml2-logo.png

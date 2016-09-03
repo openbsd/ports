@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_openssl_app_c,v 1.1 2014/04/19 12:24:40 sthen Exp $
---- src/openssl/app.c.orig	Sat Apr 19 06:23:13 2014
-+++ src/openssl/app.c	Sat Apr 19 06:24:05 2014
-@@ -1478,11 +1478,6 @@ xmlSecOpenSSLAppLoadRANDFile(const char *file) {
+$OpenBSD: patch-src_openssl_app_c,v 1.2 2016/09/03 14:23:37 sthen Exp $
+--- src/openssl/app.c.orig	Wed Apr 20 17:26:22 2016
++++ src/openssl/app.c	Sat Sep  3 14:33:48 2016
+@@ -1487,11 +1487,6 @@ xmlSecOpenSSLAppLoadRANDFile(const char *file) {
  
      if(file == NULL) {
          file = RAND_file_name(buffer, sizeof(buffer));
