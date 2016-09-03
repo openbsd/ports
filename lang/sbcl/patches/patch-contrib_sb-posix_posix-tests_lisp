@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_sb-posix_posix-tests_lisp,v 1.1 2016/09/03 12:27:17 jca Exp $
+--- contrib/sb-posix/posix-tests.lisp.orig	Wed Aug 31 14:59:01 2016
++++ contrib/sb-posix/posix-tests.lisp	Wed Aug 31 14:59:30 2016
+@@ -478,7 +478,7 @@
+   42)
+
+
+-#-(or win32 netbsd)
++#-(or win32 netbsd openbsd)
+ (deftest fcntl.flock.2
+     (locally (declare (sb-ext:muffle-conditions sb-ext:compiler-note))
+       (let ((flock (make-instance 'sb-posix:flock
