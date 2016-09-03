@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.983 2016/08/31 12:40:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.984 2016/09/03 10:39:04 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -43,6 +43,7 @@
      SUBDIR += centerim
      SUBDIR += cftp
      SUBDIR += cgo
+     SUBDIR += cgterm
      SUBDIR += charm
      SUBDIR += cjc
      SUBDIR += climm
