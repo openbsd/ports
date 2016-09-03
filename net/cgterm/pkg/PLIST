@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/03 10:35:10 fcambus Exp $
+@bin bin/cgchat
+@bin bin/cgterm
+share/cgterm/
+share/cgterm/10x12white.bmp
+share/cgterm/10x12yellow.bmp
+share/cgterm/bell.wav
+share/cgterm/german.kbd
+share/cgterm/lower.bmp
+share/cgterm/swedish.kbd
+share/cgterm/upper.bmp
+share/cgterm/us.kbd
+share/cgterm/windows.kbd
+share/doc/cgterm/
+share/doc/cgterm/cgchat.txt
+share/doc/cgterm/cgterm.txt

@@ -1,0 +1,3 @@
+CGTerm is a C/G telnet client that lets you connect to C64 telnet BBSes
+with the correct colours and the correct font. Also included is a client
+for 64CHAT called CGChat.
