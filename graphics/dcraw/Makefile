@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/10/21 13:18:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/03 10:22:00 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
-DISTNAME =	dcraw-9.26.0
+DISTNAME =	dcraw-9.27.0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
@@ -12,7 +12,7 @@ MASTER_SITES =	http://cybercom.net/~dcoffin/dcraw/archive/
 # Some code is completely free, some is under the GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c jasper jpeg lcms2 m pthread
+WANTLIB =	c jasper jpeg lcms2 m
 
 LIB_DEPENDS =	graphics/jasper \
 		graphics/jpeg \
