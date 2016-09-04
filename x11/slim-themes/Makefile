@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/24 20:29:54 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/04 16:53:41 giovanni Exp $
 
 COMMENT=	slim themes bundle
 
@@ -9,7 +9,7 @@ DISTFILES+=	slim-${j}-20090407${EXTRACT_SUFX}
 
 DIST_SUBDIR=	slim
 PKGNAME=	slim-themes-1.2.3
-REVISION=	5
+REVISION=	6
 
 PKG_ARCH=	*
 
@@ -24,6 +24,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 NO_TEST=	Yes
 NO_BUILD=	Yes
 EXTRACT_ONLY=
+
+RUN_DEPENDS=	x11/slim
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/slim/themes
