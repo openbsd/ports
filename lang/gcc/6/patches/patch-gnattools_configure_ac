@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnattools_configure_ac,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- gnattools/configure.ac.orig	Mon Jun  8 09:27:56 2015
++++ gnattools/configure.ac	Tue Aug 23 15:48:19 2016
+@@ -89,6 +89,11 @@ case "${target}" in
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+     indepsw.adb<indepsw-gnu.adb"
+     ;;
++  *-*-openbsd*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
+   *-*-linux*)
+     TOOLS_TARGET_PAIRS="\
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \

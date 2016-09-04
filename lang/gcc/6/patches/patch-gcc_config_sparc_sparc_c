@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- gcc/config/sparc/sparc.c.orig	Wed Jun  8 14:34:25 2016
++++ gcc/config/sparc/sparc.c	Wed Aug 31 09:57:05 2016
+@@ -44,6 +44,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include "varasm.h"
+ #include "output.h"
+ #include "insn-attr.h"
++#include "flags.h"
+ #include "explow.h"
+ #include "expr.h"
+ #include "debug.h"
+@@ -5606,6 +5607,9 @@ sparc_expand_prologue (void)
+   /* Load the GOT register if needed.  */
+   if (crtl->uses_pic_offset_table)
+     load_got_register ();
++
++  if (warn_stack_larger_than && size > stack_larger_than_size)
++    warning (OPT_Wstack_larger_than_, "stack usage is %ld bytes", size);
+ 
+   /* Advertise that the data calculated just above are now valid.  */
+   sparc_prologue_data_valid_p = true;

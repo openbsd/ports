@@ -1,0 +1,22 @@
+$OpenBSD: patch-libjava_libltdl_configure,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
+--- libjava/libltdl/configure.orig	Wed May 13 13:08:26 2015
++++ libjava/libltdl/configure	Tue Aug 23 15:48:23 2016
+@@ -6900,9 +6900,6 @@ cc_basename=`$echo "X$cc_temp" | $Xsed -e 's%.*/%%' -e
+       with_gnu_ld=no
+     fi
+     ;;
+-  openbsd*)
+-    with_gnu_ld=no
+-    ;;
+   esac
+ 
+   ld_shlibs=yes
+@@ -8192,7 +8189,7 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

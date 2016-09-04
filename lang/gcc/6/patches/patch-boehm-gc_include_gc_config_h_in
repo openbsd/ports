@@ -1,0 +1,13 @@
+$OpenBSD: patch-boehm-gc_include_gc_config_h_in,v 1.1.1.1 2016/09/04 16:20:14 pascal Exp $
+--- boehm-gc/include/gc_config.h.in.orig	Wed May 13 12:56:33 2015
++++ boehm-gc/include/gc_config.h.in	Tue Aug 23 15:48:13 2016
+@@ -24,6 +24,9 @@
+ /* support FreeBSD threads */
+ #undef GC_FREEBSD_THREADS
+ 
++/* support OpenBSD threads */
++#undef GC_OPENBSD_THREADS
++
+ /* include support for gcj */
+ #undef GC_GCJ_SUPPORT
+ 

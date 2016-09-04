@@ -1,0 +1,22 @@
+$OpenBSD: patch-libquadmath_Makefile_in,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
+--- libquadmath/Makefile.in.orig	Mon Aug 22 10:04:29 2016
++++ libquadmath/Makefile.in	Tue Aug 23 15:48:24 2016
+@@ -337,6 +337,9 @@ toolexeclibdir = @toolexeclibdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
++
++include $(top_srcdir)/../libversions
++
+ AUTOMAKE_OPTIONS = 1.8 foreign
+ @BUILD_LIBQUADMATH_TRUE@ACLOCAL_AMFLAGS = -I .. -I ../config
+ @BUILD_LIBQUADMATH_TRUE@AM_CPPFLAGS = -I $(top_srcdir)/../include
+@@ -349,7 +352,7 @@ AUTOMAKE_OPTIONS = 1.8 foreign
+ @BUILD_LIBQUADMATH_TRUE@@LIBQUAD_USE_SYMVER_SUN_TRUE@@LIBQUAD_USE_SYMVER_TRUE@version_dep = quadmath.map-sun
+ @BUILD_LIBQUADMATH_TRUE@toolexeclib_LTLIBRARIES = libquadmath.la
+ @BUILD_LIBQUADMATH_TRUE@libquadmath_la_LIBADD = 
+-@BUILD_LIBQUADMATH_TRUE@libquadmath_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` \
++@BUILD_LIBQUADMATH_TRUE@libquadmath_la_LDFLAGS = $(LIBquadmath_LTVERSION) \
+ @BUILD_LIBQUADMATH_TRUE@			 $(version_arg) $(lt_host_flags) -lm
+ 
+ @BUILD_LIBQUADMATH_TRUE@libquadmath_la_DEPENDENCIES = $(version_dep) $(libquadmath_la_LIBADD)

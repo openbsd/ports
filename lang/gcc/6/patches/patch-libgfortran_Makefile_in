@@ -1,0 +1,13 @@
+$OpenBSD: patch-libgfortran_Makefile_in,v 1.1.1.1 2016/09/04 16:20:20 pascal Exp $
+--- libgfortran/Makefile.in.orig	Mon Aug 22 10:04:29 2016
++++ libgfortran/Makefile.in	Tue Aug 23 16:23:57 2016
+@@ -597,7 +597,8 @@ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-
+ toolexeclib_LTLIBRARIES = libgfortran.la
+ toolexeclib_DATA = libgfortran.spec
+ libgfortran_la_LINK = $(LINK) $(libgfortran_la_LDFLAGS)
+-libgfortran_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` \
++include $(top_srcdir)/../libversions
++libgfortran_la_LDFLAGS = $(LIBgfortran_LTVERSION) \
+ 	$(LTLDFLAGS) $(LIBQUADLIB) ../libbacktrace/libbacktrace.la \
+ 	-lm $(extra_ldflags_libgfortran) \
+ 	$(version_arg) -Wc,-shared-libgcc

@@ -1,0 +1,12 @@
+$OpenBSD: patch-zlib_configure,v 1.1.1.1 2016/09/04 16:20:20 pascal Exp $
+--- zlib/configure.orig	Wed May 13 13:31:32 2015
++++ zlib/configure	Tue Aug 23 15:48:26 2016
+@@ -9813,7 +9813,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

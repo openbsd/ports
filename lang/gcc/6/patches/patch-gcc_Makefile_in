@@ -1,0 +1,34 @@
+$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
+
+Disable fixincludes madness
+
+--- gcc/Makefile.in.orig	Fri Apr 15 13:49:39 2016
++++ gcc/Makefile.in	Tue Aug 23 18:14:33 2016
+@@ -261,9 +261,6 @@ endif
+ NO_PIE_CFLAGS = @NO_PIE_CFLAGS@
+ NO_PIE_FLAG = @NO_PIE_FLAG@
+ 
+-# We don't want to compile the compilers with -fPIE, it make PCH fail.
+-COMPILER += $(NO_PIE_CFLAGS)
+-
+ # Link with -no-pie since we compile the compiler with -fno-PIE.
+ LINKER += $(NO_PIE_FLAG)
+ 
+@@ -763,8 +760,6 @@ NO_PIE_FLAG_FOR_BUILD = @NO_PIE_FLAG_FOR_BUILD@
+ BUILD_CFLAGS= @BUILD_CFLAGS@ -DGENERATOR_FILE
+ BUILD_CXXFLAGS = @BUILD_CXXFLAGS@ -DGENERATOR_FILE
+ BUILD_NO_PIE_CFLAGS = @BUILD_NO_PIE_CFLAGS@
+-BUILD_CFLAGS += $(BUILD_NO_PIE_CFLAGS)
+-BUILD_CXXFLAGS += $(BUILD_NO_PIE_CFLAGS)
+ 
+ # Native compiler that we use.  This may be C++ some day.
+ COMPILER_FOR_BUILD = $(CXX_FOR_BUILD)
+@@ -2907,7 +2902,7 @@ stmp-fixinc: gsyslimits.h macro_list fixinc_list \
+ 	      gcc_dir=`${PWD_COMMAND}` ; \
+ 	      export TARGET_MACHINE srcdir SHELL MACRO_LIST && \
+ 	      cd $(build_objdir)/fixincludes && \
+-	      $(SHELL) ./fixinc.sh "$${gcc_dir}/$${fix_dir}" \
++	      $(SHELL) -c true "$${gcc_dir}/$${fix_dir}" \
+ 	        $(SYSTEM_HEADER_DIR) $(OTHER_FIXINCLUDES_DIRS) ); \
+ 	    rm -f $${fix_dir}/syslimits.h; \
+ 	    if [ -f $${fix_dir}/limits.h ]; then \

@@ -1,0 +1,29 @@
+$OpenBSD: patch-gcc_configure,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
+--- gcc/configure.orig	Wed Jun  8 15:34:25 2016
++++ gcc/configure	Tue Aug 23 15:48:18 2016
+@@ -17875,7 +17875,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -21535,7 +21535,7 @@ openbsd*)
+     *)				need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  #finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
+@@ -28528,6 +28528,7 @@ else
+ fi
+ 
+         ;;
++  *-*-openbsd*) gcc_cv_libc_provides_ssp=yes ;;
+   *) gcc_cv_libc_provides_ssp=no ;;
+     esac
+ fi

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_c_c-decl_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
+--- gcc/c/c-decl.c.orig	Thu Aug 11 17:14:17 2016
++++ gcc/c/c-decl.c	Tue Aug 23 18:25:12 2016
+@@ -5301,6 +5301,8 @@ warn_variable_length_array (tree name, tree size)
+ 	pedwarn_c90 (input_location, OPT_Wvla, "ISO C90 forbids variable "
+ 		     "length array");
+     }
++    if (warn_variable_decl)
++      warning (OPT_Wvariable_decl, "variable-sized array %qE", name);
+ }
+ 
+ /* Print warning about defaulting to int if necessary.  */

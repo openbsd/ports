@@ -1,0 +1,32 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2016/09/04 16:20:15 pascal Exp $
+--- gcc/ada/gcc-interface/Make-lang.in.orig	Fri Oct 23 15:04:01 2015
++++ gcc/ada/gcc-interface/Make-lang.in	Tue Aug 23 15:48:14 2016
+@@ -760,7 +760,7 @@ ada.install-common:
+ 	-if [ -f gnat1$(exeext) ] ; \
+ 	then \
+ 	  for tool in $(ADA_TOOLS) ; do \
+-	    install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	    install_name=$$tool$(exeext); \
+ 	    $(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	    if [ -f $$tool-cross$(exeext) ] ; \
+ 	    then \
+@@ -797,7 +797,7 @@ ada.install-plugin:
+ 
+ ada.uninstall:
+ 	for tool in $(ADA_TOOLS) ; do \
+-	  install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	  install_name=$$tool$(exeext); \
+ 	  -$(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	done
+ 	-$(RM) $(DESTDIR)$(tooldir)/bin/gnatdll$(exeext)
+@@ -864,8 +864,8 @@ ada.stagefeedback: stagefeedback-start
+ 
+ lang_checks += check-gnat
+ 
+-check-ada: check-acats check-gnat
+-check-ada-subtargets: check-acats-subtargets check-gnat-subtargets
++check-ada: check-gnat
++check-ada-subtargets: check-gnat-subtargets
+ 
+ ACATSDIR = $(TESTSUITEDIR)/ada/acats
+ 

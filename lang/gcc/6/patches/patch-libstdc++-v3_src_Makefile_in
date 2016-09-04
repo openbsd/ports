@@ -1,0 +1,37 @@
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Wed Apr  6 17:07:49 2016
++++ libstdc++-v3/src/Makefile.in	Tue Aug 23 17:20:37 2016
+@@ -371,13 +371,14 @@ CONFIG_CXXFLAGS = \
+ WARN_CXXFLAGS = \
+ 	$(WARN_FLAGS) $(WERROR_FLAG) -fdiagnostics-show-location=once 
+ 
++include $(top_srcdir)/../libversions
+ 
+ # -I/-D flags to pass when compiling.
+ AM_CPPFLAGS = $(GLIBCXX_INCLUDES) $(CPPFLAGS)
+ @ENABLE_FILESYSTEM_TS_FALSE@filesystem_dir = 
+ @ENABLE_FILESYSTEM_TS_TRUE@filesystem_dir = filesystem
+ SUBDIRS = c++98 c++11 $(filesystem_dir)
+-@VTV_CYGMIN_FALSE@toolexeclib_LTLIBRARIES = libstdc++.la
++@VTV_CYGMIN_FALSE@toolexeclib_LTLIBRARIES = libestdc++.la
+ 
+ # Cross compiler support.
+ @VTV_CYGMIN_TRUE@toolexeclib_LTLIBRARIES = libvtv.la libstdc++.la
+@@ -425,7 +426,7 @@ libstdc___la_DEPENDENCIES = \
+ 	$(top_builddir)/src/c++11/libc++11convenience.la
+ 
+ libstdc___la_LDFLAGS = \
+-	-version-info $(libtool_VERSION) ${version_arg} -lm
++	$(LIBestdc++_LTVERSION) ${version_arg} -lm
+ 
+ libstdc___la_LINK = $(CXXLINK) $(libstdc___la_LDFLAGS)
+ 
+@@ -602,7 +603,7 @@ clean-toolexeclibLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libstdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) $(EXTRA_libstdc___la_DEPENDENCIES) 
++libestdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) $(EXTRA_libstdc___la_DEPENDENCIES) 
+ 	$(libstdc___la_LINK) $(am_libstdc___la_rpath) $(libstdc___la_OBJECTS) $(libstdc___la_LIBADD) $(LIBS)
+ libvtv.la: $(libvtv_la_OBJECTS) $(libvtv_la_DEPENDENCIES) $(EXTRA_libvtv_la_DEPENDENCIES) 
+ 	$(libvtv_la_LINK) $(am_libvtv_la_rpath) $(libvtv_la_OBJECTS) $(libvtv_la_LIBADD) $(LIBS)

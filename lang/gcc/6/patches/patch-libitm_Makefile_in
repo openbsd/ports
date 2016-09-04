@@ -1,0 +1,13 @@
+$OpenBSD: patch-libitm_Makefile_in,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- libitm/Makefile.in.orig	Mon Aug 22 10:04:29 2016
++++ libitm/Makefile.in	Tue Aug 23 15:48:22 2016
+@@ -351,7 +351,8 @@ nodist_toolexeclib_HEADERS = libitm.spec
+ @LIBITM_BUILD_VERSIONED_SHLIB_FALSE@libitm_version_dep = 
+ @LIBITM_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBITM_BUILD_VERSIONED_SHLIB_TRUE@libitm_version_dep = $(top_srcdir)/libitm.map
+ @LIBITM_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBITM_BUILD_VERSIONED_SHLIB_TRUE@libitm_version_dep = libitm.map-sun
+-libitm_version_info = -version-info $(libtool_VERSION)
++include $(top_srcdir)/../libversions
++libitm_version_info = $(LIBitm_LTVERSION)
+ 
+ # Force link with C, not C++.  For now, while we're using C++ we don't
+ # want or need libstdc++.

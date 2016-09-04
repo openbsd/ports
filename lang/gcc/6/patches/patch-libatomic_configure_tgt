@@ -1,0 +1,12 @@
+$OpenBSD: patch-libatomic_configure_tgt,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- libatomic/configure.tgt.orig	Tue May 10 09:03:07 2016
++++ libatomic/configure.tgt	Tue Aug 23 15:48:19 2016
+@@ -56,7 +56,7 @@ case "${target_cpu}" in
+ 	    ;;
+ 	  *)
+ 	    if test -z "$with_cpu"; then
+-	      XCFLAGS="${XCFLAGS} -mcpu=v9"
++	      XCFLAGS="${XCFLAGS} -mcpu=v7"
+ 	    fi
+ 	esac
+ 	ARCH=sparc

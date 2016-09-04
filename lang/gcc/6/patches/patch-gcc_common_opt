@@ -1,0 +1,89 @@
+$OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
+--- gcc/common.opt.orig	Thu Mar 17 16:11:35 2016
++++ gcc/common.opt	Tue Aug 23 23:21:41 2016
+@@ -624,6 +624,10 @@ Wnull-dereference
+ Common Var(warn_null_dereference) Warning
+ Warn if dereferencing a NULL pointer may lead to erroneous or undefined behavior.
+ 
++Wstack-larger-than-
++Common RejectNegative Joined UInteger
++-Wstack-larger-than-<number> Warn if a function is using more than <number> bytes of stack space for its local variables.
++
+ Wunsafe-loop-optimizations
+ Common Var(warn_unsafe_loop_optimizations) Warning
+ Warn if the loop cannot be optimized due to nontrivial assumptions.
+@@ -708,7 +712,7 @@ Common Var(warn_suggest_final_methods) Warning
+ Warn about C++ virtual methods where adding final keyword would improve code quality.
+ 
+ Wsystem-headers
+-Common Var(warn_system_headers) Warning
++Common Var(warn_system_headers) Init(1) Warning
+ Do not suppress warnings from system headers.
+ 
+ Wtrampolines
+@@ -763,6 +767,10 @@ Wunused-variable
+ Common Var(warn_unused_variable) Warning EnabledBy(Wunused)
+ Warn when a variable is unused.
+ 
++Wvariable-decl
++Common Var(warn_variable_decl)
++Warn about variable-sized declarations
++
+ Wcoverage-mismatch
+ Common Var(warn_coverage_mismatch) Init(1) Warning
+ Warn in case profiles in -fprofile-use do not match.
+@@ -884,7 +892,7 @@ Common Joined RejectNegative UInteger Var(flag_abi_ver
+ The version of the C++ ABI in use.
+ 
+ faggressive-loop-optimizations
+-Common Report Var(flag_aggressive_loop_optimizations) Optimization Init(1)
++Common Report Var(flag_aggressive_loop_optimizations) Optimization
+ Aggressively optimize loops using language constraints.
+ 
+ falign-functions
+@@ -1116,7 +1124,7 @@ Common Report Var(flag_delete_dead_exceptions) Init(0)
+ Delete dead instructions that may throw exceptions.
+ 
+ fdelete-null-pointer-checks
+-Common Report Var(flag_delete_null_pointer_checks) Init(-1) Optimization
++Common Report Var(flag_delete_null_pointer_checks) Init(0) Optimization
+ Delete useless null pointer checks.
+ 
+ fdevirtualize-at-ltrans
+@@ -1437,7 +1445,7 @@ Enable guessing of branch probabilities.
+ ; On SVR4 targets, it also controls whether or not to emit a
+ ; string identifying the compiler.
+ fident
+-Common Report Var(flag_no_ident,0)
++Common Report Var(flag_no_ident,0) Init(1)
+ Process #ident directives.
+ 
+ fif-conversion
+@@ -2200,7 +2208,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+ -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>.
+ 
+ fstack-protector
+-Common Report Var(flag_stack_protect, 1) Init(-1)
++Common Report Var(flag_stack_protect, 3) Init(-1)
+ Use propolice as a stack protection method.
+ 
+ fstack-protector-all
+@@ -2691,7 +2699,7 @@ Common JoinedOrMissing Negative(gdwarf-)
+ Generate debug information in default version of DWARF format.
+ 
+ gdwarf-
+-Common Joined UInteger Var(dwarf_version) Init(4) Negative(gstabs)
++Common Joined UInteger Var(dwarf_version) Init(2) Negative(gstabs)
+ Generate debug information in DWARF v2 (or later) format.
+ 
+ ggdb
+@@ -2801,6 +2809,9 @@ no-canonical-prefixes
+ Driver
+ 
+ nodefaultlibs
++Driver
++
++nopie
+ Driver
+ 
+ nostartfiles

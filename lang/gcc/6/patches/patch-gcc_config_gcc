@@ -1,0 +1,130 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
+--- gcc/config.gcc.orig	Wed Jun  8 15:34:25 2016
++++ gcc/config.gcc	Tue Aug 23 23:24:07 2016
+@@ -797,6 +797,14 @@ case ${target} in
+       default_use_cxa_atexit=yes
+       ;;
+   esac
++  case ${target} in
++    *-*-openbsd[0-3].*|*-*-openbsd4.[012])
++      # keep default of no cxa_atexit support for these older releases
++      ;;
++    *)
++      default_use_cxa_atexit=yes
++      ;;
++  esac
+   ;;
+ *-*-openbsd*)
+   tmake_file="t-openbsd"
+@@ -984,7 +992,7 @@ alpha*-*-netbsd*)
+ 		       alpha/elf.opt"
+ 	;;
+ alpha*-*-openbsd*)
+-	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
++	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT DEFAULT_FLAG_PIE=2"
+ 	tm_file="elfos.h alpha/alpha.h alpha/elf.h openbsd.h openbsd-stdint.h alpha/openbsd.h openbsd-libpthread.h"
+ 	extra_options="${extra_options} openbsd.opt alpha/elf.opt"
+ 	# default x-alpha is only appropriate for dec-osf.
+@@ -1070,6 +1078,12 @@ arm*-*-netbsdelf*)
+ 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
+ 	tmake_file="${tmake_file} arm/t-arm"
+ 	;;
++arm-*-openbsd*)
++	tm_file="dbxelf.h elfos.h arm/elf.h arm/aout.h arm/arm.h openbsd.h openbsd-libpthread.h arm/openbsd.h"
++	extra_options="${extra_options} openbsd.opt"
++	tmake_file="${tmake_file} arm/t-arm"
++	set
++	;;
+ arm*-*-linux-*)			# ARM GNU/Linux with ELF
+ 	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h arm/elf.h arm/linux-gas.h arm/linux-elf.h"
+ 	extra_options="${extra_options} linux-android.opt"
+@@ -1274,6 +1288,7 @@ hppa*-*-linux*)
+ 	;;
+ hppa*-*-openbsd*)
+ 	target_cpu_default="MASK_PA_11"
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1"
+ 	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-stdint.h openbsd-libpthread.h \
+ 		 pa/pa-openbsd.h pa/pa32-regs.h pa/pa32-openbsd.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -1461,6 +1476,7 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	use_collect2=yes
+ 	;;
+ i[34567]86-*-openbsd*)
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1"
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/openbsdelf.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -1468,6 +1484,7 @@ i[34567]86-*-openbsd*)
+ 	gnu_ld=yes
+ 	;;
+ x86_64-*-openbsd*)
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1"
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -2028,6 +2045,18 @@ microblaze*-*-elf)
+ 	cxx_target_objs="${cxx_target_objs} microblaze-c.o"
+ 	tmake_file="${tmake_file} microblaze/t-microblaze"
+         ;;
++mips64-*-openbsd*)
++       set
++       tm_file="dbxelf.h elfos.h openbsd.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
++       tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 DEFAULT_FLAG_PIE=1"
++       extra_options="${extra_options} openbsd.opt"
++       ;;
++mips64el-*-openbsd*)
++       set
++       tm_file="dbxelf.h elfos.h openbsd.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
++       tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 TARGET_ENDIAN_DEFAULT=0 DEFAULT_FLAG_PIE=1"
++       extra_options="${extra_options} openbsd.opt"
++       ;;
+ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	target_cpu_default="MASK_ABICALLS"
+ 	tm_file="elfos.h ${tm_file} mips/elf.h netbsd.h netbsd-elf.h mips/netbsd.h"
+@@ -2300,6 +2329,12 @@ pdp11-*-*)
+ #	tmake_file="${tmake_file} rs6000/t-fprules"
+ #	extra_headers=
+ #	;;
++powerpc-*-openbsd*)
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=2"
++	tm_file="rs6000/secureplt.h ${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tmake_file="${tmake_file} rs6000/t-openbsd"
++	extra_options="${extra_options} rs6000/sysv4.opt openbsd.opt"
++	;;
+ powerpc-*-darwin*)
+ 	extra_options="${extra_options} rs6000/darwin.opt"
+ 	case ${target} in
+@@ -2894,11 +2929,19 @@ sparc64-*-netbsd*)
+ 	extra_options="${extra_options} sparc/long-double-switch.opt"
+ 	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
+ 	;;
++sparc-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h sparc/sysv4.h sparc/openbsd.h"
++	extra_options="${extra_options} openbsd.opt"
++	gas=yes
++	gnu_ld=yes
++	with_cpu=v7
++	tmake_file="${tmake_file} sparc/t-sparc"
++	;;
+ sparc64-*-openbsd*)
++	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=2"
+ 	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h sparc/sysv4.h sparc/sp64-elf.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h sparc/openbsd64.h"
+ 	extra_options="${extra_options} openbsd.opt"
+-	extra_options="${extra_options}"
+ 	gas=yes gnu_ld=yes
+ 	with_cpu=ultrasparc
+ 	tmake_file="${tmake_file} sparc/t-sparc"
+@@ -3102,6 +3145,12 @@ case ${target} in
+     else
+       arch=i386
+     fi
++    cpu=generic
++    arch_without_sse2=yes
++    arch_without_64bit=yes
++    ;;
++  i386-*-openbsd*)
++    arch=i486
+     cpu=generic
+     arch_without_sse2=yes
+     arch_without_64bit=yes

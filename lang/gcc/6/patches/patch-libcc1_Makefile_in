@@ -1,0 +1,20 @@
+$OpenBSD: patch-libcc1_Makefile_in,v 1.1.1.1 2016/09/04 16:20:20 pascal Exp $
+--- libcc1/Makefile.in.orig	Tue Aug 30 15:24:04 2016
++++ libcc1/Makefile.in	Tue Aug 30 15:29:30 2016
+@@ -300,6 +300,8 @@ MOSTLYCLEANFILES = compiler-name.h
+ shared_source = callbacks.cc callbacks.hh connection.cc connection.hh \
+     marshall.cc marshall.hh rpc.hh status.hh
+ 
++include $(top_srcdir)/../libversions
++
+ libcc1plugin_la_LDFLAGS = -module -export-symbols $(srcdir)/libcc1plugin.sym
+ libcc1plugin_la_SOURCES = plugin.cc $(shared_source)
+ libcc1plugin_la_LIBADD = $(libiberty)
+@@ -315,6 +317,7 @@ libcc1_la_LIBADD = $(libiberty)
+ libcc1_la_DEPENDENCIES = $(libiberty_dep)
+ libcc1_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
++	$(LIBcc1_LTVERSION) \
+ 	$(CXXFLAGS) $(libcc1_la_LDFLAGS) $(LTLDFLAGS) -o $@
+ 
+ all: $(BUILT_SOURCES) cc1plugin-config.h

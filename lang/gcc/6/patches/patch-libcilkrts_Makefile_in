@@ -1,0 +1,15 @@
+$OpenBSD: patch-libcilkrts_Makefile_in,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- libcilkrts/Makefile.in.orig	Sun May  8 13:42:49 2016
++++ libcilkrts/Makefile.in	Tue Aug 23 16:18:49 2016
+@@ -424,8 +424,10 @@ CILK_REVISION = 3902
+ 
+ #libcilkrts_la_LDFLAGS  = -rpath '$(libdir)'
+ 
++include $(top_srcdir)/../libversions
++
+ # Hack for Cygwin
+-libcilkrts_la_LDFLAGS = -version-info 5:0:0 @lt_cv_dlopen_libs@ \
++libcilkrts_la_LDFLAGS = $(LIBcilkrts_LTVERSION) @lt_cv_dlopen_libs@ \
+ 	$(AM_LDFLAGS) $(am__append_1) $(am__append_2) -no-undefined
+ 
+ # C/C++ header files for Cilk.

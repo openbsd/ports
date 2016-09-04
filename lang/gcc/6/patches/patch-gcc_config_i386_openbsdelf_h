@@ -1,0 +1,24 @@
+$OpenBSD: patch-gcc_config_i386_openbsdelf_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
+--- gcc/config/i386/openbsdelf.h.orig	Thu Jan  2 23:23:26 2014
++++ gcc/config/i386/openbsdelf.h	Fri Jul  8 17:18:50 2016
+@@ -97,14 +97,17 @@ along with GCC; see the file COPYING3.  If not see
+    %{shared:-shared} %{R*} \
+    %{static:-Bstatic} \
+    %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
+    %{assert*} \
+    -dynamic-linker /usr/libexec/ld.so"
+ 
+ #undef STARTFILE_SPEC
+-#define STARTFILE_SPEC "\
+-	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
+-	crtbegin%O%s} %{shared:crtbeginS%O%s}"
+ 
++#define SUBTARGET32_DEFAULT_CPU "i486"
++#define STARTFILE_SPEC "\
++	%{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} \
++	%{!p:%{!static:crt0%O%s} %{static:%{nopie:crt0%O%s} \
++	%{!nopie:rcrt0%O%s}}}} crtbegin%O%s} %{shared:crtbeginS%O%s}"
+ #undef ENDFILE_SPEC
+ #define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
+ 

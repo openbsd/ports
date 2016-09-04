@@ -1,0 +1,26 @@
+$OpenBSD: patch-libffi_Makefile_in,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- libffi/Makefile.in.orig	Mon Aug 22 10:04:29 2016
++++ libffi/Makefile.in	Tue Aug 23 16:20:58 2016
+@@ -493,7 +493,8 @@ AM_CFLAGS = -Wall -g -fexceptions $(am__append_2)
+ @LIBAT_BUILD_VERSIONED_SHLIB_FALSE@libffi_version_dep = 
+ @LIBAT_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_dep = libffi.map
+ @LIBAT_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_dep = libffi.map-sun
+-libffi_version_info = -version-info `grep -v '^\#' $(srcdir)/libtool-version`
++include $(top_srcdir)/../libversions
++libffi_version_info = $(LIBffi_LTVERSION)
+ libffi_la_LDFLAGS = -no-undefined $(libffi_version_info) $(libffi_version_script) $(LTLDFLAGS) $(AM_LTLDFLAGS)
+ libffi_la_DEPENDENCIES = $(libffi_la_LIBADD) $(libffi_version_dep)
+ AM_CPPFLAGS = -I. -I$(top_srcdir)/include -Iinclude -I$(top_srcdir)/src
+@@ -1601,9 +1602,9 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(toolexeclibdir)" "$(DESTDIR)$(infodir)" "$(DESTDIR)$(pkgconfigdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: install-recursive
+-install-exec: install-exec-recursive
+-install-data: install-data-recursive
++install:
++install-exec:
++install-data:
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am

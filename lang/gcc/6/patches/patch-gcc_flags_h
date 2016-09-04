@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_flags_h,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- gcc/flags.h.orig	Mon Jan  4 15:30:50 2016
++++ gcc/flags.h	Tue Aug 23 15:48:18 2016
+@@ -22,6 +22,11 @@ along with GCC; see the file COPYING3.  If not see
+ 
+ #if !defined(IN_LIBGCC2) && !defined(IN_TARGET_LIBS) && !defined(IN_RTS)
+ 
++/* Nonzero means warn about any function whose stack usage is larger than N
++   bytes.  The value N is `stack_larger_than_size'.  */
++extern int warn_stack_larger_than;
++extern HOST_WIDE_INT stack_larger_than_size;
++
+ /* Names of debug_info_type, for error messages.  */
+ extern const char *const debug_type_names[];
+ 

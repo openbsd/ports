@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgcc_libgcc2_c,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+--- libgcc/libgcc2.c.orig	Tue Apr  5 00:29:02 2016
++++ libgcc/libgcc2.c	Tue Aug 23 15:48:20 2016
+@@ -2182,6 +2182,7 @@ mprotect (char *addr, int len, int prot)
+ #endif /* WINNT && ! __CYGWIN__ */
+ 
+ #ifdef TRANSFER_FROM_TRAMPOLINE
++#include <sys/mman.h>
+ TRANSFER_FROM_TRAMPOLINE
+ #endif
+ #endif /* L_trampoline */
