@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2016/08/30 15:24:06 awolk Exp $
+# $OpenBSD: Makefile,v 1.421 2016/09/04 20:19:24 fcambus Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -84,6 +84,7 @@
      SUBDIR += gpicview
      SUBDIR += gprof2dot
      SUBDIR += gracula
+     SUBDIR += grafx2
      SUBDIR += grap
      SUBDIR += graphite2
      SUBDIR += gthumb
