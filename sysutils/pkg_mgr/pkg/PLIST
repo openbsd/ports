@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/26 19:51:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/04 12:51:12 landry Exp $
 ${P5SITE}/OpenBSD/
 ${P5SITE}/OpenBSD/PackageManager/
 ${P5SITE}/OpenBSD/PackageManager/Controller.pm
@@ -8,5 +8,6 @@ ${P5SITE}/OpenBSD/PackageManager/Pkg/
 ${P5SITE}/OpenBSD/PackageManager/Pkg.pm
 ${P5SITE}/OpenBSD/PackageManager/Pkg/Add.pm
 ${P5SITE}/OpenBSD/PackageManager/Pkg/Delete.pm
+${P5SITE}/OpenBSD/PackageManager/State.pm
 @man man/man1/pkg_mgr.1
 sbin/pkg_mgr

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/24 10:58:41 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/04 12:51:11 landry Exp $
 
 COMMENT=	user-friendly package browser and manager
 
-DISTNAME=	pkg_mgr-0.2.2
+DISTNAME=	pkg_mgr-0.2.3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rhaalovely.net/pkg_mgr.html
