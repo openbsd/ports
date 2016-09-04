@@ -1,7 +1,7 @@
-$OpenBSD: patch-svx_Library_svxcore_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
---- svx/Library_svxcore.mk.orig.port	Wed Jan 27 01:58:25 2016
-+++ svx/Library_svxcore.mk	Wed Feb 10 14:23:02 2016
-@@ -100,7 +100,7 @@ $(eval $(call gb_Library_use_system_darwin_frameworks,
+$OpenBSD: patch-svx_Library_svxcore_mk,v 1.5 2016/09/04 12:02:49 robert Exp $
+--- svx/Library_svxcore.mk.orig.port	Fri Jul 29 00:11:19 2016
++++ svx/Library_svxcore.mk	Sat Sep  3 16:55:20 2016
+@@ -104,7 +104,7 @@ $(eval $(call gb_Library_use_system_darwin_frameworks,
  
  endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-svx_Library_svxcore_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
      svx/source/core/coreservices \
      svx/source/core/extedit \
      svx/source/core/graphichelper \
-@@ -410,9 +410,10 @@ $(eval $(call gb_Library_add_exception_objects,svxcore
+@@ -414,9 +414,10 @@ $(eval $(call gb_Library_add_exception_objects,svxcore
      svx/source/xoutdev/xtable \
      svx/source/xoutdev/XPropertyEntry \
      svx/source/xoutdev/xtablend \
@@ -22,7 +22,7 @@ $OpenBSD: patch-svx_Library_svxcore_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
      svx/source/fmcomp/dbaexchange \
      svx/source/fmcomp/fmgridcl \
      svx/source/fmcomp/fmgridif \
-@@ -462,6 +463,7 @@ $(eval $(call gb_Library_add_exception_objects,svxcore
+@@ -466,6 +467,7 @@ $(eval $(call gb_Library_add_exception_objects,svxcore
      svx/source/form/stringlistresource \
      svx/source/form/typemap \
      svx/source/form/xfm_addcondition \

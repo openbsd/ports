@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/08/22 23:56:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2016/09/04 12:02:49 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -8,8 +8,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		5.1
-VERSION=	${BV}.4.2
+BV=		5.2
+VERSION=	${BV}.0.4
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -21,9 +21,6 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
 EPOCH=		0
-REVISION-main=	1
-REVISION-kde=	0
-REVISION-java=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -51,14 +48,14 @@ EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.xz
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
-		boost_1_59_0.tar.bz2:0 \
+		boost_1_60_0.tar.bz2:0 \
 		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
 		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
 		048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:0 \
 		134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
-		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
-		5821b806a98e6c38370970e682ce76e8-libcmis-0.5.0.tar.gz:0 \
+		ce12af00283eb90d9281956524250d6e-xmlsec1-1.2.20.tar.gz:0 \
+		libcmis-0.5.1.tar.gz:0 \
 		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
@@ -78,7 +75,7 @@ DISTFILES+=	${EDISTFILES} \
 		5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0 \
 		d8b5214d35bcd2bfcb2cffa7795b351d-dejavu-fonts-ttf-2.35.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		mdds_0.12.1.tar.bz2:0 \
+		mdds-1.2.0.tar.bz2:0 \
 		aa899eff126216dafe721149fbdb511b-liblangtag-0.5.8.tar.bz2:0 \
 		language-subtag-registry-2016-02-10.tar.bz2:0 \
 		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \
@@ -93,11 +90,11 @@ DISTFILES+=	${EDISTFILES} \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
 		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
 		commons-logging-1.2-src.tar.gz:0 \
-		ec1941a74d3ef513c4ce57a9092b74e1-bsh-2.0b5-src.zip:0 \
+		beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip:0 \
 		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		17df8301bcc459e83f8a8f3aca6183b2-graphite-minimal-1.3.6.tgz:0 \
+		4311dd9ace498b57c85f611e0670df64-graphite2-minimal-1.3.8.tgz:0 \
 		libabw-0.1.1.tar.bz2:0 \
 		libcdr-0.1.2.tar.bz2:0 \
 		libe-book-0.1.2.tar.bz2:0 \
@@ -107,13 +104,13 @@ DISTFILES+=	${EDISTFILES} \
 		libmspub-0.1.2.tar.bz2:0 \
 		libmwaw-0.3.7.tar.bz2:0 \
 		libodfgen-0.1.6.tar.bz2:0 \
-		libpagemaker-0.0.2.tar.bz2:0 \
+		libpagemaker-0.0.3.tar.bz2:0 \
 		librevenge-0.0.4.tar.bz2:0 \
 		libvisio-0.1.5.tar.bz2:0 \
 		libwpd-0.10.0.tar.bz2:0 \
 		libwpd-0.10.1.tar.bz2:0 \
 		libwpg-0.3.1.tar.bz2:0 \
-		libwps-0.4.2.tar.bz2:0
+		libwps-0.4.3.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 

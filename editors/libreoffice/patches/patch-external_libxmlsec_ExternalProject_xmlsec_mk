@@ -1,12 +1,15 @@
-$OpenBSD: patch-external_libxmlsec_ExternalProject_xmlsec_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
---- external/libxmlsec/ExternalProject_xmlsec.mk.orig.port	Mon May 25 14:03:25 2015
-+++ external/libxmlsec/ExternalProject_xmlsec.mk	Mon May 25 15:05:58 2015
-@@ -53,7 +53,7 @@ $(call gb_ExternalProject_get_state_target,xmlsec,buil
- 		$(if $(filter IOS MACOSX,$(OS)),ACLOCAL="aclocal -I $(SRCDIR)/m4/mac") \
+$OpenBSD: patch-external_libxmlsec_ExternalProject_xmlsec_mk,v 1.2 2016/09/04 12:02:49 robert Exp $
+--- external/libxmlsec/ExternalProject_xmlsec.mk.orig.port	Fri Jul 29 00:11:19 2016
++++ external/libxmlsec/ExternalProject_xmlsec.mk	Sun Sep  4 11:45:44 2016
+@@ -54,9 +54,10 @@ $(call gb_ExternalProject_get_state_target,xmlsec,buil
  		$(if $(filter AIX,$(OS)),ACLOCAL="aclocal -I /opt/freeware/share/aclocal") \
  		autoreconf \
--		&& ./configure \
-+		&& CFLAGS="-fPIC -DPIC" LDFLAGS="-fPIC -DPIC" ./configure \
+ 		&& ./configure \
++			LDFLAGS="-fPIC -DPIC" \
  			--with-pic --disable-shared --disable-crypto-dl --without-libxslt --without-gnutls \
+ 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+-			CFLAGS="$(CFLAGS) $(if $(debug),$(gb_COMPILERNOOPTFLAGS) $(gb_DEBUG_CFLAGS),$(gb_COMPILEROPTFLAGS))" \
++			CFLAGS="$(CFLAGS) $(if $(debug),$(gb_COMPILERNOOPTFLAGS) $(gb_DEBUG_CFLAGS),$(gb_COMPILEROPTFLAGS)) -fPIC -DPIC" \
  			$(if $(or $(filter-out ANDROID,$(OS)),$(DISABLE_OPENSSL)),--without-openssl,--with-openssl=$(call gb_UnpackedTarball_get_dir,openssl)) \
  			$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________OOO) \
+ 			$(if $(SYSTEM_NSS),,$(if $(filter MACOSX,$(OS)),--disable-pkgconfig)) \

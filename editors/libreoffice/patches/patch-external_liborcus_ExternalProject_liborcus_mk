@@ -1,17 +1,16 @@
-$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.3 2016/03/01 21:39:58 robert Exp $
---- external/liborcus/ExternalProject_liborcus.mk.orig.port	Wed Jan 27 01:58:25 2016
-+++ external/liborcus/ExternalProject_liborcus.mk	Wed Feb 10 14:23:02 2016
-@@ -38,7 +38,8 @@ ifneq ($(SYSTEM_ZLIB),)
+$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.4 2016/09/04 12:02:49 robert Exp $
+--- external/liborcus/ExternalProject_liborcus.mk.orig.port	Sat Sep  3 17:06:33 2016
++++ external/liborcus/ExternalProject_liborcus.mk	Sat Sep  3 17:06:55 2016
+@@ -39,7 +39,7 @@ ifneq ($(SYSTEM_ZLIB),)
  liborcus_LIBS+=-lz
  endif
  ifneq ($(SYSTEM_BOOST),)
--liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB)
-+liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) -lpthread
-+liborcus_CPPFLAGS += -DBOOST_SYSTEM_NO_DEPRECATED -pthread
+-liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB)
++liborcus_LIBS+=$(BOOST_SYSTEM_LIB) $(BOOST_IOSTREAMS_LIB) $(BOOST_FILESYSTEM_LIB) -lpthread
  else
- liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams
+ liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams -lboost_filesystem
  endif
-@@ -76,6 +77,9 @@ endif
+@@ -77,6 +77,9 @@ endif
  ifneq (,$(PTHREAD_LIBS))
  liborcus_LDFLAGS+=$(PTHREAD_LIBS)
  endif

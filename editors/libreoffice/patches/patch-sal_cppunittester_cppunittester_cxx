@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.4 2016/03/01 21:39:58 robert Exp $
---- sal/cppunittester/cppunittester.cxx.orig.port	Wed Jan 27 01:58:25 2016
-+++ sal/cppunittester/cppunittester.cxx	Wed Feb 10 14:23:02 2016
-@@ -337,6 +337,7 @@ void reportResourceUsage(const OUString& /*rPath*/)
+$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.5 2016/09/04 12:02:49 robert Exp $
+--- sal/cppunittester/cppunittester.cxx.orig.port	Fri Jul 29 00:11:19 2016
++++ sal/cppunittester/cppunittester.cxx	Sat Sep  3 16:55:20 2016
+@@ -361,6 +361,7 @@ void reportResourceUsage(const OUString& /*rPath*/)
  
  SAL_IMPLEMENT_MAIN()
  {

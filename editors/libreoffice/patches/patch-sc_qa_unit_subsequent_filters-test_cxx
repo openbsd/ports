@@ -1,12 +1,39 @@
-$OpenBSD: patch-sc_qa_unit_subsequent_filters-test_cxx,v 1.7 2016/03/01 21:39:58 robert Exp $
---- sc/qa/unit/subsequent_filters-test.cxx.orig.port	Wed Jan 27 01:58:25 2016
-+++ sc/qa/unit/subsequent_filters-test.cxx	Wed Feb 10 14:23:02 2016
-@@ -277,7 +277,7 @@ class ScFiltersTest (public)
+$OpenBSD: patch-sc_qa_unit_subsequent_filters-test_cxx,v 1.8 2016/09/04 12:02:49 robert Exp $
+--- sc/qa/unit/subsequent_filters-test.cxx.orig.port	Sat Sep  3 17:07:36 2016
++++ sc/qa/unit/subsequent_filters-test.cxx	Sun Sep  4 12:41:32 2016
+@@ -162,7 +162,7 @@ class ScFiltersTest (public)
+     void testErrorOnExternalReferences();
+ 
+     //misc tests unrelated to the import filters
+-#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32)
++#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32) && !defined(OPENBSD)
+     void testPasswordNew();
+     void testPasswordOld();
+     void testPasswordWrongSHA();
+@@ -286,7 +286,7 @@ class ScFiltersTest (public)
  
      //disable testPassword on MacOSX due to problems with libsqlite3
      //also crashes on DragonFly due to problems with nss/nspr headers
--#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(WNT)
-+#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(WNT) && !defined(OPENBSD)
+-#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32)
++#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32) && !defined(OPENBSD)
      CPPUNIT_TEST(testPasswordWrongSHA);
      CPPUNIT_TEST(testPasswordOld);
      CPPUNIT_TEST(testPasswordNew);
+@@ -321,7 +321,7 @@ class ScFiltersTest (public)
+     CPPUNIT_TEST_SUITE_END();
+ 
+ private:
+-#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32)
++#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32) && !defined(OPENBSD)
+     void testPassword_Impl(const OUString& rFileNameBase);
+ #endif
+ 
+@@ -1516,7 +1516,7 @@ void ScFiltersTest::testRowIndex1BasedXLSX()
+     xDocSh->DoClose();
+ }
+ 
+-#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32)
++#if !defined(MACOSX) && !defined(DRAGONFLY) && !defined(_WIN32) && !defined(OPENBSD)
+ void ScFiltersTest::testPassword_Impl(const OUString& aFileNameBase)
+ {
+     OUString aFileExtension(getFileFormats()[0].pName, strlen(getFileFormats()[0].pName), RTL_TEXTENCODING_UTF8 );

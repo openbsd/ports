@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.4 2016/03/01 21:39:58 robert Exp $
---- shell/source/unix/exec/shellexec.cxx.orig.port	Wed Jan 27 01:58:25 2016
-+++ shell/source/unix/exec/shellexec.cxx	Wed Feb 10 14:23:02 2016
-@@ -240,7 +240,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.5 2016/09/04 12:02:49 robert Exp $
+--- shell/source/unix/exec/shellexec.cxx.orig.port	Fri Jul 29 00:11:19 2016
++++ shell/source/unix/exec/shellexec.cxx	Sat Sep  3 16:55:20 2016
+@@ -198,7 +198,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
      }
  
      OString cmd =

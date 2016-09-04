@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_Library_vclplug_gtk3_mk,v 1.3 2016/03/01 21:39:58 robert Exp $
---- vcl/Library_vclplug_gtk3.mk.orig.port	Wed Jan 27 01:58:25 2016
-+++ vcl/Library_vclplug_gtk3.mk	Wed Feb 10 14:23:02 2016
-@@ -114,10 +114,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+$OpenBSD: patch-vcl_Library_vclplug_gtk3_mk,v 1.4 2016/09/04 12:02:49 robert Exp $
+--- vcl/Library_vclplug_gtk3.mk.orig.port	Fri Jul 29 00:11:19 2016
++++ vcl/Library_vclplug_gtk3.mk	Sat Sep  3 16:55:20 2016
+@@ -113,10 +113,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
      vcl/unx/gtk3/gtk3hudawareness \
  ))
  
