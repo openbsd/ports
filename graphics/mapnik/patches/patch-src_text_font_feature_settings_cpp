@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_text_font_feature_settings_cpp,v 1.1 2015/09/18 20:07:09 landry Exp $
+$OpenBSD: patch-src_text_font_feature_settings_cpp,v 1.2 2016/09/04 16:46:57 landry Exp $
 
 boost build failure otherwise
 https://github.com/mapnik/mapnik/issues/3020
 
---- src/text/font_feature_settings.cpp.orig	Sat Aug  8 14:13:19 2015
-+++ src/text/font_feature_settings.cpp	Sat Aug  8 14:13:28 2015
-@@ -62,7 +62,7 @@ void font_feature_settings::from_string(std::string co
+--- src/text/font_feature_settings.cpp.orig	Fri Feb 26 03:02:05 2016
++++ src/text/font_feature_settings.cpp	Sun Sep  4 17:29:08 2016
+@@ -59,7 +59,7 @@ void font_feature_settings::from_string(std::string co
      qi::char_type char_;
      qi::as_string_type as_string;
  

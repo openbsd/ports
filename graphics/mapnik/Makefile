@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/01 07:05:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/04 16:46:57 landry Exp $
 
-BROKEN =		undefined reference to `_ZN6icu_5613UnicodeStringC1EOS0_'
+#BROKEN =		undefined reference to `_ZN6icu_5613UnicodeStringC1EOS0_'
 
 # out of memory, renderer_common/process_group_symbolizer.cpp
 # powerpc &sparc64 OOM's on expression_grammar.cpp
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	toolkit for developing mapping applications
 
-DISTNAME =	mapnik-v3.0.5
+DISTNAME =	mapnik-v3.0.10
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
 
@@ -29,7 +29,7 @@ WANTLIB += freetype gdal glib-2.0 gobject-2.0 icuuc jpeg m pcre pixman-1
 WANTLIB += png>=17.0 pq proj pthread pthread-stubs sqlite3 tiff
 WANTLIB += xcb xcb-render xcb-shm z
 
-MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.5/
+MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.10/
 MODULES =	devel/gettext \
 		devel/scons \
 		gcc4 \
