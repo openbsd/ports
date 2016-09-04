@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_LYReadCFG_c,v 1.1 2016/04/15 03:21:51 tb Exp $
---- src/LYReadCFG.c.orig	Wed Apr 13 16:48:57 2016
-+++ src/LYReadCFG.c	Wed Apr 13 16:49:39 2016
+$OpenBSD: patch-src_LYReadCFG_c,v 1.2 2016/09/04 13:35:02 fcambus Exp $
+--- src/LYReadCFG.c.orig	Fri Dec 18 02:58:34 2015
++++ src/LYReadCFG.c	Sat Sep  3 22:22:14 2016
 @@ -1544,7 +1544,6 @@ static Config_Type Config_Table [] =
  #endif
       PARSE_Env(RC_FTP_PROXY,            0),
@@ -17,3 +17,15 @@ $OpenBSD: patch-src_LYReadCFG_c,v 1.1 2016/04/15 03:21:51 tb Exp $
       PARSE_LST(RC_POSITIONABLE_EDITOR,  positionable_editor),
       PARSE_STR(RC_PREFERRED_CHARSET,    pref_charset),
       PARSE_ENU(RC_PREFERRED_ENCODING,   LYAcceptEncoding, tbl_preferred_encoding),
+@@ -1773,11 +1771,9 @@ static Config_Type Config_Table [] =
+      PARSE_PRG(RC_UUDECODE_PATH,        ppUUDECODE),
+      PARSE_SET(RC_VERBOSE_IMAGES,       verbose_img),
+      PARSE_SET(RC_VI_KEYS_ALWAYS_ON,    vi_keys),
+-     PARSE_FUN(RC_VIEWER,               viewer_fun),
+      PARSE_Env(RC_WAIS_PROXY,           0),
+      PARSE_SET(RC_WAIT_VIEWER_TERMINATION, wait_viewer_termination),
+      PARSE_SET(RC_WITH_BACKSPACES,      with_backspaces),
+-     PARSE_STR(RC_XLOADIMAGE_COMMAND,   XLoadImageCommand),
+      PARSE_SET(RC_XHTML_PARSING,        LYxhtml_parsing),
+      PARSE_PRG(RC_ZCAT_PATH,            ppZCAT),
+      PARSE_PRG(RC_ZIP_PATH,             ppZIP),

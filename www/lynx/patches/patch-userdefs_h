@@ -1,6 +1,6 @@
-$OpenBSD: patch-userdefs_h,v 1.1 2016/04/15 03:21:52 tb Exp $
---- userdefs.h.orig	Tue Dec 22 02:45:35 2015
-+++ userdefs.h	Thu Apr 14 00:11:57 2016
+$OpenBSD: patch-userdefs_h,v 1.2 2016/09/04 13:35:02 fcambus Exp $
+--- userdefs.h.orig	Mon Apr 11 02:42:17 2016
++++ userdefs.h	Sun Jun  5 00:31:29 2016
 @@ -129,8 +129,8 @@
   * Mappings in these global and personal files override any VIEWER
   * definitions in lynx.cfg and built-in defaults from src/HTInit.c.
@@ -23,3 +23,12 @@ $OpenBSD: patch-userdefs_h,v 1.1 2016/04/15 03:21:52 tb Exp $
  
  /**************************
   * XLOADIMAGE_COMMAND will be used as a default in src/HTInit.c for
+@@ -345,7 +345,7 @@
+  * use any default viewers for image types.  Note that open is used as
+  * the default for NeXT, instead of the XLOADIMAGE_COMMAND definition.
+  */
+-#define XLOADIMAGE_COMMAND "xli %s &"
++#define XLOADIMAGE_COMMAND NULL
+ 
+ /**************************
+  * For UNIX systems, SYSTEM_MAIL and SYSTEM_MAIL_FLAGS are set by the
