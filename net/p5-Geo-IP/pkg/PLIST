@@ -1,18 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/14 16:43:39 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/04 13:38:59 giovanni Exp $
 ${P5ARCH}/
 ${P5ARCH}/Geo/
 ${P5ARCH}/Geo/IP/
 ${P5ARCH}/Geo/IP.pm
 ${P5ARCH}/Geo/IP/Record.pm
 ${P5ARCH}/Geo/IP/Record.pod
-${P5ARCH}/Geo/Mirror.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Geo/
 ${P5ARCH}/auto/Geo/IP/
 ${P5ARCH}/auto/Geo/IP/IP.so
 @man man/man3p/Geo::IP.3p
 @man man/man3p/Geo::IP::Record.3p
-@man man/man3p/Geo::Mirror.3p
 share/examples/p5-Geo-IP/
 share/examples/p5-Geo-IP/benchmark.pl
 share/examples/p5-Geo-IP/city.pl

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/20 19:56:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/09/04 13:38:59 giovanni Exp $
 
 COMMENT=	look up country by IP address/hostname
 
 MODULES=	cpan
-DISTNAME =	Geo-IP-1.45
-REVISION =	0
+DISTNAME =	Geo-IP-1.50
 CPAN_AUTHOR=	MAXMIND
 CATEGORIES=	net geo
 
