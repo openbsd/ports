@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2016/08/12 08:09:05 robert Exp $
+# $OpenBSD: Makefile,v 1.200 2016/09/04 14:52:38 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	zarafa MAPI extensions for PHP
@@ -6,6 +6,7 @@ COMMENT-mapi=	zarafa MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-mapi=	zarafa-mapi-${V}
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -154,7 +155,8 @@ pre-configure:
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
-		${WRKSRC}/spooler/{DAgent,Spooler}.cpp
+		${WRKSRC}/spooler/{DAgent,Spooler}.cpp \
+		${WRKSRC}/tools/python-scripts/zarafa-cachestat.py
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \

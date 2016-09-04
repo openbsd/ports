@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_python-scripts_zarafa-cachestat_py,v 1.1 2016/09/04 14:52:38 robert Exp $
+--- tools/python-scripts/zarafa-cachestat.py.orig	Sun Sep  4 16:44:16 2016
++++ tools/python-scripts/zarafa-cachestat.py	Sun Sep  4 16:44:24 2016
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python -u
++#!${MODPY_BIN} -u
+ 
+ import sys
+ import datetime

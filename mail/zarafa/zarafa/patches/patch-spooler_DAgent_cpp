@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.30 2016/08/12 08:09:05 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.31 2016/09/04 14:52:38 robert Exp $
 --- spooler/DAgent.cpp.orig	Mon Jul 18 23:19:27 2016
 +++ spooler/DAgent.cpp	Mon Aug  8 09:18:50 2016
 @@ -69,6 +69,11 @@
@@ -37,7 +37,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.30 2016/08/12 08:09:05 robert Exp $
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
 -	sDeliveryArgs.strAutorespond = "/usr/sbin/zarafa-autorespond";
-+	sDeliveryArgs.strAutorespond = "/usr/local/sbin/zarafa-autorespond";
++	sDeliveryArgs.strAutorespond = "${PREFIX}/sbin/zarafa-autorespond";
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
@@ -58,13 +58,13 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.30 2016/08/12 08:09:05 robert Exp $
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
 -		{ "mr_autoaccepter", "/usr/sbin/zarafa-mr-accept", CONFIGSETTING_RELOADABLE },
 -		{ "mr_autoprocessor", "/usr/sbin/zarafa-mr-process", CONFIGSETTING_RELOADABLE },
-+		{ "mr_autoaccepter", "/usr/local/sbin/zarafa-mr-accept", CONFIGSETTING_RELOADABLE },
-+		{ "mr_autoprocessor", "/usr/local/sbin/zarafa-mr-process", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoaccepter", "${PREFIX}/sbin/zarafa-mr-accept", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoprocessor", "${PREFIX}/sbin/zarafa-mr-process", CONFIGSETTING_RELOADABLE },
  		{ "plugin_enabled", "yes" },
 -		{ "plugin_path", "/var/lib/zarafa/dagent/plugins" },
 -		{ "plugin_manager_path", "/usr/share/zarafa-dagent/python" },
-+		{ "plugin_path", "/var/db/zarafa/dagent/plugins" },
-+		{ "plugin_manager_path", "/usr/local/share/zarafa-dagent/python" },
++		{ "plugin_path", "${LOCALSTATEDIR}/db/zarafa/dagent/plugins" },
++		{ "plugin_manager_path", "${PREFIX}/share/zarafa-dagent/python" },
  		{ "default_charset", "iso-8859-15" },
  		{ "set_rule_headers", "yes", CONFIGSETTING_RELOADABLE },
  		{ "no_double_forward", "no", CONFIGSETTING_RELOADABLE },

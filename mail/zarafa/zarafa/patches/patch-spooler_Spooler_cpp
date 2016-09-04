@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.21 2016/04/20 18:38:41 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.22 2016/09/04 14:52:38 robert Exp $
 --- spooler/Spooler.cpp.orig	Wed Apr 20 13:13:54 2016
 +++ spooler/Spooler.cpp	Wed Apr 20 19:54:13 2016
 @@ -1151,10 +1151,10 @@ int main(int argc, char *argv[]) {
@@ -11,7 +11,7 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.21 2016/04/20 18:38:41 robert Exp $
 +		{ "run_as_group", "_zarafa" },
  		{ "pid_file", "/var/run/zarafad/spooler.pid" },
 -		{ "running_path", "/var/lib/zarafa" },
-+		{ "running_path", "/var/empty" },
++		{ "running_path", "${LOCALSTATEDIR}/empty" },
  		{ "coredump_enabled", "no" },
  #endif
  		{ "log_method","file" },
@@ -21,8 +21,8 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.21 2016/04/20 18:38:41 robert Exp $
          { "plugin_enabled", "yes" },
 -        { "plugin_path", "/var/lib/zarafa/spooler/plugins" },
 -        { "plugin_manager_path", "/usr/share/zarafa-spooler/python" },
-+        { "plugin_path", "/var/db/zarafa/spooler/plugins" },
-+        { "plugin_manager_path", "/usr/local/share/zarafa-spooler/python" },
++        { "plugin_path", "${LOCALSTATEDIR}/db/zarafa/spooler/plugins" },
++        { "plugin_manager_path", "${PREFIX}/share/zarafa-spooler/python" },
  		{ "z_statsd_stats", "/var/run/zarafad/statsd.sock" },
  		{ "tmp_path", "/tmp" },
  		{ "tmp_path", "/tmp" },
