@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2016/09/04 11:43:25 giovanni Exp $
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME =	geany-1.26
+DISTNAME =	geany-1.28
 SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
