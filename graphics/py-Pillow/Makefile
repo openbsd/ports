@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/02 14:03:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/04 10:53:40 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	3.2.0
+MODPY_EGG_VERSION=	3.3.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -38,6 +38,8 @@ LIB_DEPENDS=		graphics/lcms2 \
 			${MODTK_LIB_DEPENDS}
 
 MODPY_SETUPTOOLS=	Yes
+MAKE_ENV=		C_INCLUDE_PATH="${X11BASE}/include:${LOCALBASE}/include:${MODTK_INCDIR}:${MODTCL_INCDIR}" \
+			LIBRARY_PATH="${X11BASE}/lib:${LOCALBASE}/lib"
 
 MODPY_ADJ_FILES=	Scripts/*.py
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/02 14:03:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/09/04 10:53:41 sthen Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -194,6 +194,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}XbmImagePlugin.${MO
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}XpmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_binary.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_tkinter_finder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
@@ -203,6 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_tkinter_finder.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
 lib/python${MODPY_VERSION}/site-packages/PIL/features.py
