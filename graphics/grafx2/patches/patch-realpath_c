@@ -1,0 +1,12 @@
+$OpenBSD: patch-realpath_c,v 1.1.1.1 2016/09/04 20:13:44 fcambus Exp $
+--- realpath.c.orig	Fri Aug  5 23:18:51 2016
++++ realpath.c	Fri Aug  5 23:19:18 2016
+@@ -6,7 +6,7 @@
+ #include <fcntl.h>
+ #include <string.h>
+ #include <unistd.h>
+-#if defined(__AROS__) || defined(__linux__) || defined(__GLIBC__)
++#if defined(__AROS__) || defined(__linux__) || defined(__GLIBC__) || defined(__OpenBSD__)
+ #include <limits.h>
+ #endif
+ 
