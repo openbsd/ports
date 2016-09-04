@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/10/08 12:09:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/09/04 09:47:56 jasper Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
 include/mission-control-5.5/
@@ -28,7 +28,9 @@ share/glib-2.0/schemas/im.telepathy.MissionControl.FromEmpathy.gschema.xml
 share/gtk-doc/html/mission-control-plugins/
 share/gtk-doc/html/mission-control-plugins/McpAccountManager.html
 share/gtk-doc/html/mission-control-plugins/McpDispatchOperation.html
+share/gtk-doc/html/mission-control-plugins/McpDispatchOperationPolicy.html
 share/gtk-doc/html/mission-control-plugins/McpRequest.html
+share/gtk-doc/html/mission-control-plugins/McpRequestPolicy.html
 share/gtk-doc/html/mission-control-plugins/annotation-glossary.html
 share/gtk-doc/html/mission-control-plugins/api-index-full.html
 share/gtk-doc/html/mission-control-plugins/ch01.html
@@ -37,16 +39,16 @@ share/gtk-doc/html/mission-control-plugins/ch03.html
 share/gtk-doc/html/mission-control-plugins/ch04.html
 share/gtk-doc/html/mission-control-plugins/home.png
 share/gtk-doc/html/mission-control-plugins/index.html
-share/gtk-doc/html/mission-control-plugins/index.sgml
+share/gtk-doc/html/mission-control-plugins/left-insensitive.png
 share/gtk-doc/html/mission-control-plugins/left.png
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins-McpAccountStorage.html
-share/gtk-doc/html/mission-control-plugins/mission-control-plugins-McpDispatchOperationPolicy.html
-share/gtk-doc/html/mission-control-plugins/mission-control-plugins-McpRequestPolicy.html
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins-Plugin-loader-and-global-functions.html
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins.devhelp2
 share/gtk-doc/html/mission-control-plugins/object-tree.html
+share/gtk-doc/html/mission-control-plugins/right-insensitive.png
 share/gtk-doc/html/mission-control-plugins/right.png
 share/gtk-doc/html/mission-control-plugins/style.css
+share/gtk-doc/html/mission-control-plugins/up-insensitive.png
 share/gtk-doc/html/mission-control-plugins/up.png
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
