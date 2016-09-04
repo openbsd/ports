@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2015/09/19 12:35:47 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/04 14:58:59 giovanni Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
 COMMENT-main =		GnuPG extension for Thunderbird
 COMMENT-seamonkey =	GnuPG extension for Seamonkey
 
-DISTNAME =	enigmail-1.8.2
+DISTNAME =	enigmail-1.9.5
 PKGNAME-main =	${PKGNAME}
-PKGNAME-seamonkey =	enigmail-seamonkey-1.8.2
+PKGNAME-seamonkey =	enigmail-seamonkey-1.9.5
 EPOCH =		0
 HOMEPAGE =	http://www.mozilla-enigmail.org/
 MASTER_SITES =	http://www.mozilla-enigmail.org/download/source/
@@ -45,6 +45,9 @@ EXTDIR =	${PREFIX}/lib/mozilla/extensions/
 GUID =	{847b3a00-7ab1-11d4-8f02-006008948af5}
 # TB and SM's UUIDs
 APPS =	{3550f703-e582-4d05-9a08-453d09bdfdc6} {92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} xpi
