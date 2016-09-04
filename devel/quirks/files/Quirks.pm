@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.420 2016/09/03 23:38:57 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.421 2016/09/04 00:59:26 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -813,7 +813,7 @@ my $obsolete_reason = {
 	'mlite' => 3,
 	'hgd' => 3,
 	'gfortran' => 5,
-	'cherokee-main' => 3,
+	'cherokee' => 3,
 	'cherokee-geoip' => 3,
 	'cherokee-ldap' => 3,
 	'cherokee-mysql' => 3,
