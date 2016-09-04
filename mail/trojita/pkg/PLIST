@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/01/24 02:35:36 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/09/04 14:03:00 landry Exp $
 @bin bin/be.contacts
 @bin bin/trojita
 @lib lib/libtrojita_plugins.so.${LIBtrojita_plugins_VERSION}
+lib/trojita/
+lib/trojita/trojita_plugin_QtKeychainPasswordPlugin.so
 share/appdata/
 share/appdata/trojita.appdata.xml
 share/applications/trojita.desktop

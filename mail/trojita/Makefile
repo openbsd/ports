@@ -1,39 +1,38 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/21 22:20:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/04 14:03:00 landry Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
 COMMENT =		fast Qt IMAP e-mail client
 
-DISTNAME =		trojita-0.6
-REVISION =		1
+DISTNAME =		trojita-0.7
 
-SHARED_LIBS =		trojita_plugins	1.0 # 1.0
+SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
 CATEGORIES =		mail x11
 
 HOMEPAGE =		http://trojita.flaska.net/
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=trojita/}
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.xz
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB +=		lib/qt4/QtSql lib/qt4/QtWebKit c m pthread z X11
+WANTLIB +=		c m pthread z KF5Gpgmepp-pthread KF5QGpgme
+WANTLIB +=		Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5WebKit
+WANTLIB +=		Qt5WebKitWidgets Qt5Widgets qt5keychain gpg-error
+WANTLIB +=		gpgme-pthread mimetic assuan
 
-MODULES =		devel/cmake gcc4 x11/qt4
-
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+MODULES =		devel/cmake x11/qt5
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
+LIB_DEPENDS =		mail/mimetic \
+			security/qtkeychain,qt5 \
+			x11/kde-applications/gpgmepp
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
-			-DWITH_QT5=OFF \
-			-DWITH_QTKEYCHAIN_PLUGIN=OFF \
 			-DGIT_EXECUTABLE=""
 
 TEST_IS_INTERACTIVE =	X11
