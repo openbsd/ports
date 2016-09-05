@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/12 09:40:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/05 09:00:07 jasper Exp $
 
 COMMENT =	binary-based efficient object serialization library
 
@@ -13,6 +13,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ruby
+MODRUBY_REV=		2.2
 
 CONFIGURE_STYLE =	ruby gem ext
 

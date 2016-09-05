@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.39 2016/06/01 12:02:44 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.40 2016/09/05 09:00:08 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -36,6 +36,7 @@ SUBST_VARS +=	RUBY
 #   sysutils/facter
 
 MODULES +=	lang/ruby
+MODRUBY_REV =	2.2
 
 MODULES +=		lang/python
 MODPY_BUILDDEP = 	No

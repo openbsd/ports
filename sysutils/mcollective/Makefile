@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/08/30 11:55:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/05 09:00:08 jasper Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://downloads.puppetlabs.com/mcollective/
 
 MODULES=	lang/ruby
+MODRUBY_REV=	2.2
 
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}

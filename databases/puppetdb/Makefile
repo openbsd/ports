@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/06/29 16:14:38 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2016/09/05 09:00:08 jasper Exp $
 
 PORTROACH=	limit:^2
 
@@ -26,6 +26,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	java \
 		lang/ruby
 MODJAVA_VER=	1.7+
+MODRUBY_REV=	2.2
 
 MULTI_PACKAGES= -main -plugin
 

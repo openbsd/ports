@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2016/09/05 09:00:08 jasper Exp $
 
 PORTROACH=	limit:^2
 
@@ -23,6 +23,8 @@ MODULES=	lang/ruby
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}
 PKG_ARCH=	*
+
+#MODRUBY_REV =	2.2
 
 #TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
 #BUILD_DEPENDS=	${MODRUBY_BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/26 20:39:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/09/05 09:00:08 jasper Exp $
 
 COMMENT=	provider bindings for Augeas
 
@@ -15,6 +15,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
+MODRUBY_REV=	2.2
 
 WANTLIB+=	augeas pthread xml2
 

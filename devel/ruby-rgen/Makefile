@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/06/13 08:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/05 09:00:07 jasper Exp $
 
 COMMENT=		framework for Model Driven Software Development
 
@@ -13,6 +13,7 @@ HOMEPAGE=		http://ruby-gen.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
+MODRUBY_REV=		2.2
 
 CONFIGURE_STYLE=	ruby gem
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/08/30 11:03:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2016/09/05 09:00:08 jasper Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
@@ -20,6 +20,7 @@ MODULES +=		devel/cmake \
 			gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
+MODRUBY_REV =		2.2
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_log-mt boost_log_setup-mt
