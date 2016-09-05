@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/02 22:48:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/05 16:46:18 nigel Exp $
 
 COMMENT=	asynchronous Input/Output
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += pthread
 
+BUILD_DEPENDS=	devel/p5-Canary-Stability
 RUN_DEPENDS=	devel/p5-common-sense
 
 .include <bsd.port.mk>
