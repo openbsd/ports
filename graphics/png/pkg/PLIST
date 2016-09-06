@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.31 2016/08/20 20:52:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.32 2016/09/06 11:45:12 sthen Exp $
 bin/libpng-config
 bin/libpng16-config
 @bin bin/png-fix-itxt
-@bin bin/pngcp
 @comment @bin bin/pngfix
 include/libpng16/
 include/libpng16/png.h
