@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1321 2016/09/03 13:29:59 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1322 2016/09/06 10:31:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -191,17 +191,9 @@ PKG_CREATE ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
 
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
-_PKG_CREATE = ${PKG_CREATE} ${_PROGRESS} ${SIGNING_PARAMETERS}
-_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD}
+_PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
+_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD} -Dunsigned
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
-
-SIGNING_PARAMETERS ?=
-.if empty(SIGNING_PARAMETERS)
-_PKG_ADD_LOCAL += -Dunsigned
-.else
-_PKG_ADD_LOCAL += ${SIGNING_PARAMETERS:M-DSIGNER=*}
-.endif
-
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
