@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/09/02 12:14:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2016/09/06 10:14:24 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -17,9 +17,9 @@ ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
 ADASTRAP_LIBC-hppa = 80.0
 ADASTRAP_LIBM-hppa = 9.0
 ADASTRAP-hppa = adastrap-hppa-4.9.3-0.tar.xz
-ADASTRAP_LIBC-i386 = 80.0
+ADASTRAP_LIBC-i386 = 89.0
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-4.9.3-0.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
 ADASTRAP_LIBC-mips64 = 83.0
 ADASTRAP_LIBM-mips64 = 9.0
 ADASTRAP-mips64 = adastrap-mips64-4.9.3-0.tar.xz
