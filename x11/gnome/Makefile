@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2016/08/31 20:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.256 2016/09/06 13:29:02 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -87,7 +87,6 @@
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
-     SUBDIR += rygel
      SUBDIR += screenshot
      SUBDIR += seahorse
      SUBDIR += seahorse-nautilus
@@ -108,7 +107,6 @@
      SUBDIR += user-docs
      SUBDIR += vfs2
      SUBDIR += vinagre
-     SUBDIR += vino
      SUBDIR += weather
      SUBDIR += yelp
      SUBDIR += yelp-tools
