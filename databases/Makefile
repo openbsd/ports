@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2016/09/02 08:53:45 landry Exp $
+# $OpenBSD: Makefile,v 1.317 2016/09/06 11:16:20 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -159,7 +159,6 @@
      SUBDIR += postgresql-pllua
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
-     SUBDIR += puppetdb
      SUBDIR += puppetdb4
      SUBDIR += py-apsw
      SUBDIR += py-apsw,python3
@@ -212,7 +211,6 @@
      SUBDIR += ruby-do_postgres,ruby23
      SUBDIR += ruby-do_sqlite3,ruby22
      SUBDIR += ruby-do_sqlite3,ruby23
-     SUBDIR += ruby-hiera
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml
      SUBDIR += ruby-hiera-file
