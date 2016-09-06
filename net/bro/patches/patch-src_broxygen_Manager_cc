@@ -1,30 +1,40 @@
-$OpenBSD: patch-src_broxygen_Manager_cc,v 1.2 2016/08/27 12:58:07 ajacoutot Exp $
---- src/broxygen/Manager.cc.orig	Sun Sep  6 21:43:16 2015
-+++ src/broxygen/Manager.cc	Sat Aug 27 11:38:49 2016
-@@ -5,7 +5,6 @@
+$OpenBSD: patch-src_broxygen_Manager_cc,v 1.3 2016/09/06 16:12:57 ajacoutot Exp $
+
+Bodge around wordexp requirement; won't expand ~ in the path
+
+--- src/broxygen/Manager.cc.orig	Fri Sep  4 19:45:54 2015
++++ src/broxygen/Manager.cc	Fri Sep  4 19:56:18 2015
+@@ -5,7 +5,10 @@
  
  #include <utility>
  #include <cstdlib>
--#include <wordexp.h>
++
++#if !defined(__OpenBSD__)
+ #include <wordexp.h>
++#endif
  
  using namespace broxygen;
  using namespace std;
-@@ -51,17 +50,9 @@ Manager::Manager(const string& arg_config, const strin
+@@ -51,17 +54,21 @@ Manager::Manager(const string& arg_config, const strin
  
  	const char* env_path = getenv("PATH");
  	string path = env_path ? string(env_path) + ":." : ".";
--	wordexp_t expanded_path;
--	wordexp(path.c_str(), &expanded_path, WRDE_NOCMD);
- 	string path_to_bro;
++	string path_to_bro;
++#if !defined(__OpenBSD__)
+ 	wordexp_t expanded_path;
+ 	wordexp(path.c_str(), &expanded_path, WRDE_NOCMD);
+-	string path_to_bro;
  
--	if ( expanded_path.we_wordc == 1 )
--		path_to_bro = find_file(bro_command, expanded_path.we_wordv[0]);
--	else
--		{
--		reporter->InternalWarning("odd expansion of path: %s\n", path.c_str());
--		path_to_bro = find_file(bro_command, path);
--		}
-+	path_to_bro = find_file(bro_command, path);
+ 	if ( expanded_path.we_wordc == 1 )
+ 		path_to_bro = find_file(bro_command, expanded_path.we_wordv[0]);
+ 	else
+ 		{
+ 		reporter->InternalWarning("odd expansion of path: %s\n", path.c_str());
++#endif
+ 		path_to_bro = find_file(bro_command, path);
++#if !defined(__OpenBSD__)
+ 		}
++#endif
  
  	struct stat s;
  
