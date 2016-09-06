@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.88 2016/05/27 17:04:35 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.89 2016/09/06 15:23:26 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby20 ruby21 ruby22 ruby23
+FLAVORS=		ruby18 ruby21 ruby22 ruby23
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -46,18 +46,18 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 2.2.
+# Without a FLAVOR, assume the use of ruby 2.3.
 .    if empty(FLAVOR)
-FLAVOR =		ruby22
+FLAVOR =		ruby23
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby20 ruby21 ruby22 ruby23 jruby
+.    for i in ruby18 ruby21 ruby22 ruby23 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby18} || \
-            ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mruby21} || \
+            ${FLAVOR:N$i:Mruby21} || \
             ${FLAVOR:N$i:Mruby22} || ${FLAVOR:N$i:Mruby23} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
@@ -75,8 +75,8 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 .endif
 
 # The default ruby version to use for non-gem/extconf ports.  Defaults to ruby
-# 2.2 for consistency with the default ruby22 FLAVOR for gem/extconf ports.
-MODRUBY_REV?=		2.2
+# 2.3 for consistency with the default ruby23 FLAVOR for gem/extconf ports.
+MODRUBY_REV?=		2.3
 
 # Because the rbx and jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
@@ -92,11 +92,6 @@ MODRUBY_BINREV =	18
 MODRUBY_PKG_PREFIX =	ruby
 MODRUBY_FLAVOR =	ruby18
 GEM_BIN_SUFFIX =	18
-.elif ${MODRUBY_REV} == 2.0
-MODRUBY_LIBREV =	2.0
-MODRUBY_BINREV =	20
-MODRUBY_FLAVOR =	ruby20
-GEM_BIN_SUFFIX =	20
 .elif ${MODRUBY_REV} == 2.1
 MODRUBY_LIBREV =	2.1
 MODRUBY_BINREV =	21
@@ -245,10 +240,7 @@ MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 
 MODRUBY_WANTLIB+=	c m
 .if ${MODRUBY_REV} != 1.8
-MODRUBY_WANTLIB+=	pthread
-.endif
-.if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2 || ${MODRUBY_REV} == 2.3
-MODRUBY_WANTLIB+=	gmp
+MODRUBY_WANTLIB+=	gmp pthread
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
@@ -287,7 +279,7 @@ BUILD_DEPENDS+=	lang/ruby/2.1>=2.1.0p0
 # Pure ruby gem ports without C extensions are arch-independent.
 .  if !${CONFIGURE_STYLE:L:Mext}
 PKG_ARCH=	*
-.  elif ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2 || ${MODRUBY_REV} == 2.3
+.  elif ${MODRUBY_REV} != 1.8
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
@@ -414,7 +406,7 @@ MODRUBY_TEST_BIN ?=	${RSPEC}
 .    elif ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
-.        if ${MODRUBY_REV} == "1.8" || ${MODRUBY_REV} == "2.0" || ${MODRUBY_REV} == "2.1"
+.        if ${MODRUBY_REV} == "1.8" || ${MODRUBY_REV} == "2.1"
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
 .        else
 MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
