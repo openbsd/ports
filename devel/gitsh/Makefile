@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/15 06:05:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/06 15:37:53 jeremy Exp $
 
 VERSION =		0.10
 
 COMMENT =		interactive shell for git
 
 DISTNAME =		gitsh-${VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
