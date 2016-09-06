@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/09/05 09:00:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2016/09/06 09:04:48 jasper Exp $
 
 PORTROACH=		limit:^1
 
@@ -18,7 +18,6 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-MODRUBY_REV=		2.2
 
 CONFIGURE_STYLE=	ruby gem
 

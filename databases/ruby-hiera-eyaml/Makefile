@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/05 09:00:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/06 09:04:48 jasper Exp $
 
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
@@ -11,7 +11,6 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ruby
-MODRUBY_REV=		2.2
 
 CONFIGURE_STYLE =	ruby gem
 
