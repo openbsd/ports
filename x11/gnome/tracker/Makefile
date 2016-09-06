@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2016/05/10 05:55:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.205 2016/09/06 13:29:37 ajacoutot Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
@@ -16,7 +16,6 @@ PKGNAME=		meta-tracker-${VERSION}
 # x11/gnome/nautilus
 # x11/gnome/online-miners
 # x11/gnome/photos
-# x11/gnome/rygel
 TRACKER_API=		1.0
 SUBST_VARS=		TRACKER_API
 
