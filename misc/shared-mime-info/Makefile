@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2016/02/25 07:55:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2016/09/06 07:50:43 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-1.6
+DISTNAME=		shared-mime-info-1.7
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -12,13 +12,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 pthread xml2
+WANTLIB += c glib-2.0 intl xml2
 
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.xz
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=		textproc/intltool
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
