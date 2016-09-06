@@ -1,12 +1,12 @@
-$OpenBSD: patch-Mailman_Defaults_py_in,v 1.14 2016/04/22 16:42:14 okan Exp $
---- Mailman/Defaults.py.in.orig	Sun Feb 28 15:47:44 2016
-+++ Mailman/Defaults.py.in	Sun Mar 20 11:21:13 2016
-@@ -554,7 +554,7 @@ SMTPPORT = 0                                      # de
+$OpenBSD: patch-Mailman_Defaults_py_in,v 1.15 2016/09/06 13:44:22 okan Exp $
+--- Mailman/Defaults.py.in.orig	Sat Aug 27 09:04:42 2016
++++ Mailman/Defaults.py.in	Thu Sep  1 11:24:12 2016
+@@ -567,7 +567,7 @@ SMTPPORT = 0                                      # de
  
  # Command for direct command pipe delivery to sendmail compatible program,
  # when DELIVERY_MODULE is 'Sendmail'.
 -SENDMAIL_CMD = '/usr/lib/sendmail'
 +SENDMAIL_CMD = '/usr/sbin/sendmail'
  
- # Set these variables if you need to authenticate to your NNTP server for
- # Usenet posting or reading.  If no authentication is necessary, specify None
+ # SMTP authentication for DELIVERY_MODULE = 'SMTPDirect'.  To enable SASL
+ # authentication for SMTPDirect, set SMTP_AUTH = Yes and provide appropriate
