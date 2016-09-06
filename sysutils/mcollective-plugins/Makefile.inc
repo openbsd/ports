@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.3 2015/06/12 18:01:53 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/09/06 11:26:08 jasper Exp $
 
 CATEGORIES?=		sysutils
 
-MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER?=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM?=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/29 19:49:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/06 11:26:08 jasper Exp $
 
 COMMENT=		MCollective agent to query NRPE
 
@@ -9,7 +9,5 @@ GH_TAGNAME=		3.1.0
 REVISION=		0
 
 MCO_SUBDIRS=		agent aggregate application data
-
-MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 .include <bsd.port.mk>

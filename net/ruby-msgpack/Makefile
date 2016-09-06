@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/06 09:04:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/06 11:26:08 jasper Exp $
 
 COMMENT =	binary-based efficient object serialization library
 
 DISTNAME =	msgpack-0.7.6
+REVISION =	0
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://msgpack.org/
 
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM =	Yes

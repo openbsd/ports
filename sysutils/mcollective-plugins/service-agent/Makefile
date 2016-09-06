@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/06 11:26:08 jasper Exp $
 
 COMMENT=		MCollective agent to manage Services
 
 # git clone of d2ce4642d56ec72586b03ee51506dc83ca95295a
 DISTNAME=		mcollective-service-agent-0.0.1
 
-REVISION=		1
+REVISION=		2
 
 MASTER_SITES=		https://distfiles.nl/
 

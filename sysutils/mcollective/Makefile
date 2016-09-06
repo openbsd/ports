@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2016/09/05 09:00:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2016/09/06 11:26:08 jasper Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.9.0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.puppetlabs.com/mcollective
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes

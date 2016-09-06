@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/06 09:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/06 11:26:07 jasper Exp $
 
 PORTROACH=		limit:^4
 
 VERSION=		4.6.2
-REVISION=		0
+REVISION=		1
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-rgen,${MODRUBY_FLAVOR} \
