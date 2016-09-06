@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/08/30 12:09:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/09/06 09:50:24 jasper Exp $
 @option is-branch
 @conflict puppet->=3,<4
 @newgroup _puppet:580
@@ -1497,6 +1497,7 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
 @sample /var/log/puppetlabs/puppet/
 @sample /var/run/puppetlabs/
 @mode 0755
+@sample /var/puppetlabs/
 @sample /var/puppetlabs/puppet/cache/lib/
 @sample /var/puppetlabs/puppet/modules/
 @sample /var/puppetlabs/puppet/cache/facts.d/
