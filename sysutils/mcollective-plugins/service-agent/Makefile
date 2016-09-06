@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/06 11:26:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/06 11:34:11 jasper Exp $
 
 COMMENT=		MCollective agent to manage Services
 
-# git clone of d2ce4642d56ec72586b03ee51506dc83ca95295a
+GH_ACCOUNT=		puppetlabs
+GH_PROJECT=		mcollective-service-agent
+GH_COMMIT=		d2ce4642d56ec72586b03ee51506dc83ca95295a
 DISTNAME=		mcollective-service-agent-0.0.1
 
 REVISION=		2
-
-MASTER_SITES=		https://distfiles.nl/
 
 MCO_SUBDIRS=		agent application data util validator
 
