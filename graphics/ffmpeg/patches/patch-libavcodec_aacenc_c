@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.16 2016/05/03 06:05:49 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.17 2016/09/06 12:37:11 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -76,8 +76,12 @@ aacenc: use generational cache instead of resetting.
 
 AAC encoder: fix valgrind errors
 
---- libavcodec/aacenc.c.orig	Wed Apr 27 00:56:50 2016
-+++ libavcodec/aacenc.c	Wed Apr 27 01:24:53 2016
+aacenc: unmark the fast coder as experimental
+
+aacenc: fix various typos and an error message
+
+--- libavcodec/aacenc.c.orig	Sat Aug 27 22:51:29 2016
++++ libavcodec/aacenc.c	Sat Aug 27 22:55:40 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -169,7 +173,7 @@ AAC encoder: fix valgrind errors
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
-@@ -517,19 +540,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -518,19 +541,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -196,7 +200,7 @@ AAC encoder: fix valgrind errors
  
                  /* Only the lowest 12 coefficients are used in a LFE channel.
                   * The expression below results in only the bottom 8 coefficients
-@@ -537,7 +563,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -538,7 +564,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -205,7 +209,7 @@ AAC encoder: fix valgrind errors
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -554,10 +580,23 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -555,10 +581,23 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              ics->tns_max_bands      = wi[ch].window_type[0] == EIGHT_SHORT_SEQUENCE ?
                                          ff_tns_max_bands_128 [s->samplerate_index]:
                                          ff_tns_max_bands_1024[s->samplerate_index];
@@ -230,56 +234,7 @@ AAC encoder: fix valgrind errors
                  if (wi[ch].clipping[w] > CLIP_AVOIDANCE_FACTOR) {
                      ics->window_clipping[w] = 1;
                      clip_avoidance_factor = FFMAX(clip_avoidance_factor, wi[ch].clipping[w]);
-@@ -571,33 +610,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
-                 ics->clip_avoidance_factor = 1.0f;
-             }
- 
--            apply_window_and_mdct(s, &cpe->ch[ch], overlap);
-+            apply_window_and_mdct(s, sce, overlap);
- 
--            if (isnan(cpe->ch[ch].coeffs[    0]) || isinf(cpe->ch[ch].coeffs[    0]) ||
--                isnan(cpe->ch[ch].coeffs[  128]) || isinf(cpe->ch[ch].coeffs[  128]) ||
--                isnan(cpe->ch[ch].coeffs[2*128]) || isinf(cpe->ch[ch].coeffs[2*128]) ||
--                isnan(cpe->ch[ch].coeffs[3*128]) || isinf(cpe->ch[ch].coeffs[3*128]) ||
--                isnan(cpe->ch[ch].coeffs[4*128]) || isinf(cpe->ch[ch].coeffs[4*128]) ||
--                isnan(cpe->ch[ch].coeffs[5*128]) || isinf(cpe->ch[ch].coeffs[5*128]) ||
--                isnan(cpe->ch[ch].coeffs[6*128]) || isinf(cpe->ch[ch].coeffs[6*128]) ||
--                isnan(cpe->ch[ch].coeffs[7*128]) || isinf(cpe->ch[ch].coeffs[7*128])) {
--                av_log(avctx, AV_LOG_ERROR, "Input contains NaN/+-Inf\n");
--                return AVERROR(EINVAL);
-+            if (s->options.ltp && s->coder->update_ltp) {
-+                s->coder->update_ltp(s, sce);
-+                apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, &sce->ltp_state[0]);
-+                s->mdct1024.mdct_calc(&s->mdct1024, sce->lcoeffs, sce->ret_buf);
-             }
--            avoid_clipping(s, &cpe->ch[ch]);
-+
-+            for (k = 0; k < 1024; k++) {
-+                if (!isfinite(cpe->ch[ch].coeffs[k])) {
-+                    av_log(avctx, AV_LOG_ERROR, "Input contains NaN/+-Inf\n");
-+                    return AVERROR(EINVAL);
-+                }
-+            }
-+            avoid_clipping(s, sce);
-         }
-         start_ch += chans;
-     }
-     if ((ret = ff_alloc_packet2(avctx, avpkt, 8192 * s->channels, 0)) < 0)
-         return ret;
-+    frame_bits = its = 0;
-     do {
--        int frame_bits;
--
-         init_put_bits(&s->pb, avpkt->data, avpkt->size);
- 
-         if ((avctx->frame_number & 0xFF)==1 && !(avctx->flags & AV_CODEC_FLAG_BITEXACT))
-             put_bitstream_info(s, LIBAVCODEC_IDENT);
-         start_ch = 0;
-+        target_bits = 0;
-         memset(chan_el_counter, 0, sizeof(chan_el_counter));
-         for (i = 0; i < s->chan_map[0]; i++) {
-             FFPsyWindowInfo* wi = windows + start_ch;
-@@ -614,15 +654,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -610,15 +649,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -309,7 +264,7 @@ AAC encoder: fix valgrind errors
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -640,14 +693,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -636,14 +688,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -326,7 +281,7 @@ AAC encoder: fix valgrind errors
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -664,8 +717,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -660,8 +712,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -337,7 +292,7 @@ AAC encoder: fix valgrind errors
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -674,22 +727,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -670,22 +722,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -376,7 +331,7 @@ AAC encoder: fix valgrind errors
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -701,36 +766,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -697,36 +761,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -475,7 +430,7 @@ AAC encoder: fix valgrind errors
      if (!frame)
          s->last_frame++;
  
-@@ -746,6 +853,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -742,6 +848,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -484,7 +439,7 @@ AAC encoder: fix valgrind errors
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -804,76 +913,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -800,76 +908,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -584,9 +539,9 @@ AAC encoder: fix valgrind errors
 -    if (s->options.aac_coder != AAC_CODER_TWOLOOP) {
 +    /* Coder limitations */
 +    s->coder = &ff_aac_coders[s->options.coder];
-+    if (s->options.coder != AAC_CODER_TWOLOOP) {
++    if (s->options.coder == AAC_CODER_ANMR) {
 +        ERROR_IF(avctx->strict_std_compliance > FF_COMPLIANCE_EXPERIMENTAL,
-+                 "Coders other than twoloop require -strict -2 and some may be removed in the future\n");
++                 "The ANMR coder is considered experimental, add -strict -2 to enable!\n");
          s->options.intensity_stereo = 0;
          s->options.pns = 0;
      }
@@ -642,7 +597,7 @@ AAC encoder: fix valgrind errors
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -884,27 +1040,16 @@ fail:
+@@ -880,27 +1035,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -680,7 +635,7 @@ AAC encoder: fix valgrind errors
      {NULL}
  };
  
-@@ -915,6 +1060,11 @@ static const AVClass aacenc_class = {
+@@ -911,6 +1055,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -692,7 +647,7 @@ AAC encoder: fix valgrind errors
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -924,9 +1074,9 @@ AVCodec ff_aac_encoder = {
+@@ -920,9 +1069,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
