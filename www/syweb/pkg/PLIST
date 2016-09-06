@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/07 18:10:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/06 11:33:54 sthen Exp $
 htdocs/syweb/
 htdocs/syweb/class_cache.inc
 htdocs/syweb/class_graph.inc
@@ -30,3 +30,5 @@ symon/hifn_test.layout
 symon/pf.layout
 symon/rrds/
 symon/total_firewall.layout
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

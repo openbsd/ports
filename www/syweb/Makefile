@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/05 06:00:23 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/06 11:33:54 sthen Exp $
 
-COMMENT=		web frontend to symon
-DISTNAME=		syweb-0.65
-REVISION=		3
-CATEGORIES=		www sysutils
+COMMENT=	web frontend to symon
+DISTNAME=	syweb-0.65
+REVISION=	4
+CATEGORIES=	www sysutils
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
+HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/philes/
+MASTER_SITES=	${HOMEPAGE}/philes/
 
-NO_TEST=		Yes
-NO_BUILD=		Yes
+NO_TEST=	Yes
+NO_BUILD=	Yes
 
 PREFIX=		${VARBASE}/www
 
-MODULES=		lang/php
-RUN_DEPENDS=		net/rrdtool
+MODULES=	lang/php
+RUN_DEPENDS=	net/rrdtool
 
-WRKDIST=		${WRKDIR}/syweb
+WRKDIST=	${WRKDIR}/syweb
 
 do-install:
 	find ${WRKDIR} -name \*.orig -exec rm {} \;
@@ -33,5 +33,7 @@ do-install:
 	mkdir ${PREFIX}/symon/cache
 	cd ${PREFIX}/htdocs/syweb && mv setup.inc setup.inc.sample
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/htdocs/syweb ${PREFIX}/symon
+	sed -i "s,'/bin/rrdtool','${LOCALBASE}/bin/rrdtool'," \
+	    ${PREFIX}/htdocs/syweb/setup.inc.sample
 
 .include <bsd.port.mk>
