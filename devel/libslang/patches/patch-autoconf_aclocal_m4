@@ -1,4 +1,4 @@
-$OpenBSD: patch-autoconf_aclocal_m4,v 1.7 2016/02/20 14:02:51 tobiasu Exp $
+$OpenBSD: patch-autoconf_aclocal_m4,v 1.8 2016/09/06 13:18:42 jasper Exp $
 --- autoconf/aclocal.m4.orig	Mon Apr 11 04:37:07 2011
 +++ autoconf/aclocal.m4	Fri Feb 19 08:41:23 2016
 @@ -571,13 +571,13 @@ fi
@@ -27,7 +27,7 @@ $OpenBSD: patch-autoconf_aclocal_m4,v 1.7 2016/02/20 14:02:51 tobiasu Exp $
 +      DYNAMIC_LINK_FLAGS=""
 +      ELF_CC="$CC"
 +      case `arch -s` in
-+        sparc|sparc64)
++        sparc64)
 +          ELF_CFLAGS="$CFLAGS -fPIC"
 +         ;;
 +        *)
