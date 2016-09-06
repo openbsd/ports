@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.421 2016/09/04 00:59:26 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.422 2016/09/06 13:33:35 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -859,9 +859,11 @@ my $obsolete_reason = {
 	'xmmsctrl' => 5,
 	'glib' => 5,
 	'gtk+' => 5,
-	'gnome-user-share' => 6,
+	'gnome-user-share' => 8,
 	'letskencrypt' => 4,
 	'emiclock' => 0,
+	'rygel' => 8,
+	'vino' => 8,
 };
 
 # reasons for obsolete packages
@@ -874,6 +876,7 @@ my @msg = (
 	"outdated and/or no longer required by other ports", #5
 	"no longer useful", #6
 	"removed in favor of using languages package manager", #7
+	"requires systemd", #8
 );
 
 # ->is_base_system($handle, $state):
