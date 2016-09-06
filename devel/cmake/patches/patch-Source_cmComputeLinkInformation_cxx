@@ -1,7 +1,34 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.16 2016/08/08 07:44:48 dcoppa Exp $
---- Source/cmComputeLinkInformation.cxx.orig	Thu Aug  4 11:56:19 2016
-+++ Source/cmComputeLinkInformation.cxx	Thu Aug  4 11:59:28 2016
-@@ -631,10 +631,16 @@ void cmComputeLinkInformation::AddItem(std::string con
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.17 2016/09/06 08:43:54 dcoppa Exp $
+--- Source/cmComputeLinkInformation.cxx.orig	Fri Jul 22 15:50:22 2016
++++ Source/cmComputeLinkInformation.cxx	Tue Sep  6 09:02:48 2016
+@@ -449,6 +449,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked()
+ 
+ bool cmComputeLinkInformation::Compute()
+ {
++  bool use_wxneeded = false;
++
+   // Skip targets that do not link.
+   if (!(this->Target->GetType() == cmState::EXECUTABLE ||
+         this->Target->GetType() == cmState::SHARED_LIBRARY ||
+@@ -477,10 +479,17 @@ bool cmComputeLinkInformation::Compute()
+     if (lei->IsSharedDep) {
+       this->AddSharedDepItem(lei->Item, lei->Target);
+     } else {
++      std::string litem_tolower = lei->Item;
++      transform(litem_tolower.begin(), litem_tolower.end(), litem_tolower.begin(), ::tolower);
++      if (litem_tolower.find("webkit") != std::string::npos)
++        use_wxneeded = true;
+       this->AddItem(lei->Item, lei->Target);
+     }
+   }
+ 
++  if (use_wxneeded)
++    this->AddUserItem("-Wl,-z,wxneeded", false);
++
+   // Restore the target link type so the correct system runtime
+   // libraries are found.
+   const char* lss = this->Target->GetProperty("LINK_SEARCH_END_STATIC");
+@@ -631,10 +640,16 @@ void cmComputeLinkInformation::AddItem(std::string con
          // This is a directory.
          this->AddDirectoryItem(item);
        } else {
@@ -21,7 +48,7 @@ $OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.16 2016/08/08 07:44:48 d
        }
      } else {
        // This is a library or option specified by the user.
-@@ -977,11 +983,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -977,11 +992,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
    }
  
