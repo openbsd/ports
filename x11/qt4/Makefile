@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.135 2016/03/18 21:38:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.136 2016/09/06 09:00:19 dcoppa Exp $
+
+USE_WXNEEDED =		Yes # QtWebKit
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-hppa =	libQtWebKit.so.3.0: undefined reference to __sync_sub_and_fetch_4
@@ -23,7 +25,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		6
+REVISION-main =		7
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -262,6 +264,8 @@ post-install:
 	    perl -pi.bak -e 's,-L${WRKBUILD}/lib,,g;' $$i; \
 	    rm $$i.bak; \
 	done
+	@sed -i -e s/"-lQtWebKit"/"-lQtWebKit -Wl,-z,wxneeded"/ \
+		${QT_PKGCFGDIR}/QtWebKit.pc
 	# this helps qdbuscpp2xml
 	cd ${QT_BINDIR} && ln -sf moc moc4
 .for l v in ${SHARED_LIBS}

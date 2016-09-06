@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.51 2016/03/20 15:58:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2016/09/06 09:00:19 dcoppa Exp $
+
+USE_WXNEEDED =		Yes # Qt5WebKit
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
@@ -17,7 +19,7 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-main =		qt5-${VERSION}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-examples =	qt5-examples-${VERSION}
 REVISION-examples =	0
 PKGNAME-html =		qt5-html-${VERSION}
@@ -427,6 +429,10 @@ post-install:
 			    $$f >${PREFIX}/lib/pkgconfig/$${f##*/}; \
 		done; \
 	fi
+	@sed -i -e s/"-lQt5WebKit"/"-lQt5WebKit -Wl,-z,wxneeded"/ \
+		${QT_PKGCFGDIR}/Qt5WebKit.pc
+	@sed -i -e s/"-lQt5WebKit"/"-lQt5WebKit -Wl,-z,wxneeded"/ \
+		${PREFIX}/lib/pkgconfig/Qt5WebKit.pc
 	# CMake files get values from QMake config "as is"
 	find ${QT_CMAKEDIR} -type f -print0 | xargs -0 perl -pi \
 		-e 's,\$$\(LOCALBASE\),${LOCALBASE},g;' \
