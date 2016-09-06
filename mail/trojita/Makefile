@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/04 14:03:00 landry Exp $
-
-USE_WXNEEDED =		Yes # QtWebKit
+# $OpenBSD: Makefile,v 1.19 2016/09/06 08:50:50 dcoppa Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 

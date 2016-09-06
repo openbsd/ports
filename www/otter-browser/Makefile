@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/21 22:20:48 dcoppa Exp $
-
-USE_WXNEEDED =		Yes
+# $OpenBSD: Makefile,v 1.17 2016/09/06 08:50:50 dcoppa Exp $
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
