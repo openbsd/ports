@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2016/08/30 11:29:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2016/09/06 11:40:22 jasper Exp $
 
 COMMENT =		ssh based config management framework
 
 MODPY_EGG_VERSION =	2.1.1.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.ansible.com/
 
-MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
