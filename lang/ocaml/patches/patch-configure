@@ -1,16 +1,15 @@
-$OpenBSD: patch-configure,v 1.20 2016/06/24 15:59:12 krw Exp $
---- configure.orig	Mon Apr 25 09:36:01 2016
-+++ configure	Wed May 18 13:01:05 2016
-@@ -839,6 +839,8 @@
+$OpenBSD: patch-configure,v 1.21 2016/09/07 10:02:59 jasper Exp $
+--- configure.orig	Mon Apr 25 15:36:01 2016
++++ configure	Wed Sep  7 12:02:30 2016
+@@ -839,6 +839,7 @@ case "$target" in
    s390x*-*-linux*)              arch=s390x; model=z10; system=elf;;
    armv6*-*-linux-gnueabihf)     arch=arm; model=armv6; system=linux_eabihf;;
    arm*-*-linux-gnueabihf)       arch=arm; system=linux_eabihf;;
 +  arm*-*-openbsd*)              arch=arm; system=bsd;;
-+  zaurus*-*-openbsd*)           arch=arm; system=bsd;;
    armv7*-*-linux-gnueabi)       arch=arm; model=armv7; system=linux_eabi;;
    armv6t2*-*-linux-gnueabi)     arch=arm; model=armv6t2; system=linux_eabi;;
    armv6*-*-linux-gnueabi)       arch=arm; model=armv6; system=linux_eabi;;
-@@ -1673,11 +1675,11 @@
+@@ -1673,11 +1674,11 @@ echo "X11_LINK=$x11_link" >> Makefile
  
  # Look for BFD library
  
