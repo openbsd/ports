@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/08/23 07:43:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/09/07 12:18:58 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.20.3
+GNOME_VERSION=		3.20.3.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
@@ -19,7 +19,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += iconv intl json-glib-1.0 lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 xcb xcb-dri2
-WANTLIB += xcb-render xcb-shape xcb-shm xcb-xfixes xml2 z
+WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -28,7 +28,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
 LIB_DEPENDS=		geo/geocode-glib \
-			geo/libchamplain \
+			geo/libchamplain>=0.12.14 \
 			net/telepathy/folks
 
 BUILD_DEPENDS +=	geo/geoclue2 \
