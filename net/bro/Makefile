@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/07 10:56:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/07 14:50:18 dcoppa Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -47,9 +47,6 @@ RUN_DEPENDS +=		shells/bash
 RUN_DEPENDS +=		net/curl
 
 CONFIGURE_STYLE=	simple
-
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
-				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--conf-files-dir=${SYSCONFDIR}/bro \

@@ -1,0 +1,30 @@
+$OpenBSD: patch-cmake_FindBIND_cmake,v 1.3 2016/09/07 14:50:18 dcoppa Exp $
+--- cmake/FindBIND.cmake.orig	Wed Sep  7 15:50:55 2016
++++ cmake/FindBIND.cmake	Wed Sep  7 15:56:10 2016
+@@ -33,6 +33,8 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+     # exported in the shared library (strangely)
+     # see http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=291609
+     set(bind_libs none libresolv.a resolv bind)
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    set(bind_libs bind)
+ else ()
+     set(bind_libs none resolv bind)
+ endif ()
+@@ -45,8 +47,16 @@ foreach (bindlib ${bind_libs})
+     if (NOT ${bindlib} MATCHES "none")
+         find_library(BIND_LIBRARY
+             NAMES ${bindlib}
+-            HINTS ${BIND_ROOT_DIR}/lib
++            if (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++              HINTS ${BIND_ROOT_DIR}/lib/libbind
++            else ()
++              HINTS ${BIND_ROOT_DIR}/lib
++            endif ()
+         )
++    endif ()
++
++    if (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++      link_directories(${BIND_ROOT_DIR}/lib/libbind)
+     endif ()
+ 
+     set(CMAKE_REQUIRED_LIBRARIES ${BIND_LIBRARY})
