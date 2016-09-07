@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imake_cf,v 1.1.1.1 2012/09/02 14:13:10 espie Exp $
---- Imake.cf.orig	Thu Jan  6 05:31:00 2011
-+++ Imake.cf	Mon Aug  6 13:01:09 2012
+$OpenBSD: patch-Imake_cf,v 1.2 2016/09/07 10:01:19 jasper Exp $
+--- Imake.cf.orig	Tue Dec 22 02:28:02 2015
++++ Imake.cf	Wed Sep  7 12:00:22 2016
 @@ -132,18 +132,27 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #   define Sparc64Architecture
  #  endif
@@ -29,22 +29,18 @@ $OpenBSD: patch-Imake_cf,v 1.1.1.1 2012/09/02 14:13:10 espie Exp $
  # endif
  # if defined(__alpha__) || defined(alpha)
  #   define AlphaArchitecture
-@@ -156,6 +165,14 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+@@ -156,6 +165,10 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #   undef __x86_64__
  #   undef amd64
  # endif
 +# if defined(__arm__)
 +#   define Arm32Architecture
 +#   undef __arm__
-+#   if defined(zaurus)
-+#     undef zaurus
-+#     define ZaurusArchitecture
-+#   endif
 +# endif
  # if defined(__mc68020__) || defined(mc68020)
  #  define Mc68020Architecture
  #  if defined(amiga)
-@@ -180,11 +197,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+@@ -180,11 +193,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #  endif
  #  undef mc68000
  # endif
