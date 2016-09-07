@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1 2016/09/07 18:00:09 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+syweb's default install assumes that:
+  - web server is chrooted at ${PREFIX}
+  - rrdtool is installed in the chroot
+  - symux rrd files are kept in ${PREFIX}/symon/rrds/<host>/*.rrd
+
+Customise ${PREFIX}/htdocs/syweb/setup.inc if these assumptions are
+incorrect. rrdtool must also be copied into the chroot jail; for this,
+see rrdtool's pkg-readme document. Additionally PHP's exec function
+requires that /bin/sh is copied into the chroot:
+
+# cp /bin/sh /var/www/bin/sh
