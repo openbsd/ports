@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2016/08/14 10:52:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2016/09/07 16:54:56 jeremy Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -7,7 +7,7 @@ COMMENT=	robust and small HTTP server and mail proxy server
 
 VERSION=	1.10.1
 DISTNAME=	nginx-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 MASTER_SITES=	http://nginx.org/download/
@@ -98,7 +98,7 @@ MODRUBY_BUILDDEP=	No
 MODRUBY_RUNDEP=		No
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/ext/nginx
 BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
-RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*|ruby20-passenger-*|ruby21-passenger-*|ruby22-passenger-*:www/ruby-passenger
+RUN_DEPENDS+=		ruby-passenger-*|ruby21-passenger-*|ruby22-passenger-*|ruby23-passenger-*:www/ruby-passenger
 WANTLIB+=		m pthread stdc++
 .endif
 
