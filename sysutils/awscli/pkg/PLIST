@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/08/31 08:07:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/09/07 12:33:29 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -310,7 +310,24 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-model
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-rest-api.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-stage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-usage-plan-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-usage-plan.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-api-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-authorizer.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-base-path-mapping.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-client-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-domain-name.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-integration-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-method-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-method.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-rest-api.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-stage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-usage-plan-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/delete-usage-plan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/flush-stage-authorizers-cache.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/flush-stage-cache.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/generate-client-certificate.rst
@@ -342,7 +359,16 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-rest-api
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-sdk.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-stages.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-usage-plan-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-usage-plan-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-usage-plan.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-usage-plans.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-usage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/import-rest-api.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/put-integration-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/put-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/put-method-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/put-method.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/put-rest-api.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/test-invoke-authorizer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/test-invoke-method.rst
@@ -355,6 +381,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-deplo
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-domain-name.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-integration-response.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-method-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-method.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-rest-api.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-stage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage-plan.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/delete-scaling-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/deregister-scalable-target.rst
@@ -930,6 +964,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-target-g
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/describe-target-health.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-load-balancer-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-target-group-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/modify-target-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/register-targets.rst
