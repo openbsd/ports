@@ -1,13 +1,10 @@
-$OpenBSD: README,v 1.6 2016/03/09 18:21:03 jasper Exp $
+$OpenBSD: README,v 1.7 2016/09/07 10:01:56 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 On i386, amd64 and VGA-based alpha, slim is launched on vt05 like xdm.
-
-If you're on a zaurus you'll have to change this setting to vt01 in
-${SYSCONFDIR}/slim.conf.
 
 If you're on an arch which doesn't handle virtual terminals (like
 sparc, sparc64 or TGA-based alpha), you will have to

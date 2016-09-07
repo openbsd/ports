@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/18 23:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/07 10:01:56 jasper Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.6
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS=	slim	0.0 # 1.3
 
