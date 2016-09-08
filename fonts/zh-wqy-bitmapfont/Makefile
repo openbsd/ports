@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/08 17:29:00 jasper Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
+TYPEFACE=	wqy-bitmapfont
 V=		0.9.9-0
-DISTNAME=	wqy-bitmapfont-pcf-$V
+DISTNAME=	${TYPEFACE}-pcf-$V
 REVISION=	2
 PKGNAME=	zh-wqy-bitmapfont-${V:S/-/./}
 
-CATEGORIES=	fonts x11 chinese
+CATEGORIES=	x11 chinese
 
 HOMEPAGE=	http://wqy.sourceforge.net/en/
 
@@ -15,11 +16,13 @@ HOMEPAGE=	http://wqy.sourceforge.net/en/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wqy/}
+EXTRACT_SUFX=	.tar.gz
+
+MODULES=	font
 
 WRKDIST=	${WRKDIR}/wqy-bitmapfont
 NO_BUILD=	Yes
 NO_TEST=	Yes
-PKG_ARCH=	*
 WQYFONTDIR=	${PREFIX}/share/fonts/wqy
 USE_X11 =	Yes
 
