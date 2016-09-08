@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/27 14:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/08 17:32:58 jasper Exp $
 
 COMMENT=	clear, readable monospaced font
 
@@ -21,7 +21,6 @@ EXTRACT_SUFX=	.tar.gz
 MODULES=	font
 
 NO_BUILD=	Yes
-NO_TEST=	Yes
 
 FONTTYPES=	otf
 FONT_DISTDIR=	${WRKDIR}

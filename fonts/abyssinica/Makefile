@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/27 14:58:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/08 17:32:57 jasper Exp $
 
 COMMENT =		Ethiopic Unicode script
 
@@ -19,7 +19,6 @@ MODULES =		font
 MASTER_SITES =		http://software.sil.org/downloads/abyssinica/
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/abyssinica
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/04 12:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/08 17:32:58 jasper Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -22,7 +22,6 @@ MASTER_SITES=		https://distfiles.nl/
 MODULES =		font
 
 NO_BUILD=		Yes
-NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/
 

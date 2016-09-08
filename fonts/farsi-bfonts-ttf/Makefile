@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/27 14:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/08 17:32:57 jasper Exp $
 
 COMMENT=	farsi bornaray fonts
 
@@ -31,6 +31,5 @@ EXTRACT_CASES += *.exe) \
 MODULES=	font
 
 NO_BUILD=	Yes
-NO_TEST=	Yes
 
 .include <bsd.port.mk>

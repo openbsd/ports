@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/27 14:58:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/08 17:32:57 jasper Exp $
 
 COMMENT=	Arabeyes TrueType Arabic fonts
 
@@ -19,7 +19,6 @@ EXTRACT_SUFX=		.tar.gz
 MODULES =		font
 
 NO_BUILD=		Yes
-NO_TEST=		Yes
 
 FONT_DISTSUBDIR=	fonts
 WRKDIST=		${WRKDIR}/ttf-arabeyes-$V

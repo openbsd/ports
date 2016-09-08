@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/27 14:58:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/08 17:32:57 jasper Exp $
 
 TYPEFACE =		doulos
 V =			5.000
@@ -18,7 +18,6 @@ MASTER_SITES =		http://software.sil.org/downloads/doulos/
 MODULES =		font
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 DOCDIR =		${PREFIX}/share/doc/doulos

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/04 12:14:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/08 17:32:57 jasper Exp $
 
 COMMENT =		replacement for Comic Sans font
 
@@ -21,7 +21,6 @@ MASTER_SITES =		http://comicneue.com/
 MODULES =		font
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
 
 FONT_DISTDIR =		${WRKSRC}/Web/
 FCDIR =			${PREFIX}/share/comic-neue
