@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.577 2016/09/03 20:04:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.578 2016/09/08 13:05:02 jca Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -255,6 +255,7 @@
      SUBDIR += sselp
      SUBDIR += st
      SUBDIR += stalonetray
+     SUBDIR += stumpwm
      SUBDIR += swarp
      SUBDIR += swisswatch
      SUBDIR += tabbed
