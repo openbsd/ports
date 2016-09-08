@@ -1,4 +1,4 @@
-# $OpenBSD: font.port.mk,v 1.2 2016/04/27 14:58:17 jasper Exp $
+# $OpenBSD: font.port.mk,v 1.3 2016/09/08 17:32:45 jasper Exp $
 
 CATEGORIES +=	fonts
 
@@ -12,6 +12,8 @@ PKGNAME ?=	${TYPEFACE}-$V
 .  elif defined(VERSION)
 PKGNAME ?=	${TYPEFACE}-${VERSION}
 .  endif
+
+NO_TEST ?=	Yes
 
 FONTDIR ?=	${PREFIX}/share/fonts/${TYPEFACE}
 
