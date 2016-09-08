@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2016/07/30 14:19:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2016/09/08 07:19:58 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -96,7 +96,6 @@ share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
 share/gtk-doc/html/harfbuzz/hello-harfbuzz.html
 share/gtk-doc/html/harfbuzz/home.png
 share/gtk-doc/html/harfbuzz/index.html
-share/gtk-doc/html/harfbuzz/index.sgml
 share/gtk-doc/html/harfbuzz/install-harfbuzz.html
 share/gtk-doc/html/harfbuzz/left-insensitive.png
 share/gtk-doc/html/harfbuzz/left.png
