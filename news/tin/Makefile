@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2016/09/01 15:27:32 giovanni Exp $
+# $OpenBSD: Makefile,v 1.48 2016/09/08 10:14:35 jasper Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.4
 PATCHLEVEL=	0
+REVISION=	0
 CATEGORIES=	news
 
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
@@ -16,15 +17,13 @@ HOMEPAGE=	http://www.tin.org/
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
-MODULES=	devel/gettext
-
 # This software cannot be redistributed freely due to a few files having
 # licenses that prohibit making money from redistribution - see src/nntplib.c,
 # vms/vms.c
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c>=58.2 icuuc ncurses pcre pthread
+WANTLIB=		c>=58.2 iconv icuuc intl ncurses pcre pthread
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.13
@@ -49,7 +48,9 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS+=	devel/pcre \
+		devel/gettext \
 		textproc/icu4c
 
 ALL_TARGET=	build

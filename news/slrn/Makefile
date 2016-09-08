@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2015/05/20 20:38:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/09/08 10:14:35 jasper Exp $
 
 COMMENT=		SLang-based newsreader
 
 DISTNAME=		slrn-1.0.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		news
 
 HOMEPAGE=		http://slrn.sourceforge.net/
@@ -13,7 +13,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto m ssl termcap slang
+WANTLIB=		c crypto iconv intl m ssl slang
 
 MASTER_SITES=		http://jedsoft.org/releases/slrn/ \
 			http://jedsoft.org/releases/slrn/old/
@@ -21,8 +21,9 @@ MASTER_SITES=		http://jedsoft.org/releases/slrn/ \
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
 NO_TEST=		Yes
-LIB_DEPENDS=		devel/libslang
-MODULES=		devel/gettext
+BUILD_DEPENDS=		devel/gettext-tools
+LIB_DEPENDS=		devel/gettext \
+			devel/libslang
 
 CONFIGURE_STYLE=	gnu
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
