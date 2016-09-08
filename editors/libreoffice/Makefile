@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2016/09/04 14:55:52 robert Exp $
+# $OpenBSD: Makefile,v 1.151 2016/09/08 16:47:21 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		5.2
-VERSION=	${BV}.0.4
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -19,8 +19,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
-
-REVISION-main=	0
 
 EPOCH=		0
 
@@ -79,7 +77,7 @@ DISTFILES+=	${EDISTFILES} \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
 		mdds-1.2.0.tar.bz2:0 \
 		aa899eff126216dafe721149fbdb511b-liblangtag-0.5.8.tar.bz2:0 \
-		language-subtag-registry-2016-02-10.tar.bz2:0 \
+		language-subtag-registry-2016-07-19.tar.bz2:0 \
 		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		10d61fbaa6a06348823651b1bd7940fe-libexttextcat-3.4.4.tar.bz2:0 \
