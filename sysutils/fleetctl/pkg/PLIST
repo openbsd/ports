@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/08 17:12:01 jasper Exp $
+@bin bin/fleetctl
+share/doc/fleetctl/
+share/doc/fleetctl/api-v1-alpha.md
+share/doc/fleetctl/api-v1.md
+share/doc/fleetctl/architecture.md
+share/doc/fleetctl/deployment-and-configuration.md
+share/doc/fleetctl/examples/
+share/doc/fleetctl/examples/api.py
+share/doc/fleetctl/examples/example-deployment.md
+share/doc/fleetctl/examples/img/
+share/doc/fleetctl/examples/img/subgun.png
+share/doc/fleetctl/examples/service-discovery.md
+share/doc/fleetctl/rkt_guide.md
+share/doc/fleetctl/states.md
+share/doc/fleetctl/unit-files-and-scheduling.md
+share/doc/fleetctl/using-the-client.md

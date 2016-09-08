@@ -1,0 +1,2 @@
+fleetctl is a command-line interface to fleet, the cluster-wide CoreOS
+init system.

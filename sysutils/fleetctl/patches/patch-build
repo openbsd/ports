@@ -1,0 +1,9 @@
+$OpenBSD: patch-build,v 1.1.1.1 2016/09/08 17:12:01 jasper Exp $
+--- build.orig	Thu Sep  8 14:21:05 2016
++++ build	Thu Sep  8 14:21:12 2016
+@@ -21,4 +21,4 @@ else
+ fi
+ 
+ echo "Building fleetctl..."
+-CGO_ENABLED=0 go build -o bin/fleetctl -a -installsuffix netgo -ldflags '-s' ${REPO_PATH}/fleetctl
++CGO_ENABLED=0 go build -x -o bin/fleetctl -a -installsuffix netgo -ldflags '-s' ${REPO_PATH}/fleetctl
