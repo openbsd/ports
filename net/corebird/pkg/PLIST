@@ -1,14 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/07 16:01:35 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/08 00:07:10 awolk Exp $
 @bin bin/corebird
 @man man/man1/corebird.1
 share/appdata/
 share/appdata/org.baedert.corebird.appdata.xml
 share/applications/org.baedert.corebird.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.baedert.corebird.service
-share/glib-2.0/
-share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.baedert.corebird.gschema.xml
 share/icons/hicolor/128x128/apps/corebird.png
 share/icons/hicolor/16x16/apps/corebird.png
@@ -18,19 +14,11 @@ share/icons/hicolor/32x32/apps/corebird.png
 share/icons/hicolor/48x48/apps/corebird.png
 share/icons/hicolor/64x64/apps/corebird.png
 share/icons/hicolor/96x96/apps/corebird.png
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/corebird.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/corebird.mo
 share/locale/ca/LC_MESSAGES/corebird.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/corebird.mo
 share/locale/de/LC_MESSAGES/corebird.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/corebird.mo
 share/locale/es/LC_MESSAGES/corebird.mo
 share/locale/es_419/
@@ -42,22 +30,16 @@ share/locale/es_MX/LC_MESSAGES/corebird.mo
 share/locale/es_VE/
 share/locale/es_VE/LC_MESSAGES/
 share/locale/es_VE/LC_MESSAGES/corebird.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/corebird.mo
 share/locale/fi/LC_MESSAGES/corebird.mo
 share/locale/fr/LC_MESSAGES/corebird.mo
 share/locale/hi/LC_MESSAGES/corebird.mo
 share/locale/hu/LC_MESSAGES/corebird.mo
-share/locale/id/
-share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/corebird.mo
 share/locale/it/LC_MESSAGES/corebird.mo
 share/locale/ja/LC_MESSAGES/corebird.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
-share/locale/lt/LC_MESSAGES/corebird.mo
 share/locale/ko/LC_MESSAGES/corebird.mo
+share/locale/lt/LC_MESSAGES/corebird.mo
 share/locale/nl/LC_MESSAGES/corebird.mo
 share/locale/pl/LC_MESSAGES/corebird.mo
 share/locale/pt/LC_MESSAGES/corebird.mo

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/07 16:01:35 awolk Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/08 00:07:10 awolk Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
 GH_ACCOUNT =		baedert
 GH_PROJECT =		corebird
-GH_TAGNAME =		1.3
+GH_TAGNAME =		1.3.1
 
 CATEGORIES =		net
 
