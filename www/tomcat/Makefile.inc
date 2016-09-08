@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2014/06/06 10:13:05 dcoppa Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2016/09/08 12:54:14 dcoppa Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -59,6 +59,7 @@ do-install:
 	cd ${WRKDIST}/webapps && \
 		tar cf - host-manager manager | \
 		tar -C ${PREFIX}/tomcat/webapps -xf -
+	@chmod 0555 ${PREFIX}/tomcat/bin/*.sh
 	${INSTALL_DATA} `find ${WRKDIST}/conf/* -prune -type f` ${SAMPLEDIR}
 	${SUBST_CMD} ${SAMPLEDIR}/server.xml
 	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \

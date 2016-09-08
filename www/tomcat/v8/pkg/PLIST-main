@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2016/09/08 12:54:14 dcoppa Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -29,6 +29,13 @@ share/examples/tomcat/context.xml
 @owner
 @group
 share/examples/tomcat/host-manager.xml
+share/examples/tomcat/jaspic-providers.xml
+@owner _tomcat
+@group _tomcat
+@sample ${SYSCONFDIR}/tomcat/jaspic-providers.xml
+@owner
+@group
+share/examples/tomcat/jaspic-providers.xsd
 share/examples/tomcat/logging.properties
 @owner _tomcat
 @group _tomcat
@@ -95,10 +102,11 @@ tomcat/lib/catalina-ha.jar
 tomcat/lib/catalina-storeconfig.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-4.5.jar
+tomcat/lib/ecj-4.5.1.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar
+tomcat/lib/jaspic-api.jar
 tomcat/lib/jsp-api.jar
 tomcat/lib/servlet-api.jar
 tomcat/lib/tomcat-api.jar

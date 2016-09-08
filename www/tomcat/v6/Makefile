@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2016/09/08 12:54:14 dcoppa Exp $
 
 COMMENT-main =	Java servlet 2.5 and Java server pages 2.1 server
 
 MAJ_VER =	6
 MIN_VER =	0
 MICRO_VER =	45
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS-examples =www/tomcat/v${MAJ_VER},-main>=${MAJ_VER},<7
 
