@@ -1,32 +1,96 @@
-$OpenBSD: patch-src_plot_32bpp-xrgb8888_c,v 1.1.1.1 2016/09/01 00:25:40 bentley Exp $
---- src/plot/32bpp-xrgb8888.c.orig	Tue Aug 30 02:40:26 2016
-+++ src/plot/32bpp-xrgb8888.c	Tue Aug 30 02:40:37 2016
-@@ -13,8 +13,8 @@
- #ifndef _WIN32
- #include <endian.h>
- #else
+$OpenBSD: patch-src_plot_32bpp-xrgb8888_c,v 1.2 2016/09/08 03:52:24 bentley Exp $
+--- src/plot/32bpp-xrgb8888.c.orig	Sun Jan  3 04:52:16 2016
++++ src/plot/32bpp-xrgb8888.c	Wed Sep  7 20:12:50 2016
+@@ -10,13 +10,6 @@
+ #include <stdbool.h>
+ #include <stdlib.h>
+ 
+-#ifndef _WIN32
+-#include <endian.h>
+-#else
 -#define __BYTE_ORDER __BYTE_ORDER__
 -#define __BIG_ENDIAN __ORDER_BIG_ENDIAN__
-+#define BYTE_ORDER __BYTE_ORDER__
-+#define BIG_ENDIAN __ORDER_BIG_ENDIAN__
- #endif
- 
+-#endif
+-
  #include "libnsfb.h"
-@@ -32,7 +32,7 @@ static inline uint32_t *get_xy_loc(nsfb_t *nsfb, int x
+ #include "libnsfb_plot.h"
+ #include "libnsfb_plot_util.h"
+@@ -24,26 +17,53 @@
+ #include "nsfb.h"
+ #include "plot.h"
+ 
++#define UNUSED __attribute__((unused))
+ 
+-#define UNUSED __attribute__((unused)) 
+ 
++/**
++ * Get the address of a logical location on the framebuffer
++ */
+ static inline uint32_t *get_xy_loc(nsfb_t *nsfb, int x, int y)
+ {
          return (void *)(nsfb->ptr + (y * nsfb->linelen) + (x << 2));
  }
  
 -#if __BYTE_ORDER == __BIG_ENDIAN
-+#if BYTE_ORDER == BIG_ENDIAN
++
++#ifdef NSFB_BE_BYTE_ORDER
++
++/**
++ * convert a 32bpp big endian pixel value to netsurf colour
++ *
++ * \param nsfb The framebuffer
++ * \param pixel The pixel value
++ * \return The netsurf colour value.
++ */
  static inline nsfb_colour_t pixel_to_colour(UNUSED nsfb_t *nsfb, uint32_t pixel)
  {
          return (pixel >> 8) & ~0xFF000000U;
-@@ -43,7 +43,7 @@ static inline uint32_t colour_to_pixel(UNUSED nsfb_t *
+ }
+ 
+-/* convert a colour value to a 32bpp pixel value ready for screen output */
++/**
++ * convert a colour value to a big endian 32bpp pixel value
++ *
++ * \param nsfb The framebuffer
++ * \param c The framebuffer colour
++ * \return A pixel value ready for screen output.
++ */
+ static inline uint32_t colour_to_pixel(UNUSED nsfb_t *nsfb, nsfb_colour_t c)
  {
          return (c << 8);
  }
 -#else /* __BYTE_ORDER == __BIG_ENDIAN */
-+#else /* BYTE_ORDER == BIG_ENDIAN */
++
++#else
++
++/**
++ * convert a 32bpp little endian pixel value to netsurf colour
++ *
++ * \param nsfb The framebuffer
++ * \param pixel The pixel value
++ * \return The netsurf colour value.
++ */
  static inline nsfb_colour_t pixel_to_colour(UNUSED nsfb_t *nsfb, uint32_t pixel)
  {
          return ((pixel & 0xFF) << 16) |
+@@ -51,11 +71,19 @@ static inline nsfb_colour_t pixel_to_colour(UNUSED nsf
+                 ((pixel & 0xFF0000) >> 16);
+ }
+ 
+-/* convert a colour value to a 32bpp pixel value ready for screen output */
++
++/**
++ * convert a colour value to a little endian 32bpp pixel value
++ *
++ * \param nsfb The framebuffer
++ * \param c The netsurf colour
++ * \return A pixel value ready for screen output.
++ */
+ static inline uint32_t colour_to_pixel(UNUSED nsfb_t *nsfb, nsfb_colour_t c)
+ {
+         return ((c & 0xff0000) >> 16) | (c & 0xff00) | ((c & 0xff) << 16);
+ }
++
+ #endif
+ 
+ #define PLOT_TYPE uint32_t
