@@ -1,0 +1,8 @@
+AdvanceMESS is an unofficial MESS (Multi Emulator Super System) version
+with advanced video support. It is an emulator for the hardware of many
+different games consoles (e.g. Sega, NES, SNES, etc.) as well as many
+different old games-oriented home computers (e.g. C64, C128, ZX80, etc.)
+
+AdvanceMESS supports many special video effects to improve image quality
+when it's stretched. The most advanced effects add missing pixels trying
+to match the image patterns.
