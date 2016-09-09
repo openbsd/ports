@@ -1,0 +1,72 @@
+$OpenBSD: patch-Portroach_SiteHandler_GitHub_pm,v 1.1 2016/09/09 06:41:25 jasper Exp $
+
+From 0db355e340d0c162a5bcb67424f25458915e1d6d Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 31 Jan 2016 14:04:44 +0100
+Subject: [PATCH] try harder to make sense of github
+
+From 8404eca077af475de10ce50b20326d6213c72622 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 31 Jan 2016 14:03:13 +0100
+Subject: [PATCH] handle another github url
+
+--- Portroach/SiteHandler/GitHub.pm.orig	Fri Jan  1 21:46:36 2016
++++ Portroach/SiteHandler/GitHub.pm	Fri Sep  9 08:40:10 2016
+@@ -19,6 +19,7 @@ package Portroach::SiteHandler::GitHub;
+ 
+ use JSON qw(decode_json);
+ use LWP::UserAgent;
++use URI;
+ 
+ use Portroach::Const;
+ use Portroach::Config;
+@@ -101,6 +102,8 @@ sub GetFiles
+ 	    $projname = $1;
+ 	} elsif ($url =~ /https:\/\/github.com\/downloads\/(.*)\//) {
+ 	    $projname = $1;
++	} elsif ($url =~ /https:\/\/github.com\/(.*?)\/releases\//) {
++	    $projname = $1;
+ 	}
+ 
+ 	if ($projname) {
+@@ -117,7 +120,7 @@ sub GetFiles
+ 		$response = $ua->request(HTTP::Request->new(GET => $query));
+ 
+ 		if (!$response->is_success || $response->status_line !~ /^2/) {
+-			_debug('GET failed: ' . $response->status_line);
++			_debug('GET failed for /latest: ' . $response->status_line);
+ 			# Project didn't do any releases, so let's try tags instead.
+ 			$query = 'https://api.github.com/repos/' . $projname . '/tags';
+ 			_debug("GET $query");
+@@ -135,15 +138,29 @@ sub GetFiles
+ 			$json = decode_json($response->decoded_content);
+ 			foreach my $tag (@$json) {
+ 			    my $tag_url = $tag->{tarball_url};
++			    _debug("  -> $tag_url");
+ 			    push(@$files, $tag_url);
+ 			}
+ 
+ 			_debug('Found ' . scalar @$files . ' files');
+ 			return 1;
+ 		}
+-
+ 		$json = decode_json($response->decoded_content);
+-		push(@$files, $json->{tarball_url});
++
++		# TODO: To generate proper URLs in the frontend:
++		# If the project has done actual releases, (check the
++		# url), then look for the item with label "Source
++		# code" and use it's name field
++		#
++		# For now we take the filename part of the URI, add
++		# a recognized extension and treat it as a file.
++		{
++		    my $filename = (URI->new($json->{tarball_url})->path_segments)[-1];
++		    _debug("  -> " . $filename);
++		    $filename =~ s/^v//;
++		    $projname =~ m/.*?\/(.*)/;
++		    push(@$files, $1 . "-" . $filename . ".tar.gz");
++		}
+ 
+ 		_debug('Found ' . scalar @$files . ' files');
+ 	} else {
