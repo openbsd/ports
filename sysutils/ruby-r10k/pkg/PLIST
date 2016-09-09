@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/06/03 13:33:59 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/09/09 10:46:15 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -9,6 +9,7 @@ ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.mkd
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/r10k
 ${GEM_LIB}/gems/${DISTNAME}/doc/
@@ -32,6 +33,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/updating-your-puppetfile.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
+${GEM_LIB}/gems/${DISTNAME}/integration/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/
@@ -47,6 +49,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/sles-12-64mda
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1004-64mda
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1204-64mda
 ${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1404-64mda
+${GEM_LIB}/gems/${DISTNAME}/integration/configs/pe/ubuntu-1604-64mda
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/files/hiera.yaml
@@ -89,30 +92,10 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_sles12.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1004.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1204.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1404.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/README.mkd
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-rugged-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-rugged-pe-rhel7.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-rugged-pe-sles11.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-rugged-pe-ubuntu1204.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-rugged-pe-ubuntu1404.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-shellgit-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-shellgit-pe-rhel7.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-shellgit-pe-sles11.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-shellgit-pe-ubuntu1204.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/all_tests-shellgit-pe-ubuntu1404.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/basic_functionality/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/basic_functionality/all_tests-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/command_line/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/command_line/all_tests-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/git_source/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/git_source/all_tests-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/user_scenario/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/user_scenario/basic_workflow/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/user_scenario/basic_workflow/all_tests-pe-centos6.sh
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/user_scenario/complex_workflow/
-${GEM_LIB}/gems/${DISTNAME}/integration/test_run_scripts/user_scenario/complex_workflow/all_tests-pe-centos6.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTPS_PROXY_effects_git_source.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_effects_forge_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/install_pe_only_module_with_puppetfile.rb
@@ -135,6 +118,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_cli_env_flag.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_cmd_line_arg.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/HTTPS_proxy_and_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_git.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_submodule.rb
@@ -143,6 +127,9 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/negative/neg_git_broken
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/negative/neg_git_unauthorized_https.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/negative/neg_git_unauthorized_ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/negative/neg_git_unicode_branch.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/purging/
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/purging/content_not_purged_at_root.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/purging/default_purging.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/user_scenario/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/user_scenario/basic_workflow/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/user_scenario/basic_workflow/multi_env_1000_branches.rb
@@ -306,6 +293,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/runner/windows.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/subprocess/subprocess_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/symbolize_keys.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/version.rb
+${GEM_LIB}/gems/${DISTNAME}/locales/
+${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/r10k.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/r10k.yaml.example
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -330,7 +319,21 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/invalid-syntax/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/invalid-syntax/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/load-error/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/load-error/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-with-version/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-with-version/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-without-version/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-without-version/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/expected_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_expected_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_unmanaged_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/expected_2
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/unmanaged_2
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/subprocess/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/subprocess/runner/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/subprocess/runner/no-execute.sh
@@ -441,6 +444,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/attempt_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/commands_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/exec_env_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/purgeable_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/setopts_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/result_spec.rb
