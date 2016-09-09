@@ -1,4 +1,13 @@
-$OpenBSD: patch-src_tools_pkcs15-tool_c,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
+$OpenBSD: patch-src_tools_pkcs15-tool_c,v 1.2 2016/09/09 14:57:33 dcoppa Exp $
+
+commit 678f2bb1a65e5848dffc995f63e81d1f8092352f
+Author: Ian Young <ian@iay.org.uk>
+Date:   Thu Sep 8 21:05:17 2016 +0100
+
+Make pkcs15-tool --dump object formatting consistent
+
+Properly terminate "Encoded serial" lines so that the blank line after
+X.509 certificate blocks isn't consumed doing so.
 
 commit d97ee793337e3590bed38426a0c46d095b087d48
 Author: Nuno Goncalves <nunojpg@gmail.com>
@@ -11,8 +20,16 @@ Don't try to free again pubkey if the parent cert has already been freed.
 Signed-off-by: Nuno Goncalves <nunojpg@gmail.com>
 
 --- src/tools/pkcs15-tool.c.orig	Fri Jun  3 11:19:51 2016
-+++ src/tools/pkcs15-tool.c	Tue Jun  7 15:50:15 2016
-@@ -1051,8 +1051,8 @@ static int read_ssh_key(void)
++++ src/tools/pkcs15-tool.c	Fri Sep  9 16:46:01 2016
+@@ -248,6 +248,7 @@ static void print_cert_info(const struct sc_pkcs15_obj
+ 	if (rv >= 0 && cert_parsed)   {
+ 		printf("\tEncoded serial : %02X %02X ", *(cert_parsed->serial), *(cert_parsed->serial + 1));
+ 		util_hex_dump(stdout, cert_parsed->serial + 2, cert_parsed->serial_len - 2, "");
++		printf("\n");
+ 		sc_pkcs15_free_certificate(cert_parsed);
+ 	}
+ }
+@@ -1051,8 +1052,8 @@ static int read_ssh_key(void)
  		fclose(outf);
  	if (cert)
  		sc_pkcs15_free_certificate(cert);
