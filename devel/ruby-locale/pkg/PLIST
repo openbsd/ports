@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/09/09 10:27:46 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/doc/
+${GEM_LIB}/gems/${DISTNAME}/doc/text/
+${GEM_LIB}/gems/${DISTNAME}/doc/text/news.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale.rb
@@ -12,6 +17,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/locale/data/
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/data/languages.tab.gz
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/data/regions.tab.gz
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/driver/
+${GEM_LIB}/gems/${DISTNAME}/lib/locale/driver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/driver/cgi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/driver/env.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/driver/jruby.rb
@@ -22,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/locale/info/
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/info.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/info/language.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/info/region.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/locale/middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag/
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag/cldr.rb
@@ -31,9 +38,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag/posix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag/rfc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/tag/simple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/taglist.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/locale/util/
-${GEM_LIB}/gems/${DISTNAME}/lib/locale/util/memoizable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/locale/version.rb
+${GEM_LIB}/gems/${DISTNAME}/locale.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/samples/
 ${GEM_LIB}/gems/${DISTNAME}/samples/cgi/
 ${GEM_LIB}/gems/${DISTNAME}/samples/cgi/README
@@ -45,16 +51,16 @@ ${GEM_LIB}/gems/${DISTNAME}/samples/rack/
 ${GEM_LIB}/gems/${DISTNAME}/samples/rack/README
 ${GEM_LIB}/gems/${DISTNAME}/samples/rack/hello_rack.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/rack/hello_rack.ru
+${GEM_LIB}/gems/${DISTNAME}/samples/rack/locale_rack.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/sample_1.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/sample_info.rb
-${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_detect_cgi.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_detect_general.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_driver_jruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_driver_win32.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_info.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_memoizable.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_locale.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tag.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_taglist.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_thread.rb
