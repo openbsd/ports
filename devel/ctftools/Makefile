@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/08 21:56:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/09 12:24:45 jasper Exp $
 
 COMMENT =		collection of CTF tools
 
 DISTNAME =		ctftools-0.1
-REVISION =		3
+REVISION =		4
 GH_ACCOUNT =		jasperla
 GH_PROJECT =		ctftools
 GH_COMMIT =		c4a72ae4266a97407916728689568c7f747d0e4b
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c dwarf elf pthread z
 
 LIB_DEPENDS =		devel/libelf \
-			devel/libdwarf
+			devel/libdwarf>=20160613p0
 
 WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
 
