@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/18 19:56:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/09 10:43:21 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -33,6 +33,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/version.rb
+${GEM_LIB}/gems/${DISTNAME}/locales/
+${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/puppet_forge.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
