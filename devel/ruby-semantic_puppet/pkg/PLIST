@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/03 13:31:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/09 10:44:18 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -18,8 +18,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/dependency/graph_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/dependency/module_release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/dependency/source.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/dependency/unsatisfiable_graph.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/gem_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/semantic_puppet/version_range.rb
+${GEM_LIB}/gems/${DISTNAME}/locales/
+${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/semantic_puppet.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
