@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/09 12:20:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/09 12:25:07 jasper Exp $
 
 COMMENT=		library to access the DWARF debugging file format
 
 V=			20160613
 DISTNAME=		libdwarf-${V}
 WRKDIST=		${WRKDIR}/dwarf-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS=		dwarf 1.0
 
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.prevanders.net/dwarf.html
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
