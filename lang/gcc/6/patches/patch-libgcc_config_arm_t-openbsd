@@ -1,0 +1,5 @@
+$OpenBSD: patch-libgcc_config_arm_t-openbsd,v 1.1 2016/09/09 20:51:03 pascal Exp $
+--- libgcc/config/arm/t-openbsd.orig	Fri Sep  9 17:08:27 2016
++++ libgcc/config/arm/t-openbsd	Fri Sep  9 17:08:18 2016
+@@ -0,0 +1 @@
++LIB2ADD_ST += $(srcdir)/config/arm/freebsd-atomic.c

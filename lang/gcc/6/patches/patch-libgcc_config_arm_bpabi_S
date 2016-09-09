@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgcc_config_arm_bpabi_S,v 1.1 2016/09/09 20:51:03 pascal Exp $
+--- libgcc/config/arm/bpabi.S.orig	Thu Sep  8 12:14:37 2016
++++ libgcc/config/arm/bpabi.S	Thu Sep  8 12:14:41 2016
+@@ -22,8 +22,6 @@
+    see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+    <http://www.gnu.org/licenses/>.  */
+ 
+-	.cfi_sections .debug_frame
+-
+ #ifdef __ARM_EABI__
+ /* Some attributes that are common to all routines in this file.  */
+ 	/* Tag_ABI_align_needed: This code does not require 8-byte

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PFRAG.arm-main,v 1.1.1.1 2016/09/04 16:20:20 pascal Exp $
+@comment $OpenBSD: PFRAG.arm-main,v 1.2 2016/09/09 20:51:03 pascal Exp $
 lib/gcc/${CONFIG}/${V}/include/arm_acle.h
 lib/gcc/${CONFIG}/${V}/include/arm_neon.h
 lib/gcc/${CONFIG}/${V}/include/mmintrin.h
 lib/gcc/${CONFIG}/${V}/include/tgmath.h
+lib/gcc/${CONFIG}/${V}/include/unwind-arm-common.h
 lib/gcc/${CONFIG}/${V}/include/unwind.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aarch-common-protos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/aout.h
@@ -11,6 +12,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/arm-opts.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/arm-protos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/arm.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/elf.h
+lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/openbsd1.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/arm/openbsd.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/dbxelf.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h

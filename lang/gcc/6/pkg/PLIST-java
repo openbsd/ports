@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.1.1.1 2016/09/04 16:20:22 pascal Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2016/09/09 20:51:03 pascal Exp $
 @option is-branch
 bin/eaot-compile
 @bin bin/egappletviewer
@@ -4049,6 +4049,7 @@ lib/libgcj.spec
 lib/libgij.la
 @lib lib/libgij.so.${LIBgij_VERSION}
 lib/logging.properties
+lib/pkgconfig/libgcj-6.pc
 lib/security/
 lib/security/classpath.security
 @bin libexec/gcc/${CONFIG}/${V}/ecj1

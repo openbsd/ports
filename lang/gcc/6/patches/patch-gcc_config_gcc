@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2016/09/09 20:51:03 pascal Exp $
 --- gcc/config.gcc.orig	Wed Jun  8 15:34:25 2016
-+++ gcc/config.gcc	Tue Aug 23 23:24:07 2016
++++ gcc/config.gcc	Thu Sep  8 13:38:32 2016
 @@ -797,6 +797,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -30,9 +30,9 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
  	tmake_file="${tmake_file} arm/t-arm"
  	;;
 +arm-*-openbsd*)
-+	tm_file="dbxelf.h elfos.h arm/elf.h arm/aout.h arm/arm.h openbsd.h openbsd-libpthread.h arm/openbsd.h"
++	tm_file="dbxelf.h elfos.h arm/elf.h arm/aout.h arm/openbsd1.h arm/arm.h openbsd.h openbsd-libpthread.h arm/openbsd.h"
 +	extra_options="${extra_options} openbsd.opt"
-+	tmake_file="${tmake_file} arm/t-arm"
++	tmake_file="${tmake_file} arm/t-arm arm/t-bpabi"
 +	set
 +	;;
  arm*-*-linux-*)			# ARM GNU/Linux with ELF

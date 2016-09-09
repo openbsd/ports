@@ -1,18 +1,19 @@
-$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
+$OpenBSD: patch-libgcc_config_host,v 1.2 2016/09/09 20:51:03 pascal Exp $
 --- libgcc/config.host.orig	Tue May 17 08:15:52 2016
-+++ libgcc/config.host	Tue Aug 23 15:48:20 2016
-@@ -386,6 +386,10 @@ arm*-*-freebsd*)                # ARM FreeBSD EABI
++++ libgcc/config.host	Fri Sep  9 17:09:33 2016
+@@ -386,6 +386,11 @@ arm*-*-freebsd*)                # ARM FreeBSD EABI
  arm*-*-netbsdelf*)
  	tmake_file="$tmake_file arm/t-arm arm/t-netbsd t-slibgcc-gld-nover"
  	;;
 +arm-*-openbsd*)
-+	tmake_file="$tmake_file arm/t-arm arm/t-elf"
++	tmake_file="$tmake_file arm/t-arm arm/t-elf arm/t-bpabi arm/t-openbsd"
 +	tmake_file="$tmake_file t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
++	unwind_header=config/arm/unwind-arm.h
 +	;;
  arm*-*-linux*)			# ARM GNU/Linux with ELF
  	tmake_file="${tmake_file} arm/t-arm t-fixedpoint-gnu-prefix t-crtfm"
  	tmake_file="${tmake_file} arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
-@@ -847,6 +851,12 @@ microblaze*-*-rtems*)
+@@ -847,6 +852,12 @@ microblaze*-*-rtems*)
  	;;
  mips*-*-netbsd*)			# NetBSD/mips, either endian.
  	;;
@@ -25,7 +26,7 @@ $OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
  mips*-*-linux*)				# Linux MIPS, either endian.
  	extra_parts="$extra_parts crtfastmath.o"
  	tmake_file="${tmake_file} t-crtfm"
-@@ -1003,6 +1013,9 @@ powerpc*-*-freebsd*)
+@@ -1003,6 +1014,9 @@ powerpc*-*-freebsd*)
  powerpc-*-netbsd*)
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
  	;;
@@ -35,7 +36,7 @@ $OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
  powerpc-*-eabispe*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"
  	extra_parts="$extra_parts crtbegin.o crtend.o crtbeginS.o crtendS.o crtbeginT.o ecrti.o ecrtn.o ncrti.o ncrtn.o"
-@@ -1175,6 +1188,8 @@ sh-wrs-vxworks)
+@@ -1175,6 +1189,8 @@ sh-wrs-vxworks)
  	tmake_file="$tmake_file sh/t-sh t-crtstuff-pic t-fdpbit"
  	;;
  sparc-*-netbsdelf*)

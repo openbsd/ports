@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
---- gcc/config/arm/openbsd.h.orig	Wed Mar 23 22:15:54 2016
-+++ gcc/config/arm/openbsd.h	Wed Mar 23 22:15:39 2016
-@@ -0,0 +1,240 @@
+$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2016/09/09 20:51:03 pascal Exp $
+--- gcc/config/arm/openbsd.h.orig	Wed Sep  7 23:44:12 2016
++++ gcc/config/arm/openbsd.h	Fri Sep  9 00:18:57 2016
+@@ -0,0 +1,244 @@
 +/* Definitions of target machine for GNU compiler, OpenBSD/arm ELF version.
 +   Copyright (C) 2002 Free Software Foundation, Inc.
 +   Contributed by Wasabi Systems, Inc.
@@ -45,18 +45,21 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Ex
 +/* armv5te default cpu.  */
 +#define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm9e
 +
-+/* Default is to use APCS-32 mode.  */
++/* We default to a soft-float ABI so that binaries can run on all
++   target hardware.  */
++#undef TARGET_DEFAULT_FLOAT_ABI
++#define TARGET_DEFAULT_FLOAT_ABI ARM_FLOAT_ABI_SOFT
 +
-+/* Default it to use ATPCS with soft-VFP.  */
-+#undef TARGET_DEFAULT
-+#define TARGET_DEFAULT			\
-+  (MASK_APCS_FRAME			\
-+   | TARGET_ENDIAN_DEFAULT)
++/* We default to the "aapcs-linux" ABI so that enums are int-sized by
++   default.  */
++#undef ARM_DEFAULT_ABI
++#define ARM_DEFAULT_ABI ARM_ABI_AAPCS_LINUX
 +
 +
 +#define TARGET_OS_CPP_BUILTINS()	\
 +  do					\
 +    {					\
++      builtin_define ("__GXX_MERGED_TYPEINFO_NAMES=0"); \
 +      OPENBSD_OS_CPP_BUILTINS_ELF();	\
 +    }					\
 +  while (0)
@@ -83,7 +86,7 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Ex
 +
 +#undef SUBTARGET_EXTRA_ASM_SPEC
 +#define SUBTARGET_EXTRA_ASM_SPEC	\
-+  "-matpcs %{fpic|fPIC|fpie|fPIE:-k}"
++  "%{mabi=apcs-gnu|mabi=atpcs:-meabi=gnu;:-meabi=4} %{fpic|fPIC|fpie|fPIE:-k}"
 +
 +/* Default floating point model is soft-VFP.
 +   FIXME: -mhard-float currently implies FPA.  */
@@ -216,7 +219,8 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Ex
 +     %{pg:gcrt0%O%s}		\
 +     %{!pg:			\
 +       %{p:gcrt0%O%s}		\
-+       %{!p:crt0%O%s}}}		\
++       %{!p:%{!static:crt0%O%s} %{static:%{nopie:crt0%O%s} \
++        %{!nopie:rcrt0%O%s}}}}} \
 +   %:if-exists(crti%O%s)	\
 +   %{static:%:if-exists-else(crtbeginT%O%s crtbegin%O%s)} \
 +   %{!static: \

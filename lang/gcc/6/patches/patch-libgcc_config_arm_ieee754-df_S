@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgcc_config_arm_ieee754-df_S,v 1.1 2016/09/09 20:51:03 pascal Exp $
+--- libgcc/config/arm/ieee754-df.S.orig	Thu Sep  8 12:16:08 2016
++++ libgcc/config/arm/ieee754-df.S	Thu Sep  8 12:16:23 2016
+@@ -38,8 +38,6 @@
+  * from sp used to compute the CFA.
+  */
+ 
+-	.cfi_sections .debug_frame
+-
+ #ifndef __ARMEB__
+ #define xl r0
+ #define xh r1

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/04 16:20:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/09 20:51:03 pascal Exp $
 
-ONLY_FOR_ARCHS = amd64 i386 sparc64
+ONLY_FOR_ARCHS = amd64 arm i386 sparc64
 DPB_PROPERTIES = parallel
 
 V = 6.2.0
@@ -57,7 +57,7 @@ SHARED_LIBS =	estdc++		18.0 \
 PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 arm hppa i386 mips64 powerpc sparc64
+ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
