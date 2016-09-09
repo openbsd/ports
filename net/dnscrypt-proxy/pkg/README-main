@@ -1,26 +1,38 @@
-$OpenBSD: README-main,v 1.5 2016/02/04 14:29:25 sthen Exp $
+$OpenBSD: README-main,v 1.6 2016/09/09 17:37:51 tj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 In order to perform queries over DNSCrypt, the easiest way is change
-your /etc/resolv.conf file to:
+your /etc/resolv.conf file:
 
 nameserver 127.0.0.1
 lookup file bind
 options edns0
 
-But DNSCrypt does _not_ cache queries. So the recommended way to use
-it is as a forwarder for a DNS cache like Unbound.
-Both can safely run on the same host.
+DNSCrypt does _not_ cache queries, so the recommended way to use it is
+as a forwarder for a DNS cache like Unbound. The following unbound.conf
+example may be used as a guideline:
+
+server:
+	interface: 127.0.0.1
+	interface: 192.168.1.1 # additional addresses to listen on
+	access-control: 192.168.1.0/24 allow # who's allowed to make queries
+	do-not-query-localhost: no
+	hide-identity: yes
+	hide-version: yes
+
+forward-zone:
+        name: "."
+        forward-addr: 127.0.0.1@40
 
 A list of resolvers providing DNSCrypt service is available at
 ${TRUEPREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv.
 Choose one (there is no default) and configure it, for example:
 
 rcctl enable dnscrypt_proxy
-rcctl set dnscrypt_proxy flags -R dnscrypt.eu-nl
+rcctl set dnscrypt_proxy flags -E -m1 -R dnscrypt.eu-nl -a 127.0.0.1:40
 rcctl start dnscrypt_proxy
 
-Also see http://dnscrypt.org/.
+For more information, see https://dnscrypt.org/
