@@ -1,0 +1,16 @@
+$OpenBSD: patch-go_logger_redirect_stderr_nix_go,v 1.1.1.1 2016/09/09 14:11:43 abieber Exp $
+
+This can be removed in the next release of keybase:
+https://github.com/keybase/client/pull/3832/files
+
+--- go/logger/redirect_stderr_nix.go.orig	Wed Sep  7 08:22:21 2016
++++ go/logger/redirect_stderr_nix.go	Wed Sep  7 08:22:27 2016
+@@ -1,7 +1,7 @@
+ // Copyright 2016 Keybase, Inc. All rights reserved. Use of
+ // this source code is governed by the included BSD license.
+ 
+-// +build linux,!android darwin freebsd
++// +build linux,!android darwin freebsd openbsd
+ 
+ package logger
+ 

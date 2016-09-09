@@ -1,0 +1,9 @@
+Command line client for Keybase.io
+
+Keybase maps your identity to your public keys, and vice versa. It
+lets you 'prove' ownership of things like github accounts, domains and
+twitter accounts.
+
+Once you have proven various identities, it is easier for people to
+verify that you are actually who you say you are. This gives some
+confidence when sending / receiving signed or encrypted messages!

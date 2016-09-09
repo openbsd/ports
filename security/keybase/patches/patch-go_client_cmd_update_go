@@ -1,0 +1,24 @@
+$OpenBSD: patch-go_client_cmd_update_go,v 1.1.1.1 2016/09/09 14:11:43 abieber Exp $
+
+Disabling this because we don't want the binary to update itself
+out from under us.
+
+Upstream doesn't seem interested in our hacky Path finding process:
+https://github.com/keybase/go-ps/pull/7#discussion_r73917329
+
+--- go/client/cmd_update.go.orig	Wed Sep  7 09:23:58 2016
++++ go/client/cmd_update.go	Wed Sep  7 09:24:50 2016
+@@ -35,12 +35,7 @@ func newCmdUpdateCheck(cl *libcmdline.CommandLine, g *
+ 		Name:  "check",
+ 		Usage: "Trigger an update check",
+ 		Action: func(c *cli.Context) {
+-			updaterPath, err := install.UpdaterBinPath()
+-			if err != nil {
+-				g.Log.Errorf("Error finding updater path: %s", err)
+-				return
+-			}
+-			g.Log.Errorf("This is no longer supported. Instead you can run:\n\n\t%s check", updaterPath)
++			g.Log.Error("Not supported on OpenBSD.")
+ 		},
+ 	}
+ }
