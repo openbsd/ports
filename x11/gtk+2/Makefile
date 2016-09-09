@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.211 2016/07/09 08:57:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.212 2016/09/09 20:35:19 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
 
-GNOME_VERSION=		2.24.30
-REVISION-cups=		0
+GNOME_VERSION=		2.24.31
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
@@ -28,7 +27,7 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z iconv intl
 
 WANTLIB-main += ${WANTLIB} c
 
@@ -38,12 +37,10 @@ WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn nettle p11-kit tasn1
 
 MULTI_PACKAGES=		-main -cups
 
-MODULES=		devel/gettext \
-			lang/python \
+MODULES=		lang/python \
 			x11/gnome
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/atk \
+LIB_DEPENDS-main=	devel/atk \
 			devel/pango \
 			graphics/gdk-pixbuf2
 
@@ -55,8 +52,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic # pulls x11/gnome/icon-theme
 
-LIB_DEPENDS-cups=	${LIB_DEPENDS} \
-			print/cups,-libs \
+LIB_DEPENDS-cups=	print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
 MODPY_BUILDDEP=		No
