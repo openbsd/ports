@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/09 10:42:13 sebastia Exp $
 
 COMMENT =		safe YAML parsing
 
-DISTNAME =		safe_yaml-0.7.1
-REVISION =		0
+DISTNAME =		safe_yaml-1.0.4
 CATEGORIES =		devel
 
 HOMEPAGE =		http://dtao.github.com/safe_yaml/
