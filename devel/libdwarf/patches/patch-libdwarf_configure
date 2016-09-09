@@ -1,0 +1,25 @@
+$OpenBSD: patch-libdwarf_configure,v 1.1 2016/09/09 12:20:14 jasper Exp $
+
+Adjust configure tests to ensure HAVE_ELF64_RELA and HAVE_ELF64_SYM get
+defined.
+
+--- libdwarf/configure.orig	Thu May 19 20:41:23 2016
++++ libdwarf/configure	Thu Sep  8 23:47:56 2016
+@@ -4231,7 +4231,7 @@ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-#include <elf.h>
++#include <libelf.h>
+ int
+ main ()
+ {
+@@ -4248,7 +4248,7 @@ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-#include <elf.h>
++#include <libelf.h>
+ int
+ main ()
+ {

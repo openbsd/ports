@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdwarf_dwarf_elf_access_c,v 1.1 2016/09/09 12:20:14 jasper Exp $
+
+Include reloc.h to resolve the R_ macros which are used in
+is_(32|64)bit_abs_reloc() to determine the relocation size.
+
+--- libdwarf/dwarf_elf_access.c.orig	Wed Jun  8 17:28:34 2016
++++ libdwarf/dwarf_elf_access.c	Fri Sep  9 14:11:44 2016
+@@ -41,6 +41,8 @@
+ #include "dwarf_reloc_x86_64.h"
+ #endif /* _WIN32 */
+ 
++#include <machine/reloc.h>
++
+ #ifdef HAVE_ELF_H
+ #include <elf.h>
+ #endif
