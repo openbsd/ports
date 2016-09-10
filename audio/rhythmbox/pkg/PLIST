@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2016/08/20 13:38:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2016/09/10 09:55:34 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -930,7 +930,14 @@ share/rhythmbox/plugins/soundcloud/icons/hicolor/scalable/places/soundcloud-symb
 share/rhythmbox/plugins/soundcloud/powered-by-soundcloud.png
 share/rhythmbox/plugins/soundcloud/soundcloud.ui
 share/rhythmbox/plugins/webremote/
+share/rhythmbox/plugins/webremote/css/
+share/rhythmbox/plugins/webremote/css/grids-responsive-min.css
+share/rhythmbox/plugins/webremote/css/pure-min.css
+share/rhythmbox/plugins/webremote/css/webremote.css
+share/rhythmbox/plugins/webremote/js/
+share/rhythmbox/plugins/webremote/js/webremote.js
 share/rhythmbox/plugins/webremote/webremote-config.ui
+share/rhythmbox/plugins/webremote/webremote.html
 share/rhythmbox/rhythmbox.gep
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
