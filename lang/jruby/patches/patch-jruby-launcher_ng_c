@@ -1,0 +1,11 @@
+$OpenBSD: patch-jruby-launcher_ng_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- jruby-launcher/ng.c.orig	Sat Sep 10 11:31:48 2016
++++ jruby-launcher/ng.c	Sat Sep 10 11:32:03 2016
+@@ -28,6 +28,7 @@
+         #include <arpa/inet.h>
+         #include <netdb.h>
+         #include <netinet/in.h>
++        #include <sys/select.h> /* fd_set */
+         #include <sys/socket.h>
+         #include <sys/types.h>
+ #endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/08 10:37:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/10 13:03:42 ajacoutot Exp $
 
 PORTROACH =		skipv:initial
 
@@ -7,6 +7,7 @@ COMMENT = bgp filtering automation for Cisco and Juniper routers
 VERSION =		0.1.32-rc6
 DISTNAME =		bgpq3-${VERSION}
 PKGNAME =		${DISTNAME:S/-rc/rc/}
+REVISION =		0
 
 CATEGORIES =		net
 

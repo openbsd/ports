@@ -1,0 +1,11 @@
+$OpenBSD: patch-events_c,v 1.1 2016/09/10 13:03:44 ajacoutot Exp $
+--- events.c.orig	Sat Sep 10 13:00:37 2016
++++ events.c	Sat Sep 10 13:00:44 2016
+@@ -4,6 +4,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/select.h> /* fd_set */
+ #include <errno.h>
+ #include "evilwm.h"
+ #include "log.h"

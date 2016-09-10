@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2016/09/01 10:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.218 2016/09/10 13:03:41 ajacoutot Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -16,6 +16,11 @@ PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
+REVISION-contrib=	0
+REVISION-docs=	0
+REVISION-main=	0
+REVISION-plpython=	0
+REVISION-server=0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.7 \

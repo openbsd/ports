@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/20 15:20:01 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2016/09/10 13:03:43 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -10,7 +10,7 @@ COMMENT =		convert HTML to PDF using Webkit
 GH_ACCOUNT =		wkhtmltopdf
 GH_PROJECT =		wkhtmltopdf
 GH_TAGNAME =		0.12.3.2
-REVISION =		0
+REVISION =		1
 QT_COMMIT =		8dae19a82231e87366d81c683bafcb025aea9c1d
 MASTER_SITES0 =		https://github.com/wkhtmltopdf/qt/archive/
 DISTFILES =		${DISTNAME}.tar.gz \

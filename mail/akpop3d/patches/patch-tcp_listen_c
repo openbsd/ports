@@ -1,7 +1,12 @@
-$OpenBSD: patch-tcp_listen_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
+$OpenBSD: patch-tcp_listen_c,v 1.2 2016/09/10 13:03:42 ajacoutot Exp $
 --- tcp_listen.c.orig	Sun May  4 10:26:14 2003
-+++ tcp_listen.c	Fri Aug 27 01:45:07 2004
-@@ -10,6 +10,11 @@
++++ tcp_listen.c	Sat Sep 10 11:45:32 2016
+@@ -6,10 +6,16 @@
+ #include <netdb.h>
+ #include <string.h>
+ #include <syslog.h>
++#include <sys/select.h> /* fd_set */
+ #include <stdio.h>
  #include <unistd.h>
  #include <errno.h>
  
@@ -13,7 +18,7 @@ $OpenBSD: patch-tcp_listen_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
  static void Setsockopt(int fd, int level, int optname, const void * optval, socklen_t optlen) {
    if (setsockopt(fd,level,optname,optval,optlen) < 0) {
      syslog(LOG_WARNING,"%s: %s","setsockopt failed",strerror(errno));
-@@ -29,8 +34,8 @@ static void Listen(int fd, int backlog) 
+@@ -29,8 +35,8 @@ static void Listen(int fd, int backlog) {
    }
  }
  
@@ -24,7 +29,7 @@ $OpenBSD: patch-tcp_listen_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
    const int on = 1;
    struct addrinfo hints, * res, * ressave;
    struct linger sl = { 1, 5 };
-@@ -39,37 +44,37 @@ static int tcp_listen(const char * host,
+@@ -39,37 +45,37 @@ static int tcp_listen(const char * host, const char * 
    hints.ai_flags = AI_PASSIVE;
    hints.ai_family = AF_UNSPEC;
    hints.ai_socktype = SOCK_STREAM;

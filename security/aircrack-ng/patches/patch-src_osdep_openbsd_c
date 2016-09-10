@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osdep_openbsd_c,v 1.4 2015/09/11 16:23:02 sthen Exp $
---- src/osdep/openbsd.c.orig	Tue Feb 26 11:12:19 2008
-+++ src/osdep/openbsd.c	Fri Sep 11 10:21:51 2015
-@@ -19,26 +19,25 @@
+$OpenBSD: patch-src_osdep_openbsd_c,v 1.5 2016/09/10 13:03:43 ajacoutot Exp $
+--- src/osdep/openbsd.c.orig	Tue Feb 26 19:12:19 2008
++++ src/osdep/openbsd.c	Sat Sep 10 12:18:30 2016
+@@ -19,26 +19,26 @@
    */
  #include <sys/types.h>
  #include <sys/endian.h>
@@ -10,6 +10,7 @@ $OpenBSD: patch-src_osdep_openbsd_c,v 1.4 2015/09/11 16:23:02 sthen Exp $
 -#include <sys/param.h>
  #include <sys/sysctl.h>
 -#include <net/bpf.h>
++#include <sys/select.h> /* fd_set */
  #include <sys/socket.h>
 +#include <sys/timeout.h>
 +#include <sys/ioctl.h>
@@ -35,7 +36,7 @@ $OpenBSD: patch-src_osdep_openbsd_c,v 1.4 2015/09/11 16:23:02 sthen Exp $
  #include <assert.h>
  #include <ifaddrs.h>
  
-@@ -273,7 +272,7 @@ static int obsd_write(struct wif *wi, unsigned char *h
+@@ -273,7 +273,7 @@ static int obsd_write(struct wif *wi, unsigned char *h
  	if (rc == -1)
  		return rc;
  
@@ -44,7 +45,7 @@ $OpenBSD: patch-src_osdep_openbsd_c,v 1.4 2015/09/11 16:23:02 sthen Exp $
  }
  
  static void do_free(struct wif *wi)
-@@ -303,7 +302,7 @@ static int do_obsd_open(struct wif *wi, char *iface)
+@@ -303,7 +303,7 @@ static int do_obsd_open(struct wif *wi, char *iface)
          int s;
          unsigned int flags;
          struct ifmediareq ifmr;
@@ -53,7 +54,7 @@ $OpenBSD: patch-src_osdep_openbsd_c,v 1.4 2015/09/11 16:23:02 sthen Exp $
  	struct priv_obsd *po = wi_priv(wi);
  	unsigned int size=sizeof(po->po_buf);
  
-@@ -339,7 +338,7 @@ static int do_obsd_open(struct wif *wi, char *iface)
+@@ -339,7 +339,7 @@ static int do_obsd_open(struct wif *wi, char *iface)
  
          assert(ifmr.ifm_count != 0);
  

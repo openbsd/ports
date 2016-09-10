@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/08/25 15:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2016/09/10 13:03:41 ajacoutot Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,7 +11,7 @@ USE_WXNEEDED =	Yes
 COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v4.4.7
-REVISION=	1
+REVISION=	2
 
 PLEDGE_VER=	1.1.0
 DISTFILES=	node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz

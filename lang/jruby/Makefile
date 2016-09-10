@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/05/27 17:04:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.58 2016/09/10 13:03:41 ajacoutot Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -12,6 +12,7 @@ CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
+REVISION =	0
 
 HOMEPAGE =	http://www.jruby.org/
 

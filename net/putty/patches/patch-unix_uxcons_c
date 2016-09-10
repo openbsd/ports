@@ -1,0 +1,11 @@
+$OpenBSD: patch-unix_uxcons_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- unix/uxcons.c.orig	Sat Sep 10 12:06:10 2016
++++ unix/uxcons.c	Sat Sep 10 12:06:24 2016
+@@ -6,6 +6,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdarg.h>
++#include <sys/select.h> /* fd_set */
+ #include <assert.h>
+ #include <errno.h>
+ 

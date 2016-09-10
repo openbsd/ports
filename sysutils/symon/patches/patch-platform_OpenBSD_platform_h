@@ -1,15 +1,18 @@
-$OpenBSD: patch-platform_OpenBSD_platform_h,v 1.4 2014/09/17 05:28:40 espie Exp $
---- platform/OpenBSD/platform.h.orig	Wed Sep 17 07:23:52 2014
-+++ platform/OpenBSD/platform.h	Wed Sep 17 07:25:14 2014
-@@ -3,10 +3,10 @@
+$OpenBSD: patch-platform_OpenBSD_platform_h,v 1.5 2016/09/10 13:03:43 ajacoutot Exp $
+--- platform/OpenBSD/platform.h.orig	Sat Jan 14 15:05:06 2012
++++ platform/OpenBSD/platform.h	Sat Sep 10 12:43:05 2016
+@@ -3,11 +3,13 @@
  
  #include "conf.h"
  
 -#include <sys/dkstat.h>
  #include <sys/queue.h>
  #include <sys/types.h>
++#include <sys/select.h> /* fd_set */
  #include <sys/socket.h>
 +#include <sys/sched.h>
  #include <sys/syslimits.h>
++#include <time.h>
  #include <net/if.h>
  
+ #include "sylimits.h"

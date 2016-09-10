@@ -1,7 +1,16 @@
-$OpenBSD: patch-opennap_h,v 1.2 2009/02/14 09:41:35 jasper Exp $
+$OpenBSD: patch-opennap_h,v 1.3 2016/09/10 13:03:41 ajacoutot Exp $
 --- opennap.h.orig	Mon Oct  1 00:12:37 2001
-+++ opennap.h	Sat Feb 14 10:40:49 2009
-@@ -143,9 +143,26 @@ struct _user
++++ opennap.h	Sat Sep 10 10:44:09 2016
+@@ -16,6 +16,8 @@
+ #endif
+ 
+ #include <stdarg.h>
++/* fd_set */
++#include <sys/select.h>
+ #include <sys/types.h>
+ #include <zlib.h>
+ #include "hash.h"
+@@ -143,9 +145,26 @@ struct _user
  				   NOTE. this is a pointer to an entry in
  				   Server_Names, and not malloc'd. */
  
@@ -28,7 +37,7 @@ $OpenBSD: patch-opennap_h,v 1.2 2009/02/14 09:41:35 jasper Exp $
      unsigned int level:3;	/* user level */
      unsigned int speed:4;	/* link speed */
      unsigned int local:1;	/* nonzero if locally connected */
-@@ -154,20 +171,6 @@ struct _user
+@@ -154,20 +173,6 @@ struct _user
      unsigned int unsharing:1;
      unsigned int cloaked:1;
      unsigned int xxx:4;		/* unused */
@@ -49,7 +58,7 @@ $OpenBSD: patch-opennap_h,v 1.2 2009/02/14 09:41:35 jasper Exp $
  };
  
  enum
-@@ -486,6 +489,7 @@ extern HASH *MD5;
+@@ -486,6 +491,7 @@ extern HASH *MD5;
  extern int Stats_Port;
  #endif
  
@@ -57,7 +66,7 @@ $OpenBSD: patch-opennap_h,v 1.2 2009/02/14 09:41:35 jasper Exp $
  extern HASH *Channel_Db;
  extern int Client_Queue_Length;
  extern HASH *Client_Versions;
-@@ -835,6 +839,7 @@ int     config (int);
+@@ -835,6 +841,7 @@ int     config (int);
  void    config_defaults (void);
  USERDB *create_db (USER *);
  void    destroy_connection (CONNECTION *);

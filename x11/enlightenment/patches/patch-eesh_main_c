@@ -1,0 +1,11 @@
+$OpenBSD: patch-eesh_main_c,v 1.1 2016/09/10 13:03:44 ajacoutot Exp $
+--- eesh/main.c.orig	Sat Sep 10 12:58:44 2016
++++ eesh/main.c	Sat Sep 10 12:59:08 2016
+@@ -21,6 +21,7 @@
+  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  */
++#include <sys/select.h> /* fd_set */
+ #include "E.h"
+ 
+ /* Global vars */

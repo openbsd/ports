@@ -1,0 +1,9 @@
+$OpenBSD: patch-draw_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- draw.c.orig	Sat Sep 10 11:14:36 2016
++++ draw.c	Sat Sep 10 11:14:48 2016
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <string.h> /* strlen */
+ 
+ #include "constant.h"
+   

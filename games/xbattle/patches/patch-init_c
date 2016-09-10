@@ -1,0 +1,9 @@
+$OpenBSD: patch-init_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- init.c.orig	Sat Sep 10 11:19:36 2016
++++ init.c	Sat Sep 10 11:19:58 2016
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h> /* exit, malloc */
+ #include <math.h>
+ 
+ #include "constant.h"

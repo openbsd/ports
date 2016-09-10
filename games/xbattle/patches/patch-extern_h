@@ -1,0 +1,10 @@
+$OpenBSD: patch-extern_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- extern.h.orig	Sat Sep 10 11:13:39 2016
++++ extern.h	Sat Sep 10 11:13:49 2016
+@@ -1,4 +1,6 @@
+ 
++#include <sys/select.h> /* fd_set */
++
+ #include "macro.h"
+ 
+ typedef unsigned char	n_char;

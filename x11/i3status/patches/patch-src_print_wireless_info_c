@@ -1,7 +1,13 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.9 2016/01/04 22:31:17 jasper Exp $
---- src/print_wireless_info.c.orig	Sun Jan  3 12:55:52 2016
-+++ src/print_wireless_info.c	Sun Jan  3 12:58:06 2016
-@@ -50,6 +50,7 @@
+$OpenBSD: patch-src_print_wireless_info_c,v 1.10 2016/09/10 13:03:44 ajacoutot Exp $
+--- src/print_wireless_info.c.orig	Fri Jan  1 19:51:19 2016
++++ src/print_wireless_info.c	Sat Sep 10 13:02:08 2016
+@@ -45,11 +45,13 @@
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ #include <netinet/in.h>
  #include <netinet/if_ether.h>
  #include <net80211/ieee80211.h>
  #include <net80211/ieee80211_ioctl.h>

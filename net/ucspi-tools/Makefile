@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/09 23:01:45 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/10 13:03:42 ajacoutot Exp $
 
 COMMENT=	socks proxy and tls support for ucspi
 
 DISTNAME=	ucspi-tools-1.4
 CATEGORIES=	net
+REVISION=	0
 
 GH_ACCOUNT=	younix
 GH_PROJECT=	ucspi

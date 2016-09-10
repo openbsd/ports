@@ -1,0 +1,10 @@
+$OpenBSD: patch-replay_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- replay.c.orig	Sat Sep 10 11:20:38 2016
++++ replay.c	Sat Sep 10 11:20:58 2016
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h> /* exit */
++#include <string.h> /* strlen */
+ 
+ #include "constant.h"
+   

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/19 19:36:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/10 13:03:43 ajacoutot Exp $
 
 USE_WXNEEDED =		Yes # bundled webkit
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES =	parallel nojunk
 COMMENT =		headless WebKit scriptable with a JavaScript API
 
 DISTNAME =		phantomjs-1.9.8
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 HOMEPAGE =		http://phantomjs.org/

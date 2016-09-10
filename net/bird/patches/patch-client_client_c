@@ -1,0 +1,11 @@
+$OpenBSD: patch-client_client_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- client/client.c.orig	Sat Sep 10 11:48:54 2016
++++ client/client.c	Sat Sep 10 11:49:11 2016
+@@ -27,6 +27,7 @@
+ #include <errno.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ 
+ #include "nest/bird.h"

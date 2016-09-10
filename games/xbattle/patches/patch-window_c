@@ -1,0 +1,10 @@
+$OpenBSD: patch-window_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- window.c.orig	Sat Sep 10 11:21:37 2016
++++ window.c	Sat Sep 10 11:22:02 2016
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h> /* malloc */
++#include <string.h> /* strcpy */
+ 
+ #include "constant.h"
+   

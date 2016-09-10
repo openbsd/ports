@@ -1,0 +1,11 @@
+$OpenBSD: patch-ieee80211_c,v 1.1 2016/09/10 13:03:43 ajacoutot Exp $
+--- ieee80211.c.orig	Sat Sep 10 12:25:32 2016
++++ ieee80211.c	Sat Sep 10 12:26:19 2016
+@@ -65,6 +65,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ #include <sys/limits.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+ #include <net/if.h>

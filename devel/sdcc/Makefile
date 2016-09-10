@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/05 06:21:53 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/10 13:03:41 ajacoutot Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -8,7 +8,7 @@ DISTNAME=	sdcc-src-2.8.0
 PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://sdcc.sourceforge.net/
 

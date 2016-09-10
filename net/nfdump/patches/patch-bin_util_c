@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_util_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- bin/util.c.orig	Sat Sep 10 10:34:01 2016
++++ bin/util.c	Sat Sep 10 10:35:46 2016
+@@ -41,6 +41,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <stdlib.h>
++#include <sys/select.h> /* tv */
+ #include <time.h>
+ #include <string.h>
+ #include <errno.h>

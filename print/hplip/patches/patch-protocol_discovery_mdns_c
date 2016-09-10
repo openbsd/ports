@@ -1,0 +1,16 @@
+$OpenBSD: patch-protocol_discovery_mdns_c,v 1.1 2016/09/10 13:03:43 ajacoutot Exp $
+--- protocol/discovery/mdns.c.orig	Sat Sep 10 12:16:35 2016
++++ protocol/discovery/mdns.c	Sat Sep 10 12:16:26 2016
+@@ -24,9 +24,11 @@
+  Author: Sanjay Kumar
+  \*****************************************************************************/
+ 
+-//#include <stdio.h>
++#include <stdio.h> /* sprintf */
++#include <stdlib.h> /* malloc */
+ #include <string.h>
+ #include <syslog.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netdb.h>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-beater_hwsensorsbeat_go,v 1.1 2016/09/10 13:03:43 ajacoutot Exp $
+
+/usr/include/sys/sensors.h:110: error: field 'tv' has incomplete type
+
+--- beater/hwsensorsbeat.go.orig	Sat Sep 10 12:22:39 2016
++++ beater/hwsensorsbeat.go	Sat Sep 10 12:22:47 2016
+@@ -2,6 +2,7 @@ package beater
+ 
+ /*
+ #include <sys/types.h>
++#include <sys/select.h>
+ #include <sys/sysctl.h>
+ #include <sys/sensors.h>
+ */

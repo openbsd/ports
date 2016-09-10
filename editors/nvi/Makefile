@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/10 13:03:41 ajacoutot Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
 V =		2.1.3
 DISTNAME =	nvi-$V
 CATEGORIES=	editors
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 

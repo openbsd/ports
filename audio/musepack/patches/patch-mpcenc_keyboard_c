@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpcenc_keyboard_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- mpcenc/keyboard.c.orig	Sat Sep 10 10:40:09 2016
++++ mpcenc/keyboard.c	Sat Sep 10 10:40:48 2016
+@@ -16,6 +16,8 @@
+  *    -
+  */
+ 
++#include <sys/select.h> /* tv */
++
+ #include "mpcenc.h"
+ 
+ #if defined _WIN32  ||  defined __TURBOC__

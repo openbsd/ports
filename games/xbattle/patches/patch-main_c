@@ -1,0 +1,10 @@
+$OpenBSD: patch-main_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- main.c.orig	Sat Sep 10 11:20:08 2016
++++ main.c	Sat Sep 10 11:20:29 2016
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h> /* exit */
++#include <string.h> /* strcpy */
+   
+ /**** x include files ****/
+ #include <X11/Xlib.h>

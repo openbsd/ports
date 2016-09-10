@@ -1,0 +1,11 @@
+$OpenBSD: patch-portinuse_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- portinuse.c.orig	Sat Sep 10 12:03:59 2016
++++ portinuse.c	Sat Sep 10 12:04:12 2016
+@@ -17,6 +17,7 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/types.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

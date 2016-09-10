@@ -1,0 +1,11 @@
+$OpenBSD: patch-deps_cares_include_ares_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- deps/cares/include/ares.h.orig	Sat Sep 10 12:04:56 2016
++++ deps/cares/include/ares.h	Sat Sep 10 12:05:08 2016
+@@ -32,6 +32,7 @@
+ /* Data type definition of ares_socklen_t. */
+ typedef unsigned ares_socklen_t;
+ 
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ 
+ /* HP-UX systems version 9, 10 and 11 lack sys/select.h and so does oldish

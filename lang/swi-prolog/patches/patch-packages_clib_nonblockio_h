@@ -1,0 +1,11 @@
+$OpenBSD: patch-packages_clib_nonblockio_h,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- packages/clib/nonblockio.h.orig	Sat Sep 10 11:42:58 2016
++++ packages/clib/nonblockio.h	Sat Sep 10 11:43:31 2016
+@@ -52,6 +52,7 @@
+ 
+ #else /*__WINDOWS__*/
+ 
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ #ifdef HAVE_SYS_TIME_H
+ #include <sys/time.h>

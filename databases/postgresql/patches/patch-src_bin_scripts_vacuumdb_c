@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_scripts_vacuumdb_c,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- src/bin/scripts/vacuumdb.c.orig	Sat Sep 10 10:37:08 2016
++++ src/bin/scripts/vacuumdb.c	Sat Sep 10 10:38:12 2016
+@@ -10,6 +10,8 @@
+  *-------------------------------------------------------------------------
+  */
+ 
++#include <sys/select.h> /* FD_SETSIZE */
++
+ #include "postgres_fe.h"
+ 
+ #include "common.h"

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libusb_libusb_h,v 1.1 2016/09/10 13:03:40 ajacoutot Exp $
+--- libusb/libusb.h.orig	Sat Sep 10 11:00:40 2016
++++ libusb/libusb.h	Sat Sep 10 11:00:56 2016
+@@ -58,6 +58,7 @@ typedef unsigned __int32  uint32_t;
+ #include <sys/time.h>
+ #endif
+ 
++#include <sys/select.h> /* timeval */
+ #include <time.h>
+ #include <limits.h>
+ 

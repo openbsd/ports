@@ -1,0 +1,11 @@
+$OpenBSD: patch-gpsd_h,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- gpsd.h.orig	Sat Sep 10 11:52:50 2016
++++ gpsd.h	Sat Sep 10 11:53:11 2016
+@@ -22,6 +22,7 @@
+ #include "config.h"
+ 
+ #include <sys/types.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

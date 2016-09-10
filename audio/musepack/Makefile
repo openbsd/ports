@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/10 13:03:41 ajacoutot Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
 V =			475
 DISTNAME =		musepack_src_r${V}
 PKGNAME =		musepack-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.musepack.net/

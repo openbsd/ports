@@ -1,0 +1,11 @@
+$OpenBSD: patch-sim_ucsim_cmd_src_newcmdposixcl_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- sim/ucsim/cmd.src/newcmdposixcl.h.orig	Sat Sep 10 10:48:28 2016
++++ sim/ucsim/cmd.src/newcmdposixcl.h	Sat Sep 10 10:48:45 2016
+@@ -29,6 +29,7 @@ Software Foundation, 59 Temple Place - Suite 330, Bost
+ #ifndef CMD_NEWCMDFDCL_HEADER
+ #define CMD_NEWCMDFDCL_HEADER
+ 
++#include <sys/select.h> /* fd_set */
+ #include "newcmdcl.h"
+ #include "cmdutil.h"
+ 

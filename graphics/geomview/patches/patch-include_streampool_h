@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_streampool_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
+--- include/streampool.h.orig	Sat Sep 10 11:26:03 2016
++++ include/streampool.h	Sat Sep 10 11:26:44 2016
+@@ -29,8 +29,8 @@
+ # include "config.h"
+ #endif
+ 
+-#ifdef AIX
+-# include <sys/select.h>  /* RS-6000 needs this */
++#if defined(AIX) || defined(__OpenBSD__)
++# include <sys/select.h>  /* fd_set */
+ #endif
+ 
+ #include <sys/types.h>

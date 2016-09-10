@@ -1,0 +1,11 @@
+$OpenBSD: patch-upnpevents_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
+--- upnpevents.c.orig	Sat Sep 10 12:01:20 2016
++++ upnpevents.c	Sat Sep 10 12:01:32 2016
+@@ -13,6 +13,7 @@
+ #include <unistd.h>
+ #include <time.h>
+ #include <sys/types.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
