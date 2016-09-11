@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/07/09 08:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2016/09/11 13:12:06 jasper Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -7,8 +7,7 @@ TRACKER_API=	1.0
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.2
-REVISION=	0
+GNOME_VERSION=	0.3.3
 
 API=		0.3
 SUBST_VARS=	API
@@ -22,11 +21,11 @@ WANTLIB += archive avahi-client avahi-common avahi-glib avahi-gobject
 WANTLIB += bz2 crypto curl dbus-1 expat ffi gck-1 gcr-base-3 gcrypt
 WANTLIB += gdata gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += goa-1.0 gobject-2.0 gpg-error grilo-0.3 grlnet-0.3
-WANTLIB += grlpls-0.3 gthread-2.0 icudata icui18n icuuc idn json-glib-1.0
-WANTLIB += kvm lzma m mediaart-2.0 nghttp2 nspr4 nss3 oauth p11-kit pcre
-WANTLIB += plc4 plds4 png pthread smime3 softokn3 soup-2.4
-WANTLIB += sqlite3 ssl ssl3 totem-plparser uuid
-WANTLIB += xml2 z lzo2 iconv intl lz4
+WANTLIB += grlpls-0.3 gthread-2.0 iconv icudata icui18n icuuc
+WANTLIB += idn intl json-glib-1.0 kvm lz4 lzma lzo2 m mediaart-2.0
+WANTLIB += nghttp2 nspr4 nss3 oauth p11-kit pcre plc4 plds4 png
+WANTLIB += pthread smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 totem-plparser
+WANTLIB += uuid xml2 z
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
