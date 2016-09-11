@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2016/07/30 14:10:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2016/09/11 10:52:51 tb Exp $
 
 COMMENT=	CGI script to browse CVS repository trees
 
 DISTNAME=	cvsweb-2.0.6
-REVISION=	21
+REVISION=	22
 CATEGORIES=	devel www
 HOMEPAGE=	http://www.freebsd.org/projects/cvsweb.html
 
