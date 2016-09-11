@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/11 16:30:11 ratchov Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -6,7 +6,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	6
+REVISION =	7
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -38,11 +38,6 @@ FULLV =			$V-${SRCV}
 MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak
 DESTDIRNAME =		ROOT
 SUBST_VARS +=		FULLV
-
-post-extract:
-	# start with the sun sound-plugin that we'll patch
-	mkdir ${WRKDIST}/platforms/unix/vm-sound-OpenBSD
-	cd ${WRKDIST}/platforms/unix && cp vm-sound-Sun/acinclude.m4 vm-sound-OpenBSD && cp vm-sound-Sun/sqUnixSoundSun.c vm-sound-OpenBSD/sqUnixSoundOpenBSD.c
 
 pre-build:
 	@perl -pi -e s,dprintf,debugprintf, ${WRKDIST}/platforms/unix/vm/*.c

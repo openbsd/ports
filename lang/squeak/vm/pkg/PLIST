@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/23 21:58:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/09/11 16:30:12 ratchov Exp $
 bin/squeak
 lib/squeak/${FULLV}/
 @bin lib/squeak/${FULLV}/B3DAcceleratorPlugin
@@ -10,7 +10,6 @@ lib/squeak/${FULLV}/npsqueak.so
 @bin lib/squeak/${FULLV}/squeak
 @bin lib/squeak/${FULLV}/vm-display-X11
 @bin lib/squeak/${FULLV}/vm-display-null
-@bin lib/squeak/${FULLV}/vm-sound-OpenBSD
 @bin lib/squeak/${FULLV}/vm-sound-null
 lib/squeak/npsqueakregister
 lib/squeak/npsqueakrun
