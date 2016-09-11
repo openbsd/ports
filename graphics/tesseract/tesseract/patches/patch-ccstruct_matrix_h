@@ -1,0 +1,15 @@
+$OpenBSD: patch-ccstruct_matrix_h,v 1.1 2016/09/11 12:09:54 naddy Exp $
+
+https://github.com/tesseract-ocr/tesseract/commit/4919b276ebde72782997787f424fd44122e2974e
+
+--- ccstruct/matrix.h.orig	Tue Feb 16 22:27:01 2016
++++ ccstruct/matrix.h	Sun Sep 11 14:00:23 2016
+@@ -30,7 +30,7 @@
+ 
+ class BLOB_CHOICE_LIST;
+ 
+-#define NOT_CLASSIFIED reinterpret_cast<BLOB_CHOICE_LIST*>(NULL)
++#define NOT_CLASSIFIED reinterpret_cast<BLOB_CHOICE_LIST*>(0)
+ 
+ // A generic class to hold a 2-D matrix with entries of type T, but can also
+ // act as a base class for other implementations, such as a triangular or
