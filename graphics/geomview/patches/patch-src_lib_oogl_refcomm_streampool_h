@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_streampool_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- include/streampool.h.orig	Sat Sep 10 11:26:03 2016
-+++ include/streampool.h	Sat Sep 10 11:26:44 2016
+$OpenBSD: patch-src_lib_oogl_refcomm_streampool_h,v 1.1 2016/09/11 11:40:47 naddy Exp $
+--- src/lib/oogl/refcomm/streampool.h.orig	Sun Mar 11 18:03:06 2007
++++ src/lib/oogl/refcomm/streampool.h	Sun Sep 11 13:35:54 2016
 @@ -29,8 +29,8 @@
  # include "config.h"
  #endif
