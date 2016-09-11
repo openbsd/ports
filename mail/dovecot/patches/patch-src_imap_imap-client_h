@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_imap_imap-client_h,v 1.1 2016/09/11 20:54:13 ajacoutot Exp $
+--- src/imap/imap-client.h.orig	Sun Sep 11 11:31:35 2016
++++ src/imap/imap-client.h	Sun Sep 11 11:31:48 2016
+@@ -1,6 +1,7 @@
+ #ifndef IMAP_CLIENT_H
+ #define IMAP_CLIENT_H
+ 
++#include <sys/select.h> /* timeval */
+ #include "imap-commands.h"
+ #include "message-size.h"
+ 

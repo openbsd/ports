@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/05 23:30:46 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/11 20:54:12 ajacoutot Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-1.99.4-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
+REVISION=	0
 
 HOMEPAGE=	http://texmacs.org/
 

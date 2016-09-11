@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_seas_ha_c,v 1.1 2016/09/11 20:54:13 ajacoutot Exp $
+--- modules/seas/ha.c.orig	Sun Sep 11 12:53:57 2016
++++ modules/seas/ha.c	Sun Sep 11 12:54:03 2016
+@@ -21,7 +21,7 @@
+ 
+ 
+ #include <stdlib.h>/*atoi*/
+-#include <time.h>/*gettimeofday*/
++#include <sys/time.h>/*gettimeofday*/
+ #include <poll.h>/*poll*/
+ #include "ha.h"
+ #include "seas.h"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/05/07 17:14:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/09/11 20:54:13 ajacoutot Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -8,7 +8,7 @@ V_DOVECOT=	2.2
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
 PKGNAME=	dovecot-pigeonhole-${V_SIEVE}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_DOVECOT}/
 

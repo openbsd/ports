@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_System_Link_socket_notifier_cpp,v 1.1.1.1 2016/04/05 23:30:54 jca Exp $
---- src/System/Link/socket_notifier.cpp.orig	Fri Feb 19 02:56:36 2016
-+++ src/System/Link/socket_notifier.cpp	Fri Feb 19 02:56:37 2016
+$OpenBSD: patch-src_System_Link_socket_notifier_cpp,v 1.2 2016/09/11 20:54:12 ajacoutot Exp $
+--- src/System/Link/socket_notifier.cpp.orig	Mon Jun 15 10:44:50 2015
++++ src/System/Link/socket_notifier.cpp	Sun Sep 11 11:14:49 2016
 @@ -8,7 +8,8 @@
  * It comes WITHOUT ANY WARRANTY WHATSOEVER. For details, see the file LICENSE
  * in the root directory or <http://www.gnu.org/licenses/gpl-3.0.html>.
@@ -11,3 +11,11 @@ $OpenBSD: patch-src_System_Link_socket_notifier_cpp,v 1.1.1.1 2016/04/05 23:30:5
  
  #include "config.h"
  
+@@ -16,6 +17,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/wait.h>
++#include <sys/select.h> /* fd_set */
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>

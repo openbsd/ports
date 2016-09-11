@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_ldap_ld_session_h,v 1.1 2016/09/11 20:54:13 ajacoutot Exp $
+--- modules/ldap/ld_session.h.orig	Sun Sep 11 13:02:26 2016
++++ modules/ldap/ld_session.h	Sun Sep 11 13:02:40 2016
+@@ -29,6 +29,7 @@
+ #define LD_SESSION_H
+ 
+ #include <ldap.h>
++#include <sys/select.h> /* timeval */
+ 
+ #include "iniparser.h"
+ 
