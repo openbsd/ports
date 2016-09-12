@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/12 22:20:36 naddy Exp $
 
 BROKEN-sparc64=	gcj blows during build
 COMMENT=	pdf swiss army knife
@@ -13,16 +13,17 @@ MAINTAINER=	Christopher Zimmermann <chrisz@openbsd.org>
 # GPLv2+ (main program), see ${WRKDIST}/license_gpl_pdftk/ for libraries
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODGCC4_GCJWANTLIB} c m pthread z
+WANTLIB += ${MODGCC4_GCJWANTLIB} c iconv m pthread z
 
 HOMEPAGE =	http://www.pdflabs.com/tools/pdftk-server/
 
 MASTER_SITES =	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
-MODULES=	converters/libiconv gcc4
+MODULES=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	java c++
-LIB_DEPENDS=	${MODGCC4_GCJLIBDEP}
+LIB_DEPENDS=	${MODGCC4_GCJLIBDEP} \
+		converters/libiconv
 
 WRKDIST=	${WRKDIR}/$(DISTNAME)-dist
 WRKSRC=		$(WRKDIST)/pdftk

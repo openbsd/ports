@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/12 22:20:36 naddy Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -14,15 +14,15 @@ MASTER_SITES=	https://pingus.googlecode.com/files/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL SDL X11 Xi c m png pthread z
+WANTLIB += GL SDL X11 Xi c iconv m png pthread z
 WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals
 
-MODULES=	converters/libiconv \
-		devel/scons gcc4
+MODULES=	devel/scons gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
-LIB_DEPENDS=	devel/sdl-mixer \
+LIB_DEPENDS=	converters/libiconv \
+		devel/sdl-mixer \
 		devel/sdl-image \
 		devel/boost
 

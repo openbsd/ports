@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/15 15:03:57 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/12 22:20:36 naddy Exp $
 
 COMMENT =	website access log visualization
 
@@ -13,11 +13,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
-WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype m pcre png pthread
+WANTLIB += GL GLEW GLU SDL2 SDL2_image c freetype iconv m pcre png pthread
 WANTLIB += z
 
-MODULES =	converters/libiconv \
-		gcc4
+MODULES =	gcc4
 MODGCC4_ARCHS = *
 MODGCC4_LANGS = c c++
 
@@ -28,7 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 BUILD_DEPENDS =	graphics/glm \
 		devel/boost
 
-LIB_DEPENDS =	graphics/glew \
+LIB_DEPENDS =	converters/libiconv \
+		graphics/glew \
 		devel/pcre \
 		devel/sdl2-image
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2016/09/12 22:20:36 naddy Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
@@ -15,14 +15,12 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 # sox under the terms of GPLv3 to avoid license conflict.
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		converters/libiconv
-
 WANTLIB += c m z sndio
 WANTLIB += FLAC gsm mad id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
 WANTLIB += opencore-amrnb opencore-amrwb
 WANTLIB += opus opusfile twolame wavpack
-WANTLIB += magic png
+WANTLIB += iconv magic png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
@@ -41,6 +39,7 @@ LIB_DEPENDS=			\
 	audio/opusfile		\
 	audio/twolame		\
 	audio/wavpack		\
+	converters/libiconv	\
 	devel/libmagic		\
 	graphics/png
 
