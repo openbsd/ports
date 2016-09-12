@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.985 2016/09/12 13:24:49 jca Exp $
+# $OpenBSD: Makefile,v 1.986 2016/09/12 15:21:17 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += adsuck
-     SUBDIR += aget
      SUBDIR += aggregate
      SUBDIR += aiccu
      SUBDIR += aimsniff
