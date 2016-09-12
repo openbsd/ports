@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/03/16 18:07:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/12 22:44:08 naddy Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
@@ -14,12 +14,12 @@ HOMEPAGE=	http://wvware.sourceforge.net/
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += glib-2.0 gsf-1 m stdc++ z
+WANTLIB += glib-2.0 gsf-1 iconv m stdc++ z
 
-MODULES=	converters/libiconv \
-		devel/cmake
+MODULES=	devel/cmake
 
-LIB_DEPENDS+=	devel/glib2 \
+LIB_DEPENDS+=	converters/libiconv \
+		devel/glib2 \
 		devel/libgsf
 
 CONFIGURE_ARGS +=-DLIBwv2_VERSION=${LIBwv2_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/20 19:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/12 22:44:09 naddy Exp $
 
 COMMENT =	barcode image processing library
 
@@ -13,9 +13,10 @@ CATEGORIES =	graphics
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c iconv m stdc++
 
-MODULES =	converters/libiconv devel/cmake
+MODULES =	devel/cmake
+LIB_DEPENDS =	converters/libiconv
 BUILD_DEPENDS =	devel/cppunit
 
 do-test:

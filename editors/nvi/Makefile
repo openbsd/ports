@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/12 22:44:08 naddy Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
@@ -29,7 +29,8 @@ FLAVORS=	iconv
 FLAVOR?=
 
 .if ${FLAVOR:Miconv}
-MODULES+=	converters/libiconv
+LIB_DEPENDS+=	converters/libiconv
+WANTLIB+=	iconv
 .else
 CONFIGURE_ARGS=	-DUSE_ICONV:Bool=False
 .endif
