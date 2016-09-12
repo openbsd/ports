@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/06/05 12:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/09/12 20:58:39 naddy Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
@@ -39,9 +39,10 @@ MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
 			LDFLAGS="${LDFLAGS}"
 
 USE_LIBTOOL =	gnu
-MODULES =	x11/qt4 converters/libiconv
+MODULES =	x11/qt4
 DESTDIRNAME =	INSTALL_ROOT
-LIB_DEPENDS =	net/net-snmp \
+LIB_DEPENDS =	converters/libiconv \
+		net/net-snmp \
 		textproc/libxml \
 		textproc/libxslt \
 		x11/qt4
@@ -51,7 +52,7 @@ TEST_TARGET =	tests
 TEST_ENV +=		COPTS="${COPTS}"
 TEST_IS_INTERACTIVE =	X11
 
-WANTLIB += c crypto m netsnmp QtGui QtNetwork
+WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
 WANTLIB += pthread stdc++ util xml2 xslt z
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 

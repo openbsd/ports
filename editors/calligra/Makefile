@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/02/28 10:07:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/12 20:58:39 naddy Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 DPB_PROPERTIES =	parallel
 
 MODULES =	x11/kde4 \
-		converters/libiconv \
 		multimedia/phonon
 
 MODKDE4_USE =	pim
@@ -101,7 +100,7 @@ WANTLIB += ${KDE4LIB}/marblewidget
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/okularcore
 WANTLIB += ${KDE4LIB}/phonon_sexperimental ${KDE4LIB}/threadweaver
-WANTLIB += OpenColorIO exiv2 fftw3 freetype glib-2.0 gsl icui18n icuuc
+WANTLIB += OpenColorIO exiv2 fftw3 freetype glib-2.0 gsl iconv icui18n icuuc
 WANTLIB += jpeg lcms2 mysqlclient openjpeg png poppler poppler-qt4 pqxx
 WANTLIB += qca2 soprano sqlite3 sybdb tiff
 WANTLIB += boost_system-mt curl ktexteditor gslcblas
@@ -125,7 +124,8 @@ RUN_DEPENDS =	databases/mariadb \
 		productivity/librcps \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	databases/freetds \
+LIB_DEPENDS =	converters/libiconv \
+		databases/freetds \
 		databases/libpqxx>=3,<5 \
 		databases/mariadb \
 		devel/gsl \
