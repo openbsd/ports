@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/04/19 09:30:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2016/09/12 17:51:07 naddy Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -23,7 +23,9 @@ SUBST_VARS +=		DISTNAME
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 # GHC: use cabal to build both the executable and the library.
 WANTLIB-main +=		util
-MODULES =		lang/ghc converters/libiconv
+MODULES =		lang/ghc
+LIB_DEPENDS +=		converters/libiconv
+WANTLIB +=		iconv
 MODGHC_BUILD =		hackage cabal haddock register
 MODGHC_PACKAGE_KEY =	CBRibIKskbTH4Pv4UzedWR
 LIB_DEPENDS-main =	${LIB_DEPENDS}

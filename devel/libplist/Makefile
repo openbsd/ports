@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/12 17:51:07 naddy Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
@@ -24,16 +24,16 @@ EXTRACT_SUFX =		.tar.bz2
 
 MULTI_PACKAGES =	-main -python
 
-MODULES =		converters/libiconv \
-			lang/python
+MODULES =		lang/python
 
 BUILD_DEPENDS=		lang/cython
 
 LIB_DEPENDS-python =	${LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main
-LIB_DEPENDS =		textproc/libxml
+LIB_DEPENDS =		converters/libiconv \
+			textproc/libxml
 
-WANTLIB +=		lzma m pthread xml2 z
+WANTLIB +=		iconv lzma m pthread xml2 z
 WANTLIB-main += 	${WANTLIB} c stdc++
 WANTLIB-python += 	${WANTLIB} plist util python${MODPY_VERSION}
 
