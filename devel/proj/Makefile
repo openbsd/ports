@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/04 14:54:55 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/12 11:28:59 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
@@ -19,8 +19,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		ftp://ftp.remotesensing.org/proj/ \
-			http://download.osgeo.org/proj/
+MASTER_SITES=		http://download.osgeo.org/proj/
 
 CONFIGURE_STYLE=	gnu
 WANTLIB=		c m pthread
