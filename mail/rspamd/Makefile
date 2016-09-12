@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2016/09/04 15:53:12 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/12 09:48:37 edd Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.2.8
+DISTNAME =	rspamd-1.3.5
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -24,6 +24,13 @@ LIB_DEPENDS=	devel/libmagic \
 		devel/pcre \
 		lang/luajit \
 		mail/gmime
+BUILD_DEPENDS +=devel/ragel
+# /var/rspamd needs to exist for tests to run
+TEST_DEPENDS = ${FULLPKGNAME}:${FULLPKGPATH}
+TEST_DEPENDS +=	databases/redis \
+		sysutils/py-psutil \
+		textproc/py-demjson \
+		devel/py-robotframework
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
@@ -34,11 +41,19 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DRSPAMD_USER="_rspamd" \
 		-DRSPAMD_GROUP="_rspamd"
 
-# XXX Known problems:
-# - tests currently need clang as an assembler due to use of AVX.
-# - if aio test is run after dns test, it hangs:
-# ${WRKBUILD}/test/rspamd-test -p /rspamd/aio -p /rspamd/dns     
-TEST_TARGET=	run-test
+# Make sure we pick up the base libevent, never the ports one!
+CONFIGURE_ARGS +=	-DLIBEVENT_ROOT_DIR=/usr
+# Make sure you have no rspamd or redis instances running and note that the
+# test suite uses the network.
+#
+# In the event of failing tests, look at log.html in ${WRKSRC}
+do-test:
+	cd ${WRKSRC} && \
+		env RSPAMADM=${WRKBUILD}/src/rspamadm/rspamadm \
+		RSPAMC=${WRKBUILD}/src/client/rspamc \
+		RSPAMD=/usr/local/bin/rspamd \
+		${LOCALBASE}/bin/robot \
+		test/functional/cases
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md

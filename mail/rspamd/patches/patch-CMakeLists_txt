@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2016/05/27 09:18:14 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2016/09/12 09:48:37 edd Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
 
---- CMakeLists.txt.orig	Fri Apr 22 09:37:43 2016
-+++ CMakeLists.txt	Tue Apr 26 01:06:31 2016
-@@ -509,14 +509,14 @@ SET(POE_LOOP "Loop::IO_Poll")
+--- CMakeLists.txt.orig	Tue Aug 23 13:19:29 2016
++++ CMakeLists.txt	Tue Aug 30 18:07:13 2016
+@@ -520,14 +520,14 @@ SET(POE_LOOP "Loop::IO_Poll")
  SET(TAR "tar")
  
  # Platform specific configuration
@@ -22,7 +22,7 @@ both libevent from base *and* libevent2
  	# Find util library
  	ProcessPackage(LIBUTIL LIBRARY util INCLUDE libutil.h
  		ROOT ${LIBUTIL_ROOT_DIR} OPTIONAL)
-@@ -529,8 +529,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
+@@ -540,8 +540,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
  	ENDIF()
  	SET(POE_LOOP "Loop::Kqueue")
  	SET(TAR "gtar")
@@ -38,7 +38,7 @@ both libevent from base *and* libevent2
  IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_BSD_SOURCE -DDARWIN")
  	SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
-@@ -662,7 +668,7 @@ ENDIF()
+@@ -668,7 +674,7 @@ ENDIF()
  ProcessPackage(GMIME LIBRARY gmime-2.6 gmime-2.4 gmime-2.2 gmime-2 INCLUDE gmime.h INCLUDE_SUFFIXES include/gmime
  	ROOT ${GMIME_ROOT_DIR} MODULES gmime-2.6 gmime-2.4 gmime-2.0)
  ProcessPackage(LIBEVENT LIBRARY event INCLUDE event.h INCLUDE_SUFFIXES include/event

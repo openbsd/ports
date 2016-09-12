@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/27 09:18:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/09/12 09:48:37 edd Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
 @bin bin/rspamc
 @bin bin/rspamd
+bin/rspamd_stats
 lib/rspamd/
 lib/rspamd/librspamd-actrie.so
 @man man/man1/rspamadm.1
@@ -71,6 +72,8 @@ share/examples/rspamd/modules.d/whitelist.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/whitelist.conf
 share/examples/rspamd/options.inc
 @sample ${SYSCONFDIR}/rspamd/options.inc
+share/examples/rspamd/redirectors.inc
+@sample ${SYSCONFDIR}/rspamd/redirections.inc
 share/examples/rspamd/rspamd.conf
 @sample ${SYSCONFDIR}/rspamd/rspamd.conf
 @comment share/examples/rspamd/rspamd.systemd.conf
@@ -83,17 +86,21 @@ share/examples/rspamd/surbl-whitelist.inc
 @sample ${SYSCONFDIR}/rspamd/surbl-whitelist.inc
 share/examples/rspamd/worker-controller.inc
 @sample ${SYSCONFDIR}/rspamd/worker-controller.inc
+share/examples/rspamd/worker-fuzzy.inc
+@sample ${SYSCONFDIR}/rspamd/worker-fuzzy.inc
 share/examples/rspamd/worker-normal.inc
 @sample ${SYSCONFDIR}/rspamd/worker-normal.inc
 share/rspamd/
 share/rspamd/effective_tld_names.dat
 share/rspamd/lua/
+share/rspamd/lua/asn.lua
 share/rspamd/lua/dcc.lua
 share/rspamd/lua/dmarc.lua
 share/rspamd/lua/emails.lua
 share/rspamd/lua/fann_scores.lua
 share/rspamd/lua/forged_recipients.lua
 share/rspamd/lua/fun.lua
+share/rspamd/lua/greylist.lua
 share/rspamd/lua/hfilter.lua
 share/rspamd/lua/ip_score.lua
 share/rspamd/lua/maillist.lua
@@ -103,12 +110,14 @@ share/rspamd/lua/once_received.lua
 share/rspamd/lua/phishing.lua
 share/rspamd/lua/ratelimit.lua
 share/rspamd/lua/rbl.lua
+share/rspamd/lua/replies.lua
 share/rspamd/lua/rspamd_update.lua
 share/rspamd/lua/settings.lua
 share/rspamd/lua/spamassassin.lua
 share/rspamd/lua/trie.lua
 share/rspamd/lua/whitelist.lua
 share/rspamd/rules/
+share/rspamd/rules/forwarding.lua
 share/rspamd/rules/html.lua
 share/rspamd/rules/http_headers.lua
 share/rspamd/rules/misc.lua
@@ -117,11 +126,13 @@ share/rspamd/rules/regexp/drugs.lua
 share/rspamd/rules/regexp/fraud.lua
 share/rspamd/rules/regexp/headers.lua
 share/rspamd/rules/regexp/lotto.lua
+share/rspamd/rules/regexp/upstream_spam_filters.lua
 share/rspamd/rules/rspamd.classifiers.lua
 share/rspamd/rules/rspamd.lua
 share/rspamd/www/
 share/rspamd/www/README.md
 share/rspamd/www/css/
+share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/datatables.min.css
 share/rspamd/www/css/glyphicons-halflings-regular.woff
 share/rspamd/www/css/glyphicons-halflings-regular.woff2
@@ -134,8 +145,10 @@ share/rspamd/www/img/spinner.gif
 share/rspamd/www/img/spinner.png
 share/rspamd/www/index.html
 share/rspamd/www/js/
+share/rspamd/www/js/d3evolution.min.js
 share/rspamd/www/js/d3pie.min.js
 share/rspamd/www/js/datatables.min.js
+share/rspamd/www/js/humanize.min.js
 share/rspamd/www/js/rspamd.js
 share/rspamd/www/plugins.txt
 share/rspamd/www/react-index.html

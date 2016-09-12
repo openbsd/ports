@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.5 2016/05/27 09:18:14 sthen Exp $
---- src/rspamadm/CMakeLists.txt.orig	Mon Apr  4 12:37:40 2016
-+++ src/rspamadm/CMakeLists.txt	Wed Apr 13 21:48:16 2016
-@@ -44,9 +44,9 @@ IF(ENABLE_HIREDIS MATCHES "ON")
- ENDIF()
- TARGET_LINK_LIBRARIES(rspamadm rspamd-actrie)
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.6 2016/09/12 09:48:37 edd Exp $
+--- src/rspamadm/CMakeLists.txt.orig	Fri Jul 22 10:18:48 2016
++++ src/rspamadm/CMakeLists.txt	Tue Aug 30 18:07:13 2016
+@@ -39,9 +39,9 @@ TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
+ TARGET_LINK_LIBRARIES(rspamadm ${RSPAMD_REQUIRED_LIBRARIES})
+ TARGET_LINK_LIBRARIES(rspamadm rspamd-linenoise)
  
 -IF (NOT DEBIAN_BUILD)
 +IF (NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
