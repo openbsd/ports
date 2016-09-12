@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:47 espie Exp $
-bin/ttcp
-@man man/man1/ttcp.1
-share/doc/ttcp/
-share/doc/ttcp/README

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.984 2016/09/03 10:39:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.985 2016/09/12 13:24:49 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -677,7 +677,6 @@
      SUBDIR += trafshow
      SUBDIR += transmission
      SUBDIR += trickle
-     SUBDIR += ttcp
      SUBDIR += ttg
      SUBDIR += twirssi
      SUBDIR += twitux
