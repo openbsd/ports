@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
@@ -84,7 +84,7 @@ LIB_DEPENDS-f77 =	math/plplot,-main \
 			${myLIB_DEPENDS} \
 			${MODFORTRAN_LIB_DEPENDS}
 
-RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
+RUN_DEPENDS-main =	${myRUN_DEPENDS}
 RUN_DEPENDS-c++ =
 RUN_DEPENDS-f77 =
 

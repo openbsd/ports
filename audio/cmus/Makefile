@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 21:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -22,10 +22,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=		-main -ffmpeg
 
-MODULES=		converters/libiconv
-
 WANTLIB-main+=		c cdio cdio_cdda cue discid FLAC>=5 m mad>=2 ncursesw
-WANTLIB-main+=		ogg opusfile pthread sndio wavpack ${MODLIBICONV_WANTLIB}
+WANTLIB-main+=		ogg opusfile pthread sndio wavpack iconv
 
 LIB_DEPENDS-main=	audio/flac \
 			audio/libcdio \
@@ -34,7 +32,8 @@ LIB_DEPENDS-main=	audio/flac \
 			audio/libmad \
 			audio/libogg \
 			audio/opusfile \
-			audio/wavpack
+			audio/wavpack \
+			converters/libiconv
 
 WANTLIB-ffmpeg=		avformat swresample
 LIB_DEPENDS-ffmpeg=	graphics/ffmpeg

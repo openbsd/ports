@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/03 14:23:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/12 11:45:58 naddy Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
@@ -7,6 +7,7 @@ V=		2.6.2
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
+REVISION-main=	0
 
 SHARED_LIBS +=  oath                      0.2 # 1.3
 SHARED_LIBS +=  pskc                      0.1 # 0.1
@@ -24,12 +25,11 @@ PERMIT_PACKAGE_CDROM=	 Yes
 MULTI_PACKAGES=	-main -pskc
 
 WANTLIB-main=	c pam
-WANTLIB-pskc=	c ltdl lzma m pthread xml2 xmlsec1 xslt z ${MODLIBICONV_WANTLIB}
+WANTLIB-pskc=	c iconv ltdl lzma m pthread xml2 xmlsec1 xslt z
 
 LIB_DEPENDS-main= security/openpam
 LIB_DEPENDS-pskc= security/xmlsec \
-		${MODLIBICONV_LIB_DEPENDS}
-MODULES=	converters/libiconv
+		converters/libiconv
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes

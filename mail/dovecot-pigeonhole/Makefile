@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/09/11 20:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -23,10 +23,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	lib/dovecot/dovecot lib/dovecot/dovecot-lda \
 		lib/dovecot/dovecot-login lib/dovecot/dovecot-storage \
-		c crypto pthread ssl ${MODLIBICONV_WANTLIB}
+		c crypto iconv pthread ssl
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	mail/dovecot
+LIB_DEPENDS=	converters/libiconv \
+		mail/dovecot
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc

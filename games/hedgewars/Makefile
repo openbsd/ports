@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/29 15:11:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		2
+REVISION =		3
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -30,15 +30,14 @@ WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
 
-WANTLIB-server = c m pthread util ${MODLIBICONV_WANTLIB}
+WANTLIB-server = c iconv m pthread util
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
 			x11/qt4 \
-			lang/lua \
-			converters/libiconv
+			lang/lua
 BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-ttf \

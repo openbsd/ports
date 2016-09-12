@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -30,16 +30,14 @@ SHARED_LIBS +=  mdbodbcW             0.0
 # GPLv2+, LGPL v2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += ${MODLIBICONV_WANTLIB}
-WANTLIB-main += c glib-2.0 iodbcinst pthread readline
+WANTLIB-main += c glib-2.0 iconv iodbcinst pthread readline
 
 WANTLIB-gmdb += ${MODGETTEXT_WANTLIB}
 WANTLIB-gmdb += c gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 gnome-2
 WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 mdb mdbsql pango-1.0
 WANTLIB-gmdb += pthread
 
-MODULES =		gcc4 \
-			converters/libiconv
+MODULES =		gcc4
 
 MODGCC4_ARCHS =		"*"
 
@@ -49,14 +47,14 @@ BUILD_DEPENDS =		devel/bison \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
+LIB_DEPENDS-main =	converters/libiconv \
 			databases/iodbc,-main \
 			devel/glib2
 LIB_DEPENDS-gmdb =	${MODGETTEXT_LIB_DEPENDS} \
 			databases/mdbtools,-main>=0.7.1v0 \
 			x11/gnome/libgnomeui
 
-RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-main =
 RUN_DEPENDS-gmdb =	${MODGETTEXT_RUN_DEPENDS}
 
 YACC=			bison -y

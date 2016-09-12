@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2016/09/01 15:32:47 robert Exp $
+# $OpenBSD: Makefile,v 1.124 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
-MODULES=		converters/libiconv lang/php
+MODULES=		lang/php
 MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web
@@ -33,13 +33,15 @@ FLAVORS =		mysql pgsql sqlite3
 
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
-WANTLIB =		c kvm m execinfo lber ldap crypto ssl z curl idn nghttp2
+WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
+			curl idn nghttp2
 
-LIB_DEPENDS =		databases/openldap \
+LIB_DEPENDS =		converters/libiconv \
+			databases/openldap \
 			devel/libexecinfo \
 			net/curl
 
-RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-main =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			net/net-snmp \

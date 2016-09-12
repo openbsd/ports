@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2016/09/11 20:54:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.243 2016/09/12 11:45:57 naddy Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication support for Dovecot
@@ -35,15 +35,15 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	bz2 c crypto lz4 lzma pthread sqlite3 ssl z ${MODLIBICONV_WANTLIB}
+WANTLIB-server=	bz2 c crypto iconv lz4 lzma pthread sqlite3 ssl z
 WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl stdc++ z
 WANTLIB-postgresql= crypto pq>=4 ssl
 
-MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/lz4 \
-		archivers/xz
+		archivers/xz \
+		converters/libiconv
 LIB_DEPENDS-ldap= databases/openldap
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-mysql= databases/mariadb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/06/15 14:02:34 sebastia Exp $
+# $OpenBSD: Makefile,v 1.62 2016/09/12 11:45:58 naddy Exp $
 
 PORTROACH+=		limit:^2
 
@@ -11,6 +11,8 @@ DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
+REVISION-mysql =	0
+REVISION-postgres =	0
 
 SO_MAJOR=	3
 SO_MINOR=	0
@@ -30,11 +32,10 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MULTI_PACKAGES=	-main -mysql -postgres
 
-MODULES=	converters/libiconv x11/gnustep
+MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 
-WANTLIB-main = 		c crypto ssl lber ldap xml2 z \
-			${MODLIBICONV_WANTLIB} \
+WANTLIB-main = 		c crypto ssl iconv lber ldap xml2 z \
 			${MODGNUSTEP_WANTLIB}
 WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl z \
 			${MODGNUSTEP_WANTLIB}
@@ -43,7 +44,7 @@ WANTLIB-postgres = 	GDLAccess EOControl pq ${MODGNUSTEP_WANTLIB}
 LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			x11/gnustep/libobjc2 \
-			${MODLIBICONV_LIB_DEPENDS}
+			converters/libiconv
 LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION} \
 			databases/mariadb,-main
 LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION} \
