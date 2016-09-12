@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/03 11:58:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/12 21:14:09 naddy Exp $
 
 COMMENT = 	web based groupware server
 
@@ -41,12 +41,12 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += c DOM EOControl GDLAccess NGExtensions NGLdap NGMime
 WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
-WANTLIB += XmlRpc ldap
+WANTLIB += XmlRpc iconv ldap
 
-MODULES =		x11/gnustep converters/libiconv
+MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
 BUILD_DEPENDS +=	www/apache-httpd
-LIB_DEPENDS +=		www/sope
+LIB_DEPENDS +=		converters/libiconv www/sope
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip archivers/unzip www/apache-httpd
 
