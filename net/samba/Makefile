@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2016/07/08 18:39:50 jca Exp $
+# $OpenBSD: Makefile,v 1.228 2016/09/12 15:38:22 jca Exp $
 
 VERSION =		4.4.5
 DISTNAME =		samba-${VERSION}
@@ -15,6 +15,7 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
+REVISION-main =		0
 REVISION-ldb =		0
 REVISION-tevent =	0
 
@@ -159,7 +160,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--without-regedit \
 			--without-acl-support \
 			--without-libarchive \
-			--disable-rpath
+			--disable-rpath \
+			--with-ntvfs-fileserver
 
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 #CONFIGURE_ARGS +=	--enable-developer
