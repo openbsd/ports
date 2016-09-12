@@ -1,13 +1,8 @@
-# $OpenBSD: libiconv.port.mk,v 1.6 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: libiconv.port.mk,v 1.7 2016/09/12 11:52:42 naddy Exp $
 
 # The RUN_DEPENDS entry is to ensure libiconv is installed. This is
 # necessary so that we have charset.alias installed on static archs.
 # Typically installed in PREFIX/lib.
-MODLIBICONV_LIB_DEPENDS =	converters/libiconv
-MODLIBICONV_RUN_DEPENDS =	converters/libiconv
-
-MODLIBICONV_WANTLIB =		iconv>=2
-
-LIB_DEPENDS +=			${MODLIBICONV_LIB_DEPENDS}
-RUN_DEPENDS +=			${MODLIBICONV_RUN_DEPENDS}
-WANTLIB +=			${MODLIBICONV_WANTLIB}
+LIB_DEPENDS +=			converters/libiconv
+RUN_DEPENDS +=			converters/libiconv
+WANTLIB +=			iconv>=2
