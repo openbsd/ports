@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/02/27 09:49:04 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/12 13:43:40 feinerer Exp $
 @bin bin/ginfo
 @bin bin/ginstall-info
 bin/gmakeinfo
@@ -31,15 +31,19 @@ share/locale/ca.us-ascii/
 share/locale/ca.us-ascii/LC_MESSAGES/
 share/locale/ca.us-ascii/LC_MESSAGES/texinfo_document.mo
 share/locale/ca/LC_MESSAGES/texinfo.mo
+share/locale/ca/LC_MESSAGES/texinfo_document.mo
 share/locale/cs/LC_MESSAGES/texinfo.mo
 share/locale/da/LC_MESSAGES/texinfo.mo
 share/locale/de.us-ascii/
 share/locale/de.us-ascii/LC_MESSAGES/
 share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 share/locale/de/LC_MESSAGES/texinfo.mo
+share/locale/de/LC_MESSAGES/texinfo_document.mo
 share/locale/de_AT/
 share/locale/de_AT/LC_MESSAGES/
 share/locale/de_AT/LC_MESSAGES/texinfo.mo
+share/locale/el/LC_MESSAGES/texinfo.mo
+share/locale/el/LC_MESSAGES/texinfo_document.mo
 share/locale/eo/LC_MESSAGES/texinfo.mo
 share/locale/eo/LC_MESSAGES/texinfo_document.mo
 share/locale/es/LC_MESSAGES/texinfo.mo
@@ -48,6 +52,7 @@ share/locale/fr/LC_MESSAGES/texinfo.mo
 share/locale/fr/LC_MESSAGES/texinfo_document.mo
 share/locale/he/LC_MESSAGES/texinfo.mo
 share/locale/hr/LC_MESSAGES/texinfo.mo
+share/locale/hr/LC_MESSAGES/texinfo_document.mo
 share/locale/hu/LC_MESSAGES/texinfo.mo
 share/locale/hu/LC_MESSAGES/texinfo_document.mo
 share/locale/id/LC_MESSAGES/texinfo.mo
@@ -65,10 +70,12 @@ share/locale/pl/LC_MESSAGES/texinfo_document.mo
 share/locale/pt.us-ascii/
 share/locale/pt.us-ascii/LC_MESSAGES/
 share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
+share/locale/pt/LC_MESSAGES/texinfo_document.mo
 share/locale/pt_BR.us-ascii/
 share/locale/pt_BR.us-ascii/LC_MESSAGES/
 share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
 share/locale/pt_BR/LC_MESSAGES/texinfo.mo
+share/locale/pt_BR/LC_MESSAGES/texinfo_document.mo
 share/locale/ro/LC_MESSAGES/texinfo.mo
 share/locale/ru/LC_MESSAGES/texinfo.mo
 share/locale/rw/
@@ -486,6 +493,7 @@ share/texmf-local/tex/texinfo/txi-fr.tex
 share/texmf-local/tex/texinfo/txi-hu.tex
 share/texmf-local/tex/texinfo/txi-is.tex
 share/texmf-local/tex/texinfo/txi-it.tex
+share/texmf-local/tex/texinfo/txi-ja.tex
 share/texmf-local/tex/texinfo/txi-nb.tex
 share/texmf-local/tex/texinfo/txi-nl.tex
 share/texmf-local/tex/texinfo/txi-nn.tex

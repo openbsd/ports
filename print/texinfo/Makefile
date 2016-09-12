@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/12 13:43:40 feinerer Exp $
 
 COMMENT =		official documentation format of the GNU project
 
-DISTNAME =		texinfo-6.1
+DISTNAME =		texinfo-6.3
 
 CATEGORIES =		print
 
@@ -13,13 +13,13 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ncurses perl
+WANTLIB += c iconv intl ncurses perl
 
 MASTER_SITES =		${MASTER_SITE_GNU:=texinfo/}
 
-MODULES =		devel/gettext
 BUILD_DEPENDS =		devel/help2man \
 			lang/gawk
+LIB_DEPENDS =		devel/gettext
 TEST_DEPENDS =		print/texlive/base
 
 FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
