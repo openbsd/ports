@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/03/19 23:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/09/12 17:50:40 naddy Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 
@@ -13,6 +13,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
+REVISION=	0
 SHARED_LIBS +=	mapserver 2.0
 
 CATEGORIES=	geo www
@@ -25,7 +26,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-MODULES=	converters/libiconv lang/php devel/cmake
+MODULES=	lang/php devel/cmake
 MODPHP_RUNDEP=	No
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
 RUN_DEPENDS-main =	www/spawn-fcgi
