@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/04 12:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/12 15:28:30 jca Exp $
 
 COMMENT=	gtk+3 spelling checker
 
@@ -40,5 +40,7 @@ LIB_DEPENDS=	textproc/enchant \
 		x11/gtk+3
 
 CONFIGURE_STYLE=gnu
+
+PORTHOME=	${WRKBUILD}
 
 .include <bsd.port.mk>

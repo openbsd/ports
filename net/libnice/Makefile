@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/18 21:38:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/12 15:28:30 jca Exp $
 
 COMMENT =		GLib ICE implementation
 
@@ -38,6 +38,8 @@ USE_GMAKE =		Yes
 
 # configure sets -Werror
 CFLAGS +=		-Wno-error
+
+PORTHOME =		${WRKBUILD}
 
 post-install:
 	rm ${PREFIX}/lib/gstreamer-1.0/*.{a,la}

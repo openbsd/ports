@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2016/08/17 20:58:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2016/09/12 15:28:30 jca Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -251,6 +251,8 @@ FAKE_FLAGS=		SYSCONFDIR=${SYSCONFDIR}
 PC_FILES=		avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 			avahi-compat-libdns_sd.pc avahi-core.pc avahi-glib.pc \
 			avahi-gobject.pc avahi-qt3.pc avahi-qt4.pc
+
+PORTHOME=		${WRKBUILD}
 
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
