@@ -1,0 +1,33 @@
+$OpenBSD: patch-plugins_mp3_mp3_h,v 1.1 2016/09/13 08:48:12 dcoppa Exp $
+--- plugins/mp3/mp3.h.orig	Sun Jun 19 13:26:18 2016
++++ plugins/mp3/mp3.h	Wed Sep  7 12:56:15 2016
+@@ -110,23 +110,16 @@ typedef struct {
+     DB_fileinfo_t info;
+     // input buffer, for MPEG data
+     buffer_t buffer;
+-    union {
+ #ifdef USE_LIBMAD
+-        struct {
+-            struct mad_stream mad_stream;
+-            struct mad_frame mad_frame;
+-            struct mad_synth mad_synth;
+-        };
++    struct mad_stream mad_stream;
++    struct mad_frame mad_frame;
++    struct mad_synth mad_synth;
+ #endif
+ #ifdef USE_LIBMPG123
+-        struct {
+-            mpg123_handle *mpg123_handle;
+-            int mpg123_status;
+-            unsigned char *mpg123_audio;
+-        };
++    mpg123_handle *mpg123_handle;
++    int mpg123_status;
++    unsigned char *mpg123_audio;
+ #endif
+-    };
+-
+     struct mp3_decoder_api_s *dec;
+ } mp3_info_t;
+ 

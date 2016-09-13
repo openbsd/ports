@@ -1,26 +1,27 @@
-$OpenBSD: patch-plugins_aac_Makefile_am,v 1.4 2014/09/23 13:44:03 dcoppa Exp $
---- plugins/aac/Makefile.am.orig	Tue Sep 23 09:49:32 2014
-+++ plugins/aac/Makefile.am	Tue Sep 23 09:52:22 2014
-@@ -2,10 +2,19 @@ if HAVE_AAC
- aacpath=@top_srcdir@/plugins/aac
- aacdir = $(libdir)/$(PACKAGE)
+$OpenBSD: patch-plugins_aac_Makefile_am,v 1.5 2016/09/13 08:48:11 dcoppa Exp $
+--- plugins/aac/Makefile.am.orig	Sun Sep  4 08:58:27 2016
++++ plugins/aac/Makefile.am	Sun Sep  4 08:59:10 2016
+@@ -1,9 +1,20 @@
+ if HAVE_AAC
  pkglib_LTLIBRARIES = aac.la
 -aac_la_SOURCES = aac.c aac_parser.c aac_parser.h
 +aac_la_SOURCES = aac.c aac_parser.c aac_parser.h\
-+		../libmp4ff/mp4atom.c\
-+		../libmp4ff/mp4ff.c\
-+		../libmp4ff/mp4meta.c\
-+		../libmp4ff/mp4sample.c\
-+		../libmp4ff/mp4tagupdate.c\
-+		../libmp4ff/mp4util.c\
-+		../libmp4ff/mp4ff.h\
-+		../libmp4ff/mp4ffint.h\
-+		../libmp4ff/mp4ff_int_types.h
++               ../libmp4ff/mp4atom.c\
++               ../libmp4ff/mp4ff.c\
++               ../libmp4ff/mp4meta.c\
++               ../libmp4ff/mp4sample.c\
++               ../libmp4ff/mp4tagupdate.c\
++               ../libmp4ff/mp4util.c\
++               ../libmp4ff/mp4ff.h\
++               ../libmp4ff/mp4ffint.h\
++               ../libmp4ff/mp4ff_int_types.h
++
  aac_la_LDFLAGS = -module -avoid-version
  
 -aac_la_LIBADD = $(LDADD) $(FAAD2_LIBS) ../libmp4ff/libmp4ff.a
 -AM_CFLAGS = -I@top_srcdir@/plugins/libmp4ff $(CFLAGS) $(FAAD2_CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING
 +aac_la_LIBADD = $(LDADD) $(FAAD2_LIBS)
 +AM_CFLAGS = $(CFLAGS) $(FAAD2_CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING
++
  endif
  

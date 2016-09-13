@@ -1,33 +1,62 @@
-$OpenBSD: patch-plugins_artwork_artwork_c,v 1.3 2014/09/23 15:03:39 dcoppa Exp $
+$OpenBSD: patch-plugins_artwork_artwork_c,v 1.4 2016/09/13 08:48:12 dcoppa Exp $
 
-commit 4553baa0e78eb91d7de582b341831fac87e9842c
-Author: Alexey Yakovenko <waker@users.sourceforge.net>
-Date:   Mon Aug 18 22:32:07 2014 +0200
+commit 045d8a7d0ff3b8647ac42170672b574e42f9dc7e
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Sun Jun 12 22:13:41 2016 +0200
 
-artwork: crash fix when file mask is empty (bug #1177)
+artwork: fix dirname usage
 
---- plugins/artwork/artwork.c.orig	Thu Jul 31 21:03:51 2014
-+++ plugins/artwork/artwork.c	Tue Sep 23 16:28:20 2014
-@@ -50,8 +50,13 @@
- #include "lastfm.h"
- #include "albumartorg.h"
- #include "wos.h"
-+#include "../../strdupa.h"
- #endif
+--- plugins/artwork/artwork.c.orig	Sun Jun 19 13:26:18 2016
++++ plugins/artwork/artwork.c	Wed Sep  7 16:40:41 2016
+@@ -1600,12 +1600,14 @@ path_more_recent (const char *fname, const time_t plac
+ }
  
-+#if defined(__GNUC__) && defined(__STRICT_ANSI__)
-+#define alloca(size)   __builtin_alloca(size)
-+#endif
-+
- #ifdef USE_IMLIB2
- #include <Imlib2.h>
- static uintptr_t imlib_mutex;
-@@ -970,7 +975,7 @@ fetcher_thread (void *none)
-             cover_query_t *param = queue;
-             char path [PATH_MAX];
-             struct dirent **files;
--            int files_count;
-+            int files_count = 0;
+ static int
+-recheck_missing_artwork (char *fname, const time_t placeholder_mtime)
++recheck_missing_artwork (const char *input_fname, const time_t placeholder_mtime)
+ {
++    int res = 0;
++    char *fname = strdup (input_fname);
+     /* Check if local files could have new associated artwork */
+     if (deadbeef->is_local_file (fname)) {
+         char *vfs_fname = vfs_path (fname);
+-        char *real_fname = vfs_fname ? vfs_fname : fname;
++        const char *real_fname = vfs_fname ? vfs_fname : fname;
  
-             make_cache_dir_path (path, sizeof (path), param->artist, -1);
-             trace ("cache folder: %s\n", path);
+         /* Recheck artwork if file (track or VFS container) was modified since the last check */
+         if (path_more_recent (real_fname, placeholder_mtime)) {
+@@ -1613,12 +1615,13 @@ recheck_missing_artwork (char *fname, const time_t pla
+         }
+ 
+         /* Recheck local artwork if the directory contents have changed */
+-        if (artwork_enable_local && path_more_recent (dirname (real_fname), placeholder_mtime)) {
+-            return 1;
+-        }
++        char *dname = strdup (dirname (fname));
++        res = artwork_enable_local && path_more_recent (dname, placeholder_mtime);
++        free (dname);
+     }
+ 
+-    return 0;
++    free (fname);
++    return res;
+ }
+ 
+ static int
+@@ -1635,13 +1638,9 @@ process_query (const cover_query_t *query)
+     /* Flood control, don't retry missing artwork for an hour unless something changes */
+     struct stat placeholder_stat;
+     if (!stat (cache_path, &placeholder_stat) && placeholder_stat.st_mtime + 60*60 > time (NULL)) {
+-        char *fname_copy = strdup (query->fname);
+-        if (fname_copy) {
+-            int recheck = recheck_missing_artwork (fname_copy, placeholder_stat.st_mtime);
+-            free (fname_copy);
+-            if (!recheck) {
+-                return 0;
+-            }
++        int recheck = recheck_missing_artwork (query->fname, placeholder_stat.st_mtime);
++        if (!recheck) {
++            return 0;
+         }
+     }
+ 

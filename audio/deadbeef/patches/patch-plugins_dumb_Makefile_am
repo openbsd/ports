@@ -1,0 +1,31 @@
+$OpenBSD: patch-plugins_dumb_Makefile_am,v 1.3 2016/09/13 08:48:12 dcoppa Exp $
+--- plugins/dumb/Makefile.am.orig	Sun Jun 19 13:26:18 2016
++++ plugins/dumb/Makefile.am	Thu Sep  8 08:09:20 2016
+@@ -4,15 +4,13 @@ EXTRA_DIST = $(dumbpath)/readme.txt $(dumbpath)/Change
+ if HAVE_DUMB
+ pkglib_LTLIBRARIES = ddb_dumb.la
+ 
+-ddb_dumb_la_CFLAGS = $(CFLAGS) -I$(dumbpath)/include -std=gnu99
+-ddb_dumb_la_LDFLAGS = -module -avoid-version -lm
+ if HAVE_SSE2
+-noinst_LIBRARIES = libdumbsse2.a
+-libdumbsse2_a_SOURCES = dumb-kode54/src/helpers/resampler_sse2.c
+-libdumbsse2_a_CFLAGS = $(CFLAGS) -I$(dumbpath)/include -std=gnu99 -msse2 -fPIC
+-ddb_dumb_la_LIBADD = libdumbsse2.a
++ddb_dumb_la_CFLAGS = $(CFLAGS) -I$(dumbpath)/include -std=gnu99 -msse2
++else
++ddb_dumb_la_CFLAGS = $(CFLAGS) -I$(dumbpath)/include -std=gnu99
+ endif
+ 
++ddb_dumb_la_LDFLAGS = -module -avoid-version -lm
+ 
+ ddb_dumb_la_SOURCES =\
+ dumb-kode54/src/it/loadmod2.c\
+@@ -115,4 +113,7 @@ dumb-kode54/src/helpers/resample.inc\
+ dumb-kode54/src/helpers/resamp2.inc\
+ dumb-kode54/src/helpers/resamp3.inc\
+ cdumb.c
++if HAVE_SSE2
++ddb_dumb_la_SOURCES += dumb-kode54/src/helpers/resampler_sse2.c
++endif
+ endif

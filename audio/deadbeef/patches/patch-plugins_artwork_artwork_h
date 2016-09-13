@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_artwork_artwork_h,v 1.1 2016/09/13 08:48:12 dcoppa Exp $
+
+commit d08efb4688ce231edf74e507a051379cc307722e
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Mon May 30 22:16:29 2016 +0200
+
+artwork: don't include deadbeef.h from API header by relative path
+
+--- plugins/artwork/artwork.h.orig	Sun Jun 19 13:26:18 2016
++++ plugins/artwork/artwork.h	Thu Sep  8 09:29:09 2016
+@@ -24,8 +24,6 @@
+ #ifndef __ARTWORK_H
+ #define __ARTWORK_H
+ 
+-#include "../../deadbeef.h"
+-
+ #define DDB_ARTWORK_VERSION 3
+ 
+ typedef void (*artwork_callback) (const char *fname, const char *artist, const char *album, void *user_data);

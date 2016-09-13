@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_gtkui_coverart_c,v 1.1 2016/09/13 08:48:12 dcoppa Exp $
+
+commit d08efb4688ce231edf74e507a051379cc307722e
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Mon May 30 22:16:29 2016 +0200
+
+artwork: don't include deadbeef.h from API header by relative path
+
+--- plugins/gtkui/coverart.c.orig	Sun Jun 19 13:26:18 2016
++++ plugins/gtkui/coverart.c	Thu Sep  8 09:29:09 2016
+@@ -30,6 +30,7 @@
+ #ifdef __linux__
+ #include <sys/prctl.h>
+ #endif
++#include "../../deadbeef.h"
+ #include "../artwork/artwork.h"
+ #include "gtkui.h"
+ 

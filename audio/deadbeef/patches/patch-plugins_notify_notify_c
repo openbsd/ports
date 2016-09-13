@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_notify_notify_c,v 1.1 2016/09/13 08:48:12 dcoppa Exp $
+
+commit ca7e395956ebc921aba6700dc2eac9e114f5fefa
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Sat Jul 30 14:41:10 2016 +0200
+
+notify: corrected tf flags for multiline non-dynamic output
+
+--- plugins/notify/notify.c.orig	Sun Jun 19 13:26:18 2016
++++ plugins/notify/notify.c	Tue Sep 13 10:33:38 2016
+@@ -178,6 +178,7 @@ static void show_notification (DB_playItem_t *track) {
+     ddb_tf_context_t ctx = {
+         ._size = sizeof (ddb_tf_context_t),
+         .it = track,
++        .flags = DDB_TF_CONTEXT_MULTILINE | DDB_TF_CONTEXT_NO_DYNAMIC,
+     };
+ 
+     deadbeef->tf_eval (&ctx, tf_title, title, sizeof (title));
