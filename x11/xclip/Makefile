@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 13:24:40 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/13 14:10:13 czarkoff Exp $
 
 COMMENT=		command line interface to X selections
-DISTNAME=		xclip-0.12
-REVISION=		0
+GH_ACCOUNT=		astrand
+GH_PROJECT=		xclip
+GH_TAGNAME=		0.13
 CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xclip/}
-HOMEPAGE=		http://xclip.sourceforge.net/
+
+MAINTAINER=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
@@ -16,6 +17,13 @@ NO_TEST=		yes
 USE_GMAKE=		yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib"
+			LDFLAGS="-L${X11BASE}/lib" \
+			AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
+			AUTOMAKE_VERSION="${AUTOMAKE_VERSION}"
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+
+post-patch:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} autoreconf -i
 
 .include <bsd.port.mk>
