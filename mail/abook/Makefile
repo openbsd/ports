@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/11/17 23:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/13 15:35:10 naddy Exp $
 
 COMMENT=		addressbook program with mutt support
 
@@ -10,17 +10,18 @@ HOMEPAGE=		http://abook.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=		c ncursesw readline
+WANTLIB+=		c iconv intl ncursesw readline
 
 MASTER_SITES=		http://abook.sourceforge.net/devel/
 
-MODULES=		devel/gettext \
-			converters/libiconv
+LIB_DEPENDS=		converters/libiconv \
+			devel/gettext
 
 CONFIGURE_STYLE=	automake
 
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools
 AUTOCONF_VERSION= 	2.69
 AUTOMAKE_VERSION= 	1.14
 
