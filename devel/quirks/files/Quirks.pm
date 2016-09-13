@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.425 2016/09/12 15:21:17 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.426 2016/09/13 16:26:03 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -406,6 +406,7 @@ my $stem_extensions = {
 	'letsencrypt' => 'certbot',
 # 6.1
  	'zarafa-webaccess' => 'zarafa-mapi',
+ 	'railo' => 'lucee',
 };
 
 my $obsolete_reason = {

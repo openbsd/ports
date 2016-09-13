@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2016/08/25 15:42:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.189 2016/09/13 16:26:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -49,6 +49,7 @@
      SUBDIR += lua
      SUBDIR += luajit
      SUBDIR += luajit,lua52
+     SUBDIR += lucee
      SUBDIR += mawk
      SUBDIR += moarvm
      SUBDIR += mono
@@ -75,7 +76,6 @@
      SUBDIR += python
      SUBDIR += racket-minimal
      SUBDIR += racket-minimal,no_jit
-     SUBDIR += railo
      SUBDIR += rakudo
      SUBDIR += ruby
      SUBDIR += rust
