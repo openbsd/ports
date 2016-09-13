@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/13 14:10:13 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/13 20:13:38 czarkoff Exp $
 
 COMMENT=		command line interface to X selections
 GH_ACCOUNT=		astrand
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB+=		X11 Xmu c
 
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 NO_TEST=		yes
 USE_GMAKE=		yes
 CONFIGURE_STYLE=	gnu
