@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2016/08/30 12:07:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/09/13 08:13:49 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.23.6
+GNOME_VERSION =		0.23.7
 GNOME_PROJECT =		shotwell
 
 CATEGORIES =		graphics
@@ -28,8 +28,8 @@ WANTLIB += jasper javascriptcoregtk-4.0 jpeg json-glib-1.0 lcms2
 WANTLIB += ltdl lzma m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += raw secret-1 soup-2.4 sqlite3 stdc++ webkit2gtk-4.0
-WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-xfixes xml2 xslt z
+WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 
 MODULES =		devel/dconf \
 			x11/gnome
