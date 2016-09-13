@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/07/30 20:53:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/09/13 12:27:15 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -9,7 +9,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.0.5
+WVER =		2.0.6
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
@@ -32,7 +32,7 @@ USE_GMAKE =	Yes
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB +=	c glib-2.0 m pcap pthread z
+cWANTLIB +=	c glib-2.0 m pcap z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -50,7 +50,7 @@ WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
 
 WANTLIB-main =	${cWANTLIB} ${WANTLIB}
-WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0
+WANTLIB-main +=	gmodule-2.0 pthread wireshark wiretap wsutil
 WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
 WANTLIB-gtk =	${cWANTLIB} wireshark wiretap wsutil
