@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/14 07:57:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 19:29:01 naddy Exp $
 
 COMMENT =		simple utilities for manipulating HTML and XML files
 
@@ -13,12 +13,12 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # W3C license
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto curl idn nghttp2 ssl z
+WANTLIB += c crypto curl iconv idn nghttp2 ssl z
 
 MASTER_SITES =		http://www.w3.org/Tools/HTML-XML-utils/
 
-MODULES =		converters/libiconv
-LIB_DEPENDS =		devel/libidn \
+LIB_DEPENDS =		converters/libiconv \
+			devel/libidn \
 			net/curl
 
 CONFIGURE_STYLE =	gnu
