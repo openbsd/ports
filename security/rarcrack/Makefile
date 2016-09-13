@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/25 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
@@ -13,11 +13,10 @@ MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m pthread z xml2
+WANTLIB=		c iconv m pthread z xml2
 
-MODULES=		converters/libiconv
-
-LIB_DEPENDS=		textproc/libxml
+LIB_DEPENDS=		converters/libiconv \
+			textproc/libxml
 
 RUN_DEPENDS=		archivers/p7zip \
 			archivers/unrar \

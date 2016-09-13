@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=	command line parser generator
 
@@ -11,13 +11,12 @@ HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++ xml2>=6 z
+WANTLIB += c iconv m pthread stdc++ xml2>=6 z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-MODULES=	converters/libiconv
-
-LIB_DEPENDS=	textproc/libxml
+LIB_DEPENDS=	converters/libiconv \
+		textproc/libxml
 
 CONFIGURE_STYLE= gnu
 

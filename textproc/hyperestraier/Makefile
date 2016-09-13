@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=		high performance full-text search system
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m pthread z qdbm>=14.11
-MODULES=		converters/libiconv
+WANTLIB=		c iconv m pthread z qdbm>=14.11
 
-LIB_DEPENDS=		databases/qdbm
+LIB_DEPENDS=		converters/libiconv \
+			databases/qdbm
 
 CONFIGURE_STYLE=	gnu
 

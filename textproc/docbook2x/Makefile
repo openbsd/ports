@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
@@ -13,11 +13,11 @@ HOMEPAGE =	http://docbook2x.sourceforge.net/
 # MIT-like
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB += c
+WANTLIB += c iconv
 
 MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=docbook2x/}
 
-MODULES +=		converters/libiconv
+LIB_DEPENDS +=		converters/libiconv
 RUN_DEPENDS =		textproc/libxml \
 			textproc/libxslt \
 			textproc/p5-XML-SAX

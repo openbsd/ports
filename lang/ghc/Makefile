@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2016/08/20 19:39:37 kili Exp $
+# $OpenBSD: Makefile,v 1.142 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -21,12 +21,14 @@ BIN_VER =		7.10.2.20160325
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
-MODULES =		lang/ghc lang/python converters/libiconv
+MODULES =		lang/ghc lang/python
 
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
+
+LIB_DEPENDS =		converters/libiconv
 
 BUILD_DEPENDS =		archivers/gtar \
 			textproc/docbook-xsl
@@ -36,7 +38,7 @@ RUN_DEPENDS =
 #      loadObj_() instead.
 USE_WXNEEDED =		Yes
 
-WANTLIB +=		c m ncursesw pthread util
+WANTLIB +=		c iconv m ncursesw pthread util
 
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/

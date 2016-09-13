@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 20:28:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT =	XML parser for Tcl
 
@@ -15,11 +15,11 @@ SHARED_LIBS +=	Tclxml32	0.0
 # custom
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		converters/libiconv \
-			lang/tcl
-WANTLIB +=		m z exslt xslt xml2
+MODULES =		lang/tcl
+WANTLIB +=		m z exslt iconv xslt xml2
 BUILD_DEPENDS +=	${MODTCL_BUILD_DEPENDS}
-LIB_DEPENDS +=		textproc/libxml \
+LIB_DEPENDS +=		converters/libiconv \
+			textproc/libxml \
 			textproc/libxslt
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
 			devel/tcllib

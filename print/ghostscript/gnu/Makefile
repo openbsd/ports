@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2016/03/10 20:26:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.108 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -25,12 +25,11 @@ SUBST_VARS=	VERSION FLAVOR_STRING
 # only be redistributed without modifications.
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ijs m jbig2dec jpeg>=62 lcms2 png>=6 pthread tiff z
-
-MODULES=	converters/libiconv
+WANTLIB=	c iconv ijs m jbig2dec jpeg>=62 lcms2 png>=6 pthread tiff z
 
 RUN_DEPENDS=	print/ghostscript/gnu-fonts>=8.11p3
-LIB_DEPENDS=	graphics/jbig2dec	\
+LIB_DEPENDS=	converters/libiconv	\
+		graphics/jbig2dec	\
 		graphics/jpeg		\
 		graphics/lcms2		\
 		graphics/png		\

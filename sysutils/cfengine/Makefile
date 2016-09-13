@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/01/22 11:38:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT =	GNU system administration tool for networks
 
@@ -13,7 +13,7 @@ MAINTAINER =	Rodrigo Mosconi <openbsd@mosconi.mat.br>
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto lzma m pam pcre pthread ssl qdbm xml2 z
+WANTLIB += c crypto iconv lzma m pam pcre pthread ssl qdbm xml2 z
 
 MASTER_SITES =	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
@@ -27,8 +27,8 @@ FLAVOR ?=
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
-MODULES =		converters/libiconv
-LIB_DEPENDS =		databases/qdbm \
+LIB_DEPENDS =		converters/libiconv \
+			databases/qdbm \
 			devel/pcre \
 			security/openpam \
 			textproc/libxml

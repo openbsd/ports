@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/14 11:29:46 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
@@ -17,12 +17,11 @@ WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
-LIB_DEPENDS=	net/ldns/libldns \
+LIB_DEPENDS=	converters/libiconv \
+		net/ldns/libldns \
 		textproc/libxml
 
 TEST_DEPENDS=	security/softhsm
-
-MODULES=	converters/libiconv
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/opendnssec
 

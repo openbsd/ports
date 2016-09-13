@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/06/01 12:46:35 edd Exp $
+# $OpenBSD: Makefile,v 1.84 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=		texlua52	0.0 # 7.4
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuio icuuc intl
+WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
 WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
 WANTLIB += xcb-render xcb-shm z zzip
@@ -30,7 +30,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/t1utils \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
-LIB_DEPENDS =		graphics/png \
+LIB_DEPENDS =		converters/libiconv \
+			graphics/png \
 			graphics/gd \
 			print/poppler \
 			graphics/cairo \
@@ -41,7 +42,7 @@ LIB_DEPENDS =		graphics/png \
 			archivers/zziplib \
 			graphics/potrace
 
-MODULES =		textproc/intltool converters/libiconv perl
+MODULES =		textproc/intltool perl
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu

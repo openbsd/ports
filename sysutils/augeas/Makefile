@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/08/15 10:32:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=		configuration editing tool and API
 
@@ -15,14 +15,12 @@ HOMEPAGE=		http://augeas.net/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c lzma m ncurses pthread readline xml2 z
+WANTLIB += c iconv lzma m ncurses pthread readline xml2 z
 
 MASTER_SITES=		http://download.augeas.net/
 
-MODULES=		converters/libiconv
-
-LIB_DEPENDS=		textproc/libxml
-
+LIB_DEPENDS=		converters/libiconv \
+			textproc/libxml
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/10 13:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/13 18:52:06 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -27,13 +27,13 @@ MAINTAINER =		Frank Groeneveld <frank@frankgroeneveld.nl>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext Xrender c fontconfig freetype jpeg m
+WANTLIB += X11 Xext Xrender c fontconfig freetype iconv jpeg m
 WANTLIB += png pthread stdc++ z
 
 WANTLIB += icui18n # dlopen()d via QLibrary
 
-MODULES =		converters/libiconv
-LIB_DEPENDS =		graphics/png \
+LIB_DEPENDS =		converters/libiconv \
+			graphics/png \
 			graphics/jpeg \
 			textproc/icu4c
 

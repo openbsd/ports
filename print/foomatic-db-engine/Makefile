@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/21 18:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT=		Foomatic PPD generator
 
@@ -13,13 +13,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread xml2 z
+WANTLIB += c iconv m pthread xml2 z
 
 MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 
-MODULES=		converters/libiconv
-
-LIB_DEPENDS=		textproc/libxml
+LIB_DEPENDS=		converters/libiconv \
+			textproc/libxml
 RUN_DEPENDS=		databases/p5-DBI \
 			curl-*|wget-*:net/curl
 

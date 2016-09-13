@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/05 17:42:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/09/13 18:52:05 naddy Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
@@ -12,11 +12,10 @@ MASTER_SITES=	${MASTER_SITE_GNU:=gv/}
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m Xaw3d Xinerama
+WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c iconv m Xaw3d Xinerama
 
-MODULES=	converters/libiconv
-
-LIB_DEPENDS=	x11/Xaw3d
+LIB_DEPENDS=	converters/libiconv \
+		x11/Xaw3d
 RUN_DEPENDS=	print/ghostscript/gnu
 
 CONFIGURE_STYLE=	gnu

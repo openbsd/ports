@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/29 18:25:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/13 18:52:06 naddy Exp $
 
 COMMENT =		web/text search engine
 
@@ -13,11 +13,10 @@ MASTER_SITES =		${HOMEPAGE}distribution/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c lzma m pcre pcreposix pthread xml2 z
+WANTLIB += c iconv lzma m pcre pcreposix pthread xml2 z
 
-MODULES =		converters/libiconv
-
-LIB_DEPENDS =		devel/pcre \
+LIB_DEPENDS =		converters/libiconv \
+			devel/pcre \
 			textproc/libxml
 
 RUN_DEPENDS =		www/p5-URI \
