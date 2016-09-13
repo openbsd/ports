@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/08/21 07:03:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/13 14:40:29 naddy Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -9,14 +9,13 @@ HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c fontconfig freetype gd jpeg m png pthread tiff vpx
+WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff vpx
 WANTLIB += z
-
-MODULES=		converters/libiconv
 
 MASTER_SITES=		${HOMEPAGE}/release/
 
-LIB_DEPENDS=		graphics/gd
+LIB_DEPENDS=		converters/libiconv \
+			graphics/gd
 
 ALL_TARGET=
 

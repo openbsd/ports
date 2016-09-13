@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/23 05:17:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2016/09/13 14:40:29 naddy Exp $
 
 COMMENT=	companion library to APR
 
@@ -19,13 +19,13 @@ FLAVOR?=
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += lib/db4/db>=4 expat pthread
+WANTLIB += lib/db4/db>=4 expat iconv pthread
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-LIB_DEPENDS=	databases/db/v4,no_java,no_tcl
+LIB_DEPENDS=	converters/libiconv \
+		databases/db/v4,no_java,no_tcl
 
-MODULES=	converters/libiconv
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \

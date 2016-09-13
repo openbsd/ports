@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/10 21:58:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2016/09/13 14:40:30 naddy Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -15,12 +15,12 @@ HOMEPAGE=	http://jedsoft.org/slang/
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m onig pcre png termcap z
+WANTLIB += c iconv m onig pcre png termcap z
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		converters/libiconv \
+			devel/pcre \
 			graphics/png \
 			textproc/oniguruma
-MODULES=		converters/libiconv
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf no-autoheader

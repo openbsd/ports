@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/13 14:40:30 naddy Exp $
 
 COMMENT=	Python bindings for the SILC toolkit
 
@@ -15,14 +15,15 @@ HOMEPAGE=	http://www.liquidx.net/pysilc/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread silc>=7 silcclient>=5
+WANTLIB += iconv pthread silc>=7 silcclient>=5
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-silc.berlios/}
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	lang/python converters/libiconv
+MODULES=	lang/python
 
-LIB_DEPENDS=	devel/silc-toolkit
+LIB_DEPENDS=	converters/libiconv \
+		devel/silc-toolkit
 
 NO_TEST=	Yes
 

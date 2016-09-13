@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/13 14:40:30 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -21,19 +21,19 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 atk-1.0 c cairo gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv pango-1.0
 WANTLIB += pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lazarus/}
 
-MODULES =		converters/libiconv
 BUILD_DEPENDS =		lang/fpc>=${FPC_V}
 RUN_DEPENDS =		lang/fpc>=${FPC_V} \
 			x11/gtk+3,-guic \
 			devel/desktop-file-utils \
 			devel/gmake \
 			misc/shared-mime-info
-LIB_DEPENDS =		x11/gtk+2
+LIB_DEPENDS =		converters/libiconv \
+			x11/gtk+2
 
 MAKE_ENV =		PPC_CONFIG_PATH="${WRKDIR}" MKDIRPROG=/bin/mkdir \
 			ECHO=/bin/echo GINSTALL=/usr/bin/install \

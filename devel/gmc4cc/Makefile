@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 14:40:29 naddy Exp $
 
 COMMENT=	C compiler for GMC-4
 
@@ -21,12 +21,11 @@ MASTER_SITES0=	http://distfiles.nl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gmc4cc-samples-0.1${EXTRACT_SUFX}:0
 
-MODULES=	converters/libiconv
-
-WANTLIB += c gmp m
+WANTLIB += c gmp iconv m
 
 BUILD_DEPENDS=	lang/ghc
-LIB_DEPENDS=	devel/gmp
+LIB_DEPENDS=	converters/libiconv \
+		devel/gmp
 
 WRKDIST= 	${WRKDIR}/gmc4cc/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/01/29 20:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/13 14:40:29 naddy Exp $
 
 COMMENT=		parser generator for Haskell
 
@@ -14,11 +14,12 @@ HOMEPAGE=		http://www.haskell.org/happy/
 # BSD3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m
+WANTLIB=		c iconv m
 
-MODULES=		lang/ghc converters/libiconv
+MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage nort
 
+LIB_DEPENDS=		converters/libiconv
 BUILD_DEPENDS+=		devel/hs-mtl>=1.0 \
 			textproc/docbook-xsl
 

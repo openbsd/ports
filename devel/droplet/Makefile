@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/18 21:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/13 14:40:29 naddy Exp $
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
@@ -16,15 +16,15 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto json-c lzma m pthread ssl xml2 z
+WANTLIB += crypto iconv json-c lzma m pthread ssl xml2 z
 
-MODULES=		converters/libiconv
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 # XXX Depends on libtool macros
 
-LIB_DEPENDS=		textproc/libxml \
+LIB_DEPENDS=		converters/libiconv \
+			textproc/libxml \
 			devel/json-c
 
 AUTOCONF_VERSION=	2.68

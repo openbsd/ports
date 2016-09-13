@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/06/01 14:56:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.59 2016/09/13 14:40:29 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -55,14 +55,14 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c bz2 m pthread stdc++ util z
+WANTLIB=	c bz2 iconv m pthread stdc++ util z
 
-MODULES=	converters/libiconv \
-		lang/python
+MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_3}
-LIB_DEPENDS=	archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2 \
+		converters/libiconv 
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/29 20:28:08 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2016/09/13 14:40:30 naddy Exp $
 
 COMMENT =	Haskell code colourizer
 
@@ -17,11 +17,13 @@ HOMEPAGE =	http://code.haskell.org/~malcolm/hscolour/
 # GPL2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m
+WANTLIB =	c iconv m
 
-MODULES =	lang/ghc converters/libiconv
+MODULES =	lang/ghc
 MODGHC_BUILD =	cabal hackage haddock register
 
 MODGHC_PACKAGE_KEY =	D9eX1LEa8SaE1RFFjW0myg
+
+LIB_DEPENDS =	converters/libiconv
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/09/13 14:40:30 naddy Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -15,13 +15,12 @@ HOMEPAGE=	http://sdlmm.sourceforge.net/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB +=	SDL m pthread sndio stdc++ usbhid
+WANTLIB +=	SDL iconv m pthread sndio stdc++ usbhid
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
 
-MODULES=	converters/libiconv
-
-LIB_DEPENDS=	devel/sdl
+LIB_DEPENDS=	converters/libiconv \
+		devel/sdl
 
 USE_GROFF=	Yes
 SEPARATE_BUILD= Yes

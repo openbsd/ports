@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2016/09/13 14:40:29 naddy Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
@@ -16,11 +16,10 @@ HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 # Public Domain
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += SDL m pthread sndio stdc++ usbhid
+WANTLIB += SDL iconv m pthread sndio stdc++ usbhid
 
-LIB_DEPENDS=	devel/sdl
-
-MODULES=	converters/libiconv
+LIB_DEPENDS=	converters/libiconv \
+		devel/sdl
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
