@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/07 14:00:07 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
@@ -16,11 +16,11 @@ MASTER_SITES =		https://bitbucket.org/starling13/tkgate/downloads/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 c m pthread ${MODTK_WANTLIB}
+WANTLIB += ICE SM X11 c iconv m pthread ${MODTK_WANTLIB}
 
-MODULES =		converters/libiconv \
-			x11/tk
+MODULES =		x11/tk
 
+LIB_DEPENDS =		converters/libiconv
 BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS = 		${MODTK_RUN_DEPENDS} \
 			devel/desktop-file-utils

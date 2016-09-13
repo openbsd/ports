@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/27 20:55:02 eric Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/13 11:44:06 naddy Exp $
 
 COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
@@ -16,13 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
-WANTLIB=	blas c lapack m pthread sndio ${MODFORTRAN_WANTLIB} \
+WANTLIB=	blas c iconv lapack m pthread sndio ${MODFORTRAN_WANTLIB} \
 		sphinxad sphinxbase
 
-MODULES=	converters/libiconv fortran
+MODULES=	fortran
 MODFORTRAN_COMPILER = g77
 
 LIB_DEPENDS=	audio/cmu-sphinxbase \
+		converters/libiconv  \
 		${MODFORTRAN_LIB_DEPENDS}
 
 

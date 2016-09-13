@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 16:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT=	universal unicode codec using iconv for Python
 
@@ -16,8 +16,10 @@ MODPY_DISTUTILS_BUILDARGS=	--with-libiconv=${LOCALBASE}
 
 NO_TEST=	Yes
 
-MODULES=	lang/python converters/libiconv
+MODULES=	lang/python
 
-WANTLIB=	pthread ${MODPY_WANTLIB}
+WANTLIB=	iconv pthread ${MODPY_WANTLIB}
+
+LIB_DEPENDS=	converters/libiconv
 
 .include <bsd.port.mk>

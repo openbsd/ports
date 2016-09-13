@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/27 15:31:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/13 11:44:07 naddy Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -15,17 +15,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
 WANTLIB += bz2 c crypto djvulibre expat fftw3 fontconfig freetype
-WANTLIB += jbig jpeg lcms2 lzma m openjp2 png pthread pthread-stubs
+WANTLIB += iconv jbig jpeg lcms2 lzma m openjp2 png pthread pthread-stubs
 WANTLIB += ssl tiff webp xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
-MODULES =		converters/libiconv
 BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
 			lang/gawk
 
-LIB_DEPENDS =		graphics/ImageMagick \
+LIB_DEPENDS =		converters/libiconv \
+			graphics/ImageMagick \
 			graphics/lcms2 \
 			textproc/libxml
 

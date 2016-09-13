@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/13 11:44:06 naddy Exp $
 
 COMMENT=	compact disk input and control library
 
@@ -19,10 +19,10 @@ HOMEPAGE=	https://www.gnu.org/software/libcdio/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=	c cddb m ncurses stdc++
+WANTLIB=	c cddb iconv m ncurses stdc++
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	audio/libcddb
+LIB_DEPENDS=	audio/libcddb \
+		converters/libiconv
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf

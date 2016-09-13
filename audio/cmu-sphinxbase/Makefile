@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/08/24 05:02:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/13 11:44:06 naddy Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
@@ -17,12 +17,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
-WANTLIB=	blas c lapack m pthread sndio ${MODFORTRAN_WANTLIB}
-MODULES=	converters/libiconv fortran
+WANTLIB=	blas c iconv lapack m pthread sndio ${MODFORTRAN_WANTLIB}
+MODULES=	fortran
 MODFORTRAN_COMPILER = g77
 
 
-LIB_DEPENDS=	math/lapack \
+LIB_DEPENDS=	converters/libiconv \
+		math/lapack \
 		${MODFORTRAN_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

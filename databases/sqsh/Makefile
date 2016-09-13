@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/11/21 01:19:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
@@ -14,12 +14,12 @@ HOMEPAGE=	http://sourceforge.net/projects/sqsh/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ct>=2 ncurses m pthread readline
+WANTLIB += c ct>=2 iconv ncurses m pthread readline
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/}
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	databases/freetds
+LIB_DEPENDS=	converters/libiconv \
+		databases/freetds
 
 CONFIGURE_STYLE=  autoconf
 AUTOCONF_VERSION= 2.69

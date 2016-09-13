@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/08/22 11:44:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT=		command line client for mpd
 
@@ -13,12 +13,11 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c mpdclient
-LIB_DEPENDS=		audio/libmpdclient>=2.2
+WANTLIB=		c iconv mpdclient
+LIB_DEPENDS=		audio/libmpdclient>=2.2 \
+			converters/libiconv
 
 MASTER_SITES=		http://www.musicpd.org/download/mpc/${VER:R}/
-
-MODULES=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		ac_cv_func_iconv=yes

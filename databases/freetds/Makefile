@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/07/01 11:35:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -19,11 +19,9 @@ MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed idn intl iodbc iodbcinst ncurses
+WANTLIB += c ffi gmp gnutls hogweed iconv idn intl iodbc iodbcinst ncurses
 WANTLIB += nettle p11-kit pthread readline tasn1 z
 WANTLIB += gcrypt gpg-error
-
-MODULES=	converters/libiconv
 
 ### AUTOHELL (pre-configure)
 AUTOCONF_VERSION=2.65
@@ -34,7 +32,8 @@ BUILD_DEPENDS+=	devel/gettext \
 		${MODGNU_AUTOMAKE_DEPENDS}
 ### end of AUTOHELL
 
-LIB_DEPENDS=	databases/iodbc,-main \
+LIB_DEPENDS=	converters/libiconv \
+		databases/iodbc,-main \
 		security/gnutls \
 		security/libgcrypt
 

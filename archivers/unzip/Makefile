@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/01/15 19:57:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/09/13 11:44:06 naddy Exp $
 
 PORTROACH =	skipv:552
 
@@ -35,7 +35,8 @@ DOCS =	COPYING.OLD LICENSE README WHERE
 LOC =		-DLARGE_FILE_SUPPORT -DNO_LCHMOD -DUSE_UNSHRINK
 
 .if ${FLAVOR:L:Miconv}
-MODULES +=	converters/libiconv
+LIB_DEPENDS +=	converters/libiconv
+WANTLIB +=	iconv
 CFLAGS +=	-I${LOCALBASE}/include
 LOC +=		-DUNICODE_SUPPORT -DUNICODE_WCHAR -DUTF8_MAYBE_NATIVE \
 		-DNO_WORKING_ISPRINT

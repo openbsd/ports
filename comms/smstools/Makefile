@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/08/10 09:58:04 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
@@ -14,14 +14,14 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c mm
+WANTLIB =	c iconv mm
 
 MASTER_SITES =	${HOMEPAGE}/packages/
 
 # some scripts use formail
 RUN_DEPENDS =	mail/procmail
-LIB_DEPENDS =	devel/mm
-MODULES =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv \
+		devel/mm
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/13 11:44:07 naddy Exp $
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
@@ -11,9 +11,10 @@ CATEGORIES=	audio
 # Ruby License
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/ruby converters/libiconv
-WANTLIB=	id3>=4 stdc++ z
-LIB_DEPENDS=	audio/id3lib
+MODULES=	lang/ruby
+WANTLIB=	iconv id3>=4 stdc++ z
+LIB_DEPENDS=	audio/id3lib \
+		converters/libiconv
 
 CONFIGURE_STYLE=	ruby gem ext
 
