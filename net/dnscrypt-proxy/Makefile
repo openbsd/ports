@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/09 17:37:51 tj Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/13 21:36:47 tj Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
 V=			1.7.0
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
-MASTER_SITES=		http://download.dnscrypt.org/dnscrypt-proxy/ \
-			http://download.dnscrypt.org/dnscrypt-proxy/old/
+MASTER_SITES=		https://download.dnscrypt.org/dnscrypt-proxy/ \
+			https://download.dnscrypt.org/dnscrypt-proxy/old/
 
-HOMEPAGE=		http://dnscrypt.org/
+HOMEPAGE=		https://dnscrypt.org/
 
 MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
 

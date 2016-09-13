@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2016/09/09 17:37:51 tj Exp $
+$OpenBSD: README-main,v 1.7 2016/09/13 21:36:48 tj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,6 +26,7 @@ server:
 forward-zone:
         name: "."
         forward-addr: 127.0.0.1@40
+       #forward-addr: 127.0.0.1@41 # example failover server, see below
 
 A list of resolvers providing DNSCrypt service is available at
 ${TRUEPREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv.
@@ -34,5 +35,15 @@ Choose one (there is no default) and configure it, for example:
 rcctl enable dnscrypt_proxy
 rcctl set dnscrypt_proxy flags -E -m1 -R dnscrypt.eu-nl -a 127.0.0.1:40
 rcctl start dnscrypt_proxy
+
+The dnscrypt-proxy utility does not support failover resolvers; as described
+in "Using DNSCrypt in combination with a DNS cache" on https://dnscrypt.org/,
+you will need to run a second instance of it for DNS redundancy. This can be
+handled by rcctl(8) by adding a symbolic link to the script:
+
+ln -s dnscrypt_proxy /etc/rc.d/dnscrypt_proxy2
+rcctl enable dnscrypt_proxy2
+rcctl set dnscrypt_proxy2 flags -E -m1 -R dnscrypt.eu-dk -a 127.0.0.1:41
+rcctl start dnscrypt_proxy2
 
 For more information, see https://dnscrypt.org/

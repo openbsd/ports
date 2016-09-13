@@ -1,22 +1,15 @@
-DNSCrypt-proxy provides local service which can be used directly
-as your local resolver or as a DNS forwarder, encrypting requests
-using the DNSCrypt protocol and passing them to an upstream server,
-by default OpenDNS who run this on their resolvers.
+DNSCrypt-proxy provides a local service which can be used directly as your
+local resolver or as a DNS forwarder, encrypting requests using the DNSCrypt
+protocol and passing them to an upstream server.
 
-DNSCrypt is a slight variation on DNSCurve.
+The DNSCrypt protocol is very similar to DNSCurve, but focuses on securing
+communications between a client and its first-level resolver.
 
 DNSCurve improves confidentiality and integrity of DNS requests using
-high-speed high-security elliptic-curve cryptography. Best of all,
-DNSCurve has a very low overhead and adds virtually no latency to
-queries.
+high-speed, high-security elliptic-curve cryptography. It aims to secure
+the entire chain down to authoritative servers. However, it only works
+with authoritative servers that explicitly support the protocol.
 
-DNSCurve aims at securing the entire chain down to authoritative
-servers. But it only works with authoritative servers that explicitly
-support the protocol.
-
-The DNSCrypt protocol is very similar to DNSCurve, but focuses on
-securing communications between a client and its first-level resolver.
-While not providing end-to-end security, it protects the local
-network, which is often the weakest point of the chain, against
-man-in-the-middle attacks. It also provides some confidentiality to
-DNS queries.
+While not providing end-to-end security, it protects the local network,
+which is often the weakest point of the chain, against man-in-the-middle
+attacks. It also provides some confidentiality to DNS queries.
