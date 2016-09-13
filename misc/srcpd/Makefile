@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/15 14:59:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =	daemon to control digital model railroad systems
 
@@ -14,9 +14,9 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES +=		converters/libiconv
-WANTLIB += 		c m pthread z xml2
-LIB_DEPENDS +=		textproc/libxml
+WANTLIB += 		c iconv m pthread z xml2
+LIB_DEPENDS +=		converters/libiconv \
+			textproc/libxml
 
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf

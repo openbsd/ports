@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/14 19:44:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
@@ -17,10 +17,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	expat fontconfig freetype fribidi m pthread-stubs z
+WANTLIB=	expat fontconfig freetype fribidi iconv m pthread-stubs z
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	devel/fribidi
+LIB_DEPENDS=	converters/libiconv \
+		devel/fribidi
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-asm \

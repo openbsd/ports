@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/02 11:37:02 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =		search backend for Mew with Hyper Estrairer
 
@@ -15,10 +15,10 @@ MAINTAINER =		YASUOKA Masahiko <yasuoka@yasuoka.net>
 # BSD and partially LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c event pthread estraier qdbm
+WANTLIB =		c event iconv pthread estraier qdbm
 
-MODULES =		converters/libiconv
-LIB_DEPENDS =		databases/qdbm \
+LIB_DEPENDS =		converters/libiconv \
+			databases/qdbm \
 			textproc/hyperestraier
 RUN_DEPENDS =		mail/mew
 

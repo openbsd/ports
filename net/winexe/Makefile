@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/06 12:17:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =	remotely execute programs on a Windows host
 
@@ -20,10 +20,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB =		c gnutls pthread tasn1
+WANTLIB =		c gnutls iconv pthread tasn1
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS =		security/gnutls
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv \
+			security/gnutls
 
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.59

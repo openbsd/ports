@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/10/20 08:38:54 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -13,8 +13,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
 # GPLv2/GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m
-MODULES =		converters/libiconv
+WANTLIB =		c iconv m
+LIB_DEPENDS =		converters/libiconv
 USE_GROFF =		Yes
 
 FLAVORS =		db4 sqlite3 qdbm

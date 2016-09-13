@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=	re-encode many media file formats to Ogg Theora
 
@@ -14,17 +14,18 @@ HOMEPAGE=	http://www.v2v.cc/~j/${N}/
 PERMIT_PACKAGE_CDROM=	patents in FFmpeg
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += avcodec avdevice avfilter avformat avutil c m ogg postproc
+WANTLIB += avcodec avdevice avfilter avformat avutil c iconv m ogg postproc
 WANTLIB += swscale theoradec theoraenc vorbis vorbisenc
 WANTLIB += avresample opus pthread speex swresample vpx x264 x265
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	graphics/ffmpeg>=20121026 \
+LIB_DEPENDS=	converters/libiconv \
+		graphics/ffmpeg>=20121026 \
 		audio/libvorbis \
 		multimedia/libtheora
 
-MODULES=	devel/scons converters/libiconv
+MODULES=	devel/scons
 
 MODSCONS_FLAGS=	libkate=0
 

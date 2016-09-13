@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/09/04 17:29:28 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/13 16:12:14 naddy Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -29,13 +29,12 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi gbm jpeg lcms2 m opus postproc
+WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m opus postproc
 WANTLIB += pthread pthread-stubs smbclient sndio speex swresample
 WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
 
-MODULES =		converters/libiconv \
-			lang/lua \
+MODULES =		lang/lua \
 			lang/python
 
 BUILD_DEPENDS =		audio/ladspa \
@@ -43,6 +42,7 @@ BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
 
 LIB_DEPENDS =		audio/libcdio \
+			converters/libiconv \
 			devel/libdvdread \
 			devel/sdl2 \
 			graphics/ffmpeg>=20151112 \

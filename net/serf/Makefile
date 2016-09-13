@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/22 11:31:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =		high performance HTTP client library
 DISTNAME =		serf-1.3.8
@@ -11,13 +11,13 @@ REVISION =		0
 # APLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 		apr-1 aprutil-1 crypto db expat pthread ssl z
+WANTLIB = 		apr-1 aprutil-1 crypto db expat iconv pthread ssl z
 MASTER_SITES =		https://serf.googlecode.com/svn/src_releases/
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES = 		converters/libiconv \
-			devel/scons
-LIB_DEPENDS =		devel/apr-util
+MODULES = 		devel/scons
+LIB_DEPENDS =		converters/libiconv \
+			devel/apr-util
 MODSCONS_ENV=	CC="${CC}" \
 		PREFIX="${PREFIX}" \
 		DEBUG=0 \

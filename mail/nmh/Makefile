@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/07/16 12:14:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -11,7 +11,7 @@ REVISION=		0
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto edit ssl termcap
+WANTLIB=		c crypto edit iconv ssl termcap
 
 MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
 			--with-readline \
 			--with-tls
 
-MODULES =		converters/libiconv
+LIB_DEPENDS =		converters/libiconv
 # needed for replyfilter
 RUN_DEPENDS=		mail/p5-MIME-tools \
 			textproc/par \

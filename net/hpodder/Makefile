@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/09/25 20:04:03 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =		command line podcast aggregator
 
@@ -12,11 +12,13 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m pthread sqlite3 util
+WANTLIB =		c iconv m pthread sqlite3 util
 
-MODULES =		lang/ghc converters/libiconv
+MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage nort
+
+LIB_DEPENDS =		converters/libiconv
 
 BUILD_DEPENDS =		devel/hs-ConfigFile \
 			devel/hs-mtl \

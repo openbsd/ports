@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/14 07:09:26 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
@@ -9,12 +9,10 @@ HOMEPAGE=		https://www.sdaoden.eu/code.html#s-mailx
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto edit idn ssl termcap
+WANTLIB += c crypto edit iconv idn ssl termcap
 
 MASTER_SITES=		https://www.sdaoden.eu/downloads/
 MAINTAINER=		William Yodlowsky <william@openbsd.org>
-
-MODULES=		converters/libiconv
 
 MAKE_FILE=		makefile
 MAKE_FLAGS=		CC="${CC}" \
@@ -32,7 +30,8 @@ MAKE_FLAGS=		CC="${CC}" \
 
 MAKE_ENV=		VERBOSE=Yes
 
-LIB_DEPENDS=		devel/libidn
+LIB_DEPENDS=		converters/libiconv \
+			devel/libidn
 
 INSTALL_TARGET=		packager-install
 

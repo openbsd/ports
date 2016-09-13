@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/06/29 16:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2016/09/13 16:12:14 naddy Exp $
 
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.icecast.org/ices.php
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	c m ogg perl pthread theora util vorbis vorbisfile z
+WANTLIB =	c iconv m ogg perl pthread theora util vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB}
 WANTLIB += 	mp3lame shout>=3 speex>=4 FLAC>=5 lzma xml2>=7
 
@@ -27,8 +27,8 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-lame=${LOCALBASE} --with-vorbis=${LOCALBASE} \
 		--with-flac=${LOCALBASE}
 
-MODULES=	converters/libiconv
 LIB_DEPENDS=	audio/lame \
+		converters/libiconv \
 		net/libshout \
 		audio/speex \
 		audio/flac \

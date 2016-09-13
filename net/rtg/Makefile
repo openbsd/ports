@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/03 13:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT =		SNMP statistics monitoring system
 
@@ -14,12 +14,11 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto fontconfig freetype gd jpeg m mysqlclient_r
+WANTLIB += c crypto fontconfig freetype gd iconv jpeg m mysqlclient_r
 WANTLIB += netsnmp png pthread tiff vpx z
 
-MODULES =		converters/libiconv
-
-LIB_DEPENDS =		net/net-snmp \
+LIB_DEPENDS =		converters/libiconv \
+			net/net-snmp \
 			databases/mariadb \
 			graphics/gd \
 			graphics/jpeg \

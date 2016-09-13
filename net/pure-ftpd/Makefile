@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/10/14 10:01:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -18,9 +18,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto sodium ssl
+WANTLIB=	c crypto iconv sodium ssl
 
-LIB_DEPENDS=	security/libsodium
+LIB_DEPENDS=	converters/libiconv \
+		security/libsodium
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
@@ -29,8 +30,6 @@ CONFIGURE_ARGS+= --disable-pie \
 		 --with-paranoidmsg \
 		 --with-rfc2640 \
 		 --with-tls
-
-MODULES=	converters/libiconv
 
 FLAVORS=	ldap mysql postgresql virtual_chroot
 FLAVOR?=

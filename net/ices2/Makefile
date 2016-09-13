@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/06/29 16:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/13 16:12:14 naddy Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -11,19 +11,17 @@ HOMEPAGE=	http://www.icecast.org/ices.php
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c lzma m ogg pthread shout sndio speex theora vorbis
+WANTLIB += c iconv lzma m ogg pthread shout sndio speex theora vorbis
 WANTLIB += vorbisenc xml2 z
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
-
-
-MODULES=		converters/libiconv
 
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS += 	devel/libtool \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS=		audio/speex \
+			converters/libiconv \
 			net/libshout \
 			textproc/libxml
 
