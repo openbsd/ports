@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/07/06 08:46:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2016/09/13 15:29:02 naddy Exp $
 
 COMMENT=	library for dynamic creation of images
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.libgd.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c expat fontconfig freetype jpeg m png pthread
+WANTLIB += c expat fontconfig freetype iconv jpeg m png pthread
 WANTLIB += pthread-stubs stdc++ tiff vpx z
 
 MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/
@@ -23,11 +23,10 @@ MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --without-xpm
 
-LIB_DEPENDS=	graphics/jpeg \
+LIB_DEPENDS=	converters/libiconv \
+		graphics/jpeg \
 		graphics/png \
 		graphics/tiff \
 		multimedia/libvpx
-
-MODULES=	converters/libiconv
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/13 15:29:02 naddy Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 EXTRACT_SUFX=	.zip
 
-MODULES=	converters/libiconv \
-		java
+MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_BUILD=	ant
 
@@ -32,7 +31,9 @@ BITS=32
 
 MODJAVA_BUILD_ARGS=-Dbits=${BITS}
 
-WANTLIB=	c m pthread
+WANTLIB=	c iconv m pthread
+
+LIB_DEPENDS=	converters/libiconv
 
 USE_GMAKE=	Yes
 

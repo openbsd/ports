@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/24 13:25:55 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT =		clone of Doubleback, an intruder circling game
 
@@ -12,15 +12,15 @@ HOMEPAGE =		http://sarrazip.com/dev/quadrupleback.html
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC SDL SDL_gfx SDL_image SDL_mixer c flatzebra-0.1
+WANTLIB += FLAC SDL SDL_gfx SDL_image SDL_mixer c flatzebra-0.1 iconv
 WANTLIB += jpeg m mikmod ogg png pthread smpeg sndio stdc++ tiff
 WANTLIB += usbhid vorbis vorbisfile webp z
 
 MASTER_SITES =		http://sarrazip.com/dev/
 
-MODULES =		converters/libiconv
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		devel/flatzebra \
+LIB_DEPENDS =		converters/libiconv \
+			devel/flatzebra \
 			devel/sdl-gfx
 
 FAKE_FLAGS =		docdir=${PREFIX}/share/doc/quadrupleback

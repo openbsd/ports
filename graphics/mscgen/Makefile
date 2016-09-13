@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 15:29:02 naddy Exp $
 
 COMMENT=		utility to create Message Sequence Charts
 
@@ -15,11 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 
-WANTLIB += c fontconfig freetype gd jpeg m png pthread tiff vpx z
+WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff vpx z
 
-MODULES=		converters/libiconv
-
-LIB_DEPENDS=		graphics/gd
+LIB_DEPENDS=		converters/libiconv \
+			graphics/gd
 
 CONFIGURE_STYLE=	gnu
 

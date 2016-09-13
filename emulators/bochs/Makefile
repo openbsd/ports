@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/05/10 08:01:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -43,11 +43,11 @@ WANTLIB+=	curses readline
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=--with-nogui
 .else
-MODULES=	converters/libiconv
-LIB_DEPENDS+=	devel/sdl
+LIB_DEPENDS+=	converters/libiconv \
+		devel/sdl
 CONFIGURE_ARGS+=--with-sdl \
 		--with-x11
-WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender sndio usbhid xcb
+WANTLIB+=	SDL X11 Xext Xpm Xrandr Xrender iconv sndio usbhid xcb
 .endif
 
 NO_TEST=	Yes

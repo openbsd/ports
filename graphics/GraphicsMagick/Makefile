@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/06/11 11:48:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -18,14 +18,13 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # http://www.graphicsmagick.org/www/Copyright.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext bz2 c freetype jasper jbig \
-			jpeg lcms2 ltdl lzma m png16 pthread pthread-stubs \
-			stdc++ tiff webp wmflite-0.2 xcb xml2 z
-
-MODULES=		converters/libiconv
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext bz2 c freetype iconv \
+			jasper jbig jpeg lcms2 ltdl lzma m png16 pthread \
+			pthread-stubs stdc++ tiff webp wmflite-0.2 xcb xml2 z
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \
+			converters/libiconv \
 			devel/libtool,-ltdl \
 			graphics/jasper \
 			graphics/jbigkit \

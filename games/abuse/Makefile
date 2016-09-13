@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/04/09 14:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -24,12 +24,12 @@ WANTLIB += expat
 MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
 MASTER_SITES0 =	http://openbsd.fi/dist/
 
-MODULES =	converters/libiconv
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS =	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS =	devel/sdl-mixer \
+LIB_DEPENDS =	converters/libiconv \
+		devel/sdl-mixer \
 		devel/smpeg \
 		audio/flac \
 		audio/libogg \

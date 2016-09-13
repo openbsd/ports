@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
@@ -10,15 +10,14 @@ HOMEPAGE =	https://code.google.com/p/delaboratory/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m pthread stdc++ tiff wx_base wx_base_net wx_base_odbc
+WANTLIB += c iconv m pthread stdc++ tiff wx_base wx_base_net wx_base_odbc
 WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xml2 z
 
 MASTER_SITES =	https://delaboratory.googlecode.com/files/
 
-MODULES =	converters/libiconv
-
-LIB_DEPENDS =	textproc/libxml \
+LIB_DEPENDS =	converters/libiconv \
+		textproc/libxml \
 		x11/wxWidgets,-main
 
 RUN_DEPENDS =	graphics/dcraw

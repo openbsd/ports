@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2016/08/12 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.158 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=		image processing tools
 
@@ -26,14 +26,13 @@ MASTER_SITES=		https://www.imagemagick.org/download/releases/ \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt bz2 c djvulibre expat
-WANTLIB += fftw3 fontconfig freetype jbig jpeg lcms2 lzma m
+WANTLIB += fftw3 fontconfig freetype iconv jbig jpeg lcms2 lzma m
 WANTLIB += openjp2 perl png pthread pthread-stubs stdc++ tiff
 WANTLIB += webp xcb xml2 z
 
-MODULES =		converters/libiconv
-
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
+			converters/libiconv \
 			graphics/djvulibre \
 			graphics/jbigkit \
 			graphics/png \

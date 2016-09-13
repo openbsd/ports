@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/08/23 07:49:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=	astrosmash clone for X
 
@@ -12,13 +12,13 @@ HOMEPAGE=	http://sarrazip.com/dev/cosmosmash.html
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread stdc++
-WANTLIB += FLAC jpeg mikmod ogg png smpeg sndio tiff usbhid
+WANTLIB += FLAC iconv jpeg mikmod ogg png smpeg sndio tiff usbhid
 WANTLIB += vorbis vorbisfile webp z
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-MODULES =	converters/libiconv
-LIB_DEPENDS =	devel/flatzebra>=0.1.6
+LIB_DEPENDS =	converters/libiconv \
+		devel/flatzebra>=0.1.6
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
@@ -20,11 +20,10 @@ DIST_SUBDIR=		nedit
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xpm Xrender Xt
-WANTLIB += c expat fontconfig freetype m z Xm
+WANTLIB += c expat fontconfig freetype iconv m z Xm
 
-MODULES=		converters/libiconv
-
-LIB_DEPENDS+=		x11/motif
+LIB_DEPENDS+=		converters/libiconv \
+			x11/motif
 
 ALL_TARGET=		openbsd
 

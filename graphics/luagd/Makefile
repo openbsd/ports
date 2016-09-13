@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/13 15:29:02 naddy Exp $
 
 COMMENT=	gd binding for the lua language
 
@@ -14,9 +14,9 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/1592/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/lua converters/libiconv
-WANTLIB=	freetype fontconfig z jpeg>=62 png>=2 gd>=20.33
-LIB_DEPENDS=	graphics/jpeg graphics/png graphics/gd
+MODULES=	lang/lua
+WANTLIB=	freetype fontconfig z iconv jpeg>=62 png>=2 gd>=20.33
+LIB_DEPENDS=	converters/libiconv graphics/jpeg graphics/png graphics/gd
 
 NO_TEST=	Yes
 

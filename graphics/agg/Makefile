@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -15,15 +15,15 @@ HOMEPAGE=	http://www.antigrain.com/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 freetype m sndio usbhid xcb z SDL>=6 stdc++ pthread
+WANTLIB=	X11 freetype iconv m sndio usbhid xcb z SDL>=6 stdc++ pthread
 
 MASTER_SITES=	${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 
-MODULES=	converters/libiconv
-LIB_DEPENDS=	devel/sdl
+LIB_DEPENDS=	converters/libiconv \
+		devel/sdl
 # XX needs libtoolize
 BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/libtool \

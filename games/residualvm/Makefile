@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/07 09:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/13 15:29:01 naddy Exp $
 
 COMMENT =		interpreter for some LucasArts 3D games
 
@@ -14,15 +14,14 @@ HOMEPAGE =		http://residualvm.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL c freetype jpeg m mad mpeg2 ogg png pthread stdc++
+WANTLIB += GL SDL c freetype iconv jpeg m mad mpeg2 ogg png pthread stdc++
 WANTLIB += theoradec vorbis vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=residualvm/}
 
-MODULES =		converters/libiconv
-
 LIB_DEPENDS =		audio/libmad \
 			audio/libvorbis \
+			converters/libiconv \
 			devel/sdl \
 			graphics/jpeg \
 			graphics/libmpeg2 \
