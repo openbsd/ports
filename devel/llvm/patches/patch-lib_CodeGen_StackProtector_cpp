@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_CodeGen_StackProtector_cpp,v 1.7 2016/09/13 07:47:41 ajacoutot Exp $
+
+[SSP] Do not set __guard_local to hidden for OpenBSD SSP
+
+__guard_local is defined as long on OpenBSD. If the source file contains
+a definition of __guard_local, it mismatches with the int8 pointer type
+used in LLVM. In that case, Module::getOrInsertGlobal() returns a
+cast operation instead of a GlobalVariable. Trying to set the
+visibility on the cast operation leads to random segfaults (seen when
+compiling the OpenBSD kernel, which also runs with stack protection).
+
+In the kernel, the hidden attribute does not matter. For userspace code,
+__guard_local is defined as hidden in the startup code. If a program
+re-defines __guard_local, the definition from the startup code will
+either win or the linker complains about multiple definitions
+(depending on whether the re-defined __guard_local is placed in the
+common segment or not).
+
+It also matches what gcc on OpenBSD does.
+
+--- lib/CodeGen/StackProtector.cpp.orig	Mon Sep 12 10:54:50 2016
++++ lib/CodeGen/StackProtector.cpp	Mon Sep 12 10:55:34 2016
+@@ -341,11 +341,9 @@ static bool CreatePrologue(Function *F, Module *M, Ret
+     StackGuardVar =
+         ConstantExpr::getIntToPtr(OffsetVal, PointerType::get(PtrTy,
+                                                               AddressSpace));
+-  } else if (TT.isOSOpenBSD()) {
++  } else if (TT.isOSOpenBSD())
+     StackGuardVar = M->getOrInsertGlobal("__guard_local", PtrTy);
+-    cast<GlobalValue>(StackGuardVar)
+-        ->setVisibility(GlobalValue::HiddenVisibility);
+-  } else {
++  else {
+     SupportsSelectionDAGSP = true;
+     StackGuardVar = M->getOrInsertGlobal("__stack_chk_guard", PtrTy);
+   }
