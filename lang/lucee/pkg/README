@@ -1,0 +1,135 @@
+$OpenBSD: README,v 1.1.1.1 2016/09/13 16:24:37 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuring Tomcat to support Lucee
+===================================
+Lucee is a Java-based CFML engine. It runs as a servlet in a container;
+this package is designed to work with the Apache Tomcat servlet container,
+you will need to make a few configuration changes to tomcat to use it.
+If you have not yet modified Tomcat's configuration, this readme includes
+a patch which can be used:
+
+	# patch -d ${CATALINA_BASE}/conf < \
+	    ${LOCALBASE}/share/doc/pkg-readmes/${FULLPKGNAME}
+
+Then skip to the next section in this file, "Starting the service
+and online configuration".
+
+If you have already modified Tomcat's configuration and need to edit
+manually, there are two possible ways to proceed.
+
+1. Insert the contents of ${PREFIX}/conf/web-lucee.xml in Tomcat's
+${CATALINA_BASE}/conf/web.xml file. This will need to be kept up-to-date
+with future Lucee releases.
+
+ -or-
+
+2. Modify Tomcat configuration to include web-lucee.xml itself; this is
+the method used by the patch below, initial setup is slightly more complex
+but ongoing maintenance is reduced.
+
+   a) Change the <Context> line in ${CATALINA_BASE}/conf/context.xml to read
+      <Context xmlBlockExternal="false">.
+
+   b) Add lines after the first <?xml...?> line at the top of
+      ${CATALINA_BASE}/conf/web.xml, so it looks like this:
+
+   <?xml version="1.0" encoding="ISO-8859-1"?>
+   <!DOCTYPE root [
+       <!ENTITY lucee SYSTEM "./web-lucee.xml" >
+   ]>
+
+   c) Towards the bottom of web.xml, add the CFML-related file extensions
+      to the <welcome-file-list> section:
+
+	<welcome-file-list>
+	    <welcome-file>index.cfm</welcome-file>
+	    <welcome-file>index.html</welcome-file>
+	    <welcome-file>index.htm</welcome-file>
+	    <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+   d) Add "&lucee;" at the bottom of the </web-app> section to include
+      the "lucee" xml entity defined above. This tells Tomcat to include
+      the contents of the web-lucee.xml file containing the Lucee-related
+      settings.
+
+	&lucee;
+	</web-app>
+
+Starting the service and online configuration
+=============================================
+
+# rcctl enable tomcat
+
+- If you need to set JVM options you can do so like this:
+# rcctl set tomcat flags -Xms256m -Xmx1024m -XX:MaxPermSize=128m
+
+# rcctl restart tomcat
+
+- Connect to the server and web administration pages. At first run of
+a successful new installation, you will be prompted to set passwords.
+
+	http://localhost:8080/lucee/admin/server.cfm
+	http://localhost:8080/lucee/admin/web.cfm
+
+- The package places the default "welcome" pages in a separate directory,
+${CATALINA_BASE}/webapps/lucee-default; copy them to ${CATALINA_BASE}/webapps/ROOT
+if you want to see them when you connect to http://localhost:8080/.
+
+- Reference documentation is available at http://localhost:8080/lucee/doc/.
+
+- You can add pages to /var/tomcat/webapps/ROOT to be used for "localhost".
+Additional host configurations can be added to ${CATALINA_BASE}/conf/server.xml.
+Use the localhost configuration as a template; the _tomcat user will need to be
+able to write to <appBase>/ROOT/WEB-INF, so set ownership and permissions
+accordingly.
+
+- Log files are kept in several locations. Consult them if things don't work
+as expected, and don't forget to rotate/archive them as appropriate.
+
+	${CATALINA_BASE}/logs
+	${CATALINA_BASE}/lucee/config/server/lucee-server/context/logs
+	${CATALINA_BASE}/lucee/config/web/*/logs (various dirs, per-context)
+
+Patch to unmodified Tomcat sample configuration
+===============================================
+
+--- context.xml.orig	Mon Mar 31 11:20:33 2014
++++ context.xml	Mon Mar 31 11:20:50 2014
+@@ -16,7 +16,7 @@
+   limitations under the License.
+ -->
+ <!-- The contents of this file will be loaded for each web application -->
+-<Context>
++<Context xmlBlockExternal="false">
+ 
+     <!-- Default set of monitored resources -->
+     <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+--- web.xml.orig	Tue Mar 19 22:29:42 2013
++++ web.xml	Tue Mar 19 22:29:55 2013
+@@ -1,4 +1,8 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE root [
++    <!ENTITY lucee SYSTEM "./web-lucee.xml" >
++]>
++
+ <!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+@@ -4675,9 +4679,11 @@
+   <!-- to use within your application.                                       -->
+ 
+     <welcome-file-list>
++        <welcome-file>index.cfm</welcome-file>
+         <welcome-file>index.html</welcome-file>
+         <welcome-file>index.htm</welcome-file>
+         <welcome-file>index.jsp</welcome-file>
+     </welcome-file-list>
+ 
++&lucee;
+ </web-app>

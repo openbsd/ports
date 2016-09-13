@@ -1,0 +1,191 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/13 16:24:37 sthen Exp $
+@conflict railo-*
+@pkgpath lang/railo
+@extraunexec rm -rf %D/lucee/config/*
+@extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
+@extraunexec rm -rf %D/webapps/manager/WEB-INF/flex
+@owner root
+@group wheel
+conf/
+conf/web-lucee.xml.dist
+@sample webapps/manager/
+@sample webapps/manager/WEB-INF/
+@owner _tomcat
+@group _tomcat
+@sample webapps/manager/WEB-INF/flex/
+@sample conf/web-lucee.xml
+@owner
+@group
+lib/
+lib/ESAPI.jar
+lib/PDFBox.jar
+lib/PDFRenderer.jar
+lib/antlr.jar
+lib/apache-commons-httpclient.jar
+lib/apache-commons-httpcore.jar
+lib/apache-commons-httpmime.jar
+lib/apache-commons-sanselan.jar
+lib/apache-jakarta-commons-codec.jar
+lib/apache-jakarta-commons-collections.jar
+lib/apache-jakarta-commons-compress.jar
+lib/apache-jakarta-commons-discovery.jar
+lib/apache-jakarta-commons-email.jar
+lib/apache-jakarta-commons-fileupload.jar
+lib/apache-jakarta-commons-httpclient.jar
+lib/apache-jakarta-commons-io.jar
+lib/apache-jakarta-commons-lang.jar
+lib/apache-jakarta-commons-logging-adapters.jar
+lib/apache-jakarta-commons-logging-api.jar
+lib/apache-jakarta-commons-logging.jar
+lib/apache-jakarta-commons-net-ftp.jar
+lib/apache-jakarta-commons-net.jar
+lib/apache-jakarta-oro.jar
+lib/apache-logging-log4j.jar
+lib/apache-lucene-analyzers.jar
+lib/apache-lucene-highlighter.jar
+lib/apache-lucene-misc.jar
+lib/apache-lucene-similarity.jar
+lib/apache-lucene-snowball.jar
+lib/apache-lucene-spellchecker.jar
+lib/apache-lucene.jar
+lib/apache-poi-ooxml-schemas.jar
+lib/apache-poi-ooxml.jar
+lib/apache-poi-tm-extractors.jar
+lib/apache-poi.jar
+lib/apache-ws-axis-ant.jar
+lib/apache-ws-axis.jar
+lib/apache-xml-xalan.jar
+lib/apache-xml-xerces.jar
+lib/backport-util-concurrent.jar
+lib/bcprov-jdk14.jar
+lib/com.naryx.tagfusion.cfx.jar
+lib/concurrent.jar
+lib/dom4j.jar
+lib/ehcache.jar
+lib/flex-messaging-common.jar
+lib/flex-messaging-core.jar
+lib/flex-messaging-opt.jar
+lib/flex-messaging-proxy.jar
+lib/flex-messaging-remoting.jar
+lib/fonts.jar
+lib/fusiondebug-api-server.jar
+lib/h2.jar
+lib/hibernate.jar
+lib/hypersonic-hsqldb.jar
+lib/icepdf-core.jar
+lib/jacob.jar
+lib/javaparser.jar
+lib/javassist.jar
+lib/javasysmon.jar
+lib/jcifs.jar
+lib/jcommon.jar
+lib/jencrypt.jar
+lib/jffmpeg.jar
+lib/jfreechart-patch.jar
+lib/jfreechart.jar
+lib/jmimemagic.jar
+lib/jpedal_gpl.jar
+lib/jsch-0.1.53.jar
+lib/jta.jar
+lib/jtds.jar
+lib/jug.jar
+lib/junit.jar
+lib/license/
+lib/license/license-apache.txt
+lib/license/license-eclipse.txt
+lib/license/license-hypersonic.txt
+lib/license/license-jacob.txt
+lib/license/license-janino.txt
+lib/license/license-javasysmon.txt
+lib/license/license-jencrypt.txt
+lib/license/license-jmimemagic.txt
+lib/license/license-jtds.txt
+lib/license/license-mssql.txt
+lib/license/license-mysql.txt
+lib/license/license-openamf.txt
+lib/license/license-pd4ml.txt
+lib/license/license-pdfbox.txt
+lib/license/license-sun.txt
+lib/license/license-tagsoup.txt
+lib/lowagie.itext.jar
+lib/lucee-inst.jar
+lib/lucee.jar
+lib/metadata-extractor.jar
+lib/microsoft-mssqlserver.jar
+lib/microsoft-sqljdbc.jar
+lib/mysql-connector-java-bin.jar
+lib/objectweb-asm-all.jar
+lib/ojdbc14.jar
+lib/openamf-astranslator.jar
+lib/openamf.jar
+lib/org.mortbay.jetty.jar
+lib/postgresql.jar
+lib/railo-sl4j.jar
+lib/resolver.jar
+lib/serializer.jar
+lib/slf4j-api.jar
+lib/slf4j-nop.jar
+lib/ss_css2.jar
+lib/stax-api.jar
+lib/sun-activation.jar
+lib/sun-jai_codec.jar
+lib/sun-jai_core.jar
+lib/sun-jndi-ldap.jar
+lib/sun-jndi-ldapbp.jar
+lib/sun-jndi-ldapsec.jar
+lib/sun-jndi-providerutil.jar
+lib/sun-mail.jar
+lib/sun-security-jaas.jar
+lib/sun-xml-jaxrpc.jar
+lib/sun-xml-wsdl4j.jar
+lib/sun-xml.saaj.jar
+lib/tagsoup.jar
+lib/versions
+lib/w3c-dom.jar
+lib/xdb.jar
+lib/xml-apis.jar
+lib/xmlbeans.jar
+lib/xmlparserv2.jar
+@owner _tomcat
+@group _tomcat
+lucee/
+@sample lucee/config/
+@sample lucee/config/server/
+@sample lucee/config/web/
+@sample webapps/
+@sample webapps/ROOT/
+@owner
+@group
+webapps/lucee-default/
+webapps/lucee-default/Application.cfc
+webapps/lucee-default/License.txt
+webapps/lucee-default/assets/
+webapps/lucee-default/assets/css/
+webapps/lucee-default/assets/css/core/
+webapps/lucee-default/assets/css/core/_ed07b761.core.min.css
+webapps/lucee-default/assets/css/core/ie8.css
+webapps/lucee-default/assets/css/lib/
+webapps/lucee-default/assets/css/lib/bootstrap.min.css
+webapps/lucee-default/assets/img/
+webapps/lucee-default/assets/img/banner-bg.png
+webapps/lucee-default/assets/img/ico-sprite.png
+webapps/lucee-default/assets/img/img-browser.png
+webapps/lucee-default/assets/img/img-code.png
+webapps/lucee-default/assets/img/img-exclamation-mark.png
+webapps/lucee-default/assets/img/img-first-steps.png
+webapps/lucee-default/assets/img/img-lightning.png
+webapps/lucee-default/assets/img/img-link.png
+webapps/lucee-default/assets/img/lucee-logo.png
+webapps/lucee-default/assets/js/
+webapps/lucee-default/assets/js/core/
+webapps/lucee-default/assets/js/core/_38444bee.core.min.js
+webapps/lucee-default/assets/js/core/_core.min.map
+webapps/lucee-default/assets/js/lib/
+webapps/lucee-default/assets/js/lib/SmoothScroll.js
+webapps/lucee-default/assets/js/lib/bootstrap.min.js
+webapps/lucee-default/assets/js/lib/jquery-1.10.1.min.js
+webapps/lucee-default/favicon.ico
+webapps/lucee-default/index.cfm
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,0 +1,9 @@
+Lucee is a light-weight dynamic scripting language for the JVM that
+enables the rapid development of simple to highly sophisticated web
+applications. Lucee is fully compatible with the CFML Script and Tag
+Language.
+
+Lucee is a JVM language and runs on the JVM as a servlet and will work
+with any servlet container (e.g. Apache Tomcat, Eclipse Jetty) or
+application server (e.g. JBoss AS, GlassFish). This package is setup
+to run Lucee under Tomcat.
