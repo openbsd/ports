@@ -1,18 +1,11 @@
-# $OpenBSD: Makefile,v 1.238 2016/09/02 11:09:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.239 2016/09/13 12:13:03 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.11.0
+VER=			13.11.2
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
-REVISION-calendar=	0
-REVISION-http_post=	0
-REVISION-ldap=		0
-REVISION-pgsql=		0
-REVISION-snmp=		0
-REVISION-speex=		0
-REVISION-tds=		0
 
 CATEGORIES=		telephony
 
@@ -28,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main += c crypto curl execinfo g7221codec gsm idn iksemel ilbccodec
-WANTLIB-main += iconv jansson m nghttp2 ogg opencore-amrnb opencore-amrwb
+WANTLIB-main += iconv jansson lzma m nghttp2 ogg opencore-amrnb opencore-amrwb
 WANTLIB-main += pj pjlib-util pjmedia pjmedia-audiodev pjmedia-codec
 WANTLIB-main += pjmedia-videodev pjnath pjsip pjsip-simple pjsip-ua
 WANTLIB-main += pjsua pjsua2 portaudio pthread resample spandsp speex
@@ -144,7 +137,7 @@ CONFIGURE_ARGS+=	--with-imap=no
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
-WANTLIB-calendar=	crypto expat ical iconv intl iksemel
+WANTLIB-calendar=	crypto expat ical iconv intl iksemel lzma
 WANTLIB-calendar+=	m neon proxy pthread ssl xml2 z
 
 LIB_DEPENDS-calendar=	devel/gettext \
