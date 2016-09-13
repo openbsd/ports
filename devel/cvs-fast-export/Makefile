@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/03 09:30:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/13 13:24:25 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
-DISTNAME=	cvs-fast-export-1.38
+DISTNAME=	cvs-fast-export-1.40
 
 CATEGORIES=	devel
 
