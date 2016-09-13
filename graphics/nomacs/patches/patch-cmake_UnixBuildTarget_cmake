@@ -1,7 +1,7 @@
-$OpenBSD: patch-cmake_UnixBuildTarget_cmake,v 1.2 2016/06/27 05:25:40 landry Exp $
---- cmake/UnixBuildTarget.cmake.orig	Mon May  2 22:13:12 2016
-+++ cmake/UnixBuildTarget.cmake	Mon May  2 22:15:52 2016
-@@ -93,7 +93,11 @@ install(FILES src/img/nomacs.svg DESTINATION share/pix
+$OpenBSD: patch-cmake_UnixBuildTarget_cmake,v 1.3 2016/09/13 08:21:36 kirby Exp $
+--- cmake/UnixBuildTarget.cmake.orig	Fri Jul 22 13:43:37 2016
++++ cmake/UnixBuildTarget.cmake	Mon Jul 25 17:55:33 2016
+@@ -83,7 +83,11 @@ install(FILES src/img/nomacs.svg DESTINATION share/pix
  #  translations
  install(FILES ${NOMACS_QM} DESTINATION share/nomacs/translations)
  #  manpage
