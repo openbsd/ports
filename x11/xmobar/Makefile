@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/09/06 11:50:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -12,10 +12,10 @@ MAINTAINER =		Jona Joachim <jona@joachim.cc>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
-			Xss c lib/inotify/inotify m pthread \
+			Xss c lib/inotify/inotify iconv m pthread \
 			util xml2
 
-MODULES =		lang/ghc converters/libiconv
+MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS = --flags="with_xft with_mpd with_mpris with_inotify"
@@ -33,7 +33,8 @@ BUILD_DEPENDS = 	devel/hs-hinotify>=0.3 \
 			x11/hs-dbus>=0.10 \
 			audio/hs-libmpd>=0.9,<0.10
 
-LIB_DEPENDS =		devel/libinotify \
+LIB_DEPENDS =		converters/libiconv \
+			devel/libinotify \
 			textproc/libxml
 
 EXAMPLEDIR =		${PREFIX}/share/examples/xmobar

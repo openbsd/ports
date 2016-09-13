@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/29 08:22:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT=	apache HTTP server request library
 
@@ -9,13 +9,12 @@ REVISION=	5
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
-MODULES=	converters/libiconv
 SHARED_LIBS=	apreq2	9.0
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB += apr-1 aprutil-1 db expat pthread
+WANTLIB += apr-1 aprutil-1 db expat iconv pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \
@@ -23,7 +22,8 @@ CONFIGURE_ARGS=	--enable-perl-glue \
 
 BUILD_DEPENDS=	devel/p5-ExtUtils-XSBuilder \
 		www/ap2-mod_perl
-LIB_DEPENDS=	devel/apr \
+LIB_DEPENDS=	converters/libiconv \
+		devel/apr \
 		devel/apr-util
 
 RUN_DEPENDS =	www/ap2-mod_perl

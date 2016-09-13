@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/06/15 08:32:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.59 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -14,12 +14,11 @@ HOMEPAGE=	http://analog.gsp.com/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m jpeg png z gd>=18 pcre pthread
+WANTLIB += c iconv m jpeg png z gd>=18 pcre pthread
 
-LIB_DEPENDS=	graphics/gd \
+LIB_DEPENDS=	converters/libiconv \
+		graphics/gd \
 		devel/pcre
-
-MODULES=	converters/libiconv
 
 ANALOGDIR=	${PREFIX}/share/analog
 CONFIGFILE=	${SYSCONFDIR}/analog.cfg

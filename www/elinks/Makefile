@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/06/29 14:01:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -28,14 +28,14 @@ CONFIGURE_ARGS+=	--with-bzlib \
 # don't hide compiler command lines
 MAKE_ENV=		V=true
 LIB_DEPENDS+=		archivers/bzip2 \
+			converters/libiconv \
 			devel/libidn
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/gettext
-WANTLIB=		bz2 crypto c idn ssl z
-MODULES=		converters/libiconv
+WANTLIB=		bz2 crypto c iconv idn ssl z
 
 FLAVORS=		lua no_x11 js
 FLAVOR?=

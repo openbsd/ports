@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT =		C like scripting language used in E17
 
@@ -10,11 +10,10 @@ SHARED_LIBS +=	embryo               4.0      # 8.10
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c eina m pthread
+WANTLIB += c eina iconv m pthread
 
-MODULES =		converters/libiconv
-
-LIB_DEPENDS =		x11/e17/eina>=1.7.10v1
+LIB_DEPENDS =		converters/libiconv \
+			x11/e17/eina>=1.7.10v1
 
 CONFIGURE_ARGS =	--disable-doc
 

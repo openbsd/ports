@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -12,15 +12,14 @@ HOMEPAGE =		http://www.dillo.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c crypto
-WANTLIB += fltk fontconfig jpeg m png pthread ssl stdc++ z
-
-MODULES =	converters/libiconv
+WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl stdc++ z
 
 MASTER_SITES =	http://www.dillo.org/download/
 
 EXTRACT_SUFX =	.tar.bz2
 
-LIB_DEPENDS =	graphics/jpeg \
+LIB_DEPENDS =	converters/libiconv \
+		graphics/jpeg \
 		graphics/png \
 		x11/fltk
 

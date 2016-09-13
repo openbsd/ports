@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -20,12 +20,11 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		${MASTER_SITE_SOURCEFORGE:=eterm/}
 
-WANTLIB += ICE Imlib2 SM X11 XRes Xext ast c freetype m ttf util
+WANTLIB += ICE Imlib2 SM X11 XRes Xext ast c freetype iconv m ttf util
 WANTLIB += xcb z
 
-MODULES=	converters/libiconv
-
-LIB_DEPENDS=	devel/libast \
+LIB_DEPENDS=	converters/libiconv \
+		devel/libast \
 		print/freetype
 
 CONFIGURE_STYLE=gnu

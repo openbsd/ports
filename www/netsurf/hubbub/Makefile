@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/06 20:27:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT =		HTML parser
 
@@ -9,10 +9,9 @@ HOMEPAGE =		http://www.netsurf-browser.org/projects/hubbub/
 
 SHARED_LIBS =		hubbub 2.0 #0.3.1
 
-MODULES =		converters/libiconv
-
-LIB_DEPENDS =		www/netsurf/libparserutils>=0.2.1
-WANTLIB += parserutils
+LIB_DEPENDS =		converters/libiconv \
+			www/netsurf/libparserutils>=0.2.1
+WANTLIB += iconv parserutils
 
 TEST_DEPENDS =		devel/json-c>=0.10
 

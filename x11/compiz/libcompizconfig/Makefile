@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/21 18:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/13 19:15:03 naddy Exp $
 
 COMMENT =	compiz configuration system library
 
@@ -10,14 +10,14 @@ SHARED_LIBS =	compizconfig	0.0 # 0.0
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
-WANTLIB += X11 lzma m pthread stdc++ xcb xml2 z
+WANTLIB += X11 iconv lzma m pthread stdc++ xcb xml2 z
 
-MODULES =	converters/libiconv \
-		textproc/intltool
+MODULES =	textproc/intltool
 
 BUILD_DEPENDS =	x11/compiz/core
 RUN_DEPENDS =	x11/compiz/core
-LIB_DEPENDS =	textproc/libxml
+LIB_DEPENDS =	converters/libiconv \
+		textproc/libxml
 
 LIBTOOL_FLAGS =	--tag=disable-static
 
