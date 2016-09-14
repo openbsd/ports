@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/31 08:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/14 06:26:28 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		Amazon S3 transfer manager for Python
 
-MODPY_EGG_VERSION=	0.1.3
+MODPY_EGG_VERSION=	0.1.4
 DISTNAME=		s3transfer-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
