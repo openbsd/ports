@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.4 2014/07/09 11:39:24 espie Exp $
+# $OpenBSD: check-manpages,v 1.5 2016/09/14 15:06:53 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -24,6 +24,7 @@ use OpenBSD::Ustar;
 use File::Temp;
 
 my $state = OpenBSD::AddCreateDelete::State->new('check-manpages');
+$state->{signature_style} = 'unsigned';
 $state->handle_options('p', '[-mnpx]');
 
 $state->progress->set_header("Scanning packages");
