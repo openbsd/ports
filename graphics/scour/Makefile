@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/16 11:48:20 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/14 12:15:46 czarkoff Exp $
 
 COMMENT =		SVG scrubber
-MODPY_EGG_VERSION =	0.34
+MODPY_EGG_VERSION =	0.35
 CATEGORIES =		graphics
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 HOMEPAGE =		http://www.codedread.com/scour/
