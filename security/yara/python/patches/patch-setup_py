@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2016/09/14 20:40:53 rpointel Exp $
+--- setup.py.orig	Thu Aug 11 14:22:08 2016
++++ setup.py	Thu Aug 11 14:31:24 2016
+@@ -122,6 +122,10 @@ class BuildCommand(build):
+     else:
+       building_for_osx = False
+ 
++    if 'openbsd' in self.plat_name:
++      module.include_dirs.append('${LOCALBASE}/include')
++      module.library_dirs.append('${LOCALBASE}/lib')
++
+     if has_function('memmem'):
+       module.define_macros.append(('HAVE_MEMMEM', '1'))
+     if has_function('strlcpy'):

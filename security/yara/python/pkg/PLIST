@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/18 21:35:32 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/14 20:40:53 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/yara.so
-lib/python${MODPY_VERSION}/site-packages/yara_python-3.4.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/yara_python-3.5.0-py${MODPY_VERSION}.egg-info/top_level.txt
