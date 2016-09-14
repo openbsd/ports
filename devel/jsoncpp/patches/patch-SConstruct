@@ -1,12 +1,27 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2016/09/14 08:38:22 dcoppa Exp $
 
+- The build_dir keyword has been deprecated; use the variant_dir
+  keyword instead
 - Don't hardcode g++ usage
 - Don't link against pthreads (XXX why was it there in the first place?)
 - Use saner libraries names
 - Fix library naming
 
---- SConstruct.orig	Sun Mar 15 14:25:04 2015
-+++ SConstruct	Wed Mar 18 08:15:14 2015
+--- SConstruct.orig	Thu Sep  1 09:45:08 2016
++++ SConstruct	Wed Sep 14 10:27:15 2016
+@@ -40,10 +40,10 @@ except KeyError:
+ print "Building using PLATFORM =", platform
+ 
+ rootbuild_dir = Dir('#buildscons')
+-build_dir = os.path.join( '#buildscons', platform )
++variant_dir = os.path.join( '#buildscons', platform )
+ bin_dir = os.path.join( '#bin', platform )
+ lib_dir = os.path.join( '#libs', platform )
+-sconsign_dir_path = Dir(build_dir).abspath
++sconsign_dir_path = Dir(variant_dir).abspath
+ sconsign_path = os.path.join( sconsign_dir_path, '.sconsign.dbm' )
+ 
+ # Ensure build directory exist (SConsignFile fail otherwise!)
 @@ -119,7 +119,8 @@ elif platform == 'mingw':
      env.Append( CPPDEFINES=[ "WIN32", "NDEBUG", "_MT" ] )
  elif platform.startswith('linux-gcc'):
@@ -17,6 +32,15 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
      env['SHARED_LIB_ENABLED'] = True
  else:
      print "UNSUPPORTED PLATFORM."
+@@ -144,7 +145,7 @@ env['LIB_LINK_TYPE'] = 'lib'    # static
+ env['LIB_CRUNTIME'] = 'mt'
+ env['LIB_NAME_SUFFIX'] = '${LIB_PLATFORM}_${LIB_LINK_TYPE}${LIB_CRUNTIME}'  # must match autolink naming convention
+ env['JSONCPP_VERSION'] = JSONCPP_VERSION
+-env['BUILD_DIR'] = env.Dir(build_dir)
++env['BUILD_DIR'] = env.Dir(variant_dir)
+ env['ROOTBUILD_DIR'] = env.Dir(rootbuild_dir)
+ env['DIST_DIR'] = DIST_DIR
+ if 'TarGz' in env['BUILDERS']:
 @@ -164,7 +165,7 @@ env['SRCDIST_ADD'] = SrcDistAdder( env )
  env['SRCDIST_TARGET'] = os.path.join( DIST_DIR, 'jsoncpp-src-%s.tar.gz' % env['JSONCPP_VERSION'] )
                        
@@ -26,7 +50,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
  
  def buildJSONExample( env, target_sources, target_name ):
      env = env.Clone()
-@@ -187,13 +188,13 @@ def buildUnitTests( env, target_sources, target_name )
+@@ -187,23 +188,23 @@ def buildUnitTests( env, target_sources, target_name )
      env.AlwaysBuild( check_alias_target )
  
  def buildLibrary( env, target_sources, target_name ):
@@ -43,4 +67,17 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2015/03/26 06:49:11 dcoppa Exp $
 +                                        SHLIBSUFFIX=".so.%s" % os.environ["LIBjsoncpp_VERSION"] )
          env.Install( lib_dir, shared_lib )
      env['SRCDIST_ADD']( source=[target_sources] )
+ 
+ Export( 'env env_testing buildJSONExample buildLibrary buildJSONTests buildUnitTests' )
+ 
+ def buildProjectInDirectory( target_directory ):
+-    global build_dir
+-    target_build_dir = os.path.join( build_dir, target_directory )
++    global variant_dir
++    target_build_dir = os.path.join( variant_dir, target_directory )
+     target = os.path.join( target_directory, 'sconscript' )
+-    SConscript( target, build_dir=target_build_dir, duplicate=0 )
++    SConscript( target, variant_dir=target_build_dir, duplicate=0 )
+     env['SRCDIST_ADD']( source=[target] )
+ 
  
