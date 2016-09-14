@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2016/09/14 11:15:43 czarkoff Exp $
+--- configure.in.orig	Wed Sep 14 00:17:20 2016
++++ configure.in	Wed Sep 14 00:17:33 2016
+@@ -74,7 +74,7 @@ dnl ALL_LINGUAS="az de fr sk sv zh_TW"
+ ALL_LINGUAS=""
+ 
+ AC_PROG_INTLTOOL
+-AM_GLIB_GNU_GETTEXT
++dnl AM_GLIB_GNU_GETTEXT
+ 
+ AC_CHECK_FUNCS(bind_textdomain_codeset)
+ 

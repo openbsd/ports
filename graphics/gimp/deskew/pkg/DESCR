@@ -1,0 +1,4 @@
+Deskew, or auto straighten, is the automatic rotation of an image such that the
+text is vertically aligned. This is great for cleaning up scanned documents.
+
+Plugin is accessible via Layer => Transform => Deskew.

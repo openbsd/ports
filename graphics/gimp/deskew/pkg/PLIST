@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/14 11:15:43 czarkoff Exp $
+@bin lib/gimp/2.0/plug-ins/deskew
+share/gimp-deskew-plugin/
+share/gimp-deskew-plugin/help/
+share/gimp-deskew-plugin/help/en/
+share/gimp-deskew-plugin/help/en/gimp-help.xml
+share/gimp-deskew-plugin/help/en/index.html
+share/gimp-deskew-plugin/help/images/
+share/gimp-deskew-plugin/help/images/wilber.png
