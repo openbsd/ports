@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2016/09/01 13:21:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.433 2016/09/14 23:47:01 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -81,6 +81,7 @@
      SUBDIR += kc
      SUBDIR += kedpm
      SUBDIR += keepassx
+     SUBDIR += keybase
      SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += knockpy
