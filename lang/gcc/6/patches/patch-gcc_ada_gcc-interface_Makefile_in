@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2016/09/04 16:20:15 pascal Exp $
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.2 2016/09/15 10:37:03 pascal Exp $
 --- gcc/ada/gcc-interface/Makefile.in.orig	Mon May  2 15:16:33 2016
-+++ gcc/ada/gcc-interface/Makefile.in	Tue Aug 23 15:48:15 2016
++++ gcc/ada/gcc-interface/Makefile.in	Wed Sep 14 09:18:22 2016
 @@ -419,6 +419,10 @@ ATOMICS_TARGET_PAIRS = \
    a-szunau.adb<a-szunau-shared.adb \
    a-szuzti.adb<a-szuzti-shared.adb
@@ -12,7 +12,7 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2016/09/04 16:20:15 
  ATOMICS_BUILTINS_TARGET_PAIRS = \
    s-atocou.adb<s-atocou-builtin.adb
  
-@@ -1499,6 +1503,249 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) 
+@@ -1499,6 +1503,252 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) 
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
@@ -239,6 +239,9 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2016/09/04 16:20:15 
 +endif
 +
 +ifeq ($(strip $(filter-out hppa openbsd%,$(target_cpu) $(target_os))),)
++  ATOMICS_BUILTINS_TARGET_PAIRS = \
++  s-atocou.adb<s-atocou.adb
++
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-intnam.ads<a-intnam-freebsd.ads \
 +  s-inmaop.adb<s-inmaop-posix.adb \
