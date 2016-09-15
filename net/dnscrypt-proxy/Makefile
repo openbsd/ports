@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/09/13 21:36:47 tj Exp $
+# $OpenBSD: Makefile,v 1.25 2016/09/15 06:50:05 landry Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
@@ -40,10 +40,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib \
 			ac_cv_header_uuid_uuid_h=no
-
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	libevent_cv_gc_sections_runs=no
-.endif
 
 CONFIGURE_ARGS+=	--enable-plugins \
 			--enable-plugins-root \

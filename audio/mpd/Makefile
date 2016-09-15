@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2016/09/15 06:50:06 landry Exp $
 
 BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
@@ -106,10 +106,6 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 # OggFLAC tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
-
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	ax_cv_check_ldflags___Wl___gc_sections=no
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpd
