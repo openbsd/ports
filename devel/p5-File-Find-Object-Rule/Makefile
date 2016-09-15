@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/15 22:15:33 bluhm Exp $
 
 COMMENT =		alternative interface to File::Find::Object
 
-DISTNAME =		File-Find-Object-Rule-0.0305
+DISTNAME =		File-Find-Object-Rule-0.0306
 
 CATEGORIES =		devel
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*
-BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Class-XSAccessor \
 			devel/p5-File-Find-Object>=0.2.1 \
 			devel/p5-Number-Compare \
