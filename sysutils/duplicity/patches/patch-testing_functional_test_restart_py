@@ -1,4 +1,8 @@
-$OpenBSD: patch-testing_functional_test_restart_py,v 1.1 2016/09/03 08:45:52 danj Exp $
+$OpenBSD: patch-testing_functional_test_restart_py,v 1.2 2016/09/16 16:18:19 danj Exp $
+
+Committed upstream
+https://bazaar.launchpad.net/~duplicity-team/duplicity/0.8-series/revision/1149
+
 --- testing/functional/test_restart.py.orig	Fri Sep  2 16:48:03 2016
 +++ testing/functional/test_restart.py	Fri Sep  2 16:47:14 2016
 @@ -327,6 +327,8 @@ class RestartTestWithoutEncryption(RestartTest):
