@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2016/09/16 10:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2016/09/16 10:54:56 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-D=		20160910
+D=		20160827
 DISTNAME=	neomutt-$D
-PKGNAME=	mutt-1.7.0.$D
-EPOCH=		1
+PKGNAME=	mutt-1.7.0.20160827
+EPOCH=		2
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/

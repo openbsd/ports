@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/09/16 07:53:44 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/09/16 10:54:56 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt/[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
@@ -36,14 +36,16 @@ share/doc/mutt/gettingstarted.html
 share/doc/mutt/index.html
 share/doc/mutt/intro.html
 share/doc/mutt/keybase/
+share/doc/mutt/keybase/KeybaseAndMutt.md
 share/doc/mutt/keybase/LICENSE
 share/doc/mutt/keybase/README.md
-share/doc/mutt/keybase/attachmentView.png
 share/doc/mutt/keybase/decrypt.sh
+share/doc/mutt/keybase/images/
+share/doc/mutt/keybase/images/attachmentView.png
+share/doc/mutt/keybase/images/pagerMode.png
 share/doc/mutt/keybase/install.sh
 share/doc/mutt/keybase/keybase.py
 share/doc/mutt/keybase/muttrc
-share/doc/mutt/keybase/pagerMode.png
 share/doc/mutt/keybase/pgpdecrypt.sh
 share/doc/mutt/keybase/pgpverify.sh
 share/doc/mutt/keybase/verify.sh
@@ -99,12 +101,9 @@ share/examples/mutt/mutt_xtitle
 share/examples/mutt/pgp2.rc
 share/examples/mutt/pgp5.rc
 share/examples/mutt/pgp6.rc
-share/examples/mutt/sample.colors.attach_headers
 share/examples/mutt/sample.mailcap
 share/examples/mutt/sample.muttrc
-share/examples/mutt/sample.muttrc-sidebar
 share/examples/mutt/sample.muttrc-tlr
-share/examples/mutt/sample.vimrc-sidebar
 share/examples/mutt/smime.rc
 share/examples/mutt/smime_keys_test.pl
 share/locale/bg/LC_MESSAGES/neomutt.mo
