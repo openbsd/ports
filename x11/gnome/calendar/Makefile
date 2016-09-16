@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/04 08:56:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/16 18:56:43 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		3.20.3
+GNOME_VERSION =		3.20.4
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +24,7 @@ WANTLIB += EGL GL X11-xcb Xt Xxf86vm drm enchant gbm glapi gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
 WANTLIB += javascriptcoregtk-3.0 jpeg json-glib-1.0 orc-0.4 stdc++
-WANTLIB += webkitgtk-3.0 webp xcb-dri2 xcb-glx xcb-shape xcb-xfixes
+WANTLIB += webkitgtk-3.0 webp xcb-dri2 xcb-glx xcb-xfixes
 WANTLIB += xslt iconv intl
 
 MODULES =		devel/dconf \
