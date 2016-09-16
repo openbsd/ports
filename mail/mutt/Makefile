@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/09/16 07:53:44 giovanni Exp $
+# $OpenBSD: Makefile,v 1.83 2016/09/16 10:47:22 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -31,7 +31,8 @@ BUILD_DEPENDS+=	textproc/docbook-xsl \
 FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
-CONFIGURE_STYLE=  gnu
+CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	 Yes
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
