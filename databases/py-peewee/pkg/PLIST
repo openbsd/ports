@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/15 08:53:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/09/17 15:33:39 danj Exp $
 bin/pwiz${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pwiz.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}shortcuts.${M
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqlcipher_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqlite_ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqlite_udf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/apsw_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/berkeleydb.py
@@ -55,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/shortcuts.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/signals.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/sqlcipher_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/sqlite_ext.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/sqlite_udf.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/pwiz.py
 share/doc/${MODPY_PY_PREFIX}peewee/
