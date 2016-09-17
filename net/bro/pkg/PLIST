@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/27 12:58:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/17 14:42:13 ajacoutot Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @bin bin/adtrace
 @bin bin/bro
@@ -579,11 +579,7 @@ share/bro/policy/tuning/defaults/packet-fragments.bro
 share/bro/policy/tuning/defaults/warnings.bro
 share/bro/policy/tuning/json-logs.bro
 share/bro/policy/tuning/track-all-assets.bro
-share/bro/site/
-share/bro/site/local-manager.bro
-share/bro/site/local-proxy.bro
-share/bro/site/local-worker.bro
-share/bro/site/local.bro
+share/bro/site
 share/broctl/
 share/broctl/scripts/
 share/broctl/scripts/archive-log
@@ -623,6 +619,16 @@ share/examples/bro/networks.cfg
 @sample ${SYSCONFDIR}/bro/networks.cfg
 share/examples/bro/node.cfg
 @sample ${SYSCONFDIR}/bro/node.cfg
+share/examples/bro/site/
+@sample ${SYSCONFDIR}/bro/site/
+share/examples/bro/site/local-manager.bro
+@sample ${SYSCONFDIR}/bro/site/local-manager.bro
+share/examples/bro/site/local-proxy.bro
+@sample ${SYSCONFDIR}/bro/site/local-proxy.bro
+share/examples/bro/site/local-worker.bro
+@sample ${SYSCONFDIR}/bro/site/local-worker.bro
+share/examples/bro/site/local.bro
+@sample ${SYSCONFDIR}/bro/site/local.bro
 @sample ${LOCALSTATEDIR}/log/bro/
 @sample ${LOCALSTATEDIR}/spool/bro/
 @sample ${LOCALSTATEDIR}/spool/bro/tmp/

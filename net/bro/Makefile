@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/08 08:16:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/17 14:42:13 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.4.1
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -66,6 +66,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}/etc/bro ${PREFIX}/share/examples/bro
 	rm -rf ${WRKINST}/var/{log,spool}/bro
+	mv ${PREFIX}/share/bro/site/ ${PREFIX}/share/examples/bro/
+	cd ${PREFIX}/share/bro && ln -sf ${SYSCONFDIR}/bro/site
 	mv ${PREFIX}/lib/broctl/BroControl \
 		${WRKINST}/${MODPY_SITEPKG}/
 	mv ${PREFIX}/lib/broctl/plugins \
