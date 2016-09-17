@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_mod_cgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
+
+[core] fix crash if ready events on abandoned fd (fixes #2748)
+
+--- src/mod_cgi.c.orig	Wed Sep 14 21:06:50 2016
++++ src/mod_cgi.c	Wed Sep 14 21:04:56 2016
+@@ -606,10 +606,7 @@ static void cgi_connection_close_fdtocgi(server *srv, 
+ 	/*(closes only hctx->fdtocgi)*/
+ 	fdevent_event_del(srv->ev, &(hctx->fde_ndx_tocgi), hctx->fdtocgi);
+ 	fdevent_unregister(srv->ev, hctx->fdtocgi);
+-
+-	if (close(hctx->fdtocgi)) {
+-		log_error_write(srv, __FILE__, __LINE__, "sds", "cgi stdin close failed ", hctx->fdtocgi, strerror(errno));
+-	}
++	fdevent_sched_close(srv->ev, hctx->fdtocgi, 0);
+ 	hctx->fdtocgi = -1;
+ }
+ 
+@@ -631,10 +628,7 @@ static void cgi_connection_close(server *srv, handler_
+ 		/* close connection to the cgi-script */
+ 		fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+ 		fdevent_unregister(srv->ev, hctx->fd);
+-
+-		if (close(hctx->fd)) {
+-			log_error_write(srv, __FILE__, __LINE__, "sds", "cgi close failed ", hctx->fd, strerror(errno));
+-		}
++		fdevent_sched_close(srv->ev, hctx->fd, 0);
+ 	}
+ 
+ 	if (hctx->fdtocgi != -1) {
+@@ -1372,6 +1366,8 @@ static int cgi_create_env(server *srv, connection *con
+ 		hctx->fd = from_cgi_fds[0];
+ 		hctx->fde_ndx = -1;
+ 
++		++srv->cur_fds;
++
+ 		if (0 == con->request.content_length) {
+ 			close(to_cgi_fds[1]);
+ 		} else {
+@@ -1388,6 +1384,8 @@ static int cgi_create_env(server *srv, connection *con
+ 				cgi_connection_close(srv, hctx);
+ 				return -1;
+ 			}
++
++			++srv->cur_fds;
+ 		}
+ 
+ 		fdevent_register(srv->ev, hctx->fd, cgi_handle_fdevent, hctx);

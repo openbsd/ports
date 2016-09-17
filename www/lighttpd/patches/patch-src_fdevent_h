@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_fdevent_h,v 1.1 2016/09/17 20:22:41 ajacoutot Exp $
+
+- [core] check if client half-closed TCP if POLLHUP (#2743)
+- [core] fix crash if ready events on abandoned fd (fixes #2748)
+
+--- src/fdevent.h.orig	Wed Sep 14 21:06:36 2016
++++ src/fdevent.h	Wed Sep 14 21:04:56 2016
+@@ -125,6 +125,7 @@ typedef struct fdevents {
+ 
+ 	fdnode **fdarray;
+ 	size_t maxfds;
++	int highfd;
+ 
+ #ifdef USE_LINUX_EPOLL
+ 	int epoll_fd;
+@@ -202,6 +203,8 @@ int fdevent_poll(fdevents *ev, int timeout_ms);
+ 
+ int fdevent_register(fdevents *ev, int fd, fdevent_handler handler, void *ctx);
+ int fdevent_unregister(fdevents *ev, int fd);
++void fdevent_sched_close(fdevents *ev, int fd, int issock);
++void fdevent_sched_run(struct server *srv, fdevents *ev);
+ 
+ void fd_close_on_exec(int fd);
+ int fdevent_fcntl_set(fdevents *ev, int fd);
+@@ -213,5 +216,8 @@ int fdevent_solaris_devpoll_init(fdevents *ev);
+ int fdevent_solaris_port_init(fdevents *ev);
+ int fdevent_freebsd_kqueue_init(fdevents *ev);
+ int fdevent_libev_init(fdevents *ev);
++
++/* fd must be TCP socket (AF_INET, AF_INET6), end-of-stream recv() 0 bytes */
++int fdevent_is_tcp_half_closed(int fd);
+ 
+ #endif

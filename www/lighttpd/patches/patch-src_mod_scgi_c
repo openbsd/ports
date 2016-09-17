@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_mod_scgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
+
+- [core] enforce wait for POLLWR after EINPROGRESS (fixes #2744)
+- [core] proxy,scgi omit shutdown() to backend (fixes #2743)
+- [core] fix crash if ready events on abandoned fd (fixes #2748)
+
+--- src/mod_scgi.c.orig	Wed Sep 14 21:07:14 2016
++++ src/mod_scgi.c	Wed Sep 14 21:04:56 2016
+@@ -1315,8 +1315,7 @@ static void scgi_connection_close(server *srv, handler
+ 	if (hctx->fd != -1) {
+ 		fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+ 		fdevent_unregister(srv->ev, hctx->fd);
+-		close(hctx->fd);
+-		srv->cur_fds--;
++		fdevent_sched_close(srv->ev, hctx->fd, 1);
+ 	}
+ 
+ 	if (hctx->host && hctx->proc) {
+@@ -1371,8 +1370,7 @@ static int scgi_reconnect(server *srv, handler_ctx *hc
+ 
+ 	fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+ 	fdevent_unregister(srv->ev, hctx->fd);
+-	close(hctx->fd);
+-	srv->cur_fds--;
++	fdevent_sched_close(srv->ev, hctx->fd, 1);
+ 
+ 	scgi_set_state(srv, hctx, FCGI_STATE_INIT);
+ 
+@@ -2438,7 +2436,6 @@ static handler_t scgi_write_request(server *srv, handl
+ 
+ 		if (hctx->wb->bytes_out == hctx->wb_reqlen) {
+ 			fdevent_event_clr(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+-			shutdown(hctx->fd, SHUT_WR);
+ 			scgi_set_state(srv, hctx, FCGI_STATE_READ);
+ 		} else {
+ 			off_t wblen = hctx->wb->bytes_in - hctx->wb->bytes_out;
+@@ -2585,7 +2582,8 @@ SUBREQUEST_FUNC(mod_scgi_handle_subrequest) {
+ 		}
+ 	}
+ 
+-	return (0 == hctx->wb->bytes_in || !chunkqueue_is_empty(hctx->wb))
++	return ((0 == hctx->wb->bytes_in || !chunkqueue_is_empty(hctx->wb))
++		&& hctx->state != FCGI_STATE_CONNECT)
+ 	  ? scgi_send_request(srv, hctx)
+ 	  : HANDLER_WAIT_FOR_EVENT;
+ }
