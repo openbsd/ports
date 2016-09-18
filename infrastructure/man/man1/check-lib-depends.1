@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-lib-depends.1,v 1.5 2011/11/27 16:50:34 espie Exp $
+.\"	$OpenBSD: check-lib-depends.1,v 1.6 2016/09/18 22:09:12 schwarze Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 27 2011 $
+.Dd $Mdocdate: September 18 2016 $
 .Dt CHECK-LIB-DEPENDS 1
 .Os
 .Sh NAME
@@ -81,9 +81,7 @@ Always show progress-meter, even if not run from terminal.
 .It Fl o
 Scan binaries using
 .Xr ldd 1 ,
-which also works for old
-.Xr a.out 5
-binaries, instead of
+which also works for old a.out binaries, instead of
 .Xr objdump 1 ,
 which only works for
 .Xr elf 5
@@ -113,6 +111,5 @@ to other options.
 .Sh SEE ALSO
 .Xr ldd 1 ,
 .Xr objdump 1 ,
-.Xr a.out 5 ,
 .Xr bsd.port.mk 5 ,
 .Xr elf 5

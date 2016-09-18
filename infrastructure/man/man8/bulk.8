@@ -1,4 +1,4 @@
-.\"	$OpenBSD: bulk.8,v 1.9 2016/06/22 23:25:57 sthen Exp $
+.\"	$OpenBSD: bulk.8,v 1.10 2016/09/18 22:09:12 schwarze Exp $
 .\"
 .\"	Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-.Dd $Mdocdate: June 22 2016 $
+.Dd $Mdocdate: September 18 2016 $
 .Dt BULK 8
 .Os
 .Sh NAME
@@ -36,7 +36,6 @@ Clean up and do subsequent bulks.
 .It
 Perform additional maintenance.
 .El
-
 .Ss 1. Choose master machine setup and create partitions
 Setup a master machine with enough room for a chroot, say
 .Pa /build .
@@ -97,7 +96,7 @@ block out quick proto {tcp,udp} from self user _pbuild
 Recent
 .Ox
 systems do not need any kind of
-.Xr doas 8
+.Xr doas 1
 setup for bulk ports builds, as
 .Xr dpb 1
 is run as root and drops permissions appropriately.
@@ -183,7 +182,6 @@ again each time, most things will get cleaned up automatically
 Note that known directories such as WRKOBJDIR do not get cleaned up
 automatically, so you may want to set up a STARTUP_SCRIPT in
 .Xr dpb 1 .
-.Pp
 .Ss 5. Perform additional maintenance
 .Xr clean-old-distfiles 1
 should be run occasionally since the DISTDIR will continue growing.
