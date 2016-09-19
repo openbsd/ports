@@ -1,32 +1,27 @@
-# $OpenBSD: Makefile,v 1.30 2013/08/20 22:05:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2016/09/19 17:20:05 edd Exp $
 
 COMMENT=	graphical interface for GnuPG
 
-DISTNAME=	gpa-0.7.6
-REVISION=	7
+DISTNAME=	gpa-0.9.9
 CATEGORIES=    	security x11
 
-HOMEPAGE=	http://www.gnupg.org/gpa.html
+HOMEPAGE=	${MASTER_SITES_GNUPG:=gpa/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/350/
+MASTER_SITES = 	https://gnupg.org/ftp/gcrypt/gpa/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 gio-2.0 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpgme gthread-2.0 assuan
-WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render z
-WANTLIB += GL xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender assuan atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gpg-error gpgme gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pthread z
 
-RUN_DEPENDS=	devel/desktop-file-utils \
-		security/gnupg
-BUILD_DEPENDS=	security/gnupg
+RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	security/gpgme \
 		x11/gtk+2
 

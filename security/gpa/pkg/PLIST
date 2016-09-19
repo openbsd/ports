@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/20 22:05:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/09/19 17:20:05 edd Exp $
 @bin bin/gpa
+@man man/man1/gpa.1
 share/applications/gpa.desktop
 share/gpa/
+share/gpa/gpa-logo.ppm
 share/gpa/gpa.png
-share/gpa/gpa_logo.ppm
-share/gpa/gpa_tips.de
-share/gpa/gpa_tips.en
+share/locale/ar/LC_MESSAGES/gpa.mo
 share/locale/cs/LC_MESSAGES/gpa.mo
 share/locale/de/LC_MESSAGES/gpa.mo
 share/locale/es/LC_MESSAGES/gpa.mo
@@ -17,9 +17,7 @@ share/locale/pt_BR/LC_MESSAGES/gpa.mo
 share/locale/ru/LC_MESSAGES/gpa.mo
 share/locale/sv/LC_MESSAGES/gpa.mo
 share/locale/tr/LC_MESSAGES/gpa.mo
-share/locale/zh_TW.Big5/
-share/locale/zh_TW.Big5/LC_MESSAGES/
-share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
+share/locale/zh_TW/LC_MESSAGES/gpa.mo
 share/pixmaps/
 share/pixmaps/gpa.png
 @exec %D/bin/update-desktop-database
