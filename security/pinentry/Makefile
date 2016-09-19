@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/27 14:23:35 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2016/09/19 17:16:32 edd Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 
-VERSION = 	0.9.6
+VERSION = 	0.9.7
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
@@ -12,10 +12,6 @@ EXTRACT_SUFX =	.tar.bz2
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
-
-REVISION-main =	4
-REVISION-gtk2 =	0
-REVISION-gnome3= 0
 
 MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
@@ -29,7 +25,7 @@ PERMIT_PACKAGE_CDROM = 	Yes
 MULTI_PACKAGES = 	-main -gtk2 -gnome3
 
 WANTLIB += c assuan gio-2.0 glib-2.0 gobject-2.0 gpg-error iconv intl
-WANTLIB += ncursesw pthread secret-1
+WANTLIB += ncursesw secret-1
 
 LIB_DEPENDS =		devel/gettext \
 			security/libassuan \
