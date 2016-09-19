@@ -1,11 +1,11 @@
-$OpenBSD: patch-simgear_misc_sg_path_cxx,v 1.1 2015/03/17 17:20:17 pascal Exp $
---- simgear/misc/sg_path.cxx.orig	Sat Jan  3 19:30:47 2015
-+++ simgear/misc/sg_path.cxx	Sat Jan  3 19:36:10 2015
-@@ -30,6 +30,7 @@
+$OpenBSD: patch-simgear_misc_sg_path_cxx,v 1.2 2016/09/19 22:38:50 pascal Exp $
+--- simgear/misc/sg_path.cxx.orig	Thu Sep  8 08:52:42 2016
++++ simgear/misc/sg_path.cxx	Mon Sep 19 16:14:31 2016
+@@ -32,6 +32,7 @@
  #include <stdio.h>
  #include <sys/stat.h>
  #include <errno.h>
 +#include <unistd.h>
  #include <fstream>
+ #include <cstdlib>
  
- #ifdef _WIN32

@@ -1,7 +1,7 @@
-$OpenBSD: patch-simgear_compiler_h,v 1.1 2016/09/02 10:06:25 pascal Exp $
---- simgear/compiler.h.orig	Thu Sep  1 13:44:23 2016
-+++ simgear/compiler.h	Thu Sep  1 13:44:57 2016
-@@ -180,7 +180,8 @@ inline int (isnan)(double r) { return !(r <= 0 || r >=
+$OpenBSD: patch-simgear_compiler_h,v 1.2 2016/09/19 22:38:50 pascal Exp $
+--- simgear/compiler.h.orig	Thu Sep  8 08:52:42 2016
++++ simgear/compiler.h	Mon Sep 19 16:14:31 2016
+@@ -184,7 +184,8 @@ inline int (isnan)(double r) { return !(r <= 0 || r >=
  #  define SG_WINDOWS
  #endif
  

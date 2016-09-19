@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/09/02 10:06:26 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/19 22:38:50 pascal Exp $
 include/simgear/
 include/simgear/3rdparty/
 include/simgear/3rdparty/utf8/
@@ -93,17 +93,12 @@ include/simgear/ephemeris/stardata.hxx
 include/simgear/ephemeris/uranus.hxx
 include/simgear/ephemeris/venus.hxx
 include/simgear/io/
-include/simgear/io/AbstractRepository.hxx
-include/simgear/io/DAVMultiStatus.hxx
 include/simgear/io/DNSClient.hxx
 include/simgear/io/HTTPClient.hxx
 include/simgear/io/HTTPFileRequest.hxx
 include/simgear/io/HTTPMemoryRequest.hxx
 include/simgear/io/HTTPRepository.hxx
 include/simgear/io/HTTPRequest.hxx
-include/simgear/io/SVNDirectory.hxx
-include/simgear/io/SVNReportParser.hxx
-include/simgear/io/SVNRepository.hxx
 include/simgear/io/iochannel.hxx
 include/simgear/io/lowlevel.hxx
 include/simgear/io/raw_socket.hxx
@@ -115,6 +110,7 @@ include/simgear/io/sg_netChat.hxx
 include/simgear/io/sg_serial.hxx
 include/simgear/io/sg_socket.hxx
 include/simgear/io/sg_socket_udp.hxx
+include/simgear/io/untar.hxx
 include/simgear/magvar/
 include/simgear/magvar/coremag.hxx
 include/simgear/magvar/magvar.hxx
@@ -325,10 +321,9 @@ include/simgear/sg_inlines.h
 include/simgear/simgear_config.h
 include/simgear/sound/
 include/simgear/sound/readwav.hxx
+include/simgear/sound/sample.hxx
 include/simgear/sound/sample_group.hxx
-include/simgear/sound/sample_openal.hxx
-include/simgear/sound/sample_queue.hxx
-include/simgear/sound/soundmgr_openal.hxx
+include/simgear/sound/soundmgr.hxx
 include/simgear/sound/xmlsound.hxx
 include/simgear/structure/
 include/simgear/structure/OSGUtils.hxx
