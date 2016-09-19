@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/09/19 17:09:37 edd Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
 @bin bin/dirmngr
 @bin bin/dirmngr-client
-@bin bin/g13
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
 @bin bin/gpg2
 @bin bin/gpgconf
-@bin bin/gpgkey2ssh
 @bin bin/gpgparsemail
+@bin bin/gpgscm
 @bin bin/gpgsm
 @bin bin/gpgtar
 @bin bin/gpgv2
@@ -25,7 +24,6 @@
 @man man/man1/gpg-agent.1
 @man man/man1/gpg-connect-agent.1
 @man man/man1/gpg-preset-passphrase.1
-@man man/man1/gpg2-zip.1
 @man man/man1/gpg2.1
 @man man/man1/gpgconf.1
 @man man/man1/gpgparsemail.1
@@ -57,7 +55,6 @@ share/doc/gnupg2/examples/scd-event
 share/doc/gnupg2/examples/trustlist.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gnupg/
-share/gnupg/com-certs.pem
 share/gnupg/dirmngr-conf.skel
 share/gnupg/distsigkey.gpg
 share/gnupg/gpg-conf.skel
@@ -89,7 +86,7 @@ share/gnupg/help.tr.txt
 share/gnupg/help.txt
 share/gnupg/help.zh_CN.txt
 share/gnupg/help.zh_TW.txt
-share/gnupg/qualified.txt
+share/gnupg/sks-keyservers.netCA.pem
 share/locale/ca/LC_MESSAGES/gnupg2.mo
 share/locale/cs/LC_MESSAGES/gnupg2.mo
 share/locale/da/LC_MESSAGES/gnupg2.mo

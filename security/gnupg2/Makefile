@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2016/06/29 16:14:44 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2016/09/19 17:09:37 edd Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.1.9
+DISTNAME =	gnupg-2.1.15
 CATEGORIES = 	security
-REVISION =	0
 
 MASTER_SITES =	${MASTER_SITES_GNUPG:=gnupg/}
 
@@ -16,8 +15,8 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 PERMIT_PACKAGE_CDROM = 	Yes
 
 WANTLIB +=		assuan bz2 c gcrypt gnutls gpg-error
-WANTLIB +=		ksba npth pthread readline
-WANTLIB +=		termcap usb z
+WANTLIB +=		ksba npth pthread readline sqlite3
+WANTLIB +=		termcap usb-1.0 z
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -27,12 +26,12 @@ FLAVORS = 		ldap
 FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
-			devel/libusb-compat \
+			devel/libusb1 \
 			devel/npth \
 			security/gnutls \
-			security/libassuan \
+			security/libassuan>=2.4.3 \
 			security/libgcrypt \
-			security/libksba
+			security/libksba>=1.3.4
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS +=	--enable-ldap
@@ -45,7 +44,9 @@ CONFIGURE_ARGS +=	--disable-ldap
 RUN_DEPENDS = 		security/pinentry
 
 # gpg-agent must be installed to run the regress tests
+# Make sure you dont have gpg aliased (e.g. to gpg2) when running tests.
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
+PORTHOME=${WRKDIR}
 
 USE_GMAKE = 		Yes
 
@@ -58,7 +59,6 @@ CONFIGURE_ARGS += 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 
 # Avoid conflict with gnupg-1.x
 post-install:
-	@mv ${PREFIX}/man/man1/gpg-zip.1 ${PREFIX}/man/man1/gpg2-zip.1
 	@mv ${PREFIX}/man/man7/gnupg.7 ${PREFIX}/man/man7/gnupg2.7
 
 .include <bsd.port.mk>
