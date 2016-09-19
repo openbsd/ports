@@ -1,4 +1,4 @@
-$OpenBSD: patch-go_vendor_github_com_keybase_go-ps_process_openbsd_go,v 1.1.1.1 2016/09/09 14:11:43 abieber Exp $
+$OpenBSD: patch-go_vendor_github_com_keybase_go-ps_process_openbsd_go,v 1.2 2016/09/19 14:39:36 abieber Exp $
 
 This can be removed in the next release of keybase:
 https://github.com/keybase/client/pull/3832/files
@@ -6,7 +6,7 @@ https://github.com/keybase/client/pull/3832/files
 --- go/vendor/github.com/keybase/go-ps/process_openbsd.go.orig	Wed Sep  7 08:14:47 2016
 +++ go/vendor/github.com/keybase/go-ps/process_openbsd.go	Wed Sep  7 08:14:47 2016
 @@ -0,0 +1,302 @@
-+// +build openbsd,amd64
++// +build openbsd
 +
 +package ps
 +
