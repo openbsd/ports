@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2016/09/16 10:54:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2016/09/19 08:24:28 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-D=		20160827
+D=		20160916
 DISTNAME=	neomutt-$D
-PKGNAME=	mutt-1.7.0.20160827
+PKGNAME=	mutt-1.7.0.$D
 EPOCH=		2
 
 CATEGORIES=	mail
@@ -32,7 +32,6 @@ FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE= gnu
-SEPARATE_BUILD=	 Yes
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
