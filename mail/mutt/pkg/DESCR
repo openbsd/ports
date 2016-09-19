@@ -5,13 +5,13 @@ threading, encryption and signing with PGP/GPG and S/MIME, and many
 operations can use regular expressions. It's highly customizable with
 many options for colours, key bindings, display formats etc.
 
-This package is built from the NeoMutt tree, adding extra functionality
-previously available through separate patchsets. Bug reports should go
-to NeoMutt and not Mutt upstream.
-
 Flavors:
 	gpgme      - build with support for GPGME, simplifying use with GnuPG:
                      "set crypt_use_gpgme = yes" in muttrc, and run gpg-agent:
                      "export GPG_TTY=$(tty); eval $(gpg-agent --daemon)" 
 	sasl	   - build with SASL authentication support
 	slang	   - use S-Lang instead of curses for screen handling
+	compressed - build with compressed folder support
+		     (see: http://www.spinnaker.de/mutt/compressed/)
+	sidebar	   - adds a sidebar that has a folder list
+		     (see: http://thomer.com/mutt/)
