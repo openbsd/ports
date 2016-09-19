@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2011/12/11 18:31:13 dcoppa Exp $
---- configure.in.orig	Fri Nov 11 21:59:14 2011
-+++ configure.in	Fri Dec  9 20:14:19 2011
-@@ -172,7 +172,7 @@ MULE_IF_ENABLED_ANY([monolithic, amule-daemon, amule-g
+$OpenBSD: patch-configure_in,v 1.4 2016/09/19 14:06:53 dcoppa Exp $
+--- configure.in.orig	Fri Sep 16 09:55:06 2016
++++ configure.in	Sun Sep 18 15:31:21 2016
+@@ -190,7 +190,7 @@ MULE_IF_ENABLED_ANY([monolithic, amule-daemon, amule-g
  	WX_DETECT_STANDARD_OPTION_VALUES
  
  	# We also need wxBase
@@ -10,24 +10,24 @@ $OpenBSD: patch-configure_in,v 1.3 2011/12/11 18:31:13 dcoppa Exp $
  	WXBASE_LIBS=`$WX_CONFIG_WITH_ARGS --libs net`
  	WXBASE_CPPFLAGS="$WX_CPPFLAGS -DwxUSE_GUI=0"
  
-@@ -236,7 +236,7 @@ AC_LANG_POP([C++])
+@@ -261,7 +261,7 @@ MULE_IF_ENABLED_ANY([monolithic, amule-daemon, amule-g
  ])
  
  # Ok, we have all needed libs, now checking for other stuff
 -AS_IF([test "$LEX" = "flex"], [MULE_CHECK_FLEX_EXTENDED], [HAVE_FLEX_EXTENDED=no])
 +MULE_CHECK_FLEX_EXTENDED
  
- # Flush standard test results for speeding cache
- AC_CACHE_SAVE
-@@ -325,7 +325,6 @@ MULE_CHECK_NLS
  
+ # Checks for header files.
+@@ -338,7 +338,6 @@ AC_LANG_PUSH([C++])
  # Check for bfd.h (to have proper backtraces without using wxExecute)
+ dnl This must be *after* MULE_CHECK_NLS
  MULE_CHECK_BFD
 -MULE_CHECK_EXECINFO
  
- # Flush standard test results for speeding cache
- AC_CACHE_SAVE
-@@ -336,7 +335,7 @@ MULE_COMPILATION_FLAGS
+ 
+ # aMule plasma widget
+@@ -364,7 +363,7 @@ MULE_RESTORE([CPPFLAGS])
  
  # autoconf >= 2.60 already defines ${docdir}, but we always need it.
  AC_MSG_CHECKING([for docdir])

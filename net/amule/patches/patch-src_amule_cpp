@@ -1,26 +1,10 @@
-$OpenBSD: patch-src_amule_cpp,v 1.6 2014/01/20 21:31:25 dcoppa Exp $
+$OpenBSD: patch-src_amule_cpp,v 1.7 2016/09/19 14:06:53 dcoppa Exp $
 
-Disable checking for new versions at startup: it's useless and was
-causing a crash with amuled on sparc64.
+Disable checking for new versions at startup.
 
-New download link for server list
-(upstream git commit 458e2c2f0d245eca88e9fea48e66bd40036162f4)
-
-Ok() is just an undocumented alias for IsOk()
-(upstream git commit 740c0298147a614806f1676f77a89908074b5574)
-
-Less writing of known files list during hashing (every 3000MB instead of 300)
-Files have become larger and hashing faster.
-(upstream git commit f9b504a11ba7fabde6c7a63184edeeeb15ec7f66)
-
-If successfully downloaded a server list, and are not connected at
-the moment, try to connect.
-This happens when no server met is available on startup.
-(upstream git commit 41e0edaed86c9be58ae372e419e2cc02cebfa243)
-
---- src/amule.cpp.orig	Sun Sep 18 13:01:52 2011
-+++ src/amule.cpp	Mon Jan 20 16:47:20 2014
-@@ -521,6 +521,7 @@ bool CamuleApp::OnInit()
+--- src/amule.cpp.orig	Fri Sep 16 09:55:07 2016
++++ src/amule.cpp	Sun Sep 18 15:31:21 2016
+@@ -527,6 +527,7 @@ bool CamuleApp::OnInit()
  		AddLogLineNS(msg);
  	}
  
@@ -28,7 +12,7 @@ This happens when no server met is available on startup.
  	// Test if there's any new version
  	if (thePrefs::GetCheckNewVersion()) {
  		// We use the thread base because I don't want a dialog to pop up.
-@@ -530,6 +531,7 @@ bool CamuleApp::OnInit()
+@@ -536,6 +537,7 @@ bool CamuleApp::OnInit()
  		version_check->Create();
  		version_check->Run();
  	}
@@ -36,45 +20,3 @@ This happens when no server met is available on startup.
  
  	// Create main dialog, or fork to background (daemon).
  	InitGui(m_geometryEnabled, m_geometryString);
-@@ -586,7 +588,7 @@ bool CamuleApp::OnInit()
- 		// workaround amuled crash
- #ifndef AMULE_DAEMON
- 			serverlist->UpdateServerMetFromURL(
--				wxT("http://gruk.org/server.met.gz"));
-+				wxT("http://upd.emule-security.org/server.met"));
- #endif
- 		}
- 	}
-@@ -760,7 +762,7 @@ bool CamuleApp::ReinitializeNetwork(wxString* msg)
- 	// This command just sets a flag to control maximum number of connections.
- 	// Notify(true) has already been called to the ListenSocket, so events may
- 	// be already comming in.
--	if (listensocket->Ok()) {
-+	if (listensocket->IsOk()) {
- 		listensocket->StartListening();
- 	} else {
- 		// If we wern't able to start listening, we need to warn the user
-@@ -1276,8 +1278,8 @@ void CamuleApp::OnFinishedHashing(CHashingEvent& evt)
- 			sharedfiles->SafeAddKFile(result);
- 
- 			bytecount += result->GetFileSize();
--			// If we have added files with a total size of ~300mb
--			if (bytecount >= 314572800) {
-+			// If we have added files with a total size of ~3000mb
-+			if (bytecount >= wxULL(3145728000)) {
- 				AddDebugLogLineN(logKnownFiles, wxT("Failsafe for crash on file hashing creation"));
- 				if ( m_app_state != APP_STATE_SHUTTINGDOWN ) {
- 					knownfiles->Save();
-@@ -1532,7 +1534,11 @@ void CamuleApp::OnFinishedHTTPDownload(CMuleInternalEv
- 			ipfilter->DownloadFinished(event.GetExtraLong());
- 			break;
- 		case HTTP_ServerMet:
--			serverlist->DownloadFinished(event.GetExtraLong());
-+			if (serverlist->DownloadFinished(event.GetExtraLong()) && !IsConnectedED2K()) {
-+				// If successfully downloaded a server list, and are not connected at the moment, try to connect.
-+				// This happens when no server met is available on startup.
-+				serverconnect->ConnectToAnyServer();
-+			}
- 			break;
- 		case HTTP_ServerMetAuto:
- 			serverlist->AutoDownloadFinished(event.GetExtraLong());

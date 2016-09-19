@@ -1,37 +1,12 @@
-$OpenBSD: patch-acinclude_m4,v 1.4 2016/06/03 11:54:44 dcoppa Exp $
---- acinclude.m4.orig	Mon Jun 13 10:50:25 2011
-+++ acinclude.m4	Fri Jun  3 12:23:12 2016
-@@ -253,7 +253,7 @@ AC_DEFUN([MULE_CHECK_SYSTEM],
+$OpenBSD: patch-acinclude_m4,v 1.5 2016/09/19 14:06:53 dcoppa Exp $
+--- acinclude.m4.orig	Sun Sep 18 15:32:06 2016
++++ acinclude.m4	Sun Sep 18 15:33:07 2016
+@@ -287,7 +287,7 @@ AC_DEFUN([MULE_CHECK_SYSTEM],
  		;;
- 	openbsd*) 
+ 	openbsd*)
  		SYS=openbsd
 -		LIBS="$LIBS -L/usr/local/lib"
 +		LIBS="$LIBS -L${LOCALDIR}/lib"
  		MULECPPFLAGS="-D__OPENBSD__"
  		;;
  	*cygwin* | *mingw32*)
-@@ -282,11 +282,11 @@ AC_DEFUN([MULE_CHECK_SYSTEM],
- 		;;
- 	esac
- 
--	# -lpthread is needed by Debian but FreeBSD < 5 doesn't support it
-+	# -lpthread is needed by Debian but OpenBSD doesn't support it
- 	AS_IF([test ${SYS:-unknown} != win32],
- 	[
--		AC_MSG_CHECKING([if this is a FreeBSD 4 or earlier system])
--		AS_IF([test x"`uname -s`" = xFreeBSD && test 0`uname -r | cut -c 1` -lt 5],
-+		AC_MSG_CHECKING([if this is an OpenBSD system])
-+		AS_IF([test x"`uname -s`" = xOpenBSD],
- 		[
- 			MULE_ADDFLAG([LD], [-pthread])
- 			AC_MSG_RESULT(yes)
-@@ -463,9 +463,6 @@ AC_DEFUN([MULE_CHECK_BFD],
- 	done
- 
- 	AC_MSG_RESULT([$result])
--
--	AS_IF([test $result = no],
--		[MULE_WARNING([bfd.h not found or unusable, please install binutils development package if you are a developer or want to help testing aMule])])
- 
- AC_SUBST([BFD_CPPFLAGS])dnl
- AC_SUBST([BFD_LIBS])dnl

@@ -1,16 +1,10 @@
-$OpenBSD: patch-src_Preferences_cpp,v 1.4 2014/01/13 15:01:22 dcoppa Exp $
+$OpenBSD: patch-src_Preferences_cpp,v 1.5 2016/09/19 14:06:53 dcoppa Exp $
 
 Disable checking for new versions at startup.
 
-Change nodes.dat default download URL to something actually working
-(upstream git commit 8dbe597539bcac7272ccf4d46790fde814aeded1)
-
-New download link for server list
-(upstream git commit 458e2c2f0d245eca88e9fea48e66bd40036162f4)
-
---- src/Preferences.cpp.orig	Sun Oct  9 02:19:08 2011
-+++ src/Preferences.cpp	Mon Jan 13 13:30:09 2014
-@@ -1210,7 +1210,7 @@ void CPreferences::BuildItemList( const wxString& appd
+--- src/Preferences.cpp.orig	Fri Sep 16 09:55:06 2016
++++ src/Preferences.cpp	Sun Sep 18 15:31:21 2016
+@@ -1211,7 +1211,7 @@ void CPreferences::BuildItemList( const wxString& appd
  	/**
  	 * Version check
  	 **/
@@ -19,14 +13,3 @@ New download link for server list
  
  	 /**
  	  * Obfuscation
-@@ -1244,8 +1244,8 @@ void CPreferences::BuildItemList( const wxString& appd
- 
- 	s_MiscList.push_back( new Cfg_Bool( wxT("/eMule/DropSlowSources"), 		s_DropSlowSources, false ) );
- 
--	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/KadNodesUrl"),			s_KadURL, wxT("http://download.tuxfamily.org/technosalad/utils/nodes.dat") ) );
--	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/Ed2kServersUrl"),		s_Ed2kURL, wxT("http://gruk.org/server.met.gz") ) );
-+	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/KadNodesUrl"),			s_KadURL, wxT("http://upd.emule-security.org/nodes.dat") ) );
-+	s_MiscList.push_back( new Cfg_Str(	wxT("/eMule/Ed2kServersUrl"),		s_Ed2kURL, wxT("http://upd.emule-security.org/server.met") ) );
- 	s_MiscList.push_back( MkCfg_Int( wxT("/eMule/ShowRatesOnTitle"),		s_showRatesOnTitle, 0 ));
- 
- 	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/GeoLiteCountryUpdateUrl"),		s_GeoIPUpdateUrl, wxT("http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz") ) );

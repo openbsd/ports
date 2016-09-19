@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libs_ec_cpp_ECSocket_cpp,v 1.1 2016/09/19 14:06:53 dcoppa Exp $
+--- src/libs/ec/cpp/ECSocket.cpp.orig	Mon Sep 19 15:36:33 2016
++++ src/libs/ec/cpp/ECSocket.cpp	Mon Sep 19 15:45:43 2016
+@@ -521,8 +521,8 @@ void ShowZError(int zerror, z_streamp strm)
+ 	}
+ 	printf("ZLib operation returned %s\n", p);
+ 	printf("ZLib error message: %s\n", strm->msg);
+-	printf("zstream state:\n\tnext_in=%p\n\tavail_in=%u\n\ttotal_in=%lu\n\tnext_out=%p\n\tavail_out=%u\n\ttotal_out=%lu\n",
+-		strm->next_in, strm->avail_in, strm->total_in, strm->next_out, strm->avail_out, strm->total_out);
++	printf("zstream state:\n\tnext_in=%p\n\tavail_in=%u\n\ttotal_in=%jd\n\tnext_out=%p\n\tavail_out=%u\n\ttotal_out=%jd\n",
++		strm->next_in, strm->avail_in, (intmax_t)strm->total_in, strm->next_out, strm->avail_out, (intmax_t)strm->total_out);
+ 	AddDebugLogLineN(logEC, wxT("ZLib error"));
+ }
+ 

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_utils_cas_configfile_c,v 1.2 2011/11/28 15:28:49 dcoppa Exp $
+$OpenBSD: patch-src_utils_cas_configfile_c,v 1.3 2016/09/19 14:06:53 dcoppa Exp $
 
 Sane defaults.
 
---- src/utils/cas/configfile.c.orig	Mon Nov 28 09:36:48 2011
-+++ src/utils/cas/configfile.c	Mon Nov 28 09:37:47 2011
-@@ -44,9 +44,9 @@ int writeconfig(void)
+--- src/utils/cas/configfile.c.orig	Fri Sep 16 09:55:07 2016
++++ src/utils/cas/configfile.c	Sun Sep 18 15:31:21 2016
+@@ -52,9 +52,9 @@ int writeconfig(void)
  		"# font_size - size the font\n",
- 		"# source_image - image where the text will be writen\n",
+ 		"# source_image - image where the text will be written\n",
  		"# *_line - x,y,[1/0] enabled or disabled\n\n",
 -		"font /usr/share/fonts/corefonts/times.ttf\n",
 +		"font ${X11BASE}/lib/X11/fonts/TTF/DejaVuSerif.ttf\n",
@@ -16,7 +16,7 @@ Sane defaults.
  		"first_line 23,17,1\n",
  		"second_line 23,34,1\n",
  		"third_line 23,51,1\n",
-@@ -54,7 +54,7 @@ int writeconfig(void)
+@@ -62,7 +62,7 @@ int writeconfig(void)
  		"fifth_line 23,85,1\n",
  		"sixth_line 23,102,1\n",
  		"seventh_line 23,119,1\n",

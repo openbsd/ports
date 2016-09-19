@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2016/06/03 11:54:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.54 2016/09/19 14:06:53 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule
 
-V =		2.3.1
+V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION-main =	22
-REVISION-web =	20
-REVISION-daemon =20
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -95,10 +92,17 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			X11R6DIR="${X11BASE}"
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
-					-Wno-sign-compare -Wno-unused"
+				  -Wno-shadow -Wno-sign-compare \
+				  -Wno-unused"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/utils/cas/configfile.c
+	rm ${WRKSRC}/docs/man/a*.*.1 \
+		${WRKSRC}/docs/man/e*.*.1 \
+		${WRKSRC}/src/utils/*/docs/a*.*.1 \
+		${WRKSRC}/src/utils/*/docs/c*.*.1 \
+		${WRKSRC}/src/utils/*/docs/w*.*.1 \
+		${WRKSRC}/src/utils/*/docs/x*.*.1
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \

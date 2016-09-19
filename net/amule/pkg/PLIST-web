@@ -1,27 +1,6 @@
-@comment $OpenBSD: PLIST-web,v 1.3 2011/11/28 15:28:49 dcoppa Exp $
+@comment $OpenBSD: PLIST-web,v 1.4 2016/09/19 14:06:53 dcoppa Exp $
 @bin bin/amuleweb
-@comment man/de/
-@comment man/de/man1/
-@comment @man man/de/man1/amuleweb.1
-@comment man/es/
-@comment man/es/man1/
-@comment @man man/es/man1/amuleweb.1
-@comment man/fr/
-@comment man/fr/man1/
-@comment @man man/fr/man1/amuleweb.1
-@comment man/hu/
-@comment man/hu/man1/
-@comment @man man/hu/man1/amuleweb.1
-@comment man/it/
-@comment man/it/man1/
-@comment @man man/it/man1/amuleweb.1
 @man man/man1/amuleweb.1
-@comment man/ru/
-@comment man/ru/man1/
-@comment @man man/ru/man1/amuleweb.1
-@comment man/tr/
-@comment man/tr/man1/
-@comment @man man/tr/man1/amuleweb.1
 share/amule/
 share/amule/webserver/
 share/amule/webserver/default/
