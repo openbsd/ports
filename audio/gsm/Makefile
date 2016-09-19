@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2016/09/13 11:33:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/09/19 08:23:57 sthen Exp $
 
 COMMENT=	GSM audio codec library and converter
 
-DISTNAME=	gsm-1.0.15
-WRKDIST=	${WRKDIR}/gsm-1.0-pl15
+D=		gsm-1.0-pl16
+DISTNAME=	${D:S/-pl/./}
+WRKDIST=	${WRKDIR}/$D
 
 SHARED_LIBS=	gsm	1.0
 
