@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/09/19 14:06:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.55 2016/09/19 19:15:48 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -101,8 +101,7 @@ pre-configure:
 		${WRKSRC}/docs/man/e*.*.1 \
 		${WRKSRC}/src/utils/*/docs/a*.*.1 \
 		${WRKSRC}/src/utils/*/docs/c*.*.1 \
-		${WRKSRC}/src/utils/*/docs/w*.*.1 \
-		${WRKSRC}/src/utils/*/docs/x*.*.1
+		${WRKSRC}/src/utils/*/docs/w*.*.1
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \
