@@ -1,10 +1,10 @@
-$OpenBSD: patch-config-scripts_cups-common_m4,v 1.15 2015/09/01 16:23:51 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.16 2016/09/19 09:16:51 ajacoutot Exp $
 
 Our <sys/ucred.h> does not provide xucred.
 
---- config-scripts/cups-common.m4.orig	Mon Aug 31 17:22:30 2015
-+++ config-scripts/cups-common.m4	Tue Sep  1 18:15:27 2015
-@@ -144,7 +144,6 @@ AC_CHECK_HEADER(strings.h,AC_DEFINE(HAVE_STRINGS_H))
+--- config-scripts/cups-common.m4.orig	Wed Sep 14 01:39:47 2016
++++ config-scripts/cups-common.m4	Sat Sep 17 15:26:03 2016
+@@ -128,7 +128,6 @@ AC_CHECK_HEADER(strings.h,AC_DEFINE(HAVE_STRINGS_H))
  AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
  AC_CHECK_HEADER(sys/ioctl.h,AC_DEFINE(HAVE_SYS_IOCTL_H))
  AC_CHECK_HEADER(sys/param.h,AC_DEFINE(HAVE_SYS_PARAM_H))

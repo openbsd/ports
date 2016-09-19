@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.211 2016/06/15 06:42:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.212 2016/09/19 09:16:51 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		2.1.4
-DISTNAME=		cups-${VERSION}-source
+VERSION=		2.2.0
+GH_ACCOUNT=		apple
+GH_PROJECT=		cups
+GH_TAGNAME=		v${VERSION}
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
@@ -13,10 +15,10 @@ CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
 SHARED_LIBS+=  cupsimage       5.1 # so.2
-SHARED_LIBS+=  cups            6.3 # so.2
+SHARED_LIBS+=  cups            6.4 # so.2
 SHARED_LIBS+=  cupscgi         1.1 # so.1
-SHARED_LIBS+=  cupsmime        1.1 # so.1
-SHARED_LIBS+=  cupsppdc        1.1 # so.1
+SHARED_LIBS+=  cupsmime        1.2 # so.1
+SHARED_LIBS+=  cupsppdc        1.2 # so.1
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -30,15 +32,7 @@ WANTLIB += avahi-client avahi-common gnutls iconv m pthread stdc++ z
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
 
-MASTER_SITES=		https://github.com/apple/cups/releases/download/release-${VERSION}/
-
-WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
-
 MULTI_PACKAGES=		-main -libs
-
-# XXX $(LIBTOOL) is hardcoded in some Makefiles even when *not* using
-# --enable-libtool-unsupported
-USE_LIBTOOL=		No
 
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
@@ -84,6 +78,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
+			--disable-libtool_unsupported \
 			--with-cups-group=_cups \
 			--with-cups-user=_cups \
 			--with-system-groups=wheel \

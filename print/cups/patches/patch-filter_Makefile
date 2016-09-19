@@ -1,7 +1,7 @@
-$OpenBSD: patch-filter_Makefile,v 1.13 2014/11/15 10:22:23 ajacoutot Exp $
---- filter/Makefile.orig	Wed May 29 13:51:34 2013
-+++ filter/Makefile	Fri Oct  3 16:01:21 2014
-@@ -266,12 +266,10 @@ gziptoany:	gziptoany.o ../Makedefs ../cups/$(LIBCUPS)
+$OpenBSD: patch-filter_Makefile,v 1.14 2016/09/19 09:16:51 ajacoutot Exp $
+--- filter/Makefile.orig	Wed Sep 14 01:39:47 2016
++++ filter/Makefile	Sat Sep 17 15:26:03 2016
+@@ -232,12 +232,10 @@ gziptoany:	gziptoany.o ../Makedefs ../cups/$(LIBCUPS)
  # libcupsimage.so.2, libcupsimage.sl.2
  #
  

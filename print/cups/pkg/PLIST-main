@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2016/06/15 06:42:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2016/09/19 09:16:51 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -480,6 +480,8 @@ share/cups/templates/pt_BR/error-op.tmpl
 share/cups/templates/pt_BR/error.tmpl
 share/cups/templates/pt_BR/header.tmpl
 share/cups/templates/pt_BR/help-header.tmpl
+share/cups/templates/pt_BR/help-printable.tmpl
+share/cups/templates/pt_BR/help-trailer.tmpl
 share/cups/templates/pt_BR/job-cancel.tmpl
 share/cups/templates/pt_BR/job-hold.tmpl
 share/cups/templates/pt_BR/job-move.tmpl
@@ -501,6 +503,7 @@ share/cups/templates/pt_BR/option-trailer.tmpl
 share/cups/templates/pt_BR/pager.tmpl
 share/cups/templates/pt_BR/printer-accept.tmpl
 share/cups/templates/pt_BR/printer-added.tmpl
+share/cups/templates/pt_BR/printer-cancel-jobs.tmpl
 share/cups/templates/pt_BR/printer-configured.tmpl
 share/cups/templates/pt_BR/printer-confirm.tmpl
 share/cups/templates/pt_BR/printer-default.tmpl
@@ -618,17 +621,14 @@ share/doc/cups/es/
 share/doc/cups/es/index.html
 share/doc/cups/help/
 share/doc/cups/help/accounting.html
+share/doc/cups/help/api-admin.html
 share/doc/cups/help/api-array.html
-share/doc/cups/help/api-cgi.html
 share/doc/cups/help/api-cups.html
-share/doc/cups/help/api-driver.html
 share/doc/cups/help/api-filedir.html
 share/doc/cups/help/api-filter.html
 share/doc/cups/help/api-httpipp.html
-share/doc/cups/help/api-mime.html
 share/doc/cups/help/api-overview.html
 share/doc/cups/help/api-ppd.html
-share/doc/cups/help/api-ppdc.html
 share/doc/cups/help/api-raster.html
 share/doc/cups/help/cgi.html
 share/doc/cups/help/glossary.html
@@ -686,7 +686,6 @@ share/doc/cups/help/ref-ppdcfile.html
 share/doc/cups/help/security.html
 share/doc/cups/help/sharing.html
 share/doc/cups/help/spec-banner.html
-share/doc/cups/help/spec-cmp.html
 share/doc/cups/help/spec-command.html
 share/doc/cups/help/spec-design.html
 share/doc/cups/help/spec-ipp.html
@@ -751,8 +750,6 @@ share/examples/cups/empty.conf
 @mode 0644
 @sample ${SYSCONFDIR}/cups/subscriptions.conf
 @mode
-share/examples/cups/interfaces/
-@sample ${SYSCONFDIR}/cups/interfaces/
 share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 @mode 0640

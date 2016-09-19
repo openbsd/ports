@@ -1,7 +1,7 @@
-$OpenBSD: patch-ppdc_Makefile,v 1.4 2014/11/15 10:22:23 ajacoutot Exp $
---- ppdc/Makefile.orig	Tue Apr  8 21:53:57 2014
-+++ ppdc/Makefile	Fri Oct  3 16:01:21 2014
-@@ -334,11 +334,9 @@ testcatalog:		testcatalog.o libcupsppdc.a ../cups/$(LI
+$OpenBSD: patch-ppdc_Makefile,v 1.5 2016/09/19 09:16:51 ajacoutot Exp $
+--- ppdc/Makefile.orig	Wed Sep 14 01:39:47 2016
++++ ppdc/Makefile	Sat Sep 17 15:26:03 2016
+@@ -313,11 +313,9 @@ testcatalog:		testcatalog.o libcupsppdc.a ../cups/$(LI
  # libcupsppdc.so.1
  #
  
