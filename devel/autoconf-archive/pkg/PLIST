@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/21 13:16:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/19 17:55:09 jasper Exp $
 @info info/autoconf-archive.info
 share/aclocal/
 share/aclocal/ax_absolute_header.m4
@@ -48,6 +48,7 @@ share/aclocal/ax_boost_thread.m4
 share/aclocal/ax_boost_unit_test_framework.m4
 share/aclocal/ax_boost_wave.m4
 share/aclocal/ax_boost_wserialization.m4
+share/aclocal/ax_build_date_epoch.m4
 share/aclocal/ax_c99_inline.m4
 share/aclocal/ax_c___attribute__.m4
 share/aclocal/ax_c_arithmetic_rshift.m4
@@ -174,6 +175,7 @@ share/aclocal/ax_check_typedef.m4
 share/aclocal/ax_check_uname_syscall.m4
 share/aclocal/ax_check_user.m4
 share/aclocal/ax_check_vscript.m4
+share/aclocal/ax_check_x86_features.m4
 share/aclocal/ax_check_zlib.m4
 share/aclocal/ax_code_coverage.m4
 share/aclocal/ax_compare_version.m4
@@ -343,6 +345,7 @@ share/aclocal/ax_gcc_var_attribute.m4
 share/aclocal/ax_gcc_version.m4
 share/aclocal/ax_gcc_warn_unused_result.m4
 share/aclocal/ax_gcc_x86_avx_xgetbv.m4
+share/aclocal/ax_gcc_x86_cpu_supports.m4
 share/aclocal/ax_gcc_x86_cpuid.m4
 share/aclocal/ax_generate_changelog.m4
 share/aclocal/ax_gnu_autotest.m4
@@ -397,6 +400,7 @@ share/aclocal/ax_libgcj_jar.m4
 share/aclocal/ax_libtoolize_cflags.m4
 share/aclocal/ax_llvm.m4
 share/aclocal/ax_lua.m4
+share/aclocal/ax_luarocks_rock.m4
 share/aclocal/ax_maintainer_mode_auto_silent.m4
 share/aclocal/ax_missing_prog.m4
 share/aclocal/ax_mpi.m4
@@ -405,6 +409,9 @@ share/aclocal/ax_need_awk.m4
 share/aclocal/ax_normalize_path.m4
 share/aclocal/ax_not_enable_frame_pointer.m4
 share/aclocal/ax_numeric_namedlevel.m4
+share/aclocal/ax_open62541_check_h.m4
+share/aclocal/ax_open62541_check_lib.m4
+share/aclocal/ax_open62541_path.m4
 share/aclocal/ax_openmp.m4
 share/aclocal/ax_patch_libtool_changing_cmds_ifs.m4
 share/aclocal/ax_path_bdb.m4
