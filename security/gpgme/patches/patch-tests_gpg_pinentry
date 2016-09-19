@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_gpg_pinentry,v 1.1 2016/09/19 17:13:55 edd Exp $
+
+Fix interpreter path which causes tests to fail.
+
+--- tests/gpg/pinentry.orig	Mon Sep  5 14:58:45 2016
++++ tests/gpg/pinentry	Mon Sep  5 14:58:00 2016
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ # Dummy pinentry
+ # 
+ # Copyright 2008 g10 Code GmbH

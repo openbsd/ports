@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/11/01 09:34:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/09/19 17:13:55 edd Exp $
 bin/gpgme-config
+@bin bin/gpgme-tool
 include/gpgme.h
 @info info/gpgme.info
 lib/libgpgme-pthread.a
