@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/09/19 08:24:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/09/19 21:13:25 jca Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt/[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
@@ -27,7 +27,6 @@ share/doc/mutt/README
 share/doc/mutt/README.SECURITY
 share/doc/mutt/README.SSL
 share/doc/mutt/README.neomutt
-share/doc/mutt/README.notmuch
 share/doc/mutt/TODO
 share/doc/mutt/advancedusage.html
 share/doc/mutt/applying-patches.txt
