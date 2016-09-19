@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/02 10:07:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/19 22:39:23 pascal Exp $
 
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
 
-WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
-WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c curl fltk fltk_forms
-WANTLIB += fltk_gl fltk_images glut m openal osg osgDB osgFX osgGA
-WANTLIB += osgParticle osgSim osgText osgUtil osgViewer png pthread
-WANTLIB += sqlite3 z
+WANTLIB += GL GLU OpenThreads SimGearCore SimGearScene X11 Xi
+WANTLIB += Xmu c curl glut m openal osg osgDB osgFX osgGA osgParticle
+WANTLIB += osgSim osgText osgUtil osgViewer png pthread sqlite3
+WANTLIB += z
+#WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
+#WANTLIB += X11 Xext Xft Xi Xinerama Xmu bz2 c curl fltk fltk_forms
+#WANTLIB += fltk_gl fltk_images glut m openal osg osgDB osgFX osgGA
+#WANTLIB += osgParticle osgSim osgText osgUtil osgViewer png pthread
+#WANTLIB += sqlite3 z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
 
@@ -18,7 +22,6 @@ MODGCC4_LANGS =	c++
 BUILD_DEPENDS =	devel/boost \
 		devel/plib
 LIB_DEPENDS =	graphics/freeglut \
-		x11/fltk \
 		graphics/simgear>=$V
 RUN_DEPENDS =	games/flightgear/data>=${V}
 

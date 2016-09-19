@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/09 19:53:12 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/09/19 22:39:23 pascal Exp $
 @bin bin/GPSsmooth
 @bin bin/MIDGsmooth
 @bin bin/UGsmooth
-@bin bin/fgadmin
 @bin bin/fgelev
 @bin bin/fgfs
 @bin bin/fgjs
@@ -10,7 +9,6 @@
 @bin bin/fgviewer
 @bin bin/js_demo
 @bin bin/metar
-@bin bin/terrasync
 @bin bin/yasim
 @bin bin/yasim-proptest
 @man man/man1/fgfs.1
