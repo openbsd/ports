@@ -1,0 +1,14 @@
+$OpenBSD: patch-libkcups_KCupsConnection_h,v 1.1 2016/09/19 09:17:45 ajacoutot Exp $
+
+Fix build with cups>=2.2.0
+
+--- libkcups/KCupsConnection.h.orig	Sun Sep 18 19:45:23 2016
++++ libkcups/KCupsConnection.h	Sun Sep 18 19:45:32 2016
+@@ -32,6 +32,7 @@
+ #include <kdemacros.h>
+ 
+ #include <cups/cups.h>
++#include <cups/ppd.h>
+ 
+ #define KCUPS_DEVICE_CLASS          "device-class"
+ #define KCUPS_DEVICE_ID             "device-id"

@@ -1,0 +1,15 @@
+$OpenBSD: patch-printing_backend_print_backend_cups_cc,v 1.1 2016/09/19 09:17:45 ajacoutot Exp $
+
+Fix build with cups>=2.2.0
+
+--- printing/backend/print_backend_cups.cc.orig.port	Mon Sep 19 09:44:55 2016
++++ printing/backend/print_backend_cups.cc	Mon Sep 19 09:45:16 2016
+@@ -2,6 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include <cups/ppd.h>
++
+ #include "printing/backend/print_backend.h"
+ 
+ #include <dlfcn.h>

@@ -1,7 +1,18 @@
-$OpenBSD: patch-prnt_hpijs_hpcupsfax_cpp,v 1.5 2013/10/15 14:21:00 ajacoutot Exp $
---- prnt/hpijs/hpcupsfax.cpp.orig	Fri Oct 11 11:35:57 2013
-+++ prnt/hpijs/hpcupsfax.cpp	Tue Oct 15 15:42:07 2013
-@@ -94,7 +94,7 @@ static void GetLogLevel ()
+$OpenBSD: patch-prnt_hpijs_hpcupsfax_cpp,v 1.6 2016/09/19 09:17:45 ajacoutot Exp $
+
+Fix build with cups>=2.2.0
+
+--- prnt/hpijs/hpcupsfax.cpp.orig	Fri Aug 26 12:03:15 2016
++++ prnt/hpijs/hpcupsfax.cpp	Sun Sep 18 19:30:46 2016
+@@ -43,6 +43,7 @@
+ #include <arpa/inet.h>
+ #include <math.h>
+ #include <cups/cups.h>
++#include <cups/ppd.h>
+ #include <cups/raster.h>
+ #include <string>
+ #ifdef FALSE
+@@ -94,7 +95,7 @@ static void GetLogLevel ()
      FILE    *fp;
      char    str[258];
      char    *p;
