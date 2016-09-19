@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/09/15 10:37:03 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/09/19 10:14:07 pascal Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -422,8 +422,8 @@ lib/libssp_nonshared.la
 %%arm%%
 %%hppa%%
 %%i386%%
-@comment %%mips64%%
-@comment %%mips64el%%
+%%mips64%%
+%%mips64el%%
 %%powerpc%%
 %%sparc64%%
 %%CILKRTS%%

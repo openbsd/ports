@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_mips_mips_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
+$OpenBSD: patch-gcc_config_mips_mips_h,v 1.2 2016/09/19 10:14:07 pascal Exp $
 --- gcc/config/mips/mips.h.orig	Mon Jan 18 14:30:43 2016
-+++ gcc/config/mips/mips.h	Tue Aug 23 15:48:17 2016
++++ gcc/config/mips/mips.h	Thu Sep 15 09:24:07 2016
 @@ -1366,7 +1366,9 @@ FP_ASM_SPEC "\
  #define SUBTARGET_CPP_SPEC ""
  #endif
@@ -11,3 +11,20 @@ $OpenBSD: patch-gcc_config_mips_mips_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp 
  
  /* This macro defines names of additional specifications to put in the specs
     that can be used in various specifications like CC1_SPEC.  Its definition
+@@ -3326,16 +3328,6 @@ struct GTY(())  machine_function {
+    with arguments ARGS.  */
+ #define PMODE_INSN(NAME, ARGS) \
+   (Pmode == SImode ? NAME ## _si ARGS : NAME ## _di ARGS)
+-
+-/* If we are *not* using multilibs and the default ABI is not ABI_32 we
+-   need to change these from /lib and /usr/lib.  */
+-#if MIPS_ABI_DEFAULT == ABI_N32
+-#define STANDARD_STARTFILE_PREFIX_1 "/lib32/"
+-#define STANDARD_STARTFILE_PREFIX_2 "/usr/lib32/"
+-#elif MIPS_ABI_DEFAULT == ABI_64
+-#define STANDARD_STARTFILE_PREFIX_1 "/lib64/"
+-#define STANDARD_STARTFILE_PREFIX_2 "/usr/lib64/"
+-#endif
+ 
+ /* Load store bonding is not supported by micromips and fix_24k.  The
+    performance can be degraded for those targets.  Hence, do not bond for
