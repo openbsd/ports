@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2016/09/09 20:51:03 pascal Exp $
---- gcc/config/arm/openbsd.h.orig	Wed Sep  7 23:44:12 2016
-+++ gcc/config/arm/openbsd.h	Fri Sep  9 00:18:57 2016
-@@ -0,0 +1,244 @@
+$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.3 2016/09/20 21:51:54 pascal Exp $
+--- gcc/config/arm/openbsd.h.orig	Sat Sep 10 02:11:09 2016
++++ gcc/config/arm/openbsd.h	Mon Sep 19 12:22:39 2016
+@@ -0,0 +1,252 @@
 +/* Definitions of target machine for GNU compiler, OpenBSD/arm ELF version.
 +   Copyright (C) 2002 Free Software Foundation, Inc.
 +   Contributed by Wasabi Systems, Inc.
@@ -43,7 +43,7 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2016/09/09 20:51:03 pascal Exp $
 +#undef MULTILIB_DEFAULTS
 +
 +/* armv5te default cpu.  */
-+#define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm9e
++#define SUBTARGET_CPU_DEFAULT TARGET_CPU_mpcore
 +
 +/* We default to a soft-float ABI so that binaries can run on all
 +   target hardware.  */
@@ -246,3 +246,11 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2016/09/09 20:51:03 pascal Exp $
 +
 +/* dito */
 +#undef EXTRA_SPEC_FUNCTIONS
++
++#define SUBTARGET_OVERRIDE_INTERNAL_OPTIONS                             \
++do {                                                                    \
++    if (opts_set->x_unaligned_access == 1)                              \
++        warning (0, "target OS does not support unaligned accesses");   \
++    if (opts->x_unaligned_access)                                       \
++        opts->x_unaligned_access = 0;                                   \
++} while (0)
