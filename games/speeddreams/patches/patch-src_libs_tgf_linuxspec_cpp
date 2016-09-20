@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_libs_tgf_linuxspec_cpp,v 1.2 2014/07/11 15:10:39 pascal Exp $
---- src/libs/tgf/linuxspec.cpp.orig	Wed Jun 18 16:20:38 2014
-+++ src/libs/tgf/linuxspec.cpp	Fri Jul 11 14:36:38 2014
-@@ -631,9 +631,9 @@ unsigned linuxGetNumberOfCPUs()
+$OpenBSD: patch-src_libs_tgf_linuxspec_cpp,v 1.3 2016/09/20 18:18:52 pascal Exp $
+--- src/libs/tgf/linuxspec.cpp.orig	Mon Apr 18 17:37:10 2016
++++ src/libs/tgf/linuxspec.cpp	Tue Sep 20 11:45:53 2016
+@@ -632,9 +632,9 @@ unsigned linuxGetNumberOfCPUs()
  	{
  		
  		// MacOS X, FreeBSD, OpenBSD, NetBSD, etc ...
--#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-+#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__)
+-#if (defined(__APPLE__) && !defined(USE_MACPORTS)) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if (defined(__APPLE__) && !defined(USE_MACPORTS)) || defined(__FreeBSD__) || defined(__NetBSD__)
  		
 -		nt mib[4];
 +		int mib[4];
  		size_t len; 
  		
  		// Set the mib for hw.ncpu
-@@ -641,7 +641,7 @@ unsigned linuxGetNumberOfCPUs()
+@@ -642,7 +642,7 @@ unsigned linuxGetNumberOfCPUs()
  		// Get the number of CPUs from the system
  		// 1) Try HW_AVAILCPU first.
  		mib[0] = CTL_HW;
@@ -22,28 +22,22 @@ $OpenBSD: patch-src_libs_tgf_linuxspec_cpp,v 1.2 2014/07/11 15:10:39 pascal Exp 
  		sysctl(mib, 2, &nCPUs, &len, NULL, 0);
  		
  		if (nCPUs < 1) 
-@@ -652,7 +652,7 @@ unsigned linuxGetNumberOfCPUs()
+@@ -653,7 +653,8 @@ unsigned linuxGetNumberOfCPUs()
  		}
  		
  		// Linux, Solaris, AIX
--#elif defined(linux) || defined(__linux__)
-+#elif defined(linux) || defined(__linux__) || defined(__OpenBSD__) 
+-#elif defined(linux) || defined(__linux__) || defined(USE_MACPORTS)
++#elif defined(linux) || defined(__linux__) || defined(USE_MACPORTS) || \
++	defined(__OpenBSD__)
  		
  		nCPUs = (unsigned)sysconf(_SC_NPROCESSORS_ONLN);
  		
-@@ -691,6 +691,7 @@ unsigned linuxGetNumberOfCPUs()
+@@ -692,7 +693,7 @@ unsigned linuxGetNumberOfCPUs()
  * Remarks
  *    
  */
-+#if !(defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__))
+-#if !defined(USE_MACPORTS)
++#if !defined(USE_MACPORTS) && !defined(__OpenBSD__)
  std::string cpuSet2String(const cpu_set_t* pCPUSet)
  {
  	std::ostringstream ossCPUSet;
-@@ -704,6 +705,7 @@ std::string cpuSet2String(const cpu_set_t* pCPUSet)
- 	
- 	return ossCPUSet.str();
- }
-+#endif
- 
- bool
- linuxSetThreadAffinity(int nCPUId)

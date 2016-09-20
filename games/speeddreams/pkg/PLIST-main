@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/07/11 15:10:39 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/09/20 18:18:52 pascal Exp $
 @bin bin/sd2-accc
 @bin bin/sd2-nfs2ac
 @bin bin/sd2-nfsperf
@@ -40,6 +40,7 @@ include/speed-dreams-2/learning/policy.h
 include/speed-dreams-2/learning/real.h
 include/speed-dreams-2/learning/string_utils.h
 include/speed-dreams-2/linuxspec.h
+include/speed-dreams-2/memmanager.h
 include/speed-dreams-2/modinfo.h
 include/speed-dreams-2/os.h
 include/speed-dreams-2/osspec.h
@@ -85,6 +86,32 @@ include/speed-dreams-2/track.h
 include/speed-dreams-2/tracks.h
 lib/speed-dreams-2/
 lib/speed-dreams-2/drivers/
+lib/speed-dreams-2/drivers/dandroid/
+lib/speed-dreams-2/drivers/dandroid/dandroid.so
+lib/speed-dreams-2/drivers/dandroid_36GP/
+lib/speed-dreams-2/drivers/dandroid_36GP/dandroid_36GP.so
+lib/speed-dreams-2/drivers/dandroid_67GP/
+lib/speed-dreams-2/drivers/dandroid_67GP/dandroid_67GP.so
+lib/speed-dreams-2/drivers/dandroid_lp1/
+lib/speed-dreams-2/drivers/dandroid_lp1/dandroid_lp1.so
+lib/speed-dreams-2/drivers/dandroid_ls1/
+lib/speed-dreams-2/drivers/dandroid_ls1/dandroid_ls1.so
+lib/speed-dreams-2/drivers/dandroid_ls2/
+lib/speed-dreams-2/drivers/dandroid_ls2/dandroid_ls2.so
+lib/speed-dreams-2/drivers/dandroid_mpa1/
+lib/speed-dreams-2/drivers/dandroid_mpa1/dandroid_mpa1.so
+lib/speed-dreams-2/drivers/dandroid_mpa11/
+lib/speed-dreams-2/drivers/dandroid_mpa11/dandroid_mpa11.so
+lib/speed-dreams-2/drivers/dandroid_mpa12/
+lib/speed-dreams-2/drivers/dandroid_mpa12/dandroid_mpa12.so
+lib/speed-dreams-2/drivers/dandroid_rs/
+lib/speed-dreams-2/drivers/dandroid_rs/dandroid_rs.so
+lib/speed-dreams-2/drivers/dandroid_sc/
+lib/speed-dreams-2/drivers/dandroid_sc/dandroid_sc.so
+lib/speed-dreams-2/drivers/dandroid_srw/
+lib/speed-dreams-2/drivers/dandroid_srw/dandroid_srw.so
+lib/speed-dreams-2/drivers/dandroid_trb1/
+lib/speed-dreams-2/drivers/dandroid_trb1/dandroid_trb1.so
 lib/speed-dreams-2/drivers/human/
 lib/speed-dreams-2/drivers/human/human.so
 lib/speed-dreams-2/drivers/kilo2008/
@@ -105,10 +132,16 @@ lib/speed-dreams-2/drivers/simplix_mp5/
 lib/speed-dreams-2/drivers/simplix_mp5/simplix_mp5.so
 lib/speed-dreams-2/drivers/simplix_mpa1/
 lib/speed-dreams-2/drivers/simplix_mpa1/simplix_mpa1.so
+lib/speed-dreams-2/drivers/simplix_mpa11/
+lib/speed-dreams-2/drivers/simplix_mpa11/simplix_mpa11.so
+lib/speed-dreams-2/drivers/simplix_mpa12/
+lib/speed-dreams-2/drivers/simplix_mpa12/simplix_mpa12.so
 lib/speed-dreams-2/drivers/simplix_ref/
 lib/speed-dreams-2/drivers/simplix_ref/simplix_ref.so
 lib/speed-dreams-2/drivers/simplix_sc/
 lib/speed-dreams-2/drivers/simplix_sc/simplix_sc.so
+lib/speed-dreams-2/drivers/simplix_srw/
+lib/speed-dreams-2/drivers/simplix_srw/simplix_srw.so
 lib/speed-dreams-2/drivers/simplix_trb1/
 lib/speed-dreams-2/drivers/simplix_trb1/simplix_trb1.so
 lib/speed-dreams-2/drivers/usr/
@@ -123,6 +156,10 @@ lib/speed-dreams-2/drivers/usr_ls2/
 lib/speed-dreams-2/drivers/usr_ls2/usr_ls2.so
 lib/speed-dreams-2/drivers/usr_mpa1/
 lib/speed-dreams-2/drivers/usr_mpa1/usr_mpa1.so
+lib/speed-dreams-2/drivers/usr_mpa11/
+lib/speed-dreams-2/drivers/usr_mpa11/usr_mpa11.so
+lib/speed-dreams-2/drivers/usr_mpa12/
+lib/speed-dreams-2/drivers/usr_mpa12/usr_mpa12.so
 lib/speed-dreams-2/drivers/usr_rs/
 lib/speed-dreams-2/drivers/usr_rs/usr_rs.so
 lib/speed-dreams-2/drivers/usr_sc/
@@ -139,6 +176,7 @@ lib/speed-dreams-2/lib/libtgfclient.so
 lib/speed-dreams-2/lib/libtgfdata.so
 lib/speed-dreams-2/modules/
 lib/speed-dreams-2/modules/graphic/
+lib/speed-dreams-2/modules/graphic/osggraph.so
 lib/speed-dreams-2/modules/graphic/ssggraph.so
 lib/speed-dreams-2/modules/racing/
 lib/speed-dreams-2/modules/racing/standardgame.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/20 18:18:52 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,13 +7,11 @@ MULTI_PACKAGES =	-main -data
 COMMENT-main =		open source motorsport simulation
 COMMENT-data =		open source motorsport simulation, data files
 
-V =			2.1.0
-REV =			r5799
+V =			2.2.1
+REV =			r6404
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME-main =		speeddreams-$V
 PKGNAME-data =		speeddreams-data-$V
-REVISION-data =		0
-REVISION-main =		0
 
 CATEGORIES =		games
 
@@ -24,8 +22,10 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += GL GLU ICE SDL SM X11 Xext Xrandr c enet expat jpeg
-WANTLIB-main += m ogg openal png pthread stdc++ vorbis vorbisfile z
+WANTLIB-main += GL GLU ICE OpenThreads SDL2 SM X11 Xext Xrandr c enet
+WANTLIB-main += expat jpeg m ogg openal osg osgDB osgFX osgGA osgParticle
+WANTLIB-main += osgShadow osgUtil osgViewer png pthread stdc++ vorbis
+WANTLIB-main += vorbisfile z
 WANTLIB-data = #empty
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=speed-dreams/}
@@ -46,11 +46,12 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/plib \
 			archivers/gtar
 LIB_DEPENDS-main =	net/enet \
-			devel/sdl \
+			devel/sdl2 \
 			audio/openal \
 			graphics/png \
 			graphics/jpeg \
-			audio/libvorbis
+			audio/libvorbis \
+			graphics/openscenegraph
 RUN_DEPENDS-main =	${BASE_PKGPATH},-data
 
 PKG_ARCH-data =		*
@@ -61,6 +62,8 @@ CONFIGURE_ARGS +=	-DOPTION_OFFICIAL_ONLY=ON \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
+
+CXXFLAGS +=		-I${X11BASE}/include
 
 pre-extract:
 	@mkdir ${WRKDIST}
