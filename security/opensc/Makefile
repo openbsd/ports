@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2016/09/09 14:57:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2016/09/20 12:56:15 dcoppa Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 VERSION=	0.16.0
 DISTNAME=	OpenSC-${VERSION}
 PKGNAME=	opensc-${VERSION}
-REVISION=	4
+REVISION=	5
 GH_ACCOUNT=	OpenSC
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	${VERSION}

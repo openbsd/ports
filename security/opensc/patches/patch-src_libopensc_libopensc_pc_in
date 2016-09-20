@@ -1,14 +1,17 @@
-$OpenBSD: patch-src_libopensc_libopensc_pc_in,v 1.1 2013/06/07 13:27:58 dcoppa Exp $
+$OpenBSD: patch-src_libopensc_libopensc_pc_in,v 1.2 2016/09/20 12:56:15 dcoppa Exp $
 
 Unbreak
 
---- src/libopensc/libopensc.pc.in.orig	Thu Jun  6 15:50:04 2013
-+++ src/libopensc/libopensc.pc.in	Thu Jun  6 15:50:17 2013
-@@ -6,6 +6,6 @@ includedir=@includedir@
+--- src/libopensc/libopensc.pc.in.orig	Fri Jun  3 11:19:51 2016
++++ src/libopensc/libopensc.pc.in	Tue Sep 20 14:40:02 2016
+@@ -4,8 +4,7 @@ libdir=@libdir@
+ includedir=@includedir@
+ 
  Name: libopensc
- Description: libopensc
+-Description: libopensc
++Description: OpenSC smartcard framework
  Version: @VERSION@
 -Libs: -L${libdir} -lopensc -lscconf
 +Libs: -L${libdir} -lopensc
  Cflags: -I${includedir}
- 
+-
