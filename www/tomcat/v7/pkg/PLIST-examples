@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.34 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.35 2016/09/20 07:41:34 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1129,6 +1129,7 @@ webapps/docs/api/org/apache/jasper/package-summary.html
 webapps/docs/api/org/apache/jasper/package-tree.html
 webapps/docs/api/org/apache/jasper/runtime/
 webapps/docs/api/org/apache/jasper/runtime/BodyContentImpl.html
+webapps/docs/api/org/apache/jasper/runtime/ExceptionUtils.html
 webapps/docs/api/org/apache/jasper/runtime/HttpJspBase.html
 webapps/docs/api/org/apache/jasper/runtime/InstanceManagerFactory.html
 webapps/docs/api/org/apache/jasper/runtime/JspApplicationContextImpl.html
@@ -1136,7 +1137,6 @@ webapps/docs/api/org/apache/jasper/runtime/JspContextWrapper.html
 webapps/docs/api/org/apache/jasper/runtime/JspFactoryImpl.PageContextPool.html
 webapps/docs/api/org/apache/jasper/runtime/JspFactoryImpl.html
 webapps/docs/api/org/apache/jasper/runtime/JspFragmentHelper.html
-webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.PrivilegedIntrospectHelper.html
 webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.html
 webapps/docs/api/org/apache/jasper/runtime/JspSourceDependent.html
 webapps/docs/api/org/apache/jasper/runtime/JspWriterImpl.html
@@ -1189,7 +1189,6 @@ webapps/docs/api/org/apache/jasper/tagplugins/jstl/package-summary.html
 webapps/docs/api/org/apache/jasper/tagplugins/jstl/package-tree.html
 webapps/docs/api/org/apache/jasper/util/
 webapps/docs/api/org/apache/jasper/util/Enumerator.html
-webapps/docs/api/org/apache/jasper/util/ExceptionUtils.html
 webapps/docs/api/org/apache/jasper/util/FastRemovalDequeue.Entry.html
 webapps/docs/api/org/apache/jasper/util/FastRemovalDequeue.html
 webapps/docs/api/org/apache/jasper/util/UniqueAttributesImpl.html
@@ -1440,7 +1439,7 @@ webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.PropertySource.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.html
 webapps/docs/api/org/apache/tomcat/util/MutableInteger.html
 webapps/docs/api/org/apache/tomcat/util/bcel/
-webapps/docs/api/org/apache/tomcat/util/bcel/Constants.html
+webapps/docs/api/org/apache/tomcat/util/bcel/Const.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/AnnotationElementValue.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/AnnotationEntry.html
@@ -1525,6 +1524,7 @@ webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/
 webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/InputSourceUtil.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/LocalResolver.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/XmlErrorHandler.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/XmlIdentifiers.html
@@ -1580,8 +1580,6 @@ webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ByteArrayOutputStream.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/DeferredFileOutputStream.html
-webapps/docs/api/org/apache/tomcat/util/http/fileupload/FileCleaningTracker.html
-webapps/docs/api/org/apache/tomcat/util/http/fileupload/FileDeleteStrategy.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/FileItem.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/FileItemFactory.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/FileItemHeaders.html
@@ -1784,6 +1782,7 @@ webapps/docs/api/org/apache/tomcat/util/scan/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/security/
 webapps/docs/api/org/apache/tomcat/util/security/ConcurrentMessageDigest.html
 webapps/docs/api/org/apache/tomcat/util/security/MD5Encoder.html
+webapps/docs/api/org/apache/tomcat/util/security/PermissionCheck.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/package-frame.html
@@ -2131,7 +2130,7 @@ webapps/docs/jspapi/stylesheet.css
 webapps/docs/logging.html
 webapps/docs/manager-howto.html
 webapps/docs/maven-jars.html
-webapps/docs/mbeans-descriptor-howto.html
+webapps/docs/mbeans-descriptors-howto.html
 webapps/docs/monitoring.html
 webapps/docs/proxy-howto.html
 webapps/docs/realm-howto.html
