@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2016/06/20 09:07:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/09/20 15:44:57 sthen Exp $
 
 PORTROACH =	limitw:1,even
+USE_WXNEEDED =	Yes
 
 # The default storage engine (WiredTiger) only works on amd64.
 ONLY_FOR_ARCHS = amd64
@@ -9,6 +10,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	scalable, high-performance document-oriented database
 
 DISTNAME =	mongodb-src-r3.2.7
+REVISION =	0
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
 
