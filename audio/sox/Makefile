@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2016/09/20 10:16:27 sthen Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.4.2
+REVISION=	0
 SHARED_LIBS +=	sox 4.0 # 3.0
 
 CATEGORIES=	audio
@@ -20,7 +21,7 @@ WANTLIB += FLAC gsm mad id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
 WANTLIB += opencore-amrnb opencore-amrwb
 WANTLIB += opus opusfile twolame wavpack
-WANTLIB += iconv magic png
+WANTLIB += iconv png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
@@ -40,7 +41,6 @@ LIB_DEPENDS=			\
 	audio/twolame		\
 	audio/wavpack		\
 	converters/libiconv	\
-	devel/libmagic		\
 	graphics/png
 
 CONFIGURE_STYLE=gnu
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=		\
 
 # Additional file formats
 CONFIGURE_ARGS+=		\
-	--with-magic		\
+	--without-magic		\
 	--with-png		\
 	--without-ladspa	\
 	--with-mad		\
