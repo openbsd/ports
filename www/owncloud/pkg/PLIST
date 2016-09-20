@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2016/07/30 14:25:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.60 2016/09/20 08:03:50 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-owncloud.conf
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
@@ -7529,6 +7529,7 @@ owncloud/apps/files_trashbin/lib/Capabilities.php
 owncloud/apps/files_trashbin/lib/Command/
 owncloud/apps/files_trashbin/lib/Command/CleanUp.php
 owncloud/apps/files_trashbin/lib/Command/Expire.php
+owncloud/apps/files_trashbin/lib/Command/ExpireTrash.php
 owncloud/apps/files_trashbin/lib/Exceptions/
 owncloud/apps/files_trashbin/lib/Exceptions/CopyRecursiveException.php
 owncloud/apps/files_trashbin/lib/Expiration.php
@@ -7708,6 +7709,7 @@ owncloud/apps/files_versions/lib/Capabilities.php
 owncloud/apps/files_versions/lib/Command/
 owncloud/apps/files_versions/lib/Command/CleanUp.php
 owncloud/apps/files_versions/lib/Command/Expire.php
+owncloud/apps/files_versions/lib/Command/ExpireVersions.php
 owncloud/apps/files_versions/lib/Expiration.php
 owncloud/apps/files_versions/lib/Hooks.php
 owncloud/apps/files_versions/lib/Storage.php
@@ -9414,6 +9416,8 @@ owncloud/core/doc/admin/_images/google-drive5.png
 owncloud/core/doc/admin/_images/google-drive6.png
 owncloud/core/doc/admin/_images/google-drive8.png
 owncloud/core/doc/admin/_images/google-drive9.png
+owncloud/core/doc/admin/_images/import-ssl-cert-1.png
+owncloud/core/doc/admin/_images/import-ssl-cert-2.png
 owncloud/core/doc/admin/_images/install-wizard-a.png
 owncloud/core/doc/admin/_images/install-wizard-a1.png
 owncloud/core/doc/admin/_images/install-wizard-a2.png
@@ -9443,11 +9447,6 @@ owncloud/core/doc/admin/_images/ownbrander-11.png
 owncloud/core/doc/admin/_images/phpinfo.png
 owncloud/core/doc/admin/_images/preview_images.png
 owncloud/core/doc/admin/_images/rackspace.png
-owncloud/core/doc/admin/_images/scaling-1.png
-owncloud/core/doc/admin/_images/scaling-2.png
-owncloud/core/doc/admin/_images/scaling-3.png
-owncloud/core/doc/admin/_images/scaling-4.png
-owncloud/core/doc/admin/_images/scaling-5.png
 owncloud/core/doc/admin/_images/security-setup-warning-1.png
 owncloud/core/doc/admin/_images/sharepoint-1.png
 owncloud/core/doc/admin/_images/sharepoint-2.png
@@ -9483,6 +9482,7 @@ owncloud/core/doc/admin/_images/workflow-1.png
 owncloud/core/doc/admin/_images/workflow-2.png
 owncloud/core/doc/admin/_images/workflow-3.png
 owncloud/core/doc/admin/_images/workflow-4.png
+owncloud/core/doc/admin/_images/workflow-5.png
 owncloud/core/doc/admin/_sources/
 owncloud/core/doc/admin/_sources/configuration_database/
 owncloud/core/doc/admin/_sources/configuration_database/db_conversion.txt
@@ -9528,7 +9528,9 @@ owncloud/core/doc/admin/_sources/configuration_server/custom_client_repos.txt
 owncloud/core/doc/admin/_sources/configuration_server/email_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/external_sites.txt
 owncloud/core/doc/admin/_sources/configuration_server/harden_server.txt
+owncloud/core/doc/admin/_sources/configuration_server/import_ssl_cert.txt
 owncloud/core/doc/admin/_sources/configuration_server/index.txt
+owncloud/core/doc/admin/_sources/configuration_server/index_php_less_urls.txt
 owncloud/core/doc/admin/_sources/configuration_server/js_css_asset_management_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/knowledgebase_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/language_configuration.txt
@@ -9615,11 +9617,6 @@ owncloud/core/doc/admin/_sources/maintenance/package_upgrade.txt
 owncloud/core/doc/admin/_sources/maintenance/restore.txt
 owncloud/core/doc/admin/_sources/maintenance/update.txt
 owncloud/core/doc/admin/_sources/maintenance/upgrade.txt
-owncloud/core/doc/admin/_sources/operations/
-owncloud/core/doc/admin/_sources/operations/considerations_on_monitoring.txt
-owncloud/core/doc/admin/_sources/operations/index.txt
-owncloud/core/doc/admin/_sources/operations/scaling_multiple_machines.txt
-owncloud/core/doc/admin/_sources/operations/theming.txt
 owncloud/core/doc/admin/_sources/release_notes.txt
 owncloud/core/doc/admin/_sources/whats_new_admin.txt
 owncloud/core/doc/admin/_static/
@@ -9757,7 +9754,9 @@ owncloud/core/doc/admin/configuration_server/custom_client_repos.html
 owncloud/core/doc/admin/configuration_server/email_configuration.html
 owncloud/core/doc/admin/configuration_server/external_sites.html
 owncloud/core/doc/admin/configuration_server/harden_server.html
+owncloud/core/doc/admin/configuration_server/import_ssl_cert.html
 owncloud/core/doc/admin/configuration_server/index.html
+owncloud/core/doc/admin/configuration_server/index_php_less_urls.html
 owncloud/core/doc/admin/configuration_server/js_css_asset_management_configuration.html
 owncloud/core/doc/admin/configuration_server/knowledgebase_configuration.html
 owncloud/core/doc/admin/configuration_server/language_configuration.html
@@ -9846,11 +9845,6 @@ owncloud/core/doc/admin/maintenance/restore.html
 owncloud/core/doc/admin/maintenance/update.html
 owncloud/core/doc/admin/maintenance/upgrade.html
 owncloud/core/doc/admin/objects.inv
-owncloud/core/doc/admin/operations/
-owncloud/core/doc/admin/operations/considerations_on_monitoring.html
-owncloud/core/doc/admin/operations/index.html
-owncloud/core/doc/admin/operations/scaling_multiple_machines.html
-owncloud/core/doc/admin/operations/theming.html
 owncloud/core/doc/admin/release_notes.html
 owncloud/core/doc/admin/search.html
 owncloud/core/doc/admin/searchindex.js
@@ -11374,6 +11368,7 @@ owncloud/lib/private/Repair/RemoveRootShares.php
 owncloud/lib/private/Repair/RepairInvalidShares.php
 owncloud/lib/private/Repair/RepairLegacyStorages.php
 owncloud/lib/private/Repair/RepairMimeTypes.php
+owncloud/lib/private/Repair/RepairUnmergedShares.php
 owncloud/lib/private/Repair/SearchLuceneTables.php
 owncloud/lib/private/Repair/SharePropagation.php
 owncloud/lib/private/Repair/SqliteAutoincrement.php
@@ -12194,17 +12189,12 @@ owncloud/updater/vendor/composer/autoload_real.php
 owncloud/updater/vendor/composer/installed.json
 owncloud/updater/vendor/guzzlehttp/
 owncloud/updater/vendor/guzzlehttp/guzzle/
-owncloud/updater/vendor/guzzlehttp/guzzle/.editorconfig
-owncloud/updater/vendor/guzzlehttp/guzzle/.gitignore
 owncloud/updater/vendor/guzzlehttp/guzzle/.travis.yml
 owncloud/updater/vendor/guzzlehttp/guzzle/CHANGELOG.md
 owncloud/updater/vendor/guzzlehttp/guzzle/LICENSE
 owncloud/updater/vendor/guzzlehttp/guzzle/README.md
 owncloud/updater/vendor/guzzlehttp/guzzle/UPGRADING.md
-owncloud/updater/vendor/guzzlehttp/guzzle/build/
-owncloud/updater/vendor/guzzlehttp/guzzle/build/packager.php
 owncloud/updater/vendor/guzzlehttp/guzzle/composer.json
-owncloud/updater/vendor/guzzlehttp/guzzle/phpunit.xml.dist
 owncloud/updater/vendor/guzzlehttp/guzzle/src/
 owncloud/updater/vendor/guzzlehttp/guzzle/src/BatchResults.php
 owncloud/updater/vendor/guzzlehttp/guzzle/src/Client.php
