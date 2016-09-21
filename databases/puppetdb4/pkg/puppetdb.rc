@@ -1,9 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetdb.rc,v 1.1.1.1 2016/06/01 12:11:13 jasper Exp $
+# $OpenBSD: puppetdb.rc,v 1.2 2016/09/21 20:33:34 sebastia Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
 daemon_flags="-cp ${PREFIX}/share/puppetdb/puppetdb.jar clojure.main -m puppetlabs.puppetdb.main --config ${SYSCONFDIR}/puppetlabs/puppetdb/conf.d/ -b ${SYSCONFDIR}/puppetlabs/puppetdb/bootstrap.cfg"
+daemon_user="_puppetdb"
 daemon_timeout=120
 
 . /etc/rc.d/rc.subr
