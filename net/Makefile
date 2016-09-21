@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.986 2016/09/12 15:21:17 jca Exp $
+# $OpenBSD: Makefile,v 1.987 2016/09/21 01:14:35 lteo Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -156,6 +156,7 @@
      SUBDIR += ipcalc
      SUBDIR += ipcheck
      SUBDIR += iperf
+     SUBDIR += iperf3
      SUBDIR += ipfm
      SUBDIR += ipfreely
      SUBDIR += iplog
