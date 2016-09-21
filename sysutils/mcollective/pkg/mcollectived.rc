@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: mcollectived.rc,v 1.2 2013/03/13 22:54:26 ajacoutot Exp $
+# $OpenBSD: mcollectived.rc,v 1.3 2016/09/21 20:27:40 sebastia Exp $
 
 daemon="${TRUEPREFIX}/sbin/mcollectived"
+daemon_flags="--pid=/var/run/mcollectived.pid"
 
 . /etc/rc.d/rc.subr
 
