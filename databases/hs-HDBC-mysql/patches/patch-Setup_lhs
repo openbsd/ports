@@ -1,0 +1,14 @@
+$OpenBSD: patch-Setup_lhs,v 1.3 2016/09/21 09:22:07 dcoppa Exp $
+--- Setup.lhs.orig	Wed Sep 21 09:22:29 2016
++++ Setup.lhs	Wed Sep 21 09:22:36 2016
+@@ -28,8 +28,8 @@ main = defaultMainWithHooks simpleUserHooks {
+ 
+ mysqlConfigProgram = (simpleProgram "mysql_config") {
+     programFindLocation = \verbosity _ -> do
+-      mysql_config  <- findProgramOnSearchPath verbosity defaultProgramSearchPath "mysql_config"
+-      mysql_config5 <- findProgramOnSearchPath verbosity defaultProgramSearchPath "mysql_config5"
++      mysql_config  <- findProgramLocation verbosity "mysql_config" 
++      mysql_config5 <- findProgramLocation verbosity "mysql_config5"
+       return (mysql_config `mplus` mysql_config5)
+   }
+ 

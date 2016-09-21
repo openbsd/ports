@@ -1,0 +1,33 @@
+$OpenBSD: patch-HDBC-mysql_cabal,v 1.3 2016/09/21 09:22:07 dcoppa Exp $
+--- HDBC-mysql.cabal.orig	Wed Sep 21 11:17:11 2016
++++ HDBC-mysql.cabal	Wed Sep 21 11:18:02 2016
+@@ -12,7 +12,7 @@ homepage:         http://github.com/ryantm/hdbc-mysql
+ bug-reports:      http://github.com/ryantm/hdbc-mysql/issues
+ build-type:       Custom
+ tested-with:      GHC
+-cabal-version:    >= 1.24
++cabal-version:    >= 1.22
+ description:
+             This package provides a MySQL driver for HDBC, implemented via
+             bindings to the C @mysqlclient@ library.
+@@ -20,11 +20,6 @@ extra-source-files:
+                    ChangeLog
+                    README.md
+ 
+-custom-setup
+-  setup-depends:
+-                base >= 4.9 && < 5,
+-                Cabal >= 1.24
+-
+ library
+   exposed-modules:  Database.HDBC.MySQL
+   other-modules:
+@@ -32,7 +27,7 @@ library
+                 Database.HDBC.MySQL.RTS
+   build-depends:
+                 HDBC >= 2.1.0,
+-                base >= 4.9 && < 5,
++                base >= 2 && < 4.9,
+                 bytestring,
+                 time,
+                 utf8-string
