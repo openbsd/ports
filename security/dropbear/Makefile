@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/06 22:03:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/21 10:06:27 sthen Exp $
 
 COMMENT=	small SSH server and client
 
-DISTNAME=	dropbear-2016.73
+DISTNAME=	dropbear-2016.74
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
