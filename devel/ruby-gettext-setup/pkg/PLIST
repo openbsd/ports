@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/09 10:37:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/21 09:35:00 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/gettext-setup.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gettext-setup/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gettext-setup.rb
