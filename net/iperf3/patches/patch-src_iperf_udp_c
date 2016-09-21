@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_iperf_udp_c,v 1.1.1.1 2016/09/21 01:12:57 lteo Exp $
+
+Print uint64_t using %llu, size_t is 32 bits on LP32 archs.
+
+--- src/iperf_udp.c.orig	Mon Sep 19 14:17:14 2016
++++ src/iperf_udp.c	Mon Sep 19 14:18:04 2016
+@@ -104,7 +104,7 @@ iperf_udp_recv(struct iperf_stream *sp)
+         sp->packet_count = pcount;
+     } else {
+         sp->outoforder_packets++;
+-	iperf_err(sp->test, "OUT OF ORDER - incoming packet = %zu and received packet = %d AND SP = %d", pcount, sp->packet_count, sp->socket);
++	iperf_err(sp->test, "OUT OF ORDER - incoming packet = %llu and received packet = %d AND SP = %d", pcount, sp->packet_count, sp->socket);
+     }
+ 
+     /* jitter measurement */

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/21 01:12:57 lteo Exp $
+@bin bin/iperf3
+include/iperf_api.h
+lib/libiperf.a
+lib/libiperf.la
+@lib lib/libiperf.so.${LIBiperf_VERSION}
+@man man/man1/iperf3.1
+@man man/man3/libiperf.3
