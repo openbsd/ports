@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/25 08:18:25 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/22 19:38:13 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/nmap/
 lib/python${MODPY_VERSION}/site-packages/nmap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nmap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nmap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nmap/${MODPY_PYCACHE}nmap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nmap/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nmap/${MODPY_PYCACHE}test_nmap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nmap/nmap.py
+lib/python${MODPY_VERSION}/site-packages/nmap/test.py
 lib/python${MODPY_VERSION}/site-packages/nmap/test_nmap.py
 lib/python${MODPY_VERSION}/site-packages/python_nmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/examples/${MODPY_PY_PREFIX}nmap/
