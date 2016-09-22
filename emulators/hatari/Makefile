@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
 V =		1.9.0
 DISTNAME =	hatari-${V}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	http://hatari.tuxfamily.org/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

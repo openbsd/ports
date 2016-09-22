@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/11 22:52:03 awolk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/22 12:57:18 fcambus Exp $
 
 COMMENT =	JSON output from a shell
 
 V =		1.0
 DISTNAME =	jo-$V
+REVISION =	0
 
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

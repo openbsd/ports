@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 20:03:06 awolk Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/22 12:57:18 fcambus Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
 V =		1.05
 DISTNAME =	logswan-$V
+REVISION =	0
 
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.logswan.org/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

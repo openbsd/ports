@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/03 10:44:38 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:17 fcambus Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
 V =		2.73
 DISTNAME =	GoatTracker_${V}
 PKGNAME =	goattracker-${V}
+REVISION =	0
+
 CATEGORIES =	audio
 
 EXTRACT_SUFX =	.zip
 
 HOMEPAGE =	http://covertbitops.c64.org/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

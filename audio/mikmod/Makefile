@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/26 16:08:30 awolk Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/22 12:57:17 fcambus Exp $
 
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.7
+REVISION =	0
+
 CATEGORIES =	audio
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 HOMEPAGE =	http://mikmod.sourceforge.net/
 

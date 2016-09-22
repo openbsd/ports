@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/03 11:14:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/22 12:57:17 fcambus Exp $
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
 GH_ACCOUNT =	keystone-engine
 GH_PROJECT =	keystone
 GH_TAGNAME =	0.9.1
+REVISION =	0
 
 SHARED_LIBS =	keystone	1.0
 
@@ -12,7 +13,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.keystone-engine.org/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

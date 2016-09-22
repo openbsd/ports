@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/04 09:46:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/22 12:57:18 fcambus Exp $
 
 PORTROACH =	limit:^[0-9].*
 
@@ -8,10 +8,11 @@ GH_ACCOUNT =	klange
 GH_PROJECT =	nyancat
 GH_TAGNAME =	1.5.1
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	misc
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # NCSA
 PERMIT_PACKAGE_CDROM =	Yes

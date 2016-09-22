@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/18 10:55:18 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/22 12:57:17 fcambus Exp $
 
 COMMENT =	ncurses Git repository browser
 
 DISTNAME =	tig-2.2
+REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	http://jonas.nitro.dk/tig/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

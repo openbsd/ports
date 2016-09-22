@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/01 12:47:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/22 12:57:17 fcambus Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
 GH_TAGNAME =	20160521
+REVISION =	0
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://schismtracker.org/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
