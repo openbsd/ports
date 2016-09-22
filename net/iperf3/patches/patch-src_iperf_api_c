@@ -1,9 +1,20 @@
-$OpenBSD: patch-src_iperf_api_c,v 1.1.1.1 2016/09/21 01:12:57 lteo Exp $
+$OpenBSD: patch-src_iperf_api_c,v 1.2 2016/09/22 02:13:18 lteo Exp $
+
+Default to IPv4.
 
 Missing initialization.
 
---- src/iperf_api.c.orig	Mon Sep 19 14:27:01 2016
-+++ src/iperf_api.c	Mon Sep 19 14:27:03 2016
+--- src/iperf_api.c.orig	Mon Jun  6 14:18:49 2016
++++ src/iperf_api.c	Sun Sep 18 01:51:24 2016
+@@ -1839,7 +1839,7 @@ iperf_defaults(struct iperf_test *testp)
+     testp->stats_interval = testp->reporter_interval = 1;
+     testp->num_streams = 1;
+ 
+-    testp->settings->domain = AF_UNSPEC;
++    testp->settings->domain = AF_INET;
+     testp->settings->unit_format = 'a';
+     testp->settings->socket_bufsize = 0;    /* use autotuning */
+     testp->settings->blksize = DEFAULT_TCP_BLKSIZE;
 @@ -2323,7 +2323,7 @@ iperf_print_results(struct iperf_test *test)
      struct iperf_stream *sp = NULL;
      iperf_size_t bytes_sent, total_sent = 0;
