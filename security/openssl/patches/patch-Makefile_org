@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_org,v 1.3 2016/01/29 15:23:43 sthen Exp $
---- Makefile.org.orig	Thu Jan 28 13:56:08 2016
-+++ Makefile.org	Fri Jan 29 15:21:29 2016
-@@ -365,7 +365,7 @@ libcrypto.pc: Makefile
+$OpenBSD: patch-Makefile_org,v 1.4 2016/09/22 21:18:06 sthen Exp $
+--- Makefile.org.orig	Thu Sep 22 11:23:06 2016
++++ Makefile.org	Thu Sep 22 12:30:06 2016
+@@ -367,7 +367,7 @@ libcrypto.pc: Makefile
  	@ ( echo 'prefix=$(INSTALLTOP)'; \
  	    echo 'exec_prefix=$${prefix}'; \
  	    echo 'libdir=$${exec_prefix}/$(LIBDIR)'; \
 -	    echo 'includedir=$${prefix}/include'; \
 +	    echo 'includedir=$${prefix}/include/eopenssl'; \
+ 	    echo 'enginesdir=$${libdir}/engines'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libcrypto'; \
- 	    echo 'Description: OpenSSL cryptography library'; \
-@@ -379,12 +379,12 @@ libssl.pc: Makefile
+@@ -382,12 +382,12 @@ libssl.pc: Makefile
  	@ ( echo 'prefix=$(INSTALLTOP)'; \
  	    echo 'exec_prefix=$${prefix}'; \
  	    echo 'libdir=$${exec_prefix}/$(LIBDIR)'; \
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile_org,v 1.3 2016/01/29 15:23:43 sthen Exp $
  	    echo 'Libs: -L$${libdir} -lssl'; \
  	    echo 'Libs.private: $(EX_LIBS)'; \
  	    echo 'Cflags: -I$${includedir} $(KRB5_INCLUDES)' ) > libssl.pc
-@@ -393,12 +393,12 @@ openssl.pc: Makefile
+@@ -396,12 +396,12 @@ openssl.pc: Makefile
  	@ ( echo 'prefix=$(INSTALLTOP)'; \
  	    echo 'exec_prefix=$${prefix}'; \
  	    echo 'libdir=$${exec_prefix}/$(LIBDIR)'; \
