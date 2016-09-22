@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/03/18 09:27:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/09/22 17:52:46 danj Exp $
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config
@@ -283,8 +283,10 @@ share/irssi/help/sconnect
 share/irssi/help/script
 share/irssi/help/scrollback
 share/irssi/help/server
+share/irssi/help/servlist
 share/irssi/help/set
 share/irssi/help/silence
+share/irssi/help/squery
 share/irssi/help/squit
 share/irssi/help/stats
 share/irssi/help/statusbar
