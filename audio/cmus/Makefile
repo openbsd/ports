@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/12 11:45:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/23 23:08:36 juanfra Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -7,6 +7,7 @@ V=			2.7.1
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
+REVISION=		0
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -78,7 +79,7 @@ WANTLIB-main+=		vorbis>=0 vorbisfile>=1
 
 NO_TEST=		Yes
 
-pre-configure:
+pre-build:
 	sed -i s,/usr,${LOCALBASE}, ${WRKSRC}/Doc/cmus.txt
 	sed -i s,doc/cmus/examples,examples/cmus, ${WRKSRC}/Doc/cmus.txt
 
