@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.426 2016/09/13 16:26:03 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.427 2016/09/23 09:15:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -90,8 +90,6 @@ my $base_exceptions = {
 # 4.9
 	'video' => "/usr/X11R6/bin/video",
 	'nsd' => "/usr/sbin/nsd",
-# 5.2
-	'sqlite3' => '/usr/bin/sqlite3',
 # 5.6
 	'unbound' => '/usr/sbin/unbound',
 # 5.7
