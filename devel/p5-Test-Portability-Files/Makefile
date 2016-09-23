@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/31 20:18:34 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/23 18:27:59 bluhm Exp $
 
 COMMENT =		check file names portability
 
-DISTNAME =		Test-Portability-Files-0.06
+DISTNAME =		Test-Portability-Files-0.07
 
 CATEGORIES =		devel
 
