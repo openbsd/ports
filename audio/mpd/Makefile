@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2016/09/15 06:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.96 2016/09/23 09:16:52 sthen Exp $
 
 BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.19.19
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -41,6 +41,7 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/libvorbis \
 			audio/musepack \
 			audio/opus \
+			databases/sqlite3 \
 			devel/glib2 \
 			devel/libaudiofile \
 			devel/libyajl \

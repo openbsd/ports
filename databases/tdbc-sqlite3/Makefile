@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT =	sqlite3 module for TDBC
 
 V =		1.0.3
+REVISION =	0
 DISTNAME =	tdbcsqlite3-${V}
 PKGNAME =	tdbc-sqlite3-${V}
 CATEGORIES =	databases
@@ -22,10 +23,10 @@ BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			databases/tdbc
 
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
-			databases/tdbc \
-			databases/sqlite3,-tcl
+			databases/sqlite3-tcl \
+			databases/tdbc
 
-TEST_DEPENDS =		databases/sqlite3,-tcl
+TEST_DEPENDS =		databases/sqlite3-tcl
 FAKE_FLAGS =		tmdir=${MODTCL_MODDIR}/${MODTCL_VERSION:S/.//}
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes

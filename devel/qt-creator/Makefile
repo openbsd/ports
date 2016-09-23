@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/20 21:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/09/23 09:16:54 sthen Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
 USE_WXNEEDED =		Yes
@@ -37,6 +37,7 @@ WANTLIB +=	QtDBus QtWebKit QtXmlPatterns QtDesigner>=7
 WANTLIB +=	QtDesignerComponents>=7 QtGui>=8 QtHelp QtNetwork>=7 
 WANTLIB +=	QtScript QtSql>=7 QtSvg>=7 QtXml>=7 phonon
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+
 MASTER_SITES =	http://get.qt.nokia.com/qtcreator/
 
 MODULES =	x11/qt4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/14 08:42:46 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:54 sthen Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,7 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -38,7 +38,8 @@ WANTLIB += z
 USE_GMAKE=	Yes
 
 LIB_DEPENDS=	x11/wxWidgets \
-		devel/subversion
+		devel/subversion \
+		databases/sqlite3
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu

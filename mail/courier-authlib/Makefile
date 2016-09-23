@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/09/06 12:10:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -14,6 +14,7 @@ PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
 REVISION=		1
 REVISION-userdb=	2
+REVISION-main=		2
 
 SHARED_LIBS +=  courierauth          1.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      1.0      # .0.0
@@ -83,7 +84,8 @@ FLAVOR?=
 
 WANTLIB-main=		c ltdl pthread sqlite3
 
-LIB_DEPENDS-main=	devel/libtool,-ltdl
+LIB_DEPENDS-main=	databases/sqlite3 \
+			devel/libtool,-ltdl
 
 WANTLIB-ldap=		crypto ssl courierauthcommon courierauth \
 			ldap-2.4 lber-2.4 sasl2

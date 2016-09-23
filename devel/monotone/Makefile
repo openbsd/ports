@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/10 13:26:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT=	distributed version control system
 
 VERSION=	1.1
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://monotone.ca/
 
@@ -20,7 +21,8 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	devel/gettext \
 		lang/lua
 BUILD_DEPENDS=	devel/boost
-LIB_DEPENDS=	devel/libidn \
+LIB_DEPENDS=	databases/sqlite3 \
+		devel/libidn \
 		devel/pcre \
 		security/botan
 

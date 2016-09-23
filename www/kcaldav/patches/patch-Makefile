@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
---- Makefile.orig	Thu Mar  3 13:22:28 2016
-+++ Makefile	Tue Apr 19 07:41:49 2016
+$OpenBSD: patch-Makefile,v 1.2 2016/09/23 09:16:58 sthen Exp $
+--- Makefile.orig	Thu Mar  3 12:22:28 2016
++++ Makefile	Tue Sep 20 09:41:08 2016
 @@ -4,6 +4,9 @@
  # I have added defaults for all of the systems that I use.
  # Good luck!
@@ -28,12 +28,38 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
  PREFIX		 = /usr/local
  
  # Add any special dependency directives here.
-@@ -52,7 +56,7 @@ PREFIX		 = /usr/local
+@@ -50,20 +54,23 @@ PREFIX		 = /usr/local
+ # The -D DEBUG=2 directive LOTS of debugging information.
+ 
  #### For OpenBSD:
- LIBS		 = -lexpat -lm -lsqlite3
+-LIBS		 = -lexpat -lm -lsqlite3
++LIBS		 = -L/usr/local/lib -lexpat -lm -lsqlite3
  STATIC		 = -static
 -CPPFLAGS	+= -I/usr/local/include -DLOGTIMESTAMP=1 -DDEBUG=1
++STATICLIBS	 = -lpthread
 +CPPFLAGS	+= -I/usr/local/include -DLOGTIMESTAMP=1 -DDEBUG=0
  BINLDFLAGS	 = -L/usr/local/lib
  
  #### For Mac OS X:
+ #LIBS		 = -lexpat -lsqlite3
+ #STATIC		 = 
++#STATICLIBS	 = 
+ #CPPFLAGS	+= -I/usr/local/opt/sqlite/include -I/usr/local/include 
+ #BINLDFLAGS	 = -L/usr/local/opt/sqlite/lib -L/usr/local/lib
+ 
+ #### For Linux:
+ #LIBS		 = -lexpat -lbsd -lm -lsqlite3
+ #STATIC		 = 
++#STATICLIBS	 = 
+ #CPPFLAGS	+= -I/usr/local/include 
+ #BINLDFLAGS	 = -L/usr/local/lib
+ 
+@@ -251,7 +258,7 @@ libkcaldav.a: $(LIBOBJS)
+ 	$(AR) -rs $@ $(LIBOBJS)
+ 
+ kcaldav: $(BINOBJS) $(OBJS) libkcaldav.a
+-	$(CC) $(BINCFLAGS) -o $@ $(STATIC) $(BINOBJS) $(OBJS) libkcaldav.a $(BINLDFLAGS) $(BINLIBS) 
++	$(CC) $(BINCFLAGS) -o $@ $(STATIC) $(BINOBJS) $(OBJS) libkcaldav.a $(BINLDFLAGS) $(BINLIBS) $(STATICLIBS)
+ 
+ kcaldav.passwd: kcaldav.passwd.o md5.o $(OBJS) libkcaldav.a
+ 	$(CC) -o $@ kcaldav.passwd.o md5.o $(OBJS) libkcaldav.a $(LIBS)

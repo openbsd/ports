@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/08/18 12:28:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2016/09/23 09:16:53 sthen Exp $
 
 CATEGORIES =		databases
 V =			6.0
@@ -18,7 +18,8 @@ MULTI_PACKAGES =	-main -compact -list
 
 DBNAME =		${WRKBUILD}/sqlports
 DBS =			${DBNAME}.list ${DBNAME} ${DBNAME}-compact
-BUILD_DEPENDS =		databases/p5-DBD-SQLite
+BUILD_DEPENDS =		databases/p5-DBD-SQLite \
+			databases/sqlite3
 
 do-build:
 	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
@@ -26,7 +27,7 @@ do-build:
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
-	sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
+	${LOCALBASE}/bin/sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
 
 do-install:
 	@for i in ${DBS}; do \

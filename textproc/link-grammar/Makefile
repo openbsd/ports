@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/16 08:35:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/09/23 09:16:58 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -12,6 +12,9 @@ DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
+REVISION-java =		0
+REVISION-main =		0
+REVISION-python =	0
 
 SHARED_LIBS +=  minisat              1.0      # 2.0
 SHARED_LIBS +=  link-grammar         4.0      # 8.7
@@ -50,6 +53,8 @@ PSEUDO_FLAVORS =	no_java
 .include <bsd.port.arch.mk>
 
 BUILD_DEPENDS =		devel/swig
+
+LIB_DEPENDS +=		databases/sqlite3
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/hunspell

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/23 09:16:55 sthen Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.7.1
-REVISION =	0
+REVISION =	1
 
 LIB_DEPENDS +=	x11/wxWidgets \
+		databases/sqlite3 \
 		geo/spatialite/libspatialite \
 		geo/spatialite/libgaiagraphics
 RUN_DEPENDS +=	devel/desktop-file-utils

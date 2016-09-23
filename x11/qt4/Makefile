@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2016/09/06 09:00:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.137 2016/09/23 09:16:58 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,7 +25,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		7
+REVISION-main =		8
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -155,6 +155,7 @@ sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql stdc++ pthread
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			databases/sqlite3 \
 			devel/glib2 \
 			graphics/jpeg \
 			graphics/libmng \

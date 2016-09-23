@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT =	advanced, stable and fast irc server
 
@@ -6,6 +6,7 @@ DISTNAME =	ircd-ratbox-3.0.10
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	http://www.ratbox.org/
 
@@ -14,7 +15,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =		c crypto ltdl sqlite3 ssl z
 
-LIB_DEPENDS =		devel/libtool,-ltdl
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/libtool,-ltdl
 
 CONFDIR =		${SYSCONFDIR}/ircd-ratbox
 LOGDIR =		${LOCALSTATEDIR}/log/ircd-ratbox

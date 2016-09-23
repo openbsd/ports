@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/09/19 22:39:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
+REVISION =		0
 
 WANTLIB += GL GLU OpenThreads SimGearCore SimGearScene X11 Xi
 WANTLIB += Xmu c curl glut m openal osg osgDB osgFX osgGA osgParticle
@@ -21,7 +22,8 @@ MODGCC4_ARCHS =	*
 MODGCC4_LANGS =	c++
 BUILD_DEPENDS =	devel/boost \
 		devel/plib
-LIB_DEPENDS =	graphics/freeglut \
+LIB_DEPENDS =	databases/sqlite3 \
+		graphics/freeglut \
 		graphics/simgear>=$V
 RUN_DEPENDS =	games/flightgear/data>=${V}
 

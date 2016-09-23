@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/16 11:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jmmv/kyua
@@ -22,7 +23,8 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/kyua-testers
 
-LIB_DEPENDS =		devel/atf
+LIB_DEPENDS =		devel/atf \
+			databases/sqlite3
 
 FLAVORS =		# lua52 from lua.port.mk
 FLAVOR ?=

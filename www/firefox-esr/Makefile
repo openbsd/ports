@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/08/02 17:43:30 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/23 09:16:58 sthen Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -10,6 +10,7 @@ BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
+REVISION =	0
 SO_VERSION =	3.0
 MOZILLA_LIBS =	browsercomps xul clearkey lgpllibs
 
@@ -48,6 +49,9 @@ CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
+
+# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 # bug #1064665
 LIB_DEPENDS +=	textproc/icu4c

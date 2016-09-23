@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/08/08 18:36:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT=	motion detection software for video
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
 GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
 V=		3.4.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
@@ -26,7 +26,8 @@ WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale
 FLAVOR?=
 FLAVORS=		bktr mysql pgsql
 
-LIB_DEPENDS=		graphics/jpeg \
+LIB_DEPENDS=		databases/sqlite3 \
+			graphics/jpeg \
 			graphics/ffmpeg
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \

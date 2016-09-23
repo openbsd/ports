@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2016/09/01 15:55:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-2.16.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qgis_core	12.0 \
 		qgis_app	2.0 \
@@ -47,6 +47,7 @@ RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
+		databases/sqlite3 \
 		devel/proj \
 		x11/qt4>=4.7.2 \
 		x11/qwt \

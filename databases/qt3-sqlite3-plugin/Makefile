@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
@@ -9,7 +9,7 @@ MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 V=		0.2
 DISTNAME=	23011-qt-sqlite3-$V
 PKGNAME=	qt3-sqlite3-$V
-REVISION=	6
+REVISION=	7
 
 WRKDIST=	${WRKDIR}/qt-sqlite3-${V}
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pthread sqlite3 stdc++
 
+LIB_DEPENDS=		databases/sqlite3
 NO_TEST=		Yes
 
 SUBST_VARS=		MODQT_PLUGINS

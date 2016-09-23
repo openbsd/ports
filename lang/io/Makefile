@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/06/01 22:01:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/23 09:16:55 sthen Exp $
 
 ONLY_FOR_ARCHS =i386 amd64
 BROKEN =	coroutine code doesn't support setjmp PC/SP xor
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	lang
 
@@ -36,6 +36,7 @@ LIB_DEPENDS =	archivers/lzo2 \
 		databases/libdbi \
 		databases/mariadb \
 		databases/qdbm \
+		databases/sqlite3 \
 		devel/atk \
 		devel/gmp \
 		devel/libevent2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.117 2016/08/18 12:50:42 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.118 2016/09/23 09:16:55 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -63,6 +63,7 @@ RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS =
 
 LIB_DEPENDS-main =	archivers/bzip2 \
+			databases/sqlite3 \
 			devel/libffi \
 			devel/gettext
 RUN_DEPENDS-main =

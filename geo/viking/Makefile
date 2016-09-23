@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/30 14:45:42 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2016/09/23 09:16:55 sthen Exp $
 
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.6.2
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -37,6 +38,7 @@ USE_GMAKE =	Yes
 # until mapnik is fixed..
 CONFIGURE_ARGS +=	--disable-mapnik
 LIB_DEPENDS =	archivers/bzip2 \
+		databases/sqlite3 \
 		devel/libidn \
 		devel/libmagic \
 		graphics/libgexiv2 \

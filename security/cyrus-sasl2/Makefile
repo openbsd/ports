@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2016/07/08 13:17:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=		cyrus-sasl-2.1.26
-REVISION=		17
+REVISION=		18
 
 SHARED_LIBS +=  sasl2                3.0      # 3.0
 
@@ -41,6 +41,8 @@ CFLAGS +=		-fPIC
 
 FLAVORS=		db4 gssapi ldap mysql pgsql
 FLAVOR?=
+
+LIB_DEPENDS +=		databases/sqlite3
 
 .if ${FLAVOR:Mdb4}
 CONFIGURE_ARGS +=	--with-dblib=berkeley \

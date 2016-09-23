@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2016/09/23 09:16:54 sthen Exp $
+--- CMakeLists.txt.orig	Tue Sep 20 07:49:53 2016
++++ CMakeLists.txt	Tue Sep 20 07:50:36 2016
+@@ -32,10 +32,11 @@ endif()
+ add_definitions("-DTIXML_USE_STL")
+ find_package(Irrlicht 1.8 REQUIRED)
+ find_package(Threads REQUIRED)
+-#find_package(sqlite REQUIRED)
++find_package(Sqlite REQUIRED)
+ 
+ # set include directories
+ include_directories("src")
++include_directories(${SQLITE_INCLUDE_DIR})
+ include_directories(${IRRLICHT_INCLUDE_DIRS})
+ 
+ # add source files

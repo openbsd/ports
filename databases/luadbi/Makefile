@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
@@ -9,7 +9,7 @@ DISTNAME=	luadbi.$V
 PKGNAME-main=	luadbi-$V
 PKGNAME-mysql=	luadbi-mysql-$V
 PKGNAME-pgsql=	luadbi-pgsql-$V
-REVISION-main=	0
+REVISION-main=	1
 REVISION-mysql=	3
 REVISION-pgsql=	0
 
@@ -25,6 +25,7 @@ MASTER_SITES=		${HOMEPAGE}/files/
 MULTI_PACKAGES=		-main -mysql -pgsql
 
 WANTLIB-main=		sqlite3
+LIB_DEPENDS-main=	databases/sqlite3
 RUN_DEPENDS-main=	#empty
 
 WANTLIB-mysql=		mysqlclient
@@ -45,7 +46,7 @@ NO_TEST=		Yes
 
 MAKE_FLAGS=	CC="${CC}" \
 		COMMON_LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${MODLUA_INCL_DIR} -I${LOCALBASE}/include/mysql \
+		CFLAGS="${CFLAGS} -I${MODLUA_INCL_DIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/mysql \
 			-I${LOCALBASE}/include/postgresql/ -I${LOCALBASE}/include/postgresql/server \
 			-I. -fpic -shared"
 

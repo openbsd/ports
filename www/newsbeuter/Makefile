@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/05 19:46:22 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/23 09:16:58 sthen Exp $
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
 DISTNAME =		newsbeuter-2.7
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 
 HOMEPAGE =		http://newsbeuter.org/
@@ -19,7 +19,8 @@ MASTER_SITES =		http://newsbeuter.org/downloads/
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		devel/stfl \
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/stfl \
 			devel/json-c \
 			textproc/libxml	\
 			net/curl

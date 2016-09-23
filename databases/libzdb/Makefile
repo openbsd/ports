@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT =		easy to use database connection pool Library
 
 DISTNAME =		libzdb-3.1
+REVISION =		0
 
 SHARED_LIBS += 		zdb 1.0 # 11.0
 
@@ -19,11 +20,15 @@ MASTER_SITES =		http://www.tildeslash.com/libzdb/dist/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS +=	--with-postgresql=no \
 			--with-mysql=no
 
 FLAVORS =	mysql postgresql
 FLAVOR ?=
+
+LIB_DEPENDS+=   databases/sqlite3
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=   databases/mariadb

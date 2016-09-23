@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/23 09:16:54 sthen Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
 V =		0.4.1
-REVISION =	1
+REVISION =	2
 COMMENT =	2D MMORPG focused on grinding
 DISTNAME =	choria-${V}-src
 PKGNAME =	choria-${V}
@@ -20,7 +20,8 @@ MASTER_SITES =	https://choria.googlecode.com/files/
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	x11/irrlicht
+LIB_DEPENDS =	x11/irrlicht \
+		databases/sqlite3
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -30,5 +31,6 @@ post-patch:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/choria
 	perl -pi -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt
+	cp ${FILESDIR}/FindSqlite.cmake ${WRKSRC}/
 
 .include <bsd.port.mk>

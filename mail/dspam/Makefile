@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -13,9 +13,9 @@ PKGNAME-$p =	dspam-$p-${VERSION}
 FULLPKGNAME-$p = dspam-$p-${VERSION}
 FULLPKGPATH-$p = ${PKGPATH},-$p
 .endfor
-REVISION =		1
-REVISION-main =		3
+REVISION-main =		4
 REVISION-mysql =	3
+REVISION-pgsql =	2
 
 SHARED_LIBS =	dspam	9.0
 CATEGORIES =	mail
@@ -34,6 +34,7 @@ WANTLIB = crypto m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
 
 LIBTOOL_FLAGS =	--tag=disable-static
+LIB_DEPENDS-main+=	databases/sqlite3
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =		Yes
@@ -49,6 +50,8 @@ CONFIGURE_ARGS +=	--with-dspam-home=/var/dspam \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
 			--with-pgsql-libraries=${LOCALBASE}/lib \
+			--with-sqlite-includes=${LOCALBASE}/include \
+			--with-sqlite-libraries=${LOCALBASE}/lib \
 			--enable-virtual-users \
 			--enable-preferences-extension \
 			--enable-daemon \

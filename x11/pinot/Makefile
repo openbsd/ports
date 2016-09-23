@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2016/08/28 12:35:29 jca Exp $
+# $OpenBSD: Makefile,v 1.60 2016/09/23 09:16:58 sthen Exp $
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -40,6 +40,7 @@ BUILD_DEPENDS=	devel/boost \
 
 # XXX catppt - catdvi
 LIB_DEPENDS=	x11/gtk3mm \
+		databases/sqlite3 \
 		textproc/libxml++>=2.40.0 \
 		mail/gmime>=2.6.0 \
 		net/curl \

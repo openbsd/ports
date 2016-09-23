@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/06/27 05:26:13 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT =		infinite-world block sandbox game
 V =			0.4.14
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
+REVISION =		0
 
 HOMEPAGE =		http://www.minetest.net/
 
@@ -31,6 +32,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS =		audio/openal \
+			databases/sqlite3 \
 			geo/spatialindex \
 			audio/libvorbis \
 			lang/luajit \

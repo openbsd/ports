@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/04/25 15:02:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2016/09/23 09:16:55 sthen Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -7,6 +7,7 @@ COMMENT=	device color profile management daemon
 V=		1.3.2
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.5
 SHARED_LIBS +=  colord               1.4      # 2.5
@@ -35,6 +36,7 @@ BUILD_DEPENDS=	devel/gobject-introspection \
 		x11/dbus
 
 LIB_DEPENDS=	graphics/lcms2 \
+		databases/sqlite3 \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session

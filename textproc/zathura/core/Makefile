@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2016/07/09 17:28:30 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:58 sthen Exp $
 
 V =			0.3.3
-REVISION =		1
+REVISION =		2
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -22,7 +22,8 @@ MASTER_SITES =	http://pwmt.org/projects/zathura/download/
 
 BUILD_DEPENDS =	textproc/py-docutils
 RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS =	graphics/gdk-pixbuf2 \
+LIB_DEPENDS =	databases/sqlite3 \
+		graphics/gdk-pixbuf2 \
 		devel/libmagic \
 		x11/girara>=0.2.3
 

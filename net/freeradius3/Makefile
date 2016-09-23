@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/17 20:58:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:56 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,7 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.12pre20160630
-REVISION-main=	0
+REVISION-main=	1
 DISTNAME=	freeradius-server-$V
 #EXTRACT_SUFX=	.tar.bz2
 
@@ -84,6 +84,7 @@ BUILD_DEPENDS+=	security/openpam
 RUN_DEPENDS-main=	#empty
 LIB_DEPENDS-main=	databases/gdbm \
 			databases/libhiredis \
+			databases/sqlite3 \
 			devel/json-c \
 			devel/libexecinfo \
 			devel/libtalloc \

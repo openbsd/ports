@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-1.4.10
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -18,6 +19,7 @@ WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
 LIB_DEPENDS=	converters/libiconv \
+		databases/sqlite3 \
 		net/ldns/libldns \
 		textproc/libxml
 

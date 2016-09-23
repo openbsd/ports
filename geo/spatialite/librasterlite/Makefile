@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/09 23:38:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:55 sthen Exp $
 
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite
 DISTNAME =	${PROJECT}-1.1g
 SHARED_LIBS =	rasterlite 0.0 #2.0
-REVISION =	1
+REVISION =	2
 
 # breaks build if static is disabled
 LIBTOOL_FLAGS =
 
 LIB_DEPENDS +=	converters/libiconv \
+		databases/sqlite3 \
 		geo/spatialite/libspatialite \
 		graphics/png \
 		devel/geotiff

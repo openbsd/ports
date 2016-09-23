@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/11 15:24:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
+REVISION =		0
 
 SHARED_LIBS =		ccnet 2.0
 
@@ -20,6 +21,7 @@ BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 LIB_DEPENDS =		databases/libzdb \
+			databases/sqlite3 \
 			devel/libevent2 \
 			sysutils/e2fsprogs \
 			net/seafile/libsearpc

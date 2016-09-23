@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/08/15 09:16:40 edd Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:55 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -23,6 +23,7 @@ BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -36,6 +37,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
 WANTLIB +=		ncurses panel pthread sqlite3 ssl ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
+
+LIB_DEPENDS +=		databases/sqlite3
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 MASTER_SITES0 =		https://spacehopper.org/mirrors/

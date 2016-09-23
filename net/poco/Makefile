@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.6p1
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION:S/p/pl/}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net devel
 SHLIB_VERSION =	1.0
 
@@ -26,6 +26,7 @@ WANTLIB += expat pcre sqlite3 z
 
 LIB_DEPENDS =	databases/iodbc \
 		databases/mariadb \
+		databases/sqlite3 \
 		devel/pcre
 
 USE_GMAKE =		Yes

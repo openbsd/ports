@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	12
+REVISION =	13
 
 CATEGORIES =	multimedia
 
@@ -21,6 +21,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mediatomb/}
 MODULES =	devel/gettext
 
 LIB_DEPENDS =	audio/taglib \
+		databases/sqlite3 \
 		devel/libmagic \
 		graphics/ffmpeg>=20121026 \
 		graphics/ffmpegthumbnailer \

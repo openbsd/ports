@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/11 15:24:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
+REVISION =              0
 
 SHARED_LIBS =		seafile 3.0
 
@@ -21,6 +22,7 @@ BUILD_DEPENDS =		devel/libtool \
 
 RUN_DEPENDS = 		devel/py-simplejson
 LIB_DEPENDS = 		devel/libinotify \
+			databases/sqlite3 \
 			net/curl \
 			net/seafile/ccnet
 

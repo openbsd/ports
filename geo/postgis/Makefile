@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2016/07/09 08:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2016/09/23 09:16:54 sthen Exp $
 
 V =	2.2.2
-REVISION =	0
+REVISION =	1
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
@@ -25,7 +25,8 @@ WANTLIB +=	crypto openjp2 lzma qhull
 
 MODULES =	devel/gettext databases/postgresql
 
-LIB_DEPENDS=	geo/gdal \
+LIB_DEPENDS=	databases/sqlite3 \
+		geo/gdal \
 		devel/json-c
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \

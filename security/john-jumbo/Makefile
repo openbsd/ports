@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 
 V =		1.8.0
 JV =		1
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -23,7 +23,8 @@ WANTLIB += softokn3 sqlite3 ssl ssl3 z
 
 MASTER_SITES =		http://www.openwall.com/john/j/
 
-LIB_DEPENDS =		security/nss
+LIB_DEPENDS =		databases/sqlite3 \
+			security/nss
 
 USE_GMAKE =		Yes
 MAKE_FILE =		Makefile.legacy

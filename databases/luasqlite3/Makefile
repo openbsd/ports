@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/05/16 18:51:51 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT=	binding of sqlite3 for lua
 PKGNAME=	luasqlite3-0.4.1
-REVISION=	6
+REVISION=	7
 DISTNAME=	lua-sqlite3-0.4.1
 CATEGORIES=	databases
 MASTER_SITES=	${HOMEPAGE}
@@ -15,12 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += sqlite3>=8
 
 MODULES=	lang/lua
+LIB_DEPENDS=	databases/sqlite3
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-lua-dir=${PREFIX} \
 		--with-lua=${MODLUA_BIN} \
-		--with-lua-includedir=${MODLUA_INCL_DIR}
+		--with-lua-includedir=${MODLUA_INCL_DIR} \
+		--with-sqlite3-dir=${LOCALBASE}
 CFLAGS+=	-fPIC -DPIC
 
 TEST_DEPENDS=${BASE_PKGPATH}

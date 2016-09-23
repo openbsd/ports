@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/30 12:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/09/23 09:16:55 sthen Exp $
 
 COMMENT =	WMS viewer built on top of spatialite and rasterlite2
 DISTNAME =	librewms-1.0.0
-REVISION =	0
+REVISION =	1
 
 # Licence: GPLv3
 
 LIB_DEPENDS +=	x11/wxWidgets \
+		databases/sqlite3 \
 		geo/spatialite/libspatialite \
 		geo/spatialite/librasterlite2
 RUN_DEPENDS +=	devel/desktop-file-utils

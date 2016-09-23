@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/12 20:06:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.11
-REVISION =	2
+REVISION =	3
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
@@ -25,6 +25,7 @@ MODLUA_SA=	Yes
 BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	archivers/bzip2 \
+		databases/sqlite3 \
 		devel/ode \
 		devel/sdl-mixer \
 		devel/sdl-net \

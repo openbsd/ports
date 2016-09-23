@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/23 09:16:57 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
 DISTNAME =	akonadi-1.13.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS = 	akonadiprotocolinternals 4.0	# 1.0
 
@@ -31,7 +31,8 @@ BUILD_DEPENDS =		databases/mariadb,-server \
 
 RUN_DEPENDS =		misc/shared-mime-info
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/boost \
 			devel/libexecinfo
 
 # XXX (buggy) dbconfigtest fails due to SQLITE being default,

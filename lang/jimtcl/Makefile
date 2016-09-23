@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/09/23 09:16:55 sthen Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
@@ -7,6 +7,7 @@ SHARED_LIBS =		jim 2.2
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,6 +22,7 @@ MODULES =		lang/tcl
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			textproc/asciidoc
+LIB_DEPENDS =		databases/sqlite3
 
 MAKE_FLAGS =		LIBJIM=libjim.so.${LIBjim_VERSION} \
 			SH_CFLAGS=${PICFLAG} \
@@ -42,7 +44,8 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--with-mod=sqlite3 \
 			CCACHE=none
 
-CONFIGURE_ENV +=	WRAPPER=${WRKSRC}/configure
+CONFIGURE_ENV +=	WRAPPER=${WRKSRC}/configure \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/{initjimsh.tcl,examples.{api,ext}/Makefile}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/25 22:56:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.37 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
-VERSION=	1.3.10
-DISTNAME=	sqlite3-${VERSION}
+DISTNAME=	sqlite3-1.3.10
+REVISION=	0
 CATEGORIES=	databases
 
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		lang/ruby
 
 WANTLIB=		sqlite3
+LIB_DEPENDS=		databases/sqlite3
 
 CONFIGURE_STYLE=	ruby gem ext
 

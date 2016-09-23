@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/10 13:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT =	network switch style shell
 
 DISTNAME =	nsh-1.0.20160605
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
@@ -20,10 +20,13 @@ WANTLIB += c edit termcap sqlite3
 FLAVORS =	static
 FLAVOR ?=
 
-MAKE_FLAGS =	CC="${CC}"
+MAKE_FLAGS =	CC="${CC}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS =	databases/sqlite3
 
 .if ${FLAVOR:Mstatic}
-MAKE_FLAGS +=	LDADD="-ledit -ltermcap -lsqlite3 -static"
+MAKE_FLAGS +=	LDADD="-ledit -ltermcap -lsqlite3 -lpthread -static"
 .endif
 
 do-install:

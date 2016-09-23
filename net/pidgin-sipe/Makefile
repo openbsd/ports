@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/13 09:22:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:56 sthen Exp $
 
 BROKEN-hppa =	-Werror + sip-csta.c:707: warning: cast increases required alignment of target type
 
 COMMENT =		SIPE plugin for Pidgin
 
 DISTNAME =		pidgin-sipe-1.20.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -25,6 +25,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sipe/}
 
 LIB_DEPENDS =		mail/gmime \
 			net/pidgin,-libpurple \
+			databases/sqlite3 \
 			security/nss
 RUN_DEPENDS =		net/pidgin
 

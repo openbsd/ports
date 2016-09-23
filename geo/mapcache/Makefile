@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/18 23:12:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT=	GIS WMTS/TMS tile caching server
 
 DISTNAME =	mapcache-1.4.1
 SHARED_LIBS +=	mapcache 1.0
+REVISION =	0
 
 CATEGORIES=	geo www
 
@@ -20,6 +21,7 @@ RUN_DEPENDS =	www/spawn-fcgi
 
 NO_TEST =	Yes
 LIB_DEPENDS=	devel/apr-util \
+		databases/sqlite3 \
 		geo/gdal \
 		geo/geos \
 		www/fcgi

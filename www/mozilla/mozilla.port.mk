@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.92 2016/07/04 07:15:07 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.93 2016/09/23 09:16:58 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -60,6 +60,7 @@ CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)
 MODMOZ_WANTLIB +=	sqlite3>=32
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3
 CONFIGURE_ARGS +=	--enable-system-sqlite
 # hack to build against systemwide sqlite3 (# 546162)
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes

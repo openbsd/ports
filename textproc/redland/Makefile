@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/30 12:59:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/23 09:16:58 sthen Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -8,6 +8,7 @@ COMMENT-pgsql=		PostgreSQL driver for redland
 
 V=			1.0.17
 REVISION=		1
+REVISION-main=		2
 DISTNAME=		redland-$V
 PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
@@ -51,7 +52,8 @@ CONFIGURE_ARGS=	--with-raptor=system \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
 
-LIB_DEPENDS-main=	textproc/raptor \
+LIB_DEPENDS-main=	databases/sqlite3 \
+			textproc/raptor \
 			textproc/rasqal \
 			devel/libtool,-ltdl
 WANTLIB-main=		${WANTLIB} c sqlite3

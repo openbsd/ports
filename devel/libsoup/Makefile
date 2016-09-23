@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.102 2016/04/26 13:06:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2016/09/23 09:16:53 sthen Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.54.1
+REVISION =		0
 
 SHARED_LIBS +=  soup-2.4             9.0      # 9.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 9.0
@@ -32,7 +33,8 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS =		net/glib2-networking
 RUN_DEPENDS =		net/glib2-networking
 
-LIB_DEPENDS =		devel/glib2 \
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_STYLE =	gnu

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/06/02 11:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT=	IP accounting software
 
 DISTNAME=	pmacct-1.5.3
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -20,13 +21,15 @@ AUTOCONF_VERSION= 2.13
 USE_GMAKE=	Yes
 CONFIGURE_ARGS= --enable-ipv6 \
 		--enable-sqlite3 \
-		--with-sqlite3-includes="/usr/include"
+		--with-sqlite3-includes="${LOCALBASE}/include"
 .ifdef DEBUG
 MAKE_ARGS+=	DEBUG=1
 .endif
 
 FLAVORS=	mysql postgresql
 FLAVOR?=
+
+LIB_DEPENDS+=	databases/sqlite3
 
 .if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=	databases/postgresql

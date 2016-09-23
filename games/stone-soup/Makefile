@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/04 20:47:53 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2016/09/23 09:16:54 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -12,7 +12,7 @@ VERSION = 	0.15.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
+REVISION=	1
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
@@ -22,7 +22,7 @@ CXXFLAGS += 	"-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL"
 MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		LUA_LIB=${MODLUA_LIB} \
-		SQLITE_INCLUDE_DIR=/usr/include \
+		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		INSTALL_UGRP=root:wheel \
 		prefix=${PREFIX} \
@@ -40,6 +40,7 @@ WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3
 
 BUILD_DEPENDS = devel/bison \
 		graphics/pngcrush
+LIB_DEPENDS = 	databases/sqlite3
 
 # Almost nethack...
 PERMIT_PACKAGE_FTP = 	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/09/12 20:58:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -7,7 +7,7 @@ V=		1.1.1
 DISTNAME=	PokerTH-${V}-src
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	pokerth-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	games x11
 
@@ -32,6 +32,7 @@ MODQMAKE_PROJECTS=	pokerth.pro
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	converters/libiconv \
+		databases/sqlite3 \
 		devel/sdl-mixer \
 		devel/boost \
 		devel/protobuf \

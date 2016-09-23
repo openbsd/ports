@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.91 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.92 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -39,6 +39,7 @@ MAKE_CCARGS+=	-DNO_EAI
 MAKE_AUXLIBS+=	-lssl -lcrypto -lsqlite3 -pthread
 
 WANTLIB=	c crypto pcre pthread sqlite3 ssl
+LIB_DEPENDS+=	databases/sqlite3
 
 ALL_TARGET=	default
 

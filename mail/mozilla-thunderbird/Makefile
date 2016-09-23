@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2016/08/30 15:05:52 landry Exp $
+# $OpenBSD: Makefile,v 1.227 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -14,6 +14,7 @@ EXTRACT_SUFX =		.tar.xz
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-4.7.3.0
+REVISION =		0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
@@ -44,6 +45,11 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =	gnu
+
+# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
+# mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h
+# and .../fts3/src/fts3_tokenizer.h which fails to find sqlite3.h.
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \

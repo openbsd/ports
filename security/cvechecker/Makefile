@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/25 20:05:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/23 09:16:57 sthen Exp $
 
 COMMENT=	local CVE checker tool
 
 DISTNAME=	cvechecker-3.6
 CATEGORIES=	security sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/sjvermeu/cvechecker/wiki
 
@@ -18,7 +19,8 @@ MASTER_SITES=	https://raw.githubusercontent.com/wiki/sjvermeu/cvechecker/release
 
 BUILD_DEPENDS=	devel/argp-standalone
 
-LIB_DEPENDS=	devel/libconfig
+LIB_DEPENDS=	devel/libconfig \
+		databases/sqlite3
 
 RUN_DEPENDS=	net/wget \
 		sysutils/coreutils \

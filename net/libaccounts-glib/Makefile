@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/22 13:00:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT=		accounts management library for GLib applications
 
 DISTNAME=		libaccounts-glib-1.18
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  accounts-glib        1.0      # 1.3
 
@@ -31,7 +31,8 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		devel/py-gobject3
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3
-LIB_DEPENDS=		textproc/libxml
+LIB_DEPENDS=		databases/sqlite3 \
+			textproc/libxml
 
 MODGNOME_TOOLS=		docbook gobject-introspection
 

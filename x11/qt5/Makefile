@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/09/06 09:00:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.53 2016/09/23 09:16:58 sthen Exp $
 
 USE_WXNEEDED =		Yes # Qt5WebKit
 
@@ -19,7 +19,7 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-main =		qt5-${VERSION}
-REVISION-main =		1
+REVISION-main =		2
 PKGNAME-examples =	qt5-examples-${VERSION}
 REVISION-examples =	0
 PKGNAME-html =		qt5-html-${VERSION}
@@ -164,6 +164,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/openal \
 			audio/pulseaudio \
 			databases/iodbc \
+			databases/sqlite3 \
 			devel/atk \
 			devel/harfbuzz \
 			devel/libexecinfo \

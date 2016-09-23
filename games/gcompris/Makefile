@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-15.10
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -36,6 +37,7 @@ BUILD_DEPENDS=	textproc/texi2html \
 		archivers/gtar
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		databases/sqlite3 \
 		gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
 		x11/gnome/librsvg \
 		x11/gtk+2

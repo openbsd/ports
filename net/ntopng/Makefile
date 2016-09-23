@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/07/09 12:14:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/23 09:16:56 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and dpi
 
 DISTNAME=	ntopng-2.4-stable
 PKGNAME=	${DISTNAME:S/-stable//}
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -28,6 +29,7 @@ RUN_DEPENDS=	databases/redis \
 		net/GeoIP,-asn
 LIB_DEPENDS=	databases/libhiredis \
 		databases/mariadb \
+		databases/sqlite3 \
 		devel/json-c \
 		lang/luajit \
 		net/GeoIP \

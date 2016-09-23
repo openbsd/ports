@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2016/07/08 16:50:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2016/09/23 09:16:54 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,8 +21,12 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-ap2=	0
-REVISION-main=	0
+REVISION-ap2=	1
+REVISION-gnome-keyring=	0
+REVISION-main=	1
+REVISION-perl=	0
+REVISION-python=0
+REVISION-ruby=	0
 
 SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -67,6 +71,7 @@ MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		net/serf>=1.3.2 \
+		databases/sqlite3 \
 		devel/apr \
 		devel/apr-util \
 		security/cyrus-sasl2
