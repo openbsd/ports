@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-tcl,v 1.4 2016/03/12 16:45:57 naddy Exp $
-lib/tcl/
-lib/tcl/sqlite3/
-lib/tcl/sqlite3/libtclsqlite3.so
-lib/tcl/sqlite3/pkgIndex.tcl
