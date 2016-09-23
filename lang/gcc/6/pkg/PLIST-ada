@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.1.1.1 2016/09/04 16:20:22 pascal Exp $
+@comment $OpenBSD: PLIST-ada,v 1.2 2016/09/23 10:11:14 pascal Exp $
 @option is-branch
 @bin bin/gnat
 @bin bin/gnatbind
@@ -1253,7 +1253,6 @@ lib/gcc/${CONFIG}/${V}/adainclude/s-wwdenu.ads
 lib/gcc/${CONFIG}/${V}/adainclude/s-wwdwch.adb
 lib/gcc/${CONFIG}/${V}/adainclude/s-wwdwch.ads
 lib/gcc/${CONFIG}/${V}/adainclude/sequenio.ads
-lib/gcc/${CONFIG}/${V}/adainclude/standard.ads.h
 lib/gcc/${CONFIG}/${V}/adainclude/system.ads
 lib/gcc/${CONFIG}/${V}/adainclude/text_io.ads
 lib/gcc/${CONFIG}/${V}/adainclude/unchconv.ads
