@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2016/09/23 18:41:14 bluhm Exp $
 
 COMMENT =		provide framework for multiple event loops
 
-DISTNAME =		AnyEvent-7.12
+DISTNAME =		AnyEvent-7.13
 EPOCH =			0
 CATEGORIES =		devel
 
@@ -21,6 +21,8 @@ TEST_DEPENDS =		converters/p5-JSON-XS>=2.2 \
 			devel/p5-POE \
 			devel/p5-Task-Weaken \
 			security/p5-Net_SSLeay>=1.33
+
+MAKE_ENV =		PERL_ANYEVENT_LOOP_TESTS=1
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	eg
