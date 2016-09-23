@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/09/23 10:52:18 naddy Exp $
 
 COMMENT=	gdb for arm-none-eabi cross-development
 
@@ -19,7 +19,8 @@ CFLAGS+=	-Dunix
 
 CONFIGURE_ARGS+=	--enable-multilib \
 			--enable-thumb \
-			--enable-interwork
+			--enable-interwork \
+			--without-guile
 
 MODULES=	lang/python
 
