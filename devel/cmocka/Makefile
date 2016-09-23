@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/07 20:03:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/23 19:45:39 rpointel Exp $
 
 COMMENT =		elegant unit testing framework for C
 
-DISTNAME =		cmocka-1.0.1
-REVISION =		0
+DISTNAME =		cmocka-1.1.0
 
 EXTRACT_SUFX =		.tar.xz
 
-SHARED_LIBS +=  	cmocka                    0.1 # 0.3
+SHARED_LIBS +=  	cmocka                    0.2 # 0.4
 
 CATEGORIES =		devel
 
@@ -16,7 +15,7 @@ HOMEPAGE =		https://cmocka.org/
 # Apache License v2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/files/1.0/
+MASTER_SITES =		${HOMEPAGE}/files/1.1/
 
 MODULES =		devel/cmake
 
