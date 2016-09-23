@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2016/09/23 15:22:49 jeremy Exp $
 
 USE_WXNEEDED =		Yes # Qt5WebKit
 
@@ -19,7 +19,7 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-main =		qt5-${VERSION}
-REVISION-main =		2
+REVISION-main =		3
 PKGNAME-examples =	qt5-examples-${VERSION}
 REVISION-examples =	0
 PKGNAME-html =		qt5-html-${VERSION}

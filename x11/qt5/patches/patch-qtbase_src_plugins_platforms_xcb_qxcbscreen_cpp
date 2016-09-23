@@ -1,0 +1,17 @@
+$OpenBSD: patch-qtbase_src_plugins_platforms_xcb_qxcbscreen_cpp,v 1.1 2016/09/23 15:22:50 jeremy Exp $
+
+Fix SIGFPE when using Xvfb, backported from Qt 5.6
+(https://codereview.qt-project.org/#/c/140411/).
+
+--- qtbase/src/plugins/platforms/xcb/qxcbscreen.cpp.ports.orig	Tue Sep 20 15:49:42 2016
++++ qtbase/src/plugins/platforms/xcb/qxcbscreen.cpp	Tue Sep 20 15:50:09 2016
+@@ -544,7 +544,8 @@ void QXcbScreen::updateRefreshRate(xcb_randr_mode_t mo
+         for (; modesIter.rem; xcb_randr_mode_info_next(&modesIter)) {
+             xcb_randr_mode_info_t *modeInfo = modesIter.data;
+             if (modeInfo->id == mode) {
+-                m_refreshRate = modeInfo->dot_clock / (modeInfo->htotal * modeInfo->vtotal);
++                const uint32_t dotCount = modeInfo->htotal * modeInfo->vtotal;
++                m_refreshRate = (dotCount != 0) ? modeInfo->dot_clock / dotCount : 0;
+                 m_mode = mode;
+                 break;
+             }
