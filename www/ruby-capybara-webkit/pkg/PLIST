@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/26 03:20:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/09/23 15:25:23 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -6,7 +6,6 @@ ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Appraisals
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
-${GEM_LIB}/gems/${DISTNAME}/GOALS
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -21,10 +20,9 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/Info.plist
 ${GEM_LIB}/gems/${DISTNAME}/capybara-webkit.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/gemfiles/
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.3.gemfile
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.3.gemfile.lock
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.4.gemfile
-${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.4.gemfile.lock
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.6.gemfile
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/2.7.gemfile
+${GEM_LIB}/gems/${DISTNAME}/gemfiles/master.gemfile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara-webkit.rb
@@ -38,6 +36,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/driver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/matchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/node.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara_webkit_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -54,9 +53,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/integration/
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/session_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/selenium_compatibility_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/self_signed_ssl_cert.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/server_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/app_runner.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/
+${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/include_response.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/output_writer.rb
 ${GEM_LIB}/gems/${DISTNAME}/templates/
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.cpp
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.h
