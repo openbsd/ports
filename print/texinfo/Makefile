@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/12 13:43:40 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/23 23:13:37 juanfra Exp $
 
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-6.3
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -19,8 +20,9 @@ MASTER_SITES =		${MASTER_SITE_GNU:=texinfo/}
 
 BUILD_DEPENDS =		devel/help2man \
 			lang/gawk
+RUN_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		devel/gettext
-TEST_DEPENDS =		print/texlive/base
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
 
