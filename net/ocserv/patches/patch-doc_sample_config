@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_sample_config,v 1.13 2016/08/12 13:39:30 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.14 2016/09/23 09:00:11 sthen Exp $
 
 no seccomp, gssapi
 
---- doc/sample.config.orig	Fri Aug 12 14:30:00 2016
-+++ doc/sample.config	Fri Aug 12 14:30:00 2016
+--- doc/sample.config.orig	Fri Sep 23 09:58:11 2016
++++ doc/sample.config	Fri Sep 23 09:58:11 2016
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
@@ -75,7 +75,7 @@ no seccomp, gssapi
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -282,9 +261,8 @@ min-reauth-time = 300
+@@ -290,9 +269,8 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
@@ -87,7 +87,7 @@ no seccomp, gssapi
  #
  # Score banning cannot be reliably used when receiving proxied connections
  # locally from an HTTP server (i.e., when listen-clear-file is used).
-@@ -298,7 +276,6 @@ ban-reset-time = 300
+@@ -306,7 +284,6 @@ ban-reset-time = 300
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -95,7 +95,7 @@ no seccomp, gssapi
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -365,7 +342,7 @@ rekey-method = ssl
+@@ -373,7 +350,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overriden in the command line.
@@ -104,7 +104,7 @@ no seccomp, gssapi
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -480,6 +457,11 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -488,6 +465,11 @@ no-route = 192.168.5.0/255.255.255.0
  # any other routes. In case of defaultroute, the no-routes are restricted.
  # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
  # --removeall. This option can be set globally or in the per-user configuration.
