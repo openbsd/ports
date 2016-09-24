@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.30 2016/09/24 15:50:36 fcambus Exp $
 
 V =		2.8.9
 PL =		9
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
@@ -17,12 +17,10 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB += bz2 c crypto ncurses ssl z
+WANTLIB +=	c crypto ncurses ssl z
 
 MASTER_SITES =	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://invisible-island.net/lynx/tarballs/
-
-LIB_DEPENDS =	archivers/bzip2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
@@ -36,10 +34,13 @@ CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
 			--enable-widec \
 			--with-ssl=/usr \
 			--with-zlib \
-			--with-bzlib
+			--without-bzlib
 
 # This disables most calls to getpw*(3) so we can avoid pledge "getpw".
-CONFIGURE_ENV =	CFLAGS="-DNOUSERS"
+CONFIGURE_ENV +=	CFLAGS="-DNOUSERS"
+
+# Prevent accepting bzip2 compressed HTML to avoid spawning processes.
+CONFIGURE_ENV +=	ac_cv_path_BZIP2=none
 
 MAKE_FILE =	makefile
 
