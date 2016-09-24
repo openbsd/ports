@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/03 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/24 13:15:07 jasper Exp $
 
 COMMENT =	lightweight shipper for system metrics
 
 BEAT =		topbeat
-VERSION =	1.2.3
-REVISION =	0
+VERSION =	1.3.0
 
 GH_ACCOUNT =	elastic
 GH_PROJECT =	beats
