@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2016/08/16 09:51:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2016/09/24 12:14:21 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -141,6 +141,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/eos/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/esxi/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/esxi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/esxi/base/
@@ -173,6 +176,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v10/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/gentoo/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/gentoo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/gentoo/base/
@@ -373,6 +379,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/arch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/coreos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/darwin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/debian.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/eos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/esxi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/freebsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/gentoo.rb
@@ -459,6 +466,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bond_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bridge_spec.rb
@@ -502,6 +510,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helper/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/aix_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/darwin_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/debian_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/eos_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/esxi_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/freebsd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/openbsd_spec.rb
