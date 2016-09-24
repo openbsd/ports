@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2016/09/24 12:53:27 sthen Exp $
 
 BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
 
@@ -52,6 +52,9 @@ WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
+
+# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 # to be able to link when building with clang on i386 or gcc on powerpc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
