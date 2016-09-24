@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2016/09/24 08:12:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/09/24 08:15:16 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
 COMMENT-mysql =	MySQL driver for dspam
 
 VERSION =	3.10.2
-DISTNAME =	dspam-3.10.2
+DISTNAME =	dspam-${VERSION}
+REVISION-main =	5
+REVISION-mysql = 4
+REVISION-pgsql = 3
+
 PKGNAME-main =	${PKGNAME}
 .for p in pgsql mysql
 PKGNAME-$p =	dspam-$p-${VERSION}
@@ -13,9 +17,6 @@ PKGNAME-$p =	dspam-$p-${VERSION}
 FULLPKGNAME-$p = dspam-$p-${VERSION}
 FULLPKGPATH-$p = ${PKGPATH},-$p
 .endfor
-REVISION-main =		5
-REVISION-mysql =	4
-REVISION-pgsql =	3
 
 SHARED_LIBS =	dspam	9.0
 CATEGORIES =	mail
@@ -30,12 +31,13 @@ MAINTAINER =	Todd T. Fries <todd@OpenBSD.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -mysql -pgsql
-WANTLIB = m pthread
+
+WANTLIB =	m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
 
-LIBTOOL_FLAGS =	--tag=disable-static
+LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu
-SEPARATE_BUILD =		Yes
+SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	--with-dspam-home=/var/dspam \
 			--with-dspam-home-owner=_dspam \
 			--with-dspam-home-group=_dspam \
@@ -58,26 +60,26 @@ CONFIGURE_ARGS +=	--with-dspam-home=/var/dspam \
 EXAMPLESDIR =	${PREFIX}/share/examples/dspam
 
 FLAVORS =	clamav ldap domainscale largescale
-FLAVOR?=
+FLAVOR ?=
 
 . if ${FLAVOR:Mlargescale} && ${FLAVOR:Mdomainscale}
 ERRORS += "Fatal: choose either domainscale or largescale, not both"
 . endif
 
-LIB_DEPENDS-mysql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
+LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/mariadb
-WANTLIB-mysql=		${WANTLIB} crypto dspam z ssl stdc++ lib/mysql/mysqlclient
+WANTLIB-mysql =		${WANTLIB} crypto dspam z ssl stdc++ lib/mysql/mysqlclient
 
-LIB_DEPENDS-pgsql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
+LIB_DEPENDS-pgsql =	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/postgresql
-WANTLIB-pgsql=		${WANTLIB} c crypto dspam pq ssl
+WANTLIB-pgsql =		${WANTLIB} c crypto dspam pq ssl
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/sqlite3
 
 .if ${FLAVOR:Mclamav}
 CONFIGURE_ARGS +=	--enable-clamav
-RUN_DEPENDS-main+=	security/clamav
+RUN_DEPENDS-main +=	security/clamav
 .endif
 
 .if ${FLAVOR:Mldap}
@@ -105,12 +107,12 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/src/dspam.conf \
 		${PREFIX}/share/examples/dspam/dspam.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dspam
-	${INSTALL_DATA} ${WRKSRC}/{README,UPGRADING,RELEASE.NOTES,doc/*.txt} ${PREFIX}/share/doc/dspam
+	${INSTALL_DATA} ${WRKSRC}/{README,UPGRADING,RELEASE.NOTES,doc/*.txt} \
+		${PREFIX}/share/doc/dspam
 .for DRIVER in mysql sqlite pgsql
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/${DRIVER}
 	${INSTALL_DATA} ${WRKSRC}/src/tools.${DRIVER}_drv/*.sql \
 		${EXAMPLESDIR}/${DRIVER}
 .endfor
-
 
 .include <bsd.port.mk>
