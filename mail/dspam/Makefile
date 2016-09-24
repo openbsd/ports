@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2016/09/24 08:12:11 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -13,9 +13,9 @@ PKGNAME-$p =	dspam-$p-${VERSION}
 FULLPKGNAME-$p = dspam-$p-${VERSION}
 FULLPKGPATH-$p = ${PKGPATH},-$p
 .endfor
-REVISION-main =		4
-REVISION-mysql =	3
-REVISION-pgsql =	2
+REVISION-main =		5
+REVISION-mysql =	4
+REVISION-pgsql =	3
 
 SHARED_LIBS =	dspam	9.0
 CATEGORIES =	mail
@@ -30,12 +30,10 @@ MAINTAINER =	Todd T. Fries <todd@OpenBSD.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -mysql -pgsql
-WANTLIB = crypto m pthread
+WANTLIB = m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
 
 LIBTOOL_FLAGS =	--tag=disable-static
-LIB_DEPENDS-main+=	databases/sqlite3
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =		Yes
 CONFIGURE_ARGS +=	--with-dspam-home=/var/dspam \
@@ -68,16 +66,18 @@ ERRORS += "Fatal: choose either domainscale or largescale, not both"
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/mariadb
-WANTLIB-mysql=		${WANTLIB} dspam z ssl stdc++ lib/mysql/mysqlclient
+WANTLIB-mysql=		${WANTLIB} crypto dspam z ssl stdc++ lib/mysql/mysqlclient
 
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/postgresql
-WANTLIB-pgsql=		${WANTLIB} c dspam pq ssl
+WANTLIB-pgsql=		${WANTLIB} c crypto dspam pq ssl
+
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			databases/sqlite3
 
 .if ${FLAVOR:Mclamav}
 CONFIGURE_ARGS +=	--enable-clamav
-LIB_DEPENDS-main+=	security/clamav
-WANTLIB-main+=		clamav>=1
+RUN_DEPENDS-main+=	security/clamav
 .endif
 
 .if ${FLAVOR:Mldap}
@@ -85,7 +85,7 @@ CONFIGURE_ARGS +=	--enable-external-lookup
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS +=		databases/openldap
-WANTLIB +=		ssl sasl2 ldap-2.4 lber-2.4
+WANTLIB +=		crypto ssl sasl2 ldap-2.4 lber-2.4
 .endif
 
 .if ${FLAVOR:Mdomainscale}
