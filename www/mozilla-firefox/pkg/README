@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2016/04/27 13:50:27 landry Exp $
+$OpenBSD: README,v 1.15 2016/09/24 14:46:45 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -57,3 +57,15 @@ To instruct Firefox to use Kerberos for specific domains, open
 'about:config' and modify the following key:
 
 network.negotiate-auth.trusted-uris: .example.com
+
+Multi-processus (e10s)
+======================
+Firefox has a multi-processus feature (https://wiki.mozilla.org/Electrolysis),
+currently not enabled by default as of 49, but if you want to test/enable it
+you can:
+- create a new about:config pref named browser.tabs.remote.force-enable
+  and set it to true
+- set browser.tabs.remote.autostart to true
+
+Restart the browser, and check about:support - it should say '1/1 (Enabled by
+user)' next to 'Multiprocess Windows'.
