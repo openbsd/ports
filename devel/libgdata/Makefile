@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2016/06/30 11:52:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2016/09/24 12:17:06 jasper Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.17.5
+GNOME_VERSION=		0.17.6
 
 SHARED_LIBS +=  gdata                20.0     # 23.3
 
