@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2016/09/19 17:09:37 edd Exp $
+# $OpenBSD: Makefile,v 1.44 2016/09/24 07:32:32 sthen Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.1.15
+REVISION =	0
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITES_GNUPG:=gnupg/}
@@ -26,6 +27,7 @@ FLAVORS = 		ldap
 FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
+			databases/sqlite3 \
 			devel/libusb1 \
 			devel/npth \
 			security/gnutls \
