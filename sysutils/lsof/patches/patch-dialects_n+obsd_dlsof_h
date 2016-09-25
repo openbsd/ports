@@ -1,17 +1,23 @@
-$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.8 2016/04/05 10:21:22 sthen Exp $
+$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.9 2016/09/25 16:46:01 sthen Exp $
 1. Unbreak build.
 2. Add support for tmpfs.
---- dialects/n+obsd/dlsof.h.orig	Tue Mar 28 22:54:15 2006
-+++ dialects/n+obsd/dlsof.h	Tue Apr  5 11:20:03 2016
-@@ -52,6 +52,7 @@
+--- dialects/n+obsd/dlsof.h.orig	Wed Mar 29 07:54:15 2006
++++ dialects/n+obsd/dlsof.h	Fri Sep 23 09:12:15 2016
+@@ -52,8 +52,12 @@
  # endif	/* defined(HASGETBOOTFILE) */
  
  #include <sys/filedesc.h>
++#include <sys/tree.h>
 +#include <sys/queue.h>
  #include <sys/mbuf.h>
-   
+-  
++ 
++#define RBT_PROTOTYPE(n, t, e, c) /* nop */
++ 
  # if	defined(HAS_LWP_H)
-@@ -150,6 +151,7 @@ struct uio;	/* dummy for function prototype in <sys/bu
+ #include <sys/lwp.h>
+ # endif	/* defined(HAS_LWP_H) */
+@@ -150,6 +154,7 @@ struct uio;	/* dummy for function prototype in <sys/bu
  struct nameidata;	/* to satisfy a function prototype in msdosfsmount.h */
  #include <msdosfs/msdosfsmount.h>
  #undef	_KERNEL
@@ -19,7 +25,7 @@ $OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.8 2016/04/05 10:21:22 sthen Exp $
  #include <msdosfs/direntry.h>
  #include <msdosfs/denode.h>
  # endif	/* defined(HASMSDOSFS) */
-@@ -416,8 +418,11 @@ struct vop_advlock_args;
+@@ -416,8 +421,11 @@ struct vop_advlock_args;
  
  # if	defined(UVM)
  #  if	defined(OPENBSDV)
@@ -33,7 +39,7 @@ $OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.8 2016/04/05 10:21:22 sthen Exp $
  #  endif	/* defined(OPENBSDV) */
  #define	FALSE	0
  #define	TRUE	1
-@@ -580,5 +585,10 @@ struct sfile {
+@@ -580,5 +588,10 @@ struct sfile {
  #define	NCACHE_NODEID	nc_vpid		/* node ID in NCACHE */
  #  endif	/* defined(HASNCVPID) */
  # endif  /* defined(HASNCACHE) */

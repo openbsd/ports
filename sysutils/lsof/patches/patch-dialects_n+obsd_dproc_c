@@ -1,7 +1,15 @@
-$OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.2 2012/03/15 21:39:53 sthen Exp $
---- dialects/n+obsd/dproc.c.orig	Wed May 11 14:54:00 2005
-+++ dialects/n+obsd/dproc.c	Sun Jan  8 20:40:43 2012
-@@ -172,7 +172,10 @@ gather_proc_info()
+$OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.3 2016/09/25 16:46:01 sthen Exp $
+--- dialects/n+obsd/dproc.c.orig	Wed May 11 22:54:00 2005
++++ dialects/n+obsd/dproc.c	Fri Sep 23 09:04:57 2016
+@@ -40,7 +40,6 @@ static char *rcsid = "$Id: dproc.c,v 1.17 2005/05/11 1
+ 
+ _PROTOTYPE(static void enter_vn_text,(KA_T va, int *n));
+ _PROTOTYPE(static void get_kernel_access,(void));
+-_PROTOTYPE(static void process_text,(KA_T vm));
+ 
+ 
+ /*
+@@ -172,7 +171,10 @@ gather_proc_info()
  	static int pofb = 0;
  #endif	/* defined(HASFSTRUCT) */
  
@@ -13,7 +21,7 @@ $OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.2 2012/03/15 21:39:53 sthen Exp $
  	struct kinfo_proc2 *p;
  #define	KVMPROCSZ2	sizeof(struct kinfo_proc2)
  #else	/* !defined(HASKVMGETPROC2) */
-@@ -183,11 +186,13 @@ gather_proc_info()
+@@ -183,11 +185,13 @@ gather_proc_info()
   * Read the process table.
   */
  
@@ -29,116 +37,59 @@ $OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.2 2012/03/15 21:39:53 sthen Exp $
  
  	if (!P) {
  	    (void) fprintf(stderr, "%s: can't read process table: %s\n",
-@@ -503,19 +508,98 @@ kread(addr, buf, len)
+@@ -271,11 +275,6 @@ gather_proc_info()
+ #endif	/* defined(OPENBSDV) && OPENBSDV>=3020 */
+ 
+ 	/*
+-	 * Save information on the text file.
+-	 */
+-	    if (p->P_VMSPACE)
+-		process_text((KA_T)p->P_VMSPACE);
+-	/*
+ 	 * Read open file structure pointers.
+ 	 */
+ 	    if (!fd.fd_ofiles || (nf = fd.fd_nfiles) <= 0)
+@@ -501,84 +500,4 @@ kread(addr, buf, len)
+ 
+ 	br = kvm_read(Kd, (u_long)addr, buf, len);
  	return((br == len) ? 0 : 1);
- }
- 
-+/*
-+ * Download vmmap_entries from the kernel into our address space.
-+ * We fix up the addr tree while downloading.
-+ *
-+ * Returns: the size of the tree on success, or -1 on failure.
-+ * On failure, *rptr needs to be passed to unload_vmmap_entries to free
-+ * the lot.
-+ */
-+ssize_t
-+load_vmmap_entries(KA_T kptr, struct vm_map_entry **rptr,
-+    struct vm_map_entry *parent)
-+{
-+	struct vm_map_entry *entry;
-+	KA_T left_kptr, right_kptr;
-+	ssize_t left_sz;
-+	ssize_t right_sz;
- 
-+	if (kptr == 0)
-+		return 0;
-+
-+	/* Need space. */
-+	entry = malloc(sizeof(*entry));
-+	if (entry == NULL)
-+		return -1;
-+
-+	/* Download entry at kptr. */
-+	if (!kread(kptr, (char *)entry, sizeof(*entry))) {
-+		free(entry);
-+		return -1;
-+	}
-+
-+	/*
-+	 * Update addr pointers to have sane values in this address space.
-+	 * We save the kernel pointers in {left,right}_kptr, so we have them
-+	 * available to download children.
-+	 */
-+	left_kptr = (KA_T) RB_LEFT(entry, daddrs.addr_entry);
-+	right_kptr = (KA_T) RB_RIGHT(entry, daddrs.addr_entry);
-+	RB_LEFT(entry, daddrs.addr_entry) =
-+	    RB_RIGHT(entry, daddrs.addr_entry) = NULL;
-+	/* Fill in parent pointer. */
-+	RB_PARENT(entry, daddrs.addr_entry) = parent;
-+
-+	/*
-+	 * Consistent state reached, fill in *rptr.
-+	 */
-+	*rptr = entry;
-+
-+	/*
-+	 * Download left, right.
-+	 * On failure, our map is in a state that can be handled by
-+	 * unload_vmmap_entries.
-+	 */
-+	left_sz = load_vmmap_entries(left_kptr,
-+	    &RB_LEFT(entry, daddrs.addr_entry), entry);
-+	if (left_sz == -1)
-+		return -1;
-+	right_sz = load_vmmap_entries(right_kptr,
-+	    &RB_RIGHT(entry, daddrs.addr_entry), entry);
-+	if (right_sz == -1)
-+		return -1;
-+
-+	return 1 + left_sz + right_sz;
-+}
-+
- /*
-+ * Free the vmmap entries in the given tree.
-+ */
-+void
-+unload_vmmap_entries(struct vm_map_entry *entry)
-+{
-+	if (entry == NULL)
-+		return;
-+
-+	unload_vmmap_entries(RB_LEFT(entry, daddrs.addr_entry));
-+	unload_vmmap_entries(RB_RIGHT(entry, daddrs.addr_entry));
-+	free(entry);
-+}
-+
-+/*
-  * process_text() - process text information
-  */
- void
- process_text(vm)
- 	KA_T vm;				/* kernel vm space pointer */
- {
+-}
+-
+-
+-/*
+- * process_text() - process text information
+- */
+-void
+-process_text(vm)
+-	KA_T vm;				/* kernel vm space pointer */
+-{
 -	int i, j;
-+	int j;
- 	KA_T ka;
- 	int n = 0;
- 	struct vm_map_entry vmme, *e;
- 	struct vmspace vmsp;
-+	struct uvm_map_addr root;
- 
- #if	!defined(UVM)
- 	struct pager_struct pg;
-@@ -536,20 +620,12 @@ process_text(vm)
- 	    return;
- #endif	/* !defined(UVM) */
- 
+-	KA_T ka;
+-	int n = 0;
+-	struct vm_map_entry vmme, *e;
+-	struct vmspace vmsp;
+-
+-#if	!defined(UVM)
+-	struct pager_struct pg;
+-	struct vm_object vmo;
+-#endif	/* !defined(UVM) */
+-
+-/*
+- * Read the vmspace structure for the process.
+- */
+-	if (kread(vm, (char *)&vmsp, sizeof(vmsp)))
+-	    return;
+-/*
+- * Read the vm_map structure.  Search its vm_map_entry structure list.
+- */
+-
+-#if	!defined(UVM)
+-	if (!vmsp.vm_map.is_main_map)
+-	    return;
+-#endif	/* !defined(UVM) */
+-
 -	for (i = 0; i < vmsp.vm_map.nentries; i++) {
-+	RB_INIT(&root);
-+	if (load_vmmap_entries((KA_T) RB_ROOT(&vmsp.vm_map.addr),
-+	    &RB_ROOT(&root), NULL) == -1)
-+		goto do_unload;
- 
+-
 -	/*
 -	 * Read the next vm_map_entry.
 -	 */
@@ -151,27 +102,35 @@ $OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.2 2012/03/15 21:39:53 sthen Exp $
 -		if (kread(ka, (char *)e, sizeof(vmme)))
 -		    return;
 -	    }
-+	RB_FOREACH(e, uvm_map_addr, &root) {
- 
- #if	defined(UVM)
- 	/*
-@@ -581,4 +657,19 @@ process_text(vm)
- #endif	/* defined(UVM) */
- 
- 	}
-+
-+do_unload:
-+	unload_vmmap_entries(RB_ROOT(&root));
+-
+-#if	defined(UVM)
+-	/*
+-	 * Process the uvm_obj pointer of a UVM map entry with a UVM_ET_OBJ
+-	 * type as a vnode pointer.
+-	 */
+-	    if ((e->etype > UVM_ET_OBJ) && e->object.uvm_obj)
+-		(void) enter_vn_text((KA_T)e->object.uvm_obj, &n);
+-#else	/* !defined(UVM) */
+-	/*
+-	 * Read the map entry's object and the object's shadow.
+-	 * Look for a PG_VNODE pager handle.
+-	 */
+-	    if (e->is_a_map || e->is_sub_map)
+-		continue;
+-	    for (j = 0, ka = (KA_T)e->object.vm_object;
+-		 j < 2 && ka;
+-		 j++, ka = (KA_T)vmo.shadow)
+-	    {
+-		if (kread(ka, (char *)&vmo, sizeof(vmo)))
+-		    break;
+-		if (!(ka = (KA_T)vmo.pager)
+-		||   kread(ka, (char *)&pg, sizeof(pg)))
+-		    continue;
+-		if (!pg.pg_handle || pg.pg_type != PG_VNODE)
+-		    continue;
+-		(void) enter_vn_text((KA_T)pg.pg_handle, &n);
+-	    }
+-#endif	/* defined(UVM) */
+-
+-	}
  }
-+
-+/*
-+ * Don't implement address comparison.
-+ */
-+static __inline int
-+no_impl(void *p, void *q)
-+{
-+	abort(); /* Should not be called. */
-+	return 0;
-+}
-+
-+RB_GENERATE(uvm_map_addr, vm_map_entry, daddrs.addr_entry, no_impl);
