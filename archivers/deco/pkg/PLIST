@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/05/11 20:31:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/09/25 15:46:51 sthen Exp $
 @conflict deco-*
 @bin bin/deco
 share/deco/
@@ -15,6 +15,7 @@ share/deco/x/alz/
 share/deco/x/alz/extract
 share/deco/x/ape/
 share/deco/x/ape/extract
+share/deco/x/apk
 share/deco/x/ar
 share/deco/x/arc/
 share/deco/x/arc/extract

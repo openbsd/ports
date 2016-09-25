@@ -1,30 +1,25 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/25 15:46:51 sthen Exp $
 
 COMMENT=	extract various archive file formats
 
-V=		1.6.3
-ARCHIVE_V=	1.6
-DISTNAME=	deco-${V}
+V=		1.6.4
+ARCHIVE_V=	1.7
 PKGNAME=	deco-archive-${V}
 
 CATEGORIES=	archivers
-
-HOMEPAGE= 	http://hartlich.com/deco/
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	${HOMEPAGE}/download/
-MASTER_SITES0=	${HOMEPAGE}/archive/download/
+MASTER_SITES=	https://github.com/peha/
+MASTER_SITES0=	https://github.com/peha/
 
-ARCHIVE_DISTFILE=	deco-archive-${ARCHIVE_V}${EXTRACT_SUFX}
+DISTFILES=	deco-{deco/archive/}${V}${EXTRACT_SUFX} \
+		deco-archive-{deco-archive/archive/}${ARCHIVE_V}${EXTRACT_SUFX}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${ARCHIVE_DISTFILE}:0
-
-DECO=		${WRKDIR}/${DISTNAME}
+DECO=		${WRKDIR}/deco-${V}
 ARCHIVE=	${WRKDIR}/deco-archive-${ARCHIVE_V}
 
 RUN_DEPENDS=	archivers/arc \
@@ -51,7 +46,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/deco
 	${INSTALL_PROGRAM} ${DECO}/deco ${PREFIX}/bin
-.for i in CREDITS LICENSE Makefile NEWS README config.mk
+.for i in LICENSE Makefile NEWS README.md config.mk
 	rm ${ARCHIVE}/${i}
 .endfor
 	cd ${ARCHIVE} && cp -R * ${PREFIX}/share/deco
