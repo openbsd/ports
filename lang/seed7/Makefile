@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/09/26 12:38:54 naddy Exp $
 
 V =		20160130
 COMMENT =	high-level, extensible programming language
@@ -7,7 +7,7 @@ PKGNAME =	seed7-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	lang
 BROKEN-hppa =	SIGILL during build
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://seed7.sourceforge.net/
 
@@ -15,14 +15,13 @@ HOMEPAGE =	http://seed7.sourceforge.net/
 # Runtime libraries: LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 c m ncurses sqlite3
+WANTLIB += X11 c m ncurses
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 
-LIB_DEPENDS =	databases/sqlite3
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LDFLAGS="-L${X11BASE}/lib" \
-		SYSTEM_LIBS="-lm -lsqlite3"
+		SYSTEM_LIBS="-lm"
 MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
 		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile
