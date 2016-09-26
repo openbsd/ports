@@ -1,0 +1,43 @@
+$OpenBSD: patch-stuff_poutput-sdl_c,v 1.1.1.1 2016/09/26 06:56:57 fcambus Exp $
+
+Enable key-repeat for SDL, and ignore NUM-lock status (Can be wiped when
+ocp 0.1.22 is released)
+
+--- stuff/poutput-sdl.c.orig	Thu Nov 17 22:46:08 2011
++++ stuff/poutput-sdl.c	Thu Sep 15 18:40:34 2016
+@@ -550,6 +550,8 @@ int sdl_init(void)
+ 		return 1;
+ 	}
+ 
++	SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
++
+ 	plCurrentFont = cfGetProfileInt("x11", "font", _8x16, 10);
+ 	if (plCurrentFont > _FONT_MAX)
+ 		plCurrentFont = _8x16;
+@@ -1580,7 +1582,7 @@ static int ekbhit(void)
+ 			{
+ 				int index;
+ 
+-				if ((event.key.keysym.mod & KMOD_CTRL) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT))))
++				if ((event.key.keysym.mod & KMOD_CTRL) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT|KMOD_NUM))))
+ 				{
+ 					for (index=0;translate_ctrl[index].OCP!=0xffff;index++)
+ 						if (translate_ctrl[index].SDL==event.key.keysym.sym)
+@@ -1591,7 +1593,7 @@ static int ekbhit(void)
+ 					break;
+ 				}
+ 
+-				if ((event.key.keysym.mod & KMOD_SHIFT) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT))))
++				if ((event.key.keysym.mod & KMOD_SHIFT) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT|KMOD_NUM))))
+ 				{
+ 					for (index=0;translate_shift[index].OCP!=0xffff;index++)
+ 						if (translate_shift[index].SDL==event.key.keysym.sym)
+@@ -1602,7 +1604,7 @@ static int ekbhit(void)
+ 					/* no break here */
+ 				}
+ 
+-				if ((event.key.keysym.mod & KMOD_ALT) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT))))
++				if ((event.key.keysym.mod & KMOD_ALT) && (!(event.key.keysym.mod & ~(KMOD_CTRL|KMOD_SHIFT|KMOD_ALT|KMOD_NUM))))
+ 				{
+ 					/* TODO, handle ALT-ENTER */
+ 					if (event.key.keysym.sym==SDLK_RETURN)
