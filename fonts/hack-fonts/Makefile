@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/22 00:54:50 mmcc Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/26 20:25:34 fcambus Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		typeface designed for source code
 
-V =			2.019
+V =			2.020
 DISTNAME =		Hack-v${V:S/./_/}-otf
 PKGNAME =		hack-fonts-$V
 CATEGORIES =		fonts
