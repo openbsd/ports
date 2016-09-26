@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_makefile,v 1.15 2016/08/03 07:33:31 benoit Exp $
---- src/makefile.orig	Mon Aug  1 10:10:51 2016
-+++ src/makefile	Wed Aug  3 08:47:22 2016
+$OpenBSD: patch-src_makefile,v 1.16 2016/09/26 07:44:02 benoit Exp $
+--- src/makefile.orig	Mon Aug  8 21:28:29 2016
++++ src/makefile	Mon Sep 26 09:13:41 2016
 @@ -12,13 +12,13 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
