@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2016/08/10 15:54:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2016/09/26 10:48:39 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -444,6 +444,7 @@ share/vim/${P}/ftplugin/rrst.vim
 share/vim/${P}/ftplugin/rst.vim
 share/vim/${P}/ftplugin/ruby.vim
 share/vim/${P}/ftplugin/sass.vim
+share/vim/${P}/ftplugin/scala.vim
 share/vim/${P}/ftplugin/scheme.vim
 share/vim/${P}/ftplugin/screen.vim
 share/vim/${P}/ftplugin/scss.vim
@@ -582,6 +583,7 @@ share/vim/${P}/indent/rrst.vim
 share/vim/${P}/indent/rst.vim
 share/vim/${P}/indent/ruby.vim
 share/vim/${P}/indent/sass.vim
+share/vim/${P}/indent/scala.vim
 share/vim/${P}/indent/scheme.vim
 share/vim/${P}/indent/scss.vim
 share/vim/${P}/indent/sdl.vim
@@ -661,6 +663,7 @@ share/vim/${P}/keymap/polish-slash_iso-8859-2.vim
 share/vim/${P}/keymap/polish-slash_utf-8.vim
 share/vim/${P}/keymap/russian-dvorak.vim
 share/vim/${P}/keymap/russian-jcuken.vim
+share/vim/${P}/keymap/russian-jcukenmac.vim
 share/vim/${P}/keymap/russian-jcukenwin.vim
 share/vim/${P}/keymap/russian-jcukenwintype.vim
 share/vim/${P}/keymap/russian-yawerty.vim
@@ -1239,6 +1242,7 @@ share/vim/${P}/syntax/samba.vim
 share/vim/${P}/syntax/sas.vim
 share/vim/${P}/syntax/sass.vim
 share/vim/${P}/syntax/sather.vim
+share/vim/${P}/syntax/scala.vim
 share/vim/${P}/syntax/scheme.vim
 share/vim/${P}/syntax/scilab.vim
 share/vim/${P}/syntax/screen.vim

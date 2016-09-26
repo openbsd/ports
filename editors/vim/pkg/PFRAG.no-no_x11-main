@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.7 2014/10/14 13:52:19 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.8 2016/09/26 10:48:39 sthen Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -15,7 +15,19 @@ bin/rgvim
 @man man/man1/rgview.1
 @man man/man1/rgvim.1
 share/applications/gvim.desktop
+share/icons/hicolor/48x48/apps/gvim.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
+share/icons/locolor/16x16/apps/gvim.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
+share/icons/locolor/32x32/apps/gvim.png
 share/pixmaps/
 share/pixmaps/vim.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

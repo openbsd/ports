@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.151 2016/09/13 22:38:14 rpe Exp $
+# $OpenBSD: Makefile,v 1.152 2016/09/26 10:48:39 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		7.4.2181
-REVISION=	0
+V=		8.0.0004
 DISTNAME=	vim-$V
 DISTFILES=	vim-$V{v$V}.tar.gz
 PKGNAME-main=	vim-$V
@@ -167,6 +166,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/runtime/vim48x48.png ${PREFIX}/share/pixmaps/vim.png
 
 RUN_DEPENDS+= devel/desktop-file-utils
+RUN_DEPENDS+= x11/gtk+3,-guic
 .endif
 
 .include <bsd.port.mk>
