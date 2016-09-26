@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2016/08/17 06:57:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.161 2016/09/26 13:10:39 sthen Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -71,7 +71,7 @@ CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
 			--with-iconv=${LOCALBASE} \
 			--with-tcltk=${MODTK_BIN} \
 			--with-python=no
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			DIFF=diff TAR=tar
 
