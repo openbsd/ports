@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.10 2016/05/13 10:47:50 dcoppa Exp $
---- setup.py.orig	Wed Apr 13 08:00:17 2016
-+++ setup.py	Thu May  5 14:19:18 2016
-@@ -47,10 +47,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
+$OpenBSD: patch-setup_py,v 1.11 2016/09/26 16:01:52 dcoppa Exp $
+--- setup.py.orig	Tue Sep 20 16:38:35 2016
++++ setup.py	Mon Sep 26 18:00:13 2016
+@@ -59,10 +59,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
      params = py2exe_params
  else:
      files_spec = [
