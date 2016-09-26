@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.375 2016/09/03 10:48:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.376 2016/09/26 06:58:36 fcambus Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -139,6 +139,7 @@
      SUBDIR += normalize
      SUBDIR += nosefart
      SUBDIR += nspmod
+     SUBDIR += ocp
      SUBDIR += oggtag
      SUBDIR += openal
      SUBDIR += opencore-amr
