@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/09/07 12:33:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/09/27 07:58:27 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -978,11 +978,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-examples.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-synopsis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-default-roles.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-security-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/delete-security-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/describe-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/describe-step.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/get.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-security-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-steps.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/modify-cluster-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/put.rst
