@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/27 08:51:24 fcambus Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20160521
-REVISION =	0
+GH_TAGNAME =	20160913
 
 CATEGORIES =	audio x11
 
