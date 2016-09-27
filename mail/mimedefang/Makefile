@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2016/04/12 15:20:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/09/27 08:03:30 ajacoutot Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.78
+DISTNAME=	mimedefang-2.79
 CATEGORIES=	mail
-REVISION=	0
 
 HOMEPAGE=	http://www.mimedefang.org/
 MASTER_SITES=	${HOMEPAGE}static/
@@ -14,7 +13,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m milter perl pthread util
+WANTLIB += c m milter perl pthread
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-IO-stringy \
@@ -45,7 +44,7 @@ post-extract:
 		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
 
 pre-configure:
-	perl -pi -e 's,/var/lib,/var/db,g' ${WRKSRC}/mimedefang.pl.in
+	sed -i 's,/var/lib,/var/db,g' ${WRKSRC}/mimedefang.pl.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
