@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/26 06:56:57 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2016/09/27 12:42:27 fcambus Exp $
 
 COMMENT =	UNIX port of Open Cubic Player
 
@@ -16,6 +16,8 @@ WANTLIB +=	FLAC SDL c iconv m mad ncurses ogg pthread sidplay
 WANTLIB +=	stdc++ vorbis vorbisfile z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=opencubicplayer/}
+
+BUILD_DEPENDS =	devel/desktop-file-utils
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
