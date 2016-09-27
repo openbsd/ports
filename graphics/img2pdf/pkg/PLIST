@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 17:54:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/09/27 14:17:00 czarkoff Exp $
 bin/img2pdf
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}img2pdf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}jp2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/img2pdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/img2pdf.py
-lib/python${MODPY_VERSION}/site-packages/img2pdf.pyc
 lib/python${MODPY_VERSION}/site-packages/jp2.py
-lib/python${MODPY_VERSION}/site-packages/jp2.pyc
-share/doc/img2pdf/
-share/doc/img2pdf/README.md
