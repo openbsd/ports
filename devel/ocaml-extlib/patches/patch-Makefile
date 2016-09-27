@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Aug 29 19:24:19 2015
++++ Makefile	Wed Jul  6 14:18:30 2016
+@@ -1,5 +1,4 @@
+ 
+-VERSION:=$(shell git describe --always --long)
+ RELEASE:=1.7.0
+ 
+ ifndef VERSION
+@@ -9,6 +8,8 @@
+ .SUFFIXES:
+ .PHONY: build clean test doc release install
+ 
++all:
++	$(MAKE) -C src all
+ build:
+ 	$(MAKE) -C src build
+ 
