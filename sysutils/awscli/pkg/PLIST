@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/09/27 07:58:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/09/28 07:14:05 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -625,7 +625,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-vi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-identity-id-format.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnect-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-locations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-gateways.rst
