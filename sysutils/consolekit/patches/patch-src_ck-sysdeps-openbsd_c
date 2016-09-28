@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.21 2016/09/28 19:26:13 ajacoutot Exp $
+
+https://github.com/ConsoleKit2/ConsoleKit2/pull/83
+
+--- src/ck-sysdeps-openbsd.c.orig	Wed Sep 28 14:08:07 2016
++++ src/ck-sysdeps-openbsd.c	Wed Sep 28 14:08:09 2016
+@@ -248,7 +248,7 @@ ck_unix_pid_get_env_hash (pid_t pid)
+         struct kinfo_proc p;
+         int               i;
+ 
+-        kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
++        kd = kvm_openfiles (NULL, NULL, NULL, KVM_NO_FILES, errbuf);
+         if (kd == NULL) {
+ 		g_warning ("kvm_openfiles failed: %s", errbuf);
+                 return NULL;
