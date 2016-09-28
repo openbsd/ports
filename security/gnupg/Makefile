@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2016/08/26 08:27:48 jca Exp $
+# $OpenBSD: Makefile,v 1.102 2016/09/28 19:33:37 jca Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
 DISTNAME=	gnupg-1.4.21
+REVISION=	0
 CATEGORIES=	security
 
 # restrict, not compatible with gnupg-2.
@@ -17,10 +18,12 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES= devel/gettext
+WANTLIB += bz2 c crypto curl iconv idn intl nghttp2 readline ssl
+WANTLIB += termcap z
+
 LIB_DEPENDS=	archivers/bzip2 \
+		devel/gettext \
 		net/curl
-WANTLIB=	c z readline termcap ssl crypto idn bz2>=10 curl>=3 nghttp2
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
