@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/09/28 21:10:13 stsp Exp $
 
 COMMENT =		platform game set in seville and in space
 VERSION = 		1.0.3
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB = 	alleg c freetype m ogg png pthread stdc++ vorbis vorbisfile z
 
-MASTER_SITES =		http://computeremuzone.com/cezgs/remakes/
+MASTER_SITES =		http://computeremuzone.com/pc/juegos/
 EXTRACT_SUFX = 		.tar.bz2
 # XXX upstream distfile has no version number
 DISTFILES = 		Capitan${EXTRACT_SUFX}
