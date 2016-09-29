@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2016/09/29 23:49:58 juanfra Exp $
+--- src/Makefile.in.orig	Sat Sep 17 02:15:49 2016
++++ src/Makefile.in	Sun Sep 25 02:40:41 2016
+@@ -1686,7 +1686,8 @@ EXTLDADD = @ALLOCA@ \
+ 	@LIBCARES_LIBS@ \
+ 	@WSLAY_LIBS@ \
+ 	@TCMALLOC_LIBS@ \
+-	@JEMALLOC_LIBS@
++	@JEMALLOC_LIBS@ \
++	@LTLIBINTL@
+ 
+ LDADD = libaria2.la $(am__append_48)
+ @ENABLE_LIBARIA2_TRUE@libaria2_la_LIBADD = $(EXTLDADD)
