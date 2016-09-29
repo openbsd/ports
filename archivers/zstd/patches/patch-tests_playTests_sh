@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_playTests_sh,v 1.1.1.1 2016/09/29 19:31:29 juanfra Exp $
+--- tests/playTests.sh.orig	Wed Sep 28 00:15:03 2016
++++ tests/playTests.sh	Wed Sep 28 21:51:57 2016
+@@ -31,9 +31,12 @@ case "$OS" in
+     ;;
+ esac
+ 
+-MD5SUM="md5sum"
+-if [[ "$OSTYPE" == "darwin"* ]]; then
++if [ "$OSTYPE" == "darwin"* ]; then
+     MD5SUM="md5 -r"
++elif [ "$(uname -s)" == "OpenBSD" ]; then
++    MD5SUM="md5"
++else
++    MD5SUM="md5sum"
+ fi
+ 
+ $ECHO "\nStarting playTests.sh isWindows=$isWindows"
+@@ -123,7 +126,7 @@ rm ./*.tmp ./*.zstd
+ $ECHO "frame concatenation tests completed"
+ 
+ 
+-if [ "$isWindows" = false ] ; then
++if [ "$isWindows" = false ] && [ "$(uname -s)" != "OpenBSD" ]; then
+ $ECHO "\n**** flush write error test **** "
+ 
+ $ECHO "$ECHO foo | $ZSTD > /dev/full"
