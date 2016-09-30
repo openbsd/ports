@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1537 2016/09/09 10:40:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1538 2016/09/30 11:30:45 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1236,6 +1236,8 @@
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle
+     SUBDIR += py-codestyle
+     SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama
      SUBDIR += py-colorama,python3
      SUBDIR += py-configargparse
