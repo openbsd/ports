@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2016/04/21 08:13:22 dcoppa Exp $
---- src/Makefile.in.orig	Wed Apr 20 10:05:48 2016
-+++ src/Makefile.in	Thu Apr 21 10:06:21 2016
+$OpenBSD: patch-src_Makefile_in,v 1.9 2016/09/30 13:32:19 dcoppa Exp $
+--- src/Makefile.in.orig	Fri Sep 30 10:38:16 2016
++++ src/Makefile.in	Fri Sep 30 15:29:23 2016
 @@ -486,7 +486,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
- 	towitoko/COPYING towitoko/README openct/LICENSE \
+ 	towitoko/COPYING towitoko/README openct/LICENSE openct/README \
  	convert_version.pl 92_pcscd_ccid.rules
  
 -INSTALL_UDEV_RULE_FILE = @/bin/echo -e "\n\33[01;31m***************\n" ; echo "copy the src/92_pcscd_ccid.rules file in udev directory (/etc/udev/rules.d/)" ; /bin/echo -e "\n***************\n\33[0m"
