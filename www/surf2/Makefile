@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/18 18:30:57 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2016/09/30 23:47:28 czarkoff Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf2-0.6.20160708
-REVISION =	0
+DISTNAME =	surf2-0.6.20160922
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -16,7 +15,7 @@ WANTLIB += X11 c gdk-3 glib-2.0 gobject-2.0 gtk-3 webkit2gtk-4.0
 
 GH_ACCOUNT =	czarkoff
 GH_PROJECT =	surf2
-GH_COMMIT =	c64c368d86a4319e43b7ff3d73a4afe0f4e8adf0
+GH_COMMIT =	da5290a41aac4eabef83f6b88039f44d28b0ea00
 
 LIB_DEPENDS =	www/webkitgtk4
 RUN_DEPENDS =	devel/xdg-utils \
