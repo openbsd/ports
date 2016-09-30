@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_pkcs11_openssl_c,v 1.1 2016/09/30 13:48:38 dcoppa Exp $
+
+commit 7b9bd6003082a60bbc4452f048ca8a7b839025f1
+Author: Leonardo Brondani Schenkel <leonardo@schenkel.net>
+Date:   Mon Sep 26 14:54:58 2016 +0200
+
+openssl: allow building against libressl
+
+--- src/pkcs11/openssl.c.orig	Fri Sep 30 15:33:03 2016
++++ src/pkcs11/openssl.c	Fri Sep 30 15:33:38 2016
+@@ -180,7 +180,7 @@ sc_pkcs11_register_openssl_mechanisms(struct sc_pkcs11
+ 	e = ENGINE_by_id("gost");
+ 	if (!e)
+ 	{
+-#if !defined(OPENSSL_NO_STATIC_ENGINE) && !defined(OPENSSL_NO_GOST)
++#if !defined(OPENSSL_NO_STATIC_ENGINE) && !defined(OPENSSL_NO_GOST) && !defined(LIBRESSL_VERSION_NUMBER)
+ 		ENGINE_load_gost();
+ 		e = ENGINE_by_id("gost");
+ #else

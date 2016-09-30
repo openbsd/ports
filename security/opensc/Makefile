@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2016/09/20 12:56:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2016/09/30 13:48:38 dcoppa Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 VERSION=	0.16.0
 DISTNAME=	OpenSC-${VERSION}
 PKGNAME=	opensc-${VERSION}
-REVISION=	5
+REVISION=	6
 GH_ACCOUNT=	OpenSC
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	${VERSION}
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
 		--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC -DOPENSSL_NO_STATIC_ENGINE"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC"
 
 FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 		sysconfdir="${PREFIX}/share/examples/opensc/"
