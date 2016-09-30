@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/08/21 13:45:46 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/09/30 20:12:59 jasper Exp $
 bin/ansible
 bin/ansible-console
 bin/ansible-doc
@@ -691,6 +691,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/packaging/os/rpm_k
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/packaging/os/rpm_key.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/packaging/os/yum.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/packaging/os/yum.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/shippable.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/source_control/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/source_control/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/source_control/__init__.pyc
@@ -728,13 +729,18 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/system/sysctl.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/system/user.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/system/user.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test-docs.sh
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test-requirements.txt
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/unit/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/unit/cloud/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/unit/cloud/openstack/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/unit/cloud/openstack/test_os_server.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/unit/cloud/openstack/test_os_server.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/shippable/
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/shippable/ci.sh
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/shippable/sanity-skip-python24.txt
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/shippable/sanity-test-python24.txt
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/test/utils/shippable/sanity.sh
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/__init__.pyc
@@ -1448,6 +1454,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/packaging/os/zyp
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/packaging/os/zypper.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/packaging/os/zypper_repository.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/packaging/os/zypper_repository.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/shippable.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/source_control/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/source_control/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/source_control/__init__.pyc
@@ -1526,7 +1533,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/system/ufw.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/system/ufw.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/system/zfs.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/system/zfs.pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test-docs.sh
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/shippable/
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/shippable/ci.sh
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/shippable/sanity-skip-python24.txt
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/shippable/sanity-test-python24.txt
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/test/utils/shippable/sanity.sh
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/web_infrastructure/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/web_infrastructure/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/web_infrastructure/__init__.pyc
