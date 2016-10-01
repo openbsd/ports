@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/19 17:16:32 edd Exp $
+# $OpenBSD: Makefile,v 1.20 2016/10/01 13:56:26 naddy Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -13,7 +13,7 @@ PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
 
-MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
+MASTER_SITES = 	${MASTER_SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	http://www.gnupg.org/related_software/pinentry/index.en.html
 

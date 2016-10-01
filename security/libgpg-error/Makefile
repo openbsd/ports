@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/07/30 14:22:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/10/01 13:56:26 naddy Exp $
 
 COMMENT=		error codes for GnuPG related software
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c iconv intl
 
-MASTER_SITES=		${MASTER_SITES_GNUPG:=libgpg-error/}
+MASTER_SITES=		${MASTER_SITE_GNUPG:=libgpg-error/}
 
 LIB_DEPENDS=		devel/gettext
 

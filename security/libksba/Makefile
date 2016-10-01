@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/28 19:33:37 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/01 13:56:26 naddy Exp $
 
 COMMENT = 	X.509 library
 
@@ -8,7 +8,7 @@ CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 0.2	# 19.6
 
-MASTER_SITES =	${MASTER_SITES_GNUPG:=libksba/}
+MASTER_SITES =	${MASTER_SITE_GNUPG:=libksba/}
 
 HOMEPAGE = 	http://www.gnupg.org/related_software/libksba
 

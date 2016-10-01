@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/18 10:41:05 pea Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 13:56:26 naddy Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=		pthread
 
-MASTER_SITES=		${MASTER_SITES_GNUPG:=npth/}
+MASTER_SITES=		${MASTER_SITE_GNUPG:=npth/}
 
 CONFIGURE_STYLE=	gnu
 
