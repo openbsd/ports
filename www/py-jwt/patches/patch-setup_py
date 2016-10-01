@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.1 2015/06/30 13:42:16 sthen Exp $
---- setup.py.orig	Tue Jun 30 08:58:03 2015
-+++ setup.py	Tue Jun 30 08:58:06 2015
-@@ -61,7 +61,6 @@ setup(
+$OpenBSD: patch-setup_py,v 1.2 2016/10/01 15:14:45 danj Exp $
+--- setup.py.orig	Thu Jun 30 00:07:44 2016
++++ setup.py	Fri Sep 30 18:47:10 2016
+@@ -65,7 +65,6 @@ setup(
          'Topic :: Utilities',
      ],
      test_suite='tests',
--    setup_requires=['pytest-runner'],
+-    setup_requires=pytest_runner,
      tests_require=tests_require,
      extras_require=dict(
          test=tests_require,

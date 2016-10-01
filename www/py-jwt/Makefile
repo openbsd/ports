@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/05 06:46:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 15:14:45 danj Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 1.4.0
+MODPY_EGG_VERSION = 1.4.2
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
