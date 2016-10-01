@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/04/07 10:10:28 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/10/01 12:56:54 stsp Exp $
 @bin bin/crawl-ss
 @man man/man6/crawl-ss.6
 share/crawl/
@@ -6,12 +6,9 @@ share/crawl/dat/
 share/crawl/dat/clua/
 share/crawl/dat/clua/autofight.lua
 share/crawl/dat/clua/automagic.lua
-share/crawl/dat/clua/gearset.lua
 share/crawl/dat/clua/kills.lua
 share/crawl/dat/clua/runrest.lua
 share/crawl/dat/clua/stash.lua
-share/crawl/dat/clua/trapwalk.lua
-share/crawl/dat/clua/wield.lua
 share/crawl/dat/database/
 share/crawl/dat/database/FAQ.txt
 share/crawl/dat/database/el/
@@ -40,6 +37,7 @@ share/crawl/dat/database/wpnnoise.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
 share/crawl/dat/defaults/food_colouring.txt
+share/crawl/dat/defaults/glyph_colours.txt
 share/crawl/dat/defaults/menu_colours.txt
 share/crawl/dat/defaults/messages.txt
 share/crawl/dat/defaults/misc.txt
@@ -54,6 +52,7 @@ share/crawl/dat/des/altar/lugonu_bribe.des
 share/crawl/dat/des/altar/nemelex_the_gamble.des
 share/crawl/dat/des/altar/okawaru_arena.des
 share/crawl/dat/des/altar/overflow.des
+share/crawl/dat/des/altar/pakellas_experiments.des
 share/crawl/dat/des/altar/trog_burn_book.des
 share/crawl/dat/des/altar/trog_wizard.des
 share/crawl/dat/des/altar/vehumet_trees.des
@@ -94,16 +93,20 @@ share/crawl/dat/des/branches/vaults_rooms_hard.des
 share/crawl/dat/des/branches/vaults_rooms_standard.des
 share/crawl/dat/des/branches/zot.des
 share/crawl/dat/des/builder/
+share/crawl/dat/des/builder/alphashops.des
 share/crawl/dat/des/builder/arena.des
 share/crawl/dat/des/builder/decor.des
 share/crawl/dat/des/builder/dummy.des
 share/crawl/dat/des/builder/food.des
 share/crawl/dat/des/builder/layout.des
 share/crawl/dat/des/builder/layout_caves.des
+share/crawl/dat/des/builder/layout_cc.des
 share/crawl/dat/des/builder/layout_cellular.des
 share/crawl/dat/des/builder/layout_city.des
+share/crawl/dat/des/builder/layout_delve.des
 share/crawl/dat/des/builder/layout_forest.des
 share/crawl/dat/des/builder/layout_geoelf.des
+share/crawl/dat/des/builder/layout_geoelf_castle.des
 share/crawl/dat/des/builder/layout_grids.des
 share/crawl/dat/des/builder/layout_halls.des
 share/crawl/dat/des/builder/layout_loops.des
@@ -138,7 +141,6 @@ share/crawl/dat/des/serial/gnoll_camp.des
 share/crawl/dat/des/serial/ice.des
 share/crawl/dat/des/serial/magic_research.des
 share/crawl/dat/des/serial/park.des
-share/crawl/dat/des/serial/ponds.des
 share/crawl/dat/des/serial/serial_guide.txt
 share/crawl/dat/des/serial/sigils.des
 share/crawl/dat/des/serial/undead.des
@@ -158,7 +160,6 @@ share/crawl/dat/des/test.des
 share/crawl/dat/des/test/suite-los.des
 share/crawl/dat/des/test/suite.des
 share/crawl/dat/des/traps/
-share/crawl/dat/des/traps/beogh_trap.des
 share/crawl/dat/des/traps/boulders.des
 share/crawl/dat/des/traps/grate.des
 share/crawl/dat/des/traps/rats_trap.des
@@ -171,7 +172,6 @@ share/crawl/dat/des/tutorial/lesson4.des
 share/crawl/dat/des/tutorial/lesson5.des
 share/crawl/dat/des/variable/
 share/crawl/dat/des/variable/ambush.des
-share/crawl/dat/des/variable/ancient_champions.des
 share/crawl/dat/des/variable/arcadia.des
 share/crawl/dat/des/variable/cathedral_bats.des
 share/crawl/dat/des/variable/compat.des
@@ -185,13 +185,12 @@ share/crawl/dat/des/variable/lemuel_castle.des
 share/crawl/dat/des/variable/mini.des
 share/crawl/dat/des/variable/mini_features.des
 share/crawl/dat/des/variable/mini_monsters.des
-share/crawl/dat/des/zotdef/
-share/crawl/dat/des/zotdef/zotdef.des
 share/crawl/dat/descript/
 share/crawl/dat/descript/ability.txt
 share/crawl/dat/descript/backgrounds.txt
 share/crawl/dat/descript/branches.txt
 share/crawl/dat/descript/cards.txt
+share/crawl/dat/descript/clouds.txt
 share/crawl/dat/descript/commands.txt
 share/crawl/dat/descript/cs/
 share/crawl/dat/descript/cs/ability.txt
@@ -205,6 +204,7 @@ share/crawl/dat/descript/cs/monsters.txt
 share/crawl/dat/descript/cs/quotes.txt
 share/crawl/dat/descript/cs/species.txt
 share/crawl/dat/descript/cs/spells.txt
+share/crawl/dat/descript/status.txt
 share/crawl/dat/descript/cs/tutorial.txt
 share/crawl/dat/descript/cs/unident.txt
 share/crawl/dat/descript/cs/unrand.txt
@@ -393,7 +393,6 @@ share/crawl/dat/descript/pl/features.txt
 share/crawl/dat/descript/pl/gods.txt
 share/crawl/dat/descript/pl/hints.txt
 share/crawl/dat/descript/pl/items.txt
-share/crawl/dat/descript/pl/monsters.txt
 share/crawl/dat/descript/pl/quotes.txt
 share/crawl/dat/descript/pl/skills.txt
 share/crawl/dat/descript/pl/species.txt
@@ -523,6 +522,7 @@ share/crawl/dat/dlua/loadmaps.lua
 share/crawl/dat/dlua/luamark.lua
 share/crawl/dat/dlua/macro.lua
 share/crawl/dat/dlua/mapinit.lua
+share/crawl/dat/dlua/persist.lua
 share/crawl/dat/dlua/point.lua
 share/crawl/dat/dlua/profiler.lua
 share/crawl/dat/dlua/sanity.lua
@@ -541,9 +541,7 @@ share/crawl/dat/dlua/v_shapes.lua
 share/crawl/dat/dlua/vault.lua
 share/crawl/dat/dlua/ziggurat.lua
 share/crawl/docs/
-@comment share/crawl/docs/034_changes.txt
 share/crawl/docs/CREDITS.txt
-share/crawl/docs/README.txt
 share/crawl/docs/aptitudes.txt
 share/crawl/docs/arena.txt
 @comment share/crawl/docs/changelog.txt
@@ -552,7 +550,10 @@ share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/IRC.txt
 @comment share/crawl/docs/develop/android.txt
 @comment share/crawl/docs/develop/coding_conventions.txt
+@comment share/crawl/docs/develop/ctags.txt
+@comment share/crawl/docs/develop/editor_tips.txt
 @comment share/crawl/docs/develop/gdb_tips.txt
+@comment share/crawl/docs/develop/keys.txt
 @comment share/crawl/docs/develop/levels/
 @comment share/crawl/docs/develop/levels/advanced.txt
 @comment share/crawl/docs/develop/levels/introduction.txt
@@ -562,16 +563,13 @@ share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/new_dev_checklist.txt
 @comment share/crawl/docs/develop/patch_guide.txt
 @comment share/crawl/docs/develop/process.txt
-@comment share/crawl/docs/develop/release.txt
 @comment share/crawl/docs/develop/save_compatibility.txt
 @comment share/crawl/docs/develop/spells.txt
 @comment share/crawl/docs/develop/testing.txt
 @comment share/crawl/docs/develop/tiles_creation.txt
 @comment share/crawl/docs/develop/translation.txt
 share/crawl/docs/fight_simulator.txt
-@comment share/crawl/docs/key_changes.txt
 share/crawl/docs/keybind.txt
-@comment share/crawl/docs/license/mt19937.txt
 @comment share/crawl/docs/license/
 @comment share/crawl/docs/license/cc0.txt
 @comment share/crawl/docs/license/lgpl.txt
@@ -588,16 +586,21 @@ share/crawl/settings/
 share/crawl/settings/0.12_monster_glyphs.txt
 share/crawl/settings/0.13_monster_glyphs.txt
 share/crawl/settings/0.14_monster_glyphs.txt
+share/crawl/settings/0.16_monster_glyphs.txt
+share/crawl/settings/0.17_monster_glyphs.txt
 share/crawl/settings/0.9_monster_glyphs.txt
 share/crawl/settings/034_command_keys.txt
-share/crawl/settings/034_monster_glyphs.txt
 share/crawl/settings/052_monster_glyphs.txt
 share/crawl/settings/060_monster_glyphs.txt
 share/crawl/settings/071_monster_glyphs.txt
 share/crawl/settings/080_monster_glyphs.txt
 share/crawl/settings/advanced_optioneering.txt
 share/crawl/settings/colemak_command_keys.txt
+share/crawl/settings/dec_glyphs.txt
 share/crawl/settings/dvorak_command_keys.txt
+share/crawl/settings/ibm_glyphs.txt
 share/crawl/settings/init.txt
 share/crawl/settings/no_vi_command_keys.txt
+share/crawl/settings/old_unicode_glyphs.txt
+share/crawl/settings/safe_move_shift.txt
 !%%no_x11%%

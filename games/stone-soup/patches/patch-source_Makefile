@@ -1,23 +1,25 @@
-$OpenBSD: patch-source_Makefile,v 1.2 2015/04/07 10:10:28 stsp Exp $
---- source/Makefile.orig	Thu Aug 28 04:28:56 2014
-+++ source/Makefile	Mon Apr  6 15:44:58 2015
-@@ -591,8 +591,8 @@ ifndef BUILD_LUA
+$OpenBSD: patch-source_Makefile,v 1.3 2016/10/01 12:56:54 stsp Exp $
+--- source/Makefile.orig	Sat Apr 30 00:53:03 2016
++++ source/Makefile	Thu Sep 29 00:59:04 2016
+@@ -639,9 +639,9 @@ ifndef BUILD_LUA
        BUILD_LUA = yes
      endif
    else
 -    ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
 -      ifneq ($(shell $(PKGCONFIG) lua-5.1 --exists || echo no),)
-+    ifneq ($(shell $(PKGCONFIG) lua${MODLUA_DEP_VERSION} --exists || echo no),)
-+      ifneq ($(shell $(PKGCONFIG) lua-${MODLUA_DEP_VERSION} --exists || echo no),)
-         ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
+-        ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
++    ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
++      ifneq ($(shell $(PKGCONFIG) lua${MODLUA_DEP_VERSION} --exists || echo no),)
++        ifneq ($(shell $(PKGCONFIG) lua${MODLUA_DEP_VERSION} --exists || echo no),)
            BUILD_LUA = yes
          else
-@@ -603,16 +603,16 @@ ifndef BUILD_LUA
+           ifeq ($(shell $(PKGCONFIG) lua --modversion | head -c 3),5.1)
+@@ -651,16 +651,16 @@ ifndef BUILD_LUA
            endif
          endif
        else
 -        LUA_PACKAGE = lua-5.1
-+        LUA_PACKAGE = lua-${MODLUA_DEP_VERSION}
++        LUA_PACKAGE = lua${MODLUA_DEP_VERSION}
        endif
      else
 -      LUA_PACKAGE = lua5.1
@@ -32,3 +34,55 @@ $OpenBSD: patch-source_Makefile,v 1.2 2015/04/07 10:10:28 stsp Exp $
    endif
    INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
    CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
+@@ -1122,51 +1122,6 @@ ifndef NO_OPTIMIZE
+     endif
+   endif
+ endif
+-endif
+-
+-ifdef BUILD_PCRE
+-CONTRIBS += pcre
+-CONTRIB_LIBS += $(LIBPCRE)
+-endif
+-ifdef BUILD_FREETYPE
+-CONTRIBS += freetype
+-CONTRIB_LIBS += $(LIBFREETYPE)
+-endif
+-ifdef BUILD_LIBPNG
+-CONTRIBS += libpng
+-CONTRIB_LIBS := $(LIBPNG) $(CONTRIB_LIBS)
+-endif
+-ifdef BUILD_SDL2
+-CONTRIBS += sdl2
+-CONTRIB_LIBS := $(LIBSDL2) $(CONTRIB_LIBS)
+-ifeq ($(uname_S),Linux)
+-LIBS += -ldl -lrt
+-endif
+-endif
+-ifdef BUILD_SDL2IMAGE
+-CONTRIBS += sdl2-image
+-CONTRIB_LIBS := $(LIBSDL2IMAGE) $(CONTRIB_LIBS)
+-endif
+-ifdef BUILD_SDL2MIXER
+-CONTRIBS += sdl2-mixer
+-CONTRIB_LIBS := $(LIBSDL2MIXER) $(CONTRIB_LIBS)
+-endif
+-ifdef BUILD_ZLIB
+-CONTRIBS += zlib
+-CONTRIB_LIBS += $(LIBZ)
+-endif
+-ifdef BUILD_LUA
+-ifdef USE_LUAJIT
+-CONTRIBS += luajit/src
+-CFOTHER_L += -DUSE_LUAJIT
+-else
+-CONTRIBS += lua/src
+-endif
+-CONTRIB_LIBS += $(LIBLUA)
+-endif
+-ifdef BUILD_SQLITE
+-CONTRIBS += sqlite
+-CONTRIB_LIBS += $(LIBSQLITE)
+ endif
+ 
+ EXTRA_OBJECTS += version.o

@@ -1,16 +1,18 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2015/04/07 10:10:28 stsp Exp $
-share/applications/stone-soup.desktop
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2016/10/01 12:56:54 stsp Exp $
+share/applications/crawl-tiles.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
 share/crawl/dat/tiles/floor.png
 share/crawl/dat/tiles/gui.png
 share/crawl/dat/tiles/icons.png
 share/crawl/dat/tiles/logo.png
+share/crawl/dat/tiles/logosmall.png
 share/crawl/dat/tiles/main.png
 share/crawl/dat/tiles/player.png
 share/crawl/dat/tiles/stone_soup_icon-32x32.png
 share/crawl/dat/tiles/stone_soup_icon-512x512.png
 share/crawl/dat/tiles/stone_soup_icon-win32.png
+share/crawl/dat/tiles/title_baconkid_duvessa_dowan.png
 share/crawl/dat/tiles/title_baconkid_gastronok.png
 share/crawl/dat/tiles/title_baconkid_mnoleg.png
 share/crawl/dat/tiles/title_denzi_dragon.png

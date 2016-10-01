@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_debian_crawl-tiles_desktop,v 1.1 2016/10/01 12:56:54 stsp Exp $
+--- source/debian/crawl-tiles.desktop.orig	Thu Sep 29 01:29:00 2016
++++ source/debian/crawl-tiles.desktop	Thu Sep 29 01:38:51 2016
+@@ -2,6 +2,6 @@
+ Type=Application
+ 
+ Name=Dungeon Crawl (tiles)
+-Exec=/usr/games/crawl-tiles
+-Icon=crawl
++Exec=/usr/local/bin/crawl-ss
++Icon=stone-soup
+ Categories=Game;AdventureGame;
