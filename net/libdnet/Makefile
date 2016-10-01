@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/12 20:18:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		https://libdnet.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=libdnet/}
 EXTRACT_SUFX=		.tgz
 
 PSEUDO_FLAVORS=		no_python

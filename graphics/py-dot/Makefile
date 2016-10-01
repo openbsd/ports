@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/13 08:12:14 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT=	Python interface to Graphviz's Dot#'
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/erocarrera/pydot
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://pydot.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pydot/}
 
 MODULES=	lang/python
 

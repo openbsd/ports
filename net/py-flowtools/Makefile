@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=	python interface to flow-tools file format
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB+=	z ft ${MODPY_WANTLIB} pthread
 
 HOMEPAGE=	https://code.google.com/p/pyflowtools/
-MASTER_SITES=	https://pyflowtools.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pyflowtools/}
 
 LIB_DEPENDS=	net/flow-tools
 MODULES=	lang/python

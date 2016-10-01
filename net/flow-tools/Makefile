@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/10/01 11:54:16 naddy Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # forked from:  http://www.splintered.net/sw/flow-tools/
 HOMEPAGE=	https://code.google.com/p/flow-tools/
 
-MASTER_SITES=	https://flow-tools.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=flow-tools/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 

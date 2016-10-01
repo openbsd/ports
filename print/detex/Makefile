@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/02/28 14:59:14 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.32 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
@@ -7,7 +7,7 @@ PKGNAME=		detex-2.8.1
 CATEGORIES=		print
 
 HOMEPAGE=		https://code.google.com/archive/p/opendetex/
-MASTER_SITES=		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/opendetex/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=opendetex/}
 
 EXTRACT_SUFX=		.tar.bz2
 

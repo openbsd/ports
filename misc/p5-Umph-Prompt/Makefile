@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =		interactive prompt module
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://code.google.com/p/umph/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =		https://umph.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=umph/}
 
 CONFIGURE_STYLE =	perl
 

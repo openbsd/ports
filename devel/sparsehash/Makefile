@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/10/01 11:54:15 naddy Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -12,7 +12,7 @@ REVISION =		3
 # 3-clause BSDL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://sparsehash.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=sparsehash/}
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

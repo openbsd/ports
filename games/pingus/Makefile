@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -9,7 +9,7 @@ CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://pingus.seul.org/
-MASTER_SITES=	https://pingus.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

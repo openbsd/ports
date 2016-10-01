@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -17,7 +17,7 @@ HOMEPAGE=	https://code.google.com/p/bunny-the-fuzzer/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m crypto
 
-MASTER_SITES=	https://bunny-the-fuzzer.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=bunny-the-fuzzer/}
 
 WRKDIST=	${WRKDIR}/bunny
 TEST_TARGET=	test1 test2 test3

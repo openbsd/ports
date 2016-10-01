@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=		language/IDE for images, animations and interactions
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://processing.org/
 # Core libraries: LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://processing.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=processing/}
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		devel/desktop-file-utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/17 11:44:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB =		lber ldap objc
 
-MASTER_SITES =		https://openvpn-auth-ldap.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=openvpn-auth-ldap/}
 
 RUN_DEPENDS =		net/openvpn
 LIB_DEPENDS =		databases/openldap

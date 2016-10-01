@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/01 11:54:17 naddy Exp $
 
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
@@ -14,7 +14,7 @@ WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/kabc ${KDE4LIB}/kcal
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kresources
 WANTLIB += gcal
 
-MASTER_SITES =	https://libgcal.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=libgcal/}
 EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2.1+

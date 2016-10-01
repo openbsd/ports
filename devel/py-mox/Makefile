@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =	Mox is a mock object framework for Python
 
@@ -9,7 +9,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://code.google.com/p/pymox/
-MASTER_SITES =	https://pymox.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=pymox/}
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

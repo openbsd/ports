@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=		simple BitTorrent implementation
 
@@ -14,7 +14,7 @@ MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://unworkable.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=unworkable/}
 
 WRKDIST=		${WRKDIR}/unworkable
 WANTLIB=		c crypto event

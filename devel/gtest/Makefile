@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -17,7 +17,7 @@ MAINTAINER =	Vincent Auclair <auclair.vincent@gmail.com>
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://googletest.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=googletest/}
 
 SEPARATE_BUILD =	Yes
 

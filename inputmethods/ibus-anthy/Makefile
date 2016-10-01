@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/27 08:43:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	anthy anthydic ffi glib-2.0 gobject-2.0 m pcre pthread
 
-MASTER_SITES =	https://ibus.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ibus/}
 
 MODULES =	devel/gettext \
 		lang/python \

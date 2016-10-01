@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/27 17:26:15 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:18 naddy Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += Imlib2 X11 Xext c freetype intl m stdc++ z
 
-MASTER_SITES =		https://wbar.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=wbar/}
 
 MODULES =		textproc/intltool
 

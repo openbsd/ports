@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT =		Python module to read and work with PE files
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		https://pefile.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=pefile/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes

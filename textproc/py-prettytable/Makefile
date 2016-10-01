@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:52:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
@@ -10,7 +10,7 @@ REVISION =		0
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-MASTER_SITES =	https://prettytable.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=prettytable/}
 HOMEPAGE =	https://code.google.com/p/prettytable/
 
 PKG_ARCH =	*

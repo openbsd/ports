@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/28 13:53:16 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT=	tiling window manager
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/njsmith/partiwm
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://partiwm.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=partiwm/}
 
 MODULES=	lang/python
 

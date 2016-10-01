@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2016/10/01 11:54:18 naddy Exp $
 
 COMMENT=	personal search and metasearch
 
@@ -26,7 +26,7 @@ WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sigc-2.0 sqlite3 ssl stdc++ tag textcat uuid xapian
 WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
-MASTER_SITES=	https://pinot-search.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pinot-search/}
 
 # c++11
 MODULES +=		gcc4

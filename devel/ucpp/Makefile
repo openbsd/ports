@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:15 naddy Exp $
 
 DISTNAME =	ucpp-1.3.2
 REVISION =	0
 COMMENT =	C preprocessor and lexer
 CATEGORIES =	devel
 HOMEPAGE =	https://code.google.com/p/ucpp
-MASTER_SITES =	https://ucpp.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ucpp/}
 
 PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c

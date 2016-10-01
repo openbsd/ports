@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/28 01:01:52 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c fuse m stdc++ z zip
 
-MASTER_SITES =		https://fuse-zip.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=fuse-zip/}
 
 LIB_DEPENDS =		archivers/libzip>=0.11.2
 

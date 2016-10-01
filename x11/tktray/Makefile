@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/07/08 10:37:54 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:18 naddy Exp $
 
 COMMENT =	system tray icon support for Tk
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	X11
 
-MASTER_SITES =	https://tktray.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=tktray/}
 MODULES =	x11/tk
 BUILD_DEPENDS =	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/29 11:19:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:16 naddy Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -27,7 +27,7 @@ MULTI_PACKAGES = -main -ipadic
 WANTLIB-main =	c iconv m pthread stdc++
 WANTLIB-ipadic =
 
-MASTER_SITES =	https://mecab.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=mecab/}
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz

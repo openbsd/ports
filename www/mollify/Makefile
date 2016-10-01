@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT=	simple and clean multi-user web file manager
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.mollify.org/
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
-MASTER_SITES=	https://mollify.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=mollify/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

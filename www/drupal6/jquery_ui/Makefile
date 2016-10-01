@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/06/30 11:48:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT =	wrapper module around the jQuery UI effects library
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -10,7 +10,7 @@ REVISION =	0
 
 EXTRACT_SUFX0 =	.zip
 
-MASTER_SITES0 = https://jquery-ui.googlecode.com/files/
+MASTER_SITES0 = ${MASTER_SITE_GOOGLECODE:=jquery-ui/}
 
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME0}${EXTRACT_SUFX0}:0

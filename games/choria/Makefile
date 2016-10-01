@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 11:54:15 naddy Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += Irrlicht c m pthread sqlite3 stdc++
 
-MASTER_SITES =	https://choria.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=choria/}
 
 MODULES =	devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 11:54:17 naddy Exp $
 
 CATEGORIES =		productivity devel
 COMMENT =		C library for Google calendar and contacts
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += crypto curl idn lzma m nghttp2 pthread ssl xml2 z
 
-MASTER_SITES =		https://libgcal.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=libgcal/}
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu

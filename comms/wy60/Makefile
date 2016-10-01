@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT=	curses-based emulator for the Wyse 60 terminal
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://wy60.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=wy60/}
 
 WANTLIB=	c curses
 

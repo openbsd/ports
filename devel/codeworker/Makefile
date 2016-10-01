@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/07 21:31:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m stdc++
 
-MASTER_SITES =		https://codeworker.googlecode.com/files/ \
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/
 DISTNAME =		CodeWorker_SRC${V:S/./_/g}
 EXTRACT_SUFX =		.zip

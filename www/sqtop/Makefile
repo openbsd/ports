@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT=		top-like monitor for Squid
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m ncurses pthread stdc++
 
-MASTER_SITES=		https://sqtop.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=sqtop/}
 
 CONFIGURE_STYLE=	gnu
 

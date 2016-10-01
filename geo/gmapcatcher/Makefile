@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/09/28 20:19:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT=	offline maps viewer
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://code.google.com/p/gmapcatcher/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	https://gmapcatcher.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=gmapcatcher/}
 
 MODULES=	lang/python
 

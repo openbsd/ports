@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT =		Youtube closed caption downloader
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://code.google.com/p/gcap/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =		https://gcap.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=gcap/}
 
 RUN_DEPENDS =		devel/p5-Getopt-ArgvFile \
 			misc/p5-Umph-Prompt \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/18 19:03:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=	educational mathematical software
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILE_FTP=	Yes
 
-MASTER_SITES=		https://geogebra.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=geogebra/}
 
 MODULES=		java
 MODJAVA_VER=		1.7+

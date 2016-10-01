@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/26 13:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =		text progressbar library for python
 
@@ -19,7 +19,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 # pypi distfile doesn't match the old googlecode one; switch if updating
-MASTER_SITES =		https://python-progressbar.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=python-progressbar/}
 #MODPY_PI =		Yes
 
 NO_TEST =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT =		minimal dumb-terminal emulation program
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://picocom.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=picocom/}
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_ENV =		LDFLAGS="${LDFLAGS}"

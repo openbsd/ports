@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT=	ircd proxy to the twitter API
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://code.google.com/p/tircd/
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://tircd.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=tircd/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	net/p5-Net-Twitter

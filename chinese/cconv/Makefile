@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB= 	c iconv
 
-MASTER_SITES=	https://cconv.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=cconv/}
 
 LIB_DEPENDS=	converters/libiconv
 

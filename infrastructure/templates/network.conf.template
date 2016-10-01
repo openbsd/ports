@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.207 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.208 2016/10/01 11:54:16 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -238,3 +238,6 @@ MASTER_SITES_GNUPG += \
 	https://www.gnupg.org/ftp/gcrypt/ \
 	http://mirrors.dotsrc.org/gcrypt/ \
 	ftp://ftp.gnupg.org/gcrypt/
+
+MASTER_SITE_GOOGLECODE += \
+	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/

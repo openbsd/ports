@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT=	Python WSGI compliant interface module for Apache2
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pthread ${MODPY_WANTLIB} util
 
-MASTER_SITES=	http://modwsgi.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=modwsgi/}
 
 MODULES=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/29 11:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT=		Erlang-style bitstrings for OCaml
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://bitstring.googlecode.com/
 # examples and tests are public domain.
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=		https://bitstring.googlecode.com/files/
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=bitstring/}
 
 MODULES=		lang/ocaml
 BUILD_DEPENDS=		sysutils/findlib lang/ocaml-camlp4

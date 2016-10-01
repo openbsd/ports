@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/01 11:54:17 naddy Exp $
 
 BROKEN-hppa =	configure: error: Could not link against boost_serialization-boost_serialization
 BROKEN-sparc64 =	configure: error: Could not link against boost_serialization-boost_serialization
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB = 		boost_filesystem boost_serialization boost_system c \
 			crypto fuse m pthread rlog ssl stdc++
 
-MASTER_SITES =		http://encfs.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=encfs/}
 EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext

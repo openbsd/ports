@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/22 18:06:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =		python network packet manipulation library
 
@@ -16,7 +16,7 @@ MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://dpkt.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=dpkt/}
 
 MODULES =		lang/python
 

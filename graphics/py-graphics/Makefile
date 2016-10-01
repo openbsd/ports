@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/26 12:14:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT=	multimedia framework for Python
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://code.google.com/p/pygraphics/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://pygraphics.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pygraphics/}
 
 MODULES=	lang/python
 

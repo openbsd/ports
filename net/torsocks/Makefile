@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =		socks proxy for use with tor
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES =		https://torsocks.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=torsocks/}
 
 RUN_DEPENDS =		net/tor
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
@@ -9,7 +9,7 @@ REVISION =		2
 CATEGORIES =		x11
 
 HOMEPAGE =		http://tiheum.deviantart.com/art/Faenza-Icons-173323228
-MASTER_SITES =		https://faenza-icon-theme.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=faenza-icon-theme/}
 EXTRACT_SUFX =		.zip
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>

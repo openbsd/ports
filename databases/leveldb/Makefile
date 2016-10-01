@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/10 07:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:14 naddy Exp $
 
 #'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
 ONLY_FOR_ARCHS=	i386 amd64 arm
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread stdc++
 
-MASTER_SITES=	https://leveldb.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=leveldb/}
 
 USE_GMAKE=	Yes
 MAKE_ENV+=	CXX=${CXX} OPT="${CXXFLAGS}" \

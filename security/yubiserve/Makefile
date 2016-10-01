@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:17 naddy Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://yubico-yubiserve.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=yubico-yubiserve/}
 
 MODULES=	lang/python
 BUILD_DEPENDS=	databases/sqlite3

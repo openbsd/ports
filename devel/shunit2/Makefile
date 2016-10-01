@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/31 11:14:17 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =		unit test framework for Bourne based shell scripts
 
@@ -13,7 +13,7 @@ MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://shunit2.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=shunit2/}
 
 EXTRACT_SUFX =		.tgz
 

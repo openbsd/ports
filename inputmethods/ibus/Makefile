@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2016/10/01 11:54:16 naddy Exp $
 
 COMMENT =	intelligent input bus framework
 
@@ -25,7 +25,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES =	https://ibus.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=ibus/}
 
 MODULES =	devel/dconf \
 		devel/gconf2 \

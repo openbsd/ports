@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 20:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m pthread stdc++ z
 
-MASTER_SITES =		https://protobuf.googlecode.com/files/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=protobuf/}
 
 TEST_DEPENDS =	devel/gtest
 

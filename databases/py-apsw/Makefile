@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT =	thin SQLite wrapper for Python
 
@@ -10,7 +10,7 @@ PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 
 HOMEPAGE=	https://rogerbinns.github.io/apsw/
-MASTER_SITES=	https://apsw.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=apsw/}
 PORTROACH=	site:https://github.com/rogerbinns/apsw/releases
 
 # zlib

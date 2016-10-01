@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/30 15:19:49 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/01 11:54:15 naddy Exp $
 
 COMMENT =	Pictures collage & creativity tool
 
@@ -17,7 +17,7 @@ WANTLIB += GL ICE QtGui QtNetwork QtOpenGL QtSvg QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype m pthread
 WANTLIB += stdc++
 
-MASTER_SITES =		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/fotowall/
+MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=fotowall/}
 
 EXTRACT_SUFX =		.tar.bz2
 

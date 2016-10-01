@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:14 naddy Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=	ofa	0.0
 # GPL
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	https://musicip-libofa.googlecode.com/files/
+MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=musicip-libofa/}
 
 WANTLIB +=	m pthread stdc++ fftw3
 
