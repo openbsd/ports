@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/21 13:50:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/01 15:20:08 danj Exp $
 
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 1.1.1
+MODPY_EGG_VERSION = 2.0.0
 
 DISTNAME =	py-oauthlib-${MODPY_EGG_VERSION}
-DISTFILES =	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.gz
+DISTFILES =	v${MODPY_EGG_VERSION}.zip
 WRKDIST =	${WRKDIR}/oauthlib-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -15,6 +15,7 @@ MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 PERMIT_PACKAGE_CDROM =  Yes
 
 MASTER_SITES =	https://github.com/idan/oauthlib/archive/
+EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
