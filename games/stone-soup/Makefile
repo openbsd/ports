@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/10/01 12:56:54 stsp Exp $
+# $OpenBSD: Makefile,v 1.26 2016/10/01 12:58:18 stsp Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 BROKEN-arm=	tilegen.elf loops burning cpu
@@ -53,13 +53,13 @@ CFLAGS +=	-DUSE_TILE
 CXXFLAGS +=	-DUSE_TILE
 
 MAKE_FLAGS += 	TILES=y \
-	LDFLAGS="-L${LOCALBASE}/lib -lSDL2 -lSDL2_image -lpng -pthread"
-WANTLIB +=     GL GLU SDL2 SDL2_image freetype png pthread z
+		LDFLAGS="-L${LOCALBASE}/lib -lSDL2 -lSDL2_image -lpng -pthread"
+WANTLIB += 	GL GLU SDL2 SDL2_image freetype png pthread z
 RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS +=     devel/sdl2 \
-	devel/sdl2-image \
-	databases/sqlite3 \
-	graphics/png
+LIB_DEPENDS += 	devel/sdl2 \
+		devel/sdl2-image \
+		databases/sqlite3 \
+		graphics/png
 .endif
 
 post-install:
