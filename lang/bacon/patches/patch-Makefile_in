@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
---- Makefile.in.orig	Thu Jun 30 15:00:30 2016
-+++ Makefile.in	Tue Jul 12 00:05:41 2016
+$OpenBSD: patch-Makefile_in,v 1.2 2016/10/02 02:36:10 juanfra Exp $
+--- Makefile.in.orig	Fri Sep 30 19:27:23 2016
++++ Makefile.in	Sun Oct  2 03:24:52 2016
 @@ -3,7 +3,7 @@ exec_prefix     = @exec_prefix@
  BINDIR          = @bindir@
  LIBDIR          = @libdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
  STRIP           = @STRIP@
  CC              = @CC@
  RANLIB          = @RANLIB@
-@@ -31,16 +31,16 @@ install :
+@@ -31,18 +31,18 @@ install :
  	$(INSTALL) build/bacon $(DESTDIR)$(BINDIR)
  	@if [ $(GUI) = "true" ]; then \
  	    $(INSTALL) build/bacongui $(DESTDIR)$(BINDIR); \
@@ -28,6 +28,10 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/08/03 19:13:17 juanfra Exp $
 -	$(INSTALL) -m 644 bacongui.desktop $(DESTDIR)$(DATADIR)/applications
 -	mkdir -p $(DESTDIR)$(DATADIR)/pixmaps
 -	$(INSTALL) -m 644 icons/BaCon.png $(DESTDIR)$(DATADIR)/pixmaps
- 	mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl
- 	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl
+-	mkdir -p $(DESTDIR)/usr/share/enscript/hl
+-	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)/usr/share/enscript/hl
++	mkdir -p $(DESTDIR)$(DATADIR)/enscript/hl
++	$(INSTALL) -m 644 syntax/bacon.st $(DESTDIR)$(DATADIR)/enscript/hl
  
+ uninstall :
+ 	rm -f $(DESTDIR)$(BINDIR)/bacon
