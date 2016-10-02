@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_libserver_url_c,v 1.1 2016/10/02 19:17:38 edd Exp $
+
+Fix crash in url_email_start().
+
+https://github.com/vstakhov/rspamd/commit/1b33ef8ab63be63ba712a456c846fe427c347d37
+
+--- src/libserver/url.c.orig	Thu Aug 25 13:14:57 2016
++++ src/libserver/url.c	Fri Sep 23 14:01:32 2016
+@@ -1925,9 +1925,13 @@ url_email_start (struct url_callback_data *cb,
+ 			cb->last_at = NULL;
+ 			return FALSE;
+ 		}
++		else if (pos == cb->begin) {
++			/* Just @ at the start of input */
++			return FALSE;
++		}
+ 	}
+ 
+-	if (pos > cb->begin - 1) {
++	if (pos >= cb->begin + 1) {
+ 		match->st = *(pos - 1);
+ 	}
+ 	else {

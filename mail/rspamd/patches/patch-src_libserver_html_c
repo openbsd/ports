@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_libserver_html_c,v 1.1 2016/10/02 19:17:38 edd Exp $
+
+Fix crash due to memcpy on overlapping memory regions.
+
+https://github.com/vstakhov/rspamd/commit/9ac183e4ae31c1a5637dc371fbfff53a9adb2531
+
+--- src/libserver/html.c.orig	Thu Aug 25 13:14:57 2016
++++ src/libserver/html.c	Tue Sep 20 14:41:03 2016
+@@ -691,7 +691,7 @@ rspamd_html_decode_entitles_inplace (gchar *s, guint l
+ 						t += rep_len;
+ 					}
+ 					else {
+-						memcpy (t, e, h - e);
++						memmove (t, e, h - e);
+ 						t += h - e;
+ 					}
+ 				}
+@@ -713,7 +713,7 @@ rspamd_html_decode_entitles_inplace (gchar *s, guint l
+ 					}
+ 					if (end_ptr != NULL && *end_ptr != '\0') {
+ 						/* Skip undecoded */
+-						memcpy (t, e, h - e);
++						memmove (t, e, h - e);
+ 						t += h - e;
+ 					}
+ 					else {
+@@ -736,7 +736,7 @@ rspamd_html_decode_entitles_inplace (gchar *s, guint l
+ 								t += g_unichar_to_utf8 (val, t);
+ 							}
+ 							else {
+-								memcpy (t, e, h - e);
++								memmove (t, e, h - e);
+ 								t += h - e;
+ 							}
+ 						}
