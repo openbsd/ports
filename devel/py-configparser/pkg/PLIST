@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/21 23:46:25 bcallah Exp $
-lib/python${MODPY_VERSION}/site-packages/backports/
+@comment $OpenBSD: PLIST,v 1.2 2016/10/02 15:12:36 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/backports/configparser/
 lib/python${MODPY_VERSION}/site-packages/backports/configparser/__init__.py
 lib/python${MODPY_VERSION}/site-packages/backports/configparser/__init__.pyc
