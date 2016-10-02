@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/09/14 18:11:01 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/10/02 18:24:49 rpointel Exp $
 ${MODPY_COMMENT}@conflict py3-django-lts-*
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
@@ -6417,6 +6417,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/Makefile
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/README
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/cve_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/${LNAME}docs.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/ticket_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_theme/
@@ -6695,6 +6696,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.1.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.1.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.1.4.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.2.1.txt
@@ -6779,6 +6781,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.12.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.14.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.15.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.4.txt
@@ -6789,6 +6792,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.8.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.4.txt
