@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/06 11:02:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/02 10:15:22 jasper Exp $
 
 COMMENT =	data backend for Hiera to return whole files
 
 DISTNAME =	hiera-file-1.1.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases
 
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM =	Yes
