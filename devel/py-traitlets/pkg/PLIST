@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/13 07:57:37 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/10/02 11:08:14 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/traitlets/
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/traitlets/__init__.py
@@ -37,18 +37,22 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets_enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_traitlets.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_traitlets_enum.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/traitlets.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}bunch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}getargspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}importstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/bunch.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/getargspec.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/importstring.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/sentinel.py
@@ -56,5 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}test_bunch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/${MODPY_PYCACHE}test_importstring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_bunch.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_importstring.py
