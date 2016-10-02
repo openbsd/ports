@@ -1,0 +1,4 @@
+SPARK stands for Scanning, Parsing, and Rewriting Kit. It uses Jay Early’s
+algorithm for parsing context free grammars, and comes with some generic
+Abstract Syntax Tree routines. There is also a prototype scanner which does
+its job by combining Python regular expressions.
