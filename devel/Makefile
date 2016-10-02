@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1538 2016/09/30 11:30:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1539 2016/10/02 11:15:37 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1246,6 +1246,7 @@
      SUBDIR += py-configobj,python3
      SUBDIR += py-configparser
      SUBDIR += py-country
+     SUBDIR += py-country,python3
      SUBDIR += py-coverage
      SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls
@@ -1392,6 +1393,8 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap
+     SUBDIR += py-spark-parser
+     SUBDIR += py-spark-parser,python3
      SUBDIR += py-stdnum
      SUBDIR += py-stdnum,python3
      SUBDIR += py-suds
