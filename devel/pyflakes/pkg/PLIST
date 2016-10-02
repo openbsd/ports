@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/01 06:11:59 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/10/02 10:26:33 shadchin Exp $
 bin/pyflakes${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pyflakes/
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyflakes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/__main__.py
@@ -33,6 +32,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}harness.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_doctests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_imports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_other.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_retu
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_undefined_names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/harness.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_api.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_dict.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_doctests.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_imports.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_other.py
