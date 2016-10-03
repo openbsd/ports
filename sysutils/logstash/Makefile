@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/15 11:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/03 09:37:09 giovanni Exp $
 
 COMMENT=		tool for managing events and logs
 
-V=			2.3.4
+V=			2.4.0
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
 EPOCH=			0
