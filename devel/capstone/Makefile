@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/23 06:05:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/03 07:39:59 feinerer Exp $
 
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
 VERSION =	3.0.4
 DISTNAME =	capstone-${VERSION}
+REVISION =	0
 CATEGORIES =	devel
 HOMEPAGE =	http://www.capstone-engine.org/
 

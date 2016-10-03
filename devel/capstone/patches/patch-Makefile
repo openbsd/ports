@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.7 2015/05/09 06:50:02 benoit Exp $
+$OpenBSD: patch-Makefile,v 1.8 2016/10/03 07:39:59 feinerer Exp $
 
 1. Do not force some compilation flags.
 2. Set library version, respecting OpenBSD policy.
@@ -34,7 +34,7 @@ $OpenBSD: patch-Makefile,v 1.7 2015/05/09 06:50:02 benoit Exp $
  VERSION_EXT = $(EXT).$(API_MAJOR)
  AR_EXT = a
 -$(LIBNAME)_LDFLAGS += -Wl,-soname,lib$(LIBNAME).$(VERSION_EXT)
-+$(LIBNAME)_LDFLAGS += -Wl,-soname,lib$(LIBNAME)
++$(LIBNAME)_LDFLAGS += -Wl,-soname,lib$(LIBNAME).$(EXT).$(LIBVER)
  endif
  endif
  endif
