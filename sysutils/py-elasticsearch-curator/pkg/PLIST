@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/12 07:01:43 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/10/03 17:54:00 sebastia Exp $
 bin/curator
 bin/es_repo_mgr
 lib/python${MODPY_VERSION}/site-packages/curator/
@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/curator/actions.py
 lib/python${MODPY_VERSION}/site-packages/curator/actions.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/config_utils.py
+lib/python${MODPY_VERSION}/site-packages/curator/config_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/curator.py
 lib/python${MODPY_VERSION}/site-packages/curator/curator.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/
@@ -33,6 +35,23 @@ lib/python${MODPY_VERSION}/site-packages/curator/snapshotlist.py
 lib/python${MODPY_VERSION}/site-packages/curator/snapshotlist.pyc
 lib/python${MODPY_VERSION}/site-packages/curator/utils.py
 lib/python${MODPY_VERSION}/site-packages/curator/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/
+lib/python${MODPY_VERSION}/site-packages/curator/validators/__init__.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/actions.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/actions.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/config_file.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/config_file.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filter_elements.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filter_elements.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filters.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filters.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filtertypes.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/filtertypes.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/options.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/options.pyc
+lib/python${MODPY_VERSION}/site-packages/curator/validators/schemacheck.py
+lib/python${MODPY_VERSION}/site-packages/curator/validators/schemacheck.pyc
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
