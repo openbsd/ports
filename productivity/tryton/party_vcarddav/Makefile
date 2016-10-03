@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/10/03 07:52:58 ajacoutot Exp $
+
+MODPY_EGG_VERSION =	3.2.3
 
 TRYTOND_MODULE =	party_vcarddav
-REVISION =		0
 
 RUN_DEPENDS =		productivity/tryton/party
 
