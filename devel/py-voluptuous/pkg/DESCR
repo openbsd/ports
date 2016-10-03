@@ -1,0 +1,3 @@
+Voluptuous, despite the name, is a Python data validation library. It is
+primarily intended for validating data coming into Python as JSON, YAML,
+etc.
