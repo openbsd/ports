@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/24 00:21:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.30 2016/10/03 19:27:30 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			6.6
-REVISION =		3
+REVISION =		4
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
