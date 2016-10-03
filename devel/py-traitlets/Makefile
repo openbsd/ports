@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/02 11:08:14 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/03 08:48:33 shadchin Exp $
 
 COMMENT =		configuration system for Python applications
 
 MODPY_EGG_VERSION =	4.3.1
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -28,8 +29,8 @@ FLAVORS =		python3
 FLAVOR ?=
 
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-enum34 \
-			devel/py-mock
+RUN_DEPENDS +=		devel/py-enum34
+TEST_DEPENDS +=		devel/py-mock
 .endif
 
 do-test:
