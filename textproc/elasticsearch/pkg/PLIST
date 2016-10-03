@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/07/15 11:08:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/10/03 09:34:45 giovanni Exp $
 @ask-update elasticsearch-<2.0.0 Make sure your existing data is backed up
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
@@ -19,31 +19,31 @@ elasticsearch/lib/compress-lzf-1.0.2.jar
 elasticsearch/lib/elasticsearch-${V}.jar
 elasticsearch/lib/guava-18.0.jar
 elasticsearch/lib/hppc-0.7.1.jar
-elasticsearch/lib/jackson-core-2.6.6.jar
-elasticsearch/lib/jackson-dataformat-cbor-2.6.6.jar
-elasticsearch/lib/jackson-dataformat-smile-2.6.6.jar
-elasticsearch/lib/jackson-dataformat-yaml-2.6.6.jar
+elasticsearch/lib/jackson-core-2.8.1.jar
+elasticsearch/lib/jackson-dataformat-cbor-2.8.1.jar
+elasticsearch/lib/jackson-dataformat-smile-2.8.1.jar
+elasticsearch/lib/jackson-dataformat-yaml-2.8.1.jar
 elasticsearch/lib/jna-4.1.0.jar
 elasticsearch/lib/joda-convert-1.2.jar
 elasticsearch/lib/joda-time-2.9.4.jar
 elasticsearch/lib/jsr166e-1.1.0.jar
 elasticsearch/lib/jts-1.13.jar
 elasticsearch/lib/log4j-1.2.17.jar
-elasticsearch/lib/lucene-analyzers-common-5.5.0.jar
-elasticsearch/lib/lucene-backward-codecs-5.5.0.jar
-elasticsearch/lib/lucene-core-5.5.0.jar
-elasticsearch/lib/lucene-grouping-5.5.0.jar
-elasticsearch/lib/lucene-highlighter-5.5.0.jar
-elasticsearch/lib/lucene-join-5.5.0.jar
-elasticsearch/lib/lucene-memory-5.5.0.jar
-elasticsearch/lib/lucene-misc-5.5.0.jar
-elasticsearch/lib/lucene-queries-5.5.0.jar
-elasticsearch/lib/lucene-queryparser-5.5.0.jar
-elasticsearch/lib/lucene-sandbox-5.5.0.jar
-elasticsearch/lib/lucene-spatial-5.5.0.jar
-elasticsearch/lib/lucene-spatial3d-5.5.0.jar
-elasticsearch/lib/lucene-suggest-5.5.0.jar
-elasticsearch/lib/netty-3.10.5.Final.jar
+elasticsearch/lib/lucene-analyzers-common-5.5.2.jar
+elasticsearch/lib/lucene-backward-codecs-5.5.2.jar
+elasticsearch/lib/lucene-core-5.5.2.jar
+elasticsearch/lib/lucene-grouping-5.5.2.jar
+elasticsearch/lib/lucene-highlighter-5.5.2.jar
+elasticsearch/lib/lucene-join-5.5.2.jar
+elasticsearch/lib/lucene-memory-5.5.2.jar
+elasticsearch/lib/lucene-misc-5.5.2.jar
+elasticsearch/lib/lucene-queries-5.5.2.jar
+elasticsearch/lib/lucene-queryparser-5.5.2.jar
+elasticsearch/lib/lucene-sandbox-5.5.2.jar
+elasticsearch/lib/lucene-spatial-5.5.2.jar
+elasticsearch/lib/lucene-spatial3d-5.5.2.jar
+elasticsearch/lib/lucene-suggest-5.5.2.jar
+elasticsearch/lib/netty-3.10.6.Final.jar
 elasticsearch/lib/securesm-1.0.jar
 elasticsearch/lib/snakeyaml-1.15.jar
 elasticsearch/lib/spatial4j-0.5.jar
@@ -57,7 +57,7 @@ elasticsearch/modules/lang-expression/antlr4-runtime-4.5.1-1.jar
 elasticsearch/modules/lang-expression/asm-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
 elasticsearch/modules/lang-expression/lang-expression-${V}.jar
-elasticsearch/modules/lang-expression/lucene-expressions-5.5.0.jar
+elasticsearch/modules/lang-expression/lucene-expressions-5.5.2.jar
 elasticsearch/modules/lang-expression/plugin-descriptor.properties
 elasticsearch/modules/lang-expression/plugin-security.policy
 elasticsearch/modules/lang-groovy/
