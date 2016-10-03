@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.21 2016/09/28 19:26:13 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.22 2016/10/03 19:04:41 ajacoutot Exp $
 
-https://github.com/ConsoleKit2/ConsoleKit2/pull/83
+https://github.com/ConsoleKit2/ConsoleKit2/commit/d0cb68ada502ae172d188fe84e66c84da4ffe988
 
 --- src/ck-sysdeps-openbsd.c.orig	Wed Sep 28 14:08:07 2016
 +++ src/ck-sysdeps-openbsd.c	Wed Sep 28 14:08:09 2016
