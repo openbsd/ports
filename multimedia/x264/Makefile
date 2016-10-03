@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2016/05/09 06:09:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/10/03 08:04:37 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
-V=		20160508
+V=		20160930
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
