@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/10/04 22:38:02 bluhm Exp $
 
 COMMENT =		(re)name a sub
 
-DISTNAME =		Sub-Name-0.15
+DISTNAME =		Sub-Name-0.21
 
 CATEGORIES =		devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# perl_5
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c perl
