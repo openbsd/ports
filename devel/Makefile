@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1543 2016/10/04 19:38:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1544 2016/10/04 19:58:56 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1268,6 +1268,7 @@
      SUBDIR += py-dtopt
      SUBDIR += py-dulwich
      SUBDIR += py-editdist
+     SUBDIR += py-efilter
      SUBDIR += py-elftools
      SUBDIR += py-enum34
      SUBDIR += py-epsilon
