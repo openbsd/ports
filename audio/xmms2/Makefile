@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/09/23 09:16:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2016/10/04 12:37:31 fcambus Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -15,7 +15,7 @@ SHARED_LIBS +=		xmmsclient		2.0 # 6.0.0
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://wiki.xmms2.xmms.se/
+HOMEPAGE =		https://xmms2.org/
 
 MAINTAINER=		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
