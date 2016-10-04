@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/05/30 14:47:55 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/10/04 12:56:17 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -354,6 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ust-Nera
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Vientiane
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Vladivostok
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Yakutsk
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Yangon
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Yekaterinburg
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Yerevan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Atlantic/
