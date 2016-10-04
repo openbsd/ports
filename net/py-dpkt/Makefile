@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/04 04:44:52 rpointel Exp $
 
 COMMENT =		python network packet manipulation library
 
-MODPY_EGG_VERSION =	1.7
+MODPY_EGG_VERSION =	1.8.8
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://code.google.com/p/dpkt/
+HOMEPAGE =		https://github.com/kbandla/dpkt
+
+GH_ACCOUNT =   kbandla
+GH_PROJECT =   dpkt
+GH_TAGNAME =   v${MODPY_EGG_VERSION}
 
 MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=dpkt/}
 
 MODULES =		lang/python
 
