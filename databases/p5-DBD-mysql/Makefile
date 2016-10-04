@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2016/09/01 17:23:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.49 2016/10/04 05:31:35 giovanni Exp $
 
 COMMENT=		MySQL drivers for the Perl DBI
 
-DISTNAME=		DBD-mysql-4.036
+DISTNAME=		DBD-mysql-4.037
 CATEGORIES=		databases
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
