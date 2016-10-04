@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/12 16:40:48 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/04 16:01:29 juanfra Exp $
 
 COMMENT =		import cvs tree into git or subversion
 
-DISTNAME =		cvs2gitdump-20160808
+DISTNAME =		cvs2gitdump-20160815
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		cvs2gitdump
-GH_COMMIT =		a37cb15738b1dd9e8efa10072e02bdfb7b3969de
+GH_COMMIT =		831c8e0fc69c04fa760b3cc3efb2e4523f9199d3
 
 CATEGORIES =		devel
 
