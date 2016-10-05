@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2016/09/19 09:16:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2016/10/05 18:28:17 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -631,6 +631,7 @@ share/doc/cups/help/api-overview.html
 share/doc/cups/help/api-ppd.html
 share/doc/cups/help/api-raster.html
 share/doc/cups/help/cgi.html
+share/doc/cups/help/encryption.html
 share/doc/cups/help/glossary.html
 share/doc/cups/help/kerberos.html
 share/doc/cups/help/license.html
