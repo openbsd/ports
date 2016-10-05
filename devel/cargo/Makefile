@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/31 08:33:37 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/05 16:51:22 danj Exp $
 COMMENT = package manager for Rust language
 
 # cargo version
-CARGO_VERSION =		0.12.0
+CARGO_VERSION =		0.13.0
 
-# rust-install submodule version
-# in cargo/src/rust-installer
+# rust-install submodule version in cargo/src/rust-installer
+# see https://github.com/rust-lang/cargo/tree/${CARGO_VERSION}/src
 RUSTINSTALL_INDEX =	c37d3747da75c280237dc2d6b925078e69555499
 
 # crates.io commit for CARGO_VERSION
-# https://github.com/rust-lang/crates.io-index/commits/master/ca/rg/cargo
-CRATESIO_INDEX =	2a052b0552fc80dc174ddfa20bc66d097189dca3
+# see https://github.com/rust-lang/crates.io-index/commits/master/ca/rg/cargo
+CRATESIO_INDEX =	2e1f891403b2d057f0ea21475b1bb99800aa14b6
 
 # cargo version used for bootstrapping
 BOOTSTRAP_VERSION =	0.12.0-20160821
@@ -49,57 +49,68 @@ DISTFILES +=	crates.io-index-${CRATESIO_INDEX}.tar.gz{crates.io-index/archive/${
 
 # look at ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
 # for the list
-CRATES +=	advapi32-sys-0.1.2		# MIT
-CRATES +=	aho-corasick-0.5.1		# Unlicense/MIT
+CRATES +=	advapi32-sys-0.2.0		# MIT
+CRATES +=	aho-corasick-0.5.2		# Unlicense/MIT
 CRATES +=	bitflags-0.1.1			# MIT/Apache-2.0
-CRATES +=	bufstream-0.1.1			# MIT/Apache-2.0 (test only)
+CRATES +=	bitflags-0.7.0			# MIT/Apache-2.0
 CRATES +=	cfg-if-0.1.0			# MIT/Apache-2.0
-CRATES +=	cmake-0.1.16			# MIT/Apache-2.0
-CRATES +=	crossbeam-0.2.8			# MIT/Apache-2.0
-CRATES +=	curl-0.3.0			# MIT
-CRATES +=	curl-sys-0.2.0			# MIT
-CRATES +=	docopt-0.6.78			# Unlicense/MIT
-CRATES +=	env_logger-0.3.2		# MIT/Apache-2.0
+CRATES +=	cmake-0.1.17			# MIT/Apache-2.0
+CRATES +=	crossbeam-0.2.9			# MIT/Apache-2.0
+CRATES +=	curl-0.3.2			# MIT
+CRATES +=	curl-sys-0.2.1			# MIT
+CRATES +=	docopt-0.6.82			# Unlicense/MIT
+CRATES +=	env_logger-0.3.4		# MIT/Apache-2.0
 CRATES +=	filetime-0.1.10			# MIT/Apache-2.0
-CRATES +=	flate2-0.2.13			# MIT/Apache-2.0
-CRATES +=	fs2-0.2.3			# MIT/Apache-2.0
-CRATES +=	gcc-0.3.26			# MIT/Apache-2.0
-CRATES +=	git2-0.4.3			# MIT/Apache-2.0
+CRATES +=	flate2-0.2.14			# MIT/Apache-2.0
+CRATES +=	fs2-0.2.5			# MIT/Apache-2.0
+CRATES +=	gcc-0.3.32			# MIT/Apache-2.0
+CRATES +=	git2-0.4.4			# MIT/Apache-2.0
 CRATES +=	git2-curl-0.5.0			# MIT/Apache-2.0
 CRATES +=	glob-0.2.11			# MIT/Apache-2.0
 CRATES +=	hamcrest-0.1.0			# no license indication (test only)
 CRATES +=	idna-0.1.0			# MIT/Apache-2.0
-CRATES +=	kernel32-sys-0.2.1		# MIT
-CRATES +=	libc-0.2.8			# MIT/Apache-2.0
-CRATES +=	libgit2-sys-0.4.3		# MIT/Apache-2.0
-CRATES +=	libssh2-sys-0.1.37		# MIT/Apache-2.0
-CRATES +=	libz-sys-1.0.2			# MIT/Apache-2.0
-CRATES +=	log-0.3.5			# MIT/Apache-2.0
+CRATES +=	kernel32-sys-0.2.2		# MIT
+CRATES +=	lazy_static-0.2.1		# MIT
+CRATES +=	libc-0.2.15			# MIT/Apache-2.0
+CRATES +=	libgit2-sys-0.4.5		# MIT/Apache-2.0
+CRATES +=	libssh2-sys-0.1.38		# MIT/Apache-2.0
+CRATES +=	libz-sys-1.0.5			# MIT/Apache-2.0
+CRATES +=	log-0.3.6			# MIT/Apache-2.0
 CRATES +=	matches-0.1.2			# MIT
-CRATES +=	memchr-0.1.10			# Unlicense/MIT
+CRATES +=	memchr-0.1.11			# Unlicense/MIT
 CRATES +=	miniz-sys-0.1.7			# MIT/Apache-2.0
-CRATES +=	miow-0.1.2			# MIT/Apache-2.0
-CRATES +=	net2-0.2.24			# MIT/Apache-2.0
-CRATES +=	nom-1.2.2			# MIT
-CRATES +=	num-0.1.31			# MIT/Apache-2.0 (test)
-CRATES +=	num_cpus-0.2.11			# MIT
-CRATES +=	openssl-sys-0.7.8		# MIT
+CRATES +=	miow-0.1.3			# MIT/Apache-2.0
+CRATES +=	net2-0.2.26			# MIT/Apache-2.0
+CRATES +=	nom-1.2.4			# MIT
+CRATES +=	num-0.1.32			# MIT/Apache-2.0 (test)
+CRATES +=	num-rational-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num-iter-0.1.32			# MIT/Apache-2.0 (test)
+CRATES +=	num-integer-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num-complex-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num-traits-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num-bigint-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num_cpus-1.0.0			# MIT
+CRATES +=	openssl-0.7.14			# Apache-2.0
+CRATES +=	openssl-sys-0.7.14		# MIT
+CRATES +=	openssl-sys-extras-0.7.14	# MIT
 CRATES +=	pkg-config-0.3.8		# MIT/Apache-2.0
 CRATES +=	rand-0.3.14			# MIT/Apache-2.0
-CRATES +=	regex-0.1.58			# MIT/Apache-2.0
-CRATES +=	regex-syntax-0.3.0		# MIT/Apache-2.0
-CRATES +=	rustc-serialize-0.3.18		# MIT/Apache-2.0
+CRATES +=	regex-0.1.73			# MIT/Apache-2.0
+CRATES +=	regex-syntax-0.3.4		# MIT/Apache-2.0
+CRATES +=	rustc-serialize-0.3.19		# MIT/Apache-2.0
 CRATES +=	semver-0.2.3			# MIT/Apache-2.0
 CRATES +=	strsim-0.3.0			# MIT
-CRATES +=	tar-0.4.5			# MIT/Apache-2.0
-CRATES +=	tempdir-0.3.4			# MIT/Apache-2.0
+CRATES +=	tar-0.4.8			# MIT/Apache-2.0
+CRATES +=	tempdir-0.3.5			# MIT/Apache-2.0
 CRATES +=	term-0.4.4			# MIT/Apache-2.0
-CRATES +=	toml-0.1.30			# MIT/Apache-2.0
+CRATES +=	thread-id-2.0.0			# Apache-2.0
+CRATES +=	thread_local-0.2.6		# Apache-2.0/MIT
+CRATES +=	toml-0.2.0			# MIT/Apache-2.0
 CRATES +=	unicode-bidi-0.2.3		# MIT/Apache-2.0
 CRATES +=	unicode-normalization-0.1.2	# MIT/Apache-2.0
-CRATES +=	url-1.1.0			# MIT/Apache-2.0
+CRATES +=	url-1.2.0			# MIT/Apache-2.0
 CRATES +=	utf8-ranges-0.1.3		# Unlicense/MIT
-CRATES +=	winapi-0.2.6			# MIT
+CRATES +=	winapi-0.2.8			# MIT
 CRATES +=	winapi-build-0.1.1		# MIT
 CRATES +=	ws2_32-sys-0.2.1		# MIT
 
@@ -118,7 +129,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/libgit2/libgit2 \
 		devel/cmake \
-		lang/rust>=1.11.0
+		lang/rust>=1.12,<1.13
 
 LIB_DEPENDS =	net/curl \
 		security/libssh2
