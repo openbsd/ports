@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.61 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2016/10/05 08:10:26 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	device color profile management daemon
 
-V=		1.3.2
+V=		1.3.3
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.5
 SHARED_LIBS +=  colord               1.4      # 2.5
