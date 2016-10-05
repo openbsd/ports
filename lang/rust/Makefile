@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/03 19:51:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/10/05 16:48:10 danj Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,13 +7,12 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.11.0
-BV =			1.11.0-20160819
+V =			1.12.0
+BV =			1.12.0-20160929
 DISTNAME =		rustc-${V}-src
-REVISION =		1
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
-RUST_HASH =		39b92f95
+RUST_HASH =		40393716
 SUBST_VARS +=		RUST_HASH
 
 PKGNAME =		rust-${V}
@@ -83,14 +82,14 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--disable-codegen-tests \
 			--release-channel=stable \
+			--local-rust-root="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}" \
 			--llvm-root="${LOCALBASE}" \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
 
 # VERSION and BOOTSTRAP are same version
 .if ${V} == ${BV:C/-[0-9]+$//}
-CONFIGURE_ARGS +=	--enable-local-rebuild \
-			--local-rust-root="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}"
+CONFIGURE_ARGS +=	--enable-local-rebuild
 .endif
 
 CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
