@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2016/07/30 18:07:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/06 16:45:20 landry Exp $
 
 COMMENT =	help removing obsolete files between OpenBSD upgrades
 
-V =		1.9
-DISTNAME =	sysclean-${V}
+GH_ACCOUNT =	semarie
+GH_PROJECT =	sysclean
+GH_TAGNAME =	1.9
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/sysclean/
-
-MASTER_SITES =	https://github.com/semarie/sysclean/archive/
-DISTFILES =	sysclean-${V}.tar.gz{${V}.tar.gz}
 
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
