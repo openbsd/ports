@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2016/03/30 21:26:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.122 2016/10/06 05:47:35 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	7.12
+MODPY_EGG_VERSION=	7.30
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
@@ -23,7 +23,7 @@ MULTI_PACKAGES=	-main -zenmap
 
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
-MODLUA_VERSION=	5.2
+MODLUA_VERSION=	5.3
 MODULES=	lang/python \
 		lang/lua
 

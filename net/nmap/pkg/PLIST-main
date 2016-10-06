@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/03/18 21:13:38 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2016/10/06 05:47:35 giovanni Exp $
 @conflict ndiff-*
 @pkgpath net/ndiff
 @pkgpath net/nmap
@@ -34,14 +34,16 @@ share/nmap/nselib/anyconnect.lua
 share/nmap/nselib/asn1.lua
 share/nmap/nselib/base32.lua
 share/nmap/nselib/base64.lua
-share/nmap/nselib/bin.luadoc
-share/nmap/nselib/bit.luadoc
+share/nmap/nselib/bin.lua
+share/nmap/nselib/bit.lua
 share/nmap/nselib/bitcoin.lua
+share/nmap/nselib/bits.lua
 share/nmap/nselib/bittorrent.lua
 share/nmap/nselib/bjnp.lua
 share/nmap/nselib/brute.lua
 share/nmap/nselib/cassandra.lua
 share/nmap/nselib/citrixxml.lua
+share/nmap/nselib/coap.lua
 share/nmap/nselib/comm.lua
 share/nmap/nselib/creds.lua
 share/nmap/nselib/cvs.lua
@@ -93,6 +95,7 @@ share/nmap/nselib/data/vhosts-full.lst
 share/nmap/nselib/data/wp-plugins.lst
 share/nmap/nselib/data/wp-themes.lst
 share/nmap/nselib/datafiles.lua
+share/nmap/nselib/datetime.lua
 share/nmap/nselib/dhcp.lua
 share/nmap/nselib/dhcp6.lua
 share/nmap/nselib/dns.lua
@@ -112,6 +115,7 @@ share/nmap/nselib/ike.lua
 share/nmap/nselib/imap.lua
 share/nmap/nselib/informix.lua
 share/nmap/nselib/ipOps.lua
+share/nmap/nselib/ipmi.lua
 share/nmap/nselib/ipp.lua
 share/nmap/nselib/iscsi.lua
 share/nmap/nselib/isns.lua
@@ -127,6 +131,7 @@ share/nmap/nselib/match.lua
 share/nmap/nselib/membase.lua
 share/nmap/nselib/mobileme.lua
 share/nmap/nselib/mongodb.lua
+share/nmap/nselib/mqtt.lua
 share/nmap/nselib/msrpc.lua
 share/nmap/nselib/msrpcperformance.lua
 share/nmap/nselib/msrpctypes.lua
@@ -170,6 +175,7 @@ share/nmap/nselib/srvloc.lua
 share/nmap/nselib/ssh1.lua
 share/nmap/nselib/ssh2.lua
 share/nmap/nselib/sslcert.lua
+share/nmap/nselib/sslv2.lua
 share/nmap/nselib/stdnse.lua
 share/nmap/nselib/strbuf.lua
 share/nmap/nselib/strict.lua
@@ -257,6 +263,9 @@ share/nmap/scripts/citrix-enum-apps-xml.nse
 share/nmap/scripts/citrix-enum-apps.nse
 share/nmap/scripts/citrix-enum-servers-xml.nse
 share/nmap/scripts/citrix-enum-servers.nse
+share/nmap/scripts/clamav-exec.nse
+share/nmap/scripts/clock-skew.nse
+share/nmap/scripts/coap-resources.nse
 share/nmap/scripts/couchdb-databases.nse
 share/nmap/scripts/couchdb-stats.nse
 share/nmap/scripts/creds-summary.nse
@@ -305,6 +314,7 @@ share/nmap/scripts/finger.nse
 share/nmap/scripts/firewalk.nse
 share/nmap/scripts/firewall-bypass.nse
 share/nmap/scripts/flume-master-info.nse
+share/nmap/scripts/fox-info.nse
 share/nmap/scripts/freelancer-info.nse
 share/nmap/scripts/ftp-anon.nse
 share/nmap/scripts/ftp-bounce.nse
@@ -334,6 +344,7 @@ share/nmap/scripts/http-adobe-coldfusion-apsa1301.nse
 share/nmap/scripts/http-affiliate-id.nse
 share/nmap/scripts/http-apache-negotiation.nse
 share/nmap/scripts/http-apache-server-status.nse
+share/nmap/scripts/http-aspnet-debug.nse
 share/nmap/scripts/http-auth-finder.nse
 share/nmap/scripts/http-auth.nse
 share/nmap/scripts/http-avaya-ipoffice-users.nse
@@ -380,11 +391,13 @@ share/nmap/scripts/http-icloud-findmyiphone.nse
 share/nmap/scripts/http-icloud-sendmsg.nse
 share/nmap/scripts/http-iis-short-name-brute.nse
 share/nmap/scripts/http-iis-webdav-vuln.nse
+share/nmap/scripts/http-internal-ip-disclosure.nse
 share/nmap/scripts/http-joomla-brute.nse
 share/nmap/scripts/http-litespeed-sourcecode-download.nse
 share/nmap/scripts/http-ls.nse
 share/nmap/scripts/http-majordomo2-dir-traversal.nse
 share/nmap/scripts/http-malware-host.nse
+share/nmap/scripts/http-mcmp.nse
 share/nmap/scripts/http-method-tamper.nse
 share/nmap/scripts/http-methods.nse
 share/nmap/scripts/http-mobileversion-checker.nse
@@ -461,12 +474,14 @@ share/nmap/scripts/informix-brute.nse
 share/nmap/scripts/informix-query.nse
 share/nmap/scripts/informix-tables.nse
 share/nmap/scripts/ip-forwarding.nse
-share/nmap/scripts/ip-geolocation-geobytes.nse
 share/nmap/scripts/ip-geolocation-geoplugin.nse
 share/nmap/scripts/ip-geolocation-ipinfodb.nse
 share/nmap/scripts/ip-geolocation-maxmind.nse
 share/nmap/scripts/ip-https-discover.nse
 share/nmap/scripts/ipidseq.nse
+share/nmap/scripts/ipmi-brute.nse
+share/nmap/scripts/ipmi-cipher-zero.nse
+share/nmap/scripts/ipmi-version.nse
 share/nmap/scripts/ipv6-multicast-mld-list.nse
 share/nmap/scripts/ipv6-node-info.nse
 share/nmap/scripts/ipv6-ra-flood.nse
@@ -507,6 +522,7 @@ share/nmap/scripts/modbus-discover.nse
 share/nmap/scripts/mongodb-brute.nse
 share/nmap/scripts/mongodb-databases.nse
 share/nmap/scripts/mongodb-info.nse
+share/nmap/scripts/mqtt-subscribe.nse
 share/nmap/scripts/mrinfo.nse
 share/nmap/scripts/ms-sql-brute.nse
 share/nmap/scripts/ms-sql-config.nse
@@ -565,10 +581,12 @@ share/nmap/scripts/oracle-brute-stealth.nse
 share/nmap/scripts/oracle-brute.nse
 share/nmap/scripts/oracle-enum-users.nse
 share/nmap/scripts/oracle-sid-brute.nse
+share/nmap/scripts/oracle-tns-version.nse
 share/nmap/scripts/ovs-agent-version.nse
 share/nmap/scripts/p2p-conficker.nse
 share/nmap/scripts/path-mtu.nse
 share/nmap/scripts/pcanywhere-brute.nse
+share/nmap/scripts/pcworx-info.nse
 share/nmap/scripts/pgsql-brute.nse
 share/nmap/scripts/pjl-ready-message.nse
 share/nmap/scripts/pop3-brute.nse
@@ -674,6 +692,7 @@ share/nmap/scripts/ssl-google-cert-catalog.nse
 share/nmap/scripts/ssl-heartbleed.nse
 share/nmap/scripts/ssl-known-key.nse
 share/nmap/scripts/ssl-poodle.nse
+share/nmap/scripts/sslv2-drown.nse
 share/nmap/scripts/sslv2.nse
 share/nmap/scripts/sstp-discover.nse
 share/nmap/scripts/stun-info.nse
@@ -708,6 +727,7 @@ share/nmap/scripts/versant-info.nse
 share/nmap/scripts/vmauthd-brute.nse
 share/nmap/scripts/vnc-brute.nse
 share/nmap/scripts/vnc-info.nse
+share/nmap/scripts/vnc-title.nse
 share/nmap/scripts/voldemort-info.nse
 share/nmap/scripts/vuze-dht-info.nse
 share/nmap/scripts/wdb-version.nse

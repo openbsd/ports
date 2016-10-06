@@ -1,13 +1,13 @@
-$OpenBSD: patch-scan-engine_cc,v 1.8 2016/01/07 13:23:47 giovanni Exp $
+$OpenBSD: patch-scan-engine_cc,v 1.9 2016/10/06 05:47:35 giovanni Exp $
 
 pcap_filter changes: to deal with base libpcap which doesn't support sctp
 (not currently needed as using internal libpcap)
 
 Format changes for 64-bit time_t, should go upstream
 
---- scan_engine.cc.orig	Wed Jun  3 15:01:29 2015
-+++ scan_engine.cc	Tue Dec 29 10:47:48 2015
-@@ -2011,7 +2011,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
+--- scan_engine.cc.orig	Fri Aug 19 13:38:29 2016
++++ scan_engine.cc	Thu Sep 29 22:04:48 2016
+@@ -2029,7 +2029,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
      struct timeval tv;
  
      gettimeofday(&tv, NULL);

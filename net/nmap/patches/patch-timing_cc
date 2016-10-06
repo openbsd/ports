@@ -1,9 +1,9 @@
-$OpenBSD: patch-timing_cc,v 1.6 2016/03/18 21:13:38 giovanni Exp $
---- timing.cc.orig	Tue Jun 23 01:09:01 2015
-+++ timing.cc	Thu Mar 17 20:44:33 2016
+$OpenBSD: patch-timing_cc,v 1.7 2016/10/06 05:47:35 giovanni Exp $
+--- timing.cc.orig	Mon Aug 22 20:50:06 2016
++++ timing.cc	Thu Sep 29 22:04:48 2016
 @@ -125,6 +125,8 @@
  
- /* $Id: patch-timing_cc,v 1.6 2016/03/18 21:13:38 giovanni Exp $ */
+ /* $Id: patch-timing_cc,v 1.7 2016/10/06 05:47:35 giovanni Exp $ */
  
 +#include <limits>
 +
