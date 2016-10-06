@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.404 2016/09/08 17:12:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.405 2016/10/06 16:33:29 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -23,6 +23,7 @@
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += checkbashisms
+     SUBDIR += checkrestart
      SUBDIR += cl-launch
      SUBDIR += clusterit
      SUBDIR += clusterit,no_x11
