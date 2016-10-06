@@ -1,7 +1,7 @@
-mGBA is a Game Boy Advance emulator.
+mGBA is a Game Boy, Game Boy Color, and Game Boy Advance emulator.
 
 It provides:
- -  Near full Game Boy Advance hardware support.
+ -  Near full Game Boy hardware support.
  -  Fast emulation.
  -  Save type detection, even for flash memory size.
  -  Real-time clock support.

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/08/05 05:23:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/06 06:25:31 bentley Exp $
 
-COMMENT-main =		Game Boy Advance emulator
-COMMENT-qt =		Game Boy Advance emulator with GUI
-COMMENT-libretro =	Game Boy Advance core for retroarch
+COMMENT-main =		Game Boy Color/Advance emulator
+COMMENT-qt =		Game Boy Color/Advance emulator with GUI
+COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.4.1
+V =			0.5.1
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
@@ -14,7 +14,7 @@ MULTI_PACKAGES =	-main -qt -libretro
 
 .include <bsd.port.arch.mk>
 
-SHARED_LIBS +=  mgba                      0.0 # 0.1
+SHARED_LIBS +=  mgba                      1.0 # 0.1
 
 CATEGORIES =		emulators
 
@@ -62,6 +62,6 @@ NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libretro
-	${INSTALL_DATA} ${WRKBUILD}/mgba_libretro.so ${PREFIX}/lib/libretro
+	mv ${PREFIX}/lib/mgba_libretro.so ${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
