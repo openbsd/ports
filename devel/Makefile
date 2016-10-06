@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1544 2016/10/04 19:58:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1545 2016/10/06 05:54:00 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -952,6 +952,7 @@
      SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
+     SUBDIR += p5-Proc-Fork
      SUBDIR += p5-Proc-Guard
      SUBDIR += p5-Proc-PID-File
      SUBDIR += p5-Proc-Simple
