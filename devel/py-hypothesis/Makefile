@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/02 11:45:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/06 12:23:06 shadchin Exp $
 
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	3.5.2
+MODPY_EGG_VERSION =	3.5.3
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
