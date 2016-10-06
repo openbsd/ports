@@ -1,23 +1,23 @@
-$OpenBSD: patch-GNUmakefile,v 1.3 2015/09/28 16:52:49 jca Exp $
---- GNUmakefile.orig	Sat Sep 19 00:13:11 2015
-+++ GNUmakefile	Sat Sep 19 00:23:26 2015
-@@ -18,8 +18,9 @@ all: ent $(LIBS) libowfat.a libsocket t
- CROSS=
- #CROSS=i686-mingw-
- CC=$(CROSS)gcc
--CFLAGS=-pipe -W -Wall -Wextra -O2 -fomit-frame-pointer
-+COPTFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
+$OpenBSD: patch-GNUmakefile,v 1.4 2016/10/06 19:43:30 bluhm Exp $
+--- GNUmakefile.orig	Sun Oct  2 01:07:35 2016
++++ GNUmakefile	Thu Oct  6 20:40:23 2016
+@@ -20,7 +20,7 @@ CROSS=
+ CC=gcc
+ CCC=$(CROSS)$(CC)
+ WERROR=
+-WARN=-W -Wall -Wextra $(WERROR)
++WARN=-W -Wall $(WERROR)
+ 
+ # Use the second version if you are building for a binary that is only
+ # supposed to run on this machine. It tells gcc to use CPU instructions
+@@ -33,8 +33,8 @@ OPT_PLUS=-O3 $(NATIVE)
+ 
+ DEFINE=-D_REENTRANT
+ 
+-CFLAGS=-pipe $(WARN) $(DEFINE) $(OPT_REG)
+-CFLAGS_OPT=-pipe $(WARN) $(DEFINE) $(OPT_PLUS)
++CFLAGS=$(COPTFLAGS) $(WARN) $(DEFINE) $(OPT_REG)
++CFLAGS_OPT=$(COPTFLAGS) $(WARN) $(DEFINE) $(OPT_PLUS)
+ 
  #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
-+CFLAGS=$(COPTFLAGS)
  
- ent: ent.c haveuint128.h
- 	gcc -g -o ent ent.c -I.
-@@ -317,7 +318,7 @@ dns_nd6.o fmt_xlong.o scan_xlong.o fmt_ip6_flat.o $(TE
- iob_send.o scan_ip6if.o: havealloca.h
- 
- dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h havealloca.h haveuint128.h
--	gcc -I. -MM `ls */*.c | grep -v test` t.c | sed -e 's@ \./@ @g' > dep
-+	$(CC) -I. -MM `ls */*.c | grep -v test` t.c | sed -e 's@ \./@ @g' > dep
- 
- libdep:
- 	for i in $(LIBS); do (echo -n $$i|tr a-z A-Z|sed 's/.A$$/_OBJS=/'; echo $${i%.a}/*.c|sed -e 's@[^/]*/\([^.]*\)\.c@\1.o @g'); done > libdep

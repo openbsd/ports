@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/28 16:52:49 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/06 19:43:30 bluhm Exp $
 
 COMMENT =	library of general purpose APIs
-BROKEN-hppa=	missing atomic ops
+BROKEN-hppa =	missing atomic ops
 
-DISTNAME =	libowfat-0.30
-REVISION =	0
+DISTNAME =	libowfat-0.31
 CATEGORIES =	devel
 
 MAINTAINER =	Jan Klemkow <j.klemkow@wemelug.de>
@@ -16,9 +15,9 @@ USE_GMAKE =	Yes
 MAKE_FILE =	GNUmakefile
 
 MAKE_FLAGS =	CC="${CC}" COPTFLAGS="${CFLAGS}"
-FAKE_FLAGS =	prefix=${DESTDIR}${PREFIX} \
-		INCLUDEDIR=${DESTDIR}${PREFIX}/include/lowfat \
-		MAN3DIR=${DESTDIR}${PREFIX}/share/lowfat/man
+FAKE_FLAGS =	prefix=${PREFIX} \
+		INCLUDEDIR=${PREFIX}/include/lowfat \
+		MAN3DIR=${PREFIX}/share/lowfat/man
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes

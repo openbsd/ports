@@ -1,0 +1,12 @@
+$OpenBSD: patch-buffer_buffer_put_c,v 1.1 2016/10/06 19:43:30 bluhm Exp $
+--- buffer/buffer_put.c.orig	Thu Oct  6 18:36:19 2016
++++ buffer/buffer_put.c	Thu Oct  6 18:36:41 2016
+@@ -1,8 +1,5 @@
+ #include <string.h>
+ #include "buffer.h"
+-#ifdef __x86_64__
+-#include <x86intrin.h>
+-#endif
+ 
+ extern int buffer_stubborn(ssize_t (*op)(),int fd,const char* buf, size_t len,void* cookie);
+ 
