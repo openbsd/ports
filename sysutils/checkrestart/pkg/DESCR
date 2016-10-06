@@ -1,0 +1,12 @@
+checkrestart is a program designed to help to find processes that need
+restarting after upgrade.
+
+checkrestart walks thought entire file table of the system, searching for
+processes using node detached from filesystem.
+
+The typical use case is:
+ - starts a long lived program.
+ - later, upgrades your packages via pkg_add -u.
+ - if the program is updated on disk, the running program is still the
+   previous one (without security fixes for example).
+ - checkrestart will tell you which processes belong to this category.
