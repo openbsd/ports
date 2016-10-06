@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/09/20 16:43:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/10/06 19:51:15 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -17,20 +17,20 @@ share/unifi/data/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.7.17.5220/
-share/unifi/dl/firmware/BZ2/3.7.17.5220/firmware.bin
+share/unifi/dl/firmware/BZ2/3.7.8.5016/
+share/unifi/dl/firmware/BZ2/3.7.8.5016/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/3.7.17.5220/
-share/unifi/dl/firmware/U2HSR/3.7.17.5220/firmware.bin
+share/unifi/dl/firmware/U2HSR/3.7.8.5016/
+share/unifi/dl/firmware/U2HSR/3.7.8.5016/firmware.bin
 share/unifi/dl/firmware/U2IW/
-share/unifi/dl/firmware/U2IW/3.7.17.5220/
-share/unifi/dl/firmware/U2IW/3.7.17.5220/firmware.bin
+share/unifi/dl/firmware/U2IW/3.7.8.5016/
+share/unifi/dl/firmware/U2IW/3.7.8.5016/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.7.17.5220/
-share/unifi/dl/firmware/U7E/3.7.17.5220/firmware.bin
+share/unifi/dl/firmware/U7E/3.7.8.5016/
+share/unifi/dl/firmware/U7E/3.7.8.5016/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.7.17.5220/
-share/unifi/dl/firmware/U7P/3.7.17.5220/firmware.bin
+share/unifi/dl/firmware/U7P/3.7.8.5016/
+share/unifi/dl/firmware/U7P/3.7.8.5016/firmware.bin
 share/unifi/dl/firmware/U7PG2/
 share/unifi/dl/firmware/U7PG2/3.7.17.5220/
 share/unifi/dl/firmware/U7PG2/3.7.17.5220/firmware.bin
