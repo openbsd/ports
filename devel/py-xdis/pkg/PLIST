@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/02 11:39:39 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/07 07:15:33 shadchin Exp $
 bin/pydisasm${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xdis/
 lib/python${MODPY_VERSION}/site-packages/xdis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -40,10 +40,14 @@ lib/python${MODPY_VERSION}/site-packages/xdis/load.py
 lib/python${MODPY_VERSION}/site-packages/xdis/magics.py
 lib/python${MODPY_VERSION}/site-packages/xdis/main.py
 lib/python${MODPY_VERSION}/site-packages/xdis/marsh.py
+lib/python${MODPY_VERSION}/site-packages/xdis/namedtuple25.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_15.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_20.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_21.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_22.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_23.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_24.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,6 +66,9 @@ lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_3x.
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_pypy26.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_pypy27.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}opcode_pypy32.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_15.py
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_20.py
+lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_21.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_22.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_23.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/opcode_24.py

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/02 11:39:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/07 07:15:33 shadchin Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
-MODPY_EGG_VERSION =	2.3.1
+MODPY_EGG_VERSION =	2.3.2
 DISTNAME =		xdis-${MODPY_EGG_VERSION}
 PKGNAME =		py-xdis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
