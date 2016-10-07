@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/07 10:27:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/07 10:29:34 sthen Exp $
 
 COMMENT =		Python lex/yacc
 
-MODPY_EGG_VERSION =	3.8
+MODPY_EGG_VERSION =	3.9
 DISTNAME =		ply-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
