@@ -1,15 +1,23 @@
-$OpenBSD: patch-net_tap-bsd_c,v 1.5 2016/05/13 07:20:46 ajacoutot Exp $
---- net/tap-bsd.c.orig	Wed Mar 30 15:45:05 2016
-+++ net/tap-bsd.c	Wed Mar 30 20:38:00 2016
-@@ -55,11 +55,7 @@ int tap_open(char *ifname, int ifname_size, int *vnet_
+$OpenBSD: patch-net_tap-bsd_c,v 1.6 2016/10/07 08:51:05 ajacoutot Exp $
+--- net/tap-bsd.c.orig	Fri Sep  2 11:34:22 2016
++++ net/tap-bsd.c	Thu Oct  6 19:40:54 2016
+@@ -35,6 +35,10 @@
+ #include <net/if_tap.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#endif
++
+ #ifndef __FreeBSD__
+ int tap_open(char *ifname, int ifname_size, int *vnet_hdr,
+              int vnet_hdr_required, int mq_required, Error **errp)
+@@ -55,7 +59,7 @@ int tap_open(char *ifname, int ifname_size, int *vnet_
          if (*ifname) {
              snprintf(dname, sizeof dname, "/dev/%s", ifname);
          } else {
 -#if defined(__OpenBSD__)
--            snprintf(dname, sizeof dname, "/dev/tun%d", i);
--#else
++#if defined(__OpenBSD__) && OpenBSD < 201605
+             snprintf(dname, sizeof dname, "/dev/tun%d", i);
+ #else
              snprintf(dname, sizeof dname, "/dev/tap%d", i);
--#endif
-         }
-         TFR(fd = open(dname, O_RDWR));
-         if (fd >= 0) {
