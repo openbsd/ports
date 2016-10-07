@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_serverconfig_c,v 1.8 2016/08/27 08:17:54 juanfra Exp $
---- src/serverconfig.c.orig	Thu Jun  2 09:50:25 2016
-+++ src/serverconfig.c	Sat Aug 27 01:58:47 2016
+$OpenBSD: patch-src_serverconfig_c,v 1.9 2016/10/07 01:49:28 juanfra Exp $
+--- src/serverconfig.c.orig	Sun Sep 25 09:33:39 2016
++++ src/serverconfig.c	Fri Oct  7 03:24:03 2016
 @@ -26,7 +26,7 @@
  #include "libfs.h"
  #include "memdbg.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_serverconfig_c,v 1.8 2016/08/27 08:17:54 juanfra Exp $
  #define MAX_LENGTH_CONFIGLINE  1024
  #define MAX_CACHE_SIZE         1024
  #define MAX_UPLOAD_SIZE        2047
-@@ -290,8 +290,8 @@ t_config *default_config(void) {
+@@ -294,8 +294,8 @@ t_config *default_config(void) {
  	config->tomahawk_port      = NULL;
  #endif
  

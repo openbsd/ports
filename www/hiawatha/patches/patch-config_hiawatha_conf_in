@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_hiawatha_conf_in,v 1.4 2016/08/27 08:17:54 juanfra Exp $
---- config/hiawatha.conf.in.orig	Mon Jan 18 21:56:23 2016
-+++ config/hiawatha.conf.in	Sat Aug 27 01:58:47 2016
+$OpenBSD: patch-config_hiawatha_conf_in,v 1.5 2016/10/07 01:49:28 juanfra Exp $
+--- config/hiawatha.conf.in.orig	Thu Oct  6 16:59:29 2016
++++ config/hiawatha.conf.in	Fri Oct  7 03:24:03 2016
 @@ -12,6 +12,7 @@
  # GENERAL SETTINGS
  #
@@ -26,4 +26,4 @@ $OpenBSD: patch-config_hiawatha_conf_in,v 1.4 2016/08/27 08:17:54 juanfra Exp $
 +#CGIwrapper = ${LOCALBASE}/sbin/cgi-wrapper
  #
  #FastCGIserver {
- #	FastCGIid = PHP5
+ #	FastCGIid = PHP7
