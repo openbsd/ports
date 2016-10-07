@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/07 10:27:30 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/ply/
+lib/python${MODPY_VERSION}/site-packages/ply-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ply-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ply-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ply-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ply-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ply/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}cpp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}ctokens.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}lex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}yacc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/${MODPY_PYCACHE}ygen.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ply/cpp.py
+lib/python${MODPY_VERSION}/site-packages/ply/ctokens.py
+lib/python${MODPY_VERSION}/site-packages/ply/lex.py
+lib/python${MODPY_VERSION}/site-packages/ply/yacc.py
+lib/python${MODPY_VERSION}/site-packages/ply/ygen.py

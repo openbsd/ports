@@ -1,0 +1,7 @@
+PLY is an implementation of the lex and yacc parsing tools written
+entirely in Python. It uses LR-parsing which is reasonably efficient and
+well suited for larger grammars.
+
+PLY provides most of the standard lex/yacc features including support
+for empty productions, precedence rules, error recovery, and support for
+ambiguous grammars.
