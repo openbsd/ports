@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/13 09:00:25 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/07 07:09:41 shadchin Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
-MODPY_EGG_VERSION =	1.11.1
+MODPY_EGG_VERSION =	1.13.0
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
