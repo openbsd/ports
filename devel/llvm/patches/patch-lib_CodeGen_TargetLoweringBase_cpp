@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_StackProtector_cpp,v 1.7 2016/09/13 07:47:41 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_TargetLoweringBase_cpp,v 1.1 2016/10/07 08:55:30 ajacoutot Exp $
 
 [SSP] Do not set __guard_local to hidden for OpenBSD SSP
 
@@ -18,19 +18,16 @@ common segment or not).
 
 It also matches what gcc on OpenBSD does.
 
---- lib/CodeGen/StackProtector.cpp.orig	Mon Sep 12 10:54:50 2016
-+++ lib/CodeGen/StackProtector.cpp	Mon Sep 12 10:55:34 2016
-@@ -341,11 +341,9 @@ static bool CreatePrologue(Function *F, Module *M, Ret
-     StackGuardVar =
-         ConstantExpr::getIntToPtr(OffsetVal, PointerType::get(PtrTy,
-                                                               AddressSpace));
--  } else if (TT.isOSOpenBSD()) {
-+  } else if (TT.isOSOpenBSD())
-     StackGuardVar = M->getOrInsertGlobal("__guard_local", PtrTy);
--    cast<GlobalValue>(StackGuardVar)
--        ->setVisibility(GlobalValue::HiddenVisibility);
--  } else {
-+  else {
-     SupportsSelectionDAGSP = true;
-     StackGuardVar = M->getOrInsertGlobal("__stack_chk_guard", PtrTy);
+--- lib/CodeGen/TargetLoweringBase.cpp.orig	Sat Aug 27 00:07:44 2016
++++ lib/CodeGen/TargetLoweringBase.cpp	Sat Aug 27 00:08:23 2016
+@@ -1818,9 +1818,7 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
+   if (getTargetMachine().getTargetTriple().isOSOpenBSD()) {
+     Module &M = *IRB.GetInsertBlock()->getParent()->getParent();
+     PointerType *PtrTy = Type::getInt8PtrTy(M.getContext());
+-    auto Guard = cast<GlobalValue>(M.getOrInsertGlobal("__guard_local", PtrTy));
+-    Guard->setVisibility(GlobalValue::HiddenVisibility);
+-    return Guard;
++    return M.getOrInsertGlobal("__guard_local", PtrTy);
    }
+   return nullptr;
+ }

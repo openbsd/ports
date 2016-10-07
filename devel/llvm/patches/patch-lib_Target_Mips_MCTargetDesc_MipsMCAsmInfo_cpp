@@ -1,13 +1,16 @@
-$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp,v 1.1 2016/05/15 07:07:52 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp,v 1.2 2016/10/07 08:55:30 ajacoutot Exp $
 
 Use the integrated assembler by default on Mips64.
 
---- lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp.orig	Sat May 14 20:30:16 2016
-+++ lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp	Sat May 14 20:30:35 2016
-@@ -42,4 +42,6 @@ MipsMCAsmInfo::MipsMCAsmInfo(const Triple &TheTriple) 
-   SupportsDebugInformation = true;
+--- lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp.orig	Sun Jul 24 07:39:45 2016
++++ lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp	Mon Sep  5 20:01:14 2016
+@@ -50,8 +50,5 @@ MipsMCAsmInfo::MipsMCAsmInfo(const Triple &TheTriple) 
    ExceptionsType = ExceptionHandling::DwarfCFI;
    DwarfRegNumForCFI = true;
-+
+ 
+-  // Enable IAS by default for O32.
+-  if (TheTriple.getArch() == Triple::mips ||
+-      TheTriple.getArch() == Triple::mipsel)
+-    UseIntegratedAssembler = true;
 +  UseIntegratedAssembler = true;
  }

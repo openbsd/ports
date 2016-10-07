@@ -1,0 +1,20 @@
+$OpenBSD: patch-include_llvm_Support_Threading_h,v 1.1 2016/10/07 08:55:30 ajacoutot Exp $
+
+Workaround performance regression and deadlocks due to the use of
+std::call_once with libstdc++ which is not reentrant without TLS.
+
+https://github.com/rust-lang/rust/issues/36905
+
+--- include/llvm/Support/Threading.h.orig	Mon Oct  3 18:50:46 2016
++++ include/llvm/Support/Threading.h	Mon Oct  3 18:55:26 2016
+@@ -24,7 +24,9 @@
+ // libstdc++. That platform has a bug they are working to fix, and they'll
+ // remove the NetBSD checks once fixed.
+ #if defined(LLVM_ON_UNIX) &&                                                   \
+-    !(defined(__NetBSD__) && !defined(_LIBCPP_VERSION)) && !defined(__ppc__)
++    !(defined(__NetBSD__) && !defined(_LIBCPP_VERSION)) &&                     \
++    !(defined(__OpenBSD__) && !defined(_LIBCPP_VERSION)) &&                    \
++    !defined(__ppc__)
+ #define LLVM_THREADING_USE_STD_CALL_ONCE 1
+ #else
+ #define LLVM_THREADING_USE_STD_CALL_ONCE 0

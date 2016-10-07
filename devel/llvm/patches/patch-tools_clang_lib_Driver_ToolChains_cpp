@@ -1,21 +1,22 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.8 2016/09/24 12:35:38 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.9 2016/10/07 08:55:30 ajacoutot Exp $
 
 Use the integrated assembler by default on Sparc and Mips64.
 
---- tools/clang/lib/Driver/ToolChains.cpp.orig	Tue Feb 16 14:56:48 2016
-+++ tools/clang/lib/Driver/ToolChains.cpp	Sun Sep 18 19:00:06 2016
-@@ -2378,6 +2378,10 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
-   case llvm::Triple::ppc64:
-   case llvm::Triple::ppc64le:
+--- tools/clang/lib/Driver/ToolChains.cpp.orig	Thu Aug 18 13:56:48 2016
++++ tools/clang/lib/Driver/ToolChains.cpp	Sat Sep  3 17:05:50 2016
+@@ -2702,6 +2702,11 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
    case llvm::Triple::systemz:
-+  case llvm::Triple::sparc:
-+  case llvm::Triple::sparcv9:
+   case llvm::Triple::mips:
+   case llvm::Triple::mipsel:
 +  case llvm::Triple::mips64:
 +  case llvm::Triple::mips64el:
++  case llvm::Triple::sparc:
++  case llvm::Triple::sparcel:
++  case llvm::Triple::sparcv9:
      return true;
    default:
      return false;
-@@ -2985,6 +2989,50 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -3355,6 +3360,50 @@ Tool *OpenBSD::buildAssembler() const {
  }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }

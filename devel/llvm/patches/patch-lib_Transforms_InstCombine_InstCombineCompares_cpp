@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_Transforms_InstCombine_InstCombineCompares_cpp,v 1.1 2016/10/07 08:55:30 ajacoutot Exp $
+
+[InstCombine] Do not RAUW a constant GEP
+
+canRewriteGEPAsOffset expects to process instructions, not constants.
+
+https://github.com/rust-lang/rust/issues/36474
+
+--- lib/Transforms/InstCombine/InstCombineCompares.cpp.orig	Mon Sep 26 19:32:29 2016
++++ lib/Transforms/InstCombine/InstCombineCompares.cpp	Mon Sep 26 19:33:19 2016
+@@ -634,7 +634,7 @@ static bool canRewriteGEPAsOffset(Value *Start, Value 
+       }
+ 
+       if (!isa<IntToPtrInst>(V) && !isa<PtrToIntInst>(V) &&
+-          !isa<GEPOperator>(V) && !isa<PHINode>(V))
++          !isa<GetElementPtrInst>(V) && !isa<PHINode>(V))
+         // We've found some value that we can't explore which is different from
+         // the base. Therefore we can't do this transformation.
+         return false;

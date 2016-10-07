@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.13 2016/05/14 20:36:36 ajacoutot Exp $
---- tools/clang/lib/Driver/ToolChains.h.orig	Tue Feb 16 14:56:48 2016
-+++ tools/clang/lib/Driver/ToolChains.h	Fri Mar 25 21:50:14 2016
-@@ -676,6 +676,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.14 2016/10/07 08:55:30 ajacoutot Exp $
+--- tools/clang/lib/Driver/ToolChains.h.orig	Sat Aug 13 16:43:56 2016
++++ tools/clang/lib/Driver/ToolChains.h	Sat Aug 27 00:02:43 2016
+@@ -715,6 +715,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    bool IsObjCNonFragileABIDefault() const override { return true; }
    bool isPIEDefault() const override { return true; }
  
