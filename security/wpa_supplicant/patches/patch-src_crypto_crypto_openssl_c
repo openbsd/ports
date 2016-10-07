@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_crypto_crypto_openssl_c,v 1.1 2016/10/07 14:44:03 dcoppa Exp $
+
+Compatibility fixes for LibreSSL
+
+--- src/crypto/crypto_openssl.c.orig	Mon Oct  3 11:17:18 2016
++++ src/crypto/crypto_openssl.c	Mon Oct  3 11:19:25 2016
+@@ -611,7 +611,7 @@ void crypto_cipher_deinit(struct crypto_cipher *ctx)
+ 
+ void * dh5_init(struct wpabuf **priv, struct wpabuf **publ)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	DH *dh;
+ 	struct wpabuf *pubkey = NULL, *privkey = NULL;
+ 	size_t publen, privlen;
+@@ -712,7 +712,7 @@ err:
+ 
+ void * dh5_init_fixed(const struct wpabuf *priv, const struct wpabuf *publ)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	DH *dh;
+ 
+ 	dh = DH_new();
