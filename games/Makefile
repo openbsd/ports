@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.336 2016/08/26 08:57:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.337 2016/10/07 21:51:10 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -108,6 +108,7 @@
      SUBDIR += glsfcave
      SUBDIR += glutton
      SUBDIR += gnome-mastermind
+     SUBDIR += gnubg
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnurobbo
