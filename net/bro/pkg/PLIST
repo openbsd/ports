@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/17 14:42:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/10/07 13:34:56 ajacoutot Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @bin bin/adtrace
 @bin bin/bro
@@ -583,7 +583,6 @@ share/bro/site
 share/broctl/
 share/broctl/scripts/
 share/broctl/scripts/archive-log
-share/broctl/scripts/broctl-config.sh
 share/broctl/scripts/cflow-stats
 share/broctl/scripts/check-config
 share/broctl/scripts/crash-diag
@@ -632,4 +631,6 @@ share/examples/bro/site/local.bro
 @sample ${LOCALSTATEDIR}/log/bro/
 @sample ${LOCALSTATEDIR}/spool/bro/
 @sample ${LOCALSTATEDIR}/spool/bro/tmp/
+@exec-add ln -sf ${LOCALSTATEDIR}/spool/bro/broctl-config.sh %D/share/broctl/scripts/
+@unexec-delete rm -f %D/share/broctl/scripts/broctl-config.sh
 @rcscript ${RCDIR}/bro
