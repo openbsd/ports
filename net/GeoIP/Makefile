@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/08/27 09:12:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2016/10/07 10:22:24 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -6,9 +6,8 @@ COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
 COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
 V=		1.6.5
-D=		20160709
+D=		20161007
 REVISION-main=	4
-REVISION-city=	0
 DISTNAME=	GeoIP-$V
 PKGNAME-main=	GeoIP-$V
 PKGNAME-db=	geolite-country-$D
@@ -51,7 +50,6 @@ pre-test:
 
 # maintainer convenience target
 geolite:
-	set -x; \
 	t=`mktemp -d /tmp/geoip.XXXXXXXXXX`; \
 	d=`date +%Y%m%d`; \
 	f=geolite-data-$${d}.tar.xz; \
@@ -66,6 +64,7 @@ geolite:
 	gunzip *gz; \
 	cd ..; \
 	tar cf - data | xz -T 0 > $$f; \
-	scp $$f naiad:mirrors/
+	scp $$f naiad:mirrors/; \
+	rm -r $$t
 
 .include <bsd.port.mk>
