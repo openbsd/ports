@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/10/07 10:05:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/10/07 12:59:42 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.4.1
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -47,6 +47,9 @@ RUN_DEPENDS +=		shells/bash
 RUN_DEPENDS +=		net/curl
 
 CONFIGURE_STYLE=	simple
+
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
+				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--conf-files-dir=${SYSCONFDIR}/bro \
