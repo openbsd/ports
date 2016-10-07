@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2016/10/07 08:57:13 ajacoutot Exp $
+
+Update to reflect libLLVMProfileData changes in Clang.
+
+Clang r262515 added dependency on library LLVMProfileData in clangFrontend
+(for example, in CompilerInvocation.cpp).
+
+db6b6edafaeb289ff38ce48e5a43460b25f1b316
+
+--- CMakeLists.txt.orig	Tue Sep 13 12:01:36 2016
++++ CMakeLists.txt	Tue Sep 13 12:02:00 2016
+@@ -150,6 +150,7 @@ target_link_libraries(include-what-you-use
+   LLVMAnalysis # Core, Support
+   LLVMOption # Support
+   LLVMMCDisassembler # MC, Support
++  LLVMProfileData # Core, Support, Object
+   LLVMMCParser # MC, Support
+   LLVMMC # Object, Support
+   LLVMObject # BitReader, Core, Support

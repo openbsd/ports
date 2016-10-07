@@ -1,0 +1,44 @@
+$OpenBSD: patch-iwyu_ast_util_cc,v 1.1 2016/10/07 08:57:13 ajacoutot Exp $
+
+Update to reflect changes in Clang.
+
+Clang r274732 in a few places replaced a pointer/length pair with ArrayRef.
+
+2e5d018a87949ec893bf6a8430ff62210f51a125
+
+--- iwyu_ast_util.cc.orig	Tue Sep 13 11:30:44 2016
++++ iwyu_ast_util.cc	Tue Sep 13 11:59:09 2016
+@@ -22,6 +22,7 @@
+ #include "iwyu_string_util.h"
+ #include "iwyu_verrs.h"
+ #include "port.h"  // for CHECK_
++#include "llvm/ADT/ArrayRef.h"
+ #include "llvm/Support/Casting.h"
+ #include "llvm/Support/raw_ostream.h"
+ #include "clang/AST/ASTContext.h"
+@@ -120,6 +121,7 @@ using clang::UnaryOperator;
+ using clang::UsingDirectiveDecl;
+ using clang::ValueDecl;
+ using clang::VarDecl;
++using llvm::ArrayRef;
+ using llvm::PointerUnion;
+ using llvm::cast;
+ using llvm::dyn_cast_or_null;
+@@ -454,7 +456,7 @@ string PrintableTemplateArgument(const TemplateArgumen
+   std::string buffer;
+   raw_string_ostream ostream(buffer);
+   TemplateSpecializationType::PrintTemplateArgumentList(
+-      ostream, &arg, 1, DefaultPrintPolicy());
++      ostream, ArrayRef<TemplateArgument>(arg), DefaultPrintPolicy());
+   return ostream.str();
+ }
+ 
+@@ -462,7 +464,7 @@ string PrintableTemplateArgumentLoc(const TemplateArgu
+   std::string buffer;
+   raw_string_ostream ostream(buffer);
+   TemplateSpecializationType::PrintTemplateArgumentList(
+-      ostream, &arg, 1, DefaultPrintPolicy());
++      ostream, ArrayRef<TemplateArgumentLoc>(arg), DefaultPrintPolicy());
+   return ostream.str();
+ }
+ 
