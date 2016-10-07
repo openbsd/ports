@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/09/08 08:16:12 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2016/10/07 10:05:16 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,27 +13,6 @@ Before starting bro(8) for the first time, the "interface" must be properly
 configured under:
     ${SYSCONFDIR}/bro/node.cfg
 
-And the configuration and policies must be installed by running:
+And the configuration and policies must be installed and deployed by running:
     broctl install
-
-File descriptors limit
-======================
-
-Both bro(8) and broctl(8) need to bump their nofile limits.
-
-bro (daemon)
-------------
-The following lines can be added to login.conf(5):
-
-    bro:\
-    	:openfiles-cur=512:\
-    	:tc=daemon:
-
-Then the login.conf.db can be rebuilt file if necessary:
-    [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
-
-bro and broctl (CLI)
---------------------
-Some subcommands like "deploy" may require more file descriptors.
-e.g.
-    ulimit -n 512; broctl deploy
+    broctl deploy # this will start bro(8)

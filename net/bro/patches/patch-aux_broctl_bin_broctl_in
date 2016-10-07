@@ -1,0 +1,25 @@
+$OpenBSD: patch-aux_broctl_bin_broctl_in,v 1.1 2016/10/07 10:05:16 ajacoutot Exp $
+
+Several bro(8) commands require more open file descriptors than the default.
+
+--- aux/broctl/bin/broctl.in.orig	Sun Sep  6 21:43:34 2015
++++ aux/broctl/bin/broctl.in	Fri Oct  7 12:04:00 2016
+@@ -6,6 +6,7 @@ from __future__ import print_function
+ import sys
+ import time
+ import logging
++import resource
+ 
+ # This is needed so that we can import BroControl.
+ sys.path.insert(0, "@PREFIX@/lib/broctl")
+@@ -746,6 +747,10 @@ def main():
+         from BroControl import printdoc
+         printdoc.print_broctl_docs(sys.argv[2], BroCtlCmdLoop)
+         return 0
++
++    soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
++    if soft < 256:
++        resource.setrlimit(resource.RLIMIT_NOFILE, (256, hard))
+ 
+     interactive = True
+     if len(sys.argv) > 1:
