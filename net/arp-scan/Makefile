@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/07/09 12:05:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/10/07 10:20:31 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	12
 
-M =		20160709
+M =		20161007
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
@@ -54,16 +54,17 @@ post-install:
 # maintainer convenience target to update mac-vendor file from the databases
 # http://standards.ieee.org/develop/regauth/oui/
 # https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries
-#
-# XXX should use mktemp, but the fetches are too flaky at the moment
 listing:
 	base='http://standards-oui.ieee.org'; \
-	f=oui-iab-`date +%Y%m%d`; t=/tmp/$$f/oui-iab; \
-	mkdir -p $$t; cd $$t; \
+	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
+	cd $$t; \
+	mkdir oui-iab; \
+	cd oui-iab; \
 	[ -r iab.csv ] || ftp -o iab.csv $$base/iab/iab.csv; \
 	[ -r ma-l.csv ] || ftp -o ma-l.csv $$base/oui/oui.csv; \
 	[ -r ma-m.csv ] || ftp -o ma-m.csv $$base/oui28/mam.csv; \
 	[ -r ma-s.csv ] || ftp -o ma-s.csv $$base/oui36/oui36.csv; \
-	cd ..; tar cjf $$f.tar.bz2 oui-iab; scp $$f.tar.bz2 naiad:mirrors/
+	cd ..; tar cjf $$f.tar.bz2 oui-iab; scp $$f.tar.bz2 naiad:mirrors/; \
+	rm -r $$t
 
 .include <bsd.port.mk>
