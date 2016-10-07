@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2016/09/29 09:52:00 shadchin Exp $
+# $OpenBSD: Makefile,v 1.37 2016/10/07 07:08:03 shadchin Exp $
 
 COMMENT =		Python parsing module
 
-MODPY_EGG_VERSION =	2.1.9
+MODPY_EGG_VERSION =	2.1.10
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
