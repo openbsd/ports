@@ -1,0 +1,11 @@
+GNU Backgammon (gnubg) plays and analyzes backgammon games and matches. It is
+able to play and analyze both money games and tournament matches, evaluate and
+roll out positions, and more. Driven by a command-line interface, it displays
+an ASCII rendering of a board on text-only terminals, but also allows the user
+to play games and manipulate positions with a graphical GTK+ interface. GNU
+Backgammon is extensible via Python.
+
+GNU Backgammon is a world class opponent and rates at around 2200 on FIBS, the
+First Internet Backgammon Server - at its best, it is in the top 5 of over
+6000 rated players there). GNU Backgammon can be played on numerous other
+on-line backgammon servers.

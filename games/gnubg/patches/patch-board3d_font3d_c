@@ -1,0 +1,54 @@
+$OpenBSD: patch-board3d_font3d_c,v 1.1.1.1 2016/10/07 21:49:45 czarkoff Exp $
+
+We make GNU Backgammon use system-supplied DejaVu fonts instead of bundling Vera
+fonts.  Thus stop building dynamically allocated paths for fonts.
+
+--- board3d/font3d.c.orig	Sun Apr  5 10:05:29 2015
++++ board3d/font3d.c	Sun Apr  5 10:10:56 2015
+@@ -73,7 +73,6 @@ static int RenderGlyph(const FT_Outline * pOutline);
+ int
+ CreateNumberFont(OGLFont ** ppFont, const char *fontFile, int pitch, float size, float heightRatio)
+ {
+-    char *filename;
+     FT_Library ftLib;
+     if (FT_Init_FreeType(&ftLib))
+         return 0;
+@@ -81,20 +80,16 @@ CreateNumberFont(OGLFont ** ppFont, const char *fontFi
+     free(*ppFont);
+     *ppFont = (OGLFont *) malloc(sizeof(OGLFont));
+ 
+-    filename = BuildFilename(fontFile);
+-    if (!CreateOGLFont(ftLib, *ppFont, filename, pitch, size, heightRatio)) {
+-        outputerrf(_("Failed to create font from (%s)\n"), filename);
+-        g_free(filename);
++    if (!CreateOGLFont(ftLib, *ppFont, fontFile, pitch, size, heightRatio)) {
++        outputerrf(_("Failed to create font from (%s)\n"), fontFile);
+         return 0;
+     }
+-    g_free(filename);
+     return !FT_Done_FreeType(ftLib);
+ }
+ 
+ int
+ CreateFontText(OGLFont ** ppFont, const char *text, const char *fontFile, int pitch, float size, float heightRatio)
+ {
+-    char *filename;
+ 
+     FT_Library ftLib;
+     if (FT_Init_FreeType(&ftLib))
+@@ -103,13 +98,10 @@ CreateFontText(OGLFont ** ppFont, const char *text, co
+     free(*ppFont);
+     *ppFont = (OGLFont *) malloc(sizeof(OGLFont));
+ 
+-    filename = BuildFilename(fontFile);
+-    if (!RenderText(text, ftLib, *ppFont, filename, pitch, size, heightRatio)) {
+-        outputerrf(_("Failed to create font from (%s)\n"), filename);
+-        g_free(filename);
++    if (!RenderText(text, ftLib, *ppFont, fontFile, pitch, size, heightRatio)) {
++        outputerrf(_("Failed to create font from (%s)\n"), fontFile);
+         return 0;
+     }
+-    g_free(filename);
+     return !FT_Done_FreeType(ftLib);
+ }
+ 

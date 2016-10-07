@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2016/10/07 21:49:45 czarkoff Exp $
+
+Remove hardcoded CFLAGS
+
+--- configure.orig	Mon Oct  3 11:08:53 2016
++++ configure	Mon Oct  3 11:09:09 2016
+@@ -17556,10 +17556,6 @@ else
+ $as_echo "yes" >&6; }
+ fi
+ 
+-AM_CFLAGS="-O3 $AM_CFLAGS"
+-if test x"$GCC" = "xyes"; then
+-    AM_CFLAGS="-ffast-math $AM_CFLAGS"
+-fi
+ 
+ 
+ 

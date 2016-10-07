@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2016/10/07 21:49:45 czarkoff Exp $
+
+"install-data-hook" compresses manual pages.  Stop doing that.
+
+--- doc/Makefile.in.orig	Sat Oct  1 15:05:36 2016
++++ doc/Makefile.in	Sat Oct  1 15:06:26 2016
+@@ -616,7 +616,6 @@ info-am:
+ install-data-am: install-gnubg_helpDATA install-gnubg_imageDATA \
+ 	install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-am
+ 
+ install-dvi-am:
