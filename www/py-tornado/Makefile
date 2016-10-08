@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/17 06:38:33 shadchin Exp $
+# $OpenBSD: Makefile,v 1.16 2016/10/08 14:19:09 shadchin Exp $
 
 COMMENT =		scalable, non-blocking web server
 
-MODPY_EGG_VERSION =	4.3
+MODPY_EGG_VERSION =	4.4.2
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -14,8 +13,6 @@ HOMEPAGE =		http://www.tornadoweb.org/
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
 RUN_DEPENDS =		devel/py-backports-abc${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
@@ -23,13 +20,14 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
 .if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname \
+RUN_DEPENDS +=		devel/py-certifi \
 			devel/py-singledispatch
 TEST_DEPENDS +=		devel/py-futures \
 			devel/py-mock \

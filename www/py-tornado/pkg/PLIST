@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/01/17 06:38:34 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/10/08 14:19:09 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -103,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}concurrent
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}curl_httpclient_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}escape_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}gen_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}http1connection_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}httpclient_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}httpserver_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}httputil_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -129,6 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}util.${MOD
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}web_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}websocket_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}windows_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}wsgi_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/asyncio_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/auth_test.py
@@ -143,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR
 lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo
 lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po
+lib/python${MODPY_VERSION}/site-packages/tornado/test/http1connection_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httpclient_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httpserver_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httputil_test.py
@@ -182,6 +185,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/util.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/util_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/web_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/websocket_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/windows_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/wsgi_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/testing.py
 lib/python${MODPY_VERSION}/site-packages/tornado/util.py
