@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/07 06:42:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2016/10/08 12:49:19 czarkoff Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.24.4
-PROJECT=		libgit2-glib
+DISTNAME=		libgit2-glib-$V
 
 SHARED_LIBS +=	git2-glib-1.0        3.0      # 0.0
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${PROJECT}/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
+SUBDIR=			sources/libgit2-glib/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		lang/python \
