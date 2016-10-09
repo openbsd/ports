@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.7 2015/07/09 22:07:23 czarkoff Exp $
---- config.mk.orig	Wed Jul  8 23:58:38 2015
-+++ config.mk	Thu Jul  9 00:01:41 2015
-@@ -4,24 +4,24 @@ VERSION = 0.6
+$OpenBSD: patch-config_mk,v 1.8 2016/10/09 18:47:49 czarkoff Exp $
+--- config.mk.orig	Sat Oct  8 21:48:48 2016
++++ config.mk	Sat Oct  8 21:50:30 2016
+@@ -4,24 +4,21 @@ VERSION = 0.7
  # Customize below to fit your system
  
  # paths
@@ -16,13 +16,15 @@ $OpenBSD: patch-config_mk,v 1.7 2015/07/09 22:07:23 czarkoff Exp $
 +X11LIB = ${X11BASE}/lib
  
  # includes and libs
- INCS = -I. -I/usr/include -I${X11INC} \
-        `pkg-config --cflags fontconfig` \
-        `pkg-config --cflags freetype2`
--LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lrt -lX11 -lutil -lXext -lXft \
-+LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lX11 -lutil -lXext -lXft \
-        `pkg-config --libs fontconfig`  \
-        `pkg-config --libs freetype2`
+-INCS = -I. -I/usr/include -I${X11INC} \
+-       `pkg-config --cflags fontconfig` \
+-       `pkg-config --cflags freetype2`
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lrt -lX11 -lutil -lXft \
+-       `pkg-config --libs fontconfig`  \
+-       `pkg-config --libs freetype2`
++INCS != pkg-config --cflags fontconfig
++LIBS = -lm -lX11 -lutil -lXft
++LIBS +!= pkg-config --libs fontconfig
  
  # flags
  CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
