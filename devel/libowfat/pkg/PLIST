@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/10/06 19:43:30 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/10/09 21:25:27 bluhm Exp $
 include/lowfat/
 include/lowfat/array.h
 include/lowfat/buffer.h
@@ -38,6 +38,7 @@ include/lowfat/uint32.h
 include/lowfat/uint64.h
 include/lowfat/va_narg.h
 lib/libowfat.a
+@lib lib/libowfat.so.${LIBowfat_VERSION}
 share/lowfat/
 @mandir share/lowfat/man/
 share/lowfat/man/add_of.3

@@ -1,7 +1,15 @@
-$OpenBSD: patch-GNUmakefile,v 1.4 2016/10/06 19:43:30 bluhm Exp $
+$OpenBSD: patch-GNUmakefile,v 1.5 2016/10/09 21:25:27 bluhm Exp $
 --- GNUmakefile.orig	Sun Oct  2 01:07:35 2016
-+++ GNUmakefile	Thu Oct  6 20:40:23 2016
-@@ -20,7 +20,7 @@ CROSS=
++++ GNUmakefile	Fri Oct  7 13:58:25 2016
+@@ -13,14 +13,14 @@ LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.
+ buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
+ textcode.a cdb.a critbit.a
+ 
+-all: ent $(LIBS) libowfat.a libsocket t
++all: ent $(LIBS) libowfat.a libowfat.so.$(SO_VERSION) libsocket t
+ 
+ CROSS=
+ #CROSS=i686-mingw-
  CC=gcc
  CCC=$(CROSS)$(CC)
  WERROR=
@@ -21,3 +29,25 @@ $OpenBSD: patch-GNUmakefile,v 1.4 2016/10/06 19:43:30 bluhm Exp $
  
  #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
  
+@@ -169,6 +169,9 @@ libowfat.a: $(ALL_OBJS)
+ 	$(CROSS)ar cru $@ $(ALL_OBJS)
+ 	-$(CROSS)ranlib $@
+ 
++libowfat.so.$(SO_VERSION): $(ALL_OBJS)
++	$(CC) -shared -fpic -o $@ $(ALL_OBJS)
++
+ CFLAGS+=-I.
+ CFLAGS_OPT+=-I.
+ 
+@@ -208,9 +211,10 @@ install-inc:
+ 	install -d $(DESTDIR)$(INCLUDEDIR)
+ 	install -m 644 $(INCLUDES) $(DESTDIR)$(INCLUDEDIR)
+ 
+-install-lib: libowfat.a
++install-lib: libowfat.a libowfat.so.$(SO_VERSION)
+ 	install -d $(DESTDIR)$(LIBDIR)
+ 	install -m 644 libowfat.a $(DESTDIR)$(LIBDIR)
++	install -m 644 libowfat.so.$(SO_VERSION) $(DESTDIR)$(LIBDIR)
+ 
+ install-man:
+ 	install -d $(DESTDIR)$(MAN3DIR)
