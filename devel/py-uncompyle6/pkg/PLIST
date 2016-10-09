@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/02 11:42:28 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/09 11:20:10 shadchin Exp $
 bin/pydisassemble${MODPY_BIN_SUFFIX}
 bin/uncompyle6${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/
@@ -39,6 +39,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MO
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}astnode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse21.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse22.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse23.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse24.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}pars
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse36.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/astnode.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse2.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse21.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse22.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse23.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse24.py
@@ -69,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}__i
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}pypy27.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}pypy32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}scanner2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}scanner21.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}scanner22.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}scanner23.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}scanner24.${MODPY_PYC_MAGIC_TAG}pyc
@@ -86,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/${MODPY_PYCACHE}tok
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/pypy27.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/pypy32.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/scanner2.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/scanner21.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/scanner22.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/scanner23.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/scanners/scanner24.py
