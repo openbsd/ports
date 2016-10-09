@@ -1,0 +1,26 @@
+$OpenBSD: patch-data_org_gnome_evolution_shell_gschema_xml_in,v 1.1 2016/10/09 15:08:47 ajacoutot Exp $
+
+From b5681c51321045e0a509e5b656301e1032d8c4aa Mon Sep 17 00:00:00 2001
+From: Razvan Chitu <razvan.ch95@gmail.com>
+Date: Fri, 26 Aug 2016 14:55:12 +0300
+Subject: Fix archives support in attachments
+
+--- data/org.gnome.evolution.shell.gschema.xml.in.orig	Mon Mar 21 09:07:25 2016
++++ data/org.gnome.evolution.shell.gschema.xml.in	Sat Oct  8 11:47:29 2016
+@@ -15,6 +15,16 @@
+       <_summary>Initial file chooser folder</_summary>
+       <_description>Initial folder for GtkFileChooser dialogs.</_description>
+     </key>
++    <key name="autoar-format" type="s">
++      <default>''</default>
++      <_summary>Compression format used by autoar</_summary>
++      <_description>Compression format used when compressing attached directories with autoar.</_description>
++    </key>
++    <key name="autoar-filter" type="s">
++      <default>''</default>
++      <_summary>Compression filter used by autoar</_summary>
++      <_description>Compression filter used when compressing attached directories with autoar.</_description>
++    </key>
+     <key name="start-offline" type="b">
+       <default>false</default>
+       <_summary>Start in offline mode</_summary>
