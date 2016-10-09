@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2016/04/30 14:25:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.178 2016/10/09 15:28:07 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -43,7 +43,6 @@
      SUBDIR += insult
      SUBDIR += jive
      SUBDIR += lfm
-     SUBDIR += libosinfo
      SUBDIR += lifelines
      SUBDIR += logjam
      SUBDIR += magicpoint
@@ -56,6 +55,7 @@
      SUBDIR += most
      SUBDIR += nyancat
      SUBDIR += openbabel
+     SUBDIR += osinfo
      SUBDIR += p5-Acme-LOLCAT
      SUBDIR += p5-CreditCard
      SUBDIR += p5-File-LibMagic
