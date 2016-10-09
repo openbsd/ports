@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/09/09 19:47:17 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/10/09 11:39:20 pascal Exp $
 @conflict arm-none-eabi-gdb-*
 @conflict libbfd-*
 @bin bin/egdb
@@ -40,6 +40,7 @@ share/gdb/python/gdb/command/xmethods.py
 share/gdb/python/gdb/frames.py
 share/gdb/python/gdb/function/
 share/gdb/python/gdb/function/__init__.py
+share/gdb/python/gdb/function/as_string.py
 share/gdb/python/gdb/function/caller_is.py
 share/gdb/python/gdb/function/strfns.py
 share/gdb/python/gdb/printer/
@@ -54,6 +55,7 @@ share/gdb/syscalls/
 share/gdb/syscalls/aarch64-linux.xml
 share/gdb/syscalls/amd64-linux.xml
 share/gdb/syscalls/arm-linux.xml
+share/gdb/syscalls/freebsd.xml
 share/gdb/syscalls/gdb-syscalls.dtd
 share/gdb/syscalls/i386-linux.xml
 share/gdb/syscalls/mips-n32-linux.xml

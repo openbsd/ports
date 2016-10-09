@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2016/09/03 13:51:09 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2016/10/09 11:39:20 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-7.11.1
-REVISION=	0
+DISTNAME=	gdb-7.12
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -19,7 +18,7 @@ EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
-WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} util
+WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} stdc++ util
 
 #SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu
