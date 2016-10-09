@@ -1,0 +1,3 @@
+gnome-autoar provides functions, widgets, and gschemas for GNOME applications
+which want to use archives as a convenient method to transfer directories over
+the internet.
