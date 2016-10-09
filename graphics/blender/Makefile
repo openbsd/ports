@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2016/08/08 14:14:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.76 2016/10/09 13:23:34 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.77a
+DISTNAME =	blender-2.78
 
 CATEGORIES =	graphics
 
@@ -16,7 +16,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
-WANTLIB += OpenImageIO X11 Xi Xxf86vm avcodec avdevice avformat
+WANTLIB += OpenImageIO X11 Xi Xrender Xxf86vm avcodec avdevice avformat
 WANTLIB += avutil boost_date_time-mt boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c freetype jpeg m openal
 WANTLIB += openjpeg png pthread ${MODPY_WANTLIB} swscale tiff tinyxml

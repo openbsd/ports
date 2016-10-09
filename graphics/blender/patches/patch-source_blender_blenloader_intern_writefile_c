@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.14 2016/03/30 13:30:04 pascal Exp $
---- source/blender/blenloader/intern/writefile.c.orig	Tue Mar 22 08:54:36 2016
-+++ source/blender/blenloader/intern/writefile.c	Wed Mar 30 11:42:27 2016
-@@ -213,7 +213,7 @@ static bool ww_open_none(WriteWrap *ww, const char *fi
+$OpenBSD: patch-source_blender_blenloader_intern_writefile_c,v 1.15 2016/10/09 13:23:34 pascal Exp $
+--- source/blender/blenloader/intern/writefile.c.orig	Thu Sep 29 09:54:17 2016
++++ source/blender/blenloader/intern/writefile.c	Sun Oct  9 13:41:21 2016
+@@ -227,7 +227,7 @@ static bool ww_open_none(WriteWrap *ww, const char *fi
  {
  	int file;
  
