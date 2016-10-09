@@ -1,0 +1,64 @@
+$OpenBSD: patch-tools_lld_ELF_InputFiles_cpp,v 1.1 2016/10/09 06:47:10 ajacoutot Exp $
+
+- Do not handle zero-sized mergeable section as mergeable.
+
+Mergeable sections with size zero are useless because they don't
+actually contain data, and therefore there's no merit ot merge them.
+However, in reality, there are object files in the wild containing
+such sections. Currently, LLD can't handle them proerply.
+
+This patch makes LLD to handle such sections as if they are non-
+mergeable to fix the issue.
+
+- [ELF] - Fix for: error "invalid section index: xxx" when linking FreeBSD kernel.
+
+We found that GNU assembler 2.17.50 [FreeBSD] 2007-07-03
+could generate broken objects. STT_SECTION symbols can be
+associated with SHT_REL[A]/SHT_SYMTAB/SHT_STRTAB sections.
+
+- [ELF] - Make checks in ObjectFile<ELFT>::getSection() stricter.
+
+This patch makes the check for null section stricter, 
+so it is only allowed for STT_SECTION symbols now.
+
+--- tools/lld/ELF/InputFiles.cpp.orig	Sat Oct  8 17:49:10 2016
++++ tools/lld/ELF/InputFiles.cpp	Sat Oct  8 18:20:12 2016
+@@ -162,6 +162,13 @@ bool elf::ObjectFile<ELFT>::shouldMerge(const Elf_Shdr
+   if (Config->Optimize == 0)
+     return false;
+ 
++  // A mergeable section with size 0 is useless because they don't have
++  // any data to merge. A mergeable string section with size 0 can be
++  // argued as invalid because it doesn't end with a null character.
++  // We'll avoid a mess by handling them as if they were non-mergeable.
++  if (Sec.sh_size == 0)
++    return false;
++
+   uintX_t Flags = Sec.sh_flags;
+   if (!(Flags & SHF_MERGE))
+     return false;
+@@ -335,11 +342,21 @@ template <class ELFT>
+ InputSectionBase<ELFT> *
+ elf::ObjectFile<ELFT>::getSection(const Elf_Sym &Sym) const {
+   uint32_t Index = this->getSectionIndex(Sym);
+-  if (Index == 0)
+-    return nullptr;
+-  if (Index >= Sections.size() || !Sections[Index])
++  if (Index >= Sections.size())
+     fatal(getFilename(this) + ": invalid section index: " + Twine(Index));
+   InputSectionBase<ELFT> *S = Sections[Index];
++
++  // We found that GNU assembler 2.17.50 [FreeBSD] 2007-07-03
++  // could generate broken objects. STT_SECTION symbols can be
++  // associated with SHT_REL[A]/SHT_SYMTAB/SHT_STRTAB sections.
++  // In this case it is fine for section to be null here as we
++  // do not allocate sections of these types.
++  if (!S) {
++    if (Index == 0 || Sym.getType() == STT_SECTION)
++      return nullptr;
++    fatal(getFilename(this) + ": invalid section index: " + Twine(Index));
++  }
++
+   if (S == &InputSectionBase<ELFT>::Discarded)
+     return S;
+   return S->Repl;

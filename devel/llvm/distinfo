@@ -1,4 +1,6 @@
 SHA256 (cfe-3.9.0.src.tar.xz) = dZanx9k3bQyJ5gAo/hzrTT5TXo6ouJ4OsJTg3LMYPSg=
+SHA256 (lld-3.9.0.src.tar.xz) = mG6BUOxfRXRpogZmYov2NKXKmSpT4Vfztp28NQVrMtk=
 SHA256 (llvm-3.9.0.src.tar.xz) = ZscxedpCzuE4Y3FkEkH3ne0lDhF6efVxu9aeVtqkiUg=
 SIZE (cfe-3.9.0.src.tar.xz) = 10390440
+SIZE (lld-3.9.0.src.tar.xz) = 499816
 SIZE (llvm-3.9.0.src.tar.xz) = 18235716
