@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.423 2016/09/16 09:19:39 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.424 2016/10/09 13:29:26 shadchin Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -215,6 +215,8 @@
      SUBDIR += py-Pillow
      SUBDIR += py-Pillow,python3
      SUBDIR += py-cairo
+     SUBDIR += py-cycler
+     SUBDIR += py-cycler,python3
      SUBDIR += py-dot
      SUBDIR += py-gd
      SUBDIR += py-graphics
