@@ -1,0 +1,58 @@
+$OpenBSD: patch-plugins_alac_alac_c,v 1.1 2016/10/09 19:04:38 dcoppa Exp $
+
+commit 0d269ed4eee6a6b5e82dbc898a4779aea368e8f2
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Sat Oct 8 11:01:36 2016 +0200
+
+alac: prevent crash on unrecognized/corrupt content
+
+--- plugins/alac/alac.c.orig	Sun Jun 19 13:26:18 2016
++++ plugins/alac/alac.c	Sun Oct  9 20:41:19 2016
+@@ -457,6 +457,9 @@ void entropy_rice_decode(alac_file* alac,
+ 			// got blockSize 0s
+ 			if (blockSize > 0)
+ 			{
++				if (outputCount + 1 + blockSize > outputSize) {
++					blockSize = outputSize - outputCount - 1;
++				}
+ 				memset(&outputBuffer[outputCount + 1], 0, blockSize * sizeof(*outputBuffer));
+ 				outputCount += blockSize;
+ 			}
+@@ -792,11 +795,17 @@ void decode_frame(alac_file *alac,
+ 
+         isnotcompressed = readbits(alac, 1); /* whether the frame is compressed */
+ 
++        uint32_t read_output_samples = 0;
++
+         if (hassize)
+         {
+             /* now read the number of samples,
+              * as a 32bit integer */
+-            outputsamples = readbits(alac, 32);
++            read_output_samples = readbits(alac, 32);
++            outputsamples = read_output_samples;
++            if (outputsamples > alac->setinfo_max_samples_per_frame) {
++                outputsamples = alac->setinfo_max_samples_per_frame;
++            }
+             *outputsize = outputsamples * alac->bytespersample;
+         }
+ 
+@@ -971,11 +980,17 @@ void decode_frame(alac_file *alac,
+ 
+         isnotcompressed = readbits(alac, 1); /* whether the frame is compressed */
+ 
++        uint32_t read_output_samples = 0;
++
+         if (hassize)
+         {
+             /* now read the number of samples,
+              * as a 32bit integer */
+-            outputsamples = readbits(alac, 32);
++            read_output_samples = readbits(alac, 32);
++            outputsamples = read_output_samples;
++            if (outputsamples > alac->setinfo_max_samples_per_frame) {
++                outputsamples = alac->setinfo_max_samples_per_frame;
++            }
+             *outputsize = outputsamples * alac->bytespersample;
+         }
+ 

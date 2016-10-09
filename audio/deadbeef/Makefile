@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/13 08:48:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2016/10/09 19:04:37 dcoppa Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -70,6 +71,7 @@ CONFIGURE_ARGS +=	--disable-static \
 			--disable-coreaudio \
 			--disable-gme \
 			--disable-gtk2 \
+			--disable-libmpg123 \
 			--disable-mono2stereo \
 			--disable-oss \
 			--disable-pulse \
