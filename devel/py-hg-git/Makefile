@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/06/14 10:01:31 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.24 2016/10/09 00:42:14 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
@@ -25,15 +25,11 @@ RUN_DEPENDS =		devel/py-dulwich>=0.10.1 \
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/bzip2 \
 			archivers/unzip \
-			devel/py-nose \
 			devel/git,-main
 
 # Instead of updating WRKDIST manually on every update, just move the directory
 post-extract:
 	@mv ${WRKDIR}/durin42-hg-git-???????????? ${WRKDIST}
-
-pre-test:
-	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} PYTHONPATH="${WRKSRC}" \
