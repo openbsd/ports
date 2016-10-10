@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2016/09/14 23:47:01 abieber Exp $
+# $OpenBSD: Makefile,v 1.434 2016/10/10 12:25:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -33,6 +33,7 @@
      SUBDIR += cyrus-sasl2,ldap
      SUBDIR += cyrus-sasl2,mysql
      SUBDIR += cyrus-sasl2,pgsql
+     SUBDIR += cyrus-sasl2,sqlite3
      SUBDIR += dante
      SUBDIR += despoof
      SUBDIR += distorm3

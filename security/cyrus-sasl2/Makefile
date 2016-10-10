@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.92 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2016/10/10 12:25:20 ajacoutot Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=		cyrus-sasl-2.1.26
-REVISION=		18
+REVISION=		19
 
 SHARED_LIBS +=  sasl2                3.0      # 3.0
 
@@ -18,19 +18,17 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MASTER_SITES=		ftp://ftp.cyrusimap.org/cyrus-sasl/
 
-WANTLIB += c crypto sqlite3
+WANTLIB += c crypto
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--enable-sql \
-			--enable-static \
+CONFIGURE_ARGS=		--enable-static \
 			--without-pam \
 			--without-sqlite \
 			--with-saslauthd="/var/sasl2" \
-			--with-sqlite3 \
 			--with-plugindir=${PREFIX}/lib/sasl2 \
 			--enable-login \
 			--enable-ntlm \
@@ -39,10 +37,8 @@ CONFIGURE_ARGS=		--enable-sql \
 
 CFLAGS +=		-fPIC
 
-FLAVORS=		db4 gssapi ldap mysql pgsql
+FLAVORS=		db4 gssapi ldap mysql pgsql sqlite3
 FLAVOR?=
-
-LIB_DEPENDS +=		databases/sqlite3
 
 .if ${FLAVOR:Mdb4}
 CONFIGURE_ARGS +=	--with-dblib=berkeley \
@@ -74,6 +70,14 @@ WANTLIB += lber lber-2.4 ldap ldap-2.4 ssl
 CONFIGURE_ARGS +=	--without-ldap
 .endif
 
+.if ${FLAVOR:Mmysql} || ${FLAVOR:Mpgsql} || ${FLAVOR:Msqlite3}
+CONFIGURE_ARGS +=	--enable-sql
+PKG_ARGS=		-Dsql=1
+.else
+CONFIGURE_ARGS +=	--disable-sql
+PKG_ARGS=		-Dsql=0
+.endif
+
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS +=		databases/mariadb
 WANTLIB+= m pthread ssl stdc++ z lib/mysql/mysqlclient
@@ -87,6 +91,13 @@ CFLAGS +=		-I${LOCALBASE}/include/postgresql
 WANTLIB += pq ssl
 .else
 CONFIGURE_ARGS +=	--without-pgsql
+.endif
+
+.if ${FLAVOR:Msqlite3}
+LIB_DEPENDS +=		databases/sqlite3
+WANTLIB += sqlite3
+.else
+CONFIGURE_ARGS +=	--without-sqlite3
 .endif
 
 pre-configure:

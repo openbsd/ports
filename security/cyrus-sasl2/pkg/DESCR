@@ -13,3 +13,4 @@ Available flavors:
 	ldap - enable LDAPDB auxprop plugin and LDAP enabled saslauthd
 	mysql - enable MySQL SQL auxprop plugin
 	pgsql - enable PostgreSQL SQL auxprop plugin
+	sqlite3 - enable SQLite3 SQL auxprop plugin
