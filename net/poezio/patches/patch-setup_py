@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2016/05/07 14:56:28 danj Exp $
---- setup.py.orig	Thu Apr 28 12:12:20 2016
-+++ setup.py	Thu Apr 28 12:12:26 2016
-@@ -97,7 +97,7 @@ setup(name="poezio",
+$OpenBSD: patch-setup_py,v 1.2 2016/10/10 17:51:32 danj Exp $
+--- setup.py.orig	Mon Oct 10 12:49:06 2016
++++ setup.py	Mon Oct 10 12:49:24 2016
+@@ -98,7 +98,7 @@ setup(name="poezio",
        package_data={'poezio': ['default_config.cfg']},
-       scripts=['scripts/poezio_gpg_export'],
-       entry_points={'console_scripts': ['poezio = poezio:main']},
+       scripts=['scripts/poezio_gpg_export', 'scripts/poezio_logs'],
+       entry_points={'console_scripts': ['poezio = poezio.__main__:run']},
 -      data_files=([('share/man/man1/', ['data/poezio.1']),
 +      data_files=([('man/man1/', ['data/poezio.1']),
                     ('share/poezio/', ['README.rst', 'COPYING', 'CHANGELOG'])]
