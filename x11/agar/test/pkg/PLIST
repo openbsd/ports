@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/10 09:33:17 bentley Exp $
+@bin bin/agartest
+share/agartest/
+share/agartest/agar-index.png
+share/agartest/agar.bmp
+share/agartest/agar.png
+share/agartest/axe.bmp
+share/agartest/axe.png
+share/agartest/helmet-socket.bmp
+share/agartest/helmet.bmp
+share/agartest/helmet.png
+share/agartest/loss.txt
+share/agartest/menubg.bmp
+share/agartest/pepe.jpg
+share/agartest/sword-socket.bmp
+share/agartest/sword.bmp
