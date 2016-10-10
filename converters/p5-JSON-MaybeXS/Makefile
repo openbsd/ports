@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/10 17:13:05 bluhm Exp $
 
-COMMENT =		use Cpanel::JSON::XS or JSON::XS or JSON::PP
+COMMENT =	use Cpanel::JSON::XS or JSON::XS or JSON::PP
 
-DISTNAME =		JSON-MaybeXS-1.003005
+DISTNAME =	JSON-MaybeXS-1.003008
 
-CATEGORIES =		converters
+CATEGORIES =	converters
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -12,7 +12,10 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+RUN_DEPENDS =		converters/p5-Cpanel-JSON-XS>=2.3310
+# The JSON::PP module is in base Perl and our version is 2.27203_01.  This is
+# older than 2.27300 required by JSON::MaybeXS, but the module runs anyway.
+
 PKG_ARCH =		*
-TEST_DEPENDS =		devel/p5-Test-Without-Module>=0.17
 
 .include <bsd.port.mk>
