@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2016/10/07 10:05:16 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2016/10/10 08:06:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,3 +16,9 @@ configured under:
 And the configuration and policies must be installed and deployed by running:
     broctl install
     broctl deploy # this will start bro(8)
+
+It's also recommended to enable housekeeping tasks by adding the following
+entry into root's crontab(5):
+*/5	*	*	*	*	${TRUEPREFIX}/bin/broctl cron
+
+See http://www.bro.org/sphinx/quickstart/index.html for details.
