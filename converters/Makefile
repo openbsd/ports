@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2016/08/01 20:26:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.82 2016/10/10 16:55:02 bluhm Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -33,6 +33,7 @@
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-Convert-UUlib
+    SUBDIR += p5-Cpanel-JSON-XS
     SUBDIR += p5-Date-Tolkien-Shire
     SUBDIR += p5-DateManip
     SUBDIR += p5-Encode-IMAPUTF7
