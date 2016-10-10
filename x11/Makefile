@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.578 2016/09/08 13:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.579 2016/10/10 09:33:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -7,6 +7,7 @@
      SUBDIR += abclock
      SUBDIR += aewm
      SUBDIR += afterstep
+     SUBDIR += agar
      SUBDIR += amiwm
      SUBDIR += arandr
      SUBDIR += asapm
