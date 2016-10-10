@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/10 17:19:47 jasper Exp $
+@newgroup _rundeck:780
+@newuser _rundeck:780:_rundeck:daemon:RunDeck user:/nonexistent:/sbin/nologin
+@mode 0750
+@owner _rundeck
+@group _rundeck
+rundeck/
+rundeck/etc/
+rundeck/etc/admin.aclpolicy.dist
+@sample rundeck/etc/admin.aclpolicy
+rundeck/etc/apitoken.aclpolicy.dist
+@sample rundeck/etc/apitoken.aclpolicy
+rundeck/etc/framework.properties.dist
+@sample rundeck/etc/framework.properties
+rundeck/etc/log4j.properties.dist
+@sample rundeck/etc/log4j.properties
+rundeck/etc/profile.dist
+@sample rundeck/etc/profile
+rundeck/etc/project.properties.dist
+@sample rundeck/etc/project.properties
+rundeck/rundeck-launcher.jar
+rundeck/server/
+rundeck/server/config/
+rundeck/server/config/jaas-loginmodule.conf
+rundeck/server/config/rundeck-config.properties
+rundeck/server/exp/
+rundeck/server/exp/webapp/
+rundeck/server/exp/webapp/WEB-INF/
+rundeck/server/exp/webapp/WEB-INF/classes/
+rundeck/server/exp/webapp/WEB-INF/classes/log4j.properties
+@group
+@owner
+@mode
+@rcscript ${RCDIR}/rundeck
