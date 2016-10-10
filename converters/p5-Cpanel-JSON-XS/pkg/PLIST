@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/10 16:52:23 bluhm Exp $
+bin/cpanel_json_xs
+${P5ARCH}/
+${P5ARCH}/Cpanel/
+${P5ARCH}/Cpanel/JSON/
+${P5ARCH}/Cpanel/JSON/XS/
+${P5ARCH}/Cpanel/JSON/XS.pm
+${P5ARCH}/Cpanel/JSON/XS/Boolean.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Cpanel/
+${P5ARCH}/auto/Cpanel/JSON/
+${P5ARCH}/auto/Cpanel/JSON/XS/
+${P5ARCH}/auto/Cpanel/JSON/XS/XS.so
+@man man/man1/cpanel_json_xs.1
+@man man/man3p/Cpanel::JSON::XS.3p
+@man man/man3p/Cpanel::JSON::XS::Boolean.3p
