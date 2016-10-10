@@ -1,13 +1,13 @@
-$OpenBSD: patch-man_sorter_1,v 1.2 2009/01/05 22:15:56 rui Exp $
---- man/sorter.1.orig	Mon Sep 29 00:02:46 2008
-+++ man/sorter.1	Sun Dec 28 14:02:02 2008
-@@ -76,7 +76,7 @@ have priority over the standard files.  
+$OpenBSD: patch-man_sorter_1,v 1.3 2016/10/10 18:58:38 rpointel Exp $
+--- man/sorter.1.orig	Wed Sep 16 19:07:12 2015
++++ man/sorter.1	Sat Sep 19 20:35:52 2015
+@@ -78,7 +78,7 @@ have priority over the standard files.  
  .IP "-C config"
  Specify the location of the ONLY configuration file.  The standard config
  files will not be loaded if this option is given.  For example, in the
 -\'share/sort\' directory there is a file called 'images.sort'.  This file
 +\'%%PREFIX%%/share/tsk/sorter/\' directory there is a file called 'images.sort'.  This file
- contains only rules about graphic images.  If it is specified with -C, then
+ contains only rules about graphic images.  If it is specified with \-C, then
  only images will be saved about the image.  
  .IP "-m mnt"
 @@ -201,7 +201,7 @@ file systems will produce data from this step).  
@@ -23,8 +23,8 @@ $OpenBSD: patch-man_sorter_1,v 1.2 2009/01/05 22:15:56 rui Exp $
  
  To just identify images using the supplied 'images.sort' file:
  
--    # sorter -f ntfs -C /usr/local/sleuthkit/share/sort/images.sort \
-+    # sorter -f ntfs -C %%PREFIX%%/share/tsk/sort/images.sort \
- 	  -d data/sorter -h -s images/hda1.dd
+-    # sorter \-f ntfs \-C /usr/local/sleuthkit/share/sort/images.sort \
++    # sorter \-f ntfs \-C %%PREFIX%%/share/tsk/sort/images.sort \
+ 	  \-d data/sorter \-h \-s images/hda1.dd
  
  .SH REQUIREMENTS

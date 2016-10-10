@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_hfind_1,v 1.2 2009/01/05 22:15:56 rui Exp $
---- man/hfind.1.orig	Mon Sep 29 00:02:46 2008
-+++ man/hfind.1	Sun Dec 28 14:02:02 2008
+$OpenBSD: patch-man_hfind_1,v 1.3 2016/10/10 18:58:38 rpointel Exp $
+--- man/hfind.1.orig	Wed Sep 16 19:07:12 2015
++++ man/hfind.1	Sat Sep 19 20:34:08 2015
 @@ -13,7 +13,7 @@ hfind \- Lookup a hash value in a hash database
  looks up hash values in a database using a binary search algorithm. 
  This allows one to easily create a hash database and identify if a file
@@ -9,7 +9,7 @@ $OpenBSD: patch-man_hfind_1,v 1.2 2009/01/05 22:15:56 rui Exp $
 +Library (NSRL) and the output of 'md5'.  
  
  Before the database can be used by 'hfind', an index file must be created
- with the '-i' option.  
+ with the '\-i' option.
 @@ -28,7 +28,7 @@ search algorithm instead of a linear search such as 'g
  .IP "-i db_type"
  Create an index file for the database.  This step must be done before
@@ -28,7 +28,7 @@ $OpenBSD: patch-man_hfind_1,v 1.2 2009/01/05 22:15:56 rui Exp $
  databases.  'hfind' can take data in both common formats:
  
  	MD5 (test.txt) = 76b1f4de1522c20b67acc132937cf82e
-@@ -100,11 +100,11 @@ You can even do both SHA-1 and MD5 if you want:
+@@ -101,11 +101,11 @@ You can even do both SHA-1 and MD5 if you want:
  
  	80001A80B3F1B80076B297CEE8805AAA04E1B5BA  thrdcore.cpp
  
@@ -38,26 +38,26 @@ $OpenBSD: patch-man_hfind_1,v 1.2 2009/01/05 22:15:56 rui Exp $
 -	# md5sum /bin/* /sbin/* /usr/bin/* /usr/bin/* /usr/local/bin/* /usr/local/sbin/* > system.md5
 +	# md5 -s /bin/* /sbin/* /usr/bin/* /usr/bin/* /usr/local/bin/* /usr/local/sbin/* > system.md5
  
--	# hfind -i md5sum system.md5
+-	# hfind \-i md5sum system.md5
 +	# hfind -i md5 -s system.md5
  
  To look entries up, the following will work:
  
-@@ -114,7 +114,7 @@ To look entries up, the following will work:
+@@ -115,7 +115,7 @@ To look entries up, the following will work:
  
  or
  
--	# md5sum -q /bin/* | hfind system.md5
+-	# md5sum \-q /bin/* | hfind system.md5
 +	# md5 -s /bin/* | hfind system.md5
  
  	928682269cd3edb1acdf9a7f7e606ff2  /bin/bash
  
-@@ -122,7 +122,7 @@ or
+@@ -123,7 +123,7 @@ or
  
  or
  
--	# md5sum -q /bin/* > bin.md5
+-	# md5sum \-q /bin/* > bin.md5
 +	# md5 -s /bin/* > bin.md5
  
- 	# hfind -f bin.md5 system.md5
+ 	# hfind \-f bin.md5 system.md5
  
