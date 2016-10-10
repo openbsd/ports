@@ -1,23 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/04 22:57:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/10/10 12:20:17 feinerer Exp $
 bin/r2
+@bin bin/r2agent
+bin/r2pm
 @bin bin/rabin2
 @bin bin/radare2
 @bin bin/radiff2
 @bin bin/rafind2
 @bin bin/ragg2
+bin/ragg2-cc
 @bin bin/rahash2
-@bin bin/ranal2
 @bin bin/rarun2
-@bin bin/rasc2
 @bin bin/rasm2
 @bin bin/rax2
 include/libr/
 include/libr/btree.h
+include/libr/ht.h
 include/libr/list.h
-include/libr/r.h
+include/libr/naked.h
 include/libr/r_anal.h
+include/libr/r_anal_ex.h
 include/libr/r_asm.h
 include/libr/r_bin.h
+include/libr/r_bin_dwarf.h
+include/libr/r_bind.h
 include/libr/r_bp.h
 include/libr/r_cmd.h
 include/libr/r_config.h
@@ -28,179 +33,259 @@ include/libr/r_db.h
 include/libr/r_debug.h
 include/libr/r_diff.h
 include/libr/r_egg.h
+include/libr/r_endian.h
 include/libr/r_flags.h
 include/libr/r_flist.h
 include/libr/r_fs.h
 include/libr/r_hash.h
+include/libr/r_heap_glibc.h
 include/libr/r_io.h
 include/libr/r_lang.h
 include/libr/r_lib.h
-include/libr/r_line.h
 include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_parse.h
+include/libr/r_pdb.h
 include/libr/r_print.h
 include/libr/r_reg.h
 include/libr/r_regex.h
 include/libr/r_search.h
 include/libr/r_sign.h
+include/libr/r_slist.h
 include/libr/r_socket.h
 include/libr/r_syscall.h
 include/libr/r_th.h
 include/libr/r_types.h
 include/libr/r_types_base.h
 include/libr/r_userconf.h
+include/libr/r_util/
 include/libr/r_util.h
+include/libr/r_util/r_base64.h
+include/libr/r_util/r_base91.h
+include/libr/r_util/r_big.h
+include/libr/r_util/r_bitmap.h
+include/libr/r_util/r_buf.h
+include/libr/r_util/r_cache.h
+include/libr/r_util/r_constr.h
+include/libr/r_util/r_debruijn.h
+include/libr/r_util/r_des.h
+include/libr/r_util/r_file.h
+include/libr/r_util/r_graph.h
+include/libr/r_util/r_hex.h
+include/libr/r_util/r_log.h
+include/libr/r_util/r_mem.h
+include/libr/r_util/r_mixed.h
+include/libr/r_util/r_name.h
+include/libr/r_util/r_num.h
+include/libr/r_util/r_pool.h
+include/libr/r_util/r_punycode.h
+include/libr/r_util/r_queue.h
+include/libr/r_util/r_range.h
+include/libr/r_util/r_sandbox.h
+include/libr/r_util/r_spaces.h
+include/libr/r_util/r_stack.h
+include/libr/r_util/r_str.h
+include/libr/r_util/r_strbuf.h
+include/libr/r_util/r_strht.h
+include/libr/r_util/r_strpool.h
+include/libr/r_util/r_sys.h
+include/libr/r_util/r_tree.h
+include/libr/r_util/r_uleb128.h
+include/libr/r_util/r_utf8.h
+include/libr/r_version.h
+include/libr/sdb/
+include/libr/sdb.h
+include/libr/sdb/buffer.h
+include/libr/sdb/cdb.h
+include/libr/sdb/cdb_make.h
+include/libr/sdb/config.h
+include/libr/sdb/ht.h
+include/libr/sdb/ls.h
+include/libr/sdb/sdb.h
+include/libr/sdb/sdb_version.h
+include/libr/sdb/types.h
+include/libr/sflib/
+include/libr/sflib/common/
+include/libr/sflib/common/sfsocketcall.h
+include/libr/sflib/common/sftypes.h
+include/libr/sflib/darwin-x86-32/
+include/libr/sflib/darwin-x86-32/sflib.h
+include/libr/sflib/darwin-x86-32/sfsyscall.h
+include/libr/sflib/darwin-x86-32/sfsysnr.h
+include/libr/sflib/darwin-x86-64/
+include/libr/sflib/darwin-x86-64/sflib.h
+include/libr/sflib/darwin-x86-64/sfsyscall.h
+include/libr/sflib/darwin-x86-64/sfsysnr.h
+include/libr/sflib/linux-x86-32/
+include/libr/sflib/linux-x86-32/sflib.h
+include/libr/sflib/linux-x86-32/sfsyscall.h
+include/libr/sflib/linux-x86-32/sfsysnr.h
+include/libr/sflib/linux-x86-64/
+include/libr/sflib/linux-x86-64/sflib.h
+include/libr/sflib/linux-x86-64/sfsyscall.h
+include/libr/sflib/linux-x86-64/sfsysnr.h
+lib/libr2.so
+@bin lib/libr2.so.2.0
 @lib lib/libr_anal.so.${LIBr_anal_VERSION}
 @lib lib/libr_asm.so.${LIBr_asm_VERSION}
 @lib lib/libr_bin.so.${LIBr_bin_VERSION}
 @lib lib/libr_bp.so.${LIBr_bp_VERSION}
-@lib lib/libr_cmd.so.${LIBr_cmd_VERSION}
 @lib lib/libr_config.so.${LIBr_config_VERSION}
 @lib lib/libr_cons.so.${LIBr_cons_VERSION}
 @lib lib/libr_core.so.${LIBr_core_VERSION}
-@lib lib/libr_db.so.${LIBr_db_VERSION}
+@lib lib/libr_crypto.so.${LIBr_crypto_VERSION}
 @lib lib/libr_debug.so.${LIBr_debug_VERSION}
-@lib lib/libr_diff.so.${LIBr_diff_VERSION}
 @lib lib/libr_egg.so.${LIBr_egg_VERSION}
 @lib lib/libr_flags.so.${LIBr_flags_VERSION}
 @lib lib/libr_fs.so.${LIBr_fs_VERSION}
 @lib lib/libr_hash.so.${LIBr_hash_VERSION}
 @lib lib/libr_io.so.${LIBr_io_VERSION}
 @lib lib/libr_lang.so.${LIBr_lang_VERSION}
-@lib lib/libr_lib.so.${LIBr_lib_VERSION}
-@lib lib/libr_line.so.${LIBr_line_VERSION}
 @lib lib/libr_magic.so.${LIBr_magic_VERSION}
 @lib lib/libr_parse.so.${LIBr_parse_VERSION}
-@lib lib/libr_print.so.${LIBr_print_VERSION}
 @lib lib/libr_reg.so.${LIBr_reg_VERSION}
 @lib lib/libr_search.so.${LIBr_search_VERSION}
-@lib lib/libr_sign.so.${LIBr_sign_VERSION}
 @lib lib/libr_socket.so.${LIBr_socket_VERSION}
 @lib lib/libr_syscall.so.${LIBr_syscall_VERSION}
-@lib lib/libr_th.so.${LIBr_th_VERSION}
 @lib lib/libr_util.so.${LIBr_util_VERSION}
-lib/libsdb.a
 lib/pkgconfig/r_anal.pc
 lib/pkgconfig/r_asm.pc
 lib/pkgconfig/r_bin.pc
 lib/pkgconfig/r_bp.pc
-lib/pkgconfig/r_cmd.pc
 lib/pkgconfig/r_config.pc
 lib/pkgconfig/r_cons.pc
 lib/pkgconfig/r_core.pc
-lib/pkgconfig/r_db.pc
 lib/pkgconfig/r_debug.pc
-lib/pkgconfig/r_diff.pc
 lib/pkgconfig/r_flags.pc
 lib/pkgconfig/r_fs.pc
 lib/pkgconfig/r_hash.pc
 lib/pkgconfig/r_io.pc
 lib/pkgconfig/r_lang.pc
-lib/pkgconfig/r_lib.pc
-lib/pkgconfig/r_line.pc
 lib/pkgconfig/r_magic.pc
 lib/pkgconfig/r_parse.pc
-lib/pkgconfig/r_print.pc
 lib/pkgconfig/r_reg.pc
 lib/pkgconfig/r_search.pc
-lib/pkgconfig/r_sign.pc
 lib/pkgconfig/r_socket.pc
 lib/pkgconfig/r_syscall.pc
-lib/pkgconfig/r_th.pc
 lib/pkgconfig/r_util.pc
 lib/radare2/
 lib/radare2/${V}/
-lib/radare2/${V}/anal_arm.so
-lib/radare2/${V}/anal_avr.so
-lib/radare2/${V}/anal_csr.so
-lib/radare2/${V}/anal_dalvik.so
-lib/radare2/${V}/anal_ppc.so
-lib/radare2/${V}/anal_sh.so
-lib/radare2/${V}/anal_x86.so
-lib/radare2/${V}/anal_x86_simple.so
-lib/radare2/${V}/asm_arm.so
-lib/radare2/${V}/asm_avr.so
-lib/radare2/${V}/asm_bf.so
-lib/radare2/${V}/asm_csr.so
-lib/radare2/${V}/asm_dalvik.so
-lib/radare2/${V}/asm_java.so
-lib/radare2/${V}/asm_mips.so
-lib/radare2/${V}/asm_msil.so
-lib/radare2/${V}/asm_ppc.so
-lib/radare2/${V}/asm_psosvm.so
-lib/radare2/${V}/asm_sh.so
-lib/radare2/${V}/asm_sparc.so
-lib/radare2/${V}/asm_x86.so
-lib/radare2/${V}/asm_x86_as.so
-lib/radare2/${V}/asm_x86_nasm.so
-lib/radare2/${V}/asm_x86_nz.so
-lib/radare2/${V}/asm_x86_olly.so
-lib/radare2/${V}/bin_any.so
-lib/radare2/${V}/bin_dex.so
-lib/radare2/${V}/bin_elf.so
-lib/radare2/${V}/bin_elf64.so
-lib/radare2/${V}/bin_fs.so
-lib/radare2/${V}/bin_java.so
-lib/radare2/${V}/bin_mach0.so
-lib/radare2/${V}/bin_mach064.so
-lib/radare2/${V}/bin_pe.so
-lib/radare2/${V}/bin_pe64.so
+lib/radare2/${V}/asm_LM32.so
+lib/radare2/${V}/asm_propeller.so
 lib/radare2/${V}/bin_xtr_dyldcache.so
-lib/radare2/${V}/bin_xtr_fatmach0.so
-lib/radare2/${V}/bp_arm.so
-lib/radare2/${V}/bp_x86.so
-lib/radare2/${V}/cmd_dummy.so
-lib/radare2/${V}/debug_gdb.so
-lib/radare2/${V}/debug_native.so
-lib/radare2/${V}/io_debug.so
-lib/radare2/${V}/io_gdb.so
-lib/radare2/${V}/io_haret.so
-lib/radare2/${V}/io_mach.so
-lib/radare2/${V}/io_malloc.so
-lib/radare2/${V}/io_procpid.so
-lib/radare2/${V}/io_ptrace.so
-lib/radare2/${V}/io_shm.so
-lib/radare2/${V}/io_w32dbg.so
+lib/radare2/${V}/fcnsign/
+lib/radare2/${V}/fcnsign/cc-arm-32.sdb
+lib/radare2/${V}/fcnsign/cc-arm-64.sdb
+lib/radare2/${V}/fcnsign/cc-avr-8.sdb
+lib/radare2/${V}/fcnsign/cc-m68k-32.sdb
+lib/radare2/${V}/fcnsign/cc-mips-32.sdb
+lib/radare2/${V}/fcnsign/cc-powerpc-32.sdb
+lib/radare2/${V}/fcnsign/cc-powerpc-64.sdb
+lib/radare2/${V}/fcnsign/cc-riscv-64.sdb
+lib/radare2/${V}/fcnsign/cc-sparc-32.sdb
+lib/radare2/${V}/fcnsign/cc-x86-32.sdb
+lib/radare2/${V}/fcnsign/cc-x86-64.sdb
+lib/radare2/${V}/fcnsign/cc-xtensa-32.sdb
+lib/radare2/${V}/fcnsign/darwin-x86-64.sdb
+lib/radare2/${V}/fcnsign/linux-x86-32.sdb
+lib/radare2/${V}/fcnsign/linux-x86-64.sdb
+lib/radare2/${V}/fcnsign/types-16.sdb
+lib/radare2/${V}/fcnsign/types-32.sdb
+lib/radare2/${V}/fcnsign/types-64.sdb
+lib/radare2/${V}/fcnsign/types-arm-32.sdb
+lib/radare2/${V}/fcnsign/types-arm-64.sdb
+lib/radare2/${V}/fcnsign/types-arm-linux-32.sdb
+lib/radare2/${V}/fcnsign/types-arm-linux-64.sdb
+lib/radare2/${V}/fcnsign/types-linux.sdb
+lib/radare2/${V}/fcnsign/types-riscv-64.sdb
+lib/radare2/${V}/fcnsign/types-riscv-linux-64.sdb
+lib/radare2/${V}/fcnsign/types-windows.sdb
+lib/radare2/${V}/fcnsign/types-x86-32.sdb
+lib/radare2/${V}/fcnsign/types-x86-64.sdb
+lib/radare2/${V}/fcnsign/types-x86-linux-32.sdb
+lib/radare2/${V}/fcnsign/types-x86-linux-64.sdb
+lib/radare2/${V}/fcnsign/types-x86-osx-64.sdb
+lib/radare2/${V}/fcnsign/types-x86-windows-32.sdb
+lib/radare2/${V}/fcnsign/types-x86-windows-64.sdb
+lib/radare2/${V}/fcnsign/types.sdb
+lib/radare2/${V}/fcnsign/windows-x86-32.sdb
+lib/radare2/${V}/fcnsign/windows-x86-64.sdb
+lib/radare2/${V}/hud/
+lib/radare2/${V}/hud/main
 lib/radare2/${V}/magic/
 lib/radare2/${V}/magic/OpenBSD
 lib/radare2/${V}/magic/archive
 lib/radare2/${V}/magic/cafebabe
-lib/radare2/${V}/magic/cisco
+lib/radare2/${V}/magic/code
+lib/radare2/${V}/magic/compressed
 lib/radare2/${V}/magic/database
-lib/radare2/${V}/magic/editors
 lib/radare2/${V}/magic/elf
 lib/radare2/${V}/magic/filesystems
+lib/radare2/${V}/magic/firmware
 lib/radare2/${V}/magic/flash
 lib/radare2/${V}/magic/freebsd
 lib/radare2/${V}/magic/gimp
+lib/radare2/${V}/magic/gpg
+lib/radare2/${V}/magic/html
 lib/radare2/${V}/magic/images
 lib/radare2/${V}/magic/java
 lib/radare2/${V}/magic/jpeg
 lib/radare2/${V}/magic/linux
+lib/radare2/${V}/magic/mach
+lib/radare2/${V}/magic/macintosh
 lib/radare2/${V}/magic/mail.news
-lib/radare2/${V}/magic/matroska
+lib/radare2/${V}/magic/microsoft
 lib/radare2/${V}/magic/mime
-lib/radare2/${V}/magic/msdos
 lib/radare2/${V}/magic/netbsd
+lib/radare2/${V}/magic/network
 lib/radare2/${V}/magic/pdf
 lib/radare2/${V}/magic/perl
 lib/radare2/${V}/magic/python
 lib/radare2/${V}/magic/riff
 lib/radare2/${V}/magic/sniffer
 lib/radare2/${V}/magic/sql
-lib/radare2/${V}/magic/sun
+lib/radare2/${V}/magic/ssh
 lib/radare2/${V}/magic/uuencode
-lib/radare2/${V}/parse_att2intel.so
-lib/radare2/${V}/parse_mreplace.so
-lib/radare2/${V}/parse_x86_pseudo.so
-lib/radare2/${V}/radare.lua
-lib/radare2/${V}/radare.py
-lib/radare2/${V}/radare.rb
+lib/radare2/${V}/magic/video
+lib/radare2/${V}/magic/vim
+lib/radare2/${V}/magic/vorbis
+lib/radare2/${V}/magic/zfs
+lib/radare2/${V}/opcodes/
+lib/radare2/${V}/opcodes/6502.sdb
+lib/radare2/${V}/opcodes/8051.sdb
+lib/radare2/${V}/opcodes/LH5801.sdb
+lib/radare2/${V}/opcodes/arc.sdb
+lib/radare2/${V}/opcodes/arm.sdb
+lib/radare2/${V}/opcodes/avr.sdb
+lib/radare2/${V}/opcodes/dalvik.sdb
+lib/radare2/${V}/opcodes/i4004.sdb
+lib/radare2/${V}/opcodes/i8080.sdb
+lib/radare2/${V}/opcodes/java.sdb
+lib/radare2/${V}/opcodes/lm32.sdb
+lib/radare2/${V}/opcodes/m68k.sdb
+lib/radare2/${V}/opcodes/malbolge.sdb
+lib/radare2/${V}/opcodes/mips.sdb
+lib/radare2/${V}/opcodes/msp430.sdb
+lib/radare2/${V}/opcodes/pic18c.sdb
+lib/radare2/${V}/opcodes/ppc.sdb
+lib/radare2/${V}/opcodes/propeller.sdb
+lib/radare2/${V}/opcodes/riscv.sdb
+lib/radare2/${V}/opcodes/sh.sdb
+lib/radare2/${V}/opcodes/sparc.sdb
+lib/radare2/${V}/opcodes/sysz.sdb
+lib/radare2/${V}/opcodes/tms320.sdb
+lib/radare2/${V}/opcodes/v810.sdb
+lib/radare2/${V}/opcodes/x86.sdb
+lib/radare2/${V}/opcodes/xtensa.sdb
+lib/radare2/${V}/opcodes/z80.sdb
 lib/radare2/${V}/syscall/
 lib/radare2/${V}/syscall/darwin-x86-32.sdb
 lib/radare2/${V}/syscall/darwin-x86-64.sdb
+lib/radare2/${V}/syscall/dos-x86-16.sdb
 lib/radare2/${V}/syscall/freebsd-x86-32.sdb
+lib/radare2/${V}/syscall/ios-arm-32.sdb
+lib/radare2/${V}/syscall/ios-arm-64.sdb
+lib/radare2/${V}/syscall/ios-x86-32.sdb
 lib/radare2/${V}/syscall/linux-arm-32.sdb
 lib/radare2/${V}/syscall/linux-mips-32.sdb
 lib/radare2/${V}/syscall/linux-sparc-32.sdb
@@ -211,40 +296,259 @@ lib/radare2/${V}/syscall/openbsd-x86-32.sdb
 lib/radare2/${V}/syscall/openbsd-x86-64.sdb
 lib/radare2/${V}/syscall/windows-x86-32.sdb
 lib/radare2/${V}/syscall/windows-x86-64.sdb
+lib/radare2/last
 @man man/man1/r2.1
+@man man/man1/r2agent.1
+@man man/man1/r2pm.1
 @man man/man1/rabin2.1
 @man man/man1/radare2.1
 @man man/man1/radiff2.1
 @man man/man1/rafind2.1
+@man man/man1/ragg2-cc.1
 @man man/man1/ragg2.1
 @man man/man1/rahash2.1
-@man man/man1/ranal2.1
 @man man/man1/rarun2.1
-@man man/man1/rasc2.1
 @man man/man1/rasm2.1
 @man man/man1/rax2.1
-@man man/man1/rsc2.1
+@man man/man7/esil.7
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/radare2/
+share/doc/radare2/all68k.r2
 share/doc/radare2/android
+share/doc/radare2/avr
 share/doc/radare2/bindiff
 share/doc/radare2/brainfuck
-share/doc/radare2/changes-from-1.x
+share/doc/radare2/calling-conventions.md
+share/doc/radare2/capstone.md
+share/doc/radare2/clang-format
+share/doc/radare2/crosscompile
+share/doc/radare2/debug
+share/doc/radare2/debug-internals.md
+share/doc/radare2/dexdump.sh
 share/doc/radare2/dospart
-share/doc/radare2/fortunes
-share/doc/radare2/idc2rdb.idc
-share/doc/radare2/idc2rdb.pl
+share/doc/radare2/dwarf-line.rsc
+share/doc/radare2/emscripten
+share/doc/radare2/endian
+share/doc/radare2/esil
+share/doc/radare2/flirt
+share/doc/radare2/fortunes.fun
+share/doc/radare2/fortunes.nsfw
+share/doc/radare2/fortunes.tips
+share/doc/radare2/freebsd.md
+share/doc/radare2/gdb
+share/doc/radare2/haiku
+share/doc/radare2/hud
+share/doc/radare2/ida
+share/doc/radare2/intro.md
+share/doc/radare2/io
+share/doc/radare2/io-fixing
 share/doc/radare2/iocache
-share/doc/radare2/iphone
+share/doc/radare2/ios.md
+share/doc/radare2/iphone.md
+share/doc/radare2/kvast
 share/doc/radare2/lang-plugins
+share/doc/radare2/license
+share/doc/radare2/macros
 share/doc/radare2/maemo
+share/doc/radare2/objc.pl
 share/doc/radare2/oo
-share/doc/radare2/osx
+share/doc/radare2/osx.md
 share/doc/radare2/plugins
+share/doc/radare2/portscan.r2
+share/doc/radare2/qnx
+share/doc/radare2/rap
+share/doc/radare2/rapatch.md
 share/doc/radare2/releases
+share/doc/radare2/repo
 share/doc/radare2/rgraph
 share/doc/radare2/solaris
 share/doc/radare2/static
 share/doc/radare2/static-plugins
-share/doc/radare2/syntax
+share/doc/radare2/strings
+share/doc/radare2/types.md
+share/doc/radare2/vim
+share/doc/radare2/vim2r2.js
+share/doc/radare2/windbg
 share/doc/radare2/windows
+share/doc/radare2/yara.md
+share/radare2/
+share/radare2/${V}/
+share/radare2/${V}/cons/
+share/radare2/${V}/cons/Makefile
+share/radare2/${V}/cons/basic
+share/radare2/${V}/cons/behelit
+share/radare2/${V}/cons/consonance
+share/radare2/${V}/cons/dark
+share/radare2/${V}/cons/focus
+share/radare2/${V}/cons/lima
+share/radare2/${V}/cons/matrix
+share/radare2/${V}/cons/ogray
+share/radare2/${V}/cons/pink
+share/radare2/${V}/cons/rasta
+share/radare2/${V}/cons/smyck
+share/radare2/${V}/cons/solarized
+share/radare2/${V}/cons/tango
+share/radare2/${V}/cons/twilight
+share/radare2/${V}/cons/white
+share/radare2/${V}/cons/xvilka
+share/radare2/${V}/cons/zenburn
+share/radare2/${V}/format/
+share/radare2/${V}/format/dll/
+share/radare2/${V}/format/dll/aclui.sdb
+share/radare2/${V}/format/dll/activeds.sdb
+share/radare2/${V}/format/dll/atl.sdb
+share/radare2/${V}/format/dll/borlndmm.sdb
+share/radare2/${V}/format/dll/browseui.sdb
+share/radare2/${V}/format/dll/cabinet.sdb
+share/radare2/${V}/format/dll/comctl32.sdb
+share/radare2/${V}/format/dll/csmfpapi.sdb
+share/radare2/${V}/format/dll/dsound.sdb
+share/radare2/${V}/format/dll/gsprop32.sdb
+share/radare2/${V}/format/dll/kernel32.sdb
+share/radare2/${V}/format/dll/mfc42.sdb
+share/radare2/${V}/format/dll/mfc42u.sdb
+share/radare2/${V}/format/dll/mfc90u.sdb
+share/radare2/${V}/format/dll/msi.sdb
+share/radare2/${V}/format/dll/mstlsapi.sdb
+share/radare2/${V}/format/dll/msvbvm50.sdb
+share/radare2/${V}/format/dll/msvbvm60.sdb
+share/radare2/${V}/format/dll/odbc32.sdb
+share/radare2/${V}/format/dll/oleaut32.sdb
+share/radare2/${V}/format/dll/olecli32.sdb
+share/radare2/${V}/format/dll/oledlg.sdb
+share/radare2/${V}/format/dll/olepro32.sdb
+share/radare2/${V}/format/dll/olesvr32.sdb
+share/radare2/${V}/format/dll/shdocvw.sdb
+share/radare2/${V}/format/dll/shell32.sdb
+share/radare2/${V}/format/dll/shlwapi.sdb
+share/radare2/${V}/format/dll/spr32d70.sdb
+share/radare2/${V}/format/dll/uxtheme.sdb
+share/radare2/${V}/format/dll/vb40032.sdb
+share/radare2/${V}/format/dll/vssapi.sdb
+share/radare2/${V}/format/dll/winmm.sdb
+share/radare2/${V}/format/dll/ws2_32.sdb
+share/radare2/${V}/format/dll/wsock32.sdb
+share/radare2/${V}/format/elf32
+share/radare2/${V}/format/elf64
+share/radare2/${V}/format/elf_enums
+share/radare2/${V}/format/pe32
+share/radare2/${V}/format/trx
+share/radare2/${V}/www/
+share/radare2/${V}/www/console.html
+share/radare2/${V}/www/d3/
+share/radare2/${V}/www/d3/d3.js
+share/radare2/${V}/www/d3/d3.layout.js
+share/radare2/${V}/www/d3/index.html
+share/radare2/${V}/www/d3/packages.js
+share/radare2/${V}/www/d3/style.css
+share/radare2/${V}/www/enyo/
+share/radare2/${V}/www/enyo/disassembler_old.js
+share/radare2/${V}/www/enyo/enyo/
+share/radare2/${V}/www/enyo/enyo.css
+share/radare2/${V}/www/enyo/enyo/lib/
+share/radare2/${V}/www/enyo/enyo/lib/onyx/
+share/radare2/${V}/www/enyo/enyo/lib/onyx/images/
+share/radare2/${V}/www/enyo/enyo/lib/onyx/images/gradient-invert.png
+share/radare2/${V}/www/enyo/enyo/lib/onyx/images/gradient.png
+share/radare2/${V}/www/enyo/enyo_app.js
+share/radare2/${V}/www/enyo/gradient-invert.png
+share/radare2/${V}/www/enyo/gradient.png
+share/radare2/${V}/www/enyo/icon.png
+share/radare2/${V}/www/enyo/index.html
+share/radare2/${V}/www/enyo/r2app.js
+share/radare2/${V}/www/enyo/r2core.css
+share/radare2/${V}/www/enyo/r2core.js
+share/radare2/${V}/www/enyo/rlogo-tr.png
+share/radare2/${V}/www/enyo/stylesheet.css
+share/radare2/${V}/www/enyo/vendors/
+share/radare2/${V}/www/enyo/vendors/backbone-min.js
+share/radare2/${V}/www/enyo/vendors/joint.layout.DirectedGraph.js
+share/radare2/${V}/www/enyo/vendors/joint.min.css
+share/radare2/${V}/www/enyo/vendors/joint.min.js
+share/radare2/${V}/www/enyo/vendors/jquery-ui.min.js
+share/radare2/${V}/www/enyo/vendors/jquery.layout-latest.min.js
+share/radare2/${V}/www/enyo/vendors/jquery.min.js
+share/radare2/${V}/www/enyo/vendors/jquery.scrollTo.min.js
+share/radare2/${V}/www/enyo/vendors/lodash.min.js
+share/radare2/${V}/www/favicon.ico
+share/radare2/${V}/www/graph/
+share/radare2/${V}/www/graph/img/
+share/radare2/${V}/www/graph/img/arrow.gif
+share/radare2/${V}/www/graph/img/arrow_d.gif
+share/radare2/${V}/www/graph/img/arrow_l.gif
+share/radare2/${V}/www/graph/img/arrow_r.gif
+share/radare2/${V}/www/graph/img/arrow_u.gif
+share/radare2/${V}/www/graph/index.html
+share/radare2/${V}/www/graph/index.js
+share/radare2/${V}/www/graph/js-graph-it.css
+share/radare2/${V}/www/graph/js-graph-it.js
+share/radare2/${V}/www/graph/make.sh
+share/radare2/${V}/www/graph/sf-homepage.css
+share/radare2/${V}/www/index.html
+share/radare2/${V}/www/index.old.html
+share/radare2/${V}/www/log.html
+share/radare2/${V}/www/m/
+share/radare2/${V}/www/m/disasmNavProvider.js
+share/radare2/${V}/www/m/disasmProvider.js
+share/radare2/${V}/www/m/hexchunkProvider.js
+share/radare2/${V}/www/m/hsplit
+share/radare2/${V}/www/m/images/
+share/radare2/${V}/www/m/images/icon.png
+share/radare2/${V}/www/m/images/rlogo256.png
+share/radare2/${V}/www/m/images/user.jpg
+share/radare2/${V}/www/m/index.html
+share/radare2/${V}/www/m/index.js
+share/radare2/${V}/www/m/r2.js
+share/radare2/${V}/www/m/stylesheet.css
+share/radare2/${V}/www/m/tools.js
+share/radare2/${V}/www/m/vendors/
+share/radare2/${V}/www/m/vendors/FileSaver.min.js
+share/radare2/${V}/www/m/vendors/dialog-polyfill.css
+share/radare2/${V}/www/m/vendors/dialog-polyfill.js
+share/radare2/${V}/www/m/vendors/fonts/
+share/radare2/${V}/www/m/vendors/fonts/MaterialIcons-Regular.eot
+share/radare2/${V}/www/m/vendors/fonts/MaterialIcons-Regular.ijmap
+share/radare2/${V}/www/m/vendors/fonts/MaterialIcons-Regular.ttf
+share/radare2/${V}/www/m/vendors/fonts/MaterialIcons-Regular.woff
+share/radare2/${V}/www/m/vendors/fonts/MaterialIcons-Regular.woff2
+share/radare2/${V}/www/m/vendors/fonts/README.md
+share/radare2/${V}/www/m/vendors/fonts/Roboto-italic-400.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-italic-700.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-100.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-300.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-400.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-500.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-700.woff
+share/radare2/${V}/www/m/vendors/fonts/Roboto-normal-900.woff
+share/radare2/${V}/www/m/vendors/fonts/codepoints
+share/radare2/${V}/www/m/vendors/fonts/fonts.css
+share/radare2/${V}/www/m/vendors/fonts/iconjar-map.js
+share/radare2/${V}/www/m/vendors/images/
+share/radare2/${V}/www/m/vendors/images/sort_asc.png
+share/radare2/${V}/www/m/vendors/images/sort_asc_disabled.png
+share/radare2/${V}/www/m/vendors/images/sort_both.png
+share/radare2/${V}/www/m/vendors/images/sort_desc.png
+share/radare2/${V}/www/m/vendors/images/sort_desc_disabled.png
+share/radare2/${V}/www/m/vendors/jquery.dataTables.min.css
+share/radare2/${V}/www/m/vendors/jquery.dataTables.min.js
+share/radare2/${V}/www/m/vendors/jquery.min.js
+share/radare2/${V}/www/m/vendors/material-design-icons.css
+share/radare2/${V}/www/m/vendors/material.min.css
+share/radare2/${V}/www/m/vendors/material.min.js
+share/radare2/${V}/www/m/vendors/mdl-selectfield.min.css
+share/radare2/${V}/www/m/vendors/mdl-selectfield.min.js
+share/radare2/${V}/www/m/vsplit
+share/radare2/${V}/www/old/
+share/radare2/${V}/www/old/index.html
+share/radare2/${V}/www/old/rlogo2.png
+share/radare2/${V}/www/old/script.js
+share/radare2/${V}/www/old/style.css
+share/radare2/${V}/www/r2.svg
+share/radare2/${V}/www/rlogo.png
+share/radare2/${V}/www/t/
+share/radare2/${V}/www/t/app.js
+share/radare2/${V}/www/t/index.html
+share/radare2/${V}/www/t/rlogo.png
+share/radare2/${V}/www/t/stylesheet.css
+share/radare2/${V}/www/upload.html
+share/radare2/last

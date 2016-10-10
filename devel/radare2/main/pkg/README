@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/07/21 01:35:51 edd Exp $
+$OpenBSD: README,v 1.2 2016/10/10 12:20:17 feinerer Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,16 +15,11 @@ NOTE: nasm is not available for all architectures on OpenBSD.
 Bindings
 ========
 
-For now, we have only enabled the Vala bindings (as the radare-bindings2
+For now, we have only enabled the Vala bindings (as the radare2-bindings
 package). Further languages may be enabled in the future.
 
 Known Issues
 ============
-
-Backtraces
-----------
-
-The 'dbt' command (debug backtrace) is broken.
 
 Arches
 ------

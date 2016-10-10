@@ -10,5 +10,5 @@ public static void main(string[] args) {
 
 	RAsm.Op op;
 	st.disassemble(out op, buf, 3);
-	print("Disassemble: '%s'\n", op.buf_asm);
+	print("Disassemble: '%s'\n", (string) op.buf_asm);
 }

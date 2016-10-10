@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/09/01 10:53:26 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2016/10/10 12:20:17 feinerer Exp $
 
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS ?=	amd64 i386
 # that don't. We know powerpc is busted.
 #ONLY_FOR_ARCHS ?=	arm mips64 mips64el powerpc sparc64
 
-V ?=			0.8.8
+V ?=			0.10.6
 SUBST_VARS +=		V
 
 CATEGORIES ?=		devel
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_FTP ?=		Yes
 PERMIT_DISTFILES_FTP ?=		Yes
 
 MASTER_SITES ?=		http://www.radare.org/get/
+
+EXTRACT_SUFX ?=		.tar.xz
 
 USE_GMAKE ?=		Yes
 CONFIGURE_STYLE ?=	simple

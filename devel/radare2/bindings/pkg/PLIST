@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/07 22:06:46 edd Exp $
-share/vala/
+@comment $OpenBSD: PLIST,v 1.3 2016/10/10 12:20:17 feinerer Exp $
+@conflict radare-bindings2-*
 share/vala/vapi/
 share/vala/vapi/libr.deps
 share/vala/vapi/libr.vapi
@@ -18,10 +18,12 @@ share/vala/vapi/r_cons.vapi
 share/vala/vapi/r_core.deps
 share/vala/vapi/r_core.vapi
 share/vala/vapi/r_crypto.vapi
+share/vala/vapi/r_db.deps
 share/vala/vapi/r_db.vapi
 share/vala/vapi/r_debug.deps
 share/vala/vapi/r_debug.vapi
-share/vala/vapi/r_diff.vapi
+share/vala/vapi/r_egg.deps
+share/vala/vapi/r_egg.vapi
 share/vala/vapi/r_flags.deps
 share/vala/vapi/r_flags.vapi
 share/vala/vapi/r_fs.deps
@@ -30,9 +32,6 @@ share/vala/vapi/r_hash.vapi
 share/vala/vapi/r_io.deps
 share/vala/vapi/r_io.vapi
 share/vala/vapi/r_lang.vapi
-share/vala/vapi/r_lib.deps
-share/vala/vapi/r_lib.vapi
-share/vala/vapi/r_line.vapi
 share/vala/vapi/r_magic.deps
 share/vala/vapi/r_magic.vapi
 share/vala/vapi/r_parse.deps
@@ -42,7 +41,6 @@ share/vala/vapi/r_reg.deps
 share/vala/vapi/r_reg.vapi
 share/vala/vapi/r_search.deps
 share/vala/vapi/r_search.vapi
-share/vala/vapi/r_sign.vapi
 share/vala/vapi/r_socket.vapi
 share/vala/vapi/r_syscall.vapi
 share/vala/vapi/r_util.vapi
