@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/10 17:19:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/10 20:10:56 jasper Exp $
 
 COMMENT=		job scheduler and runbook automation
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://dl.bintray.com/rundeck/rundeck-maven/
+MASTER_SITES=		http://download.rundeck.org/jar/
 EXTRACT_SUFX=		.jar
 EXTRACT_ONLY=		# empty
 
