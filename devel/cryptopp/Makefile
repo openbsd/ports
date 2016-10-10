@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/13 13:50:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2016/10/10 12:55:51 dcoppa Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -7,6 +7,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp564
 PKGNAME = 	cryptopp-5.6.4
+REVISION =	0
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}

@@ -1,6 +1,15 @@
-$OpenBSD: patch-config_h,v 1.7 2016/09/13 13:50:59 dcoppa Exp $
---- config.h.orig	Tue Sep 13 15:42:06 2016
-+++ config.h	Tue Sep 13 15:43:06 2016
+$OpenBSD: patch-config_h,v 1.8 2016/10/10 12:55:51 dcoppa Exp $
+--- config.h.orig	Thu Oct  6 14:11:12 2016
++++ config.h	Thu Oct  6 14:51:46 2016
+@@ -47,7 +47,7 @@
+ // If the user did not make a choice, then select CryptoNG if either
+ // Visual Studio 2015 is available, or Windows 10 or above is available.
+ #if !defined(USE_MS_CRYPTOAPI) && !defined(USE_MS_CNGAPI)
+-# if (_MSC_VER >= 1900) || ((WINVER >= 0x0A00 /*_WIN32_WINNT_WIN10*/) || (_WIN32_WINNT >= 0x0A00 /*_WIN32_WINNT_WIN10*/))
++# if (defined(_MSC_VER) && (_MSC_VER >= 1900)) || ((defined(WINVER) && (WINVER >= 0x0A00)) || (defined(_WIN32_WINNT) && (_WIN32_WINNT >= 0x0A00)))
+ #  define USE_MS_CNGAPI
+ # else
+ #  define USE_MS_CRYPTOAPI
 @@ -57,7 +57,7 @@
  // Define this to ensure C/C++ standard compliance and respect for GCC aliasing rules and other alignment fodder. If you
  // experience a break with GCC at -O3, you should try this first. Guard it in case its set on the command line (and it differs).
@@ -28,3 +37,91 @@ $OpenBSD: patch-config_h,v 1.7 2016/09/13 13:50:59 dcoppa Exp $
  
  // CRYPTOPP_USER_PRIORITY is for other libraries and user code that is using Crypto++
  // and managing C++ static object creation. It is guaranteed not to conflict with
+@@ -210,7 +210,7 @@ typedef unsigned int word32;
+ #if defined(_MSC_VER) || defined(__BORLANDC__)
+ 	typedef unsigned __int64 word64;
+ 	#define W64LIT(x) x##ui64
+-#elif (_LP64 || __LP64__) && ((__arm64__ || __aarch64__) || !defined(CRYPTOPP_MAINTAIN_BACKWARDS_COMPATIBILITY_562))
++#elif (defined(_LP64) || defined(__LP64__)) && ((defined(__arm64__) || defined(__aarch64__)) || !defined(CRYPTOPP_MAINTAIN_BACKWARDS_COMPATIBILITY_562))
+ 	typedef unsigned long word64;
+ 	#define W64LIT(x) x##UL
+ #else
+@@ -246,7 +246,7 @@ const lword LWORD_MAX = W64LIT(0xffffffffffffffff);
+ #endif
+ 
+ // Need GCC 4.6/Clang 1.7/Apple Clang 2.0 or above due to "GCC diagnostic {push|pop}"
+-#if (CRYPTOPP_GCC_VERSION >= 40600) || (CRYPTOPP_LLVM_CLANG_VERSION >= 10700) || (CRYPTOPP_APPLE_CLANG_VERSION >= 20000)
++#if (defined(CRYPTOPP_GCC_VERSION) && (CRYPTOPP_GCC_VERSION >= 40600)) || (defined(CRYPTOPP_LLVM_CLANG_VERSION) && (CRYPTOPP_LLVM_CLANG_VERSION >= 10700)) || (defined(CRYPTOPP_APPLE_CLANG_VERSION) && (CRYPTOPP_APPLE_CLANG_VERSION >= 20000))
+ 	#define CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE 1
+ #endif
+ 
+@@ -337,7 +337,7 @@ NAMESPACE_END
+ #endif
+ 
+ // The section attribute attempts to initialize CPU flags to avoid Valgrind findings above -O1
+-#if ((__MACH__ >= 1) && ((CRYPTOPP_LLVM_CLANG_VERSION >= 30600) || (CRYPTOPP_APPLE_CLANG_VERSION >= 70100) || (CRYPTOPP_GCC_VERSION >= 40300)))
++#if ((defined(__MACH__) && (__MACH__ >= 1)) && ((CRYPTOPP_LLVM_CLANG_VERSION >= 30600) || (CRYPTOPP_APPLE_CLANG_VERSION >= 70100) || (CRYPTOPP_GCC_VERSION >= 40300)))
+ 	#define CRYPTOPP_SECTION_INIT __attribute__((section ("__DATA,__data")))
+ #elif ((__ELF__ >= 1) && (CRYPTOPP_GCC_VERSION >= 40300))
+ 	#define CRYPTOPP_SECTION_INIT __attribute__((section ("nocommon")))
+@@ -396,7 +396,7 @@ NAMESPACE_END
+ #endif
+ 
+ // [GCC Bug 53431] "C++ preprocessor ignores #pragma GCC diagnostic". Clang honors it.
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic ignored "-Wunknown-pragmas"
+ # pragma GCC diagnostic ignored "-Wunused-function"
+ #endif
+@@ -441,7 +441,7 @@ NAMESPACE_END
+ 	// SSE3 was actually introduced in GNU as 2.17, which was released 6/23/2006, but we can't tell what version of binutils is installed.
+ 	// GCC 4.1.2 was released on 2/13/2007, so we'll use that as a proxy for the binutils version. Also see the output of
+ 	// `gcc -dM -E -march=native - < /dev/null | grep -i SSE` for preprocessor defines available.
+-	#if !defined(CRYPTOPP_DISABLE_SSSE3) && (_MSC_VER >= 1400 || CRYPTOPP_GCC_VERSION >= 40102 || defined(__SSSE3__))
++	#if !defined(CRYPTOPP_DISABLE_SSSE3) && ((defined(_MSC_VER) && (_MSC_VER >= 1400)) || CRYPTOPP_GCC_VERSION >= 40102 || defined(__SSSE3__))
+ 		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 1
+ 	#else
+ 		#define CRYPTOPP_BOOL_SSSE3_ASM_AVAILABLE 0
+@@ -466,13 +466,13 @@ NAMESPACE_END
+ //   MSVC 2008 (http://msdn.microsoft.com/en-us/library/bb892950%28v=vs.90%29.aspx)
+ //   SunCC could generate SSE4 at 12.1, but the intrinsics are missing until 12.4. However, we don't know
+ //     when to activate the code paths because SunCC does not indicate it in the preprocessor with macros.
+-#if !defined(CRYPTOPP_DISABLE_SSE2) && !defined(CRYPTOPP_DISABLE_SSE4) && (((_MSC_VER >= 1500) && !defined(_M_ARM)) || (defined(__SSE4_1__) && defined(__SSE4_2__)))
++#if !defined(CRYPTOPP_DISABLE_SSE2) && !defined(CRYPTOPP_DISABLE_SSE4) && (((defined(_MSC_VER) && (_MSC_VER >= 1500)) && !defined(_M_ARM)) || (defined(__SSE4_1__) && defined(__SSE4_2__)))
+ 	#define CRYPTOPP_BOOL_SSE4_INTRINSICS_AVAILABLE 1
+ #else
+ 	#define CRYPTOPP_BOOL_SSE4_INTRINSICS_AVAILABLE 0
+ #endif
+ 
+-#if !defined(CRYPTOPP_DISABLE_SSSE3) && !defined(CRYPTOPP_DISABLE_AESNI) && CRYPTOPP_BOOL_SSE2_INTRINSICS_AVAILABLE && (CRYPTOPP_GCC_VERSION >= 40400 || _MSC_FULL_VER >= 150030729 || __INTEL_COMPILER >= 1110 || defined(__AES__))
++#if !defined(CRYPTOPP_DISABLE_SSSE3) && !defined(CRYPTOPP_DISABLE_AESNI) && CRYPTOPP_BOOL_SSE2_INTRINSICS_AVAILABLE && (CRYPTOPP_GCC_VERSION >= 40400 || (defined(_MSC_FULL_VER) && (_MSC_FULL_VER >= 150030729)) || (defined(__INTEL_COMPILER) && (__INTEL_COMPILER >= 1110)) || defined(__AES__))
+ 	#define CRYPTOPP_BOOL_AESNI_INTRINSICS_AVAILABLE 1
+ #else
+ 	#define CRYPTOPP_BOOL_AESNI_INTRINSICS_AVAILABLE 0
+@@ -548,7 +548,7 @@ NAMESPACE_END
+ // Linux provides X32, which is 32-bit integers, longs and pointers on x86_64 using the full x86_64 register set.
+ // Detect via __ILP32__ (http://wiki.debian.org/X32Port). However, __ILP32__ shows up in more places than
+ // the System V ABI specs calls out, like on just about any 32-bit system with Clang.
+-#if ((__ILP32__ >= 1) || (_ILP32 >= 1)) && defined(__x86_64__)
++#if ((defined(__ILP32__) && (__ILP32__ >= 1)) || (defined(_ILP32) && (_ILP32 >= 1))) && defined(__x86_64__)
+ 	#define CRYPTOPP_BOOL_X32 1
+ #else
+ 	#define CRYPTOPP_BOOL_X32 0
+@@ -741,7 +741,7 @@ NAMESPACE_END
+ 
+ // ************** Deprecated ***************
+ 
+-#if (CRYPTOPP_GCC_VERSION >= 40500) || (CRYPTOPP_LLVM_CLANG_VERSION >= 20800)
++#if (defined(CRYPTOPP_GCC_VERSION) && (CRYPTOPP_GCC_VERSION >= 40500)) || (defined(CRYPTOPP_LLVM_CLANG_VERSION) && (CRYPTOPP_LLVM_CLANG_VERSION >= 20800))
+ # define CRYPTOPP_DEPRECATED(msg) __attribute__((deprecated (msg)));
+ #elif (CRYPTOPP_GCC_VERSION)
+ # define CRYPTOPP_DEPRECATED(msg) __attribute__((deprecated));
+@@ -755,7 +755,7 @@ NAMESPACE_END
+ // Intel and C++11 language features, http://software.intel.com/en-us/articles/c0x-features-supported-by-intel-c-compiler
+ // GCC and C++11 language features, http://gcc.gnu.org/projects/cxx0x.html
+ // Clang and C++11 language features, http://clang.llvm.org/cxx_status.html
+-#if ((_MSC_VER >= 1600) || (__cplusplus >= 201103L)) && !defined(_STLPORT_VERSION)
++#if ((defined(_MSC_VER) && (_MSC_VER >= 1600)) || (__cplusplus >= 201103L)) && !defined(_STLPORT_VERSION)
+ # define CRYPTOPP_CXX11 1
+ #endif
+ 

@@ -1,0 +1,30 @@
+$OpenBSD: patch-cryptlib_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
+--- cryptlib.h.orig	Mon Oct 10 13:16:09 2016
++++ cryptlib.h	Mon Oct 10 13:17:04 2016
+@@ -86,7 +86,7 @@ and getting us started on the manual.
+ #include "config.h"
+ #include "stdcpp.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4127 4189 4702)
+ #endif
+@@ -437,7 +437,7 @@ class CRYPTOPP_NO_VTABLE NameValuePairs (public)
+ 	CRYPTOPP_DLL virtual bool GetVoidValue(const char *name, const std::type_info &valueType, void *pValue) const =0;
+ };
+ 
+-#if CRYPTOPP_DOXYGEN_PROCESSING
++#if defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ 
+ //! \brief Namespace containing value name definitions.
+ //! \details Name is part of the CryptoPP namespace.
+@@ -2996,7 +2996,7 @@ typedef AuthenticatedKeyAgreementDomain PK_Authenticat
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

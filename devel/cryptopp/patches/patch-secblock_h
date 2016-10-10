@@ -1,0 +1,30 @@
+$OpenBSD: patch-secblock_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
+--- secblock.h.orig	Mon Oct 10 14:11:39 2016
++++ secblock.h	Mon Oct 10 14:13:34 2016
+@@ -10,7 +10,7 @@
+ #include "stdcpp.h"
+ #include "misc.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4700)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -234,7 +234,7 @@ class AllocatorWithCleanup : public AllocatorBase<T> (
+ 	//! \details VS.NET STL enforces the policy of "All STL-compliant allocators
+ 	//!   have to provide a template class member called rebind".
+     template <class U> struct rebind { typedef AllocatorWithCleanup<U, T_Align16> other; };
+-#if _MSC_VER >= 1500
++#if (defined(_MSC_VER) && _MSC_VER >= 1500)
+ 	AllocatorWithCleanup() {}
+ 	template <class U, bool A> AllocatorWithCleanup(const AllocatorWithCleanup<U, A> &) {}
+ #endif
+@@ -806,7 +806,7 @@ __stl_alloc_rebind(CryptoPP::AllocatorWithCleanup<_Tp1
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

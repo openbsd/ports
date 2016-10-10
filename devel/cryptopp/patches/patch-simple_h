@@ -1,0 +1,21 @@
+$OpenBSD: patch-simple_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
+--- simple.h.orig	Mon Oct 10 14:11:52 2016
++++ simple.h	Mon Oct 10 14:14:36 2016
+@@ -8,7 +8,7 @@
+ 
+ #include "config.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4127 4189)
+ #endif
+@@ -299,7 +299,7 @@ class CRYPTOPP_DLL BitBucket : public Bufferless<Sink>
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

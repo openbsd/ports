@@ -1,0 +1,203 @@
+$OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
+--- misc.h.orig	Mon Oct 10 13:25:20 2016
++++ misc.h	Mon Oct 10 13:29:41 2016
+@@ -9,9 +9,9 @@
+ 
+ #include "config.h"
+ 
+-#if !CRYPTOPP_DOXYGEN_PROCESSING
++#if !defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4146 4514)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -82,7 +82,7 @@
+ 
+ #endif // CRYPTOPP_DOXYGEN_PROCESSING
+ 
+-#if CRYPTOPP_DOXYGEN_PROCESSING
++#if defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ //! \brief The maximum value of a machine word
+ //! \details SIZE_MAX provides the maximum value of a machine word. The value is
+ //!   \p 0xffffffff on 32-bit machines, and \p 0xffffffffffffffff on 64-bit machines.
+@@ -116,7 +116,7 @@ class Integer;
+ 
+ // ************** compile-time assertion ***************
+ 
+-#if CRYPTOPP_DOXYGEN_PROCESSING
++#if defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ //! \brief Compile time assertion
+ //! \param expr the expression to evaluate
+ //! \details Asserts the expression expr though a dummy struct.
+@@ -150,7 +150,7 @@ struct CompileAssert
+ 
+ // ************** count elements in an array ***************
+ 
+-#if CRYPTOPP_DOXYGEN_PROCESSING
++#if defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ //! \brief Counts elements in an array
+ //! \param arr an array of elements
+ //! \details COUNTOF counts elements in an array. On Windows COUNTOF(x) is defined
+@@ -178,7 +178,7 @@ class CRYPTOPP_DLL Empty
+ {
+ };
+ 
+-#if !CRYPTOPP_DOXYGEN_PROCESSING
++#if !defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ template <class BASE1, class BASE2>
+ class CRYPTOPP_NO_VTABLE TwoBases : public BASE1, public BASE2
+ {
+@@ -225,7 +225,7 @@ struct NewObject
+ 	T* operator()() const {return new T;}
+ };
+ 
+-#if CRYPTOPP_DOXYGEN_PROCESSING
++#if defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ //! \brief A memory barrier
+ //! \details MEMORY_BARRIER attempts to ensure reads and writes are completed
+ //!   in the absence of a language synchronization point. It is used by the
+@@ -238,7 +238,7 @@ struct NewObject
+ #else
+ #if defined(CRYPTOPP_CXX11_ATOMICS)
+ # define MEMORY_BARRIER() std::atomic_thread_fence(std::memory_order_acq_rel)
+-#elif (_MSC_VER >= 1400)
++#elif (defined(_MSC_VER) && _MSC_VER >= 1400)
+ # pragma intrinsic(_ReadWriteBarrier)
+ # define MEMORY_BARRIER() _ReadWriteBarrier()
+ #elif defined(__INTEL_COMPILER)
+@@ -333,7 +333,7 @@ const T & Singleton<T, F, instance>::Ref(CRYPTOPP_NOIN
+ 
+ // ************** misc functions ***************
+ 
+-#if (!__STDC_WANT_SECURE_LIB__ && !defined(_MEMORY_S_DEFINED)) || defined(CRYPTOPP_WANT_SECURE_LIB)
++#if (!defined(__STDC_WANT_SECURE_LIB__) && !defined(_MEMORY_S_DEFINED)) || defined(CRYPTOPP_WANT_SECURE_LIB)
+ 
+ //! \brief Bounds checking replacement for memcpy()
+ //! \param dest pointer to the desination memory block
+@@ -364,7 +364,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+ 	if (count > sizeInBytes)
+ 		throw InvalidArgument("memcpy_s: buffer overflow");
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4996)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -372,7 +372,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+ # endif
+ #endif
+ 	memcpy(dest, src, count);
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ }
+@@ -406,7 +406,7 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+ 	if (count > sizeInBytes)
+ 		throw InvalidArgument("memmove_s: buffer overflow");
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4996)
+ # if (CRYPTOPP_MSC_VERSION >= 1400)
+@@ -414,12 +414,12 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+ # endif
+ #endif
+ 	memmove(dest, src, count);
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ }
+ 
+-#if __BORLANDC__ >= 0x620
++#if (defined(__BORLANDC__) && __BORLANDC__ >= 0x620)
+ // C++Builder 2010 workaround: can't use std::memcpy_s because it doesn't allow 0 lengths
+ # define memcpy_s CryptoPP::memcpy_s
+ # define memmove_s CryptoPP::memmove_s
+@@ -480,12 +480,12 @@ template <class T> inline const T& STDMAX(const T& a, 
+ 	return a < b ? b : a;
+ }
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4389)
+ #endif
+ 
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic push
+ # pragma GCC diagnostic ignored "-Wsign-compare"
+ # if (CRYPTOPP_LLVM_CLANG_VERSION >= 20800) || (CRYPTOPP_APPLE_CLANG_VERSION >= 30000)
+@@ -587,11 +587,11 @@ std::string IntToString<word64>(word64 value, unsigned
+ template <> CRYPTOPP_DLL
+ std::string IntToString<Integer>(Integer value, unsigned int base);
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 
+-#if CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE
++#if defined(CRYPTOPP_GCC_DIAGNOSTIC_AVAILABLE)
+ # pragma GCC diagnostic pop
+ #endif
+ 
+@@ -887,7 +887,7 @@ inline unsigned int GetAlignmentOf(T *dummy=NULL)	// V
+ 	CRYPTOPP_UNUSED(dummy);
+ #if defined(CRYPTOPP_CXX11_ALIGNOF)
+ 	return alignof(T);
+-#elif (_MSC_VER >= 1300)
++#elif (defined(_MSC_VER) && _MSC_VER >= 1300)
+ 	return __alignof(T);
+ #elif defined(__GNUC__)
+ 	return __alignof__(T);
+@@ -1074,7 +1074,7 @@ void SecureWipeBuffer(T *buf, size_t n)
+ 		*((volatile T*)(--p)) = 0;
+ }
+ 
+-#if (_MSC_VER >= 1400 || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
++#if ((defined(_MSC_VER) && _MSC_VER >= 1400) || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
+ 
+ //! \brief Sets each byte of an array to 0
+ //! \param buf an array of bytes
+@@ -1138,7 +1138,7 @@ template<> inline void SecureWipeBuffer(word64 *buf, s
+ 
+ #endif	// #if (_MSC_VER >= 1400 || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
+ 
+-#if (_MSC_VER >= 1700) && defined(_M_ARM)
++#if (defined(_MSC_VER) && _MSC_VER >= 1700) && defined(_M_ARM)
+ template<> inline void SecureWipeBuffer(byte *buf, size_t n)
+ {
+ 	char *p = reinterpret_cast<char*>(buf+n);
+@@ -1488,7 +1488,7 @@ template<> inline word32 rotrMod<word32>(word32 x, uns
+ 
+ #endif // #ifdef _MSC_VER
+ 
+-#if _MSC_VER >= 1300 && !defined(__INTEL_COMPILER)
++#if (defined(_MSC_VER) && _MSC_VER >= 1300) && !defined(__INTEL_COMPILER)
+ // Intel C++ Compiler 10.0 calls a function instead of using the rotate instruction when using these instructions
+ 
+ //! \brief Performs a left rotate
+@@ -1577,7 +1577,7 @@ template<> inline word64 rotrMod<word64>(word64 x, uns
+ 
+ #endif // #if _MSC_VER >= 1310
+ 
+-#if _MSC_VER >= 1400 && !defined(__INTEL_COMPILER)
++#if (defined(_MSC_VER) && _MSC_VER >= 1400) && !defined(__INTEL_COMPILER)
+ // Intel C++ Compiler 10.0 gives undefined externals with these
+ 
+ template<> inline word16 rotlFixed<word16>(word16 x, unsigned int y)
+@@ -2382,7 +2382,7 @@ inline T SafeLeftShift(T value)
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 

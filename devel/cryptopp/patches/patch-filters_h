@@ -1,0 +1,21 @@
+$OpenBSD: patch-filters_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
+--- filters.h.orig	Mon Oct 10 13:18:48 2016
++++ filters.h	Mon Oct 10 13:18:25 2016
+@@ -8,7 +8,7 @@
+ 
+ #include "cryptlib.h"
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(push)
+ # pragma warning(disable: 4127 4189 4514)
+ #endif
+@@ -1285,7 +1285,7 @@ class CRYPTOPP_DLL RandomNumberSource : public SourceT
+ 
+ NAMESPACE_END
+ 
+-#if CRYPTOPP_MSC_VERSION
++#if defined(CRYPTOPP_MSC_VERSION)
+ # pragma warning(pop)
+ #endif
+ 
