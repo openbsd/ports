@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/11 19:44:39 jung Exp $
 
 COMMENT=		print X selection to standard out
 
 DISTNAME=		sselp-0.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://tools.suckless.org/sselp
+HOMEPAGE=		http://tools.suckless.org/x/sselp
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
