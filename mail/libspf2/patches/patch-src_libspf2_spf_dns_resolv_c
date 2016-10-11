@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libspf2_spf_dns_resolv_c,v 1.3 2016/10/11 20:35:39 sthen Exp $
+--- src/libspf2/spf_dns_resolv.c.orig	Sat Jan 28 08:24:47 2012
++++ src/libspf2/spf_dns_resolv.c	Tue Oct 11 21:28:06 2016
+@@ -607,7 +607,10 @@ SPF_dns_resolv_free(SPF_dns_server_t *spf_dns_server)
+ 	SPF_ASSERT_NOTNULL(spf_dns_server);
+ 
+ #if ! HAVE_DECL_RES_NINIT
++#  ifndef __OpenBSD__
++	/* OpenBSD's libc resolver provides res_init() but not res_close(). */
+ 	res_close();
++#  endif
+ #endif
+ 
+ 	free(spf_dns_server);

@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/10/11 20:35:39 sthen Exp $
+--- configure.ac.orig	Tue Oct 11 21:28:19 2016
++++ configure.ac	Tue Oct 11 21:31:12 2016
+@@ -111,39 +111,6 @@ AC_CHECK_HEADER(pthread.h, , [
+ 	exit 1;
+ ])
+ 
+-dnl Moved to after header checks by Shevek
+-AC_ARG_WITH(bind,
+-        [  --with-bind=DIR  Find BIND resolver in DIR],
+-        [AC_CHECK_FILE([$withval/include/bind/resolv.h],
+-                [CFLAGS="$CFLAGS -I$withval/include/bind"],
+-                [CFLAGS="$CFLAGS -I$withval/include"])
+-         LDFLAGS="$LDFLAGS -L$withval/lib -Wl,$rpath$withval/lib"
+-         AC_CHECK_LIB([bind], [res_query], [LIBS="$LIBS -lbind"],
+-                [AC_CHECK_LIB([resolv],
+-                        [res_query],
+-                        [LIBS="$LIBS -lresolv"],
+-                        [echo "cannot find resolver library"; exit 1;])
+-                ])
+-        ],
+-		[dnl Have to include resolv.h as res_query is sometimes defined as a macro
+-				AC_MSG_CHECKING([for res_query in -lresolv (with resolv.h if present)])
+-				saved_libs="$LIBS"
+-				LIBS="-lresolv $LIBS"
+-				AC_TRY_LINK([
+-						#ifdef HAVE_RESOLV_H
+-						#include <resolv.h>
+-						#endif],
+-						[res_query(0,0,0,0,0)],
+-						[AC_MSG_RESULT(yes)
+-								have_res_query=yes],
+-						[AC_MSG_RESULT(no)
+-								LIBS="$saved_libs"])
+-        ])
+-		
+-		
+-		
+-dnl [AC_CHECK_LIB(resolv, res_query)])
+-
+ # Checks for libraries.
+ AC_CHECK_LIB(nsl, inet_pton)
+ AC_CHECK_LIB(socket, socket)
