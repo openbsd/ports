@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/10 17:19:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/11 05:52:45 jasper Exp $
 @newgroup _rundeck:780
 @newuser _rundeck:780:_rundeck:daemon:RunDeck user:/nonexistent:/sbin/nologin
 @mode 0750
@@ -28,6 +28,15 @@ rundeck/server/exp/webapp/
 rundeck/server/exp/webapp/WEB-INF/
 rundeck/server/exp/webapp/WEB-INF/classes/
 rundeck/server/exp/webapp/WEB-INF/classes/log4j.properties
+rundeck/tools/
+rundeck/tools/bin/
+rundeck/tools/bin/dispatch
+rundeck/tools/bin/rd-acl
+rundeck/tools/bin/rd-jobs
+rundeck/tools/bin/rd-project
+rundeck/tools/bin/rd-queue
+rundeck/tools/bin/rd-setup
+rundeck/tools/bin/run
 @group
 @owner
 @mode
