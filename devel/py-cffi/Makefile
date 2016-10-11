@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/09 16:23:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/11 15:09:28 sthen Exp $
 
 # XXX: Check _cffi__ hashes of dependent ports if updating.
 # e.g. devel/libgit2/py-git2
 
 COMMENT=		Foreign Function Interface for Python calling C code
 
-MODPY_EGG_VERSION=	1.4.2
+MODPY_EGG_VERSION=	1.8.3
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel

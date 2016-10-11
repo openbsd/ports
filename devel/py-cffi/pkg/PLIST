@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/10/06 20:45:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/10/11 15:09:28 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
 lib/python${MODPY_VERSION}/site-packages/cffi/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -18,7 +18,6 @@ lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}cffi_opcode.${MODP
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}commontypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}cparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}ffiplatform.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}gc_weakref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}recompiler.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,13 +26,13 @@ lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_cpy.${MODP
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_gen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}verifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/_cffi_include.h
+lib/python${MODPY_VERSION}/site-packages/cffi/_embedding.h
 lib/python${MODPY_VERSION}/site-packages/cffi/api.py
 lib/python${MODPY_VERSION}/site-packages/cffi/backend_ctypes.py
 lib/python${MODPY_VERSION}/site-packages/cffi/cffi_opcode.py
 lib/python${MODPY_VERSION}/site-packages/cffi/commontypes.py
 lib/python${MODPY_VERSION}/site-packages/cffi/cparser.py
 lib/python${MODPY_VERSION}/site-packages/cffi/ffiplatform.py
-lib/python${MODPY_VERSION}/site-packages/cffi/gc_weakref.py
 lib/python${MODPY_VERSION}/site-packages/cffi/lock.py
 lib/python${MODPY_VERSION}/site-packages/cffi/model.py
 lib/python${MODPY_VERSION}/site-packages/cffi/parse_c_type.h
