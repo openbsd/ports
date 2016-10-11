@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/31 06:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/11 12:06:51 shadchin Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
 PORTROACH=		ignore:1
 
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	1.0.0
+MODPY_EGG_VERSION=	1.0.7
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -28,12 +28,12 @@ RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 TEST_DEPENDS=		${RUN_DEPENDS} \
-			${BASE_PKGPATH}
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR ?=
 
 do-test:
-	cd ${WRKSRC}/tests && ${MODPY_BIN} ./run_tests.py
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

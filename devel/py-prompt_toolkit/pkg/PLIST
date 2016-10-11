@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/31 06:06:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/10/11 12:06:51 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -108,6 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}inputhook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}posix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}posix_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}select.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/${MODPY_PYCACHE}win32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/asyncio_base.py
@@ -118,6 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/callbacks.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/inputhook.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/posix.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/posix_utils.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/select.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/utils.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/eventloop/win32.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/filters/
@@ -149,12 +151,16 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/__i
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}completion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}emacs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}named_commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}scroll.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/${MODPY_PYCACHE}vi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/basic.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/completion.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/emacs.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/named_commands.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/scroll.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/utils.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/key_binding/bindings/vi.py
