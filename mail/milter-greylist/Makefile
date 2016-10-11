@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/11 20:36:36 sthen Exp $
 
 COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-4.2.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
@@ -32,9 +32,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-user=${USERNAME} \
 			--with-dumpfile=${GREYLISTDIR}/greylist.db \
 			--with-libspf2=${LOCALBASE}
-# needed since libspf2 links against libbind
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib/libbind \
-			    -R${LOCALBASE}/lib/libbind"
 
 NO_TEST=	Yes
 
