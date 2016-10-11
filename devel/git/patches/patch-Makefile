@@ -1,37 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.63 2016/05/25 07:13:05 benoit Exp $
-
-No need for librt on OpenBSD
-
-Workaround for ar(1) not having 's' on VAX by calling ranlib
-
---- Makefile.orig	Thu May 19 19:17:58 2016
-+++ Makefile	Wed May 25 08:57:19 2016
-@@ -1465,7 +1465,6 @@ endif
- 
- ifdef HAVE_CLOCK_GETTIME
- 	BASIC_CFLAGS += -DHAVE_CLOCK_GETTIME
--	EXTLIBS += -lrt
- endif
- 
- ifdef HAVE_CLOCK_MONOTONIC
-@@ -2026,13 +2025,13 @@ $(REMOTE_CURL_PRIMARY): remote-curl.o http.o http-walk
- 		$(CURL_LIBCURL) $(EXPAT_LIBEXPAT) $(LIBS)
- 
- $(LIB_FILE): $(LIB_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) $(ARFLAGS) $@ $^
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
- 
- $(XDIFF_LIB): $(XDIFF_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) $(ARFLAGS) $@ $^
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
- 
- $(VCSSVN_LIB): $(VCSSVN_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) $(ARFLAGS) $@ $^
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
- 
- export DEFAULT_EDITOR DEFAULT_PAGER
- 
-@@ -2217,7 +2216,7 @@ export TEST_NO_MALLOC_CHECK
+$OpenBSD: patch-Makefile,v 1.64 2016/10/11 10:59:27 dcoppa Exp $
+--- Makefile.orig	Tue Oct  4 00:19:09 2016
++++ Makefile	Tue Oct 11 11:46:07 2016
+@@ -2269,7 +2269,7 @@ export TEST_NO_MALLOC_CHECK
  
  ### Testing rules
  
