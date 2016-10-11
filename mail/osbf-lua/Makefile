@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/11 15:59:52 jca Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
 DISTNAME=	osbf-lua-2.0.4
 REVISION =	6
+
 CATEGORIES=	mail
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 HOMEPAGE=	http://osbf-lua.luaforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
+
 MODULES=	lang/lua
 MODLUA_SA=	Yes
+
 NO_TEST=	Yes
 
 do-build:
