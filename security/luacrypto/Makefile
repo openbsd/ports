@@ -1,24 +1,29 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/10/11 15:53:26 jca Exp $
 
 COMMENT=	Lua binding for the OpenSSL crypto libraries
 
 DISTNAME=	luacrypto-0.2.0
 REVISION=	3
+
 CATEGORIES=	security
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/1722/
 HOMEPAGE=	http://luacrypto.luaforge.net/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODLUA_VERSION=	5.1
-USE_GMAKE=	Yes
+MASTER_SITES=	http://luaforge.net/frs/download.php/1722/
+
 WANTLIB=	crypto ssl
-MODLUA_TEST_DEPENDS=security/luacrypto
-CFLAGS+=	-fPIC -DPIC
 
 MODULES=	lang/lua
+
+MODLUA_VERSION=	5.1
+MODLUA_TEST_DEPENDS=security/luacrypto
+
+USE_GMAKE=	Yes
+
+CFLAGS+=	-fPIC -DPIC
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config
