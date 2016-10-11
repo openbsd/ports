@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2016/10/11 19:19:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2016/10/11 21:26:10 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -12,6 +12,7 @@ COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
 V=			7.4.4pl0
 DISTFILES=		${DISTNAME}{bacula-7.4.4}.tar.gz
+WRKDIST=		${WRKDIR}/bacula-7.4.4
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
