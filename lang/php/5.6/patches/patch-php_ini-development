@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
---- php.ini-development.orig.port	Thu May 26 02:08:57 2016
-+++ php.ini-development	Fri Jun  3 09:36:21 2016
-@@ -707,11 +707,8 @@ default_charset = "UTF-8"
+$OpenBSD: patch-php_ini-development,v 1.6 2016/10/11 09:02:15 sthen Exp $
+--- php.ini-development.orig.port	Thu Sep 15 22:02:50 2016
++++ php.ini-development	Fri Oct  7 11:11:55 2016
+@@ -706,11 +706,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -14,7 +14,7 @@ $OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -733,6 +730,7 @@ user_dir =
+@@ -732,6 +729,7 @@ user_dir =
  ; extension_dir = "./"
  ; On windows:
  ; extension_dir = "ext"
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -817,7 +815,7 @@ max_file_uploads = 20
+@@ -816,7 +814,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -922,7 +920,7 @@ cli_server.color = On
+@@ -921,7 +919,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; http://php.net/date.timezone
@@ -40,7 +40,7 @@ $OpenBSD: patch-php_ini-development,v 1.5 2016/06/22 21:18:33 sthen Exp $
  
  ; http://php.net/date.default-latitude
  ;date.default_latitude = 31.7667
-@@ -1011,16 +1009,6 @@ pdo_mysql.default_socket=
+@@ -1010,16 +1008,6 @@ pdo_mysql.default_socket=
  ;phar.cache_list =
  
  [mail function]
