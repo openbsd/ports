@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/11 05:53:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/11 17:05:33 jasper Exp $
 
 COMMENT=		job scheduler and runbook automation
 
@@ -26,7 +26,6 @@ MODJAVA_JRERUN=		Yes
 
 RUN_DEPENDS=		java/javaPathHelper
 
-NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
@@ -45,10 +44,10 @@ TOOLS =			dispatch rd-acl rd-jobs rd-project rd-queue \
 do-extract:
 	mkdir ${WRKDIST}
 	cd ${WRKSRC} && \
-		${LOCALBASE}/jdk-1.7.0/bin/java -jar ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		${JAVA_HOME}/bin/java -jar ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		--installonly -b .
 
-do-configure:
+do-build:
 	sed -i -e "s,^grails.serverURL=.*,grails.serverURL=http://localhost:4440," \
 		-e "s,^rdeck.base=.*,rdeck.base=${PREFIX}/rundeck," \
 		${WRKSRC}/server/config/rundeck-config.properties
