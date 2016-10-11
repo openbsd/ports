@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2016/05/22 19:22:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.48 2016/10/11 15:49:00 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -458,9 +458,43 @@ roundcubemail/plugins/enigma/lib/enigma_subkey.php
 roundcubemail/plugins/enigma/lib/enigma_ui.php
 roundcubemail/plugins/enigma/lib/enigma_userid.php
 roundcubemail/plugins/enigma/localization/
+roundcubemail/plugins/enigma/localization/ar_SA.inc
+roundcubemail/plugins/enigma/localization/bg_BG.inc
+roundcubemail/plugins/enigma/localization/br.inc
+roundcubemail/plugins/enigma/localization/cs_CZ.inc
+roundcubemail/plugins/enigma/localization/cy_GB.inc
+roundcubemail/plugins/enigma/localization/da_DK.inc
+roundcubemail/plugins/enigma/localization/de_CH.inc
+roundcubemail/plugins/enigma/localization/de_DE.inc
+roundcubemail/plugins/enigma/localization/el_GR.inc
+roundcubemail/plugins/enigma/localization/en_GB.inc
 roundcubemail/plugins/enigma/localization/en_US.inc
+roundcubemail/plugins/enigma/localization/es_ES.inc
+roundcubemail/plugins/enigma/localization/fi_FI.inc
+roundcubemail/plugins/enigma/localization/fo_FO.inc
+roundcubemail/plugins/enigma/localization/fr_FR.inc
+roundcubemail/plugins/enigma/localization/he_IL.inc
+roundcubemail/plugins/enigma/localization/hr_HR.inc
+roundcubemail/plugins/enigma/localization/hu_HU.inc
+roundcubemail/plugins/enigma/localization/id_ID.inc
+roundcubemail/plugins/enigma/localization/is_IS.inc
+roundcubemail/plugins/enigma/localization/it_IT.inc
 roundcubemail/plugins/enigma/localization/ja_JP.inc
+roundcubemail/plugins/enigma/localization/ka_GE.inc
+roundcubemail/plugins/enigma/localization/ko_KR.inc
+roundcubemail/plugins/enigma/localization/lt_LT.inc
+roundcubemail/plugins/enigma/localization/lv_LV.inc
+roundcubemail/plugins/enigma/localization/nl_BE.inc
+roundcubemail/plugins/enigma/localization/nl_NL.inc
+roundcubemail/plugins/enigma/localization/pl_PL.inc
+roundcubemail/plugins/enigma/localization/pt_BR.inc
+roundcubemail/plugins/enigma/localization/pt_PT.inc
 roundcubemail/plugins/enigma/localization/ru_RU.inc
+roundcubemail/plugins/enigma/localization/sk_SK.inc
+roundcubemail/plugins/enigma/localization/sv_SE.inc
+roundcubemail/plugins/enigma/localization/tr_TR.inc
+roundcubemail/plugins/enigma/localization/uk_UA.inc
+roundcubemail/plugins/enigma/localization/zh_CN.inc
 roundcubemail/plugins/enigma/openpgp.min.js
 roundcubemail/plugins/enigma/skins/
 roundcubemail/plugins/enigma/skins/classic/
@@ -1749,7 +1783,9 @@ roundcubemail/program/js/tinymce/langs/fa.js
 roundcubemail/program/js/tinymce/langs/fa_IR.js
 roundcubemail/program/js/tinymce/langs/fi.js
 roundcubemail/program/js/tinymce/langs/fo.js
+roundcubemail/program/js/tinymce/langs/fr_CH.js
 roundcubemail/program/js/tinymce/langs/fr_FR.js
+roundcubemail/program/js/tinymce/langs/ga.js
 roundcubemail/program/js/tinymce/langs/gd.js
 roundcubemail/program/js/tinymce/langs/gl.js
 roundcubemail/program/js/tinymce/langs/he_IL.js
@@ -1767,10 +1803,12 @@ roundcubemail/program/js/tinymce/langs/kk.js
 roundcubemail/program/js/tinymce/langs/km_KH.js
 roundcubemail/program/js/tinymce/langs/ko.js
 roundcubemail/program/js/tinymce/langs/ko_KR.js
+roundcubemail/program/js/tinymce/langs/ku.js
 roundcubemail/program/js/tinymce/langs/ku_IQ.js
 roundcubemail/program/js/tinymce/langs/lb.js
 roundcubemail/program/js/tinymce/langs/lt.js
 roundcubemail/program/js/tinymce/langs/lv.js
+roundcubemail/program/js/tinymce/langs/mk_MK.js
 roundcubemail/program/js/tinymce/langs/ml.js
 roundcubemail/program/js/tinymce/langs/ml_IN.js
 roundcubemail/program/js/tinymce/langs/mn_MN.js
@@ -1780,10 +1818,11 @@ roundcubemail/program/js/tinymce/langs/pl.js
 roundcubemail/program/js/tinymce/langs/pt_BR.js
 roundcubemail/program/js/tinymce/langs/pt_PT.js
 roundcubemail/program/js/tinymce/langs/ro.js
-roundcubemail/program/js/tinymce/langs/ru.js
+roundcubemail/program/js/tinymce/langs/ru_RU.js
 roundcubemail/program/js/tinymce/langs/si_LK.js
 roundcubemail/program/js/tinymce/langs/sk.js
 roundcubemail/program/js/tinymce/langs/sl_SI.js
+roundcubemail/program/js/tinymce/langs/sq.js
 roundcubemail/program/js/tinymce/langs/sr.js
 roundcubemail/program/js/tinymce/langs/sv_SE.js
 roundcubemail/program/js/tinymce/langs/ta.js
@@ -2251,6 +2290,8 @@ roundcubemail/program/localization/uk_UA/labels.inc
 roundcubemail/program/localization/uk_UA/messages.inc
 roundcubemail/program/localization/ur_PK/
 roundcubemail/program/localization/ur_PK/labels.inc
+roundcubemail/program/localization/uz/
+roundcubemail/program/localization/uz/messages.inc
 roundcubemail/program/localization/vi_VN/
 roundcubemail/program/localization/vi_VN/labels.inc
 roundcubemail/program/localization/vi_VN/messages.inc
@@ -2332,6 +2373,15 @@ roundcubemail/program/steps/utils/save_pref.inc
 roundcubemail/program/steps/utils/spell.inc
 roundcubemail/program/steps/utils/spell_html.inc
 roundcubemail/program/steps/utils/text2html.inc
+roundcubemail/public_html/
+roundcubemail/public_html/.htaccess
+roundcubemail/public_html/index.php
+roundcubemail/public_html/plugins
+roundcubemail/public_html/program/
+roundcubemail/public_html/program/js
+roundcubemail/public_html/program/resources
+roundcubemail/public_html/robots.txt
+roundcubemail/public_html/skins
 roundcubemail/robots.txt
 roundcubemail/roundcubemail.conf.dist
 @sample /var/www/conf/modules.sample/
@@ -2709,6 +2759,7 @@ roundcubemail/vendor/pear/console_getopt/package.xml
 roundcubemail/vendor/pear/pear-core-minimal/
 roundcubemail/vendor/pear/pear-core-minimal/README.rst
 roundcubemail/vendor/pear/pear-core-minimal/composer.json
+roundcubemail/vendor/pear/pear-core-minimal/copy-from-pear-core.sh
 roundcubemail/vendor/pear/pear-core-minimal/src/
 roundcubemail/vendor/pear/pear-core-minimal/src/OS/
 roundcubemail/vendor/pear/pear-core-minimal/src/OS/Guess.php
