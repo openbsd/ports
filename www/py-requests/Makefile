@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/30 09:45:56 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/11 09:09:50 sthen Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
 MODPY_EGG_VERSION=	2.11.1
-DISTNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-requests-${MODPY_EGG_VERSION}
+REVISION=		0
 
 GH_ACCOUNT=		kennethreitz
 GH_PROJECT=		requests
+GH_TAGNAME=		v${MODPY_EGG_VERSION}
 
 CATEGORIES=		www
 
@@ -31,6 +32,10 @@ FLAVOR?=
 MODPY_SETUPTOOLS=	Yes
 
 WRKDIST=		${WRKDIR}/requests-${MODPY_EGG_VERSION}
+
+post-install:
+	ln -fs /etc/ssl/cert.pem \
+	  ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/requests/cacert.pem
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
