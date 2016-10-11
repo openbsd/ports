@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/20 02:24:30 gsoares Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/11 18:36:13 jca Exp $
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
+
 VERSION=	0.6
 REVISION=	0
 DISTNAME=	luasec-${VERSION}
+
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/brunoos/luasec/archive/
 
 HOMEPAGE=	https://github.com/brunoos/luasec/wiki
 
@@ -14,15 +15,20 @@ MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/lua
-NO_TEST=	Yes
-MODLUA_RUN_DEPENDS+=	net/luasocket
 WANTLIB+=	crypto ssl
 
+MASTER_SITES=	https://github.com/brunoos/luasec/archive/
+
+MODULES=	lang/lua
+MODLUA_RUN_DEPENDS+=	net/luasocket
+
 MAKE_ENV+=	INC_PATH="-I${MODLUA_INCL_DIR}" SAVECFLAGS="${CFLAGS}" LD="${CC}"
-ALL_TARGET=	bsd
+
+NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/luasec-luasec-${VERSION}
+
+ALL_TARGET=	bsd
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR} \
