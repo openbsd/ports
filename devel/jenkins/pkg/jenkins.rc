@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: jenkins.rc,v 1.7 2015/07/15 14:59:15 ajacoutot Exp $
+# $OpenBSD: jenkins.rc,v 1.8 2016/10/11 05:51:03 jasper Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
 daemon_flags="-Djava.io.tmpdir=/var/cache/jenkins -jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
@@ -16,13 +16,11 @@ rc_reload=NO
 # https://issues.jenkins-ci.org/browse/JENKINS-17526
 # https://issues.jenkins-ci.org/browse/JENKINS-20858
 rc_pre() {
-        rm -fr /var/cache/jenkins && \
-                install -d -o _jenkins /var/cache/jenkins
+	install -d -o _jenkins /var/cache/jenkins
 }
 
-
 rc_stop() {
-	pkill -9 -xf "${pexp}"	
+	pkill -9 -T "${daemon_rtable}" -xf "${pexp}"	
 }
 
 rc_cmd $1

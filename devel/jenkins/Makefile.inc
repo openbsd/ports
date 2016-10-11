@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/09/23 21:37:14 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/10/11 05:51:02 jasper Exp $
 
 COMMENT =		continuous integration server
 
@@ -12,7 +12,7 @@ PLIST ?=		${.CURDIR}/pkg/PLIST
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://jenkins-ci.org/
+HOMEPAGE =		https://jenkins.io/
 
 MAINTAINER =		Ian Darwin <ian@openbsd.org>
 
