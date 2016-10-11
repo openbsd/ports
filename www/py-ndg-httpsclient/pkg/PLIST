@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/04 09:51:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/11 10:35:08 sthen Exp $
 bin/ndg_httpclient${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/ndg/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/
+lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ndg/httpsclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
