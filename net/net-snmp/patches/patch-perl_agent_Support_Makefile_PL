@@ -1,6 +1,4 @@
-$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.4 2016/10/12 10:50:33 sthen Exp $
-
-*** Hunk 1:
+$OpenBSD: patch-perl_agent_Support_Makefile_PL,v 1.1 2016/10/12 10:50:33 sthen Exp $
 
 commit 4e793461e96a2b4fd81142ab312d074d5c8841fa
 Author: Bart Van Assche <bvanassche@acm.org>
@@ -15,36 +13,21 @@ gnment at /usr/lib/perl5/site_perl/5.24.0/Carp.pm line\ 229.
 
     See also https://sourceforge.net/p/net-snmp/bugs/2712/.
 
-*** Hunk 2:
-
-Adjust manpage path.
-
---- perl/SNMP/Makefile.PL.orig	Wed Oct 12 10:52:01 2016
-+++ perl/SNMP/Makefile.PL	Wed Oct 12 10:49:44 2016
-@@ -3,16 +3,13 @@ require 5;
+--- perl/agent/Support/Makefile.PL.orig	Mon Dec  8 20:23:22 2014
++++ perl/agent/Support/Makefile.PL	Wed Oct 12 10:49:44 2016
+@@ -3,14 +3,11 @@ require 5;
  use Config;
  use Getopt::Long;
  my $lib_version;
 -my %MakeParams = ();
- my $opts;
  
  # See lib/ExtUtils/MakeMaker.pm for details of how to influence
  # the contents of the Makefile that is written.
  
 -%MakeParams = InitMakeParams();
+-
+-WriteMakefile(%MakeParams);
 +WriteMakefile(InitMakeParams());
  
--WriteMakefile(%MakeParams);
--
  Check_Version();
  
- GetTestInfo();
-@@ -21,7 +18,7 @@ sub InitMakeParams {
-     my %Params = (
- 		  NAME         => 'SNMP',
- 		  dist         => { SUFFIX => "gz", COMPRESS => "gzip -9f"},
--		  MAN3PODS => { 'SNMP.pm' => '$(INST_MAN3DIR)/SNMP.3' },
-+		  MAN3PODS => { 'SNMP.pm' => '$(INST_MAN3DIR)/SNMP.3p' },
- 		  XSPROTOARG   => '-noprototypes', 	# XXX remove later?
- 		  VERSION_FROM => 'SNMP.pm',
- 		  realclean        => { FILES => 'host' },

@@ -1,0 +1,154 @@
+$OpenBSD: patch-agent_mibgroup_if-mib_ifXTable_ifXTable_h,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- agent/mibgroup/if-mib/ifXTable/ifXTable.h.orig	Mon Dec  8 20:23:22 2014
++++ agent/mibgroup/if-mib/ifXTable/ifXTable.h	Wed Oct 12 10:50:36 2016
+@@ -143,28 +143,28 @@ config_require(if-mib/ifXTable/ifXTable_data_access)
+                                            u_long *
+                                            ifOutBroadcastPkts_val_ptr);
+     int             ifHCInOctets_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                     U64 * ifHCInOctets_val_ptr);
++                                     struct counter64 *ifHCInOctets_val_ptr);
+     int             ifHCInUcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                        U64 * ifHCInUcastPkts_val_ptr);
++                                        struct counter64 *ifHCInUcastPkts_val_ptr);
+     int             ifHCInMulticastPkts_get(ifXTable_rowreq_ctx *
+                                             rowreq_ctx,
+-                                            U64 *
++                                            struct counter64 *
+                                             ifHCInMulticastPkts_val_ptr);
+     int             ifHCInBroadcastPkts_get(ifXTable_rowreq_ctx *
+                                             rowreq_ctx,
+-                                            U64 *
++                                            struct counter64 *
+                                             ifHCInBroadcastPkts_val_ptr);
+     int             ifHCOutOctets_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                      U64 * ifHCOutOctets_val_ptr);
++                                      struct counter64 *ifHCOutOctets_val_ptr);
+     int             ifHCOutUcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                         U64 * ifHCOutUcastPkts_val_ptr);
++                                         struct counter64 *ifHCOutUcastPkts_val_ptr);
+     int             ifHCOutMulticastPkts_get(ifXTable_rowreq_ctx *
+                                              rowreq_ctx,
+-                                             U64 *
++                                             struct counter64 *
+                                              ifHCOutMulticastPkts_val_ptr);
+     int             ifHCOutBroadcastPkts_get(ifXTable_rowreq_ctx *
+                                              rowreq_ctx,
+-                                             U64 *
++                                             struct counter64 *
+                                              ifHCOutBroadcastPkts_val_ptr);
+     int             ifLinkUpDownTrapEnable_get(ifXTable_rowreq_ctx *
+                                                rowreq_ctx,
+@@ -284,86 +284,86 @@ config_require(if-mib/ifXTable/ifXTable_data_access)
+ 
+     int             ifHCInOctets_check_value(ifXTable_rowreq_ctx *
+                                              rowreq_ctx,
+-                                             U64 ifHCInOctets_val);
++                                             struct counter64 ifHCInOctets_val);
+     int             ifHCInOctets_undo_setup(ifXTable_rowreq_ctx *
+                                             rowreq_ctx);
+     int             ifHCInOctets_set(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                     U64 ifHCInOctets_val);
++                                     struct counter64 ifHCInOctets_val);
+     int             ifHCInOctets_undo(ifXTable_rowreq_ctx * rowreq_ctx);
+ 
+     int             ifHCInUcastPkts_check_value(ifXTable_rowreq_ctx *
+                                                 rowreq_ctx,
+-                                                U64 ifHCInUcastPkts_val);
++                                                struct counter64 ifHCInUcastPkts_val);
+     int             ifHCInUcastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                rowreq_ctx);
+     int             ifHCInUcastPkts_set(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                        U64 ifHCInUcastPkts_val);
++                                        struct counter64 ifHCInUcastPkts_val);
+     int             ifHCInUcastPkts_undo(ifXTable_rowreq_ctx * rowreq_ctx);
+ 
+     int             ifHCInMulticastPkts_check_value(ifXTable_rowreq_ctx *
+                                                     rowreq_ctx,
+-                                                    U64
++                                                    struct counter64
+                                                     ifHCInMulticastPkts_val);
+     int             ifHCInMulticastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                    rowreq_ctx);
+     int             ifHCInMulticastPkts_set(ifXTable_rowreq_ctx *
+                                             rowreq_ctx,
+-                                            U64 ifHCInMulticastPkts_val);
++                                            struct counter64 ifHCInMulticastPkts_val);
+     int             ifHCInMulticastPkts_undo(ifXTable_rowreq_ctx *
+                                              rowreq_ctx);
+ 
+     int             ifHCInBroadcastPkts_check_value(ifXTable_rowreq_ctx *
+                                                     rowreq_ctx,
+-                                                    U64
++                                                    struct counter64
+                                                     ifHCInBroadcastPkts_val);
+     int             ifHCInBroadcastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                    rowreq_ctx);
+     int             ifHCInBroadcastPkts_set(ifXTable_rowreq_ctx *
+                                             rowreq_ctx,
+-                                            U64 ifHCInBroadcastPkts_val);
++                                            struct counter64 ifHCInBroadcastPkts_val);
+     int             ifHCInBroadcastPkts_undo(ifXTable_rowreq_ctx *
+                                              rowreq_ctx);
+ 
+     int             ifHCOutOctets_check_value(ifXTable_rowreq_ctx *
+                                               rowreq_ctx,
+-                                              U64 ifHCOutOctets_val);
++                                              struct counter64 ifHCOutOctets_val);
+     int             ifHCOutOctets_undo_setup(ifXTable_rowreq_ctx *
+                                              rowreq_ctx);
+     int             ifHCOutOctets_set(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                      U64 ifHCOutOctets_val);
++                                      struct counter64 ifHCOutOctets_val);
+     int             ifHCOutOctets_undo(ifXTable_rowreq_ctx * rowreq_ctx);
+ 
+     int             ifHCOutUcastPkts_check_value(ifXTable_rowreq_ctx *
+                                                  rowreq_ctx,
+-                                                 U64 ifHCOutUcastPkts_val);
++                                                 struct counter64 ifHCOutUcastPkts_val);
+     int             ifHCOutUcastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                 rowreq_ctx);
+     int             ifHCOutUcastPkts_set(ifXTable_rowreq_ctx * rowreq_ctx,
+-                                         U64 ifHCOutUcastPkts_val);
++                                         struct counter64 ifHCOutUcastPkts_val);
+     int             ifHCOutUcastPkts_undo(ifXTable_rowreq_ctx *
+                                           rowreq_ctx);
+ 
+     int             ifHCOutMulticastPkts_check_value(ifXTable_rowreq_ctx *
+                                                      rowreq_ctx,
+-                                                     U64
++                                                     struct counter64
+                                                      ifHCOutMulticastPkts_val);
+     int             ifHCOutMulticastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                     rowreq_ctx);
+     int             ifHCOutMulticastPkts_set(ifXTable_rowreq_ctx *
+                                              rowreq_ctx,
+-                                             U64 ifHCOutMulticastPkts_val);
++                                             struct counter64 ifHCOutMulticastPkts_val);
+     int             ifHCOutMulticastPkts_undo(ifXTable_rowreq_ctx *
+                                               rowreq_ctx);
+ 
+     int             ifHCOutBroadcastPkts_check_value(ifXTable_rowreq_ctx *
+                                                      rowreq_ctx,
+-                                                     U64
++                                                     struct counter64
+                                                      ifHCOutBroadcastPkts_val);
+     int             ifHCOutBroadcastPkts_undo_setup(ifXTable_rowreq_ctx *
+                                                     rowreq_ctx);
+     int             ifHCOutBroadcastPkts_set(ifXTable_rowreq_ctx *
+                                              rowreq_ctx,
+-                                             U64 ifHCOutBroadcastPkts_val);
++                                             struct counter64 ifHCOutBroadcastPkts_val);
+     int             ifHCOutBroadcastPkts_undo(ifXTable_rowreq_ctx *
+                                               rowreq_ctx);
+ 

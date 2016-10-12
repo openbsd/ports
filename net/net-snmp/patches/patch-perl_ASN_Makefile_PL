@@ -1,0 +1,28 @@
+$OpenBSD: patch-perl_ASN_Makefile_PL,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 4e793461e96a2b4fd81142ab312d074d5c8841fa
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Jul 23 18:41:10 2016 -0700
+
+    CHANGES: BUG: 2712: Fix Perl module compilation
+
+    Avoid that building the Net-SNMP Perl modules fails as follows:
+
+    ERROR from evaluation of /sources/net-snmp-5.7.3/perl/ASN/Makefile.PL: Bizarre \ copy of HASH in list assi
+gnment at /usr/lib/perl5/site_perl/5.24.0/Carp.pm line\ 229.
+
+    See also https://sourceforge.net/p/net-snmp/bugs/2712/.
+
+--- perl/ASN/Makefile.PL.orig	Mon Dec  8 20:23:22 2014
++++ perl/ASN/Makefile.PL	Wed Oct 12 10:49:44 2016
+@@ -7,9 +7,7 @@ my $lib_version;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+ # the contents of the Makefile that is written.
+ 
+-%MakeParams = InitMakeParams();
+-
+-WriteMakefile(%MakeParams);
++WriteMakefile(InitMakeParams());
+ 
+ Check_Version();
+ 

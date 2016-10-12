@@ -1,0 +1,56 @@
+$OpenBSD: patch-testing_fulltests_unit-tests_T015int64_clib_c,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- testing/fulltests/unit-tests/T015int64_clib.c.orig	Mon Dec  8 20:23:22 2014
++++ testing/fulltests/unit-tests/T015int64_clib.c	Wed Oct 12 10:50:36 2016
+@@ -1,4 +1,4 @@
+-/* HEADER Testing 64-bit integer operations (U64). */
++/* HEADER Testing 64-bit integer operations (struct counter64). */
+ 
+ int i, j;
+ char buf[22];
+@@ -15,7 +15,7 @@ static const int64_t intval[] = {
+ };
+ 
+ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i) {
+-    U64 a, b;
++    struct counter64 a, b;
+     a.low = (uint32_t)intval[i];
+     a.high = (uint32_t)(intval[i] >> 32);
+     printI64(buf, &a);
+@@ -27,7 +27,7 @@ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i)
+ 
+ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i) {
+     for (j = i; j < sizeof(intval)/sizeof(intval[0]); ++j) {
+-        U64 a, b;
++        struct counter64 a, b;
+         uint64_t d;
+         a.low = (uint32_t)intval[i];
+         a.high = (uint32_t)(intval[i] >> 32);
+@@ -43,7 +43,7 @@ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i)
+         
+ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i) {
+     for (j = i; j < sizeof(intval)/sizeof(intval[0]); ++j) {
+-        U64 a, b, c;
++        struct counter64 a, b, c;
+         uint64_t d;
+         a.low = (uint32_t)intval[i];
+         a.high = (uint32_t)(intval[i] >> 32);
+@@ -58,7 +58,7 @@ for (i = 0; i < sizeof(intval)/sizeof(intval[0]); ++i)
+ }
+         
+ {
+-    U64 old_val, new_val;
++    struct counter64 old_val, new_val;
+     old_val.low = 7;
+     old_val.high = 0;
+     new_val = old_val;

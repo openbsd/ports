@@ -1,0 +1,86 @@
+$OpenBSD: patch-agent_mibgroup_if-mib_ifXTable_ifXTable_c,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- agent/mibgroup/if-mib/ifXTable/ifXTable.c.orig	Mon Dec  8 20:23:22 2014
++++ agent/mibgroup/if-mib/ifXTable/ifXTable.c	Wed Oct 12 10:50:36 2016
+@@ -722,7 +722,7 @@ The total number of octets received on the interface,
+  */
+ int
+ ifHCInOctets_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                 U64 * ifHCInOctets_val_ptr)
++                 struct counter64 *ifHCInOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCInOctets_val_ptr);
+@@ -779,7 +779,7 @@ The number of packets, delivered by this sub-layer to 
+  */
+ int
+ ifHCInUcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                    U64 * ifHCInUcastPkts_val_ptr)
++                    struct counter64 *ifHCInUcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCInUcastPkts_val_ptr);
+@@ -838,7 +838,7 @@ The number of packets, delivered by this sub-layer to 
+  */
+ int
+ ifHCInMulticastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                        U64 * ifHCInMulticastPkts_val_ptr)
++                        struct counter64 *ifHCInMulticastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCInMulticastPkts_val_ptr);
+@@ -897,7 +897,7 @@ The number of packets, delivered by this sub-layer to 
+  */
+ int
+ ifHCInBroadcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                        U64 * ifHCInBroadcastPkts_val_ptr)
++                        struct counter64 *ifHCInBroadcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCInBroadcastPkts_val_ptr);
+@@ -955,7 +955,7 @@ The total number of octets transmitted out of the
+  */
+ int
+ ifHCOutOctets_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                  U64 * ifHCOutOctets_val_ptr)
++                  struct counter64 *ifHCOutOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCOutOctets_val_ptr);
+@@ -1013,7 +1013,7 @@ The total number of packets that higher-level protocol
+  */
+ int
+ ifHCOutUcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                     U64 * ifHCOutUcastPkts_val_ptr)
++                     struct counter64 *ifHCOutUcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCOutUcastPkts_val_ptr);
+@@ -1074,7 +1074,7 @@ The total number of packets that higher-level protocol
+  */
+ int
+ ifHCOutMulticastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                         U64 * ifHCOutMulticastPkts_val_ptr)
++                         struct counter64 *ifHCOutMulticastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCOutMulticastPkts_val_ptr);
+@@ -1134,7 +1134,7 @@ The total number of packets that higher-level protocol
+  */
+ int
+ ifHCOutBroadcastPkts_get(ifXTable_rowreq_ctx * rowreq_ctx,
+-                         U64 * ifHCOutBroadcastPkts_val_ptr)
++                         struct counter64 *ifHCOutBroadcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ifHCOutBroadcastPkts_val_ptr);

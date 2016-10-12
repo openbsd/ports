@@ -1,0 +1,23 @@
+$OpenBSD: patch-agent_mibgroup_ip-mib_data_access_systemstats_common_c,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- agent/mibgroup/ip-mib/data_access/systemstats_common.c.orig	Mon Dec  8 20:23:22 2014
++++ agent/mibgroup/ip-mib/data_access/systemstats_common.c	Wed Oct 12 10:50:36 2016
+@@ -264,7 +264,7 @@ _calculate_entries(netsnmp_systemstats_entry * entry)
+            && entry->stats.columnAvail[IPSYSTEMSTATSTABLE_HCOUTFRAGCREATES]
+         && entry->stats.columnAvail[IPSYSTEMSTATSTABLE_HCOUTDISCARDS]) {
+ 
+-        U64 tmp, tmp2, tmp3;
++        struct counter64 tmp, tmp2, tmp3;
+         tmp = entry->stats.HCOutRequests;
+         u64Incr(&tmp, &entry->stats.HCOutForwDatagrams);
+         u64Incr(&tmp, &entry->stats.HCOutFragCreates);

@@ -1,0 +1,30 @@
+$OpenBSD: patch-perl_agent_default_store_Makefile_PL,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 4e793461e96a2b4fd81142ab312d074d5c8841fa
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Jul 23 18:41:10 2016 -0700
+
+    CHANGES: BUG: 2712: Fix Perl module compilation
+
+    Avoid that building the Net-SNMP Perl modules fails as follows:
+
+    ERROR from evaluation of /sources/net-snmp-5.7.3/perl/ASN/Makefile.PL: Bizarre \ copy of HASH in list assi
+gnment at /usr/lib/perl5/site_perl/5.24.0/Carp.pm line\ 229.
+
+    See also https://sourceforge.net/p/net-snmp/bugs/2712/.
+
+--- perl/agent/default_store/Makefile.PL.orig	Mon Dec  8 20:23:22 2014
++++ perl/agent/default_store/Makefile.PL	Wed Oct 12 10:49:44 2016
+@@ -3,11 +3,8 @@ require 5;
+ use Config;
+ use Getopt::Long;
+ my $lib_version;
+-my %MakeParams = ();
+ 
+-%MakeParams = InitMakeParams();
+-
+-WriteMakefile(%MakeParams);
++WriteMakefile(InitMakeParams());
+ 
+ Check_Version();
+ 

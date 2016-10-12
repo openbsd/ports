@@ -1,0 +1,103 @@
+$OpenBSD: patch-agent_mibgroup_if-mib_ifXTable_ifXTable_interface_c,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- agent/mibgroup/if-mib/ifXTable/ifXTable_interface.c.orig	Mon Dec  8 20:23:22 2014
++++ agent/mibgroup/if-mib/ifXTable/ifXTable_interface.c	Wed Oct 12 10:50:36 2016
+@@ -729,72 +729,72 @@ _ifXTable_get_column(ifXTable_rowreq_ctx * rowreq_ctx,
+          * ifHCInOctets(6)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCINOCTETS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCInOctets_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCInOctets_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCInUcastPkts(7)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCINUCASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCInUcastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCInUcastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCInMulticastPkts(8)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCINMULTICASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCInMulticastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCInMulticastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCInBroadcastPkts(9)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCINBROADCASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCInBroadcastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCInBroadcastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCOutOctets(10)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCOUTOCTETS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCOutOctets_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCOutOctets_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCOutUcastPkts(11)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCOUTUCASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCOutUcastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCOutUcastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCOutMulticastPkts(12)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCOUTMULTICASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCOutMulticastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCOutMulticastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*
+          * ifHCOutBroadcastPkts(13)/COUNTER64/ASN_COUNTER64/U64(U64)//l/A/w/e/r/d/h 
+          */
+     case COLUMN_IFHCOUTBROADCASTPKTS:
+-        var->val_len = sizeof(U64);
++        var->val_len = sizeof(struct counter64);
+         var->type = ASN_COUNTER64;
+-        rc = ifHCOutBroadcastPkts_get(rowreq_ctx, (U64 *) var->val.string);
++        rc = ifHCOutBroadcastPkts_get(rowreq_ctx, (struct counter64 *) var->val.string);
+         break;
+ 
+         /*

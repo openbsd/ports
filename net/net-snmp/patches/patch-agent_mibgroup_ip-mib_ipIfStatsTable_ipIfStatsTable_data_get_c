@@ -1,0 +1,140 @@
+$OpenBSD: patch-agent_mibgroup_ip-mib_ipIfStatsTable_ipIfStatsTable_data_get_c,v 1.1 2016/10/12 10:50:33 sthen Exp $
+
+commit 477b4307ef12ddce3b6a9205e0bdddbfb2e0e9b6
+Author: Bart Van Assche <bvanassche@acm.org>
+Date:   Sat Feb 20 18:58:18 2016 -0800
+
+    Remove U64 typedef
+
+    The U64 typedef conflicts with a typedef in a Perl header file. Hence
+    remove the U64 typedef from the Net-SNMP header files. This patch does
+    not modify the Net-SNMP ABI.
+
+--- agent/mibgroup/ip-mib/ipIfStatsTable/ipIfStatsTable_data_get.c.orig	Mon Dec  8 20:23:22 2014
++++ agent/mibgroup/ip-mib/ipIfStatsTable/ipIfStatsTable_data_get.c	Wed Oct 12 10:50:36 2016
+@@ -270,7 +270,7 @@ The total number of input IP datagrams received, inclu
+  */
+ int
+ ipIfStatsHCInReceives_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                          U64 * ipIfStatsHCInReceives_val_ptr)
++                          struct counter64 *ipIfStatsHCInReceives_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInReceives_val_ptr);
+@@ -395,7 +395,7 @@ The total number of octets received in input IP datagr
+  */
+ int
+ ipIfStatsHCInOctets_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                        U64 * ipIfStatsHCInOctets_val_ptr)
++                        struct counter64 *ipIfStatsHCInOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInOctets_val_ptr);
+@@ -862,7 +862,7 @@ The number of input datagrams for which this entity wa
+  */
+ int
+ ipIfStatsHCInForwDatagrams_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                               U64 * ipIfStatsHCInForwDatagrams_val_ptr)
++                               struct counter64 *ipIfStatsHCInForwDatagrams_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInForwDatagrams_val_ptr);
+@@ -1267,7 +1267,7 @@ The total number of datagrams successfully delivered t
+  */
+ int
+ ipIfStatsHCInDelivers_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                          U64 * ipIfStatsHCInDelivers_val_ptr)
++                          struct counter64 *ipIfStatsHCInDelivers_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInDelivers_val_ptr);
+@@ -1396,7 +1396,7 @@ The total number of IP datagrams that local IP user-
+  */
+ int
+ ipIfStatsHCOutRequests_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                           U64 * ipIfStatsHCOutRequests_val_ptr)
++                           struct counter64 *ipIfStatsHCOutRequests_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutRequests_val_ptr);
+@@ -1532,7 +1532,7 @@ The number of datagrams for which this entity was not 
+  */
+ int
+ ipIfStatsHCOutForwDatagrams_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                                U64 * ipIfStatsHCOutForwDatagrams_val_ptr)
++                                struct counter64 *ipIfStatsHCOutForwDatagrams_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutForwDatagrams_val_ptr);
+@@ -1999,7 +1999,7 @@ The total number of IP datagrams that this entity supp
+  */
+ int
+ ipIfStatsHCOutTransmits_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                            U64 * ipIfStatsHCOutTransmits_val_ptr)
++                            struct counter64 *ipIfStatsHCOutTransmits_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutTransmits_val_ptr);
+@@ -2123,7 +2123,7 @@ The total number of octets in IP datagrams delivered t
+  */
+ int
+ ipIfStatsHCOutOctets_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                         U64 * ipIfStatsHCOutOctets_val_ptr)
++                         struct counter64 *ipIfStatsHCOutOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutOctets_val_ptr);
+@@ -2245,7 +2245,7 @@ The number of IP multicast datagrams received.  This o
+  */
+ int
+ ipIfStatsHCInMcastPkts_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                           U64 * ipIfStatsHCInMcastPkts_val_ptr)
++                           struct counter64 *ipIfStatsHCInMcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInMcastPkts_val_ptr);
+@@ -2372,7 +2372,7 @@ The total number of octets received in IP multicast
+  */
+ int
+ ipIfStatsHCInMcastOctets_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                             U64 * ipIfStatsHCInMcastOctets_val_ptr)
++                             struct counter64 *ipIfStatsHCInMcastOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInMcastOctets_val_ptr);
+@@ -2497,7 +2497,7 @@ The number of IP multicast datagrams transmitted.  Thi
+  */
+ int
+ ipIfStatsHCOutMcastPkts_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                            U64 * ipIfStatsHCOutMcastPkts_val_ptr)
++                            struct counter64 *ipIfStatsHCOutMcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutMcastPkts_val_ptr);
+@@ -2621,7 +2621,7 @@ The total number of octets transmitted in IP multicast
+  */
+ int
+ ipIfStatsHCOutMcastOctets_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                              U64 * ipIfStatsHCOutMcastOctets_val_ptr)
++                              struct counter64 *ipIfStatsHCOutMcastOctets_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutMcastOctets_val_ptr);
+@@ -2743,7 +2743,7 @@ The number of IP broadcast datagrams received.  This o
+  */
+ int
+ ipIfStatsHCInBcastPkts_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                           U64 * ipIfStatsHCInBcastPkts_val_ptr)
++                           struct counter64 *ipIfStatsHCInBcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCInBcastPkts_val_ptr);
+@@ -2865,7 +2865,7 @@ The number of IP broadcast datagrams transmitted.  Thi
+  */
+ int
+ ipIfStatsHCOutBcastPkts_get(ipIfStatsTable_rowreq_ctx * rowreq_ctx,
+-                            U64 * ipIfStatsHCOutBcastPkts_val_ptr)
++                            struct counter64 *ipIfStatsHCOutBcastPkts_val_ptr)
+ {
+    /** we should have a non-NULL pointer */
+     netsnmp_assert(NULL != ipIfStatsHCOutBcastPkts_val_ptr);
