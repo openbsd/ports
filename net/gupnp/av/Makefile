@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/10/11 17:26:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/10/12 17:54:03 jasper Exp $
 
 COMMENT=		helpers for building A/V applications using GUPnP
 
 GNOME_PROJECT=		gupnp-av
 GNOME_VERSION=		0.12.9
+REVISION=		0
 
 SHARED_LIBS +=  gupnp-av-1.0         0.1      # 2.0
 
@@ -12,6 +13,8 @@ MODULES=		devel/gettext \
 
 WANTLIB += ffi glib-2.0 gobject-2.0 lzma m pcre pthread xml2 z
 
+BUILD_DEPENDS =		net/gssdp
+RUN_DEPENDS =		net/gssdp
 LIB_DEPENDS =		devel/glib2 \
 			textproc/libxml
 
