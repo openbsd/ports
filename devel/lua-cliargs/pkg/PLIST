@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/12 14:42:15 fcambus Exp $
+share/lua/${MODLUA_VERSION}/cliargs/
+share/lua/${MODLUA_VERSION}/cliargs.lua
+share/lua/${MODLUA_VERSION}/cliargs/config_loader.lua
+share/lua/${MODLUA_VERSION}/cliargs/constants.lua
+share/lua/${MODLUA_VERSION}/cliargs/core.lua
+share/lua/${MODLUA_VERSION}/cliargs/parser.lua
+share/lua/${MODLUA_VERSION}/cliargs/printer.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/
+share/lua/${MODLUA_VERSION}/cliargs/utils/disect.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/disect_argument.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/filter.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/lookup.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/shallow_copy.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/split.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/trim.lua
+share/lua/${MODLUA_VERSION}/cliargs/utils/wordwrap.lua
