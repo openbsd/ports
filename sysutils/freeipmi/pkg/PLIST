@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/03/15 22:22:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/10/12 11:57:56 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -138,6 +138,7 @@ include/freeipmi/spec/ipmi-timestamp-spec.h
 include/freeipmi/spec/oem/
 include/freeipmi/spec/oem/ipmi-cmd-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-cmd-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-ibm-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-intel-node-manager-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-intel-spec.h
@@ -169,6 +170,7 @@ include/freeipmi/spec/oem/ipmi-netfn-oem-supermicro-spec.h
 include/freeipmi/spec/oem/ipmi-netfn-oem-wistron-spec.h
 include/freeipmi/spec/oem/ipmi-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-oem-ibm-spec.h
 include/freeipmi/spec/oem/ipmi-oem-intel-spec.h
 include/freeipmi/spec/oem/ipmi-oem-inventec-spec.h
@@ -178,6 +180,7 @@ include/freeipmi/spec/oem/ipmi-oem-supermicro-spec.h
 include/freeipmi/spec/oem/ipmi-oem-wistron-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-hp-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-intel-node-manager-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-intel-spec.h

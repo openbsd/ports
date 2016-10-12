@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2016/08/12 13:37:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/10/12 11:57:56 sthen Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-V=		1.5.3
+V=		1.5.4
 DISTNAME=	freeipmi-${V}
 
-SHARED_LIBS +=	freeipmi             6.1      # 18.0
-SHARED_LIBS +=	ipmiconsole          2.0      # 5.2
+SHARED_LIBS +=	freeipmi             6.2      # 18.2
+SHARED_LIBS +=	ipmiconsole          3.0      # 5.3
 SHARED_LIBS +=	ipmimonitoring       1.0      # 5.6
 SHARED_LIBS +=	ipmidetect           1.0      # 0.0
 
