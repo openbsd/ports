@@ -1,0 +1,15 @@
+$OpenBSD: patch-MANIFEST,v 1.1 2016/10/12 17:47:23 bluhm Exp $
+
+The file arc4random.c is removed in post-extract as everything is
+implemented in OpenBSD libc.  Avoid a build warning about manifest.
+
+--- MANIFEST.orig	Sun May 17 15:05:04 2009
++++ MANIFEST	Wed Oct 12 14:09:10 2016
+@@ -3,7 +3,6 @@ META.yml
+ Makefile.PL
+ README
+ TODO
+-arc4random.c
+ arc4rnd_xs.c
+ lib/BSD/arc4random.pm
+ t/check.t

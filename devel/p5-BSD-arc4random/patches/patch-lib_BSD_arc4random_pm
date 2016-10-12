@@ -1,7 +1,23 @@
-$OpenBSD: patch-lib_BSD_arc4random_pm,v 1.1 2014/05/16 23:08:31 bluhm Exp $
+$OpenBSD: patch-lib_BSD_arc4random_pm,v 1.2 2016/10/12 17:47:23 bluhm Exp $
+
+Do nothing special for arc4random_addrandom(), arc4random_pushb(),
+arc4random_pushk(), arc4random_stir(), they are not implemented in
+OpenBSD libc.
+
+Replace the pure Perl arc4random_bytes(), arc4random_uniform()
+implementation with arc4random_buf(3), arc4random_uniform(3) Perl
+XS wrapper for OpenBSD libc functions.
+
 --- lib/BSD/arc4random.pm.orig	Mon Jun  6 01:19:28 2011
-+++ lib/BSD/arc4random.pm	Fri May 16 21:46:22 2014
-@@ -73,35 +73,24 @@ arc4random()
++++ lib/BSD/arc4random.pm	Wed Oct 12 17:34:11 2016
+@@ -1,5 +1,6 @@
+ # $MirOS: contrib/hosted/tg/code/BSD::arc4random/lib/BSD/arc4random.pm,v 1.10 2011/06/05 23:19:04 tg Exp $
+ #-
++# Copyright (c) 2016 Alexander Bluhm <bluhm@openbsd.org>
+ # Copyright (c) 2008, 2009, 2010, 2011
+ #	Thorsten Glaser <tg@mirbsd.org>
+ # Copyright (c) 2009
+@@ -73,35 +74,24 @@ arc4random()
  sub
  arc4random_addrandom($)
  {
@@ -40,3 +56,88 @@ $OpenBSD: patch-lib_BSD_arc4random_pm,v 1.1 2014/05/16 23:08:31 bluhm Exp $
  	return;
  }
  
+@@ -109,80 +99,18 @@ sub
+ arc4random_bytes($;$)
+ {
+ 	my ($len, $buf) = @_;
+-	my $val;
+-	my $vleft = 0;
+-	my $rv = '';
+-	my $idx = 0;
+ 
+-	if (defined($buf)) {
+-		$val = arc4random_pushb($buf);
+-		$vleft = 4;
+-	}
+-	while (($len - $idx) >= 4) {
+-		if ($vleft < 4) {
+-			$val = arc4random();
+-			$vleft = 4;
+-		}
+-		vec($rv, $idx / 4, 32) = $val;
+-		$idx += 4;
+-		$vleft = 0;
+-	}
+-	while ($idx < $len) {
+-		if ($vleft == 0) {
+-			$val = arc4random();
+-			$vleft = 4;
+-		}
+-		vec($rv, $idx, 8) = $val & 0xFF;
+-		$idx++;
+-		$val >>= 8;
+-		$vleft--;
+-	}
+-	return $rv;
++	lock($arcfour_lock) if $have_threadlock;
++	return &arc4random_buf_xs($len);
+ }
+ 
+-# Perl implementation of arc4random_uniform(3)
+-# C implementation contributed by djm@openbsd.org, Jinmei_Tatuya@isc.org
+-#
+-# Calculate a uniformly distributed random number less than upper_bound
+-# avoiding "modulo bias".
+-#
+-# Uniformity is achieved by generating new random numbers until the one
+-# returned is outside the range [0, 2**32 % upper_bound).  This
+-# guarantees the selected random number will be inside
+-# [2**32 % upper_bound, 2**32) which maps back to [0, upper_bound)
+-# after reduction modulo upper_bound.
+-
+ sub
+ arc4random_uniform($)
+ {
+ 	my $upper_bound = shift;
+-	my $r;
+-	my $min;
+ 
+-	return 0 unless defined($upper_bound);
+-	# convert upper_bound to 32-bit UV (unsigned integer value)
+-	$upper_bound &= 0xFFFFFFFF;
+-	return 0 if $upper_bound < 2 || $upper_bound > 0xFFFFFFFF;
+-
+-	# Calculate (2**32 % upper_bound) avoiding 64-bit math
+-	if ($upper_bound > 0x80000000) {
+-		# 2**32 - upper_bound (only one "value area")
+-		$min = 1 + (~$upper_bound & 0xFFFFFFFF);
+-	} else {
+-		# (2**32 - x) % x == 2**32 % x when x <= 2**31
+-		$min = (0xFFFFFFFF - $upper_bound + 1) % $upper_bound;
+-	}
+-
+-	# This could theoretically loop forever but each retry has
+-	# p > 0.5 (worst case, usually far better) of selecting a
+-	# number inside the range we need, so it should rarely need
+-	# to re-roll.
+-	while (1) {
+-		$r = arc4random();
+-		last if $r >= $min;
+-	}
+-
+-	return ($r % $upper_bound);
++	lock($arcfour_lock) if $have_threadlock;
++	return &arc4random_uniform_xs($upper_bound);
+ }
+ 
+ # private implementation for a tied $RANDOM variable

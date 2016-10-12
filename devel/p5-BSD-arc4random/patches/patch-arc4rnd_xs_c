@@ -1,10 +1,43 @@
-$OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
+$OpenBSD: patch-arc4rnd_xs_c,v 1.2 2016/10/12 17:47:23 bluhm Exp $
+
+Implement Perl XS wrapper for OpenBSD libc arc4random(3),
+arc4random_buf(3), arc4random_uniform(3), remove everything else.
+
 --- arc4rnd_xs.c.orig	Sun Oct 11 00:44:17 2009
-+++ arc4rnd_xs.c	Fri May 16 22:18:56 2014
-@@ -54,11 +54,6 @@ __RCSID("$MirOS: contrib/hosted/tg/code/BSD::arc4rando
- #define u_int32_t	uint32_t
++++ arc4rnd_xs.c	Wed Oct 12 17:33:31 2016
+@@ -1,4 +1,5 @@
+ /*-
++ * Copyright (c) 2016 Alexander Bluhm <bluhm@openbsd.org>
+  * Copyright (c) 2008, 2009
+  *	Thorsten Glaser <tg@mirbsd.org>
+  *
+@@ -18,15 +19,8 @@
+  * of said person's immediate fault when using the work as intended.
+  */
+ 
+-#include <sys/types.h>
+ #include <stdlib.h>
+ 
+-#if defined(HAVE_STDINT_H) && HAVE_STDINT_H
+-#include <stdint.h>
+-#elif defined(USE_INTTYPES)
+-#include <inttypes.h>
+-#endif
+-
+ #include "EXTERN.h"
+ #include "perl.h"
+ #include "XSUB.h"
+@@ -48,17 +42,8 @@
+ #define __RCSID(x)			__IDSTRING(rcsid,x)
  #endif
  
+-__RCSID("$MirOS: contrib/hosted/tg/code/BSD::arc4random/arc4rnd_xs.c,v 1.5 2009/10/10 22:43:53 tg Exp $");
++__RCSID("$OpenBSD: patch-arc4rnd_xs_c,v 1.2 2016/10/12 17:47:23 bluhm Exp $");
+ 
+-#ifdef REDEF_USCORETYPES
+-#define u_int32_t	uint32_t
+-#endif
+-
 -#ifdef NEED_ARC4RANDOM_DECL
 -u_int32_t arc4random(void);
 -void arc4random_addrandom(u_char *, int);
@@ -13,14 +46,16 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
  XS(XS_BSD__arc4random_arc4random_xs);
  XS(XS_BSD__arc4random_arc4random_xs)
  {
-@@ -74,142 +69,14 @@ XS(XS_BSD__arc4random_arc4random_xs)
+@@ -74,142 +59,62 @@ XS(XS_BSD__arc4random_arc4random_xs)
  	XSRETURN(1);
  }
  
 -XS(XS_BSD__arc4random_stir_xs);
 -XS(XS_BSD__arc4random_stir_xs)
--{
--	dXSARGS;
++XS(XS_BSD__arc4random_arc4random_uniform_xs);
++XS(XS_BSD__arc4random_arc4random_uniform_xs)
+ {
+ 	dXSARGS;
 -
 -	arc4random_stir();
 -
@@ -31,19 +66,22 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -XS(XS_BSD__arc4random_arc4random_addrandom_xs)
 -{
 -	dXSARGS;
--	dXSTARG;
--	SV *sv;
+ 	dXSTARG;
+ 	SV *sv;
 -	char *buf;
 -	STRLEN len;
--	uint32_t rv;
--
--	sv = ST(0);
++	uint32_t upper_bound;
+ 	uint32_t rv;
+ 
+ 	sv = ST(0);
 -	buf = SvPV(sv, len);
 -	arc4random_addrandom((unsigned char *)buf, (int)len);
 -	rv = arc4random();
 -	XSprePUSH;
 -	PUSHu((UV)rv);
--
++	upper_bound = SvUV(sv);
++	rv = arc4random_uniform(upper_bound);
+ 
 -	XSRETURN(1);
 -}
 -
@@ -65,11 +103,11 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -	sv = ST(0);
 -	buf = SvPV(sv, len);
 -	rv = arc4random_pushb((void *)buf, (size_t)len);
--	XSprePUSH;
--	PUSHu((UV)rv);
--
--	XSRETURN(1);
--}
+ 	XSprePUSH;
+ 	PUSHu((UV)rv);
+ 
+ 	XSRETURN(1);
+ }
 -#elif defined(arc4random_pushk)
 -#define XS_BSD__arc4random_arc4random_pushb_xs \
 -	XS_BSD__arc4random_arc4random_pushk_xs
@@ -77,26 +115,39 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -#define XS_BSD__arc4random_arc4random_pushb_xs \
 -	XS_BSD__arc4random_arc4random_addrandom_xs
 -#endif
--
+ 
 -#if defined(arc4random_pushk)
 -XS(XS_BSD__arc4random_arc4random_pushk_xs);
 -XS(XS_BSD__arc4random_arc4random_pushk_xs)
--{
--	dXSARGS;
--	dXSTARG;
--	SV *sv;
--	char *buf;
++XS(XS_BSD__arc4random_arc4random_buf_xs);
++XS(XS_BSD__arc4random_arc4random_buf_xs)
+ {
+ 	dXSARGS;
+ 	dXSTARG;
+ 	SV *sv;
+ 	char *buf;
 -	STRLEN len;
 -	uint32_t rv;
--
--	sv = ST(0);
++	size_t nbytes;
+ 
+ 	sv = ST(0);
 -	buf = SvPV(sv, len);
 -	rv = arc4random_pushk((void *)buf, (size_t)len);
--	XSprePUSH;
++	nbytes = SvUV(sv);
++	sv = sv_newmortal();
++	if (nbytes == SIZE_T_MAX)
++		nbytes--;
++	Newx(buf, nbytes + 1, char);
++	arc4random_buf(buf, nbytes);
++	buf[nbytes] = '\0';
++	sv_usepvn_flags(sv, buf, nbytes, SV_SMAGIC | SV_HAS_TRAILING_NUL);
++
+ 	XSprePUSH;
 -	PUSHu((UV)rv);
--
--	XSRETURN(1);
--}
++	PUSHs(sv);
+ 
+ 	XSRETURN(1);
+ }
 -#elif HAVE_ARC4RANDOM_PUSHB
 -#define XS_BSD__arc4random_arc4random_pushk_xs \
 -	XS_BSD__arc4random_arc4random_pushb_xs
@@ -104,7 +155,7 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -#define XS_BSD__arc4random_arc4random_pushk_xs \
 -	XS_BSD__arc4random_arc4random_addrandom_xs
 -#endif
--
+ 
 -#undef HAVE_ARC4RANDOM_KINTF
 -#if HAVE_ARC4RANDOM_PUSHB || defined(arc4random_pushk)
 -#define HAVE_ARC4RANDOM_KINTF	1
@@ -142,6 +193,8 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -    IDT_ARC4RANDOM_PUSHB
 -    IDT_arc4random_pushk
 -    IDT_ARC4RANDOM_KINTF
++    " arc4random_uniform"
++    " arc4random_buf"
      " }");
  
  
@@ -153,10 +206,12 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -static char func_a4rpk[] = "BSD::arc4random::arc4random_pushk_xs";
 -static char func_astir[] = "BSD::arc4random::arc4random_stir_xs";
 -static char func_kintf[] = "BSD::arc4random::have_kintf";
++static char func_a4r_uniform[] = "BSD::arc4random::arc4random_uniform_xs";
++static char func_a4r_buf[] = "BSD::arc4random::arc4random_buf_xs";
  
  #ifdef __cplusplus
  extern "C"
-@@ -222,12 +89,6 @@ XS(boot_BSD__arc4random)
+@@ -222,12 +127,8 @@ XS(boot_BSD__arc4random)
  	XS_VERSION_BOOTCHECK;
  
  	newXS(func_a4r, XS_BSD__arc4random_arc4random_xs, file);
@@ -166,6 +221,8 @@ $OpenBSD: patch-arc4rnd_xs_c,v 1.1 2014/05/16 23:08:31 bluhm Exp $
 -	newXS(func_astir, XS_BSD__arc4random_stir_xs, file);
 -
 -	newCONSTSUB(NULL, func_kintf, newSViv(HAVE_ARC4RANDOM_KINTF));
++	newXS(func_a4r_uniform, XS_BSD__arc4random_arc4random_uniform_xs, file);
++	newXS(func_a4r_buf, XS_BSD__arc4random_arc4random_buf_xs, file);
  
  	XSRETURN_YES;
  }
