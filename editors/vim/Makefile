@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.152 2016/09/26 10:48:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2016/10/12 09:00:14 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 V=		8.0.0004
-DISTNAME=	vim-$V
-DISTFILES=	vim-$V{v$V}.tar.gz
+GH_ACCOUNT=	vim
+GH_PROJECT=	vim
+GH_TAGNAME=	v$V
+
 PKGNAME-main=	vim-$V
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
-MASTER_SITES=	https://github.com/vim/vim/archive/
 
 HOMEPAGE=	http://www.vim.org/
 
