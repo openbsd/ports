@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/09/13 12:27:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/10/12 11:17:29 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -9,7 +9,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.0.6
+WVER =		2.0.7
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
