@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_ipmi_ekanalyzer_c,v 1.2 2016/05/07 14:18:12 sthen Exp $
---- lib/ipmi_ekanalyzer.c.orig	Fri May  6 15:48:54 2016
-+++ lib/ipmi_ekanalyzer.c	Sat May  7 14:29:33 2016
-@@ -2533,7 +2533,7 @@ ipmi_ek_display_fru_header_detail(char *filename)
+$OpenBSD: patch-lib_ipmi_ekanalyzer_c,v 1.3 2016/10/12 11:56:53 sthen Exp $
+--- lib/ipmi_ekanalyzer.c.orig	Tue Jun  7 05:24:22 2016
++++ lib/ipmi_ekanalyzer.c	Wed Oct 12 12:46:02 2016
+@@ -2545,7 +2545,7 @@ ipmi_ek_display_fru_header_detail(char *filename)
  				+ (mfg_date[0]));
  		tval = tval * 60;
  		tval = tval + secs_from_1970_1996;

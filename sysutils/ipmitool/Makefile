@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2016/05/07 14:18:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/10/12 11:56:53 sthen Exp $
 
 COMMENT=		manage and configure devices that support IPMI
 
-DISTNAME=		ipmitool-1.8.17
+DISTNAME=		ipmitool-1.8.18
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://ipmitool.sourceforge.net/
@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=	--enable-intf-open
 .else
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
+
+pre-configure:
+	cd ${WRKSRC}/contrib; sed -i 's,^#!/bin/bash,#!/bin/sh,' bmclanconf *.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ipmitool/
