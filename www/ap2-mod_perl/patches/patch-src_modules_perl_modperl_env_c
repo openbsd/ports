@@ -1,0 +1,160 @@
+$OpenBSD: patch-src_modules_perl_modperl_env_c,v 1.1 2016/10/12 11:05:05 sthen Exp $
+
+From 82827132efd3c2e25cc413c85af61bb63375da6e Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Tue, 1 Dec 2015 17:39:43 +0000
+Subject: [PATCH] Add support for Perl 5.22.x.
+
+From a6629db9dacd3c6152df599397cfa913928d18d2 Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Fri, 4 Mar 2016 08:23:32 +0000
+Subject: [PATCH] Fix compile errors since SVN revision 1717474 for unthreaded perl
+
+--- src/modules/perl/modperl_env.c.orig	Wed Oct 12 11:52:43 2016
++++ src/modules/perl/modperl_env.c	Wed Oct 12 11:52:36 2016
+@@ -121,6 +121,7 @@ static void modperl_env_table_populate(pTHX_ apr_table
+     const apr_array_header_t *array;
+     apr_table_entry_t *elts;
+ 
++    modperl_env_init(aTHX);
+     modperl_env_untie(mg_flags);
+ 
+     array = apr_table_elts(table);
+@@ -431,14 +432,10 @@ void modperl_env_request_untie(pTHX_ request_rec *r)
+ #endif
+ }
+ 
+-/* to store the original virtual tables
+- * these are global, not per-interpreter
++/* handy access to perl's original virtual tables
+  */
+-static MGVTBL MP_PERL_vtbl_env;
+-static MGVTBL MP_PERL_vtbl_envelem;
+-
+ #define MP_PL_vtbl_call(name, meth) \
+-    MP_PERL_vtbl_##name.svt_##meth(aTHX_ sv, mg)
++    PL_vtbl_##name.svt_##meth(aTHX_ sv, mg)
+ 
+ #define MP_dENV_KEY \
+     STRLEN klen; \
+@@ -529,6 +526,26 @@ static int modperl_env_magic_clear_all(pTHX_ SV *sv, M
+     return 0;
+ }
+ 
++static int modperl_env_magic_copy(pTHX_ SV *sv, MAGIC *mg, SV *nsv, const char *name, I32 namlen)
++{
++    MP_TRACE_e(MP_FUNC, "setting up %%ENV element magic");
++    sv_magicext(nsv, mg->mg_obj, toLOWER(mg->mg_type), &MP_vtbl_envelem, name, namlen);
++
++    return 1;
++}
++
++static int modperl_env_magic_local_all(pTHX_ SV *nsv, MAGIC *mg)
++{
++    MAGIC *nmg;
++    MP_TRACE_e(MP_FUNC, "localizing %%ENV");
++    nmg = sv_magicext(nsv, mg->mg_obj, mg->mg_type, &MP_vtbl_env, (char*)NULL, 0);
++    nmg->mg_ptr = mg->mg_ptr;
++    nmg->mg_flags |= MGf_COPY;
++    nmg->mg_flags |= MGf_LOCAL;
++
++    return 1;
++}
++
+ static int modperl_env_magic_set(pTHX_ SV *sv, MAGIC *mg)
+ {
+     request_rec *r = (request_rec *)EnvMgObj;
+@@ -613,15 +630,18 @@ static int modperl_env_magic_get(pTHX_ SV *sv, MAGIC *
+ #endif
+ 
+ /* override %ENV virtual tables with our own */
+-static MGVTBL MP_vtbl_env = {
++MGVTBL MP_vtbl_env = {
+     0,
+     modperl_env_magic_set_all,
+     0,
+     modperl_env_magic_clear_all,
+-    0
++    0,
++    modperl_env_magic_copy,
++    0,
++    modperl_env_magic_local_all
+ };
+ 
+-static MGVTBL MP_vtbl_envelem = {
++MGVTBL MP_vtbl_envelem = {
+     0,
+     modperl_env_magic_set,
+     0,
+@@ -629,22 +649,60 @@ static MGVTBL MP_vtbl_envelem = {
+     0
+ };
+ 
+-void modperl_env_init(void)
++void modperl_env_init(pTHX)
+ {
+-    /* save originals */
+-    StructCopy(&PL_vtbl_env, &MP_PERL_vtbl_env, MGVTBL);
+-    StructCopy(&PL_vtbl_envelem, &MP_PERL_vtbl_envelem, MGVTBL);
++    MAGIC *mg;
+ 
+-    /* replace with our versions */
+-    StructCopy(&MP_vtbl_env, &PL_vtbl_env, MGVTBL);
+-    StructCopy(&MP_vtbl_envelem, &PL_vtbl_envelem, MGVTBL);
++    /* Find the 'E' magic on %ENV */
++    if (!PL_envgv)
++        return;
++    if (!SvRMAGICAL(ENVHV))
++        return;
++    mg = mg_find((const SV *)ENVHV, PERL_MAGIC_env);
++    if (!mg)
++        return;
++       
++    /* Ignore it if it isn't perl's original version */
++    if (mg->mg_virtual != &PL_vtbl_env)
++        return;
++
++    MP_TRACE_e(MP_FUNC, "env_init - ptr: %x obj: %x flags: %x",
++               mg->mg_ptr, mg->mg_obj, mg->mg_flags);
++
++    /* Remove it */
++    mg_free_type((SV*)ENVHV, PERL_MAGIC_env);
++
++    /* Add our version instead */
++    mg = sv_magicext((SV*)ENVHV, (SV*)NULL, PERL_MAGIC_env, &MP_vtbl_env, (char*)NULL, 0);
++    mg->mg_flags |= MGf_COPY;
++    mg->mg_flags |= MGf_LOCAL;
+ }
+ 
+-void modperl_env_unload(void)
++void modperl_env_unload(pTHX)
+ {
+-    /* restore originals */
+-    StructCopy(&MP_PERL_vtbl_env, &PL_vtbl_env, MGVTBL);
+-    StructCopy(&MP_PERL_vtbl_envelem, &PL_vtbl_envelem, MGVTBL);
++    MAGIC *mg;
++
++    /* Find the 'E' magic on %ENV */
++    if (!PL_envgv)
++        return;
++    if (!SvRMAGICAL(ENVHV))
++        return;
++    mg = mg_find((const SV *)ENVHV, PERL_MAGIC_env);
++    if (!mg)
++        return;
++
++    /* Ignore it if it isn't our version */
++    if (mg->mg_virtual != &MP_vtbl_env)
++        return;
++
++    MP_TRACE_e(MP_FUNC, "env_unload - ptr: %x obj: %x flags: %x",
++               mg->mg_ptr, mg->mg_obj, mg->mg_flags);
++
++    /* Remove it */
++    mg_free_type((SV*)ENVHV, PERL_MAGIC_env);
++
++    /* Restore perl's original version */
++    sv_magicext((SV*)ENVHV, (SV*)NULL, PERL_MAGIC_env, &PL_vtbl_env, (char*)NULL, 0);
+ }
+ 
+ /*

@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_modules_perl_mod_perl_c,v 1.1 2016/10/12 11:05:05 sthen Exp $
+
+From 82827132efd3c2e25cc413c85af61bb63375da6e Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Tue, 1 Dec 2015 17:39:43 +0000
+Subject: [PATCH] Add support for Perl 5.22.x.
+
+--- src/modules/perl/mod_perl.c.orig	Thu Jun 18 21:13:55 2015
++++ src/modules/perl/mod_perl.c	Wed Oct 12 11:51:59 2016
+@@ -262,6 +262,8 @@ PerlInterpreter *modperl_startup(server_rec *s, apr_po
+         exit(1);
+     }
+ 
++    modperl_env_init(aTHX);
++
+     /* suspend END blocks to be run at server shutdown */
+     endav = PL_endav;
+     PL_endav = (AV *)NULL;
+@@ -576,9 +578,6 @@ static apr_status_t modperl_sys_init(void)
+     /* modifies PL_ppaddr */
+     modperl_perl_pp_set_all();
+ 
+-    /* modifies PL_vtbl_env{elem} */
+-    modperl_env_init();
+-
+     return APR_SUCCESS;
+ }
+ 
+@@ -596,8 +595,6 @@ static apr_status_t modperl_sys_term(void *data)
+     MP_PERL_FREE_THREAD_KEY_WORKAROUND;
+ 
+     MP_TRACE_i(MP_FUNC, "mod_perl sys term");
+-
+-    modperl_env_unload();
+ 
+     modperl_perl_pp_unset_all();
+ 

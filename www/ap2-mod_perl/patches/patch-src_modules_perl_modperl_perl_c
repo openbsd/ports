@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_modules_perl_modperl_perl_c,v 1.1 2016/10/12 11:05:05 sthen Exp $
+
+From 82827132efd3c2e25cc413c85af61bb63375da6e Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Tue, 1 Dec 2015 17:39:43 +0000
+Subject: [PATCH] Add support for Perl 5.22.x.
+
+From a6629db9dacd3c6152df599397cfa913928d18d2 Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Fri, 4 Mar 2016 08:23:32 +0000
+Subject: [PATCH] Fix compile errors since SVN revision 1717474 for unthreaded perl
+
+--- src/modules/perl/modperl_perl.c.orig	Wed Oct 12 11:52:43 2016
++++ src/modules/perl/modperl_perl.c	Wed Oct 12 11:52:36 2016
+@@ -181,6 +181,8 @@ void modperl_perl_destruct(PerlInterpreter *perl)
+         }
+     }
+ 
++    modperl_env_unload(aTHX);
++
+     perl_destruct(perl);
+ 
+     /* XXX: big bug in 5.6.1 fixed in 5.7.2+

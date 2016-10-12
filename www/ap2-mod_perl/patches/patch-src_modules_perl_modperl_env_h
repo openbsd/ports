@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_modules_perl_modperl_env_h,v 1.1 2016/10/12 11:05:05 sthen Exp $
+
+From 82827132efd3c2e25cc413c85af61bb63375da6e Mon Sep 17 00:00:00 2001
+From: Steve Hay <stevehay@apache.org>
+Date: Tue, 1 Dec 2015 17:39:43 +0000
+Subject: [PATCH] Add support for Perl 5.22.x.
+
+--- src/modules/perl/modperl_env.h.orig	Thu Jun 18 21:13:54 2015
++++ src/modules/perl/modperl_env.h	Wed Oct 12 11:51:59 2016
+@@ -28,7 +28,7 @@
+     MP_magical_tie(ENVHV, mg_flags)
+ 
+ #define modperl_envelem_tie(sv, key, klen) \
+-    sv_magic(sv, (SV *)NULL, 'e', key, klen)
++    sv_magicext(sv, (SV *)NULL, PERL_MAGIC_envelem, &MP_vtbl_envelem, key, klen)
+ 
+ void modperl_env_hash_keys(pTHX);
+ 
+@@ -58,9 +58,12 @@ void modperl_env_request_tie(pTHX_ request_rec *r);
+ 
+ void modperl_env_request_untie(pTHX_ request_rec *r);
+ 
+-void modperl_env_init(void);
++void modperl_env_init(pTHX);
+ 
+-void modperl_env_unload(void);
++void modperl_env_unload(pTHX);
++
++MGVTBL MP_vtbl_env;
++MGVTBL MP_vtbl_envelem;
+ 
+ #endif /* MODPERL_ENV_H */
+ 
