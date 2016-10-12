@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2016/10/09 06:47:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2016/10/12 11:04:38 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -11,7 +11,7 @@ COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 LLVM_V =	3.9.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -77,6 +77,15 @@ SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
+
+.if ${MACHINE_ARCH} != "i386"
+PKG_ARGS += -Dlld=1
+.else
+PKG_ARGS += -Dlld=0
+
+post-patch:
+	rm -r ${WRKSRC}/tools/lld
+.endif
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp \
