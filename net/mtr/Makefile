@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2016/04/06 21:52:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2016/10/12 11:39:27 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
-DISTNAME=	mtr-0.86
-REVISION=	1
+DISTNAME=	mtr-0.87
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -13,7 +12,7 @@ HOMEPAGE=	http://www.bitwizard.nl/mtr/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	yes
 
-WANTLIB=	lib/libbind/bind c m termcap
+WANTLIB=	lib/libbind/bind c m ncurses
 LIB_DEPENDS=	net/libbind
 
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
@@ -37,7 +36,14 @@ CONFIGURE_ARGS+=	--without-glib \
 			--without-gtk
 .endif
 
+# need to regen for now, upstream built their automake files without the gtk aclocal files
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.11
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
 post-patch:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./bootstrap.sh
 	touch ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>

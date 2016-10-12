@@ -1,0 +1,29 @@
+$OpenBSD: patch-mtr_c,v 1.1 2016/10/12 11:39:27 sthen Exp $
+--- mtr.c.orig	Wed Aug  3 14:20:21 2016
++++ mtr.c	Wed Aug  3 14:21:15 2016
+@@ -310,7 +310,9 @@ void parse_arg (int argc, char **argv)
+ 	{ "max-unknown",    1, NULL, 'U' },
+     { "udp",            0, NULL, 'u' }, /* UDP (default is ICMP) */
+     { "tcp",            0, NULL, 'T' }, /* TCP (default is ICMP) */
++#ifdef IPPROTO_SCTP
+     { "sctp",           0, NULL, 'S' }, /* SCTP (default is ICMP) */
++#endif
+     { "port",           1, NULL, 'P' }, /* target port number for TCP/SCTP/UDP */
+     { "localport",      1, NULL, 'L' }, /* source port number for UDP */
+     { "timeout",        1, NULL, 'Z' }, /* timeout for TCP sockets */
+@@ -476,6 +478,7 @@ void parse_arg (int argc, char **argv)
+       }
+       mtrtype = IPPROTO_TCP;
+       break;
++#ifdef IPPROTO_SCTP
+     case 'S':
+       if (mtrtype != IPPROTO_ICMP) {
+         fprintf(stderr, "-u , -T and -S are mutually exclusive.\n");
+@@ -485,6 +488,7 @@ void parse_arg (int argc, char **argv)
+         remoteport = 80;
+       }
+       mtrtype = IPPROTO_SCTP;
++#endif
+     case 'b':
+       show_ips = 1;
+       break;

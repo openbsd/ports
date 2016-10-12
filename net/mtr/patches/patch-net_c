@@ -1,0 +1,58 @@
+$OpenBSD: patch-net_c,v 1.3 2016/10/12 11:39:27 sthen Exp $
+--- net.c.orig	Mon Aug  1 14:07:58 2016
++++ net.c	Wed Oct 12 12:25:44 2016
+@@ -428,6 +428,7 @@ void net_send_tcp(int index)
+   connect(s, (struct sockaddr *) &remote, len);
+ }
+ 
++#ifdef IPPROTO_SCTP
+ /*  Attempt to connect to a SCTP port with a TTL */
+ void net_send_sctp(int index)
+ {
+@@ -544,6 +545,7 @@ void net_send_sctp(int index)
+ 
+   connect(s, (struct sockaddr *) &remote, len);
+ }
++#endif
+ 
+ /*  Attempt to find the host at a particular number of hops away  */
+ void net_send_query(int index) 
+@@ -553,10 +555,12 @@ void net_send_query(int index) 
+     return;
+   }
+   
++#ifdef IPPROTO_SCTP
+   if (mtrtype == IPPROTO_SCTP) {
+     net_send_sctp(index);
+     return;
+   }
++#endif
+ 
+   /*ok  char packet[sizeof(struct IPHeader) + sizeof(struct ICMPHeader)];*/
+   char packet[MAXPACKET];
+@@ -872,7 +876,9 @@ void net_process_return(void) 
+   struct ICMPHeader *header = NULL;
+   struct UDPHeader *udpheader = NULL;
+   struct TCPHeader *tcpheader = NULL;
++#ifdef IPPROTO_SCTP
+   struct SCTPHeader *sctpheader = NULL;
++#endif
+   struct timeval now;
+   ip_t * fromaddress = NULL;
+   int echoreplytype = 0, timeexceededtype = 0, unreachabletype = 0;
+@@ -1046,6 +1052,7 @@ void net_process_return(void) 
+     }
+     break;
+     
++#ifdef IPPROTO_SCTP
+   case IPPROTO_SCTP:
+     if (header->type == timeexceededtype || header->type == unreachabletype) {
+       switch ( af ) {
+@@ -1082,6 +1089,7 @@ void net_process_return(void) 
+       sequence = ntohs(sctpheader->srcport);
+     }
+     break;
++#endif
+   }
+   if (sequence)
+     net_process_ping (sequence, mpls, (void *) fromaddress, now);
