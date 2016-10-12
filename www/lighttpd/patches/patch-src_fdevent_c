@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_fdevent_c,v 1.1 2016/09/17 20:22:41 ajacoutot Exp $
+$OpenBSD: patch-src_fdevent_c,v 1.2 2016/10/12 08:09:26 ajacoutot Exp $
 
 - [core] check if client half-closed TCP if POLLHUP (#2743)
 - [core] fix crash if ready events on abandoned fd (fixes #2748)
+- performance: use Linux extended syscalls and flags
 
---- src/fdevent.c.orig	Sun Jul 31 08:42:39 2016
-+++ src/fdevent.c	Thu Sep 15 19:49:08 2016
+--- src/fdevent.c.orig	Mon Oct 10 18:05:27 2016
++++ src/fdevent.c	Mon Oct 10 18:04:38 2016
 @@ -23,6 +23,7 @@ fdevents *fdevent_init(server *srv, size_t maxfds, fde
  	ev->fdarray = calloc(maxfds, sizeof(*ev->fdarray));
  	force_assert(NULL != ev->fdarray);
@@ -82,7 +83,87 @@ $OpenBSD: patch-src_fdevent_c,v 1.1 2016/09/17 20:22:41 ajacoutot Exp $
  	if (ev->fdarray[fd]->fd != fd) SEGFAULT();
  
  	return ev->fdarray[fd]->ctx;
-@@ -250,3 +286,37 @@ int fdevent_event_next_fdndx(fdevents *ev, int ndx) {
+@@ -234,7 +270,10 @@ void fd_close_on_exec(int fd) {
+ }
+ 
+ int fdevent_fcntl_set(fdevents *ev, int fd) {
+-	fd_close_on_exec(fd);
++	return ((ev) && (ev->fcntl_set)) ? ev->fcntl_set(ev, fd) : 0;
++}
++
++int fdevent_fcntl_set_nb(fdevents *ev, int fd) {
+ 	if ((ev) && (ev->fcntl_set)) return ev->fcntl_set(ev, fd);
+ #ifdef O_NONBLOCK
+ 	return fcntl(fd, F_SETFL, O_NONBLOCK | O_RDWR);
+@@ -243,10 +282,105 @@ int fdevent_fcntl_set(fdevents *ev, int fd) {
+ #endif
+ }
+ 
++int fdevent_fcntl_set_nb_cloexec(fdevents *ev, int fd) {
++	fd_close_on_exec(fd);
++	return fdevent_fcntl_set_nb(ev, fd);
++}
+ 
++int fdevent_fcntl_set_nb_cloexec_sock(fdevents *ev, int fd) {
++#if defined(SOCK_CLOEXEC) && defined(SOCK_NONBLOCK)
++	return ((ev) && (ev->fcntl_set)) ? ev->fcntl_set(ev, fd) : 0;
++#else
++	return fdevent_fcntl_set_nb_cloexec(ev, fd);
++#endif
++}
++
++int fdevent_socket_cloexec(int domain, int type, int protocol) {
++#ifdef SOCK_CLOEXEC
++	return socket(domain, type | SOCK_CLOEXEC, protocol);
++#else
++	int fd;
++	if (-1 != (fd = socket(domain, type, protocol))) {
++#ifdef FD_CLOEXEC
++		fcntl(fd, F_SETFD, FD_CLOEXEC);
++#endif
++	}
++	return fd;
++#endif
++}
++
++int fdevent_socket_nb_cloexec(int domain, int type, int protocol) {
++#ifdef SOCK_CLOEXEC
++	return socket(domain, type | SOCK_CLOEXEC | SOCK_NONBLOCK, protocol);
++#else
++	int fd;
++	if (-1 != (fd = socket(domain, type, protocol))) {
++#ifdef FD_CLOEXEC
++		fcntl(fd, F_SETFD, FD_CLOEXEC);
++#endif
++#ifdef O_NONBLOCK
++		fcntl(fd, F_SETFL, O_NONBLOCK | O_RDWR);
++#endif
++	}
++	return fd;
++#endif
++}
++
++#ifndef O_NOCTTY
++#define O_NOCTTY 0
++#endif
++
++int fdevent_open_cloexec(const char *pathname, int flags, mode_t mode) {
++#ifdef O_CLOEXEC
++	return open(pathname, flags | O_CLOEXEC | O_NOCTTY, mode);
++#else
++	int fd = open(pathname, flags | O_NOCTTY, mode);
++#ifdef FD_CLOEXEC
++	if (fd != -1)
++		fcntl(fd, F_SETFD, FD_CLOEXEC);
++#endif
++	return fd;
++#endif
++}
++
++
+ int fdevent_event_next_fdndx(fdevents *ev, int ndx) {
+ 	if (ev->event_next_fdndx) return ev->event_next_fdndx(ev, ndx);
+ 
  	return -1;
  }
  

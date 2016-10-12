@@ -1,12 +1,42 @@
-$OpenBSD: patch-src_mod_scgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
+$OpenBSD: patch-src_mod_scgi_c,v 1.8 2016/10/12 08:09:26 ajacoutot Exp $
 
 - [core] enforce wait for POLLWR after EINPROGRESS (fixes #2744)
 - [core] proxy,scgi omit shutdown() to backend (fixes #2743)
 - [core] fix crash if ready events on abandoned fd (fixes #2748)
+- performance: use Linux extended syscalls and flags
 
---- src/mod_scgi.c.orig	Wed Sep 14 21:07:14 2016
-+++ src/mod_scgi.c	Wed Sep 14 21:04:56 2016
-@@ -1315,8 +1315,7 @@ static void scgi_connection_close(server *srv, handler
+--- src/mod_scgi.c.orig	Mon Oct 10 18:06:01 2016
++++ src/mod_scgi.c	Mon Oct 10 18:04:38 2016
+@@ -757,7 +757,7 @@ static int scgi_spawn_connection(server *srv,
+ 		scgi_addr = (struct sockaddr *) &scgi_addr_in;
+ 	}
+ 
+-	if (-1 == (scgi_fd = socket(scgi_addr->sa_family, SOCK_STREAM, 0))) {
++	if (-1 == (scgi_fd = fdevent_socket_cloexec(scgi_addr->sa_family, SOCK_STREAM, 0))) {
+ 		log_error_write(srv, __FILE__, __LINE__, "ss",
+ 				"failed:", strerror(errno));
+ 		return -1;
+@@ -775,7 +775,7 @@ static int scgi_spawn_connection(server *srv,
+ 		close(scgi_fd);
+ 
+ 		/* reopen socket */
+-		if (-1 == (scgi_fd = socket(scgi_addr->sa_family, SOCK_STREAM, 0))) {
++		if (-1 == (scgi_fd = fdevent_socket_cloexec(scgi_addr->sa_family, SOCK_STREAM, 0))) {
+ 			log_error_write(srv, __FILE__, __LINE__, "ss",
+ 				"socket failed:", strerror(errno));
+ 			return -1;
+@@ -824,6 +824,10 @@ static int scgi_spawn_connection(server *srv,
+ 				dup2(scgi_fd, 0);
+ 				close(scgi_fd);
+ 			}
++		      #ifdef SOCK_CLOEXEC
++			else
++				fcntl(scgi_fd, F_SETFD, 0); /* clear cloexec */
++		      #endif
+ 
+ 			/* we don't need the client socket */
+ 			for (fd = 3; fd < 256; fd++) {
+@@ -1315,8 +1319,7 @@ static void scgi_connection_close(server *srv, handler
  	if (hctx->fd != -1) {
  		fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
  		fdevent_unregister(srv->ev, hctx->fd);
@@ -16,7 +46,7 @@ $OpenBSD: patch-src_mod_scgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
  	}
  
  	if (hctx->host && hctx->proc) {
-@@ -1371,8 +1370,7 @@ static int scgi_reconnect(server *srv, handler_ctx *hc
+@@ -1371,8 +1374,7 @@ static int scgi_reconnect(server *srv, handler_ctx *hc
  
  	fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
  	fdevent_unregister(srv->ev, hctx->fd);
@@ -26,7 +56,24 @@ $OpenBSD: patch-src_mod_scgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
  
  	scgi_set_state(srv, hctx, FCGI_STATE_INIT);
  
-@@ -2438,7 +2436,6 @@ static handler_t scgi_write_request(server *srv, handl
+@@ -2275,7 +2277,7 @@ static handler_t scgi_write_request(server *srv, handl
+ 
+ 	switch(hctx->state) {
+ 	case FCGI_STATE_INIT:
+-		if (-1 == (hctx->fd = socket(host->family, SOCK_STREAM, 0))) {
++		if (-1 == (hctx->fd = fdevent_socket_nb_cloexec(host->family, SOCK_STREAM, 0))) {
+ 			if (errno == EMFILE ||
+ 			    errno == EINTR) {
+ 				log_error_write(srv, __FILE__, __LINE__, "sd",
+@@ -2297,7 +2299,6 @@ static handler_t scgi_write_request(server *srv, handl
+ 		if (-1 == fdevent_fcntl_set(srv->ev, hctx->fd)) {
+ 			log_error_write(srv, __FILE__, __LINE__, "ss",
+ 					"fcntl failed: ", strerror(errno));
+-
+ 			return HANDLER_ERROR;
+ 		}
+ 
+@@ -2438,7 +2439,6 @@ static handler_t scgi_write_request(server *srv, handl
  
  		if (hctx->wb->bytes_out == hctx->wb_reqlen) {
  			fdevent_event_clr(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
@@ -34,7 +81,7 @@ $OpenBSD: patch-src_mod_scgi_c,v 1.7 2016/09/17 20:22:41 ajacoutot Exp $
  			scgi_set_state(srv, hctx, FCGI_STATE_READ);
  		} else {
  			off_t wblen = hctx->wb->bytes_in - hctx->wb->bytes_out;
-@@ -2585,7 +2582,8 @@ SUBREQUEST_FUNC(mod_scgi_handle_subrequest) {
+@@ -2585,7 +2585,8 @@ SUBREQUEST_FUNC(mod_scgi_handle_subrequest) {
  		}
  	}
  
