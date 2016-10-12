@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2016/08/27 16:33:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/10/12 10:07:45 ajacoutot Exp $
 
 COMMENT=		GTK+ subtitles editor
 
 V=			0.53.0
 DISTNAME=		subtitleeditor-${V}
+REVISION=		0
 
 CATEGORIES=		graphics editors
 
@@ -19,14 +20,15 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 enchant
 WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstcheck-1.0 gstcontroller-1.0 gstfft-1.0 gstnet-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstreamermm-1.0 gstriff-1.0
-WANTLIB += gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB += gtk-3 gtkmm-3.0 harfbuzz iconv intl lzma m orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += gobject-2.0 graphite2 gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstcheck-1.0 gstcontroller-1.0
+WANTLIB += gstfft-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gstreamermm-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0
+WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += gtkmm-3.0 harfbuzz iconv intl lzma m orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=		http://download.gna.org/subtitleeditor/${V:R}/
 
