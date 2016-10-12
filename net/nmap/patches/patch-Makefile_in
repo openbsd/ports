@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.17 2016/10/06 05:47:35 giovanni Exp $
---- Makefile.in.orig	Tue Aug 16 10:31:59 2016
-+++ Makefile.in	Thu Sep 29 22:07:52 2016
+$OpenBSD: patch-Makefile_in,v 1.18 2016/10/12 14:03:17 giovanni Exp $
+--- Makefile.in.orig	Tue Aug 16 11:31:59 2016
++++ Makefile.in	Tue Oct 11 00:50:38 2016
 @@ -46,7 +46,7 @@ DEFS += -D_FORTIFY_SOURCE=2
  # Should only be enabled during debugging and not in any real release.
  # DEFS += -DMTRACE=1
  CXXFLAGS = @CXXFLAGS@ $(DBGFLAGS) $(CCOPT)
 -CPPFLAGS = @CPPFLAGS@ $(DEFS)
-+CPPFLAGS = -I../libdnet-stripped/include @CPPFLAGS@ $(DEFS)
++CPPFLAGS = -I./libdnet-stripped/include @CPPFLAGS@ $(DEFS)
  CFLAGS = @CFLAGS@ $(DBGFLAGS) $(CCOPT)
  STATIC =
  LDFLAGS = @LDFLAGS@ $(DBGFLAGS) $(STATIC)
