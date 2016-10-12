@@ -1,7 +1,7 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.5 2015/04/10 12:25:46 sthen Exp $
---- runtime/syntax/make.vim.orig	Thu Apr  9 21:08:22 2015
-+++ runtime/syntax/make.vim	Thu Apr  9 23:48:04 2015
-@@ -26,6 +26,9 @@ syn match makeInclude	"^ *[-s]\=include"
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.6 2016/10/12 09:31:16 sthen Exp $
+--- runtime/syntax/make.vim.orig	Sun Oct  9 16:28:01 2016
++++ runtime/syntax/make.vim	Wed Oct 12 10:01:36 2016
+@@ -23,6 +23,9 @@ syn match makeInclude	"^ *[-s]\=include"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
  syn match makeOverride	"^ *override"
@@ -11,7 +11,7 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.5 2015/04/10 12:25:46 sthen Exp $
  hi link makeOverride makeStatement
  hi link makeExport makeStatement
  
-@@ -41,25 +44,29 @@ syn case match
+@@ -38,25 +41,29 @@ syn case match
  " identifiers
  syn region makeIdent	start="\$(" skip="\\)\|\\\\" end=")" contains=makeStatement,makeIdent,makeSString,makeDString
  syn region makeIdent	start="\${" skip="\\}\|\\\\" end="}" contains=makeStatement,makeIdent,makeSString,makeDString
@@ -46,7 +46,7 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.5 2015/04/10 12:25:46 sthen Exp $
  
  syn match makeCommandError "^\s\+\S.*" contained
  syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
-@@ -67,14 +74,15 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
+@@ -64,14 +71,15 @@ syn match makeCmdNextLine	"\\\n."he=e-1 contained
  
  
  " Statements / Functions (GNU make)

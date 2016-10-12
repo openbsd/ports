@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.153 2016/10/12 09:00:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2016/10/12 09:31:16 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.0.0004
+V=		8.0.0027
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -67,7 +67,7 @@ CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
 CONFIGURE_ARGS+= --enable-pythoninterp=yes --enable-python3interp=no \
 	--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+WANTLIB+=	m ${MODPY_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mpython3}
@@ -77,7 +77,7 @@ CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
 CONFIGURE_ARGS+= --enable-python3interp=yes --enable-pythoninterp=no \
 	--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+WANTLIB+=	m ${MODPY_WANTLIB}
 .endif
 
 # Some parts of vim (like python autocompletion) require a version of vim
