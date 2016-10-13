@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2016/10/06 19:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2016/10/13 15:56:41 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -140,6 +140,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/errors.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/errors.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/operations.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/projects_api.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/projects_api.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/projects_util.py
@@ -642,6 +644,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/networks/subnets/__init_
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/networks/subnets/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/networks/subnets/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/networks/subnets/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/operations/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/operations/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/operations/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/operations/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/operations/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/routers/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/routers/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/routers/__init__.pyc
@@ -672,6 +679,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_instances/__init_
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_instances/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_instances/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_instances/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_pools/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_pools/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_pools/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_pools/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_pools/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_vpn_gateways/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_vpn_gateways/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/target_vpn_gateways/__init__.pyc
@@ -818,6 +830,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py
 google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/console/console_pager.py
 google-cloud-sdk/lib/googlecloudsdk/core/console/console_pager.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/console/progress_tracker.py
+google-cloud-sdk/lib/googlecloudsdk/core/console/progress_tracker.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/credentials/__init__.pyc
@@ -992,6 +1006,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/util/http_proxy_types.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/http_proxy_types.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/util/iso_duration.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/iso_duration.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/util/parallel.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/parallel.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/peek_iterable.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/util/pkg_resources.py
@@ -3054,6 +3070,11 @@ google-cloud-sdk/lib/surface/functions/logs/__init__.py
 google-cloud-sdk/lib/surface/functions/logs/__init__.pyc
 google-cloud-sdk/lib/surface/functions/logs/read.py
 google-cloud-sdk/lib/surface/functions/logs/read.pyc
+google-cloud-sdk/lib/surface/functions/regions/
+google-cloud-sdk/lib/surface/functions/regions/__init__.py
+google-cloud-sdk/lib/surface/functions/regions/__init__.pyc
+google-cloud-sdk/lib/surface/functions/regions/list.py
+google-cloud-sdk/lib/surface/functions/regions/list.pyc
 google-cloud-sdk/lib/surface/genomics/
 google-cloud-sdk/lib/surface/genomics/__init__.py
 google-cloud-sdk/lib/surface/genomics/__init__.pyc
@@ -4272,8 +4293,6 @@ google-cloud-sdk/lib/third_party/oauth2client/old_run.py
 google-cloud-sdk/lib/third_party/oauth2client/old_run.pyc
 google-cloud-sdk/lib/third_party/oauth2client/service_account.py
 google-cloud-sdk/lib/third_party/oauth2client/service_account.pyc
-google-cloud-sdk/lib/third_party/oauth2client/setup.py
-google-cloud-sdk/lib/third_party/oauth2client/setup.pyc
 google-cloud-sdk/lib/third_party/oauth2client/tools.py
 google-cloud-sdk/lib/third_party/oauth2client/tools.pyc
 google-cloud-sdk/lib/third_party/oauth2client/util.py
@@ -5261,7 +5280,6 @@ google-cloud-sdk/platform/bq/third_party/yaml/tokens.pyc
 google-cloud-sdk/platform/ext-runtime/
 google-cloud-sdk/platform/ext-runtime/custom/
 google-cloud-sdk/platform/ext-runtime/custom/LICENSE
-google-cloud-sdk/platform/ext-runtime/custom/METADATA
 google-cloud-sdk/platform/ext-runtime/custom/README.md
 google-cloud-sdk/platform/ext-runtime/custom/app.yaml
 google-cloud-sdk/platform/ext-runtime/custom/bin/
@@ -5272,7 +5290,6 @@ google-cloud-sdk/platform/ext-runtime/custom/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/custom/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/go/
 google-cloud-sdk/platform/ext-runtime/go/LICENSE
-google-cloud-sdk/platform/ext-runtime/go/METADATA
 google-cloud-sdk/platform/ext-runtime/go/README.md
 google-cloud-sdk/platform/ext-runtime/go/bin/
 google-cloud-sdk/platform/ext-runtime/go/bin/detect
@@ -5292,7 +5309,6 @@ google-cloud-sdk/platform/ext-runtime/go/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/go/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/java/
 google-cloud-sdk/platform/ext-runtime/java/LICENSE
-google-cloud-sdk/platform/ext-runtime/java/METADATA
 google-cloud-sdk/platform/ext-runtime/java/bin/
 google-cloud-sdk/platform/ext-runtime/java/bin/detect
 google-cloud-sdk/platform/ext-runtime/java/bin/generate_configs
@@ -5313,7 +5329,6 @@ google-cloud-sdk/platform/ext-runtime/nodejs/
 google-cloud-sdk/platform/ext-runtime/nodejs/.gitignore
 google-cloud-sdk/platform/ext-runtime/nodejs/CONTRIBUTING.md
 google-cloud-sdk/platform/ext-runtime/nodejs/LICENSE
-google-cloud-sdk/platform/ext-runtime/nodejs/METADATA
 google-cloud-sdk/platform/ext-runtime/nodejs/README.md
 google-cloud-sdk/platform/ext-runtime/nodejs/bin/
 google-cloud-sdk/platform/ext-runtime/nodejs/bin/detect
@@ -5335,7 +5350,6 @@ google-cloud-sdk/platform/ext-runtime/nodejs/testing.md
 google-cloud-sdk/platform/ext-runtime/php/
 google-cloud-sdk/platform/ext-runtime/php/CONTRIBUTING.md
 google-cloud-sdk/platform/ext-runtime/php/LICENSE
-google-cloud-sdk/platform/ext-runtime/php/METADATA
 google-cloud-sdk/platform/ext-runtime/php/README.md
 google-cloud-sdk/platform/ext-runtime/php/bin/
 google-cloud-sdk/platform/ext-runtime/php/bin/detect
@@ -5351,7 +5365,6 @@ google-cloud-sdk/platform/ext-runtime/php/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/python/
 google-cloud-sdk/platform/ext-runtime/python/CONTRIBUTING.md
 google-cloud-sdk/platform/ext-runtime/python/LICENSE
-google-cloud-sdk/platform/ext-runtime/python/METADATA
 google-cloud-sdk/platform/ext-runtime/python/README.md
 google-cloud-sdk/platform/ext-runtime/python/bin/
 google-cloud-sdk/platform/ext-runtime/python/bin/detect
@@ -5373,7 +5386,6 @@ google-cloud-sdk/platform/ext-runtime/python/test/runtime_test.pyc
 google-cloud-sdk/platform/ext-runtime/ruby/
 google-cloud-sdk/platform/ext-runtime/ruby/CONTRIBUTING.md
 google-cloud-sdk/platform/ext-runtime/ruby/LICENSE
-google-cloud-sdk/platform/ext-runtime/ruby/METADATA
 google-cloud-sdk/platform/ext-runtime/ruby/README.md
 google-cloud-sdk/platform/ext-runtime/ruby/bin/
 google-cloud-sdk/platform/ext-runtime/ruby/bin/detect
