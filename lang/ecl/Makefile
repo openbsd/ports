@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2016/10/13 15:14:29 jca Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -18,7 +18,7 @@ EXTRACT_SUFX =	.tgz
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}files/release/${V}/
+MASTER_SITES =		${HOMEPAGE}static/files/release/
 
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
