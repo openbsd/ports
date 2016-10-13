@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2016/10/10 17:20:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.407 2016/10/13 15:01:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -84,6 +84,7 @@
      SUBDIR += gitolite
      SUBDIR += gkrellm
      SUBDIR += glastree
+     SUBDIR += go-cs
      SUBDIR += google-cloud-sdk
      SUBDIR += gource
      SUBDIR += gpioflicker
