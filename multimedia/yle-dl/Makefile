@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2016/09/01 13:33:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/13 17:35:55 jca Exp $
 
-V =			2.11
+V =			2.12
 COMMENT =		download videos from YLE Areena
 DISTNAME =		aajanki-yle-$V
 PKGNAME =		yle-dl-$V
@@ -24,7 +24,7 @@ RUN_DEPENDS =		net/rtmpdump \
 			
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/aajanki-yle-dl-23c7d98
+WRKDIST =		${WRKDIR}/aajanki-yle-dl-1261e71
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_ADJ_FILES =	yle-dl
