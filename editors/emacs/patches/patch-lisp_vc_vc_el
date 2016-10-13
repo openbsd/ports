@@ -1,0 +1,21 @@
+$OpenBSD: patch-lisp_vc_vc_el,v 1.1 2016/10/13 15:57:24 jca Exp $
+
+Drop messages that slow down VC with big repositories.
+
+--- lisp/vc/vc.el.orig	Thu Oct 13 17:46:35 2016
++++ lisp/vc/vc.el	Thu Oct 13 17:47:02 2016
+@@ -2897,13 +2897,11 @@ to provide the `find-revision' operation instead."
+ (defun vc-file-tree-walk (dirname func &rest args)
+   "Walk recursively through DIRNAME.
+ Invoke FUNC f ARGS on each VC-managed file f underneath it."
+-  (vc-file-tree-walk-internal (expand-file-name dirname) func args)
+-  (message "Traversing directory %s...done" dirname))
++  (vc-file-tree-walk-internal (expand-file-name dirname) func args))
+ 
+ (defun vc-file-tree-walk-internal (file func args)
+   (if (not (file-directory-p file))
+       (when (vc-backend file) (apply func file args))
+-    (message "Traversing directory %s..." (abbreviate-file-name file))
+     (let ((dir (file-name-as-directory file)))
+       (mapcar
+        (lambda (f) (or

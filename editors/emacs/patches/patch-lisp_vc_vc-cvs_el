@@ -1,0 +1,15 @@
+$OpenBSD: patch-lisp_vc_vc-cvs_el,v 1.1 2016/10/13 15:57:24 jca Exp $
+
+Bugfix for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=24082
+
+--- lisp/vc/vc-cvs.el.orig	Thu Oct 13 17:40:42 2016
++++ lisp/vc/vc-cvs.el	Thu Oct 13 17:41:00 2016
+@@ -1073,7 +1073,7 @@ Query all files in DIR if files is nil."
+     (if (and (not files) local (not (eq local 'only-file)))
+ 	(vc-cvs-dir-status-heuristic dir update-function)
+       (if (not files) (setq files (vc-expand-dirs (list dir) 'CVS)))
+-      (vc-cvs-command (current-buffer) 'async files "-f" "status")
++      (vc-cvs-command (current-buffer) 'async dir "-f" "status")
+       ;; Alternative implementation: use the "update" command instead of
+       ;; the "status" command.
+       ;; (vc-cvs-command (current-buffer) 'async
