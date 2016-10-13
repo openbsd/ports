@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2014/01/09 14:53:29 jca Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2016/10/13 15:39:32 jca Exp $
 share/applications/emacs.desktop
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
@@ -7,6 +7,7 @@ share/icons/hicolor/32x32/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs.png
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
+share/icons/hicolor/scalable/mimetypes/emacs-document23.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

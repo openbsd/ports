@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2016/08/10 19:21:37 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2016/10/13 15:39:32 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		24.5
-REVISION=		6
+VERSION=		25.1
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -47,9 +46,10 @@ LIB_DEPENDS=		security/gnutls \
 .if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x \
 			--without-dbus \
+			--without-file-notification \
 			--without-gconf \
 			--without-gsettings \
-			--without-file-notification
+			--without-jpeg
 .else
 LIB_DEPENDS+=		x11/dbus \
 			x11/gnome/librsvg \
@@ -68,7 +68,7 @@ LIB_DEPENDS+=		x11/Xaw3d
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xaw3d
 WANTLIB += Xext Xft Xinerama Xmu Xpm Xrandr Xrender Xt cairo dbus-1
 WANTLIB += fontconfig freetype gconf-2 gdk_pixbuf-2.0 gif gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl jpeg png rsvg-2 tiff
+WANTLIB += glib-2.0 gobject-2.0 intl jpeg png rsvg-2 tiff X11-xcb Xfixes xcb
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
@@ -77,15 +77,16 @@ WANTLIB += Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xpm Xrandr
 WANTLIB += Xrender atk-1.0 cairo dbus-1 fontconfig freetype gconf-2
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 intl jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += png rsvg-2 tiff
+WANTLIB += png rsvg-2 tiff X11-xcb xcb
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xft Xinerama
-WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo cairo-gobject dbus-1
-WANTLIB += fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gif
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl jpeg pango-1.0
-WANTLIB += pangocairo-1.0 png rsvg-2 tiff
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 X11-xcb
+WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender atk-1.0 cairo
+WANTLIB += cairo-gobject dbus-1 fontconfig freetype gconf-2 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB += intl jpeg pango-1.0 pangocairo-1.0 png rsvg-2 tiff
+WANTLIB += xcb
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif

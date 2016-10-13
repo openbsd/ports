@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2016/08/10 19:21:37 jca Exp $
---- configure.orig	Wed Apr  8 19:11:56 2015
-+++ configure	Wed Aug 10 21:17:19 2016
-@@ -9101,7 +9101,14 @@ case "$opsys" in
+$OpenBSD: patch-configure,v 1.9 2016/10/13 15:39:32 jca Exp $
+--- configure.orig	Fri Sep 16 11:20:23 2016
++++ configure	Tue Sep 27 15:22:19 2016
+@@ -9531,7 +9531,14 @@ case "$opsys" in
    openbsd)
     ## Han Boetes <han@boetes.org> says this is necessary,
     ## otherwise Emacs dumps core on elf systems.
