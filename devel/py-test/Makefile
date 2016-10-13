@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2016/06/12 07:40:10 shadchin Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/13 10:54:54 shadchin Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION=	2.9.2
+MODPY_EGG_VERSION=	3.0.3
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
 
@@ -25,6 +25,7 @@ FLAVOR?=
 
 RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.30
 TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
