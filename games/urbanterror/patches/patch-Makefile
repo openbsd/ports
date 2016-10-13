@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/26 08:55:57 bentley Exp $
---- Makefile.orig	Sat Aug 20 03:46:28 2016
-+++ Makefile	Sat Aug 20 18:59:13 2016
+$OpenBSD: patch-Makefile,v 1.2 2016/10/13 02:38:28 bentley Exp $
+--- Makefile.orig	Wed Oct  5 12:47:05 2016
++++ Makefile	Wed Oct 12 13:04:57 2016
 @@ -150,8 +150,8 @@ endif
  
  #############################################################################
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/26 08:55:57 bentley Exp $
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
-@@ -832,11 +835,11 @@ endif #SunOS
+@@ -834,11 +834,11 @@ endif #SunOS
  TARGETS =
  
  ifneq ($(BUILD_SERVER),0)
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/26 08:55:57 bentley Exp $
    ifneq ($(BUILD_CLIENT_SMP),0)
      TARGETS += $(B)/Quake3-UrT-smp.$(ARCH)$(BINEXT)
    endif
-@@ -1266,7 +1269,7 @@ else
+@@ -1268,7 +1268,7 @@ else
      $(B)/clientsmp/sdl_glimp.o
  endif
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2016/08/26 08:55:57 bentley Exp $
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
  		$(LDFLAGS) $(LIBSDLMAIN)
-@@ -1399,7 +1402,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
+@@ -1401,7 +1401,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
    endif
  endif
  
