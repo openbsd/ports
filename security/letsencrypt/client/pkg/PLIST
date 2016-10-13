@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/06/15 14:46:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/10/13 10:09:28 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -151,12 +151,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/storage_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/sample-renewal/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/sample-renewal/cert1.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/sample-renewal/chain1.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/sample-renewal/fullchain1.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/archive/sample-renewal/privkey1.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-5sans.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-san.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert.b64jose
@@ -172,17 +166,16 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/dsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/dsa_cert.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/cert.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/chain.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/fullchain.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/live/sample-renewal/privkey.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/matching_cert.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/os-release
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key_2.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/cert1.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/chain1.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/fullchain1.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/privkey1.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal-ancient.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/webrootconftest.ini
