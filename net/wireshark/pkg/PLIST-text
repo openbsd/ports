@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.4 2015/11/19 21:33:36 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.5 2016/10/14 11:00:22 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -18,6 +18,7 @@
 @bin bin/tshark
 @lib lib/libwireshark.so.${LIBwireshark_VERSION}
 @lib lib/libwiretap.so.${LIBwiretap_VERSION}
+@lib lib/libwscodecs.so.${LIBwscodecs_VERSION}
 @lib lib/libwsutil.so.${LIBwsutil_VERSION}
 lib/pkgconfig/wireshark.pc
 lib/wireshark/
@@ -31,6 +32,7 @@ lib/wireshark/WiresharkConfig.cmake
 lib/wireshark/WiresharkConfigVersion.cmake
 lib/wireshark/extcap/
 @bin lib/wireshark/extcap/androiddump
+@bin lib/wireshark/extcap/randpktdump
 lib/wireshark/plugins/
 lib/wireshark/plugins/${WVER}/
 lib/wireshark/plugins/${WVER}/docsis.so
@@ -47,19 +49,24 @@ lib/wireshark/plugins/${WVER}/wimax.so
 lib/wireshark/plugins/${WVER}/wimaxasncp.so
 lib/wireshark/plugins/${WVER}/wimaxmacphy.so
 @man man/man1/androiddump.1
+@man man/man1/asn2deb.1
 @man man/man1/capinfos.1
 @man man/man1/captype.1
+@man man/man1/ciscodump.1
 @man man/man1/dftest.1
 @man man/man1/dumpcap.1
 @man man/man1/editcap.1
-man/man1/extcap.4
+@man man/man1/idl2deb.1
 @man man/man1/idl2wrs.1
 @man man/man1/mergecap.1
 @man man/man1/randpkt.1
+@man man/man1/randpktdump.1
 @man man/man1/rawshark.1
 @man man/man1/reordercap.1
+@man man/man1/sshdump.1
 @man man/man1/text2pcap.1
 @man man/man1/tshark.1
+@man man/man4/extcap.4
 @man man/man4/wireshark-filter.4
 share/wireshark/
 share/wireshark/AUTHORS-SHORT
@@ -69,6 +76,7 @@ share/wireshark/asn2deb.html
 share/wireshark/capinfos.html
 share/wireshark/captype.html
 share/wireshark/cfilters
+share/wireshark/ciscodump.html
 share/wireshark/colorfilters
 share/wireshark/console.lua
 share/wireshark/dfilters
@@ -76,6 +84,7 @@ share/wireshark/dftest.html
 share/wireshark/diameter/
 share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
+share/wireshark/diameter/CiscoSystems.xml
 share/wireshark/diameter/Custom.make
 share/wireshark/diameter/Custom.xml
 share/wireshark/diameter/Ericsson.xml
@@ -291,6 +300,7 @@ share/wireshark/radius/dictionary.riverstone
 share/wireshark/radius/dictionary.roaringpenguin
 share/wireshark/radius/dictionary.ruckus
 share/wireshark/radius/dictionary.ruggedcom
+share/wireshark/radius/dictionary.sangoma
 share/wireshark/radius/dictionary.sg
 share/wireshark/radius/dictionary.shasta
 share/wireshark/radius/dictionary.shiva
@@ -331,10 +341,12 @@ share/wireshark/radius/dictionary.zeus
 share/wireshark/radius/dictionary.zte
 share/wireshark/radius/dictionary.zyxel
 share/wireshark/randpkt.html
+share/wireshark/randpktdump.html
 share/wireshark/rawshark.html
 share/wireshark/reordercap.html
 share/wireshark/services
 share/wireshark/smi_modules
+share/wireshark/sshdump.html
 share/wireshark/text2pcap.html
 share/wireshark/tpncp/
 share/wireshark/tpncp/tpncp.dat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/10/12 11:17:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2016/10/14 11:00:21 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -9,16 +9,17 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.0.7
+WVER =		2.2.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
 
-SHARED_LIBS +=	wsutil               2.0      # 5.0
-SHARED_LIBS +=	wiretap              2.0      # 4.5
-SHARED_LIBS +=	wireshark            2.0      # 5.5
+SHARED_LIBS +=	wscodecs             0.0      # 0.0
+SHARED_LIBS +=	wsutil               3.0      # 5.0
+SHARED_LIBS +=	wiretap              3.0      # 4.5
+SHARED_LIBS +=	wireshark            3.0      # 5.5
 
 CATEGORIES =	net security x11
 
@@ -50,11 +51,11 @@ WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
 
 WANTLIB-main =	${cWANTLIB} ${WANTLIB}
-WANTLIB-main +=	gmodule-2.0 pthread wireshark wiretap wsutil
+WANTLIB-main +=	pthread wireshark wiretap wscodecs wsutil
 WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
-WANTLIB-gtk =	${cWANTLIB} wireshark wiretap wsutil
-WANTLIB-gtk +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
+WANTLIB-gtk =	${cWANTLIB} wireshark wiretap wscodecs wsutil
+WANTLIB-gtk +=	cairo gdk_pixbuf-2.0 gdk-3 gio-2.0 gobject-2.0 gtk-3
 WANTLIB-gtk +=	pango-1.0 pangocairo-1.0 portaudio 
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \

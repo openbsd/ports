@@ -1,12 +1,12 @@
-$OpenBSD: patch-epan_crypt_airpdcap_ccmp_c,v 1.2 2014/10/17 23:29:46 sthen Exp $
+$OpenBSD: patch-epan_crypt_airpdcap_ccmp_c,v 1.3 2016/10/14 11:00:22 sthen Exp $
 
 Compiler issues warning, copy 3 MAC as separate memcpy
 change the structure to do as a single memcpy.
 
---- epan/crypt/airpdcap_ccmp.c.orig	Tue Sep 16 17:14:42 2014
-+++ epan/crypt/airpdcap_ccmp.c	Fri Oct 17 23:17:35 2014
-@@ -147,7 +147,9 @@ static void ccmp_init_blocks(
- 	aad[2] = (UINT8)(wh->fc[0] & 0x8f);    /* XXX magic #s */
+--- epan/crypt/airpdcap_ccmp.c.orig	Tue Oct  4 19:27:46 2016
++++ epan/crypt/airpdcap_ccmp.c	Thu Oct 13 10:59:39 2016
+@@ -151,7 +151,9 @@ static void ccmp_init_blocks(
+ 		aad[2] = wh->fc[0];
  	aad[3] = (UINT8)(wh->fc[1] & 0xc7);    /* XXX magic #s */
  	/* NB: we know 3 addresses are contiguous */
 -	memcpy(aad + 4, &wh->addr1[0], 3 * AIRPDCAP_MAC_LEN);
