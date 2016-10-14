@@ -1,0 +1,50 @@
+$OpenBSD: patch-bgpq3_c,v 1.1 2016/10/14 13:15:21 phessler Exp $
+--- bgpq3.c.orig	Wed Sep 23 18:29:08 2015
++++ bgpq3.c	Tue Oct  4 13:16:40 2016
+@@ -27,7 +27,7 @@ int
+ usage(int ecode)
+ {
+ 	printf("\nUsage: bgpq3 [-h host[:port]] [-S sources] [-P|E|G <num>|f <num>]"
+-		" [-2346AbDJjXd] [-R len] <OBJECTS>...\n");
++		" [-2346AbBDJjXd] [-R len] <OBJECTS>...\n");
+ 	printf(" -2        : allow routes belonging to as23456 (transition-as) "
+ 		"(default: false)\n");
+ 	printf(" -3        : assume that your device is asn32-safe\n");
+@@ -36,6 +36,7 @@ usage(int ecode)
+ 	printf(" -A        : try to aggregate Cisco prefix-lists or Juniper "
+ 			"route-filters\n             as much as possible\n");
+ 	printf(" -b        : generate BIRD output (Cisco IOS by default)\n");
++	printf(" -B        : generate OpenBGPD output (Cisco IOS by default)\n");
+ 	printf(" -d        : generate some debugging output\n");
+ 	printf(" -D        : use asdot notation in as-path (Cisco only)\n");
+ 	printf(" -E        : generate extended access-list(Cisco) or "
+@@ -81,7 +82,7 @@ exclusive()
+ void
+ vendor_exclusive()
+ {
+-	fprintf(stderr, "-b (BIRD), -F (formatted), -J (JunOS), -j (JSON) "
++	fprintf(stderr, "-b (BIRD), -B (OpenBGPD), -F (formatted), -J (JunOS), -j (JSON) "
+ 		"and -X (IOS XR) options are mutually exclusive\n");
+ 	exit(1);
+ };
+@@ -134,7 +135,7 @@ main(int argc, char* argv[])
+ 	if (getenv("IRRD_SOURCES"))
+ 		expander.sources=getenv("IRRD_SOURCES");
+ 
+-	while((c=getopt(argc,argv,"2346AbdDEF:S:jJf:l:L:m:M:W:Ppr:R:G:Th:Xs"))
++	while((c=getopt(argc,argv,"2346AbBdDEF:S:jJf:l:L:m:M:W:Ppr:R:G:Th:Xs"))
+ 		!=EOF) {
+ 	switch(c) {
+ 		case '2':
+@@ -167,6 +168,11 @@ main(int argc, char* argv[])
+ 		case 'b':
+ 			if(expander.vendor) vendor_exclusive();
+ 			expander.vendor=V_BIRD;
++			break;
++		case 'B':
++			if(expander.vendor) vendor_exclusive();
++			expander.vendor=V_OPENBGPD;
++			expander.asn32=1;
+ 			break;
+ 		case 'd': debug_expander++;
+ 			break;

@@ -1,0 +1,159 @@
+$OpenBSD: patch-bgpq3_printer_c,v 1.1 2016/10/14 13:15:21 phessler Exp $
+--- bgpq3_printer.c.orig	Sun Aug 28 18:18:20 2016
++++ bgpq3_printer.c	Tue Oct  4 13:34:25 2016
+@@ -18,6 +18,7 @@ extern int debug_expander;
+ 
+ int bgpq3_print_json_aspath(FILE* f, struct bgpq_expander* b);
+ int bgpq3_print_bird_aspath(FILE* f, struct bgpq_expander* b);
++int bgpq3_print_openbgpd_aspath(FILE* f, struct bgpq_expander* b);
+ 
+ int
+ bgpq3_print_cisco_aspath(FILE* f, struct bgpq_expander* b)
+@@ -304,6 +305,25 @@ bgpq3_print_juniper_oaspath(FILE* f, struct bgpq_expan
+ };
+ 
+ int
++bgpq3_print_openbgpd_oaspath(FILE* f, struct bgpq_expander* b)
++{
++	int i, j, k;
++
++	for(k=0;k<65536;k++) {
++		if(!b->asn32s[k]) continue;
++
++		for(i=0;i<8192;i++) {
++			for(j=0;j<8;j++) {
++				if(b->asn32s[k][i]&(0x80>>j)) {
++					fprintf(f, "%s%u%s%u\n", "allow to AS ", b->asnumber, " AS ", k*65536+i*8+j);
++				};
++			};
++		};
++	};
++	return 0;
++};
++
++int
+ bgpq3_print_aspath(FILE* f, struct bgpq_expander* b)
+ {
+ 	if(b->vendor==V_JUNIPER) {
+@@ -316,6 +336,8 @@ bgpq3_print_aspath(FILE* f, struct bgpq_expander* b)
+ 		return bgpq3_print_json_aspath(f,b);
+ 	} else if(b->vendor==V_BIRD) {
+ 		return bgpq3_print_bird_aspath(f,b);
++	} else if(b->vendor==V_OPENBGPD) {
++		return bgpq3_print_openbgpd_aspath(f,b);
+ 	} else {
+ 		sx_report(SX_FATAL,"Unknown vendor %i\n", b->vendor);
+ 	};
+@@ -331,6 +353,8 @@ bgpq3_print_oaspath(FILE* f, struct bgpq_expander* b)
+ 		return bgpq3_print_cisco_oaspath(f,b);
+ 	} else if(b->vendor==V_CISCO_XR) {
+ 		return bgpq3_print_cisco_xr_oaspath(f,b);
++	} else if(b->vendor==V_OPENBGPD) {
++		return bgpq3_print_openbgpd_oaspath(f,b);
+ 	} else {
+ 		sx_report(SX_FATAL,"Unknown vendor %i\n", b->vendor);
+ 	};
+@@ -472,6 +496,53 @@ bgpq3_print_bird_aspath(FILE* f, struct bgpq_expander*
+ };
+ 
+ void
++bgpq3_print_openbgpd_prefix(struct sx_radix_node* n, void* ff)
++{
++	char prefix[128];
++	FILE* f=(FILE*)ff;
++	if(n->isGlue)
++		goto checkSon;
++	if(!f)
++		f=stdout;
++	sx_prefix_snprintf(&n->prefix, prefix, sizeof(prefix));
++	if (!n->isAggregate) {
++		fprintf(f, "\n\t%s \\", prefix);
++	} else if (n->aggregateLow == n->aggregateHi) {
++		fprintf(f, "\n\t%s prefixlen = %u \\",
++			prefix, n->aggregateHi);
++	} else if (n->aggregateLow > n->prefix.masklen) {
++		fprintf(f, "\n\t%s prefixlen %u - %u \\",
++			prefix, n->aggregateLow, n->aggregateHi);
++	} else {
++		fprintf(f, "\n\t%s prefixlen %u - %u \\",
++			prefix, n->prefix.masklen, n->aggregateHi);
++	};
++	needscomma=1;
++checkSon:
++	if(n->son)
++		bgpq3_print_openbgpd_prefix(n->son, ff);
++};
++
++int
++bgpq3_print_openbgpd_aspath(FILE* f, struct bgpq_expander* b)
++{
++	int i, j, k;
++
++	for(k=0;k<65536;k++) {
++		if(!b->asn32s[k]) continue;
++
++		for(i=0;i<8192;i++) {
++			for(j=0;j<8;j++) {
++				if(b->asn32s[k][i]&(0x80>>j)) {
++					fprintf(f, "%s%u%s%u\n", "allow from AS ", b->asnumber, " AS ", k*65536+i*8+j);
++				};
++			};
++		};
++	};
++	return 0;
++};
++
++void
+ bgpq3_print_jrfilter(struct sx_radix_node* n, void* ff)
+ {
+ 	char prefix[128];
+@@ -658,7 +729,33 @@ bgpq3_print_juniper_routefilter(FILE* f, struct bgpq_e
+ 	return 0;
+ };
+ 
++
+ int
++bgpq3_print_openbgpd_prefixlist(FILE* f, struct bgpq_expander* b)
++{
++	if (!sx_radix_tree_empty(b->tree)) {
++		if(b->name){
++			if(strcmp(b->name, "NN") != 0) {
++				fprintf(f, "%s=\"", b->name);
++			}
++		}
++		fprintf(f,"prefix { \\");
++		sx_radix_tree_foreach(b->tree,bgpq3_print_openbgpd_prefix,f);
++		fprintf(f, "\n\t}");
++		if(b->name){
++			if(strcmp(b->name, "NN") != 0) {
++				fprintf(f, "\"");
++			}
++		}
++		fprintf(f, "\n");
++	} else {
++		fprintf(f, "# generated prefix-list %s (AS %u) is empty\n", bname, b->asnumber);
++		fprintf(f, "deny from AS %u\n", b->asnumber);
++	};
++	return 0;
++};
++
++int
+ bgpq3_print_cisco_prefixlist(FILE* f, struct bgpq_expander* b)
+ {
+ 	bname=b->name ? b->name : "NN";
+@@ -767,6 +864,7 @@ bgpq3_print_prefixlist(FILE* f, struct bgpq_expander* 
+ 		case V_CISCO_XR: return bgpq3_print_ciscoxr_prefixlist(f,b);
+ 		case V_JSON: return bgpq3_print_json_prefixlist(f,b);
+ 		case V_BIRD: return bgpq3_print_bird_prefixlist(f,b);
++		case V_OPENBGPD: return bgpq3_print_openbgpd_prefixlist(f,b);
+ 		case V_FORMAT: return bgpq3_print_format_prefixlist(f,b);
+ 	};
+ 	return 0;
+@@ -781,6 +879,7 @@ bgpq3_print_eacl(FILE* f, struct bgpq_expander* b)
+ 		case V_CISCO_XR: sx_report(SX_FATAL, "unreachable point\n");
+ 		case V_JSON: sx_report(SX_FATAL, "unreachable point\n");
+ 		case V_BIRD: sx_report(SX_FATAL, "unreachable point\n");
++		case V_OPENBGPD: return bgpq3_print_openbgpd_prefixlist(f,b);
+ 		case V_FORMAT: sx_report(SX_FATAL, "unreachable point\n");
+ 	};
+ 	return 0;
