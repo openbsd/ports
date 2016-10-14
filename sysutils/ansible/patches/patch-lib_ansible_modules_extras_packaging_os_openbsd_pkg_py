@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.3 2016/05/27 13:54:49 rpe Exp $
---- lib/ansible/modules/extras/packaging/os/openbsd_pkg.py.orig	Fri May 27 03:29:21 2016
-+++ lib/ansible/modules/extras/packaging/os/openbsd_pkg.py	Fri May 27 03:30:02 2016
+$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.4 2016/10/14 12:34:03 jasper Exp $
+
+Hunks 3+4: https://github.com/ansible/ansible-modules-extras/pull/3151
+
+--- lib/ansible/modules/extras/packaging/os/openbsd_pkg.py.orig	Fri Oct 14 14:30:50 2016
++++ lib/ansible/modules/extras/packaging/os/openbsd_pkg.py	Fri Oct 14 14:30:40 2016
 @@ -144,7 +144,7 @@ def package_present(name, installed_state, pkg_spec, m
      build = module.params['build']
  
@@ -19,3 +22,32 @@ $OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.3 201
  
      if installed_state is False:
  
+@@ -189,11 +189,14 @@ def package_present(name, installed_state, pkg_spec, m
+                 # "file:/local/package/directory/ is empty" message on stderr
+                 # while still installing the package, so we need to look for
+                 # for a message like "packagename-1.0: ok" just in case.
+-                match = re.search("\W%s-[^:]+: ok\W" % name, stdout)
++                if pkg_spec['style'] == 'branch':
++                    match = re.search("\W%s-[^:]+: ok\W" % pkg_spec['pkgname'], stdout)
++                else:
++                    match = re.search("\W%s-[^:]+: ok\W" % name, stdout)
++
+                 if match:
+                     # It turns out we were able to install the package.
+-                    module.debug("package_present(): we were able to install package")
+-                    pass
++                    module.debug("package_present(): we were able to install the package")
+                 else:
+                     # We really did fail, fake the return code.
+                     module.debug("package_present(): we really did fail")
+@@ -349,6 +352,10 @@ def parse_package_name(name, pkg_spec, module):
+             pkg_spec['style']             = 'stem'
+         else:
+             module.fail_json(msg="Unable to parse package name at else: " + name)
++
++        # Key names from description in pkg_add(1).
++        pkg_spec['pkgname'] = pkg_spec['stem'].split('%')[0]
++        pkg_spec['branch'] = pkg_spec['stem'].split('%')[1]
+ 
+     # Sanity check that there are no trailing dashes in flavor.
+     # Try to stop strange stuff early so we can be strict later.
