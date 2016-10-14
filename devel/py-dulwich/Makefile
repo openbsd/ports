@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/08/03 21:57:08 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.26 2016/10/14 14:00:09 czarkoff Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.14.1
+MODPY_EGG_VERSION =	0.15.0
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
-PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
@@ -23,13 +23,17 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		net/py-geventhttpclient
 
-# One test fails due to the lack of OpenStack SWIFT.
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose \
-			devel/git,-main
+			devel/git,-main \
+			devel/py-fastimport \
+			devel/py-mock
 
-do-test:
-	nosetests -w ${WRKSRC}
+MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
+GIT =			${LOCALBASE}/bin/git
+
+pre-test:
+	sed -i '/^_DEFAULT_GIT/s/git/${GIT:S/\//\\\//g}/' \
+		${WRKSRC}/dulwich/tests/compat/utils.py
 
 post-install:
 	rm -R ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/docs
