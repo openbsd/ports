@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_av-cp_playlist-treeview_h,v 1.1 2016/10/14 12:09:11 jasper Exp $
+
+Fix build with gupnp-0.12.9
+
+--- src/av-cp/playlist-treeview.h.orig	Fri Oct 14 14:05:58 2016
++++ src/av-cp/playlist-treeview.h	Fri Oct 14 14:07:29 2016
+@@ -24,6 +24,7 @@
+ #include <config.h>
+ #include <gtk/gtk.h>
+ #include <libgupnp-av/gupnp-av.h>
++#include <libgupnp/gupnp-device-proxy.h>
+ 
+ typedef void (* MetadataFunc) (const char *metadata,
+                                gpointer    user_data);
