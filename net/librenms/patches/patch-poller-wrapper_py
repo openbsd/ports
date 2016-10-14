@@ -1,7 +1,7 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.6 2016/03/07 16:43:03 sthen Exp $
---- poller-wrapper.py.orig	Mon Mar  7 16:28:49 2016
-+++ poller-wrapper.py	Mon Mar  7 16:28:49 2016
-@@ -57,7 +57,7 @@ config_file = ob_install_dir + '/config.php'
+$OpenBSD: patch-poller-wrapper_py,v 1.7 2016/10/14 12:48:55 sthen Exp $
+--- poller-wrapper.py.orig	Fri Oct 14 13:25:32 2016
++++ poller-wrapper.py	Fri Oct 14 13:25:33 2016
+@@ -53,7 +53,7 @@ config_file = ob_install_dir + '/config.php'
  
  
  def get_config_data():
@@ -10,7 +10,7 @@ $OpenBSD: patch-poller-wrapper_py,v 1.6 2016/03/07 16:43:03 sthen Exp $
      try:
          proc = subprocess.Popen(config_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
      except:
-@@ -78,7 +78,7 @@ except:
+@@ -74,7 +74,7 @@ except:
      print "ERROR: Could not load or parse configuration, are PATHs correct?"
      sys.exit(2)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-poller-wrapper_py,v 1.6 2016/03/07 16:43:03 sthen Exp $
  db_username = config['db_user']
  db_password = config['db_pass']
  
-@@ -300,7 +300,7 @@ def poll_worker():
+@@ -296,7 +296,7 @@ def poll_worker():
  # EOC5
              try:
                  start_time = time.time()

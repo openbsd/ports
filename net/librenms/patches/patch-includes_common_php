@@ -1,11 +1,11 @@
-$OpenBSD: patch-includes_common_php,v 1.5 2016/08/19 14:39:04 sthen Exp $
---- includes/common.php.orig	Fri Aug 12 14:22:24 2016
-+++ includes/common.php	Fri Aug 12 14:24:53 2016
-@@ -1038,16 +1038,15 @@ function version_info($remote=true) {
+$OpenBSD: patch-includes_common_php,v 1.6 2016/10/14 12:48:55 sthen Exp $
+--- includes/common.php.orig	Fri Oct 14 13:25:21 2016
++++ includes/common.php	Fri Oct 14 13:28:06 2016
+@@ -1109,16 +1109,15 @@ function version_info($remote = true)
          curl_setopt($api, CURLOPT_RETURNTRANSFER, 1);
-         $output['github'] = json_decode(curl_exec($api),true);
+         $output['github'] = json_decode(curl_exec($api), true);
      }
--    list($local_sha, $local_date) = explode('|', rtrim(`git show --pretty='%H|%ci' -s HEAD`));
+-    list($local_sha, $local_date) = explode('|', rtrim(`git show --pretty='%H|%ct' -s HEAD`));
 -    $output['local_sha']    = $local_sha;
 -    $output['local_date']   = $local_date;
 -    $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
@@ -21,4 +21,4 @@ $OpenBSD: patch-includes_common_php,v 1.5 2016/08/19 14:39:04 sthen Exp $
 +    $output['netsnmp_ver'] = shell_exec($config['snmpget'].' -V 2>&1');
  
      return $output;
- 
+ }//end version_info()

@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.3 2016/08/19 14:39:04 sthen Exp $
---- html/pages/about.inc.php.orig	Fri Aug 12 14:22:24 2016
-+++ html/pages/about.inc.php	Fri Aug 12 14:23:51 2016
-@@ -160,7 +160,7 @@ $version_date    = $versions['local_date'];
+$OpenBSD: patch-html_pages_about_inc_php,v 1.4 2016/10/14 12:48:55 sthen Exp $
+--- html/pages/about.inc.php.orig	Fri Oct 14 13:25:21 2016
++++ html/pages/about.inc.php	Fri Oct 14 13:25:33 2016
+@@ -157,7 +157,7 @@ $version_date    = $versions['local_date'];
  echo "
  <div class='table-responsive'>
      <table class='table table-condensed' border='0'>

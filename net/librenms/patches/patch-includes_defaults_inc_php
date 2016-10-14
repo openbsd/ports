@@ -1,16 +1,7 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.16 2016/06/20 15:12:42 sthen Exp $
---- includes/defaults.inc.php.orig	Mon Jun 20 14:49:32 2016
-+++ includes/defaults.inc.php	Mon Jun 20 14:49:35 2016
-@@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
- $config['project_id']   = strtolower($config['project_name']);
- 
- $config['temp_dir']    = '/tmp';
--$config['install_dir'] = '/opt/'.$config['project_id'];
-+$config['install_dir'] = '/var/www/librenms';
- $config['log_dir']     = $config['install_dir'].'/logs';
- 
- // MySQL extension to use
-@@ -50,26 +50,26 @@ $config['db']['extension']       = 'mysql';//mysql and
+$OpenBSD: patch-includes_defaults_inc_php,v 1.17 2016/10/14 12:48:55 sthen Exp $
+--- includes/defaults.inc.php.orig	Fri Oct 14 13:25:21 2016
++++ includes/defaults.inc.php	Fri Oct 14 13:25:33 2016
+@@ -49,26 +49,26 @@ $config['db']['extension']       = 'mysqli';//mysql an
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
@@ -52,7 +43,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.16 2016/06/20 15:12:42 sthen Exp $
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -467,11 +467,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -462,11 +462,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -67,7 +58,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.16 2016/06/20 15:12:42 sthen Exp $
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -479,7 +479,7 @@ $config['smokeping']['pings']             = 20;
+@@ -474,7 +474,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -76,7 +67,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.16 2016/06/20 15:12:42 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -805,7 +805,7 @@ $config['api_demo'] = 0;
+@@ -806,7 +806,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

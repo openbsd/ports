@@ -1,12 +1,12 @@
-$OpenBSD: patch-daily_sh,v 1.12 2016/08/19 14:39:04 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.13 2016/10/14 12:48:55 sthen Exp $
 
 - use ksh
 - patch php binary name
 - avoid ${cnf,,} bashism (converts to lowercase); actually the
 result was being ignored anyway
 
---- daily.sh.orig	Fri Aug 12 14:16:53 2016
-+++ daily.sh	Fri Aug 12 14:16:58 2016
+--- daily.sh.orig	Fri Oct 14 13:25:19 2016
++++ daily.sh	Fri Oct 14 13:32:38 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
@@ -31,20 +31,20 @@ result was being ignored anyway
      if [ "$up" -eq 0 ]; then
          $0 no-code-update
          exit
-@@ -53,9 +53,9 @@ if [ -z "$arg" ]; then
-             status_run "Updated from $old_ver to $new_ver" ''
-         fi
+@@ -55,11 +55,7 @@ if [ -z "$arg" ]; then
      fi
--
--    cnf=$(echo $(grep '\[.distributed_poller.\]' config.php | egrep -v -e '^//' -e '^#' | cut -d = -f 2 | sed 's/;//g'))
--    cnf=${cnf,,}
-+ 
-+     
-+    cnf=$(awk '/^\$config\[.distributed_poller.\]/ {gsub(" ", ""); FS="[=;]"; print tolower($2)}' config.php)
+ 
+     cnf=$(echo $(grep '\[.distributed_poller.\]' config.php | egrep -v -e '^//' -e '^#' | cut -d = -f 2 | sed 's/;//g'))
+-    if ((${BASH_VERSINFO[0]} < 4)); then
+-        cnf=`echo $cnf|tr [:upper:] [:lower:]`
+-    else
+-        cnf=${cnf,,}
+-    fi
++    cnf=`echo $cnf|tr [:upper:] [:lower:]`
+ 
      if [ -z "$cnf" ] || [ "$cnf" == "0" ] || [ "$cnf" == "false" ]; then
          # Call ourself again in case above pull changed or added something to daily.sh
-         $0 post-pull
-@@ -65,27 +65,27 @@ else
+@@ -70,28 +66,28 @@ else
          no-code-update)
              # Updates of the code are disabled, just check for schema updates
              # and clean up the db.
@@ -61,7 +61,7 @@ result was being ignored anyway
              status_run 'Fetching notifications' "$0 notifications"
          ;;
          cleanup)
-             # DB-Cleanups
+             # Cleanups
 -            php daily.php -f syslog
 -            php daily.php -f eventlog
 -            php daily.php -f authlog
@@ -71,6 +71,7 @@ result was being ignored anyway
 -            php daily.php -f purgeusers
 -            php daily.php -f bill_data
 -            php daily.php -f alert_log
+-            php daily.php -f rrd_purge
 +            %PHP% daily.php -f syslog
 +            %PHP% daily.php -f eventlog
 +            %PHP% daily.php -f authlog
@@ -80,10 +81,11 @@ result was being ignored anyway
 +            %PHP% daily.php -f purgeusers
 +            %PHP% daily.php -f bill_data
 +            %PHP% daily.php -f alert_log
++            %PHP% daily.php -f rrd_purge
          ;;
          submodules)
              # Init+Update our submodules
-@@ -94,7 +94,7 @@ else
+@@ -100,7 +96,7 @@ else
          ;;
          notifications)
              # Get notifications

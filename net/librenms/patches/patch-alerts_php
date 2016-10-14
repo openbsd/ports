@@ -1,7 +1,7 @@
-$OpenBSD: patch-alerts_php,v 1.3 2016/02/25 00:46:35 sthen Exp $
---- alerts.php.orig	Sun Feb 14 14:40:25 2016
-+++ alerts.php	Sun Feb 14 14:40:29 2016
-@@ -27,6 +27,7 @@
+$OpenBSD: patch-alerts_php,v 1.4 2016/10/14 12:48:55 sthen Exp $
+--- alerts.php.orig	Fri Oct 14 13:25:19 2016
++++ alerts.php	Fri Oct 14 13:25:33 2016
+@@ -29,6 +29,7 @@ chdir(__DIR__); // cwd to the directory containing thi
  
  require_once 'includes/defaults.inc.php';
  require_once 'config.php';
@@ -9,7 +9,7 @@ $OpenBSD: patch-alerts_php,v 1.3 2016/02/25 00:46:35 sthen Exp $
  
  $options = getopt('d::');
  
-@@ -46,7 +47,6 @@ else {
+@@ -47,7 +48,6 @@ if ($lock === true) {
      file_put_contents($config['install_dir'].'/.alerts.lock', getmypid());
  }
  

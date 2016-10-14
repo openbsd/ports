@@ -1,17 +1,16 @@
-$OpenBSD: patch-config_php_default,v 1.4 2016/01/06 19:58:12 sthen Exp $
---- config.php.default.orig	Wed Jan  6 19:56:28 2016
-+++ config.php.default	Wed Jan  6 19:56:41 2016
-@@ -16,7 +16,7 @@ $config['memcached']['port']    = 11211;
+$OpenBSD: patch-config_php_default,v 1.5 2016/10/14 12:48:55 sthen Exp $
+--- config.php.default.orig	Fri Oct 14 13:25:19 2016
++++ config.php.default	Fri Oct 14 13:30:22 2016
+@@ -11,15 +11,16 @@ $config['db']['extension'] = 'mysqli';// mysql or mysq
  
  // This is the user LibreNMS will run as
  //Please ensure this user is created and has the correct permissions to your install
 -$config['user'] = 'librenms';
 +$config['user'] = '_librenms';
  
- ### Locations - it is recommended to keep the default
- #$config['install_dir']  = "/var/www/librenms";
-@@ -26,8 +26,9 @@ $config['user'] = 'librenms';
- #$config['base_url']        = "http://librenms.company.com";
+ ### This should *only* be set if you want to *force* a particular hostname/port
+ ### It will prevent the web interface being usable form any other hostname
+ $config['base_url']        = "/";
  
  ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
 -### and that your web server has permission to talk to rrdcached.
@@ -22,14 +21,14 @@ $OpenBSD: patch-config_php_default,v 1.4 2016/01/06 19:58:12 sthen Exp $
  
  ### Default community
  $config['snmp']['community'] = array("public");
-@@ -44,8 +45,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
- # following is necessary for poller-wrapper
- # poller-wrapper is released public domain
- $config['poller-wrapper']['alerter'] = FALSE;
+@@ -33,8 +34,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+ #$config['nets'][] = "172.16.0.0/12";
+ #$config['nets'][] = "192.168.0.0/16";
+ 
 -# Uncomment the next line to disable daily updates
 -#$config['update'] = 0;
-+# Disable daily updates (enabled by default upstream). 
++# Adjust the next line to enable daily updates (interferes with package management)
 +$config['update'] = 0;
  
- # Uncomment to submit callback stats via proxy
- #$config['callback_proxy'] = "hostname:port";
+ # Number in days of how long to keep old rrd files. 0 disables this feature
+ $config['rrd_purge'] = 0;
