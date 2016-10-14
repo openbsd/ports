@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2015/05/22 11:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/10/14 07:52:02 ajacoutot Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
-GNOME_VERSION=		0.7.6
+GNOME_VERSION=		0.7.7
 GNOME_PROJECT=		libnotify
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -16,17 +15,16 @@ HOMEPAGE=		http://www.galago-project.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m pcre png pthread z
+WANTLIB += iconv intl m pcre png pthread z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 # gtk+3 is needed to build the tests
 BUILD_DEPENDS=		x11/gtk+3
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,20 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/05/22 11:31:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/10/14 07:52:02 ajacoutot Exp $
 @bin bin/notify-send
 include/libnotify/
 include/libnotify/notification.h
 include/libnotify/notify-enum-types.h
 include/libnotify/notify-features.h
 include/libnotify/notify.h
-lib/girepository-1.0/
 lib/girepository-1.0/Notify-0.7.typelib
 lib/libnotify.a
 lib/libnotify.la
 @lib lib/libnotify.so.${LIBnotify_VERSION}
 lib/pkgconfig/libnotify.pc
-share/gir-1.0/
 share/gir-1.0/Notify-0.7.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libnotify/
 share/gtk-doc/html/libnotify/NotifyNotification.html
 share/gtk-doc/html/libnotify/annotation-glossary.html
@@ -23,10 +19,12 @@ share/gtk-doc/html/libnotify/api-index-full.html
 share/gtk-doc/html/libnotify/ch01.html
 share/gtk-doc/html/libnotify/home.png
 share/gtk-doc/html/libnotify/index.html
-share/gtk-doc/html/libnotify/index.sgml
+share/gtk-doc/html/libnotify/left-insensitive.png
 share/gtk-doc/html/libnotify/left.png
 share/gtk-doc/html/libnotify/libnotify-notify.html
 share/gtk-doc/html/libnotify/libnotify.devhelp2
+share/gtk-doc/html/libnotify/right-insensitive.png
 share/gtk-doc/html/libnotify/right.png
 share/gtk-doc/html/libnotify/style.css
+share/gtk-doc/html/libnotify/up-insensitive.png
 share/gtk-doc/html/libnotify/up.png
