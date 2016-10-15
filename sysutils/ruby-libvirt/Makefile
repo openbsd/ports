@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/24 10:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/15 19:14:20 jasper Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-libvirt-0.6.0
 PKGNAME=	${DISTNAME:S/ruby-//}
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://libvirt.org/ruby/
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

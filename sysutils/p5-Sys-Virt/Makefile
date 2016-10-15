@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2016/06/13 08:36:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/10/15 19:14:19 jasper Exp $
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
 V=			1.3.5
 DISTNAME=		Sys-Virt-$V
+REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://libvirt.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/10/15 19:14:20 jasper Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
 DISTNAME=		libvirt-glib-0.2.3
 CATEGORIES=		devel sysutils
+REVISION=		0
 
 SHARED_LIBS +=  virt-gconfig-1.0          1.0 # 2.3
 SHARED_LIBS +=  virt-glib-1.0             1.0 # 2.3
 SHARED_LIBS +=  virt-gobject-1.0          1.0 # 2.3
 
 HOMEPAGE=		https://libvirt.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MASTER_SITES=		https://libvirt.org/sources/glib/ \
 			ftp://libvirt.org/libvirt/glib/

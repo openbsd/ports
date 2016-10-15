@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2016/06/26 10:11:03 robert Exp $
+# $OpenBSD: Makefile,v 1.39 2016/10/15 19:14:20 jasper Exp $
 
 COMMENT=		OSS replacement for the Nomachine nxclient
 
 DISTNAME=		opennx-0.16.0.729
 CATEGORIES=		sysutils
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://opennx.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opennx/}
