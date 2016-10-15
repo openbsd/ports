@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/09/30 20:12:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/10/15 08:51:08 jasper Exp $
 bin/ansible
 bin/ansible-console
 bin/ansible-doc
@@ -2076,6 +2076,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/vars/unsafe_proxy.pyc
 share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.md
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/
 share/examples/ansible/ansible.cfg

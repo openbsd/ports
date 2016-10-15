@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2016/10/15 08:51:08 jasper Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Optional dependencies
+=====================
+
+Ansible ships with many bundled modules and scripts, some of which may
+have external dependencies which are not installed by default as a
+run-time dependency of Ansible. In such events Ansible will notify
+the user of the missing dependency.
+
+Note that py-paramiko is required for managed nodes that don't support
+the OpenSSH ControlPersist configuration. Such as RHEL 6 and various
+network devices (Junos, IOS, NX-OS, ASA, etc).
+
+Additionally py-cryptography may be installed to speed-up certain
+cryptographic operations performed by ansible-vault.
