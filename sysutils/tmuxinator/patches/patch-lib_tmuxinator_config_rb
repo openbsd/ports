@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_tmuxinator_config_rb,v 1.1.1.1 2016/05/01 17:24:46 jasper Exp $
+$OpenBSD: patch-lib_tmuxinator_config_rb,v 1.2 2016/10/15 18:41:27 jasper Exp $
 
 Prevent: "tmux: unknown option -- V" and just report the latest version
 for the value is used to decide if it's newer than 2.2
@@ -10,7 +10,7 @@ for the value is used to decide if it's newer than 2.2
  
        def version
 -        `tmux -V`.split(" ")[1].to_f if installed?
-+        2.2
++        2.3
        end
  
        def default_path_option

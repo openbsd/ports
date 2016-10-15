@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/07 08:58:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/10/15 18:41:27 jasper Exp $
 ${GEM_BIN}/tmuxinator
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/tmuxinator
 ${GEM_LIB}/gems/${DISTNAME}/completion/
+${GEM_LIB}/gems/${DISTNAME}/completion/mux.fish
 ${GEM_LIB}/gems/${DISTNAME}/completion/tmuxinator.bash
 ${GEM_LIB}/gems/${DISTNAME}/completion/tmuxinator.fish
 ${GEM_LIB}/gems/${DISTNAME}/completion/tmuxinator.zsh
@@ -31,6 +32,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/detach.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/nameless_window.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/noname.yml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/noroot.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/nowindows.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample.deprecations.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample.yml
@@ -46,5 +48,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/project_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/util_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/wemux_support_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/window_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/matchers/
+${GEM_LIB}/gems/${DISTNAME}/spec/matchers/pane_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
