@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/15 06:35:00 rpointel Exp $
+include/libbfio/
+include/libbfio.h
+include/libbfio/codepage.h
+include/libbfio/definitions.h
+include/libbfio/error.h
+include/libbfio/extern.h
+include/libbfio/features.h
+include/libbfio/types.h
+lib/libbfio.a
+lib/libbfio.la
+@lib lib/libbfio.so.${LIBbfio_VERSION}
+lib/pkgconfig/libbfio.pc
+@man man/man3/libbfio.3
