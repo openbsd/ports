@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/10/15 09:03:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2016/10/15 09:04:36 jasper Exp $
 
 COMMENT =		ssh based config management framework
 
@@ -30,7 +30,6 @@ NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/ansible
 EXDIR =			${PREFIX}/share/examples/ansible
-MANDIR =		${PREFIX}/man
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
 
 pre-configure:
@@ -41,10 +40,10 @@ pre-configure:
 		${WRKSRC}/docs/man/man1/*.1
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR} ${MANDIR}
+	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXDIR}
 	${SUBST_CMD} ${EXDIR}/hosts
-	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${MANDIR}/man1
+	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.md} ${DOCDIR}/
 	find ${PREFIX} \( -name '*.orig' -o -name '.git*' \
 		-o -name '*.beforesubst' \) -type f -exec rm {} +
