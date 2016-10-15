@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2016/09/23 09:14:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.319 2016/10/15 07:37:56 feinerer Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -177,6 +177,7 @@
      SUBDIR += py-odbc
      SUBDIR += py-peewee
      SUBDIR += py-peewee,python3
+     SUBDIR += py-pg_activity
      SUBDIR += py-pgsql
      SUBDIR += py-pickleshare
      SUBDIR += py-pickleshare,python3
