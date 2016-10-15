@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/15 07:29:10 feinerer Exp $
+bin/pg_activity
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pgactivity/
+lib/python${MODPY_VERSION}/site-packages/pgactivity/Data.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/Data.pyc
+lib/python${MODPY_VERSION}/site-packages/pgactivity/Process.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/Process.pyc
+lib/python${MODPY_VERSION}/site-packages/pgactivity/UI.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/UI.pyc
+lib/python${MODPY_VERSION}/site-packages/pgactivity/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/__init__.pyc
+@man man/man1/pg_activity.1
+share/doc/${MODPY_PY_PREFIX}pg_activity/
+share/doc/${MODPY_PY_PREFIX}pg_activity/LICENSE.txt
