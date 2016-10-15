@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1547 2016/10/12 14:45:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1548 2016/10/15 06:35:39 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -319,6 +319,7 @@
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libbio
+     SUBDIR += libbfio
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
