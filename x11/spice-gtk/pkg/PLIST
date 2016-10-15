@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/06/30 08:03:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/10/15 19:05:18 jasper Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -96,6 +96,7 @@ share/gtk-doc/html/spice-gtk/style.css
 share/gtk-doc/html/spice-gtk/up-insensitive.png
 share/gtk-doc/html/spice-gtk/up.png
 share/locale/fr/LC_MESSAGES/spice-gtk.mo
+share/locale/it/LC_MESSAGES/spice-gtk.mo
 share/vala/vapi/spice-client-glib-2.0.deps
 share/vala/vapi/spice-client-glib-2.0.vapi
 share/vala/vapi/spice-client-gtk-3.0.deps
