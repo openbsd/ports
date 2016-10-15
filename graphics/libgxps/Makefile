@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/06/21 13:22:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/15 12:28:21 ajacoutot Exp $
 
 COMMENT=		GObject library for handling and rendering XPS documents
 
@@ -35,5 +35,8 @@ LIB_DEPENDS=		archivers/libarchive \
 			graphics/lcms2
 
 CONFIGURE_STYLE=	gnu
+
+# requires gtk+3
+CONFIGURE_ARGS +=	--disable-test
 
 .include <bsd.port.mk>
