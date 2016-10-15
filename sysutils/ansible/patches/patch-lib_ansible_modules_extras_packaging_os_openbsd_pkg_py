@@ -1,6 +1,10 @@
-$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.4 2016/10/14 12:34:03 jasper Exp $
+$OpenBSD: patch-lib_ansible_modules_extras_packaging_os_openbsd_pkg_py,v 1.5 2016/10/15 08:33:52 jasper Exp $
 
-Hunks 3+4: https://github.com/ansible/ansible-modules-extras/pull/3151
+Hunks 3+4:
+From 2001172027e339037adaa290e77a7700c818ad57 Mon Sep 17 00:00:00 2001
+From: Patrik Lundin <patrik@sigterm.se>
+Date: Wed, 12 Oct 2016 20:51:22 +0200
+Subject: [PATCH 1/2] openbsd_pkg: Use correct part of name in match.
 
 --- lib/ansible/modules/extras/packaging/os/openbsd_pkg.py.orig	Fri Oct 14 14:30:50 2016
 +++ lib/ansible/modules/extras/packaging/os/openbsd_pkg.py	Fri Oct 14 14:30:40 2016
