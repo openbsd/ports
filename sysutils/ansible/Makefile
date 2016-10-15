@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/10/15 08:51:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2016/10/15 09:03:05 jasper Exp $
 
 COMMENT =		ssh based config management framework
 
@@ -34,23 +34,19 @@ MANDIR =		${PREFIX}/man
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
 
 pre-configure:
-	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
+	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
 		  -e "s,/usr/share/ansible_plugins,${PLUGINDIR},g" \
 		${WRKSRC}/lib/ansible/constants.py \
 		${WRKSRC}/examples/ansible.cfg \
 		${WRKSRC}/docs/man/man1/*.1
 
-pre-install:
-	@find ${WRKSRC} \( -name '*.orig' -o -name '.git*' \
-		-o -name '.travis.yml' \) -type f -exec rm {} +
-
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR} ${MANDIR}
-	@cp -R ${WRKSRC}/examples/* ${EXDIR}/
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXDIR}
 	${SUBST_CMD} ${EXDIR}/hosts
-	@rm ${EXDIR}/hosts.beforesubst
 	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${MANDIR}/man1
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.md} ${DOCDIR}/
+	find ${PREFIX} \( -name '*.orig' -o -name '.git*' \
+		-o -name '*.beforesubst' \) -type f -exec rm {} +
 
 .include <bsd.port.mk>
