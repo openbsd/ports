@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/02/25 08:05:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/10/15 12:56:15 jasper Exp $
 include/gupnp-av-1.0/
 include/gupnp-av-1.0/libgupnp-av/
 include/gupnp-av-1.0/libgupnp-av/gupnp-av-enums.h
@@ -29,8 +29,6 @@ lib/libgupnp-av-1.0.la
 lib/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/
 share/gir-1.0/GUPnPAV-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gupnp-av/
 share/gtk-doc/html/gupnp-av/GUPnPCDSLastChangeParser.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContainer.html
