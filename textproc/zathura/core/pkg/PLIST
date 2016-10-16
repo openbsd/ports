@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/30 23:14:48 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/10/16 13:50:35 sthen Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -17,7 +17,6 @@ lib/zathura/
 share/appdata/
 share/appdata/zathura.appdata.xml
 share/applications/zathura.desktop
-share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.pwmt.zathura.xml
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -38,8 +37,6 @@ share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
 share/locale/id_ID/LC_MESSAGES/zathura.mo
 share/locale/it/LC_MESSAGES/zathura.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/zathura.mo
 share/locale/no/LC_MESSAGES/zathura.mo
 share/locale/pl/LC_MESSAGES/zathura.mo

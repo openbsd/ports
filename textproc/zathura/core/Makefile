@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/16 13:50:35 sthen Exp $
 
-V =			0.3.3
-REVISION =		2
+V =			0.3.6
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -13,10 +12,10 @@ MODULES =		devel/gettext
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m magic pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread sqlite3 z
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 intl m magic pango-1.0 pangocairo-1.0
+WANTLIB += pthread sqlite3
 
 MASTER_SITES =	http://pwmt.org/projects/zathura/download/
 
@@ -32,10 +31,13 @@ MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
 		TPUT=true \
 		CC="${CC}" \
 		VERBOSE=1 \
-		WITH_SYSTEM_SYNCTEX=0
+		WITH_SYNCTEX=0
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 USE_GMAKE =	Yes
+
+MODULES =	gcc4
+MODGCC4_ARCHS =	*
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test
