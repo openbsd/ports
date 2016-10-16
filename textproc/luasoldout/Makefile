@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =		Lua binding to libsoldout
 
@@ -14,6 +14,9 @@ MASTER_SITES =		http://calminferno.net/lua/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/lua
+
+FLAVORS =		lua52 lua53
+FLAVOR ?=
 
 MAKE_FLAGS =		LUAINC="-I${MODLUA_INCL_DIR}"
 FAKE_FLAGS =		DESTDIR=""

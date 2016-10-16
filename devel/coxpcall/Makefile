@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/16 23:21:22 jca Exp $
 
 PKG_ARCH =	*
 
@@ -16,6 +16,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://luaforge.net/frs/download.php/3406/
 
 MODULES =		lang/lua
+
+FLAVORS =		lua52 lua53
+FLAVORS ?=
+
 NO_BUILD =		Yes
 NO_TEST =		Yes
 

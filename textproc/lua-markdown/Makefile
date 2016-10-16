@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =	Markdown markup system implementation in pure Lua
 
@@ -20,6 +20,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 PKG_ARCH =	*
 
 MODULES =	lang/lua
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/13 14:40:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/10/16 23:21:22 jca Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
@@ -22,6 +22,9 @@ WANTLIB += pthread
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/gobject-introspection
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \

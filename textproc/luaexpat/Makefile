@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =		lua library for the expat XML parser
 DISTNAME =		luaexpat-1.3.0
@@ -15,6 +15,9 @@ MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/lua
 MODLUA_TEST_DEPENDS =	textproc/luaexpat
+
+FLAVORS =		lua52 lua53
+FLAVOR ?=
 
 REGRESS_FILES =		test-lom test
 

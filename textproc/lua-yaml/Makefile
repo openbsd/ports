@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/24 02:36:45 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =	Lua library for parsing and emitting YAML
 V =		6.0
@@ -17,9 +17,13 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		yaml-0
+
 MODULES =		lang/lua
 
 LIB_DEPENDS =		devel/libyaml
+
+FLAVORS =		lua52 lua53
+FlAVOR ?=
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${PREFIX}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =	multiple states library for the lua language
 
@@ -15,6 +15,9 @@ HOMEPAGE =	http://keplerproject.github.io/rings/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/lua
+
+FLAVORS =	lua52
+FLAVOR ?=
 
 CFLAGS +=	-I${MODLUA_INCL_DIR}
 COMPILE =	${CC} ${CFLAGS} -fPIC ${CFLAGS} -c

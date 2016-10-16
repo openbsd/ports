@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/16 23:21:22 jca Exp $
 
 COMMENT=	convert data to and from C structs
 
@@ -15,6 +15,9 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/lua
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 WRKDIST=	${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/16 22:45:22 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 
@@ -19,6 +19,9 @@ MODULES=	lang/lua
 
 MODLUA_RUN_DEPENDS+= devel/coxpcall \
 		net/luasocket
+
+FLAVORS=	lua52
+FLAVOR?=
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

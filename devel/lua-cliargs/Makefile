@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/12 14:42:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/16 23:21:22 jca Exp $
 
 COMMENT =	command line parser for Lua
 
@@ -17,6 +17,9 @@ MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/lua
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

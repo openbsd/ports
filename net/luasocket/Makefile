@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/06/07 11:55:24 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	network support for the lua language
 V=		3.0-rc1
@@ -16,6 +16,10 @@ HOMEPAGE=	http://w3.impa.br/~diego/software/luasocket/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/lua
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
+
 NO_TEST=	Yes
 
 USE_GMAKE=	Yes

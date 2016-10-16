@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/06/11 14:10:06 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/16 23:21:22 jca Exp $
 
 COMMENT=	MessagePack implementation and bindings for Lua
 
@@ -14,6 +14,9 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	https://distfiles.nl/
 
 MODULES=	lang/lua
+
+FLAVORS=	lua52
+FLAVOR?=
 
 TEST_DEPENDS=${BUILD_PKGPATH}
 

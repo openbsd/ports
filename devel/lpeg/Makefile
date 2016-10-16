@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/10/11 19:43:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2016/10/16 23:21:22 jca Exp $
 
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-1.0.0
@@ -12,6 +12,9 @@ HOMEPAGE=	http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/lua
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 ALL_TARGET=	lpeg.so
 MAKE_FILE=	makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/17 11:23:18 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/16 23:21:22 jca Exp $
 
 COMMENT=	JSON support for Lua
 
@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.kyne.com.au/~mark/software/download/
 
 MODULES=	lang/lua
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/lua/*.lua

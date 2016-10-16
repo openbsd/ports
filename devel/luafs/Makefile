@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =	file system library for the lua language
 V =		1_6_3
@@ -22,6 +22,9 @@ GH_PROJECT =	luafilesystem
 GH_TAGNAME =	v_${V}
 
 MODULES =	lang/lua
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
 
 MAKE_ENV +=	LUA_LIBDIR=${MODLUA_LIBDIR} LUA_INC=${MODLUA_INCL_DIR}
 

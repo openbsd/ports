@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/06/11 14:10:06 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
@@ -12,6 +12,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/lua
 TEST_DEPENDS=${BUILD_PKGPATH}
+
+FLAVORS=	lua52
+FLAVOR?=
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -shared \

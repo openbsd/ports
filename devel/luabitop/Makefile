@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	library for bitwise operations in lua
 
@@ -18,6 +18,9 @@ USE_GMAKE=	Yes
 MODULES=	lang/lua
 TEST_DEPENDS+=${BASE_PKGPATH}
 MAKE_ENV+=	INCLUDES=-I${MODLUA_INCL_DIR}
+
+FLAVORS=	lua52
+FLAVOR?=
 
 REGRESS_FILES=	bittest md5test bitbench nsievebits
 

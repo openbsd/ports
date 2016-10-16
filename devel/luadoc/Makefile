@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/10/11 14:13:08 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	documentation generation tool for Lua
 
@@ -16,6 +16,9 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
 
 MODULES=	lang/lua
 MODLUA_RUN_DEPENDS=	devel/luafs
+
+FLAVORS=	lua52
+FLAVOR?=
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

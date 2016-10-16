@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/22 12:44:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2016/10/16 23:21:22 jca Exp $
 
 COMMENT =	pure Lua libraries focusing on input data handling
 
@@ -20,6 +20,9 @@ MODULES =	lang/lua
 MODLUA_RUN_DEPENDS =	devel/luafs
 
 MODLUA_TEST_DEPENDS +=	${PKGPATH}
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
 
 NO_BUILD =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/15 21:09:06 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/16 23:21:23 jca Exp $
 
 COMMENT =	terminal library for Lua
 
@@ -16,6 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	c ${MODLUA_WANTLIB}
 
 MODULES =	lang/lua
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
 
 NO_TEST =	Yes
 

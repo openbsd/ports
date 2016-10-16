@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/16 23:21:23 jca Exp $
 
 PKG_ARCH =      *
 
@@ -16,6 +16,10 @@ EXTRACT_SUFX=	.zip
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/lua
+
+FLAVORS=	lua52
+FLAVOR?=
+
 NO_BUILD=	Yes
 NO_TEST=	Yes
 WRKDIST=	${WRKDIR}/stdlib

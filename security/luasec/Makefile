@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/10/11 18:36:13 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 
@@ -21,6 +21,9 @@ MASTER_SITES=	https://github.com/brunoos/luasec/archive/
 
 MODULES=	lang/lua
 MODLUA_RUN_DEPENDS+=	net/luasocket
+
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 MAKE_ENV+=	INC_PATH="-I${MODLUA_INCL_DIR}" SAVECFLAGS="${CFLAGS}" LD="${CC}"
 
