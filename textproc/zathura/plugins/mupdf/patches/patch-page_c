@@ -1,43 +1,38 @@
-$OpenBSD: patch-page_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+$OpenBSD: patch-page_c,v 1.2 2016/10/16 13:51:21 sthen Exp $
 
-From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
-From: Moritz Lipp <mlq@pwmt.org>
-Date: Sun, 19 Apr 2015 10:39:02 +0200
-Subject: [PATCH] Update for 1.7 API changes
+From e3e49d206fbe5761c53a85b9499c940a0d718c8a Mon Sep 17 00:00:00 2001
+From: Christian Hesse <mail@eworm.de>
+Date: Thu, 28 Apr 2016 09:59:31 +0200
+Subject: [PATCH] mupdf 1.9 compatibility
 
---- page.c.orig	Thu Oct 16 23:21:41 2014
-+++ page.c	Sat Apr 25 23:47:26 2015
-@@ -29,12 +29,12 @@ pdf_page_init(zathura_page_t* page)
+--- page.c.orig	Sun Feb 14 22:49:46 2016
++++ page.c	Sun Oct 16 13:48:04 2016
+@@ -43,12 +43,12 @@ pdf_page_init(zathura_page_t* page)
+   /* setup text */
+   mupdf_page->extracted_text = false;
  
-   /* load page */
-   fz_try (mupdf_page->ctx) {
--    mupdf_page->page = fz_load_page(mupdf_document->document, index);
-+    mupdf_page->page = fz_load_page(mupdf_document->ctx, mupdf_document->document, index);
-   } fz_catch (mupdf_page->ctx) {
+-  mupdf_page->text = fz_new_text_page(mupdf_page->ctx);
++  mupdf_page->text = fz_new_stext_page(mupdf_page->ctx);
+   if (mupdf_page->text == NULL) {
      goto error_free;
    }
  
--  fz_bound_page(mupdf_document->document, (fz_page*) mupdf_page->page, &mupdf_page->bbox);
-+  fz_bound_page(mupdf_document->ctx, (fz_page*) mupdf_page->page, &mupdf_page->bbox);
- 
-   /* get page dimensions */
-   zathura_page_set_width(page,  mupdf_page->bbox.x1 - mupdf_page->bbox.x0);
-@@ -74,15 +74,15 @@ pdf_page_clear(zathura_page_t* page, mupdf_page_t* mup
+-  mupdf_page->sheet = fz_new_text_sheet(mupdf_page->ctx);
++  mupdf_page->sheet = fz_new_stext_sheet(mupdf_page->ctx);
+   if (mupdf_page->sheet == NULL) {
+     goto error_free;
+   }
+@@ -74,11 +74,11 @@ pdf_page_clear(zathura_page_t* page, mupdf_page_t* mup
  
    if (mupdf_page != NULL) {
      if (mupdf_page->text != NULL) {
--      fz_free_text_page(mupdf_page->ctx, mupdf_page->text);
-+      fz_drop_text_page(mupdf_page->ctx, mupdf_page->text);
+-      fz_drop_text_page(mupdf_page->ctx, mupdf_page->text);
++      fz_drop_stext_page(mupdf_page->ctx, mupdf_page->text);
      }
  
      if (mupdf_page->sheet != NULL) {
--      fz_free_text_sheet(mupdf_page->ctx, mupdf_page->sheet);
-+      fz_drop_text_sheet(mupdf_page->ctx, mupdf_page->sheet);
+-      fz_drop_text_sheet(mupdf_page->ctx, mupdf_page->sheet);
++      fz_drop_stext_sheet(mupdf_page->ctx, mupdf_page->sheet);
      }
  
      if (mupdf_page->page != NULL) {
--      fz_free_page(mupdf_document->document, mupdf_page->page);
-+      fz_drop_page(mupdf_document->ctx, mupdf_page->page);
-     }
- 
-     free(mupdf_page);

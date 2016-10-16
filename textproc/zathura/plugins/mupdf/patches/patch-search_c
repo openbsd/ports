@@ -1,18 +1,18 @@
-$OpenBSD: patch-search_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+$OpenBSD: patch-search_c,v 1.2 2016/10/16 13:51:21 sthen Exp $
 
-From e2dbf4be4709c54d3e3859eba4ceb9cdab8e6b43 Mon Sep 17 00:00:00 2001
-From: Moritz Lipp <mlq@pwmt.org>
-Date: Thu, 20 Nov 2014 13:58:42 +0100
-Subject: [PATCH] Use correct free function for search results
+From e3e49d206fbe5761c53a85b9499c940a0d718c8a Mon Sep 17 00:00:00 2001
+From: Christian Hesse <mail@eworm.de>
+Date: Thu, 28 Apr 2016 09:59:31 +0200
+Subject: [PATCH] mupdf 1.9 compatibility
 
---- search.c.orig	Thu Oct 16 23:21:41 2014
-+++ search.c	Sat Apr 25 23:42:00 2015
-@@ -26,7 +26,7 @@ pdf_page_search_text(zathura_page_t* page, mupdf_page_
+--- search.c.orig	Sun Feb 14 22:49:46 2016
++++ search.c	Sun Oct 16 13:48:04 2016
+@@ -40,7 +40,7 @@ pdf_page_search_text(zathura_page_t* page, mupdf_page_
+   }
  
-   mupdf_document_t* mupdf_document = zathura_document_get_data(document);;
+   fz_rect* hit_bbox = fz_malloc_array(mupdf_page->ctx, N_SEARCH_RESULTS, sizeof(fz_rect));
+-  int num_results = fz_search_text_page(mupdf_page->ctx, mupdf_page->text,
++  int num_results = fz_search_stext_page(mupdf_page->ctx, mupdf_page->text,
+       (char*) text, hit_bbox, N_SEARCH_RESULTS);
  
--  girara_list_t* list = girara_list_new2((girara_free_function_t) zathura_link_free);
-+  girara_list_t* list = girara_list_new2(g_free);
-   if (list == NULL) {
-     if (error != NULL) {
-       *error = ZATHURA_ERROR_OUT_OF_MEMORY;
+   for (int i = 0; i < num_results; i++) {

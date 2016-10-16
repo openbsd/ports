@@ -1,0 +1,18 @@
+$OpenBSD: patch-config_mk,v 1.1 2016/10/16 13:51:21 sthen Exp $
+
+From e3e49d206fbe5761c53a85b9499c940a0d718c8a Mon Sep 17 00:00:00 2001
+From: Christian Hesse <mail@eworm.de>
+Date: Thu, 28 Apr 2016 09:59:31 +0200
+Subject: [PATCH] mupdf 1.9 compatibility
+
+--- config.mk.orig	Sun Feb 14 22:49:46 2016
++++ config.mk	Sun Oct 16 13:48:04 2016
+@@ -32,7 +32,7 @@ endif
+ OPENSSL_INC ?= $(shell pkg-config --cflags libcrypto)
+ OPENSSL_LIB ?= $(shell pkg-config --libs libcrypto)
+ 
+-MUPDF_LIB ?= -lmupdf -lmujs
++MUPDF_LIB ?= -lmupdf -lmupdfthird
+ 
+ INCS = ${GTK_INC} ${GIRARA_INC} ${OPENSSL_INC} ${ZATHURA_INC}
+ LIBS = ${GTK_LIB} ${GIRARA_LIB} ${MUPDF_LIB} ${OPENSSL_LIB} -ljbig2dec -lopenjp2 -ljpeg

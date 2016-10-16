@@ -1,21 +1,18 @@
-$OpenBSD: patch-utils_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+$OpenBSD: patch-utils_c,v 1.2 2016/10/16 13:51:21 sthen Exp $
 
-From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
-From: Moritz Lipp <mlq@pwmt.org>
-Date: Sun, 19 Apr 2015 10:39:02 +0200
-Subject: [PATCH] Update for 1.7 API changes
+From e3e49d206fbe5761c53a85b9499c940a0d718c8a Mon Sep 17 00:00:00 2001
+From: Christian Hesse <mail@eworm.de>
+Date: Thu, 28 Apr 2016 09:59:31 +0200
+Subject: [PATCH] mupdf 1.9 compatibility
 
---- utils.c.orig	Thu Oct 16 23:21:41 2014
-+++ utils.c	Sun Apr 26 00:02:06 2015
-@@ -17,9 +17,9 @@ mupdf_page_extract_text(mupdf_document_t* mupdf_docume
-     text_device = fz_new_text_device(mupdf_page->ctx, mupdf_page->sheet, mupdf_page->text);
-     fz_matrix ctm;
-     fz_scale(&ctm, 1.0, 1.0);
--    fz_run_page(mupdf_document->document, mupdf_page->page, text_device, &ctm, NULL);
-+    fz_run_page(mupdf_page->ctx, mupdf_page->page, text_device, &ctm, NULL);
-   } fz_always (mupdf_document->ctx) {
--    fz_free_device(text_device);
-+    fz_drop_device(mupdf_page->ctx, text_device);
-   } fz_catch(mupdf_document->ctx) {
-   }
+--- utils.c.orig	Sun Feb 14 22:49:46 2016
++++ utils.c	Sun Oct 16 13:48:04 2016
+@@ -14,7 +14,7 @@ mupdf_page_extract_text(mupdf_document_t* mupdf_docume
+   fz_device* text_device = NULL;
  
+   fz_try (mupdf_page->ctx) {
+-    text_device = fz_new_text_device(mupdf_page->ctx, mupdf_page->sheet, mupdf_page->text);
++    text_device = fz_new_stext_device(mupdf_page->ctx, mupdf_page->sheet, mupdf_page->text);
+ 
+     /* Disable FZ_IGNORE_IMAGE to collect image blocks */
+     fz_disable_device_hints(mupdf_page->ctx, text_device, FZ_IGNORE_IMAGE);
