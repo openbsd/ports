@@ -1,14 +1,14 @@
-$OpenBSD: patch-source_tools_pdfshow_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-source_tools_pdfshow_c,v 1.2 2016/10/16 09:16:52 sthen Exp $
 
 add pledge(2) to "mutool show":
   - rpath : dropped after opening
   - no need of wpath cpath for -o, as the open is already done at this place
 
---- source/tools/pdfshow.c.orig	Sun Jan 17 09:08:52 2016
-+++ source/tools/pdfshow.c	Sun Jan 17 09:15:05 2016
-@@ -247,6 +247,12 @@ int pdfshow_main(int argc, char **argv)
- 		}
- 	}
+--- source/tools/pdfshow.c.orig	Thu Apr 21 12:14:32 2016
++++ source/tools/pdfshow.c	Sun Oct 16 09:47:50 2016
+@@ -218,6 +218,12 @@ int pdfshow_main(int argc, char **argv)
+ 	char *output = NULL;
+ 	int c;
  
 +	if (pledge("stdio rpath", NULL) == -1)
 +	{
@@ -19,7 +19,7 @@ add pledge(2) to "mutool show":
  	ctx = fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
  	if (!ctx)
  	{
-@@ -258,6 +264,13 @@ int pdfshow_main(int argc, char **argv)
+@@ -251,6 +257,13 @@ int pdfshow_main(int argc, char **argv)
  	fz_try(ctx)
  	{
  		doc = pdf_open_document(ctx, filename);

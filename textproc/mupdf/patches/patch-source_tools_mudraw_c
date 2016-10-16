@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_tools_mudraw_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-source_tools_mudraw_c,v 1.2 2016/10/16 09:16:52 sthen Exp $
 
 add pledge(2) to "mutool draw":
   - wpath cpath : only if output is specified
 
---- source/tools/mudraw.c.orig	Tue Nov 10 17:19:51 2015
-+++ source/tools/mudraw.c	Sun Jan 17 10:21:04 2016
-@@ -909,6 +909,23 @@ int mudraw_main(int argc, char **argv)
+--- source/tools/mudraw.c.orig	Thu Apr 21 12:14:32 2016
++++ source/tools/mudraw.c	Sun Oct 16 09:49:29 2016
+@@ -1225,6 +1225,23 @@ int mudraw_main(int argc, char **argv)
  	if (fz_optind == argc)
  		usage();
  
@@ -26,6 +26,6 @@ add pledge(2) to "mutool draw":
 +		}
 +	}
 +
- 	ctx = fz_new_context((showmemory == 0 ? NULL : &alloc_ctx), NULL, FZ_STORE_DEFAULT);
- 	if (!ctx)
+ 	if (num_workers > 0)
  	{
+ 		if (uselist == 0)

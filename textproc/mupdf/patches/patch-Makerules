@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makerules,v 1.14 2015/11/12 17:26:54 sthen Exp $
---- Makerules.orig	Tue Nov 10 16:19:51 2015
-+++ Makerules	Thu Nov 12 17:18:22 2015
-@@ -7,6 +7,7 @@ OS := $(OS:Darwin=MACOS)
+$OpenBSD: patch-Makerules,v 1.15 2016/10/16 09:16:52 sthen Exp $
+--- Makerules.orig	Thu Apr 21 12:14:32 2016
++++ Makerules	Sun Oct 16 10:00:26 2016
+@@ -9,6 +9,7 @@ HAVE_LIBDL ?= yes
  
  CFLAGS += -Wall
  
 +ifneq "$(OS)" "OpenBSD" # don't override C optimizer flags for ports builds
  ifeq "$(build)" "debug"
  CFLAGS += -pipe -g -DDEBUG
- else ifeq "$(build)" "profile"
-@@ -24,6 +25,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
+ LDFLAGS += -g
+@@ -38,6 +39,7 @@ LIBS += -lprofiler
  else
  $(error unknown build setting: '$(build)')
  endif
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makerules,v 1.14 2015/11/12 17:26:54 sthen Exp $
  
  ifeq "$(largefile)" "yes"
  CFLAGS += -DFZ_LARGEFILE
-@@ -67,7 +69,7 @@ LD = xcrun ld
+@@ -81,7 +83,7 @@ LD = xcrun ld
  RANLIB_CMD = xcrun ranlib $@
  
  # Linux uses pkg-config for system libraries.
@@ -25,8 +25,8 @@ $OpenBSD: patch-Makerules,v 1.14 2015/11/12 17:26:54 sthen Exp $
 +else
  
  HAVE_X11 ?= yes
- HAVE_GLUT ?= yes
-@@ -82,7 +84,7 @@ HAVE_CURL = yes
+ HAVE_PTHREADS ?= yes
+@@ -96,7 +98,7 @@ HAVE_CURL = yes
  SYS_CURL_CFLAGS = $(shell pkg-config --cflags libcurl)
  SYS_CURL_LIBS = $(shell pkg-config --libs libcurl)
  endif
@@ -35,11 +35,11 @@ $OpenBSD: patch-Makerules,v 1.14 2015/11/12 17:26:54 sthen Exp $
  
  SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
  SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
-@@ -95,6 +97,7 @@ SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype
+@@ -108,6 +110,7 @@ SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype
  SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjp2)
  SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjp2)
  SYS_JBIG2DEC_LIBS = -ljbig2dec
-+SYS_JPEG_CFLAGS = -I${LOCALBASE}/include
++SYS_JPEG_CFLAGS = -I/usr/local/include
  SYS_JPEG_LIBS = -ljpeg
  SYS_ZLIB_LIBS = -lz
  

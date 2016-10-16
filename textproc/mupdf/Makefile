@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.65 2016/08/27 20:58:48 jca Exp $
+# $OpenBSD: Makefile,v 1.66 2016/10/16 09:16:52 sthen Exp $
 
-SHARED_LIBS +=	mupdf 3.0
+SHARED_LIBS +=	mupdf		4.0
+SHARED_LIBS +=	mupdfthird	0.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.8
+V =		1.9a
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
-REVISION =	4
 
 CATEGORIES =	textproc x11
 
@@ -25,7 +25,10 @@ FLAVOR?=
 
 # uses pledge(2)
 WANTLIB += GL X11 Xcursor Xext Xinerama Xrandr c crypto curl freetype
-WANTLIB += idn jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
+WANTLIB += harfbuzz idn jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
+
+MODULES =	gcc4
+MODGCC4_ARCHS =	*
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.com/downloads/ \
@@ -33,7 +36,8 @@ MASTER_SITES =	http://mupdf.com/downloads/ \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
-LIB_DEPENDS =	graphics/jbig2dec \
+LIB_DEPENDS =	devel/harfbuzz \
+		graphics/jbig2dec \
 		graphics/jpeg \
 		graphics/openjp2>=2.0.1 \
 		net/curl
@@ -57,16 +61,20 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		SYS_OPENSSL_LIBS="-lssl -lcrypto" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBmupdf_VERSION="${LIBmupdf_VERSION}" \
+		LIBmupdfthird_VERSION="${LIBmupdfthird_VERSION}" \
 		build= verbose=yes
 
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
 
 pre-configure:
 	cd ${WRKSRC}/; ${SUBST_CMD} Makerules Makethird
-	rm -rf ${WRKSRC}/thirdparty/{curl,freetype,jbig2dec,jpeg,openjpeg,zlib} # use from ports
+	rm -rf ${WRKSRC}/thirdparty/{curl,freetype,harfbuzz,jbig2dec,jpeg,openjpeg,zlib} # use from ports
 	#rm -rf ${WRKSRC}/thirdparty/glfw # not yet in ports, doesn't build here
 .if !${FLAVOR:Mjs}
 	rm -rf ${WRKSRC}/thirdparty/mujs # not building with javascript support
+.else
+
+CFLAGS +=	-DWITH_JS
 .endif
 
 post-install:

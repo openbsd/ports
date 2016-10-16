@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makethird,v 1.1 2015/11/12 17:26:54 sthen Exp $
---- Makethird.orig	Tue Nov 10 16:19:51 2015
-+++ Makethird	Thu Nov 12 17:22:39 2015
-@@ -503,9 +503,9 @@ $(GLFW_LIB): $(addprefix $(GLFW_OUT)/, $(GLFW_SRC:%.c=
+$OpenBSD: patch-Makethird,v 1.2 2016/10/16 09:16:52 sthen Exp $
+--- Makethird.orig	Thu Apr 21 12:14:32 2016
++++ Makethird	Sun Oct 16 09:47:50 2016
+@@ -512,9 +512,9 @@ $(GLFW_LIB): $(addprefix $(GLFW_OUT)/, $(GLFW_SRC:%.c=
  $(GLFW_OUT):
  	$(MKDIR_CMD)
  $(GLFW_OUT)/%.o: $(GLFW_DIR)/src/%.c | $(GLFW_OUT)

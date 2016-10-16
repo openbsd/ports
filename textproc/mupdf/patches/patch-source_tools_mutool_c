@@ -1,0 +1,23 @@
+$OpenBSD: patch-source_tools_mutool_c,v 1.1 2016/10/16 09:16:52 sthen Exp $
+--- source/tools/mutool.c.orig	Sun Oct 16 10:02:47 2016
++++ source/tools/mutool.c	Sun Oct 16 10:05:25 2016
+@@ -9,7 +9,9 @@
+ #endif
+ 
+ int mudraw_main(int argc, char *argv[]);
++#ifdef WITH_JS
+ int murun_main(int argc, char *argv[]);
++#endif
+ int pdfclean_main(int argc, char *argv[]);
+ int pdfextract_main(int argc, char *argv[]);
+ int pdfinfo_main(int argc, char *argv[]);
+@@ -25,7 +27,9 @@ static struct {
+ 	char *desc;
+ } tools[] = {
+ 	{ mudraw_main, "draw", "convert document" },
++#ifdef WITH_JS
+ 	{ murun_main, "run", "run javascript" },
++#endif
+ 	{ pdfclean_main, "clean", "rewrite pdf file" },
+ 	{ pdfextract_main, "extract", "extract font and image resources" },
+ 	{ pdfinfo_main, "info", "show information about pdf resources" },

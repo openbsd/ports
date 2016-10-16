@@ -1,10 +1,10 @@
-$OpenBSD: patch-source_tools_pdfclean_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-source_tools_pdfclean_c,v 1.2 2016/10/16 09:16:52 sthen Exp $
 
 add pledge(2) to "mutool clean"
 
---- source/tools/pdfclean.c.orig	Sun Jan 17 11:59:42 2016
-+++ source/tools/pdfclean.c	Sun Jan 17 12:01:42 2016
-@@ -79,6 +79,12 @@ int pdfclean_main(int argc, char **argv)
+--- source/tools/pdfclean.c.orig	Thu Apr 21 12:14:32 2016
++++ source/tools/pdfclean.c	Sun Oct 16 09:47:50 2016
+@@ -72,6 +72,12 @@ int pdfclean_main(int argc, char **argv)
  		outfile = argv[fz_optind++];
  	}
  
