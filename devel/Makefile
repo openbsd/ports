@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1550 2016/10/15 15:41:13 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1551 2016/10/16 23:52:31 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -68,6 +68,8 @@
      SUBDIR += colordiff
      SUBDIR += commoncpp
      SUBDIR += coxpcall
+     SUBDIR += coxpcall,lua52
+     SUBDIR += coxpcall,lua53
      SUBDIR += cpp-hocon
      SUBDIR += cppcheck
      SUBDIR += cpphs
@@ -397,39 +399,50 @@
      SUBDIR += lpc21isp
      SUBDIR += lpeg
      SUBDIR += lpeg,lua52
+     SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
      SUBDIR += lua-bit32
      SUBDIR += lua-cjson
      SUBDIR += lua-cjson,lua52
+     SUBDIR += lua-cjson,lua53
      SUBDIR += lua-cliargs
      SUBDIR += lua-cliargs,lua52
+     SUBDIR += lua-cliargs,lua53
      SUBDIR += lua-cmsgpack
      SUBDIR += lua-cmsgpack,lua52
      SUBDIR += lua-lgi
      SUBDIR += lua-lgi,lua52
+     SUBDIR += lua-lgi,lua53
      SUBDIR += lua-penlight
      SUBDIR += lua-penlight,lua52
+     SUBDIR += lua-penlight,lua53
      SUBDIR += lua-term
      SUBDIR += lua-term,lua52
+     SUBDIR += lua-term,lua53
      SUBDIR += luaalarm
      SUBDIR += luaalarm,lua52
+     SUBDIR += luaalarm,lua53
      SUBDIR += luabitop
      SUBDIR += luabitop,lua52
      SUBDIR += luacheck
      SUBDIR += luacopas
      SUBDIR += luacopas,lua52
      SUBDIR += luadoc
+     SUBDIR += luadoc,lua52
      SUBDIR += luaevent
      SUBDIR += luafs
      SUBDIR += luafs,lua52
+     SUBDIR += luafs,lua53
      SUBDIR += lualdoc
      SUBDIR += lualdoc,lua52
      SUBDIR += luapack
      SUBDIR += luapack,lua52
      SUBDIR += luaposix
      SUBDIR += luaprofiler
+     SUBDIR += luaprofiler,lua52
      SUBDIR += luarexlib
      SUBDIR += luarings
+     SUBDIR += luarings,lua52
      SUBDIR += luastdlib
      SUBDIR += luastdlib,lua52
      SUBDIR += lutok

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/10/10 16:55:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.83 2016/10/16 23:52:31 jca Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -16,6 +16,7 @@
     SUBDIR += libunistring
     SUBDIR += luastruct
     SUBDIR += luastruct,lua52
+    SUBDIR += luastruct,lua53
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += otf2bdf

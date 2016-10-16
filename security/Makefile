@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2016/10/10 12:25:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.435 2016/10/16 23:52:31 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -116,6 +116,7 @@
      SUBDIR += luacrypto
      SUBDIR += luasec
      SUBDIR += luasec,lua52
+     SUBDIR += luasec,lua53
      SUBDIR += lxnb
      SUBDIR += lynis
      SUBDIR += mcrypt
