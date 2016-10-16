@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/16 13:50:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/16 21:26:06 sthen Exp $
 
 V =			0.3.6
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
@@ -19,7 +19,8 @@ WANTLIB += pthread sqlite3
 
 MASTER_SITES =	http://pwmt.org/projects/zathura/download/
 
-BUILD_DEPENDS =	textproc/py-docutils
+BUILD_DEPENDS =	textproc/py-docutils \
+		devel/gettext-tools
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	databases/sqlite3 \
 		graphics/gdk-pixbuf2 \
