@@ -1,0 +1,22 @@
+$OpenBSD: patch-Coro_State_xs,v 1.1 2016/10/16 18:23:53 afresh1 Exp $
+Description: fix for Coro with 5.24
+Origin: https://paste.debian.net/688072
+Bug-Debian: https://bugs.debian.org/838851
+Bug: https://rt.cpan.org/Public/Bug/Display.html?id=114708
+Author: Anonymous
+Last-Update: 2016-09-25
+
+--- Coro/State.xs.orig	Sun Jun 26 14:44:30 2016
++++ Coro/State.xs	Sat Oct 15 13:38:04 2016
+@@ -1412,7 +1412,11 @@ runops_trace (pTHX)
+                           PUSHMARK (SP);
+                           PUSHs (&PL_sv_yes);
+                           PUSHs (fullname);
++# if PERL_VERSION_ATLEAST(5,24,0)
++                          PUSHs (CxHASARGS (cx) ? sv_2mortal (newRV_inc (PL_curpad[0])) : &PL_sv_undef);
++#else
+                           PUSHs (CxHASARGS (cx) ? sv_2mortal (newRV_inc ((SV *)cx->blk_sub.argarray)) : &PL_sv_undef);
++#endif
+                           PUTBACK;
+                           cb = hv_fetch ((HV *)SvRV (coro_current), "_trace_sub_cb", sizeof ("_trace_sub_cb") - 1, 0);
+                           if (cb) call_sv (*cb, G_KEEPERR | G_EVAL | G_VOID | G_DISCARD);
