@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/10/16 21:26:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/17 08:37:44 sthen Exp $
 
 V =			0.3.6
+REVISION =		0
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 
 HOMEPAGE =		http://pwmt.org/projects/zathura/
-
-MODULES =		devel/gettext
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
