@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/17 15:15:53 jca Exp $
 
 COMMENT =	command line parser for Lua
 
 V =		3.0-1
 PKGNAME = 	lua-cliargs-${V:S/-/./g}
+REVISION =	0
 
 GH_ACCOUNT =	amireh
 GH_PROJECT =	lua_cliargs
