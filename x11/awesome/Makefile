@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/08/22 13:45:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.103 2016/10/17 19:33:38 jca Exp $
 
 COMMENT=		highly configurable framework window manager
 
@@ -38,10 +38,10 @@ LIB_DEPENDS=		devel/libexecinfo \
 			x11/dbus \
 			x11/libxdg-basedir
 
-MODLUA_BUILD_DEPENDS=	devel/lua-lgi \
-			devel/lualdoc
+MODLUA_BUILD_DEPENDS=	devel/lua-lgi
 
-BUILD_DEPENDS=		textproc/asciidoc>=8.4.5 \
+BUILD_DEPENDS=		devel/lualdoc \
+			textproc/asciidoc>=8.4.5 \
 			textproc/xmlto \
 			graphics/ImageMagick \
 			devel/doxygen

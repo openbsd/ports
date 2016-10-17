@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/26 07:51:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2016/10/17 19:33:38 jca Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
@@ -7,6 +7,7 @@ GH_PROJECT =	LDoc
 GH_TAGNAME =	1.4.5
 PKGNAME =	lualdoc-${GH_TAGNAME}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://stevedonovan.github.io/ldoc/
 
@@ -18,9 +19,10 @@ PERMIT_PACKAGE_CDROM =Yes
 MODULES =	lang/lua
 
 MODLUA_RUN_DEPENDS =	devel/lua-penlight
+MODLUA_SA =	Yes
+MODLUA_VERSION = 5.2
 
 NO_BUILD =	Yes
-
 NO_TEST =	Yes
 
 do-install:
@@ -35,7 +37,6 @@ do-install:
 		${MODLUA_DATADIR}/ldoc/html/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.md ${MODLUA_DOCDIR}
-	${SUBST_PROGRAM} \
-		${WRKSRC}/ldoc.lua ${PREFIX}/bin/ldoc${MODLUA_DEP_VERSION}
+	${SUBST_PROGRAM} ${WRKSRC}/ldoc.lua ${PREFIX}/bin/ldoc
 
 .include <bsd.port.mk>

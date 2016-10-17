@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/26 07:51:49 dcoppa Exp $
-bin/ldoc${MODLUA_DEP_VERSION}
+@comment $OpenBSD: PLIST,v 1.5 2016/10/17 19:33:38 jca Exp $
+@pkgpath devel/lualdoc,lua52
+bin/ldoc
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/doc.md
 share/doc/${FULLPKGNAME}/readme.md
