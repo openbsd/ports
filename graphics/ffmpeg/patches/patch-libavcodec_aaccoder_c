@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.11 2016/09/06 12:37:11 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.12 2016/10/17 07:51:00 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -48,8 +48,10 @@ aacenc: add a faster version of twoloop as the "fast" coder
 
 aacenc: fix various typos and an error message
 
---- libavcodec/aaccoder.c.orig	Mon May  2 21:27:22 2016
-+++ libavcodec/aaccoder.c	Sat Aug 13 22:42:46 2016
+aacenc: use the decoder's lcg PRNG
+
+--- libavcodec/aaccoder.c.orig	Sat Aug 27 22:51:19 2016
++++ libavcodec/aaccoder.c	Sat Oct 15 18:48:53 2016
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -448,7 +450,7 @@ aacenc: fix various typos and an error message
                          bits += b;
                      }
                      dists[w*16+g] = dist - bits;
-@@ -659,331 +540,380 @@ static void search_for_quantizers_twoloop(AVCodecConte
+@@ -659,331 +540,378 @@ static void search_for_quantizers_twoloop(AVCodecConte
      } while (fflag && its < 10);
  }
  
@@ -667,11 +669,9 @@ aacenc: fix various typos and an error message
 +                float band_energy, scale, pns_senergy;
 +                const int start_c = (w+w2)*128+sce->ics.swb_offset[g];
 +                band = &s->psy.ch[s->cur_channel].psy_bands[(w+w2)*16+g];
-+                for (i = 0; i < sce->ics.swb_sizes[g]; i+=2) {
-+                    double rnd[2];
-+                    av_bmg_get(&s->lfg, rnd);
-+                    PNS[i+0] = (float)rnd[0];
-+                    PNS[i+1] = (float)rnd[1];
++                for (i = 0; i < sce->ics.swb_sizes[g]; i++) {
++                    s->random_state  = lcg_random(s->random_state);
++                    PNS[i] = s->random_state;
                  }
 -                prev_scf = scf;
 -                curdiff = fabsf(dist - uplim[w*16+g]);
@@ -1083,7 +1083,7 @@ aacenc: fix various typos and an error message
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -993,29 +923,41 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -993,29 +921,41 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          codebook_trellis_rate,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.10 2016/04/07 06:01:19 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.11 2016/10/17 07:51:00 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -30,8 +30,10 @@ aacenc_utils: Use temporary variable.
 
 lavc/aacenc_utils: replace powf(x,y) by expf(logf(x), y)
 
---- libavcodec/aacenc_utils.h.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc_utils.h	Fri Mar 18 20:59:09 2016
+aacenc: use the decoder's lcg PRNG
+
+--- libavcodec/aacenc_utils.h.orig	Sat Aug 27 22:51:19 2016
++++ libavcodec/aacenc_utils.h	Sat Oct 15 18:51:24 2016
 @@ -28,9 +28,10 @@
  #ifndef AVCODEC_AACENC_UTILS_H
  #define AVCODEC_AACENC_UTILS_H
@@ -152,7 +154,7 @@ lavc/aacenc_utils: replace powf(x,y) by expf(logf(x), y)
  /** Return the minimum scalefactor where the quantized coef does not clip. */
  static inline uint8_t coef2minsf(float coef)
  {
-@@ -128,6 +182,76 @@ static inline int quant_array_idx(const float val, con
+@@ -128,6 +182,89 @@ static inline int quant_array_idx(const float val, con
      return index;
  }
  
@@ -226,10 +228,23 @@ lavc/aacenc_utils: replace powf(x,y) by expf(logf(x), y)
 +        && sce->sf_idx[nextband[band]] <= (new_sf + SCALE_MAX_DIFF);
 +}
 +
++/**
++ * linear congruential pseudorandom number generator
++ *
++ * @param   previous_val    pointer to the current state of the generator
++ *
++ * @return  Returns a 32-bit pseudorandom integer
++ */
++static av_always_inline int lcg_random(unsigned previous_val)
++{
++    union { unsigned u; int s; } v = { previous_val * 1664525u + 1013904223 };
++    return v.s;
++}
++
  #define ERROR_IF(cond, ...) \
      if (cond) { \
          av_log(avctx, AV_LOG_ERROR, __VA_ARGS__); \
-@@ -138,6 +262,5 @@ static inline int quant_array_idx(const float val, con
+@@ -138,6 +275,5 @@ static inline int quant_array_idx(const float val, con
      if (cond) { \
          av_log(avctx, AV_LOG_WARNING, __VA_ARGS__); \
      }

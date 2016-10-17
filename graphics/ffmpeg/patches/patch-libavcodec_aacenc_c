@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.17 2016/09/06 12:37:11 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.18 2016/10/17 07:51:00 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -80,8 +80,10 @@ aacenc: unmark the fast coder as experimental
 
 aacenc: fix various typos and an error message
 
+aacenc: use the decoder's lcg PRNG
+
 --- libavcodec/aacenc.c.orig	Sat Aug 27 22:51:29 2016
-+++ libavcodec/aacenc.c	Sat Aug 27 22:55:40 2016
++++ libavcodec/aacenc.c	Sat Oct 15 18:50:01 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -584,7 +586,7 @@ aacenc: fix various typos and an error message
      s->psypp = ff_psy_preprocess_init(avctx);
 -    s->coder = &ff_aac_coders[s->options.aac_coder];
      ff_lpc_init(&s->lpc, 2*avctx->frame_size, TNS_MAX_ORDER, FF_LPC_TYPE_LEVINSON);
-+    av_lfg_init(&s->lfg, 0x72adca55);
++    s->random_state = 0x1f2e3d4c;
  
      if (HAVE_MIPSDSPR1)
          ff_aac_coder_init_mips(s);
