@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_libretro,v 1.1.1.1 2016/10/17 06:30:01 bentley Exp $
+--- Makefile.libretro.orig	Sun Aug 28 01:20:16 2016
++++ Makefile.libretro	Sun Aug 28 01:20:19 2016
+@@ -41,7 +41,7 @@ LIBM := -lm
+ ifeq ($(platform), unix)
+ 	TARGET := $(TARGET_NAME)_libretro.so
+ 	fpic := -fPIC
+-	SHARED := -shared -Wl,--version-script=libretro/link.T -Wl,--no-undefined
++	SHARED := -shared -Wl,--version-script=libretro/link.T
+ 	ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+ 	PLATFORM_DEFINES := -DHAVE_ZLIB
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-core_loadrom_c,v 1.1.1.1 2016/10/17 06:30:01 bentley Exp $
+https://bitbucket.org/eke/genesis-plus-gx/pull-requests/2
+--- core/loadrom.c.orig	Sun Aug 28 01:20:56 2016
++++ core/loadrom.c	Sun Aug 28 01:21:05 2016
+@@ -646,7 +646,7 @@ int load_rom(char *filename)
+     {
+       /* remove header */
+       size -= 512;
+-      memcpy (cart.rom, cart.rom + 512, size);
++      memmove (cart.rom, cart.rom + 512, size);
+ 
+       /* assume interleaved Mega Drive / Genesis ROM format (.smd) */
+       if (system_hw == SYSTEM_MD)
