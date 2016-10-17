@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_seafile-applet_cpp,v 1.7 2016/06/16 16:35:51 kirby Exp $
+$OpenBSD: patch-src_seafile-applet_cpp,v 1.8 2016/10/17 09:51:20 kirby Exp $
 
 Disable checking for updates.
 
---- src/seafile-applet.cpp.orig	Fri Apr 29 07:32:14 2016
-+++ src/seafile-applet.cpp	Wed May 11 09:40:47 2016
+--- src/seafile-applet.cpp.orig	Sun Oct 16 22:31:21 2016
++++ src/seafile-applet.cpp	Sun Oct 16 22:32:24 2016
 @@ -376,10 +376,6 @@ void SeafileApplet::onDaemonStarted()
      configurator_->installCustomUrlHandler();
  #endif
@@ -12,6 +12,6 @@ Disable checking for updates.
 -        checkLatestVersionInfo();
 -    }
 -
-     OpenLocalHelper::instance()->checkPendingOpenLocalRequest();
- 
-     QTimer::singleShot(kIntervalForUpdateRepoProperty,
+     QString value;
+     if (seafApplet->rpcClient()->seafileGetConfig("client_name", &value) < 0 || value.isEmpty()) {
+         // We do this because clients before 6.0 don't set the "client_name" option.
