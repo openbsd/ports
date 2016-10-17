@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1552 2016/10/17 19:33:37 jca Exp $
+# $OpenBSD: Makefile,v 1.1553 2016/10/17 21:40:22 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -437,6 +437,8 @@
      SUBDIR += luapack
      SUBDIR += luapack,lua52
      SUBDIR += luaposix
+     SUBDIR += luaposix,lua52
+     SUBDIR += luaposix,lua53
      SUBDIR += luaprofiler
      SUBDIR += luaprofiler,lua52
      SUBDIR += luarexlib
