@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/17 15:15:53 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2016/10/17 15:17:12 jca Exp $
 
 COMMENT =	command line parser for Lua
 
@@ -19,11 +19,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/lua
 
+TEST_DEPENDS =	${FULLPKGPATH}
+
 FLAVORS =	lua52 lua53
 FLAVOR ?=
 
 NO_BUILD =	Yes
-NO_TEST =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR} \
@@ -33,5 +34,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/cliargs/*.lua ${MODLUA_DATADIR}/cliargs
 	${INSTALL_DATA} ${WRKSRC}/src/cliargs/utils/*.lua \
 		${MODLUA_DATADIR}/cliargs/utils
+
+# Basic tests to spot obvious breakage
+do-test:
+	${MODLUA_BIN} ${WRKSRC}/examples/00_general.lua --verbose output input
+	${MODLUA_BIN} ${WRKSRC}/examples/01_multiple_options.lua \
+	    -i http://example.org -j 2 output.html
+	${MODLUA_BIN} ${WRKSRC}/examples/04_commands--git-log.lua --follow
+	${MODLUA_BIN} ${WRKSRC}/examples/04_commands--git.lua diff -p
 
 .include <bsd.port.mk>
