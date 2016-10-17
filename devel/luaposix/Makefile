@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/08/31 10:11:52 awolk Exp $
+# $OpenBSD: Makefile,v 1.22 2016/10/17 21:37:15 jca Exp $
 
 COMMENT=	posix library for the lua language
 V=		33.4.0
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/lua
 
-.if "${MODLUA_VERSION}" == "5.1"
+# lua51 needs the bit32 library
+.if empty(FLAVOR)
 RUN_DEPENDS=		devel/lua-bit32
 .endif
 
