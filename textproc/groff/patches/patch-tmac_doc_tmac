@@ -1,8 +1,25 @@
-$OpenBSD: patch-tmac_doc_tmac,v 1.5 2015/04/19 15:20:43 schwarze Exp $
-chunk 1: Trailing -width/-offset must not pick up old args (merged upstream).
-chunk 2: Always format .Pa the same way, as requested by jmc@ (local change).
+$OpenBSD: patch-tmac_doc_tmac,v 1.6 2016/10/17 18:32:34 schwarze Exp $
+chunks 1,2,4-6,8-14: Simplify .Bl -tag without -width (merged upstream).
+chunk 3: Trailing -width/-offset must not pick up old args (merged upstream).
+chunk 7: Always format .Pa the same way, as requested by jmc@ (local change).
 --- tmac/doc.tmac.orig	Tue Nov  4 09:38:35 2014
-+++ tmac/doc.tmac	Fri Apr 17 01:03:11 2015
++++ tmac/doc.tmac	Sun Oct  9 20:36:30 2016
+@@ -2990,6 +2990,7 @@
+ .  \}
+ .  el \{ .ie "\$1"-tag" \{\
+ .    ds doc-list-type-stack\n[doc-list-depth] tag-list
++.    nr doc-list-indent-stack\n[doc-list-depth] 6n
+ .    nr doc-list-have-indent-stack\n[doc-list-depth] 1
+ .  \}
+ .  el \{ .ie "\$1"-item" \{\
+@@ -3105,7 +3106,6 @@
+ .\" NS   doc-list-offset-stackXXX
+ .\" NS   doc-num-columns
+ .\" NS   doc-tag-prefix-stackXXX
+-.\" NS   doc-tag-width-stackXXX
+ .\" NS
+ .\" NS local variables:
+ .\" NS   doc-box-dBla
 @@ -3126,7 +3126,7 @@
  .
  .  \" avoid a warning message in case e.g. `-offset' has no parameter
@@ -12,7 +29,32 @@ chunk 2: Always format .Pa the same way, as requested by jmc@ (local change).
  .    ds doc-arg\n[doc-reg-dBla]
  .
  .  nr doc-reg-dBla 1
-@@ -3765,8 +3765,6 @@
+@@ -3148,8 +3148,6 @@
+ .
+ .  el \{ .ie "\*[doc-arg\n[doc-arg-ptr]]"-width" \{\
+ .    nr doc-arg-ptr +1
+-.    ds doc-tag-width-stack\n[doc-list-depth] TagwidtH
+-.
+ .    ds doc-str-dBla "\*[doc-arg\n[doc-arg-ptr]]
+ .    substring doc-str-dBla 0 0
+ .    ie .\*[doc-str-dBla] \{\
+@@ -3394,7 +3392,6 @@
+ .    nr doc-list-indent-stack\n[doc-reg-dsgv]-saved \n[doc-list-indent-stack\n[doc-reg-dsgv]]
+ .    nr doc-compact-list-stack\n[doc-reg-dsgv]-saved \n[doc-compact-list-stack\n[doc-reg-dsgv]]
+ .    ds doc-tag-prefix-stack\n[doc-reg-dsgv]-saved "\*[doc-tag-prefix-stack\n[doc-reg-dsgv]]
+-.    ds doc-tag-width-stack\n[doc-reg-dsgv]-saved "\*[doc-tag-width-stack\n[doc-reg-dsgv]]
+ .    nr doc-list-offset-stack\n[doc-reg-dsgv]-saved \n[doc-list-offset-stack\n[doc-reg-dsgv]]
+ .    nr doc-enum-list-count-stack\n[doc-reg-dsgv]-saved \n[doc-enum-list-count-stack\n[doc-reg-dsgv]]
+ .    nr doc-reg-dsgv +1
+@@ -3538,7 +3535,6 @@
+ .    nr doc-list-indent-stack\n[doc-reg-drgv] \n[doc-list-indent-stack\n[doc-reg-drgv]-saved]
+ .    nr doc-compact-list-stack\n[doc-reg-drgv] \n[doc-compact-list-stack\n[doc-reg-drgv]-saved]
+ .    ds doc-tag-prefix-stack\n[doc-reg-drgv] "\*[doc-tag-prefix-stack\n[doc-reg-drgv]-saved]
+-.    ds doc-tag-width-stack\n[doc-reg-drgv] "\*[doc-tag-width-stack\n[doc-reg-drgv]-saved]
+ .    nr doc-list-offset-stack\n[doc-reg-drgv] \n[doc-list-offset-stack\n[doc-reg-drgv]-saved]
+ .    nr doc-enum-list-count-stack\n[doc-reg-drgv] \n[doc-enum-list-count-stack\n[doc-reg-drgv]-saved]
+ .    nr doc-reg-drgv +1
+@@ -3765,8 +3761,6 @@
  .
  .        if \n[doc-in-files-section] \{\
  .          ds doc-saved-Pa-font "\*[doc-Pa-font]
@@ -21,3 +63,99 @@ chunk 2: Always format .Pa the same way, as requested by jmc@ (local change).
  .        \}
  .
  .        ie (\n[doc-type1] == 1) \
+@@ -4030,13 +4024,6 @@
+ .  ev
+ .  box
+ .
+-.  if !"TagwidtH"\*[doc-tag-width-stack\n[doc-list-depth]]" \{\
+-.    if !\n[doc-list-have-indent-stack\n[doc-list-depth]] \{\
+-.      in -(\n[doc-list-indent-stack\n[doc-list-depth]]u + \n[doc-digit-width]u)
+-.      nr doc-list-have-indent-stack\n[doc-list-depth] 1
+-.    \}
+-.    doc-get-tag-width
+-.  \}
+ .  doc-set-vertical-and-indent 1
+ .  nr doc-reg-dtl (\n[doc-list-indent-stack\n[doc-list-depth]]u + \n[doc-digit-width]u)
+ .  ti -\n[doc-reg-dtl]u
+@@ -4064,29 +4051,6 @@
+ ..
+ .
+ .
+-.\" NS doc-get-tag-width macro
+-.\" NS   resolve unknown tag width (`tag' list-type only)
+-.\" NS
+-.\" NS modifies:
+-.\" NS   doc-list-indent-stackXXX
+-.\" NS   doc-tag-width-stackXXX
+-.\" NS
+-.\" NS requires:
+-.\" NS   doc-curr-arg
+-.\" NS   doc-curr-type
+-.
+-.de doc-get-tag-width
+-.  ie (\n[doc-curr-type] == 1) \{\
+-.    ds doc-tag-width-stack\n[doc-list-depth] \*[doc-curr-arg]
+-.    nr doc-list-indent-stack\n[doc-list-depth] \n[\*[doc-curr-arg]]
+-.  \}
+-.  el \{\
+-.    ds doc-tag-width-stack\n[doc-list-depth] No
+-.    nr doc-list-indent-stack\n[doc-list-depth] \n[No]
+-.  \}
+-..
+-.
+-.
+ .\" NS doc-set-vertical-and-indent macro
+ .\" NS   set up vertical spacing (if not compact) and indentation (with
+ .\" NS   offset if argument is non-zero)
+@@ -4139,19 +4103,6 @@
+ .ds doc-tag-prefix-stack1
+ .
+ .
+-.\" NS doc-tag-width-stackXXX global string
+-.\" NS   stack of strings indicating how to set up current element of
+-.\" NS   doc-list-indent-stackXXX -- if set to TagwidtH, user has set it
+-.\" NS   directly; if it is a macro name, use the macro's width value;
+-.\" NS   otherwise, `doc-get-tag-width' uses width value of `No'.
+-.\" NS
+-.\" NS limit:
+-.\" NS   doc-list-depth
+-.
+-.ds doc-tag-width-stack0
+-.ds doc-tag-width-stack1
+-.
+-.
+ .\" NS doc-list-offset-stackXXX global register
+ .\" NS   stack of list offsets
+ .\" NS
+@@ -4193,7 +4144,6 @@
+ .\" NS   doc-list-offset-stackXXX
+ .\" NS   doc-list-type-stackXXX
+ .\" NS   doc-tag-prefix-stackXXX
+-.\" NS   doc-tag-width-stackXXX
+ .\" NS   doc-enum-list-count-stackXXX
+ .\" NS
+ .\" NS local variables:
+@@ -4205,7 +4155,6 @@
+ .  nr doc-list-indent-stack\n[doc-reg-dils] 0
+ .  nr doc-list-offset-stack\n[doc-reg-dils] 0
+ .  ds doc-tag-prefix-stack\n[doc-reg-dils]
+-.  ds doc-tag-width-stack\n[doc-reg-dils] \*[doc-tag-width-stack\n[doc-list-depth]]
+ .  ds doc-list-type-stack\n[doc-reg-dils]
+ .  nr doc-compact-list-stack\n[doc-reg-dils] 0
+ .  nr doc-enum-list-count-stack\n[doc-reg-dils] 0
+@@ -4222,7 +4171,6 @@
+ .\" NS   doc-list-offset-stackXXX
+ .\" NS   doc-list-type-stackXXX
+ .\" NS   doc-tag-prefix-stackXXX
+-.\" NS   doc-tag-width-stackXXX
+ .\" NS   doc-enum-list-count-stackXXX
+ .
+ .de doc-decrement-list-stack
+@@ -4231,7 +4179,6 @@
+ .  nr doc-list-indent-stack\n[doc-list-depth] 0
+ .  nr doc-list-offset-stack\n[doc-list-depth] 0
+ .  ds doc-tag-prefix-stack\n[doc-list-depth]
+-.  ds doc-tag-width-stack\n[doc-list-depth]
+ .  nr doc-compact-list-stack\n[doc-list-depth] 0
+ .  nr doc-enum-list-count-stack\n[doc-list-depth] 0
+ ..

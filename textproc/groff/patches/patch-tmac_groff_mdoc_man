@@ -1,0 +1,21 @@
+$OpenBSD: patch-tmac_groff_mdoc_man,v 1.7 2016/10/17 18:32:34 schwarze Exp $
+Simplify .Bl -tag without -width (merged upstream).
+--- tmac/groff_mdoc.man.orig	Tue Nov  4 09:38:35 2014
++++ tmac/groff_mdoc.man	Sun Oct  9 20:36:47 2016
+@@ -3925,14 +3925,8 @@ the width of
+ .Aq Ar string
+ (typeset with a fixed-width font) is taken as the width.
+ .Pp
+-If a width is not specified for the tag list type, every time
+-.Ql .It
+-is invoked, an attempt is made to determine an appropriate width.
+-If the first argument to
+-.Ql .It
+-is a callable macro, the default width for that macro will be used;
+-otherwise, the default width of
+-.Ql .No
++If a width is not specified for the tag list type,
++.Sq 6n
+ is used.
+ .It Fl offset Ao Ar string Ac
+ If
