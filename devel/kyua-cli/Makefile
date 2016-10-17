@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/17 10:13:56 jca Exp $
 
 COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8
@@ -24,16 +24,8 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/kyua-testers
 
 LIB_DEPENDS =		devel/atf \
-			databases/sqlite3
-
-FLAVORS =		# lua52 from lua.port.mk
-FLAVOR ?=
-
-.if ${FLAVOR:Mlua52}
-LIB_DEPENDS +=		devel/lutok,${FLAVOR:Mlua52}
-.else
-LIB_DEPENDS +=		devel/lutok
-.endif
+			databases/sqlite3 \
+			devel/lutok
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-doxygen

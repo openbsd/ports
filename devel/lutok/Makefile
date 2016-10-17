@@ -21,14 +21,7 @@ MODLUA_SA =		Yes
 
 LIB_DEPENDS =		devel/atf
 
-FLAVORS =		# lua52 from lua.port.mk
-FLAVOR ?=
-
-.if ${FLAVOR:Mlua52}
-TEST_DEPENDS =		devel/kyua-cli,lua52
-.else
 TEST_DEPENDS =		devel/kyua-cli
-.endif
 
 CONFIGURE_STYLE  =	gnu
 CONFIGURE_ARGS =	--without-doxygen
