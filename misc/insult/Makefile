@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/01 08:27:13 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/18 18:08:41 jung Exp $
 
 COMMENT =		write insults to standard error on command failure
 
-DISTNAME =		insult-0.3
+DISTNAME =		insult-0.4
 
 CATEGORIES =		misc games
 
