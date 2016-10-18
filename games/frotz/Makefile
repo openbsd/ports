@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2015/06/04 06:17:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/10/18 19:19:29 sthen Exp $
 
 COMMENT=		curses-based interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-2.44
+REVISION=		0
 CATEGORIES=     	games
 
 HOMEPAGE=		http://frotz.sourceforge.net/
@@ -18,7 +19,8 @@ USE_GMAKE=		Yes
 MAKE_FLAGS=		CC="${CC}" OPTS="${CFLAGS}" CONFIG_DIR="${SYSCONFDIR}"
 FAKE_FLAGS=		PREFIX=${WRKINST}${TRUEPREFIX}
 
-ALL_TARGET=		frotz
+ALL_TARGET=		frotz dfrotz
+INSTALL_TARGET=		install install_dumb
 
 CFLAGS +=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
 
