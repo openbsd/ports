@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/18 18:05:19 jung Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -6,7 +6,7 @@ COMMENT-pgsql=		postgresql based smtpd table support
 COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 
-V=			201607122008
+V=			201610152004
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
