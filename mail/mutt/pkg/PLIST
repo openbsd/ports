@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/09/19 22:33:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/10/18 11:33:27 sthen Exp $
+@conflict neomutt-*
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
-@pkgpath mail/mutt/snapshot[,hcache][,idn]${FLAVOR_COMMA}
-@pkgpath mail/mutt/[,idn]${FLAVOR_COMMA}
+@pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
+@pkgpath mail/mutt/[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
 bin/flea
 @bin bin/mutt
 @bin bin/mutt_dotlock
@@ -88,7 +89,9 @@ share/examples/mutt/pgp5.rc
 share/examples/mutt/pgp6.rc
 share/examples/mutt/sample.mailcap
 share/examples/mutt/sample.muttrc
+share/examples/mutt/sample.muttrc-sidebar
 share/examples/mutt/sample.muttrc-tlr
+share/examples/mutt/sample.vimrc-sidebar
 share/examples/mutt/smime.rc
 share/examples/mutt/smime_keys_test.pl
 share/locale/bg/LC_MESSAGES/mutt.mo

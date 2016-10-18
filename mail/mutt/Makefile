@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.87 2016/09/19 22:33:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2016/10/18 11:33:26 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.6.2
+DISTNAME=	mutt-1.7.1
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -19,10 +19,6 @@ WANTLIB+=	c crypto iconv idn intl qdbm ssl z
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.mutt.org/pub/mutt/
-MASTER_SITES1=	http://lunar-linux.org/~tchan/mutt/
-MASTER_SITES2=	http://spacehopper.org/mutt/
-DIST_SUBDIR=	mutt
-PATCH_DIST_STRIP= -p1
 
 LIB_DEPENDS=	databases/qdbm \
 		devel/gettext \
@@ -30,7 +26,7 @@ LIB_DEPENDS=	databases/qdbm \
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
-FLAVORS=	compressed gpgme sasl sidebar slang
+FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE=  gnu
@@ -83,48 +79,6 @@ WANTLIB+=	m termlib slang>=14
 .else
 CONFIGURE_ARGS+= --with-curses
 WANTLIB+=	ncurses
-.endif
-
-# third party patches
-
-# N.B. In general we would like to avoid additional patches here, they
-# frequently cause problems at update time. If you have a favourite patch
-# that you would like to see added, please engage with Mutt upstream
-# to talk about getting it imported directly instead. You can of course
-# patch locally :-)
-
-# If there are conflicts when updating mutt, check to see if gentoo have
-# already fixed: http://prefix.gentooexperimental.org:8000/mutt-patches
-
-# sidebar patch (not good, but people seem to like it...)
-DIST_SIDEBAR=	sidebar-1.6.0.diff.gz:2
-SUPDISTFILES+=	${DIST_SIDEBAR}
-.if ${FLAVOR:Msidebar}
-PATCHFILES+=	${DIST_SIDEBAR}
-.endif
-
-# compressed folders patch http://www.spinnaker.de/mutt/compressed/
-DIST_COMPR=	compressed-1.6.0.diff.gz:2
-SUPDISTFILES+=	${DIST_COMPR}
-.if ${FLAVOR:Mcompressed}
-PATCHFILES+=	${DIST_COMPR}
-CONFIGURE_ARGS+= --enable-compressed
-.endif
-
-# trashfolder, http://cedricduval.free.fr/mutt/patches/
-# enabled unconditionally, it's not *too* intrusive (additional flavours
-# mean a big increase in ports testing required).
-PATCHFILES+=	trashfolder-1.6.0.diff.gz:2
-
-.if ${FLAVOR:Msidebar} || ${FLAVOR:Mcompressed}
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
 .endif
 
 post-install:

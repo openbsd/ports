@@ -1,12 +1,12 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.4 2016/09/19 22:33:53 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.5 2016/10/18 11:33:26 sthen Exp $
 
 Pledge
 
---- mutt_sasl.c.orig	Sun Jan 17 05:18:59 2016
-+++ mutt_sasl.c	Sun Jan 17 05:19:37 2016
-@@ -84,7 +84,6 @@ static int getnameinfo_err(int ret)
+--- mutt_sasl.c.orig	Sat Oct  8 20:30:21 2016
++++ mutt_sasl.c	Tue Oct 18 12:20:17 2016
+@@ -86,7 +86,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
  
- static sasl_callback_t mutt_sasl_callbacks[5];
+ static sasl_secret_t *secret_ptr = NULL;
  
 -static int mutt_sasl_start (void);
  
