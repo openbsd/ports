@@ -1,10 +1,25 @@
-$OpenBSD: patch-source_fitz_load-jpx_c,v 1.1 2014/11/29 13:25:23 sthen Exp $
+$OpenBSD: patch-source_fitz_load-jpx_c,v 1.2 2016/10/18 09:24:20 sthen Exp $
 
-cope with API change in openjpeg 2.1.0
+- OPJ_STATIC interferes with shared lib patch for mupdf
+- cope with API change in openjpeg 2.1.0
 
---- source/fitz/load-jpx.c.orig	Sat Nov 29 00:01:34 2014
-+++ source/fitz/load-jpx.c	Sat Nov 29 00:01:39 2014
-@@ -117,7 +117,7 @@ fz_load_jpx(fz_context *ctx, unsigned char *data, int 
+--- source/fitz/load-jpx.c.orig	Thu Apr 21 12:14:32 2016
++++ source/fitz/load-jpx.c	Tue Oct 18 10:09:14 2016
+@@ -1,13 +1,5 @@
+ #include "mupdf/fitz.h"
+ 
+-/* Without the definition of OPJ_STATIC, compilation fails on windows
+- * due to the use of __stdcall. We believe it is required on some
+- * linux toolchains too. */
+-#define OPJ_STATIC
+-#ifndef _MSC_VER
+-#define OPJ_HAVE_STDINT_H
+-#endif
+-
+ #include <openjpeg.h>
+ 
+ static void fz_opj_error_callback(const char *msg, void *client_data)
+@@ -117,7 +109,7 @@ fz_load_jpx(fz_context *ctx, unsigned char *data, int 
  	opj_stream_set_read_function(stream, fz_opj_stream_read);
  	opj_stream_set_skip_function(stream, fz_opj_stream_skip);
  	opj_stream_set_seek_function(stream, fz_opj_stream_seek);

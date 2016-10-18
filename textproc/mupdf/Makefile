@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2016/10/16 09:16:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2016/10/18 09:24:20 sthen Exp $
 
 SHARED_LIBS +=	mupdf		4.0
 SHARED_LIBS +=	mupdfthird	0.0
@@ -67,7 +67,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
 
 pre-configure:
-	cd ${WRKSRC}/; ${SUBST_CMD} Makerules Makethird
+	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
 	rm -rf ${WRKSRC}/thirdparty/{curl,freetype,harfbuzz,jbig2dec,jpeg,openjpeg,zlib} # use from ports
 	#rm -rf ${WRKSRC}/thirdparty/glfw # not yet in ports, doesn't build here
 .if !${FLAVOR:Mjs}
