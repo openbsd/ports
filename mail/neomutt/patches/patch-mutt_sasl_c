@@ -1,0 +1,14 @@
+$OpenBSD: patch-mutt_sasl_c,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+
+Pledge
+
+--- mutt_sasl.c.orig	Fri Aug 26 23:53:14 2016
++++ mutt_sasl.c	Thu Sep  1 18:11:34 2016
+@@ -86,7 +86,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
+ 
+ static sasl_secret_t *secret_ptr = NULL;
+ 
+-static int mutt_sasl_start (void);
+ 
+ /* callbacks */
+ static int mutt_sasl_cb_log (void* context, int priority, const char* message);

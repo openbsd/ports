@@ -1,0 +1,14 @@
+$OpenBSD: patch-mutt_sasl_h,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+
+Pledge
+
+--- mutt_sasl.h.orig	Sun Jan 17 05:20:10 2016
++++ mutt_sasl.h	Sun Jan 17 05:19:32 2016
+@@ -25,6 +25,7 @@
+ 
+ #include "mutt_socket.h"
+ 
++int mutt_sasl_start (void);
+ int mutt_sasl_client_new (CONNECTION*, sasl_conn_t**);
+ sasl_callback_t* mutt_sasl_get_callbacks (ACCOUNT*);
+ int mutt_sasl_interact (sasl_interact_t*);
