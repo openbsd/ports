@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_lld_COFF_CMakeLists_txt,v 1.1 2016/10/18 06:59:02 ajacoutot Exp $
+
+[CMake] Add missing dependency on intrinsics_gen
+
+--- tools/lld/COFF/CMakeLists.txt.orig	Mon Oct 17 21:44:52 2016
++++ tools/lld/COFF/CMakeLists.txt	Mon Oct 17 21:45:33 2016
+@@ -33,4 +33,4 @@ add_lld_library(lldCOFF
+   LINK_LIBS ${PTHREAD_LIB}
+   )
+ 
+-add_dependencies(lldCOFF COFFOptionsTableGen)
++add_dependencies(lldCOFF COFFOptionsTableGen intrinsics_gen)

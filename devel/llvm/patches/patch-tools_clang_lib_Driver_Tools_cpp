@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.36 2016/10/07 08:55:30 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.37 2016/10/18 06:59:02 ajacoutot Exp $
 
 - Select proper SPARCv9 variant for the external assembler
 - For now, force soft-float on ARM
 - Set ABI for ARM
 - Disable -fstrict-aliasing per default on OpenBSD
 - Produce EH frame header for all binaries
-- Link static PIEs with the correct C runtime (rcrt0.o)
+- Link static PIE programs against rcrt0.o on OpenBSD
 
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sat Aug 13 16:43:56 2016
 +++ tools/clang/lib/Driver/Tools.cpp	Tue Sep 27 22:10:52 2016
