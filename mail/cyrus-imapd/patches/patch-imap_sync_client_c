@@ -1,10 +1,10 @@
-$OpenBSD: patch-imap_sync_client_c,v 1.4 2015/09/11 07:26:07 ajacoutot Exp $
+$OpenBSD: patch-imap_sync_client_c,v 1.5 2016/10/18 07:20:17 ajacoutot Exp $
 
 https://bugzilla.cyrusimap.org/show_bug.cgi?id=3376
 
---- imap/sync_client.c.orig	Fri Sep 11 03:50:15 2015
-+++ imap/sync_client.c	Fri Sep 11 09:21:20 2015
-@@ -629,7 +629,7 @@ static int folder_unannotation(const char *mboxname, c
+--- imap/sync_client.c.orig	Mon Oct 17 23:01:04 2016
++++ imap/sync_client.c	Tue Oct 18 09:05:58 2016
+@@ -630,7 +630,7 @@ static int folder_unannotation(const char *mboxname, c
  /* ====================================================================== */
  
  static int sieve_upload(const char *userid, const char *filename,
@@ -13,7 +13,7 @@ https://bugzilla.cyrusimap.org/show_bug.cgi?id=3376
  {
      const char *cmd = "SIEVE";
      struct dlist *kl;
-@@ -996,9 +996,9 @@ static void log_record(const char *name, struct mailbo
+@@ -997,9 +997,9 @@ static void log_record(const char *name, struct mailbo
  		       struct index_record *record)
  {
      syslog(LOG_NOTICE, "SYNCNOTICE: %s uid:%u modseq:" MODSEQ_FMT " "

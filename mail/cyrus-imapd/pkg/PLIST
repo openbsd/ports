@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/07/30 14:19:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/10/18 07:20:17 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -355,6 +355,7 @@ share/examples/cyrus-imapd/tools/config2man
 share/examples/cyrus-imapd/tools/convert-sieve.pl
 share/examples/cyrus-imapd/tools/dohash
 share/examples/cyrus-imapd/tools/fixsearchpath.pl
+share/examples/cyrus-imapd/tools/git-version.sh
 share/examples/cyrus-imapd/tools/htmlstrip.c
 share/examples/cyrus-imapd/tools/jenkins-build.sh
 share/examples/cyrus-imapd/tools/masssievec

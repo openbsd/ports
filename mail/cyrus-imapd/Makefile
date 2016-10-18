@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2016/07/30 14:19:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2016/10/18 07:20:17 ajacoutot Exp $
 
 # WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
 # map_refresh on every lock which will incure a performance penalty
@@ -7,7 +7,7 @@
 
 COMMENT=	Cyrus IMAP server
 
-V=		2.5.9
+V=		2.5.10
 DISTNAME=	cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -36,8 +36,6 @@ LIB_DEPENDS=	databases/db/v4 \
 		devel/pcre \
 		security/cyrus-sasl2 \
 		sysutils/e2fsprogs
-
-NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
