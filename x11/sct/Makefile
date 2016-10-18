@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/07/30 18:53:13 jung Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/18 18:10:09 jung Exp $
 
 COMMENT =		set the color temperature of the screen
 
-DISTNAME =		sct-0.2
+DISTNAME =		sct-0.3
 
 CATEGORIES =		x11 sysutils
 
