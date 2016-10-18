@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/18 10:51:39 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -28,6 +28,8 @@ FLAVOR?=
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
+
+CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
@@ -86,16 +88,5 @@ post-install:
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	@perl -pi -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
 		${PREFIX}/share/examples/mutt/gpg.rc
-
-## non-tarball
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-CONFIGURE_STYLE= autoconf
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
 
 .include <bsd.port.mk>
