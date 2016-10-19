@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/10/11 18:47:46 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/10/19 01:46:15 jturner Exp $
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
@@ -28,6 +28,7 @@ lib/libkcgixml.a
 @man man/man3/khttpdigest_validate.3
 @man man/man3/kmalloc.3
 @man man/man3/kutil_epoch2str.3
+@man man/man3/kutil_log.3
 @man man/man3/kutil_urlencode.3
 @man man/man3/kvalid_string.3
 @man man/man8/kfcgi.8
