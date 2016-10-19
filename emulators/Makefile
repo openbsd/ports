@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/10/17 06:43:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.87 2016/10/19 07:48:00 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -26,6 +26,7 @@
     SUBDIR += gxemul
     SUBDIR += hatari
     SUBDIR += libretro-genesis-plus-gx
+    SUBDIR += libretro-pcsx-rearmed
     SUBDIR += mednafen
     SUBDIR += mgba
     SUBDIR += mupen64plus
