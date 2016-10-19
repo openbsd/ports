@@ -1,0 +1,5 @@
+libretro-pcsx-rearmed provides a Sony PlayStation emulation core to the
+RetroArch emulator frontend, based on PCSX ReARMed.
+
+It is yet another PCSX fork based on the PCSX-Reloaded project, which itself
+contains code from PCSX, PCSX-df and PCSX-Revolution.

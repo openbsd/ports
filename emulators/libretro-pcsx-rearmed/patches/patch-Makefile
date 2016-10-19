@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/10/19 07:47:21 bentley Exp $
+--- Makefile.orig	Mon Oct 17 00:33:15 2016
++++ Makefile	Mon Oct 17 00:33:40 2016
+@@ -240,9 +240,7 @@ libpcsxcore/gte_nf.o: libpcsxcore/gte.c
+ 	$(CC) -c -o $@ $^ $(CFLAGS) -DFLAGLESS
+ 
+ frontend/revision.h: FORCE
+-	@(git describe || echo) | sed -e 's/.*/#define REV "\0"/' > $@_
+-	@diff -q $@_ $@ > /dev/null 2>&1 || cp $@_ $@
+-	@rm $@_
++	@echo '#define REV "0"' > $@
+ 
+ %.o: %.S
+ 	$(CC_AS) $(CFLAGS) -c $^ -o $@
