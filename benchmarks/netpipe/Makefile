@@ -1,27 +1,31 @@
-# $OpenBSD: Makefile,v 1.27 2015/01/22 17:47:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/10/19 14:30:37 jca Exp $
 
 COMMENT=	self-scaling network benchmark
 
-DISTNAME=	netpipe-2.4
-DISTFILES=	NetPIPE_2.4.tar.gz
-REVISION=	0
+DISTNAME=	NetPIPE-3.7.2
+PKGNAME=	netpipe-3.7.2
 CATEGORIES=	benchmarks net
 
-HOMEPAGE=	http://www.scl.ameslab.gov/netpipe/
+HOMEPAGE=	http://bitspjoule.org/netpipe/
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}/code/
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_GETRUSAGE"
-ALL_TARGET=	NPtcp
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_TEST=	Yes
 
+MAKE_FILE=	makefile
+
+ALL_TARGET=	tcp tcp6
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/NPtcp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/netpipe.1 ${PREFIX}/man/man1
 	cd ${PREFIX}/bin && ln -sf NPtcp netpipe
-	
+	${INSTALL_PROGRAM} ${WRKBUILD}/NPtcp6 ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKBUILD}/dox/netpipe.1 ${PREFIX}/man/man1
+
 .include <bsd.port.mk>
