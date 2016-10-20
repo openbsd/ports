@@ -1,8 +1,8 @@
-$OpenBSD: patch-nail_rc,v 1.4 2015/01/03 18:00:47 jca Exp $
+$OpenBSD: patch-nail_rc,v 1.5 2016/10/20 10:49:23 czarkoff Exp $
 
---- nail.rc.orig	Thu Dec 18 14:49:46 2014
-+++ nail.rc	Fri Jan  2 08:33:46 2015
-@@ -41,6 +41,9 @@ set ask
+--- nail.rc.orig	Wed Oct  5 12:04:53 2016
++++ nail.rc	Sat Oct  8 03:38:20 2016
+@@ -43,6 +43,9 @@ set ask
  # *header* on a per-folder basis (it is meaningless unless *header* is set)
  set bsdannounce
  
