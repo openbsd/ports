@@ -1,0 +1,11 @@
+$OpenBSD: patch-put_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- put.c.orig	Thu Oct 20 16:21:50 2016
++++ put.c	Thu Oct 20 16:22:02 2016
+@@ -20,6 +20,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

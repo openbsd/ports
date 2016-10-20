@@ -1,0 +1,11 @@
+$OpenBSD: patch-dynamic_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- dynamic.c.orig	Thu Oct 20 16:19:09 2016
++++ dynamic.c	Thu Oct 20 16:19:18 2016
+@@ -19,6 +19,7 @@
+ #include <assert.h>
+ #include <inttypes.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-property_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- property.c.orig	Thu Oct 20 16:21:00 2016
++++ property.c	Thu Oct 20 16:21:10 2016
+@@ -21,6 +21,7 @@
+ #include <assert.h>
+ #include <inttypes.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

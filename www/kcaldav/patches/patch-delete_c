@@ -1,0 +1,11 @@
+$OpenBSD: patch-delete_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- delete.c.orig	Thu Oct 20 16:18:40 2016
++++ delete.c	Thu Oct 20 16:18:53 2016
+@@ -19,6 +19,7 @@
+ #include <assert.h>
+ #include <errno.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

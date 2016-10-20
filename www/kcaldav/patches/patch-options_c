@@ -1,0 +1,11 @@
+$OpenBSD: patch-options_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- options.c.orig	Thu Oct 20 16:20:06 2016
++++ options.c	Thu Oct 20 16:20:17 2016
+@@ -20,6 +20,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

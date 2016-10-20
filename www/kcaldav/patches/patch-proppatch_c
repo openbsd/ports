@@ -1,0 +1,11 @@
+$OpenBSD: patch-proppatch_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- proppatch.c.orig	Thu Oct 20 16:21:29 2016
++++ proppatch.c	Thu Oct 20 16:21:40 2016
+@@ -20,6 +20,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <stdlib.h>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-principal_c,v 1.1 2016/10/20 20:25:19 jturner Exp $
+--- principal.c.orig	Thu Oct 20 16:22:37 2016
++++ principal.c	Thu Oct 20 16:22:45 2016
+@@ -17,6 +17,7 @@
+ #include "config.h"
+ 
+ #include <assert.h>
++#include <stdarg.h>
+ #include <stdint.h>
+ #include <stdlib.h>
+ 
