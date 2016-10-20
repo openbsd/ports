@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/11 15:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/20 11:36:12 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
+REVISION=	0
 
 FLAVORS=	python3
 FLAVOR?=
@@ -15,6 +16,7 @@ RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR}>=0.8 \
 		security/py-openssl${MODPY_FLAVOR}>=0.15 \
 		textproc/py-pyRFC3339${MODPY_FLAVOR} \
+		www/py-ndg-httpsclient${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-werkzeug${MODPY_FLAVOR}
 
