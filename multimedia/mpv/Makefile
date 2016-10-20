@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/10/20 17:28:52 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -8,7 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.20.0
+GH_TAGNAME =		v0.21.0
 
 CATEGORIES =		multimedia x11
 
@@ -54,7 +54,7 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libv4l \
 			net/samba
 
-MODPY_RUNDEP ?=		No
+MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
@@ -107,8 +107,10 @@ WRKBUILD =		${WRKSRC}/${MACHINE_ARCH}
 CFLAGS +=		-march=i586
 .endif
 
-do-configure:
+post-patch:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
+
+do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${WAF} \
 				${MAKE_FLAGS} configure ${CONFIGURE_ARGS}
 
