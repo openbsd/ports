@@ -1,9 +1,9 @@
-$OpenBSD: patch-contrib_opensolaris_tools_ctf_cvt_ctfmerge_c,v 1.1 2016/09/06 12:07:42 jasper Exp $
+$OpenBSD: patch-cddl_contrib_opensolaris_tools_ctf_cvt_ctfmerge_c,v 1.1 2016/10/21 08:28:10 jca Exp $
 
 Allow CTFMERGE_TERMINATE_NO_UNLINK=1 to keep the output file
 
---- contrib/opensolaris/tools/ctf/cvt/ctfmerge.c.orig	Thu Sep  1 15:24:41 2016
-+++ contrib/opensolaris/tools/ctf/cvt/ctfmerge.c	Thu Sep  1 15:24:58 2016
+--- cddl/contrib/opensolaris/tools/ctf/cvt/ctfmerge.c.orig	Wed Aug 31 14:24:43 2016
++++ cddl/contrib/opensolaris/tools/ctf/cvt/ctfmerge.c	Thu Oct 20 13:31:21 2016
 @@ -603,12 +603,10 @@ terminate_cleanup(void)
  	if (outfile == NULL)
  		return;

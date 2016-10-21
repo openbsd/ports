@@ -1,9 +1,9 @@
-$OpenBSD: patch-usr_bin_ctfmerge_Makefile,v 1.1 2016/09/02 11:09:56 jasper Exp $
+$OpenBSD: patch-cddl_usr_bin_ctfmerge_Makefile,v 1.1 2016/10/21 08:28:10 jca Exp $
 
 Link with devel/libelf instead of devel/elftoolchain
 
---- usr.bin/ctfmerge/Makefile.orig	Thu Sep  1 15:19:13 2016
-+++ usr.bin/ctfmerge/Makefile	Thu Sep  1 15:19:51 2016
+--- cddl/usr.bin/ctfmerge/Makefile.orig	Wed Aug 31 14:24:43 2016
++++ cddl/usr.bin/ctfmerge/Makefile	Thu Oct 20 13:31:21 2016
 @@ -34,8 +34,9 @@ CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensol
  		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/common \
  		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/cvt \

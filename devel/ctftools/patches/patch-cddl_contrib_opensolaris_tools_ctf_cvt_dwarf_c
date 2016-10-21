@@ -1,9 +1,9 @@
-$OpenBSD: patch-contrib_opensolaris_tools_ctf_cvt_dwarf_c,v 1.1 2016/09/02 11:09:56 jasper Exp $
+$OpenBSD: patch-cddl_contrib_opensolaris_tools_ctf_cvt_dwarf_c,v 1.1 2016/10/21 08:28:10 jca Exp $
 
 Don't use custom Solaris libdwarf functions.
 
---- contrib/opensolaris/tools/ctf/cvt/dwarf.c.orig	Fri Sep  2 12:07:04 2016
-+++ contrib/opensolaris/tools/ctf/cvt/dwarf.c	Fri Sep  2 12:46:22 2016
+--- cddl/contrib/opensolaris/tools/ctf/cvt/dwarf.c.orig	Wed Aug 31 14:24:43 2016
++++ cddl/contrib/opensolaris/tools/ctf/cvt/dwarf.c	Thu Oct 20 13:31:21 2016
 @@ -349,8 +349,11 @@ static int
  die_signed(dwarf_t *dw, Dwarf_Die die, Dwarf_Half name, Dwarf_Signed *valp,
      int req)

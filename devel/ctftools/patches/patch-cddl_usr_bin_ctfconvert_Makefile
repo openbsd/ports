@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_ctfconvert_Makefile,v 1.1 2016/09/02 11:09:56 jasper Exp $
---- usr.bin/ctfconvert/Makefile.orig	Fri Sep  2 10:30:18 2016
-+++ usr.bin/ctfconvert/Makefile	Fri Sep  2 10:31:03 2016
+$OpenBSD: patch-cddl_usr_bin_ctfconvert_Makefile,v 1.1 2016/10/21 08:28:10 jca Exp $
+--- cddl/usr.bin/ctfconvert/Makefile.orig	Wed Aug 31 14:24:43 2016
++++ cddl/usr.bin/ctfconvert/Makefile	Thu Oct 20 13:31:21 2016
 @@ -35,8 +35,10 @@ CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensol
  		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/common \
  		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/cvt \

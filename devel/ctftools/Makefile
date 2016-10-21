@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/09 12:24:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/21 08:28:10 jca Exp $
 
 COMMENT =		collection of CTF tools
 
@@ -19,7 +19,8 @@ WANTLIB +=		c dwarf elf pthread z
 LIB_DEPENDS =		devel/libelf \
 			devel/libdwarf>=20160613p0
 
-WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
+WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/
+WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
 
 do-build:
 	cd ${WRKSRC}/lib/libctf && ${MAKE_PROGRAM}
