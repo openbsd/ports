@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.14 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.15 2016/10/21 12:53:03 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -986,7 +986,6 @@ webapps/docs/api/org/apache/jasper/runtime/JspContextWrapper.html
 webapps/docs/api/org/apache/jasper/runtime/JspFactoryImpl.PageContextPool.html
 webapps/docs/api/org/apache/jasper/runtime/JspFactoryImpl.html
 webapps/docs/api/org/apache/jasper/runtime/JspFragmentHelper.html
-webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.PrivilegedIntrospectHelper.html
 webapps/docs/api/org/apache/jasper/runtime/JspRuntimeLibrary.html
 webapps/docs/api/org/apache/jasper/runtime/JspSourceDependent.html
 webapps/docs/api/org/apache/jasper/runtime/JspWriterImpl.html
@@ -1312,6 +1311,11 @@ webapps/docs/api/org/apache/tomcat/util/collections/SimplePool.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/
 webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
@@ -1511,6 +1515,7 @@ webapps/docs/api/org/apache/tomcat/util/res/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/res/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/res/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/security/
+webapps/docs/api/org/apache/tomcat/util/security/PermissionCheck.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/package-frame.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.19 2016/09/08 12:54:14 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.20 2016/10/21 12:53:03 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -879,6 +879,8 @@ webapps/docs/api/org/apache/catalina/webresources/AbstractArchiveResourceSet.htm
 webapps/docs/api/org/apache/catalina/webresources/AbstractFileResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/AbstractResource.html
 webapps/docs/api/org/apache/catalina/webresources/AbstractResourceSet.html
+webapps/docs/api/org/apache/catalina/webresources/AbstractSingleArchiveResource.html
+webapps/docs/api/org/apache/catalina/webresources/AbstractSingleArchiveResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/Cache.html
 webapps/docs/api/org/apache/catalina/webresources/CachedResource.html
 webapps/docs/api/org/apache/catalina/webresources/ClasspathURLStreamHandler.html
@@ -895,11 +897,17 @@ webapps/docs/api/org/apache/catalina/webresources/JarWarResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/StandardRoot.html
 webapps/docs/api/org/apache/catalina/webresources/TomcatURLStreamHandlerFactory.html
 webapps/docs/api/org/apache/catalina/webresources/VirtualResource.html
-webapps/docs/api/org/apache/catalina/webresources/WarURLConnection.html
-webapps/docs/api/org/apache/catalina/webresources/WarURLStreamHandler.html
+webapps/docs/api/org/apache/catalina/webresources/WarResource.html
+webapps/docs/api/org/apache/catalina/webresources/WarResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/package-frame.html
 webapps/docs/api/org/apache/catalina/webresources/package-summary.html
 webapps/docs/api/org/apache/catalina/webresources/package-tree.html
+webapps/docs/api/org/apache/catalina/webresources/war/
+webapps/docs/api/org/apache/catalina/webresources/war/Handler.html
+webapps/docs/api/org/apache/catalina/webresources/war/WarURLConnection.html
+webapps/docs/api/org/apache/catalina/webresources/war/package-frame.html
+webapps/docs/api/org/apache/catalina/webresources/war/package-summary.html
+webapps/docs/api/org/apache/catalina/webresources/war/package-tree.html
 webapps/docs/api/org/apache/coyote/
 webapps/docs/api/org/apache/coyote/AbstractProcessor.html
 webapps/docs/api/org/apache/coyote/AbstractProcessorLight.html
@@ -1236,7 +1244,6 @@ webapps/docs/api/org/apache/naming/ContextAccessController.html
 webapps/docs/api/org/apache/naming/ContextBindings.html
 webapps/docs/api/org/apache/naming/EjbRef.html
 webapps/docs/api/org/apache/naming/HandlerRef.html
-webapps/docs/api/org/apache/naming/JndiPermission.html
 webapps/docs/api/org/apache/naming/NameParserImpl.html
 webapps/docs/api/org/apache/naming/NamingContext.html
 webapps/docs/api/org/apache/naming/NamingContextBindingsEnumeration.html
