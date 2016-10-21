@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/10/21 08:29:01 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/21 12:51:55 jca Exp $
 
 COMMENT =		collection of CTF tools
 
@@ -21,6 +21,12 @@ LIB_DEPENDS =		devel/libelf \
 
 WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/
 WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
+
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/libctf/Makefile \
+	    ${WRKSRC}/usr.bin/ctfconvert/Makefile \
+	    ${WRKSRC}/usr.bin/ctfdump/Makefile \
+	    ${WRKSRC}/usr.bin/ctfmerge/Makefile
 
 do-build:
 	cd ${WRKSRC}/lib/libctf && ${MAKE_PROGRAM}

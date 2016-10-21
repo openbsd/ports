@@ -1,15 +1,15 @@
-$OpenBSD: patch-cddl_usr_bin_ctfdump_Makefile,v 1.1 2016/10/21 08:28:10 jca Exp $
+$OpenBSD: patch-cddl_usr_bin_ctfdump_Makefile,v 1.2 2016/10/21 12:51:55 jca Exp $
 --- cddl/usr.bin/ctfdump/Makefile.orig	Wed Aug 31 14:24:43 2016
-+++ cddl/usr.bin/ctfdump/Makefile	Thu Oct 20 13:31:21 2016
++++ cddl/usr.bin/ctfdump/Makefile	Fri Oct 21 14:46:28 2016
 @@ -18,8 +18,9 @@ CFLAGS+=	-I${OPENSOLARIS_USR_DISTDIR} \
  		-I${.CURDIR}/../../../cddl/compat/opensolaris/include \
  		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/common \
  		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common \
 -		-I/usr/local/include/elftoolchain
-+		-I/usr/local/include/ \
-+		-I/usr/local/include/libelf
++		-I${LOCALBASE}/include/ \
++		-I${LOCALBASE}/include/libelf
  
 -LDADD=		-L/usr/local/lib/elftoolchain -lelf -lz
-+LDADD=		-L/usr/local/lib -lelf -lz
++LDADD=		-L${LOCALBASE}/lib -lelf -lz
  
  .include <bsd.prog.mk>
