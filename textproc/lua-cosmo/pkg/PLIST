@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/21 17:49:25 fcambus Exp $
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/cosmo.png
+share/doc/${FULLPKGNAME}/index.html
+share/lua/${MODLUA_VERSION}/cosmo/
+share/lua/${MODLUA_VERSION}/cosmo.lua
+share/lua/${MODLUA_VERSION}/cosmo/fill.lua
+share/lua/${MODLUA_VERSION}/cosmo/grammar.lua

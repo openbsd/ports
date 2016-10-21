@@ -1,0 +1,4 @@
+Cosmo is a "safe templates" engine. It allows you to fill nested templates,
+providing many of the advantages of Turing-complete template engines,
+without the downside of allowing arbitrary code in the templates.
+
