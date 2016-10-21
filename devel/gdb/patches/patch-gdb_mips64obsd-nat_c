@@ -1,6 +1,24 @@
-$OpenBSD: patch-gdb_mips64obsd-nat_c,v 1.1 2016/09/03 13:48:39 jca Exp $
---- gdb/mips64obsd-nat.c.orig	Wed Feb 10 04:19:39 2016
-+++ gdb/mips64obsd-nat.c	Sat May 14 22:54:35 2016
+$OpenBSD: patch-gdb_mips64obsd-nat_c,v 1.2 2016/10/21 13:13:31 visa Exp $
+--- gdb/mips64obsd-nat.c.orig	Mon Aug  1 09:50:20 2016
++++ gdb/mips64obsd-nat.c	Tue Oct 18 07:24:31 2016
+@@ -40,7 +40,7 @@
+ static void
+ mips64obsd_supply_gregset (struct regcache *regcache, const void *gregs)
+ {
+-  const char *regs = gregs;
++  const char *regs = (const char *) gregs;
+   int regnum;
+ 
+   for (regnum = MIPS_ZERO_REGNUM; regnum <= MIPS_PC_REGNUM; regnum++)
+@@ -57,7 +57,7 @@ static void
+ mips64obsd_collect_gregset (const struct regcache *regcache,
+ 			    void *gregs, int regnum)
+ {
+-  char *regs = gregs;
++  char *regs = (char *) gregs;
+   int i;
+ 
+   for (i = MIPS_ZERO_REGNUM; i <= MIPS_PC_REGNUM; i++)
 @@ -83,7 +83,7 @@ mips64obsd_fetch_inferior_registers (struct target_ops
  {
    struct reg regs;
