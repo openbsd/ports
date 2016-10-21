@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.21 2016/05/08 11:51:40 espie Exp $
+# $OpenBSD: User.pm,v 1.22 2016/10/21 00:45:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -189,6 +189,25 @@ sub stat
 	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	return stat $name;
+}
+
+sub rewrite_file
+{
+	my ($self, $state, $filename, $sub) = @_;
+	$self->make_path(File::Basename::dirname($filename));
+	$self->run_as(
+	    sub {
+	    	my $f;
+		if (!CORE::open $f, '>', "$filename.part") {
+			$state->fatal("#1 can't write #2: #3",
+			    $self->user, "$filename.part", $!);
+		}
+		&$sub($f);
+		close $f;
+		CORE::rename "$filename.part", $filename or
+		    $state->fatal("#1 can't rename #2 to #3: #4",
+		    	$self->user, "$filename.part", $filename, $!);
+	    });
 }
 
 package DPB::UserProxy;

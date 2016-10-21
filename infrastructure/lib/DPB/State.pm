@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.18 2016/06/28 15:28:20 espie Exp $
+# $OpenBSD: State.pm,v 1.19 2016/10/21 00:45:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -346,11 +346,9 @@ sub add_build_info
 sub rewrite_build_info
 {
 	my $state = shift;
-	$state->{log_user}->make_path(File::Basename::dirname(
-	    $state->{permanent_log}));
-	$state->{log_user}->run_as(
+	$state->{log_user}->rewrite_file($state, $state->{permanent_log},
 	    sub {
-		open my $f, '>', $state->{permanent_log}.'.part' or return;
+	    	my $f = shift;
 		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 		    DPB::PkgPath->seen) {
 			next unless defined $p->{stats};
@@ -360,8 +358,6 @@ sub rewrite_build_info
 			}
 			delete $p->{stats};
 		}
-		close $f;
-		rename $state->{permanent_log}.'.part', $state->{permanent_log};
 	    });
 }
 

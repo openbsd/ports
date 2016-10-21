@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.121 2016/06/13 13:36:36 espie Exp $
+# $OpenBSD: Engine.pm,v 1.122 2016/10/21 00:45:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -698,17 +698,12 @@ sub dump_dependencies
 		}
 	}
 	my $state = $self->{state};
-	$state->{log_user}->make_path(File::Basename::dirname(
-	    $state->{dependencies_log}));
-	$state->{log_user}->run_as(
+	$state->{log_user}->rewrite_file($state, $state->{dependencies_log},
 	    sub {
-		open my $log, '>', $state->{dependencies_log}.'.part' or return;
+	    	my $log = shift;
 		for my $k (sort {$cache->{$b} <=> $cache->{$a}} keys %$cache) {
 			print $log "$k $cache->{$k}\n";
 		}
-		close $log;
-		rename $state->{dependencies_log}.'.part', 
-		    $state->{dependencies_log};
 	    });
 }
 
