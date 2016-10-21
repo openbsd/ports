@@ -1,0 +1,14 @@
+$OpenBSD: patch-sys_cddl_contrib_opensolaris_uts_common_sys_isa_defs_h,v 1.1 2016/10/21 08:29:01 jca Exp $
+--- sys/cddl/contrib/opensolaris/uts/common/sys/isa_defs.h.orig	Wed Aug 31 14:24:43 2016
++++ sys/cddl/contrib/opensolaris/uts/common/sys/isa_defs.h	Thu Oct 20 13:48:38 2016
+@@ -578,6 +578,10 @@ extern "C" {
+ #error	"SPARC Versions 8 and 9 are mutually exclusive choices"
+ #endif
+ 
++#if !defined(__sparcv9) && defined(__sparc__) && defined(__arch64__)
++#define __sparcv9
++#endif
++
+ /*
+  * Existing compilers do not set __sparcv8.  Years will transpire before
+  * the compilers can be depended on to set the feature test macro. In

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/21 08:28:10 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/21 08:29:01 jca Exp $
 
 COMMENT =		collection of CTF tools
 
 DISTNAME =		ctftools-0.1
-REVISION =		4
+REVISION =		5
 GH_ACCOUNT =		jasperla
 GH_PROJECT =		ctftools
 GH_COMMIT =		c4a72ae4266a97407916728689568c7f747d0e4b
