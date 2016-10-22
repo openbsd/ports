@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/07/10 10:27:56 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/22 12:26:46 czarkoff Exp $
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
-GH_TAGNAME =		v2.1.1
+GH_TAGNAME =		v2.1.3
 
 COMMENT =		simple image viewer
 CATEGORIES =		graphics x11
