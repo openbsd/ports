@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2016/02/27 17:47:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2016/10/22 19:35:12 shadchin Exp $
 
 COMMENT =		JSON encoder/decoder
 
-MODPY_EGG_VERSION =	3.8.2
+MODPY_EGG_VERSION =	3.9.0
 DISTNAME =		simplejson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,10 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
