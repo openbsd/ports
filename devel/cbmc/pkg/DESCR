@@ -1,0 +1,19 @@
+CBMC is a Bounded Model Checker for C and C++ programs. It supports C89, C99,
+most of C11 and most compiler extensions provided by gcc and Visual Studio. It
+also supports SystemC using Scoot, and has experimental support for Java
+Bytecode.
+
+CBMC verifies array bounds (buffer overflows), pointer safety, exceptions
+and user-specified assertions. Furthermore, it can check C and C++ for
+consistency with other languages, such as Verilog. The verification is
+performed by unwinding the loops in the program and passing the resulting
+equation to a decision procedure.
+
+While CBMC is aimed for embedded software, it also supports dynamic memory
+allocation using malloc and new.
+
+CBMC comes with a built-in solver for bit-vector formulas that is based on
+MiniSat. As an alternative, CBMC has featured support for external SMT
+solvers. Recommended solvers are (in no particular order) Boolector,
+MathSAT, Yices 2 and Z3. Note that these solvers need to be installed
+separately and have different licensing conditions.

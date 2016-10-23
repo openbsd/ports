@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_common,v 1.1.1.1 2016/10/23 00:13:10 jca Exp $
+--- src/common.orig	Sat Aug 20 14:08:13 2016
++++ src/common	Fri Oct 14 16:29:34 2016
+@@ -9,6 +9,8 @@ else ifeq ($(uname),Darwin)
+   BUILD_ENV_ := OSX
+ else ifeq ($(uname),FreeBSD)
+   BUILD_ENV_ := FreeBSD
++else ifeq ($(uname),OpenBSD)
++  BUILD_ENV_ := OpenBSD
+ else ifeq ($(filter-out MINGW32_%, $(uname)),)
+   BUILD_ENV_ := MinGW
+ else ifeq ($(filter-out CYGWIN_%, $(uname)),)
+@@ -20,7 +22,7 @@ else
+   BUILD_ENV_ := $(BUILD_ENV)
+ endif
+ 
+-ifeq ($(filter-out Unix MinGW OSX OSX_Universal FreeBSD,$(BUILD_ENV_)),)
++ifeq ($(filter-out Unix MinGW OSX OSX_Universal FreeBSD OpenBSD,$(BUILD_ENV_)),)
+   # Linux-ish
+   LIBEXT = .a
+   OBJEXT = .o
+@@ -59,6 +61,11 @@ ifeq ($(filter-out OSX OSX_Universal,$(BUILD_ENV_)),)
+ else ifeq ($(filter-out FreeBSD,$(BUILD_ENV_)),)
+   CP_CXXFLAGS +=
+   LINKLIB = ar rcT $@ $^
++  LINKBIN = $(CXX) $(LINKFLAGS) -o $@ -Wl,--start-group $^ -Wl,--end-group $(LIBS)
++  LINKNATIVE = $(HOSTCXX) -o $@ $^
++else ifeq ($(filter-out OpenBSD,$(BUILD_ENV_)),)
++  CP_CXXFLAGS +=
++  LINKLIB = ar rc $@ $^
+   LINKBIN = $(CXX) $(LINKFLAGS) -o $@ -Wl,--start-group $^ -Wl,--end-group $(LIBS)
+   LINKNATIVE = $(HOSTCXX) -o $@ $^
+   ifeq ($(origin CC),default)
