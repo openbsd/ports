@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/22 19:49:09 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/23 13:38:36 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}mistune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,4 +7,3 @@ lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/mistune-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mistune.py
-lib/python${MODPY_VERSION}/site-packages/mistune.pyc
