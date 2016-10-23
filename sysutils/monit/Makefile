@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2016/08/10 14:01:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2016/10/23 08:12:04 jasper Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.19.0
+DISTNAME=	monit-5.20.0
 
 CATEGORIES=	sysutils
 
@@ -13,7 +13,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # AGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m kvm pthread ssl
+WANTLIB += c crypto m kvm pthread ssl z
 
 MASTER_SITES=	${HOMEPAGE}/dist/
 
