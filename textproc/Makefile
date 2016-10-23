@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.511 2016/10/21 17:52:09 fcambus Exp $
+# $OpenBSD: Makefile,v 1.512 2016/10/23 13:40:24 shadchin Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -373,6 +373,7 @@
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
      SUBDIR += py-mistune
+     SUBDIR += py-mistune,python3
      SUBDIR += py-nltk
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc
