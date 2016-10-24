@@ -1,4 +1,4 @@
-$OpenBSD: patch-dwm_1,v 1.1 2015/11/11 09:27:13 jung Exp $
+$OpenBSD: patch-dwm_1,v 1.2 2016/10/24 22:46:54 czarkoff Exp $
 --- dwm.1.orig	Wed Nov 11 09:50:32 2015
 +++ dwm.1	Wed Nov 11 09:51:25 2015
 @@ -57,7 +57,7 @@ click on a tag label adds/removes that tag to/from the
@@ -6,7 +6,7 @@ $OpenBSD: patch-dwm_1,v 1.1 2015/11/11 09:27:13 jung Exp $
  .B Mod1\-Shift\-Return
  Start
 -.BR st(1).
-+.BR uxterm (1).
++.BR xterm (1).
  .TP
  .B Mod1\-,
  Focus previous screen, if any.
@@ -15,7 +15,7 @@ $OpenBSD: patch-dwm_1,v 1.1 2015/11/11 09:27:13 jung Exp $
  .SH SEE ALSO
  .BR dmenu (1),
 -.BR st (1)
-+.BR uxterm (1)
++.BR xterm (1)
  .SH BUGS
  Java applications which use the XToolkit/XAWT backend may draw grey windows
  only. The XToolkit/XAWT backend breaks ICCCM-compliance in recent JDK 1.5 and early
