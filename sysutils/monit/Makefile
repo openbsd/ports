@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2016/10/23 08:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2016/10/24 21:10:45 jung Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
 DISTNAME=	monit-5.20.0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -18,6 +19,11 @@ WANTLIB += c crypto m kvm pthread ssl z
 MASTER_SITES=	${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=gnu
+
+SUBST_VARS=	LOCALSTATEDIR
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/monitrc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/monit

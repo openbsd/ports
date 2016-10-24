@@ -1,0 +1,33 @@
+$OpenBSD: patch-monitrc,v 1.5 2016/10/24 21:10:45 jung Exp $
+--- monitrc.orig	Fri Oct 21 11:58:30 2016
++++ monitrc	Mon Oct 24 19:29:09 2016
+@@ -37,17 +37,15 @@ set logfile syslog
+ ## Monit instance. The id is generated and stored on first Monit start. By
+ ## default the file is placed in $HOME/.monit.id.
+ #
+-# set idfile /var/.monit.id
+-#
++set idfile ${LOCALSTATEDIR}/monit/id
++
+ ## Set the location of the Monit state file which saves monitoring states
+ ## on each cycle. By default the file is placed in $HOME/.monit.state. If
+ ## the state file is stored on a persistent filesystem, Monit will recover
+ ## the monitoring state across reboots. If it is on temporary filesystem, the
+ ## state will be lost on reboot which may be convenient in some situations.
+ #
+-# set statefile /var/.monit.state
+-#
+-#
++set statefile ${LOCALSTATEDIR}/monit/state
+ 
+ ## Set limits for various tests. The following example shows the default values:
+ ##
+@@ -90,7 +88,7 @@ set logfile syslog
+ ## available in the back end filesystem).
+ #
+ # set eventqueue
+-#     basedir /var/monit  # set the base directory where events will be stored
++#     basedir ${LOCALSTATEDIR}/monit/events  # set the base directory where events will be stored
+ #     slots 100           # optionally limit the queue size
+ #
+ #
