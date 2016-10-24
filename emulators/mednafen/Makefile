@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/17 21:12:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/24 01:53:37 jeremy Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
 
-V =		0.9.38.7
+V =		0.9.39.2
 DISTNAME =	mednafen-${V}
 
 CATEGORIES =	emulators games
@@ -31,6 +31,8 @@ LIB_DEPENDS =	audio/libsndfile \
 		
 WRKDIST =	${WRKDIR}/mednafen
 
+USE_WXNEEDED =	Yes
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
@@ -42,6 +44,9 @@ CONFIGURE_ARGS =	--disable-alsa \
 
 # this intrinsic is not supported with our old gcc
 CONFIGURE_ARGS +=	--disable-altivec
+
+pre-configure:
+	sed -i 's/^__inline//' ${WRKDIST}/src/quicklz/quicklz.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mednafen

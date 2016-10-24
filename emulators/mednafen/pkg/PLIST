@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/28 04:08:48 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/10/24 01:53:37 jeremy Exp $
 @bin bin/mednafen
 share/doc/mednafen/
-share/doc/mednafen/Makefile.am
-share/doc/mednafen/Makefile.in
 share/doc/mednafen/README.jpeg4a
 share/doc/mednafen/bwolf0.png
 share/doc/mednafen/bwolf1.png
+share/doc/mednafen/cdplay.html
+share/doc/mednafen/cdplay.php
 share/doc/mednafen/cheat.html
 share/doc/mednafen/cheats.txt
 share/doc/mednafen/debugger.html
@@ -49,6 +49,12 @@ share/doc/mednafen/sms.html
 share/doc/mednafen/sms.php
 share/doc/mednafen/snes.html
 share/doc/mednafen/snes.php
+share/doc/mednafen/snes_faust.html
+share/doc/mednafen/snes_faust.php
+share/doc/mednafen/ss.html
+share/doc/mednafen/ss.php
+share/doc/mednafen/ssfplay.html
+share/doc/mednafen/ssfplay.php
 share/doc/mednafen/vb.html
 share/doc/mednafen/vb.php
 share/doc/mednafen/wswan.html
@@ -56,5 +62,3 @@ share/doc/mednafen/wswan.php
 share/locale/de/LC_MESSAGES/mednafen.mo
 share/locale/es/LC_MESSAGES/mednafen.mo
 share/locale/ru/LC_MESSAGES/mednafen.mo
-share/mednafen/
-share/mednafen/c68k_op0.inc
