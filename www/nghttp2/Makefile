@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/25 15:41:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/10/24 14:22:31 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
-V=		1.15.0
+V=		1.16.0
 DISTNAME=	nghttp2-$V
 
-SHARED_LIBS +=	nghttp2              0.8     # 25.0
+SHARED_LIBS +=	nghttp2              0.9     # 26.0
 
 CATEGORIES=	www
 
