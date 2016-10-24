@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_def_h,v 1.5 2016/08/18 18:30:57 czarkoff Exp $
+$OpenBSD: patch-config_def_h,v 1.6 2016/10/24 07:49:08 czarkoff Exp $
 --- config.def.h.orig	Fri Jul  8 15:02:42 2016
 +++ config.def.h	Thu Aug 18 19:02:53 2016
 @@ -17,7 +17,7 @@ static Parameter defconfig[ParameterLast] = {
@@ -35,7 +35,7 @@ $OpenBSD: patch-config_def_h,v 1.5 2016/08/18 18:30:57 czarkoff Exp $
 -             "st -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
 -             " --referer '$2' -b $3 -c $3 '$0';" \
 -             " sleep 5;\"", \
-+             "uxterm -e /bin/sh -c \"cd \'${XDG_DOWNLOAD_DIR}\';" \
++             "xterm -e /bin/sh -c \"cd \'${XDG_DOWNLOAD_DIR}\';" \
 +             " curl -gLJO --user-agent '$1' --referer '$2' -b $3 -c $3" \
 +             " -w \'Saved to \"%{filename_effective}\".\' '$0';" \
 +             " read dismiss;\"", \

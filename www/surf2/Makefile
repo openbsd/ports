@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/30 23:47:28 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/24 07:49:08 czarkoff Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf2-0.6.20160922
+REVISION =	0
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
