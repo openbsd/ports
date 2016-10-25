@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/16 22:37:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/10/25 12:25:32 jca Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS+=		devel/libtool
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 WRKDIST=		${WRKDIR}/hfsplus-${VERSION}
 

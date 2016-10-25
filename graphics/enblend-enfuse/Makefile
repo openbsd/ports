@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2016/10/25 12:25:32 jca Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -45,7 +45,6 @@ LIB_DEPENDS =	devel/boost \
 
 CONFIGURE_STYLE = autoconf
 AUTOCONF_VERSION = 2.61
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 USE_GMAKE = Yes
 
 CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \

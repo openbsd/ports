@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2016/10/25 12:25:32 jca Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -30,8 +30,6 @@ CONFIGURE_ARGS+= --without-gssapi \
 		--without-pam \
 		--without-sasl \
 		--without-upnp
-
-MODGNU_CONFIG_GUESS_DIRS+= ${WRKSRC}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/socksify.in

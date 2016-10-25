@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2016/09/22 17:52:46 danj Exp $
+# $OpenBSD: Makefile,v 1.66 2016/10/25 12:25:32 jca Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
@@ -27,7 +27,6 @@ LIB_DEPENDS =	devel/glib2
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-pic \
 			--with-proxy \
