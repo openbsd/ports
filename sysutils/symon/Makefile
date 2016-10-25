@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2016/09/10 13:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2016/10/25 11:28:05 sthen Exp $
 
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
 
 V=		2.87
-REVISION-main=	4
+REVISION-main=	5
 REVISION-mux=	1
 DISTNAME=	symon-$V
 WRKDIST=	${WRKDIR}/symon

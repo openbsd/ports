@@ -1,0 +1,12 @@
+$OpenBSD: patch-symux_c_smrrds_sh,v 1.1 2016/10/25 11:28:05 sthen Exp $
+--- symux/c_smrrds.sh.orig	Tue Oct 25 12:27:07 2016
++++ symux/c_smrrds.sh	Tue Oct 25 12:27:18 2016
+@@ -188,7 +188,7 @@ df_*.rrd)
+ sensor_*.rrd)
+     # Build sensor file
+     create_rrd $i \
+-	DS:value:GAUGE:$INTERVAL:-U:U
++	DS:value:GAUGE:$INTERVAL:U:U
+     ;;
+ 
+ mem.rrd)
