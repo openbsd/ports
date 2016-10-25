@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/10 21:58:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2016/10/25 17:10:46 sthen Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
-DISTNAME=	libbgpdump-1.4.99.15
+DISTNAME=	libbgpdump-1.5.0
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	bgpdump 0.0
+SHARED_LIBS=	bgpdump 1.0
 
 CATEGORIES=	net
 
@@ -22,6 +22,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_FLAGS+=	LIBbgpdump_VERSION=${LIBbgpdump_VERSION}
+
+NO_TEST=	Yes # some Makefile scaffolding but tests not actually included
 
 pre-configure:
 	sed -i -e s,libbgpdump\.so,libbgpdump.so.${LIBbgpdump_VERSION},g \
