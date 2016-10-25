@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libregexp_regcomp_c,v 1.1 2016/10/25 08:57:39 otto Exp $
+--- src/libregexp/regcomp.c.orig	Mon Oct 24 16:12:24 2016
++++ src/libregexp/regcomp.c	Mon Oct 24 16:10:28 2016
+@@ -238,7 +238,7 @@ optimize(Reprog *pp)
+ 	int size;
+ 	Reprog *npp;
+ 	Reclass *cl;
+-	int diff;
++	ptrdiff_t diff;
+ 
+ 	/*
+ 	 *  get rid of NOOP chains
