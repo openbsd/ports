@@ -1,0 +1,18 @@
+$OpenBSD: patch-t_dump_t,v 1.1 2016/10/25 22:39:25 bluhm Exp $
+
+Our Test::More in base Perl 5.20.3 is too old to pass arguments to subtest.
+Add a simple workaround.
+
+--- t/dump.t.orig	Fri Oct 14 22:45:39 2016
++++ t/dump.t	Wed Oct 26 00:29:56 2016
+@@ -8,6 +8,10 @@ use URI::file;
+ use File::Temp qw/tempdir/;
+ use File::Spec;
+ 
++sub subtest {
++	my ($name, $code, @args) = @_;
++	Test::More::subtest( $name => sub { $code->(@args) } );
++}
+ 
+ 
+ BEGIN {
