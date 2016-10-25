@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.12 2016/09/03 19:51:47 naddy Exp $
+$OpenBSD: patch-configure,v 1.13 2016/10/25 17:08:07 danj Exp $
 Remove requirement for curl.
 The snapshot isn't downloaded but copied by post-configure.
---- configure.orig	Tue Aug 16 03:54:35 2016
-+++ configure	Sat Sep  3 13:35:30 2016
-@@ -726,7 +726,7 @@ if [ -n "$CFG_ENABLE_ORBIT" ]; then putvar CFG_ENABLE_
+--- configure.orig	Wed Oct 19 23:51:02 2016
++++ configure	Sat Oct 22 15:28:15 2016
+@@ -737,7 +737,7 @@ if [ -n "$CFG_DISABLE_ORBIT" ]; then putvar CFG_DISABL
  
  step_msg "looking for build programs"
  
@@ -12,7 +12,7 @@ The snapshot isn't downloaded but copied by post-configure.
  if [ -z "$CFG_PYTHON_PROVIDED" ]; then
      probe_need CFG_PYTHON      python2.7 python2 python
  fi
-@@ -877,7 +877,7 @@ then
+@@ -899,7 +899,7 @@ then
      fi
  
      CMD="${CFG_LOCAL_RUST_ROOT}/bin/rustc${BIN_SUF}"
