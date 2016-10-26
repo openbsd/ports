@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2016/10/25 17:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.321 2016/10/26 00:41:43 jca Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -33,7 +33,6 @@
      SUBDIR += libzdb
      SUBDIR += liquibase
      SUBDIR += luadbi
-     SUBDIR += luadbi,lua52
      SUBDIR += lualdap
      SUBDIR += luasqlite3
      SUBDIR += luma
