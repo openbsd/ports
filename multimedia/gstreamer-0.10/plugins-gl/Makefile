@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/17 17:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/26 12:35:08 ajacoutot Exp $
 
 COMMENT=		OpenGL elements for GStreamer
 
 V=			0.10.3
 DISTNAME=		gst-plugins-gl-${V}
 PKGNAME=		gstreamer-plugins-gl-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gstgl-0.10           0.0      # 1.0
 

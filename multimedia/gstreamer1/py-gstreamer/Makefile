@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/10 10:14:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/26 12:35:08 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
 DISTNAME=		gst-python-${V}
 PKGNAME=		py-gstreamer1-${V}
+REVISION=		0
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 

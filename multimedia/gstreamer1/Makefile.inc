@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2016/08/21 16:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2016/10/26 12:35:08 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -59,7 +59,7 @@ CONFIGURE_STYLE ?=	autoconf
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS +=	--with-package-name="OpenBSD ${DISTNAME} package" \
-			--with-package-origin="http://www.openbsd.org/" \
+			--with-package-origin="https://www.openbsd.org/" \
 			--with-default-audiosink=sndiosink \
 			--with-default-audiosrc=sndiosrc \
 			--with-default-videosink=xvimagesink \
