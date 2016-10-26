@@ -1,12 +1,12 @@
-$OpenBSD: patch-applications_codec_convert_c,v 1.1 2013/12/11 23:13:06 sthen Exp $
---- applications/codec/convert.c.orig	Wed Dec 11 23:11:40 2013
-+++ applications/codec/convert.c	Wed Dec 11 23:11:59 2013
-@@ -179,7 +179,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
+$OpenBSD: patch-applications_codec_convert_c,v 1.2 2016/10/26 18:16:49 jca Exp $
+--- applications/codec/convert.c.orig	Fri Mar 28 09:20:25 2014
++++ applications/codec/convert.c	Tue Oct 18 02:55:44 2016
+@@ -184,7 +184,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
  	return 1;
  }
  
--#if WORDS_BIGENDIAN == 1
-+#if WORDS_BIGENDIAN == 1 && !defined(swap16)
+-#ifdef OPJ_BIG_ENDIAN
++#if defined(OPJ_BIG_ENDIAN) && !defined(swap16)
  
  static inline int16_t swap16(int16_t x)
  {

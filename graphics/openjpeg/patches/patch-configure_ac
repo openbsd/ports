@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/10/26 18:16:49 jca Exp $
+--- configure.ac.orig	Fri Mar 28 09:20:25 2014
++++ configure.ac	Tue Oct 18 02:53:55 2016
+@@ -483,7 +483,7 @@ if test "x${want_debug}" = "xyes" ; then
+    OPJ_COMPILER_FLAG([-g])
+    OPJ_COMPILER_FLAG([-O0])
+ else
+-   OPJ_COMPILER_FLAG([-O3])
++   :
+ fi
+ 
+ 

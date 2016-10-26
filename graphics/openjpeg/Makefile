@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/10/26 18:16:49 jca Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
-DISTNAME=		openjpeg-1.5.1
-REVISION=		1
+V=			1.5.2
+DISTNAME=		openjpeg-version.$V
+PKGNAME=		openjpeg-$V
+DISTFILES=		${DISTNAME}{version.$V}.tar.gz
 
-SHARED_LIBS +=	openjpeg             5.0      # 6.0
+SHARED_LIBS +=	openjpeg             5.0      # 6.2
 
 CATEGORIES=		graphics
 
@@ -18,10 +20,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c jpeg lcms2 m png pthread tiff z
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=openjpeg/}
+# not using GH_* because it strips 'v' from version
+MASTER_SITES =		https://github.com/uclouvain/openjpeg/archive/
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/png \
@@ -34,6 +42,10 @@ CONFIGURE_ENV += TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg' \
 
 pre-patch:
 	perl -i -pe 's/\r$$//; s/\t*$$//;' ${WRKSRC}/libopenjpeg/opj_malloc.h
+
+post-patch:
+	cd ${WRKSRC} && env AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
+	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" ./bootstrap.sh
 
 post-install:
 	cd ${PREFIX}/share/doc/ && mv openjpeg-* openjpeg
