@@ -1,0 +1,5 @@
+Skip test scripts if modules are not available.  The requested
+modules will be loaded, and optionally have their versions checked.
+If the module is missing, the test script will be skipped.  Modules
+that are found but fail to compile will exit with an error rather
+than skip.
