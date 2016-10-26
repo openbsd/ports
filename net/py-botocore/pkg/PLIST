@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/10/19 08:44:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2016/10/26 13:16:36 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -62,6 +62,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/paginators-1.json
@@ -375,6 +378,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/2016-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/2016-06-30/service-2.json
