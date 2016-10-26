@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_mus_aura_init_h,v 1.1 2016/10/26 06:22:08 robert Exp $
+--- ui/views/mus/aura_init.h.orig.port	Tue Oct 25 21:56:44 2016
++++ ui/views/mus/aura_init.h	Tue Oct 25 22:17:30 2016
+@@ -38,7 +38,7 @@ class VIEWS_MUS_EXPORT AuraInit {
+  private:
+   void InitializeResources(shell::Connector* connector);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   sk_sp<font_service::FontLoader> font_loader_;
+ #endif
+ 

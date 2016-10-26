@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.29 2016/09/01 16:28:11 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Thu Sep  1 00:03:27 2016
-+++ chrome/browser/about_flags.cc	Thu Sep  1 11:12:19 2016
-@@ -742,7 +742,7 @@ const FeatureEntry kFeatureEntries[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.30 2016/10/26 06:22:07 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Fri Oct 21 00:02:00 2016
++++ chrome/browser/about_flags.cc	Tue Oct 25 22:00:03 2016
+@@ -785,7 +785,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
                                 switches::kDisableSmoothScrolling)},
@@ -10,9 +10,18 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.29 2016/09/01 16:28:11 robert 
      {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
       // Uses the system preference on Mac (a different implementation).
-@@ -1788,7 +1788,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1336,7 +1336,7 @@ const FeatureEntry kFeatureEntries[] = {
+      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
+                                switches::kDisableTranslateNewUX)},
+ #endif
+-#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
+      IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
+      FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
+@@ -1823,7 +1823,7 @@ const FeatureEntry kFeatureEntries[] = {
       IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
-      SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
+      FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)

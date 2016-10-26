@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- net/BUILD.gn.orig.port	Thu Sep  1 00:03:33 2016
-+++ net/BUILD.gn	Thu Sep  1 11:12:23 2016
+$OpenBSD: patch-net_BUILD_gn,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- net/BUILD.gn.orig.port	Wed Oct 12 21:03:01 2016
++++ net/BUILD.gn	Wed Oct 19 12:56:06 2016
 @@ -104,7 +104,7 @@ if (use_glib && use_gconf && !is_chromeos) {
    net_configs += [ "//build/config/linux/gconf" ]
  }
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -280,6 +280,15 @@ component("net") {
+@@ -276,6 +276,15 @@ component("net") {
          "base/winsock_util.h",
          "proxy/proxy_resolver_winhttp.cc",
          "proxy/proxy_resolver_winhttp.h",

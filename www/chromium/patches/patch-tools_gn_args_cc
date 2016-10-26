@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_gn_args_cc,v 1.1 2016/08/17 11:06:50 robert Exp $
---- tools/gn/args.cc.orig.port	Sat Aug 13 16:02:20 2016
-+++ tools/gn/args.cc	Sat Aug 13 16:09:22 2016
-@@ -224,6 +224,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
-   os = "linux";
- #elif defined(OS_ANDROID)
+$OpenBSD: patch-tools_gn_args_cc,v 1.2 2016/10/26 06:22:08 robert Exp $
+--- tools/gn/args.cc.orig.port	Wed Oct 19 13:53:46 2016
++++ tools/gn/args.cc	Wed Oct 19 13:54:01 2016
+@@ -260,6 +260,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
    os = "android";
+ #elif defined(OS_NETBSD)
+   os = "netbsd";
 +#elif defined(OS_OPENBSD)
 +  os = "openbsd";
  #else

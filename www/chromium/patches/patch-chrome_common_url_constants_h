@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_common_url_constants_h,v 1.15 2016/09/01 16:28:11 robert Exp $
---- chrome/common/url_constants.h.orig.port	Thu Sep  1 00:03:28 2016
-+++ chrome/common/url_constants.h	Thu Sep  1 11:12:21 2016
+$OpenBSD: patch-chrome_common_url_constants_h,v 1.16 2016/10/26 06:22:08 robert Exp $
+--- chrome/common/url_constants.h.orig.port	Wed Oct 12 21:02:56 2016
++++ chrome/common/url_constants.h	Wed Oct 19 12:56:02 2016
 @@ -121,7 +121,7 @@ extern const char kChromeUIUserImageURL[];
  extern const char kChromeUIMetroFlowURL[];
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_url_constants_h,v 1.15 2016/09/01 16:28:11 robert 
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -303,7 +303,7 @@ extern const char kChromeOSAssetPath[];
+@@ -297,7 +297,7 @@ extern const char kChromeOSAssetPath[];
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

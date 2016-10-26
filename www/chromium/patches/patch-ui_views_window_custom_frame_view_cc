@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.4 2016/03/06 10:51:14 robert Exp $
---- ui/views/window/custom_frame_view.cc.orig.port	Wed Feb 24 00:02:06 2016
-+++ ui/views/window/custom_frame_view.cc	Thu Mar  3 09:43:26 2016
-@@ -288,7 +288,7 @@ int CustomFrameView::NonClientTopBorderHeight() const 
+$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.5 2016/10/26 06:22:08 robert Exp $
+--- ui/views/window/custom_frame_view.cc.orig.port	Wed Oct 12 21:03:17 2016
++++ ui/views/window/custom_frame_view.cc	Wed Oct 19 12:56:13 2016
+@@ -287,7 +287,7 @@ int CustomFrameView::NonClientTopBorderHeight() const 
  int CustomFrameView::CaptionButtonY() const {
    // Maximized buttons start at window top so that even if their images aren't
    // drawn flush with the screen edge, they still obey Fitts' Law.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.13 2016/09/01 16:28:11 robert Exp $
---- content/renderer/render_thread_impl.cc.orig.port	Thu Sep  1 00:03:31 2016
-+++ content/renderer/render_thread_impl.cc	Thu Sep  1 11:12:22 2016
-@@ -1452,7 +1452,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.14 2016/10/26 06:22:08 robert Exp $
+--- content/renderer/render_thread_impl.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ content/renderer/render_thread_impl.cc	Wed Oct 19 12:56:05 2016
+@@ -1455,7 +1455,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
    const bool enable_video_accelerator =
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
    const bool enable_gpu_memory_buffer_video_frames =

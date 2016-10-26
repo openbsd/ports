@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- media/audio/BUILD.gn.orig.port	Thu Sep  1 00:03:32 2016
-+++ media/audio/BUILD.gn	Thu Sep  1 11:12:23 2016
-@@ -204,8 +204,18 @@ source_set("audio") {
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- media/audio/BUILD.gn.orig.port	Fri Oct 21 00:02:05 2016
++++ media/audio/BUILD.gn	Fri Oct 21 16:41:46 2016
+@@ -206,8 +206,18 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  

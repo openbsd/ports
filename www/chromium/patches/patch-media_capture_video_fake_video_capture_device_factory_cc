@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.4 2016/04/16 19:08:46 robert Exp $
---- media/capture/video/fake_video_capture_device_factory.cc.orig.port	Fri Apr  8 18:02:09 2016
-+++ media/capture/video/fake_video_capture_device_factory.cc	Thu Apr 14 08:25:13 2016
-@@ -49,7 +49,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceNames(
+$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.5 2016/10/26 06:22:08 robert Exp $
+--- media/capture/video/fake_video_capture_device_factory.cc.orig.port	Wed Oct 19 13:48:04 2016
++++ media/capture/video/fake_video_capture_device_factory.cc	Wed Oct 19 13:48:10 2016
+@@ -49,7 +49,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceDescripto
    for (int n = 0; n < number_of_devices_; ++n) {
-     VideoCaptureDevice::Name name(base::StringPrintf("fake_device_%d", n),
-                                   base::StringPrintf("/dev/video%d", n)
+     device_descriptors->emplace_back(base::StringPrintf("fake_device_%d", n),
+                                      base::StringPrintf("/dev/video%d", n),
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-                                       ,
-                                   VideoCaptureDevice::Name::V4L2_SINGLE_PLANE
+                                      VideoCaptureApi::LINUX_V4L2_SINGLE_PLANE
  #elif defined(OS_MACOSX)
+                                      VideoCaptureApi::MACOSX_AVFOUNDATION

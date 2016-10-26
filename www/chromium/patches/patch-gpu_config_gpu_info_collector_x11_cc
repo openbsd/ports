@@ -1,14 +1,16 @@
-$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.3 2016/09/01 16:28:11 robert Exp $
---- gpu/config/gpu_info_collector_x11.cc.orig.port	Thu Sep  1 00:03:32 2016
-+++ gpu/config/gpu_info_collector_x11.cc	Thu Sep  1 14:34:35 2016
-@@ -8,8 +8,17 @@
+$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.4 2016/10/26 06:22:08 robert Exp $
+--- gpu/config/gpu_info_collector_x11.cc.orig.port	Fri Oct 21 00:02:04 2016
++++ gpu/config/gpu_info_collector_x11.cc	Sun Oct 23 11:19:20 2016
+@@ -8,8 +8,19 @@
  #include "gpu/config/gpu_info_collector_linux.h"
  #include "third_party/libXNVCtrl/NVCtrl.h"
  #include "third_party/libXNVCtrl/NVCtrlLib.h"
 +#include "ui/gl/gl_bindings.h"
 +#include "ui/gl/gl_context.h"
 +#include "ui/gl/gl_implementation.h"
++#include "ui/gl/gl_gl_api_implementation.h"
 +#include "ui/gl/gl_surface.h"
++#include "ui/gl/init/gl_initializer.h"
  #include "ui/gfx/x/x11_types.h"
  
 +typedef bool (*PFNGLXQUERYRENDERERINTEGERMESAPROC) (Display *dpy, int screen, int renderer, int attribute, unsigned int *value);
@@ -19,7 +21,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.3 2016/09/01 16:28:11 r
  namespace gpu {
  
  // Use NVCtrl extention to query NV driver version.
-@@ -39,5 +48,42 @@ std::string CollectDriverVersionNVidia() {
+@@ -39,5 +50,42 @@ std::string CollectDriverVersionNVidia() {
    }
    return std::string();
  }
@@ -34,7 +36,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.3 2016/09/01 16:28:11 r
 +  }
 +
 +  bool initialized =
-+      gl::InitializeStaticGLBindings(gl::kGLImplementationDesktopGL);
++      gl::init::InitializeStaticGLBindings(gl::kGLImplementationDesktopGL);
 +
 +  if (!initialized)
 +    return kCollectInfoNonFatalFailure;
@@ -56,7 +58,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.3 2016/09/01 16:28:11 r
 +  }
 +
 +  if (initialized)
-+    gl::ClearGLBindings();
++    gl::ClearGLBindingsGL();
 +
 +  return kCollectInfoSuccess;
 + }

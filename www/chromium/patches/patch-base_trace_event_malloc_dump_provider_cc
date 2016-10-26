@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.1 2016/08/17 11:06:50 robert Exp $
---- base/trace_event/malloc_dump_provider.cc.orig.port	Sat Aug 13 16:08:01 2016
-+++ base/trace_event/malloc_dump_provider.cc	Sat Aug 13 16:22:31 2016
+$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.2 2016/10/26 06:22:07 robert Exp $
+--- base/trace_event/malloc_dump_provider.cc.orig.port	Wed Oct 19 13:24:08 2016
++++ base/trace_event/malloc_dump_provider.cc	Wed Oct 19 13:25:19 2016
 @@ -19,6 +19,8 @@
  
  #if defined(OS_MACOSX)
@@ -10,10 +10,10 @@ $OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.1 2016/08/17 11:06:
  #else
  #include <malloc.h>
  #endif
-@@ -128,6 +130,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
-   // fixed quantum, so the excess region will not be resident.
-   // See crrev.com/1531463004 for detailed explanation.
-   resident_size = stats.max_size_in_use;
+@@ -224,6 +226,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+   resident_size = all_heap_info.committed_size;
+   allocated_objects_size = all_heap_info.allocated_size;
+   allocated_objects_count = all_heap_info.block_count;
 +#elif defined(OS_BSD)
 +  total_virtual_size = 0;
 +  allocated_objects_size = 0;

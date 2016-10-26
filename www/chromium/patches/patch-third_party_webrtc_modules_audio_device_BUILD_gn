@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- third_party/webrtc/modules/audio_device/BUILD.gn.orig.port	Thu Sep  1 00:05:08 2016
-+++ third_party/webrtc/modules/audio_device/BUILD.gn	Thu Sep  1 11:12:25 2016
-@@ -93,7 +93,7 @@ source_set("audio_device") {
-         "OpenSLES",
-       ]
-     }
--    if (is_linux) {
-+    if (is_linux && !is_openbsd) {
-       sources += [
-         "linux/alsasymboltable_linux.cc",
-         "linux/alsasymboltable_linux.h",
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig.port	Wed Oct 19 13:53:09 2016
++++ third_party/webrtc/modules/audio_device/BUILD.gn	Wed Oct 19 13:53:42 2016
+@@ -98,7 +98,7 @@ source_set("audio_device") {
+     if (rtc_use_dummy_audio_file_devices) {
+       defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
+     } else {
+-      if (is_linux) {
++      if (is_linux && !is_openbsd) {
+         sources += [
+           "linux/alsasymboltable_linux.cc",
+           "linux/alsasymboltable_linux.h",

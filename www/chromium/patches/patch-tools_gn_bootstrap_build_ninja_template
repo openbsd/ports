@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_gn_bootstrap_build_ninja_template,v 1.1 2016/08/17 11:06:50 robert Exp $
---- tools/gn/bootstrap/build.ninja.template.orig.port	Sat Aug 13 16:23:47 2016
-+++ tools/gn/bootstrap/build.ninja.template	Sat Aug 13 16:23:51 2016
-@@ -17,7 +17,7 @@ rule cxx
+$OpenBSD: patch-tools_gn_bootstrap_build_ninja_template,v 1.2 2016/10/26 06:22:08 robert Exp $
+--- tools/gn/bootstrap/build.ninja.template.orig.port	Wed Oct 12 21:03:16 2016
++++ tools/gn/bootstrap/build.ninja.template	Wed Oct 19 12:56:11 2016
+@@ -11,7 +11,7 @@ rule cxx
    deps = gcc
  
  rule alink_thin

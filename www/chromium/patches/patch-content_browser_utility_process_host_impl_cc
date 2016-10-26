@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16:28:11 robert Exp $
---- content/browser/utility_process_host_impl.cc.orig.port	Thu Sep  1 00:03:31 2016
-+++ content/browser/utility_process_host_impl.cc	Thu Sep  1 11:12:22 2016
-@@ -46,7 +46,7 @@
- #include "services/shell/public/cpp/interface_registry.h"
+$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.5 2016/10/26 06:22:08 robert Exp $
+--- content/browser/utility_process_host_impl.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ content/browser/utility_process_host_impl.cc	Wed Oct 19 12:56:04 2016
+@@ -44,7 +44,7 @@
+ #include "services/shell/public/cpp/interface_provider.h"
  #include "ui/base/ui_base_switches.h"
  
 -#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16
  #include "content/public/browser/zygote_handle_linux.h"
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -57,7 +57,7 @@
+@@ -55,7 +55,7 @@
  
  namespace content {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16
  namespace {
  ZygoteHandle g_utility_zygote;
  }  // namespace
-@@ -77,7 +77,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -75,7 +75,7 @@ class UtilitySandboxedProcessLauncherDelegate
          launch_elevated_(launch_elevated)
  #elif defined(OS_POSIX)
          env_(env),
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16
          no_sandbox_(no_sandbox),
  #endif  // !defined(OS_MACOSX)  && !defined(OS_ANDROID)
          ipc_fd_(host->TakeClientFileDescriptor())
-@@ -109,7 +109,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -107,7 +107,7 @@ class UtilitySandboxedProcessLauncherDelegate
  
  #elif defined(OS_POSIX)
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16
    ZygoteHandle* GetZygote() override {
      if (no_sandbox_ || !exposed_dir_.empty())
        return nullptr;
-@@ -131,7 +131,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -129,7 +129,7 @@ class UtilitySandboxedProcessLauncherDelegate
    bool launch_elevated_;
  #elif defined(OS_POSIX)
    base::EnvironmentMap env_;
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.4 2016/09/01 16
    bool no_sandbox_;
  #endif  // !defined(OS_MACOSX) && !defined(OS_ANDROID)
    base::ScopedFD ipc_fd_;
-@@ -256,7 +256,7 @@ void UtilityProcessHostImpl::SetName(const base::strin
+@@ -238,7 +238,7 @@ void UtilityProcessHostImpl::SetName(const base::strin
    name_ = name;
  }
  

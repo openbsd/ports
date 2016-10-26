@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/01 16:28:11 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Sep  1 11:18:33 2016
-+++ chrome/browser/chrome_content_browser_client.cc	Thu Sep  1 11:20:50 2016
-@@ -208,7 +208,7 @@
- #include "chrome/browser/chromeos/chrome_interface_factory.h"
- #include "chrome/browser/ui/ash/ash_util.h"
- #endif  // MOJO_SHELL_CLIENT
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.31 2016/10/26 06:22:08 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Oct 19 13:31:02 2016
++++ chrome/browser/chrome_content_browser_client.cc	Wed Oct 19 13:32:41 2016
+@@ -211,7 +211,7 @@
+ #include "chrome/browser/ui/browser_dialogs.h"
+ #include "chromeos/chromeos_switches.h"
+ #include "components/user_manager/user_manager.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/chrome_browser_main_android.h"
-@@ -220,7 +220,7 @@
+@@ -223,7 +223,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
  #include "base/debug/leak_annotations.h"
  #include "components/crash/content/app/breakpad_linux.h"
  #include "components/crash/content/browser/crash_handler_host_linux.h"
-@@ -242,7 +242,7 @@
+@@ -245,7 +245,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -522,7 +522,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -534,7 +534,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -819,7 +819,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -840,7 +840,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -835,7 +835,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -856,7 +856,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -55,7 +55,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1441,7 +1441,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1451,7 +1451,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -64,7 +64,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.30 2016/09/0
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2650,7 +2650,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+@@ -2732,7 +2732,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
    PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
    DCHECK(!app_data_path.empty());
  }

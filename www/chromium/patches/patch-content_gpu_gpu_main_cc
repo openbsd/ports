@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
---- content/gpu/gpu_main.cc.orig.port	Thu Sep  1 00:03:31 2016
-+++ content/gpu/gpu_main.cc	Thu Sep  1 11:12:22 2016
-@@ -75,6 +75,10 @@
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.17 2016/10/26 06:22:08 robert Exp $
+--- content/gpu/gpu_main.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ content/gpu/gpu_main.cc	Wed Oct 19 12:56:04 2016
+@@ -77,6 +77,10 @@
  #include "content/common/sandbox_mac.h"
  #endif
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
  #if defined(OS_CHROMEOS) && defined(ARCH_CPU_X86_FAMILY)
  #include "media/gpu/vaapi_wrapper.h"
  #endif
-@@ -106,8 +110,8 @@ bool WarmUpSandbox(const base::CommandLine& command_li
+@@ -108,8 +112,8 @@ bool WarmUpSandbox(const base::CommandLine& command_li
  bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info);
  #endif
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
  bool CanAccessNvidiaDeviceFile();
  #endif
  bool StartSandboxLinux(const gpu::GPUInfo&, GpuWatchdogThread*, bool);
-@@ -193,13 +197,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -195,13 +199,13 @@ int GpuMain(const MainFunctionParams& parameters) {
    // create child windows to render to.
    base::MessagePumpForGpu::InitFactory();
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_UI);
@@ -39,7 +39,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_DEFAULT);
  #elif defined(OS_MACOSX)
    // This is necessary for CoreAnimation layers hosted in the GPU process to be
-@@ -264,7 +268,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -266,7 +270,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
    // Warm up resources that don't need access to GPUInfo.
    if (WarmUpSandbox(command_line)) {
@@ -48,7 +48,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
      bool initialized_sandbox = false;
      bool initialized_gl_context = false;
      bool should_initialize_gl_context = false;
-@@ -327,9 +331,9 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -329,9 +333,9 @@ int GpuMain(const MainFunctionParams& parameters) {
              gpu_info, const_cast<base::CommandLine*>(&command_line));
        }
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
        if (gpu_info.gpu.vendor_id == 0x10de &&  // NVIDIA
            gpu_info.driver_vendor == "NVIDIA" &&
            !CanAccessNvidiaDeviceFile())
-@@ -366,7 +370,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -368,7 +372,7 @@ int GpuMain(const MainFunctionParams& parameters) {
        watchdog_thread = NULL;
      }
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
      should_initialize_gl_context = !initialized_gl_context &&
                                     !dead_on_arrival;
  
-@@ -374,6 +378,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -376,6 +380,7 @@ int GpuMain(const MainFunctionParams& parameters) {
        gpu_info.sandboxed = StartSandboxLinux(gpu_info, watchdog_thread.get(),
                                               should_initialize_gl_context);
      }
@@ -77,7 +77,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
  #elif defined(OS_WIN)
      gpu_info.sandboxed = StartSandboxWindows(parameters.sandbox_info);
  #elif defined(OS_MACOSX)
-@@ -517,8 +522,8 @@ bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
+@@ -520,8 +525,8 @@ bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
  }
  #endif
  
@@ -88,7 +88,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::ThreadRestrictions::AssertIOAllowed();
-@@ -576,6 +581,7 @@ bool StartSandboxLinux(const gpu::GPUInfo& gpu_info,
+@@ -579,6 +584,7 @@ bool StartSandboxLinux(const gpu::GPUInfo& gpu_info,
  
    WarmUpSandboxNvidia(gpu_info, should_initialize_gl_context);
  
@@ -96,7 +96,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.16 2016/09/01 16:28:11 robert Exp $
    if (watchdog_thread) {
      // LinuxSandbox needs to be able to ensure that the thread
      // has really been stopped.
-@@ -595,11 +601,15 @@ bool StartSandboxLinux(const gpu::GPUInfo& gpu_info,
+@@ -598,11 +604,15 @@ bool StartSandboxLinux(const gpu::GPUInfo& gpu_info,
    // LinuxSandbox::InitializeSandbox() must always be called
    // with only one thread.
    res = LinuxSandbox::InitializeSandbox();

@@ -1,0 +1,30 @@
+$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- ui/views/mus/aura_init.cc.orig.port	Tue Oct 25 21:56:44 2016
++++ ui/views/mus/aura_init.cc	Tue Oct 25 22:15:07 2016
+@@ -19,7 +19,7 @@
+ #include "ui/base/ui_base_paths.h"
+ #include "ui/views/views_delegate.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/font_service/public/cpp/font_loader.h"
+ #endif
+ 
+@@ -63,7 +63,7 @@ AuraInit::AuraInit(shell::Connector* connector,
+ }
+ 
+ AuraInit::~AuraInit() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (font_loader_.get()) {
+     SkFontConfigInterface::SetGlobal(nullptr);
+     // FontLoader is ref counted. We need to explicitly shutdown the background
+@@ -91,7 +91,7 @@ void AuraInit::InitializeResources(shell::Connector* c
+       std::move(pak_file_2), ui::SCALE_FACTOR_100P);
+ 
+ // Initialize the skia font code to go ask fontconfig underneath.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   font_loader_ = sk_make_sp<font_service::FontLoader>(connector);
+   SkFontConfigInterface::SetGlobal(font_loader_.get());
+ #endif

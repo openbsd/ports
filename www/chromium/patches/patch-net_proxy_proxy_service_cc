@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.12 2016/07/31 13:11:44 robert Exp $
---- net/proxy/proxy_service.cc.orig.port	Thu Jul 21 10:40:25 2016
-+++ net/proxy/proxy_service.cc	Thu Jul 21 10:40:41 2016
-@@ -48,7 +48,7 @@
+$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.13 2016/10/26 06:22:08 robert Exp $
+--- net/proxy/proxy_service.cc.orig.port	Wed Oct 12 21:03:01 2016
++++ net/proxy/proxy_service.cc	Wed Oct 19 12:56:07 2016
+@@ -47,7 +47,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
  #include "net/proxy/proxy_resolver_mac.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_proxy_proxy_service_cc,v 1.12 2016/07/31 13:11:44 robert Exp
  #include "net/proxy/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy/proxy_config_service_android.h"
-@@ -1542,7 +1542,7 @@ ProxyService::CreateSystemProxyConfigService(
+@@ -1531,7 +1531,7 @@ ProxyService::CreateSystemProxyConfigService(
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return base::WrapUnique(new UnsetProxyConfigService);

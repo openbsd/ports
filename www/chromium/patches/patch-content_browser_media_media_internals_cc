@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.3 2016/09/01 16:28:11 robert Exp $
---- content/browser/media/media_internals.cc.orig.port	Thu Sep  1 00:03:31 2016
-+++ content/browser/media/media_internals.cc	Thu Sep  1 11:12:22 2016
-@@ -620,7 +620,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
-         "name", video_capture_device_info.name.GetNameAndModel());
+$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.4 2016/10/26 06:22:08 robert Exp $
+--- content/browser/media/media_internals.cc.orig.port	Wed Oct 19 13:46:27 2016
++++ content/browser/media/media_internals.cc	Wed Oct 19 13:46:43 2016
+@@ -724,7 +724,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
+     device_dict->SetString("name", descriptor.GetNameAndModel());
      device_dict->Set("formats", format_list);
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_ANDROID)
 +    defined(OS_ANDROID) || defined(OS_BSD)
-     device_dict->SetString(
-         "captureApi", video_capture_device_info.name.GetCaptureApiTypeString());
+     device_dict->SetString("captureApi", descriptor.GetCaptureApiTypeString());
  #endif
+     video_capture_capabilities_cached_data_.Append(std::move(device_dict));

@@ -1,7 +1,7 @@
-$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- components/crash/content/app/BUILD.gn.orig.port	Thu Sep  1 00:03:30 2016
-+++ components/crash/content/app/BUILD.gn	Thu Sep  1 11:12:22 2016
-@@ -102,7 +102,7 @@ source_set("app_non_mac_win") {
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- components/crash/content/app/BUILD.gn.orig.port	Wed Oct 12 21:02:57 2016
++++ components/crash/content/app/BUILD.gn	Wed Oct 19 12:56:02 2016
+@@ -116,7 +116,7 @@ source_set("app_non_mac_win") {
      libs = [ "log" ]
    }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.2 2016/09/01 16:28:11 
      # Want these files on both Linux and Android.
      set_sources_assignment_filter([])
      sources += [
-@@ -134,7 +134,7 @@ source_set("app_non_mac_win") {
+@@ -148,7 +148,7 @@ source_set("app_non_mac_win") {
  
        #'../breakpad/breakpad.gyp:breakpad_sender',  TODO(GYP)
      ]

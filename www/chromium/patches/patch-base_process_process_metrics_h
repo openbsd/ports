@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.4 2016/05/27 06:28:20 robert Exp $
---- base/process/process_metrics.h.orig.port	Wed May 25 04:54:06 2016
-+++ base/process/process_metrics.h	Thu May 26 08:09:40 2016
-@@ -253,7 +253,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+$OpenBSD: patch-base_process_process_metrics_h,v 1.5 2016/10/26 06:22:07 robert Exp $
+--- base/process/process_metrics.h.orig.port	Wed Oct 12 21:02:53 2016
++++ base/process/process_metrics.h	Wed Oct 19 12:55:56 2016
+@@ -254,7 +254,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

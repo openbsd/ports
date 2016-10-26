@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.1 2016/10/26 06:22:08 robert Exp $
+--- content/zygote/zygote_main_linux.cc.orig.port	Sat Oct 22 16:24:09 2016
++++ content/zygote/zygote_main_linux.cc	Sat Oct 22 16:24:23 2016
+@@ -134,7 +134,7 @@ static void ProxyLocaltimeCallToBrowser(time_t input, 
+   } else {
+     base::AutoLock lock(g_timezones_lock.Get());
+     auto ret_pair = g_timezones.Get().insert(timezone);
+-    output->tm_zone = ret_pair.first->c_str();
++//XXX    output->tm_zone = ret_pair.first->c_str();
+   }
+ }
+ 

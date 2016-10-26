@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- third_party/libusb/BUILD.gn.orig.port	Sun Aug 14 19:27:06 2016
-+++ third_party/libusb/BUILD.gn	Sun Aug 14 19:28:15 2016
-@@ -88,7 +88,7 @@ static_library("libusb") {
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.2 2016/10/26 06:22:08 robert Exp $
+--- third_party/libusb/BUILD.gn.orig.port	Wed Oct 12 21:03:15 2016
++++ third_party/libusb/BUILD.gn	Wed Oct 19 12:56:09 2016
+@@ -93,7 +93,7 @@ static_library("libusb") {
      ]
    }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
-@@ -99,6 +99,16 @@ static_library("libusb") {
+@@ -104,6 +104,16 @@ static_library("libusb") {
      ]
    }
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp
    if (is_chromeos) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
-@@ -112,7 +122,7 @@ static_library("libusb") {
+@@ -117,7 +127,7 @@ static_library("libusb") {
      deps += [ "//build/linux/libudev" ]
    }
  

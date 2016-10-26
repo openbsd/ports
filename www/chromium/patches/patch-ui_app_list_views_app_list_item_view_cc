@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_app_list_views_app_list_item_view_cc,v 1.10 2016/03/06 10:51:14 robert Exp $
---- ui/app_list/views/app_list_item_view.cc.orig.port	Wed Feb 24 00:02:06 2016
-+++ ui/app_list/views/app_list_item_view.cc	Thu Mar  3 09:43:26 2016
-@@ -62,7 +62,7 @@ gfx::FontList GetFontList() {
+$OpenBSD: patch-ui_app_list_views_app_list_item_view_cc,v 1.11 2016/10/26 06:22:08 robert Exp $
+--- ui/app_list/views/app_list_item_view.cc.orig.port	Wed Oct 12 21:03:17 2016
++++ ui/app_list/views/app_list_item_view.cc	Wed Oct 19 12:56:11 2016
+@@ -55,7 +55,7 @@ gfx::FontList GetFontList() {
    const gfx::FontList& font_list = rb.GetFontList(kItemTextFontStyle);
  // The font is different on each platform. The font size is adjusted on some
  // platforms to keep a consistent look.

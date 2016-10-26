@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- build/config/compiler/BUILD.gn.orig.port	Thu Sep  1 11:16:53 2016
-+++ build/config/compiler/BUILD.gn	Thu Sep  1 11:46:17 2016
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.3 2016/10/26 06:22:07 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Wed Oct 19 13:29:47 2016
++++ build/config/compiler/BUILD.gn	Wed Oct 19 13:30:51 2016
 @@ -38,7 +38,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
@@ -10,16 +10,16 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert 
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
  
-@@ -210,7 +210,7 @@ config("compiler") {
+@@ -201,7 +201,7 @@ config("compiler") {
+ 
      # Linker warnings.
-     if ( fatal_linker_warnings &&
-         !(is_chromeos && current_cpu == "arm") &&
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
 -        !(is_android && use_order_profiling) && !is_mac && !is_ios) {
 +        !(is_android && use_order_profiling) && !is_mac && !is_ios && !is_openbsd) {
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -292,7 +292,7 @@ config("compiler") {
+@@ -283,7 +283,7 @@ config("compiler") {
        "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert 
        ldflags += [ "-Wl,-z,defs" ]
      }
    }
-@@ -1008,14 +1008,14 @@ config("default_warnings") {
+@@ -1014,14 +1014,14 @@ config("default_warnings") {
      # Chrome's hermetic Clang compiler, NaCl's Clang compiler and Xcode's Clang
      # compiler will almost always have different versions. Certain flags may not
      # be recognized by one version or the other.

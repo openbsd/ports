@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.8 2016/07/31 13:11:44 robert Exp $
---- content/browser/gpu/gpu_internals_ui.cc.orig.port	Thu Jul 21 10:36:42 2016
-+++ content/browser/gpu/gpu_internals_ui.cc	Thu Jul 21 10:37:16 2016
-@@ -39,7 +39,7 @@
- #include "third_party/angle/src/common/version.h"
+$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.9 2016/10/26 06:22:08 robert Exp $
+--- content/browser/gpu/gpu_internals_ui.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ content/browser/gpu/gpu_internals_ui.cc	Wed Oct 19 12:56:04 2016
+@@ -42,7 +42,7 @@
+ #include "third_party/skia/include/core/SkMilestone.h"
  #include "ui/gl/gpu_switching_manager.h"
  
 -#if defined(OS_LINUX) && defined(USE_X11)
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.8 2016/07/31 13:11:4
  #include <X11/Xlib.h>
  #endif
  #if defined(OS_WIN)
-@@ -47,7 +47,7 @@
+@@ -50,7 +50,7 @@
  #include "ui/gfx/win/physical_size.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.8 2016/07/31 13:11:4
  #include "ui/base/x/x11_util.h"       // nogncheck
  #include "ui/gfx/x/x11_atom_cache.h"  // nogncheck
  #endif
-@@ -200,7 +200,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
+@@ -204,7 +204,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
                                               gpu_info.gl_ws_version));
    basic_info->Append(NewDescriptionValuePair("Window system binding extensions",
                                               gpu_info.gl_ws_extensions));

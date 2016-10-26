@@ -1,7 +1,7 @@
-$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.18 2016/09/01 16:28:11 robert Exp $
---- components/policy/resources/policy_templates.json.orig.port	Thu Sep  1 00:03:30 2016
-+++ components/policy/resources/policy_templates.json	Thu Sep  1 11:12:22 2016
-@@ -1924,7 +1924,7 @@
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.19 2016/10/26 06:22:08 robert Exp $
+--- components/policy/resources/policy_templates.json.orig.port	Wed Oct 12 21:02:58 2016
++++ components/policy/resources/policy_templates.json	Wed Oct 19 12:56:03 2016
+@@ -1930,7 +1930,7 @@
            'name': 'GSSAPILibraryName',
            'type': 'string',
            'schema': { 'type': 'string' },
@@ -10,7 +10,7 @@ $OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.18 2016/09
            'features': {
              'dynamic_refresh': False,
              'per_profile': False,
-@@ -4591,7 +4591,7 @@
+@@ -4601,7 +4601,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -19,7 +19,7 @@ $OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.18 2016/09
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5420,7 +5420,7 @@
+@@ -5449,7 +5449,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },

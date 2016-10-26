@@ -1,6 +1,6 @@
-$OpenBSD: patch-sync_util_get_session_name_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- sync/util/get_session_name_linux.cc.orig.port	Sun Oct 20 19:08:41 2013
-+++ sync/util/get_session_name_linux.cc	Sun Oct 20 19:08:51 2013
+$OpenBSD: patch-components_sync_base_get_session_name_linux_cc,v 1.1 2016/10/26 06:22:08 robert Exp $
+--- components/sync/base/get_session_name_linux.cc.orig.port	Wed Oct 19 13:52:29 2016
++++ components/sync/base/get_session_name_linux.cc	Wed Oct 19 13:52:42 2016
 @@ -13,8 +13,9 @@ namespace syncer {
  namespace internal {
  

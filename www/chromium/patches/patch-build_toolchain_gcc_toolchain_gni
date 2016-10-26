@@ -1,7 +1,19 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.2 2016/09/01 16:28:11 robert Exp $
---- build/toolchain/gcc_toolchain.gni.orig.port	Thu Sep  1 11:17:44 2016
-+++ build/toolchain/gcc_toolchain.gni	Thu Sep  1 11:18:02 2016
-@@ -257,7 +257,7 @@ template("gcc_toolchain") {
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.3 2016/10/26 06:22:07 robert Exp $
+--- build/toolchain/gcc_toolchain.gni.orig.port	Fri Oct 21 00:01:59 2016
++++ build/toolchain/gcc_toolchain.gni	Tue Oct 25 08:33:20 2016
+@@ -10,6 +10,11 @@ import("//build/toolchain/cc_wrapper.gni")
+ import("//build/toolchain/goma.gni")
+ import("//build/toolchain/toolchain.gni")
+ 
++declare_args() {
++  extra_cppflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -258,7 +263,7 @@ template("gcc_toolchain") {
        # POSIX-like toolchains such as NaCl on Windows).
        ar_wrapper =
            rebase_path("//build/toolchain/gcc_ar_wrapper.py", root_build_dir)
@@ -10,7 +22,7 @@ $OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.2 2016/09/01 16:28:11 robe
        description = "AR {{output}}"
        rspfile_content = "{{inputs}}"
        outputs = [
-@@ -511,7 +511,7 @@ template("clang_toolchain") {
+@@ -453,7 +458,7 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.23 2016/09/01 16:28:11 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Thu Sep  1 00:03:28 2016
-+++ chrome/common/chrome_switches.cc	Thu Sep  1 11:12:21 2016
-@@ -1299,7 +1299,7 @@ const char kTabManagementExperimentTypeElderberry[] =
-     "tab-management-experiment-type-elderberry";
- #endif  // defined(OS_ANDROID)
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.24 2016/10/26 06:22:08 robert Exp $
+--- chrome/common/chrome_switches.cc.orig.port	Wed Oct 19 13:42:00 2016
++++ chrome/common/chrome_switches.cc	Wed Oct 19 13:42:17 2016
+@@ -1277,7 +1277,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
+ const char kEnableWaylandServer[] = "enable-wayland-server";
+ #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
- extern const char kEnableInputImeAPI[] = "enable-input-ime-api";
  extern const char kDisableInputImeAPI[] = "disable-input-ime-api";
+ extern const char kEnableInputImeAPI[] = "enable-input-ime-api";
  #endif

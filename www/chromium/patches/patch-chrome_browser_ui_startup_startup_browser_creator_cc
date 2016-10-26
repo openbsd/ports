@@ -1,14 +1,42 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.18 2016/09/01 16:28:11 robert Exp $
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Thu Sep  1 00:03:28 2016
-+++ chrome/browser/ui/startup/startup_browser_creator.cc	Thu Sep  1 11:12:21 2016
-@@ -624,8 +624,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.19 2016/10/26 06:22:08 robert Exp $
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig.port	Fri Oct 21 00:02:01 2016
++++ chrome/browser/ui/startup/startup_browser_creator.cc	Tue Oct 25 22:04:18 2016
+@@ -90,7 +90,7 @@
+ #include "components/user_manager/user_manager.h"
+ #endif
+ 
+-#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX)
++#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) || defined(OS_BSD))
+ #include "ui/events/devices/x11/touch_factory_x11.h"
+ #endif
+ 
+@@ -102,7 +102,7 @@
+ #include "chrome/browser/metrics/jumplist_metrics_win.h"
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #include "ui/views/widget/desktop_aura/x11_desktop_handler.h"
+ #endif
+ 
+@@ -627,9 +627,11 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  
 +#if 0 /* XXX */
  #if defined(TOOLKIT_VIEWS) && defined(USE_X11)
    ui::TouchFactory::SetTouchDeviceListFromCommandLine();
-+#endif
  #endif
++#endif
  
  #if defined(OS_MACOSX)
+   if (web_app::MaybeRebuildShortcut(command_line))
+@@ -703,7 +705,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+   }
+ #endif  // defined(OS_WIN)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // Our request to Activate may be discarded on some linux window
+   // managers unless given a recent timestamp, so update the timestamp if
+   // we were given one.

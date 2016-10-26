@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_media_video_capture_device_client_cc,v 1.3 2016/09/01 16:28:11 robert Exp $
---- content/browser/renderer_host/media/video_capture_device_client.cc.orig.port	Thu Sep  1 00:03:31 2016
-+++ content/browser/renderer_host/media/video_capture_device_client.cc	Thu Sep  1 11:12:22 2016
-@@ -182,7 +182,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
+$OpenBSD: patch-content_browser_renderer_host_media_video_capture_device_client_cc,v 1.4 2016/10/26 06:22:08 robert Exp $
+--- content/browser/renderer_host/media/video_capture_device_client.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ content/browser/renderer_host/media/video_capture_device_client.cc	Wed Oct 19 12:56:04 2016
+@@ -186,7 +186,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
        // see http://linuxtv.org/downloads/v4l-dvb-apis/packed-rgb.html.
        // Windows RGB24 defines blue at lowest byte,
        // see https://msdn.microsoft.com/en-us/library/windows/desktop/dd407253

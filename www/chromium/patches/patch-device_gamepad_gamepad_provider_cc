@@ -1,8 +1,8 @@
-$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.1 2016/09/01 16:28:11 robert Exp $
---- device/gamepad/gamepad_provider.cc.orig.port	Thu Sep  1 11:26:14 2016
-+++ device/gamepad/gamepad_provider.cc	Thu Sep  1 11:26:21 2016
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.2 2016/10/26 06:22:08 robert Exp $
+--- device/gamepad/gamepad_provider.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ device/gamepad/gamepad_provider.cc	Wed Oct 19 12:56:05 2016
 @@ -136,7 +136,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
-   pad_states_.reset(new PadState[WebGamepads::itemsLengthCap]);
+     monitor->AddDevicesChangedObserver(this);
  
    polling_thread_.reset(new base::Thread("Gamepad polling thread"));
 -#if defined(OS_LINUX)

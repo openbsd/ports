@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- build/toolchain/openbsd/BUILD.gn.orig.port	Sun Aug 14 16:19:55 2016
-+++ build/toolchain/openbsd/BUILD.gn	Sun Aug 14 16:20:34 2016
-@@ -0,0 +1,44 @@
+$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.2 2016/10/26 06:22:07 robert Exp $
+--- build/toolchain/openbsd/BUILD.gn.orig.port	Wed Oct 19 13:16:59 2016
++++ build/toolchain/openbsd/BUILD.gn	Wed Oct 19 14:23:37 2016
+@@ -0,0 +1,52 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be
 +# found in the LICENSE file.
@@ -10,8 +10,10 @@ $OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.1 2016/08/17 11:06:50 rober
 +import("//build/toolchain/gcc_toolchain.gni")
 +
 +clang_toolchain("clang_x86") {
-+  toolchain_cpu = "x86"
-+  toolchain_os = "openbsd"
++  toolchain_args = {
++    current_cpu = "x86"
++    current_os = "openbsd"
++  }
 +}
 +
 +gcc_toolchain("x86") {
@@ -23,14 +25,18 @@ $OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.1 2016/08/17 11:06:50 rober
 +  ar = "ar"
 +  ld = cxx
 +
-+  toolchain_cpu = "x86"
-+  toolchain_os = "openbsd"
-+  is_clang = false
++  toolchain_args = {
++    current_cpu = "x86"
++    current_os = "openbsd"
++    is_clang = false
++  }
 +}
 +
 +clang_toolchain("clang_x64") {
-+  toolchain_cpu = "x64"
-+  toolchain_os = "openbsd"
++  toolchain_args = {
++    current_cpu = "x64"
++    current_os = "openbsd"
++  }
 +}
 +
 +gcc_toolchain("x64") {
@@ -42,7 +48,9 @@ $OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.1 2016/08/17 11:06:50 rober
 +  ar = "ar"
 +  ld = cxx
 +
-+  toolchain_cpu = "x64"
-+  toolchain_os = "openbsd"
-+  is_clang = false
++  toolchain_args = {
++    current_cpu = "x64"
++    current_os = "openbsd"
++    is_clang = false
++  }
 +}

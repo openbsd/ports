@@ -1,7 +1,49 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.2 2016/09/01 16:28:11 robert Exp $
---- third_party/angle/BUILD.gn.orig.port	Thu Sep  1 11:36:27 2016
-+++ third_party/angle/BUILD.gn	Thu Sep  1 11:36:42 2016
-@@ -472,10 +472,6 @@ static_library("angle_util") {
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- third_party/angle/BUILD.gn.orig.port	Wed Oct 12 21:05:04 2016
++++ third_party/angle/BUILD.gn	Thu Oct 20 13:25:59 2016
+@@ -150,6 +150,8 @@ static_library("angle_common") {
+     ":angle_release_asserts_config",
+     ":angle_common_config",
+   ]
++
++  cflags = [ "-I/usr/XXXX" ]
+ }
+ 
+ config("angle_image_util_config") {
+@@ -214,6 +216,7 @@ static_library("translator_lib") {
+     # For some reason this warning doesn't get triggered in Chromium
+     cflags = [ "/wd4718" ]
+   }
++  cflags = [ "-I/usr/XXXX" ]
+ }
+ 
+ static_library("translator_static") {
+@@ -304,6 +307,7 @@ config("libANGLE_config") {
+   if (is_win) {
+     cflags += [ "/wd4530" ]  # C++ exception handler used, but unwind semantics are not enabled.
+   }
++  cflags += [ "-I/usr/XXXX" ]
+ }
+ 
+ static_library("libANGLE") {
+@@ -408,6 +412,8 @@ static_library("libANGLE") {
+       ":copy_compiler_dll",
+     ]
+   }
++
++  cflags = [ "-I/usr/XXXX" ]
+ }
+ 
+ config("shared_library_public_config") {
+@@ -451,6 +457,7 @@ shared_library("libGLESv2") {
+     ":includes",
+     ":libANGLE",
+   ]
++  ldflags = [ "-L/usr/X11R6/lib" ]
+ }
+ 
+ shared_library("libEGL") {
+@@ -506,10 +513,6 @@ static_library("angle_util") {
  
    if (is_linux) {
      sources += rebase_path(util_gypi.util_linux_sources, ".", "util")

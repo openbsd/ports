@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.2 2016/09/01 16:28:11 robert Exp $
---- tools/gn/bootstrap/bootstrap.py.orig.port	Thu Sep  1 00:03:52 2016
-+++ tools/gn/bootstrap/bootstrap.py	Thu Sep  1 11:12:25 2016
-@@ -31,7 +31,8 @@ SRC_ROOT = os.path.dirname(os.path.dirname(GN_ROOT))
- 
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.3 2016/10/26 06:22:08 robert Exp $
+--- tools/gn/bootstrap/bootstrap.py.orig.port	Fri Oct 21 00:02:19 2016
++++ tools/gn/bootstrap/bootstrap.py	Tue Oct 25 09:40:32 2016
+@@ -32,7 +32,8 @@ SRC_ROOT = os.path.dirname(os.path.dirname(GN_ROOT))
+ is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
  is_mac = sys.platform.startswith('darwin')
 -is_posix = is_linux or is_mac
@@ -11,7 +11,7 @@ $OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.2 2016/09/01 16:28:11 robert
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -385,6 +386,35 @@ def write_ninja(path, root_gen_dir, options):
+@@ -561,6 +562,35 @@ def write_gn_ninja(path, root_gen_dir, options):
          'include_dirs': [],
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }
@@ -45,5 +45,5 @@ $OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.2 2016/09/01 16:28:11 robert
 +        'base/third_party/libevent/kqueue.c',
 +    ])
  
- 
    if is_linux:
+     libs.extend(['-lrt', '-latomic'])
