@@ -1,0 +1,163 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/26 08:36:39 bluhm Exp $
+bin/use-devel-assertos
+${P5SITE}/Devel/
+${P5SITE}/Devel/AssertOS/
+${P5SITE}/Devel/AssertOS.pm
+${P5SITE}/Devel/AssertOS/AIX.pm
+${P5SITE}/Devel/AssertOS/Amiga.pm
+${P5SITE}/Devel/AssertOS/Android.pm
+${P5SITE}/Devel/AssertOS/Apple.pm
+${P5SITE}/Devel/AssertOS/BSDOS.pm
+${P5SITE}/Devel/AssertOS/BeOS.pm
+${P5SITE}/Devel/AssertOS/Bitrig.pm
+${P5SITE}/Devel/AssertOS/Cygwin.pm
+${P5SITE}/Devel/AssertOS/DEC.pm
+${P5SITE}/Devel/AssertOS/DGUX.pm
+${P5SITE}/Devel/AssertOS/DragonflyBSD.pm
+${P5SITE}/Devel/AssertOS/Dynix.pm
+${P5SITE}/Devel/AssertOS/EBCDIC.pm
+${P5SITE}/Devel/AssertOS/Extending.pod
+${P5SITE}/Devel/AssertOS/FreeBSD.pm
+${P5SITE}/Devel/AssertOS/GNUkFreeBSD.pm
+${P5SITE}/Devel/AssertOS/HPUX.pm
+${P5SITE}/Devel/AssertOS/Haiku.pm
+${P5SITE}/Devel/AssertOS/Hurd.pm
+${P5SITE}/Devel/AssertOS/Interix.pm
+${P5SITE}/Devel/AssertOS/Irix.pm
+${P5SITE}/Devel/AssertOS/Linux/
+${P5SITE}/Devel/AssertOS/Linux.pm
+${P5SITE}/Devel/AssertOS/Linux/Debian.pm
+${P5SITE}/Devel/AssertOS/Linux/v2_6.pm
+${P5SITE}/Devel/AssertOS/MPEiX.pm
+${P5SITE}/Devel/AssertOS/MSDOS.pm
+${P5SITE}/Devel/AssertOS/MSWin32.pm
+${P5SITE}/Devel/AssertOS/MacOSX/
+${P5SITE}/Devel/AssertOS/MacOSX.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_0.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_1.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_10.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_11.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_12.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_2.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_3.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_4.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_5.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_6.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_7.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_8.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v10_9.pm
+${P5SITE}/Devel/AssertOS/MacOSclassic.pm
+${P5SITE}/Devel/AssertOS/MachTen.pm
+${P5SITE}/Devel/AssertOS/MicrosoftWindows.pm
+${P5SITE}/Devel/AssertOS/MidnightBSD.pm
+${P5SITE}/Devel/AssertOS/Minix.pm
+${P5SITE}/Devel/AssertOS/MirOSBSD.pm
+${P5SITE}/Devel/AssertOS/NeXT.pm
+${P5SITE}/Devel/AssertOS/NetBSD.pm
+${P5SITE}/Devel/AssertOS/Netware.pm
+${P5SITE}/Devel/AssertOS/OS2.pm
+${P5SITE}/Devel/AssertOS/OS390.pm
+${P5SITE}/Devel/AssertOS/OS400.pm
+${P5SITE}/Devel/AssertOS/OSF.pm
+${P5SITE}/Devel/AssertOS/OSFeatures/
+${P5SITE}/Devel/AssertOS/OSFeatures/POSIXShellRedirection.pm
+${P5SITE}/Devel/AssertOS/OpenBSD.pm
+${P5SITE}/Devel/AssertOS/POSIXBC.pm
+${P5SITE}/Devel/AssertOS/QNX/
+${P5SITE}/Devel/AssertOS/QNX.pm
+${P5SITE}/Devel/AssertOS/QNX/Neutrino.pm
+${P5SITE}/Devel/AssertOS/QNX/v4.pm
+${P5SITE}/Devel/AssertOS/RISCOS.pm
+${P5SITE}/Devel/AssertOS/Realtime.pm
+${P5SITE}/Devel/AssertOS/SCO.pm
+${P5SITE}/Devel/AssertOS/Solaris.pm
+${P5SITE}/Devel/AssertOS/Sun.pm
+${P5SITE}/Devel/AssertOS/SunOS.pm
+${P5SITE}/Devel/AssertOS/SysVr4.pm
+${P5SITE}/Devel/AssertOS/SysVr5.pm
+${P5SITE}/Devel/AssertOS/Unicos.pm
+${P5SITE}/Devel/AssertOS/Unix.pm
+${P5SITE}/Devel/AssertOS/VMESA.pm
+${P5SITE}/Devel/AssertOS/VMS.pm
+${P5SITE}/Devel/AssertOS/VOS.pm
+${P5SITE}/Devel/AssertOS/iOS.pm
+${P5SITE}/Devel/CheckOS/
+${P5SITE}/Devel/CheckOS.pm
+${P5SITE}/Devel/CheckOS/Families.pod
+@man man/man1/use-devel-assertos.1
+@man man/man3p/Devel::AssertOS.3p
+@man man/man3p/Devel::AssertOS::AIX.3p
+@man man/man3p/Devel::AssertOS::Amiga.3p
+@man man/man3p/Devel::AssertOS::Apple.3p
+@man man/man3p/Devel::AssertOS::BSDOS.3p
+@man man/man3p/Devel::AssertOS::BeOS.3p
+@man man/man3p/Devel::AssertOS::Bitrig.3p
+@man man/man3p/Devel::AssertOS::Cygwin.3p
+@man man/man3p/Devel::AssertOS::DEC.3p
+@man man/man3p/Devel::AssertOS::DGUX.3p
+@man man/man3p/Devel::AssertOS::DragonflyBSD.3p
+@man man/man3p/Devel::AssertOS::Dynix.3p
+@man man/man3p/Devel::AssertOS::EBCDIC.3p
+@man man/man3p/Devel::AssertOS::Extending.3p
+@man man/man3p/Devel::AssertOS::FreeBSD.3p
+@man man/man3p/Devel::AssertOS::GNUkFreeBSD.3p
+@man man/man3p/Devel::AssertOS::HPUX.3p
+@man man/man3p/Devel::AssertOS::Haiku.3p
+@man man/man3p/Devel::AssertOS::Hurd.3p
+@man man/man3p/Devel::AssertOS::Interix.3p
+@man man/man3p/Devel::AssertOS::Irix.3p
+@man man/man3p/Devel::AssertOS::Linux.3p
+@man man/man3p/Devel::AssertOS::Linux::Debian.3p
+@man man/man3p/Devel::AssertOS::Linux::v2_6.3p
+@man man/man3p/Devel::AssertOS::MPEiX.3p
+@man man/man3p/Devel::AssertOS::MSDOS.3p
+@man man/man3p/Devel::AssertOS::MSWin32.3p
+@man man/man3p/Devel::AssertOS::MacOSX.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_0.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_1.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_10.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_11.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_12.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_2.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_3.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_4.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_5.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_6.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_7.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_8.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v10_9.3p
+@man man/man3p/Devel::AssertOS::MacOSclassic.3p
+@man man/man3p/Devel::AssertOS::MachTen.3p
+@man man/man3p/Devel::AssertOS::MicrosoftWindows.3p
+@man man/man3p/Devel::AssertOS::MidnightBSD.3p
+@man man/man3p/Devel::AssertOS::Minix.3p
+@man man/man3p/Devel::AssertOS::MirOSBSD.3p
+@man man/man3p/Devel::AssertOS::NeXT.3p
+@man man/man3p/Devel::AssertOS::NetBSD.3p
+@man man/man3p/Devel::AssertOS::Netware.3p
+@man man/man3p/Devel::AssertOS::OS2.3p
+@man man/man3p/Devel::AssertOS::OS390.3p
+@man man/man3p/Devel::AssertOS::OS400.3p
+@man man/man3p/Devel::AssertOS::OSF.3p
+@man man/man3p/Devel::AssertOS::OSFeatures::POSIXShellRedirection.3p
+@man man/man3p/Devel::AssertOS::OpenBSD.3p
+@man man/man3p/Devel::AssertOS::POSIXBC.3p
+@man man/man3p/Devel::AssertOS::QNX.3p
+@man man/man3p/Devel::AssertOS::QNX::Neutrino.3p
+@man man/man3p/Devel::AssertOS::QNX::v4.3p
+@man man/man3p/Devel::AssertOS::RISCOS.3p
+@man man/man3p/Devel::AssertOS::Realtime.3p
+@man man/man3p/Devel::AssertOS::SCO.3p
+@man man/man3p/Devel::AssertOS::Solaris.3p
+@man man/man3p/Devel::AssertOS::Sun.3p
+@man man/man3p/Devel::AssertOS::SunOS.3p
+@man man/man3p/Devel::AssertOS::SysVr4.3p
+@man man/man3p/Devel::AssertOS::SysVr5.3p
+@man man/man3p/Devel::AssertOS::Unicos.3p
+@man man/man3p/Devel::AssertOS::Unix.3p
+@man man/man3p/Devel::AssertOS::VMESA.3p
+@man man/man3p/Devel::AssertOS::VMS.3p
+@man man/man3p/Devel::AssertOS::VOS.3p
+@man man/man3p/Devel::AssertOS::iOS.3p
+@man man/man3p/Devel::CheckOS.3p
+@man man/man3p/Devel::CheckOS::Families.3p
