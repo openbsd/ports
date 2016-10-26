@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2016/10/26 08:39:07 ajacoutot Exp $
+
+Not supported by our old gcc.
+
+--- Makefile.in.orig	Wed Oct 26 10:00:02 2016
++++ Makefile.in	Wed Oct 26 10:00:12 2016
+@@ -1071,7 +1071,6 @@ plugins_common_libshotwell_plugin_common_la_VALAFLAGS 
+ 
+ plugins_common_libshotwell_plugin_common_la_CFLAGS = \
+ 	$(PLUGIN_CFLAGS) \
+-	-Wno-incompatible-pointer-types -Wno-discarded-qualifiers \
+ 	-DGETTEXT_PACKAGE='"$(GETTEXT_PACKAGE)"' \
+ 	-I $(top_srcdir)/plugins -I$(top_builddir)/plugins
+ 
+@@ -1150,7 +1149,6 @@ COMMON_VALAFLAGS = --enable-checking --target-glib=2.4
+ 	--fatal-warnings --enable-experimental --enable-deprecated \
+ 	$(am__append_2)
+ COMMON_CFLAGS = -I$(top_srcdir)/vapi -D_PREFIX='"$(prefix)"' \
+-	-Wno-incompatible-pointer-types -Wno-discarded-qualifiers \
+ 	-D_VERSION='"$(VERSION)"' \
+ 	-DGETTEXT_PACKAGE='"$(GETTEXT_PACKAGE)"' \
+ 	-D_LANG_SUPPORT_DIR='"$(prefix)/share/locale"' \

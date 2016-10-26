@@ -1,0 +1,19 @@
+$OpenBSD: patch-vapi_misc_vapi,v 1.1 2016/10/26 08:39:07 ajacoutot Exp $
+
+XXX Not included in the tarball.
+From 9218b13bd7ef86e8f3f7de7e98b6ac64f6dd162a Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Tue, 20 Sep 2016 21:19:31 +0200
+Subject: Support acdsee tags
+
+--- vapi/misc.vapi.orig	Wed Oct 26 10:26:05 2016
++++ vapi/misc.vapi	Wed Oct 26 10:26:05 2016
+@@ -0,0 +1,8 @@
++namespace Workaround {
++[CCode (cheader_filename = "glib.h", cname = "g_markup_collect_attributes", sentinel = "G_MARKUP_COLLECT_INVALID")]
++extern bool markup_collect_attributes(string element_name,
++        [CCode (array_length = false, array_null_terminated = true)]
++        string[] attribute_names,
++        [CCode (array_length = false, array_null_terminated = true)]
++        string[] attribute_values, ...) throws GLib.MarkupError;
++}
