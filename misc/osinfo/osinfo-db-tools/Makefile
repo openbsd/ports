@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/09 15:25:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/27 08:59:58 ajacoutot Exp $
 
 COMMENT=		tools to manage the libosinfo database
 
+V=			1.1.0
 DISTNAME=		osinfo-db-tools-${V}
 
 WANTLIB += archive bz2 c crypto expat ffi gio-2.0 glib-2.0 gmodule-2.0
