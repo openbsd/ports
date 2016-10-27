@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.50 2016/09/27 08:00:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.51 2016/10/27 08:35:26 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -812,6 +812,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_6500_e710n-z-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_6600-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_6700-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_6800-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_6950-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_6960-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7000_e809a-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7000_e809a_series-hpijs.ppd.gz

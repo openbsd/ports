@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/09/27 08:00:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2016/10/27 08:35:26 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.16.9
+V=			3.16.10
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
