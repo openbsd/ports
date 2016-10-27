@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2016/10/27 07:33:44 ajacoutot Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -8,11 +8,14 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		libglade2-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		12
+REVISION=		13
 
 SHARED_LIBS +=  glade-2.0            1.0      # 1.0
 
 CATEGORIES=		devel
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
