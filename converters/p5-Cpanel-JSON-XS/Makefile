@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/16 23:06:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/27 17:26:09 bluhm Exp $
 
 COMMENT =	cPanel fork of JSON::XS, fast and correct serializing
 
-DISTNAME =	Cpanel-JSON-XS-3.0218
+DISTNAME =	Cpanel-JSON-XS-3.0219
 
 CATEGORIES =	converters
 
