@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/10/26 18:16:49 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2016/10/27 08:37:51 ajacoutot Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -29,7 +29,8 @@ SEPARATE_BUILD=		Yes
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/png \
