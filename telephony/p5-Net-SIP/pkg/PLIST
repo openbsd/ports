@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/28 22:39:40 bluhm Exp $
-${P5SITE}/Net/
+@comment $OpenBSD: PLIST,v 1.6 2016/10/27 17:16:40 bluhm Exp $
 ${P5SITE}/Net/SIP/
 ${P5SITE}/Net/SIP.pm
 ${P5SITE}/Net/SIP.pod
