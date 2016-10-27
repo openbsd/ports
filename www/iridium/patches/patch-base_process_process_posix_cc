@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.6 2016/03/23 20:13:06 robert Exp $
---- base/process/process_posix.cc.orig.port	Wed Feb 24 00:01:57 2016
-+++ base/process/process_posix.cc	Thu Mar  3 09:43:25 2016
-@@ -19,9 +19,13 @@
+$OpenBSD: patch-base_process_process_posix_cc,v 1.7 2016/10/27 18:30:40 robert Exp $
+--- base/process/process_posix.cc.orig.port	Wed Oct 12 21:02:53 2016
++++ base/process/process_posix.cc	Wed Oct 19 12:55:56 2016
+@@ -20,9 +20,13 @@
  #if defined(OS_MACOSX)
  #include <sys/event.h>
  #endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-base_process_process_posix_cc,v 1.6 2016/03/23 20:13:06 robert E
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -256,12 +260,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -257,12 +261,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-base_process_process_posix_cc,v 1.6 2016/03/23 20:13:06 robert E
  
  bool Process::IsValid() const {
    return process_ != kNullProcessHandle;
-@@ -357,21 +359,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -361,21 +363,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
    return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
  }
  

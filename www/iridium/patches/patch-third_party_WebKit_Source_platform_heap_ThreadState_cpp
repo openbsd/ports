@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.9 2016/04/27 12:46:16 robert Exp $
---- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Wed Apr 13 23:00:02 2016
-+++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Thu Apr 14 08:25:14 2016
-@@ -60,7 +60,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.10 2016/10/27 18:30:41 robert Exp $
+--- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Thu Sep  1 00:03:49 2016
++++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Thu Sep  1 11:12:24 2016
+@@ -65,7 +65,7 @@
  #include <sanitizer/msan_interface.h>
  #endif
  

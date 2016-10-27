@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.9 2016/05/28 14:49:39 robert Exp $
---- chrome/browser/ui/views/chrome_views_delegate.cc.orig.port	Wed May 25 21:00:58 2016
-+++ chrome/browser/ui/views/chrome_views_delegate.cc	Thu May 26 08:09:42 2016
-@@ -51,7 +51,7 @@
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.10 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/ui/views/chrome_views_delegate.cc.orig.port	Wed Oct 12 21:02:55 2016
++++ chrome/browser/ui/views/chrome_views_delegate.cc	Wed Oct 19 12:56:00 2016
+@@ -56,7 +56,7 @@
  #include "ui/views/widget/native_widget_aura.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.9 2016/05/2
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -294,7 +294,7 @@ HICON ChromeViewsDelegate::GetSmallWindowIcon() const 
+@@ -305,7 +305,7 @@ HICON ChromeViewsDelegate::GetSmallWindowIcon() const 
    return GetSmallAppIcon();
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.9 2016/05/2
  gfx::ImageSkia* ChromeViewsDelegate::GetDefaultWindowIcon() const {
    ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
    return rb.GetImageSkiaNamed(IDR_PRODUCT_LOGO_64);
-@@ -426,7 +426,7 @@ void ChromeViewsDelegate::OnBeforeWidgetInit(
+@@ -444,7 +444,7 @@ void ChromeViewsDelegate::OnBeforeWidgetInit(
  #endif
  }
  

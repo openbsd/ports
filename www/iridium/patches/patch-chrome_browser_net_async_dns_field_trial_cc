@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_net_async_dns_field_trial_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-chrome_browser_net_async_dns_field_trial_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/net/async_dns_field_trial.cc.orig.port	Thu Apr 14 08:37:58 2016
 +++ chrome/browser/net/async_dns_field_trial.cc	Thu Apr 14 08:38:05 2016
 @@ -61,7 +61,7 @@ void HistogramPrefSource(PrefSource source, bool enabl

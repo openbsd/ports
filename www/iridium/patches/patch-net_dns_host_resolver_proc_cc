@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.4 2016/02/15 18:07:53 robert Exp $
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- net/dns/host_resolver_proc.cc.orig.port	Thu Jan 14 02:49:24 2016
 +++ net/dns/host_resolver_proc.cc	Fri Jan 22 19:58:58 2016
 @@ -14,10 +14,6 @@

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/extensions/BUILD.gn.orig.port	Wed Oct 12 21:02:54 2016
++++ chrome/browser/extensions/BUILD.gn	Wed Oct 19 12:55:58 2016
+@@ -252,6 +252,10 @@ static_library("extensions") {
+     defines += [ "ENABLE_HOTWORDING" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += rebase_path(
+             gypi_values.chrome_browser_extensions_service_discovery_sources,

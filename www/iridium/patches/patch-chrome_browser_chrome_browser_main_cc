@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.6 2016/05/28 14:49:39 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Sat May 28 10:26:16 2016
-+++ chrome/browser/chrome_browser_main.cc	Sat May 28 10:27:05 2016
-@@ -173,7 +173,7 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.7 2016/10/27 18:30:40 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Fri Oct 21 00:02:00 2016
++++ chrome/browser/chrome_browser_main.cc	Tue Oct 25 22:01:10 2016
+@@ -188,7 +188,7 @@
  #include "chrome/browser/feedback/feedback_profile_observer.h"
  #endif  // defined(OS_ANDROID)
  
@@ -10,7 +10,25 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.6 2016/05/28 14:49:39 
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -1109,7 +1109,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -282,7 +282,7 @@
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || \
+-    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ #include "chrome/browser/metrics/desktop_engagement/desktop_engagement_service.h"
+ #endif
+ 
+@@ -955,7 +955,7 @@ void ChromeBrowserMainParts::SetupMetricsAndFieldTrial
+   sampling_profiler_config_.RegisterSyntheticFieldTrial();
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || \
+-    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   metrics::DesktopEngagementService::Initialize();
+ #endif
+ 
+@@ -1325,7 +1325,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -19,3 +37,12 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.6 2016/05/28 14:49:39 
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
+@@ -1516,7 +1516,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+ 
+ // Start the tab manager here so that we give the most amount of time for the
+ // other services to start up before we start adjusting the oom priority.
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   g_browser_process->GetTabManager()->Start();
+ #endif
+ 

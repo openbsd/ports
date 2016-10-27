@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_ge_fx_ge_linux_cpp,v 1.1 2016/05/28 14:49:39 robert Exp $
---- third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp.orig.port	Thu May 26 08:32:40 2016
-+++ third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp	Thu May 26 08:32:52 2016
-@@ -123,9 +123,8 @@ void* CFX_LinuxFontInfo::MapFont(int weight,
- IFX_SystemFontInfo* IFX_SystemFontInfo::CreateDefault(const char** pUserPaths) {
+$OpenBSD: patch-third_party_pdfium_core_fxge_ge_fx_ge_linux_cpp,v 1.2 2016/10/27 18:30:41 robert Exp $
+--- third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp.orig.port	Wed Oct 12 21:05:31 2016
++++ third_party/pdfium/core/fxge/ge/fx_ge_linux.cpp	Wed Oct 19 12:56:09 2016
+@@ -143,9 +143,8 @@ std::unique_ptr<IFX_SystemFontInfo> IFX_SystemFontInfo
+     const char** pUserPaths) {
    CFX_LinuxFontInfo* pInfo = new CFX_LinuxFontInfo;
    if (!pInfo->ParseFontCfg(pUserPaths)) {
 -    pInfo->AddPath("/usr/share/fonts");
@@ -12,4 +12,4 @@ $OpenBSD: patch-third_party_pdfium_core_fxge_ge_fx_ge_linux_cpp,v 1.1 2016/05/28
 +    pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
      pInfo->AddPath("/usr/local/share/fonts");
    }
-   return pInfo;
+   return std::unique_ptr<IFX_SystemFontInfo>(pInfo);

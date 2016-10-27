@@ -1,17 +1,17 @@
-$OpenBSD: patch-media_audio_audio_manager_cc,v 1.3 2016/03/23 20:13:07 robert Exp $
---- media/audio/audio_manager.cc.orig.port	Wed Feb 24 21:01:33 2016
-+++ media/audio/audio_manager.cc	Thu Mar  3 09:43:26 2016
-@@ -193,7 +193,7 @@ class AudioManagerHelper : public base::PowerObserver 
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.4 2016/10/27 18:30:41 robert Exp $
+--- media/audio/audio_manager.cc.orig.port	Wed Oct 12 21:03:00 2016
++++ media/audio/audio_manager.cc	Wed Oct 19 12:56:06 2016
+@@ -95,7 +95,7 @@ class AudioManagerHelper : public base::PowerObserver 
    }
  #endif
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   void set_app_name(const std::string& app_name) {
-     app_name_ = app_name;
-   }
-@@ -243,7 +243,7 @@ class AudioManagerHelper : public base::PowerObserver 
-   scoped_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
+   void set_app_name(const std::string& app_name) { app_name_ = app_name; }
+   const std::string& app_name() const { return app_name_; }
+ #endif
+@@ -253,7 +253,7 @@ class AudioManagerHelper : public base::PowerObserver 
+   std::unique_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
  #endif
  
 -#if defined(OS_LINUX)
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_audio_audio_manager_cc,v 1.3 2016/03/23 20:13:07 robert Ex
    std::string app_name_;
  #endif
  
-@@ -321,7 +321,7 @@ void AudioManager::EnableCrashKeyLoggingForAudioThread
+@@ -365,7 +365,7 @@ void AudioManager::EnableCrashKeyLoggingForAudioThread
    g_helper.Pointer()->enable_crash_key_logging();
  }
  

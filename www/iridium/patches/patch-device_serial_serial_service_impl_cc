@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_serial_serial_service_impl_cc,v 1.5 2016/03/23 20:13:07 robert Exp $
---- device/serial/serial_service_impl.cc.orig.port	Wed Feb 24 00:02:00 2016
-+++ device/serial/serial_service_impl.cc	Thu Mar  3 09:43:26 2016
-@@ -74,9 +74,14 @@ void SerialServiceImpl::Connect(
+$OpenBSD: patch-device_serial_serial_service_impl_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
+--- device/serial/serial_service_impl.cc.orig.port	Thu Sep  1 00:03:32 2016
++++ device/serial/serial_service_impl.cc	Thu Sep  1 11:12:23 2016
+@@ -75,9 +75,14 @@ void SerialServiceImpl::Connect(
  }
  
  SerialDeviceEnumerator* SerialServiceImpl::GetDeviceEnumerator() {

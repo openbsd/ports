@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_app_mash_mash_runner_cc,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- chrome/app/mash/mash_runner.cc.orig.port	Tue Oct 25 21:56:43 2016
++++ chrome/app/mash/mash_runner.cc	Tue Oct 25 21:59:47 2016
+@@ -35,7 +35,7 @@
+ #include "services/shell/runner/host/child_process_base.h"
+ #include "services/ui/service.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/font_service/font_service_app.h"
+ #endif
+ 
+@@ -100,7 +100,7 @@ class DefaultService : public shell::Service,
+       return base::WrapUnique(new mash::quick_launch::QuickLaunch);
+     if (name == "mojo:task_viewer")
+       return base::WrapUnique(new mash::task_viewer::TaskViewer);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     if (name == "mojo:font_service")
+       return base::WrapUnique(new font_service::FontServiceApp);
+ #endif
+@@ -228,7 +228,7 @@ int MashMain() {
+ 
+   // TODO(sky): use MessagePumpMojo.
+   std::unique_ptr<base::MessageLoop> message_loop;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   base::AtExitManager exit_manager;
+ #endif
+   if (!IsChild())

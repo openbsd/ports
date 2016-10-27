@@ -1,0 +1,34 @@
+$OpenBSD: patch-v8_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- v8/BUILD.gn.orig.port	Fri Oct 21 00:03:00 2016
++++ v8/BUILD.gn	Tue Oct 25 08:34:25 2016
+@@ -2086,7 +2086,7 @@ v8_source_set("v8_libbase") {
+     sources += [ "src/base/platform/platform-posix.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -2096,6 +2096,12 @@ v8_source_set("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (is_android) {
+     if (current_toolchain == host_toolchain) {
+       libs = [
+@@ -2223,6 +2229,8 @@ v8_source_set("simple_fuzzer") {
+ if (current_toolchain == v8_snapshot_toolchain) {
+   v8_executable("mksnapshot") {
+     visibility = [ ":*" ]  # Only targets in this file can depend on this.
++
++    libs = [ "execinfo" ]
+ 
+     sources = [
+       "src/snapshot/mksnapshot.cc",

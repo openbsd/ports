@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.10 2016/05/28 14:49:39 robert Exp $
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Wed May 25 21:00:58 2016
-+++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Thu May 26 08:09:42 2016
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.11 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Wed Oct 12 21:02:55 2016
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Wed Oct 19 12:56:01 2016
+@@ -38,7 +38,7 @@
  #include "ui/views/window/frame_background.h"
  #include "ui/views/window/window_shape.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.1
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -309,7 +309,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+@@ -293,7 +293,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
  void OpaqueBrowserFrameView::OnMenuButtonClicked(views::MenuButton* source,
                                                   const gfx::Point& point,
                                                   const ui::Event* event) {

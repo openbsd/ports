@@ -1,0 +1,28 @@
+$OpenBSD: patch-net_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- net/BUILD.gn.orig.port	Wed Oct 12 21:03:01 2016
++++ net/BUILD.gn	Wed Oct 19 12:56:06 2016
+@@ -104,7 +104,7 @@ if (use_glib && use_gconf && !is_chromeos) {
+   net_configs += [ "//build/config/linux/gconf" ]
+ }
+ 
+-if (is_linux) {
++if (is_linux && !is_openbsd) {
+   net_configs += [ "//build/config/linux:libresolv" ]
+ }
+ 
+@@ -276,6 +276,15 @@ component("net") {
+         "base/winsock_util.h",
+         "proxy/proxy_resolver_winhttp.cc",
+         "proxy/proxy_resolver_winhttp.h",
++      ]
++    }
++
++    if (is_openbsd) {
++      sources -= [
++        "base/address_tracker_linux.cc",
++        "base/address_tracker_linux.h",
++        "base/network_interfaces_linux.cc",
++        "base/network_change_notifier_linux.cc"
+       ]
+     }
+ 

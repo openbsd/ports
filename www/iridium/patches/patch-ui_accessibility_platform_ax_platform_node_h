@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_accessibility_platform_ax_platform_node_h,v 1.1 2016/03/23 20:13:07 robert Exp $
+$OpenBSD: patch-ui_accessibility_platform_ax_platform_node_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- ui/accessibility/platform/ax_platform_node.h.orig.port	Sat Mar  5 23:36:06 2016
 +++ ui/accessibility/platform/ax_platform_node.h	Sat Mar  5 23:36:15 2016
 @@ -22,7 +22,7 @@

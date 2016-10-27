@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.4 2016/03/23 20:13:06 robert Exp $
+$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.5 2016/10/27 18:30:40 robert Exp $
 --- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig.port	Wed Feb 24 21:01:31 2016
 +++ chrome/browser/custom_handlers/protocol_handler_registry.cc	Thu Mar  3 09:43:25 2016
 @@ -46,7 +46,7 @@ const ProtocolHandler& LookupHandler(

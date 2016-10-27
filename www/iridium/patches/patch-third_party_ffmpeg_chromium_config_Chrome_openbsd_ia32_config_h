@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_h,v 1.8 2016/05/28 14:49:39 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_h,v 1.9 2016/10/27 18:30:41 robert Exp $
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.h.orig.port	Thu May 26 18:07:02 2016
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.h	Thu May 26 20:03:18 2016
 @@ -0,0 +1,2080 @@

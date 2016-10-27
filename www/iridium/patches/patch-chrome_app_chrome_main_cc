@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
---- chrome/app/chrome_main.cc.orig.port	Tue Apr 26 16:20:04 2016
-+++ chrome/app/chrome_main.cc	Wed Apr 27 11:11:15 2016
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.5 2016/10/27 18:30:40 robert Exp $
+--- chrome/app/chrome_main.cc.orig.port	Thu Oct 27 14:43:34 2016
++++ chrome/app/chrome_main.cc	Thu Oct 27 20:19:45 2016
 @@ -3,6 +3,8 @@
  // found in the LICENSE file.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_app_chrome_main_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
  
  #include "build/build_config.h"
  #include "chrome/common/features.h"
-@@ -39,7 +41,11 @@ int ChromeMain(int argc, const char** argv);
+@@ -39,7 +41,12 @@ int ChromeMain(int argc, const char** argv);
  #if !defined(CHROME_MULTIPLE_DLL_CHILD)
  static void trace_url_request(const std::string &caller, const GURL &url)
  {
@@ -19,7 +19,8 @@ $OpenBSD: patch-chrome_app_chrome_main_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
 +	if (!command_line->HasSwitch(switches::kTrk))
 +		return;
 +
-+  	iridium::log_url_request(caller, url);
++        iridium::log_url_request(caller, url);
++
  	if (url.scheme() != url::kTraceScheme)
  		/* Do not show infobar for non-trk URLs */
  		return;

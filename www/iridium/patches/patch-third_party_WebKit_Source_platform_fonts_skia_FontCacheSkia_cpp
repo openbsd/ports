@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.5 2016/05/28 14:49:39 robert Exp $
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu May 26 08:30:51 2016
-+++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Thu May 26 08:31:15 2016
-@@ -60,7 +60,7 @@ static PassRefPtr<SkTypeface> typefaceForFontconfigInt
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.6 2016/10/27 18:30:41 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Wed Oct 12 21:03:14 2016
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Wed Oct 19 12:56:08 2016
+@@ -62,7 +62,7 @@ static PassRefPtr<SkTypeface> typefaceForFontconfigInt
  
  namespace blink {
  
@@ -10,21 +10,12 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,
  // Android special locale for retrieving the color emoji font
  // based on the proposed changes in UTR #51 for introducing
  // an Emoji script code:
-@@ -171,7 +171,7 @@ PassRefPtr<SimpleFontData> FontCache::getLastResortFal
-     return fontDataFromFontPlatformData(fontPlatformData, shouldRetain);
- }
- 
--#if OS(WIN) || OS(LINUX)
-+#if OS(WIN) || OS(LINUX) || OS(OPENBSD)
- static inline SkFontStyle fontStyle(const FontDescription& fontDescription)
- {
-     int width = static_cast<int>(fontDescription.stretch());
-@@ -232,7 +232,7 @@ PassRefPtr<SkTypeface> FontCache::createTypeface(const
+@@ -183,7 +183,7 @@ PassRefPtr<SkTypeface> FontCache::createTypeface(const
      }
  #endif
  
--#if OS(LINUX)
-+#if OS(LINUX) || OS(OPENBSD)
+-#if OS(LINUX) || OS(WIN)
++#if OS(LINUX) || OS(WIN) || OS(OPENBSD)
      // On linux if the fontManager has been overridden then we should be calling the embedder
      // provided font Manager rather than calling SkTypeface::CreateFromName which may redirect the
      // call to the default font Manager.

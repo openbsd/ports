@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_omnibox_browser_omnibox_field_trial_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-components_omnibox_browser_omnibox_field_trial_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- components/omnibox/browser/omnibox_field_trial.cc.orig.port	Wed Apr 13 22:59:43 2016
 +++ components/omnibox/browser/omnibox_field_trial.cc	Thu Apr 14 08:25:10 2016
 @@ -147,7 +147,7 @@ bool OmniboxFieldTrial::InZeroSuggestFieldTrial() {

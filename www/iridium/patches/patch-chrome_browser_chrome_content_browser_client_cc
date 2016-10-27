@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/28 14:49:39 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed May 25 21:00:57 2016
-+++ chrome/browser/chrome_content_browser_client.cc	Thu May 26 08:09:40 2016
-@@ -196,7 +196,7 @@
- #include "chrome/browser/chromeos/system/input_device_settings.h"
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.12 2016/10/27 18:30:40 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Oct 19 13:31:02 2016
++++ chrome/browser/chrome_content_browser_client.cc	Wed Oct 19 13:32:41 2016
+@@ -211,7 +211,7 @@
+ #include "chrome/browser/ui/browser_dialogs.h"
  #include "chromeos/chromeos_switches.h"
  #include "components/user_manager/user_manager.h"
 -#elif defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "chrome/browser/chrome_browser_main_android.h"
-@@ -209,7 +209,7 @@
+@@ -223,7 +223,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
  #include "base/debug/leak_annotations.h"
  #include "components/crash/content/app/breakpad_linux.h"
  #include "components/crash/content/browser/crash_handler_host_linux.h"
-@@ -231,7 +231,7 @@
+@@ -245,7 +245,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -508,7 +508,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -534,7 +534,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -779,7 +779,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -840,7 +840,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -795,7 +795,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -856,7 +856,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -55,7 +55,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1407,7 +1407,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1451,7 +1451,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -63,8 +63,8 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.11 2016/05/2
 +#elif defined(OS_POSIX) && !defined(OS_BSD)
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
-     scoped_ptr<metrics::ClientInfo> client_info =
-@@ -2604,7 +2604,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+     std::unique_ptr<metrics::ClientInfo> client_info =
+@@ -2732,7 +2732,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
    PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
    DCHECK(!app_data_path.empty());
  }

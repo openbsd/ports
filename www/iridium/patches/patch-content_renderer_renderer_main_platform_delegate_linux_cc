@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
 --- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Fri Apr  8 18:02:09 2016
 +++ content/renderer/renderer_main_platform_delegate_linux.cc	Thu Apr 14 08:25:12 2016
 @@ -10,7 +10,11 @@

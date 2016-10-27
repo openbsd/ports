@@ -8,13 +8,17 @@
 #include <set>
 
 #include "base/compiler_specific.h"
+#include "base/memory/ref_counted.h"
 #include "media/audio/audio_manager_base.h"
 
 namespace media {
 
 class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
  public:
-  AudioManagerOpenBSD(AudioLogFactory* audio_log_factory);
+  AudioManagerOpenBSD(
+      scoped_refptr<base::SingleThreadTaskRunner> task_runner,
+      scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+      AudioLogFactory* audio_log_factory);
 
   // Implementation of AudioManager.
   bool HasAudioOutputDevices() override;
@@ -27,14 +31,20 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
 
   // Implementation of AudioManagerBase.
   AudioOutputStream* MakeLinearOutputStream(
-      const AudioParameters& params) override;
+      const AudioParameters& params,
+      const LogCallback& log_callback) override;
   AudioOutputStream* MakeLowLatencyOutputStream(
       const AudioParameters& params,
-      const std::string& device_id) override;
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
   AudioInputStream* MakeLinearInputStream(
-      const AudioParameters& params, const std::string& device_id) override;
+      const AudioParameters& params,
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
   AudioInputStream* MakeLowLatencyInputStream(
-      const AudioParameters& params, const std::string& device_id) override;
+      const AudioParameters& params,
+      const std::string& device_id,
+      const LogCallback& log_callback) override;
 
  protected:
   ~AudioManagerOpenBSD() override;

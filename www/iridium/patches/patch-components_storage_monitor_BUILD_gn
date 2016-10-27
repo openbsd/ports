@@ -1,0 +1,36 @@
+$OpenBSD: patch-components_storage_monitor_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- components/storage_monitor/BUILD.gn.orig.port	Wed Oct 12 21:02:58 2016
++++ components/storage_monitor/BUILD.gn	Wed Oct 19 12:56:03 2016
+@@ -26,10 +26,10 @@ static_library("storage_monitor") {
+     "storage_info.h",
+     "storage_monitor.cc",
+     "storage_monitor.h",
+-    "storage_monitor_chromeos.cc",
+-    "storage_monitor_chromeos.h",
+     "storage_monitor_linux.cc",
+     "storage_monitor_linux.h",
++    "storage_monitor_chromeos.cc",
++    "storage_monitor_chromeos.h",
+     "storage_monitor_mac.h",
+     "storage_monitor_mac.mm",
+     "storage_monitor_win.cc",
+@@ -53,6 +53,19 @@ static_library("storage_monitor") {
+       "DiskArbitration.framework",
+       "Foundation.framework",
+       "ImageCaptureCore.framework",
++    ]
++  }
++
++  if (is_openbsd) {
++    sources -= [
++      "media_transfer_protocol_device_observer_linux.cc",
++      "media_transfer_protocol_device_observer_linux.h",
++      "mtab_watcher_linux.cc",
++      "mtab_watcher_linux.h"
++    ]
++    sources += [
++      "storage_monitor_openbsd.cc",
++      "storage_monitor_openbsd.h"
+     ]
+   }
+ 

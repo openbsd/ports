@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.4 2016/05/28 14:49:39 robert Exp $
---- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Thu May 26 08:31:20 2016
-+++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Thu May 26 08:31:26 2016
-@@ -170,7 +170,7 @@ class PopupMenuImpl::ItemIterationContext { (public)
+$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.5 2016/10/27 18:30:41 robert Exp $
+--- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Wed Oct 12 21:03:14 2016
++++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Wed Oct 19 12:56:08 2016
+@@ -156,7 +156,7 @@ class PopupMenuImpl::ItemIterationContext { (public)
          , m_buffer(buffer)
      {
          DCHECK(m_buffer);

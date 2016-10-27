@@ -1,0 +1,47 @@
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Wed Oct 19 13:29:47 2016
++++ build/config/compiler/BUILD.gn	Wed Oct 19 13:30:51 2016
+@@ -38,7 +38,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      is_linux && (current_cpu == "x64" || current_cpu == "x86")
++      (is_linux && !is_openbsd) && (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+ 
+@@ -201,7 +201,7 @@ config("compiler") {
+ 
+     # Linker warnings.
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
+-        !(is_android && use_order_profiling) && !is_mac && !is_ios) {
++        !(is_android && use_order_profiling) && !is_mac && !is_ios && !is_openbsd) {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+       # crbug.com/485542
+@@ -283,7 +283,7 @@ config("compiler") {
+       "-Wl,-z,now",
+       "-Wl,-z,relro",
+     ]
+-    if (!using_sanitizer && !use_cfi_diag) {
++    if (!using_sanitizer && !use_cfi_diag && !is_openbsd) {
+       ldflags += [ "-Wl,-z,defs" ]
+     }
+   }
+@@ -1014,14 +1014,14 @@ config("default_warnings") {
+     # Chrome's hermetic Clang compiler, NaCl's Clang compiler and Xcode's Clang
+     # compiler will almost always have different versions. Certain flags may not
+     # be recognized by one version or the other.
+-    if (!is_nacl) {
++    if (!is_nacl && !is_openbsd) {
+       # Flags NaCl (Clang 3.7) does not recognize.
+       cflags += [
+         # TODO(thakis): Enable this, crbug.com/507717
+         "-Wno-shift-negative-value",
+       ]
+     }
+-    if (!is_nacl && !use_xcode_clang) {
++    if (!is_nacl && !use_xcode_clang && !is_openbsd) {
+       # Flags NaCl (Clang 3.7) and Xcode 7.3 (Clang clang-703.0.31) do not
+       # recognize.
+       cflags += [

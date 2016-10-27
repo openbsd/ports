@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.5 2016/05/28 14:49:39 robert Exp $
---- net/proxy/proxy_service.cc.orig.port	Wed May 25 21:01:04 2016
-+++ net/proxy/proxy_service.cc	Thu May 26 08:09:47 2016
+$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
+--- net/proxy/proxy_service.cc.orig.port	Wed Oct 12 21:03:01 2016
++++ net/proxy/proxy_service.cc	Wed Oct 19 12:56:07 2016
 @@ -47,7 +47,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
@@ -10,12 +10,12 @@ $OpenBSD: patch-net_proxy_proxy_service_cc,v 1.5 2016/05/28 14:49:39 robert Exp 
  #include "net/proxy/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy/proxy_config_service_android.h"
-@@ -1513,7 +1513,7 @@ scoped_ptr<ProxyConfigService> ProxyService::CreateSys
+@@ -1531,7 +1531,7 @@ ProxyService::CreateSystemProxyConfigService(
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
-   return make_scoped_ptr(new UnsetProxyConfigService);
+   return base::WrapUnique(new UnsetProxyConfigService);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   scoped_ptr<ProxyConfigServiceLinux> linux_config_service(
+   std::unique_ptr<ProxyConfigServiceLinux> linux_config_service(
        new ProxyConfigServiceLinux());
  

@@ -1,0 +1,49 @@
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- tools/gn/bootstrap/bootstrap.py.orig.port	Fri Oct 21 00:02:19 2016
++++ tools/gn/bootstrap/bootstrap.py	Tue Oct 25 09:40:32 2016
+@@ -32,7 +32,8 @@ SRC_ROOT = os.path.dirname(os.path.dirname(GN_ROOT))
+ is_win = sys.platform.startswith('win')
+ is_linux = sys.platform.startswith('linux')
+ is_mac = sys.platform.startswith('darwin')
+-is_posix = is_linux or is_mac
++is_openbsd = sys.platform.startswith('openbsd')
++is_posix = is_linux or is_mac or is_openbsd
+ 
+ def check_call(cmd, **kwargs):
+   logging.debug('Running: %s', ' '.join(cmd))
+@@ -561,6 +562,35 @@ def write_gn_ninja(path, root_gen_dir, options):
+         'include_dirs': [],
+         'cflags': cflags + ['-DHAVE_CONFIG_H'],
+     }
++
++
++  if is_openbsd:
++    ldflags.extend(['-lpthread', '-lexecinfo'])
++    include_dirs += ["/usr/local/include"]
++
++    static_libraries['xdg_user_dirs'] = {
++        'sources': [
++            'base/third_party/xdg_user_dirs/xdg_user_dir_lookup.cc',
++        ],
++        'tool': 'cxx',
++    }
++    static_libraries['base']['sources'].extend([
++        'base/memory/shared_memory_posix.cc',
++        'base/nix/xdg_util.cc',
++        'base/process/internal_linux.cc',
++        'base/process/process_handle_openbsd.cc',
++        'base/process/process_metrics_openbsd.cc',
++        'base/strings/sys_string_conversions_posix.cc',
++        'base/sys_info_openbsd.cc',
++        'base/threading/platform_thread_linux.cc',
++        'base/trace_event/malloc_dump_provider.cc',
++    ])
++    static_libraries['libevent']['include_dirs'].extend([
++        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'openbsd')
++    ])
++    static_libraries['libevent']['sources'].extend([
++        'base/third_party/libevent/kqueue.c',
++    ])
+ 
+   if is_linux:
+     libs.extend(['-lrt', '-latomic'])

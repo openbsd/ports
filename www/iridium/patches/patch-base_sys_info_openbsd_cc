@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.5 2016/03/23 20:13:06 robert Exp $
---- base/sys_info_openbsd.cc.orig.port	Wed Feb 24 00:01:57 2016
-+++ base/sys_info_openbsd.cc	Sat Mar  5 23:38:02 2016
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.6 2016/10/27 18:30:40 robert Exp $
+--- base/sys_info_openbsd.cc.orig.port	Thu Sep  1 00:03:26 2016
++++ base/sys_info_openbsd.cc	Thu Sep  1 11:44:07 2016
 @@ -29,6 +29,8 @@ int64_t AmountOfMemory(int pages_name) {
  
  namespace base {
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.5 2016/03/23 20:13:06 robert Exp $
  // static
  int SysInfo::NumberOfProcessors() {
    int mib[] = { CTL_HW, HW_NCPU };
-@@ -43,12 +45,10 @@ int SysInfo::NumberOfProcessors() {
+@@ -43,24 +45,10 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  int64_t SysInfo::AmountOfPhysicalMemory() {
@@ -20,6 +20,18 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.5 2016/03/23 20:13:06 robert Exp $
 -// static
 -int64_t SysInfo::AmountOfAvailablePhysicalMemory() {
 -  return AmountOfMemory(_SC_AVPHYS_PAGES);
+-}
+-
+-// static
+-uint64_t SysInfo::MaxSharedMemorySize() {
+-  int mib[] = { CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX };
+-  size_t limit;
+-  size_t size = sizeof(limit);
+-  if (sysctl(mib, arraysize(mib), &limit, &size, NULL, 0) < 0) {
+-    NOTREACHED();
+-    return 0;
+-  }
+-  return static_cast<uint64_t>(limit);
 +  // pledge(2)
 +  if (!aofpmem)
 +    aofpmem = AmountOfMemory(_SC_PHYS_PAGES);

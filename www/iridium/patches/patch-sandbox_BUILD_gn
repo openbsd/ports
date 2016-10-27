@@ -1,0 +1,12 @@
+$OpenBSD: patch-sandbox_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- sandbox/BUILD.gn.orig.port	Sun Aug 14 23:30:12 2016
++++ sandbox/BUILD.gn	Sun Aug 14 23:31:24 2016
+@@ -13,7 +13,7 @@ group("sandbox") {
+       "//sandbox/mac:sandbox",
+       "//sandbox/mac:seatbelt",
+     ]
+-  } else if (is_linux || is_android) {
++  } else if ((is_linux && !is_openbsd) || is_android) {
+     public_deps = [
+       "//sandbox/linux:sandbox",
+     ]

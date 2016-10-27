@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_download_base_file_linux_cc,v 1.4 2016/05/28 14:49:39 robert Exp $
+$OpenBSD: patch-content_browser_download_base_file_linux_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- content/browser/download/base_file_linux.cc.orig.port	Thu May 26 08:29:35 2016
 +++ content/browser/download/base_file_linux.cc	Thu May 26 08:29:44 2016
 @@ -16,7 +16,9 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn

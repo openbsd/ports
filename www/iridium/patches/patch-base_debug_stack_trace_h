@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_h,v 1.3 2016/03/23 20:13:06 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_h,v 1.4 2016/10/27 18:30:40 robert Exp $
 --- base/debug/stack_trace.h.orig.port	Wed Feb 24 00:01:57 2016
 +++ base/debug/stack_trace.h	Thu Mar  3 09:43:25 2016
 @@ -14,6 +14,7 @@

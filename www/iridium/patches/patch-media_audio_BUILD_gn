@@ -1,0 +1,23 @@
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- media/audio/BUILD.gn.orig.port	Fri Oct 21 00:02:05 2016
++++ media/audio/BUILD.gn	Fri Oct 21 16:41:46 2016
+@@ -206,8 +206,18 @@ source_set("audio") {
+     deps += [ "//media/base/android:media_jni_headers" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [ "linux/audio_manager_linux.cc" ]
++  }
++  if (is_openbsd) {
++    libs += [ "sndio" ]
++    sources += [
++      "openbsd/audio_manager_openbsd.cc",
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h"
++    ]
+   }
+ 
+   if (use_alsa) {

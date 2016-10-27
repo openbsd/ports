@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_third_party_libopenjpeg20_opj_malloc_h,v 1.1 2015/10/24 18:22:21 robert Exp $
+$OpenBSD: patch-third_party_pdfium_third_party_libopenjpeg20_opj_malloc_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- third_party/pdfium/third_party/libopenjpeg20/opj_malloc.h.orig.port	Thu Oct 22 09:01:40 2015
 +++ third_party/pdfium/third_party/libopenjpeg20/opj_malloc.h	Fri Oct 23 15:56:07 2015
 @@ -98,7 +98,7 @@ Allocate memory aligned to a 16 byte boundary

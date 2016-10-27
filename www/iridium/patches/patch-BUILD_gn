@@ -1,0 +1,87 @@
+$OpenBSD: patch-BUILD_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- BUILD.gn.orig.port	Wed Oct 12 21:02:52 2016
++++ BUILD.gn	Wed Oct 19 12:55:55 2016
+@@ -201,7 +201,7 @@ group("both_gn_and_gyp") {
+     ]
+   }
+ 
+-  if (!is_ios && !is_android && !is_chromecast) {
++  if (!is_ios && !is_android && !is_chromecast && !is_openbsd) {
+     deps += [
+       "//chrome",
+       "//chrome/test:browser_tests",
+@@ -432,7 +432,7 @@ group("both_gn_and_gyp") {
+     }
+   }
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_openbsd) || is_android) {
+     deps += [
+       "//breakpad:breakpad_unittests",
+       "//breakpad:core-2-minidump",
+@@ -465,8 +465,6 @@ group("both_gn_and_gyp") {
+       "//net:disk_cache_memory_test",
+       "//net:quic_client",
+       "//net:quic_server",
+-      "//sandbox/linux:chrome_sandbox",
+-      "//sandbox/linux:sandbox_linux_unittests",
+     ]
+ 
+     if (use_dbus) {
+@@ -526,10 +524,6 @@ group("both_gn_and_gyp") {
+         "//chrome/test:sync_performance_tests",
+         "//chrome/test/chromedriver:chromedriver",
+         "//chrome/test/chromedriver:chromedriver_tests",
+-        "//courgette:courgette",
+-        "//courgette:courgette_fuzz",
+-        "//courgette:courgette_minimal_tool",
+-        "//courgette:courgette_unittests",
+         "//media/cast:generate_barcode_video",
+         "//media/cast:generate_timecode_audio",
+         "//net:crash_cache",
+@@ -575,10 +569,6 @@ group("both_gn_and_gyp") {
+ 
+   if (is_android || (is_linux && !is_chromeos)) {
+     deps += [
+-      "//breakpad:dump_syms($host_toolchain)",
+-      "//breakpad:microdump_stackwalk($host_toolchain)",
+-      "//breakpad:minidump_dump($host_toolchain)",
+-      "//breakpad:minidump_stackwalk($host_toolchain)",
+       "//components/network_hints/browser",
+       "//content/public/app:browser",
+       "//content/public/app:child",
+@@ -664,7 +654,7 @@ group("both_gn_and_gyp") {
+       deps +=
+           [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
+     }
+-  } else if (!is_android && !is_ios) {
++  } else if (!is_android && !is_ios && !is_openbsd) {
+     deps += [ "//breakpad:symupload($host_toolchain)" ]
+   }
+ 
+@@ -906,7 +896,7 @@ if (!is_ios) {
+       ]
+     }
+ 
+-    if (!is_win && !is_android) {
++    if (!is_win && !is_android && !is_openbsd) {
+       deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+     }
+ 
+@@ -917,7 +907,7 @@ if (!is_ios) {
+       ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+@@ -966,7 +956,6 @@ group("chromium_builder_perf") {
+         "//third_party/angle/src/tests:angle_perftests",
+       ]
+     } else {
+-      deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+     }
+   }
+ }

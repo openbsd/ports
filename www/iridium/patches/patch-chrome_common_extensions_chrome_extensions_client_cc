@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_common_extensions_chrome_extensions_client_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- chrome/common/extensions/chrome_extensions_client.cc.orig.port	Sat Oct 22 16:33:03 2016
++++ chrome/common/extensions/chrome_extensions_client.cc	Sun Oct 23 11:16:48 2016
+@@ -103,7 +103,10 @@ ChromeChannelForHistogram GetChromeChannelForHistogram
+ static base::LazyInstance<ChromeExtensionsClient> g_client =
+     LAZY_INSTANCE_INITIALIZER;
+ 
+-ChromeExtensionsClient::ChromeExtensionsClient() {}
++ChromeExtensionsClient::ChromeExtensionsClient()
++    : chrome_api_permissions_(ChromeAPIPermissions()),
++      extensions_api_permissions_(ExtensionsAPIPermissions()) {
++}
+ 
+ ChromeExtensionsClient::~ChromeExtensionsClient() {
+ }

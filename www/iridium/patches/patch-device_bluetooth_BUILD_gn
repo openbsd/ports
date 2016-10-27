@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- device/bluetooth/BUILD.gn.orig.port	Wed Oct 12 21:02:59 2016
++++ device/bluetooth/BUILD.gn	Wed Oct 19 12:56:05 2016
+@@ -179,7 +179,7 @@ component("bluetooth") {
+     ]
+   }
+ 
+-  if (is_chromeos || is_linux) {
++  if (is_chromeos || (is_linux && !is_openbsd)) {
+     if (use_dbus) {
+       sources += [
+         "bluez/bluetooth_adapter_bluez.cc",

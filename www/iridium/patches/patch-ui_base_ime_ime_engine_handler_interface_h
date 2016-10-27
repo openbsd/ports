@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_ime_engine_handler_interface_h,v 1.1 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-ui_base_ime_ime_engine_handler_interface_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- ui/base/ime/ime_engine_handler_interface.h.orig.port	Sat Apr 16 12:34:20 2016
 +++ ui/base/ime/ime_engine_handler_interface.h	Sat Apr 16 12:34:25 2016
 @@ -138,7 +138,7 @@ class UI_BASE_IME_EXPORT IMEEngineHandlerInterface {

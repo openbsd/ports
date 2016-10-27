@@ -1,12 +1,48 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.3 2016/05/28 14:49:39 robert Exp $
---- chrome/app/generated_resources.grd.orig.port	Wed May 25 21:00:56 2016
-+++ chrome/app/generated_resources.grd	Thu May 26 08:09:40 2016
-@@ -6595,7 +6595,7 @@ Keep your key file in a safe place. You will need it t
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.4 2016/10/27 18:30:40 robert Exp $
+--- chrome/app/generated_resources.grd.orig.port	Fri Oct 21 00:02:00 2016
++++ chrome/app/generated_resources.grd	Sat Oct 22 16:20:22 2016
+@@ -2,7 +2,7 @@
+ 
+ <!--
+ This file contains definitions of resources that will be translated for each
+-locale.  The variables is_win, is_macosx, is_linux, and is_posix are available
++locale.  The variables is_win, is_macosx, is_posix, and is_posix are available
+ for making strings OS specific.  Other platform defines such as use_titlecase
+ are declared in build/common.gypi.
+ -->
+@@ -6841,7 +6841,7 @@ Keep your key file in a safe place. You will need it t
        <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
            Right-to-left
        </message>
 -      <if expr="is_win or is_linux">
-+      <if expr="is_win or is_linux or is_posix">
++      <if expr="is_win or is_posix or is_posix">
          <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
            Enable Input IME API
+         </message>
+@@ -10140,7 +10140,7 @@ I don't think this site should be blocked!
+       <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
+         Appearance
+       </message>
+-      <if expr="not is_linux or chromeos">
++      <if expr="not is_posix or chromeos">
+         <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
+           Themes
+         </message>
+@@ -10148,7 +10148,7 @@ I don't think this site should be blocked!
+       <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
+         Reset to default theme
+       </message>
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
+           Use GTK+ theme
+         </message>
+@@ -11435,7 +11435,7 @@ Tell us what happened exactly before you got the profi
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS_MENU" desc="The menu entry text in the tab strip context menu.  This toggles the system title bar and window borders (window decorations) on linux.">
+           Use system title bar and borders
          </message>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_interstitials_chrome_controller_client_cc,v 1.1 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-chrome_browser_interstitials_chrome_controller_client_cc,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/interstitials/chrome_controller_client.cc.orig.port	Sat Apr 16 13:33:45 2016
 +++ chrome/browser/interstitials/chrome_controller_client.cc	Sat Apr 16 13:36:17 2016
 @@ -55,7 +55,7 @@ void LaunchDateAndTimeSettingsOnFile() {

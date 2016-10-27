@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- content/browser/BUILD.gn.orig.port	Wed Oct 12 21:02:59 2016
++++ content/browser/BUILD.gn	Wed Oct 19 12:56:03 2016
+@@ -159,6 +159,10 @@ source_set("browser") {
+     deps += [ "//ui/events" ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [ "download/file_metadata_linux.cc" ]
++  }
++
+   if (!is_win) {
+     sources += [
+       "file_descriptor_info_impl.cc",

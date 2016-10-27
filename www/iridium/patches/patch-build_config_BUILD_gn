@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_config_BUILD_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- build/config/BUILD.gn.orig.port	Wed Oct 12 21:02:53 2016
++++ build/config/BUILD.gn	Wed Oct 19 12:55:56 2016
+@@ -380,7 +380,7 @@ config("default_libs") {
+       "CoreText.framework",
+       "Foundation.framework",
+     ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_openbsd) {
+     libs = [
+       "dl",
+       "rt",

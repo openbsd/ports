@@ -1,6 +1,6 @@
-$OpenBSD: patch-iridium_trknotify_cpp,v 1.1 2015/12/30 19:13:33 robert Exp $
---- iridium/trknotify.cpp.orig.port	Wed Dec 30 15:41:59 2015
-+++ iridium/trknotify.cpp	Wed Dec 30 15:42:11 2015
+$OpenBSD: patch-iridium_trknotify_cpp,v 1.2 2016/10/27 18:30:41 robert Exp $
+--- iridium/trknotify.cpp.orig.port	Thu Oct 27 14:44:27 2016
++++ iridium/trknotify.cpp	Thu Oct 27 14:44:37 2016
 @@ -5,7 +5,7 @@
   * found in the LICENSE file.
   */

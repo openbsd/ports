@@ -1,0 +1,21 @@
+$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- components/os_crypt/os_crypt.h.orig.port	Wed Oct 12 21:02:58 2016
++++ components/os_crypt/os_crypt.h	Wed Oct 19 12:56:03 2016
+@@ -13,7 +13,7 @@
+ #include "base/strings/string16.h"
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "components/os_crypt/key_storage_linux.h"
+ #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
+ 
+@@ -23,7 +23,7 @@
+ // true for Linux, if a password management tool is available.
+ class OSCrypt {
+  public:
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // If |store_type| is a known password store, we will attempt to use it.
+   // In any other case, we default to auto-detecting the store.
+   // This should not be changed after OSCrypt has been used.

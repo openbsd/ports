@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_omnibox_omnibox_api_cc,v 1.4 2016/05/28 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_omnibox_omnibox_api_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/extensions/api/omnibox/omnibox_api.cc.orig.port	Wed May 25 04:54:08 2016
 +++ chrome/browser/extensions/api/omnibox/omnibox_api.cc	Thu May 26 08:09:41 2016
 @@ -45,7 +45,7 @@ const char kBackgroundTabDisposition[] = "newBackgroun

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.5 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.6 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/download/download_prefs.h.orig.port	Thu Apr 14 08:37:10 2016
 +++ chrome/browser/download/download_prefs.h	Thu Apr 14 08:37:20 2016
 @@ -79,7 +79,7 @@ class DownloadPrefs {

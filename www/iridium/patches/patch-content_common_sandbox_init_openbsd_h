@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_h,v 1.1 2016/01/07 07:26:40 robert Exp $
+$OpenBSD: patch-content_common_sandbox_init_openbsd_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- content/common/sandbox_init_openbsd.h.orig.port	Sun Jan  3 21:05:04 2016
 +++ content/common/sandbox_init_openbsd.h	Mon Jan  4 08:17:09 2016
 @@ -0,0 +1,28 @@

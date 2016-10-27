@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_metrics_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- components/metrics/BUILD.gn.orig.port	Wed Oct 12 21:02:58 2016
++++ components/metrics/BUILD.gn	Wed Oct 19 12:56:02 2016
+@@ -90,6 +90,10 @@ static_library("metrics") {
+     "//third_party/zlib:compression_utils",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [ "system_memory_stats_recorder_linux.cc" ]
++  }
++
+   if (is_chromeos) {
+     deps += [ ":serialization" ]
+   }

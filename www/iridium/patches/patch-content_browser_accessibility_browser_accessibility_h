@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.5 2016/05/28 14:49:39 robert Exp $
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.6 2016/10/27 18:30:41 robert Exp $
 --- content/browser/accessibility/browser_accessibility.h.orig.port	Thu May 26 08:28:24 2016
 +++ content/browser/accessibility/browser_accessibility.h	Thu May 26 13:44:06 2016
 @@ -38,7 +38,7 @@

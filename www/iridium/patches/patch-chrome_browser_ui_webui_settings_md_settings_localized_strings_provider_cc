@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_webui_settings_md_settings_localized_strings_provider_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/ui/webui/settings/md_settings_localized_strings_provider.cc.orig.port	Tue Oct 25 21:56:43 2016
++++ chrome/browser/ui/webui/settings/md_settings_localized_strings_provider.cc	Tue Oct 25 22:05:34 2016
+@@ -265,7 +265,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+     {"openWallpaperApp", IDS_SETTINGS_OPEN_WALLPAPER_APP},
+     {"setWallpaper", IDS_SETTINGS_SET_WALLPAPER},
+ #endif
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+     {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
+ #endif
+   };

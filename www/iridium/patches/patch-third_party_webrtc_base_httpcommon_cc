@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_base_httpcommon_cc,v 1.3 2016/02/15 18:07:53 robert Exp $
+$OpenBSD: patch-third_party_webrtc_base_httpcommon_cc,v 1.4 2016/10/27 18:30:41 robert Exp $
 --- third_party/webrtc/base/httpcommon.cc.orig.port	Wed Jan 20 21:02:39 2016
 +++ third_party/webrtc/base/httpcommon.cc	Fri Jan 22 19:58:59 2016
 @@ -384,7 +384,7 @@ bool HttpDateToSeconds(const std::string& date, time_t

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ash_shell_cc,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- ash/shell.cc.orig.port	Tue Oct 25 21:56:43 2016
++++ ash/shell.cc	Tue Oct 25 21:57:45 2016
+@@ -698,7 +698,7 @@ void Shell::Init(const ShellInitParams& init_params) {
+ 
+   immersive_handler_factory_ = base::MakeUnique<ImmersiveHandlerFactoryAsh>();
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   DCHECK(in_mus_) << "linux desktop does not support ash.";
+ #endif
+ 

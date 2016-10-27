@@ -60,7 +60,7 @@ class SndioAudioOutputStream : public AudioOutputStream {
   // Parameters of the source
   AudioParameters params;
   // Source stores data here
-  scoped_ptr<AudioBus> audio_bus;
+  std::unique_ptr<AudioBus> audio_bus;
   // Call-back that produces data to play
   AudioSourceCallback* source;
   // Handle of the audio device

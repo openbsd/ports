@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.4 2016/05/28 14:49:39 robert Exp $
---- content/renderer/devtools/v8_sampling_profiler.cc.orig.port	Wed May 25 21:01:01 2016
-+++ content/renderer/devtools/v8_sampling_profiler.cc	Thu May 26 08:09:46 2016
-@@ -21,7 +21,7 @@
+$OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
+--- content/renderer/devtools/v8_sampling_profiler.cc.orig.port	Wed Jul 20 21:03:24 2016
++++ content/renderer/devtools/v8_sampling_profiler.cc	Thu Jul 21 10:25:30 2016
+@@ -20,7 +20,7 @@
  #include "content/renderer/render_thread_impl.h"
  #include "v8/include/v8.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.4 2016/05/
  #include <signal.h>
  #define USE_SIGNALS
  #endif
-@@ -205,7 +205,10 @@ class Sampler {
+@@ -204,7 +204,10 @@ class Sampler {
    static const unsigned kNumberOfSamples = 10;
    typedef LockFreeCircularQueue<SampleRecord, kNumberOfSamples> SamplingQueue;
  
@@ -19,9 +19,9 @@ $OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.4 2016/05/
 +#endif
 +
    Isolate* isolate_;
-   scoped_ptr<SamplingQueue> samples_data_;
+   std::unique_ptr<SamplingQueue> samples_data_;
    base::subtle::Atomic32 code_added_events_count_;
-@@ -299,6 +302,7 @@ void Sampler::DoSample(const v8::RegisterState& state)
+@@ -298,6 +301,7 @@ void Sampler::DoSample(const v8::RegisterState& state)
  }
  
  void Sampler::InjectPendingEvents() {
@@ -29,7 +29,7 @@ $OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.4 2016/05/
    SampleRecord* record = samples_data_->Peek();
    while (record) {
      TRACE_EVENT_SAMPLE_WITH_TID_AND_TIMESTAMP1(
-@@ -310,6 +314,7 @@ void Sampler::InjectPendingEvents() {
+@@ -309,6 +313,7 @@ void Sampler::InjectPendingEvents() {
      record = samples_data_->Peek();
      base::subtle::NoBarrier_AtomicIncrement(&samples_count_, 1);
    }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_app_list_linux_app_list_linux_cc,v 1.4 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_app_list_linux_app_list_linux_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/ui/views/app_list/linux/app_list_linux.cc.orig.port	Fri Apr  8 18:02:07 2016
 +++ chrome/browser/ui/views/app_list/linux/app_list_linux.cc	Thu Apr 14 08:25:10 2016
 @@ -91,7 +91,7 @@ void AppListLinux::MoveNearCursor(app_list::AppListVie

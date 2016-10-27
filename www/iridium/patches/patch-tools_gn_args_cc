@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_gn_args_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- tools/gn/args.cc.orig.port	Wed Oct 19 13:53:46 2016
++++ tools/gn/args.cc	Wed Oct 19 13:54:01 2016
+@@ -260,6 +260,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+   os = "android";
+ #elif defined(OS_NETBSD)
+   os = "netbsd";
++#elif defined(OS_OPENBSD)
++  os = "openbsd";
+ #else
+   #error Unknown OS type.
+ #endif

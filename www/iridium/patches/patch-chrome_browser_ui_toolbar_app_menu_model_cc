@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.4 2016/05/28 14:49:39 robert Exp $
---- chrome/browser/ui/toolbar/app_menu_model.cc.orig.port	Wed May 25 04:54:10 2016
-+++ chrome/browser/ui/toolbar/app_menu_model.cc	Thu May 26 08:09:41 2016
-@@ -711,7 +711,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
+$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig.port	Wed Oct 12 21:02:55 2016
++++ chrome/browser/ui/toolbar/app_menu_model.cc	Wed Oct 19 12:56:00 2016
+@@ -704,7 +704,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
      case IDC_UPGRADE_DIALOG:
        return browser_defaults::kShowUpgradeMenuItem &&
            UpgradeDetector::GetInstance()->notify_upgrade();

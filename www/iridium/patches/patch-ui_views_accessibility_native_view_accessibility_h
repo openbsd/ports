@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_accessibility_native_view_accessibility_h,v 1.1 2016/03/23 20:13:07 robert Exp $
+$OpenBSD: patch-ui_views_accessibility_native_view_accessibility_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- ui/views/accessibility/native_view_accessibility.h.orig.port	Sat Mar  5 23:32:04 2016
 +++ ui/views/accessibility/native_view_accessibility.h	Sat Mar  5 23:32:13 2016
 @@ -22,7 +22,7 @@

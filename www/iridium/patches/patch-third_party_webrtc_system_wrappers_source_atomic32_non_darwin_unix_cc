@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_atomic32_non_darwin_unix_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- third_party/webrtc/system_wrappers/source/atomic32_non_darwin_unix.cc.orig.port	Thu Sep  1 14:38:15 2016
++++ third_party/webrtc/system_wrappers/source/atomic32_non_darwin_unix.cc	Thu Sep  1 14:38:59 2016
+@@ -12,7 +12,7 @@
+ 
+ #include <assert.h>
+ #include <inttypes.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ #include "webrtc/common_types.h"
+ 

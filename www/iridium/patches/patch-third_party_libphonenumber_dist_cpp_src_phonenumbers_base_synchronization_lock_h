@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_synchronization_lock_h,v 1.1 2016/05/28 14:49:39 robert Exp $
+$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_synchronization_lock_h,v 1.2 2016/10/27 18:30:41 robert Exp $
 --- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig.port	Thu May 26 13:07:07 2016
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h	Thu May 26 13:07:14 2016
 @@ -37,7 +37,7 @@ typedef boost::mutex::scoped_lock AutoLock;

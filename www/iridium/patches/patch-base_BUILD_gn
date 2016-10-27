@@ -1,0 +1,32 @@
+$OpenBSD: patch-base_BUILD_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- base/BUILD.gn.orig.port	Wed Oct 12 21:02:52 2016
++++ base/BUILD.gn	Wed Oct 19 12:55:55 2016
+@@ -1365,6 +1365,28 @@ component("base") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "debug/proc_maps_linux.cc",
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "sys_info_openbsd.cc",
++      "files/file_path_watcher_stub.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])

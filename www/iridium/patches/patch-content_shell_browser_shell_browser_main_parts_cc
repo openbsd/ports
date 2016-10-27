@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.5 2016/10/27 18:30:41 robert Exp $
+--- content/shell/browser/shell_browser_main_parts.cc.orig.port	Tue Oct 25 21:56:44 2016
++++ content/shell/browser/shell_browser_main_parts.cc	Tue Oct 25 22:12:06 2016
+@@ -44,7 +44,7 @@
+ #if defined(USE_AURA) && defined(USE_X11)
+ #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
+ #endif
+-#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
++#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
+ #include "ui/base/ime/input_method_initializer.h"
+ #endif
+ #if defined(OS_CHROMEOS)
+@@ -143,7 +143,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
+ }
+ 
+ void ShellBrowserMainParts::PreEarlyInitialization() {
+-#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
++#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
+   ui::InitializeInputMethodForTesting();
+ #endif
+ #if defined(OS_ANDROID)

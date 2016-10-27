@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_h,v 1.6 2016/03/23 20:13:07 robert Exp $
---- chrome/browser/web_applications/web_app.h.orig.port	Wed Feb 24 00:01:59 2016
-+++ chrome/browser/web_applications/web_app.h	Thu Mar  3 09:43:26 2016
-@@ -227,7 +227,7 @@ typedef std::vector<WebApplicationInfo::IconInfo> Icon
+$OpenBSD: patch-chrome_browser_web_applications_web_app_h,v 1.7 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/web_applications/web_app.h.orig.port	Wed Oct 12 21:02:55 2016
++++ chrome/browser/web_applications/web_app.h	Wed Oct 19 12:56:01 2016
+@@ -224,7 +224,7 @@ typedef std::vector<WebApplicationInfo::IconInfo> Icon
  void GetIconsInfo(const WebApplicationInfo& app_info, IconInfoList* icons);
  #endif
  

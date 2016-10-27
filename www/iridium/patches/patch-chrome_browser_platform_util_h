@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_platform_util_h,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- chrome/browser/platform_util.h.orig.port	Thu Jul 21 15:53:20 2016
++++ chrome/browser/platform_util.h	Thu Jul 21 15:53:27 2016
+@@ -40,7 +40,7 @@ enum OpenOperationResult {
+ enum OpenItemType {
+   OPEN_FILE,
+   OPEN_FOLDER,
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   SHOW_ITEM_IN_FOLDER
+ #endif
+ };

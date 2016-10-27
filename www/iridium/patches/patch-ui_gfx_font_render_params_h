@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.1 2016/05/28 14:49:39 robert Exp $
---- ui/gfx/font_render_params.h.orig.port	Thu May 26 09:55:47 2016
-+++ ui/gfx/font_render_params.h	Thu May 26 09:56:03 2016
-@@ -102,13 +102,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.2 2016/10/27 18:30:41 robert Exp $
+--- ui/gfx/font_render_params.h.orig.port	Thu Sep  1 00:03:52 2016
++++ ui/gfx/font_render_params.h	Thu Sep  1 11:12:25 2016
+@@ -106,13 +106,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  

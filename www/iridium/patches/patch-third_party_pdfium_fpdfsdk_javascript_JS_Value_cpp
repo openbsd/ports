@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.1 2016/05/28 14:49:39 robert Exp $
---- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig.port	Thu May 26 08:33:02 2016
-+++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp	Thu May 26 08:33:16 2016
-@@ -602,7 +602,12 @@ double _getLocalTZA() {
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.2 2016/10/27 18:30:41 robert Exp $
+--- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig.port	Wed Oct 12 21:05:31 2016
++++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp	Wed Oct 19 12:56:09 2016
+@@ -470,7 +470,12 @@ double _getLocalTZA() {
    long timezone = 0;
    _get_timezone(&timezone);
  #endif

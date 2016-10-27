@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- chrome/browser/browser_process_impl.h.orig.port	Tue Oct 25 21:56:43 2016
++++ chrome/browser/browser_process_impl.h	Tue Oct 25 22:19:37 2016
+@@ -336,7 +336,7 @@ class BrowserProcessImpl : public BrowserProcess,
+ 
+   std::unique_ptr<ChromeDeviceClient> device_client_;
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   // Any change to this #ifdef must be reflected as well in
+   // chrome/browser/memory/tab_manager_browsertest.cc
+   std::unique_ptr<memory::TabManager> tab_manager_;

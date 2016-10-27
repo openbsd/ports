@@ -1,0 +1,38 @@
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- third_party/libusb/BUILD.gn.orig.port	Wed Oct 12 21:03:15 2016
++++ third_party/libusb/BUILD.gn	Wed Oct 19 12:56:09 2016
+@@ -93,7 +93,7 @@ static_library("libusb") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     sources += [
+       "src/libusb/os/linux_usbfs.c",
+       "src/libusb/os/linux_usbfs.h",
+@@ -104,6 +104,16 @@ static_library("libusb") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "src/libusb/os/openbsd_usb.c",
++    ]
++    defines += [
++      "OS_OPENBSD=1",
++      "_GNU_SOURCE=1",
++    ]
++  }
++
+   if (is_chromeos) {
+     defines += [ "USBI_TIMERFD_AVAILABLE" ]
+   }
+@@ -117,7 +127,7 @@ static_library("libusb") {
+     deps += [ "//build/linux/libudev" ]
+   }
+ 
+-  if (is_linux && !use_udev) {
++  if (is_linux && !use_udev && !is_openbsd) {
+     sources += [ "src/libusb/os/linux_netlink.c" ]
+     defines += [ "HAVE_LINUX_NETLINK_H" ]
+   }

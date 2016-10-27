@@ -1,0 +1,37 @@
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- sandbox/linux/BUILD.gn.orig.port	Wed Oct 12 21:03:02 2016
++++ sandbox/linux/BUILD.gn	Wed Oct 19 12:56:07 2016
+@@ -11,12 +11,12 @@ if (is_android) {
+ }
+ 
+ declare_args() {
+-  compile_suid_client = is_linux
++  compile_suid_client = is_linux && !is_openbsd
+ 
+-  compile_credentials = is_linux
++  compile_credentials = is_linux && !is_openbsd
+ 
+   # On Android, use plain GTest.
+-  use_base_test_suite = is_linux
++  use_base_test_suite = is_linux && !is_openbsd
+ }
+ 
+ if (is_nacl_nonsfi) {
+@@ -376,7 +376,7 @@ component("sandbox_services") {
+     public_deps += [ ":sandbox_services_headers" ]
+   }
+ 
+-  if (is_nacl_nonsfi) {
++  if (is_nacl_nonsfi || is_openbsd) {
+     cflags = [ "-fgnu-inline-asm" ]
+ 
+     sources -= [
+@@ -384,6 +384,8 @@ component("sandbox_services") {
+       "services/init_process_reaper.h",
+       "services/scoped_process.cc",
+       "services/scoped_process.h",
++      "services/syscall_wrappers.cc",
++      "services/syscall_wrappers.h",
+       "services/yama.cc",
+       "services/yama.h",
+       "syscall_broker/broker_channel.cc",

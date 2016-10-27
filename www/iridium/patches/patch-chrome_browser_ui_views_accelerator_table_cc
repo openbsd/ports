@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.5 2016/03/23 20:13:07 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
 --- chrome/browser/ui/views/accelerator_table.cc.orig.port	Wed Feb 24 00:01:59 2016
 +++ chrome/browser/ui/views/accelerator_table.cc	Thu Mar  3 09:43:26 2016
 @@ -71,7 +71,7 @@ const AcceleratorMapping kAcceleratorMap[] = {

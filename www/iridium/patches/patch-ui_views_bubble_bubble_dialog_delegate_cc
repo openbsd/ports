@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_bubble_bubble_dialog_delegate_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- ui/views/bubble/bubble_dialog_delegate.cc.orig.port	Thu Jul 21 10:44:52 2016
++++ ui/views/bubble/bubble_dialog_delegate.cc	Thu Jul 21 10:45:02 2016
+@@ -72,7 +72,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
+   // the parent frame and let DWM handle compositing.  If not, then we don't
+   // want to allow the bubble to extend the frame because it will be clipped.
+   bubble_delegate->set_adjust_if_offscreen(ui::win::IsAeroGlassEnabled());
+-#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
++#elif ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
+   // Linux clips bubble windows that extend outside their parent window bounds.
+   // Mac never adjusts.
+   bubble_delegate->set_adjust_if_offscreen(false);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- chrome/app/chrome_command_ids.h.orig.port	Sat Oct 22 15:48:44 2016
++++ chrome/app/chrome_command_ids.h	Sat Oct 22 15:48:55 2016
+@@ -75,7 +75,7 @@
+ #define IDC_VISIT_DESKTOP_OF_LRU_USER_2 34049
+ #define IDC_VISIT_DESKTOP_OF_LRU_USER_3 34050
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #define IDC_USE_SYSTEM_TITLE_BAR        34051
+ #endif
+ 

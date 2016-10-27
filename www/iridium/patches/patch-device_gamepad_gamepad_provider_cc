@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- device/gamepad/gamepad_provider.cc.orig.port	Wed Oct 12 21:02:59 2016
++++ device/gamepad/gamepad_provider.cc	Wed Oct 19 12:56:05 2016
+@@ -136,7 +136,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
+     monitor->AddDevicesChangedObserver(this);
+ 
+   polling_thread_.reset(new base::Thread("Gamepad polling thread"));
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // On Linux, the data fetcher needs to watch file descriptors, so the message
+   // loop needs to be a libevent loop.
+   const base::MessageLoop::Type kMessageLoopType = base::MessageLoop::TYPE_IO;

@@ -1,0 +1,30 @@
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.1 2016/10/27 18:30:41 robert Exp $
+--- ui/gl/BUILD.gn.orig.port	Wed Oct 19 13:55:31 2016
++++ ui/gl/BUILD.gn	Thu Oct 20 15:48:54 2016
+@@ -234,7 +234,6 @@ component("gl") {
+     data_deps = [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa:osmesa",
+     ]
+   }
+   if (is_mac) {
+@@ -273,6 +272,7 @@ component("gl") {
+ 
+     deps += [ ":gl_jni_headers" ]
+   }
++  cflags = [ "-I/usr/X11R6/XXXinclude" ]
+ }
+ 
+ static_library("gl_unittest_utils") {
+@@ -386,10 +386,6 @@ test("gl_unittests") {
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+     "//ui/gl/init",
+-  ]
+-
+-  data_deps = [
+-    "//third_party/mesa:osmesa",
+   ]
+ }
+ 

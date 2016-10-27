@@ -1,0 +1,104 @@
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.1 2016/10/27 18:30:40 robert Exp $
+--- build/config/BUILDCONFIG.gn.orig.port	Wed Oct 19 13:25:29 2016
++++ build/config/BUILDCONFIG.gn	Wed Oct 19 14:21:17 2016
+@@ -134,12 +134,13 @@ declare_args() {
+   is_debug = !is_official_build
+ 
+   # Whether we're a traditional desktop unix.
+-  is_desktop_linux = current_os == "linux"
++  is_desktop_linux = current_os == "linux" || current_os == "openbsd"
+ 
+   # Set to true when compiling with the Clang compiler. Typically this is used
+   # to configure warnings.
+   is_clang = current_os == "mac" || current_os == "ios" ||
+-             current_os == "linux" || current_os == "chromeos"
++             current_os == "linux" || current_os == "chromeos" ||
++             current_os == "openbsd"
+ 
+   # Allows the path to a custom target toolchain to be injected as a single
+   # argument, and set as the default toolchain.
+@@ -195,6 +196,8 @@ if (host_toolchain == "") {
+     } else {
+       host_toolchain = "//build/toolchain/linux:$host_cpu"
+     }
++  } else if (host_os == "openbsd") {
++    host_toolchain = "//build/toolchain/openbsd:clang_$host_cpu"
+   } else if (host_os == "mac") {
+     host_toolchain = "//build/toolchain/mac:clang_$host_cpu"
+   } else if (host_os == "win") {
+@@ -229,6 +232,8 @@ if (target_os == "android") {
+   }
+ } else if (target_os == "ios") {
+   _default_toolchain = "//build/toolchain/mac:ios_clang_$target_cpu"
++} else if (target_os == "openbsd") {
++  _default_toolchain = host_toolchain
+ } else if (target_os == "mac") {
+   assert(host_os == "mac", "Mac cross-compiles are unsupported.")
+   _default_toolchain = host_toolchain
+@@ -282,6 +287,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = false
+   is_posix = false
++  is_openbsd = false
+   is_win = true
+ } else if (current_os == "mac") {
+   is_android = false
+@@ -291,6 +297,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = true
+   is_nacl = false
+   is_posix = true
++  is_openbsd = false
+   is_win = false
+ } else if (current_os == "android") {
+   is_android = true
+@@ -300,6 +307,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = false
+   is_posix = true
++  is_openbsd = false
+   is_win = false
+ } else if (current_os == "chromeos") {
+   is_android = false
+@@ -309,6 +317,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = false
+   is_posix = true
++  is_openbsd = false
+   is_win = false
+ } else if (current_os == "nacl") {
+   # current_os == "nacl" will be passed by the nacl toolchain definition.
+@@ -321,6 +330,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = true
+   is_posix = true
++  is_openbsd = false
+   is_win = false
+ } else if (current_os == "ios") {
+   is_android = false
+@@ -330,6 +340,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = false
+   is_posix = true
++  is_openbsd = false
+   is_win = false
+ } else if (current_os == "linux") {
+   is_android = false
+@@ -339,7 +350,18 @@ if (current_os == "win" || current_os == "winrt_81" ||
+   is_mac = false
+   is_nacl = false
+   is_posix = true
++  is_openbsd = false
+   is_win = false
++} else if (current_os == "openbsd") {
++  is_android = false
++  is_chromeos = false
++  is_ios = false
++  is_linux = true
++  is_mac = false
++  is_nacl = false
++  is_posix = true
++  is_win = false
++  is_openbsd = true
+ }
+ 
+ # =============================================================================

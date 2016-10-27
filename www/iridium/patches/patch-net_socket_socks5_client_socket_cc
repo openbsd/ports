@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.5 2016/04/27 12:46:16 robert Exp $
+$OpenBSD: patch-net_socket_socks5_client_socket_cc,v 1.6 2016/10/27 18:30:41 robert Exp $
 --- net/socket/socks5_client_socket.cc.orig.port	Wed Apr 13 22:59:49 2016
 +++ net/socket/socks5_client_socket.cc	Thu Apr 14 08:25:13 2016
 @@ -16,6 +16,9 @@
