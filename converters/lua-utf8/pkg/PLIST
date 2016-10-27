@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/27 07:53:24 fcambus Exp $
+lib/lua/${MODLUA_VERSION}/lua-utf8.so
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README.md
