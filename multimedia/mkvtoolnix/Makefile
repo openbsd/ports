@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2016/10/26 07:45:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2016/10/28 08:32:11 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -26,7 +26,8 @@ MODRUBY_RUNDEP=	No
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
-BUILD_DEPENDS=	devel/ruby-rake
+BUILD_DEPENDS=	devel/ruby-rake \
+		devel/utfcpp
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
