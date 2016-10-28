@@ -1,0 +1,18 @@
+$OpenBSD: patch-libs_gtkmm2ext_fastmeter_cc,v 1.3 2016/10/28 13:46:17 ajacoutot Exp $
+
+From 65c2e089ab263c83bff7d2e945b80c53f80b749b Mon Sep 17 00:00:00 2001
+From: Nils Philippsen <nils@tiptoe.de>
+Date: Thu, 4 Aug 2016 09:48:47 +0200
+Subject: [PATCH] workaround changes in glibmm 2.49.x
+
+--- libs/gtkmm2ext/fastmeter.cc.orig	Fri Oct 28 11:31:43 2016
++++ libs/gtkmm2ext/fastmeter.cc	Fri Oct 28 12:03:26 2016
+@@ -475,7 +475,7 @@ FastMeter::set (float lvl)
+ 
+ 	Glib::RefPtr<Gdk::Window> win;
+ 
+-	if ((win = get_window()) == 0) {
++	if (! (win = get_window())) {
+ 		queue_draw ();
+ 		return;
+ 	}

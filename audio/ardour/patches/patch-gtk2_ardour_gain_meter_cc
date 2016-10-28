@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk2_ardour_gain_meter_cc,v 1.1 2016/10/28 13:46:17 ajacoutot Exp $
+
+From 65c2e089ab263c83bff7d2e945b80c53f80b749b Mon Sep 17 00:00:00 2001
+From: Nils Philippsen <nils@tiptoe.de>
+Date: Thu, 4 Aug 2016 09:48:47 +0200
+Subject: [PATCH] workaround changes in glibmm 2.49.x
+
+--- gtk2_ardour/gain_meter.cc.orig	Fri Oct 28 13:15:13 2016
++++ gtk2_ardour/gain_meter.cc	Fri Oct 28 13:15:59 2016
+@@ -63,7 +63,7 @@ Glib::RefPtr<Gdk::Pixbuf> GainMeter::slider;
+ void
+ GainMeter::setup_slider_pix ()
+ {
+-	if ((slider = ::get_icon ("fader_belt")) == 0) {
++	if (! (slider = ::get_icon ("fader_belt"))) {
+ 		throw failed_constructor();
+ 	}
+ }

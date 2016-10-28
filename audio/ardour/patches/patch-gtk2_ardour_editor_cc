@@ -1,13 +1,13 @@
-$OpenBSD: patch-gtk2_ardour_new_session_dialog_cc,v 1.3 2016/10/28 13:46:17 ajacoutot Exp $
+$OpenBSD: patch-gtk2_ardour_editor_cc,v 1.1 2016/10/28 13:46:17 ajacoutot Exp $
 
 From 65c2e089ab263c83bff7d2e945b80c53f80b749b Mon Sep 17 00:00:00 2001
 From: Nils Philippsen <nils@tiptoe.de>
 Date: Thu, 4 Aug 2016 09:48:47 +0200
 Subject: [PATCH] workaround changes in glibmm 2.49.x
 
---- gtk2_ardour/new_session_dialog.cc.orig	Fri Oct 28 11:31:43 2016
-+++ gtk2_ardour/new_session_dialog.cc	Fri Oct 28 13:20:13 2016
-@@ -354,16 +354,16 @@ NewSessionDialog::NewSessionDialog()
+--- gtk2_ardour/editor.cc.orig	Fri Oct 28 12:34:10 2016
++++ gtk2_ardour/editor.cc	Fri Oct 28 12:35:01 2016
+@@ -802,16 +802,16 @@ Editor::Editor ()
  	list<Glib::RefPtr<Gdk::Pixbuf> > window_icons;
  	Glib::RefPtr<Gdk::Pixbuf> icon;
  
@@ -28,12 +28,3 @@ Subject: [PATCH] workaround changes in glibmm 2.49.x
  		window_icons.push_back (icon);
  	}
  	if (!window_icons.empty()) {
-@@ -582,7 +582,7 @@ NewSessionDialog::set_session_folder(const std::string
- 	*/
- 
- 
--#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__OpenBSD__)
- 
- 	char buf[PATH_MAX];
- 
