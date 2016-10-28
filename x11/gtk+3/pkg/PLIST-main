@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2016/04/18 06:50:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2016/10/28 13:41:36 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -29,9 +29,12 @@ include/gtk-3.0/gdk/gdkconfig.h
 include/gtk-3.0/gdk/gdkcursor.h
 include/gtk-3.0/gdk/gdkdevice.h
 include/gtk-3.0/gdk/gdkdevicemanager.h
+include/gtk-3.0/gdk/gdkdevicepad.h
+include/gtk-3.0/gdk/gdkdevicetool.h
 include/gtk-3.0/gdk/gdkdisplay.h
 include/gtk-3.0/gdk/gdkdisplaymanager.h
 include/gtk-3.0/gdk/gdkdnd.h
+include/gtk-3.0/gdk/gdkdrawingcontext.h
 include/gtk-3.0/gdk/gdkenumtypes.h
 include/gtk-3.0/gdk/gdkevents.h
 include/gtk-3.0/gdk/gdkframeclock.h
@@ -41,6 +44,7 @@ include/gtk-3.0/gdk/gdkkeys.h
 include/gtk-3.0/gdk/gdkkeysyms-compat.h
 include/gtk-3.0/gdk/gdkkeysyms.h
 include/gtk-3.0/gdk/gdkmain.h
+include/gtk-3.0/gdk/gdkmonitor.h
 include/gtk-3.0/gdk/gdkpango.h
 include/gtk-3.0/gdk/gdkpixbuf.h
 include/gtk-3.0/gdk/gdkprivate.h
@@ -72,6 +76,7 @@ include/gtk-3.0/gdk/x11/gdkx11displaymanager.h
 include/gtk-3.0/gdk/x11/gdkx11dnd.h
 include/gtk-3.0/gdk/x11/gdkx11glcontext.h
 include/gtk-3.0/gdk/x11/gdkx11keys.h
+include/gtk-3.0/gdk/x11/gdkx11monitor.h
 include/gtk-3.0/gdk/x11/gdkx11property.h
 include/gtk-3.0/gdk/x11/gdkx11screen.h
 include/gtk-3.0/gdk/x11/gdkx11selection.h
@@ -122,6 +127,7 @@ include/gtk-3.0/gtk/a11y/gtkscalebuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkscrolledwindowaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinbuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinneraccessible.h
+include/gtk-3.0/gtk/a11y/gtkstackaccessible.h
 include/gtk-3.0/gtk/a11y/gtkstatusbaraccessible.h
 include/gtk-3.0/gtk/a11y/gtkswitchaccessible.h
 include/gtk-3.0/gtk/a11y/gtktextcellaccessible.h
@@ -231,6 +237,7 @@ include/gtk-3.0/gtk/gtkcsssection.h
 include/gtk-3.0/gtk/gtkdebug.h
 include/gtk-3.0/gtk/gtkdialog.h
 include/gtk-3.0/gtk/gtkdnd.h
+include/gtk-3.0/gtk/gtkdragdest.h
 include/gtk-3.0/gtk/gtkdragsource.h
 include/gtk-3.0/gtk/gtkdrawingarea.h
 include/gtk-3.0/gtk/gtkeditable.h
@@ -299,6 +306,7 @@ include/gtk-3.0/gtk/gtknotebook.h
 include/gtk-3.0/gtk/gtkoffscreenwindow.h
 include/gtk-3.0/gtk/gtkorientable.h
 include/gtk-3.0/gtk/gtkoverlay.h
+include/gtk-3.0/gtk/gtkpadcontroller.h
 include/gtk-3.0/gtk/gtkpagesetup.h
 include/gtk-3.0/gtk/gtkpaned.h
 include/gtk-3.0/gtk/gtkpapersize.h
@@ -335,6 +343,7 @@ include/gtk-3.0/gtk/gtkseparator.h
 include/gtk-3.0/gtk/gtkseparatormenuitem.h
 include/gtk-3.0/gtk/gtkseparatortoolitem.h
 include/gtk-3.0/gtk/gtksettings.h
+include/gtk-3.0/gtk/gtkshortcutlabel.h
 include/gtk-3.0/gtk/gtkshortcutsgroup.h
 include/gtk-3.0/gtk/gtkshortcutssection.h
 include/gtk-3.0/gtk/gtkshortcutsshortcut.h
@@ -486,10 +495,13 @@ share/gtk-doc/html/gail-libgail-util3/up.png
 share/gtk-doc/html/gdk3/
 share/gtk-doc/html/gdk3/GdkDevice.html
 share/gtk-doc/html/gdk3/GdkDeviceManager.html
+share/gtk-doc/html/gdk3/GdkDevicePad.html
 share/gtk-doc/html/gdk3/GdkDisplay.html
 share/gtk-doc/html/gdk3/GdkDisplayManager.html
+share/gtk-doc/html/gdk3/GdkDrawingContext.html
 share/gtk-doc/html/gdk3/GdkFrameClock.html
 share/gtk-doc/html/gdk3/GdkGLContext.html
+share/gtk-doc/html/gdk3/GdkMonitor.html
 share/gtk-doc/html/gdk3/GdkScreen.html
 share/gtk-doc/html/gdk3/GdkSeat.html
 share/gtk-doc/html/gdk3/X_cursor.png
@@ -504,6 +516,7 @@ share/gtk-doc/html/gdk3/api-index-3-16.html
 share/gtk-doc/html/gdk3/api-index-3-18.html
 share/gtk-doc/html/gdk3/api-index-3-2.html
 share/gtk-doc/html/gdk3/api-index-3-20.html
+share/gtk-doc/html/gdk3/api-index-3-22.html
 share/gtk-doc/html/gdk3/api-index-3-4.html
 share/gtk-doc/html/gdk3/api-index-3-6.html
 share/gtk-doc/html/gdk3/api-index-3-8.html
@@ -525,6 +538,7 @@ share/gtk-doc/html/gdk3/circle.png
 share/gtk-doc/html/gdk3/clock.png
 share/gtk-doc/html/gdk3/coffee_mug.png
 share/gtk-doc/html/gdk3/col_resize_cursor.png
+share/gtk-doc/html/gdk3/context_menu_cursor.png
 share/gtk-doc/html/gdk3/copy_cursor.png
 share/gtk-doc/html/gdk3/cross.png
 share/gtk-doc/html/gdk3/cross_reverse.png
@@ -786,6 +800,7 @@ share/gtk-doc/html/gtk3/GtkNotebook.html
 share/gtk-doc/html/gtk3/GtkNumerableIcon.html
 share/gtk-doc/html/gtk3/GtkOffscreenWindow.html
 share/gtk-doc/html/gtk3/GtkOverlay.html
+share/gtk-doc/html/gtk3/GtkPadController.html
 share/gtk-doc/html/gtk3/GtkPageSetup.html
 share/gtk-doc/html/gtk3/GtkPageSetupUnixDialog.html
 share/gtk-doc/html/gtk3/GtkPaned.html
@@ -908,6 +923,7 @@ share/gtk-doc/html/gtk3/api-index-3-16.html
 share/gtk-doc/html/gtk3/api-index-3-18.html
 share/gtk-doc/html/gtk3/api-index-3-2.html
 share/gtk-doc/html/gtk3/api-index-3-20.html
+share/gtk-doc/html/gtk3/api-index-3-22.html
 share/gtk-doc/html/gtk3/api-index-3-4.html
 share/gtk-doc/html/gtk3/api-index-3-6.html
 share/gtk-doc/html/gtk3/api-index-3-8.html
@@ -939,6 +955,16 @@ share/gtk-doc/html/gtk3/ch26s02.html
 share/gtk-doc/html/gtk3/ch28s02.html
 share/gtk-doc/html/gtk3/ch30s02.html
 share/gtk-doc/html/gtk3/ch30s03.html
+share/gtk-doc/html/gtk3/ch32s02.html
+share/gtk-doc/html/gtk3/ch32s03.html
+share/gtk-doc/html/gtk3/ch32s04.html
+share/gtk-doc/html/gtk3/ch32s05.html
+share/gtk-doc/html/gtk3/ch32s06.html
+share/gtk-doc/html/gtk3/ch32s07.html
+share/gtk-doc/html/gtk3/ch32s08.html
+share/gtk-doc/html/gtk3/ch32s09.html
+share/gtk-doc/html/gtk3/ch32s10.html
+share/gtk-doc/html/gtk3/ch32s11.html
 share/gtk-doc/html/gtk3/chap-css-overview.html
 share/gtk-doc/html/gtk3/chap-css-properties.html
 share/gtk-doc/html/gtk3/chap-drawing-model.html
@@ -1002,6 +1028,7 @@ share/gtk-doc/html/gtk3/gtk-encode-symbolic-svg.html
 share/gtk-doc/html/gtk3/gtk-getting-started.html
 share/gtk-doc/html/gtk3/gtk-launch.html
 share/gtk-doc/html/gtk3/gtk-migrating-2-to-3.html
+share/gtk-doc/html/gtk3/gtk-migrating-3-x-to-y.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkGrid.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-bonus-points.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-checklist.html
@@ -1101,6 +1128,9 @@ share/gtk-doc/html/gtk3/pagesetupdialog.png
 share/gtk-doc/html/gtk3/panes.png
 share/gtk-doc/html/gtk3/placessidebar.png
 share/gtk-doc/html/gtk3/platform-support.html
+share/gtk-doc/html/gtk3/popup-anchors.png
+share/gtk-doc/html/gtk3/popup-flip.png
+share/gtk-doc/html/gtk3/popup-slide.png
 share/gtk-doc/html/gtk3/printdialog.png
 share/gtk-doc/html/gtk3/progressbar.png
 share/gtk-doc/html/gtk3/pt06.html
