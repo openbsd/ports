@@ -1,12 +1,18 @@
-$OpenBSD: patch-src_duktape_duktape_duk_config_h,v 1.1 2016/03/11 02:27:26 sthen Exp $
---- src/duktape/duktape/duk_config.h.orig	Fri Mar 11 02:26:34 2016
-+++ src/duktape/duktape/duk_config.h	Fri Mar 11 02:26:35 2016
-@@ -255,7 +255,7 @@
+$OpenBSD: patch-src_duktape_duktape_duk_config_h,v 1.2 2016/10/28 14:17:20 jca Exp $
+
+We *do* have inttypes.h, but our compiler doesn't default to C99 and
+doesn't #define __STDC_VERSION__ 199901L.
+
+--- src/duktape/duktape/duk_config.h.orig	Fri Jun 24 03:54:27 2016
++++ src/duktape/duktape/duk_config.h	Fri Oct 28 05:55:26 2016
+@@ -1337,6 +1337,10 @@
+ #define DUK_F_HAVE_INTTYPES
  #endif
  
- /* SPARC */
--#if defined(sparc) || defined(__sparc) || defined(__sparc__)
-+#if defined(sparc) || defined(__sparc) || defined(__sparc__) || defined(__sparc64__)
- #define DUK_F_SPARC
- #if defined(__LP64__) || defined(_LP64)
- #define DUK_F_SPARC64
++#ifndef DUK_F_HAVE_INTTYPES
++#define DUK_F_HAVE_INTTYPES
++#endif
++
+ /* Basic integer typedefs and limits, preferably from inttypes.h, otherwise
+  * through automatic detection.
+  */
