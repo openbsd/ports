@@ -1,0 +1,13 @@
+$OpenBSD: patch-Make_openbsd,v 1.1 2016/10/28 04:01:33 jca Exp $
+
+- fix build on powerpc and sparc64
+
+--- Make.openbsd.orig	Sun Sep 11 23:44:20 2016
++++ Make.openbsd	Fri Oct 28 06:00:43 2016
+@@ -17,5 +17,5 @@ AUDIO=sndio
+ all: default
+ 
+ libmachdep.a:
+-	arch=`uname -m|sed 's/i.86/386/;s/Power Macintosh/power/; s/x86_64/amd64/'`; \
++	arch=`uname -m|sed 's/i.86/386/; s/macppc/power/; s/socppc/power/; s/x86_64/amd64/; s/sparc64/sun4u/'`; \
+ 	(cd posix-$$arch &&  make)
