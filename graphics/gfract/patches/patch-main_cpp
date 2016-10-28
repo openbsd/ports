@@ -1,0 +1,21 @@
+$OpenBSD: patch-main_cpp,v 1.1 2016/10/28 13:45:22 ajacoutot Exp $
+--- main.cpp.orig	Mon Feb  1 13:31:34 2010
++++ main.cpp	Thu Oct 27 15:10:55 2016
+@@ -340,7 +340,7 @@ void load_palette_cmd(void)
+ 
+ void load_builtin_palette_cmd(void* arg)
+ {
+-    int n = reinterpret_cast<int>(arg);
++    int n = *((int*)(&arg));
+ 
+     palette_load_builtin(n);
+     reapply_palette();
+@@ -1001,7 +1001,7 @@ void load_config()
+ {
+     using namespace boost::filesystem;
+ 
+-    if (!exists(path(cfgFilename, native)))
++    if (!exists(path(cfgFilename)))
+     {
+         return;
+     }

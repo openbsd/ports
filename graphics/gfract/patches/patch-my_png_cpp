@@ -1,10 +1,10 @@
-$OpenBSD: patch-my_png_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+$OpenBSD: patch-my_png_cpp,v 1.2 2016/10/28 13:45:22 ajacoutot Exp $
 
 Fix build with png-1.5.
 
---- my_png.cpp.orig	Wed Jul  6 15:34:02 2011
-+++ my_png.cpp	Wed Jul  6 15:34:19 2011
-@@ -58,7 +58,7 @@ void save_file(image_info* img, char* filename)
+--- my_png.cpp.orig	Mon Feb  1 13:31:34 2010
++++ my_png.cpp	Thu Oct 27 14:50:22 2016
+@@ -53,7 +53,7 @@ void my_png_save_img(image_info* img, char* filename)
          return;
      }
  
