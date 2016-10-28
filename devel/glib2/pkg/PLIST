@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2016/08/21 12:39:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2016/10/28 13:40:04 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -9,6 +9,7 @@
 @bin bin/gapplication
 @bin bin/gdbus
 bin/gdbus-codegen
+@bin bin/gio
 @bin bin/gio-querymodules
 @bin bin/glib-compile-resources
 @bin bin/glib-compile-schemas
@@ -321,6 +322,7 @@ lib/pkgconfig/gthread-2.0.pc
 @man man/man1/gdbus-codegen.1
 @man man/man1/gdbus.1
 @man man/man1/gio-querymodules.1
+@man man/man1/gio.1
 @man man/man1/glib-compile-resources.1
 @man man/man1/glib-compile-schemas.1
 @man man/man1/glib-genmarshal.1
@@ -347,8 +349,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/usr/local/
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.4800.2-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.4800.2-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5000.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5000.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -379,8 +381,8 @@ share/glib-2.0/codegen/utils.py
 share/glib-2.0/codegen/utils.pyc
 share/glib-2.0/codegen/utils.pyo
 share/glib-2.0/gdb/
-share/glib-2.0/gdb/glib.py
-share/glib-2.0/gdb/gobject.py
+share/glib-2.0/gdb/glib_gdb.py
+share/glib-2.0/gdb/gobject_gdb.py
 share/glib-2.0/gettext/
 share/glib-2.0/gettext/po/
 share/glib-2.0/gettext/po/Makefile.in.in
@@ -538,6 +540,7 @@ share/gtk-doc/html/gio/api-index-2-42.html
 share/gtk-doc/html/gio/api-index-2-44.html
 share/gtk-doc/html/gio/api-index-2-46.html
 share/gtk-doc/html/gio/api-index-2-48.html
+share/gtk-doc/html/gio/api-index-2-50.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -600,6 +603,7 @@ share/gtk-doc/html/gio/gio-gpollableutils.html
 share/gtk-doc/html/gio/gio-hierarchy.html
 share/gtk-doc/html/gio/gio-querymodules.html
 share/gtk-doc/html/gio/gio.devhelp2
+share/gtk-doc/html/gio/gio.html
 share/gtk-doc/html/gio/glib-compile-resources.html
 share/gtk-doc/html/gio/glib-compile-schemas.html
 share/gtk-doc/html/gio/gresource-tool.html
@@ -664,6 +668,7 @@ share/gtk-doc/html/glib/api-index-2-42.html
 share/gtk-doc/html/glib/api-index-2-44.html
 share/gtk-doc/html/glib/api-index-2-46.html
 share/gtk-doc/html/glib/api-index-2-48.html
+share/gtk-doc/html/glib/api-index-2-50.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
 share/gtk-doc/html/glib/api-index-deprecated.html
