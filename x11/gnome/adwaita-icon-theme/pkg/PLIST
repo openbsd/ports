@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/04/25 08:36:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/10/28 13:46:58 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -2155,6 +2155,9 @@ share/icons/Adwaita/48x48/status/weather-showers-scattered.png
 share/icons/Adwaita/48x48/status/weather-showers.png
 share/icons/Adwaita/48x48/status/weather-snow.png
 share/icons/Adwaita/48x48/status/weather-storm.png
+share/icons/Adwaita/512x512/
+share/icons/Adwaita/512x512/apps/
+share/icons/Adwaita/512x512/apps/accessories-calculator.png
 share/icons/Adwaita/8x8/
 share/icons/Adwaita/8x8/emblems/
 share/icons/Adwaita/8x8/emblems/emblem-default.png
@@ -2192,6 +2195,7 @@ share/icons/Adwaita/cursors/c7088f0f3e6c8088236ef8e1e3e70000
 share/icons/Adwaita/cursors/cell
 share/icons/Adwaita/cursors/circle
 share/icons/Adwaita/cursors/col-resize
+share/icons/Adwaita/cursors/context-menu
 share/icons/Adwaita/cursors/copy
 share/icons/Adwaita/cursors/cross
 share/icons/Adwaita/cursors/cross_reverse
@@ -2204,6 +2208,7 @@ share/icons/Adwaita/cursors/dnd-ask
 share/icons/Adwaita/cursors/dnd-copy
 share/icons/Adwaita/cursors/dnd-link
 share/icons/Adwaita/cursors/dnd-move
+share/icons/Adwaita/cursors/dnd-no-drop
 share/icons/Adwaita/cursors/dnd-none
 share/icons/Adwaita/cursors/dot_box_mask
 share/icons/Adwaita/cursors/dotbox
