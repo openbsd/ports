@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/09/06 11:04:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/10/28 13:44:25 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit2_webkit2gtk-web-extension_pc_in
@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.12.5
+V =			2.14.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -20,8 +20,8 @@ API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     2.0 # 18.0
-SHARED_LIBS +=  webkit2gtk-${API}            2.0 # 37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     2.1 # 18.0
+SHARED_LIBS +=  webkit2gtk-${API}            2.1 # 37.2
 
 CATEGORIES =		www
 
@@ -35,12 +35,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += EGL GL X11 Xcomposite Xdamage Xrender Xt atk-1.0 c
 WANTLIB += cairo cairo-gobject enchant fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz
-WANTLIB += harfbuzz-icu hyphen icui18n icuuc intl jpeg m notify
-WANTLIB += pango-1.0 pangocairo-1.0 png pthread secret-1 soup-2.4
-WANTLIB += sqlite3 webp xml2 xslt z
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnutls
+WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gtk-3 harfbuzz harfbuzz-icu hyphen icudata icui18n
+WANTLIB += icuuc intl jpeg m notify pango-1.0 pangocairo-1.0 png
+WANTLIB += pthread secret-1 soup-2.4 sqlite3 webp xml2 xslt z
 
 MASTER_SITES =		http://webkitgtk.org/releases/
 
@@ -75,6 +75,7 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			devel/libsoup \
 			graphics/libwebp \
 			multimedia/gstreamer1/plugins-base \
+			security/gnutls \
 			textproc/enchant \
 			textproc/hyphen \
 			textproc/libxslt \
@@ -87,6 +88,9 @@ LDFLAGS =		-L${X11BASE}/lib
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
+
+# brings in gstreamer1-plugins-base (disabled by default but make sure to keep it this way)
+CONFIGURE_ARGS +=	-DUSE_GSTREAMER_MPEGTS=OFF
 
 # old gtk+2 plugins (flash, java, ...) - mostly usefull on Linux
 CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGOpInfo_h,v 1.1 2016/10/28 13:44:25 ajacoutot Exp $
+--- Source/JavaScriptCore/dfg/DFGOpInfo.h.orig	Wed Oct 26 15:02:20 2016
++++ Source/JavaScriptCore/dfg/DFGOpInfo.h	Wed Oct 26 15:02:57 2016
+@@ -40,7 +40,7 @@ struct OpInfo {
+     explicit OpInfo(int32_t value) : m_value(static_cast<uint64_t>(value)) { }
+     explicit OpInfo(uint32_t value) : m_value(static_cast<uint64_t>(value)) { }
+     explicit OpInfo(uint64_t value) : m_value(static_cast<uint64_t>(value)) { }
+-#if OS(DARWIN)
++#if OS(DARWIN) || OS(OPENBSD)
+     explicit OpInfo(uintptr_t value) : m_value(static_cast<uint64_t>(value)) { }
+ #endif
+     explicit OpInfo(void* value) : m_value(static_cast<uint64_t>(reinterpret_cast<uintptr_t>(value))) { }

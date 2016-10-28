@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/04/29 10:19:52 ajacoutot Exp $
-@bin bin/jsc
+@comment $OpenBSD: PLIST,v 1.8 2016/10/28 13:44:25 ajacoutot Exp $
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
 include/webkitgtk-${API}/JavaScriptCore/JSBase.h
 include/webkitgtk-${API}/JavaScriptCore/JSContextRef.h
 include/webkitgtk-${API}/JavaScriptCore/JSObjectRef.h
 include/webkitgtk-${API}/JavaScriptCore/JSStringRef.h
+include/webkitgtk-${API}/JavaScriptCore/JSTypedArray.h
 include/webkitgtk-${API}/JavaScriptCore/JSValueRef.h
 include/webkitgtk-${API}/JavaScriptCore/JavaScript.h
 include/webkitgtk-${API}/JavaScriptCore/WebKitAvailability.h
@@ -95,6 +95,7 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMComment.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCustom.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMCustomUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMApplicationCache.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMDOMCSSNamespace.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMImplementation.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMMimeType.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMMimeTypeArray.h
@@ -106,7 +107,6 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMDOMStringList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMStringMap.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMTokenList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMWindow.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMDOMWindowCSS.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMWindowSpeechSynthesis.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDOMWindowUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMDataCue.h
@@ -125,6 +125,7 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMEventTarget.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMEventUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMFile.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMFileList.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMFileUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMGamepad.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMGamepadList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMGeolocation.h
@@ -198,6 +199,7 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLScriptElementUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLSelectElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLSelectElementUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLStyleElement.h
+include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLStyleElementUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLTableCaptionElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLTableCellElement.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMHTMLTableColElement.h
@@ -233,7 +235,6 @@ include/webkitgtk-${API}/webkitdom/WebKitDOMNodeUnstable.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMObject.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMPerformance.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMPerformanceEntry.h
-include/webkitgtk-${API}/webkitdom/WebKitDOMPerformanceEntryList.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMPerformanceNavigation.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMPerformanceTiming.h
 include/webkitgtk-${API}/webkitdom/WebKitDOMProcessingInstruction.h
@@ -297,6 +298,7 @@ libexec/webkit2gtk-${API}/
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
 @bin libexec/webkit2gtk-${API}/WebKitPluginProcess
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
+@bin libexec/webkit2gtk-${API}/jsc
 share/gir-1.0/JavaScriptCore-${API}.gir
 share/gir-1.0/WebKit2-${API}.gir
 share/gir-1.0/WebKit2WebExtension-${API}.gir

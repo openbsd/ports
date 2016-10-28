@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.7 2016/08/25 11:38:59 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.8 2016/10/28 13:44:25 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
 Undefined references to libc functions.
 
---- Source/cmake/OptionsCommon.cmake.orig	Tue Aug 23 14:29:18 2016
-+++ Source/cmake/OptionsCommon.cmake	Thu Aug 25 08:10:31 2016
+--- Source/cmake/OptionsCommon.cmake.orig	Mon Sep 19 14:18:06 2016
++++ Source/cmake/OptionsCommon.cmake	Wed Oct 26 14:42:08 2016
 @@ -17,10 +17,10 @@ endif ()
  
  execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
@@ -21,7 +21,7 @@ Undefined references to libc functions.
  endif ()
  
  set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-@@ -139,9 +139,9 @@ if (NOT MSVC)
+@@ -167,9 +167,9 @@ if (NOT MSVC)
      string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
  endif ()
  
@@ -32,5 +32,5 @@ Undefined references to libc functions.
 +#    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
 +#endif ()
  
- # Enable the usage of OpenMP.
- #  - At this moment, OpenMP is only used as an alternative implementation
+ if (USE_ARM_LLVM_DISASSEMBLER)
+     find_package(LLVM REQUIRED)
