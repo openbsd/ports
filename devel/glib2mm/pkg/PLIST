@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2016/04/18 06:50:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2016/10/28 13:42:42 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -71,6 +71,8 @@ include/giomm-${V}/giomm/init.h
 include/giomm-${V}/giomm/initable.h
 include/giomm-${V}/giomm/inputstream.h
 include/giomm-${V}/giomm/iostream.h
+include/giomm-${V}/giomm/listmodel.h
+include/giomm-${V}/giomm/liststore.h
 include/giomm-${V}/giomm/loadableicon.h
 include/giomm-${V}/giomm/memoryinputstream.h
 include/giomm-${V}/giomm/memoryoutputstream.h
@@ -154,6 +156,8 @@ include/giomm-${V}/giomm/private/inetsocketaddress_p.h
 include/giomm-${V}/giomm/private/initable_p.h
 include/giomm-${V}/giomm/private/inputstream_p.h
 include/giomm-${V}/giomm/private/iostream_p.h
+include/giomm-${V}/giomm/private/listmodel_p.h
+include/giomm-${V}/giomm/private/liststore_p.h
 include/giomm-${V}/giomm/private/loadableicon_p.h
 include/giomm-${V}/giomm/private/memoryinputstream_p.h
 include/giomm-${V}/giomm/private/memoryoutputstream_p.h
@@ -286,6 +290,7 @@ include/glibmm-${V}/glibmm/date.h
 include/glibmm-${V}/glibmm/datetime.h
 include/glibmm-${V}/glibmm/debug.h
 include/glibmm-${V}/glibmm/dispatcher.h
+include/glibmm-${V}/glibmm/enums.h
 include/glibmm-${V}/glibmm/error.h
 include/glibmm-${V}/glibmm/exception.h
 include/glibmm-${V}/glibmm/exceptionhandler.h
@@ -319,6 +324,7 @@ include/glibmm-${V}/glibmm/private/checksum_p.h
 include/glibmm-${V}/glibmm/private/convert_p.h
 include/glibmm-${V}/glibmm/private/date_p.h
 include/glibmm-${V}/glibmm/private/datetime_p.h
+include/glibmm-${V}/glibmm/private/enums_p.h
 include/glibmm-${V}/glibmm/private/fileutils_p.h
 include/glibmm-${V}/glibmm/private/interface_p.h
 include/glibmm-${V}/glibmm/private/iochannel_p.h
@@ -642,6 +648,15 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1Initable__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1InputStream-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1InputStream.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1InputStream__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListModel-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListModel.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListModel__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStore-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStore.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStoreBase-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStoreBase.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStoreBase__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1ListStore__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1LoadableIcon-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1LoadableIcon.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1LoadableIcon__inherit__graph.png
@@ -996,6 +1011,12 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1PropertyProxy__WriteOnly-membe
 share/doc/glibmm-${V}/reference/html/classGlib_1_1PropertyProxy__WriteOnly.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1PropertyProxy__WriteOnly__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1PropertyProxy__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__ReadOnly-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__ReadOnly.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__ReadOnly__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__WriteOnly-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__WriteOnly.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__WriteOnly__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Property__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Quark-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Quark.html
@@ -1631,7 +1652,9 @@ share/doc/glibmm-${V}/reference/html/since_2_42.html
 share/doc/glibmm-${V}/reference/html/since_2_44.html
 share/doc/glibmm-${V}/reference/html/since_2_46.html
 share/doc/glibmm-${V}/reference/html/since_2_48.html
+share/doc/glibmm-${V}/reference/html/since_2_50.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
+share/doc/glibmm-${V}/reference/html/since_2_8.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits.html
