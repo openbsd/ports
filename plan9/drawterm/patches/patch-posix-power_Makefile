@@ -1,8 +1,8 @@
-$OpenBSD: patch-posix-power_Makefile,v 1.1 2011/10/08 15:02:51 mpi Exp $
+$OpenBSD: patch-posix-power_Makefile,v 1.2 2016/10/28 03:59:16 jca Exp $
 Needed to assemble tas.c that uses inline assembly "portable" to Mac OSX.
---- posix-power/Makefile.orig	Sat Oct  8 13:12:04 2011
-+++ posix-power/Makefile	Sat Oct  8 13:20:17 2011
-@@ -2,6 +2,8 @@
+--- posix-power/Makefile.orig	Sun Sep 11 23:44:20 2016
++++ posix-power/Makefile	Fri Oct 28 02:23:22 2016
+@@ -2,6 +2,8 @@ ROOT=..
  include ../Make.config
  LIB=../libmachdep.a
  
