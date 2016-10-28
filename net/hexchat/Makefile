@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/12 10:35:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2016/10/28 14:55:19 fcambus Exp $
 
 COMMENT =		GTK+2 IRC Client
-DISTNAME =		hexchat-2.12.2
+DISTNAME =		hexchat-2.12.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
 
