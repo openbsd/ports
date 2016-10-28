@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/18 06:50:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/10/28 13:42:58 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -10,9 +10,11 @@ include/gdkmm-3.0/gdkmm/devicemanager.h
 include/gdkmm-3.0/gdkmm/display.h
 include/gdkmm-3.0/gdkmm/displaymanager.h
 include/gdkmm-3.0/gdkmm/dragcontext.h
+include/gdkmm-3.0/gdkmm/drawingcontext.h
 include/gdkmm-3.0/gdkmm/event.h
 include/gdkmm-3.0/gdkmm/general.h
 include/gdkmm-3.0/gdkmm/glcontext.h
+include/gdkmm-3.0/gdkmm/monitor.h
 include/gdkmm-3.0/gdkmm/pixbuf.h
 include/gdkmm-3.0/gdkmm/pixbufanimation.h
 include/gdkmm-3.0/gdkmm/pixbufanimationiter.h
@@ -27,8 +29,10 @@ include/gdkmm-3.0/gdkmm/private/devicemanager_p.h
 include/gdkmm-3.0/gdkmm/private/display_p.h
 include/gdkmm-3.0/gdkmm/private/displaymanager_p.h
 include/gdkmm-3.0/gdkmm/private/dragcontext_p.h
+include/gdkmm-3.0/gdkmm/private/drawingcontext_p.h
 include/gdkmm-3.0/gdkmm/private/event_p.h
 include/gdkmm-3.0/gdkmm/private/glcontext_p.h
+include/gdkmm-3.0/gdkmm/private/monitor_p.h
 include/gdkmm-3.0/gdkmm/private/pixbuf_p.h
 include/gdkmm-3.0/gdkmm/private/pixbufanimation_p.h
 include/gdkmm-3.0/gdkmm/private/pixbufanimationiter_p.h
@@ -382,6 +386,7 @@ include/gtkmm-3.0/gtkmm/private/separator_p.h
 include/gtkmm-3.0/gtkmm/private/separatormenuitem_p.h
 include/gtkmm-3.0/gtkmm/private/separatortoolitem_p.h
 include/gtkmm-3.0/gtkmm/private/settings_p.h
+include/gtkmm-3.0/gtkmm/private/shortcutlabel_p.h
 include/gtkmm-3.0/gtkmm/private/shortcutsgroup_p.h
 include/gtkmm-3.0/gtkmm/private/shortcutssection_p.h
 include/gtkmm-3.0/gtkmm/private/shortcutsshortcut_p.h
@@ -470,6 +475,7 @@ include/gtkmm-3.0/gtkmm/separator.h
 include/gtkmm-3.0/gtkmm/separatormenuitem.h
 include/gtkmm-3.0/gtkmm/separatortoolitem.h
 include/gtkmm-3.0/gtkmm/settings.h
+include/gtkmm-3.0/gtkmm/shortcutlabel.h
 include/gtkmm-3.0/gtkmm/shortcutsgroup.h
 include/gtkmm-3.0/gtkmm/shortcutssection.h
 include/gtkmm-3.0/gtkmm/shortcutsshortcut.h
