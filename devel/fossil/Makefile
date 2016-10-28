@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2016/10/27 20:32:06 jturner Exp $
+# $OpenBSD: Makefile,v 1.55 2016/10/28 20:18:06 kili Exp $
 
 COMMENT =		simple distributed software configuration management
 
 DISTNAME =		fossil-src-1.36
 PKGNAME =		fossil-1.36
+EPOCH =			0
 CATEGORIES =		devel www
 
 MAINTAINER =		James Turner <james@calminferno.net>
