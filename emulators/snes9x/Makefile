@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/04/02 14:14:33 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2016/10/28 13:45:44 ajacoutot Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -56,6 +56,10 @@ CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/gtk
+
+# fix build with glib2>=2.50
+pre-configure:
+	sed -i "s,-pedantic,," ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snes9x
