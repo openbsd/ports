@@ -1,10 +1,26 @@
-$OpenBSD: patch-Make_openbsd,v 1.1 2016/10/28 04:01:33 jca Exp $
+$OpenBSD: patch-Make_openbsd,v 1.2 2016/10/28 04:03:36 jca Exp $
 
+- respect CFLAGS/LDFLAGS
 - fix build on powerpc and sparc64
 
 --- Make.openbsd.orig	Sun Sep 11 23:44:20 2016
-+++ Make.openbsd	Fri Oct 28 06:00:43 2016
-@@ -17,5 +17,5 @@ AUDIO=sndio
++++ Make.openbsd	Fri Oct 28 05:03:18 2016
+@@ -5,17 +5,17 @@ AS=as
+ RANLIB=ranlib
+ X11=/usr/X11R6
+ CC=gcc
+-CFLAGS=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) -O2
++CFLAGS=-Wall -Wno-missing-braces -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) $(PORTS_CFLAGS)
+ O=o
+ OS=posix
+ GUI=x11
+-LDADD=-L$(X11)/lib64 -L$(X11)/lib -lX11 -lsndio -ggdb
+-LDFLAGS=$(PTHREAD)
++LDADD=-L$(X11)/lib64 -L$(X11)/lib -lX11 -lsndio
++LDFLAGS+=$(PTHREAD) $(PORTS_LDFLAGS)
+ TARG=drawterm
+ AUDIO=sndio
+ 
  all: default
  
  libmachdep.a:
