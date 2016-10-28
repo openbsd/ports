@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2016/08/15 09:24:45 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2016/10/28 02:15:51 jca Exp $
+
+BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 
 COMMENT =		library for reading and writing images
 
