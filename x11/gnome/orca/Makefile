@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2016/07/30 14:25:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2016/10/29 18:16:40 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -7,7 +7,7 @@ PKG_ARCH=		*
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		3.20.3
+GNOME_VERSION=		3.22.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,7 +34,7 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
 RUN_DEPENDS +=		x11/gtk+3
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
 .include <bsd.port.mk>

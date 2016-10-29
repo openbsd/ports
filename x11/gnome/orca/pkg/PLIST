@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2016/04/26 10:41:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2016/10/29 18:16:40 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -416,14 +416,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-shell/script_utilities.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/__init__.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-terminal/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-window-properties/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-window-properties/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-window-properties/${MODPY_PYCACHE}/
@@ -534,15 +526,12 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}structural_navigation.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/${MODPY_PYCACHE}structural_navigation.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/braille_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/spellcheck.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/structural_navigation.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/${MODPY_PYCACHE}/
@@ -553,6 +542,23 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/xfwm4/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/default.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/__init__.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/braille_generator.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/script_utilities.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/terminal/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL/__init__.py
@@ -687,7 +693,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/text_attribute_names.py
 lib/python${MODPY_VERSION}/site-packages/orca/tutorialgenerator.py
 lib/python${MODPY_VERSION}/site-packages/orca/where_am_I.py
 @man man/man1/orca.1
-share/applications/orca.desktop
 share/examples/orca/
 share/examples/orca/xdg/
 @sample ${SYSCONFDIR}/xdg/
@@ -1404,11 +1409,13 @@ share/locale/gl/LC_MESSAGES/orca.mo
 share/locale/gu/LC_MESSAGES/orca.mo
 share/locale/he/LC_MESSAGES/orca.mo
 share/locale/hi/LC_MESSAGES/orca.mo
+share/locale/hr/LC_MESSAGES/orca.mo
 share/locale/hu/LC_MESSAGES/orca.mo
 share/locale/id/LC_MESSAGES/orca.mo
 share/locale/is/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
 share/locale/ja/LC_MESSAGES/orca.mo
+share/locale/kk/LC_MESSAGES/orca.mo
 share/locale/kn/LC_MESSAGES/orca.mo
 share/locale/ko/LC_MESSAGES/orca.mo
 share/locale/lt/LC_MESSAGES/orca.mo
@@ -1455,5 +1462,3 @@ share/orca/ui/orca-find.ui
 share/orca/ui/orca-setup.ui
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
