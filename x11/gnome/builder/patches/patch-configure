@@ -1,0 +1,56 @@
+$OpenBSD: patch-configure,v 1.4 2016/10/29 11:55:28 jasper Exp $
+--- configure.orig	Fri May  6 16:18:33 2016
++++ configure	Sat Oct 29 13:50:10 2016
+@@ -13295,12 +13295,12 @@ if test -n "$VALA_CFLAGS"; then
+     pkg_cv_VALA_CFLAGS="$VALA_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libvala-0.32\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libvala-0.32") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libvala-0.34\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libvala-0.34") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_VALA_CFLAGS=`$PKG_CONFIG --cflags "libvala-0.32" 2>/dev/null`
++  pkg_cv_VALA_CFLAGS=`$PKG_CONFIG --cflags "libvala-0.34" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -13312,12 +13312,12 @@ if test -n "$VALA_LIBS"; then
+     pkg_cv_VALA_LIBS="$VALA_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libvala-0.32\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libvala-0.32") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libvala-0.34\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libvala-0.34") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_VALA_LIBS=`$PKG_CONFIG --libs "libvala-0.32" 2>/dev/null`
++  pkg_cv_VALA_LIBS=`$PKG_CONFIG --libs "libvala-0.34" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -13338,9 +13338,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        VALA_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libvala-0.32" 2>&1`
++	        VALA_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libvala-0.34" 2>&1`
+         else
+-	        VALA_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libvala-0.32" 2>&1`
++	        VALA_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libvala-0.34" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$VALA_PKG_ERRORS" >&5
+@@ -13357,7 +13357,7 @@ else
+ $as_echo "yes" >&6; }
+ 	have_libvala=yes
+ fi
+-VALA_VERSION=0.32
++VALA_VERSION=0.34
+ if test x$have_libvala = xno; then :
+ 
+ 
