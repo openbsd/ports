@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/04/25 17:01:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/10/29 18:10:04 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -264,6 +264,22 @@ share/help/sl/baobab/scan-file-system.page
 share/help/sl/baobab/scan-folder.page
 share/help/sl/baobab/scan-home.page
 share/help/sl/baobab/scan-remote.page
+share/help/sv/
+share/help/sv/baobab/
+share/help/sv/baobab/index.page
+share/help/sv/baobab/introduction.page
+share/help/sv/baobab/legal.xml
+share/help/sv/baobab/media/
+share/help/sv/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/sv/baobab/pref-view-chart.page
+share/help/sv/baobab/problem-permissions.page
+share/help/sv/baobab/problem-slow-scan.page
+share/help/sv/baobab/question-open-folder.page
+share/help/sv/baobab/question-trash.page
+share/help/sv/baobab/scan-file-system.page
+share/help/sv/baobab/scan-folder.page
+share/help/sv/baobab/scan-home.page
+share/help/sv/baobab/scan-remote.page
 share/help/zh_CN/
 share/help/zh_CN/baobab/
 share/help/zh_CN/baobab/index.page
