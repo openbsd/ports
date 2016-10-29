@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.95 2016/09/27 08:00:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2016/10/29 15:35:27 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.11.4
+DISTNAME=	cups-filters-1.11.5
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -35,7 +35,13 @@ MODGCC4_LANGS=	c++
 CFLAGS +=	-O0
 .endif
 
-BUILD_DEPENDS=	print/ghostscript/gnu
+# gs cups driver, pdftocairo, mutool
+BUILD_DEPENDS=	print/ghostscript/gnu \
+		print/poppler,-utils \
+		textproc/mupdf
+RUN_DEPENDS=	print/ghostscript/gnu \
+		print/poppler,-utils \
+		textproc/mupdf
 
 LIB_DEPENDS=	print/cups,-libs \
 		print/ijs \
@@ -45,9 +51,6 @@ LIB_DEPENDS=	print/cups,-libs \
 # make it easier for users: bring in foomatic-db and allow the
 # regeneration of PPD files from share/foomatic/db/source/*/*.xml
 RUN_DEPENDS +=	print/foomatic-db-engine
-
-# ghostscript cups driver
-RUN_DEPENDS +=	print/ghostscript/gnu
 
 # don't enforce dependency on colord; it'll be used only if found
 #RUN_DEPENDS +=	graphics/colord
@@ -64,11 +67,6 @@ CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-shell=/bin/ksh \
 		--without-php \
 		--disable-braille
-
-# prefer pdftops over gs -- see README under ${WRKSRC}
-CONFIGURE_ARGS +=	--with-pdftops=pdftops
-BUILD_DEPENDS +=	print/poppler,-utils
-RUN_DEPENDS +=		print/poppler,-utils
 
 FLAVORS=	ldap
 FLAVOR?=
