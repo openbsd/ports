@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/18 10:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/29 11:39:39 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
-V=		20161014
+V=		20161028
 DISTNAME=	neomutt-$V
 
 CATEGORIES=	mail
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto iconv idn intl ncurses ssl z
+WANTLIB+=	c crypto iconv idn intl ncursesw ssl z
 
 MASTER_SITES=	https://github.com/neomutt/neomutt/releases/download/neomutt-$V/
 
