@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/13 19:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/10/29 10:36:01 ajacoutot Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
@@ -36,6 +36,8 @@ LIB_DEPENDS =		devel/boost \
 LIBledger_MAJOR =	${LIBledger_VERSION:R}
 LIBledger_MINOR =	${LIBledger_VERSION:E}
 SUBST_VARS +=		LIBledger_MAJOR LIBledger_MINOR
+
+CONFIGURE_ARGS=		-DUTFCPP_PATH=${LOCALBASE}/include/utfcpp
 
 # Use this to make sure version.info gets generated, the actual
 # installation bits are removed as the remaining .info files are
