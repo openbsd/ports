@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/06 16:26:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/10/29 08:26:11 jasper Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.20.4
+REVISION=		0
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -31,7 +32,7 @@ WANTLIB += icui18n icuuc idn intl javascriptcoregtk-4.0 jpeg lzma
 WANTLIB += m nettle nghttp2 notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 ssh2 ssl stdc++ tasn1 util
-WANTLIB += vala-0.32 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
+WANTLIB += vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
 WANTLIB += xslt z
 
