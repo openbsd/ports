@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/29 09:18:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/10/29 10:37:12 ajacoutot Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -50,8 +50,7 @@ CONFIGURE_ARGS += \
 		--with-magic \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
-# include WRKSRC before /usr/local/include so that utf8.h from devel/utfcpp is not picked up
-CONFIGURE_ENV = CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
+CONFIGURE_ENV = CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-install:
