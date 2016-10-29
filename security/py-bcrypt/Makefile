@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/11 13:57:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/29 18:25:56 danj Exp $
 
 COMMENT=	bcrypt blowfish password hashing for Python
 
 MODPY_EGG_VERSION= 3.1.1
 DISTNAME=	bcrypt-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

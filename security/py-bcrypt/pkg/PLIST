@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/07/01 15:28:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/10/29 18:25:56 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/bcrypt/
 lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,4 +12,4 @@ lib/python${MODPY_VERSION}/site-packages/bcrypt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bcrypt/_bcrypt.so
+lib/python${MODPY_VERSION}/site-packages/bcrypt/_bcrypt${MODPY_ABI3SO}.so
