@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.139 2016/07/08 16:50:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2016/10/29 07:48:53 jasper Exp $
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.20.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -32,8 +32,8 @@ WANTLIB += pthread-stubs sasl2 secret-1 serf-1 soup-2.4 sqlite3
 WANTLIB += ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1
 WANTLIB += svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
 WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
-WANTLIB += util vala-0.32 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
-WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
+WANTLIB += util vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
+WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2
 WANTLIB += epoxy gmp gnutls hogweed nettle notify p11-kit tasn1 xslt z
 WANTLIB += hyphen idn iconv intl svn_fs_x-1
 
