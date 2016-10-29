@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.87 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: python.port.mk,v 1.88 2016/10/29 18:25:01 danj Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -40,6 +40,7 @@ MODPY_PY_PREFIX =	py-
 MODPY_PYCACHE =
 MODPY_PYC_MAGIC_TAG =
 MODPY_COMMENT =	"@comment "
+MODPY_ABI3SO =
 
 .elif ${MODPY_MAJOR_VERSION} == 3
 MODPY_LIB_SUFFIX =	m
@@ -53,6 +54,7 @@ MODPY_PYCACHE =	"__pycache__/"
 MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}
 MODPY_PYC_MAGIC_TAG =	"cpython-${MODPY_MAJORMINOR}."
 MODPY_COMMENT =
+MODPY_ABI3SO =		".abi3"
 
 .endif
 
@@ -76,7 +78,7 @@ _MODPY_PRE_BUILD_STEPS = :
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}>=18.2v0
+MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}>=28.6.1v0
 
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
@@ -141,7 +143,7 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
 			${MODPY_SETUP_ARGS}
 
-SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
+SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ =	perl -pi \
