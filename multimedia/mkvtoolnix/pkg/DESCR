@@ -4,4 +4,4 @@ extract tracks/data from (mkvextract) Matroska files and create
 (mkvmerge) Matroska files from other media files.
 
 Available flavor:
-	no_x11 - do not build the wxGTK2 frontend
+	no_x11 - do not build the Qt 5 frontend
