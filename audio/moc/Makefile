@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/29 08:49:35 ajacoutot Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -18,6 +18,8 @@ WANTLIB += mpcdec ncursesw nghttp2 ogg opus pthread samplerate
 WANTLIB += sndfile sndio speex ssl stdc++ swresample tag tag_c
 WANTLIB += vorbis vorbisenc vorbisfile vpx wavpack x264 x265 xvidcore
 WANTLIB += z
+
+BUILD_DEPENDS =	devel/utfcpp
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
