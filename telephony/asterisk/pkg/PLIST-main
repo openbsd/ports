@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.64 2016/09/02 10:34:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.65 2016/10/29 19:21:13 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -427,6 +427,7 @@ lib/asterisk/modules/res_curl.so
 lib/asterisk/modules/res_fax.so
 lib/asterisk/modules/res_fax_spandsp.so
 lib/asterisk/modules/res_format_attr_celt.so
+lib/asterisk/modules/res_format_attr_g729.so
 lib/asterisk/modules/res_format_attr_h263.so
 lib/asterisk/modules/res_format_attr_h264.so
 lib/asterisk/modules/res_format_attr_opus.so
