@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/10/29 08:49:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/10/29 09:18:08 ajacoutot Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -18,8 +18,6 @@ WANTLIB += mpcdec ncursesw nghttp2 ogg opus pthread samplerate
 WANTLIB += sndfile sndio speex ssl stdc++ swresample tag tag_c
 WANTLIB += vorbis vorbisenc vorbisfile vpx wavpack x264 x265 xvidcore
 WANTLIB += z
-
-BUILD_DEPENDS =	devel/utfcpp
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
@@ -52,7 +50,8 @@ CONFIGURE_ARGS += \
 		--with-magic \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
-CONFIGURE_ENV = CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
+# include WRKSRC before /usr/local/include so that utf8.h from devel/utfcpp is not picked up
+CONFIGURE_ENV = CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-install:
