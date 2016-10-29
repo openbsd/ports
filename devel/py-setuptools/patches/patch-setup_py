@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.4 2015/09/29 08:49:37 edd Exp $
---- setup.py.orig	Sat Aug 22 12:30:32 2015
-+++ setup.py	Sat Aug 22 12:30:38 2015
-@@ -85,7 +85,7 @@ setup_params = dict(
- 
+$OpenBSD: patch-setup_py,v 1.5 2016/10/29 18:24:07 danj Exp $
+--- setup.py.orig	Wed Oct 19 17:39:12 2016
++++ setup.py	Thu Oct 27 18:43:33 2016
+@@ -97,7 +97,7 @@ setup_params = dict(
+     packages=setuptools.find_packages(exclude=['*.tests']),
+     package_data=package_data,
      py_modules=['easy_install'],
- 
 -    zip_safe=True,
 +    zip_safe=False,
- 
      entry_points={
          "distutils.commands": [
+             "%(cmd)s = setuptools.command.%(cmd)s:%(cmd)s" % locals()
