@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_client_dialogs_attachment-dialog_vala,v 1.1 2016/10/29 15:15:07 jasper Exp $
+
+From f2d392bed5ea3cec6c097895ba54ba840e3e3480 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Fri, 8 Jul 2016 09:56:42 +0200
+Subject: Fix compile warnings with vala git
+
+--- src/client/dialogs/attachment-dialog.vala.orig	Sat Oct 29 17:12:49 2016
++++ src/client/dialogs/attachment-dialog.vala	Sat Oct 29 17:12:57 2016
+@@ -5,8 +5,8 @@
+  */
+ 
+ public class AttachmentDialog : Gtk.FileChooserDialog {
+-    private static const int PREVIEW_SIZE = 180;
+-    private static const int PREVIEW_PADDING = 3;
++    private const int PREVIEW_SIZE = 180;
++    private const int PREVIEW_PADDING = 3;
+     
+     private static string? current_folder = null;
+     

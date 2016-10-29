@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_client_components_conversation-find-bar_vala,v 1.1 2016/10/29 15:15:07 jasper Exp $
+
+From f2d392bed5ea3cec6c097895ba54ba840e3e3480 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Fri, 8 Jul 2016 09:56:42 +0200
+Subject: Fix compile warnings with vala git
+
+--- src/client/components/conversation-find-bar.vala.orig	Sat Oct 29 17:13:06 2016
++++ src/client/components/conversation-find-bar.vala	Sat Oct 29 17:13:13 2016
+@@ -5,7 +5,7 @@
+  */
+ 
+ public class ConversationFindBar : Gtk.Layout {
+-    private static const string entry_not_found_style =
++    private const string entry_not_found_style =
+ """
+ .geary-not-found {
+     color: white;
