@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/12 09:20:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/29 10:35:45 ajacoutot Exp $
 
 COMMENT =		simple, portable library for handling UTF-8 strings
 
 VERSION =		2.3.4
 DISTNAME =		utf8_v${VERSION:S/./_/g}
 PKGNAME =		utfcpp-${VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -24,8 +25,8 @@ WRKDIST =		${WRKDIR}
 NO_BUILD =		Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include{,/utf8}
-	${INSTALL_DATA} ${WRKDIR}/source/*.* ${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIR}/source/utf8/*.* ${PREFIX}/include/utf8/
+	${INSTALL_DATA_DIR} ${PREFIX}/include/utfcpp/utf8
+	${INSTALL_DATA} ${WRKDIR}/source/*.* ${PREFIX}/include/utfcpp
+	${INSTALL_DATA} ${WRKDIR}/source/utf8/*.* ${PREFIX}/include/utfcpp/utf8
 
 .include <bsd.port.mk>

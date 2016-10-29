@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/12 09:20:01 jasper Exp $
-include/utf8/
-include/utf8.h
-include/utf8/checked.h
-include/utf8/core.h
-include/utf8/unchecked.h
+@comment $OpenBSD: PLIST,v 1.2 2016/10/29 10:35:45 ajacoutot Exp $
+include/utfcpp/
+include/utfcpp/utf8/
+include/utfcpp/utf8.h
+include/utfcpp/utf8/checked.h
+include/utfcpp/utf8/core.h
+include/utfcpp/utf8/unchecked.h
