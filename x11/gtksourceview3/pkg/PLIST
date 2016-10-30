@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/04/25 14:24:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/10/30 16:12:19 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -27,6 +27,7 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcemap.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcemark.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcemarkattributes.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceprintcompositor.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceregion.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcesearchcontext.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcesearchsettings.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcestyle.h
@@ -40,6 +41,7 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcetypes.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceundomanager.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceutils.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceversion.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview-enumtypes.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-${MAJOR_VERSION}.typelib
@@ -71,6 +73,7 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceMap.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceMark.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceMarkAttributes.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourcePrintCompositor.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceRegion.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceSearchContext.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceSearchSettings.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyle.html
@@ -96,6 +99,7 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-14.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-16.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-18.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-20.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-22.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-4.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-deprecated.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-full.html
@@ -119,6 +123,8 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/left-insensitive.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/left.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/object-tree.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/pt01.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/pt02.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/pt03.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/right-insensitive.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/right.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/style-reference.html
