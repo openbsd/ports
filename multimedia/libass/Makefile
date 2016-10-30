@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/10/30 08:10:55 ajacoutot Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
-VER=		0.13.2
+VER=		0.13.4
 DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/libass/libass/releases/download/${VER}/
