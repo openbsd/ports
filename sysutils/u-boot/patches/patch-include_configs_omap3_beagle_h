@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_configs_omap3_beagle_h,v 1.1 2016/06/18 03:04:44 jsg Exp $
---- include/configs/omap3_beagle.h.orig	Tue May 17 00:40:32 2016
-+++ include/configs/omap3_beagle.h	Mon Jun 13 17:28:45 2016
-@@ -113,9 +113,12 @@
+$OpenBSD: patch-include_configs_omap3_beagle_h,v 1.2 2016/10/30 04:16:34 jsg Exp $
+--- include/configs/omap3_beagle.h.orig	Tue Sep 13 00:05:51 2016
++++ include/configs/omap3_beagle.h	Sat Oct 22 13:42:04 2016
+@@ -112,9 +112,12 @@
  
  #define CONFIG_EXTRA_ENV_SETTINGS \
  	"loadaddr=0x80200000\0" \
@@ -15,7 +15,7 @@ $OpenBSD: patch-include_configs_omap3_beagle_h,v 1.1 2016/06/18 03:04:44 jsg Exp
  	"usbtty=cdc_acm\0" \
  	"bootfile=uImage\0" \
  	"ramdisk=ramdisk.gz\0" \
-@@ -210,39 +213,17 @@
+@@ -209,39 +212,17 @@
  	"userbutton=if gpio input 173; then run userbutton_xm; " \
  		"else run userbutton_nonxm; fi;\0" \
  	"userbutton_xm=gpio input 4;\0" \
