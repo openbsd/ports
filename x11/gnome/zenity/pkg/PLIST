@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/04/25 12:41:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/10/31 09:44:54 jasper Exp $
 bin/gdialog
 @bin bin/zenity
 @man man/man1/zenity.1
@@ -869,6 +869,7 @@ share/locale/eu/LC_MESSAGES/zenity.mo
 share/locale/fa/LC_MESSAGES/zenity.mo
 share/locale/fi/LC_MESSAGES/zenity.mo
 share/locale/fr/LC_MESSAGES/zenity.mo
+share/locale/fur/LC_MESSAGES/zenity.mo
 share/locale/ga/LC_MESSAGES/zenity.mo
 share/locale/gl/LC_MESSAGES/zenity.mo
 share/locale/gu/LC_MESSAGES/zenity.mo
