@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/13 15:19:19 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2016/10/31 09:28:43 fcambus Exp $
 
 COMMENT =	set of OpenType fonts designed for user interfaces
-VERSION =	2.010
-VERSION_I =	1.065
+VERSION =	2.020
+VERSION_I =	1.075
 REVISION =	0
 
 GH_PROJECT =	source-sans-pro

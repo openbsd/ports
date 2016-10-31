@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/12 13:01:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/31 09:28:43 fcambus Exp $
 @pkgpath fonts/adobe-source-sans-pro
 share/doc/adobe-source-sans-pro/
 share/doc/adobe-source-sans-pro/LICENSE.txt
 share/doc/adobe-source-sans-pro/README.md
-share/doc/adobe-source-sans-pro/ReadMe.html
-share/doc/adobe-source-sans-pro/SourceSansProReadMe.html
 share/doc/adobe-source-sans-pro/bower.json
 share/doc/adobe-source-sans-pro/source-sans-pro.css
 share/fonts/

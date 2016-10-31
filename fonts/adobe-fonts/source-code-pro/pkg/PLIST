@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/12 13:01:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/10/31 09:28:43 fcambus Exp $
 @pkgpath fonts/adobe-source-code-pro
 share/doc/adobe-source-code-pro/
 share/doc/adobe-source-code-pro/LICENSE.txt
 share/doc/adobe-source-code-pro/README.md
 share/doc/adobe-source-code-pro/bower.json
+share/doc/adobe-source-code-pro/package.json
 share/doc/adobe-source-code-pro/source-code-pro.css
 share/fonts/
 @fontdir share/fonts/adobe-source-code-pro/
