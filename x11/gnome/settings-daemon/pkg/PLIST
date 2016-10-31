@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2016/04/25 14:53:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2016/10/31 10:19:02 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -24,7 +24,6 @@ lib/gnome-settings-daemon-3.0/liborientation.so
 lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
 lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
-lib/gnome-settings-daemon-3.0/libsharing.so
 lib/gnome-settings-daemon-3.0/libsmartcard.so
 lib/gnome-settings-daemon-3.0/libsound.so
 lib/gnome-settings-daemon-3.0/libxrandr.so
@@ -35,7 +34,6 @@ lib/gnome-settings-daemon-3.0/orientation.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
-lib/gnome-settings-daemon-3.0/sharing.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
@@ -85,7 +83,6 @@ share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.media-keys.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.orientation.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.power.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.print-notifications.gschema.xml
-share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.sharing.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xrandr.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xsettings.gschema.xml
 share/gnome-settings-daemon/
@@ -128,6 +125,7 @@ share/locale/eu/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fa/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fi/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fr/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/fur/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ga/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gd/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gl/LC_MESSAGES/gnome-settings-daemon.mo
