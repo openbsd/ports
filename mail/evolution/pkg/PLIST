@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2016/10/31 12:15:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2016/10/31 14:04:58 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -617,8 +617,6 @@ lib/evolution/web-extensions/libedomutils.so
 lib/evolution/web-extensions/libewebextension.so
 lib/evolution/web-extensions/libmoduleitipformatterwebextension.so
 lib/evolution/web-extensions/webkit-editor/
-lib/evolution/web-extensions/webkit-editor/libewebkiteditorwebextension.a
-lib/evolution/web-extensions/webkit-editor/libewebkiteditorwebextension.la
 lib/evolution/web-extensions/webkit-editor/libewebkiteditorwebextension.so
 lib/pkgconfig/evolution-calendar-3.0.pc
 lib/pkgconfig/evolution-mail-3.0.pc

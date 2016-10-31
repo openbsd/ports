@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.268 2016/10/31 12:15:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.269 2016/10/31 14:04:58 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -16,7 +17,7 @@ eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \
 evolution-calendar evolution-mail-composer evolution-mail-formatter \
 evolution-mail-importers evolution-mail evolution-shell evolution-smime \
-evolution-util gnomecanvas edomutils evolutiontestsettings
+evolution-util gnomecanvas evolutiontestsettings
 SHARED_LIBS +=		${_lib} ${SO_VERSION}	 
 .endfor
 
@@ -85,6 +86,6 @@ pre-configure:
 .endfor
 
 post-install:
-	rm ${PREFIX}/lib/evolution/{modules,plugins,test-gio-modules,web-extensions}/*.{a,la}
+	rm ${PREFIX}/lib/evolution/{modules,plugins,test-gio-modules,web-extensions/{,webkit-editor}}/*.{a,la}
 
 .include <bsd.port.mk>
