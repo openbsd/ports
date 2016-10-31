@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/31 12:40:18 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2016/10/31 15:56:05 danj Exp $
 
 COMMENT =	command-line HTTP client
 
@@ -7,7 +7,7 @@ GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	jkbrzt
 GH_PROJECT =	httpie
 DISTNAME =	httpie-${MODPY_EGG_VERSION}
-PKGNAME =	py-httpie-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	www net
 
