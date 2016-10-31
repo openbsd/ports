@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2016/04/25 15:11:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2016/10/31 10:34:16 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
 GNOME_PROJECT=		gnome-color-manager
-GNOME_VERSION=		3.20.0
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		graphics
 
@@ -18,7 +18,7 @@ WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn intl jpeg
 WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render
 WANTLIB += xcb-shm z
 
