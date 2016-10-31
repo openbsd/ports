@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/25 15:17:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/10/31 10:31:13 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/appdata/
-share/appdata/gnome-power-statistics.appdata.xml
-share/applications/gnome-power-statistics.desktop
+share/appdata/org.gnome.PowerStats.appdata.xml
+share/applications/org.gnome.PowerStats.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
-share/icons/hicolor/16x16/apps/gnome-power-statistics.png
-share/icons/hicolor/22x22/apps/gnome-power-statistics.png
-share/icons/hicolor/24x24/apps/gnome-power-statistics.png
-share/icons/hicolor/32x32/apps/gnome-power-statistics.png
-share/icons/hicolor/48x48/apps/gnome-power-statistics.png
-share/icons/hicolor/scalable/apps/gnome-power-statistics.svg
-share/icons/hicolor/symbolic/apps/gnome-power-statistics-symbolic.svg
+share/icons/hicolor/16x16/apps/org.gnome.PowerStats.png
+share/icons/hicolor/22x22/apps/org.gnome.PowerStats.png
+share/icons/hicolor/24x24/apps/org.gnome.PowerStats.png
+share/icons/hicolor/32x32/apps/org.gnome.PowerStats.png
+share/icons/hicolor/48x48/apps/org.gnome.PowerStats.png
+share/icons/hicolor/scalable/apps/org.gnome.PowerStats.svg
+share/icons/hicolor/symbolic/apps/org.gnome.PowerStats-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-power-manager.mo
 share/locale/as/LC_MESSAGES/gnome-power-manager.mo
