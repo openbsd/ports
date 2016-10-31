@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/07/21 08:36:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/10/31 15:46:36 landry Exp $
 @bin bin/merkaartor
 lib/merkaartor/
 lib/merkaartor/plugins/
@@ -8,7 +8,31 @@ lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
 share/applications/merkaartor.desktop
+share/icons/hicolor/128x128/apps/merkaartor.png
+share/icons/hicolor/16x16/apps/merkaartor.png
+share/icons/hicolor/192x192/apps/merkaartor.png
+share/icons/hicolor/22x22/apps/merkaartor.png
+share/icons/hicolor/24x24/apps/merkaartor.png
+share/icons/hicolor/256x256/apps/merkaartor.png
+share/icons/hicolor/32x32/apps/merkaartor.png
+share/icons/hicolor/36x36/apps/merkaartor.png
+share/icons/hicolor/40x40/
+share/icons/hicolor/40x40/apps/
+share/icons/hicolor/40x40/apps/merkaartor.png
+share/icons/hicolor/42x42/
+share/icons/hicolor/42x42/apps/
+share/icons/hicolor/42x42/apps/merkaartor.png
 share/icons/hicolor/48x48/apps/merkaartor.png
+share/icons/hicolor/512x512/apps/merkaartor.png
+share/icons/hicolor/64x64/apps/merkaartor.png
+share/icons/hicolor/72x72/apps/merkaartor.png
+share/icons/hicolor/80x80/
+share/icons/hicolor/80x80/apps/
+share/icons/hicolor/80x80/apps/merkaartor.png
+share/icons/hicolor/8x8/
+share/icons/hicolor/8x8/apps/
+share/icons/hicolor/8x8/apps/merkaartor.png
+share/icons/hicolor/96x96/apps/merkaartor.png
 share/merkaartor/
 share/merkaartor/BookmarksList.xml
 share/merkaartor/Projections.xml
@@ -18,6 +42,8 @@ share/merkaartor/translations/
 share/merkaartor/translations/merkaartor_ar.qm
 share/merkaartor/translations/merkaartor_cs.qm
 share/merkaartor/translations/merkaartor_de.qm
+share/merkaartor/translations/merkaartor_de_AT.qm
+share/merkaartor/translations/merkaartor_en.qm
 share/merkaartor/translations/merkaartor_es.qm
 share/merkaartor/translations/merkaartor_et.qm
 share/merkaartor/translations/merkaartor_fr.qm
@@ -33,6 +59,9 @@ share/merkaartor/translations/merkaartor_ru.qm
 share/merkaartor/translations/merkaartor_sk.qm
 share/merkaartor/translations/merkaartor_sv.qm
 share/merkaartor/translations/merkaartor_uk.qm
+share/merkaartor/translations/merkaartor_vi.qm
+share/merkaartor/translations/merkaartor_zh_CN.qm
+share/merkaartor/translations/merkaartor_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
