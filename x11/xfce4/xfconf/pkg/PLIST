@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/16 20:32:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/10/31 15:34:48 landry Exp $
 @bin bin/xfconf-query
 include/xfce4/xfconf-0/
 include/xfce4/xfconf-0/xfconf/
@@ -20,7 +20,6 @@ share/gtk-doc/html/xfconf/ch02.html
 share/gtk-doc/html/xfconf/ch03.html
 share/gtk-doc/html/xfconf/home.png
 share/gtk-doc/html/xfconf/index.html
-share/gtk-doc/html/xfconf/index.sgml
 share/gtk-doc/html/xfconf/left-insensitive.png
 share/gtk-doc/html/xfconf/left.png
 share/gtk-doc/html/xfconf/right-insensitive.png
