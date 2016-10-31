@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/25 18:05:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/10/31 12:44:52 ajacoutot Exp $
 @bin bin/gnome-photos
 share/appdata/org.gnome.Photos.appdata.xml
 share/applications/org.gnome.Photos.desktop
@@ -25,6 +25,17 @@ share/help/C/gnome-photos/view-album.page
 share/help/C/gnome-photos/view-favorites.page
 share/help/C/gnome-photos/view-photos.page
 share/help/C/gnome-photos/view.page
+share/help/ca/gnome-photos/
+share/help/ca/gnome-photos/favorites-set.page
+share/help/ca/gnome-photos/favorites.page
+share/help/ca/gnome-photos/index.page
+share/help/ca/gnome-photos/legal.xml
+share/help/ca/gnome-photos/media/
+share/help/ca/gnome-photos/media/logo1.png
+share/help/ca/gnome-photos/view-album.page
+share/help/ca/gnome-photos/view-favorites.page
+share/help/ca/gnome-photos/view-photos.page
+share/help/ca/gnome-photos/view.page
 share/help/cs/gnome-photos/
 share/help/cs/gnome-photos/favorites-set.page
 share/help/cs/gnome-photos/favorites.page
@@ -36,6 +47,18 @@ share/help/cs/gnome-photos/view-album.page
 share/help/cs/gnome-photos/view-favorites.page
 share/help/cs/gnome-photos/view-photos.page
 share/help/cs/gnome-photos/view.page
+share/help/da/
+share/help/da/gnome-photos/
+share/help/da/gnome-photos/favorites-set.page
+share/help/da/gnome-photos/favorites.page
+share/help/da/gnome-photos/index.page
+share/help/da/gnome-photos/legal.xml
+share/help/da/gnome-photos/media/
+share/help/da/gnome-photos/media/logo1.png
+share/help/da/gnome-photos/view-album.page
+share/help/da/gnome-photos/view-favorites.page
+share/help/da/gnome-photos/view-photos.page
+share/help/da/gnome-photos/view.page
 share/help/de/gnome-photos/
 share/help/de/gnome-photos/favorites-set.page
 share/help/de/gnome-photos/favorites.page
@@ -136,13 +159,24 @@ share/help/ro/gnome-photos/view-album.page
 share/help/ro/gnome-photos/view-favorites.page
 share/help/ro/gnome-photos/view-photos.page
 share/help/ro/gnome-photos/view.page
-share/icons/hicolor/16x16/apps/gnome-photos.png
-share/icons/hicolor/22x22/apps/gnome-photos.png
-share/icons/hicolor/24x24/apps/gnome-photos.png
-share/icons/hicolor/256x256/apps/gnome-photos.png
-share/icons/hicolor/32x32/apps/gnome-photos.png
-share/icons/hicolor/48x48/apps/gnome-photos.png
-share/icons/hicolor/scalable/apps/gnome-photos-symbolic.svg
+share/help/sv/gnome-photos/
+share/help/sv/gnome-photos/favorites-set.page
+share/help/sv/gnome-photos/favorites.page
+share/help/sv/gnome-photos/index.page
+share/help/sv/gnome-photos/legal.xml
+share/help/sv/gnome-photos/media/
+share/help/sv/gnome-photos/media/logo1.png
+share/help/sv/gnome-photos/view-album.page
+share/help/sv/gnome-photos/view-favorites.page
+share/help/sv/gnome-photos/view-photos.page
+share/help/sv/gnome-photos/view.page
+share/icons/hicolor/16x16/apps/org.gnome.Photos.png
+share/icons/hicolor/22x22/apps/org.gnome.Photos.png
+share/icons/hicolor/24x24/apps/org.gnome.Photos.png
+share/icons/hicolor/256x256/apps/org.gnome.Photos.png
+share/icons/hicolor/32x32/apps/org.gnome.Photos.png
+share/icons/hicolor/48x48/apps/org.gnome.Photos.png
+share/icons/hicolor/scalable/apps/org.gnome.Photos-symbolic.svg
 share/locale/an/LC_MESSAGES/gnome-photos.mo
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
@@ -166,6 +200,7 @@ share/locale/fur/LC_MESSAGES/gnome-photos.mo
 share/locale/ga/LC_MESSAGES/gnome-photos.mo
 share/locale/gd/LC_MESSAGES/gnome-photos.mo
 share/locale/gl/LC_MESSAGES/gnome-photos.mo
+share/locale/gu/LC_MESSAGES/gnome-photos.mo
 share/locale/he/LC_MESSAGES/gnome-photos.mo
 share/locale/hu/LC_MESSAGES/gnome-photos.mo
 share/locale/id/LC_MESSAGES/gnome-photos.mo
@@ -204,8 +239,6 @@ share/locale/zh_HK/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-photos.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
