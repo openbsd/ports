@@ -1,0 +1,11 @@
+$OpenBSD: patch-mono_utils_networking-posix_c,v 1.1 2016/10/31 11:45:07 robert Exp $
+--- mono/utils/networking-posix.c.orig	Mon Oct 31 11:41:26 2016
++++ mono/utils/networking-posix.c	Mon Oct 31 11:41:37 2016
+@@ -17,6 +17,7 @@
+ #include <sys/ioctl.h>
+ #endif
+ #ifdef HAVE_NET_IF_H
++#include <sys/socket.h>
+ #include <net/if.h>
+ #endif
+ #ifdef HAVE_UNISTD_H

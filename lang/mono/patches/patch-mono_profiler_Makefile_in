@@ -1,24 +1,31 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.13 2016/06/26 10:40:28 robert Exp $
---- mono/profiler/Makefile.in.orig	Thu Jun 23 19:32:14 2016
-+++ mono/profiler/Makefile.in	Thu Jun 23 19:32:42 2016
-@@ -505,16 +505,16 @@ AM_CPPFLAGS = \
- @DISABLE_EXECUTABLES_FALSE@@SHARED_MONO_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_STATIC_LIBS)
- 
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.14 2016/10/31 11:45:07 robert Exp $
+--- mono/profiler/Makefile.in.orig	Mon Oct 31 11:32:55 2016
++++ mono/profiler/Makefile.in	Mon Oct 31 11:33:25 2016
+@@ -540,23 +540,23 @@ monodir = $(top_builddir)
+ # also uses eglib (e.g. the runtime). Automake doesn't support this
+ # functionality, so create a separate static version of the library.
  libmono_profiler_aot_la_SOURCES = mono-profiler-aot.c
--libmono_profiler_aot_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
-+libmono_profiler_aot_la_LIBADD = $(LIBMONO) $(LIBICONV)
- @BITCODE_TRUE@libmono_profiler_aot_la_LDFLAGS = -no-undefined
+-libmono_profiler_aot_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(GLIB_LIBS) $(LIBICONV)
++libmono_profiler_aot_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(LIBICONV)
+ libmono_profiler_aot_la_LDFLAGS = $(prof_ldflags)
+ libmono_profiler_aot_static_la_SOURCES = mono-profiler-aot.c
+ libmono_profiler_aot_static_la_LDFLAGS = -static
  libmono_profiler_iomap_la_SOURCES = mono-profiler-iomap.c
--libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
-+libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(LIBICONV)
- @BITCODE_TRUE@libmono_profiler_iomap_la_LDFLAGS = -no-undefined
+-libmono_profiler_iomap_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(GLIB_LIBS) $(LIBICONV)
++libmono_profiler_iomap_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(LIBICONV)
+ libmono_profiler_iomap_la_LDFLAGS = $(prof_ldflags)
+ libmono_profiler_iomap_static_la_SOURCES = mono-profiler-iomap.c
+ libmono_profiler_iomap_static_la_LDFLAGS = -static
  libmono_profiler_log_la_SOURCES = proflog.c
--libmono_profiler_log_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(Z_LIBS)
-+libmono_profiler_log_la_LIBADD = $(LIBMONO) $(Z_LIBS)
+-libmono_profiler_log_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(GLIB_LIBS) $(Z_LIBS)
++libmono_profiler_log_la_LIBADD = $(monodir)/mono/mini/$(LIBMONO_LA) $(Z_LIBS)
+ libmono_profiler_log_la_LDFLAGS = $(prof_ldflags)
+ libmono_profiler_log_static_la_SOURCES = proflog.c
+ libmono_profiler_log_static_la_LDFLAGS = -static
  @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_SOURCES = mono-profiler-vtune.c
  @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_CFLAGS = $(VTUNE_CFLAGS)
 -@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
 +@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(LIBICONV)
- 
- # The log profile uses eglib functions, so it needs to be linked against
- # libeglib in shared mode, but not in static mode, since that would
+ @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LDFLAGS = $(prof_ldflags)
+ @HAVE_VTUNE_TRUE@libmono_profiler_vtune_static_la_SOURCES = mono-profiler-vtune.c
+ @HAVE_VTUNE_TRUE@libmono_profiler_vtune_static_la_LDFLAGS = -static

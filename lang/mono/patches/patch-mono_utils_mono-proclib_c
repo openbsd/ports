@@ -1,15 +1,7 @@
-$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.17 2015/12/15 15:32:04 robert Exp $
---- mono/utils/mono-proclib.c.orig	Sun Dec 13 18:16:49 2015
-+++ mono/utils/mono-proclib.c	Sun Dec 13 20:29:38 2015
-@@ -23,6 +23,7 @@
- #if defined(_POSIX_VERSION)
- #include <sys/errno.h>
- #include <sys/param.h>
-+#include <errno.h>
- #ifdef HAVE_SYS_TYPES_H
- #include <sys/types.h>
- #endif
-@@ -68,30 +69,30 @@ mono_process_list (int *size)
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.18 2016/10/31 11:45:07 robert Exp $
+--- mono/utils/mono-proclib.c.orig	Mon Oct 31 11:33:31 2016
++++ mono/utils/mono-proclib.c	Mon Oct 31 11:34:11 2016
+@@ -73,30 +73,30 @@ mono_process_list (int *size)
  {
  #if USE_SYSCTL
  	int res, i;
@@ -47,7 +39,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.17 2015/12/15 15:32:04 robert Exp 
  	mib [5] = 400; /* XXX */
  
  	res = sysctl (mib, 6, processes, &data_len, NULL, 0);
-@@ -121,13 +122,13 @@ mono_process_list (int *size)
+@@ -126,13 +126,13 @@ mono_process_list (int *size)
  			break;
  		}
  	}
@@ -65,7 +57,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.17 2015/12/15 15:32:04 robert Exp 
  	buf = (void **) g_realloc (buf, res * sizeof (void*));
  	for (i = 0; i < res; ++i)
  		buf [i] = GINT_TO_POINTER (processes [i].kinfo_pid_member);
-@@ -213,8 +214,8 @@ get_pid_status_item_buf (int pid, const char *item, ch
+@@ -218,8 +218,8 @@ get_pid_status_item_buf (int pid, const char *item, ch
  
  #if USE_SYSCTL
  
@@ -76,7 +68,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.17 2015/12/15 15:32:04 robert Exp 
  #else
  #define KINFO_PROC struct kinfo_proc
  #endif
-@@ -225,10 +226,10 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
+@@ -230,10 +230,10 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
  	int res;
  	size_t data_len = sizeof (KINFO_PROC);
  
@@ -89,7 +81,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.17 2015/12/15 15:32:04 robert Exp 
  	mib [2] = KERN_PROC_PID;
  	mib [3] = GPOINTER_TO_UINT (pid);
  	mib [4] = sizeof(KINFO_PROC);
-@@ -243,7 +244,7 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
+@@ -248,7 +248,7 @@ sysctl_kinfo_proc (gpointer pid, KINFO_PROC* processi)
  	mib [3] = GPOINTER_TO_UINT (pid);
  
  	res = sysctl (mib, 4, processi, &data_len, NULL, 0);

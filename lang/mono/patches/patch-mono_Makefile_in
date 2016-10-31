@@ -1,13 +1,13 @@
-$OpenBSD: patch-mono_Makefile_in,v 1.6 2016/06/26 10:40:28 robert Exp $
---- mono/Makefile.in.orig	Thu Jun  9 17:10:53 2016
-+++ mono/Makefile.in	Thu Jun 23 19:29:32 2016
-@@ -381,10 +381,10 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-mono_Makefile_in,v 1.7 2016/10/31 11:45:07 robert Exp $
+--- mono/Makefile.in.orig	Mon Oct 31 11:32:36 2016
++++ mono/Makefile.in	Mon Oct 31 11:32:50 2016
+@@ -379,10 +379,10 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  @SUPPORT_SGEN_TRUE@sgen_dirs = sgen
 -@CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_FALSE@SUBDIRS = arch utils io-layer cil metadata $(sgen_dirs) mini dis tests unit-tests benchmark profiler
 +@CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_FALSE@SUBDIRS = arch utils io-layer cil metadata $(sgen_dirs) mini dis tests benchmark profiler
- @CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_TRUE@SUBDIRS = utils io-layer metadata arch $(sgen_dirs) mini profiler
+ @CROSS_COMPILING_FALSE@@INSTALL_MONOTOUCH_TRUE@SUBDIRS = arch utils io-layer metadata $(sgen_dirs) mini profiler
  @CROSS_COMPILING_TRUE@SUBDIRS = arch utils io-layer cil metadata $(sgen_dirs) mini dis profiler
 -DIST_SUBDIRS = arch utils io-layer cil metadata $(sgen_dirs) mini dis tests unit-tests benchmark profiler
 +DIST_SUBDIRS = arch utils io-layer cil metadata $(sgen_dirs) mini dis tests benchmark profiler

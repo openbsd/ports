@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2016/09/01 15:40:29 robert Exp $
+# $OpenBSD: Makefile,v 1.103 2016/10/31 11:45:07 robert Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		4.4.2
-DISTNAME=	mono-${V}.11
+V=		4.6.1
+DISTNAME=	mono-${V}.5
 
 CATEGORIES=	lang devel
 

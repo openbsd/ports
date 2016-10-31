@@ -1,9 +1,18 @@
-$OpenBSD: patch-mono_mini_test_op_il_seq_point_sh,v 1.1 2015/10/03 11:53:44 robert Exp $
---- mono/mini/test_op_il_seq_point.sh.orig	Sat Sep 26 20:00:14 2015
-+++ mono/mini/test_op_il_seq_point.sh	Sat Sep 26 20:00:21 2015
+$OpenBSD: patch-mono_mini_test_op_il_seq_point_sh,v 1.2 2016/10/31 11:45:07 robert Exp $
+--- mono/mini/test_op_il_seq_point.sh.orig	Tue Oct 11 14:53:48 2016
++++ mono/mini/test_op_il_seq_point.sh	Mon Oct 31 12:06:28 2016
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash
  
  TEST_FILE=$1
  USE_AOT=$2
+@@ -17,7 +17,7 @@ RUNTIME=$BASEDIR/../../runtime/mono-wrapper
+ trap "rm -rf ${TMP_FILE_PREFIX}*" EXIT
+ 
+ tmp_file () {
+-	mktemp ./${TMP_FILE_PREFIX}XXXX
++	mktemp ./${TMP_FILE_PREFIX}XXXXXX
+ }
+ 
+ clean_aot () {
