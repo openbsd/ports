@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/10/05 06:02:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/10/31 16:27:39 ajacoutot Exp $
 @bin bin/sol
 lib/aisleriot/
 lib/aisleriot/guile/
@@ -2013,6 +2013,7 @@ share/locale/eu/LC_MESSAGES/aisleriot.mo
 share/locale/fa/LC_MESSAGES/aisleriot.mo
 share/locale/fi/LC_MESSAGES/aisleriot.mo
 share/locale/fr/LC_MESSAGES/aisleriot.mo
+share/locale/fur/LC_MESSAGES/aisleriot.mo
 share/locale/ga/LC_MESSAGES/aisleriot.mo
 share/locale/gl/LC_MESSAGES/aisleriot.mo
 share/locale/gu/LC_MESSAGES/aisleriot.mo
