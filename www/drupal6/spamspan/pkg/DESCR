@@ -1,7 +1,0 @@
-The SpamSpan module obfuscates email addresses to help prevent spambots
-from collecting them. The problem with most email address obfuscators is
-that they rely upon JavaScript being enabled on the client side. This
-makes the technique inaccessible to people with screen readers. SpamSpan
-however will produce clickable links if JavaScript is enabled, and will
-show the email address as example [at] example [dot] com if the browser
-does not support JavaScript or if JavaScript is disabled.

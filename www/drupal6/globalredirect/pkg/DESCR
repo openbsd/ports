@@ -1,6 +1,0 @@
-Search engines get unhappy when they see the same content through different
-urls. They might even decide to delist the case.
-
-Globalredirect applies a few simple rules to minimize the problem, such
-as making sure pathaliases are used to refer to content, and using 
-301 redirects to achieve that.

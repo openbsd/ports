@@ -1,7 +1,0 @@
-The idea behind the Zen theme is to have a very flexible standards-
-compliant and semantically correct XHTML theme that can be highly
-modified through CSS and an enhanced version of Drupal's template
-system.  Out of the box, Zen is clean and simple with either a one,
-two, or three column layout of fixed or liquid width. In addition,
-the HTML source order has content placed before sidebars or the navbar
-for increased accessibility and SEO.

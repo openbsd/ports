@@ -1,5 +1,0 @@
-This group of modules is sort of a recipe module that makes things
-easier by showing how to integrate some other modules as well as
-providing miscellaneous features that aren't distributed by Views
-itself. Sometimes these modules are only base recipes that will
-need to be themed and spiced up to fit your needs.

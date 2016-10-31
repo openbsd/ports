@@ -1,3 +1,0 @@
-The Session API is a very simple set of functions that extend the core
-sessions workings, allowing data to be stored and associated with a
-user's session.

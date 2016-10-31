@@ -1,6 +1,0 @@
-This module enables you to make the Menu Settings required on specific
-content types. It forces a node from one or more content types to be
-included in the menu system before the content will be saved
-successfully. This can be useful in a number of situations, e.g. when
-using [menupath-raw] in the pathauto settings, which expects a node to
-live within the menu system.

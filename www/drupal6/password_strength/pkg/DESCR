@@ -1,6 +1,0 @@
-This module adds PHP-based password strength checking and validation
-routines that mirror the jQuery routines, so that administrators can
-restrict passwords to only be, for example, "high" strength. The module
-simply modifies existing password confirm fields (where two passwords
-are entered, like the user edit form), so no other setup is required
-beyond configuring the desired enforcement rules.

@@ -1,5 +1,0 @@
-The tables module allows you to create a table in a node using a simple
-markup. Tables are entered using a simple macro format.
-This module allows you to set the "class" for the table to allow
-different appearances for different tables. It also comes with a css
-sheet to do a number of different appearances.

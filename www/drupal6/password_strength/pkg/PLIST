@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/29 15:05:07 stephan Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}password_strength/
-${DRUPAL_MODS}password_strength/LICENSE.txt
-${DRUPAL_MODS}password_strength/password_strength.css
-${DRUPAL_MODS}password_strength/password_strength.info
-${DRUPAL_MODS}password_strength/password_strength.js
-${DRUPAL_MODS}password_strength/password_strength.module

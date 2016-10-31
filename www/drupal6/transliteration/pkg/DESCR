@@ -1,6 +1,0 @@
-Provides a central transliteration service to other Drupal modules, and
-sanitizes file names while uploading. Generally spoken, it takes Unicode
-text and tries to represent it in US-ASCII characters (universally
-displayable, unaccented characters) by attempting to transliterate the
-pronunciation expressed by the text in some other writing system to
-Roman letters.

@@ -1,6 +1,0 @@
-This module will create a main book page for content type selected in
-BookMadeSimple settings. This is a shortcut to create a node and click
-on Update book outline.
-A dropdown listbox will be added in books links. Only allowed content-
-type (define in content-type settings) are printed. Selecting a content
-type will add it as a child page of the book page.

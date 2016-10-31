@@ -1,3 +1,0 @@
-Includes a jQuery PNG Fix to correctly handle PNG transparency in Windows
-Internet Explorer 5.5 and 6. Transparent PNGs on IE result in killed
-kittens, so this module tries to help that.

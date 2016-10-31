@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.794 2016/10/31 10:30:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.795 2016/10/31 12:38:42 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -36,7 +36,6 @@
      SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += dokuwiki
-     SUBDIR += drupal6
      SUBDIR += drupal7
      SUBDIR += drush
      SUBDIR += elinks

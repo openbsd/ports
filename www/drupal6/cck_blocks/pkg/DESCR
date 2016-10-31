@@ -1,5 +1,0 @@
-Adds a block for every CCK field you selected for being available as
-block. This makes it possible to show the field's value of the
-currently shown node in the block (placed left, right or in whatever
-region) instead of (or next to) the node's main content area. Kind of a
-simple panel variation.

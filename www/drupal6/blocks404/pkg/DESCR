@@ -1,4 +1,0 @@
-On 404 Not Found error pages, Drupal will skip rendering of several
-pieces of your website for performance reasons. This module simply
-revives those features on 404 pages to show lost users how to get
-to real pages.

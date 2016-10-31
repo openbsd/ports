@@ -1,3 +1,0 @@
-This modules allows more control on passwords for a site administrator.
-They can decide to auto-generate passwords on account creation, or
-to create an initial password for a user instead of letting them choose.

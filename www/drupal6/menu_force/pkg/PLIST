@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 09:42:30 stephan Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}menu_force/
-${DRUPAL_MODS}menu_force/LICENSE.txt
-${DRUPAL_MODS}menu_force/README.txt
-${DRUPAL_MODS}menu_force/menu_force.info
-${DRUPAL_MODS}menu_force/menu_force.install
-${DRUPAL_MODS}menu_force/menu_force.module

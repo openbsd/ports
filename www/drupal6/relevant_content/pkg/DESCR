@@ -1,7 +1,0 @@
-This module provides two ways of referencing relevant content. Both of
-these methods provide configuration to filter for specific content types
-and vocabularies, limit the maximum size of the result and provide some
-header text. The result on both cases are a list of nodes which the
-module considers most relevant based on the categorization of the
-current page. This is achieved by finding other nodes which are of one
-of the allowed types and have the most number of terms in common.

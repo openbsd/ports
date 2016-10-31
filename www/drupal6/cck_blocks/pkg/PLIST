@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 07:32:45 stephan Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}cck_blocks/
-${DRUPAL_MODS}cck_blocks/LICENSE.txt
-${DRUPAL_MODS}cck_blocks/cck_blocks.info
-${DRUPAL_MODS}cck_blocks/cck_blocks.install
-${DRUPAL_MODS}cck_blocks/cck_blocks.module

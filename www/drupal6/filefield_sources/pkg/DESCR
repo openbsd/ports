@@ -1,4 +1,0 @@
-FileField Sources is an extension to the FileField module. The FileField
-module lets you upload files from your computer through a CCK field. The
-FileField Sources module expands on this ability by allowing you to
-select new or existing files through additional means.

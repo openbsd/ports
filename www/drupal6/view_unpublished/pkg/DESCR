@@ -1,7 +1,0 @@
-This module allows you to grant access for specific user roles to view
-unpublished nodes of a specific type. Access control is quite granular
-in this regard. Additionally, using this module does not require any
-modifications to your existing URL structure.
-Used in concert with the Override Node Options module, you can give
-specific roles the ability to publish/unpublish certain node types
-without giving those roles administrative access to all nodes.

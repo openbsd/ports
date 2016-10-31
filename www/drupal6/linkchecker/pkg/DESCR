@@ -1,6 +1,0 @@
-The Link checker module extracts links from your content when saved and
-periodically tries to detect broken hypertext links by checking the
-remote sites and evaluating the HTTP response codes. It shows all broken
-links in the reports/logs section and on the content edit page if a link
-check has been failed. An author specific broken links report is also
-available in "My Account".

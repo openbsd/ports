@@ -1,6 +1,0 @@
-In simple use cases the search_config module allows site admins to
-decide which fields to display on the advanced search form when enabled.
-There is also the option of excluding node types from search results.
-Once selected they are also automatically removed from the advance
-search form. This gives more control over the content that can be
-searched to those who need it.

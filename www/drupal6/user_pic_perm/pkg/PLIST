@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/28 11:19:15 espie Exp $
-@owner ${DRUPAL_OWNER}
-@group ${DRUPAL_GROUP}
-${DRUPAL_MODS}user_pic_perm/
-${DRUPAL_MODS}user_pic_perm/LICENSE.txt
-${DRUPAL_MODS}user_pic_perm/user_pic_perm.info
-${DRUPAL_MODS}user_pic_perm/user_pic_perm.module
