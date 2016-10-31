@@ -1,36 +1,35 @@
-# $OpenBSD: Makefile,v 1.54 2016/05/19 08:03:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2016/10/31 12:05:35 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		3.20.0
+REVISION=		0
 
 CATEGORIES=		productivity
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += EGL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
+WANTLIB += EGL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject camel-1.2 champlain-0.12
+WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango cogl-path
 WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
 WANTLIB += edata-book-1.2 edataserver-1.2 edataserverui-1.2 epoxy
 WANTLIB += expat ffi folks folks-eds folks-telepathy fontconfig
 WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 geocode-glib gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB += icuuc json-glib-1.0 lzma m nspr4 nss3 nssutil3
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
-WANTLIB += xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
-WANTLIB += xml2 z cogl-path iconv intl
-WANTLIB += champlain-0.12 clutter-1.0 clutter-gtk-1.0 cogl cogl-pango
-WANTLIB += GL Xt Xxf86vm enchant gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 harfbuzz-icu javascriptcoregtk-3.0 jpeg
-WANTLIB += orc-0.4 stdc++ webkitgtk-3.0 webp xcb-glx xslt
+WANTLIB += gmodule-2.0 gmp gnome-desktop-3 goa-1.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += hogweed iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += json-glib-1.0 lzma m nettle nspr4 nss3 orc-0.4 p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
+WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 stdc++ tasn1 telepathy-glib
+WANTLIB += webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render xcb-shm
+WANTLIB += xcb-xfixes xml2 z
 
 MODULES=		x11/gnome \
 			devel/dconf
