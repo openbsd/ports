@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2016/05/10 06:57:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2016/10/31 14:23:10 ajacoutot Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
 GNOME_PROJECT=		vinagre
-GNOME_VERSION=		3.20.2
+GNOME_VERSION=		3.22.0
 
 CATEGORIES=		net
 
@@ -16,7 +16,7 @@ WANTLIB += freerdp freerdp-client gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 gtk-vnc-2.0
 WANTLIB += gvnc-1.0 intl m pango-1.0 pangocairo-1.0 pthread secret-1
 WANTLIB += spice-client-glib-2.0 spice-client-gtk-3.0 telepathy-glib
-WANTLIB += util vte-2.91 xml2 z
+WANTLIB += util vte-2.91 xml2 z pcre2-8
 
 MODULES=		devel/dconf \
 			x11/gnome
