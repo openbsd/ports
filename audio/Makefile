@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2016/09/26 06:58:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.377 2016/10/31 17:11:47 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -56,6 +56,7 @@
      SUBDIR += gogglesmm
      SUBDIR += gogo
      SUBDIR += gqmpeg
+     SUBDIR += gradio
      SUBDIR += grip
      SUBDIR += gsm
      SUBDIR += gsound
