@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.140 2016/06/27 11:17:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.141 2016/10/31 10:23:19 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.20.3
+GNOME_VERSION=	3.22.1
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -15,7 +15,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb XRes Xcomposite Xcursor
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi avahi-client
 WANTLIB += avahi-common avahi-glib avahi-gobject c cairo cairo-gobject
@@ -28,10 +28,10 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-4.0
 WANTLIB += jpeg lzma m notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += secret-1 soup-2.4 sqlite3 startup-notification-1 stdc++
-WANTLIB += webkit2gtk-4.0 webp wnck-3 xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z
-WANTLIB += epoxy hyphen intl iconv
+WANTLIB += secret-1 soup-2.4 sqlite3 stdc++
+WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z tasn1
+WANTLIB += epoxy hyphen intl iconv gmp gnutls hogweed idn nettle
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -41,8 +41,6 @@ RUN_DEPENDS=	devel/iso-codes \
 
 LIB_DEPENDS=	devel/libexecinfo \
 		devel/libnotify \
-		devel/libwnck3 \
-		devel/startup-notification \
 		multimedia/gstreamer1/plugins-base \
 		net/avahi \
 		www/webkitgtk4 \

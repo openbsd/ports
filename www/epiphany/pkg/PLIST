@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2016/04/26 07:39:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2016/10/31 10:23:19 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 lib/epiphany/
@@ -21,6 +21,7 @@ share/epiphany/pages/
 share/epiphany/pages/error.css
 share/glib-2.0/schemas/org.gnome.Epiphany.enums.xml
 share/glib-2.0/schemas/org.gnome.epiphany.gschema.xml
+share/glib-2.0/schemas/org.gnome.epiphany.host.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/epiphany-search-provider.ini
