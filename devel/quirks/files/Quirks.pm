@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.430 2016/10/31 14:59:05 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.431 2016/10/31 15:56:50 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -406,6 +406,7 @@ my $stem_extensions = {
 	'zarafa-webaccess' => 'zarafa-mapi',
 	'railo' => 'lucee',
 	'radare-bindings2' => 'radare2-bindings',
+	'py-httpie' => 'httpie',
 };
 
 my $obsolete_reason = {
