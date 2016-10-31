@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2016/04/25 16:01:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2016/10/31 11:31:55 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.4.3
+GNOME_VERSION=	3.4.4.1
 
-API_V=		${GNOME_VERSION:R}
+API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V
 
 CATEGORIES=	graphics
