@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/06/27 10:58:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/10/31 09:48:28 jasper Exp $
 
 COMMENT=		screenshot application for GNOME
 
 GNOME_PROJECT=		gnome-screenshot
-GNOME_VERSION=		3.20.1
+GNOME_VERSION=		3.22.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
