@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/31 17:11:06 landry Exp $
+@bin bin/gradio
+share/appdata/
+share/appdata/de.haeckerfelix.gradio.appdata.xml
+share/applications/de.haeckerfelix.gradio.desktop
+share/glib-2.0/schemas/de.haecker-felix.gradio.gschema.xml
+share/gradio/
+share/gradio/gradio.css
+share/icons/hicolor/128x128/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/16x16/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/192x192/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/32x32/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/48x48/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/64x64/apps/de.haeckerfelix.gradio.png
+share/icons/hicolor/scalable/apps/de.haeckerfelix.gradio.svg
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
