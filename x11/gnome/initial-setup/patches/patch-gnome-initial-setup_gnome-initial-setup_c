@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.5 2015/04/03 19:10:16 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.6 2016/10/31 16:30:17 ajacoutot Exp $
 
 Disable NetworkManager.
 
---- gnome-initial-setup/gnome-initial-setup.c.orig	Wed Mar  4 22:30:52 2015
-+++ gnome-initial-setup/gnome-initial-setup.c	Fri Apr  3 20:45:15 2015
+--- gnome-initial-setup/gnome-initial-setup.c.orig	Thu Sep  1 16:33:15 2016
++++ gnome-initial-setup/gnome-initial-setup.c	Mon Oct 31 17:16:11 2016
 @@ -40,7 +40,6 @@
  #include "pages/region/gis-region-page.h"
  #include "pages/keyboard/gis-keyboard-page.h"
@@ -11,12 +11,12 @@ Disable NetworkManager.
 -#include "pages/network/gis-network-page.h"
  #include "pages/timezone/gis-timezone-page.h"
  #include "pages/privacy/gis-privacy-page.h"
- #include "pages/goa/gis-goa-page.h"
-@@ -65,7 +64,6 @@ static PageData page_table[] = {
+ #include "pages/software/gis-software-page.h"
+@@ -66,7 +65,6 @@ static PageData page_table[] = {
    /* PAGE (region,   FALSE), */
    PAGE (keyboard, FALSE),
    PAGE (eula,     FALSE),
 -  PAGE (network,  FALSE),
    PAGE (privacy,  FALSE),
    PAGE (timezone, TRUE),
-   PAGE (goa,      FALSE),
+   PAGE (software, TRUE),
