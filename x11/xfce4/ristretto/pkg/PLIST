@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/03/16 20:35:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/10/31 15:35:48 landry Exp $
 @bin bin/ristretto
-share/appdata/
 share/appdata/ristretto.appdata.xml
 share/applications/ristretto.desktop
+share/icons/hicolor/128x128/apps/ristretto.png
 share/icons/hicolor/16x16/apps/ristretto.png
 share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/apps/ristretto.svg
@@ -21,6 +21,7 @@ share/locale/eu/LC_MESSAGES/ristretto.mo
 share/locale/fi/LC_MESSAGES/ristretto.mo
 share/locale/fr/LC_MESSAGES/ristretto.mo
 share/locale/gl/LC_MESSAGES/ristretto.mo
+share/locale/he/LC_MESSAGES/ristretto.mo
 share/locale/hr/LC_MESSAGES/ristretto.mo
 share/locale/hu/LC_MESSAGES/ristretto.mo
 share/locale/id/LC_MESSAGES/ristretto.mo
