@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.47 2016/04/25 16:57:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2016/10/31 10:52:01 ajacoutot Exp $
 bin/gnome-session
 @bin bin/gnome-session-inhibit
 @bin bin/gnome-session-quit
 @bin libexec/gnome-session-binary
 @bin libexec/gnome-session-check-accelerated
-@bin libexec/gnome-session-check-accelerated-helper
+@bin libexec/gnome-session-check-accelerated-gl-helper
+@bin libexec/gnome-session-check-accelerated-gles-helper
 @bin libexec/gnome-session-failed
 @man man/man1/gnome-session-inhibit.1
 @man man/man1/gnome-session-quit.1
@@ -16,17 +17,9 @@ share/doc/gnome-session/dbus/gnome-session.html
 share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
 share/gnome-session/
 share/gnome-session/hardware-compatibility
-share/gnome-session/session-properties.ui
 share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-dummy.session
 share/gnome-session/sessions/gnome.session
-share/icons/hicolor/16x16/apps/session-properties.png
-share/icons/hicolor/22x22/apps/session-properties.png
-share/icons/hicolor/24x24/apps/session-properties.png
-share/icons/hicolor/32x32/apps/session-properties.png
-share/icons/hicolor/48x48/apps/session-properties.png
-share/icons/hicolor/scalable/apps/session-properties.svg
-share/icons/hicolor/symbolic/apps/session-properties-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-session-3.0.mo
@@ -136,10 +129,9 @@ share/locale/zh_HK/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-3.0.mo
 share/wayland-sessions/
-share/wayland-sessions/gnome-wayland.desktop
+share/wayland-sessions/gnome.desktop
 share/xsessions/
+share/xsessions/gnome-xorg.desktop
 share/xsessions/gnome.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

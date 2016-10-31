@@ -1,10 +1,10 @@
-$OpenBSD: patch-gnome-session_main_c,v 1.15 2016/04/25 16:57:45 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_main_c,v 1.16 2016/10/31 10:52:01 ajacoutot Exp $
 
 XXX no rpmatch(3) on OpenBSD
 
---- gnome-session/main.c.orig	Mon Apr 11 17:41:13 2016
-+++ gnome-session/main.c	Mon Apr 25 18:47:26 2016
-@@ -311,7 +311,7 @@ main (int argc, char **argv)
+--- gnome-session/main.c.orig	Wed Oct 12 16:02:15 2016
++++ gnome-session/main.c	Mon Oct 31 11:41:53 2016
+@@ -304,7 +304,7 @@ main (int argc, char **argv)
  
          debug_string = g_getenv ("GNOME_SESSION_DEBUG");
          if (debug_string != NULL) {
