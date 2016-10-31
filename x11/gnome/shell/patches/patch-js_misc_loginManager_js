@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.1 2014/10/21 13:11:03 ajacoutot Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.2 2016/10/31 16:15:09 jasper Exp $
 
 REVERT:
 From a244c1e987502e359c45c0a9bc0012b5bc635553 Mon Sep 17 00:00:00 2001
@@ -6,9 +6,9 @@ From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
 Date: Thu, 24 Apr 2014 17:55:56 +0200
 Subject: loginManager: Kill ConsoleKit support
 
---- js/misc/loginManager.js.orig	Tue Oct 21 14:59:33 2014
-+++ js/misc/loginManager.js	Tue Oct 21 15:02:21 2014
-@@ -46,6 +46,32 @@ const SystemdLoginSessionIface = '<node> \
+--- js/misc/loginManager.js.orig	Sat Aug 20 01:42:50 2016
++++ js/misc/loginManager.js	Mon Oct 31 16:02:40 2016
+@@ -49,6 +49,32 @@ const SystemdLoginSessionIface = '<node> \
  const SystemdLoginManager = Gio.DBusProxy.makeProxyWrapper(SystemdLoginManagerIface);
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
  
@@ -41,7 +41,7 @@ Subject: loginManager: Kill ConsoleKit support
  function haveSystemd() {
      return GLib.access("/run/systemd/seats", 0) >= 0;
  }
-@@ -75,7 +101,7 @@ function canLock() {
+@@ -78,7 +104,7 @@ function canLock() {
                                                 -1, null);
  
          let version = result.deep_unpack()[0].deep_unpack();
@@ -50,7 +50,7 @@ Subject: loginManager: Kill ConsoleKit support
      } catch(e) {
          return false;
      }
-@@ -93,7 +119,7 @@ function getLoginManager() {
+@@ -96,7 +122,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -59,7 +59,7 @@ Subject: loginManager: Kill ConsoleKit support
      }
  
      return _loginManager;
-@@ -110,6 +136,9 @@ const LoginManagerSystemd = new Lang.Class({
+@@ -113,6 +139,9 @@ const LoginManagerSystemd = new Lang.Class({
                                    Lang.bind(this, this._prepareForSleep));
      },
  
@@ -69,7 +69,7 @@ Subject: loginManager: Kill ConsoleKit support
      getCurrentSessionProxy: function(callback) {
          if (this._currentSession) {
              callback (this._currentSession);
-@@ -177,13 +206,35 @@ const LoginManagerSystemd = new Lang.Class({
+@@ -183,13 +212,35 @@ const LoginManagerSystemd = new Lang.Class({
  });
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
  
@@ -110,7 +110,7 @@ Subject: loginManager: Kill ConsoleKit support
      },
  
      canSuspend: function(asyncCallback) {
-@@ -203,4 +254,4 @@ const LoginManagerDummy = new Lang.Class({
+@@ -209,4 +260,4 @@ const LoginManagerDummy = new Lang.Class({
          callback(null);
      }
  });

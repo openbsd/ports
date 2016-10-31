@@ -1,40 +1,37 @@
-# $OpenBSD: Makefile,v 1.132 2016/08/30 10:33:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2016/10/31 16:15:08 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.20.4
-REVISION=		0
+GNOME_VERSION=		3.22.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject camel-1.2
-WANTLIB += canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
-WANTLIB += cogl-path croco-0.6 dbus-1 dbus-glib-1 ecal-1.2 edataserver-1.2
-WANTLIB += execinfo expat ffi fontconfig freetype gck-1 gcr-base-3
-WANTLIB += gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += gjs glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
-WANTLIB += gpg-error graphite2 gstbase-1.0 gstreamer-1.0 gthread-2.0
-WANTLIB += gtk-3 harfbuzz ical icalss icalvcal icudata icui18n
-WANTLIB += icuuc json-c json-glib-1.0 ltdl m mozjs-24 mutter ncurses
-WANTLIB += ncursesw nspr4 nss3 nssutil3 ogg p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png polkit-agent-1 polkit-gobject-1 pthread pthread-stubs
-WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
-WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
-WANTLIB += telepathy-glib upower-glib vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z epoxy
-WANTLIB += EGL drm gbm xcb-dri2 xcb-randr xcb-shape iconv intl
-WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
-WANTLIB += GL Xt Xxf86vm enchant glapi gstapp-1.0 gstaudio-1.0
-WANTLIB += gstfft-1.0 gstpbutils-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
-WANTLIB += javascriptcoregtk-3.0 jpeg orc-0.4 stdc++ webkitgtk-3.0
-WANTLIB += webp xcb-glx xslt
+WANTLIB += EGL FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += camel-1.2 canberra canberra-gtk3 croco-0.6 dbus-1 dbus-glib-1
+WANTLIB += drm ecal-1.2 edataserver-1.2 epoxy execinfo expat ffi
+WANTLIB += fontconfig freetype gbm gck-1 gcr-base-3 gcrypt gdbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 gjs glapi
+WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gobject-2.0
+WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += hogweed ical icalss icalvcal iconv icudata icui18n
+WANTLIB += icuuc idn intl javascriptcoregtk-4.0 json-c json-glib-1.0
+WANTLIB += ltdl lzma m mozjs-24 mutter ncurses ncursesw nettle
+WANTLIB += nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-agent-1
+WANTLIB += polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
+WANTLIB += readline secret-1 smime3 sndfile softokn3 soup-2.4
+WANTLIB += sqlite3 ssl3 startup-notification-1 stdc++ tasn1 telepathy-glib
+WANTLIB += upower-glib vorbis vorbisenc vorbisfile webkit2gtk-4.0
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-randr xcb-render xcb-res xcb-shm
+WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB += xkbfile xml2 z
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -60,7 +57,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.20.2
+			x11/gnome/mutter>=3.22.0
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
