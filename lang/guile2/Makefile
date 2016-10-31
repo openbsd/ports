@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/27 14:51:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/10/31 22:53:34 ajacoutot Exp $
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
@@ -7,6 +7,7 @@ DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:C,.[0-9]+$,,}
 SUBST_VARS=		V
+REVISION=		0
 
 CATEGORIES=		lang
 

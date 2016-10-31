@@ -1,0 +1,217 @@
+$OpenBSD: patch-module_system_repl_server_scm,v 1.1 2016/10/31 22:53:34 ajacoutot Exp $
+
+From 08c021916dbd3a235a9f9cc33df4c418c0724e03 Mon Sep 17 00:00:00 2001
+From: Mark H Weaver <mhw@netris.org>
+Date: Fri, 9 Sep 2016 07:36:52 -0400
+Subject: REPL Server: Guard against HTTP inter-protocol exploitation attacks.
+
+--- module/system/repl/server.scm.orig	Sat Jan  2 12:32:40 2016
++++ module/system/repl/server.scm	Mon Oct 31 19:12:09 2016
+@@ -1,6 +1,6 @@
+ ;;; Repl server
+ 
+-;; Copyright (C)  2003, 2010, 2011, 2014 Free Software Foundation, Inc.
++;; Copyright (C)  2003, 2010, 2011, 2014, 2016 Free Software Foundation, Inc.
+ 
+ ;; This library is free software; you can redistribute it and/or
+ ;; modify it under the terms of the GNU Lesser General Public
+@@ -22,8 +22,13 @@
+ (define-module (system repl server)
+   #:use-module (system repl repl)
+   #:use-module (ice-9 threads)
++  #:use-module (ice-9 rdelim)
+   #:use-module (ice-9 match)
++  #:use-module (ice-9 iconv)
++  #:use-module (rnrs bytevectors)
++  #:use-module (rnrs io ports)
+   #:use-module (srfi srfi-1)
++  #:use-module (srfi srfi-26)           ; cut
+   #:export (make-tcp-server-socket
+             make-unix-domain-server-socket
+             run-server
+@@ -154,6 +159,8 @@
+     ;; Arrange to cancel this thread to forcefully shut down the socket.
+     (add-open-socket! client (lambda () (cancel-thread thread))))
+ 
++  (guard-against-http-request client)
++
+   (with-continuation-barrier
+    (lambda ()
+      (parameterize ((current-input-port client)
+@@ -162,3 +169,176 @@
+                     (current-warning-port client))
+        (with-fluids ((*repl-stack* '()))
+          (start-repl))))))
++
++
++;;;
++;;; The following code adds protection to Guile's REPL servers against
++;;; HTTP inter-protocol exploitation attacks, a scenario whereby an
++;;; attacker can, via an HTML page, cause a web browser to send data to
++;;; TCP servers listening on a loopback interface or private network.
++;;; See <https://en.wikipedia.org/wiki/Inter-protocol_exploitation> and
++;;; <https://www.jochentopf.com/hfpa/hfpa.pdf>, The HTML Form Protocol
++;;; Attack (2001) by Tochen Topf <jochen@remote.org>.
++;;;
++;;; Here we add a procedure to 'before-read-hook' that looks for a possible
++;;; HTTP request-line in the first line of input from the client socket.  If
++;;; present, the socket is drained and closed, and a loud warning is written
++;;; to stderr (POSIX file descriptor 2).
++;;;
++
++(define (with-temporary-port-encoding port encoding thunk)
++  "Call THUNK in a dynamic environment in which the encoding of PORT is
++temporarily set to ENCODING."
++  (let ((saved-encoding #f))
++    (dynamic-wind
++      (lambda ()
++        (unless (port-closed? port)
++          (set! saved-encoding (port-encoding port))
++          (set-port-encoding! port encoding)))
++      thunk
++      (lambda ()
++        (unless (port-closed? port)
++          (set! encoding (port-encoding port))
++          (set-port-encoding! port saved-encoding))))))
++
++(define (with-saved-port-line+column port thunk)
++  "Save the line and column of PORT before entering THUNK, and restore
++their previous values upon normal or non-local exit from THUNK."
++  (let ((saved-line #f) (saved-column #f))
++    (dynamic-wind
++      (lambda ()
++        (unless (port-closed? port)
++          (set! saved-line   (port-line   port))
++          (set! saved-column (port-column port))))
++      thunk
++      (lambda ()
++        (unless (port-closed? port)
++          (set-port-line!   port saved-line)
++          (set-port-column! port saved-column))))))
++
++(define (drain-input-and-close socket)
++  "Drain input from SOCKET using ISO-8859-1 encoding until it would block,
++and then close it.  Return the drained input as a string."
++  (dynamic-wind
++    (lambda ()
++      ;; Enable full buffering mode on the socket to allow
++      ;; 'get-bytevector-some' to return non-trivial chunks.
++      (setvbuf socket _IOFBF))
++    (lambda ()
++      (let loop ((chunks '()))
++        (let ((result (and (char-ready? socket)
++                           (get-bytevector-some socket))))
++          (if (bytevector? result)
++              (loop (cons (bytevector->string result "ISO-8859-1")
++                          chunks))
++              (string-concatenate-reverse chunks)))))
++    (lambda ()
++      ;; Close the socket even in case of an exception.
++      (close-port socket))))
++
++(define permissive-http-request-line?
++  ;; This predicate is deliberately permissive
++  ;; when checking the Request-URI component.
++  (let ((cs (ucs-range->char-set #x20 #x7E))
++        (rx (make-regexp
++             (string-append
++              "^(OPTIONS|GET|HEAD|POST|PUT|DELETE|TRACE|CONNECT) "
++              "[^ ]+ "
++              "HTTP/[0-9]+.[0-9]+$"))))
++    (lambda (line)
++      "Return true if LINE might plausibly be an HTTP request-line,
++otherwise return #f."
++      ;; We cannot simplify this to a simple 'regexp-exec', because
++      ;; 'regexp-exec' cannot cope with NUL bytes.
++      (and (string-every cs line)
++           (regexp-exec  rx line)))))
++
++(define (check-for-http-request socket)
++  "Check for a possible HTTP request in the initial input from SOCKET.
++If one is found, close the socket and print a report to STDERR (fdes 2).
++Otherwise, put back the bytes."
++  ;; Temporarily set the port encoding to ISO-8859-1 to allow lossless
++  ;; reading and unreading of the first line, regardless of what bytes
++  ;; are present.  Note that a valid HTTP request-line contains only
++  ;; ASCII characters.
++  (with-temporary-port-encoding socket "ISO-8859-1"
++    (lambda ()
++      ;; Save the port 'line' and 'column' counters and later restore
++      ;; them, since unreading what we read is not sufficient to do so.
++      (with-saved-port-line+column socket
++        (lambda ()
++          ;; Read up to (but not including) the first CR or LF.
++          ;; Although HTTP mandates CRLF line endings, we are permissive
++          ;; here to guard against the possibility that in some
++          ;; environments CRLF might be converted to LF before it
++          ;; reaches us.
++          (match (read-delimited "\r\n" socket 'peek)
++            ((? eof-object?)
++             ;; We found EOF before any input.  Nothing to do.
++             'done)
++
++            ((? permissive-http-request-line? request-line)
++             ;; The input from the socket began with a plausible HTTP
++             ;; request-line, which is unlikely to be legitimate and may
++             ;; indicate an possible break-in attempt.
++
++             ;; First, set the current port parameters to a void-port,
++             ;; to avoid sending any more data over the socket, to cause
++             ;; the REPL reader to see EOF, and to swallow any remaining
++             ;; output gracefully.
++             (let ((void-port (%make-void-port "rw")))
++               (current-input-port   void-port)
++               (current-output-port  void-port)
++               (current-error-port   void-port)
++               (current-warning-port void-port))
++
++             ;; Read from the socket until we would block,
++             ;; and then close it.
++             (let ((drained-input (drain-input-and-close socket)))
++
++               ;; Print a report to STDERR (POSIX file descriptor 2).
++               ;; XXX Can we do better here?
++               (call-with-port (dup->port 2 "w")
++                 (cut format <> "
++@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
++@@ POSSIBLE BREAK-IN ATTEMPT ON THE REPL SERVER                @@
++@@ BY AN HTTP INTER-PROTOCOL EXPLOITATION ATTACK.  See:        @@
++@@ <https://en.wikipedia.org/wiki/Inter-protocol_exploitation> @@
++@@ Possible HTTP request received: ~S
++@@ The associated socket has been closed.                      @@
++@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"
++                      (string-append request-line
++                                     drained-input)))))
++
++            (start-line
++             ;; The HTTP request-line was not found, so
++             ;; 'unread' the characters that we have read.
++             (unread-string start-line socket))))))))
++
++(define (guard-against-http-request socket)
++  "Arrange for the Guile REPL to check for an HTTP request in the
++initial input from SOCKET, in which case the socket will be closed.
++This guards against HTTP inter-protocol exploitation attacks, a scenario
++whereby an attacker can, via an HTML page, cause a web browser to send
++data to TCP servers listening on a loopback interface or private
++network."
++  (%set-port-property! socket 'guard-against-http-request? #t))
++
++(define* (maybe-check-for-http-request
++          #:optional (socket (current-input-port)))
++  "Apply check-for-http-request to SOCKET if previously requested by
++guard-against-http-request.  This procedure is intended to be added to
++before-read-hook."
++  (when (%port-property socket 'guard-against-http-request?)
++    (check-for-http-request socket)
++    (unless (port-closed? socket)
++      (%set-port-property! socket 'guard-against-http-request? #f))))
++
++;; Install the hook.
++(add-hook! before-read-hook
++           maybe-check-for-http-request)
++
++;;; Local Variables:
++;;; eval: (put 'with-temporary-port-encoding 'scheme-indent-function 2)
++;;; eval: (put 'with-saved-port-line+column  'scheme-indent-function 1)
++;;; End:
