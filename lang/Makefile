@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2016/09/13 16:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2016/10/31 12:42:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -37,7 +37,6 @@
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
-     SUBDIR += io
      SUBDIR += iverilog
      SUBDIR += jamvm
      SUBDIR += jikes
