@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.321 2016/10/26 00:41:43 jca Exp $
+# $OpenBSD: Makefile,v 1.322 2016/10/31 21:30:38 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
      SUBDIR += architect
      SUBDIR += barman
      SUBDIR += db
-     SUBDIR += dbic++
      SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
      SUBDIR += freetds
@@ -236,7 +235,6 @@
      SUBDIR += ruby-sequel_pg,ruby23
      SUBDIR += ruby-sqlite3,ruby22
      SUBDIR += ruby-sqlite3,ruby23
-     SUBDIR += ruby-swift
      SUBDIR += ruby-swift-db-mysql,ruby22
      SUBDIR += ruby-swift-db-mysql,ruby23
      SUBDIR += ruby-swift-db-postgres,ruby22
