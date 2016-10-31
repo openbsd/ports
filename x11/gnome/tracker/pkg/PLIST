@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2016/04/25 16:40:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2016/10/31 11:07:25 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -25,7 +25,9 @@ include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-online.h
 include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner.h
 include/tracker-${TRACKER_API}/libtracker-sparql/
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-generated.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-namespace-manager.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-ontologies.h
+include/tracker-${TRACKER_API}/libtracker-sparql/tracker-resource.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-sparql.h
 include/tracker-${TRACKER_API}/libtracker-sparql/tracker-version.h
 lib/girepository-${TRACKER_API}/Tracker-${TRACKER_API}.typelib
@@ -43,6 +45,12 @@ lib/libtracker-sparql-${TRACKER_API}.la
 lib/pkgconfig/tracker-control-${TRACKER_API}.pc
 lib/pkgconfig/tracker-miner-${TRACKER_API}.pc
 lib/pkgconfig/tracker-sparql-${TRACKER_API}.pc
+lib/systemd/user/tracker-extract.service
+lib/systemd/user/tracker-miner-apps.service
+lib/systemd/user/tracker-miner-fs.service
+lib/systemd/user/tracker-miner-user-guides.service
+lib/systemd/user/tracker-store.service
+lib/systemd/user/tracker-writeback.service
 lib/tracker-${TRACKER_API}/
 lib/tracker-${TRACKER_API}/extract-modules/
 lib/tracker-${TRACKER_API}/extract-modules/libextract-abw.so
@@ -101,12 +109,6 @@ lib/tracker-${TRACKER_API}/writeback-modules/libwriteback-xmp.so
 @man man/man1/tracker-store.1
 @man man/man1/tracker-tag.1
 @man man/man1/tracker-writeback.1
-@man man/man5/tracker-db.cfg.5
-@man man/man5/tracker-extract.cfg.5
-@man man/man5/tracker-fts.cfg.5
-@man man/man5/tracker-miner-fs.cfg.5
-@man man/man5/tracker-store.cfg.5
-@man man/man5/tracker-writeback.cfg.5
 share/appdata/
 share/appdata/tracker-needle.appdata.xml
 share/appdata/tracker-preferences.appdata.xml
@@ -149,7 +151,6 @@ share/gtk-doc/html/libtracker-control/annotation-glossary.html
 share/gtk-doc/html/libtracker-control/ch01.html
 share/gtk-doc/html/libtracker-control/home.png
 share/gtk-doc/html/libtracker-control/index.html
-share/gtk-doc/html/libtracker-control/index.sgml
 share/gtk-doc/html/libtracker-control/left-insensitive.png
 share/gtk-doc/html/libtracker-control/left.png
 share/gtk-doc/html/libtracker-control/libtracker-control.devhelp2
@@ -174,7 +175,6 @@ share/gtk-doc/html/libtracker-miner/ch04.html
 share/gtk-doc/html/libtracker-miner/ch05.html
 share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
-share/gtk-doc/html/libtracker-miner/index.sgml
 share/gtk-doc/html/libtracker-miner/left-insensitive.png
 share/gtk-doc/html/libtracker-miner/left.png
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
@@ -193,15 +193,16 @@ share/gtk-doc/html/libtracker-miner/tracker-overview.html
 share/gtk-doc/html/libtracker-miner/up-insensitive.png
 share/gtk-doc/html/libtracker-miner/up.png
 share/gtk-doc/html/libtracker-sparql/
+share/gtk-doc/html/libtracker-sparql/TrackerResource.html
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlBuilder.html
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlConnection.html
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlCursor.html
 share/gtk-doc/html/libtracker-sparql/annotation-glossary.html
 share/gtk-doc/html/libtracker-sparql/home.png
 share/gtk-doc/html/libtracker-sparql/index.html
-share/gtk-doc/html/libtracker-sparql/index.sgml
 share/gtk-doc/html/libtracker-sparql/left-insensitive.png
 share/gtk-doc/html/libtracker-sparql/left.png
+share/gtk-doc/html/libtracker-sparql/libtracker-sparql-TrackerNamespaceManager.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Utilities.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Version-Information.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-reference.html
@@ -245,12 +246,14 @@ share/locale/et/LC_MESSAGES/tracker.mo
 share/locale/eu/LC_MESSAGES/tracker.mo
 share/locale/fi/LC_MESSAGES/tracker.mo
 share/locale/fr/LC_MESSAGES/tracker.mo
+share/locale/fur/LC_MESSAGES/tracker.mo
 share/locale/gl/LC_MESSAGES/tracker.mo
 share/locale/he/LC_MESSAGES/tracker.mo
 share/locale/hu/LC_MESSAGES/tracker.mo
 share/locale/id/LC_MESSAGES/tracker.mo
 share/locale/it/LC_MESSAGES/tracker.mo
 share/locale/ja/LC_MESSAGES/tracker.mo
+share/locale/kk/LC_MESSAGES/tracker.mo
 share/locale/ko/LC_MESSAGES/tracker.mo
 share/locale/lt/LC_MESSAGES/tracker.mo
 share/locale/lv/LC_MESSAGES/tracker.mo
@@ -276,6 +279,7 @@ share/locale/tg/LC_MESSAGES/tracker.mo
 share/locale/th/LC_MESSAGES/tracker.mo
 share/locale/tr/LC_MESSAGES/tracker.mo
 share/locale/uk/LC_MESSAGES/tracker.mo
+share/locale/vi/LC_MESSAGES/tracker.mo
 share/locale/zh_CN/LC_MESSAGES/tracker.mo
 share/locale/zh_HK/LC_MESSAGES/tracker.mo
 share/locale/zh_TW/LC_MESSAGES/tracker.mo
