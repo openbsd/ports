@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2016/05/10 18:38:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/10/31 09:41:02 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -10,6 +10,7 @@ include/vte-${API_V}/vte/vteenums.h
 include/vte-${API_V}/vte/vteglobals.h
 include/vte-${API_V}/vte/vtemacros.h
 include/vte-${API_V}/vte/vtepty.h
+include/vte-${API_V}/vte/vteregex.h
 include/vte-${API_V}/vte/vteterminal.h
 include/vte-${API_V}/vte/vtetypebuiltins.h
 include/vte-${API_V}/vte/vteversion.h
@@ -20,14 +21,18 @@ lib/libvte-${API_V}.la
 lib/pkgconfig/vte-${API_V}.pc
 share/gir-1.0/Vte-${API_V}.gir
 share/gtk-doc/html/vte-${API_V}/
+share/gtk-doc/html/vte-${API_V}/VteRegex.html
 share/gtk-doc/html/vte-${API_V}/VteTerminal.html
+share/gtk-doc/html/vte-${API_V}/annotation-glossary.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-40.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-44.html
+share/gtk-doc/html/vte-${API_V}/api-index-0-46.html
 share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
 share/gtk-doc/html/vte-${API_V}/api-index-full.html
 share/gtk-doc/html/vte-${API_V}/ch01.html
 share/gtk-doc/html/vte-${API_V}/ch02.html
 share/gtk-doc/html/vte-${API_V}/ch03.html
+share/gtk-doc/html/vte-${API_V}/ch04.html
 share/gtk-doc/html/vte-${API_V}/home.png
 share/gtk-doc/html/vte-${API_V}/index.html
 share/gtk-doc/html/vte-${API_V}/left-insensitive.png
