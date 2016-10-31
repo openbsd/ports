@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/04/25 10:20:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/10/31 09:19:36 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -19,6 +19,7 @@ share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.mouse.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.app-folders.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.datetime.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.enums.xml
