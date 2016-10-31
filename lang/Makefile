@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2016/10/31 12:42:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.191 2016/10/31 18:51:42 jca Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -47,7 +47,6 @@
      SUBDIR += libv8
      SUBDIR += lua
      SUBDIR += luajit
-     SUBDIR += luajit,lua52
      SUBDIR += lucee
      SUBDIR += mawk
      SUBDIR += moarvm
