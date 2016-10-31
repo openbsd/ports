@@ -1,0 +1,13 @@
+$OpenBSD: patch-src-qt5_OS-detect_pri,v 1.1 2016/10/31 17:49:30 ajacoutot Exp $
+--- src-qt5/OS-detect.pri.orig	Fri Oct 21 16:48:55 2016
++++ src-qt5/OS-detect.pri	Mon Oct 31 18:23:27 2016
+@@ -46,7 +46,8 @@ isEmpty(OS){
+ 
+   }else : openbsd-*{
+     OS = OpenBSD
+-    LIBS += -L/usr/local/lib -L/usr/lib
++    LIBS += -L!!LOCALBASE!!/lib -L/usr/lib
++    isEmpty(L_ETCDIR){ L_ETCDIR=!!SYSCONFDIR!! }
+     #Use the defaults for everything else
+ 
+   }else : netbsd-*{
