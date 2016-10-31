@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2016/08/22 12:29:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2016/10/31 10:42:41 jasper Exp $
 
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		3.20.2
-REVISION=		0
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		math
 
