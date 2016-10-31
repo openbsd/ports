@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2016/08/18 06:56:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2016/10/31 12:10:07 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.20.3
+GNOME_VERSION=	3.22.1
 
 CATEGORIES=	archivers
 
@@ -12,12 +12,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz crypto lz4
-WANTLIB += json-glib-1.0 lzma m magic nautilus-extension epoxy lzo2
-WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z intl iconv
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
+WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
+WANTLIB += lz4 lzma lzo2 m magic notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=	devel/dconf \
 		x11/gnome
@@ -37,13 +38,10 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 		devel/json-glib \
 		devel/libmagic \
 		devel/libnotify \
-		x11/gnome/nautilus
+		x11/gtk+3
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+#MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
-CONFIGURE_ENV=		CPIO=${LOCALBASE}/bin/gcpio
-
-post-install:
-	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
+CONFIGURE_ENV=	CPIO=${LOCALBASE}/bin/gcpio
 
 .include <bsd.port.mk>
