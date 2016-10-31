@@ -1,8 +1,0 @@
-dbic++ is a database client library written in C++ which comes with
-support for PostgreSQL and MySQL. It's main features are:
-* Simple API to maximize cross database support.
-* Supports nested transactions.
-* Auto reconnect, re-prepare & execute statements again unless inside
-  a transaction.
-* Provides APIs for async queries and a simple reactor API built on
-  libevent.
