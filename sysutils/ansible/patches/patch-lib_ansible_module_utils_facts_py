@@ -1,10 +1,77 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.5 2016/10/31 17:03:35 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.6 2016/10/31 17:10:59 jasper Exp $
 
-Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
+- Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
+- Enable VMM detection
+- Drop processor_cores fact with bogus value
+- Implement DMI facts
 
---- lib/ansible/module_utils/facts.py.orig	Mon Oct 31 17:57:06 2016
-+++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:01:59 2016
-@@ -2926,14 +2926,59 @@ class OpenBSDVirtual(Virtual):
+--- lib/ansible/module_utils/facts.py.orig	Thu Sep 29 17:01:13 2016
++++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:05:53 2016
+@@ -1408,7 +1408,8 @@ class OpenBSDHardware(Hardware):
+     - processor_cores
+     - processor_count
+     - processor_speed
+-    - devices
++
++    In addition, it also defines number of DMI facts and device facts.
+     """
+     platform = 'OpenBSD'
+     DMESG_BOOT = '/var/run/dmesg.boot'
+@@ -1419,6 +1420,7 @@ class OpenBSDHardware(Hardware):
+         self.get_processor_facts()
+         self.get_device_facts()
+         self.get_mount_facts()
++        self.get_dmi_facts()
+         return self.facts
+ 
+     def get_sysctl(self):
+@@ -1476,18 +1478,42 @@ class OpenBSDHardware(Hardware):
+         for line in dmesg_boot.splitlines():
+             if line.split(' ', 1)[0] == 'cpu%i:' % i:
+                 processor.append(line.split(' ', 1)[1])
+-                i = i + 1
++                i += 1
+         processor_count = i
+         self.facts['processor'] = processor
++	# The following is partly a lie because there is no reliable way to
++        # determine the number of physical CPUs in the system. We can only
++        # query the number of logical CPUs, which hides the number of cores.
++        # On amd64/i386 we could try to inspect the smt/core/package lines in
++        # dmesg, however even those have proven to be unreliable.
++        # So take a shortcut and report the logical number of processors in
++        # 'processor_count' and leave it at that.
+         self.facts['processor_count'] = processor_count
+-        # I found no way to figure out the number of Cores per CPU in OpenBSD
+-        self.facts['processor_cores'] = 'NA'
+ 
+     def get_device_facts(self):
+         devices = []
+         devices.extend(self.sysctl['hw.disknames'].split(','))
+         self.facts['devices'] = devices
+ 
++    def get_dmi_facts(self):
++        # We don't use dmidecode(1) here because:
++        # - it would add dependency on an external package
++        # - dmidecode(1) can only be ran as root
++        # So instead we rely on sysctl(8) to provide us the information on a
++        # best-effort basis. As a bonus we also get facts on non-amd64/i386
++        # platforms this way.
++        sysctl_to_dmi = {
++            'hw.product':  'product_name',
++            'hw.version':  'product_version',
++            'hw.uuid':     'product_uuid',
++            'hw.serialno': 'product_serial',
++            'hw.vendor':   'system_vendor',
++        }
++
++        for mib in sysctl_to_dmi:
++            if mib in self.sysctl:
++                self.facts[sysctl_to_dmi[mib]] = self.sysctl[mib]
++
+ class FreeBSDHardware(Hardware):
+     """
+     FreeBSD-specific subclass of Hardware.  Defines memory and CPU facts:
+@@ -2926,14 +2952,59 @@ class OpenBSDVirtual(Virtual):
      - virtualization_role
      """
      platform = 'OpenBSD'
