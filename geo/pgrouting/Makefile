@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/07/09 09:09:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/31 17:59:01 landry Exp $
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-GH_COMMIT =	6bb82c56e3c4a37ae6a18b5e3f1e551d8c9d10d8
+GH_TAGNAME =	pgrouting-2.3.0
 GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
 
-DISTNAME =	pgrouting-2.1.0
-REVISION =	0
+DISTNAME =	${GH_TAGNAME}
 CATEGORIES =	geo databases
 
 HOMEPAGE =	http://pgrouting.org/
@@ -32,10 +31,6 @@ TEST_ENV =	LD_PRELOAD=libpthread.so
 
 MODPOSTGRESQL_TEST_CMD = \
 	cd ${WRKSRC}; \
-	./tools/test-runner.pl
-
-SUBST_VARS +=	MODPOSTGRESQL_TEST_PGHOST
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/tools/test-runner.pl
+	./tools/testers/algorithm-tester.pl
 
 .include <bsd.port.mk>
