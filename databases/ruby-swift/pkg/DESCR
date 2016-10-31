@@ -1,8 +1,0 @@
-Swift is a fast database API and ORM for ruby 1.9, featuring:    
-* Multiple databases.
-* Prepared statements.
-* Bind values.
-* Transactions and named save points.
-* EventMachine asynchronous interface.
-* IdentityMap.
-* Migrations.
