@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/03/16 20:39:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/10/31 15:40:57 landry Exp $
 @bin bin/xfce4-clipman
 @bin bin/xfce4-clipman-settings
 @bin bin/xfce4-popup-clipman
+bin/xfce4-popup-clipman-actions
 lib/xfce4/panel/plugins/libclipman.so
-share/appdata/
 share/appdata/xfce4-clipman.appdata.xml
 share/applications/xfce4-clipman.desktop
 share/examples/xfce4-clipman/
