@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.167 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.168 2016/10/31 11:23:46 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.20.3
-REVISION=		0
+GNOME_VERSION=		3.22.1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -16,14 +15,15 @@ CATEGORIES=		x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy exempi exif expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv icudata
-WANTLIB += icui18n icuuc intl kvm lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sqlite3 uuid xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
+WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
+WANTLIB += exempi exif expat ffi fontconfig freetype gailutil-3
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
+WANTLIB += gnome-desktop-3 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv icudata icui18n icuuc intl kvm lz4 lzma
+WANTLIB += lzo2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sqlite3 uuid xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
@@ -37,9 +37,11 @@ RUN_DEPENDS=		x11/gnome/gvfs \
 LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/libexif \
 			textproc/exempi \
+			x11/gnome/autoar \
 			x11/gnome/tracker
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

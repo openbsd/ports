@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_nautilus-file-operations_c,v 1.1 2016/10/31 11:23:46 ajacoutot Exp $
+
+nautilus-file-operations.c:508: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-file-operations.c:509: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-file-operations.c:541: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-file-operations.c:871: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-file-operations.c:872: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-file-operations.c:904: error: #pragma GCC diagnostic not allowed inside functions
+
+--- src/nautilus-file-operations.c.orig	Mon Oct 31 12:14:18 2016
++++ src/nautilus-file-operations.c	Mon Oct 31 12:14:36 2016
+@@ -505,8 +505,6 @@ get_link_name (const char *name,
+         use_count = TRUE;
+     }
+ 
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+     if (use_count)
+     {
+         result = g_strdup_printf (format, count, name);
+@@ -538,7 +536,6 @@ get_link_name (const char *name,
+             g_free (new_name);
+         }
+     }
+-#pragma GCC diagnostic pop
+     return result;
+ }
+ 
+@@ -868,8 +865,6 @@ make_next_duplicate_name (const char *base,
+         use_count = TRUE;
+     }
+ 
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+     if (use_count)
+     {
+         result = g_strdup_printf (format, base, count, suffix);
+@@ -901,7 +896,6 @@ make_next_duplicate_name (const char *base,
+             g_free (new_base);
+         }
+     }
+-#pragma GCC diagnostic pop
+ 
+     return result;
+ }

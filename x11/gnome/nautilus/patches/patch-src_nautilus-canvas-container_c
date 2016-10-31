@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_nautilus-canvas-container_c,v 1.1 2016/10/31 11:23:46 ajacoutot Exp $
+
+nautilus-canvas-container.c:5783: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-canvas-container.c:5784: error: #pragma GCC diagnostic not allowed inside functions
+nautilus-canvas-container.c:5792: error: #pragma GCC diagnostic not allowed inside functions
+
+--- src/nautilus-canvas-container.c.orig	Mon Oct 31 12:13:19 2016
++++ src/nautilus-canvas-container.c	Mon Oct 31 12:13:32 2016
+@@ -5780,8 +5780,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
+ 
+     if (strs != NULL)
+     {
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+         for (p = strs; *p != NULL; p++)
+         {
+             if (sscanf (*p, str, limit))
+@@ -5789,7 +5787,6 @@ get_text_ellipsis_limit_for_zoom (char       **strs,
+                 success = TRUE;
+             }
+         }
+-#pragma GCC diagnostic pop
+     }
+ 
+     g_free (str);

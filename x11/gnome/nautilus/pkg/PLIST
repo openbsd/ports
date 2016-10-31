@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.53 2016/07/30 14:24:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2016/10/31 11:23:46 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
+@bin bin/nautilus-desktop
 include/nautilus/
 include/nautilus/libnautilus-extension/
 include/nautilus/libnautilus-extension/nautilus-column-provider.h
@@ -66,6 +67,13 @@ share/gtk-doc/html/libnautilus-extension/right.png
 share/gtk-doc/html/libnautilus-extension/style.css
 share/gtk-doc/html/libnautilus-extension/up-insensitive.png
 share/gtk-doc/html/libnautilus-extension/up.png
+share/icons/hicolor/16x16/apps/org.gnome.Nautilus.png
+share/icons/hicolor/22x22/apps/org.gnome.Nautilus.png
+share/icons/hicolor/24x24/apps/org.gnome.Nautilus.png
+share/icons/hicolor/256x256/apps/org.gnome.Nautilus.png
+share/icons/hicolor/32x32/apps/org.gnome.Nautilus.png
+share/icons/hicolor/48x48/apps/org.gnome.Nautilus.png
+share/icons/hicolor/symbolic/apps/org.gnome.Nautilus-symbolic.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/an/LC_MESSAGES/nautilus.mo
@@ -129,8 +137,6 @@ share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/ku/LC_MESSAGES/nautilus.mo
 share/locale/ky/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
-share/locale/ln/
-share/locale/ln/LC_MESSAGES/
 share/locale/ln/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
@@ -188,5 +194,7 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
