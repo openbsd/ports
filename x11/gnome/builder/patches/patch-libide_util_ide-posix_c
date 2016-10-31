@@ -1,0 +1,57 @@
+$OpenBSD: patch-libide_util_ide-posix_c,v 1.1 2016/10/31 15:02:09 ajacoutot Exp $
+--- libide/util/ide-posix.c.orig	Mon Oct 31 15:30:27 2016
++++ libide/util/ide-posix.c	Mon Oct 31 15:40:41 2016
+@@ -21,7 +21,11 @@
+ #include <sys/user.h>
+ #include <sys/utsname.h>
+ #include <unistd.h>
++#if !defined(__OpenBSD__)
+ #include <wordexp.h>
++#else
++#include <glob.h>
++#endif
+ 
+ #include "ide-posix.h"
+ 
+@@ -56,6 +60,7 @@ ide_get_system_page_size (void)
+  * Returns: (transfer full): A newly allocated string containing the
+  *   expansion. A copy of the input string upon failure to expand.
+  */
++#if !defined(__OpenBSD__)
+ gchar *
+ ide_path_expand (const gchar *path)
+ {
+@@ -80,6 +85,33 @@ ide_path_expand (const gchar *path)
+ 
+   return ret;
+ }
++#else
++gchar *
++ide_path_expand (const gchar *path)
++{
++  glob_t state;
++  gchar *ret = NULL;
++  int r;
++
++  if (path == NULL)
++    return NULL;
++
++  r = glob (path, GLOB_ERR, NULL, &state);
++  if(r == 0 && state.gl_pathc == 1 && state.gl_pathv) {
++    ret = g_strdup (state.gl_pathv[0]);
++  }
++  globfree(&state);
++
++  if (!g_path_is_absolute (ret))
++    {
++      g_autofree gchar *freeme = ret;
++
++      ret = g_build_filename (g_get_home_dir (), freeme, NULL);
++    }
++
++  return ret;
++}
++#endif
+ 
+ /**
+  * ide_path_collapse:

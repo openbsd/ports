@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_gstyle_Makefile_in,v 1.1 2016/10/31 15:02:09 ajacoutot Exp $
+--- contrib/gstyle/Makefile.in.orig	Mon Oct 31 15:31:24 2016
++++ contrib/gstyle/Makefile.in	Mon Oct 31 15:31:34 2016
+@@ -740,7 +740,7 @@ libgstyle_private_la_LIBADD = \
+ 
+ libgstyle_private_la_LDFLAGS = \
+ 	$(OPTIMIZE_LDFLAGS)    \
+-	--no-undefined         \
++	-no-undefined         \
+ 	$(NULL)
+ 
+ nodist_libgstyle_private_la_SOURCES = \
