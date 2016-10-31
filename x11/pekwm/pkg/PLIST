@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/11/12 10:03:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/10/31 17:07:30 ajacoutot Exp $
 @bin bin/pekwm
 @man man/man1/pekwm.1
 share/examples/pekwm/
@@ -6,11 +6,11 @@ share/examples/pekwm/
 share/examples/pekwm/autoproperties
 @sample ${SYSCONFDIR}/pekwm/autoproperties
 share/examples/pekwm/autoproperties_typerules
-@sample ${SYSCONFDIR}/autoproperties_typerules
+@sample ${SYSCONFDIR}/pekwm/autoproperties_typerules
 share/examples/pekwm/config
 @sample ${SYSCONFDIR}/pekwm/config
 share/examples/pekwm/config_system
-@sample ${SYSCONFDIR}/config_system
+@sample ${SYSCONFDIR}/pekwm/config_system
 share/examples/pekwm/keys
 @sample ${SYSCONFDIR}/pekwm/keys
 share/examples/pekwm/menu
@@ -18,17 +18,18 @@ share/examples/pekwm/menu
 share/examples/pekwm/mouse
 @sample ${SYSCONFDIR}/pekwm/mouse
 share/examples/pekwm/mouse_click
-@sample ${SYSCONFDIR}/mouse_click
+@sample ${SYSCONFDIR}/pekwm/mouse_click
 share/examples/pekwm/mouse_sloppy
-@sample ${SYSCONFDIR}/mouse_sloppy
+@sample ${SYSCONFDIR}/pekwm/mouse_sloppy
 share/examples/pekwm/mouse_system
-@sample ${SYSCONFDIR}/mouse_system
+@sample ${SYSCONFDIR}/pekwm/mouse_system
 share/examples/pekwm/start
 @sample ${SYSCONFDIR}/pekwm/start
 share/examples/pekwm/vars
 @sample ${SYSCONFDIR}/pekwm/vars
 share/pekwm/
 share/pekwm/scripts/
+share/pekwm/scripts/pekwm_screenshot.sh
 share/pekwm/scripts/pekwm_themeset.sh
 share/pekwm/scripts/pekwm_ws_menu.sh
 share/pekwm/themes/
