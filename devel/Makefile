@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1556 2016/10/26 08:44:00 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1557 2016/10/31 09:40:51 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1191,6 +1191,7 @@
      SUBDIR += pangox-compat
      SUBDIR += pccts
      SUBDIR += pcre
+     SUBDIR += pcre2
      SUBDIR += pcre++
      SUBDIR += pear-Cache
      SUBDIR += pear-Config
