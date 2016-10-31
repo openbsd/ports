@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/31 10:24:52 fcambus Exp $
+@bin bin/kore
+include/kore/
+include/kore/http.h
+include/kore/jsonrpc.h
+include/kore/kore.h
+include/kore/pgsql.h
+include/kore/tasks.h
+share/doc/kore/
+share/doc/kore/README.md
+share/examples/kore/
+share/examples/kore/kore.conf.example
