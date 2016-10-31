@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.428 2016/10/10 12:23:18 feinerer Exp $
+# $OpenBSD: Quirks.pm,v 1.429 2016/10/31 13:16:07 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -819,6 +819,7 @@ my $obsolete_reason = {
 	'cherokee-mysql' => 3,
 	'cherokee-streaming' => 3,
 	'gecko-mediaplayer' => 3,
+	'io' => 5,
 
 # KDE3 removals
 	'amarok' => 2,
