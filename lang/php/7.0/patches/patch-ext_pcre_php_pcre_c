@@ -1,10 +1,10 @@
-$OpenBSD: patch-ext_pcre_php_pcre_c,v 1.1 2016/09/02 14:30:57 sthen Exp $
---- ext/pcre/php_pcre.c.orig.port	Fri Sep  2 14:23:44 2016
-+++ ext/pcre/php_pcre.c	Fri Sep  2 14:54:52 2016
+$OpenBSD: patch-ext_pcre_php_pcre_c,v 1.2 2016/10/31 15:06:10 robert Exp $
+--- ext/pcre/php_pcre.c.orig.port	Wed Oct 26 11:01:30 2016
++++ ext/pcre/php_pcre.c	Wed Oct 26 11:01:49 2016
 @@ -151,7 +151,7 @@ PHP_INI_BEGIN()
  	STD_PHP_INI_ENTRY("pcre.backtrack_limit", "1000000", PHP_INI_ALL, OnUpdateLong, backtrack_limit, zend_pcre_globals, pcre_globals)
  	STD_PHP_INI_ENTRY("pcre.recursion_limit", "100000",  PHP_INI_ALL, OnUpdateLong, recursion_limit, zend_pcre_globals, pcre_globals)
- #ifdef PCRE_STUDY_JIT_COMPILE
+ #ifdef HAVE_PCRE_JIT_SUPPORT
 -	STD_PHP_INI_ENTRY("pcre.jit",             "1",       PHP_INI_ALL, OnUpdateBool, jit,             zend_pcre_globals, pcre_globals)
 +	STD_PHP_INI_ENTRY("pcre.jit",             "0",       PHP_INI_ALL, OnUpdateBool, jit,             zend_pcre_globals, pcre_globals)
  #endif

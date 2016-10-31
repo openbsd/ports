@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-production,v 1.3 2016/09/02 14:31:06 sthen Exp $
---- php.ini-production.orig.port	Wed Aug 17 20:50:48 2016
-+++ php.ini-production	Fri Sep  2 14:00:22 2016
+$OpenBSD: patch-php_ini-production,v 1.4 2016/10/31 15:06:10 robert Exp $
+--- php.ini-production.orig.port	Thu Oct 13 16:04:17 2016
++++ php.ini-production	Wed Oct 26 11:00:51 2016
 @@ -695,11 +695,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-production,v 1.3 2016/09/02 14:31:06 sthen Exp $
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -805,7 +803,7 @@ max_file_uploads = 20
+@@ -817,7 +815,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-production,v 1.3 2016/09/02 14:31:06 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -909,7 +907,7 @@ cli_server.color = On
+@@ -921,7 +919,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; http://php.net/date.timezone
