@@ -1,12 +1,30 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.6 2016/10/31 17:10:59 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasper Exp $
 
 - Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
 - Enable VMM detection
 - Drop processor_cores fact with bogus value
 - Implement DMI facts
+- Swap distribution_version and distribution_release values
 
 --- lib/ansible/module_utils/facts.py.orig	Thu Sep 29 17:01:13 2016
-+++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:05:53 2016
++++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:21:57 2016
+@@ -344,13 +344,13 @@ class Facts(object):
+             self.facts['distribution_version'] = platform.version()
+         elif self.facts['system'] == 'OpenBSD':
+             self.facts['distribution'] = 'OpenBSD'
+-            self.facts['distribution_release'] = platform.release()
++            self.facts['distribution_version'] = platform.release()
+             rc, out, err = self.module.run_command("/sbin/sysctl -n kern.version")
+             match = re.match('OpenBSD\s[0-9]+.[0-9]+-(\S+)\s.*', out)
+             if match:
+-                self.facts['distribution_version'] = match.groups()[0]
++                self.facts['distribution_release'] = match.groups()[0]
+             else:
+-                self.facts['distribution_version'] = 'release'
++                self.facts['distribution_release'] = 'release'
+         else:
+             dist = platform.dist()
+             self.facts['distribution'] = dist[0].capitalize() or 'NA'
 @@ -1408,7 +1408,8 @@ class OpenBSDHardware(Hardware):
      - processor_cores
      - processor_count
