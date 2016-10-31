@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2016/10/31 10:19:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2016/10/31 10:38:35 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -85,13 +86,5 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/*.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas
 	rm ${PREFIX}/lib/gnome-settings-daemon-3.0/*.{a,la}
-# XXX
-# http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
-# https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
-# https://bugzilla.gnome.org/show_bug.cgi?id=766329
-# https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
-	rm -rf ${PREFIX}/lib/gnome-settings-daemon-3.0/libsharing.so \
-		${PREFIX}/lib/gnome-settings-daemon-3.0/sharing.gnome-settings-plugin \
-		${PREFIX}/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.sharing.gschema.xml
 
 .include <bsd.port.mk>
