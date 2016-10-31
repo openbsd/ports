@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.267 2016/10/09 15:08:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.268 2016/10/31 12:15:40 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.20.5
-REVISION=		1
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		mail
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		11.0 # 0.0
+SO_VERSION=		12.0 # 0.0
 .for _lib in \
 eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \
 evolution-calendar evolution-mail-composer evolution-mail-formatter \
 evolution-mail-importers evolution-mail evolution-shell evolution-smime \
-evolution-util gnomecanvas
+evolution-util gnomecanvas edomutils evolutiontestsettings
 SHARED_LIBS +=		${_lib} ${SO_VERSION}	 
 .endfor
 
@@ -31,7 +30,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gtk-3
 WANTLIB += gtkspell3-3 gweather-3 ical icalvcal intl ldap-2.4
 WANTLIB += m notify nspr4 nss3 pango-1.0 pangocairo-1.0 pst pthread
-WANTLIB += secret-1 smime3 soup-2.4 sqlite3 webkitgtk-3.0 xml2
+WANTLIB += secret-1 smime3 soup-2.4 sqlite3 webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -44,7 +43,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			databases/evolution-data-server \
 			devel/libnotify \
 			textproc/gtkspell3 \
-			www/webkit,gtk3 \
 			x11/gnome/autoar \
 			x11/gnome/desktop \
 			x11/gnome/libcryptui
@@ -87,6 +85,6 @@ pre-configure:
 .endfor
 
 post-install:
-	rm ${PREFIX}/lib/evolution/{modules,plugins}/*.{a,la}
+	rm ${PREFIX}/lib/evolution/{modules,plugins,test-gio-modules,web-extensions}/*.{a,la}
 
 .include <bsd.port.mk>
