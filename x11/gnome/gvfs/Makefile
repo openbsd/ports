@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2016/08/20 12:58:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2016/10/31 09:43:10 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.28.3
+GNOME_VERSION=		1.30.1.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -98,6 +98,9 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
+# needs libcap
+CONFIGURE_ARGS +=	--disable-admin
+
 # needs sysctl kern.usermount to be really useful
 CONFIGURE_ARGS +=	--disable-fuse
 
@@ -130,5 +133,7 @@ TEST_DEPENDS=		devel/py-gobject3
 post-install:
 	rm ${PREFIX}/lib/gio/modules/*.{a,la}
 	rm ${PREFIX}/lib/gvfs/*.{a,la}
+# --disable-admin	
+	rm -rf ${PREFIX}/share/polkit-1
 
 .include <bsd.port.mk>
