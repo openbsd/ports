@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.84 2016/04/26 08:25:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.85 2016/10/31 16:15:46 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -76,8 +76,6 @@ share/examples/gdm/etc/gdm/locale.conf
 @sample ${SYSCONFDIR}/gdm/locale.conf
 share/examples/gdm/etc/pam.d/
 @mode 0444
-share/examples/gdm/etc/pam.d/gdm-autologin
-@sample ${SYSCONFDIR}/pam.d/gdm-autologin
 share/examples/gdm/etc/pam.d/gdm-launch-environment
 @sample ${SYSCONFDIR}/pam.d/gdm-launch-environment
 share/examples/gdm/etc/pam.d/gdm-password
@@ -180,7 +178,6 @@ share/help/ru/gdm/legal.xml
 share/help/sl/gdm/
 share/help/sl/gdm/index.docbook
 share/help/sl/gdm/legal.xml
-share/help/sv/
 share/help/sv/gdm/
 share/help/sv/gdm/index.docbook
 share/help/sv/gdm/legal.xml
@@ -188,6 +185,10 @@ share/help/te/
 share/help/te/gdm/
 share/help/te/gdm/index.docbook
 share/help/te/gdm/legal.xml
+share/help/tr/
+share/help/tr/gdm/
+share/help/tr/gdm/index.docbook
+share/help/tr/gdm/legal.xml
 share/help/uk/
 share/help/uk/gdm/
 share/help/uk/gdm/index.docbook

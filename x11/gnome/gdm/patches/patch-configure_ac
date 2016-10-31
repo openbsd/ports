@@ -1,4 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.9 2016/04/26 08:25:04 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2016/10/31 16:15:46 ajacoutot Exp $
+
+REVERT - Linux-PAM
+From 714b6af29b916ac7da0cdab6f83460574ed49cf2 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Mon, 15 Aug 2016 13:48:00 -0400
+Subject: pam_gdm: add stub pam module
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -8,9 +14,22 @@ Subject: drop consolekit support
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
---- configure.ac.orig	Tue Apr 19 07:04:17 2016
-+++ configure.ac	Tue Apr 26 10:02:47 2016
-@@ -246,7 +246,15 @@ AC_ARG_WITH(tcp-wrappers,
+--- configure.ac.orig	Wed Oct 12 19:58:41 2016
++++ configure.ac	Mon Oct 31 16:57:55 2016
+@@ -221,12 +221,6 @@ AM_CONDITIONAL(ENABLE_EXHERBO_PAM_CONFIG, test x$with_
+ AM_CONDITIONAL(ENABLE_LFS_PAM_CONFIG, test x$with_default_pam_config = xlfs)
+ AM_CONDITIONAL(ENABLE_ARCH_PAM_CONFIG, test x$with_default_pam_config = xarch)
+ 
+-AC_CHECK_HEADERS([security/pam_modules.h security/pam_modutil.h security/pam_ext.h],
+-                 [have_pam=yes],
+-                 [if test "x$have_pam" = xyes ; then
+-                        AC_MSG_ERROR([PAM development files not found.])
+-                 fi])
+-
+ AC_ARG_ENABLE(console-helper,
+ 	      AS_HELP_STRING([--enable-console-helper],
+                              [Enable PAM console helper @<:@default=auto@:>@]),,
+@@ -252,7 +246,15 @@ AC_ARG_WITH(tcp-wrappers,
                             [Use TCP Wrappers @<:@default=auto@:>@]),,
              with_tcp_wrappers=auto)
  
@@ -26,7 +45,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_ARG_WITH([systemdsystemunitdir],
              AS_HELP_STRING([--with-systemdsystemunitdir=DIR],
                             [Directory for systemd service files]),
-@@ -613,14 +621,8 @@ dnl --------------------------------------------------
+@@ -627,14 +629,8 @@ dnl --------------------------------------------------
  dnl - Check for utmp stuff
  dnl ---------------------------------------------------------------------------
  
@@ -43,7 +62,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_CHECK_LIB(util, logwtmp, [
  	  	   AC_DEFINE(HAVE_LOGWTMP, 1, [Define if have logwtmp])
  		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])
-@@ -869,12 +871,42 @@ AC_SUBST(XINERAMA_LIBS)
+@@ -883,12 +879,42 @@ AC_SUBST(XINERAMA_LIBS)
  CPPFLAGS="$xinerama_save_cppflags"
  
  dnl ---------------------------------------------------------------------------
@@ -87,7 +106,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_SUBST(SYSTEMD_CFLAGS)
  AC_SUBST(SYSTEMD_LIBS)
  
-@@ -1067,6 +1099,14 @@ fi
+@@ -1081,6 +1107,14 @@ fi
  AC_SUBST(GDM_CUSTOM_CONF)
  AC_SUBST(GDM_OLD_CONF, '${gdmconfdir}/gdm.conf')
  
@@ -102,7 +121,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  AC_ARG_WITH(gnome-settings-daemon-directory,
                [AC_HELP_STRING([--with-gnome-settings-daemon-directory],
                                [Specify the directory of gnome-settings-daemon used by the chooser @<:@default=libexecdir@:>@])],,
-@@ -1555,6 +1595,7 @@ echo "
+@@ -1569,6 +1603,7 @@ echo "
          dmconfdir:                ${dmconfdir}
          localstatedir:            ${localstatedir}
          datadir:                  ${datadir}
@@ -110,7 +129,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  	gnome-settings-daemon location: ${with_gnome_settings_daemon_directory}
  	gnome-session-check-accel location: ${with_check_accelerated_directory}
  	source code location:	  ${srcdir}
-@@ -1584,6 +1625,8 @@ echo \
+@@ -1598,6 +1633,8 @@ echo \
  "        Xinerama support:         ${XINERAMA_SUPPORT}
          XDMCP support:            ${XDMCP_SUPPORT}
          SELinux support:          ${use_selinux}
@@ -119,7 +138,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
          systemd unit dir:         ${with_systemdsystemunitdir}
          plymouth support:         ${use_plymouth}
          wayland support:          ${enable_wayland_support}
-@@ -1592,3 +1635,4 @@ echo \
+@@ -1606,3 +1643,4 @@ echo \
          Enable documentation:     ${enable_documentation}
          Install GDM's Xsession:   ${enable_gdm_xsession}
  "

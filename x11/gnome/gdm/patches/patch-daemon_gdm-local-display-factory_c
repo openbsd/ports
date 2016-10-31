@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.4 2016/04/26 08:25:04 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.5 2016/10/31 16:15:46 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -12,8 +12,8 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-local-display-factory.c.orig	Tue Apr 19 07:00:04 2016
-+++ daemon/gdm-local-display-factory.c	Tue Apr 26 10:11:57 2016
+--- daemon/gdm-local-display-factory.c.orig	Wed Sep 21 21:27:20 2016
++++ daemon/gdm-local-display-factory.c	Mon Oct 31 15:06:42 2016
 @@ -42,6 +42,8 @@
  
  #define GDM_LOCAL_DISPLAY_FACTORY_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GDM_TYPE_LOCAL_DISPLAY_FACTORY, GdmLocalDisplayFactoryPrivate))
@@ -100,7 +100,7 @@ Subject: require logind support
  
  static void
  on_display_added (GdmDisplayStore        *display_store,
-@@ -563,6 +584,7 @@ static gboolean
+@@ -565,6 +586,7 @@ static gboolean
  gdm_local_display_factory_start (GdmDisplayFactory *base_factory)
  {
          GdmLocalDisplayFactory *factory = GDM_LOCAL_DISPLAY_FACTORY (base_factory);
@@ -108,9 +108,9 @@ Subject: require logind support
          GdmDisplayStore *store;
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
-@@ -579,8 +601,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
-                           G_CALLBACK (on_display_removed),
-                           factory);
+@@ -583,8 +605,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
+                                  factory,
+                                  0);
  
 -        gdm_local_display_factory_start_monitor (factory);
 -        return gdm_local_display_factory_sync_seats (factory);
@@ -128,7 +128,7 @@ Subject: require logind support
  }
  
  static gboolean
-@@ -591,7 +622,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
+@@ -595,7 +626,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
  
@@ -138,7 +138,7 @@ Subject: require logind support
  
          store = gdm_display_factory_get_display_store (GDM_DISPLAY_FACTORY (factory));
  
-@@ -747,7 +780,9 @@ gdm_local_display_factory_finalize (GObject *object)
+@@ -751,7 +784,9 @@ gdm_local_display_factory_finalize (GObject *object)
  
          g_hash_table_destroy (factory->priv->used_display_numbers);
  
