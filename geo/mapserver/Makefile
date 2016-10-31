@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/09/12 17:50:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2016/10/31 15:47:58 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 
@@ -7,13 +7,12 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		7.0.1
+V =		7.0.2
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-REVISION=	0
 SHARED_LIBS +=	mapserver 2.0
 
 CATEGORIES=	geo www
@@ -28,6 +27,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 MODULES=	lang/php devel/cmake
 MODPHP_RUNDEP=	No
+NO_TEST =	Yes
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
 RUN_DEPENDS-main =	www/spawn-fcgi
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
