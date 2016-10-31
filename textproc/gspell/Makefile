@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2016/07/09 13:50:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/10/31 11:26:36 ajacoutot Exp $
 
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
-GNOME_VERSION=		1.0.3
+GNOME_VERSION=		1.2.0
 
 CATEGORIES=		textproc
 
-SHARED_LIBS +=  gspell-1             2.0      # 1.0
+SHARED_LIBS +=  gspell-1             3.0      # 2.0
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +32,8 @@ BUILD_DEPENDS=		devel/iso-codes
 RUN_DEPENDS=		devel/iso-codes
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ENV=		ac_cv_prog_VALGRIND=
 
 # XXX report upstream
 # ./configure[13269]: ${flag:5}: bad substitution

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/07/09 13:50:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/10/31 11:26:36 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
 include/gspell-1/gspell/gspell-checker.h
+include/gspell-1/gspell/gspell-enum-types.h
 include/gspell-1/gspell/gspell-language-chooser-button.h
 include/gspell-1/gspell/gspell-language-chooser-dialog.h
 include/gspell-1/gspell/gspell-language-chooser.h
@@ -30,6 +31,7 @@ share/gtk-doc/html/gspell-1.0/GspellNavigatorTextView.html
 share/gtk-doc/html/gspell-1.0/GspellTextBuffer.html
 share/gtk-doc/html/gspell-1.0/GspellTextView.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
+share/gtk-doc/html/gspell-1.0/api-index-1-2.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
 share/gtk-doc/html/gspell-1.0/ch01.html
 share/gtk-doc/html/gspell-1.0/ch02.html
@@ -42,6 +44,7 @@ share/gtk-doc/html/gspell-1.0/left-insensitive.png
 share/gtk-doc/html/gspell-1.0/left.png
 share/gtk-doc/html/gspell-1.0/object-tree.html
 share/gtk-doc/html/gspell-1.0/pt01.html
+share/gtk-doc/html/gspell-1.0/pt02.html
 share/gtk-doc/html/gspell-1.0/right-insensitive.png
 share/gtk-doc/html/gspell-1.0/right.png
 share/gtk-doc/html/gspell-1.0/style.css
@@ -57,6 +60,7 @@ share/locale/es/LC_MESSAGES/gspell-1.mo
 share/locale/fa/LC_MESSAGES/gspell-1.mo
 share/locale/fi/LC_MESSAGES/gspell-1.mo
 share/locale/fr/LC_MESSAGES/gspell-1.mo
+share/locale/fur/LC_MESSAGES/gspell-1.mo
 share/locale/gl/LC_MESSAGES/gspell-1.mo
 share/locale/he/LC_MESSAGES/gspell-1.mo
 share/locale/hu/LC_MESSAGES/gspell-1.mo
