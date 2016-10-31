@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/07 12:18:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/10/31 11:55:52 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.20.3.1
+GNOME_VERSION=		3.22.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
@@ -28,7 +28,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
 LIB_DEPENDS=		geo/geocode-glib \
-			geo/libchamplain>=0.12.14 \
+			geo/libchamplain \
 			net/telepathy/folks
 
 BUILD_DEPENDS +=	geo/geoclue2 \
