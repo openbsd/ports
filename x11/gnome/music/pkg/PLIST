@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/05/10 10:21:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/10/31 11:45:00 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -9,8 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumArtCache.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumArtCache.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumartcache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumartcache.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}grilo.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,13 +29,15 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}searchbar.${
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}searchbar.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}toolbar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}toolbar.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumArtCache.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumartcache.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/application.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilo.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/mpris.py
@@ -45,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/playlists.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/query.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/searchbar.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/toolbar.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/utils.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/view.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/window.py
@@ -89,6 +92,22 @@ share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/playlist-repeat.page
 share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
+share/help/da/
+share/help/da/gnome-music/
+share/help/da/gnome-music/figures/
+share/help/da/gnome-music/figures/gnome-music-3.12.png
+share/help/da/gnome-music/index.page
+share/help/da/gnome-music/introduction.page
+share/help/da/gnome-music/legal.xml
+share/help/da/gnome-music/play-music.page
+share/help/da/gnome-music/playlist-create-albums.page
+share/help/da/gnome-music/playlist-create-artists.page
+share/help/da/gnome-music/playlist-create-songs.page
+share/help/da/gnome-music/playlist-delete.page
+share/help/da/gnome-music/playlist-remove-songs.page
+share/help/da/gnome-music/playlist-repeat.page
+share/help/da/gnome-music/playlist-shuffle.page
+share/help/da/gnome-music/search.page
 share/help/de/
 share/help/de/gnome-music/
 share/help/de/gnome-music/figures/
@@ -278,6 +297,7 @@ share/locale/fi/LC_MESSAGES/gnome-music.mo
 share/locale/fr/LC_MESSAGES/gnome-music.mo
 share/locale/fur/LC_MESSAGES/gnome-music.mo
 share/locale/ga/LC_MESSAGES/gnome-music.mo
+share/locale/gd/LC_MESSAGES/gnome-music.mo
 share/locale/gl/LC_MESSAGES/gnome-music.mo
 share/locale/he/LC_MESSAGES/gnome-music.mo
 share/locale/hu/LC_MESSAGES/gnome-music.mo
@@ -310,6 +330,7 @@ share/locale/te/LC_MESSAGES/gnome-music.mo
 share/locale/tg/LC_MESSAGES/gnome-music.mo
 share/locale/tr/LC_MESSAGES/gnome-music.mo
 share/locale/uk/LC_MESSAGES/gnome-music.mo
+share/locale/vi/LC_MESSAGES/gnome-music.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-music.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-music.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-music.mo
