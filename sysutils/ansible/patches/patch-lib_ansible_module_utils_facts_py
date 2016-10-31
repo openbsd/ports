@@ -1,13 +1,14 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.8 2016/10/31 17:50:44 jasper Exp $
 
 - Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
 - Enable VMM detection
+- Simplify processor fact resolution
 - Drop processor_cores fact with bogus value
 - Implement DMI facts
 - Swap distribution_version and distribution_release values
 
 --- lib/ansible/module_utils/facts.py.orig	Thu Sep 29 17:01:13 2016
-+++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:21:57 2016
++++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:47:55 2016
 @@ -344,13 +344,13 @@ class Facts(object):
              self.facts['distribution_version'] = platform.version()
          elif self.facts['system'] == 'OpenBSD':
@@ -25,7 +26,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasp
          else:
              dist = platform.dist()
              self.facts['distribution'] = dist[0].capitalize() or 'NA'
-@@ -1408,7 +1408,8 @@ class OpenBSDHardware(Hardware):
+@@ -1408,10 +1408,10 @@ class OpenBSDHardware(Hardware):
      - processor_cores
      - processor_count
      - processor_speed
@@ -34,8 +35,11 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasp
 +    In addition, it also defines number of DMI facts and device facts.
      """
      platform = 'OpenBSD'
-     DMESG_BOOT = '/var/run/dmesg.boot'
-@@ -1419,6 +1420,7 @@ class OpenBSDHardware(Hardware):
+-    DMESG_BOOT = '/var/run/dmesg.boot'
+ 
+     def populate(self):
+         self.sysctl = self.get_sysctl()
+@@ -1419,6 +1419,7 @@ class OpenBSDHardware(Hardware):
          self.get_processor_facts()
          self.get_device_facts()
          self.get_mount_facts()
@@ -43,24 +47,34 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasp
          return self.facts
  
      def get_sysctl(self):
-@@ -1476,18 +1478,42 @@ class OpenBSDHardware(Hardware):
-         for line in dmesg_boot.splitlines():
-             if line.split(' ', 1)[0] == 'cpu%i:' % i:
-                 processor.append(line.split(' ', 1)[1])
+@@ -1469,25 +1470,43 @@ class OpenBSDHardware(Hardware):
+ 
+     def get_processor_facts(self):
+         processor = []
+-        dmesg_boot = get_file_content(OpenBSDHardware.DMESG_BOOT)
+-        if not dmesg_boot:
+-            rc, dmesg_boot, err = self.module.run_command("/sbin/dmesg")
+-        i = 0
+-        for line in dmesg_boot.splitlines():
+-            if line.split(' ', 1)[0] == 'cpu%i:' % i:
+-                processor.append(line.split(' ', 1)[1])
 -                i = i + 1
-+                i += 1
-         processor_count = i
+-        processor_count = i
++        for i in range(int(self.sysctl['hw.ncpu'])):
++            processor.append(self.sysctl['hw.model'])
++
          self.facts['processor'] = processor
-+	# The following is partly a lie because there is no reliable way to
+-        self.facts['processor_count'] = processor_count
+-        # I found no way to figure out the number of Cores per CPU in OpenBSD
+-        self.facts['processor_cores'] = 'NA'
++        # The following is partly a lie because there is no reliable way to
 +        # determine the number of physical CPUs in the system. We can only
 +        # query the number of logical CPUs, which hides the number of cores.
 +        # On amd64/i386 we could try to inspect the smt/core/package lines in
 +        # dmesg, however even those have proven to be unreliable.
 +        # So take a shortcut and report the logical number of processors in
 +        # 'processor_count' and leave it at that.
-         self.facts['processor_count'] = processor_count
--        # I found no way to figure out the number of Cores per CPU in OpenBSD
--        self.facts['processor_cores'] = 'NA'
++        self.facts['processor_count'] = self.sysctl['hw.ncpu']
  
      def get_device_facts(self):
          devices = []
@@ -89,7 +103,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.7 2016/10/31 17:23:13 jasp
  class FreeBSDHardware(Hardware):
      """
      FreeBSD-specific subclass of Hardware.  Defines memory and CPU facts:
-@@ -2926,14 +2952,59 @@ class OpenBSDVirtual(Virtual):
+@@ -2926,14 +2945,59 @@ class OpenBSDVirtual(Virtual):
      - virtualization_role
      """
      platform = 'OpenBSD'
