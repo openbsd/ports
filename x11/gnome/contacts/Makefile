@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2016/10/31 12:05:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2016/10/31 12:16:20 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.20.0
-REVISION=		0
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		productivity
 
@@ -30,20 +29,19 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 stdc++ tasn1 telepathy-glib
 WANTLIB += webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xcb-xfixes xml2 z
+WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += harfbuzz-icu javascriptcoregtk-3.0 jpeg webkitgtk-3.0
+WANTLIB += webp xslt
 
 MODULES=		x11/gnome \
 			devel/dconf
 
 LIB_DEPENDS=		geo/libchamplain \
 			net/telepathy/folks \
+			www/webkit,gtk3 \
 			x11/gnome/desktop
 
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection vala
-
-# Re-generate C files from vala sources to ensure HAVE_CHEESE is honoured.
-post-configure:
-	rm ${WRKSRC}/src/{contacts-avatar-dialog,main}.c
-	cd ${WRKSRC}/src && ${MAKE_PROGRAM} main.c
 
 .include <bsd.port.mk>
