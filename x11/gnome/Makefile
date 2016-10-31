@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2016/10/09 15:07:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.258 2016/10/31 14:58:13 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -57,6 +57,7 @@
      SUBDIR += libbonoboui
      SUBDIR += libcryptui
      SUBDIR += libgda
+     SUBDIR += libgepub
      SUBDIR += libgnome
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
