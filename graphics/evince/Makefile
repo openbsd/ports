@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.140 2016/06/27 11:20:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.141 2016/10/31 12:18:16 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.20.1
+GNOME_VERSION=		3.22.1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -28,8 +28,8 @@ WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma lzo2 m openjpeg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
 WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z
-WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl
-WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn
+WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl lz4
+WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn crypto
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -79,7 +79,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			print/texlive/base \
 			x11/gnome/nautilus
 WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
-WANTLIB += nautilus-extension
+WANTLIB += nautilus-extension gnome-autoar-0
 .endif
 
 post-install:
