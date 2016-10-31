@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/05/08 10:23:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/10/31 11:31:29 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/appdata/
 share/appdata/org.gnome.clocks.appdata.xml
@@ -54,6 +54,21 @@ share/help/cs/gnome-clocks/timer.page
 share/help/cs/gnome-clocks/world-add.page
 share/help/cs/gnome-clocks/world-check.page
 share/help/cs/gnome-clocks/world-remove.page
+share/help/da/
+share/help/da/gnome-clocks/
+share/help/da/gnome-clocks/alarm-add.page
+share/help/da/gnome-clocks/alarm-edit.page
+share/help/da/gnome-clocks/alarm-remove.page
+share/help/da/gnome-clocks/alarm-snooze-stop.page
+share/help/da/gnome-clocks/figures/
+share/help/da/gnome-clocks/figures/gnome-clocks.png
+share/help/da/gnome-clocks/index.page
+share/help/da/gnome-clocks/legal.xml
+share/help/da/gnome-clocks/stopwatch.page
+share/help/da/gnome-clocks/timer.page
+share/help/da/gnome-clocks/world-add.page
+share/help/da/gnome-clocks/world-check.page
+share/help/da/gnome-clocks/world-remove.page
 share/help/de/gnome-clocks/
 share/help/de/gnome-clocks/alarm-add.page
 share/help/de/gnome-clocks/alarm-edit.page
