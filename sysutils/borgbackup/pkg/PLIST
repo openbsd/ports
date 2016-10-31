@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/08 16:09:41 danj Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/10/31 09:27:17 danj Exp $
 bin/borg
 lib/python${MODPY_VERSION}/site-packages/borg/
 lib/python${MODPY_VERSION}/site-packages/borg/__init__.py
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}cache.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}fuse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}keymanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}locking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/${MODPY_PYCACHE}lrucache.${MODPY_PYC_MAGIC_TAG}pyc
@@ -33,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/fuse.py
 lib/python${MODPY_VERSION}/site-packages/borg/hashindex.so
 lib/python${MODPY_VERSION}/site-packages/borg/helpers.py
 lib/python${MODPY_VERSION}/site-packages/borg/key.py
+lib/python${MODPY_VERSION}/site-packages/borg/keymanager.py
 lib/python${MODPY_VERSION}/site-packages/borg/locking.py
 lib/python${MODPY_VERSION}/site-packages/borg/logger.py
 lib/python${MODPY_VERSION}/site-packages/borg/lrucache.py
