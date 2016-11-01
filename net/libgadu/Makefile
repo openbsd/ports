@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/10 13:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/11/01 08:11:21 jasper Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -23,7 +23,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-tests \
 		--without-bind \
 		--without-gnutls \
-		--without-openssl
+		--without-openssl \
+		--without-protobuf
 CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=no
 
 NO_TEST=	Yes
