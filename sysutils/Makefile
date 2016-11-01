@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2016/10/31 17:29:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.409 2016/11/01 16:52:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -36,6 +36,7 @@
      SUBDIR += conky,xmms2
      SUBDIR += consolekit
      SUBDIR += consul
+     SUBDIR += consul-template
      SUBDIR += cpuid
      SUBDIR += coreutils
      SUBDIR += crashme
