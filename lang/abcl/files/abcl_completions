@@ -486,6 +486,7 @@ get-output-stream-string
 get-properties
 get-setf-expansion
 get-socket-stream
+get-time-zone
 get-universal-time
 getenv
 getenv-all
@@ -1800,6 +1801,12 @@ oddp
 open
 open-stream-p
 or
+os-genera-p
+os-haiku-p
+os-macosx-p
+os-oldmac-p
+os-unix-p
+os-windows-p
 output-stream-p
 package-error-package
 package-local-nicknames
@@ -2203,6 +2210,7 @@ system:%process-builder-environment
 system:%process-builder-start
 system:%process-exit-code
 system:%process-kill
+system:%process-pid
 system:%process-wait
 system:%putf
 system:%read-from-string
@@ -2366,12 +2374,16 @@ system:check-lisp-home
 system:check-redefinition
 system:check-sequence-bounds
 system:check-type-error
+system:choose-disassembler
 system:circle-subst
+system:class-bytes
+system:class-resource-path
 system:coerce-error
 system:coerce-list-to-vector
 system:coerce-object-to-and-type
 system:coerce-to-condition
 system:coerce-to-double-float
+system:coerce-to-file
 system:coerce-to-function
 system:coerce-to-single-float
 system:combos-to-fileset-symbols
@@ -2501,6 +2513,8 @@ system:expand-source-transform
 system:expand-source-transform-1
 system:expand-trace
 system:expandable-backq-expression-p
+system:external-disassemble
+system:external-test
 system:fasl-loader-classname
 system:fasl-read-dispatch-char
 system:fasl-read-list
@@ -2732,6 +2746,8 @@ system:notinline-p
 system:nvector-substitute*
 system:nvector-substitute-if*
 system:nvector-substitute-if-not*
+system:objectweb-disassemble
+system:objectweb-test
 system:once-only
 system:out-synonym-of
 system:output-form
@@ -2765,13 +2781,18 @@ system:precompile-package
 system:precompile-toplevel-form
 system:predicate-for-type
 system:print-label
+system:print-lines-with-prefix
 system:print-reference
 system:print-restart
 system:process-alive-p
+system:process-error
 system:process-exit-code
+system:process-input
 system:process-kill
 system:process-optimization-declarations
+system:process-output
 system:process-p
+system:process-pid
 system:process-progn
 system:process-toplevel-declare
 system:process-toplevel-defconstant
@@ -2813,6 +2834,7 @@ system:quicksort
 system:quicksort-body
 system:quoted-form-p
 system:read-8-bits
+system:read-byte-array-from-stream
 system:read-comment
 system:read-conditional
 system:read-dispatch-char
@@ -2858,6 +2880,8 @@ system:set-schar
 system:set-source-transform
 system:set-std-slot-value
 system:setf-function-name-p
+system:setup-input-redirection
+system:setup-output-redirection
 system:sha256
 system:sharp-a
 system:sharp-b
@@ -2966,6 +2990,7 @@ system:whitespacep
 system:wild-inferiors-p
 system:wild-p
 system:with-keyword-pairs
+system:with-open
 system:with-set-keys
 system:write-8-bits
 system:write-autoloader
