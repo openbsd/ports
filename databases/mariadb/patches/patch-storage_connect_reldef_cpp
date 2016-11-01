@@ -1,7 +1,7 @@
-$OpenBSD: patch-storage_connect_reldef_cpp,v 1.6 2016/07/31 21:30:06 sthen Exp $
---- storage/connect/reldef.cpp.orig	Thu Jun 23 05:24:43 2016
-+++ storage/connect/reldef.cpp	Sun Jul  3 01:07:06 2016
-@@ -515,6 +515,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
+$OpenBSD: patch-storage_connect_reldef_cpp,v 1.7 2016/11/01 10:52:20 sthen Exp $
+--- storage/connect/reldef.cpp.orig	Thu Oct 27 13:16:31 2016
++++ storage/connect/reldef.cpp	Fri Oct 28 19:21:21 2016
+@@ -519,6 +519,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
  #else   // !__WIN__
    const char *error = NULL;
      

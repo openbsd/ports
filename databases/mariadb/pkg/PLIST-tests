@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.24 2016/08/31 22:59:53 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.25 2016/11/01 10:52:20 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -2028,6 +2028,7 @@ share/mysql-test/r/mysqld--help.result
 share/mysql-test/r/mysqld_option_err.result
 share/mysql-test/r/mysqldump-compat.result
 share/mysql-test/r/mysqldump-max.result
+share/mysql-test/r/mysqldump-nl.result
 share/mysql-test/r/mysqldump-no-binlog.result
 share/mysql-test/r/mysqldump.result
 share/mysql-test/r/mysqldump_restore.result
@@ -4477,6 +4478,7 @@ share/mysql-test/suite/innodb/r/row_lock.result
 share/mysql-test/suite/innodb/r/snapshot.result
 share/mysql-test/suite/innodb/r/sp_temp_table.result
 share/mysql-test/suite/innodb/r/strict_mode.result
+share/mysql-test/suite/innodb/r/system_tables.result
 share/mysql-test/suite/innodb/r/tmpdir.result
 share/mysql-test/suite/innodb/r/xa_recovery.result
 share/mysql-test/suite/innodb/t/
@@ -4681,6 +4683,7 @@ share/mysql-test/suite/innodb/t/row_lock.test
 share/mysql-test/suite/innodb/t/snapshot.test
 share/mysql-test/suite/innodb/t/sp_temp_table.test
 share/mysql-test/suite/innodb/t/strict_mode.test
+share/mysql-test/suite/innodb/t/system_tables.test
 share/mysql-test/suite/innodb/t/tmpdir.test
 share/mysql-test/suite/innodb/t/xa_recovery.test
 share/mysql-test/suite/innodb_fts/
@@ -5760,7 +5763,6 @@ share/mysql-test/suite/perfschema/include/upgrade_check.inc
 share/mysql-test/suite/perfschema/include/wait_for_pfs_thread_count.inc
 share/mysql-test/suite/perfschema/include/wait_till_sleep.inc
 share/mysql-test/suite/perfschema/r/
-share/mysql-test/suite/perfschema/r/aggregate.result
 share/mysql-test/suite/perfschema/r/all_tests.result
 share/mysql-test/suite/perfschema/r/bad_option_1.result
 share/mysql-test/suite/perfschema/r/bad_option_2.result
@@ -6085,7 +6087,6 @@ share/mysql-test/suite/perfschema/r/unary_digest.result
 share/mysql-test/suite/perfschema/r/update_order-3837.result
 share/mysql-test/suite/perfschema/r/view_table_io.result
 share/mysql-test/suite/perfschema/t/
-share/mysql-test/suite/perfschema/t/aggregate.test
 share/mysql-test/suite/perfschema/t/all_tests.test
 share/mysql-test/suite/perfschema/t/bad_option_1.test
 share/mysql-test/suite/perfschema/t/bad_option_2.test
@@ -7041,6 +7042,7 @@ share/mysql-test/suite/rpl/r/rpl_stm_stop_middle_group.result
 share/mysql-test/suite/rpl/r/rpl_stm_until.result
 share/mysql-test/suite/rpl/r/rpl_stm_user_variables.result
 share/mysql-test/suite/rpl/r/rpl_stop_slave.result
+share/mysql-test/suite/rpl/r/rpl_stop_slave_error.result
 share/mysql-test/suite/rpl/r/rpl_switch_stm_row_mixed.result
 share/mysql-test/suite/rpl/r/rpl_sync.result
 share/mysql-test/suite/rpl/r/rpl_table_options.result
@@ -7552,6 +7554,8 @@ share/mysql-test/suite/rpl/t/rpl_stm_stop_middle_group.test
 share/mysql-test/suite/rpl/t/rpl_stm_until.test
 share/mysql-test/suite/rpl/t/rpl_stm_user_variables.test
 share/mysql-test/suite/rpl/t/rpl_stop_slave.test
+share/mysql-test/suite/rpl/t/rpl_stop_slave_error-slave.opt
+share/mysql-test/suite/rpl/t/rpl_stop_slave_error.test
 share/mysql-test/suite/rpl/t/rpl_switch_stm_row_mixed.test
 share/mysql-test/suite/rpl/t/rpl_sync-master.opt
 share/mysql-test/suite/rpl/t/rpl_sync-slave.opt
@@ -9957,6 +9961,7 @@ share/mysql-test/t/mysqldump-compat.opt
 share/mysql-test/t/mysqldump-compat.test
 share/mysql-test/t/mysqldump-max-master.opt
 share/mysql-test/t/mysqldump-max.test
+share/mysql-test/t/mysqldump-nl.test
 share/mysql-test/t/mysqldump-no-binlog-master.opt
 share/mysql-test/t/mysqldump-no-binlog.test
 share/mysql-test/t/mysqldump.test
