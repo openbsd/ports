@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2016/09/08 16:47:21 robert Exp $
+# $OpenBSD: Makefile,v 1.152 2016/11/01 11:56:29 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		5.2
-VERSION=	${BV}.1.2
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}

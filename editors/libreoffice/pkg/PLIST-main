@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2016/09/04 12:02:49 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2016/11/01 11:56:29 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -879,6 +879,8 @@ lib/libreoffice/share/basic/dialog.xlc
 lib/libreoffice/share/basic/script.xlc
 lib/libreoffice/share/classification/
 lib/libreoffice/share/classification/example.xml
+lib/libreoffice/share/classification/example_hu-HU.xml
+lib/libreoffice/share/classification/example_pt-BR.xml
 lib/libreoffice/share/classification/example_sl-SI.xml
 lib/libreoffice/share/config/
 lib/libreoffice/share/config/images_breeze.zip
