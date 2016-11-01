@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2016/10/29 15:35:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2016/11/01 07:31:31 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.11.5
+DISTNAME=	cups-filters-1.11.6
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -67,6 +67,9 @@ CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-shell=/bin/ksh \
 		--without-php \
 		--disable-braille
+
+# http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7554
+CONFIGURE_ENV +=ac_cv_prog_CUPS_PDFTOPS=${LOCALBASE}/bin/pdftops
 
 FLAVORS=	ldap
 FLAVOR?=
