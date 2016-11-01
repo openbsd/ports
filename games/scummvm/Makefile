@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.66 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2016/11/01 13:03:14 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
-V=		1.8.1
+V=		1.9.0
 DISTNAME=	scummvm-${V}
-REVISION=	0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${V}/
 
@@ -14,7 +13,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC SDL c faad freetype jpeg m mad png pthread sndio stdc++
+WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png pthread sndio stdc++
 WANTLIB += theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
@@ -25,7 +24,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	audio/libmad \
 		audio/flac \
 		audio/faad>=2.7 \
-		devel/sdl \
+		devel/sdl2 \
 		graphics/png \
 		graphics/jpeg \
 		multimedia/libtheora
@@ -36,6 +35,8 @@ CONFIGURE_ARGS+= --disable-alsa \
 		--disable-fluidsynth \
 		--disable-seq-midi \
 		--disable-mpeg2 \
+		--disable-sdlnet \
+		--disable-libcurl \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

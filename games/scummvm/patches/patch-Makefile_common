@@ -1,11 +1,10 @@
-$OpenBSD: patch-Makefile_common,v 1.8 2014/08/17 06:08:05 jsg Exp $
---- Makefile.common.orig	Tue Jul 22 15:15:04 2014
-+++ Makefile.common	Tue Jul 22 15:15:22 2014
-@@ -165,29 +165,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
- VER_PATCH = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c1)
- VER_EXTRA = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c2-)
+$OpenBSD: patch-Makefile_common,v 1.9 2016/11/01 13:03:14 jsg Exp $
+--- Makefile.common.orig	Tue Nov  1 20:19:09 2016
++++ Makefile.common	Tue Nov  1 20:19:36 2016
+@@ -171,22 +171,6 @@ AMIGA_DATE = $(shell gdate '+%d.%m.%Y')
+ base/version.o: CXXFLAGS:=$(CXXFLAGS) -DAMIGA_DATE=\"$(AMIGA_DATE)\"
+ endif
  
--
 -######################################################################
 -# Get git's working copy information
 -######################################################################
@@ -22,12 +21,6 @@ $OpenBSD: patch-Makefile_common,v 1.8 2014/08/17 06:08:05 jsg Exp $
 -GITROOT := git://github.com/scummvm/scummvm.git
 -endif
 -
--# Define the Subversion revision if available, either autodetected or
--# specified by the user, but only for base/version.cpp.
--ifneq ($(origin VER_REV), undefined)
--base/version.o: CXXFLAGS:=$(CXXFLAGS) -DSCUMMVM_REVISION=\"$(VER_REV)\"
--endif
--
- ######################################################################
- # Distribution settings
- ######################################################################
+ # Define the Subversion revision if available, either autodetected or
+ # specified by the user, but only for base/version.cpp.
+ ifneq ($(origin VER_REV), undefined)
