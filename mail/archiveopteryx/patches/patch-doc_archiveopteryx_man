@@ -1,12 +1,13 @@
-$OpenBSD: patch-doc_archiveopteryx_man,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- doc/archiveopteryx.man.orig	Fri Apr  9 23:53:20 2010
-+++ doc/archiveopteryx.man	Fri Apr  9 23:54:00 2010
-@@ -213,7 +213,7 @@ settings.
+$OpenBSD: patch-doc_archiveopteryx_man,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- doc/archiveopteryx.man.orig	Thu May  1 10:43:59 2014
++++ doc/archiveopteryx.man	Thu May  1 10:44:23 2014
+@@ -206,9 +206,6 @@ settings.
  .SH FILES
  .IP $CONFIGDIR/archiveopteryx.conf
  contains the Archiveopteryx configuration.
--.IP $LIBDIR/automatic-key.p15
-+.IP /etc/ssl/archiveopteryx.p15
- contains a private key and self-signed certificate used by
- .BR tlsproxy (8)
- (and indirectly by the other servers).
+-.IP $LIBDIR/automatic-key.pem
+-contains a private key and self-signed certificate used by
+-.BR openssl (3).
+ .SH AUTHOR
+ The Archiveopteryx Developers, info@aox.org.
+ .SH VERSION

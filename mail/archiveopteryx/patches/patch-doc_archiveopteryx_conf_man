@@ -1,12 +1,18 @@
-$OpenBSD: patch-doc_archiveopteryx_conf_man,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- doc/archiveopteryx.conf.man.orig	Fri Apr  9 23:54:06 2010
-+++ doc/archiveopteryx.conf.man	Fri Apr  9 23:54:55 2010
-@@ -587,7 +587,7 @@ If
+$OpenBSD: patch-doc_archiveopteryx_conf_man,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- doc/archiveopteryx.conf.man.orig	Thu May  1 10:42:58 2014
++++ doc/archiveopteryx.conf.man	Thu May  1 10:45:14 2014
+@@ -530,12 +530,10 @@ regulates whether Archiveopteryx supports TLS at all. 
+ .IP tls-certificate
+ is the absolute file name of the TLS private key and signed certificate,
+ e.g.
+-.IR $CONFIGDIR/imap.p15 .
++.IR /etc/ssl/imap.p15 .
+ If
  .I tls-certificate
- is not specified, tlsproxy generates a private key and a self-signed
- certificate at runtime and stores both in
--.IR $CONFIGDIR/automatic-key.p15 .
-+.IR /etc/ssl/archiveopteryx.p15 .
+-is not specified, tlsproxy generates a private key and a self-signed
+-certificate at runtime and stores both in
+-.IR $CONFIGDIR/automatic-key.pem .
++is not specified, the server wont start if TLS is enabled.
  .IP tls-certificate-label
- is a label that uniquely identifies the key and certificate to use in
- the PKCS #15 key file identified by
+ is not used in 3.1.4.
+ .SH SYNTAX

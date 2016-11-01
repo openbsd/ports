@@ -1,9 +1,12 @@
-$OpenBSD: patch-Jamrules,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- Jamrules.orig	Sun Mar 28 22:32:41 2010
-+++ Jamrules	Sun Mar 28 22:32:54 2010
-@@ -30,9 +30,6 @@ else {
+$OpenBSD: patch-Jamrules,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- Jamrules.orig	Mon Mar 10 14:44:59 2014
++++ Jamrules	Thu May  1 08:33:38 2014
+@@ -35,11 +35,8 @@ else if $(CLANG) {
+ }
+ else {
      C++ = g++ ;
-     C++FLAGS += -W -Wall ;
+-    C++FLAGS += -W -Wall -Wno-unused-result ;
++    C++FLAGS += -W -Wall ;
      BUILD = build/gcc ;
 -    if $(OPTIM) {
 -        BUILD = build/gcc$(OPTIM) ;

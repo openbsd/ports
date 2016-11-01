@@ -1,6 +1,6 @@
-$OpenBSD: patch-Jamsettings,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- Jamsettings.orig	Wed Mar 10 13:17:56 2010
-+++ Jamsettings	Mon Apr  5 23:33:00 2010
+$OpenBSD: patch-Jamsettings,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- Jamsettings.orig	Mon Mar 10 14:44:59 2014
++++ Jamsettings	Mon Oct 31 19:06:23 2016
 @@ -28,7 +28,7 @@ MANDIR = $(PREFIX)/man ;
  
  # Supporting files
@@ -25,14 +25,14 @@ $OpenBSD: patch-Jamsettings,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
  
  # This is the default message-copy-directory.
  #
--MESSAGEDIR = $(PREFIX)/messages ;
+-MESSAGEDIR = $(JAILDIR)/messages ;
 +MESSAGEDIR = /var/archiveopteryx/messages ;
  
  # The directory where the configuration file is located.
  #
 -CONFIGDIR = $(PREFIX) ;
 +CONFIGDIR = ${SYSCONFDIR} ;
- 
+
  # The directory where the README and other files are installed.
  #
 -READMEDIR = $(PREFIX) ;

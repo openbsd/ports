@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_readme_README,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- doc/readme/README.orig	Fri Apr  9 21:27:30 2010
-+++ doc/readme/README	Fri Apr  9 21:28:48 2010
+$OpenBSD: patch-doc_readme_README,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- doc/readme/README.orig	Thu May  1 11:20:52 2014
++++ doc/readme/README	Thu May  1 11:21:01 2014
 @@ -33,12 +33,10 @@ Archiveopteryx for the first time (see below if you're
     errors are likely to be minor, and if you tell us about them, we'd be
     happy to help you resolve them.

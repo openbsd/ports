@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/02/04 21:18:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/01 09:10:41 landry Exp $
 @conflict avenger-*
 @newgroup _aox:661
 @newuser _aox:661:661:daemon:Archiveopteryx Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/archiveopteryx/*
 @bin bin/aox
+@bin bin/aoxdeliver
 @bin bin/aoxexport
 @bin bin/aoximport
-@bin bin/deliver
 libexec/archiveopteryx/
 libexec/archiveopteryx/contrib/
 libexec/archiveopteryx/contrib/rrdglue
@@ -18,9 +18,9 @@ libexec/archiveopteryx/schema.pg
 @man man/man5/aoxsuper.conf.5
 @man man/man5/archiveopteryx.conf.5
 @man man/man8/aox.8
+@man man/man8/aoxdeliver.8
 @man man/man8/aoximport.8
 @man man/man8/archiveopteryx.8
-@man man/man8/deliver.8
 @man man/man8/installer.8
 @man man/man8/logd.8
 @man man/man8/recorder.8
@@ -49,6 +49,7 @@ share/examples/archiveopteryx/archiveopteryx.conf
 @sample /var/archiveopteryx/messages/
 @owner
 @group
+@mode 0711
 @sample /var/archiveopteryx/jail/
 @mode
 @rcscript ${RCDIR}/aox

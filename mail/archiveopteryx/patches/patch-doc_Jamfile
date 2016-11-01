@@ -1,9 +1,0 @@
-$OpenBSD: patch-doc_Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- doc/Jamfile.orig	Sun Apr 11 11:09:31 2010
-+++ doc/Jamfile	Sun Apr 11 11:09:41 2010
-@@ -26,4 +26,4 @@ Man 5 : archiveopteryx.conf.man aoxsuper.conf.man ;
- 
- Man 8 :
-     aoximport.man aox.man archiveopteryx.man deliver.man installer.man
--    logd.man recorder.man tlsproxy.man ;
-+    logd.man recorder.man ;

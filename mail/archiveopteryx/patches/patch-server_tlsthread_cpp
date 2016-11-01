@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_tlsthread_cpp,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- server/tlsthread.cpp.orig	Fri Apr  9 23:48:32 2010
-+++ server/tlsthread.cpp	Fri Apr  9 23:48:55 2010
-@@ -95,8 +95,7 @@ void TlsThread::setup()
+$OpenBSD: patch-server_tlsthread_cpp,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- server/tlsthread.cpp.orig	Mon Mar 10 14:44:59 2014
++++ server/tlsthread.cpp	Wed Apr 30 22:56:02 2014
+@@ -105,8 +105,7 @@ void TlsThread::setup()
  
      EString keyFile( Configuration::text( Configuration::TlsCertFile ) );
      if ( keyFile.isEmpty() ) {

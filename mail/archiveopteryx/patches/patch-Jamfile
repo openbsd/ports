@@ -1,6 +1,6 @@
-$OpenBSD: patch-Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
---- Jamfile.orig	Wed Mar 10 13:17:56 2010
-+++ Jamfile	Fri Apr  9 21:07:19 2010
+$OpenBSD: patch-Jamfile,v 1.2 2016/11/01 09:10:41 landry Exp $
+--- Jamfile.orig	Mon Mar 10 14:44:59 2014
++++ Jamfile	Thu May  1 10:34:10 2014
 @@ -14,7 +14,6 @@ SubInclude TOP recorder ;
  SubInclude TOP sasl ;
  SubInclude TOP schema ;
@@ -9,23 +9,23 @@ $OpenBSD: patch-Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
  SubInclude TOP extractors ;
  SubInclude TOP archiveopteryx ;
  SubInclude TOP aoximport ;
-@@ -50,9 +49,6 @@ actions together Prepare
+@@ -47,26 +46,12 @@ actions together Prepare
  }
  
  
 -Prepare $(INSTALLROOT)$(JAILDIR) ;
+-Prepare $(INSTALLROOT)$(JAILDIR)/var/run ;
 -Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
--Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
+ Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
  Prepare $(INSTALLROOT)$(CONFIGDIR) ;
  Prepare $(INSTALLROOT)$(LIBDIR)/contrib ;
  if ( $(LOGFILE:D) != "" && $(LOGFILE:D) != "syslog" ) {
-@@ -62,18 +58,6 @@ if ( $(USE_CRYPTLIB) = "yes" ) {
-     Prepare $(INSTALLROOT)$(LIBDIR)/tlsproxy/var/run ;
+     Prepare $(INSTALLROOT)$(LOGFILE:D) ;
  }
- 
+-
 -
 -# if we make JAILDIR, we should chmod it so noone can read it:
--MODE on $(INSTALLROOT)$(JAILDIR) = 700 ;
+-MODE on $(INSTALLROOT)$(JAILDIR) = 701 ;
 -Chmod $(INSTALLROOT)$(JAILDIR) ;
 -
 -# if we make MESSAGEDIR, we should chmod it similarly. AOXUSER needs to
@@ -33,24 +33,6 @@ $OpenBSD: patch-Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
 -# not exist yet.
 -MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
 -Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
--
--
+ 
+ 
  actions Message {
- fmt <<EOM | sed 's/^/  /'
- To set up the database and generate a configuration file, run
-@@ -95,14 +79,12 @@ info@aox.org for help.
- EOM
- }
- 
--Message install ;
- 
--
- if $(BUILDDOC) {
-     local s u ;
-     local exceptions = canonical msgdump munger renderer logdmain tests
-     addressparser whip cram subscribe deliver aox recorder cmdsearch
--    cryptlib installer archiveopteryx aoximport aoxexport dbtest ;
-+    cryptlib archiveopteryx aoximport aoxexport dbtest ;
-     for s in $(sets) {
-         if ! $(s) in $(documented-sets) && ! $(s) in $(u) &&
-            ! $(s) in $(exceptions)
