@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2016/11/01 16:58:19 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2016/11/01 18:04:06 landry Exp $
 
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-1.0.0
-REVISION=	2
-PORTROACH+=	limitw:1,even
+GH_ACCOUNT =	grisbi
+GH_PROJECT =	grisbi
+GH_TAGNAME =	upstream_version_1_0_1
+DISTNAME=	grisbi-1.0.1
 
 CATEGORIES=	productivity x11
-
-EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.grisbi.org/
 
@@ -24,12 +23,9 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.8
 WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m ofx
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += iconv intl
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
-
-
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES =	textproc/intltool
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2 \
@@ -47,5 +43,14 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
 CONFIGURE_ARGS=	--with-openssl
+
+AUTOMAKE_VERSION =	1.14
+AUTOCONF_VERSION =	2.65
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		./autogen.sh
 
 .include <bsd.port.mk>
