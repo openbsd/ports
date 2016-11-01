@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/21 09:11:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/11/01 15:25:01 landry Exp $
 lib/xfce4/panel/plugins/libsystemload.so
 share/locale/ar/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-systemload-plugin.mo
@@ -15,6 +15,7 @@ share/locale/eu/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-systemload-plugin.mo
+share/locale/he/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-systemload-plugin.mo
