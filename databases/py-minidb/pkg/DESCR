@@ -1,0 +1,3 @@
+minidb 2 makes it easy to store Python objects in a SQLite 3 database
+and work with the data in an easy way with concise syntax. Designed
+for Python 3.
