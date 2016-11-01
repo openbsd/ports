@@ -1,0 +1,32 @@
+$OpenBSD: patch-archiveopteryx_archiveopteryx_cpp,v 1.1 2016/11/01 09:11:31 landry Exp $
+
+EGD server ? seriously ?
+
+--- archiveopteryx/archiveopteryx.cpp.orig	Tue Nov  1 00:28:07 2016
++++ archiveopteryx/archiveopteryx.cpp	Tue Nov  1 00:28:21 2016
+@@ -215,25 +215,6 @@ int main( int argc, char *argv[] )
+         ::log( "allow-plaintext-access is 'never', but use-tls is 'false'",
+                Log::Disaster );
+ 
+-    // set up an EGD server for openssl
+-    Entropy::setup();
+-    EString egd( root );
+-    if ( !egd.endsWith( "/" ) )
+-        egd.append( "/" );
+-    egd.append( "var/run/egd-pool" );
+-    (void)new Listener< EntropyProvider >( Endpoint( egd, 0 ), "EGD" );
+-    if ( !security ) {
+-        struct stat st;
+-        if ( stat( "/var/run/edg-pool", &st ) < 0 ) {
+-            log( "Security is disabled and /var/run/edg-pool does not exist. "
+-                 "Creating it just in case openssl wants to access it." );
+-            (void)new Listener< EntropyProvider >(
+-                Endpoint( "/var/run/edg-pool", 0 ), "EGD(/)" );
+-        }
+-    }
+-    if ( ::chmod( egd.cstr(), 0666 ) < 0 )
+-        log( "Could not grant r/w access to EGD socket", Log::Disaster );
+-
+     Listener< IMAP >::create(
+         "IMAP", Configuration::toggle( Configuration::UseImap ),
+         Configuration::ImapAddress, Configuration::ImapPort

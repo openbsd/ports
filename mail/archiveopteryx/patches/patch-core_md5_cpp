@@ -1,0 +1,17 @@
+$OpenBSD: patch-core_md5_cpp,v 1.1 2016/11/01 09:11:31 landry Exp $
+core/md5.cpp:152: error: #pragma GCC diagnostic not allowed inside functions
+--- core/md5.cpp.orig	Thu May  1 08:34:58 2014
++++ core/md5.cpp	Thu May  1 08:35:20 2014
+@@ -149,12 +149,9 @@ EString MD5::hash()
+     }
+     swapBytes( in, 14 );
+ 
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wstrict-aliasing"
+     /* Append length in bits and transform. */
+     ((uint32 *)in)[14] = bits[0];
+     ((uint32 *)in)[15] = bits[1];
+-#pragma GCC diagnostic pop
+     transform();
+     swapBytes( (char *)buf, 4 );
+ 
