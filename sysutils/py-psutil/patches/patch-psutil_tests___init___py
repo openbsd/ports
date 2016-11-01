@@ -1,11 +1,11 @@
-$OpenBSD: patch-psutil_tests___init___py,v 1.1 2016/04/26 13:03:40 landry Exp $
+$OpenBSD: patch-psutil_tests___init___py,v 1.2 2016/11/01 16:38:27 landry Exp $
 the scripts/ subdir is only present in the tarball, not on the system
---- psutil/tests/__init__.py.orig	Tue Apr 26 14:57:59 2016
-+++ psutil/tests/__init__.py	Tue Apr 26 14:58:48 2016
-@@ -91,7 +91,7 @@ if not PY3:
+--- psutil/tests/__init__.py.orig	Wed Oct  5 14:16:05 2016
++++ psutil/tests/__init__.py	Tue Nov  1 16:51:06 2016
+@@ -118,7 +118,7 @@ PYPY = '__pypy__' in sys.builtin_module_names
  
  ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                            '..', '..'))
+                                         '..', '..'))
 -SCRIPTS_DIR = os.path.join(ROOT_DIR, 'scripts')
 +SCRIPTS_DIR = 'scripts'
  
