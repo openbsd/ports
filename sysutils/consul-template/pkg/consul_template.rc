@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: consul_template.rc,v 1.1.1.1 2016/11/01 16:51:30 jasper Exp $
+
+daemon="${PREFIX}/bin/consul-template"
+daemon_flags="-config ${SYSCONFDIR}/consul-template.d/default.conf"
+daemon_user="_consul-template"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_stop() {
+	pkill -INT -T "${daemon_rtable}" -xf "${pexp}"
+}
+
+rc_cmd $1

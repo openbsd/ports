@@ -1,0 +1,26 @@
+$OpenBSD: README,v 1.1.1.1 2016/11/01 16:51:30 jasper Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Multiple instances
+==================
+
+By definition consul-template is meant to be ran with multiple instances. The
+default `consul_template` uses ${SYSCONFDIR}/consul-template.d/default.conf .
+In order to start multiple instances:
+
+	# ln -s ${RCDIR}/consul_template ${RCDIR}/consul_template_$NAME
+	# rcctl set consul_template_$NAME status on
+	# rcctl set consul_template_$NAME flags \
+		-config ${SYSCONFDIR}/consul-template.d/$NAME.conf
+	# rcctl start consul_template_$NAME
+
+Configuration
+=============
+
+A default configuration file has been installed into
+${SYSCONFDIR}/consul-template.d/default.conf . Please refer to the
+the following https://github.com/hashicorp/consul-template#configuration-files
+for more information on the configuration syntax.
