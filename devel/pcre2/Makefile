@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/01 22:18:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/01 22:20:46 jasper Exp $
+
+USE_WXNEEDED =		Yes
 
 COMMENT =	perl-compatible regular expression library, version 2
 
@@ -23,8 +25,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += bz2 c curses pthread readline z
 
 LIB_DEPENDS =		archivers/bzip2
-
-USE_WXNEEDED =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-pcre2-16 \
