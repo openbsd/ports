@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/05/27 10:01:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/01 16:34:57 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
 DISTNAME=	certbot-${MODPY_EGG_VERSION}
+REVISION=	0
 
 RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-configobj \
@@ -11,8 +12,7 @@ RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-zopecomponent \
 		devel/py-zopeinterface \
 		devel/py-python2-pythondialog \
-		security/letsencrypt/py-acme=${MODPY_EGG_VERSION} \
-		sysutils/py-psutil
+		security/letsencrypt/py-acme=${MODPY_EGG_VERSION}
 TEST_DEPENDS=	${RUN_DEPENDS}
 
 do-configure:
