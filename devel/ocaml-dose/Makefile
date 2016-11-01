@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/19 12:51:19 krw Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/01 22:11:23 krw Exp $
 
 COMMENT =		software repository analysis in OCaml
 CATEGORIES =		devel
@@ -6,7 +6,7 @@ CATEGORIES =		devel
 VERSION =		3.3
 DISTNAME =		dose3-${VERSION}
 PKGNAME =		ocaml-dose-${VERSION}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://dose.gforge.inria.fr/public_html/
 
