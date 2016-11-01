@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.100 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2016/11/01 16:31:57 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.3.30
-PKGNAME=	bash-4.3.46
+PKGNAME=	bash-4.3.48
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-4.3-patches/}
 DIST_SUBDIR=	bash
-.for i in 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+.for i in 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
 PATCHFILES+=	bash43-0$i:0
 .endfor
 
