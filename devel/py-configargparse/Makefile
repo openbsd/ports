@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/07 21:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/01 17:11:55 danj Exp $
 
 COMMENT=		argparse replacement, allows options to be set via files/env
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_EGG_VERSION =	0.11.0
 DISTNAME=		ConfigArgParse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -18,5 +17,7 @@ FLAVOR?=
 MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+
+TEST_DEPENDS=		textproc/py-yaml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
