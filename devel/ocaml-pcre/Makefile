@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/01 22:02:59 krw Exp $
 
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
 
-V =		7.1.5
+V =		7.2.3
 NAME =		ocaml-pcre
 DISTNAME =	pcre-ocaml-$V
 PKGNAME =	${NAME}-$V
-REVISION =	0
 MASTER_SITES =	https://github.com/mmottl/pcre-ocaml/releases/download/v${V}/
 HOMEPAGE =	https://github.com/mmottl/pcre-ocaml
 

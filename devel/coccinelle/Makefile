@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/06/26 14:36:58 krw Exp $
+# $OpenBSD: Makefile,v 1.34 2016/11/01 22:02:59 krw Exp $
 
 COMMENT =	program matching and transformation engine
 
@@ -6,7 +6,7 @@ COMMENT =	program matching and transformation engine
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.4
 EXTRACT_SUFX =	.tgz
-REVISION = 0
+REVISION = 1
 
 CATEGORIES =	devel
 
