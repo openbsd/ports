@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/10/31 11:45:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/11/01 11:10:24 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
@@ -27,7 +27,8 @@ MODPY_ADJ_FILES=	gnome-music.in
 
 LIB_DEPENDS=		x11/gtk+3
 
-BUILD_DEPENDS=		x11/gnome/grilo \
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			x11/gnome/grilo \
 			x11/gnome/libmediaart \
 			x11/gnome/tracker
 
