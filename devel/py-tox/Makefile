@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/28 11:26:25 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/01 22:17:54 danj Exp $
 
 COMMENT =		virtualenv-based automation of test activities
 
-MODPY_EGG_VERSION =	2.3.1
+MODPY_EGG_VERSION =	2.4.1
 DISTNAME =		tox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
