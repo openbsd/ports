@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.9 2016/11/01 09:44:46 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.10 2016/11/01 20:43:14 jasper Exp $
 
-- Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
+- Add OpenBSD virtualization facts
+  b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
 
 - Enable VMM detection
   https://github.com/ansible/ansible/pull/18268
@@ -9,7 +10,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.9 2016/11/01 09:44:46 jasp
   https://github.com/ansible/ansible/pull/18278
 
 - Implement DMI facts
-  https://github.com/ansible/ansible/pull/18274
+  88970bcfb24864c5773c8d913c45db3e7355a74d
 
 - Swap distribution_version and distribution_release values
   https://github.com/ansible/ansible/pull/18277
