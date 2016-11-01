@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1 2011/05/28 19:40:41 sthen Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.2 2016/11/01 14:12:04 sthen Exp $
 lib/dovecot/auth/libauthdb_ldap.so
+lib/dovecot/dict/libdict_ldap.so
+@lib lib/dovecot/libdovecot-ldap.so.${LIBdovecot-ldap_VERSION}

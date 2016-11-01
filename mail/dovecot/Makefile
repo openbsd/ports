@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.244 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.245 2016/11/01 14:12:04 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
-COMMENT-ldap=	LDAP authentication support for Dovecot
+COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
 COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.24
-REVISION=	2
+V_DOVECOT=	2.2.26.0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -23,6 +22,7 @@ SHARED_LIBS=	dovecot-compression 0.0 \
 		dovecot-dsync	0.0 \
 		dovecot-fts	0.0 \
 		dovecot-lda	2.0 \
+		dovecot-ldap    0.0 \
 		dovecot-login	2.0 \
 		dovecot-sql	2.0 \
 		dovecot-storage	2.0 \
@@ -36,7 +36,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	bz2 c crypto iconv lz4 lzma pthread sqlite3 ssl z
-WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl lib/dovecot/dovecot
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl stdc++ z
 WANTLIB-postgresql= crypto pq>=4 ssl
 
@@ -45,8 +45,8 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/xz \
 		converters/libiconv \
 		databases/sqlite3
-LIB_DEPENDS-ldap= databases/openldap
-RUN_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT}
+LIB_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT} \
+		databases/openldap
 LIB_DEPENDS-mysql= databases/mariadb
 RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-postgresql= databases/postgresql
