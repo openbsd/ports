@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/07/30 14:22:19 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/01 04:13:52 jsg Exp $
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
 share/u-boot/A10-OLinuXino-Lime/u-boot
@@ -85,11 +85,6 @@ share/u-boot/am57xx_evm/MLO
 share/u-boot/am57xx_evm/u-boot
 share/u-boot/am57xx_evm/u-boot.bin
 share/u-boot/am57xx_evm/u-boot.img
-share/u-boot/clearfog/
-share/u-boot/clearfog/u-boot
-share/u-boot/clearfog/u-boot-spl.kwb
-share/u-boot/clearfog/u-boot.bin
-share/u-boot/clearfog/u-boot.img
 share/u-boot/cm_fx6/
 share/u-boot/cm_fx6/SPL
 share/u-boot/cm_fx6/u-boot

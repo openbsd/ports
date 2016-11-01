@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.8 2016/10/30 04:16:34 jsg Exp $
+#	$OpenBSD: Makefile,v 1.9 2016/11/01 04:13:52 jsg Exp $
 
 COMMENT=	U-Boot firmware
 DISTNAME=	u-boot-2016.09
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -48,7 +48,6 @@ BOARDS=\
 	riotboard \
 	udoo \
 	wandboard \
-	clearfog \
 	rpi_2 \
 	rpi_3_32b \
 	vexpress_ca15_tc2 \
