@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2016/07/09 11:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2016/11/01 13:56:30 sthen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.35
-REVISION=		0
+DISTNAME=		xscreensaver-5.36
 
 CATEGORIES=		x11
 
