@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2016/10/31 09:41:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2016/11/01 22:19:23 jasper Exp $
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.46.0
+REVISION=		0
 API_V=			2.91
 
 PKGNAME=		vte3-${GNOME_VERSION}
@@ -36,7 +37,7 @@ MODGCC4_LANGS=		c c++
 # src/box_drawing_generate.sh
 BUILD_DEPENDS=		shells/bash
 
-LIB_DEPENDS=		devel/pcre2 \
+LIB_DEPENDS=		devel/pcre2>=10.22p0 \
 			security/gnutls \
 			x11/gtk+3
 
