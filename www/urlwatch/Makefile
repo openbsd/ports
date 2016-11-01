@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/11/01 14:20:15 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/01 15:27:24 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
@@ -26,12 +26,14 @@ RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/lynx \
 		www/py-requests${MODPY_FLAVOR}
-
-NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/
 	mv ${PREFIX}/share/urlwatch/examples ${PREFIX}/share/examples/urlwatch
 	rmdir ${PREFIX}/share/{man,urlwatch}
+
+do-test:
+	cd ${WRKSRC}; nosetests${MODPY_BIN_SUFFIX} -v
 
 .include <bsd.port.mk>
