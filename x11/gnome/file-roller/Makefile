@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.122 2016/10/31 12:53:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2016/11/01 09:12:46 jasper Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.22.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	archivers
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 		devel/libnotify \
 		x11/gtk+3
 
-#MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_ENV=	CPIO=${LOCALBASE}/bin/gcpio
 
