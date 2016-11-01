@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/10 16:11:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/01 14:20:15 rpe Exp $
 
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION= 1.18
-REVISION=	0
+MODPY_EGG_VERSION=	2.5
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
@@ -16,11 +15,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
+
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS=       Yes
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	converters/py-html2text \
-		devel/py-futures \
+RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
+		databases/py-minidb \
+		security/py-keyring${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		www/lynx \
-		www/py-requests
+		www/py-requests${MODPY_FLAVOR}
 
 NO_TEST=	Yes
 
