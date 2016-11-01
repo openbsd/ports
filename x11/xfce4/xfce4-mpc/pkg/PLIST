@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/03/16 20:41:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/11/01 15:28:30 landry Exp $
 lib/xfce4/panel/plugins/libmpc.so
 share/locale/ar/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-mpc-plugin.mo
@@ -18,6 +18,7 @@ share/locale/he/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/is/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-mpc-plugin.mo
