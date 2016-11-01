@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/07/24 17:21:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2016/11/01 23:50:23 czarkoff Exp $
 
 COMMENT=	tools for building tcp socket client/servers
 
 DISTNAME=	ucspi-tcp-0.88
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
@@ -17,7 +17,7 @@ WANTLIB += c
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 MASTER_SITES0=	http://www.fefe.de/ucspi/
 
-PATCHFILES=	ucspi-tcp-0.88-ipv6.diff19.bz2:0
+PATCHFILES=	ucspi-tcp-0.88-ipv6.diff20.bz2:0
 PATCH_DIST_STRIP=
 
 ALL_TARGET=
