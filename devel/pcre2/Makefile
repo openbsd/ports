@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/31 09:40:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/01 22:18:36 jasper Exp $
 
 COMMENT =	perl-compatible regular expression library, version 2
 
 DISTNAME =	pcre2-10.22
+REVISION =	0
 
 SHARED_LIBS +=  pcre2-16                  0.0 # 3.0
 SHARED_LIBS +=  pcre2-32                  0.0 # 3.0
@@ -35,5 +36,8 @@ CONFIGURE_ARGS =	--enable-pcre2-16 \
 			--enable-pcre2test-libreadline
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	sed -i -E 's/(^Libs:)/\1 -Wl,-z,wxneeded/' ${WRKSRC}/*.pc.in
 
 .include <bsd.port.mk>
