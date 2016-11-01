@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/03/26 17:04:18 danj Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/11/01 21:07:25 jasper Exp $
 bin/jmacs
 @bin bin/joe
 bin/jpico
@@ -46,7 +46,7 @@ share/joe/lang/de.po
 share/joe/lang/fr.po
 share/joe/lang/ru.po
 share/joe/lang/uk.po
-share/joe/lang/zh.po
+share/joe/lang/zh_TW.po
 share/joe/syntax/
 @sample ${SYSCONFDIR}/joe/syntax/
 share/joe/syntax/4gl.jsf
@@ -75,6 +75,8 @@ share/joe/syntax/comment_todo.jsf
 @sample ${SYSCONFDIR}/joe/syntax/comment_todo.jsf
 share/joe/syntax/conf.jsf
 @sample ${SYSCONFDIR}/joe/syntax/conf.jsf
+share/joe/syntax/context.jsf
+@sample ${SYSCONFDIR}/joe/syntax/context.jsf
 share/joe/syntax/csh.jsf
 @sample ${SYSCONFDIR}/joe/syntax/csh.jsf
 share/joe/syntax/csharp.jsf
