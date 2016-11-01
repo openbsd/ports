@@ -1,12 +1,14 @@
-$OpenBSD: patch-debian_qgis_desktop,v 1.3 2014/08/20 08:54:45 landry Exp $
---- debian/qgis.desktop.orig	Fri Jun 27 14:00:08 2014
-+++ debian/qgis.desktop	Tue Jul  1 08:56:15 2014
-@@ -48,8 +48,8 @@ GenericName[tr]=Coğrafi bilgi sistemi
+$OpenBSD: patch-debian_qgis_desktop,v 1.4 2016/11/01 09:18:13 landry Exp $
+--- debian/qgis.desktop.orig	Fri Oct 21 14:14:02 2016
++++ debian/qgis.desktop	Wed Oct 26 11:21:30 2016
+@@ -47,9 +47,9 @@ GenericName[th]=ระบบสารสนเทศ�
+ GenericName[tr]=Coğrafi bilgi sistemi
  GenericName[uk]=Геоінформаційна система
  GenericName[uz]=Geografik axborot tizimi
- Icon=qgis
+-Icon=qgis
 -TryExec=/usr/bin/qgis
 -Exec=/usr/bin/qgis %F
++Icon=qgis-icon
 +TryExec=${TRUEPREFIX}/bin/qgis
 +Exec=${TRUEPREFIX}/bin/qgis %F
  Terminal=false

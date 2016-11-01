@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/08/31 13:13:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/11/01 09:18:13 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -83,6 +83,7 @@ include/qgis/qgsauthsslconfigwidget.h
 include/qgis/qgsauthsslerrorsdialog.h
 include/qgis/qgsauthsslimportdialog.h
 include/qgis/qgsauthtrustedcasdialog.h
+include/qgis/qgsbearingutils.h
 include/qgis/qgsbilinearrasterresampler.h
 include/qgis/qgsblendmodecombobox.h
 include/qgis/qgsblureffect.h
@@ -247,6 +248,7 @@ include/qgis/qgsexpressionbuilderwidget.h
 include/qgis/qgsexpressioncontext.h
 include/qgis/qgsexpressionfieldbuffer.h
 include/qgis/qgsexpressionhighlighter.h
+include/qgis/qgsexpressionlineedit.h
 include/qgis/qgsexpressionselectiondialog.h
 include/qgis/qgsextentgroupbox.h
 include/qgis/qgsexternalresourceconfigdlg.h
@@ -265,6 +267,7 @@ include/qgis/qgsfeaturerequest.h
 include/qgis/qgsfeatureselectiondlg.h
 include/qgis/qgsfeatureselectionmodel.h
 include/qgis/qgsfeaturestore.h
+include/qgis/qgsfeedback.h
 include/qgis/qgsfield.h
 include/qgis/qgsfield_p.h
 include/qgis/qgsfieldcombobox.h
@@ -452,6 +455,8 @@ include/qgis/qgsnumericsortlistviewitem.h
 include/qgis/qgsobjectcustomproperties.h
 include/qgis/qgsofflineediting.h
 include/qgis/qgsogcutils.h
+include/qgis/qgsoptional.h
+include/qgis/qgsoptionalexpression.h
 include/qgis/qgsoptionsdialogbase.h
 include/qgis/qgsorderbydialog.h
 include/qgis/qgsorganizetablecolumnsdialog.h
@@ -619,6 +624,7 @@ include/qgis/qgssymbolslistwidget.h
 include/qgis/qgssymbolv2.h
 include/qgis/qgssymbolv2selectordialog.h
 include/qgis/qgstablewidgetitem.h
+include/qgis/qgstabwidget.h
 include/qgis/qgstestutils.h
 include/qgis/qgstextannotationitem.h
 include/qgis/qgstextdiagram.h
@@ -690,25 +696,6 @@ include/qgis/qgswkbsimplifierptr.h
 include/qgis/qgswkbtypes.h
 include/qgis/qgsxmlutils.h
 include/qgis/qgszonalstatistics.h
-include/qgis/ui_qgsauthauthoritieseditor.h
-include/qgis/ui_qgsauthcertificateinfo.h
-include/qgis/ui_qgsauthcertificatemanager.h
-include/qgis/ui_qgsauthconfigedit.h
-include/qgis/ui_qgsauthconfigeditor.h
-include/qgis/ui_qgsauthconfigidedit.h
-include/qgis/ui_qgsauthconfigselect.h
-include/qgis/ui_qgsauthconfiguriedit.h
-include/qgis/ui_qgsautheditorwidgets.h
-include/qgis/ui_qgsauthidentitieseditor.h
-include/qgis/ui_qgsauthimportcertdialog.h
-include/qgis/ui_qgsauthimportidentitydialog.h
-include/qgis/ui_qgsauthmethodplugins.h
-include/qgis/ui_qgsauthserverseditor.h
-include/qgis/ui_qgsauthsslconfigwidget.h
-include/qgis/ui_qgsauthsslerrorsdialog.h
-include/qgis/ui_qgsauthsslimportdialog.h
-include/qgis/ui_qgsauthsslimporterrors.h
-include/qgis/ui_qgsauthtrustedcasdialog.h
 include/qgis/ui_qgscredentialdialog.h
 include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgsexpressionbuilder.h
@@ -1588,6 +1575,7 @@ share/qgis/python/plugins/db_manager/dlg_export_vector.py
 share/qgis/python/plugins/db_manager/dlg_field_properties.py
 share/qgis/python/plugins/db_manager/dlg_import_vector.py
 share/qgis/python/plugins/db_manager/dlg_query_builder.py
+share/qgis/python/plugins/db_manager/dlg_sql_layer_window.py
 share/qgis/python/plugins/db_manager/dlg_sql_window.py
 share/qgis/python/plugins/db_manager/dlg_table_properties.py
 share/qgis/python/plugins/db_manager/icons/
@@ -1636,6 +1624,7 @@ share/qgis/python/plugins/db_manager/ui/ui_DlgExportVector.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgFieldProperties.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgImportVector.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgQueryBuilder.py
+share/qgis/python/plugins/db_manager/ui/ui_DlgSqlLayerWindow.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgSqlWindow.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgTableProperties.py
 share/qgis/python/plugins/processing/
@@ -2314,6 +2303,7 @@ share/qgis/python/plugins/processing/algs/grass7/nviz7.py
 share/qgis/python/plugins/processing/algs/help/
 share/qgis/python/plugins/processing/algs/help/__init__.py
 share/qgis/python/plugins/processing/algs/help/qgis.yaml
+share/qgis/python/plugins/processing/algs/help/saga.yaml
 share/qgis/python/plugins/processing/algs/lidar/
 share/qgis/python/plugins/processing/algs/lidar/LidarToolsAlgorithmProvider.py
 share/qgis/python/plugins/processing/algs/lidar/__init__.py
@@ -2677,6 +2667,8 @@ share/qgis/python/plugins/processing/algs/qgis/AutoincrementalField.py
 share/qgis/python/plugins/processing/algs/qgis/BarPlot.py
 share/qgis/python/plugins/processing/algs/qgis/BasicStatisticsNumbers.py
 share/qgis/python/plugins/processing/algs/qgis/BasicStatisticsStrings.py
+share/qgis/python/plugins/processing/algs/qgis/Boundary.py
+share/qgis/python/plugins/processing/algs/qgis/BoundingBox.py
 share/qgis/python/plugins/processing/algs/qgis/Buffer.py
 share/qgis/python/plugins/processing/algs/qgis/Centroids.py
 share/qgis/python/plugins/processing/algs/qgis/CheckValidity.py
@@ -2721,10 +2713,16 @@ share/qgis/python/plugins/processing/algs/qgis/LinesToPolygons.py
 share/qgis/python/plugins/processing/algs/qgis/MeanAndStdDevPlot.py
 share/qgis/python/plugins/processing/algs/qgis/MeanCoords.py
 share/qgis/python/plugins/processing/algs/qgis/Merge.py
+share/qgis/python/plugins/processing/algs/qgis/MergeLines.py
+share/qgis/python/plugins/processing/algs/qgis/MergeLines_BACKUP_1606.py
+share/qgis/python/plugins/processing/algs/qgis/MergeLines_BASE_1606.py
+share/qgis/python/plugins/processing/algs/qgis/MergeLines_LOCAL_1606.py
+share/qgis/python/plugins/processing/algs/qgis/MergeLines_REMOTE_1606.py
 share/qgis/python/plugins/processing/algs/qgis/MultipartToSingleparts.py
 share/qgis/python/plugins/processing/algs/qgis/NearestNeighbourAnalysis.py
 share/qgis/python/plugins/processing/algs/qgis/OrientedMinimumBoundingBox.py
 share/qgis/python/plugins/processing/algs/qgis/PointDistance.py
+share/qgis/python/plugins/processing/algs/qgis/PointOnSurface.py
 share/qgis/python/plugins/processing/algs/qgis/PointsDisplacement.py
 share/qgis/python/plugins/processing/algs/qgis/PointsFromLines.py
 share/qgis/python/plugins/processing/algs/qgis/PointsFromPolygons.py
@@ -2752,6 +2750,7 @@ share/qgis/python/plugins/processing/algs/qgis/RasterLayerStatistics.py
 share/qgis/python/plugins/processing/algs/qgis/RectanglesOvalsDiamondsFixed.py
 share/qgis/python/plugins/processing/algs/qgis/RectanglesOvalsDiamondsVariable.py
 share/qgis/python/plugins/processing/algs/qgis/RegularPoints.py
+share/qgis/python/plugins/processing/algs/qgis/RemoveNullGeometry.py
 share/qgis/python/plugins/processing/algs/qgis/ReprojectLayer.py
 share/qgis/python/plugins/processing/algs/qgis/ReverseLineDirection.py
 share/qgis/python/plugins/processing/algs/qgis/SaveSelectedFeatures.py
@@ -4526,6 +4525,7 @@ share/qgis/python/plugins/processing/tests/Grass7AlgorithmsRasterTest.py
 share/qgis/python/plugins/processing/tests/ParametersTest.py
 share/qgis/python/plugins/processing/tests/QgisAlgorithmsTest.py
 share/qgis/python/plugins/processing/tests/TestData.py
+share/qgis/python/plugins/processing/tests/ToolsTest.py
 share/qgis/python/plugins/processing/tests/__init__.py
 share/qgis/python/plugins/processing/tests/data/
 share/qgis/python/plugins/processing/tests/data/lines.dbf
