@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/25 16:46:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/11/01 07:12:57 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -25,13 +25,14 @@ share/applications/gnome-printers-panel.desktop
 share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-search-panel.desktop
-share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
 share/applications/gnome-user-accounts-panel.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
+share/gettext/its/gnome-keybindings.its
+share/gettext/its/gnome-keybindings.loc
 share/gnome-control-center/
 share/gnome-control-center/icons/
 share/gnome-control-center/icons/hicolor/
