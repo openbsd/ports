@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/08/23 19:25:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2016/11/01 16:43:51 jasper Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -193,7 +193,7 @@ intellij/lib/sanselan-0.98-snapshot.jar
 intellij/lib/serviceMessages.jar
 intellij/lib/slf4j-api-1.7.10.jar
 intellij/lib/slf4j-log4j12-1.7.10.jar
-intellij/lib/snappy-in-java-0.3.1.jar
+intellij/lib/snappy-in-java-0.5.1.jar
 intellij/lib/sqlite-jdbc-3.6.20.1.jar
 intellij/lib/src/
 intellij/lib/src/trove4j_src.jar
@@ -286,6 +286,7 @@ intellij/plugins/Kotlin/kotlinc/bin/kotlinc.bat
 intellij/plugins/Kotlin/kotlinc/build.txt
 intellij/plugins/Kotlin/kotlinc/lib/
 intellij/plugins/Kotlin/kotlinc/lib/android-extensions-compiler.jar
+intellij/plugins/Kotlin/kotlinc/lib/kotlin-annotation-processing.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-build-common-test.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar
