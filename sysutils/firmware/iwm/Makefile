@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/01 14:14:48 stsp Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/01 14:16:43 stsp Exp $
 
 FW_DRIVER=	iwm
 FW_VER=		0.20161101
 
-# as per the READMEs, 'The "-9" in the filename reflects an interface/
+# As per the READMEs, the "-16" in the filename reflects an interface/
 # architecture version number. It will change only when changes in new
-# uCode releases make the new uCode incompatible with earlier drivers.'
+# uCode releases make the new uCode incompatible with earlier drivers.
 V16=		16.242414.0
 DISTFILES=	iwlwifi-3160-ucode-${V16}.tgz \
 		iwlwifi-7260-ucode-${V16}.tgz \
