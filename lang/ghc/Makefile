@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.143 2016/11/01 18:14:05 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		6
+REVISION =		7
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -34,9 +34,10 @@ BUILD_DEPENDS =		archivers/gtar \
 			textproc/docbook-xsl
 RUN_DEPENDS =
 
-# XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
-#      loadObj_() instead.
-USE_WXNEEDED =		Yes
+# We can't use the wrapper script, because it then gets hardcoded into
+# the packaged ghc. So we explicitely use -Wl,-z,wxneeded (see
+# CONFIGURE_ENV below)
+# USE_WXNEEDED =		Yes
 
 WANTLIB +=		c iconv m ncursesw pthread util
 
@@ -106,12 +107,14 @@ CFLAGS +=		-fno-pie
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+# XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
+#      loadObj_() instead.
 CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE1="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE2="-fno-pie -nopie" \
 			CONF_GCC_LINKER_OPTS_STAGE0="-fno-pie -nopie" \
-			CONF_GCC_LINKER_OPTS_STAGE1="-fno-pie -nopie" \
-			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie -nopie"
+			CONF_GCC_LINKER_OPTS_STAGE1="-fno-pie -nopie -Wl,-z,wxneeded" \
+			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie -nopie -Wl,-z,wxneeded"
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
