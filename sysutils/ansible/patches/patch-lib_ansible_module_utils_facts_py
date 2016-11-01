@@ -1,11 +1,18 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.8 2016/10/31 17:50:44 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.9 2016/11/01 09:44:46 jasper Exp $
 
 - Add OpenBSD virtualization facts: b4f338bca738cbd3e3b64be2fc9579bcefa28d6e
+
 - Enable VMM detection
+  https://github.com/ansible/ansible/pull/18268
+
 - Simplify processor fact resolution
-- Drop processor_cores fact with bogus value
+  https://github.com/ansible/ansible/pull/18278
+
 - Implement DMI facts
+  https://github.com/ansible/ansible/pull/18274
+
 - Swap distribution_version and distribution_release values
+  https://github.com/ansible/ansible/pull/18277
 
 --- lib/ansible/module_utils/facts.py.orig	Thu Sep 29 17:01:13 2016
 +++ lib/ansible/module_utils/facts.py	Mon Oct 31 18:47:55 2016
