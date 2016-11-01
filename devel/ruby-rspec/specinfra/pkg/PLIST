@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2016/09/24 12:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.35 2016/11/01 10:18:34 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -170,12 +170,16 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/user.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v10/
-${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v10.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v10/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v6/user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v7/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v7.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v7/package.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v8/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v8.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v8/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/v9/package.rb
@@ -489,6 +493,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/mail_alias_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/service_spec.rb
