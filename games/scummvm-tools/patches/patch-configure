@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2014/11/29 10:22:37 jsg Exp $
---- configure.orig	Sat Jul 12 07:36:17 2014
-+++ configure	Sat Nov 29 20:08:34 2014
-@@ -381,6 +381,9 @@ EOF
+$OpenBSD: patch-configure,v 1.3 2016/11/01 13:04:15 jsg Exp $
+--- configure.orig	Wed Oct 12 07:08:18 2016
++++ configure	Tue Nov  1 21:31:29 2016
+@@ -386,6 +386,9 @@ EOF
  	fi
  done # for parm in ...
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure,v 1.2 2014/11/29 10:22:37 jsg Exp $
  for ac_option in $@; do
  	case "$ac_option" in
  	--enable-vorbis)          _vorbis=yes     ;;
-@@ -1020,7 +1023,7 @@ test $TMPR -eq 0 || exit 1	# check exit code of subshe
+@@ -1068,7 +1071,7 @@ test $TMPR -eq 0 || exit 1	# check exit code of subshe
  # for the smaller sizes.
  echo_n "Alignment required... "
  case $_host_cpu in
