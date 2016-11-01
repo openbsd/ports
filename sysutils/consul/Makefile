@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/03 09:34:39 ajacoutot Exp $
-
-# XXX patch-temporary_hack-stat_openbsd_go and patch-temporary_hack_stat_unsupported_go
-# have been renamed manually to prevent "tar: File name too long for ustar"
-# when creating ports.tar.gz
+# $OpenBSD: Makefile,v 1.4 2016/11/01 16:26:11 jasper Exp $
 
 COMMENT=		service discovery and configuration tool
 
-GH_TAGNAME=		v0.6.4
+GH_TAGNAME=		v0.7.0
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
-REVISION=		0
 
 CATEGORIES=		sysutils net
 
