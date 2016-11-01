@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.109 2016/05/22 21:03:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2016/11/01 12:01:10 ajacoutot Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.99.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -33,8 +33,9 @@ LIB_DEPENDS=		archivers/bzip2 \
 
 MASTER_SITES=		http://www.clamav.net/downloads/production/
 
-CONFIGURE_STYLE=        gnu
-CONFIGURE_ARGS+=        --disable-clamav \
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS+=	--disable-clamav \
 			--enable-dependency-tracking \
 			--disable-clamuko \
 			--enable-bigstack \

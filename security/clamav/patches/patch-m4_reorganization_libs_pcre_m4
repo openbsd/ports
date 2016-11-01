@@ -1,0 +1,45 @@
+$OpenBSD: patch-m4_reorganization_libs_pcre_m4,v 1.1 2016/11/01 12:01:10 ajacoutot Exp $
+
+Don't pick up pcre2.
+
+--- m4/reorganization/libs/pcre.m4.orig	Fri Apr 22 17:02:19 2016
++++ m4/reorganization/libs/pcre.m4	Tue Nov  1 12:58:47 2016
+@@ -13,32 +13,20 @@ no)
+   ;;
+ yes)
+   dnl default - search PATH
+-  AC_PATH_PROG([pcreconfig], [pcre2-config])
++  AC_PATH_PROG([pcreconfig], [pcre-config])
+   if test "x$pcreconfig" = "x"; then
+-      AC_PATH_PROG([pcreconfig], [pcre-config])
+-      if test "x$pcreconfig" = "x"; then
+-          AC_MSG_NOTICE([cannot locate libpcre2 or libpcre within PATH])
+-      else
+-         pcrelib="pcre"
+-      fi
+-  else
+-      pcrelib="pcre2"
++      AC_MSG_NOTICE([cannot locate libpcre within PATH])
++      pcrelib="pcre"
+   fi
+   ;;
+ "")
+   AC_MSG_ERROR([cannot assign blank value to --with-pcre])
+   ;;
+ *)
+-  AC_PATH_PROG([pcreconfig], [pcre2-config], [], [$pcreser/bin])
++  AC_PATH_PROG([pcreconfig], [pcre-config], [], [$pcreser/bin])
+   if test "x$pcreconfig" = "x"; then
+-      AC_PATH_PROG([pcreconfig], [pcre-config], [], [$pcreser/bin])
+-      if test "x$pcreconfig" = "x"; then
+-          AC_MSG_ERROR([cannot locate libpcre2 or libpcre at $pcreser])
+-      else
+-         pcrelib="pcre"
+-      fi
+-  else
+-      pcrelib="pcre2"
++      AC_MSG_ERROR([cannot locate libpcre at $pcreser])
++      pcrelib="pcre"
+   fi
+   ;;
+ esac
