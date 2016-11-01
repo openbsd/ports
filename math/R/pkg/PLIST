@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2016/06/21 18:21:52 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.32 2016/11/01 16:55:13 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -1910,14 +1910,12 @@ share/doc/R/manual/images/fig12.png
 share/doc/R/manual/images/hist.png
 share/doc/R/manual/images/ice.png
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/texmf-local/
 share/texmf-local/bibtex/
 share/texmf-local/bibtex/bib/
 share/texmf-local/bibtex/bib/RJournal.bib
 share/texmf-local/bibtex/bib/Rnews.bib
 share/texmf-local/bibtex/bst/
 share/texmf-local/bibtex/bst/jss.bst
-share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/Rd.sty
 share/texmf-local/tex/latex/Sweave.sty

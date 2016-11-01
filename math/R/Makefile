@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.87 2016/09/02 13:02:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.88 2016/11/01 16:55:13 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.3.1
-REVISION=	1
+DISTNAME=	R-3.3.2
 
 SO_VERSION=	32.0
 .for _lib in R Rblas Rlapack
@@ -23,8 +22,6 @@ WANTLIB += lzma m ncurses nghttp2 pango-1.0 pangocairo-1.0 pcre
 WANTLIB += png readline ssl tiff z ${MODTK_WANTLIB}
 
 MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
-		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \
 		http://cran.br.r-project.org/src/base/R-3/ \
 		http://cran.ch.r-project.org/src/base/R-3/ \
@@ -67,6 +64,7 @@ RUN_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		archivers/zip \
 		devel/gmake \
 		devel/xdg-utils \
+		print/texinfo \
 		print/texlive/base>=2014p1
 
 CONFIGURE_STYLE=gnu
