@@ -1,0 +1,3 @@
+Entry points are a way for Python packages to advertise objects with some
+common interface. The most common examples are console_scripts entry points,
+which define shell commands by identifying a Python function to run.

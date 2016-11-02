@@ -1,0 +1,17 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/11/02 18:27:33 shadchin Exp $
+--- setup.py.orig	Mon Oct 10 22:42:30 2016
++++ setup.py	Mon Oct 10 22:44:19 2016
+@@ -0,0 +1,13 @@
++from distutils.core import setup
++
++setup(name='entrypoints',
++      version='0.2.2',
++      description='Discover and load entry points from installed packages.',
++      author='Thomas Kluyver',
++      author_email='thomas@kluyver.me.uk',
++      url='https://github.com/takluyver/entrypoints',
++      py_modules=['entrypoints'],
++      classifiers=[
++          'License :: OSI Approved :: MIT License'
++      ]
++)
