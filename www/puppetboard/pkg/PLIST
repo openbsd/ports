@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/07/04 07:44:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/02 09:01:13 danj Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 puppetboard/
 puppetboard/CHANGELOG.rst
@@ -50,8 +50,8 @@ puppetboard/puppetboard/static/js/radiator.js
 puppetboard/puppetboard/static/js/scroll.top.js
 puppetboard/puppetboard/static/js/tables.js
 puppetboard/puppetboard/static/js/timestamps.js
-puppetboard/puppetboard/static/moment.js-${MODPY_VERSION}.0/
-puppetboard/puppetboard/static/moment.js-${MODPY_VERSION}.0/moment.min.js
+puppetboard/puppetboard/static/moment.js-2.7.0/
+puppetboard/puppetboard/static/moment.js-2.7.0/moment.min.js
 puppetboard/puppetboard/templates/
 puppetboard/puppetboard/templates/400.html
 puppetboard/puppetboard/templates/403.html

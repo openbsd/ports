@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/06 12:08:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/02 09:01:13 danj Exp $
 
 COMMENT=		web interface to PuppetDB
 
 MODPY_EGG_VERSION=	0.2.0
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		lang/python
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR ?=
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
