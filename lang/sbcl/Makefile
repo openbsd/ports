@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/09/03 15:10:12 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2016/11/02 13:26:07 jca Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -6,8 +6,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.2.14
-REVISION =		1
+V =			1.3.10
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -29,7 +28,15 @@ MODGCC4_LANGS=		c
 WANTLIB=		c m util
 
 PSEUDO_FLAVORS=		native_bootstrap
+FLAVORS=		threads
 FLAVOR?=
+
+EXTRA_PARAMS=
+.if ${FLAVOR:Mthreads}
+# XXX
+BROKEN-powerpc=		no support yet
+EXTRA_PARAMS+=		--with-sb-threads
+.endif
 
 .if ${FLAVOR:Mnative_bootstrap}
 BUILD_DEPENDS+=		lang/sbcl
@@ -63,7 +70,7 @@ pre-configure:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
-		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
+		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}" ${EXTRA_PARAMS}
 	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info
 
