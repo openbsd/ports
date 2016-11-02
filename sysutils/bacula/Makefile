@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/10/11 21:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2016/11/02 21:08:29 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -20,6 +20,7 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
+REVISION-sqlite3=	0
 
 CATEGORIES=		sysutils
 
@@ -123,7 +124,7 @@ LIB_DEPENDS-pgsql +=	databases/postgresql
 WANTLIB-mysql += mysqlclient_r crypto m pthread ssl stdc++ z
 LIB_DEPENDS-mysql +=	databases/mariadb
 
-WANTLIB-sqlite3 += sqlite3 m stdc++
+WANTLIB-sqlite3 += sqlite3 m pthread stdc++
 LIB_DEPENDS-sqlite3=	databases/sqlite3
 
 WANTLIB-bat += ${WANTLIB}
