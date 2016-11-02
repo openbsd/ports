@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2016/10/28 04:03:36 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/02 07:42:55 jca Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el
 
 COMMENT=	Plan9 terminal emulator
 
-COMMIT_ID=	d9813b086ec6
-DISTNAME=	drawterm-20160914
-REVISION=	0
+DISTNAME=	drawterm-20161101
+EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	plan9
 
 HOMEPAGE=	http://drawterm.9front.org/
 
-DISTFILES=	${DISTNAME}{${COMMIT_ID}}${EXTRACT_SUFX}
-MASTER_SITES=	https://code.9front.org/hg/drawterm/archive/
+MASTER_SITES=	http://drawterm.9front.org/
 
 MAINTAINER=	Stanley Lieber <sl@stanleylieber.com>
 
@@ -27,7 +25,7 @@ MAKE_FLAGS=	CONF=openbsd \
 		PORTS_CFLAGS="${CFLAGS}" \
 		PORTS_LDFLAGS="${LDFLAGS}"
 
-WRKDIST=	${WRKDIR}/drawterm-${COMMIT_ID}/
+WRKDIST=	${WRKDIR}/${DISTNAME}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/drawterm ${PREFIX}/bin
