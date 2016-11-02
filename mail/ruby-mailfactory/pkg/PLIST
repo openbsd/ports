@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:41 jeremy Exp $
-${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/lib/
-${GEM_LIB}/gems/${DISTNAME}/lib/mailfactory.rb
-${GEM_LIB}/gems/${DISTNAME}/tests/
-${GEM_LIB}/gems/${DISTNAME}/tests/test_mailfactory.rb
-${GEM_LIB}/specifications/${DISTNAME}.gemspec
