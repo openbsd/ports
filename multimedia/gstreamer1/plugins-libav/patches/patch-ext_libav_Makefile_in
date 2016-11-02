@@ -1,10 +1,10 @@
-$OpenBSD: patch-ext_libav_Makefile_in,v 1.2 2016/04/10 10:14:12 ajacoutot Exp $
+$OpenBSD: patch-ext_libav_Makefile_in,v 1.3 2016/11/02 22:21:35 ajacoutot Exp $
 
 ../../gst-libs/ext/libav/libavutil/libavutil.a(log2_tab.o):(.rodata+0x0): multiple definition of `ff_log2_tab'
 
---- ext/libav/Makefile.in.orig	Thu Mar 24 10:08:34 2016
-+++ ext/libav/Makefile.in	Sat Apr  9 12:16:14 2016
-@@ -475,7 +475,7 @@ libgstlibav_la_LIBADD = $(LIBAV_LIBS) $(GST_PLUGINS_BA
+--- ext/libav/Makefile.in.orig	Tue Nov  1 16:17:52 2016
++++ ext/libav/Makefile.in	Wed Nov  2 21:42:32 2016
+@@ -480,7 +480,7 @@ libgstlibav_la_LIBADD = $(LIBAV_LIBS) $(GST_PLUGINS_BA
  	-lgstpbutils-$(GST_API_VERSION) $(GST_BASE_LIBS) \
  	$(LIBM) $(WIN32_LIBS) -lz $(BZ2_LIBS) $(LZMA_LIBS)
  
