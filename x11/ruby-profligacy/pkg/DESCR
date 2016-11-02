@@ -1,4 +1,0 @@
-Profligacy is a JRuby library that makes building Swing Graphical User
-Interface much easier than with Raw code. It's not a builder as with
-many other projects, but instead a simple Ruby way to structure the UI
-for the 80% common cases you'll encounter.
