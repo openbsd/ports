@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_Archive_Zip_Member_pm,v 1.2 2015/11/20 15:15:21 ajacoutot Exp $
+$OpenBSD: patch-lib_Archive_Zip_Member_pm,v 1.3 2016/11/02 22:28:52 jasper Exp $
 
 http://rt.cpan.org/Public/Bug/Display.html?id=61930
 
---- lib/Archive/Zip/Member.pm.orig	Wed Sep 23 19:41:14 2015
-+++ lib/Archive/Zip/Member.pm	Fri Nov 20 16:13:00 2015
-@@ -295,7 +295,7 @@ sub _mapPermissionsToUnix {
+--- lib/Archive/Zip/Member.pm.orig	Thu Aug 11 22:06:33 2016
++++ lib/Archive/Zip/Member.pm	Wed Nov  2 20:27:03 2016
+@@ -304,7 +304,7 @@ sub _mapPermissionsToUnix {
      if ($format == FA_AMIGA) {
          $attribs = $attribs >> 17 & 7;                         # Amiga RWE bits
          $mode    = $attribs << 6 | $attribs << 3 | $attribs;
@@ -13,7 +13,7 @@ http://rt.cpan.org/Public/Bug/Display.html?id=61930
      }
  
      if ($format == FA_THEOS) {
-@@ -315,7 +315,10 @@ sub _mapPermissionsToUnix {
+@@ -324,7 +324,10 @@ sub _mapPermissionsToUnix {
          || $format == FA_QDOS
          || $format == FA_TANDEM) {
          $mode = $attribs >> 16;
@@ -25,7 +25,7 @@ http://rt.cpan.org/Public/Bug/Display.html?id=61930
  
          # warn("local extra field is: ", $self->localExtraField, "\n");
  
-@@ -351,9 +354,13 @@ sub _mapPermissionsToUnix {
+@@ -360,9 +363,13 @@ sub _mapPermissionsToUnix {
  
      # keep previous $mode setting when its "owner"
      # part appears to be consistent with DOS attribute flags!
