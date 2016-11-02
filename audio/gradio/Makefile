@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/01 10:55:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/02 15:02:34 landry Exp $
 
 COMMENT =	internet radio browser and player
 DISTNAME =	gradio-5.0.0beta2
@@ -25,7 +25,8 @@ USE_GMAKE =		Yes
 
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.65
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS +=	lang/vala \
+			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
