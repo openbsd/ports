@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/10/22 19:35:12 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/11/02 17:57:36 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -44,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_n
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_pass1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_pass2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_pass3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_raw_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_recursion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_scanstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_separators.${MODPY_PYC_MAGIC_TAG}pyc
@@ -73,6 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_namedtuple.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_pass1.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_pass2.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_pass3.py
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_raw_json.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_recursion.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_scanstring.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_separators.py
