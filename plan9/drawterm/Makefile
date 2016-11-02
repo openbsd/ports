@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/02 07:42:55 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/02 07:43:40 jca Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el
 
@@ -24,8 +24,6 @@ NO_TEST=	Yes
 MAKE_FLAGS=	CONF=openbsd \
 		PORTS_CFLAGS="${CFLAGS}" \
 		PORTS_LDFLAGS="${LDFLAGS}"
-
-WRKDIST=	${WRKDIR}/${DISTNAME}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/drawterm ${PREFIX}/bin
