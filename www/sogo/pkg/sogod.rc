@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: sogod.rc,v 1.5 2011/04/18 12:48:29 sebastia Exp $
+# $OpenBSD: sogod.rc,v 1.6 2016/11/02 10:16:20 giovanni Exp $
 
 daemon="${TRUEPREFIX}/sbin/sogod"
 daemon_user="_sogo"
@@ -8,5 +8,9 @@ daemon_user="_sogo"
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+
+rc_pre() {
+	install -d -o _sogo -g _sogo /var/run/sogo/
+}
 
 rc_cmd $1
