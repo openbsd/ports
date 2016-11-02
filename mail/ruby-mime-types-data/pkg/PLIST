@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/02 19:29:32 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Code-of-Conduct.md
+${GEM_LIB}/gems/${DISTNAME}/Contributing.md
+${GEM_LIB}/gems/${DISTNAME}/History.md
+${GEM_LIB}/gems/${DISTNAME}/Licence.md
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/data/
+${GEM_LIB}/gems/${DISTNAME}/data/mime-types.json
+${GEM_LIB}/gems/${DISTNAME}/data/mime.content_type.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.docs.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.encoding.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.flags.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.friendly.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.pext.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.use_instead.column
+${GEM_LIB}/gems/${DISTNAME}/data/mime.xrefs.column
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/mime/
+${GEM_LIB}/gems/${DISTNAME}/lib/mime-types-data.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mime/types/
+${GEM_LIB}/gems/${DISTNAME}/lib/mime/types/data.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
