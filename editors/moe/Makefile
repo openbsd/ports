@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/11/02 22:44:20 jasper Exp $
 
 COMMENT =	powerful and user-friendly console text editor
-DISTNAME =	moe-1.7
+DISTNAME =	moe-1.8
 EXTRACT_SUFX =	.tar.lz
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	http://www.gnu.org/software/moe/moe.html
 
