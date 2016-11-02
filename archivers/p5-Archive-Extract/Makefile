@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/02 19:25:58 jasper Exp $
 
 COMMENT=	generic archive extracting mechanism for Perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	Archive-Extract-0.76
+DISTNAME =	Archive-Extract-0.78
 
 CATEGORIES=	archivers
 
