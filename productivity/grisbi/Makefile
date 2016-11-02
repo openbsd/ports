@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/11/01 18:04:06 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2016/11/02 15:37:26 landry Exp $
 
 COMMENT=	personal accounting application
 
@@ -46,7 +46,8 @@ CONFIGURE_ARGS=	--with-openssl
 
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.65
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS +=	devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
