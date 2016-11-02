@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/09/12 11:45:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2016/11/02 10:14:14 giovanni Exp $
 
 PORTROACH+=		limit:^2
 
@@ -6,13 +6,11 @@ COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		2.3.12
+VERSION =		2.3.17
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
-REVISION-mysql =	0
-REVISION-postgres =	0
 
 SO_MAJOR=	3
 SO_MINOR=	0
@@ -35,7 +33,9 @@ MULTI_PACKAGES=	-main -mysql -postgres
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 
-WANTLIB-main = 		c crypto ssl iconv lber ldap xml2 z \
+BUILD_DEPENDS =		shells/bash
+
+WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
 			${MODGNUSTEP_WANTLIB}
 WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl z \
 			${MODGNUSTEP_WANTLIB}
@@ -66,5 +66,8 @@ WRKDIST =	${WRKDIR}/SOPE
 post-extract:
 	# those fhs.make files are not needed and may cause harm if they exist
 	@find ${WRKSRC} -name fhs.make -exec rm {} \;
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
