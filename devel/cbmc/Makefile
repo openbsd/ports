@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.1.1.1 2016/10/23 00:13:10 jca Exp $
+#$OpenBSD: Makefile,v 1.2 2016/11/02 21:05:38 sthen Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -7,6 +7,7 @@ DISTNAME =	cbmc-5.5
 GH_ACCOUNT =	diffblue
 GH_PROJECT =	cbmc
 GH_TAGNAME =	cbmc-5.5
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -16,6 +17,8 @@ MAINTAINER =	Mages Simon <mages.simon@googlemail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c m
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} minisat2_2.2.1.orig.tar.gz:0
 MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/m/minisat2/}
