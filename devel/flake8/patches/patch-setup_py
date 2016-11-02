@@ -1,14 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.1 2015/12/28 17:30:09 jca Exp $
-Our version of pep8 1.6.2 is patched.
-https://mail.python.org/pipermail/code-quality/2015-March/000515.html
---- setup.py.orig	Sun Oct 25 21:27:50 2015
-+++ setup.py	Thu Dec 24 05:47:55 2015
-@@ -50,7 +50,7 @@ setup(
-     packages=["flake8", "flake8.tests"],
-     install_requires=[
-         "pyflakes >= 0.8.1, < 1.1",
--        "pep8 >= 1.5.7, != 1.6.0, != 1.6.1, != 1.6.2",
-+        "pep8 >= 1.5.7, != 1.6.0, != 1.6.1",
-         "mccabe >= 0.2.1, < 0.4",
-     ],
-     entry_points={
+$OpenBSD: patch-setup_py,v 1.2 2016/11/02 18:19:05 shadchin Exp $
+--- setup.py.orig	Fri Jul 29 18:20:27 2016
++++ setup.py	Wed Nov  2 23:07:43 2016
+@@ -15,7 +15,7 @@ import flake8
+ tests_require = ['mock', 'pytest']
+ 
+ requires = [
+-    "pyflakes >= 0.8.1, != 1.2.0, != 1.2.1, != 1.2.2, < 1.3.0",
++    "pyflakes >= 0.8.1, != 1.2.0, != 1.2.1, != 1.2.2, < 1.4.0",
+     "pycodestyle >= 2.0.0, < 2.1.0",
+     "mccabe >= 0.5.0, < 0.6.0",
+ ]
