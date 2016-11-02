@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/04/10 10:13:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/11/02 22:19:02 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -51,6 +51,7 @@ include/gstreamer-${API}/gst/gstcapsfeatures.h
 include/gstreamer-${API}/gst/gstchildproxy.h
 include/gstreamer-${API}/gst/gstclock.h
 include/gstreamer-${API}/gst/gstcompat.h
+include/gstreamer-${API}/gst/gstconfig.h
 include/gstreamer-${API}/gst/gstcontext.h
 include/gstreamer-${API}/gst/gstcontrolbinding.h
 include/gstreamer-${API}/gst/gstcontrolsource.h
@@ -90,6 +91,8 @@ include/gstreamer-${API}/gst/gstquery.h
 include/gstreamer-${API}/gst/gstregistry.h
 include/gstreamer-${API}/gst/gstsample.h
 include/gstreamer-${API}/gst/gstsegment.h
+include/gstreamer-${API}/gst/gststreamcollection.h
+include/gstreamer-${API}/gst/gststreams.h
 include/gstreamer-${API}/gst/gststructure.h
 include/gstreamer-${API}/gst/gstsystemclock.h
 include/gstreamer-${API}/gst/gsttaglist.h
@@ -124,9 +127,6 @@ lib/girepository-${API}/GstCheck-${API}.typelib
 lib/girepository-${API}/GstController-${API}.typelib
 lib/girepository-${API}/GstNet-${API}.typelib
 lib/gstreamer-${API}/
-lib/gstreamer-${API}/include/
-lib/gstreamer-${API}/include/gst/
-lib/gstreamer-${API}/include/gst/gstconfig.h
 lib/gstreamer-${API}/libgstcoreelements.so
 lib/gstreamer-${API}/libgstcoretracers.so
 lib/libgstbase-${API}.a
@@ -233,6 +233,8 @@ share/gtk-doc/html/gstreamer-${API}/gstreamer-GstParamSpec.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstParse.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstPoll.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstProtectionMeta.html
+share/gtk-doc/html/gstreamer-${API}/gstreamer-GstStream.html
+share/gtk-doc/html/gstreamer-${API}/gstreamer-GstStreamCollection.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstTocSetter.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstTypeFind.html
 share/gtk-doc/html/gstreamer-${API}/gstreamer-GstUri.html
@@ -254,6 +256,8 @@ share/gtk-doc/html/gstreamer-${API}/ix05.html
 share/gtk-doc/html/gstreamer-${API}/ix06.html
 share/gtk-doc/html/gstreamer-${API}/ix07.html
 share/gtk-doc/html/gstreamer-${API}/ix08.html
+share/gtk-doc/html/gstreamer-${API}/ix09.html
+share/gtk-doc/html/gstreamer-${API}/ix10.html
 share/gtk-doc/html/gstreamer-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-${API}/left.png
 share/gtk-doc/html/gstreamer-${API}/libgstreamer.html
@@ -311,6 +315,8 @@ share/gtk-doc/html/gstreamer-libs-${API}/ix03.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix04.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix05.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix06.html
+share/gtk-doc/html/gstreamer-libs-${API}/ix07.html
+share/gtk-doc/html/gstreamer-libs-${API}/ix08.html
 share/gtk-doc/html/gstreamer-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/left.png
 share/gtk-doc/html/gstreamer-libs-${API}/right-insensitive.png
