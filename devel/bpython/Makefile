@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/02 22:38:39 jasper Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.14.2
+MODPY_EGG_VERSION=0.15
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	http://bpython-interpreter.org/
 
@@ -19,7 +18,7 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS=Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-curtsies<0.2.0 \
+		devel/py-curtsies \
 		devel/py-greenlet \
 		devel/py-six \
 		devel/py-urwid \

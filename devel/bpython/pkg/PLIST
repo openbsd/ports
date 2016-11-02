@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/03 06:44:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/02 22:38:39 jasper Exp $
 bin/bpdb
 bin/bpython
 bin/bpython-curses
@@ -85,9 +85,17 @@ lib/python${MODPY_VERSION}/site-packages/bpython/line.py
 lib/python${MODPY_VERSION}/site-packages/bpython/line.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/pager.py
 lib/python${MODPY_VERSION}/site-packages/bpython/pager.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/paste.py
+lib/python${MODPY_VERSION}/site-packages/bpython/paste.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/patch_linecache.py
+lib/python${MODPY_VERSION}/site-packages/bpython/patch_linecache.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/repl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/repl.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/sample-config
+lib/python${MODPY_VERSION}/site-packages/bpython/simpleeval.py
+lib/python${MODPY_VERSION}/site-packages/bpython/simpleeval.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/simplerepl.py
+lib/python${MODPY_VERSION}/site-packages/bpython/simplerepl.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/__init__.pyc
@@ -116,6 +124,8 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_config.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_crashers.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_crashers.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies.py
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies_coderunner.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies_coderunner.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies_painting.py
@@ -146,6 +156,8 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test_preprocess.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_preprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_repl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_repl.pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_simpleeval.py
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_simpleeval.pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpython/translations/__init__.pyc
