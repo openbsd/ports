@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/11/02 07:36:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/11/02 08:13:58 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.22.1
-REVISION=		1
+GNOME_VERSION=		3.22.2
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -32,12 +31,13 @@ WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gtkmm-3.0 gtksourceview-3.0 harfbuzz harfbuzz-icu hogweed
 WANTLIB += hyphen iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
-WANTLIB += jpeg lzma m nettle nghttp2 notify orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pcre2-8
-WANTLIB += peas-1.0 pixman-1 png pthread pthread-stubs secret-1
-WANTLIB += sigc-2.0 soup-2.4 sqlite3 ssh2 ssl stdc++ tasn1 util
-WANTLIB += vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
-WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += jpeg json-glib-1.0 lzma m nettle nghttp2 notify orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
+WANTLIB += pcre pcre2-8 peas-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += secret-1 sigc-2.0 soup-2.4 sqlite3 ssh2 ssl stdc++
+WANTLIB += tasn1 util vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb
+WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
+WANTLIB += xslt z
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -57,7 +57,8 @@ BUILD_DEPENDS=		devel/ectags \
 			devel/mm-common
 RUN_DEPENDS=		devel/ectags
 
-LIB_DEPENDS=		devel/libgit2/libgit2-glib \
+LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
+			devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
 			devel/vte3 \
