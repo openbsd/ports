@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.2 2016/11/02 08:13:58 ajacoutot Exp $
+$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.3 2016/11/02 22:37:42 ajacoutot Exp $
 --- plugins/terminal/gb-terminal-view.c.orig	Mon Oct 31 07:34:39 2016
 +++ plugins/terminal/gb-terminal-view.c	Wed Nov  2 08:44:41 2016
 @@ -193,7 +193,6 @@ gb_terminal_respawn (GbTerminalView *self,
@@ -14,8 +14,8 @@ $OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.2 2016/11/02 08:13:58 aj
      IDE_GOTO (failure);
  
 -  if (ptsname_r (master_fd, name, sizeof name - 1) != 0)
-+  char *name = ptsname(masterfd);
-+  if (name == nullptr)
++  char *name = ptsname (master_fd);
++  if (name == NULL)
      IDE_GOTO (failure);
  
    if (-1 == (tty_fd = open (name, O_RDWR | O_CLOEXEC)))
