@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/10/02 07:48:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/11/02 18:28:30 rpointel Exp $
 @conflict py3-django->=1.9,<1.10
 @comment bin/django-admin
 bin/${LNAME}-admin.py
@@ -794,6 +794,10 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/${MODPY_PYCACHE}va
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/actions.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/apps.py
+lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/bin/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/bin/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/bin/${MODPY_PYCACHE}compress.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/bin/compress.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/checks.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/decorators.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/admin/exceptions.py
@@ -4999,6 +5003,10 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/models.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/templates/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/templates/sitemap.xml
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/templates/sitemap_index.xml
+lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/tests/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/tests/${MODPY_PYCACHE}test_flatpages.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/tests/test_flatpages.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sitemaps/views.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sites/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/sites/__init__.py
@@ -6202,6 +6210,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/Makefile
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/README
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/applyxrefs.py
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/cve_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/djangodocs.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/ticket_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_theme/
@@ -6561,6 +6570,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.12.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.14.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.15.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.8.3.txt
