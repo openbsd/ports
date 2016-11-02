@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/04/10 10:13:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/11/02 22:19:21 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.8.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -19,6 +19,7 @@ include/gstreamer-${API}/gst/audio/audio-enumtypes.h
 include/gstreamer-${API}/gst/audio/audio-format.h
 include/gstreamer-${API}/gst/audio/audio-info.h
 include/gstreamer-${API}/gst/audio/audio-quantize.h
+include/gstreamer-${API}/gst/audio/audio-resampler.h
 include/gstreamer-${API}/gst/audio/audio.h
 include/gstreamer-${API}/gst/audio/gstaudiobasesink.h
 include/gstreamer-${API}/gst/audio/gstaudiobasesrc.h
@@ -99,6 +100,7 @@ include/gstreamer-${API}/gst/video/gstvideofilter.h
 include/gstreamer-${API}/gst/video/gstvideometa.h
 include/gstreamer-${API}/gst/video/gstvideopool.h
 include/gstreamer-${API}/gst/video/gstvideosink.h
+include/gstreamer-${API}/gst/video/gstvideotimecode.h
 include/gstreamer-${API}/gst/video/gstvideoutils.h
 include/gstreamer-${API}/gst/video/navigation.h
 include/gstreamer-${API}/gst/video/video-blend.h
@@ -117,6 +119,7 @@ include/gstreamer-${API}/gst/video/video-resampler.h
 include/gstreamer-${API}/gst/video/video-scaler.h
 include/gstreamer-${API}/gst/video/video-tile.h
 include/gstreamer-${API}/gst/video/video.h
+include/gstreamer-${API}/gst/video/videodirection.h
 include/gstreamer-${API}/gst/video/videoorientation.h
 include/gstreamer-${API}/gst/video/videooverlay.h
 lib/girepository-${API}/GstAllocators-${API}.typelib
@@ -296,6 +299,7 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gsttagxmp.
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gsttagxmpwriter.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideo.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideoaffinetransformationmeta.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideodirection.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideofilter.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideometa.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gst-plugins-base-libs-gstvideoorientation.html
@@ -343,6 +347,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-audi
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-cdparanoiasrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-clockoverlay.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-decodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-decodebin3.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-encodebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-giosink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-giosrc.html
@@ -359,7 +364,9 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-ogmt
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-ogmvideoparse.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-opusdec.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-opusenc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-parsebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-playbin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-playbin3.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-playsink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-adder.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-plugin-alsa.html
@@ -405,6 +412,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-theo
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-theoraparse.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-timeoverlay.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-uridecodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-urisourcebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-videoconvert.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-videorate.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-videoscale.html
