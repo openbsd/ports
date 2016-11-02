@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_lib-ssl-iostream_dovecot-openssl-common_c,v 1.1 2016/11/02 17:41:24 sthen Exp $
+--- src/lib-ssl-iostream/dovecot-openssl-common.c.orig	Wed Nov  2 12:11:31 2016
++++ src/lib-ssl-iostream/dovecot-openssl-common.c	Wed Nov  2 12:21:04 2016
+@@ -10,7 +10,7 @@
+ static int openssl_init_refcount = 0;
+ static ENGINE *dovecot_openssl_engine;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ static void *dovecot_openssl_malloc(size_t size, const char *u0 ATTR_UNUSED, int u1 ATTR_UNUSED)
+ #else
+ static void *dovecot_openssl_malloc(size_t size)
+@@ -26,7 +26,7 @@ static void *dovecot_openssl_malloc(size_t size)
+ 	return mem;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ static void *dovecot_openssl_realloc(void *ptr, size_t size, const char *u0 ATTR_UNUSED, int u1 ATTR_UNUSED)
+ #else
+ static void *dovecot_openssl_realloc(void *ptr, size_t size)
+@@ -40,7 +40,7 @@ static void *dovecot_openssl_realloc(void *ptr, size_t
+ 	return mem;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ static void dovecot_openssl_free(void *ptr, const char *u0 ATTR_UNUSED, int u1 ATTR_UNUSED)
+ #else
+ static void dovecot_openssl_free(void *ptr)
+@@ -97,7 +97,7 @@ bool dovecot_openssl_common_global_unref(void)
+ 	CRYPTO_cleanup_all_ex_data();
+ #if OPENSSL_VERSION_NUMBER < 0x10000000L
+ 	ERR_remove_state(0);
+-#elif OPENSSL_VERSION_NUMBER < 0x10100000L
++#elif OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	ERR_remove_thread_state(NULL);
+ #endif
+ 	ERR_free_strings();

@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_lib-dcrypt_dcrypt-openssl_c,v 1.1 2016/11/02 17:41:24 sthen Exp $
+--- src/lib-dcrypt/dcrypt-openssl.c.orig	Wed Nov  2 12:11:31 2016
++++ src/lib-dcrypt/dcrypt-openssl.c	Wed Nov  2 12:22:26 2016
+@@ -67,7 +67,7 @@
+   2<tab>key algo oid<tab>1<tab>symmetric algo name<tab>salt<tab>hash algo<tab>rounds<tab>E(RSA = i2d_PrivateKey, EC=Private Point)<tab>key id
+ **/
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #define EVP_PKEY_get0_EC_KEY(x) x->pkey.ec
+ #define EVP_PKEY_get0_RSA(x) x->pkey.rsa
+ #define OBJ_length(o) ((o)->length)
+@@ -90,7 +90,7 @@ struct dcrypt_context_symmetric {
+ struct dcrypt_context_hmac {
+ 	pool_t pool;
+ 	const EVP_MD *md;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	HMAC_CTX *ctx;
+ #else
+ 	HMAC_CTX ctx;
+@@ -427,7 +427,7 @@ static
+ void dcrypt_openssl_ctx_hmac_destroy(struct dcrypt_context_hmac **ctx)
+ {
+ 	pool_t pool = (*ctx)->pool;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	if ((*ctx)->ctx) HMAC_CTX_free((*ctx)->ctx);
+ #else
+ 	HMAC_cleanup(&((*ctx)->ctx));
+@@ -470,7 +470,7 @@ bool dcrypt_openssl_ctx_hmac_init(struct dcrypt_contex
+ {
+ 	int ec;
+ 	i_assert(ctx->md != NULL);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	ctx->ctx = HMAC_CTX_new();
+ 	if (ctx->ctx == NULL) return dcrypt_openssl_error(error_r);
+ 	ec = HMAC_Init_ex(ctx->ctx, ctx->key, ctx->klen, ctx->md, NULL);
+@@ -484,7 +484,7 @@ static
+ bool dcrypt_openssl_ctx_hmac_update(struct dcrypt_context_hmac *ctx, const unsigned char *data, size_t data_len, const char **error_r)
+ {
+ 	int ec;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	ec = HMAC_Update(ctx->ctx, data, data_len);
+ #else
+ 	ec = HMAC_Update(&(ctx->ctx), data, data_len);
+@@ -498,7 +498,7 @@ bool dcrypt_openssl_ctx_hmac_final(struct dcrypt_conte
+ 	int ec;
+ 	unsigned char buf[HMAC_MAX_MD_CBLOCK];
+ 	unsigned int outl;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	ec = HMAC_Final(ctx->ctx, buf, &outl);
+ 	HMAC_CTX_free(ctx->ctx);
+ 	ctx->ctx = NULL;
+@@ -2133,7 +2133,7 @@ bool dcrypt_openssl_public_key_id_evp(EVP_PKEY *key, c
+ 	long len = BIO_get_mem_data(b, &ptr);
+ 	unsigned int hlen = sizeof(buf);
+ 	/* then hash it */
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	EVP_MD_CTX *ctx = EVP_MD_CTX_new();
+ #else
+ 	EVP_MD_CTX *ctx = EVP_MD_CTX_create();
+@@ -2147,7 +2147,7 @@ bool dcrypt_openssl_public_key_id_evp(EVP_PKEY *key, c
+ 		buffer_append(result, buf, hlen);
+ 		res = TRUE;
+ 	}
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	EVP_MD_CTX_free(ctx);
+ #else
+ 	EVP_MD_CTX_destroy(ctx);
