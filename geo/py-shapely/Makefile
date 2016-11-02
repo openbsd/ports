@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/13 08:58:04 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/02 19:27:54 danj Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.5.15
+MODPY_EGG_VERSION =	1.5.17
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	Toblerity
 GH_PROJECT =	Shapely
