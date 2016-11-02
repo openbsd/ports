@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/10/31 12:44:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2016/11/02 12:41:14 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -52,6 +52,11 @@ RUN_DEPENDS +=		x11/gnome/online-miners
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
+
+.if ${MACHINE_ARCH} == i386
+# undefined reference to `__sync_add_and_fetch_8'
+CFLAGS +=		-march=i686
+.endif
 
 # XXX
 # cc1: error: unrecognized command line option "-Wunused-but-set-variable"
