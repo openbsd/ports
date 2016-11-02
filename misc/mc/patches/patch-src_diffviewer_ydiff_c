@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_diffviewer_ydiff_c,v 1.2 2016/08/12 07:24:36 kirby Exp $
---- src/diffviewer/ydiff.c.orig	Sat May  7 18:42:52 2016
-+++ src/diffviewer/ydiff.c	Thu May 12 00:54:21 2016
-@@ -814,7 +814,7 @@ dff_execute (const char *args, const char *extra, cons
+$OpenBSD: patch-src_diffviewer_ydiff_c,v 1.3 2016/11/02 06:46:20 kirby Exp $
+--- src/diffviewer/ydiff.c.orig	Thu Sep 22 21:24:12 2016
++++ src/diffviewer/ydiff.c	Mon Oct 31 14:03:22 2016
+@@ -816,7 +816,7 @@ dff_execute (const char *args, const char *extra, cons
      /* escape potential $ to avoid shell variable substitutions in popen() */
      file1_esc = strutils_shell_escape (file1);
      file2_esc = strutils_shell_escape (file2);
