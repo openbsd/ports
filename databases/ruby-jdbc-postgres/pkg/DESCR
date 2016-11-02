@@ -1,2 +1,0 @@
-With jdbc-postgres you can connect to a PostgreSQL database from JRuby
-without messing around with your Java classpath.

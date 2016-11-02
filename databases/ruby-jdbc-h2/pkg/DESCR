@@ -1,2 +1,0 @@
-With jdbc-h2 you can connect to an H2 embedded database from JRuby
-without messing around with your Java classpath.

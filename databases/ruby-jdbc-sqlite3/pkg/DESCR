@@ -1,2 +1,0 @@
-With jdbc-sqlite3 you can connect to an SQLite3 embedded database from
-JRuby without messing around with your Java classpath.

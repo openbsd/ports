@@ -1,2 +1,0 @@
-With jdbc-mysql you can connect to a MySQL database from JRuby without
-messing around with your Java classpath.
