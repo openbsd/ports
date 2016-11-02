@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/10/03 07:44:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2016/11/02 08:20:43 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -232,8 +232,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/comparator.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/comparator.pyc
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/executor.py
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/executor.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/fileformat.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/fileformat.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/filegenerator.py
@@ -265,8 +263,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/r
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/register.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/sizeonly.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/sizeonly.pyc
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/tasks.py
-lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/tasks.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/transferconfig.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/transferconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/utils.py
