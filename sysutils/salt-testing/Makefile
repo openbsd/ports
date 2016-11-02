@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/08 07:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/02 17:41:48 ajacoutot Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
 MODPY_EGG_VERSION =	2016.9.7
 DISTNAME =		SaltTesting-${MODPY_EGG_VERSION}
 PKGNAME =		salt-testing-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -21,6 +22,7 @@ MODULES =		lang/python
 NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-mock \
+			sysutils/py-psutil \
 			sysutils/salt
 
 .include <bsd.port.mk>
