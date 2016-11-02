@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2016/10/26 12:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2016/11/02 22:18:39 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,7 +17,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.8.3
+V ?=			1.10.0
 API=			1.0
 SUBST_VARS +=		API
 
@@ -48,6 +48,9 @@ TEST_DEPENDS +=	${BASE_PKGPATH}
 .endif
 
 MODULES +=		lang/python
+
+MODULES +=		lang/clang
+MODCLANG_ARCHS=		*
 
 # python is only used to generate documentation
 MODPY_RUNDEP=		No
