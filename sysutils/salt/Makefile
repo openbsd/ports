@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2016/08/27 07:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2016/11/02 17:39:58 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -61,6 +61,7 @@ RUN_DEPENDS +=		devel/py-progressbar
 RUN_DEPENDS +=		security/py-M2Crypto
 
 # for tests
+TEST_IS_INTERACTIVE =	Yes # requires bumped open files
 PORTHOME =		${WRKDIST}
 TEST_DEPENDS =		databases/py-mysql \
 			devel/git \
