@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2016/11/01 13:23:21 rpe Exp $
+# $OpenBSD: Makefile,v 1.324 2016/11/02 15:24:53 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -215,10 +215,6 @@
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml
      SUBDIR += ruby-hiera-file
-     SUBDIR += ruby-jdbc-h2
-     SUBDIR += ruby-jdbc-mysql
-     SUBDIR += ruby-jdbc-postgres
-     SUBDIR += ruby-jdbc-sqlite3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby22
      SUBDIR += ruby-ldap,ruby23
