@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_iconv_lua,v 1.1.1.1 2016/11/02 12:30:39 fcambus Exp $
+
+Fix encoding names and remove test for unsupported encoding
+
+--- test_iconv.lua.orig	Tue Oct 25 21:39:29 2016
++++ test_iconv.lua	Tue Oct 25 21:39:51 2016
+@@ -93,9 +93,8 @@ function check_one(to, from, text)
+ end
+ 
+ check_one(termcs, "iso-8859-1", iso88591)
+-check_one(termcs, "utf8", utf8)
+-check_one(termcs, "utf16", utf16)
+-check_one(termcs, "EBCDIC-CP-ES", ebcdic)
++check_one(termcs, "utf-8", utf8)
++check_one(termcs, "utf-16", utf16)
+ 
+ 
+ -- The library must never crash the interpreter, even if the user tweaks
