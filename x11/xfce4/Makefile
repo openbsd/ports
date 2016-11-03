@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/03/24 21:05:37 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2016/11/03 10:21:26 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
@@ -6,9 +6,7 @@
      SUBDIR += gtk-xfce-engine
      SUBDIR += libxfce4util
      SUBDIR += libxfce4ui
-     SUBDIR += libxfcegui4
      SUBDIR += mousepad
-     SUBDIR += notification-daemon-xfce
      SUBDIR += orage
      SUBDIR += parole
      SUBDIR += ristretto
@@ -31,7 +29,6 @@
      SUBDIR += xfce4-icon-theme
      SUBDIR += xfce4-mailwatch
      SUBDIR += xfce4-mixer
-     SUBDIR += xfce4-modemlights
      SUBDIR += xfce4-mount
      SUBDIR += xfce4-mpc
      SUBDIR += xfce4-netload
@@ -41,7 +38,6 @@
      SUBDIR += xfce4-places
      SUBDIR += xfce4-power-manager
      SUBDIR += xfce4-pulseaudio
-     SUBDIR += xfce4-quicklauncher
      SUBDIR += xfce4-session
      SUBDIR += xfce4-screenshooter
      SUBDIR += xfce4-settings
@@ -53,13 +49,11 @@
      SUBDIR += xfce4-wavelan
      SUBDIR += xfce4-weather
      SUBDIR += xfce4-whiskermenu
-     SUBDIR += xfce4-wmdock
      SUBDIR += xfce4-xkb
      SUBDIR += xfconf
      SUBDIR += xfdashboard
      SUBDIR += xfdesktop
      SUBDIR += xfmpc
-     SUBDIR += xfprint
      SUBDIR += xfwm4
      SUBDIR += xfwm4-themes
 
