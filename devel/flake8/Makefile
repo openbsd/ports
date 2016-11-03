@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/02 18:19:05 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/03 13:36:07 shadchin Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
 MODPY_EGG_VERSION =	3.0.4
 DISTNAME =		flake8-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -29,6 +30,8 @@ RUN_DEPENDS =		devel/py-codestyle \
 			devel/py-enum34 \
 			devel/py-mccabe \
 			devel/pyflakes
+
+BUILD_DEPENDS =		devel/py-test-runner
 
 do-test:
 	touch ${WRKSRC}/tox.ini
