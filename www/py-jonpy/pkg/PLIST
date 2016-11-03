@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/02 19:38:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/03 11:45:12 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/jon/
 lib/python${MODPY_VERSION}/site-packages/jon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jon/__init__.pyc
@@ -28,21 +28,6 @@ lib/python${MODPY_VERSION}/site-packages/jon/wt/rowaccess.pyc
 lib/python${MODPY_VERSION}/site-packages/jon/wt/textblock.py
 lib/python${MODPY_VERSION}/site-packages/jon/wt/textblock.pyc
 lib/python${MODPY_VERSION}/site-packages/jon${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/doc/${MODPY_PY_PREFIX}jonpy/
-share/doc/${MODPY_PY_PREFIX}jonpy/cgi.html
-share/doc/${MODPY_PY_PREFIX}jonpy/dbpool.html
-share/doc/${MODPY_PY_PREFIX}jonpy/fcgi.html
-share/doc/${MODPY_PY_PREFIX}jonpy/index.html
-share/doc/${MODPY_PY_PREFIX}jonpy/mime.html
-share/doc/${MODPY_PY_PREFIX}jonpy/modpy.html
-share/doc/${MODPY_PY_PREFIX}jonpy/session.html
-share/doc/${MODPY_PY_PREFIX}jonpy/style.css
-share/doc/${MODPY_PY_PREFIX}jonpy/wsgi.html
-share/doc/${MODPY_PY_PREFIX}jonpy/wt-examples.html
-share/doc/${MODPY_PY_PREFIX}jonpy/wt-multiform.html
-share/doc/${MODPY_PY_PREFIX}jonpy/wt-rowaccess.html
-share/doc/${MODPY_PY_PREFIX}jonpy/wt-textblock.html
-share/doc/${MODPY_PY_PREFIX}jonpy/wt.html
 share/examples/${MODPY_PY_PREFIX}jonpy/
 share/examples/${MODPY_PY_PREFIX}jonpy/.htaccess
 share/examples/${MODPY_PY_PREFIX}jonpy/cgi-bin/
