@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/09/20 18:40:27 naddy Exp $
---- Makefile.in.orig	Mon Aug 25 21:24:49 2014
-+++ Makefile.in	Sat Sep 20 17:14:53 2014
+$OpenBSD: patch-Makefile_in,v 1.3 2016/11/03 11:40:11 naddy Exp $
+--- Makefile.in.orig	Thu Nov 12 00:01:46 2015
++++ Makefile.in	Thu Nov  3 12:36:25 2016
 @@ -64,7 +64,7 @@ datarootdir = $(DESTDIR)@datarootdir@
  libdir = $(DESTDIR)@libdir@
  libexecdir = $(DESTDIR)@libexecdir@
@@ -19,3 +19,12 @@ $OpenBSD: patch-Makefile_in,v 1.2 2014/09/20 18:40:27 naddy Exp $
  
  # Set this to -s if you want the binary to be stripped.
  LDFLAGS = @LDFLAGS@
+@@ -181,7 +181,7 @@ installflush: ircflush installdirs
+ installwserv: wserv installdirs
+ 	$(INSTALL) wserv $(INSTALL_WSERV)
+ 
+-installhelp:
++installhelp: installdirs
+ 	$(INSTALL_HELP_CMD)
+ 	find $(HELP_DIR) -type d -print | xargs chmod a+rx
+ 	find $(HELP_DIR) -type f -print | xargs chmod a+r
