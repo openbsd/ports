@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2016/09/01 10:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2016/11/03 10:27:15 jasper Exp $
 
-BROKEN-arm =	undefined reference to __sync atomic ops
 BROKEN-hppa =	undefined reference to __sync atomic ops
+BROKEN-mips64 =	undefined reference to __sync atomic ops
+BROKEN-mips64el =	undefined reference to __sync atomic ops
 
 COMMENT =	cross-platform 3D audio API
 
-V =		1.15.1
+V =		1.16.0
 EPOCH =		0
-REVISION =	4
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
@@ -20,32 +20,41 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m pthread sndio
+WANTLIB +=	c m pthread sndio
 
 MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2
 
-CONFIGURE_ARGS =-DCMAKE_C_FLAGS="${CFLAGS} -DNDEBUG"	\
-		-DCMAKE_BUILD_TYPE=OpenBSD		\
-		-DDLOPEN=Off				\
-		-DREQUIRE_SNDIO=On			\
-		-DPULSEAUDIO=Off			\
-		-DPORTAUDIO=Off				\
-		-DSOLARIS=Off				\
-		-DALSA=Off				\
-		-DOSS=Off				\
-		-DCOREAUDIO=Off				\
-		-DDSOUND=Off				\
-		-DOPENSL=Off				\
-		-DEXAMPLES=Off
+CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
+		-DALSOFT_SYSCONFDIR=${SYSCONFDIR} \
+		-DALSOFT_CONFIG_DESTINATION=share/examples/openal \
+		-DALSOFT_DLOPEN=Off \
+		-DALSOFT_UTILS=On \
+		-DALSOFT_EXAMPLES=Off \
+		-DALSOFT_REQUIRE_SNDIO=On \
+		-DALSOFT_BACKEND_ALSA=Off \
+		-DALSOFT_BACKEND_COREAUDIO=Off \
+		-DALSOFT_BACKEND_DSOUND=Off \
+		-DALSOFT_BACKEND_JACK=Off \
+		-DALSOFT_BACKEND_MMDEVAPI=Off \
+		-DALSOFT_BACKEND_OPENSL=Off \
+		-DALSOFT_BACKEND_OSS=Off \
+		-DALSOFT_BACKEND_PORTAUDIO=Off \
+		-DALSOFT_BACKEND_PULSEAUDIO=Off \
+		-DALSOFT_BACKEND_QSA=Off \
+		-DALSOFT_BACKEND_SOLARIS=Off \
+		-DALSOFT_BACKEND_WAVE=Off \
+		-DALSOFT_BACKEND_WINMM=Off
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake lang/clang
+MODCLANG_ARCHS = *
+MODCLANG_LANGS = c c++
 
 SEPARATE_BUILD =Yes
 NO_TEST =	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/Alc/alcConfig.c
+	@${SUBST_CMD} ${WRKSRC}/Alc/alcConfig.c ${WRKSRC}/alsoftrc.sample
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openal

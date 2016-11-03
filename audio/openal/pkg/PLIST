@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:31:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/03 10:27:16 jasper Exp $
 @bin bin/makehrtf
 @bin bin/openal-info
 include/AL/
@@ -14,3 +14,7 @@ share/examples/openal/
 @sample ${SYSCONFDIR}/openal/
 share/examples/openal/alsoftrc.sample
 @sample ${SYSCONFDIR}/openal/alsoft.conf
+share/openal/
+share/openal/hrtf/
+share/openal/hrtf/default-44100.mhr
+share/openal/hrtf/default-48000.mhr

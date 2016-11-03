@@ -1,7 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2013/03/11 15:26:15 bcallah Exp $
---- CMakeLists.txt.orig	Thu Mar  7 10:11:07 2013
-+++ CMakeLists.txt	Thu Mar  7 10:11:45 2013
-@@ -797,7 +797,7 @@ ENDIF()
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2016/11/03 10:27:15 jasper Exp $
+--- CMakeLists.txt.orig	Fri Aug 15 08:06:59 2014
++++ CMakeLists.txt	Sun Sep  4 22:58:36 2016
+@@ -186,7 +186,7 @@ HAVE_C11_ALIGNAS)
+ # Check if we have C11 _Atomic
+ CHECK_C_SOURCE_COMPILES(
+ "#include <stdatomic.h>
+- int _Atomic foo;
++ const int _Atomic foo = ATOMIC_VAR_INIT(~0);
+  int main()
+  {
+      return atomic_load(&foo);
+@@ -1134,7 +1134,7 @@ ENDIF()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample

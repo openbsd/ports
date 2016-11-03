@@ -1,12 +1,12 @@
-$OpenBSD: patch-Alc_alcConfig_c,v 1.2 2013/03/11 15:26:15 bcallah Exp $
---- Alc/alcConfig.c.orig	Tue Dec 11 15:35:55 2012
-+++ Alc/alcConfig.c	Thu Mar  7 10:10:08 2013
-@@ -227,7 +227,7 @@ void ReadALConfig(void)
-         }
-     }
- #else
--    f = fopen("/etc/openal/alsoft.conf", "r");
-+    f = fopen("${SYSCONFDIR}/openal/alsoft.conf", "r");
-     if(f)
-     {
-         LoadConfigFromFile(f);
+$OpenBSD: patch-Alc_alcConfig_c,v 1.3 2016/11/03 10:27:15 jasper Exp $
+--- Alc/alcConfig.c.orig	Fri Aug 15 08:06:59 2014
++++ Alc/alcConfig.c	Sun Sep  4 22:48:18 2016
+@@ -326,7 +326,7 @@ void ReadALConfig(void)
+     const char *str;
+     FILE *f;
+ 
+-    str = "/etc/openal/alsoft.conf";
++    str = "${SYSCONFDIR}/openal/alsoft.conf";
+ 
+     TRACE("Loading config %s...\n", str);
+     f = al_fopen(str, "r");
