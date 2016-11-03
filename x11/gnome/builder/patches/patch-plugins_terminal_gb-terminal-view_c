@@ -1,21 +1,24 @@
-$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.3 2016/11/02 22:37:42 ajacoutot Exp $
+$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.4 2016/11/03 10:37:34 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=773880
+
 --- plugins/terminal/gb-terminal-view.c.orig	Mon Oct 31 07:34:39 2016
-+++ plugins/terminal/gb-terminal-view.c	Wed Nov  2 08:44:41 2016
-@@ -193,7 +193,6 @@ gb_terminal_respawn (GbTerminalView *self,
++++ plugins/terminal/gb-terminal-view.c	Thu Nov  3 10:01:44 2016
+@@ -193,7 +193,7 @@ gb_terminal_respawn (GbTerminalView *self,
    gint64 now;
    int master_fd = -1;
    int tty_fd = -1;
 -  char name[PATH_MAX + 1];
++  char *name;
    gint stdout_fd = -1;
    gint stderr_fd = -1;
  
-@@ -255,7 +254,8 @@ gb_terminal_respawn (GbTerminalView *self,
+@@ -255,7 +255,7 @@ gb_terminal_respawn (GbTerminalView *self,
    if (unlockpt (master_fd) != 0)
      IDE_GOTO (failure);
  
 -  if (ptsname_r (master_fd, name, sizeof name - 1) != 0)
-+  char *name = ptsname (master_fd);
-+  if (name == NULL)
++  if (NULL == (name = ptsname (master_fd)))
      IDE_GOTO (failure);
  
    if (-1 == (tty_fd = open (name, O_RDWR | O_CLOEXEC)))
