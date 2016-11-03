@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.432 2016/10/31 21:35:28 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.433 2016/11/03 10:31:41 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -870,6 +870,12 @@ my $obsolete_reason = {
 	'vino' => 8,
 	'ttcp' => 0,
 	'aget' => 3,
+	'xfprint' => 3,
+	'notification-daemon-xfce' => 3,
+	'xfce4-wmdock' => 3,
+	'xfce4-modemlights' => 3,
+	'xfce4-quicklauncher' => 3,
+	'libxfcegui4' => 6
 };
 
 # reasons for obsolete packages
