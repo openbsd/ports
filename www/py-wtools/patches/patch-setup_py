@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1 2016/11/03 11:07:54 danj Exp $
+
+Remove strong requirements on unported test depends
+
+--- setup.py.orig	Fri Jul 22 14:01:01 2016
++++ setup.py	Thu Nov  3 11:33:25 2016
+@@ -129,7 +129,7 @@ class PreRelease(Command):
+             raise RuntimeError(
+                 "Current version of the package is equal or lower than the already published ones (PyPi). Increse version to be able to pass prerelease stage.")
+ 
+-requires = ['autopep8', 'six', 'pep8', 'pytest-cov', 'pytest-pep8', 'setuptools', 'pytest', 'pytest-timeout']
++requires = ['six']
+ 
+ setup(
+     name=NAME,
