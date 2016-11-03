@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.433 2016/11/03 10:31:41 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.434 2016/11/03 10:59:05 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -875,7 +875,9 @@ my $obsolete_reason = {
 	'xfce4-wmdock' => 3,
 	'xfce4-modemlights' => 3,
 	'xfce4-quicklauncher' => 3,
-	'libxfcegui4' => 6
+	'libxfcegui4' => 5,
+	'libsexy' => 5,
+	'twitux' => 3,
 };
 
 # reasons for obsolete packages
