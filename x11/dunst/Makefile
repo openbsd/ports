@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/03 18:42:51 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/03 09:46:44 danj Exp $
 
 COMMENT=	customizable and lightweight notification-daemon
 
 DISTNAME =	dunst-1.1.0
 
+REVISION =	0
+
 CATEGORIES =	x11
 
 HOMEPAGE=	http://www.knopwob.org/dunst/
 
-MAINTAINER =	Timo Myyrä <timo.myyra@wickedbsd.net>
+MAINTAINER =	Timo Myyra <timo.myyra@wickedbsd.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
