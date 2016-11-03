@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.989 2016/10/31 16:02:00 phessler Exp $
+# $OpenBSD: Makefile,v 1.990 2016/11/03 10:45:07 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -681,7 +681,6 @@
      SUBDIR += trickle
      SUBDIR += ttg
      SUBDIR += twirssi
-     SUBDIR += twitux
      SUBDIR += ucspi-tcp
      SUBDIR += ucspi-tools
      SUBDIR += ucspi-unix
