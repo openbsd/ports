@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/03 10:37:47 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2016/11/03 16:20:41 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.12.1
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

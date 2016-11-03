@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/11/03 10:37:45 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 datetime and calendar plugin
 
 XFCE_VERSION=	0.7.0
 XFCE_PLUGIN=	datetime
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

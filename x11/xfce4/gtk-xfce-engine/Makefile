@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2016/11/03 10:37:44 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 theme engine for Gtk+2
 
 XFCE_PROJECT=	gtk-xfce-engine
 XFCE_VERSION=	3.2.0
-REVISION=	0
+REVISION=	1
 HOMEPAGE=	http://www.xfce.org/projects/
 
 # GPLv2

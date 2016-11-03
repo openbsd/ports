@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/03 10:37:46 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
 XFCE_VERSION=	0.2.4
 XFCE_GOODIE=	xfce4-notifyd
-REVISION =	4
+REVISION =	5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

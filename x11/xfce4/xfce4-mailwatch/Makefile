@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/11/03 10:37:46 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.2.0
 XFCE_PLUGIN=	mailwatch
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
