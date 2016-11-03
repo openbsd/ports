@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_seg009_c,v 1.1.1.1 2016/11/03 17:30:32 robert Exp $
+--- src/seg009.c.orig	Thu Nov  3 18:07:22 2016
++++ src/seg009.c	Thu Nov  3 18:14:31 2016
+@@ -152,7 +152,7 @@ static FILE* open_dat_from_root_or_data_dir(const char
+ 	// if failed, try if the DAT file can be opened in the data/ directory, instead of the main folder
+ 	if (fp == NULL) {
+ 		char data_path[POP_MAX_PATH];
+-		snprintf(data_path, sizeof(data_path), "data/%s", filename);
++		snprintf(data_path, sizeof(data_path), "${PREFIX}/share/sdlpop/data/%s", filename);
+ 
+ 		// verify that this is a regular file and not a directory (otherwise, don't open)
+ 		struct stat path_stat;
+@@ -1634,7 +1634,7 @@ const int max_sound_id = 58;
+ char** sound_names = NULL;
+ 
+ void load_sound_names() {
+-	const char* names_path = "data/music/names.txt";
++	const char* names_path = "${PREFIX}/share/sdlpop/data/music/names.txt";
+ 	if (sound_names != NULL) return;
+ 	FILE* fp = fopen(names_path,"rt");
+ 	if (fp==NULL) return;
+@@ -1682,7 +1682,7 @@ sound_buffer_type* load_sound(int index) {
+ 				const char* ext=exts[i];
+ 				struct stat info;
+ 
+-				snprintf(filename, sizeof(filename), "data/music/%s.%s", sound_name(index), ext);
++				snprintf(filename, sizeof(filename), "${PREFIX}/share/sdlpop/data/music/%s.%s", sound_name(index), ext);
+ 				// Skip nonexistent files:
+ 				if (stat(filename, &info))
+ 					continue;
+@@ -2079,7 +2079,7 @@ void load_from_opendats_metadata(int resource_id, cons
+ 			if (len >= 5 && filename_no_ext[len-4] == '.') {
+ 				filename_no_ext[len-4] = '\0'; // terminate, so ".DAT" is deleted from the filename
+ 			}
+-			snprintf(image_filename,sizeof(image_filename),"data/%s/res%d.%s",filename_no_ext, resource_id, extension);
++			snprintf(image_filename,sizeof(image_filename),"${PREFIX}/share/sdlpop/data/%s/res%d.%s",filename_no_ext, resource_id, extension);
+ 			if (!use_custom_levelset) {
+ 				//printf("loading (binary) %s",image_filename);
+ 				fp = fopen(image_filename, "rb");
