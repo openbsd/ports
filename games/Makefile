@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2016/10/07 21:51:10 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.338 2016/11/03 17:30:52 robert Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -205,6 +205,7 @@
      SUBDIR += scorched3d
      SUBDIR += scummvm
      SUBDIR += scummvm-tools
+     SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
      SUBDIR += singularity
