@@ -1,13 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/26 11:00:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/03 16:20:22 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
-@comment ${GEM_EXTENSIONS_DIR}/
-@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete$
-@comment {GEM_EXTENSIONS_DIR}/gem_make.out
-@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
-@comment ${GEM_EXTENSIONS_DIR}/msgpack/
-@comment ${GEM_EXTENSIONS_DIR}/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
@@ -22,8 +14,10 @@ ${GEM_LIB}/gems/${DISTNAME}/bench/
 ${GEM_LIB}/gems/${DISTNAME}/bench/pack.rb
 ${GEM_LIB}/gems/${DISTNAME}/bench/pack_log.rb
 ${GEM_LIB}/gems/${DISTNAME}/bench/pack_log_long.rb
+${GEM_LIB}/gems/${DISTNAME}/bench/pack_symbols.rb
 ${GEM_LIB}/gems/${DISTNAME}/bench/run.sh
 ${GEM_LIB}/gems/${DISTNAME}/bench/run_long.sh
+${GEM_LIB}/gems/${DISTNAME}/bench/run_symbols.sh
 ${GEM_LIB}/gems/${DISTNAME}/bench/unpack.rb
 ${GEM_LIB}/gems/${DISTNAME}/bench/unpack_log.rb
 ${GEM_LIB}/gems/${DISTNAME}/bench/unpack_log_long.rb
@@ -37,74 +31,13 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/extension_value.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Buffer.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Decoder.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Encoder.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/ExtensionRegistry.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/ExtensionValue.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Factory.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/MessagePackLibrary.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Packer.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Types.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Unpacker.java
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/.RUBYARCHDIR.-.msgpack.time
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer_class.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer_class.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer_class.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/compat.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/core_ext.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/core_ext.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/core_ext.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/extension_value_class.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/extension_value_class.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/extension_value_class.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/factory_class.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/factory_class.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/factory_class.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/msgpack.so
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_class.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_class.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_class.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_ext_registry.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_ext_registry.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/packer_ext_registry.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/rbinit.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/rbinit.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/rmem.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/rmem.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/rmem.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/sysdep.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/sysdep_endian.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/sysdep_types.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_class.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_class.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_class.o
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_ext_registry.c
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_ext_registry.h
-${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/unpacker_ext_registry.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/packer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/symbol.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/msgpack.gemspec
