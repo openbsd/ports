@@ -1,0 +1,12 @@
+$OpenBSD: patch-OpenAL32_alBuffer_c,v 1.1 2016/11/03 10:27:38 jasper Exp $
+--- OpenAL32/alBuffer.c.orig	Fri Aug 15 08:06:59 2014
++++ OpenAL32/alBuffer.c	Sun Sep  4 22:48:18 2016
+@@ -1179,7 +1179,7 @@ static ALboolean DecomposeFormat(ALenum format, enum F
+         { AL_7POINT1_16_SOFT,  FmtX71, FmtShort },
+         { AL_7POINT1_32F_SOFT, FmtX71, FmtFloat },
+     };
+-    ALuint i;
++    volatile ALuint i;
+ 
+     for(i = 0;i < COUNTOF(list);i++)
+     {
