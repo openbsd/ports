@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/17 19:55:11 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/03 10:21:04 florian Exp $
 
 COMMENT =		python socket.io client library
 
-MODPY_EGG_VERSION =	0.6.5
+MODPY_EGG_VERSION =	0.6.7
 DISTNAME =		socketIO_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-socketIO-client-${MODPY_EGG_VERSION}
 
@@ -23,8 +23,11 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS =		net/py-websocket-client${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
+			net/py-websocket-client${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
+# Requires running stuff with node in another terminal
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
