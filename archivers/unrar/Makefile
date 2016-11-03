@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2016/11/03 15:20:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2016/11/03 16:09:22 naddy Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -10,6 +10,7 @@ COMMENT=	extract, list, and test RAR archives
 # by "5.00".
 
 PKGNAME=	unrar-5.40
+EPOCH=		1
 DISTNAME=	unrarsrc-5.4.5
 CATEGORIES=	archivers
 
