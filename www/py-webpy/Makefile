@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/11/03 10:12:34 danj Exp $
 
 COMMENT=	web framework for python
 
-VERSION=	0.37
+VERSION=	0.38
 DISTNAME=	web.py-${VERSION}
 PKGNAME=	py-webpy-${VERSION}
 CATEGORIES=	www
