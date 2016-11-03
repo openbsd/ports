@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.580 2016/11/02 15:28:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.581 2016/11/03 10:47:29 landry Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -150,7 +150,6 @@
      SUBDIR += libgdiplus
      SUBDIR += libkscreen
      SUBDIR += libqaccessibilityclient
-     SUBDIR += libsexy
      SUBDIR += libxdg-basedir
      SUBDIR += lsw
      SUBDIR += lumina
