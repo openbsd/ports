@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/06/29 16:14:38 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/11/03 21:54:04 sebastia Exp $
 @option is-branch
 @conflict puppetdb-<4.0.0
 @newgroup _puppetdb:719
@@ -34,7 +34,10 @@ share/puppetdb/cli/apps/config-migration
 share/puppetdb/cli/apps/export
 share/puppetdb/cli/apps/foreground
 share/puppetdb/cli/apps/import
+share/puppetdb/cli/apps/reload
 share/puppetdb/cli/apps/ssl-setup
+share/puppetdb/cli/apps/start
+share/puppetdb/cli/apps/stop
 share/puppetdb/puppetdb.jar
 @owner _puppetdb
 @sample /var/db/puppetlabs/server/data/puppetdb/
