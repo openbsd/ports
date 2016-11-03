@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/02 15:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/03 09:13:41 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
@@ -8,8 +8,8 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-main =		5
-REVISION-extras =	0
+REVISION-main =		6
+REVISION-extras =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -40,7 +40,7 @@ RUN_DEPENDS-main += \
 		x11/xfce4/mousepad \
 		x11/xfce4/xfce4-appfinder \
 		x11/xfce4/xfce4-mixer \
-		xfce4-notifyd-*|notification-daemon-xfce-*:x11/xfce4/xfce4-notifyd \
+		x11/xfce4/xfce4-notifyd \
 		x11/xfce4/xfce4-taskmanager \
 		x11/xfce4/tumbler
 
@@ -68,13 +68,11 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-fsguard \
 		x11/xfce4/xfce4-genmon \
 		x11/xfce4/xfce4-mailwatch \
-		x11/xfce4/xfce4-modemlights \
 		x11/xfce4/xfce4-mount \
 		x11/xfce4/xfce4-mpc \
 		x11/xfce4/xfce4-netload \
 		x11/xfce4/xfce4-notes \
 		x11/xfce4/xfce4-places \
-		x11/xfce4/xfce4-quicklauncher \
 		x11/xfce4/xfce4-screenshooter \
 		x11/xfce4/xfce4-smartbookmark \
 		x11/xfce4/xfce4-systemload \
