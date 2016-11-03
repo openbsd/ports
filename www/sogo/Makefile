@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2016/11/02 21:34:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.65 2016/11/03 21:52:59 sebastia Exp $
 
 PORTROACH+=	limit:^2
 
 COMMENT = 	web based groupware server
 
 VERSION =	2.3.17
-REVISION =	0
+REVISION =	1
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
