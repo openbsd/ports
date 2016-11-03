@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/03 11:07:54 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/03 17:09:59 danj Exp $
 
 COMMENT=		WSDL parsing services package for Python
 
@@ -18,6 +18,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
+BUILD_DEPENDS=		devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 # Tests are not provided in pypi tarball
