@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2016/10/19 07:48:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.88 2016/11/03 10:59:51 fcambus Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
     SUBDIR += advancemame
     SUBDIR += advancemess
+    SUBDIR += atari800
     SUBDIR += bochs
     SUBDIR += bochs,debug
     SUBDIR += coldfire
