@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2016/07/09 09:09:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2016/11/03 10:37:44 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -27,6 +27,6 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		xfce4util z pthread-stubs xcb ical icalss icalvcal popt ffi \
 		xcb-shm xfce4panel-1.0 notify dbus-1 dbus-glib-1 graphite2 \
-		harfbuzz icui18n icuuc
+		harfbuzz icui18n icuuc iconv intl
 
 .include <bsd.port.mk>

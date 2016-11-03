@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/21 11:21:13 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2016/11/03 10:37:47 landry Exp $
 
 COMMENT=	Xfce4 command line panel plugin
 
@@ -18,6 +18,6 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4util z
-WANTLIB += harfbuzz graphite2 xfce4ui-1
+WANTLIB += harfbuzz graphite2 xfce4ui-1 iconv intl
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/27 08:16:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/03 10:37:45 landry Exp $
 
 COMMENT =	Thunar archive plugin
 
@@ -24,6 +24,6 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs thunarx-2 xcb xcb-render xcb-shm xfce4util
-WANTLIB += z
+WANTLIB += z iconv intl
 
 .include <bsd.port.mk>

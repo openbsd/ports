@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/30 12:10:49 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2016/11/03 10:37:47 landry Exp $
 
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard
 XFCE_VERSION =	0.6.0
+REVISION =	0
 PORTROACH +=	limitw:1,even
 SHARED_LIBS +=	xfdashboard	0.0 # 600.0
 
@@ -31,7 +32,7 @@ WANTLIB += graphite2 gthread-2.0 harfbuzz json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4util xfconf-0 z
-WANTLIB += EGL drm gbm xcb-dri2 xcb-shape xcb-xfixes
+WANTLIB += EGL drm gbm xcb-dri2 xcb-xfixes iconv intl
 WANTLIB += ICE SM atk-bridge-2.0 atspi gtk-3 epoxy wnck-3 xfce4ui-2
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfdashboard/

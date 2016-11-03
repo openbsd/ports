@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/01 15:28:30 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2016/11/03 10:37:46 landry Exp $
 
 COMMENT=	Xfce4 mpd client panel plugin
 
@@ -20,7 +20,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm xfce4util z xcb-util xfce4ui-2
 WANTLIB += ICE SM X11-xcb ffi startup-notification-1
-WANTLIB += harfbuzz pthread graphite2
+WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 gtk-3
 
 .include <bsd.port.mk>

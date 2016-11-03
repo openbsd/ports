@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2016/11/03 10:37:45 landry Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.1.5
-REVISION =	0
+REVISION =	1
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 # GPLv2
@@ -19,7 +19,7 @@ WANTLIB += pthread-stubs sasl2 serf-1 sqlite3 svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 thunarx-2 xcb xcb-render
-WANTLIB += xcb-shm xfce4util z
+WANTLIB += xcb-shm xfce4util z iconv intl
 
 MODULES =	x11/xfce4
 
@@ -27,8 +27,7 @@ MODXFCE_ICON_CACHE=	Yes
 
 RUN_DEPENDS =	devel/git
 
-LIB_DEPENDS =	databases/sqlite3 \
-		x11/xfce4/thunar \
+LIB_DEPENDS =	x11/xfce4/thunar \
 		devel/subversion
 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/26 13:17:57 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/03 10:37:46 landry Exp $
 
 COMMENT =	Xfce4 power manager
 
@@ -35,7 +35,7 @@ WANTLIB += graphite2 gthread-2.0 harfbuzz m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-2.0 xfce4ui-2
-WANTLIB += xfce4util xfconf-0 z upower-glib
+WANTLIB += xfce4util xfconf-0 z upower-glib iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject epoxy gdk-3 gtk-3
 
 .include <bsd.port.mk>

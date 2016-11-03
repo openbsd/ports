@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/07/21 07:33:27 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2016/11/03 10:37:48 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
@@ -32,7 +32,7 @@ WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += thunarx-2 wnck-1 xcb xcb-util xcb-render xcb-shm xfce4ui-1
 WANTLIB += xfce4util xfconf-0 z
-WANTLIB += harfbuzz graphite2
+WANTLIB += harfbuzz graphite2 iconv intl
 
 FAKE_FLAGS=	menudir=${PREFIX}/share/examples/xfdesktop
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2016/11/03 10:37:46 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
@@ -19,7 +19,7 @@ WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs startup-notification-1 unique-1.0 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util xfconf-0 xml2 z
+WANTLIB += xfce4util xfconf-0 xml2 z iconv intl
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

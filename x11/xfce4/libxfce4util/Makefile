@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/16 20:19:59 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2016/11/03 10:37:44 landry Exp $
 
 COMMENT=	Xfce4 basic utility library
 
@@ -17,6 +17,6 @@ MODULES=	x11/xfce4
 CONFIGURE_ARGS=	--disable-linker-opts
 
 LIB_DEPENDS=	devel/glib2
-WANTLIB += c glib-2.0 pcre pthread
+WANTLIB += c glib-2.0 pcre pthread iconv intl
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2015/04/04 09:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2016/11/03 10:37:47 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
@@ -37,7 +37,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs startup-notification-1 wnck-1 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4ui-1 xfce4util xfconf-0 z
-WANTLIB += harfbuzz graphite2 upower-glib polkit-gobject-1
+WANTLIB += harfbuzz graphite2 upower-glib polkit-gobject-1 iconv intl
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \
 		conffilesdir=${PREFIX}/share/examples/xfce4-session \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/09/18 07:34:43 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2016/11/03 10:37:44 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
@@ -33,6 +33,6 @@ WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 xcb-util xfce4ui-1\
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread z pthread-stubs xcb X11-xcb startup-notification-1 \
-		xcb-render xfce4util xcb-shm ffi harfbuzz graphite2
+		xcb-render xfce4util xcb-shm ffi harfbuzz graphite2 iconv intl
 
 .include <bsd.port.mk>

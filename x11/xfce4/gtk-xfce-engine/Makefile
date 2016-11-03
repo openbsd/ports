@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/08/17 19:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/11/03 10:37:44 landry Exp $
 
 COMMENT=	Xfce4 theme engine for Gtk+2
 
@@ -20,6 +20,6 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes xcb-shm \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png z pthread-stubs \
 		pthread xcb gdk_pixbuf-2.0 gthread-2.0 xcb-render ffi \
-		graphite2 harfbuzz gdk-x11-2.0 gtk-x11-2.0
+		graphite2 harfbuzz gdk-x11-2.0 gtk-x11-2.0 iconv intl
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/06/26 07:45:02 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2016/11/03 10:37:45 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -44,6 +44,6 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util z xfconf-0 harfbuzz graphite2
+WANTLIB += xfce4util z xfconf-0 harfbuzz graphite2 iconv intl
 
 .include <bsd.port.mk>

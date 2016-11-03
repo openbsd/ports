@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2016/10/31 15:35:48 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2016/11/03 10:37:44 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
 XFCE_VERSION=	0.8.1
 XFCE_GOODIE=	ristretto
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +25,6 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes SM ICE \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pthread xfce4util xfce4ui-1 z \
-		xfconf-0
+		xfconf-0 intl
 
 .include <bsd.port.mk>

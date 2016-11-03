@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/04/26 12:38:52 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2016/11/03 10:37:45 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
@@ -16,7 +16,7 @@ MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 LIB_DEPENDS=	x11/xfce4/xfce4-panel
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender iconv intl
 WANTLIB += atk-1.0 c cairo expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0

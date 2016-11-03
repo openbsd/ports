@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/11/01 15:24:18 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2016/11/03 10:37:46 landry Exp $
 
 COMMENT =	Xfce4 disk usage monitor panel plugin
 
@@ -21,7 +21,7 @@ WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs xcb
 WANTLIB += ICE SM X11-xcb ffi gthread-2.0
 WANTLIB += pcre startup-notification-1 xcb-util xfce4ui-2
 WANTLIB += xcb-render xcb-shm xfce4util z
-WANTLIB += harfbuzz pthread graphite2
+WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 gtk-3
 
 

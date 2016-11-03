@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/24 07:22:14 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/03 10:37:46 landry Exp $
 
 COMMENT=	Xfce4 mount device panel plugin
 
@@ -20,7 +20,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4util xfce4ui-1 z
 WANTLIB += ICE SM X11-xcb ffi pcre startup-notification-1
-WANTLIB += harfbuzz pthread graphite2
+WANTLIB += harfbuzz pthread graphite2 iconv intl
 
 # needed to correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS="-liconv"

@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.24 2016/08/30 13:44:33 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.25 2016/11/03 10:37:44 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -13,7 +13,7 @@ EXTRACT_SUFX?=	.tar.bz2
 .if !defined(XFCE_NO_SRC)
 LIBTOOL_FLAGS?=	--tag=disable-static
 
-MODULES+=	devel/gettext textproc/intltool
+MODULES+=	textproc/intltool
 .endif
 
 # if version is not defined, it's the DE version
