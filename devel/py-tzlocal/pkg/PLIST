@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/07 21:16:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/03 10:10:38 florian Exp $
 lib/python${MODPY_VERSION}/site-packages/tzlocal/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
@@ -37,6 +36,10 @@ lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/conf.d/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/timezone_setting/etc/conf.d/clock
+lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/
+lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/
+lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/db/
+lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/vardbzoneinfo/var/db/zoneinfo
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/etc/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/test_data/zone_setting/etc/sysconfig/

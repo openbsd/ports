@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/07 21:16:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/03 10:10:38 florian Exp $
 
 COMMENT =		python tzinfo object for the local timezone
 
-MODPY_EGG_VERSION =	1.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.3
 DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -24,6 +23,6 @@ FLAVOR?=
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-tz
+RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
