@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/26 03:46:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/04 21:43:47 jeremy Exp $
 
 COMMENT =	discount implementation of John Gruber's Markdown
 
-DISTNAME =	rdiscount-2.1.8
+DISTNAME =	rdiscount-2.2.0.1
 CATEGORIES =	textproc
 
 # BSD
@@ -12,7 +12,8 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem ext
 
-MODRUBY_TEST = ruby
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+MODRUBY_TEST =	ruby
 MODRUBY_TEST_TARGET = -e 'ARGV.each{|f| require f}' ./test/*_test.rb
 
 post-install:
