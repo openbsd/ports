@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2016/05/15 15:48:41 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2016/11/04 10:31:44 danj Exp $
 
 COMMENT =		Python easy_install replacement
 
-MODPY_EGG_VERSION =	8.1.2
+MODPY_EGG_VERSION =	9.0.0
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -22,6 +22,7 @@ BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR ?=
 
+# No test suites in pypi tarball
 NO_TEST =		Yes
 
 DOCSRC =	${WRKSRC}/docs
