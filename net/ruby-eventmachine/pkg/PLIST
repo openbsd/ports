@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/09/19 22:08:35 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/11/04 21:39:12 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/GNU
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/docs/
 ${GEM_LIB}/gems/${DISTNAME}/docs/DocumentationGuidesIndex.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/GettingStarted.md
@@ -26,7 +21,6 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/old/RELEASE_NOTES
 ${GEM_LIB}/gems/${DISTNAME}/docs/old/SMTP
 ${GEM_LIB}/gems/${DISTNAME}/docs/old/SPAWNED_PROCESSES
 ${GEM_LIB}/gems/${DISTNAME}/docs/old/TODO
-${GEM_LIB}/gems/${DISTNAME}/eventmachine.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/guides/
 ${GEM_LIB}/gems/${DISTNAME}/examples/guides/getting_started/
@@ -92,12 +86,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/fastfilereaderext.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/jeventmachine.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rubyeventmachine.so
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/
-${GEM_LIB}/gems/${DISTNAME}/rakelib/cpp.rake_example
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/package.rake
 ${GEM_LIB}/gems/${DISTNAME}/rakelib/test.rake
 ${GEM_LIB}/gems/${DISTNAME}/tests/
 ${GEM_LIB}/gems/${DISTNAME}/tests/client.crt
 ${GEM_LIB}/gems/${DISTNAME}/tests/client.key
+${GEM_LIB}/gems/${DISTNAME}/tests/dhparam.pem
 ${GEM_LIB}/gems/${DISTNAME}/tests/em_test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_attach.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_basic.rb
@@ -111,6 +105,7 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_epoll.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_error_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_exc.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_file_watch.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_fork.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_futures.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_get_sock_opt.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_handler_check.rb
@@ -119,6 +114,8 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_httpclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_httpclient2.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_idle_connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_inactivity_timeout.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ipv4.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ipv6.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_iterator.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_kb.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_line_protocol.rb
@@ -146,7 +143,11 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_smtpclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_smtpserver.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_spawn.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_args.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_dhparam.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_ecdh_curve.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_protocols.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ssl_verify.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_stomp.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_system.rb
