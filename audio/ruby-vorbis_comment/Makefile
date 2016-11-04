@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/04 21:26:37 jeremy Exp $
 
 COMMENT =	ruby library for reading/writing vorbis comments
 
 DISTNAME =	vorbis_comment-1.0.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	audio
 
 HOMEPAGE=	http://vorbiscomment.rubyforge.org/

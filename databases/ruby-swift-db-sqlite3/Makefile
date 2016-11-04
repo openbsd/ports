@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/04 21:26:37 jeremy Exp $
 
 COMMENT =	sqlite3 driver for swift
 
 DISTNAME =	swift-db-sqlite3-0.1.5
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>

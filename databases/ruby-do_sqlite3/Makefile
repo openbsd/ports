@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2016/11/04 21:26:37 jeremy Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
 VERSION =	0.10.17
-REVISION =	0
+REVISION =	1
 DISTNAME =	do_sqlite3-${VERSION}
 CATEGORIES =	databases
 

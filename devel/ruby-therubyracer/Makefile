@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/17 17:03:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/04 21:26:38 jeremy Exp $
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
 DISTNAME =	therubyracer-0.11.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/cowboyd/therubyracer
