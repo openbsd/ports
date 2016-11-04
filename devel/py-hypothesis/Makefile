@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/06 12:23:06 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/04 08:07:53 shadchin Exp $
 
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	3.5.3
+MODPY_EGG_VERSION =	3.6.0
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -15,8 +15,6 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-
-RUN_DEPENDS =		devel/py-uncompyle6${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
