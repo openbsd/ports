@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/12/07 21:34:08 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/04 21:27:44 jeremy Exp $
 ${GEM_BIN}/amalgalite-pack${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -17,7 +17,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/blob.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/bootstrap.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/define_aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/define_function.rb
-${GEM_LIB}/gems/${DISTNAME}/examples/fts3.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/fts5.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/gem-db.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/require_me.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/requires.rb
