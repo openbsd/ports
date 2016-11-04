@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2015/07/26 03:28:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/11/04 21:28:51 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
-PKGNAME=	ldap-0.9.17
+PKGNAME=	ldap-0.9.19
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
@@ -21,16 +21,5 @@ LIB_DEPENDS=		databases/openldap
 
 CONFIGURE_STYLE=	ruby gem ext
 CONFIGURE_ARGS=		--without-libldap
-
-TEST_TARGET=		test
-TEST_DEPENDS=	databases/openldap,-server
-TEST_IS_INTERACTIVE = Yes
-
-pre-build:
-	mkdir -p ${GEM_BASE}/build_info;
-
-do-test:
-	cd ${WRKSRC} &&	/bin/sh ./test/test.sh ruby openldap2 \
-		${LOCALBASE}/libexec/slapd ${SYSCONFDIR}/openldap/schema/
 
 .include <bsd.port.mk>
