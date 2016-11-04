@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2016/11/04 15:49:38 sthen Exp $
 
 SHARED_LIBS +=	mupdf		4.0
 SHARED_LIBS +=	mupdfthird	0.0
@@ -8,7 +8,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.9a
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc x11
 
@@ -58,7 +58,7 @@ MAKE_ENV += CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps"
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		HAVE_CURL=yes \
 		CURL_LIB="-lcurl" \
-		CURL_LIBS="-lpthread -lidn -lssl -lcurl" \
+		CURL_LIBS="-lpthread -lssl -lcurl" \
 		SYS_OPENSSL_LIBS="-lssl -lcrypto" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBmupdf_VERSION="${LIBmupdf_VERSION}" \
