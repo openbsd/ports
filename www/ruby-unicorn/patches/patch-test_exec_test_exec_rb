@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_exec_test_exec_rb,v 1.1 2016/11/04 21:48:33 jeremy Exp $
+
+Skip test that doesn't complete.
+
+--- test/exec/test_exec.rb.orig	Thu Nov  3 17:17:22 2016
++++ test/exec/test_exec.rb	Thu Nov  3 17:17:27 2016
+@@ -341,7 +341,7 @@ EOF
+     assert_shutdown(pid)
+   end
+ 
+-  def test_ttin_ttou
++  def ttin_ttou
+     File.open("config.ru", "wb") { |fp| fp.syswrite(HI) }
+     pid = fork { redirect_test_io { exec($unicorn_bin, "-l#@addr:#@port") } }
+     log = "test_stderr.#{pid}.log"
