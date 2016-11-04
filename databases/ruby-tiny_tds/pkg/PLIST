@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/05/05 22:45:39 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/04 21:31:10 jeremy Exp $
 ${GEM_BIN}/defncopy${GEM_BIN_SUFFIX}
 ${GEM_BIN}/tsql${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/CODE_OF_CONDUCT.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/ISSUE_TEMPLATE.md
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -26,6 +29,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/tiny_tds.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/version.rb
+${GEM_LIB}/gems/${DISTNAME}/ports/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/freetds/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/freetds/1.00.15/
+${GEM_LIB}/gems/${DISTNAME}/ports/patches/freetds/1.00.15/0001-mingw_missing_inet_pton.diff
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/appveyor/
 ${GEM_LIB}/gems/${DISTNAME}/test/appveyor/dbsetup.ps1
@@ -42,6 +50,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2000.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2005.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2008.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2014.sql
+${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2016.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_azure.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sybase_ase.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema_test.rb
