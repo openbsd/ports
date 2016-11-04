@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/10 20:48:30 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/04 21:46:12 jeremy Exp $
 ${GEM_BIN}/puma${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pumactl${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -15,7 +15,6 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/puma
 ${GEM_LIB}/gems/${DISTNAME}/bin/puma-wild
 ${GEM_LIB}/gems/${DISTNAME}/bin/pumactl
 ${GEM_LIB}/gems/${DISTNAME}/docs/
-${GEM_LIB}/gems/${DISTNAME}/docs/config.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/nginx.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/signals.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/systemd.md
