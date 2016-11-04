@@ -1,0 +1,22 @@
+$OpenBSD: patch-plugins_alac_demux_c,v 1.1 2016/11/04 10:10:47 dcoppa Exp $
+
+commit 550488a10db0acfbe149a4910a9a7170da2a770a
+Author: Alexey Yakovenko <wakeroid@gmail.com>
+Date:   Mon Oct 10 10:45:24 2016 +0200
+
+alac: fixed demuxer mdat/moov parser
+
+--- plugins/alac/demux.c.orig	Sun Jun 19 13:26:18 2016
++++ plugins/alac/demux.c	Fri Nov  4 11:01:26 2016
+@@ -530,9 +530,8 @@ static int read_chunk_moov(qtmovie_t *qtmovie, size_t 
+             read_chunk_iods(qtmovie, sub_chunk_len);
+             break;
+         default:
+-            trace ("(moov) unknown chunk id: %c%c%c%c\n",
+-                    SPLITFOURCC(sub_chunk_id));
+-            return 0;
++            stream_skip(qtmovie->stream, sub_chunk_len-8);
++            break;
+         }
+ 
+         size_remaining -= sub_chunk_len;
