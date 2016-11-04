@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/26 03:33:31 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/04 21:31:46 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -142,6 +142,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/GNUmakefile
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/GlobalVariable.c
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/LastErrorTest.c
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/NumberTest.c
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/PipeHelper.h
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/PipeHelperPosix.c
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/PipeHelperWindows.c
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/PointerTest.c
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/ReferenceTest.c
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/fixtures/StringTest.c
