@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/09/12 11:45:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/04 11:15:14 ajacoutot Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		3
+REVISION =		4
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -36,9 +36,22 @@ MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
-			x11/qt4 \
-			lang/lua
-BUILD_DEPENDS =		lang/fpc
+			lang/ghc \
+			lang/lua \
+			x11/qt4
+
+BUILD_DEPENDS +=	archivers/hs-zlib \
+			devel/hs-vector \
+			devel/hs-network \
+			devel/hs-random \
+			devel/hs-hslogger \
+			devel/hs-dataenc \
+			devel/hs-utf8-string \
+			lang/fpc \
+			security/hs-SHA \
+			security/hs-entropy \
+			textproc/hs-bytestring-show
+
 LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-ttf \
 			devel/sdl-net \
@@ -47,31 +60,14 @@ LIB_DEPENDS-main =	devel/sdl-image \
 			graphics/freeglut \
 			${MODQT4_LIB_DEPENDS} \
 			${MODLUA_LIB_DEPENDS}
+
 LIB_DEPENDS-server =	converters/libiconv
 
 CONFIGURE_ARGS +=	-DNOVIDEOREC=ON
 
 CONFIGURE_ENV +=	HOME="${WRKBUILD}"
 
-PSEUDO_FLAVORS = no_server
-FLAVOR ?=
-
-.if ${FLAVOR:Mno_server}
-CONFIGURE_ARGS +=	-DNOSERVER=ON
-.else
-MODULES +=		lang/ghc
-BUILD_DEPENDS +=	devel/hs-vector \
-			devel/hs-network \
-			devel/hs-random \
-			devel/hs-hslogger \
-			devel/hs-dataenc \
-			devel/hs-utf8-string \
-			security/hs-SHA \
-			security/hs-entropy \
-			textproc/hs-bytestring-show \
-			archivers/hs-zlib
 MODGHC_BUILD =		nort
-.endif
 
 NO_TEST =		Yes
 

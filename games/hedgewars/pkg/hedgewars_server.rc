@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: hedgewars_server.rc,v 1.1.1.1 2015/12/27 21:40:57 pascal Exp $
+# $OpenBSD: hedgewars_server.rc,v 1.2 2016/11/04 11:15:14 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/hedgewars-server"
 daemon_user="_hedgewars"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
 rc_bg=YES
+rc_reload=NO
 
 rc_cmd $1
