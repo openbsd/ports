@@ -1,12 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/12/29 20:21:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/11/04 21:38:34 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
-@comment ${GEM_EXTENSIONS_DIR}/
-@comment ${GEM_EXTENSIONS_DIR}/RMagick2.so
-@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
-@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
-@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.editorconfig
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -348,38 +341,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/rotating_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/spinner.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/thumbnail.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/vignette.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/RMagick2.so
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/extconf.h
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.h
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmdraw.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmdraw.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmenum.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmenum.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmfill.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmfill.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmilist.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmilist.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmimage.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmimage.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rminfo.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rminfo.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmain.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmain.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmontage.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmontage.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmpixel.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmpixel.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmstruct.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmstruct.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmutil.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmutil.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/RMagick2.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/rmagick/
@@ -431,4 +392,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/cmyk.icm
 ${GEM_LIB}/gems/${DISTNAME}/test/srgb.icm
 ${GEM_LIB}/gems/${DISTNAME}/test/test_all_basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tmpnam_test.rb
+${GEM_LIB}/gems/${DISTNAME}/wercker.yml
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
