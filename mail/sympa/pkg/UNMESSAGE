@@ -1,4 +1,2 @@
-To completely deinstall sympa you need to:
-* remove the symlink enabling the web interface
-    # rm -f /var/www/conf/modules/sympa.conf
-* remove the sympa mail aliases from your MTA config
+To completely deinstall sympa don't forget to remove the mail aliases
+from your MTA config.

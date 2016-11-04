@@ -1,11 +1,11 @@
-$OpenBSD: README,v 1.8 2016/06/27 19:36:50 sthen Exp $
+$OpenBSD: README,v 1.9 2016/11/04 10:22:26 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-SYMPA is now installed, and sample configuration files were created in
-${SYMPA_HOME}${SYSCONFDIR}/sympa.conf and ${SYMPA_HOME}${SYSCONFDIR}/wwsympa.conf
+SYMPA is now installed, and sample configuration files was created in
+${SYMPA_HOME}${SYSCONFDIR}/sympa.conf
 
 Basic configuration
 ===================
@@ -13,8 +13,9 @@ Basic configuration
 You should first edit them to suit your needs, at least http_host,
 domain, listmaster, db_type, db_host, db_user, db_passwd, wwsympa_url
 settings in ${SYMPA_HOME}${SYSCONFDIR}/sympa.conf, and then configure the needed
-database with one of the ${TRUEPREFIX}/share/examples/sympa/create_db.*
-provided schemas.
+database. For SQLite, you need to manually create the database file and make
+sure _sympa user can write to it.
+
 You should also install the corresponding p5-DBD-{mysql,SQLite,Pg} module.
 Moreover, p5-ldap package is needed if you plan to use LDAP features
 and p5-SOAP-Lite package is needed if you plan to use sympa_soap_server.
@@ -22,16 +23,29 @@ and p5-SOAP-Lite package is needed if you plan to use sympa_soap_server.
 WWSympa configuration
 =====================
 
-To enable WWSympa within Apache once wwsympa.fcgi has been spawned,
-please create a symbolic link from /var/www/conf/modules.sample/sympa.conf
-to /var/www/conf/modules/sympa.conf
+To enable WWSympa within nginx once wwsympa.fcgi has been spawned,
+a sample configuration for nginx follows.
 
-# ln -s /var/www/conf/modules.sample/sympa.conf \
-        /var/www/conf/modules
-# apachectl stop
-# apachectl start
+----<>----<>----<>----<>----<>----
+server {
+	server_name sympa.example.com;
 
-WWSympa should be available at http://domain.tld/sympa/
+	location /static-sympa {
+		alias /var/www/sympa/;
+	}
+
+
+	location / {
+	fastcgi_pass localhost:1026;
+	fastcgi_split_path_info ^(/sympa)(.+)$;
+	include fastcgi_params;
+	fastcgi_param PATH_INFO $fastcgi_path_info;
+	fastcgi_param SCRIPT_FILENAME ${LOCALBASE}/libexec/sympa/wwsympa-wrapper.fcgi;
+	}
+}
+----<>----<>----<>----<>----<>----
+
+With that, WWSympa should be available at http://sympa.example.com/sympa/
 
 Startup/Shutdown configuration
 ==============================

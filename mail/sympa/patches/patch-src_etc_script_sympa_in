@@ -1,155 +1,41 @@
-$OpenBSD: patch-src_etc_script_sympa_in,v 1.3 2011/08/16 10:06:58 landry Exp $
---- src/etc/script/sympa.in.orig	Wed Nov 17 08:25:42 2010
-+++ src/etc/script/sympa.in	Sun Aug  7 11:43:46 2011
-@@ -14,43 +14,11 @@
- # chkconfig: 345 95 05
- # description: sympa is a powerfull mailing lists management system.
- 
--if [ -f --initdir--/functions ]; then
--    # Source function library.
--    . --initdir--/functions
--    
--    ## Set a flag 
--    use_functions=1
--fi
--
--if [ -f /etc/sysconfig/network ]; then
--    # Get config.
--    . /etc/sysconfig/network
--fi
--
- # OSTYPE is not defined on Solaris
- if [ ! "${OSTYPE}" ]; then
-     OSTYPE=`uname -s`
- fi
- 
--# OSTYPE *is* defined on Solaris 10! (bug #3149)
--case "$OSTYPE" in
--        *solaris*)
--        OSTYPE=SunOS
--        ;;
--esac
--
--if [ -f /etc/SuSE-release ] ; then
--    OSTYPE='Suse'
--fi
--
--if [ -f /etc/debian_version ] ; then
--    OSTYPE='Debian'
--fi
--
--if [ -f /etc/slackware-version ] ; then
--    OSTYPE='Slack'
--fi
--
- # Sympa parameters
- # Sympa binaries directory
- sympadir="--sbindir--"
-@@ -59,12 +27,7 @@ sympadir="--sbindir--"
- sympaconf="--CONFIG--"
- wwsympaconf="--WWSCONFIG--"
- 
--##'echo -n' not supported with SH on Solaris
--if [ ${OSTYPE} = "SunOS" ]; then
--  echo_opt=""
--else
-   echo_opt="-n"
--fi
- 
- # End of parameters
- 
-@@ -76,16 +39,11 @@ sympa_status() {
-         return 1
-     fi
-  
--    if [ ${use_functions} ]; then
--
--      status $1.pl
--
--    else
-        # First try "/u1/home/sympa/*.pid" files
-        if [ -f --piddir--/$1.pid ] ; then
-              pid=`head -1 --piddir--/$1.pid | tr -s ' ' '|'`
+$OpenBSD: patch-src_etc_script_sympa_in,v 1.4 2016/11/04 10:22:26 landry Exp $
+--- src/etc/script/sympa.in.orig	Wed Jun 10 18:24:26 2015
++++ src/etc/script/sympa.in	Thu Nov  3 17:10:49 2016
+@@ -90,7 +51,7 @@ sympa_status() {
+        if [ -f ${sympapiddir}/$1.pid ] ; then
+              pid=`head -1 ${sympapiddir}/$1.pid | tr -s ' ' '|'`
               if [ "$pid" != "" ] ; then
 -                 running=`ps -A | egrep "$pid"`
 +                 running=`pgrep -f $1.pl`
                   if [ "$running" != "" ]; then
                       echo "$1 (pid(s) $pid) is active..."
                       return 0
-@@ -97,7 +55,6 @@ sympa_status() {
-         fi
-         echo "$1 is stopped."
-         return 3
--    fi
- }
- 
- # Start a module
-@@ -107,18 +64,7 @@ sympa_module_start() {
-         return 1
-     fi
- 
--#	if [ $1 = "sympa" -a $lang != "" ]; then
--#		startparam="-l $lang"
--#	else
--#		startparam=""
--#	fi
-- 
--	if [ ${use_functions} ]; then
--		$sympadir/$1.pl $startparam && success || failure
--	else
--		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
--	fi
--	echo
-+	$sympadir/$1.pl && echo "success" || echo "failure"
- }
- 
- # Test state of module before startup
-@@ -159,25 +105,21 @@ sympa_stop() {
+@@ -188,7 +137,7 @@ sympa_stop() {
  	if [ "$pids" != "" ]; then
  	    for pid in $pids; do
  		killcount=0
--		running=`ps -A | grep "$pid ..* $1\\.pl"`
+-		running=`ps -A | grep "$pid ..* $comm"`
 +		running=`pgrep -f $1.pl`
  		while [ "$running" != "" ]; do
  		    if [ $killcount -gt 10 ]; then
--			if [ ${use_functions} ]; then
--			    failure
--			else
- 			    echo 'failure'
--			fi
- 			return 3
+ 			if [ ${use_functions} ]; then
+@@ -200,13 +149,13 @@ sympa_stop() {
  		    fi
  
  		    kill -TERM $pid >/dev/null 2>&1
--		    running=`ps -A | grep "$pid ..* $1\\.pl"`
+-		    running=`ps -A | grep "$pid ..* $comm"`
 +		    running=`pgrep -f $1.pl`
  		    if [ "$running" = "" ]; then
  			runcount=`expr $runcount + 1`
  			break
  		    fi
  		    sleep 2
--		    running=`ps -A | grep "$pid ..* $1\\.pl"`
+-		    running=`ps -A | grep "$pid ..* $comm"`
 +		    running=`pgrep -f $1.pl`
  		    if [ "$running" = "" ]; then
  			runcount=`expr $runcount + 1`
  			break
-@@ -187,15 +129,10 @@ sympa_stop() {
- 	    done
- 	fi
- 	if [ $runcount -gt 0 ]; then
--	    if [ ${use_functions} ]; then
--		success
--	    else
- 		echo 'success'
--	    fi
- 	else
- 	    echo 'died'
- 	fi
--	echo
-     else
- 	echo "Module $1.pl not running"
-     fi
-@@ -203,14 +140,6 @@ sympa_stop() {
+@@ -232,14 +176,6 @@ sympa_stop() {
  }
  
  
@@ -164,35 +50,22 @@ $OpenBSD: patch-src_etc_script_sympa_in,v 1.3 2011/08/16 10:06:58 landry Exp $
  # Check config files
  [ -d $sympadir ] || exit 0
  [ -f $sympaconf ] || exit 0
-@@ -227,7 +156,6 @@ case "$1" in
- 		sympa_start bounced
- 		sympa_start task_manager
- 		touch --lockdir--/sympa
--		echo
- 	else
- 
- 		echo "Sympa seems active. No action will be taken."
-@@ -258,17 +186,22 @@ case "$1" in
- 		echo "Status file for subsystem found."
+@@ -297,11 +233,13 @@ case "$1" in
  	else
  		echo "Status file for subsystem NOT found."
-+		exit 1
  	fi
- 	sympa_status sympa
-+	[ $? = 0 ] || exit 1
- 	sympa_status bulk
-+	[ $? = 0 ] || exit 1
- 	sympa_status archived
-+	[ $? = 0 ] || exit 1
- 	sympa_status bounced
-+	[ $? = 0 ] || exit 1
- 	sympa_status task_manager
-+	[ $? = 0 ] || exit 1
+-	sympa_status sympa_msg
+-	sympa_status bulk
+-	sympa_status archived
+-	sympa_status bounced
+-	sympa_status task_manager
++	failed=0
++	sympa_status sympa_msg || failed=1
++	sympa_status bulk || failed=1
++	sympa_status archived || failed=1
++	sympa_status bounced || failed=1
++	sympa_status task_manager || failed=1
++	if [ $failed == 1 ] ; then exit 1 ; fi
  	;;
    restart)
  	echo "Restarting Sympa subsystem: "
- 	$0 stop && $0 start
--	echo
- 	;;
-   *)
- 	echo "Usage: $0 {start|stop|status|restart}"
