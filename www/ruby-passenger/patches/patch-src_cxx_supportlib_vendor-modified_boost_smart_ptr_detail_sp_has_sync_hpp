@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cxx_supportlib_vendor-modified_boost_smart_ptr_detail_sp_has_sync_hpp,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+--- src/cxx_supportlib/vendor-modified/boost/smart_ptr/detail/sp_has_sync.hpp.orig	Mon Jul 25 19:56:06 2016
++++ src/cxx_supportlib/vendor-modified/boost/smart_ptr/detail/sp_has_sync.hpp	Tue Nov  1 13:18:15 2016
+@@ -30,7 +30,7 @@
+ 
+ # define BOOST_SP_HAS_SYNC
+ 
+-#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 )
++#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined( __hppa )
+ 
+ #define BOOST_SP_HAS_SYNC
+ 

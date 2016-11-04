@@ -1,10 +1,10 @@
-$OpenBSD: patch-helper-scripts_download_binaries_extconf_rb,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+$OpenBSD: patch-src_helper-scripts_download_binaries_extconf_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
 
 OpenBSD doesn't download binaries when building ports.
 
---- helper-scripts/download_binaries/extconf.rb.orig	Sat Jul 18 18:36:28 2015
-+++ helper-scripts/download_binaries/extconf.rb	Sat Jul 18 18:36:32 2015
-@@ -35,6 +35,8 @@ File.open("Makefile", "w") do |f|
+--- src/helper-scripts/download_binaries/extconf.rb.orig	Mon Jul 25 19:56:07 2016
++++ src/helper-scripts/download_binaries/extconf.rb	Tue Nov  1 13:18:15 2016
+@@ -36,6 +36,8 @@ File.open("Makefile", "w") do |f|
    f.puts "\ttrue"
  end
  

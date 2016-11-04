@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_config_installation_utils_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+
+Remove hiding of build steps.
+
+--- src/ruby_supportlib/phusion_passenger/config/installation_utils.rb.orig	Tue Nov  1 15:25:06 2016
++++ src/ruby_supportlib/phusion_passenger/config/installation_utils.rb	Tue Nov  1 15:26:57 2016
+@@ -125,42 +125,7 @@ module PhusionPassenger
+       end
+ 
+       def run_rake_task!(target)
+-        total_lines = `#{rake} #{target} --dry-run STDERR_TO_STDOUT=1 2>&1`.split("\n").size - 1
+-        partial_backlog = ""
+-        logfile = PhusionPassenger::Utils::TmpIO.new("passenger-install-log",
+-          :mode => File::WRONLY, :unlink_immediately => false)
+-
+-        begin
+-          command = "#{rake} #{target} --trace STDERR_TO_STDOUT=1 2>&1"
+-          IO.popen(command, "rb") do |io|
+-            progress = 1
+-            while !io.eof?
+-              line = io.readline
+-              logfile.write(line)
+-              yield(progress, total_lines)
+-              if line =~ /^\*\* /
+-                partial_backlog.replace("")
+-                progress += 1
+-              else
+-                partial_backlog << line
+-              end
+-            end
+-          end
+-          if $?.exitstatus != 0
+-            colors = @colors || PhusionPassenger::Utils::AnsiColors.new
+-            stderr = @stderr || STDERR
+-            stderr.puts
+-            stderr.puts "#{colors.red}*** ERROR: a Rake command failed. You can find the full " +
+-              "log in #{logfile.path}. Below, you can find the last few lines of the command's output.#{colors.reset}"
+-            stderr.puts "#{colors.red}------------- Begin command output snippet -------------#{colors.reset}"
+-            stderr.puts(partial_backlog)
+-            stderr.puts "#{colors.red}------------- End command output snippet -------------#{colors.reset}"
+-            stderr.puts "#{colors.red}The full log can be found in #{logfile.path}#{colors.reset}"
+-            exit 1
+-          end
+-        ensure
+-          logfile.close
+-        end
++        system "#{rake} #{target} --trace STDERR_TO_STDOUT=1"
+       end
+ 
+     private

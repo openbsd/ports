@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_phusion_passenger_platform_info_compiler_rb,v 1.5 2015/07/26 01:33:26 jeremy Exp $
---- lib/phusion_passenger/platform_info/compiler.rb.orig	Sat Jul 18 19:06:41 2015
-+++ lib/phusion_passenger/platform_info/compiler.rb	Sat Jul 18 19:06:52 2015
-@@ -223,7 +223,7 @@ module PhusionPassenger
+$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_platform_info_compiler_rb,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+--- src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb.orig	Mon Jul 25 19:56:07 2016
++++ src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb	Tue Nov  1 13:18:15 2016
+@@ -224,7 +224,7 @@ module PhusionPassenger
          f.close
          begin
            command = create_compiler_command(language,

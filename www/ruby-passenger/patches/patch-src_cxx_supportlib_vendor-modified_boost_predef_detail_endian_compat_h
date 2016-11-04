@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_cxx_supportlib_vendor-modified_boost_predef_detail_endian_compat_h,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+--- src/cxx_supportlib/vendor-modified/boost/predef/detail/endian_compat.h.orig	Mon Jul 25 19:56:05 2016
++++ src/cxx_supportlib/vendor-modified/boost/predef/detail/endian_compat.h	Tue Nov  1 13:41:58 2016
+@@ -21,6 +21,15 @@ http://www.boost.org/LICENSE_1_0.txt)
+ #if BOOST_ENDIAN_LITTLE_WORD
+ #   define BOOST_PDP_ENDIAN
+ #   define BOOST_BYTE_ORDER 2134
++#elif defined(__OpenBSD__)
++# include <sys/types.h>
++# if (_BYTE_ORDER == _LITTLE_ENDIAN)
++#  define BOOST_LITTLE_ENDIAN
++#  define BOOST_BYTE_ORDER 1234
++# elif (_BYTE_ORDER == _BIG_ENDIAN)
++#  define BOOST_BIG_ENDIAN
++#  define BOOST_BYTE_ORDER 4321
++# endif
+ #endif
+ 
+ #endif

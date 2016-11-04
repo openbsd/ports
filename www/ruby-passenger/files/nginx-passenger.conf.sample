@@ -1,4 +1,4 @@
-# $OpenBSD: nginx-passenger.conf.sample,v 1.4 2013/05/07 23:20:11 jeremy Exp $
+# $OpenBSD: nginx-passenger.conf.sample,v 1.5 2016/11/04 22:08:19 jeremy Exp $
 #
 # Example nginx.conf for Phusion Passenger
 #
@@ -7,6 +7,7 @@
 
 user www;
 worker_processes  1;
+load_module "modules/ngx_http_passenger_module.so";
 
 events {
     worker_connections  1024;

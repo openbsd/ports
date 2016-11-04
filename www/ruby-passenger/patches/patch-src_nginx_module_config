@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_nginx_module_config,v 1.1 2016/11/04 22:08:19 jeremy Exp $
+--- src/nginx_module/config.orig	Mon Jul 25 19:56:07 2016
++++ src/nginx_module/config	Tue Nov  1 13:24:07 2016
+@@ -1,6 +1,6 @@
+ # passenger-config is run with the 'ruby' command in $PATH, even when natively packaged,
+ # so we check whether 'ruby' is correctly in $PATH.
+-if ! ruby -v >/dev/null 2>/dev/null; then
++if ! ${RUBY} -v >/dev/null 2>/dev/null; then
+     echo '*** ERROR: Cannot find the "ruby" command in $PATH. Please fix your $PATH. You can learn more about $PATH at: https://www.phusionpassenger.com/library/indepth/environment_variables.html#the-path-environment-variable'
+     echo '*** Do you think that you set $PATH correctly, and you happen to be using sudo or rvmsudo? Read this: https://www.phusionpassenger.com/library/indepth/environment_variables.html#environment-variables-and-sudo'
+     exit 1
+@@ -12,7 +12,7 @@ fi
+ PATH="$ngx_addon_dir/../../bin:$PATH"
+ export PATH
+ 
+-PASSENGER_CONFIG=${PASSENGER_CONFIG:-passenger-config}
++PASSENGER_CONFIG=${PASSENGER_CONFIG:-passenger-config${GEM_BIN_SUFFIX}}
+ BUILD_DIRECTIVE="nginx"
+ COMPILE_CHECK_DIRECTIVE="--compiled"
+ 
+@@ -24,7 +24,7 @@ fi
+ # N.B. the compile check only looks at whether the common library objects are compiled and it assumes that
+ # their presence indicates a good build was performed. If other essential files were manually deleted the
+ # rake $BUILD_DIRECTIVE task (or rake clean) can be run manually to repair/reset the build.
+-if test "x$PASSENGER_LIBS" = "x" && ! $PASSENGER_CONFIG $COMPILE_CHECK_DIRECTIVE; then
++if false; then
+     echo "*** The Phusion Passenger support files are not yet compiled. Compiling them for you... ***"
+     old_dir=`pwd`
+     if ! cd $ngx_addon_dir; then
