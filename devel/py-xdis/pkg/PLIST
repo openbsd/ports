@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/10/23 08:35:55 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/04 07:12:33 shadchin Exp $
 bin/pydisasm${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xdis/
 lib/python${MODPY_VERSION}/site-packages/xdis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -40,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/xdis/load.py
 lib/python${MODPY_VERSION}/site-packages/xdis/magics.py
 lib/python${MODPY_VERSION}/site-packages/xdis/main.py
 lib/python${MODPY_VERSION}/site-packages/xdis/marsh.py
+lib/python${MODPY_VERSION}/site-packages/xdis/namedtuple25.py
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/
 lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdis/opcodes/${MODPY_PYCACHE}/
