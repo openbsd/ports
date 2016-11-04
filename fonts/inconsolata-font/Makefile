@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/08 17:32:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/04 15:53:59 rpe Exp $
 
 COMMENT=		monospace font designed for coders
 
@@ -22,6 +22,7 @@ MODULES=		font
 FONTTYPES=		otf
 
 NO_BUILD=		Yes
+NO_TEST=		Yes
 
 pre-install:
 	cp ${FULLDISTDIR}/${DISTFILES} ${WRKSRC}

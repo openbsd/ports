@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/08 17:32:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/11/04 15:53:59 rpe Exp $
 
 TYPEFACE =		andika
 V =			5.000
@@ -18,6 +18,7 @@ MASTER_SITES =		http://software.sil.org/downloads/andika/
 MODULES +=		font
 
 NO_BUILD =		Yes
+NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/andika
 

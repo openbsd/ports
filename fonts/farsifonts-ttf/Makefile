@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/08 17:32:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/04 15:53:59 rpe Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		font
 
 NO_BUILD=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/farsifonts-$V
 

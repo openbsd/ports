@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/04 15:53:59 rpe Exp $
 
 COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	font
 
 NO_BUILD =	Yes
+NO_TEST =	Yes
 
 DOCDIR =	${PREFIX}/share/doc/blockzone
 

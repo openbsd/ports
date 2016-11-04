@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/08 17:32:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/04 15:53:59 rpe Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
@@ -22,6 +22,7 @@ MODULES=	font
 
 WRKDIST=	${WRKDIR}/wqy-bitmapfont
 NO_BUILD=	Yes
+NO_TEST=	Yes
 WQYFONTDIR=	${PREFIX}/share/fonts/wqy
 USE_X11 =	Yes
 

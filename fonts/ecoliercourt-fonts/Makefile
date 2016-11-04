@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/08 17:32:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/04 15:53:59 rpe Exp $
 
 COMMENT=	dip pen style TTF fonts
 
@@ -21,6 +21,7 @@ DIST_SUBDIR=	ecoliercourt
 EXTRACT_ONLY=
 
 NO_BUILD=	Yes
+NO_TEST=	Yes
 
 pre-install:
 	cp ${FULLDISTDIR}/*.ttf ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/08 17:32:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/04 15:53:59 rpe Exp $
 
 TYPEFACE =		gentium
 V =			5.000
@@ -16,6 +16,7 @@ MASTER_SITES =		http://software.sil.org/downloads/gentium/
 MODULES =		font
 
 NO_BUILD =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 DOCDIR =		${PREFIX}/share/doc/gentium
