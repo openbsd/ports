@@ -1,0 +1,2 @@
+The ngx_http_perl_module module is used to implement location and variable
+handlers in Perl and insert Perl calls into SSI.

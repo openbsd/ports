@@ -1,0 +1,4 @@
+The nginx mailproxy module enables the mail proxy features of nginx.  It
+allows for user redirection to IMAP/POP3/SMTP backends using an external
+HTTP authentication server, including SSL/STARTTLS support and a range of
+authentication methods.

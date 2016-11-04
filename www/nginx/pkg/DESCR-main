@@ -1,0 +1,9 @@
+This is the stable branch of nginx, as distributed by nginx.org.
+
+nginx provides FastCGI and reverse HTTP proxying, with or without caching,
+including simple load balancing and fault tolerance.
+
+It has a modular architecture.  Filters include gzipping, byte ranges,
+chunked responses, and SSI.  Multiple SSI inclusions within a single page
+can be processed in parallel if they are handled by FastCGI or proxied
+servers.  SSL and TLS SNI are supported.

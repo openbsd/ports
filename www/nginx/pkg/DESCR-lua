@@ -1,0 +1,5 @@
+The ngx_lua_module embeds the power of Lua into Nginx HTTP Servers.
+
+Also includes ngx_devel_kit (NDK) The NDK is an Nginx module that is designed to
+extend the core functionality of the excellent Nginx webserver in a way that can
+be used as a basis of other Nginx modules.

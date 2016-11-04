@@ -1,13 +1,15 @@
-$OpenBSD: patch-conf_nginx_conf,v 1.7 2014/08/26 19:43:59 robert Exp $
---- conf/nginx.conf.orig	Tue Aug  5 13:13:06 2014
-+++ conf/nginx.conf	Sat Aug 23 13:24:52 2014
-@@ -1,30 +1,33 @@
+$OpenBSD: patch-conf_nginx_conf,v 1.8 2016/11/04 22:13:43 jeremy Exp $
+--- conf/nginx.conf.orig	Tue Oct 18 17:03:13 2016
++++ conf/nginx.conf	Thu Nov  3 14:30:06 2016
+@@ -1,30 +1,35 @@
 +# Take note of http://wiki.nginx.org/Pitfalls
  
 -#user  nobody;
 +#user  www;
  worker_processes  1;
  
++#load_module "modules/ngx_stream_module.so";
++
  #error_log  logs/error.log;
  #error_log  logs/error.log  notice;
  #error_log  logs/error.log  info;
@@ -39,7 +41,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.7 2014/08/26 19:43:59 robert Exp $
      #tcp_nopush     on;
  
      #keepalive_timeout  0;
-@@ -32,41 +35,49 @@ http {
+@@ -32,41 +37,49 @@ http {
  
      #gzip  on;
  
@@ -99,7 +101,7 @@ $OpenBSD: patch-conf_nginx_conf,v 1.7 2014/08/26 19:43:59 robert Exp $
          #    include        fastcgi_params;
          #}
  
-@@ -85,33 +96,26 @@ http {
+@@ -85,33 +98,26 @@ http {
      #    listen       8000;
      #    listen       somename:8080;
      #    server_name  somename  alias  another.alias;

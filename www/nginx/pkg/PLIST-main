@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/10/23 12:13:12 sthen Exp $
-@pkgpath www/nginx/stable${FLAVOR_COMMA}
-@pkgpath www/nginx/devel${FLAVOR_COMMA}
+@comment $OpenBSD: PLIST-main,v 1.1 2016/11/04 22:13:43 jeremy Exp $
+@pkgpath www/nginx/stable
+@pkgpath www/nginx/devel
+@pkgpath www/nginx
 @man man/man8/nginx.8
 @bin sbin/nginx
 @mode 700

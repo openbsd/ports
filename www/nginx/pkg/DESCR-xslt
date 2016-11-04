@@ -1,0 +1,2 @@
+The ngx_http_xslt_module is a filter that transforms XML responses using one
+or more XSLT stylesheets.
