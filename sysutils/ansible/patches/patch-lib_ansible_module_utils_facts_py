@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jasper Exp $
+$OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.13 2016/11/04 15:51:43 jasper Exp $
 
 - Enable VMM detection
   9547d6b422c8cc6c9a4f0fe6188ad2e4f218b475
 
 - Simplify processor fact resolution
-  https://github.com/ansible/ansible/pull/18278
+  c17dad0def2fa86733c07610189e94486e056203
 
 - Swap distribution_version and distribution_release values
   4c0188a27bf9dff6c70134817048672a00c8eae7
@@ -13,7 +13,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
   88970bcfb24864c5773c8d913c45db3e7355a74d
 
 --- lib/ansible/module_utils/facts.py.orig	Tue Nov  1 04:43:19 2016
-+++ lib/ansible/module_utils/facts.py	Wed Nov  2 09:47:15 2016
++++ lib/ansible/module_utils/facts.py	Fri Nov  4 11:52:23 2016
 @@ -753,12 +753,13 @@ class Distribution(object):
              self.facts['distribution_version'] = '%s.%s' % (data.group(1), data.group(2))
  
@@ -30,11 +30,8 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
  
      def get_distribution_DragonFly(self):
          pass
-@@ -1564,13 +1565,12 @@ class OpenBSDHardware(Hardware):
-     - swapfree_mb
-     - swaptotal_mb
-     - processor (a list)
--    - processor_cores
+@@ -1567,10 +1568,10 @@ class OpenBSDHardware(Hardware):
+     - processor_cores
      - processor_count
      - processor_speed
 -    - devices
@@ -46,7 +43,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
  
      def populate(self):
          self.sysctl = self.get_sysctl()
-@@ -1578,6 +1578,7 @@ class OpenBSDHardware(Hardware):
+@@ -1578,6 +1579,7 @@ class OpenBSDHardware(Hardware):
          self.get_processor_facts()
          self.get_device_facts()
          self.get_mount_facts()
@@ -54,7 +51,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
          return self.facts
  
      def get_sysctl(self):
-@@ -1628,25 +1629,44 @@ class OpenBSDHardware(Hardware):
+@@ -1628,25 +1630,45 @@ class OpenBSDHardware(Hardware):
  
      def get_processor_facts(self):
          processor = []
@@ -81,8 +78,9 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
 +        # On amd64/i386 we could try to inspect the smt/core/package lines in
 +        # dmesg, however even those have proven to be unreliable.
 +        # So take a shortcut and report the logical number of processors in
-+        # 'processor_count' and leave it at that.
++        # 'processor_count' and `processor_cores` and leave it at that.
 +        self.facts['processor_count'] = self.sysctl['hw.ncpu']
++        self.facts['processor_cores'] = self.sysctl['hw.ncpu']
 +
      def get_device_facts(self):
          devices = []
@@ -111,7 +109,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
  class FreeBSDHardware(Hardware):
      """
      FreeBSD-specific subclass of Hardware.  Defines memory and CPU facts:
-@@ -3192,6 +3212,7 @@ class OpenBSDVirtual(Virtual):
+@@ -3192,6 +3214,7 @@ class OpenBSDVirtual(Virtual):
      - virtualization_role
      """
      platform = 'OpenBSD'
@@ -119,7 +117,7 @@ $OpenBSD: patch-lib_ansible_module_utils_facts_py,v 1.12 2016/11/04 10:45:38 jas
  
      def populate(self):
          self.get_virtual_facts()
-@@ -3232,6 +3253,18 @@ class OpenBSDVirtual(Virtual):
+@@ -3232,6 +3255,18 @@ class OpenBSDVirtual(Virtual):
                          if out.rstrip() == 'QEMU':
                              self.facts['virtualization_type'] = 'kvm'
                              self.facts['virtualization_role'] = 'guest'
