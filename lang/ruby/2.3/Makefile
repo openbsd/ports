@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/04 17:03:29 jeremy Exp $
 
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 BROKEN-powerpc =		OOM when building ext/ripper/ripper.c
@@ -18,7 +18,7 @@ PKGNAME-gdbm =		ruby23-gdbm-${VERSION}
 PKGNAME-tk =		ruby23-tk-${VERSION}
 PKGNAME-ri_docs =	ruby23-ri_docs-${VERSION}
 
-REVISION-main =		2
+REVISION-main =		3
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
 
@@ -94,11 +94,13 @@ post-extract:
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby \
+		${PREFIX}/lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB} \
+		${PREFIX}/lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB}/${RUBYLIBREV}
 
 post-install:
 	${FIX_RBCONFIG}
-	chmod 444 ${PREFIX}/lib/ruby/gems/*/{cache,specifications}/*.gem*
+	chmod 444 ${PREFIX}/lib/ruby/gems/${RUBYLIBREV}/{cache,specifications}/*.gem*
 
 # 16021 tests, 2256593 assertions, 3 failures, 5 errors, 127 skips
 do-test:

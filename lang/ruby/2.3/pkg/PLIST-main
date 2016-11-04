@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/11/04 17:03:29 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=2.3,<2.4
@@ -991,6 +991,8 @@ lib/ruby/gems/${RUBYLIBREV}/cache/rake-10.4.2.gem
 lib/ruby/gems/${RUBYLIBREV}/cache/test-unit-3.1.5.gem
 lib/ruby/gems/${RUBYLIBREV}/doc/
 lib/ruby/gems/${RUBYLIBREV}/extensions/
+lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB}/
+lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB}/${RUBYLIBREV}/
 lib/ruby/gems/${RUBYLIBREV}/gems/
 lib/ruby/gems/${RUBYLIBREV}/gems/did_you_mean-1.0.0/
 lib/ruby/gems/${RUBYLIBREV}/gems/did_you_mean-1.0.0/CHANGELOG.md

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/01 14:23:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/04 17:03:29 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -15,7 +15,7 @@ PKGNAME-gdbm =		ruby22-gdbm-${VERSION}
 PKGNAME-tk =		ruby22-tk-${VERSION}
 PKGNAME-ri_docs =	ruby22-ri_docs-${VERSION}
 
-REVISION-main =		2
+REVISION-main =		3
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
 
@@ -91,7 +91,9 @@ post-extract:
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby \
+		${PREFIX}/lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB} \
+		${PREFIX}/lib/ruby/gems/${RUBYLIBREV}/extensions/${SUB}/${RUBYLIBREV}
 
 post-install:
 	${FIX_RBCONFIG}
