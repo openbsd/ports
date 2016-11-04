@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/03 17:30:32 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/04 00:40:07 ajacoutot Exp $
 
 COMMENT=	open-source port of Prince of Persia
 
 DISTNAME=	sdlpop-20161103
 CATEGORIES=	games
+REVISION=	0
 
 GH_ACCOUNT=	NagyD
 GH_PROJECT=	SDLPoP
