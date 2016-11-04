@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/10/18 09:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2016/11/04 11:35:20 sthen Exp $
 
 SHARED_LIBS +=	mupdf		4.0
 SHARED_LIBS +=	mupdfthird	0.0
@@ -8,6 +8,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.9a
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -20,12 +21,12 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # droid font: Apache.
 PERMIT_PACKAGE_CDROM =	Yes
 
-FLAVORS=	js
-FLAVOR?=
-
 # uses pledge(2)
 WANTLIB += GL X11 Xcursor Xext Xinerama Xrandr c crypto curl freetype
-WANTLIB += harfbuzz idn jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
+WANTLIB += harfbuzz jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
+
+FLAVORS=	js
+FLAVOR?=
 
 MODULES =	gcc4
 MODGCC4_ARCHS =	*

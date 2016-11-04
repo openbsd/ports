@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2016/10/15 19:14:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-1.3.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=	virt-qemu                 0.4 # 1003.0
@@ -19,14 +19,14 @@ MASTER_SITES=		${HOMEPAGE}/sources/ \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
 
+WANTLIB += avahi-client avahi-common c crypto curl dbus-1 ffi gmp gnutls
+WANTLIB += hogweed lzma m ncurses nettle nghttp2 p11-kit pthread
+WANTLIB += readline ssh2 ssl tasn1 util xml2 z
+
 MODULES=		devel/gettext \
 			lang/python
 
 MODPY_RUNDEP=		No
-
-WANTLIB += avahi-client avahi-common c crypto curl dbus-1 ffi
-WANTLIB += gmp gnutls hogweed idn lzma m ncurses nettle nghttp2
-WANTLIB += p11-kit pthread readline ssh2 ssl tasn1 util xml2 z
 
 BUILD_DEPENDS=		textproc/docbook \
 			textproc/docbook2x

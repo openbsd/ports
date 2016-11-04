@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2016/09/21 10:52:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -9,7 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
@@ -34,7 +34,7 @@ FLAVOR?=
 
 WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
 		natpmp pthread ssl z intl
-WANTLIB-main=	${WANTLIB-common} idn nghttp2 iconv
+WANTLIB-main=	${WANTLIB-common} nghttp2 iconv
 WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender \
 		atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
@@ -43,7 +43,7 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
 		harfbuzz pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
-		xcb-render xcb-shm epoxy idn nghttp2 iconv
+		xcb-render xcb-shm epoxy nghttp2 iconv
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
 		fontconfig freetype estdc++

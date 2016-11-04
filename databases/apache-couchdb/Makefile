@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/27 15:31:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	1.6.1
 DISTNAME =	apache-couchdb-${COUCH_VER}
-REVISION =	6
+REVISION =	7
 CATEGORIES =	databases
 
 HOMEPAGE =	http://couchdb.apache.org/
@@ -12,11 +12,11 @@ HOMEPAGE =	http://couchdb.apache.org/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += c crypto curl icudata icui18n icuuc m mozjs ncurses nghttp2
+WANTLIB += nspr4 plc4 plds4 pthread ssl stdc++ z
+
 MODULES =	devel/gettext \
 		lang/erlang
-
-WANTLIB += c crypto curl icudata icui18n icuuc idn m mozjs ncurses
-WANTLIB += nghttp2 nspr4 plc4 plds4 pthread ssl stdc++ z
 
 MASTER_SITES =	${MASTER_SITE_APACHE:=couchdb/source/${COUCH_VER}/}
 

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
-REVISION =              0
+REVISION =		1
 
 SHARED_LIBS =		seafile 3.0
 
 cWANTLIB += c ccnet curl event_core event_extra crypto ffi gio-2.0 glib-2.0
-cWANTLIB += gmodule-2.0 gobject-2.0 iconv idn intl jansson nghttp2 pcre pthread
+cWANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson nghttp2 pcre pthread
 cWANTLIB += searpc sqlite3 ssl uuid z
 
 WANTLIB += lib/inotify/inotify ${cWANTLIB}

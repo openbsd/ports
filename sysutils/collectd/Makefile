@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/06/13 09:12:40 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,6 +11,8 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
 V =			5.5.1
+REVISION-main =		0
+REVISION-virt =		0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -60,7 +62,7 @@ RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 LIB_DEPENDS-virt =	sysutils/libvirt
 WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
-			idn intl lzma m nghttp2 pthread ssl xml2 z
+			intl lzma m nghttp2 pthread ssl xml2 z
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
@@ -85,7 +87,7 @@ LIB_DEPENDS +=	net/curl \
 		devel/libyajl \
 		devel/protobuf-c>=1.0.1
 
-WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl lzma oping nghttp2
+WANTLIB += c crypto gpg-error kvm curl xml2 ltdl lzma oping nghttp2
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 WANTLIB += protobuf-c yajl
 

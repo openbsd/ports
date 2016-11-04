@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2016/10/26 12:35:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		23
+REVISION-main=		24
 REVISION-mjpeg=		10
 REVISION-neon=		11
 
@@ -38,7 +38,7 @@ WANTLIB-main += curl dca dvdnav dvdread expat fontconfig freetype
 WANTLIB-main += fribidi gdk_pixbuf-2.0 gio-2.0 gsm gstapp-0.10 gstaudio-0.10
 WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstfft-0.10 gstinterfaces-0.10
 WANTLIB-main += gstpbutils-0.10 gstriff-0.10 gstrtp-0.10 gstsdp-0.10
-WANTLIB-main += gsttag-0.10 gstvideo-0.10 idn jasper jpeg lrdf mms
+WANTLIB-main += gsttag-0.10 gstvideo-0.10 jasper jpeg lrdf mms
 WANTLIB-main += mpcdec nghttp2 opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2
 WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb

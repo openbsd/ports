@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.36 2015/11/06 13:09:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.71.0
 DISTNAME=	crossfire-client-${VERSION}
 CATEGORIES=	games x11
+REVISION=	0
 
 HOMEPAGE=	http://crossfire.real-time.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
+WANTLIB += GL GLU SDL SDL_image SDL_mixer X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto
+WANTLIB += curl fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m nghttp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread ssl z
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		crossfire-client-images-${VERSION}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.bz2
-
-WANTLIB += GL GLU SDL SDL_image SDL_mixer X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += crypto curl fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 idn m nghttp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread ssl
-WANTLIB += z
 
 MODULES=	devel/gettext
 

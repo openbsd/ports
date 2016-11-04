@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/07 21:49:45 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -6,23 +6,24 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
+REVISION =		0
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm
-WANTLIB += atk-1.0 c cairo canberra canberra-gtk crypto curl drm
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdkglext-x11-1.0 gio-2.0 glapi glib-2.0 gmodule-2.0
-WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 gtkglext-x11-1.0
-WANTLIB += harfbuzz iconv idn intl ltdl m ncurses nghttp2 ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs python2.7 readline
-WANTLIB += sqlite3 ssl util vorbis vorbisfile xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm atk-1.0 c
+WANTLIB += cairo canberra canberra-gtk crypto curl drm expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gdkglext-x11-1.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkglext-x11-1.0 harfbuzz iconv intl ltdl m ncurses nghttp2
+WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs readline sqlite3 ssl util
+WANTLIB += vorbis vorbisfile xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 
 MASTER_SITES =		http://gnubg.org/media/sources/
 

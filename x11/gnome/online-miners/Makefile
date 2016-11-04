@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/10/31 14:27:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/11/04 11:35:21 sthen Exp $
 
 TRACKER_API=		1.0
 
@@ -6,6 +6,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.22.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c crypto curl ffi gck-1 gcr-base-3 gcrypt gdata gdk_pixbuf-2.0
 WANTLIB += gfbgraph-0.2 gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
 WANTLIB += gpg-error grilo-0.3 gthread-2.0 iconv icudata icui18n
-WANTLIB += icuuc idn intl json-glib-1.0 kvm lzma m mediaart-2.0
+WANTLIB += icuuc intl json-glib-1.0 kvm lzma m mediaart-2.0
 WANTLIB += nghttp2 nspr4 nss3 oauth p11-kit pcre plc4 plds4 png
 WANTLIB += pthread rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 uuid xml2 z zapojit-0.0

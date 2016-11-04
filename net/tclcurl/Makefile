@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT =	Tcl bindings for Curl
 
 DISTNAME =	TclCurl-7.19.6
 SHARED_LIBS =	TclCurl7196 0.0
 CATEGORIES =	net
-REVISION =	3
+REVISION =	4
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	crypto idn ssl z curl nghttp2
+WANTLIB += crypto curl nghttp2 ssl z
 
 MASTER_SITES =	https://distfiles.nl/
 MODULES =	lang/tcl devel/gettext

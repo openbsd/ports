@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/10/08 20:38:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.48 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	rake fails when linking PassengerHelperAgent
 PASS_VERSION =		5.0.14
 NGINX_VERSION =		1.9.3
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	www
 DISTFILES =	${DISTNAME}.gem \
@@ -25,7 +25,7 @@ MODULES =		devel/gettext \
 
 CONFIGURE_STYLE =	gem ext
 
-WANTLIB =	${MODRUBY_WANTLIB} crypto curl idn kvm nghttp2 pcre pthread ssl stdc++ z
+WANTLIB =	${MODRUBY_WANTLIB} crypto curl kvm nghttp2 pcre pthread ssl stdc++ z
 
 # Make devel/gmake a BUILD_DEPEND instead of USE_GMAKE, as the port also uses
 # BSD make. Depend on gsed as embedded libuv picks it up if present.
@@ -34,7 +34,6 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/gsed
 RUN_DEPENDS =		www/ruby-rack,${MODRUBY_FLAVOR}
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
-			devel/libidn \
 			devel/pcre \
 			net/curl
 

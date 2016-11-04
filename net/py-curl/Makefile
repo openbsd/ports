@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/10/22 18:43:14 shadchin Exp $
+# $OpenBSD: Makefile,v 1.40 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT=	Python interface to cURL library
 
@@ -6,13 +6,15 @@ MODPY_EGG_VERSION=	7.43.0
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
 
 # dual: LGPL or MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB} crypto curl idn nghttp2 pthread ssl z
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += crypto curl nghttp2 pthread ssl z
 
 MODULES=	lang/python
 

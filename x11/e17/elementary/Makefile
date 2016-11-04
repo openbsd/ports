@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/12 01:17:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/11/04 11:35:21 sthen Exp $
 
 COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.10
 DISTNAME =		elementary-${VERSION}
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=	elementary                1.0 # 8.10
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
-WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
-WANTLIB += ecore_input ecore_input_evas ecore_ipc ecore_x edbus
-WANTLIB += edje eet efreet efreet_mime efreet_trash eina eio embryo
-WANTLIB += emotion ethumb ethumb_client evas exif expat fontconfig
-WANTLIB += freetype fribidi glib-2.0 graphite2 harfbuzz
-WANTLIB += idn jpeg m nghttp2 pcre pthread pthread-stubs
-WANTLIB += ssl xcb z ${MODLUA_WANTLIB}
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss Xtst c cares crypto curl dbus-1 ecore ecore_con
+WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
+WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet
+WANTLIB += efreet_mime efreet_trash eina eio embryo emotion ethumb
+WANTLIB += ethumb_client evas exif expat fontconfig freetype fribidi
+WANTLIB += glib-2.0 graphite2 harfbuzz jpeg m nghttp2 pcre pthread
+WANTLIB += pthread-stubs ssl xcb z
 
 MODULES =		devel/gettext \
 			lang/lua \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/10/30 12:59:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/11/04 11:35:21 sthen Exp $
 
 COMMENT =		core event/X abstraction layer
 
 DISTNAME =		ecore-1.7.10
 EPOCH =			2
-REVISION =		0
+REVISION =		1
 
 SO_VERSION =		4.0		# 8.10
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -17,12 +17,11 @@ SHARED_LIBS +=		${_lib}	${SO_VERSION}
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst cares crypto curl eet eina
-WANTLIB += evas expat ffi fontconfig freetype fribidi gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += ibus-1.0 idn jpeg m nghttp2 pcre pthread
-WANTLIB += pthread-stubs ssl xcb z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss Xtst cares crypto curl eet eina evas expat ffi
+WANTLIB += fontconfig freetype fribidi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 harfbuzz ibus-1.0 jpeg m nghttp2 pcre
+WANTLIB += pthread pthread-stubs ssl xcb z
 
 MODULES =		devel/gettext
 

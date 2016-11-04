@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.89 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.2
 DISTNAME =	octave-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		7.0 # 3.0
@@ -20,16 +20,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa QtGui
-WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
-WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
-WANTLIB += colamd crypto curl cxsparse drm ereadline expat fftw3 fftw3_threads
-WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
-WANTLIB += gl2ps glapi glpk glut gmp hdf5 idn lapack lcms2
-WANTLIB += ltdl lzma m ncurses nghttp2 ogg pcre png portaudio pthread
-WANTLIB += pthread-stubs qhull qrupdate qscintilla2 sndfile sndio
-WANTLIB += ssl stdc++ suitesparseconfig umfpack usbhid util vorbis
-WANTLIB += vorbisenc xcb xcb-dri2 xcb-glx z
+WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm amd
+WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
+WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
+WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
+WANTLIB += glpk glut gmp hdf5 lapack lcms2 ltdl lzma m ncurses nghttp2
+WANTLIB += ogg pcre png portaudio pthread pthread-stubs qhull qrupdate
+WANTLIB += qscintilla2 sndfile sndio ssl stdc++ suitesparseconfig
+WANTLIB += umfpack usbhid util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 

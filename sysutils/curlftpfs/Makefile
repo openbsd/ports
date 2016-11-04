@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/30 12:59:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT=	FUSE FTP driver
 
 DISTNAME=	curlftpfs-0.9.2
 CATEGORIES=	sysutils
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += c crypto curl fuse glib-2.0 nghttp2 pcre pthread ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=curlftpfs/}
 
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	devel/glib2 net/curl
-
-WANTLIB += c crypto curl fuse glib-2.0 idn nghttp2 pcre pthread ssl z
 
 CONFIGURE_STYLE=gnu
 

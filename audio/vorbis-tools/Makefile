@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2016/04/07 16:05:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
 DISTNAME=	vorbis-tools-1.4.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.vorbis.com/
 
@@ -12,10 +12,10 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
+WANTLIB+= FLAC ao c crypto curl iconv intl m nghttp2 ogg pthread speex
+WANTLIB+= ssl vorbis vorbisenc vorbisfile z
 
-WANTLIB=	FLAC ao c crypto curl iconv idn intl m nghttp2 ogg \
-		pthread speex ssl vorbis vorbisenc vorbisfile z
+MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
 LIB_DEPENDS=	audio/flac \
 		audio/libao \

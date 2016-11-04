@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/12 01:17:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/11/04 11:35:21 sthen Exp $
 
 COMMENT =		video (and audio) codec playback library
 
 DISTNAME =		emotion-1.7.10
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=	emotion                   2.0 # 8.10
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl ecore ecore_con
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss Xtst c cares crypto curl ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
-WANTLIB += ecore_input_evas ecore_ipc ecore_x edje eet eina eio
-WANTLIB += embryo evas expat ffi fontconfig freetype fribidi glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstbase-0.10 gstinterfaces-0.10
-WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 harfbuzz idn nghttp2
-WANTLIB += jpeg lzma m orc-0.4 pcre pthread pthread-stubs ssl
-WANTLIB += xcb xml2 z ${MODLUA_WANTLIB}
+WANTLIB += ecore_input_evas ecore_ipc ecore_x edje eet eina eio embryo
+WANTLIB += evas expat ffi fontconfig freetype fribidi glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstbase-0.10
+WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += harfbuzz jpeg lzma m nghttp2 orc-0.4 pcre pthread
+WANTLIB += pthread-stubs ssl xcb xml2 z
 
 MODULES =		devel/gettext \
 			lang/lua \

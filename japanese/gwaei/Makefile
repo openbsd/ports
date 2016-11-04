@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/08 10:36:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	14
+REVISION =	15
 
 SHARED_LIBS =	waei	0.0
 
@@ -14,16 +14,15 @@ HOMEPAGE =	http://sourceforge.net/projects/gwaei/
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject crypto curl dbus-1 epoxy expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs ssl xcb xcb-render xcb-shm z
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject crypto curl dbus-1 epoxy expat
-WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv idn intl m nghttp2 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += ssl xcb xcb-render xcb-shm z
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
 
 MODULES =	devel/dconf \
 		textproc/intltool \

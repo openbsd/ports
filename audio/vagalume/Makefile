@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/30 12:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.8.2
 DISTNAME=		vagalume_$V.orig
 PKGNAME=		vagalume-$V
-REVISION=		16
+REVISION=		17
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/
@@ -18,9 +18,10 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo crypto curl
 WANTLIB += dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstinterfaces-0.10 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma m nghttp2 notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs ssl stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz lzma m nghttp2 notify
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pthread pthread-stubs ssl stdc++ xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MASTER_SITES=		http://vagalume.igalia.com/files/source/
 

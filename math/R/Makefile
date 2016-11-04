@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.88 2016/11/01 16:55:13 feinerer Exp $
+# $OpenBSD: Makefile,v 1.89 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.3.2
+REVISION=	0
 
 SO_VERSION=	32.0
 .for _lib in R Rblas Rlapack
@@ -16,10 +17,10 @@ MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl
-WANTLIB += glib-2.0 gobject-2.0 iconv icui18n icuuc idn intl jpeg
-WANTLIB += lzma m ncurses nghttp2 pango-1.0 pangocairo-1.0 pcre
-WANTLIB += png readline ssl tiff z ${MODTK_WANTLIB}
+WANTLIB += ${MODTK_WANTLIB}
+WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl glib-2.0
+WANTLIB += gobject-2.0 iconv icui18n icuuc intl jpeg lzma m ncurses
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre png readline ssl tiff z
 
 MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \

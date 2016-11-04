@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.64 2016/06/29 16:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2016/11/04 11:35:21 sthen Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
 EPOCH =			1
-REVISION =		5
+REVISION =		6
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xss Xtst c cares crypto
-WANTLIB += curl dbus-1 ecore ecore_con ecore_evas ecore_file ecore_imf
-WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc
-WANTLIB += ecore_x edbus edje eet efreet efreet_mime efreet_trash
-WANTLIB += ehal eina eio elementary embryo emotion enotify ethumb
-WANTLIB += ethumb_client eukit evas execinfo exif expat fontconfig
-WANTLIB += freetype graphite2 fribidi glib-2.0 harfbuzz
-WANTLIB += idn jpeg m nghttp2 pcre pthread pthread-stubs
-WANTLIB += ssl xcb xcb-keysyms xcb-shape z ${MODLUA_WANTLIB}
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst c cares crypto curl dbus-1
+WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf
+WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc ecore_x
+WANTLIB += edbus edje eet efreet efreet_mime efreet_trash ehal eina eio
+WANTLIB += elementary embryo emotion enotify ethumb ethumb_client eukit
+WANTLIB += evas execinfo exif expat fontconfig freetype fribidi glib-2.0
+WANTLIB += graphite2 harfbuzz jpeg m nghttp2 pcre pthread pthread-stubs
+WANTLIB += ssl xcb xcb-keysyms xcb-shape z
 
 MODULES +=		devel/gettext \
 			lang/lua \

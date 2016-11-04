@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/10/08 12:49:19 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/04 11:35:18 sthen Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.24.4
 DISTNAME=		libgit2-glib-$V
+REVISION=		0
 
 SHARED_LIBS +=	git2-glib-1.0        3.0      # 0.0
 
@@ -25,9 +26,10 @@ LIB_DEPENDS=		devel/gobject-introspection \
 			devel/libgit2/libgit2>=0.24.0
 
 USE_GMAKE=		Yes
+
 WANTLIB += crypto curl ffi gio-2.0 girepository-1.0 git2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv idn intl m nghttp2 pcre
-WANTLIB += pthread ssh2 ssl z
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m nghttp2 pcre pthread
+WANTLIB += ssh2 ssl z
 
 CONFIGURE_STYLE=	gnu
 

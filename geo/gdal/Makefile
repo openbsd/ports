@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/10/31 15:44:35 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2016/11/04 11:35:19 sthen Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -12,6 +12,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
+REVISION-main =	0
 
 SHARED_LIBS =	gdal 27.0 #21.2
 CATEGORIES =	geo devel
@@ -37,7 +38,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/postgresql \
 			geo/geos \
 			geo/spatialite/libspatialite \
-			devel/libidn \
 			devel/json-c \
 			graphics/png \
 			graphics/giflib \
@@ -49,7 +49,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/geotiff
 
 WANTLIB-main =		${WANTLIB} c expat m stdc++ z tiff openjp2 ssl crypto qhull \
-			curl pq geos geos_c idn png gif jpeg jasper json-c geotiff \
+			curl pq geos geos_c png gif jpeg jasper json-c geotiff \
 			proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2
 
 

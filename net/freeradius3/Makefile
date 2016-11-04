@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/04 11:35:19 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,7 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.12pre20160630
-REVISION-main=	1
+REVISION-main=	2
 DISTNAME=	freeradius-server-$V
 #EXTRACT_SUFX=	.tar.bz2
 
@@ -94,7 +94,7 @@ LIB_DEPENDS-main=	databases/gdbm \
 			net/curl
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c crypto curl execinfo gdbm hiredis idn json-c m nghttp2
+WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc termcap
 WANTLIB-main += util ykclient yubikey z
 
