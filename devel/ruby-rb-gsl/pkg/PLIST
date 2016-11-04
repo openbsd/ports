@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/26 03:50:04 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/04 21:37:14 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -439,6 +439,7 @@ ${GEM_LIB}/gems/${DISTNAME}/rdoc/multimin.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/multiroot.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/narray.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/ndlinear.rdoc
+${GEM_LIB}/gems/${DISTNAME}/rdoc/nmatrix.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/nonlinearfit.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/ntuple.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/odeiv.rdoc
@@ -462,6 +463,7 @@ ${GEM_LIB}/gems/${DISTNAME}/rdoc/vector.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/vector_complex.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/rdoc/wavelet.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test.sh
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/blas_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/bspline_test.rb
@@ -489,6 +491,14 @@ ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multifit_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multimin_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multiroot_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multiset_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_cheb_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_eigen_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_gsl_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_interp_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_linalg_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_stats_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/nmatrix_tests/nmatrix_wavelet_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/odeiv_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/oper_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/poly_test.rb

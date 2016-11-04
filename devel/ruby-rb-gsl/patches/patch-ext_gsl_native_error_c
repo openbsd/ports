@@ -1,0 +1,34 @@
+$OpenBSD: patch-ext_gsl_native_error_c,v 1.1 2016/11/04 21:37:14 jeremy Exp $
+
+Work on ruby 2.4.
+
+--- ext/gsl_native/error.c.orig	Thu Nov  3 13:32:07 2016
++++ ext/gsl_native/error.c	Thu Nov  3 13:57:16 2016
+@@ -13,6 +13,7 @@
+ #include "include/rb_gsl_array.h"
+ #include "include/rb_gsl_common.h"
+ #include "include/rb_gsl_function.h"
++#include <ruby/version.h>
+ 
+ static VALUE eHandler;
+ static VALUE cgsl_error[35];
+@@ -78,11 +79,17 @@ static VALUE rb_gsl_set_default_error_handler(VALUE mo
+ static void rb_gsl_define_exceptions(VALUE module)
+ {
+   VALUE mgsl_error;
++  VALUE fixnum_class;
+   mgsl_error = rb_define_module_under(module, "ERROR");
+   pgsl_error = &cgsl_error[2];
+-  pgsl_error[-2] = rb_define_class_under(mgsl_error, "CONTINUE", rb_cFixnum);
++#if RUBY_API_VERSION_CODE >= 20400
++  fixnum_class = rb_cInteger;
++#else
++  fixnum_class = rb_cFixnum;
++#endif
++  pgsl_error[-2] = rb_define_class_under(mgsl_error, "CONTINUE", fixnum_class);
+   pgsl_error[-1] = rb_define_class_under(mgsl_error, "FAILURE", rb_eRuntimeError);
+-  pgsl_error[0] = rb_define_class_under(mgsl_error, "SUCCESS", rb_cFixnum);
++  pgsl_error[0] = rb_define_class_under(mgsl_error, "SUCCESS", fixnum_class);
+   pgsl_error[1] = rb_define_class_under(mgsl_error, "EDOM", rb_eRangeError);
+   pgsl_error[2] = rb_define_class_under(mgsl_error, "ERANGE", rb_eRangeError);
+   pgsl_error[3] = rb_define_class_under(mgsl_error, "EFAULT", rb_eRuntimeError);

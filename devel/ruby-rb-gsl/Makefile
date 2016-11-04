@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/26 03:50:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/04 21:37:14 jeremy Exp $
 
 COMMENT =	Ruby interface to GSL
 
-DISTNAME =	gsl-1.16.0.6
+DISTNAME =	gsl-2.1.0.1
 CATEGORIES =	devel
 
 # GPLv2
@@ -18,9 +18,10 @@ LIB_DEPENDS =	devel/gsl
 
 CONFIGURE_STYLE =ruby gem ext
 
+TEST_DEPENDS = ${BUILD_PKGPATH}
 MODRUBY_TEST =	ruby
-MODRUBY_TEST_TARGET =	-I test \
+MODRUBY_TEST_TARGET =	-I lib -I test \
 	-e 'ARGV.each{|f| require f}' \
-	test/gsl_test.rb test/gsl/*
+	`find ./test -name '*_test.rb'`
 
 .include <bsd.port.mk>
