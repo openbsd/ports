@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/05 02:49:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/04 21:49:09 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -18,10 +18,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/hybi/
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/hybi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/hybi/frame.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/hybi/message.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/hybi/stream_reader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/server.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/utf8_match.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/websocket/driver/stream_reader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/http/
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/websocket/http/headers.rb
