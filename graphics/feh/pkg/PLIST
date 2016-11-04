@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/08/30 14:44:37 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/11/04 08:57:31 dcoppa Exp $
 @bin bin/feh
 @man man/man1/feh.1
 share/applications/feh.desktop
 share/doc/feh/
 share/doc/feh/AUTHORS
 share/doc/feh/ChangeLog
-share/doc/feh/README
+share/doc/feh/README.md
 share/doc/feh/TODO
 share/examples/feh/
 @sample ${SYSCONFDIR}/feh/
