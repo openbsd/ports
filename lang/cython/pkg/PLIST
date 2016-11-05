@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/25 02:18:09 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/05 10:29:38 danj Exp $
 bin/cygdb
 bin/cython
 bin/cythonize
@@ -17,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Build/Cythonize.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Cythonize.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Dependencies.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Dependencies.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Distutils.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Distutils.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Inline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Inline.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/IpythonMagic.py
@@ -112,6 +114,10 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestBuffer.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestBuffer.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestCmdLine.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestCmdLine.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestFlowControl.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestFlowControl.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestGrammar.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestGrammar.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestMemView.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestMemView.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestParseTreeTransforms.py
@@ -181,6 +187,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/build_ext.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/build_ext.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/extension.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/extension.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/old_build_ext.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/old_build_ext.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python.pxd
@@ -239,6 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/int.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/iterator.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/long.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/longintrepr.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/mapping.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/mem.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/method.pxd
@@ -280,6 +289,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/algorithm.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cast.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/complex.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/deque.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/iterator.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/limits.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/map.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/memory.pxd
@@ -288,6 +299,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/queue.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/set.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/stack.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/string.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/typeindex.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/typeinfo.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/unordered_map.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/unordered_set.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/utility.pxd
@@ -298,12 +311,15 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/numpy/math.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/openmp.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/__init__.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/dlfcn.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/fcntl.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/ioctl.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/mman.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/resource.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/select.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/signal.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/stat.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/stdio.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/stdlib.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/strings.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/time.pxd
@@ -376,7 +392,9 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CMath.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Capsule.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CommonTypes.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Complex.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Coroutine.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CpdefEnums.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppSupport.cpp
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CythonFunction.c
