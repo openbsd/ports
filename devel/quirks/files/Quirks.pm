@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.434 2016/11/03 10:59:05 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.435 2016/11/05 16:46:44 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -878,6 +878,7 @@ my $obsolete_reason = {
 	'libxfcegui4' => 5,
 	'libsexy' => 5,
 	'twitux' => 3,
+	'gnash' => 2,
 };
 
 # reasons for obsolete packages
