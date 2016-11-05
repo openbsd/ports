@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2016/11/03 10:47:29 landry Exp $
+# $OpenBSD: Makefile,v 1.582 2016/11/05 13:49:29 steven Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -198,6 +198,7 @@
      SUBDIR += p5-Wx
      SUBDIR += p5-X-Osd
      SUBDIR += p5-X11-Protocol
+     SUBDIR += p5-X11-Protocol-Other
      SUBDIR += parcellite
      SUBDIR += partiwm
      SUBDIR += pcmanfm
