@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2016/11/02 13:27:55 jca Exp $
+# $OpenBSD: Makefile,v 1.193 2016/11/05 22:33:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -51,6 +51,7 @@
      SUBDIR += mawk
      SUBDIR += moarvm
      SUBDIR += mono
+     SUBDIR += mruby
      SUBDIR += myhdl
      SUBDIR += nbfc
      SUBDIR += newlisp
