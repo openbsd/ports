@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2016/11/05 17:42:53 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.22.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
