@@ -1,0 +1,12 @@
+$OpenBSD: patch-tasks_mruby_build_rake,v 1.1.1.1 2016/11/05 22:31:28 jeremy Exp $
+--- tasks/mruby_build.rake.orig	Fri Nov  4 23:51:18 2016
++++ tasks/mruby_build.rake	Fri Nov  4 23:51:35 2016
+@@ -273,7 +273,7 @@ EOS
+     def run_bintest
+       targets = @gems.select { |v| File.directory? "#{v.dir}/bintest" }.map { |v| filename v.dir }
+       targets << filename(".") if File.directory? "./bintest"
+-      sh "ruby test/bintest.rb #{targets.join ' '}"
++      sh "${RUBY} test/bintest.rb #{targets.join ' '}"
+     end
+ 
+     def print_build_summary
