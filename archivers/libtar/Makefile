@@ -1,26 +1,34 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/24 09:11:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/05 15:13:54 jca Exp $
 
 COMMENT=	C library for manipulating tar files
 
-DISTNAME=	libtar-1.2.11
-REVISION=	2
+GH_ACCOUNT=	tklauser
+GH_PROJECT=	libtar
+GH_TAGNAME=	v1.2.20
 
-SHARED_LIBS=	tar	0.0	# .1.2
+SHARED_LIBS=	tar	0.1	# unknown
 
 CATEGORIES=	archivers devel
-
-HOMEPAGE=	http://www.feep.net/libtar/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c z
 
-MASTER_SITES=	https://distfiles.nl/ \
-		ftp://ftp.feep.net/pub/software/libtar/
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
-NO_TEST=	Yes
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.11
+
+NO_TEST=		Yes
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf --force --install
 
 .include <bsd.port.mk>
