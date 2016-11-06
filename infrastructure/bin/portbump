@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.17 2016/11/06 21:24:35 zhuk Exp $
+# $OpenBSD: portbump,v 1.18 2016/11/06 21:36:54 zhuk Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -931,7 +931,7 @@ my %newrevplace;
 scalar(@ARGV) or @ARGV = (".");
 for (@ARGV) {
 	# zap any FLAVOR information to make it easier to feed from of sqlports
-	s/,+[^,+-]*/,/g;
+	s/,+[^,-]*/,/g;
 
 	# Allow simple "-subpkg" instead of ugly ",-subpkg"
 	s/^-/,-/;
