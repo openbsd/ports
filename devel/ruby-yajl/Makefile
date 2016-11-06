@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/05 13:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/06 21:25:18 jeremy Exp $
 
 COMMENT=	Ruby bindings for the Yajl JSON library
 
-DISTNAME=	yajl-ruby-1.2.1
-REVISION=	1
+DISTNAME=	yajl-ruby-1.3.0
 
 CATEGORIES=	devel
 
@@ -16,6 +15,7 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem ext
 
+TEST_DEPENDS=	${BUILD_PKGPATH}
 MODRUBY_TEST=	rspec3
 
 .include <bsd.port.mk>
