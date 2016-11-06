@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_elfdefinitions_h,v 1.1 2016/11/06 01:32:32 jca Exp $
+
+On OpenBSD/alpha, <machine/exec.h> defines ELF_TARG_MACH to
+EM_ALPHA_EXP, unknown to elftoolchain.
+
+--- common/elfdefinitions.h.orig	Sat Nov  5 20:55:50 2016
++++ common/elfdefinitions.h	Sat Nov  5 20:55:52 2016
+@@ -585,6 +585,7 @@ _ELF_DEFINE_EM(EM_RH32,             38, "TRW RH-32")		
+ _ELF_DEFINE_EM(EM_RCE,              39, "Motorola RCE")			\
+ _ELF_DEFINE_EM(EM_ARM,              40, "Advanced RISC Machines ARM")	\
+ _ELF_DEFINE_EM(EM_ALPHA,            41, "Digital Alpha")		\
++_ELF_DEFINE_EM(EM_ALPHA_EXP,        0x9026, "Digital Alpha")		\
+ _ELF_DEFINE_EM(EM_SH,               42, "Hitachi SH")			\
+ _ELF_DEFINE_EM(EM_SPARCV9,          43, "SPARC Version 9")		\
+ _ELF_DEFINE_EM(EM_TRICORE,          44,					\

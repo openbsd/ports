@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/01 11:13:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/06 01:32:32 jca Exp $
 
 COMMENT =		BSD-licensed implementation of compilation tools
 
 DISTNAME =		elftoolchain-0.7.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD
