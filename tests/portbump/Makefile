@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/01 11:05:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/06 14:59:28 zhuk Exp $
 
 # To add a test named ${testname}:
 #  1) Create test port directory with ${testname} name.
@@ -7,7 +7,7 @@
 #  3) Add the test to REGRESS_TARGETS.
 
 # user-customizeable
-REGRESS_TARGETS ?=	t1 t2 t3 t4 t5 t6 t7
+REGRESS_TARGETS ?=	t1 t2 t3 t4 t5 t6 t7 t8 t9
 PORTBUMP ?=		${PORTSDIR}/infrastructure/bin/portbump
 PORTBUMP_ARGS ?=
 DIFF ?=			diff -u
