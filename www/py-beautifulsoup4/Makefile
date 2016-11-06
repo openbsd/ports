@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/02 13:27:22 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/06 06:53:32 shadchin Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
-MODPY_EGG_VERSION =	4.4.1
+MODPY_EGG_VERSION =	4.5.1
 DISTNAME =	beautifulsoup4-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -14,9 +14,8 @@ MAINTAINER =	frantisek holop <minusf@obiit.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${HOMEPAGE}bs4/download/4.4/
+MASTER_SITES =	${HOMEPAGE}bs4/download/4.5/
 
-PKG_ARCH =	*
 MODULES =	lang/python
 
 TEST_DEPENDS =	devel/py-html5lib${MODPY_FLAVOR} \
