@@ -208,8 +208,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		PTHREAD_CFLAGS="-pthread" \
 		PTHREAD_LIBS="-pthread" \
 		PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
+CONFIGURE_ARGS+=--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 		--with-avahi-user=_avahi \
 		--with-avahi-group=_avahi \
 		--with-avahi-priv-access-group=wheel \
