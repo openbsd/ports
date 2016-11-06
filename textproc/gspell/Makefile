@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/10/31 11:26:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/11/06 12:48:11 ajacoutot Exp $
 
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
-GNOME_VERSION=		1.2.0
+GNOME_VERSION=		1.2.1
 
 CATEGORIES=		textproc
 
@@ -34,10 +34,5 @@ RUN_DEPENDS=		devel/iso-codes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		ac_cv_prog_VALGRIND=
-
-# XXX report upstream
-# ./configure[13269]: ${flag:5}: bad substitution
-BUILD_DEPENDS +=	shells/bash
-CONFIGURE_ENV +=	CONFIG_SHELL="${LOCALBASE}/bin/bash"
 
 .include <bsd.port.mk>
