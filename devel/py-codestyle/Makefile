@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/30 11:25:59 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/06 07:31:09 shadchin Exp $
 
 COMMENT =		python style guide checker
 
-MODPY_EGG_VERSION =	2.0.0
+MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		pycodestyle-${MODPY_EGG_VERSION}
 PKGNAME =		py-codestyle-${MODPY_EGG_VERSION}
 
