@@ -1,30 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/09 07:06:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/06 21:24:00 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
-${GEM_EXTENSIONS_DIR}/
-@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
-@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
-@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
-@comment ${GEM_EXTENSIONS_DIR}/shadow.so
 ${GEM_LIB}/gems/${DISTNAME}/
-@comment ${GEM_LIB}/gems/${DISTNAME}/.RUBYARCHDIR.time
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/MANIFEST
 ${GEM_LIB}/gems/${DISTNAME}/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/README.euc
-${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/shadow.so
-${GEM_LIB}/gems/${DISTNAME}/pwd/
-${GEM_LIB}/gems/${DISTNAME}/pwd/depend
-${GEM_LIB}/gems/${DISTNAME}/pwd/shadow.c
 ${GEM_LIB}/gems/${DISTNAME}/ruby-shadow.gemspec
-${GEM_LIB}/gems/${DISTNAME}/shadow/
-${GEM_LIB}/gems/${DISTNAME}/shadow.o
-${GEM_LIB}/gems/${DISTNAME}/shadow.so
-${GEM_LIB}/gems/${DISTNAME}/shadow/depend
-${GEM_LIB}/gems/${DISTNAME}/shadow/shadow.c
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
