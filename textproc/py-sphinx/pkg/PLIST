@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/09/01 05:49:57 danj Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/11/06 06:54:57 shadchin Exp $
 bin/sphinx-apidoc${MODPY_BIN_SUFFIX}
 bin/sphinx-autogen${MODPY_BIN_SUFFIX}
 bin/sphinx-build${MODPY_BIN_SUFFIX}
@@ -389,6 +389,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/locale/zh_TW/LC_MESSAGES/sphinx.
 lib/python${MODPY_VERSION}/site-packages/sphinx/make_mode.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/parsers.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/
+lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2-sphinx1.2.pickle
+lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2-sphinx1.4.pickle
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2.pickle
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py2.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx/pycode/Grammar-py3.pickle
@@ -637,6 +639,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}osutil.${MO
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}parallel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}png.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}rst.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}smartypants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}stemmer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}tags.${MODPY_PYC_MAGIC_TAG}pyc
@@ -658,6 +661,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/util/osutil.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/parallel.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/png.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/pycompat.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/rst.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/smartypants.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/stemmer.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/tags.py
