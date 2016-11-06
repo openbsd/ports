@@ -82,7 +82,7 @@ sub new {
 		die "cannot run make dump-vars";
 	while (<$dumpvars>) {
 		chomp;
-		next unless /^[^,]*(?:,(-[^.]+))?\.([^=.]+)=(.*)$/;
+		next unless /^[^,]*(?:,[^.-]*(-[^.]+)?)?\.([^=.]+)=(.*)$/;
 		my ($subpkg, $var, $value) = ($1, $2, $3);
 		$subpkg //= "";
 
