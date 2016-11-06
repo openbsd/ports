@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2016/10/29 18:16:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2016/11/06 12:56:02 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -8,6 +8,7 @@ COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,8 +28,9 @@ BUILD_DEPENDS=		${COMMON_DEPENDS} \
 RUN_DEPENDS=		${COMMON_DEPENDS} \
 			devel/py-setproctitle${MODPY_FLAVOR}
 
-# sndio(7) support
-RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
+# sndio(7) support, sound.py:123
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base \
+			multimedia/gstreamer1/plugins-good
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
