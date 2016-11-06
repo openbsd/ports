@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/18 02:27:51 kurt Exp $
-eclipse/features/org.tigris.subversion.subclipse.mylar_1.0.1.jar
-eclipse/features/org.tigris.subversion.subclipse_1.2.1.jar
-eclipse/plugins/org.tigris.subversion.javahl.win32_1.2.0.jar
-eclipse/plugins/org.tigris.subversion.subclipse.core_1.2.1.jar
-eclipse/plugins/org.tigris.subversion.subclipse.doc_1.2.0.jar
-eclipse/plugins/org.tigris.subversion.subclipse.mylar_1.0.1.jar
-eclipse/plugins/org.tigris.subversion.subclipse.ui_1.2.1.jar

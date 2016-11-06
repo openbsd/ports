@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1558 2016/11/02 18:30:52 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1559 2016/11/06 20:51:32 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -112,7 +112,6 @@
      SUBDIR += doxygen
      SUBDIR += droplet
      SUBDIR += dtc
-     SUBDIR += eclipse
      SUBDIR += ectags
      SUBDIR += elftoolchain
      SUBDIR += etl
