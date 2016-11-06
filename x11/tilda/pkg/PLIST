@@ -1,19 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/21 20:46:03 ajacoutot Exp $
-bin/tilda
+@comment $OpenBSD: PLIST,v 1.6 2016/11/06 06:54:54 jca Exp $
+@bin bin/tilda
+share/appdata/
+share/appdata/tilda.appdata.xml
 share/applications/tilda.desktop
 share/doc/tilda/
-share/doc/tilda/README
+share/doc/tilda/README.md
+share/locale/bg/LC_MESSAGES/tilda.mo
 share/locale/ca/LC_MESSAGES/tilda.mo
 share/locale/cs/LC_MESSAGES/tilda.mo
 share/locale/de/LC_MESSAGES/tilda.mo
 share/locale/el/LC_MESSAGES/tilda.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/tilda.mo
 share/locale/es/LC_MESSAGES/tilda.mo
 share/locale/fr/LC_MESSAGES/tilda.mo
 share/locale/hu/LC_MESSAGES/tilda.mo
 share/locale/it/LC_MESSAGES/tilda.mo
+share/locale/lt/LC_MESSAGES/tilda.mo
 share/locale/pl/LC_MESSAGES/tilda.mo
 share/locale/pt/LC_MESSAGES/tilda.mo
 share/locale/pt_BR/LC_MESSAGES/tilda.mo
@@ -25,7 +27,5 @@ share/locale/tr/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
 share/pixmaps/
 share/pixmaps/tilda.png
-share/tilda/
-share/tilda/tilda.glade
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
