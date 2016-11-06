@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/06 16:36:08 shadchin Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -9,30 +9,29 @@ VERSION=	1.10.0
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py3-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/pycairo/
 
-# LGPLv2.1 / MPL 1.1
+# LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo
-WANTLIB += drm expat fontconfig freetype glib-2.0 gobject-2.0 m pcre
-WANTLIB += pixman-1 png pthread pthread-stubs util xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += X11 Xau Xdmcp Xext Xrender cairo expat fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 intl m pcre pixman-1 png pthread
+WANTLIB += pthread-stubs util xcb xcb-render xcb-shm z
 
 MASTER_SITES=	http://cairographics.org/releases/
 
 
-MODULES=	lang/python \
-		devel/gettext
+MODULES=	lang/python
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		devel/gettext \
 		graphics/cairo
 
 TEST_DEPENDS=devel/py-test${MODPY_FLAVOR}
@@ -46,16 +45,18 @@ post-extract:
 do-configure:
 	cd ${WRKSRC} && env PYTHON=${MODPY_BIN} \
 		LDFLAGS="$$(python${MODPY_VERSION}-config --libs)" \
-		${MODPY_BIN} ./waf configure
+		${MODPY_BIN} ./waf configure --nopyc --nopyo
 
 do-build:
 	cd ${WRKBUILD} && ${MODPY_BIN} ./waf build
 
 do-install:
 	cd ${WRKBUILD} && ${MODPY_BIN} ./waf install
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${WRKINST}${MODPY_SITEPKG}
 
-do-test: install
+do-test: fake
 	sed -i "s/python/python${MODPY_VERSION}/g" ${WRKSRC}/test/examples_test.py
-	cd ${WRKSRC}/test && py.test${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC} && PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
