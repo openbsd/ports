@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2016/10/25 12:25:32 jca Exp $
+# $OpenBSD: Makefile,v 1.47 2016/11/06 01:39:54 jca Exp $
 
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.1
+REVISION=	0
+
 CATEGORIES=	security
 
 SHARED_LIBS=	dsocks	1.2 \

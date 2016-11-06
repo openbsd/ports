@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_hostcache_c,v 1.1 2016/11/06 01:39:54 jca Exp $
+
+Don't use freed memory.
+
+--- lib/hostcache.c.orig	Tue Aug 26 10:51:47 2014
++++ lib/hostcache.c	Tue Oct 25 22:02:42 2016
+@@ -239,6 +239,7 @@ cgetaddrinfo(name, service, hints, res, resmem)
+ 
+    /* have resmem.  Don't use the one returned from getaddrinfo (3). */
+    freeaddrinfo(*res);
++   *res = &resmem->data.getaddr.addrinfo;
+ 
+    return gai_rc;
+ 
+@@ -912,6 +913,8 @@ addrinfocopy(to, from, hints)
+ #else /* SOCKS_CLIENT */
+ 
+       *to_ai  = *from_ai;
++      to_ai->ai_addr  = TOSA(&to->data.getaddr.ai_addr_mem[i]);
++      memcpy(to_ai->ai_addr, from_ai->ai_addr, from_ai->ai_addrlen);
+ 
+ #endif /* !SOCKS_CLIENT */
+ 
