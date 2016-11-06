@@ -1,12 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.2 2016/11/02 18:19:05 shadchin Exp $
+$OpenBSD: patch-setup_py,v 1.3 2016/11/06 07:33:10 shadchin Exp $
 --- setup.py.orig	Fri Jul 29 18:20:27 2016
-+++ setup.py	Wed Nov  2 23:07:43 2016
-@@ -15,7 +15,7 @@ import flake8
++++ setup.py	Sun Nov  6 12:23:34 2016
+@@ -15,8 +15,8 @@ import flake8
  tests_require = ['mock', 'pytest']
  
  requires = [
 -    "pyflakes >= 0.8.1, != 1.2.0, != 1.2.1, != 1.2.2, < 1.3.0",
+-    "pycodestyle >= 2.0.0, < 2.1.0",
 +    "pyflakes >= 0.8.1, != 1.2.0, != 1.2.1, != 1.2.2, < 1.4.0",
-     "pycodestyle >= 2.0.0, < 2.1.0",
++    "pycodestyle >= 2.0.0, < 2.2.0",
      "mccabe >= 0.5.0, < 0.6.0",
  ]
+ 
