@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.14 2016/11/06 16:14:32 zhuk Exp $
+# $OpenBSD: portbump,v 1.15 2016/11/06 18:11:40 zhuk Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -95,7 +95,7 @@ sub new {
 	# REVISIONs) and shared libraries.
 	#
 	open (my $dumpvars, '-|', "make", "SUBDIR=$dir", "dump-vars") or
-		die "cannot run make dump-vars";
+		die "cannot run make dump-vars: $!";
 	while (<$dumpvars>) {
 		chomp;
 		next unless /^[^,]*(?:,[^.-]*(-[^.]+)?)?\.([^=.]+)=(.*)$/;
@@ -132,7 +132,7 @@ sub new {
 		# to be used to avoid extra WANTLIB-* lines.
 		#
 		open ($dumpvars, '-|', "make", "SUBDIR=$dir", "show=WANTLIB") or
-			die "cannot run make show=WANTLIB";
+			die "cannot run make show=WANTLIB: $!";
 		while (<$dumpvars>) {
 			chomp;
 			next if /^===>/;
@@ -147,7 +147,7 @@ sub new {
 		# first, make sure we don't have to build/install anything
 		if ($lib_depends_tgt eq 'lib-depends-check') {
 			open ($dumpvars, '-|', qw(make show=PKGFILES)) or
-				die "cannot run make show=PKGFILES";
+				die "cannot run make show=PKGFILES: $!";
 			my @missing;
 			while (<$dumpvars>) {
 				chomp;
@@ -165,7 +165,7 @@ sub new {
 			}
 		} else {
 			open ($dumpvars, '-|', qw(make show=_FAKE_COOKIE)) or
-				die "cannot run make show=_FAKE_COOKIE";
+				die "cannot run make show=_FAKE_COOKIE: $!";
 			my $cookie = <$dumpvars>;
 			close $dumpvars;
 			chomp $cookie;
@@ -179,7 +179,7 @@ sub new {
 		$self->{wantlib_extra} = { "" => [] };
 		$self->{wantlib_missing} = { "" => [] };
 		open ($dumpvars, '-|', "make", "SUBDIR=$dir", $lib_depends_tgt) or
-			die "cannot run make $lib_depends_tgt";
+			die "cannot run make $lib_depends_tgt: $!";
 		my $subpkg = "";
 		my %not_reachable;
 		while (<$dumpvars>) {
@@ -718,7 +718,7 @@ sub process_makefile {
 	if (scalar(@mod_wantlib_seen)) {
 		my $show = 'show='.join(' ', @mod_wantlib_seen);
 		open (my $makeh, '-|', 'make', $show)
-		    or die "cannot run make $show";
+		    or die "cannot run make $show: $!";
 		while (<$makeh>) {
 			chomp;
 			my $m = shift @mod_wantlib_seen;
@@ -999,7 +999,7 @@ for my $dir (keys %allpkgs) {
 	#
 
 	open (my $in, '<', "$dir/Makefile") or
-		die "cannot open input file $dir/Makefile";
+		die "cannot open input file $dir/Makefile: $!";
 
 	$port->process_makefile($in);
 
@@ -1020,7 +1020,7 @@ for my $dir (keys %allpkgs) {
 
 	my $outpath = $opt_o // "$dir/Makefile.bump";
 	open (my $out, '>', $outpath) or
-		die "cannot open output file $outpath";
+		die "cannot open output file $outpath: $!";
 	seek($in, 0, 0);
 	$in->input_line_number(0);
 	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_r, $opt_d,
@@ -1037,7 +1037,7 @@ for my $dir (keys %allpkgs) {
 			unlink $outpath;
 		} elsif (!$opt_n) {
 			rename($outpath, "$dir/Makefile") or
-			    die "cannot move $outpath to $dir/Makefile"
+			    die "cannot move $outpath to $dir/Makefile: $!"
 		}
 	}
 }
