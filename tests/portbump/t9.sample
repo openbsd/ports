@@ -1,0 +1,20 @@
+# no RCS ID, please
+
+COMMENT =		lightweight database library and ORM for Ruby
+
+DISTNAME =		portbump-t9-4.30.0
+CATEGORIES =		tests
+REVISION =		0
+
+HOMEPAGE =		http://sequel.jeremyevans.net/
+
+MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE_CDROM = Yes
+
+MODULES =		lang/ruby
+
+CONFIGURE_STYLE =	ruby gem
+
+.include <bsd.port.mk>
