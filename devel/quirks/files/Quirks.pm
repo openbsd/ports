@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.435 2016/11/05 16:46:44 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.436 2016/11/06 21:48:38 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -879,6 +879,20 @@ my $obsolete_reason = {
 	'libsexy' => 5,
 	'twitux' => 3,
 	'gnash' => 2,
+	'eclipse-sdk' => 2,
+	'swt' => 2,
+	'swt-gnome' => 2,
+	'eclipse-plugin-emf-sdk' => 2,
+	'eclipse-plugin-epic' => 2,
+	'eclipse-plugin-findbugs' => 2,
+	'eclipse-plugin-gef-sdk' => 2,
+	'eclipse-plugin-ivyde' => 2,
+	'py-dev' => 2,
+	'eclipse-plugin-rdt' => 2,
+	'eclipse-plugin-struts-console' => 2,
+	'eclipse-plugin-subclipse' => 2,
+	'eclipse-plugin-uml2-sdk' => 2,
+	'eclipse-plugin-wtp-sdk' => 2,
 };
 
 # reasons for obsolete packages
