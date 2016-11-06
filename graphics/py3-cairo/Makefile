@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/06 16:36:08 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2016/11/06 18:07:54 jca Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -9,7 +9,7 @@ VERSION=	1.10.0
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py3-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 
@@ -31,7 +31,6 @@ MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		devel/gettext \
 		graphics/cairo
 
 TEST_DEPENDS=devel/py-test${MODPY_FLAVOR}
