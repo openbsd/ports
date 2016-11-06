@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/06 05:44:21 jsg Exp $
 
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs EABI/aapcs
@@ -14,8 +14,6 @@ CATEGORIES =	lang
 
 HOMEPAGE =	http://luajit.org/
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -25,6 +23,7 @@ MASTER_SITES =	${HOMEPAGE}download/
 
 MODULES =	lang/lua
 MODLUA_SA=	Yes
+MODLUA_VERSION=	5.1
 
 MODULES +=	gcc4
 MODGCC4_ARCHS =	powerpc
@@ -42,11 +41,6 @@ MAKE_FLAGS += \
 USE_GMAKE =	Yes
 
 SUBST_VARS+=	MODLUA_VERSION
-
-# http://luajit.org/extensions.html
-.if defined(FLAVOR) && ${FLAVOR:Mlua52}
-MAKE_FLAGS +=	XCFLAGS="-DLUAJIT_ENABLE_LUA52COMPAT"
-.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/Makefile \
