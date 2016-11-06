@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.16 2016/11/06 18:26:04 zhuk Exp $
+# $OpenBSD: portbump,v 1.17 2016/11/06 21:24:35 zhuk Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -668,6 +668,13 @@ sub process_makefile {
 	if ($self->{maxrevsin}->{blockend} == 0) {
 		$self->{maxrevsin}->{blockend} = $block1end ? $block1end :
 		    $in->input_line_number();
+	}
+
+	# make sure new REVISION-foo won't arise when bumping REVISION
+	if ($self->{has_global_rev} and $self->{maxrevsin}->{blockend} <
+	                                $self->{newrevplace}->{""}->{blockend}) {
+		$self->{maxrevsin}->{blockend} = $self->{newrevplace}->{""}->{blockend};
+		$self->{maxrevsin}->{count} = 2;    # see _add_new_revs for >1 check
 	}
 
 	return unless $self->{tweak_wantlib};
