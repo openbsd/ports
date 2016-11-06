@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.15 2016/11/06 18:11:40 zhuk Exp $
+# $OpenBSD: portbump,v 1.16 2016/11/06 18:26:04 zhuk Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -225,7 +225,7 @@ sub _adj_whitespace {
 	my ($self, $var, $value, $wssample) = @_;
 	
 	unless (defined($wssample) and
-	        $wssample =~ /^( *)([A-Za-z0-9_-]+)(\s*)[\+\?\!]*=(\s*)/) {
+	        $wssample =~ /^( *)([A-Za-z0-9_+-]+)(\s*)[\+\?\!]*=(\s*)/) {
 		return "$var =\t$value";
 	}
 
@@ -412,7 +412,7 @@ sub _put_wantlib_lines {
 			next;
 		}
 
-		$self->{wantlib}->{$subpkg}->{wssample} =~ /^ *WANTLIB(?:-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=/;
+		$self->{wantlib}->{$subpkg}->{wssample} =~ /^ *WANTLIB(?:-[A-Za-z0-9_+]*)?(\s*)[\+\?\!]*=/;
 		my $ws = $1;
 
 		my @libs;
@@ -565,7 +565,7 @@ sub process_makefile {
 			$self->{has_global_rev} = 1;
 		}
 
-		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
+		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z0-9_+]*)?\b/) {
 			$last_was_permit = 1;
 			for my $subpkg(keys %{$self->{wantlib}}) {
 				$self->{wantlib}->{$subpkg}->{permitline}++
@@ -591,7 +591,7 @@ sub process_makefile {
 				$self->_init_wantlib($subpkg);
 				$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
 			}
-		} elsif (/^ *(${_rev_neighbors_plain})(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
+		} elsif (/^ *(${_rev_neighbors_plain})(-[A-Za-z0-9_+]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
 			my $var = $1;
 			my $subpkg = $2 // "";
 			$self->{newrevplace}->{$subpkg} //= {};
@@ -606,7 +606,7 @@ sub process_makefile {
 				}
 			}
 			$block1begin = $in->input_line_number() if !$block1begin;
-		} elsif ($wantlib_block or /^ *WANTLIB(-[A-Za-z_0-9]*)?\s*[\+\?\!]*=\s*(.*)$/) {
+		} elsif ($wantlib_block or /^ *WANTLIB(-[A-Za-z0-9_+]*)?\s*[\+\?\!]*=\s*(.*)$/) {
 			if ($wantlib_block) {
 				$_ =~ s/#.*$//;
 				$w_value .= " ".$_;
@@ -643,7 +643,7 @@ sub process_makefile {
 				}
 				delete $self->{wantlib}->{$w_subpkg}->{blockend};
 			}
-		} elsif (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
+		} elsif (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z0-9_+]*)?\b/) {
 			my $subpkg = $1 // "";
 			$self->_init_wantlib($subpkg);
 			$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
@@ -800,7 +800,7 @@ sub update {
 				$shline =~ s/^\s*//;
 				$nchanges += $self->_update_shlibs($shline);
 			}
-		} elsif ($wantlib_block or /^ *WANTLIB(?:-[a-zA-Z0-9_]*)?\s*[\+\?\!]*=/) {
+		} elsif ($wantlib_block or /^ *WANTLIB(?:-[A-Za-z0-9_+]*)?\s*[\+\?\!]*=/) {
 			my $line = $_;
 			$wantlib_block = $line =~ s/\s*\\$//;
 			if ($self->{tweak_wantlib}) {
@@ -808,7 +808,7 @@ sub update {
 				$empty_line = $prev_line_was_empty;
 				$wl_ws_removal = 0 unless defined $wl_ws_removal;
 			}
-		} elsif (/^ *REVISION(-[a-zA-Z0-9_]+)?.*=\s*([0-9]*)$/) {
+		} elsif (/^ *REVISION(-[A-Za-z0-9_+]+)?.*=\s*([0-9]*)$/) {
 			$wl_ws_removal = undef;
 			my $subpkg = $1 // "";
 			if ($removerevs) {
@@ -924,7 +924,7 @@ my %newrevplace;
 scalar(@ARGV) or @ARGV = (".");
 for (@ARGV) {
 	# zap any FLAVOR information to make it easier to feed from of sqlports
-	s/,+[^,-]*/,/g;
+	s/,+[^,+-]*/,/g;
 
 	# Allow simple "-subpkg" instead of ugly ",-subpkg"
 	s/^-/,-/;
