@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/05/01 10:40:56 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/06 22:42:59 steven Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-V=		4.07
+V=		4.08
 DISTNAME=	App-ClusterSSH-$V
 PKGNAME=	clusterssh-${V:S/_/./}
 
@@ -22,6 +22,7 @@ PKG_ARCH=	*
 CONFIGURE_STYLE = modbuild
 RUN_DEPENDS=	x11/p5-Tk \
 		x11/p5-X11-Protocol \
+		x11/p5-X11-Protocol-Other \
 		devel/p5-Try-Tiny \
 		devel/p5-Exception-Class \
 		devel/p5-Readonly \
