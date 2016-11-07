@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/27 20:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/07 11:23:49 ajacoutot Exp $
 
 COMMENT=		.NET language binding for the GTK+2 toolkit
 
 MAJOR=			12
-MINOR=			11
+MINOR=			42
 VERSION=		2.${MAJOR}.${MINOR}
 
 DISTNAME=		gtk-sharp-${VERSION}
 PKGNAME=		mono-gtk2-${VERSION}
-REVISION=		0
 
 CATEGORIES=		x11
 
@@ -26,7 +25,6 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 MASTER_SITES=		http://origin-download.mono-project.com/sources/gtk-sharp2${MAJOR}/
-EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 
