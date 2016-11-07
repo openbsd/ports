@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/07 08:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/07 10:36:50 sthen Exp $
 
-BROKEN-i386=	failing since mono update
+BROKEN=		failing since mono update
 
 COMMENT=	functional-first programming language
 
