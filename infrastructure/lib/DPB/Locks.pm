@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.37 2016/05/14 20:26:42 espie Exp $
+# $OpenBSD: Locks.pm,v 1.38 2016/11/07 21:26:06 afresh1 Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,9 @@ our @ISA = (qw(DPB::UserProxy));
 
 use File::Path;
 use Fcntl;
-require 'fcntl.ph';
+
+# Fcntl doesn't export this
+use constant O_CLOEXEC => 0x10000;
 
 sub new
 {
@@ -139,7 +141,7 @@ sub dolock
 	$self->run_as(
 	    sub {
 		if (sysopen my $fh, $name, 
-		    O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC(), 0666) {
+		    O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC, 0666) {
 			DPB::Util->make_hot($fh);
 			print $fh "locked=", $v->logname, "\n";
 			print $fh "dpb=", $self->{dpb_pid}, " on ", 
