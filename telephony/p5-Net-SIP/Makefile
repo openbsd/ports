@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/10/30 23:13:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2016/11/07 15:14:24 bluhm Exp $
 
 COMMENT =	perl framework for SIP
 
-DISTNAME =	Net-SIP-0.690
+DISTNAME =	Net-SIP-0.691
 
 CATEGORIES =	net telephony
 
