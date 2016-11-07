@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.513 2016/11/02 16:58:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.514 2016/11/07 20:04:58 jca Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -399,6 +399,7 @@
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
      SUBDIR += py-unidecode
+     SUBDIR += py-unidecode,python3
      SUBDIR += py-vatnumber
      SUBDIR += py-vobject
      SUBDIR += py-xml
