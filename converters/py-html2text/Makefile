@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/11/07 23:53:38 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2016/11/07 23:56:32 jca Exp $
 
 COMMENT =		HTML to markdown-formatted text converter
 
@@ -21,6 +21,6 @@ FLAVORS =		python3
 FLAVOR ?=
 
 post-install:
-	mv ${PREFIX}/bin/{,${MODPY_PY_PREFIX}}html2text
+	mv ${PREFIX}/bin/html2text ${PREFIX}/bin/${MODPY_PY_PREFIX}html2text
 
 .include <bsd.port.mk>
