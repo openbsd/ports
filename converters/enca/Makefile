@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/07 23:26:05 jca Exp $
 
 COMMENT=		detect character set and encoding of text files
 
-DISTNAME=		enca-1.18
+DISTNAME=		enca-1.19
 SHARED_LIBS +=  enca                 0.0      # 5.1
 CATEGORIES=		converters textproc
 
