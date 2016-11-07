@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2016/11/07 09:46:29 dcoppa Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -251,7 +251,7 @@ post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${QT_DOC}
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qdoc3 ${QT_BINDIR}
 .for p in ${PROGRAMS4}
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4

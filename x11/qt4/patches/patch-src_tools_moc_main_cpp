@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_tools_moc_main_cpp,v 1.4 2015/06/03 07:28:01 dcoppa Exp $
+$OpenBSD: patch-src_tools_moc_main_cpp,v 1.5 2016/11/07 09:46:29 dcoppa Exp $
 
 Workaround moc's inability to properly parse C++ macros within
 some of Boost's headers. This issue may come up again with other
 headers from Boost requiring additional entries to be added. The
 C++ parser from Qt5's moc has been fixed.
 
-https://bugreports.qt-project.org/browse/QTBUG-22829
+https://bugreports.qt.io/browse/QTBUG-22829
 
 --- src/tools/moc/main.cpp.orig	Thu May  7 16:14:44 2015
 +++ src/tools/moc/main.cpp	Sun May 31 14:58:12 2015
