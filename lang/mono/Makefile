@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2016/10/31 11:45:07 robert Exp $
+# $OpenBSD: Makefile,v 1.104 2016/11/07 11:52:25 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.6.1
 DISTNAME=	mono-${V}.5
+REVISION=	0
 
 CATEGORIES=	lang devel
 
@@ -52,7 +53,8 @@ AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_header_execinfo_h=no
+		ac_cv_header_execinfo_h=no \
+		ac_cv_header_pthread_np_h=yes
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	CFLAGS="-march=i586"
@@ -67,10 +69,10 @@ CONFIGURE_ARGS=	--with-gc=included \
 
 TEST_TARGET=check
 
-DLLMAP_FILES=	mcs/class/Managed.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
+DLLMAP_FILES=	mcs/class/System.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 		mcs/tools/mono-shlib-cop/mono-shlib-cop.exe.config \
 		mcs/class/System/System.IO/FAMWatcher.cs \
-		mcs/class/Managed.Windows.Forms/System.Windows.Forms/X11DesktopColors.cs \
+		mcs/class/System.Windows.Forms/System.Windows.Forms/X11DesktopColors.cs \
 		mcs/class/Mono.Cairo/Samples/gtk/OldAndBusted.cs \
 		data/config
 
