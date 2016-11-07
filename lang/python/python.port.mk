@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.89 2016/10/31 11:08:16 jasper Exp $
+# $OpenBSD: python.port.mk,v 1.90 2016/11/07 16:42:08 jca Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -143,6 +143,10 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
 			${MODPY_SETUP_ARGS}
 
+MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} \
+			${MODPY_BIN} ./${MODPY_SETUP} \
+			${MODPY_SETUP_ARGS}
+
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
 		MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX \
 		MODPY_PY_PREFIX ${SUBST_VARS}
@@ -165,7 +169,7 @@ MODPY_INSTALL_TARGET = \
 	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 MODPY_TEST_TARGET = \
-	${MODPY_CMD} ${TEST_TARGET}
+	${MODPY_TEST_CMD} ${TEST_TARGET}
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
