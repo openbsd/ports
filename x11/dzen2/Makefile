@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2016/08/12 02:44:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/07 10:51:36 sthen Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
 
+GH_COMMIT=		488ab66019f475e35e067646621827c18a879ba1
+GH_ACCOUNT=		robm
+GH_PROJECT=		dzen
 V=			0.9.5
+REVISION=		2
+
 DISTNAME=		dzen2-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-gadgets=	dzen2-gadgets-$V
-REVISION=		1
+
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/robm/dzen
@@ -17,12 +22,8 @@ MULTI_PACKAGES=		-main -gadgets
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB-main=		X11 c Xinerama Xpm
-WANTLIB-gadgets=	X11 c
 
-GH_COMMIT=		488ab66019f475e35e067646621827c18a879ba1
-GH_ACCOUNT=		robm
-GH_PROJECT=		dzen
+WANTLIB=		X11 c Xinerama Xpm
 
 RUN_DEPENDS-gadgets=	x11/dzen2
 
@@ -30,7 +31,7 @@ FLAVORS=		xft
 FLAVOR?=
 
 .if ${FLAVOR:Mxft}
-WANTLIB-main+=		Xft
+WANTLIB+=		Xft
 XFT_CFLAGS=		-DDZEN_XFT `pkg-config --cflags xft`
 XFT_LDFLAGS=		`pkg-config --libs xft`
 .endif

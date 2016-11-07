@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/27 16:57:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/11/07 10:51:36 sthen Exp $
 
 COMMENT=	creates DVD file structures
 
 DISTNAME=	dvdauthor-0.7.1
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
 
@@ -12,7 +13,7 @@ HOMEPAGE=	http://dvdauthor.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += MagickCore-6.Q16 c dvdread fontconfig freetype fribidi
-WANTLIB += iconv m png xml2 z
+WANTLIB += iconv lzma m png xml2 z
 
 LIB_DEPENDS=	devel/fribidi \
 		devel/libdvdread \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/09/15 06:50:05 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2016/11/07 10:51:36 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
 V=			1.7.0
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -23,7 +23,7 @@ MULTI_PACKAGES=		-main -plugins
 PKGNAME-main=		dnscrypt-proxy-${V}
 PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
 
-commonWANTLIB=		execinfo kvm m sodium
+commonWANTLIB=		execinfo kvm m sodium pthread
 
 WANTLIB-main=		${commonWANTLIB} c ltdl
 WANTLIB-plugins=	${commonWANTLIB} crypto ldns
