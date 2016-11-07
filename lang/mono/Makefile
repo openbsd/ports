@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2016/11/07 11:52:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2016/11/07 15:22:38 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.6.1
 DISTNAME=	mono-${V}.5
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -49,8 +49,7 @@ LIB_DEPENDS=	converters/libiconv
 
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no \
@@ -63,9 +62,10 @@ CONFIGURE_ENV+=	CFLAGS="-march=i586"
 WRKDIST=	${WRKDIR}/mono-${V}
 
 CONFIGURE_ARGS=	--with-gc=included \
-		--with-sgen=no \
-		--enable-quiet-build=no \
-		--disable-shared-handles
+		--without-sgen \
+		--disable-quiet-build \
+		--disable-shared-handles \
+		--without-sigaltstack
 
 TEST_TARGET=check
 
@@ -77,11 +77,6 @@ DLLMAP_FILES=	mcs/class/System.Windows.Forms/System.Windows.Forms/MimeIcon.cs \
 		data/config
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
-
-post-patch:
-	@cd ${WRKSRC}/eglib && \
-		${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} && \
-		${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \

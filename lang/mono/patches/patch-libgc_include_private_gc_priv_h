@@ -1,14 +1,12 @@
-$OpenBSD: patch-libgc_include_private_gc_priv_h,v 1.3 2016/06/26 10:40:28 robert Exp $
---- libgc/include/private/gc_priv.h.orig	Thu Jun  9 17:01:54 2016
-+++ libgc/include/private/gc_priv.h	Thu Jun 23 19:29:27 2016
-@@ -1979,6 +1979,10 @@ void GC_err_puts GC_PROTO((GC_CONST char *s));
+$OpenBSD: patch-libgc_include_private_gc_priv_h,v 1.4 2016/11/07 15:22:38 ajacoutot Exp $
+--- libgc/include/private/gc_priv.h.orig	Tue Oct 11 14:53:43 2016
++++ libgc/include/private/gc_priv.h	Mon Nov  7 13:38:42 2016
+@@ -1979,6 +1979,8 @@ void GC_err_puts GC_PROTO((GC_CONST char *s));
         /* Linuxthreads itself uses SIGUSR1 and SIGUSR2.			*/
  #      define SIG_SUSPEND SIGPWR
  #    endif
 +#   elif defined(GC_OPENBSD_THREADS)
-+#     ifndef GC_OPENBSD_UTHREADS
-+#       define SIG_SUSPEND SIGXFSZ
-+#     endif
++#     define SIG_SUSPEND SIGXFSZ
  #   else  /* !GC_LINUX_THREADS */
  #     if defined(_SIGRTMIN)
  #       define SIG_SUSPEND _SIGRTMIN + 6
