@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/08 14:47:22 sthen Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		3
+REVISION =		4
 CATEGORIES=		security
 
 HOMEPAGE=		http://rarcrack.sourceforge.net/
@@ -13,7 +13,7 @@ MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c iconv m pthread z xml2
+WANTLIB+= c iconv lzma m pthread xml2 z
 
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml

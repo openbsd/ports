@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/13 15:29:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/08 14:47:22 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -7,7 +7,7 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 COMMENT =	MSX home computer emulator
 
 DISTNAME =	openmsx-0.9.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -19,6 +19,10 @@ PERMIT_PACKAGE_CDROM =	claims GPLv2, but no copyright notices in source files
 PERMIT_PACKAGE_FTP =	claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
 
+WANTLIB += ${MODTCL_LIB}
+WANTLIB += GL GLEW SDL SDL_ttf ao c freetype iconv lzma m ogg png
+WANTLIB += pthread stdc++ theoradec vorbis xml2 z
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openmsx/}
 CONFIGURE_STYLE =	simple
 
@@ -26,9 +30,6 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_BINARY_DIR=${PREFIX}/bin \
 		INSTALL_SHARE_DIR=${PREFIX}/share/openmsx \
 		INSTALL_DOC_DIR=${PREFIX}/share/doc/openmsx
-
-WANTLIB +=	GL c freetype iconv m pthread stdc++ z ${MODTCL_LIB} ao
-WANTLIB +=	GLEW SDL SDL_ttf ogg png theoradec vorbis xml2
 
 LIB_DEPENDS =	audio/libao \
 		audio/libvorbis \

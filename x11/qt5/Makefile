@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/09/23 15:22:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.55 2016/11/08 14:47:22 sthen Exp $
 
 USE_WXNEEDED =		Yes # Qt5WebKit
 
@@ -19,7 +19,7 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-main =		qt5-${VERSION}
-REVISION-main =		3
+REVISION-main =		4
 PKGNAME-examples =	qt5-examples-${VERSION}
 REVISION-examples =	0
 PKGNAME-html =		qt5-html-${VERSION}
@@ -108,8 +108,8 @@ WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main += cups fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 execinfo
 WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-x11-2.0 icudata icui18n
-WANTLIB-main += icuuc iodbc jasper jpeg m mng openal pango-1.0 pangocairo-1.0
+WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc
+WANTLIB-main += iodbc jasper jpeg lzma m mng openal pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre16 png pthread pulse sqlite3 tiff
 WANTLIB-main += webp xcb xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr
 WANTLIB-main += xcb-render xcb-render-util xcb-shape xcb-shm xcb-sync
