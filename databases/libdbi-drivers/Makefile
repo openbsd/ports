@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/08 21:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2016/11/08 21:56:38 sthen Exp $
 
 V =			0.8.3-1
-REVISION =		9
-REVISION-sqlite3 =	11
+REVISION =		11
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite =	sqlite driver for libdbi
@@ -58,7 +57,9 @@ LIB_DEPENDS-sqlite3 =	databases/libdbi \
 			databases/sqlite3
 RUN_DEPENDS-sqlite3 =
 
-WANTLIB-freetds =	crypto ct dbi iconv m pthread ssl
+WANTLIB-freetds =	ct dbi iconv m pthread ffi gcrypt gmp gnutls
+WANTLIB-freetds +=	gpg-error hogweed idn intl nettle p11-kit tasn1 z
+
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi
 
