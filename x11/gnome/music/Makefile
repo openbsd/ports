@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2016/11/01 11:10:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2016/11/08 12:57:29 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		3.22.1
+GNOME_VERSION=		3.22.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
