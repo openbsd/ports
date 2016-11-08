@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/11/08 00:12:14 tsg Exp $
 
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_EGG_VERSION =	1.3
-REVISION =		1
+REVISION =		2
 DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel
 
-MAINTAINER =		Giannis Tsaraias <yannis@cryptolab.net>
+MAINTAINER =		Giannis Tsaraias <tsg@openbsd.org>
 
 HOMEPAGE =		http://www.dlitz.net/software/python-pbkdf2/
 
