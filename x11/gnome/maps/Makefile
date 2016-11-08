@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2016/10/31 11:55:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/08 08:50:21 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.22.1
+GNOME_VERSION=		3.22.2
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
