@@ -1,0 +1,20 @@
+$OpenBSD: patch-thirdparty_mujs_jslex_c,v 1.1 2016/11/08 12:05:04 sthen Exp $
+
+a0ceaf5050f
+
+Fix 697244: Check for incomplete escape sequence at end of input. master
+author	Tor Andersson <tor.andersson@artifex.com>	
+	Mon, 31 Oct 2016 12:05:37 +0000 (13:05 +0100)
+committer	Tor Andersson <tor.andersson@artifex.com>	
+	Mon, 31 Oct 2016 12:05:37 +0000 (13:05 +0100)
+
+--- thirdparty/mujs/jslex.c.orig	Tue Nov  8 11:14:30 2016
++++ thirdparty/mujs/jslex.c	Tue Nov  8 11:15:34 2016
+@@ -376,6 +376,7 @@ static int lexescape(js_State *J)
+ 		return 0;
+ 
+ 	switch (J->lexchar) {
++	case 0: jsY_error(J, "unterminated escape sequence");
+ 	case 'u':
+ 		jsY_next(J);
+ 		if (!jsY_ishex(J->lexchar)) return 1; else { x |= jsY_tohex(J->lexchar) << 12; jsY_next(J); }
