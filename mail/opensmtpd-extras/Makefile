@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/10/18 18:05:19 jung Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/08 21:53:16 sthen Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -13,7 +13,7 @@ PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		mail
 
@@ -27,7 +27,7 @@ MULTI_PACKAGES=		-main -mysql -pgsql -python -redis
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto event ssl sqlite3
+WANTLIB=		c crypto event pthread ssl sqlite3
 WANTLIB-mysql=		c crypto event ssl m z pthread stdc++ mysqlclient
 WANTLIB-pgsql=		c crypto event ssl pq
 WANTLIB-python=		c crypto event ssl m util pthread ${MODPY_WANTLIB}
