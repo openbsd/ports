@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/14 09:33:52 florian Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/08 20:10:02 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,26 +6,26 @@ lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}api_listing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}api_meta_data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}measurement.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}source.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_listing.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_listing.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_meta_data.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/api_meta_data.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/measurement.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/measurement.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/request.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/request.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/source.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/source.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/stream.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/stream.pyc
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/version.py
-lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/version.pyc

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/14 09:33:52 florian Exp $
+# $OpenBSD: Makefile,v 1.4 2016/11/08 20:10:02 danj Exp $
 
 COMMENT =		python bindings for the RIPE Atlas API
 
-MODPY_EGG_VERSION =	1.2
+MODPY_EGG_VERSION =	1.3
 DISTNAME =		ripe.atlas.cousteau-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,11 +20,18 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-dateutil \
-			net/py-socketio-client \
-			www/py-requests
+FLAVORS =               python3
+FLAVOR ?=
 
-# unported dep: pbr (also need py-functools32, py-jsonschema)
-NO_TEST =		Yes
+RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
+			net/py-socketio-client${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-funcsigs${MODPY_FLAVOR} \
+			devel/py-jsonschema${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
