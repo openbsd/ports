@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/11/08 16:15:25 jeremy Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
 DISTNAME=	pygments.rb-0.6.3
+REVISION=	0
 EPOCH=		0
 
 CATEGORIES=	textproc
@@ -18,8 +19,8 @@ MODULES=	lang/ruby \
 MODPY_BUILDDEP=	No
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/ruby-yajl,${MODRUBY_FLAVOR}>=1.2.1 \
-		sysutils/ruby-posix-spawn,${MODRUBY_FLAVOR}
+RUN_DEPENDS=	devel/ruby-yajl,${MODRUBY_FLAVOR}>=1.2.0,<2.0 \
+		sysutils/ruby-posix-spawn,${MODRUBY_FLAVOR}>=0.3.6,<0.4
 
 CONFIGURE_STYLE=ruby gem
 
