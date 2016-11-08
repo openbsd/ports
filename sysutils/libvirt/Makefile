@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/11/08 14:38:55 sthen Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-1.3.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=	virt-qemu                 0.4 # 1003.0
@@ -20,7 +20,7 @@ MASTER_SITES=		${HOMEPAGE}/sources/ \
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += avahi-client avahi-common c crypto curl dbus-1 ffi gmp gnutls
-WANTLIB += hogweed lzma m ncurses nettle nghttp2 p11-kit pthread
+WANTLIB += hogweed idn lzma m ncurses nettle nghttp2 p11-kit pthread
 WANTLIB += readline ssh2 ssl tasn1 util xml2 z
 
 MODULES=		devel/gettext \
