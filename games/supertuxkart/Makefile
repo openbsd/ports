@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/05 23:27:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2016/11/08 21:57:50 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots
 
 V =			0.9.2
+REVISION =		0
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
@@ -18,7 +19,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext Xrandr c curl jpeg
+WANTLIB += GL GLU ICE SM X11 Xext Xrandr c curl freetype jpeg
 WANTLIB += m ogg openal png pthread vorbis vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
