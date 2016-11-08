@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2016/11/08 14:23:59 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		4.3.3
-REVISION =		3
+REVISION =		4
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
@@ -41,7 +41,7 @@ MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 MODULES =		devel/gettext
-WANTLIB-main =		c crypto curl db expat m pcre pthread ssl xml2 nghttp2 \
+WANTLIB-main =		c crypto curl db expat m pcre pthread ssl lzma xml2 nghttp2 \
 			ncurses readline unistring z ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main =	net/curl \
 			databases/db/v4,-main,no_java \

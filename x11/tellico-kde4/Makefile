@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/12 12:33:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/08 14:23:59 sthen Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.10
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -20,7 +20,7 @@ WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kresources
 WANTLIB += ${KDE4LIB}/ksane ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB += exempi exslt gcrypt gpg-error poppler-qt4 qimageblitz qjson
-WANTLIB += soprano tag xml2 xslt yaz
+WANTLIB += soprano tag lzma xml2 xslt yaz
 
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/11/08 14:23:59 sthen Exp $
 
 COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -13,7 +13,7 @@ MAINTAINER=	David Cathcart <cathcart@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m ncurses pthread xml2>=7.10 z
+WANTLIB += c crypto m ncurses pthread lzma xml2>=7.10 z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/21 14:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/08 14:23:59 sthen Exp $
 
 COMMENT=		LaTeX symbols selector
 
 DISTNAME=		lss-0.1.6
-REVISION=		7
+REVISION=		8
 CATEGORIES=		print x11
 
 HOMEPAGE=		http://clayo.org/lss/
@@ -16,7 +16,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xml2 z
+WANTLIB += pthread-stubs xcb lzma xml2 z
 
 MASTER_SITES=		${HOMEPAGE}
 

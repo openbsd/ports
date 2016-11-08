@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2016/09/12 20:58:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2016/11/08 14:23:59 sthen Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
 CATEGORIES =	net security
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.fwbuilder.org/
 
@@ -53,7 +53,7 @@ TEST_ENV +=		COPTS="${COPTS}"
 TEST_IS_INTERACTIVE =	X11
 
 WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
-WANTLIB += pthread stdc++ util xml2 xslt z
+WANTLIB += lzma pthread stdc++ util xml2 xslt z
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
