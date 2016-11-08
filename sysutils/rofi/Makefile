@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/11 11:01:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/11/08 18:08:40 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 GH_PROJECT =		rofi
-GH_TAGNAME =		1.1.0
+GH_TAGNAME =		1.2.0
 GH_ACCOUNT =		DaveDavenPort
 
 CATEGORIES =		sysutils x11
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
-WANTLIB += X11 X11-xcb c cairo glib-2.0 gobject-2.0 intl pango-1.0
+WANTLIB += c cairo glib-2.0 gobject-2.0 intl pango-1.0
 WANTLIB += pangocairo-1.0 startup-notification-1 xcb xcb-ewmh
 WANTLIB += xcb-icccm xcb-render xcb-util xcb-xinerama xcb-xkb
-WANTLIB += xkbcommon-x11 xkbcommon
+WANTLIB += xkbcommon-x11 xkbcommon xcb-xrm
 
 BUILD_DEPENDS +=	x11/i3
 LIB_DEPENDS =		devel/pango \
