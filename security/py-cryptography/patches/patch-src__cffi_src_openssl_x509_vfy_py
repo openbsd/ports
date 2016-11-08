@@ -1,0 +1,46 @@
+$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.1 2016/11/08 15:37:59 sthen Exp $
+
+Hack to allow building with newer libressl following this commit:
+
+Date: 2016/11/05 20:14:59
+Author: beck
+Branch: HEAD
+Tag: (none) 
+Log:
+Part one of the alt chains changes, bring in newer modifications to
+VERIFY_PARAMS - based on boringssl.
+ok jsing@ miod@
+
+Members: 
+	vpm_int.h:1.1->1.2 
+	x509_vfy.h:1.16->1.17 
+	x509_vpm.c:1.11->1.12 
+
+--- src/_cffi_src/openssl/x509_vfy.py.orig	Mon Sep 26 21:22:21 2016
++++ src/_cffi_src/openssl/x509_vfy.py	Tue Nov  8 15:31:14 2016
+@@ -207,10 +207,12 @@ static const long X509_V_ERR_SUITE_B_INVALID_CURVE = 0
+ static const long X509_V_ERR_SUITE_B_INVALID_SIGNATURE_ALGORITHM = 0;
+ static const long X509_V_ERR_SUITE_B_LOS_NOT_ALLOWED = 0;
+ static const long X509_V_ERR_SUITE_B_CANNOT_SIGN_P_384_WITH_P_256 = 0;
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2050100fL
+ static const long X509_V_ERR_HOSTNAME_MISMATCH = 0;
+ static const long X509_V_ERR_EMAIL_MISMATCH = 0;
+ static const long X509_V_ERR_IP_ADDRESS_MISMATCH = 0;
+ #endif
++#endif
+ 
+ /* OpenSSL 1.0.2beta2+ verification parameters */
+ #if CRYPTOGRAPHY_OPENSSL_102BETA2_OR_GREATER && \
+@@ -226,10 +228,12 @@ static const long X509_V_FLAG_SUITEB_128_LOS = 0;
+ 
+ int (*X509_VERIFY_PARAM_set1_host)(X509_VERIFY_PARAM *, const char *,
+                                    size_t) = NULL;
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2050100fL
+ int (*X509_VERIFY_PARAM_set1_email)(X509_VERIFY_PARAM *, const char *,
+                                     size_t) = NULL;
+ int (*X509_VERIFY_PARAM_set1_ip)(X509_VERIFY_PARAM *, const unsigned char *,
+                                  size_t) = NULL;
++#endif
+ int (*X509_VERIFY_PARAM_set1_ip_asc)(X509_VERIFY_PARAM *, const char *) = NULL;
+ void (*X509_VERIFY_PARAM_set_hostflags)(X509_VERIFY_PARAM *,
+                                         unsigned int) = NULL;
