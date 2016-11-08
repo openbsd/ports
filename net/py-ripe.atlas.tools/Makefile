@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/14 09:35:36 florian Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/08 20:22:26 danj Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		net
 
@@ -20,16 +19,23 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-dateutil \
-			devel/py-tzlocal \
-			net/py-ripe.atlas.cousteau \
-			net/py-ripe.atlas.sagan \
-			security/py-openssl \
-			textproc/py-yaml \
-			www/py-requests
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-TEST_DEPENDS =		${RUN_DEPENDS}
-# runs into some problem with namespace, at least on py2.7
+RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
+			devel/py-tzlocal${MODPY_FLAVOR} \
+			net/py-IP${MODPY_FLAVOR} \
+			net/py-ripe.atlas.cousteau${MODPY_FLAVOR} \
+			net/py-ripe.atlas.sagan${MODPY_FLAVOR} \
+			security/py-openssl${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR}
+
+# runs into some problem with namespace
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
