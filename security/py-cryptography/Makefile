@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/08 15:37:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/11/09 11:46:28 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	1.5.2
+MODPY_EGG_VERSION=	1.5.3
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
-REVISION=	1
 
 HOMEPAGE=	https://cryptography.io/
 
