@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.228 2016/09/12 15:38:22 jca Exp $
+# $OpenBSD: Makefile,v 1.229 2016/11/09 15:59:37 jca Exp $
 
-VERSION =		4.4.5
+VERSION =		4.5.1
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -15,21 +15,17 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		0
-REVISION-ldb =		0
-REVISION-tevent =	0
-
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.26
-TEVENT_V =		0.9.28
+LDB_V =			1.1.27
+TEVENT_V =		0.9.29
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
 			dcerpc-binding		1.0 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		1.0 \
+			dcerpc-server		2.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -38,28 +34,27 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.0 \
-			ldb			0.2 \
-			tevent-unix-util	0.0 \
-			ndr			0.1 \
-			ndr-krb5pac		0.0 \
-			ndr-nbt			0.0 \
-			ndr-standard		0.0 \
+			ldb			0.3 \
+			ndr			0.2 \
+			ndr-krb5pac		0.1 \
+			ndr-nbt			0.1 \
+			ndr-standard		0.1 \
 			netapi			2.0 \
 			pyldb-util		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.0 \
 			samba-errors		0.0 \
-			samba-hostconfig	1.0 \
+			samba-hostconfig	2.0 \
 			samba-passdb		0.1 \
 			samba-policy		0.0 \
-			samba-util		1.0 \
+			samba-util		1.1 \
 			samdb			0.0 \
 			smbclient		4.1 \
-			smbconf			0.0 \
+			smbconf			1.0 \
 			smbldap			0.0 \
 			tevent			0.2 \
-			tevent-util		0.0 \
-			wbclient		3.0 \
+			tevent-util		0.1 \
+			wbclient		3.1 \
 			wind-samba4		0.0 \
 			replace			0.0 \
 			util-setid		0.0
@@ -161,7 +156,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--without-acl-support \
 			--without-libarchive \
 			--disable-rpath \
-			--with-ntvfs-fileserver
+			--with-ntvfs-fileserver \
+			--without-gpgme
 
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 #CONFIGURE_ARGS +=	--enable-developer
