@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/20 09:04:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/09 14:45:56 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/pycparser/
 lib/python${MODPY_VERSION}/site-packages/pycparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pycparser/__init__.py
@@ -31,9 +31,11 @@ lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}cpp.${MOD
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}ctokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}lex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}yacc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pycparser/ply/${MODPY_PYCACHE}ygen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/cpp.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/ctokens.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/lex.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/ply/yacc.py
+lib/python${MODPY_VERSION}/site-packages/pycparser/ply/ygen.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/plyparser.py
 lib/python${MODPY_VERSION}/site-packages/pycparser/yacctab.py
