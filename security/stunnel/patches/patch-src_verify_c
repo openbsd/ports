@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_verify_c,v 1.3 2016/04/24 12:07:48 gsoares Exp $
+$OpenBSD: patch-src_verify_c,v 1.4 2016/11/09 23:14:31 gsoares Exp $
 
 disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
 
 
---- src/verify.c.orig	Fri Feb 19 16:18:43 2016
-+++ src/verify.c	Thu Apr 21 21:59:31 2016
+--- src/verify.c.orig	Wed Jul  6 13:18:17 2016
++++ src/verify.c	Fri Nov  4 00:24:32 2016
 @@ -51,7 +51,7 @@ NOEXPORT int add_dir_lookup(X509_STORE *, char *);
  NOEXPORT int verify_callback(int, X509_STORE_CTX *);
  NOEXPORT int verify_checks(CLI *, int, X509_STORE_CTX *);
@@ -14,7 +14,7 @@ disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
  NOEXPORT int cert_check_subject(CLI *, X509_STORE_CTX *);
  #endif /* OPENSSL_VERSION_NUMBER>=0x10002000L */
  NOEXPORT int cert_check_local(X509_STORE_CTX *);
-@@ -274,7 +274,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
+@@ -277,7 +277,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
      }
  
      if(depth==0) { /* additional peer certificate checks */
@@ -23,12 +23,12 @@ disable OpenSSL 1.0.2 X509_check_* functions, so it can build with libressl.
          if(!cert_check_subject(c, callback_ctx))
              return 0; /* reject */
  #endif /* OPENSSL_VERSION_NUMBER>=0x10002000L */
-@@ -285,7 +285,7 @@ NOEXPORT int cert_check(CLI *c, X509_STORE_CTX *callba
-     return 1; /* accept */
- }
+@@ -349,7 +349,7 @@ NOEXPORT int cert_check_local(X509_STORE_CTX *callback
+     subject=X509_get_subject_name(cert);
  
--#if OPENSSL_VERSION_NUMBER>=0x10002000L
-+#if OPENSSL_VERSION_NUMBER>=0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
- NOEXPORT int cert_check_subject(CLI *c, X509_STORE_CTX *callback_ctx) {
-     X509 *cert=X509_STORE_CTX_get_current_cert(callback_ctx);
-     NAME_LIST *ptr;
+ #if OPENSSL_VERSION_NUMBER>=0x10000000L
+-#if OPENSSL_VERSION_NUMBER<0x10100006L
++#if OPENSSL_VERSION_NUMBER<0x10100006L || defined(LIBRESSL_VERSION_NUMBER)
+ #define X509_STORE_CTX_get1_certs X509_STORE_get1_certs
+ #endif
+     /* modern API allows retrieving multiple matching certificates */

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_common_h,v 1.1 2016/11/09 23:14:31 gsoares Exp $
+--- src/common.h.orig	Mon Jun 27 04:29:32 2016
++++ src/common.h	Thu Nov  3 23:57:29 2016
+@@ -448,7 +448,7 @@ extern char *sys_errlist[];
+ #define OPENSSL_NO_TLS1_2
+ #endif /* OpenSSL older than 1.0.1 || defined(OPENSSL_NO_TLS1) */
+ 
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ #ifndef OPENSSL_NO_SSL2
+ #define OPENSSL_NO_SSL2
+ #endif /* !defined(OPENSSL_NO_SSL2) */
+@@ -474,7 +474,7 @@ extern char *sys_errlist[];
+ #include <openssl/des.h>
+ #ifndef OPENSSL_NO_DH
+ #include <openssl/dh.h>
+-#if OPENSSL_VERSION_NUMBER<0x10100000L
++#if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+ #endif /* OpenSSL older than 1.1.0 */
+ #endif /* !defined(OPENSSL_NO_DH) */

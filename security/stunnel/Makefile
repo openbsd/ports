@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.83 2016/04/24 12:07:48 gsoares Exp $
+# $OpenBSD: Makefile,v 1.84 2016/11/09 23:14:31 gsoares Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-5.31
+DISTNAME=	stunnel-5.37
 CATEGORIES=	security
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
@@ -10,7 +10,7 @@ MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto pthread ssl util z
+WANTLIB += c crypto pthread ssl util
 
 HOMEPAGE=	http://www.stunnel.org/
 

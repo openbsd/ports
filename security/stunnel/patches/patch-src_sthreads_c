@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sthreads_c,v 1.1 2016/11/09 23:14:31 gsoares Exp $
+--- src/sthreads.c.orig	Thu Nov  3 23:44:55 2016
++++ src/sthreads.c	Thu Nov  3 23:45:02 2016
+@@ -45,7 +45,7 @@
+ 
+ STUNNEL_RWLOCK stunnel_locks[STUNNEL_LOCKS];
+ 
+-#if OPENSSL_VERSION_NUMBER<0x10100004L
++#if OPENSSL_VERSION_NUMBER<0x10100004L || defined(LIBRESSL_VERSION_NUMBER)
+ #define CRYPTO_THREAD_lock_new() CRYPTO_get_new_dynlockid()
+ #endif
+ 
