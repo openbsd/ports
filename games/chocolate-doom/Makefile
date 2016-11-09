@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/16 09:34:12 schwarze Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/09 11:58:20 sthen Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		2.2.1
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.chocolate-doom.org/
 
