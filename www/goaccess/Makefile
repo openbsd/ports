@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/01 15:04:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/09 10:28:19 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.0.2
+DISTNAME =		goaccess-1.1
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -31,6 +31,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/goaccess ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/goaccess.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/goaccess/
-	${INSTALL_DATA} ${WRKSRC}/config/goaccess.conf ${PREFIX}/share/examples/goaccess/
+	${INSTALL_DATA} ${WRKSRC}/config/goaccess.conf \
+		${PREFIX}/share/examples/goaccess/
 
 .include <bsd.port.mk>
