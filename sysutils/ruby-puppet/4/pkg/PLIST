@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/09/06 09:50:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/11/09 13:21:25 ajacoutot Exp $
 @option is-branch
 @conflict puppet->=3,<4
 @newgroup _puppet:580
@@ -1481,9 +1481,8 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
 share/emacs/site-lisp/puppet-mode.el
 share/examples/ruby${MODRUBY_BINREV}-puppet/
-@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/manifests/
-@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/modules/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
+@sample ${SYSCONFDIR}/puppetlabs/
 @sample ${SYSCONFDIR}/puppetlabs/puppet/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
@@ -1494,13 +1493,20 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/fileserver.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/fileserver.conf
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
-@sample /var/log/puppetlabs/puppet/
-@sample /var/run/puppetlabs/
+@sample ${SYSCONFDIR}/puppetlabs/code/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/manifests/
+@sample ${SYSCONFDIR}/puppetlabs/code/environments/production/modules/
+@sample ${LOCALSTATEDIR}/log/puppetlabs/
+@sample ${LOCALSTATEDIR}/log/puppetlabs/puppet/
 @mode 0755
-@sample /var/puppetlabs/
-@sample /var/puppetlabs/puppet/cache/lib/
-@sample /var/puppetlabs/puppet/modules/
-@sample /var/puppetlabs/puppet/cache/facts.d/
+@sample ${LOCALSTATEDIR}/puppetlabs/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/cache/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/cache/lib/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/cache/facts.d/
+@sample ${LOCALSTATEDIR}/puppetlabs/puppet/modules/
 @mode
 @rcscript ${RCDIR}/puppet
 @rcscript ${RCDIR}/puppetmaster
