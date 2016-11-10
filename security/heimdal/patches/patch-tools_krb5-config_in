@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_krb5-config_in,v 1.1 2016/11/10 06:01:45 jca Exp $
+$OpenBSD: patch-tools_krb5-config_in,v 1.2 2016/11/10 08:54:43 ajacoutot Exp $
 
 - help ld.so(1) find libs out of its default search path
 - help ld(1) find libcom_err in ${LOCALBASE}
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_krb5-config_in,v 1.1 2016/11/10 06:01:45 jca Exp $
  
  if test "$do_libs" = "yes"; then
 -    lib_flags="-L${libdir}"
-+    lib_flags="-L${libdir} -R${libdir} -L%%LOCALBASE%%/lib"
++    lib_flags="-L${libdir} -R${libdir} -L${LOCALBASE}/lib"
      case $library in
      gssapi)
  	lib_flags="$lib_flags -lgssapi -lheimntlm"

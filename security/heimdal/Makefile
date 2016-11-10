@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/10 06:01:45 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/10 08:54:43 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -133,8 +133,8 @@ RM_MAN=			man1/afslog.1 \
 			man8/kxd.8 \
 			man8/push.8
 
-post-patch:
-	sed -i 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/tools/krb5-config.in
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/krb5-config.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/heimdal
