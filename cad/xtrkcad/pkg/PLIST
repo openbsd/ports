@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/13 21:35:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/10 22:18:18 sebastia Exp $
 @bin bin/xtrkcad
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
@@ -583,6 +583,7 @@ share/xtrkcad/params/HO-WillsHOOO.xtp
 share/xtrkcad/params/HO-atl100ho.xtp
 share/xtrkcad/params/HO-cmr-ho.xtp
 share/xtrkcad/params/HO_toolkit-Roads.xtp
+share/xtrkcad/params/HOn30_Minitrains.xtp
 share/xtrkcad/params/Hornby Dublo 2 Rail Buildings.xtp
 share/xtrkcad/params/Hornby Dublo 2 Rail.xtp
 share/xtrkcad/params/Hornby Dublo 3 Rail with Turntable.xtp
@@ -670,12 +671,17 @@ share/xtrkcad/params/TT-TilligAdvBeddingTrack.xtp
 share/xtrkcad/params/TT-Trak Modules.xtp
 share/xtrkcad/params/Tables (all scales).xtp
 share/xtrkcad/params/TilligAdvTT.xtp
-share/xtrkcad/params/TilligEliteHO-V2a.xtp
+share/xtrkcad/params/TilligH0EliteCode83.xtp
+share/xtrkcad/params/TilligH0e.xtp
+share/xtrkcad/params/TilligH0m.xtp
+share/xtrkcad/params/TilligTTModellGS.xtp
 share/xtrkcad/params/USA-G.xtp
 share/xtrkcad/params/Woodland.xtp
+share/xtrkcad/params/Z-Atlas55.xtp
 share/xtrkcad/params/Z-Fasttrack.xtp
 share/xtrkcad/params/Z-Peco60.xtp
 share/xtrkcad/params/Z-Rokuhan.xtp
+share/xtrkcad/params/Z-T-Trak.xtp
 share/xtrkcad/params/accurail.xtp
 share/xtrkcad/params/amb-n.xtp
 share/xtrkcad/params/arnold.xtp
@@ -707,6 +713,7 @@ share/xtrkcad/params/ho-craft.xtp
 share/xtrkcad/params/ho-fos.xtp
 share/xtrkcad/params/ho-jlinn.xtp
 share/xtrkcad/params/ho-ncb-roads.xtp
+share/xtrkcad/params/hon3-peco.xtp
 share/xtrkcad/params/hornby3r.xtp
 share/xtrkcad/params/hubner1.xtp
 share/xtrkcad/params/kato-ho.xtp
@@ -734,6 +741,7 @@ share/xtrkcad/params/nmra-o.xtp
 share/xtrkcad/params/nmra-o3.xtp
 share/xtrkcad/params/nmra-s.xtp
 share/xtrkcad/params/nmra-tt.xtp
+share/xtrkcad/params/nmra-z.xtp
 share/xtrkcad/params/p4.xtp
 share/xtrkcad/params/peco turntable wo routes.xtp
 share/xtrkcad/params/peco-O-Bullhead.xtp
@@ -755,10 +763,10 @@ share/xtrkcad/params/rocho83.xtp
 share/xtrkcad/params/rocon.xtp
 share/xtrkcad/params/signals_HO.xtp
 share/xtrkcad/params/smltown.xtp
+share/xtrkcad/params/supero.xtp
 share/xtrkcad/params/t-trak-notes.txt
 share/xtrkcad/params/t-trak.xtp
 share/xtrkcad/params/taylor-ho.xtp
-share/xtrkcad/params/tillig-hom.xtp
 share/xtrkcad/params/tomix-n.xtp
 share/xtrkcad/params/toolkit-n.xtp
 share/xtrkcad/params/tortoise.xtp
