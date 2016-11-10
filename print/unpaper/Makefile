@@ -1,32 +1,34 @@
-# $OpenBSD: Makefile,v 1.4 2014/05/10 07:42:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/10 09:03:26 ajacoutot Exp $
 
-COMMENT=	post-processing tool for scanned paper sheets
+COMMENT=		post-processing tool for scanned paper sheets
 
-DISTNAME=	unpaper-0.3
+DISTNAME=		unpaper-6.1
 
-CATEGORIES=	print graphics
+CATEGORIES=		print graphics
 
-HOMEPAGE=	http://unpaper.berlios.de/
+HOMEPAGE=		https://www.flameeyes.eu/projects/unpaper
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m
+WANTLIB += avcodec avformat avutil c m
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=unpaper/}
+MASTER_SITES=		https://www.flameeyes.eu/files/
+EXTRACT_SUFX=		.tar.xz
 
-NO_TEST=	Yes
+BUILD_DEPENDS=		textproc/libxslt # xsltproc
+LIB_DEPENDS=		graphics/ffmpeg
+TEST_DEPENDS=		sysutils/coreutils
 
-do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -lm -o unpaper src/unpaper.c
+CONFIGURE_STYLE=	gnu
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/unpaper ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unpaper
-	${INSTALL_DATA} ${WRKSRC}/README \
-		${PREFIX}/share/doc/unpaper
+post-install:
+# useless
+	rm -rf ${PREFIX}/share/doc/unpaper
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gmd5sum ${WRKDIR}/bin/md5sum
 
 .include <bsd.port.mk>

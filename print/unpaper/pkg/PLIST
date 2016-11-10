@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/17 07:59:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/10 09:03:26 ajacoutot Exp $
 @bin bin/unpaper
-share/doc/unpaper/
-share/doc/unpaper/README
+@man man/man1/unpaper.1

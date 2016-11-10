@@ -1,0 +1,28 @@
+$OpenBSD: patch-file_c,v 1.1 2016/11/10 09:03:26 ajacoutot Exp $
+
+https://github.com/Flameeyes/unpaper/pull/42
+
+--- file.c.orig	Sun Oct 26 23:35:38 2014
++++ file.c	Wed Nov  9 16:53:16 2016
+@@ -93,10 +93,21 @@ void loadImage(const char *filename, AVFrame **image) 
+     if (pkt.stream_index != 0)
+         errOutput("unable to open file %s: invalid stream.", filename);
+ 
++    while (!got_frame && pkt.data) {
++
++        if (pkt.size <= 0) {
++            pkt.data = NULL;
++            pkt.size = 0;
++        }
++
+     ret = avcodec_decode_video2(avctx, frame, &got_frame, &pkt);
+     if (ret < 0) {
+         av_strerror(ret, errbuff, sizeof(errbuff));
+         errOutput("unable to open file %s: %s", filename, errbuff);
++    }
++
++        pkt.data += ret;
++        pkt.size -= ret;
+     }
+ 
+     switch(frame->format) {
