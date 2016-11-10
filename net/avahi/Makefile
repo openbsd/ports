@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2016/09/12 15:28:30 jca Exp $
+# $OpenBSD: Makefile,v 1.118 2016/11/10 16:54:02 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -26,13 +26,13 @@ PKGNAME-qt3=		avahi-qt3-${V}
 PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		25
-REVISION-gtk=		6
-REVISION-gtk3=		7
-REVISION-gui=		10
+REVISION-main=		26
+REVISION-gtk=		7
+REVISION-gtk3=		8
+REVISION-gui=		11
 REVISION-mono=		3
-REVISION-qt3=		5
-REVISION-qt4=		6
+REVISION-qt3=		6
+REVISION-qt4=		7
 REVISION-ui=		4
 REVISION-python=	1
 
@@ -58,23 +58,20 @@ FLAVOR?=		no_gui no_mono no_qt3 no_qt4 bootstrap
 
 MULTI_PACKAGES= 	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -python -ui
 
-MODULES=		devel/gettext \
-			textproc/intltool
+MODULES=		textproc/intltool
 
 BUILD_DEPENDS=		converters/xmltoman \
 			devel/gobject-introspection \
 
 WANTLIB-main += c expat glib-2.0 gobject-2.0 pcre pthread gdbm daemon
-WANTLIB-main += dbus-1 ffi
-WANTLIB-main += ${MODGETTEXT_WANTLIB}
+WANTLIB-main += dbus-1 ffi iconv intl
 
 RUN_DEPENDS-main=	${RUN_DEPENDS}
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS-main +=	x11/dbus,-suid
 
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			devel/glib2 \
+LIB_DEPENDS-main=	devel/glib2 \
 			databases/gdbm \
 			devel/libdaemon \
 			x11/dbus
@@ -109,11 +106,9 @@ BUILD_DEPENDS+=		lang/python/${MODPY_VERSION},-gdbm \
 
 ### -gtk
 SHARED_LIBS +=  	avahi-ui             0.0      # .1.0
-LIB_DEPENDS-gtk=	${MODGETTEXT_LIB_DEPENDS} \
-			x11/gtk+2 \
+LIB_DEPENDS-gtk=	x11/gtk+2 \
 			${BUILD_PKGPATH}
-RUN_DEPENDS-gtk=	${MODGETTEXT_RUN_DEPENDS} \
-			${BUILD_PKGPATH},-ui
+RUN_DEPENDS-gtk=	${BUILD_PKGPATH},-ui
 WANTLIB-gtk += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1
 WANTLIB-gtk += expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0
@@ -121,16 +116,13 @@ WANTLIB-gtk += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gtk += gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z
 WANTLIB-gtk += xcb-render avahi-client avahi-common xcb-shm
-WANTLIB-gtk += avahi-glib ffi harfbuzz graphite2
-WANTLIB-gtk += ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk += avahi-glib ffi harfbuzz graphite2 iconv intl
 
 ### -gtk3
 SHARED_LIBS +=		avahi-ui-gtk3             0.0 # 1.4
-LIB_DEPENDS-gtk3=	${MODGETTEXT_LIB_DEPENDS} \
-			x11/gtk+3 \
+LIB_DEPENDS-gtk3=	x11/gtk+3 \
 			${BUILD_PKGPATH}
-RUN_DEPENDS-gtk3=	${MODGETTEXT_RUN_DEPENDS} \
-			${BUILD_PKGPATH},-ui
+RUN_DEPENDS-gtk3=	${BUILD_PKGPATH},-ui
 WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
 WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
@@ -138,15 +130,13 @@ WANTLIB-gtk3 += dbus-1 expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += xcb-shm z ffi iconv intl
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gtk3 += graphite2 epoxy
 
 ### -gui
-LIB_DEPENDS-gui=	${MODGETTEXT_LIB_DEPENDS} \
-			${BUILD_PKGPATH},-gtk3
-RUN_DEPENDS-gui=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODPY_RUN_DEPENDS} \
+LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
+RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
 			x11/dbus-python \
 			x11/py-gtk2 \
@@ -162,8 +152,7 @@ WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
-WANTLIB-gui += graphite2 epoxy
-WANTLIB-gui += ${MODGETTEXT_WANTLIB}
+WANTLIB-gui += graphite2 epoxy iconv intl
 
 ### -python
 LIB_DEPENDS-python=	#empty
@@ -187,15 +176,14 @@ CONFIGURE_ARGS+=	--disable-gtk \
 .if ${BUILD_PACKAGES:M-qt3}
 SHARED_LIBS +=  	avahi-qt3            0.0      # .1.2
 MODULES+=		x11/qt3
-LIB_DEPENDS-qt3=	${MODGETTEXT_LIB_DEPENDS} \
-			${MODQT3_LIB_DEPENDS} \
+LIB_DEPENDS-qt3=	${MODQT3_LIB_DEPENDS} \
 			${BUILD_PKGPATH}
 
 WANTLIB-qt3 += GL ICE SM X11 Xcursor Xext Xfixes Xft Xi
 WANTLIB-qt3 += Xinerama Xmu Xrandr Xrender Xt expat fontconfig
 WANTLIB-qt3 += freetype jpeg lcms m mng png pthread xcb z
-WANTLIB-qt3 += avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-qt3 += X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx
+WANTLIB-qt3 += avahi-common stdc++ ${MODQT3_WANTLIB}
+WANTLIB-qt3 += X11-xcb iconv intl glapi xcb-dri2 xcb-glx
 WANTLIB-qt3 += Xdamage Xxf86vm drm pthread-stubs
 .else
 CONFIGURE_ARGS+=	--disable-qt3
@@ -204,10 +192,10 @@ CONFIGURE_ARGS+=	--disable-qt3
 .if ${BUILD_PACKAGES:M-qt4}
 SHARED_LIBS +=		avahi-qt4            0.0      # .1.2
 MODULES+=		x11/qt4
-LIB_DEPENDS-qt4=	${MODGETTEXT_LIB_DEPENDS} \
-			x11/qt4 \
+LIB_DEPENDS-qt4=	x11/qt4 \
 			${BUILD_PKGPATH}
-WANTLIB-qt4 += QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} pthread glib-2.0 gthread-2.0 pcre z
+WANTLIB-qt4 += QtCore avahi-common m stdc++ pthread
+WANTLIB-qt4 += glib-2.0 gthread-2.0 pcre z iconv intl
 .else
 CONFIGURE_ARGS+=	--disable-qt4
 .endif
