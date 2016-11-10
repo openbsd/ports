@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2016/11/03 09:38:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2016/11/10 09:07:54 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/VERSION
 google-cloud-sdk/bin/
@@ -503,6 +503,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/util/http_retry.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/util/http_retry.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/util/resource.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/util/resource.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/util/waiter.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/
 google-cloud-sdk/lib/googlecloudsdk/calliope/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/__init__.pyc
@@ -1471,16 +1473,17 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v1beta3/logging_v1b
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v1beta3/logging_v1beta3_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v1beta3/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v1beta3/resources.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/logging_v2beta1_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/logging_v2beta1_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/logging_v2beta1_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/logging_v2beta1_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/resources.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/logging_v2_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/logging_v2_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/logging_v2_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/logging_v2_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging/v2/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging_v1beta3.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging_v2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/logging_v2beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager/__init__.py
@@ -2073,8 +2076,6 @@ google-cloud-sdk/lib/surface/compute/backend_buckets/delete.py
 google-cloud-sdk/lib/surface/compute/backend_buckets/delete.pyc
 google-cloud-sdk/lib/surface/compute/backend_buckets/describe.py
 google-cloud-sdk/lib/surface/compute/backend_buckets/describe.pyc
-google-cloud-sdk/lib/surface/compute/backend_buckets/edit.py
-google-cloud-sdk/lib/surface/compute/backend_buckets/edit.pyc
 google-cloud-sdk/lib/surface/compute/backend_buckets/list.py
 google-cloud-sdk/lib/surface/compute/backend_buckets/list.pyc
 google-cloud-sdk/lib/surface/compute/backend_buckets/update.py
@@ -8566,6 +8567,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud.1
 @man man/man1/gcloud_app.1
 @man man/man1/gcloud_app_browse.1
+@man man/man1/gcloud_app_create.1
 @man man/man1/gcloud_app_deploy.1
 @man man/man1/gcloud_app_instances.1
 @man man/man1/gcloud_app_instances_disable-debug.1
@@ -8574,6 +8576,8 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_app_logs.1
 @man man/man1/gcloud_app_logs_read.1
 @man man/man1/gcloud_app_open-console.1
+@man man/man1/gcloud_app_regions.1
+@man man/man1/gcloud_app_regions_list.1
 @man man/man1/gcloud_app_services.1
 @man man/man1/gcloud_app_services_browse.1
 @man man/man1/gcloud_app_services_delete.1
