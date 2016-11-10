@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/31 06:06:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2016/11/10 21:58:41 danj Exp $
 
 COMMENT=	Python syntax highlighter
 
@@ -25,10 +25,8 @@ TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
 FLAVORS=	python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pygmentize ${PREFIX}/bin/pygmentize${MODPY_BIN_SUFFIX}
-.endif
 
 do-test:
 	cd ${WRKSRC}/tests && ${MAKE_ENV} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/02 14:12:20 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/10 21:58:41 danj Exp $
 
 COMMENT =		encoder, decoder, and lint/validator for JSON
 
@@ -26,9 +26,7 @@ do-test:
 .endif
 	cd ${WRKSRC}/test && ${MODPY_BIN} -m unittest test_demjson
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/jsonlint ${PREFIX}/bin/jsonlint${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

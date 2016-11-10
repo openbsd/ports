@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/10/13 10:54:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/10 21:58:40 danj Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -33,9 +33,7 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 TEST_DEPENDS +=		devel/py-twisted/core
 .endif
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/py.test ${PREFIX}/bin/py.test${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/10 21:58:41 danj Exp $
 
 COMMENT =	super-fast templating language
 
@@ -31,10 +31,8 @@ TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
 
 MODPY_SETUPTOOLS = Yes
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/mako-render \
 		${PREFIX}/bin/mako-render${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

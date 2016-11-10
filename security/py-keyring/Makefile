@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/27 17:40:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/11/10 21:58:41 danj Exp $
 
 COMMENT=		store and access your passwords safely
 
 MODPY_EGG_VERSION=	9.3.1
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=   		security
 
@@ -29,9 +30,7 @@ TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
-	mv ${PREFIX}/bin/keyring ${PREFIX}/bin/keyring-${MODPY_VERSION}
-.endif
+	mv ${PREFIX}/bin/keyring ${PREFIX}/bin/keyring${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

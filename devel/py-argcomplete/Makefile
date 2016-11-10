@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/28 10:55:38 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =	bash tab completion for argparse
 
@@ -18,12 +18,10 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	for i in ${PREFIX}/bin/*; do \
 		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
 	done
-.endif
 
 do-test:
 	cd ${WRKSRC}/test && ${MODPY_BIN} test.py

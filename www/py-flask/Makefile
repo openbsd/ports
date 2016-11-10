@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/11/02 16:50:02 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/10 21:58:41 danj Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
@@ -45,9 +45,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
-.if ${FLAVOR:Mpython3}
 	mv ${PREFIX}/bin/flask ${PREFIX}/bin/flask${MODPY_BIN_SUFFIX}
-.endif
 
 do-test:
 	cd ${WRKSRC} && LC_ALL=C.UTF-8 ${MODPY_BIN} -m pytest tests examples

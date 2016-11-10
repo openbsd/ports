@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/07/03 14:55:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/10 21:58:40 danj Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
@@ -35,9 +35,7 @@ MODPY_SETUPTOOLS =	Yes
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} bin/pytest
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pytest ${PREFIX}/bin/pytest${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

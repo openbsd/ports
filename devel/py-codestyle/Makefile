@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/06 07:31:09 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =		python style guide checker
 
@@ -23,9 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pycodestyle ${PREFIX}/bin/pycodestyle${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/04 12:18:06 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/10 21:58:41 danj Exp $
 
 COMMENT=	character encoding auto-detection in Python
 
@@ -22,9 +22,7 @@ NO_TEST=	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/chardetect ${PREFIX}/bin/chardetect${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

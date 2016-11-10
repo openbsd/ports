@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/27 12:37:30 shadchin Exp $
+# $OpenBSD: Makefile,v 1.21 2016/11/10 21:58:40 danj Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -26,11 +26,9 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 FLAVORS=		python3
 FLAVOR?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pybabel \
 		${PREFIX}/bin/pybabel${MODPY_BIN_SUFFIX}
-.endif
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/09 19:02:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
@@ -26,10 +26,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pydisasm ${PREFIX}/bin/pydisasm${MODPY_BIN_SUFFIX}
-.endif
 
 do-test:
 	cd ${WRKSRC} && \

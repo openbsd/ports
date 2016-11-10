@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/30 17:08:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -41,12 +41,10 @@ MAKE_ENV =		LC_CTYPE="en_US.UTF-8"
 do-test:
 	${MODPY_TEST_TARGET}
 
-.if ${FLAVOR:Mpython3}
 post-install:
 .for i in mid3cp mid3iconv mid3v2 moggsplit mutagen-inspect mutagen-pony
 	mv ${PREFIX}/bin/$i ${PREFIX}/bin/$i${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/man/man1/$i.1 ${PREFIX}/man/man1/$i${MODPY_BIN_SUFFIX}.1
 .endfor
-.endif
 
 .include <bsd.port.mk>

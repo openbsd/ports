@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/01 22:17:54 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =		virtualenv-based automation of test activities
 
@@ -28,10 +28,8 @@ FLAVOR ?=
 # some tests need HOME to be writable
 PORTHOME =		/tmp
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/tox ${PREFIX}/bin/tox${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/bin/tox-quickstart ${PREFIX}/bin/tox-quickstart${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

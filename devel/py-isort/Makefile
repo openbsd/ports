@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/01 11:19:05 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =		Python utility / library to sort Python imports
 
@@ -25,9 +25,7 @@ FLAVOR ?=
 
 NO_TEST =		Yes
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/isort ${PREFIX}/bin/isort${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

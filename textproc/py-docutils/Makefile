@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/07 08:26:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/10 21:58:41 danj Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -27,12 +27,10 @@ pre-build:
 	mv ${WRKSRC}/tools/rst${file}{.py,}
 .endfor
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	for i in ${PREFIX}/bin/*; do \
 		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
 	done
-.endif
 
 do-test:
 	cd ${WRKSRC}/test${MODPY_BIN_SUFFIX:S/-//} && ${MODPY_BIN} ./alltests.py

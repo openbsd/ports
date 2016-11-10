@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/10/05 17:06:28 shadchin Exp $
+# $OpenBSD: Makefile,v 1.37 2016/11/10 21:58:40 danj Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -38,12 +38,10 @@ post-install:
 		find . ! -type d -exec ${INSTALL_DATA} {} \
 			${PREFIX}/share/examples/${MODPY_PY_PREFIX}nose/{} \;
 	rm ${PREFIX}/bin/nosetests-${MODPY_VERSION}
-.if ${FLAVOR:Mpython3}
 	mv ${PREFIX}/bin/nosetests \
 		${PREFIX}/bin/nosetests${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/man/man1/nosetests.1 \
 		${PREFIX}/man/man1/nosetests${MODPY_BIN_SUFFIX}.1
-.endif
 
 
 do-test:

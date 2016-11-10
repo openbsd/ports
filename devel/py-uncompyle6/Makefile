@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/04 07:13:36 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/10 21:58:40 danj Exp $
 
 COMMENT =		Python cross-version byte-code deparser
 
@@ -28,10 +28,8 @@ FLAVOR ?=
 
 NO_TEST =		Yes
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	mv ${PREFIX}/bin/pydisassemble ${PREFIX}/bin/pydisassemble${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/bin/uncompyle6 ${PREFIX}/bin/uncompyle6${MODPY_BIN_SUFFIX}
-.endif
 
 .include <bsd.port.mk>

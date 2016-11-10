@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/10/19 13:30:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/11/10 21:58:40 danj Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
@@ -49,9 +49,7 @@ INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/libImaging/{ImPlatform,Imaging}.h ${WRKINST}${MODPY_INCDIR}
-.if ${FLAVOR:Mpython3}
 	for s in ${PREFIX}/bin/*; do mv $$s $$s${MODPY_BIN_SUFFIX}; done
-.endif
 
 do-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py --installed

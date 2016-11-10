@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/06/13 08:44:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/10 21:58:41 danj Exp $
 
 COMMENT =		Python WSGI HTTP server
 
@@ -30,11 +30,9 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 TEST_DEPENDS +=		devel/py-mock
 .endif
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	for i in ${PREFIX}/bin/*; do \
 		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
 	done
-.endif
 
 .include <bsd.port.mk>

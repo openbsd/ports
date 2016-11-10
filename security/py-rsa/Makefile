@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/26 09:57:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/10 21:58:41 danj Exp $
 
 COMMENT=		Python RSA implementation
 
@@ -25,12 +25,10 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 FLAVORS=		python3
 FLAVOR ?=
 
-.if ${FLAVOR:Mpython3}
 post-install:
 	for i in ${PREFIX}/bin/*; do \
 		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
 	done
-.endif
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
