@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/04/12 09:27:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/11/10 06:40:49 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/dateutil/
 lib/python${MODPY_VERSION}/site-packages/dateutil/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}easter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}relativedelta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}rrule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}tzwin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/_common.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/easter.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/parser.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/relativedelta.py

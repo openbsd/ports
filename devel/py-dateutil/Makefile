@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2016/05/30 14:48:51 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2016/11/10 06:40:49 shadchin Exp $
 
 COMMENT =		Python API for advanced date calculations
 
-MODPY_EGG_VERSION =	2.5.3
+MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		devel
@@ -19,8 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS +=		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =	python3
 FLAVOR ?=
