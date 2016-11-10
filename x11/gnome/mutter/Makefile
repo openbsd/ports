@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2016/10/31 16:14:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2016/11/10 19:28:08 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.22.1
+GNOME_VERSION=		3.22.2
 
 SHARED_LIBS +=  mutter                    2.0 # 0.0
 
@@ -26,7 +26,7 @@ WANTLIB += xkbcommon xkbcommon-x11 xkbfile z
 MODULES=		devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS += desktop-file-utils gobject-introspection
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
