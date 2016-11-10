@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_prototypes_h,v 1.1 2016/11/09 23:14:31 gsoares Exp $
---- src/prototypes.h.orig	Sun Jul 17 19:04:42 2016
-+++ src/prototypes.h	Thu Nov  3 23:26:08 2016
-@@ -650,13 +650,13 @@ typedef enum {
+$OpenBSD: patch-src_prototypes_h,v 1.2 2016/11/10 10:10:50 gsoares Exp $
+--- src/prototypes.h.orig	Sat Oct 29 05:25:37 2016
++++ src/prototypes.h	Wed Nov  9 20:22:39 2016
+@@ -660,13 +660,13 @@ typedef enum {
  #endif /* OPENSSL_NO_DH */
      STUNNEL_LOCKS                           /* number of locks */
  } LOCK_TYPE;

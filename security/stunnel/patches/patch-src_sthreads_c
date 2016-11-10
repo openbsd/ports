@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_sthreads_c,v 1.1 2016/11/09 23:14:31 gsoares Exp $
---- src/sthreads.c.orig	Thu Nov  3 23:44:55 2016
-+++ src/sthreads.c	Thu Nov  3 23:45:02 2016
-@@ -45,7 +45,7 @@
- 
+$OpenBSD: patch-src_sthreads_c,v 1.2 2016/11/10 10:10:50 gsoares Exp $
+--- src/sthreads.c.orig	Sat Oct 29 05:25:37 2016
++++ src/sthreads.c	Wed Nov  9 20:22:39 2016
+@@ -47,7 +47,7 @@
  STUNNEL_RWLOCK stunnel_locks[STUNNEL_LOCKS];
+ #endif
  
 -#if OPENSSL_VERSION_NUMBER<0x10100004L
 +#if OPENSSL_VERSION_NUMBER<0x10100004L || defined(LIBRESSL_VERSION_NUMBER)
