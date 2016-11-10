@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/03 17:30:33 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/10 05:41:53 jca Exp $
 @bin bin/sdlpop
+share/doc/sdlpop/
+share/doc/sdlpop/Readme.txt
 share/sdlpop/
 share/sdlpop/data/
 share/sdlpop/data/DIGISND1.DAT

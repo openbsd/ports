@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/04 00:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/10 05:41:53 jca Exp $
 
 COMMENT=	open-source port of Prince of Persia
 
 DISTNAME=	sdlpop-20161103
 CATEGORIES=	games
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	NagyD
 GH_PROJECT=	SDLPoP
@@ -31,5 +31,7 @@ do-install:
 	cp -rp ${WRKDIST}/data/* ${PREFIX}/share/sdlpop/data
 	${INSTALL_PROGRAM} \
 		${WRKDIST}/prince ${PREFIX}/bin/sdlpop
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlpop
+	${INSTALL_DATA} ${WRKDIST}/doc/Readme.txt ${PREFIX}/share/doc/sdlpop
 
 .include <bsd.port.mk>
