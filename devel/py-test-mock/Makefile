@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/10 06:05:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/10 14:24:26 ajacoutot Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
@@ -15,6 +15,8 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
+
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
