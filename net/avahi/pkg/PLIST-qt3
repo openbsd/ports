@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-qt3,v 1.3 2016/04/04 22:57:45 naddy Exp $
-include/avahi-qt3/
-include/avahi-qt3/qt-watch.h
-lib/libavahi-qt3.a
-lib/libavahi-qt3.la
-@lib lib/libavahi-qt3.so.${LIBavahi-qt3_VERSION}
-lib/pkgconfig/avahi-qt3.pc

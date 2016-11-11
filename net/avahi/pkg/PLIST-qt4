@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-qt4,v 1.3 2016/04/04 22:57:45 naddy Exp $
-include/avahi-qt4/
-include/avahi-qt4/qt-watch.h
-lib/libavahi-qt4.a
-lib/libavahi-qt4.la
-@lib lib/libavahi-qt4.so.${LIBavahi-qt4_VERSION}
-lib/pkgconfig/avahi-qt4.pc
