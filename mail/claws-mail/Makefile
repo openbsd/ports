@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2016/11/11 10:07:51 sthen Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -10,7 +10,7 @@ COMMENT-gdata=		gdata plugin
 
 V=			3.14.0
 DISTNAME=		claws-mail-${V}
-REVISION=		1
+REVISION=		2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -43,34 +43,33 @@ RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender archive atk-1.0 bz2 cairo crypto curl
-WANTLIB += etpan execinfo expat ffi fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma lzo2
-WANTLIB += m nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sasl2 ssl xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += Xrandr Xrender atk-1.0 cairo crypto curl etpan execinfo
+WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m nghttp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sasl2 ssl xcb xcb-render xcb-shm z
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
-WANTLIB-main += gmp gnutls gpg-error gpgme hogweed lz4 nettle p11-kit
-WANTLIB-main += perl startup-notification-1 stdc++ tasn1 xcb-util
-WANTLIB-main += canberra canberra-gtk notify ltdl ogg vorbis vorbisfile
+WANTLIB-main += ICE SM X11-xcb archive assuan bz2 c canberra canberra-gtk
+WANTLIB-main += dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error gpgme
+WANTLIB-main += hogweed idn ltdl lz4 lzma lzo2 nettle notify ogg p11-kit
+WANTLIB-main += perl startup-notification-1 stdc++ tasn1 vorbis vorbisfile
+WANTLIB-main += xcb-util
 
 WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error nspr4
-WANTLIB-gdata += nss3 oauth p11-kit plc4 plds4 smime3 softokn3 soup-2.4
-WANTLIB-gdata += sqlite3 ssl3 xml2 json-glib-1.0
+WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error json-glib-1.0
+WANTLIB-gdata += lzma nspr4 nss3 oauth p11-kit plc4 plds4 smime3 softokn3
+WANTLIB-gdata += soup-2.4 sqlite3 ssl3 xml2
 
 WANTLIB-htmlviewer =  ${WANTLIB}
-WANTLIB-htmlviewer += EGL GL ICE SM Xt enchant gbm orc-0.4 gcrypt gpg-error
-WANTLIB-htmlviewer += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
-WANTLIB-htmlviewer += icudata icui18n icuuc javascriptcoregtk-1.0
-WANTLIB-htmlviewer += jpeg secret-1 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB-htmlviewer += stdc++ webkitgtk-1.0 webp xml2 xslt
-WANTLIB-htmlviewer += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
-WANTLIB-htmlviewer += xcb-xfixes
+WANTLIB-htmlviewer += EGL GL ICE SM X11-xcb Xt Xxf86vm drm enchant gbm gcrypt
+WANTLIB-htmlviewer += glapi gpg-error gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-htmlviewer += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB-htmlviewer += gstvideo-1.0 harfbuzz-icu icudata icui18n icuuc
+WANTLIB-htmlviewer += javascriptcoregtk-1.0 jpeg lzma orc-0.4 secret-1
+WANTLIB-htmlviewer += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0
+WANTLIB-htmlviewer += webp xcb-dri2 xcb-glx xcb-xfixes xml2 xslt
 
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 openjpeg poppler poppler-glib tiff
