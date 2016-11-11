@@ -1,7 +1,7 @@
-$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.1 2016/07/30 21:12:15 sthen Exp $
---- res/res_rtp_asterisk.c.orig	Fri Jul 29 12:22:30 2016
-+++ res/res_rtp_asterisk.c	Fri Jul 29 12:23:03 2016
-@@ -1357,7 +1357,7 @@ static int ast_rtp_dtls_set_configuration(struct ast_r
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.2 2016/11/11 10:55:17 sthen Exp $
+--- res/res_rtp_asterisk.c.orig	Thu Nov 10 19:34:55 2016
++++ res/res_rtp_asterisk.c	Fri Nov 11 10:39:52 2016
+@@ -1363,7 +1363,7 @@ static int ast_rtp_dtls_set_configuration(struct ast_r
  		return 0;
  	}
  
