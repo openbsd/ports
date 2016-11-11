@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2016/11/09 15:59:37 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2016/11/11 15:16:57 ajacoutot Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -638,7 +638,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_native.so
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
-lib/samba/
 lib/samba/auth/
 lib/samba/auth/script.so
 lib/samba/bind9/
