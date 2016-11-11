@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/11/11 10:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2016/11/11 12:31:19 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -8,9 +8,8 @@ COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.14.0
+V=			3.14.1
 DISTNAME=		claws-mail-${V}
-REVISION=		2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -74,9 +73,7 @@ WANTLIB-htmlviewer += webp xcb-dri2 xcb-glx xcb-xfixes xml2 xslt
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 openjpeg poppler poppler-glib tiff
 
-LIB_DEPENDS=		archivers/libarchive \
-			archivers/xz \
-			devel/libexecinfo \
+LIB_DEPENDS=		devel/libexecinfo \
 			mail/libetpan \
 			security/cyrus-sasl2 \
 			x11/gtk+2
@@ -86,6 +83,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			archivers/libarchive \
+			archivers/xz \
 			devel/startup-notification \
 			textproc/enchant \
 			audio/libcanberra,-gtk \
