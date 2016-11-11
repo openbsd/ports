@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/11/11 09:48:38 sthen Exp $
 
 COMMENT=	mail purpose library
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
 GH_TAGNAME=	1.7.2
 CATEGORIES=	mail devel
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	etpan	17.0	# 20.0
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 LIB_DEPENDS+=	net/curl \
-		devel/libidn \
 		security/cyrus-sasl2
 
 CONFIGURE_STYLE= gnu
