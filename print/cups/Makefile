@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2016/10/05 18:28:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2016/11/11 11:52:35 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -10,6 +10,8 @@ GH_TAGNAME=		v${VERSION}
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
+
+REVISION-libs=		0
 
 CATEGORIES=		print sysutils
 
@@ -38,7 +40,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 # bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
-LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,no_qt3,no_qt4,bootstrap \
+LIB_DEPENDS-libs=	net/avahi,no_gui,no_mono,bootstrap \
 			security/gnutls
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \

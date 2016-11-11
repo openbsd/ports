@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/07/08 16:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/11/11 11:52:35 ajacoutot Exp $
 
 COMMENT=		Easy Publish and Consume library
 
@@ -26,7 +26,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # Only needed for examples.
-BUILD_DEPENDS=		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
+BUILD_DEPENDS=		net/avahi,-gtk3,no_mono
 LIB_DEPENDS=		devel/libsoup \
 			net/avahi \
 			sysutils/e2fsprogs>=1.42.7 \

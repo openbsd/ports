@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/03 11:55:39 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2016/11/11 11:52:35 ajacoutot Exp $
 
 COMMENT=		Zero Configuration Networking library for Mono
 
 V=			0.9.0
 DISTNAME=		mono-zeroconf-${V}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		net
 
@@ -19,8 +19,8 @@ MODMONO_GMCS_COMPAT=	Yes
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		net/avahi,-mono,no_qt3,no_qt4
-RUN_DEPENDS=		net/avahi,-mono,no_qt3,no_qt4
+BUILD_DEPENDS=		net/avahi,-mono
+RUN_DEPENDS=		net/avahi,-mono
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-mdnsresponder
