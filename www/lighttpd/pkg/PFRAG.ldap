@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.ldap,v 1.1 2016/11/11 10:23:34 sthen Exp $
+lib/lighttpd/mod_authn_ldap.so

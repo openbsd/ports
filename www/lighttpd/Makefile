@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.138 2016/10/12 08:09:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2016/11/11 10:23:34 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.41
-REVISION=	0
+DISTNAME=	lighttpd-1.4.43
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -48,7 +47,7 @@ WANTLIB+=	lber-2.4 ldap-2.4 sasl2
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-mysql
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	mysqlclient pthread stdc++
+WANTLIB+=	mysqlclient pthread stdc++
 .endif
 
 post-extract:
@@ -70,5 +69,6 @@ post-install:
 	    ${PREFIX}/share/examples/lighttpd/access.log
 	${INSTALL_DATA} /dev/null \
 	    ${PREFIX}/share/examples/lighttpd/error.log
+	rm -f ${PREFIX}/lib/lighttpd/*.la
 
 .include <bsd.port.mk>
