@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2016/11/11 07:56:23 ajacoutot Exp $
+
+From dede2a12d0bcc6ae9daf2a4671f0d618eeb44425 Mon Sep 17 00:00:00 2001
+From: "Jan Alexander Steffens (heftig)" <jan.steffens@gmail.com>
+Date: Sun, 6 Mar 2016 13:56:55 +0100
+Subject: [PATCH] configure.ac: Fix libavahi-client test
+
+--- configure.orig	Fri Nov 11 08:46:40 2016
++++ configure	Fri Nov 11 08:46:51 2016
+@@ -28506,7 +28506,7 @@ fi
+ 
+ BUILD_CLIENT="no   (You need avahi-daemon and D-Bus!)"
+ 
+-if "x$HAVE_DBUS" = "xyes" ; then
++if test "x$HAVE_DBUS" = "xyes" ; then
+     BUILD_CLIENT=yes
+ fi
+ 

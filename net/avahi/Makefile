@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2016/11/11 07:40:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2016/11/11 07:56:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -10,7 +10,7 @@ COMMENT-mono=		mono (.NET) bindings for avahi
 COMMENT-python=		python bindings for avahi
 COMMENT-ui=		common avahi-ui header for gtk+2 and gtk+3
 
-V=			0.6.31
+V=			0.6.32
 DISTNAME=		avahi-${V}
 CATEGORIES=		net devel
 
@@ -22,30 +22,24 @@ PKGNAME-mono=		mono-avahi-${V}
 PKGNAME-python=		py-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		27
-REVISION-gtk=		7
-REVISION-gtk3=		8
-REVISION-gui=		11
-REVISION-mono=		3
-REVISION-ui=		4
-REVISION-python=	1
-
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  avahi-common         0.0      # .8.0
-SHARED_LIBS +=  avahi-core           0.0      # .5.5
-SHARED_LIBS +=  avahi-client         0.0      # .5.4
-SHARED_LIBS +=  avahi-glib           0.0      # .1.1
-SHARED_LIBS +=  avahi-gobject        0.0      # .0.1
-SHARED_LIBS +=  howl                 0.0      # .0.0
-SHARED_LIBS +=  dns_sd               0.0      # .1.0
+SHARED_LIBS +=  avahi-common         0.0      # 8.3
+SHARED_LIBS +=  avahi-core           0.0      # 7.2
+SHARED_LIBS +=  avahi-client         0.0      # 5.9
+SHARED_LIBS +=  avahi-glib           0.0      # 1.2
+SHARED_LIBS +=  avahi-gobject        0.0      # 0.4
+SHARED_LIBS +=  dns_sd               0.0      # 1.0
+SHARED_LIBS +=  howl                 0.0      # 0.0
+SHARED_LIBS +=  avahi-ui             0.0      # 1.4
+SHARED_LIBS +=  avahi-ui-gtk3        0.0      # 1.4
 
 HOMEPAGE=		http://www.avahi.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.avahi.org/download/
+MASTER_SITES=		https://github.com/lathiat/avahi/releases/download/v${V}/
 
 PSEUDO_FLAVORS=		no_gui no_mono bootstrap
 FLAVOR?=		no_gui no_mono bootstrap
@@ -99,7 +93,6 @@ BUILD_DEPENDS+=		lang/python/${MODPY_VERSION},-gdbm \
 			x11/dbus-python
 
 ### -gtk
-SHARED_LIBS +=  	avahi-ui             0.0      # .1.0
 LIB_DEPENDS-gtk=	x11/gtk+2 \
 			${BUILD_PKGPATH}
 RUN_DEPENDS-gtk=	${BUILD_PKGPATH},-ui
@@ -113,7 +106,6 @@ WANTLIB-gtk += xcb-render avahi-client avahi-common xcb-shm
 WANTLIB-gtk += avahi-glib ffi harfbuzz graphite2 iconv intl
 
 ### -gtk3
-SHARED_LIBS +=		avahi-ui-gtk3             0.0 # 1.4
 LIB_DEPENDS-gtk3=	x11/gtk+3 \
 			${BUILD_PKGPATH}
 RUN_DEPENDS-gtk3=	${BUILD_PKGPATH},-ui

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2016/11/11 07:40:02 ajacoutot Exp $
-@pkgpath net/avahi,-qt3
-@pkgpath net/avahi,-qt4
+@comment $OpenBSD: PLIST-main,v 1.17 2016/11/11 07:56:23 ajacoutot Exp $
 @conflict avahi-qt3-*
 @conflict avahi-qt4-*
 @conflict howl-*
+@pkgpath net/avahi,-qt3
+@pkgpath net/avahi,-qt4
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
 @bin bin/avahi-browse
@@ -161,6 +161,10 @@ share/examples/avahi/services/ssh.service
 share/gir-1.0/
 share/gir-1.0/Avahi-0.6.gir
 share/gir-1.0/AvahiCore-0.6.gir
+share/locale/ach/
+share/locale/ach/LC_MESSAGES/
+share/locale/ach/LC_MESSAGES/avahi.mo
+share/locale/ar/LC_MESSAGES/avahi.mo
 share/locale/bg/LC_MESSAGES/avahi.mo
 share/locale/ca/LC_MESSAGES/avahi.mo
 share/locale/cs/LC_MESSAGES/avahi.mo
@@ -175,7 +179,10 @@ share/locale/en_GB/LC_MESSAGES/avahi.mo
 share/locale/en_NZ/
 share/locale/en_NZ/LC_MESSAGES/
 share/locale/en_NZ/LC_MESSAGES/avahi.mo
+share/locale/eo/LC_MESSAGES/avahi.mo
 share/locale/es/LC_MESSAGES/avahi.mo
+share/locale/et/LC_MESSAGES/avahi.mo
+share/locale/fa/LC_MESSAGES/avahi.mo
 share/locale/fi/LC_MESSAGES/avahi.mo
 share/locale/fo/
 share/locale/fo/LC_MESSAGES/
@@ -187,16 +194,20 @@ share/locale/hu/LC_MESSAGES/avahi.mo
 share/locale/id/LC_MESSAGES/avahi.mo
 share/locale/it/LC_MESSAGES/avahi.mo
 share/locale/ja/LC_MESSAGES/avahi.mo
+share/locale/ko/LC_MESSAGES/avahi.mo
+share/locale/lv/LC_MESSAGES/avahi.mo
 share/locale/ms/LC_MESSAGES/avahi.mo
 share/locale/nl/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
 share/locale/ro/LC_MESSAGES/avahi.mo
 share/locale/ru/LC_MESSAGES/avahi.mo
+share/locale/sk/LC_MESSAGES/avahi.mo
 share/locale/sl/LC_MESSAGES/avahi.mo
 share/locale/sr/LC_MESSAGES/avahi.mo
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
 share/locale/sv/LC_MESSAGES/avahi.mo
+share/locale/tr/LC_MESSAGES/avahi.mo
 share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
 share/locale/zh_TW/LC_MESSAGES/avahi.mo
