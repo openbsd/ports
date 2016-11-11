@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2014/03/10 11:58:31 naddy Exp $
---- Makefile.in.orig	Sat Jan 25 22:27:30 2014
-+++ Makefile.in	Wed Mar  5 22:28:22 2014
-@@ -353,7 +353,7 @@ INTL_LIBDIR = $(dot)/$(LIBSUBDIR)/intl
+$OpenBSD: patch-Makefile_in,v 1.5 2016/11/11 22:39:48 naddy Exp $
+--- Makefile.in.orig	Fri Jan 15 14:55:37 2016
++++ Makefile.in	Sun Sep 25 22:47:37 2016
+@@ -354,7 +354,7 @@ INTL_LIBDIR = $(dot)/$(LIBSUBDIR)/intl
  INTL_ABSSRC = ${topdir}/$(INTL_LIB)
  INTL_BUILDDIR = ${LIBBUILD}/intl
  

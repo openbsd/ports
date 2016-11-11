@@ -1,8 +1,97 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/10 11:58:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/11/11 22:39:48 naddy Exp $
 @pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug
+include/bash/
+include/bash/alias.h
+include/bash/array.h
+include/bash/arrayfunc.h
+include/bash/assoc.h
+include/bash/bashansi.h
+include/bash/bashintl.h
+include/bash/bashjmp.h
+include/bash/bashtypes.h
+include/bash/builtins/
+include/bash/builtins.h
+include/bash/builtins/bashgetopt.h
+include/bash/builtins/builtext.h
+include/bash/builtins/common.h
+include/bash/builtins/getopt.h
+include/bash/command.h
+include/bash/config-bot.h
+include/bash/config-top.h
+include/bash/config.h
+include/bash/conftypes.h
+include/bash/dispose_cmd.h
+include/bash/error.h
+include/bash/externs.h
+include/bash/general.h
+include/bash/hashlib.h
+include/bash/include/
+include/bash/include/ansi_stdlib.h
+include/bash/include/chartypes.h
+include/bash/include/filecntl.h
+include/bash/include/gettext.h
+include/bash/include/maxpath.h
+include/bash/include/memalloc.h
+include/bash/include/ocache.h
+include/bash/include/posixdir.h
+include/bash/include/posixjmp.h
+include/bash/include/posixstat.h
+include/bash/include/posixtime.h
+include/bash/include/posixwait.h
+include/bash/include/shmbchar.h
+include/bash/include/shmbutil.h
+include/bash/include/shtty.h
+include/bash/include/stat-time.h
+include/bash/include/stdc.h
+include/bash/include/systimes.h
+include/bash/include/typemax.h
+include/bash/include/unionwait.h
+include/bash/jobs.h
+include/bash/make_cmd.h
+include/bash/pathnames.h
+include/bash/quit.h
+include/bash/shell.h
+include/bash/sig.h
+include/bash/siglist.h
+include/bash/signames.h
+include/bash/subst.h
+include/bash/syntax.h
+include/bash/unwind_prot.h
+include/bash/variables.h
+include/bash/version.h
+include/bash/xmalloc.h
+include/bash/y.tab.h
 @info info/bash.info
+lib/bash/
+lib/bash/Makefile.inc
+@bin lib/bash/basename
+@bin lib/bash/dirname
+@bin lib/bash/finfo
+@bin lib/bash/head
+@bin lib/bash/id
+@bin lib/bash/ln
+@bin lib/bash/logname
+@bin lib/bash/mkdir
+@bin lib/bash/mypid
+@bin lib/bash/pathchk
+@bin lib/bash/print
+@bin lib/bash/printenv
+@bin lib/bash/push
+@bin lib/bash/realpath
+@bin lib/bash/rmdir
+@bin lib/bash/setpgid
+@bin lib/bash/sleep
+@bin lib/bash/strftime
+@bin lib/bash/sync
+@bin lib/bash/tee
+@bin lib/bash/truefalse
+@bin lib/bash/tty
+@bin lib/bash/uname
+@bin lib/bash/unlink
+@bin lib/bash/whoami
+lib/pkgconfig/bash.pc
 @man man/man1/bash.1
 @man man/man1/bashbug.1
 share/doc/bash/
@@ -42,6 +131,7 @@ share/locale/ja/LC_MESSAGES/bash.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/bash.mo
+share/locale/nb/LC_MESSAGES/bash.mo
 share/locale/nl/LC_MESSAGES/bash.mo
 share/locale/pl/LC_MESSAGES/bash.mo
 share/locale/pt_BR/LC_MESSAGES/bash.mo
