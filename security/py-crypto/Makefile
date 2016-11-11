@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/11/10 21:58:41 danj Exp $
+# $OpenBSD: Makefile,v 1.38 2016/11/11 14:52:51 danj Exp $
 
 COMMENT =		cryptographic tools for Python
 
@@ -28,7 +28,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DOCSDIR =	${PREFIX}/share/doc/py-crypto
+DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}crypto
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/setup.py
@@ -42,7 +42,6 @@ do-install:
 	@${MODPY_INSTALL_TARGET}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	mv ${PREFIX}/share/doc/py-crypto ${PREFIX}/share/doc/${MODPY_PY_PREFIX}crypto
 
 do-test: fake
 	cd ${WRKSRC} && ${MAKE_ENV} \
