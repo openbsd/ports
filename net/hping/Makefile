@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/11 21:07:29 jca Exp $
 
 COMMENT=	TCP/UDP ping/traceroute tool
 
@@ -27,7 +27,7 @@ USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-install:
-	@perl -pi -e "s,hping2,hping," ${WRKSRC}/docs/hping2.8
+	sed -i "s,hping2,hping," ${WRKSRC}/docs/hping2.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${PREFIX}/sbin/hping
