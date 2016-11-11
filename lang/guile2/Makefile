@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2016/10/31 22:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/11 11:57:43 ajacoutot Exp $
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
-VERSION=		2.0.12
+VERSION=		2.0.13
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
 V=			${VERSION:C,.[0-9]+$,,}
 SUBST_VARS=		V
-REVISION=		0
 
 CATEGORIES=		lang
 
@@ -24,7 +23,7 @@ WANTLIB += unistring
 
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
 
-# vm-engine.c:40: internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
+# internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 

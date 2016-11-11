@@ -1,52 +1,16 @@
-$OpenBSD: patch-libguile_filesys_c,v 1.1 2016/10/31 22:53:34 ajacoutot Exp $
+$OpenBSD: patch-libguile_filesys_c,v 1.2 2016/11/11 11:57:43 ajacoutot Exp $
 
-From 245608911698adb3472803856019bdd5670b6614 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Ludovic=20Court=C3=A8s?= <ludo@gnu.org>
-Date: Tue, 11 Oct 2016 10:14:26 +0200
-Subject: Remove 'umask' calls from 'mkdir'.
+https://debbugs.gnu.org/cgi/bugreport.cgi?bug=24862
 
---- libguile/filesys.c.orig	Sat Jan  2 15:24:55 2016
-+++ libguile/filesys.c	Mon Oct 31 19:13:05 2016
-@@ -1,5 +1,5 @@
- /* Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2004, 2006,
-- *   2009, 2010, 2011, 2012, 2013, 2014 Free Software Foundation, Inc.
-+ *   2009, 2010, 2011, 2012, 2013, 2014, 2016 Free Software Foundation, Inc.
-  *
-  * This library is free software; you can redistribute it and/or
-  * modify it under the terms of the GNU Lesser General Public License
-@@ -1254,26 +1254,21 @@ SCM_DEFINE (scm_getcwd, "getcwd", 0, 0, 0,
- SCM_DEFINE (scm_mkdir, "mkdir", 1, 1, 0,
-             (SCM path, SCM mode),
- 	    "Create a new directory named by @var{path}.  If @var{mode} is omitted\n"
--	    "then the permissions of the directory file are set using the current\n"
--	    "umask.  Otherwise they are set to the decimal value specified with\n"
--	    "@var{mode}.  The return value is unspecified.")
-+	    "then the permissions of the directory are set to @code{#o777}\n"
-+	    "masked with the current umask (@pxref{Processes, @code{umask}}).\n"
-+	    "Otherwise they are set to the value specified with @var{mode}.\n"
-+	    "The return value is unspecified.")
- #define FUNC_NAME s_scm_mkdir
- {
-   int rv;
--  mode_t mask;
-+  mode_t c_mode;
+--- libguile/filesys.c.orig	Fri Nov 11 09:54:01 2016
++++ libguile/filesys.c	Fri Nov 11 09:55:33 2016
+@@ -1486,6 +1486,9 @@ SCM_DEFINE (scm_i_mkstemp, "mkstemp!", 1, 1, 0,
+       mode_bits = scm_i_mode_bits (mode);
+     }
  
--  if (SCM_UNBNDP (mode))
--    {
--      mask = umask (0);
--      umask (mask);
--      STRING_SYSCALL (path, c_path, rv = mkdir (c_path, 0777 ^ mask));
--    }
--  else
--    {
--      STRING_SYSCALL (path, c_path, rv = mkdir (c_path, scm_to_uint (mode)));
--    }
-+  c_mode = SCM_UNBNDP (mode) ? 0777 : scm_to_uint (mode);
-+
-+  STRING_SYSCALL (path, c_path, rv = mkdir (c_path, c_mode));
-   if (rv != 0)
++#ifdef __OpenBSD__
++  open_flags = 0;
++#endif
+   SCM_SYSCALL (rv = mkostemp (c_tmpl, open_flags));
+   if (rv == -1)
      SCM_SYSERROR;
-+
-   return SCM_UNSPECIFIED;
- }
- #undef FUNC_NAME
