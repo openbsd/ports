@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.6 2016/07/30 15:41:37 jsg Exp $
+@comment $OpenBSD: PLIST-data,v 1.7 2016/11/11 23:39:48 jsg Exp $
 share/redeclipse/
 share/redeclipse/config/
 share/redeclipse/config/brush.cfg
@@ -478,10 +478,9 @@ share/redeclipse/data/dziq/hanging_greens01/hanging_greens01.obj
 share/redeclipse/data/dziq/hanging_greens01/hanging_greens01.png
 share/redeclipse/data/dziq/hanging_greens01/obj.cfg
 share/redeclipse/data/dziq/hydrant/
-share/redeclipse/data/dziq/hydrant/hydrant.jpg
+share/redeclipse/data/dziq/hydrant/diffuse.png
 share/redeclipse/data/dziq/hydrant/hydrant.obj
-share/redeclipse/data/dziq/hydrant/mask.jpg
-share/redeclipse/data/dziq/hydrant/normal.jpg
+share/redeclipse/data/dziq/hydrant/normals.png
 share/redeclipse/data/dziq/hydrant/obj.cfg
 share/redeclipse/data/dziq/ivy01/
 share/redeclipse/data/dziq/ivy01/ivy01.obj
@@ -1947,9 +1946,9 @@ share/redeclipse/data/nieb/white_board/base_normal.png
 share/redeclipse/data/nieb/white_board/eraser_diffuse.png
 share/redeclipse/data/nieb/white_board/eraser_maks.png
 share/redeclipse/data/nieb/white_board/eraser_normal.png
-share/redeclipse/data/nieb/white_board/face-a_diffuse.png
-share/redeclipse/data/nieb/white_board/face-a_masks.png
-share/redeclipse/data/nieb/white_board/face-a_normal.png
+share/redeclipse/data/nieb/white_board/face_diffuse.png
+share/redeclipse/data/nieb/white_board/face_mask.png
+share/redeclipse/data/nieb/white_board/face_normal.png
 share/redeclipse/data/nieb/white_board/marker-b_diffuse.png
 share/redeclipse/data/nieb/white_board/marker-bk_diffuse.png
 share/redeclipse/data/nieb/white_board/marker-g_diffuse.png
