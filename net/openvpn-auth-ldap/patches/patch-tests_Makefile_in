@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2016/11/12 21:17:02 jca Exp $
+--- tests/Makefile.in.orig	Tue Aug  1 05:51:52 2006
++++ tests/Makefile.in	Tue Nov  1 17:52:23 2016
+@@ -26,7 +26,7 @@ TEST_OBJS=	tests.o \
+ CFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
+ OBJCFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
+ LIBS+=		-lauth-ldap-testing $(OBJC_LIBS) $(LDAP_LIBS) @CHECK_LIBS@
+-LDFLAGS+=	-L${top_builddir}src $(LIBS)
++LDFLAGS+=	-L${top_builddir}/src -L/usr/lib $(LIBS)
+ 
+ # Recompile the tests every time
+ all: tests

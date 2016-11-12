@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2016/11/12 21:17:02 jca Exp $
+--- src/Makefile.in.orig	Fri Sep 15 04:45:57 2006
++++ src/Makefile.in	Tue Nov  1 17:52:06 2016
+@@ -37,7 +37,7 @@ TEST_OBJS=	testplugin.o
+ 
+ CFLAGS+=	-fPIC $(LDAP_CFLAGS) $(OPENVPN_CFLAGS)
+ OBJCFLAGS+=	-fPIC $(LDAP_CFLAGS) $(OPENVPN_CFLAGS)
+-LIBS+=		$(LDAP_LIBS) $(OBJC_LIBS) $(FLEX_LIBS)
++LIBS+=		-L/usr/lib $(LDAP_LIBS) $(OBJC_LIBS) $(FLEX_LIBS)
+ 
+ 
+ INSTALL_LIB=		$(INSTALL) -m 755
