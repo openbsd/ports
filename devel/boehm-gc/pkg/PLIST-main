@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/05/22 11:31:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/11/12 10:33:04 jca Exp $
 @pkgpath devel/boehm-gc
 include/gc/
 include/gc.h
 include/gc/cord.h
+include/gc/cord_pos.h
+include/gc/ec.h
 include/gc/gc.h
 include/gc/gc_allocator.h
 include/gc/gc_backptr.h
@@ -30,15 +32,6 @@ lib/libgccpp.a
 lib/libgccpp.la
 @lib lib/libgccpp.so.${LIBgccpp_VERSION}
 lib/pkgconfig/bdw-gc.pc
-@man man/man3/GC_enable_incremental.3
-@man man/man3/GC_free.3
-@man man/man3/GC_malloc.3
-@man man/man3/GC_malloc_atomic.3
-@man man/man3/GC_malloc_atomic_ignore_off_page.3
-@man man/man3/GC_malloc_ignore_off_page.3
-@man man/man3/GC_realloc.3
-@man man/man3/GC_register_finalizer.3
-@man man/man3/GC_set_warn_proc.3
 @man man/man3/gc.3
 share/gc/
 share/gc/AUTHORS
@@ -51,7 +44,6 @@ share/gc/README.autoconf
 share/gc/README.cmake
 share/gc/README.cords
 share/gc/README.darwin
-share/gc/README.dj
 share/gc/README.environment
 share/gc/README.ews4800
 share/gc/README.hp

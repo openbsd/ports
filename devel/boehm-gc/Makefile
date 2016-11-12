@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.62 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2016/11/12 10:33:04 jca Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
-VERSION=	7.4.2
-LIBAO_VERSION=	7.4.0
+VERSION=	7.6.0
+LIBAO_VERSION=	7.4.4
 
 DISTNAME=	gc-${VERSION}
 
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION-atomic=1
-REVISION-main=	0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
@@ -52,22 +50,13 @@ post-extract:
 	@mv ${WRKDIR}/libatomic_ops-${LIBAO_VERSION} ${WRKBUILD}/libatomic_ops
 
 pre-build:
-# no rule to get .lo from .S in subdirectory
-	@ln -s src/sparc_mach_dep.S ${WRKSRC}
 # clean distributed objects and libs and rebuild
 	@cd ${WRKBUILD}/libatomic_ops && ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} clean all
-
-aliases=	malloc malloc_atomic free realloc enable_incremental \
-		register_finalizer malloc_ignore_off_page \
-		malloc_atomic_ignore_off_page set_warn_proc
 
 post-install:
 	@cd ${WRKBUILD}/libatomic_ops && ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
-.for i in ${aliases}
-	ln -s gc.3 ${PREFIX}/man/man3/GC_$i.3
-.endfor
 
 .include <bsd.port.mk>
