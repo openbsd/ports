@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/13 16:24:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/12 15:55:22 sthen Exp $
 
 COMMENT=		open-source CFML engine
 
-V=			4.5.3.018
+V=			4.5.3.020
 DISTNAME=		lucee-$V
 EXTRACT_SUFX=		.war
 
