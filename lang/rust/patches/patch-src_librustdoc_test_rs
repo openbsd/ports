@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_librustdoc_test_rs,v 1.4 2016/10/25 17:08:07 danj Exp $
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.5 2016/11/12 16:42:24 danj Exp $
 fallback to CFG_PREFIX as default sysroot.
---- src/librustdoc/test.rs.orig	Wed Oct 19 23:51:02 2016
-+++ src/librustdoc/test.rs	Sat Oct 22 15:28:15 2016
-@@ -63,9 +63,16 @@ pub fn run(input: &str,
+--- src/librustdoc/test.rs.orig	Tue Nov  8 04:16:18 2016
++++ src/librustdoc/test.rs	Fri Nov 11 11:09:36 2016
+@@ -62,9 +62,16 @@ pub fn run(input: &str,
      let input_path = PathBuf::from(input);
      let input = config::Input::File(input_path.clone());
  
@@ -21,7 +21,7 @@ fallback to CFG_PREFIX as default sysroot.
          search_paths: libs.clone(),
          crate_types: vec!(config::CrateTypeDylib),
          externs: externs.clone(),
-@@ -184,9 +191,16 @@ fn runtest(test: &str, cratename: &str, cfgs: Vec<Stri
+@@ -185,9 +192,16 @@ fn runtest(test: &str, cratename: &str, cfgs: Vec<Stri
      };
      let outputs = OutputTypes::new(&[(OutputType::Exe, None)]);
  

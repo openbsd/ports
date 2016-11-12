@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/10/25 17:08:07 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2016/11/12 16:42:24 danj Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,12 +7,12 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.12.1
-BV =			1.12.1-20161021
+V =			1.13.0
+BV =			1.13.0-20161111
 DISTNAME =		rustc-${V}-src
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
-RUST_HASH =		5c6cf767
+RUST_HASH =		a4729905
 SUBST_VARS +=		RUST_HASH
 
 PKGNAME =		rust-${V}
@@ -24,6 +24,7 @@ MULTI_PACKAGES =	-main -doc
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.rust-lang.org/
+MAINTAINER =		Sebastien Marie <semarie@online.fr>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses
@@ -33,7 +34,7 @@ WANTLIB-main =		${WANTLIB} c m pthread z
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/
-MASTER_SITES0 =		http://semarie.free.fr/rust/
+MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
