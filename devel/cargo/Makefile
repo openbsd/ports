@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/05 16:51:22 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/12 08:53:11 landry Exp $
 COMMENT = package manager for Rust language
+
+BROKEN = crates.io requires Accept: HTTP header
 
 # cargo version
 CARGO_VERSION =		0.13.0
