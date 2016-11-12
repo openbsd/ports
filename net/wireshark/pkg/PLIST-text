@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.5 2016/10/14 11:00:22 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.6 2016/11/12 16:15:31 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -32,7 +32,9 @@ lib/wireshark/WiresharkConfig.cmake
 lib/wireshark/WiresharkConfigVersion.cmake
 lib/wireshark/extcap/
 @bin lib/wireshark/extcap/androiddump
+@bin lib/wireshark/extcap/ciscodump
 @bin lib/wireshark/extcap/randpktdump
+@bin lib/wireshark/extcap/sshdump
 lib/wireshark/plugins/
 lib/wireshark/plugins/${WVER}/
 lib/wireshark/plugins/${WVER}/docsis.so

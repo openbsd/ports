@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/10/14 11:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/11/12 16:15:31 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -15,6 +15,7 @@ DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
+REVISION-text =	0
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
@@ -48,7 +49,7 @@ MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
+WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi ssh
 
 WANTLIB-main =	${cWANTLIB} ${WANTLIB}
 WANTLIB-main +=	pthread wireshark wiretap wscodecs wsutil
@@ -81,7 +82,8 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			net/libsmi \
 			net/GeoIP  \
 			security/gnutls \
-			security/libgcrypt
+			security/libgcrypt \
+			security/libssh
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text
