@@ -1,40 +1,38 @@
-$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.5 2016/11/05 17:42:53 ajacoutot Exp $
+$OpenBSD: patch-plugins_terminal_gb-terminal-view_c,v 1.6 2016/11/12 16:27:58 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=773880
+From 6e03588cb17d07f18b73c3d9ae288fa2b60222ce Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Thu, 3 Nov 2016 14:28:54 -0700
+Subject: terminal: fallback to ptsname() if ptsname_r() is not available
 
 --- plugins/terminal/gb-terminal-view.c.orig	Mon Oct 31 07:34:39 2016
-+++ plugins/terminal/gb-terminal-view.c	Sat Nov  5 11:18:19 2016
-@@ -24,6 +24,7 @@
- #include <glib/gi18n.h>
- #include <ide.h>
- #include <stdlib.h>
-+#include <sys/ioctl.h>
- #include <vte/vte.h>
- #include <unistd.h>
- 
-@@ -193,9 +194,9 @@ gb_terminal_respawn (GbTerminalView *self,
++++ plugins/terminal/gb-terminal-view.c	Sat Nov 12 09:28:34 2016
+@@ -193,9 +193,13 @@ gb_terminal_respawn (GbTerminalView *self,
    gint64 now;
    int master_fd = -1;
    int tty_fd = -1;
 -  char name[PATH_MAX + 1];
    gint stdout_fd = -1;
    gint stderr_fd = -1;
++#ifdef HAVE_PTSNAME_R
++  char name[PATH_MAX + 1];
++#else
 +  const char *name;
++#endif
  
    IDE_ENTRY;
  
-@@ -255,11 +256,13 @@ gb_terminal_respawn (GbTerminalView *self,
+@@ -255,8 +259,13 @@ gb_terminal_respawn (GbTerminalView *self,
    if (unlockpt (master_fd) != 0)
      IDE_GOTO (failure);
  
--  if (ptsname_r (master_fd, name, sizeof name - 1) != 0)
-+  if (NULL == (name = ptsname (master_fd)))
++#ifdef HAVE_PTSNAME_R
+   if (ptsname_r (master_fd, name, sizeof name - 1) != 0)
      IDE_GOTO (failure);
++#else
++  if (NULL == (name = ptsname (master_fd)))
++    IDE_GOTO (failure);
++#endif
  
    if (-1 == (tty_fd = open (name, O_RDWR | O_CLOEXEC)))
      IDE_GOTO (failure);
-+
-+  ioctl (tty_fd, TIOCSCTTY, tty_fd);
- 
-   /* dup() is safe as it will inherit O_CLOEXEC */
-   if (-1 == (stdout_fd = dup (tty_fd)) || -1 == (stderr_fd = dup (tty_fd)))
