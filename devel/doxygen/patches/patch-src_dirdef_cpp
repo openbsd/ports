@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dirdef_cpp,v 1.4 2016/03/01 20:36:40 jca Exp $
---- src/dirdef.cpp.orig	Sun Dec  6 11:35:34 2015
-+++ src/dirdef.cpp	Tue Mar  1 20:43:24 2016
-@@ -80,10 +80,16 @@ void DirDef::addFile(FileDef *fd)
+$OpenBSD: patch-src_dirdef_cpp,v 1.5 2016/11/12 20:50:41 jca Exp $
+--- src/dirdef.cpp.orig	Sun Sep  4 19:06:42 2016
++++ src/dirdef.cpp	Mon Sep 12 07:52:20 2016
+@@ -86,10 +86,16 @@ void DirDef::sort()
  
  static QCString encodeDirName(const QCString &anchor)
  {

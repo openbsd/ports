@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/11/12 20:50:41 jca Exp $
 @bin bin/libquicktime_config
 @bin bin/lqt_transcode
 @bin bin/lqtplay
@@ -38,8 +38,6 @@ lib/pkgconfig/libquicktime.pc
 share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
-share/doc/libquicktime/apiref/arrowdown.png
-share/doc/libquicktime/apiref/arrowright.png
 share/doc/libquicktime/apiref/bc_s.png
 share/doc/libquicktime/apiref/bdwn.png
 share/doc/libquicktime/apiref/classes.html
@@ -87,6 +85,8 @@ share/doc/libquicktime/apiref/lqt_8h.html
 share/doc/libquicktime/apiref/lqt_8h_source.html
 share/doc/libquicktime/apiref/lqt__atoms_8h_source.html
 share/doc/libquicktime/apiref/lqt__codecinfo_8h_source.html
+share/doc/libquicktime/apiref/menu.js
+share/doc/libquicktime/apiref/menudata.js
 share/doc/libquicktime/apiref/modules.html
 share/doc/libquicktime/apiref/nav_f.png
 share/doc/libquicktime/apiref/nav_g.png

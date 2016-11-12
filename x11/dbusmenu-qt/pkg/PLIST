@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/12 20:50:41 jca Exp $
 include/${PKGSTEM}/
 include/${PKGSTEM}/dbusmenu_export.h
 include/${PKGSTEM}/dbusmenu_version.h
@@ -13,8 +13,6 @@ lib/cmake/${PKGSTEM}/${PKGSTEM}-targets.cmake
 lib/pkgconfig/${PKGSTEM}.pc
 share/doc/${PKGSTEM}/
 share/doc/${PKGSTEM}/annotated.html
-share/doc/${PKGSTEM}/arrowdown.png
-share/doc/${PKGSTEM}/arrowright.png
 share/doc/${PKGSTEM}/bc_s.png
 share/doc/${PKGSTEM}/bdwn.png
 share/doc/${PKGSTEM}/classDBusMenuExporter-members.html
@@ -43,6 +41,8 @@ share/doc/${PKGSTEM}/functions_func.html
 share/doc/${PKGSTEM}/hierarchy.html
 share/doc/${PKGSTEM}/index.html
 share/doc/${PKGSTEM}/jquery.js
+share/doc/${PKGSTEM}/menu.js
+share/doc/${PKGSTEM}/menudata.js
 share/doc/${PKGSTEM}/nav_f.png
 share/doc/${PKGSTEM}/nav_g.png
 share/doc/${PKGSTEM}/nav_h.png

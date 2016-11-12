@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/12 20:50:41 jca Exp $
 include/qjson/
 include/qjson/parser.h
 include/qjson/parserrunnable.h
@@ -15,8 +15,6 @@ lib/cmake/qjson/QJSONTargets.cmake
 lib/pkgconfig/QJson.pc
 share/doc/qjson/
 share/doc/qjson/annotated.html
-share/doc/qjson/arrowdown.png
-share/doc/qjson/arrowright.png
 share/doc/qjson/bc_s.png
 share/doc/qjson/bdwn.png
 share/doc/qjson/classQJson_1_1Parser-members.html
@@ -60,6 +58,8 @@ share/doc/qjson/json__scanner_8cpp_source.html
 share/doc/qjson/json__scanner_8h_source.html
 share/doc/qjson/location_8hh.html
 share/doc/qjson/location_8hh_source.html
+share/doc/qjson/menu.js
+share/doc/qjson/menudata.js
 share/doc/qjson/namespaceQJson.html
 share/doc/qjson/namespacemembers.html
 share/doc/qjson/namespacemembers_enum.html

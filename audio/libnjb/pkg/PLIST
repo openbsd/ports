@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/12 20:50:41 jca Exp $
 @bin bin/njb-cursesplay
 @bin bin/njb-delfile
 @bin bin/njb-deltr
@@ -29,8 +29,6 @@ lib/pkgconfig/libnjb.pc
 share/doc/libnjb/
 share/doc/libnjb/html/
 share/doc/libnjb/html/annotated.html
-share/doc/libnjb/html/arrowdown.png
-share/doc/libnjb/html/arrowright.png
 share/doc/libnjb/html/base_8c.html
 share/doc/libnjb/html/base_8h_source.html
 share/doc/libnjb/html/bc_s.png
@@ -120,6 +118,8 @@ share/doc/libnjb/html/jquery.js
 share/doc/libnjb/html/libnjb_8h.html
 share/doc/libnjb/html/libnjb_8h_source.html
 share/doc/libnjb/html/mainpage_8h_source.html
+share/doc/libnjb/html/menu.js
+share/doc/libnjb/html/menudata.js
 share/doc/libnjb/html/modules.html
 share/doc/libnjb/html/nav_f.png
 share/doc/libnjb/html/nav_g.png

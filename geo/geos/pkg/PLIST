@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/03/01 20:36:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/11/12 20:50:41 jca Exp $
 bin/geos-config
 include/geos/
 include/geos.h
@@ -719,8 +719,6 @@ share/doc/geos/html/WKTReader_8h_source.html
 share/doc/geos/html/WKTWriter_8h_source.html
 share/doc/geos/html/Writer_8h_source.html
 share/doc/geos/html/annotated.html
-share/doc/geos/html/arrowdown.png
-share/doc/geos/html/arrowright.png
 share/doc/geos/html/bc_s.png
 share/doc/geos/html/bdwn.png
 share/doc/geos/html/bintree_2Interval_8h_source.html
@@ -1564,6 +1562,8 @@ share/doc/geos/html/inline_8h_source.html
 share/doc/geos/html/io_8h_source.html
 share/doc/geos/html/jquery.js
 share/doc/geos/html/math_8h_source.html
+share/doc/geos/html/menu.js
+share/doc/geos/html/menudata.js
 share/doc/geos/html/namespacegeos.html
 share/doc/geos/html/namespacegeos_1_1algorithm.html
 share/doc/geos/html/namespacegeos_1_1algorithm_1_1locate.html

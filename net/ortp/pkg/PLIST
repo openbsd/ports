@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/02 20:22:19 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/12 20:50:41 jca Exp $
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
@@ -25,8 +25,6 @@ share/doc/ortp/ChangeLog
 share/doc/ortp/README
 share/doc/ortp/html/
 share/doc/ortp/html/annotated.html
-share/doc/ortp/html/arrowdown.png
-share/doc/ortp/html/arrowright.png
 share/doc/ortp/html/b64_8c.html
 share/doc/ortp/html/b64_8h_source.html
 share/doc/ortp/html/bc_s.png
@@ -58,6 +56,8 @@ share/doc/ortp/html/jitterctl_8h_source.html
 share/doc/ortp/html/jquery.js
 share/doc/ortp/html/logging_8h.html
 share/doc/ortp/html/logging_8h_source.html
+share/doc/ortp/html/menu.js
+share/doc/ortp/html/menudata.js
 share/doc/ortp/html/nav_f.png
 share/doc/ortp/html/nav_g.png
 share/doc/ortp/html/nav_h.png

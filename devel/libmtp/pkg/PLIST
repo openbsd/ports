@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/08/28 12:40:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2016/11/12 20:50:41 jca Exp $
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
 @bin bin/mtp-connect
@@ -29,8 +29,6 @@ share/doc/libmtp/
 share/doc/libmtp/html/
 share/doc/libmtp/html/__stdint_8h_source.html
 share/doc/libmtp/html/annotated.html
-share/doc/libmtp/html/arrowdown.png
-share/doc/libmtp/html/arrowright.png
 share/doc/libmtp/html/bc_s.png
 share/doc/libmtp/html/bdwn.png
 share/doc/libmtp/html/chdk__live__view_8h_source.html
@@ -97,6 +95,8 @@ share/doc/libmtp/html/libmtp_8h_source.html
 share/doc/libmtp/html/libusb-glue_8h.html
 share/doc/libmtp/html/libusb-glue_8h_source.html
 share/doc/libmtp/html/mainpage_8h_source.html
+share/doc/libmtp/html/menu.js
+share/doc/libmtp/html/menudata.js
 share/doc/libmtp/html/modules.html
 share/doc/libmtp/html/mtpz_8c.html
 share/doc/libmtp/html/mtpz_8h.html
