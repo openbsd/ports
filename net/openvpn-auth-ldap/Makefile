@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/12 21:17:02 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/12 21:18:05 jca Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -22,6 +22,7 @@ MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=openvpn-auth-ldap/}
 RUN_DEPENDS =		net/openvpn
 LIB_DEPENDS =		databases/openldap
 BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/check \
 			devel/re2c
 
 SEPARATE_BUILD =	Yes
@@ -29,8 +30,11 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS += --prefix=${LOCALBASE} \
+		  --with-check=${LOCALBASE} \
 		  --with-openldap=${LOCALBASE} \
 		  --with-openvpn=${LOCALBASE}/include/openvpn
+
+TEST_TARGET =		test
 
 SAMPLES_DIR =		${PREFIX}/share/examples/openvpn-auth-ldap
 
