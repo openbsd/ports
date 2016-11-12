@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2016/10/18 07:26:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/12 14:30:41 shadchin Exp $
 
 COMMENT=		python interface to amazon web services
 
 MODPY_EGG_VERSION=	2.43.0
 DISTNAME=		boto-${MODPY_EGG_VERSION}
-PKGNAME=	 	py-${DISTNAME}
+PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -20,9 +21,12 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		security/py-paramiko \
-			textproc/py-yaml \
-			www/py-requests
+RUN_DEPENDS=		security/py-paramiko${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+
+FLAVORS=		python3
+FLAVOR?=
 
 # requires an AWS account
 TEST_IS_INTERACTIVE=	Yes
