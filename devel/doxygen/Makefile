@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2016/11/12 20:59:18 jca Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	m88k sh
+# Qt5 doesn't build yet on powerpc
+NOT_FOR_ARCHS-gui=	m88k sh powerpc
 BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT-main=	source code documentation generator tool
