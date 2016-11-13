@@ -1,0 +1,6 @@
+Lunamark is a Lua module for converting Markdown to other textual formats.
+Currently HTML, dzslides, Docbook, ConTeXt, LaTeX, and Groff man are the
+supported output formats. The markdown parser is written using a PEG
+grammar and can also be modified by the user.
+
+The API is described at http://jgm.github.io/lunamark/doc/
