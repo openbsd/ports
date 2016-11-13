@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/14 06:46:24 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/13 14:58:18 jca Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.0.0
+VERSION=	1.1.0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
 
 SHARED_LIBS +=  kea-asiodns               0.0 # 0.0
-SHARED_LIBS +=  kea-asiolink              0.0 # 2.0
+SHARED_LIBS +=  kea-asiolink              1.0 # 3.0
 SHARED_LIBS +=  kea-cc                    0.0 # 1.0
-SHARED_LIBS +=  kea-cfgclient             0.0 # 2.0
+SHARED_LIBS +=  kea-cfgclient             0.1 # 2.1
 SHARED_LIBS +=  kea-cryptolink            0.0 # 1.0
-SHARED_LIBS +=  kea-dhcp++                0.0 # 3.0
-SHARED_LIBS +=  kea-dhcp_ddns             0.0 # 1.0
-SHARED_LIBS +=  kea-dhcpsrv               0.0 # 4.0
+SHARED_LIBS +=  kea-dhcp++                1.0 # 4.1
+SHARED_LIBS +=  kea-dhcp_ddns             0.1 # 1.1
+SHARED_LIBS +=  kea-dhcpsrv               1.0 # 6.0
 SHARED_LIBS +=  kea-dns++                 0.0 # 2.0
-SHARED_LIBS +=  kea-eval                  0.0 # 3.0
+SHARED_LIBS +=  kea-eval                  1.0 # 4.0
 SHARED_LIBS +=  kea-exceptions            0.0 # 0.0
-SHARED_LIBS +=  kea-hooks                 0.0 # 1.0
-SHARED_LIBS +=  kea-log                   0.0 # 1.0
+SHARED_LIBS +=  kea-hooks                 1.0 # 2.0
+SHARED_LIBS +=  kea-log                   1.0 # 2.0
 SHARED_LIBS +=  kea-stats                 0.0 # 1.0
-SHARED_LIBS +=  kea-threads               0.0 # 0.0
+SHARED_LIBS +=  kea-threads               1.0 # 1.0
 SHARED_LIBS +=  kea-util-io               0.0 # 0.0
-SHARED_LIBS +=  kea-util                  0.0 # 1.0
+SHARED_LIBS +=  kea-util                  1.0 # 2.0
 
 CATEGORIES=	net
 
