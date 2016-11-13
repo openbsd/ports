@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/11/04 10:31:45 danj Exp $
-@comment bin/pip
+@comment $OpenBSD: PLIST,v 1.12 2016/11/13 09:42:46 danj Exp $
 @comment bin/pip2
+@comment bin/pip
 @comment bin/pip3
 bin/pip${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/pip/
@@ -202,6 +202,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/tr
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}dom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}etree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}etree_lxml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/${MODPY_PYCACHE}genshi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/html5lib/treewalkers/base.py
