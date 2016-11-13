@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.282 2016/11/01 16:50:34 jasper Exp $
+$OpenBSD: user.list,v 1.283 2016/11/13 19:33:25 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -290,3 +290,4 @@ id  user		group		port options
 779 _yquake2		_yquake2	games/yquake2
 780 _rundeck		_rundeck	sysutils/rundeck
 781 _consul-template	_consul-template	sysutils/consul-template
+782 _ympd		_ympd		audio/ympd
