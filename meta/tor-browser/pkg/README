@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1.1.1 2016/11/13 21:18:48 landry Exp $
+
++-----------------------------------------------------------------------
+| ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To start Tor Browser:
+
+  $ tor-browser
+
+This will create a ~/TorBrowser-Data directory if it does not exist.
+
+Tor Browser uses its own instance of the tor server running on a
+different port than the net/tor port is configured to use by default.
+It starts and stops this tor daemon using the tor-launcher add-on
+(www/tor-browser/tor-launcher).  It should not interfere with any tor
+daemon you have running via the standard mechanism (e.g. rcctl start
+tor).
+
+The tor instance used by Tor Browser stores its configuration in
+~/TorBrowser-Data/Browser/torrc; the tor daemon state lives in
+~/TorBrowser-Data/Browser/tor_data.  When you use Tor Browser to
+change your configuration (e.g. add bridges) the above torrc is
+updated.  You can also add bridges by editing your torrc yourself.
+Make sure Tor Browser is not running before doing so if you use this
+method; if Tor Browser is running it might overwrite your torrc.
+
+NOTE: The OpenBSD Tor Browser ports do not yet include Pluggable
+Transports (PT).  This means that not all features are yet available,
+such as using obfsproxy to get to Tor.  A future update will include
+ports for PT components.  Pluggable Transports have a web page
+worth reading:
+  https://www.torproject.org/docs/pluggable-transports.html.en
+
+For more information about Tor Browser and the Tor anonymity network
+in general please visit http://www.torproject.org
