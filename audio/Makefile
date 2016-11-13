@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2016/11/08 23:27:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.379 2016/11/13 19:35:43 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -269,6 +269,7 @@
      SUBDIR += xmms2
      SUBDIR += xmms2-scrobbler
      SUBDIR += xmp
+     SUBDIR += ympd
      SUBDIR += zeya
 
 .include <bsd.port.subdir.mk>
