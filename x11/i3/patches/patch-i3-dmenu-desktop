@@ -1,7 +1,7 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
---- i3-dmenu-desktop.orig	Sun Jun 15 19:12:43 2014
-+++ i3-dmenu-desktop	Fri Jul 11 16:49:32 2014
-@@ -107,7 +107,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
+$OpenBSD: patch-i3-dmenu-desktop,v 1.6 2016/11/13 20:46:23 dcoppa Exp $
+--- i3-dmenu-desktop.orig	Tue Nov  8 19:54:01 2016
++++ i3-dmenu-desktop	Thu Nov 10 18:04:35 2016
+@@ -111,7 +111,7 @@ $xdg_data_home = $ENV{HOME} . '/.local/share' if
      ! -d $xdg_data_home;
  
  my $xdg_data_dirs = $ENV{XDG_DATA_DIRS};
@@ -10,7 +10,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
      !defined($xdg_data_dirs) ||
      $xdg_data_dirs eq '';
  
-@@ -209,12 +209,12 @@ for my $file (values %desktops) {
+@@ -213,12 +213,12 @@ for my $file (values %desktops) {
  #     'evince.desktop' => {
  #         'Exec' => 'evince %U',
  #         'Name' => 'Dokumentenbetrachter',
@@ -25,7 +25,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
  #       }
  #   };
  
-@@ -420,7 +420,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
+@@ -424,7 +424,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
      # we need to create a temporary script that contains the full command line
      # as the syntax for starting commands with arguments varies from terminal
      # emulator to terminal emulator.
@@ -34,7 +34,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
      my ($fh, $filename) = tempfile();
      binmode($fh, ':utf8');
      say $fh <<EOT;
-@@ -431,7 +431,7 @@ EOT
+@@ -435,7 +435,7 @@ EOT
      close($fh);
      chmod 0755, $filename;
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
  } else {
      # i3 executes applications by passing the argument to i3’s “exec” command
      # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
-@@ -472,7 +472,7 @@ notifications.
+@@ -476,7 +476,7 @@ notifications.
  
  The .desktop files are searched in $XDG_DATA_HOME/applications (by default
  $HOME/.local/share/applications) and in the "applications" subdirectory of each
@@ -52,7 +52,7 @@ $OpenBSD: patch-i3-dmenu-desktop,v 1.5 2015/03/17 15:39:47 dcoppa Exp $
  
  Files with the same name in $XDG_DATA_HOME/applications take precedence over
  files in $XDG_DATA_DIRS, so that you can overwrite parts of the system-wide
-@@ -486,7 +486,7 @@ file respectively) by appending it to the name of the 
+@@ -490,7 +490,7 @@ file respectively) by appending it to the name of the 
  want to launch "GNU Emacs 24" with the patch /tmp/foobar.txt, you would type
  "emacs", press TAB, type " /tmp/foobar.txt" and press ENTER.
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/07/11 15:49:58 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/11/13 20:46:23 dcoppa Exp $
 @conflict i3bar-<=0.6.21p1
 @pkgpath x11/i3bar
 @bin bin/i3
@@ -25,6 +25,18 @@ include/i3/ipc.h
 @man man/man1/i3.1
 @man man/man1/i3bar.1
 share/applications/i3.desktop
+share/doc/i3/
+share/doc/i3/debugging.html
+share/doc/i3/hacking-howto.html
+share/doc/i3/i3bar-protocol.html
+share/doc/i3/ipc.html
+share/doc/i3/layout-saving.html
+share/doc/i3/lib-i3test-test.html
+share/doc/i3/lib-i3test.html
+share/doc/i3/multi-monitor.html
+share/doc/i3/testsuite.html
+share/doc/i3/userguide.html
+share/doc/i3/wsbar.html
 share/examples/i3/
 @sample ${SYSCONFDIR}/i3/
 share/examples/i3/config

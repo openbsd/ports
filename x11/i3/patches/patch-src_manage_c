@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_manage_c,v 1.18 2016/03/09 09:25:51 dcoppa Exp $
---- src/manage.c.orig	Sun Mar  6 16:17:18 2016
-+++ src/manage.c	Tue Mar  8 13:31:05 2016
-@@ -468,10 +468,16 @@ void manage_window(xcb_window_t window, xcb_get_window
+$OpenBSD: patch-src_manage_c,v 1.19 2016/11/13 20:46:23 dcoppa Exp $
+--- src/manage.c.orig	Tue Nov  8 19:54:01 2016
++++ src/manage.c	Thu Nov 10 18:04:35 2016
+@@ -480,10 +480,16 @@ void manage_window(xcb_window_t window, xcb_get_window
      if (cwindow->dock)
          want_floating = false;
  

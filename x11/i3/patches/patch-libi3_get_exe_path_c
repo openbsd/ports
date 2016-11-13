@@ -1,7 +1,7 @@
-$OpenBSD: patch-libi3_get_exe_path_c,v 1.2 2014/07/11 15:49:58 dcoppa Exp $
---- libi3/get_exe_path.c.orig	Sun Jun 15 19:12:43 2014
-+++ libi3/get_exe_path.c	Thu Jul  3 21:06:32 2014
-@@ -96,5 +96,5 @@ char *get_exe_path(const char *argv0) {
+$OpenBSD: patch-libi3_get_exe_path_c,v 1.3 2016/11/13 20:46:23 dcoppa Exp $
+--- libi3/get_exe_path.c.orig	Tue Nov  8 19:54:01 2016
++++ libi3/get_exe_path.c	Thu Nov 10 18:04:35 2016
+@@ -103,5 +103,5 @@ char *get_exe_path(const char *argv0) {
      free(tmp);
  
      /* Last resort: maybe it’s in /usr/bin? */

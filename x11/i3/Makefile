@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.105 2016/08/29 09:13:37 jca Exp $
+# $OpenBSD: Makefile,v 1.106 2016/11/13 20:46:23 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.12
-REVISION =	0
+DISTNAME =	i3-4.13
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -16,9 +15,13 @@ PERMIT_PACKAGE_CDROM =   Yes
 
 # uses pledge()
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre startup-notification-1 xcb xcb-cursor
-WANTLIB += xcb-icccm xcb-keysyms xcb-randr xcb-render xcb-util
-WANTLIB += xcb-xinerama xcb-xkb xkbcommon xkbcommon-x11 yajl
+WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1 xcb
+WANTLIB += xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-util
+WANTLIB += xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
+WANTLIB += yajl
+
+BUILD_DEPENDS =	textproc/asciidoc \
+		textproc/xmlto
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
@@ -32,40 +35,29 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
 
+FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
+
+SEPARATE_BUILD = Yes
+
 USE_GMAKE =	Yes
 
-NO_TEST =	Yes
+CONFIGURE_STYLE = gnu
 
-MAKE_FLAGS =	CC="${CC}" \
-		SYSCONFDIR=${SYSCONFDIR} \
-		V=1
+CONFIGURE_ARGS = --enable-builddir=${WRKBUILD}
 
-.if defined(DEBUG)
-MAKE_FLAGS +=	DEBUG=1
-.endif
+CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
+			  -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib \
+			 -L${LOCALBASE}/lib"
 
-FAKE_FLAGS =	PREFIX=${PREFIX} \
-		EXEC_PREFIX=${PREFIX} \
-		SYSCONFDIR=${PREFIX}/share/examples \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/i3-dmenu-desktop \
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/etc/config \
+		${WRKSRC}/etc/config.keycodes \
+		${WRKSRC}/i3-dmenu-desktop \
 		${WRKSRC}/i3-nagbar/main.c \
-		${WRKSRC}/i3.config \
-		${WRKSRC}/i3.config.keycodes \
 		${WRKSRC}/libi3/get_config_path.c \
-		${WRKSRC}/libi3/get_exe_path.c
-
-post-install:
-	${INSTALL_MAN} ${WRKBUILD}/man/*.1 ${PREFIX}/man/man1/
-	${SUBST_MAN} ${WRKBUILD}/man/i3-config-wizard.1 \
-			${PREFIX}/man/man1/i3-config-wizard.1
-	${SUBST_MAN} ${WRKBUILD}/man/i3-dmenu-desktop.1 \
-			${PREFIX}/man/man1/i3-dmenu-desktop.1
-	${SUBST_MAN} ${WRKBUILD}/man/i3.1 ${PREFIX}/man/man1/i3.1
-	@rm ${PREFIX}/man/man1/i3-sensible*.1
+		${WRKSRC}/libi3/get_exe_path.c \
+		${WRKSRC}/man/i3-config-wizard.man \
+		${WRKSRC}/man/i3.man
 
 .include <bsd.port.mk>
