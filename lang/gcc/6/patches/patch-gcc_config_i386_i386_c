@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
---- gcc/config/i386/i386.c.orig	Fri Jul 29 13:41:46 2016
-+++ gcc/config/i386/i386.c	Wed Aug 31 13:08:17 2016
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.2 2016/11/13 14:39:32 pascal Exp $
+--- gcc/config/i386/i386.c.orig	Fri Jul 29 14:41:46 2016
++++ gcc/config/i386/i386.c	Sat Nov 12 20:19:34 2016
 @@ -2474,6 +2474,8 @@ struct ix86_frame
    HOST_WIDE_INT reg_save_offset;
    HOST_WIDE_INT sse_reg_save_offset;
@@ -10,6 +10,15 @@ $OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp 
    /* When save_regs_using_mov is set, emit prologue using
       move instead of push instructions.  */
    bool save_regs_using_mov;
+@@ -8693,7 +8695,7 @@ function_arg_advance_32 (CUMULATIVE_ARGS *cum, machine
+ 			 HOST_WIDE_INT words)
+ {
+   int res = 0;
+-  bool error_p = NULL;
++  bool error_p = false;
+ 
+   if (TARGET_IAMCU)
+     {
 @@ -11378,6 +11380,7 @@ ix86_compute_frame_layout (struct ix86_frame *frame)
    HOST_WIDE_INT size = get_frame_size ();
    HOST_WIDE_INT to_allocate;
