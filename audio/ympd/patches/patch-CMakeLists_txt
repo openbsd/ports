@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/11/13 19:35:11 landry Exp $
+--- CMakeLists.txt.orig	Tue Nov  1 17:01:06 2016
++++ CMakeLists.txt	Tue Nov  1 17:01:18 2016
+@@ -73,7 +73,7 @@ add_executable(ympd ${SOURCES})
+ target_link_libraries(ympd ${LIBMPDCLIENT_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${OPENSSL_LIBRARIES})
+ 
+ install(TARGETS ympd DESTINATION bin)
+-install(FILES ympd.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++install(FILES ympd.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+ if(WITH_DYNAMIC_ASSETS)
+     install(DIRECTORY htdocs DESTINATION share/${PROJECT_NAME})
+ endif()

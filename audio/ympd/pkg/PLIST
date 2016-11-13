@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/13 19:35:11 landry Exp $
+@newgroup _ympd:782
+@newuser _ympd:782:782:daemon:Ympd Daemon:/var/empty:/sbin/nologin
+@bin bin/ympd
+@man man/man1/ympd.1
+@rcscript ${RCDIR}/ympd
