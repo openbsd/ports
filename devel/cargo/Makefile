@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/12 08:53:11 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/13 08:59:26 danj Exp $
 COMMENT = package manager for Rust language
 
-BROKEN = crates.io requires Accept: HTTP header
-
 # cargo version
-CARGO_VERSION =		0.13.0
+CARGO_VERSION =		0.14.0
 
 # rust-install submodule version in cargo/src/rust-installer
 # see https://github.com/rust-lang/cargo/tree/${CARGO_VERSION}/src
-RUSTINSTALL_INDEX =	c37d3747da75c280237dc2d6b925078e69555499
+RUSTINSTALL_INDEX =	4f994850808a572e2cc8d43f968893c8e942e9bf
 
 # crates.io commit for CARGO_VERSION
 # see https://github.com/rust-lang/crates.io-index/commits/master/ca/rg/cargo
-CRATESIO_INDEX =	2e1f891403b2d057f0ea21475b1bb99800aa14b6
+CRATESIO_INDEX =	9f8c3a65f70b2a5723e0d9cc0a32d531ea42da67
 
 # cargo version used for bootstrapping
-BOOTSTRAP_VERSION =	0.12.0-20160821
+BOOTSTRAP_VERSION =	0.14.0-20161112
 
 # registry index
 # see ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
@@ -27,19 +25,15 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://doc.crates.io/
 
+MAINTAINER =	Sebastien Marie <semarie@online.fr>
+
 # cargo is dual licensed MIT/Apache-2.0
 # third-parties (detail below):
 #  - MIT
 #  - Unlicense/MIT
 #  - MIT/Apache-2.0
-#  - MPL-2.0
-#  - one with no indication of licence (hamcrest)
-#
-# hamcrest is used only for the testsuite, and isn't builded with cargo.
-# so the package doesn't contain it.
 #
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_DISTFILES_FTP = No as hamcrest has no license information
 
 WANTLIB = c crypto curl m pthread ssh2 ssl z
 
@@ -52,55 +46,57 @@ DISTFILES +=	crates.io-index-${CRATESIO_INDEX}.tar.gz{crates.io-index/archive/${
 # look at ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
 # for the list
 CRATES +=	advapi32-sys-0.2.0		# MIT
-CRATES +=	aho-corasick-0.5.2		# Unlicense/MIT
+CRATES +=	aho-corasick-0.5.3		# Unlicense/MIT
 CRATES +=	bitflags-0.1.1			# MIT/Apache-2.0
 CRATES +=	bitflags-0.7.0			# MIT/Apache-2.0
+CRATES +=	bufstream-0.1.2			# MIT/Apache-2.0 (test)
 CRATES +=	cfg-if-0.1.0			# MIT/Apache-2.0
 CRATES +=	cmake-0.1.17			# MIT/Apache-2.0
 CRATES +=	crossbeam-0.2.9			# MIT/Apache-2.0
-CRATES +=	curl-0.3.2			# MIT
-CRATES +=	curl-sys-0.2.1			# MIT
+CRATES +=	curl-0.3.9			# MIT
+CRATES +=	curl-sys-0.2.4			# MIT
 CRATES +=	docopt-0.6.82			# Unlicense/MIT
 CRATES +=	env_logger-0.3.4		# MIT/Apache-2.0
 CRATES +=	filetime-0.1.10			# MIT/Apache-2.0
 CRATES +=	flate2-0.2.14			# MIT/Apache-2.0
 CRATES +=	fs2-0.2.5			# MIT/Apache-2.0
-CRATES +=	gcc-0.3.32			# MIT/Apache-2.0
+CRATES +=	gcc-0.3.35			# MIT/Apache-2.0
 CRATES +=	git2-0.4.4			# MIT/Apache-2.0
 CRATES +=	git2-curl-0.5.0			# MIT/Apache-2.0
 CRATES +=	glob-0.2.11			# MIT/Apache-2.0
-CRATES +=	hamcrest-0.1.0			# no license indication (test only)
+CRATES +=	hamcrest-0.1.1			# MIT/Apache-2.0 (test)
 CRATES +=	idna-0.1.0			# MIT/Apache-2.0
 CRATES +=	kernel32-sys-0.2.2		# MIT
 CRATES +=	lazy_static-0.2.1		# MIT
-CRATES +=	libc-0.2.15			# MIT/Apache-2.0
+CRATES +=	libc-0.2.17			# MIT/Apache-2.0
 CRATES +=	libgit2-sys-0.4.5		# MIT/Apache-2.0
-CRATES +=	libssh2-sys-0.1.38		# MIT/Apache-2.0
-CRATES +=	libz-sys-1.0.5			# MIT/Apache-2.0
+CRATES +=	libssh2-sys-0.1.39		# MIT/Apache-2.0
+CRATES +=	libz-sys-1.0.6			# MIT/Apache-2.0
 CRATES +=	log-0.3.6			# MIT/Apache-2.0
 CRATES +=	matches-0.1.2			# MIT
 CRATES +=	memchr-0.1.11			# Unlicense/MIT
 CRATES +=	miniz-sys-0.1.7			# MIT/Apache-2.0
 CRATES +=	miow-0.1.3			# MIT/Apache-2.0
 CRATES +=	net2-0.2.26			# MIT/Apache-2.0
-CRATES +=	nom-1.2.4			# MIT
-CRATES +=	num-0.1.32			# MIT/Apache-2.0 (test)
-CRATES +=	num-rational-0.1.32		# MIT/Apache-2.0 (test)
-CRATES +=	num-iter-0.1.32			# MIT/Apache-2.0 (test)
+CRATES +=	num-0.1.36			# MIT/Apache-2.0 (test)
+CRATES +=	num-bigint-0.1.35		# MIT/Apache-2.0 (test)
+CRATES +=	num-complex-0.1.35		# MIT/Apache-2.0 (test)
 CRATES +=	num-integer-0.1.32		# MIT/Apache-2.0 (test)
-CRATES +=	num-complex-0.1.32		# MIT/Apache-2.0 (test)
-CRATES +=	num-traits-0.1.32		# MIT/Apache-2.0 (test)
-CRATES +=	num-bigint-0.1.32		# MIT/Apache-2.0 (test)
+CRATES +=	num-iter-0.1.32			# MIT/Apache-2.0 (test)
+CRATES +=	num-rational-0.1.35		# MIT/Apache-2.0 (test)
+CRATES +=	num-traits-0.1.36		# MIT/Apache-2.0 (test)
 CRATES +=	num_cpus-1.0.0			# MIT
 CRATES +=	openssl-0.7.14			# Apache-2.0
 CRATES +=	openssl-sys-0.7.14		# MIT
 CRATES +=	openssl-sys-extras-0.7.14	# MIT
 CRATES +=	pkg-config-0.3.8		# MIT/Apache-2.0
+CRATES +=	psapi-sys-0.1.0			# MIT
 CRATES +=	rand-0.3.14			# MIT/Apache-2.0
-CRATES +=	regex-0.1.73			# MIT/Apache-2.0
-CRATES +=	regex-syntax-0.3.4		# MIT/Apache-2.0
+CRATES +=	regex-0.1.77			# MIT/Apache-2.0
+CRATES +=	regex-syntax-0.3.5		# MIT/Apache-2.0
 CRATES +=	rustc-serialize-0.3.19		# MIT/Apache-2.0
-CRATES +=	semver-0.2.3			# MIT/Apache-2.0
+CRATES +=	semver-0.5.1			# MIT/Apache-2.0
+CRATES +=	semver-parser-0.6.1		# MIT/Apache-2.0
 CRATES +=	strsim-0.3.0			# MIT
 CRATES +=	tar-0.4.8			# MIT/Apache-2.0
 CRATES +=	tempdir-0.3.5			# MIT/Apache-2.0
@@ -121,7 +117,7 @@ MASTER_SITES0 =	https://crates.io/api/v1/crates/
 DISTFILES +=	${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:0
 .endfor
 
-MASTER_SITES1 = http://semarie.online.fr/cargo/
+MASTER_SITES1 = http://kapouay.odns.fr/pub/cargo/
 DISTFILES +=	cargo-bootstrap-${BOOTSTRAP_VERSION}.tar.gz:1
 
 MODULES =	lang/python
@@ -131,7 +127,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/libgit2/libgit2 \
 		devel/cmake \
-		lang/rust>=1.12,<1.13
+		lang/rust>=1.13,<1.14
 
 LIB_DEPENDS =	net/curl \
 		security/libssh2
