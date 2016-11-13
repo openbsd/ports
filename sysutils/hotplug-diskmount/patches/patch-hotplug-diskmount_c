@@ -1,0 +1,37 @@
+$OpenBSD: patch-hotplug-diskmount_c,v 1.3 2016/11/13 20:26:55 dcoppa Exp $
+--- hotplug-diskmount.c.orig	Sun Nov 13 21:19:35 2016
++++ hotplug-diskmount.c	Sun Nov 13 21:21:29 2016
+@@ -406,13 +406,13 @@ check_ntfs3g(void)
+ {
+ 	struct stat sb;
+ 
+-	return (stat("/usr/local/bin/ntfs-3g", &sb) == 0);
++	return (stat("${LOCALBASE}/bin/ntfs-3g", &sb) == 0);
+ }
+ 
+ /*
+  * Return Values:
+  * 	0		- OK
+- * 	ECANCELED	- /usr/local/bin/ntfs-3g exited with non-zero exit code
++ * 	ECANCELED	- ${LOCALBASE}/bin/ntfs-3g exited with non-zero exit code
+  * 	other values	- fork() returned with error
+  */
+ int
+@@ -431,7 +431,7 @@ do_ntfs3g(int idx, const char *dev, const char *mp, in
+ 	mounter_pid[idx] = fork();
+ 	if (mounter_pid[idx] == 0) {
+ 		setsid();
+-		execv("/usr/local/bin/ntfs-3g", argv);
++		execv("${LOCALBASE}/bin/ntfs-3g", argv);
+ 		exit(errno);
+ 	}
+ 
+@@ -466,7 +466,7 @@ get_ntfs3g_label(const char *dev, char *diskname)
+ 	pid = fork();
+ 	if (pid == 0) {
+ 		dup2(fds[1], 1);
+-		execv("/usr/local/sbin/ntfslabel", argv);
++		execv("${LOCALBASE}/sbin/ntfslabel", argv);
+ 		exit(errno);
+ 	} else if (pid < 0) {
+ 		close(fds[0]);

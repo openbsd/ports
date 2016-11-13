@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/09 05:57:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2016/11/13 20:26:55 dcoppa Exp $
 
 COMMENT =	disk auto-mounter
 
-DISTNAME =	hotplug-diskmount-1.0
+DISTNAME =	hotplug-diskmount-1.0.2
 
 CATEGORIES =	sysutils
 
@@ -16,6 +16,11 @@ MASTER_SITES =	http://www.bsdua.org/files/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c
+
+RUN_DEPENDS =	sysutils/ntfs-3g
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/hotplug-diskmount.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hotplug-diskmount ${PREFIX}/libexec/
