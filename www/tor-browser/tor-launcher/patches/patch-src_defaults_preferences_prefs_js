@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_defaults_preferences_prefs_js,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+
+Set all path-related prefs to minimize patching of tl-process.js
+--- src/defaults/preferences/prefs.js.orig	Tue May 24 16:33:24 2016
++++ src/defaults/preferences/prefs.js	Wed Sep  7 16:33:18 2016
+@@ -11,14 +11,17 @@ pref("extensions.torlauncher.prompt_at_startup", true)
+ // The tor_path is relative to the application directory. On Linux and
+ // Windows this is the Browser/ directory that contains the firefox
+ // executables, and on Mac OS it is the TorBrowser.app directory.
+-pref("extensions.torlauncher.tor_path", "");
++pref("extensions.torlauncher.tor_path", "/usr/local/bin/tor");
++pref("extensions.torlauncher.torrc-defaults_path", "/usr/local/share/tor-browser/torrc-defaults");
++pref("extensions.torlauncher.geoip_path", "/usr/local/share/tor/geoip");
++pref("extensions.torlauncher.geoip6_path", "/usr/local/share/tor/geoip6");
+ 
+ // The torrc_path and tordatadir_path are relative to the data directory,
+ // which is TorBrowser-Data/ if it exists as a sibling of the application
+ // directory. If TorBrowser-Data/ does not exist, these paths are relative
+ // to the TorBrowser/ directory within the application directory.
+-pref("extensions.torlauncher.torrc_path", "");
+-pref("extensions.torlauncher.tordatadir_path", "");
++pref("extensions.torlauncher.torrc_path", "torrc");
++pref("extensions.torlauncher.tordatadir_path", "tor_data");
+ 
+ // Recommended default bridge type (can be set per localized bundle).
+ // pref("extensions.torlauncher.default_bridge_recommended_type", "obfs3");

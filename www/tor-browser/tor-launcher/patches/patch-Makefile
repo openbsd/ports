@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+--- Makefile.orig	Wed Mar 18 15:08:01 2015
++++ Makefile	Wed Mar 18 15:06:38 2015
+@@ -27,7 +27,7 @@ help:
+ pkg-prepare:	clean
+ 	@mkdir -p pkg
+ 	$(eval TMP="$(shell mktemp -d "/tmp/$(EXT_NAME).XXXXXX")")
+-	@cp -a "src" "$(TMP)/$(EXT_NAME)"
++	@cp -R "src" "$(TMP)/$(EXT_NAME)"
+ 	@if [ -n "$(TL_LOGO)" ]; then \
+ 		if [ "$(TL_LOGO)" = "-" ]; then \
+ 			rm "$(TMP)/$(EXT_NAME)/chrome/skin/tbb-logo.png"; \
+@@ -35,7 +35,7 @@ pkg-prepare:	clean
+ 			cp -p "$(TL_LOGO)" "$(TMP)/$(EXT_NAME)/chrome/skin/tbb-logo.png"; \
+ 		fi \
+ 	fi
+-	@cp -a chrome.manifest.in "$(TMP)/$(EXT_NAME)"/chrome.manifest
++	@cp chrome.manifest.in "$(TMP)/$(EXT_NAME)"/chrome.manifest
+ 	@mv "$(TMP)/$(EXT_NAME)"/chrome/locale/en \
+ 	    "$(TMP)/$(EXT_NAME)"/chrome/locale/en-US
+ 	@for d in "$(TMP)/$(EXT_NAME)"/chrome/locale/*; do \

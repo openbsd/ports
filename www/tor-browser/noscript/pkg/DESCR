@@ -1,0 +1,7 @@
+The NoScript Firefox extension provides extra protection for Firefox,
+Seamonkey and other mozilla-based browsers: this free, open source
+add-on allows JavaScript, Java, Flash and other plugins to be executed
+only by trusted web sites of your choice (e.g. your online bank).
+
+This package provides the NoScript add-on for use with Tor Browser.
+It will not work with any other Mozilla-based browser package.

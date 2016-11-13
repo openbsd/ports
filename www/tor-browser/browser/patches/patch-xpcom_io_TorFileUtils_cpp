@@ -1,0 +1,25 @@
+$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+
+Honor the --enable-tor-data-in-home-dir configure option.  Hopefully
+this goes away soon c.f. https://trac.torproject.org/projects/tor/ticket/20497
+--- xpcom/io/TorFileUtils.cpp.orig	Wed Sep  7 02:07:10 2016
++++ xpcom/io/TorFileUtils.cpp	Thu Sep 22 12:55:26 2016
+@@ -15,7 +15,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
+   NS_ENSURE_ARG_POINTER(aFile);
+   nsCOMPtr<nsIFile> tbDataDir;
+ 
+-#ifdef TOR_BROWSER_DATA_OUTSIDE_APP_DIR
++#if defined(TOR_BROWSER_DATA_IN_HOME_DIR)
++  const char *homeDir = getenv("HOME");
++  if (!homeDir || !*homeDir)
++    return NS_ERROR_FAILURE;
++  nsresult rv = NS_NewNativeLocalFile(nsDependentCString(homeDir), true,
++                                      getter_AddRefs(tbDataDir));
++  NS_ENSURE_SUCCESS(rv, rv);
++  nsAutoCString leafSubdir(NS_LITERAL_CSTRING("TorBrowser-Data"));
++  rv = tbDataDir->AppendNative(leafSubdir);
++  NS_ENSURE_SUCCESS(rv, rv);
++#elif defined(TOR_BROWSER_DATA_OUTSIDE_APP_DIR)
+   nsAutoCString tbDataLeafName(NS_LITERAL_CSTRING("TorBrowser-Data"));
+   nsCOMPtr<nsIFile> appRootDir;
+   nsresult rv = GetAppRootDir(aExeFile, getter_AddRefs(appRootDir));

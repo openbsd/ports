@@ -1,0 +1,14 @@
+$OpenBSD: patch-security_nss_coreconf_UNIX_mk,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+
+Taken from security/nss
+--- security/nss/coreconf/UNIX.mk.orig	Fri Sep 11 16:40:39 2015
++++ security/nss/coreconf/UNIX.mk	Fri Sep 11 16:40:48 2015
+@@ -10,7 +10,7 @@ AR          = ar cr $@
+ LDOPTS     += -L$(SOURCE_LIB_DIR)
+ 
+ ifdef BUILD_OPT
+-	OPTIMIZER  += -O
++	OPTIMIZER  +=
+ 	DEFINES    += -UDEBUG -DNDEBUG
+ else
+ 	OPTIMIZER  += -g

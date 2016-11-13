@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Tor Browser
+GenericName=Web Browser
+Comment=Browse the dark web
+Exec=tor-browser %u
+Icon=${TRUEPREFIX}/share/pixmaps/tor-browser.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;

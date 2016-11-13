@@ -1,0 +1,29 @@
+$OpenBSD: patch-_mozconfig,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+
+Set MOZ_OBJDIR correctly. Turn off auto-update stuff.  Trn on data-in-home-dir
+--- .mozconfig.orig	Wed Sep  7 02:07:10 2016
++++ .mozconfig	Sat Nov 12 10:39:53 2016
+@@ -1,6 +1,6 @@
+ . $topsrcdir/browser/config/mozconfig
+ 
+-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
++mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/../build-`arch -s`
+ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+ mk_add_options MOZILLA_OFFICIAL=1
+ mk_add_options BUILD_OFFICIAL=1
+@@ -9,10 +9,11 @@ ac_add_options --enable-optimize
+ #ac_add_options --disable-optimize
+ ac_add_options --enable-official-branding
+ 
+-ac_add_options --enable-tor-browser-update
+-ac_add_options --enable-update-packaging
+-ac_add_options --enable-signmar
+-ac_add_options --enable-verify-mar
++#ac_add_options --enable-tor-browser-update
++#ac_add_options --enable-update-packaging
++#ac_add_options --enable-signmar
++#ac_add_options --enable-verify-mar
++ac_add_options --enable-tor-browser-data-in-home-dir
+ 
+ ac_add_options --disable-strip
+ ac_add_options --disable-install-strip

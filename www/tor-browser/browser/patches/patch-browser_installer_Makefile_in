@@ -1,0 +1,15 @@
+$OpenBSD: patch-browser_installer_Makefile_in,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+Don't install the sdk / headers etc
+
+Patch taken from www/firefox-esr
+--- browser/installer/Makefile.in.orig	Tue May 31 07:26:30 2016
++++ browser/installer/Makefile.in	Wed Jun  1 18:33:10 2016
+@@ -95,8 +95,6 @@ MOZ_PKG_MAC_ICON=branding/disk.icns
+ MOZ_PKG_MAC_EXTRA=--symlink '/Applications:/ '
+ endif
+ 
+-INSTALL_SDK = 1
+-
+ include $(topsrcdir)/toolkit/mozapps/installer/signing.mk
+ include $(topsrcdir)/toolkit/mozapps/installer/packager.mk
+ 

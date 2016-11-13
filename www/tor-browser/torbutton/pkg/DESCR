@@ -1,0 +1,5 @@
+Torbutton is a core component of Tor Browser, a privacy-oriented fork
+of Firefox ESR by the Tor project.  It is a Firefox add-on that
+provides a user interface in the browser to configure and monitor the
+privacy-oriented features of Tor Browser.  You activate it by pressing
+the button that looks like an onion (the Tor logo).

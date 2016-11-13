@@ -1,0 +1,7 @@
+HTTPS Everywhere is a Firefox extension from the EFF that forces HTTPS
+use wherever possible when browsing.  It does this by means of an
+extensive set of rules maintained and updated by the EFF.
+
+This package provides the HTTPS Everywhere add-on for use with Tor
+Browser.  It will not work with any other Mozilla-based browser
+package.
