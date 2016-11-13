@@ -1,24 +1,24 @@
-$OpenBSD: patch-drivers_netjack_netjack_c,v 1.1 2012/04/20 13:28:50 dcoppa Exp $
+$OpenBSD: patch-drivers_netjack_netjack_c,v 1.2 2016/11/13 19:22:34 jca Exp $
 
 Fix with celt>=0.11
 
---- drivers/netjack/netjack.c.orig	Wed Apr 18 13:04:54 2012
-+++ drivers/netjack/netjack.c	Wed Apr 18 13:05:48 2012
-@@ -407,7 +407,7 @@ void netjack_attach( netjack_driver_state_t *netj )
- 	if( netj->bitdepth == CELT_MODE ) {
+--- drivers/netjack/netjack.c.orig	Tue Feb 23 15:13:53 2016
++++ drivers/netjack/netjack.c	Fri Sep 23 09:32:04 2016
+@@ -413,7 +413,7 @@ void netjack_attach ( netjack_driver_state_t *netj )
+ 		if ( netj->bitdepth == CELT_MODE ) {
  #if HAVE_CELT
  #if HAVE_CELT_API_0_7 || HAVE_CELT_API_0_8
--	    netj->capture_srcs = jack_slist_append(netj->capture_srcs, celt_decoder_create( netj->celt_mode, 1, NULL ) );
-+	    netj->capture_srcs = jack_slist_append(netj->capture_srcs, celt_decoder_create_custom( netj->celt_mode, 1, NULL ) );
+-			netj->capture_srcs = jack_slist_append (netj->capture_srcs, celt_decoder_create ( netj->celt_mode, 1, NULL ) );
++			netj->capture_srcs = jack_slist_append (netj->capture_srcs, celt_decoder_create_custom ( netj->celt_mode, 1, NULL ) );
  #else
- 	    netj->capture_srcs = jack_slist_append(netj->capture_srcs, celt_decoder_create( netj->celt_mode ) );
+ 			netj->capture_srcs = jack_slist_append (netj->capture_srcs, celt_decoder_create ( netj->celt_mode ) );
  #endif
-@@ -454,7 +454,7 @@ void netjack_attach( netjack_driver_state_t *netj )
+@@ -460,7 +460,7 @@ void netjack_attach ( netjack_driver_state_t *netj )
  #if HAVE_CELT
  #if HAVE_CELT_API_0_7 || HAVE_CELT_API_0_8
- 	    CELTMode *celt_mode = celt_mode_create( netj->sample_rate, netj->period_size, NULL );
--	    netj->playback_srcs = jack_slist_append(netj->playback_srcs, celt_encoder_create( celt_mode, 1, NULL ) );
-+	    netj->playback_srcs = jack_slist_append(netj->playback_srcs, celt_encoder_create_custom( celt_mode, 1, NULL ) );
+ 			CELTMode *celt_mode = celt_mode_create ( netj->sample_rate, netj->period_size, NULL );
+-			netj->playback_srcs = jack_slist_append (netj->playback_srcs, celt_encoder_create ( celt_mode, 1, NULL ) );
++			netj->playback_srcs = jack_slist_append (netj->playback_srcs, celt_encoder_create_custom ( celt_mode, 1, NULL ) );
  #else
- 	    CELTMode *celt_mode = celt_mode_create( netj->sample_rate, 1, netj->period_size, NULL );
- 	    netj->playback_srcs = jack_slist_append(netj->playback_srcs, celt_encoder_create( celt_mode ) );
+ 			CELTMode *celt_mode = celt_mode_create ( netj->sample_rate, 1, netj->period_size, NULL );
+ 			netj->playback_srcs = jack_slist_append (netj->playback_srcs, celt_encoder_create ( celt_mode ) );

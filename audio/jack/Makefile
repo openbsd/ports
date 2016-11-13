@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/16 21:19:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2016/11/13 19:22:34 jca Exp $
 
 COMMENT =		low latency sound server
 
-V =			0.124.1
+V =			0.125.0
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
 CATEGORIES =		audio
-REVISION =		1
 
-SHARED_LIBS +=		jack		1.0	# 0.28
-SHARED_LIBS +=		jackserver	1.0	# 0.28
+SHARED_LIBS +=		jack		2.0	# 0.28
+SHARED_LIBS +=		jackserver	2.0	# 0.28
 
 HOMEPAGE =		http://jackaudio.org/
 
@@ -47,11 +46,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debug
 .endif
-
-post-extract:
-	mkdir -p ${WRKSRC}/drivers/sndio
-	cp ${FILESDIR}/Makefile.am ${FILESDIR}/sndio_driver.{c,h} \
-		${WRKSRC}/drivers/sndio
 
 AUTO_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
