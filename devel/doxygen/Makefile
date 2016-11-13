@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2016/11/12 20:59:18 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2016/11/13 23:34:17 jca Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	m88k sh
-# Qt5 doesn't build yet on powerpc
-NOT_FOR_ARCHS-gui=	m88k sh powerpc
 BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT-main=	source code documentation generator tool
@@ -14,6 +12,9 @@ VERSION=	1.8.12
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
+
+REVISION-main=	0
+REVISION-gui=	0
 
 CATEGORIES=	devel textproc
 
@@ -30,10 +31,8 @@ MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 MULTI_PACKAGES=	-main -gui
 PSEUDO_FLAVORS=	no_gui bootstrap
 
-COMMON_WANTLIB= c m pthread estdc++
-WANTLIB-main= 	${COMMON_WANTLIB} iconv z xapian
-WANTLIB-gui=	Qt5Core Qt5Gui Qt5Widgets Qt5Xml \
-		${COMMON_WANTLIB}
+WANTLIB-main +=	c iconv m pthread stdc++ xapian z
+WANTLIB-gui +=	QtCore QtGui QtXml c m stdc++
 
 LIB_DEPENDS-main=	converters/libiconv \
 			databases/xapian-core
@@ -50,7 +49,8 @@ MODPY_RUNDEP=	No
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-gui}
 CONFIGURE_ARGS+=-Dbuild_wizard:Bool=ON
-MODULES+=	x11/qt5
+CONFIGURE_ARGS+=-Dforce_qt4:Bool=ON
+MODULES+=	x11/qt4
 .endif
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 # ld(1) fails
