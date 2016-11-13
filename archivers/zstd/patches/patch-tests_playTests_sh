@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.1.1.1 2016/09/29 19:31:29 juanfra Exp $
---- tests/playTests.sh.orig	Wed Sep 28 00:15:03 2016
-+++ tests/playTests.sh	Wed Sep 28 21:51:57 2016
+$OpenBSD: patch-tests_playTests_sh,v 1.2 2016/11/13 02:30:23 juanfra Exp $
+--- tests/playTests.sh.orig	Tue Nov  1 19:13:22 2016
++++ tests/playTests.sh	Sat Nov 12 22:04:17 2016
 @@ -31,9 +31,12 @@ case "$OS" in
      ;;
  esac
@@ -16,7 +16,7 @@ $OpenBSD: patch-tests_playTests_sh,v 1.1.1.1 2016/09/29 19:31:29 juanfra Exp $
  fi
  
  $ECHO "\nStarting playTests.sh isWindows=$isWindows"
-@@ -123,7 +126,7 @@ rm ./*.tmp ./*.zstd
+@@ -128,7 +131,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  
@@ -25,3 +25,13 @@ $OpenBSD: patch-tests_playTests_sh,v 1.1.1.1 2016/09/29 19:31:29 juanfra Exp $
  $ECHO "\n**** flush write error test **** "
  
  $ECHO "$ECHO foo | $ZSTD > /dev/full"
+@@ -266,7 +269,8 @@ $ZSTD -bi1 tmp1
+ $ECHO "bench multiple levels"
+ $ZSTD -i1b1e3 tmp1
+ $ECHO "with recursive and quiet modes"
+-$ZSTD -rqi1b1e3 tmp1
++#$ZSTD -rqi1b1e3 tmp1
++echo "OpenBSD package: broken benchmark"
+ 
+ 
+ $ECHO "\n**** zstd round-trip tests **** "

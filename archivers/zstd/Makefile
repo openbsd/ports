@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/29 19:31:29 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/13 02:30:23 juanfra Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.1.0
+GH_TAGNAME =		v1.1.1
 
 CATEGORIES =		archivers
 
