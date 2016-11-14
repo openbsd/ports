@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/07/09 09:09:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/11/14 04:02:25 jca Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
+# /usr/local/lib/gcc/sparc64-unknown-openbsd6.0/4.9.4/libgcc.a(unwind-dw2-fde-dip.o): In function `__gthread_mutex_lock':
+# ./gthr-default.h:748: undefined reference to `pthread_mutex_lock'
+BROKEN-sparc64 = undefined reference to pthread_mutex_lock
 
 COMMENT =	bastard tetris
 DISTNAME =	bastet-0.43.1.2015083000
