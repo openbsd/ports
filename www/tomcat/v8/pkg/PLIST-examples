@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.20 2016/10/21 12:53:03 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.21 2016/11/14 18:45:07 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -920,6 +920,7 @@ webapps/docs/api/org/apache/coyote/ActionHook.html
 webapps/docs/api/org/apache/coyote/Adapter.html
 webapps/docs/api/org/apache/coyote/AsyncContextCallback.html
 webapps/docs/api/org/apache/coyote/AsyncStateMachine.html
+webapps/docs/api/org/apache/coyote/CloseNowException.html
 webapps/docs/api/org/apache/coyote/Constants.html
 webapps/docs/api/org/apache/coyote/ContainerThreadMarker.html
 webapps/docs/api/org/apache/coyote/ErrorState.html
@@ -1001,7 +1002,6 @@ webapps/docs/api/org/apache/coyote/http2/FrameType.html
 webapps/docs/api/org/apache/coyote/http2/HPackHuffman.HuffmanCode.html
 webapps/docs/api/org/apache/coyote/http2/HPackHuffman.html
 webapps/docs/api/org/apache/coyote/http2/HeaderSink.html
-webapps/docs/api/org/apache/coyote/http2/HpackDecoder.HeaderEmitter.html
 webapps/docs/api/org/apache/coyote/http2/HpackDecoder.html
 webapps/docs/api/org/apache/coyote/http2/HpackEncoder.HpackHeaderFunction.html
 webapps/docs/api/org/apache/coyote/http2/HpackEncoder.State.html
@@ -1809,6 +1809,7 @@ webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState
 webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Handler.html
 webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.html
 webapps/docs/api/org/apache/tomcat/util/net/AbstractJsseEndpoint.html
+webapps/docs/api/org/apache/tomcat/util/net/ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.Acceptor.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.AprSocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/AprEndpoint.Poller.html
@@ -1854,7 +1855,6 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLUtil.ProtocolInfo.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLUtilBase.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNio2Channel.html
-webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileDataBase.html
 webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
@@ -2090,6 +2090,7 @@ webapps/docs/config/filter.html
 webapps/docs/config/globalresources.html
 webapps/docs/config/host.html
 webapps/docs/config/http.html
+webapps/docs/config/http2.html
 webapps/docs/config/index.html
 webapps/docs/config/jar-scan-filter.html
 webapps/docs/config/jar-scanner.html
