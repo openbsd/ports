@@ -1,12 +1,24 @@
-$OpenBSD: patch-setup_py,v 1.3 2016/01/31 23:21:37 sthen Exp $
---- setup.py.orig	Fri Jan 15 14:10:59 2016
-+++ setup.py	Thu Jan 21 19:49:16 2016
-@@ -49,7 +49,7 @@ setup(
-     version = '2.3.2',
-     packages=['scapy','scapy/arch', 'scapy/arch/windows', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules', 'scapy/crypto', 'scapy/contrib'],
-     scripts = SCRIPTS,
--    data_files = [('share/man/man1', ["doc/scapy.1.gz"])],
-+    data_files = [('man/man1', ["doc/scapy.1"])],
+$OpenBSD: patch-setup_py,v 1.4 2016/11/14 20:04:56 danj Exp $
+
+For option --single-version-externally-managed
+
+--- setup.py.orig	Tue Oct 18 14:56:50 2016
++++ setup.py	Wed Nov  2 16:15:00 2016
+@@ -7,7 +7,7 @@ Distutils setup file for Scapy.
  
-     # Metadata
-     author = 'Philippe BIONDI',
+ from distutils import archive_util
+ from distutils import sysconfig
+-from distutils.core import setup
++from setuptools import setup
+ from distutils.command.sdist import sdist
+ import os
+ 
+@@ -61,7 +61,7 @@ setup(
+         'scapy/tools',
+     ],
+     scripts=SCRIPTS,
+-    data_files=[('share/man/man1', ["doc/scapy.1.gz"])],
++    data_files=[('man/man1', ["doc/scapy.1"])],
+     package_data={
+         'scapy': ['VERSION'],
+     },

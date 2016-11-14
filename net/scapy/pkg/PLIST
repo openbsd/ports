@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/01/31 23:21:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/14 20:04:56 danj Exp $
 @conflict scapy6-*
 @pkgpath net/scapy6
 bin/UTscapy
 bin/scapy
 lib/python${MODPY_VERSION}/site-packages/scapy/
-lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scapy/VERSION
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/all.py
@@ -14,8 +19,10 @@ lib/python${MODPY_VERSION}/site-packages/scapy/ansmachine.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/arch/bsd.py
-lib/python${MODPY_VERSION}/site-packages/scapy/arch/bsd.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/common.py
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/common.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/consts.py
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/consts.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/linux.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/pcapdnet.py
@@ -27,6 +34,10 @@ lib/python${MODPY_VERSION}/site-packages/scapy/arch/unix.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/compatibility.py
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/windows/compatibility.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/winpcapy.py
+lib/python${MODPY_VERSION}/site-packages/scapy/arch/winpcapy.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/as_resolvers.py
 lib/python${MODPY_VERSION}/site-packages/scapy/as_resolvers.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/asn1/
@@ -65,6 +76,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/cdp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/cdp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/chdlc.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/chdlc.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/coap.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/coap.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/dtp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/dtp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/eigrp.py
@@ -87,14 +100,22 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isis.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/isis.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ldp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ldp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/modbus.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/modbus.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/mpls.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/mpls.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/nsh.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/nsh.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/openflow.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/openflow.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/openflow3.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/openflow3.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ospf.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ospf.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/pnio.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/pnio.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/pnio_rtc.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/pnio_rtc.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ppi.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ppi.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ppi_cace.py
@@ -105,6 +126,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ripng.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/ripng.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rsvp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/rsvp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/sebek.py
+lib/python${MODPY_VERSION}/site-packages/scapy/contrib/sebek.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/send.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/send.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/skinny.py
@@ -117,15 +140,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vqp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vqp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vtp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vtp.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vxlan.py
-lib/python${MODPY_VERSION}/site-packages/scapy/contrib/vxlan.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/wpa_eapol.py
 lib/python${MODPY_VERSION}/site-packages/scapy/contrib/wpa_eapol.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/crypto/
-lib/python${MODPY_VERSION}/site-packages/scapy/crypto/__init__.py
-lib/python${MODPY_VERSION}/site-packages/scapy/crypto/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/crypto/cert.py
-lib/python${MODPY_VERSION}/site-packages/scapy/crypto/cert.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/dadict.py
 lib/python${MODPY_VERSION}/site-packages/scapy/dadict.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/data.py
@@ -171,6 +187,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/l2tp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/l2tp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/llmnr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/llmnr.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/lltd.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/lltd.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/loop.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/loop.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mgcp.py
@@ -195,8 +213,6 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/rtp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rtp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/sctp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/sctp.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/layers/sebek.py
-lib/python${MODPY_VERSION}/site-packages/scapy/layers/sebek.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/skinny.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/skinny.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/smb.py
@@ -205,8 +221,22 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/snmp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/snmp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tftp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tftp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/__init__.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/cert.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/cert.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/__init__.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/curves.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/curves.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/pkcs1.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/tls/crypto/pkcs1.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/vrrp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/vrrp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/vxlan.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/vxlan.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/x509.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/x509.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/main.py
@@ -214,8 +244,6 @@ lib/python${MODPY_VERSION}/site-packages/scapy/main.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/modules/geoip.py
-lib/python${MODPY_VERSION}/site-packages/scapy/modules/geoip.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/nmap.py
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/nmap.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/modules/p0f.py

@@ -1,9 +1,0 @@
-$OpenBSD: patch-test_run_tests,v 1.1 2016/01/31 23:21:37 sthen Exp $
---- test/run_tests.orig	Tue Jan 19 19:27:57 2016
-+++ test/run_tests	Tue Jan 19 19:30:18 2016
-@@ -1,4 +1,4 @@
--#! /bin/bash
-+#! /bin/sh
- DIR=$(dirname $0)/..
- if [ "$*" == "" ]
- then
