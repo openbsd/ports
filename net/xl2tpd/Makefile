@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/19 16:34:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/11/14 09:35:38 landry Exp $
 
 COMMENT=	l2tp client/server
 
-DISTNAME=	xl2tpd-1.3.1
-REVISION=	6
+DISTNAME=	xl2tpd-1.3.8
+GH_ACCOUNT=	xelerance
+GH_PROJECT=	xl2tpd
+GH_COMMIT=	cec1ebe1523bf248f134647dd6030a333d93e19b
 
 CATEGORIES=	net
 
@@ -14,10 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c util
-
-# https://github.com/xelerance/xl2tpd/
-MASTER_SITES=	http://download.openswan.org/xl2tpd/
+WANTLIB += c m util
 
 FAKE_FLAGS=	DESTDIR= MANDIR=${WRKINST}${PREFIX}/man
 NO_TEST=	Yes
