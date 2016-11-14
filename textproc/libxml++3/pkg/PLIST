@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/01 08:24:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/14 12:46:09 ajacoutot Exp $
 include/libxml++-3.0/
 include/libxml++-3.0/libxml++/
 include/libxml++-3.0/libxml++/attribute.h
@@ -53,8 +53,6 @@ lib/libxml++-3.0.la
 lib/libxml++-3.0/include/
 lib/libxml++-3.0/include/libxml++config.h
 lib/pkgconfig/libxml++-3.0.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/libxml++-3.0/
 share/devhelp/books/libxml++-3.0/libxml++-3.0.devhelp2
 share/doc/libxml++-3.0/
