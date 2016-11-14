@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.13 2016/05/05 08:25:31 ajacoutot Exp $
---- setup.py.orig	Wed May  4 07:23:31 2016
-+++ setup.py	Thu May  5 10:02:31 2016
+$OpenBSD: patch-setup_py,v 1.14 2016/11/14 15:29:24 dcoppa Exp $
+--- setup.py.orig	Fri Oct 21 12:46:25 2016
++++ setup.py	Mon Nov 14 15:23:47 2016
 @@ -919,7 +919,7 @@ else: # INTERACTIVE_MODE
                  if len(path) > 0:
                      cmd = 'hp-testpage -i %s' % param
                  else:
 -                    cmd = 'python ./testpage.py -i %s' % param
-+                    cmd = '${MODPY_BIN} ./testpage.py -i %s' % param
++                    cmd = '${MODPY_BIN} ${TRUEPREFIX}/share/hplip/testpage.py -i %s' % param
  
                  os_utils.execute(cmd)
  

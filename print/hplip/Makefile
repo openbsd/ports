@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/11/14 12:58:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2016/11/14 15:29:24 dcoppa Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -20,6 +20,7 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
+REVISION-main=		0
 REVISION-hpijs=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
