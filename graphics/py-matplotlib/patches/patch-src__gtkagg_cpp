@@ -1,12 +1,12 @@
-$OpenBSD: patch-src__gtkagg_cpp,v 1.4 2013/05/31 12:29:41 edd Exp $
---- src/_gtkagg.cpp.orig	Tue Mar 26 13:04:37 2013
-+++ src/_gtkagg.cpp	Thu Apr 18 20:42:27 2013
-@@ -2,7 +2,7 @@
- /* -*- mode: c++; c-basic-offset: 4 -*- */
+$OpenBSD: patch-src__gtkagg_cpp,v 1.5 2016/11/14 18:55:50 shadchin Exp $
+--- src/_gtkagg.cpp.orig	Thu May 19 17:35:55 2016
++++ src/_gtkagg.cpp	Fri Oct  7 02:19:09 2016
+@@ -3,7 +3,7 @@
+ #include <vector>
  
  #include <pygobject.h>
 -#include <pygtk/pygtk.h>
 +#include <pygtk-2.0/pygtk/pygtk.h>
  
- #include <cstring>
- #include <cerrno>
+ #include "agg_basics.h"
+ #include "agg_pixfmt_rgba.h"

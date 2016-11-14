@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2016/03/29 09:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/11/14 18:55:50 shadchin Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	1.4.2
-REVISION =		5
+MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics devel math
@@ -15,18 +14,16 @@ MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB} ${MODTK_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += freetype m png stdc++ z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matplotlib/}
-
-MODULES=	lang/python \
-		x11/tk
+MODULES=	lang/python
 
 FLAVORS=	python3
 FLAVOR?=
 
-MODPY_SETUPTOOLS = Yes
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
 COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
@@ -34,6 +31,7 @@ COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
+		graphics/py-cycler${MODPY_FLAVOR} \
 		${MODPY_TKINTER_DEPENDS}
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
@@ -47,19 +45,18 @@ RUN_DEPENDS +=	x11/gtk+3
 RUN_DEPENDS +=	x11/py-gtk2
 .endif
 
-LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
-		graphics/png
+LIB_DEPENDS=	graphics/png
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-nose${MODPY_FLAVOR}
 
-MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
-		LDSHARED="${CC} -shared -fPIC"
+MAKE_ENV+=	LDSHARED="${CC} -shared -fPIC"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}matplotlib
 
 pre-configure:
 	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/setupext.py
+	${SUBST_CMD} ${WRKSRC}/lib/matplotlib/sphinxext/tests/test_tinypages.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
@@ -67,7 +64,7 @@ post-install:
 
 # http://matplotlib.org/devel/testing.html
 do-test: fake
-	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
-		'import matplotlib ; matplotlib.test()'
+	cd ${WRKSRC} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} -c 'import matplotlib ; matplotlib.test()'
 
 .include <bsd.port.mk>
