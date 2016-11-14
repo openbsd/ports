@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/14 22:33:07 jsg Exp $
 
 COMMENT =	Lua library for parsing and emitting YAML
-V =		6.0
+V =		6.1
 
 PKGNAME =	lua-yaml-${V}
 
