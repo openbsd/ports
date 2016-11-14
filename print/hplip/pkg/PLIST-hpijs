@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.51 2016/10/27 08:35:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.52 2016/11/14 12:58:23 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
 @bin bin/hpijs
+libexec/cups/filter/foomatic-rip-hplip
 share/cups/drv/hp/hpijs.drv
 share/foomatic/db/source/PPD/HP/HP-Fax-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax2-hpijs.ppd.gz

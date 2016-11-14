@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2016/10/27 08:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2016/11/14 12:58:23 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -19,6 +19,8 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION-hpijs=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -193,5 +195,9 @@ post-install:
 	mv ${PREFIX}/share/doc/hplip-${V} ${PREFIX}/share/doc/hplip/html
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
 	rm ${PREFIX}/lib/sane/*.{a,la}
+
+# handle old filters looking for foomatic-rip-hplip
+	cd ${PREFIX}/libexec/cups/filter/ && \
+		ln -s foomatic-rip foomatic-rip-hplip
 
 .include <bsd.port.mk>
