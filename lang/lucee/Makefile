@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/12 15:55:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/14 17:31:39 sthen Exp $
 
-COMMENT=		open-source CFML engine
+COMMENT=		JVM-based scripting language for web apps (open-source CFML)
 
-V=			4.5.3.020
+V=			5.1.0.34
 DISTNAME=		lucee-$V
 EXTRACT_SUFX=		.war
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{$V}
 
 CATEGORIES=		lang www
 
@@ -15,13 +16,13 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		http://cdn.lucee.org/
+MASTER_SITES =		http://cdn.lucee.org/rest/update/provider/war/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # wasting time on arch where it's unavailable
 BUILD_DEPENDS=		archivers/unzip \
 			${RUN_DEPENDS}
-RUN_DEPENDS=		tomcat->=7,<8:www/tomcat/v7
+RUN_DEPENDS=		tomcat->=8,<9:www/tomcat/v8
 SUBST_VARS=		CATALINA_BASE
 
 NO_BUILD=		Yes
@@ -32,7 +33,7 @@ CATALINA_BASE=		/var/tomcat
 PREFIX=			${CATALINA_BASE}
 
 do-extract:
-	mkdir ${WRKSRC}; cd ${WRKSRC}; unzip ${FULLDISTDIR}/${DISTFILES}
+	mkdir ${WRKSRC}; cd ${WRKSRC}; unzip ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 # Avoid conflicting servlet names with any alternative version of Railo/Lucee
 # that's installed via .WAR files. Idea from jamiekrug.com. In pre-patch to
