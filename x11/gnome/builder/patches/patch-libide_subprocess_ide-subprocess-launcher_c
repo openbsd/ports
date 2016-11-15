@@ -1,13 +1,27 @@
-$OpenBSD: patch-libide_subprocess_ide-subprocess-launcher_c,v 1.1 2016/11/12 16:27:58 ajacoutot Exp $
+$OpenBSD: patch-libide_subprocess_ide-subprocess-launcher_c,v 1.2 2016/11/15 08:48:28 ajacoutot Exp $
+
+From b1e9fb3a282f4cc6fcab262b60aec024b7c1016d Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Mon, 14 Nov 2016 13:31:40 -0800
+Subject: subprocess: use proper fileno for ioctl()
+
+From 97ed7156c487d51cbcae8e187f1ba41747bd21ec Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Sat, 12 Nov 2016 02:11:36 -0800
+Subject: subprocess: also use setpgid() after setsid()
 
 From 7b68bdcb3e2925dff94c1fea555557e2e5470662 Mon Sep 17 00:00:00 2001
 From: Christian Hergert <chergert@redhat.com>
 Date: Fri, 11 Nov 2016 15:26:35 -0800
 Subject: subprocess-launcher: setup IOCSCTTY on stdin_fd after setsid()
 
---- libide/subprocess/ide-subprocess-launcher.c.orig	Mon Oct 31 11:22:25 2016
-+++ libide/subprocess/ide-subprocess-launcher.c	Sat Nov 12 08:55:08 2016
-@@ -21,6 +21,7 @@
+--- libide/subprocess/ide-subprocess-launcher.c.orig	Tue Nov 15 09:30:03 2016
++++ libide/subprocess/ide-subprocess-launcher.c	Tue Nov 15 09:30:21 2016
+@@ -18,9 +18,11 @@
+ 
+ #define G_LOG_DOMAIN "ide-subprocess-launcher"
+ 
++#include <errno.h>
  #include <signal.h>
  #include <stdlib.h>
  #include <string.h>
@@ -15,30 +29,20 @@ Subject: subprocess-launcher: setup IOCSCTTY on stdin_fd after setsid()
  #include <unistd.h>
  
  #include "ide-debug.h"
-@@ -68,12 +69,17 @@ static void
- child_setup_func (gpointer data)
- {
- #ifdef G_OS_UNIX
-+  IdeSubprocessLauncherPrivate *priv = data;
-+
-   /*
-    * TODO: Check on FreeBSD to see if the process group id is the same as
+@@ -73,7 +75,16 @@ child_setup_func (gpointer data)
     *       the owning process. If not, our kill() signal might not work
     *       as expected.
     */
-   setsid ();
 +
-+  if (isatty (priv->stdin_fd))
-+    ioctl (priv->stdin_fd, TIOCSCTTY, 0);
+   setsid ();
++  setpgid (0, 0);
++
++  if (isatty (STDIN_FILENO))
++    {
++      if (ioctl (STDIN_FILENO, TIOCSCTTY, 0) != 0)
++        g_warning ("Failed to setup TIOCSCTTY on stdin: %s",
++                   g_strerror (errno));
++    }
  #endif
  }
  
-@@ -232,7 +238,7 @@ ide_subprocess_launcher_spawn_worker (GTask        *ta
- #endif
- 
-   launcher = g_subprocess_launcher_new (priv->flags);
--  g_subprocess_launcher_set_child_setup (launcher, child_setup_func, NULL, NULL);
-+  g_subprocess_launcher_set_child_setup (launcher, child_setup_func, priv, NULL);
-   g_subprocess_launcher_set_cwd (launcher, priv->cwd);
- 
-   if (priv->stdin_fd)
