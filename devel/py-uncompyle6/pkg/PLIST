@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/04 07:13:36 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/15 08:29:43 shadchin Exp $
 bin/pydisassemble${MODPY_BIN_SUFFIX}
 bin/uncompyle6${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/
@@ -46,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}pars
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse26.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse27.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse30.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse31.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/${MODPY_PYCACHE}parse33.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse25.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse26.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse27.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse3.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse30.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse31.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse32.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/parsers/parse33.py
@@ -119,11 +121,15 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}aligner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}check_ast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}fragments-save.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}fragments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}make_function.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}parser_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}pysource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/aligner.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/check_ast.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/fragments-save.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/fragments.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/make_function.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/parser_error.py
