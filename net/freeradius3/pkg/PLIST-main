@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/11/15 12:24:19 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -20,7 +20,6 @@ bin/radsqlrelay
 bin/radtest
 @bin bin/radwho
 bin/radzap
-@bin bin/rbmonkey
 @bin bin/rlm_ippool_tool
 @bin bin/smbencrypt
 include/freeradius/
@@ -107,6 +106,7 @@ lib/freeradius/rlm_dhcp.so
 lib/freeradius/rlm_digest.so
 lib/freeradius/rlm_dynamic_clients.so
 lib/freeradius/rlm_eap.so
+lib/freeradius/rlm_eap_fast.so
 lib/freeradius/rlm_eap_gtc.so
 lib/freeradius/rlm_eap_leap.so
 lib/freeradius/rlm_eap_md5.so
@@ -149,6 +149,8 @@ lib/freeradius/rlm_unpack.so
 lib/freeradius/rlm_utf8.so
 lib/freeradius/rlm_wimax.so
 lib/freeradius/rlm_yubikey.so
+@man man/man1/dhcpclient.1
+@man man/man1/rad_counter.1
 @man man/man1/radclient.1
 @man man/man1/radeapclient.1
 @man man/man1/radlast.1
@@ -572,6 +574,7 @@ share/examples/freeradius/mods-enabled/always
 share/examples/freeradius/mods-enabled/attr_filter
 share/examples/freeradius/mods-enabled/cache_eap
 share/examples/freeradius/mods-enabled/chap
+share/examples/freeradius/mods-enabled/date
 share/examples/freeradius/mods-enabled/detail
 share/examples/freeradius/mods-enabled/detail.log
 share/examples/freeradius/mods-enabled/dhcp
@@ -620,6 +623,8 @@ share/examples/freeradius/policy.d/eap
 @sample ${FREERADIUS_ETC}/policy.d/eap
 share/examples/freeradius/policy.d/filter
 @sample ${FREERADIUS_ETC}/policy.d/filter
+share/examples/freeradius/policy.d/moonshot-targeted-ids
+@sample ${FREERADIUS_ETC}/policy.d/moonshot-targeted-ids
 share/examples/freeradius/policy.d/operator-name
 @sample ${FREERADIUS_ETC}/policy.d/operator-name
 share/examples/freeradius/proxy.conf

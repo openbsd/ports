@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/15 12:24:19 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,10 +11,8 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.12pre20160630
-REVISION-main=	2
+V=		3.0.12
 DISTNAME=	freeradius-server-$V
-#EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-iodbc-$V
@@ -27,23 +25,9 @@ PKGNAME-python=	freeradius-python-$V
 
 CATEGORIES=	net security
 
-####
-#MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
-#		ftp://ftp.freeradius.org/pub/radius/ \
-#		ftp://ftp.freeradius.org/pub/radius/old/
-GH_ACCOUNT=     FreeRADIUS
-GH_PROJECT=     freeradius-server
-GH_COMMIT=      f982311f75b704c3ed1581c4fca69dd0ae7fd82d
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-BUILD_DEPENDS=  ${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-post-patch:
-	cd ${WRKSRC}; \
-	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
-####
+MASTER_SITES=	http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
+		ftp://ftp.freeradius.org/pub/radius/ \
+		ftp://ftp.freeradius.org/pub/radius/old/
 
 HOMEPAGE=	http://www.freeradius.org/
 
