@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2016/11/15 20:35:30 dcoppa Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		24
+REVISION-main=		25
 REVISION-mjpeg=		10
 REVISION-neon=		11
 
@@ -117,6 +117,10 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-zbar \
 			--disable-timidity \
 			--disable-swfdec
+
+# http://scarybeastsecurity.blogspot.it/2016/11/0day-exploit-compromising-linux-desktop.html
+# https://bugs.launchpad.net/ubuntu/+source/gst-plugins-bad0.10/+bug/1641700
+CONFIGURE_ARGS+=	--disable-nsf
 
 preconfigure:
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \

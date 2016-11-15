@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2015/04/23 11:55:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2016/11/15 20:35:30 dcoppa Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -100,7 +100,6 @@ lib/gstreamer-${VERSION}/libgstmpegvideoparse.so
 lib/gstreamer-${VERSION}/libgstmusepack.so
 lib/gstreamer-${VERSION}/libgstmve.so
 lib/gstreamer-${VERSION}/libgstmxf.so
-lib/gstreamer-${VERSION}/libgstnsf.so
 lib/gstreamer-${VERSION}/libgstnuvdemux.so
 lib/gstreamer-${VERSION}/libgstopus.so
 lib/gstreamer-${VERSION}/libgstpatchdetect.so
