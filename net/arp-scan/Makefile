@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/10/07 10:20:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/11/15 14:01:05 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	12
 
-M =		20161007
+M =		20161115
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
@@ -56,6 +56,7 @@ post-install:
 # https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries
 listing:
 	base='http://standards-oui.ieee.org'; \
+	f=oui-iab-`date +%Y%m%d`; \
 	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
 	cd $$t; \
 	mkdir oui-iab; \
