@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/02 18:19:05 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/15 08:23:50 shadchin Exp $
 bin/flake8
 lib/python${MODPY_VERSION}/site-packages/flake8/
 lib/python${MODPY_VERSION}/site-packages/flake8-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -37,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/flake8/main/application.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/application.pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/cli.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/flake8/main/debug.py
+lib/python${MODPY_VERSION}/site-packages/flake8/main/debug.pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/git.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/git.pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/mercurial.py
