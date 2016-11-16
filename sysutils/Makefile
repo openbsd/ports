@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2016/11/01 16:52:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.410 2016/11/16 19:49:55 juanfra Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -94,6 +94,7 @@
      SUBDIR += gsmartcontrol
      SUBDIR += hot-babe
      SUBDIR += hotplug-diskmount
+     SUBDIR += htop
      SUBDIR += idled
      SUBDIR += iogen
      SUBDIR += incron
