@@ -1,7 +1,18 @@
-$OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
+$OpenBSD: patch-libraries_libldap_tls_c,v 1.2 2016/11/16 19:55:30 jca Exp $
 --- libraries/libldap/tls.c.orig	Tue Feb 12 00:24:12 2008
-+++ libraries/libldap/tls.c	Thu Dec  3 12:03:47 2009
-@@ -981,7 +981,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
++++ libraries/libldap/tls.c	Mon Nov 14 18:45:14 2016
+@@ -918,10 +918,6 @@ tls_get_cert( SSL *s )
+ {
+ 	/* If peer cert was bad, treat as if no cert was given */
+ 	if (SSL_get_verify_result(s)) {
+-		/* If we can send an alert, do so */
+-		if (SSL_version(s) != SSL2_VERSION) {
+-			ssl3_send_alert(s,SSL3_AL_WARNING,SSL3_AD_BAD_CERTIFICATE);
+-		}
+ 		return NULL;
+ 	}
+ 	return SSL_get_peer_certificate(s);
+@@ -981,7 +977,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  	X509 *x;
  	const char *name;
  	char *ptr;
@@ -10,7 +21,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  #ifdef LDAP_PF_INET6
  	struct in6_addr addr;
  #else
-@@ -995,6 +995,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -995,6 +991,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  	} else {
  		name = name_in;
  	}
@@ -18,7 +29,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  
  	x = tls_get_cert((SSL *)s);
  	if (!x) {
-@@ -1028,15 +1029,14 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -1028,15 +1025,14 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  		ex = X509_get_ext(x, i);
  		alt = X509V3_EXT_d2i(ex);
  		if (alt) {
@@ -36,7 +47,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  				}
  			}
  			n = sk_GENERAL_NAME_num(alt);
-@@ -1054,7 +1054,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -1054,7 +1050,7 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  					if (sl == 0) continue;
  
  					/* Is this an exact match? */
@@ -45,7 +56,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  						break;
  					}
  
-@@ -1094,13 +1094,28 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -1094,13 +1090,28 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  
  	if (ret != LDAP_SUCCESS) {
  		X509_NAME *xn;
@@ -78,7 +89,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  			Debug( LDAP_DEBUG_ANY,
  				"TLS: unable to get common name from peer certificate.\n",
  				0, 0, 0 );
-@@ -1111,21 +1126,20 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -1111,21 +1122,20 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  			ld->ld_error = LDAP_STRDUP(
  				_("TLS: unable to get CN from peer certificate"));
  
@@ -107,7 +118,7 @@ $OpenBSD: patch-libraries_libldap_tls_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  					ret = LDAP_SUCCESS;
  				}
  			}
-@@ -1133,8 +1147,8 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
+@@ -1133,8 +1143,8 @@ ldap_pvt_tls_check_hostname( LDAP *ld, void *s, const 
  
  		if( ret == LDAP_LOCAL_ERROR ) {
  			Debug( LDAP_DEBUG_ANY, "TLS: hostname (%s) does not match "
