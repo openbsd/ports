@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/16 13:13:46 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT=		C++ interface for cairo
 
-DISTNAME=		cairomm-1.12.0
+DISTNAME=		cairomm-1.12.2
 
 SHARED_LIBS +=  cairomm-1.0          5.1      # 5.0
 
@@ -37,5 +37,7 @@ MODGCC4_LANGS=		c++
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		ac_cv_path_DOT= \
+			ac_cv_path_DOXYGEN=
 
 .include <bsd.port.mk>

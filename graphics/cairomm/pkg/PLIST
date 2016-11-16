@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/09/24 10:30:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/11/16 13:13:46 ajacoutot Exp $
 include/cairomm-1.0/
 include/cairomm-1.0/cairomm/
 include/cairomm-1.0/cairomm/cairomm.h
@@ -37,8 +37,6 @@ lib/pkgconfig/cairomm-ps-1.0.pc
 lib/pkgconfig/cairomm-svg-1.0.pc
 lib/pkgconfig/cairomm-xlib-1.0.pc
 lib/pkgconfig/cairomm-xlib-xrender-1.0.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/cairomm-1.0/
 share/devhelp/books/cairomm-1.0/cairomm-1.0.devhelp2
 share/doc/cairomm-1.0/
