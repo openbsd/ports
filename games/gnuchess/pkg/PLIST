@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/20 07:46:28 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/11/17 02:06:46 jca Exp $
 @bin bin/gnuchess
 bin/gnuchessu
 bin/gnuchessx
@@ -27,3 +27,4 @@ share/locale/pt_BR/LC_MESSAGES/gnuchess.mo
 share/locale/sr/LC_MESSAGES/gnuchess.mo
 share/locale/uk/LC_MESSAGES/gnuchess.mo
 share/locale/vi/LC_MESSAGES/gnuchess.mo
+share/locale/zh_CN/LC_MESSAGES/gnuchess.mo
