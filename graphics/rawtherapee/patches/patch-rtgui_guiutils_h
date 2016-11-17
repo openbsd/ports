@@ -1,0 +1,15 @@
+$OpenBSD: patch-rtgui_guiutils_h,v 1.1 2016/11/17 15:21:45 ajacoutot Exp $
+
+Fix build with cairomm >=1.12.2
+
+--- rtgui/guiutils.h.orig	Thu Nov 17 16:20:18 2016
++++ rtgui/guiutils.h	Thu Nov 17 16:20:07 2016
+@@ -281,7 +281,7 @@ class BackBuffer { (public)
+ 	void setDirty(bool isDirty) { dirty = isDirty; if (!dirty && !surface) dirty = true; }
+ 	bool isDirty() { return dirty; }
+ 	// you have to check if the surface is created thanks to surfaceCreated before starting to draw on it
+-	bool surfaceCreated() { return surface; }
++	Cairo::RefPtr<Cairo::Surface> surfaceCreated() { return surface; }
+ 	Cairo::RefPtr<Cairo::Surface> getSurface() { return surface; }
+ 	void deleteSurface() { surface.clear(); dirty=true; }
+ 	// will let you get a Cairo::Context for Cairo drawing operations

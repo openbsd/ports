@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/12 10:11:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/17 15:21:45 ajacoutot Exp $
 
 # http://50.87.144.65/~rt/w/index.php?title=The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
@@ -9,7 +9,7 @@ CXXFLAGS +=		-std=c++11
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-4.2
-REVISION = 		0
+REVISION = 		1
 
 CATEGORIES =		graphics
 
