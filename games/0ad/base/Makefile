@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/12 22:20:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/11/17 11:16:43 pascal Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		1
 
 USE_WXNEEDED =		Yes
 
 SO_VERSION =	0.0
-SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}
+SHARED_LIBS +=  mozjs38-ps-release        ${SO_VERSION}
 
 WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
 WANTLIB += enet execinfo gloox iconv icui18n icuuc m miniupnpc
@@ -87,7 +86,7 @@ do-install:
 	cp -R ${WRKDIST}/binaries/data/* ${PREFIX}/share/0ad
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
+	${INSTALL_SCRIPT} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.desktop \
 		${PREFIX}/share/applications/

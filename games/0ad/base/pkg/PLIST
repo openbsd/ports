@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/05/05 02:29:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/11/17 11:16:43 pascal Exp $
 bin/0ad
 @bin bin/pyrogenesis
 lib/libCollada.so
@@ -12,7 +12,7 @@ lib/liblowlevel.a
 lib/libmocks_real.a
 lib/libmocks_test.a
 lib/libmongoose.a
-@lib lib/libmozjs31-ps-release.so.${LIBmozjs31-ps-release_VERSION}
+@lib lib/libmozjs38-ps-release.so.${LIBmozjs38-ps-release_VERSION}
 lib/libnetwork.a
 lib/libscriptinterface.a
 lib/libsimulation2.a
@@ -34,6 +34,7 @@ share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
 share/0ad/l10n/messages.json
+share/0ad/l10n/nb.engine.po
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pl.engine.po
 share/0ad/l10n/pt_BR.engine.po

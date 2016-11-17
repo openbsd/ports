@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.7 2016/05/05 02:29:34 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2016/11/17 11:16:43 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 CATEGORIES = 		games
 
-V ?= 			0.0.20
+V ?= 			0.0.21
 
 HOMEPAGE = 		https://play0ad.com/
 
