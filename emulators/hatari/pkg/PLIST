@@ -1,21 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/17 09:51:41 fcambus Exp $
 bin/atari-convert-dir
 @bin bin/gst2ascii
 @bin bin/hatari
 bin/hatari_profile.py
-bin/hatariui
 @bin bin/hmsa
 bin/zip2st
 @man man/man1/atari-convert-dir.1
 @man man/man1/gst2ascii.1
 @man man/man1/hatari.1
 @man man/man1/hatari_profile.1
-@man man/man1/hatariui.1
 @man man/man1/hconsole.1
 @man man/man1/hmsa.1
 @man man/man1/zip2st.1
 share/applications/hatari.desktop
-share/applications/hatariui.desktop
 share/doc/hatari/
 share/doc/hatari/authors.txt
 share/doc/hatari/compatibility.html
@@ -23,6 +20,7 @@ share/doc/hatari/emutos.txt
 share/doc/hatari/images/
 share/doc/hatari/images/callgraph.png
 share/doc/hatari/images/callgraph.svg
+share/doc/hatari/images/cpu.png
 share/doc/hatari/images/devices.png
 share/doc/hatari/images/fileselector.png
 share/doc/hatari/images/floppydisks.png
@@ -46,26 +44,6 @@ share/doc/hatari/release-notes.txt
 share/doc/hatari/todo.txt
 share/hatari/
 share/hatari/hatari-icon.bmp
-share/hatari/hatariui/
-share/hatari/hatariui/README
-share/hatari/hatariui/TODO
-share/hatari/hatariui/config.py
-share/hatari/hatariui/config.pyc
-share/hatari/hatariui/conftypes.py
-share/hatari/hatariui/conftypes.pyc
-share/hatari/hatariui/debugui.py
-share/hatari/hatariui/debugui.pyc
-share/hatari/hatariui/dialogs.py
-share/hatari/hatariui/dialogs.pyc
-share/hatari/hatariui/hatari-icon.png
-share/hatari/hatariui/hatari-logo.png
-share/hatari/hatariui/hatari.py
-share/hatari/hatariui/hatari.pyc
-share/hatari/hatariui/hatariui.py
-share/hatari/hatariui/hatariui.pyc
-share/hatari/hatariui/release-notes.txt
-share/hatari/hatariui/uihelpers.py
-share/hatari/hatariui/uihelpers.pyc
 share/hatari/hconsole/
 share/hatari/hconsole/example-commands
 share/hatari/hconsole/example-debugger

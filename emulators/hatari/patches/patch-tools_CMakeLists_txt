@@ -1,6 +1,11 @@
-$OpenBSD: patch-tools_CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
---- tools/CMakeLists.txt.orig	Thu Sep 10 23:16:03 2015
-+++ tools/CMakeLists.txt	Thu Jun 23 21:49:16 2016
+$OpenBSD: patch-tools_CMakeLists_txt,v 1.2 2016/11/17 09:51:41 fcambus Exp $
+
+Bundled tool atari-hd-image.sh is unusable on OpenBSD because it requires
+'mkdosfs' and cannot be patched to use 'newfs_msdos' as a needed option is
+missing.
+
+--- tools/CMakeLists.txt.orig	Thu Nov  3 22:25:43 2016
++++ tools/CMakeLists.txt	Fri Nov  4 20:38:26 2016
 @@ -8,7 +8,6 @@ if(PYTHONINTERP_FOUND)
  endif(PYTHONINTERP_FOUND)
  
@@ -8,8 +13,8 @@ $OpenBSD: patch-tools_CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
 -install(PROGRAMS atari-hd-image.sh DESTINATION ${BINDIR} RENAME atari-hd-image)
  install(PROGRAMS zip2st.sh DESTINATION ${BINDIR} RENAME zip2st)
  
- # if(UNIX)
-@@ -17,12 +16,6 @@ install(PROGRAMS zip2st.sh DESTINATION ${BINDIR} RENAM
+ if(NOT WIN32)
+@@ -17,12 +16,6 @@ if(NOT WIN32)
  		COMMAND gzip -c -9 ${CMAKE_CURRENT_SOURCE_DIR}/atari-convert-dir.1 > ${CMAKE_CURRENT_BINARY_DIR}/atari-convert-dir.1.gz
  		DEPENDS atari-convert-dir.1)
  	INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/atari-convert-dir.1.gz DESTINATION ${MANDIR})

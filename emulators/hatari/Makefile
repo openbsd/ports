@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/17 09:51:41 fcambus Exp $
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		1.9.0
+V =		2.0.0
 DISTNAME =	hatari-${V}
-REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	emulators
@@ -16,24 +15,22 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	ICE SDL SM X11 Xext c m png pthread readline termcap z
+WANTLIB +=	ICE SDL2 SM X11 Xext c m png pthread readline termcap z
 
 MASTER_SITES =	http://download.tuxfamily.org/hatari/$V/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		sysutils/mtools \
-		x11/gtk+3,-guic \
-		x11/py-gtk2
+		x11/gtk+3,-guic
 
-LIB_DEPENDS =	devel/sdl \
+LIB_DEPENDS =	devel/sdl2 \
 		graphics/png
 
 MODULES =	devel/cmake \
 		lang/python
 
-MODPY_ADJ_FILES = python-ui/*.py \
-		  tools/debugger/*.py \
+MODPY_ADJ_FILES = tools/debugger/*.py \
 		  tools/hconsole/*.py \
 		  tools/*.py
 
@@ -47,7 +44,6 @@ pre-configure:
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	${PREFIX}/share/hatari/hatariui/*.py \
 	${PREFIX}/share/hatari/hconsole/*.py
 	gunzip ${PREFIX}/man/man1/*.1.gz
 

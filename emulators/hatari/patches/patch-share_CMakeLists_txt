@@ -1,4 +1,7 @@
-$OpenBSD: patch-share_CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
+$OpenBSD: patch-share_CMakeLists_txt,v 1.2 2016/11/17 09:51:41 fcambus Exp $
+
+Prevent installing files outside of every prefix.
+
 --- share/CMakeLists.txt.orig	Thu Jun 23 01:55:13 2016
 +++ share/CMakeLists.txt	Thu Jun 23 02:03:44 2016
 @@ -5,8 +5,8 @@ foreach(size 32x32 48x48 64x64 128x128 256x256)

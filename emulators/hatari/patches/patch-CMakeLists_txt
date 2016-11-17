@@ -1,18 +1,24 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
---- CMakeLists.txt.orig	Thu Sep 10 23:16:02 2015
-+++ CMakeLists.txt	Wed Jun 22 14:18:20 2016
-@@ -32,6 +32,10 @@ endif(NOT CMAKE_BUILD_TYPE)
- 
- set(ENABLE_SDL2 0
-     CACHE BOOL "Enable building with libSDL2 instead of v1.2")
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2016/11/17 09:51:41 fcambus Exp $
+
+Make PortAudio and CAPSImage detection conditional and disabled by default,
+and disable building the Python GTK+2 user interface.
+
+--- CMakeLists.txt.orig	Thu Nov  3 22:25:43 2016
++++ CMakeLists.txt	Sat Nov 12 17:20:14 2016
+@@ -40,6 +40,12 @@ set(ENABLE_SMALL_MEM 0
+     CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
+ set(ENABLE_WINUAE_CPU 1
+     CACHE BOOL "Enable WinUAE CPU core")
 +set(ENABLE_PORTAUDIO 0
-+    CACHE BOOL "Enable building with portaudio to enable microphone input in Falcon mode")
++    CACHE BOOL "Enable building with PortAudio to enable microphone input in Falcon mode")
 +set(ENABLE_CAPSIMAGE 0
-+    CACHE BOOL "Enable building with capsimage for using .IPF, .RAW and .CTR disk images")
- set(ENABLE_DSP_EMU 1
-     CACHE BOOL "Enable DSP 56k emulator for Falcon mode")
- set(ENABLE_TRACING 1
-@@ -125,15 +129,19 @@ if (NOT ENABLE_OSX_BUNDLE)
++    CACHE BOOL "Enable building with CAPSImage for using .IPF, .RAW and .CTR disk images")
++set(ENABLE_UI 0
++    CACHE BOOL "Enable building the Python GTK+2 user interface, requires GTK+2 bindings")
+ 
+ # Run-time checks with GCC "mudflap" etc features:
+ # - stack protection
+@@ -127,15 +133,19 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
@@ -38,9 +44,26 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
 +	endif(CAPSIMAGE_FOUND)
 +endif(ENABLE_CAPSIMAGE)
  
- # ################
- # CPP Definitions:
-@@ -344,17 +352,20 @@ else()
+ find_package(Udev)
+ if(UDEV_FOUND)
+@@ -302,10 +312,12 @@ add_subdirectory(src)
+ add_subdirectory(doc)
+ add_subdirectory(tools)
+ 
+-include(FindPythonInterp)
+-if(PYTHONINTERP_FOUND)
+-	add_subdirectory(python-ui)
+-endif(PYTHONINTERP_FOUND)
++if(ENABLE_UI)
++	include(FindPythonInterp)
++	if(PYTHONINTERP_FOUND)
++		add_subdirectory(python-ui)
++	endif(PYTHONINTERP_FOUND)
++endif(ENABLE_UI)
+ 
+ if(UNIX AND NOT ENABLE_OSX_BUNDLE)
+ 	add_subdirectory(share)
+@@ -352,17 +364,20 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
@@ -69,5 +92,5 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/07/31 23:53:35 awolk Exp $
 +  endif(CAPSIMAGE_FOUND)
 +endif(ENABLE_CAPSIMAGE)
  
- message( "" )
- 
+ if(UDEV_FOUND)
+   message( "  - udev :\tfound, required for media change detection in NatFeats SCSI" )
