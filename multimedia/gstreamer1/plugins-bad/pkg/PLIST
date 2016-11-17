@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/11/02 22:20:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/11/17 16:56:05 ajacoutot Exp $
 include/gstreamer-${API}/gst/audio/gstaudioaggregator.h
 include/gstreamer-${API}/gst/base/gstaggregator.h
 include/gstreamer-${API}/gst/basecamerabinsrc/
@@ -243,8 +243,10 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLContext.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLDisplay.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLFilter.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLFramebuffer.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLSLStage.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLShader.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLUpload.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLViewConvert.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/GstGLWindow.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/annotation-glossary.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/api-index-deprecated.html
@@ -263,23 +265,17 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-DVB-variants
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-DVB-variants-of-MPEG-TS-sections.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstAggregator.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstAggregatorPad.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstEGLImageMemory.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstEGLImage.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLAPI.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLBuffer.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLContextCocoa.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLContextEGL.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLContextEagl.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLContextGLX.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLContextWGL.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLDisplayWayland.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLDisplayX11.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLMemory.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLOverlayCompositor.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLQuery.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLRenderbuffer.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLSL.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLSyncMeta.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowAndroid.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowCocoa.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowDispmanx.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowWayland.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowWin32.html
-share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstGLWindowX11.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstInsertbin.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstPhotography.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-GstVideoAggregator.html
@@ -290,6 +286,7 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-Forma
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-Miscellaneous-Utilities.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-OpenGL-debugging.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglbasememory.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglmemoryegl.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstglmemorypbo.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstmpegvideometa.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/gst-plugins-bad-libs-gstplayer-gmaincontextsignaldispatcher.html

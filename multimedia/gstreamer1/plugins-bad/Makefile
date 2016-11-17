@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.50 2016/11/02 22:20:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2016/11/17 16:56:05 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   3.1      # 1000.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.1      # 1000.0
-SHARED_LIBS +=  gstcodecparsers-1.0  3.1      # 1000.0
-SHARED_LIBS +=  gstinsertbin-1.0     2.1      # 1000.0
-SHARED_LIBS +=  gsturidownloader-1.0 2.1      # 1000.0
-SHARED_LIBS +=  gstmpegts-1.0        2.1      # 1000.0
-SHARED_LIBS +=  gstbadbase-1.0       2.1      # 1000.0
-SHARED_LIBS +=  gstplayer-1.0        0.1      # 1000.0
-SHARED_LIBS +=  gstgl-1.0            2.1      # 1000.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 1.1      # 1000.0
-SHARED_LIBS +=  gstbadvideo-1.0      2.1      # 1000.0
-SHARED_LIBS +=  gstbadaudio-1.0      0.1      # 1000.
+SHARED_LIBS +=  gstphotography-1.0   3.1      # 1001.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.1      # 1001.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.1      # 1001.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.1      # 1001.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.1      # 1001.0
+SHARED_LIBS +=  gstmpegts-1.0        2.1      # 1001.0
+SHARED_LIBS +=  gstbadbase-1.0       2.1      # 1001.0
+SHARED_LIBS +=  gstplayer-1.0        0.1      # 1001.0
+SHARED_LIBS +=  gstgl-1.0            2.1      # 1001.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.1      # 1001.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.1      # 1001.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.1      # 1001.0
 
 WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
