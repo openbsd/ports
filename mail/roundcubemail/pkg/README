@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2016/04/29 09:36:59 sthen Exp $
+$OpenBSD: README,v 1.8 2016/11/17 21:56:59 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -42,3 +42,37 @@ call if you want to check.
 If this is not present it will need adding as a FastCGI parameter.
 For nginx, you can do this by setting 'fastcgi_param HTTPS on' in the
 appropriate location{} block for HTTPS.
+
+Sample NGINX configuration
+--------------------------
+The maintainer uses this configuration with NGINX to provide webmail
+service at the root of a host (e.g. https://mail.example.org/).
+
+server {
+    server_name mail.example.org;
+    listen 80;
+    listen [::]:80;
+    location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
+    location / { return 301 https://mail.example.org$request_uri; }
+}
+
+server {
+    server_name mail.example.org;
+    root /var/www/roundcubemail/public_html;
+    index index.php;
+
+    ssl_certificate /etc/letsencrypt/live/mail.example.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mail.example.org/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/mail.example.org/fullchain.pem;
+    add_header Strict-Transport-Security max-age=15552000;
+    include ssl_params;
+
+    location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
+    location ~* \.php$ { 
+        try_files       $uri =404;
+        fastcgi_pass    unix:run/php-fpm.sock;
+        fastcgi_param   SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        fastcgi_param   HTTPS on;
+        include         fastcgi_params;
+    }
+}

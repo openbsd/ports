@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.112 2016/10/11 15:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2016/11/17 21:56:59 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
 V=		1.2.2
+REVISION=	0
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
 EXTRACT_SUFX=	-complete.tar.gz
@@ -42,6 +43,7 @@ do-install:
 .endfor
 	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/roundcubemail.conf \
 	    ${INSTDIR}/roundcubemail.conf.dist
+	mkdir ${INSTDIR}/db; \
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}; \
 	chgrp -R wheel ${INSTDIR}/bin; \
 	chmod -R o-rwx ${INSTDIR}/bin; \
