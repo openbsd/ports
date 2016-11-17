@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/17 13:28:33 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/17 14:16:28 ajacoutot Exp $
 
 COMMENT =	system tray app for Syncthing
 
-V =		0.5.5rc1
-DISTNAME =	${V}
-PKGNAME =	qsyncthingtray-${V}
+GH_ACCOUNT =	sieren
+GH_PROJECT =	QSyncthingTray
+GH_TAGNAME =	0.5.5rc1
+PKGNAME =	qsyncthingtray-${GH_TAGNAME}
 
 CATEGORIES =	net x11
 HOMEPAGE =	https://github.com/sieren/QSyncthingTray
@@ -12,10 +13,6 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =	sieren
-GH_PROJECT =	QSyncthingTray
-GH_TAGNAME =	${V}
 
 MODULES =	devel/cmake \
 		gcc4 \
