@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/09/09 10:46:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/17 09:55:51 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -8,6 +8,7 @@ ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/MAINTAINERS
 ${GEM_LIB}/gems/${DISTNAME}/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
@@ -94,8 +95,8 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1204.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1404.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/
-${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTPS_PROXY_effects_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_effects_forge_source.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_effects_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/install_pe_only_module_with_puppetfile.rb
@@ -118,7 +119,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_cli_env_flag.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/command_line/negative/neg_invalid_cmd_line_arg.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/
-${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/HTTPS_proxy_and_git_source.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/HTTP_proxy_and_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_git.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/git_source/git_source_submodule.rb
