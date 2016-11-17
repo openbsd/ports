@@ -1,0 +1,46 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2016/11/17 13:28:33 edd Exp $
+
+COMMENT =	system tray app for Syncthing
+
+V =		0.5.5rc1
+DISTNAME =	${V}
+PKGNAME =	qsyncthingtray-${V}
+
+CATEGORIES =	net x11
+HOMEPAGE =	https://github.com/sieren/QSyncthingTray
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
+
+# GPLv3
+PERMIT_PACKAGE_CDROM =	Yes
+
+GH_ACCOUNT =	sieren
+GH_PROJECT =	QSyncthingTray
+GH_TAGNAME =	${V}
+
+MODULES =	devel/cmake \
+		gcc4 \
+		x11/qt5
+
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c m pthread
+
+# C++11
+MODGCC4_LANGS = c++
+MODGCC4_ARCHS = *
+
+# The correct way is to set QTDIR env, but it doesn't work on OpenBSD, so we
+# have to manually specify pkg-config paths manually.
+CONFIGURE_ENV +=	Qt5Widgets_DIR=${LOCALBASE}/lib/qt5/cmake/Qt5Widgets \
+			Qt5Network_DIR=${LOCALBASE}/lib/qt5/cmake/Qt5Network
+
+CONFIGURE_ARGS +=	-DQST_BUILD_WEBKIT=1
+
+# Uses webkit functionality from Qt5
+USE_WXNEEDED =	Yes
+
+NO_TEST =	Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/QSyncthingTray ${PREFIX}/bin
+
+.include <bsd.port.mk>
