@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/11/09 13:21:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2016/11/18 14:55:36 sebastia Exp $
 @option is-branch
 @conflict puppet->=3,<4
 @newgroup _puppet:580
@@ -204,34 +204,51 @@ ${MODRUBY_SITEDIR}/puppet/forge/errors.rb
 ${MODRUBY_SITEDIR}/puppet/forge/repository.rb
 ${MODRUBY_SITEDIR}/puppet/functions/
 ${MODRUBY_SITEDIR}/puppet/functions.rb
+${MODRUBY_SITEDIR}/puppet/functions/alert.rb
 ${MODRUBY_SITEDIR}/puppet/functions/assert_type.rb
+${MODRUBY_SITEDIR}/puppet/functions/binary_file.rb
+${MODRUBY_SITEDIR}/puppet/functions/break.rb
+${MODRUBY_SITEDIR}/puppet/functions/contain.rb
+${MODRUBY_SITEDIR}/puppet/functions/crit.rb
+${MODRUBY_SITEDIR}/puppet/functions/debug.rb
 ${MODRUBY_SITEDIR}/puppet/functions/defined.rb
 ${MODRUBY_SITEDIR}/puppet/functions/dig.rb
 ${MODRUBY_SITEDIR}/puppet/functions/each.rb
+${MODRUBY_SITEDIR}/puppet/functions/emerg.rb
 ${MODRUBY_SITEDIR}/puppet/functions/epp.rb
+${MODRUBY_SITEDIR}/puppet/functions/err.rb
 ${MODRUBY_SITEDIR}/puppet/functions/filter.rb
+${MODRUBY_SITEDIR}/puppet/functions/find_file.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_array.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_hash.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_include.rb
 ${MODRUBY_SITEDIR}/puppet/functions/import.rb
+${MODRUBY_SITEDIR}/puppet/functions/include.rb
+${MODRUBY_SITEDIR}/puppet/functions/info.rb
 ${MODRUBY_SITEDIR}/puppet/functions/inline_epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lest.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lookup.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
 ${MODRUBY_SITEDIR}/puppet/functions/match.rb
 ${MODRUBY_SITEDIR}/puppet/functions/new.rb
+${MODRUBY_SITEDIR}/puppet/functions/next.rb
+${MODRUBY_SITEDIR}/puppet/functions/notice.rb
 ${MODRUBY_SITEDIR}/puppet/functions/reduce.rb
 ${MODRUBY_SITEDIR}/puppet/functions/regsubst.rb
+${MODRUBY_SITEDIR}/puppet/functions/require.rb
+${MODRUBY_SITEDIR}/puppet/functions/return.rb
 ${MODRUBY_SITEDIR}/puppet/functions/reverse_each.rb
 ${MODRUBY_SITEDIR}/puppet/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/functions/slice.rb
 ${MODRUBY_SITEDIR}/puppet/functions/split.rb
 ${MODRUBY_SITEDIR}/puppet/functions/step.rb
+${MODRUBY_SITEDIR}/puppet/functions/strftime.rb
 ${MODRUBY_SITEDIR}/puppet/functions/then.rb
 ${MODRUBY_SITEDIR}/puppet/functions/type.rb
 ${MODRUBY_SITEDIR}/puppet/functions/unwrap.rb
 ${MODRUBY_SITEDIR}/puppet/functions/versioncmp.rb
+${MODRUBY_SITEDIR}/puppet/functions/warning.rb
 ${MODRUBY_SITEDIR}/puppet/functions/with.rb
 ${MODRUBY_SITEDIR}/puppet/generate/
 ${MODRUBY_SITEDIR}/puppet/generate/models/
@@ -516,6 +533,8 @@ ${MODRUBY_SITEDIR}/puppet/parser/files.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/
 ${MODRUBY_SITEDIR}/puppet/parser/functions.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/assert_type.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/binary_file.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/break.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/contain.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/create_resources.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/defined.rb
@@ -526,6 +545,7 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/epp.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/fail.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/file.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/filter.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/find_file.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/fqdn_rand.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/generate.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/hiera.rb
@@ -541,10 +561,12 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/map.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/match.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/md5.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/new.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/next.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/realize.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/reduce.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/regsubst.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/require.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/return.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/reverse_each.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/sha1.rb
@@ -553,6 +575,7 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/slice.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/split.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/sprintf.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/step.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/strftime.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/tag.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/tagged.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/template.rb
@@ -658,6 +681,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/loader/uri_helper.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loaders.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/
 ${MODRUBY_SITEDIR}/puppet/pops/lookup.rb
+${MODRUBY_SITEDIR}/puppet/pops/lookup/context.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/explainer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/interpolation.rb
 ${MODRUBY_SITEDIR}/puppet/pops/lookup/invocation.rb
@@ -709,18 +733,24 @@ ${MODRUBY_SITEDIR}/puppet/pops/serialization/object.rb
 ${MODRUBY_SITEDIR}/puppet/pops/serialization/rgen.rb
 ${MODRUBY_SITEDIR}/puppet/pops/serialization/serializer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/serialization/time_factory.rb
+${MODRUBY_SITEDIR}/puppet/pops/time/
+${MODRUBY_SITEDIR}/puppet/pops/time/timespan.rb
+${MODRUBY_SITEDIR}/puppet/pops/time/timestamp.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/
 ${MODRUBY_SITEDIR}/puppet/pops/types/annotatable.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/class_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/enumeration.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/implementation_registry.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/iterable.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_binary_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_meta_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_object_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_runtime_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_range_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_sensitive_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_timespan_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_timestamp_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_type_set_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/puppet_object.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/recursion_guard.rb
@@ -974,6 +1004,7 @@ ${MODRUBY_SITEDIR}/puppet/ssl/validator/no_validator.rb
 ${MODRUBY_SITEDIR}/puppet/status.rb
 ${MODRUBY_SITEDIR}/puppet/syntax_checkers/
 ${MODRUBY_SITEDIR}/puppet/syntax_checkers.rb
+${MODRUBY_SITEDIR}/puppet/syntax_checkers/base64.rb
 ${MODRUBY_SITEDIR}/puppet/syntax_checkers/json.rb
 ${MODRUBY_SITEDIR}/puppet/test/
 ${MODRUBY_SITEDIR}/puppet/test/test_helper.rb
@@ -1481,8 +1512,8 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/puppet-mode-init.el
 share/emacs/site-lisp/puppet-mode.el
 share/examples/ruby${MODRUBY_BINREV}-puppet/
-share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
 @sample ${SYSCONFDIR}/puppetlabs/
+share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/
 @sample ${SYSCONFDIR}/puppetlabs/puppet/
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/auth.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/auth.conf
@@ -1493,6 +1524,7 @@ share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/fileserver.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/fileserver.conf
 share/examples/ruby${MODRUBY_BINREV}-puppet/puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/puppet.conf
+share/examples/ruby${MODRUBY_BINREV}-puppet/code/
 @sample ${SYSCONFDIR}/puppetlabs/code/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/production/
