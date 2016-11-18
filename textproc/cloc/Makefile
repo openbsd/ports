@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/07/05 07:54:57 jung Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/18 23:43:50 awolk Exp $
 
 COMMENT=		count lines of code
 
-DISTNAME=		cloc-1.64
-DIST_SUBDIR=		cloc
+V=			1.70
+DISTNAME=		cloc-${V}
 
 CATEGORIES=		textproc devel
 
@@ -14,15 +14,18 @@ MAINTAINER=		Joerg Jung <jung@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cloc/}
-DISTFILES=      	${DISTNAME}.pl
-EXTRACT_ONLY=
+MASTER_SITES=		https://github.com/AlDanial/cloc/releases/download/v${V}/
 
 NO_BUILD=		Yes
-NO_TEST=		Yes
 PKG_ARCH=		*
 
-do-install:
-	${INSTALL_SCRIPT} ${FULLDISTDIR}/${DISTFILES} ${PREFIX}/bin/cloc
+LIB_DEPENDS=		devel/p5-Algorithm-Diff textproc/p5-Regexp-Common
+
+FAKE_FLAGS=		prefix="${PREFIX}" \
+			man_prefix="${PREFIX}"
+
+USE_GMAKE=		Yes
+
+WRKBUILD=		${WRKSRC}/Unix
 
 .include <bsd.port.mk>
