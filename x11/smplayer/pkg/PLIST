@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/15 15:11:38 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/11/18 01:04:19 gonzalo Exp $
 @bin bin/smplayer
 @man man/man1/smplayer.1
 share/applications/smplayer.desktop
@@ -66,7 +66,8 @@ share/smplayer/translations/smplayer_ca.qm
 share/smplayer/translations/smplayer_cs.qm
 share/smplayer/translations/smplayer_da.qm
 share/smplayer/translations/smplayer_de.qm
-share/smplayer/translations/smplayer_el_GR.qm
+share/smplayer/translations/smplayer_el.qm
+share/smplayer/translations/smplayer_en.qm
 share/smplayer/translations/smplayer_en_GB.qm
 share/smplayer/translations/smplayer_en_US.qm
 share/smplayer/translations/smplayer_es.qm
