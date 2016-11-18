@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/09/27 08:47:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2016/11/18 10:37:27 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,14 +6,13 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.11
+VERSION =		5.3.12
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
 
-SHARED_LIBS +=  minisat              1.0      # 2.0
 SHARED_LIBS +=  link-grammar         4.0      # 8.7
 SHARED_LIBS +=  link-grammar-java    4.0      # 8.7
 
@@ -24,14 +23,14 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB += hunspell-1.3 m sqlite3
+WANTLIB += hunspell-1.3 m sqlite3
 
-WANTLIB-main += ${cWANTLIB} ${MODGCC4_CPPWANTLIB} c pthread
+WANTLIB-main += ${WANTLIB} c pthread
 
-WANTLIB-java += ${cWANTLIB} link-grammar minisat pthread
+WANTLIB-java += ${WANTLIB} link-grammar pthread
 
-WANTLIB-python += ${cWANTLIB} ${MODGCC4_CPPWANTLIB} ${MODPY_WANTLIB}
-WANTLIB-python += link-grammar minisat pthread util
+WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-python += link-grammar pthread util
 
 MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 
@@ -40,9 +39,9 @@ MODULES =		lang/python
 MODPY_ADJ_FILES =	bindings/python-examples/tests.py
 
 # -std=c++03
-MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+MODULES +=		lang/clang
+MODCLANG_ARCHS =	*
+MODCLANG_LANGS =	c++
 
 MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java
