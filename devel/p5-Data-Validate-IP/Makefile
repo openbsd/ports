@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/03 21:59:00 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/18 14:12:40 bluhm Exp $
 
-COMMENT =		ipv4 and ipv6 validation methods
+COMMENT =	ipv4 and ipv6 validation methods
 
-DISTNAME =		Data-Validate-IP-0.26
+DISTNAME =	Data-Validate-IP-0.27
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -12,10 +12,11 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 BUILD_DEPENDS =		devel/p5-Test-Requires
 RUN_DEPENDS =		net/p5-NetAddr-IP>=4
 TEST_DEPENDS =		devel/p5-Test-Requires \
 			devel/p5-Test-Taint
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
