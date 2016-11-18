@@ -1,0 +1,43 @@
+$OpenBSD: patch-scd_scdaemon_c,v 1.1 2016/11/18 11:30:53 ajacoutot Exp $
+
+From eda17649f8bd3b8ce7bfc00a3c11cbcae63c845d Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Tue, 4 Oct 2016 09:01:13 +0900
+Subject: [PATCH] agent, dirmngr, scd: npth_init must be after fork.
+
+From fc0b392e766af8127094e8b529d25abb84ad1d65 Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Fri, 7 Oct 2016 10:45:22 +0900
+Subject: [PATCH] agent, dirmngr, scd: Fix init_common_subsystems.
+
+--- scd/scdaemon.c.orig	Fri Nov 18 12:26:40 2016
++++ scd/scdaemon.c	Fri Nov 18 12:26:33 2016
+@@ -422,8 +422,6 @@ main (int argc, char **argv )
+   i18n_init ();
+   init_common_subsystems (&argc, &argv);
+ 
+-  npth_init ();
+-
+   ksba_set_malloc_hooks (gcry_malloc, gcry_realloc, gcry_free);
+ 
+   malloc_hooks.malloc = gcry_malloc;
+@@ -724,6 +722,9 @@ main (int argc, char **argv )
+       }
+ #endif
+ 
++      npth_init ();
++      gpgrt_set_syscall_clamp (npth_unprotect, npth_protect);
++
+       /* If --debug-allow-core-dump has been given we also need to
+          switch the working directory to a place where we can actually
+          write. */
+@@ -860,6 +861,9 @@ main (int argc, char **argv )
+         } /* end parent */
+ 
+       /* This is the child. */
++
++      npth_init ();
++      gpgrt_set_syscall_clamp (npth_unprotect, npth_protect);
+ 
+       /* Detach from tty and put process into a new session. */
+       if (!nodetach )

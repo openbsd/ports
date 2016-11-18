@@ -1,0 +1,40 @@
+$OpenBSD: patch-common_init_c,v 1.1 2016/11/18 11:30:53 ajacoutot Exp $
+
+From eda17649f8bd3b8ce7bfc00a3c11cbcae63c845d Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Tue, 4 Oct 2016 09:01:13 +0900
+Subject: [PATCH] agent, dirmngr, scd: npth_init must be after fork.
+
+--- common/init.c.orig	Thu Aug 18 17:00:16 2016
++++ common/init.c	Fri Nov 18 12:26:33 2016
+@@ -29,20 +29,12 @@
+ 
+ #include <config.h>
+ 
+-#ifdef WITHOUT_NPTH /* Give the Makefile a chance to build without Pth.  */
+-#undef HAVE_NPTH
+-#undef USE_NPTH
+-#endif
+-
+ #ifdef HAVE_W32_SYSTEM
+ # ifdef HAVE_WINSOCK2_H
+ #  include <winsock2.h>
+ # endif
+ # include <windows.h>
+ #endif
+-#ifdef HAVE_NPTH
+-# include <npth.h>
+-#endif
+ #ifdef HAVE_W32CE_SYSTEM
+ # include <assuan.h> /* For _assuan_w32ce_finish_pipe. */
+ #endif
+@@ -197,9 +189,6 @@ _init_common_subsystems (gpg_err_source_t errsource, i
+   /* Initialize the Estream library. */
+   gpgrt_init ();
+   gpgrt_set_alloc_func (gcry_realloc);
+-#ifdef USE_NPTH
+-  gpgrt_set_syscall_clamp (npth_unprotect, npth_protect);
+-#endif
+ 
+   /* Special hack for Windows CE: We extract some options from arg
+      to setup the standard handles.  */
