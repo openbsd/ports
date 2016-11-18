@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/11/18 07:28:57 bentley Exp $
 @bin bin/snes9x-gtk
 share/applications/snes9x.desktop
 share/doc/snes9x/
@@ -8,29 +8,17 @@ share/doc/snes9x/snapshots.txt
 share/doc/snes9x/snes9x-license.txt
 share/examples/snes9x/
 share/examples/snes9x/snes9x.conf.default
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/snes9x.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/snes9x.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/snes9x.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/snes9x.svg
-share/locale/es_VE/
-share/locale/es_VE/LC_MESSAGES/
-share/locale/es_VE/LC_MESSAGES/snes9x-gtk.mo
+share/locale/es/LC_MESSAGES/snes9x-gtk.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/snes9x-gtk.mo
+share/locale/ja/LC_MESSAGES/snes9x-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/snes9x-gtk.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/snes9x-gtk.mo
 share/locale/sr@latin/LC_MESSAGES/snes9x-gtk.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

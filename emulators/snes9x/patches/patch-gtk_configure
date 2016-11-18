@@ -1,12 +1,12 @@
-$OpenBSD: patch-gtk_configure,v 1.4 2013/06/01 19:19:16 ajacoutot Exp $
---- gtk/configure.orig	Sun Jan 10 18:28:11 2010
-+++ gtk/configure	Sun Oct  2 09:23:54 2011
-@@ -2351,7 +2351,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
+$OpenBSD: patch-gtk_configure,v 1.5 2016/11/18 07:28:57 bentley Exp $
+--- gtk/configure.orig	Fri Oct 14 20:19:21 2016
++++ gtk/configure	Mon Oct 17 01:16:27 2016
+@@ -7072,7 +7072,7 @@ else
+   CFLAGS="$CFLAGS -fomit-frame-pointer"
+ fi
  
+-LIBS="$LIBS -lX11 -ldl -lXext"
++LIBS="$LIBS -lX11 -lXext"
  
--CFLAGS="-O2 -Wall -W -pedantic -Wno-unused-parameter -pipe $CFLAGS"
-+CFLAGS="-Wall -W -pedantic -Wno-unused-parameter $CFLAGS"
- CXXFLAGS="$CFLAGS"
- 
- ac_ext=c
+ ZSNESFX='#ZSNESFX=yes'
+ ZSNESC4='#ZSNESC4=yes'
