@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/10/29 10:37:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2016/11/18 12:37:08 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -68,6 +68,9 @@ LDFLAGS+=	-L${X11BASE}/lib -L${MODQT5_LIBDIR}
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+
+# XXX does not build with our pugixml (it's too new)
+CONFIGURE_ENV +=ac_cv_header_pugixml_hpp=no
 
 NO_TEST=	Yes
 
