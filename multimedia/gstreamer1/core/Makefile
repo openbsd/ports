@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/11/17 16:56:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/11/19 08:02:37 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
@@ -25,5 +25,8 @@ LIB_DEPENDS=		devel/glib2
 # tests/check/gst (which is not built) but better safe than sorry
 CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
 			ac_cv_lib_gsl_gsl_rng_uniform_int=no
+
+# require (at least) gtk+
+CONFIGURE_ARGS +=	--disable-examples
 
 .include <bsd.port.mk>
