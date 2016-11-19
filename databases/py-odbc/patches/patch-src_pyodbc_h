@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pyodbc_h,v 1.1 2016/11/19 13:37:51 patrick Exp $
+--- src/pyodbc.h.orig	Sat Nov 19 13:01:11 2016
++++ src/pyodbc.h	Sat Nov 19 13:01:34 2016
+@@ -80,7 +80,7 @@ inline void UNUSED(...) { }
+ #include <stdarg.h>
+ 
+ #if defined(__SUNPRO_CC) || defined(__SUNPRO_C) || (defined(__GNUC__) && !defined(__MINGW32__))
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #endif
+ #define CDECL cdecl

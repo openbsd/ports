@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/19 13:37:51 patrick Exp $
 
 COMMENT =	ODBC bindings for Python
 
-MODPY_EGG_VERSION=2.1.8
+MODPY_EGG_VERSION=3.0.10
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
-REVISION =	5
 PKGNAME =	${DISTNAME:S/py/py-/}
 
 CATEGORIES =	databases
 
-HOMEPAGE =	https://pyodbc.googlecode.com/
+HOMEPAGE =	https://github.com/mkleehammer/pyodbc
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,8 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += iodbc m pthread stdc++
 
-MASTER_SITES =	${HOMEPAGE}files/
-EXTRACT_SUFX =	.zip
+MODPY_PI =	Yes
 
 MODPY_SETUPTOOLS = Yes
 MODULES =	lang/python
@@ -28,7 +26,7 @@ CFLAGS +=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 NO_TEST =	Yes
 
-post-extract:
-	chmod -R og-w ${WRKSRC}
+FLAVORS =	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
