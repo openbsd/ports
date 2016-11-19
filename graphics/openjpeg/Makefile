@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/10/27 08:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/11/19 14:28:11 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
 V=			1.5.2
+PORTROACH =		limit:^1
 DISTNAME=		openjpeg-version.$V
 PKGNAME=		openjpeg-$V
 DISTFILES=		${DISTNAME}{version.$V}.tar.gz
