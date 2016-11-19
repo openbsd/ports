@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/11/04 17:03:29 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/11/19 04:55:26 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=2.2,<2.3
@@ -908,6 +908,7 @@ lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthor
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/GeoTrustGlobalCA.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/GlobalSignRootCA.pem
 lib/ruby/${RUBYLIBREV}/rubygems/stub_specification.rb
 lib/ruby/${RUBYLIBREV}/rubygems/syck_hack.rb
 lib/ruby/${RUBYLIBREV}/rubygems/test_case.rb

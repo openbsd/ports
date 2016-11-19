@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.3 2016/04/30 14:18:12 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.4 2016/11/19 04:55:26 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -6224,6 +6224,7 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/BN/coerce-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/copy-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/eql%3f-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/generate_prime-c.ri
+share/ri/${RUBYLIBREV}/system/OpenSSL/BN/hash-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/new-c.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/pretty_print-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/prime%3f-i.ri
