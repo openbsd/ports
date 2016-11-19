@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2016/11/19 15:28:40 sthen Exp $
+
+BROKEN =	pkg_add fails: problem with symlinks
 
 COMMENT =	GNU system administration tool for networks
 
