@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2016/10/10 08:06:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2016/11/19 12:02:37 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME=		bro-2.4.1
-REVISION=		9
+DISTNAME=		bro-2.5
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -16,12 +15,17 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += GeoIP c crypto m pcap pthread ssl stdc++ z
+WANTLIB += GeoIP c crypto m pcap pthread ssl z
 WANTLIB += ${MODPY_WANTLIB} lib/libbind/bind
 
 MASTER_SITES=		https://www.bro.org/downloads/
 
 MODULES=		lang/python
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_LANGS=		c++
+MODGCC4_ARCHS=		*
 
 MODPY_ADJ_FILES=	aux/broctl/bin/broctl.in \
 			aux/broctl/bin/stats-to-csv \
