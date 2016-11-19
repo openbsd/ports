@@ -1,7 +1,7 @@
-$OpenBSD: patch-ZenLib_Project_GNU_Library_configure,v 1.6 2016/04/01 20:49:11 naddy Exp $
---- ZenLib/Project/GNU/Library/configure.orig	Thu Mar 31 13:34:13 2016
-+++ ZenLib/Project/GNU/Library/configure	Fri Apr  1 22:38:10 2016
-@@ -15561,9 +15561,6 @@ if test "$GXX" = yes ; then
+$OpenBSD: patch-ZenLib_Project_GNU_Library_configure,v 1.7 2016/11/19 15:04:12 naddy Exp $
+--- ZenLib/Project/GNU/Library/configure.orig	Sun Oct 30 21:25:54 2016
++++ ZenLib/Project/GNU/Library/configure	Sat Nov 19 15:54:35 2016
+@@ -15565,9 +15565,6 @@ if test "$GXX" = yes ; then
  	if test "$enable_debug" = "yes"; then
  		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
  		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"
