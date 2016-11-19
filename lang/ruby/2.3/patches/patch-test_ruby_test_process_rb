@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_ruby_test_process_rb,v 1.1.1.1 2016/01/07 00:52:46 jeremy Exp $
+$OpenBSD: patch-test_ruby_test_process_rb,v 1.2 2016/11/19 04:56:00 jeremy Exp $
 
 Work around pthread fifo fdlock bug.
 
---- test/ruby/test_process.rb.orig	Tue Dec 15 21:07:31 2015
-+++ test/ruby/test_process.rb	Sun Dec 27 10:55:34 2015
-@@ -598,7 +598,7 @@ class TestProcess < Test::Unit::TestCase
+--- test/ruby/test_process.rb.orig	Fri Nov 11 07:26:06 2016
++++ test/ruby/test_process.rb	Tue Nov 15 07:42:22 2016
+@@ -613,7 +613,7 @@ class TestProcess < Test::Unit::TestCase
        _, v2 = assert_join_threads([t1, t2])
        assert_equal("output to fifo\n", v2)
      }

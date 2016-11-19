@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2016/04/30 14:19:00 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2016/11/19 04:56:00 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -2426,7 +2426,6 @@ share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/execute-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/get_platform_from_requirements-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/get_version_from_requirements-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/new-c.ri
-share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/unyank_gem-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/yank_api_request-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/YankCommand/yank_gem-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/cdesc-Commands.ri
@@ -2722,6 +2721,7 @@ share/ri/${RUBYLIBREV}/system/Gem/InvalidSpecificationException/cdesc-InvalidSpe
 share/ri/${RUBYLIBREV}/system/Gem/Licenses/
 share/ri/${RUBYLIBREV}/system/Gem/Licenses/cdesc-Licenses.ri
 share/ri/${RUBYLIBREV}/system/Gem/Licenses/match%3f-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/Licenses/suggestions-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/List/
 share/ri/${RUBYLIBREV}/system/Gem/List/cdesc-List.ri
 share/ri/${RUBYLIBREV}/system/Gem/List/each-i.ri
@@ -2929,6 +2929,7 @@ share/ri/${RUBYLIBREV}/system/Gem/PackageTask/init-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/PackageTask/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/PathSupport/
 share/ri/${RUBYLIBREV}/system/Gem/PathSupport/cdesc-PathSupport.ri
+share/ri/${RUBYLIBREV}/system/Gem/PathSupport/default_path-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/PathSupport/home-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/PathSupport/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/PathSupport/path%3d-i.ri
@@ -3079,6 +3080,7 @@ share/ri/${RUBYLIBREV}/system/Gem/RequestSet/resolve-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/resolve_current-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/soft_missing-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/sorted_requests-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/RequestSet/source_set-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/specs-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/specs_in-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Requirement/
@@ -3202,6 +3204,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/cdesc-LockSpecification.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/install-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/new-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/sources-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/LockSpecification/spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Molinillo/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Molinillo/CircularDependencyError/
@@ -3348,6 +3351,11 @@ share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/find_all-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/prefetch-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/prerelease-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/remote-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/SourceSet/
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/SourceSet/add_source_gem-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/SourceSet/cdesc-SourceSet.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/SourceSet/get_set-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/SourceSet/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/cdesc-SpecSpecification.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/dependencies-i.ri
@@ -3830,6 +3838,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/read_cache-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/refute_path_exists-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/req-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/rubybin-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/save_gemspec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/save_loaded_features-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/scan_make_command_lines-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/setup-i.ri
@@ -6415,6 +6424,7 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/BN/copy-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/eql%3f-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/gcd-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/generate_prime-c.ri
+share/ri/${RUBYLIBREV}/system/OpenSSL/BN/hash-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/lshift%21-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/mod_add-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/BN/mod_exp-i.ri
@@ -7035,7 +7045,6 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionError/
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionError/cdesc-ExtensionError.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/cdesc-ExtensionFactory.ri
-share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/config%3d-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/config-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/create_ext-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/X509/ExtensionFactory/create_ext_from_array-i.ri
@@ -7624,8 +7633,11 @@ share/ri/${RUBYLIBREV}/system/Prime/int_from_prime_division-i.ri
 share/ri/${RUBYLIBREV}/system/Prime/prime%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Prime/prime_division-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/
+share/ri/${RUBYLIBREV}/system/Proc/%3d%3d%3d-i.ri
+share/ri/${RUBYLIBREV}/system/Proc/%5b%5d-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/arity-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/binding-i.ri
+share/ri/${RUBYLIBREV}/system/Proc/call-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/cdesc-Proc.ri
 share/ri/${RUBYLIBREV}/system/Proc/curry-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/hash-i.ri
@@ -7636,6 +7648,7 @@ share/ri/${RUBYLIBREV}/system/Proc/parameters-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/source_location-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/to_proc-i.ri
 share/ri/${RUBYLIBREV}/system/Proc/to_s-i.ri
+share/ri/${RUBYLIBREV}/system/Proc/yield-i.ri
 share/ri/${RUBYLIBREV}/system/Process/
 share/ri/${RUBYLIBREV}/system/Process/GID/
 share/ri/${RUBYLIBREV}/system/Process/GID/cdesc-GID.ri
