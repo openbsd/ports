@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/11/11 22:45:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.87 2016/11/19 12:06:06 ajacoutot Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c crypto curses gc iconv intl m pthread ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	devel/boehm-gc devel/gettext
 
