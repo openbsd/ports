@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2016/11/19 14:10:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2016/11/19 14:16:02 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
 GH_TAGNAME=		v2.97
+REVISION=		0
 
 CATEGORIES=		multimedia
 
@@ -19,6 +20,7 @@ RUN_DEPENDS=		audio/p5-MP3-Tag \
 			graphics/ffmpeg \
 			multimedia/atomicparsley \
 			net/rtmpdump>=2.4 \
+			textproc/p5-XML-LibXML \
 			textproc/p5-XML-Simple \
 			www/p5-HTML-Parser>=3.71 \
 			www/p5-LWP-Protocol-https \
