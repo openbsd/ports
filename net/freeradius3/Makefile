@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/11/15 12:24:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/19 12:13:23 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,6 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.12
+REVISION-main=	0
 DISTNAME=	freeradius-server-$V
 
 PKGNAME-main=	freeradius-$V
