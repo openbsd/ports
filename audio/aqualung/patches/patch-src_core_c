@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_core_c,v 1.5 2016/11/19 18:28:40 jeremy Exp $
+
+Reinit sndio if there is a audio(4) error.  Without this, aqualung is
+unusable after an audio(4) error until it is closed and reopened.
+
+--- src/core.c.orig	Sun Jul 26 12:13:53 2015
++++ src/core.c	Fri Nov 18 20:42:22 2016
+@@ -119,6 +119,10 @@ GSList * saved_pconns_L = NULL;
+ GSList * saved_pconns_R = NULL;
+ #endif /* HAVE_JACK */
+ 
++#ifdef HAVE_SNDIO
++int sndio_reinit(thread_info_t * info, int verbose);
++#endif /* HAVE_SNDIO */
++
+ const size_t sample_size = sizeof(float);
+ 
+ gint playlist_state, browser_state;
+@@ -802,8 +806,15 @@ sndio_thread(void * arg) {
+ 
+ 		/* write data to audio device */
+ 		bytes_written = sio_write(sndio_hdl, sndio_short_buf, 2*n_avail * sizeof(short));
+-		if (bytes_written != 2*n_avail * sizeof(short))
++		if (bytes_written != 2*n_avail * sizeof(short)) {
+ 			fprintf(stderr, "sndio_thread: Error writing to audio device\n");
++			if (sndio_reinit(info, 1) == 0) {
++				fprintf(stderr, "sndio_thread: audio device reinit successful\n");
++				sio_close(sndio_hdl);
++				sndio_hdl = info->sndio_hdl;
++				goto sndio_wake;
++			}
++		}
+ 	}
+  sndio_finish:
+ 	return 0;
+@@ -1234,8 +1245,8 @@ jack_info_shutdown(jack_status_t code, const char * re
+  * -1 : device busy
+  * -N : unable to start with given params
+  */
+-int
+-sndio_init(thread_info_t * info, int verbose, gboolean realtime, int priority) {
++int
++sndio_reinit(thread_info_t * info, int verbose) {
+ 
+ 	struct sio_hdl * sndio_hdl;
+ 	struct sio_par sndio_par;
+@@ -1300,6 +1311,15 @@ sndio_init(thread_info_t * info, int verbose, gboolean
+ 	}
+ 
+ 	info->sndio_hdl = sndio_hdl;
++	return 0;
++}
++
++int
++sndio_init(thread_info_t * info, int verbose, gboolean realtime, int priority) {
++	int ret;
++	if ((ret = sndio_reinit(info, verbose)) != 0) {
++		return ret;
++	}
+ 	AQUALUNG_THREAD_CREATE(info->sndio_thread_id, NULL, sndio_thread, info)
+ 	set_thread_priority(info->sndio_thread_id, "sndio output", realtime, priority);
+ 
