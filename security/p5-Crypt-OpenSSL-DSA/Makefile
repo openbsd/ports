@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2016/11/19 14:38:14 sthen Exp $
 
 MODULES=	cpan
 COMMENT=	implements DSA using OpenSSL
-DISTNAME =	Crypt-OpenSSL-DSA-0.15
+DISTNAME =	Crypt-OpenSSL-DSA-0.18
 CATEGORIES=	security
 
 # perl
