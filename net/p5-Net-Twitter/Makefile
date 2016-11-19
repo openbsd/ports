@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/24 13:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/19 14:39:04 sthen Exp $
 
 COMMENT=	perl interface to the Twitter API
 
-DISTNAME =	Net-Twitter-4.01020
+DISTNAME =	Net-Twitter-4.01030
 
 CATEGORIES=	net
 
