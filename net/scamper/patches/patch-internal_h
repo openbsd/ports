@@ -1,0 +1,11 @@
+$OpenBSD: patch-internal_h,v 1.1 2016/11/19 12:27:32 sthen Exp $
+--- internal.h.orig	Thu Nov 17 14:20:04 2016
++++ internal.h	Thu Nov 17 14:20:23 2016
+@@ -132,6 +132,7 @@ typedef unsigned short sa_family_t;
+ #include <netinet/icmp6.h>
+ #include <netinet/tcp.h>
+ #ifdef HAVE_NETINET_TCP_VAR_H
++#include <netinet/tcp_timer.h>
+ #include <netinet/tcp_var.h>
+ #endif
+ #include <netinet/if_ether.h>
