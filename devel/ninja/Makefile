@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/05/12 07:14:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/19 16:06:59 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -7,14 +7,12 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT =		small build system with a focus on speed
 
-V =			1.7.1
-GH_ACCOUNT =		martine
+GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v$V
-DISTNAME =		${GH_PROJECT}-$V
+GH_TAGNAME =		v1.7.2
 
 CATEGORIES =		devel
-HOMEPAGE =		http://martine.github.io/ninja/
+HOMEPAGE =		https://ninja-build.org/
 MAINTAINER =		Matthew Dempsky <matthew@dempsky.org>
 
 # Apache License v2.0
