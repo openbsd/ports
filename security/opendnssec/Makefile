@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/19 12:25:27 sthen Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
-DISTNAME=	opendnssec-1.4.10
-REVISION=	0
+DISTNAME=	opendnssec-1.4.12
 
 CATEGORIES=	security
 
@@ -19,7 +18,6 @@ WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
 LIB_DEPENDS=	converters/libiconv \
-		databases/sqlite3 \
 		net/ldns/libldns \
 		textproc/libxml
 
@@ -35,6 +33,7 @@ FLAVOR?=	sqlite3
 
 .if ${FLAVOR:Msqlite3}
 WANTLIB+=	sqlite3
+LIB_DEPENDS+=	databases/sqlite3
 .endif
 
 .if ${FLAVOR:Mmysql}

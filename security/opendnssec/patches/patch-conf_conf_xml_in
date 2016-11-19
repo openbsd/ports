@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_conf_xml_in,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
---- conf/conf.xml.in.orig	Mon Jul 21 11:30:08 2014
-+++ conf/conf.xml.in	Wed Aug 20 08:52:31 2014
-@@ -28,7 +28,7 @@
+$OpenBSD: patch-conf_conf_xml_in,v 1.2 2016/11/19 12:25:27 sthen Exp $
+--- conf/conf.xml.in.orig	Mon Oct 17 14:32:58 2016
++++ conf/conf.xml.in	Mon Nov 14 18:41:45 2016
+@@ -31,7 +31,7 @@
  		<Logging>
  			<!-- Command line verbosity will overwrite configure file -->
  			<Verbosity>3</Verbosity>
@@ -10,7 +10,7 @@ $OpenBSD: patch-conf_conf_xml_in,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
  		</Logging>
  		
  		<PolicyFile>@OPENDNSSEC_CONFIG_DIR@/kasp.xml</PolicyFile>
-@@ -36,19 +36,17 @@
+@@ -39,19 +39,17 @@
  	</Common>
  
  	<Enforcer>
@@ -33,7 +33,7 @@ $OpenBSD: patch-conf_conf_xml_in,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
  		<Interval>PT3600S</Interval>
  		<!-- <ManualKeyGeneration/> -->
  		<!-- <RolloverNotification>P14D</RolloverNotification> -->
-@@ -60,12 +58,10 @@
+@@ -63,12 +61,10 @@
  	</Enforcer>
  
  	<Signer>
