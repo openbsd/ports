@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/11/02 08:20:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2016/11/19 11:01:35 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -39,6 +39,23 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/awslambda.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/awslambda.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cliinputjson.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cliinputjson.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/artifact_exporter.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/artifact_exporter.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/deploy.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/deploy.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/deployer.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/deployer.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/package.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/package.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/s3uploader.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/s3uploader.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/yamlhelper.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudformation/yamlhelper.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudfront.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudfront.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/cloudsearch.py
@@ -449,11 +466,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/suspend-pro
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/terminate-instance-in-auto-scaling-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/update-auto-scaling-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_deploy_description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_package_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/cancel-update-stack.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/create-stack.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/deploy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/describe-stacks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/get-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/list-stacks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/package.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/update-stack.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/validate-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/
