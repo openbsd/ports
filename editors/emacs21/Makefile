@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.89 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2016/11/20 13:52:57 jca Exp $
+
+BROKEN-powerpc=		dumped executable fails with SIGABRT
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
