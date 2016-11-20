@@ -1,0 +1,25 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/11/20 10:18:58 shadchin Exp $
+--- setup.py.orig	Sat Nov 12 18:19:59 2016
++++ setup.py	Sat Nov 12 18:20:32 2016
+@@ -31,17 +31,17 @@ def prepare_modules():
+     make_c_files()
+     ext = [Extension("bottleneck.reduce",
+                      sources=["bottleneck/src/reduce.c"],
+-                     extra_compile_args=['-O2'])]
++                     extra_compile_args=[])]
+     ext += [Extension("bottleneck.move",
+                       sources=["bottleneck/src/move.c",
+                                "bottleneck/src/move_median/move_median.c"],
+-                      extra_compile_args=['-O2'])]
++                      extra_compile_args=[])]
+     ext += [Extension("bottleneck.nonreduce",
+                       sources=["bottleneck/src/nonreduce.c"],
+-                      extra_compile_args=['-O2'])]
++                      extra_compile_args=[])]
+     ext += [Extension("bottleneck.nonreduce_axis",
+                       sources=["bottleneck/src/nonreduce_axis.c"],
+-                      extra_compile_args=['-O2'])]
++                      extra_compile_args=[])]
+     return ext
+ 
+ 
