@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2016/11/20 13:52:57 jca Exp $
+# $OpenBSD: Makefile,v 1.91 2016/11/20 15:14:19 jca Exp $
 
 BROKEN-powerpc=		dumped executable fails with SIGABRT
 
@@ -13,7 +13,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		36
+REVISION-main=		37
 REVISION-el=		7
 REVISION-leim=		7
 
@@ -32,7 +32,7 @@ MULTI_PACKAGES=		-main -el -leim
 FLAVORS=		no_x11
 FLAVOR?=
 
-GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OSREV}
+GCCARCH=		${MACHINE_ARCH}-unknown-openbsd
 
 MODGNU_EMACS_YOURE_WEIRD = Oh yes
 
