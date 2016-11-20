@@ -1,16 +1,44 @@
-$OpenBSD: patch-lib_internal_h,v 1.1.1.1 2005/07/25 09:58:16 jsg Exp $
---- lib/internal.h.orig	Sat Jul  9 13:11:23 2005
-+++ lib/internal.h	Sat Jul  9 13:11:16 2005
-@@ -109,8 +109,12 @@ uint16_t bswap_16(uint16_t x);
- uint32_t bswap_32(uint32_t x);
- #endif
+$OpenBSD: patch-lib_internal_h,v 1.2 2016/11/20 08:26:19 jsg Exp $
+--- lib/internal.h.orig	Tue Jun 23 01:49:58 2015
++++ lib/internal.h	Wed Mar  2 11:27:36 2016
+@@ -3,7 +3,7 @@
+ #define __internal_h__
  
-+#ifndef letoh16
- #define letoh16(x)    bswap_16(x)
-+#endif
-+#ifndef letoh32
- #define letoh32(x)    bswap_32(x)
-+#endif
+ #include "libunshield.h"
+-#include "unshield_config.h"
++#include "lib/unshield_config.h"
  
- #else
- #define letoh32(x) (x)
+ #if HAVE_STDINT_H
+ #include <stdint.h>
+@@ -103,30 +103,7 @@ uint8_t* unshield_header_get_buffer(Header* header, ui
+ #define FSIZE(file)     (file ? unshield_fsize(file) : 0)
+ #define STREQ(s1,s2)    (0 == strcmp(s1,s2))
+ 
+-#if WORDS_BIGENDIAN
+-
+-#if HAVE_BYTESWAP_H
+-#include <byteswap.h>
+-#elif HAVE_SYS_BYTESWAP_H
+-#include <sys/byteswap.h>
+-#else
+-
+-/* use our own functions */
+-#define IMPLEMENT_BSWAP_XX 1
+-#define bswap_16 unshield_bswap_16
+-#define bswap_32 unshield_bswap_32
+-
+-uint16_t bswap_16(uint16_t x);
+-uint32_t bswap_32(uint32_t x);
+-#endif
+-
+-#define letoh16(x)    bswap_16(x)
+-#define letoh32(x)    bswap_32(x)
+-
+-#else
+-#define letoh32(x) (x)
+-#define letoh16(x) (x)
+-#endif
++#include <endian.h>
+ 
+ static inline uint16_t get_unaligned_le16(const uint8_t *p)
+ {

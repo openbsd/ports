@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unshield_c,v 1.1 2016/11/20 08:26:19 jsg Exp $
+--- src/unshield.c.orig	Tue Jun 23 01:49:58 2015
++++ src/unshield.c	Wed Mar  2 11:24:19 2016
+@@ -13,7 +13,7 @@
+ #include <unistd.h>
+ #include "../lib/libunshield.h"
+ #ifdef HAVE_CONFIG_H
+-#include "../lib/unshield_config.h"
++#include "lib/unshield_config.h"
+ #endif
+ #if HAVE_FNMATCH
+ #include <fnmatch.h>
