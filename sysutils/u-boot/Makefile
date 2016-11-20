@@ -1,8 +1,7 @@
-#	$OpenBSD: Makefile,v 1.9 2016/11/01 04:13:52 jsg Exp $
+#	$OpenBSD: Makefile,v 1.10 2016/11/20 01:47:00 jsg Exp $
 
 COMMENT=	U-Boot firmware
-DISTNAME=	u-boot-2016.09
-REVISION=	1
+DISTNAME=	u-boot-2016.11
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -35,6 +34,7 @@ BOARDS=\
 	CHIP \
 	Cubieboard \
 	Cubieboard2 \
+	Cubieboard4 \
 	Cubietruck \
 	Lamobo_R1 \
 	Linksprite_pcDuino \

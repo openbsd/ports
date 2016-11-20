@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/01 04:13:52 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/20 01:47:00 jsg Exp $
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
 share/u-boot/A10-OLinuXino-Lime/u-boot
@@ -50,6 +50,11 @@ share/u-boot/Cubieboard2/u-boot
 share/u-boot/Cubieboard2/u-boot-sunxi-with-spl.bin
 share/u-boot/Cubieboard2/u-boot.bin
 share/u-boot/Cubieboard2/u-boot.img
+share/u-boot/Cubieboard4/
+share/u-boot/Cubieboard4/u-boot
+share/u-boot/Cubieboard4/u-boot-sunxi-with-spl.bin
+share/u-boot/Cubieboard4/u-boot.bin
+share/u-boot/Cubieboard4/u-boot.img
 share/u-boot/Cubietruck/
 share/u-boot/Cubietruck/u-boot
 share/u-boot/Cubietruck/u-boot-sunxi-with-spl.bin
