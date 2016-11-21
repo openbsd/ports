@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/13 18:44:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/21 20:05:28 jasper Exp $
 
 COMMENT=		job scheduler and runbook automation
 
-V=			2.6.10
+V=			2.6.11
 DISTNAME=		rundeck-launcher-${V}
 PKGNAME=		rundeck-${V}
 
