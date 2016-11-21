@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.5 2016/01/27 18:47:02 juanfra Exp $
+$OpenBSD: patch-configure,v 1.6 2016/11/21 22:37:21 juanfra Exp $
 
 - https://github.com/feeley/gambit/pull/163
 - https://github.com/feeley/gambit/issues/124
 
---- configure.orig	Sat Jan 16 00:50:43 2016
-+++ configure	Fri Jan 22 22:22:18 2016
-@@ -8559,7 +8559,7 @@ done
+--- configure.orig	Thu Nov 17 14:08:11 2016
++++ configure	Mon Nov 21 23:02:57 2016
+@@ -8796,7 +8796,7 @@ done
  
  
    case "$target_os" in
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.5 2016/01/27 18:47:02 juanfra Exp $
        # OpenBSD/mips64(el) does have get_fpc_csr(), but lacks union fpc_csr.
        ;;
      *)
-@@ -13619,32 +13619,32 @@ if test "$datadir" = "\${datarootdir}"; then
+@@ -13991,32 +13991,32 @@ if test "$datadir" = "\${datarootdir}"; then
    datadir="\${prefix}/share"
  fi
  
