@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2016/06/25 12:36:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/11/21 09:26:59 ajacoutot Exp $
 
 COMMENT=		digital camera library
 
-VERSION=		2.5.10
+VERSION=		2.5.11
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
-REVISION=		0
 
 GPHOTO2_PORT_API=	0.12.0
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -22,12 +21,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl lzma usb
-WANTLIB += m png pthread pthread-stubs tiff usb-1.0 vpx xml2 z
+WANTLIB += c exif expat fontconfig freetype gd iconv intl jpeg
+WANTLIB += ltdl lzma m png pthread pthread-stubs tiff usb usb-1.0
+WANTLIB += vpx xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
-
-MODULES=		devel/gettext
 
 LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \
@@ -48,7 +46,7 @@ CONFIGURE_ARGS=		--enable-static \
 CONFIGURE_ARGS +=	--with-libusb-1.0=no
 
 # /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
-# : multiple definition of `locale_charset'
+# multiple definition of `locale_charset'
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 
 post-install:
