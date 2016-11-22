@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2016/11/22 21:26:04 jca Exp $
 
 COMMENT=		color ascii art library
 
@@ -28,6 +28,8 @@ CONFIGURE_ARGS+=	--disable-x11 \
 LIB_DEPENDS =    	graphics/imlib2
 WANTLIB +=		X11 Xext freetype xcb Imlib2>=1
 .endif
+
+MAKE_FLAGS=		V=1
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--disable-doc \
