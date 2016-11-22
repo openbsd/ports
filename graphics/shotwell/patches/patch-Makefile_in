@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2016/10/26 08:39:07 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2016/11/22 11:26:41 ajacoutot Exp $
 
 Not supported by our old gcc.
 
---- Makefile.in.orig	Wed Oct 26 10:00:02 2016
-+++ Makefile.in	Wed Oct 26 10:00:12 2016
-@@ -1071,7 +1071,6 @@ plugins_common_libshotwell_plugin_common_la_VALAFLAGS 
+--- Makefile.in.orig	Mon Nov 21 20:45:48 2016
++++ Makefile.in	Tue Nov 22 12:18:28 2016
+@@ -1077,7 +1077,6 @@ plugins_common_libshotwell_plugin_common_la_VALAFLAGS 
  
  plugins_common_libshotwell_plugin_common_la_CFLAGS = \
  	$(PLUGIN_CFLAGS) \
@@ -12,7 +12,7 @@ Not supported by our old gcc.
  	-DGETTEXT_PACKAGE='"$(GETTEXT_PACKAGE)"' \
  	-I $(top_srcdir)/plugins -I$(top_builddir)/plugins
  
-@@ -1150,7 +1149,6 @@ COMMON_VALAFLAGS = --enable-checking --target-glib=2.4
+@@ -1158,12 +1157,10 @@ COMMON_VALAFLAGS = --enable-checking --target-glib=2.4
  	--fatal-warnings --enable-experimental --enable-deprecated \
  	$(am__append_2)
  COMMON_CFLAGS = -I$(top_srcdir)/vapi -D_PREFIX='"$(prefix)"' \
@@ -20,3 +20,8 @@ Not supported by our old gcc.
  	-D_VERSION='"$(VERSION)"' \
  	-DGETTEXT_PACKAGE='"$(GETTEXT_PACKAGE)"' \
  	-D_LANG_SUPPORT_DIR='"$(prefix)/share/locale"' \
+ 	-D_LIBEXECDIR='"$(libexecdir)"' -D_LIB='"$(libdir)"' \
+-	-Wno-incompatible-pointer-types -Wno-discarded-qualifiers \
+ 	$(am__append_1)
+ shotwell_CFLAGS = \
+ 	$(SHOTWELL_CFLAGS) \
