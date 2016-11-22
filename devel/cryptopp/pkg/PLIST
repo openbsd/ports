@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/09/13 13:50:59 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/11/22 17:20:25 dcoppa Exp $
 include/cryptopp/
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
@@ -85,6 +85,7 @@ include/cryptopp/nr.h
 include/cryptopp/oaep.h
 include/cryptopp/oids.h
 include/cryptopp/osrng.h
+include/cryptopp/ossig.h
 include/cryptopp/panama.h
 include/cryptopp/pch.h
 include/cryptopp/pkcspad.h
@@ -127,6 +128,7 @@ include/cryptopp/stdcpp.h
 include/cryptopp/strciphr.h
 include/cryptopp/tea.h
 include/cryptopp/tiger.h
+include/cryptopp/trap.h
 include/cryptopp/trdlocal.h
 include/cryptopp/trunhash.h
 include/cryptopp/ttmac.h

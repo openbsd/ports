@@ -1,6 +1,6 @@
-$OpenBSD: patch-pubkey_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
---- pubkey.h.orig	Mon Oct 10 14:11:33 2016
-+++ pubkey.h	Mon Oct 10 14:12:42 2016
+$OpenBSD: patch-pubkey_h,v 1.2 2016/11/22 17:20:25 dcoppa Exp $
+--- pubkey.h.orig	Tue Nov 22 09:16:47 2016
++++ pubkey.h	Tue Nov 22 09:16:48 2016
 @@ -36,7 +36,7 @@
  
  #include "config.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-pubkey_h,v 1.1 2016/10/10 12:55:51 dcoppa Exp $
  # pragma warning(push)
  # pragma warning(disable: 4702)
  #endif
-@@ -2240,7 +2240,7 @@ class DL_ES : public KEYS (public)
+@@ -2248,7 +2248,7 @@ class DL_ES : public KEYS (public)
  
  NAMESPACE_END
  

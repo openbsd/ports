@@ -1,0 +1,39 @@
+$OpenBSD: patch-trap_h,v 1.1 2016/11/22 17:20:25 dcoppa Exp $
+--- trap.h.orig	Tue Nov 22 11:49:31 2016
++++ trap.h	Tue Nov 22 11:50:55 2016
+@@ -18,7 +18,7 @@
+ 
+ #include "config.h"
+ 
+-#if CRYPTOPP_DEBUG
++#if defined(CRYPTOPP_DEBUG)
+ #  include <iostream>
+ #  include <sstream>
+ #  if defined(CRYPTOPP_BSD_AVAILABLE) || defined(CRYPTOPP_UNIX_AVAILABLE)
+@@ -62,7 +62,7 @@
+ #  define CRYPTOPP_ASSERT(exp) { ... }
+ #endif
+ 
+-#if CRYPTOPP_DEBUG && (defined(CRYPTOPP_BSD_AVAILABLE) || defined(CRYPTOPP_UNIX_AVAILABLE))
++#if defined(CRYPTOPP_DEBUG) && (defined(CRYPTOPP_BSD_AVAILABLE) || defined(CRYPTOPP_UNIX_AVAILABLE))
+ #  define CRYPTOPP_ASSERT(exp) {                                  \
+     if (!(exp)) {                                                 \
+       std::ostringstream oss;                                     \
+@@ -73,7 +73,7 @@
+       raise(SIGTRAP);                                             \
+     }                                                             \
+   }
+-#elif CRYPTOPP_DEBUG && defined(CRYPTOPP_WIN32_AVAILABLE)
++#elif defined(CRYPTOPP_DEBUG) && defined(CRYPTOPP_WIN32_AVAILABLE)
+ #  define CRYPTOPP_ASSERT(exp) {                                  \
+     if (!(exp)) {                                                 \
+       std::ostringstream oss;                                     \
+@@ -96,7 +96,7 @@ NAMESPACE_BEGIN(CryptoPP)
+ 
+ // ************** SIGTRAP handler ***************
+ 
+-#if (CRYPTOPP_DEBUG && (defined(CRYPTOPP_BSD_AVAILABLE) || defined(CRYPTOPP_UNIX_AVAILABLE))) || defined(CRYPTOPP_DOXYGEN_PROCESSING)
++#if (defined(CRYPTOPP_DEBUG) && (defined(CRYPTOPP_BSD_AVAILABLE) || defined(CRYPTOPP_UNIX_AVAILABLE))) || defined(CRYPTOPP_DOXYGEN_PROCESSING)
+ //! \brief Default SIGTRAP handler
+ //! \details DebugTrapHandler() can be used by a program to install an empty SIGTRAP handler. If present,
+ //!   the handler ensures there is a signal handler in place for <tt>SIGTRAP</tt> raised by

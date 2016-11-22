@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
---- misc.h.orig	Mon Oct 10 13:25:20 2016
-+++ misc.h	Mon Oct 10 13:29:41 2016
+$OpenBSD: patch-misc_h,v 1.7 2016/11/22 17:20:25 dcoppa Exp $
+--- misc.h.orig	Tue Nov 22 15:09:45 2016
++++ misc.h	Tue Nov 22 15:12:43 2016
 @@ -9,9 +9,9 @@
  
  #include "config.h"
@@ -67,7 +67,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma intrinsic(_ReadWriteBarrier)
  # define MEMORY_BARRIER() _ReadWriteBarrier()
  #elif defined(__INTEL_COMPILER)
-@@ -333,7 +333,7 @@ const T & Singleton<T, F, instance>::Ref(CRYPTOPP_NOIN
+@@ -336,7 +336,7 @@ const T & Singleton<T, F, instance>::Ref(CRYPTOPP_NOIN
  
  // ************** misc functions ***************
  
@@ -76,7 +76,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  
  //! \brief Bounds checking replacement for memcpy()
  //! \param dest pointer to the desination memory block
-@@ -364,7 +364,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+@@ -367,7 +367,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
  	if (count > sizeInBytes)
  		throw InvalidArgument("memcpy_s: buffer overflow");
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma warning(push)
  # pragma warning(disable: 4996)
  # if (CRYPTOPP_MSC_VERSION >= 1400)
-@@ -372,7 +372,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
+@@ -375,7 +375,7 @@ inline void memcpy_s(void *dest, size_t sizeInBytes, c
  # endif
  #endif
  	memcpy(dest, src, count);
@@ -94,7 +94,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma warning(pop)
  #endif
  }
-@@ -406,7 +406,7 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+@@ -409,7 +409,7 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
  	if (count > sizeInBytes)
  		throw InvalidArgument("memmove_s: buffer overflow");
  
@@ -103,7 +103,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma warning(push)
  # pragma warning(disable: 4996)
  # if (CRYPTOPP_MSC_VERSION >= 1400)
-@@ -414,12 +414,12 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
+@@ -417,12 +417,12 @@ inline void memmove_s(void *dest, size_t sizeInBytes, 
  # endif
  #endif
  	memmove(dest, src, count);
@@ -118,7 +118,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  // C++Builder 2010 workaround: can't use std::memcpy_s because it doesn't allow 0 lengths
  # define memcpy_s CryptoPP::memcpy_s
  # define memmove_s CryptoPP::memmove_s
-@@ -480,12 +480,12 @@ template <class T> inline const T& STDMAX(const T& a, 
+@@ -483,12 +483,12 @@ template <class T> inline const T& STDMAX(const T& a, 
  	return a < b ? b : a;
  }
  
@@ -133,7 +133,29 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma GCC diagnostic push
  # pragma GCC diagnostic ignored "-Wsign-compare"
  # if (CRYPTOPP_LLVM_CLANG_VERSION >= 20800) || (CRYPTOPP_APPLE_CLANG_VERSION >= 30000)
-@@ -587,11 +587,11 @@ std::string IntToString<word64>(word64 value, unsigned
+@@ -529,6 +529,12 @@ inline bool SafeConvert(T1 from, T2 &to)
+ //! \param value the value to convert
+ //! \param base the base to use during the conversion
+ //! \returns the string representation of value in base.
++template <typename T>
++inline bool IsNegative(T value)
++{
++	return std::numeric_limits<T>::is_signed * value < 0;
++}
++
+ template <class T>
+ std::string IntToString(T value, unsigned int base = 10)
+ {
+@@ -542,7 +548,7 @@ std::string IntToString(T value, unsigned int base = 1
+ 		return "0";
+ 
+ 	bool negate = false;
+-	if (value < 0)
++	if (IsNegative(value))
+ 	{
+ 		negate = true;
+ 		value = 0-value;	// VC .NET does not like -a
+@@ -590,11 +596,11 @@ std::string IntToString<word64>(word64 value, unsigned
  template <> CRYPTOPP_DLL
  std::string IntToString<Integer>(Integer value, unsigned int base);
  
@@ -147,7 +169,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  # pragma GCC diagnostic pop
  #endif
  
-@@ -887,7 +887,7 @@ inline unsigned int GetAlignmentOf(T *dummy=NULL)	// V
+@@ -924,7 +930,7 @@ inline unsigned int GetAlignmentOf(T *dummy=NULL)	// V
  	CRYPTOPP_UNUSED(dummy);
  #if defined(CRYPTOPP_CXX11_ALIGNOF)
  	return alignof(T);
@@ -156,7 +178,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  	return __alignof(T);
  #elif defined(__GNUC__)
  	return __alignof__(T);
-@@ -1074,7 +1074,7 @@ void SecureWipeBuffer(T *buf, size_t n)
+@@ -1087,7 +1093,7 @@ void SecureWipeBuffer(T *buf, size_t n)
  		*((volatile T*)(--p)) = 0;
  }
  
@@ -165,7 +187,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  
  //! \brief Sets each byte of an array to 0
  //! \param buf an array of bytes
-@@ -1138,7 +1138,7 @@ template<> inline void SecureWipeBuffer(word64 *buf, s
+@@ -1151,7 +1157,7 @@ template<> inline void SecureWipeBuffer(word64 *buf, s
  
  #endif	// #if (_MSC_VER >= 1400 || defined(__GNUC__)) && (CRYPTOPP_BOOL_X64 || CRYPTOPP_BOOL_X86)
  
@@ -174,7 +196,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  template<> inline void SecureWipeBuffer(byte *buf, size_t n)
  {
  	char *p = reinterpret_cast<char*>(buf+n);
-@@ -1488,7 +1488,7 @@ template<> inline word32 rotrMod<word32>(word32 x, uns
+@@ -1501,7 +1507,7 @@ template<> inline word32 rotrMod<word32>(word32 x, uns
  
  #endif // #ifdef _MSC_VER
  
@@ -183,7 +205,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  // Intel C++ Compiler 10.0 calls a function instead of using the rotate instruction when using these instructions
  
  //! \brief Performs a left rotate
-@@ -1577,7 +1577,7 @@ template<> inline word64 rotrMod<word64>(word64 x, uns
+@@ -1590,7 +1596,7 @@ template<> inline word64 rotrMod<word64>(word64 x, uns
  
  #endif // #if _MSC_VER >= 1310
  
@@ -192,7 +214,7 @@ $OpenBSD: patch-misc_h,v 1.6 2016/10/10 12:55:51 dcoppa Exp $
  // Intel C++ Compiler 10.0 gives undefined externals with these
  
  template<> inline word16 rotlFixed<word16>(word16 x, unsigned int y)
-@@ -2382,7 +2382,7 @@ inline T SafeLeftShift(T value)
+@@ -2395,7 +2401,7 @@ inline T SafeLeftShift(T value)
  
  NAMESPACE_END
  

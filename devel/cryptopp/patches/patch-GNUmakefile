@@ -1,6 +1,6 @@
-$OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
---- GNUmakefile.orig	Mon Nov 23 12:40:00 2015
-+++ GNUmakefile	Mon Nov 23 12:41:22 2015
+$OpenBSD: patch-GNUmakefile,v 1.6 2016/11/22 17:20:25 dcoppa Exp $
+--- GNUmakefile.orig	Tue Nov 22 11:04:50 2016
++++ GNUmakefile	Tue Nov 22 11:12:02 2016
 @@ -9,61 +9,25 @@ RANLIB ?= ranlib
  CP ?= cp
  MV ?= mv
@@ -72,7 +72,7 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
  # Default prefix for make install
  ifeq ($(PREFIX),)
  PREFIX = /usr/local
-@@ -83,336 +47,7 @@ ifeq ($(INCLUDEDIR),)
+@@ -83,332 +47,7 @@ ifeq ($(INCLUDEDIR),)
  INCLUDEDIR := $(PREFIX)/include
  endif
  
@@ -291,10 +291,6 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -endif
 -# Add to all Solaris
 -CXXFLAGS += -template=no%extdef
--# Add to Sun Studio 12.2 and above
--ifneq ($(SUNCC_511_OR_LATER),0)
--CXXFLAGS += -w -erroff=wvarhidemem -erroff=voidretw
--endif
 -SUN_CC10_BUGGY := $(shell $(CXX) -V 2>&1 | $(EGREP) -c "CC: Sun .* 5\.10 .* (2009|2010/0[1-4])")
 -ifneq ($(SUN_CC10_BUGGY),0)
 -# -DCRYPTOPP_INCLUDE_VECTOR_CC is needed for Sun Studio 12u1 Sun C++ 5.10 SunOS_i386 128229-02 2009/09/21 and was fixed in May 2010
@@ -409,7 +405,7 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
  #####              Source and object files            #####
  ###########################################################
  
-@@ -422,7 +57,7 @@ endif # HAS_SOLIB_VERSION
+@@ -416,7 +55,7 @@ endif # HAS_SOLIB_VERSION
  SRCS := cryptlib.cpp cpu.cpp integer.cpp $(filter-out cryptlib.cpp cpu.cpp integer.cpp pch.cpp simple.cpp winpipes.cpp cryptlib_bds.cpp,$(wildcard *.cpp))
  
  # Need CPU for X86/X64/X32 and ARM
@@ -418,7 +414,7 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
    SRCS := $(filter-out cpu.cpp, $(SRCS))
  endif
  # Need RDRAND for X86/X64/X32
-@@ -430,10 +65,6 @@ ifeq ($(IS_X86)$(IS_X64),00)
+@@ -424,10 +63,6 @@ ifeq ($(IS_X86)$(IS_X64),00)
    SRCS := $(filter-out rdrand.cpp, $(SRCS))
  endif
  
@@ -426,10 +422,24 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -SRCS += winpipes.cpp
 -endif
 -
- # List of objects with crytlib.o and cpu.o at the first and second index position
+ # List cryptlib.cpp first, then cpu.cpp, then integer.cpp to tame C++ static initialization problems.
  OBJS := $(SRCS:.cpp=.o)
  
-@@ -456,43 +87,19 @@ DLLTESTOBJS := dlltest.dllonly.o
+@@ -436,92 +71,25 @@ TESTSRCS := test.cpp bench1.cpp bench2.cpp validat1.cp
+ TESTOBJS := $(TESTSRCS:.cpp=.o)
+ LIBOBJS := $(filter-out $(TESTOBJS),$(OBJS))
+ 
+-# List cryptlib.cpp first, then cpu.cpp, then integer.cpp to tame C++ static initialization problems.
+-DLLSRCS := cryptlib.cpp cpu.cpp integer.cpp shacal2.cpp md5.cpp shark.cpp zinflate.cpp gf2n.cpp salsa.cpp xtr.cpp oaep.cpp polynomi.cpp rc2.cpp default.cpp wait.cpp wake.cpp twofish.cpp iterhash.cpp adler32.cpp elgamal.cpp marss.cpp blowfish.cpp ecp.cpp filters.cpp strciphr.cpp camellia.cpp ida.cpp zlib.cpp des.cpp crc.cpp algparam.cpp dessp.cpp tea.cpp eax.cpp network.cpp emsa2.cpp pkcspad.cpp squaretb.cpp idea.cpp authenc.cpp hmac.cpp zdeflate.cpp xtrcrypt.cpp queue.cpp mars.cpp rc5.cpp blake2.cpp hrtimer.cpp eprecomp.cpp hex.cpp dsa.cpp sha.cpp fips140.cpp gzip.cpp seal.cpp files.cpp base32.cpp vmac.cpp tigertab.cpp sharkbox.cpp safer.cpp randpool.cpp esign.cpp arc4.cpp osrng.cpp skipjack.cpp seed.cpp sha3.cpp sosemanuk.cpp bfinit.cpp rabin.cpp 3way.cpp rw.cpp rdrand.cpp rsa.cpp rdtables.cpp gost.cpp socketft.cpp tftables.cpp nbtheory.cpp panama.cpp modes.cpp rijndael.cpp casts.cpp chacha.cpp gfpcrypt.cpp poly1305.cpp dll.cpp ec2n.cpp blumshub.cpp algebra.cpp basecode.cpp base64.cpp cbcmac.cpp rc6.cpp dh2.cpp gf256.cpp mqueue.cpp misc.cpp pssr.cpp channels.cpp tiger.cpp cast.cpp rng.cpp square.cpp asn.cpp whrlpool.cpp md4.cpp dh.cpp ccm.cpp md2.cpp mqv.cpp gf2_32.cpp ttmac.cpp luc.cpp trdlocal.cpp pubkey.cpp gcm.cpp ripemd.cpp eccrypto.cpp serpent.cpp cmac.cpp
+-DLLOBJS := $(DLLSRCS:.cpp=.export.o)
+-
+-# Import lib testing
+-LIBIMPORTOBJS := $(LIBOBJS:.o=.import.o)
+-TESTIMPORTOBJS := $(TESTOBJS:.o=.import.o)
+-DLLTESTOBJS := dlltest.dllonly.o
+-
+ ###########################################################
+ #####                Targets and Recipes              #####
  ###########################################################
  
  .PHONY: all
@@ -446,10 +456,10 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -shared dynamic: libcryptopp.so$(SOLIB_VERSION_SUFFIX)
 -endif
  
- .PHONY: deps
- deps GNUmakefile.deps:
- 	$(CXX) $(CXXFLAGS) -MM *.cpp > GNUmakefile.deps
- 
+-.PHONY: deps
+-deps GNUmakefile.deps:
+-	$(CXX) $(CXXFLAGS) -MM *.cpp > GNUmakefile.deps
+-
 -# CXXFLAGS are tuned earlier.
 -.PHONY: asan ubsan align aligned
 -asan ubsan align aligned: libcryptopp.a cryptest.exe
@@ -475,12 +485,13 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -	./cryptest.exe v
 +	LD_LIBRARY_PATH=${WRKDIST} ./cryptest.exe v
  
- # Used to generate list of source files for Autotools, CMakeList, Android.mk, etc
- .PHONY: sources
-@@ -501,32 +108,9 @@ sources:
- 	$(info )
- 	$(info Test sources: $(TESTSRCS))
- 
+-# Used to generate list of source files for Autotools, CMakeList, Android.mk, etc
+-.PHONY: sources
+-sources:
+-	$(info Library sources: $(filter-out fipstest.cpp $(TESTSRCS),$(SRCS)))
+-	$(info )
+-	$(info Test sources: $(TESTSRCS))
+-
 -# Directory we want (can't specify on Doygen command line)
 -DOCUMENT_DIRECTORY := ref$(LIB_VER)
 -# Directory Doxygen uses (specified in Doygen config file)
@@ -507,21 +518,25 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -ifeq ($(HAS_SOLIB_VERSION),1)
 -	-$(RM) libcryptopp.so libcryptopp.so$(SOLIB_COMPAT_SUFFIX)
 -endif
+-	-$(RM) adhoc.cpp.o adhoc.cpp.proto.o $(LIBOBJS) $(TESTOBJS) $(DLLOBJS) $(LIBIMPORTOBJS) $(TESTIMPORTOBJS) $(DLLTESTOBJS)
 +	-$(RM) libcryptopp.a ${SHARED_LIB} libcryptopp.dylib cryptopp.dll libcryptopp.dll.a libcryptopp.import.a
- 	-$(RM) adhoc.cpp.o adhoc.cpp.proto.o $(LIBOBJS) $(TESTOBJS) $(DLLOBJS) $(LIBIMPORTOBJS) $(TESTIMPORTOBJS) $(DLLTESTOBJS)
++	-$(RM) adhoc.cpp.o adhoc.cpp.proto.o $(LIBOBJS) $(TESTOBJS)
  	-$(RM) cryptest.exe dlltest.exe cryptest.import.exe cryptest.info ct rdrand-???.o
  	-$(RM) *.gcno *.gcda *.stackdump core-*
-@@ -572,41 +156,18 @@ endif
+ 	-$(RM) /tmp/adhoc.exe
+@@ -566,41 +134,18 @@ endif
  install:
  	$(MKDIR) -p $(DESTDIR)$(INCLUDEDIR)/cryptopp
  	$(CP) *.h $(DESTDIR)$(INCLUDEDIR)/cryptopp
 -	-$(CHMOD) 0755 $(DESTDIR)$(INCLUDEDIR)/cryptopp
 -	-$(CHMOD) 0644 $(DESTDIR)$(INCLUDEDIR)/cryptopp/*.h
- ifneq ($(wildcard libcryptopp.a),)
+-ifneq ($(wildcard libcryptopp.a),)
  	$(MKDIR) -p $(DESTDIR)$(LIBDIR)
++ifneq ($(wildcard libcryptopp.a),)
  	$(CP) libcryptopp.a $(DESTDIR)$(LIBDIR)
 -	-$(CHMOD) 0644 $(DESTDIR)$(LIBDIR)/libcryptopp.a
  endif
++	$(CP) ${SHARED_LIB} $(DESTDIR)$(LIBDIR)
  ifneq ($(wildcard cryptest.exe),)
  	$(MKDIR) -p $(DESTDIR)$(BINDIR)
  	$(CP) cryptest.exe $(DESTDIR)$(BINDIR)
@@ -534,7 +549,6 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -	-$(CHMOD) 0755 $(DESTDIR)$(DATADIR)/cryptopp/TestVectors
 -	-$(CHMOD) 0644 $(DESTDIR)$(DATADIR)/cryptopp/TestData/*.dat
 -	-$(CHMOD) 0644 $(DESTDIR)$(DATADIR)/cryptopp/TestVectors/*.txt
-+	-$(CP) ${SHARED_LIB} $(PREFIX)/lib
  endif
 -ifneq ($(wildcard libcryptopp.dylib),)
 -	$(MKDIR) -p $(DESTDIR)$(LIBDIR)
@@ -554,7 +568,7 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
  
  .PHONY: remove uninstall
  remove uninstall:
-@@ -614,39 +175,17 @@ remove uninstall:
+@@ -608,38 +153,16 @@ remove uninstall:
  	-$(RM) $(DESTDIR)$(LIBDIR)/libcryptopp.a
  	-$(RM) $(DESTDIR)$(BINDIR)/cryptest.exe
  	-$(RM) -r $(DESTDIR)$(DATADIR)/cryptopp
@@ -568,10 +582,9 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -	$(LDCONF) $(DESTDIR)$(LIBDIR)
 -endif
 -endif
-+	-$(RM) $(PREFIX)/lib/${SHARED_LIB}
++	-$(RM) $(DESTDIR)$(LIBDIR)/${SHARED_LIB}
  
--libcryptopp.a: $(LIBOBJS) | config_warning
-+libcryptopp.a: $(LIBOBJS)
+ libcryptopp.a: $(LIBOBJS)
  	$(AR) $(ARFLAGS) $@ $(LIBOBJS)
 -ifeq ($(IS_SUN),0)
  	$(RANLIB) $@
@@ -595,33 +608,56 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
 -libcryptopp.dylib: $(LIBOBJS)
 -	$(CXX) -dynamiclib -o $@ $(CXXFLAGS) -install_name "$@" -current_version "$(LIB_MAJOR).$(LIB_MINOR).$(LIB_PATCH)" -compatibility_version "$(LIB_MAJOR).$(LIB_MINOR)" -headerpad_max_install_names $(LDFLAGS) $(LIBOBJS)
 -
--cryptest.exe: libcryptopp.a $(TESTOBJS) | config_warning
-+cryptest.exe: libcryptopp.a $(TESTOBJS)
+ cryptest.exe: libcryptopp.a $(TESTOBJS)
  	$(CXX) -o $@ $(CXXFLAGS) $(TESTOBJS) ./libcryptopp.a $(LDFLAGS) $(LDLIBS)
  
- # Makes it faster to test changes
-@@ -660,9 +199,6 @@ cryptopp.dll: $(DLLOBJS)
+@@ -647,73 +170,6 @@ cryptest.exe: libcryptopp.a $(TESTOBJS)
+ nolib: $(OBJS)
+ 	$(CXX) -o ct $(CXXFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS)
  
- libcryptopp.import.a: $(LIBIMPORTOBJS)
- 	$(AR) $(ARFLAGS) $@ $(LIBIMPORTOBJS)
+-dll: cryptest.import.exe dlltest.exe
+-
+-cryptopp.dll: $(DLLOBJS)
+-	$(CXX) -shared -o $@ $(CXXFLAGS) $(DLLOBJS) $(LDFLAGS) $(LDLIBS) -Wl,--out-implib=libcryptopp.dll.a
+-
+-libcryptopp.import.a: $(LIBIMPORTOBJS)
+-	$(AR) $(ARFLAGS) $@ $(LIBIMPORTOBJS)
 -ifeq ($(IS_SUN),0)
 -	$(RANLIB) $@
 -endif
- 
- cryptest.import.exe: cryptopp.dll libcryptopp.import.a $(TESTIMPORTOBJS)
- 	$(CXX) -o $@ $(CXXFLAGS) $(TESTIMPORTOBJS) -L. -lcryptopp.dll -lcryptopp.import $(LDFLAGS) $(LDLIBS)
-@@ -678,38 +214,6 @@ ifeq ($(wildcard Filelist.txt),Filelist.txt)
- DIST_FILES := $(shell cat Filelist.txt)
- endif
- 
+-
+-cryptest.import.exe: cryptopp.dll libcryptopp.import.a $(TESTIMPORTOBJS)
+-	$(CXX) -o $@ $(CXXFLAGS) $(TESTIMPORTOBJS) -L. -lcryptopp.dll -lcryptopp.import $(LDFLAGS) $(LDLIBS)
+-
+-dlltest.exe: cryptopp.dll $(DLLTESTOBJS)
+-	$(CXX) -o $@ $(CXXFLAGS) $(DLLTESTOBJS) -L. -lcryptopp.dll $(LDFLAGS) $(LDLIBS)
+-
+-# This recipe prepares the distro files
+-TEXT_FILES := *.h *.cpp adhoc.cpp.proto License.txt Readme.txt Install.txt Filelist.txt CMakeLists.txt config.compat Doxyfile cryptest* cryptlib* dlltest* cryptdll* *.sln *.vcxproj *.filters cryptopp.rc TestVectors/*.txt TestData/*.dat TestScripts/*.sh TestScripts/*.pl TestScripts/*.cmd
+-EXEC_FILES := GNUmakefile GNUmakefile-cross TestData/ TestVectors/ TestScripts/
+-
+-ifeq ($(wildcard Filelist.txt),Filelist.txt)
+-DIST_FILES := $(shell cat Filelist.txt)
+-endif
+-
+-.PHONY: trim
+-trim:
+-ifneq ($(IS_DARWIN),0)
+-	sed -i '' -e's/[[:space:]]*$$//' *.compat *.sh *.h *.cpp *.sln *.vcxproj GNUmakefile GNUmakefile-cross
+-	make convert
+-else
+-	sed -i -e's/[[:space:]]*$$//' *.compat *.sh *.h *.cpp *.sln *.vcxproj GNUmakefile GNUmakefile-cross
+-	make convert
+-endif
+-
 -.PHONY: convert
 -convert:
--	-$(CHMOD) 0700 TestVectors/ TestData/
--	-$(CHMOD) 0600 $(TEXT_FILES) *.asm *.S *.zip *.cmake
--	-$(CHMOD) 0700 $(EXEC_FILES) *.sh *.cmd
--	-$(CHMOD) 0700 *.cmd *.sh GNUmakefile GNUmakefile-cross
--	-unix2dos --keepdate --quiet $(TEXT_FILES) *.asm *.cmd *.cmake
--	-dos2unix --keepdate --quiet GNUmakefile GNUmakefile-cross *.S *.sh
+-	-$(CHMOD) 0700 TestVectors/ TestData/ TestScripts/
+-	-$(CHMOD) 0600 $(TEXT_FILES) *.asm *.S *.zip *.cmake TestVectors/*.txt TestData/*.dat
+-	-$(CHMOD) 0700 $(EXEC_FILES) *.sh *.cmd TestScripts/*.sh TestScripts/*.pl TestScripts/*.cmd
+-	-$(CHMOD) 0700 *.cmd *.sh GNUmakefile GNUmakefile-cross TestScripts/*.sh TestScripts/*.pl
+-	-unix2dos --keepdate --quiet $(TEXT_FILES) *.asm *.cmd *.cmake TestScripts/*.pl TestScripts/*.cmd
+-	-dos2unix --keepdate --quiet GNUmakefile GNUmakefile-cross *.S *.sh TestScripts/*.sh
 -ifneq ($(IS_DARWIN),0)
 -	-xattr -c *
 -endif
@@ -649,10 +685,15 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
  # CRYPTOPP_CPU_SPEED in GHz
  CRYPTOPP_CPU_SPEED ?= 2.4
  .PHONY: bench benchmark benchmarks
-@@ -739,17 +243,6 @@ ifeq ($(wildcard GNUmakefile.deps),GNUmakefile.deps)
- -include GNUmakefile.deps
- endif # Dependencies
+@@ -738,22 +194,6 @@ else
+ 	touch adhoc.cpp
+ endif
  
+-# Include dependencies, if present. You must issue `make deps` to create them.
+-ifeq ($(wildcard GNUmakefile.deps),GNUmakefile.deps)
+--include GNUmakefile.deps
+-endif # Dependencies
+-
 -# MacPorts/GCC issue with init_priority. Apple/GCC and Fink/GCC are fine; limit to MacPorts.
 -#   Also see http://lists.macosforge.org/pipermail/macports-users/2015-September/039223.html
 -ifeq ($(GCC_COMPILER)$(MACPORTS_COMPILER),11)
@@ -667,32 +708,24 @@ $OpenBSD: patch-GNUmakefile,v 1.5 2016/09/13 13:50:59 dcoppa Exp $
  # Only use CRYPTOPP_DATA_DIR if its not set in CXXFLAGS
  ifeq ($(findstring -DCRYPTOPP_DATA_DIR,$(CXXFLAGS)),)
  ifneq ($(strip $(CRYPTOPP_DATA_DIR)),)
-@@ -778,34 +271,3 @@ endif
+@@ -768,26 +208,5 @@ test.o : test.cpp
+ endif
+ endif
  
+-%.dllonly.o : %.cpp
+-	$(CXX) $(CXXFLAGS) -DCRYPTOPP_DLL_ONLY -c $< -o $@
+-
+-%.import.o : %.cpp
+-	$(CXX) $(CXXFLAGS) -DCRYPTOPP_IMPORTS -c $< -o $@
+-
+-%.export.o : %.cpp
+-	$(CXX) $(CXXFLAGS) -DCRYPTOPP_EXPORTS -c $< -o $@
+-
+-%.bc : %.cpp
+-	$(CXX) $(CXXFLAGS) -c $<
+-
  %.o : %.cpp
  	$(CXX) $(CXXFLAGS) -c $<
--
--# Warn of potential configuration issues. They will go away after 5.6.4.
--UNALIGNED_ACCESS := $(shell $(EGREP) -c "^[[:space:]]*//[[:space:]]*\#[[:space:]]*define[[:space:]]*CRYPTOPP_NO_UNALIGNED_DATA_ACCESS" config.h)
--NO_INIT_PRIORITY := $(shell $(EGREP) -c "^[[:space:]]*//[[:space:]]*\#[[:space:]]*define[[:space:]]*CRYPTOPP_INIT_PRIORITY" config.h)
--COMPATIBILITY_562 := $(shell $(EGREP) -c "^[[:space:]]*\#[[:space:]]*define[[:space:]]*CRYPTOPP_MAINTAIN_BACKWARDS_COMPATIBILITY_562" config.h)
--.PHONY: config_warning
--config_warning:
--ifneq ($(UNALIGNED_ACCESS),0)
--	$(info WARNING: CRYPTOPP_NO_UNALIGNED_DATA_ACCESS is not defined in config.h.)
--endif
--ifneq ($(NO_INIT_PRIORITY),0)
--	$(info WARNING: CRYPTOPP_INIT_PRIORITY is not defined in config.h.)
--endif
--ifneq ($(COMPATIBILITY_562),0)
--	$(info WARNING: CRYPTOPP_MAINTAIN_BACKWARDS_COMPATIBILITY_562 is defined in config.h.)
--endif
--ifneq ($(UNALIGNED_ACCESS)$(NO_INIT_PRIORITY)$(COMPATIBILITY_562),000)
--	$(info WARNING: You should make these changes in config.h, and not CXXFLAGS.)
--	$(info WARNING: You can 'mv config.recommend config.h', but it breaks versioning.)
--	$(info WARNING: See http://cryptopp.com/wiki/config.h for more details.)
--	$(info )
--endif
 -
 -.PHONY: so_warning
 -so_warning:
