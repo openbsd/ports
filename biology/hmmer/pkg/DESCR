@@ -1,0 +1,12 @@
+HMMER is used for searching sequence databases for sequence homologs,
+and for making sequence alignments. It implements methods using
+probabilistic models called profile hidden Markov models (profile
+HMMs). HMMER is designed to detect remote homologs as sensitively as
+possible, relying on the strength of its underlying probability
+models.
+
+HMMER is often used together with a profile database, such as Pfam
+or many of the databases that participate in Interpro. But HMMER
+can also work with query sequences, not just profiles, just like
+BLAST. For example, you can search a protein query sequence against
+a database with phmmer, or do an iterative search with jackhmmer.

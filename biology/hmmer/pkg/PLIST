@@ -1,0 +1,72 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/22 11:05:51 jca Exp $
+@bin bin/alimask
+@bin bin/hmmalign
+@bin bin/hmmbuild
+@bin bin/hmmc2
+@bin bin/hmmconvert
+@bin bin/hmmemit
+@bin bin/hmmerfm-exactmatch
+@bin bin/hmmfetch
+@bin bin/hmmlogo
+@bin bin/hmmpgmd
+@bin bin/hmmpress
+@bin bin/hmmscan
+@bin bin/hmmsearch
+@bin bin/hmmsim
+@bin bin/hmmstat
+@bin bin/jackhmmer
+@bin bin/makehmmerdb
+@bin bin/nhmmer
+@bin bin/nhmmscan
+@bin bin/phmmer
+include/cachedb.h
+include/hmmer.h
+include/impl_sse.h
+include/p7_config.h
+include/p7_gbands.h
+include/p7_gmxb.h
+include/p7_gmxchk.h
+include/p7_hmmcache.h
+lib/libhmmer.a
+@man man/man1/alimask.1
+@man man/man1/hmmalign.1
+@man man/man1/hmmbuild.1
+@man man/man1/hmmconvert.1
+@man man/man1/hmmemit.1
+@man man/man1/hmmer.1
+@man man/man1/hmmfetch.1
+@man man/man1/hmmlogo.1
+@man man/man1/hmmpgmd.1
+@man man/man1/hmmpress.1
+@man man/man1/hmmscan.1
+@man man/man1/hmmsearch.1
+@man man/man1/hmmsim.1
+@man man/man1/hmmstat.1
+@man man/man1/jackhmmer.1
+@man man/man1/makehmmerdb.1
+@man man/man1/nhmmer.1
+@man man/man1/nhmmscan.1
+@man man/man1/phmmer.1
+share/doc/hmmer/
+share/doc/hmmer/Userguide.pdf
+share/examples/hmmer/
+share/examples/hmmer/7LESS_DROME
+share/examples/hmmer/HBB_HUMAN
+share/examples/hmmer/MADE1.hmm
+share/examples/hmmer/MADE1.out
+share/examples/hmmer/MADE1.sto
+share/examples/hmmer/Pkinase.hmm
+share/examples/hmmer/Pkinase.sto
+share/examples/hmmer/dna_target.fa
+share/examples/hmmer/fn3.hmm
+share/examples/hmmer/fn3.out
+share/examples/hmmer/fn3.sto
+share/examples/hmmer/globins4.hmm
+share/examples/hmmer/globins4.out
+share/examples/hmmer/globins4.sto
+share/examples/hmmer/globins45.fa
+share/examples/hmmer/minifam
+share/examples/hmmer/minifam.h3f
+share/examples/hmmer/minifam.h3i
+share/examples/hmmer/minifam.h3m
+share/examples/hmmer/minifam.h3p
