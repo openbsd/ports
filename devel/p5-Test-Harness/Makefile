@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/22 23:17:52 afresh1 Exp $
 
 COMMENT =	Run Perl standard test scripts with statistics
 
-DISTNAME =	Test-Harness-3.34
+DISTNAME =	Test-Harness-3.36
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
