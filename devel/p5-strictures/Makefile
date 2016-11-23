@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/23 21:53:34 bluhm Exp $
 
 COMMENT =	turn on strict and make most warnings fatal
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	strictures-2.000001
+DISTNAME =	strictures-2.000003
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
