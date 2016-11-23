@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.515 2016/11/13 15:52:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.516 2016/11/23 16:02:18 fcambus Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -43,6 +43,7 @@
      SUBDIR += fcbanner
      SUBDIR += filepp
      SUBDIR += fragistics
+     SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
