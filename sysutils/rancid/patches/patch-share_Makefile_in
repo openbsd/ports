@@ -1,0 +1,22 @@
+$OpenBSD: patch-share_Makefile_in,v 1.1 2016/11/23 12:27:47 sthen Exp $
+--- share/Makefile.in.orig	Tue Sep  6 17:12:39 2016
++++ share/Makefile.in	Wed Nov 16 04:10:43 2016
+@@ -71,7 +71,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/examples/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+@@ -276,8 +276,7 @@ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+ pkgdata_SCRIPTS = rancid-cvspurge rtrfilter downreport
+ dist_pkgdata_SCRIPTS = getipacctg
+-dist_pkgdata_DATA = README.misc cisco-load.exp cisco-reload.exp \
+-	index.html lgnotes.html
++dist_pkgdata_DATA = README.misc cisco-load.exp cisco-reload.exp
+ 
+ EXTRA_DIST = rancid-cvspurge.in rancid.spec rtrfilter.in downreport.in
+ CLEANFILES = rancid-cvspurge downreport

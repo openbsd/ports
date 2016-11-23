@@ -1,16 +1,16 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.4 2012/06/08 13:59:08 pea Exp $
---- etc/Makefile.in.orig	Thu Nov 17 22:10:11 2011
-+++ etc/Makefile.in	Tue May 29 13:19:25 2012
-@@ -22,7 +22,7 @@
- #  permission and modified beyond recognition.
- 
- VPATH = @srcdir@
+$OpenBSD: patch-etc_Makefile_in,v 1.5 2016/11/23 12:27:47 sthen Exp $
+--- etc/Makefile.in.orig	Tue Sep  6 17:12:39 2016
++++ etc/Makefile.in	Wed Nov 16 03:51:28 2016
+@@ -70,7 +70,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/examples/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -423,26 +423,10 @@ uninstall-am: uninstall-pkgdataDATA
+@@ -534,30 +534,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
  
  
  install-data-local: all
@@ -24,6 +24,9 @@ $OpenBSD: patch-etc_Makefile_in,v 1.4 2012/06/08 13:59:08 pea Exp $
 -	else \
 -	    $(INSTALL_DATA) rancid.conf.sample $(DESTDIR)$(sysconfdir)/rancid.conf; \
 -	fi; \
+-	if test ! -f $(DESTDIR)$(sysconfdir)/rancid.types.conf ; then \
+-	    $(INSTALL_DATA) rancid.types.conf $(DESTDIR)$(sysconfdir)/rancid.types.conf; \
+-	fi; \
 -	if test -f $(DESTDIR)$(sysconfdir)/lg.conf ; then \
 -	    echo ""; \
 -	    echo "WARNING: *** $(DESTDIR)$(sysconfdir)/lg.conf exists.  See "; \
@@ -33,11 +36,12 @@ $OpenBSD: patch-etc_Makefile_in,v 1.4 2012/06/08 13:59:08 pea Exp $
 -	else \
 -	    $(INSTALL_DATA) lg.conf.sample $(DESTDIR)$(sysconfdir)/lg.conf; \
 -	fi; \
--	fi
+-	fi; \
+-	$(INSTALL_DATA) rancid.types.base $(DESTDIR)$(sysconfdir)/rancid.types.base
 +	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
 +	$(INSTALL_DATA) ../cloginrc.sample $(DESTDIR)$(pkgdatadir)/cloginrc.sample; \
-+	$(INSTALL_DATA) rancid.conf.sample $(DESTDIR)$(pkgdatadir)/rancid.conf; \
-+	$(INSTALL_DATA) lg.conf.sample $(DESTDIR)$(pkgdatadir)/lg.conf; \
++	$(INSTALL_DATA) rancid.conf.sample $(DESTDIR)$(pkgdatadir)/rancid.conf.sample; \
++	$(INSTALL_DATA) rancid.types.base $(DESTDIR)$(pkgdatadir)/rancid.types.base
  
  lg.conf.sample: Makefile $(srcdir)/lg.conf.sample.in
  	rm -f lg.conf.sample lg.conf.sample.tmp; \

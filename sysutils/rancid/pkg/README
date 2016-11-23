@@ -1,22 +1,22 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2016/11/23 12:27:47 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-On OpenBSD, RANCID lives and works in /var/rancid, with user id _rancid.
+On OpenBSD, RANCID lives and works in ${LOCALSTATEDIR}, with user id _rancid.
 
 Quick Installation Guide (an example):
 
-1) Modify ${SYSCONFDIR}/rancid.conf.  The variable LIST_OF_GROUPS is a space 
-   delimited list of router "groups".
+1) Modify ${SYSCONFDIR}/rancid/rancid.conf.  The variable LIST_OF_GROUPS is
+   a space delimited list of router "groups".
    e.g.:
 	LIST_OF_GROUPS="backbone aggregation switches"
 
-2) Create /var/rancid/.cloginrc, with read/write permissions only for
+2) Create ${LOCALSTATEDIR}/.cloginrc, with read/write permissions only for
    the _rancid user, e.g. 0600 or 0640.
 
-   Review ${TRUEPREFIX}/share/examples/rancid/cloginrc.sample for examples 
+   Review ${TRUEPREFIX}/share/examples/rancid/cloginrc.sample for examples
    and a good starting point.  See also cloginrc(5).
 
    Test to make sure that you can login to every router.
@@ -35,7 +35,7 @@ Quick Installation Guide (an example):
    do it.  See also rancid-cvs(1).
 
 5) For each "group", modify the router.db file in the group directory.
-   The file is of the form "router:mfg:state", where "router" is
+   The file is of the form "router;mfg;state", where "router" is
    the name (we use FQDN) of the router, mfg is the manufacturer from
    the set of (cat5|cisco|juniper), and "state" is either up or down.
    Each router listed as "up" will have the configuration grabbed.
@@ -44,16 +44,16 @@ Quick Installation Guide (an example):
 
 6) For first-time users or new installations, run `rancid-run' (with no
    arguments) as the user _rancid and check the resulting log file(s)
-   (in /var/rancid/logs/*) for errors.  Repeat until there are no
+   (in ${LOCALSTATEDIR}/logs/*) for errors.  Repeat until there are no
    errors.
 
 7) Put `rancid-run' in _rancid's crontab to be called however often you
    want it to run for each group (rancid-run [<GROUP>]).  If you run it
    less often than once/hour, check the setting of OLDTIME in
-   ${SYSCONFDIR}/rancid.conf.
+   ${SYSCONFDIR}/rancid/rancid.conf.
 
    Example:
 	# run config differ hourly
 	1 * * * * ${TRUEPREFIX}/bin/rancid-run
 	# clean out config differ logs
-	50 23 * * * /usr/bin/find /var/rancid/logs -type f -mtime +2 -exec rm {} \;
+	50 23 * * * /usr/bin/find ${LOCALSTATEDIR}/logs -type f -mtime +2 -exec rm {} \;

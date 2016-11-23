@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_rancid_conf_sample_in,v 1.1 2016/11/23 12:27:47 sthen Exp $
+--- etc/rancid.conf.sample.in.orig	Tue Nov  8 10:22:04 2016
++++ etc/rancid.conf.sample.in	Tue Nov  8 10:22:57 2016
+@@ -32,7 +32,7 @@ TMPDIR=/tmp; export TMPDIR
+ # Be careful changing this, it affects CVSROOT below.  It should be a FQPN, not
+ # relative.
+ BASEDIR=@localstatedir@; export BASEDIR
+-PATH=@bindir@:@ENV_PATH@; export PATH
++PATH=/usr/bin:/bin:@prefix@/bin; export PATH
+ #
+ # Set to the name of the sendmail executable (or script) that will accept the
+ # -t option to take its rcpt and other headers from std-in and $MAILOPTS (see

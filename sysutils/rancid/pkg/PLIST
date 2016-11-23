@@ -1,19 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/08 13:59:08 pea Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/11/23 12:27:47 sthen Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
+bin/a10login
 bin/agmrancid
 bin/alogin
+bin/anlogin
 bin/arancid
-bin/arrancid
 bin/avologin
 bin/avorancid
 bin/blogin
 bin/brancid
+bin/brlogin
 bin/cat5rancid
 bin/clogin
+bin/complogin
 bin/control_rancid
 bin/cssrancid
+bin/dllogin
 bin/elogin
 bin/erancid
 bin/f10rancid
@@ -21,7 +25,6 @@ bin/f5rancid
 bin/flogin
 bin/fnlogin
 bin/fnrancid
-bin/francid
 bin/hlogin
 @bin bin/hpuifilter
 bin/hrancid
@@ -29,48 +32,74 @@ bin/htlogin
 bin/htrancid
 bin/jerancid
 bin/jlogin
-bin/jrancid
 @comment bin/lg.cgi
 @comment bin/lgform.cgi
 bin/mrancid
 bin/mrvlogin
-bin/mrvrancid
 bin/mtlogin
 bin/mtrancid
 bin/nlogin
 bin/nrancid
 bin/nslogin
 bin/nsrancid
-bin/nxrancid
-bin/par
-bin/prancid
+bin/panlogin
+@bin bin/par
+bin/plogin
 bin/rancid
 bin/rancid-cvs
 bin/rancid-fe
 bin/rancid-run
+bin/rblogin
 bin/rivlogin
 bin/rivrancid
 bin/rrancid
+bin/rtftpcopy
 bin/srancid
 bin/tlogin
-bin/tntlogin
-bin/tntrancid
 bin/trancid
-bin/xrancid
-bin/xrrancid
+bin/ulogin
+bin/wlogin
+bin/xilogin
+bin/xirancid
+bin/xlogin
 bin/zrancid
+lib/rancid/
+lib/rancid/acos.pm
+lib/rancid/aeos.pm
+lib/rancid/arbor.pm
+lib/rancid/bigip.pm
+lib/rancid/ciscowlc.pm
+lib/rancid/dell.pm
+lib/rancid/edgemax.pm
+lib/rancid/edgerouter.pm
+lib/rancid/eos.pm
+lib/rancid/exos.pm
+lib/rancid/foundry.pm
+lib/rancid/ios.pm
+lib/rancid/iosxr.pm
+lib/rancid/junos.pm
+lib/rancid/mrv.pm
+lib/rancid/nxos.pm
+lib/rancid/panos.pm
+lib/rancid/rancid.pm
+lib/rancid/rbt.pm
+lib/rancid/wavesvros.pm
 @man man/man1/agmrancid.1
 @man man/man1/alogin.1
+@man man/man1/anlogin.1
+@man man/man1/anrancid.1
 @man man/man1/arancid.1
-@man man/man1/arrancid.1
+@comment man/man1/arrancid.1
 @man man/man1/avologin.1
 @man man/man1/avorancid.1
 @man man/man1/blogin.1
 @man man/man1/brancid.1
 @man man/man1/cat5rancid.1
 @man man/man1/clogin.1
+@man man/man1/complogin.1
 @man man/man1/control_rancid.1
 @man man/man1/cssrancid.1
+@man man/man1/dllogin.1
 @man man/man1/elogin.1
 @man man/man1/erancid.1
 @man man/man1/f10rancid.1
@@ -78,27 +107,26 @@ bin/zrancid
 @man man/man1/flogin.1
 @man man/man1/fnlogin.1
 @man man/man1/fnrancid.1
-@man man/man1/francid.1
 @man man/man1/hlogin.1
 @man man/man1/hrancid.1
 @man man/man1/htlogin.1
 @man man/man1/htrancid.1
 @man man/man1/jerancid.1
 @man man/man1/jlogin.1
-@man man/man1/jrancid.1
-@man man/man1/lg_intro.1
+@comment man/man1/lg_intro.1
 @man man/man1/mrancid.1
 @man man/man1/mrvlogin.1
-@man man/man1/mrvrancid.1
 @man man/man1/mtlogin.1
 @man man/man1/mtrancid.1
 @man man/man1/nlogin.1
 @man man/man1/nrancid.1
 @man man/man1/nslogin.1
 @man man/man1/nsrancid.1
-@man man/man1/nxrancid.1
+@comment man/man1/nxrancid.1
+@man man/man1/panlogin.1
 @man man/man1/par.1
-@man man/man1/prancid.1
+@man man/man1/plogin.1
+@comment man/man1/prancid.1
 @man man/man1/rancid-cvs.1
 @man man/man1/rancid-run.1
 @man man/man1/rancid.1
@@ -108,15 +136,19 @@ bin/zrancid
 @man man/man1/rrancid.1
 @man man/man1/srancid.1
 @man man/man1/tlogin.1
-@man man/man1/tntlogin.1
-@man man/man1/tntrancid.1
 @man man/man1/trancid.1
-@man man/man1/xrancid.1
-@man man/man1/xrrancid.1
+@man man/man1/ulogin.1
+@man man/man1/wlogin.1
+@man man/man1/xilogin.1
+@man man/man1/xirancid.1
+@man man/man1/xlogin.1
 @man man/man1/zrancid.1
+@man man/man3/rancid.3
 @man man/man5/cloginrc.5
-@man man/man5/lg.conf.5
+@comment man/man5/lg.conf.5
 @man man/man5/rancid.conf.5
+@comment @man man/man5/rancid.types.base.5
+@man man/man5/rancid.types.conf.5
 @man man/man5/router.db.5
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rancid/
@@ -124,25 +156,22 @@ share/doc/rancid/CHANGES
 share/doc/rancid/COPYING
 share/doc/rancid/FAQ
 share/doc/rancid/README
-share/doc/rancid/README.lg
 share/doc/rancid/UPGRADING
 share/examples/rancid/
+@sample ${SYSCONFDIR}/rancid/
+share/examples/rancid/README.misc
+share/examples/rancid/cisco-load.exp
+share/examples/rancid/cisco-reload.exp
 share/examples/rancid/cloginrc.sample
-share/examples/rancid/lg.conf
-share/examples/rancid/lg.conf.sample
-share/examples/rancid/rancid.conf
-@sample ${SYSCONFDIR}/rancid.conf
+share/examples/rancid/downreport
+share/examples/rancid/getipacctg
+@comment share/examples/rancid/lg.conf.sample
+share/examples/rancid/rancid-cvspurge
 share/examples/rancid/rancid.conf.sample
-share/rancid/
-share/rancid/README.misc
-share/rancid/cisco-load.exp
-share/rancid/cisco-reload.exp
-share/rancid/downreport
-share/rancid/getipacctg
-share/rancid/index.html
-share/rancid/lgnotes.html
-share/rancid/rancid-cvspurge
-share/rancid/rtrfilter
+@sample ${SYSCONFDIR}/rancid/rancid.conf
+share/examples/rancid/rancid.types.base
+@sample ${SYSCONFDIR}/rancid/rancid.types.base
+share/examples/rancid/rtrfilter
 @mode 755
 @owner _rancid
 @group _rancid

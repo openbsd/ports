@@ -1,0 +1,7 @@
+If you are upgrading from rancid-<3, please note that router.db field
+separator has been changed from ':' to ';' to avoid conflict with IPv6
+addresses. Replace the field separator in router.db files before running
+rancid.
+
+The configuration files location is changed from ${SYSCONFDIR} to
+${SYSCONFDIR}/rancid.
