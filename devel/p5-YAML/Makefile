@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/11/23 00:47:06 afresh1 Exp $
 
 COMMENT =	YAML Ain't Markup Language
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	YAML-1.15
+DISTNAME =	YAML-1.19
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
