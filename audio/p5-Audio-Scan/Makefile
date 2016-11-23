@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/11/23 14:20:07 sthen Exp $
 
 COMMENT=	fast audio metadata and tag reader for Perl
 
-DISTNAME=	Audio-Scan-0.93
+DISTNAME=	Audio-Scan-0.96
 CATEGORIES=	audio
-REVISION=	1
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
