@@ -1,6 +1,6 @@
---- src/utils/lib/options.ml4.orig	Thu May 19 13:07:14 2016
-+++ src/utils/lib/options.ml4	Thu May 19 13:09:55 2016
-@@ -330,45 +330,6 @@
+--- src/utils/lib/options.ml4.orig	Wed Nov 23 14:46:55 2016
++++ src/utils/lib/options.ml4	Wed Nov 23 14:46:57 2016
+@@ -330,45 +330,6 @@ the last defined one ("defined" in the order of the pr
  
  let exit_exn = Exit
  
@@ -46,7 +46,7 @@
  let safe_string s =
    if s = "" then "\"\""
    else
-@@ -388,7 +349,7 @@
+@@ -388,7 +349,7 @@ let safe_string s =
              s
            else raise exit_exn
      with

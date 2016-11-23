@@ -1,5 +1,5 @@
---- src/utils/cdk/gdstubs.c.orig	Wed May 18 21:11:18 2016
-+++ src/utils/cdk/gdstubs.c	Wed May 18 21:11:50 2016
+--- src/utils/cdk/gdstubs.c.orig	Wed Nov 23 14:46:54 2016
++++ src/utils/cdk/gdstubs.c	Wed Nov 23 14:46:57 2016
 @@ -23,6 +23,7 @@
  #include "../../../config/config.h"
  
@@ -8,7 +8,7 @@
  #include <stdlib.h>
  
  #include <caml/mlvalues.h>
-@@ -489,7 +490,7 @@
+@@ -489,7 +490,7 @@ int ml_image_pngversion(void)
    CAMLlocal1 (v);
  #ifdef HAVE_PNGVERSION
    #include <png.h>
