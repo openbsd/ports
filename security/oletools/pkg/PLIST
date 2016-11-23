@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/14 06:13:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/23 19:40:38 rpointel Exp $
 bin/ezhexviewer
 bin/mraptor
 bin/olebrowse
@@ -11,7 +11,12 @@ bin/olevba
 bin/pyxswf
 bin/rtfobj
 lib/python${MODPY_VERSION}/site-packages/oletools/
-lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/README.html
 lib/python${MODPY_VERSION}/site-packages/oletools/README.rst
@@ -56,10 +61,15 @@ lib/python${MODPY_VERSION}/site-packages/oletools/doc/pyxswf.html
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/pyxswf.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/rtfobj.html
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/rtfobj.md
+lib/python${MODPY_VERSION}/site-packages/oletools/doc/rtfobj1.png
 lib/python${MODPY_VERSION}/site-packages/oletools/ezhexviewer.py
 lib/python${MODPY_VERSION}/site-packages/oletools/ezhexviewer.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/mraptor.py
 lib/python${MODPY_VERSION}/site-packages/oletools/mraptor.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/mraptor3.py
+lib/python${MODPY_VERSION}/site-packages/oletools/mraptor3.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/mraptor_milter.py
+lib/python${MODPY_VERSION}/site-packages/oletools/mraptor_milter.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/olebrowse.py
 lib/python${MODPY_VERSION}/site-packages/oletools/olebrowse.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/oledir.py
@@ -76,6 +86,10 @@ lib/python${MODPY_VERSION}/site-packages/oletools/oletimes.py
 lib/python${MODPY_VERSION}/site-packages/oletools/oletimes.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/olevba.py
 lib/python${MODPY_VERSION}/site-packages/oletools/olevba.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/olevba3.py
+lib/python${MODPY_VERSION}/site-packages/oletools/olevba3.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/ppt_parser.py
+lib/python${MODPY_VERSION}/site-packages/oletools/ppt_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/pyxswf.py
 lib/python${MODPY_VERSION}/site-packages/oletools/pyxswf.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/rtfobj.py
@@ -93,8 +107,22 @@ lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/__init__.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/colorclass.py
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/colorclass.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/__main__.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/codes.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/codes.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/color.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/color.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/core.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/core.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/parse.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/parse.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/search.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/search.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/toggles.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/toggles.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/windows.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/colorclass/windows.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/easygui/
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/easygui/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/easygui/__init__.py
@@ -107,8 +135,8 @@ lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/__init__.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile.pyc
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile2.py
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile2.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile0.py
+lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/olefile/olefile0.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/CHANGELOG
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/COPYING
