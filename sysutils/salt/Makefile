@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.97 2016/11/02 17:39:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2016/11/23 09:41:20 ajacoutot Exp $
 
 # optional dependencies
-# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
+# https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
 # libvirt-python
 # py-GitPython
 # py-django
@@ -15,7 +15,7 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	2016.3.3
+MODPY_EGG_VERSION =	2016.11.0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils net devel
@@ -60,8 +60,8 @@ RUN_DEPENDS +=		devel/py-progressbar
 # salt/modules/x509.py
 RUN_DEPENDS +=		security/py-M2Crypto
 
-# for tests
-TEST_IS_INTERACTIVE =	Yes # requires bumped open files
+# max openfiles, soft: 3072, hard: 4096; DBus system session running...
+TEST_IS_INTERACTIVE =	Yes
 PORTHOME =		${WRKDIST}
 TEST_DEPENDS =		databases/py-mysql \
 			devel/git \
@@ -72,20 +72,17 @@ TEST_DEPENDS =		databases/py-mysql \
 			devel/subversion \
 			net/py-libcloud \
 			net/rabbitmq \
-			sysutils/salt-testing
+			sysutils/salt-testing \
+			www/py-CherryPy
 
 pre-configure:
 	sed -i 's,share/man,man,g' ${WRKSRC}/setup.py
 	sed -i 's,^#user: root,user: _salt,' ${WRKSRC}/conf/{master,proxy}
-	sed -i 's,^REQUIRED_OPEN_FILES.*,REQUIRED_OPEN_FILES = 512,' \
-		${WRKSRC}/tests/runtests.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	cp -R ${WRKSRC}/conf ${PREFIX}/share/examples/salt
 
-# FAILED (total=817, skipped=99, passed=684, failures=26, errors=8)
-# https://github.com/saltstack/salt/issues/15864
 do-test:
 	cd ${WRKSRC} && \
 		${MODPY_BIN} tests/runtests.py -v
