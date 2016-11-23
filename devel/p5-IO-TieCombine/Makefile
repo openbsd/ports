@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/23 21:27:12 bluhm Exp $
 
 COMMENT =	produce tied (and other) separate but combined variables
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	IO-TieCombine-1.004
+DISTNAME =	IO-TieCombine-1.005
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
