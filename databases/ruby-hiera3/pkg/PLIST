@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/21 10:02:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/11/23 15:07:10 ajacoutot Exp $
 @conflict ruby22-hiera-<3.0.0
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -66,6 +66,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/version_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 ${MODRUBY_RELEXAMPLEDIR}-hiera/
+@sample ${SYSCONFDIR}/puppetlabs/
+@sample ${SYSCONFDIR}/puppetlabs/code/
 @sample ${SYSCONFDIR}/puppetlabs/code/hieradata/
 ${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
 @sample ${SYSCONFDIR}/puppetlabs/code/hiera.yaml
