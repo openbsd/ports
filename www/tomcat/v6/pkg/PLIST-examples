@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.15 2016/10/21 12:53:03 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.16 2016/11/23 09:58:32 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -339,6 +339,8 @@ webapps/docs/api/org/apache/catalina/mbeans/DefaultContextMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiServerBindSocketFactory.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.SslRmiServerBindSocketFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
