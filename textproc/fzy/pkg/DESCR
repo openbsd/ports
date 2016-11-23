@@ -1,0 +1,7 @@
+fzy is a fast, simple fuzzy text selector for the terminal with an advanced
+scoring algorithm.
+
+Most other fuzzy matchers sort based on the length of a match. fzy tries
+to find the result the user intended. It does this by favouring matches on
+consecutive letters and starts of words. This allows matching using acronyms
+or different parts of the path.

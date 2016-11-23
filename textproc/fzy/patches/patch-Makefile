@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/11/23 15:59:36 fcambus Exp $
+--- Makefile.orig	Thu Aug  4 08:54:51 2016
++++ Makefile	Wed Nov 23 16:26:17 2016
+@@ -1,7 +1,7 @@
+ VERSION=0.7
+ 
+ CPPFLAGS=-DVERSION=\"${VERSION}\" -D_GNU_SOURCE
+-CFLAGS+=-Wall -Wextra -g -std=c99 -O3 -pedantic
++CFLAGS+=-Wall -Wextra -std=c99 -pedantic
+ PREFIX?=/usr/local
+ MANDIR?=$(PREFIX)/share/man
+ BINDIR?=$(PREFIX)/bin
