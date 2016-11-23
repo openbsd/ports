@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2016/09/26 10:48:39 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2016/11/23 16:40:33 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -25,6 +25,8 @@ share/vim/${P}/autoload/ada.vim
 share/vim/${P}/autoload/adacomplete.vim
 share/vim/${P}/autoload/ccomplete.vim
 share/vim/${P}/autoload/clojurecomplete.vim
+share/vim/${P}/autoload/context.vim
+share/vim/${P}/autoload/contextcomplete.vim
 share/vim/${P}/autoload/csscomplete.vim
 share/vim/${P}/autoload/decada.vim
 share/vim/${P}/autoload/getscript.vim
@@ -90,7 +92,9 @@ share/vim/${P}/compiler/ant.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
 share/vim/${P}/compiler/checkstyle.vim
+share/vim/${P}/compiler/context.vim
 share/vim/${P}/compiler/cs.vim
+share/vim/${P}/compiler/csslint.vim
 share/vim/${P}/compiler/cucumber.vim
 share/vim/${P}/compiler/decada.vim
 share/vim/${P}/compiler/dot.vim
@@ -129,6 +133,7 @@ share/vim/${P}/compiler/onsgmls.vim
 share/vim/${P}/compiler/pbx.vim
 share/vim/${P}/compiler/perl.vim
 share/vim/${P}/compiler/php.vim
+share/vim/${P}/compiler/pylint.vim
 share/vim/${P}/compiler/pyunit.vim
 share/vim/${P}/compiler/rake.vim
 share/vim/${P}/compiler/rspec.vim
@@ -515,6 +520,7 @@ share/vim/${P}/indent/clojure.vim
 share/vim/${P}/indent/cmake.vim
 share/vim/${P}/indent/cobol.vim
 share/vim/${P}/indent/config.vim
+share/vim/${P}/indent/context.vim
 share/vim/${P}/indent/cpp.vim
 share/vim/${P}/indent/cs.vim
 share/vim/${P}/indent/css.vim
@@ -559,6 +565,7 @@ share/vim/${P}/indent/lua.vim
 share/vim/${P}/indent/mail.vim
 share/vim/${P}/indent/make.vim
 share/vim/${P}/indent/matlab.vim
+share/vim/${P}/indent/mf.vim
 share/vim/${P}/indent/mma.vim
 share/vim/${P}/indent/mp.vim
 share/vim/${P}/indent/objc.vim
@@ -650,6 +657,7 @@ share/vim/${P}/keymap/hebrewp_cp1255.vim
 share/vim/${P}/keymap/hebrewp_iso-8859-8.vim
 share/vim/${P}/keymap/hebrewp_utf-8.vim
 share/vim/${P}/keymap/kana.vim
+share/vim/${P}/keymap/kazakh-jcuken.vim
 share/vim/${P}/keymap/lithuanian-baltic.vim
 share/vim/${P}/keymap/magyar_utf-8.vim
 share/vim/${P}/keymap/mongolian_utf-8.vim

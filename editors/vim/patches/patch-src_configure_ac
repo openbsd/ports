@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_configure_in,v 1.4 2016/08/10 15:54:29 sthen Exp $
---- src/configure.in.orig	Sun Aug  7 20:20:50 2016
-+++ src/configure.in	Sun Aug  7 23:26:37 2016
+$OpenBSD: patch-src_configure_ac,v 1.1 2016/11/23 16:40:33 sthen Exp $
+--- src/configure.ac.orig	Mon Nov 21 19:55:58 2016
++++ src/configure.ac	Wed Nov 23 16:24:16 2016
 @@ -564,10 +564,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
