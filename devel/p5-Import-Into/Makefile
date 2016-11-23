@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/23 22:02:15 bluhm Exp $
 
 COMMENT =	import packages into other packages
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Import-Into-1.002004
+DISTNAME =	Import-Into-1.002005
 CATEGORIES =	devel
 
-CPAN_AUTHOR =	ETHER
+CPAN_AUTHOR =	HAARG
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
+
+RUN_DEPENDS =	devel/p5-Module-Runtime
 
 .include <bsd.port.mk>
