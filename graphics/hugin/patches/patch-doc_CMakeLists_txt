@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2011/05/30 09:06:28 sthen Exp $
---- doc/CMakeLists.txt.orig	Mon Feb 28 13:30:22 2011
-+++ doc/CMakeLists.txt	Mon Feb 28 13:35:53 2011
-@@ -10,7 +10,6 @@ ELSE (WIN32)
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.5 2016/11/24 08:20:38 kirby Exp $
+--- doc/CMakeLists.txt.orig	Sat Jan 23 12:46:46 2016
++++ doc/CMakeLists.txt	Fri May 20 09:51:20 2016
+@@ -9,7 +9,6 @@ ELSE (WIN32)
  # For all other systems, generate and install the man pages
  
  FIND_PROGRAM(POD2MAN pod2man)
@@ -9,7 +9,7 @@ $OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2011/05/30 09:06:28 sthen Exp $
  
  MACRO(install_man manfile section)
    INSTALL(FILES ${manfile} DESTINATION ${MANDIR}/man${section})
-@@ -18,22 +17,21 @@ ENDMACRO(install_man)
+@@ -17,22 +16,21 @@ ENDMACRO(install_man)
  
  MACRO(do_pod podfile manfile section)
    IF(EXISTS "${CMAKE_SOURCE_DIR}/doc/${podfile}")

@@ -1,13 +1,12 @@
-$OpenBSD: patch-src_foreign_CMakeLists_txt,v 1.2 2015/10/10 08:44:39 kirby Exp $
---- src/foreign/CMakeLists.txt.orig	Wed Oct  8 22:21:49 2014
-+++ src/foreign/CMakeLists.txt	Sun Aug 30 13:53:02 2015
-@@ -2,6 +2,9 @@
- add_subdirectory(vigra)
+$OpenBSD: patch-src_foreign_CMakeLists_txt,v 1.3 2016/11/24 08:20:38 kirby Exp $
+--- src/foreign/CMakeLists.txt.orig	Fri Jul 17 19:43:58 2015
++++ src/foreign/CMakeLists.txt	Sat Oct 10 13:48:35 2015
+@@ -1,5 +1,8 @@
+ 
  add_subdirectory(levmar)
- add_subdirectory(lensdb)
 +IF(NOT FLANN_FOUND)
 +add_subdirectory(flann)
 +ENDIF(NOT FLANN_FOUND)
  
- IF(NOT ZTHREAD_FOUND)
- add_subdirectory(zthread/src)
+ IF (WIN32 AND NOT MINGW)
+   add_subdirectory(getopt)

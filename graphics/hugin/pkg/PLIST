@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/10/10 08:44:39 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/11/24 08:20:38 kirby Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
@@ -11,14 +11,15 @@
 @bin bin/fulla
 @bin bin/geocpset
 @bin bin/hugin
+@bin bin/hugin_executor
 @bin bin/hugin_hdrmerge
+@bin bin/hugin_lensdb
 @bin bin/hugin_stitch_project
 @bin bin/icpfind
 @bin bin/linefind
 @bin bin/nona
 @bin bin/pano_modify
 @bin bin/pano_trafo
-@bin bin/pto2mk
 @bin bin/pto_gen
 @bin bin/pto_lensstack
 @bin bin/pto_mask
@@ -27,6 +28,7 @@
 @bin bin/pto_template
 @bin bin/pto_var
 @bin bin/tca_correct
+@bin bin/verdandi
 @bin bin/vig_optimize
 lib/hugin/
 @lib lib/hugin/libceleste.so.${LIBceleste_VERSION}
@@ -35,10 +37,8 @@ lib/hugin/
 @lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
 @lib lib/hugin/libhuginlines.so.${LIBhuginlines_VERSION}
-@lib lib/hugin/libhuginvigraimpex.so.${LIBhuginvigraimpex_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
-@lib lib/hugin/libmakefilelib.so.${LIBmakefilelib_VERSION}
 lib/python${MODPY_VERSION}/site-packages/_hsi.so
 lib/python${MODPY_VERSION}/site-packages/hpi.py
 lib/python${MODPY_VERSION}/site-packages/hpi.pyc
@@ -56,14 +56,15 @@ lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/fulla.1
 @man man/man1/geocpset.1
 @man man/man1/hugin.1
+@man man/man1/hugin_executor.1
 @man man/man1/hugin_hdrmerge.1
+@man man/man1/hugin_lensdb.1
 @man man/man1/hugin_stitch_project.1
 @man man/man1/icpfind.1
 @man man/man1/linefind.1
 @man man/man1/nona.1
 @man man/man1/pano_modify.1
 @man man/man1/pano_trafo.1
-@man man/man1/pto2mk.1
 @man man/man1/pto_gen.1
 @man man/man1/pto_lensstack.1
 @man man/man1/pto_mask.1
@@ -72,6 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/pto_template.1
 @man man/man1/pto_var.1
 @man man/man1/tca_correct.1
+@man man/man1/verdandi.1
 @man man/man1/vig_optimize.1
 share/appdata/
 share/appdata/PTBatcherGUI.appdata.xml
@@ -82,11 +84,15 @@ share/applications/calibrate_lens_gui.desktop
 share/applications/hugin.desktop
 share/applications/pto_gen.desktop
 share/hugin/
-share/hugin/Makefile.equirect.mk
 share/hugin/data/
+share/hugin/data/blended_stacks.executor
 share/hugin/data/celeste.model
 share/hugin/data/default.setting
+share/hugin/data/fused_layers.executor
+share/hugin/data/hdr_pano.executor
 share/hugin/data/hugin_exiftool_copy.arg
+share/hugin/data/normal_enblend.executor
+share/hugin/data/normal_smartblend.executor
 share/hugin/data/plugins/
 share/hugin/data/plugins-templates/
 share/hugin/data/plugins-templates/dual_use.py
@@ -100,6 +106,7 @@ share/hugin/data/plugins/top_five.py
 share/hugin/data/plugins/top_five.pyc
 share/hugin/data/plugins/woa.py
 share/hugin/data/plugins/woa.pyc
+share/hugin/data/zeronoise.executor
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
 share/hugin/xrc/batch_frame.xrc
@@ -109,7 +116,7 @@ share/hugin/xrc/cp_editor_panel.xrc
 share/hugin/xrc/cp_list_frame.xrc
 share/hugin/xrc/cpdetector_dialog.xrc
 share/hugin/xrc/data/
-share/hugin/xrc/data/COPYING
+share/hugin/xrc/data/COPYING.txt
 share/hugin/xrc/data/about.htm
 share/hugin/xrc/data/add_project.png
 share/hugin/xrc/data/add_projects.png
@@ -350,12 +357,14 @@ share/hugin/xrc/data/help_en_EN/Hugin_Stitcher_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Trackers.html
 share/hugin/xrc/data/help_en_EN/Hugin_center_pano.png
 share/hugin/xrc/data/help_en_EN/Hugin_edit_add.png
+share/hugin/xrc/data/help_en_EN/Hugin_executor.html
 share/hugin/xrc/data/help_en_EN/Hugin_filenew.png
 share/hugin/xrc/data/help_en_EN/Hugin_fileopen.png
 share/hugin/xrc/data/help_en_EN/Hugin_filesave.png
 share/hugin/xrc/data/help_en_EN/Hugin_filesaveas.png
 share/hugin/xrc/data/help_en_EN/Hugin_fit_pano.png
 share/hugin/xrc/data/help_en_EN/Hugin_info.png
+share/hugin/xrc/data/help_en_EN/Hugin_lensdb.html
 share/hugin/xrc/data/help_en_EN/Hugin_list.png
 share/hugin/xrc/data/help_en_EN/Hugin_move_drag_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_optimize.png
@@ -424,7 +433,6 @@ share/hugin/xrc/data/help_en_EN/Pincushion_distortion.html
 share/hugin/xrc/data/help_en_EN/Pitch.html
 share/hugin/xrc/data/help_en_EN/Portrait.html
 share/hugin/xrc/data/help_en_EN/Projections.html
-share/hugin/xrc/data/help_en_EN/Pto2mk.html
 share/hugin/xrc/data/help_en_EN/Pto_gen.html
 share/hugin/xrc/data/help_en_EN/Pto_lensstack.html
 share/hugin/xrc/data/help_en_EN/Pto_mask.html
@@ -453,6 +461,7 @@ share/hugin/xrc/data/help_en_EN/Tca_correct.html
 share/hugin/xrc/data/help_en_EN/The_General_Panini_Projection.html
 share/hugin/xrc/data/help_en_EN/Tone_mapping.html
 share/hugin/xrc/data/help_en_EN/Using_Celeste_with_hugin.html
+share/hugin/xrc/data/help_en_EN/Verdandi.html
 share/hugin/xrc/data/help_en_EN/Vertical-fisheye.jpg
 share/hugin/xrc/data/help_en_EN/Vertical-stereographic.jpg
 share/hugin/xrc/data/help_en_EN/Vertical_control_points.html
@@ -612,9 +621,6 @@ share/hugin/xrc/data/intro.htm
 share/hugin/xrc/data/keyboard_pl.html
 share/hugin/xrc/data/list.png
 share/hugin/xrc/data/logo.png
-share/hugin/xrc/data/nona_enblend.mk
-share/hugin/xrc/data/nona_multilayer.mk
-share/hugin/xrc/data/nona_smartblend.mk
 share/hugin/xrc/data/optimize.png
 share/hugin/xrc/data/output_blended_fused.png
 share/hugin/xrc/data/output_fused_blended.png
@@ -625,6 +631,7 @@ share/hugin/xrc/data/photometric.png
 share/hugin/xrc/data/preview.png
 share/hugin/xrc/data/preview_auto_update.png
 share/hugin/xrc/data/preview_control_point_tool.png
+share/hugin/xrc/data/preview_control_point_tool_small.png
 share/hugin/xrc/data/preview_layout.png
 share/hugin/xrc/data/preview_layout_small.png
 share/hugin/xrc/data/preview_num_transform.png
@@ -634,8 +641,10 @@ share/hugin/xrc/data/preview_white_balance.png
 share/hugin/xrc/data/preview_white_balance_small.png
 share/hugin/xrc/data/ptbatcher.ico
 share/hugin/xrc/data/ptbatcher.png
-share/hugin/xrc/data/ptmender_enblend.mk
-share/hugin/xrc/data/ptmender_smartblend.mk
+share/hugin/xrc/data/ptbatcher_pause.ico
+share/hugin/xrc/data/ptbatcher_pause.png
+share/hugin/xrc/data/ptbatcher_running.ico
+share/hugin/xrc/data/ptbatcher_running.png
 share/hugin/xrc/data/pto_icon.ico
 share/hugin/xrc/data/pto_icon.png
 share/hugin/xrc/data/redo.png
@@ -668,6 +677,12 @@ share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
+share/locale/ca_ES/
+share/locale/ca_ES/LC_MESSAGES/
+share/locale/ca_ES/LC_MESSAGES/hugin.mo
+share/locale/ca_ES@valencia/
+share/locale/ca_ES@valencia/LC_MESSAGES/
+share/locale/ca_ES@valencia/LC_MESSAGES/hugin.mo
 share/locale/cs_CZ/
 share/locale/cs_CZ/LC_MESSAGES/
 share/locale/cs_CZ/LC_MESSAGES/hugin.mo

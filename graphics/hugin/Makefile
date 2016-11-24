@@ -1,74 +1,66 @@
-# $OpenBSD: Makefile,v 1.47 2016/07/06 21:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/11/24 08:20:38 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2014.0.0
-REVISION =	0
+DISTNAME =	hugin-2016.2.0
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
 
-SHARED_LIBS +=  celeste                   2.0
-SHARED_LIBS +=  flann_cpp                 2.0
-SHARED_LIBS +=  huginbase                 3.0
-SHARED_LIBS +=  huginbasewx               2.0
-SHARED_LIBS +=  huginlines                2.0
-SHARED_LIBS +=  huginvigraimpex           2.0
-SHARED_LIBS +=  icpfindlib                2.0
-SHARED_LIBS +=  localfeatures             2.0
-SHARED_LIBS +=  makefilelib               2.0
-SHARED_LIBS +=  hugin_python_interface    1.0
+SHARED_LIBS +=  celeste                   3.0
+SHARED_LIBS +=  flann_cpp                 3.0
+SHARED_LIBS +=  huginbase                 4.0
+SHARED_LIBS +=  huginbasewx               3.0
+SHARED_LIBS +=  huginlines                3.0
+SHARED_LIBS +=  icpfindlib                3.0
+SHARED_LIBS +=  localfeatures             3.0
+SHARED_LIBS +=  hugin_python_interface    2.0
 
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	http://hugin.sourceforge.net/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
-WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread Xi Xmu
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_chrono-mt
-WANTLIB += boost_iostreams-mt boost_regex-mt boost_atomic-mt
-WANTLIB += boost_system-mt boost_thread-mt c exiv2 glut>=4.1
-WANTLIB += jpeg lensfun m pano13>=3.0 png pthread stdc++ tiff
-WANTLIB += wx_base>=3 wx_base_net>=3 wx_base_xml>=3
-WANTLIB += wx_gtk2_adv>=3 wx_gtk2_aui>=3 wx_gtk2_core>=3
-WANTLIB += wx_gtk2_gl>=3 wx_gtk2_html>=3 wx_gtk2_xrc>=3 z
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread X11
+WANTLIB += boost_filesystem-mt boost_system-mt c exiv2 fftw3
+WANTLIB += iconv intl jpeg lcms2  lensfun m pano13>=3.0
+WANTLIB += png pthread sqlite3 tiff vigraimpex wx_base>=3
+WANTLIB += wx_base_net>=3 wx_base_xml>=3 wx_gtk2_adv>=3
+WANTLIB += wx_gtk2_aui>=3 wx_gtk2_core>=3 wx_gtk2_gl>=3
+WANTLIB += wx_gtk2_qa wx_gtk2_html>=3 wx_gtk2_xrc>=3 z ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
-BUILD_DEPENDS =		devel/swig>=2 \
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/swig>=2 \
 			graphics/p5-Image-ExifTool
 RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/enblend-enfuse \
 			graphics/p5-Image-ExifTool \
 			misc/shared-mime-info \
-			x11/gtk+3,-guic \
-			devel/gmake # yes, really a RUN_DEPENDS
+			x11/gtk+3,-guic
 RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
 LIB_DEPENDS =		devel/boost>=1.58 \
 			graphics/exiv2>=0.12 \
 			graphics/glew \
-			graphics/freeglut \
-			graphics/ilmbase \
-			graphics/jpeg \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
-			graphics/openexr \
-			graphics/png \
-			graphics/tiff \
+			graphics/vigra \
 			x11/wxWidgets>=2.8.12p7
 
-MODULES =		devel/cmake devel/gettext lang/python
+MODULES =		devel/cmake lang/python gcc4
+MODGCC4_ARCHS = 	*
+MODGCC4_LANGS += 	c++
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DBUILD_HSI=ON
 NO_TEST =		Yes
