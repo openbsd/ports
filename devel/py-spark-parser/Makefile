@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/02 10:41:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/24 15:48:46 shadchin Exp $
 
 COMMENT =		early-algorithm context-free grammar parser
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		spark_parser-${MODPY_EGG_VERSION}
 PKGNAME =		py-spark-parser-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
