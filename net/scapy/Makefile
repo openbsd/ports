@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2016/11/14 20:04:56 danj Exp $
+# $OpenBSD: Makefile,v 1.23 2016/11/24 12:40:49 bluhm Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION=	2.3.3
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES=		net
 
@@ -41,7 +42,8 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
-	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 ${PREFIX}/share/examples/scapy/ethertypes
+	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 \
+		${PREFIX}/share/examples/scapy/ethertypes
 
 # some tests require root.
 do-test:
