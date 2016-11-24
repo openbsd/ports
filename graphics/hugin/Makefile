@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/11/24 08:20:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.49 2016/11/24 15:16:04 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
 WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread X11
 WANTLIB += boost_filesystem-mt boost_system-mt c exiv2 fftw3
-WANTLIB += iconv intl jpeg lcms2  lensfun m pano13>=3.0
+WANTLIB += jpeg lcms2  lensfun m pano13>=3.0
 WANTLIB += png pthread sqlite3 tiff vigraimpex wx_base>=3
 WANTLIB += wx_base_net>=3 wx_base_xml>=3 wx_gtk2_adv>=3
 WANTLIB += wx_gtk2_aui>=3 wx_gtk2_core>=3 wx_gtk2_gl>=3
@@ -53,6 +53,7 @@ RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 LIB_DEPENDS =		devel/boost>=1.58 \
 			graphics/exiv2>=0.12 \
 			graphics/glew \
+			graphics/lcms2 \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
 			graphics/vigra \
