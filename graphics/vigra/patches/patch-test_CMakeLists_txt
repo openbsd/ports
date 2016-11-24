@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_CMakeLists_txt,v 1.1.1.1 2016/11/24 08:10:01 kirby Exp $
+--- test/CMakeLists.txt.orig	Sun Nov 20 18:45:49 2016
++++ test/CMakeLists.txt	Sun Nov 20 18:46:20 2016
+@@ -3,7 +3,7 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/includ
+ INCLUDE(VigraAddTest)
+ 
+ ADD_SUBDIRECTORY(adjacency_list_graph)
+-ADD_SUBDIRECTORY(blockwisealgorithms)
++#ADD_SUBDIRECTORY(blockwisealgorithms)
+ ADD_SUBDIRECTORY(classifier)
+ ADD_SUBDIRECTORY(colorspaces)
+ ADD_SUBDIRECTORY(convolution)
+@@ -41,7 +41,7 @@ ADD_SUBDIRECTORY(sifImport)
+ ADD_SUBDIRECTORY(simpleanalysis)
+ ADD_SUBDIRECTORY(slic2d)
+ ADD_SUBDIRECTORY(tensorimaging)
+-ADD_SUBDIRECTORY(threadpool)
++#ADD_SUBDIRECTORY(threadpool)
+ ADD_SUBDIRECTORY(unsupervised)
+ ADD_SUBDIRECTORY(utilities)
+ ADD_SUBDIRECTORY(volumelabeling)

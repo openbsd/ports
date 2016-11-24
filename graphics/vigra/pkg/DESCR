@@ -1,0 +1,6 @@
+VIGRA stands for "Vision with Generic Algorithms". It's an image
+processing and analysis library that puts its main emphasis on
+customizable algorithms and data structures. VIGRA is especially strong
+for multi-dimensional images, because many algorithms (e.g. filters,
+feature computation, superpixels) are implemented for arbitrary high
+dimensions.
