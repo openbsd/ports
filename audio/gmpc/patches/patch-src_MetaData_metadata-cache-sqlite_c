@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_MetaData_metadata-cache-sqlite_c,v 1.1 2016/11/24 11:45:17 landry Exp $
+
+Fix inverted loginc
+vfprintf %s NULL in "No entry found for: %i-%s-%s"
+vfprintf %s NULL in "Empty entry found for: %i-%s-%s"
+--- src/MetaData/metadata-cache-sqlite.c.orig	Wed Aug 17 05:09:55 2011
++++ src/MetaData/metadata-cache-sqlite.c	Thu Nov 24 12:32:35 2016
+@@ -484,7 +484,7 @@ MetaDataResult meta_data_sqlite_get_from_cache(mpd_Son
+ 		(*met)->plugin_name = "Metadata Cache";
+ 		(*met)->content_type = META_DATA_CONTENT_EMPTY;
+ 
+-		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "No entry found for: %i-%s-%s", type, key_a, (key_b)?"(null)":key_b);
++		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "No entry found for: %i-%s-%s", type, key_a, (!key_b)?"(null)":key_b);
+ 
+ 		g_timer_stop(t);
+ 		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_INFO,"get cache took: %.6f", g_timer_elapsed(t, NULL));
+@@ -493,7 +493,7 @@ MetaDataResult meta_data_sqlite_get_from_cache(mpd_Son
+ 	}
+ 	if(meta_data_is_empty(*met))
+ 	{
+-		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Empty entry found for: %i-%s-%s", type, key_a,  (key_b)?"(null)":key_b);
++		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Empty entry found for: %i-%s-%s", type, key_a,  (!key_b)?"(null)":key_b);
+ 
+ 		g_timer_stop(t);
+ 		g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_INFO,"get cache took: %.6f", g_timer_elapsed(t, NULL));
+@@ -511,7 +511,7 @@ MetaDataResult meta_data_sqlite_get_from_cache(mpd_Son
+ 			(*met)->content = NULL;
+ 			(*met)->size = 0;
+ 
+-			g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Uri entry found for but invalid: %i-%s-%s", type, key_a,(key_b)?"(null)":key_b);
++			g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Uri entry found for but invalid: %i-%s-%s", type, key_a,(!key_b)?"(null)":key_b);
+ 
+ 			g_timer_stop(t);
+ 			g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_INFO,"get cache took: %.6f", g_timer_elapsed(t, NULL));
+@@ -519,7 +519,7 @@ MetaDataResult meta_data_sqlite_get_from_cache(mpd_Son
+ 			return META_DATA_FETCHING;
+ 		}
+ 	}
+-	g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Entry found for: %i-%s-%s", type, key_a,(key_b)?"(null)":key_b);
++	g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Entry found for: %i-%s-%s", type, key_a,(!key_b)?"(null)":key_b);
+ 	g_timer_stop(t);
+ 	g_log(MDC_LOG_DOMAIN, G_LOG_LEVEL_INFO,"get cache took: %.6f", g_timer_elapsed(t, NULL));
+ 	g_timer_destroy(t);
