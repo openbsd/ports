@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/10 14:24:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/11/24 16:18:48 shadchin Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -17,10 +17,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
-
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${FULLPKGPATH}
+			${BASE_PKGPATH}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -32,6 +31,7 @@ FLAVOR ?=
 RUN_DEPENDS +=		devel/py-mock
 .endif
 
+# One test fail if py3-mock installed
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
