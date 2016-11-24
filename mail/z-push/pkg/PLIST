@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/08/12 08:09:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/11/24 18:27:14 jasper Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -264,6 +264,7 @@ z-push/tools/gab-sync/lib/
 z-push/tools/gab-sync/lib/gabentry.php
 z-push/tools/gab-sync/lib/kopano.php
 z-push/tools/gab-sync/lib/syncworker.php
+z-push/tools/list-shared-folders.php
 z-push/tools/migrate-2.0.x-2.1.0.php
 z-push/tools/migrate-filestates-to-db.php
 z-push/vendor/

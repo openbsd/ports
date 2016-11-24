@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2016/10/31 15:07:30 robert Exp $
+# $OpenBSD: Makefile,v 1.50 2016/11/24 18:27:14 jasper Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
-V=		2.3.2
+V=		2.3.3
 DISTNAME=	z-push-${V}
 
 CATEGORIES=	mail www
