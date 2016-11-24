@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.14 2015/01/15 08:15:14 dcoppa Exp $
---- doc/mpdconf.example.orig	Thu Dec  4 14:06:38 2014
-+++ doc/mpdconf.example	Thu Jan 15 02:08:15 2015
+$OpenBSD: patch-doc_mpdconf_example,v 1.15 2016/11/24 08:27:28 dcoppa Exp $
+--- doc/mpdconf.example.orig	Fri Jul 29 10:51:02 2016
++++ doc/mpdconf.example	Wed Nov 23 16:03:20 2016
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -74,6 +74,15 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.14 2015/01/15 08:15:14 dcoppa Exp $
 +#
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
+ #
+@@ -164,7 +166,7 @@
+ # Permissions #################################################################
+ #
+ # If this setting is set, MPD will require password authorization. The password
+-# can setting can be specified multiple times for different password profiles.
++# setting can be specified multiple times for different password profiles.
+ #
+ #password                        "password@read,add,control,admin"
  #
 @@ -324,6 +326,15 @@ input {
  #	name		"My Null Output"
