@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_common_libpkcs11_c,v 1.1 2016/11/24 09:54:51 dcoppa Exp $
+
+commit 24346062c01ad690addb0db55b74f9c53b394c0c
+Author: Jakub Jelen <jjelen@redhat.com>
+Date:   Mon Nov 21 10:53:41 2016 +0100
+
+libpkcs11: Prevent double-free when the dlopen fails
+
+commit 12f402616050e6ac943217b2170e865c1a297e77
+Author: Jakuje <jakuje@gmail.com>
+Date:   Mon Oct 10 22:21:46 2016 +0200
+
+Fix Coverity remarks
+
+--- src/common/libpkcs11.c.orig	Fri Jun  3 11:19:51 2016
++++ src/common/libpkcs11.c	Thu Nov 24 10:06:56 2016
+@@ -56,10 +56,13 @@ C_LoadModule(const char *mspec, CK_FUNCTION_LIST_PTR_P
+ 	rv = c_get_function_list(funcs);
+ 	if (rv == CKR_OK)
+ 		return (void *) mod;
+-	else
++	else {
+ 		fprintf(stderr, "C_GetFunctionList failed %lx", rv);
++		C_UnloadModule((void *) mod);
++		return NULL;
++	}
+ failed:
+-	C_UnloadModule((void *) mod);
++	free(mod);
+ 	return NULL;
+ }
+ 

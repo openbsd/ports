@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tools_pkcs11-tool_c,v 1.1 2016/06/07 14:08:44 dcoppa Exp $
+$OpenBSD: patch-src_tools_pkcs11-tool_c,v 1.2 2016/11/24 09:54:51 dcoppa Exp $
 
 commit 04825d8d7ebb41bf0ab0bdab14c84de68636271f
 Author: Frank Morgner <frankmorgner@gmail.com>
@@ -6,8 +6,14 @@ Date:   Sat Jun 4 01:02:01 2016 +0200
 
 avoid using an uninitialized buffer
 
+commit 12f402616050e6ac943217b2170e865c1a297e77
+Author: Jakuje <jakuje@gmail.com>
+Date:   Mon Oct 10 22:21:46 2016 +0200
+
+Fix Coverity remarks
+
 --- src/tools/pkcs11-tool.c.orig	Fri Jun  3 11:19:51 2016
-+++ src/tools/pkcs11-tool.c	Tue Jun  7 15:50:11 2016
++++ src/tools/pkcs11-tool.c	Thu Nov 24 09:58:03 2016
 @@ -388,6 +388,7 @@ static const char *	CKR2Str(CK_ULONG res);
  static int		p11_test(CK_SESSION_HANDLE session);
  static int test_card_detection(int);
@@ -16,7 +22,27 @@ avoid using an uninitialized buffer
  static void		test_kpgen_certwrite(CK_SLOT_ID slot, CK_SESSION_HANDLE session);
  static void		test_ec(CK_SLOT_ID slot, CK_SESSION_HANDLE session);
  #ifndef _WIN32
-@@ -3313,6 +3314,7 @@ static int test_digest(CK_SESSION_HANDLE session)
+@@ -1328,8 +1329,10 @@ static int change_pin(CK_SLOT_ID slot, CK_SESSION_HAND
+ 			r = util_getpass(&new_pin, &len, stdin);
+ 			if (r < 0)
+ 				return 1;
+-			if (!new_pin || !*new_pin || strcmp(new_buf, new_pin) != 0)
++			if (!new_pin || !*new_pin || strcmp(new_buf, new_pin) != 0) {
++				free(new_pin);
+ 				return 1;
++			}
+ 		}
+ 		else   {
+ 			new_pin = (char *) opt_new_pin;
+@@ -3178,6 +3181,7 @@ static int read_object(CK_SESSION_HANDLE session)
+ 	if (opt_output)
+ 		fclose(out);
+ 
++	free(value);
+ 	if (oid_buf)
+ 		free(oid_buf);
+ 	return 1;
+@@ -3313,6 +3317,7 @@ static int test_digest(CK_SESSION_HANDLE session)
  	}
  
  	/* 1st test */
@@ -24,7 +50,7 @@ avoid using an uninitialized buffer
  
  	ck_mech.mechanism = firstMechType;
  	rv = p11->C_DigestInit(session, &ck_mech);
-@@ -3686,9 +3688,6 @@ static int test_signature(CK_SESSION_HANDLE sess)
+@@ -3686,9 +3691,6 @@ static int test_signature(CK_SESSION_HANDLE sess)
  		return 0;
  	}
  
@@ -34,7 +60,7 @@ avoid using an uninitialized buffer
  	/* 1st test */
  
  	/* assume --login has already authenticated the key */
-@@ -3705,6 +3704,8 @@ static int test_signature(CK_SESSION_HANDLE sess)
+@@ -3705,6 +3707,8 @@ static int test_signature(CK_SESSION_HANDLE sess)
  		break;
  	}
  
@@ -43,7 +69,7 @@ avoid using an uninitialized buffer
  	ck_mech.mechanism = firstMechType;
  	rv = p11->C_SignInit(sess, &ck_mech, privKeyObject);
  	/* mechanism not implemented, don't test */
-@@ -4836,6 +4837,17 @@ static int hex_to_bin(const char *in, unsigned char *o
+@@ -4836,6 +4840,17 @@ static int hex_to_bin(const char *in, unsigned char *o
  
  	*outlen = count;
  	return 1;

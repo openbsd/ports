@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libopensc_pkcs15-pubkey_c,v 1.1 2016/11/24 09:54:51 dcoppa Exp $
+
+commit 12f402616050e6ac943217b2170e865c1a297e77
+Author: Jakuje <jakuje@gmail.com>
+Date:   Mon Oct 10 22:21:46 2016 +0200
+
+Fix Coverity remarks
+
+--- src/libopensc/pkcs15-pubkey.c.orig	Fri Jun  3 11:19:51 2016
++++ src/libopensc/pkcs15-pubkey.c	Thu Nov 24 09:58:03 2016
+@@ -1401,6 +1401,8 @@ sc_pkcs15_pubkey_from_spki_sequence(struct sc_context 
+ 
+ 	if(outpubkey)
+ 		*outpubkey = pubkey;
++	else
++		free(pubkey);
+ 
+ 	LOG_FUNC_RETURN(ctx, r);
+ }
