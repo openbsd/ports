@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2010/07/11 20:09:00 sthen Exp $
---- src/Makefile.in.orig	Wed Nov 25 09:16:30 2009
-+++ src/Makefile.in	Fri Nov 27 23:55:41 2009
-@@ -375,7 +375,7 @@ distclean-compile:
- @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+$OpenBSD: patch-src_Makefile_in,v 1.3 2016/11/24 08:16:03 kirby Exp $
+--- src/Makefile.in.orig	Tue Mar 29 10:56:09 2016
++++ src/Makefile.in	Sun Nov 20 20:24:40 2016
+@@ -652,7 +652,7 @@ distclean-compile:
+ @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
  
  enblend-enblend.o: enblend.cc
--@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
-+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
- @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/enblend-enblend.Tpo $(DEPDIR)/enblend-enblend.Po
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='enblend.cc' object='enblend-enblend.o' libtool=no @AMDEPBACKSLASH@
+-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
++@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enblend-enblend.o -MD -MP -MF $(DEPDIR)/enblend-enblend.Tpo -c -o enblend-enblend.o `test -f 'enblend.cc' || echo '$(srcdir)/'`enblend.cc
+ @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/enblend-enblend.Tpo $(DEPDIR)/enblend-enblend.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='enblend.cc' object='enblend-enblend.o' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -473,7 +473,7 @@ enblend-tiff_message.obj: tiff_message.cc
- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enblend_CXXFLAGS) $(CXXFLAGS) -c -o enblend-tiff_message.obj `if test -f 'tiff_message.cc'; then $(CYGPATH_W) 'tiff_message.cc'; else $(CYGPATH_W) '$(srcdir)/tiff_message.cc'; fi`
+@@ -848,7 +848,7 @@ enfuse-exposure_weight.obj: exposure_weight.cc
+ @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) -c -o enfuse-exposure_weight.obj `if test -f 'exposure_weight.cc'; then $(CYGPATH_W) 'exposure_weight.cc'; else $(CYGPATH_W) '$(srcdir)/exposure_weight.cc'; fi`
  
  enfuse-enfuse.o: enfuse.cc
--@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
-+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
- @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/enfuse-enfuse.Tpo $(DEPDIR)/enfuse-enfuse.Po
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='enfuse.cc' object='enfuse-enfuse.o' libtool=no @AMDEPBACKSLASH@
+-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
++@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(enfuse_CXXFLAGS) $(CXXFLAGS) $(CXXNOOPT) -MT enfuse-enfuse.o -MD -MP -MF $(DEPDIR)/enfuse-enfuse.Tpo -c -o enfuse-enfuse.o `test -f 'enfuse.cc' || echo '$(srcdir)/'`enfuse.cc
+ @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/enfuse-enfuse.Tpo $(DEPDIR)/enfuse-enfuse.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='enfuse.cc' object='enfuse-enfuse.o' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@

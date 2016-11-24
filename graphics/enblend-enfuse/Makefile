@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/10/25 12:25:32 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2016/11/24 08:16:03 kirby Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -11,10 +11,7 @@ BROKEN-alpha =	enblend-enblend.o: .got subsegment exceeds 64K (size 77816)
 
 COMMENT =	blend seams in panoramic image mosaics
 
-DISTNAME =	enblend-enfuse-4.0
-PKGNAME =	${DISTNAME:L}
-WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
-REVISION =	4
+DISTNAME =	enblend-enfuse-4.2
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -24,31 +21,30 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+, MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU Half ICE Iex IexMath IlmImf IlmThread Imath
-WANTLIB += SM X11 Xi Xmu boost_system c glut jpeg lcms m png pthread
-WANTLIB += stdc++ tiff xmi z
+WANTLIB += Half Iex IexMath IlmImf IlmThread Imath c gsl gslcblas
+WANTLIB += jpeg lcms2 m png pthread tiff vigraimpex z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
-BUILD_DEPENDS =	math/gnuplot \
+MODULES =	gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS +=c++
+BUILD_DEPENDS =	devel/help2man\
+		math/gnuplot \
+		print/texlive/base \
 		print/transfig \
 		www/tidyp>=1.04p1
-LIB_DEPENDS =	devel/boost \
-		graphics/glew \
-		graphics/freeglut \
+LIB_DEPENDS =	devel/gsl \
 		graphics/ilmbase \
-		graphics/lcms \
-		graphics/libxmi \
-		graphics/openexr \
-		graphics/png \
-		graphics/tiff
+		graphics/lcms2 \
+		graphics/vigra
 
+SEPARATE_BUILD = Yes
 CONFIGURE_STYLE = autoconf
-AUTOCONF_VERSION = 2.61
+AUTOCONF_VERSION = 2.69
 USE_GMAKE = Yes
 
-CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
-		-I${LOCALBASE}/include \
+CPPFLAGS +=	-I${LOCALBASE}/include \
 		-I${X11BASE}/include
 
 LDFLAGS +=	-L${LOCALBASE}/lib \
@@ -58,13 +54,11 @@ LDFLAGS +=	-L${LOCALBASE}/lib \
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+CXXFLAGS +=	-std=c++11 -pthread
+
 # need to fix bashisms in doc/Makefile.in first
 #post-build:
 #	@cd ${WRKBUILD}/doc && \
 #	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xhtml
-
-# Fix with newer GNUplot versions. From Gentoo bz #334331
-post-extract:
-	@sed -i 's,FreeSans 10,"FreeSans\,10",g' ${WRKSRC}/doc/*.gp.in
 
 .include <bsd.port.mk>

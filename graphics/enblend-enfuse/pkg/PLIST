@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/11 20:09:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/11/24 08:16:03 kirby Exp $
 @bin bin/enblend
 @bin bin/enfuse
-@info info/enblend.info
-@info info/enfuse.info
 @man man/man1/enblend.1
 @man man/man1/enfuse.1
