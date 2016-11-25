@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/10/20 17:28:52 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.35 2016/11/25 15:02:43 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -8,7 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.21.0
+GH_TAGNAME =		v0.22.0
 
 CATEGORIES =		multimedia x11
 
@@ -29,8 +29,8 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m opus postproc
-WANTLIB += pthread pthread-stubs smbclient sndio speex swresample
+WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m
+WANTLIB += opus postproc pthread pthread-stubs sndio speex swresample
 WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
 WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
 
@@ -38,7 +38,6 @@ MODULES =		lang/lua \
 			lang/python
 
 BUILD_DEPENDS =		audio/ladspa \
-			graphics/libmng \
 			textproc/py-docutils
 
 LIB_DEPENDS =		audio/libcdio \
@@ -51,8 +50,7 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libass \
 			multimedia/libbluray>=0.8.0 \
 			multimedia/libdvdnav \
-			multimedia/libv4l \
-			net/samba
+			multimedia/libv4l
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -79,6 +77,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-optimize \
 			--disable-pulse \
 			--disable-rsound \
+			--disable-libsmbclient \
 			--disable-uchardet \
 			--disable-vaapi \
 			--disable-vaapi-glx \
