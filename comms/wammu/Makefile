@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/25 11:58:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/25 13:01:15 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
@@ -20,7 +20,6 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		comms/py-gammu \
 			devel/desktop-file-utils \
-			devel/gettext \
 			x11/py-wxPython
 
 NO_TEST = 		Yes
