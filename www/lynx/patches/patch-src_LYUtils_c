@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_LYUtils_c,v 1.1 2016/03/12 14:29:13 tb Exp $
+$OpenBSD: patch-src_LYUtils_c,v 1.2 2016/11/25 15:58:55 fcambus Exp $
 
 Use getenv("HOME") to determine the home directory instead of using getpwuid in
 order to avoid a "getpw" promise.  This is the only location not covered by the
 '-DNOUSERS' option in the Makefile.  If HOME is unset, the fallback is /tmp, so
 no breakage is to be expected from this.
 
---- src/LYUtils.c.orig	Sun Mar 22 16:38:23 2015
-+++ src/LYUtils.c	Sun Jan 31 07:49:03 2016
-@@ -5253,10 +5253,11 @@ const char *Home_Dir(void)
+--- src/LYUtils.c.orig	Tue Nov 15 10:34:30 2016
++++ src/LYUtils.c	Thu Nov 17 09:58:04 2016
+@@ -5254,10 +5254,11 @@ const char *Home_Dir(void)
  	    /*
  	     * One could use getlogin() and getpwnam() here instead.
  	     */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-WWW_Library_Implementation_HTTP_c,v 1.1 2016/11/25 15:58:55 fcambus Exp $
+--- WWW/Library/Implementation/HTTP.c.orig	Thu Nov 17 10:11:54 2016
++++ WWW/Library/Implementation/HTTP.c	Thu Nov 17 10:01:29 2016
+@@ -926,7 +926,7 @@ static int HTLoadHTTP(const char *arg,
+ #elif SSLEAY_VERSION_NUMBER >= 0x0900
+ #ifndef USE_NSS_COMPAT_INCL
+ 	if (!try_tls) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	    SSL_set_min_proto_version(handle, TLS1_1_VERSION);
+ #else
+ 	    SSL_set_options(handle, SSL_OP_NO_TLSv1);

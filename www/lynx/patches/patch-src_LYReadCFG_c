@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_LYReadCFG_c,v 1.2 2016/09/04 13:35:02 fcambus Exp $
---- src/LYReadCFG.c.orig	Fri Dec 18 02:58:34 2015
-+++ src/LYReadCFG.c	Sat Sep  3 22:22:14 2016
-@@ -1544,7 +1544,6 @@ static Config_Type Config_Table [] =
+$OpenBSD: patch-src_LYReadCFG_c,v 1.3 2016/11/25 15:58:55 fcambus Exp $
+--- src/LYReadCFG.c.orig	Wed Oct 12 01:44:06 2016
++++ src/LYReadCFG.c	Thu Nov 17 09:58:04 2016
+@@ -1549,7 +1549,6 @@ static Config_Type Config_Table [] =
  #endif
       PARSE_Env(RC_FTP_PROXY,            0),
       PARSE_STR(RC_GLOBAL_EXTENSION_MAP, global_extension_map),
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_LYReadCFG_c,v 1.2 2016/09/04 13:35:02 fcambus Exp $
       PARSE_Env(RC_GOPHER_PROXY,         0),
       PARSE_SET(RC_GOTOBUFFER,           goto_buffer),
       PARSE_PRG(RC_GZIP_PATH,            ppGZIP),
-@@ -1662,7 +1661,6 @@ static Config_Type Config_Table [] =
+@@ -1667,7 +1666,6 @@ static Config_Type Config_Table [] =
       PARSE_SET(RC_PERSISTENT_COOKIES,   persistent_cookies),
  #endif /* USE_PERSISTENT_COOKIES */
       PARSE_STR(RC_PERSONAL_EXTENSION_MAP, personal_extension_map),
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_LYReadCFG_c,v 1.2 2016/09/04 13:35:02 fcambus Exp $
       PARSE_LST(RC_POSITIONABLE_EDITOR,  positionable_editor),
       PARSE_STR(RC_PREFERRED_CHARSET,    pref_charset),
       PARSE_ENU(RC_PREFERRED_ENCODING,   LYAcceptEncoding, tbl_preferred_encoding),
-@@ -1773,11 +1771,9 @@ static Config_Type Config_Table [] =
+@@ -1778,11 +1776,9 @@ static Config_Type Config_Table [] =
       PARSE_PRG(RC_UUDECODE_PATH,        ppUUDECODE),
       PARSE_SET(RC_VERBOSE_IMAGES,       verbose_img),
       PARSE_SET(RC_VI_KEYS_ALWAYS_ON,    vi_keys),
