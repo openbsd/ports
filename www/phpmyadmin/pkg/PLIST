@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2016/09/01 15:23:55 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.62 2016/11/25 14:30:52 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -1403,7 +1403,6 @@ phpMyAdmin/libraries/tcpdf/fonts/dejavusansb.php
 phpMyAdmin/libraries/tcpdf/fonts/dejavusansb.z
 phpMyAdmin/libraries/tcpdf/fonts/helvetica.php
 phpMyAdmin/libraries/tcpdf/include/
-phpMyAdmin/libraries/tcpdf/include/sRGB.icc
 phpMyAdmin/libraries/tcpdf/include/tcpdf_colors.php
 phpMyAdmin/libraries/tcpdf/include/tcpdf_font_data.php
 phpMyAdmin/libraries/tcpdf/include/tcpdf_fonts.php
@@ -1545,7 +1544,6 @@ phpMyAdmin/locale/zh_TW/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/logout.php
 phpMyAdmin/navigation.php
 phpMyAdmin/normalization.php
-phpMyAdmin/phpdox.xml
 phpMyAdmin/phpmyadmin.css.php
 phpMyAdmin/phpunit.xml.dist
 phpMyAdmin/phpunit.xml.hhvm
