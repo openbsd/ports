@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/03/09 21:32:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2016/11/25 12:02:22 kirby Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -15,6 +15,7 @@
      SUBDIR += ems-flasher
      SUBDIR += fldigi
      SUBDIR += flipit
+     SUBDIR += gammu
      SUBDIR += gmfsk
      SUBDIR += gnokii
      SUBDIR += gpsk31
@@ -35,6 +36,7 @@
      SUBDIR += p5-SendPage
      SUBDIR += picocom
      SUBDIR += pilot-link
+     SUBDIR += py-gammu
      SUBDIR += qpage
      SUBDIR += qtserialport
      SUBDIR += rtl-sdr
@@ -45,6 +47,7 @@
      SUBDIR += sredird
      SUBDIR += tkhylafax
      SUBDIR += tlf
+     SUBDIR += wammu
      SUBDIR += wy60
      SUBDIR += x3270
      SUBDIR += xastir
