@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
+--- tests/CMakeLists.txt.orig	Tue Dec  8 13:38:12 2015
++++ tests/CMakeLists.txt	Wed Dec  9 13:40:35 2015
+@@ -61,9 +61,10 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
+         include_directories (${POSTGRES_INCLUDE_DIR})
+     endif (POSTGRES_FOUND)
+ 
+-    add_executable(sql-parse-date sql-parse-date.c)
+-    target_link_libraries (sql-parse-date gsmsd)
+-    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${CMAKE_EXECUTABLE_SUFFIX}")
++# Disable SQL tests
++#    add_executable(sql-parse-date sql-parse-date.c)
++#    target_link_libraries (sql-parse-date gsmsd)
++#    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${CMAKE_EXECUTABLE_SUFFIX}")
+ endif (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRESQL_LIBPQ_FE_H)
+ 
+ # Backup comments

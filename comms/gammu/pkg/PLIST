@@ -1,0 +1,301 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
+@bin bin/gammu
+bin/gammu-config
+@bin bin/gammu-detect
+@bin bin/gammu-smsd
+@bin bin/gammu-smsd-inject
+@bin bin/gammu-smsd-monitor
+bin/jadmaker
+include/gammu/
+include/gammu/gammu-backup.h
+include/gammu/gammu-bitmap.h
+include/gammu/gammu-calendar.h
+include/gammu/gammu-call.h
+include/gammu/gammu-callback.h
+include/gammu/gammu-category.h
+include/gammu/gammu-config.h
+include/gammu/gammu-datetime.h
+include/gammu/gammu-debug.h
+include/gammu/gammu-error.h
+include/gammu/gammu-file.h
+include/gammu/gammu-info.h
+include/gammu/gammu-inifile.h
+include/gammu/gammu-keys.h
+include/gammu/gammu-limits.h
+include/gammu/gammu-memory.h
+include/gammu/gammu-message.h
+include/gammu/gammu-misc.h
+include/gammu/gammu-nokia.h
+include/gammu/gammu-ringtone.h
+include/gammu/gammu-security.h
+include/gammu/gammu-settings.h
+include/gammu/gammu-smsd.h
+include/gammu/gammu-statemachine.h
+include/gammu/gammu-types.h
+include/gammu/gammu-unicode.h
+include/gammu/gammu-wap.h
+include/gammu/gammu.h
+@lib lib/libGammu.so.${LIBGammu_VERSION}
+@lib lib/libgsmsd.so.${LIBgsmsd_VERSION}
+lib/pkgconfig/gammu-smsd.pc
+lib/pkgconfig/gammu.pc
+@man man/man1/gammu-config.1
+@man man/man1/gammu-detect.1
+@man man/man1/gammu-smsd-inject.1
+@man man/man1/gammu-smsd-monitor.1
+@man man/man1/gammu-smsd.1
+@man man/man1/gammu.1
+@man man/man1/jadmaker.1
+@man man/man5/gammu-backup.5
+@man man/man5/gammu-smsbackup.5
+@man man/man5/gammu-smsdrc.5
+@man man/man5/gammurc.5
+@man man/man7/gammu-smsd-dbi.7
+@man man/man7/gammu-smsd-files.7
+@man man/man7/gammu-smsd-mysql.7
+@man man/man7/gammu-smsd-null.7
+@man man/man7/gammu-smsd-odbc.7
+@man man/man7/gammu-smsd-pgsql.7
+@man man/man7/gammu-smsd-run.7
+@man man/man7/gammu-smsd-sql.7
+@man man/man7/gammu-smsd-tables.7
+share/doc/gammu/
+share/doc/gammu/COPYING
+share/doc/gammu/ChangeLog
+share/doc/gammu/README.rst
+share/doc/gammu/examples/
+share/doc/gammu/examples/Makefile
+share/doc/gammu/examples/config/
+share/doc/gammu/examples/config/gammurc
+share/doc/gammu/examples/config/smsdrc
+@sample ${SYSCONFDIR}/gammu-smsdrc
+share/doc/gammu/examples/custom-config.c
+share/doc/gammu/examples/long-sms.c
+share/doc/gammu/examples/media/
+share/doc/gammu/examples/media/aliens.nlm
+share/doc/gammu/examples/media/axelf.txt
+share/doc/gammu/examples/phone-info.c
+share/doc/gammu/examples/php/
+share/doc/gammu/examples/php/class_gammu/
+share/doc/gammu/examples/php/class_gammu/README
+share/doc/gammu/examples/php/class_gammu/class.gammu.php
+share/doc/gammu/examples/php/class_gammu/class.sms.gammu.php
+share/doc/gammu/examples/php/smsd-mysql-admin/
+share/doc/gammu/examples/php/smsd-mysql-admin/admin.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/
+share/doc/gammu/examples/php/smsd-mysql-intergammu/config.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/funcoes/
+share/doc/gammu/examples/php/smsd-mysql-intergammu/funcoes/func.gammu.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/funcoes/func.sql.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/index.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/intergammu.txt
+share/doc/gammu/examples/php/smsd-mysql-intergammu/proc/
+share/doc/gammu/examples/php/smsd-mysql-intergammu/proc/admin.php
+share/doc/gammu/examples/php/smsd-mysql-intergammu/proclast.sql
+share/doc/gammu/examples/php/smsd-mysql-linked/
+share/doc/gammu/examples/php/smsd-mysql-linked/linked.php
+share/doc/gammu/examples/php/smsd-mysql-linked/linked.sql
+share/doc/gammu/examples/php/smsd-mysql-list/
+share/doc/gammu/examples/php/smsd-mysql-list/sms.php
+share/doc/gammu/examples/sms-read.c
+share/doc/gammu/examples/sms-send.c
+share/doc/gammu/examples/smsd.c
+share/doc/gammu/examples/sql/
+share/doc/gammu/examples/sql/mysql.sql
+share/doc/gammu/examples/sql/pgsql.sql
+share/doc/gammu/examples/sql/sqlite.sql
+share/doc/gammu/manual/
+share/doc/gammu/manual/c/
+share/doc/gammu/manual/c/api.rst
+share/doc/gammu/manual/c/backup.rst
+share/doc/gammu/manual/c/bitmap.rst
+share/doc/gammu/manual/c/calendar.rst
+share/doc/gammu/manual/c/call.rst
+share/doc/gammu/manual/c/callback.rst
+share/doc/gammu/manual/c/category.rst
+share/doc/gammu/manual/c/datetime.rst
+share/doc/gammu/manual/c/debug.rst
+share/doc/gammu/manual/c/error.rst
+share/doc/gammu/manual/c/examples.rst
+share/doc/gammu/manual/c/file.rst
+share/doc/gammu/manual/c/hints.rst
+share/doc/gammu/manual/c/index.rst
+share/doc/gammu/manual/c/info.rst
+share/doc/gammu/manual/c/inifile.rst
+share/doc/gammu/manual/c/keys.rst
+share/doc/gammu/manual/c/limits.rst
+share/doc/gammu/manual/c/memory.rst
+share/doc/gammu/manual/c/message.rst
+share/doc/gammu/manual/c/misc.rst
+share/doc/gammu/manual/c/nokia.rst
+share/doc/gammu/manual/c/porting.rst
+share/doc/gammu/manual/c/ringtone.rst
+share/doc/gammu/manual/c/security.rst
+share/doc/gammu/manual/c/settings.rst
+share/doc/gammu/manual/c/smsd.rst
+share/doc/gammu/manual/c/statemachine.rst
+share/doc/gammu/manual/c/types.rst
+share/doc/gammu/manual/c/unicode.rst
+share/doc/gammu/manual/c/wap.rst
+share/doc/gammu/manual/config/
+share/doc/gammu/manual/config/index.rst
+share/doc/gammu/manual/contents.rst
+share/doc/gammu/manual/faq/
+share/doc/gammu/manual/faq/config.rst
+share/doc/gammu/manual/faq/general.rst
+share/doc/gammu/manual/faq/index.rst
+share/doc/gammu/manual/faq/phone.rst
+share/doc/gammu/manual/faq/python.rst
+share/doc/gammu/manual/faq/smsd.rst
+share/doc/gammu/manual/formats/
+share/doc/gammu/manual/formats/backup.rst
+share/doc/gammu/manual/formats/index.rst
+share/doc/gammu/manual/formats/ini.rst
+share/doc/gammu/manual/formats/smsbackup.rst
+share/doc/gammu/manual/gammu/
+share/doc/gammu/manual/gammu/index.rst
+share/doc/gammu/manual/glossary.rst
+share/doc/gammu/manual/index.rst
+share/doc/gammu/manual/internal/
+share/doc/gammu/manual/internal/index.rst
+share/doc/gammu/manual/internal/new-phone.rst
+share/doc/gammu/manual/internal/reply.rst
+share/doc/gammu/manual/internal/state-machine.rst
+share/doc/gammu/manual/project/
+share/doc/gammu/manual/project/about.rst
+share/doc/gammu/manual/project/coding-style.rst
+share/doc/gammu/manual/project/contributing.rst
+share/doc/gammu/manual/project/directories.rst
+share/doc/gammu/manual/project/documentation.rst
+share/doc/gammu/manual/project/index.rst
+share/doc/gammu/manual/project/install.rst
+share/doc/gammu/manual/project/localization.rst
+share/doc/gammu/manual/project/motivation.rst
+share/doc/gammu/manual/project/roadmap.rst
+share/doc/gammu/manual/project/testing.rst
+share/doc/gammu/manual/project/versioning.rst
+share/doc/gammu/manual/protocol/
+share/doc/gammu/manual/protocol/carkit.rst
+share/doc/gammu/manual/protocol/discovering.rst
+share/doc/gammu/manual/protocol/gnapplet.rst
+share/doc/gammu/manual/protocol/index.rst
+share/doc/gammu/manual/protocol/m-obex.rst
+share/doc/gammu/manual/protocol/mtk.rst
+share/doc/gammu/manual/protocol/n6110.rst
+share/doc/gammu/manual/protocol/n6510.rst
+share/doc/gammu/manual/protocol/n7110.rst
+share/doc/gammu/manual/protocol/nokia-s40-sms.rst
+share/doc/gammu/manual/protocol/nokia.rst
+share/doc/gammu/manual/protocol/s60.rst
+share/doc/gammu/manual/protocol/samsung-gt.rst
+share/doc/gammu/manual/protocol/samsung.rst
+share/doc/gammu/manual/protocol/sonim.rst
+share/doc/gammu/manual/protocol/tdma_5120.rst
+share/doc/gammu/manual/python/
+share/doc/gammu/manual/python/data.rst
+share/doc/gammu/manual/python/examples.rst
+share/doc/gammu/manual/python/exceptions.rst
+share/doc/gammu/manual/python/gammu.rst
+share/doc/gammu/manual/python/index.rst
+share/doc/gammu/manual/python/objects.rst
+share/doc/gammu/manual/python/smsd.rst
+share/doc/gammu/manual/python/worker.rst
+share/doc/gammu/manual/quick/
+share/doc/gammu/manual/quick/index.rst
+share/doc/gammu/manual/smsd/
+share/doc/gammu/manual/smsd/backends.rst
+share/doc/gammu/manual/smsd/code.rst
+share/doc/gammu/manual/smsd/config.rst
+share/doc/gammu/manual/smsd/dbi.rst
+share/doc/gammu/manual/smsd/files.rst
+share/doc/gammu/manual/smsd/index.rst
+share/doc/gammu/manual/smsd/inject.rst
+share/doc/gammu/manual/smsd/manual.rst
+share/doc/gammu/manual/smsd/monitor.rst
+share/doc/gammu/manual/smsd/mysql.rst
+share/doc/gammu/manual/smsd/null.rst
+share/doc/gammu/manual/smsd/odbc.rst
+share/doc/gammu/manual/smsd/overview.rst
+share/doc/gammu/manual/smsd/pgsql.rst
+share/doc/gammu/manual/smsd/run.rst
+share/doc/gammu/manual/smsd/smsd.rst
+share/doc/gammu/manual/smsd/sql.rst
+share/doc/gammu/manual/smsd/tables.rst
+share/doc/gammu/manual/smsd/usage.rst
+share/doc/gammu/manual/testing/
+share/doc/gammu/manual/testing/dummy-driver.rst
+share/doc/gammu/manual/testing/index.rst
+share/doc/gammu/manual/testing/testsuite.rst
+share/doc/gammu/manual/utils/
+share/doc/gammu/manual/utils/gammu-config.rst
+share/doc/gammu/manual/utils/gammu-detect.rst
+share/doc/gammu/manual/utils/index.rst
+share/doc/gammu/manual/utils/jadmaker.rst
+share/gammu/
+share/gammu/gammu-s60-remote.sis
+share/gammu/gnapplet.ini
+share/gammu/gnapplet.sis
+share/locale/af/LC_MESSAGES/gammu.mo
+share/locale/af/LC_MESSAGES/libgammu.mo
+share/locale/ar/LC_MESSAGES/gammu.mo
+share/locale/ar/LC_MESSAGES/libgammu.mo
+share/locale/bg/LC_MESSAGES/gammu.mo
+share/locale/bg/LC_MESSAGES/libgammu.mo
+share/locale/bn/LC_MESSAGES/gammu.mo
+share/locale/bn/LC_MESSAGES/libgammu.mo
+share/locale/ca/LC_MESSAGES/gammu.mo
+share/locale/ca/LC_MESSAGES/libgammu.mo
+share/locale/cs/LC_MESSAGES/gammu.mo
+share/locale/cs/LC_MESSAGES/libgammu.mo
+share/locale/da/LC_MESSAGES/gammu.mo
+share/locale/da/LC_MESSAGES/libgammu.mo
+share/locale/de/LC_MESSAGES/gammu.mo
+share/locale/de/LC_MESSAGES/libgammu.mo
+share/locale/el/LC_MESSAGES/gammu.mo
+share/locale/el/LC_MESSAGES/libgammu.mo
+share/locale/en_GB/LC_MESSAGES/gammu.mo
+share/locale/en_GB/LC_MESSAGES/libgammu.mo
+share/locale/es/LC_MESSAGES/gammu.mo
+share/locale/es/LC_MESSAGES/libgammu.mo
+share/locale/et/LC_MESSAGES/gammu.mo
+share/locale/et/LC_MESSAGES/libgammu.mo
+share/locale/fi/LC_MESSAGES/gammu.mo
+share/locale/fi/LC_MESSAGES/libgammu.mo
+share/locale/fr/LC_MESSAGES/gammu.mo
+share/locale/fr/LC_MESSAGES/libgammu.mo
+share/locale/gl/LC_MESSAGES/gammu.mo
+share/locale/gl/LC_MESSAGES/libgammu.mo
+share/locale/he/LC_MESSAGES/gammu.mo
+share/locale/he/LC_MESSAGES/libgammu.mo
+share/locale/hu/LC_MESSAGES/gammu.mo
+share/locale/hu/LC_MESSAGES/libgammu.mo
+share/locale/id/LC_MESSAGES/gammu.mo
+share/locale/id/LC_MESSAGES/libgammu.mo
+share/locale/it/LC_MESSAGES/gammu.mo
+share/locale/it/LC_MESSAGES/libgammu.mo
+share/locale/ko/LC_MESSAGES/gammu.mo
+share/locale/ko/LC_MESSAGES/libgammu.mo
+share/locale/nl/LC_MESSAGES/gammu.mo
+share/locale/nl/LC_MESSAGES/libgammu.mo
+share/locale/pl/LC_MESSAGES/gammu.mo
+share/locale/pl/LC_MESSAGES/libgammu.mo
+share/locale/pt_BR/LC_MESSAGES/gammu.mo
+share/locale/pt_BR/LC_MESSAGES/libgammu.mo
+share/locale/ro/LC_MESSAGES/gammu.mo
+share/locale/ro/LC_MESSAGES/libgammu.mo
+share/locale/ru/LC_MESSAGES/gammu.mo
+share/locale/ru/LC_MESSAGES/libgammu.mo
+share/locale/sk/LC_MESSAGES/gammu.mo
+share/locale/sk/LC_MESSAGES/libgammu.mo
+share/locale/sv/LC_MESSAGES/gammu.mo
+share/locale/sv/LC_MESSAGES/libgammu.mo
+share/locale/sw/LC_MESSAGES/gammu.mo
+share/locale/sw/LC_MESSAGES/libgammu.mo
+share/locale/tr/LC_MESSAGES/gammu.mo
+share/locale/tr/LC_MESSAGES/libgammu.mo
+share/locale/uk/LC_MESSAGES/gammu.mo
+share/locale/uk/LC_MESSAGES/libgammu.mo
+share/locale/zh_CN/LC_MESSAGES/gammu.mo
+share/locale/zh_CN/LC_MESSAGES/libgammu.mo
+share/locale/zh_TW/LC_MESSAGES/gammu.mo
+share/locale/zh_TW/LC_MESSAGES/libgammu.mo

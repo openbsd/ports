@@ -1,0 +1,12 @@
+$OpenBSD: patch-smsd_services_sql_c,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
+--- smsd/services/sql.c.orig	Mon Jun 15 10:11:01 2015
++++ smsd/services/sql.c	Mon Jun 15 21:16:35 2015
+@@ -9,7 +9,7 @@
+  * Licensed under GNU GPL version 2 or later
+  */
+ 
+-#define _XOPEN_SOURCE
++/* Fix implicit declatarion of strptime */
+ #define _BSD_SOURCE
+ #define _DEFAULT_SOURCE
+ #include <time.h>
