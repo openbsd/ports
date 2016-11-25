@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/31 21:15:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.32 2016/11/25 23:49:04 bluhm Exp $
 
-COMMENT =		powerful feature-rich perl source code profiler
+COMMENT =	powerful feature-rich perl source code profiler
 
-DISTNAME =		Devel-NYTProf-6.03
+DISTNAME =	Devel-NYTProf-6.04
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/08/24 15:45:55 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/11/25 23:49:04 bluhm Exp $
 bin/flamegraph.pl
 bin/nytprofcalls
 bin/nytprofcg
@@ -6,7 +6,6 @@ bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
 bin/nytprofpf
-${P5ARCH}/
 ${P5ARCH}/Devel/
 @comment ${P5ARCH}/Devel/MemoryProfiling.pod
 ${P5ARCH}/Devel/NYTProf/
@@ -45,7 +44,6 @@ ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
-${P5ARCH}/auto/
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
