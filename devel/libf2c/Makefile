@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/05/12 01:17:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/11/25 15:52:42 naddy Exp $
 
 V =		3.3.6
 CONFIG =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -31,6 +31,7 @@ MAKE_FLAGS = MANDIR=${TRUEPREFIX}/man/cat \
 	LIBDIR=${TRUEPREFIX}/lib \
 	BSDSRCDIR=${WRKDIST} \
 	BSDOBJDIR=${WRKBUILD} \
+	WOBJGROUP=`stat -f %g ${WRKBUILD}` \
 	major=${MAJOR} minor=${MINOR} \
 	libf2c_cv_has_g77_builtin_types=yes
 
