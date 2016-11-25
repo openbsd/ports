@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/22 11:05:51 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/25 20:42:57 sthen Exp $
 
 COMMENT =	profile HMMs for biological sequence analysis
 
 V =		3.1b2
 DISTNAME =	hmmer-$V
 PKGNAME =	hmmer-3.1beta2
+REVISION =	0
 
 CATEGORIES =	biology
 
@@ -26,6 +27,9 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	--disable-sse
+PKG_ARGS+=		-Damd64=0
+.else
+PKG_ARGS+=		-Damd64=1
 .endif
 
 post-install:
