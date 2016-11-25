@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.110 2016/08/07 21:40:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.111 2016/11/25 23:05:11 jca Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.7.3
+DISTNAME=	lftp-4.7.4
 CATEGORIES=	net
 
-HOMEPAGE=	https://lftp.yar.ru/
+HOMEPAGE=	https://lftp.tech/
 
 MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 
@@ -21,7 +21,9 @@ USE_GROFF=	Yes
 LIB_DEPENDS=	devel/libidn \
 		devel/readline>=6.1p2 \
 
-MASTER_SITES=	https://lftp.yar.ru/ftp/
+MASTER_SITES=	http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
+		http://lftp.yar.ru/ftp/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/
 
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= gnu
