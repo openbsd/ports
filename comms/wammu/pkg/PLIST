@@ -1,0 +1,233 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/25 11:58:01 kirby Exp $
+bin/wammu
+bin/wammu-configure
+lib/python${MODPY_VERSION}/site-packages/Wammu/
+lib/python${MODPY_VERSION}/site-packages/Wammu/About.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/About.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/App.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/App.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/BluezDiscovery.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/BluezDiscovery.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Browser.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Browser.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Calendar.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Calendar.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Composer.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Composer.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/ContactsXML.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/ContactsXML.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Data.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Data.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Displayer.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Displayer.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/EditContactList.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/EditContactList.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Editor.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Editor.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Error.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Error.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/ErrorLog.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/ErrorLog.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/ErrorMessage.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/ErrorMessage.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Events.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Events.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/GammuSettings.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/GammuSettings.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/IMAP.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/IMAP.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Image.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Image.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Info.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Info.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Locales.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Locales.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Logger.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Logger.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/MailWriter.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/MailWriter.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Main.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Main.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Memory.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Memory.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Message.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Message.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/MessageDisplay.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/MessageDisplay.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/OSUtils.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/OSUtils.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Paths.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Paths.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneSearch.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneSearch.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneValidator.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneValidator.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneWizard.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/PhoneWizard.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Reader.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Reader.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Ringtone.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Ringtone.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/SMSExport.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/SMSExport.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/SMSXML.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/SMSXML.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Select.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Select.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Settings.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Settings.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/SettingsStorage.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/SettingsStorage.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/TalkbackDialog.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/TalkbackDialog.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/TalkbackFeaturesDialog.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/TalkbackFeaturesDialog.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Thread.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Thread.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Todo.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Todo.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Utils.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Utils.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/WammuSettings.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/WammuSettings.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Webbrowser.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Webbrowser.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.pyc
+lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+man/cs/
+man/cs/man1/
+@man man/cs/man1/wammu-configure.1
+@man man/cs/man1/wammu.1
+man/da/
+man/da/man1/
+@man man/da/man1/wammu-configure.1
+@man man/da/man1/wammu.1
+man/de/
+man/de/man1/
+@man man/de/man1/wammu-configure.1
+@man man/de/man1/wammu.1
+man/en_GB/
+man/en_GB/man1/
+@man man/en_GB/man1/wammu-configure.1
+@man man/en_GB/man1/wammu.1
+man/es/
+man/es/man1/
+@man man/es/man1/wammu-configure.1
+@man man/es/man1/wammu.1
+man/et/
+man/et/man1/
+@man man/et/man1/wammu-configure.1
+@man man/et/man1/wammu.1
+man/fr/
+man/fr/man1/
+@man man/fr/man1/wammu-configure.1
+@man man/fr/man1/wammu.1
+man/hu/
+man/hu/man1/
+@man man/hu/man1/wammu.1
+man/id/
+man/id/man1/
+@man man/id/man1/wammu-configure.1
+@man man/id/man1/wammu.1
+man/it/
+man/it/man1/
+@man man/it/man1/wammu-configure.1
+@man man/it/man1/wammu.1
+@man man/man1/wammu-configure.1
+@man man/man1/wammu.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/wammu-configure.1
+@man man/nl/man1/wammu.1
+man/pt_BR/
+man/pt_BR/man1/
+@man man/pt_BR/man1/wammu-configure.1
+@man man/pt_BR/man1/wammu.1
+man/ru/
+man/ru/man1/
+@man man/ru/man1/wammu-configure.1
+@man man/ru/man1/wammu.1
+man/sk/
+man/sk/man1/
+@man man/sk/man1/wammu-configure.1
+@man man/sk/man1/wammu.1
+man/tr/
+man/tr/man1/
+@man man/tr/man1/wammu-configure.1
+@man man/tr/man1/wammu.1
+man/uk/
+man/uk/man1/
+@man man/uk/man1/wammu-configure.1
+@man man/uk/man1/wammu.1
+share/Wammu/
+share/Wammu/images/
+share/Wammu/images/icons/
+share/Wammu/images/icons/calendar.png
+share/Wammu/images/icons/call-missed.png
+share/Wammu/images/icons/call-outgoing.png
+share/Wammu/images/icons/call-received.png
+share/Wammu/images/icons/call.png
+share/Wammu/images/icons/contact-phone.png
+share/Wammu/images/icons/contact-sim.png
+share/Wammu/images/icons/contact.png
+share/Wammu/images/icons/message-read.png
+share/Wammu/images/icons/message-sent.png
+share/Wammu/images/icons/message-unread.png
+share/Wammu/images/icons/message-unsent.png
+share/Wammu/images/icons/message.png
+share/Wammu/images/icons/phone.png
+share/Wammu/images/icons/todo.png
+share/Wammu/images/misc/
+share/Wammu/images/misc/downarrow.png
+share/Wammu/images/misc/error.png
+share/Wammu/images/misc/phonewizard.png
+share/Wammu/images/misc/uparrow.png
+share/appdata/
+share/appdata/wammu.appdata.xml
+share/applications/wammu.desktop
+share/locale/af/LC_MESSAGES/wammu.mo
+share/locale/ar/LC_MESSAGES/wammu.mo
+share/locale/bg/LC_MESSAGES/wammu.mo
+share/locale/bn/LC_MESSAGES/wammu.mo
+share/locale/ca/LC_MESSAGES/wammu.mo
+share/locale/cs/LC_MESSAGES/wammu.mo
+share/locale/da/LC_MESSAGES/wammu.mo
+share/locale/de/LC_MESSAGES/wammu.mo
+share/locale/el/LC_MESSAGES/wammu.mo
+share/locale/en_GB/LC_MESSAGES/wammu.mo
+share/locale/es/LC_MESSAGES/wammu.mo
+share/locale/et/LC_MESSAGES/wammu.mo
+share/locale/fi/LC_MESSAGES/wammu.mo
+share/locale/fr/LC_MESSAGES/wammu.mo
+share/locale/gl/LC_MESSAGES/wammu.mo
+share/locale/he/LC_MESSAGES/wammu.mo
+share/locale/hu/LC_MESSAGES/wammu.mo
+share/locale/id/LC_MESSAGES/wammu.mo
+share/locale/it/LC_MESSAGES/wammu.mo
+share/locale/ko/LC_MESSAGES/wammu.mo
+share/locale/nl/LC_MESSAGES/wammu.mo
+share/locale/pl/LC_MESSAGES/wammu.mo
+share/locale/pt_BR/LC_MESSAGES/wammu.mo
+share/locale/ro/LC_MESSAGES/wammu.mo
+share/locale/ru/LC_MESSAGES/wammu.mo
+share/locale/sk/LC_MESSAGES/wammu.mo
+share/locale/sv/LC_MESSAGES/wammu.mo
+share/locale/sw/LC_MESSAGES/wammu.mo
+share/locale/tr/LC_MESSAGES/wammu.mo
+share/locale/uk/LC_MESSAGES/wammu.mo
+share/locale/zh_CN/LC_MESSAGES/wammu.mo
+share/locale/zh_TW/LC_MESSAGES/wammu.mo
+share/pixmaps/
+share/pixmaps/wammu.ico
+share/pixmaps/wammu.png
+share/pixmaps/wammu.svg
+share/pixmaps/wammu.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
