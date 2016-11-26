@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/11/26 17:36:39 afresh1 Exp $
 
 COMMENT =	handle Common Gateway Interface requests and responses
-DISTNAME =	CGI-4.21
+DISTNAME =	CGI-4.35
 CATEGORIES =	www
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
@@ -13,8 +13,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 RUN_DEPENDS =	www/p5-HTML-Parser>=3.69
 
-# Addtional unlisted dependencies to fix test
-TEST_DEPENDS +=	devel/p5-Test-Deep \
-		devel/p5-Test-Warn
+TEST_DEPENDS =	devel/p5-Test-Deep>=0.11 \
+		devel/p5-Test-Warn>=0.3
 
 .include <bsd.port.mk>
