@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/27 15:31:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/11/26 16:59:26 naddy Exp $
 
 COMMENT =		open source MPI-2 implementation
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -36,6 +36,7 @@ USE_LIBTOOL =		No
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		F77=${MODFORTRAN_COMPILER}
 
 # openmpi's otfinfo conflicts with the one from texlive
 post-install:
