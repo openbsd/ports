@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tint2conf_properties_c,v 1.1 2016/11/26 02:06:16 jca Exp $
+--- src/tint2conf/properties.c.orig	Tue Nov 22 21:44:18 2016
++++ src/tint2conf/properties.c	Tue Nov 22 21:44:32 2016
+@@ -171,7 +171,7 @@ void applyClicked(GtkWidget *widget, gpointer data)
+ 	gchar *file = get_current_theme_file_name();
+ 	if (file) {
+ 		if (config_is_manual(file)) {
+-			gchar *backup_path = g_strdup_printf("%s.backup.%ld", file, time(NULL));
++			gchar *backup_path = g_strdup_printf("%s.backup.%lld", file, (long long)time(NULL));
+ 			copy_file(file, backup_path);
+ 			g_free(backup_path);
+ 		}

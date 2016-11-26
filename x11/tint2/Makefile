@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/27 17:45:04 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/11/26 02:06:16 jca Exp $
 
 COMMENT=        freedesktop-compliant panel
 
 V=		0.12.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
