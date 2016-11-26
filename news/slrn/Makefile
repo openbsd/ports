@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/09/08 10:14:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2016/11/26 15:21:45 naddy Exp $
 
 COMMENT=		SLang-based newsreader
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=		devel/gettext \
 			devel/libslang
 
 CONFIGURE_STYLE=	gnu
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 AUTOCONF_VERSION=	2.69
 AUTOCONF_DIR=		${WRKSRC}/autoconf
 CONFIGURE_ARGS+=	--disable-inews \
