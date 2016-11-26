@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.4 2016/10/20 16:19:11 danj Exp $
+$OpenBSD: patch-Makefile,v 1.5 2016/11/26 12:29:50 danj Exp $
 
 Make use of accept4() on OpenBSD.
 
 Committed upstream
 http://git.haproxy.org/?p=haproxy.git;a=commit;h=9705ba2981016dd6b3b8d690bb8935a396cc0994
 
---- Makefile.orig	Sun Sep 25 23:13:40 2016
-+++ Makefile	Sun Sep 25 23:14:35 2016
-@@ -304,10 +304,11 @@ ifeq ($(TARGET),osx)
-   USE_LIBCRYPT   = implicit
+--- Makefile.orig	Sun Nov 20 22:42:20 2016
++++ Makefile	Sat Nov 26 13:07:05 2016
+@@ -303,10 +303,11 @@ ifeq ($(TARGET),osx)
+   USE_TPROXY     = implicit
  else
  ifeq ($(TARGET),openbsd)
 -  # This is for OpenBSD >= 3.0
