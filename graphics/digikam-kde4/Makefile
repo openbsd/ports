@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/06 21:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2016/11/27 17:37:35 kirby Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -29,7 +29,8 @@ SHARED_LIBS +=  digikamcore		0.1
 SHARED_LIBS +=  digikamdatabase		0.1
 SHARED_LIBS +=  mediawiki		0.1
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/} \
+		${MASTER_SITE_KDE:=Attic/digikam/}
 
 MULTI_PACKAGES =	-main -kipi -mediawiki
 
