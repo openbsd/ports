@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/08/15 10:32:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/11/27 12:28:16 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -49,6 +49,7 @@ share/augeas/lenses/dist/cobblersettings.aug
 share/augeas/lenses/dist/collectd.aug
 share/augeas/lenses/dist/cpanel.aug
 share/augeas/lenses/dist/cron.aug
+share/augeas/lenses/dist/cron_user.aug
 share/augeas/lenses/dist/crypttab.aug
 share/augeas/lenses/dist/csv.aug
 share/augeas/lenses/dist/cups.aug
@@ -134,6 +135,7 @@ share/augeas/lenses/dist/nsswitch.aug
 share/augeas/lenses/dist/ntp.aug
 share/augeas/lenses/dist/ntpd.aug
 share/augeas/lenses/dist/odbc.aug
+share/augeas/lenses/dist/opendkim.aug
 share/augeas/lenses/dist/openshift_config.aug
 share/augeas/lenses/dist/openshift_http.aug
 share/augeas/lenses/dist/openshift_quickstarts.aug
@@ -238,6 +240,7 @@ share/augeas/lenses/dist/tests/test_cobblersettings.aug
 share/augeas/lenses/dist/tests/test_collectd.aug
 share/augeas/lenses/dist/tests/test_cpanel.aug
 share/augeas/lenses/dist/tests/test_cron.aug
+share/augeas/lenses/dist/tests/test_cron_user.aug
 share/augeas/lenses/dist/tests/test_crypttab.aug
 share/augeas/lenses/dist/tests/test_csv.aug
 share/augeas/lenses/dist/tests/test_cups.aug
@@ -324,6 +327,7 @@ share/augeas/lenses/dist/tests/test_nsswitch.aug
 share/augeas/lenses/dist/tests/test_ntp.aug
 share/augeas/lenses/dist/tests/test_ntpd.aug
 share/augeas/lenses/dist/tests/test_odbc.aug
+share/augeas/lenses/dist/tests/test_opendkim.aug
 share/augeas/lenses/dist/tests/test_openshift_config.aug
 share/augeas/lenses/dist/tests/test_openshift_http.aug
 share/augeas/lenses/dist/tests/test_openshift_quickstarts.aug
