@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1561 2016/11/20 10:16:18 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1562 2016/11/27 08:43:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -455,6 +455,7 @@
      SUBDIR += maven
      SUBDIR += mcs
      SUBDIR += mercurial
+     SUBDIR += meson
      SUBDIR += metaauto
      SUBDIR += mico
      SUBDIR += mingw
