@@ -1,6 +1,25 @@
-$OpenBSD: patch-cmake_CMakeCSharpInformation_cmake,v 1.1.1.1 2013/04/24 18:43:55 zhuk Exp $
---- cmake/CMakeCSharpInformation.cmake.orig	Thu Feb  7 14:14:00 2013
-+++ cmake/CMakeCSharpInformation.cmake	Thu Feb  7 14:34:31 2013
+$OpenBSD: patch-cmake_CMakeCSharpInformation_cmake,v 1.2 2016/11/28 08:43:50 dcoppa Exp $
+--- cmake/CMakeCSharpInformation.cmake.orig	Sat Jun  1 23:29:59 2013
++++ cmake/CMakeCSharpInformation.cmake	Mon Nov 28 09:30:05 2016
+@@ -292,15 +292,15 @@ function(install_assembly)
+         elseif (arg STREQUAL "PACKAGE")
+             set (current "p")
+         # value handling
+-        elseif (current STREQUAL "t")
++        elseif ("X${current}" STREQUAL "Xt")
+             set (target ${arg})
+-        elseif (current STREQUAL "d")
++        elseif ("X${current}" STREQUAL "Xd")
+             if (IS_ABSOLUTE "${arg}")
+                 set (destination_dir "${arg}")
+             else (IS_ABSOLUTE "${arg}")
+                 set (destination_dir "${CMAKE_INSTALL_PREFIX}/${arg}")
+             endif (IS_ABSOLUTE "${arg}")
+-        elseif (current STREQUAL "p")
++        elseif ("X${current}" STREQUAL "Xp")
+             set (package ${arg})
+         endif (arg STREQUAL "NO_GAC")
+     endforeach (arg)
 @@ -360,9 +360,8 @@ function(install_assembly)
  
      # So we have the mono runtime and we can use gacutil (it has the -root option, which the MS version doesn't have).
