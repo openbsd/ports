@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_cmake_cxx,v 1.12 2016/08/08 07:44:48 dcoppa Exp $
+$OpenBSD: patch-Source_cmake_cxx,v 1.13 2016/11/28 09:15:13 dcoppa Exp $
 
 Revert 4e3c7725d0d724d7a8a0e8305d15713e01b20503: we want to build
 CMake using Ninja
 
---- Source/cmake.cxx.orig	Fri Jul 22 15:50:22 2016
-+++ Source/cmake.cxx	Fri Aug  5 11:21:30 2016
-@@ -73,9 +73,7 @@
+--- Source/cmake.cxx.orig	Fri Nov 25 23:00:29 2016
++++ Source/cmake.cxx	Fri Nov 25 23:02:52 2016
+@@ -72,9 +72,7 @@
  #include "cmGlobalWatcomWMakeGenerator.h"
  #endif
  #include "cmGlobalUnixMakefileGenerator3.h"
@@ -15,7 +15,7 @@ CMake using Ninja
  #include "cmExtraCodeLiteGenerator.h"
  
  #if !defined(CMAKE_BOOT_MINGW)
-@@ -1537,9 +1535,7 @@ void cmake::AddDefaultGenerators()
+@@ -1669,9 +1667,7 @@ void cmake::AddDefaultGenerators()
    this->Generators.push_back(cmGlobalMinGWMakefileGenerator::NewFactory());
  #endif
    this->Generators.push_back(cmGlobalUnixMakefileGenerator3::NewFactory());
@@ -25,32 +25,3 @@ CMake using Ninja
  #if defined(CMAKE_USE_WMAKE)
    this->Generators.push_back(cmGlobalWatcomWMakeGenerator::NewFactory());
  #endif
-@@ -2231,7 +2227,7 @@ bool cmake::PrintMessagePreamble(cmake::MessageType t,
-   if (t == cmake::FATAL_ERROR) {
-     msg << "CMake Error";
-   } else if (t == cmake::INTERNAL_ERROR) {
--    msg << "CMake Internal Error (please report a bug)";
-+    msg << "CMake Internal Error";
-   } else if (t == cmake::LOG) {
-     msg << "CMake Debug Log";
-   } else if (t == cmake::DEPRECATION_ERROR) {
-@@ -2271,19 +2267,6 @@ void displayMessage(cmake::MessageType t, std::ostring
- 
-   // Add a terminating blank line.
-   msg << "\n";
--
--#if defined(CMAKE_BUILD_WITH_CMAKE)
--  // Add a C++ stack trace to internal errors.
--  if (t == cmake::INTERNAL_ERROR) {
--    std::string stack = cmsys::SystemInformation::GetProgramStack(0, 0);
--    if (!stack.empty()) {
--      if (cmHasLiteralPrefix(stack, "WARNING:")) {
--        stack = "Note:" + stack.substr(8);
--      }
--      msg << stack << "\n";
--    }
--  }
--#endif
- 
-   // Output the message.
-   if (t == cmake::FATAL_ERROR || t == cmake::INTERNAL_ERROR ||

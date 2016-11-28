@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.13 2015/01/23 18:01:09 dcoppa Exp $
---- Modules/FindRuby.cmake.orig	Wed Jan 21 08:10:26 2015
-+++ Modules/FindRuby.cmake	Fri Jan 23 11:10:10 2015
-@@ -53,35 +53,53 @@
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.14 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/FindRuby.cmake.orig	Fri Nov 11 15:37:13 2016
++++ Modules/FindRuby.cmake	Fri Nov 25 22:31:45 2016
+@@ -42,35 +42,53 @@
  # uncomment the following line to get debug output for this file
  # set(_RUBY_DEBUG_OUTPUT TRUE)
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.13 2015/01/23 18:01:09 dcoppa Exp $
  find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  
  if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-@@ -166,6 +184,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+@@ -155,6 +173,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
     set(RUBY_VERSION_MAJOR 1)
     set(RUBY_VERSION_MINOR 8)
     set(RUBY_VERSION_PATCH 0)
@@ -75,7 +75,7 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.13 2015/01/23 18:01:09 dcoppa Exp $
     # check whether we found 1.9.x
     if(${RUBY_EXECUTABLE} MATCHES "ruby1.?9")
        set(RUBY_VERSION_MAJOR 1)
-@@ -181,6 +203,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+@@ -170,6 +192,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
        set(RUBY_VERSION_MAJOR 2)
        set(RUBY_VERSION_MINOR 1)
     endif()
@@ -87,7 +87,7 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.13 2015/01/23 18:01:09 dcoppa Exp $
  endif()
  
  if(RUBY_VERSION_MAJOR)
-@@ -214,7 +241,7 @@ endif()
+@@ -203,7 +230,7 @@ endif()
  
  
  # Determine the list of possible names for the ruby library

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Modules_FindMPEG_cmake,v 1.7 2014/09/11 10:24:38 dcoppa Exp $
---- Modules/FindMPEG.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/FindMPEG.cmake	Wed Sep  3 08:10:09 2014
-@@ -32,25 +32,21 @@
- # (To distribute this file outside of CMake, substitute the full
- #  License text for the above reference.)
+$OpenBSD: patch-Modules_FindMPEG_cmake,v 1.8 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/FindMPEG.cmake.orig	Fri Nov 11 15:37:13 2016
++++ Modules/FindMPEG.cmake	Fri Nov 25 22:31:44 2016
+@@ -22,25 +22,21 @@
+ #   MPEG_mpeg2_LIBRARY, where to find the MPEG library.
+ #   MPEG_vo_LIBRARY, where to find the vo library.
  
 -find_path(MPEG_INCLUDE_DIR mpeg2dec/include/video_out.h
 -  /usr/local/livid

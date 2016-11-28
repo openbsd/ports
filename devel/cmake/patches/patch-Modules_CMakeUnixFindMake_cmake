@@ -1,9 +1,9 @@
-$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.5 2013/10/14 12:58:03 dcoppa Exp $
---- Modules/CMakeUnixFindMake.cmake.orig	Mon Oct  7 17:31:00 2013
-+++ Modules/CMakeUnixFindMake.cmake	Wed Oct  9 09:38:47 2013
-@@ -12,7 +12,7 @@
- # (To distribute this file outside of CMake, substitute the full
- #  License text for the above reference.)
+$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/CMakeUnixFindMake.cmake.orig	Fri Nov 11 15:37:13 2016
++++ Modules/CMakeUnixFindMake.cmake	Fri Nov 25 22:31:44 2016
+@@ -2,7 +2,7 @@
+ # file Copyright.txt or https://cmake.org/licensing for details.
+ 
  
 -find_program(CMAKE_MAKE_PROGRAM NAMES gmake make smake)
 +find_program(CMAKE_MAKE_PROGRAM NAMES make gmake smake)

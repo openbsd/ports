@@ -1,11 +1,11 @@
-$OpenBSD: patch-bootstrap,v 1.12 2016/04/29 10:34:33 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.13 2016/11/28 09:15:13 dcoppa Exp $
 
 Use Ninja to build CMake
 XXX: broken on m88k
 
---- bootstrap.orig	Fri Apr 15 15:41:29 2016
-+++ bootstrap	Wed Apr 27 10:55:08 2016
-@@ -160,7 +160,11 @@ if ${cmake_system_mingw}; then
+--- bootstrap.orig	Fri Nov 11 15:37:14 2016
++++ bootstrap	Sat Nov 26 00:19:00 2016
+@@ -154,7 +154,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
    # Bootstrapping from a standard UNIX prompt.
@@ -18,10 +18,13 @@ XXX: broken on m88k
  fi
  
  # Choose tools and extensions for this platform.
-@@ -325,6 +329,11 @@ CMAKE_CXX_SOURCES="\
+@@ -321,6 +325,14 @@ CMAKE_CXX_SOURCES="\
    cmExprLexer \
    cmExprParser \
    cmExprParserHelper \
++  cmFortranLexer \
++  cmFortranParser \
++  cmFortranParserImpl \
 +  cmGlobalNinjaGenerator \
 +  cmLocalNinjaGenerator \
 +  cmNinjaTargetGenerator \
@@ -30,3 +33,12 @@ XXX: broken on m88k
  "
  
  if ${cmake_system_mingw}; then
+@@ -1354,7 +1366,7 @@ cmake_c_flags="${cmake_c_flags}-I`cmake_escape \"${cma
+ cmake_cxx_flags="${cmake_cxx_flags} -I`cmake_escape \"${cmake_bootstrap_dir}\"` -I`cmake_escape \"${cmake_source_dir}/Source\"` \
+   -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
+ echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
+-echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
++echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake -L${cmake_prefix_dir}/lib -ljsoncpp" >> "${cmake_bootstrap_dir}/Makefile"
+ for a in ${CMAKE_CXX_SOURCES}; do
+   src=`cmake_escape "${cmake_source_dir}/Source/${a}.cxx"`
+   echo "${a}.o : ${src} ${dep}" >> "${cmake_bootstrap_dir}/Makefile"

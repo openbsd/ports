@@ -1,11 +1,12 @@
-$OpenBSD: patch-Source_CMakeLists_txt,v 1.8 2016/01/28 11:28:02 dcoppa Exp $
---- Source/CMakeLists.txt.orig	Wed Jan 27 14:24:24 2016
-+++ Source/CMakeLists.txt	Wed Jan 27 14:25:19 2016
-@@ -76,6 +76,7 @@ include_directories(
+$OpenBSD: patch-Source_CMakeLists_txt,v 1.9 2016/11/28 09:15:13 dcoppa Exp $
+--- Source/CMakeLists.txt.orig	Fri Nov 11 15:37:13 2016
++++ Source/CMakeLists.txt	Sat Nov 26 12:24:01 2016
+@@ -80,6 +80,8 @@ include_directories(
    "${CMake_SOURCE_DIR}/Source"
    ${CMAKE_ZLIB_INCLUDES}
    ${CMAKE_EXPAT_INCLUDES}
 +  ${CMAKE_JSONCPP_INCLUDES}
++  ${CMAKE_LIBUV_INCLUDES}
    ${CMAKE_TAR_INCLUDES}
    ${CMAKE_COMPRESS_INCLUDES}
    ${CMake_HAIKU_INCLUDE_DIRS}

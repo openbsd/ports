@@ -1,13 +1,13 @@
-$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.5 2015/09/03 07:09:25 dcoppa Exp $
---- Modules/Compiler/GNU-Fortran.cmake.orig	Thu Aug 13 16:56:59 2015
-+++ Modules/Compiler/GNU-Fortran.cmake	Mon Aug 17 15:39:13 2015
-@@ -4,10 +4,6 @@ __compiler_gnu(Fortran)
+$OpenBSD: patch-Modules_Compiler_GNU-Fortran_cmake,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/Compiler/GNU-Fortran.cmake.orig	Sat Nov 26 12:30:36 2016
++++ Modules/Compiler/GNU-Fortran.cmake	Sat Nov 26 12:31:01 2016
+@@ -7,10 +7,6 @@ set(CMAKE_Fortran_PREPROCESS_SOURCE
  set(CMAKE_Fortran_FORMAT_FIXED_FLAG "-ffixed-form")
  set(CMAKE_Fortran_FORMAT_FREE_FLAG "-ffree-form")
  
 -# No -DNDEBUG for Fortran.
--set(CMAKE_Fortran_FLAGS_MINSIZEREL_INIT "-Os")
--set(CMAKE_Fortran_FLAGS_RELEASE_INIT "-O3")
+-string(APPEND CMAKE_Fortran_FLAGS_MINSIZEREL_INIT " -Os")
+-string(APPEND CMAKE_Fortran_FLAGS_RELEASE_INIT " -O3")
 -
  # No -isystem for Fortran because it will not find .mod files.
  unset(CMAKE_INCLUDE_SYSTEM_FLAG_Fortran)

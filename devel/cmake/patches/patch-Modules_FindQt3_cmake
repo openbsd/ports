@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt3_cmake,v 1.8 2014/12/31 11:06:02 dcoppa Exp $
---- Modules/FindQt3.cmake.orig	Thu Jul 31 17:03:56 2014
-+++ Modules/FindQt3.cmake	Wed Sep  3 08:10:09 2014
-@@ -161,7 +161,7 @@ find_library(QT_QASSISTANTCLIENT_LIBRARY
+$OpenBSD: patch-Modules_FindQt3_cmake,v 1.9 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/FindQt3.cmake.orig	Fri Nov 11 15:37:13 2016
++++ Modules/FindQt3.cmake	Fri Nov 25 22:31:45 2016
+@@ -151,7 +151,7 @@ find_library(QT_QASSISTANTCLIENT_LIBRARY
  
  # Qt 3 should prefer QTDIR over the PATH
  find_program(QT_MOC_EXECUTABLE
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindQt3_cmake,v 1.8 2014/12/31 11:06:02 dcoppa Exp $
    HINTS
      ENV QTDIR
    PATHS
-@@ -186,7 +186,7 @@ endif()
+@@ -176,7 +176,7 @@ endif()
  
  # Qt 3 should prefer QTDIR over the PATH
  find_program(QT_UIC_EXECUTABLE

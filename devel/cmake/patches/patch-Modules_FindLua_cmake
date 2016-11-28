@@ -1,56 +1,84 @@
-$OpenBSD: patch-Modules_FindLua_cmake,v 1.4 2016/08/08 07:44:48 dcoppa Exp $
---- Modules/FindLua.cmake.orig	Fri Jul 22 15:50:22 2016
-+++ Modules/FindLua.cmake	Thu Aug  4 11:06:08 2016
-@@ -50,9 +50,16 @@
- unset(_lua_include_subdirs)
+$OpenBSD: patch-Modules_FindLua_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/FindLua.cmake.orig	Sat Nov 26 12:39:29 2016
++++ Modules/FindLua.cmake	Sat Nov 26 12:53:09 2016
+@@ -40,9 +40,16 @@ unset(_lua_include_subdirs)
  unset(_lua_library_names)
+ unset(_lua_append_versions)
  
 +set(MODLUA_VERSION $ENV{MODLUA_VERSION})
 +set(MODLUA_INCL_DIR $ENV{MODLUA_INCL_DIR})
 +
  # this is a function only to have all the variables inside go away automatically
- function(set_lua_version_vars)
+ function(_lua_set_version_vars)
 -    set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
 +    if(MODLUA_VERSION)
-+        set(LUA_VERSIONS5 ${MODLUA_VERSION})
++	set(LUA_VERSIONS5 ${MODLUA_VERSION})
 +    else()
-+        set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
++	set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
 +    endif()
  
      if (Lua_FIND_VERSION_EXACT)
          if (Lua_FIND_VERSION_COUNT GREATER 1)
-@@ -97,18 +104,22 @@ endfunction(set_lua_version_vars)
+@@ -122,33 +129,37 @@ endfunction(_lua_check_header_version)
  
- set_lua_version_vars()
+ _lua_set_version_vars()
  
--find_path(LUA_INCLUDE_DIR lua.h
--  HINTS
--    ENV LUA_DIR
--  PATH_SUFFIXES ${_lua_include_subdirs} include/lua include
--  PATHS
--  ~/Library/Frameworks
--  /Library/Frameworks
--  /sw # Fink
--  /opt/local # DarwinPorts
--  /opt/csw # Blastwave
--  /opt
--)
+-if (LUA_INCLUDE_DIR AND EXISTS "${LUA_INCLUDE_DIR}/lua.h")
+-    _lua_check_header_version("${LUA_INCLUDE_DIR}/lua.h")
+-endif ()
 +if(MODLUA_INCL_DIR)
-+  set(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
-+else()
-+  find_path(LUA_INCLUDE_DIR lua.h
-+    HINTS
-+      ENV LUA_DIR
-+    PATH_SUFFIXES ${_lua_include_subdirs} include/lua include
-+    PATHS
-+    ~/Library/Frameworks
-+    /Library/Frameworks
-+    /sw # Fink
-+    /opt/local # DarwinPorts
-+    /opt/csw # Blastwave
-+    /opt
-+  )
-+endif()
- unset(_lua_include_subdirs)
++    set(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
++else(MODLUA_INCL_DIR)
++    if (LUA_INCLUDE_DIR AND EXISTS "${LUA_INCLUDE_DIR}/lua.h")
++        _lua_check_header_version("${LUA_INCLUDE_DIR}/lua.h")
++    endif ()
  
- find_library(LUA_LIBRARY
+-if (NOT LUA_VERSION_STRING)
+-    foreach (subdir IN LISTS _lua_include_subdirs)
+-        unset(LUA_INCLUDE_PREFIX CACHE)
+-        find_path(LUA_INCLUDE_PREFIX ${subdir}/lua.h
+-          HINTS
+-            ENV LUA_DIR
+-          PATHS
+-          ~/Library/Frameworks
+-          /Library/Frameworks
+-          /sw # Fink
+-          /opt/local # DarwinPorts
+-          /opt/csw # Blastwave
+-          /opt
+-        )
+-        if (LUA_INCLUDE_PREFIX)
+-            _lua_check_header_version("${LUA_INCLUDE_PREFIX}/${subdir}/lua.h")
+-            if (LUA_VERSION_STRING)
+-                set(LUA_INCLUDE_DIR "${LUA_INCLUDE_PREFIX}/${subdir}")
+-                break()
++    if (NOT LUA_VERSION_STRING)
++        foreach (subdir IN LISTS _lua_include_subdirs)
++            unset(LUA_INCLUDE_PREFIX CACHE)
++            find_path(LUA_INCLUDE_PREFIX ${subdir}/lua.h
++              HINTS
++                ENV LUA_DIR
++              PATHS
++              ~/Library/Frameworks
++              /Library/Frameworks
++              /sw # Fink
++              /opt/local # DarwinPorts
++              /opt/csw # Blastwave
++              /opt
++            )
++            if (LUA_INCLUDE_PREFIX)
++                _lua_check_header_version("${LUA_INCLUDE_PREFIX}/${subdir}/lua.h")
++                if (LUA_VERSION_STRING)
++                    set(LUA_INCLUDE_DIR "${LUA_INCLUDE_PREFIX}/${subdir}")
++                    break()
++                endif ()
+             endif ()
+-        endif ()
+-    endforeach ()
+-endif ()
++        endforeach ()
++    endif ()
++endif(MODLUA_INCL_DIR)
+ unset(_lua_include_subdirs)
+ unset(_lua_append_versions)
+ 

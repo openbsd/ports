@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_CMakeCXXInformation_cmake,v 1.4 2016/04/29 10:34:33 dcoppa Exp $
---- Modules/CMakeCXXInformation.cmake.orig	Fri Apr 15 15:41:20 2016
-+++ Modules/CMakeCXXInformation.cmake	Wed Apr 27 10:55:08 2016
-@@ -144,10 +144,6 @@ if(NOT DEFINED CMAKE_EXE_EXPORTS_CXX_FLAG)
+$OpenBSD: patch-Modules_CMakeCXXInformation_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
+--- Modules/CMakeCXXInformation.cmake.orig	Fri Nov 11 15:37:13 2016
++++ Modules/CMakeCXXInformation.cmake	Fri Nov 25 22:31:44 2016
+@@ -134,10 +134,6 @@ if(NOT DEFINED CMAKE_EXE_EXPORTS_CXX_FLAG)
    set(CMAKE_EXE_EXPORTS_CXX_FLAG ${CMAKE_EXE_EXPORTS_C_FLAG})
  endif()
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Modules_CMakeCXXInformation_cmake,v 1.4 2016/04/29 10:34:33 dcop
  if(NOT CMAKE_EXECUTABLE_RUNTIME_CXX_FLAG)
    set(CMAKE_EXECUTABLE_RUNTIME_CXX_FLAG ${CMAKE_SHARED_LIBRARY_RUNTIME_CXX_FLAG})
  endif()
-@@ -262,7 +258,7 @@ include(CMakeCommonLanguageInclude)
+@@ -253,7 +249,7 @@ include(CMakeCommonLanguageInclude)
  # create a shared C++ library
  if(NOT CMAKE_CXX_CREATE_SHARED_LIBRARY)
    set(CMAKE_CXX_CREATE_SHARED_LIBRARY

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.151 2016/11/04 09:34:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.152 2016/11/28 09:15:13 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
 COMMENT =	portable build system
 
-VER =		3.6.3
+VER =		3.7.0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.cmake.org/
+HOMEPAGE =	https://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
@@ -17,7 +17,8 @@ MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += archive c curl expat form jsoncpp m ncurses pthread stdc++ z
+WANTLIB += archive c curl expat form jsoncpp m ncurses pthread
+WANTLIB += stdc++ z
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"
@@ -36,6 +37,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--docdir=share/doc/cmake \
 			--mandir=man \
 			--no-qt-gui \
+			--no-server \
 			--parallel=${MAKE_JOBS} \
 			--sphinx-build=${LOCALBASE}/bin/sphinx-build \
 			--sphinx-html \
