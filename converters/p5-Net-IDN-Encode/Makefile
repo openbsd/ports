@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/28 16:55:08 bluhm Exp $
 
 COMMENT=		Internationalizing Domain Names in Applications
 
 DISTNAME=		Net-IDN-Encode-2.300
+REVISION =		0
+
 CATEGORIES=		net converters
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

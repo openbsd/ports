@@ -1,0 +1,117 @@
+$OpenBSD: patch-lib_Net_IDN_Punycode_xs,v 1.1 2016/11/28 16:55:09 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=118924
+
+--- lib/Net/IDN/Punycode.xs.orig	Fri Jul 17 21:10:51 2015
++++ lib/Net/IDN/Punycode.xs	Tue Nov 22 14:34:09 2016
+@@ -49,6 +49,20 @@ static int adapt(int delta, int numpoints, int first) 
+   return k + (((BASE-TMIN+1) * delta) / (delta+SKEW));
+ };
+ 
++static void
++grow_string(SV *const sv, char **start, char **current, char **end, STRLEN add)
++{
++  STRLEN len;
++
++  if(*current + add <= *end)
++    return;
++
++  len = (*current - *start + add + 15) & ~15;
++  *start = SvGROW(sv, len);
++  *current = *start + len;
++  *end = *start + SvLEN(sv);
++}
++
+ MODULE = Net::IDN::Punycode PACKAGE = Net::IDN::Punycode
+ 
+ SV*
+@@ -81,15 +95,20 @@ encode_punycode(input)
+ 
+ 		/* copy basic code points */
+ 		while(in_p < in_e) {
+-		  if( isBASE(*in_p) ) 
++		  if( isBASE(*in_p) )  {
++		    grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 		    *re_p++ = *in_p;
++		  }
+ 		  in_p++;
+ 		}
+ 
+ 		h = re_p - re_s;
+ 
+ 		/* add DELIM if needed */	
+-		if(h) *re_p++ = DELIM;
++		if(h) {
++		  grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
++		  *re_p++ = DELIM;
++		}
+ 
+ 		for(;;) {
+ 		  /* find smallest code point not yet handled */
+@@ -138,20 +157,14 @@ encode_punycode(input)
+ 		      q = delta;
+ 
+ 		      for(k = BASE;; k += BASE) {
+-			if(re_p >= re_e) {
+-			  length_guess = re_e - re_s + 16;
+-			  re_e = SvGROW(RETVAL, length_guess);
+-			  re_p = re_e + (re_p - re_s);
+-			  re_s = re_e;
+-			  re_e = re_s + SvLEN(RETVAL);
+-			}
+-
+ 			t = TMIN_MAX(k - bias);
+ 			if(q < t) break;
++			grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 			*re_p++ = enc_digit[t + ((q-t) % (BASE-t))];
+ 		        q = (q-t) / (BASE-t);
+   		      }
+ 		      if(q > BASE) croak("input exceeds punycode limit");
++		      grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 	              *re_p++ = enc_digit[q];
+ 		      bias = adapt(delta, h+1, first);
+                       delta = first = 0;
+@@ -162,6 +175,7 @@ encode_punycode(input)
+ 		  ++delta;
+ 		  ++n;
+ 		}
++		grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 		*re_p = 0;
+ 		SvCUR_set(RETVAL, re_p - re_s);
+ 		ST(0) = RETVAL;
+@@ -201,6 +215,7 @@ decode_punycode(input)
+ 		  c = *in_p;					/* we don't care whether it's UTF-8 */
+ 		  if(!isBASE(c)) croak("non-base character in input for decode_punycode");
+ 		  if(c == DELIM) skip_p = in_p;
++		  grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 		  *re_p++ = c;					/* copy it */
+ 		}
+ 
+@@ -236,18 +251,11 @@ decode_punycode(input)
+ 
+ 		  u8 = UNISKIP(n);				/* how many bytes we need */
+ 
+-		  if(re_p + u8 >= re_e) {
+-		    length_guess = re_e - re_p + u8 + 16;
+-		    re_e = SvGROW(RETVAL, length_guess);
+-		    re_p = re_e + (re_p - re_s);
+-		    re_s = re_e;
+-		    re_e = re_s + SvLEN(RETVAL);
+-		  }
+-
+ 		  j = i;
+ 		  for(skip_p = re_s; j > 0; j--) 		/* find position in UTF-8 */
+ 		    skip_p+=UTF8SKIP(skip_p);
+ 
++		  grow_string(RETVAL, &re_s, &re_p, &re_e, u8);
+ 		  if(skip_p < re_p)				/* move succeeding chars */
+ 		    Move(skip_p, skip_p + u8, re_p - skip_p, char); 
+ 		  re_p += u8;
+@@ -255,6 +263,7 @@ decode_punycode(input)
+ 		}
+ 
+ 		if(!first) SvUTF8_on(RETVAL);			/* UTF-8 chars have been inserted */
++		grow_string(RETVAL, &re_s, &re_p, &re_e, 1);
+ 		*re_p = 0;
+ 		SvCUR_set(RETVAL, re_p - re_s);
+ 		ST(0) = RETVAL;
