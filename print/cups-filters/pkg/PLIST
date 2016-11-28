@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/08/21 12:58:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/11/28 10:14:23 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
 @pkgpath print/foomatic-filters
+bin/driverless
 bin/foomatic-rip
 @bin bin/ttfread
 include/cupsfilters/
@@ -10,6 +11,7 @@ include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/ppdgenerator.h
 include/cupsfilters/raster.h
 include/fontembed/
 include/fontembed/bitset.h
@@ -29,6 +31,7 @@ lib/pkgconfig/libfontembed.pc
 @bin libexec/cups/backend/implicitclass
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
+@bin libexec/cups/driver/driverless
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
@@ -56,6 +59,7 @@ libexec/cups/filter/pstoraster
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/texttotext
 @bin libexec/cups/filter/urftopdf
+@man man/man1/driverless.1
 @man man/man1/foomatic-rip.1
 @man man/man5/cups-browsed.conf.5
 @man man/man8/cups-browsed.8
