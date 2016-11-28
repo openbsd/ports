@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/09/26 07:44:02 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/11/28 10:41:40 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -52,9 +52,11 @@ share/highlight/langDefs/clipper.lang
 share/highlight/langDefs/clojure.lang
 share/highlight/langDefs/clp.lang
 share/highlight/langDefs/cobol.lang
+share/highlight/langDefs/coffee.lang
 share/highlight/langDefs/coldfusion.lang
 share/highlight/langDefs/conf.lang
 share/highlight/langDefs/crk.lang
+share/highlight/langDefs/cs_block_regex.lang
 share/highlight/langDefs/csharp.lang
 share/highlight/langDefs/css.lang
 share/highlight/langDefs/d.lang
@@ -95,8 +97,10 @@ share/highlight/langDefs/io.lang
 share/highlight/langDefs/jasmin.lang
 share/highlight/langDefs/java.lang
 share/highlight/langDefs/js.lang
+share/highlight/langDefs/js_regex.lang
 share/highlight/langDefs/json.lang
 share/highlight/langDefs/jsp.lang
+share/highlight/langDefs/jsx.lang
 share/highlight/langDefs/julia.lang
 share/highlight/langDefs/kotlin.lang
 share/highlight/langDefs/ldif.lang
@@ -153,6 +157,7 @@ share/highlight/langDefs/pl1.lang
 share/highlight/langDefs/plperl.lang
 share/highlight/langDefs/plpython.lang
 share/highlight/langDefs/pltcl.lang
+share/highlight/langDefs/po.lang
 share/highlight/langDefs/pony.lang
 share/highlight/langDefs/pov.lang
 share/highlight/langDefs/pro.lang
@@ -161,6 +166,7 @@ share/highlight/langDefs/ps.lang
 share/highlight/langDefs/ps1.lang
 share/highlight/langDefs/psl.lang
 share/highlight/langDefs/pure.lang
+share/highlight/langDefs/purebasic.lang
 share/highlight/langDefs/pyrex.lang
 share/highlight/langDefs/python.lang
 share/highlight/langDefs/q.lang
@@ -206,6 +212,7 @@ share/highlight/langDefs/vala.lang
 share/highlight/langDefs/vb.lang
 share/highlight/langDefs/verilog.lang
 share/highlight/langDefs/vhd.lang
+share/highlight/langDefs/vimscript.lang
 share/highlight/langDefs/whiley.lang
 share/highlight/langDefs/xml.lang
 share/highlight/langDefs/xpp.lang
@@ -241,6 +248,7 @@ share/highlight/themes/dusk.theme
 share/highlight/themes/earendel.theme
 share/highlight/themes/easter.theme
 share/highlight/themes/edit-anjuta.theme
+share/highlight/themes/edit-bbedit.theme
 share/highlight/themes/edit-eclipse.theme
 share/highlight/themes/edit-emacs.theme
 share/highlight/themes/edit-flashdevelop.theme
@@ -250,6 +258,7 @@ share/highlight/themes/edit-kwrite.theme
 share/highlight/themes/edit-matlab.theme
 share/highlight/themes/edit-msvs2008.theme
 share/highlight/themes/edit-nedit.theme
+share/highlight/themes/edit-purebasic.theme
 share/highlight/themes/edit-vim-dark.theme
 share/highlight/themes/edit-vim.theme
 share/highlight/themes/edit-xcode.theme
