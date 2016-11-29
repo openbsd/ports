@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/11/23 20:34:08 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/11/29 00:27:23 sthen Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
 @bin bin/opencv_traincascade
+@bin bin/opencv_visualisation
 include/opencv/
 include/opencv/cv.h
 include/opencv/cv.hpp

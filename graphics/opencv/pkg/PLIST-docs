@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2015/11/23 20:34:08 zhuk Exp $
+@comment $OpenBSD: PLIST-docs,v 1.9 2016/11/29 00:27:23 sthen Exp $
 share/OpenCV/samples/
 share/OpenCV/samples/CMakeLists.txt
 share/OpenCV/samples/c/
@@ -138,6 +138,7 @@ share/OpenCV/samples/cpp/pic4.png
 share/OpenCV/samples/cpp/pic5.png
 share/OpenCV/samples/cpp/pic6.png
 share/OpenCV/samples/cpp/points_classifier.cpp
+share/OpenCV/samples/cpp/polynominal_equations.cpp
 share/OpenCV/samples/cpp/retinaDemo.cpp
 share/OpenCV/samples/cpp/rgbdodometry.cpp
 share/OpenCV/samples/cpp/right01.jpg
