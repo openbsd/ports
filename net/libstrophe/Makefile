@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/25 17:43:39 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2016/11/29 22:24:40 tb Exp $
 
 COMMENT =	simple, lightweight XMPP C library
-DISTNAME =	libstrophe-0.8.8
+
+GH_ACCOUNT =	strophe
+GH_PROJECT =	libstrophe
+GH_TAGNAME =	0.9.1
+
+SHARED_LIBS =	strophe                 1.0 # 1.0
+
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://strophe.im/libstrophe/
+
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =	strophe
-GH_PROJECT =	libstrophe
-GH_COMMIT =	cd92f69c76cdb93e73e8d15c3634d1b5a9eeea57
-
-SHARED_LIBS =   strophe                 0.0 # 0.0
 
 WANTLIB += crypto expat ssl
 
@@ -27,7 +28,7 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 BUILD_DEPENDS +=	devel/check
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE =	gnu
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 
