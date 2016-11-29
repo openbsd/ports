@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_configuration_cpp,v 1.1 2016/11/29 11:35:00 dcoppa Exp $
+
+commit 8dde3944ee1878a7f26dd24bfe5e31f4e72c05b1
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Wed Nov 16 11:12:56 2016 +0100
+
+configuration: show meaningful error message if MPD_PORT is not a
+number
+
+--- src/configuration.cpp.orig	Mon Oct 31 12:24:35 2016
++++ src/configuration.cpp	Tue Nov 29 11:49:17 2016
+@@ -19,6 +19,7 @@
+  ***************************************************************************/
+ 
+ #include <algorithm>
++#include <boost/algorithm/string/trim.hpp>
+ #include <boost/filesystem/operations.hpp>
+ #include <boost/program_options.hpp>
+ #include <iostream>
+@@ -177,7 +178,16 @@ bool configure(int argc, char **argv)
+ 		if (env_host != nullptr)
+ 			Mpd.SetHostname(env_host);
+ 		if (env_port != nullptr)
+-			Mpd.SetPort(boost::lexical_cast<int>(env_port));
++		{
++			auto trimmed_env_port = boost::trim_copy<std::string>(env_port);
++			try {
++				Mpd.SetPort(boost::lexical_cast<int>(trimmed_env_port));
++			} catch (boost::bad_lexical_cast &) {
++				throw std::runtime_error("MPD_PORT environment variable ("
++				                         + std::string(env_port)
++				                         + ") is not a number");
++			}
++		}
+ 
+ 		// if MPD connection details are provided as command line
+ 		// parameters, use them as their priority is the highest.

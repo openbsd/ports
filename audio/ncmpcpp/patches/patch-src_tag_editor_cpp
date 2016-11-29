@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tag_editor_cpp,v 1.6 2016/11/29 11:35:00 dcoppa Exp $
+
+commit 3868e32b9216e14247e0534061d1d02f3b8ab65d
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Sun Nov 20 19:38:11 2016 +0100
+
+Show detailed error message if writing tags fails
+
+--- src/tag_editor.cpp.orig	Mon Oct 31 12:24:35 2016
++++ src/tag_editor.cpp	Tue Nov 29 11:54:04 2016
+@@ -797,8 +797,8 @@ void TagEditor::runAction()
+ 				Statusbar::printf("Writing tags in \"%1%\"...", (*it)->getName());
+ 				if (!Tags::write(**it))
+ 				{
+-					const char msg[] = "Error while writing tags in \"%1%\"";
+-					Statusbar::printf(msg, wideShorten((*it)->getURI(), COLS-const_strlen(msg)).c_str());
++					Statusbar::printf("Error while writing tags to \"%1%\": %2%",
++					                  (*it)->getName(), strerror(errno));
+ 					success = 0;
+ 					break;
+ 				}

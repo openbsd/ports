@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lyrics_cpp,v 1.3 2016/11/29 11:35:00 dcoppa Exp $
+
+commit dac0d4602f810d8f43e18beefdd43068e40308c3
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Wed Nov 16 05:50:40 2016 +0100
+
+lyrics: fix loading of files with DOS line endings
+
+--- src/lyrics.cpp.orig	Mon Oct 31 12:24:35 2016
++++ src/lyrics.cpp	Tue Nov 29 11:37:43 2016
+@@ -316,6 +316,8 @@ void Lyrics::Load()
+ 		std::string line;
+ 		while (std::getline(input, line))
+ 		{
++			// Remove carriage returns as they mess up the display.
++			line.erase(std::remove(line.begin(), line.end(), '\r'), line.end());
+ 			if (!first)
+ 				w << '\n';
+ 			w << Charset::utf8ToLocale(line);
