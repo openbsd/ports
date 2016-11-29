@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_unittests_tools_stub_http_upload_c,v 1.1 2016/11/29 22:26:57 tb Exp $
+
+fix missing include
+
+--- tests/unittests/tools/stub_http_upload.c.orig	Wed Sep 28 22:32:21 2016
++++ tests/unittests/tools/stub_http_upload.c	Wed Sep 28 22:33:12 2016
+@@ -37,6 +37,8 @@
+ 
+ #include <curl/curl.h>
+ 
++#include <pthread.h>
++
+ // forward -> ui/win_types.h
+ typedef struct prof_win_t ProfWin;
+ 

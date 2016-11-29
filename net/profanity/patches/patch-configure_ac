@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2016/04/25 17:46:38 tb Exp $
---- configure.ac.orig	Sun Sep 20 17:42:03 2015
-+++ configure.ac	Sun Oct  4 23:13:15 2015
-@@ -19,6 +19,7 @@ AC_CANONICAL_HOST
+$OpenBSD: patch-configure_ac,v 1.2 2016/11/29 22:26:57 tb Exp $
+--- configure.ac.orig	Wed Sep 14 22:52:04 2016
++++ configure.ac	Sun Sep 25 21:17:03 2016
+@@ -22,6 +22,7 @@ AC_CANONICAL_HOST
  PLATFORM="unknown"
  AS_CASE([$host_os],
      [freebsd*], [PLATFORM="freebsd"],
@@ -9,24 +9,9 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2016/04/25 17:46:38 tb Exp $
      [darwin*], [PLATFORM="osx"],
      [cygwin], [PLATFORM="cygwin"],
      [PLATFORM="nix"])
-@@ -57,12 +58,12 @@ AC_ARG_WITH([themes],
- # Use the CFLAGS and libs provided by libstrophe.pc if libstrophe has pkg-config support.
- PKG_CHECK_MODULES([libstrophe], [libstrophe], [LIBS="$libstrophe_LIBS $LIBS"],
-         [
--	 if test "x$PLATFORM" != xfreebsd; then
-+	 if test "x$PLATFORM" != xfreebsd || test "x$PLATFORM" != xopenbsd; then
- 		AC_CHECK_LIB([resolv], [res_query], [],
- 		    [AC_CHECK_LIB([resolv], [__res_query], [],
- 			[AC_MSG_ERROR([libresolv not found; libresolv required for profanity])])])
- 	 else
--		AC_MSG_NOTICE([skipping libresolv checks for freebsd])
-+		AC_MSG_NOTICE([skipping libresolv checks for FreeBSD and OpenBSD])
- 	 fi
- 
-          ### Check for libstrophe dependencies
-@@ -141,17 +142,24 @@ PKG_CHECK_MODULES([glib], [glib-2.0 >= 2.26], [],
- PKG_CHECK_MODULES([curl], [libcurl], [],
-     [AC_MSG_ERROR([libcurl is required for profanity])])
+@@ -172,15 +173,22 @@ AS_IF([test "x$enable_icons" != xno],
+             [AC_MSG_ERROR([gtk+-2.0 or higher is required for icons])],
+             [AC_MSG_NOTICE([gtk+-2.0 not found, icons not enabled])])])])
  
 -AS_IF([test "x$PLATFORM" != xosx],
 -    [AC_CHECK_LIB([readline], [main], [],
@@ -54,8 +39,14 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2016/04/25 17:46:38 tb Exp $
 +              [AC_MSG_ERROR([libreadline is required for profanity])])],
 +      [AC_MSG_ERROR([libreadline is required for profanity])])
  
--AC_CHECK_LIB([uuid], [uuid_generate], [],
-+AC_CHECK_LIB([uuid], [uuid_generate], [LIBS="-luuid $LIBS"],
-     [AC_MSG_ERROR([libuuid is required for profanity])])
- 
- AS_IF([test "x$PLATFORM" = xosx], [LIBS="-lcurl $LIBS"])
+ ### Check for desktop notification support
+ ### Linux/FreeBSD require libnotify
+@@ -196,7 +204,7 @@ AS_IF([test "x$PLATFORM" = xosx],
+                     [AC_MSG_ERROR([terminal-notifier not found, required for desktop notifications.])],
+                     [AC_MSG_NOTICE([Desktop notifications not supported.])])],
+                 [AC_DEFINE([HAVE_OSXNOTIFY], [1], [terminal notifier])])])],
+-    [test "x$PLATFORM" = xnix -o "x$PLATFORM" = xfreebsd],
++    [test "x$PLATFORM" = xnix -o "x$PLATFORM" = xfreebsd -o "x$PLATFORM" = xopenbsd],
+         [AS_IF([test "x$enable_notifications" != xno],
+             [PKG_CHECK_MODULES([libnotify], [libnotify],
+                 [AC_DEFINE([HAVE_LIBNOTIFY], [1], [libnotify module])],
