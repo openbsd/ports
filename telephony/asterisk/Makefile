@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.243 2016/11/11 10:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.244 2016/11/29 13:57:49 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.12.2
+VER=			13.13.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -20,12 +20,12 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main += c crypto curl execinfo g7221codec gsm iksemel ilbccodec
-WANTLIB-main += iconv jansson lzma m nghttp2 ogg opencore-amrnb opencore-amrwb
-WANTLIB-main += pj pjlib-util pjmedia pjmedia-audiodev pjmedia-codec
-WANTLIB-main += pjmedia-videodev pjnath pjsip pjsip-simple pjsip-ua
-WANTLIB-main += pjsua pjsua2 portaudio pthread resample spandsp speex
-WANTLIB-main += speexdsp sqlite3 ssl stdc++ termcap tiff uriparser
+WANTLIB-main += c crypto curl execinfo g7221codec gsm iconv iksemel
+WANTLIB-main += ilbccodec jansson lzma m nghttp2 ogg opencore-amrnb
+WANTLIB-main += opencore-amrwb pj pjlib-util pjmedia pjmedia-audiodev
+WANTLIB-main += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
+WANTLIB-main += pjsip-ua pjsua pjsua2 portaudio pthread resample spandsp
+WANTLIB-main += speex speexdsp sqlite3 ssl stdc++ termcap tiff uriparser
 WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
 
 SHARED_LIBS=		asteriskssl 0.0		# 1
@@ -58,8 +58,18 @@ BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+# if using bundled pjproject:
+#
+#CONFIGURE_ARGS+= --with-pjproject-bundled
+#PJ_V=		2.5.5
+#MASTER_SITES0=	http://www.pjsip.org/release/${PJ_V}/
+#EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
+#
+#	@cd ${WRKSRC}/third-party/; \
+#	    grep 'PJPROJECT_VERSION = ${PJ_V}$$' versions.mak > /dev/null || \
+#	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
+#	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
 
 USE_GMAKE=		Yes
 
@@ -68,6 +78,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
+			archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
@@ -83,7 +94,8 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			NOISY_BUILD="Yes" \
 			OPTIMIZE=
 
-CONFIGURE_ARGS+=	--localstatedir=/var
+CONFIGURE_ARGS+=	--localstatedir=/var \
+			--with-externals-cache=${FULLDISTDIR}
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-cap=no \

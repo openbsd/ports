@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.2 2016/11/11 10:55:17 sthen Exp $
---- configs/samples/asterisk.conf.sample.orig	Thu Nov 10 19:34:55 2016
-+++ configs/samples/asterisk.conf.sample	Fri Nov 11 10:39:52 2016
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.3 2016/11/29 13:57:49 sthen Exp $
+--- configs/samples/asterisk.conf.sample.orig	Wed Nov 23 15:26:01 2016
++++ configs/samples/asterisk.conf.sample	Tue Nov 29 12:26:11 2016
 @@ -60,8 +60,8 @@ astsbindir => /usr/sbin
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
@@ -22,8 +22,8 @@ $OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.2 2016/11/11 10:55:17 s
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
-@@ -98,8 +99,8 @@ documentation_language = en_US	; Set the language you 
- 				; using protocols: XMPP, Corosync and PJSIP.
+@@ -107,8 +108,8 @@ documentation_language = en_US	; Set the language you 
+ 				; no such broken implementation is known, yet.
  
  ; Changing the following lines may compromise your security.
 -;[files]
