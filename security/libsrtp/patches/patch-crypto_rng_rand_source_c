@@ -1,0 +1,25 @@
+$OpenBSD: patch-crypto_rng_rand_source_c,v 1.1 2016/11/29 13:23:18 sthen Exp $
+--- crypto/rng/rand_source.c.orig	Fri Jul 31 14:00:59 2015
++++ crypto/rng/rand_source.c	Fri Jul 31 14:03:45 2015
+@@ -81,7 +81,9 @@ rand_source_init(void) {
+     /* already open */
+     return err_status_ok;
+   }
+-#ifdef DEV_URANDOM
++#if __OpenBSD__
++  dev_random_fdes = RAND_SOURCE_READY;
++#elif DEV_URANDOM
+   /* open random source for reading */
+   dev_random_fdes = open(DEV_URANDOM, O_RDONLY);
+   if (dev_random_fdes < 0)
+@@ -104,7 +106,9 @@ rand_source_get_octet_string(void *dest, uint32_t len)
+    * check return value to make sure enough octets were
+    * written 
+    */
+-#ifdef DEV_URANDOM
++#if __OpenBSD__
++  arc4random_buf(dest, len);
++#elif DEV_URANDOM
+   uint8_t *dst = (uint8_t *)dest;
+   while (len)
+   {

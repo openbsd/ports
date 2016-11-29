@@ -1,0 +1,12 @@
+$OpenBSD: patch-crypto_cipher_cipher_c,v 1.1 2016/11/29 13:23:18 sthen Exp $
+--- crypto/cipher/cipher.c.orig	Fri Jul 31 14:00:17 2015
++++ crypto/cipher/cipher.c	Fri Jul 31 14:00:30 2015
+@@ -324,7 +324,7 @@ cipher_type_test(const cipher_type_t *ct, const cipher
+     uint8_t  iv[MAX_KEY_LEN];
+ 
+     /* choose a length at random (leaving room for IV and padding) */
+-    length = rand() % (SELF_TEST_BUF_OCTETS - 64);
++    length = arc4random_uniform(SELF_TEST_BUF_OCTETS - 64);
+     debug_print(mod_cipher, "random plaintext length %d\n", length);
+     status = rand_source_get_octet_string(buffer, length);
+     if (status) return status;
