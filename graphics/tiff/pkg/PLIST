@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/11/04 20:51:36 naddy Exp $
-@bin bin/bmp2tiff
+@comment $OpenBSD: PLIST,v 1.24 2016/11/29 20:00:35 naddy Exp $
 @bin bin/fax2ps
 @bin bin/fax2tiff
-@bin bin/gif2tiff
 @bin bin/pal2rgb
 @bin bin/ppm2tiff
-@bin bin/ras2tiff
 @bin bin/raw2tiff
-@bin bin/rgb2ycbcr
-@bin bin/thumbnail
 @bin bin/tiff2bw
 @bin bin/tiff2pdf
 @bin bin/tiff2ps
@@ -34,16 +29,12 @@ lib/libtiffxx.a
 lib/libtiffxx.la
 @lib lib/libtiffxx.so.${LIBtiffxx_VERSION}
 lib/pkgconfig/libtiff-4.pc
-@man man/man1/bmp2tiff.1
 @man man/man1/fax2ps.1
 @man man/man1/fax2tiff.1
-@man man/man1/gif2tiff.1
 @man man/man1/pal2rgb.1
 @man man/man1/ppm2tiff.1
-@man man/man1/ras2tiff.1
 @man man/man1/raw2tiff.1
 @man man/man1/rgb2ycbcr.1
-@man man/man1/sgi2tiff.1
 @man man/man1/thumbnail.1
 @man man/man1/tiff2bw.1
 @man man/man1/tiff2pdf.1
@@ -59,7 +50,6 @@ lib/pkgconfig/libtiff-4.pc
 @man man/man1/tiffmedian.1
 @man man/man1/tiffset.1
 @man man/man1/tiffsplit.1
-@man man/man1/tiffsv.1
 @man man/man3/TIFFClose.3
 @man man/man3/TIFFDataWidth.3
 @man man/man3/TIFFError.3
@@ -184,18 +174,14 @@ share/doc/tiff/man/TIFFsize.3tiff.html
 share/doc/tiff/man/TIFFstrip.3tiff.html
 share/doc/tiff/man/TIFFswab.3tiff.html
 share/doc/tiff/man/TIFFtile.3tiff.html
-share/doc/tiff/man/bmp2tiff.1.html
 share/doc/tiff/man/fax2ps.1.html
 share/doc/tiff/man/fax2tiff.1.html
-share/doc/tiff/man/gif2tiff.1.html
 share/doc/tiff/man/index.html
 share/doc/tiff/man/libtiff.3tiff.html
 share/doc/tiff/man/pal2rgb.1.html
 share/doc/tiff/man/ppm2tiff.1.html
-share/doc/tiff/man/ras2tiff.1.html
 share/doc/tiff/man/raw2tiff.1.html
 share/doc/tiff/man/rgb2ycbcr.1.html
-share/doc/tiff/man/sgi2tiff.1.html
 share/doc/tiff/man/thumbnail.1.html
 share/doc/tiff/man/tiff2bw.1.html
 share/doc/tiff/man/tiff2pdf.1.html
@@ -211,7 +197,6 @@ share/doc/tiff/man/tiffinfo.1.html
 share/doc/tiff/man/tiffmedian.1.html
 share/doc/tiff/man/tiffset.1.html
 share/doc/tiff/man/tiffsplit.1.html
-share/doc/tiff/man/tiffsv.1.html
 share/doc/tiff/misc.html
 share/doc/tiff/support.html
 share/doc/tiff/tools.html
@@ -258,3 +243,4 @@ share/doc/tiff/v4.0.4.html
 share/doc/tiff/v4.0.4beta.html
 share/doc/tiff/v4.0.5.html
 share/doc/tiff/v4.0.6.html
+share/doc/tiff/v4.0.7.html

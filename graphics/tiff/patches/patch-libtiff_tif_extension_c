@@ -1,23 +1,23 @@
-$OpenBSD: patch-libtiff_tif_extension_c,v 1.4 2012/04/14 15:09:55 naddy Exp $
+$OpenBSD: patch-libtiff_tif_extension_c,v 1.5 2016/11/29 20:00:35 naddy Exp $
 --- libtiff/tif_extension.c.orig	Wed Apr 11 18:27:24 2012
 +++ libtiff/tif_extension.c	Wed Apr 11 18:28:53 2012
 @@ -81,6 +81,7 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
  
  {
-     TIFFClientInfoLink *link = tif->tif_clientinfo;
+     TIFFClientInfoLink *psLink = tif->tif_clientinfo;
 +    size_t namelen = strlen(name);
  
      /*
      ** Do we have an existing link with this name?  If so, just
 @@ -102,9 +103,9 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
-     link = (TIFFClientInfoLink *) _TIFFmalloc(sizeof(TIFFClientInfoLink));
-     assert (link != NULL);
-     link->next = tif->tif_clientinfo;
--    link->name = (char *) _TIFFmalloc((tmsize_t)(strlen(name)+1));
-+    link->name = (char *) _TIFFmalloc((tmsize_t)(namelen+1));
-     assert (link->name != NULL);
--    strcpy(link->name, name);
-+    strlcpy(link->name, name, namelen+1);
-     link->data = data;
+     psLink = (TIFFClientInfoLink *) _TIFFmalloc(sizeof(TIFFClientInfoLink));
+     assert (psLink != NULL);
+     psLink->next = tif->tif_clientinfo;
+-    psLink->name = (char *) _TIFFmalloc((tmsize_t)(strlen(name)+1));
++    psLink->name = (char *) _TIFFmalloc((tmsize_t)(namelen+1));
+     assert (psLink->name != NULL);
+-    strcpy(psLink->name, name);
++    strlcpy(psLink->name, name, namelen+1);
+     psLink->data = data;
  
-     tif->tif_clientinfo = link;
+     tif->tif_clientinfo = psLink;

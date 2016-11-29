@@ -1,17 +1,11 @@
-$OpenBSD: patch-libtiff_tif_getimage_c,v 1.10 2016/01/24 16:48:49 naddy Exp $
+$OpenBSD: patch-libtiff_tif_getimage_c,v 1.11 2016/11/29 20:00:35 naddy Exp $
 
-* libtiff/tif_getimage.c: fix out-of-bound reads in TIFFRGBAImage
-interface in case of unsupported values of SamplesPerPixel/ExtraSamples
-for LogLUV / CIELab. Add explicit call to TIFFRGBAImageOK() in
-TIFFRGBAImageBegin(). Fix CVE-2015-8665 reported by limingxing and
-CVE-2015-8683 reported by zzf of Alibaba.
+This one is slightly problematic.  If an application allocates less
+room for its error buffer than the recommended 1024, the error message
+buffer will still overflow.
 
-This snprintf conversion is slightly problematic.  If an application
-allocates less room for its error buffer than the recommended 1024,
-the error message buffer will still overflow.
-
---- libtiff/tif_getimage.c.orig	Sat Aug 29 00:16:22 2015
-+++ libtiff/tif_getimage.c	Sun Jan 24 17:04:12 2016
+--- libtiff/tif_getimage.c.orig	Fri Nov 18 03:47:45 2016
++++ libtiff/tif_getimage.c	Thu Nov 24 22:01:47 2016
 @@ -80,7 +80,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  	int colorchannels;
  
@@ -21,7 +15,7 @@ the error message buffer will still overflow.
  		return (0);
  	}
  	switch (td->td_bitspersample) {
-@@ -91,7 +91,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -91,12 +91,12 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  		case 16:
  			break;
  		default:
@@ -30,7 +24,13 @@ the error message buffer will still overflow.
  			    td->td_bitspersample);
  			return (0);
  	}
-@@ -105,7 +105,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+         if (td->td_sampleformat == SAMPLEFORMAT_IEEEFP) {
+-                sprintf(emsg, "Sorry, can not handle images with IEEE floating-point samples");
++                snprintf(emsg, 1024, "Sorry, can not handle images with IEEE floating-point samples");
+                 return (0);
+         }
+ 	colorchannels = td->td_samplesperpixel - td->td_extrasamples;
+@@ -109,7 +109,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  				photometric = PHOTOMETRIC_RGB;
  				break;
  			default:
@@ -39,7 +39,7 @@ the error message buffer will still overflow.
  				return (0);
  		}
  	}
-@@ -116,7 +116,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -120,7 +120,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			if (td->td_planarconfig == PLANARCONFIG_CONTIG
  			    && td->td_samplesperpixel != 1
  			    && td->td_bitspersample < 8 ) {
@@ -48,7 +48,7 @@ the error message buffer will still overflow.
  				    "Sorry, can not handle contiguous data with %s=%d, "
  				    "and %s=%d and Bits/Sample=%d",
  				    photoTag, photometric,
-@@ -140,7 +140,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -144,7 +144,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			break;
  		case PHOTOMETRIC_RGB:
  			if (colorchannels < 3) {
@@ -57,7 +57,7 @@ the error message buffer will still overflow.
  				    "Color channels", colorchannels);
  				return (0);
  			}
-@@ -150,13 +150,13 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -154,13 +154,13 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  				uint16 inkset;
  				TIFFGetFieldDefaulted(tif, TIFFTAG_INKSET, &inkset);
  				if (inkset != INKSET_CMYK) {
@@ -73,7 +73,7 @@ the error message buffer will still overflow.
  					    "Sorry, can not handle separated image with %s=%d",
  					    "Samples/pixel", td->td_samplesperpixel);
  					return 0;
-@@ -165,7 +165,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -169,7 +169,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			}
  		case PHOTOMETRIC_LOGL:
  			if (td->td_compression != COMPRESSION_SGILOG) {
@@ -82,7 +82,7 @@ the error message buffer will still overflow.
  				    "Compression", COMPRESSION_SGILOG);
  				return (0);
  			}
-@@ -173,35 +173,37 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -177,17 +177,17 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  		case PHOTOMETRIC_LOGLUV:
  			if (td->td_compression != COMPRESSION_SGILOG &&
  			    td->td_compression != COMPRESSION_SGILOG24) {
@@ -97,50 +97,31 @@ the error message buffer will still overflow.
  				    "Planarconfiguration", td->td_planarconfig);
  				return (0);
  			}
--			if( td->td_samplesperpixel != 3 )
-+			if( td->td_samplesperpixel != 3 || colorchannels != 3 )
-             {
--                sprintf(emsg,
--                        "Sorry, can not handle image with %s=%d",
--                        "Samples/pixel", td->td_samplesperpixel);
-+                snprintf(emsg, 1024,
-+                         "Sorry, can not handle image with %s=%d, %s=%d",
-+                         "Samples/pixel", td->td_samplesperpixel,
-+                         "colorchannels", colorchannels);
-                 return 0;
-             }
+ 			if ( td->td_samplesperpixel != 3 || colorchannels != 3 ) {
+-                                sprintf(emsg,
++                                snprintf(emsg, 1024,
+                                         "Sorry, can not handle image with %s=%d, %s=%d",
+                                         "Samples/pixel", td->td_samplesperpixel,
+                                         "colorchannels", colorchannels);
+@@ -196,7 +196,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			break;
  		case PHOTOMETRIC_CIELAB:
--            if( td->td_samplesperpixel != 3 || td->td_bitspersample != 8 )
-+            if( td->td_samplesperpixel != 3 || colorchannels != 3 || td->td_bitspersample != 8 )
-             {
--                sprintf(emsg,
--                        "Sorry, can not handle image with %s=%d and %s=%d",
-+                snprintf(emsg, 1024,
-+                        "Sorry, can not handle image with %s=%d, %s=%d and %s=%d",
-                         "Samples/pixel", td->td_samplesperpixel,
-+                        "colorchannels", colorchannels,
-                         "Bits/sample", td->td_bitspersample);
-                 return 0;
-             }
+                         if ( td->td_samplesperpixel != 3 || colorchannels != 3 || td->td_bitspersample != 8 ) {
+-                                sprintf(emsg,
++                                snprintf(emsg, 1024,
+                                         "Sorry, can not handle image with %s=%d, %s=%d and %s=%d",
+                                         "Samples/pixel", td->td_samplesperpixel,
+                                         "colorchannels", colorchannels,
+@@ -205,7 +205,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+                         }
  			break;
- 		default:
+                 default:
 -			sprintf(emsg, "Sorry, can not handle image with %s=%d",
 +			snprintf(emsg, 1024, "Sorry, can not handle image with %s=%d",
  			    photoTag, photometric);
  			return (0);
  	}
-@@ -255,6 +257,9 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
- 	int colorchannels;
- 	uint16 *red_orig, *green_orig, *blue_orig;
- 	int n_color;
-+	
-+	if( !TIFFRGBAImageOK(tif, emsg) )
-+		return 0;
- 
- 	/* Initialize to normal values */
- 	img->row_offset = 0;
-@@ -275,7 +280,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -296,7 +296,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case 16:
  			break;
  		default:
@@ -149,7 +130,7 @@ the error message buffer will still overflow.
  			    img->bitspersample);
  			goto fail_return;
  	}
-@@ -325,7 +330,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -346,7 +346,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  				img->photometric = PHOTOMETRIC_RGB;
  				break;
  			default:
@@ -158,7 +139,7 @@ the error message buffer will still overflow.
                                  goto fail_return;
  		}
  	}
-@@ -333,7 +338,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -354,7 +354,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case PHOTOMETRIC_PALETTE:
  			if (!TIFFGetField(tif, TIFFTAG_COLORMAP,
  			    &red_orig, &green_orig, &blue_orig)) {
@@ -167,7 +148,7 @@ the error message buffer will still overflow.
                                  goto fail_return;
  			}
  
-@@ -343,7 +348,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -364,7 +364,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			img->greencmap = (uint16 *) _TIFFmalloc(sizeof(uint16)*n_color);
  			img->bluecmap = (uint16 *) _TIFFmalloc(sizeof(uint16)*n_color);
  			if( !img->redcmap || !img->greencmap || !img->bluecmap ) {
@@ -176,7 +157,7 @@ the error message buffer will still overflow.
                                  goto fail_return;
  			}
  
-@@ -357,7 +362,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -378,7 +378,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			if (planarconfig == PLANARCONFIG_CONTIG
  			    && img->samplesperpixel != 1
  			    && img->bitspersample < 8 ) {
@@ -185,7 +166,7 @@ the error message buffer will still overflow.
  				    "Sorry, can not handle contiguous data with %s=%d, "
  				    "and %s=%d and Bits/Sample=%d",
  				    photoTag, img->photometric,
-@@ -394,7 +399,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -415,7 +415,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_RGB:
  			if (colorchannels < 3) {
@@ -194,7 +175,7 @@ the error message buffer will still overflow.
  				    "Color channels", colorchannels);
                                  goto fail_return;
  			}
-@@ -404,12 +409,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -425,12 +425,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  				uint16 inkset;
  				TIFFGetFieldDefaulted(tif, TIFFTAG_INKSET, &inkset);
  				if (inkset != INKSET_CMYK) {
@@ -209,7 +190,7 @@ the error message buffer will still overflow.
  					    "Samples/pixel", img->samplesperpixel);
                                          goto fail_return;
  				}
-@@ -417,7 +422,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -438,7 +438,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_LOGL:
  			if (compress != COMPRESSION_SGILOG) {
@@ -218,7 +199,7 @@ the error message buffer will still overflow.
  				    "Compression", COMPRESSION_SGILOG);
                                  goto fail_return;
  			}
-@@ -427,12 +432,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -448,12 +448,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_LOGLUV:
  			if (compress != COMPRESSION_SGILOG && compress != COMPRESSION_SGILOG24) {
@@ -233,7 +214,7 @@ the error message buffer will still overflow.
  				    "Planarconfiguration", planarconfig);
  				return (0);
  			}
-@@ -443,7 +448,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -464,7 +464,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case PHOTOMETRIC_CIELAB:
  			break;
  		default:
@@ -242,7 +223,7 @@ the error message buffer will still overflow.
  			    photoTag, img->photometric);
                          goto fail_return;
  	}
-@@ -461,12 +466,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -482,12 +482,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  	    !(planarconfig == PLANARCONFIG_SEPARATE && img->samplesperpixel > 1);
  	if (img->isContig) {
  		if (!PickContigCase(img)) {
@@ -257,61 +238,3 @@ the error message buffer will still overflow.
  			goto fail_return;
  		}
  	}
-@@ -2508,29 +2513,33 @@ PickContigCase(TIFFRGBAImage* img)
- 		case PHOTOMETRIC_RGB:
- 			switch (img->bitspersample) {
- 				case 8:
--					if (img->alpha == EXTRASAMPLE_ASSOCALPHA)
-+					if (img->alpha == EXTRASAMPLE_ASSOCALPHA &&
-+						img->samplesperpixel >= 4)
- 						img->put.contig = putRGBAAcontig8bittile;
--					else if (img->alpha == EXTRASAMPLE_UNASSALPHA)
-+					else if (img->alpha == EXTRASAMPLE_UNASSALPHA &&
-+							 img->samplesperpixel >= 4)
- 					{
- 						if (BuildMapUaToAa(img))
- 							img->put.contig = putRGBUAcontig8bittile;
- 					}
--					else
-+					else if( img->samplesperpixel >= 3 )
- 						img->put.contig = putRGBcontig8bittile;
- 					break;
- 				case 16:
--					if (img->alpha == EXTRASAMPLE_ASSOCALPHA)
-+					if (img->alpha == EXTRASAMPLE_ASSOCALPHA &&
-+						img->samplesperpixel >=4 )
- 					{
- 						if (BuildMapBitdepth16To8(img))
- 							img->put.contig = putRGBAAcontig16bittile;
- 					}
--					else if (img->alpha == EXTRASAMPLE_UNASSALPHA)
-+					else if (img->alpha == EXTRASAMPLE_UNASSALPHA &&
-+							 img->samplesperpixel >=4 )
- 					{
- 						if (BuildMapBitdepth16To8(img) &&
- 						    BuildMapUaToAa(img))
- 							img->put.contig = putRGBUAcontig16bittile;
- 					}
--					else
-+					else if( img->samplesperpixel >=3 )
- 					{
- 						if (BuildMapBitdepth16To8(img))
- 							img->put.contig = putRGBcontig16bittile;
-@@ -2539,7 +2548,7 @@ PickContigCase(TIFFRGBAImage* img)
- 			}
- 			break;
- 		case PHOTOMETRIC_SEPARATED:
--			if (buildMap(img)) {
-+			if (img->samplesperpixel >=4 && buildMap(img)) {
- 				if (img->bitspersample == 8) {
- 					if (!img->Map)
- 						img->put.contig = putRGBcontig8bitCMYKtile;
-@@ -2635,7 +2644,7 @@ PickContigCase(TIFFRGBAImage* img)
- 			}
- 			break;
- 		case PHOTOMETRIC_CIELAB:
--			if (buildMap(img)) {
-+			if (img->samplesperpixel == 3 && buildMap(img)) {
- 				if (img->bitspersample == 8)
- 					img->put.contig = initCIELabConversion(img);
- 				break;

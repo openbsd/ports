@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.77 2016/07/01 11:23:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2016/11/29 20:00:35 naddy Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.0.6
-REVISION=	1
-SHARED_LIBS=	tiff	39.2	# 7.4
-SHARED_LIBS+=	tiffxx	40.1	# 7.4
+DISTNAME=	tiff-4.0.7
+SHARED_LIBS=	tiff	40.0	# 7.5
+SHARED_LIBS+=	tiffxx	40.1	# 7.5
 CATEGORIES=	graphics
 
 MASTER_SITES=	http://download.osgeo.org/libtiff/
 
-HOMEPAGE=	http://www.remotesensing.org/libtiff/
+HOMEPAGE=	http://www.simplesystems.org/libtiff/
 
 LIB_DEPENDS=	graphics/jpeg
 WANTLIB=	c m stdc++ z jpeg
