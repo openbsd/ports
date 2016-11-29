@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2016/11/17 21:56:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.50 2016/11/29 11:42:00 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -399,6 +399,7 @@ roundcubemail/plugins/attachment_reminder/localization/ro_RO.inc
 roundcubemail/plugins/attachment_reminder/localization/ru_RU.inc
 roundcubemail/plugins/attachment_reminder/localization/sk_SK.inc
 roundcubemail/plugins/attachment_reminder/localization/sl_SI.inc
+roundcubemail/plugins/attachment_reminder/localization/sq_AL.inc
 roundcubemail/plugins/attachment_reminder/localization/sr_CS.inc
 roundcubemail/plugins/attachment_reminder/localization/sv_SE.inc
 roundcubemail/plugins/attachment_reminder/localization/tr_TR.inc
@@ -471,6 +472,7 @@ roundcubemail/plugins/enigma/localization/el_GR.inc
 roundcubemail/plugins/enigma/localization/en_GB.inc
 roundcubemail/plugins/enigma/localization/en_US.inc
 roundcubemail/plugins/enigma/localization/es_ES.inc
+roundcubemail/plugins/enigma/localization/eu_ES.inc
 roundcubemail/plugins/enigma/localization/fi_FI.inc
 roundcubemail/plugins/enigma/localization/fo_FO.inc
 roundcubemail/plugins/enigma/localization/fr_FR.inc
@@ -492,6 +494,7 @@ roundcubemail/plugins/enigma/localization/pt_BR.inc
 roundcubemail/plugins/enigma/localization/pt_PT.inc
 roundcubemail/plugins/enigma/localization/ru_RU.inc
 roundcubemail/plugins/enigma/localization/sk_SK.inc
+roundcubemail/plugins/enigma/localization/sq_AL.inc
 roundcubemail/plugins/enigma/localization/sv_SE.inc
 roundcubemail/plugins/enigma/localization/tr_TR.inc
 roundcubemail/plugins/enigma/localization/uk_UA.inc
@@ -1070,6 +1073,7 @@ roundcubemail/plugins/markasjunk/localization/hu_HU.inc
 roundcubemail/plugins/markasjunk/localization/hy_AM.inc
 roundcubemail/plugins/markasjunk/localization/ia.inc
 roundcubemail/plugins/markasjunk/localization/id_ID.inc
+roundcubemail/plugins/markasjunk/localization/is_IS.inc
 roundcubemail/plugins/markasjunk/localization/it_IT.inc
 roundcubemail/plugins/markasjunk/localization/ja_JP.inc
 roundcubemail/plugins/markasjunk/localization/km_KH.inc
@@ -1093,6 +1097,7 @@ roundcubemail/plugins/markasjunk/localization/ru_RU.inc
 roundcubemail/plugins/markasjunk/localization/si_LK.inc
 roundcubemail/plugins/markasjunk/localization/sk_SK.inc
 roundcubemail/plugins/markasjunk/localization/sl_SI.inc
+roundcubemail/plugins/markasjunk/localization/sq_AL.inc
 roundcubemail/plugins/markasjunk/localization/sr_CS.inc
 roundcubemail/plugins/markasjunk/localization/sv_SE.inc
 roundcubemail/plugins/markasjunk/localization/tr_TR.inc
@@ -1157,6 +1162,7 @@ roundcubemail/plugins/new_user_dialog/localization/ja_JP.inc
 roundcubemail/plugins/new_user_dialog/localization/km_KH.inc
 roundcubemail/plugins/new_user_dialog/localization/ko_KR.inc
 roundcubemail/plugins/new_user_dialog/localization/ku.inc
+roundcubemail/plugins/new_user_dialog/localization/ku_IQ.inc
 roundcubemail/plugins/new_user_dialog/localization/lb_LU.inc
 roundcubemail/plugins/new_user_dialog/localization/lt_LT.inc
 roundcubemail/plugins/new_user_dialog/localization/lv_LV.inc
@@ -1174,6 +1180,7 @@ roundcubemail/plugins/new_user_dialog/localization/ro_RO.inc
 roundcubemail/plugins/new_user_dialog/localization/ru_RU.inc
 roundcubemail/plugins/new_user_dialog/localization/sk_SK.inc
 roundcubemail/plugins/new_user_dialog/localization/sl_SI.inc
+roundcubemail/plugins/new_user_dialog/localization/sq_AL.inc
 roundcubemail/plugins/new_user_dialog/localization/sr_CS.inc
 roundcubemail/plugins/new_user_dialog/localization/sv_SE.inc
 roundcubemail/plugins/new_user_dialog/localization/tr_TR.inc
@@ -1349,6 +1356,7 @@ roundcubemail/plugins/password/localization/hu_HU.inc
 roundcubemail/plugins/password/localization/hy_AM.inc
 roundcubemail/plugins/password/localization/ia.inc
 roundcubemail/plugins/password/localization/id_ID.inc
+roundcubemail/plugins/password/localization/is_IS.inc
 roundcubemail/plugins/password/localization/it_IT.inc
 roundcubemail/plugins/password/localization/ja_JP.inc
 roundcubemail/plugins/password/localization/km_KH.inc
@@ -1442,6 +1450,7 @@ roundcubemail/plugins/subscriptions_option/localization/hu_HU.inc
 roundcubemail/plugins/subscriptions_option/localization/hy_AM.inc
 roundcubemail/plugins/subscriptions_option/localization/ia.inc
 roundcubemail/plugins/subscriptions_option/localization/id_ID.inc
+roundcubemail/plugins/subscriptions_option/localization/is_IS.inc
 roundcubemail/plugins/subscriptions_option/localization/it_IT.inc
 roundcubemail/plugins/subscriptions_option/localization/ja_JP.inc
 roundcubemail/plugins/subscriptions_option/localization/km_KH.inc
@@ -1462,6 +1471,7 @@ roundcubemail/plugins/subscriptions_option/localization/ro_RO.inc
 roundcubemail/plugins/subscriptions_option/localization/ru_RU.inc
 roundcubemail/plugins/subscriptions_option/localization/sk_SK.inc
 roundcubemail/plugins/subscriptions_option/localization/sl_SI.inc
+roundcubemail/plugins/subscriptions_option/localization/sq_AL.inc
 roundcubemail/plugins/subscriptions_option/localization/sr_CS.inc
 roundcubemail/plugins/subscriptions_option/localization/sv_SE.inc
 roundcubemail/plugins/subscriptions_option/localization/tr_TR.inc
@@ -1512,6 +1522,7 @@ roundcubemail/plugins/userinfo/localization/hu_HU.inc
 roundcubemail/plugins/userinfo/localization/hy_AM.inc
 roundcubemail/plugins/userinfo/localization/ia.inc
 roundcubemail/plugins/userinfo/localization/id_ID.inc
+roundcubemail/plugins/userinfo/localization/is_IS.inc
 roundcubemail/plugins/userinfo/localization/it_IT.inc
 roundcubemail/plugins/userinfo/localization/ja_JP.inc
 roundcubemail/plugins/userinfo/localization/km_KH.inc
@@ -1609,6 +1620,7 @@ roundcubemail/plugins/vcard_attachments/localization/ru_RU.inc
 roundcubemail/plugins/vcard_attachments/localization/si_LK.inc
 roundcubemail/plugins/vcard_attachments/localization/sk_SK.inc
 roundcubemail/plugins/vcard_attachments/localization/sl_SI.inc
+roundcubemail/plugins/vcard_attachments/localization/sq_AL.inc
 roundcubemail/plugins/vcard_attachments/localization/sr_CS.inc
 roundcubemail/plugins/vcard_attachments/localization/sv_SE.inc
 roundcubemail/plugins/vcard_attachments/localization/tr_TR.inc
@@ -1685,6 +1697,7 @@ roundcubemail/plugins/zipdownload/localization/hu_HU.inc
 roundcubemail/plugins/zipdownload/localization/hy_AM.inc
 roundcubemail/plugins/zipdownload/localization/ia.inc
 roundcubemail/plugins/zipdownload/localization/id_ID.inc
+roundcubemail/plugins/zipdownload/localization/is_IS.inc
 roundcubemail/plugins/zipdownload/localization/it_IT.inc
 roundcubemail/plugins/zipdownload/localization/ja_JP.inc
 roundcubemail/plugins/zipdownload/localization/km_KH.inc
@@ -1706,6 +1719,7 @@ roundcubemail/plugins/zipdownload/localization/ro_RO.inc
 roundcubemail/plugins/zipdownload/localization/ru_RU.inc
 roundcubemail/plugins/zipdownload/localization/sk_SK.inc
 roundcubemail/plugins/zipdownload/localization/sl_SI.inc
+roundcubemail/plugins/zipdownload/localization/sq_AL.inc
 roundcubemail/plugins/zipdownload/localization/sr_CS.inc
 roundcubemail/plugins/zipdownload/localization/sv_SE.inc
 roundcubemail/plugins/zipdownload/localization/tr_TR.inc
