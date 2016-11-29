@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rrd_graph_helper_c,v 1.3 2016/11/29 10:21:59 jca Exp $
+
+Correctly print time_t.
+
+--- src/rrd_graph_helper.c.orig	Tue Apr 19 17:52:25 2016
++++ src/rrd_graph_helper.c	Tue Nov 29 09:43:54 2016
+@@ -1435,7 +1435,7 @@ int parse_shift(enum gf_en gf,parsedargs_t* pa,image_d
+   if (gdp->shidx>=0) {
+     dprintf("SHIFTBY : %s (%i)\n",im->gdes[gdp->shidx].vname,gdp->shidx);
+   } else {
+-    dprintf("SHIFTBY : %li\n",gdp->shval);
++    dprintf("SHIFTBY : %lld\n", (long long)gdp->shval);
+   }
+   dprintf("=================================\n");
+   /* and return */

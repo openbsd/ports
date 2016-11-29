@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_rrd_lastupdate_c,v 1.1 2016/11/29 10:21:59 jca Exp $
+
+Correctly print time_t.
+
+--- src/rrd_lastupdate.c.orig	Tue Nov 29 09:38:58 2016
++++ src/rrd_lastupdate.c	Tue Nov 29 09:39:17 2016
+@@ -64,7 +64,7 @@ int rrd_lastupdate (int argc, char **argv)
+         printf(" %s", ds_names[i]);
+     printf ("\n\n");
+ 
+-    printf ("%10lu:", last_update);
++    printf ("%10lld:", (long long)last_update);
+     for (i = 0; i < ds_count; i++) {
+         printf(" %s", last_ds[i]);
+         free(last_ds[i]);
