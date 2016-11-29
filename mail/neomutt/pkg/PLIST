@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/11/29 00:35:33 sthen Exp $
 @conflict mutt-*
 @bin bin/mutt
 @bin bin/mutt_dotlock
@@ -79,9 +79,9 @@ share/doc/mutt/samples/
 share/doc/mutt/security.html
 share/doc/mutt/smime-notes.txt
 share/doc/mutt/tuning.html
-share/doc/mutt/vim-keybindings/
-share/doc/mutt/vim-keybindings/README.md
-share/doc/mutt/vim-keybindings/vim-keybindings.rc
+share/doc/mutt/vim-keys/
+share/doc/mutt/vim-keys/README.md
+share/doc/mutt/vim-keys/vim-keys.rc
 share/examples/mutt/
 @sample ${SYSCONFDIR}/
 share/examples/mutt/Mush.rc
@@ -133,6 +133,9 @@ share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
 share/locale/el/LC_MESSAGES/mutt.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/mutt.mo
 share/locale/eo/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/et/LC_MESSAGES/mutt.mo
