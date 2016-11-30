@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/30 07:44:29 landry Exp $
+@bin bin/riemann-client
+include/riemann/
+include/riemann/attribute.h
+include/riemann/client.h
+include/riemann/event.h
+include/riemann/message.h
+include/riemann/proto/
+include/riemann/proto/riemann.pb-c.h
+include/riemann/query.h
+include/riemann/riemann-client.h
+include/riemann/simple.h
+lib/libriemann-client.a
+lib/libriemann-client.la
+@lib lib/libriemann-client.so.${LIBriemann-client_VERSION}
+lib/pkgconfig/riemann-client.pc
+@man man/man1/riemann-client.1
