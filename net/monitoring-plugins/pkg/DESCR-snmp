@@ -1,1 +1,1 @@
-Check several services via SNMP.
+monitoring-plugins subpackage to check various services via SNMP.

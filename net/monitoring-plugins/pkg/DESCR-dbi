@@ -1,1 +1,1 @@
-Check databases via DBI.
+monitoring-plugins subpackage to check databases via DBI.

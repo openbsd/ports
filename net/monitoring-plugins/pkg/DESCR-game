@@ -1,1 +1,1 @@
-Check game servers with games/qstat.
+monitoring-plugins subpackage to check game servers with games/qstat.

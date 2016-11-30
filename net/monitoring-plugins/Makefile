@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/18 10:42:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/11/30 20:46:42 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -9,8 +9,9 @@ COMMENT-mysql=	mysql monitoring plugin
 COMMENT-pgsql=	postgresql monitoring plugin
 COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
+COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.1.2
+V=		2.2
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -21,6 +22,7 @@ PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
+PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
@@ -55,14 +57,13 @@ CONFIGURE_ARGS+= --with-fping-command=${LOCALBASE}/sbin/fping \
 # listed here to make it easier to move BIND to ports
 CONFIGURE_ARGS+= --with-dig-command=/usr/sbin/dig \
 		--with-nslookup-command=/usr/sbin/nslookup
-# missing: radius
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
 PSEUDO_FLAVORS=	no_db
 FLAVOR?=
 
-MULTI_PACKAGES= -main -fping -game -samba -snmp -dbi -ldap -mysql -pgsql
+MULTI_PACKAGES= -main -fping -game -samba -snmp -dbi -ldap -mysql -pgsql -radius
 
 # many broken tests, but...
 TEST_IS_INTERACTIVE=Yes
@@ -73,14 +74,24 @@ TEST_IS_INTERACTIVE=Yes
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-dbi:N-ldap:N-mysql:N-pgsql}
 .endif
 
-# no build dependencies, or lightweight build dependencies
+# don't bother with no_XX for those with no build dependencies, or
+# lightweight/common build dependencies
 BUILD_DEPENDS+=		net/p5-Net-SNMP
+
 RUN_DEPENDS-fping=	${RUN_DEPENDS} net/fping
 RUN_DEPENDS-game=	${RUN_DEPENDS} games/qstat
+
 LIB_DEPENDS-samba=
 WANTLIB-samba=
 RUN_DEPENDS-samba=	net/samba
-RUN_DEPENDS-snmp=	${RUN_DEPENDS} net/net-snmp net/p5-Net-SNMP
+
+RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
+			net/net-snmp \
+			net/p5-Net-SNMP
+
+LIB_DEPENDS-radius=	net/radcli
+WANTLIB-radius+=	${WANTLIB} ffi gmp gnutls hogweed idn nettle
+WANTLIB-radius+=	p11-kit radcli tasn1 z
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}
