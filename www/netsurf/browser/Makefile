@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/01 00:32:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.27 2016/11/30 07:35:00 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.5
-REVISION =		0
+NETSURF_VERSION =	3.6
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		www/netsurf/nsgenbind \
+BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.4 \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		www/netsurf/hubbub>=0.3.3 \
-			www/netsurf/libcss>=0.6.0 \
-			www/netsurf/libnsgif>=0.1.3 \
-			www/netsurf/libnsbmp>=0.1.3 \
-			www/netsurf/libdom>=0.3.0 \
-			www/netsurf/libnsutils>=0.0.2 \
+			www/netsurf/libcss>=0.6.1 \
+			www/netsurf/libnsgif>=0.1.4 \
+			www/netsurf/libnsbmp>=0.1.4 \
+			www/netsurf/libdom>=0.3.1 \
+			www/netsurf/libnsutils>=0.0.3 \
 			www/netsurf/libutf8proc>=1.3.1 \
 			x11/gtk+2 \
 			x11/gnome/librsvg \
@@ -47,16 +46,16 @@ MAKE_FLAGS +=		CC="${CC}" \
 
 post-patch:
 	#http://bugs.netsurf-browser.org/mantis/view.php?id=2045
-	cp ${WRKSRC}/gtk/res/options.gtk2.ui{,.unfixed}
-	cd ${WRKSRC} && egrep translatable.*preferences gtk/res/options.gtk2.ui | \
+	cp ${WRKSRC}/frontends/gtk/res/options.gtk2.ui{,.unfixed}
+	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/options.gtk2.ui | \
 		sed -e 's/.*>\(.*\)<.*/\1/' | while read c ; do \
 		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
-		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/gtk/res/options.gtk2.ui ; done
+		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/frontends/gtk/res/options.gtk2.ui ; done
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/Docs/netsurf-gtk.1 \
-		${PREFIX}/man/man1/netsurf.1
+		${PREFIX}/man/man1/netsurf-gtk.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/gtk/res/netsurf-gtk.desktop \
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf-gtk.desktop \
 		${PREFIX}/share/applications/netsurf.desktop
 # bug in pkg_add -u prevents symlink->directory in pkg updates
 	rm -rf ${PREFIX}/share/netsurf/C

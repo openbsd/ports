@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_nsgenbind-ast_c,v 1.1 2016/11/30 07:35:00 bentley Exp $
+Fix undefined behavior in AST node creation.
+
+From upstream 3b3b926d7fb92361b1e8eed2efb351c32cb7bfaa.
+--- src/nsgenbind-ast.c.orig	Sat Nov 19 02:44:03 2016
++++ src/nsgenbind-ast.c	Mon Nov 28 18:51:54 2016
+@@ -132,6 +132,19 @@ genbind_new_node(enum genbind_node_type type, struct g
+         return nn;
+ }
+ 
++struct genbind_node *
++genbind_new_number_node(enum genbind_node_type type,
++                        struct genbind_node *l,
++                        int number)
++{
++        struct genbind_node *nn;
++        nn = calloc(1, sizeof(struct genbind_node));
++        nn->type = type;
++        nn->l = l;
++        nn->r.number = number;
++        return nn;
++}
++
+ 
+ /* exported interface defined in nsgenbind-ast.h */
+ int

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_res_options_gtk2_ui,v 1.5 2016/06/06 11:51:00 bentley Exp $
---- gtk/res/options.gtk2.ui.orig	Wed Apr  6 04:39:35 2016
-+++ gtk/res/options.gtk2.ui	Sun Jun  5 05:19:23 2016
+$OpenBSD: patch-frontends_gtk_res_options_gtk2_ui,v 1.1 2016/11/30 07:35:00 bentley Exp $
+--- frontends/gtk/res/options.gtk2.ui.orig	Sat Nov 19 06:37:41 2016
++++ frontends/gtk/res/options.gtk2.ui	Mon Nov 21 02:36:27 2016
 @@ -5,7 +5,7 @@
    <object class="GtkDialog" id="dialogPreferences">
      <property name="can_focus">False</property>

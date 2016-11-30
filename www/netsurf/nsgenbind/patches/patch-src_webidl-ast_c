@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_webidl-ast_c,v 1.1 2016/11/30 07:35:00 bentley Exp $
+Fix undefined behavior in AST node creation.
+
+From upstream 3b3b926d7fb92361b1e8eed2efb351c32cb7bfaa.
+--- src/webidl-ast.c.orig	Sat Nov 19 02:44:03 2016
++++ src/webidl-ast.c	Mon Nov 28 18:51:54 2016
+@@ -120,6 +120,7 @@ webidl_node_add(struct webidl_node *node, struct webid
+ 
+ 
+ struct webidl_node *
++/* exported interface documented in webidl-ast.h */
+ webidl_node_new(enum webidl_node_type type,
+ 		struct webidl_node *l,
+ 		void *r)
+@@ -128,7 +129,21 @@ webidl_node_new(enum webidl_node_type type,
+ 	nn = calloc(1, sizeof(struct webidl_node));
+ 	nn->type = type;
+ 	nn->l = l;
+-	nn->r.text = r;
++	nn->r.value = r;
++	return nn;
++}
++
++/* exported interface documented in webidl-ast.h */
++struct webidl_node *
++webidl_new_number_node(enum webidl_node_type type,
++                       struct webidl_node *l,
++                       int number)
++{
++	struct webidl_node *nn;
++	nn = calloc(1, sizeof(struct webidl_node));
++	nn->type = type;
++	nn->l = l;
++	nn->r.number = number;
+ 	return nn;
+ }
+ 

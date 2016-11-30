@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_webidl-ast_h,v 1.1 2016/11/30 07:35:00 bentley Exp $
+Fix undefined behavior in AST node creation.
+
+From upstream 3b3b926d7fb92361b1e8eed2efb351c32cb7bfaa.
+--- src/webidl-ast.h.orig	Sat Nov 19 02:44:03 2016
++++ src/webidl-ast.h	Mon Nov 28 18:51:54 2016
+@@ -92,7 +92,16 @@ typedef int (webidl_callback_t)(struct webidl_node *no
+ 
+ int webidl_cmp_node_type(struct webidl_node *node, void *ctx);
+ 
++/**
++ * create a new node with a pointer value
++ */
+ struct webidl_node *webidl_node_new(enum webidl_node_type, struct webidl_node *l, void *r);
++
++/**
++ * create a new node with an integer value
++ */
++struct webidl_node *webidl_new_number_node(enum webidl_node_type type, struct webidl_node *l, int number);
++
+ 
+ void webidl_node_set(struct webidl_node *node, enum webidl_node_type type, void *r);
+ 

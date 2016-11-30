@@ -1,7 +1,7 @@
-$OpenBSD: patch-libparserutils_pc_in,v 1.1 2013/05/03 07:32:34 bentley Exp $
---- libparserutils.pc.in.orig	Sat Apr 27 13:58:49 2013
-+++ libparserutils.pc.in	Sat Apr 27 13:59:08 2013
-@@ -6,5 +6,5 @@ includedir=${prefix}/include
+$OpenBSD: patch-libparserutils_pc_in,v 1.2 2016/11/30 07:35:00 bentley Exp $
+--- libparserutils.pc.in.orig	Tue Feb 16 01:49:51 2016
++++ libparserutils.pc.in	Sun Nov 20 19:45:02 2016
+@@ -6,5 +6,5 @@ includedir=${prefix}/INCLUDEDIR
  Name: libparserutils
  Description: Utility library for facilitating parser development
  Version: VERSION

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2016/03/06 20:27:24 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2016/11/30 07:35:00 bentley Exp $
 
 CATEGORIES +=	www
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 DESTDIRNAME =	${DESTDIR}
 
-TEST_TARGET =test
+TEST_TARGET =	test
 USE_GMAKE =	Yes
 
 # not used for browser
