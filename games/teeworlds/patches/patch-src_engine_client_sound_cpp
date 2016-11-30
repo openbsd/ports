@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_engine_client_sound_cpp,v 1.1 2015/12/27 17:56:22 jasper Exp $
+$OpenBSD: patch-src_engine_client_sound_cpp,v 1.2 2016/11/30 18:19:33 jca Exp $
 
 Make it possible to compile with an external and newer wavpack.
 From Debian.
 
---- src/engine/client/sound.cpp.orig	Wed May  1 13:47:39 2013
-+++ src/engine/client/sound.cpp	Thu May  8 16:00:47 2014
+--- src/engine/client/sound.cpp.orig	Sun Nov 13 16:41:35 2016
++++ src/engine/client/sound.cpp	Wed Nov 30 19:18:11 2016
 @@ -13,7 +13,7 @@
  #include "sound.h"
  
@@ -73,7 +73,7 @@ From Debian.
  
 @@ -526,8 +524,6 @@ void CSound::StopAll()
  	}
- 	lock_release(m_SoundLock);
+ 	lock_unlock(m_SoundLock);
  }
 -
 -IOHANDLE CSound::ms_File = 0;
