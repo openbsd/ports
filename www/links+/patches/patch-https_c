@@ -1,7 +1,7 @@
-$OpenBSD: patch-https_c,v 1.4 2016/09/03 09:33:19 sthen Exp $
---- https.c.orig	Sun Jun 26 18:52:02 2016
-+++ https.c	Thu Sep  1 20:15:20 2016
-@@ -89,6 +89,11 @@ SSL *getSSL(void)
+$OpenBSD: patch-https_c,v 1.5 2016/11/30 19:42:15 fcambus Exp $
+--- https.c.orig	Sat Nov 19 13:52:07 2016
++++ https.c	Mon Nov 28 22:16:21 2016
+@@ -88,6 +88,11 @@ links_ssl *getSSL(void)
  					RAND_write_file(cast_const_char f_randfile);
  			}
  		}

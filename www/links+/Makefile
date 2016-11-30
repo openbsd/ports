@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.59 2016/09/03 09:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2016/11/30 19:42:15 fcambus Exp $
 
 COMMENT=	graphics and text browser
-VER=		2.13
+VER=		2.14
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
