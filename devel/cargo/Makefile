@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/13 08:59:26 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/30 09:01:00 landry Exp $
 COMMENT = package manager for Rust language
+
+# lang/rust is being worked on for i386, cargo not ready yet
+ONLY_FOR_ARCHS =	amd64
 
 # cargo version
 CARGO_VERSION =		0.14.0
