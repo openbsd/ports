@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/27 17:56:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/30 18:17:03 jca Exp $
 
 # Crashes on strict-alignment archs, see: src/base/system.c:164
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT=	platform game featuring buggers equipped with weapons
 
-V=		0.6.3
+V=		0.6.4
 DISTNAME=	teeworlds-${V}-src
 PKGNAME=	teeworlds-${V}
 CATEGORIES=	games
@@ -29,10 +29,14 @@ LIB_DEPENDS=	audio/wavpack \
 		devel/sdl
 
 MODULES=	lang/python
+MODPY_RUNDEP=	No
 
 SUBST_VARS=	CC CXX CFLAGS CXXFLAGS X11BASE
 
 NO_TEST=	Yes
+
+# Give it a chance on ppc
+CXXFLAGS+=	-fsigned-char
 
 post-extract:
 	@mv ${WRKDIR}/bam-${BAM_VERSION} ${BAM_WRKSRC}
