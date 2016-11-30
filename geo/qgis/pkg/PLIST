@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/11/01 09:18:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/11/30 16:53:37 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -29,6 +29,7 @@ include/qgis/qgs25drenderer.h
 include/qgis/qgs25drendererwidget.h
 include/qgis/qgsabstractgeometryv2.h
 include/qgis/qgsaction.h
+include/qgis/qgsactionmanager.h
 include/qgis/qgsactionmenu.h
 include/qgis/qgsaddremoveitemcommand.h
 include/qgis/qgsaddremovemultiframecommand.h
@@ -276,6 +277,7 @@ include/qgis/qgsfieldexpressionwidget.h
 include/qgis/qgsfieldmodel.h
 include/qgis/qgsfieldproxymodel.h
 include/qgis/qgsfieldvalidator.h
+include/qgis/qgsfiledownloader.h
 include/qgis/qgsfiledropedit.h
 include/qgis/qgsfilenamewidgetfactory.h
 include/qgis/qgsfilenamewidgetwrapper.h
@@ -1514,6 +1516,16 @@ share/qgis/python/plugins/db_manager/db_plugins/
 share/qgis/python/plugins/db_manager/db_plugins/__init__.py
 share/qgis/python/plugins/db_manager/db_plugins/connector.py
 share/qgis/python/plugins/db_manager/db_plugins/data_model.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/__init__.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/connector.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/data_model.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/icons/
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/icons/gpkg_icon.png
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/info_model.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/plugin.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/resources_rc.py
+share/qgis/python/plugins/db_manager/db_plugins/gpkg/sql_dictionary.py
 share/qgis/python/plugins/db_manager/db_plugins/html_elems.py
 share/qgis/python/plugins/db_manager/db_plugins/info_model.py
 share/qgis/python/plugins/db_manager/db_plugins/plugin.py
@@ -2715,9 +2727,6 @@ share/qgis/python/plugins/processing/algs/qgis/MeanCoords.py
 share/qgis/python/plugins/processing/algs/qgis/Merge.py
 share/qgis/python/plugins/processing/algs/qgis/MergeLines.py
 share/qgis/python/plugins/processing/algs/qgis/MergeLines_BACKUP_1606.py
-share/qgis/python/plugins/processing/algs/qgis/MergeLines_BASE_1606.py
-share/qgis/python/plugins/processing/algs/qgis/MergeLines_LOCAL_1606.py
-share/qgis/python/plugins/processing/algs/qgis/MergeLines_REMOTE_1606.py
 share/qgis/python/plugins/processing/algs/qgis/MultipartToSingleparts.py
 share/qgis/python/plugins/processing/algs/qgis/NearestNeighbourAnalysis.py
 share/qgis/python/plugins/processing/algs/qgis/OrientedMinimumBoundingBox.py
