@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/11/19 12:02:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2016/12/01 09:08:37 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.5
+REVISION=		0
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -45,7 +46,8 @@ RUN_DEPENDS=		net/GeoIP,-asn \
 
 # share/broctl/scripts
 BUILD_DEPENDS +=	shells/bash
-RUN_DEPENDS +=		shells/bash
+RUN_DEPENDS +=		misc/findutils \
+			shells/bash
 
 # share/bro/base/utils/active-http.bro
 RUN_DEPENDS +=		net/curl

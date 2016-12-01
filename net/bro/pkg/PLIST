@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/11/19 12:02:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/12/01 09:08:37 ajacoutot Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @bin bin/adtrace
 @bin bin/bro
@@ -726,6 +726,7 @@ share/examples/bro/node.cfg
 share/examples/bro/site/
 @sample ${SYSCONFDIR}/bro/site/
 share/examples/bro/site/local-logger.bro
+@sample ${SYSCONFDIR}/bro/site/local-logger.bro
 share/examples/bro/site/local-manager.bro
 @sample ${SYSCONFDIR}/bro/site/local-manager.bro
 share/examples/bro/site/local-proxy.bro
