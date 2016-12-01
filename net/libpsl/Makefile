@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/10 11:34:54 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2016/12/01 09:24:23 jca Exp $
 
 COMMENT =		public suffix list library
 
-DISTNAME =		libpsl-0.13.0
+DISTNAME =		libpsl-0.15.0
 
 SHARED_LIBS +=		psl	1.0	# 5.0
 
 CATEGORIES =		net www
 
 HOMEPAGE =		https://github.com/rockdaboot/libpsl/
+
+MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
