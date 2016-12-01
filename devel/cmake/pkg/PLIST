@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2016/11/28 09:15:13 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.37 2016/12/01 09:38:54 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -165,7 +165,7 @@ share/cmake/Help/generator/Visual Studio 10 2010.rst
 share/cmake/Help/generator/Visual Studio 11 2012.rst
 share/cmake/Help/generator/Visual Studio 12 2013.rst
 share/cmake/Help/generator/Visual Studio 14 2015.rst
-share/cmake/Help/generator/Visual Studio 15.rst
+share/cmake/Help/generator/Visual Studio 15 2017.rst
 share/cmake/Help/generator/Visual Studio 6.rst
 share/cmake/Help/generator/Visual Studio 7 .NET 2003.rst
 share/cmake/Help/generator/Visual Studio 7.rst
@@ -875,6 +875,7 @@ share/cmake/Help/variable/CMAKE_ANDROID_JAVA_SOURCE_DIR.rst
 share/cmake/Help/variable/CMAKE_ANDROID_NATIVE_LIB_DEPENDENCIES.rst
 share/cmake/Help/variable/CMAKE_ANDROID_NATIVE_LIB_DIRECTORIES.rst
 share/cmake/Help/variable/CMAKE_ANDROID_NDK.rst
+share/cmake/Help/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG.rst
 share/cmake/Help/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION.rst
 share/cmake/Help/variable/CMAKE_ANDROID_PROCESS_MAX.rst
 share/cmake/Help/variable/CMAKE_ANDROID_PROGUARD.rst
@@ -1004,12 +1005,14 @@ share/cmake/Help/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.rst
 share/cmake/Help/variable/CMAKE_INSTALL_MESSAGE.rst
 share/cmake/Help/variable/CMAKE_INSTALL_NAME_DIR.rst
 share/cmake/Help/variable/CMAKE_INSTALL_PREFIX.rst
+share/cmake/Help/variable/CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT.rst
 share/cmake/Help/variable/CMAKE_INSTALL_RPATH.rst
 share/cmake/Help/variable/CMAKE_INSTALL_RPATH_USE_LINK_PATH.rst
 share/cmake/Help/variable/CMAKE_INTERNAL_PLATFORM_ABI.rst
 share/cmake/Help/variable/CMAKE_IOS_INSTALL_COMBINED.rst
 share/cmake/Help/variable/CMAKE_JOB_POOL_COMPILE.rst
 share/cmake/Help/variable/CMAKE_JOB_POOL_LINK.rst
+share/cmake/Help/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.rst
 share/cmake/Help/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_PREFIX.rst
 share/cmake/Help/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_SUFFIX.rst
 share/cmake/Help/variable/CMAKE_LANG_ARCHIVE_APPEND.rst
@@ -2311,7 +2314,7 @@ share/doc/cmake/html/_sources/generator/Visual Studio 10 2010.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 11 2012.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 12 2013.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 14 2015.txt
-share/doc/cmake/html/_sources/generator/Visual Studio 15.txt
+share/doc/cmake/html/_sources/generator/Visual Studio 15 2017.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 6.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 7 .NET 2003.txt
 share/doc/cmake/html/_sources/generator/Visual Studio 7.txt
@@ -3006,6 +3009,7 @@ share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_JAVA_SOURCE_DIR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_NATIVE_LIB_DEPENDENCIES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_NATIVE_LIB_DIRECTORIES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_NDK.txt
+share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_PROCESS_MAX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ANDROID_PROGUARD.txt
@@ -3134,12 +3138,14 @@ share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_MESSAGE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_NAME_DIR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_PREFIX.txt
+share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_RPATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_RPATH_USE_LINK_PATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INTERNAL_PLATFORM_ABI.txt
 share/doc/cmake/html/_sources/variable/CMAKE_IOS_INSTALL_COMBINED.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_COMPILE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_LINK.txt
+share/doc/cmake/html/_sources/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_PREFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_SUFFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ARCHIVE_APPEND.txt
@@ -3582,7 +3588,7 @@ share/doc/cmake/html/generator/Visual Studio 10 2010.html
 share/doc/cmake/html/generator/Visual Studio 11 2012.html
 share/doc/cmake/html/generator/Visual Studio 12 2013.html
 share/doc/cmake/html/generator/Visual Studio 14 2015.html
-share/doc/cmake/html/generator/Visual Studio 15.html
+share/doc/cmake/html/generator/Visual Studio 15 2017.html
 share/doc/cmake/html/generator/Visual Studio 6.html
 share/doc/cmake/html/generator/Visual Studio 7 .NET 2003.html
 share/doc/cmake/html/generator/Visual Studio 7.html
@@ -4281,6 +4287,7 @@ share/doc/cmake/html/variable/CMAKE_ANDROID_JAVA_SOURCE_DIR.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_NATIVE_LIB_DEPENDENCIES.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_NATIVE_LIB_DIRECTORIES.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_NDK.html
+share/doc/cmake/html/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_PROCESS_MAX.html
 share/doc/cmake/html/variable/CMAKE_ANDROID_PROGUARD.html
@@ -4409,12 +4416,14 @@ share/doc/cmake/html/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_MESSAGE.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_NAME_DIR.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_PREFIX.html
+share/doc/cmake/html/variable/CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_RPATH.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_RPATH_USE_LINK_PATH.html
 share/doc/cmake/html/variable/CMAKE_INTERNAL_PLATFORM_ABI.html
 share/doc/cmake/html/variable/CMAKE_IOS_INSTALL_COMBINED.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOL_COMPILE.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOL_LINK.html
+share/doc/cmake/html/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.html
 share/doc/cmake/html/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_PREFIX.html
 share/doc/cmake/html/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_SUFFIX.html
 share/doc/cmake/html/variable/CMAKE_LANG_ARCHIVE_APPEND.html
