@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/24 08:10:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/01 08:53:38 kirby Exp $
 
 COMMENT =		image processing and analysis library
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
 GH_TAGNAME = 		Version-1-11-0
 DISTNAME =		vigra-1.11.0
+REVISION = 		0
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -37,7 +38,7 @@ CONFIGURE_ARGS =	-DWITH_VIGRANUMPY=0 \
 			-DDOCINSTALL=share/doc/ \
 			-DWITH_BOOST_THREAD=1 \
 			-DWITH_OPENEXR=1 \
-			-DDWITH_HDF5=0 \
+			-DWITH_HDF5=0 \
 			-DCREATE_CTEST_TARGETS=ON \
 			-DAUTOBUILD_TESTS=ON \
 			-DAUTOEXEC_TESTS:BOOL=OFF
