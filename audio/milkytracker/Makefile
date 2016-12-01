@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/27 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/01 22:42:44 fcambus Exp $
 
 COMMENT =		Fasttracker II inspired MOD tracker
 
 DISTNAME =		milkytracker-0.90.86
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://www.milkytracker.org/
+HOMEPAGE =		http://milkytracker.titandemo.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
