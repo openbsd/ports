@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/10 21:58:40 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/01 10:31:05 danj Exp $
 
 COMMENT =		virtualenv-based automation of test activities
 
-MODPY_EGG_VERSION =	2.4.1
+MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		tox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
-HOMEPAGE =		http://tox.testrun.org/
+HOMEPAGE =		https://tox.readthedocs.io/en/latest/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
