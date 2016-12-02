@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/12/01 09:19:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/12/02 08:57:58 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -58,6 +58,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/2016-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/2016-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/autoscaling/2011-01-01/paginators-1.json
@@ -137,6 +140,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudwatch/2010-08-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/2016-10-06/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codebuild/2016-10-06/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codecommit/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codecommit/2015-04-13/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codecommit/2015-04-13/paginators-1.json
@@ -218,6 +224,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-09-15/examples-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-09-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-09-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-09-15/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ec2/2016-11-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/2015-09-21/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ecr/2015-09-21/paginators-1.json
@@ -281,6 +292,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/health/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/health/2016-08-04/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/paginators-1.json
@@ -341,6 +355,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/service-2.json
@@ -387,6 +407,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ses/2010-12-01/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/service-2.json
@@ -405,6 +428,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm/2014-11-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm/2014-11-06/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm/2014-11-06/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/stepfunctions/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/stepfunctions/2016-11-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/stepfunctions/2016-11-23/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/storagegateway/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/storagegateway/2013-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/storagegateway/2013-06-30/paginators-1.json
@@ -427,6 +453,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/2015-08-24/service-2.
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}/
