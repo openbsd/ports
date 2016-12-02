@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/02 08:52:33 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/02 21:42:19 danj Exp $
 
 COMMENT =		non-validating SQL parser
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.2.2
 DISTNAME =		sqlparse-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -12,10 +12,13 @@ CATEGORIES =		databases
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-test
+FLAVORS =		python3
+FLAVOR ?=
+
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest tests/
