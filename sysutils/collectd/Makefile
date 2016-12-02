@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/12/02 15:50:29 jca Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,7 +11,7 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
 V =			5.5.1
-REVISION-main =		0
+REVISION-main =		1
 REVISION-virt =		1
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V

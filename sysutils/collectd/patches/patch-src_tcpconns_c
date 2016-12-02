@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tcpconns_c,v 1.9 2016/12/02 15:50:29 jca Exp $
+--- src/tcpconns.c.orig	Tue Nov 29 09:26:19 2016
++++ src/tcpconns.c	Tue Nov 29 09:27:06 2016
+@@ -922,7 +922,7 @@ static int conn_init (void)
+   };
+   int status;
+ 
+-  kvmd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, buf);
++  kvmd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY|KVM_NO_FILES, buf);
+   if (kvmd == NULL)
+   {
+     ERROR ("tcpconns plugin: kvm_openfiles failed: %s", buf);
