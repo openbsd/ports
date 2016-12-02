@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/30 02:08:52 juanfra Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/02 14:51:52 sthen Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
-DISTNAME =	the_silver_searcher-0.33.0
+DISTNAME =	the_silver_searcher-1.0.1
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
@@ -13,6 +13,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
 WANTLIB += c lzma pcre pthread z
+
+MODULES =	gcc4
+MODGCC4_ARCHS =	* # needed for TLS
 
 MASTER_SITES =	http://geoff.greer.fm/ag/releases/
 
