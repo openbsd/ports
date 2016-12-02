@@ -1,0 +1,13 @@
+$OpenBSD: patch-contrib_hiredis_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
+--- contrib/hiredis/CMakeLists.txt.orig	Mon Jan 11 16:08:24 2016
++++ contrib/hiredis/CMakeLists.txt	Fri Dec  2 15:12:53 2016
+@@ -6,9 +6,6 @@ SET(HIREDISSRC	async.c
+ 				sds.c)
+ 
+ SET(HIREDIS_CFLAGS "")
+-IF("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+-	SET(HIREDIS_CFLAGS "${HIREDIS_CFLAGS} -O3")
+-ENDIF()
+ 
+ ADD_LIBRARY(rspamd-hiredis STATIC ${HIREDISSRC})
+ 

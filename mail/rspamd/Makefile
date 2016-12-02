@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/12/02 14:59:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/12/02 15:19:42 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME =	rspamd-1.4.1
+DISTNAME=	rspamd-1.4.1
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -34,6 +35,7 @@ TEST_DEPENDS +=	databases/redis \
 		devel/py-robotframework
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
+		-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
 		-DDBDIR="${LOCALSTATEDIR}/rspamd" \
 		-DLOGDIR="${LOCALSTATEDIR}/log/rspamd" \
@@ -55,6 +57,11 @@ do-test:
 		RSPAMD=/usr/local/bin/rspamd \
 		${LOCALBASE}/bin/robot \
 		test/functional/cases
+
+# no trailing crlf
+post-extract:
+	for i in hiredis http-parser lc-btrie libottery; do \
+	    echo >> ${WRKSRC}/contrib/$$i/CMakeLists.txt; done
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md

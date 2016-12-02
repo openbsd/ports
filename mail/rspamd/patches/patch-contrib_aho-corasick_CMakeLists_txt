@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_aho-corasick_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
+--- contrib/aho-corasick/CMakeLists.txt.orig	Fri Dec  2 15:08:49 2016
++++ contrib/aho-corasick/CMakeLists.txt	Fri Dec  2 15:09:37 2016
+@@ -1,8 +1,5 @@
+ SET(AHOCORASICSRC	acism_create.c
+ 					acism.c)
+-if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+-	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+-endif ()
+ 
+ IF(NOT GPL_RSPAMD_BINARY)
+ 	ADD_LIBRARY(rspamd-actrie SHARED ${AHOCORASICSRC})

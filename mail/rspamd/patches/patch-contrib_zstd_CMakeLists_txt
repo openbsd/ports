@@ -1,0 +1,10 @@
+$OpenBSD: patch-contrib_zstd_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
+--- contrib/zstd/CMakeLists.txt.orig	Fri Dec  2 15:08:49 2016
++++ contrib/zstd/CMakeLists.txt	Fri Dec  2 15:08:51 2016
+@@ -12,6 +12,3 @@ SET(ZSTDSRC	divsufsort.c
+ 			zstd_decompress.c)
+ 
+ ADD_LIBRARY(rspamd-zstd STATIC ${ZSTDSRC})
+-if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+-	SET_TARGET_PROPERTIES(rspamd-zstd PROPERTIES COMPILE_FLAGS "-O3")
+-endif ()
