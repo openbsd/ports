@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2016/08/12 13:28:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/12/02 17:38:33 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-7.07
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.2 # 5.1
 
@@ -15,25 +16,26 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed idn ltdl lz4 lzma m nettle p11-kit
-WANTLIB += pcsclite proxy pskc pthread stdc++ tasn1 xml2 xmlsec1 xslt z
+WANTLIB += c ffi gmp gnutls hogweed iconv idn intl lz4 lzma m
+WANTLIB += nettle p11-kit pthread tasn1 xml2 z
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 
-MODULES=	devel/gettext \
-		lang/python
+FLAVORS=	light
+FLAVOR?=
+
+MODULES=	lang/python
 MODPY_RUNDEP=	No
 # groff is used to format html during build, USE_GROFF not needed
 # XXX can probably convert to using mandoc?
-BUILD_DEPENDS=	textproc/groff \
+BUILD_DEPENDS=	devel/gettext-tools \
+		textproc/groff \
 		textproc/py-xml
-LIB_DEPENDS=	archivers/lz4 \
-		security/gnutls \
-		security/oath-toolkit,-pskc \
-		security/pcsc-lite \
-		textproc/libxml \
-		net/libproxy>=0.4.6p7
 RUN_DEPENDS=	net/vpnc-scripts
+LIB_DEPENDS=	archivers/lz4 \
+		devel/gettext \
+		security/gnutls \
+		textproc/libxml
 
 FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect
 
@@ -44,5 +46,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-vpnc-script=${SYSCONFDIR}/vpnc-script \
 		--without-stoken
 # make sure libstoken isn't picked up automatically if we import it.
+
+.if ${FLAVOR:Mlight}
+CONFIGURE_ARGS+= --without-libpcsclite \
+		--without-libproxy \
+		--without-libpskc
+.else
+WANTLIB+=	ltdl pcsclite proxy pskc stdc++ xmlsec1 xslt
+LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
+		security/oath-toolkit,-pskc \
+		security/pcsc-lite
+.endif
 
 .include <bsd.port.mk>

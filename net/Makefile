@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.993 2016/11/17 13:30:53 edd Exp $
+# $OpenBSD: Makefile,v 1.994 2016/12/02 17:38:33 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -304,6 +304,7 @@
      SUBDIR += onioncat
      SUBDIR += openafs
      SUBDIR += openconnect
+     SUBDIR += openconnect,light
      SUBDIR += openfire
      SUBDIR += openmdns
      SUBDIR += openvmps
