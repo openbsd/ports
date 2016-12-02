@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/02 15:17:40 sthen Exp $
 
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
@@ -32,8 +32,8 @@ NO_TEST=	Yes
 
 # no trailing crlf
 post-extract:
-	cd ${WRKSRC}; for i in contrib/http-parser contrib/lc-btrie contrib/xxhash; \
-	    do echo >> $$i/CMakeLists.txt; done
+	cd ${WRKSRC}; for i in http-parser lc-btrie xxhash; \
+	    do echo >> contrib/$$i/CMakeLists.txt; done
 
 pre-configure:
 	sed -i -e 's,/etc/,${SYSCONFDIR}/,g' \
