@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/30 07:35:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/02 06:25:36 bentley Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
 NETSURF_VERSION =	3.6
+REVISION =		0
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
 
 HOMEPAGE=		http://www.netsurf-browser.org/
@@ -22,6 +23,7 @@ LIB_DEPENDS =		devel/sdl \
 			www/netsurf/libnsbmp>=0.1.4 \
 			www/netsurf/libnsfb>=0.1.5 \
 			www/netsurf/libdom>=0.3.1 \
+			www/netsurf/libnspsl>=0.1.0 \
 			www/netsurf/libnsutils>=0.0.3 \
 			www/netsurf/libsvgtiny>=0.1.5 \
 			www/netsurf/libutf8proc>=1.3.1 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/01 00:31:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2016/12/02 06:25:36 bentley Exp $
 
      SUBDIR += browser
      SUBDIR += buildsystem
@@ -8,6 +8,7 @@
      SUBDIR += libnsbmp
      SUBDIR += libnsfb
      SUBDIR += libnsgif
+     SUBDIR += libnspsl
      SUBDIR += libnsutils
      SUBDIR += libparserutils
      SUBDIR += libsvgtiny
