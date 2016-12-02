@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/11/29 12:15:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/12/02 14:59:09 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -105,6 +105,7 @@ share/rspamd/effective_tld_names.dat
 share/rspamd/lua/
 share/rspamd/lua/antivirus.lua
 share/rspamd/lua/asn.lua
+share/rspamd/lua/clickhouse.lua
 share/rspamd/lua/dcc.lua
 share/rspamd/lua/dmarc.lua
 share/rspamd/lua/dynamic_conf.lua
@@ -138,6 +139,7 @@ share/rspamd/rules/
 share/rspamd/rules/forwarding.lua
 share/rspamd/rules/html.lua
 share/rspamd/rules/http_headers.lua
+share/rspamd/rules/mid.lua
 share/rspamd/rules/misc.lua
 share/rspamd/rules/regexp/
 share/rspamd/rules/regexp/compromised_hosts.lua
@@ -145,6 +147,7 @@ share/rspamd/rules/regexp/drugs.lua
 share/rspamd/rules/regexp/fraud.lua
 share/rspamd/rules/regexp/headers.lua
 share/rspamd/rules/regexp/lotto.lua
+share/rspamd/rules/regexp/misc.lua
 share/rspamd/rules/regexp/upstream_spam_filters.lua
 share/rspamd/rules/rspamd.classifiers.lua
 share/rspamd/rules/rspamd.lua
