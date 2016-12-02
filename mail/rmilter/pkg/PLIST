@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+@newgroup _rmilter:783
+@newuser _rmilter:783:_rmilter:daemon:rmilter user:/nonexistent:/sbin/nologin
+@bin sbin/rmilter
+share/examples/rmilter/
+share/examples/rmilter/rmilter-grey.conf
+@sample ${SYSCONFDIR}/rmilter/
+@sample ${SYSCONFDIR}/rmilter/rmilter-grey.conf
+share/examples/rmilter/rmilter.conf.sample
+@sample ${SYSCONFDIR}/rmilter/rmilter.conf
+@rcscript ${RCDIR}/rmilter

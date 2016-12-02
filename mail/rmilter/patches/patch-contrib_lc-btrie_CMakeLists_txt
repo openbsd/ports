@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_lc-btrie_CMakeLists_txt,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+--- contrib/lc-btrie/CMakeLists.txt.orig	Fri Dec  2 14:44:00 2016
++++ contrib/lc-btrie/CMakeLists.txt	Fri Dec  2 14:44:00 2016
+@@ -3,7 +3,4 @@ SET(LCTRIESRC            btrie.c
+ ADD_LIBRARY(lcbtrie STATIC ${LCTRIESRC})
+ 
+ SET(LCTRIE_CFLAGS "-DBUILD_RSPAMD")
+-if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+-    SET(LCTRIE_CFLAGS "${LCTRIE_CFLAGS} -O3")
+-endif ()
+ set_target_properties(lcbtrie PROPERTIES COMPILE_FLAGS "${LCTRIE_CFLAGS}")

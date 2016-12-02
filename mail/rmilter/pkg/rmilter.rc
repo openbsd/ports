@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: rmilter.rc,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/rmilter"
+daemon_flags="-c ${SYSCONFDIR}/rmilter/rmilter.conf"
+daemon_user="_rmilter"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	/usr/bin/install -d -o ${daemon_user} /var/run/rmilter
+}
+
+rc_reload() {
+        pkill -USR1 -T "${daemon_rtable}" -xf "${pexp}"
+}
+
+rc_cmd $1

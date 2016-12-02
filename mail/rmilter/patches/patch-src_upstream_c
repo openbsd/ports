@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_upstream_c,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+--- src/upstream.c.orig	Fri Dec  2 14:42:42 2016
++++ src/upstream.c	Fri Dec  2 14:43:17 2016
+@@ -226,7 +226,7 @@ get_random_upstream(void *ups, unsigned int members, u
+ 
+ 	alive = rescan_upstreams (ups, members, msize, now, error_timeout,
+ 			revive_timeout, max_errors, priv);
+-	selected = rand () % alive;
++	selected = arc4random_uniform (alive);
+ 	msg_debug("<%s>; get_random_upstream: return upstream with number %d of %d",
+ 			priv->mlfi_id, selected, alive);
+ 

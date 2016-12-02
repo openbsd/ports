@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_http-parser_CMakeLists_txt,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
+--- contrib/http-parser/CMakeLists.txt.orig	Mon Jun 20 11:08:56 2016
++++ contrib/http-parser/CMakeLists.txt	Thu Jul  7 08:58:21 2016
+@@ -1,8 +1,4 @@
+ SET(HTTPSRC            http_parser.c)
+ 
+-if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+-	set(HTTP_COMPILE_FLAGS "${HTTP_COMPILE_FLAGS} -O3")
+-endif ()
+-
+ ADD_LIBRARY(rmilter-http-parser STATIC ${HTTPSRC})
+ SET_TARGET_PROPERTIES(rmilter-http-parser PROPERTIES COMPILE_FLAGS "${HTTP_COMPILE_FLAGS}")
