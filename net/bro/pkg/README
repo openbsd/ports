@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2016/10/10 08:06:38 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2016/12/02 10:05:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,4 +21,4 @@ It's also recommended to enable housekeeping tasks by adding the following
 entry into root's crontab(5):
 */5	*	*	*	*	${TRUEPREFIX}/bin/broctl cron
 
-See http://www.bro.org/sphinx/quickstart/index.html for details.
+See https://www.bro.org/sphinx/quickstart/index.html for details.
