@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_components_tl-process_js,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-src_components_tl-process_js,v 1.2 2016/12/02 08:18:19 landry Exp $
 
 Let geoip/geoip6 file paths be set by prefs like everything else.  Go
 back to old way of munging relative paths, their new way is
 effectively a no-op for us anyway.
---- src/components/tl-process.js.orig	Tue May 24 16:33:24 2016
-+++ src/components/tl-process.js	Thu Jun 23 09:54:49 2016
+--- src/components/tl-process.js.orig	Wed Nov  9 04:55:57 2016
++++ src/components/tl-process.js	Fri Nov 18 17:04:27 2016
 @@ -309,6 +309,7 @@ TorProcessService.prototype =
    mIsQuitting: false,
    mObsSvc: null,
@@ -42,7 +42,7 @@ effectively a no-op for us anyway.
        }
        args.push("-f");
        args.push(torrcFile.path);
-@@ -679,10 +676,10 @@ TorProcessService.prototype =
+@@ -684,10 +681,10 @@ TorProcessService.prototype =
        return null;
  
      let isRelativePath = true;
@@ -55,7 +55,7 @@ effectively a no-op for us anyway.
      if (path)
      {
        let re = (TorLauncherUtil.isWindows) ?  /^[A-Za-z]:\\/ : /^\//;
-@@ -763,16 +760,13 @@ TorProcessService.prototype =
+@@ -768,16 +765,13 @@ TorProcessService.prototype =
        if (isRelativePath)
        {
          // Turn 'path' into an absolute path.
@@ -77,7 +77,7 @@ effectively a no-op for us anyway.
          f.appendRelativePath(path);
        }
        else
-@@ -800,6 +794,8 @@ TorProcessService.prototype =
+@@ -805,6 +799,8 @@ TorProcessService.prototype =
        if (f.exists())
        {
          try { f.normalize(); } catch(e) {}
