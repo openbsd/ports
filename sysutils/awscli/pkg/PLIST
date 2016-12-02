@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/11/19 11:01:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/12/02 08:58:17 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/alias.py
+lib/python${MODPY_VERSION}/site-packages/awscli/alias.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/argparser.py
 lib/python${MODPY_VERSION}/site-packages/awscli/argparser.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/argprocess.py
@@ -20,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/clidocs.py
 lib/python${MODPY_VERSION}/site-packages/awscli/clidocs.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/clidriver.py
 lib/python${MODPY_VERSION}/site-packages/awscli/clidriver.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/commands.py
+lib/python${MODPY_VERSION}/site-packages/awscli/commands.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/compat.py
 lib/python${MODPY_VERSION}/site-packages/awscli/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/completer.py
