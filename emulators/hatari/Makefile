@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/17 09:51:41 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/02 13:08:21 jca Exp $
+
+ONLY_FOR_ARCHS = i386 amd64 powerpc arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
