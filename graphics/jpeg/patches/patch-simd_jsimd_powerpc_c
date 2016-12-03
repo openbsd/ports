@@ -1,0 +1,32 @@
+$OpenBSD: patch-simd_jsimd_powerpc_c,v 1.1 2016/12/03 11:22:50 landry Exp $
+
+Detect Altivec support on ppc.
+
+--- simd/jsimd_powerpc.c.orig	Wed Sep 21 01:36:59 2016
++++ simd/jsimd_powerpc.c	Fri Dec  2 19:23:14 2016
+@@ -26,6 +26,12 @@
+ #include <string.h>
+ #include <ctype.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <machine/cpu.h>
++#endif
++
+ static unsigned int simd_support = ~0;
+ 
+ #if defined(__linux__) || defined(ANDROID) || defined(__ANDROID__)
+@@ -116,6 +122,12 @@ init_simd (void)
+     if (bufsize > SOMEWHAT_SANE_PROC_CPUINFO_SIZE_LIMIT)
+       break;
+   }
++#elif defined(__OpenBSD__)
++  int mib[2] = { CTL_MACHDEP, CPU_ALTIVEC };
++  int altivec;
++  size_t len = sizeof(altivec);
++  if (sysctl(mib, 2, &altivec, &len, NULL, 0) == 0 && altivec != 0)
++    simd_support |= JSIMD_ALTIVEC;
+ #endif
+ 
+   /* Force different settings through environment variables */

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2016/10/18 14:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2016/12/03 11:22:50 landry Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
 V=		1.5.1
 DISTNAME=	jpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS+=	jpeg		68.1	# 64.0
