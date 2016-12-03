@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-riemann,v 1.1 2016/12/03 11:44:41 landry Exp $
+@comment lib/collectd/write_riemann.la
+lib/collectd/write_riemann.so

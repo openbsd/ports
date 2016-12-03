@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_daemon_Makefile_in,v 1.2 2016/06/13 09:12:40 landry Exp $
---- src/daemon/Makefile.in.orig	Fri Jan 22 10:55:46 2016
-+++ src/daemon/Makefile.in	Mon Jun  6 09:19:46 2016
+$OpenBSD: patch-src_daemon_Makefile_in,v 1.3 2016/12/03 11:44:41 landry Exp $
+--- src/daemon/Makefile.in.orig	Wed Nov 30 09:52:10 2016
++++ src/daemon/Makefile.in	Sat Dec  3 11:41:09 2016
 @@ -79,7 +79,7 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
 -@BUILD_FEATURE_DAEMON_TRUE@am__append_1 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
 +@BUILD_FEATURE_DAEMON_TRUE@am__append_1 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
- @BUILD_WITH_LIBRT_TRUE@am__append_2 = -lrt
- @BUILD_WITH_LIBPOSIX4_TRUE@am__append_3 = -lposix4
- @BUILD_WITH_LIBSOCKET_TRUE@am__append_4 = -lsocket
-@@ -713,7 +713,7 @@ top_srcdir = @top_srcdir@
+ @BUILD_WITH_CAPABILITY_TRUE@am__append_2 = -lcap
+ @BUILD_WITH_LIBRT_TRUE@am__append_3 = -lrt
+ @BUILD_WITH_LIBPOSIX4_TRUE@am__append_4 = -lposix4
+@@ -772,7 +772,7 @@ top_srcdir = @top_srcdir@
  AM_CPPFLAGS = -I$(top_srcdir)/src -DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \

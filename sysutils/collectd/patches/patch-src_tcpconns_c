@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.9 2016/12/02 15:50:29 jca Exp $
---- src/tcpconns.c.orig	Tue Nov 29 09:26:19 2016
-+++ src/tcpconns.c	Tue Nov 29 09:27:06 2016
-@@ -922,7 +922,7 @@ static int conn_init (void)
-   };
-   int status;
- 
--  kvmd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, buf);
-+  kvmd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY|KVM_NO_FILES, buf);
-   if (kvmd == NULL)
-   {
-     ERROR ("tcpconns plugin: kvm_openfiles failed: %s", buf);
+$OpenBSD: patch-src_tcpconns_c,v 1.10 2016/12/03 11:44:41 landry Exp $
+--- src/tcpconns.c.orig	Sat Dec  3 11:49:16 2016
++++ src/tcpconns.c	Sat Dec  3 11:52:02 2016
+@@ -111,9 +111,9 @@
+ #include <net/route.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
++#include <netinet/ip.h>
+ #include <netinet/in_pcb.h>
+ #include <netinet/in_systm.h>
+-#include <netinet/ip.h>
+ #include <netinet/ip_var.h>
+ #include <netinet/tcp.h>
+ #include <netinet/tcp_timer.h>

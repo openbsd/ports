@@ -1,21 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.9 2016/06/13 09:12:40 landry Exp $
---- src/Makefile.in.orig	Fri Jan 22 10:55:46 2016
-+++ src/Makefile.in	Mon Jun  6 09:18:40 2016
+$OpenBSD: patch-src_Makefile_in,v 1.10 2016/12/03 11:44:41 landry Exp $
+--- src/Makefile.in.orig	Wed Nov  9 20:02:37 2016
++++ src/Makefile.in	Wed Nov  9 20:05:56 2016
 @@ -80,7 +80,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_1 = liboconfig
 -@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
 +@BUILD_FEATURE_DAEMON_TRUE@am__append_2 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
- sbin_PROGRAMS = collectdmon$(EXEEXT)
- bin_PROGRAMS = collectd-nagios$(EXEEXT) collectdctl$(EXEEXT) \
- 	collectd-tg$(EXEEXT)
-@@ -2422,11 +2422,11 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- SUBDIRS = libcollectdclient $(am__append_1) daemon
- PLUGIN_LDFLAGS = -module -avoid-version -export-symbols-regex '\<module_register\>'
--@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall -Werror
-+@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall
+ check_PROGRAMS = $(am__EXEEXT_1) test_utils_latency$(EXEEXT) \
+ 	test_utils_vl_lookup$(EXEEXT) test_utils_mount$(EXEEXT) \
+ 	$(am__EXEEXT_2)
+@@ -2610,7 +2610,7 @@ PLUGIN_LDFLAGS = -module -avoid-version -export-symbol
  AM_CPPFLAGS = -I$(srcdir)/daemon -DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
@@ -23,9 +18,9 @@ $OpenBSD: patch-src_Makefile_in,v 1.9 2016/06/13 09:12:40 landry Exp $
 +	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
  	$(am__append_2) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
- AUTOMAKE_OPTIONS = subdir-objects
-@@ -5120,13 +5120,8 @@ uninstall-man: uninstall-man1 uninstall-man5
- @BUILD_PLUGIN_WRITE_RIEMANN_TRUE@	$(AM_V_PROTOC_C)protoc-c -I$(srcdir) --c_out . $(srcdir)/riemann.proto
+ LOG_COMPILER = env VALGRIND="@VALGRIND@" $(abs_top_srcdir)/testwrapper.sh
+@@ -5519,13 +5519,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @BUILD_PLUGIN_PINBA_TRUE@	$(AM_V_PROTOC_C)$(PROTOC_C) -I$(srcdir) --c_out . $(srcdir)/pinba.proto
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)

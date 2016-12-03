@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/12/02 15:50:29 jca Exp $
+# $OpenBSD: Makefile,v 1.42 2016/12/03 11:44:41 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -9,10 +9,9 @@ COMMENT-virt =		collectd libvirt plugin
 COMMENT-python =	collectd python plugin
 COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
+COMMENT-riemann =	collectd riemann plugin
 
-V =			5.5.1
-REVISION-main =		1
-REVISION-virt =		1
+V =			5.6.2
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -23,6 +22,7 @@ PKGNAME-virt =		collectd-virt-$V
 PKGNAME-python =	collectd-python-$V
 PKGNAME-memcachec =	collectd-memcachec-$V
 PKGNAME-nut =		collectd-nut-$V
+PKGNAME-riemann =	collectd-riemann-$V
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.collectd.org/
@@ -32,11 +32,12 @@ SHARED_LIBS +=		collectdclient 1.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
+EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext lang/python
 MODPY_RUNDEP =		No
 
-MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -nut
+MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -nut -riemann
 
 WANTLIB-mysql =		crypto m ssl z mysqlclient_r pthread
 LIB_DEPENDS-mysql =	databases/mariadb
@@ -55,7 +56,7 @@ WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-snmp =		crypto netsnmp m pthread
+WANTLIB-snmp =		crypto netsnmp pthread
 LIB_DEPENDS-snmp =	net/net-snmp
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
@@ -66,7 +67,7 @@ WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
-WANTLIB-python =	${MODPY_WANTLIB} pthread
+WANTLIB-python =	${MODPY_WANTLIB} pthread m util
 RUN_DEPENDS-python =	collectd-$V:${BASE_PKGPATH},-main \
 			${MODPY_RUN_DEPENDS}
 
@@ -78,18 +79,22 @@ LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut
 RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-nut =		crypto pthread ssl upsclient
 
+LIB_DEPENDS-riemann =	sysutils/riemann-c-client
+WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn \
+			nettle protobuf-c p11-kit pthread riemann-client tasn1 z
+RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
+
 LIB_DEPENDS +=	net/curl \
 		net/liboping \
 		textproc/libxml \
 		sysutils/libstatgrab \
 		security/libgcrypt \
 		devel/libtool,-ltdl \
-		devel/libyajl \
-		devel/protobuf-c>=1.0.1
+		devel/libyajl
 
 WANTLIB += c crypto gpg-error kvm curl xml2 ltdl lzma oping nghttp2
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
-WANTLIB += protobuf-c yajl
+WANTLIB += yajl
 
 CONFIGURE_STYLE =	gnu
 # uses -export-symbol-regex
@@ -99,8 +104,9 @@ CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
 		--with-librrd=${LOCALBASE} \
 		--with-libstatgrab=${LOCALBASE} \
-		--with-libnetsnmp=${LOCALBASE}/bin/net-snmp-config \
+		--with-libnetsnmp=${LOCALBASE} \
 		--with-python=${MODPY_BIN} \
+		--with-libprotobuf-c=no \
 		--enable-all-plugins=no
 
 # no, varnishapi.h not in our varnish package
@@ -122,7 +128,8 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 CONFIGURE_ARGS += --enable-${_plugin}
 .endfor
 
-CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include' \
+CONFIGURE_ENV +=	PYTHON_CONFIG='${LOCALBASE}/bin/python${MODPY_VERSION}-config' \
+			CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread'
 
 .include <bsd.port.mk>

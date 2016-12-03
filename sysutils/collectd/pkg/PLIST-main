@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2016/06/13 09:12:40 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2016/12/03 11:44:41 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -124,14 +124,12 @@ lib/collectd/write_graphite.so
 lib/collectd/write_http.so
 @comment lib/collectd/write_log.la
 lib/collectd/write_log.so
-@comment lib/collectd/write_riemann.la
-lib/collectd/write_riemann.so
 @comment lib/libcollectdclient.la
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.3/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.3/perllocal.pod
 libdata/perl5/site_perl/Collectd/
 libdata/perl5/site_perl/Collectd.pm
 libdata/perl5/site_perl/Collectd/Plugins/
@@ -146,6 +144,7 @@ libdata/perl5/site_perl/Collectd/Unixsock.pm
 @man man/man5/collectd-email.5
 @man man/man5/collectd-exec.5
 @man man/man5/collectd-java.5
+@man man/man5/collectd-lua.5
 @man man/man5/collectd-perl.5
 @man man/man5/collectd-python.5
 @man man/man5/collectd-threshold.5

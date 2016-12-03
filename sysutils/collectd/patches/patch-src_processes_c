@@ -1,25 +1,15 @@
-$OpenBSD: patch-src_processes_c,v 1.5 2016/12/02 15:50:29 jca Exp $
+$OpenBSD: patch-src_processes_c,v 1.6 2016/12/03 11:44:41 landry Exp $
 
-https://github.com/collectd/collectd/issues/1674
+https://github.com/collectd/collectd/issues/2061
 
---- src/processes.c.orig	Fri Jan 22 10:51:17 2016
-+++ src/processes.c	Tue Nov 29 09:25:04 2016
-@@ -1964,7 +1964,7 @@ static int ps_read (void)
- 	ps_list_reset ();
+--- src/processes.c.orig	Wed Nov 30 09:52:01 2016
++++ src/processes.c	Sat Dec  3 12:30:07 2016
+@@ -1786,7 +1786,7 @@ static int ps_read(void) {
+   ps_list_reset();
  
- 	/* Open the kvm interface, get a descriptor */
--	kd = kvm_open (NULL, NULL, NULL, 0, errbuf);
-+	kd = kvm_open (NULL, NULL, NULL, O_RDONLY|KVM_NO_FILES, errbuf);
- 	if (kd == NULL)
- 	{
- 		ERROR ("processes plugin: Cannot open kvm interface: %s",
-@@ -2045,9 +2045,6 @@ static int ps_read (void)
- 			pse.io_wchar = -1;
- 			pse.io_syscr = -1;
- 			pse.io_syscw = -1;
--
--			pse.cswitch_vol = -1;
--			pse.cswitch_invol = -1;
- 
- 			ps_list_add (procs[i].p_comm, have_cmdline ? cmdline : NULL, &pse);
- 
+   /* Open the kvm interface, get a descriptor */
+-  kd = kvm_openfiles(NULL, "/dev/null", NULL, 0, errbuf);
++  kd = kvm_openfiles(NULL, "/dev/null", NULL, O_RDONLY|KVM_NO_FILES, errbuf);
+   if (kd == NULL) {
+     ERROR("processes plugin: Cannot open kvm interface: %s", errbuf);
+     return (0);

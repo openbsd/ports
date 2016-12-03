@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_swap_c,v 1.1 2016/12/02 15:50:29 jca Exp $
---- src/swap.c.orig	Tue Nov 29 09:16:14 2016
-+++ src/swap.c	Tue Nov 29 09:26:05 2016
-@@ -167,7 +167,8 @@ static int swap_init (void) /* {{{ */
+$OpenBSD: patch-src_swap_c,v 1.2 2016/12/03 11:44:41 landry Exp $
+
+https://github.com/collectd/collectd/issues/2061
+
+--- src/swap.c.orig	Wed Nov 30 09:52:01 2016
++++ src/swap.c	Sat Dec  3 11:40:05 2016
+@@ -168,7 +168,7 @@ static int swap_init(void) /* {{{ */
  
- 	kvm_pagesize = getpagesize ();
+   kvm_pagesize = getpagesize();
  
--	kvm_obj = kvm_openfiles (NULL, "/dev/null", NULL, O_RDONLY, errbuf);
-+	kvm_obj = kvm_openfiles (NULL, "/dev/null", NULL, O_RDONLY|KVM_NO_FILES,
-+	    errbuf);
+-  kvm_obj = kvm_openfiles(NULL, "/dev/null", NULL, O_RDONLY, errbuf);
++  kvm_obj = kvm_openfiles(NULL, "/dev/null", NULL, O_RDONLY|KVM_NO_FILES, errbuf);
  
- 	if (kvm_obj == NULL)
- 	{
+   if (kvm_obj == NULL) {
+     ERROR("swap plugin: kvm_openfiles failed, %s", errbuf);
