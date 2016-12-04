@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2016/12/04 21:37:30 sthen Exp $
 
 COMMENT=	anti-spam plugin for Dovecot
 
 DISTNAME=	dovecot-antispam-plugin-5ebc6aae4d7c
 PKGNAME=	dovecot-antispam-2.2
-REVISION=	5
+REVISION=	6
 CATEGORIES=	mail
 
-# http://hg.dovecot.org/dovecot-antispam-plugin/
+# https://hg.dovecot.org/dovecot-antispam-plugin/
 MASTER_SITES=	https://spacehopper.org/mirrors/
-HOMEPAGE=	http://wiki2.dovecot.org/Plugins/Antispam
+HOMEPAGE=	https://wiki2.dovecot.org/Plugins/Antispam
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

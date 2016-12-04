@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_dovecot-antispam_7_txt,v 1.1 2012/06/16 08:48:05 sthen Exp $
---- doc/dovecot-antispam.7.txt.orig	Sat Jun 16 09:38:59 2012
-+++ doc/dovecot-antispam.7.txt	Sat Jun 16 09:39:51 2012
+$OpenBSD: patch-doc_dovecot-antispam_7_txt,v 1.2 2016/12/04 21:37:30 sthen Exp $
+--- doc/dovecot-antispam.7.txt.orig	Sun Jun 16 00:01:47 2013
++++ doc/dovecot-antispam.7.txt	Sun Dec  4 21:27:17 2016
 @@ -33,17 +33,17 @@ FOLDER MATRIX
      The following table describes the actions depending on the source and
      destination folders.
@@ -17,7 +17,7 @@ $OpenBSD: patch-doc_dovecot-antispam_7_txt,v 1.1 2012/06/16 08:48:05 sthen Exp $
 -	┃  OTHER  ┃  +   │   /   │   +    │   /   │
 -	┗━━━━━━━━━┹──────┴───────┴────────┴───────┘
 +	+---------+------+-------+--------+-------+
-+	| dst\src | SPAM | TRASH | UNSURE | OTHER |
++	| dst\\src | SPAM | TRASH | UNSURE | OTHER |
 +	+---------+------+-------+--------+-------+
 +	|   SPAM  |  /   |   /   |   -    |   -   |
 +	+---------+------+-------+--------+-------+
