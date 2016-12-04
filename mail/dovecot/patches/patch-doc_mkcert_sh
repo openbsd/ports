@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_mkcert_sh,v 1.7 2010/03/23 21:32:07 pea Exp $
---- doc/mkcert.sh.orig	Wed Jan  7 13:33:25 2009
-+++ doc/mkcert.sh	Sun Dec 27 01:03:53 2009
-@@ -5,19 +5,13 @@
- 
+$OpenBSD: patch-doc_mkcert_sh,v 1.8 2016/12/04 21:36:02 sthen Exp $
+--- doc/mkcert.sh.orig	Tue Nov 29 17:35:50 2016
++++ doc/mkcert.sh	Tue Nov 29 20:53:21 2016
+@@ -6,19 +6,13 @@
+ umask 077
  OPENSSL=${OPENSSL-openssl}
  SSLDIR=${SSLDIR-/etc/ssl}
 -OPENSSLCONFIG=${OPENSSLCONFIG-dovecot-openssl.cnf}
@@ -23,7 +23,7 @@ $OpenBSD: patch-doc_mkcert_sh,v 1.7 2010/03/23 21:32:07 pea Exp $
  if [ ! -d $KEYDIR ]; then
    echo "$SSLDIR/private directory doesn't exist"
    exit 1
-@@ -33,7 +27,7 @@ if [ -f $KEYFILE ]; then
+@@ -34,7 +28,7 @@ if [ -f $KEYFILE ]; then
    exit 1
  fi
  
