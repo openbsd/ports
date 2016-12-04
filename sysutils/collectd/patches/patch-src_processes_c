@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_processes_c,v 1.6 2016/12/03 11:44:41 landry Exp $
+$OpenBSD: patch-src_processes_c,v 1.7 2016/12/04 16:56:53 jca Exp $
 
 https://github.com/collectd/collectd/issues/2061
 
 --- src/processes.c.orig	Wed Nov 30 09:52:01 2016
-+++ src/processes.c	Sat Dec  3 12:30:07 2016
-@@ -1786,7 +1786,7 @@ static int ps_read(void) {
++++ src/processes.c	Sun Dec  4 16:22:15 2016
+@@ -1937,7 +1937,7 @@ static int ps_read(void) {
    ps_list_reset();
  
    /* Open the kvm interface, get a descriptor */
--  kd = kvm_openfiles(NULL, "/dev/null", NULL, 0, errbuf);
-+  kd = kvm_openfiles(NULL, "/dev/null", NULL, O_RDONLY|KVM_NO_FILES, errbuf);
+-  kd = kvm_open(NULL, NULL, NULL, 0, errbuf);
++  kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
    if (kd == NULL) {
      ERROR("processes plugin: Cannot open kvm interface: %s", errbuf);
      return (0);
