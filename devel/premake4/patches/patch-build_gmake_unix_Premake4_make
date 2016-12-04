@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_gmake_unix_Premake4_make,v 1.1.1.1 2016/12/04 11:31:35 jca Exp $
+--- build/gmake.unix/Premake4.make.orig	Tue Nov 26 16:41:34 2013
++++ build/gmake.unix/Premake4.make	Thu Dec  1 17:10:58 2016
+@@ -26,12 +26,12 @@ ifeq ($(config),release)
+   DEFINES   += -DNDEBUG -DLUA_USE_POSIX -DLUA_USE_DLOPEN
+   INCLUDES  += -I../../src/host/lua-5.1.4/src
+   ALL_CPPFLAGS  += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
+-  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra -Os
++  ALL_CFLAGS    += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -Wall -Wextra 
+   ALL_CXXFLAGS  += $(CXXFLAGS) $(ALL_CFLAGS)
+   ALL_RESFLAGS  += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+   ALL_LDFLAGS   += $(LDFLAGS) -L. -s -rdynamic
+   LDDEPS    +=
+-  LIBS      += $(LDDEPS) -lm -ldl
++  LIBS      += $(LDDEPS) -lm
+   LINKCMD    = $(CC) -o $(TARGET) $(OBJECTS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
+   define PREBUILDCMDS
+   endef
