@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/24 15:48:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/04 07:00:53 shadchin Exp $
 
 COMMENT =		early-algorithm context-free grammar parser
 
-MODPY_EGG_VERSION =	1.4.3
+MODPY_EGG_VERSION =	1.5.1
 DISTNAME =		spark_parser-${MODPY_EGG_VERSION}
 PKGNAME =		py-spark-parser-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
