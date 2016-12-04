@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/05/29 15:21:56 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/12/04 10:45:17 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,6 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/requests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_internal_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}sessions.${MOD
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}status_codes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}structures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/_internal_utils.py
 lib/python${MODPY_VERSION}/site-packages/requests/adapters.py
 lib/python${MODPY_VERSION}/site-packages/requests/api.py
 lib/python${MODPY_VERSION}/site-packages/requests/auth.py
@@ -115,6 +117,22 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/sbcsgroupprob
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/sjisprober.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/universaldetector.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/chardet/utf8prober.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}idnadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}intranges.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/${MODPY_PYCACHE}uts46data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/codec.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/compat.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/core.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/idnadata.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/intranges.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/idna/uts46data.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/${MODPY_PYCACHE}/
@@ -152,6 +170,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/urlli
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/${MODPY_PYCACHE}ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/backports/makefile.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/six.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/packages/ssl_match_hostname/
