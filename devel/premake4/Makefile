@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/04 11:31:35 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/04 11:43:09 jca Exp $
 
 COMMENT=		build configuration tool
 
@@ -11,6 +11,8 @@ PKGNAME=		premake4-4.4beta5
 CATEGORIES=		devel
 
 HOMEPAGE=		https://premake.github.io
+
+MAINTAINER=		Solene Rapenne <solene@perso.pw>
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=premake/}
 EXTRACT_SUFX=		.zip
