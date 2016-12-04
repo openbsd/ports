@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2016/11/18 07:28:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2016/12/04 01:32:03 bentley Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
+BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
 DISTNAME =	snes9x-1.54.1
 CATEGORIES =	emulators games
