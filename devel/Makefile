@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1562 2016/11/27 08:43:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1563 2016/12/04 11:35:35 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1209,6 +1209,7 @@
      SUBDIR += plib
      SUBDIR += poedit
      SUBDIR += popt
+     SUBDIR += premake4
      SUBDIR += proj
      SUBDIR += protobuf
      SUBDIR += protobuf-c
