@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/12/06 08:29:35 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2016/12/04 20:20:44 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,6 +20,3 @@ Start igmpproxy at boot time in the usual way:
 
 PF must be configured so that control packets (proto igmp) and
 data packets (destination address within 224.0.0.0/4) are passed.
-
-igmpproxy is licensed under GPLv2 and is based on mrouted code,
-the applicable licenses are below:

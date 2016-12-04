@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/06 08:29:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/04 20:20:44 jca Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
 VERSION =	0.1-beta2
 DISTNAME =	igmpproxy-src-${VERSION}
 PKGNAME =	igmpproxy-${VERSION:S/-beta/b/}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=igmpproxy/}
 
@@ -13,14 +13,18 @@ HOMEPAGE =	http://igmpproxy.sourceforge.net/
 
 MAINTAINER =	Markus Friedl <markus@openbsd.org>
 
-# GPLv2
+# GPLv2+ + mrouted license in igmpproxy/doc/mrouted-LICENSE
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c
+WANTLIB =	c
 
-USE_GMAKE =		Yes
+USE_GMAKE =	Yes
 
-WRKDIST =		${WRKDIR}/igmpproxy/src
+MAKE_FLAGS =	LDFLAGS="${LDFLAGS}"
+
+NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/igmpproxy/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/igmpproxy ${PREFIX}/sbin
