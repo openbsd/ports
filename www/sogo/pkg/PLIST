@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/11/02 10:16:20 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/12/05 21:48:35 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -247,6 +247,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Dominica.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Edmonton.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Eirunepe.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/El_Salvador.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Fort_Nelson.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Fortaleza.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Glace_Bay.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/America/Godthab.ics
@@ -375,6 +376,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Baghdad.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Bahrain.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Baku.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Bangkok.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Barnaul.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Beirut.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Bishkek.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Brunei.ics
@@ -438,12 +440,14 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tbilisi.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tehran.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Thimphu.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tokyo.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Tomsk.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Ulaanbaatar.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Urumqi.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Ust-Nera.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Vientiane.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Vladivostok.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Yakutsk.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Yangon.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Yekaterinburg.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Asia/Yerevan.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Atlantic/
@@ -473,6 +477,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Australia/Sydney.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Amsterdam.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Andorra.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Astrakhan.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Athens.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Belgrade.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Berlin.ics
@@ -492,6 +497,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Istanbul.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Jersey.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Kaliningrad.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Kiev.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Kirov.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Lisbon.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Ljubljana.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/London.ics
@@ -518,6 +524,7 @@ lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Sofia.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Stockholm.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Tallinn.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Tirane.ics
+lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Ulyanovsk.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Uzhgorod.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Vaduz.ics
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/Europe/Vatican.ics

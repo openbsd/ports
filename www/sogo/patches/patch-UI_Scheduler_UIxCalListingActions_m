@@ -1,11 +1,11 @@
-$OpenBSD: patch-UI_Scheduler_UIxCalListingActions_m,v 1.1 2016/11/03 21:52:59 sebastia Exp $
+$OpenBSD: patch-UI_Scheduler_UIxCalListingActions_m,v 1.2 2016/12/05 21:48:35 sebastia Exp $
 
 Do not try to access a method on nil object, it horribly crashes/breaks
 see PR: https://github.com/inverse-inc/sogo/pull/224
 
---- UI/Scheduler/UIxCalListingActions.m.orig	Tue Nov  1 14:00:04 2016
-+++ UI/Scheduler/UIxCalListingActions.m	Tue Nov  1 14:00:25 2016
-@@ -492,7 +492,7 @@ static NSArray *tasksFields = nil;
+--- UI/Scheduler/UIxCalListingActions.m.orig	Mon Nov 28 20:52:42 2016
++++ UI/Scheduler/UIxCalListingActions.m	Mon Dec  5 10:56:47 2016
+@@ -493,7 +493,7 @@ static NSArray *tasksFields = nil;
                for (i = 0; i < count; i++)
                  {
                    currentInfo = [newInfoForComponent objectAtIndex: i];
