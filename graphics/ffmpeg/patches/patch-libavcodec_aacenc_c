@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.18 2016/10/17 07:51:00 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.19 2016/12/05 09:02:29 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -82,8 +82,10 @@ aacenc: fix various typos and an error message
 
 aacenc: use the decoder's lcg PRNG
 
+aacenc: quit when the audio queue reaches 0 rather than keeping track of empty frames
+
 --- libavcodec/aacenc.c.orig	Sat Aug 27 22:51:29 2016
-+++ libavcodec/aacenc.c	Sat Oct 15 18:50:01 2016
++++ libavcodec/aacenc.c	Thu Nov 10 19:22:09 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -164,7 +166,7 @@ aacenc: use the decoder's lcg PRNG
      }
      encode_band_info(s, sce);
      encode_scale_factors(avctx, s, sce);
-@@ -489,7 +510,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -489,19 +510,21 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
      float **samples = s->planar_samples, *samples2, *la, *overlap;
      ChannelElement *cpe;
      SingleChannelElement *sce;
@@ -175,6 +177,21 @@ aacenc: use the decoder's lcg PRNG
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
+     int k;
+ 
+-    if (s->last_frame == 2)
+-        return 0;
+-
+     /* add current frame to queue */
+     if (frame) {
+         if ((ret = ff_af_queue_add(&s->afq, frame)) < 0)
+             return ret;
++    } else {
++        if (!s->afq.remaining_samples || (!s->afq.frame_alloc && !s->afq.frame_count))
++            return 0;
+     }
+ 
+     copy_input_samples(s, frame);
 @@ -518,19 +541,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
@@ -333,7 +350,7 @@ aacenc: use the decoder's lcg PRNG
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -697,36 +761,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -697,38 +761,77 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -426,13 +443,14 @@ aacenc: use the decoder's lcg PRNG
 -    }
 +    s->last_frame_pb_count = put_bits_count(&s->pb);
  
+-    if (!frame)
+-        s->last_frame++;
 +    s->lambda_sum += s->lambda;
 +    s->lambda_count++;
-+
-     if (!frame)
-         s->last_frame++;
  
-@@ -742,6 +848,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+     ff_af_queue_remove(&s->afq, avctx->frame_size, &avpkt->pts,
+                        &avpkt->duration);
+@@ -742,6 +845,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -441,7 +459,7 @@ aacenc: use the decoder's lcg PRNG
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -800,76 +908,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -800,76 +905,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -599,7 +617,7 @@ aacenc: use the decoder's lcg PRNG
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -880,27 +1035,16 @@ fail:
+@@ -880,27 +1032,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -637,7 +655,7 @@ aacenc: use the decoder's lcg PRNG
      {NULL}
  };
  
-@@ -911,6 +1055,11 @@ static const AVClass aacenc_class = {
+@@ -911,6 +1052,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -649,7 +667,7 @@ aacenc: use the decoder's lcg PRNG
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -920,9 +1069,9 @@ AVCodec ff_aac_encoder = {
+@@ -920,9 +1066,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
