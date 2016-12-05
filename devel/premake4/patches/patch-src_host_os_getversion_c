@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_host_os_getversion_c,v 1.1 2016/12/05 10:35:10 jca Exp $
+
+Don't use a pointer to stack storage.
+
+--- src/host/os_getversion.c.orig	Tue Nov 26 16:38:58 2013
++++ src/host/os_getversion.c	Sun Dec  4 14:03:03 2016
+@@ -202,16 +202,13 @@ void getversion(struct OsVersionInfo* info)
+ 		return;
+ 	}
+ 
+-#if __GLIBC__
+-	// When using glibc, info->description gets set to u.sysname,
+-	// but it isn't passed out of this function, so we need to copy 
+-	// the string.
+ 	info->description = malloc(strlen(u.sysname) + 1);
++	if (info->description == NULL) {
++		info->description = PLATFORM_STRING;
++		return;
++	}
+ 	strcpy((char*)info->description, u.sysname);
+ 	info->isalloc = 1;
+-#else
+-	info->description = u.sysname;
+-#endif
+ 
+ 	if ((ver = strtok(u.release, ".-")) != NULL)
+ 	{

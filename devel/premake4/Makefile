@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/05 10:33:22 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/05 10:35:10 jca Exp $
 
 COMMENT=		build configuration tool
 
@@ -7,6 +7,7 @@ COMMENT=		build configuration tool
 # of the affected files in ${FILESDIR}.
 DISTNAME=		premake-4.4-beta5-src
 PKGNAME=		premake4-4.4beta5
+REVISION=		0
 
 CATEGORIES=		devel
 
