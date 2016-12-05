@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/05 10:05:39 fcambus Exp $
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
-DISTNAME =	advancemame-1.4
-REVISION =	0
+V =		3.0
+DISTNAME =	advancemame-$V
 
 CATEGORIES =	emulators games
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	unclear license
 
 WANTLIB +=	SDL c expat freetype m pthread z
 
-MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
+MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/v$V/
 
 LIB_DEPENDS =	devel/sdl
 
