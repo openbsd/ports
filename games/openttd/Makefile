@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/08/01 19:19:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.49 2016/12/05 16:16:23 ajacoutot Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -8,6 +8,7 @@ EXTRACT_SUFX=	-source.tar.gz
 GFX_V =		0.5.4
 SFX_V=		0.2.3
 MSX_V=		0.3.1
+REVISION=	0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		opengfx-${GFX_V}.zip:0 \
 		opensfx-${SFX_V}.zip:1 \
@@ -24,7 +25,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c fontconfig freetype icudata icui18n icuuc
-WANTLIB += icule iculx lzma lzo2 m png pthread stdc++ xdg-basedir z
+WANTLIB += lzma lzo2 m png pthread stdc++ xdg-basedir z
 
 MASTER_SITES=		http://binaries.openttd.org/releases/${V}/
 MASTER_SITES0=		https://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
