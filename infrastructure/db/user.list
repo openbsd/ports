@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.284 2016/12/02 14:58:50 sthen Exp $
+$OpenBSD: user.list,v 1.285 2016/12/05 13:58:14 jca Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -292,3 +292,4 @@ id  user		group		port options
 781 _consul-template	_consul-template	sysutils/consul-template
 782 _ympd		_ympd		audio/ympd
 783 _rmilter		_rmilter	mail/rmilter
+784 _hping		_hping		net/hping
