@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/06/14 11:49:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2016/12/05 10:11:39 benoit Exp $
 
 COMMENT =	check syntax, presence of use strict; and test coverage
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Test-Strict-0.37
+DISTNAME =	Test-Strict-0.39
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
