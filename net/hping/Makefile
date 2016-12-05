@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/11 21:07:29 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2016/12/05 13:57:20 jca Exp $
 
-COMMENT=	TCP/UDP ping/traceroute tool
+COMMENT=	command-line oriented TCP/IP packet assembler/analyzer
 
-DISTNAME=	hping2.0.0-rc3
-PKGNAME=	hping-2.0.0rc3
-REVISION=	4
+GH_ACCOUNT=	antirez
+GH_PROJECT=	hping
+GH_COMMIT=	3547c7691742c6eaa31f8402e0ccbb81387c1b99
+DISTNAME=	hping-3.0.0-alpha-1
+PKGNAME=	hping-3.0.0pre1
+
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.hping.org/
@@ -14,23 +17,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pcap
 
-MASTER_SITES=	${HOMEPAGE}
-
-WRKDIST=	${WRKDIR}/${DISTNAME:S/.0.0//}
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=	--no-tcl
 
 MAKE_FLAGS=	CC="${CC}" \
-		CCOPT="${CFLAGS}"
+		CFLAGS="${CFLAGS}"
 
-CONFIGURE_STYLE=simple
-
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
-pre-install:
-	sed -i "s,hping2,hping," ${WRKSRC}/docs/hping2.8
+post-extract:
+	sed -i 's/hping2/hping/g; s/HPING2/HPING/g' ${WRKSRC}/docs/hping3.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${PREFIX}/sbin/hping
-	${INSTALL_MAN} ${WRKSRC}/docs/hping2.8 ${PREFIX}/man/man8/hping.8
+	${INSTALL_PROGRAM} ${WRKBUILD}/hping3 ${PREFIX}/sbin/hping
+	${INSTALL_MAN} ${WRKSRC}/docs/hping3.8 ${PREFIX}/man/man8/hping.8
 
 .include <bsd.port.mk>

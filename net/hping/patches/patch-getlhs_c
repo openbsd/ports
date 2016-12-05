@@ -1,11 +1,14 @@
-$OpenBSD: patch-getlhs_c,v 1.1 2013/04/02 15:15:53 sthen Exp $
---- getlhs.c.orig	Tue Apr  2 16:09:52 2013
-+++ getlhs.c	Tue Apr  2 16:10:57 2013
-@@ -62,6 +62,7 @@ int get_linkhdr_size(char *ifname)
+$OpenBSD: patch-getlhs_c,v 1.2 2016/12/05 13:57:20 jca Exp $
+
+- handle pppoe interfaces
+
+--- getlhs.c.orig	Fri Dec 26 15:31:29 2014
++++ getlhs.c	Sun Dec  4 20:53:14 2016
+@@ -62,6 +62,7 @@ int dltype_to_lhs(int dltype)
  #ifdef DLT_ATM_CLIP
  	case DLT_ATM_CLIP:
  #endif
 +	case DLT_PPP_ETHER:
- 		linkhdr_size = 8;
+ 		lhs = 8;
  		break;
  #ifdef DLT_C_HDLC

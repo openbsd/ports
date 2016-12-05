@@ -1,7 +1,41 @@
-$OpenBSD: patch-main_c,v 1.1 2005/04/24 22:59:08 alek Exp $
---- main.c.orig	Sun Apr 24 20:31:59 2005
-+++ main.c	Sun Apr 24 20:49:52 2005
-@@ -315,24 +315,24 @@ int main(int argc, char **argv)
+$OpenBSD: patch-main_c,v 1.2 2016/12/05 13:57:20 jca Exp $
+
+- drop privileges to a dedicated user
+
+--- main.c.orig	Fri Dec 26 15:31:29 2014
++++ main.c	Sun Dec  4 20:59:40 2016
+@@ -27,6 +27,8 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <pcap.h>
++#include <pwd.h>
++#include <errno.h>
+ 
+ #include "hping2.h"
+ 
+@@ -254,6 +256,21 @@ int main(int argc, char **argv)
+ 		exit(1);
+ 	}
+ 
++	if (!getuid()) {
++		struct passwd *pw;
++		pw = getpwnam("_hping");
++		if (pw == NULL) {
++			printf("[main] can't drop privs: no such user\n");
++			exit(1);
++		}
++		if (setgroups(1, &pw->pw_gid) == -1 ||
++		    setresgid(pw->pw_gid, pw->pw_gid, pw->pw_gid) == -1 ||
++		    setresuid(pw->pw_uid, pw->pw_uid, pw->pw_uid) == -1) {
++			printf("[main] can't drop privs: %s\n", strerror(errno));
++			exit(1);
++		}
++	}
++
+ 	/* get physical layer header size */
+ 	if ( get_linkhdr_size(ifname) == -1 ) {
+ 		printf("[main] physical layer header size unknown\n");
+@@ -324,24 +341,24 @@ int main(int argc, char **argv)
  	}
  
  	if (opt_rawipmode) {
