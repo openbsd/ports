@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_stubdata_Makefile_in,v 1.6 2012/07/13 07:23:20 ajacoutot Exp $
+$OpenBSD: patch-source_stubdata_Makefile_in,v 1.7 2016/12/05 16:15:56 ajacoutot Exp $
 
 Needed to fix a linker warning message about size mismatch. Credits to
 Andreas Vogele <andreas@kurzegrasse.de> for this one.
 
---- source/stubdata/Makefile.in.orig	Fri Jun  1 16:53:10 2012
-+++ source/stubdata/Makefile.in	Thu Jun 21 08:27:54 2012
-@@ -41,6 +41,7 @@ ALL_TARGETS = $(TARGET) $(ALL_SO_TARGETS)
+--- source/stubdata/Makefile.in.orig	Wed Jun 15 20:58:17 2016
++++ source/stubdata/Makefile.in	Thu Dec  1 17:22:48 2016
+@@ -43,6 +43,7 @@ ALL_TARGETS = $(TARGET) $(ALL_SO_TARGETS)
  
  DYNAMICCPPFLAGS = $(SHAREDLIBCPPFLAGS)
  DYNAMICCFLAGS = $(SHAREDLIBCFLAGS)

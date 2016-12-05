@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/04/11 09:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/12/05 16:15:56 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -9,22 +9,6 @@ bin/icu-config
 @bin bin/icuinfo
 @bin bin/makeconv
 @bin bin/pkgdata
-include/layout/
-include/layout/LEFontInstance.h
-include/layout/LEGlyphFilter.h
-include/layout/LEGlyphStorage.h
-include/layout/LEInsertionList.h
-include/layout/LELanguages.h
-include/layout/LEScripts.h
-include/layout/LESwaps.h
-include/layout/LETableReference.h
-include/layout/LETypes.h
-include/layout/LayoutEngine.h
-include/layout/ParagraphLayout.h
-include/layout/RunArrays.h
-include/layout/loengine.h
-include/layout/playout.h
-include/layout/plruns.h
 include/unicode/
 include/unicode/alphaindex.h
 include/unicode/appendable.h
@@ -119,6 +103,7 @@ include/unicode/tznames.h
 include/unicode/tzrule.h
 include/unicode/tztrans.h
 include/unicode/ubidi.h
+include/unicode/ubiditransform.h
 include/unicode/ubrk.h
 include/unicode/ucal.h
 include/unicode/ucasemap.h
@@ -210,10 +195,6 @@ lib/libicui18n.a
 @lib lib/libicui18n.so.${LIBicui18n_VERSION}
 lib/libicuio.a
 @lib lib/libicuio.so.${LIBicuio_VERSION}
-lib/libicule.a
-@lib lib/libicule.so.${LIBicule_VERSION}
-lib/libiculx.a
-@lib lib/libiculx.so.${LIBiculx_VERSION}
 lib/libicutest.a
 @lib lib/libicutest.so.${LIBicutest_VERSION}
 lib/libicutu.a
@@ -222,8 +203,6 @@ lib/libicuuc.a
 @lib lib/libicuuc.so.${LIBicuuc_VERSION}
 lib/pkgconfig/icu-i18n.pc
 lib/pkgconfig/icu-io.pc
-lib/pkgconfig/icu-le.pc
-lib/pkgconfig/icu-lx.pc
 lib/pkgconfig/icu-uc.pc
 @man man/man1/derb.1
 @man man/man1/genbrk.1

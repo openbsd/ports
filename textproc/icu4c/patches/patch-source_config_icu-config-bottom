@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_config_icu-config-bottom,v 1.8 2014/10/03 06:44:17 ajacoutot Exp $
---- source/config/icu-config-bottom.orig	Fri Oct  4 22:50:00 2013
-+++ source/config/icu-config-bottom	Mon Oct 14 17:11:53 2013
-@@ -3,8 +3,8 @@
+$OpenBSD: patch-source_config_icu-config-bottom,v 1.9 2016/12/05 16:15:56 ajacoutot Exp $
+--- source/config/icu-config-bottom.orig	Fri Sep  9 23:28:18 2016
++++ source/config/icu-config-bottom	Thu Dec  1 17:22:48 2016
+@@ -5,8 +5,8 @@
  ## Copyright (c) 2002-2013, International Business Machines Corporation and
  ## others. All Rights Reserved.
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-source_config_icu-config-bottom,v 1.8 2014/10/03 06:44:17 ajacou
  
  #  echo ENABLE RPATH $ENABLE_RPATH and RPATHLDFLAGS=${RPATH_LDFLAGS}
  if [ "x$PKGDATA_MODE" = "x" ]; then
-@@ -97,7 +97,8 @@ usage()
+@@ -98,7 +98,8 @@ usage()
  ## Check the sanity of current variables
  sanity()
  {

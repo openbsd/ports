@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_i18n_ucol_res_cpp,v 1.1 2016/12/05 16:15:56 ajacoutot Exp $
+
+http://bugs.icu-project.org/trac/ticket/12827
+
+--- source/i18n/ucol_res.cpp.orig	Wed Sep 28 04:26:02 2016
++++ source/i18n/ucol_res.cpp	Mon Dec  5 09:35:37 2016
+@@ -680,6 +680,7 @@ ucol_getKeywordValuesForLocale(const char* /*key*/, co
+         return NULL;
+     }
+     memcpy(en, &defaultKeywordValues, sizeof(UEnumeration));
++    ulist_resetList(sink.values);  // Initialize the iterator.
+     en->context = sink.values;
+     sink.values = NULL;  // Avoid deletion in the sink destructor.
+     return en;
