@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/04 11:43:09 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/05 10:33:22 jca Exp $
 
 COMMENT=		build configuration tool
 
@@ -36,7 +36,7 @@ do-install:
 
 do-test:
 	mkdir -p ${WRKSRC}/bin/debug/
-	ln -s ${WRKSRC}/bin/release/premake4 ${WRKSRC}/bin/debug/premake4
+	ln -sf ${WRKSRC}/bin/release/premake4 ${WRKSRC}/bin/debug/premake4
 	cd ${WRKSRC}/tests ; /bin/sh test
 
 .include <bsd.port.mk>
