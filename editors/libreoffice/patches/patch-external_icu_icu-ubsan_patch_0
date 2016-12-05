@@ -1,0 +1,24 @@
+$OpenBSD: patch-external_icu_icu-ubsan_patch_0,v 1.1 2016/12/05 16:17:38 ajacoutot Exp $
+
+From 3e42714c76b1347babfdea0564009d8d82a83af4 Mon Sep 17 00:00:00 2001
+From: Eike Rathke <erack@redhat.com>
+Date: Wed, 2 Nov 2016 13:07:48 +0100
+Subject: [PATCH] upgrade to ICU 58
+
+--- external/icu/icu-ubsan.patch.0.orig.port	Wed Sep 21 17:12:13 2016
++++ external/icu/icu-ubsan.patch.0	Mon Dec  5 12:06:55 2016
+@@ -151,14 +151,3 @@
+                    length(len), next(subNode) {}
+          virtual UBool operator==(const Node &other) const;
+          virtual int32_t markRightEdgesFirst(int32_t edgeNumber);
+---- source/common/unifiedcache.h
+-+++ source/common/unifiedcache.h
+-@@ -139,7 +139,7 @@
+-            : CacheKey<T>(other), fLoc(other.fLoc) { }
+-    virtual ~LocaleCacheKey() { }
+-    virtual int32_t hashCode() const {
+--       return 37 *CacheKey<T>::hashCode() + fLoc.hashCode();
+-+       return 37U *CacheKey<T>::hashCode() + fLoc.hashCode();
+-    }
+-    virtual UBool operator == (const CacheKeyBase &other) const {
+-        // reflexive

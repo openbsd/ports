@@ -1,0 +1,42 @@
+$OpenBSD: patch-i18nutil_source_utility_unicode_cxx,v 1.1 2016/12/05 16:17:38 ajacoutot Exp $
+
+From 3e42714c76b1347babfdea0564009d8d82a83af4 Mon Sep 17 00:00:00 2001
+From: Eike Rathke <erack@redhat.com>
+Date: Wed, 2 Nov 2016 13:07:48 +0100
+Subject: [PATCH] upgrade to ICU 58
+
+--- i18nutil/source/utility/unicode.cxx.orig.port	Wed Sep 21 17:12:13 2016
++++ i18nutil/source/utility/unicode.cxx	Mon Dec  5 12:06:55 2016
+@@ -957,6 +957,32 @@ OString SAL_CALL unicode::getExemplarLanguageForUScrip
+             sRet = "sa-Sidd";
+             break;
+ #endif
++#if (U_ICU_VERSION_MAJOR_NUM >= 58)
++        case USCRIPT_ADLAM:
++            sRet = "mis";   // Adlm - Adlam for Fulani, no language code
++            break;
++        case USCRIPT_BHAIKSUKI:
++            sRet = "mis";   // Bhks - Bhaiksuki for some Buddhist texts, no language code
++            break;
++        case USCRIPT_MARCHEN:
++            sRet = "bo-Marc";
++            break;
++        case USCRIPT_NEWA:
++            sRet = "new-Newa";
++            break;
++        case USCRIPT_OSAGE:
++            sRet = "osa-Osge";
++            break;
++        case USCRIPT_HAN_WITH_BOPOMOFO:
++            sRet = "mis";   // Hanb - Han with Bopomofo, zh-Hanb ?
++            break;
++        case USCRIPT_JAMO:
++            sRet = "mis";   // Jamo - Jamo subset of Hangul, ko-Jamo ?
++            break;
++        case USCRIPT_SYMBOLS_EMOJI:
++            sRet = "mis";   // Zsye - Emoji variant
++            break;
++#endif
+     }
+     return sRet;
+ }
