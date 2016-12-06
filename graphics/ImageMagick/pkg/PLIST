@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2016/11/13 20:54:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.52 2016/12/06 14:44:23 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -1238,7 +1238,6 @@ share/doc/ImageMagick/www/source/type-ghostscript.xml
 share/doc/ImageMagick/www/source/type-windows.xml
 share/doc/ImageMagick/www/source/type.xml
 share/doc/ImageMagick/www/source/wand.c
-share/doc/ImageMagick/www/sponsors.html
 share/doc/ImageMagick/www/stream.html
 share/doc/ImageMagick/www/support.html
 share/doc/ImageMagick/www/wand.png
