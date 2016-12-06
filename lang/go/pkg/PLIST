@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/08/18 17:23:03 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/12/06 15:40:09 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -105,6 +105,7 @@ go/doc/gopher/bumper320x180.png
 go/doc/gopher/bumper480x270.png
 go/doc/gopher/bumper640x360.png
 go/doc/gopher/doc.png
+go/doc/gopher/favicon.svg
 go/doc/gopher/fiveyears.jpg
 go/doc/gopher/frontpage.png
 go/doc/gopher/gopherbw.png
@@ -5954,6 +5955,7 @@ go/test/fixedbugs/issue16133.go
 go/test/fixedbugs/issue16193.go
 go/test/fixedbugs/issue16249.go
 go/test/fixedbugs/issue16515.go
+go/test/fixedbugs/issue17318.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
