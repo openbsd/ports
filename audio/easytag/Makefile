@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2016/02/25 07:52:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2016/12/06 09:17:07 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
-GNOME_VERSION=		2.4.2
+GNOME_VERSION=		2.4.3
 
 CATEGORIES=		audio
 
@@ -14,14 +14,13 @@ WANTLIB += FLAC ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz id3
-WANTLIB += id3tag m ogg opus opusfile pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += id3 id3tag intl m ogg opus opusfile pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += speex stdc++ tag vorbis vorbisfile wavpack xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		devel/dconf \
-			devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache yelp
