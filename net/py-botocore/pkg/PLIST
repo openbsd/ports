@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/12/02 08:57:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/12/06 08:55:06 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -358,6 +358,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/waite
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworkscm/2016-11-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/service-2.json
