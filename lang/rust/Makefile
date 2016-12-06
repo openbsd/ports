@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.32 2016/11/12 16:42:24 danj Exp $
+# $OpenBSD: Makefile,v 1.33 2016/12/06 22:39:49 juanfra Exp $
 
-# snapshots are only available for amd64, for now
-ONLY_FOR_ARCHS =	amd64
-PKG_ARCH-doc =		*
+# snapshots are only available for amd64 and i386, for now
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 V =			1.13.0
-BV =			1.13.0-20161111
+BV-amd64 =		1.13.0-20161111
+BV-i386 =		1.13.0-20161204
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
 RUST_HASH =		a4729905
 SUBST_VARS +=		RUST_HASH
+BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
@@ -37,20 +39,34 @@ MASTER_SITES =		https://static.rust-lang.org/dist/
 MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
 
 DIST_SUBDIR =		rust
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-.if "${MACHINE_ARCH}" == "amd64"
-DISTFILES +=		rustc-bootstrap-${MACHINE_ARCH}-${BV}.tar.gz:0
-.endif
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			rustc-bootstrap-${MACHINE_ARCH}-${BV}.tar.gz:0
 
-SUPDISTFILES =		rustc-bootstrap-amd64-${BV}.tar.gz:0
+SUPDISTFILES =		rustc-bootstrap-amd64-${BV-amd64}.tar.gz:0 \
+			rustc-bootstrap-i386-${BV-i386}.tar.gz:0
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
 # MACHINE_ARCH to TRIPLE_ARCH conversion
 .if "${MACHINE_ARCH}" == "amd64"
 TRIPLE_ARCH =		x86_64-unknown-openbsd
+.elif "${MACHINE_ARCH}" == "i386"
+TRIPLE_ARCH =		i686-unknown-openbsd
 .endif
 SUBST_VARS +=		TRIPLE_ARCH
+
+# PFRAG
+.if ${MACHINE_ARCH} == amd64
+PKG_ARGS += -Db64=1
+.else
+PKG_ARGS += -Db64=0
+.endif
+
+.if ${MACHINE_ARCH} == i386
+PKG_ARGS += -Db32=1
+.else
+PKG_ARGS += -Db32=0
+.endif
 
 MODULES +=		gcc4 \
 			lang/python

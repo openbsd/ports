@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_librustc_back_target_openbsd_base_rs,v 1.1 2016/12/06 22:39:49 juanfra Exp $
+Add i686-unknown-openbsd target.
+https://github.com/rust-lang/rust/pull/38086
+--- src/librustc_back/target/openbsd_base.rs.orig	Sun Dec  4 06:59:32 2016
++++ src/librustc_back/target/openbsd_base.rs	Sun Dec  4 06:59:51 2016
+@@ -17,6 +17,7 @@ pub fn opts() -> TargetOptions {
+         executables: true,
+         linker_is_gnu: true,
+         has_rpath: true,
++        is_like_openbsd: true,
+         pre_link_args: vec!(
+             // GNU-style linkers will use this to omit linking to libraries
+             // which don't actually fulfill any relocations, but only for

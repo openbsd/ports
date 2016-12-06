@@ -1,4 +1,6 @@
 SHA256 (rust/rustc-1.13.0-src.tar.gz) = 7LhHdcqXel7+wU0MrRliGhVb/Lv0boBQ0Ychux4+UIQ=
 SHA256 (rust/rustc-bootstrap-amd64-1.13.0-20161111.tar.gz) = aRdlJOgRf7aK7OjJgwH3qsv2ALFvqxlXoaGodttNAXM=
+SHA256 (rust/rustc-bootstrap-i386-1.13.0-20161204.tar.gz) = iarIZ/ar4PqF033jFNGm+i0OoDBtnaAc0rWLC/kUBOY=
 SIZE (rust/rustc-1.13.0-src.tar.gz) = 27483805
 SIZE (rust/rustc-bootstrap-amd64-1.13.0-20161111.tar.gz) = 24698844
+SIZE (rust/rustc-bootstrap-i386-1.13.0-20161204.tar.gz) = 26293310

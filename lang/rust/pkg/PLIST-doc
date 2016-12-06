@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.15 2016/11/12 16:42:24 danj Exp $
+@comment $OpenBSD: PLIST-doc,v 1.16 2016/12/06 22:39:49 juanfra Exp $
 share/doc/rust/
 share/doc/rust/html/
 share/doc/rust/html/.lock
@@ -6307,6 +6307,11 @@ share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/openbsd/
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/other/
+share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/pthread_condattr_t.t.html
@@ -6352,6 +6357,11 @@ share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/openpty.v.html
+share/doc/rust/html/libc/bsd/netbsdlike/other/
+share/doc/rust/html/libc/bsd/netbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/bsd/netbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/bsd/netbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/bsd/netbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/bsd/netbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/bsd/netbsdlike/pthread_condattr_setclock.v.html
@@ -6963,6 +6973,11 @@ share/doc/rust/html/libc/bsd/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/bsd/openbsdlike/openbsd/
 share/doc/rust/html/libc/bsd/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/bsd/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/bsd/openbsdlike/other/
+share/doc/rust/html/libc/bsd/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/bsd/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/bsd/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/bsd/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/bsd/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/bsd/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/bsd/openbsdlike/pthread_condattr_t.t.html
@@ -7008,6 +7023,11 @@ share/doc/rust/html/libc/bsd/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/bsd/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/bsd/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/bsd/openpty.v.html
+share/doc/rust/html/libc/bsd/other/
+share/doc/rust/html/libc/bsd/other/c_long.t.html
+share/doc/rust/html/libc/bsd/other/c_ulong.t.html
+share/doc/rust/html/libc/bsd/other/type.c_long.html
+share/doc/rust/html/libc/bsd/other/type.c_ulong.html
 share/doc/rust/html/libc/bsd/passwd.t.html
 share/doc/rust/html/libc/bsd/pthread_attr_t.t.html
 share/doc/rust/html/libc/bsd/pthread_cond_t.t.html
@@ -10338,6 +10358,11 @@ share/doc/rust/html/libc/netbsdlike/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/openbsd/
 share/doc/rust/html/libc/netbsdlike/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/netbsdlike/openbsdlike/other/
+share/doc/rust/html/libc/netbsdlike/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/netbsdlike/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/netbsdlike/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/netbsdlike/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/pthread_condattr_t.t.html
@@ -10383,6 +10408,11 @@ share/doc/rust/html/libc/netbsdlike/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/netbsdlike/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/netbsdlike/openpty.v.html
+share/doc/rust/html/libc/netbsdlike/other/
+share/doc/rust/html/libc/netbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/netbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/netbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/netbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/netbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/netbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/netbsdlike/pthread_condattr_setclock.v.html
@@ -10997,6 +11027,11 @@ share/doc/rust/html/libc/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/openbsdlike/openbsd/
 share/doc/rust/html/libc/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/openbsdlike/other/
+share/doc/rust/html/libc/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/openbsdlike/pthread_condattr_t.t.html
@@ -11044,6 +11079,11 @@ share/doc/rust/html/libc/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/opendir.v.html
 share/doc/rust/html/libc/openlog.v.html
 share/doc/rust/html/libc/openpty.v.html
+share/doc/rust/html/libc/other/
+share/doc/rust/html/libc/other/c_long.t.html
+share/doc/rust/html/libc/other/c_ulong.t.html
+share/doc/rust/html/libc/other/type.c_long.html
+share/doc/rust/html/libc/other/type.c_ulong.html
 share/doc/rust/html/libc/passwd.t.html
 share/doc/rust/html/libc/pathconf.v.html
 share/doc/rust/html/libc/pause.v.html
@@ -15576,6 +15616,11 @@ share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/openbsd/
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/other/
+share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/pthread_condattr_t.t.html
@@ -15621,6 +15666,11 @@ share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/openpty.v.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/other/
+share/doc/rust/html/libc/unix/bsd/netbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/bsd/netbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/bsd/netbsdlike/pthread_condattr_setclock.v.html
@@ -16232,6 +16282,11 @@ share/doc/rust/html/libc/unix/bsd/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/openbsd/
 share/doc/rust/html/libc/unix/bsd/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/unix/bsd/openbsdlike/other/
+share/doc/rust/html/libc/unix/bsd/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/bsd/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/bsd/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/bsd/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/pthread_condattr_t.t.html
@@ -16277,6 +16332,11 @@ share/doc/rust/html/libc/unix/bsd/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/unix/bsd/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/unix/bsd/openpty.v.html
+share/doc/rust/html/libc/unix/bsd/other/
+share/doc/rust/html/libc/unix/bsd/other/c_long.t.html
+share/doc/rust/html/libc/unix/bsd/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/bsd/other/type.c_long.html
+share/doc/rust/html/libc/unix/bsd/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/bsd/passwd.t.html
 share/doc/rust/html/libc/unix/bsd/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/bsd/pthread_cond_t.t.html
@@ -19462,6 +19522,11 @@ share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/openbsd/
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/other/
+share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/pthread_condattr_t.t.html
@@ -19507,6 +19572,11 @@ share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/type.sigset_t.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/type.suseconds_t.html
 share/doc/rust/html/libc/unix/netbsdlike/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/unix/netbsdlike/openpty.v.html
+share/doc/rust/html/libc/unix/netbsdlike/other/
+share/doc/rust/html/libc/unix/netbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/netbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/netbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/netbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/netbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/netbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/netbsdlike/pthread_condattr_setclock.v.html
@@ -20121,6 +20191,11 @@ share/doc/rust/html/libc/unix/openbsdlike/mprotect.v.html
 share/doc/rust/html/libc/unix/openbsdlike/openbsd/
 share/doc/rust/html/libc/unix/openbsdlike/openbsd/lconv.t.html
 share/doc/rust/html/libc/unix/openbsdlike/openbsd/struct.lconv.html
+share/doc/rust/html/libc/unix/openbsdlike/other/
+share/doc/rust/html/libc/unix/openbsdlike/other/c_long.t.html
+share/doc/rust/html/libc/unix/openbsdlike/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/openbsdlike/other/type.c_long.html
+share/doc/rust/html/libc/unix/openbsdlike/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/openbsdlike/pthread_attr_t.t.html
 share/doc/rust/html/libc/unix/openbsdlike/pthread_cond_t.t.html
 share/doc/rust/html/libc/unix/openbsdlike/pthread_condattr_t.t.html
@@ -20168,6 +20243,11 @@ share/doc/rust/html/libc/unix/openbsdlike/utmp.t.html
 share/doc/rust/html/libc/unix/opendir.v.html
 share/doc/rust/html/libc/unix/openlog.v.html
 share/doc/rust/html/libc/unix/openpty.v.html
+share/doc/rust/html/libc/unix/other/
+share/doc/rust/html/libc/unix/other/c_long.t.html
+share/doc/rust/html/libc/unix/other/c_ulong.t.html
+share/doc/rust/html/libc/unix/other/type.c_long.html
+share/doc/rust/html/libc/unix/other/type.c_ulong.html
 share/doc/rust/html/libc/unix/passwd.t.html
 share/doc/rust/html/libc/unix/pathconf.v.html
 share/doc/rust/html/libc/unix/pause.v.html
@@ -20750,6 +20830,8 @@ share/doc/rust/html/src/libc/unix/bsd/netbsdlike/mod.rs.html
 share/doc/rust/html/src/libc/unix/bsd/netbsdlike/openbsdlike/
 share/doc/rust/html/src/libc/unix/bsd/netbsdlike/openbsdlike/mod.rs.html
 share/doc/rust/html/src/libc/unix/bsd/netbsdlike/openbsdlike/openbsd.rs.html
+share/doc/rust/html/src/libc/unix/bsd/netbsdlike/openbsdlike/other/
+share/doc/rust/html/src/libc/unix/bsd/netbsdlike/openbsdlike/other/mod.rs.html
 share/doc/rust/html/src/libc/unix/mod.rs.html
 share/doc/rust/html/src/rustc_unicode/
 share/doc/rust/html/src/rustc_unicode/char.rs.html
@@ -23318,3 +23400,5 @@ share/doc/rust/html/std/write.m.html
 share/doc/rust/html/std/writeln.m.html
 share/doc/rust/html/tutorial.html
 share/doc/rust/html/version_info.html
+%%b32%%
+%%b64%%
