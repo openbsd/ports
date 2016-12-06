@@ -1,4 +1,4 @@
-GNU Binutils collection, configured for the arm-none-eabi target.
+GNU Binutils collection, configured for the ${CONFIG} target.
   * ld - the GNU linker.
   * as - the GNU assembler.
 

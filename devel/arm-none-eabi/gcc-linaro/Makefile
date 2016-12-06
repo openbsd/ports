@@ -1,14 +1,26 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/25 02:39:06 jsg Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/06 17:24:02 patrick Exp $
 
-COMMENT=	gcc for arm-none-eabi cross-development, Linaro version
+COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
 VERSION=	4.9-2016.02
-#REVISION=	0
+REVISION=	0
 DISTNAME=	gcc-linaro-${VERSION}
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
 
-SUBST_VARS+=	VERSION
+FLAVORS=	aarch64 arm
+FLAVOR?=	arm
+
+.if "${FLAVOR}" == "aarch64"
+CONFIG=		aarch64-none-elf
+.elif "${FLAVOR}" == "arm"
+CONFIG=		arm-none-eabi
+.else
+ERRORS+=	"either aarch64 or arm FLAVOR should be set"
+.endif
+
+GCC_VERSION=	4.9.4
+SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
 WANTLIB=	c m stdc++ gmp mpfr mpc
 DIST_SUBDIR=	gcc
@@ -26,12 +38,19 @@ MASTER_SITES= 	${MASTER_SITE_BASE}/toolchain/gcc-linaro/${VERSION}/
 
 BUILD_DEPENDS+=	devel/autoconf/2.13	\
 		devel/bison				\
-		devel/metaauto				\
-		devel/arm-none-eabi/binutils
+		devel/metaauto
 
 LIB_DEPENDS=	devel/mpfr devel/libmpc
 
-RUN_DEPENDS=	devel/arm-none-eabi/binutils
+.if ${FLAVOR:Maarch64}
+BUILD_DEPENDS+=	devel/arm-none-eabi/binutils,aarch64
+RUN_DEPENDS=	devel/arm-none-eabi/binutils,aarch64
+.elif ${FLAVOR:Marm}
+BUILD_DEPENDS+=	devel/arm-none-eabi/binutils,arm
+RUN_DEPENDS=	devel/arm-none-eabi/binutils,arm
+.else
+ERRORS+=	"either aarch64 or arm FLAVOR should be set"
+.endif
 
 LANGS=		c,c++
 CC=		/usr/bin/gcc

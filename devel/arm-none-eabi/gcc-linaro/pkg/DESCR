@@ -1,1 +1,1 @@
-GNU cross compiler suite, configured for the arm-none-eabi target.
+GNU cross compiler suite, configured for the ${CONFIG} target.

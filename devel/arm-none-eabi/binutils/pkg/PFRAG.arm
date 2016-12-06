@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.arm,v 1.1 2016/12/06 17:24:02 patrick Exp $
+@pkgpath devel/arm-none-eabi/binutils,
+${CONFIG}/lib/
+${CONFIG}/lib/ldscripts/
+${CONFIG}/lib/ldscripts/armelf.x
+${CONFIG}/lib/ldscripts/armelf.xbn
+${CONFIG}/lib/ldscripts/armelf.xc
+${CONFIG}/lib/ldscripts/armelf.xn
+${CONFIG}/lib/ldscripts/armelf.xr
+${CONFIG}/lib/ldscripts/armelf.xs
+${CONFIG}/lib/ldscripts/armelf.xsc
+${CONFIG}/lib/ldscripts/armelf.xsw
+${CONFIG}/lib/ldscripts/armelf.xu
+${CONFIG}/lib/ldscripts/armelf.xw

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/12/06 17:24:02 patrick Exp $
 
-CONFIG=		arm-none-eabi
+CONFIG?=	arm-none-eabi
 PKGNAME?=	${CONFIG}-${DISTNAME}
+FULLPKGNAME?=	${PKGNAME}
 CATEGORIES+=	devel
 
 # GPLv3
@@ -10,7 +11,7 @@ CATEGORIES+=	devel
 PERMIT_PACKAGE_CDROM=   Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--target=arm-none-eabi    \
+CONFIGURE_ARGS+=--target=${CONFIG}  \
 		--disable-shared    \
 		--disable-nls	    \
 		--disable-werror
