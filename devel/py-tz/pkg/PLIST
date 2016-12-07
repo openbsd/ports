@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/10/04 12:56:17 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/12/07 06:59:58 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -269,6 +269,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Aqtau
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Aqtobe
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ashgabat
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ashkhabad
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Atyrau
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Baghdad
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Bahrain
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Baku
@@ -289,6 +290,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dhaka
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dili
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dubai
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dushanbe
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Famagusta
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Gaza
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Harbin
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hebron
@@ -501,6 +503,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Rome
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Samara
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/San_Marino
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Sarajevo
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Saratov
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Simferopol
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Skopje
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Sofia
