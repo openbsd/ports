@@ -1,28 +1,25 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/28 16:55:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.17 2016/12/07 15:37:27 bluhm Exp $
 
-COMMENT=		Internationalizing Domain Names in Applications
+COMMENT =	Internationalizing Domain Names in Applications
 
-DISTNAME=		Net-IDN-Encode-2.300
-REVISION =		0
+DISTNAME =	Net-IDN-Encode-2.301
 
-CATEGORIES=		net converters
+CATEGORIES =	net converters
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=		perl
+WANTLIB =		c perl
 
-MODULES=		cpan
+MODULES =		cpan
+CPAN_AUTHOR =		CFAERBER
+RUN_DEPENDS =		converters/p5-Net-IDN-Nameprep
+TEST_DEPENDS =		devel/p5-Test-NoWarnings \
+			devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage
 
-CPAN_AUTHOR=		CFAERBER
-
-CONFIGURE_STYLE=	modbuild
-
-RUN_DEPENDS=		converters/p5-Net-IDN-Nameprep
-TEST_DEPENDS=		devel/p5-Test-NoWarnings \
-			devel/p5-Test-Pod-Coverage \
-			devel/p5-Test-Pod
+CONFIGURE_STYLE =	modbuild
 
 .include <bsd.port.mk>
