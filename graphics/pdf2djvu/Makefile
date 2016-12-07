@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/08 14:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/12/07 21:23:47 juanfra Exp $
 
 # XXX Don't update until the upstream bugs 113 and 114 are resolved
 # https://bitbucket.org/jwilk/pdf2djvu/issues
 
 COMMENT =		creates DjVu files from PDF files
 
-DISTNAME =		pdf2djvu-0.8.1
+V =			0.8.1
+DISTNAME =		pdf2djvu-${V}
 REVISION =		1
 
 CATEGORIES =		graphics
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre iconv intl lzma m
 WANTLIB += poppler pthread stdc++ xml2 xslt z
 
-MASTER_SITES =		https://bitbucket.org/jwilk/pdf2djvu/downloads/ \
+MASTER_SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
 			http://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
 			ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
 
