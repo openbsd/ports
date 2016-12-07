@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/15 15:38:41 bmercer Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/07 17:28:27 patrick Exp $
 
 COMMENT=	newlib for arm-none-eabi cross-development
 
 DISTNAME=	newlib-2.2.0-1
 VERSION=	2.2.0.1
 PKGNAME=	${CONFIG}-newlib-${VERSION}
-#REVISION=	0
+REVISION=	0
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
