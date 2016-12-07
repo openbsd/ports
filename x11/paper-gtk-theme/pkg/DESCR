@@ -1,0 +1,6 @@
+Paper is a modern desktop theme suite. Its design is mostly flat with a minimal
+use of shadows for depth.
+
+Paper has been developed primarily with modern GTK3 (GNOME-based) desktop
+environments in mind, legacy-toolkit and GTK2 environments will not provide an
+ideal experience, as much of the visual design relies on modern GTK3+ widgets.
