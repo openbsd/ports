@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_processes_c,v 1.7 2016/12/04 16:56:53 jca Exp $
+$OpenBSD: patch-src_processes_c,v 1.8 2016/12/08 10:06:42 landry Exp $
 
 https://github.com/collectd/collectd/issues/2061
+https://github.com/collectd/collectd/pull/2088
 
 --- src/processes.c.orig	Wed Nov 30 09:52:01 2016
 +++ src/processes.c	Sun Dec  4 16:22:15 2016

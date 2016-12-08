@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.11 2016/12/04 16:56:53 jca Exp $
+$OpenBSD: patch-src_tcpconns_c,v 1.12 2016/12/08 10:06:42 landry Exp $
 
 https://github.com/collectd/collectd/issues/2061
+https://github.com/collectd/collectd/pull/2088
 
 --- src/tcpconns.c.orig	Wed Nov 30 09:52:01 2016
 +++ src/tcpconns.c	Sun Dec  4 16:22:52 2016
