@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/02 06:25:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/08 06:45:58 bentley Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
 NETSURF_VERSION =	3.6
-REVISION =		0
+REVISION =		1
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
 
 HOMEPAGE=		http://www.netsurf-browser.org/
@@ -31,7 +31,7 @@ LIB_DEPENDS =		devel/sdl \
 TEST_DEPENDS =		devel/check
 
 WANTLIB += SDL c crypto css curl dom expat freetype hubbub jpeg m
-WANTLIB += nsbmp nsfb nsgif nsutils parserutils png pthread ssl
+WANTLIB += nsbmp nsfb nsgif nspsl nsutils parserutils png pthread ssl
 WANTLIB += svgtiny utf8proc wapcaplet xcb xcb-icccm xcb-image
 WANTLIB += xcb-keysyms xcb-shm xcb-util z
 

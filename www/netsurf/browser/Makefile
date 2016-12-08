@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2016/12/02 06:25:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2016/12/08 06:45:58 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.6
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
@@ -31,7 +31,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto css curl dom
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif pango-1.0
+WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif nspsl pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread
 WANTLIB += rsvg-2 ssl utf8proc wapcaplet z nsutils
 
