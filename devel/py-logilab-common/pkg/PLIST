@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/27 12:02:52 shadchin Exp $
-bin/pytest${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.5 2016/12/09 08:35:25 shadchin Exp $
+bin/logilab-pytest${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/__init__.py
