@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libtracker-sparql_Makefile_in,v 1.5 2016/10/31 11:07:25 ajacoutot Exp $
---- src/libtracker-sparql/Makefile.in.orig	Fri Oct 14 12:42:39 2016
-+++ src/libtracker-sparql/Makefile.in	Mon Oct 31 11:57:44 2016
-@@ -1145,7 +1145,7 @@ tracker-sparql-$(TRACKER_API_VERSION).pc: tracker-spar
+$OpenBSD: patch-src_libtracker-sparql_Makefile_in,v 1.6 2016/12/09 09:12:01 ajacoutot Exp $
+--- src/libtracker-sparql/Makefile.in.orig	Thu Dec  8 17:21:57 2016
++++ src/libtracker-sparql/Makefile.in	Fri Dec  9 09:47:24 2016
+@@ -1147,7 +1147,7 @@ tracker-sparql-$(TRACKER_API_VERSION).pc: tracker-spar
  -include $(INTROSPECTION_MAKEFILE)
  
  @HAVE_INTROSPECTION_TRUE@Tracker-@TRACKER_API_VERSION@.typelib: Tracker-$(TRACKER_API_VERSION).gir
