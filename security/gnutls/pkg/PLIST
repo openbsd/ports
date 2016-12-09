@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2016/06/07 08:56:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2016/12/09 11:26:56 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -537,6 +537,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs7_get_crt_raw.3
 @man man/man3/gnutls_pkcs7_get_crt_raw2.3
 @man man/man3/gnutls_pkcs7_get_embedded_data.3
+@man man/man3/gnutls_pkcs7_get_embedded_data_oid.3
 @man man/man3/gnutls_pkcs7_get_signature_count.3
 @man man/man3/gnutls_pkcs7_get_signature_info.3
 @man man/man3/gnutls_pkcs7_import.3
