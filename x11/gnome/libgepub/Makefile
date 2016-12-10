@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/31 14:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/10 22:28:16 kili Exp $
+
+# Required at build time for a temporary program created and run by
+# g-ir-scanner; programs linked against libgepub need wxneeded, too
+# (see the patch for libgepub.pc.in).
+USE_WXNEEDED=		Yes
 
 COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
 GNOME_VERSION=		0.4
+REVIVISON=		0
 
 CATEGORIES=		graphics
 
