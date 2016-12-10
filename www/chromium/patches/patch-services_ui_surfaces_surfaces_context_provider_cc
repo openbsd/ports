@@ -1,7 +1,7 @@
-$OpenBSD: patch-services_ui_surfaces_surfaces_context_provider_cc,v 1.1 2016/10/26 06:22:08 robert Exp $
---- services/ui/surfaces/surfaces_context_provider.cc.orig.port	Wed Oct 19 13:45:47 2016
-+++ services/ui/surfaces/surfaces_context_provider.cc	Wed Oct 19 13:46:11 2016
-@@ -73,7 +73,7 @@ bool SurfacesContextProvider::BindToCurrentThread() {
+$OpenBSD: patch-services_ui_surfaces_surfaces_context_provider_cc,v 1.2 2016/12/10 15:35:25 robert Exp $
+--- services/ui/surfaces/surfaces_context_provider.cc.orig.port	Fri Dec  2 00:02:17 2016
++++ services/ui/surfaces/surfaces_context_provider.cc	Fri Dec  2 17:44:55 2016
+@@ -77,7 +77,7 @@ bool SurfacesContextProvider::BindToCurrentThread() {
    gpu::CommandBuffer* command_buffer = command_buffer_proxy_impl_.get();
  
    gles2_helper_.reset(new gpu::gles2::GLES2CmdHelper(command_buffer));

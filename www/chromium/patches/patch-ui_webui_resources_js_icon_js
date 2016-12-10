@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.1 2016/07/31 13:11:44 robert Exp $
---- ui/webui/resources/js/icon.js.orig.port	Thu Jul 21 10:48:32 2016
-+++ ui/webui/resources/js/icon.js	Thu Jul 21 10:48:47 2016
-@@ -9,7 +9,7 @@ cr.define('cr.icon', function() {
-    */
-   function getSupportedScaleFactors() {
-     var supportedScaleFactors = [];
+$OpenBSD: patch-ui_webui_resources_js_icon_js,v 1.2 2016/12/10 15:35:25 robert Exp $
+--- ui/webui/resources/js/icon.js.orig.port	Sat Dec  3 14:27:07 2016
++++ ui/webui/resources/js/icon.js	Sat Dec  3 14:27:14 2016
+@@ -14,7 +14,7 @@ cr.define('cr.icon', function() {
+       // supports SCALE_FACTOR_100P on all non-iOS platforms.
+       supportedScaleFactors.push(1);
+     }
 -    if (cr.isMac || cr.isChromeOS || cr.isWindows || cr.isLinux) {
 +    if (cr.isMac || cr.isChromeOS || cr.isWindows || cr.isLinux || cr.isBSD) {
-       // All desktop platforms support zooming which also updates the
-       // renderer's device scale factors (a.k.a devicePixelRatio), and
-       // these platforms has high DPI assets for 2.0x. Use 1x and 2x in
+       // All desktop platforms support zooming which also updates the renderer's
+       // device scale factors (a.k.a devicePixelRatio), and these platforms have
+       // high DPI assets for 2x.  Let the renderer pick the closest image for

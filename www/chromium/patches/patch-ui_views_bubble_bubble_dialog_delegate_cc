@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_bubble_bubble_dialog_delegate_cc,v 1.1 2016/07/31 13:11:44 robert Exp $
---- ui/views/bubble/bubble_dialog_delegate.cc.orig.port	Thu Jul 21 10:44:52 2016
-+++ ui/views/bubble/bubble_dialog_delegate.cc	Thu Jul 21 10:45:02 2016
-@@ -72,7 +72,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
+$OpenBSD: patch-ui_views_bubble_bubble_dialog_delegate_cc,v 1.2 2016/12/10 15:35:25 robert Exp $
+--- ui/views/bubble/bubble_dialog_delegate.cc.orig.port	Fri Dec  2 00:02:38 2016
++++ ui/views/bubble/bubble_dialog_delegate.cc	Fri Dec  2 17:44:57 2016
+@@ -73,7 +73,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
    // the parent frame and let DWM handle compositing.  If not, then we don't
    // want to allow the bubble to extend the frame because it will be clipped.
    bubble_delegate->set_adjust_if_offscreen(ui::win::IsAeroGlassEnabled());

@@ -58,9 +58,6 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   AudioOutputStream* MakeOutputStream(const AudioParameters& params);
   AudioInputStream* MakeInputStream(const AudioParameters& params);
 
-  // Flag to indicate whether the pulse library has been initialized or not.
-  bool pulse_library_is_initialized_;
-
   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
 };
 

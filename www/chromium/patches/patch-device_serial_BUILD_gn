@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_serial_BUILD_gn,v 1.1 2016/08/17 11:06:50 robert Exp $
---- device/serial/BUILD.gn.orig.port	Sun Aug 14 22:32:10 2016
-+++ device/serial/BUILD.gn	Sun Aug 14 22:32:51 2016
-@@ -67,6 +67,13 @@ static_library("serial") {
+$OpenBSD: patch-device_serial_BUILD_gn,v 1.2 2016/12/10 15:35:25 robert Exp $
+--- device/serial/BUILD.gn.orig.port	Fri Dec  2 00:02:13 2016
++++ device/serial/BUILD.gn	Fri Dec  2 17:44:54 2016
+@@ -66,6 +66,13 @@ static_library("serial") {
      "//third_party/re2",
    ]
  

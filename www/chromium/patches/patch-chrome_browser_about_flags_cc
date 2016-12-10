@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.30 2016/10/26 06:22:07 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Fri Oct 21 00:02:00 2016
-+++ chrome/browser/about_flags.cc	Tue Oct 25 22:00:03 2016
-@@ -785,7 +785,7 @@ const FeatureEntry kFeatureEntries[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.31 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Fri Dec  2 18:04:39 2016
++++ chrome/browser/about_flags.cc	Fri Dec  2 18:05:02 2016
+@@ -766,7 +766,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
                                 switches::kDisableSmoothScrolling)},
@@ -10,19 +10,19 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.30 2016/10/26 06:22:07 robert 
      {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
       // Uses the system preference on Mac (a different implementation).
-@@ -1336,7 +1336,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1297,7 +1297,7 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
- #endif
+ #endif  // OS_MACOSX
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
      {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
       IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
       FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
-@@ -1823,7 +1823,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1771,7 +1771,7 @@ const FeatureEntry kFeatureEntries[] = {
       IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
- #endif
+ #endif  // ENABLE_EXTENSIONS
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
      {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,

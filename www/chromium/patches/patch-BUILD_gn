@@ -1,16 +1,7 @@
-$OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
---- BUILD.gn.orig.port	Wed Oct 12 21:02:52 2016
-+++ BUILD.gn	Wed Oct 19 12:55:55 2016
-@@ -201,7 +201,7 @@ group("both_gn_and_gyp") {
-     ]
-   }
- 
--  if (!is_ios && !is_android && !is_chromecast) {
-+  if (!is_ios && !is_android && !is_chromecast && !is_openbsd) {
-     deps += [
-       "//chrome",
-       "//chrome/test:browser_tests",
-@@ -432,7 +432,7 @@ group("both_gn_and_gyp") {
+$OpenBSD: patch-BUILD_gn,v 1.5 2016/12/10 15:35:25 robert Exp $
+--- BUILD.gn.orig.port	Fri Dec  2 17:53:00 2016
++++ BUILD.gn	Fri Dec  2 17:54:30 2016
+@@ -449,7 +449,7 @@ group("both_gn_and_gyp") {
      }
    }
  
@@ -19,7 +10,7 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
      deps += [
        "//breakpad:breakpad_unittests",
        "//breakpad:core-2-minidump",
-@@ -465,8 +465,6 @@ group("both_gn_and_gyp") {
+@@ -482,8 +482,6 @@ group("both_gn_and_gyp") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -28,7 +19,7 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
      ]
  
      if (use_dbus) {
-@@ -526,10 +524,6 @@ group("both_gn_and_gyp") {
+@@ -545,10 +543,6 @@ group("both_gn_and_gyp") {
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
@@ -39,7 +30,7 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -575,10 +569,6 @@ group("both_gn_and_gyp") {
+@@ -594,10 +588,6 @@ group("both_gn_and_gyp") {
  
    if (is_android || (is_linux && !is_chromeos)) {
      deps += [
@@ -50,7 +41,7 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
        "//components/network_hints/browser",
        "//content/public/app:browser",
        "//content/public/app:child",
-@@ -664,7 +654,7 @@ group("both_gn_and_gyp") {
+@@ -688,7 +678,7 @@ group("both_gn_and_gyp") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -59,7 +50,7 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -906,7 +896,7 @@ if (!is_ios) {
+@@ -935,7 +925,7 @@ if (!is_ios) {
        ]
      }
  
@@ -68,8 +59,8 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
        deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -917,7 +907,7 @@ if (!is_ios) {
-       ]
+@@ -943,7 +933,7 @@ if (!is_ios) {
+       deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
 -    if (is_linux) {
@@ -77,11 +68,11 @@ $OpenBSD: patch-BUILD_gn,v 1.4 2016/10/26 06:22:07 robert Exp $
        deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -966,7 +956,6 @@ group("chromium_builder_perf") {
+@@ -993,7 +983,6 @@ group("chromium_builder_perf") {
          "//third_party/angle/src/tests:angle_perftests",
        ]
      } else {
--      deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+-      data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
    }
  }

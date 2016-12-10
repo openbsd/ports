@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.12 2016/10/26 06:22:08 robert Exp $
---- ui/app_list/views/app_list_view.cc.orig.port	Wed Oct 19 13:54:33 2016
-+++ ui/app_list/views/app_list_view.cc	Wed Oct 19 13:54:57 2016
+$OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.13 2016/12/10 15:35:25 robert Exp $
+--- ui/app_list/views/app_list_view.cc.orig.port	Fri Dec  2 00:02:37 2016
++++ ui/app_list/views/app_list_view.cc	Fri Dec  2 17:44:57 2016
 @@ -70,7 +70,7 @@ const int kArrowOffset = 10;
  
  // Determines whether the current environment supports shadows bubble borders.
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_app_list_views_app_list_view_cc,v 1.12 2016/10/26 06:22:08 ro
    // Shadows are not supported on (non-ChromeOS) Linux.
    return false;
  #endif
-@@ -567,7 +567,7 @@ void AppListView::OnBeforeBubbleWidgetInit(
+@@ -538,7 +538,7 @@ void AppListView::OnBeforeBubbleWidgetInit(
    if (!params->native_widget && delegate_ && delegate_->ForceNativeDesktop())
      params->native_widget = new views::DesktopNativeWidgetAura(widget);
  #endif

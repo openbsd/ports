@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.21 2016/10/26 06:22:08 robert Exp $
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Wed Oct 19 13:46:49 2016
-+++ content/browser/renderer_host/render_widget_host_view_aura.cc	Wed Oct 19 13:47:19 2016
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.22 2016/12/10 15:35:25 robert Exp $
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Fri Dec  2 00:02:13 2016
++++ content/browser/renderer_host/render_widget_host_view_aura.cc	Fri Dec  2 17:44:54 2016
 @@ -106,7 +106,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
-@@ -2479,7 +2479,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2504,7 +2504,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 
    return NeedsInputGrab();
  #endif
    return false;
-@@ -2711,7 +2711,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEvent(
+@@ -2735,7 +2735,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEvent(
    if (!target_host)
      return;
  

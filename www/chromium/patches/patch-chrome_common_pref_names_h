@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.27 2016/10/26 06:22:08 robert Exp $
---- chrome/common/pref_names.h.orig.port	Fri Oct 21 00:02:01 2016
-+++ chrome/common/pref_names.h	Sat Oct 22 15:49:33 2016
-@@ -315,7 +315,7 @@ extern const char kForceSessionSync[];
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.28 2016/12/10 15:35:25 robert Exp $
+--- chrome/common/pref_names.h.orig.port	Sat Dec  3 11:13:59 2016
++++ chrome/common/pref_names.h	Sat Dec  3 11:14:26 2016
+@@ -312,7 +312,7 @@ extern const char kForceGoogleSafeSearch[];
+ extern const char kForceYouTubeRestrict[];
+ extern const char kForceSessionSync[];
  extern const char kAllowedDomainsForApps[];
- extern const char kLastClearBrowsingDataTime[];
- extern const char kClearBrowsingDataHistoryNoticeShownTimes[];
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -347,7 +347,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -345,7 +345,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_common_pref_names_h,v 1.27 2016/10/26 06:22:08 robert Exp
  extern const char kUseCustomChromeFrame[];
  #endif
  extern const char kBackShortcutBubbleShownCount[];
-@@ -496,7 +496,7 @@ extern const char kAppWindowPlacement[];
+@@ -493,7 +493,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];

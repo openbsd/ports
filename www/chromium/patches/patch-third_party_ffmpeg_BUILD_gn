@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.2 2016/10/26 06:22:08 robert Exp $
---- third_party/ffmpeg/BUILD.gn.orig.port	Wed Oct 12 21:05:13 2016
-+++ third_party/ffmpeg/BUILD.gn	Wed Oct 19 12:56:08 2016
-@@ -271,7 +271,7 @@ target(link_target_type, "ffmpeg_internal") {
+$OpenBSD: patch-third_party_ffmpeg_BUILD_gn,v 1.3 2016/12/10 15:35:25 robert Exp $
+--- third_party/ffmpeg/BUILD.gn.orig.port	Fri Dec  2 00:03:10 2016
++++ third_party/ffmpeg/BUILD.gn	Fri Dec  2 17:44:56 2016
+@@ -270,7 +270,7 @@ target(link_target_type, "ffmpeg_internal") {
        # all unwinder-providing libraries).
  
        # librt for clock_gettime on precise

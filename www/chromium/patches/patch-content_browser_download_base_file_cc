@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_browser_download_base_file_cc,v 1.9 2016/10/26 06:22:08 robert Exp $
---- content/browser/download/base_file.cc.orig.port	Wed Oct 12 21:02:59 2016
-+++ content/browser/download/base_file.cc	Wed Oct 19 12:56:03 2016
-@@ -193,7 +193,7 @@ std::unique_ptr<crypto::SecureHash> BaseFile::Finish()
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.10 2016/12/10 15:35:25 robert Exp $
+--- content/browser/download/base_file.cc.orig.port	Sat Dec  3 11:16:30 2016
++++ content/browser/download/base_file.cc	Sat Dec  3 11:17:57 2016
+@@ -373,7 +373,7 @@ DownloadInterruptReason BaseFile::LogInterruptReason(
+   return reason;
  }
  
- // OS_WIN, OS_MACOSX and OS_LINUX have specialized implementations.
--#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
-+#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_BSD)
- DownloadInterruptReason BaseFile::AnnotateWithSourceInformation(
-     const std::string& client_guid,
-     const GURL& source_url,
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ namespace {
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2016/10/26 06:22:07 robert Exp $
---- chrome/app/generated_resources.grd.orig.port	Fri Oct 21 00:02:00 2016
-+++ chrome/app/generated_resources.grd	Sat Oct 22 16:20:22 2016
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.15 2016/12/10 15:35:25 robert Exp $
+--- chrome/app/generated_resources.grd.orig.port	Fri Dec  2 00:02:06 2016
++++ chrome/app/generated_resources.grd	Fri Dec  2 17:44:52 2016
 @@ -2,7 +2,7 @@
  
  <!--
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2016/10/26 06:22:07 ro
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in build/common.gypi.
  -->
-@@ -6841,7 +6841,7 @@ Keep your key file in a safe place. You will need it t
+@@ -6843,7 +6843,7 @@ Keep your key file in a safe place. You will need it t
        <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
            Right-to-left
        </message>
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2016/10/26 06:22:07 ro
          <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
            Enable Input IME API
          </message>
-@@ -10140,7 +10140,7 @@ I don't think this site should be blocked!
+@@ -10212,7 +10212,7 @@ I don't think this site should be blocked!
        <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
          Appearance
        </message>
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2016/10/26 06:22:07 ro
          <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
            Themes
          </message>
-@@ -10148,7 +10148,7 @@ I don't think this site should be blocked!
+@@ -10220,7 +10220,7 @@ I don't think this site should be blocked!
        <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
          Reset to default theme
        </message>
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_app_generated_resources_grd,v 1.14 2016/10/26 06:22:07 ro
          <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
            Use GTK+ theme
          </message>
-@@ -11435,7 +11435,7 @@ Tell us what happened exactly before you got the profi
+@@ -11516,7 +11516,7 @@ Tell us what happened exactly before you got the profi
          Set as default
        </message>
  

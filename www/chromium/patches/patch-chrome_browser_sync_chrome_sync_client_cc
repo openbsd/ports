@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.6 2016/10/26 06:22:08 robert Exp $
---- chrome/browser/sync/chrome_sync_client.cc.orig.port	Wed Oct 12 21:02:55 2016
-+++ chrome/browser/sync/chrome_sync_client.cc	Wed Oct 19 12:56:00 2016
-@@ -573,7 +573,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/sync/chrome_sync_client.cc.orig.port	Fri Dec  2 00:02:08 2016
++++ chrome/browser/sync/chrome_sync_client.cc	Fri Dec  2 17:44:52 2016
+@@ -577,7 +577,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
    }
  #endif
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.6 2016/10/26 06:22
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY)) {
-     sync_service->RegisterDataTypeController(new UIDataTypeController(
+     sync_service->RegisterDataTypeController(

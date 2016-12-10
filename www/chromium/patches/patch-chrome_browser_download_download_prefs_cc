@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.5 2016/07/31 13:11:44 robert Exp $
---- chrome/browser/download/download_prefs.cc.orig.port	Wed Jul 20 21:03:19 2016
-+++ chrome/browser/download/download_prefs.cc	Thu Jul 21 10:25:26 2016
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.6 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/download/download_prefs.cc.orig.port	Fri Dec  2 00:02:07 2016
++++ chrome/browser/download/download_prefs.cc	Fri Dec  2 17:44:52 2016
 @@ -56,7 +56,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
@@ -17,9 +17,9 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.5 2016/07/31 13:11
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    should_open_pdf_in_system_reader_ =
-       prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
- #endif
-@@ -213,7 +213,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+       prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader) ||
+       prefs->GetBoolean(prefs::kPluginsAlwaysOpenPdfExternally);
+@@ -215,7 +215,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.5 2016/07/31 13:11
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  }
-@@ -290,7 +290,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -292,7 +292,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  }
  
  bool DownloadPrefs::IsAutoOpenUsed() const {
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.5 2016/07/31 13:11
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -304,7 +304,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
+@@ -306,7 +306,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
      return false;
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
@@ -46,16 +46,16 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.5 2016/07/31 13:11
    if (extension == FILE_PATH_LITERAL("pdf") && ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -338,7 +338,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
+@@ -340,7 +340,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
    SaveAutoOpenState();
  }
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
-   if (should_open_pdf_in_system_reader_ == should_open)
-     return;
-@@ -359,7 +359,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+   should_open_pdf_in_system_reader_ = should_open ||
+      profile_->GetPrefs()->GetBoolean(prefs::kPluginsAlwaysOpenPdfExternally);
+@@ -365,7 +365,7 @@ void DownloadPrefs::DisableAdobeVersionCheckForTests()
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {

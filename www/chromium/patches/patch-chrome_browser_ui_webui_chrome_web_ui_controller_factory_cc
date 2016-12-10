@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.14 2016/09/01 16:28:11 robert Exp $
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Thu Sep  1 00:03:28 2016
-+++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Thu Sep  1 11:12:21 2016
-@@ -546,7 +546,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.15 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig.port	Fri Dec  2 00:02:08 2016
++++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	Fri Dec  2 17:44:53 2016
+@@ -569,7 +569,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif

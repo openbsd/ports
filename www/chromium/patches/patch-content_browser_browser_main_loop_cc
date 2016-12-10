@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.40 2016/10/26 06:22:08 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Oct 12 21:02:59 2016
-+++ content/browser/browser_main_loop.cc	Wed Oct 19 12:56:03 2016
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.41 2016/12/10 15:35:25 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Fri Dec  2 00:02:12 2016
++++ content/browser/browser_main_loop.cc	Fri Dec  2 17:44:54 2016
 @@ -196,6 +196,10 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
@@ -20,8 +20,8 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.40 2016/10/26 06:22:08 
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
- 
-@@ -432,10 +436,15 @@ void BrowserMainLoop::Init() {
+   if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
+@@ -475,10 +479,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.10 2016/10/26 06:22:08 robert Exp $
---- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Fri Oct 21 00:02:01 2016
-+++ chrome/browser/ui/views/frame/browser_frame.cc	Tue Oct 25 22:05:02 2016
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.11 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Fri Dec  2 00:02:08 2016
++++ chrome/browser/ui/views/frame/browser_frame.cc	Fri Dec  2 17:44:53 2016
 @@ -38,11 +38,11 @@
- #include "ui/native_theme/native_theme_dark_aura.h"
+ #include "ui/native_theme/native_theme_dark_aura.h"  // nogncheck
  #endif
  
 -#if defined(OS_LINUX)

@@ -1,13 +1,13 @@
-$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.7 2016/10/26 06:22:08 robert Exp $
---- chrome/browser/ui/browser_view_prefs.cc.orig.port	Wed Oct 19 13:39:27 2016
-+++ chrome/browser/ui/browser_view_prefs.cc	Wed Oct 19 13:39:41 2016
+$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.8 2016/12/10 15:35:25 robert Exp $
+--- chrome/browser/ui/browser_view_prefs.cc.orig.port	Fri Dec  2 18:07:14 2016
++++ chrome/browser/ui/browser_view_prefs.cc	Fri Dec  2 18:07:26 2016
 @@ -10,7 +10,7 @@
  #include "components/prefs/pref_registry_simple.h"
  #include "components/prefs/pref_service.h"
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- #include "ui/base/x/x11_util.h"
+ #include "ui/base/x/x11_util.h"  // nogncheck
  #endif
  
 @@ -32,7 +32,7 @@ void RegisterBrowserViewLocalPrefs(PrefRegistrySimple*

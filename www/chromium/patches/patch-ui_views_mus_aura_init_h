@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_mus_aura_init_h,v 1.1 2016/10/26 06:22:08 robert Exp $
---- ui/views/mus/aura_init.h.orig.port	Tue Oct 25 21:56:44 2016
-+++ ui/views/mus/aura_init.h	Tue Oct 25 22:17:30 2016
-@@ -38,7 +38,7 @@ class VIEWS_MUS_EXPORT AuraInit {
+$OpenBSD: patch-ui_views_mus_aura_init_h,v 1.2 2016/12/10 15:35:25 robert Exp $
+--- ui/views/mus/aura_init.h.orig.port	Fri Dec  2 00:02:39 2016
++++ ui/views/mus/aura_init.h	Fri Dec  2 17:44:57 2016
+@@ -44,7 +44,7 @@ class VIEWS_MUS_EXPORT AuraInit {
   private:
    void InitializeResources(shell::Connector* connector);
  
