@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/04 07:04:57 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/10 06:21:00 bentley Exp $
 @bin bin/asc2xml
 @bin bin/hxaddid
 @bin bin/hxcite
@@ -16,7 +16,7 @@ bin/hxcite-mkbib
 @bin bin/hxnsxml
 @bin bin/hxnum
 @bin bin/hxpipe
-bin/hxprintlinks
+@bin bin/hxprintlinks
 @bin bin/hxprune
 @bin bin/hxref
 @bin bin/hxremove

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/08 14:38:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/12/10 06:21:00 bentley Exp $
 
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-7.0
-REVISION =		1
+DISTNAME =		html-xml-utils-7.1
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.w3.org/Tools/HTML-XML-utils/
+HOMEPAGE =		https://www.w3.org/Tools/HTML-XML-utils/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto curl iconv idn nghttp2 ssl z
 
-MASTER_SITES =		http://www.w3.org/Tools/HTML-XML-utils/
+MASTER_SITES =		https://www.w3.org/Tools/HTML-XML-utils/
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/libidn \
