@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2016/10/01 13:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2016/12/10 07:24:45 ajacoutot Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.7.3
+DISTNAME=		libgcrypt-1.7.4
 CATEGORIES=		security
 
-SHARED_LIBS +=  gcrypt               19.3     # 21.3
+SHARED_LIBS +=  gcrypt               19.3     # 21.4
 
 HOMEPAGE=		http://www.gnupg.org/
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_secmem_c,v 1.2 2016/04/24 21:40:25 ajacoutot Exp $
+$OpenBSD: patch-src_secmem_c,v 1.3 2016/12/10 07:24:45 ajacoutot Exp $
 
 Patch copied from gnupg/patches/patch-util_secmem_c
 
---- src/secmem.c.orig	Wed Mar 23 12:59:34 2016
-+++ src/secmem.c	Sat Apr 23 08:36:27 2016
+--- src/secmem.c.orig	Fri Dec  9 15:25:37 2016
++++ src/secmem.c	Sat Dec 10 08:20:22 2016
 @@ -36,6 +36,9 @@
  #include <sys/capability.h>
  #endif
@@ -14,7 +14,7 @@ Patch copied from gnupg/patches/patch-util_secmem_c
  
  #include "g10lib.h"
  #include "secmem.h"
-@@ -231,8 +234,24 @@ mb_get_new (memblock_t *block, size_t size)
+@@ -247,8 +250,24 @@ mb_get_new (pooldesc_t *pool, memblock_t *block, size_
  static void
  print_warn (void)
  {
@@ -40,4 +40,4 @@ Patch copied from gnupg/patches/patch-util_secmem_c
 +	}
  }
  
- /* Lock the memory pages into core and drop privileges.  */
+ 
