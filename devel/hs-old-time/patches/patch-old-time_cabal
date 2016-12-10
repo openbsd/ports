@@ -1,0 +1,16 @@
+$OpenBSD: patch-old-time_cabal,v 1.1 2016/12/10 21:20:45 kili Exp $
+
+Dependency changed in the "online" version of the package description,
+but not in the dist file.
+
+--- old-time.cabal.orig	Fri Nov 21 11:44:17 2014
++++ old-time.cabal	Wed Nov 30 21:11:54 2016
+@@ -53,7 +53,7 @@ Library
+         HsTime.h
+ 
+     build-depends:
+-        base       >= 4.7 && < 4.9,
++        base       >= 4.7 && < 4.10,
+         old-locale == 1.0.*
+ 
+     ghc-options: -Wall
