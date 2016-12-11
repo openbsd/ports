@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2016/12/05 11:56:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.99 2016/12/11 12:59:40 dcoppa Exp $
 
 BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.19.19
-REVISION =		3
+DISTNAME =		mpd-0.19.20
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
