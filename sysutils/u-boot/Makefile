@@ -1,7 +1,14 @@
-#	$OpenBSD: Makefile,v 1.10 2016/11/20 01:47:00 jsg Exp $
+#	$OpenBSD: Makefile,v 1.11 2016/12/11 14:08:38 patrick Exp $
+
+FLAVORS=	aarch64 arm
+FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-DISTNAME=	u-boot-2016.11
+VERSION=	2016.11
+DISTNAME=	u-boot-${VERSION}
+PKGNAME=	u-boot-${FLAVOR}-${VERSION}
+FULLPKGNAME=	${PKGNAME}
+REVISION=	0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -13,12 +20,26 @@ MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/arm-none-eabi/gcc-linaro \
-		devel/dtc
-MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-" KBUILD_VERBOSE=1
+BUILD_DEPENDS=	devel/dtc
+MAKE_ENV=	KBUILD_VERBOSE=1
+
+.if "${FLAVOR}" == "aarch64"
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64
+MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+.elif "${FLAVOR}" == "arm"
+BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro
+MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
+.endif
+
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
+.if "${FLAVOR}" == "aarch64"
+BOARDS=\
+	dragonboard410c \
+	pine64_plus \
+	rpi_3
+.elif "${FLAVOR}" == "arm"
 BOARDS=\
 	omap3_beagle \
 	omap4_panda \
@@ -52,6 +73,7 @@ BOARDS=\
 	rpi_3_32b \
 	vexpress_ca15_tc2 \
 	vexpress_ca9x4
+.endif
 
 FILES=\
 	MLO \
