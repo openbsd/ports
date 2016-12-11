@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_providers_wms_CMakeLists_txt,v 1.1 2016/12/11 19:03:35 jca Exp $
+--- src/providers/wms/CMakeLists.txt.orig	Sat Dec 10 14:34:06 2016
++++ src/providers/wms/CMakeLists.txt	Sat Dec 10 14:34:14 2016
+@@ -55,6 +55,7 @@ TARGET_LINK_LIBRARIES(wmsprovider
+ 
+ TARGET_LINK_LIBRARIES(wmsprovider_a
+   qgis_core
++  qgis_gui
+   ${QT_QTSCRIPT_LIBRARY}
+ )
+ 
