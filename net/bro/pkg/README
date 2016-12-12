@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2016/12/02 10:05:06 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2016/12/12 15:12:04 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,8 +14,8 @@ configured under:
     ${SYSCONFDIR}/bro/node.cfg
 
 And the configuration and policies must be installed and deployed by running:
-    broctl install
-    broctl deploy # this will start bro(8)
+    broctl deploy
+This command will run broctl(8) with the check, install, and restart arguments.
 
 It's also recommended to enable housekeeping tasks by adding the following
 entry into root's crontab(5):
