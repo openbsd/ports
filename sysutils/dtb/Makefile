@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/04 03:26:22 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/12 03:43:30 jsg Exp $
 
 COMMENT=	Device Tree Blobs
-DISTNAME=	linux-4.8
+DISTNAME=	linux-4.9
 PKGNAME=	${DISTNAME:S/linux/dtb/}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.devicetree.org
