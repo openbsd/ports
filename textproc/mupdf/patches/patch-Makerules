@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makerules,v 1.15 2016/10/16 09:16:52 sthen Exp $
---- Makerules.orig	Thu Apr 21 12:14:32 2016
-+++ Makerules	Sun Oct 16 10:00:26 2016
-@@ -9,6 +9,7 @@ HAVE_LIBDL ?= yes
- 
- CFLAGS += -Wall
+$OpenBSD: patch-Makerules,v 1.16 2016/12/12 10:54:39 sthen Exp $
+--- Makerules.orig	Mon Nov 28 13:34:04 2016
++++ Makerules	Mon Dec 12 09:41:21 2016
+@@ -21,6 +21,7 @@ else
+ LDREMOVEUNREACH = -Wl,--gc-sections
+ endif
  
 +ifneq "$(OS)" "OpenBSD" # don't override C optimizer flags for ports builds
  ifeq "$(build)" "debug"
  CFLAGS += -pipe -g -DDEBUG
  LDFLAGS += -g
-@@ -38,6 +39,7 @@ LIBS += -lprofiler
+@@ -55,6 +56,7 @@ LIBS += -lprofiler
  else
  $(error unknown build setting: '$(build)')
  endif
@@ -17,27 +17,27 @@ $OpenBSD: patch-Makerules,v 1.15 2016/10/16 09:16:52 sthen Exp $
  
  ifeq "$(largefile)" "yes"
  CFLAGS += -DFZ_LARGEFILE
-@@ -81,7 +83,7 @@ LD = xcrun ld
+@@ -103,7 +105,7 @@ LD = xcrun ld
  RANLIB_CMD = xcrun ranlib $@
  
  # Linux uses pkg-config for system libraries.
 -else ifeq "$(OS)" "Linux"
 +else
  
- HAVE_X11 ?= yes
  HAVE_PTHREADS ?= yes
-@@ -96,7 +98,7 @@ HAVE_CURL = yes
- SYS_CURL_CFLAGS = $(shell pkg-config --cflags libcurl)
- SYS_CURL_LIBS = $(shell pkg-config --libs libcurl)
- endif
--SYS_CURL_DEPS = -lpthread -lrt
-+SYS_CURL_DEPS = -lpthread
  
- SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
- SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
-@@ -108,6 +110,7 @@ SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype
- SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjp2)
- SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjp2)
+@@ -123,7 +125,7 @@ SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl
+ SYS_CURL_DEPS += $(shell pkg-config --libs openssl)
+ endif
+ endif
+-SYS_CURL_DEPS += -lpthread -lrt
++SYS_CURL_DEPS += -lpthread
+ 
+ ifeq "$(shell pkg-config --exists x11 xext && echo yes)" "yes"
+ HAVE_X11 = yes
+@@ -147,6 +149,7 @@ SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenj
+ endif
+ 
  SYS_JBIG2DEC_LIBS = -ljbig2dec
 +SYS_JPEG_CFLAGS = -I/usr/local/include
  SYS_JPEG_LIBS = -ljpeg

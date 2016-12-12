@@ -1,12 +1,12 @@
-$OpenBSD: patch-platform_x11_x11_main_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-platform_x11_x11_main_c,v 1.2 2016/12/12 10:54:39 sthen Exp $
 
 add pledge(2) to mupdf-x11 and mupdf-x11-curl:
   - inet dns : with HAVE_CURL only
   - proc exec : opening an external browser on uri link
 
---- platform/x11/x11_main.c.orig	Tue Nov 10 17:19:51 2015
-+++ platform/x11/x11_main.c	Mon Jan 18 15:20:56 2016
-@@ -698,7 +698,6 @@ void onselreq(Window requestor, Atom selection, Atom t
+--- platform/x11/x11_main.c.orig	Mon Nov 28 13:34:04 2016
++++ platform/x11/x11_main.c	Mon Dec 12 09:39:02 2016
+@@ -706,7 +706,6 @@ void onselreq(Window requestor, Atom selection, Atom t
  void winreloadpage(pdfapp_t *app)
  {
  	XEvent xev;
@@ -14,7 +14,7 @@ add pledge(2) to mupdf-x11 and mupdf-x11-curl:
  
  	xev.xclient.type = ClientMessage;
  	xev.xclient.serial = 0;
-@@ -709,8 +708,7 @@ void winreloadpage(pdfapp_t *app)
+@@ -717,8 +716,7 @@ void winreloadpage(pdfapp_t *app)
  	xev.xclient.data.l[0] = 0;
  	xev.xclient.data.l[1] = 0;
  	xev.xclient.data.l[2] = 0;
@@ -24,7 +24,7 @@ add pledge(2) to mupdf-x11 and mupdf-x11-curl:
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -884,6 +882,20 @@ int main(int argc, char **argv)
+@@ -892,6 +890,20 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;

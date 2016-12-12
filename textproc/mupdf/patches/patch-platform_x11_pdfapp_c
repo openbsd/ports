@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.6 2016/10/16 09:16:52 sthen Exp $
---- platform/x11/pdfapp.c.orig	Thu Apr 21 12:14:32 2016
-+++ platform/x11/pdfapp.c	Sun Oct 16 09:47:50 2016
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.7 2016/12/12 10:54:39 sthen Exp $
+--- platform/x11/pdfapp.c.orig	Mon Nov 28 13:34:04 2016
++++ platform/x11/pdfapp.c	Mon Dec 12 09:39:02 2016
 @@ -26,8 +26,18 @@ enum
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
  static void pdfapp_updatepage(pdfapp_t *app);
@@ -21,18 +21,9 @@ $OpenBSD: patch-platform_x11_pdfapp_c,v 1.6 2016/10/16 09:16:52 sthen Exp $
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -288,7 +298,7 @@ void pdfapp_open_progressive(pdfapp_t *app, char *file
- 		}
- 
- #ifdef HAVE_CURL
--		if (!strncmp(filename, "http://", 7))
-+		if (!strncmp(filename, "http://", 7) || !strncmp(filename, "https://", 8))
- 		{
- 			app->stream = fz_stream_from_curl(ctx, filename, pdfapp_more_data, app);
- 			while (1)
-@@ -1011,6 +1021,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
- {
- 	int firstpage, page;
+@@ -1038,6 +1048,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
+ 		return;
+ 	}
  
 +	if (app && *app->search == '\0')
 +	{
@@ -43,7 +34,7 @@ $OpenBSD: patch-platform_x11_pdfapp_c,v 1.6 2016/10/16 09:16:52 sthen Exp $
  	wincursor(app, WAIT);
  
  	firstpage = app->pageno;
-@@ -1508,9 +1524,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1535,9 +1551,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir < 0)

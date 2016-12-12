@@ -1,10 +1,10 @@
-$OpenBSD: patch-source_tools_pdfpages_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-source_tools_pdfpages_c,v 1.2 2016/12/12 10:54:39 sthen Exp $
 
 add pledge(2) to "mutool pages"
 
---- source/tools/pdfpages.c.orig	Sun Jan 17 12:13:56 2016
-+++ source/tools/pdfpages.c	Sun Jan 17 12:15:06 2016
-@@ -229,6 +229,12 @@ int pdfpages_main(int argc, char **argv)
+--- source/tools/pdfpages.c.orig	Mon Nov 28 13:34:04 2016
++++ source/tools/pdfpages.c	Mon Dec 12 09:39:02 2016
+@@ -189,6 +189,12 @@ int pdfpages_main(int argc, char **argv)
  	if (fz_optind == argc)
  		infousage();
  

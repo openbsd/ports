@@ -1,12 +1,12 @@
-$OpenBSD: patch-platform_x11_jstest_main_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+$OpenBSD: patch-platform_x11_jstest_main_c,v 1.2 2016/12/12 10:54:39 sthen Exp $
 
 add pledge(2) to mujstest
   - rpath : OPEN command
   - wpath cpath : SCREENSHOT command
 
---- platform/x11/jstest_main.c.orig	Sun Jan 17 13:50:58 2016
-+++ platform/x11/jstest_main.c	Sun Jan 17 13:52:29 2016
-@@ -310,6 +310,12 @@ main(int argc, char *argv[])
+--- platform/x11/jstest_main.c.orig	Mon Nov 28 13:34:04 2016
++++ platform/x11/jstest_main.c	Mon Dec 12 09:39:02 2016
+@@ -309,6 +309,12 @@ main(int argc, char *argv[])
  	if (fz_optind == argc)
  		usage();
  

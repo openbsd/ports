@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_fitz_load-jpx_c,v 1.2 2016/10/18 09:24:20 sthen Exp $
+$OpenBSD: patch-source_fitz_load-jpx_c,v 1.3 2016/12/12 10:54:39 sthen Exp $
 
 - OPJ_STATIC interferes with shared lib patch for mupdf
-- cope with API change in openjpeg 2.1.0
 
---- source/fitz/load-jpx.c.orig	Thu Apr 21 12:14:32 2016
-+++ source/fitz/load-jpx.c	Tue Oct 18 10:09:14 2016
-@@ -1,13 +1,5 @@
- #include "mupdf/fitz.h"
+--- source/fitz/load-jpx.c.orig	Mon Nov 28 13:34:04 2016
++++ source/fitz/load-jpx.c	Mon Dec 12 09:39:02 2016
+@@ -481,14 +481,6 @@ fz_load_jpx_info(fz_context *ctx, unsigned char *data,
+ 
+ #else /* HAVE_LURATECH */
  
 -/* Without the definition of OPJ_STATIC, compilation fails on windows
 - * due to the use of __stdcall. We believe it is required on some
@@ -18,13 +18,4 @@ $OpenBSD: patch-source_fitz_load-jpx_c,v 1.2 2016/10/18 09:24:20 sthen Exp $
 -
  #include <openjpeg.h>
  
- static void fz_opj_error_callback(const char *msg, void *client_data)
-@@ -117,7 +109,7 @@ fz_load_jpx(fz_context *ctx, unsigned char *data, int 
- 	opj_stream_set_read_function(stream, fz_opj_stream_read);
- 	opj_stream_set_skip_function(stream, fz_opj_stream_skip);
- 	opj_stream_set_seek_function(stream, fz_opj_stream_seek);
--	opj_stream_set_user_data(stream, &sb);
-+	opj_stream_set_user_data(stream, &sb, NULL);
- 	/* Set the length to avoid an assert */
- 	opj_stream_set_user_data_length(stream, size);
- 
+ /* OpenJPEG does not provide a safe mechanism to intercept
