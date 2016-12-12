@@ -1,10 +1,19 @@
-$OpenBSD: patch-src_processes_c,v 1.8 2016/12/08 10:06:42 landry Exp $
+$OpenBSD: patch-src_processes_c,v 1.9 2016/12/12 17:55:24 landry Exp $
 
 https://github.com/collectd/collectd/issues/2061
 https://github.com/collectd/collectd/pull/2088
 
 --- src/processes.c.orig	Wed Nov 30 09:52:01 2016
-+++ src/processes.c	Sun Dec  4 16:22:15 2016
++++ src/processes.c	Mon Dec 12 18:52:34 2016
+@@ -155,7 +155,7 @@
+ #if defined(ARG_MAX) && (ARG_MAX < 4096)
+ #define CMDLINE_BUFFER_SIZE ARG_MAX
+ #else
+-#define CMDLINE_BUFFER_SIZE 4096
++#define CMDLINE_BUFFER_SIZE 4*4096
+ #endif
+ #endif
+ 
 @@ -1937,7 +1937,7 @@ static int ps_read(void) {
    ps_list_reset();
  
