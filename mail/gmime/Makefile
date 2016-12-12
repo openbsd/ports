@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2016/06/13 09:22:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2016/12/12 13:35:58 ajacoutot Exp $
 
 COMMENT=		MIME messages creation and parsing library
 
 GNOME_PROJECT=		gmime
-GNOME_VERSION=		2.6.20
-REVISION=		1
+GNOME_VERSION=		2.6.21
 
-SHARED_LIBS +=  gmime-2.6            0.1      # 619.0
+SHARED_LIBS +=  gmime-2.6            0.2      # 621.0
 
 CATEGORIES=		mail devel
 
@@ -20,7 +19,10 @@ WANTLIB += iconv intl pcre pthread z
 
 MODULES=		x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection
+
+# XXX No rule to make target 'GMime-2.6.metadata', needed by 'gmime-2.6.vapi'
+#MODGNOME_TOOLS +=	vala
 
 # needed to build the tests
 BUILD_DEPENDS +=	security/libgpg-error
