@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1563 2016/12/04 11:35:35 jca Exp $
+# $OpenBSD: Makefile,v 1.1564 2016/12/13 14:57:40 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -292,6 +292,7 @@
      SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython
+     SUBDIR += ipython,python3
      SUBDIR += iso-codes
      SUBDIR += itcl
      SUBDIR += jakarta-servletapi
@@ -1333,6 +1334,7 @@
      SUBDIR += py-iniparse
      SUBDIR += py-ioflo
      SUBDIR += py-ipykernel
+     SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
      SUBDIR += py-ipython_genutils,python3
      SUBDIR += py-isodate
@@ -1345,7 +1347,9 @@
      SUBDIR += py-jsonschema
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jupyter_client
+     SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core
+     SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kid
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
@@ -1364,7 +1368,9 @@
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert
+     SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat
+     SUBDIR += py-nbformat,python3
      SUBDIR += py-nose
      SUBDIR += py-nose,python3
      SUBDIR += py-nose-warnings-filters
