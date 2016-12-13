@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2016/12/13 14:46:43 shadchin Exp $
+--- setup.py.orig	Sun Dec  4 12:31:44 2016
++++ setup.py	Sun Dec  4 12:32:04 2016
+@@ -21,7 +21,7 @@ if v[:2] < (2,7) or (v[:2] > (3,) and v[:2] < (3,3)):
+ 
+ # At least we're on the python version we need, move on.
+ 
+-from distutils.core import setup
++from setuptools import setup
+ 
+ pjoin = os.path.join
+ here = os.path.abspath(os.path.dirname(__file__))
