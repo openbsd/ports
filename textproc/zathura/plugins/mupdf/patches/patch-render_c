@@ -1,0 +1,31 @@
+$OpenBSD: patch-render_c,v 1.3 2016/12/13 13:15:18 sthen Exp $
+
+From 518fd77c351fa1bac37679e195dc14fa76c8e895 Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Thu, 24 Nov 2016 00:51:45 +0100
+Subject: [PATCH] Make compatible to mupdf 1.10
+
+--- render.c.orig	Sun Feb 14 22:49:46 2016
++++ render.c	Tue Dec 13 13:11:00 2016
+@@ -20,7 +20,7 @@ pdf_page_render_to_buffer(mupdf_document_t* mupdf_docu
+     return ZATHURA_ERROR_UNKNOWN;
+   }
+ 
+-  fz_display_list* display_list = fz_new_display_list(mupdf_page->ctx);
++  fz_display_list* display_list = fz_new_display_list(mupdf_page->ctx, NULL);
+   fz_device* device             = fz_new_list_device(mupdf_page->ctx, display_list);
+ 
+   fz_try (mupdf_document->ctx) {
+@@ -37,10 +37,10 @@ pdf_page_render_to_buffer(mupdf_document_t* mupdf_docu
+   fz_rect rect = { .x1 = page_width, .y1 = page_height };
+ 
+   fz_colorspace* colorspace = fz_device_bgr(mupdf_document->ctx);
+-  fz_pixmap* pixmap = fz_new_pixmap_with_bbox_and_data(mupdf_page->ctx, colorspace, &irect, image);
++  fz_pixmap* pixmap = fz_new_pixmap_with_bbox_and_data(mupdf_page->ctx, colorspace, &irect, 1, image);
+   fz_clear_pixmap_with_value(mupdf_page->ctx, pixmap, 0xFF);
+ 
+-  device = fz_new_draw_device(mupdf_page->ctx, pixmap);
++  device = fz_new_draw_device(mupdf_page->ctx, NULL, pixmap);
+   fz_run_display_list(mupdf_page->ctx, display_list, device, &fz_identity, &rect, NULL);
+   fz_drop_device(mupdf_page->ctx, device);
+ 
