@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/01 22:22:28 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/13 14:43:50 shadchin Exp $
 
 COMMENT =		Jupyter notebook format
 
-MODPY_EGG_VERSION =	4.0.0
+MODPY_EGG_VERSION =	4.2.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -10,12 +10,15 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org
 
-RUN_DEPENDS =		devel/py-ipython_genutils \
-			devel/py-traitlets \
-			devel/py-jupyter_core \
-			devel/py-jsonschema
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+
+RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
+			devel/py-traitlets${MODPY_FLAVOR} \
+			devel/py-jupyter_core${MODPY_FLAVOR}>=4.2.1 \
+			devel/py-jsonschema${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-testpath${MODPY_FLAVOR}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,7 +26,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
+post-install:
+	mv ${PREFIX}/bin/jupyter-trust ${PREFIX}/bin/jupyter-trust${MODPY_BIN_SUFFIX}
+
 do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests nbformat
+	cd ${WRKSRC} && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest nbformat
 
 .include <bsd.port.mk>
