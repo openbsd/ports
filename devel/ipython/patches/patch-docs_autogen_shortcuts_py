@@ -1,0 +1,22 @@
+$OpenBSD: patch-docs_autogen_shortcuts_py,v 1.1 2016/12/13 14:50:45 shadchin Exp $
+--- docs/autogen_shortcuts.py.orig	Sat Aug 13 17:56:43 2016
++++ docs/autogen_shortcuts.py	Tue Oct 11 14:15:43 2016
+@@ -1,8 +1,8 @@
+ from os.path import abspath, dirname, join
+ 
+ from IPython.terminal.interactiveshell import KeyBindingManager
++from IPython.utils import py3compat
+ 
+-
+ def name(c):
+     s = c.__class__.__name__
+     if s == '_Invert':
+@@ -60,7 +60,7 @@ for kb in ipy_bindings:
+     if not doc or doc in dummy_docs:
+         continue
+ 
+-    shortcut = ' '.join([k if isinstance(k, str) else k.name for k in kb.keys])
++    shortcut = ' '.join([k if isinstance(k, py3compat.string_types) else k.name for k in kb.keys])
+     shortcut += shortcut.endswith('\\') and '\\' or ''
+     if hasattr(kb.filter, 'filters'):
+         flt = ' '.join(multi_filter_str(kb.filter))

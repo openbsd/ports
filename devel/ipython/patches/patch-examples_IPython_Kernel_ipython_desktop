@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_IPython_Kernel_ipython_desktop,v 1.1 2016/12/13 14:50:45 shadchin Exp $
+--- examples/IPython Kernel/ipython.desktop.orig	Sat Aug 13 17:56:43 2016
++++ examples/IPython Kernel/ipython.desktop	Fri Aug 19 19:59:00 2016
+@@ -3,7 +3,7 @@
+ 
+ [Desktop Entry]
+ Comment=Enhanced interactive Python shell
+-Exec=ipython
++Exec=ipython${MODPY_BIN_SUFFIX}
+ GenericName[en_US]=IPython
+ GenericName=IPython
+ Icon=gnome-netstatus-idle

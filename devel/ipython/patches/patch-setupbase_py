@@ -1,10 +1,10 @@
-$OpenBSD: patch-setupbase_py,v 1.6 2015/12/01 22:45:49 edd Exp $
+$OpenBSD: patch-setupbase_py,v 1.7 2016/12/13 14:50:45 shadchin Exp $
 
 Put man pages where they belong.
 
---- setupbase.py.orig	Wed Aug 12 02:04:53 2015
-+++ setupbase.py	Fri Aug 14 18:22:06 2015
-@@ -207,7 +207,7 @@ def find_data_files():
+--- setupbase.py.orig	Sat Aug 13 17:56:43 2016
++++ setupbase.py	Fri Aug 19 19:59:00 2016
+@@ -203,7 +203,7 @@ def find_data_files():
      Just man pages at this point.
      """
  

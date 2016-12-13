@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_source_conf_py,v 1.3 2015/12/01 22:45:49 edd Exp $
+$OpenBSD: patch-docs_source_conf_py,v 1.4 2016/12/13 14:50:45 shadchin Exp $
 
 A problem with inheritance diagrams. Causes build to crash. Even if it
 did work, the generated diagrams have non-deterministic names, making
@@ -6,9 +6,9 @@ putting their name in a PLIST somewhat difficult.
 
 Disable intersphinx.
 
---- docs/source/conf.py.orig	Wed Aug 12 02:04:53 2015
-+++ docs/source/conf.py	Sun Nov 29 19:39:44 2015
-@@ -56,8 +56,6 @@ extensions = [
+--- docs/source/conf.py.orig	Sat Aug 13 17:56:43 2016
++++ docs/source/conf.py	Fri Aug 19 19:59:00 2016
+@@ -60,8 +60,6 @@ extensions = [
      'sphinx.ext.autodoc',
      'sphinx.ext.autosummary',
      'sphinx.ext.doctest',
@@ -16,4 +16,4 @@ Disable intersphinx.
 -    'sphinx.ext.intersphinx',
      'IPython.sphinxext.ipython_console_highlighting',
      'IPython.sphinxext.ipython_directive',
-     'numpydoc',  # to preprocess docstrings
+     'sphinx.ext.napoleon',  # to preprocess docstrings
