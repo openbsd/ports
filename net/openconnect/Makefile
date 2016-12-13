@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2016/12/02 17:38:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/12/13 21:44:14 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-7.07
-REVISION=	0
+DISTNAME=	openconnect-7.08
 
-SHARED_LIBS +=  openconnect               4.2 # 5.1
+SHARED_LIBS +=  openconnect               4.3 # 5.4
 
 CATEGORIES=	net
 
@@ -36,6 +35,10 @@ LIB_DEPENDS=	archivers/lz4 \
 		devel/gettext \
 		security/gnutls \
 		textproc/libxml
+# also wants socket_wrapper and uid_wrapper from cwrap to be present at
+# configure time (in openbsd-wip); tests currently failing, in need of
+# further work
+TEST_DEPENDS=	net/ocserv
 
 FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect
 
@@ -57,5 +60,9 @@ LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 		security/oath-toolkit,-pskc \
 		security/pcsc-lite
 .endif
+
+pre-test:
+	perl -pi -e s,/usr/sbin/ocserv,${LOCALBASE}/sbin/ocserv,g \
+	    ${WRKSRC}/tests/common.sh
 
 .include <bsd.port.mk>
