@@ -1,0 +1,65 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/13 09:42:19 fcambus Exp $
+@bin bin/bbc2psf
+@bin bin/cpi2psf
+@bin bin/cpicomp
+@bin bin/cpidcomp
+@bin bin/fnt2psf
+@bin bin/fnts2fon
+@bin bin/fon2fnts
+@bin bin/mda2psf
+@bin bin/page2cp2
+@bin bin/psf2bbc
+@bin bin/psf2bdf
+@bin bin/psf2bsd
+@bin bin/psf2fnt
+@bin bin/psf2inc
+@bin bin/psf2pbms
+@bin bin/psf2raw
+@bin bin/psf2txt
+@bin bin/psf2wof
+@bin bin/psf2wyse
+@bin bin/psf2xbm
+@bin bin/psf2zx
+@bin bin/psfjoin
+@bin bin/psfmerge
+@bin bin/psfpages
+@bin bin/psfs2cpi
+@bin bin/psfxform
+@bin bin/raw2psf
+@bin bin/txt2psf
+@bin bin/wof2psf
+@bin bin/wyse2psf
+@bin bin/zx2psf
+include/psflib.h
+include/psfutils.h
+lib/libpsf.a
+lib/libpsf.la
+@lib lib/libpsf.so.${LIBpsf_VERSION}
+@man man/man1/cpi2psf.1
+@man man/man1/cpicomp.1
+@man man/man1/cpidcomp.1
+@man man/man1/fnt2psf.1
+@man man/man1/fnts2fon.1
+@man man/man1/fon2fnts.1
+@man man/man1/mda2psf.1
+@man man/man1/psf2bdf.1
+@man man/man1/psf2bsd.1
+@man man/man1/psf2fnt.1
+@man man/man1/psf2inc.1
+@man man/man1/psf2pbms.1
+@man man/man1/psf2raw.1
+@man man/man1/psf2txt.1
+@man man/man1/psf2wof.1
+@man man/man1/psf2wyse.1
+@man man/man1/psf2xbm.1
+@man man/man1/psf2zx.1
+@man man/man1/psfjoin.1
+@man man/man1/psfmerge.1
+@man man/man1/psfpages.1
+@man man/man1/psfs2cpi.1
+@man man/man1/psfxform.1
+@man man/man1/raw2psf.1
+@man man/man1/txt2psf.1
+@man man/man1/wof2psf.1
+@man man/man1/wyse2psf.1
+@man man/man1/zx2psf.1
