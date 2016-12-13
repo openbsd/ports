@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/11/22 11:26:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/12/13 09:34:06 ajacoutot Exp $
 @bin bin/shotwell
 lib/libshotwell-plugin-common.a
 lib/libshotwell-plugin-common.la
@@ -575,10 +575,7 @@ share/shotwell/ui/photo_context.ui
 share/shotwell/ui/savedsearch.ui
 share/shotwell/ui/search_bar.ui
 share/shotwell/ui/search_sidebar_context.ui
-share/shotwell/ui/set_background_dialog.ui
-share/shotwell/ui/set_background_slideshow_dialog.ui
 share/shotwell/ui/shotwell.ui
-share/shotwell/ui/shotwell.xml
 share/shotwell/ui/sidebar_default_context.ui
 share/shotwell/ui/tag_sidebar_context.ui
 share/shotwell/ui/tags.ui
