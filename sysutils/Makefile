@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.413 2016/12/11 14:09:58 patrick Exp $
+# $OpenBSD: Makefile,v 1.414 2016/12/13 09:44:44 fcambus Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -174,6 +174,7 @@
      SUBDIR += pkg_mgr
      SUBDIR += polkit
      SUBDIR += pscpug
+     SUBDIR += psftools
      SUBDIR += pstree
      SUBDIR += pv
      SUBDIR += py-augeas
