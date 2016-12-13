@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1324 2016/10/31 11:08:34 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1325 2016/12/13 07:25:47 landry Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -310,7 +310,7 @@ TARGETS += ${_s}-${_t}
 .    endif
 .  endfor
 .endfor
-.for _t in post-patch pre-configure configure pre-fake post-install
+.for _t in post-extract post-patch pre-configure configure pre-fake post-install
 .  for _m in ${MODULES:T:U}
 .    if defined(MOD${_m}_${_t})
 TARGETS += MOD${_m}_${_t}
@@ -2492,6 +2492,11 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE}
 .if target(post-extract)
 	@${_MAKESYS} post-extract
 .endif
+.for _m in ${MODULES:T:U}
+.  if defined(MOD${_m}_post-extract)
+	@${MOD${_m}_post-extract}
+.  endif
+.endfor
 	@${_MAKE_COOKIE} $@
 
 .if !target(do-extract)
