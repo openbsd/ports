@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2016/10/21 14:52:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/12/14 21:37:03 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-V =		201609.01
-DISTNAME =	librenms-$V
-DISTFILES =	librenms-$V{$V}.tar.gz
+GH_ACCOUNT =	librenms
+GH_PROJECT =	librenms
+GH_TAGNAME =	1.22.01
+EPOCH =		0
 
 CATEGORIES =	net www
 
@@ -14,8 +15,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =	https://github.com/librenms/librenms/archive/
 
 MODULES =	lang/php \
 		lang/python
