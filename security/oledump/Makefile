@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/14 19:11:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/14 18:48:24 rpointel Exp $
 
 COMMENT =	analyze OLE files
 
-MODPY_EGG_VERSION =	0.0.24
+MODPY_EGG_VERSION =	0.0.26
 DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	oledump-${MODPY_EGG_VERSION}
 
@@ -32,6 +32,8 @@ MODPY_ADJ_FILES += oledump.py
 WRKDIST =	${WRKDIR}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/oledump.py ${PREFIX}/bin/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/oledump/
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PREFIX}/share/oledump/
+	ln -s ${TRUEPREFIX}/share/oledump/oledump.py ${PREFIX}/bin/oledump
 
 .include <bsd.port.mk>
