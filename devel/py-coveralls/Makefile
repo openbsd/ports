@@ -1,23 +1,27 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/14 06:39:20 shadchin Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
-MODPY_EGG_VERSION = 0.5
+MODPY_EGG_VERSION =	1.1
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
-EXTRACT_SUFX=	.zip
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	0
 
 HOMEPAGE =	http://github.com/coagulant/coveralls-python
 
 # MIT
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
+MODULES =		lang/python
 
-MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		devel/py-docopt \
+			devel/py-coverage \
+			www/py-requests
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
