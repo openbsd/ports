@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_libssl_compat_h,v 1.1 2016/12/14 20:05:37 naddy Exp $
+--- include/libssl_compat.h.orig	Mon Nov 21 13:28:40 2016
++++ include/libssl_compat.h	Wed Dec 14 00:01:48 2016
+@@ -25,7 +25,7 @@
+ #include "openssl/rsa.h"
+ 
+ /* ----------------------------------------------------------------- */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ /* ----------------------------------------------------------------- */
+ 
+ # include <openssl/objects.h>

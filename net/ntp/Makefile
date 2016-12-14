@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2016/06/18 20:19:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2016/12/14 20:05:37 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,7 +6,7 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so convert it to
 # 'pl' for local use.
 
-VERSION=	4.2.8p8
+VERSION=	4.2.8p9
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -36,6 +36,12 @@ CONFIGURE_ENV=	CPPFLAGS='-DCONFIG_FILE="\"${SYSCONFDIR}/ntp.conf\"" \
 		ac_cv_header_sys_audioio_h=no
 
 LIB_DEPENDS=	devel/libevent2
+
+# autogen >= 5.18.5 required to regenerate outdated files because
+# the distribution tarball was updated incompletely
+post-extract:
+	@touch ${WRKDIR}/timestamp
+	@find ${WRKSRC} -type f -print0 | xargs -0 touch -r ${WRKDIR}/timestamp
 
 post-patch:
 	cp ${WRKSRC}/sntp/loc/freebsd ${WRKSRC}/sntp/loc/openbsd
