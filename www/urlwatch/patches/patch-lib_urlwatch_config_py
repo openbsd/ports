@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_urlwatch_config_py,v 1.1 2016/12/14 10:17:21 sthen Exp $
+--- lib/urlwatch/config.py.orig	Tue Dec  6 14:08:12 2016
++++ lib/urlwatch/config.py	Tue Dec  6 14:08:37 2016
+@@ -61,7 +61,8 @@ class CommandConfig(BaseConfig):
+ 
+         if self.bindir == 'bin':
+             # Installed system-wide
+-            self.examples_dir = os.path.join(prefix, 'share', self.pkgname, 'examples')
++            self.examples_dir = os.path.join(prefix, 'share', 'examples', self.pkgname)
++
+         else:
+             # Assume we are not yet installed
+             self.examples_dir = os.path.join(prefix, bindir, 'share', self.pkgname, 'examples')

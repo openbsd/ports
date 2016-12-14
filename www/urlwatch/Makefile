@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/01 15:27:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/12/14 10:17:21 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.5
+MODPY_EGG_VERSION=	2.6
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
