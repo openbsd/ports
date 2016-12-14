@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/13 14:45:42 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/14 07:59:49 shadchin Exp $
 bin/jupyter-nbconvert${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/
 lib/python${MODPY_VERSION}/site-packages/nbconvert-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -236,6 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/ept
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/eptest.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/fake_exporters.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/Widget_List.ipynb
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/${MODPY_PYCACHE}hello.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/${MODPY_PYCACHE}jupyter_nbconvert_config.${MODPY_PYC_MAGIC_TAG}pyc
