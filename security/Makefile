@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2016/12/14 14:21:44 jca Exp $
+# $OpenBSD: Makefile,v 1.440 2016/12/14 14:26:25 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -12,7 +12,6 @@
      SUBDIR += botan
      SUBDIR += bounix
      SUBDIR += bsd-airtools
-     SUBDIR += bunny
      SUBDIR += burpsuite
      SUBDIR += ccid
      SUBDIR += ccrypt
