@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/10/31 09:34:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2016/12/15 20:25:19 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -262,6 +262,7 @@ share/locale/fi/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/fur/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fur/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts.mo
