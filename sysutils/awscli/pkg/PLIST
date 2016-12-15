@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/12/06 08:55:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/12/15 09:16:44 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -471,6 +471,23 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/set-instanc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/suspend-processes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/terminate-instance-in-auto-scaling-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/update-auto-scaling-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/cancel-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/create-compute-environment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/create-job-queue.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/delete-compute-environment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/delete-job-queue.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/deregister-job-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/describe-compute-environments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/describe-job-definitions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/describe-job-queues.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/describe-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/list-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/register-job-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/submit-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/terminate-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/update-compute-environment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/batch/update-job-queue.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_deploy_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudformation/_package_description.rst
@@ -499,10 +516,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/create-subsc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/create-trail.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/delete-trail.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/describe-trails.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/get-event-selectors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/get-trail-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/list-public-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/list-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/lookup-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/put-event-selectors.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/remove-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/start-logging.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/stop-logging.rst
