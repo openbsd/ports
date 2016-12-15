@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_server_xml,v 1.3 2016/09/08 12:54:14 dcoppa Exp $
---- conf/server.xml.orig	Wed Aug 31 21:53:52 2016
-+++ conf/server.xml	Thu Sep  8 13:36:18 2016
+$OpenBSD: patch-conf_server_xml,v 1.4 2016/12/15 11:41:43 dcoppa Exp $
+--- conf/server.xml.orig	Mon Dec  5 21:20:27 2016
++++ conf/server.xml	Thu Dec 15 12:17:55 2016
 @@ -66,12 +66,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
@@ -16,8 +16,8 @@ $OpenBSD: patch-conf_server_xml,v 1.3 2016/09/08 12:54:14 dcoppa Exp $
                 port="8080" protocol="HTTP/1.1"
                 connectionTimeout="20000"
                 redirectPort="8443" />
-@@ -81,7 +81,7 @@
-          using the JSSE engine, the JSSE configuration attributes must be used.
+@@ -85,7 +85,7 @@
+          the SSLImplementation selected. JSSE style configuration is used below.
      -->
      <!--
 -    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
@@ -25,8 +25,8 @@ $OpenBSD: patch-conf_server_xml,v 1.3 2016/09/08 12:54:14 dcoppa Exp $
                 maxThreads="150" SSLEnabled="true">
          <SSLHostConfig>
              <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
-@@ -95,7 +95,7 @@
-          the OpenSSL configuration attributes must be used.
+@@ -100,7 +100,7 @@
+          configuration is used below.
      -->
      <!--
 -    <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
@@ -34,7 +34,7 @@ $OpenBSD: patch-conf_server_xml,v 1.3 2016/09/08 12:54:14 dcoppa Exp $
                 maxThreads="150" SSLEnabled="true" >
          <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
          <SSLHostConfig>
-@@ -108,7 +108,7 @@
+@@ -113,7 +113,7 @@
      -->
  
      <!-- Define an AJP 1.3 Connector on port 8009 -->
@@ -43,7 +43,7 @@ $OpenBSD: patch-conf_server_xml,v 1.3 2016/09/08 12:54:14 dcoppa Exp $
  
  
      <!-- An Engine represents the entry point (within Catalina) that processes
-@@ -140,7 +140,7 @@
+@@ -145,7 +145,7 @@
                 resourceName="UserDatabase"/>
        </Realm>
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.21 2016/11/14 18:45:07 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.22 2016/12/15 11:41:43 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1014,7 +1014,6 @@ webapps/docs/api/org/apache/coyote/http2/Http2UpgradeHandler.html
 webapps/docs/api/org/apache/coyote/http2/Setting.html
 webapps/docs/api/org/apache/coyote/http2/Stream.html
 webapps/docs/api/org/apache/coyote/http2/StreamException.html
-webapps/docs/api/org/apache/coyote/http2/StreamProcessor.html
 webapps/docs/api/org/apache/coyote/http2/StreamStateMachine.html
 webapps/docs/api/org/apache/coyote/http2/package-frame.html
 webapps/docs/api/org/apache/coyote/http2/package-summary.html
