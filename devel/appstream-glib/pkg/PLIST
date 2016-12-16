@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/21 12:27:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/12/16 08:45:58 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -31,7 +31,6 @@ include/libappstream-glib/as-translation.h
 include/libappstream-glib/as-utils.h
 include/libappstream-glib/as-version.h
 lib/asb-plugins-5/
-lib/asb-plugins-5/libasb_plugin_absorb.so
 lib/asb-plugins-5/libasb_plugin_appdata.so
 lib/asb-plugins-5/libasb_plugin_desktop.so
 lib/asb-plugins-5/libasb_plugin_font.so
