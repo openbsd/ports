@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/08 20:28:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/16 21:24:54 fcambus Exp $
 
 COMMENT =	MESS port with advanced video support for monitors and TVs
 
-DISTNAME =	advancemess-1.4
+V =             3.0
+DISTNAME =      advancemame-$V
+PKGNAME =       advancemess-$V
 
 CATEGORIES =	emulators games
 
@@ -17,11 +19,13 @@ PERMIT_DISTFILES_FTP =	unclear license
 
 WANTLIB +=	SDL c expat freetype m pthread z
 
-MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
+MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/v$V/
 
 LIB_DEPENDS =	devel/sdl
 
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ARGS += --with-emu=mess
 
 USE_GMAKE =	Yes
 
