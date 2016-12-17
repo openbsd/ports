@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2016/10/03 09:34:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.34 2016/12/17 12:11:02 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-V=			2.4.1
+V=			5.1.1
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
@@ -13,7 +13,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://download.elasticsearch.org/elasticsearch/elasticsearch/
+MASTER_SITES=		https://artifacts.elastic.co/downloads/elasticsearch/
 
 MODULES=		java
 MODJAVA_VER=		1.8+
@@ -25,18 +25,18 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 
 ES_BASE=		${PREFIX}/elasticsearch/
-SUBST_VARS+=		VARBASE V
 
 do-install:
-	${SUBST_CMD} ${WRKSRC}/config/elasticsearch.yml \
-			${WRKSRC}/bin/plugin
-	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib,modules}/ \
+	cd ${WRKSRC}/bin; \
+		sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
+		elasticsearch elasticsearch{-plugin,-translog,.in.sh}
+	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib,modules,plugins}/ \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
-.for b in elasticsearch plugin
+.for b in elasticsearch elasticsearch-plugin elasticsearch-translog
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${ES_BASE}/bin/
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${ES_BASE}/lib/
-.for c in ${WRKSRC}/config/*.yml ${WRKSRC}/bin/elasticsearch.in.sh
+.for c in ${WRKSRC}/config/*.yml ${WRKSRC}/config/*.options ${WRKSRC}/config/*.properties ${WRKSRC}/bin/elasticsearch.in.sh
 	${INSTALL_DATA} ${WRKSRC}/$c ${PREFIX}/share/examples/elasticsearch/
 .endfor
 	cp -R ${WRKSRC}/modules ${ES_BASE}

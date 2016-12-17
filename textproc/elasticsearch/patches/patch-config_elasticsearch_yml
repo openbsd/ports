@@ -1,15 +1,16 @@
-$OpenBSD: patch-config_elasticsearch_yml,v 1.2 2015/11/16 19:01:12 jasper Exp $
---- config/elasticsearch.yml.orig	Wed Nov 11 19:56:25 2015
-+++ config/elasticsearch.yml	Wed Nov 11 20:00:08 2015
-@@ -31,10 +31,12 @@
+$OpenBSD: patch-config_elasticsearch_yml,v 1.3 2016/12/17 12:11:02 jasper Exp $
+--- config/elasticsearch.yml.orig	Wed Nov  2 13:20:18 2016
++++ config/elasticsearch.yml	Wed Nov  2 13:21:22 2016
+@@ -30,11 +30,11 @@
+ #
  # Path to directory where to store the data (separate multiple locations by comma):
  #
- # path.data: /path/to/data
-+path.data: ${VARBASE}/elasticsearch/
+-#path.data: /path/to/data
++path.data: /var/elasticsearch/
  #
  # Path to log files:
  #
- # path.logs: /path/to/logs
+-#path.logs: /path/to/logs
 +path.logs: /var/log/elasticsearch/
  #
  # ----------------------------------- Memory -----------------------------------

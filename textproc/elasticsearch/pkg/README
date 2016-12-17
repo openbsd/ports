@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/01/18 07:53:21 sebastia Exp $
+$OpenBSD: README,v 1.5 2016/12/17 12:11:02 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -42,4 +42,4 @@ and execute arbitrary code from the Internet. To avoid running these tasks
 as root, use su(1):
 
 	# su -m _elasticsearch -c \
-	    "${TRUEPREFIX}/elasticsearch/bin/plugin --install <plugin>"
+	    "${TRUEPREFIX}/elasticsearch/bin/elasticsearch-plugin install <plugin>"
