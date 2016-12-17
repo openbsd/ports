@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/29 09:10:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2016/12/17 09:51:37 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.22.3
+REVISION=		0
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -54,7 +55,14 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 
 BUILD_DEPENDS=		devel/ectags \
 			devel/mm-common
+
 RUN_DEPENDS=		devel/ectags
+
+# python auto-completion
+RUN_DEPENDS +=		devel/py-jedi${MODPY_FLAVOR}
+
+# python documentation auto-completion
+RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/libgit2/libgit2-glib \
