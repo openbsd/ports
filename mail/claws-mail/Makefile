@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2016/11/11 12:31:19 danj Exp $
+# $OpenBSD: Makefile,v 1.96 2016/12/17 20:43:36 zhuk Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -16,6 +16,7 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-pdfviewer=	0
 
 CATEGORIES=		mail news
 
@@ -71,7 +72,7 @@ WANTLIB-htmlviewer += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0
 WANTLIB-htmlviewer += webp xcb-dri2 xcb-glx xcb-xfixes xml2 xslt
 
 WANTLIB-pdfviewer =  ${WANTLIB}
-WANTLIB-pdfviewer += jpeg lcms2 openjpeg poppler poppler-glib tiff
+WANTLIB-pdfviewer += jpeg lcms2 openjp2 poppler poppler-glib tiff
 
 LIB_DEPENDS=		devel/libexecinfo \
 			mail/libetpan \
