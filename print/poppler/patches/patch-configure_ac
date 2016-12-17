@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.21 2016/08/22 21:31:54 kili Exp $
---- configure.ac.orig	Mon Jul 25 00:03:53 2016
-+++ configure.ac	Sat Jul 30 22:48:42 2016
-@@ -680,6 +680,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
+$OpenBSD: patch-configure_ac,v 1.22 2016/12/17 01:20:10 kili Exp $
+--- configure.ac.orig	Thu Dec 15 22:30:56 2016
++++ configure.ac	Fri Dec 16 14:16:48 2016
+@@ -681,6 +681,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
  
  GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_ac,v 1.21 2016/08/22 21:31:54 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -997,6 +1015,9 @@ glib/reference/Makefile
+@@ -998,6 +1016,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure_ac,v 1.21 2016/08/22 21:31:54 kili Exp $
  qt4/Makefile
  qt4/src/Makefile
  qt4/tests/Makefile
-@@ -1032,6 +1053,7 @@ if test x$enable_cmyk = xyes;then
+@@ -1033,6 +1054,7 @@ if test x$enable_cmyk = xyes;then
          echo "      with CMYK support"
  fi
  echo "  cairo output:        $use_cairo"

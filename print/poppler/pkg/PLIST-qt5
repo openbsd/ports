@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-qt5,v 1.1 2015/12/14 14:25:47 zhuk Exp $
+@comment $OpenBSD: PLIST-qt5,v 1.2 2016/12/17 01:20:10 kili Exp $
 include/poppler/qt5/
 include/poppler/qt5/poppler-annotation.h
 include/poppler/qt5/poppler-export.h
 include/poppler/qt5/poppler-form.h
+include/poppler/qt5/poppler-link-private.h
 include/poppler/qt5/poppler-link.h
 include/poppler/qt5/poppler-media.h
 include/poppler/qt5/poppler-optcontent.h

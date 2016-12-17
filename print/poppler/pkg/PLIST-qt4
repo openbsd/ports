@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-qt4,v 1.6 2014/10/01 21:44:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-qt4,v 1.7 2016/12/17 01:20:10 kili Exp $
 include/poppler/qt4/
 include/poppler/qt4/poppler-annotation.h
 include/poppler/qt4/poppler-export.h
 include/poppler/qt4/poppler-form.h
+include/poppler/qt4/poppler-link-private.h
 include/poppler/qt4/poppler-link.h
 include/poppler/qt4/poppler-media.h
 include/poppler/qt4/poppler-optcontent.h
