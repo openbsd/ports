@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/07/16 23:57:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/12/17 22:44:53 afresh1 Exp $
 ${P5ARCH}/
-${P5ARCH}/Attribute/
-${P5ARCH}/Attribute/Params/
-${P5ARCH}/Attribute/Params/Validate.pm
 ${P5ARCH}/Params/
 ${P5ARCH}/Params/Validate/
 ${P5ARCH}/Params/Validate.pm
@@ -15,6 +12,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Validate/
 ${P5ARCH}/auto/Params/Validate/XS/
+${P5ARCH}/auto/Params/Validate/XS/XS.bs
 ${P5ARCH}/auto/Params/Validate/XS/XS.so
-@man man/man3p/Attribute::Params::Validate.3p
 @man man/man3p/Params::Validate.3p
