@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2016/10/25 17:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2016/12/17 14:11:21 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,8 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.44
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION-main =		0
-REVISION-server =	2
+REVISION =		3
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
@@ -32,8 +31,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # OpenLDAP Public License
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB =	c crypto pthread sasl2 ssl
-WANTLIB-main =	${cWANTLIB}
+WANTLIB += c crypto ssl
 
 MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		http://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
@@ -51,7 +49,7 @@ CONFIGURE_STYLE =	autoconf
 USE_GROFF =		Yes
 
 FLAVOR ?=
-FLAVORS =		aci gssapi
+FLAVORS =		aci
 
 CONFIGURE_ARGS +=	--enable-ipv6 \
 			--with-tls=openssl
@@ -96,23 +94,17 @@ CONFIGURE_ARGS +=	--disable-mdb
 CONFIGURE_ARGS +=	--enable-aci
 .endif
 
-.if ${FLAVOR:Mgssapi}
-CONFIGURE_ARGS +=	--with-kerberos
-WANTLIB-server +=	${MODHEIMDAL_WANTLIB}
-MODULES +=		security/heimdal
-.endif
-
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 
 TEST_TARGET =	test
 
 MULTI_PACKAGES =	-main -server
 
-LIB_DEPENDS-main +=	security/cyrus-sasl2 
+LIB_DEPENDS +=		security/cyrus-sasl2 
+WANTLIB +=		pthread sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
-			${MODHEIMDAL_LIB_DEPENDS} \
 			sysutils/e2fsprogs \
 			textproc/icu4c \
 			databases/db/v4,no_java,no_tcl
@@ -121,7 +113,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
 RUN_DEPENDS-server =	databases/openldap,-main
-WANTLIB-server +=	${cWANTLIB} perl m icudata icuuc uuid
+WANTLIB-server +=	${WANTLIB} perl util m icudata icuuc uuid
 WANTLIB-server +=	stdc++ lib/db4/db>=4
 
 pre-build:

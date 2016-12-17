@@ -12,4 +12,3 @@ various administrative binaries.
 
 Flavors:
 	aci	enable the *experimental* ACI dynamic access control
-	gssapi	compile with GSSAPI support (and Heimdal)
