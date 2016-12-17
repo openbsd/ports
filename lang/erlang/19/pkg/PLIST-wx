@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-wx,v 1.1 2016/06/30 07:18:19 jasper Exp $
+@comment $OpenBSD: PLIST-wx,v 1.2 2016/12/17 12:06:25 jasper Exp $
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_break.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_break_win.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_code.beam
@@ -82,10 +82,6 @@ lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/bin/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/bin/cdv
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/bin/etop
-lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/crashdump_viewer/
-lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/crashdump_viewer.tool
-lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/crashdump_viewer/collapsd.gif
-lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/crashdump_viewer/exploded.gif
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/priv/erlang_observer.png
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/src/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/src/cdv_atom_cb.erl
