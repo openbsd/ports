@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/09 08:30:52 shadchin Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/17 11:45:38 shadchin Exp $
 
 COMMENT =		Python cross-version byte-code deparser
 
-MODPY_EGG_VERSION =	2.9.7
+MODPY_EGG_VERSION =	2.9.8
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-uncompyle6-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
