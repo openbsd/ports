@@ -1,16 +1,24 @@
-$OpenBSD: patch-tools_krb5-config_in,v 1.2 2016/11/10 08:54:43 ajacoutot Exp $
+$OpenBSD: patch-tools_krb5-config_in,v 1.3 2016/12/17 14:58:31 ajacoutot Exp $
 
-- help ld.so(1) find libs out of its default search path
-- help ld(1) find libcom_err in ${LOCALBASE}
+Search /usr/local/{include,lib} for libcom_err.
 
---- tools/krb5-config.in.orig	Tue Nov  1 02:23:30 2016
-+++ tools/krb5-config.in	Tue Nov  1 02:23:53 2016
-@@ -120,7 +120,7 @@ if test "$print_exec_prefix" = "yes"; then
+--- tools/krb5-config.in.orig	Tue Nov 29 02:35:28 2016
++++ tools/krb5-config.in	Sat Dec 17 15:34:10 2016
+@@ -229,7 +229,7 @@ if test "$do_libs" = "yes"; then
+     if test "$lib_krb5" = yes; then
+ 	lib_flags="$lib_flags -lkrb5"
+     fi
+-    deplibs="$deplibs @LIB_pkinit@ -lcom_err"
++    deplibs="$deplibs @LIB_pkinit@ -L${LOCALBASE}/lib -lcom_err"
+     deplibs="$deplibs @LIB_hcrypto_appl@ -lasn1 -lwind -lheimbase -lroken"
+     deplibs="$deplibs @LIB_crypt@ @PTHREAD_LIBADD@ @LIB_dlopen@"
+     deplibs="$deplibs @LIB_door_create@ @LIBS@"
+@@ -248,7 +248,7 @@ fi
+ if test "$do_cflags" = "yes"; then
+     cflags=""
+     if test X"${includedir}" != X/usr/include; then
+-	cflags="-I${includedir} $cflags"
++	cflags="-I${includedir} -I${LOCALBASE}/include $cflags"
+     fi
+     echo $cflags
  fi
- 
- if test "$do_libs" = "yes"; then
--    lib_flags="-L${libdir}"
-+    lib_flags="-L${libdir} -R${libdir} -L${LOCALBASE}/lib"
-     case $library in
-     gssapi)
- 	lib_flags="$lib_flags -lgssapi -lheimntlm"

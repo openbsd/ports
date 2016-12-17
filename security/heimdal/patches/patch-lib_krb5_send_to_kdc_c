@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_krb5_send_to_kdc_c,v 1.1 2016/12/17 14:58:31 ajacoutot Exp $
+
+64 bit time_t
+
+--- lib/krb5/send_to_kdc.c.orig	Sat Dec 17 14:13:55 2016
++++ lib/krb5/send_to_kdc.c	Sat Dec 17 14:14:26 2016
+@@ -1244,7 +1244,7 @@ out:
+     }
+ 
+     _krb5_debug(context, 1,
+-		"krb5_sendto_context %s done: %d hosts %lu packets %lu wc: %ld.%06ld nr: %ld.%06ld kh: %ld.%06ld tid: %08x",
++		"krb5_sendto_context %s done: %d hosts %lu packets %lu wc: %lld.%06ld nr: %lld.%06ld kh: %lld.%06ld tid: %08x",
+ 		realm, ret,
+ 		ctx->stats.num_hosts, ctx->stats.sent_packets,
+ 		stop_time.tv_sec, (long)stop_time.tv_usec,

@@ -1,17 +1,17 @@
-$OpenBSD: patch-lib_hx509_softp11_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+$OpenBSD: patch-lib_hx509_softp11_c,v 1.2 2016/12/17 14:58:31 ajacoutot Exp $
 
 Use HAVE_ARC4RANDOM and choose to call arc4random() instead of srand()
 and rand() and friends.
 
---- lib/hx509/softp11.c.orig	Sun Dec  9 23:06:44 2012
-+++ lib/hx509/softp11.c	Thu Apr 24 14:15:52 2014
+--- lib/hx509/softp11.c.orig	Tue Nov 29 02:35:27 2016
++++ lib/hx509/softp11.c	Thu Dec 15 11:29:38 2016
 @@ -33,6 +33,7 @@
  
  #define CRYPTOKI_EXPORTS 1
  
 +#include <config.h>
  #include "hx_locl.h"
- #include "pkcs11.h"
+ #include "ref/pkcs11.h"
  
 @@ -304,6 +305,7 @@ static struct st_object *
  add_st_object(void)
@@ -37,7 +37,7 @@ and rand() and friends.
  
      return o;
  }
-@@ -868,7 +876,9 @@ C_Initialize(CK_VOID_PTR a)
+@@ -878,7 +886,9 @@ C_Initialize(CK_VOID_PTR a)
  
      OpenSSL_add_all_algorithms();
  
@@ -47,7 +47,7 @@ and rand() and friends.
  
      for (i = 0; i < MAX_NUM_SESSION; i++) {
  	soft_token.state[i].session_handle = CK_INVALID_HANDLE;
-@@ -1114,6 +1124,7 @@ C_OpenSession(CK_SLOT_ID slotID,
+@@ -1124,6 +1134,7 @@ C_OpenSession(CK_SLOT_ID slotID,
  	      CK_SESSION_HANDLE_PTR phSession)
  {
      size_t i;
@@ -55,7 +55,7 @@ and rand() and friends.
      INIT_CONTEXT();
      st_logf("OpenSession: slot: %d\n", (int)slotID);
  
-@@ -1129,10 +1140,15 @@ C_OpenSession(CK_SLOT_ID slotID,
+@@ -1139,10 +1150,15 @@ C_OpenSession(CK_SLOT_ID slotID,
      if (i == MAX_NUM_SESSION)
  	abort();
  

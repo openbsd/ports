@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_roken_Makefile_in,v 1.1 2016/12/17 14:58:31 ajacoutot Exp $
+
+From 33e4cc0fe272b3479b324fd9cb08d47a0f40940f Mon Sep 17 00:00:00 2001
+From: Nicolas Williams <nico@cryptonector.com>
+Date: Fri, 16 Dec 2016 12:05:51 -0600
+Subject: [PATCH] Fix lib/roken can't find pidfile() (#230)
+
+--- lib/roken/Makefile.in.orig	Fri Dec 16 23:41:18 2016
++++ lib/roken/Makefile.in	Fri Dec 16 23:41:36 2016
+@@ -918,7 +918,7 @@ EXTRA_libroken_la_SOURCES = \
+ 	search.hin		\
+ 	vis.hin	
+ 
+-libroken_la_LIBADD = @LTLIBOBJS@ $(LIB_crypt)
++libroken_la_LIBADD = @LTLIBOBJS@ $(LIB_crypt) $(LIB_pidfile)
+ BUILT_SOURCES = roken.h $(am__append_6)
+ @have_err_h_FALSE@err_h = err.h
+ @have_err_h_TRUE@err_h = 

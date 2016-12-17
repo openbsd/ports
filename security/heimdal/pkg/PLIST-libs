@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.2 2016/12/17 14:58:31 ajacoutot Exp $
 heimdal/
 heimdal/bin/
 heimdal/bin/krb5-config
@@ -21,6 +21,33 @@ heimdal/include/gssapi/gssapi_krb5.h
 heimdal/include/gssapi/gssapi_ntlm.h
 heimdal/include/gssapi/gssapi_oid.h
 heimdal/include/gssapi/gssapi_spnego.h
+heimdal/include/hcrypto/
+heimdal/include/hcrypto/aes.h
+heimdal/include/hcrypto/bn.h
+heimdal/include/hcrypto/des.h
+heimdal/include/hcrypto/dh.h
+heimdal/include/hcrypto/dsa.h
+heimdal/include/hcrypto/ec.h
+heimdal/include/hcrypto/ecdh.h
+heimdal/include/hcrypto/ecdsa.h
+heimdal/include/hcrypto/engine.h
+heimdal/include/hcrypto/evp-cc.h
+heimdal/include/hcrypto/evp-hcrypto.h
+heimdal/include/hcrypto/evp-openssl.h
+heimdal/include/hcrypto/evp-pkcs11.h
+heimdal/include/hcrypto/evp.h
+heimdal/include/hcrypto/hmac.h
+heimdal/include/hcrypto/md2.h
+heimdal/include/hcrypto/md4.h
+heimdal/include/hcrypto/md5.h
+heimdal/include/hcrypto/pkcs12.h
+heimdal/include/hcrypto/rand.h
+heimdal/include/hcrypto/rc2.h
+heimdal/include/hcrypto/rc4.h
+heimdal/include/hcrypto/rsa.h
+heimdal/include/hcrypto/sha.h
+heimdal/include/hcrypto/ui.h
+heimdal/include/hcrypto/undef.h
 heimdal/include/hdb-protos.h
 heimdal/include/hdb.h
 heimdal/include/hdb_asn1.h
@@ -43,15 +70,15 @@ heimdal/include/kadm5/kadm5-protos.h
 heimdal/include/kadm5/kadm5-pwcheck.h
 heimdal/include/kadm5/kadm5_err.h
 heimdal/include/kadm5/private.h
-heimdal/include/kafs.h
 heimdal/include/kdc-protos.h
 heimdal/include/kdc.h
 heimdal/include/krb5/
-heimdal/include/krb5-private.h
 heimdal/include/krb5-protos.h
 heimdal/include/krb5-types.h
 heimdal/include/krb5.h
+heimdal/include/krb5/an2ln_plugin.h
 heimdal/include/krb5/ccache_plugin.h
+heimdal/include/krb5/db_plugin.h
 heimdal/include/krb5/locate_plugin.h
 heimdal/include/krb5/send_to_kdc_plugin.h
 heimdal/include/krb5/windc_plugin.h
@@ -87,6 +114,9 @@ heimdal/lib/libasn1.la
 heimdal/lib/libgssapi.a
 heimdal/lib/libgssapi.la
 @lib heimdal/lib/libgssapi.so.${LIBgssapi_VERSION}
+heimdal/lib/libhcrypto.a
+heimdal/lib/libhcrypto.la
+@lib heimdal/lib/libhcrypto.so.${LIBhcrypto_VERSION}
 heimdal/lib/libhdb.a
 heimdal/lib/libhdb.la
 @lib heimdal/lib/libhdb.so.${LIBhdb_VERSION}
@@ -111,9 +141,6 @@ heimdal/lib/libkadm5clnt.la
 heimdal/lib/libkadm5srv.a
 heimdal/lib/libkadm5srv.la
 @lib heimdal/lib/libkadm5srv.so.${LIBkadm5srv_VERSION}
-heimdal/lib/libkafs.a
-heimdal/lib/libkafs.la
-@lib heimdal/lib/libkafs.so.${LIBkafs_VERSION}
 heimdal/lib/libkdc.a
 heimdal/lib/libkdc.la
 @lib heimdal/lib/libkdc.so.${LIBkdc_VERSION}
@@ -131,6 +158,14 @@ heimdal/lib/libwind.la
 @lib heimdal/lib/libwind.so.${LIBwind_VERSION}
 heimdal/lib/pkgconfig/
 heimdal/lib/pkgconfig/heimdal-gssapi.pc
+heimdal/lib/pkgconfig/heimdal-kadm-client.pc
+heimdal/lib/pkgconfig/heimdal-kadm-server.pc
+heimdal/lib/pkgconfig/heimdal-krb5.pc
+heimdal/lib/pkgconfig/kadm-client.pc
+heimdal/lib/pkgconfig/kadm-server.pc
+heimdal/lib/pkgconfig/kafs.pc
+heimdal/lib/pkgconfig/krb5-gssapi.pc
+heimdal/lib/pkgconfig/krb5.pc
 heimdal/lib/windc.a
 heimdal/lib/windc.la
 heimdal/lib/windc.so.0.0

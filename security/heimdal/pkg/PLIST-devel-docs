@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel-docs,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-devel-docs,v 1.2 2016/12/17 14:58:31 ajacoutot Exp $
 @man man/man3/DES_cbc_cksum.3
 @man man/man3/DES_cbc_encrypt.3
 @man man/man3/DES_cfb64_encrypt.3
@@ -117,9 +117,11 @@
 @man man/man3/EVP_sha512.3
 @man man/man3/EVP_wincrypt_des_ede3_cbc.3
 @man man/man3/HDB.3
+@man man/man3/OSSL_CIPHER_ALGORITHM.3
 @man man/man3/OpenSSL_add_all_algorithms.3
 @man man/man3/OpenSSL_add_all_algorithms_conf.3
 @man man/man3/OpenSSL_add_all_algorithms_noconf.3
+@man man/man3/PKCS5_PBKDF2_HMAC.3
 @man man/man3/PKCS5_PBKDF2_HMAC_SHA1.3
 @man man/man3/RAND_add.3
 @man man/man3/RAND_bytes.3
@@ -141,12 +143,10 @@
 @man man/man3/RSA_set_app_data.3
 @man man/man3/RSA_set_method.3
 @man man/man3/RSA_up_ref.3
-@man man/man3/__gss_c_attr_stream_sizes_oid_desc.3
+@man man/man3/WINCNG_CIPHER_ALGORITHM.3
+@man man/man3/WINCNG_CIPHER_ALGORITHM_UNAVAILABLE.3
 @man man/man3/arg_printusage.3
-@man man/man3/challenge.3
-@man man/man3/context.3
 @man man/man3/data.3
-@man man/man3/domain.3
 @man man/man3/ecalloc.3
 @man man/man3/emalloc.3
 @man man/man3/eread.3
@@ -154,7 +154,6 @@
 @man man/man3/esetenv.3
 @man man/man3/estrdup.3
 @man man/man3/ewrite.3
-@man man/man3/flags.3
 @man man/man3/getarg.3
 @man man/man3/gss_accept_sec_context.3
 @man man/man3/gss_acquire_cred.3
@@ -261,7 +260,7 @@
 @man man/man3/heim_ntlm_nt_key.3
 @man man/man3/heim_ntlm_ntlmv2_key.3
 @man man/man3/heim_ntlm_verify_ntlm2.3
-@man man/man3/hostname.3
+@man man/man3/heimbase.3
 @man man/man3/hx509.3
 @man man/man3/hx509_bitstring_print.3
 @man man/man3/hx509_ca.3
@@ -284,6 +283,7 @@
 @man man/man3/hx509_ca_tbs_set_notBefore.3
 @man man/man3/hx509_ca_tbs_set_proxy.3
 @man man/man3/hx509_ca_tbs_set_serialnumber.3
+@man man/man3/hx509_ca_tbs_set_signature_algorithm.3
 @man man/man3/hx509_ca_tbs_set_spki.3
 @man man/man3/hx509_ca_tbs_set_subject.3
 @man man/man3/hx509_ca_tbs_set_template.3
@@ -423,28 +423,19 @@
 @man man/man3/hx509_verify_set_time.3
 @man man/man3/hx509_verify_signature.3
 @man man/man3/hx509_xfree.3
-@man man/man3/internalvsmechname.3
-@man man/man3/k_afs_cell_of_file.3
-@man man/man3/k_hasafs.3
-@man man/man3/k_hasafs_recheck.3
-@man man/man3/k_pioctl.3
-@man man/man3/k_setpag.3
-@man man/man3/k_unlog.3
+@man man/man3/internal_v_smechname.3
 @man man/man3/kadm5_add_passwd_quality_verifier.3
 @man man/man3/kadm5_check_password_quality.3
 @man man/man3/kadm5_pwcheck.3
 @man man/man3/kadm5_setup_passwd_quality_check.3
-@man man/man3/kafs.3
-@man man/man3/kafs_set_verbose.3
-@man man/man3/kafs_settoken.3
-@man man/man3/kafs_settoken5.3
-@man man/man3/kafs_settoken_rxkad.3
 @man man/man3/krb5.3
 @man man/man3/krb524_convert_creds_kdc.3
 @man man/man3/krb524_convert_creds_kdc_ccache.3
 @man man/man3/krb5_425_conv_principal.3
 @man man/man3/krb5_425_conv_principal_ext.3
 @man man/man3/krb5_524_conv_principal.3
+@man man/man3/krb5_abort.3
+@man man/man3/krb5_abortx.3
 @man man/man3/krb5_acc_ops.3
 @man man/man3/krb5_acl_match_file.3
 @man man/man3/krb5_acl_match_string.3
@@ -459,8 +450,6 @@
 @man man/man3/krb5_address_order.3
 @man man/man3/krb5_address_prefixlen_boundary.3
 @man man/man3/krb5_address_search.3
-@man man/man3/krb5_afslog.3
-@man man/man3/krb5_afslog_uid.3
 @man man/man3/krb5_allow_weak_crypto.3
 @man man/man3/krb5_aname_to_localname.3
 @man man/man3/krb5_anyaddr.3
@@ -644,6 +633,7 @@
 @man man/man3/krb5_data_free.3
 @man man/man3/krb5_data_realloc.3
 @man man/man3/krb5_data_zero.3
+@man man/man3/krb5_dcc_ops.3
 @man man/man3/krb5_decrypt.3
 @man man/man3/krb5_decrypt_EncryptedData.3
 @man man/man3/krb5_decrypt_iov_ivec.3
@@ -693,8 +683,10 @@
 @man man/man3/krb5_enctype_to_string.3
 @man man/man3/krb5_enctype_valid.3
 @man man/man3/krb5_enctypes_compatible_keys.3
+@man man/man3/krb5_err.3
 @man man/man3/krb5_error.3
 @man man/man3/krb5_error_from_rd_error.3
+@man man/man3/krb5_errx.3
 @man man/man3/krb5_expand_hostname.3
 @man man/man3/krb5_expand_hostname_realms.3
 @man man/man3/krb5_fcc_ops.3
@@ -715,6 +707,7 @@
 @man man/man3/krb5_free_data_contents.3
 @man man/man3/krb5_free_error.3
 @man man/man3/krb5_free_error_contents.3
+@man man/man3/krb5_free_error_message.3
 @man man/man3/krb5_free_error_string.3
 @man man/man3/krb5_free_host_realm.3
 @man man/man3/krb5_free_kdc_rep.3
@@ -726,6 +719,7 @@
 @man man/man3/krb5_free_ticket.3
 @man man/man3/krb5_free_unparsed_name.3
 @man man/man3/krb5_fwd_tgt_creds.3
+@man man/man3/krb5_generate_random.3
 @man man/man3/krb5_generate_random_block.3
 @man man/man3/krb5_generate_subkey.3
 @man man/man3/krb5_generate_subkey_extended.3
@@ -750,6 +744,9 @@
 @man man/man3/krb5_get_default_realms.3
 @man man/man3/krb5_get_dns_canonicalize_hostname.3
 @man man/man3/krb5_get_dns_canonize_hostname.3
+@man man/man3/krb5_get_err_text.3
+@man man/man3/krb5_get_error_message.3
+@man man/man3/krb5_get_error_string.3
 @man man/man3/krb5_get_extra_addresses.3
 @man man/man3/krb5_get_fcache_version.3
 @man man/man3/krb5_get_forwarded_creds.3
@@ -796,6 +793,7 @@
 @man man/man3/krb5_get_server_rcache.3
 @man man/man3/krb5_get_use_admin_kdc.3
 @man man/man3/krb5_get_validated_creds.3
+@man man/man3/krb5_get_warn_dest.3
 @man man/man3/krb5_get_wrapped_length.3
 @man man/man3/krb5_getportbyname.3
 @man man/man3/krb5_h_addr2addr.3
@@ -816,6 +814,7 @@
 @man man/man3/krb5_initlog.3
 @man man/man3/krb5_introduction.3
 @man man/man3/krb5_is_config_principal.3
+@man man/man3/krb5_is_enctype_weak.3
 @man man/man3/krb5_is_thread_safe.3
 @man man/man3/krb5_kerberos_enctypes.3
 @man man/man3/krb5_keyblock_get_enctype.3
@@ -895,7 +894,12 @@
 @man man/man3/krb5_principal_get_realm.3
 @man man/man3/krb5_principal_get_type.3
 @man man/man3/krb5_principal_intro.3
+@man man/man3/krb5_principal_is_gss_hostbased_service.3
 @man man/man3/krb5_principal_is_krbtgt.3
+@man man/man3/krb5_principal_is_lkdc.3
+@man man/man3/krb5_principal_is_null.3
+@man man/man3/krb5_principal_is_pku2u.3
+@man man/man3/krb5_principal_is_root_krbtgt.3
 @man man/man3/krb5_principal_match.3
 @man man/man3/krb5_principal_set_realm.3
 @man man/man3/krb5_principal_set_type.3
@@ -933,6 +937,7 @@
 @man man/man3/krb5_rd_req_with_keyblock.3
 @man man/man3/krb5_rd_safe.3
 @man man/man3/krb5_realm_compare.3
+@man man/man3/krb5_realm_is_lkdc.3
 @man man/man3/krb5_ret_address.3
 @man man/man3/krb5_ret_addrs.3
 @man man/man3/krb5_ret_authdata.3
@@ -941,6 +946,7 @@
 @man man/man3/krb5_ret_data.3
 @man man/man3/krb5_ret_int16.3
 @man man/man3/krb5_ret_int32.3
+@man man/man3/krb5_ret_int64.3
 @man man/man3/krb5_ret_int8.3
 @man man/man3/krb5_ret_keyblock.3
 @man man/man3/krb5_ret_principal.3
@@ -949,6 +955,7 @@
 @man man/man3/krb5_ret_times.3
 @man man/man3/krb5_ret_uint16.3
 @man man/man3/krb5_ret_uint32.3
+@man man/man3/krb5_ret_uint64.3
 @man man/man3/krb5_ret_uint8.3
 @man man/man3/krb5_set_config_files.3
 @man man/man3/krb5_set_default_in_tkt_etypes.3
@@ -967,6 +974,7 @@
 @man man/man3/krb5_set_password_using_ccache.3
 @man man/man3/krb5_set_real_time.3
 @man man/man3/krb5_set_use_admin_kdc.3
+@man man/man3/krb5_set_warn_dest.3
 @man man/man3/krb5_sname_to_principal.3
 @man man/man3/krb5_sock_to_principal.3
 @man man/man3/krb5_sockaddr2address.3
@@ -980,6 +988,8 @@
 @man man/man3/krb5_storage_from_fd.3
 @man man/man3/krb5_storage_from_mem.3
 @man man/man3/krb5_storage_from_readonly_mem.3
+@man man/man3/krb5_storage_from_socket.3
+@man man/man3/krb5_storage_fsync.3
 @man man/man3/krb5_storage_get_byteorder.3
 @man man/man3/krb5_storage_get_eof_code.3
 @man man/man3/krb5_storage_is_flags.3
@@ -1000,6 +1010,7 @@
 @man man/man3/krb5_store_data.3
 @man man/man3/krb5_store_int16.3
 @man man/man3/krb5_store_int32.3
+@man man/man3/krb5_store_int64.3
 @man man/man3/krb5_store_int8.3
 @man man/man3/krb5_store_keyblock.3
 @man man/man3/krb5_store_principal.3
@@ -1008,6 +1019,7 @@
 @man man/man3/krb5_store_times.3
 @man man/man3/krb5_store_uint16.3
 @man man/man3/krb5_store_uint32.3
+@man man/man3/krb5_store_uint64.3
 @man man/man3/krb5_store_uint8.3
 @man man/man3/krb5_string_to_deltat.3
 @man man/man3/krb5_string_to_enctype.3
@@ -1034,6 +1046,7 @@
 @man man/man3/krb5_unparse_name_short.3
 @man man/man3/krb5_us_timeofday.3
 @man man/man3/krb5_v4compat.3
+@man man/man3/krb5_vabort.3
 @man man/man3/krb5_verify_ap_req.3
 @man man/man3/krb5_verify_checksum.3
 @man man/man3/krb5_verify_checksum_iov.3
@@ -1051,21 +1064,26 @@
 @man man/man3/krb5_verify_user.3
 @man man/man3/krb5_verify_user_lrealm.3
 @man man/man3/krb5_verify_user_opt.3
+@man man/man3/krb5_verr.3
+@man man/man3/krb5_verrx.3
 @man man/man3/krb5_vlog.3
 @man man/man3/krb5_vlog_msg.3
+@man man/man3/krb5_vprepend_error_message.3
+@man man/man3/krb5_vset_error_message.3
 @man man/man3/krb5_vset_error_string.3
 @man man/man3/krb5_vwarn.3
-@man man/man3/krb_afslog.3
-@man man/man3/krb_afslog_uid.3
+@man man/man3/krb5_vwarnx.3
+@man man/man3/krb5_warn.3
+@man man/man3/krb5_warnx.3
+@man man/man3/krb5plugin_an2ln_ftable_desc.3
+@man man/man3/krb5plugin_db_ftable_desc.3
+@man man/man3/krb5plugin_kuserok_ftable_desc.3
 @man man/man3/length.3
-@man man/man3/lm.3
-@man man/man3/ntlm.3
 @man man/man3/ntlm_buf.3
 @man man/man3/ntlm_core.3
 @man man/man3/ntlm_type1.3
 @man man/man3/ntlm_type2.3
 @man man/man3/ntlm_type3.3
-@man man/man3/os.3
 @man man/man3/page_ca.3
 @man man/man3/page_cert.3
 @man man/man3/page_cms.3
@@ -1099,12 +1117,8 @@
 @man man/man3/rtbl_set_flags.3
 @man man/man3/rtbl_set_prefix.3
 @man man/man3/rtbl_set_separator.3
-@man man/man3/sessionkey.3
-@man man/man3/targetinfo.3
-@man man/man3/targetname.3
 @man man/man3/unparse_time.3
 @man man/man3/unparse_time_approx.3
-@man man/man3/username.3
 @man man/man3/wind.3
 @man man/man3/wind_profile.3
 @man man/man3/wind_punycode_label_toascii.3
@@ -1119,4 +1133,3 @@
 @man man/man3/wind_utf8ucs2_length.3
 @man man/man3/wind_utf8ucs4.3
 @man man/man3/wind_utf8ucs4_length.3
-@man man/man3/ws.3

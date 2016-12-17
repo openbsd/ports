@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_roken_roken_h_in,v 1.1 2016/12/17 14:58:31 ajacoutot Exp $
+
+innetgr(3)
+pidfile(3)
+
+--- lib/roken/roken.h.in.orig	Sat Dec 17 10:28:21 2016
++++ lib/roken/roken.h.in	Sat Dec 17 10:30:24 2016
+@@ -230,6 +230,9 @@ struct sockaddr_dl;
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
+ #endif
++#ifdef HAVE_NETGROUP_H
++#include <netgroup.h>
++#endif
+ #ifdef HAVE_ARPA_NAMESER_H
+ #include <arpa/nameser.h>
+ #endif
+@@ -259,6 +262,10 @@ struct sockaddr_dl;
+ #include <sys/time.h>
+ #else
+ #include <time.h>
++#endif
++
++#ifdef HAVE_UTIL_H
++#include <util.h>
+ #endif
+ 
+ #ifdef HAVE_PATHS_H

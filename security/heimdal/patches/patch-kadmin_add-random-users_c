@@ -1,11 +1,11 @@
-$OpenBSD: patch-kadmin_add-random-users_c,v 1.1 2014/07/13 14:10:13 ajacoutot Exp $
+$OpenBSD: patch-kadmin_add-random-users_c,v 1.2 2016/12/17 14:58:31 ajacoutot Exp $
 
 Use HAVE_ARC4RANDOM and choose to call arc4random() instead of srand()
 and rand() and friends.
 
---- kadmin/add-random-users.c.orig	Sun Dec  9 23:06:44 2012
-+++ kadmin/add-random-users.c	Thu Apr 24 14:15:42 2014
-@@ -86,9 +86,13 @@ add_user (krb5_context context, void *kadm_handle,
+--- kadmin/add-random-users.c.orig	Tue Nov 29 02:35:27 2016
++++ kadmin/add-random-users.c	Thu Dec 15 11:29:38 2016
+@@ -85,9 +85,13 @@ add_user (krb5_context ctx, void *hndl, unsigned nword
      krb5_error_code ret;
      int mask;
  
