@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/03 12:21:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/17 12:37:58 jasper Exp $
+
+BROKEN =	requires update to work with ES 5.x
 
 COMMENT =	elasticsearch perl module
 
