@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2016/12/16 13:59:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2016/12/17 16:23:54 zhuk Exp $
 
 COMMENT=		powerful desktop search tool and indexer
 
@@ -8,6 +8,7 @@ GNOME_VERSION=		1.10.3
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
+REVISION=		0
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/documents
@@ -37,7 +38,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gxps harfbuzz iconv
 WANTLIB += icudata icui18n icuuc intl iptcdata jpeg kvm lcms2
-WANTLIB += lz4 lzma lzo2 m mediaart-2.0 openjpeg orc-0.4 osinfo-1.0
+WANTLIB += lz4 lzma lzo2 m mediaart-2.0 openjp2 orc-0.4 osinfo-1.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs soup-2.4
 WANTLIB += sqlite3 stdc++ tag tag_c tiff totem-plparser upower-glib
