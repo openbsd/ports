@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_elasticsearch-plugin,v 1.1 2016/12/17 12:11:24 jasper Exp $
+--- bin/elasticsearch-plugin.orig	Wed Oct 26 07:35:54 2016
++++ bin/elasticsearch-plugin	Wed Nov  2 13:44:56 2016
+@@ -1,6 +1,8 @@
+ #!/bin/bash
+ 
+ CDPATH=""
++CONF_DIR="/etc/elasticsearch"
++JAVA_HOME="$(/usr/local/bin/javaPathHelper -h elasticsearch)"
+ SCRIPT="$0"
+ 
+ # SCRIPT may be an arbitrarily deep series of symlinks. Loop until we have the concrete path.

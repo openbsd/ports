@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_elasticsearch-translog,v 1.1 2016/12/17 12:11:24 jasper Exp $
+--- bin/elasticsearch-translog.orig	Wed Oct 26 07:35:54 2016
++++ bin/elasticsearch-translog	Wed Nov  2 13:45:20 2016
+@@ -1,6 +1,7 @@
+ #!/bin/bash
+ 
+ CDPATH=""
++JAVA_HOME="$(/usr/local/bin/javaPathHelper -h elasticsearch)"
+ SCRIPT="$0"
+ 
+ # SCRIPT may be an arbitrarily deep series of symlinks. Loop until we have the concrete path.
