@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.94 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2016/12/17 15:00:22 ajacoutot Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=		cyrus-sasl-2.1.26
-REVISION=		20
+REVISION=		21
 
 SHARED_LIBS +=  sasl2                3.0      # 3.0
 
@@ -55,7 +55,6 @@ CONFIGURE_ARGS +=	--with-dblib=ndbm \
 .if ${FLAVOR:Mgssapi}
 CONFIGURE_ARGS +=	--enable-gssapi=${LOCALBASE}/heimdal
 MODULES +=		security/heimdal
-WANTLIB += com_err pthread
 WANTLIB += heimdal/lib/gssapi
 WANTLIB += heimdal/lib/heimntlm
 WANTLIB += heimdal/lib/heimsqlite

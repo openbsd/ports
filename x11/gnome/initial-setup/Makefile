@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/10/31 16:30:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2016/12/17 15:00:22 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -11,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm accountsservice
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += com_err crack crypto dbus-1 dbus-glib-1 drm enchant
+WANTLIB += crack crypto dbus-1 dbus-glib-1 drm enchant
 WANTLIB += epoxy estdc++ expat ffi fontconfig freetype gbm gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gdm geoclue-2 geocode-glib gio-2.0
 WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gnutls
@@ -22,7 +23,7 @@ WANTLIB += gweather-3 harfbuzz harfbuzz-icu hogweed hyphen ibus-1.0
 WANTLIB += iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png polkit-gobject-1 pthread pthread-stubs pwquality
+WANTLIB += png polkit-gobject-1 pthread-stubs pwquality
 WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += tasn1 telepathy-glib webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z

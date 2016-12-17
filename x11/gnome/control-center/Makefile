@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/11/01 07:12:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/12/17 15:00:22 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,17 +6,18 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += FLAC ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += accountsservice atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += colord-gtk colordprivate com_err crack crypto cups
+WANTLIB += colord-gtk colordprivate crack crypto cups
 WANTLIB += dbus-1 dbus-glib-1 drm epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype gbm gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnome-desktop-3 goa-1.0
@@ -26,7 +27,7 @@ WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz hogweed ibus-1.0
 WANTLIB += iconv icudata icuuc idn intl javascriptcoregtk-4.0
 WANTLIB += json-c json-glib-1.0 kvm lber-2.4 lcms2 ltdl lzma m
 WANTLIB += nettle ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
+WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += sasl2 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl stdc++ tasn1 telepathy-glib upower-glib
