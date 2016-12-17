@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/18 22:41:37 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2016/12/17 16:25:31 zhuk Exp $
 
 COMMENT=	python bindings for poppler
 
@@ -6,7 +6,7 @@ DISTNAME=	pypoppler-0.12.1
 PKGNAME=        ${DISTNAME:S/^py/py-/}
 CATEGORIES=	print
 
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES=	${HOMEPAGE}/trunk/development/+download/
 HOMEPAGE=	http://launchpad.net/poppler-python/
@@ -18,7 +18,7 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz jpeg lcms2 m openjpeg pango-1.0
+WANTLIB += gtk-x11-2.0 harfbuzz jpeg lcms2 m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler-glib>=8
 WANTLIB += poppler>=10 pthread-stubs pthread stdc++ tiff xcb xcb-render
 WANTLIB += xcb-shm z
