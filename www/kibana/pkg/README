@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2016/01/21 13:48:25 giovanni Exp $
+$OpenBSD: README,v 1.2 2016/12/17 12:13:22 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ Kibana Plugins Management
 Kibana plugins management tasks must be run as _kibana user, please use
 doas(1), sudo(1) or su(1), e.g.
 
-    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana plugin --install \
+    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana-plugin install \
 	<plugin>
-    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana plugin --remove \
+    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana-plugin remove \
 	<plugin>

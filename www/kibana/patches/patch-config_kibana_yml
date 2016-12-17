@@ -1,10 +1,12 @@
-$OpenBSD: patch-config_kibana_yml,v 1.1.1.1 2016/01/21 13:48:23 giovanni Exp $
---- config/kibana.yml.orig	Sun Dec 27 20:12:10 2015
-+++ config/kibana.yml	Sun Dec 27 20:13:25 2015
-@@ -65,5 +65,6 @@
- # If you would like to send the log output to a file you can set the path below.
- # logging.dest: stdout
+$OpenBSD: patch-config_kibana_yml,v 1.2 2016/12/17 12:13:21 jasper Exp $
+--- config/kibana.yml.orig	Wed Nov  2 15:02:06 2016
++++ config/kibana.yml	Wed Nov  2 15:02:35 2016
+@@ -82,7 +82,7 @@
+ #pid.file: /var/run/kibana.pid
+ 
+ # Enables you specify a file where Kibana stores log output.
+-#logging.dest: stdout
 +logging.dest: /var/log/kibana/kibana.log
  
- # Set this to true to suppress all logging output.
- # logging.silent: false
+ # Set the value of this setting to true to suppress all logging output.
+ #logging.silent: false

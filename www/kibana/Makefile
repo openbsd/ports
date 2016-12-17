@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/03 09:38:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2016/12/17 12:13:21 jasper Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
-V=		4.6.1
+V=		5.1.1
 PKGNAME=	kibana-${V}
 DISTNAME=	${PKGNAME}-darwin-x86_64
 
@@ -15,7 +15,7 @@ MAINTAINER=	Pavel Korovin <p@tristero.se>
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://download.elastic.co/kibana/kibana/
+MASTER_SITES=	http://artifacts.elastic.co/downloads/kibana/
 
 RUN_DEPENDS=	lang/node
 
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/config/kibana.yml \
 		${PREFIX}/share/examples/kibana/kibana.yml.sample
 	rm -rf ${WRKDIST}/LICENSE.txt ${WRKDIST}/README.txt \
-		${WRKDIST}/bin/kibana.{bat,beforesubst}	\
+		${WRKDIST}/bin/*.orig \
 		${WRKDIST}/config ${WRKDIST}/node
 	find ${WRKDIST} -name '*.un~' -print0 | xargs -0 rm
 	cd ${WRKDIST} && cp -R * ${PREFIX}/kibana/
