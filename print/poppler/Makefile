@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2016/12/17 01:20:10 kili Exp $
+# $OpenBSD: Makefile,v 1.114 2016/12/17 15:31:57 zhuk Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -15,6 +15,11 @@ PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
 OLDSHIT =	poppler-0.16.7
+REVISION-main=	0
+REVISION-qt=	0
+REVISION-qt4=	0
+REVISION-qt5=	0
+REVISION-utils=	0
 
 SHARED_LIBS +=	poppler              43.0     # 66.0
 SHARED_LIBS +=	poppler-glib         16.0     # 16.0
@@ -76,7 +81,7 @@ LIB_DEPENDS-main= \
 		devel/glib2 \
 		graphics/cairo \
 		graphics/lcms2 \
-		graphics/openjpeg \
+		graphics/openjp2 \
 		graphics/png \
 		graphics/tiff
 
@@ -92,27 +97,27 @@ LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
 LIB_DEPENDS-utils= print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 pixman-1 openjpeg X11 Xrender cairo pcre \
+		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
 		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
 		iconv intl
 
-WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png pthread-stubs \
+WANTLIB-qt=	${cWANTLIB} lcms2 openjp2 poppler png pthread-stubs \
 		${MODQT3_WANTLIB}
 
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
-		gobject-2.0 gthread-2.0 iconv intl lcms2 openjpeg \
+		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
 		png poppler pcre pthread-stubs xcb
 
 WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo ffi glapi \
 		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
-		iconv icudata icui18n icuuc intl lcms2 openjpeg pcre \
+		iconv icudata icui18n icuuc intl lcms2 openjp2 pcre \
 		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
 		
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
+		png pthread-stubs xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf
