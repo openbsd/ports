@@ -1,9 +1,0 @@
-$OpenBSD: patch-pytest_ini,v 1.3 2016/11/24 15:59:37 shadchin Exp $
---- pytest.ini.orig	Sat Nov 19 21:50:05 2016
-+++ pytest.ini	Thu Nov 24 20:51:21 2016
-@@ -1,4 +1,4 @@
- [pytest]
- norecursedirs=dist build .tox
--addopts=--doctest-modules
-+addopts=--doctest-modules --ignore=lib
- doctest_optionflags=ALLOW_UNICODE ELLIPSIS
