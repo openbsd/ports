@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_master_cf,v 1.7 2015/04/09 19:49:59 sthen Exp $
---- conf/master.cf.orig	Wed Oct  1 17:47:03 2014
-+++ conf/master.cf	Thu Oct 16 13:38:42 2014
+$OpenBSD: patch-conf_master_cf,v 1.8 2016/12/18 20:28:40 jca Exp $
+--- conf/master.cf.orig	Sat Jan 31 23:54:26 2015
++++ conf/master.cf	Wed Dec 14 15:01:00 2016
 @@ -9,12 +9,12 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (no)    (never) (100)
@@ -83,7 +83,7 @@ $OpenBSD: patch-conf_master_cf,v 1.7 2015/04/09 19:49:59 sthen Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -95,14 +95,14 @@ scache    unix  -       -       n       -       1     
+@@ -95,21 +95,21 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
@@ -97,6 +97,14 @@ $OpenBSD: patch-conf_master_cf,v 1.7 2015/04/09 19:49:59 sthen Exp $
  #old-cyrus unix  -       n       n       -       -       pipe
 -#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
 +#  flags=R user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -m ${extension} ${user}
+ #
+ # ====================================================================
+ #
+ # See the Postfix UUCP_README file for configuration details.
+ #
+ #uucp      unix  -       n       n       -       -       pipe
+-#  flags=Fqhu user=uucp argv=uux -r -n -z -a$sender - $nexthop!rmail ($recipient)
++#  flags=Fqhu user=_uucp argv=uux -r -n -z -a$sender - $nexthop!rmail ($recipient)
  #
  # ====================================================================
  #
