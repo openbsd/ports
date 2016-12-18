@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/18 23:03:03 jca Exp $
 
 COMMENT=	search engine library
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS} -Wno-redundant-decls" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	LIBxapian_VERSION=${LIBxapian_VERSION}
 
