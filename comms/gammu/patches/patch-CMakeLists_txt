@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
---- CMakeLists.txt.orig	Wed Feb  3 12:48:03 2016
-+++ CMakeLists.txt	Fri Feb  5 14:57:00 2016
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2016/12/18 12:26:33 kirby Exp $
+--- CMakeLists.txt.orig	Mon Dec 12 16:47:26 2016
++++ CMakeLists.txt	Tue Dec 13 01:46:22 2016
 @@ -22,6 +22,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
  option (ODBC_TESTING "Enable testing of ODBC MySQL SMSD backend" OFF)
  option (BUILD_SHARED_LIBS "Build shared libraries" ON)
@@ -11,7 +11,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
  option (LARGE_FILES "Support for large files" ON)
  if (LARGE_FILES)
      add_definitions(-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64)
-@@ -112,7 +115,6 @@ endif (ENABLE_GETOPT)
+@@ -115,7 +118,6 @@ endif (ENABLE_GETOPT)
  check_symbol_exists (daemon "unistd.h" HAVE_DAEMON_UNISTD)
  check_symbol_exists (daemon "stdlib.h" HAVE_DAEMON_STDLIB)
  check_symbol_exists (kill "signal.h" HAVE_KILL)
@@ -19,7 +19,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
  check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
-@@ -174,9 +176,12 @@ find_package (Threads)
+@@ -182,9 +184,12 @@ find_package (Threads)
  find_package(PythonInterp 2)
  
  # Packages in sources
@@ -35,7 +35,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
  macro_optional_find_package (LibDBI)
  macro_optional_find_package (Libintl)
  macro_optional_find_package (Iconv)
-@@ -442,7 +447,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
+@@ -467,7 +472,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
      MACRO_TUNE_COMPILER("-Wno-pointer-sign")
  
      MACRO_TUNE_COMPILER("-Wwrite-strings")

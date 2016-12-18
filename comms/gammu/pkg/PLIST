@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/18 12:26:33 kirby Exp $
 @bin bin/gammu
 bin/gammu-config
 @bin bin/gammu-detect
@@ -101,6 +101,7 @@ share/doc/gammu/examples/sms-read.c
 share/doc/gammu/examples/sms-send.c
 share/doc/gammu/examples/smsd.c
 share/doc/gammu/examples/sql/
+share/doc/gammu/examples/sql/mysql-strict.sql
 share/doc/gammu/examples/sql/mysql.sql
 share/doc/gammu/examples/sql/pgsql.sql
 share/doc/gammu/examples/sql/sqlite.sql
