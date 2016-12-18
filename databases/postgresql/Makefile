@@ -1,32 +1,30 @@
-# $OpenBSD: Makefile,v 1.218 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.219 2016/12/18 18:18:27 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
+COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.5.4
+VERSION=	9.6.1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
-REVISION-contrib=	0
-REVISION-docs=	0
-REVISION-main=	0
-REVISION-plpython=	0
-REVISION-server=0
+PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
+
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.7 \
-		ecpg_compat	4.7 \
-		pgtypes		4.6 \
-		pq		6.8
+SHARED_LIBS=	ecpg		7.8 \
+		ecpg_compat	4.8 \
+		pgtypes		4.7 \
+		pq		6.9 
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -35,11 +33,11 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m readline ssl termcap z pthread
+WANTLIB += c crypto m readline ssl termcap z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
-MULTI_PACKAGES=	-docs -main -server -contrib -plpython
+MULTI_PACKAGES=	-docs -main -server -contrib -pg_upgrade -plpython
 
 MAKE_FILE=	GNUmakefile
 
@@ -58,6 +56,7 @@ CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
+		--with-bsd-auth \
 		--with-perl \
 		--with-python \
 		--with-pam=no \
@@ -93,11 +92,17 @@ WANTLIB-main =	${WANTLIB} xml2
 LIB_DEPENDS-server= databases/postgresql=${VERSION} \
 		    ${LIB_DEPENDS-main}
 WANTLIB-server=	${WANTLIB-main} perl pq>=4
-RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 
+RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
 WANTLIB-contrib=	${WANTLIB-main} pq>=4
+
+RUN_DEPENDS-pg_upgrade=	databases/postgresql,-server=${VERSION} \
+			databases/postgresql-previous
+LIB_DEPENDS-pg_upgrade= databases/postgresql=${VERSION} \
+		     ${LIB_DEPENDS-main}
+WANTLIB-pg_upgrade=	${WANTLIB-main} pq>=4
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
 WANTLIB-plpython =	c m pthread util \
@@ -107,7 +112,6 @@ RUN_DEPENDS-plpython=	databases/postgresql,-server=${VERSION}
 WANTLIB-docs=
 PKG_ARCH-docs=	*
 
-WANTLIB-server+=	util
 
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBpq_MINOR=${LIBpq_VERSION:E} \

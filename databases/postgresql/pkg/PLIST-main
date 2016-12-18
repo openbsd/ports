@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2016/02/13 21:54:28 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2016/12/18 18:18:27 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -67,6 +67,7 @@ lib/libecpg_compat.a
 @comment lib/libecpg_compat.so.4
 @lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
 lib/libpgcommon.a
+lib/libpgfeutils.a
 lib/libpgport.a
 lib/libpgtypes.a
 @comment lib/libpgtypes.so
@@ -74,7 +75,7 @@ lib/libpgtypes.a
 @lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
 lib/libpq.a
 @comment lib/libpq.so
-@comment lib/libpq.so.5
+@comment lib/libpq.so.6
 @lib lib/libpq.so.${LIBpq_VERSION}
 lib/pkgconfig/libecpg.pc
 lib/pkgconfig/libecpg_compat.pc
@@ -197,6 +198,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_OPERATOR.7
 @man man/man7/ALTER_OPERATOR_CLASS.7
 @man man/man7/ALTER_OPERATOR_FAMILY.7
+@man man/man7/ALTER_POLICY.7
 @man man/man7/ALTER_ROLE.7
 @man man/man7/ALTER_RULE.7
 @man man/man7/ALTER_SCHEMA.7
@@ -223,6 +225,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/COMMIT.7
 @man man/man7/COMMIT_PREPARED.7
 @man man/man7/COPY.7
+@man man/man7/CREATE_ACCESS_METHOD.7
 @man man/man7/CREATE_AGGREGATE.7
 @man man/man7/CREATE_CAST.7
 @man man/man7/CREATE_COLLATION.7
@@ -241,6 +244,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/CREATE_OPERATOR.7
 @man man/man7/CREATE_OPERATOR_CLASS.7
 @man man/man7/CREATE_OPERATOR_FAMILY.7
+@man man/man7/CREATE_POLICY.7
 @man man/man7/CREATE_ROLE.7
 @man man/man7/CREATE_RULE.7
 @man man/man7/CREATE_SCHEMA.7
@@ -253,6 +257,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/CREATE_TEXT_SEARCH_DICTIONARY.7
 @man man/man7/CREATE_TEXT_SEARCH_PARSER.7
 @man man/man7/CREATE_TEXT_SEARCH_TEMPLATE.7
+@man man/man7/CREATE_TRANSFORM.7
 @man man/man7/CREATE_TRIGGER.7
 @man man/man7/CREATE_TYPE.7
 @man man/man7/CREATE_USER.7
@@ -263,6 +268,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DELETE.7
 @man man/man7/DISCARD.7
 @man man/man7/DO.7
+@man man/man7/DROP_ACCESS_METHOD.7
 @man man/man7/DROP_AGGREGATE.7
 @man man/man7/DROP_CAST.7
 @man man/man7/DROP_COLLATION.7
@@ -282,6 +288,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DROP_OPERATOR_CLASS.7
 @man man/man7/DROP_OPERATOR_FAMILY.7
 @man man/man7/DROP_OWNED.7
+@man man/man7/DROP_POLICY.7
 @man man/man7/DROP_ROLE.7
 @man man/man7/DROP_RULE.7
 @man man/man7/DROP_SCHEMA.7
@@ -293,6 +300,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DROP_TEXT_SEARCH_DICTIONARY.7
 @man man/man7/DROP_TEXT_SEARCH_PARSER.7
 @man man/man7/DROP_TEXT_SEARCH_TEMPLATE.7
+@man man/man7/DROP_TRANSFORM.7
 @man man/man7/DROP_TRIGGER.7
 @man man/man7/DROP_TYPE.7
 @man man/man7/DROP_USER.7
@@ -303,6 +311,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/EXPLAIN.7
 @man man/man7/FETCH.7
 @man man/man7/GRANT.7
+@man man/man7/IMPORT_FOREIGN_SCHEMA.7
 @man man/man7/INSERT.7
 @man man/man7/LISTEN.7
 @man man/man7/LOAD.7

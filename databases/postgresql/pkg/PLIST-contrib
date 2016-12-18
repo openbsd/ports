@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.15 2016/08/17 09:43:46 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.16 2016/12/18 18:18:27 jeremy Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -7,7 +7,6 @@
 @bin bin/pg_standby
 @bin bin/pg_test_fsync
 @bin bin/pg_test_timing
-@bin bin/pg_upgrade
 @bin bin/pgbench
 @bin bin/vacuumlo
 lib/postgresql/_int.so
@@ -15,6 +14,7 @@ lib/postgresql/adminpack.so
 lib/postgresql/auth_delay.so
 lib/postgresql/auto_explain.so
 lib/postgresql/autoinc.so
+lib/postgresql/bloom.so
 lib/postgresql/btree_gin.so
 lib/postgresql/btree_gist.so
 lib/postgresql/chkpass.so
@@ -40,6 +40,7 @@ lib/postgresql/pg_freespacemap.so
 lib/postgresql/pg_prewarm.so
 lib/postgresql/pg_stat_statements.so
 lib/postgresql/pg_trgm.so
+lib/postgresql/pg_visibility.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
 lib/postgresql/pgstattuple.so
@@ -61,7 +62,6 @@ lib/postgresql/uuid-ossp.so
 @man man/man1/pg_standby.1
 @man man/man1/pg_test_fsync.1
 @man man/man1/pg_test_timing.1
-@man man/man1/pg_upgrade.1
 @man man/man1/pgbench.1
 @man man/man1/vacuumlo.1
 share/postgresql/extension/adminpack--1.0.sql
@@ -69,25 +69,33 @@ share/postgresql/extension/adminpack.control
 share/postgresql/extension/autoinc--1.0.sql
 share/postgresql/extension/autoinc--unpackaged--1.0.sql
 share/postgresql/extension/autoinc.control
+share/postgresql/extension/bloom--1.0.sql
+share/postgresql/extension/bloom.control
 share/postgresql/extension/btree_gin--1.0.sql
 share/postgresql/extension/btree_gin--unpackaged--1.0.sql
 share/postgresql/extension/btree_gin.control
 share/postgresql/extension/btree_gist--1.0--1.1.sql
-share/postgresql/extension/btree_gist--1.1.sql
+share/postgresql/extension/btree_gist--1.1--1.2.sql
+share/postgresql/extension/btree_gist--1.2.sql
 share/postgresql/extension/btree_gist--unpackaged--1.0.sql
 share/postgresql/extension/btree_gist.control
 share/postgresql/extension/chkpass--1.0.sql
 share/postgresql/extension/chkpass--unpackaged--1.0.sql
 share/postgresql/extension/chkpass.control
 share/postgresql/extension/citext--1.0--1.1.sql
-share/postgresql/extension/citext--1.1.sql
+share/postgresql/extension/citext--1.1--1.2.sql
+share/postgresql/extension/citext--1.2--1.3.sql
+share/postgresql/extension/citext--1.3.sql
 share/postgresql/extension/citext--unpackaged--1.0.sql
 share/postgresql/extension/citext.control
-share/postgresql/extension/cube--1.0.sql
+share/postgresql/extension/cube--1.0--1.1.sql
+share/postgresql/extension/cube--1.1--1.2.sql
+share/postgresql/extension/cube--1.2.sql
 share/postgresql/extension/cube--unpackaged--1.0.sql
 share/postgresql/extension/cube.control
 share/postgresql/extension/dblink--1.0--1.1.sql
-share/postgresql/extension/dblink--1.1.sql
+share/postgresql/extension/dblink--1.1--1.2.sql
+share/postgresql/extension/dblink--1.2.sql
 share/postgresql/extension/dblink--unpackaged--1.0.sql
 share/postgresql/extension/dblink.control
 share/postgresql/extension/dict_int--1.0.sql
@@ -96,18 +104,21 @@ share/postgresql/extension/dict_int.control
 share/postgresql/extension/dict_xsyn--1.0.sql
 share/postgresql/extension/dict_xsyn--unpackaged--1.0.sql
 share/postgresql/extension/dict_xsyn.control
-share/postgresql/extension/earthdistance--1.0.sql
+share/postgresql/extension/earthdistance--1.0--1.1.sql
+share/postgresql/extension/earthdistance--1.1.sql
 share/postgresql/extension/earthdistance--unpackaged--1.0.sql
 share/postgresql/extension/earthdistance.control
 share/postgresql/extension/file_fdw--1.0.sql
 share/postgresql/extension/file_fdw.control
-share/postgresql/extension/fuzzystrmatch--1.0.sql
+share/postgresql/extension/fuzzystrmatch--1.0--1.1.sql
+share/postgresql/extension/fuzzystrmatch--1.1.sql
 share/postgresql/extension/fuzzystrmatch--unpackaged--1.0.sql
 share/postgresql/extension/fuzzystrmatch.control
 share/postgresql/extension/hstore--1.0--1.1.sql
 share/postgresql/extension/hstore--1.1--1.2.sql
 share/postgresql/extension/hstore--1.2--1.3.sql
-share/postgresql/extension/hstore--1.3.sql
+share/postgresql/extension/hstore--1.3--1.4.sql
+share/postgresql/extension/hstore--1.4.sql
 share/postgresql/extension/hstore--unpackaged--1.0.sql
 share/postgresql/extension/hstore.control
 share/postgresql/extension/hstore_plperl--1.0.sql
@@ -123,19 +134,25 @@ share/postgresql/extension/hstore_plpythonu.control
 share/postgresql/extension/insert_username--1.0.sql
 share/postgresql/extension/insert_username--unpackaged--1.0.sql
 share/postgresql/extension/insert_username.control
-share/postgresql/extension/intagg--1.0.sql
+share/postgresql/extension/intagg--1.0--1.1.sql
+share/postgresql/extension/intagg--1.1.sql
 share/postgresql/extension/intagg--unpackaged--1.0.sql
 share/postgresql/extension/intagg.control
-share/postgresql/extension/intarray--1.0.sql
+share/postgresql/extension/intarray--1.0--1.1.sql
+share/postgresql/extension/intarray--1.1--1.2.sql
+share/postgresql/extension/intarray--1.2.sql
 share/postgresql/extension/intarray--unpackaged--1.0.sql
 share/postgresql/extension/intarray.control
-share/postgresql/extension/isn--1.0.sql
+share/postgresql/extension/isn--1.0--1.1.sql
+share/postgresql/extension/isn--1.1.sql
 share/postgresql/extension/isn--unpackaged--1.0.sql
 share/postgresql/extension/isn.control
-share/postgresql/extension/lo--1.0.sql
+share/postgresql/extension/lo--1.0--1.1.sql
+share/postgresql/extension/lo--1.1.sql
 share/postgresql/extension/lo--unpackaged--1.0.sql
 share/postgresql/extension/lo.control
-share/postgresql/extension/ltree--1.0.sql
+share/postgresql/extension/ltree--1.0--1.1.sql
+share/postgresql/extension/ltree--1.1.sql
 share/postgresql/extension/ltree--unpackaged--1.0.sql
 share/postgresql/extension/ltree.control
 share/postgresql/extension/ltree_plpython2u--1.0.sql
@@ -150,41 +167,55 @@ share/postgresql/extension/moddatetime.control
 share/postgresql/extension/pageinspect--1.0--1.1.sql
 share/postgresql/extension/pageinspect--1.1--1.2.sql
 share/postgresql/extension/pageinspect--1.2--1.3.sql
-share/postgresql/extension/pageinspect--1.3.sql
+share/postgresql/extension/pageinspect--1.3--1.4.sql
+share/postgresql/extension/pageinspect--1.4--1.5.sql
+share/postgresql/extension/pageinspect--1.5.sql
 share/postgresql/extension/pageinspect--unpackaged--1.0.sql
 share/postgresql/extension/pageinspect.control
 share/postgresql/extension/pg_buffercache--1.0--1.1.sql
-share/postgresql/extension/pg_buffercache--1.1.sql
+share/postgresql/extension/pg_buffercache--1.1--1.2.sql
+share/postgresql/extension/pg_buffercache--1.2.sql
 share/postgresql/extension/pg_buffercache--unpackaged--1.0.sql
 share/postgresql/extension/pg_buffercache.control
-share/postgresql/extension/pg_freespacemap--1.0.sql
+share/postgresql/extension/pg_freespacemap--1.0--1.1.sql
+share/postgresql/extension/pg_freespacemap--1.1.sql
 share/postgresql/extension/pg_freespacemap--unpackaged--1.0.sql
 share/postgresql/extension/pg_freespacemap.control
-share/postgresql/extension/pg_prewarm--1.0.sql
+share/postgresql/extension/pg_prewarm--1.0--1.1.sql
+share/postgresql/extension/pg_prewarm--1.1.sql
 share/postgresql/extension/pg_prewarm.control
 share/postgresql/extension/pg_stat_statements--1.0--1.1.sql
 share/postgresql/extension/pg_stat_statements--1.1--1.2.sql
 share/postgresql/extension/pg_stat_statements--1.2--1.3.sql
-share/postgresql/extension/pg_stat_statements--1.3.sql
+share/postgresql/extension/pg_stat_statements--1.3--1.4.sql
+share/postgresql/extension/pg_stat_statements--1.4.sql
 share/postgresql/extension/pg_stat_statements--unpackaged--1.0.sql
 share/postgresql/extension/pg_stat_statements.control
 share/postgresql/extension/pg_trgm--1.0--1.1.sql
-share/postgresql/extension/pg_trgm--1.1.sql
+share/postgresql/extension/pg_trgm--1.1--1.2.sql
+share/postgresql/extension/pg_trgm--1.2--1.3.sql
+share/postgresql/extension/pg_trgm--1.3.sql
 share/postgresql/extension/pg_trgm--unpackaged--1.0.sql
 share/postgresql/extension/pg_trgm.control
+share/postgresql/extension/pg_visibility--1.0--1.1.sql
+share/postgresql/extension/pg_visibility--1.1.sql
+share/postgresql/extension/pg_visibility.control
 share/postgresql/extension/pgcrypto--1.0--1.1.sql
 share/postgresql/extension/pgcrypto--1.1--1.2.sql
-share/postgresql/extension/pgcrypto--1.2.sql
+share/postgresql/extension/pgcrypto--1.2--1.3.sql
+share/postgresql/extension/pgcrypto--1.3.sql
 share/postgresql/extension/pgcrypto--unpackaged--1.0.sql
 share/postgresql/extension/pgcrypto.control
 share/postgresql/extension/pgrowlocks--1.0--1.1.sql
-share/postgresql/extension/pgrowlocks--1.1.sql
+share/postgresql/extension/pgrowlocks--1.1--1.2.sql
+share/postgresql/extension/pgrowlocks--1.2.sql
 share/postgresql/extension/pgrowlocks--unpackaged--1.0.sql
 share/postgresql/extension/pgrowlocks.control
 share/postgresql/extension/pgstattuple--1.0--1.1.sql
 share/postgresql/extension/pgstattuple--1.1--1.2.sql
 share/postgresql/extension/pgstattuple--1.2--1.3.sql
-share/postgresql/extension/pgstattuple--1.3.sql
+share/postgresql/extension/pgstattuple--1.3--1.4.sql
+share/postgresql/extension/pgstattuple--1.4.sql
 share/postgresql/extension/pgstattuple--unpackaged--1.0.sql
 share/postgresql/extension/pgstattuple.control
 share/postgresql/extension/postgres_fdw--1.0.sql
@@ -192,10 +223,13 @@ share/postgresql/extension/postgres_fdw.control
 share/postgresql/extension/refint--1.0.sql
 share/postgresql/extension/refint--unpackaged--1.0.sql
 share/postgresql/extension/refint.control
-share/postgresql/extension/seg--1.0.sql
+share/postgresql/extension/seg--1.0--1.1.sql
+share/postgresql/extension/seg--1.1.sql
 share/postgresql/extension/seg--unpackaged--1.0.sql
 share/postgresql/extension/seg.control
-share/postgresql/extension/sslinfo--1.0.sql
+share/postgresql/extension/sslinfo--1.0--1.1.sql
+share/postgresql/extension/sslinfo--1.1--1.2.sql
+share/postgresql/extension/sslinfo--1.2.sql
 share/postgresql/extension/sslinfo--unpackaged--1.0.sql
 share/postgresql/extension/sslinfo.control
 share/postgresql/extension/tablefunc--1.0.sql
@@ -213,12 +247,15 @@ share/postgresql/extension/tsm_system_rows--1.0.sql
 share/postgresql/extension/tsm_system_rows.control
 share/postgresql/extension/tsm_system_time--1.0.sql
 share/postgresql/extension/tsm_system_time.control
-share/postgresql/extension/unaccent--1.0.sql
+share/postgresql/extension/unaccent--1.0--1.1.sql
+share/postgresql/extension/unaccent--1.1.sql
 share/postgresql/extension/unaccent--unpackaged--1.0.sql
 share/postgresql/extension/unaccent.control
-share/postgresql/extension/uuid-ossp--1.0.sql
+share/postgresql/extension/uuid-ossp--1.0--1.1.sql
+share/postgresql/extension/uuid-ossp--1.1.sql
 share/postgresql/extension/uuid-ossp--unpackaged--1.0.sql
 share/postgresql/extension/uuid-ossp.control
-share/postgresql/extension/xml2--1.0.sql
+share/postgresql/extension/xml2--1.0--1.1.sql
+share/postgresql/extension/xml2--1.1.sql
 share/postgresql/extension/xml2--unpackaged--1.0.sql
 share/postgresql/extension/xml2.control

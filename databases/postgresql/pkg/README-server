@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.19 2015/08/03 07:42:30 kirby Exp $
+$OpenBSD: README-server,v 1.20 2016/12/18 18:18:27 jeremy Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -109,6 +109,12 @@ Upgrade Howto (for a major upgrade)
 If you didn't install PostgreSQL by following this README,
 you must adapt these instructions to your setup.
 
+Option 1: Dump and Restore
+--------------------------
+
+This will work for any upgrade from any major version of PostgreSQL
+to the current version.
+
 1) Backup all your data:
 # su _postgresql -c "pg_dumpall -U postgres > /var/postgresql/full.sqldump"
 
@@ -139,6 +145,43 @@ Examine your old file for local changes and apply them to the new version.
 
 8) Restore your data:
 # su _postgresql -c "psql -U postgres < /var/postgresql/full.sqldump"
+
+Option 2: pg_upgrade
+--------------------
+
+This will work for an upgrade from the previous major version of
+PostgreSQL supported by OpenBSD to the current version, and should be
+faster than a dump and reload, especially for large databases. 
+
+1) Shutdown the server:
+# ${RCDIR}/postgresql stop
+
+2) Upgrade your PostgreSQL package with pkg_add.
+# pkg_add -ui postgresql-pg_upgrade
+
+3) Backup your old data directory:
+# mv /var/postgresql/data /var/postgresql/data.old
+
+4) Create a new data directory (using -E UTF8 if appropriate):
+# su _postgresql -c "mkdir /var/postgresql/data"
+# su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
+
+5) Restore your old pg_hba.conf and (if used) SSL certificates
+# su _postgresql -c \
+    "cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/"
+# su _postgresql -c \
+    "cp /var/postgresql/data.old/server.{crt,key} /var/postgresql/data/"
+
+Some postgresql.conf settings changed or disappeared in this version.
+Examine your old file for local changes and apply them to the new version.
+
+6) Run pg_upgrade:
+# su _postgresql -c "pg_upgrade -b /usr/local/bin/postgresql-9.5/
+                     -B /usr/local/bin -U postgres
+                     -d /var/postgresql/data.old/ -D /var/postgresql/data"
+
+7) Start PostgreSQL:
+# ${RCDIR}/postgresql start
 
 Clients/Frontends
 =================

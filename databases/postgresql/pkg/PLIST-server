@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.29 2016/05/13 14:27:48 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.30 2016/12/18 18:18:27 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
 @conflict postgresql-server-*
 @conflict postgresql-*
-@ask-update postgresql-server-<9.5 Make sure your existing database is backed up
+@ask-update postgresql-server-<9.6 Make sure your existing database is backed up
 @newgroup _postgresql:503
 @newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 @bin bin/initdb
@@ -19,6 +19,8 @@
 bin/postmaster
 include/postgresql/server/
 include/postgresql/server/access/
+include/postgresql/server/access/amapi.h
+include/postgresql/server/access/amvalidate.h
 include/postgresql/server/access/attnum.h
 include/postgresql/server/access/brin.h
 include/postgresql/server/access/brin_internal.h
@@ -30,6 +32,7 @@ include/postgresql/server/access/brin_xlog.h
 include/postgresql/server/access/clog.h
 include/postgresql/server/access/commit_ts.h
 include/postgresql/server/access/genam.h
+include/postgresql/server/access/generic_xlog.h
 include/postgresql/server/access/gin.h
 include/postgresql/server/access/gin_private.h
 include/postgresql/server/access/gist.h
@@ -108,6 +111,7 @@ include/postgresql/server/catalog/pg_class.h
 include/postgresql/server/catalog/pg_collation.h
 include/postgresql/server/catalog/pg_collation_fn.h
 include/postgresql/server/catalog/pg_constraint.h
+include/postgresql/server/catalog/pg_constraint_fn.h
 include/postgresql/server/catalog/pg_control.h
 include/postgresql/server/catalog/pg_conversion.h
 include/postgresql/server/catalog/pg_conversion_fn.h
@@ -125,6 +129,7 @@ include/postgresql/server/catalog/pg_foreign_table.h
 include/postgresql/server/catalog/pg_index.h
 include/postgresql/server/catalog/pg_inherits.h
 include/postgresql/server/catalog/pg_inherits_fn.h
+include/postgresql/server/catalog/pg_init_privs.h
 include/postgresql/server/catalog/pg_language.h
 include/postgresql/server/catalog/pg_largeobject.h
 include/postgresql/server/catalog/pg_largeobject_metadata.h
@@ -182,6 +187,7 @@ include/postgresql/server/commands/policy.h
 include/postgresql/server/commands/portalcmds.h
 include/postgresql/server/commands/prepare.h
 include/postgresql/server/commands/proclang.h
+include/postgresql/server/commands/progress.h
 include/postgresql/server/commands/schemacmds.h
 include/postgresql/server/commands/seclabel.h
 include/postgresql/server/commands/sequence.h
@@ -194,7 +200,10 @@ include/postgresql/server/commands/vacuum.h
 include/postgresql/server/commands/variable.h
 include/postgresql/server/commands/view.h
 include/postgresql/server/common/
+include/postgresql/server/common/config_info.h
+include/postgresql/server/common/controldata_utils.h
 include/postgresql/server/common/fe_memutils.h
+include/postgresql/server/common/keywords.h
 include/postgresql/server/common/pg_lzcompress.h
 include/postgresql/server/common/relpath.h
 include/postgresql/server/common/restricted_token.h
@@ -204,6 +213,7 @@ include/postgresql/server/datatype/
 include/postgresql/server/datatype/timestamp.h
 include/postgresql/server/dynloader.h
 include/postgresql/server/executor/
+include/postgresql/server/executor/execParallel.h
 include/postgresql/server/executor/execdebug.h
 include/postgresql/server/executor/execdesc.h
 include/postgresql/server/executor/executor.h
@@ -220,6 +230,7 @@ include/postgresql/server/executor/nodeCtescan.h
 include/postgresql/server/executor/nodeCustom.h
 include/postgresql/server/executor/nodeForeignscan.h
 include/postgresql/server/executor/nodeFunctionscan.h
+include/postgresql/server/executor/nodeGather.h
 include/postgresql/server/executor/nodeGroup.h
 include/postgresql/server/executor/nodeHash.h
 include/postgresql/server/executor/nodeHashjoin.h
@@ -247,8 +258,16 @@ include/postgresql/server/executor/nodeWindowAgg.h
 include/postgresql/server/executor/nodeWorktablescan.h
 include/postgresql/server/executor/spi.h
 include/postgresql/server/executor/spi_priv.h
+include/postgresql/server/executor/tqueue.h
 include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
+include/postgresql/server/fe_utils/
+include/postgresql/server/fe_utils/mbprint.h
+include/postgresql/server/fe_utils/print.h
+include/postgresql/server/fe_utils/psqlscan.h
+include/postgresql/server/fe_utils/psqlscan_int.h
+include/postgresql/server/fe_utils/simple_list.h
+include/postgresql/server/fe_utils/string_utils.h
 include/postgresql/server/fmgr.h
 include/postgresql/server/foreign/
 include/postgresql/server/foreign/fdwapi.h
@@ -284,6 +303,7 @@ include/postgresql/server/miscadmin.h
 include/postgresql/server/nodes/
 include/postgresql/server/nodes/bitmapset.h
 include/postgresql/server/nodes/execnodes.h
+include/postgresql/server/nodes/extensible.h
 include/postgresql/server/nodes/lockoptions.h
 include/postgresql/server/nodes/makefuncs.h
 include/postgresql/server/nodes/memnodes.h
@@ -330,7 +350,6 @@ include/postgresql/server/parser/
 include/postgresql/server/parser/analyze.h
 include/postgresql/server/parser/gram.h
 include/postgresql/server/parser/gramparse.h
-include/postgresql/server/parser/keywords.h
 include/postgresql/server/parser/kwlist.h
 include/postgresql/server/parser/parse_agg.h
 include/postgresql/server/parser/parse_clause.h
@@ -387,6 +406,7 @@ include/postgresql/server/port/hpux.h
 include/postgresql/server/port/linux.h
 include/postgresql/server/port/netbsd.h
 include/postgresql/server/port/openbsd.h
+include/postgresql/server/port/pg_bswap.h
 include/postgresql/server/port/pg_crc32c.h
 include/postgresql/server/port/sco.h
 include/postgresql/server/port/solaris.h
@@ -441,6 +461,7 @@ include/postgresql/server/replication/basebackup.h
 include/postgresql/server/replication/decode.h
 include/postgresql/server/replication/logical.h
 include/postgresql/server/replication/logicalfuncs.h
+include/postgresql/server/replication/message.h
 include/postgresql/server/replication/origin.h
 include/postgresql/server/replication/output_plugin.h
 include/postgresql/server/replication/reorderbuffer.h
@@ -521,7 +542,9 @@ include/postgresql/server/storage/large_object.h
 include/postgresql/server/storage/latch.h
 include/postgresql/server/storage/lmgr.h
 include/postgresql/server/storage/lock.h
+include/postgresql/server/storage/lockdefs.h
 include/postgresql/server/storage/lwlock.h
+include/postgresql/server/storage/lwlocknames.h
 include/postgresql/server/storage/off.h
 include/postgresql/server/storage/pg_sema.h
 include/postgresql/server/storage/pg_shmem.h
@@ -543,12 +566,12 @@ include/postgresql/server/storage/sinvaladt.h
 include/postgresql/server/storage/smgr.h
 include/postgresql/server/storage/spin.h
 include/postgresql/server/storage/standby.h
+include/postgresql/server/storage/standbydefs.h
 include/postgresql/server/tcop/
 include/postgresql/server/tcop/deparse_utility.h
 include/postgresql/server/tcop/dest.h
 include/postgresql/server/tcop/fastpath.h
 include/postgresql/server/tcop/pquery.h
-include/postgresql/server/tcop/tcopdebug.h
 include/postgresql/server/tcop/tcopprot.h
 include/postgresql/server/tcop/utility.h
 include/postgresql/server/tsearch/
@@ -589,6 +612,7 @@ include/postgresql/server/utils/guc.h
 include/postgresql/server/utils/guc_tables.h
 include/postgresql/server/utils/help_config.h
 include/postgresql/server/utils/hsearch.h
+include/postgresql/server/utils/index_selfuncs.h
 include/postgresql/server/utils/inet.h
 include/postgresql/server/utils/int8.h
 include/postgresql/server/utils/inval.h
@@ -705,6 +729,10 @@ share/postgresql/tsearch_data/french.stop
 share/postgresql/tsearch_data/german.stop
 share/postgresql/tsearch_data/hungarian.stop
 share/postgresql/tsearch_data/hunspell_sample.affix
+share/postgresql/tsearch_data/hunspell_sample_long.affix
+share/postgresql/tsearch_data/hunspell_sample_long.dict
+share/postgresql/tsearch_data/hunspell_sample_num.affix
+share/postgresql/tsearch_data/hunspell_sample_num.dict
 share/postgresql/tsearch_data/ispell_sample.affix
 share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/italian.stop
