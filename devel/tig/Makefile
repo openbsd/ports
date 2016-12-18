@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/18 16:10:11 fcambus Exp $
 
 COMMENT =	ncurses Git repository browser
 
-DISTNAME =	tig-2.2
-REVISION =	0
+V =		2.2.1
+DISTNAME =	tig-$V
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://jonas.nitro.dk/tig/
+HOMEPAGE =	https://jonas.github.io/tig/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c iconv ncursesw
 
-MASTER_SITES =	${HOMEPAGE}releases/
+MASTER_SITES =	https://github.com/jonas/tig/releases/download/tig-$V/
 
 BUILD_DEPENDS =	textproc/asciidoc \
 		textproc/xmlto
