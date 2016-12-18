@@ -1,7 +1,24 @@
-$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
---- agent/lib/libstatsinfo.c.orig	Fri Feb 12 10:49:13 2016
-+++ agent/lib/libstatsinfo.c	Fri May 13 23:34:34 2016
-@@ -1693,9 +1693,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
+$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.4 2016/12/18 18:21:03 jeremy Exp $
+--- agent/lib/libstatsinfo.c.orig	Fri Feb 12 01:49:13 2016
++++ agent/lib/libstatsinfo.c	Tue Nov  1 04:48:05 2016
+@@ -476,6 +476,7 @@ sample_activity(void)
+ 	int			waiting;
+ 	int			running;
+ 	int			i;
++	volatile PGPROC *proc = MyProc;
+ 
+ 	if (!long_xacts)
+ 	{
+@@ -515,7 +516,7 @@ sample_activity(void)
+ 		 */
+ 		if (be->st_procpid == MyProcPid)
+ 			;	/* exclude myself */
+-		else if (be->st_waiting)
++		else if (proc->wait_event_info)
+ 			waiting++;
+ #if PG_VERSION_NUM >= 90200
+ 		else if (be->st_state == STATE_IDLE)
+@@ -1693,9 +1694,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
  #define NUM_STAT_FIELDS_MIN		6
  
  /* not support a kernel that does not have the required fields at "/proc/stat" */
@@ -13,7 +30,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  
  /*
   * statsinfo_cpustats - get cpu information
-@@ -1734,6 +1736,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
+@@ -1734,6 +1737,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
  	PG_RETURN_DATUM(get_cpustats(fcinfo, 0, 0, 0, 0));
  }
  
@@ -21,7 +38,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  static Datum
  get_cpustats(FunctionCallInfo fcinfo,
  			 int64 prev_cpu_user,
-@@ -1746,6 +1749,59 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -1746,6 +1750,59 @@ get_cpustats(FunctionCallInfo fcinfo,
  	int64			 cpu_system;
  	int64			 cpu_idle;
  	int64			 cpu_iowait;
@@ -81,7 +98,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  	List			*records = NIL;
  	List			*fields = NIL;
  	HeapTuple		 tuple;
-@@ -1818,6 +1874,7 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -1818,6 +1875,7 @@ get_cpustats(FunctionCallInfo fcinfo,
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -89,7 +106,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  
  #define NUM_DEVICESTATS_COLS			17
  #define TYPE_DEVICE_TABLESPACES			TEXTOID
-@@ -1991,10 +2048,46 @@ statsinfo_devicestats(PG_FUNCTION_ARGS)
+@@ -1991,10 +2049,46 @@ statsinfo_devicestats(PG_FUNCTION_ARGS)
  /*
   * statsinfo_loadavg - get loadavg information
   */
@@ -136,7 +153,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  	int			fd;
  	char		buffer[256];
  	int			nbytes;
-@@ -2053,6 +2146,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
+@@ -2053,6 +2147,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -144,7 +161,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  
  #define FILE_MEMINFO		"/proc/meminfo"
  #define NUM_MEMORY_COLS		5
-@@ -2072,6 +2166,7 @@ compare_meminfo_table(const void *a, const void *b)
+@@ -2072,6 +2167,7 @@ compare_meminfo_table(const void *a, const void *b)
  /*
   * statsinfo_memory - get memory information
   */
@@ -152,7 +169,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  Datum
  statsinfo_memory(PG_FUNCTION_ARGS)
  {
-@@ -2079,6 +2174,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
+@@ -2079,6 +2175,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
  	HeapTuple		 tuple;
  	Datum			 values[NUM_MEMORY_COLS];
  	bool			 nulls[NUM_MEMORY_COLS];
@@ -189,7 +206,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  	int				 fd;
  	char			 buffer[2048];
  	int				 nbytes;
-@@ -2177,6 +2302,7 @@ nextline:
+@@ -2177,6 +2303,7 @@ nextline:
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -197,7 +214,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  
  #define FILE_PROFILE		"/proc/systemtap/statsinfo_prof/profile"
  #define NUM_PROFILE_COLS	3
-@@ -2185,9 +2311,16 @@ nextline:
+@@ -2185,9 +2312,16 @@ nextline:
  /*
   * statsinfo_profile - get profile information
   */
@@ -214,7 +231,7 @@ $OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.3 2016/05/13 22:09:21 landry Exp $
  	ReturnSetInfo	*rsinfo = (ReturnSetInfo *) fcinfo->resultinfo;
  	TupleDesc		 tupdesc;
  	Tuplestorestate	*tupstore;
-@@ -2294,6 +2427,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
+@@ -2294,6 +2428,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
  
  	PG_RETURN_VOID();
  }
