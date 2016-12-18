@@ -1,0 +1,82 @@
+$OpenBSD: patch-irregex-core_scm,v 1.1 2016/12/18 00:54:22 juanfra Exp $
+Fix exponential explosion in backtrack compilation (CVE-2016-9954)
+http://lists.gnu.org/archive/html/chicken-hackers/2016-12/msg00010.html
+--- irregex-core.scm.orig	Sat Dec 17 10:34:45 2016
++++ irregex-core.scm	Sat Dec 17 10:35:00 2016
+@@ -1,6 +1,6 @@
+ ;;;; irregex.scm -- IrRegular Expressions
+ ;;
+-;; Copyright (c) 2005-2015 Alex Shinn.  All rights reserved.
++;; Copyright (c) 2005-2016 Alex Shinn.  All rights reserved.
+ ;; BSD-style license: http://synthcode.com/license.txt
+
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+@@ -30,6 +30,9 @@
+
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;;; History
++;; 0.9.6: 2016/12/05 - fixed exponential memory use of + in compilation
++;;                     of backtracking matcher (CVE-2016-9954).
++;; 0.9.5: 2016/09/10 - fixed a bug in irregex-fold handling of bow
+ ;; 0.9.4: 2015/12/14 - performance improvement for {n,m} matches
+ ;; 0.9.3: 2014/07/01 - R7RS library
+ ;; 0.9.2: 2012/11/29 - fixed a bug in -fold on conditional bos patterns
+@@ -3169,16 +3172,7 @@
+               ((sre-empty? (sre-sequence (cdr sre)))
+                (error "invalid sre: empty *" sre))
+               (else
+-               (letrec
+-                   ((body
+-                     (lp (sre-sequence (cdr sre))
+-                         n
+-                         flags
+-                         (lambda (cnk init src str i end matches fail)
+-                           (body cnk init src str i end matches
+-                                 (lambda ()
+-                                   (next cnk init src str i end matches fail)
+-                                   ))))))
++               (let ((body (rec (list '+ (sre-sequence (cdr sre))))))
+                  (lambda (cnk init src str i end matches fail)
+                    (body cnk init src str i end matches
+                          (lambda ()
+@@ -3203,10 +3197,21 @@
+                          (lambda ()
+                            (body cnk init src str i end matches fail))))))))
+             ((+)
+-             (lp (sre-sequence (cdr sre))
+-                 n
+-                 flags
+-                 (rec (list '* (sre-sequence (cdr sre))))))
++             (cond
++              ((sre-empty? (sre-sequence (cdr sre)))
++               (error "invalid sre: empty +" sre))
++              (else
++               (letrec
++                   ((body
++                     (lp (sre-sequence (cdr sre))
++                         n
++                         flags
++                         (lambda (cnk init src str i end matches fail)
++                           (body cnk init src str i end matches
++                                 (lambda ()
++                                   (next cnk init src str i end matches fail)
++                                   ))))))
++                 body))))
+             ((=)
+              (rec `(** ,(cadr sre) ,(cadr sre) ,@(cddr sre))))
+             ((>=)
+@@ -3486,11 +3491,10 @@
+                (fail))))
+         ((bow)
+          (lambda (cnk init src str i end matches fail)
+-           (if (and (or (if (> i ((chunker-get-start cnk) src))
+-                            (not (char-alphanumeric? (string-ref str (- i 1))))
+-                            (let ((ch (chunker-prev-char cnk src end)))
+-                              (and ch (not (char-alphanumeric? ch)))))
+-                        (and (eq? src (car init)) (eqv? i (cdr init))))
++           (if (and (if (> i ((chunker-get-start cnk) src))
++                        (not (char-alphanumeric? (string-ref str (- i 1))))
++                        (let ((ch (chunker-prev-char cnk init src)))
++                          (or (not ch) (not (char-alphanumeric? ch)))))
+                     (if (< i end)
+                         (char-alphanumeric? (string-ref str i))
