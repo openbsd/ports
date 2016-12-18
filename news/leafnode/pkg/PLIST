@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/01/26 08:03:57 ajacoutot Exp $
-@newuser _news:519:news:daemon:NNTP server:/var/spool/news:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.18 2016/12/18 19:50:59 jca Exp $
+@newgroup _news:519
+@newuser _news:519:_news:daemon:NNTP server:/var/spool/news:/sbin/nologin
 @extraunexec rm -rf /var/spool/news/*
 @bin bin/leafnode-version
 @bin bin/newsq
@@ -33,7 +34,7 @@ share/examples/leafnode/nntp.rules.dist
 share/examples/leafnode/run.tcpd.dist
 share/examples/leafnode/run.tcpserver.dist
 @owner _news
-@group news
+@group _news
 @sample /var/spool/news/
 @sample /var/spool/news/leaf.node/
 @sample /var/spool/news/failed.postings/

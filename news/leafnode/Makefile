@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2015/10/02 11:55:05 jca Exp $
+# $OpenBSD: Makefile,v 1.61 2016/12/18 19:50:59 jca Exp $
 
 COMMENT=		USENET software package designed for small sites
 
 DISTNAME=		leafnode-1.11.11
+REVISION=		0
 CATEGORIES=		news
 
 HOMEPAGE=		http://leafnode.sourceforge.net/
@@ -19,7 +20,8 @@ LIB_DEPENDS=		devel/pcre
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
-CONFIGURE_ARGS+=	--with-user=_news
+CONFIGURE_ARGS+=	--with-user=_news \
+			--with-group=_news
 
 DOCS=		README README-FQDN INSTALL FAQ.txt NEWS OLDNEWS
 
