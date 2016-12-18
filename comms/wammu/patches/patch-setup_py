@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2016/11/25 11:58:01 kirby Exp $
---- setup.py.orig	Tue Jul 14 23:39:33 2015
-+++ setup.py	Wed Jul 15 11:30:06 2015
-@@ -328,14 +328,14 @@ class install_data_wammu(distutils.command.install_dat
+$OpenBSD: patch-setup_py,v 1.2 2016/12/18 12:31:02 kirby Exp $
+--- setup.py.orig	Wed Dec 14 12:18:55 2016
++++ setup.py	Sun Dec 18 15:28:56 2016
+@@ -357,14 +357,14 @@ class install_data_wammu(distutils.command.install_dat
          """
          # add .mo files to data files
          for (_locale, _src, _dst) in list_message_files():
@@ -19,7 +19,7 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2016/11/25 11:58:01 kirby Exp $
  
          # install data files
          super(install_data_wammu, self).run()
-@@ -385,23 +385,23 @@ data_files.append((os.path.join('share', 'pixmaps'), [
+@@ -414,23 +414,23 @@ data_files.append((os.path.join('share', 'pixmaps'), [
      'icon/wammu.ico',
      'icon/wammu.svg',
      ]))
