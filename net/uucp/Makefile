@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/12/18 20:25:50 jca Exp $
 
 COMMENT=	UUCP suite
 
 DISTNAME=	uucp-1.07
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net mail
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,8 @@ RUN_DEPENDS=	mail/rmail
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/libexec/uucp \
 		--with-newconfigdir=${SYSCONFDIR}/uucp \
-		--with-oldconfigdir=${SYSCONFDIR}/uucp
+		--with-oldconfigdir=${SYSCONFDIR}/uucp \
+		--with-user=_uucp
 
 SAMPLES=	call config dial dialcode passwd port sys1 sys2
 

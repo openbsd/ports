@@ -1,25 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/02/09 15:17:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/12/18 20:25:50 jca Exp $
+@newgroup _uucp:785
+@newuser _uucp:785:_uucp::UNIX-to-UNIX Copy:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico
 bin/cu
-@owner uucp
+@owner _uucp
 @mode 4555
 bin/uucp
 @owner
 @mode
 bin/uulog
-@owner uucp
+@owner _uucp
 @mode 4555
 bin/uuname
 @owner
 @mode
 bin/uupick
 bin/uusched
-@owner uucp
+@owner _uucp
 @mode 4555
 bin/uustat
 @owner
 @mode
 bin/uuto
-@owner uucp
+@owner _uucp
 @mode 4555
 bin/uux
 @owner
@@ -27,13 +29,13 @@ bin/uux
 @info info/uucp.info
 libexec/uucp/
 libexec/uucp/uuchk
-@owner uucp
+@owner _uucp
 @mode 4555
 libexec/uucp/uucico
 @owner
 @mode
 libexec/uucp/uuconv
-@owner uucp
+@owner _uucp
 @mode 4555
 libexec/uucp/uuxqt
 @owner
@@ -53,5 +55,7 @@ share/examples/uucp/passwd
 share/examples/uucp/port
 share/examples/uucp/sys1
 share/examples/uucp/sys2
-@exec-add /usr/bin/chsh -s %D/libexec/uucp/uucico uucp
-@unexec-delete /usr/bin/chsh -s /sbin/nologin uucp
+@owner _uucp
+@group daemon
+@sample /var/spool/uucp/
+@sample /var/spool/uucppublic/
