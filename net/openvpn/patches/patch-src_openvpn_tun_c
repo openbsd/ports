@@ -1,154 +1,39 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.9 2016/11/18 16:21:44 jca Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.10 2016/12/18 18:58:01 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
-- our ifconfig doesn't support passing a prefix as point-to-point dest
-  address.  In subnet topology, use the local address as a fake dest addr, and
-  manually add a route for the prefix on the interface.
 
---- src/openvpn/tun.c.orig	Tue May 10 08:02:33 2016
-+++ src/openvpn/tun.c	Thu Nov 17 10:42:55 2016
-@@ -914,8 +914,17 @@ do_ifconfig (struct tuntap *tt,
- 
-       tt->did_ifconfig = true;
- 
--#elif defined(TARGET_OPENBSD)
-+#elif defined(TARGET_NETBSD) || defined(TARGET_OPENBSD)
- 
-+/*
-+ * OpenBSD can do IPv6. NetBSD's IPv6 support over tun can be detected by
-+ * availability of the TUNSIFHEAD ioctl() - see next TARGET_NETBSD block
-+ * for more details.
-+ */
-+#if defined(TUNSIFHEAD)||defined(TARGET_OPENBSD)
-+# define MULTI_AF
-+#endif
-+
-       /*
-        * On OpenBSD, tun interfaces are persistent if created with
-        * "ifconfig tunX create", and auto-destroyed if created by
-@@ -925,66 +934,6 @@ do_ifconfig (struct tuntap *tt,
+--- src/openvpn/tun.c.orig	Wed Dec  7 12:35:43 2016
++++ src/openvpn/tun.c	Tue Dec 13 18:17:14 2016
+@@ -928,7 +928,7 @@ do_ifconfig (struct tuntap *tt,
        /* example: ifconfig tun2 10.2.0.2 10.2.0.1 mtu 1450 netmask 255.255.255.255 up */
        if (tun)
  	argv_printf (&argv,
 -			  "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
--			  IFCONFIG_PATH,
--			  actual,
--			  ifconfig_local,
--			  ifconfig_remote_netmask,
--			  tun_mtu
--			  );
--      else
--	if ( tt->topology == TOP_SUBNET )
--	{
--	    argv_printf (&argv,
--			  "%s %s %s %s mtu %d netmask %s up -link0",
--			  IFCONFIG_PATH,
--			  actual,
--			  ifconfig_local,
--			  ifconfig_local,
--			  tun_mtu,
--			  ifconfig_remote_netmask
--			  );
--	}
--      else
--	argv_printf (&argv,
--			  "%s %s %s netmask %s mtu %d broadcast %s link0",
--			  IFCONFIG_PATH,
--			  actual,
--			  ifconfig_local,
--			  ifconfig_remote_netmask,
--			  tun_mtu,
--			  ifconfig_broadcast
--			  );
--      argv_msg (M_INFO, &argv);
--      openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
--      if ( do_ipv6 )
--	{
--	  argv_printf (&argv,
--			  "%s %s inet6 %s/%d",
--			  IFCONFIG_PATH,
--			  actual,
--			  ifconfig_ipv6_local,
--			  tt->netbits_ipv6
--			  );
--	  argv_msg (M_INFO, &argv);
--	  openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig inet6 failed");
--
--	  /* and, hooray, we explicitely need to add a route... */
--	  add_route_connected_v6_net(tt, es);
--	}
--      tt->did_ifconfig = true;
--
--#elif defined(TARGET_NETBSD)
--
--/* whether or not NetBSD can do IPv6 can be seen by the availability of
-- * the TUNSIFHEAD ioctl() - see next TARGET_NETBSD block for more details
-- */
--#ifdef TUNSIFHEAD
--# define NETBSD_MULTI_AF
--#endif
--
--      if (tun)
--	argv_printf (&argv,
- 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
++			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
  			  IFCONFIG_PATH,
  			  actual,
-@@ -1007,9 +956,7 @@ do_ifconfig (struct tuntap *tt,
+ 			  ifconfig_local,
+@@ -940,7 +940,7 @@ do_ifconfig (struct tuntap *tt,
+ 	{
+ 	    remote_end = create_arbitrary_remote( tt );
+ 	    argv_printf (&argv,
+-			  "%s %s %s %s mtu %d netmask %s up -link0",
++			  "%s %s %s %s mtu %d netmask %s up",
+ 			  IFCONFIG_PATH,
+ 			  actual,
+ 			  ifconfig_local,
+@@ -950,8 +950,13 @@ do_ifconfig (struct tuntap *tt,
+ 			  );
  	}
        else
-       /*
--       * NetBSD has distinct tun and tap devices
--       * so we don't need the "link0" extra parameter to specify we want to do 
--       * tunneling at the ethernet level
-+       * NetBSD and OpenBSD 5.9+ have distinct tun and tap devices
-        */
- 		argv_printf (&argv,
- 			  "%s %s %s netmask %s mtu %d broadcast %s",
-@@ -1021,11 +968,11 @@ do_ifconfig (struct tuntap *tt,
- 			  ifconfig_broadcast
- 			  );
-       argv_msg (M_INFO, &argv);
--      openvpn_execve_check (&argv, es, S_FATAL, "NetBSD ifconfig failed");
-+      openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD/NetBSD ifconfig failed");
- 
-       if ( do_ipv6 )
- 	{
--#ifdef NETBSD_MULTI_AF
-+#if defined(MULTI_AF)
- 	  argv_printf (&argv,
- 			  "%s %s inet6 %s/%d",
++      /*
++       * OpenBSD has distinct tun and tap devices
++       * so we don't need the "link0" extra parameter to specify we want to do
++       * tunneling at the ethernet level
++       */
+ 	argv_printf (&argv,
+-			  "%s %s %s netmask %s mtu %d broadcast %s link0",
++			  "%s %s %s netmask %s mtu %d broadcast %s",
  			  IFCONFIG_PATH,
-@@ -1034,17 +981,30 @@ do_ifconfig (struct tuntap *tt,
- 			  tt->netbits_ipv6
- 			  );
- 	  argv_msg (M_INFO, &argv);
--	  openvpn_execve_check (&argv, es, S_FATAL, "NetBSD ifconfig inet6 failed");
-+	  openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD/NetBSD ifconfig inet6 failed");
- 
- 	  /* and, hooray, we explicitely need to add a route... */
- 	  add_route_connected_v6_net(tt, es);
--#else
-+#else /* MULTI_AF */
- 	  msg( M_INFO, "no IPv6 support for tun interfaces on NetBSD before 4.0 (if your system is newer, recompile openvpn)" );
- 	  tt->ipv6 = false;
--#endif
-+#endif /* MULTI_AF */
- 	}
-       tt->did_ifconfig = true;
- 
-+#if defined(TARGET_OPENBSD)
-+      /* On OpenBSD, add a network route for the local tun interface */
-+      if (!tun && tt->topology == TOP_SUBNET)
-+        {
-+          char *ifconfig_remote_network =
-+            print_in_addr_t (tt->local & tt->remote_netmask, 0, &gc);
-+          argv_printf(&argv, "%s add %s -netmask %s -link -iface %s",
-+            ROUTE_PATH, ifconfig_remote_network, ifconfig_remote_netmask,
-+            actual);
-+          argv_msg (M_INFO, &argv);
-+          openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD route failed");
-+        }
-+#endif
- #elif defined(TARGET_DARWIN)
-       /*
-        * Darwin (i.e. Mac OS X) seems to exhibit similar behaviour to OpenBSD...
+ 			  actual,
+ 			  ifconfig_local,
