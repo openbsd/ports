@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2016/09/27 08:50:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2016/12/18 09:56:17 ajacoutot Exp $
 
 COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=		3.16.3
+GNOME_VERSION=		3.16.4
 GNOME_PROJECT=		meld
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
