@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/01 11:38:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/12/18 18:20:00 jeremy Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		PostgreSQL V8 javascript procedual language
 
 VERSION =		1.4.2
-REVISION =		2
+REVISION =		3
 DISTNAME =		plv8-${VERSION}
 PKGNAME =		postgresql-${DISTNAME}
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX =		.zip
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		lang/libv8
-RUN_DEPENDS =		postgresql-server->=9.5,<9.6:databases/postgresql,-server
+RUN_DEPENDS =		postgresql-server->=9.6,<9.7:databases/postgresql,-server
 
 MAKE_FLAGS =		V8DIR=${LOCALBASE}/lib \
 			CUSTOM_CC="${CXX}" \
