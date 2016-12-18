@@ -1,0 +1,4 @@
+PostgreSQL RDBMS server, the previous version
+
+This is the previous version of PostgreSQL, necessary to allow for
+pg_upgrade to work in the currently supported PostgreSQL version.

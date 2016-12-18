@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interfaces_libpq_Makefile,v 1.1.1.1 2016/12/18 18:13:25 jeremy Exp $
+--- src/interfaces/libpq/Makefile.orig	Mon May  6 13:57:06 2013
++++ src/interfaces/libpq/Makefile	Thu May 16 15:10:02 2013
+@@ -16,8 +16,8 @@ include $(top_builddir)/src/Makefile.global
+ 
+ # shared library parameters
+ NAME= pq
+-SO_MAJOR_VERSION= 5
+-SO_MINOR_VERSION= 8
++SO_MAJOR_VERSION= ${LIBpq_MAJOR}
++SO_MINOR_VERSION= ${LIBpq_MINOR}
+ 
+ override CPPFLAGS :=  -DFRONTEND -DUNSAFE_STAT_OK -I$(srcdir) $(CPPFLAGS) -I$(top_builddir)/src/port -I$(top_srcdir)/src/port
+ ifneq ($(PORTNAME), win32)
