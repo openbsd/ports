@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_hcrypto_evp-openssl_c,v 1.1 2016/12/17 14:58:31 ajacoutot Exp $
+$OpenBSD: patch-lib_hcrypto_evp-openssl_c,v 1.2 2016/12/18 09:01:07 ajacoutot Exp $
 
-https://github.com/heimdal/heimdal/pull/231
+From 586e5f6d9dbac24680c479b737351edd675ff0b4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 17 Dec 2016 09:54:41 +0100
+Subject: [PATCH] Fix build with LibreSSL.
 
 --- lib/hcrypto/evp-openssl.c.orig	Fri Dec 16 11:03:01 2016
 +++ lib/hcrypto/evp-openssl.c	Fri Dec 16 11:03:48 2016
