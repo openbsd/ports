@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.285 2016/12/05 13:58:14 jca Exp $
+$OpenBSD: user.list,v 1.286 2016/12/18 19:45:16 jca Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -27,7 +27,7 @@ id  user		group		port options
 516 _privoxy		_privoxy	www/privoxy
 517 _wnn				japanese/Wnn
 518 _dovecot		_dovecot	mail/dovecot
-519 _news				news/leafnode
+519 _news		_news		news/leafnode
 520 _majordomo		_majordomo	mail/majordomo
 521 _exim		_exim		mail/exim
 #522 _xcept		_xcept		comms/xcept
