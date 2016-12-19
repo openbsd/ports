@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/08 14:23:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/19 11:57:22 zhuk Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
-DISTNAME =	tellico-2.3.10
-REVISION =	2
+DISTNAME =	tellico-2.3.11
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -26,7 +25,7 @@ MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/gettext x11/kde4 multimedia/phonon lang/python
-MODKDE4_USE =		pim
+MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
 
