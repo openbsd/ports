@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/19 11:55:56 zhuk Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
-DISTNAME =	libdbusmenu-qt_${V}+15.10.20150604
+DISTNAME =	libdbusmenu-qt_${V}+16.04.20160218
 PKGNAME =	${PKGSTEM}-${V}
 FULLPKGNAME =	${PKGNAME}
-REVISION=	1
 CATEGORIES =	x11 devel
 HOMEPAGE =	https://launchpad.net/libdbusmenu-qt/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
+REVISION =	2
 
-SHARED_LIBS =	dbusmenu-qt	1.0 # 2.6
-SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.6
+SHARED_LIBS =	dbusmenu-qt	1.0 # 2.7
+SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.7
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -40,8 +40,9 @@ CONFIGURE_ARGS=	-DUSE_QT4=Yes -DUSE_QT5=No
 PKGSTEM =	dbusmenu-qt
 .endif
 
-BUILD_DEPENDS =	devel/qjson \
-		devel/doxygen
+CONFIGURE_ARGS +=	-DWITH_DOC=OFF
+
+BUILD_DEPENDS =	devel/qjson
 TEST_DEPENDS =	devel/qjson
 
 # XXX "!icon.isNull()" failed tests are normal, they do mean that
@@ -52,9 +53,5 @@ TEST_IS_INTERACTIVE =	X11
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_/-/}
 
 SUBST_VARS =	PKGSTEM
-
-post-install:
-	rm -Rf ${PREFIX}/share/doc/lib${PKGSTEM}
-	mv ${PREFIX}/share/doc/lib${PKGSTEM}-doc ${PREFIX}/share/doc/${PKGSTEM}
 
 .include <bsd.port.mk>
