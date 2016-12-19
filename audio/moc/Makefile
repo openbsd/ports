@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/12/19 22:52:46 zhuk Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -6,17 +6,23 @@ CATEGORIES =	audio
 HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
 
 # uses pledge()
-WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db estdc++
+WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db
 WANTLIB += faad gsm iconv id3tag intl ltdl m mad magic mp3lame mpcdec
 WANTLIB += ncursesw nghttp2 ogg opus pthread samplerate sndfile sndio
 WANTLIB += speex ssl stdc++ swresample tag tag_c vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xvidcore z
+
+# libvpx -> libavcodec -> mocp
+# see multimedia/gstreamer1/plugins-good/Makefile for details
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
+WANTLIB += estdc++
+.endif
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
