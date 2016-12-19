@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.12 2016/07/03 18:16:00 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.13 2016/12/19 20:47:26 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=2.7,<2.8
@@ -11,6 +11,7 @@ lib/python2.7/test/__init__.pyo
 lib/python2.7/test/_mock_backport.py
 lib/python2.7/test/_mock_backport.pyc
 lib/python2.7/test/_mock_backport.pyo
+lib/python2.7/test/allsans.pem
 lib/python2.7/test/audiodata/
 lib/python2.7/test/audiodata/pluck-pcm16.aiff
 lib/python2.7/test/audiodata/pluck-pcm16.au
@@ -53,7 +54,6 @@ lib/python2.7/test/capath/6e88d7b8.0
 lib/python2.7/test/capath/99d0fa06.0
 lib/python2.7/test/capath/ce7b8643.0
 lib/python2.7/test/cfgparser.1
-lib/python2.7/test/check_soundcard.vbs
 lib/python2.7/test/cjkencodings/
 lib/python2.7/test/cjkencodings/big5-utf8.txt
 lib/python2.7/test/cjkencodings/big5.txt
@@ -364,6 +364,9 @@ lib/python2.7/test/ssl_key.pem
 lib/python2.7/test/ssl_servers.py
 lib/python2.7/test/ssl_servers.pyc
 lib/python2.7/test/ssl_servers.pyo
+lib/python2.7/test/ssltests.py
+lib/python2.7/test/ssltests.pyc
+lib/python2.7/test/ssltests.pyo
 lib/python2.7/test/string_tests.py
 lib/python2.7/test/string_tests.pyc
 lib/python2.7/test/string_tests.pyo
