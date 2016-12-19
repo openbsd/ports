@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/08/02 10:19:55 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/12/19 12:29:01 kirby Exp $
 @bin bin/warzone2100
 @man man/man6/warzone2100.6
 share/appdata/
@@ -9,7 +9,7 @@ share/doc/warzone2100/
 @comment share/doc/warzone2100/COPYING.NONGPL
 @comment share/doc/warzone2100/COPYING.README
 @comment share/doc/warzone2100/ChangeLog
-share/doc/warzone2100/Readme.en
+share/doc/warzone2100/README.md
 share/doc/warzone2100/ScriptingManual.htm
 share/doc/warzone2100/docbook-xsl.css
 share/doc/warzone2100/images/
