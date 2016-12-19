@@ -1,12 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2016/12/19 20:35:09 martijn Exp $
 
 PV=		5.6
-V=		${PV}.27
-
-REVISION-curl=		0
-REVISION-soap=		0
-REVISION-xmlrpc=	0
-REVISION-xsl=		0
+V=		${PV}.29
 
 WANTLIB-main+=		stdc++ ncurses readline
 
