@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.94 2016/11/06 21:54:35 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.95 2016/12/19 16:11:38 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -160,6 +160,7 @@ MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
 CONFIGURE_ENV +=	${MAKE_ENV}
 # ensure libffi's configure doesnt pick gsed
 CONFIGURE_ENV +=	ac_cv_path_ax_enable_builddir_sed=/usr/bin/sed
+CONFIGURE_ENV +=	ac_cv_path_SED=/usr/bin/sed
 
 pre-configure:
 .for d in ${MOZILLA_AUTOCONF_DIRS}
