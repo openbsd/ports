@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/08 15:55:13 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/12/19 17:31:45 rpe Exp $
 awstats/
 awstats/README.md
 awstats/data/
@@ -469,6 +469,7 @@ awstats/wwwroot/icon/flags/edu.png
 awstats/wwwroot/icon/flags/ee.png
 awstats/wwwroot/icon/flags/eg.png
 awstats/wwwroot/icon/flags/eh.png
+awstats/wwwroot/icon/flags/el.png
 awstats/wwwroot/icon/flags/en.png
 awstats/wwwroot/icon/flags/er.png
 awstats/wwwroot/icon/flags/es.png
@@ -677,11 +678,14 @@ awstats/wwwroot/icon/mime/document.png
 awstats/wwwroot/icon/mime/dotnet.png
 awstats/wwwroot/icon/mime/encrypt.png
 awstats/wwwroot/icon/mime/flash.png
+awstats/wwwroot/icon/mime/fon.png
 awstats/wwwroot/icon/mime/glasses.png
+awstats/wwwroot/icon/mime/gpx.png
 awstats/wwwroot/icon/mime/html.png
 awstats/wwwroot/icon/mime/image.png
 awstats/wwwroot/icon/mime/jnlp.png
 awstats/wwwroot/icon/mime/jscript.png
+awstats/wwwroot/icon/mime/json.png
 awstats/wwwroot/icon/mime/library.png
 awstats/wwwroot/icon/mime/lit.png
 awstats/wwwroot/icon/mime/mdb.png
@@ -763,6 +767,7 @@ awstats/wwwroot/icon/os/macintosh.png
 awstats/wwwroot/icon/os/macosx.png
 awstats/wwwroot/icon/os/macosx10.png
 awstats/wwwroot/icon/os/macosx11.png
+awstats/wwwroot/icon/os/macosx12.png
 awstats/wwwroot/icon/os/macosx4.png
 awstats/wwwroot/icon/os/macosx5.png
 awstats/wwwroot/icon/os/macosx6.png
