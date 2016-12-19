@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2016/10/31 11:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2016/12/19 09:16:32 ajacoutot Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=		latexila
-GNOME_VERSION=		3.22.0
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		editors print
 
@@ -35,8 +35,5 @@ LIB_DEPENDS=		devel/libgee \
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
-
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
