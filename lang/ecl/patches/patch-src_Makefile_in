@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2015/08/29 14:48:34 jasper Exp $
---- src/Makefile.in.orig	Mon Aug 24 15:25:08 2015
-+++ src/Makefile.in	Mon Aug 24 15:28:43 2015
-@@ -173,30 +173,15 @@ install:
+$OpenBSD: patch-src_Makefile_in,v 1.6 2016/12/20 20:12:29 juanfra Exp $
+--- src/Makefile.in.orig	Mon Dec 19 21:24:59 2016
++++ src/Makefile.in	Mon Dec 19 21:27:43 2016
+@@ -296,30 +296,15 @@ install:
+ 	for i in `(cd ecl && find . -name '*.h')`; do echo $$i; \
+ 	  $(INSTALL_DATA) ecl/$$i $(DESTDIR)$(includedir)/ecl/$$i; \
  	done
- 	$(RM) -f $(DESTDIR)$(includedir)/ecl/config.h
- 	mv $(DESTDIR)$(includedir)/ecl/config-install.h $(DESTDIR)$(includedir)/ecl/config.h
 +	$(INSTALL_DATA) help.doc $(DESTDIR)$(ecldir)
  	$(INSTALL_SCRIPT) bin/ecl-config $(DESTDIR)$(bindir)
 -	for i in build-stamp help.doc TAGS ; do \
@@ -27,8 +27,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2015/08/29 14:48:34 jasper Exp $
 -	fi
 +	${INSTALL_LIBRARY} libecl.so $(DESTDIR)$(libdir)/$(LSP_LIBRARIES)
 +	cd $(DESTDIR)$(libdir) && ln -sf $(LSP_LIBRARIES) libecl.so
- 	$(INSTALL_PROGRAM) c/dpp$(EXE) $(DESTDIR)$(ecldir)
- 	$(INSTALL_PROGRAM) ecl_min$(EXE) $(DESTDIR)$(ecldir)
+ 	$(INSTALL_PROGRAM) $(DPP) $(DESTDIR)$(ecldir)
+ 	$(INSTALL_PROGRAM) $(ECL_MIN) $(DESTDIR)$(ecldir)
  	for i in `cat modules`; do \
  	  case $$i in \
 -	    *.fas) $(INSTALL_PROGRAM) $$i $(DESTDIR)$(ecldir);; \

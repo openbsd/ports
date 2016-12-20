@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/10/13 15:14:29 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2016/12/20 20:12:29 juanfra Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -6,9 +6,9 @@ CATEGORIES =	lang
 BROKEN-mips64 =	ecl_min fails
 BROKEN-arm =	infinite loop while building
 
-V =		16.1.2
+V =		16.1.3
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	5.0
+SHARED_LIBS +=	ecl	6.0
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}static/files/release/
 
+USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \

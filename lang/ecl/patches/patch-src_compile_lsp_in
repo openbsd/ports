@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_compile_lsp_in,v 1.3 2015/08/29 14:48:34 jasper Exp $
---- src/compile.lsp.in.orig	Mon Aug 24 15:32:27 2015
-+++ src/compile.lsp.in	Mon Aug 24 15:35:06 2015
-@@ -71,19 +71,19 @@
+$OpenBSD: patch-src_compile_lsp_in,v 1.4 2016/12/20 20:12:29 juanfra Exp $
+--- src/compile.lsp.in.orig	Mon Dec 19 21:27:57 2016
++++ src/compile.lsp.in	Mon Dec 19 21:29:57 2016
+@@ -74,19 +74,19 @@
        "@LDFLAGS@ @LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
  #+(and :wants-dlopen (not nonstop))
  (setf c::*ld-flags*
@@ -9,10 +9,10 @@ $OpenBSD: patch-src_compile_lsp_in,v 1.3 2015/08/29 14:48:34 jasper Exp $
 +      "@LDFLAGS@ -L. -lecl @LIBS@"
        c::*ld-shared-flags*
 -      "@SHARED_LDFLAGS@ @LDFLAGS@ @SHAREDPREFIX@ecl.@SHAREDEXT@ @FASL_LIBS@ @LIBS@"
-+      "@SHARED_LDFLAGS@ @LDFLAGS@ -L. -lecl @LIBS@ @FASL_LIBS@"
++      "@SHARED_LDFLAGS@ @LDFLAGS@ -L. -lecl @FASL_LIBS@ @LIBS@"
        c::*ld-bundle-flags*
 -      "@BUNDLE_LDFLAGS@ @LDFLAGS@ @SHAREDPREFIX@ecl.@SHAREDEXT@ @FASL_LIBS@ @LIBS@")
-+      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -L -lecl @FASL_LIBS@ @LIBS@")
++      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -L. -lecl @FASL_LIBS@ @LIBS@")
  ;;; FIXME: The nonstop platform does not support soname
  #+(and :wants-dlopen nonstop)
  (setf c::*ld-flags*
@@ -20,10 +20,10 @@ $OpenBSD: patch-src_compile_lsp_in,v 1.3 2015/08/29 14:48:34 jasper Exp $
 +      "@LDFLAGS@ -Wld=-L.,-lecl @LIBS@"
        c::*ld-shared-flags*
 -      "@SHARED_LDFLAGS@ @LDFLAGS@ -Wld=-l@SHAREDPREFIX@ecl.@SHAREDEXT@ @FASL_LIBS@ @LIBS@"
-+      "@SHARED_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @LIBS@ @FASL_LIBS@"
++      "@SHARED_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @FASL_LIBS@ @LIBS@"
        c::*ld-bundle-flags*
 -      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -Wld=-l@SHAREDPREFIX@ecl.@SHAREDEXT@ @FASL_LIBS@ @LIBS@")
-+      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @LIBS@ @FASL_LIBS@")
++      "@BUNDLE_LDFLAGS@ @LDFLAGS@ -Wld=-L.,-lecl @FASL_LIBS@ @LIBS@")
  
  ;;;
  ;;; * Avoid name clashes with user supplied code.

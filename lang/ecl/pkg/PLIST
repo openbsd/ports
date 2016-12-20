@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/08/29 14:48:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/12/20 20:12:29 juanfra Exp $
 @bin bin/ecl
 bin/ecl-config
 include/ecl/
 include/ecl/bytecodes.h
 include/ecl/cache.h
+include/ecl/config-internal.h
 include/ecl/config.h
+include/ecl/configpre-int.h
 include/ecl/configpre.h
 include/ecl/cons.h
 include/ecl/cs.h
@@ -25,10 +27,9 @@ include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
 include/ecl/stacks.h
-include/ecl/unify.h
 lib/ecl/
-lib/ecl/Copyright
-lib/ecl/LGPL
+lib/ecl/COPYING
+lib/ecl/LICENSE
 lib/ecl/asdf.fas
 lib/ecl/cmp.asd
 lib/ecl/cmp.fas
@@ -210,12 +211,15 @@ lib/ecl/libecl-cdb.a
 lib/ecl/libecl-curl.a
 lib/ecl/libecl-help.a
 lib/ecl/libecl-quicklisp.a
+lib/ecl/libpackage-locks.a
 lib/ecl/libprofile.a
 lib/ecl/libql-minitar.a
 lib/ecl/librt.a
 lib/ecl/libsb-bsd-sockets.a
 lib/ecl/libserve-event.a
 lib/ecl/libsockets.a
+lib/ecl/package-locks.asd
+lib/ecl/package-locks.fas
 lib/ecl/prebuilt-asdf.asd
 lib/ecl/profile.asd
 lib/ecl/profile.fas
