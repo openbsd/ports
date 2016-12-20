@@ -1,0 +1,13 @@
+XRoar is a Dragon emulator. Due to hardware similarities, also emulates the
+Tandy Colour Computer (CoCo) models 1 & 2. Some features are:
+
+- Emulates Dragon 32, Dragon 64, Dragon 200-E, Tandy CoCo 1 & 2, and
+  compatibles.
+- Emulates DragonDOS, Delta and RSDOS disk systems.
+- Emulates the Orchestra 90-CC stereo sound cartridge.
+- Supports both raw and translated keyboard modes.
+- Reads and writes virtual cassettes (compact .cas files and audio files).
+- Reads and writes VDK, JVC and DMK format virtual floppy diskettes.
+- Saves and loads machine snapshots.
+- Provides a GDB target for remote debugging.
+- Initial Glenside IDE support.
