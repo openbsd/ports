@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.16 2016/05/18 10:14:07 pascal Exp $
---- src/config/torrc.sample.in.orig	Fri Nov 13 14:41:38 2015
-+++ src/config/torrc.sample.in	Wed May 18 12:06:59 2016
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.17 2016/12/20 22:06:05 pascal Exp $
+--- src/config/torrc.sample.in.orig	Wed Nov  9 01:25:39 2016
++++ src/config/torrc.sample.in	Mon Dec 19 22:02:13 2016
 @@ -39,18 +39,18 @@
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.16 2016/05/18 10:14:07 pascal Exp
  #HiddenServicePort 80 127.0.0.1:80
  #HiddenServicePort 22 127.0.0.1:22
  
-@@ -182,6 +182,8 @@
+@@ -184,6 +184,8 @@
  ## and any public IPv4 and IPv6 addresses on any interface on the relay.
  ## See the man page entry for ExitPolicyRejectPrivate if you want to allow
  ## "exit enclaving".
