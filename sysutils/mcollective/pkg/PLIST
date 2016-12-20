@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/11/03 07:20:03 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2016/12/20 10:42:42 sebastia Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -189,6 +189,7 @@ ${MODRUBY_SITEDIR}/mcollective/vendor/systemu/samples/e.rb
 ${MODRUBY_SITEDIR}/mcollective/vendor/systemu/samples/f.rb
 ${MODRUBY_SITEDIR}/mcollective/vendor/systemu/systemu.gemspec
 ${MODRUBY_SITEDIR}/mcollective/windows_daemon.rb
+libexec/mcollective/
 sbin/mcollectived
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/
 @sample ${SYSCONFDIR}/mcollective/
