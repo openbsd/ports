@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2014/07/12 14:55:40 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2016/12/20 19:26:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,10 +12,12 @@ $OpenBSD: README,v 1.7 2014/07/12 14:55:40 ajacoutot Exp $
 
 2) openfire may be started by executing:
 
-   ${RCDIR}/openfire start
+   rcctl start openfire
 
    as root. To arrange for this to happen at boot, add 'openfire'
-   to "pkg_scripts" in /etc/rc.conf.local(8)
+   to "pkg_scripts" in /etc/rc.conf.local(8):
+
+   rcctl enable openfire
 
 3) After starting openfire, you may access the web interface at
    http://[hostname]:9090/; when you first login there is a configuration
