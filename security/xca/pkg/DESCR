@@ -1,4 +1,3 @@
-X Certificate and Key management is an interface for managing asymetric
-keys like RSA or DSA. It is intended as a small CA for creation and
-signing certificates. It uses the OpenSSL library for the cryptographic
-operations.
+XCA ("X Certificate and Key management") provides a GUI for managing
+keys, X509 certificates and related files. It is intended as a small CA
+for creating and signing certificates.
