@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2016/12/17 12:11:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2016/12/20 18:49:17 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
 V=			5.1.1
 DISTNAME=		elasticsearch-$V
+REVISION=		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://www.elastic.co/products/elasticsearch
@@ -19,7 +20,8 @@ MODULES=		java
 MODJAVA_VER=		1.8+
 MODJAVA_JRERUN=		Yes
 
-RUN_DEPENDS=		java/javaPathHelper
+RUN_DEPENDS=		java/javaPathHelper \
+			shells/bash
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
