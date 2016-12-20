@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2016/12/13 14:47:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/12/20 19:46:20 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.36.1
+GNOME_VERSION=		2.36.2
 
 CATEGORIES=		graphics
 
-SHARED_LIBS +=  gdk_pixbuf-2.0       3200.1   # 3601.0
-SHARED_LIBS +=  gdk_pixbuf_xlib-2.0  3200.0   # 3601.0
+SHARED_LIBS +=  gdk_pixbuf-2.0       3200.1   # 3602.0
+SHARED_LIBS +=  gdk_pixbuf_xlib-2.0  3200.0   # 3602.0
 
 HOMEPAGE=		http://www.gtk.org/
 
