@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2016/11/03 10:59:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.89 2016/12/20 20:30:36 juanfra Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -51,6 +51,7 @@
     SUBDIR += xcopilot
     SUBDIR += xhomer
     SUBDIR += xnp2
+    SUBDIR += xroar
     SUBDIR += yabause
 
 .include <bsd.port.subdir.mk>
