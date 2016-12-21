@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2016/05/21 17:31:23 feinerer Exp $
+# $OpenBSD: Makefile,v 1.36 2016/12/21 14:16:30 feinerer Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.38.1
+VERSION=		5.39.0
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
@@ -24,11 +24,15 @@ USE_GMAKE=		yes
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
+BUILD_DEPENDS =		print/texinfo
 LIB_DEPENDS=		lang/ecl
 RUN_DEPENDS =		misc/rlwrap \
 			misc/shared-mime-info
 
 SUBST_VARS=		VERSION
+
+MAKE_FLAGS =		MAKEINFO="${LOCALBASE}/bin/gtexi2any" \
+			TEXI2DVI="${LOCALBASE}/bin/gtexi2dvi"
 
 CONFIGURE_ARGS+=	--enable-ecl
 CONFIGURE_STYLE=	gnu
