@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: riemann.rc,v 1.1.1.1 2016/12/21 12:51:56 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/riemann"
+daemon_user="_riemann"
+daemon_log="${LOCALSTATEDIR}/log/riemann/riemann.log"
+
+rc_bg=YES
+
+. /etc/rc.d/rc.subr
+
+java="$(${LOCALBASE}/bin/javaPathHelper -c clojure)"
+pexp="${java}.*riemann.*"
+
+rc_start() {
+    (${rcexec} "JAVA_CMD=\"${java}\" ${daemon} > ${daemon_log} 2>&1") &
+}
+
+rc_cmd $1

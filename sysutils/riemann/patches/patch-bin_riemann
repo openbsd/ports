@@ -1,0 +1,21 @@
+$OpenBSD: patch-bin_riemann,v 1.1.1.1 2016/12/21 12:51:56 landry Exp $
+--- bin/riemann.orig	Tue Dec  6 07:47:54 2016
++++ bin/riemann	Wed Dec 21 00:22:17 2016
+@@ -1,8 +1,8 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ top="$(dirname "$0")/.."
+ 
+-JAR="$top/lib/riemann.jar:$EXTRA_CLASSPATH"
+-CONFIG="$top/etc/riemann.config"
++JAR="$top/lib/riemann/riemann.jar:$EXTRA_CLASSPATH"
++CONFIG="${SYSCONFDIR}/riemann.config"
+ COMMAND="start"
+ AGGRESSIVE_OPTS="-server -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -XX:+UseCompressedOops -XX:+CMSClassUnloadingEnabled"
+ 
+@@ -52,4 +52,4 @@ for arg in "$@"; do
+   esac
+ done
+ 
+-exec java $EXTRA_JAVA_OPTS $OPTS -cp "$JAR" riemann.bin "$COMMAND" "$CONFIG"
++exec "$JAVA_CMD" $EXTRA_JAVA_OPTS $OPTS -cp "$JAR" riemann.bin "$COMMAND" "$CONFIG"
