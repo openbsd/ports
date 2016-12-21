@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2016/12/18 18:18:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.220 2016/12/21 07:43:57 phessler Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -76,7 +76,7 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 # a system to get this working, disable them for now. There is
 # (apparently) a serious performance hit doing this.
 
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--disable-spinlocks
 .endif
 
