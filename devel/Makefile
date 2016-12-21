@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1566 2016/12/19 16:35:27 kurt Exp $
+# $OpenBSD: Makefile,v 1.1567 2016/12/21 19:18:22 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -469,6 +469,7 @@
      SUBDIR += mowgli
      SUBDIR += mozjs17
      SUBDIR += mpfr
+     SUBDIR += msgpack
      SUBDIR += msp430
      SUBDIR += mspdebug
      SUBDIR += mygui
