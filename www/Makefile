@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.803 2016/12/13 15:00:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.804 2016/12/21 20:57:09 naddy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -537,8 +537,6 @@
      SUBDIR += vteplugin
      SUBDIR += w3m
      SUBDIR += w3m,image
-     SUBDIR += w3m,japanese
-     SUBDIR += w3m,japanese,image
      SUBDIR += w3mir
      SUBDIR += wApua
      SUBDIR += wbox

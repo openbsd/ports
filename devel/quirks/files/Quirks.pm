@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.442 2016/12/19 16:35:27 kurt Exp $
+# $OpenBSD: Quirks.pm,v 1.443 2016/12/21 20:57:09 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -409,6 +409,7 @@ my $stem_extensions = {
 	'py-httpie' => 'httpie',
 	'py-ripe.atlas.tools' => 'ripe.atlas.tools',
 	'u-boot' => 'u-boot-arm',
+	'ja-w3m' => 'w3m',
 };
 
 my $obsolete_reason = {
