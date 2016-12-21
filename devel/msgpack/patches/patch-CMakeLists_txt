@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/12/21 19:17:15 jasper Exp $
+
+Kill -g -O3.
+
+--- CMakeLists.txt.orig	Sun Nov 27 11:17:25 2016
++++ CMakeLists.txt	Sun Nov 27 11:17:48 2016
+@@ -192,9 +192,9 @@ ENDIF ()
+ 
+ IF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+     IF (MSGPACK_ENABLE_SHARED)
+-        SET_PROPERTY (TARGET msgpackc APPEND_STRING PROPERTY COMPILE_FLAGS "-Wall -Wextra -Werror -g -O3 -DPIC")
++        SET_PROPERTY (TARGET msgpackc APPEND_STRING PROPERTY COMPILE_FLAGS "-Wall -Wextra -Werror -DPIC")
+     ENDIF ()
+-    SET_PROPERTY (TARGET msgpackc-static APPEND_STRING PROPERTY COMPILE_FLAGS "-Wall -Wextra -Werror -g -O3" )
++    SET_PROPERTY (TARGET msgpackc-static APPEND_STRING PROPERTY COMPILE_FLAGS "-Wall -Wextra -Werror" )
+ ENDIF ()
+ 
+ IF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
