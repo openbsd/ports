@@ -1,11 +1,12 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.17 2016/10/07 08:55:30 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg Exp $
 
 - Enable __float128 support on X86
 - [OpenBSD] Add type sign information for OpenBSD
 - Set ABI for ARM
+- [OpenBSD] set OpenBSD defines for aarch64
 
---- tools/clang/lib/Basic/Targets.cpp.orig	Mon Jul 25 12:21:28 2016
-+++ tools/clang/lib/Basic/Targets.cpp	Sat Sep 24 12:02:09 2016
+--- tools/clang/lib/Basic/Targets.cpp.orig	Tue Jul 26 02:21:28 2016
++++ tools/clang/lib/Basic/Targets.cpp	Mon Dec 19 21:48:14 2016
 @@ -531,6 +531,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
      Builder.defineMacro("__ELF__");
      if (Opts.POSIXThreads)
@@ -64,3 +65,12 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.17 2016/10/07 08:55:30 aja
          else
            setABI("aapcs");
          break;
+@@ -8148,6 +8159,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
+       return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
+     default:
+       return new AArch64leTargetInfo(Triple, Opts);
+     }
