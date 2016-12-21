@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.japanese,v 1.5 2011/03/12 23:20:17 sthen Exp $
-@conflict w3m-*
-@man man/ja_JP.EUC/man1/w3m.1
-share/doc/w3m/README.SSL
-share/doc/w3m/README.keymap
-share/doc/w3m/README.mailcap
-share/doc/w3m/README.menu
-share/doc/w3m/README.migemo

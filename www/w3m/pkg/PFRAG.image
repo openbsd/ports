@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.image,v 1.5 2011/03/12 23:20:17 sthen Exp $
+@comment $OpenBSD: PFRAG.image,v 1.6 2016/12/21 20:54:16 naddy Exp $
+@pkgpath www/w3m,image,japanese
 @bin libexec/w3m/w3mimgdisplay
 share/doc/w3m/README.img

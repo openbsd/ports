@@ -1,39 +1,12 @@
-$OpenBSD: patch-configure,v 1.16 2011/03/12 23:20:17 sthen Exp $
---- configure.orig	Sat Mar 12 21:00:56 2011
-+++ configure	Sat Mar 12 21:08:16 2011
-@@ -8209,7 +8209,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgc  $LIBS"
-+LIBS="-lgc -pthread $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
+$OpenBSD: patch-configure,v 1.17 2016/12/21 20:54:16 naddy Exp $
+--- configure.orig	Mon Nov 21 21:39:38 2016
++++ configure	Mon Nov 21 21:40:16 2016
+@@ -6955,7 +6955,7 @@ $as_echo "$as_me: WARNING: Imlib2 is not installed.  I
+      IMGTARGETS="x11"
+      $as_echo "#define USE_IMLIB2 1" >>confdefs.h
  
-@@ -8240,7 +8240,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gc_GC_init" >&5
- $as_echo "$ac_cv_lib_gc_GC_init" >&6; }
- if test "x$ac_cv_lib_gc_GC_init" = x""yes; then :
--  LIBGC="-lgc"
-+  LIBGC="-lgc -pthread"
- fi
- 
-  if test x"$ac_cv_lib_gc_GC_init" = xno; then
-@@ -8261,7 +8261,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgc  $LIBS"
-+LIBS="-lgc -pthread $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -8292,7 +8292,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gc_GC_init" >&5
- $as_echo "$ac_cv_lib_gc_GC_init" >&6; }
- if test "x$ac_cv_lib_gc_GC_init" = x""yes; then :
--  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc"; break
-+  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc -pthread"; break
- fi
- 
-       LDFLAGS="$ldflags"
+-     IMGX11CFLAGS="`${IMLIB2_CONFIG} --cflags`"
++     IMGX11CFLAGS="`${PKG_CONFIG} --cflags imlib2`"
+      IMGX11LDFLAGS="-lX11 `${PKG_CONFIG} --libs imlib2`"
+    else
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unable to build w3mimgdisplay with X11 support" >&5

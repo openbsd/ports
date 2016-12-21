@@ -9,5 +9,3 @@ it has several features Lynx doesn't have:
 Available flavors:
   image     - Support displaying inline images when run from an X11
               terminal emulator.
-  japanese  - Provide Japanese menus and documentation, and properly
-              display Japanese characters in kterm.

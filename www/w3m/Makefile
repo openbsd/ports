@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.87 2016/11/19 12:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2016/12/21 20:54:16 naddy Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.3
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto curses gc iconv intl m pthread ssl z
+WANTLIB=	c crypto curses gc iconv intl m ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
+MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
+
+DISTFILES=	${DISTNAME}.tar.gz \
+		w3m_0.5.3-33.debian.tar.xz:0
 
 BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	devel/boehm-gc devel/gettext
 
-FLAVORS=	image japanese
+FLAVORS=	image
 FLAVOR?=
 
 CONFIGURE_STYLE=gnu
@@ -29,30 +33,43 @@ CONFIGURE_ARGS=	--disable-xface \
 NO_TEST=	Yes
 
 .if ${FLAVOR:Mimage}
-LIB_DEPENDS+=	x11/gtk+2
-CONFIGURE_ARGS+=--with-imagelib=gtk2
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0
+LIB_DEPENDS+=	graphics/imlib2
+CONFIGURE_ARGS+=--with-imagelib=imlib2
+WANTLIB+=	Imlib2 X11 Xext freetype
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif
 
-.if ${FLAVOR:Mjapanese}
-FULLPKGNAME=	ja-${PKGNAME}${FLAVOR_EXT:S/-japanese//}
-CATEGORIES+=	japanese
-CONFIGURE_ARGS+=--enable-japanese=U
-DOCSRC=		${WRKSRC}/doc-jp
-.else
-DOCSRC=		${WRKSRC}/doc
-.endif
+PATCH_DIST_STRIP= -p1
+
+do-distpatch:
+	@for p in ${WRKDIR}/debian/patches/*.patch; do \
+	    ${PATCH} ${PATCH_DIST_ARGS} < $$p; \
+	done
+
+post-build:
+	cd ${WRKSRC}/doc-jp; \
+	    for f in ${EUC_JP}; do \
+		iconv -f euc-jp -t utf-8 $$f >$$f.tmp; \
+		mv $$f.tmp $$f; \
+	    done; \
+	    for f in ${ISO_2022_JP}; do \
+		iconv -f iso-2022-jp -t utf-8 $$f >$$f.tmp; \
+		mv $$f.tmp $$f; \
+	    done
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m
-	cd ${DOCSRC}; \
-	find . -type f \! \( -name w3m.1 -or -path "*/CVS/*" \) -print0 | \
-	xargs -0r -J % ${INSTALL_DATA} % ${PREFIX}/share/doc/w3m
+.for src dst in doc "" doc-jp ja doc-de de
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m/${dst}
+	cd ${WRKSRC}/${src}; \
+	    ${INSTALL_DATA} !(w3m.1|CVS|*${DISTORIG}|README.cygwin) \
+		${PREFIX}/share/doc/w3m/${dst}
+.endfor
+
+EUC_JP=		FAQ.html HISTORY MANUAL.html README README.SSL README.cookie \
+		README.dict README.func README.img README.keymap README.m17n \
+		README.mailcap README.menu README.migemo README.mouse \
+		README.siteconf STORY.html menu.default menu.submenu w3m.1
+ISO_2022_JP=	README.passwd README.pre_form README.tab
 
 .include <bsd.port.mk>
