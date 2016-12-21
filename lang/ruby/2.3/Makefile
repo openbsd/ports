@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/23 15:59:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/12/21 07:22:20 phessler Exp $
 
+BROKEN-arm =		OOM when building ext/ripper/ripper.c
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 BROKEN-powerpc =		OOM when building ext/ripper/ripper.c
 
