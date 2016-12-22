@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2016/09/03 15:31:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2016/12/22 09:05:06 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -45,7 +45,6 @@
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
-share/doc/qemu/qemu-tech.html
 share/doc/qemu/qmp-commands.txt
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
@@ -141,6 +140,7 @@ share/qemu/qemu-icon.bmp
 share/qemu/qemu_logo_no_text.svg
 share/qemu/s390-ccw.img
 share/qemu/sgabios.bin
+share/qemu/skiboot.lid
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
 share/qemu/trace-events-all

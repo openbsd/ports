@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2016/10/07 08:51:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2016/12/22 09:05:06 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,8 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-2.7.0
-REVISION=	0
+DISTNAME=	qemu-2.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -25,7 +24,7 @@ WANTLIB=	SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
 		iscsi jpeg lzo2 m ncurses nettle nfs pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs ssh2 \
-		usb-1.0 util uuid vte z
+		usb-1.0 util vte z
 
 # Using gcc4 for the TLS emulation layer
 MODULES=	lang/python \
@@ -52,7 +51,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 		security/gnutls \
 		security/libnettle \
 		security/libssh2 \
-		sysutils/e2fsprogs \
 		x11/gtk+2
 
 MODPY_RUNDEP=	No
