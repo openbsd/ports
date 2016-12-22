@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.138 2016/11/07 09:46:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.139 2016/12/22 08:10:21 phessler Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-hppa =	libQtWebKit.so.3.0: undefined reference to __sync_sub_and_fetch_4
+BROKEN-arm =	libQtWebKit.so.4.0: undefined reference to __sync_add_and_fetch_4
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug

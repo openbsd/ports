@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2016/11/13 19:22:34 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2016/12/22 08:10:21 phessler Exp $
+
+BROKEN-arm =	libjackserver.so.2.0: undefined reference to __sync_fetch_and_add_4
 
 COMMENT =		low latency sound server
 
