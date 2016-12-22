@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/23 09:25:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/12/22 16:05:26 ajacoutot Exp $
 
 COMMENT=		service discovery and configuration tool
 
-GH_TAGNAME=		v0.7.1
+GH_TAGNAME=		v0.7.2
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
 
