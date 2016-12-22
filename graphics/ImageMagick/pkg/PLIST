@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2016/12/06 14:44:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.53 2016/12/22 21:26:20 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -38,7 +38,6 @@ include/ImageMagick/Magick++/TypeMetric.h
 include/ImageMagick/magick/
 include/ImageMagick/magick/ImageMagick.h
 include/ImageMagick/magick/MagickCore.h
-include/ImageMagick/magick/accelerate.h
 include/ImageMagick/magick/animate.h
 include/ImageMagick/magick/annotate.h
 include/ImageMagick/magick/api.h
@@ -185,11 +184,9 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/Magick/Q16.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Magick.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/Q16.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/autosplit.ix
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/autosplit.ix
 @man man/man1/ImageMagick.1
 @man man/man1/Magick++-config.1
 @man man/man1/Magick-config.1
