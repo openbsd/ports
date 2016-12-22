@@ -1,21 +1,12 @@
-$OpenBSD: patch-timing_cc,v 1.7 2016/10/06 05:47:35 giovanni Exp $
---- timing.cc.orig	Mon Aug 22 20:50:06 2016
-+++ timing.cc	Thu Sep 29 22:04:48 2016
-@@ -125,6 +125,8 @@
+$OpenBSD: patch-timing_cc,v 1.8 2016/12/22 21:58:40 sthen Exp $
+--- timing.cc.orig	Wed Dec 14 00:12:23 2016
++++ timing.cc	Thu Dec 22 05:45:12 2016
+@@ -132,6 +132,8 @@
  
- /* $Id: patch-timing_cc,v 1.7 2016/10/06 05:47:35 giovanni Exp $ */
+ /* $Id: patch-timing_cc,v 1.8 2016/12/22 21:58:40 sthen Exp $ */
  
 +#include <limits>
 +
  #include "timing.h"
  #include "NmapOps.h"
  #include "utils.h"
-@@ -437,7 +439,7 @@ void RateMeter::update(double amount, const struct tim
-     interval = MAX(current_rate_history, diff);
-   else
-     interval = TIMEVAL_SUBTRACT(*now, start_tv) / 1000000.0;
--  assert(diff <= interval);
-+  assert(diff <= interval + std::numeric_limits<float>::epsilon());
-   /* If we record an amount in the very same instant that the timer is started,
-      there's no way to calculate meaningful rates. Ignore it. */
-   if (interval == 0.0)

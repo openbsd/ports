@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2016/10/06 05:47:35 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2016/12/22 21:58:40 sthen Exp $
 @conflict ndiff-*
 @pkgpath net/ndiff
 @pkgpath net/nmap
@@ -106,6 +106,7 @@ share/nmap/nselib/eap.lua
 share/nmap/nselib/eigrp.lua
 share/nmap/nselib/formulas.lua
 share/nmap/nselib/ftp.lua
+share/nmap/nselib/geoip.lua
 share/nmap/nselib/giop.lua
 share/nmap/nselib/gps.lua
 share/nmap/nselib/http.lua
@@ -184,6 +185,7 @@ share/nmap/nselib/tab.lua
 share/nmap/nselib/target.lua
 share/nmap/nselib/tftp.lua
 share/nmap/nselib/tls.lua
+share/nmap/nselib/tn3270.lua
 share/nmap/nselib/tns.lua
 share/nmap/nselib/unicode.lua
 share/nmap/nselib/unittest.lua
@@ -258,6 +260,8 @@ share/nmap/scripts/broadcast-xdmcp-discover.nse
 share/nmap/scripts/cassandra-brute.nse
 share/nmap/scripts/cassandra-info.nse
 share/nmap/scripts/cccam-version.nse
+share/nmap/scripts/cics-enum.nse
+share/nmap/scripts/cics-user-enum.nse
 share/nmap/scripts/citrix-brute-xml.nse
 share/nmap/scripts/citrix-enum-apps-xml.nse
 share/nmap/scripts/citrix-enum-apps.nse
@@ -311,6 +315,7 @@ share/nmap/scripts/epmd-info.nse
 share/nmap/scripts/eppc-enum-processes.nse
 share/nmap/scripts/fcrdns.nse
 share/nmap/scripts/finger.nse
+share/nmap/scripts/fingerprint-strings.nse
 share/nmap/scripts/firewalk.nse
 share/nmap/scripts/firewall-bypass.nse
 share/nmap/scripts/flume-master-info.nse
@@ -476,6 +481,9 @@ share/nmap/scripts/informix-tables.nse
 share/nmap/scripts/ip-forwarding.nse
 share/nmap/scripts/ip-geolocation-geoplugin.nse
 share/nmap/scripts/ip-geolocation-ipinfodb.nse
+share/nmap/scripts/ip-geolocation-map-bing.nse
+share/nmap/scripts/ip-geolocation-map-google.nse
+share/nmap/scripts/ip-geolocation-map-kml.nse
 share/nmap/scripts/ip-geolocation-maxmind.nse
 share/nmap/scripts/ip-https-discover.nse
 share/nmap/scripts/ipidseq.nse
@@ -567,6 +575,7 @@ share/nmap/scripts/nfs-ls.nse
 share/nmap/scripts/nfs-showmount.nse
 share/nmap/scripts/nfs-statfs.nse
 share/nmap/scripts/nje-node-brute.nse
+share/nmap/scripts/nje-pass-brute.nse
 share/nmap/scripts/nntp-ntlm-info.nse
 share/nmap/scripts/nping-brute.nse
 share/nmap/scripts/nrpe-enum.nse
@@ -684,11 +693,11 @@ share/nmap/scripts/ssh-hostkey.nse
 share/nmap/scripts/ssh2-enum-algos.nse
 share/nmap/scripts/sshv1.nse
 share/nmap/scripts/ssl-ccs-injection.nse
+share/nmap/scripts/ssl-cert-intaddr.nse
 share/nmap/scripts/ssl-cert.nse
 share/nmap/scripts/ssl-date.nse
 share/nmap/scripts/ssl-dh-params.nse
 share/nmap/scripts/ssl-enum-ciphers.nse
-share/nmap/scripts/ssl-google-cert-catalog.nse
 share/nmap/scripts/ssl-heartbleed.nse
 share/nmap/scripts/ssl-known-key.nse
 share/nmap/scripts/ssl-poodle.nse
@@ -716,8 +725,11 @@ share/nmap/scripts/telnet-encryption.nse
 share/nmap/scripts/telnet-ntlm-info.nse
 share/nmap/scripts/tftp-enum.nse
 share/nmap/scripts/tls-nextprotoneg.nse
+share/nmap/scripts/tn3270-screen.nse
 share/nmap/scripts/tor-consensus-checker.nse
 share/nmap/scripts/traceroute-geolocation.nse
+share/nmap/scripts/tso-brute.nse
+share/nmap/scripts/tso-enum.nse
 share/nmap/scripts/unittest.nse
 share/nmap/scripts/unusual-port.nse
 share/nmap/scripts/upnp-info.nse
@@ -729,6 +741,7 @@ share/nmap/scripts/vnc-brute.nse
 share/nmap/scripts/vnc-info.nse
 share/nmap/scripts/vnc-title.nse
 share/nmap/scripts/voldemort-info.nse
+share/nmap/scripts/vtam-enum.nse
 share/nmap/scripts/vuze-dht-info.nse
 share/nmap/scripts/wdb-version.nse
 share/nmap/scripts/weblogic-t3-info.nse

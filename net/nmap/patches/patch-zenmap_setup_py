@@ -1,6 +1,6 @@
-$OpenBSD: patch-zenmap_setup_py,v 1.13 2016/03/18 21:13:38 giovanni Exp $
---- zenmap/setup.py.orig	Tue Jan  5 14:12:42 2016
-+++ zenmap/setup.py	Thu Mar 17 20:29:51 2016
+$OpenBSD: patch-zenmap_setup_py,v 1.14 2016/12/22 21:58:40 sthen Exp $
+--- zenmap/setup.py.orig	Wed May 18 16:24:36 2016
++++ zenmap/setup.py	Thu Dec 22 05:53:32 2016
 @@ -242,12 +242,11 @@ class my_install(install):
          install.finalize_options(self)
  
@@ -15,10 +15,11 @@ $OpenBSD: patch-zenmap_setup_py,v 1.13 2016/03/18 21:13:38 giovanni Exp $
          self.write_installed_files()
  
      def get_installed_files(self):
-@@ -407,17 +406,10 @@ for dir in dirs:
+@@ -406,18 +405,10 @@ for dir in dirs:
+                 # See $(nmapdatadir) in nmap/Makefile.in.
                  "NMAPDATADIR": os.path.join(self.saved_prefix, "share", "nmap")
                  }
- 
+-
 -        # Find and read the Paths.py file.
 -        pcontent = ""
          paths_file = os.path.join("zenmapCore", "Paths.py")
@@ -36,7 +37,7 @@ $OpenBSD: patch-zenmap_setup_py,v 1.13 2016/03/18 21:13:38 giovanni Exp $
  
          # Replace the path definitions.
          for path, replacement in interesting_paths.items():
-@@ -440,11 +432,6 @@ for dir in dirs:
+@@ -440,11 +431,6 @@ for dir in dirs:
  
          desktop_filename = None
          root_desktop_filename = None
