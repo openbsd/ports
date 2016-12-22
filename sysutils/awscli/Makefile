@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2016/12/22 10:53:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2016/12/22 15:11:53 ajacoutot Exp $
 
 COMMENT=		universal command line environment for AWS
 
 MODPY_EGG_VERSION=	1.11.33
 DISTNAME=		awscli-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -20,6 +21,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		security/py-rsa \
+			textproc/groff \
 			textproc/py-docutils \
 			textproc/py-yaml
 
