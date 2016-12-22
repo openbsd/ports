@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.60 2016/11/30 16:53:37 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2016/12/22 21:34:06 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.18.1
+DISTNAME =	qgis-2.18.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	14.0 \
-		qgis_app	3.1 \
-		qgis_gui	13.0 \
-		qgis_analysis	6.0 \
-		qgis_server	4.1 \
-		qgispython	4.1 \
-		qgis_networkanalysis 1.0
+SHARED_LIBS =	qgis_core	15.0 \
+		qgis_app	4.0 \
+		qgis_gui	14.0 \
+		qgis_analysis	7.0 \
+		qgis_server	5.0 \
+		qgispython	5.0 \
+		qgis_networkanalysis 2.0
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -27,7 +27,7 @@ MODULES =	gcc4 \
 		devel/cmake \
 		devel/gettext \
 		lang/python
-MODGCC4_ARCHS =	i386 # base GCC uses too much RAM
+MODGCC4_ARCHS =	*
 MODGCC4_LANGS =	c++
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
@@ -63,7 +63,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		fontconfig freetype glib-2.0 gobject-2.0 gthread-2.0 lcms m \
-		mng png pthread util stdc++ z proj \
+		mng png pthread util z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca2 \
 		QtTest spatialindex spatialite sqlite3 qscintilla2 qjson
