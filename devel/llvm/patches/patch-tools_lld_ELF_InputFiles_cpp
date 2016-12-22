@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_InputFiles_cpp,v 1.1 2016/10/09 06:47:10 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_InputFiles_cpp,v 1.2 2016/12/22 11:07:13 ajacoutot Exp $
 
 - Do not handle zero-sized mergeable section as mergeable.
 
@@ -21,9 +21,9 @@ associated with SHT_REL[A]/SHT_SYMTAB/SHT_STRTAB sections.
 This patch makes the check for null section stricter, 
 so it is only allowed for STT_SECTION symbols now.
 
---- tools/lld/ELF/InputFiles.cpp.orig	Sat Oct  8 17:49:10 2016
-+++ tools/lld/ELF/InputFiles.cpp	Sat Oct  8 18:20:12 2016
-@@ -162,6 +162,13 @@ bool elf::ObjectFile<ELFT>::shouldMerge(const Elf_Shdr
+--- tools/lld/ELF/InputFiles.cpp.orig	Thu Nov 24 20:57:00 2016
++++ tools/lld/ELF/InputFiles.cpp	Wed Dec 21 19:39:24 2016
+@@ -163,6 +163,13 @@ bool elf::ObjectFile<ELFT>::shouldMerge(const Elf_Shdr
    if (Config->Optimize == 0)
      return false;
  
@@ -37,7 +37,7 @@ so it is only allowed for STT_SECTION symbols now.
    uintX_t Flags = Sec.sh_flags;
    if (!(Flags & SHF_MERGE))
      return false;
-@@ -335,11 +342,21 @@ template <class ELFT>
+@@ -336,11 +343,21 @@ template <class ELFT>
  InputSectionBase<ELFT> *
  elf::ObjectFile<ELFT>::getSection(const Elf_Sym &Sym) const {
    uint32_t Index = this->getSectionIndex(Sym);

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2016/12/21 09:27:57 jsg Exp $
+# $OpenBSD: Makefile,v 1.127 2016/12/22 11:07:13 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -8,10 +8,9 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
-LLVM_V =	3.9.0
+LLVM_V =	3.9.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
-REVISION =	3
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \

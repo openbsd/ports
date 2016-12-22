@@ -1,13 +1,13 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.19 2016/12/22 11:07:13 ajacoutot Exp $
 
 - Enable __float128 support on X86
 - [OpenBSD] Add type sign information for OpenBSD
 - Set ABI for ARM
 - [OpenBSD] set OpenBSD defines for aarch64
 
---- tools/clang/lib/Basic/Targets.cpp.orig	Tue Jul 26 02:21:28 2016
-+++ tools/clang/lib/Basic/Targets.cpp	Mon Dec 19 21:48:14 2016
-@@ -531,6 +531,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+--- tools/clang/lib/Basic/Targets.cpp.orig	Tue Nov 29 10:53:17 2016
++++ tools/clang/lib/Basic/Targets.cpp	Wed Dec 21 19:39:24 2016
+@@ -542,6 +542,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
      Builder.defineMacro("__ELF__");
      if (Opts.POSIXThreads)
        Builder.defineMacro("_REENTRANT");
@@ -16,7 +16,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
    }
  public:
    OpenBSDTargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
-@@ -539,8 +541,11 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+@@ -550,8 +552,11 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
  
        switch (Triple.getArch()) {
          default:
@@ -28,7 +28,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
          case llvm::Triple::arm:
          case llvm::Triple::sparc:
            this->MCountName = "__mcount";
-@@ -4628,8 +4633,10 @@ class ARMTargetInfo : public TargetInfo {
+@@ -4641,8 +4646,10 @@ class ARMTargetInfo : public TargetInfo {
      DoubleAlign = LongLongAlign = LongDoubleAlign = SuitableAlign = 64;
      const llvm::Triple &T = getTriple();
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
          T.getOS() == llvm::Triple::Bitrig)
        SizeType = UnsignedLong;
      else
-@@ -4637,6 +4644,7 @@ class ARMTargetInfo : public TargetInfo {
+@@ -4650,6 +4657,7 @@ class ARMTargetInfo : public TargetInfo {
  
      switch (T.getOS()) {
      case llvm::Triple::NetBSD:
@@ -48,7 +48,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
        WCharType = SignedInt;
        break;
      case llvm::Triple::Win32:
-@@ -4836,6 +4844,7 @@ class ARMTargetInfo : public TargetInfo {
+@@ -4849,6 +4857,7 @@ class ARMTargetInfo : public TargetInfo {
  
      switch (getTriple().getOS()) {
      case llvm::Triple::NetBSD:
@@ -56,7 +56,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
        PtrDiffType = SignedLong;
        break;
      default:
-@@ -4888,6 +4897,8 @@ class ARMTargetInfo : public TargetInfo {
+@@ -4901,6 +4910,8 @@ class ARMTargetInfo : public TargetInfo {
        default:
          if (Triple.getOS() == llvm::Triple::NetBSD)
            setABI("apcs-gnu");
@@ -65,7 +65,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.18 2016/12/21 09:27:57 jsg
          else
            setABI("aapcs");
          break;
-@@ -8148,6 +8159,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
+@@ -8161,6 +8172,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
        return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
