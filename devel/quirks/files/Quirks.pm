@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.443 2016/12/21 20:57:09 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.444 2016/12/23 15:39:09 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -900,6 +900,7 @@ my $obsolete_reason = {
 	'l0phtcrack' => 0,
 	'bunny' => 3,
 	'jakarta-servletapi' => 5,
+	'ldistfp' => 0,
 };
 
 # reasons for obsolete packages
