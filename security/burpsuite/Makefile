@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/11/05 05:49:54 rpointel Exp $
+# $OpenBSD: Makefile,v 1.13 2016/12/23 18:12:44 rpe Exp $
 
 COMMENT =		tool for testing security of web applications
 
-VERSION =		1.7.10
+VERSION =		1.7.14
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
 
-DISTFILES=${DISTNAME}${EXTRACT_SUFX}{DownloadUpdate.ashx?Product=Free}
+DISTFILES=${DISTNAME}${EXTRACT_SUFX}{Download?productId=100\&version=${VERSION}\&type=Jar}
 
 CATEGORIES =		security
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=   https://portswigger.net/burp/eula-free.html
 PERMIT_PACKAGE_FTP=     https://portswigger.net/burp/eula-free.html
 PERMIT_DISTFILES_FTP=   https://portswigger.net/burp/eula-free.html
 
-MASTER_SITES =		https://portswigger.net/
+MASTER_SITES =		https://portswigger.net/Burp/Releases/
 
 EXTRACT_ONLY =		
 EXTRACT_SUFX =		.jar
