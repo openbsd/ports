@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.103 2016/10/13 11:54:54 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.104 2016/12/23 08:07:54 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -36,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/hls.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/hls.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/http.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/http.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/ism.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/ism.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/rtmp.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/rtmp.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/downloader/rtsp.py
@@ -123,8 +125,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bbc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bbc.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beatportpro.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beatportpro.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beatport.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beatport.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beeg.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/beeg.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/behindkink.py
@@ -195,6 +197,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cbssports.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cbssports.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ccc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ccc.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ccma.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ccma.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cctv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cctv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cda.py
@@ -401,6 +405,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fourtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fourtube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fox.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fox.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fox9.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fox9.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxgay.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxgay.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxnews.py
@@ -505,6 +511,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/howstuffworks.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/howstuffworks.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hrti.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hrti.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/huajiao.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/huajiao.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/huffpost.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/huffpost.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hypem.py
@@ -541,6 +549,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iwara.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iwara.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/izlesene.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/izlesene.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jamendo.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jamendo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jove.py
@@ -641,6 +651,10 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/matchtv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/matchtv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mdr.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mdr.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/meipai.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/meipai.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/melonvod.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/melonvod.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/meta.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/meta.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacafe.py
@@ -759,6 +773,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ninenow.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ninenow.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nintendo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nintendo.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nobelprize.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nobelprize.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/noco.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/noco.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/normalboots.py
@@ -801,6 +817,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/oktoberfesttv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/oktoberfesttv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/once.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/once.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ondemandkorea.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ondemandkorea.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/onet.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/onet.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/onionstudios.py
@@ -813,6 +831,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ora.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ora.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/orf.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/orf.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandatv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandatv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandoratv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandoratv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/parliamentliveuk.py
@@ -831,6 +851,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/phoenix.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/phoenix.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/piksel.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/piksel.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pinkbike.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pinkbike.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pladform.py
@@ -903,6 +925,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/redtube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/regiotv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/regiotv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rentv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rentv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/restudy.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/restudy.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/reuters.py
@@ -975,8 +999,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencastomatic.p
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screencastomatic.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenjunkies.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenjunkies.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenwavemedia.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/screenwavemedia.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/seeker.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/seeker.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/senateisvp.py
@@ -1079,6 +1101,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teachingchannel.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teachingchannel.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teamcoco.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teamcoco.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teamfourstar.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/teamfourstar.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/techtalks.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/techtalks.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ted.py
@@ -1169,6 +1193,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tv3.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tv3.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tv4.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tv4.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvanouvelles.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvanouvelles.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvc.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvigle.py
@@ -1197,6 +1223,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/udemy.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/udemy.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/udn.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/udn.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/uktvplay.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/uktvplay.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/unistra.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/unistra.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/uol.py
@@ -1275,6 +1303,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vimple.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vimple.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vine.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vine.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/viu.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/viu.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vk.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vlive.py
@@ -1295,8 +1325,12 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vuclip.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vuclip.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vvvvid.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vvvvid.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vyborymos.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vyborymos.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vzaar.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/vzaar.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/walla.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/walla.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/washingtonpost.py
@@ -1307,6 +1341,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/watchindianporn.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/watchindianporn.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/wdr.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/wdr.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/webcaster.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/webcaster.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/webofstories.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/webofstories.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/weiqitv.py
