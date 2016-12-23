@@ -1,0 +1,4 @@
+cargo-generate-vendor is used to help building vendored crate for use with
+devel/cargo.
+
+It will generate the required metadata for this purpose.
