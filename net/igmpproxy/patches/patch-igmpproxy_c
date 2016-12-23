@@ -1,6 +1,6 @@
-$OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
---- igmpproxy.c.orig	Sat Aug 20 13:56:32 2005
-+++ igmpproxy.c	Mon Nov 19 12:56:50 2007
+$OpenBSD: patch-igmpproxy_c,v 1.2 2016/12/23 13:44:31 rzalamena Exp $
+--- igmpproxy.c.orig	Thu Dec 15 19:50:24 2016
++++ igmpproxy.c	Thu Dec 15 19:51:46 2016
 @@ -41,8 +41,8 @@
  #include "version.h"
  #include "build.h"
@@ -11,7 +11,7 @@ $OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
  // Constants
  static const char Version[] = 
  "igmpproxy, Version " VERSION ", Build" BUILD "\n"
-@@ -80,7 +80,7 @@ int         upStreamVif;   
+@@ -80,7 +80,7 @@
  *   on commandline. The number of commandline arguments, and a
  *   pointer to the arguments are recieved on the line...
  */    
@@ -20,7 +20,7 @@ $OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
  
      int debugMode = 0;
  
-@@ -133,6 +133,24 @@ int main( int ArgCn, const char *ArgVc[] ) {
+@@ -133,6 +133,24 @@
      	exit(1);
      }
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      // Write debug notice with file path...
      IF_DEBUG log(LOG_DEBUG, 0, "Searching for config file at '%s'" , configFilePath);
  
-@@ -155,17 +173,8 @@ int main( int ArgCn, const char *ArgVc[] ) {
+@@ -155,17 +173,8 @@
          if ( ! debugMode ) {
      
              IF_DEBUG log( LOG_DEBUG, 0, "Starting daemon mode.");
@@ -64,16 +64,18 @@ $OpenBSD: patch-igmpproxy_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
          }
          
          // Go to the main loop.
-@@ -218,7 +227,7 @@ int igmpProxyInit() {
+@@ -218,7 +227,9 @@
          int     vifcount = 0;
          upStreamVif = -1;
  
 -        for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
 +        for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
++		if (config_getinterface(Dp->Name) == NULL)
++			continue;
  
              if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
                  if(Dp->state == IF_STATE_UPSTREAM) {
-@@ -237,7 +246,7 @@ int igmpProxyInit() {
+@@ -237,7 +248,7 @@
  
          // If there is only one VIF, or no defined upstream VIF, we send an error.
          if(vifcount < 2 || upStreamVif < 0) {

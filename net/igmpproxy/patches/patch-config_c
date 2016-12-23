@@ -1,7 +1,16 @@
-$OpenBSD: patch-config_c,v 1.2 2013/06/07 20:06:03 dcoppa Exp $
---- config.c.orig	Tue May 24 17:49:29 2005
-+++ config.c	Fri Jun  7 16:08:11 2013
-@@ -241,11 +241,10 @@ struct vifconfig *parsePhyintToken() {
+$OpenBSD: patch-config_c,v 1.3 2016/12/23 13:44:31 rzalamena Exp $
+--- config.c.orig	Thu Dec 15 19:50:23 2016
++++ config.c	Mon Dec 19 21:02:00 2016
+@@ -177,7 +177,7 @@
+     }
+ 
+     // Loop through all VIFs...
+-    for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
++    for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
+         if ( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) ) {
+ 
+             // Now try to find a matching config...
+@@ -241,11 +241,10 @@
      tmpPtr->allowednets = NULL;
  
      // Make a copy of the token to store the IF name
@@ -14,7 +23,16 @@ $OpenBSD: patch-config_c,v 1.2 2013/06/07 20:06:03 dcoppa Exp $
  
      // Set the altnet pointer to the allowednets pointer.
      anetPtr = &tmpPtr->allowednets;
-@@ -328,29 +327,18 @@ struct vifconfig *parsePhyintToken() {
+@@ -255,8 +254,6 @@
+     while(token != NULL) {
+         if(strcmp("altnet", token)==0) {
+             // Altnet...
+-            struct in_addr  networkAddr;
+-
+             token = nextConfigToken();
+             IF_DEBUG log(LOG_DEBUG, 0, "Config: IF: Got altnet token %s.",token);
+ 
+@@ -328,29 +325,18 @@
  */
  struct SubnetList *parseSubnetAddress(char *addrstr) {
      struct SubnetList *tmpSubnet;
@@ -52,3 +70,24 @@ $OpenBSD: patch-config_c,v 1.2 2013/06/07 20:06:03 dcoppa Exp $
  
      tmpSubnet = (struct SubnetList*) malloc(sizeof(struct SubnetList));
      tmpSubnet->subnet_addr = addr;
+@@ -363,3 +349,20 @@
+     return tmpSubnet;
+ }
+ 
++struct vifconfig *
++config_getinterface(const char *ifname)
++{
++	struct vifconfig *vc;
++
++	if (vifconf == NULL)
++		return (NULL);
++
++	for (vc = vifconf; vc; vc = vc->next) {
++		if (strcmp(vc->name, ifname))
++			continue;
++
++		return (vc);
++	}
++
++	return (NULL);
++}

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ifvc_c,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
---- ifvc.c.orig	Tue May 24 16:49:18 2005
-+++ ifvc.c	Mon Nov 19 12:56:50 2007
+$OpenBSD: patch-ifvc_c,v 1.2 2016/12/23 13:44:31 rzalamena Exp $
+--- ifvc.c.orig	Thu Dec 15 19:50:23 2016
++++ ifvc.c	Mon Dec 19 21:22:11 2016
 @@ -32,7 +32,8 @@
  */
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-ifvc_c,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
  
  struct IfDesc IfDescVc[ MAX_IF ], *IfDescEp = IfDescVc;
  
-@@ -42,119 +43,91 @@ struct IfDesc IfDescVc[ MAX_IF ], *IfDescEp = IfDescVc
+@@ -42,119 +43,93 @@
  **          
  */
  void buildIfVc() {
@@ -82,6 +82,8 @@ $OpenBSD: patch-ifvc_c,v 1.1.1.1 2008/02/08 19:30:51 sthen Exp $
 -            IfDescEp->InAdr = ((struct sockaddr_in *)&IfPt->ifr_addr)->sin_addr;
 -            addr = IfDescEp->InAdr.s_addr;
 +	    if ((ifp = getIfByName(ifa->ifa_name)) == NULL) {
++                if (config_getinterface(ifa->ifa_name) == NULL)
++                    continue;
  
 -            memcpy( IfReq.ifr_name, IfDescEp->Name, sizeof( IfReq.ifr_name ) );
 +		strlcpy( IfDescEp->Name, ifa->ifa_name, sizeof( IfDescEp->Name ) );

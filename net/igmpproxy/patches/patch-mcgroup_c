@@ -1,0 +1,37 @@
+$OpenBSD: patch-mcgroup_c,v 1.1 2016/12/23 13:44:31 rzalamena Exp $
+--- mcgroup.c.orig	Thu Dec 15 19:48:18 2016
++++ mcgroup.c	Mon Dec 19 21:22:07 2016
+@@ -49,7 +49,6 @@
+     CtlReq.imr_interface.s_addr = IfDp->InAdr.s_addr;
+     
+     {
+-        char FmtBu[ 32 ];
+         log( LOG_NOTICE, 0, "%sMcGroup: %s on %s", CmdSt, 
+             inetFmt( mcastaddr, s1 ), IfDp ? IfDp->Name : "<any>" );
+     }
+@@ -58,7 +57,7 @@
+           Cmd == 'j' ? IP_ADD_MEMBERSHIP : IP_DROP_MEMBERSHIP, 
+           (void *)&CtlReq, sizeof( CtlReq ) ) ) 
+     {
+-        log( LOG_WARNING, errno, "MRT_%s_MEMBERSHIP failed", Cmd == 'j' ? "ADD" : "DROP" );
++        log( LOG_WARNING, errno, "IP_%s_MEMBERSHIP failed", Cmd == 'j' ? "ADD" : "DROP" );
+         return 1;
+     }
+     
+@@ -73,6 +72,8 @@
+ *   @return 0 if the function succeeds, 1 if parameters are wrong or the join fails
+ */
+ int joinMcGroup( int UdpSock, struct IfDesc *IfDp, uint32 mcastaddr ) {
++	if (config_getinterface(IfDp->Name) == NULL)
++		return (1);
+     return joinleave( 'j', UdpSock, IfDp, mcastaddr );
+ }
+ 
+@@ -82,5 +83,7 @@
+ *   @return 0 if the function succeeds, 1 if parameters are wrong or the join fails
+ */
+ int leaveMcGroup( int UdpSock, struct IfDesc *IfDp, uint32 mcastaddr ) {
++	if (config_getinterface(IfDp->Name) == NULL)
++		return (1);
+     return joinleave( 'l', UdpSock, IfDp, mcastaddr );
+ }

@@ -1,11 +1,12 @@
-$OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
---- rttable.c.orig	Sat Aug 20 13:46:20 2005
-+++ rttable.c	Mon Nov 19 12:56:50 2007
+$OpenBSD: patch-rttable_c,v 1.2 2016/12/23 13:44:31 rzalamena Exp $
+--- rttable.c.orig	Thu Dec 15 19:50:24 2016
++++ rttable.c	Mon Dec 19 21:22:11 2016
 @@ -38,15 +38,22 @@
  */
  
  #include "defs.h"
 +#include <sys/queue.h>
++#include <sys/tree.h>
      
  /**
  *   Routing table structure definition. Double linked list...
@@ -18,22 +19,27 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
 +};
 +
  struct RouteTable {
-     struct RouteTable   *nextroute;     // Pointer to the next group in line.
-     struct RouteTable   *prevroute;     // Pointer to the previous group in line.
+-    struct RouteTable   *nextroute;     // Pointer to the next group in line.
+-    struct RouteTable   *prevroute;     // Pointer to the previous group in line.
++    RB_ENTRY(RouteTable) entry;
      uint32              group;          // The group to route
 -    uint32              originAddr;     // The origin adress (only set on activated routes)
      uint32              vifBits;        // Bits representing recieving VIFs.
  
      // Keeps the upstream membership state...
-@@ -56,6 +63,7 @@ struct RouteTable {
+@@ -56,28 +63,58 @@
      uint32              ageVifBits;     // Bits representing aging VIFs.
      int                 ageValue;       // Downcounter for death.          
      int                 ageActivity;    // Records any acitivity that notes there are still listeners.
 +    TAILQ_HEAD(originhead, Origin) originList; // The origin adresses (non-empty on activated routes)
  };
++RB_HEAD(rtabletree, RouteTable) routing_table =
++    RB_INITIALIZER(&routing_table);
  
-                  
-@@ -65,19 +73,17 @@ static struct RouteTable   *routing_table;
+-                 
+-// Keeper for the routing table...
+-static struct RouteTable   *routing_table;
+-
  // Prototypes
  void logRouteTable(char *header);
  int  internAgeRoute(struct RouteTable*  croute);
@@ -41,8 +47,40 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
  
 -// Socket for sending join or leave requests.
 -int mcGroupSock = 0;
++int			 rtable_cmp(struct RouteTable *, struct RouteTable *);
++struct RouteTable	*rtable_add(struct RouteTable *);
++void			 rtable_remove(struct RouteTable *);
++RB_GENERATE(rtabletree, RouteTable, entry, rtable_cmp);
  
--
++int
++rtable_cmp(struct RouteTable *rt, struct RouteTable *rtn)
++{
++	if (rt->group < rtn->group)
++		return (-1);
+ 
++	return (rt->group > rtn->group);
++}
++
++struct RouteTable *
++rtable_add(struct RouteTable *rt)
++{
++	return (RB_INSERT(rtabletree, &routing_table, rt));
++}
++
++void
++rtable_remove(struct RouteTable *rt)
++{
++	struct Origin		*o;
++
++        while ((o = TAILQ_FIRST(&rt->originList))) {
++		TAILQ_REMOVE(&rt->originList, o, next);
++		free(o);
++        }
++
++	RB_REMOVE(rtabletree, &routing_table, rt);
++	free(rt);
++}
++
  /**
  *   Function for retrieving the Multicast Group socket.
  */
@@ -57,24 +95,34 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
  }
   
  /**
-@@ -91,7 +97,7 @@ void initRouteTable() {
-     routing_table = NULL;
+@@ -87,11 +124,8 @@
+     unsigned Ix;
+     struct IfDesc *Dp;
  
+-    // Clear routing table...
+-    routing_table = NULL;
+-
      // Join the all routers group on downstream vifs...
 -    for ( Ix = 0; Dp = getIfByIx( Ix ); Ix++ ) {
 +    for ( Ix = 0; (Dp = getIfByIx( Ix )); Ix++ ) {
          // If this is a downstream vif, we should join the All routers group...
          if( Dp->InAdr.s_addr && ! (Dp->Flags & IFF_LOOPBACK) && Dp->state == IF_STATE_DOWNSTREAM) {
              IF_DEBUG log(LOG_DEBUG, 0, "Joining all-routers group %s on vif %s",
-@@ -160,6 +166,7 @@ void sendJoinLeaveUpstream(struct RouteTable* route, i
+@@ -159,29 +193,24 @@
+ *   Clear all routes from routing table, and alerts Leaves upstream.
  */
  void clearAllRoutes() {
-     struct RouteTable   *croute, *remainroute;
-+    struct Origin *o;
+-    struct RouteTable   *croute, *remainroute;
++    struct RouteTable   *croute;
  
      // Loop through all routes...
-     for(croute = routing_table; croute; croute = remainroute) {
-@@ -171,7 +178,7 @@ void clearAllRoutes() {
+-    for(croute = routing_table; croute; croute = remainroute) {
+-
+-        remainroute = croute->nextroute;
+-
++    while ((croute = RB_ROOT(&routing_table)) != NULL) {
+         // Log the cleanup in debugmode...
+         IF_DEBUG log(LOG_DEBUG, 0, "Removing route entry for %s",
                       inetFmt(croute->group, s1));
  
          // Uninstall current route
@@ -83,18 +131,37 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
              log(LOG_WARNING, 0, "The removal from Kernel failed.");
          }
  
-@@ -179,6 +186,10 @@ void clearAllRoutes() {
+         // Send Leave message upstream.
          sendJoinLeaveUpstream(croute, 0);
  
-         // Clear memory, and set pointer to next route...
-+        while ((o = TAILQ_FIRST(&croute->originList))) {
-+            TAILQ_REMOVE(&croute->originList, o, next);
-+            free(o);
-+        }
-         free(croute);
+-        // Clear memory, and set pointer to next route...
+-        free(croute);
++	rtable_remove(croute);
      }
-     routing_table = NULL;
-@@ -212,7 +223,6 @@ int insertRoute(uint32 group, int ifx) {
+-    routing_table = NULL;
+ 
+     // Send a notice that the routing table is empty...
+     log(LOG_NOTICE, 0, "All routes removed. Routing table is empty.");
+@@ -192,15 +221,10 @@
+ *   Route Descriptor.
+ */
+ struct RouteTable *findRoute(uint32 group) {
+-    struct RouteTable*  croute;
++	struct RouteTable	 key;
+ 
+-    for(croute = routing_table; croute; croute = croute->nextroute) {
+-        if(croute->group == group) {
+-            return croute;
+-        }
+-    }
+-
+-    return NULL;
++	key.group = group;
++	return (RB_FIND(rtabletree, &routing_table, &key));
+ }
+ 
+ /**
+@@ -212,7 +236,6 @@
      
      struct Config *conf = getCommonConfig();
      struct RouteTable*  croute;
@@ -102,17 +169,79 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
  
      // Sanitycheck the group adress...
      if( ! IN_MULTICAST( ntohl(group) )) {
-@@ -241,7 +251,8 @@ int insertRoute(uint32 group, int ifx) {
+@@ -241,9 +264,7 @@
          newroute = (struct RouteTable*)malloc(sizeof(struct RouteTable));
          // Insert the route desc and clear all pointers...
          newroute->group      = group;
 -        newroute->originAddr = 0;
+-        newroute->nextroute  = NULL;
+-        newroute->prevroute  = NULL;
 +        TAILQ_INIT(&newroute->originList);
-+
-         newroute->nextroute  = NULL;
-         newroute->prevroute  = NULL;
  
-@@ -325,10 +336,10 @@ int insertRoute(uint32 group, int ifx) {
+         // The group is not joined initially.
+         newroute->upstrState = ROUTESTATE_NOTJOINED;
+@@ -260,54 +281,13 @@
+             BIT_SET(newroute->vifBits, ifx);
+         }
+ 
+-        // Check if there is a table already....
+-        if(routing_table == NULL) {
+-            // No location set, so insert in on the table top.
+-            routing_table = newroute;
+-            IF_DEBUG log(LOG_DEBUG, 0, "No routes in table. Insert at beginning.");
+-        } else {
++        if ((croute = rtable_add(newroute)) != NULL)
++            free(newroute);
++	else {
++            // Set the new route as the current...
++            croute = newroute;
++	}
+ 
+-            IF_DEBUG log(LOG_DEBUG, 0, "Found existing routes. Find insert location.");
+-
+-            // Check if the route could be inserted at the beginning...
+-            if(routing_table->group > group) {
+-                IF_DEBUG log(LOG_DEBUG, 0, "Inserting at beginning, before route %s",inetFmt(routing_table->group,s1));
+-
+-                // Insert at beginning...
+-                newroute->nextroute = routing_table;
+-                newroute->prevroute = NULL;
+-                routing_table = newroute;
+-
+-                // If the route has a next node, the previous pointer must be updated.
+-                if(newroute->nextroute != NULL) {
+-                    newroute->nextroute->prevroute = newroute;
+-                }
+-
+-            } else {
+-
+-                // Find the location which is closest to the route.
+-                for( croute = routing_table; croute->nextroute != NULL; croute = croute->nextroute ) {
+-                    // Find insert position.
+-                    if(croute->nextroute->group > group) {
+-                        break;
+-                    }
+-                }
+-
+-                IF_DEBUG log(LOG_DEBUG, 0, "Inserting after route %s",inetFmt(croute->group,s1));
+-                
+-                // Insert after current...
+-                newroute->nextroute = croute->nextroute;
+-                newroute->prevroute = croute;
+-                if(croute->nextroute != NULL) {
+-                    croute->nextroute->prevroute = newroute; 
+-                }
+-                croute->nextroute = newroute;
+-            }
+-        }
+-
+-        // Set the new route as the current...
+-        croute = newroute;
+-
+         // Log the cleanup in debugmode...
+         log(LOG_INFO, 0, "Inserted route table entry for %s on VIF #%d",
+             inetFmt(croute->group, s1),ifx);
+@@ -325,10 +305,10 @@
              inetFmt(croute->group, s1), ifx);
  
          // If the route is active, it must be reloaded into the Kernel..
@@ -125,7 +254,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
                  log(LOG_WARNING, 0, "The insertion into Kernel failed.");
                  return 0;
              }
-@@ -351,7 +362,7 @@ int insertRoute(uint32 group, int ifx) {
+@@ -351,7 +331,7 @@
  *   activated, it's reinstalled in the kernel. If
  *   the route is activated, no originAddr is needed.
  */
@@ -134,7 +263,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      struct RouteTable*  croute;
      int result = 0;
  
-@@ -369,21 +380,42 @@ int activateRoute(uint32 group, uint32 originAddr) {
+@@ -369,21 +349,42 @@
      }
  
      if(croute != NULL) {
@@ -190,7 +319,20 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      }
      IF_DEBUG logRouteTable("Activate Route");
  
-@@ -443,7 +475,6 @@ void setRouteLastMemberMode(uint32 group) {
+@@ -401,11 +402,7 @@
+     IF_DEBUG log(LOG_DEBUG, 0, "Aging routes in table.");
+ 
+     // Scan all routes...
+-    for( croute = routing_table; croute != NULL; croute = nroute ) {
+-        
+-        // Keep the next route (since current route may be removed)...
+-        nroute = croute->nextroute;
+-
++    RB_FOREACH_SAFE(croute, rtabletree, &routing_table, nroute) {
+         // Run the aging round algorithm.
+         if(croute->upstrState != ROUTESTATE_CHECK_LAST_MEMBER) {
+             // Only age routes if Last member probe is not active...
+@@ -443,7 +440,6 @@
  *   route is not found, or not in this state, 0 is returned.
  */
  int lastMemberGroupAge(uint32 group) {
@@ -198,15 +340,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      struct RouteTable   *croute;
  
      croute = findRoute(group);
-@@ -463,6 +494,7 @@ int lastMemberGroupAge(uint32 group) {
- */
- int removeRoute(struct RouteTable*  croute) {
-     struct Config       *conf = getCommonConfig();
-+    struct Origin *o;
-     int result = 1;
-     
-     // If croute is null, no routes was found.
-@@ -477,7 +509,7 @@ int removeRoute(struct RouteTable*  croute) {
+@@ -477,7 +473,7 @@
      //BIT_ZERO(croute->vifBits);
  
      // Uninstall current route from kernel
@@ -215,20 +349,33 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
          log(LOG_WARNING, 0, "The removal from Kernel failed.");
          result = 0;
      }
-@@ -503,7 +535,12 @@ int removeRoute(struct RouteTable*  croute) {
-             croute->nextroute->prevroute = croute->prevroute;
-         }
+@@ -489,24 +485,8 @@
+         sendJoinLeaveUpstream(croute, 0);
      }
-+
-     // Free the memory, and set the route to NULL...
-+    while ((o = TAILQ_FIRST(&croute->originList))) {
-+	TAILQ_REMOVE(&croute->originList, o, next);
-+	free(o);
-+    }
-     free(croute);
-     croute = NULL;
  
-@@ -551,6 +588,36 @@ int internAgeRoute(struct RouteTable*  croute) {
+-    // Update pointers...
+-    if(croute->prevroute == NULL) {
+-        // Topmost node...
+-        if(croute->nextroute != NULL) {
+-            croute->nextroute->prevroute = NULL;
+-        }
+-        routing_table = croute->nextroute;
++    rtable_remove(croute);
+ 
+-    } else {
+-        croute->prevroute->nextroute = croute->nextroute;
+-        if(croute->nextroute != NULL) {
+-            croute->nextroute->prevroute = croute->prevroute;
+-        }
+-    }
+-    // Free the memory, and set the route to NULL...
+-    free(croute);
+-    croute = NULL;
+-
+     IF_DEBUG logRouteTable("Remove route");
+ 
+     return result;
+@@ -551,6 +531,36 @@
          }
      }
  
@@ -265,7 +412,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      // If the aging counter has reached zero, its time for updating...
      if(croute->ageValue == 0) {
          // Check for activity in the aging process,
-@@ -560,7 +627,7 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -560,7 +570,7 @@
                           inetFmt(croute->group,s1));
              
              // Just update the routing settings in kernel...
@@ -274,7 +421,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      
              // We append the activity counter to the age, and continue...
              croute->ageValue = croute->ageActivity;
-@@ -586,34 +653,58 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -586,34 +596,58 @@
  /**
  *   Updates the Kernel routing table. If activate is 1, the route
  *   is (re-)activated. If activate is false, the route is removed.
@@ -346,7 +493,7 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
          }
      
          // Do the actual Kernel route update...
-@@ -625,9 +716,6 @@ int internUpdateKernelRoute(struct RouteTable *route, 
+@@ -625,9 +659,6 @@
              // Delete the route from Kernel...
              delMRoute( &mrDesc );
          }
@@ -356,10 +503,19 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
      }
  
      return 1;
-@@ -647,16 +735,17 @@ void logRouteTable(char *header) {
+@@ -639,29 +670,27 @@
+ */
+ void logRouteTable(char *header) {
+     IF_DEBUG  {
+-        struct RouteTable*  croute = routing_table;
++        struct RouteTable*  croute = RB_ROOT(&routing_table);
+         unsigned            rcount = 0;
+     
+         log(LOG_DEBUG, 0, "\nCurrent routing table (%s);\n-----------------------------------------------------\n", header);
+         if(croute==NULL) {
              log(LOG_DEBUG, 0, "No routes in table...");
          } else {
-             do {
+-            do {
 -                /*
 -                log(LOG_DEBUG, 0, "#%d: Src: %s, Dst: %s, Age:%d, St: %s, Prev: 0x%08x, T: 0x%08x, Next: 0x%08x",
 -                    rcount, inetFmt(croute->originAddr, s1), inetFmt(croute->group, s2),
@@ -370,6 +526,10 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
 -                    rcount, inetFmt(croute->originAddr, s1), inetFmt(croute->group, s2),
 -                    croute->ageValue,(croute->originAddr>0?"A":"I"),
 -                    croute->vifBits);
+-                  
+-                croute = croute->nextroute; 
+-        
++            RB_FOREACH(croute, rtabletree, &routing_table) {
 +		log(LOG_DEBUG, 0, "#%d: Dst: %s, Age:%d, St: %s, OutVifs: 0x%08x",
 +		    rcount, inetFmt(croute->group, s2),
 +		    croute->ageValue,(TAILQ_EMPTY(&croute->originList)?"I":"A"),
@@ -381,6 +541,9 @@ $OpenBSD: patch-rttable_c,v 1.1.1.1 2008/02/08 19:30:52 sthen Exp $
 +			    rcount, inetFmt(o->originAddr, s1), o->flood, o->pktcnt);
 +		    }
 +		}
-                   
-                 croute = croute->nextroute; 
-         
+                 rcount++;
+-            } while ( croute != NULL );
++	    }
+         }
+     
+         log(LOG_DEBUG, 0, "\n-----------------------------------------------------\n");
