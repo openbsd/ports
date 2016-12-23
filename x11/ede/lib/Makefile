@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2016/12/23 20:59:58 naddy Exp $
 
 COMMENT =		equinox desktop library
 
@@ -15,7 +15,7 @@ WANTLIB += fltk fltk_images fontconfig jpeg m png pthread stdc++ z
 
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/jam \
-			devel/doxygen,-main
+			devel/doxygen
 LIB_DEPENDS =		x11/fltk \
 			x11/dbus
 
