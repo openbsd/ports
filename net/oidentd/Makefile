@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/12/31 08:21:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/12/23 11:28:01 jca Exp $
 
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.8
@@ -15,7 +15,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=gnu
 
 pre-configure:
-	@perl -pi -e 's,/etc,${SYSCONFDIR},g' \
+	sed -i 's,/etc,${SYSCONFDIR},g' \
 		${WRKSRC}/doc/oidentd_masq.conf.5 ${WRKSRC}/doc/oidentd.8 \
 		${WRKSRC}/doc/oidentd.conf.5 ${WRKSRC}/src/oidentd_options.c \
 		${WRKSRC}/src/oidentd.h
