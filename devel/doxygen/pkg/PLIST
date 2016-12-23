@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.4 2016/12/23 15:23:11 jca Exp $
+@pkgpath devel/doxygen,-main
+@bin bin/doxyapp
+@bin bin/doxygen
+@bin bin/doxyindexer
+@bin bin/doxysearch.cgi
+@man man/man1/doxygen.1

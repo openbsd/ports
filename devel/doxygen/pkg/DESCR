@@ -24,9 +24,6 @@ ports should be installed:
    inheritance graphs, and the collaboration graphs.
  - print/ghostscript
 
-Flavors:
-        * gui -- build Qt frontend
-
 Note:
 
 When generating certain filenames (for example directory listing with
