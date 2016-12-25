@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 @bin bin/baloo_file
 @bin bin/baloo_file_cleaner
 @bin bin/baloo_file_extractor
@@ -33,15 +33,15 @@ lib/cmake/KF5Baloo/KF5BalooConfig.cmake
 lib/cmake/KF5Baloo/KF5BalooConfigVersion.cmake
 lib/cmake/KF5Baloo/KF5BalooTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Baloo/KF5BalooTargets.cmake
-lib/qt5/plugins/kded_baloosearch_kio.so
-lib/qt5/plugins/kf5/kio/baloosearch.so
-lib/qt5/plugins/kf5/kio/tags.so
-lib/qt5/plugins/kf5/kio/timeline.so
 @lib lib/libKF5Baloo.so.${LIBKF5Baloo_VERSION}
 @lib lib/libKF5BalooXapian.so.${LIBKF5BalooXapian_VERSION}
 lib/qml/org/kde/baloo/
 lib/qml/org/kde/baloo/libbalooplugin.so
 lib/qml/org/kde/baloo/qmldir
+lib/qt5/plugins/kded_baloosearch_kio.so
+lib/qt5/plugins/kf5/kio/baloosearch.so
+lib/qt5/plugins/kf5/kio/tags.so
+lib/qt5/plugins/kf5/kio/timeline.so
 @bin libexec/kauth/kde_baloo_filewatch_raiselimit
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/system-services/org.kde.baloo.filewatch.service

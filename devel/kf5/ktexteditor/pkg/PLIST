@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
@@ -61,9 +61,9 @@ lib/cmake/KF5TextEditor/KF5TextEditorConfig.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorConfigVersion.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
+@lib lib/libKF5TextEditor.so.${LIBKF5TextEditor_VERSION}
 lib/qt5/plugins/kf5/parts/
 lib/qt5/plugins/kf5/parts/katepart.so
-@lib lib/libKF5TextEditor.so.${LIBKF5TextEditor_VERSION}
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 include/KF5/
 include/KF5/Attica/
 include/KF5/Attica/Attica/
@@ -43,8 +43,8 @@ include/KF5/Attica/attica/
 include/KF5/Attica/attica/accountbalance.h
 include/KF5/Attica/attica/achievement.h
 include/KF5/Attica/attica/activity.h
+include/KF5/Attica/attica/attica_export.h
 include/KF5/Attica/attica/atticabasejob.h
-include/KF5/Attica/attica/atticaclient_export.h
 include/KF5/Attica/attica/atticautils.h
 include/KF5/Attica/attica/buildservice.h
 include/KF5/Attica/attica/buildservicejob.h

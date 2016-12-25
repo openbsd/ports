@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -48,13 +48,13 @@ lib/cmake/KF5KHtml/KF5KHtmlConfig.cmake
 lib/cmake/KF5KHtml/KF5KHtmlConfigVersion.cmake
 lib/cmake/KF5KHtml/KF5KHtmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KHtml/KF5KHtmlTargets.cmake
+@lib lib/libKF5KHtml.so.${LIBKF5KHtml_VERSION}
 lib/qt5/plugins/kf5/parts/
 lib/qt5/plugins/kf5/parts/khtmladaptorpart.so
 lib/qt5/plugins/kf5/parts/khtmlimagepart.so
 lib/qt5/plugins/kf5/parts/khtmlpart.so
 lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
 lib/qt5/plugins/kf5/parts/kmultipart.so
-@lib lib/libKF5KHtml.so.${LIBKF5KHtml_VERSION}
 share/examples/xdg/khtmlrc
 share/kf5/khtml/
 share/kf5/khtml/css/
@@ -72,10 +72,6 @@ share/kservices5/khtmladaptorpart.desktop
 share/kservices5/khtmlimage.desktop
 share/kservices5/kjavaappletviewer.desktop
 share/kservices5/kmultipart.desktop
-share/kxmlgui5/
-share/kxmlgui5/khtml/
-share/kxmlgui5/khtml/khtml.rc
-share/kxmlgui5/khtml/khtml_browser.rc
 share/locale/af/LC_MESSAGES/khtml5.mo
 share/locale/ar/LC_MESSAGES/khtml5.mo
 share/locale/as/LC_MESSAGES/khtml5.mo

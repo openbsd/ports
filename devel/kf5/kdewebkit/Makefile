@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/19 20:03:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =	integration of the HTML rendering engine WebKit into KDE
 DISTNAME =	kdewebkit-${VERSION}
 
-SHARED_LIBS =	KF5WebKit		0.0
+SHARED_LIBS =	KF5WebKit		1.0
 
 WANTLIB =  KF5Auth KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5JobWidgets
@@ -18,8 +18,11 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kio \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/kwallet
+		devel/kf5/kwallet \
+		x11/qt5/qtwebkit
 
 BUILD_DEPENDS =	devel/gettext-tools
+
+TEST_NO =	Yes
 
 .include <bsd.port.mk>

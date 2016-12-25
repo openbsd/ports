@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/31 06:25:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	0.0
+SHARED_LIBS =		KF5KDELibs4Support	1.0
 
 WANTLIB =  ICE KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
@@ -45,14 +45,16 @@ LIB_DEPENDS =		devel/kf5/kcompletion \
 			devel/kf5/kunitconversion \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
-			devel/kf5/kxmlgui
+			devel/kf5/kxmlgui \
+			x11/qt5/qtsvg \
+			x11/qt5/qttools \
+			x11/qt5/qtx11extras
 
 IS_PORTING_AID =	Yes
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=Yes
 
 # TODO: The following tests FAILED:
-#         18 - ktabwidget_unittest (Failed)
 #         24 - ksavefiletest (Failed)
 #         27 - kmimetypetest (Failed)
 #         29 - kstandarddirstest (Failed)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
 
-SHARED_LIBS =		KF5XmlGui		0.0
+SHARED_LIBS =		KF5XmlGui		1.0
 
 WANTLIB =  KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel KF5I18n KF5IconThemes
@@ -29,5 +29,8 @@ LIB_DEPENDS =		devel/kf5/attica \
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
+
+# TODO: The following tests FAILED:
+# 5 - kxmlgui_unittest (Failed)
 
 .include <bsd.port.mk>

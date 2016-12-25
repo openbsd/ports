@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/05/26 23:59:01 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 include/KF5/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
@@ -11,6 +11,10 @@ include/KF5/KFileMetaData/KFileMetaData/SimpleExtractionResult
 include/KF5/KFileMetaData/KFileMetaData/TypeInfo
 include/KF5/KFileMetaData/KFileMetaData/Types
 include/KF5/KFileMetaData/KFileMetaData/UserMetaData
+include/KF5/KFileMetaData/KFileMetaData/WriteData
+include/KF5/KFileMetaData/KFileMetaData/Writer
+include/KF5/KFileMetaData/KFileMetaData/WriterCollection
+include/KF5/KFileMetaData/KFileMetaData/WriterPlugin
 include/KF5/KFileMetaData/kfilemetadata/
 include/KF5/KFileMetaData/kfilemetadata/extractionresult.h
 include/KF5/KFileMetaData/kfilemetadata/extractor.h
@@ -23,11 +27,16 @@ include/KF5/KFileMetaData/kfilemetadata/simpleextractionresult.h
 include/KF5/KFileMetaData/kfilemetadata/typeinfo.h
 include/KF5/KFileMetaData/kfilemetadata/types.h
 include/KF5/KFileMetaData/kfilemetadata/usermetadata.h
+include/KF5/KFileMetaData/kfilemetadata/writedata.h
+include/KF5/KFileMetaData/kfilemetadata/writer.h
+include/KF5/KFileMetaData/kfilemetadata/writercollection.h
+include/KF5/KFileMetaData/kfilemetadata/writerplugin.h
 lib/cmake/KF5FileMetaData/
 lib/cmake/KF5FileMetaData/KF5FileMetaDataConfig.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataConfigVersion.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets.cmake
+@lib lib/libKF5FileMetaData.so.${LIBKF5FileMetaData_VERSION}
 lib/qt5/plugins/kf5/kfilemetadata/
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_epubextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
@@ -39,4 +48,6 @@ lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
-@lib lib/libKF5FileMetaData.so.${LIBKF5FileMetaData_VERSION}
+lib/qt5/plugins/kf5/kfilemetadata/writers/
+lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
+share/locale/et/LC_MESSAGES/kfilemetadata.mo

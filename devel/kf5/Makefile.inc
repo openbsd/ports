@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/12/25 14:54:47 zhuk Exp $
 
 CATEGORIES +=		devel devel/kf5
 
@@ -20,6 +20,6 @@ MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/portingAids/}
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/}
 .endif
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0048=OLD
+#CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0048=OLD
 
 DIST_SUBDIR =		kde

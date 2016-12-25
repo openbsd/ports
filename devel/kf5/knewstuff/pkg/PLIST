@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -10,6 +10,20 @@ include/KF5/KNewStuff3/KNS3/KMoreTools
 include/KF5/KNewStuff3/KNS3/KMoreToolsMenuFactory
 include/KF5/KNewStuff3/KNS3/KMoreToolsPresets
 include/KF5/KNewStuff3/KNS3/UploadDialog
+include/KF5/KNewStuff3/KNSCore/
+include/KF5/KNewStuff3/KNSCore/Author
+include/KF5/KNewStuff3/KNSCore/Cache
+include/KF5/KNewStuff3/KNSCore/DownloadManager
+include/KF5/KNewStuff3/KNSCore/Engine
+include/KF5/KNewStuff3/KNSCore/EntryInternal
+include/KF5/KNewStuff3/KNSCore/Installation
+include/KF5/KNewStuff3/KNSCore/ItemsModel
+include/KF5/KNewStuff3/KNSCore/Provider
+include/KF5/KNewStuff3/KNSCore/Question
+include/KF5/KNewStuff3/KNSCore/QuestionListener
+include/KF5/KNewStuff3/KNSCore/QuestionManager
+include/KF5/KNewStuff3/KNSCore/Security
+include/KF5/KNewStuff3/KNSCore/XmlLoader
 include/KF5/KNewStuff3/kns3/
 include/KF5/KNewStuff3/kns3/button.h
 include/KF5/KNewStuff3/kns3/downloaddialog.h
@@ -22,13 +36,46 @@ include/KF5/KNewStuff3/kns3/kmoretoolspresets.h
 include/KF5/KNewStuff3/kns3/knewstuff_export.h
 include/KF5/KNewStuff3/kns3/knewstuffaction.h
 include/KF5/KNewStuff3/kns3/uploaddialog.h
+include/KF5/KNewStuff3/knscore/
+include/KF5/KNewStuff3/knscore/author.h
+include/KF5/KNewStuff3/knscore/cache.h
+include/KF5/KNewStuff3/knscore/downloadmanager.h
+include/KF5/KNewStuff3/knscore/engine.h
+include/KF5/KNewStuff3/knscore/entryinternal.h
+include/KF5/KNewStuff3/knscore/installation.h
+include/KF5/KNewStuff3/knscore/itemsmodel.h
+include/KF5/KNewStuff3/knscore/provider.h
+include/KF5/KNewStuff3/knscore/question.h
+include/KF5/KNewStuff3/knscore/questionlistener.h
+include/KF5/KNewStuff3/knscore/questionmanager.h
+include/KF5/KNewStuff3/knscore/security.h
+include/KF5/KNewStuff3/knscore/xmlloader.h
 include/KF5/knewstuff_version.h
+include/KF5/knewstuffcore_version.h
+include/KF5/knewstuffquick_version.h
 lib/cmake/KF5NewStuff/
 lib/cmake/KF5NewStuff/KF5NewStuffConfig.cmake
 lib/cmake/KF5NewStuff/KF5NewStuffConfigVersion.cmake
 lib/cmake/KF5NewStuff/KF5NewStuffTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5NewStuff/KF5NewStuffTargets.cmake
+lib/cmake/KF5NewStuffCore/
+lib/cmake/KF5NewStuffCore/KF5NewStuffCoreConfig.cmake
+lib/cmake/KF5NewStuffCore/KF5NewStuffCoreConfigVersion.cmake
+lib/cmake/KF5NewStuffCore/KF5NewStuffCoreTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5NewStuffCore/KF5NewStuffCoreTargets.cmake
+lib/cmake/KF5NewStuffQuick/
+lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfig.cmake
+lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
+lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickTargets.cmake
 @lib lib/libKF5NewStuff.so.${LIBKF5NewStuff_VERSION}
+@lib lib/libKF5NewStuffCore.so.${LIBKF5NewStuffCore_VERSION}
+lib/qml/org/kde/newstuff/
+lib/qml/org/kde/newstuff/libnewstuffqmlplugin.so
+lib/qml/org/kde/newstuff/qml/
+lib/qml/org/kde/newstuff/qml/NewStuffItem.qml
+lib/qml/org/kde/newstuff/qml/NewStuffList.qml
+lib/qml/org/kde/newstuff/qmldir
 share/kf5/kmoretools/
 share/kf5/kmoretools/presets-kmoretools/
 share/kf5/kmoretools/presets-kmoretools/_INFO

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
@@ -13,13 +13,14 @@ SHARED_LIBS +=		KF5SonnetUi		0.0
 
 MULTI_PACKAGES =	-main -aspell -hunspell
 
-WANTLIB-main =		${WANTLIB} Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB-main =		${WANTLIB} Qt5Core Qt5Gui Qt5Widgets m c
 WANTLIB-aspell =	${WANTLIB} KF5SonnetCore Qt5Core aspell m
 WANTLIB-hunspell =	${WANTLIB} KF5SonnetCore Qt5Core hunspell-1.3 m
 
 LIB_DEPENDS-aspell =	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
 			textproc/aspell/core
+
 LIB_DEPENDS-hunspell =	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
 			textproc/hunspell
@@ -29,6 +30,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_HSPELL=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_VOIKKO=Yes
 
 # please CMake
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0026=OLD
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0026=OLD \
+			-DCMAKE_POLICY_DEFAULT_CMP0048=OLD
 
 .include <bsd.port.mk>

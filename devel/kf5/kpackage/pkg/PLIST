@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 @bin bin/kpackagetool5
 include/KF5/KPackage/
 include/KF5/KPackage/KPackage/
@@ -33,10 +33,12 @@ share/locale/de/LC_MESSAGES/libkpackage5.mo
 share/locale/el/LC_MESSAGES/libkpackage5.mo
 share/locale/en_GB/LC_MESSAGES/libkpackage5.mo
 share/locale/es/LC_MESSAGES/libkpackage5.mo
+share/locale/et/LC_MESSAGES/libkpackage5.mo
 share/locale/fi/LC_MESSAGES/libkpackage5.mo
 share/locale/fr/LC_MESSAGES/libkpackage5.mo
 share/locale/gd/LC_MESSAGES/libkpackage5.mo
 share/locale/gl/LC_MESSAGES/libkpackage5.mo
+share/locale/he/LC_MESSAGES/libkpackage5.mo
 share/locale/hu/LC_MESSAGES/libkpackage5.mo
 share/locale/ia/LC_MESSAGES/libkpackage5.mo
 share/locale/it/LC_MESSAGES/libkpackage5.mo

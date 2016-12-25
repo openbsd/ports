@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
 
-SHARED_LIBS =		KF5TextEditor		0.0
+SHARED_LIBS =		KF5TextEditor		1.0
 
 WANTLIB =  KF5Archive KF5Auth KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
@@ -23,7 +23,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kio \
 			devel/kf5/kparts \
 			devel/kf5/sonnet \
-			devel/libgit2/libgit2
+			devel/libgit2/libgit2 \
+			x11/qt5/qtscript
 
 # TODO: The following tests FAILED:
 #         48 - bug205447 (Failed)

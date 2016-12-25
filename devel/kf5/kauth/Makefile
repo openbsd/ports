@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
 
-SHARED_LIBS =	KF5Auth		0.0
+SHARED_LIBS =	KF5Auth		1.0
 
 WANTLIB =	KF5CoreAddons Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB +=	c m polkit-qt5-core-1

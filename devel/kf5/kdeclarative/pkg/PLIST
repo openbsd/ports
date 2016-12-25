@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -12,6 +12,7 @@ include/KF5/KDeclarative/KQuickAddons/
 include/KF5/KDeclarative/KQuickAddons/ConfigModule
 include/KF5/KDeclarative/KQuickAddons/ImageTexturesCache
 include/KF5/KDeclarative/KQuickAddons/ManagedTextureNode
+include/KF5/KDeclarative/KQuickAddons/QtQuickSettings
 include/KF5/KDeclarative/KQuickAddons/QuickViewSharedEngine
 include/KF5/KDeclarative/QuickAddons/
 include/KF5/KDeclarative/QuickAddons/ImageTexturesCache
@@ -29,6 +30,7 @@ include/KF5/KDeclarative/kquickaddons/
 include/KF5/KDeclarative/kquickaddons/configmodule.h
 include/KF5/KDeclarative/kquickaddons/imagetexturescache.h
 include/KF5/KDeclarative/kquickaddons/managedtexturenode.h
+include/KF5/KDeclarative/kquickaddons/qtquicksettings.h
 include/KF5/KDeclarative/kquickaddons/quickaddons_export.h
 include/KF5/KDeclarative/kquickaddons/quickviewsharedengine.h
 include/KF5/KDeclarative/quickaddons/

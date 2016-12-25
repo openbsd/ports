@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
 
-SHARED_LIBS =	kdeinit5_klauncher	0.0
+SHARED_LIBS =	kdeinit5_klauncher	1.0
 
 WANTLIB =  KF5Completion KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
@@ -24,5 +24,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kwindowsystem
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libcap=Yes
+
+TEST_NO =	Yes
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
 
-SHARED_LIBS =		KF5KHtml	0.0
+SHARED_LIBS =		KF5KHtml	1.0
 
 WANTLIB =  ICE KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -36,7 +36,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/sonnet \
 			graphics/giflib \
 			graphics/jpeg \
-			graphics/png
+			graphics/png \
+			x11/qt5/qtx11extras
 
 IS_PORTING_AID =	Yes
 

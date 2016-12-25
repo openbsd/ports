@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 include/KF5/KDESu/
 include/KF5/KDESu/KDESu/
 include/KF5/KDESu/KDESu/Client
@@ -41,6 +41,7 @@ share/locale/de/LC_MESSAGES/kdesud5.mo
 share/locale/el/LC_MESSAGES/kdesud5.mo
 share/locale/en_GB/LC_MESSAGES/kdesud5.mo
 share/locale/es/LC_MESSAGES/kdesud5.mo
+share/locale/et/LC_MESSAGES/kdesud5.mo
 share/locale/fi/LC_MESSAGES/kdesud5.mo
 share/locale/fr/LC_MESSAGES/kdesud5.mo
 share/locale/gd/LC_MESSAGES/kdesud5.mo

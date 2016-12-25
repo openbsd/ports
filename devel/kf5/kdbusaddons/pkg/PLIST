@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 @bin bin/kquitapp5
 include/KF5/
 include/KF5/KDBusAddons/
@@ -34,6 +34,7 @@ share/locale/de/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/el/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/en_GB/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/es/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/et/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/fi/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/fr/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/gd/LC_MESSAGES/kdbusaddons5_qt.qm

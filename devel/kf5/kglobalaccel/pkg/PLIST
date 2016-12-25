@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 @bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel
@@ -16,10 +16,10 @@ lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfigVersion.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets.cmake
-lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
-lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 @lib lib/libKF5GlobalAccel.so.${LIBKF5GlobalAccel_VERSION}
 @lib lib/libKF5GlobalAccelPrivate.so.${LIBKF5GlobalAccelPrivate_VERSION}
+lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
+lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
 share/dbus-1/services/org.kde.kglobalaccel.service

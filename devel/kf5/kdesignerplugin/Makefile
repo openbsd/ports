@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =		integrating KDE 5 widgets with Qt Designer
 DISTNAME =		kdesignerplugin-${VERSION}
@@ -28,7 +28,8 @@ LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		devel/kf5/sonnet
+		devel/kf5/sonnet \
+		x11/qt5/qtwebkit
 
 TEST_IS_INTERACTIVE =	X11
 
