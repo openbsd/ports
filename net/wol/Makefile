@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/25 16:43:11 jca Exp $
 
 COMMENT=		Wake On Lan client
 
 DISTNAME=		wol-0.7.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://ahh.sourceforge.net/wol/
 
 MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c 
+
+WANTLIB += c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ahh/}
 
-MODULES=		devel/gettext
+LIB_DEPENDS=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 
