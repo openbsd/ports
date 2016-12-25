@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/20 11:08:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/12/25 15:23:21 zhuk Exp $
 
 COMMENT-main=	convert MS Word, Excel, Powerpoint to ASCII or TeX
 COMMENT-tk=	viewer for MS Word files
@@ -8,7 +8,7 @@ DISTNAME=	catdoc-$V
 PKGNAME-main=	catdoc-$V
 PKGNAME-tk=	wordview-$V
 PKG_ARCH-tk=	*
-REVISION=	4
+REVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/
 
