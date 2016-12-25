@@ -1,0 +1,20 @@
+$OpenBSD: patch-kdesu_CMakeLists_txt,v 1.1 2016/12/25 16:38:08 zhuk Exp $
+Add doas(1) support.
+--- kdesu/CMakeLists.txt.orig	Fri May  6 23:01:31 2016
++++ kdesu/CMakeLists.txt	Fri May  6 23:02:38 2016
+@@ -29,10 +29,13 @@ kde4_add_library(kdesu ${LIBRARY_TYPE} ${kdesu_LIB_SRC
+ target_link_libraries(kdesu ${KDE4_KPTY_LIBS} )
+ target_link_libraries(kdesu LINK_INTERFACE_LIBRARIES ${QT_QTCORE_LIBRARY} )
+ 
+-if(KDESU_USE_SUDO_DEFAULT)
++if(KDESU_USE_DOAS_DEFAULT)
+    set_source_files_properties(su.cpp PROPERTIES 
++                               COMPILE_FLAGS -DKDESU_USE_DOAS_DEFAULT)
++elseif(KDESU_USE_SUDO_DEFAULT)
++   set_source_files_properties(su.cpp PROPERTIES 
+                                COMPILE_FLAGS -DKDESU_USE_SUDO_DEFAULT)
+-endif(KDESU_USE_SUDO_DEFAULT)
++endif()
+ 
+ set_target_properties(kdesu PROPERTIES
+    VERSION ${KDE_NON_GENERIC_LIB_VERSION}
