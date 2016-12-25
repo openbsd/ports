@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_exim_install,v 1.11 2013/08/24 09:22:26 sthen Exp $
---- scripts/exim_install.orig	Thu Oct 25 04:37:38 2012
-+++ scripts/exim_install	Thu Aug 22 18:09:11 2013
+$OpenBSD: patch-scripts_exim_install,v 1.12 2016/12/25 21:13:35 sthen Exp $
+--- scripts/exim_install.orig	Sun Dec 18 14:02:28 2016
++++ scripts/exim_install	Sun Dec 25 14:42:25 2016
 @@ -216,7 +216,7 @@ while [ $# -gt 0 ]; do
  
    # The exim binary is handled specially
  
 -  if [ $name = exim${EXE} ]; then
 +  if false; then
-     version=exim-`./exim -bV -C /dev/null | \
+     exim="./exim -bV -C /dev/null"
+     version=exim-`$exim 2>/dev/null | \
        awk '/Exim version/ { OFS=""; print $3,"-",substr($4,2,length($4)-1) }'`${EXE}
- 
