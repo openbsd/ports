@@ -1,4 +1,4 @@
-# $OpenBSD: qmake.port.mk,v 1.4 2016/04/28 08:27:25 sthen Exp $
+# $OpenBSD: qmake.port.mk,v 1.5 2016/12/25 13:37:27 zhuk Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
@@ -15,16 +15,30 @@ MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
 .endfor
 
 MODQMAKE_PROJECTS ?=	.
-MODQMAKE_ARGS +=	-recursive \
-			PREFIX=${PREFIX} \
+MODQMAKE_ARGS +=	PREFIX=${PREFIX} \
 			QMAKE_CFLAGS="${CFLAGS}" \
 			QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
 			QMAKE_CXX="${CXX}" \
 			QMAKE_CXXFLAGS="${CXXFLAGS}" \
-			QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+			QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
+			QMAKE_LFLAGS="${LDFLAGS}" \
+			QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
+
+.if !${MODULES:Mx11/qt3} || ${MODQT_QMAKE} != ${MODQT3_QMAKE}
+MODQMAKE_ARGS +=	-recursive
+.endif
 
 MODQMAKE_INSTALL_ROOT ?=	${WRKINST}
 _MODQMAKE_FAKE_FLAGS =		INSTALL_ROOT=${MODQMAKE_INSTALL_ROOT}
+
+FLAVOR ?=
+.if ${FLAVOR:Mdebug}
+MODQMAKE_ARGS +=	CONFIG+=debug
+.endif
+
+.for _l _v in ${SHARED_LIBS}
+MODQMAKE_ENV +=	LIB${_l}_VERSION=${_v}
+.endfor
 
 MODQMAKE_configure =
 MODQMAKE_build =
@@ -48,7 +62,8 @@ MODQMAKE_configure += \
 	fi; \
 	${_MODQMAKE_CD_${_qp:/=_}}; \
 	echo >&2 ${MODQT_QMAKE} ${MODQMAKE_ARGS} ${WRKSRC}/$$pro; \
-	${MODQT_QMAKE} ${MODQMAKE_ARGS} ${WRKSRC}/$$pro;
+	${SETENV} ${CONFIGURE_ENV} \
+		${MODQT_QMAKE} ${MODQMAKE_ARGS} ${WRKSRC}/$$pro;
 MODQMAKE_build += \
 	${_MODQMAKE_CD_${_qp:/=_}}; \
 	${SETENV} ${MAKE_ENV} \
@@ -62,6 +77,9 @@ MODQMAKE_install += \
 .endfor
 
 .if ${CONFIGURE_STYLE:Mqmake}
+CONFIGURE_ENV +=	${MODQMAKE_ENV}
+MAKE_ENV +=		${MODQMAKE_ENV}
+
 SEPARATE_BUILD ?=	Yes
 . if ${SEPARATE_BUILD:L} != "no"
 .  if ${SEPARATE_BUILD:L} != "yes"
