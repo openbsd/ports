@@ -1,0 +1,121 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 13:34:44 zhuk Exp $
+
+COMMENT-main =		C++ general-purpose toolkit, meta-package
+COMMENT-examples =	examples for Qt5, meta-package
+COMMENT-html =		offline HTML documentation for Qt5, meta-package
+COMMENT-qch =		offline QCH documentation for Qt5, meta-package
+
+PKGNAME =		qt5-${MODQT5_VERSION}
+PKGNAME-main =		${PKGNAME}
+PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
+PKGNAME-html =		qt5-html-${MODQT5_VERSION}
+PKGNAME-qch =		qt5-qch-${MODQT5_VERSION}
+
+MULTI_PACKAGES =	-main -examples -html -qch
+
+MODULES =		x11/qt5
+MODQT5_DEPS =		No
+MODQT5_USE_GCC4_MODULE =No
+
+WANTLIB-main =
+LIB_DEPENDS-main =
+RUN_DEPENDS-main =	\
+			x11/qt5/qt3d,-main=${MODQT5_VERSION} \
+			x11/qt5/qtbase,-main=${MODQT5_VERSION} \
+			x11/qt5/qtcanvas3d,-main=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,-main=${MODQT5_VERSION} \
+			x11/qt5/qtenginio,-main=${MODQT5_VERSION:C/^[0-9]+/1/} \
+			x11/qt5/qtgraphicaleffects,-main=${MODQT5_VERSION} \
+			x11/qt5/qtimageformats,-main=${MODQT5_VERSION} \
+			x11/qt5/qtlocation,-main=${MODQT5_VERSION} \
+			x11/qt5/qtmultimedia,-main=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols,-main=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols2,-main=${MODQT5_VERSION} \
+			x11/qt5/qtscript,-main=${MODQT5_VERSION} \
+			x11/qt5/qtsensors,-main=${MODQT5_VERSION} \
+			x11/qt5/qtserialbus,-main=${MODQT5_VERSION} \
+			x11/qt5/qtserialport,-main=${MODQT5_VERSION} \
+			x11/qt5/qtsvg,-main=${MODQT5_VERSION} \
+			x11/qt5/qttools,-main=${MODQT5_VERSION} \
+			x11/qt5/qttranslations=${MODQT5_VERSION} \
+			x11/qt5/qtwebchannel,-main=${MODQT5_VERSION} \
+			x11/qt5/qtwebkit,-main=${MODQT5_VERSION} \
+			x11/qt5/qtwebsockets,-main=${MODQT5_VERSION} \
+			x11/qt5/qtx11extras,-main=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-main=${MODQT5_VERSION} \
+
+WANTLIB-examples =
+LIB_DEPENDS-examples =
+RUN_DEPENDS-examples =	\
+			x11/qt5/qt3d,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtbase,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtcanvas3d,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtenginio,-examples=${MODQT5_VERSION:C/^[0-9]+/1/} \
+			x11/qt5/qtlocation,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtmultimedia,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols2,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtscript,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtsensors,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtserialbus,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtserialport,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtsvg,-examples=${MODQT5_VERSION} \
+			x11/qt5/qttools,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtwebchannel,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtwebsockets,-examples=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-examples=${MODQT5_VERSION} \
+
+WANTLIB-html =
+LIB_DEPENDS-html =
+RUN_DEPENDS-html =	\
+			x11/qt5/qt3d,-html=${MODQT5_VERSION} \
+			x11/qt5/qtactiveqt,-html=${MODQT5_VERSION} \
+			x11/qt5/qtcanvas3d,-html=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,-html=${MODQT5_VERSION} \
+			x11/qt5/qtdoc,-html=${MODQT5_VERSION} \
+			x11/qt5/qtenginio,-html=${MODQT5_VERSION:C/^[0-9]+/1/} \
+			x11/qt5/qtgraphicaleffects,-html=${MODQT5_VERSION} \
+			x11/qt5/qtimageformats,-html=${MODQT5_VERSION} \
+			x11/qt5/qtlocation,-html=${MODQT5_VERSION} \
+			x11/qt5/qtmultimedia,-html=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols,-html=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols2,-html=${MODQT5_VERSION} \
+			x11/qt5/qtscript,-html=${MODQT5_VERSION} \
+			x11/qt5/qtsensors,-html=${MODQT5_VERSION} \
+			x11/qt5/qtserialbus,-html=${MODQT5_VERSION} \
+			x11/qt5/qtserialport,-html=${MODQT5_VERSION} \
+			x11/qt5/qtsvg,-html=${MODQT5_VERSION} \
+			x11/qt5/qtwebchannel,-html=${MODQT5_VERSION} \
+			x11/qt5/qtwebkit,-html=${MODQT5_VERSION} \
+			x11/qt5/qtwebsockets,-html=${MODQT5_VERSION} \
+			x11/qt5/qtx11extras,-html=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-html=${MODQT5_VERSION} \
+
+WANTLIB-qch =
+LIB_DEPENDS-qch =
+RUN_DEPENDS-qch =	\
+			x11/qt5/qt3d,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtactiveqt,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtcanvas3d,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtdeclarative,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtdoc,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtenginio,-qch=${MODQT5_VERSION:C/^[0-9]+/1/} \
+			x11/qt5/qtgraphicaleffects,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtimageformats,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtlocation,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtmultimedia,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtquickcontrols2,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtscript,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtsensors,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtserialbus,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtserialport,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtsvg,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtwebchannel,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtwebkit,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtwebsockets,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtx11extras,-qch=${MODQT5_VERSION} \
+			x11/qt5/qtxmlpatterns,-qch=${MODQT5_VERSION} \
+
+.include <bsd.port.mk>

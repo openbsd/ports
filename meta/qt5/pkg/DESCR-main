@@ -1,0 +1,33 @@
+Qt is a cross-platform toolkit for developing applications,
+mainly GUI-based.
+
+There are some user documentation files in ${QT_DOC}, but
+the main documentation is in the qt5-html package.
+
+There is also a qt5-examples package, that contains tutorial, demos
+simple example programs (source + binaries).
+
+There's a debug version of the libraries: qt5-debug.
+
+There are database plugins: qt5-mysql, qt5-postgresql, qt5-sqlite2 and
+qt5-tds.
+
+People who want to use Qt5 to compile applications outside the ports tree
+should note that Qt5's installation conforms to OpenBSD habits, not
+TrollTech's recommendations. Accordingly:
+- libs are separated from includes.
+- moc is installed as ${PREFIX}/bin/moc-qt5, in order not to conflict
+  with other Qt versions.
+- uic is installed as ${PREFIX}/bin/uic-qt5
+
+Generally, it's just a question of invoking:
+
+  env MOC=moc-qt5 UIC=uic-qt5 configure \
+	--with-qt-includes=${PREFIX}/include/X11/qt5 \
+	--with-qt-libraries=${PREFIX}/lib/qt5
+
+... or, to force MOC/UIC in your make/gmake invocation:
+
+  make MOC=moc-qt5 UIC=uic-qt5
+
+will override the Makefile contents.
