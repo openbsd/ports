@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/25 17:08:51 jca Exp $
 
 COMMENT=	text-based ICQ implementation
 
@@ -9,6 +9,7 @@ REVISION =	0
 
 HOMEPAGE=	http://gonzo.kiev.ua/projects/vicq/
 
+# GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
 RUN_DEPENDS=	devel/p5-Term-ReadLine-Gnu
