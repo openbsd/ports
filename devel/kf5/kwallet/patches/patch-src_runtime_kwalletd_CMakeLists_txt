@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_runtime_kwalletd_CMakeLists_txt,v 1.1 2016/12/25 14:55:47 zhuk Exp $
+--- src/runtime/kwalletd/CMakeLists.txt.orig	Sat Dec  3 19:52:21 2016
++++ src/runtime/kwalletd/CMakeLists.txt	Sat Dec  3 19:52:33 2016
+@@ -14,7 +14,7 @@ find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIR
+ 
+ ########### find needed packages ######
+ find_package(Gpgmepp) # provided by GpgME
+-set(GPGMEPP_LIBS Gpgmepp)
++set(GPGMEPP_LIBS KF5Gpgmepp)
+ 
+ if (NOT Gpgmepp_FOUND)
+     find_package(Gpgme)  # Called by KF5Gpgmepp, but since we call some gpgme

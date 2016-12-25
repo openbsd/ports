@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_kwalletd_CMakeLists_txt,v 1.1 2016/12/25 14:55:47 zhuk Exp $
+--- tests/kwalletd/CMakeLists.txt.orig	Sat Dec  3 19:47:01 2016
++++ tests/kwalletd/CMakeLists.txt	Sat Dec  3 19:47:14 2016
+@@ -12,7 +12,7 @@ find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
+ find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
+ find_package(Gpgmepp) # provided by GpgME
+-set(GPGMEPP_LIBS Gpgmepp)
++set(GPGMEPP_LIBS KF5Gpgmepp)
+ 
+ if (NOT Gpgmepp_FOUND)
+     find_package(KF5Gpgmepp) # provided by KF5Gpgmepp
