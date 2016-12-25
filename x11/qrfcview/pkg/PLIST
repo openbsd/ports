@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/30 22:25:41 alek Exp $
-bin/qRFCView
+@comment $OpenBSD: PLIST,v 1.2 2016/12/25 16:23:58 zhuk Exp $
+@bin bin/qRFCView

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/26 20:37:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/25 16:23:58 zhuk Exp $
 
 COMMENT=	viewer for IETF RFCs
 
-DISTNAME=	qrfcview-0.62
-REVISION=	10
+DISTNAME=	qrfcview-1.0.0
 MAINTAINER=	Vadim Zhukov <zhuk@openbsd.org>
 CATEGORIES=	x11
 
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	x11/qt4>=4.8.7p6
 
 GH_ACCOUNT=	saghul
 GH_PROJECT=	qrfcview-osx
-GH_COMMIT=	dff3ee489a6aca0c20800219f7c207884f918023
+GH_TAGNAME=	1.0.0
 
 MODULES=	devel/qmake x11/qt4
 
