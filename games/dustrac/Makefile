@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/24 12:52:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =		traditional top-down car racing game
 
 V =			1.11.0
 DISTNAME =		dustrac-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -19,14 +19,12 @@ WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5Xml
 MASTER_SITES =		https://github.com/juzzlin/DustRacing2D/releases/download/$V/
 
 MODULES =		devel/cmake \
-			gcc4 \
 			x11/qt5
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		audio/openal
+LIB_DEPENDS =		audio/libvorbis \
+			audio/openal
 
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \

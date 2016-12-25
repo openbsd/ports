@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 23:12:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
 V=		0.112.0
 DISTNAME=	polkit-qt-1-${V}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  polkit-qt-agent-1         2.0 # 0.99
 SHARED_LIBS +=  polkit-qt-core-1          2.0 # 0.99

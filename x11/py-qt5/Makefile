@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/30 16:02:17 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT-main=	python Qt5 bindings
 COMMENT-docs=	py-qt5 documentation
@@ -8,6 +8,7 @@ DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
 PKGNAME-main=	py-qt5-${V}
 PKGNAME-docs=	py-qt5-docs-${V}
+REVISION-main=	0
 
 CATEGORIES=	x11 devel
 
@@ -45,8 +46,20 @@ FULLPKGPATH-docs=	x11/py-qt5,-docs${MODPY_FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.18.1 \
 		x11/dbus-python${MODPY_FLAVOR}
-LIB_DEPENDS=	${MODQT5_LIB_DEPENDS}>=5.5 \
-		${MODPY_LIB_DEPENDS}
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		x11/qt5/qtconnectivity \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtenginio \
+		x11/qt5/qtlocation \
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtserialport \
+		x11/qt5/qtsensors \
+		x11/qt5/qttools \
+		x11/qt5/qtwebchannel \
+		x11/qt5/qtwebkit \
+		x11/qt5/qtwebsockets \
+		x11/qt5/qtx11extras \
+		x11/qt5/qtxmlpatterns
 
 NO_TEST=	Yes
 

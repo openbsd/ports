@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/26 20:37:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 DISTNAME =	cool-retro-term-1.0.0
 CATEGORIES =	x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 
@@ -19,6 +19,8 @@ MODULES =	devel/qmake x11/qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+LIB_DEPENDS =	x11/qt5/qtdeclarative
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC"
 

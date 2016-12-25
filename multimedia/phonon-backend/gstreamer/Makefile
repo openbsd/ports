@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/05/27 03:41:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT-main =	GStreamer-based Phonon backend
 COMMENT-icons =	GStreamer-based Phonon backend icons
@@ -7,8 +7,8 @@ DISTNAME =	phonon-backend-gstreamer-${VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	phonon-gstreamer-icons-${VERSION}
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/phonon/phonon-gstreamer
-REVISION-main =	3
-REVISION-icons =0
+REVISION-main =	4
+REVISION-icons =1
 
 FULLPKGNAME-main =	${PKGNAME}
 FULLPKGPATH-main =	${PKGPATH},${FLAVOR},-main

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/20 09:45:38 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =	PostgreSQL Database Modeler
 
 VERSION =	0.8.2
 DISTNAME =	pgmodeler-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	pgmodeler
 GH_PROJECT =	pgmodeler
@@ -30,23 +31,36 @@ WANTLIB += Qt5Widgets X11 Xext c execinfo m pq pthread xml2
 
 MODULES =		devel/qmake \
 			x11/qt5
-MODQMAKE_PROJECTS =	pgmodeler.pro
+MODQMAKE_PROJECTS =	pgmodeler.pro tests/tests.pro
 MODQMAKE_ARGS =		DOCDIR=${PREFIX}/share/doc/pgmodeler \
 			NO_UPDATE_CHECK=1 \
 			PREFIX=${PREFIX} \
 			SAMPLESDIR=${PREFIX}/share/examples/pgmodeler
-LIB_DEPENDS =		databases/postgresql
+LIB_DEPENDS =		databases/postgresql \
+			x11/qt5/qtsvg
 
 SEPARATE_BUILD =	No
 USE_GMAKE =		Yes
-
-NO_TEST =		Yes
 
 post-patch:
 	sed -i -e 's/linux/unix/' \
 	       -e 's/^ BUILDNUM=.*/ BUILDNUM=${VERSION}/' ${WRKSRC}/pgmodeler.pri
 
 post-install:
-	mkdir ${PREFIX}/lib/pgmodeler/plugins
+	rm -Rf ${PREFIX}/bin/tests
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgmodeler/plugins
+
+do-test:
+	cd ${WRKBUILD}; \
+	for d in lib*/; do \
+		LD_LIBRARY_PATH=$${LD_LIBRARY_PATH:+$${LD_LIBRARY_PATH}:}$$PWD/$${d%/}; \
+	done; \
+	export LD_LIBRARY_PATH; \
+	ln -sf ../../../schemas tests/src/databasemodeltest/schemas; \
+	okay=true; \
+	for t in ${WRKBUILD}/tests/src/*test; do \
+		(cd $$t; ./*test) || okay=false; \
+	done; \
+	$$okay
 
 .include <bsd.port.mk>

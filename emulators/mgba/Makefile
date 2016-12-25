@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/06 06:25:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -9,6 +9,7 @@ DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
 PKGNAME-libretro =	libretro-mgba-$V
+REVISION-qt =		0
 
 MULTI_PACKAGES =	-main -qt -libretro
 
@@ -47,7 +48,8 @@ LIB_DEPENDS-main =	archivers/libzip \
 			devel/sdl2
 LIB_DEPENDS-qt =	${LIB_DEPENDS-main} \
 			${MODQT_LIB_DEPENDS} \
-			emulators/mgba,-main
+			emulators/mgba,-main \
+			x11/qt5/qtmultimedia
 LIB_DEPENDS-libretro =
 RUN_DEPENDS-qt =	devel/desktop-file-utils \
 			x11/gtk+3,-guic

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/10/31 17:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT=		Lumina Desktop Environment
 
 GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.1.0
+REVISION=		0
 
 SHARED_LIBS +=  	LuminaUtils		1.1 # 1.1
 
@@ -24,11 +25,15 @@ NO_TEST=		Yes
 MODULES=		x11/qt5
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/kf5/oxygen-icons \
 			multimedia/gstreamer1/plugins-base \
-			x11/kde4/oxygen-icons \
 			x11/fluxbox \
 			x11/numlockx \
 			x11/xscreensaver
+
+LIB_DEPENDS=		x11/qt5/qtmultimedia \
+			x11/qt5/qtsvg \
+			x11/qt5/qtx11extras
 
 MAKE_FLAGS=		LIBLuminaUtils_VERSION=${LIBLuminaUtils_VERSION}
 FAKE_FLAGS=		INSTALL_ROOT=${DESTDIR}/

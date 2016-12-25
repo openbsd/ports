@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/02/01 07:50:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
 
 GAME =		simsu
 COMMENT =	basic sudoku game
 DISTNAME =	${GAME}-1.3.2-src
+REVISION =	0
 
 QT5 = 		Yes
 

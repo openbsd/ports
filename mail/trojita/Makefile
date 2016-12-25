@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/06 08:50:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
+REVISION =		0
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -27,13 +28,17 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		mail/mimetic \
 			security/qtkeychain,qt5 \
-			x11/kde-applications/gpgmepp
+			x11/kde-applications/gpgmepp \
+			x11/qt5/qtwebkit
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
 			-DGIT_EXECUTABLE=""
 
 TEST_IS_INTERACTIVE =	X11
+
+post-configure:
+	ln -sf ${MODQT_LIBDIR}/bin/lconvert ${WRKDIR}/bin
 
 do-test:
 	cd ${WRKBUILD} && ${LOCALBASE}/bin/ctest --output-on-failure

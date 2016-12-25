@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/25 14:34:39 zhuk Exp $
 
 V =		2.4.0
 COMMENT =	Qt5 Telegram messaging service client
 DISTNAME =	cutegram-src-${V}
 PKGNAME =	cutegram-${V}
 CATEGORIES =	net x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://aseman.co/en/products/cutegram/
 
@@ -18,18 +18,21 @@ WANTLIB += Qt5Xml c crypto m pthread qtelegram-ae ssl z
 
 MASTER_SITES =	http://aseman.co/downloads/cutegram/2/
 
-MODULES =	x11/qt5
+MODULES =	devel/qmake x11/qt5
 
-LIB_DEPENDS =	devel/libqtelegram-aseman-edition
+LIB_DEPENDS =	devel/libqtelegram-aseman-edition \
+		x11/qt5/qtbase \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtwebkit
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/faenza-icon-theme \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtgraphicaleffects \
+		x11/qt5/qtquickcontrols
 
 NO_TEST =	Yes
-
-do-configure:
-	cd ${WRKSRC} && qmake-qt5 PREFIX="${DESTDIR}${PREFIX}"
 
 post-install:
 	@rm ${PREFIX}/share/icons/cutegram.png

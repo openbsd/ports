@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/13 08:21:36 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =		small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.4
+REVISION =	0
 
 CATEGORIES =		graphics
 
@@ -37,7 +38,8 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/opencv \
-			graphics/tiff
+			graphics/tiff \
+			x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP:Bool=ON \
 			-DDISABLE_QT_DEBUG:Bool=ON

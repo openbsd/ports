@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/11/04 21:26:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
 DISTNAME =	capybara-webkit-1.11.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
@@ -22,5 +22,7 @@ WANTLIB +=	Qt5Widgets stdc++
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/ruby-capybara,${MODRUBY_FLAVOR}>=2.3.0,<2.8.0 \
 		x11/qt5
+
+LIB_DEPENDS =	x11/qt5/qtwebkit
 
 .include <bsd.port.mk>

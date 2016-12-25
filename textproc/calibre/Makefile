@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/06/27 23:05:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =		ebook management application
 
@@ -6,6 +6,7 @@ V =			2.60.0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 HOMEPAGE =		http://calibre-ebook.com/
 

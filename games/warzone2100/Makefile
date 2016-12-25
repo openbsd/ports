@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/12/19 12:29:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.31 2016/12/25 14:34:39 zhuk Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -8,6 +8,7 @@ DISTNAME=	warzone2100-3.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	http://wz2100.net/
 
@@ -31,7 +32,9 @@ LIB_DEPENDS=	audio/libogg \
 		devel/sdl2 \
 		graphics/glew \
 		graphics/png \
-		multimedia/libtheora
+		multimedia/libtheora \
+		x11/qt5/qtscript
+
 BUILD_DEPENDS=	archivers/unzip \
 		archivers/zip \
 		textproc/asciidoc

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2016/08/03 05:47:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT=	free open source planetarium
 
 DISTNAME=	stellarium-0.15.0
+REVISION=	0
 
 CATEGORIES=	astro x11
 
@@ -21,6 +22,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 
 MODULES=	devel/cmake \
 		x11/qt5
+
+LIB_DEPENDS=	x11/qt5/qtdeclarative \
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtscript \
+		x11/qt5/qtserialport \
+		x11/qt5/qtxmlpatterns
 
 # used to download more stars definitions
 RUN_DEPENDS=	net/curl \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -13,6 +13,7 @@ REVISION=	1
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
+REVISION-qt=	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

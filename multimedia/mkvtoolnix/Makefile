@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/12/05 09:01:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -6,6 +6,7 @@ DISTNAME=	mkvtoolnix-9.6.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/09 09:47:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =	C++ bindings/wrapper for gpgme
 DISTNAME =	gpgmepp-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	security
 
 SHARED_LIBS =	KF5QGpgme		0.0 # 4.80

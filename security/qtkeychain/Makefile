@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/06 06:45:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =		Qt API to store passwords and other secret data
 
@@ -39,6 +39,7 @@ LIBNAME = 		QtKeychain
 LIBNAME_L = 		qtkeychain
 QT = 			qt4
 .endif
+REVISION =              0
 
 SUBST_VARS += 		LIBNAME LIBNAME_L QT
 

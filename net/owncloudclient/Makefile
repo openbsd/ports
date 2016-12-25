@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/10/04 12:14:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2016/12/25 14:34:39 zhuk Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-2.2.4
+REVISION =		0
 
 SHARED_LIBS =		owncloudsync	2.0
 SHARED_LIBS +=		ocsync		2.0
@@ -47,7 +48,8 @@ FLAVOR ?=
 MODULES += 		x11/qt5
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml qt5keychain
-LIB_DEPENDS += 		security/qtkeychain,qt5
+LIB_DEPENDS += 		security/qtkeychain,qt5 \
+			x11/qt5/qtwebkit
 CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=OFF
 .else
 MODULES += 		x11/qt4

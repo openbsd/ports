@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/12/06 13:00:19 awolk Exp $
+# $OpenBSD: Makefile,v 1.21 2016/12/25 14:34:40 zhuk Exp $
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=otter-browser/}
 DISTNAME =		otter-browser-0.9.12-dev152
 PKGNAME =		${DISTNAME:S/-dev/pre/}
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -24,7 +25,11 @@ WANTLIB +=		hunspell-1.3
 
 
 RUN_DEPENDS =		devel/desktop-file-utils x11/gtk+3,-guic
-LIB_DEPENDS =		textproc/hunspell
+LIB_DEPENDS =		textproc/hunspell \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtmultimedia \
+			x11/qt5/qtwebkit \
+			x11/qt5/qtxmlpatterns
 
 MODULES =		devel/cmake x11/qt5
 

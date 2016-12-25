@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/31 04:46:21 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.21 2016/12/25 14:34:40 zhuk Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -26,6 +26,9 @@ MODULES =		x11/qt5
 RUN_DEPENDS =		x11/smplayer \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
+
+LIB_DEPENDS =		x11/qt5/qtscript \
+			x11/qt5/qtwebkit
 
 USE_GMAKE =		Yes
 
