@@ -1,22 +1,15 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.2 2016/11/13 02:30:23 juanfra Exp $
---- tests/playTests.sh.orig	Tue Nov  1 19:13:22 2016
-+++ tests/playTests.sh	Sat Nov 12 22:04:17 2016
-@@ -31,9 +31,12 @@ case "$OS" in
-     ;;
+$OpenBSD: patch-tests_playTests_sh,v 1.3 2016/12/25 21:53:13 juanfra Exp $
+--- tests/playTests.sh.orig	Wed Dec 14 14:53:47 2016
++++ tests/playTests.sh	Sun Dec 25 19:55:22 2016
+@@ -35,6 +35,7 @@ UNAME=$(uname)
+ case "$UNAME" in
+   Darwin) MD5SUM="md5 -r" ;;
+   FreeBSD) MD5SUM="gmd5sum" ;;
++  OpenBSD) MD5SUM="md5" ;;
+   *) MD5SUM="md5sum" ;;
  esac
  
--MD5SUM="md5sum"
--if [[ "$OSTYPE" == "darwin"* ]]; then
-+if [ "$OSTYPE" == "darwin"* ]; then
-     MD5SUM="md5 -r"
-+elif [ "$(uname -s)" == "OpenBSD" ]; then
-+    MD5SUM="md5"
-+else
-+    MD5SUM="md5sum"
- fi
- 
- $ECHO "\nStarting playTests.sh isWindows=$isWindows"
-@@ -128,7 +131,7 @@ rm ./*.tmp ./*.zstd
+@@ -130,7 +131,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  
@@ -25,7 +18,7 @@ $OpenBSD: patch-tests_playTests_sh,v 1.2 2016/11/13 02:30:23 juanfra Exp $
  $ECHO "\n**** flush write error test **** "
  
  $ECHO "$ECHO foo | $ZSTD > /dev/full"
-@@ -266,7 +269,8 @@ $ZSTD -bi1 tmp1
+@@ -267,7 +268,8 @@ $ZSTD -bi1 tmp1
  $ECHO "bench multiple levels"
  $ZSTD -i1b1e3 tmp1
  $ECHO "with recursive and quiet modes"
