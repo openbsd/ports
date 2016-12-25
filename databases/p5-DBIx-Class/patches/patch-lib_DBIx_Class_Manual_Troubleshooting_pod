@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_DBIx_Class_Manual_Troubleshooting_pod,v 1.1 2016/12/25 15:42:09 zhuk Exp $
+Don't pollute the makewhatis index.
+--- lib/DBIx/Class/Manual/Troubleshooting.pod.orig	Sun Apr  3 20:51:24 2016
++++ lib/DBIx/Class/Manual/Troubleshooting.pod	Sun Apr  3 20:51:57 2016
+@@ -2,6 +2,8 @@
+ 
+ DBIx::Class::Manual::Troubleshooting - Got a problem? Shoot it.
+ 
++=head1 QUESTIONS AND ANSWERS
++
+ =head2  "Can't locate storage blabla"
+ 
+ You're trying to make a query on a non-connected schema. Make sure you got

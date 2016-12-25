@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/25 15:42:09 zhuk Exp $
 
 COMMENT =	extensible and flexible object relational mapper
 
@@ -6,6 +6,7 @@ MODULES =	cpan databases/postgresql databases/mariadb
 PKG_ARCH =	*
 DISTNAME =	DBIx-Class-0.082820
 CATEGORIES =	databases devel
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
