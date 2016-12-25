@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/25 15:10:27 zhuk Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -7,6 +7,7 @@ SHARED_LIBS +=		QtSerialPort 0.0 # 0.0
 V =			5.4.2
 DISTNAME =		qtserialport-v${V}
 PKGNAME =		${DISTNAME:S/v//}
+REVISION =		0
 
 CATEGORIES =		comms
 
