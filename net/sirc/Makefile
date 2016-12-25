@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2016/12/25 15:31:34 zhuk Exp $
 
 COMMENT=	programmable small perl irc client
 
@@ -15,9 +15,11 @@ HOMEPAGE=	http://www.iagora.com/~espel/sirc/sirc.html
 
 MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c termcap 
+
+NO_TEST=	Yes
 
 pre-configure:
 	@sed s!PREFIX.SED!${PREFIX}!g ${FILESDIR}/sirc-script > \
@@ -30,8 +32,6 @@ pre-configure:
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe -ltermcap
-
-NO_TEST=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sirc ${PREFIX}/bin
