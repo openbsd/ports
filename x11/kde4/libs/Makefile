@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2016/06/29 16:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2016/12/25 16:33:01 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		5
+REVISION-main =		6
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -97,16 +97,15 @@ RUN_DEPENDS-en_US =
 RUN_DEPENDS-langlist =	
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
+			devel/kf5/oxygen-icons \
 			misc/shared-mime-info \
 			misc/shared-desktop-ontologies \
 			net/cagibi>=0.2.0p4 \
-			security/sudo \
 			sysutils/gamin \
 			sysutils/upower \
 			x11/dbus \
 			x11/grantlee \
 			x11/gtk+3,-guic \
-			${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION} \
 			${BUILD_PKGPATH},-langlist>=${MODKDE4_DEP_VERSION} \
 			${BUILD_PKGPATH},-en_US>=${MODKDE4_DEP_VERSION}
 
@@ -146,7 +145,7 @@ CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
 			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD packages" \
 			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
-			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
+			-DKDESU_USE_DOAS_DEFAULT:Bool=TRUE \
 			-DInotify_RPATH=${LOCALBASE}/lib/inotify
 
 # New CMake modules, to be pushed upstream (KDE or CMake)
