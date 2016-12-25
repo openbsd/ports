@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_base_physicalsocketserver_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+--- src/3rdparty/chromium/third_party/webrtc/base/physicalsocketserver.cc.orig.port	Sat Aug  6 15:50:24 2016
++++ src/3rdparty/chromium/third_party/webrtc/base/physicalsocketserver.cc	Sat Aug  6 15:53:30 2016
+@@ -242,7 +242,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+     socklen_t optlen = sizeof(*value);
+     int ret = ::getsockopt(s_, slevel, sopt, (SockOptArg)value, &optlen);
+     if (ret != -1 && opt == OPT_DONTFRAGMENT) {
+-#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
++#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
+       *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
+ #endif
+     }
+@@ -255,7 +255,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+     if (TranslateOption(opt, &slevel, &sopt) == -1)
+       return -1;
+     if (opt == OPT_DONTFRAGMENT) {
+-#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
++#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
+       value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
+ #endif
+     }
+@@ -442,7 +442,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+     // and let the caller pick a default MTU.
+     SetError(EINVAL);
+     return -1;
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+     // Gets the path MTU.
+     int value;
+     socklen_t vlen = sizeof(value);

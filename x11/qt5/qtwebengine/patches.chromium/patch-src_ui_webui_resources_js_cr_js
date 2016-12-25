@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ui_webui_resources_js_cr_js,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/webui/resources/js/cr.js.orig.port	Wed May 25 04:54:44 2016
++++ src/ui/webui/resources/js/cr.js	Thu May 26 08:09:50 2016
+@@ -467,6 +467,11 @@ var cr = cr || function() {
+       return /CrOS/.test(navigator.userAgent);
+     },
+ 
++    /** Whether this is on *BSD. */
++    get isBSD() {
++      return /BSD/.test(navigator.userAgent);
++    },
++
+     /** Whether this is on vanilla Linux (not chromeOS). */
+     get isLinux() {
+       return /Linux/.test(navigator.userAgent);

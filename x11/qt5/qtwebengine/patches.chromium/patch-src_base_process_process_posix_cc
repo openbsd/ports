@@ -1,0 +1,64 @@
+$OpenBSD: patch-src_base_process_process_posix_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/base/process/process_posix.cc.orig.port	Wed Feb 24 00:01:57 2016
++++ src/base/process/process_posix.cc	Thu Mar  3 09:43:25 2016
+@@ -19,9 +19,13 @@
+ #if defined(OS_MACOSX)
+ #include <sys/event.h>
+ #endif
++#include <signal.h>
+ 
+ namespace {
+ 
++const int kBackgroundPriority = 5;
++const int kForegroundPriority = 0;
++
+ #if !defined(OS_NACL_NONSFI)
+ 
+ bool WaitpidWithTimeout(base::ProcessHandle handle,
+@@ -256,12 +260,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+   return Process(handle);
+ }
+ 
+-#if !defined(OS_LINUX)
+ // static
+ bool Process::CanBackgroundProcesses() {
+-  return false;
++  return true;
+ }
+-#endif  // !defined(OS_LINUX)
+ 
+ bool Process::IsValid() const {
+   return process_ != kNullProcessHandle;
+@@ -357,21 +359,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+   return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
+ }
+ 
+-#if !defined(OS_LINUX)
+ bool Process::IsProcessBackgrounded() const {
+   // See SetProcessBackgrounded().
+   DCHECK(IsValid());
+-  return false;
++  return GetPriority() == kBackgroundPriority;
+ }
+ 
+-bool Process::SetProcessBackgrounded(bool value) {
+-  // Not implemented for POSIX systems other than Linux. With POSIX, if we were
+-  // to lower the process priority we wouldn't be able to raise it back to its
+-  // initial priority.
+-  NOTIMPLEMENTED();
+-  return false;
++bool Process::SetProcessBackgrounded(bool background) {
++  DCHECK(IsValid());
++
++  if (!CanBackgroundProcesses())
++    return false;
++
++  int priority = background ? kBackgroundPriority : kForegroundPriority;
++  int result = setpriority(PRIO_PROCESS, process_, priority);
++  DPCHECK(result == 0);
++  return result == 0;
+ }
+-#endif  // !defined(OS_LINUX)
+ 
+ int Process::GetPriority() const {
+   DCHECK(IsValid());

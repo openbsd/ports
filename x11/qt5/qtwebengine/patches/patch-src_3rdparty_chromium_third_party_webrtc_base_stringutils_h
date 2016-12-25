@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_base_stringutils_h,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+--- src/3rdparty/chromium/third_party/webrtc/base/stringutils.h.orig.port	Sat Aug  6 13:00:20 2016
++++ src/3rdparty/chromium/third_party/webrtc/base/stringutils.h	Sat Aug  6 13:00:53 2016
+@@ -23,11 +23,11 @@
+ #endif  // WEBRTC_WIN 
+ 
+ #if defined(WEBRTC_POSIX)
+-#ifdef BSD
++#ifdef WEBRTC_BSD
+ #include <stdlib.h>
+-#else  // BSD
++#else  // WEBRTC_BSD
+ #include <alloca.h>
+-#endif  // !BSD
++#endif  // !WEBRTC_BSD
+ #endif  // WEBRTC_POSIX
+ 
+ #include <string>

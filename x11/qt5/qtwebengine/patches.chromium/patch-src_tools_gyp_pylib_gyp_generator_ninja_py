@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_tools_gyp_pylib_gyp_generator_ninja_py,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/tools/gyp/pylib/gyp/generator/ninja.py.orig.port	Wed May 25 21:02:45 2016
++++ src/tools/gyp/pylib/gyp/generator/ninja.py	Thu May 26 08:09:49 2016
+@@ -2106,7 +2106,7 @@ def GenerateOutputForConfig(target_list, target_dicts,
+     master_ninja.rule(
+       'alink_thin',
+       description='AR $out',
+-      command='rm -f $out && $ar rcsT $arflags $out $in')
++      command='rm -f $out && $ar rcs $arflags $out $in')
+ 
+     # This allows targets that only need to depend on $lib's API to declare an
+     # order-only dependency on $lib.TOC and avoid relinking such downstream
+@@ -2123,7 +2123,7 @@ def GenerateOutputForConfig(target_list, target_dicts,
+               '$ld -shared $ldflags -o $lib -Wl,-soname=$soname %(suffix)s',
+             'extract_toc':
+               ('{ $readelf -d $lib | grep SONAME ; '
+-               '$nm -gD -f p $lib | cut -f1-2 -d\' \'; }')})
++               'llvm-nm -extern-only -dynamic -format=posix $lib | cut -f1-2 -d\' \'; }')})
+ 
+     master_ninja.rule(
+       'solink',

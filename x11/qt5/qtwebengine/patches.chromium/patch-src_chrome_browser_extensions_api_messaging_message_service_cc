@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_chrome_browser_extensions_api_messaging_message_service_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/extensions/api/messaging/message_service.cc.orig.port	Wed Apr 13 22:59:39 2016
++++ src/chrome/browser/extensions/api/messaging/message_service.cc	Thu Apr 14 08:25:09 2016
+@@ -118,7 +118,7 @@ MessageService::PolicyPermission MessageService::IsNat
+ 
+ const char kReceivingEndDoesntExistError[] =
+     "Could not establish connection. Receiving end does not exist.";
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ const char kMissingPermissionError[] =
+     "Access to native messaging requires nativeMessaging permission.";
+ const char kProhibitedByPoliciesError[] =
+@@ -415,7 +415,7 @@ void MessageService::OpenChannelToNativeApp(
+   if (!source)
+     return;
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   Profile* profile =
+       Profile::FromBrowserContext(source->GetProcess()->GetBrowserContext());
+   ExtensionService* extension_service =

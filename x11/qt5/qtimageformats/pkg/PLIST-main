@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
+@conflict qt5-<5.6
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QDDSPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake
+lib/qt5/plugins/imageformats/libqdds.so
+lib/qt5/plugins/imageformats/libqicns.so
+lib/qt5/plugins/imageformats/libqjp2.so
+lib/qt5/plugins/imageformats/libqmng.so
+lib/qt5/plugins/imageformats/libqtga.so
+lib/qt5/plugins/imageformats/libqtiff.so
+lib/qt5/plugins/imageformats/libqwbmp.so
+lib/qt5/plugins/imageformats/libqwebp.so

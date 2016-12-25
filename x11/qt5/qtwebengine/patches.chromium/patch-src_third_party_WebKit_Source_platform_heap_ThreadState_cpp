@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Wed Apr 13 23:00:02 2016
++++ src/third_party/WebKit/Source/platform/heap/ThreadState.cpp	Thu Apr 14 08:25:14 2016
+@@ -60,7 +60,7 @@
+ #include <sanitizer/msan_interface.h>
+ #endif
+ 
+-#if OS(FREEBSD)
++#if OS(FREEBSD) || OS(OPENBSD)
+ #include <pthread_np.h>
+ #endif
+ 

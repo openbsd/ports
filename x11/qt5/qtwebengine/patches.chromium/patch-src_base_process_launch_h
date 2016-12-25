@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_base_process_launch_h,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/base/process/launch.h.orig.port	Wed May 25 04:54:06 2016
++++ src/base/process/launch.h	Thu May 26 08:09:39 2016
+@@ -138,7 +138,7 @@ struct BASE_EXPORT LaunchOptions {
+   // will be the same as its pid.
+   bool new_process_group;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // If non-zero, start the process using clone(), using flags as provided.
+   // Unlike in clone, clone_flags may not contain a custom termination signal
+   // that is sent to the parent when the child dies. The termination signal will

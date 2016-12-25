@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chrome_browser_ui_views_app_list_linux_app_list_linux_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/ui/views/app_list/linux/app_list_linux.cc.orig.port	Fri Apr  8 18:02:07 2016
++++ src/chrome/browser/ui/views/app_list/linux/app_list_linux.cc	Thu Apr 14 08:25:10 2016
+@@ -91,7 +91,7 @@ void AppListLinux::MoveNearCursor(app_list::AppListVie
+   view->SetBubbleArrow(views::BubbleBorder::FLOAT);
+ 
+   AppListPositioner::ScreenEdge edge;
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // In the Unity desktop environment, special case SCREEN_EDGE_LEFT. It is
+   // always on the left side in Unity, but ShelfLocationInDisplay will not
+   // detect this if the shelf is hidden.

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_chrome_common_url_constants_cc,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/chrome/common/url_constants.cc.orig.port	Wed May 25 21:00:58 2016
++++ src/chrome/common/url_constants.cc	Thu May 26 08:09:43 2016
+@@ -130,7 +130,7 @@ const char kChromeUIUserImageURL[] = "chrome://userima
+ const char kChromeUIMetroFlowURL[] = "chrome://make-metro/";
+ #endif
+ 
+-#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
++#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+ const char kChromeUITabModalConfirmDialogURL[] =
+     "chrome://tab-modal-confirm-dialog/";
+ #endif
+@@ -314,7 +314,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
+ const char kChromeUIMetroFlowHost[] = "make-metro";
+ #endif
+ 
+-#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
++#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+ const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
+ #endif
+ 

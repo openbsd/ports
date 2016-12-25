@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_platformheaders_platformheaders_pro,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+Unbreak build of documentation.
+--- src/platformheaders/platformheaders.pro.orig	Wed May 25 18:46:17 2016
++++ src/platformheaders/platformheaders.pro	Sun Jul 10 14:15:13 2016
+@@ -11,6 +11,7 @@ include(helper/helper.pri)
+ include(cocoafunctions/cocoafunctions.pri)
+ 
+ QMAKE_DOCS = $$PWD/doc/qtplatformheaders.qdocconf
++tagfile = doc/qtplatformheaders.tags
+ 
+ load(qt_module_headers)
+ load(qt_docs)

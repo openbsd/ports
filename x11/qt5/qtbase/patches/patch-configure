@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+Make bootstrap pick up CC/CXX we want.
+--- configure.orig	Sat Dec 17 14:09:28 2016
++++ configure	Sat Dec 17 14:00:42 2016
+@@ -4002,7 +4002,11 @@ fi
+ # is where the resulting variable is written to
+ setBootstrapVariable()
+ {
+-    getQMakeConf "$1" | echo ${2-$1} = `if [ -n "$3" ]; then sed "$3"; else cat; fi` >> "$mkfile"
++    if [ -n "$2" -a -n "$(eval echo \"\$$2\")" ]; then
++        echo ${2-$1} = "$(eval echo \"\$$2\")"
++    else
++        getQMakeConf "$1" | echo ${2-$1} = `if [ -n "$3" ]; then sed "$3"; else cat; fi` >> "$mkfile"
++    fi
+ }
+ 
+ # build qmake

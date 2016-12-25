@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_corelib_global_qversiontagging_cpp,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+Disable symbol versioning, fixes linking.
+--- src/corelib/global/qversiontagging.cpp.orig	Fri Sep 16 08:49:42 2016
++++ src/corelib/global/qversiontagging.cpp	Tue Nov 29 14:17:49 2016
+@@ -36,11 +36,12 @@
+ #define SYM QT_MANGLE_NAMESPACE(qt_version_tag)
+ //#define SSYM QT_STRINGIFY(SYM)
+ 
+-#if defined(Q_CC_GNU) && defined(Q_OF_ELF) && !defined(Q_OS_ANDROID)
++#if defined(Q_CC_GNU) && defined(Q_OF_ELF) && !defined(Q_OS_ANDROID) && !defined(Q_OS_OPENBSD)
+ #  define make_versioned_symbol2(sym, m, n, separator)     \
+     Q_CORE_EXPORT extern const char sym ## _ ## m ## _ ## n = 0; \
+     asm(".symver " QT_STRINGIFY(sym) "_" QT_STRINGIFY(m) "_" QT_STRINGIFY(n) ", " \
+         QT_STRINGIFY(sym) separator "Qt_" QT_STRINGIFY(m) "." QT_STRINGIFY(n))
++#  error "trying to create versioned symbol"
+ #else
+ #  define make_versioned_symbol2(sym, m, n, separator)
+ #endif

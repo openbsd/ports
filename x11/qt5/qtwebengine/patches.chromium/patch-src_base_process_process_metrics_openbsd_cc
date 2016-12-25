@@ -1,0 +1,132 @@
+$OpenBSD: patch-src_base_process_process_metrics_openbsd_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/base/process/process_metrics_openbsd.cc.orig.port	Thu Mar  3 09:50:00 2016
++++ src/base/process/process_metrics_openbsd.cc	Thu Mar  3 09:52:22 2016
+@@ -5,10 +5,21 @@
+ #include "base/macros.h"
+ #include "base/process/process_metrics.h"
+ 
++#include "base/files/file_util.h"
++#include "base/logging.h"
++#include "base/process/internal_linux.h"
++#include "base/strings/string_number_conversions.h"
++#include "base/strings/string_split.h"
++#include "base/strings/string_tokenizer.h"
++#include "base/strings/string_util.h"
++#include "base/sys_info.h"
++#include "base/threading/thread_restrictions.h"
++
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
++#include <sys/vmmeter.h>
+ 
+ namespace base {
+ 
+@@ -18,20 +29,27 @@ ProcessMetrics* ProcessMetrics::CreateProcessMetrics(P
+ }
+ 
+ size_t ProcessMetrics::GetPagefileUsage() const {
+-  struct kinfo_proc info;
+-  size_t length;
++  struct kinfo_proc *info;
++  size_t length, pfu;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return -1;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++    pfu = -1;
++    goto out;
++  }
++  pfu = (info->p_vm_tsize + info->p_vm_dsize + info->p_vm_ssize);
+ 
+-  return (info.p_vm_tsize + info.p_vm_dsize + info.p_vm_ssize);
++out:
++  free(info);
++  return pfu;
+ }
+ 
+ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+@@ -39,20 +57,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+ }
+ 
+ size_t ProcessMetrics::GetWorkingSetSize() const {
+-  struct kinfo_proc info;
+-  size_t length;
++  struct kinfo_proc *info;
++  size_t length, wss;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return -1;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++    wss = -1;
++    goto out;
++  }
+ 
+-  return info.p_vm_rssize * getpagesize();
++  wss = (info->p_vm_rssize * getpagesize());
++
++out:
++  free(info);
++  return wss;
+ }
+ 
+ size_t ProcessMetrics::GetPeakWorkingSetSize() const {
+@@ -92,20 +118,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+ }
+ 
+ static int GetProcessCPU(pid_t pid) {
+-  struct kinfo_proc info;
++  struct kinfo_proc *info;
+   size_t length;
++  int pctcpu = 0;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
++  info = (struct kinfo_proc *)malloc(length);
++
+   mib[5] = (length / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0)
++    goto out;
+ 
+-  return info.p_pctcpu;
++  pctcpu = info->p_pctcpu;
++
++out:
++  free(info);
++  return pctcpu;
+ }
+ 
+ double ProcessMetrics::GetCPUUsage() {
+@@ -119,7 +152,6 @@ double ProcessMetrics::GetCPUUsage() {
+   }
+ 
+   int64_t time_delta = (time - last_cpu_time_).InMicroseconds();
+-  DCHECK_NE(time_delta, 0);
+ 
+   if (time_delta == 0)
+     return 0;

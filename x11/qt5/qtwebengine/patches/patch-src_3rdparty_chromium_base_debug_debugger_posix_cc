@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_debug_debugger_posix_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+--- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig.port	Sat Aug  6 18:35:52 2016
++++ src/3rdparty/chromium/base/debug/debugger_posix.cc	Sat Aug  6 20:58:40 2016
+@@ -32,6 +32,10 @@
+ #include <sys/user.h>
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#include <sys/proc.h>
++#endif
++
+ #include <ostream>
+ 
+ #include "base/basictypes.h"
+@@ -109,6 +113,8 @@ bool BeingDebugged() {
+   is_set = true;
+ #if defined(OS_FREEBSD)
+   being_debugged = (info.ki_flag & P_TRACED) != 0;
++#elif defined(OS_OPENBSD)
++  being_debugged = (info.ps_flags & PS_TRACED) != 0;
+ #elif defined(OS_BSD)
+   being_debugged = (info.p_flag & P_TRACED) != 0;
+ #else

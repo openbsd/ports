@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_net_url_request_url_request_context_builder_cc,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/net/url_request/url_request_context_builder.cc.orig.port	Wed May 25 21:01:04 2016
++++ src/net/url_request/url_request_context_builder.cc	Thu May 26 08:09:47 2016
+@@ -317,7 +317,7 @@ scoped_ptr<URLRequestContext> URLRequestContextBuilder
+   if (!proxy_service_) {
+     // TODO(willchan): Switch to using this code when
+     // ProxyService::CreateSystemProxyConfigService()'s signature doesn't suck.
+-#if !defined(OS_LINUX) && !defined(OS_ANDROID)
++#if !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+     if (!proxy_config_service_) {
+       proxy_config_service_ = ProxyService::CreateSystemProxyConfigService(
+           base::ThreadTaskRunnerHandle::Get().get(),

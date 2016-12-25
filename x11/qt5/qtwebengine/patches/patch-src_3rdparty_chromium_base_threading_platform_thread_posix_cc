@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_chromium_base_threading_platform_thread_posix_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+--- src/3rdparty/chromium/base/threading/platform_thread_posix.cc.orig.port	Thu Aug  4 15:25:08 2016
++++ src/3rdparty/chromium/base/threading/platform_thread_posix.cc	Thu Aug  4 15:27:05 2016
+@@ -58,10 +58,13 @@ void* ThreadFunc(void* params) {
+   if (!thread_params->joinable)
+     base::ThreadRestrictions::SetSingletonAllowed(false);
+ 
++  // avoid crashes caused by pledge(2)
++#if !defined(OS_BSD)
+   if (thread_params->priority != ThreadPriority::NORMAL) {
+     PlatformThread::SetThreadPriority(PlatformThread::CurrentHandle(),
+                                       thread_params->priority);
+   }
++#endif
+ 
+   // Stash the id in the handle so the calling thread has a complete
+   // handle, and unblock the parent thread.

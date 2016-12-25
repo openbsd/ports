@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_corelib_global_global_pri,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+--- src/corelib/global/global.pri.orig	Fri Sep 16 08:49:42 2016
++++ src/corelib/global/global.pri	Wed Nov 23 00:37:09 2016
+@@ -65,6 +65,10 @@ syslog {
+     DEFINES += QT_USE_SYSLOG
+ }
+ 
++openbsd-*: {
++    DEFINES += QT_NO_VERSION_TAGGING
++}
++
+ gcc:ltcg {
+     versiontagging_compiler.commands = $$QMAKE_CXX -c $(CXXFLAGS) $(INCPATH)
+ 

@@ -1,0 +1,12 @@
+The core Qt Gui library by default supports reading and writing image files of
+the most common file formats: PNG, JPEG, BMP, GIF and a few more, see the
+Reading and Writing Image Files section in QImage class reference.  The Qt Image
+Formats add-on module provides optional support for other image file formats.
+
+The file format support is provided transparently, through plugins for Qt's
+image I/O system. As such, this module provides no API of its own. Instead, the
+functionality is accessed in the same way as other image I/O in Qt: through
+QImage::load() and QImage::save(). Or, for more detailed control, through
+QImageReader and QImageWriter.
+
+This package contains QtImageFormats HTML documentation.

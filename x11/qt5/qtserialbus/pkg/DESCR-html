@@ -1,0 +1,6 @@
+The Qt Serial Bus API provides classes and functions to access the various
+industrial serial buses and protocols, such as CAN, ModBus, and others.
+
+The module is currently released as a technology preview.
+
+This package contains QtSerialBus HTML documentation.

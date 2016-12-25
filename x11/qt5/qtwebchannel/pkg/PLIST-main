@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+include/X11/qt5/QtWebChannel/
+include/X11/qt5/QtWebChannel/${VERSION}/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qmetaobjectpublisher_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qqmlwebchannelattached_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qwebchannel_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/signalhandler_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/variantargument_p.h
+include/X11/qt5/QtWebChannel/QQmlWebChannel
+include/X11/qt5/QtWebChannel/QWebChannel
+include/X11/qt5/QtWebChannel/QWebChannelAbstractTransport
+include/X11/qt5/QtWebChannel/QtWebChannel
+include/X11/qt5/QtWebChannel/QtWebChannelDepends
+include/X11/qt5/QtWebChannel/QtWebChannelVersion
+include/X11/qt5/QtWebChannel/qqmlwebchannel.h
+include/X11/qt5/QtWebChannel/qtwebchannelversion.h
+include/X11/qt5/QtWebChannel/qwebchannel.h
+include/X11/qt5/QtWebChannel/qwebchannelabstracttransport.h
+include/X11/qt5/QtWebChannel/qwebchannelglobal.h
+@lib lib/libQt5WebChannel.so.${LIBQt5WebChannel_VERSION}
+lib/pkgconfig/Qt5WebChannel.pc
+lib/qt5/cmake/Qt5WebChannel/
+lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake
+lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
+lib/qt5/libQt5WebChannel.la
+lib/qt5/libQt5WebChannel.prl
+@lib lib/qt5/libQt5WebChannel.so.${LIBQt5WebChannel_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_webchannel.pri
+lib/qt5/mkspecs/modules/qt_lib_webchannel_private.pri
+lib/qt5/pkgconfig/Qt5WebChannel.pc
+lib/qt5/qml/QtWebChannel/
+lib/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
+lib/qt5/qml/QtWebChannel/plugins.qmltypes
+lib/qt5/qml/QtWebChannel/qmldir

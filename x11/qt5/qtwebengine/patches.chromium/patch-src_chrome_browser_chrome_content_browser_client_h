@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chrome_browser_chrome_content_browser_client_h,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/chrome_content_browser_client.h.orig.port	Wed May 25 21:00:57 2016
++++ src/chrome/browser/chrome_content_browser_client.h	Thu May 26 08:09:40 2016
+@@ -256,7 +256,7 @@ class ChromeContentBrowserClient : public content::Con
+       int child_process_id,
+       content::FileDescriptorInfo* mappings,
+       std::map<int, base::MemoryMappedFile::Region>* regions) override;
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   void GetAdditionalMappedFilesForChildProcess(
+       const base::CommandLine& command_line,
+       int child_process_id,

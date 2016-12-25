@@ -1,0 +1,6 @@
+Qt X11 Extras enables the Qt programmer to write applications for the Linux/X11
+platform. Applications developed with Qt can also be deployed across several
+other desktop and embedded operating systems without having to rewrite
+the source code.
+
+This package contains actual library to be used by apps.

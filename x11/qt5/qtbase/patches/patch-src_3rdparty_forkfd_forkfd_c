@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_forkfd_forkfd_c,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+Unbreak build.
+--- src/3rdparty/forkfd/forkfd.c.orig	Fri Sep 16 08:49:42 2016
++++ src/3rdparty/forkfd/forkfd.c	Wed Nov 23 00:37:09 2016
+@@ -61,7 +61,7 @@
+ #  include <sys/procdesc.h>
+ #endif
+ 
+-#if _POSIX_VERSION-0 >= 200809L || _XOPEN_VERSION-0 >= 500
++#if (_POSIX_VERSION-0 >= 200809L || _XOPEN_VERSION-0 >= 500) && !defined(__OpenBSD__)
+ #  define HAVE_WAITID   1
+ #endif
+ #if !defined(WEXITED) || !defined(WNOWAIT)

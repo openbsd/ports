@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_gfx_codec_png_codec_cc,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/gfx/codec/png_codec.cc.orig.port	Wed Feb 24 00:02:06 2016
++++ src/ui/gfx/codec/png_codec.cc	Thu Mar  3 09:43:26 2016
+@@ -9,7 +9,7 @@
+ #include "base/logging.h"
+ #include "base/macros.h"
+ #include "base/strings/string_util.h"
+-#include "third_party/libpng/png.h"
++#include <png.h>
+ #include "third_party/skia/include/core/SkBitmap.h"
+ #include "third_party/skia/include/core/SkColorPriv.h"
+ #include "third_party/skia/include/core/SkUnPreMultiply.h"

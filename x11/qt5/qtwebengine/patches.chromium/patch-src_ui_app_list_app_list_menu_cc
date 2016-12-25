@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_app_list_app_list_menu_cc,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/app_list/app_list_menu.cc.orig.port	Wed Feb 24 00:02:06 2016
++++ src/ui/app_list/app_list_menu.cc	Thu Mar  3 09:43:26 2016
+@@ -35,7 +35,7 @@ void AppListMenu::InitMenu() {
+                                users_[i].email.empty() ? users_[i].name
+                                                        : users_[i].email,
+                                0 /* group_id */);
+-#elif defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#elif defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+       menu_model_.AddItem(SELECT_PROFILE + i, users_[i].name);
+       int menu_index = menu_model_.GetIndexOfCommandId(SELECT_PROFILE + i);
+       menu_model_.SetSublabel(menu_index, users_[i].email);

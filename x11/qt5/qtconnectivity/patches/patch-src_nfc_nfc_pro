@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_nfc_nfc_pro,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
+Let's try to build a functional NFC library.
+--- src/nfc/nfc.pro.orig	Wed Dec 14 09:45:47 2016
++++ src/nfc/nfc.pro	Wed Dec 14 09:46:51 2016
+@@ -54,7 +54,7 @@ SOURCES += \
+     qnearfieldsharetarget.cpp \
+     qnfc.cpp
+ 
+-linux:!android:qtHaveModule(dbus) {
++bsd:!android:qtHaveModule(dbus) {
+     NFC_BACKEND_AVAILABLE = yes
+ 
+     QT_PRIVATE += dbus

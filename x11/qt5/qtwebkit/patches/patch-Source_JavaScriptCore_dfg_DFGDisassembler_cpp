@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGDisassembler_cpp,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+Avoid strcpy().
+--- Source/JavaScriptCore/dfg/DFGDisassembler.cpp.orig	Fri Dec 26 13:45:46 2014
++++ Source/JavaScriptCore/dfg/DFGDisassembler.cpp	Fri Dec 26 13:48:04 2014
+@@ -152,8 +152,9 @@ void Disassembler::dumpDisassembly(PrintStream& out, c
+         amountOfNodeWhiteSpace = 0;
+     else
+         amountOfNodeWhiteSpace = Graph::amountOfNodeWhiteSpace(context);
+-    OwnArrayPtr<char> prefixBuffer = adoptArrayPtr(new char[prefixLength + amountOfNodeWhiteSpace + 1]);
+-    strcpy(prefixBuffer.get(), prefix);
++    size_t prefixBufferSize = prefixLength + amountOfNodeWhiteSpace + 1;
++    OwnArrayPtr<char> prefixBuffer = adoptArrayPtr(new char[prefixBufferSize]);
++    memcpy(prefixBuffer.get(), prefix, prefixBufferSize);
+     for (int i = 0; i < amountOfNodeWhiteSpace; ++i)
+         prefixBuffer[i + prefixLength] = ' ';
+     prefixBuffer[prefixLength + amountOfNodeWhiteSpace] = 0;

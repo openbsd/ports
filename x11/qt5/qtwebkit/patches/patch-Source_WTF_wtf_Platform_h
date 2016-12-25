@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+Use system malloc(3).
+--- Source/WTF/wtf/Platform.h.orig	Tue Feb 17 07:57:01 2015
++++ Source/WTF/wtf/Platform.h	Wed Apr  8 00:38:31 2015
+@@ -724,6 +724,10 @@
+ #endif
+ #endif
+ 
++#if PLATFORM(OPENBSD)
++#define USE_SYSTEM_MALLOC 1
++#endif
++
+ #if PLATFORM(EFL)
+ #define ENABLE_GLOBAL_FASTMALLOC_NEW 0
+ #endif

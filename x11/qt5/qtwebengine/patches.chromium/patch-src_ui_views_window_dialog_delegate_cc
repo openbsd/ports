@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_views_window_dialog_delegate_cc,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/views/window/dialog_delegate.cc.orig.port	Wed May 25 21:01:13 2016
++++ src/ui/views/window/dialog_delegate.cc	Thu May 26 08:09:50 2016
+@@ -51,7 +51,7 @@ Widget* DialogDelegate::CreateDialogWidgetWithBounds(W
+   params.bounds = bounds;
+   DialogDelegate* dialog = delegate->AsDialogDelegate();
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // The new style doesn't support unparented dialogs on Linux desktop.
+   if (dialog)
+     dialog->supports_new_style_ &= parent != NULL;

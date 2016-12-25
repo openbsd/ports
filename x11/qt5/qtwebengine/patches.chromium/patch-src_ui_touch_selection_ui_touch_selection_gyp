@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ui_touch_selection_ui_touch_selection_gyp,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/touch_selection/ui_touch_selection.gyp.orig.port	Tue Nov 24 21:01:01 2015
++++ src/ui/touch_selection/ui_touch_selection.gyp	Wed Dec  2 08:18:33 2015
+@@ -17,6 +17,7 @@
+         '../events/events.gyp:events',
+         '../events/events.gyp:gesture_detection',
+         '../gfx/gfx.gyp:gfx_geometry',
++        '../resources/ui_resources.gyp:ui_resources',
+       ],
+       'defines': [
+         'UI_TOUCH_SELECTION_IMPLEMENTATION',

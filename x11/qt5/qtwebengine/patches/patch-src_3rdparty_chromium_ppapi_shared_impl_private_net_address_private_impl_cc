@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_chromium_ppapi_shared_impl_private_net_address_private_impl_cc,v 1.1.1.1 2016/12/25 14:13:19 zhuk Exp $
+--- src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc.orig.port	Sat Aug  6 12:38:33 2016
++++ src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc	Sat Aug  6 12:38:59 2016
+@@ -12,6 +12,9 @@
+ #include <arpa/inet.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
++#if defined(OS_BSD)
++# include <netinet/in.h>
++#endif
+ #endif
+ 
+ #include <string.h>

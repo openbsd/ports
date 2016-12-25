@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_app_list_app_list_constants_cc,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/app_list/app_list_constants.cc.orig.port	Wed May 25 21:01:13 2016
++++ src/ui/app_list/app_list_constants.cc	Thu May 26 08:09:49 2016
+@@ -148,7 +148,7 @@ const char kSearchQueryLength[] = "Apps.AppListSearchQ
+ const char kSearchResultDistanceFromOrigin[] =
+     "Apps.AppListSearchResultDistanceFromOrigin";
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(GOOGLE_CHROME_BUILD)
+ const char kAppListWMClass[] = "chrome_app_list";
+ #else  // CHROMIUM_BUILD

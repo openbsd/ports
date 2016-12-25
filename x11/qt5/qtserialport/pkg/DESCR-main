@@ -1,0 +1,3 @@
+QtSerialPort provides functions to access serial ports.
+
+This package contains actual library to be used in apps.

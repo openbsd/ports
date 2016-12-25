@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+@pkgpath x11/qt5,-mysql
+lib/qt5/cmake/Qt5Sql/Qt5Sql_QMYSQLDriverPlugin.cmake
+lib/qt5/plugins/sqldrivers/libqsqlmysql.so

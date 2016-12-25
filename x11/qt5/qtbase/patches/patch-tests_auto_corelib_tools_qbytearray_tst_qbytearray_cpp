@@ -1,0 +1,32 @@
+$OpenBSD: patch-tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.1.1.1 2016/12/25 14:13:12 zhuk Exp $
+Unbreak tests since we avoid strcpy.
+--- tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.orig	Mon Jul 18 09:38:33 2016
++++ tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp	Mon Jul 18 09:44:00 2016
+@@ -77,7 +77,6 @@ private slots:
+     void qvsnprintf();
+     void qstrlen();
+     void qstrnlen();
+-    void qstrcpy();
+     void qstrncpy();
+     void qstricmp_data();
+     void qstricmp();
+@@ -775,19 +774,6 @@ void tst_QByteArray::qstrnlen()
+     QCOMPARE(::qstrnlen(src, 19), (uint)19);
+     QCOMPARE(::qstrnlen(src, 21), (uint)20);
+     QCOMPARE(::qstrnlen(src, 20), (uint)20);
+-}
+-
+-void tst_QByteArray::qstrcpy()
+-{
+-    const char *src = "Something about ... \0 a string.";
+-    const char *expected = "Something about ... ";
+-    char dst[128];
+-
+-    QCOMPARE(::qstrcpy(0, 0), (char*)0);
+-    QCOMPARE(::qstrcpy(dst, 0), (char*)0);
+-
+-    QCOMPARE(::qstrcpy(dst ,src), (char *)dst);
+-    QCOMPARE((char *)dst, const_cast<char *>(expected));
+ }
+ 
+ void tst_QByteArray::qstrncpy()

@@ -1,0 +1,12 @@
+Effects are visual items that can be added to Qt Quick user interface as UI
+components. To import the Qt Graphical Effects types, include the Qt
+Graphical Effects module by adding the following statement to the QML file:
+
+  import QtGraphicalEffects 1.0
+
+To use the effects, simply add a specific effect declaration to the QML
+scene and configure the effects properties. The source item type can be any
+QML type, even video or another effect. Pipelining multiple effects together
+is a simple way to create even more impressive output.
+
+This package contains compiled QtGraphicalEffects documentation.

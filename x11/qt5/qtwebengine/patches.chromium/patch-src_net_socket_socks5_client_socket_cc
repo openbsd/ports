@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_net_socket_socks5_client_socket_cc,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/net/socket/socks5_client_socket.cc.orig.port	Wed Apr 13 22:59:49 2016
++++ src/net/socket/socks5_client_socket.cc	Thu Apr 14 08:25:13 2016
+@@ -16,6 +16,9 @@
+ #include "net/log/net_log.h"
+ #include "net/socket/client_socket_handle.h"
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
++
+ namespace net {
+ 
+ const unsigned int SOCKS5ClientSocket::kGreetReadHeaderSize = 2;

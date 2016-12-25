@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_ui_views_views_gyp,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/views/views.gyp.orig.port	Wed May 25 21:01:13 2016
++++ src/ui/views/views.gyp	Thu May 26 08:09:50 2016
+@@ -712,12 +712,12 @@
+             '../display/display.gyp:display_util',
+           ],
+         }],
+-        ['OS=="linux" and chromeos==0 and use_ozone==0', {
++        ['(OS=="linux" or os_bsd==1) and chromeos==0 and use_ozone==0', {
+           'dependencies': [
+             '../../build/linux/system.gyp:atk',
+            ],
+         }],
+-        ['OS=="linux" and chromeos==0', {
++        ['(OS=="linux" or os_bsd==1) and chromeos==0', {
+           'dependencies': [
+             '../shell_dialogs/shell_dialogs.gyp:shell_dialogs',
+           ],
+@@ -787,7 +787,7 @@
+         ['use_aura and chromeos == 0', {
+           'sources': [ '<@(views_desktop_aura_sources)' ],
+           'conditions': [
+-            ['OS == "linux"', {
++            ['OS == "linux" or os_bsd==1', {
+               'sources': [ '<@(views_desktop_aura_linux_sources)' ],
+             }],
+             ['use_x11 == 1', {

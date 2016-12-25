@@ -1,0 +1,6 @@
+The Qt Sensors API provides access to sensor hardware via QML and C++ interfaces.
+The Qt Sensors API also provides a motion gesture recognition API for devices.
+
+Currently the API is supported on Android, iOS, SailFish and WinRT.
+
+This package contains actual library to be used by apps.

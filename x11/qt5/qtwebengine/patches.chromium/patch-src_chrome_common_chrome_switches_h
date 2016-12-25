@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chrome_common_chrome_switches_h,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/chrome/common/chrome_switches.h.orig.port	Thu May 26 08:25:25 2016
++++ src/chrome/common/chrome_switches.h	Thu May 26 08:25:33 2016
+@@ -387,7 +387,7 @@ extern const char kDisableNewTaskManager[];
+ extern const char kEnableWaylandServer[];
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kEnableInputImeAPI[];
+ extern const char kDisableInputImeAPI[];
+ #endif

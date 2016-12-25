@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gpu_config_gpu_info_collector_linux_cc,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/gpu/config/gpu_info_collector_linux.cc.orig.port	Wed Feb 24 00:02:01 2016
++++ src/gpu/config/gpu_info_collector_linux.cc	Thu Mar  3 09:43:26 2016
+@@ -81,6 +81,10 @@ const uint32_t kVendorIDAMD = 0x1002;
+ CollectInfoResult CollectPCIVideoCardInfo(GPUInfo* gpu_info) {
+   DCHECK(gpu_info);
+ 
++#if defined(OS_BSD)
++  return (CollectMesaCardInfo(gpu_info));
++#endif
++
+ #if !defined(USE_LIBPCI)
+   return kCollectInfoNonFatalFailure;
+ #else

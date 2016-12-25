@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_resources_ui_resources_grd,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/ui/resources/ui_resources.grd.orig.port	Wed Oct 14 07:59:01 2015
++++ src/ui/resources/ui_resources.grd	Wed Oct 14 07:59:13 2015
+@@ -15,7 +15,7 @@
+       <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST
+            BECAUSE YOUR RESOURCES ARE FUNCTIONALLY RELATED OR FALL UNDER THE
+            SAME CONDITIONALS. -->
+-      <if expr="is_linux and use_aura">
++      <if expr="(is_linux or is_bsd) and use_aura">
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_ALIAS" file="common/pointers/alias_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_CELL" file="common/pointers/cell_big.png" />
+         <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_COL_RESIZE" file="common/pointers/sb_h_double_arrow_big.png" />

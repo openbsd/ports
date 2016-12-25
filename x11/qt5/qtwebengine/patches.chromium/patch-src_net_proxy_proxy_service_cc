@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_net_proxy_proxy_service_cc,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/net/proxy/proxy_service.cc.orig.port	Wed May 25 21:01:04 2016
++++ src/net/proxy/proxy_service.cc	Thu May 26 08:09:47 2016
+@@ -47,7 +47,7 @@
+ #elif defined(OS_MACOSX)
+ #include "net/proxy/proxy_config_service_mac.h"
+ #include "net/proxy/proxy_resolver_mac.h"
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #include "net/proxy/proxy_config_service_linux.h"
+ #elif defined(OS_ANDROID)
+ #include "net/proxy/proxy_config_service_android.h"
+@@ -1513,7 +1513,7 @@ scoped_ptr<ProxyConfigService> ProxyService::CreateSys
+              << "profile_io_data.cc::CreateProxyConfigService and this should "
+              << "be used only for examples.";
+   return make_scoped_ptr(new UnsetProxyConfigService);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   scoped_ptr<ProxyConfigServiceLinux> linux_config_service(
+       new ProxyConfigServiceLinux());
+ 

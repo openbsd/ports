@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
+@option no-default-conflict
+@conflict qtserialport->=5.6
+@conflict qt5-<5.6
+include/X11/qt5/QtSerialPort/
+include/X11/qt5/QtSerialPort/${VERSION}/
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialport_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialportinfo_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtudev_p.h
+include/X11/qt5/QtSerialPort/QSerialPort
+include/X11/qt5/QtSerialPort/QSerialPortInfo
+include/X11/qt5/QtSerialPort/QtSerialPort
+include/X11/qt5/QtSerialPort/QtSerialPortDepends
+include/X11/qt5/QtSerialPort/QtSerialPortVersion
+include/X11/qt5/QtSerialPort/qserialport.h
+include/X11/qt5/QtSerialPort/qserialportglobal.h
+include/X11/qt5/QtSerialPort/qserialportinfo.h
+include/X11/qt5/QtSerialPort/qtserialportversion.h
+@lib lib/libQt5SerialPort.so.${LIBQt5SerialPort_VERSION}
+lib/pkgconfig/Qt5SerialPort.pc
+lib/qt5/cmake/Qt5SerialPort/
+lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake
+lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
+lib/qt5/libQt5SerialPort.la
+lib/qt5/libQt5SerialPort.prl
+@lib lib/qt5/libQt5SerialPort.so.${LIBQt5SerialPort_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_serialport.pri
+lib/qt5/mkspecs/modules/qt_lib_serialport_private.pri
+lib/qt5/pkgconfig/Qt5SerialPort.pc

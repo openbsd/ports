@@ -1,0 +1,17 @@
+Qt WebChannel bridges the gap between Qt applications and HTML/JavaScript.
+
+Qt WebChannel enables peer-to-peer communication between the host
+(QML/C++ application) and the client (HTML/JavaScript application). The
+transport mechanism is supported out of the box by the two popular web
+engines, Qt WebKit 2 and Qt WebEngine (experimental). It works on all
+browsers that support Qt WebSockets, enabling Qt WebChannel applications
+to run in any JavaScript runtime. Additionally, a custom transport
+mechanism can also be implemented using Qt WebSockets to support Qt
+WebChannel-based communication.
+
+The module provides a JavaScript library for seamless integration of C++
+and QML applications with HTML/JavaScript clients. The client must use the
+JavaScript library to access the serialized QObjects published by the host
+applications.
+
+This package contains QtWebChannel HTML documentation.

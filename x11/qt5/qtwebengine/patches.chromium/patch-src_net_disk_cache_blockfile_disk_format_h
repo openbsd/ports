@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_net_disk_cache_blockfile_disk_format_h,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/net/disk_cache/blockfile/disk_format.h.orig.port	Wed Feb 24 00:02:01 2016
++++ src/net/disk_cache/blockfile/disk_format.h	Thu Mar  3 09:43:26 2016
+@@ -149,7 +149,9 @@ struct RankingsNode {
+ };
+ #pragma pack(pop)
+ 
++#if !defined(OS_BSD)
+ static_assert(sizeof(RankingsNode) == 36, "bad RankingsNode");
++#endif
+ 
+ }  // namespace disk_cache
+ 

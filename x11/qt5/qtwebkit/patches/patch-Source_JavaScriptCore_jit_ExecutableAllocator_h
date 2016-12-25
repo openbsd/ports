@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+Taken from www/webkitgtk4 port, see also:
+https://bugs.webkit.org/show_bug.cgi?id=61137
+--- Source/JavaScriptCore/jit/ExecutableAllocator.h.orig	Tue Feb 17 07:57:12 2015
++++ Source/JavaScriptCore/jit/ExecutableAllocator.h	Wed Apr  8 00:38:31 2015
+@@ -104,7 +104,8 @@ class DemandExecutableAllocator;
+ #if ENABLE(EXECUTABLE_ALLOCATOR_FIXED)
+ #if CPU(ARM) || CPU(MIPS)
+ static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
+-#elif CPU(X86_64) && !CPU(X32)
++#elif CPU(X86_64) && !CPU(X32) && !OS(OPENBSD)
++// default limits on OpenBSD are far less than 1GB
+ static const size_t fixedExecutableMemoryPoolSize = 1024 * 1024 * 1024;
+ #else
+ static const size_t fixedExecutableMemoryPoolSize = 32 * 1024 * 1024;

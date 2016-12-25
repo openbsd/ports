@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_components_policy_tools_generate_policy_source_py,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/components/policy/tools/generate_policy_source.py.orig.port	Wed May 25 21:01:00 2016
++++ src/components/policy/tools/generate_policy_source.py	Thu May 26 08:09:45 2016
+@@ -102,7 +102,7 @@ class PolicyDetails:
+       if platform.startswith('chrome.'):
+         platform_sub = platform[7:]
+         if platform_sub == '*':
+-          self.platforms.extend(['win', 'mac', 'linux'])
++          self.platforms.extend(['win', 'mac', 'linux', 'openbsd'])
+         else:
+           self.platforms.append(platform_sub)
+       else:

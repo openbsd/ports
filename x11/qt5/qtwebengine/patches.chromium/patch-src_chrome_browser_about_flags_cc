@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_chrome_browser_about_flags_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/about_flags.cc.orig.port	Wed May 25 21:00:57 2016
++++ src/chrome/browser/about_flags.cc	Thu May 26 08:09:40 2016
+@@ -651,7 +651,7 @@ const FeatureEntry kFeatureEntries[] = {
+      kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
+      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
+                                switches::kDisableSmoothScrolling)},
+-#if defined(USE_AURA) || defined(OS_LINUX)
++#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
+     {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
+      IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
+      // Uses the system preference on Mac (a different implementation).
+@@ -1691,7 +1691,7 @@ const FeatureEntry kFeatureEntries[] = {
+      IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
+      SINGLE_VALUE_TYPE(switches::kEnableMaterialDesignExtensions)},
+ #endif
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+     {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
+      IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION, kOsWin | kOsLinux,
+      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,

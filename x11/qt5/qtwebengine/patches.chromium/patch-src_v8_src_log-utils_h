@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_v8_src_log-utils_h,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
+--- src/v8/src/log-utils.h.orig.port	Wed Jan 20 21:02:45 2016
++++ src/v8/src/log-utils.h	Fri Jan 22 19:58:59 2016
+@@ -13,6 +13,8 @@
+ #include "src/base/platform/mutex.h"
+ #include "src/flags.h"
+ 
++#include <stdarg.h>
++
+ namespace v8 {
+ namespace internal {
+ 

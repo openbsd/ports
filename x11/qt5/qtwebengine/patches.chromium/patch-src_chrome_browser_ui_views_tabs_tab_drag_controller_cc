@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Wed May 25 21:00:58 2016
++++ src/chrome/browser/ui/views/tabs/tab_drag_controller.cc	Thu May 26 08:09:42 2016
+@@ -269,7 +269,7 @@ void TabDragController::Init(
+   //     synchronous on desktop Linux, so use that.
+   // - Ash
+   //     Releasing capture on Ash cancels gestures so avoid it.
+-#if defined(OS_LINUX) || defined(USE_ASH)
++#if defined(OS_LINUX) || defined(USE_ASH) || defined(OS_BSD)
+   can_release_capture_ = false;
+ #endif
+   start_point_in_screen_ = gfx::Point(source_tab_offset, mouse_offset.y());
+@@ -627,7 +627,7 @@ TabDragController::DragBrowserToNewTabStrip(
+     // that to effect the position of any windows.
+     SetWindowPositionManaged(browser_widget->GetNativeWindow(), false);
+ 
+-#if !defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if (!defined(OS_BSD) && !defined(OS_LINUX)) || defined(OS_CHROMEOS)
+     // EndMoveLoop is going to snap the window back to its original location.
+     // Hide it so users don't see this. Hiding a window in Linux aura causes
+     // it to lose capture so skip it.
+@@ -1817,7 +1817,7 @@ TabDragController::Liveness TabDragController::GetLoca
+     if (dragged_window)
+       exclude.insert(dragged_window);
+   }
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // Exclude windows which are pending deletion via Browser::TabStripEmpty().
+   // These windows can be returned in the Linux Aura port because the browser
+   // window which was used for dragging is not hidden once all of its tabs are

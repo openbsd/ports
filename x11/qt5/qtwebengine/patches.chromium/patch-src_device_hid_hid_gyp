@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_device_hid_hid_gyp,v 1.1.1.1 2016/12/25 14:13:22 zhuk Exp $
+--- src/device/hid/hid.gyp.orig.port	Wed May 25 04:54:16 2016
++++ src/device/hid/hid.gyp	Thu May 26 08:09:47 2016
+@@ -84,6 +84,18 @@
+             },
+           },
+         }],
++        ['OS=="openbsd"', {
++          'sources!': [
++            'device_monitor_linux.cc',
++            'device_monitor_linux.h',
++            'hid_connection_linux.cc',
++            'hid_connection_linux.h',
++            'hid_service_linux.cc',
++            'hid_service_linux.h',
++            'input_service_linux.cc',
++            'input_service_linux.h',
++          ],
++        }],
+       ],
+     },
+     {

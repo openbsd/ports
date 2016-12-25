@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_chrome_chrome_browser_extensions_gypi,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/chrome_browser_extensions.gypi.orig.port	Thu May 26 08:24:00 2016
++++ src/chrome/chrome_browser_extensions.gypi	Thu May 26 08:25:06 2016
+@@ -1014,6 +1014,11 @@
+         '<@(chrome_browser_extensions_enabled_sources)',
+       ],
+       'conditions': [
++        ['os_bsd==1', {
++          'sources/': [
++            ['exclude', '^browser/extensions/api/image_writer_private/removable_storage_provider_linux.cc'],
++          ],
++        }],
+         ['enable_task_manager==1', {
+           'sources': [
+             '<@(chrome_browser_extensions_task_manager_enabled_sources)',
+@@ -1061,7 +1066,7 @@
+             '../ui/views/views.gyp:views',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or os_bsd==1', {
+           'conditions': [
+             ['use_aura==1', {
+               'dependencies': [

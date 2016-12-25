@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chrome_app_resources_locale_settings_grd,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/app/resources/locale_settings.grd.orig.port	Fri Apr  8 18:02:07 2016
++++ src/chrome/app/resources/locale_settings.grd	Thu Apr 14 08:25:08 2016
+@@ -156,7 +156,7 @@
+         55
+       </message>
+ 
+-      <if expr="is_win or is_linux or chromeos">
++      <if expr="is_win or is_linux or chromeos or is_bsd">
+         <!-- The width of the ash/ChromeOS system tray menu in pixels. -->
+         <message name="IDS_SYSTEM_TRAY_MENU_BUBBLE_WIDTH_PIXELS" use_name_for_id="true">
+           300

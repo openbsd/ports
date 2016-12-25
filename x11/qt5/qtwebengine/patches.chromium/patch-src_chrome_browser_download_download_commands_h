@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chrome_browser_download_download_commands_h,v 1.1.1.1 2016/12/25 14:13:21 zhuk Exp $
+--- src/chrome/browser/download/download_commands.h.orig.port	Wed Feb 24 00:01:58 2016
++++ src/chrome/browser/download/download_commands.h	Thu Mar  3 09:43:25 2016
+@@ -42,7 +42,7 @@ class DownloadCommands {
+   void ExecuteCommand(Command command);
+ 
+ #if defined(OS_WIN) || defined(OS_LINUX) || \
+-    (defined(OS_MACOSX) && !defined(OS_IOS))
++    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+   bool IsDownloadPdf() const;
+   bool CanOpenPdfInSystemViewer() const;
+ #endif

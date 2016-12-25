@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+@conflict qt5-<5.6
+include/X11/qt5/QtSvg/
+include/X11/qt5/QtSvg/${VERSION}/
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgfont_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgfunctions_wince_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvggraphics_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvghandler_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgnode_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
+include/X11/qt5/QtSvg/QGraphicsSvgItem
+include/X11/qt5/QtSvg/QSvgGenerator
+include/X11/qt5/QtSvg/QSvgRenderer
+include/X11/qt5/QtSvg/QSvgWidget
+include/X11/qt5/QtSvg/QtSvg
+include/X11/qt5/QtSvg/QtSvgDepends
+include/X11/qt5/QtSvg/QtSvgVersion
+include/X11/qt5/QtSvg/qgraphicssvgitem.h
+include/X11/qt5/QtSvg/qsvggenerator.h
+include/X11/qt5/QtSvg/qsvgrenderer.h
+include/X11/qt5/QtSvg/qsvgwidget.h
+include/X11/qt5/QtSvg/qtsvgglobal.h
+include/X11/qt5/QtSvg/qtsvgversion.h
+@lib lib/libQt5Svg.so.${LIBQt5Svg_VERSION}
+lib/pkgconfig/Qt5Svg.pc
+lib/qt5/cmake/Qt5Svg/
+lib/qt5/cmake/Qt5Svg/Qt5SvgConfig.cmake
+lib/qt5/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
+lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgIconPlugin.cmake
+lib/qt5/cmake/Qt5Svg/Qt5Svg_QSvgPlugin.cmake
+lib/qt5/libQt5Svg.la
+lib/qt5/libQt5Svg.prl
+@lib lib/qt5/libQt5Svg.so.${LIBQt5Svg_VERSION}
+lib/qt5/mkspecs/modules/qt_lib_svg.pri
+lib/qt5/mkspecs/modules/qt_lib_svg_private.pri
+lib/qt5/pkgconfig/Qt5Svg.pc
+lib/qt5/plugins/iconengines/
+lib/qt5/plugins/iconengines/libqsvgicon.so
+lib/qt5/plugins/imageformats/libqsvg.so

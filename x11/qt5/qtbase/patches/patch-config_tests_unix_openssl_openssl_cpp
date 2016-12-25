@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_tests_unix_openssl_openssl_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+LibreSSL _is_ fine.
+--- config.tests/unix/openssl/openssl.cpp.orig	Tue Nov 29 22:59:59 2016
++++ config.tests/unix/openssl/openssl.cpp	Tue Dec 13 01:00:21 2016
+@@ -39,10 +39,10 @@
+ 
+ #include <openssl/ssl.h>
+ 
+-#if OPENSSL_VERSION_NUMBER-0 >= 0x10002000L && !defined(OPENSSL_NO_EC) && !defined(SSL_CTRL_SET_CURVES)
+-#  error "OpenSSL was reported as >= 1.0.2 but is missing required features, possibly it's libressl which is unsupported"
+-#endif
+-
+ int main()
+ {
++// Better test requires adding -lssl to LIBS in .pro, or smth. like that
++//#if OPENSSL_VERSION_NUMBER-0 >= 0x10002000L && !defined(OPENSSL_NO_EC)
++//  SSL_CTX_ctrl(NULL, 0, 0L, NULL);
++//#endif
+ }
