@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/10/14 10:44:07 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/12/25 15:14:25 zhuk Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -108,7 +108,9 @@ share/examples/pinot/pinot/external-filters.xml
 share/examples/pinot/pinot/globalconfig.xml
 @sample ${SYSCONFDIR}/pinot/globalconfig.xml
 share/examples/pinot/pinot/textcat31_conf.txt
+@sample ${SYSCONFDIR}/pinot/textcat31_conf.xml
 share/examples/pinot/pinot/textcat32_conf.txt
+@sample ${SYSCONFDIR}/pinot/textcat32_conf.xml
 share/examples/pinot/pinot/textcat3_conf.txt
 @sample ${SYSCONFDIR}/pinot/textcat3_conf.txt
 share/examples/pinot/pinot/textcat_conf.txt
