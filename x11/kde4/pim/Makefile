@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/05/12 14:00:58 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2016/12/25 16:29:16 zhuk Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	1
+REVISION =	2
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
@@ -126,5 +126,11 @@ LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
 
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples/kde
+
+# remove icons already present in oxygen-icons-5.x
+post-install:
+	rm ${PREFIX}/share/icons/oxygen/*/mimetypes/x-mail-distribution-list.png
+	rmdir ${PREFIX}/share/icons/oxygen/512x512/mimetypes
+	rmdir ${PREFIX}/share/icons/oxygen/512x512
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/08/27 07:30:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/12/25 16:29:16 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -1325,22 +1325,13 @@ share/icons/locolor/16x16/apps/ktnef.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/ktnef.png
-share/icons/oxygen/128x128/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/16x16/actions/edit-delete-page.png
 share/icons/oxygen/16x16/actions/smallclock.png
 share/icons/oxygen/16x16/actions/upindicator.png
-share/icons/oxygen/16x16/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/22x22/actions/checkmark.png
 share/icons/oxygen/22x22/actions/edit-delete-page.png
-share/icons/oxygen/22x22/mimetypes/x-mail-distribution-list.png
-share/icons/oxygen/256x256/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/32x32/actions/edit-delete-page.png
-share/icons/oxygen/32x32/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/48x48/actions/edit-delete-page.png
-share/icons/oxygen/48x48/mimetypes/x-mail-distribution-list.png
-share/icons/oxygen/512x512/
-share/icons/oxygen/512x512/mimetypes/
-share/icons/oxygen/512x512/mimetypes/x-mail-distribution-list.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/edit-delete-page.svgz
