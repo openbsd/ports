@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/13 21:23:10 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2016/12/25 15:47:12 zhuk Exp $
 
      SUBDIR =
      SUBDIR += avr
@@ -9,6 +9,7 @@
      SUBDIR += kde4
      SUBDIR += msp430
      SUBDIR += mupen64plus
+     SUBDIR += qt5
      SUBDIR += tor-browser
      SUBDIR += xfce
 
