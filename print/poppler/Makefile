@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2016/12/17 15:31:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.115 2016/12/25 13:54:34 zhuk Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -18,7 +18,7 @@ OLDSHIT =	poppler-0.16.7
 REVISION-main=	0
 REVISION-qt=	0
 REVISION-qt4=	0
-REVISION-qt5=	0
+REVISION-qt5=	1
 REVISION-utils=	0
 
 SHARED_LIBS +=	poppler              43.0     # 66.0
@@ -50,7 +50,7 @@ MULTI_PACKAGES=-main -qt -qt4 -qt5 -utils
 
 .include <bsd.port.arch.mk>
 
-cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z stdc++
+cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=	x11/qt3
@@ -99,17 +99,20 @@ LIB_DEPENDS-utils= print/poppler
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
 		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
-		iconv intl
+		iconv intl stdc++
 
-WANTLIB-qt=	${cWANTLIB} lcms2 openjp2 poppler png pthread-stubs \
-		${MODQT3_WANTLIB}
+WANTLIB-qt=	${cWANTLIB} ${MODQT3_WANTLIB} lcms2 openjp2 poppler png \
+		pthread-stubs stdc++ \
+		GL ICE SM X11 X11-xcb Xcursor Xdamage Xext Xfixes Xft \
+		Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm glapi \
+		lcms mng xcb xcb-dri2 xcb-glx
 
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
-		png poppler pcre pthread-stubs xcb
+		png poppler pcre pthread-stubs stdc++ xcb
 
-WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
+WANTLIB-qt5=	${cWANTLIB} estdc++ \
 		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo ffi glapi \
 		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
@@ -117,7 +120,7 @@ WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
 		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
 		
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png pthread-stubs xcb xcb-render xcb-shm openjp2 \
+		png pthread-stubs stdc++ xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf
@@ -132,6 +135,7 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBJPEG_CFLAGS="-I${LOCALBASE}/include" \
+		POPPLER_QT_LIBS="-L${LOCALBASE}/lib/qt3 -lqt-mt" \
 		ac_cv_prog_MOCQT4=${MODQT4_MOC}
 
 USE_GMAKE=	Yes
@@ -154,9 +158,9 @@ post-extract:
 
 post-configure:
 	find ${WRKBUILD} -name Makefile \! -path '*/qt5/*' -print0 | xargs -0 \
-		perl -pi -e     's,^CC = \S+,CC = ${MAIN_CC},;' \
-		         -e    's,^CPP = \S+,CPP = ${MAIN_CC},;' \
-		         -e    's,^CXX = \S+,CXX = ${MAIN_CXX},;' \
-		         -e 's,^CXXCPP = \S+,CXXCPP = ${MAIN_CXX},;'
+		perl -pi -e     's,^CC = \S+,override CC = ${MAIN_CC},;' \
+		         -e    's,^CPP = \S+,override CPP = ${MAIN_CC},;' \
+		         -e    's,^CXX = \S+,override CXX = ${MAIN_CXX},;' \
+		         -e 's,^CXXCPP = \S+,override CXXCPP = ${MAIN_CXX},;'
 
 .include <bsd.port.mk>
