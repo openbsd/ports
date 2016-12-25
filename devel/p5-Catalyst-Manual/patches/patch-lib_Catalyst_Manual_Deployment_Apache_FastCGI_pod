@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Catalyst_Manual_Deployment_Apache_FastCGI_pod,v 1.1 2016/12/25 15:38:45 zhuk Exp $
+Don't pollute whatis database.
+--- lib/Catalyst/Manual/Deployment/Apache/FastCGI.pod.orig	Tue Dec 20 18:33:18 2016
++++ lib/Catalyst/Manual/Deployment/Apache/FastCGI.pod	Tue Dec 20 18:35:07 2016
+@@ -2,6 +2,8 @@
+ 
+ Catalyst::Manual::Deployment::Apache::FastCGI - Deploying Catalyst with FastCGI on Apache
+ 
++=head1 DESCRIPTION
++
+ =head2 Setup
+ 
+ =head3 1. Install Apache with mod_fastcgi

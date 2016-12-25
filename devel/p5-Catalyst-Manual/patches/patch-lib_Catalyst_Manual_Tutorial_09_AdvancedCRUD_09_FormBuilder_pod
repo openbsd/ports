@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Catalyst_Manual_Tutorial_09_AdvancedCRUD_09_FormBuilder_pod,v 1.1 2016/12/25 15:38:45 zhuk Exp $
+Don't pollute whatis database.
+--- lib/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod.orig	Tue Dec 20 18:38:10 2016
++++ lib/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod	Tue Dec 20 18:38:14 2016
+@@ -2,10 +2,10 @@
+ 
+ Catalyst::Manual::Tutorial::09_AdvancedCRUD::09_FormBuilder - Catalyst Tutorial - Chapter 9: Advanced CRUD - FormBuilder
+ 
+-=head1 OVERVIEW
+-
+ NOTE:  This chapter of the tutorial is in progress.  Feel free to 
+ volunteer to help out. :-)
++
++=head1 OVERVIEW
+ 
+ This is B<Chapter 9 of 10> for the Catalyst tutorial.
+ 
