@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-tds,v 1.2 2015/01/06 21:32:41 zhuk Exp $
-lib/qt5/cmake/Qt5Sql/Qt5Sql_QTDSDriverPlugin.cmake
-lib/qt5/plugins/sqldrivers/libqsqltds.so
