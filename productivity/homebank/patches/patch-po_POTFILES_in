@@ -1,9 +1,11 @@
-$OpenBSD: patch-po_POTFILES_in,v 1.4 2011/03/07 19:24:43 ajacoutot Exp $
---- po/POTFILES.in.orig	Sat Jan 15 22:24:30 2011
-+++ po/POTFILES.in	Sat Feb 26 12:54:23 2011
-@@ -31,4 +31,5 @@ src/ui_category.c
- src/ui_payee.c
- src/widgets.c
- src/xml.c
+$OpenBSD: patch-po_POTFILES_in,v 1.5 2016/12/25 21:13:04 jung Exp $
+--- po/POTFILES.in.orig	Sun Feb 21 10:31:49 2016
++++ po/POTFILES.in	Thu Dec  1 22:07:12 2016
+@@ -31,6 +31,7 @@ src/ui-assist-import.c
+ src/ui-budget.c
+ src/ui-category.c
+ src/ui-currency.c
 +src/da_encoding.c
- 
+ src/ui-dialogs.c
+ src/ui-filter.c
+ src/ui-hbfile.c
