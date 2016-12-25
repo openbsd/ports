@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/11/01 21:00:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2016/12/25 16:35:32 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -12,7 +12,7 @@
 # |                                                        |||
 # +->-------------------------------------------------->-+ |||
 #                                                        | |||
-# oxygen-icons                                           | |||
+# devel/kf5/oxygen-icons                                 | |||
 # +-> libs                                               | |||
 #     +-> pure resources: base-artwork, l10n, wallpapers | |||
 #     |                                                  | |||
@@ -73,9 +73,6 @@
 
 SUBDIR =
 # don't even try to keep these sorted
-
-# basic bricks
-SUBDIR += oxygen-icons
 
 # libraries
 SUBDIR += libs
