@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/26 18:59:22 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/26 19:37:04 zhuk Exp $
 
 QT5NAME =		QtEnginio
-DISTNAME =		${QT5NAME:L}-opensource-src-${ENGINIO_VERSION}
+
+VERSION =		${ENGINIO_VERSION}
+DIST_VERSION =		${ENGINIO_VERSION}
+NEXT_VERSION =		${ENGINIO_NEXT_VERSION}
+
 COMMENT-main =		Qt5 cloud data storage engine
 
 MULTI_PACKAGES =	-main -examples -qch -html
