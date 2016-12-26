@@ -1,0 +1,208 @@
+# $OpenBSD: cargo.port.mk,v 1.1 2016/12/26 13:55:11 landry Exp $
+
+CATEGORIES +=	lang/rust
+
+# List of static dependencies. The format is cratename-version.
+# MODCARGO_CRATES will be downloaded from MASTER_SITES_CRATESIO.
+# MODCARGO_EXTRA_CRATES should be downloaded by the port itself.
+MODCARGO_CRATES ?=
+MODCARGO_EXTRA_CRATES ?=
+
+# List of features to build (space separated list).
+MODCARGO_FEATURES ?=
+
+# List of crates to update (no version).
+# Used to override a dependency with newer version.
+MODCARGO_CRATES_UPDATE ?=
+
+# Name of the local directory for vendoring crates.
+MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
+
+# Default path for cargo manifest.
+MODCARGO_CARGOTOML ?= ${WRKSRC}/Cargo.toml
+
+# Define MASTER_SITES_CRATESIO for crates.io
+MASTER_SITES_CRATESIO =	https://crates.io/api/v1/crates/
+
+# Save crates inside particular DIST_SUBDIR by default.
+# If you use DIST_SUBDIR, adjust MODCARGO_DIST_SUBDIR.
+MODCARGO_DIST_SUBDIR ?= cargo
+
+.if empty(MODCARGO_DIST_SUBDIR)
+_MODCARGO_DIST_SUBDIR =
+.else
+_MODCARGO_DIST_SUBDIR = ${MODCARGO_DIST_SUBDIR}/
+.endif
+
+# Use MASTER_SITES9 to grab crates by default.
+# Could be changed by setting MODCARGO_MASTER_SITESN.
+MODCARGO_MASTER_SITESN ?= 9
+MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
+
+# Generated list of DISTFILES.
+.for _crate in ${MODCARGO_CRATES}
+DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:${MODCARGO_MASTER_SITESN}
+.endfor
+
+# post-extract target for preparing crates directory.
+# It will put all crates in the local crates directory.
+MODCARGO_post-extract = \
+	${ECHO_MSG} "[modcargo] moving crates to ${MODCARGO_VENDOR_DIR}" ; \
+	mkdir ${MODCARGO_VENDOR_DIR} ;
+.for _crate in ${MODCARGO_CRATES} ${MODCARGO_EXTRA_CRATES}
+MODCARGO_post-extract += \
+	mv ${WRKDIR}/${_crate} ${MODCARGO_VENDOR_DIR}/${_crate} ;
+.endfor
+
+# post-patch target for generating metadata of crates.
+.for _crate in ${MODCARGO_CRATES} ${MODCARGO_EXTRA_CRATES}
+MODCARGO_post-patch += \
+	${ECHO_MSG} "[modcargo] Generating metadata for ${_crate}" ; \
+	${LOCALBASE}/bin/cargo-generate-vendor \
+		${FULLDISTDIR}/${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/${_crate} ;
+.endfor
+
+# configure hook. Place a config file for overriding crates-io index by
+# local source directory.
+MODCARGO_configure = \
+	mkdir -p ${WRKDIR}/.cargo; \
+	\
+	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config; \
+	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
+		>>${WRKDIR}/.cargo/config; \
+	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
+	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config; \
+	\
+	echo "" >>${MODCARGO_CARGOTOML}; \
+	echo "[profile.release]" >>${MODCARGO_CARGOTOML}; \
+	echo "opt-level = 2" >>${MODCARGO_CARGOTOML}; \
+	echo "debug = false" >>${MODCARGO_CARGOTOML};
+
+
+.for _crate in ${MODCARGO_CRATES_UPDATE}
+MODCARGO_configure += \
+	${MODCARGO_CARGO_UPDATE} ${_crate} ;
+.endfor
+
+# Build dependencies.
+MODCARGO_BUILD_DEPENDS = devel/cargo \
+			 lang/rust
+
+# devel/cargo-generate-vendor is mandatory for hooks.
+BUILD_DEPENDS +=	devel/cargo-generate-vendor
+
+MODCARGO_BUILDDEP ?=	Yes
+.if ${MODCARGO_BUILDDEP:L} == "yes"
+BUILD_DEPENDS +=	${MODCARGO_BUILD_DEPENDS}
+.endif
+
+# Location of cargo binary (default to devel/cargo binary)
+MODCARGO_CARGO_BIN ?=	${LOCALBASE}/bin/cargo
+
+# Location of the cargo output directory.
+MODCARGO_TARGET_DIR ?=	${WRKBUILD}/target
+
+# Environment for cargo
+#  - CARGO_HOME: local cache of the registry index
+#  - CARGO_BUILD_JOBS: configure number of jobs to run
+#  - CARGO_TARGET_DIR: location of where to place all generated artifacts
+#  - RUSTC: path of rustc binary (default to lang/rust)
+#  - RUSTDOC: path of rustdoc binary (default to lang/rust)
+#  - RUSTFLAGS: custom flags to pass to all compiler invocations that Cargo performs
+#
+# XXX LDFLAGS => -C link-arg=$1 (via RUSTFLAGS)
+MODCARGO_ENV += \
+	CARGO_HOME=${WRKDIR}/cargo-home \
+	CARGO_BUILD_JOBS=${MAKE_JOBS} \
+	CARGO_TARGET_DIR=${MODCARGO_TARGET_DIR} \
+	RUSTC=${LOCALBASE}/bin/rustc \
+	RUSTDOC=${LOCALBASE}/bin/rustdoc \
+	RUSTFLAGS="${RUSTFLAGS}"
+
+# Helper to shorten cargo calls.
+MODCARGO_CARGO_RUN = \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODCARGO_ENV} \
+		${MODCARGO_CARGO_BIN}
+
+# User arguments for cargo targets.
+MODCARGO_BUILD_ARGS ?=
+MODCARGO_INSTALL_ARGS ?=
+MODCARGO_TEST_ARGS ?=
+
+# Manage crate features.
+.if !empty(MODCARGO_FEATURES)
+MODCARGO_BUILD_ARGS +=	--features='${MODCARGO_FEATURES}'
+MODCARGO_TEST_ARGS +=	--features='${MODCARGO_FEATURES}'
+.endif
+
+# Helper for updating a crate.
+MODCARGO_CARGO_UPDATE = \
+	${MODCARGO_CARGO_RUN} update \
+		--manifest-path ${MODCARGO_CARGOTOML} \
+		--verbose \
+		--package
+
+# Use module targets ?
+MODCARGO_BUILD ?=	Yes
+MODCARGO_INSTALL ?=	Yes
+MODCARGO_TEST ?=	Yes
+
+# Define the build target.
+MODCARGO_BUILD_TARGET = \
+	${MODCARGO_CARGO_RUN} build \
+		--manifest-path ${MODCARGO_CARGOTOML} \
+		--release \
+		--verbose \
+		${MODCARGO_BUILD_ARGS} ;
+
+.if !target(do-build) && ${MODCARGO_BUILD:L} == "yes"
+do-build:
+	@${MODCARGO_BUILD_TARGET}
+.endif
+
+# Define the install target.
+MODCARGO_INSTALL_TARGET = \
+	${MODCARGO_CARGO_RUN} install \
+		--root="${PREFIX}" \
+		--verbose \
+		${MODCARGO_INSTALL_ARGS} ; \
+	rm -- "${PREFIX}/.crates.toml" ;
+
+.if !target(do-install) && ${MODCARGO_INSTALL:L} == "yes"
+do-install:
+	@${MODCARGO_INSTALL_TARGET}
+.endif
+
+# Define the test target.
+MODCARGO_TEST_TARGET = \
+	${MODCARGO_CARGO_RUN} test \
+		--manifest-path ${MODCARGO_CARGOTOML} \
+		--release \
+		--verbose \
+		${MODCARGO_TEST_ARGS} ;
+
+.if !target(do-test) && ${MODCARGO_TEST:L} == "yes"
+do-test:
+	@${MODCARGO_TEST_TARGET}
+.endif
+
+
+#
+# Helper targets for port maintainer
+#
+
+# modcargo-crates-1 will output crates list from Cargo.lock file.
+modcargo-crates-1: patch
+	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "-" $$3 }' \
+		<${WRKSRC}/Cargo.lock
+
+# modcargo-crates-2 will try to grab license information from downloaded crates.
+modcargo-crates-2: configure
+	@find ${WRKSRC}/modcargo-crates -name 'Cargo.toml' -maxdepth 2 \
+		-exec grep -H '^license' {} \; \
+		| sed \
+		-e 's|^${WRKSRC}/modcargo-crates/|MODCARGO_CRATES +=	|' \
+		-e 's|/Cargo.toml:license.*= *"|	# |' \
+		-e 's|"$$||g'
+

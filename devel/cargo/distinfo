@@ -4,10 +4,10 @@ SHA256 (cargo/bitflags-0.1.1.tar.gz) = KmV3UX7NDuCTT0inKVqJqu8+bfr+rEBPlMCzRIUY3
 SHA256 (cargo/bitflags-0.7.0.tar.gz) = qtGJN6Yo7Gq80m0UiQEswOGMIXmCEPSRr2ne2biBEG0=
 SHA256 (cargo/bufstream-0.1.2.tar.gz) = e0jb4v8OmPovAzd9IEqWN9PJgWzUMb/gWoq70OoR0HQ=
 SHA256 (cargo/cargo-0.14.0.tar.gz) = kOwOZEWGlZ9i5uNOZJulfbb3SqN7iekJcvgXxJsYdTE=
-SHA256 (cargo/cargo-bootstrap-0.14.0-20161112.tar.gz) = sb6A3tG3aS54dLrlBIBVEpxtqLUGaohTFHtr6qR7jTY=
+SHA256 (cargo/cargo-bootstrap-amd64-0.14.0-20161112.tar.gz) = DzwS882KmKVg95PSXcjEkVpJt0gLerGuEJ0IrIkSL3c=
+SHA256 (cargo/cargo-bootstrap-i386-0.14.0-20161204.tar.gz) = erN8sChnzwHHg+9eKjMOtOzcu6dDcJ35jUVrqaIWLTQ=
 SHA256 (cargo/cfg-if-0.1.0.tar.gz) = 3h52DXtlNa9CQfyovYrfaOLn7azGsp9dOZBQxeSM+Iw=
 SHA256 (cargo/cmake-0.1.17.tar.gz) = 389bzs5W75U7jqBCUJ6dy9/peCC34g2GvrU98w7ZSXg=
-SHA256 (cargo/crates.io-index-9f8c3a65f70b2a5723e0d9cc0a32d531ea42da67.tar.gz) = hXVtuRvjIZ0ly4gGKBIAcaKvGGtF09YVlAnGgyjW/0o=
 SHA256 (cargo/crossbeam-0.2.9.tar.gz) = +5dPg16QOQxfnfrADwWwbcEXKZ9epOhfvHu0Q69JEcw=
 SHA256 (cargo/curl-0.3.9.tar.gz) = +vVNknx1KwktPpnqIn2cfJtKPohaM2ism/oolY8hUQA=
 SHA256 (cargo/curl-sys-0.2.4.tar.gz) = TxmNEDeKO8HxsOO8Oi3lybueCJOEYN7Fe6ZmfZpl+8M=
@@ -17,6 +17,7 @@ SHA256 (cargo/filetime-0.1.10.tar.gz) = U2OrjkE5uFaKYjfbUkhkblqKL4m9XMsCCSGCsR/T
 SHA256 (cargo/flate2-0.2.14.tar.gz) = PutIHpVzBBeNLngvLaElfxQ03+y66IO6+2Gtoqn+o7s=
 SHA256 (cargo/fs2-0.2.5.tar.gz) = vNQU5aGpebkxu5L0G3pUEG0/bS5sJT6c6UO3zUaCUe8=
 SHA256 (cargo/gcc-0.3.35.tar.gz) = kezQN3Hv+wyWj9aVCzfolHaleKrxxwKX2OkrZRbsMxI=
+SHA256 (cargo/gdi32-sys-0.2.0.tar.gz) = CRJRWo/yS6kAQi7NqAC1L0AWpWJRki05fFdr+SxpBRg=
 SHA256 (cargo/git2-0.4.4.tar.gz) = M6lu7vInQDAGzbWepuBbqtjN3ea3mr7XU9lszuE2utI=
 SHA256 (cargo/git2-curl-0.5.0.tar.gz) = PV92bYBOPPK5Dhard8Pd7cscpdJFbK23s/kHNF+MNJg=
 SHA256 (cargo/glob-0.2.11.tar.gz) = i+GN4JpWtg7Q7fhLyd8AfjAEBpGves0cQYdPqsWJW/s=
@@ -24,8 +25,9 @@ SHA256 (cargo/hamcrest-0.1.1.tar.gz) = vwiPBCpGcInpuqSXL1f5JH5CoMxUm6Jkx6BPu47Li
 SHA256 (cargo/idna-0.1.0.tar.gz) = EFMjbgDOT2aK7KSnaaCbO/WmgtgCq9bzyzk3T2sWLBE=
 SHA256 (cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (cargo/lazy_static-0.2.1.tar.gz) = SSR+wqKFuz3LI8vZw1GTwCXnJRv853wdXal+Y2Lf/n8=
-SHA256 (cargo/libc-0.2.17.tar.gz) = BE0TYFk6ePXI5ecQvszcJKtx0fAbwZopvKzboi6Eddg=
+SHA256 (cargo/libc-0.2.18.tar.gz) = pRgi/IR+eoEBUU0dRONUui/6fUwZTcq0iHB0DjJ8rHA=
 SHA256 (cargo/libgit2-sys-0.4.5.tar.gz) = MpPclRaaY1HFoD7KS/VUnzqaBjNqAAMVh2/xFlpfuhA=
+SHA256 (cargo/libressl-pnacl-sys-2.1.6.tar.gz) = y8BYlRq2o+81yhZGLXZCxIZ+ZANSCBHyhTek4vLbPnE=
 SHA256 (cargo/libssh2-sys-0.1.39.tar.gz) = HevX5W0ZZV63hvgnZ13FX21TDebXuB520T0a/GNdbAc=
 SHA256 (cargo/libz-sys-1.0.6.tar.gz) = QPLfdzC10pQmw+RM5NCI2MXe9kccLJO6mFhbifsgHOY=
 SHA256 (cargo/log-0.3.6.tar.gz) = q4NJe/i/TtKnQlnByAI1H81npluqhjlLa6c8NvSDgFQ=
@@ -46,6 +48,7 @@ SHA256 (cargo/openssl-0.7.14.tar.gz) = xBF7YkSqxC7QFQpgGbTZU9KCR8Xdaub0auRptfIxh
 SHA256 (cargo/openssl-sys-0.7.14.tar.gz) = uKxenZEd1MMgK79BObc7x6EjH30KOUMsb4k3RfDgQSA=
 SHA256 (cargo/openssl-sys-extras-0.7.14.tar.gz) = EcXh26fT0D2A8EW/DWARHcaSE7Z2UefIiVJ6O62rufo=
 SHA256 (cargo/pkg-config-0.3.8.tar.gz) = jO6ATsx+ryAaSiByQUcsyHDoJSBvbAMePuKnL6Ql8vo=
+SHA256 (cargo/pnacl-build-helper-1.4.10.tar.gz) = YckjHTGuqEUAdEPWL8u1i7aUmrnBgIHuHgmSDgzxEYs=
 SHA256 (cargo/psapi-sys-0.1.0.tar.gz) = q81dGgfTYOKXJ/dXqd7LPOi8bg76iWnPqtZpqDF6JHg=
 SHA256 (cargo/rand-0.3.14.tar.gz) = J5HYjG3vrHmcPyDXTwlMozuTMmEtmu+QeFGcguT+BKU=
 SHA256 (cargo/regex-0.1.77.tar.gz) = ZLA0RsRm01tC8qiyA8jgPti5HA8XtW4fhPchCiV6pmU=
@@ -64,6 +67,7 @@ SHA256 (cargo/toml-0.2.0.tar.gz) = pELfwTUI5gPD92MnQ2Hbf3nXRpoOlcQRzeU2Yqsw/HI=
 SHA256 (cargo/unicode-bidi-0.2.3.tar.gz) = wffOuWr9/u3uQrreZaDVhaagEG9oG2dJyP9Nqo3zCz8=
 SHA256 (cargo/unicode-normalization-0.1.2.tar.gz) = JmQ6L4O6xV8ZdvtxbBAjRIX5IC3NZc+9+dpJhnsnEXI=
 SHA256 (cargo/url-1.2.0.tar.gz) = r+nsVLxNsUvIdEt/7QYNeFrHVnkUUJWbIkhEMxnVsRk=
+SHA256 (cargo/user32-sys-0.2.0.tar.gz) = TvRxHRB7IbQQo6l0sSBNmszIsQ2tddgyS111XeFhfUc=
 SHA256 (cargo/utf8-ranges-0.1.3.tar.gz) = ocoTwIxBycPgQiTtn/gEYdl+EhWJ/yfHU6FssQgwrg8=
 SHA256 (cargo/winapi-0.2.8.tar.gz) = Fn3J1pSam4V/NFEnXpEcP0QlWELB96dvM8VRA6kJCHo=
 SHA256 (cargo/winapi-build-0.1.1.tar.gz) = LTFe7js0rKR5ey2msT7Ygmbm1hJWKgxGOQr4KZ/Gmbw=
@@ -74,10 +78,10 @@ SIZE (cargo/bitflags-0.1.1.tar.gz) = 8719
 SIZE (cargo/bitflags-0.7.0.tar.gz) = 10851
 SIZE (cargo/bufstream-0.1.2.tar.gz) = 7477
 SIZE (cargo/cargo-0.14.0.tar.gz) = 625305
-SIZE (cargo/cargo-bootstrap-0.14.0-20161112.tar.gz) = 7324470
+SIZE (cargo/cargo-bootstrap-amd64-0.14.0-20161112.tar.gz) = 7333945
+SIZE (cargo/cargo-bootstrap-i386-0.14.0-20161204.tar.gz) = 7137895
 SIZE (cargo/cfg-if-0.1.0.tar.gz) = 2758
 SIZE (cargo/cmake-0.1.17.tar.gz) = 10222
-SIZE (cargo/crates.io-index-9f8c3a65f70b2a5723e0d9cc0a32d531ea42da67.tar.gz) = 2533290
 SIZE (cargo/crossbeam-0.2.9.tar.gz) = 35449
 SIZE (cargo/curl-0.3.9.tar.gz) = 53146
 SIZE (cargo/curl-sys-0.2.4.tar.gz) = 3196957
@@ -87,6 +91,7 @@ SIZE (cargo/filetime-0.1.10.tar.gz) = 8884
 SIZE (cargo/flate2-0.2.14.tar.gz) = 46692
 SIZE (cargo/fs2-0.2.5.tar.gz) = 12661
 SIZE (cargo/gcc-0.3.35.tar.gz) = 23869
+SIZE (cargo/gdi32-sys-0.2.0.tar.gz) = 7643
 SIZE (cargo/git2-0.4.4.tar.gz) = 121616
 SIZE (cargo/git2-curl-0.5.0.tar.gz) = 4060
 SIZE (cargo/glob-0.2.11.tar.gz) = 18065
@@ -94,8 +99,9 @@ SIZE (cargo/hamcrest-0.1.1.tar.gz) = 9217
 SIZE (cargo/idna-0.1.0.tar.gz) = 234027
 SIZE (cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (cargo/lazy_static-0.2.1.tar.gz) = 688253
-SIZE (cargo/libc-0.2.17.tar.gz) = 108320
+SIZE (cargo/libc-0.2.18.tar.gz) = 114209
 SIZE (cargo/libgit2-sys-0.4.5.tar.gz) = 4133755
+SIZE (cargo/libressl-pnacl-sys-2.1.6.tar.gz) = 2697179
 SIZE (cargo/libssh2-sys-0.1.39.tar.gz) = 389357
 SIZE (cargo/libz-sys-1.0.6.tar.gz) = 601369
 SIZE (cargo/log-0.3.6.tar.gz) = 16110
@@ -116,6 +122,7 @@ SIZE (cargo/openssl-0.7.14.tar.gz) = 63824
 SIZE (cargo/openssl-sys-0.7.14.tar.gz) = 10156
 SIZE (cargo/openssl-sys-extras-0.7.14.tar.gz) = 3871
 SIZE (cargo/pkg-config-0.3.8.tar.gz) = 10814
+SIZE (cargo/pnacl-build-helper-1.4.10.tar.gz) = 5470
 SIZE (cargo/psapi-sys-0.1.0.tar.gz) = 973
 SIZE (cargo/rand-0.3.14.tar.gz) = 54768
 SIZE (cargo/regex-0.1.77.tar.gz) = 185559
@@ -134,6 +141,7 @@ SIZE (cargo/toml-0.2.0.tar.gz) = 46886
 SIZE (cargo/unicode-bidi-0.2.3.tar.gz) = 1744003
 SIZE (cargo/unicode-normalization-0.1.2.tar.gz) = 612931
 SIZE (cargo/url-1.2.0.tar.gz) = 68332
+SIZE (cargo/user32-sys-0.2.0.tar.gz) = 10624
 SIZE (cargo/utf8-ranges-0.1.3.tar.gz) = 8422
 SIZE (cargo/winapi-0.2.8.tar.gz) = 455145
 SIZE (cargo/winapi-build-0.1.1.tar.gz) = 669

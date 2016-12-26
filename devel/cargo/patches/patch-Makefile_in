@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2016/12/26 13:55:11 landry Exp $
+Permit running testsuite with SEPARATE_BUILD
+--- Makefile.in.orig	Wed Dec 14 13:26:43 2016
++++ Makefile.in	Wed Dec 14 13:32:23 2016
+@@ -99,7 +99,7 @@ cargo-$(1): $$(CARGO) target/openssl/$(1).stamp
+ 
+ test-unit-$(1): $$(CARGO)
+ 	@mkdir -p target/$(1)/cit
+-	$$(CARGO) test --target $(1) $$(CARGOFLAGS) $$(VERBOSE_FLAG) $$(only)
++	cd $(S) && $$(CARGO) test --target $(1) $$(CARGOFLAGS) $$(VERBOSE_FLAG) $$(only)
+ endef
+ $(foreach target,$(CFG_TARGET),$(eval $(call CARGO_TARGET,$(target))))
+ 
+@@ -113,10 +113,10 @@ $(TARGET_ROOT)/snapshot/bin/cargo$(X): $(S)src/snapsho
+ test: style no-exes $(foreach target,$(CFG_TARGET),test-unit-$(target))
+ 
+ style:
+-	sh tests/check-style.sh
++	cd $(S) && sh tests/check-style.sh
+ 
+ no-exes:
+-	find $$(git ls-files) -type f \
++	cd $(S) && find $$(git ls-files) -type f \
+ 		\( -perm -u+x -or -perm -g+x -or -perm -o+x \) \
+ 		-not -name configure -not -name '*.sh' -not -name '*.rs' \
+ 		-not -name '*.py' -not -wholename "*/rust-installer/*" | \

@@ -1,5 +1,5 @@
-$OpenBSD: patch-tests_cargotest_support_paths_rs,v 1.1 2016/08/31 08:33:37 landry Exp $
-use WRKBUILD as temporary directory for testing.
+$OpenBSD: patch-tests_cargotest_support_paths_rs,v 1.2 2016/12/26 13:55:11 landry Exp $
+use MODCARGO_TARGET_DIR as temporary directory for testing.
 --- tests/cargotest/support/paths.rs.orig	Sun Aug 21 20:00:19 2016
 +++ tests/cargotest/support/paths.rs	Sun Aug 21 20:09:38 2016
 @@ -1,4 +1,3 @@
@@ -24,7 +24,7 @@ use WRKBUILD as temporary directory for testing.
 -        path.pop();
 -    }
 -
-+    let path = PathBuf::from("${WRKBUILD}/target/debug");
++    let path = PathBuf::from("${MODCARGO_TARGET_DIR}/debug");
      path.join(CARGO_INTEGRATION_TEST_DIR)
  }
  
