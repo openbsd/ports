@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2016/12/26 13:49:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2016/12/26 14:22:02 zhuk Exp $
 
 COMMENT =		simple text adventure interpreter
 V =			2.4.1
 DISTNAME =		instead_${V}
 PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games devel/lua
-HOMEPAGE =		http://instead.sourceforge.net
+HOMEPAGE =		https://instead.syscall.ru/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
+REVISION =		0
 
 # MIT, LGPL (SDL_anigif), zlib (SDL_gfx), 3-clause BSDL (tinymt32)
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,8 +18,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 iconv m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangoxft-1.0 pthread z
 WANTLIB += ${MODLUA_WANTLIB}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=instead/} \
-			http://ifhub.ru/instead/${V}/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=instead/}
 
 MODULES	=		devel/cmake lang/lua
 RUN_DEPENDS =		devel/desktop-file-utils
