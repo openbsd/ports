@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/08/03 09:21:30 czarkoff Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/12/26 14:53:25 czarkoff Exp $
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
 lib/baresip/
@@ -13,6 +13,7 @@ lib/baresip/modules/avformat.so
 lib/baresip/modules/cons.so
 lib/baresip/modules/contact.so
 lib/baresip/modules/daala.so
+lib/baresip/modules/debug_cmd.so
 lib/baresip/modules/dtls_srtp.so
 lib/baresip/modules/echo.so
 lib/baresip/modules/fakevideo.so
@@ -32,6 +33,7 @@ lib/baresip/modules/natpmp.so
 lib/baresip/modules/opus.so
 lib/baresip/modules/plc.so
 lib/baresip/modules/presence.so
+lib/baresip/modules/sdl2.so
 lib/baresip/modules/selfview.so
 lib/baresip/modules/snapshot.so
 lib/baresip/modules/sndfile.so
@@ -42,6 +44,7 @@ lib/baresip/modules/speex_pp.so
 lib/baresip/modules/srtp.so
 lib/baresip/modules/stdio.so
 lib/baresip/modules/stun.so
+lib/baresip/modules/swscale.so
 lib/baresip/modules/syslog.so
 lib/baresip/modules/turn.so
 lib/baresip/modules/uuid.so

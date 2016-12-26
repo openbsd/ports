@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-gtk2,v 1.1 2015/10/02 19:32:08 czarkoff Exp $
+@comment $OpenBSD: PLIST-gtk2,v 1.2 2016/12/26 14:53:25 czarkoff Exp $
+lib/baresip/modules/cairo.so
 lib/baresip/modules/gst1.so
 lib/baresip/modules/gst_video1.so
 lib/baresip/modules/gtk.so
+lib/baresip/modules/rst.so
+lib/baresip/modules/vidinfo.so

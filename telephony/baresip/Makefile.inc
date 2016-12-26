@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.7 2016/11/25 21:26:26 czarkoff Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
 
 CATEGORIES =		telephony
 
 HOMEPAGE =		http://www.creytiv.com/
-MASTER_SITES =		${HOMEPAGE:=pub/}
+MASTER_SITES ?=		${HOMEPAGE:=pub/}
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -71,4 +71,4 @@ CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include -fPIC \
 			-DHAVE_STRINGS_H -DHAVE_GAI_STRERROR -DHAVE_ARC4RANDOM \
 			-DVERSION=\"$V\" -DHAVE_ROUTE_LIST
 
-NO_TEST =		Yes
+NO_TEST ?=		Yes
