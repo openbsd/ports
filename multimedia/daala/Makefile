@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2016/06/14 16:08:14 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/26 14:53:05 czarkoff Exp $
 
 COMMENT =		free video codec
-DISTNAME =		daala-0.0.20160614
+DISTNAME =		daala-0.0.20161220
 CATEGORIES =		multimedia graphics
 HOMEPAGE =		https://xiph.org/daala/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -9,15 +9,15 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-SHARED_LIBS +=  daalabase                 2.0
+SHARED_LIBS +=  daalabase                 2.1
 SHARED_LIBS +=  daaladec                  1.0
-SHARED_LIBS +=  daalaenc                  1.1
+SHARED_LIBS +=  daalaenc                  2.0
 
 WANTLIB += m
 
 GH_ACCOUNT =		xiph
 GH_PROJECT =		daala
-GH_COMMIT =		06ac4247c736761a10c0b9d3bd256908704ca474
+GH_COMMIT =		e3508077598a53ae9faf1ce6715e819be9c3cf81
 
 MODULES =		lang/clang
 MODCLANG_ARCHS =	i386 amd64
