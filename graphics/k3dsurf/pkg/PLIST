@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/06/15 11:49:01 ajacoutot Exp $
-bin/k3dsurf
+@comment $OpenBSD: PLIST,v 1.3 2016/12/26 09:14:29 zhuk Exp $
+@bin bin/k3dsurf
 share/pixmaps/
 share/pixmaps/k3dsurf.png
