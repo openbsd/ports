@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/04/30 16:37:55 zhuk Exp $
-include/quazip/
-include/quazip/JlCompress.h
-include/quazip/crypt.h
-include/quazip/ioapi.h
-include/quazip/quaadler32.h
-include/quazip/quachecksum32.h
-include/quazip/quacrc32.h
-include/quazip/quagzipfile.h
-include/quazip/quaziodevice.h
-include/quazip/quazip.h
-include/quazip/quazip_global.h
-include/quazip/quazipdir.h
-include/quazip/quazipfile.h
-include/quazip/quazipfileinfo.h
-include/quazip/quazipnewinfo.h
-include/quazip/unzip.h
-include/quazip/zip.h
-lib/libquazip.a
-@lib lib/libquazip.so.${LIBquazip_VERSION}
-share/cmake/Modules/FindQuaZip.cmake
+@comment $OpenBSD: PLIST,v 1.3 2016/12/26 12:38:07 zhuk Exp $
+include/${LIBNAME}/
+include/${LIBNAME}/JlCompress.h
+include/${LIBNAME}/crypt.h
+include/${LIBNAME}/ioapi.h
+include/${LIBNAME}/quaadler32.h
+include/${LIBNAME}/quachecksum32.h
+include/${LIBNAME}/quacrc32.h
+include/${LIBNAME}/quagzipfile.h
+include/${LIBNAME}/quaziodevice.h
+include/${LIBNAME}/quazip.h
+include/${LIBNAME}/quazip_global.h
+include/${LIBNAME}/quazipdir.h
+include/${LIBNAME}/quazipfile.h
+include/${LIBNAME}/quazipfileinfo.h
+include/${LIBNAME}/quazipnewinfo.h
+include/${LIBNAME}/unzip.h
+include/${LIBNAME}/zip.h
+lib/lib${LIBNAME}.a
+@lib lib/lib${LIBNAME}.so.${LIBquazip_VERSION}
+share/cmake/Modules/Find${CMAKENAME}.cmake
