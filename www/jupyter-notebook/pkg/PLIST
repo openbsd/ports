@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/13 14:52:15 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/26 13:21:46 shadchin Exp $
 bin/jupyter-nbextension${MODPY_BIN_SUFFIX}
 bin/jupyter-notebook${MODPY_BIN_SUFFIX}
 bin/jupyter-serverextension${MODPY_BIN_SUFFIX}
@@ -1079,6 +1079,7 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/a
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/scroll/simplescrollbars.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/scroll/simplescrollbars.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/search/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/search/jump-to-line.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/search/match-highlighter.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/search/matchesonscrollbar.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/addon/search/matchesonscrollbar.js
@@ -1124,6 +1125,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/coffeescript/coffeescript.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/commonlisp/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/commonlisp/commonlisp.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/crystal/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/crystal/crystal.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/css/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/css/css.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/cypher/
@@ -1154,6 +1157,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/erlang/erlang.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/factor/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/factor/factor.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/fcl/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/fcl/fcl.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/forth/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/forth/forth.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/fortran/
@@ -1173,6 +1178,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/handlebars/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/handlebars/handlebars.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haskell/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haskell-literate/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haskell-literate/haskell-literate.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haskell/haskell.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haxe/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/haxe/haxe.js
@@ -1190,6 +1197,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/javascript/javascript.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/jinja2/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/jinja2/jinja2.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/jsx/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/jsx/jsx.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/julia/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/julia/julia.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/livescript/
@@ -1200,6 +1209,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/markdown/markdown.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mathematica/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mathematica/mathematica.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mbox/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mbox/mbox.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/meta.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mirc/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/mirc/mirc.js
@@ -1231,8 +1242,12 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/php/php.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/pig/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/pig/pig.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/powershell/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/powershell/powershell.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/properties/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/properties/properties.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/protobuf/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/protobuf/protobuf.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/puppet/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/puppet/puppet.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/python/
@@ -1249,6 +1264,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/ruby/ruby.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/rust/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/rust/rust.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/sas/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/sas/sas.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/sass/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/sass/sass.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/scheme/
@@ -1315,11 +1332,17 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vhdl/vhdl.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vue/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/vue/vue.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/webidl/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/webidl/webidl.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/xml/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/xml/xml.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/xquery/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/xquery/xquery.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yacas/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yacas/yacas.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yaml/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yaml-frontmatter/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/yaml/yaml.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/z80/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/codemirror/mode/z80/z80.js
@@ -1418,14 +1441,15 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/moment/min/m
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/moment/moment.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs/require.js
-lib/python${MODPY_VERSION}/site-packages/notebook/static/components/term.js/
-lib/python${MODPY_VERSION}/site-packages/notebook/static/components/term.js/src/
-lib/python${MODPY_VERSION}/site-packages/notebook/static/components/term.js/src/term.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/lib/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/lib/encoding.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/underscore/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/underscore/underscore-min.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/xterm.js/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/xterm.js/dist/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/xterm.js/dist/xterm.css
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/xterm.js/dist/xterm.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/custom/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/custom/custom.css
 lib/python${MODPY_VERSION}/site-packages/notebook/static/custom/custom.js
