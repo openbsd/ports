@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/12/26 08:47:45 zhuk Exp $
 
 COMMENT=	Qt Cryptographic Architecture
 
@@ -19,14 +19,9 @@ WANTLIB += m pthread stdc++
 MASTER_SITES=		http://delta.affinix.com/download/qca/
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		x11/qt3
+MODULES=		x11/qt3 devel/qmake
 
 NO_TEST=		Yes
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
-
-MAKE_FLAGS=		LIBqca_VERSION=${LIBqca_VERSION}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
