@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/12/26 09:24:49 zhuk Exp $
 
 COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
@@ -13,7 +13,7 @@ REVISION=	7
 
 WRKDIST=	${WRKDIR}/qt-sqlite3-${V}
 
-MODULES=	x11/qt3
+MODULES=	x11/qt3 devel/qmake
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,13 +25,9 @@ NO_TEST=		Yes
 
 SUBST_VARS=		MODQT_PLUGINS
 
-do-configure:
-	cd ${WRKDIST} && qmake
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODQT_PLUGINS}/sqldrivers
 	${INSTALL_DATA} ${WRKBUILD}/sqldrivers/libqsqlite3.so \
 		${PREFIX}/${MODQT_PLUGINS}/sqldrivers
-
 
 .include <bsd.port.mk>
