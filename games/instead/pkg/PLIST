@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/24 16:52:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/26 13:49:39 zhuk Exp $
 bin/instead
 @bin bin/sdl-instead
 @man man/man6/instead.6
@@ -15,33 +15,34 @@ share/instead/
 share/instead/games/
 share/instead/games/tutorial3/
 share/instead/games/tutorial3/br.png
+share/instead/games/tutorial3/de.png
 share/instead/games/tutorial3/es.png
 share/instead/games/tutorial3/fr.png
 share/instead/games/tutorial3/gb.png
-share/instead/games/tutorial3/de.png
 share/instead/games/tutorial3/instead.ogg
 share/instead/games/tutorial3/instead.png
 share/instead/games/tutorial3/it.png
-share/instead/games/tutorial3/main-en.lua
 share/instead/games/tutorial3/main-de.lua
+share/instead/games/tutorial3/main-en.lua
 share/instead/games/tutorial3/main-es.lua
 share/instead/games/tutorial3/main-fr.lua
 share/instead/games/tutorial3/main-it.lua
 share/instead/games/tutorial3/main-pt.lua
 share/instead/games/tutorial3/main-ru.lua
-share/instead/games/tutorial3/main-ua.lua
+share/instead/games/tutorial3/main-uk.lua
 share/instead/games/tutorial3/main.lua
 share/instead/games/tutorial3/ru.png
-share/instead/games/tutorial3/ua.png
+share/instead/games/tutorial3/uk.png
 share/instead/lang/
 share/instead/lang/cz.ini
+share/instead/lang/de.ini
 share/instead/lang/en.ini
 share/instead/lang/es.ini
 share/instead/lang/fr.ini
 share/instead/lang/it.ini
 share/instead/lang/pt.ini
 share/instead/lang/ru.ini
-share/instead/lang/ua.ini
+share/instead/lang/uk.ini
 share/instead/stead/
 share/instead/stead/click.lua
 share/instead/stead/counters.lua

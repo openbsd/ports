@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/12 22:44:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/26 13:49:39 zhuk Exp $
 
 COMMENT =		simple text adventure interpreter
-V =			2.3.0
+V =			2.4.1
 DISTNAME =		instead_${V}
 PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games devel/lua
