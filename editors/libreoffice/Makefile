@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2016/12/05 16:17:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2016/12/26 19:04:31 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		5.2
-VERSION=	${BV}.2.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -19,9 +19,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
-
-REVISION-main=	0
-REVISION-kde=	0
 
 EPOCH=		0
 
@@ -54,6 +51,7 @@ DISTFILES+=	${EDISTFILES} \
 		boost_1_60_0.tar.bz2:0 \
 		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
 		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
+		907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0 \
 		048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:0 \
 		134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
@@ -78,7 +76,7 @@ DISTFILES+=	${EDISTFILES} \
 		5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0 \
 		d8b5214d35bcd2bfcb2cffa7795b351d-dejavu-fonts-ttf-2.35.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		mdds-1.2.0.tar.bz2:0 \
+		mdds-1.2.2.tar.bz2:0 \
 		aa899eff126216dafe721149fbdb511b-liblangtag-0.5.8.tar.bz2:0 \
 		language-subtag-registry-2016-07-19.tar.bz2:0 \
 		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \

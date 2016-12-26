@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2016/11/01 11:56:29 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2016/12/26 19:04:32 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -879,7 +879,10 @@ lib/libreoffice/share/basic/dialog.xlc
 lib/libreoffice/share/basic/script.xlc
 lib/libreoffice/share/classification/
 lib/libreoffice/share/classification/example.xml
+lib/libreoffice/share/classification/example_ca-ES.xml
+lib/libreoffice/share/classification/example_fr-FR.xml
 lib/libreoffice/share/classification/example_hu-HU.xml
+lib/libreoffice/share/classification/example_nl-NL.xml
 lib/libreoffice/share/classification/example_pt-BR.xml
 lib/libreoffice/share/classification/example_sl-SI.xml
 lib/libreoffice/share/config/
@@ -1602,7 +1605,9 @@ lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/outlinetext.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/page.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/pagepane.xml
+lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/pagepanemaster.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/pagepanenosel.xml
+lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/pagepanenoselmaster.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/pagetab.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/popupmenu/tabletext.xml
@@ -2995,8 +3000,20 @@ lib/libreoffice/share/fonts/truetype/PT_Serif-Web-Bold.ttf
 lib/libreoffice/share/fonts/truetype/PT_Serif-Web-BoldItalic.ttf
 lib/libreoffice/share/fonts/truetype/PT_Serif-Web-Italic.ttf
 lib/libreoffice/share/fonts/truetype/PT_Serif-Web-Regular.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-Black.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-BlackIt.ttf
 lib/libreoffice/share/fonts/truetype/SourceCodePro-Bold.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-BoldIt.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-ExtraLight.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-ExtraLightIt.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-It.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-Light.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-LightIt.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-Medium.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-MediumIt.ttf
 lib/libreoffice/share/fonts/truetype/SourceCodePro-Regular.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-Semibold.ttf
+lib/libreoffice/share/fonts/truetype/SourceCodePro-SemiboldIt.ttf
 lib/libreoffice/share/fonts/truetype/SourceSansPro-Black.ttf
 lib/libreoffice/share/fonts/truetype/SourceSansPro-BlackIt.ttf
 lib/libreoffice/share/fonts/truetype/SourceSansPro-Bold.ttf
