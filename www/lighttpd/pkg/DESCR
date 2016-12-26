@@ -7,5 +7,6 @@ perfect web-server software for every server that is suffering load
 problems.
 
 Flavors:
-         ldap - Enable LDAP support for authentication in mod_auth.
-        mysql - Enable MySQL virtual hosting with mod_mysql_vhost.
+         ldap - Enable LDAP support for authentication.
+        mysql - Enable MySQL support for authentication and virtual
+                hosting.
