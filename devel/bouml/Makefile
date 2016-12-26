@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/27 08:46:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/12/26 08:24:25 zhuk Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -32,11 +32,12 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 MODULES=		x11/qt3
-USE_GMAKE=		Yes
+MODQMAKE_PROJECTS=	src/bouml.pro
 NO_TEST=		Yes
 
 ALL_TARGET=		# empty
-CONFIGURE_STYLE=	# empty
+CONFIGURE_STYLE=	qmake
+SEPARATE_BUILD=		No
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=	# empty
@@ -45,9 +46,6 @@ WANTLIB-docs =		# empty
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
-
-do-configure:
-	cd ${WRKSRC}/src && ${LOCALBASE}/bin/qmake -unix
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bouml
