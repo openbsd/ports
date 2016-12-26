@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_muxers_texi,v 1.1 2016/12/26 09:29:21 ajacoutot Exp $
+
+doc/muxers: remove "-strict experimental" from tee muxer examples
+
+--- doc/muxers.texi.orig	Sun Dec 25 19:53:39 2016
++++ doc/muxers.texi	Sun Dec 25 19:54:36 2016
+@@ -1274,7 +1274,7 @@ keyframes packets, as requested by the MPEG-TS format.
+ option is applied to @file{out.aac} in order to make it contain only
+ audio packets.
+ @example
+-ffmpeg -i ... -map 0 -flags +global_header -c:v libx264 -c:a aac -strict experimental
++ffmpeg -i ... -map 0 -flags +global_header -c:v libx264 -c:a aac
+        -f tee "[bsfs/v=dump_extra]out.ts|[movflags=+faststart]out.mp4|[select=a]out.aac"
+ @end example
+ 
+@@ -1283,7 +1283,7 @@ As below, but select only stream @code{a:1} for the au
+ that a second level escaping must be performed, as ":" is a special
+ character used to separate options.
+ @example
+-ffmpeg -i ... -map 0 -flags +global_header -c:v libx264 -c:a aac -strict experimental
++ffmpeg -i ... -map 0 -flags +global_header -c:v libx264 -c:a aac
+        -f tee "[bsfs/v=dump_extra]out.ts|[movflags=+faststart]out.mp4|[select=\'a:1\']out.aac"
+ @end example
+ @end itemize
