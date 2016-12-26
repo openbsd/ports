@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_librustdoc_test_rs,v 1.5 2016/11/12 16:42:24 danj Exp $
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.6 2016/12/26 13:52:46 landry Exp $
 fallback to CFG_PREFIX as default sysroot.
---- src/librustdoc/test.rs.orig	Tue Nov  8 04:16:18 2016
-+++ src/librustdoc/test.rs	Fri Nov 11 11:09:36 2016
+--- src/librustdoc/test.rs.orig	Sun Dec 18 00:40:11 2016
++++ src/librustdoc/test.rs	Wed Dec 21 11:18:23 2016
 @@ -62,9 +62,16 @@ pub fn run(input: &str,
      let input_path = PathBuf::from(input);
      let input = config::Input::File(input_path.clone());
@@ -19,9 +19,9 @@ fallback to CFG_PREFIX as default sysroot.
 -                                              .parent().unwrap().to_path_buf()),
 +        maybe_sysroot: Some(sysroot),
          search_paths: libs.clone(),
-         crate_types: vec!(config::CrateTypeDylib),
+         crate_types: vec![config::CrateTypeDylib],
          externs: externs.clone(),
-@@ -185,9 +192,16 @@ fn runtest(test: &str, cratename: &str, cfgs: Vec<Stri
+@@ -181,9 +188,16 @@ fn runtest(test: &str, cratename: &str, cfgs: Vec<Stri
      };
      let outputs = OutputTypes::new(&[(OutputType::Exe, None)]);
  
@@ -38,5 +38,5 @@ fallback to CFG_PREFIX as default sysroot.
 -                                              .parent().unwrap().to_path_buf()),
 +        maybe_sysroot: Some(sysroot),
          search_paths: libs,
-         crate_types: vec!(config::CrateTypeExecutable),
+         crate_types: vec![config::CrateTypeExecutable],
          output_types: outputs,

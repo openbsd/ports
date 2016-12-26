@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.14 2016/11/12 16:42:24 danj Exp $
+$OpenBSD: patch-configure,v 1.15 2016/12/26 13:52:46 landry Exp $
 Remove requirement for curl.
 The snapshot isn't downloaded but copied by post-configure.
---- configure.orig	Tue Nov  8 04:16:18 2016
-+++ configure	Fri Nov 11 11:09:36 2016
-@@ -752,7 +752,7 @@ if [ -n "$CFG_ENABLE_DEBUG_JEMALLOC" ]; then putvar CF
+--- configure.orig	Sun Dec 18 00:40:11 2016
++++ configure	Wed Dec 21 11:18:23 2016
+@@ -783,7 +783,7 @@ if [ -n "$CFG_ENABLE_DEBUG_JEMALLOC" ]; then putvar CF
  
  step_msg "looking for build programs"
  

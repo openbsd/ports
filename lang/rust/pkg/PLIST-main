@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2016/11/12 16:42:24 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2016/12/26 13:52:46 landry Exp $
 bin/rust-gdb
 @bin bin/rustc
 @bin bin/rustdoc
@@ -9,6 +9,8 @@ lib/libgetopts-${RUST_HASH}.so
 lib/libgraphviz-${RUST_HASH}.so
 lib/liblog-${RUST_HASH}.so
 lib/libproc_macro-${RUST_HASH}.so
+lib/libproc_macro_plugin-${RUST_HASH}.so
+lib/libproc_macro_tokens-${RUST_HASH}.so
 lib/librustc-${RUST_HASH}.so
 lib/librustc_back-${RUST_HASH}.so
 lib/librustc_borrowck-${RUST_HASH}.so
@@ -20,7 +22,6 @@ lib/librustc_errors-${RUST_HASH}.so
 lib/librustc_incremental-${RUST_HASH}.so
 lib/librustc_lint-${RUST_HASH}.so
 lib/librustc_llvm-${RUST_HASH}.so
-lib/librustc_macro-${RUST_HASH}.so
 lib/librustc_metadata-${RUST_HASH}.so
 lib/librustc_mir-${RUST_HASH}.so
 lib/librustc_passes-${RUST_HASH}.so
@@ -66,6 +67,8 @@ lib/rustlib/${TRIPLE_ARCH}/lib/liblog-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_abort-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libpanic_unwind-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro_plugin-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libproc_macro_tokens-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librand-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_back-${RUST_HASH}.so
@@ -79,7 +82,6 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_errors-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_incremental-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_lint-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_llvm-${RUST_HASH}.so
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_macro-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_metadata-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_mir-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_passes-${RUST_HASH}.so

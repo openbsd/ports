@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/12/06 22:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.34 2016/12/26 13:52:46 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,14 +6,13 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.13.0
-BV-amd64 =		1.13.0-20161111
-BV-i386 =		1.13.0-20161204
+V =			1.14.0
+BV-amd64 =		1.14.0-20161221
+BV-i386 =		1.14.0-20161221
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
-RUST_HASH =		a4729905
+RUST_HASH =		f5a209a9
 SUBST_VARS +=		RUST_HASH
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -157,6 +156,7 @@ bootstrap: configure
 	mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} rustc-stage3
 	cp ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc ${BOOTSTRAPDIR}/bin
+	strip ${BOOTSTRAPDIR}/bin/rustc
 	ldd ${BOOTSTRAPDIR}/bin/rustc \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % cp % \
