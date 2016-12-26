@@ -1,0 +1,12 @@
+$OpenBSD: patch-Python_random_c,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+--- Python/random.c.orig	Fri Dec 23 03:21:22 2016
++++ Python/random.c	Fri Dec 23 12:11:43 2016
+@@ -12,7 +12,7 @@
+ #  ifdef HAVE_LINUX_RANDOM_H
+ #    include <linux/random.h>
+ #  endif
+-#  if defined(HAVE_GETRANDOM) || defined(HAVE_GETENTROPY)
++#  if defined(HAVE_GETRANDOM) || defined(HAVE_GETENTROPY) && !defined(__OpenBSD__)
+ #    include <sys/random.h>
+ #  endif
+ #  if !defined(HAVE_GETRANDOM) && defined(HAVE_GETRANDOM_SYSCALL)

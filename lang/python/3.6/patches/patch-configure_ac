@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+--- configure.ac.orig	Fri Dec 23 03:21:22 2016
++++ configure.ac	Fri Dec 23 12:08:12 2016
+@@ -126,7 +126,7 @@ VERSION=PYTHON_VERSION
+ 
+ # Version number of Python's own shared library file.
+ AC_SUBST(SOVERSION)
+-SOVERSION=1.0
++SOVERSION=${LIBpython3.6m_VERSION}
+ 
+ # The later defininition of _XOPEN_SOURCE disables certain features
+ # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
