@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2016/09/29 20:39:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2016/12/26 12:38:36 zhuk Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -49,6 +49,7 @@
      SUBDIR += pigz
      SUBDIR += py-lzo
      SUBDIR += quazip
+     SUBDIR += quazip,qt5
      SUBDIR += ripole
      SUBDIR += ruby-minitar
      SUBDIR += rzip
