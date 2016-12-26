@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.118 2016/09/23 09:16:55 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.119 2016/12/26 19:41:45 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -131,7 +131,11 @@ FAKE_FLAGS +=	RANLIB=:
 # and QtWebKit require W|X mappings.
 USE_WXNEEDED = Yes
 
+.if ${VERSION} == "3.6"
+ALL_TARGET =	all
+.else
 ALL_TARGET =	all ./Lib/plat-openbsd6
+.endif
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
