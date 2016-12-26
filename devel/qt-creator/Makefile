@@ -1,86 +1,91 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/23 09:16:54 sthen Exp $
-
-BROKEN-powerpc =	qdoc3 goes into an infinite loop
-USE_WXNEEDED =		Yes
+# $OpenBSD: Makefile,v 1.19 2016/12/26 15:26:01 zhuk Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
-V = 			1.3.1
-DISTNAME =		qt-creator-${V}-src
+V = 			4.1.0
+DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		7
-EXTRACT_SUFX = 		.zip
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
-SHARED_LIBS =		Aggregation 0.0 \
-			CPlusPlus 0.0 \
-			DebuggingHelper 0.0 \
-			ExtensionSystem 0.0 \
-			QtConcurrent 0.0 \
-			Utils 0.0
+# TODO:
+# * Verify that patch for src/shared/qbs/src/lib/corelib/tools/processutils.cpp
+#   does what it is supposed to do.
 
-MAKE_FLAGS += 	LIBAggregation_VERSION=${LIBAggregation_VERSION} \
-		LIBCPlusPlus_VERSION=${LIBCPlusPlus_VERSION} \
-		LIBDebuggingHelper_VERSION=${LIBDebuggingHelper_VERSION} \
-		LIBExtensionSystem_VERSION=${LIBExtensionSystem_VERSION} \
-		LIBQtConcurrent_VERSION=${LIBQtConcurrent_VERSION} \
-		LIBUtils_VERSION=${LIBUtils_VERSION}
+SHARED_LIBS +=	Aggregation               0.0 # 0.0
+SHARED_LIBS +=	CPlusPlus                 0.0 # 0.0
+SHARED_LIBS +=	ExtensionSystem           0.0 # 0.0
+SHARED_LIBS +=	GLSL                      0.0 # 0.0
+SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
+SHARED_LIBS +=	QmlDebug                  0.0 # 0.0
+SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
+SHARED_LIBS +=	QmlJS                     0.0 # 0.0
+SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
+SHARED_LIBS +=	Utils                     0.0 # 0.0
+SHARED_LIBS +=	qbscore                   0.0 # 0.0
+SHARED_LIBS +=	Clangbackendipc           1.0 # 1.0
+SHARED_LIBS +=	Sqlite                    1.0 # 1.0
+SHARED_LIBS +=	Timeline                  1.0 # 1.0
+SHARED_LIBS +=	qbsqtprofilesetup         1.4 # 1.4
+SHARED_LIBS +=  Modeling                  1.0 # 1.0
 
-CATEGORIES =		devel editors
+MAKE_FLAGS =	BUILD_TESTS=1
+.for _l _v in ${SHARED_LIBS}
+MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
+.endfor
 
-HOMEPAGE =		http://qt.nokia.com/products/appdev/developer-tools/developer-tools
+CATEGORIES =	devel editors
 
-# LGPL 2.1 with C++ headers exception (more permissive than LGPL)
+HOMEPAGE =	https://www.qt.io/ide/
+
+# XXX GPLv3 with some exceptions
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread stdc++ sqlite3
-WANTLIB +=	QtDBus QtWebKit QtXmlPatterns QtDesigner>=7 
-WANTLIB +=	QtDesignerComponents>=7 QtGui>=8 QtHelp QtNetwork>=7 
-WANTLIB +=	QtScript QtSql>=7 QtSvg>=7 QtXml>=7 phonon
-WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += c kvm m pthread
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5Designer Qt5DesignerComponents
+WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5Xml
 
-MASTER_SITES =	http://get.qt.nokia.com/qtcreator/
+MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
-MODULES =	x11/qt4
+MODULES =	x11/qt5 devel/qmake
+MODQMAKE_INSTALL_ROOT =	${PREFIX}
 
-RUN_DEPENDS = 	devel/gmake
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+
+RUN_DEPENDS = 	devel/gdb \
+		devel/gmake \
+		lang/gcc/${MODGCC4_VERSION},-c++ \
+		x11/gtk+3,-guic \
+		x11/qt5/qtquickcontrols
+
+LIB_DEPENDS =	x11/qt5/qtdeclarative \
+		x11/qt5/qtscript \
+		x11/qt5/qtsvg \
+		x11/qt5/qttools \
+		x11/qt5/qtwebkit
 
 PORTHOME =		${WRKDIR}
-
-SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 
 #NO_TEST =		Yes
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
-
-QTCDH_SRC_DIR =		${WRKSRC}/share/qtcreator/gdbmacros
-QTCDH_BUILD_DIR =	${WRKBUILD}/qtc-debugging-helper
-QTCDH_INST_DIR =	${PREFIX}/lib/qt4/qtc-debugging-helper
-QTDCH_LIB_FILE =	${QTCDH_BUILD_DIR}/libgdbmacros.so
+GDB_ADJ_FILES = \
+	src/plugins/debugger/debuggeritemmanager.cpp \
+	src/tools/qtcreatorcrashhandler/backtracecollector.cpp \
+	src/tools/qtpromaker/main.cpp \
+	tests/auto/debugger/tst_dumpers.cpp \
+	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
 
 pre-configure:
-	mkdir -p ${WRKDIR}/bin/tools/qdoc3
-	mkdir -p ${WRKDIR}/bin/bin
-	ln -sf ${PREFIX}/lib/qt4/bin/qdoc3 ${WRKDIR}/bin/tools/qdoc3
-	ln -sf ${PREFIX}/lib/qt4/bin/qhelpgenerator ${WRKDIR}/bin/bin
+	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
 
-do-configure:
-	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 ${WRKSRC}/qtcreator.pro #CONFIG+=debug
-
-# build Qt debugging helper
-post-build:
-	rm -Rf ${QTCDH_BUILD_DIR}
-	mkdir ${QTCDH_BUILD_DIR}
-	cd ${QTCDH_BUILD_DIR}; \
-	qmake4 ${QTCDH_SRC_DIR}/gdbmacros.pro; \
-	${MAKE_PROGRAM} ${MAKE_FLAGS}
-	# avoid versioning for dlopen'ed library
-	mv ${QTDCH_LIB_FILE}* ${QTDCH_LIB_FILE}
-
-# install Qt debugging helper
 post-install:
-	${INSTALL_DATA_DIR} ${QTCDH_INST_DIR}
-	${INSTALL_DATA} ${QTDCH_LIB_FILE} ${QTCDH_INST_DIR}
+.for _l _v in ${SHARED_LIBS}
+	ln -sf qtcreator/lib${_l}.so.${_v} ${PREFIX}/lib
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qtcreator
+	${INSTALL_DATA} ${WRKBUILD}/share/doc/qtcreator/qtcreator.qch \
+	    ${PREFIX}/share/doc/qtcreator/qtcreator.qch
 
 .include <bsd.port.mk>

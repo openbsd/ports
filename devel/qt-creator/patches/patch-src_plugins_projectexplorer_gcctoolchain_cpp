@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_plugins_projectexplorer_gcctoolchain_cpp,v 1.1 2016/12/26 15:26:01 zhuk Exp $
+
+Append eg++ before g++ so eg++ is used by default.
+
+--- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Fri Dec  9 10:55:44 2016
++++ src/plugins/projectexplorer/gcctoolchain.cpp	Fri Dec 16 09:54:30 2016
+@@ -605,7 +605,7 @@ FileNameList GccToolChain::suggestedMkspecList() const
+ 
+ QString GccToolChain::makeCommand(const Environment &environment) const
+ {
+-    QString make = QLatin1String("make");
++    QString make = QLatin1String("gmake");
+     FileName tmp = environment.searchInPath(make);
+     return tmp.isEmpty() ? make : tmp.toString();
+ }

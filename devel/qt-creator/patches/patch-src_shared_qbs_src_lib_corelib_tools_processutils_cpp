@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_shared_qbs_src_lib_corelib_tools_processutils_cpp,v 1.1 2016/12/26 15:26:01 zhuk Exp $
+--- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Fri Aug 19 09:23:24 2016
++++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Fri Dec 16 09:57:01 2016
+@@ -40,6 +40,11 @@
+ #   include "fileinfo.h"
+ #   include <unistd.h>
+ #   include <cstdio>
++#elif defined(Q_OS_OPENBSD)
++#   include <sys/param.h>
++#   include <sys/sysctl.h>
++#   include <fcntl.h>
++#   include <kvm.h>
+ #elif defined(Q_OS_BSD4)
+ # include <QFile>
+ #   include <sys/cdefs.h>
+@@ -85,6 +90,19 @@ QString processNameByPid(qint64 pid)
+     sprintf(exePath, "/proc/%lld/exe", pid);
+     readlink(exePath, buf, sizeof(buf));
+     return FileInfo::fileName(QString::fromUtf8(buf));
++#elif defined(Q_OS_OPENBSD)
++    kvm_t *kd = kvm_open(NULL, NULL, NULL, KVM_NO_FILES, NULL);
++    if (!kd)
++        return QString();
++    int cnt;
++    struct kinfo_proc *kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &cnt);
++    if (!kp || cnt < 1) {
++        kvm_close(kd);
++        return QString();
++    }
++    QString name = QString::fromUtf8(kp->p_comm);
++    kvm_close(kd);
++    return name;
+ #elif defined(Q_OS_BSD4)
+ # if defined(Q_OS_NETBSD)
+     struct kinfo_proc2 kp;
