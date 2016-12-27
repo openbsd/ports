@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1569 2016/12/23 15:33:32 jca Exp $
+# $OpenBSD: Makefile,v 1.1570 2016/12/27 02:36:40 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1054,6 +1054,7 @@
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-CPAN-Meta
+     SUBDIR += p5-Test-CPAN-Meta-Check
      SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
