@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/19 11:55:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2016/12/27 19:57:22 zhuk Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
@@ -8,7 +8,7 @@ FULLPKGNAME =	${PKGNAME}
 CATEGORIES =	x11 devel
 HOMEPAGE =	https://launchpad.net/libdbusmenu-qt/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	dbusmenu-qt	1.0 # 2.7
 SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.7
