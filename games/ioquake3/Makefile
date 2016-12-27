@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/06 15:54:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/27 01:55:33 jsg Exp $
 
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS= amd64 i386
 COMMENT=	clone of the original Quake III Arena
 
 DISTNAME=	ioquake3-2016.12.04
+REVISION=	0
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
@@ -40,7 +41,15 @@ SUBST_VARS+=	QUAKE_ARCH
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ioquake3/
-	cp -rp ${WRKSRC}/build/release-openbsd-${QUAKE_ARCH}/* \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ioquake3/{baseq3,missionpack}/
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/build/release-openbsd-${QUAKE_ARCH}/baseq3/{cgame,qagame,ui}${QUAKE_ARCH}.so \
+		${PREFIX}/share/ioquake3/baseq3/
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/build/release-openbsd-${QUAKE_ARCH}/missionpack/{cgame,qagame,ui}${QUAKE_ARCH}.so \
+		${PREFIX}/share/ioquake3/missionpack/
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/build/release-openbsd-${QUAKE_ARCH}/renderer_opengl{1,2}_${QUAKE_ARCH}.so \
 		${PREFIX}/share/ioquake3/
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/build/release-openbsd-${QUAKE_ARCH}/ioq3ded.${QUAKE_ARCH} \
