@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/17 12:37:58 jasper Exp $
-
-BROKEN =	requires update to work with ES 5.x
+# $OpenBSD: Makefile,v 1.8 2016/12/27 11:38:21 giovanni Exp $
 
 COMMENT =	elasticsearch perl module
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Search-Elasticsearch-2.03
-REVISION =	0
+DISTNAME =	Search-Elasticsearch-5.01
 CATEGORIES =	devel
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
@@ -23,7 +20,8 @@ RUN_DEPENDS =	converters/p5-JSON-MaybeXS \
 		www/p5-URI \
 		www/p5-Hijk
 
-TEST_DEPENDS =	devel/p5-Log-Any \
+TEST_DEPENDS =	converters/p5-JSON-XS \
+		devel/p5-Log-Any \
 		devel/p5-Log-Any-Adapter-Callback \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Exception \
