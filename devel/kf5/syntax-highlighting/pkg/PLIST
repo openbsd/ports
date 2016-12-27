@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/27 19:54:02 zhuk Exp $
+@bin bin/kate-syntax-highlighter
+include/KF5/
+include/KF5/KSyntaxHighlighting/
+include/KF5/KSyntaxHighlighting/AbstractHighlighter
+include/KF5/KSyntaxHighlighting/Definition
+include/KF5/KSyntaxHighlighting/FoldingRegion
+include/KF5/KSyntaxHighlighting/Format
+include/KF5/KSyntaxHighlighting/Repository
+include/KF5/KSyntaxHighlighting/State
+include/KF5/KSyntaxHighlighting/SyntaxHighlighter
+include/KF5/KSyntaxHighlighting/Theme
+include/KF5/KSyntaxHighlighting/abstracthighlighter.h
+include/KF5/KSyntaxHighlighting/definition.h
+include/KF5/KSyntaxHighlighting/foldingregion.h
+include/KF5/KSyntaxHighlighting/format.h
+include/KF5/KSyntaxHighlighting/ksyntaxhighlighting_export.h
+include/KF5/KSyntaxHighlighting/repository.h
+include/KF5/KSyntaxHighlighting/state.h
+include/KF5/KSyntaxHighlighting/syntaxhighlighter.h
+include/KF5/KSyntaxHighlighting/theme.h
+include/KF5/ksyntaxhighlighting_version.h
+lib/cmake/KF5SyntaxHighlighting/
+lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfig.cmake
+lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfigVersion.cmake
+lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets.cmake
+@lib lib/libKF5SyntaxHighlighting.so.${LIBKF5SyntaxHighlighting_VERSION}
+share/examples/xdg/
+share/examples/xdg/org_kde_ksyntaxhighlighting.categories
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KSyntaxHighlighting.pri
