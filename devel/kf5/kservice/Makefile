@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/27 21:07:26 zhuk Exp $
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
@@ -10,7 +10,8 @@ WANTLIB += KF5I18n Qt5Core Qt5DBus Qt5Xml c m
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/bison \
+			devel/gettext-tools \
 			devel/kf5/kdoctools
 
 RUN_DEPENDS =		devel/kf5/kdoctools
