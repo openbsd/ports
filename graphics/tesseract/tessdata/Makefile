@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2015/11/13 12:54:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 08:50:55 jca Exp $
 
 LANGS=			afr amh ara asm aze aze_cyrl bel ben bod bos bul cat \
 			ceb ces chi_sim chi_tra chr cym dan dan_frak deu \
@@ -15,6 +15,7 @@ COMMENT-main=		${l} language data for Tesseract
 PKGNAME-main=		tesseract-eng-${GH_TAGNAME}
 MULTI_PACKAGES=		-main
 
+EPOCH-main=		0
 EPOCH-dan=		0
 EPOCH-fra=		0
 EPOCH-lav=		0
@@ -39,7 +40,6 @@ EPOCH-nor=		0
 EPOCH-slv=		0
 EPOCH-ukr=		0
 EPOCH-chi_sim=		0
-EPOCH-eng=		0
 EPOCH-jpn=		0
 EPOCH-pol=		0
 EPOCH-spa=		0
