@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
-share/doc/qt5/qtwebkit/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtwebkit/images/
 share/doc/qt5/qtwebkit/images/arrow_bc.png
 share/doc/qt5/qtwebkit/images/bgrContent.png
@@ -26,7 +25,6 @@ share/doc/qt5/qtwebkit/qtwebkit-goes-mobile.html
 share/doc/qt5/qtwebkit/qtwebkit-index.html
 share/doc/qt5/qtwebkit/qtwebkit-module.html
 share/doc/qt5/qtwebkit/qtwebkit-qmlmodule.html
-share/doc/qt5/qtwebkit/qtwebkit.index
 share/doc/qt5/qtwebkit/qtwebkit.qhp
 share/doc/qt5/qtwebkit/qtwebkit.qhp.sha1
 share/doc/qt5/qtwebkit/qtwebkitwidgets-index.html

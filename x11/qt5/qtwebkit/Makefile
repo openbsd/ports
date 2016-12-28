@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 
 QT5NAME =		QtWebkit
 COMMENT-main =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
+REVISION-qch =		0
+REVISION-html =		0
 
 SHARED_LIBS +=		Qt5WebKit		2.0
 SHARED_LIBS +=		Qt5WebKitWidgets	2.0
@@ -16,7 +18,7 @@ WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
 WANTLIB += m png pthread sqlite3 webp xml2 xslt z
 
-MULTI_PACKAGES =	-main -html -qch
+MULTI_PACKAGES =	-main -html -qch -docindex
 
 MASTER_SITES =		http://download.qt.io/community_releases/${VERSION:R}/${VERSION}/
 

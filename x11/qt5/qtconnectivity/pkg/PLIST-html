@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
-share/doc/qt5/qtbluetooth/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 share/doc/qt5/qtbluetooth/bluetooth-examples.html
 share/doc/qt5/qtbluetooth/examples-manifest.xml
 share/doc/qt5/qtbluetooth/images/
@@ -194,14 +193,12 @@ share/doc/qt5/qtbluetooth/qtbluetooth-scanner-qmlscanner-cpp.html
 share/doc/qt5/qtbluetooth/qtbluetooth-scanner-scanner-pro.html
 share/doc/qt5/qtbluetooth/qtbluetooth-scanner-scanner-qml.html
 share/doc/qt5/qtbluetooth/qtbluetooth-scanner-scanner-qrc.html
-share/doc/qt5/qtbluetooth/qtbluetooth.index
 share/doc/qt5/qtbluetooth/qtbluetooth.qhp
 share/doc/qt5/qtbluetooth/qtbluetooth.qhp.sha1
 share/doc/qt5/qtbluetooth/qtbluetooth.tags
 share/doc/qt5/qtbluetooth/style/
 share/doc/qt5/qtbluetooth/style/offline-simple.css
 share/doc/qt5/qtbluetooth/style/offline.css
-share/doc/qt5/qtnfc/
 share/doc/qt5/qtnfc/examples-manifest.xml
 share/doc/qt5/qtnfc/images/
 share/doc/qt5/qtnfc/images/annotatedurl.png
@@ -299,7 +296,6 @@ share/doc/qt5/qtnfc/qtnfc-poster-poster-qml.html
 share/doc/qt5/qtnfc/qtnfc-poster-poster-qrc.html
 share/doc/qt5/qtnfc/qtnfc-poster-qmlposter-cpp.html
 share/doc/qt5/qtnfc/qtnfc-qmlmodule.html
-share/doc/qt5/qtnfc/qtnfc.index
 share/doc/qt5/qtnfc/qtnfc.qhp
 share/doc/qt5/qtnfc/qtnfc.qhp.sha1
 share/doc/qt5/qtnfc/qtnfc.tags

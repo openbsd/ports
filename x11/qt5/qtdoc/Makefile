@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 
 QT5NAME =		QtDoc
-COMMENT-main =		Qt5 commons
+COMMENT-main =		Qt5 tools
+REVISION-qch =		0
+REVISION-html =		0
 
-MULTI_PACKAGES =	-qch -html
+MULTI_PACKAGES =	-qch -html -docindex
 SUBPACKAGE ?=		-qch
 
 ALL_TARGET =		docs

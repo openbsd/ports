@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-share/doc/qt5/qtlabscontrols/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtlabscontrols/examples-manifest.xml
 share/doc/qt5/qtlabscontrols/images/
 share/doc/qt5/qtlabscontrols/images/arrow_bc.png
@@ -311,7 +310,6 @@ share/doc/qt5/qtlabscontrols/qtlabscontrols-menus.html
 share/doc/qt5/qtlabscontrols/qtlabscontrols-navigation.html
 share/doc/qt5/qtlabscontrols/qtlabscontrols-styles.html
 share/doc/qt5/qtlabscontrols/qtlabscontrols-universal.html
-share/doc/qt5/qtlabscontrols/qtlabscontrols.index
 share/doc/qt5/qtlabscontrols/qtlabscontrols.qhp
 share/doc/qt5/qtlabscontrols/qtlabscontrols.qhp.sha1
 share/doc/qt5/qtlabscontrols/qtlabscontrols.tags

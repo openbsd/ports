@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
-share/doc/qt5/qtquickcontrols/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtquickcontrols/applicationwindow.html
 share/doc/qt5/qtquickcontrols/controls.html
 share/doc/qt5/qtquickcontrols/controlsstyling.html
@@ -317,7 +316,6 @@ share/doc/qt5/qtquickcontrols/qtquickcontrols-uiforms-qml-settings-qml.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-uiforms-qml-settingsform-ui-qml.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-uiforms-uiforms-pro.html
 share/doc/qt5/qtquickcontrols/qtquickcontrols-uiforms-uiforms-qrc.html
-share/doc/qt5/qtquickcontrols/qtquickcontrols.index
 share/doc/qt5/qtquickcontrols/qtquickcontrols.qhp
 share/doc/qt5/qtquickcontrols/qtquickcontrols.qhp.sha1
 share/doc/qt5/qtquickcontrols/qtquickcontrols.tags
@@ -330,7 +328,6 @@ share/doc/qt5/qtquickcontrols/styling-gauge.html
 share/doc/qt5/qtquickcontrols/stylingtutorials.html
 share/doc/qt5/qtquickcontrols/views.html
 share/doc/qt5/qtquickcontrols/viewsstyling.html
-share/doc/qt5/qtquickdialogs/
 share/doc/qt5/qtquickdialogs/examples-manifest.xml
 share/doc/qt5/qtquickdialogs/images/
 share/doc/qt5/qtquickdialogs/images/arrow_bc.png
@@ -373,13 +370,11 @@ share/doc/qt5/qtquickdialogs/qtquickdialogs-systemdialogs-messagedialogs-qml.htm
 share/doc/qt5/qtquickdialogs/qtquickdialogs-systemdialogs-systemdialogs-pro.html
 share/doc/qt5/qtquickdialogs/qtquickdialogs-systemdialogs-systemdialogs-qml.html
 share/doc/qt5/qtquickdialogs/qtquickdialogs-systemdialogs-systemdialogs-qrc.html
-share/doc/qt5/qtquickdialogs/qtquickdialogs.index
 share/doc/qt5/qtquickdialogs/qtquickdialogs.qhp
 share/doc/qt5/qtquickdialogs/qtquickdialogs.qhp.sha1
 share/doc/qt5/qtquickdialogs/style/
 share/doc/qt5/qtquickdialogs/style/offline-simple.css
 share/doc/qt5/qtquickdialogs/style/offline.css
-share/doc/qt5/qtquickextras/
 share/doc/qt5/qtquickextras/examples-manifest.xml
 share/doc/qt5/qtquickextras/images/
 share/doc/qt5/qtquickextras/images/arrow_bc.png
@@ -507,13 +502,11 @@ share/doc/qt5/qtquickextras/qtquickextras-gallery-qml-piemenudefaultstyle-qml.ht
 share/doc/qt5/qtquickextras/qtquickextras-gallery-qml-stylepicker-qml.html
 share/doc/qt5/qtquickextras/qtquickextras-index.html
 share/doc/qt5/qtquickextras/qtquickextras-overview.html
-share/doc/qt5/qtquickextras/qtquickextras.index
 share/doc/qt5/qtquickextras/qtquickextras.qhp
 share/doc/qt5/qtquickextras/qtquickextras.qhp.sha1
 share/doc/qt5/qtquickextras/style/
 share/doc/qt5/qtquickextras/style/offline-simple.css
 share/doc/qt5/qtquickextras/style/offline.css
-share/doc/qt5/qtquicklayouts/
 share/doc/qt5/qtquicklayouts/images/
 share/doc/qt5/qtquicklayouts/images/arrow_bc.png
 share/doc/qt5/qtquicklayouts/images/bgrContent.png
@@ -543,7 +536,6 @@ share/doc/qt5/qtquicklayouts/qml-qtquick-layouts-stacklayout.html
 share/doc/qt5/qtquicklayouts/qtquick-layouts-qmlmodule.html
 share/doc/qt5/qtquicklayouts/qtquicklayouts-index.html
 share/doc/qt5/qtquicklayouts/qtquicklayouts-overview.html
-share/doc/qt5/qtquicklayouts/qtquicklayouts.index
 share/doc/qt5/qtquicklayouts/qtquicklayouts.qhp
 share/doc/qt5/qtquicklayouts/qtquicklayouts.qhp.sha1
 share/doc/qt5/qtquicklayouts/style/

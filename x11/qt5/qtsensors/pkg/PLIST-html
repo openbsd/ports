@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-share/doc/qt5/qtsensors/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtsensors/compatmap.html
 share/doc/qt5/qtsensors/creating-a-sensor-plugin.html
 share/doc/qt5/qtsensors/determining-the-default-sensor-for-a-type.html
@@ -341,7 +340,6 @@ share/doc/qt5/qtsensors/qtsensors-shakeit-main-cpp.html
 share/doc/qt5/qtsensors/qtsensors-shakeit-shakeit-pro.html
 share/doc/qt5/qtsensors/qtsensors-shakeit-shakeit-qml.html
 share/doc/qt5/qtsensors/qtsensors-shakeit-shakeit-qrc.html
-share/doc/qt5/qtsensors/qtsensors.index
 share/doc/qt5/qtsensors/qtsensors.qhp
 share/doc/qt5/qtsensors/qtsensors.qhp.sha1
 share/doc/qt5/qtsensors/qtsensors.tags

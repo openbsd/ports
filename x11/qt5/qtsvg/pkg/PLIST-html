@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-share/doc/qt5/qtsvg/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtsvg/examples-manifest.xml
 share/doc/qt5/qtsvg/images/
 share/doc/qt5/qtsvg/images/arrow_bc.png
@@ -56,7 +55,6 @@ share/doc/qt5/qtsvg/qtsvg-svgviewer-svgview-cpp.html
 share/doc/qt5/qtsvg/qtsvg-svgviewer-svgview-h.html
 share/doc/qt5/qtsvg/qtsvg-svgviewer-svgviewer-pro.html
 share/doc/qt5/qtsvg/qtsvg-svgviewer-svgviewer-qrc.html
-share/doc/qt5/qtsvg/qtsvg.index
 share/doc/qt5/qtsvg/qtsvg.qhp
 share/doc/qt5/qtsvg/qtsvg.qhp.sha1
 share/doc/qt5/qtsvg/qtsvg.tags

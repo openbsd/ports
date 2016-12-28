@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
-share/doc/qt5/qt3d/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 share/doc/qt5/qt3d/examples-manifest.xml
 share/doc/qt5/qt3d/images/
 share/doc/qt5/qt3d/images/Space-invaders.jpg
@@ -457,7 +456,6 @@ share/doc/qt5/qt3d/qt3d-wireframe-wireframe-pro.html
 share/doc/qt5/qt3d/qt3d-wireframe-wireframe-qrc.html
 share/doc/qt5/qt3d/qt3d-wireframe-wireframeeffect-qml.html
 share/doc/qt5/qt3d/qt3d-wireframe-wireframematerial-qml.html
-share/doc/qt5/qt3d/qt3d.index
 share/doc/qt5/qt3d/qt3d.qhp
 share/doc/qt5/qt3d/qt3d.qhp.sha1
 share/doc/qt5/qt3d/qt3d.tags

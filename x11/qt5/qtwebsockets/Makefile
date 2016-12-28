@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 
 QT5NAME =		QtWebSockets
 COMMENT-main =		Qt5 implementation of WebSocket protocol
+REVISION-qch =		0
+REVISION-html =		0
 
 SHARED_LIBS =		Qt5WebSockets		2.0
 
-MULTI_PACKAGES =	-main -examples -qch -html
+MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
 WANTLIB =		Qt5Core Qt5Network Qt5Qml m pthread
 

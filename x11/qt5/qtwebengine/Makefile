@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 
 # Many parts are copied from www/chromium port, so keep in sync
 
@@ -10,7 +10,7 @@ USE_WXNEEDED =		Yes
 
 SHARED_LIBS =		Qt5WebEngine		0.0
 
-MULTI_PACKAGES =	-main -examples -qch -html
+MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
 WANTLIB-main =		${WANTLIB}
 

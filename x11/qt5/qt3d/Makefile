@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
+REVISION-qch =		0
+REVISION-html =		0
 
-MULTI_PACKAGES =	-main -examples -qch -html
+MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
 SHARED_LIBS +=  Qt53DCore               1.0
 SHARED_LIBS +=  Qt53DInput              1.0

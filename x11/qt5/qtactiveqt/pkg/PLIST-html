@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
-share/doc/qt5/
-share/doc/qt5/activeqt/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 share/doc/qt5/activeqt/activeqt-activeqt-comapp-comapp-pro.html
 share/doc/qt5/activeqt/activeqt-activeqt-comapp-example.html
 share/doc/qt5/activeqt/activeqt-activeqt-comapp-main-cpp.html
@@ -49,7 +47,6 @@ share/doc/qt5/activeqt/activeqt-dumpdoc.html
 share/doc/qt5/activeqt/activeqt-index.html
 share/doc/qt5/activeqt/activeqt-server.html
 share/doc/qt5/activeqt/activeqt-tools.html
-share/doc/qt5/activeqt/activeqt.index
 share/doc/qt5/activeqt/activeqt.qhp
 share/doc/qt5/activeqt/activeqt.qhp.sha1
 share/doc/qt5/activeqt/activeqt.tags

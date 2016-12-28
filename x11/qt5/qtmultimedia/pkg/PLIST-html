@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:14 zhuk Exp $
-share/doc/qt5/qtmultimedia/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtmultimedia/audiooverview.html
 share/doc/qt5/qtmultimedia/blackberry.html
 share/doc/qt5/qtmultimedia/cameraoverview.html
@@ -543,7 +542,6 @@ share/doc/qt5/qtmultimedia/qtmultimedia-multimediawidgets-videowidget-videoplaye
 share/doc/qt5/qtmultimedia/qtmultimedia-multimediawidgets-videowidget-videowidget-pro.html
 share/doc/qt5/qtmultimedia/qtmultimedia-qmlmodule.html
 share/doc/qt5/qtmultimedia/qtmultimedia-windows.html
-share/doc/qt5/qtmultimedia/qtmultimedia.index
 share/doc/qt5/qtmultimedia/qtmultimedia.qhp
 share/doc/qt5/qtmultimedia/qtmultimedia.qhp.sha1
 share/doc/qt5/qtmultimedia/qtmultimediawidgets-index.html

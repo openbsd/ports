@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:16 zhuk Exp $
-share/doc/qt5/qtenginio/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 share/doc/qt5/qtenginio/enginio-client-module.html
 share/doc/qt5/qtenginio/enginio-cpp-classes-and-examples.html
 share/doc/qt5/qtenginio/enginio-qt-cloudaddressbook-example.html
@@ -55,13 +54,11 @@ share/doc/qt5/qtenginio/qtenginio-todos-cpp-mainwindow-h.html
 share/doc/qt5/qtenginio/qtenginio-todos-cpp-todos-cpp-pro.html
 share/doc/qt5/qtenginio/qtenginio-todos-cpp-todosmodel-cpp.html
 share/doc/qt5/qtenginio/qtenginio-todos-cpp-todosmodel-h.html
-share/doc/qt5/qtenginio/qtenginio.index
 share/doc/qt5/qtenginio/qtenginio.qhp
 share/doc/qt5/qtenginio/qtenginio.qhp.sha1
 share/doc/qt5/qtenginio/style/
 share/doc/qt5/qtenginio/style/offline-simple.css
 share/doc/qt5/qtenginio/style/offline.css
-share/doc/qt5/qtenginiooverview/
 share/doc/qt5/qtenginiooverview/enginio-cpp.html
 share/doc/qt5/qtenginiooverview/enginio-dashboard.html
 share/doc/qt5/qtenginiooverview/enginio-getting-started.html
@@ -80,14 +77,12 @@ share/doc/qt5/qtenginiooverview/images/ico_note_attention.png
 share/doc/qt5/qtenginiooverview/images/ico_out.png
 share/doc/qt5/qtenginiooverview/images/logo.png
 share/doc/qt5/qtenginiooverview/images/object_browser_first_city_object.png
-share/doc/qt5/qtenginiooverview/qtenginiooverview.index
 share/doc/qt5/qtenginiooverview/qtenginiooverview.qhp
 share/doc/qt5/qtenginiooverview/qtenginiooverview.qhp.sha1
 share/doc/qt5/qtenginiooverview/style/
 share/doc/qt5/qtenginiooverview/style/offline-simple.css
 share/doc/qt5/qtenginiooverview/style/offline.css
 share/doc/qt5/qtenginiooverview/tutorials.html
-share/doc/qt5/qtenginioqml/
 share/doc/qt5/qtenginioqml/enginio-qml-image-gallery-example.html
 share/doc/qt5/qtenginioqml/enginio-qml-socialtodos-example.html
 share/doc/qt5/qtenginioqml/enginio-qml-todos-example.html
@@ -141,7 +136,6 @@ share/doc/qt5/qtenginioqml/qtenginioqml-users-register-qml.html
 share/doc/qt5/qtenginioqml/qtenginioqml-users-users-pro.html
 share/doc/qt5/qtenginioqml/qtenginioqml-users-users-qml.html
 share/doc/qt5/qtenginioqml/qtenginioqml-users-users-qrc.html
-share/doc/qt5/qtenginioqml/qtenginioqml.index
 share/doc/qt5/qtenginioqml/qtenginioqml.qhp
 share/doc/qt5/qtenginioqml/qtenginioqml.qhp.sha1
 share/doc/qt5/qtenginioqml/style/

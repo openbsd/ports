@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:18 zhuk Exp $
-share/doc/qt5/qtlocation/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtlocation/examples-manifest.xml
 share/doc/qt5/qtlocation/images/
 share/doc/qt5/qtlocation/images/api-mapcircle.png
@@ -281,14 +280,12 @@ share/doc/qt5/qtlocation/qtlocation-planespotter-planespotter-pro.html
 share/doc/qt5/qtlocation/qtlocation-planespotter-planespotter-qml.html
 share/doc/qt5/qtlocation/qtlocation-planespotter-qml-qrc.html
 share/doc/qt5/qtlocation/qtlocation-qmlmodule.html
-share/doc/qt5/qtlocation/qtlocation.index
 share/doc/qt5/qtlocation/qtlocation.qhp
 share/doc/qt5/qtlocation/qtlocation.qhp.sha1
 share/doc/qt5/qtlocation/qtlocation.tags
 share/doc/qt5/qtlocation/style/
 share/doc/qt5/qtlocation/style/offline-simple.css
 share/doc/qt5/qtlocation/style/offline.css
-share/doc/qt5/qtpositioning/
 share/doc/qt5/qtpositioning/examples-manifest.xml
 share/doc/qt5/qtpositioning/images/
 share/doc/qt5/qtpositioning/images/arrow_bc.png
@@ -400,7 +397,6 @@ share/doc/qt5/qtpositioning/qtpositioning-weatherinfo-main-cpp.html
 share/doc/qt5/qtpositioning/qtpositioning-weatherinfo-weatherinfo-pro.html
 share/doc/qt5/qtpositioning/qtpositioning-weatherinfo-weatherinfo-qml.html
 share/doc/qt5/qtpositioning/qtpositioning-weatherinfo-weatherinfo-qrc.html
-share/doc/qt5/qtpositioning/qtpositioning.index
 share/doc/qt5/qtpositioning/qtpositioning.qhp
 share/doc/qt5/qtpositioning/qtpositioning.qhp.sha1
 share/doc/qt5/qtpositioning/qtpositioning.tags

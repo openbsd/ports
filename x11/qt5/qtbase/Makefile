@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 01:41:23 zhuk Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
 
 COMMENT-main =		C++ general-purpose toolkit
+COMMENT-global =	global Qt5 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
+PKGNAME-global = 	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
+REVISION-main =		0
+
+PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
@@ -45,6 +50,8 @@ WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
 WANTLIB-main += drm gbm
 
+WANTLIB-global =
+
 WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
 
@@ -58,7 +65,7 @@ WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
 # there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
-MULTI_PACKAGES =	-main -examples -mysql -psql -sqlite2 -tds
+MULTI_PACKAGES =	-main -examples -global -mysql -psql -sqlite2 -tds
 
 MODULES =		devel/gettext
 
@@ -81,6 +88,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/icu4c \
 			x11/gtk+2 \
 			x11/xkbcommon
+
+LIB_DEPENDS-global =
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
@@ -107,6 +116,7 @@ BUILD_DEPENDS =		audio/pulseaudio \
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			geo/geoclue \
 			x11/dbus
+RUN_DEPENDS-global =
 RUN_DEPENDS-examples =
 RUN_DEPENDS-mysql =
 RUN_DEPENDS-psql =

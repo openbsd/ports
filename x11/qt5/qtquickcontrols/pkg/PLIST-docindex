@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-docindex,v 1.1 2016/12/28 01:41:24 zhuk Exp $
+@conflict qtquickcontrols-html-<5.6.2p0
+share/doc/qt5/qtquickcontrols/
+share/doc/qt5/qtquickcontrols/qtquickcontrols.index
+share/doc/qt5/qtquickdialogs/
+share/doc/qt5/qtquickdialogs/qtquickdialogs.index
+share/doc/qt5/qtquickextras/
+share/doc/qt5/qtquickextras/qtquickextras.index
+share/doc/qt5/qtquicklayouts/
+share/doc/qt5/qtquicklayouts/qtquicklayouts.index

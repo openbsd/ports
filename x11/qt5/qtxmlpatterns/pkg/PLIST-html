@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.1.1.1 2016/12/25 14:13:27 zhuk Exp $
-share/doc/qt5/qtxmlpatterns/
+@comment $OpenBSD: PLIST-html,v 1.2 2016/12/28 01:41:24 zhuk Exp $
 share/doc/qt5/qtxmlpatterns/examples-manifest.xml
 share/doc/qt5/qtxmlpatterns/images/
 share/doc/qt5/qtxmlpatterns/images/arrow_bc.png
@@ -75,7 +74,6 @@ share/doc/qt5/qtxmlpatterns/qtxmlpatterns-xquery-example.html
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns-xquery-globalvariables-globals-cpp.html
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns-xquery-globalvariables-reportglobals-xq.html
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns-xquery-xquery-pro.html
-share/doc/qt5/qtxmlpatterns/qtxmlpatterns.index
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns.qhp
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns.qhp.sha1
 share/doc/qt5/qtxmlpatterns/qtxmlpatterns.tags
