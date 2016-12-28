@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2016/12/27 20:36:42 kili Exp $
+# $OpenBSD: Makefile,v 1.111 2016/12/28 13:53:29 zhuk Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -25,8 +25,10 @@ MULTI_PACKAGES=	-main -gtk -qt
 
 ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS}
 
+MODULES=	gcc4
 # keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
 MODGCC4_ARCHS=	amd64 arm hppa i386 mips64 mips64el powerpc sparc64
+MODGCC4_LANGS=	c
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
@@ -49,7 +51,7 @@ WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
 		fontconfig freetype estdc++
 
-MODULES=	textproc/intltool
+MODULES+=	textproc/intltool
 
 LIB_DEPENDS-common=devel/gettext \
 		devel/libevent2 \
@@ -83,12 +85,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=		devel/qmake x11/qt5
+MODGCC4_LANGS+=		c++
+# avoid setting LINK=
+MODQT5_USE_GCC4_MODULE=	No
 MODQMAKE_PROJECTS=	qt/qtr.pro
 CONFIGURE_STYLE+=	qmake
 SEPARATE_BUILD=		No
 MODQMAKE_INSTALL_ROOT=	${PREFIX}
-.else
-MODULES+=		gcc4
 .endif
 
 .if !${BUILD_PACKAGES:M-gtk}
