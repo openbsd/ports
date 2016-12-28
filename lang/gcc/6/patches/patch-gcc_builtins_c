@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
---- gcc/builtins.c.orig	Fri Apr  8 04:11:52 2016
-+++ gcc/builtins.c	Tue Aug 23 15:58:44 2016
+$OpenBSD: patch-gcc_builtins_c,v 1.2 2016/12/28 21:48:21 pascal Exp $
+--- gcc/builtins.c.orig	Wed Dec  7 23:29:54 2016
++++ gcc/builtins.c	Fri Dec 23 18:25:02 2016
 @@ -122,9 +122,11 @@ static rtx expand_builtin_mempcpy (tree, rtx, machine_
  static rtx expand_builtin_mempcpy_with_bounds (tree, rtx, machine_mode);
  static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx,
@@ -29,7 +29,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
  
  /* Callback routine for store_by_pieces.  Read GET_MODE_BITSIZE (MODE)
     bytes from constant string DATA + OFFSET and return it as target
-@@ -5942,9 +5946,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+@@ -5944,9 +5948,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
        break;
  
      case BUILT_IN_STRCPY:
@@ -41,7 +41,7 @@ $OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
        break;
  
      case BUILT_IN_STRNCPY:
-@@ -5954,9 +5960,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+@@ -5956,9 +5962,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
        break;
  
      case BUILT_IN_STPCPY:

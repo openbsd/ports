@@ -1,7 +1,7 @@
-$OpenBSD: patch-fixincludes_fixincl_x,v 1.1.1.1 2016/09/04 16:20:19 pascal Exp $
---- fixincludes/fixincl.x.orig	Wed Jun 15 16:32:35 2016
-+++ fixincludes/fixincl.x	Tue Aug 23 15:48:14 2016
-@@ -6743,11 +6743,11 @@ static const char* apzSolaris_Complex_CxxPatch[] = { s
+$OpenBSD: patch-fixincludes_fixincl_x,v 1.2 2016/12/28 21:48:21 pascal Exp $
+--- fixincludes/fixincl.x.orig	Thu Dec  1 16:02:37 2016
++++ fixincludes/fixincl.x	Fri Dec 23 18:24:58 2016
+@@ -6738,11 +6738,11 @@ static const char* apzSolaris_Complex_CxxPatch[] = { s
      "-e", "/#if[ \t]*!defined(__cplusplus)/c\\\n\
  #ifdef\t__cplusplus\\\n\
  extern \"C\" {\\\n\

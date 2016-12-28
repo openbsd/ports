@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2016/09/04 16:20:15 pascal Exp $
---- gcc/ada/gcc-interface/Make-lang.in.orig	Fri Oct 23 15:04:01 2015
-+++ gcc/ada/gcc-interface/Make-lang.in	Tue Aug 23 15:48:14 2016
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.2 2016/12/28 21:48:21 pascal Exp $
+--- gcc/ada/gcc-interface/Make-lang.in.orig	Tue Nov 22 18:33:07 2016
++++ gcc/ada/gcc-interface/Make-lang.in	Fri Dec 23 18:24:59 2016
 @@ -760,7 +760,7 @@ ada.install-common:
  	-if [ -f gnat1$(exeext) ] ; \
  	then \
@@ -19,9 +19,9 @@ $OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2016/09/04 16:20:15
  	  -$(RM) $(DESTDIR)$(bindir)/$$install_name; \
  	done
  	-$(RM) $(DESTDIR)$(tooldir)/bin/gnatdll$(exeext)
-@@ -864,8 +864,8 @@ ada.stagefeedback: stagefeedback-start
- 
- lang_checks += check-gnat
+@@ -867,8 +867,8 @@ lang_checks_parallelized += check-gnat
+ # For description see the check_$lang_parallelize comment in gcc/Makefile.in.
+ check_gnat_parallelize = 1000
  
 -check-ada: check-acats check-gnat
 -check-ada-subtargets: check-acats-subtargets check-gnat-subtargets

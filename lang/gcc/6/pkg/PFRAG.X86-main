@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.X86-main,v 1.1.1.1 2016/09/04 16:20:20 pascal Exp $
+@comment $OpenBSD: PFRAG.X86-main,v 1.2 2016/12/28 21:48:21 pascal Exp $
 lib/gcc/${CONFIG}/${V}/include/adxintrin.h
 lib/gcc/${CONFIG}/${V}/include/ammintrin.h
 lib/gcc/${CONFIG}/${V}/include/avx2intrin.h
@@ -38,7 +38,6 @@ lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
 lib/gcc/${CONFIG}/${V}/include/mmintrin.h
 lib/gcc/${CONFIG}/${V}/include/mwaitxintrin.h
 lib/gcc/${CONFIG}/${V}/include/nmmintrin.h
-lib/gcc/${CONFIG}/${V}/include/pcommitintrin.h
 lib/gcc/${CONFIG}/${V}/include/pkuintrin.h
 lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
 lib/gcc/${CONFIG}/${V}/include/popcntintrin.h

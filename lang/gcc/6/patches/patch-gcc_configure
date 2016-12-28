@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_configure,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
---- gcc/configure.orig	Wed Jun  8 15:34:25 2016
-+++ gcc/configure	Tue Aug 23 15:48:18 2016
-@@ -17875,7 +17875,7 @@ openbsd*)
+$OpenBSD: patch-gcc_configure,v 1.2 2016/12/28 21:48:21 pascal Exp $
+--- gcc/configure.orig	Sun Dec 11 17:23:04 2016
++++ gcc/configure	Sat Dec 24 09:08:31 2016
+@@ -17882,7 +17882,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_configure,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -21535,7 +21535,7 @@ openbsd*)
+@@ -21542,7 +21542,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_configure,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -28528,6 +28528,7 @@ else
+@@ -28639,6 +28639,7 @@ else
  fi
  
          ;;
@@ -27,3 +27,11 @@ $OpenBSD: patch-gcc_configure,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
    *) gcc_cv_libc_provides_ssp=no ;;
      esac
  fi
+@@ -28658,6 +28659,7 @@ if test "${enable_default_ssp+set}" = set; then :
+ if test x$gcc_cv_libc_provides_ssp = xyes; then
+   case "$target" in
+     ia64*-*-*) enable_default_ssp=no ;;
++    hppa*-*-*) enable_default_ssp=no ;;
+     *) enable_default_ssp=$enableval ;;
+   esac
+ else

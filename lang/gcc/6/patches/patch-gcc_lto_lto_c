@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_lto_lto_c,v 1.1.1.1 2016/09/04 16:20:18 pascal Exp $
---- gcc/lto/lto.c.orig	Mon Feb 15 10:30:31 2016
-+++ gcc/lto/lto.c	Tue Aug 23 15:48:19 2016
-@@ -2954,6 +2954,12 @@ read_cgraph_and_symbols (unsigned nfiles, const char *
+$OpenBSD: patch-gcc_lto_lto_c,v 1.2 2016/12/28 21:48:21 pascal Exp $
+--- gcc/lto/lto.c.orig	Wed Nov 23 15:31:16 2016
++++ gcc/lto/lto.c	Fri Dec 23 18:25:18 2016
+@@ -2956,6 +2956,12 @@ read_cgraph_and_symbols (unsigned nfiles, const char *
    all_file_decl_data = NULL;
  }
  
