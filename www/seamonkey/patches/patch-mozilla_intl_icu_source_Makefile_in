@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_intl_icu_source_Makefile_in,v 1.2 2015/11/09 13:54:30 landry Exp $
+$OpenBSD: patch-mozilla_intl_icu_source_Makefile_in,v 1.3 2016/12/28 09:14:19 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=990196
---- mozilla/intl/icu/source/Makefile.in.orig	Wed Nov  4 02:55:30 2015
-+++ mozilla/intl/icu/source/Makefile.in	Mon Nov  9 10:29:27 2015
-@@ -329,7 +329,7 @@ $(top_builddir)/config/pkgdataMakefile:
+--- mozilla/intl/icu/source/Makefile.in.orig	Wed Oct  5 09:31:10 2016
++++ mozilla/intl/icu/source/Makefile.in	Tue Nov  1 10:32:14 2016
+@@ -333,7 +333,7 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@

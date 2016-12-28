@@ -1,15 +1,13 @@
-$OpenBSD: patch-suite_installer_Makefile_in,v 1.14 2015/11/09 13:54:30 landry Exp $
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.15 2016/12/28 09:14:19 landry Exp $
 Don't install the sdk
---- suite/installer/Makefile.in.orig	Wed Nov  4 02:43:23 2015
-+++ suite/installer/Makefile.in	Mon Nov  9 10:29:28 2015
-@@ -145,10 +145,6 @@ NON_OMNIJAR_FILES = \
+--- suite/installer/Makefile.in.orig	Wed Oct  5 09:22:40 2016
++++ suite/installer/Makefile.in	Tue Nov  1 10:48:27 2016
+@@ -154,8 +154,6 @@ NON_OMNIJAR_FILES = \
  	defaults/profile/chrome/userContent-example.css \
  	$(NULL)
  
--ifndef LIBXUL_SDK
 -INSTALL_SDK = 1
--endif
-- 
+-
  include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/packager.mk
  
  ifeq (Darwin, $(OS_ARCH))
