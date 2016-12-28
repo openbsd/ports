@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/25 14:34:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2016/12/28 07:01:47 landry Exp $
 
 COMMENT-main=	python Qt5 bindings
 COMMENT-docs=	py-qt5 documentation
@@ -54,6 +54,7 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtserialport \
 		x11/qt5/qtsensors \
+		x11/qt5/qtsvg \
 		x11/qt5/qttools \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebkit \
