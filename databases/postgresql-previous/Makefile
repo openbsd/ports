@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/18 18:13:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/28 14:10:36 zhuk Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
@@ -31,9 +31,12 @@ USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 
-MODULES=	lang/python
+MODULES=	lang/python gcc4
 MODPY_RUNDEP=	No
 POSTGRESQL_DIR=	postgresql-${VERSION:C/.[0-9]+$//}
+
+# for __sync_lock_test_and_set                   
+MODGCC4_ARCHS= arm                         
 
 CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
