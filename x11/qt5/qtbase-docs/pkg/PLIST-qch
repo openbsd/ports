@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-qch,v 1.1.1.1 2016/12/28 01:28:41 zhuk Exp $
+share/doc/qt5/qmake/
+share/doc/qt5/qmake.qch
+share/doc/qt5/qtconcurrent/
+share/doc/qt5/qtconcurrent.qch
+share/doc/qt5/qtcore/
+share/doc/qt5/qtcore.qch
+share/doc/qt5/qtdbus/
+share/doc/qt5/qtdbus.qch
+share/doc/qt5/qtgui/
+share/doc/qt5/qtgui.qch
+share/doc/qt5/qtnetwork/
+share/doc/qt5/qtnetwork.qch
+share/doc/qt5/qtopengl/
+share/doc/qt5/qtopengl.qch
+share/doc/qt5/qtplatformheaders/
+share/doc/qt5/qtplatformheaders.qch
+share/doc/qt5/qtprintsupport/
+share/doc/qt5/qtprintsupport.qch
+share/doc/qt5/qtsql/
+share/doc/qt5/qtsql.qch
+share/doc/qt5/qttestlib/
+share/doc/qt5/qttestlib.qch
+share/doc/qt5/qtwidgets/
+share/doc/qt5/qtwidgets.qch
+share/doc/qt5/qtxml/
+share/doc/qt5/qtxml.qch
