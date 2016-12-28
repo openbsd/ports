@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/28 07:53:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/28 07:55:43 zhuk Exp $
 
 CATEGORIES =	graphics print
 COMMENT =	Qt-based barcode abstraction library
 VERSION =	1.0
 DISTNAME =	prison-${VERSION}
 HOMEPAGE =	https://api.kde.org/frameworks/prison/html/
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	prison			0.0
 
@@ -21,7 +21,7 @@ MODKDE4_USE =
 LIB_DEPENDS =	graphics/libdmtx \
 		graphics/libqrencode
 
-WANTLIB =	dmtx lib/qt4/QtGui m qrencode stdc++
+WANTLIB =	dmtx lib/qt4/QtGui m qrencode
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/lib/prison/PrisonConfig.cmake.in
