@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2016/12/26 15:27:54 zhuk Exp $
+# $OpenBSD: Makefile,v 1.340 2016/12/28 18:54:12 awolk Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -240,6 +240,7 @@
      SUBDIR += tbftss
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
+     SUBDIR += tome4
      SUBDIR += tong
      SUBDIR += toppler
      SUBDIR += tornado
