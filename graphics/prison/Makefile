@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/28 07:53:36 zhuk Exp $
 
 CATEGORIES =	graphics print
 COMMENT =	Qt-based barcode abstraction library
 VERSION =	1.0
 DISTNAME =	prison-${VERSION}
-HOMEPAGE =	http://projects.kde.org/prison
-REVISION =	1
+HOMEPAGE =	https://api.kde.org/frameworks/prison/html/
+REVISION =	2
 
 SHARED_LIBS =	prison			0.0
 
