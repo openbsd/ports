@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.516 2016/11/23 16:02:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.517 2016/12/28 17:00:19 jturner Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -112,6 +112,7 @@
      SUBDIR += libxslt
      SUBDIR += link-grammar
      SUBDIR += linuxdoc
+     SUBDIR += lowdown
      SUBDIR += lq-sp
      SUBDIR += lttoolbox
      SUBDIR += lua-cosmo
