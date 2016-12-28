@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/28 08:09:00 zhuk Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules # 100% tests passed, 0 tests failed out of 48
@@ -28,8 +28,8 @@ SUBDIR += oxygen-icons		# 67% tests passed, 1 tests failed out of 3
 SUBDIR += solid 		# 75% tests passed, 1 tests failed out of 4
 SUBDIR += sonnet 		# 100% tests passed, 0 tests failed out of 4
 SUBDIR += threadweaver		# 100% tests passed, 0 tests failed out of 7
-#SUBDIR += syntax-highlighting requested Qt version "5.6.0".
-#SUBDIR += prison TODO
+SUBDIR += syntax-highlighting	# 100% tests passed, 0 tests failed out of 8
+SUBDIR += prison		# NO_TEST
 
 # tier 2
 SUBDIR += kauth			# 100% tests passed, 0 tests failed out of 2
@@ -71,7 +71,7 @@ SUBDIR += kdewebkit		# NO_TEST
 SUBDIR += baloo			# 18 schedulertest stuck in, filewatchtest fails, rest okay
 SUBDIR += kdesignerplugin	# 100% tests passed, 0 tests failed out of 2
 SUBDIR += knotifyconfig		# NO_TEST
-#SUBDIR += ktexteditor		# KF5SyntaxHighlighting REQUIRED
+SUBDIR += ktexteditor		# 98% tests passed, 1 tests failed out of 65 (testdata is missing)
 SUBDIR += plasma-framework	# 67% tests passed, 5 tests failed out of 15
 
 # tier 4

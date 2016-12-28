@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/28 08:09:00 zhuk Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
@@ -67,8 +67,6 @@ lib/qt5/plugins/kf5/parts/katepart.so
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md
-share/katepart5/syntax/
-share/katepart5/syntax/README.md
 share/kf5/mkspecs/qt_KTextEditor.pri
 share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop

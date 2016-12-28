@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/28 08:09:00 zhuk Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetCore KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Script Qt5Widgets
-WANTLIB += Qt5Xml git2 m
+WANTLIB += Qt5Xml git2 m KF5SyntaxHighlighting
 
 BUILD_DEPENDS =		devel/gettext-tools
 
@@ -23,12 +23,9 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kio \
 			devel/kf5/kparts \
 			devel/kf5/sonnet \
+			devel/kf5/syntax-highlighting \
 			devel/libgit2/libgit2 \
 			x11/qt5/qtscript
-
-# TODO: The following tests FAILED:
-#         48 - bug205447 (Failed)
-#         49 - katesyntaxtest (OTHER_FAULT)
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
