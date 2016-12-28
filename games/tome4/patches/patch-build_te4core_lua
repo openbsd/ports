@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_te4core_lua,v 1.1.1.1 2016/12/28 18:34:57 awolk Exp $
+--- build/te4core.lua.orig	Fri Dec  2 11:29:13 2016
++++ build/te4core.lua	Fri Dec  2 11:29:23 2016
+@@ -40,7 +40,7 @@ project "TEngine"
+ 	links { "physfs", "lua".._OPTIONS.lua, "fov", "luasocket", "luaprofiler", "lpeg", "tcodimport", "lxp", "expatstatic", "luamd5", "luazlib", "luabitop", "te4-bzip" }
+ 	defines { "_DEFAULT_VIDEOMODE_FLAGS_='SDL_HWSURFACE|SDL_DOUBLEBUF'" }
+ 	defines { [[TENGINE_HOME_PATH='".t-engine"']], "TE4CORE_VERSION="..TE4CORE_VERSION }
+-	buildoptions { "-O3" }
++	--buildoptions { "-O3" }
+ 
+ 	if _OPTIONS.relpath=="32" then linkoptions{"-Wl,-rpath -Wl,\\\$\$ORIGIN/lib "} end
+ 	if _OPTIONS.relpath=="64" then linkoptions{"-Wl,-rpath -Wl,\\\$\$ORIGIN/lib64 "} end
