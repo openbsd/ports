@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/01/25 15:19:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/12/28 19:51:02 juanfra Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
@@ -342,6 +342,30 @@ openfire/resources/database/upgrade/22/openfire_oracle.sql
 openfire/resources/database/upgrade/22/openfire_postgresql.sql
 openfire/resources/database/upgrade/22/openfire_sqlserver.sql
 openfire/resources/database/upgrade/22/openfire_sybase.sql
+openfire/resources/database/upgrade/23/
+openfire/resources/database/upgrade/23/openfire_db2.sql
+openfire/resources/database/upgrade/23/openfire_hsqldb.sql
+openfire/resources/database/upgrade/23/openfire_mysql.sql
+openfire/resources/database/upgrade/23/openfire_oracle.sql
+openfire/resources/database/upgrade/23/openfire_postgresql.sql
+openfire/resources/database/upgrade/23/openfire_sqlserver.sql
+openfire/resources/database/upgrade/23/openfire_sybase.sql
+openfire/resources/database/upgrade/24/
+openfire/resources/database/upgrade/24/openfire_db2.sql
+openfire/resources/database/upgrade/24/openfire_hsqldb.sql
+openfire/resources/database/upgrade/24/openfire_mysql.sql
+openfire/resources/database/upgrade/24/openfire_oracle.sql
+openfire/resources/database/upgrade/24/openfire_postgresql.sql
+openfire/resources/database/upgrade/24/openfire_sqlserver.sql
+openfire/resources/database/upgrade/24/openfire_sybase.sql
+openfire/resources/database/upgrade/25/
+openfire/resources/database/upgrade/25/openfire_db2.sql
+openfire/resources/database/upgrade/25/openfire_hsqldb.sql
+openfire/resources/database/upgrade/25/openfire_mysql.sql
+openfire/resources/database/upgrade/25/openfire_oracle.sql
+openfire/resources/database/upgrade/25/openfire_postgresql.sql
+openfire/resources/database/upgrade/25/openfire_sqlserver.sql
+openfire/resources/database/upgrade/25/openfire_sybase.sql
 openfire/resources/database/upgrade/4/
 openfire/resources/database/upgrade/4/openfire_db2.sql
 openfire/resources/database/upgrade/4/openfire_hsqldb.sql
