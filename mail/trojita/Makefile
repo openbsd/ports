@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2016/12/28 18:34:05 landry Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
@@ -30,6 +30,7 @@ LIB_DEPENDS =		mail/mimetic \
 			security/qtkeychain,qt5 \
 			x11/kde-applications/gpgmepp \
 			x11/qt5/qtwebkit
+BUILD_DEPENDS =		x11/qt5/qtsvg
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
