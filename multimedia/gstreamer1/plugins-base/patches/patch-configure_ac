@@ -1,10 +1,21 @@
-$OpenBSD: patch-configure_ac,v 1.12 2016/11/02 22:19:21 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.13 2016/12/28 13:13:55 zhuk Exp $
 
-XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
+1. Old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
 
---- configure.ac.orig	Tue Nov  1 16:11:31 2016
-+++ configure.ac	Wed Nov  2 16:02:38 2016
-@@ -629,6 +629,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
+2. Avoid picking up Qt5 (used for examples only), or this will create
+   a circular dependency.
+
+--- configure.ac.orig	Tue Nov 29 15:22:19 2016
++++ configure.ac	Wed Dec 28 15:50:30 2016
+@@ -319,6 +319,7 @@ PKG_CHECK_MODULES(QT, Qt5Gui Qt5Widgets, [
+ ], [
+   HAVE_QT=no
+ ])
++HAVE_QT=no
+ if test "x$HAVE_QT" = "xyes"; then
+   AC_CHECK_TOOL(QT_MOC, moc)
+   AC_MSG_CHECKING([for Qt5 moc])
+@@ -629,6 +630,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
    ])
  ])
  
@@ -26,7 +37,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
  dnl *** CDParanoia ***
  dnl Note: upstream has a pkg-config file only in post-10.2 SVN so far
  translit(dnm, m, l) AM_CONDITIONAL(USE_CDPARANOIA, true)
-@@ -659,10 +674,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
+@@ -659,10 +675,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
      if test "x$FOUND_CDPARANOIA" = "xyes";
      then
        AC_CHECK_LIB(cdda_paranoia,
@@ -39,7 +50,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
      fi
  
      AC_SUBST(CDPARANOIA_LIBS)
-@@ -773,6 +788,7 @@ else
+@@ -773,6 +789,7 @@ else
  dnl not building plugins with external dependencies,
  dnl but we still need to set the conditionals
  AM_CONDITIONAL(USE_ALSA, false)
@@ -47,7 +58,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
  AM_CONDITIONAL(USE_CDPARANOIA, false)
  AM_CONDITIONAL(USE_IVORBIS, false)
  AM_CONDITIONAL(USE_LIBVISUAL, false)
-@@ -893,6 +909,7 @@ sys/ximage/Makefile
+@@ -893,6 +910,7 @@ sys/ximage/Makefile
  sys/xvimage/Makefile
  ext/Makefile
  ext/alsa/Makefile
