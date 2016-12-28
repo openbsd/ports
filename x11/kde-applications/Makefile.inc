@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/05/27 00:07:17 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/12/28 08:21:41 zhuk Exp $
 
 .if !defined(CATEGORIES)
 ERRORS +=		"Fatal: missing CATEGORIES"
@@ -15,9 +15,9 @@ MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
 
 KDE5 ?=			No
 .if ${KDE5:L} == "yes"
-MODULES +=		devel/kf5
+MODULES :=		devel/kf5 ${MODULES}
 VERSION ?=		16.04.0
 .else
-MODULES +=		x11/kde4
+MODULES :=		x11/kde4 ${MODULES}
 VERSION ?=		15.08.3
 .endif
