@@ -1,0 +1,3 @@
+lowdown is just another Markdown translator. It can output traditional HTML or a
+document for your troff type-setter of choice, such as groff(1), Heirloom troff,
+or even mandoc(1).
