@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/12/22 08:10:21 phessler Exp $
-
-BROKEN-arm =	libjackserver.so.2.0: undefined reference to __sync_fetch_and_add_4
+# $OpenBSD: Makefile,v 1.37 2016/12/29 14:29:37 jca Exp $
 
 COMMENT =		low latency sound server
 
@@ -21,6 +19,10 @@ WANTLIB += c celt0>=1 db m pthread readline samplerate sndfile
 WANTLIB += sndio termcap FLAC ogg vorbis vorbisenc
 
 MASTER_SITES =		${HOMEPAGE}downloads/
+
+MODULES =		gcc4
+# needs __sync_fetch_and_add_4, __sync_add_and_fetch_4
+MODGCC4_ARCHS =		arm
 
 LIB_DEPENDS =		audio/libsndfile \
 			audio/libsamplerate \
