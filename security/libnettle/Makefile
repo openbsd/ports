@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2016/10/03 08:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/12/29 15:51:29 jca Exp $
 
 COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.3
+REVISION=		0
 PKGNAME=		lib${DISTNAME}
 
 SHARED_LIBS +=  hogweed                   2.0 # 6.2
@@ -28,11 +29,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# binutils 2.15 can't handle memxor.s
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS +=	--disable-assembler
-.endif
 
 MAKE_FLAGS=		LIBNETTLE_SONAME=libnettle.so.${LIBnettle_VERSION} \
 			LIBNETTLE_FILE=libnettle.so.${LIBnettle_VERSION} \
