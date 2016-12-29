@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/10 09:13:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2016/12/29 09:10:36 jca Exp $
 
 COMMENT=	manages software package installations with symlinks
 
@@ -17,6 +17,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:=stow/}
 CONFIGURE_STYLE=gnu
 USE_GMAKE=Yes
 
-TEST_DEPENDS=	devel/p5-Test-Output
+TEST_DEPENDS=	devel/p5-IO-stringy \
+		devel/p5-Test-Output
+
 
 .include <bsd.port.mk>
