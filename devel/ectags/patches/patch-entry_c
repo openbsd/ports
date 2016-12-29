@@ -1,0 +1,20 @@
+$OpenBSD: patch-entry_c,v 1.1 2016/12/29 14:48:52 shadchin Exp $
+--- entry.c.orig	Thu Oct 12 09:26:40 2006
++++ entry.c	Thu Dec 29 19:41:03 2016
+@@ -771,10 +771,15 @@ static int writePatternEntry (const tagEntryInfo *cons
+ 	const int searchChar = Option.backward ? '?' : '/';
+ 	boolean newlineTerminated;
+ 	int length = 0;
++	size_t lineLength;
+ 
+ 	if (tag->truncateLine)
+ 		truncateTagLine (line, tag->name, FALSE);
+-	newlineTerminated = (boolean) (line [strlen (line) - 1] == '\n');
++	lineLength = strlen (line);
++	if (lineLength > 0)
++		newlineTerminated = (boolean) (line [lineLength - 1] == '\n');
++	else
++		newlineTerminated = FALSE;
+ 
+ 	length += fprintf (TagFile.fp, "%c^", searchChar);
+ 	length += writeSourceLine (TagFile.fp, line);
