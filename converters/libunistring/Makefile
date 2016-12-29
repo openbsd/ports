@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2016/12/29 16:12:00 pascal Exp $
 
 COMMENT =		manipulate Unicode strings
 
-DISTNAME =		libunistring-0.9.6
-REVISION =		0
+DISTNAME =		libunistring-0.9.7
 
 SHARED_LIBS +=		unistring                 0.1 # 2.0
 
@@ -13,7 +12,7 @@ HOMEPAGE =		https://www.gnu.org/software/libunistring/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
-# (L)GPLv3+
+# LGPLv3+ or GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		iconv
