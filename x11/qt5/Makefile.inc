@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2016/12/28 01:41:23 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/12/29 20:59:05 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
@@ -119,11 +119,15 @@ TEST_TARGET ?=		check
 FLAVOR ?=
 
 .if ${BUILD_PACKAGES:M-html}
-_MODQT5_DOC_DEPS =
-.for _d in ${LIB_DEPENDS:Mx11/qt5/*} ${BUILD_DEPENDS:Mx11/qt5/*}
-_MODQT5_DOC_DEPS :=	${_MODQT5_DOC_DEPS} ${_d:C/(,.*)?(>=.*)?$/,,-docindex=${QT5_VERSION}/}
-.endfor
-BUILD_DEPENDS +=	${_MODQT5_DOC_DEPS:C/qtbase,,-docindex/qtbase-docs,-docindex/:C/qtenginio,,-docindex=.*/qtenginio,-docindex=${ENGINIO_VERSION}/}
+QT5_DOC_DEPS =
+. for _d in ${LIB_DEPENDS:Mx11/qt5/*} ${BUILD_DEPENDS:Mx11/qt5/*}
+QT5_DOC_DEPS :=	${QT5_DOC_DEPS} ${_d:C/(,.*)?(>=.*)?$/,,-docindex=${QT5_VERSION}/}
+. endfor
+BUILD_DEPENDS +=	${QT5_DOC_DEPS:C/qtbase,,-docindex/qtbase-docs,-docindex/:C/qtenginio,,-docindex=.*/qtenginio,-docindex=${ENGINIO_VERSION}/}
+# x11/qt5/qtbase is added after Makefile.inc is processed
+. if !${PKGPATH:Mx11/qt5/qtbase-docs*}
+BUILD_DEPENDS +=	x11/qt5/qtbase-docs,-docindex=${QT5_VERSION}
+. endif
 BUILD_DEPENDS +=	x11/qt5/qtbase,-global=${QT5_VERSION}
 .endif
 
@@ -269,7 +273,7 @@ gen_pkg_plist:
 	sed -Ei '\,^(@.* )?share/doc/qt5/.*\.qch,d' ${PKGDIR}/PLIST-main
 .endif
 .if ${BUILD_PACKAGES:M-html}
-	echo '@comment $$OpenBSD: Makefile.inc,v 1.3 2016/12/28 01:41:23 zhuk Exp $$' >${PKGDIR}/PLIST-html
+	echo '@comment $$OpenBSD: Makefile.inc,v 1.4 2016/12/29 20:59:05 zhuk Exp $$' >${PKGDIR}/PLIST-html
 	egrep '^(@.* )?share/doc/qt5/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-html
 	sed -Ei '\,^(@.* )?share/doc/qt5/,d' ${PKGDIR}/PLIST-main
 .endif

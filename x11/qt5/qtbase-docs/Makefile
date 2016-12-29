@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/28 01:28:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/29 20:59:05 zhuk Exp $
 
 # to build those we need both qtbase and qttools installed
 
@@ -6,6 +6,7 @@ QT5NAME =		QtBase
 PKGNAME =		qtbase-docs-${VERSION}
 PKGNAME-qch =		qtbase-qch-${VERSION}
 PKGNAME-html =		qtbase-html-${VERSION}
+PKGNAME-docindex =	qtbase-docindex-${VERSION}
 MULTI_PACKAGES =	-qch -html -docindex
 SUBPACKAGE ?=		-qch
 
