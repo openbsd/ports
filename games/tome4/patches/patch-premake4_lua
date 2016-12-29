@@ -1,16 +1,19 @@
-$OpenBSD: patch-premake4_lua,v 1.1.1.1 2016/12/28 18:34:57 awolk Exp $
+$OpenBSD: patch-premake4_lua,v 1.2 2016/12/29 14:07:11 awolk Exp $
 --- premake4.lua.orig	Mon May 19 10:42:14 2014
-+++ premake4.lua	Fri Dec  2 11:30:43 2016
-@@ -45,9 +45,12 @@ end
++++ premake4.lua	Thu Dec 29 12:28:14 2016
+@@ -44,10 +44,13 @@ end
+ 
  configuration "bsd"
  	libdirs {
- 		"/usr/local/lib",
-+		"/usr/X11R6/lib",
+-		"/usr/local/lib",
++		"${LOCALBASE}/lib",
++		"${X11BASE}/lib",
  	}
  	includedirs {
- 		"/usr/local/include",
-+		"/usr/local/include/SDL2",
-+		"/usr/X11R6/include/",
+-		"/usr/local/include",
++		"${LOCALBASE}/include",
++		"${LOCALBASE}/include/SDL2",
++		"${X11BASE}/include/",
  	}
  
  if _OPTIONS.wincross then

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2016/12/28 18:34:57 awolk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/12/29 14:07:11 awolk Exp $
 @bin bin/tome4
-share/tome4/
 share/tome4/bootstrap/
 share/tome4/bootstrap/boot.lua
-share/tome4/game/
 share/tome4/game/addons/
 share/tome4/game/addons/tome-addon-dev.teaa
 share/tome4/game/addons/tome-items-vault.teaa

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/28 18:34:57 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/29 14:07:11 awolk Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -7,6 +7,9 @@ V =		1.4.9
 PKGNAME-main =	tome4-${V}
 PKGNAME-data =	tome4-data-${V}
 CATEGORIES =	games x11
+
+REVISION-main =	0
+REVISION-data =	0
 
 MASTER_SITES =	http://te4.org/dl/t-engine/
 DISTNAME =	t-engine4-src-${V}
@@ -31,7 +34,7 @@ LIB_DEPENDS-main =	devel/sdl2 \
 			audio/libvorbis \
 			audio/openal
 
-RUN_DEPENDS-main =	${FULLPKGNAME-data}:${BUILD_PKGPATH},-data
+RUN_DEPENDS-main =	games/tome4,-data
 
 LIB_DEPENDS-data =
 WANTLIB-data =
@@ -40,8 +43,7 @@ GAMEDIR =	${PREFIX}/share/tome4
 SUBST_VARS =	GAMEDIR
 
 MODULES =	gcc4
-MODGCC_ARCHS =	*
-MODGCC_LANGS =	c
+MODGCC4_ARCHS =	*
 
 NO_TEST =	YES
 
@@ -51,6 +53,7 @@ MAKE_ENV =	config=release
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/src/getself.c
+	${SUBST_CMD} ${WRKSRC}/premake4.lua
 	@cd ${WRKSRC} ; premake4 gmake
 
 do-install:
