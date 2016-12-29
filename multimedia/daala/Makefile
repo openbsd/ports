@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/26 14:53:05 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.8 2016/12/29 14:37:40 jca Exp $
 
 COMMENT =		free video codec
 DISTNAME =		daala-0.0.20161220
@@ -37,6 +37,10 @@ CONFIGURE_ARGS +=	--enable-check-asm \
 			--disable-doc \
 			--disable-player \
 			--disable-tools
+# detects EDSP/NEON using /proc/cpuinfo
+.if ${MACHINE_ARCH:Marm}
+CONFIGURE_ARGS +=	--disable-asm
+.endif
 
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS}"
 
