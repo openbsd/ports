@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2016/12/13 14:54:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2016/12/30 14:51:27 ajacoutot Exp $
 
 COMMENT=		simple GTK desktop news aggregator
 
 GH_ACCOUNT=		lwindolf
 GH_PROJECT=		liferea
-GH_TAGNAME=		v1.12-rc1
-PKGNAME=		liferea-1.12rc1
+GH_TAGNAME=		v1.12-rc2
+PKGNAME=		liferea-1.12rc2
 
 CATEGORIES=		www news x11
 
@@ -27,7 +27,7 @@ WANTLIB += iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs secret-1
-WANTLIB += soup-2.4 sqlite3 stdc++ tasn1 webkit2gtk-4.0 webp xcb
+WANTLIB += soup-2.4 sqlite3 tasn1 webkit2gtk-4.0 webp xcb
 WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
 
 MODULES=		devel/dconf \
