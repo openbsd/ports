@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/11/27 08:38:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/12/30 11:31:06 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -135,6 +135,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/brightbox.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/brightbox.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/bsnl.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/bsnl.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/cloudscale.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/cloudscale.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/cloudsigma.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/cloudsigma.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/cloudstack.py
