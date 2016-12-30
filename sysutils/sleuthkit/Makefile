@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/10/10 18:58:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.18 2016/12/30 22:54:47 sthen Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
@@ -26,6 +26,7 @@ CONFIGURE_ARGS += 	--mandir='${PREFIX}/man' \
 			--without-afflib \
 			--without-libewf
 
+BUILD_DEPENDS=		devel/cppunit
 RUN_DEPENDS=		converters/p5-DateManip
 
 NO_TEST =		Yes
