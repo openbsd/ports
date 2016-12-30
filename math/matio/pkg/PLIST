@@ -1,9 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/30 12:12:28 shadchin Exp $
+@bin bin/matdump
 include/matio.h
-include/matioConfig.h
+include/matio_pubconf.h
 lib/libmatio.a
 lib/libmatio.la
 @lib lib/libmatio.so.${LIBmatio_VERSION}
 lib/pkgconfig/matio.pc
-share/doc/matio/
-share/doc/matio/libmatio.pdf
+@man man/man3/Mat_Close.3
+@man man/man3/Mat_CreateVer.3
+@man man/man3/Mat_GetFilename.3
+@man man/man3/Mat_GetLibraryVersion.3
+@man man/man3/Mat_GetVersion.3
+@man man/man3/Mat_Open.3
+@man man/man3/Mat_Rewind.3
+@man man/man3/Mat_VarAddStructField.3
+@man man/man3/Mat_VarCreate.3
+@man man/man3/Mat_VarCreateStruct.3
+@man man/man3/Mat_VarFree.3
+@man man/man3/Mat_VarGetNumberOfFields.3
+@man man/man3/Mat_VarGetStructFieldnames.3
+@man man/man3/Mat_VarGetStructs.3
+@man man/man3/Mat_VarGetStructsLinear.3
+@man man/man3/Mat_VarRead.3
+@man man/man3/Mat_VarReadInfo.3
+@man man/man3/Mat_VarReadNext.3
+@man man/man3/Mat_VarReadNextInfo.3
+@man man/man3/Mat_VarWrite.3
