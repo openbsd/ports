@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/12/15 09:16:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2016/12/30 11:20:10 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -677,6 +677,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-interfaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/describe-agents.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/describe-configurations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/list-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-replication-instance.rst
