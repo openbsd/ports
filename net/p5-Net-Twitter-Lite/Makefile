@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/30 17:36:41 pascal Exp $
 
 COMMENT =		interface to Twitter API
 
-DISTNAME =		Net-Twitter-Lite-0.12006
-REVISION =		0
+DISTNAME =		Net-Twitter-Lite-0.12008
 
 CATEGORIES =		net devel
 
@@ -17,11 +16,11 @@ PKG_ARCH =		*
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Test-Fatal \
 			net/p5-Net-OAuth \
-			security/p5-Crypt-SSLeay \
+			www/p5-LWP-Protocol-https \
 			www/p5-libwww \
 			converters/p5-JSON \
 			www/p5-URI
 
-CONFIGURE_STYLE =	modbuild
+CONFIGURE_STYLE =	modbuild tiny
 
 .include <bsd.port.mk>
