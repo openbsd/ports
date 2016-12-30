@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/30 03:41:43 jsg Exp $
 
 #'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
-ONLY_FOR_ARCHS=	i386 amd64 arm
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	fast and lightweight key/value database library
 
