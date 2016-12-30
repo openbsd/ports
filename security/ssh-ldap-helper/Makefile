@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/30 17:53:37 jca Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
@@ -33,6 +33,17 @@ BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio \
 		archivers/bzip2
 LIB_DEPENDS =	databases/openldap
 WANTLIB +=	c crypto lber ldap util z
+
+# The LDAP_SET_REBIND_PROC_ARGS macro is set to literal
+# "$ac_cv_ldap_set_rebind_proc" instead of "3" because of the improper
+# use of AC_DEFINE instead of AC_DEFINE_UNQUOTED. This fails on arm,
+# where '$' is reserved. Fixing this would lead the preprocessor tests
+# to succeed, and the code to call ldap_set_rebind_proc() with bogus
+# parameters, so let's just define the macro to 0.
+# XXX should really be a patch
+post-patch:
+	sed -i 's/AC_DEFINE(LDAP_SET_REBIND_PROC_ARGS, $$ac_cv_ldap_set_rebind_proc/AC_DEFINE(LDAP_SET_REBIND_PROC_ARGS, 0/' \
+	    ${WRKSRC}/configure.ac
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/ssh-ldap-{helper.8,wrapper}
