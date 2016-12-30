@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/11/15 13:28:52 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2016/12/30 23:15:09 jca Exp $
 --- Makefile.in.orig	Tue Mar 13 14:46:18 2001
-+++ Makefile.in	Thu Nov  1 12:03:55 2001
++++ Makefile.in	Fri Dec 30 19:10:30 2016
 @@ -1,10 +1,10 @@
  # s10sh Makefile
  
@@ -8,8 +8,9 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/11/15 13:28:52 wilfried Exp $
 -LIBS=@LIBREADLINE@ @LIBTERMCAP@
 +LIBS=@LIBREADLINE@ @LIBTERMCAP@ @LIBUSB@
  CC=gcc
- CCOPT=-O2 -Wall -g @LIBUSBHEADER@
+-CCOPT=-O2 -Wall -g @LIBUSBHEADER@
 -OBJECTS=main.o crc.o usb.o serial.o common.o bar.o @LIBUSB@
++CCOPT=${CFLAGS} -Wall @LIBUSBHEADER@
 +OBJECTS=main.o crc.o usb.o serial.o common.o bar.o
  
  all: s10sh
