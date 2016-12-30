@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/01 10:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/12/30 10:20:31 jsg Exp $
 
-BROKEN-arm=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
 
@@ -24,6 +23,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m pthread stdc++ z
 
 MASTER_SITES=	${HOMEPAGE}pkg/
+
+# for atomic builtins
+MODULES=	gcc4
+MODGCC4_ARCHS=	arm
+MODGCC4_LANGS=	c++
 
 USE_GMAKE=	Yes
 
