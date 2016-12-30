@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2016/10/04 21:22:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2016/12/30 16:06:55 fcambus Exp $
 
 COMMENT=	ASCII drawing utility
 
 GH_ACCOUNT =	statico
 GH_PROJECT =	cadubi
-GH_TAGNAME =	v1.3.1
+GH_TAGNAME =	v1.3.3
 
 CATEGORIES=	graphics editors
-
-HOMEPAGE=	https://github.com/statico/cadubi
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
