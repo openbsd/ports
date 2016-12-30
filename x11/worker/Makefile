@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/02 22:44:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/12/30 17:31:21 jsg Exp $
 
-BROKEN-arm =	no atomic ops
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
 DISTNAME =	worker-3.8.3
