@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.27 2016/10/08 12:49:19 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.28 2016/12/30 10:43:07 jsg Exp $
 
-BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
 COMMENT=		the Git library, take 2
 
@@ -10,9 +9,12 @@ GH_TAGNAME =		v0.24.1
 SHARED_LIBS +=  git2                      8.0 # 0.24
 
 MODULES=		devel/cmake \
-			lang/python
+			lang/python \
+			gcc4
 
 MODPY_RUNDEP=		No
+# for atomic builtins
+MODGCC4_ARCHS=		arm
 
 LIB_DEPENDS=		net/curl \
 			security/libssh2
