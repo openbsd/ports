@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/12/30 13:58:49 jsg Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
-BROKEN-arm =	undefined refs to __sync operations
 BROKEN-hppa =	undefined refs to __sync operations
 
 COMMENT-main =	japanese morphological analyzer engine
@@ -31,6 +30,11 @@ MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=mecab/}
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz
+
+# for atomic builtins
+MODULES =	gcc4
+MODGCC4_ARCHS =	arm
+MODGCC4_LANGS =	c++
 
 LIB_DEPENDS-main = converters/libiconv
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic
