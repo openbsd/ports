@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2016/12/28 09:14:19 landry Exp $
+# $OpenBSD: Makefile,v 1.192 2016/12/30 07:04:39 landry Exp $
 
 BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
 
@@ -83,8 +83,9 @@ post-install:
 .endfor
 	# lightning cant be used packed as a zip because it contains a binary component
 	# (libcalbasecomps.so) that the system wouldnt be able to load...
-	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
+	cp -r ${WRKBUILD}/dist/bin/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
 		${EXTDIR}
+
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
