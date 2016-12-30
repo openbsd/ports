@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/20 12:02:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/12/30 14:28:31 ajacoutot Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
-DISTNAME=	libwebp-0.5.1
+DISTNAME=	libwebp-0.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/
 
