@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/28 08:09:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/30 20:07:42 zhuk Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5TextEditor		1.0
 
@@ -25,7 +26,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/sonnet \
 			devel/kf5/syntax-highlighting \
 			devel/libgit2/libgit2 \
-			x11/qt5/qtscript
+			x11/qt5/qtscript \
+			x11/qt5/qtxmlpatterns
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
