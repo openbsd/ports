@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.23 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2016/12/31 00:29:41 jsg Exp $
 
-BROKEN-arm =		missing atomic ops
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
 
