@@ -1,17 +1,17 @@
-$OpenBSD: patch-docs_README,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+$OpenBSD: patch-docs_README,v 1.2 2016/12/31 10:48:00 jsg Exp $
 
 We only build GL clients.
 
---- docs/README.orig	Sat May 24 02:12:36 2014
-+++ docs/README	Sat May 24 02:13:01 2014
-@@ -96,10 +96,8 @@ b. Manual install/update of data files:
+--- docs/README.orig	Sat Apr 23 18:55:42 2016
++++ docs/README	Mon Dec 26 13:26:09 2016
+@@ -85,10 +85,8 @@ data doesn't need patching.
  
-    Here are the game binaries' names:
+ Here are the game binaries' names:
  
--	hexen2	-  Hexen II (software rendering)
- 	glhexen2 - Hexen II (opengl rendering)
- 	h2ded	-  Hexen II Dedicated server
--	hwcl	-  HexenWorld Client (software rendering)
- 	glhwcl	-  HexenWorld Client (opengl rendering)
- 	hwsv	-  HexenWorld Server
- 	hwmaster-  HexenWorld Master Server
+-   hexen2   -  Hexen II (software rendering)
+    glhexen2 -  Hexen II (opengl rendering)
+    h2ded    -  Hexen II Dedicated server
+-   hwcl     -  HexenWorld Client (software rendering)
+    glhwcl   -  HexenWorld Client (opengl rendering)
+    hwsv     -  HexenWorld Server
+    hwmaster -  HexenWorld Master Server

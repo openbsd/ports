@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/17 23:57:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/12/31 10:48:00 jsg Exp $
 bin/glhexen2
 bin/glhwcl
 bin/h2ded
-bin/h2launcher
 bin/h2patch
 bin/hexen2
 bin/hwcl
@@ -23,7 +22,6 @@ share/doc/uhexen2/Features
 share/doc/uhexen2/README
 share/doc/uhexen2/README.3dfx
 share/doc/uhexen2/README.AoT
-share/doc/uhexen2/README.launcher
 share/doc/uhexen2/README.music
 share/doc/uhexen2/ReleaseNotes
 share/doc/uhexen2/ReleaseNotes.old
@@ -57,13 +55,13 @@ share/uhexen2/data1/maps/romeric5.ent
 share/uhexen2/data1/maps/romeric5.txt
 share/uhexen2/data1/maps/tower.ent
 share/uhexen2/data1/maps/tower.txt
+share/uhexen2/data1/music/
 share/uhexen2/data1/progs.dat
 share/uhexen2/data1/progs2.dat
 share/uhexen2/data1/strings.txt
 @bin share/uhexen2/glhexen2
 @bin share/uhexen2/glhwcl
 @bin share/uhexen2/h2ded
-@bin share/uhexen2/h2launcher
 @bin share/uhexen2/h2patch
 @bin share/uhexen2/hexen2
 share/uhexen2/hexen2.png
@@ -89,6 +87,7 @@ share/uhexen2/portals/maps/tibet2.ent
 share/uhexen2/portals/maps/tibet2.txt
 share/uhexen2/portals/maps/tibet9.ent
 share/uhexen2/portals/maps/tibet9.txt
+share/uhexen2/portals/music/
 share/uhexen2/portals/progs.dat
 share/uhexen2/portals/puzzles.txt
 share/uhexen2/portals/strings.txt

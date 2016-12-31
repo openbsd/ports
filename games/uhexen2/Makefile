@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/27 10:10:23 ratchov Exp $
+# $OpenBSD: Makefile,v 1.5 2016/12/31 10:48:00 jsg Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
-V =			1.5.6
+V =			1.5.8
 DISTNAME =		hexen2source-${V}
 PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
-REVISION =		2
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
 
@@ -26,14 +25,9 @@ BUILD_DEPENDS =		devel/nasm
 
 LIB_DEPENDS =		devel/sdl \
 			audio/libmad \
-			audio/libvorbis \
-			x11/gtk+2
+			audio/libvorbis
 
-WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 intl m mad ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread vorbis vorbisfile z
+WANTLIB += SDL c m mad ogg pthread vorbis vorbisfile
 
 USE_GMAKE =		Yes
 MAKE_FLAGS +=		CC=${CC}
@@ -48,7 +42,6 @@ do-build:
 	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} hw
 	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} clean
 	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} glhw
-	cd ${WRKBUILD}/launcher && ${DOMAKE}
 	cd ${WRKBUILD}/h2patch && ${DOMAKE}
 	cd ${WRKBUILD}/hw_utils/hwmaster && ${DOMAKE}
 	cd ${WRKBUILD}/hw_utils/hwmquery && ${DOMAKE}
@@ -60,7 +53,6 @@ BINS =	engine/hexen2/hexen2 \
 	engine/hexenworld/client/hwcl \
 	engine/hexenworld/client/glhwcl \
 	engine/hexenworld/server/hwsv \
-	launcher/h2launcher \
 	h2patch/h2patch \
 	hw_utils/hwmaster/hwmaster \
 	hw_utils/hwmquery/hwmquery \
@@ -77,7 +69,8 @@ do-install:
 .for B in ${BINS}
 # overwriting linux binaries as we go...
 	${INSTALL_PROGRAM} ${WRKBUILD}/${B} ${DATA}
-	echo "#!/bin/sh\ncd ${TRUEDATA} && ./${B:T}\n" > ${PREFIX}/bin/${B:T}
+	echo "#!/bin/sh\ncd ${TRUEDATA} && ./${B:T} \"\$$@\"\n" \
+	    > ${PREFIX}/bin/${B:T}
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/${B:T}
 	chmod +x ${PREFIX}/bin/${B:T}
 .endfor

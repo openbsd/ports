@@ -1,10 +1,10 @@
-$OpenBSD: patch-hw_utils_hwmaster_Makefile,v 1.1.1.1 2014/05/30 15:25:48 edd Exp $
+$OpenBSD: patch-hw_utils_hwmaster_Makefile,v 1.2 2016/12/31 10:48:00 jsg Exp $
 
 Use standard optimisations.
 
---- hw_utils/hwmaster/Makefile.orig	Sat May 24 01:11:53 2014
-+++ hw_utils/hwmaster/Makefile	Sat May 24 01:12:34 2014
-@@ -50,14 +50,9 @@ endif
+--- hw_utils/hwmaster/Makefile.orig	Tue Apr 19 00:03:18 2016
++++ hw_utils/hwmaster/Makefile	Mon Dec 26 13:16:56 2016
+@@ -46,14 +46,9 @@ endif
  # Overrides for the default CPUFLAGS
  CPUFLAGS=$(CPU_X86)
  
