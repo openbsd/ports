@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/15 14:43:07 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2016/12/31 01:01:24 jsg Exp $
 
-BROKEN-arm =		undefined reference to __sync atomic ops
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
 COMMENT =		user-level RCU implementation
@@ -30,9 +29,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		pthread
 
 # In-tree gcc fails to compile some of the atomic sequences on alpha.
+# Support atomic builtins on arm
 MODULES+=		gcc4
-MODGCC4_ARCHS=		alpha
+MODGCC4_ARCHS=		alpha arm
+.if ${MACHINE_ARCH} == "alpha"
 MODGCC4_VERSION=	4.6
+.endif
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
