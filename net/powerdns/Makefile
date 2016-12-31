@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.48 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2016/12/31 03:32:10 jsg Exp $
 
-BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
 
 COMMENT-main=		modular authoritative nameserver (with database support)
