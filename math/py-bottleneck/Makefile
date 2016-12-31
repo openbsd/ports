@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/20 10:18:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/31 20:52:49 jca Exp $
+
+BROKEN-powerpc = bottleneck/src/move.c:568: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT =		fast NumPy array functions written in C
 
