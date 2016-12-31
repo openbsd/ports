@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/12/16 17:27:45 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2016/12/31 19:58:56 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -11,11 +11,13 @@ B=		b15
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
+REVISION=	0
 EPOCH=		0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u112b15-bsd-port-20161210
 EXTRACT_SUFX=	.tar.xz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=	devel/jdk java
 
@@ -28,6 +30,10 @@ FLAVOR?=
 HOMEPAGE=	http://openjdk.java.net/
 
 MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
+MASTER_SITES1=	https://spacehopper.org/mirrors/ \
+		http://www.intricatesoftware.com/distfiles/
+MASTER_SITES2=	${MASTER_SITE_APACHE:=ant/binaries/} \
+		http://archive.apache.org/dist/ant/binaries/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
@@ -37,20 +43,32 @@ PERMIT_PACKAGE_CDROM=	Yes
 USE_GROFF =	Yes
 NO_TEST=	Yes
 
+APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
+SUPDISTFILES+=	openjdk8-bootjdk-i386-20161216.tar.gz:1  \
+		openjdk8-bootjdk-amd64-20161216.tar.gz:1 \
+		${APACHE_ANT}:2
+
 .if ${FLAVOR:Mnative_bootstrap}
 INSTALLED!= (pkg_info -qe "jdk->=1.8.0.00v0,<1.9v0" && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.8.0.00v0 or greater jdk package"
 .endif
-BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8
+BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8 \
+		devel/apache-ant>=1.8.2
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 .else
-BUILD_DEPENDS+=	jdk->=1.7.0.00v0,<1.8v0:devel/jdk/1.7
-BOOT_JDK=	${LOCALBASE}/jdk-1.7.0
+BOOT_JDK_DIST=	openjdk8-bootjdk-${ARCH}-20161216.tar.gz
+.include <bsd.port.arch.mk>
+.if (${ARCH}==amd64) || (${ARCH}==i386)
+DISTFILES+=	${BOOT_JDK_DIST}:1
+.endif
+DISTFILES+=	${APACHE_ANT}:2
+MAKE_ENV+=	ANT_HOME=${WRKDIR}/apache-ant-1.9.3 \
+		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
+BOOT_JDK=	${WRKDIR}/bootjdk
 .endif
 
-BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
-		archivers/zip \
+BUILD_DEPENDS+=	archivers/zip \
 		archivers/unzip \
 		print/cups,-libs \
 		shells/bash
@@ -118,3 +136,22 @@ do-install:
 	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
 
 .include <bsd.port.mk>
+
+# The bootjdk is the jdk image with some parts deleted
+# and a copy of the system shared libs needed to run it.
+# The parts deleted are not needed for bootstrap and would
+# require more system shared libs to be saved.
+build-bootjdk: ${_BUILD_COOKIE}
+	@rm -rf ${WRKDIR}/tmp
+	@mkdir -p ${WRKDIR}/tmp/bootjdk
+	@mkdir -p ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${WRKDIR}/tmp/bootjdk -xf - 
+	@cd ${WRKDIR}/tmp/bootjdk && rm -rf demo sample
+	@cd ${WRKDIR}/tmp/bootjdk && rm bin/appletviewer bin/policytool jre/bin/policytool
+	@cd ${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH} && rm libnpt.so libinstrument.so libsplashscreen.so libjsound.so libawt_xawt.so
+	@LD_LIBRARY_PATH="${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH}:${WRKDIR}/tmp/bootjdk/jre/lib/${ARCH}/server" \
+		find ${WRKDIR}/tmp/bootjdk -type f -perm -500 -exec ldd {} \; 2>/dev/null | \
+		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
+		xargs -I % cp /% ${WRKDIR}/tmp/bootjdk-libs
+	@cd ${WRKDIR}/tmp && tar czf openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz bootjdk*
+	@echo "New bootjdk is located at ${WRKDIR}/tmp/openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz"
