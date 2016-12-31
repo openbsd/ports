@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2016/12/31 20:46:18 jca Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+ONLY_FOR_ARCHS=	amd64 i386
 
 USE_WXNEEDED =	Yes
 
