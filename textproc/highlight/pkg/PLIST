@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/11/28 10:41:40 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/12/31 14:54:52 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -266,6 +266,7 @@ share/highlight/themes/ekvoli.theme
 share/highlight/themes/fine_blue.theme
 share/highlight/themes/freya.theme
 share/highlight/themes/fruit.theme
+share/highlight/themes/github.theme
 share/highlight/themes/golden.theme
 share/highlight/themes/greenlcd.theme
 share/highlight/themes/kellys.theme
@@ -296,6 +297,7 @@ share/highlight/themes/rootwater.theme
 share/highlight/themes/seashell.theme
 share/highlight/themes/solarized-dark.theme
 share/highlight/themes/solarized-light.theme
+share/highlight/themes/sourceforge.theme
 share/highlight/themes/tabula.theme
 share/highlight/themes/tcsoft.theme
 share/highlight/themes/the.theme
