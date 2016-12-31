@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.54 2016/03/18 21:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2016/12/31 04:12:09 jsg Exp $
 
-BROKEN-arm =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -29,7 +28,9 @@ MASTER_SITES =		http://distfiles.audacious-media-player.org/
 
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext gcc4
+# for atomic builtins
+MODGCC4_ARCHS =		arm
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
