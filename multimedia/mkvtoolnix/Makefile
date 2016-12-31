@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.64 2016/12/31 08:11:59 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-9.6.0
+DISTNAME=	mkvtoolnix-9.7.1
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 
@@ -58,7 +57,7 @@ FLAVOR?=
 CONFIGURE_ARGS+= --disable-gui
 .else
 MODULES+=	x11/qt5
-WANTLIB+=	Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB+=	Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.4 2016/04/11 05:55:37 ajacoutot Exp $
+$OpenBSD: patch-ac_qt5_m4,v 1.5 2016/12/31 08:11:59 ajacoutot Exp $
 
 Workaround for OpenBSD's pkg-config.
 
---- ac/qt5.m4.orig	Mon Mar 28 11:58:01 2016
-+++ ac/qt5.m4	Sun Apr 10 14:29:42 2016
+--- ac/qt5.m4.orig	Tue Dec 27 17:01:56 2016
++++ ac/qt5.m4	Fri Dec 30 02:34:26 2016
 @@ -127,25 +127,23 @@ if test x"$enable_qt" = "xyes" -a \
    fi
  
@@ -14,8 +14,8 @@ Workaround for OpenBSD's pkg-config.
 +      with_qt_pkg_config_modules="$with_qt_pkg_config_modules"
      fi
  
--    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets,Qt5Network"
-+    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core Qt5Gui Qt5Widgets Qt5Network"
+-    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets,Qt5Network,Qt5Concurrent"
++    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core Qt5Gui Qt5Widgets Qt5Network Qt5Concurrent"
  
      if test x"$MINGW" = x1; then
 -      with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5WinExtras"
