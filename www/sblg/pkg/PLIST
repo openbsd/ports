@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/02 11:34:53 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/12/31 14:51:47 pascal Exp $
 @bin bin/sblg
 @man man/man1/sblg.1
+share/sblg/
+share/sblg/schema.json
