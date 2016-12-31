@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/12/26 15:26:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2016/12/31 12:53:42 zhuk Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 V = 			4.1.0
@@ -46,10 +46,19 @@ WANTLIB += Qt5Widgets Qt5Xml
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
-MODULES =	x11/qt5 devel/qmake
-MODQMAKE_INSTALL_ROOT =	${PREFIX}
+MODULES =	x11/qt5 devel/qmake gcc4
+MODQMAKE_INSTALL_ROOT =		${PREFIX}
+# qtcreator.sh is created with custom LINK?= in Makefile
+MODQT5_USE_GCC4_MODULE =	No
+MODGCC4_LANGS =			c++
+MODGCC4_ARCHS =			*
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
+		x11/qt5/qtdeclarative,-docindex \
+		x11/qt5/qtdoc,-docindex \
+		x11/qt5/qtquickcontrols,-docindex \
+		x11/qt5/qtquickcontrols2,-docindex \
+		x11/qt5/qtsensors,-docindex
 
 RUN_DEPENDS = 	devel/gdb \
 		devel/gmake \
