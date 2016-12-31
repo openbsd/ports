@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.127 2016/12/22 11:07:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2016/12/31 20:48:31 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
+BROKEN-powerpc = undefined reference to __atomic_load_8
+
 DPB_PROPERTIES = parallel
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
