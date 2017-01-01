@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/04 16:09:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/01/01 18:32:04 feinerer Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
-DISTNAME=		dsocks-1.6
-REVISION=		2
+DISTNAME=		dsocks-1.7
 CATEGORIES=		net
 SHARED_LIBS=		dsocks 1.0
 
@@ -13,7 +12,7 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=dsocks/}
 
 MAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
