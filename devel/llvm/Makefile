@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.128 2016/12/31 20:48:31 jca Exp $
+# $OpenBSD: Makefile,v 1.129 2017/01/01 10:48:58 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
-BROKEN-powerpc = undefined reference to __atomic_load_8
 
 DPB_PROPERTIES = parallel
 
@@ -79,7 +78,7 @@ post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "powerpc"
 PKG_ARGS += -Dlld=1
 .else
 PKG_ARGS += -Dlld=0
