@@ -1,12 +1,10 @@
-# $OpenBSD: cargo.port.mk,v 1.1 2016/12/26 13:55:11 landry Exp $
+# $OpenBSD: cargo.port.mk,v 1.2 2017/01/01 18:49:58 landry Exp $
 
 CATEGORIES +=	lang/rust
 
 # List of static dependencies. The format is cratename-version.
 # MODCARGO_CRATES will be downloaded from MASTER_SITES_CRATESIO.
-# MODCARGO_EXTRA_CRATES should be downloaded by the port itself.
 MODCARGO_CRATES ?=
-MODCARGO_EXTRA_CRATES ?=
 
 # List of features to build (space separated list).
 MODCARGO_FEATURES ?=
@@ -49,13 +47,13 @@ DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_c
 MODCARGO_post-extract = \
 	${ECHO_MSG} "[modcargo] moving crates to ${MODCARGO_VENDOR_DIR}" ; \
 	mkdir ${MODCARGO_VENDOR_DIR} ;
-.for _crate in ${MODCARGO_CRATES} ${MODCARGO_EXTRA_CRATES}
+.for _crate in ${MODCARGO_CRATES}
 MODCARGO_post-extract += \
 	mv ${WRKDIR}/${_crate} ${MODCARGO_VENDOR_DIR}/${_crate} ;
 .endfor
 
 # post-patch target for generating metadata of crates.
-.for _crate in ${MODCARGO_CRATES} ${MODCARGO_EXTRA_CRATES}
+.for _crate in ${MODCARGO_CRATES}
 MODCARGO_post-patch += \
 	${ECHO_MSG} "[modcargo] Generating metadata for ${_crate}" ; \
 	${LOCALBASE}/bin/cargo-generate-vendor \
@@ -68,22 +66,30 @@ MODCARGO_post-patch += \
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
-	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config; \
+	echo "[source.modcargo]" >${WRKDIR}/.cargo/config; \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
 		>>${WRKDIR}/.cargo/config; \
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
 	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config; \
 	\
-	echo "" >>${MODCARGO_CARGOTOML}; \
-	echo "[profile.release]" >>${MODCARGO_CARGOTOML}; \
-	echo "opt-level = 2" >>${MODCARGO_CARGOTOML}; \
-	echo "debug = false" >>${MODCARGO_CARGOTOML};
+	if ! grep -qF '[profile.release]' ${MODCARGO_CARGOTOML}; then \
+		echo "" >>${MODCARGO_CARGOTOML}; \
+		echo "[profile.release]" >>${MODCARGO_CARGOTOML}; \
+		echo "opt-level = 2" >>${MODCARGO_CARGOTOML}; \
+		echo "debug = false" >>${MODCARGO_CARGOTOML}; \
+	fi ;
 
 
+# Update crates: place all crates on the same command line.
+.if defined(MODCARGO_CRATES_UPDATE)
+MODCARGO_configure += \
+	${MODCARGO_CARGO_UPDATE}
 .for _crate in ${MODCARGO_CRATES_UPDATE}
 MODCARGO_configure += \
-	${MODCARGO_CARGO_UPDATE} ${_crate} ;
+	--package ${_crate}
 .endfor
+MODCARGO_configure += ;
+.endif
 
 # Build dependencies.
 MODCARGO_BUILD_DEPENDS = devel/cargo \
@@ -140,8 +146,7 @@ MODCARGO_TEST_ARGS +=	--features='${MODCARGO_FEATURES}'
 MODCARGO_CARGO_UPDATE = \
 	${MODCARGO_CARGO_RUN} update \
 		--manifest-path ${MODCARGO_CARGOTOML} \
-		--verbose \
-		--package
+		--verbose
 
 # Use module targets ?
 MODCARGO_BUILD ?=	Yes
@@ -192,8 +197,12 @@ do-test:
 # Helper targets for port maintainer
 #
 
+# modcargo-metadata: regenerate metadata. useful target when working on a port.
+modcargo-metadata: patch
+	@${MODCARGO_post-patch}
+
 # modcargo-crates-1 will output crates list from Cargo.lock file.
-modcargo-crates-1: patch
+modcargo-crates-1: extract
 	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "-" $$3 }' \
 		<${WRKSRC}/Cargo.lock
 

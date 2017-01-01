@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/26 13:55:11 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/01 18:49:58 landry Exp $
 COMMENT = package manager for Rust language
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 # cargo version
-CARGO_VERSION =		0.14.0
-REVISION =		0
+CARGO_VERSION =		0.15.0
 
 # cargo version used for bootstrapping
-BV-amd64 =		0.14.0-20161112
-BV-i386 =		0.14.0-20161204
+BV-amd64 =		0.15.0-20161230
+BV-i386 =		0.15.0-20161230
 BOOTSTRAP_VERSION =	${BV-${MACHINE_ARCH}}
 
 # rust-install submodule version in cargo/src/rust-installer
@@ -32,11 +31,10 @@ MODCARGO_DIST_SUBDIR =
 #  - MIT
 #  - Unlicense/MIT
 #  - MIT/Apache-2.0
-#  - MPL-2.0
 #
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB = c crypto curl m pthread ssh2 ssl z
+WANTLIB = c crypto curl git2 m pthread ssh2 ssl z
 
 MASTER_SITES =	https://github.com/rust-lang/
 DISTFILES +=	cargo-${CARGO_VERSION}.tar.gz{cargo/archive/${CARGO_VERSION}.tar.gz}
@@ -44,35 +42,33 @@ DISTFILES +=	rust-installer-${RUSTINSTALL_INDEX}.tar.gz{rust-installer/archive/$
 
 MODCARGO_CRATES +=	advapi32-sys-0.2.0	# MIT
 MODCARGO_CRATES +=	aho-corasick-0.5.3	# Unlicense/MIT
-MODCARGO_CRATES +=	bitflags-0.1.1		# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags-0.7.0		# MIT/Apache-2.0
 MODCARGO_CRATES +=	bufstream-0.1.2		# MIT/Apache-2.0
 MODCARGO_CRATES +=	cfg-if-0.1.0		# MIT/Apache-2.0
-MODCARGO_CRATES +=	cmake-0.1.17		# MIT/Apache-2.0
-MODCARGO_CRATES +=	crossbeam-0.2.9		# Apache-2.0/MIT
-MODCARGO_CRATES +=	curl-0.3.9		# MIT
-MODCARGO_CRATES +=	curl-sys-0.2.4		# MIT
-MODCARGO_CRATES +=	docopt-0.6.82		# Unlicense/MIT
-MODCARGO_CRATES +=	env_logger-0.3.4	# MIT/Apache-2.0
+MODCARGO_CRATES +=	cmake-0.1.18		# MIT/Apache-2.0
+MODCARGO_CRATES +=	crossbeam-0.2.10	# Apache-2.0/MIT
+MODCARGO_CRATES +=	curl-0.4.1		# MIT
+MODCARGO_CRATES +=	curl-sys-0.3.6		# MIT
+MODCARGO_CRATES +=	docopt-0.6.86		# Unlicense/MIT
+MODCARGO_CRATES +=	env_logger-0.3.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	filetime-0.1.10		# MIT/Apache-2.0
 MODCARGO_CRATES +=	flate2-0.2.14		# MIT/Apache-2.0
-MODCARGO_CRATES +=	fs2-0.2.5		# MIT/Apache-2.0
-MODCARGO_CRATES +=	gcc-0.3.35		# MIT/Apache-2.0
+MODCARGO_CRATES +=	fs2-0.3.0		# MIT/Apache-2.0
+MODCARGO_CRATES +=	gcc-0.3.38		# MIT/Apache-2.0
 MODCARGO_CRATES +=	gdi32-sys-0.2.0		# MIT
-MODCARGO_CRATES +=	git2-0.4.4		# MIT/Apache-2.0
-MODCARGO_CRATES +=	git2-curl-0.5.0		# MIT/Apache-2.0
+MODCARGO_CRATES +=	git2-0.6.3		# MIT/Apache-2.0
+MODCARGO_CRATES +=	git2-curl-0.7.0		# MIT/Apache-2.0
 MODCARGO_CRATES +=	glob-0.2.11		# MIT/Apache-2.0
 MODCARGO_CRATES +=	hamcrest-0.1.1		# MIT/Apache-2.0
 MODCARGO_CRATES +=	idna-0.1.0		# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys-0.2.2	# MIT
-MODCARGO_CRATES +=	lazy_static-0.2.1	# MIT
+MODCARGO_CRATES +=	lazy_static-0.2.2	# MIT
 MODCARGO_CRATES +=	libc-0.2.18		# MIT/Apache-2.0
-MODCARGO_CRATES +=	libgit2-sys-0.4.5	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libressl-pnacl-sys-2.1.6 # MIT
-MODCARGO_CRATES +=	libssh2-sys-0.1.39	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libz-sys-1.0.6		# MIT/Apache-2.0
+MODCARGO_CRATES +=	libgit2-sys-0.6.4	# MIT/Apache-2.0
+MODCARGO_CRATES +=	libssh2-sys-0.2.4	# MIT/Apache-2.0
+MODCARGO_CRATES +=	libz-sys-1.0.10		# MIT/Apache-2.0
 MODCARGO_CRATES +=	log-0.3.6		# MIT/Apache-2.0
-MODCARGO_CRATES +=	matches-0.1.2		# MIT
+MODCARGO_CRATES +=	matches-0.1.4		# MIT
 MODCARGO_CRATES +=	memchr-0.1.11		# Unlicense/MIT
 MODCARGO_CRATES +=	miniz-sys-0.1.7		# MIT/Apache-2.0
 MODCARGO_CRATES +=	miow-0.1.3		# MIT/Apache-2.0
@@ -84,29 +80,28 @@ MODCARGO_CRATES +=	num-integer-0.1.32	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-iter-0.1.32		# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-rational-0.1.35	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-traits-0.1.36	# MIT/Apache-2.0
-MODCARGO_CRATES +=	num_cpus-1.0.0		# MIT/Apache-2.0
-MODCARGO_CRATES +=	openssl-0.7.14		# Apache-2.0
-MODCARGO_CRATES +=	openssl-sys-0.7.14	# MIT
-MODCARGO_CRATES +=	openssl-sys-extras-0.7.14 # MIT
-MODCARGO_CRATES +=	pkg-config-0.3.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	pnacl-build-helper-1.4.10 # MPL-2.0
-MODCARGO_CRATES +=	psapi-sys-0.1.0		# MIT
 MODCARGO_CRATES +=	rand-0.3.14		# MIT/Apache-2.0
-MODCARGO_CRATES +=	regex-0.1.77		# MIT/Apache-2.0
-MODCARGO_CRATES +=	regex-syntax-0.3.5	# MIT/Apache-2.0
-MODCARGO_CRATES +=	rustc-serialize-0.3.19	# MIT/Apache-2.0
+MODCARGO_CRATES +=	num_cpus-1.1.0		# MIT/Apache-2.0
+MODCARGO_CRATES +=	openssl-0.9.4		# Apache-2.0
+MODCARGO_CRATES +=	openssl-probe-0.1.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	openssl-sys-0.9.4	# MIT
+MODCARGO_CRATES +=	pkg-config-0.3.8	# MIT/Apache-2.0
+MODCARGO_CRATES +=	psapi-sys-0.1.0		# MIT
+MODCARGO_CRATES +=	regex-0.1.80		# MIT/Apache-2.0
+MODCARGO_CRATES +=	regex-syntax-0.3.9	# MIT/Apache-2.0
+MODCARGO_CRATES +=	rustc-serialize-0.3.21	# MIT/Apache-2.0
 MODCARGO_CRATES +=	semver-0.5.1		# MIT/Apache-2.0
 MODCARGO_CRATES +=	semver-parser-0.6.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	strsim-0.3.0		# MIT
+MODCARGO_CRATES +=	strsim-0.5.1		# MIT
 MODCARGO_CRATES +=	tar-0.4.8		# MIT/Apache-2.0
 MODCARGO_CRATES +=	tempdir-0.3.5		# MIT/Apache-2.0
 MODCARGO_CRATES +=	term-0.4.4		# MIT/Apache-2.0
 MODCARGO_CRATES +=	thread-id-2.0.0		# Apache-2.0
-MODCARGO_CRATES +=	thread_local-0.2.6	# Apache-2.0/MIT
-MODCARGO_CRATES +=	toml-0.2.0		# MIT/Apache-2.0
+MODCARGO_CRATES +=	thread_local-0.2.7	# Apache-2.0/MIT
+MODCARGO_CRATES +=	toml-0.2.1		# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-bidi-0.2.3	# MIT / Apache-2.0
-MODCARGO_CRATES +=	unicode-normalization-0.1.2 # MIT/Apache-2.0
-MODCARGO_CRATES +=	url-1.2.0		# MIT/Apache-2.0
+MODCARGO_CRATES +=	url-1.2.3		# MIT/Apache-2.0
+MODCARGO_CRATES +=	unicode-normalization-0.1.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	user32-sys-0.2.0	# MIT
 MODCARGO_CRATES +=	utf8-ranges-0.1.3	# Unlicense/MIT
 MODCARGO_CRATES +=	winapi-0.2.8		# MIT
@@ -115,6 +110,8 @@ MODCARGO_CRATES +=	ws2_32-sys-0.2.1	# MIT
 
 # use libc-0.2.18 instead of libc-0.2.17: the patch for i386 is smaller
 MODCARGO_CRATES_UPDATE +=	libc
+# use openssl-0.9.4 which has support for LibreSSL
+MODCARGO_CRATES_UPDATE +=	openssl-sys openssl
 
 MASTER_SITES0 = http://kapouay.odns.fr/pub/cargo/
 DISTFILES +=	cargo-bootstrap-${MACHINE_ARCH}-${BOOTSTRAP_VERSION}.tar.gz:0
@@ -140,11 +137,11 @@ MODPY_RUNDEP =		No
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	devel/libgit2/libgit2 \
-		devel/cmake \
-		lang/rust>=1.13,<1.15
+BUILD_DEPENDS =	devel/cmake \
+		lang/rust>=1.14,<1.15
 
 LIB_DEPENDS =	net/curl \
+		devel/libgit2/libgit2 \
 		security/libssh2
 
 RUN_DEPENDS =	lang/rust
@@ -153,15 +150,15 @@ CONFIGURE_STYLE =	cargo \
 			simple
 CONFIGURE_ARGS +=	--prefix=${LOCALBASE} \
 			--mandir=${LOCALBASE}/man \
+			--release-channel=stable \
 			--local-rust-root=${LOCALBASE} \
-			--local-cargo=${MODCARGO_CARGO_BIN}
+			--rustc=${LOCALBASE}/bin/rustc \
+			--rustdoc=${LOCALBASE}/bin/rustdoc \
+			--cargo=${MODCARGO_CARGO_BIN}
 
 MAKE_ENV +=	${MODCARGO_ENV} \
 		VERBOSE=1 \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1
-
-# make testsuite using the *same* binaries as build
-TEST_ENV +=	CARGOFLAGS="--release --no-fail-fast"
 
 post-extract:
 	# place rust-installer inside WRKSRC

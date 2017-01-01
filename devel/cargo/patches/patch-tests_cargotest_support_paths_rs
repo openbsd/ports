@@ -1,18 +1,21 @@
-$OpenBSD: patch-tests_cargotest_support_paths_rs,v 1.2 2016/12/26 13:55:11 landry Exp $
+$OpenBSD: patch-tests_cargotest_support_paths_rs,v 1.3 2017/01/01 18:49:58 landry Exp $
 use MODCARGO_TARGET_DIR as temporary directory for testing.
---- tests/cargotest/support/paths.rs.orig	Sun Aug 21 20:00:19 2016
-+++ tests/cargotest/support/paths.rs	Sun Aug 21 20:09:38 2016
+--- tests/cargotest/support/paths.rs.orig	Tue Dec 20 22:16:05 2016
++++ tests/cargotest/support/paths.rs	Fri Dec 30 06:06:19 2016
 @@ -1,4 +1,3 @@
 -use std::env;
  use std::cell::Cell;
  use std::fs;
  use std::io::{self, ErrorKind};
-@@ -30,19 +29,7 @@ fn init() {
+@@ -30,22 +29,7 @@ fn init() {
  }
  
  fn global_root() -> PathBuf {
 -    let mut path = t!(env::current_exe());
 -    path.pop(); // chop off exe name
+-    if path.ends_with("deps") {
+-        path.pop();
+-    }
 -    path.pop(); // chop off 'debug'
 -
 -    // If `cargo test` is run manually then our path looks like
