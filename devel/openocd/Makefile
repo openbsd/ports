@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/09/16 15:42:36 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2017/01/01 20:58:23 uaa Exp $
 
 COMMENT =	Open On-Chip Debugging
 
-DISTNAME =	openocd-0.6.1
-REVISION =	1
+DISTNAME =	openocd-0.9.0
 CATEGORIES =	devel
-
-SHARED_LIBS +=  openocd		1.0 # unknown
 
 HOMEPAGE =	http://openocd.sourceforge.net/
 
@@ -23,16 +20,22 @@ EXTRACT_SUFX =	.tar.bz2
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-werror \
 		--disable-wextra \
-		--enable-arm-jtag-ew \
+		--enable-armjtagew \
 		--enable-at91rm9200 \
 		--enable-ep93xx \
-		--enable-ft2232_libftdi \
+		--enable-ftdi \
 		--enable-jlink \
 		--enable-presto_libftdi \
 		--enable-rlink \
 		--enable-usbprog \
 		--enable-vsllink \
 		--enable-ulink \
+		--enable-stlink \
+		--enable-ti-icdi \
+		--enable-usb-blaster-2 \
+		--enable-osbdm \
+		--enable-opendous \
+		--enable-aice \
 		--enable-buspirate \
 		--disable-internal-jimtcl
 
@@ -43,6 +46,8 @@ LIB_DEPENDS =	devel/libftdi>=0.20 \
 		lang/jimtcl>=0.75
 
 USE_GMAKE =	Yes
+# Fails to link main.o and libopenocd.a properly resulting in undefined reference in the gdb_server.o
+USE_LIBTOOL =	gnu
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
