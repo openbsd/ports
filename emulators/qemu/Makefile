@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.155 2016/12/22 09:05:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2017/01/01 10:50:55 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
