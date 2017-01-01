@@ -1,14 +1,13 @@
-#	$OpenBSD: Makefile,v 1.3 2016/10/07 08:57:13 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.4 2017/01/01 06:58:37 jsg Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.6.src
-PKGNAME=	include-what-you-use-0.6
-REVISION=	0
+DISTNAME=	include-what-you-use-0.7.src
+PKGNAME=	include-what-you-use-0.7
 
 HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
-WRKDIST=	${WRKDIR}/include-what-you-use
+WRKDIST=	${WRKDIR}/llvm/tools/clang/tools/include-what-you-use
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
