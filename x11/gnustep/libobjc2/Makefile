@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2016/12/30 04:07:51 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2017/01/01 09:32:12 jca Exp $
 
 COMMENT =	GNUstep libobjc2 objective-c runtime
 BROKEN-hppa =	missing asm impl in block_trampolines.S
 BROKEN-mips64 =	binutils < 2.18 lack support for symbolic register naming
-BROKEN-arm =	Error: unknown floating point format `neon'
 NOT_FOR_ARCHS = ${GCC3_ARCHS}
 
 # note: this port does not use the gnustep module
