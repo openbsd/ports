@@ -1,6 +1,20 @@
-$OpenBSD: patch-src_tools_qglobal_h,v 1.1 2008/05/31 09:50:34 espie Exp $
---- src/tools/qglobal.h.orig	Fri May 30 18:23:00 2008
-+++ src/tools/qglobal.h	Fri May 30 18:23:16 2008
+$OpenBSD: patch-src_tools_qglobal_h,v 1.2 2017/01/01 09:40:42 jca Exp $
+
+- using __attribute__((packed)) fails in qtsring.h and isn't needed on
+  ARM-EABI, where structs are not padded to word size
+- avoid type conflicts with X11
+
+--- src/tools/qglobal.h.orig	Fri Feb  2 15:01:04 2007
++++ src/tools/qglobal.h	Thu Dec 29 23:19:57 2016
+@@ -315,7 +315,7 @@
+    QString bloat. However, gcc 3.4 doesn't allow us to create references to
+    members of a packed struct. (Pointers are OK, because then you
+    supposedly know what you are doing.) */
+-#  if (defined(__arm__) || defined(__ARMEL__)) && !defined(QT_MOC_CPP)
++#  if (defined(__arm__) || defined(__ARMEL__)) && !defined(QT_MOC_CPP) && !defined(__ARM_EABI__)
+ #    define Q_PACKED __attribute__ ((packed))
+ #    if __GNUC__ == 3 && __GNUC_MINOR__ >= 4
+ #      define Q_NO_PACKED_REFERENCE
 @@ -699,12 +699,12 @@ inline int qRound( double d )
  
  #if !defined(QT_CLEAN_NAMESPACE)
