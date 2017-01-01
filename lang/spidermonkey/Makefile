@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2017/01/01 09:29:09 jca Exp $
 
 # old version that does not get updates; should be rm'd at some point
 PORTROACH=	ignore:1
@@ -53,8 +53,11 @@ CONFIGURE_ARGS =	--with-pthreads \
 			--enable-ctypes \
 			--enable-threadsafe
 
+.if ${MACHINE_ARCH} == "arm"
+MD_LIBS += -larm
+.endif
 CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
-			LIBS=-lncurses \
+			LIBS="-lncurses ${MD_LIBS}" \
 			MOZILLA_VERSION="${MOZILLA_VERSION}" \
 			CPPFLAGS=-DJS_C_STRINGS_ARE_UTF8
 
