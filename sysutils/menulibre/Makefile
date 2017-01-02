@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/26 15:37:29 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/02 07:07:30 landry Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES =	https://launchpad.net/menulibre/2.1/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python devel/gettext textproc/intltool
-MODPY_VERSION =	3.4
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 PORTHOME =	${WRKDIR}
 NO_BUILD =	Yes
