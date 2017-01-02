@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/05 10:05:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/02 23:27:01 fcambus Exp $
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
@@ -23,6 +23,9 @@ MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/v$V/
 LIB_DEPENDS =	devel/sdl
 
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ARGS += --disable-asm \
+		  --disable-asm-mips3
 
 USE_GMAKE =	Yes
 
