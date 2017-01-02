@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/11/15 10:04:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2017/01/02 15:52:20 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -14,21 +14,21 @@ ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
-ADASTRAP_LIBC-hppa = 80.0
-ADASTRAP_LIBM-hppa = 9.0
-ADASTRAP-hppa = adastrap-hppa-4.9.3-0.tar.xz
+ADASTRAP_LIBC-hppa = 89.2
+ADASTRAP_LIBM-hppa = 10.0
+ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP_LIBC-i386 = 89.2
 ADASTRAP_LIBM-i386 = 10.0
 ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
 ADASTRAP_LIBC-mips64 = 89.2
 ADASTRAP_LIBM-mips64 = 10.0
-ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
-ADASTRAP_LIBC-powerpc = 88.0
-ADASTRAP_LIBM-powerpc = 9.0
-ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
-ADASTRAP_LIBC-sparc64 = 88.0
-ADASTRAP_LIBM-sparc64 = 9.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
+ADASTRAP-mips64 = adastrap-mips64-$V-1.tar.xz
+ADASTRAP_LIBC-powerpc = 89.2
+ADASTRAP_LIBM-powerpc = 10.0
+ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
+ADASTRAP_LIBC-sparc64 = 89.2
+ADASTRAP_LIBM-sparc64 = 10.0
+ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
@@ -56,7 +56,7 @@ SHARED_LIBS =	estdc++		17.0 \
 PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 i386
+ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc sparc64
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
@@ -86,7 +86,7 @@ TEST_DEPENDS = 	devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=4.9,<4.10
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://distfiles.stumpf.co/ \
+MASTER_SITES0 =	https://distfiles.stumpf.co/ \
 		https://spacehopper.org/mirrors/ \
 		http://distfiles.tmux.org/adastrap/ \
 		https://distfiles.bsdfrog.org/
