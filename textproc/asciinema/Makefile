@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/02 16:57:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/03 19:27:51 landry Exp $
 
 COMMENT=		terminal session recorder
 
@@ -8,6 +8,7 @@ MODPY_EGG_VERSION=	1.3.0
 GH_PROJECT=		asciinema
 GH_ACCOUNT=		asciinema
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		textproc
 

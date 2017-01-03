@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/11/10 21:58:41 danj Exp $
+# $OpenBSD: Makefile,v 1.23 2017/01/03 19:27:52 landry Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 0.12
 DISTNAME =	docutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://docutils.sourceforge.net/
 

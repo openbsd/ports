@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2016/11/10 21:58:41 danj Exp $
+# $OpenBSD: Makefile,v 1.22 2017/01/03 19:27:52 landry Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.4.8
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/20 05:14:32 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/03 19:27:52 landry Exp $
 
 COMMENT =		snowball stemming library collection for Python
 
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		snowballstemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 
