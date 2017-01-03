@@ -1,0 +1,3 @@
+The Flow module provides the decoding function for NetFlow version
+5,9 and IPFIX, and the encoding function for NetFlow version 9 and
+IPFIX.
