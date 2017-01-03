@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/02 20:52:17 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2017/01/03 19:24:43 landry Exp $
 
 COMMENT =		Python 3.3's ipaddress for Python 2.6 and 2.7#'
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.0.17
 DISTNAME =		ipaddress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		https://github.com/phihag/ipaddress
 

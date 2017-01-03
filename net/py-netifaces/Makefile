@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/27 06:35:42 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:24:43 landry Exp $
 
 COMMENT =	portable network interface information
 
@@ -7,6 +7,7 @@ CATEGORIES =	net
 MODPY_EGG_VERSION = 0.10.5
 DISTNAME =	netifaces-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 HOMEPAGE =	https://bitbucket.org/al45tair/netifaces
 
