@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/18 13:26:10 daniel Exp $
+# $OpenBSD: Makefile,v 1.46 2017/01/03 19:23:48 landry Exp $
 
 BROKEN-alpha =	numpy/linalg/umath_linalg.c.src:3231: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -7,6 +7,7 @@ COMMENT=		fast array and numeric programming library for Python
 MODPY_EGG_VERSION=	1.9.2
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/25 08:33:23 daniel Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/03 19:23:48 landry Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -10,6 +10,7 @@ MODPY_EGG_VERSION=	0.16.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math devel
+REVISION=		0
 
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
