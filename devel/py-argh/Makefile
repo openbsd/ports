@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/29 10:45:41 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =	simple wrapper for python argparse module
 
@@ -7,6 +7,7 @@ DISTNAME =	argh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	http://packages.python.org/argh
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

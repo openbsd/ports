@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/08/30 15:59:24 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2017/01/03 19:19:49 landry Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -8,6 +8,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 DISTNAME=	sip-4.18.1
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
 

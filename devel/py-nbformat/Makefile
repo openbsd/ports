@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/13 14:43:50 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		Jupyter notebook format
 
 MODPY_EGG_VERSION =	4.2.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

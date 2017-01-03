@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/20 09:49:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		backport of the 'collections.abc' module
 
 MODPY_EGG_VERSION =	0.5
 DISTNAME =		backports_abc-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-abc-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

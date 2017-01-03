@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/23 13:19:56 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		library for property based testing
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.6.1
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://hypothesis.works/
 

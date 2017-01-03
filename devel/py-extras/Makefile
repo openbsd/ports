@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:48 landry Exp $
 
 COMMENT=	useful extra bits for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION= 0.0.3
 DISTNAME=	extras-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

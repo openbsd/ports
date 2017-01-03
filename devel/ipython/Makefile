@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/12/13 14:50:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.41 2017/01/03 19:19:48 landry Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -51,6 +51,7 @@ PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 RUN_DEPENDS +=		devel/py-backports-shutil-get-terminal-size
 TEST_DEPENDS +=		devel/py-mock
 .endif
+REVISION =		0
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python

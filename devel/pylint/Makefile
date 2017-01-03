@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/12/09 08:41:22 shadchin Exp $
+# $OpenBSD: Makefile,v 1.22 2017/01/03 19:19:49 landry Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -8,7 +8,7 @@ DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION-main=		1
+REVISION-main=		2
 
 HOMEPAGE=		http://www.pylint.org/
 
@@ -44,6 +44,7 @@ FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
 RUN_DEPENDS+=		devel/py-backports-functools-lru-cache \
 			devel/py-configparser
 .endif
+REVISION-gui=		0
 
 do-test: fake
 	cd ${WRKINST}${MODPY_SITEPKG} && env \

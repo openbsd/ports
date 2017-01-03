@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/14 07:59:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		converting Jupyter notebooks
 
 MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

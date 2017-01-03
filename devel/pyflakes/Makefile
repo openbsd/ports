@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/10/02 10:26:33 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =		passive checker of Python programs
 
@@ -24,6 +24,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mpython3}
 PKGNAME =		pyflakes${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+REVISION =		0
 
 post-install:
 	mv ${PREFIX}/bin/pyflakes ${PREFIX}/bin/pyflakes${MODPY_BIN_SUFFIX}

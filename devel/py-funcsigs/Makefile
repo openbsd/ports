@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/13 09:08:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:48 landry Exp $
 
 COMMENT=		Python function signatures from PEP362 for 2.6, 2.7, 3.2+
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	1.0.2
 DISTNAME=		funcsigs-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 

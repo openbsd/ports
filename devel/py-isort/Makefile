@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/10 21:58:40 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		Python utility / library to sort Python imports
 
 MODPY_EGG_VERSION =	4.2.5
 DISTNAME =		isort-${MODPY_EGG_VERSION}
 PKGNAME =		py-isort-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

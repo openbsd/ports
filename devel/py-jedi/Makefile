@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/14 14:17:31 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		autocompletion tool for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/davidhalter/jedi
 

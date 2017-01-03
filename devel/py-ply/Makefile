@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/07 10:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =		Python lex/yacc
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.9
 DISTNAME =		ply-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://www.dabeaz.com/ply/
 

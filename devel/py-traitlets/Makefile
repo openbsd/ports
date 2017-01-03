@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/03 08:48:33 shadchin Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =		configuration system for Python applications
 
 MODPY_EGG_VERSION =	4.3.1
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

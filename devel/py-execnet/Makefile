@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/01 10:14:39 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
 
 COMMENT =		rapid multi-Python deployment
 
@@ -6,6 +6,7 @@ DISTNAME =		execnet-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	1.4.1
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =	devel
 

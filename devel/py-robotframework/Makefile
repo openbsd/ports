@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/10 21:58:40 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =	generic test automation framework for acceptance testing
 
 MODPY_EGG_VERSION =	3.0
 PKGNAME =		py-robotframework-${MODPY_EGG_VERSION}
+REVISION =		0
 
 # We could use PyPI, but the test suite is not distributed via that means.
 GH_ACCOUNT =		robotframework

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/31 19:30:11 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =		Python module for decorators, wrappers and monkey patching
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.10.8
 DISTNAME =		wrapt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
