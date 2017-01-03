@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/01 18:32:04 feinerer Exp $
+# $OpenBSD: Makefile,v 1.14 2017/01/03 08:28:02 jca Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.7
+REVISION=		0
 CATEGORIES=		net
 SHARED_LIBS=		dsocks 1.0
 
@@ -14,13 +15,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=dsocks/}
 
-MAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
+MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}" \
+			SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
 
 FAKE_FLAGS=		DEBUGLIBS=No
 
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh
+
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>

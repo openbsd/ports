@@ -1,0 +1,12 @@
+$OpenBSD: patch-dsocks_sh,v 1.1 2017/01/03 08:28:02 jca Exp $
+--- dsocks.sh.orig	Sun Jan  1 17:53:33 2017
++++ dsocks.sh	Sun Jan  1 17:54:31 2017
+@@ -18,7 +18,7 @@ if [ `uname -s` = "Darwin" ]; then
+   LIBDSOCKS=/usr/local/lib/libdsocks.dylib
+   DYLD_INSERT_LIBRARIES=$LIBDSOCKS DYLD_FORCE_FLAT_NAMESPACE=1 exec "$@"
+ else
+-  LIBDSOCKS=/usr/local/lib/libdsocks.so.1.0
++  LIBDSOCKS=${PREFIX}/lib/libdsocks.so.${LIBdsocks_VERSION}
+   LD_PRELOAD=$LIBDSOCKS exec "$@"
+ fi
+ 

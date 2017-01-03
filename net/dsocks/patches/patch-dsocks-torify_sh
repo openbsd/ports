@@ -1,0 +1,11 @@
+$OpenBSD: patch-dsocks-torify_sh,v 1.1 2017/01/03 08:28:02 jca Exp $
+--- dsocks-torify.sh.orig	Sun Jan  1 17:53:30 2017
++++ dsocks-torify.sh	Sun Jan  1 17:54:38 2017
+@@ -11,6 +11,6 @@ if [ `uname -s` = "Darwin" ]; then
+   LIBDSOCKS=/usr/local/lib/libdsocks.dylib
+   DYLD_INSERT_LIBRARIES=$LIBDSOCKS DYLD_FORCE_FLAT_NAMESPACE=1 exec "$@"
+ else
+-  LIBDSOCKS=/usr/local/lib/libdsocks.so.1.0
++  LIBDSOCKS=${PREFIX}/lib/libdsocks.so.${LIBdsocks_VERSION}
+   LD_PRELOAD=$LIBDSOCKS exec "$@"
+ fi
