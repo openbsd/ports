@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/03 13:15:27 fcambus Exp $
 
 COMMENT=		ZX Spectrum emulator file format library
-DISTNAME =		libspectrum-1.1.1
-SHARED_LIBS =		spectrum 7.0	# 9.0
+DISTNAME=		libspectrum-1.3.2
+SHARED_LIBS=		spectrum 7.1	# 12.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/libspectrum.php
@@ -12,13 +12,11 @@ MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		gpg-error pcre m z glib-2.0>=0.11 \
-			gcrypt>=12 bz2>=10 audiofile \
-			FLAC ogg pthread
+WANTLIB+=		FLAC audiofile bz2 gcrypt glib-2.0 gpg-error iconv
+WANTLIB+=		intl m ogg pcre pthread z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
-MODULES=		devel/gettext
 LIB_DEPENDS=		devel/glib2 \
 			security/libgcrypt \
 			archivers/bzip2 \
