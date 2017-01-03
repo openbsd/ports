@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/16 09:34:12 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/01/03 00:28:54 bentley Exp $
 @bin bin/chocolate-doom
 @bin bin/chocolate-doom-setup
 @bin bin/chocolate-heretic
@@ -36,30 +36,30 @@ share/applications/screensavers/
 share/applications/screensavers/chocolate-doom-screensaver.desktop
 share/doc/chocolate-doom/
 share/doc/chocolate-doom/ChangeLog
-share/doc/chocolate-doom/NEWS
-share/doc/chocolate-doom/NOT-BUGS
-share/doc/chocolate-doom/PHILOSOPHY
-share/doc/chocolate-doom/README
-share/doc/chocolate-doom/README.Music
+share/doc/chocolate-doom/NEWS.md
+share/doc/chocolate-doom/NOT-BUGS.md
+share/doc/chocolate-doom/PHILOSOPHY.md
+share/doc/chocolate-doom/README.Music.md
+share/doc/chocolate-doom/README.md
 share/doc/chocolate-heretic/
 share/doc/chocolate-heretic/ChangeLog
-share/doc/chocolate-heretic/NEWS
-share/doc/chocolate-heretic/PHILOSOPHY
-share/doc/chocolate-heretic/README
-share/doc/chocolate-heretic/README.Music
+share/doc/chocolate-heretic/NEWS.md
+share/doc/chocolate-heretic/PHILOSOPHY.md
+share/doc/chocolate-heretic/README.Music.md
+share/doc/chocolate-heretic/README.md
 share/doc/chocolate-hexen/
 share/doc/chocolate-hexen/ChangeLog
-share/doc/chocolate-hexen/NEWS
-share/doc/chocolate-hexen/PHILOSOPHY
-share/doc/chocolate-hexen/README
-share/doc/chocolate-hexen/README.Music
+share/doc/chocolate-hexen/NEWS.md
+share/doc/chocolate-hexen/PHILOSOPHY.md
+share/doc/chocolate-hexen/README.Music.md
+share/doc/chocolate-hexen/README.md
 share/doc/chocolate-strife/
 share/doc/chocolate-strife/ChangeLog
-share/doc/chocolate-strife/NEWS
-share/doc/chocolate-strife/PHILOSOPHY
-share/doc/chocolate-strife/README
-share/doc/chocolate-strife/README.Music
-share/doc/chocolate-strife/README.Strife
+share/doc/chocolate-strife/NEWS.md
+share/doc/chocolate-strife/PHILOSOPHY.md
+share/doc/chocolate-strife/README.Music.md
+share/doc/chocolate-strife/README.Strife.md
+share/doc/chocolate-strife/README.md
 share/doom/
 share/icons/
 share/icons/chocolate-doom.png

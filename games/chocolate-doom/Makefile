@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2016/11/09 11:58:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/01/03 00:28:53 bentley Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
-V =		2.2.1
+V =		2.3.0
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.chocolate-doom.org/
 
@@ -26,7 +25,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 
 CONFIGURE_STYLE =	gnu
-USE_GMAKE =		Yes
 
 # we don't need to require python to build
 CONFIGURE_ENV +=	HAVE_PYTHON=false
@@ -39,9 +37,6 @@ MAN_6 =		chocolate-doom chocolate-server chocolate-setup \
 		chocolate-heretic chocolate-hexen chocolate-strife
 
 post-extract:
-	# set correct program directory
-	@sed -i 's,{exec_prefix}/games,{exec_prefix}/bin,' \
-		${WRKSRC}/src/Makefile.in
 	# set correct data directory
 	@sed -i 's,"/games/doom","/doom",g' ${WRKSRC}/src/d_iwad.c
 
