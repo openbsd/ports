@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.995 2016/12/23 15:39:08 jca Exp $
+# $OpenBSD: Makefile,v 1.996 2017/01/03 21:52:39 bluhm Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -355,6 +355,7 @@
      SUBDIR += p5-Net-FTP-Recursive
      SUBDIR += p5-Net-FTPSSL
      SUBDIR += p5-Net-FTPServer
+     SUBDIR += p5-Net-Flow
      SUBDIR += p5-Net-Frame
      SUBDIR += p5-Net-Frame-Dump
      SUBDIR += p5-Net-Frame-Layer-ICMPv6
