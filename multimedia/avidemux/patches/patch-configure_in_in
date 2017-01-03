@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
+$OpenBSD: patch-configure_in_in,v 1.10 2017/01/03 08:32:18 jca Exp $
 --- configure.in.in.orig	Fri Feb  6 20:07:37 2009
-+++ configure.in.in	Wed Jan 16 11:07:32 2013
++++ configure.in.in	Sun Jan  1 21:57:46 2017
 @@ -740,6 +740,37 @@ if test "x$with_esd" != "xno"; then
  	fi
  fi
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
  dnl ___________________ OSS ___________________
  AC_ARG_WITH([oss],
  	[AC_HELP_STRING([--without-oss], [force compilation without OSS [default=test]])],
-@@ -1153,10 +1184,39 @@ case $host_cpu in
+@@ -1153,10 +1184,46 @@ case $host_cpu in
  		AC_DEFINE(HAVE_FAST_64BIT,1,"FFMPEG")
  		echo "IA64"
  		;;
@@ -73,13 +73,13 @@ $OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
  		have_little_endian=no;
  		LMPG_OPT="";
  		AC_DEFINE(ADM_BIG_ENDIAN,1,[Big endian CPU - SPARC or PowerPC])
-+		if test "$host_cpu" == "sparc64"; then
++		if test "$host_cpu" = "sparc64"; then
 +			AC_DEFINE(ARCH_64_BITS,1,"X86_64 AMD64 assembly")
 +		fi
  		AC_DEFINE(FPM_SPARC,1,[Mad ])
  		AC_DEFINE(WORDS_BIGENDIAN,1,[Big endian CPU - SPARC or PowerPC])
  		AC_DEFINE(ENABLE_MMX,0,[post proc])
-@@ -1173,7 +1233,7 @@ case $host_cpu in
+@@ -1173,7 +1240,7 @@ case $host_cpu in
  		AC_DEFINE(ENABLE_MMX,0,[post proc])
  		AC_DEFINE(HAVE_FAST_64BIT,1,"FFMPEG")
  		;;
@@ -88,7 +88,7 @@ $OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
  		have_little_endian=no;
  		LMPG_OPT="";
  		AC_DEFINE(FPM_PPC,1,[Mad ])       
-@@ -1184,7 +1244,7 @@ case $host_cpu in
+@@ -1184,7 +1251,7 @@ case $host_cpu in
  		AC_DEFINE(ARCH_POWERPC,1,[Enable PowerPC optim])		
  		AC_ARG_ENABLE(altivec, 
  			AC_HELP_STRING([--enable-altivec], [enable AltiVec acceleration (PowerPC)]),
@@ -97,7 +97,7 @@ $OpenBSD: patch-configure_in_in,v 1.9 2013/01/18 11:37:54 jasper Exp $
  		AC_DEFINE(WORDS_BIGENDIAN,1,[Big endian CPU - SPARC or PowerPC])
  		AC_DEFINE(ENABLE_MMX,0,[post proc])       
  		;;
-@@ -1321,15 +1381,6 @@ if test "x$use_debug" = "xyes"; then
+@@ -1321,15 +1388,6 @@ if test "x$use_debug" = "xyes"; then
  	AC_DEFINE(ADM_DEBUG,1,[be verbose])
  	CXXFLAGS="$CXXFLAGS -O1 -g3"
  	CFLAGS="$CFLAGS -O1 -g3"
