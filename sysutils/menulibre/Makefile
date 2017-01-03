@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/02 07:07:30 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/03 19:26:58 landry Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
 MODPY_EGG_VERSION =	2.1.3
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils x11
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

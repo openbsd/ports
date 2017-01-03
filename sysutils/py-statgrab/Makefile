@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/14 14:01:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:26:59 landry Exp $
 
 COMMENT=	python bindings to libstatgrab
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.7
 DISTNAME=	pystatgrab-${MODPY_EGG_VERSION}
 PKGNAME=	py-statgrab-${MODPY_EGG_VERSION}
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	http://www.i-scream.org/pystatgrab/
 
