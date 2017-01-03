@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2016/12/26 19:04:31 robert Exp $
+# $OpenBSD: Makefile,v 1.155 2017/01/03 19:30:57 landry Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -19,6 +19,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
+REVISION=	0
 
 EPOCH=		0
 
@@ -364,7 +365,7 @@ OA=		x86
 OA=		x86_64
 .endif
 
-SUBST_VARS+=	BV OA
+SUBST_VARS+=	BV OA MODPY_DEFAULT_VERSION_3
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
@@ -373,6 +374,9 @@ pre-patch:
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
 	@ln -fs /usr/local/bin/gtouch ${WRKDIR}/bin/touch
 	touch ${WRKSRC}/src.downloaded ${WRKSRC}/autogen.lastrun
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice

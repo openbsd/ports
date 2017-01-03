@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.16 2016/11/02 14:33:47 robert Exp $
+$OpenBSD: patch-configure,v 1.17 2017/01/03 19:30:58 landry Exp $
 --- configure.orig.port	Mon Oct 31 15:43:29 2016
 +++ configure	Mon Oct 31 15:46:17 2016
 @@ -1,4 +1,4 @@
@@ -38,7 +38,7 @@ $OpenBSD: patch-configure,v 1.16 2016/11/02 14:33:47 robert Exp $
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
-+	for am_cv_pathless_PYTHON in python3.4 python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_DEFAULT_VERSION_3} python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure,v 1.16 2016/11/02 14:33:47 robert Exp $
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
-+	for am_cv_pathless_PYTHON in python3.4 python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_DEFAULT_VERSION_3} python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
@@ -56,7 +56,7 @@ $OpenBSD: patch-configure,v 1.16 2016/11/02 14:33:47 robert Exp $
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
-+	for am_cv_pathless_PYTHON in python3.4 python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_DEFAULT_VERSION_3} python python2 python3 python3.3 python3.2 python3.1 python3.0 python2.7  python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
