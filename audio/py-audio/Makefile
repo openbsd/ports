@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/07 09:36:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/03 19:14:44 landry Exp $
 
 COMMENT =	Python bindings for PortAudio
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.2.8
 DISTNAME =	pyaudio-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	audio devel
+REVISION =	0
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 

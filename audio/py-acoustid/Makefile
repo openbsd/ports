@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/01 14:59:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/03 19:14:44 landry Exp $
 
 COMMENT =	python bindings for Chromaprint and the Acoustid API
 
 MODPY_EGG_VERSION =	1.1.2
 DISTNAME =	pyacoustid-${MODPY_EGG_VERSION}
 PKGNAME =	py-acoustid-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	audio
 
