@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/16 19:06:26 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/03 19:28:48 landry Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
 MODPY_EGG_VERSION = 0.24
-REVISION =	2
+REVISION =	3
 DISTNAME =	itsdangerous-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

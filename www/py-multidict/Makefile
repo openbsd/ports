@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/05 17:08:19 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/03 19:28:49 landry Exp $
 
 COMMENT =		multidict implementation
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.1.0a6
 DISTNAME =		multidict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www devel
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		aio-libs
 GH_PROJECT =		multidict

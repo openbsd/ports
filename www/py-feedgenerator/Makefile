@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/21 08:07:52 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =		standalone version of Django's feedgenerator
 
 MODPY_EGG_VERSION =	1.9
 DISTNAME =		feedgenerator-${MODPY_EGG_VERSION}
 PKGNAME =		py-feedgenerator-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www textproc
 

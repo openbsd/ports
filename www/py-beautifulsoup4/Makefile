@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/06 06:53:32 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
 MODPY_EGG_VERSION =	4.5.1
 DISTNAME =	beautifulsoup4-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	www
 

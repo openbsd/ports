@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/26 13:21:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
@@ -44,6 +44,7 @@ TEST_DEPENDS +=		devel/py-mock
 .else
 PKGNAME =		jupyter-notebook${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 .endif
+REVISION =		0
 
 post-install:
 	mv ${PREFIX}/bin/jupyter-nbextension ${PREFIX}/bin/jupyter-nbextension${MODPY_BIN_SUFFIX}

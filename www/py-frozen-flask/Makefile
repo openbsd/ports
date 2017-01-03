@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/24 18:01:36 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =		freezes a Flask application into a set of static files
 
 MODPY_EGG_VERSION =	0.12
 DISTNAME =		Frozen-Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozen-flask-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

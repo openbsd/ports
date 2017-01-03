@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/10 21:58:41 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =		Python WSGI HTTP server
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	19.6.0
 DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		http://gunicorn.org/
 

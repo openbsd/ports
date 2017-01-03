@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/27 13:41:45 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/03 19:28:48 landry Exp $
 
 COMMENT =		http client/server for asyncio
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.22.5
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
+REVISION =		0
 
 # Apache2
 PERMIT_PACKAGE_CDROM =	Yes
