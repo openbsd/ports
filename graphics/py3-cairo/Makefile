@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/11/06 18:07:54 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/01/03 18:57:23 shadchin Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -9,7 +9,7 @@ VERSION=	1.10.0
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py3-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics
 
