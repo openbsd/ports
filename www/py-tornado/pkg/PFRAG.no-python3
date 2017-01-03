@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no-python3,v 1.1 2017/01/03 18:58:52 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
