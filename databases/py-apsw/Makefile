@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/03 19:17:24 landry Exp $
 
 COMMENT =	thin SQLite wrapper for Python
 
 MODPY_EGG_VERSION = 3.8.0.2
-REVISION =	2
+REVISION =	3
 DISTNAME =	apsw-${MODPY_EGG_VERSION}-r1
 EXTRACT_SUFX =	.zip
 PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
