@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/10 21:58:41 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/03 19:26:14 landry Exp $
 
 COMMENT=		Python RSA implementation
 
 MODPY_EGG_VERSION=	3.4.2
 DISTNAME=		rsa-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		security
 

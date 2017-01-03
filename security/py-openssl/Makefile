@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/11/03 21:53:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/01/03 19:26:14 landry Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	0.15.1
-REVISION=	1
+REVISION=	2
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
