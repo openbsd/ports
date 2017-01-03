@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/05/10 06:55:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/01/03 18:54:48 shadchin Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
+lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}pyo
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/export-to-folder.plugin
 lib/eog/plugins/export-to-folder.py
@@ -31,12 +31,12 @@ lib/eog/plugins/pythonconsole/
 lib/eog/plugins/pythonconsole.plugin
 lib/eog/plugins/pythonconsole/__init__.py
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}/
+lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyo
+lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyo
 lib/eog/plugins/pythonconsole/config.py
 lib/eog/plugins/pythonconsole/console.py
 lib/eog/plugins/send-by-mail.plugin

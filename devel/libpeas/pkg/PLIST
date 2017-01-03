@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/04/20 06:20:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/01/03 18:54:48 shadchin Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -36,8 +36,8 @@ lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
 lib/peas-demo/plugins/pythonhello/
 lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}/
+lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}pythonhello.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}pythonhello.${MODPY_PYC_MAGIC_TAG}pyc
-lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}pythonhello.${MODPY_PYC_MAGIC_TAG}pyo
 lib/peas-demo/plugins/pythonhello/pythonhello.plugin
 lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/secondtime/

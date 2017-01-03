@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/03/21 15:25:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/01/03 18:54:48 shadchin Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-annotated-commit.h
@@ -76,8 +76,8 @@ lib/libgit2-glib-1.0.la
 @lib lib/libgit2-glib-1.0.so.${LIBgit2-glib-1.0_VERSION}
 lib/pkgconfig/libgit2-glib-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ggit.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}pyo
 share/gir-1.0/Ggit-1.0.gir
 share/gtk-doc/html/libgit2-glib-1.0/
 share/gtk-doc/html/libgit2-glib-1.0/GgitBlob.html

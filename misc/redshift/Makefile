@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2016/05/21 10:49:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/03 18:54:48 shadchin Exp $
 
 COMMENT=		automatic color temperature adjustment
 
 GH_PROJECT=		redshift
 GH_ACCOUNT=		jonls
 GH_TAGNAME=		v1.11
+REVISION=		0
 
 CATEGORIES=		misc graphics
 

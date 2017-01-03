@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/12/22 09:02:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/01/03 18:54:48 shadchin Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder-3.22.4/
@@ -445,8 +445,8 @@ lib/gnome-builder/plugins/todo_plugin/__init__.py
 lib/gnome-builder/plugins/vala-pack.plugin
 lib/gnome-builder/plugins/xml-pack.plugin
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ide.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ide.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ide.${MODPY_PYC_MAGIC_TAG}pyo
 libexec/gnome-builder/
 @bin libexec/gnome-builder-worker
 @bin libexec/gnome-builder/ide-list-counters

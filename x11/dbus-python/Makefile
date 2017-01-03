@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2017/01/03 18:54:48 shadchin Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -9,6 +9,7 @@ V =			1.2.4
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
+REVISION-main =		0
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
 

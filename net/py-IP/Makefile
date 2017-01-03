@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/12/14 19:38:12 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2017/01/03 18:54:48 shadchin Exp $
 
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.83
 DISTNAME =		IPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-IP-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/haypo/python-ipy/wiki
 
@@ -23,6 +23,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 MODPY_DISTUTILS_INSTALLARGS =	-O2
+MODPY_PYOEXTENSION =		opt-2.pyc
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
 

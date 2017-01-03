@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.91 2016/12/26 19:48:47 rpointel Exp $
+# $OpenBSD: python.port.mk,v 1.92 2017/01/03 18:54:48 shadchin Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -57,6 +57,12 @@ MODPY_PYC_MAGIC_TAG =	"cpython-${MODPY_MAJORMINOR}."
 MODPY_COMMENT =
 MODPY_ABI3SO =		".abi3"
 
+.endif
+
+.if ${MODPY_VERSION} == "2.7" || ${MODPY_VERSION} == "3.4"
+MODPY_PYOEXTENSION =	pyo
+.else
+MODPY_PYOEXTENSION ?=	opt-1.pyc
 .endif
 
 MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
@@ -150,7 +156,7 @@ MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} \
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
 		MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX \
-		MODPY_PY_PREFIX ${SUBST_VARS}
+		MODPY_PY_PREFIX MODPY_PYOEXTENSION ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ =	perl -pi \
