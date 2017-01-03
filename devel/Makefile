@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1572 2017/01/01 20:21:11 kili Exp $
+# $OpenBSD: Makefile,v 1.1573 2017/01/03 13:15:36 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1076,6 +1076,7 @@
      SUBDIR += p5-Test-Inter
      SUBDIR += p5-Test-JSON
      SUBDIR += p5-Test-LeakTrace
+     SUBDIR += p5-Test-LectroTest
      SUBDIR += p5-Test-LongString
      SUBDIR += p5-Test-Manifest
      SUBDIR += p5-Test-Memory-Cycle
