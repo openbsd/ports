@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/31 13:10:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/01/03 19:29:36 landry Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.0
 DISTNAME=		Nagstamon-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/Nagstamon
+REVISION=		0
 
 CATEGORIES=		x11 net
 

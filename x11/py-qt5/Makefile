@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/28 07:26:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/03 19:29:36 landry Exp $
 
 COMMENT-main=	python Qt5 bindings
 COMMENT-docs=	py-qt5 documentation
@@ -8,7 +8,7 @@ DISTNAME=	PyQt5_gpl-${V}
 PKGNAME=	py-qt5-${V}
 PKGNAME-main=	py-qt5-${V}
 PKGNAME-docs=	py-qt5-docs-${V}
-REVISION-main=	1
+REVISION-main=	2
 
 CATEGORIES=	x11 devel
 
@@ -42,6 +42,7 @@ FULLPKGPATH-main=	x11/py-qt5,-main${MODPY_FLAVOR}
 FULLPKGNAME-docs=	${PKGNAME-docs:S/^py-/py3-/}
 FULLPKGPATH-docs=	x11/py-qt5,-docs${MODPY_FLAVOR}
 .endif
+REVISION-docs=		0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=4.18.1 \
