@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2017/01/03 08:33:32 jca Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	17
+REVISION=	18
 
 CATEGORIES=	multimedia
 
@@ -45,15 +45,18 @@ AUTOCONF_VERSION=2.60
 AUTOMAKE_VERSION=1.9
 
 .if ${MACHINE_ARCH} == "i386"
-PIE_CFLAGS = -fno-pie
-PIE_LDFLAGS = -nopie
+MD_CFLAGS =	-fno-pie
+MD_LDFLAGS =	-nopie
+.elif ${MACHINE_ARCH} == "arm"
+# binutils-2.17 can't handle -falign-loops=16 on arm; 0 == default
+MD_CFLAGS =	-falign-loops=0
 .endif
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CFLAGS="${PIE_CFLAGS} ${CFLAGS}" \
-		CXXFLAGS="${PIE_CFLAGS} ${CXXFLAGS}" \
+CONFIGURE_ENV+=	CFLAGS="${MD_CFLAGS} ${CFLAGS}" \
+		CXXFLAGS="${MD_CFLAGS} ${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="${PIE_LDFLAGS} -L${LOCALBASE}/lib -logg -lm -lz"
+		LDFLAGS="${MD_LDFLAGS} -L${LOCALBASE}/lib -logg -lm -lz"
 CONFIGURE_ARGS+=--enable-xv \
 		--with-x \
 		--with-freetype2 \

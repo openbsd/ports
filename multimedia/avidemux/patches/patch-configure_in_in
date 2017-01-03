@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in_in,v 1.10 2017/01/03 08:32:18 jca Exp $
+$OpenBSD: patch-configure_in_in,v 1.11 2017/01/03 08:33:32 jca Exp $
 --- configure.in.in.orig	Fri Feb  6 20:07:37 2009
 +++ configure.in.in	Sun Jan  1 21:57:46 2017
 @@ -740,6 +740,37 @@ if test "x$with_esd" != "xno"; then
@@ -50,6 +50,13 @@ $OpenBSD: patch-configure_in_in,v 1.10 2017/01/03 08:32:18 jca Exp $
 +		AC_DEFINE(FPM_DEFAULT,1,[Mad ])
 +		AC_DEFINE(ENABLE_MMX,0,[post proc])
 +		echo "ALPHA"
++		;;
++	armv7)
++		have_little_endian=yes
++		LMPG_OPT="";
++		AC_DEFINE(FPM_DEFAULT,1,[Mad ])
++		AC_DEFINE(ENABLE_MMX,0,[post proc])
++		echo "ARM"
 +		;;
 +	loongson)
 +		have_little_endian=yes
@@ -113,3 +120,16 @@ $OpenBSD: patch-configure_in_in,v 1.10 2017/01/03 08:32:18 jca Exp $
  fi
  
  AC_ARG_WITH([gpt],
+@@ -1340,9 +1398,9 @@ if test "x$use_gpt" = "xyes"; then
+ 	LDFLAGS="$LDFLAGS -lprofiler -ltcmalloc"	
+ fi
+ 
+-CFLAGS="$CFLAGS -falign-loops=16"
+-CXXFLAGS="$CXXFLAGS -falign-loops=16"
+-CXXFLAGS="$CXXFLAGS -I.. -I../ADM_lavutil -IADM_utilities -I../ADM_utilities  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../.."
++CFLAGS="-falign-loops=16 $CFLAGS"
++CXXFLAGS="-falign-loops=16 $CXXFLAGS"
++CXXFLAGS="-I.. -I../ADM_lavutil -IADM_utilities -I../ADM_utilities  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I../.. $CXXFLAGS"
+ 
+ dnl ________________ lavcodec _________________
+ AC_DEFINE(CONFIG_WMV3_DECODER,1,[FFMPEG])
