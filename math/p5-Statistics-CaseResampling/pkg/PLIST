@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/03 13:11:18 bluhm Exp $
+${P5ARCH}/
+${P5ARCH}/Statistics/
+${P5ARCH}/Statistics/CaseResampling.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Statistics/
+${P5ARCH}/auto/Statistics/CaseResampling/
+${P5ARCH}/auto/Statistics/CaseResampling/CaseResampling.so
+@man man/man3p/Statistics::CaseResampling.3p

@@ -1,0 +1,6 @@
+The purpose of this (XS) module is to calculate the median (or in
+principle also other statistics) with confidence intervals on a
+sample.  To do that, it uses a technique called bootstrapping.  In
+a nutshell, it resamples the sample a lot of times and for each
+resample, it calculates the median.  From the distribution of
+medians, it then calculates the confidence limits.
