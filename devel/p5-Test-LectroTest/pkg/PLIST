@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/03 13:05:01 bluhm Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/LectroTest/
+${P5SITE}/Test/LectroTest.pm
+${P5SITE}/Test/LectroTest/Compat.pm
+${P5SITE}/Test/LectroTest/FailureRecorder.pm
+${P5SITE}/Test/LectroTest/Generator.pm
+${P5SITE}/Test/LectroTest/Property.pm
+${P5SITE}/Test/LectroTest/RegressionTesting.pod
+${P5SITE}/Test/LectroTest/TestRunner.pm
+${P5SITE}/Test/LectroTest/Tutorial.pod
+@man man/man3p/Test::LectroTest.3p
+@man man/man3p/Test::LectroTest::Compat.3p
+@man man/man3p/Test::LectroTest::FailureRecorder.3p
+@man man/man3p/Test::LectroTest::Generator.3p
+@man man/man3p/Test::LectroTest::Property.3p
+@man man/man3p/Test::LectroTest::RegressionTesting.3p
+@man man/man3p/Test::LectroTest::TestRunner.3p
+@man man/man3p/Test::LectroTest::Tutorial.3p
