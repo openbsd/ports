@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/04 21:52:20 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-V=			1.7.0
-REVISION=		2
-
+V=			1.9.1
 DISTNAME=		dnscrypt-proxy-${V}
+PKGNAME-main=		dnscrypt-proxy-${V}
+PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
+
 CATEGORIES=		net
-MASTER_SITES=		https://download.dnscrypt.org/dnscrypt-proxy/ \
-			https://download.dnscrypt.org/dnscrypt-proxy/old/
+
+MASTER_SITES=		https://download.dnscrypt.org/dnscrypt-proxy/
 
 HOMEPAGE=		https://dnscrypt.org/
 
@@ -19,9 +20,6 @@ MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=		-main -plugins
-
-PKGNAME-main=		dnscrypt-proxy-${V}
-PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
 
 commonWANTLIB=		execinfo kvm m sodium pthread
 
@@ -53,6 +51,10 @@ USE_GMAKE=		yes
 DOCS=			README-PLUGINS.markdown \
 			README.markdown \
 			DNSCRYPT-V2-PROTOCOL.txt
+
+# there is also a config file in newer versions; it can be specified on
+# the command-line, but it's incompatible with specifying other options there,
+# so we can't force daemonizing, causing issues for the rc script.
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
