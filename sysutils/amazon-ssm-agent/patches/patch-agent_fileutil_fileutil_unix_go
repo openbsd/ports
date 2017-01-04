@@ -1,0 +1,21 @@
+$OpenBSD: patch-agent_fileutil_fileutil_unix_go,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+--- agent/fileutil/fileutil_unix.go.orig	Tue Jan  3 10:22:57 2017
++++ agent/fileutil/fileutil_unix.go	Tue Jan  3 10:23:50 2017
+@@ -81,13 +81,13 @@ func GetDiskSpaceInfo() (diskSpaceInfo DiskSpaceInfo, 
+ 	syscall.Statfs(wd, &stat)
+ 
+ 	// get block size
+-	bSize := uint64(stat.Bsize)
++	bSize := uint64(stat.F_bsize)
+ 
+ 	// return DiskSpaceInfo with calculated bytes
+ 	return DiskSpaceInfo{
+-		AvailBytes: (int64)(stat.Bavail * bSize), // available space = # of available blocks * block size
+-		FreeBytes:  (int64)(stat.Bfree * bSize),  // free space = # of free blocks * block size
+-		TotalBytes: (int64)(stat.Blocks * bSize), // total space = # of total blocks * block size
++		AvailBytes: (int64)((uint64)(stat.F_bavail) * bSize), // available space = # of available blocks * block size
++		FreeBytes:  (int64)(stat.F_bfree * bSize),  // free space = # of free blocks * block size
++		TotalBytes: (int64)(stat.F_blocks * bSize), // total space = # of total blocks * block size
+ 	}, nil
+ }
+ 

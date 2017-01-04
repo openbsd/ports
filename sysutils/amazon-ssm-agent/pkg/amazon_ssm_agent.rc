@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: amazon_ssm_agent.rc,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/amazon-ssm-agent"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

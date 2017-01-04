@@ -1,0 +1,25 @@
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+--- agent/appconfig/constants_unix.go.orig	Tue Jan  3 10:38:59 2017
++++ agent/appconfig/constants_unix.go	Tue Jan  3 10:39:24 2017
+@@ -18,7 +18,7 @@ package appconfig
+ 
+ const (
+ 	// Program Folder
+-	DefaultProgramFolder = "/etc/amazon/ssm/"
++	DefaultProgramFolder = "${SYSCONFDIR}/amazon/ssm/"
+ 
+ 	// AppConfig Path
+ 	AppConfigPath = DefaultProgramFolder + AppConfigFileName
+@@ -27,10 +27,10 @@ const (
+ 	DownloadRoot = "/var/log/amazon/ssm/download/"
+ 
+ 	// DefaultDataStorePath represents the directory for storing system data
+-	DefaultDataStorePath = "/var/lib/amazon/ssm/"
++	DefaultDataStorePath = "/var/db/amazon/ssm/"
+ 
+ 	// UpdaterArtifactsRoot represents the directory for storing update related information
+-	UpdaterArtifactsRoot = "/var/lib/amazon/ssm/update/"
++	UpdaterArtifactsRoot = "/var/db/amazon/ssm/update/"
+ 
+ 	// List all plugin names, unfortunately golang doesn't support const arrays of strings
+ 

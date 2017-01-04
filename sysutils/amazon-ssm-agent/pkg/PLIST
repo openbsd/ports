@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+@extraunexec rm -rf /var/db/amazon /var/log/amazon
+@bin sbin/amazon-ssm-agent
+share/doc/amazon-ssm-agent/
+share/doc/amazon-ssm-agent/LICENSE
+share/examples/amazon-ssm-agent/
+share/examples/amazon-ssm-agent/amazon/
+@sample ${SYSCONFDIR}/amazon/
+share/examples/amazon-ssm-agent/amazon/ssm/
+@sample ${SYSCONFDIR}/amazon/ssm/
+share/examples/amazon-ssm-agent/amazon/ssm/amazon-ssm-agent.json.template
+@sample ${SYSCONFDIR}/amazon/ssm/amazon-ssm-agent.json
+share/examples/amazon-ssm-agent/amazon/ssm/seelog_unix.xml.template
+@sample ${SYSCONFDIR}/amazon/ssm/seelog.xml
+@rcscript ${RCDIR}/amazon_ssm_agent

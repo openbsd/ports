@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_log_log_unix_go,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+--- agent/log/log_unix.go.orig	Tue Jan  3 10:39:41 2017
++++ agent/log/log_unix.go	Tue Jan  3 10:39:57 2017
+@@ -24,7 +24,7 @@ const (
+ 	// DefaultSeelogConfigFilePath specifies the default seelog location
+ 	// The underlying logger is based of https://github.com/cihub/seelog
+ 	// See Seelog documentation to customize the logger
+-	DefaultSeelogConfigFilePath = "/etc/amazon/ssm/seelog.xml"
++	DefaultSeelogConfigFilePath = "${SYSCONFDIR}/amazon/ssm/seelog.xml"
+ 
+ 	DefaultLogDir = "/var/log/amazon/ssm"
+ )
