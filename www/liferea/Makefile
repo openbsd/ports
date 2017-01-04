@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.88 2016/12/30 14:51:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2017/01/04 19:10:55 sthen Exp $
+
+BROKEN-i386=		hangs during build while running g-ir-scanner
 
 COMMENT=		simple GTK desktop news aggregator
 
