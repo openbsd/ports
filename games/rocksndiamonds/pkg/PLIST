@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/12/25 09:35:38 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/01/04 20:59:16 benoit Exp $
 @extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
@@ -7,34 +7,34 @@
 @group
 share/applications/rocksndiamonds.desktop
 share/doc/rocksndiamonds/
-share/doc/rocksndiamonds/README
 share/pixmaps/
 share/pixmaps/rocksndiamonds.png
 share/rocksndiamonds/
 share/rocksndiamonds/graphics/
 share/rocksndiamonds/graphics/gfx_classic/
-share/rocksndiamonds/graphics/gfx_classic/RocksBusy.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksCE.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksDC.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksDC2.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksDoor.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksEMC.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksElements.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksFontBig.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksFontDC.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksFontEM.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksFontMedium.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksFontSmall.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksHeroes.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksMore.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksSP.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksScreen.pcx
-share/rocksndiamonds/graphics/gfx_classic/RocksToons.pcx
+share/rocksndiamonds/graphics/gfx_classic/RocksBusy.png
+share/rocksndiamonds/graphics/gfx_classic/RocksCE.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDC.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDC2.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDoor.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDoor2.png
+share/rocksndiamonds/graphics/gfx_classic/RocksEMC.png
+share/rocksndiamonds/graphics/gfx_classic/RocksElements.png
+share/rocksndiamonds/graphics/gfx_classic/RocksFontBig.png
+share/rocksndiamonds/graphics/gfx_classic/RocksFontDC.png
+share/rocksndiamonds/graphics/gfx_classic/RocksFontEM.png
+share/rocksndiamonds/graphics/gfx_classic/RocksFontMedium.png
+share/rocksndiamonds/graphics/gfx_classic/RocksFontSmall.png
+share/rocksndiamonds/graphics/gfx_classic/RocksHeroes.png
+share/rocksndiamonds/graphics/gfx_classic/RocksIcon32x32.png
+share/rocksndiamonds/graphics/gfx_classic/RocksMore.png
+share/rocksndiamonds/graphics/gfx_classic/RocksSP.png
+share/rocksndiamonds/graphics/gfx_classic/RocksScreen.png
+share/rocksndiamonds/graphics/gfx_classic/RocksToons.png
 share/rocksndiamonds/graphics/gfx_classic/graphicsinfo.conf
-share/rocksndiamonds/graphics/gfx_classic/mouse.pcx
-share/rocksndiamonds/graphics/gfx_classic/rocks_icon.xbm
-share/rocksndiamonds/graphics/gfx_classic/rocks_icon_32x32.pcx
-share/rocksndiamonds/graphics/gfx_classic/rocks_iconmask.xbm
+share/rocksndiamonds/graphics/gfx_classic/overlay/
+share/rocksndiamonds/graphics/gfx_classic/overlay/VirtualButtons.ilbm
+share/rocksndiamonds/graphics/gfx_classic/overlay/VirtualButtons.png
 share/rocksndiamonds/levels/
 share/rocksndiamonds/levels/Classic_Games/
 share/rocksndiamonds/levels/Classic_Games/classic_boulderdash/
@@ -514,6 +514,7 @@ share/rocksndiamonds/sounds/snd_classic/booom.wav
 share/rocksndiamonds/sounds/snd_classic/bug.wav
 share/rocksndiamonds/sounds/snd_classic/buing.wav
 share/rocksndiamonds/sounds/snd_classic/deng.wav
+share/rocksndiamonds/sounds/snd_classic/door.wav
 share/rocksndiamonds/sounds/snd_classic/empty.wav
 share/rocksndiamonds/sounds/snd_classic/exit.wav
 share/rocksndiamonds/sounds/snd_classic/gate.wav
@@ -533,7 +534,6 @@ share/rocksndiamonds/sounds/snd_classic/pling.wav
 share/rocksndiamonds/sounds/snd_classic/pong.wav
 share/rocksndiamonds/sounds/snd_classic/pusch.wav
 share/rocksndiamonds/sounds/snd_classic/quirk.wav
-share/rocksndiamonds/sounds/snd_classic/rhythmloop.wav
 share/rocksndiamonds/sounds/snd_classic/roaaar.wav
 share/rocksndiamonds/sounds/snd_classic/roehr.wav
 share/rocksndiamonds/sounds/snd_classic/schlurf.wav

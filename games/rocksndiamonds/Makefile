@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2013/12/25 09:35:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/04 20:59:16 benoit Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
-DISTNAME =	rocksndiamonds-3.3.1.2
+DISTNAME =	rocksndiamonds-4.0.0.0
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
 
@@ -15,7 +14,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	SDL c m pthread smpeg SDL_mixer SDL_image SDL_net
+WANTLIB =	SDL c m pthread SDL_mixer SDL_image SDL_net
 
 MASTER_SITES =	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
@@ -44,7 +43,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}
 	@cp -R ${WRKSRC}/{graphics,levels,music,sounds} ${PREFIX}/share/${N}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${N}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${N}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${FILESDIR}/${N}.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

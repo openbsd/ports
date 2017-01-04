@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libgame_joystick_c,v 1.1 2003/08/09 04:36:42 jolan Exp $
---- src/libgame/joystick.c.orig	2003-07-02 16:06:00.000000000 -0500
-+++ src/libgame/joystick.c	2003-08-08 23:06:46.000000000 -0500
-@@ -11,6 +11,8 @@
- * joystick.c                                               *
- ***********************************************************/
+$OpenBSD: patch-src_libgame_joystick_c,v 1.2 2017/01/04 20:59:16 benoit Exp $
+--- src/libgame/joystick.c.orig	Tue Oct 20 23:58:08 2015
++++ src/libgame/joystick.c	Wed Jan  4 15:09:08 2017
+@@ -9,6 +9,8 @@
+ // joystick.c
+ // ============================================================================
  
 +#include <string.h>
 +
