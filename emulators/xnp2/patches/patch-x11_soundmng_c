@@ -1,10 +1,10 @@
-$OpenBSD: patch-x11_soundmng_c,v 1.1 2014/01/08 15:43:41 sthen Exp $
+$OpenBSD: patch-x11_soundmng_c,v 1.2 2017/01/04 09:30:38 uaa Exp $
 
 disable asm on i386, PIE uses registers used by asm code.
 
---- x11/soundmng.c.orig	Wed Jan  8 08:40:12 2014
-+++ x11/soundmng.c	Wed Jan  8 08:40:30 2014
-@@ -346,7 +346,7 @@ soundmng_setreverse(BOOL reverse)
+--- x11/soundmng.c.orig	Wed Mar  9 02:25:50 2016
++++ x11/soundmng.c	Sat Dec 31 06:21:29 2016
+@@ -401,7 +401,7 @@ soundmng_setreverse(BOOL reverse)
  	} else {
  		fnmix = satuation_s16x;
  	}
@@ -13,7 +13,7 @@ disable asm on i386, PIE uses registers used by asm code.
  	if (!reverse) {
  		if (mmxflag & (MMXFLAG_NOTSUPPORT|MMXFLAG_DISABLE)) {
  			fnmix = _saturation_s16;
-@@ -727,7 +727,7 @@ saturation_s16mmx(SINT16 *dst, const SINT32 *src, UINT
+@@ -801,7 +801,7 @@ saturation_s16mmx(SINT16 *dst, const SINT32 *src, UINT
  		: /* output */
  		: "m" (dst), "m" (src), "m" (size));
  }
