@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2016/11/04 11:33:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.41 2017/01/04 20:28:56 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -43,7 +43,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_PRIMARY_IP.3
 @man man/man3/CURLINFO_PRIMARY_PORT.3
 @man man/man3/CURLINFO_PRIVATE.3
+@man man/man3/CURLINFO_PROTOCOL.3
 @man man/man3/CURLINFO_PROXYAUTH_AVAIL.3
+@man man/man3/CURLINFO_PROXY_SSL_VERIFYRESULT.3
 @man man/man3/CURLINFO_REDIRECT_COUNT.3
 @man man/man3/CURLINFO_REDIRECT_TIME.3
 @man man/man3/CURLINFO_REDIRECT_URL.3
@@ -53,6 +55,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_RTSP_CSEQ_RECV.3
 @man man/man3/CURLINFO_RTSP_SERVER_CSEQ.3
 @man man/man3/CURLINFO_RTSP_SESSION_ID.3
+@man man/man3/CURLINFO_SCHEME.3
 @man man/man3/CURLINFO_SIZE_DOWNLOAD.3
 @man man/man3/CURLINFO_SIZE_UPLOAD.3
 @man man/man3/CURLINFO_SPEED_DOWNLOAD.3
@@ -203,6 +206,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_POSTQUOTE.3
 @man man/man3/CURLOPT_POSTREDIR.3
 @man man/man3/CURLOPT_PREQUOTE.3
+@man man/man3/CURLOPT_PRE_PROXY.3
 @man man/man3/CURLOPT_PRIVATE.3
 @man man/man3/CURLOPT_PROGRESSDATA.3
 @man man/man3/CURLOPT_PROGRESSFUNCTION.3
@@ -215,7 +219,24 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_PROXYTYPE.3
 @man man/man3/CURLOPT_PROXYUSERNAME.3
 @man man/man3/CURLOPT_PROXYUSERPWD.3
+@man man/man3/CURLOPT_PROXY_CAINFO.3
+@man man/man3/CURLOPT_PROXY_CAPATH.3
+@man man/man3/CURLOPT_PROXY_CRLFILE.3
+@man man/man3/CURLOPT_PROXY_KEYPASSWD.3
+@man man/man3/CURLOPT_PROXY_PINNEDPUBLICKEY.3
 @man man/man3/CURLOPT_PROXY_SERVICE_NAME.3
+@man man/man3/CURLOPT_PROXY_SSLCERT.3
+@man man/man3/CURLOPT_PROXY_SSLCERTTYPE.3
+@man man/man3/CURLOPT_PROXY_SSLKEY.3
+@man man/man3/CURLOPT_PROXY_SSLKEYTYPE.3
+@man man/man3/CURLOPT_PROXY_SSLVERSION.3
+@man man/man3/CURLOPT_PROXY_SSL_CIPHER_LIST.3
+@man man/man3/CURLOPT_PROXY_SSL_OPTIONS.3
+@man man/man3/CURLOPT_PROXY_SSL_VERIFYHOST.3
+@man man/man3/CURLOPT_PROXY_SSL_VERIFYPEER.3
+@man man/man3/CURLOPT_PROXY_TLSAUTH_PASSWORD.3
+@man man/man3/CURLOPT_PROXY_TLSAUTH_TYPE.3
+@man man/man3/CURLOPT_PROXY_TLSAUTH_USERNAME.3
 @man man/man3/CURLOPT_PROXY_TRANSFER_MODE.3
 @man man/man3/CURLOPT_PUT.3
 @man man/man3/CURLOPT_QUOTE.3
