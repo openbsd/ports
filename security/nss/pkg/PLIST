@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/06/14 14:48:51 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/01/04 12:17:48 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -24,6 +24,7 @@ include/nss/crmf.h
 include/nss/crmft.h
 include/nss/cryptohi.h
 include/nss/cryptoht.h
+include/nss/eccutil.h
 include/nss/ecl-exp.h
 include/nss/hasht.h
 include/nss/jar-ds.h
