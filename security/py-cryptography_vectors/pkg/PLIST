@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/06/25 22:57:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/01/04 21:58:42 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -52,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASValidityTest_FFCStatic_NOKC_ZZOnly_init.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/KASValidityTest_FFCStatic_NOKC_ZZOnly_resp.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/RFC5114.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/bad_exchange.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DH/vec.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/FIPS_186-2/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/FIPS_186-2/KeyPair.rsp
@@ -2075,6 +2077,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/sm
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedValidpathLenConstraintTest8.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedValidpre2000UTCnotBeforeDateTest3.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedinhibitAnyPolicyTest3.eml
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/alternate-rsa-sha1-oid.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/aia_ca_issuers.pem

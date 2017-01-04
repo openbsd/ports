@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/10/29 18:25:56 danj Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/01/04 21:58:42 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -50,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ciphers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}cmac.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}decode_asn1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}dh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}dsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}encode_asn1.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ba
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ciphers.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/cmac.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/decode_asn1.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/dh.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/dsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ec.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/encode_asn1.py
@@ -144,11 +146,13 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MO
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}hkdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}kbkdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}pbkdf2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}scrypt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}x963kdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/concatkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/hkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/kbkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/pbkdf2.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/scrypt.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/x963kdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/keywrap.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/padding.py

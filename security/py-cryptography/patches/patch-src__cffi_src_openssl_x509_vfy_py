@@ -1,11 +1,11 @@
-$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.2 2017/01/04 19:56:41 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.3 2017/01/04 21:58:42 sthen Exp $
 
 Newer libressl has part but not all of the X509_VERIFY_PARAM_* API from
 OpenSSL 1.0.2beta2+; hack to allow py-cryptography to build/run with this.
 
---- src/_cffi_src/openssl/x509_vfy.py.orig	Sun Nov  6 03:05:05 2016
-+++ src/_cffi_src/openssl/x509_vfy.py	Wed Jan  4 19:30:20 2017
-@@ -187,10 +187,12 @@ void X509_STORE_CTX_set0_crls(X509_STORE_CTX *,
+--- src/_cffi_src/openssl/x509_vfy.py.orig	Tue Dec 13 22:53:09 2016
++++ src/_cffi_src/openssl/x509_vfy.py	Wed Jan  4 21:43:46 2017
+@@ -194,10 +194,12 @@ void X509_STORE_CTX_set0_crls(X509_STORE_CTX *,
  int X509_VERIFY_PARAM_set1_host(X509_VERIFY_PARAM *, const char *,
                                  size_t);
  void X509_VERIFY_PARAM_set_hostflags(X509_VERIFY_PARAM *, unsigned int);
@@ -20,9 +20,9 @@ OpenSSL 1.0.2beta2+; hack to allow py-cryptography to build/run with this.
 +//                               size_t);
 +/****/
  int X509_VERIFY_PARAM_set1_ip_asc(X509_VERIFY_PARAM *, const char *);
- """
  
-@@ -207,9 +209,11 @@ static const long X509_V_ERR_SUITE_B_INVALID_CURVE = 0
+ int sk_X509_OBJECT_num(Cryptography_STACK_OF_X509_OBJECT *);
+@@ -221,9 +223,11 @@ static const long X509_V_ERR_SUITE_B_INVALID_CURVE = 0
  static const long X509_V_ERR_SUITE_B_INVALID_SIGNATURE_ALGORITHM = 0;
  static const long X509_V_ERR_SUITE_B_LOS_NOT_ALLOWED = 0;
  static const long X509_V_ERR_SUITE_B_CANNOT_SIGN_P_384_WITH_P_256 = 0;
