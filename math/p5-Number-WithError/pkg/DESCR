@@ -1,0 +1,4 @@
+This class is a container class for numbers with a number of
+associated symmetric and asymmetric errors.  It overloads practically
+all common arithmetic operations and trigonometric functions to
+propagate the errors.  It can do proper scientific rounding.
