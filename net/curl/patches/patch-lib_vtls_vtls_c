@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_vtls_vtls_c,v 1.2 2017/01/05 20:46:00 naddy Exp $
+
+https://github.com/curl/curl/commit/a7b38c9dc98481e4a5fc37e51a8690337c674dfb
+
+--- lib/vtls/vtls.c.orig	Mon Dec 19 08:27:56 2016
++++ lib/vtls/vtls.c	Thu Jan  5 21:31:38 2017
+@@ -484,7 +484,7 @@ void Curl_ssl_close_all(struct Curl_easy *data)
+   curlssl_close_all(data);
+ }
+ 
+-#if defined(USE_SSLEAY) || defined(USE_GNUTLS) || defined(USE_SCHANNEL) || \
++#if defined(USE_OPENSSL) || defined(USE_GNUTLS) || defined(USE_SCHANNEL) || \
+     defined(USE_DARWINSSL) || defined(USE_NSS)
+ /* This function is for OpenSSL, GnuTLS, darwinssl, and schannel only. */
+ int Curl_ssl_getsock(struct connectdata *conn, curl_socket_t *socks,
+@@ -518,7 +518,7 @@ int Curl_ssl_getsock(struct connectdata *conn,
+   (void)numsocks;
+   return GETSOCK_BLANK;
+ }
+-/* USE_SSLEAY || USE_GNUTLS || USE_SCHANNEL || USE_DARWINSSL || USE_NSS */
++/* USE_OPENSSL || USE_GNUTLS || USE_SCHANNEL || USE_DARWINSSL || USE_NSS */
+ #endif
+ 
+ void Curl_ssl_close(struct connectdata *conn, int sockindex)
