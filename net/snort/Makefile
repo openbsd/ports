@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.95 2016/10/02 02:06:19 lteo Exp $
+# $OpenBSD: Makefile,v 1.96 2017/01/05 03:08:04 lteo Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
-VERSION =		2.9.8.3
+VERSION =		2.9.9.0
 DISTNAME =		snort-${VERSION}
 
 CATEGORIES =		net security
