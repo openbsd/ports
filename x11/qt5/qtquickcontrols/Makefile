@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/30 20:33:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/05 09:52:36 zhuk Exp $
 
 QT5NAME =		QtQuickControls
 COMMENT-main =		Qt Quick based UI controls
 REVISION-qch =		0
-REVISION-html =		0
+REVISION-html =		1
+
+# XXX need to figure why qdoc sometimes doesn't generate
+# the qml-qtquick-controls-stackview-obsolete.html file;
+# this is not a dependency issue.
 
 MULTI_PACKAGES =	-main -examples -qch -html -docindex
 
