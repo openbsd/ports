@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.66 2016/10/25 12:25:32 jca Exp $
+# $OpenBSD: Makefile,v 1.67 2017/01/05 21:37:52 sthen Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
-V =		0.8.20
+V =		0.8.21
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 
