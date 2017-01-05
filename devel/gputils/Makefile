@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/04 04:38:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2017/01/05 13:50:13 benoit Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
-VERSION =		1.4.2
+VERSION =		1.5.0
 DISTNAME =		gputils-${VERSION}
 CATEGORIES =		devel
 
