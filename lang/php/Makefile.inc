@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.88 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.89 2017/01/05 16:59:31 jca Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -26,6 +26,11 @@ MASTER_SITES0=		https://download.suhosin.org/
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
 PERMIT_PACKAGE_CDROM=   Yes
+
+MODULES+=		gcc4
+# for atomic builtins
+MODGCC4_ARCHS+=		arm
+MODGCC4_LANGS+=		c++
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 
