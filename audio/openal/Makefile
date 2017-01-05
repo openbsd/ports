@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/11/03 10:27:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2017/01/05 23:04:24 jca Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-mips64 =	undefined reference to __sync atomic ops
@@ -44,7 +44,8 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_BACKEND_QSA=Off \
 		-DALSOFT_BACKEND_SOLARIS=Off \
 		-DALSOFT_BACKEND_WAVE=Off \
-		-DALSOFT_BACKEND_WINMM=Off
+		-DALSOFT_BACKEND_WINMM=Off \
+		-DALSOFT_NO_CONFIG_UTIL=On
 
 MODULES =	devel/cmake lang/clang
 MODCLANG_ARCHS = *
