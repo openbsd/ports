@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2017/01/03 13:16:47 bluhm Exp $
+# $OpenBSD: Makefile,v 1.132 2017/01/05 23:08:18 bluhm Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -91,6 +91,7 @@
      SUBDIR += p5-Math-Symbolic
      SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
      SUBDIR += p5-Math-VecStat
+     SUBDIR += p5-Number-WithError
      SUBDIR += p5-Set-IntSpan
      SUBDIR += p5-Statistics-CaseResampling
      SUBDIR += p5-Statistics-Contingency
