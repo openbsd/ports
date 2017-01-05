@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/21 22:37:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/05 00:23:13 juanfra Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.8.6
+V=		4.8.7
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
