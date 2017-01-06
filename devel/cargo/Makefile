@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/01 18:49:58 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2017/01/06 17:35:56 landry Exp $
 COMMENT = package manager for Rust language
 
 ONLY_FOR_ARCHS =	amd64 i386
@@ -114,10 +114,13 @@ MODCARGO_CRATES_UPDATE +=	libc
 MODCARGO_CRATES_UPDATE +=	openssl-sys openssl
 
 MASTER_SITES0 = http://kapouay.odns.fr/pub/cargo/
-DISTFILES +=	cargo-bootstrap-${MACHINE_ARCH}-${BOOTSTRAP_VERSION}.tar.gz:0
+DISTFILES +=	${BOOTSTRAP}
 
-SUPDISTFILES =	cargo-bootstrap-amd64-${BV-amd64}.tar.gz:0 \
-		cargo-bootstrap-i386-${BV-i386}.tar.gz:0
+BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
+.for m in i386 amd64
+BOOTSTRAP-$m =		cargo-bootstrap-${m}-${BV-$m}.tar.gz:0
+SUPDISTFILES +=		${BOOTSTRAP-$m}
+.endfor
 
 SEPARATE_BUILD =	Yes
 
