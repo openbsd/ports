@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/21 12:51:55 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/01/06 17:02:06 jca Exp $
+
+BROKEN-alpha =		error "ISA not supported"
 
 COMMENT =		collection of CTF tools
 
