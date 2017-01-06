@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.139 2016/12/30 14:29:27 danj Exp $
+# $OpenBSD: OpenBSD,v 1.140 2017/01/06 15:14:44 danj Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -68,6 +68,7 @@
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
+45.52582	-73.57180	"danj"		# Daniel Jakots
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
 45.79259	3.11090		"miod"		# Miod Vallat
@@ -84,7 +85,6 @@
 47.841434	16.238059	"feinerer"	# Ingo Feinerer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
-48.10744	-1.66410	"danj"		# Daniel Jakots
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.13254	11.76704	"bluhm"		# Alexander Bluhm
