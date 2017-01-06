@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/06 10:33:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/06 10:55:20 shadchin Exp $
 
 COMMENT =		simple SQLite3 store for Python objects
 
@@ -18,6 +18,11 @@ MASTER_SITES =		http://thp.io/2010/minidb/
 
 MODULES =		lang/python
 
+TEST_DEPENDS =		devel/py-nose,python3
+
 MODPY_VERSION = 	${MODPY_DEFAULT_VERSION_3}
+
+do-test:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests-3
 
 .include <bsd.port.mk>
