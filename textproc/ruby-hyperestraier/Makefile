@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/09/07 16:56:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.43 2017/01/06 16:04:59 jeremy Exp $
 
 COMMENT=		Ruby interface to hyperestraier
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-FLAVORS =		ruby21 ruby22 ruby23
+FLAVORS =		ruby21 ruby22 ruby23 ruby24
 FLAVOR ?=		
 .if ${FLAVOR:Mruby21}
 MODRUBY_REV =		2.1
@@ -32,6 +32,11 @@ WANTLIB +=		gmp
 MODRUBY_REV =		2.3
 FULLPKGNAME =		ruby23-hyperestraier-1.0.0
 BIN_SUFFIX =		23
+WANTLIB +=		gmp
+.elif ${FLAVOR:Mruby24}
+MODRUBY_REV =		2.4
+FULLPKGNAME =		ruby24-hyperestraier-1.0.0
+BIN_SUFFIX =		24
 WANTLIB +=		gmp
 .else
 MODRUBY_REV =		1.8
