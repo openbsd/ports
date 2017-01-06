@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/19 19:14:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/06 15:56:31 jeremy Exp $
 ${GEM_BIN}/racc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/racc2y${GEM_BIN_SUFFIX}
 ${GEM_BIN}/y2racc${GEM_BIN_SUFFIX}
@@ -16,20 +16,6 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/racc
 ${GEM_LIB}/gems/${DISTNAME}/bin/racc2y
 ${GEM_LIB}/gems/${DISTNAME}/bin/y2racc
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/.RUBYARCHDIR.-.racc.time
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/MANIFEST
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/racc/
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/racc/Cparse.java
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.c
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.o
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.so
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/depend
-${GEM_LIB}/gems/${DISTNAME}/ext/racc/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/fastcache.c
