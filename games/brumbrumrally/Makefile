@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/27 21:06:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/06 17:28:43 bentley Exp $
+
+BROKEN-alpha =		OOM on src/hqx/hq4x.cpp
 
 COMMENT =		racing game with randomized tracks
 
