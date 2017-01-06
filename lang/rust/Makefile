@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/12/26 13:52:46 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2017/01/06 17:32:22 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -39,10 +39,13 @@ MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			rustc-bootstrap-${MACHINE_ARCH}-${BV}.tar.gz:0
+			${BOOTSTRAP}
 
-SUPDISTFILES =		rustc-bootstrap-amd64-${BV-amd64}.tar.gz:0 \
-			rustc-bootstrap-i386-${BV-i386}.tar.gz:0
+BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
+.for m in i386 amd64
+BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}.tar.gz:0
+SUPDISTFILES +=		${BOOTSTRAP-$m}
+.endfor
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
