@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:17:24 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/06 10:33:37 sthen Exp $
 
 COMMENT =		simple SQLite3 store for Python objects
 
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		minidb-${MODPY_EGG_VERSION}
 PKGNAME =		py-minidb-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 
