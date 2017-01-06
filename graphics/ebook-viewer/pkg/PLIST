@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/06 15:59:28 ajacoutot Exp $
+bin/easy-ebook-viewer
+share/applications/easy-ebook-viewer.desktop
+share/easy-ebook-viewer/
+share/easy-ebook-viewer/components/
+share/easy-ebook-viewer/components/__init__.py
+share/easy-ebook-viewer/components/about_dialog.py
+share/easy-ebook-viewer/components/chapters_list.py
+share/easy-ebook-viewer/components/file_chooser.py
+share/easy-ebook-viewer/components/header_bar.py
+share/easy-ebook-viewer/components/preferences_dialog.py
+share/easy-ebook-viewer/components/viewer.py
+share/easy-ebook-viewer/constants.py
+share/easy-ebook-viewer/css/
+share/easy-ebook-viewer/css/day.css
+share/easy-ebook-viewer/css/night.css
+share/easy-ebook-viewer/locale/
+share/easy-ebook-viewer/locale/es/
+share/easy-ebook-viewer/locale/es/LC_MESSAGES/
+share/easy-ebook-viewer/locale/es/LC_MESSAGES/easy-ebook-viewer.mo
+share/easy-ebook-viewer/locale/fr/
+share/easy-ebook-viewer/locale/fr/LC_MESSAGES/
+share/easy-ebook-viewer/locale/fr/LC_MESSAGES/easy-ebook-viewer.mo
+share/easy-ebook-viewer/locale/pl/
+share/easy-ebook-viewer/locale/pl/LC_MESSAGES/
+share/easy-ebook-viewer/locale/pl/LC_MESSAGES/easy-ebook-viewer.mo
+share/easy-ebook-viewer/main.py
+share/easy-ebook-viewer/main_window.py
+share/easy-ebook-viewer/misc/
+share/easy-ebook-viewer/misc/easy-ebook-viewer-scalable.svg
+share/easy-ebook-viewer/workers/
+share/easy-ebook-viewer/workers/__init__.py
+share/easy-ebook-viewer/workers/config_provider.py
+share/easy-ebook-viewer/workers/content_provider.py
+share/easy-ebook-viewer/workers/xml2obj.py
+share/icons/hicolor/scalable/apps/easy-ebook-viewer.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
