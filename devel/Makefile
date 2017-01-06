@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1573 2017/01/03 13:15:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1574 2017/01/06 16:08:18 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1543,6 +1543,7 @@
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-atomic,ruby22
      SUBDIR += ruby-atomic,ruby23
+     SUBDIR += ruby-atomic,ruby24
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
@@ -1561,6 +1562,7 @@
      SUBDIR += ruby-fast_gettext
      SUBDIR += ruby-ffi,ruby22
      SUBDIR += ruby-ffi,ruby23
+     SUBDIR += ruby-ffi,ruby24
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
@@ -1578,6 +1580,7 @@
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby22
      SUBDIR += ruby-kgio,ruby23
+     SUBDIR += ruby-kgio,ruby24
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
@@ -1586,23 +1589,29 @@
      SUBDIR += ruby-mspec
      SUBDIR += ruby-narray,ruby22
      SUBDIR += ruby-narray,ruby23
+     SUBDIR += ruby-narray,ruby24
      SUBDIR += ruby-ncurses,ruby22
      SUBDIR += ruby-ncurses,ruby23
+     SUBDIR += ruby-ncurses,ruby24
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby22
      SUBDIR += ruby-prof,ruby23
+     SUBDIR += ruby-prof,ruby24
      SUBDIR += ruby-puppet_forge,ruby22
      SUBDIR += ruby-puppet_forge,ruby23
+     SUBDIR += ruby-puppet_forge,ruby24
      SUBDIR += ruby-racc,ruby22
      SUBDIR += ruby-racc,ruby23
+     SUBDIR += ruby-racc,ruby24
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby22
      SUBDIR += ruby-rb-gsl,ruby23
+     SUBDIR += ruby-rb-gsl,ruby24
      SUBDIR += ruby-ref
      SUBDIR += ruby-rgen
      SUBDIR += ruby-rr
@@ -1616,9 +1625,11 @@
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum,ruby22
      SUBDIR += ruby-subset_sum,ruby23
+     SUBDIR += ruby-subset_sum,ruby24
      SUBDIR += ruby-systemu
      SUBDIR += ruby-therubyracer,ruby22
      SUBDIR += ruby-therubyracer,ruby23
+     SUBDIR += ruby-therubyracer,ruby24
      SUBDIR += ruby-thor
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
@@ -1627,6 +1638,7 @@
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-yajl,ruby22
      SUBDIR += ruby-yajl,ruby23
+     SUBDIR += ruby-yajl,ruby24
      SUBDIR += ruby-zentest
      SUBDIR += scons
      SUBDIR += sdcc
