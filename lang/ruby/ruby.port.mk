@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.89 2016/09/06 15:23:26 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.90 2017/01/06 16:03:54 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby21 ruby22 ruby23
+FLAVORS=		ruby18 ruby21 ruby22 ruby23 ruby24
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -33,7 +33,7 @@ FLAVORS+=		jruby
 # Instead of adding flavors to the end of the package name, we use
 # different package stems for different ruby versions and implementations.
 # ruby 1.8 uses the historical ruby-* package stem, newer ruby versions
-# use rubyXY-*, jruby uses jruby-*, and rubinius uses rbx-*.  In most cases,
+# use rubyXY-* and jruby uses jruby-*.  In most cases,
 # PKGNAME in the port should be set to the same as DISTNAME, and this
 # will insert the correct package prefix.
 FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
@@ -53,12 +53,14 @@ FLAVOR =		ruby23
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby21 ruby22 ruby23 jruby
+.    for i in ruby18 ruby21 ruby22 ruby23 ruby24 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby18} || \
             ${FLAVOR:N$i:Mruby21} || \
-            ${FLAVOR:N$i:Mruby22} || ${FLAVOR:N$i:Mruby23} || \ 
+            ${FLAVOR:N$i:Mruby22} || \
+            ${FLAVOR:N$i:Mruby23} || \ 
+            ${FLAVOR:N$i:Mruby24} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
@@ -78,7 +80,7 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 # 2.3 for consistency with the default ruby23 FLAVOR for gem/extconf ports.
 MODRUBY_REV?=		2.3
 
-# Because the rbx and jruby FLAVORs use same binary names but in
+# Because the jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
 # conflicts since all man files go in the same directory.
 GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
@@ -86,65 +88,54 @@ GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 # Use the FLAVOR as the prefix for the package, to avoid conflicts.
 MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
 
-.if ${MODRUBY_REV} == 1.8
-MODRUBY_LIBREV =	1.8
-MODRUBY_BINREV =	18
-MODRUBY_PKG_PREFIX =	ruby
-MODRUBY_FLAVOR =	ruby18
-GEM_BIN_SUFFIX =	18
-.elif ${MODRUBY_REV} == 2.1
-MODRUBY_LIBREV =	2.1
-MODRUBY_BINREV =	21
-MODRUBY_FLAVOR =	ruby21
-GEM_BIN_SUFFIX =	21
-.elif ${MODRUBY_REV} == 2.2
-MODRUBY_LIBREV =	2.2
-MODRUBY_BINREV =	22
-MODRUBY_FLAVOR =	ruby22
-GEM_BIN_SUFFIX =	22
-.elif ${MODRUBY_REV} == 2.3
-MODRUBY_LIBREV =	2.3
-MODRUBY_BINREV =	23
-MODRUBY_FLAVOR =	ruby23
-GEM_BIN_SUFFIX =	23
-.elif ${MODRUBY_REV} == jruby
-MODRUBY_LIBREV =	2.3.0
-
-# Set these during development of ruby.port.mk to make sure
-# nothing is broken.  However, turn them off before committing,
-# since they result in bad error messages when, for example, an
-# invalid flavor is used.
-#.poison MODRUBY_BINREV
-#.poison MODRUBY_WANTLIB
-
-MODRUBY_FLAVOR =	jruby
+# Set MODRUBY_* variables as well as the path for the ruby interpreter and
+# related commands used by MODRUBY_TEST and manually in some port targets.
+.if ${MODRUBY_REV} == jruby
 GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
+MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-java
+MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
+MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
+MODRUBY_FLAVOR =	jruby
+MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
+MODRUBY_LIBREV =	2.3.0
+MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
+MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
+RAKE=			${RUBY} -S rake
+RSPEC=			${RUBY} -S spec
+RUBY=			${LOCALBASE}/jruby/bin/jruby
+
+.  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
+ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
+.  else
+MODRUBY_RUN_DEPENDS=	lang/jruby
+.  endif
+
+.else # not jruby
+
+.  if ${MODRUBY_REV} == 1.8
+MODRUBY_PKG_PREFIX =	ruby
+.  endif
+
+GEM_BIN_SUFFIX =	${MODRUBY_BINREV}
+MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
+MODRUBY_BINREV =	${MODRUBY_LIBREV:S/.//}
+MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
+MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
+MODRUBY_FLAVOR =	ruby${MODRUBY_BINREV}
+MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
+MODRUBY_LIBREV =	${MODRUBY_REV}
+MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
+MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
+MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
+MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
+MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
+RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
+RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
+RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 .endif
 
 MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
 MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
-
-# Set the path for the ruby interpreter and the rake and rspec
-# commands used by MODRUBY_TEST and manually in some port
-# targets.
-.if ${MODRUBY_REV} == jruby
-RUBY=			${LOCALBASE}/jruby/bin/jruby
-RAKE=			${RUBY} -S rake
-RSPEC=			${RUBY} -S spec
-MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
-MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
-.else
-RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
-RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
-MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
-.  if ${MODRUBY_REV} == 1.8
-RSPEC=			${LOCALBASE}/bin/spec
-MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec
-.  else
-RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
-MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
-.  endif
-.endif
 
 .if defined(MODRUBY_TEST)
 .  if !${MODRUBY_TEST:L:Mrspec} && !${MODRUBY_TEST:L:Mrspec3} && \
@@ -164,26 +155,7 @@ NO_TEST =	Yes
 MODRUBY_TEST?=
 .endif
 
-.if ${MODRUBY_REV} == jruby
-.  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
-ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
-.  else
-MODRUBY_RUN_DEPENDS=	lang/jruby
-.  endif
-.else
-MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
-MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
-MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
-.endif
-
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
-
-# location of ruby libraries
-.if ${MODRUBY_REV} == jruby
-MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
-.else
-MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
-.endif
 
 # common directories for ruby extensions
 # used to create docs and examples install path
@@ -192,16 +164,6 @@ MODRUBY_RELEXAMPLEDIR=	share/examples/${MODRUBY_PKG_PREFIX}
 MODRUBY_DOCDIR=		${PREFIX}/${MODRUBY_RELDOCDIR}
 MODRUBY_EXAMPLEDIR=	${PREFIX}/${MODRUBY_RELEXAMPLEDIR}
 SUBST_VARS +=		^MODRUBY_RELDOCDIR ^MODRUBY_RELEXAMPLEDIR
-
-.if ${MODRUBY_REV} == jruby
-MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-java
-MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
-MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
-.else
-MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
-MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
-MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
-.endif
 
 # Assume that we want to automatically add ruby to BUILD_DEPENDS
 # and RUN_DEPENDS unless the port specifically requests not to.
@@ -283,6 +245,7 @@ PKG_ARCH=	*
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
+GEM_EXTENSIONS_FILE ?= ${GEM_EXTENSIONS_DIR}/gem.build_complete
 SUBST_VARS+=	GEM_EXTENSIONS_DIR
 PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 .  endif
@@ -357,6 +320,10 @@ MODRUBY_INSTALL_TARGET = \
     fi; \
     ${INSTALL_DATA_DIR} ${GEM_ABS_PATH}; \
     cd ${GEM_BASE_LIB} && mv * ${GEM_ABS_PATH}; \
+    if [ 'X' != "X${GEM_EXTENSIONS_FILE}" ]; then \
+	mkdir -p ${PREFIX}/${GEM_EXTENSIONS_DIR}; \
+	touch ${PREFIX}/${GEM_EXTENSIONS_FILE}; \
+    fi
     chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_ABS_PATH}
 
 .  if !target(do-build)
