@@ -1,0 +1,27 @@
+$OpenBSD: patch-ext_mysql_api_mysql_c,v 1.1 2017/01/06 15:55:38 jeremy Exp $
+
+Allow building with ruby 2.4+.
+
+--- ext/mysql_api/mysql.c.orig	Wed Dec 31 16:00:00 1969
++++ ext/mysql_api/mysql.c	Tue Oct 18 14:23:24 2016
+@@ -3,6 +3,7 @@
+  */
+ 
+ #include <ruby.h>
++#include <ruby/version.h>
+ #ifndef RSTRING_PTR
+ #define RSTRING_PTR(str) RSTRING(str)->ptr
+ #endif
+@@ -1317,7 +1318,11 @@ static VALUE stmt_bind_result(int argc, VALUE *argv, V
+ 	}
+ 	else if (argv[i] == rb_cString)
+ 	    s->result.bind[i].buffer_type = MYSQL_TYPE_STRING;
+-	else if (argv[i] == rb_cNumeric || argv[i] == rb_cInteger || argv[i] == rb_cFixnum)
++	else if (argv[i] == rb_cNumeric || argv[i] == rb_cInteger
++#if (RUBY_API_VERSION_CODE < 20400)
++                 || argv[i] == rb_cFixnum
++#endif
++                )
+ 	    s->result.bind[i].buffer_type = MYSQL_TYPE_LONGLONG;
+ 	else if (argv[i] == rb_cFloat)
+ 	    s->result.bind[i].buffer_type = MYSQL_TYPE_DOUBLE;
