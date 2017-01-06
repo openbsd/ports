@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_ruby_ruby_h,v 1.1.1.1 2017/01/06 15:59:25 jeremy Exp $
+
+Fix GCC error: #pragma GCC diagnostic not allowed inside functions
+when compiling some extensions.
+
+--- include/ruby/ruby.h.orig	Thu Dec 22 12:58:55 2016
++++ include/ruby/ruby.h	Sat Dec 24 22:25:54 2016
+@@ -2192,7 +2192,7 @@ ERRORFUNC(("variable argument length doesn't match"), 
+ # define rb_scan_args_verify_count(fmt, varc) \
+     ((varc)/(rb_scan_args_count(fmt, varc)))
+ 
+-# ifdef __GNUC__
++# if 0
+ # define rb_scan_args_verify(fmt, varc) \
+     ({ \
+ 	int verify; \
