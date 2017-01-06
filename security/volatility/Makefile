@@ -2,9 +2,8 @@
 
 COMMENT =		memory artifact extraction utility framework
 
-MODPY_EGG_VERSION =	2.5
+MODPY_EGG_VERSION =	2.6
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
-REVISION =		0
 
 EXTRACT_SUFX =		.zip
 

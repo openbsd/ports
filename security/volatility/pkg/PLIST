@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/11/01 07:34:30 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/01/06 08:49:39 rpointel Exp $
 bin/vol.py
 lib/python${MODPY_VERSION}/site-packages/volatility/
 lib/python${MODPY_VERSION}/site-packages/volatility-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -181,6 +181,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/apihooks.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/apihooks.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/arp.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/arp.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/aslr_shift.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/aslr_shift.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/banner.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/banner.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/bash.py
@@ -301,6 +303,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pslist.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pslist.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pslist_cache.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pslist_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/psscan.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/psscan.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pstree.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/pstree.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/linux/psxview.py
@@ -342,6 +346,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/bash_hash.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/bash_hash.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/calendar.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/calendar.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_fop.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_fop.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_mig_table.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_mig_table.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_syscall_shadow.py
@@ -352,6 +358,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_sysctl.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_sysctl.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_trap_table.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/check_trap_table.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/classes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/classes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/common.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/common.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/compressed_swap.py
@@ -364,6 +372,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dead_sockets.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dead_sockets.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dead_vnodes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dead_vnodes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/devfs.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/devfs.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dlyd_maps.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dlyd_maps.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/dmesg.py
@@ -380,8 +390,12 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/gkextmap.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/gkextmap.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/ifconfig.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/ifconfig.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/interest_handlers.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/interest_handlers.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/ip_filters.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/ip_filters.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/kevents.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/kevents.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/keychaindump.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/keychaindump.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/ldrmodules.py
@@ -464,10 +478,14 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/threads.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/threads.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/threads_simple.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/threads_simple.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/timers.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/timers.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/trustedbsd.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/trustedbsd.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/version.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/version.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/vfsevents.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/mac/vfsevents.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/machoinfo.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/machoinfo.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/malware/
@@ -579,8 +597,16 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/vis
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/vista_sp2_x86_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_1AC738FB_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_1AC738FB_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_DD08DD42_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_DD08DD42_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x64_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_44B89EEA_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_44B89EEA_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_9619274A_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_9619274A_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win10_x86_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win2003.py
@@ -611,8 +637,12 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp0_x64_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp0_x86_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp0_x86_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x64_632B36E0_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x64_632B36E0_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x64_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x64_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x86_BBA98F40_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x86_BBA98F40_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x86_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win7_sp1_x86_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8.py
@@ -631,6 +661,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp0_x86_syscalls.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp0_x86_vtypes.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp0_x86_vtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp1_x64_54B5A1C6_vtypes.py
+lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp1_x64_54B5A1C6_vtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp1_x64_syscalls.py
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp1_x64_syscalls.pyc
 lib/python${MODPY_VERSION}/site-packages/volatility/plugins/overlays/windows/win8_sp1_x64_vtypes.py
@@ -787,11 +819,19 @@ share/volatility/contrib/plugins/example.py
 share/volatility/contrib/plugins/malware/
 share/volatility/contrib/plugins/malware/__init__.py
 share/volatility/contrib/plugins/malware/poisonivy.py
+share/volatility/contrib/plugins/malware/psempire.py
 share/volatility/contrib/plugins/malware/zeusscan.py
 share/volatility/contrib/plugins/pagecheck.py
 share/volatility/contrib/plugins/psdispscan.py
+share/volatility/contrib/plugins/saveconfig.py
 share/volatility/contrib/plugins/scanprof.py
 share/volatility/tools/
+share/volatility/tools/doxygen/
+share/volatility/tools/doxygen/config
+share/volatility/tools/doxygen/d3/
+share/volatility/tools/doxygen/d3/createtree.py
+share/volatility/tools/doxygen/d3/tree.html
+share/volatility/tools/doxygen/vol.png
 share/volatility/tools/linux/
 share/volatility/tools/linux/Makefile
 share/volatility/tools/linux/Makefile.enterprise
@@ -805,6 +845,7 @@ share/volatility/tools/mac/
 share/volatility/tools/mac/convert.py
 share/volatility/tools/mac/generate_profile_list.py
 share/volatility/tools/mac/mac_create_all_profiles.py
+share/volatility/tools/mac/parse_pbzx2.py
 share/volatility/tools/vtype_diff.py
 share/volatility/tools/windows/
 share/volatility/tools/windows/parsesummary.py
