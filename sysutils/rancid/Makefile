@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/23 12:27:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/01/06 14:07:45 pea Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
-DISTNAME =	rancid-3.5.1
-DISTPATCH =	1
-PKGNAME =	${DISTNAME}pl${DISTPATCH}
+DISTNAME =	rancid-3.6.1
 EPOCH = 	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.shrubbery.net/rancid/
 
-MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER =	Pavel Korovin <p@tristero.se>
 
 # Custom
 PERMIT_PACKAGE_CDROM =	not for commercial use
@@ -19,8 +17,6 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB =	c util
 
 MASTER_SITES =	ftp://ftp.shrubbery.net/pub/rancid/
-
-PATCHFILES =	${DISTNAME}.p${DISTPATCH}.gz
 
 RUN_DEPENDS =	lang/expect
 BUILD_DEPENDS =	${RUN_DEPENDS}
