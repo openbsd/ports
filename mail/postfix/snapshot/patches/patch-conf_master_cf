@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_master_cf,v 1.9 2016/12/18 20:28:40 jca Exp $
---- conf/master.cf.orig	Sat Jan 31 23:54:26 2015
-+++ conf/master.cf	Wed Dec 14 15:37:43 2016
+$OpenBSD: patch-conf_master_cf,v 1.10 2017/01/07 23:49:47 sthen Exp $
+--- conf/master.cf.orig	Sat Dec  3 10:49:54 2016
++++ conf/master.cf	Fri Jan  6 23:03:24 2017
 @@ -9,12 +9,12 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (no)    (never) (100)
@@ -20,7 +20,7 @@ $OpenBSD: patch-conf_master_cf,v 1.9 2016/12/18 20:28:40 jca Exp $
  #  -o syslog_name=postfix/submission
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
-@@ -25,7 +25,7 @@ smtp      inet  n       -       n       -       -     
+@@ -26,7 +26,7 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=
  #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -29,7 +29,7 @@ $OpenBSD: patch-conf_master_cf,v 1.9 2016/12/18 20:28:40 jca Exp $
  #  -o syslog_name=postfix/smtps
  #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
-@@ -36,32 +36,32 @@ smtp      inet  n       -       n       -       -     
+@@ -37,32 +37,32 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=
  #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -83,7 +83,7 @@ $OpenBSD: patch-conf_master_cf,v 1.9 2016/12/18 20:28:40 jca Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -95,21 +95,21 @@ scache    unix  -       -       n       -       1     
+@@ -96,21 +96,21 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe

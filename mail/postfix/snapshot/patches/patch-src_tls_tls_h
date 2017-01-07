@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tls_tls_h,v 1.2 2016/02/25 09:39:49 sthen Exp $
+$OpenBSD: patch-src_tls_tls_h,v 1.3 2017/01/07 23:49:47 sthen Exp $
 
 Fix building with LibreSSL
 
---- src/tls/tls.h.orig	Sat Feb  6 15:09:41 2016
-+++ src/tls/tls.h	Sun Feb 14 19:54:38 2016
+--- src/tls/tls.h.orig	Sun Jan  1 17:22:13 2017
++++ src/tls/tls.h	Fri Jan  6 23:17:26 2017
 @@ -89,7 +89,7 @@ extern const char *str_tls_level(int);
  #endif
  
@@ -13,3 +13,13 @@ Fix building with LibreSSL
  #define OpenSSL_version_num SSLeay
  #define OpenSSL_version SSLeay_version
  #define OPENSSL_VERSION SSLEAY_VERSION
+@@ -104,6 +104,9 @@ extern const char *str_tls_level(int);
+ #define ASN1_STRING_get0_data ASN1_STRING_data
+ #define X509_getm_notBefore X509_get_notBefore
+ #define X509_getm_notAfter X509_get_notAfter
++#endif
++
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define TLS_method SSLv23_method
+ #define TLS_client_method SSLv23_client_method
+ #define TLS_server_method SSLv23_server_method
