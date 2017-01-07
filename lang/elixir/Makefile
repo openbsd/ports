@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2016/12/17 12:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2017/01/07 13:21:33 jasper Exp $
 
 COMMENT=		functional language for building scalable applications
 
-V=			1.3.4
+V=			1.4.0
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -29,7 +29,6 @@ MAKE_FLAGS=		PREFIX="${PREFIX}" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/elixir
-	sed -i 's,share/man/man1,man/man1,g' ${WRKSRC}/Makefile
 
 pre-install:
 	-rm ${WRKSRC}/bin/*.{beforesubst,orig}

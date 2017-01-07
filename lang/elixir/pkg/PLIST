@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/08/12 19:28:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/01/07 13:21:33 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -29,6 +29,7 @@ lib/elixir/lib/elixir/ebin/Elixir.ArgumentError.beam
 lib/elixir/lib/elixir/ebin/Elixir.ArithmeticError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadArityError.beam
+lib/elixir/lib/elixir/ebin/Elixir.BadBooleanError.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadFunctionError.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadMapError.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadStructError.beam
@@ -157,6 +158,9 @@ lib/elixir/lib/elixir/ebin/Elixir.Record.Extractor.beam
 lib/elixir/lib/elixir/ebin/Elixir.Record.beam
 lib/elixir/lib/elixir/ebin/Elixir.Regex.CompileError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Regex.beam
+lib/elixir/lib/elixir/ebin/Elixir.Registry.Partition.beam
+lib/elixir/lib/elixir/ebin/Elixir.Registry.Supervisor.beam
+lib/elixir/lib/elixir/ebin/Elixir.Registry.beam
 lib/elixir/lib/elixir/ebin/Elixir.RuntimeError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Set.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.Reducers.beam
