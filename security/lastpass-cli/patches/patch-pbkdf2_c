@@ -1,0 +1,21 @@
+$OpenBSD: patch-pbkdf2_c,v 1.1 2017/01/07 12:58:53 jasper Exp $
+--- pbkdf2.c.orig	Tue Jan  3 22:19:00 2017
++++ pbkdf2.c	Wed Jan  4 12:41:22 2017
+@@ -53,7 +53,7 @@ int fallback_pkcs5_pbkdf2_hmac(const char *pass, size_
+ 
+ 	unsigned char tmp_md[md_len];
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	HMAC_CTX real_ctx;
+ 	ctx = &real_ctx;
+ 	HMAC_CTX_init(ctx);
+@@ -97,7 +97,7 @@ int fallback_pkcs5_pbkdf2_hmac(const char *pass, size_
+ 	ret = 1;
+ 
+ ERR_LABEL
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	HMAC_CTX_cleanup(ctx);
+ #else
+ 	HMAC_CTX_free(ctx);
