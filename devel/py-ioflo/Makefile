@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/07 08:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/01/07 19:06:32 ajacoutot Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
-MODPY_EGG_VERSION=	1.5.4
+MODPY_EGG_VERSION=	1.6.6
 DISTNAME=		ioflo-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-
-# XXX MODPY_PI MASTER_SITES is broken
-GH_ACCOUNT=		ioflo
-GH_PROJECT=		ioflo
-GH_TAGNAME=		v${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
@@ -22,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-#MODPY_PI=		Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 .include <bsd.port.mk>
