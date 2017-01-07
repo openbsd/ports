@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/07/30 18:33:31 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/07 12:55:14 jasper Exp $
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
-MODPY_EGG_VERSION =	1.12.0
+MODPY_EGG_VERSION =	1.13.1
 DISTNAME =		Fabric-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 
