@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/31 17:11:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/01/07 11:38:46 landry Exp $
 @bin bin/gradio
-share/appdata/
-share/appdata/de.haeckerfelix.gradio.appdata.xml
 share/applications/de.haeckerfelix.gradio.desktop
 share/glib-2.0/schemas/de.haecker-felix.gradio.gschema.xml
 share/gradio/
@@ -12,7 +10,11 @@ share/icons/hicolor/192x192/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/32x32/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/48x48/apps/de.haeckerfelix.gradio.png
 share/icons/hicolor/64x64/apps/de.haeckerfelix.gradio.png
-share/icons/hicolor/scalable/apps/de.haeckerfelix.gradio.svg
+share/icons/hicolor/scalable/categories/globe-symbolic.svg
+share/icons/hicolor/scalable/categories/language-symbolic.svg
+share/icons/hicolor/scalable/categories/map-marker-symbolic.svg
+share/icons/hicolor/scalable/categories/tags-symbolic.svg
+share/icons/hicolor/symbolic/apps/de.haeckerfelix.gradio-symbolic.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

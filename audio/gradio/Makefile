@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/07 19:53:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/07 11:38:46 landry Exp $
 
 COMMENT =	internet radio browser and player
-DISTNAME =	gradio-5.0.0beta2
+DISTNAME =	gradio-5.0
 GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	gradio
-GH_TAGNAME =	v5.0.0-beta2
+GH_TAGNAME =	v5.0
 
 CATEGORIES =	audio www
 
