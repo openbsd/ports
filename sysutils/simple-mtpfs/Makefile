@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/16 09:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/07 19:14:49 ajacoutot Exp $
 
 COMMENT=		MTP device filesystem
 
-DISTNAME=		${GH_PROJECT}-0.2.1
-
-GH_COMMIT=		7452ff8cc235529c1f75a6267afd3336631dfde0
-GH_PROJECT=		simple-mtpfs
+V=			0.3.0
 GH_ACCOUNT=		phatina
+GH_PROJECT=		simple-mtpfs
+GH_TAGNAME=		simple-mtpfs-${V}
+DISTNAME=		${GH_PROJECT}-0.3.0
 
 CATEGORIES=		sysutils
 
