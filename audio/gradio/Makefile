@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/07 11:38:46 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/01/08 21:52:28 sthen Exp $
 
 COMMENT =	internet radio browser and player
 DISTNAME =	gradio-5.0
+EPOCH =		0
 GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	gradio
 GH_TAGNAME =	v5.0
