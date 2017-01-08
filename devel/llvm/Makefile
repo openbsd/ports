@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2017/01/01 10:48:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2017/01/08 01:59:49 bluhm Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -7,11 +7,16 @@ ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 DPB_PROPERTIES = parallel
 
-COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
+MULTI_PACKAGES =	-main -python
+COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
+COMMENT-python =	Python bindings for Clang
 
 LLVM_V =	3.9.1
+REVISION-main =	0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
+PKGNAME-main =	llvm-${LLVM_V}
+PKGNAME-python =	py-llvm-${LLVM_V}
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -45,6 +50,11 @@ TEST_DEPENDS =		devel/dejagnu \
 BUILD_DEPENDS +=	textproc/py-sphinx
 RUN_DEPENDS +=		devel/gtest \
 			lang/gcc/${MODGCC4_VERSION},-c++
+
+# clang python module loads libclang.so dynamically with cdll.LoadLibrary()
+WANTLIB-python =	clang
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
@@ -97,6 +107,12 @@ post-build:
 	cd ${WRKSRC}/tools/clang/docs && make -f Makefile.sphinx man
 
 post-install:
+	${INSTALL_DATA_DIR} \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
+	${INSTALL_DATA} ${WRKSRC}/tools/clang/bindings/python/clang/* \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
 	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/* \
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/docs/_build/man/clang.1 \

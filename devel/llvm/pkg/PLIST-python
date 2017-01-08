@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2017/01/08 01:59:49 bluhm Exp $
+lib/python${MODPY_VERSION}/site-packages/clang/
+lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
+lib/python${MODPY_VERSION}/site-packages/clang/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/clang/cindex.py
+lib/python${MODPY_VERSION}/site-packages/clang/cindex.pyc
+lib/python${MODPY_VERSION}/site-packages/clang/enumerations.py
+lib/python${MODPY_VERSION}/site-packages/clang/enumerations.pyc
