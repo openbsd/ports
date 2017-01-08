@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_zabbix_server_server_c,v 1.6 2016/07/07 18:47:33 robert Exp $
---- src/zabbix_server/server.c.orig	Fri Jun 24 16:13:52 2016
-+++ src/zabbix_server/server.c	Fri Jun 24 16:13:57 2016
-@@ -59,7 +59,7 @@
+$OpenBSD: patch-src_zabbix_server_server_c,v 1.7 2017/01/08 19:24:53 robert Exp $
+--- src/zabbix_server/server.c.orig	Wed Dec  7 11:07:54 2016
++++ src/zabbix_server/server.c	Tue Dec 20 08:18:48 2016
+@@ -60,7 +60,7 @@
  #include "setproctitle.h"
  #include "../libs/zbxcrypto/tls.h"
  

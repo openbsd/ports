@@ -1,24 +1,18 @@
-$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_net_c,v 1.6 2015/12/09 17:43:36 jca Exp $
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_net_c,v 1.7 2017/01/08 19:24:53 robert Exp $
 
 Stop using struct ifnet and libkvm for interface stats.
 
---- src/libs/zbxsysinfo/openbsd/net.c.orig	Mon Aug 10 10:56:48 2015
-+++ src/libs/zbxsysinfo/openbsd/net.c	Wed Dec  9 18:41:03 2015
-@@ -24,13 +24,8 @@
+--- src/libs/zbxsysinfo/openbsd/net.c.orig	Fri Sep 30 11:42:54 2016
++++ src/libs/zbxsysinfo/openbsd/net.c	Tue Nov 22 10:12:32 2016
+@@ -35,7 +35,6 @@
  
- #include <sys/sockio.h>
- 
--#if OpenBSD >= 201405
--#	include <net/if_var.h>	/* structs ifnet and ifnet_head are defined in this header since OpenBSD 5.5 */
--#endif
--
  static struct nlist kernel_symbols[] =
  {
 -	{"_ifnet", N_UNDF, 0, 0, 0},
  	{"_tcbtable", N_UNDF, 0, 0, 0},
  	{NULL, 0, 0, 0, 0}
  };
-@@ -43,11 +38,6 @@ static int	get_ifdata(const char *if_name,
+@@ -48,11 +47,6 @@ static int	get_ifdata(const char *if_name,
  		zbx_uint64_t *tbytes, zbx_uint64_t *tpackets, zbx_uint64_t *terrors,
  		zbx_uint64_t *icollisions, char **error)
  {
@@ -30,7 +24,7 @@ Stop using struct ifnet and libkvm for interface stats.
  	int	ret = SYSINFO_RET_FAIL;
  
  	if (NULL == if_name || '\0' == *if_name)
-@@ -88,66 +78,7 @@ static int	get_ifdata(const char *if_name,
+@@ -93,66 +87,7 @@ static int	get_ifdata(const char *if_name,
  	if (icollisions)
  		*icollisions = 0;
  

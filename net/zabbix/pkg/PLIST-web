@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.28 2016/07/07 18:47:33 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.29 2017/01/08 19:24:53 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -37,6 +37,7 @@ zabbix/app/controllers/CControllerMediatypeEdit.php
 zabbix/app/controllers/CControllerMediatypeEnable.php
 zabbix/app/controllers/CControllerMediatypeList.php
 zabbix/app/controllers/CControllerMediatypeUpdate.php
+zabbix/app/controllers/CControllerProblemView.php
 zabbix/app/controllers/CControllerProfileUpdate.php
 zabbix/app/controllers/CControllerProxyCreate.php
 zabbix/app/controllers/CControllerProxyDelete.php
@@ -70,6 +71,7 @@ zabbix/app/views/administration.proxy.list.php
 zabbix/app/views/administration.script.edit.js.php
 zabbix/app/views/administration.script.edit.php
 zabbix/app/views/administration.script.list.php
+zabbix/app/views/layout.csv.php
 zabbix/app/views/layout.htmlpage.footer.php
 zabbix/app/views/layout.htmlpage.header.php
 zabbix/app/views/layout.htmlpage.menu.php
@@ -83,6 +85,8 @@ zabbix/app/views/monitoring.acknowledge.edit.php
 zabbix/app/views/monitoring.dashboard.view.php
 zabbix/app/views/monitoring.discovery.view.php
 zabbix/app/views/monitoring.map.view.php
+zabbix/app/views/monitoring.problem.view.js.php
+zabbix/app/views/monitoring.problem.view.php
 zabbix/app/views/monitoring.web.view.php
 zabbix/app/views/monitoring.widget.discovery.view.php
 zabbix/app/views/monitoring.widget.hosts.view.php
@@ -126,10 +130,10 @@ zabbix/conf/zabbix.conf.php.example
 @sample zabbix/conf/zabbix.conf.php
 @mode
 @group
+zabbix/correlation.php
 zabbix/dashconf.php
 zabbix/disc_prototypes.php
 zabbix/discoveryconf.php
-zabbix/events.php
 zabbix/favicon.ico
 zabbix/fonts/
 zabbix/fonts/DejaVuSans.ttf
@@ -193,6 +197,7 @@ zabbix/include/classes/api/services/CAction.php
 zabbix/include/classes/api/services/CAlert.php
 zabbix/include/classes/api/services/CApplication.php
 zabbix/include/classes/api/services/CConfiguration.php
+zabbix/include/classes/api/services/CCorrelation.php
 zabbix/include/classes/api/services/CDCheck.php
 zabbix/include/classes/api/services/CDHost.php
 zabbix/include/classes/api/services/CDRule.php
@@ -220,6 +225,7 @@ zabbix/include/classes/api/services/CMaintenance.php
 zabbix/include/classes/api/services/CMap.php
 zabbix/include/classes/api/services/CMapElement.php
 zabbix/include/classes/api/services/CMediatype.php
+zabbix/include/classes/api/services/CProblem.php
 zabbix/include/classes/api/services/CProxy.php
 zabbix/include/classes/api/services/CScreen.php
 zabbix/include/classes/api/services/CScreenItem.php
@@ -363,6 +369,7 @@ zabbix/include/classes/import/converters/C10TriggerConverter.php
 zabbix/include/classes/import/converters/C20ImportConverter.php
 zabbix/include/classes/import/converters/C20ItemKeyConverter.php
 zabbix/include/classes/import/converters/C20TriggerConverter.php
+zabbix/include/classes/import/converters/C30ImportConverter.php
 zabbix/include/classes/import/converters/CConverter.php
 zabbix/include/classes/import/converters/CConverterChain.php
 zabbix/include/classes/import/converters/CImportConverterFactory.php
@@ -383,6 +390,7 @@ zabbix/include/classes/import/validators/
 zabbix/include/classes/import/validators/C10XmlValidator.php
 zabbix/include/classes/import/validators/C20XmlValidator.php
 zabbix/include/classes/import/validators/C30XmlValidator.php
+zabbix/include/classes/import/validators/C32XmlValidator.php
 zabbix/include/classes/import/validators/CXmlValidator.php
 zabbix/include/classes/import/validators/CXmlValidatorGeneral.php
 zabbix/include/classes/items/
@@ -413,9 +421,11 @@ zabbix/include/classes/parsers/CFunctionParser.php
 zabbix/include/classes/parsers/CItemDelayFlexParser.php
 zabbix/include/classes/parsers/CItemKey.php
 zabbix/include/classes/parsers/CLLDMacroParser.php
+zabbix/include/classes/parsers/CMacroFunctionParser.php
 zabbix/include/classes/parsers/CMacroParser.php
 zabbix/include/classes/parsers/CParser.php
 zabbix/include/classes/parsers/CReferenceParser.php
+zabbix/include/classes/parsers/CReplacementParser.php
 zabbix/include/classes/parsers/CSetParser.php
 zabbix/include/classes/parsers/CTriggerExpression.php
 zabbix/include/classes/parsers/CUserMacroParser.php
@@ -442,12 +452,14 @@ zabbix/include/classes/screens/CScreenHistory.php
 zabbix/include/classes/screens/CScreenHostTriggers.php
 zabbix/include/classes/screens/CScreenHostgroupTriggers.php
 zabbix/include/classes/screens/CScreenHostsInfo.php
+zabbix/include/classes/screens/CScreenHttpTest.php
 zabbix/include/classes/screens/CScreenHttpTestDetails.php
 zabbix/include/classes/screens/CScreenLldGraph.php
 zabbix/include/classes/screens/CScreenLldGraphBase.php
 zabbix/include/classes/screens/CScreenLldSimpleGraph.php
 zabbix/include/classes/screens/CScreenMap.php
 zabbix/include/classes/screens/CScreenPlainText.php
+zabbix/include/classes/screens/CScreenProblem.php
 zabbix/include/classes/screens/CScreenScreen.php
 zabbix/include/classes/screens/CScreenServerInfo.php
 zabbix/include/classes/screens/CScreenSimpleGraph.php
@@ -498,6 +510,7 @@ zabbix/include/classes/validators/event/CEventSourceObjectValidator.php
 zabbix/include/classes/validators/host/
 zabbix/include/classes/validators/host/CHostNormalValidator.php
 zabbix/include/classes/validators/hostgroup/
+zabbix/include/classes/validators/hostgroup/CHostGroupNameValidator.php
 zabbix/include/classes/validators/hostgroup/CHostGroupNormalValidator.php
 zabbix/include/classes/validators/object/
 zabbix/include/classes/validators/object/CConditionValidator.php
@@ -508,6 +521,7 @@ zabbix/include/classes/validators/schema/CSchemaValidator.php
 zabbix/include/classes/validators/string/
 zabbix/include/classes/validators/string/CLldMacroStringValidator.php
 zabbix/include/config.inc.php
+zabbix/include/correlation.inc.php
 zabbix/include/db.inc.php
 zabbix/include/debug.inc.php
 zabbix/include/defines.inc.php
@@ -574,6 +588,8 @@ zabbix/include/views/configuration.action.list.php
 zabbix/include/views/configuration.application.edit.php
 zabbix/include/views/configuration.application.list.php
 zabbix/include/views/configuration.copy.elements.php
+zabbix/include/views/configuration.correlation.edit.php
+zabbix/include/views/configuration.correlation.list.php
 zabbix/include/views/configuration.discovery.edit.php
 zabbix/include/views/configuration.discovery.list.php
 zabbix/include/views/configuration.graph.edit.php
@@ -602,6 +618,7 @@ zabbix/include/views/configuration.services.edit.php
 zabbix/include/views/configuration.services.list.php
 zabbix/include/views/configuration.services.parent.list.php
 zabbix/include/views/configuration.template.edit.php
+zabbix/include/views/configuration.template.list.php
 zabbix/include/views/configuration.trigger.prototype.edit.php
 zabbix/include/views/configuration.trigger.prototype.list.php
 zabbix/include/views/configuration.trigger.prototype.massupdate.php
@@ -631,6 +648,7 @@ zabbix/include/views/js/common.init.js.php
 zabbix/include/views/js/common.item.edit.js.php
 zabbix/include/views/js/conf.import.js.php
 zabbix/include/views/js/configuration.action.edit.js.php
+zabbix/include/views/js/configuration.correlation.edit.js.php
 zabbix/include/views/js/configuration.discovery.edit.js.php
 zabbix/include/views/js/configuration.graph.edit.js.php
 zabbix/include/views/js/configuration.host.discovery.edit.js.php
@@ -761,6 +779,10 @@ zabbix/locale/fr/
 zabbix/locale/fr/LC_MESSAGES/
 zabbix/locale/fr/LC_MESSAGES/frontend.mo
 zabbix/locale/fr/LC_MESSAGES/frontend.po
+zabbix/locale/he/
+zabbix/locale/he/LC_MESSAGES/
+zabbix/locale/he/LC_MESSAGES/frontend.mo
+zabbix/locale/he/LC_MESSAGES/frontend.po
 zabbix/locale/hu/
 zabbix/locale/hu/LC_MESSAGES/
 zabbix/locale/hu/LC_MESSAGES/frontend.mo
@@ -854,7 +876,6 @@ zabbix/overview.php
 zabbix/popup.php
 zabbix/popup_httpstep.php
 zabbix/popup_media.php
-zabbix/popup_right.php
 zabbix/popup_trexpr.php
 zabbix/popup_usrgrp.php
 zabbix/profile.php

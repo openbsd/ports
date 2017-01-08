@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.126 2016/11/04 11:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2017/01/08 19:24:53 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		3.0.4
+VERSION =		3.2.3
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -12,7 +12,6 @@ PKGNAME-server =	zabbix-server-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-REVISION =		1
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -45,12 +44,14 @@ LIB_DEPENDS =		converters/libiconv \
 RUN_DEPENDS-main =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
+			textproc/libxml \
 			net/net-snmp \
 			textproc/iksemel
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp iksemel pthread
+WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp iksemel pthread \
+			xml2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
@@ -58,6 +59,7 @@ CONFIGURE_ARGS =	--enable-server \
 			--enable-proxy \
 			--enable-ipv6 \
 			--with-libcurl \
+			--with-libxml2 \
 			--with-net-snmp \
 			--with-ldap \
 			--with-jabber="${LOCALBASE}"
