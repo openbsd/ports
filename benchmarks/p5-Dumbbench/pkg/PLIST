@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/08 01:16:32 bluhm Exp $
+bin/dumbbench
+${P5SITE}/Benchmark/
+${P5SITE}/Benchmark/Dumb.pm
+${P5SITE}/Dumbbench/
+${P5SITE}/Dumbbench.pm
+${P5SITE}/Dumbbench/BoxPlot.pm
+${P5SITE}/Dumbbench/CPUFrequencyPinner.pm
+${P5SITE}/Dumbbench/Instance/
+${P5SITE}/Dumbbench/Instance.pm
+${P5SITE}/Dumbbench/Instance/Cmd.pm
+${P5SITE}/Dumbbench/Instance/PerlEval.pm
+${P5SITE}/Dumbbench/Instance/PerlSub.pm
+${P5SITE}/Dumbbench/Result.pm
+${P5SITE}/Dumbbench/Stats.pm
+@man man/man3p/Benchmark::Dumb.3p
+@man man/man3p/Dumbbench.3p
+@man man/man3p/Dumbbench::Instance.3p
+@man man/man3p/Dumbbench::Instance::Cmd.3p
+@man man/man3p/Dumbbench::Instance::PerlEval.3p
+@man man/man3p/Dumbbench::Instance::PerlSub.3p
