@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/11/04 22:13:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.103 2017/01/08 19:37:13 robert Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -11,8 +11,8 @@ COMMENT-mailproxy=	nginx mail proxy module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-lua=		nginx lua scripting module
-COMMENT-perl=		nginx perl scripting module		
-COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module		
+COMMENT-perl=		nginx perl scripting module
+COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
 VERSION=	1.10.2
 DISTNAME=	nginx-${VERSION}
@@ -53,12 +53,12 @@ PERMIT_PACKAGE_CDROM=	yes
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -lua -perl -passenger
 
 WANTLIB-main=		c z pcre ssl crypto
-WANTLIB-mailproxy=	
-WANTLIB-stream=		
+WANTLIB-mailproxy=
+WANTLIB-stream=
 WANTLIB-image_filter=	gd
 WANTLIB-geoip=		GeoIP
-WANTLIB-xslt=		exslt xml2 xslt 
-WANTLIB-naxsi=		
+WANTLIB-xslt=		exslt xml2 xslt
+WANTLIB-naxsi=
 WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread stdc++
