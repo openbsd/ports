@@ -1,0 +1,135 @@
+$OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
+--- conf/app.ini.orig	Thu Jan  5 14:13:52 2017
++++ conf/app.ini	Sun Jan  8 13:22:47 2017
+@@ -1,12 +1,12 @@
+ ; App name that shows on every page title
+ APP_NAME = Gitea: Git with a cup of tea
+ ; Change it if you run locally
+-RUN_USER = git
++RUN_USER = _gitea
+ ; Either "dev", "prod" or "test", default is "dev"
+-RUN_MODE = dev
++RUN_MODE = prod
+ 
+ [repository]
+-ROOT =
++ROOT = ${LOCALSTATEDIR}/gitea/gitea-repositories
+ SCRIPT_TYPE = bash
+ ; Default ANSI charset
+ ANSI_CHARSET =
+@@ -36,7 +36,7 @@ PREVIEWABLE_FILE_MODES = markdown
+ ; Whether repository file uploads are enabled. Defaults to `true`
+ ENABLED = true
+ ; Path for uploads. Defaults to `data/tmp/uploads` (tmp gets deleted on gitea restart)
+-TEMP_PATH = data/tmp/uploads
++TEMP_PATH = ${LOCALSTATEDIR}/gitea/data/tmp/uploads
+ ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
+ ALLOWED_TYPES =
+ ; Max size of each file in MB. Defaults to 3MB
+@@ -103,7 +103,7 @@ SSH_DOMAIN = %(DOMAIN)s
+ ; Network interface builtin SSH server listens on
+ SSH_LISTEN_HOST = 
+ ; Port number to be exposed in clone URL
+-SSH_PORT = 22
++SSH_PORT = 2222
+ ; Port number builtin SSH server listens on
+ SSH_LISTEN_PORT = %(SSH_PORT)s
+ ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
+@@ -125,13 +125,13 @@ DISABLE_ROUTER_LOG = false
+ ; not forget to export the private key):
+ ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
+ ; $ openssl pkcs12 -in cert.pfx -out key.pem -nocerts -nodes
+-CERT_FILE = custom/https/cert.pem
+-KEY_FILE = custom/https/key.pem
++CERT_FILE = ${LOCALSTATEDIR}/gitea/custom/https/cert.pem
++KEY_FILE = ${LOCALSTATEDIR}/gitea/custom/https/key.pem
+ ; Upper level of template and static file path
+ ; default is the path where Gitea is executed
+ STATIC_ROOT_PATH =
+ ; Default path for App data
+-APP_DATA_PATH = data
++APP_DATA_PATH = ${LOCALSTATEDIR}/gitea/data
+ ; Application level GZIP support
+ ENABLE_GZIP = false
+ ; Landing page for non-logged users, can be "home" or "explore"
+@@ -146,7 +146,7 @@ DSA     = 1024
+ 
+ [database]
+ ; Either "mysql", "postgres" or "sqlite3", it's your choice
+-DB_TYPE = mysql
++DB_TYPE = sqlite3
+ HOST = 127.0.0.1:3306
+ NAME = gitea
+ USER = root
+@@ -154,7 +154,7 @@ PASSWD =
+ ; For "postgres" only, either "disable", "require" or "verify-full"
+ SSL_MODE = disable
+ ; For "sqlite3" and "tidb", use absolute path when you start as service
+-PATH = data/gitea.db
++PATH = ${LOCALSTATEDIR}/gitea/data/gitea.db
+ 
+ [admin]
+ 
+@@ -215,8 +215,8 @@ HELO_HOSTNAME =
+ SKIP_VERIFY =
+ ; Use client certificate
+ USE_CERTIFICATE = false
+-CERT_FILE = custom/mailer/cert.pem
+-KEY_FILE = custom/mailer/key.pem
++CERT_FILE = ${LOCALSTATEDIR}/gitea/custom/mailer/cert.pem
++KEY_FILE = ${LOCALSTATEDIR}/gitea/custom/mailer/key.pem
+ ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
+ FROM =
+ ; Mailer user name and password
+@@ -237,13 +237,13 @@ HOST =
+ 
+ [session]
+ ; Either "memory", "file", or "redis", default is "memory"
+-PROVIDER = memory
++PROVIDER = file
+ ; Provider config options
+ ; memory: not have any config yet
+ ; file: session file path, e.g. `data/sessions`
+ ; redis: network=tcp,addr=:6379,password=macaron,db=0,pool_size=100,idle_timeout=180
+ ; mysql: go-sql-driver/mysql dsn config string, e.g. `root:password@/session_table`
+-PROVIDER_CONFIG = data/sessions
++PROVIDER_CONFIG = ${LOCALSTATEDIR}/gitea/data/sessions
+ ; Session cookie name
+ COOKIE_NAME = i_like_gogits
+ ; If you use session in https only, default is false
+@@ -256,7 +256,7 @@ GC_INTERVAL_TIME = 86400
+ SESSION_LIFE_TIME = 86400
+ 
+ [picture]
+-AVATAR_UPLOAD_PATH = data/avatars
++AVATAR_UPLOAD_PATH = ${LOCALSTATEDIR}/gitea/data/avatars
+ ; Chinese users can choose "duoshuo"
+ ; or a custom avatar source, like: http://cn.gravatar.com/avatar/
+ GRAVATAR_SOURCE = gravatar
+@@ -271,7 +271,7 @@ ENABLE_FEDERATED_AVATAR = false
+ ; Whether attachments are enabled. Defaults to `true`
+ ENABLE = true
+ ; Path for attachments. Defaults to `data/attachments`
+-PATH = data/attachments
++PATH = ${LOCALSTATEDIR}/gitea/data/attachments
+ ; One or more allowed types, e.g. image/jpeg|image/png
+ ALLOWED_TYPES = image/jpeg|image/png
+ ; Max size of each file. Defaults to 32MB
+@@ -286,14 +286,14 @@ MAX_FILES = 5
+ FORMAT =
+ 
+ [log]
+-ROOT_PATH =
++ROOT_PATH = ${LOCALSTATEDIR}/gitea/log
+ ; Either "console", "file", "conn", "smtp" or "database", default is "console"
+ ; Use comma to separate multiple modes, e.g. "console, file"
+-MODE = console
++MODE = file
+ ; Buffer length of channel, keep it as it is if you don't know what it is.
+ BUFFER_LEN = 10000
+ ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
+-LEVEL = Trace
++LEVEL = Info
+ 
+ ; For "console" mode only
+ [log.console]

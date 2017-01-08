@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $OpenBSD: gitea.rc,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/gitea"
+daemon_user="_gitea"
+daemon_flags="web"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "env HOME=${LOCALSTATEDIR}/gitea USER=${daemon_user} \
+		GITEA_WORK_DIR=${TRUEPREFIX}/share/gitea \
+		GITEA_CUSTOM=${SYSCONFDIR}/gitea \
+		${daemon} ${daemon_flags} ${_bg}"
+}
+
+rc_cmd $1
