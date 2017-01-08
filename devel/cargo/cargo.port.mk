@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.2 2017/01/01 18:49:58 landry Exp $
+# $OpenBSD: cargo.port.mk,v 1.3 2017/01/08 08:51:31 landry Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -81,7 +81,7 @@ MODCARGO_configure = \
 
 
 # Update crates: place all crates on the same command line.
-.if defined(MODCARGO_CRATES_UPDATE)
+.if !empty(MODCARGO_CRATES_UPDATE)
 MODCARGO_configure += \
 	${MODCARGO_CARGO_UPDATE}
 .for _crate in ${MODCARGO_CRATES_UPDATE}
