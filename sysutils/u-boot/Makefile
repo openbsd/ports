@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2016/12/11 14:08:38 patrick Exp $
+#	$OpenBSD: Makefile,v 1.12 2017/01/08 14:49:18 jsg Exp $
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
@@ -8,7 +8,7 @@ VERSION=	2016.11
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION}
 FULLPKGNAME=	${PKGNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -40,11 +40,12 @@ BOARDS=\
 	pine64_plus \
 	rpi_3
 .elif "${FLAVOR}" == "arm"
-BOARDS=\
+OMAP=\
 	omap3_beagle \
 	omap4_panda \
 	am335x_boneblack \
-	am57xx_evm \
+	am57xx_evm
+SUNXI=\
 	A10-OLinuXino-Lime \
 	A10s-OLinuXino-M \
 	A20-OLinuXino-Lime \
@@ -61,6 +62,17 @@ BOARDS=\
 	Linksprite_pcDuino \
 	Linksprite_pcDuino3 \
 	Linksprite_pcDuino3_Nano \
+	nanopi_neo \
+	Orangepi \
+	Orangepi_mini \
+	orangepi_2 \
+	orangepi_lite \
+	orangepi_one \
+	orangepi_pc \
+	orangepi_pc_plus \
+	orangepi_plus \
+	orangepi_plus2e
+IMX=\
 	cm_fx6 \
 	mx6cuboxi \
 	mx6qsabrelite \
@@ -68,7 +80,12 @@ BOARDS=\
 	novena \
 	riotboard \
 	udoo \
-	wandboard \
+	usbarmory \
+	wandboard
+BOARDS=\
+	${OMAP} \
+	${SUNXI} \
+	${IMX} \
 	rpi_2 \
 	rpi_3_32b \
 	vexpress_ca15_tc2 \

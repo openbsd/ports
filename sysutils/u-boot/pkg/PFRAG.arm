@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.1 2016/12/11 14:08:39 patrick Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.2 2017/01/08 14:49:18 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -81,6 +81,16 @@ share/u-boot/Linksprite_pcDuino3_Nano/u-boot
 share/u-boot/Linksprite_pcDuino3_Nano/u-boot-sunxi-with-spl.bin
 share/u-boot/Linksprite_pcDuino3_Nano/u-boot.bin
 share/u-boot/Linksprite_pcDuino3_Nano/u-boot.img
+share/u-boot/Orangepi/
+share/u-boot/Orangepi/u-boot
+share/u-boot/Orangepi/u-boot-sunxi-with-spl.bin
+share/u-boot/Orangepi/u-boot.bin
+share/u-boot/Orangepi/u-boot.img
+share/u-boot/Orangepi_mini/
+share/u-boot/Orangepi_mini/u-boot
+share/u-boot/Orangepi_mini/u-boot-sunxi-with-spl.bin
+share/u-boot/Orangepi_mini/u-boot.bin
+share/u-boot/Orangepi_mini/u-boot.img
 share/u-boot/am335x_boneblack/
 share/u-boot/am335x_boneblack/MLO
 share/u-boot/am335x_boneblack/u-boot
@@ -105,6 +115,11 @@ share/u-boot/mx6qsabrelite/
 share/u-boot/mx6qsabrelite/u-boot
 share/u-boot/mx6qsabrelite/u-boot.bin
 share/u-boot/mx6qsabrelite/u-boot.imx
+share/u-boot/nanopi_neo/
+share/u-boot/nanopi_neo/u-boot
+share/u-boot/nanopi_neo/u-boot-sunxi-with-spl.bin
+share/u-boot/nanopi_neo/u-boot.bin
+share/u-boot/nanopi_neo/u-boot.img
 share/u-boot/nitrogen6q/
 share/u-boot/nitrogen6q/u-boot
 share/u-boot/nitrogen6q/u-boot.bin
@@ -124,6 +139,41 @@ share/u-boot/omap4_panda/MLO
 share/u-boot/omap4_panda/u-boot
 share/u-boot/omap4_panda/u-boot.bin
 share/u-boot/omap4_panda/u-boot.img
+share/u-boot/orangepi_2/
+share/u-boot/orangepi_2/u-boot
+share/u-boot/orangepi_2/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_2/u-boot.bin
+share/u-boot/orangepi_2/u-boot.img
+share/u-boot/orangepi_lite/
+share/u-boot/orangepi_lite/u-boot
+share/u-boot/orangepi_lite/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_lite/u-boot.bin
+share/u-boot/orangepi_lite/u-boot.img
+share/u-boot/orangepi_one/
+share/u-boot/orangepi_one/u-boot
+share/u-boot/orangepi_one/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_one/u-boot.bin
+share/u-boot/orangepi_one/u-boot.img
+share/u-boot/orangepi_pc/
+share/u-boot/orangepi_pc/u-boot
+share/u-boot/orangepi_pc/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_pc/u-boot.bin
+share/u-boot/orangepi_pc/u-boot.img
+share/u-boot/orangepi_pc_plus/
+share/u-boot/orangepi_pc_plus/u-boot
+share/u-boot/orangepi_pc_plus/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_pc_plus/u-boot.bin
+share/u-boot/orangepi_pc_plus/u-boot.img
+share/u-boot/orangepi_plus/
+share/u-boot/orangepi_plus/u-boot
+share/u-boot/orangepi_plus/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_plus/u-boot.bin
+share/u-boot/orangepi_plus/u-boot.img
+share/u-boot/orangepi_plus2e/
+share/u-boot/orangepi_plus2e/u-boot
+share/u-boot/orangepi_plus2e/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_plus2e/u-boot.bin
+share/u-boot/orangepi_plus2e/u-boot.img
 share/u-boot/riotboard/
 share/u-boot/riotboard/u-boot
 share/u-boot/riotboard/u-boot.bin
@@ -139,6 +189,10 @@ share/u-boot/udoo/SPL
 share/u-boot/udoo/u-boot
 share/u-boot/udoo/u-boot.bin
 share/u-boot/udoo/u-boot.img
+share/u-boot/usbarmory/
+share/u-boot/usbarmory/u-boot
+share/u-boot/usbarmory/u-boot.bin
+share/u-boot/usbarmory/u-boot.imx
 share/u-boot/vexpress_ca15_tc2/
 share/u-boot/vexpress_ca15_tc2/u-boot
 share/u-boot/vexpress_ca15_tc2/u-boot.bin
