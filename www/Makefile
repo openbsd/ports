@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.805 2017/01/06 16:08:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.806 2017/01/08 19:21:21 robert Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -49,6 +49,7 @@
      SUBDIR += firefox-esr-i18n
      SUBDIR += firefox-i18n
      SUBDIR += gcap
+     SUBDIR += gitea
      SUBDIR += goaccess
      SUBDIR += gtkhtml4
      SUBDIR += haserl
