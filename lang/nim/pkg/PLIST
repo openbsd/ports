@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/15 00:19:59 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/09 10:32:33 juanfra Exp $
 @conflict nimrod-<0.11.2
 @pkgpath lang/nimrod
 @bin bin/nim
@@ -43,7 +43,7 @@ lib/nim/impure/re.nim
 lib/nim/impure/ssl.nim
 lib/nim/js/
 lib/nim/js/dom.nim
-lib/nim/libnimrtl.dylib
+lib/nim/js/jsconsole.nim
 lib/nim/nimbase.h
 lib/nim/nimrtl.nim
 lib/nim/nimrtl.nim.cfg
@@ -69,6 +69,7 @@ lib/nim/pure/asyncdispatch.nim.cfg
 lib/nim/pure/asyncfile.nim
 lib/nim/pure/asyncftpclient.nim
 lib/nim/pure/asynchttpserver.nim
+lib/nim/pure/asyncmacro.nim
 lib/nim/pure/asyncnet.nim
 lib/nim/pure/base64.nim
 lib/nim/pure/basic2d.nim
@@ -79,6 +80,7 @@ lib/nim/pure/collections/
 lib/nim/pure/collections/LockFreeHash.nim
 lib/nim/pure/collections/chains.nim
 lib/nim/pure/collections/critbits.nim
+lib/nim/pure/collections/deques.nim
 lib/nim/pure/collections/heapqueue.nim
 lib/nim/pure/collections/intsets.nim
 lib/nim/pure/collections/lists.nim
@@ -102,6 +104,7 @@ lib/nim/pure/cookies.nim
 lib/nim/pure/coro.nim
 lib/nim/pure/coro.nimcfg
 lib/nim/pure/db_common.nim
+lib/nim/pure/distros.nim
 lib/nim/pure/dynlib.nim
 lib/nim/pure/encodings.nim
 lib/nim/pure/endians.nim
@@ -117,6 +120,14 @@ lib/nim/pure/htmlparser.nim
 lib/nim/pure/httpclient.nim
 lib/nim/pure/httpcore.nim
 lib/nim/pure/httpserver.nim
+lib/nim/pure/includes/
+lib/nim/pure/includes/asyncfutures.nim
+lib/nim/pure/ioselectors.nim
+lib/nim/pure/ioselects/
+lib/nim/pure/ioselects/ioselectors_epoll.nim
+lib/nim/pure/ioselects/ioselectors_kqueue.nim
+lib/nim/pure/ioselects/ioselectors_poll.nim
+lib/nim/pure/ioselects/ioselectors_select.nim
 lib/nim/pure/json.nim
 lib/nim/pure/lexbase.nim
 lib/nim/pure/logging.nim
@@ -131,6 +142,7 @@ lib/nim/pure/nativesockets.nim
 lib/nim/pure/net.nim
 lib/nim/pure/nimprof.nim
 lib/nim/pure/nimprof.nim.cfg
+lib/nim/pure/nimtracker.nim
 lib/nim/pure/numeric.nim
 lib/nim/pure/oids.nim
 lib/nim/pure/options.nim
@@ -159,6 +171,7 @@ lib/nim/pure/smtp.nim
 lib/nim/pure/smtp.nim.cfg
 lib/nim/pure/stats.nim
 lib/nim/pure/streams.nim
+lib/nim/pure/strmisc.nim
 lib/nim/pure/strscans.nim
 lib/nim/pure/strtabs.nim
 lib/nim/pure/strutils.nim
@@ -204,6 +217,7 @@ lib/nim/system/gc_stack.nim
 lib/nim/system/hti.nim
 lib/nim/system/inclrtl.nim
 lib/nim/system/jssys.nim
+lib/nim/system/memtracker.nim
 lib/nim/system/mmdisp.nim
 lib/nim/system/nimscript.nim
 lib/nim/system/osalloc.nim
@@ -219,7 +233,10 @@ lib/nim/system/sysstr.nim
 lib/nim/system/threads.nim
 lib/nim/system/timers.nim
 lib/nim/system/widestrs.nim
+lib/nim/upcoming/
+lib/nim/upcoming/asyncdispatch.nim
 lib/nim/windows/
+lib/nim/windows/registry.nim
 lib/nim/windows/winlean.nim
 lib/nim/wrappers/
 lib/nim/wrappers/iup.nim
@@ -246,14 +263,12 @@ share/doc/nim/apis.txt
 share/doc/nim/astspec.txt
 share/doc/nim/backends.txt
 share/doc/nim/basicopt.txt
-share/doc/nim/docs.txt
 share/doc/nim/effects.txt
 share/doc/nim/exception_hierarchy_fragment.txt
 share/doc/nim/filelist.txt
 share/doc/nim/grammar.txt
 share/doc/nim/intern.txt
 share/doc/nim/keywords.txt
-share/doc/nim/overview.txt
 share/doc/nim/pegdocs.txt
 share/doc/nim/readme.txt
 share/doc/nim/regexprs.txt

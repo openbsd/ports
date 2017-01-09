@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/15 18:45:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2017/01/09 10:32:33 juanfra Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		statically typed, imperative programming language
 
-VERSION =		0.14.2
-REVISION =		0
+VERSION =		0.16.0
 DISTNAME =		nim-${VERSION}
 EXTRACT_SUFX =		.tar.xz
 
