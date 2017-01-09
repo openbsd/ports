@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/08 20:50:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2017/01/09 11:06:45 zhuk Exp $
 
 COMMENT=	standalone extensible Perl module installer
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Module-Install-1.08
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 # perl
