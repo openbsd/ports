@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/10/31 17:49:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/01/09 10:10:20 sthen Exp $
 @pkgpath x11/lumina/i18n
 @pkgpath x11/lumina/lumina
 bin/lte
+@bin bin/lumina-archiver
 @bin bin/lumina-calculator
 @bin bin/lumina-config
 @bin bin/lumina-desktop
@@ -14,13 +15,7 @@ bin/lte
 @bin bin/lumina-textedit
 @bin bin/lumina-xconfig
 @bin bin/start-lumina-desktop
-include/LuminaOS.h
-include/LuminaSingleApplication.h
-include/LuminaThemes.h
-include/LuminaUtils.h
-include/LuminaX11.h
-include/LuminaXDG.h
-@lib lib/libLuminaUtils.so.${LIBLuminaUtils_VERSION}
+share/applications/lumina-archiver.desktop
 share/applications/lumina-calculator.desktop
 share/applications/lumina-config.desktop
 share/applications/lumina-fileinfo.desktop
@@ -55,6 +50,68 @@ share/lumina-desktop/fluxbox-init-rc
 share/lumina-desktop/fluxbox-keys
 share/lumina-desktop/globs2
 share/lumina-desktop/i18n/
+share/lumina-desktop/i18n/l-archiver_af.qm
+share/lumina-desktop/i18n/l-archiver_ar.qm
+share/lumina-desktop/i18n/l-archiver_az.qm
+share/lumina-desktop/i18n/l-archiver_bg.qm
+share/lumina-desktop/i18n/l-archiver_bn.qm
+share/lumina-desktop/i18n/l-archiver_bs.qm
+share/lumina-desktop/i18n/l-archiver_ca.qm
+share/lumina-desktop/i18n/l-archiver_cs.qm
+share/lumina-desktop/i18n/l-archiver_cy.qm
+share/lumina-desktop/i18n/l-archiver_da.qm
+share/lumina-desktop/i18n/l-archiver_de.qm
+share/lumina-desktop/i18n/l-archiver_el.qm
+share/lumina-desktop/i18n/l-archiver_en_GB.qm
+share/lumina-desktop/i18n/l-archiver_en_ZA.qm
+share/lumina-desktop/i18n/l-archiver_es.qm
+share/lumina-desktop/i18n/l-archiver_et.qm
+share/lumina-desktop/i18n/l-archiver_eu.qm
+share/lumina-desktop/i18n/l-archiver_fa.qm
+share/lumina-desktop/i18n/l-archiver_fi.qm
+share/lumina-desktop/i18n/l-archiver_fr.qm
+share/lumina-desktop/i18n/l-archiver_fr_CA.qm
+share/lumina-desktop/i18n/l-archiver_gl.qm
+share/lumina-desktop/i18n/l-archiver_he.qm
+share/lumina-desktop/i18n/l-archiver_hi.qm
+share/lumina-desktop/i18n/l-archiver_hr.qm
+share/lumina-desktop/i18n/l-archiver_hu.qm
+share/lumina-desktop/i18n/l-archiver_id.qm
+share/lumina-desktop/i18n/l-archiver_is.qm
+share/lumina-desktop/i18n/l-archiver_it.qm
+share/lumina-desktop/i18n/l-archiver_ja.qm
+share/lumina-desktop/i18n/l-archiver_ka.qm
+share/lumina-desktop/i18n/l-archiver_ko.qm
+share/lumina-desktop/i18n/l-archiver_lt.qm
+share/lumina-desktop/i18n/l-archiver_lv.qm
+share/lumina-desktop/i18n/l-archiver_mk.qm
+share/lumina-desktop/i18n/l-archiver_mn.qm
+share/lumina-desktop/i18n/l-archiver_ms.qm
+share/lumina-desktop/i18n/l-archiver_mt.qm
+share/lumina-desktop/i18n/l-archiver_nb.qm
+share/lumina-desktop/i18n/l-archiver_nl.qm
+share/lumina-desktop/i18n/l-archiver_pa.qm
+share/lumina-desktop/i18n/l-archiver_pl.qm
+share/lumina-desktop/i18n/l-archiver_pt.qm
+share/lumina-desktop/i18n/l-archiver_pt_BR.qm
+share/lumina-desktop/i18n/l-archiver_ro.qm
+share/lumina-desktop/i18n/l-archiver_ru.qm
+share/lumina-desktop/i18n/l-archiver_sk.qm
+share/lumina-desktop/i18n/l-archiver_sl.qm
+share/lumina-desktop/i18n/l-archiver_sr.qm
+share/lumina-desktop/i18n/l-archiver_sv.qm
+share/lumina-desktop/i18n/l-archiver_sw.qm
+share/lumina-desktop/i18n/l-archiver_ta.qm
+share/lumina-desktop/i18n/l-archiver_tg.qm
+share/lumina-desktop/i18n/l-archiver_th.qm
+share/lumina-desktop/i18n/l-archiver_tr.qm
+share/lumina-desktop/i18n/l-archiver_uk.qm
+share/lumina-desktop/i18n/l-archiver_uz.qm
+share/lumina-desktop/i18n/l-archiver_vi.qm
+share/lumina-desktop/i18n/l-archiver_zh_CN.qm
+share/lumina-desktop/i18n/l-archiver_zh_HK.qm
+share/lumina-desktop/i18n/l-archiver_zh_TW.qm
+share/lumina-desktop/i18n/l-archiver_zu.qm
 share/lumina-desktop/i18n/l-calc_af.qm
 share/lumina-desktop/i18n/l-calc_ar.qm
 share/lumina-desktop/i18n/l-calc_az.qm
