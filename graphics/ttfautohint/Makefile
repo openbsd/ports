@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/30 18:52:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/09 14:41:35 sthen Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
 V =			1.6
+REVISION =		0
 DISTNAME =		ttfautohint-${V}
 CATEGORIES =		graphics
 
@@ -29,5 +30,13 @@ LIB_DEPENDS =		devel/harfbuzz
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-doc \
 			--without-qt
+
+# gnulib problem: autoconf tests run with -std=gnu99, which hides the
+# max_align_t definition (like it should), but then some of the code gets
+# compiled with -std=gnu++11, which exposes the definition.
+#
+# https://lists.gnu.org/archive/html/bug-gnulib/2016-04/msg00003.html
+
+CONFIGURE_ENV =		ac_cv_type_max_align_t=yes
 
 .include <bsd.port.mk>
