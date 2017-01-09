@@ -1,0 +1,107 @@
+$OpenBSD: patch-chessx_pro,v 1.1.1.1 2017/01/09 11:42:46 zhuk Exp $
+Use system quazip.
+--- chessx.pro.orig	Wed Feb 24 21:42:11 2016
++++ chessx.pro	Mon Dec 26 15:53:39 2016
+@@ -142,22 +142,6 @@ HEADERS += src/database/board.h \
+     src/gui/engineoptionlist.h \
+     src/gui/helpbrowser.h \
+     src/database/downloadmanager.h \
+-    src/quazip/zip.h \
+-    src/quazip/unzip.h \
+-    src/quazip/quazipnewinfo.h \
+-    src/quazip/quazipfileinfo.h \
+-    src/quazip/quazipfile.h \
+-    src/quazip/quazipdir.h \
+-    src/quazip/quazip.h \
+-    src/quazip/quazip_global.h \
+-    src/quazip/quaziodevice.h \
+-    src/quazip/quagzipfile.h \
+-    src/quazip/quacrc32.h \
+-    src/quazip/quachecksum32.h \
+-    src/quazip/quaadler32.h \
+-    src/quazip/JlCompress.h \
+-    src/quazip/ioapi.h \
+-    src/quazip/crypt.h \
+     src/gui/toolmainwindow.h \
+     src/gui/playerlistwidget.h \
+     src/gui/qled.h \
+@@ -296,18 +280,6 @@ SOURCES += src/database/board.cpp \
+     src/gui/engineoptionlist.cpp \
+     src/gui/helpbrowser.cpp \
+     src/database/downloadmanager.cpp \
+-    src/quazip/quazipnewinfo.cpp \
+-    src/quazip/quazipfile.cpp \
+-    src/quazip/quazipdir.cpp \
+-    src/quazip/quazip.cpp \
+-    src/quazip/quaziodevice.cpp \
+-    src/quazip/quagzipfile.cpp \
+-    src/quazip/quacrc32.cpp \
+-    src/quazip/quaadler32.cpp \
+-    src/quazip/qioapi.cpp \
+-    src/quazip/JlCompress.cpp \
+-    src/quazip/zip.c \
+-    src/quazip/unzip.c \
+     src/gui/toolmainwindow.cpp \
+     src/gui/playerlistwidget.cpp \
+     src/gui/qled.cpp \
+@@ -375,12 +347,48 @@ SOURCES += src/database/board.cpp \
+     src/database/filtersearch.cpp \
+     src/database/numbersearch.cpp
+ 
++!openbsd {
++HEADERS += \
++    src/quazip/zip.h \
++    src/quazip/unzip.h \
++    src/quazip/quazipnewinfo.h \
++    src/quazip/quazipfileinfo.h \
++    src/quazip/quazipfile.h \
++    src/quazip/quazipdir.h \
++    src/quazip/quazip.h \
++    src/quazip/quazip_global.h \
++    src/quazip/quaziodevice.h \
++    src/quazip/quagzipfile.h \
++    src/quazip/quacrc32.h \
++    src/quazip/quachecksum32.h \
++    src/quazip/quaadler32.h \
++    src/quazip/JlCompress.h \
++    src/quazip/ioapi.h \
++    src/quazip/crypt.h
++
++SOURCES += \
++    src/quazip/quazipnewinfo.cpp \
++    src/quazip/quazipfile.cpp \
++    src/quazip/quazipdir.cpp \
++    src/quazip/quazip.cpp \
++    src/quazip/quaziodevice.cpp \
++    src/quazip/quagzipfile.cpp \
++    src/quazip/quacrc32.cpp \
++    src/quazip/quaadler32.cpp \
++    src/quazip/qioapi.cpp \
++    src/quazip/JlCompress.cpp \
++    src/quazip/zip.c \
++    src/quazip/unzip.c
++}
++
+ TEMPLATE = app
+ INCLUDEPATH += src/database
+ INCLUDEPATH += src/guess
+ INCLUDEPATH += src/gui
+ INCLUDEPATH += src/dialogs
+-INCLUDEPATH += src/quazip
++!openbsd {
++    INCLUDEPATH += src/quazip
++}
+ INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
+ 
+ win32 {
+@@ -417,6 +425,10 @@ static {
+     CONFIG(release, debug|release) {
+         LIBS += -lz
+     }
++}
++
++openbsd {
++    LIBS += -lquazip5
+ }
+ 
+ TARGET = chessx

@@ -1,0 +1,17 @@
+ChessX is a cross-platform open source chess database. With ChessX you can
+operate on your collection of chess games in many ways: browse, edit, add,
+organize, analyze, etc.
+
+Current Features
+
+  * Multi-platform. Supports Windows, Linux and Mac OS X
+  * Load and save PGN files
+  * Work with multiple databases simultaneously
+  * Browse games, including variations
+  * Enter moves, variations, comments
+  * Play games in training mode or play out games against an engine
+  * Setup board, copy/paste FEN, merge games
+  * Search header (click on columns in GameList header)
+  * Display opening tree for current position
+  * Analyze using UCI and Winboard/Xboard Chess engines
+  * Observe and play games on FICS
