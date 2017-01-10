@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2016/12/06 22:09:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/01/10 15:10:45 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
-VERSION=	5.3.8
+VERSION=	5.3.11
+REL_V=		5.3.11.0
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
@@ -34,9 +35,7 @@ NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/UniFi
 INSTDIR=	${PREFIX}/share/unifi/
-LIB_V=		lib/4_8_18_8395
-REL_V=		5.3.8.2
-SUBST_VARS=	LIB_V REL_V
+SUBST_VARS=	REL_V
 
 post-extract:
 	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
