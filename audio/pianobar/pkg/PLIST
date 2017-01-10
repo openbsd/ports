@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/01/13 08:21:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/01/10 12:46:41 sthen Exp $
 @bin bin/pianobar
 include/piano.h
 lib/libpiano.a
@@ -6,5 +6,3 @@ lib/libpiano.a
 @man man/man1/pianobar.1
 share/examples/pianobar/
 share/examples/pianobar/config
-share/pianobar/
-share/pianobar/cert.pem

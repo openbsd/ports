@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2016/12/05 10:33:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.82 2017/01/10 12:46:41 sthen Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 
 DISTNAME =	pianobar-2016.06.02
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -55,8 +55,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pianobar
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pianobar
-	${INSTALL_DATA} ${FILESDIR}/cert.pem \
-		${PREFIX}/share/pianobar/cert.pem
 	${INSTALL_DATA} ${WRKSRC}/contrib/config-example \
 		${PREFIX}/share/examples/pianobar/config
 
