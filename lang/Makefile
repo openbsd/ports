@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2016/11/05 22:33:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.194 2017/01/10 20:29:39 jturner Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -53,6 +53,7 @@
      SUBDIR += mono
      SUBDIR += mruby
      SUBDIR += myhdl
+     SUBDIR += myrddin
      SUBDIR += nbfc
      SUBDIR += newlisp
      SUBDIR += nhc98
