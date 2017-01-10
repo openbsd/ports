@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/08/26 18:25:34 danj Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/01/10 14:43:00 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -72,6 +72,8 @@ lib/python${MODPY_VERSION}/site-packages/beets/vfs.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/
 lib/python${MODPY_VERSION}/site-packages/beetsplug/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/absubmit.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/absubmit.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/acousticbrainz.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/acousticbrainz.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/badfiles.py
