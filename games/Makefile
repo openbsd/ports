@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2017/01/09 05:38:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.342 2017/01/10 11:02:37 kirby Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -40,6 +40,7 @@
      SUBDIR += cdogs-sdl
      SUBDIR += cgames
      SUBDIR += cgoban
+     SUBDIR += chessx
      SUBDIR += childsplay
      SUBDIR += chocolate-doom
      SUBDIR += choria
