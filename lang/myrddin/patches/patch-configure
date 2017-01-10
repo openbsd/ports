@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2017/01/10 20:26:44 jturner Exp $
+--- configure.orig	Sun Jan  1 20:58:11 2017
++++ configure	Sun Jan  1 20:58:33 2017
+@@ -1,13 +1,5 @@
+ #!/bin/sh
+ 
+-for i in `seq 30`; do
+-    echo "Lots of output to emulate automake... ok"
+-    echo "Testing for things you'll never use... fail"
+-    echo "Satisfying the fortran77 lobby... ok"
+-    echo "Burning CPU time checking for the bloody obvious... ok"
+-done
+-echo "Automake emulated successfully"
+-
+ prefix="/usr/local"
+ 
+ for arg in $*; do
+@@ -104,7 +96,7 @@ echo "const Directlib = false" >> mbld/config.myr
+ echo "const Runtime = \"_myrrt.o\"" >> mbld/config.myr
+ 
+ # paths to install to
+-echo "const Manpath = \"share/man/man\"" >> mbld/config.myr
++echo "const Manpath = \"man/man\"" >> mbld/config.myr
+ echo "const Sharepath = \"share\"" >> mbld/config.myr
+ echo "const Binpath = \"bin\"" >> mbld/config.myr
+ echo "const Libpath = \"lib/myr\"" >> mbld/config.myr

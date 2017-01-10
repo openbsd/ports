@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/10 20:26:44 jturner Exp $
+@bin bin/6m
+@bin bin/mbld
+@bin bin/mdumpleak
+@bin bin/muse
+@bin bin/redump
+lib/myr/
+@bin lib/myr/_myrrt.o
+lib/myr/libbio.a
+lib/myr/libbio.use
+lib/myr/libcrypto.a
+lib/myr/libcrypto.use
+lib/myr/libdate.a
+lib/myr/libdate.use
+lib/myr/libescfmt.a
+lib/myr/libescfmt.use
+lib/myr/libfileutil.a
+lib/myr/libfileutil.use
+lib/myr/libinifile.a
+lib/myr/libinifile.use
+lib/myr/libregex.a
+lib/myr/libregex.use
+lib/myr/libstd.a
+lib/myr/libstd.use
+lib/myr/libsys.a
+lib/myr/libsys.use
+lib/myr/libtestr.a
+lib/myr/libtestr.use
+lib/myr/libthread.a
+lib/myr/libthread.use
+@man man/man1/6m.1
+@man man/man1/mbld.1
+@man man/man1/muse.1
+@man man/man3/myr-regex.3
