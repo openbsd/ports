@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2016/01/17 15:18:31 bmercer Exp $
+$OpenBSD: README,v 1.2 2017/01/10 23:45:49 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,6 +7,7 @@ $OpenBSD: README,v 1.1.1.1 2016/01/17 15:18:31 bmercer Exp $
 To run yquake2 on OpenBSD, you need the original Quake II data files.
 
 Copy *.pak and the video directory to ${TRUEPREFIX}/share/yquake2/baseq2/
-and start up yquake2. Additional information can be found here:
+or ~/.yq2/baseq2/ and start up yquake2. Additional information can be
+found here:
 
-https://github.com/yquake2/yquake2/blob/master/README#L93
+https://github.com/yquake2/yquake2/blob/master/README.md
