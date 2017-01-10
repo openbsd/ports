@@ -1,14 +1,13 @@
-#	$OpenBSD: Makefile,v 1.12 2017/01/08 14:49:18 jsg Exp $
+#	$OpenBSD: Makefile,v 1.13 2017/01/10 02:35:52 jsg Exp $
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2016.11
+VERSION=	2017.01
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION}
 FULLPKGNAME=	${PKGNAME}
-REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -22,6 +21,9 @@ PKG_ARCH=	*
 
 BUILD_DEPENDS=	devel/dtc
 MAKE_ENV=	KBUILD_VERBOSE=1
+
+MODULES=	lang/python
+MODPY_ADJ_FILES=tools/binman/binman
 
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64
@@ -71,7 +73,8 @@ SUNXI=\
 	orangepi_pc \
 	orangepi_pc_plus \
 	orangepi_plus \
-	orangepi_plus2e
+	orangepi_plus2e \
+	Sinovoip_BPI_M2_plus
 IMX=\
 	cm_fx6 \
 	mx6cuboxi \
