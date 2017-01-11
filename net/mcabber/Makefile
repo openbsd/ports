@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2016/10/13 08:40:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.29 2017/01/11 08:22:59 mestre Exp $
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-1.0.3
+DISTNAME=		mcabber-1.0.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://mcabber.com/
