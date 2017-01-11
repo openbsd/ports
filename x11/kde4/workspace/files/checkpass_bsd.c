@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: checkpass_bsd.c,v 1.2 2016/07/16 10:38:50 zhuk Exp $
+ * $OpenBSD: checkpass_bsd.c,v 1.3 2017/01/11 13:30:34 zhuk Exp $
  *
  * Copyright (c) 2012 Vadim Zhukov <persgray@gmail.com>
  *
@@ -42,7 +42,7 @@ AuthReturn Authenticate(const char *method, const char *login,
   if (!(passwd = conv(ConvGetHidden, 0)))
     return AuthAbort;
 
-  return (auth_userokay((char*)login, (char*)"passwd", NULL, passwd) ? AuthOk : AuthBad);
+  return (auth_userokay((char*)login, NULL, NULL, passwd) ? AuthOk : AuthBad);
 }
 
 #endif
