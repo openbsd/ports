@@ -1,0 +1,4 @@
+This is a plugin for setuptools that enables git integration. Once installed,
+Setuptools can be told to include in a package distribution all the files
+tracked by git. This is an alternative to explicit inclusion specifications with
+MANIFEST.in.
