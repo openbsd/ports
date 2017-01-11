@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/01/02 05:18:42 jsg Exp $
+# $OpenBSD: Makefile,v 1.35 2017/01/11 13:44:33 jasper Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -7,6 +7,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 V=		16.01
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
+REVISION=	0
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}.release
 
@@ -25,7 +26,7 @@ SHARED_LIBS +=  wxmathplot           0.1      # 0.1
 CATEGORIES=	devel x11
 DPB_PROPERTIES= parallel
 
-MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
+MAINTAINER=	Josh Grosse <josh@jggimi.net>
 HOMEPAGE=	http://www.codeblocks.org/
 
 # GPLv3

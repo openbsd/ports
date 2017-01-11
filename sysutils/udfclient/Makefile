@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/12 22:05:14 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/11 13:44:33 jasper Exp $
 
 COMMENT =	userland implementation of the UDF filesystem
 
 V =		0.8.6
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
+REVISION =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.13thmonkey.org/udfclient/
 
-MAINTAINER =	Josh Grosse <josh@jggimi.homeip.net>
+MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM =	Yes

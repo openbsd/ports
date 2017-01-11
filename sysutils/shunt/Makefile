@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/12 22:12:44 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/11 13:44:33 jasper Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
 DISTNAME=	shunt-1.7.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.serice.net/shunt/
 
-MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
+MAINTAINER=	Josh Grosse <josh@jggimi.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

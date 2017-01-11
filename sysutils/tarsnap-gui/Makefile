@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/25 14:34:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/11 13:44:33 jasper Exp $
 
 COMMENT = 		frontend to the popular Tarsnap backup service
 
 V = 			0.9
 DISTNAME =		tarsnap-gui-${V}
 CATEGORIES =		sysutils
-REVISION =		0
+REVISION =		1
 
-MAINTAINER =		Josh Grosse <josh@jggimi.homeip.net>
+MAINTAINER =		Josh Grosse <josh@jggimi.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
