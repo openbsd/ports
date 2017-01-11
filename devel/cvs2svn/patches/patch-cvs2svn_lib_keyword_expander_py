@@ -1,0 +1,37 @@
+$OpenBSD: patch-cvs2svn_lib_keyword_expander_py,v 1.1 2017/01/11 15:25:46 inoguchi Exp $
+--- cvs2svn_lib/keyword_expander.py.orig	Sat Sep 22 15:49:56 2012
++++ cvs2svn_lib/keyword_expander.py	Thu Jan  5 21:06:05 2017
+@@ -81,11 +81,24 @@ class _KeywordExpander:
+     # Would need some special handling.
+     return 'not supported by cvs2svn'
+ 
++  def mdocdate(self):
++    return '%s %d %s' % (
++        time.strftime("%B", time.gmtime(self.cvs_rev.timestamp)),
++        time.gmtime(self.cvs_rev.timestamp).tm_mday,
++        time.strftime("%Y", time.gmtime(self.cvs_rev.timestamp))
++        )
++
+   def name(self):
+     # Cannot work, as just creating a new symbol does not check out
+     # the revision again.
+     return 'not supported by cvs2svn'
+ 
++  def openbsd(self):
++    self.use_old_date_format()
++    return '%s %s %s %s Exp' % (
++        self.rcsfile(), self.cvs_rev.rev, self.date(), self.author(),
++        )
++
+   def rcsfile(self):
+     return self.cvs_rev.cvs_file.rcs_basename + ",v"
+ 
+@@ -105,7 +118,7 @@ class _KeywordExpander:
+     return 'Exp'
+ 
+ 
+-_kws = 'Author|Date|Header|Id|Locker|Log|Name|RCSfile|Revision|Source|State'
++_kws = 'Author|Date|Header|Id|Locker|Log|Mdocdate|Name|OpenBSD|RCSfile|Revision|Source|State'
+ _kw_re = re.compile(r'\$(' + _kws + r'):[^$\n]*\$')
+ _kwo_re = re.compile(r'\$(' + _kws + r')(:[^$\n]*)?\$')
+ 
