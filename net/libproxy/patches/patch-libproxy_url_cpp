@@ -1,9 +1,9 @@
-$OpenBSD: patch-libproxy_url_cpp,v 1.4 2016/01/19 16:16:38 ajacoutot Exp $
+$OpenBSD: patch-libproxy_url_cpp,v 1.5 2017/01/11 08:41:32 ajacoutot Exp $
 
 https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
 
---- libproxy/url.cpp.orig	Tue Jan 12 17:41:07 2016
-+++ libproxy/url.cpp	Tue Jan 19 16:12:18 2016
+--- libproxy/url.cpp.orig	Mon Jan  9 15:22:22 2017
++++ libproxy/url.cpp	Wed Jan 11 09:31:58 2017
 @@ -46,6 +46,10 @@
  using namespace libproxy;
  using namespace std;
@@ -15,7 +15,7 @@ https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
  // This mime type should be reported by the web server
  #define PAC_MIME_TYPE "application/x-ns-proxy-autoconfig"
  // Fall back to checking for this mime type, which servers often report wrong
-@@ -57,14 +61,22 @@ using namespace std;
+@@ -59,14 +63,22 @@ using namespace std;
  static inline int get_default_port(string scheme) {
  	struct servent *serv;
  	size_t plus = scheme.find('+');
