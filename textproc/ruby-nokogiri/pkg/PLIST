@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/11/04 21:41:54 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/01/11 20:11:29 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -7,7 +7,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.cross_rubies
 ${GEM_LIB}/gems/${DISTNAME}/.editorconfig
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
 ${GEM_LIB}/gems/${DISTNAME}/C_CODING_STYLE.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
