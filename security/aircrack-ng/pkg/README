@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2017/01/11 13:17:03 benoit Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,5 +9,5 @@ Post-installation steps
 The kismet format output from airodump-ng(1) can optionally include
 the device manufacturer. To enable this, type
 
-    $ sudo sh -c "ftp -o - http://standards.ieee.org/regauth/oui/oui.txt | \
-      grep \"(hex)\" > ${TRUEPREFIX}/share/aircrack-ng/airodump-ng-oui.txt"
+    $ ftp -o - http://standards-oui.ieee.org/oui/oui.txt | grep \(hex\) | \
+      doas tee ${TRUEPREFIX}/share/aircrack-ng/airodump-ng-oui.txt > /dev/null
