@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/11 22:28:18 tj Exp $
 
 COMMENT =	command-line .torrent file creator
 
-DISTNAME =	mktorrent-1.0
+V =		1.1
+GH_ACCOUNT =	Rudde
+GH_PROJECT =	mktorrent
+DISTNAME =	${GH_PROJECT}-${V}
+DISTFILES =	v${V}.tar.gz
 CATEGORIES =	net
-HOMEPAGE =	http://mktorrent.sourceforge.net/
-REVISION =	0
 
+HOMEPAGE =	https://github.com/Rudde/mktorrent
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c crypto pthread
-
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mktorrent/}
 
 NO_TEST =	Yes
 
