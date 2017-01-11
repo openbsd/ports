@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/01/11 08:43:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/01/11 23:28:16 ajacoutot Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
@@ -19,5 +19,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+
+BUILD_DEPENDS=		devel/py-setuptools_git
 
 .include <bsd.port.mk>
