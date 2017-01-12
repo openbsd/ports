@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libFLAC_cpu_c,v 1.1 2017/01/12 21:13:58 naddy Exp $
+--- src/libFLAC/cpu.c.orig	Wed Dec 21 21:41:21 2016
++++ src/libFLAC/cpu.c	Thu Jan 12 21:24:21 2017
+@@ -65,7 +65,7 @@ static const unsigned FLAC__CPUINFO_IA32_CPUID_SSE = 0
+ static const unsigned FLAC__CPUINFO_IA32_CPUID_SSE2 = 0x04000000;
+ #endif
+ 
+-#if FLAC__HAS_X86INTRIN || FLAC__AVX_SUPPORTED
++#if FLAC__HAS_X86INTRIN || FLAC__AVX_SUPPORTED || defined FLAC__HAS_NASM
+ /* these are flags in ECX of CPUID AX=00000001 */
+ static const unsigned FLAC__CPUINFO_IA32_CPUID_SSE3 = 0x00000001;
+ static const unsigned FLAC__CPUINFO_IA32_CPUID_SSSE3 = 0x00000200;
