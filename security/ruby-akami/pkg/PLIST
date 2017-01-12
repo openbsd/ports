@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/10 20:38:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/12 10:07:03 nigel Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -24,4 +24,29 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/akami/wsse/signature.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/akami/wsse/verify_signature.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/akami/xpath_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/wsse/
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/wsse/certs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/wsse/signature_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/wsse/verify_signature_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/akami/wsse_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/cert.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/cert2.pem
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/private_key
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/private_key2
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/signature/unsigned.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/invalid_digest_changed.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/invalid_digested_changed.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/invalid_signature_changed.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/valid.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/valid_namespaces.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/valid_sha1_gost.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/valid_sha256.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/akami/wsse/verify_signature/valid_whitespaces.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

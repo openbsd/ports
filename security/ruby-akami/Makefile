@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/10 20:38:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/12 10:07:03 nigel Exp $
 
 COMMENT =		gem to aid building Web Service Security
 
 DISTNAME =		akami-1.3.1
+REVISION =		0
 
 HOMEPAGE =		https://github.com/savonrb/akami
 
@@ -21,6 +22,6 @@ RUN_DEPENDS =		textproc/ruby-gyoku,${MODRUBY_FLAVOR} \
 MODRUBY_TEST =		rake rspec3
 
 post-install:
-	chmod -R 0644 ${PREFIX}/${GEM_LIB}/gems/${DISTNAME}/spec/
+	chmod -R u+rw,go+r-w ${PREFIX}/${GEM_LIB}/gems/${DISTNAME}/spec/
 
 .include <bsd.port.mk>
