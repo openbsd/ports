@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/12 22:29:44 sthen Exp $
 
+# python3 flavour not needed for this port; the ipaddress module
+# is available in core python 3.3+
 COMMENT =		Python 3.3's ipaddress for Python 2.6 and 2.7#'
 
 MODPY_EGG_VERSION =	1.0.17
 DISTNAME =		ipaddress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/phihag/ipaddress
 
@@ -19,9 +21,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR ?=
 
 do-test:
 	cd ${WRKSRC}; nosetests${MODPY_BIN_SUFFIX}
