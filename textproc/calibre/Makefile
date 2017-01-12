@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2016/12/25 14:34:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.56 2017/01/12 23:39:53 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			2.60.0
+V =			2.76.0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -17,8 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += EGL GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets X11 Xext Xrender
 WANTLIB += chm crypto fontconfig freetype glib-2.0 gthread-2.0
-WANTLIB += icudata icui18n icuio icuuc intl m mtp podofo pthread
-WANTLIB += usb-1.0 z ${MODPY_WANTLIB}
+WANTLIB += icudata icui18n icuio icuuc intl m podofo pthread
+WANTLIB += z ${MODPY_WANTLIB}
 
 MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v$V/
 
@@ -27,8 +26,6 @@ MODULES =		lang/python \
 
 LIB_DEPENDS=		devel/chmlib \
 			devel/gettext \
-			devel/libmtp \
-			devel/libusb1 \
 			textproc/icu4c \
 			textproc/podofo
 
@@ -85,7 +82,7 @@ pre-configure:
 	cd ${WRKSRC} && (rm -rf src/cherrypy ; \
 		find . -name '*.py' -print0 | xargs -0 perl -pi -e \
 		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
-	cd ${WRKSRC}/setup && ${SUBST_CMD} extensions.py build_environment.py
+	cd ${WRKSRC}/setup && ${SUBST_CMD} build.py build_environment.py
 	cp ${FILESDIR}/fake-xdg ${WRKDIR}/bin; chmod +x ${WRKDIR}/bin/fake-xdg
 .for i in xdg-icon-resource xdg-desktop-menu xdg-mime
 	ln -s fake-xdg ${WRKDIR}/bin/$i

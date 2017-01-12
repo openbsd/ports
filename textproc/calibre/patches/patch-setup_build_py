@@ -1,0 +1,25 @@
+$OpenBSD: patch-setup_build_py,v 1.1 2017/01/12 23:39:53 sthen Exp $
+--- setup/build.py.orig	Thu Jan 12 23:22:20 2017
++++ setup/build.py	Thu Jan 12 23:28:10 2017
+@@ -34,13 +34,6 @@ class Extension(object):
+         self.cflags = d['cflags'] = kwargs.get('cflags', [])
+         self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
+         self.optional = d['options'] = kwargs.get('optional', False)
+-        of = kwargs.get('optimize_level', None)
+-        if of is None:
+-            of = '/Ox' if iswindows else '-O3'
+-        else:
+-            flag = '/O%d' if iswindows else '-O%d'
+-            of = flag % of
+-        self.cflags.insert(0, of)
+         self.qt_private_headers = d['qt_private_headers'] = kwargs.get('qt_private', [])
+ 
+ 
+@@ -150,6 +143,7 @@ def init_env():
+         cflags.append('-pthread')
+         ldflags.append('-shared')
+         cflags.append('-I'+sysconfig.get_python_inc())
++        ldflags.append('-L'+os.path.join(sysconfig.PREFIX))
+         ldflags.append('-lpython'+sysconfig.get_python_version())
+ 
+     if isosx:

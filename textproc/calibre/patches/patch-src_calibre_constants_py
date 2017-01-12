@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_calibre_constants_py,v 1.4 2016/01/20 23:08:21 sthen Exp $
+$OpenBSD: patch-src_calibre_constants_py,v 1.5 2017/01/12 23:39:53 sthen Exp $
 
 - add OpenBSD to list of recognized BSDs.
 
 USB (and probably MTP) support needs more work, the current code only
 supports OSX, Windows, and Linux SYSFS.
 
---- src/calibre/constants.py.orig	Fri Jan 15 02:48:37 2016
-+++ src/calibre/constants.py	Wed Jan 20 22:22:01 2016
+--- src/calibre/constants.py.orig	Fri Dec 30 03:16:06 2016
++++ src/calibre/constants.py	Thu Jan 12 23:27:17 2017
 @@ -21,7 +21,8 @@ isnewosx  = isosx and getattr(sys, 'new_app_bundle', F
  isfreebsd = 'freebsd' in _plat
  isnetbsd = 'netbsd' in _plat
@@ -17,7 +17,7 @@ supports OSX, Windows, and Linux SYSFS.
  islinux   = not(iswindows or isosx or isbsd)
  isfrozen  = hasattr(sys, 'frozen')
  isunix = isosx or islinux
-@@ -158,7 +159,7 @@ class Plugins(collections.Mapping):
+@@ -167,7 +168,7 @@ class Plugins(collections.Mapping):
              plugins.extend(['winutil', 'wpd', 'winfonts'])
          if isosx:
              plugins.append('usbobserver')

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_calibre_gui2___init___py,v 1.6 2016/06/27 23:05:11 sthen Exp $
+$OpenBSD: patch-src_calibre_gui2___init___py,v 1.7 2017/01/12 23:39:53 sthen Exp $
 
 - enable --detach, used by some .desktop files
 
---- src/calibre/gui2/__init__.py.orig	Fri Jun 24 02:54:27 2016
-+++ src/calibre/gui2/__init__.py	Mon Jun 27 23:55:25 2016
-@@ -854,7 +854,7 @@ def load_builtin_fonts():
-                         _rating_font = u'calibre Symbols'
+--- src/calibre/gui2/__init__.py.orig	Fri Dec 30 03:16:06 2016
++++ src/calibre/gui2/__init__.py	Thu Jan 12 23:27:17 2017
+@@ -901,7 +901,7 @@ def load_builtin_fonts():
+ 
  
  def setup_gui_option_parser(parser):
 -    if islinux:
