@@ -1,7 +1,7 @@
-$OpenBSD: patch-libFDK_include_FDK_archdef_h,v 1.1 2015/05/18 09:48:39 czarkoff Exp $
---- libFDK/include/FDK_archdef.h.orig	Sat May 16 07:30:14 2015
-+++ libFDK/include/FDK_archdef.h	Sat May 16 07:30:17 2015
-@@ -205,7 +205,7 @@ amm-info@iis.fraunhofer.de
+$OpenBSD: patch-libFDK_include_FDK_archdef_h,v 1.2 2017/01/12 16:43:43 czarkoff Exp $
+--- libFDK/include/FDK_archdef.h.orig	Wed Jan 11 09:46:00 2017
++++ libFDK/include/FDK_archdef.h	Thu Jan 12 16:54:44 2017
+@@ -212,7 +212,7 @@ amm-info@iis.fraunhofer.de
  #define POW2COEFF_16BIT
  #define LDCOEFF_16BIT
  

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 20:28:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/12 16:43:43 czarkoff Exp $
 
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
-DISTNAME =		fdk-aac-0.1.4
-REVISION =		0
+DISTNAME =		fdk-aac-0.1.5
 CATEGORIES =		audio
 HOMEPAGE =		http://sourceforge.net/projects/opencore-amr/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
