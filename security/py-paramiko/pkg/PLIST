@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/01/04 12:25:50 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/01/12 12:14:56 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
@@ -120,6 +121,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/comment.png
+share/doc/${MODPY_PY_PREFIX}paramiko/_static/custom.css
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}paramiko/_static/down.png
