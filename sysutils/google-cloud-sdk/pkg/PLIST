@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2016/12/15 09:21:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2017/01/12 10:57:33 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/VERSION
 google-cloud-sdk/bin/
@@ -36,10 +36,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/constants.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/constants.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/operations.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/requests.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/api/requests.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/appengine_api_client.py
@@ -80,6 +76,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/operations_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/region_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/region_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtimes/
@@ -150,6 +148,15 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudbuild/snapshot.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudbuild/snapshot.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudbuild/transforms.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudbuild/transforms.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/base.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/base.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/cryptokeyversions.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/cryptokeyversions.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/iam.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudkms/iam.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudresourcemanager/__init__.pyc
@@ -193,8 +200,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/firewalls_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/firewalls_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/forwarding_rules_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/forwarding_rules_utils.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/gaia_utils.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/gaia_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/health_checks_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/health_checks_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/iam_base_classes.py
@@ -219,6 +224,11 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/networks_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/networks_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/openssl_encryption_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/openssl_encryption_utils.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/operations/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/operations/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/operations/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/operations/poller.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/operations/poller.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/path_simplifier.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/path_simplifier.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/property_selector.py
@@ -238,12 +248,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/rolling_updates_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/rolling_updates_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/scope_prompter.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/scope_prompter.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/ssh_utils.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/ssh_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/target_proxies_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/target_proxies_utils.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/time_utils.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/time_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/transforms.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/transforms.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/users/
@@ -417,8 +423,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/operations.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/predict.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/predict.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/versions.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/versions.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/versions_api.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/ml/versions_api.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/organizations/__init__.pyc
@@ -456,6 +462,11 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/source/git.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/git.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/source.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/source/source.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sourcerepo/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sourcerepo/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sourcerepo/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sourcerepo/sourcerepo.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sourcerepo/sourcerepo.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/__init__.pyc
@@ -713,6 +724,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/sole_tenant_hosts/__init
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/sole_tenant_hosts/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/sole_tenant_hosts/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/sole_tenant_hosts/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/ssh_utils.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/ssh_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/ssl_certificates/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/ssl_certificates/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/ssl_certificates/__init__.pyc
@@ -802,6 +815,10 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/dm_base.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/dm_base.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/dm_beta_base.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/dm_beta_base.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/__init__.pyc
@@ -809,6 +826,11 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_confi
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/base_commands.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/runtime_configs/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/error_reporting_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/feedback_util.py
@@ -832,6 +854,16 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/iam_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iam/iam_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/info_holder.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/info_holder.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/stream.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/stream.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/meta/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/meta/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/meta/__init__.pyc
@@ -850,10 +882,14 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_predict.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_predict.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_train.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_train.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/models_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/models_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_utilities.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_utilities.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/uploads.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/uploads.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/versions_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/versions_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/organizations/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/organizations/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/organizations/__init__.pyc
@@ -887,6 +923,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/common_flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/common_flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/completion_callbacks.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/service_management/completion_callbacks.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/__init__.pyc
@@ -907,8 +945,14 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/storage/storage_parallel.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/gaia.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/gaia.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/labels_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/labels_util.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/ssh.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/ssh.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/time_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/time_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/core/__init__.pyc
@@ -1156,16 +1200,16 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/apis_map.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/appengine_v1beta5_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/appengine_v1beta5_client.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/appengine_v1beta5_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/appengine_v1beta5_messages.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/resources.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1beta5/resources.pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine_v1beta5.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/appengine_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine/v1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/appengine_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigquery/__init__.pyc
@@ -1283,6 +1327,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudfunctions/v1beta2/clou
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudfunctions/v1beta2/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudfunctions/v1beta2/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudfunctions_v1beta2.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/cloudkms_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/cloudkms_v1beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/cloudkms_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/cloudkms_v1beta1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudkms_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudresourcemanager/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudresourcemanager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudresourcemanager/__init__.pyc
@@ -1655,6 +1712,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/v1/source_v1_client.
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/v1/source_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source/v1/source_v1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/source_v1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/sourcerepo_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/sourcerepo_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/sourcerepo_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo/v1/sourcerepo_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sourcerepo_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sqladmin/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sqladmin/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sqladmin/__init__.pyc
@@ -1976,6 +2046,15 @@ google-cloud-sdk/lib/surface/app/modules/stop.py
 google-cloud-sdk/lib/surface/app/modules/stop.pyc
 google-cloud-sdk/lib/surface/app/open_console.py
 google-cloud-sdk/lib/surface/app/open_console.pyc
+google-cloud-sdk/lib/surface/app/operations/
+google-cloud-sdk/lib/surface/app/operations/__init__.py
+google-cloud-sdk/lib/surface/app/operations/__init__.pyc
+google-cloud-sdk/lib/surface/app/operations/describe.py
+google-cloud-sdk/lib/surface/app/operations/describe.pyc
+google-cloud-sdk/lib/surface/app/operations/list.py
+google-cloud-sdk/lib/surface/app/operations/list.pyc
+google-cloud-sdk/lib/surface/app/operations/wait.py
+google-cloud-sdk/lib/surface/app/operations/wait.pyc
 google-cloud-sdk/lib/surface/app/regions/
 google-cloud-sdk/lib/surface/app/regions/__init__.py
 google-cloud-sdk/lib/surface/app/regions/__init__.pyc
@@ -2045,10 +2124,6 @@ google-cloud-sdk/lib/surface/bigtable/__init__.pyc
 google-cloud-sdk/lib/surface/bigtable/clusters/
 google-cloud-sdk/lib/surface/bigtable/clusters/__init__.py
 google-cloud-sdk/lib/surface/bigtable/clusters/__init__.pyc
-google-cloud-sdk/lib/surface/bigtable/clusters/create.py
-google-cloud-sdk/lib/surface/bigtable/clusters/create.pyc
-google-cloud-sdk/lib/surface/bigtable/clusters/delete.py
-google-cloud-sdk/lib/surface/bigtable/clusters/delete.pyc
 google-cloud-sdk/lib/surface/bigtable/clusters/list.py
 google-cloud-sdk/lib/surface/bigtable/clusters/list.pyc
 google-cloud-sdk/lib/surface/bigtable/clusters/update.py
@@ -3129,6 +3204,11 @@ google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/list.py
 google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/list.pyc
 google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/wait.py
 google-cloud-sdk/lib/surface/deployment_manager/runtime_configs/waiters/wait.pyc
+google-cloud-sdk/lib/surface/deployment_manager/type_providers/
+google-cloud-sdk/lib/surface/deployment_manager/type_providers/__init__.py
+google-cloud-sdk/lib/surface/deployment_manager/type_providers/__init__.pyc
+google-cloud-sdk/lib/surface/deployment_manager/type_providers/list.py
+google-cloud-sdk/lib/surface/deployment_manager/type_providers/list.pyc
 google-cloud-sdk/lib/surface/deployment_manager/types/
 google-cloud-sdk/lib/surface/deployment_manager/types/__init__.py
 google-cloud-sdk/lib/surface/deployment_manager/types/__init__.pyc
@@ -3240,6 +3320,8 @@ google-cloud-sdk/lib/surface/functions/event_types/__init__.py
 google-cloud-sdk/lib/surface/functions/event_types/__init__.pyc
 google-cloud-sdk/lib/surface/functions/event_types/list.py
 google-cloud-sdk/lib/surface/functions/event_types/list.pyc
+google-cloud-sdk/lib/surface/functions/get_logs.py
+google-cloud-sdk/lib/surface/functions/get_logs.pyc
 google-cloud-sdk/lib/surface/functions/list.py
 google-cloud-sdk/lib/surface/functions/list.pyc
 google-cloud-sdk/lib/surface/functions/logs/
@@ -3410,6 +3492,71 @@ google-cloud-sdk/lib/surface/info.py
 google-cloud-sdk/lib/surface/info.pyc
 google-cloud-sdk/lib/surface/init.py
 google-cloud-sdk/lib/surface/init.pyc
+google-cloud-sdk/lib/surface/kms/
+google-cloud-sdk/lib/surface/kms/__init__.py
+google-cloud-sdk/lib/surface/kms/__init__.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/
+google-cloud-sdk/lib/surface/kms/cryptokeys/__init__.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/__init__.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/add_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/create.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/create.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/describe.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/describe.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/get_iam_policy.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/get_iam_policy.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/list.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/list.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/remove_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/remove_rotation_schedule.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/remove_rotation_schedule.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_iam_policy.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_primary_version.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_primary_version.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_rotation_schedule.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/set_rotation_schedule.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/__init__.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/__init__.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/create.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/create.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/describe.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/describe.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/destroy.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/destroy.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/disable.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/disable.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/enable.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/enable.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/list.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/list.pyc
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/restore.py
+google-cloud-sdk/lib/surface/kms/cryptokeys/versions/restore.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/
+google-cloud-sdk/lib/surface/kms/keyrings/__init__.py
+google-cloud-sdk/lib/surface/kms/keyrings/__init__.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/kms/keyrings/add_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/create.py
+google-cloud-sdk/lib/surface/kms/keyrings/create.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/describe.py
+google-cloud-sdk/lib/surface/kms/keyrings/describe.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/get_iam_policy.py
+google-cloud-sdk/lib/surface/kms/keyrings/get_iam_policy.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/list.py
+google-cloud-sdk/lib/surface/kms/keyrings/list.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/kms/keyrings/remove_iam_policy_binding.pyc
+google-cloud-sdk/lib/surface/kms/keyrings/set_iam_policy.py
+google-cloud-sdk/lib/surface/kms/keyrings/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/kms/locations/
+google-cloud-sdk/lib/surface/kms/locations/__init__.py
+google-cloud-sdk/lib/surface/kms/locations/__init__.pyc
+google-cloud-sdk/lib/surface/kms/locations/list.py
+google-cloud-sdk/lib/surface/kms/locations/list.pyc
 google-cloud-sdk/lib/surface/logging/
 google-cloud-sdk/lib/surface/logging/__init__.py
 google-cloud-sdk/lib/surface/logging/__init__.pyc
@@ -4477,6 +4624,18 @@ google-cloud-sdk/lib/third_party/fancy_urllib/
 google-cloud-sdk/lib/third_party/fancy_urllib/LICENSE
 google-cloud-sdk/lib/third_party/fancy_urllib/__init__.py
 google-cloud-sdk/lib/third_party/fancy_urllib/__init__.pyc
+google-cloud-sdk/lib/third_party/fasteners/
+google-cloud-sdk/lib/third_party/fasteners/LICENSE
+google-cloud-sdk/lib/third_party/fasteners/__init__.py
+google-cloud-sdk/lib/third_party/fasteners/__init__.pyc
+google-cloud-sdk/lib/third_party/fasteners/_utils.py
+google-cloud-sdk/lib/third_party/fasteners/_utils.pyc
+google-cloud-sdk/lib/third_party/fasteners/lock.py
+google-cloud-sdk/lib/third_party/fasteners/lock.pyc
+google-cloud-sdk/lib/third_party/fasteners/process_lock.py
+google-cloud-sdk/lib/third_party/fasteners/process_lock.pyc
+google-cloud-sdk/lib/third_party/fasteners/version.py
+google-cloud-sdk/lib/third_party/fasteners/version.pyc
 google-cloud-sdk/lib/third_party/gae_ext_runtime/
 google-cloud-sdk/lib/third_party/gae_ext_runtime/LICENSE
 google-cloud-sdk/lib/third_party/gae_ext_runtime/__init__.py
@@ -4517,6 +4676,10 @@ google-cloud-sdk/lib/third_party/ipaddr/
 google-cloud-sdk/lib/third_party/ipaddr/LICENSE
 google-cloud-sdk/lib/third_party/ipaddr/__init__.py
 google-cloud-sdk/lib/third_party/ipaddr/__init__.pyc
+google-cloud-sdk/lib/third_party/monotonic/
+google-cloud-sdk/lib/third_party/monotonic/LICENSE
+google-cloud-sdk/lib/third_party/monotonic/__init__.py
+google-cloud-sdk/lib/third_party/monotonic/__init__.pyc
 google-cloud-sdk/lib/third_party/oauth2/
 google-cloud-sdk/lib/third_party/oauth2/LICENSE
 google-cloud-sdk/lib/third_party/oauth2/__init__.py
@@ -4583,6 +4746,8 @@ google-cloud-sdk/lib/third_party/oauth2client/contrib/multiprocess_file_storage.
 google-cloud-sdk/lib/third_party/oauth2client/contrib/multiprocess_file_storage.pyc
 google-cloud-sdk/lib/third_party/oauth2client/contrib/multistore_file.py
 google-cloud-sdk/lib/third_party/oauth2client/contrib/multistore_file.pyc
+google-cloud-sdk/lib/third_party/oauth2client/contrib/reauth.py
+google-cloud-sdk/lib/third_party/oauth2client/contrib/reauth.pyc
 google-cloud-sdk/lib/third_party/oauth2client/contrib/sqlalchemy.py
 google-cloud-sdk/lib/third_party/oauth2client/contrib/sqlalchemy.pyc
 google-cloud-sdk/lib/third_party/oauth2client/contrib/xsrfutil.py
@@ -5115,6 +5280,44 @@ google-cloud-sdk/lib/third_party/pygments/unistring.py
 google-cloud-sdk/lib/third_party/pygments/unistring.pyc
 google-cloud-sdk/lib/third_party/pygments/util.py
 google-cloud-sdk/lib/third_party/pygments/util.pyc
+google-cloud-sdk/lib/third_party/pyu2f/
+google-cloud-sdk/lib/third_party/pyu2f/LICENSE
+google-cloud-sdk/lib/third_party/pyu2f/__init__.py
+google-cloud-sdk/lib/third_party/pyu2f/__init__.pyc
+google-cloud-sdk/lib/third_party/pyu2f/apdu.py
+google-cloud-sdk/lib/third_party/pyu2f/apdu.pyc
+google-cloud-sdk/lib/third_party/pyu2f/convenience/
+google-cloud-sdk/lib/third_party/pyu2f/convenience/__init__.py
+google-cloud-sdk/lib/third_party/pyu2f/convenience/__init__.pyc
+google-cloud-sdk/lib/third_party/pyu2f/convenience/authenticator.py
+google-cloud-sdk/lib/third_party/pyu2f/convenience/authenticator.pyc
+google-cloud-sdk/lib/third_party/pyu2f/convenience/baseauthenticator.py
+google-cloud-sdk/lib/third_party/pyu2f/convenience/baseauthenticator.pyc
+google-cloud-sdk/lib/third_party/pyu2f/convenience/customauthenticator.py
+google-cloud-sdk/lib/third_party/pyu2f/convenience/customauthenticator.pyc
+google-cloud-sdk/lib/third_party/pyu2f/convenience/localauthenticator.py
+google-cloud-sdk/lib/third_party/pyu2f/convenience/localauthenticator.pyc
+google-cloud-sdk/lib/third_party/pyu2f/errors.py
+google-cloud-sdk/lib/third_party/pyu2f/errors.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hardware.py
+google-cloud-sdk/lib/third_party/pyu2f/hardware.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hid/
+google-cloud-sdk/lib/third_party/pyu2f/hid/__init__.py
+google-cloud-sdk/lib/third_party/pyu2f/hid/__init__.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hid/base.py
+google-cloud-sdk/lib/third_party/pyu2f/hid/base.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hid/linux.py
+google-cloud-sdk/lib/third_party/pyu2f/hid/linux.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hid/macos.py
+google-cloud-sdk/lib/third_party/pyu2f/hid/macos.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hid/windows.py
+google-cloud-sdk/lib/third_party/pyu2f/hid/windows.pyc
+google-cloud-sdk/lib/third_party/pyu2f/hidtransport.py
+google-cloud-sdk/lib/third_party/pyu2f/hidtransport.pyc
+google-cloud-sdk/lib/third_party/pyu2f/model.py
+google-cloud-sdk/lib/third_party/pyu2f/model.pyc
+google-cloud-sdk/lib/third_party/pyu2f/u2f.py
+google-cloud-sdk/lib/third_party/pyu2f/u2f.pyc
 google-cloud-sdk/lib/third_party/requests/
 google-cloud-sdk/lib/third_party/requests/LICENSE
 google-cloud-sdk/lib/third_party/requests/__init__.py
@@ -8881,6 +9084,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_app_deploy.1
 @man man/man1/gcloud_app_describe.1
 @man man/man1/gcloud_app_instances.1
+@man man/man1/gcloud_app_instances_delete.1
 @man man/man1/gcloud_app_instances_describe.1
 @man man/man1/gcloud_app_instances_disable-debug.1
 @man man/man1/gcloud_app_instances_enable-debug.1
@@ -8901,6 +9105,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_app_versions_delete.1
 @man man/man1/gcloud_app_versions_describe.1
 @man man/man1/gcloud_app_versions_list.1
+@man man/man1/gcloud_app_versions_migrate.1
 @man man/man1/gcloud_app_versions_start.1
 @man man/man1/gcloud_app_versions_stop.1
 @man man/man1/gcloud_auth.1
@@ -9210,6 +9415,14 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_container_operations_describe.1
 @man man/man1/gcloud_container_operations_list.1
 @man man/man1/gcloud_container_operations_wait.1
+@man man/man1/gcloud_dataflow.1
+@man man/man1/gcloud_dataflow_jobs.1
+@man man/man1/gcloud_dataflow_jobs_cancel.1
+@man man/man1/gcloud_dataflow_jobs_describe.1
+@man man/man1/gcloud_dataflow_jobs_drain.1
+@man man/man1/gcloud_dataflow_jobs_list.1
+@man man/man1/gcloud_dataflow_jobs_run.1
+@man man/man1/gcloud_dataflow_jobs_show.1
 @man man/man1/gcloud_dataproc.1
 @man man/man1/gcloud_dataproc_clusters.1
 @man man/man1/gcloud_dataproc_clusters_create.1
@@ -9236,6 +9449,9 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_dataproc_operations_delete.1
 @man man/man1/gcloud_dataproc_operations_describe.1
 @man man/man1/gcloud_dataproc_operations_list.1
+@man man/man1/gcloud_datastore.1
+@man man/man1/gcloud_datastore_cleanup-indexes.1
+@man man/man1/gcloud_datastore_create-indexes.1
 @man man/man1/gcloud_deployment-manager.1
 @man man/man1/gcloud_deployment-manager_deployments.1
 @man man/man1/gcloud_deployment-manager_deployments_cancel-preview.1
