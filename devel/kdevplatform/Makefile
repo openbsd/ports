@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/14 08:46:01 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/12 10:45:36 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -6,6 +6,7 @@ KDEV_V =	4.7.2
 KDEVPLAT_V =	1.7.2
 DISTNAME =	kdevplatform-${KDEVPLAT_V}
 HOMEPAGE =	http://www.kdevelop.org/
+REVISION =	0
 
 SHARED_LIBS =	kdevplatformdebugger		0.1 # 3.0
 SHARED_LIBS +=	kdevplatformdocumentation	0.1 # 3.0
@@ -40,9 +41,7 @@ WANTLIB += apr-1 aprutil-1 qjson soprano svn_client-1 svn_fs-1 svn_ra-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += grantlee_core
 
-MODULES =	x11/kde4 gcc4 devel/gettext
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c++
+MODULES =	x11/kde4 devel/gettext
 
 BUILD_DEPENDS =	devel/boost
 
