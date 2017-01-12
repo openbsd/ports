@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/10/13 10:09:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2017/01/12 14:35:01 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/achallenges.py
 lib/python${MODPY_VERSION}/site-packages/certbot/achallenges.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/auth_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/auth_handler.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/cert_manager.py
+lib/python${MODPY_VERSION}/site-packages/certbot/cert_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/cli.py
 lib/python${MODPY_VERSION}/site-packages/certbot/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/client.py
@@ -51,12 +53,12 @@ lib/python${MODPY_VERSION}/site-packages/certbot/hooks.py
 lib/python${MODPY_VERSION}/site-packages/certbot/hooks.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/log.py
-lib/python${MODPY_VERSION}/site-packages/certbot/log.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/main.py
 lib/python${MODPY_VERSION}/site-packages/certbot/main.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/notify.py
 lib/python${MODPY_VERSION}/site-packages/certbot/notify.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/ocsp.py
+lib/python${MODPY_VERSION}/site-packages/certbot/ocsp.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/__init__.pyc
@@ -109,6 +111,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/acme_util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/acme_util.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/auth_handler_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/auth_handler_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/cert_manager_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/cert_manager_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/cli_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/cli_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/client_test.py
@@ -136,20 +140,20 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.py
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/notify_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/notify_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/ocsp_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/ocsp_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/renewal_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/renewal_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/reporter_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/reporter_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/reverter_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/reverter_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/storage_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/storage_test.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/test_util.py
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-5sans.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/cert-san.pem
@@ -179,6 +183,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/p
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal-ancient.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-renewal.conf
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/webrootconftest.ini
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/util.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/util.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/util_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/util.py

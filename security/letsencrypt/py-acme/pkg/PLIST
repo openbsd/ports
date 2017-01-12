@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/10/11 15:06:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/01/12 14:35:01 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
 bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
@@ -104,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr.der
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/dsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/rsa1024_key.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/rsa2048_cert.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/rsa2048_key.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/rsa512_key.pem
