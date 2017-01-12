@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_fping_c,v 1.2 2015/12/02 12:40:04 jca Exp $
---- src/fping.c.orig	Wed Oct 21 21:02:56 2015
-+++ src/fping.c	Wed Dec  2 08:22:39 2015
-@@ -369,6 +369,9 @@ int main( int argc, char **argv )
-         setuid( getuid() );
+$OpenBSD: patch-src_fping_c,v 1.3 2017/01/12 14:28:54 sthen Exp $
+--- src/fping.c.orig	Wed Jan 11 09:07:47 2017
++++ src/fping.c	Thu Jan 12 14:28:05 2017
+@@ -375,6 +375,9 @@ int main( int argc, char **argv )
+             perror("cannot setuid");
      }
  
 +    if (pledge("stdio inet rpath dns", NULL) == -1)
 +        perror("pledge");
 +
-     prog = argv[0];
      ident = getpid() & 0xFFFF;
      verbose_flag = 1;
-@@ -561,6 +564,11 @@ int main( int argc, char **argv )
+     backoff_flag = 1;
+@@ -589,6 +592,11 @@ int main( int argc, char **argv )
          }/* SWITCH */
      }/* WHILE */
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_fping_c,v 1.2 2015/12/02 12:40:04 jca Exp $
      /* validate various option settings */
  
      if (ttl > 255) {
-@@ -776,6 +784,14 @@ int main( int argc, char **argv )
+@@ -806,6 +814,14 @@ int main( int argc, char **argv )
      else {
          usage(1);
      }
@@ -36,12 +36,12 @@ $OpenBSD: patch-src_fping_c,v 1.2 2015/12/02 12:40:04 jca Exp $
 +            perror("pledge");
 +    }
      
-     if( !num_hosts )
-         exit(1);
-@@ -1493,7 +1509,7 @@ int wait_for_reply(long wait_time)
-     ip = ( struct ip* )buffer;
+     if(!num_hosts) {
+         exit(num_noaddress ? 2 : 1);
+@@ -1623,7 +1639,7 @@ int wait_for_reply(long wait_time)
  
  #ifndef IPV6
+     ip = ( struct ip* )buffer;
 -#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ )
 +#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ ) && !defined(__OpenBSD__)
      /* The alpha headers are decidedly broken.
