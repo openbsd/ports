@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/11 20:54:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/01/12 16:36:12 zhuk Exp $
 
 COMMENT=	helper library for networking and security applications
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
 DISTNAME=	gwenhywfar-4.13.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=78\&file=01}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	gwenhywfar           1.3      # 73.1
 SHARED_LIBS +=	gwengui-gtk2         0.0      # unknown
@@ -43,5 +43,9 @@ CONFIGURE_ARGS+=	--with-guis="gtk2 qt4" \
 			qt4_libs="-L${MODQT4_LIBDIR} -Wl,-rpath-link,${X11BASE}/lib -lQtGui -lQtCore"
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/gwenhywfar-config.cmake.in \
+	             ${WRKSRC}/gui/qt4/gwengui-qt4-config.cmake.in
 
 .include <bsd.port.mk>

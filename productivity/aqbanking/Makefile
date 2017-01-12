@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/07/09 08:57:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/12 16:36:12 zhuk Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -6,7 +6,7 @@ COMMENT=	online banking interface and financial data framework
 DISTNAME=	aqbanking-5.5.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=118\&file=01}
 WRKDIST=	${WRKDIR}/aqbanking-5.5.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	aqbanking            2.0      # 39.2
 SHARED_LIBS +=	aqbankingpp          0.0      # unknown
@@ -39,5 +39,8 @@ CONFIGURE_ARGS+=	--enable-release=yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/aqbanking-config.cmake.in
 
 .include <bsd.port.mk>
