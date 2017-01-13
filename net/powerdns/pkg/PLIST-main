@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/08/31 14:25:04 florian Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2017/01/13 15:38:46 florian Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
 @pkgpath net/powerdns,-sqlite3
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
-@extraunexec rm -rf /var/pdnsd/*
 @bin bin/pdns_control
 @bin bin/pdnsutil
 @bin bin/zone2json
