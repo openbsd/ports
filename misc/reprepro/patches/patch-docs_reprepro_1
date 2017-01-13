@@ -1,0 +1,26 @@
+$OpenBSD: patch-docs_reprepro_1,v 1.1.1.1 2017/01/13 17:26:41 landry Exp $
+--- docs/reprepro.1.orig	Sat Dec 24 01:55:07 2016
++++ docs/reprepro.1	Fri Jan 13 16:56:23 2017
+@@ -1,7 +1,6 @@
+ .TH REPREPRO 1 "2013-05-04" "reprepro" REPREPRO
+ .SH NAME
+ reprepro \- produce, manage and sync a local repository of Debian packages
+-.mso www.tmac
+ .SH SYNOPSIS
+ .B reprepro \-\-help
+ 
+@@ -2724,11 +2723,10 @@ Report bugs or wishlist requests to the Debian BTS
+ .br
+ (e.g. by using \fBreportbug reprepro\fP under Debian)
+ .br
+-or directly to
+-.MTO brlink@debian.org
++or directly to brlink@debian.org.
+ .SH COPYRIGHT
+-Copyright \(co 2004,2005,2006,2007,2008,2009,2010,2011,2012
+-.URL http://www.brlink.eu "Bernhard R. Link"
++Copyright \(co 2004,2005,2006,2007,2008,2009,2010,2011,2012 Bernhard R.
++Link - http://www.brlink.eu
+ .br
+ This is free software; see the source for copying conditions. There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

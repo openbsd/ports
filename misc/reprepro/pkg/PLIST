@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/13 17:26:41 landry Exp $
+@bin bin/changestool
+@bin bin/reprepro
+@bin bin/rredtool
+@man man/man1/changestool.1
+@man man/man1/reprepro.1
+@man man/man1/rredtool.1
