@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/23 00:25:53 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/13 22:22:28 juanfra Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-0.34.6
+DISTNAME =		xroar-0.34.7
 
 CATEGORIES =		emulators
 
