@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.998 2017/01/12 22:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.999 2017/01/13 14:17:19 phessler Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -457,6 +457,7 @@
      SUBDIR += packit
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
+     SUBDIR += pbgpp
      SUBDIR += pcapdiff
      SUBDIR += pcapmerge
      SUBDIR += pchar
