@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2016/10/09 15:28:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2017/01/13 17:27:16 landry Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -85,6 +85,7 @@
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind
+     SUBDIR += reprepro
      SUBDIR += rlwrap
      SUBDIR += rocrail
      SUBDIR += rpm
