@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/13 19:15:20 landry Exp $
+@bin bin/las2las
+@bin bin/las2txt
+@bin bin/lasdiff
+@bin bin/lasindex
+@bin bin/lasinfo
+@bin bin/lasmerge
+@bin bin/lasprecision
+@bin bin/laszip
+@bin bin/txt2las
+include/lasattributer.hpp
+include/lasdefinitions.hpp
+include/lasfilter.hpp
+include/laspoint.hpp
+include/lasquantizer.hpp
+include/lasreader.hpp
+include/lasreader_asc.hpp
+include/lasreader_bil.hpp
+include/lasreader_bin.hpp
+include/lasreader_dtm.hpp
+include/lasreader_las.hpp
+include/lasreader_qfit.hpp
+include/lasreader_shp.hpp
+include/lasreader_txt.hpp
+include/lasreaderbuffered.hpp
+include/lasreadermerged.hpp
+include/lasreaderpipeon.hpp
+include/lastransform.hpp
+include/lasutility.hpp
+include/laswaveform13reader.hpp
+include/laswaveform13writer.hpp
+include/laswriter.hpp
+include/laswriter_bin.hpp
+include/laswriter_las.hpp
+include/laswriter_qfit.hpp
+include/laswriter_txt.hpp
+include/laswriter_wrl.hpp
+include/laswritercompatible.hpp
+include/laszip.hpp
+include/mydefs.hpp
+lib/liblas.a
+share/doc/lastools/
+share/doc/lastools/las2las_README.txt
+share/doc/lastools/las2txt_README.txt
+share/doc/lastools/lasdiff_README.txt
+share/doc/lastools/lasindex_README.txt
+share/doc/lastools/lasinfo_README.txt
+share/doc/lastools/lasmerge_README.txt
+share/doc/lastools/lasprecision_README.txt
+share/doc/lastools/laszip_README.txt
+share/doc/lastools/txt2las_README.txt
