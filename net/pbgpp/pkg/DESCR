@@ -1,0 +1,4 @@
+A PCAP parser to decode BGP messages collected with tcpdump. The parser
+reads PCAP input from file system, stdin, or by listening on a network
+interface. Furthermore, the parser is able to use several output filters
+and pipes to tailor the output for your individual needs.
