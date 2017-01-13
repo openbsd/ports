@@ -1,0 +1,8 @@
+displaz is a cross platform viewer for displaying lidar point clouds and
+derived artifacts such as fitted meshes. The interface was originally developed
+for viewing large airborne laser scans, but also works quite well for point
+clouds acquired using terrestrial lidar and other sources such as bathymetric
+sonar.
+
+The goal is to provide a flexible and programmable technical tool for exploring
+large lidar point data sets and derived geometry.
