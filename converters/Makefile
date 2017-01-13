@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/11/02 12:33:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.87 2017/01/13 19:17:52 landry Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -10,6 +10,7 @@
     SUBDIR += html2text
     SUBDIR += html2wml
     SUBDIR += ish
+    SUBDIR += lastools
     SUBDIR += libdvdcss
     SUBDIR += libiconv
     SUBDIR += libpst

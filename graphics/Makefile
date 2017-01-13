@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2017/01/06 16:08:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.428 2017/01/13 19:17:52 landry Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -37,6 +37,7 @@
      SUBDIR += delaboratory
      SUBDIR += dia
      SUBDIR += discwrapper
+     SUBDIR += displaz
      SUBDIR += djview4
      SUBDIR += djvulibre
      SUBDIR += dmtx-utils
