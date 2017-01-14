@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-egl_context-c,v 1.1.1.1 2016/04/26 15:30:50 jca Exp $
---- src/egl_context.c.orig	Mon Oct 12 21:09:07 2015
-+++ src/egl_context.c	Tue Apr 26 14:59:36 2016
-@@ -488,6 +488,8 @@ int _glfwCreateContext(_GLFWwindow* window,
+$OpenBSD: patch-src-egl_context-c,v 1.2 2017/01/14 17:29:45 danj Exp $
+--- src/egl_context.c.orig	Thu Aug 18 07:32:27 2016
++++ src/egl_context.c	Fri Jan 13 21:20:41 2017
+@@ -615,6 +615,8 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
          {
  #if defined(_GLFW_WIN32)
  #elif defined(_GLFW_COCOA)
