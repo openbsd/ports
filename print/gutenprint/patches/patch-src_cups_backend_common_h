@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_cups_backend_common_h,v 1.1 2017/01/14 17:15:51 ajacoutot Exp $
+--- src/cups/backend_common.h.orig	Sat Jan 14 18:07:29 2017
++++ src/cups/backend_common.h	Sat Jan 14 18:07:44 2017
+@@ -38,6 +38,16 @@
+ #include <libusb.h>
+ #include <arpa/inet.h>
+ 
++#ifndef __BYTE_ORDER
++#define __BYTE_ORDER _BYTE_ORDER
++#endif
++#ifndef __BIG_ENDIAN
++#define __BIG_ENDIAN _BIG_ENDIAN
++#endif
++#ifndef __LITTLE_ENDIAN
++#define __LITTLE_ENDIAN _LITTLE_ENDIAN
++#endif
++
+ #ifndef __BACKEND_COMMON_H
+ #define __BACKEND_COMMON_H
+ 

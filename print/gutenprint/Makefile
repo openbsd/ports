@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2016/07/08 16:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2017/01/14 17:15:51 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
-V=			5.2.11
-REVISION=		0
+V=			5.2.12
 DISTNAME=		gutenprint-${V}
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,19 +21,16 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common c cups cupsimage dbus-1
-WANTLIB += ijs m ncurses pthread readline usb-1.0 z
-WANTLIB += ffi gmp gnutls hogweed nettle p11-kit tasn1 idn
+WANTLIB += avahi-client avahi-common c cups cupsimage dbus-1 ffi
+WANTLIB += gmp gnutls hogweed iconv idn intl m ncurses nettle
+WANTLIB += p11-kit pthread readline tasn1 usb-1.0 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
-
-MODULES=		devel/gettext
 
 BUILD_DEPENDS=		print/foomatic-db-engine
 
 LIB_DEPENDS=		devel/libusb1 \
-			print/cups,-libs \
-			print/ijs
+			print/cups,-libs
 
 # foomatic-rip(1), foomatic-db(-engine)
 RUN_DEPENDS +=		print/cups-filters
@@ -43,11 +39,11 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
-                        --enable-cups-ppds-at-top-level \
-                        --disable-translated-cups-ppds \
-                        --disable-libgutenprintui2 \
-                        --with-cups=${LOCALBASE} \
-                        --without-gimp2
+			--enable-cups-ppds-at-top-level \
+			--disable-translated-cups-ppds \
+			--disable-libgutenprintui2 \
+			--with-cups=${LOCALBASE} \
+			--without-gimp2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -62,6 +58,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
 	mv ${PREFIX}/share/gutenprint/doc \
 		${PREFIX}/share/doc/gutenprint
-	rm ${PREFIX}/share/foomatic/kitload.log
 
 .include <bsd.port.mk>
