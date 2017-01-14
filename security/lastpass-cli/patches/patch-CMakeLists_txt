@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/01/07 12:58:53 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/01/14 02:12:10 danj Exp $
 --- CMakeLists.txt.orig	Tue Jan  3 22:19:00 2017
 +++ CMakeLists.txt	Wed Jan  4 09:07:14 2017
 @@ -45,7 +45,7 @@ file(GLOB PROJECT_SOURCES *.c)
@@ -10,12 +10,3 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2017/01/07 12:58:53 jasper Exp $
  if(APPLE)
    set(PROJECT_FLAGS "${PROJECT_FLAGS} -Wno-deprecated-declarations")
  endif()
-@@ -56,7 +56,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
-   COMPILE_FLAGS ${PROJECT_FLAGS}
-   COMPILE_DEFINITIONS ${PROJECT_DEFINITIONS}
- )
--target_link_libraries(${PROJECT_NAME} ${LIBXML2_LIBRARIES} ${OPENSSL_LIBRARIES} ${CURL_LIBRARIES})
-+target_link_libraries(${PROJECT_NAME} ${LIBXML2_LIBRARIES} ${OPENSSL_LIBRARIES} ${CURL_LIBRARIES} "-lkvm")
- 
- add_custom_command(OUTPUT lpass.1 DEPENDS ${CMAKE_SOURCE_DIR}/lpass.1.txt
-         COMMAND a2x -D ./ --no-xmllint -f manpage ${CMAKE_SOURCE_DIR}/lpass.1.txt)
