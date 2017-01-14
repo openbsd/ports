@@ -1,0 +1,15 @@
+$OpenBSD: patch-po_ru_kmymoney_po,v 1.1 2017/01/14 11:19:04 zhuk Exp $
+Add new Belarusian Ruble (since mid 2016): 1 BYN = 10,000 BYR.
+--- po/ru/kmymoney.po.orig	Tue Jun 14 22:16:58 2016
++++ po/ru/kmymoney.po	Thu Jan 12 19:38:36 2017
+@@ -15099,6 +15099,10 @@ msgstr "Словацкая крона"
+ msgid "Lithuanian Litas"
+ msgstr "Литовский лит"
+ 
++#: kmymoney/views/kmymoneyview.cpp:1711
++msgid "Belarusian Ruble (old)"
++msgstr "Белорусский рубль (неденоминированный)"
++
+ #: kmymoney/views/kmymoneyview.cpp:2011
+ #, kde-format
+ msgid ""

@@ -1,0 +1,23 @@
+$OpenBSD: patch-kmymoney_views_kmymoneyview_cpp,v 1.1 2017/01/14 11:19:04 zhuk Exp $
+Add new Belarusian Ruble (since mid 2016): 1 BYN = 10,000 BYR.
+--- kmymoney/views/kmymoneyview.cpp.orig	Tue Jun 14 22:16:15 2016
++++ kmymoney/views/kmymoneyview.cpp	Thu Jan 12 19:38:36 2017
+@@ -1508,7 +1508,7 @@ void KMyMoneyView::loadDefaultCurrencies()
+   loadDefaultCurrency(MyMoneySecurity("BDT", i18n("Bangladeshi Taka")), create);
+   loadDefaultCurrency(MyMoneySecurity("BBD", i18n("Barbados Dollar"),        "$"), create);
+   loadDefaultCurrency(MyMoneySecurity("BTC", i18n("Bitcoin"),                "BTC"), create);
+-  loadDefaultCurrency(MyMoneySecurity("BYR", i18n("Belarusian Ruble"),       "BYR", 1, 1), create);
++  loadDefaultCurrency(MyMoneySecurity("BYN", i18n("Belarusian Ruble"),       "Br"), create);
+   loadDefaultCurrency(MyMoneySecurity("BZD", i18n("Belize Dollar"),          "$"), create);
+   loadDefaultCurrency(MyMoneySecurity("BMD", i18n("Bermudian Dollar"),       "$"), create);
+   loadDefaultCurrency(MyMoneySecurity("BTN", i18n("Bhutan Ngultrum")), create);
+@@ -1725,6 +1725,9 @@ void KMyMoneyView::loadAncientCurrencies()
+ 
+   // Source: https://en.wikipedia.org/wiki/Litas
+   loadAncientCurrency("LTL", i18n("Lithuanian Litas"), "Lt", QDate(2015, 1, 1), MyMoneyMoney(100000, 345280), "EUR");
++
++  // Source: https://en.wikipedia.org/wiki/Belarusian_ruble
++  loadAncientCurrency("BYR", i18n("Belarusian Ruble (old)"), "BYR", QDate(2016, 7, 1), MyMoneyMoney(1, 10000), "BYN");
+ }
+ 
+ void KMyMoneyView::viewAccountList(const QString& /*selectAccount*/)

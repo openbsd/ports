@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/01/14 11:19:04 zhuk Exp $
+Unbreak configuring: there is no separate gwengui-cpp CMake config.
+--- CMakeLists.txt.orig	Tue Jun 14 22:17:54 2016
++++ CMakeLists.txt	Thu Jan 12 19:42:47 2017
+@@ -177,11 +177,11 @@ option(ENABLE_KBANKING "Enable KBanking plugin" ON)
+ if(ENABLE_KBANKING)
+   find_package(GWENHYWFAR CONFIG "4.13.0")
+   find_package(gwengui-qt4 CONFIG "4.13.0")
+-  find_package(gwengui-cpp CONFIG "4.13.0")
++  #no such package find_package(gwengui-cpp CONFIG "4.13.0")
+   message(STATUS "Gwenhywfar ${GWENHYWFAR_VERSION} found at ${GWENHYWFAR_INCLUDE_DIRS} (${GWENHYWFAR_LIBRARIES})")
+   find_package(AQBANKING CONFIG "5.5.1")
+   message(STATUS "AqBanking ${AQBANKING_VERSION} found at ${AQBANKING_INCLUDE_DIRS} (${AQBANKING_LIBRARIES})")
+-  if (AQBANKING_FOUND AND GWENHYWFAR_FOUND AND gwengui-qt4_FOUND AND gwengui-cpp_FOUND)
++  if (AQBANKING_FOUND AND GWENHYWFAR_FOUND AND gwengui-qt4_FOUND)
+     set(KBANKING_FOUND ON)
+   else ()
+     if(NOT KBANKING_FOUND STREQUAL "AUTO")

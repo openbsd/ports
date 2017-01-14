@@ -1,0 +1,33 @@
+$OpenBSD: patch-kmymoney_plugins_onlinetasks_sepa_CMakeLists_txt,v 1.1 2017/01/14 11:19:04 zhuk Exp $
+--- kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt.orig	Fri Jan 13 18:59:04 2017
++++ kmymoney/plugins/onlinetasks/sepa/CMakeLists.txt	Fri Jan 13 19:00:13 2017
+@@ -27,21 +27,21 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kmymoney-se
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kmymoney-sepastorageplugin.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/kmymoney-sepastorageplugin.desktop)
+ 
+ target_link_libraries( konlinetasks_sepa
++  payeeidentifier_nationalAccount
++  payeeidentifier_iban_bic_widgets
++  onlinetask_interfaces
+   kmm_mymoney
+   kmm_widgets
+   kmm_config
+   kmm_plugin
+   kmm_utils_validators
+-  onlinetask_interfaces
+-  payeeidentifier_nationalAccount
+-  payeeidentifier_iban_bic_widgets
+-  ${QT_QTCORE_LIBRARIES}
+-  ${QT_QTGUI_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+-  ${KDE4_KDEUI_LIBS}
++  ${LIBALKIMIA_LIBRARY}
+   ${KDE4_KIO_LIBS}
++  ${KDE4_KDEUI_LIBS}
++  ${KDE4_KDECORE_LIBS}
++  ${QT_QTGUI_LIBRARIES}
+   ${QT_QTXML_LIBRARY}
+-  ${LIBALKIMIA_LIBRARY}
++  ${QT_QTCORE_LIBRARIES}
+   ${GMP_LIBRARIES} # TODO: remove when alkimia cmake config file got fixed
+ )
+ 
