@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/01/03 19:27:52 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2017/01/14 18:03:42 shadchin Exp $
 
 COMMENT=		Natural Language ToolKit
 
-MODPY_EGG_VERSION =	3.2.1
+MODPY_EGG_VERSION =	3.2.2
 DISTNAME=		nltk-${MODPY_EGG_VERSION}
 PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		0
 
 EPOCH =			0
 
@@ -23,11 +22,12 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS=		textproc/py-yaml${MODPY_FLAVOR}
-RUN_DEPENDS=		graphics/py-matplotlib${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
+			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/prover9/p9m4 \
 			textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-parsing${MODPY_FLAVOR}
 
 FLAVORS =		python3
