@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/30 20:29:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/15 00:57:00 jsg Exp $
 
-BROKEN-amd64=		build hangs regularly
-BROKEN-i386=		build hangs regularly
+BROKEN=			build hangs regularly
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 
