@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/01/14 17:15:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/01/15 22:29:46 nigel Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
@@ -57,36 +57,6 @@ share/doc/gutenprint/ChangeLog
 share/doc/gutenprint/FAQ.html
 share/doc/gutenprint/NEWS
 share/doc/gutenprint/README
-share/doc/gutenprint/doc/
-share/doc/gutenprint/doc/AUTHORS
-share/doc/gutenprint/doc/COPYING
-share/doc/gutenprint/doc/ChangeLog
-share/doc/gutenprint/doc/FAQ.html
-share/doc/gutenprint/doc/NEWS
-share/doc/gutenprint/doc/README
-share/doc/gutenprint/doc/gutenprint-users-manual.odt
-share/doc/gutenprint/doc/gutenprint-users-manual.pdf
-share/doc/gutenprint/doc/gutenprint.pdf
-share/doc/gutenprint/doc/reference-html/
-share/doc/gutenprint/doc/reference-html/book1.html
-share/doc/gutenprint/doc/reference-html/c1714.html
-share/doc/gutenprint/doc/reference-html/c193.html
-share/doc/gutenprint/doc/reference-html/c1965.html
-share/doc/gutenprint/doc/reference-html/c199.html
-share/doc/gutenprint/doc/reference-html/c38.html
-share/doc/gutenprint/doc/reference-html/c463.html
-share/doc/gutenprint/doc/reference-html/c47.html
-share/doc/gutenprint/doc/reference-html/docbook.css
-share/doc/gutenprint/doc/reference-html/f14.html
-share/doc/gutenprint/doc/reference-html/gpl-terms.html
-share/doc/gutenprint/doc/reference-html/gpl.html
-share/doc/gutenprint/doc/reference-html/ln10.html
-share/doc/gutenprint/doc/reference-html/x1666.html
-share/doc/gutenprint/doc/reference-html/x1731.html
-share/doc/gutenprint/doc/reference-html/x270.html
-share/doc/gutenprint/doc/reference-html/x66.html
-share/doc/gutenprint/doc/reference-html/x78.html
-share/doc/gutenprint/doc/reference-html/x952.html
 share/doc/gutenprint/gutenprint-users-manual.odt
 share/doc/gutenprint/gutenprint-users-manual.pdf
 share/doc/gutenprint/gutenprint.pdf
