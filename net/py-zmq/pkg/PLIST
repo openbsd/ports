@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/10/07 21:49:09 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/01/15 13:28:04 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
@@ -74,7 +74,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/message.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/message.so
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/socket.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/socket.so
-lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/utils.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/utils.so
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/select.py
 lib/python${MODPY_VERSION}/site-packages/zmq/decorators.py
@@ -173,6 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}context.${MOD
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}frame.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}poll.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}socket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}stopwatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}tracker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/attrsettr.py
@@ -181,6 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/sugar/context.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/frame.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/poll.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/socket.py
+lib/python${MODPY_VERSION}/site-packages/zmq/sugar/stopwatch.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/tracker.py
 lib/python${MODPY_VERSION}/site-packages/zmq/sugar/version.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/
@@ -197,6 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_error.${
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_etc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_future.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_imports.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_includes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_ioloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_message.${MODPY_PYC_MAGIC_TAG}pyc
@@ -211,7 +213,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_retry_ei
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_security.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_socket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_ssh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_stopwatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_win32_shim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_z85.${MODPY_PYC_MAGIC_TAG}pyc
@@ -234,6 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_error.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_etc.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_future.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_imports.py
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_includes.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_ioloop.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_log.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_message.py
@@ -248,7 +250,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_retry_eintr.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_security.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_socket.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_ssh.py
-lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_stopwatch.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_win32_shim.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_z85.py
