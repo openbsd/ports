@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/21 20:05:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/15 13:50:53 landry Exp $
 @bin bin/dustrac-editor
 @bin bin/dustrac-game
+share/appdata/
+share/appdata/dustrac.appdata.xml
 share/applications/dustrac-editor.desktop
 share/applications/dustrac-game.desktop
 share/dustrac/
@@ -105,6 +107,13 @@ share/dustrac/images/trackSelectionBack.png
 share/dustrac/images/tree.png
 share/dustrac/images/wood.png
 share/dustrac/levels/
+share/dustrac/levels/Desert Storm.trk
+share/dustrac/levels/Diamond.trk
+share/dustrac/levels/Far Lands.trk
+share/dustrac/levels/Figure 8.trk
+share/dustrac/levels/Radiator.trk
+share/dustrac/levels/Twineburg.trk
+share/dustrac/levels/Western Valley.trk
 share/dustrac/levels/curvastone.trk
 share/dustrac/levels/infinity.trk
 share/dustrac/levels/monza.trk
@@ -130,10 +139,12 @@ share/dustrac/sounds/skid.ogg
 share/dustrac/surfaces.conf
 share/dustrac/translations/
 share/dustrac/translations/dustrac-editor_cs.qm
+share/dustrac/translations/dustrac-editor_de.qm
 share/dustrac/translations/dustrac-editor_fi.qm
 share/dustrac/translations/dustrac-editor_fr.qm
 share/dustrac/translations/dustrac-editor_it.qm
 share/dustrac/translations/dustrac-game_cs.qm
+share/dustrac/translations/dustrac-game_de.qm
 share/dustrac/translations/dustrac-game_fi.qm
 share/dustrac/translations/dustrac-game_fr.qm
 share/dustrac/translations/dustrac-game_it.qm

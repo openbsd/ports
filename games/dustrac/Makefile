@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/15 13:50:53 landry Exp $
 
 COMMENT =		traditional top-down car racing game
 
-V =			1.11.0
+V =			1.12.0
 DISTNAME =		dustrac-$V
-REVISION =		1
 
 CATEGORIES =		games
 
