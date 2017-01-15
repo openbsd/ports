@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: dnsdist.rc,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/dnsdist -d -u _dnsdist"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

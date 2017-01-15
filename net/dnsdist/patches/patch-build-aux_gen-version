@@ -1,0 +1,15 @@
+$OpenBSD: patch-build-aux_gen-version,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
+--- build-aux/gen-version.orig	Sun Jan 15 14:45:58 2017
++++ build-aux/gen-version	Sun Jan 15 14:47:13 2017
+@@ -1,5 +1,11 @@
+ #!/bin/sh
+ VERSION="unknown"
++if [ -f .version ]; then
++  VERSION="$(cat .version)"
++fi
++printf $VERSION
++exit 0
++
+ 
+ DIRTY=""
+ git status | grep -q clean || DIRTY='.dirty'

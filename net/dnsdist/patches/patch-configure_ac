@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
+--- configure.ac.orig	Thu Jan 12 21:38:07 2017
++++ configure.ac	Thu Jan 12 21:38:11 2017
+@@ -81,7 +81,7 @@ PROGRAM_LDFLAGS="$PIE_LDFLAGS $PROGRAM_LDFLAGS"
+ AC_SUBST([PROGRAM_LDFLAGS])
+ 
+ AC_SUBST([AM_CPPFLAGS],
+-  ["AS_ESCAPE([-I$(top_builddir) -I$(top_srcdir)]) -Wall -O3 -pthread $BOOST_CPPFLAGS"]
++  ["AS_ESCAPE([-I$(top_builddir) -I$(top_srcdir)]) -Wall -pthread $BOOST_CPPFLAGS"]
+ )
+ 
+ AC_CONFIG_FILES([Makefile
