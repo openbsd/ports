@@ -1,7 +1,7 @@
-$OpenBSD: patch-Common_Base_Ogre_BaseManager_cpp,v 1.1.1.1 2015/12/27 21:13:16 kirby Exp $
---- Common/Base/Ogre/BaseManager.cpp.orig	Wed Feb 29 01:46:38 2012
-+++ Common/Base/Ogre/BaseManager.cpp	Thu Jul 18 11:43:31 2013
-@@ -54,7 +54,7 @@ namespace base
+$OpenBSD: patch-Common_Base_Ogre_BaseManager_cpp,v 1.2 2017/01/16 11:13:51 kirby Exp $
+--- Common/Base/Ogre/BaseManager.cpp.orig	Mon Jan 26 18:32:35 2015
++++ Common/Base/Ogre/BaseManager.cpp	Mon Jan 16 14:02:27 2017
+@@ -55,7 +55,7 @@ namespace base
  		#if MYGUI_PLATFORM == MYGUI_PLATFORM_APPLE
  			mResourcePath = macBundlePath() + "/Contents/Resources/";
  		#else
@@ -10,8 +10,8 @@ $OpenBSD: patch-Common_Base_Ogre_BaseManager_cpp,v 1.1.1.1 2015/12/27 21:13:16 k
  		#endif
  	}
  
-@@ -65,12 +65,16 @@ namespace base
- 	bool BaseManager::create()
+@@ -66,12 +66,16 @@ namespace base
+ 	bool BaseManager::create(int _width, int _height)
  	{
  		Ogre::String pluginsPath;
 +		char *homedir;
