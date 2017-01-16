@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2017/01/10 15:10:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/01/16 22:02:30 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
-VERSION=	5.3.11
-REL_V=		5.3.11.0
+VERSION=	5.4.9
+MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
+REL_V=		5.4.9.1
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
@@ -20,8 +21,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	http://www.ubnt.com/eula/
 PERMIT_PACKAGE_FTP=	http://www.ubnt.com/eula/
 PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
-
-MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
 
 MODULES=	java
 MODJAVA_VER=	1.8+
