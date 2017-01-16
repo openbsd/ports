@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2017/01/05 08:42:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2017/01/16 20:30:33 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
@@ -6,7 +6,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.22.6
+GNOME_VERSION=		3.22.7
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
