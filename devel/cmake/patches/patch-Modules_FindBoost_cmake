@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindBoost_cmake,v 1.12 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindBoost.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindBoost.cmake	Fri Nov 25 22:31:44 2016
-@@ -867,6 +867,22 @@ function(_Boost_MISSING_DEPENDENCIES componentvar extr
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.13 2017/01/16 08:51:50 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Fri Jan 13 15:05:41 2017
++++ Modules/FindBoost.cmake	Mon Jan 16 09:12:56 2017
+@@ -884,6 +884,22 @@ function(_Boost_MISSING_DEPENDENCIES componentvar extr
    set(${extravar} ${_boost_extra_components} PARENT_SCOPE)
  endfunction()
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-Modules_FindBoost_cmake,v 1.12 2016/11/28 09:15:13 dcoppa Exp $
  #
  # Update library search directory hint variable with paths used by prebuilt boost binaries.
  #
-@@ -1788,6 +1804,8 @@ if(Boost_FOUND)
+@@ -1807,6 +1823,8 @@ if(Boost_FOUND)
        list(APPEND Boost_LIBRARIES ${Boost_${UPPERCOMPONENT}_LIBRARY})
      endif()
    endforeach()
