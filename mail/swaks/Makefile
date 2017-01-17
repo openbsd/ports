@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/01/17 06:42:06 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2017/01/17 06:46:39 jca Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
 DISTNAME=	swaks-20170101.0
+
 CATEGORIES=	mail
 
 HOMEPAGE=	http://jetmore.org/john/code/swaks/
@@ -10,7 +11,7 @@ MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	net/p5-Net-DNS \
@@ -19,7 +20,9 @@ RUN_DEPENDS=	net/p5-Net-DNS \
 		security/p5-Authen-NTLM \
 		net/p5-IO-Socket-INET6
 
-NO_TEST=	YES
+NO_TEST=	Yes
+
+PKG_ARCH=	*
 
 do-build:
 	cd ${WRKSRC} && pod2man swaks swaks.1
