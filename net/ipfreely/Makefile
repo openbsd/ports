@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/01/17 16:18:18 jca Exp $
 
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://ipfreely.sourceforge.net/
-
-MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

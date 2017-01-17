@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2017/01/17 16:16:02 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/01/17 16:18:18 jca Exp $
 
 COMMENT=		simple BitTorrent implementation
 
 DISTNAME=		unworkable-0.53
 EPOCH=			0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		https://github.com/niallo/Unworkable
-
-MAINTAINER=		Niall O Higgins <niallo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
