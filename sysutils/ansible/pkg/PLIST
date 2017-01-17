@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/11/02 09:07:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/01/17 19:23:41 jasper Exp $
 bin/ansible
 bin/ansible-console
 bin/ansible-doc
@@ -2334,6 +2334,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/service.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/service.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/set_fact.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/set_fact.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/set_stats.py
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/set_stats.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/sros_config.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/sros_config.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/action/synchronize.py
