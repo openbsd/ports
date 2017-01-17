@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/01/07 00:01:19 jca Exp $
-
-PORTROACH=	site:http://jetmore.org/john/code/swaks/versions.html
+# $OpenBSD: Makefile,v 1.16 2017/01/17 06:37:02 jca Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
