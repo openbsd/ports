@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2016/12/22 10:52:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2017/01/17 07:49:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}config.${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
@@ -174,6 +175,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/config/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/2012-10-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/2012-10-29/paginators-1.json
@@ -511,6 +515,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/docs/sharedexample.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/waiter.py
 lib/python${MODPY_VERSION}/site-packages/botocore/endpoint.py
+lib/python${MODPY_VERSION}/site-packages/botocore/errorfactory.py
 lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/handlers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/hooks.py
