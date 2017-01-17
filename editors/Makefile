@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2016/12/10 16:49:09 edd Exp $
+# $OpenBSD: Makefile,v 1.121 2017/01/17 13:00:00 awolk Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -22,6 +22,7 @@
      SUBDIR += focuswriter
      SUBDIR += fte
      SUBDIR += ged
+     SUBDIR += ghostwriter
      SUBDIR += gummi
      SUBDIR += hexcurse
      SUBDIR += hexedit
