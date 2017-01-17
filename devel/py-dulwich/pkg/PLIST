@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/06/14 09:55:31 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/01/17 02:57:09 czarkoff Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
 bin/dulwich
@@ -27,8 +27,12 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/paramiko_vendor.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/paramiko_vendor.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/release_robot.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/release_robot.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/swift.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/swift.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_release_robot.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_release_robot.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_swift.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_swift.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_swift_smoke.py
@@ -321,6 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/web.pyc
 share/doc/dulwich/
 share/doc/dulwich/tutorial/
 share/doc/dulwich/tutorial/conclusion.txt
+share/doc/dulwich/tutorial/encoding.txt
 share/doc/dulwich/tutorial/file-format.txt
 share/doc/dulwich/tutorial/index.txt
 share/doc/dulwich/tutorial/introduction.txt
