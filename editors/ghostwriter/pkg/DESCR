@@ -1,0 +1,23 @@
+ghostwriter is a Windows and Unix text editor for Markdown, providing a
+relaxing, distraction-free writing environment, whether your masterpiece
+be that next blog post, your school paper, or your NaNoWriMo novel.
+
+* Syntax highlighting of Markdown
+* Navigation of document headings
+* Full-screen mode
+* Focus mode that highlights the current sentence, line, three lines, or
+  paragraph
+* Two built-in themes, one light and one dark
+* Theme creator for custom colors and background images
+* Spell checking with Hunspell
+* A Live word count
+* A live HTML preview as you type
+* Use of custom CSS style sheets for HTML preview
+* Image URL insertion via dragging and dropping an image file into the editor
+* Sundown processor built in for preview and export to HTML
+* Interoperability with the following Markdown processors (if installed) for
+  preview and export to popular document formats, such as PDF, ODT, and RTF:
+  * Pandoc
+  * MultiMarkdown
+  * Discount
+  * cmark
