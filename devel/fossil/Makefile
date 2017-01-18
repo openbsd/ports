@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2016/10/28 20:18:06 kili Exp $
+# $OpenBSD: Makefile,v 1.56 2017/01/18 14:08:59 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-1.36
-PKGNAME =		fossil-1.36
+DISTNAME =		fossil-src-1.37
+PKGNAME =		fossil-1.37
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -22,7 +22,7 @@ WANTLIB =		c crypto fuse m ssl z
 
 MODULES =		lang/tcl
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/Fossil_2017-01-16_205854_1669115ab9
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
