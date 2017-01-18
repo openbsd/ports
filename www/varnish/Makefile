@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2016/12/30 21:09:07 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/18 13:43:46 gonzalo Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-4.1.3
-REVISION =		0
+DISTNAME =		varnish-5.0.0
 CATEGORIES =		www
 
 SHARED_LIBS =		varnishapi	1.0
 
 HOMEPAGE =		http://www.varnish-cache.org/
 
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
+MAINTAINER =		Jim Razmus II <jim@openbsd.org> \
+			Gonzalo L. Rodriguez <gonzalo@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
