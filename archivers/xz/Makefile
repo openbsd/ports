@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/11 20:28:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2017/01/18 21:28:35 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
-DISTNAME=	xz-5.2.2
-REVISION=	0
-SHARED_LIBS=	lzma                 2.1      # .7.2
+DISTNAME=	xz-5.2.3
+SHARED_LIBS=	lzma                 2.1      # 7.3
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
 
@@ -22,7 +21,8 @@ WANTLIB=	c pthread
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS=	--disable-nls \
+		--enable-external-sha256
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>
