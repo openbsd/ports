@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/21 20:41:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/01/18 23:10:42 naddy Exp $
 @bin bin/yash
 man/ja/
 man/ja/man1/
@@ -24,6 +24,7 @@ share/yash/completion/bg
 share/yash/completion/bindkey
 share/yash/completion/break
 share/yash/completion/bsdtar
+share/yash/completion/carthage
 share/yash/completion/cat
 share/yash/completion/cd
 share/yash/completion/chgrp
@@ -46,6 +47,7 @@ share/yash/completion/df
 share/yash/completion/diff
 share/yash/completion/dirs
 share/yash/completion/disown
+share/yash/completion/dnf
 share/yash/completion/du
 share/yash/completion/echo
 share/yash/completion/ed
@@ -104,6 +106,7 @@ share/yash/completion/git-remote
 share/yash/completion/git-request-pull
 share/yash/completion/git-reset
 share/yash/completion/git-rev-list
+share/yash/completion/git-rev-parse
 share/yash/completion/git-revert
 share/yash/completion/git-rm
 share/yash/completion/git-show
@@ -202,6 +205,7 @@ share/yash/completion/time
 share/yash/completion/touch
 share/yash/completion/tr
 share/yash/completion/trap
+share/yash/completion/tree
 share/yash/completion/type
 share/yash/completion/typeset
 share/yash/completion/ulimit
@@ -217,8 +221,14 @@ share/yash/completion/view
 share/yash/completion/vim
 share/yash/completion/vimdiff
 share/yash/completion/wait
+share/yash/completion/watch
 share/yash/completion/wc
 share/yash/completion/which
 share/yash/completion/who
 share/yash/completion/xargs
 share/yash/completion/yash
+share/yash/config
+share/yash/initialization/
+share/yash/initialization/common
+share/yash/initialization/default
+share/yash/initialization/sample
