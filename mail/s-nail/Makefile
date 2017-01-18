@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/10/22 20:55:05 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.17 2017/01/18 12:43:32 czarkoff Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
-DISTNAME=		s-nail-14.8.14
+DISTNAME=		s-nail-14.8.15
 CATEGORIES=		mail
-HOMEPAGE=		https://www.sdaoden.eu/code.html#s-mailx
+HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
