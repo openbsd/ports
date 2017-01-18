@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/15 13:50:53 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/18 07:23:18 landry Exp $
 
 COMMENT =		traditional top-down car racing game
 
 V =			1.12.0
 DISTNAME =		dustrac-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -27,6 +28,8 @@ LIB_DEPENDS =		audio/libvorbis \
 
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \
-			-DDOC_PATH=${PREFIX}/share/dustrac
+			-DDOC_PATH=${PREFIX}/share/dustrac \
+			-DQOpenGLFunctions=OFF \
+			-DNO_GLEW=OFF
 
 .include <bsd.port.mk>
