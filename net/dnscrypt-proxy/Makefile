@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/01/05 14:23:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/01/19 14:59:04 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-V=			1.9.1
+V=			1.9.3
 DISTNAME=		dnscrypt-proxy-${V}
 PKGNAME-main=		dnscrypt-proxy-${V}
 PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
