@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2016/06/28 08:47:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2017/01/19 19:32:06 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -7,11 +7,11 @@
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		9.0
+VERSION=		10.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  pulse                6.0      # .19.0
+SHARED_LIBS +=  pulse                6.1      # .20.1
 SHARED_LIBS +=  pulse-simple         1.0      # .1.0
 SHARED_LIBS +=  pulse-mainloop-glib  1.0      # .0.5
 
@@ -26,9 +26,8 @@ HOMEPAGE=		http://www.pulseaudio.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
-WANTLIB += execinfo gdbm glib-2.0 iconv intl json-c ltdl m ogg
-WANTLIB += pcre pthread sndfile sndio speexdsp ssl vorbis vorbisenc
-WANTLIB += xcb
+WANTLIB += execinfo gdbm glib-2.0 iconv intl ltdl m ogg pcre pthread
+WANTLIB += sndfile sndio speexdsp ssl vorbis vorbisenc xcb
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 
@@ -55,7 +54,6 @@ LIB_DEPENDS=		audio/libsndfile \
 			audio/speex \
 			databases/gdbm \
 			devel/glib2 \
-			devel/json-c \
 			devel/libexecinfo \
 			devel/libtool,-ltdl \
 			x11/dbus

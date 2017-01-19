@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/01/25 06:56:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2017/01/19 19:32:06 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -73,6 +73,7 @@ lib/pulse-${VERSION}/modules/libprotocol-native.so
 lib/pulse-${VERSION}/modules/libprotocol-simple.so
 lib/pulse-${VERSION}/modules/libraop.so
 lib/pulse-${VERSION}/modules/librtp.so
+lib/pulse-${VERSION}/modules/module-allow-passthrough.so
 lib/pulse-${VERSION}/modules/module-always-sink.so
 lib/pulse-${VERSION}/modules/module-augment-properties.so
 lib/pulse-${VERSION}/modules/module-card-restore.so
@@ -189,6 +190,7 @@ share/examples/pulseaudio/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
 share/locale/as/LC_MESSAGES/pulseaudio.mo
+share/locale/be/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
 share/locale/cs/LC_MESSAGES/pulseaudio.mo
@@ -200,6 +202,7 @@ share/locale/el/LC_MESSAGES/pulseaudio.mo
 share/locale/es/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
+share/locale/gl/LC_MESSAGES/pulseaudio.mo
 share/locale/gu/LC_MESSAGES/pulseaudio.mo
 share/locale/he/LC_MESSAGES/pulseaudio.mo
 share/locale/hi/LC_MESSAGES/pulseaudio.mo
@@ -209,6 +212,7 @@ share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
 share/locale/ko/LC_MESSAGES/pulseaudio.mo
+share/locale/lt/LC_MESSAGES/pulseaudio.mo
 share/locale/ml/LC_MESSAGES/pulseaudio.mo
 share/locale/mr/LC_MESSAGES/pulseaudio.mo
 share/locale/nl/LC_MESSAGES/pulseaudio.mo
