@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.52 2016/09/26 12:38:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2017/01/19 18:04:34 jca Exp $
+
+BROKEN-hppa =	SIGILL during build
+
+COMMENT =	high-level, extensible programming language
 
 V =		20160130
-COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
-EXTRACT_SUFX =	.tgz
-CATEGORIES =	lang
-BROKEN-hppa =	SIGILL during build
 REVISION =	1
+
+CATEGORIES =	lang
 
 HOMEPAGE =	http://seed7.sourceforge.net/
 
@@ -18,6 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += X11 c m ncurses
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
+EXTRACT_SUFX =	.tgz
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LDFLAGS="-L${X11BASE}/lib" \
