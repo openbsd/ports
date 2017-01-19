@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-utils_memcpy_c,v 1.3 2017/01/19 00:31:42 ajacoutot Exp $
+
+memcpy: fix segfault in times(NULL)
+
+--- src/xine-utils/memcpy.c.orig	Wed Jan 18 06:13:19 2017
++++ src/xine-utils/memcpy.c	Wed Jan 18 06:13:59 2017
+@@ -533,7 +533,8 @@ static int64_t rdtsc(int config_flags)
+     __asm__ volatile (".byte 0x0f, 0x31" : "=A" (x));
+     return x;
+   } else {
+-    return times(NULL);
++    struct tms tp;
++    return times(&tp);
+   }
+ }
+ #else
