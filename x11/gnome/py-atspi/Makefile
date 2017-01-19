@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2017/01/03 18:54:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.29 2017/01/19 00:16:19 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		python bindings for at-spi2
 
 GNOME_PROJECT=		pyatspi
-GNOME_VERSION=		2.20.2
+GNOME_VERSION=		2.20.3
 PKGNAME=		py-atspi-${GNOME_VERSION}
-REVISION=		0
 
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
@@ -29,10 +28,5 @@ RUN_DEPENDS +=		x11/gtk+3
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11
-
-post-patch:
-	cd ${WRKSRC}/pyatspi && mv enum.py enum_.py && \
-	    perl -i -pe 's/pyatspi.enum/pyatspi.enum_/' *.py && \
-	    perl -i -pe 's/enum.py/enum_.py/' Makefile.in
 
 .include <bsd.port.mk>
