@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1575 2017/01/11 23:27:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1576 2017/01/19 19:47:04 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1697,6 +1697,7 @@
      SUBDIR += tortoisehg
      SUBDIR += ucpp
      SUBDIR += udis86
+     SUBDIR += unibilium
      SUBDIR += utfcpp
      SUBDIR += uthash
      SUBDIR += utop
