@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2017/01/19 20:34:04 edd Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+libtermkey and tmux
+===================
+
+Both tmux and libtermkey wait after an escape is input to determine if it is
+part of a function or meta key sequences.  This leads to false positives in
+meta key sequence detection in programs that use libtermkey.  To work around
+this bug one may reduce such delay in tmux to a value below the default 50 ms
+value in libtermkey by setting "escape-time" setting in tmux configuration:
+
+	set-option escape-time 40
