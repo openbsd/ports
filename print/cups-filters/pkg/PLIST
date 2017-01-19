@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/12/10 07:34:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2017/01/19 04:28:47 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -59,7 +59,6 @@ libexec/cups/filter/pstoraster
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/texttotext
-@bin libexec/cups/filter/urftopdf
 @man man/man1/driverless.1
 @man man/man1/foomatic-rip.1
 @man man/man5/cups-browsed.conf.5
