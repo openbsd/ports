@@ -1,0 +1,3 @@
+Python module for writing pandoc filters. Pandoc filters are pipes that
+read a JSON serialization of the Pandoc AST from stdin, transform it in
+some way, and write it to stdout.
