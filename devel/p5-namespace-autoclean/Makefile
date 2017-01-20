@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/01/20 13:02:39 bluhm Exp $
 
 COMMENT =	keep imports out of your namespace
 
@@ -17,7 +17,12 @@ RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
 		devel/p5-namespace-clean>=0.20 \
 		devel/p5-Sub-Identify
 
-TEST_DEPENDS = devel/p5-Moose \
-		  devel/p5-Sub-Name
+TEST_DEPENDS =	devel/p5-Moo \
+		devel/p5-Moose \
+		devel/p5-MooseX-Role-WithOverloading \
+		devel/p5-Mouse \
+		devel/p5-Sub-Install \
+		devel/p5-Sub-Name \
+		devel/p5-Test-Requires
 
 .include <bsd.port.mk>
