@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2017/01/03 19:29:36 landry Exp $
+# $OpenBSD: Makefile,v 1.137 2017/01/20 13:43:47 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.22.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gobject-2.0
 WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += hogweed ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn intl javascriptcoregtk-4.0 json-c json-glib-1.0
+WANTLIB += icuuc idn intl javascriptcoregtk-4.0 json-glib-1.0
 WANTLIB += ltdl lzma m mozjs-24 mutter ncurses ncursesw nettle
 WANTLIB += nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-agent-1
@@ -32,7 +32,7 @@ WANTLIB += sqlite3 ssl3 startup-notification-1 stdc++ tasn1 telepathy-glib
 WANTLIB += upower-glib vorbis vorbisenc vorbisfile webkit2gtk-4.0
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-randr xcb-render xcb-res xcb-shm
 WANTLIB += xcb-util xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
-WANTLIB += xkbfile xml2 z
+WANTLIB += xkbfile xml2 z unistring
 
 MODULES=		devel/dconf \
 			lang/python \

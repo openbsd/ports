@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.179 2016/05/13 12:04:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.180 2017/01/20 13:43:47 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.12.12
+REVISION=		0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -26,13 +27,13 @@ WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
 WANTLIB += hogweed icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg json-c json-glib-1.0 ltdl lzma m mission-control-plugins
+WANTLIB += jpeg json-glib-1.0 ltdl lzma m mission-control-plugins
 WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
 WANTLIB += sqlite3 stdc++ tasn1 telepathy-farstream telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisenc vorbisfile webkitgtk-3.0
-WANTLIB += webp xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
+WANTLIB += webp xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes unistring
 WANTLIB += xml2 xslt z Xxf86vm xcb-glx iconv intl idn
 
 MODULES=		devel/dconf \
