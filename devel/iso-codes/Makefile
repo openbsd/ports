@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2017/01/11 13:48:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2017/01/21 12:33:38 jasper Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
-DISTNAME=	iso-codes-3.73
+DISTNAME=	iso-codes-3.74
 
 CATEGORIES=	devel
 
