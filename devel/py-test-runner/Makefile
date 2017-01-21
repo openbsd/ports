@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/21 09:31:55 shadchin Exp $
 
 COMMENT =		invoke py.test as distutils command
 
-MODPY_EGG_VERSION =	2.9
+MODPY_EGG_VERSION =	2.10.1
 DISTNAME =		pytest-runner-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
