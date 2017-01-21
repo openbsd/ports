@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/28 14:25:02 semarie Exp $
+# $OpenBSD: Makefile,v 1.34 2017/01/21 22:55:01 danj Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.24
+V=		3.0.26
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
-REVISION=	0
 
 HOMEPAGE=	http://www.privoxy.org/
 

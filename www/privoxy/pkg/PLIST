@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/03/28 14:25:02 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/01/21 22:55:01 danj Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
 bin/privoxy-log-parser.pl
@@ -102,6 +102,12 @@ share/examples/privoxy/templates/cgi-style.css
 @owner _privoxy
 @group _privoxy
 @sample ${SYSCONFDIR}/privoxy/templates/cgi-style.css
+@owner
+@group
+share/examples/privoxy/templates/client-tags
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/templates/client-tags
 @owner
 @group
 share/examples/privoxy/templates/connect-failed
