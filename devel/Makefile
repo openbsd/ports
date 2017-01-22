@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1578 2017/01/22 07:56:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1579 2017/01/22 08:01:39 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1251,6 +1251,7 @@
      SUBDIR += py-backports-functools-lru-cache
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
+     SUBDIR += py-bencode
      SUBDIR += py-blessings
      SUBDIR += py-blinker
      SUBDIR += py-blinker,python3
