@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/12/12 13:35:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/01/22 01:13:47 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime,-main
 @pkgpath mail/gmime24
@@ -154,3 +154,7 @@ share/gtk-doc/html/gmime-2.6/right.png
 share/gtk-doc/html/gmime-2.6/style.css
 share/gtk-doc/html/gmime-2.6/up-insensitive.png
 share/gtk-doc/html/gmime-2.6/up.png
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gmime-2.6.deps
+share/vala/vapi/gmime-2.6.vapi
