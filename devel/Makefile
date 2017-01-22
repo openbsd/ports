@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1580 2017/01/22 08:07:01 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1581 2017/01/22 22:11:22 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -654,6 +654,7 @@
      SUBDIR += p5-Data-Munge
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Random
+     SUBDIR += p5-Data-SExpresion
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Stag
      SUBDIR += p5-Data-Structure-Util
