@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/22 22:08:39 afresh1 Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/SExpression/
+${P5SITE}/Data/SExpression.pm
+${P5SITE}/Data/SExpression/Cons.pm
+${P5SITE}/Data/SExpression/Parser.pm
+${P5SITE}/Data/SExpression/Parser.yp
+${P5SITE}/Data/SExpression/Symbol.pm
+@man man/man3p/Data::SExpression.3p
+@man man/man3p/Data::SExpression::Cons.3p
+@man man/man3p/Data::SExpression::Symbol.3p
