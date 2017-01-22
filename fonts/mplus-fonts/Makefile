@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/27 16:01:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/22 08:31:44 bentley Exp $
 
 COMMENT =		collection of Japanese sans-serif fonts
 
-V =			061
+V =			062
 DISTNAME =		mplus-TESTFLIGHT-$V
 PKGNAME =		mplus-fonts-$V
 
