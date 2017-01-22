@@ -1,0 +1,43 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2017/01/22 08:18:04 rpointel Exp $
+--- setup.py.orig	Thu Jul 21 21:02:40 2016
++++ setup.py	Thu Oct 13 22:33:14 2016
+@@ -171,7 +171,7 @@ class BuildExtCommand(build_ext):
+         compiler = new_compiler(compiler=self.compiler)
+         self.define = self.configure_source_tree(compiler)
+ 
+-        libtsk_path = "sleuthkit/tsk"
++        libtsk_path = "${LOCALBASE}/include/tsk"
+ 
+         if not os.access("pytsk3.c", os.R_OK):
+             # Generate the Python binding code (pytsk3.c).
+@@ -286,7 +286,7 @@ class UpdateCommand(Command):
+         with open("version.txt", "w") as fd:
+             fd.write(self.version)
+ 
+-        libtsk_path = "sleuthkit/tsk"
++        libtsk_path = "${LOCALBASE}/include/tsk"
+ 
+         # Generate the Python binding code (pytsk3.c).
+         libtsk_header_files = [
+@@ -325,7 +325,7 @@ class ProjectBuilder(object):
+         self._argv = argv
+ 
+         # The path to the "tsk" directory.
+-        self._libtsk_path = "sleuthkit/tsk"
++        self._libtsk_path = "${LOCALBASE}/include/tsk"
+ 
+         # paths under the tsk/ directory which contain files we need to compile.
+         self._sub_library_names = "auto  base  docs  fs  hashdb  img vs".split()
+@@ -333,9 +333,9 @@ class ProjectBuilder(object):
+         # The args for the extension builder.
+         self.extension_args = dict(
+             define_macros=[],
+-            include_dirs=["talloc", "sleuthkit/tsk", "sleuthkit", "."],
+-            library_dirs=[],
+-            libraries=[],
++            include_dirs=[".", "${LOCALBASE}/include"],
++            library_dirs=["${LOCALBASE}/lib"],
++            libraries=["tsk", "talloc"],
+         )
+ 
+         # The sources to build.
