@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2017/01/19 00:31:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2017/01/22 02:53:47 ajacoutot Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
-REVISION=	7
+REVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -19,12 +19,12 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += FLAC GL GLU ICE SDL SM X11 X11-xcb Xdamage Xext Xfixes
-WANTLIB += Xinerama Xv XvMCW Xxf86vm a52 avcodec avformat avutil
-WANTLIB += bluray c cdio dca drm dvdnav dvdread expat faad fontconfig
-WANTLIB += freetype glapi iso9660 jpeg lzma m mad mng modplug
-WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex
-WANTLIB += theora usbhid v4l2 v4lconvert vcdinfo vorbis vpx wavpack
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir
+WANTLIB += Xinerama Xv XvMCW Xxf86vm avcodec avformat avutil
+WANTLIB += bluray c cdio drm dvdnav dvdread expat fontconfig
+WANTLIB += freetype glapi iso9660 jpeg lzma m mng modplug mpcdec
+WANTLIB += ogg postproc pthread pthread-stubs sndio speex theora
+WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis vpx wavpack xcb
+WANTLIB += xcb-dri2 xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir
 WANTLIB += xml2 z
 
 XINEAPI_REV=	2.5
@@ -36,12 +36,8 @@ MODULES=	devel/gettext \
 MODCLANG_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	textproc/xmlto
-LIB_DEPENDS=	audio/faad \
-		audio/flac \
-		audio/liba52 \
+LIB_DEPENDS=	audio/flac \
 		audio/libcdio \
-		audio/libdca \
-		audio/libmad \
 		audio/libmodplug \
 		audio/libogg \
 		audio/libvorbis \
@@ -70,9 +66,13 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS+=--disable-aalib \
+CONFIGURE_ARGS+=--disable-a52dec \
+		--disable-aalib \
+		--disable-dts \
+		--disable-faad \
 		--disable-gdkpixbuf \
 		--disable-gnomevfs \
+		--disable-mad \
 		--disable-optimizations \
 		--disable-real-codecs \
 		--disable-samba \
