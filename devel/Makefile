@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1577 2017/01/19 20:37:07 edd Exp $
+# $OpenBSD: Makefile,v 1.1578 2017/01/22 07:56:26 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1511,6 +1511,8 @@
      SUBDIR += py-xdg,python3
      SUBDIR += py-xdis
      SUBDIR += py-xdis,python3
+     SUBDIR += py-xlsxwriter
+     SUBDIR += py-xlsxwriter,python3
      SUBDIR += py-xmlrunner
      SUBDIR += py-zopecomponent
      SUBDIR += py-zopeevent
