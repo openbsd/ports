@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/22 12:13:09 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -40,6 +40,12 @@ MODLUA_VERSION=		5.3
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			devel/protobuf
+
+.if ${MACHINE_ARCH:Mi386}
+# needs 64-bit atomics
+CFLAGS+=		-march=i586
+CXXFLAGS+=		-march=i586
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dnsdist
