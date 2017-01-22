@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/01 09:17:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/22 23:47:27 phessler Exp $
 
 COMMENT =		collection of tools for MLB.com content and MLB.TV
 
@@ -9,7 +9,7 @@ PKGNAME =		mlbviewer-${Y}.${V}
 CATEGORIES =		multimedia
 HOMEPAGE =		http://sourceforge.net/p/mlbviewer/wiki/Home/
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mlbviewer/}
 MODULES =		lang/python
 RUN_DEPENDS =		net/rtmpdump \
-			x11/mplayer
-LIB_DEPENDS =		devel/py-gdata
+			x11/mplayer \
+			devel/py-gdata
 
 MODPY_ADJ_FILES =	mlb*.py
 WRKDIST =		${WRKDIR}/mlbviewer${Y}
