@@ -1,0 +1,38 @@
+$OpenBSD: patch-include_CGAL_config_h,v 1.1 2017/01/23 21:56:32 jca Exp $
+--- include/CGAL/config.h.orig	Mon Jan 23 22:25:28 2017
++++ include/CGAL/config.h	Mon Jan 23 22:33:03 2017
+@@ -236,27 +236,14 @@
+ // Big endian or little endian machine.
+ // ====================================
+ 
+-#if defined (__GLIBC__)
+-#  include <endian.h>
+-#  if (__BYTE_ORDER == __LITTLE_ENDIAN)
+-#    define CGAL_LITTLE_ENDIAN
+-#  elif (__BYTE_ORDER == __BIG_ENDIAN)
+-#    define CGAL_BIG_ENDIAN
+-#  else
+-#    error Unknown endianness
+-#  endif
+-#elif defined(__sparc) || defined(__sparc__) \
+-   || defined(_POWER) || defined(__powerpc__) \
+-   || defined(__ppc__) || defined(__hppa) \
+-   || defined(_MIPSEB) || defined(_POWER) \
+-   || defined(__s390__)
+-#  define CGAL_BIG_ENDIAN
+-#elif defined(__i386__) || defined(__alpha__) \
+-   || defined(__x86_64) || defined(__x86_64__) \
+-   || defined(__ia64) || defined(__ia64__) \
+-   || defined(_M_IX86) || defined(_M_IA64) \
+-   || defined(_M_ALPHA) || defined(_WIN64)
++#include <endian.h>
++#if !defined(BYTE_ORDER) || !defined(LITTLE_ENDIAN) || !defined(BIG_ENDIAN)
++#  error Unknown endianness
++#endif
++#if (BYTE_ORDER == LITTLE_ENDIAN)
+ #  define CGAL_LITTLE_ENDIAN
++#elif (BYTE_ORDER == BIG_ENDIAN)
++#  define CGAL_BIG_ENDIAN
+ #else
+ #  error Unknown endianness
+ #endif
