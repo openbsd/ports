@@ -1,10 +1,10 @@
-$OpenBSD: README-main,v 1.7 2016/09/13 21:36:48 tj Exp $
+$OpenBSD: README-main,v 1.8 2017/01/23 18:00:23 tj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-In order to perform queries over DNSCrypt, the easiest way is change
+In order to perform queries over DNSCrypt, the easiest way is to change
 your /etc/resolv.conf file:
 
 nameserver 127.0.0.1
