@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/02 17:31:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/23 15:20:21 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parsedatetime/${MODPY_PYCACHE}/
@@ -22,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}en_AU.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}en_US.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}es.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}fr_FR.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}icu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}nl_NL.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/${MODPY_PYCACHE}pt_BR.${MODPY_PYC_MAGIC_TAG}pyc
@@ -31,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/de_DE.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/en_AU.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/en_US.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/es.py
+lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/fr_FR.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/icu.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/nl_NL.py
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/pdt_locales/pt_BR.py
