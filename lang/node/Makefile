@@ -1,77 +1,71 @@
-# $OpenBSD: Makefile,v 1.53 2016/12/31 20:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.54 2017/01/23 16:47:04 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386
 
-USE_WXNEEDED =	Yes
+USE_WXNEEDED =		Yes
 
-COMMENT=	V8 JavaScript for clients and servers
+COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION=	v4.4.7
-REVISION=	2
+NODE_VERSION =		v6.9.4
 
-PLEDGE_VER=	1.1.0
-DISTFILES=	node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
+PLEDGE_VER =		1.1.0
+DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
-DISTNAME=	node-${NODE_VERSION}
-PKGNAME=	${DISTNAME:S/v//g}
+DISTNAME =		node-${NODE_VERSION}
+PKGNAME =		${DISTNAME:S/v//g}
 
-MASTER_SITES0=	https://github.com/qbit/node-pledge/archive/
+MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
-CATEGORIES=	lang devel
+CATEGORIES =		lang devel
 
-HOMEPAGE=	http://nodejs.org/
+HOMEPAGE =		http://nodejs.org/
 
-MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
+MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=	${HOMEPAGE}dist/${NODE_VERSION}/
+MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
-MODULES=	gcc4 \
-		lang/python
+MODULES =		gcc4 \
+			lang/python
 
-MODGCC4_LANGS =	c c++
-MODGCC4_ARCHS =	*
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		*
 
-WANTLIB += c execinfo lib/eopenssl/crypto lib/eopenssl/ssl kvm m pthread
-WANTLIB += util z
+WANTLIB += c execinfo kvm m pthread util z
 
-LIB_DEPENDS=	devel/libexecinfo \
-		security/openssl
+LIB_DEPENDS =		devel/libexecinfo
 
-USE_GMAKE=	Yes
+USE_GMAKE =		Yes
 
-BUILD_DEPENDS=	sysutils/flock
+BUILD_DEPENDS =		sysutils/flock
 
-RUN_DEPENDS=	devel/gmake \
-		lang/gcc/${MODGCC4_VERSION},-c++ \
-		sysutils/flock
+RUN_DEPENDS =		devel/gmake \
+			lang/gcc/${MODGCC4_VERSION},-c++ \
+			sysutils/flock
 
-TEST_TARGET=		test
-CONFIGURE_STYLE=	simple
+TEST_TARGET =		test
+CONFIGURE_STYLE =	simple
 
 # libpath and includes aren't picked up, but I added them here as a note.
 # The patch for node.gyp is where they are actually being set.
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--shared-openssl \
-		--shared-openssl-includes=${LOCALBASE}/include/eopenssl \
-		--shared-openssl-libpath=${LOCALBASE}/lib/eopenssl \
-		--shared-zlib
+CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--shared-zlib
 
-SUBST_VARS+= 	DISTNAME
-SUBST_VARS+= 	DISTFILES
-SUBST_VARS+= 	EXTRACT_SUFX
-SUBST_VARS+= 	LOCALBASE
-SUBST_VARS+= 	PREFIX
-SUBST_VARS+= 	WRKDIST
+SUBST_VARS += 		DISTNAME
+SUBST_VARS += 		DISTFILES
+SUBST_VARS += 		EXTRACT_SUFX
+SUBST_VARS += 		LOCALBASE
+SUBST_VARS += 		PREFIX
+SUBST_VARS +=		WRKDIST
 
-MAKE_ENV+=	V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MAKE_ENV +=		V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 do-extract:
 	mkdir ${WRKSRC}; \

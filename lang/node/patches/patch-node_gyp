@@ -1,27 +1,7 @@
-$OpenBSD: patch-node_gyp,v 1.4 2016/01/29 20:12:04 abieber Exp $
---- node.gyp.orig	Thu Jan 21 11:35:03 2016
-+++ node.gyp	Fri Jan 29 07:09:26 2016
-@@ -11,6 +11,8 @@
-     'node_shared_libuv%': 'false',
-     'node_use_openssl%': 'true',
-     'node_shared_openssl%': 'false',
-+    'node_shared_openssl_includes%': '${LOCALBASE}/include/eopenssl',
-+    'node_shared_openssl_libpath%': '${LOCALBASE}/lib/eopenssl',
-     'node_v8_options%': '',
-     'node_target_type%': 'executable',
-     'node_core_target_name%': 'node',
-@@ -236,6 +238,10 @@
-             ['openssl_fips != ""', {
-               'defines': [ 'NODE_FIPS_MODE' ],
-             }],
-+            [ 'node_shared_openssl=="true"', {
-+              'ldflags': [ '-L<(node_shared_openssl_libpath) -Wl,-rpath,${LOCALBASE}/lib/eopenssl' ],
-+              'include_dirs': [ '<(node_shared_openssl_includes)' ],
-+            }],
-             [ 'node_shared_openssl=="false"', {
-               'dependencies': [
-                 './deps/openssl/openssl.gyp:openssl',
-@@ -392,7 +398,7 @@
+$OpenBSD: patch-node_gyp,v 1.5 2017/01/23 16:47:04 abieber Exp $
+--- node.gyp.orig	Wed Oct 19 16:02:10 2016
++++ node.gyp	Thu Nov  3 08:23:16 2016
+@@ -522,7 +522,7 @@
              'NODE_PLATFORM="darwin"',
            ],
          }],
@@ -30,7 +10,7 @@ $OpenBSD: patch-node_gyp,v 1.4 2016/01/29 20:12:04 abieber Exp $
            'libraries': [
              '-lutil',
              '-lkvm',
-@@ -416,6 +422,9 @@
+@@ -546,6 +546,9 @@
              # rather than gyp's preferred "solaris"
              'NODE_PLATFORM="sunos"',
            ],
@@ -38,5 +18,5 @@ $OpenBSD: patch-node_gyp,v 1.4 2016/01/29 20:12:04 abieber Exp $
 +        [ 'OS=="openbsd"', {
 +          'ldflags': [ '-rdynamic' ],
          }],
-         [ 'OS=="freebsd" or OS=="linux"', {
+         [ '(OS=="freebsd" or OS=="linux") and node_shared=="false"', {
            'ldflags': [ '-Wl,-z,noexecstack',

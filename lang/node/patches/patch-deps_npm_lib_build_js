@@ -1,37 +1,37 @@
-$OpenBSD: patch-deps_npm_lib_build_js,v 1.2 2014/01/20 19:42:00 abieber Exp $
---- deps/npm/lib/build.js.orig	Wed Dec 18 16:49:45 2013
-+++ deps/npm/lib/build.js	Mon Dec 23 09:25:46 2013
-@@ -175,17 +175,23 @@ function linkBins (pkg, folder, parent, gtop, cb) {
-       // bins should always be executable.
-       // XXX skip chmod on windows?
-       var src = path.resolve(folder, pkg.bin[b])
--      fs.chmod(src, npm.modes.exec, function (er) {
--        if (er && er.code === "ENOENT" && npm.config.get("ignore-scripts")) {
--          return cb()
-+      fs.lstat(folder, function (er,stat) {
-+        if (!stat.isSymbolicLink) {
-+          fs.chmod(src, npm.modes.exec, function (er) {
-+            if (er && er.code === "ENOENT" && npm.config.get("ignore-scripts")) {
-+              return cb()
-+            }
-+            if (er || !gtop) return cb(er)
-+            var dest = path.resolve(binRoot, b)
-+              , out = npm.config.get("parseable")
-+                    ? dest + "::" + src + ":BINFILE"
-+                    : dest + " -> " + src
-+            console.log(out)
-+            cb()
-+          })
-+        } else {
-+          cb()
-         }
--        if (er || !gtop) return cb(er)
--        var dest = path.resolve(binRoot, b)
--          , out = npm.config.get("parseable")
--                ? dest + "::" + src + ":BINFILE"
--                : dest + " -> " + src
--        console.log(out)
--        cb()
-       })
-     })
-   }, cb)
+$OpenBSD: patch-deps_npm_lib_build_js,v 1.3 2017/01/23 16:47:04 abieber Exp $
+--- deps/npm/lib/build.js.orig	Thu Nov  3 08:07:29 2016
++++ deps/npm/lib/build.js	Thu Nov  3 08:11:47 2016
+@@ -203,17 +203,23 @@ function linkBins (pkg, folder, parent, gtop, cb) {
+         // bins should always be executable.
+         // XXX skip chmod on windows?
+         var src = path.resolve(folder, pkg.bin[b])
+-        fs.chmod(src, npm.modes.exec, function (er) {
+-          if (er && er.code === 'ENOENT' && npm.config.get('ignore-scripts')) {
+-            return cb()
++        fs.lstat(folder, function (er,stat) {
++          if (!stat.isSymbolicLink) {
++            fs.chmod(src, npm.modes.exec, function (er) {
++              if (er && er.code === "ENOENT" && npm.config.get("ignore-scripts")) {
++                return cb()
++              }
++              if (er || !gtop) return cb(er)
++              var dest = path.resolve(binRoot, b)
++                , out = npm.config.get("parseable")
++                      ? dest + "::" + src + ":BINFILE"
++                      : dest + " -> " + src
++              console.log(out)
++              cb()
++            })
++          } else {
++           cb()
+           }
+-          if (er || !gtop) return cb(er)
+-          var dest = path.resolve(binRoot, b)
+-          var out = npm.config.get('parseable')
+-                  ? dest + '::' + src + ':BINFILE'
+-                  : dest + ' -> ' + src
+-          output(out)
+-          cb()
+         })
+       }
+     )
