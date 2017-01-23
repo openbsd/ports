@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2017/01/05 03:08:04 lteo Exp $
+# $OpenBSD: Makefile,v 1.97 2017/01/23 11:22:58 ajacoutot Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
 VERSION =		2.9.9.0
 DISTNAME =		snort-${VERSION}
+REVISION =		0
 
 CATEGORIES =		net security
 
@@ -14,7 +15,7 @@ MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto daq dnet lzma m pcap pcre pthread z
+WANTLIB =		c crypto daq dnet lzma m nghttp2 pcap pcre pthread z
 
 MASTER_SITES =		https://www.snort.org/downloads/snort/
 
@@ -25,8 +26,9 @@ CONFIGURE_ARGS +=	--disable-static-daq \
 
 LIB_DEPENDS =		archivers/xz \
 			devel/pcre \
+			net/daq \
 			net/libdnet \
-			net/daq
+			www/nghttp2
 
 CONFIGS	=		classification.config gen-msg.map reference.config \
 			snort.conf threshold.conf unicode.map
