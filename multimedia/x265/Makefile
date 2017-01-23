@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/12/30 14:29:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/01/23 02:51:02 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -33,7 +33,9 @@ BUILD_DEPENDS+=	devel/yasm
 .endif
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_ARGS=	-DENABLE_TESTS=On
+# Workaround for Clang 4.0
+#CONFIGURE_ARGS=	-DENABLE_TESTS=On
+NO_TEST=	Yes
 
 CONFIGURE_ARGS+= -DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2"
 
@@ -46,7 +48,7 @@ CONFIGURE_ARGS+= -DNO_ATOMICS=Off
 CONFIGURE_ARGS+= -DNO_ATOMICS=On
 .endif
 
-do-test:
-	${WRKBUILD}/test/TestBench
+#do-test:
+#	${WRKBUILD}/test/TestBench
 
 .include <bsd.port.mk>
