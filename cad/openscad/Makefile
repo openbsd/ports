@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2017/01/23 13:50:10 zhuk Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2015.03-2
 DISTNAME =		openscad-${V:S/-/./}
+REVISION =		0
 
 CATEGORIES =		cad
 
@@ -38,6 +39,12 @@ LIB_DEPENDS =		devel/boost \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			fonts/liberation-fonts
+
+# virtual memory exhausted: Cannot allocate memory
+.if ${MACHINE_ARCH:Malpha}
+COPTS +=		-O1
+CXXOPTS +=		-O1
+.endif
 
 MODQMAKE_ARGS =		VERSION=${V}
 SEPARATE_BUILD =	No
