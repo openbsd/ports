@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/23 08:24:03 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/23 08:24:41 jca Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -28,8 +28,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
-# In-tree gcc fails to compile some of the atomic sequences on alpha.
-# Support atomic builtins on arm
+# For atomic builtins
 MODULES+=		gcc4
 MODGCC4_ARCHS=		alpha arm
 .if ${MACHINE_ARCH} == "alpha"
