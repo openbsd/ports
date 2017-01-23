@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/31 01:01:24 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/23 08:24:03 jca Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -34,6 +34,10 @@ MODULES+=		gcc4
 MODGCC4_ARCHS=		alpha arm
 .if ${MACHINE_ARCH} == "alpha"
 MODGCC4_VERSION=	4.6
+.endif
+# Thread-local storage emulation from lang/gcc doesn't work in regress tests.
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm}
+CONFIGURE_ENV =		ac_cv_tls=none
 .endif
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
