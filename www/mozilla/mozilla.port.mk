@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.96 2017/01/06 17:39:02 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.97 2017/01/24 21:25:14 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -45,10 +45,10 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.12
+			devel/nspr>=4.13.1
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.21.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.28.1
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
