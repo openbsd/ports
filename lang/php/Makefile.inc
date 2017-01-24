@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.89 2017/01/05 16:59:31 jca Exp $
+# $OpenBSD: Makefile.inc,v 1.90 2017/01/24 00:40:13 jca Exp $
 #
 
+BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
