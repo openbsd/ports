@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/23 15:20:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/24 11:06:07 sthen Exp $
 
 COMMENT=		parse human-readable date/time text
 
 MODPY_EGG_VERSION =	2.2
 DISTNAME=		parsedatetime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -20,6 +21,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
+BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
 TEST_DEPENDS=		textproc/py-ICU${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

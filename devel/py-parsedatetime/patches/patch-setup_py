@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2017/01/24 11:06:07 sthen Exp $
+
+the current version of setuptools (28.6.1) complains at runtime if this is present
+
+--- setup.py.orig	Sun Mar 20 22:26:51 2016
++++ setup.py	Tue Jan 24 11:02:57 2017
+@@ -35,7 +35,6 @@ setup(
+     packages=find_packages(exclude=['tests', 'docs']),
+     platforms=['Any'],
+     long_description=read('README.rst'),
+-    install_requires=['future'],
+     setup_requires=['pytest-runner'],
+     tests_require=['pytest'],
+     test_suite='tests',
