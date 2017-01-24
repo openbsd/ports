@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2017/01/24 10:35:10 shadchin Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION=	3.0.5
+MODPY_EGG_VERSION=	3.0.6
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -29,6 +28,7 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-test-xdist${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-twisted/core
