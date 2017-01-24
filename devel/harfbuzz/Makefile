@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.58 2017/01/06 08:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2017/01/24 07:08:14 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			1.4.1
+V=			1.4.2
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             8.5      # 10400.1
-SHARED_LIBS +=  harfbuzz-icu         0.3      # 10400.1
-SHARED_LIBS +=  harfbuzz-gobject     0.0      # 10400.1
+SHARED_LIBS +=  harfbuzz             8.6      # 10400.2
+SHARED_LIBS +=  harfbuzz-icu         0.3      # 10400.2
+SHARED_LIBS +=  harfbuzz-gobject     0.0      # 10400.2
 
 CATEGORIES=		devel graphics textproc
 
