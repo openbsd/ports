@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_isc_unix_net_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
+--- lib/isc/unix/net.c.orig	Mon Jan 16 09:47:30 2017
++++ lib/isc/unix/net.c	Mon Jan 16 09:48:12 2017
+@@ -731,7 +731,7 @@ try_dscp_v6(void) {
+ 	if (setsockopt(s, IPPROTO_IPV6, IPV6_TCLASS, &dscp, sizeof(dscp)) == 0)
+ 		dscp_result |= ISC_NET_DSCPSETV6;
+ 
+-#ifdef IPV6_RECVTCLASS
++#if 0 /* pledge doesn't allow setsockopt IPV6_RECVTCLASS */
+ 	on = 1;
+ 	if (setsockopt(s, IPPROTO_IPV6, IPV6_RECVTCLASS, &on, sizeof(on)) == 0)
+ 		dscp_result |= ISC_NET_DSCPRECVV6;

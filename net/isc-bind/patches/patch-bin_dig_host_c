@@ -1,0 +1,29 @@
+$OpenBSD: patch-bin_dig_host_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
+--- bin/dig/host.c.orig	Sun Dec 11 22:05:58 2016
++++ bin/dig/host.c	Mon Jan 16 10:02:31 2017
+@@ -888,6 +888,11 @@ main(int argc, char **argv) {
+ 	idnoptions = IDN_ASCCHECK;
+ #endif
+ 
++	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
++		perror("pledge");
++		exit(1);
++	}
++
+ 	debug("main()");
+ 	progname = argv[0];
+ 	pre_parse_args(argc, argv);
+@@ -895,6 +900,13 @@ main(int argc, char **argv) {
+ 	check_result(result, "isc_app_start");
+ 	setup_libs();
+ 	parse_args(ISC_FALSE, argc, argv);
++
++	/* inet for network connections, dns for resolv.conf */
++	if (pledge("stdio inet dns", NULL) == -1) {
++		perror("pledge");
++		exit(1);
++	}
++
+ 	setup_system();
+ 	result = isc_app_onrun(mctx, global_task, onrun_callback, NULL);
+ 	check_result(result, "isc_app_onrun");

@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.1 2017/01/24 11:46:35 sthen Exp $
+--- bin/dig/nslookup.c.orig	Sun Dec 11 22:05:58 2016
++++ bin/dig/nslookup.c	Mon Jan 16 10:02:34 2017
+@@ -905,8 +905,19 @@ main(int argc, char **argv) {
+ 	result = isc_app_start();
+ 	check_result(result, "isc_app_start");
+ 
++	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
++		perror("pledge");
++		exit(1);
++	}
++
+ 	setup_libs();
+ 	progname = argv[0];
++
++	/* inet for network connections, dns for resolv.conf */
++	if (pledge("stdio inet dns", NULL) == -1) {
++		perror("pledge");
++		exit(1);
++	}
+ 
+ 	parse_args(argc, argv);
+ 

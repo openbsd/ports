@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.4 2017/01/24 11:46:35 sthen Exp $
+--- lib/isc/unix/socket.c.orig	Mon Jan 16 09:58:13 2017
++++ lib/isc/unix/socket.c	Mon Jan 16 09:58:32 2017
+@@ -2885,7 +2885,7 @@ opensocket(isc__socketmgr_t *manager, isc__socket_t *s
+ 		}
+ #endif
+ 	}
+-#ifdef IPV6_RECVTCLASS
++#if 0 /* pledge doesn't allow setsockopt IPV6_RECVTCLASS */
+ 	if ((sock->pf == AF_INET6)
+ 	    && (setsockopt(sock->fd, IPPROTO_IPV6, IPV6_RECVTCLASS,
+ 			   (void *)&on, sizeof(on)) < 0)) {
