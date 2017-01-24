@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_gajim_in,v 1.4 2010/09/15 05:39:16 pea Exp $
---- scripts/gajim.in.orig	Tue Sep  7 13:36:40 2010
-+++ scripts/gajim.in	Tue Sep  7 13:37:08 2010
+$OpenBSD: patch-scripts_gajim_in,v 1.5 2017/01/24 23:47:00 phessler Exp $
+--- scripts/gajim.in.orig.port	Sun Oct  2 14:18:23 2016
++++ scripts/gajim.in	Sun Nov 27 10:00:11 2016
 @@ -29,5 +29,8 @@ fi
  
  [ "$APP" = "gajim-history-manager" ] && APP="history_manager"

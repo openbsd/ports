@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.72 2016/11/11 11:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2017/01/24 23:47:00 phessler Exp $
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.15.4
+DISTNAME=	gajim-0.16.6
 CATEGORIES=	net x11
-REVISION=	4
 
-MASTER_SITES=	${HOMEPAGE}/downloads/0.15/
-
-HOMEPAGE=	http://www.gajim.org/
+HOMEPAGE=	https://www.gajim.org/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+
+MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,15 +23,18 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODULES=	lang/python \
 		textproc/intltool
 
-COMMON_DEPENDS= databases/py-sqlite2 \
-		net/py-dns \
-		x11/dbus-python \
-		x11/py-gtk2  \
-		security/py-openssl \
-		security/py-crypto \
+PATCHORIG=	.orig.port
+
+COMMON_DEPENDS=	databases/py-sqlite2 \
+		devel/py-notify \
 		net/avahi,-python,no_mono \
+		net/py-dns \
+		net/py-nbxmpp \
+		security/py-crypto \
+		security/py-openssl \
 		textproc/gtkspell \
-		devel/py-notify
+		x11/dbus-python \
+		x11/py-gtk2
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
