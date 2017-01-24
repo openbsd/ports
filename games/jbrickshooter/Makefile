@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/09 16:43:47 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/01/24 20:40:06 sthen Exp $
 
 COMMENT =	brick shooter reflexion game
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	java/javaPathHelper
 NO_TEST=	Yes
 
 do-build:
-	cd ${WRKSRC} && mkdir build && ant build
+	cd ${WRKSRC} && mkdir -p build && ant build
 
 do-install:
 	${SUBST_CMD} -m 555 -c ${FILESDIR}/jbrickshooter \

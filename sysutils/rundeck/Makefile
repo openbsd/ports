@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/11/21 20:05:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/01/24 20:40:06 sthen Exp $
 
 COMMENT=		job scheduler and runbook automation
 
@@ -41,7 +41,7 @@ TOOLS =			dispatch rd-acl rd-jobs rd-project rd-queue \
 			rd-setup run
 
 do-extract:
-	mkdir ${WRKDIST}
+	mkdir -p ${WRKDIST}
 	cd ${WRKSRC} && \
 		${JAVA_HOME}/bin/java -jar ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		--installonly -b .
