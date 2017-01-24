@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2016/04/28 17:44:20 landry Exp $
+# $OpenBSD: Makefile,v 1.81 2017/01/24 21:33:09 landry Exp $
 
 SUBDIR = af
 SUBDIR += ach
@@ -7,7 +7,6 @@ SUBDIR += ar
 SUBDIR += as
 SUBDIR += ast
 SUBDIR += az
-SUBDIR += be
 SUBDIR += bg
 SUBDIR += bn-BD
 SUBDIR += bn-IN
