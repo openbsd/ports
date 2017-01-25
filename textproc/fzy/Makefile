@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/23 15:59:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/25 23:25:51 fcambus Exp $
 
 COMMENT =	fuzzy text selector for the terminal
 
 GH_ACCOUNT =	jhawthorn
 GH_PROJECT =	fzy
-GH_TAGNAME =	0.7
+GH_TAGNAME =	0.8
 
 CATEGORIES =	textproc
 
