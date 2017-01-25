@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.35 2016/09/14 15:06:53 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.36 2017/01/25 14:16:46 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -273,14 +273,44 @@ sub get_plist
 			}
 		}
 	}
-	# ask the ports tree
-	$state->say("Asking ports for dependency #1(#2)", $pkgname, $pkgpath);
+	my $cachefile;
+	if (exists $ENV{_DEPENDS_CACHE}) {
+		$cachefile = "$ENV{_DEPENDS_CACHE}/$pkgname";
+	}
+	# check the cache
+	if (defined $cachefile && 
+	    open my $fh, '<', "$ENV{_DEPENDS_CACHE}/$pkgname") {
+		my $plist = OpenBSD::PackingList->read($fh);
+		return $plist;
+	}
+	# or ask the ports tree directly
 	my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
-	my $make = $ENV{MAKE} || "make";
-	open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath FULLPATH=Yes ECHO_MSG=: make print-plist-libs-with-depends wantlib_args=no-wantlib-args|" or return undef;
-	my $plist = OpenBSD::PackingList->read($fh);
-	close $fh;
-	return $plist;
+	my ($make, @extra) = split(/\s+/, $ENV{MAKE} || "make");
+	my $pid = open(my $fh, "-|");
+	if ($pid) {
+		my $plist = OpenBSD::PackingList->read($fh);
+		close $fh;
+		waitpid $pid, 0;
+		if (defined $cachefile && !-f $cachefile) {
+			$plist->tofile($cachefile);
+		}
+		return $plist;
+	} else {
+		chdir($portsdir);
+		my %myenv = (
+			SUBDIR => $pkgpath,
+			FULLPATH => "Yes",
+			ECHO_MSG => ':'
+		);
+		if (exists $ENV{_DEPENDS_CACHE}) {
+			$myenv{_DEPENDS_CACHE} = $ENV{_DEPENDS_CACHE};
+		}
+		%ENV = %myenv;
+		exec { $make }
+			($make, @extra, 'print-plist-libs-with-depends',
+				'wantlib_args=no-wantlib-args');
+		exit 1;
+	}
 }
 
 sub handle_dependency
