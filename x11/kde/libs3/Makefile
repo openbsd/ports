@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.149 2016/06/29 16:14:45 espie Exp $
+# $OpenBSD: Makefile,v 1.150 2017/01/25 11:55:47 zhuk Exp $
 
+BROKEN =		fallout after changes in LibreSSL
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
 
