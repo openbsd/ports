@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/07 06:41:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2017/01/25 13:14:44 benoit Exp $
 
 COMMENT =	associate user-defined magic to variables from Perl
 
 MODULES =	cpan
-DISTNAME =	Variable-Magic-0.60
+DISTNAME =	Variable-Magic-0.61
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
