@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_ck-get-x11-display-device_c,v 1.1 2017/01/25 03:19:26 ajacoutot Exp $
+--- tools/ck-get-x11-display-device.c.orig	Wed Jan 25 03:46:42 2017
++++ tools/ck-get-x11-display-device.c	Wed Jan 25 03:47:11 2017
+@@ -140,6 +140,8 @@ get_tty_for_display (Display *xdisplay)
+ 
+ #if defined(__NetBSD__)
+         display = g_strdup_printf ("/dev/ttyE%ld", vt - 1);
++#elif defined(__OpenBSD__)
++        display = g_strdup_printf ("/dev/ttyC%ld", vt - 1);
+ #else
+         display = g_strdup_printf ("/dev/tty%ld", vt);
+ #endif

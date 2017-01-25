@@ -1,19 +1,22 @@
-$OpenBSD: patch-src_ck-manager_c,v 1.7 2016/01/15 14:20:02 ajacoutot Exp $
+$OpenBSD: patch-src_ck-manager_c,v 1.8 2017/01/25 03:19:26 ajacoutot Exp $
 
 XXX add a proper check and push upstream (adapt to OpenBSD system users naming)
 
---- src/ck-manager.c.orig	Wed Jan 13 10:12:10 2016
-+++ src/ck-manager.c	Fri Jan 15 13:56:39 2016
-@@ -1112,9 +1112,9 @@ session_is_real_user (CkSession *session,
+--- src/ck-manager.c.orig	Wed Jan 25 04:14:39 2017
++++ src/ck-manager.c	Wed Jan 25 04:15:58 2017
+@@ -1112,9 +1112,12 @@ session_is_real_user (CkSession *session,
          username = get_user_name (uid);
  
          /* filter out GDM/SDDM/KDM user */
 -        if (g_strcmp0 (username, "gdm")  == 0 ||
 -            g_strcmp0 (username, "sddm") == 0 ||
 -            g_strcmp0 (username, "kdm") == 0) {
-+        if (g_strcmp0 (username, "_gdm")  == 0 ||
++        if (g_strcmp0 (username, "gdm")   == 0 ||
++            g_strcmp0 (username, "_gdm")  == 0 ||
++            g_strcmp0 (username, "sddm")  == 0 ||
 +            g_strcmp0 (username, "_sddm") == 0 ||
-+            g_strcmp0 (username, "_kdm") == 0) {
++            g_strcmp0 (username, "kdm")   == 0 ||
++            g_strcmp0 (username, "_kdm")  == 0) {
                  ret = FALSE;
                  goto out;
          }
