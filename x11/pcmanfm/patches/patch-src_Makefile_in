@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2014/07/13 08:01:46 giovanni Exp $
---- src/Makefile.in.orig	Sun Jul 13 09:30:10 2014
-+++ src/Makefile.in	Sun Jul 13 09:30:33 2014
-@@ -321,7 +321,7 @@ NULL = 
+$OpenBSD: patch-src_Makefile_in,v 1.2 2017/01/26 01:42:27 ajacoutot Exp $
+--- src/Makefile.in.orig	Sat Dec 10 02:05:22 2016
++++ src/Makefile.in	Thu Jan 26 02:34:22 2017
+@@ -333,7 +333,7 @@ NULL = 
  AM_CPPFLAGS = \
  	-DPACKAGE_DATA_DIR=\""$(datadir)/pcmanfm"\" \
  	-DPACKAGE_UI_DIR=\""$(datadir)/pcmanfm/ui"\" \
