@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2017/01/25 03:37:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2017/01/26 03:45:13 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.5.5
+MODPY_EGG_VERSION=	1.5.6
 DISTNAME=		botocore-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
