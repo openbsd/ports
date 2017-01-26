@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_reference_libmenu-cache_Makefile_in,v 1.2 2015/06/24 06:53:24 ajacoutot Exp $
---- docs/reference/libmenu-cache/Makefile.in.orig	Thu Oct 23 15:13:33 2014
-+++ docs/reference/libmenu-cache/Makefile.in	Wed Jun 24 01:15:29 2015
-@@ -780,8 +780,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+$OpenBSD: patch-docs_reference_libmenu-cache_Makefile_in,v 1.3 2017/01/26 01:41:55 ajacoutot Exp $
+--- docs/reference/libmenu-cache/Makefile.in.orig	Sun Nov  6 17:38:37 2016
++++ docs/reference/libmenu-cache/Makefile.in	Thu Jan 26 02:29:34 2017
+@@ -811,8 +811,6 @@ dist-hook: dist-check-gtkdoc all-gtk-doc dist-hook-loc
  $(DOC_MAIN_SGML_FILE): sgml-build.stamp
  #TESTS = $(GTKDOC_CHECK)
  
