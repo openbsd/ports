@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/27 13:27:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/26 01:40:28 ajacoutot Exp $
 
 COMMENT=		extra library for libfm
 
@@ -9,6 +9,6 @@ WANTLIB += iconv intl m pcre pthread z
 
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_ARGS +=	--with-extra-only
+CONFIGURE_ARGS=		--with-extra-only
 
 .include <bsd.port.mk>

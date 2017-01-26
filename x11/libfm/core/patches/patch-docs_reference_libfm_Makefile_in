@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_reference_libfm_Makefile_in,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
---- docs/reference/libfm/Makefile.in.orig	Tue Oct 14 18:46:20 2014
-+++ docs/reference/libfm/Makefile.in	Wed Jun 24 00:04:15 2015
-@@ -870,7 +870,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+$OpenBSD: patch-docs_reference_libfm_Makefile_in,v 1.2 2017/01/26 01:40:28 ajacoutot Exp $
+--- docs/reference/libfm/Makefile.in.orig	Sat Dec 10 00:49:17 2016
++++ docs/reference/libfm/Makefile.in	Thu Jan 26 02:31:46 2017
+@@ -909,7 +909,6 @@ dist-hook: dist-check-gtkdoc all-gtk-doc dist-hook-loc
  # we don't have tests here
  test:
  
