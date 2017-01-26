@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.7 2016/03/01 15:37:53 sthen Exp $
---- Configure.orig	Tue Mar  1 13:35:53 2016
-+++ Configure	Tue Mar  1 15:30:19 2016
-@@ -475,19 +475,19 @@ my %table=(
+$OpenBSD: patch-Configure,v 1.8 2017/01/26 14:40:04 sthen Exp $
+--- Configure.orig	Thu Jan 26 13:22:03 2017
++++ Configure	Thu Jan 26 14:27:37 2017
+@@ -477,19 +477,19 @@ my %table=(
  "android-mips","gcc:-mandroid -I\$(ANDROID_DEV)/include -B\$(ANDROID_DEV)/lib -O3 -Wall::-D_REENTRANT::-ldl:BN_LLONG RC4_CHAR RC4_CHUNK DES_INT DES_UNROLL BF_PTR:${mips32_asm}:o32:dlfcn:linux-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
  
  #### *BSD [do see comment about ${BSDthreads} above!]
