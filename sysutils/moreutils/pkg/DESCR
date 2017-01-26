@@ -1,6 +1,7 @@
 moreutils is a growing collection of the unix tools that nobody thought
 to write long ago when unix was young, including amongst others:
 
+chronic: run a command, hide output unless it fails
 lckdo: execute a program with a lock held
 mispipe: pipe two commands, returning the exit status of the first
 pee: tee standard input to pipes
