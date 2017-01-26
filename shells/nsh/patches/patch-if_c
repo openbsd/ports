@@ -1,0 +1,12 @@
+$OpenBSD: patch-if_c,v 1.10 2017/01/26 12:30:02 naddy Exp $
+--- if.c.orig	Thu Jan 26 13:24:27 2017
++++ if.c	Thu Jan 26 13:24:45 2017
+@@ -424,7 +424,7 @@ show_vnet_parent(int ifs, char *ifname)
+ 	strlcpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name));
+ 
+ 	if (ioctl(ifs, SIOCGVNETID, (caddr_t)&ifr) != -1)
+-		printf(" vnetid %d,", ifr.ifr_vnetid);
++		printf(" vnetid %lld,", ifr.ifr_vnetid);
+ #ifdef SIOCGIFPARENT	/* 6.0+ */
+ 	if (ioctl(ifs, SIOCGIFPARENT, (caddr_t)&ifp) != -1)
+ 		printf(" parent %s,", ifp.ifp_parent);

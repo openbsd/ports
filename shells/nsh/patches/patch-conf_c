@@ -1,0 +1,11 @@
+$OpenBSD: patch-conf_c,v 1.8 2017/01/26 12:30:02 naddy Exp $
+--- conf.c.orig	Sun Jun  5 20:22:35 2016
++++ conf.c	Thu Jan 26 13:26:04 2017
+@@ -36,6 +36,7 @@
+ #include <net/route.h>
+ #include <net/pfvar.h>
+ #include <netmpls/mpls.h>
++#include <netinet/ip_ipsp.h>	/* union sockaddr_union */
+ #include <net/if_pfsync.h>
+ #include <net/if_pflow.h>
+ #include <ifaddrs.h>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-pfsync_c,v 1.1 2017/01/26 12:30:02 naddy Exp $
+--- pfsync.c.orig	Sun Jun  5 20:22:35 2016
++++ pfsync.c	Thu Jan 26 13:22:57 2017
+@@ -27,6 +27,7 @@
+ #include <arpa/inet.h>
+ #include <net/if.h>
+ #include <net/pfvar.h>
++#include <netinet/ip_ipsp.h>	/* union sockaddr_union */
+ #include <net/if_pfsync.h>
+ #include "externs.h"
+ 
