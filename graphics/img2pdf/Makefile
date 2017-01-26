@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/03 19:21:18 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2017/01/26 09:38:57 czarkoff Exp $
 
 COMMENT =		losslessly convert images to PDF
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		img2pdf-${MODPY_EGG_VERSION}
 CATEGORIES =		graphics
 HOMEPAGE =		https://gitlab.mister-muffin.de/josch/img2pdf/
-REVISION =		0
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
