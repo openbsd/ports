@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_child_child_process_cc,v 1.1 2017/01/26 17:08:25 robert Exp $
+--- content/child/child_process.cc.orig.port	Fri Jan 13 11:01:41 2017
++++ content/child/child_process.cc	Fri Jan 13 11:01:47 2017
+@@ -103,7 +103,7 @@ void ChildProcess::ReleaseProcess() {
+     main_thread_->OnProcessFinalRelease();
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void ChildProcess::SetIOThreadPriority(
+     base::ThreadPriority io_thread_priority) {
+   main_thread_->SetThreadPriority(io_thread_.GetThreadId(), io_thread_priority);

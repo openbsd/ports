@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.11 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Fri Dec  2 00:02:08 2016
-+++ chrome/browser/ui/views/frame/browser_frame.cc	Fri Dec  2 17:44:53 2016
-@@ -38,11 +38,11 @@
- #include "ui/native_theme/native_theme_dark_aura.h"  // nogncheck
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.12 2017/01/26 17:08:25 robert Exp $
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig.port	Tue Jan  3 20:35:12 2017
++++ chrome/browser/ui/views/frame/browser_frame.cc	Tue Jan  3 20:36:46 2017
+@@ -37,11 +37,11 @@
+ #include "ash/common/wm_shell.h"  // nogncheck
  #endif
  
 -#if defined(OS_LINUX)
@@ -15,7 +15,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.11 2016/12/10
  #include "ui/views/widget/desktop_aura/x11_desktop_handler.h"
  #endif
  
-@@ -104,7 +104,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -98,7 +98,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  
@@ -24,12 +24,3 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.11 2016/12/10
    browser_command_handler_.reset(new BrowserCommandHandlerLinux(browser_view_));
  #endif
  }
-@@ -239,7 +239,7 @@ void BrowserFrame::OnNativeWidgetActivationChanged(boo
- 
- void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
-   chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   BrowserList::MoveBrowsersInWorkspaceToFront(
-       views::X11DesktopHandler::get()->GetWorkspace());
- #endif

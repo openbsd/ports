@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp $
---- third_party/angle/BUILD.gn.orig.port	Fri Dec  2 00:03:09 2016
-+++ third_party/angle/BUILD.gn	Fri Dec  2 17:44:56 2016
-@@ -160,6 +160,8 @@ static_library("angle_common") {
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.5 2017/01/26 17:08:26 robert Exp $
+--- third_party/angle/BUILD.gn.orig.port	Thu Dec 15 00:03:00 2016
++++ third_party/angle/BUILD.gn	Tue Jan  3 20:30:01 2017
+@@ -140,6 +140,8 @@ static_library("angle_common") {
      ":angle_release_asserts_config",
      ":angle_common_config",
    ]
@@ -10,15 +10,15 @@ $OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp 
  }
  
  config("angle_image_util_config") {
-@@ -227,6 +229,7 @@ static_library("translator_lib") {
+@@ -204,6 +206,7 @@ static_library("translator") {
      # For some reason this warning doesn't get triggered in Chromium
      cflags = [ "/wd4718" ]
    }
 +  cflags = [ "-I/usr/XXXX" ]
  }
  
- static_library("translator_static") {
-@@ -335,6 +338,7 @@ config("libANGLE_config") {
+ source_set("translator_fuzzer") {
+@@ -294,6 +297,7 @@ config("libANGLE_config") {
    if (is_win) {
      cflags += [ "/wd4530" ]  # C++ exception handler used, but unwind semantics are not enabled.
    }
@@ -26,7 +26,7 @@ $OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp 
  }
  
  static_library("libANGLE") {
-@@ -443,6 +447,8 @@ static_library("libANGLE") {
+@@ -402,6 +406,8 @@ static_library("libANGLE") {
        ":copy_compiler_dll",
      ]
    }
@@ -35,7 +35,7 @@ $OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp 
  }
  
  config("shared_library_public_config") {
-@@ -486,6 +492,7 @@ shared_library("libGLESv2") {
+@@ -445,6 +451,7 @@ shared_library("libGLESv2") {
      ":includes",
      ":libANGLE",
    ]
@@ -43,7 +43,7 @@ $OpenBSD: patch-third_party_angle_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp 
  }
  
  shared_library("libEGL") {
-@@ -541,10 +548,6 @@ shared_library("angle_util") {
+@@ -500,10 +507,6 @@ shared_library("angle_util") {
  
    if (is_linux) {
      sources += rebase_path(util_gypi.util_linux_sources, ".", "util")

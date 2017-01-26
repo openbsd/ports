@@ -1,0 +1,12 @@
+$OpenBSD: patch-services_service_manager_runner_host_BUILD_gn,v 1.1 2017/01/26 17:08:26 robert Exp $
+--- services/service_manager/runner/host/BUILD.gn.orig.port	Tue Jan  3 20:49:57 2017
++++ services/service_manager/runner/host/BUILD.gn	Tue Jan  3 20:50:03 2017
+@@ -51,7 +51,7 @@ source_set("child_process_base") {
+     "//services/service_manager/runner/common",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_openbsd) {
+     sources += [
+       "linux_sandbox.cc",
+       "linux_sandbox.h",

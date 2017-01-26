@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.13 2016/12/10 15:35:25 robert Exp $
---- net/url_request/url_request_context_builder.cc.orig.port	Fri Dec  2 00:02:16 2016
-+++ net/url_request/url_request_context_builder.cc	Fri Dec  2 17:44:55 2016
-@@ -326,7 +326,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
+$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.14 2017/01/26 17:08:26 robert Exp $
+--- net/url_request/url_request_context_builder.cc.orig.port	Thu Dec 15 00:02:12 2016
++++ net/url_request/url_request_context_builder.cc	Tue Jan  3 20:30:00 2017
+@@ -327,7 +327,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    if (!proxy_service_) {
      // TODO(willchan): Switch to using this code when
      // ProxyService::CreateSystemProxyConfigService()'s signature doesn't suck.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Fri Dec  2 00:02:06 2016
-+++ chrome/app/chrome_main_delegate.cc	Fri Dec  2 17:44:51 2016
-@@ -85,7 +85,7 @@
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.33 2017/01/26 17:08:25 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Thu Dec 15 00:02:03 2016
++++ chrome/app/chrome_main_delegate.cc	Tue Jan  3 20:29:54 2017
+@@ -86,7 +86,7 @@
  #include "chrome/app/chrome_crash_reporter_client.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -120,7 +120,7 @@
+@@ -121,7 +121,7 @@
  #include "components/crash/content/app/breakpad_linux.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
  #include "base/environment.h"
  #endif
  
-@@ -162,7 +162,7 @@ base::LazyInstance<ChromeContentBrowserClient> g_chrom
+@@ -163,7 +163,7 @@ base::LazyInstance<ChromeContentBrowserClient> g_chrom
      LAZY_INSTANCE_INITIALIZER;
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
  base::LazyInstance<ChromeCrashReporterClient>::Leaky g_chrome_crash_client =
      LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -279,7 +279,7 @@ static void AdjustLinuxOOMScore(const std::string& pro
+@@ -280,7 +280,7 @@ static void AdjustLinuxOOMScore(const std::string& pro
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -331,7 +331,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -332,7 +332,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -365,7 +365,7 @@ void InitializeUserDataDir() {
+@@ -366,7 +366,7 @@ void InitializeUserDataDir() {
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -721,7 +721,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -722,7 +722,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -851,7 +851,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -852,7 +852,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    chrome::InitializePDF();
  #endif
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.32 2016/12/10 15:35:25 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -979,7 +979,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -980,7 +980,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }

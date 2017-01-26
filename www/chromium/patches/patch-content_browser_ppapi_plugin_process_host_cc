@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.4 2016/10/26 06:22:08 robert Exp $
---- content/browser/ppapi_plugin_process_host.cc.orig.port	Wed Oct 12 21:02:59 2016
-+++ content/browser/ppapi_plugin_process_host.cc	Wed Oct 19 12:56:04 2016
-@@ -52,7 +52,7 @@
+$OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.5 2017/01/26 17:08:25 robert Exp $
+--- content/browser/ppapi_plugin_process_host.cc.orig.port	Tue Jan  3 20:41:33 2017
++++ content/browser/ppapi_plugin_process_host.cc	Tue Jan  3 20:42:02 2017
+@@ -53,7 +53,7 @@
  
  namespace content {
  
@@ -10,16 +10,16 @@ $OpenBSD: patch-content_browser_ppapi_plugin_process_host_cc,v 1.4 2016/10/26 06
  ZygoteHandle g_ppapi_zygote;
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -119,7 +119,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+@@ -109,7 +109,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
+     return true;
    }
  
- #elif defined(OS_POSIX)
--#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -222,7 +222,7 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
+@@ -203,7 +203,7 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
    return NULL;
  }
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.4 2016/12/10 15:35:25 robert Exp $
---- ui/views/mus/aura_init.cc.orig.port	Sat Dec  3 14:26:44 2016
-+++ ui/views/mus/aura_init.cc	Sat Dec  3 14:27:00 2016
-@@ -19,7 +19,7 @@
- #include "ui/base/ui_base_paths.h"
+$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.5 2017/01/26 17:08:26 robert Exp $
+--- ui/views/mus/aura_init.cc.orig.port	Thu Dec 15 00:02:29 2016
++++ ui/views/mus/aura_init.cc	Tue Jan  3 20:30:02 2017
+@@ -21,7 +21,7 @@
+ #include "ui/views/mus/mus_client.h"
  #include "ui/views/views_delegate.h"
  
 -#if defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.4 2016/12/10 15:35:25 robert Exp $
  #include "components/font_service/public/cpp/font_loader.h"
  #endif
  
-@@ -56,7 +56,7 @@ AuraInit::AuraInit(shell::Connector* connector,
+@@ -67,7 +67,7 @@ AuraInit::AuraInit(service_manager::Connector* connect
    InitializeResources(connector);
  
  // Initialize the skia font code to go ask fontconfig underneath.
@@ -19,7 +19,7 @@ $OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.4 2016/12/10 15:35:25 robert Exp $
    font_loader_ = sk_make_sp<font_service::FontLoader>(connector);
    SkFontConfigInterface::SetGlobal(font_loader_.get());
  #endif
-@@ -69,7 +69,7 @@ AuraInit::AuraInit(shell::Connector* connector,
+@@ -80,7 +80,7 @@ AuraInit::AuraInit(service_manager::Connector* connect
  }
  
  AuraInit::~AuraInit() {

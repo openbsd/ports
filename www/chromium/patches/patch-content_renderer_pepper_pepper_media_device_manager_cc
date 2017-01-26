@@ -1,0 +1,16 @@
+$OpenBSD: patch-content_renderer_pepper_pepper_media_device_manager_cc,v 1.1 2017/01/26 17:08:25 robert Exp $
+--- content/renderer/pepper/pepper_media_device_manager.cc.orig.port	Fri Jan 13 11:12:35 2017
++++ content/renderer/pepper/pepper_media_device_manager.cc	Fri Jan 13 11:14:27 2017
+@@ -89,9 +89,9 @@ void PepperMediaDeviceManager::EnumerateDevices(
+                  callback, ToMediaDeviceType(type)));
+ #else
+   base::ThreadTaskRunnerHandle::Get()->PostTask(
+-      FROM_HERE,
+-      base::Bind(&PepperMediaDeviceManager::DevicesEnumerated, AsWeakPtr(),
+-                 callback, ToMediaDeviceType(type), MediaDeviceInfoArray()));
++      FROM_HERE, base::Bind(&PepperMediaDeviceManager::DevicesEnumerated,
++                            AsWeakPtr(), callback, ToMediaDeviceType(type),
++                            std::vector<MediaDeviceInfoArray>()));
+ #endif
+ }
+ 

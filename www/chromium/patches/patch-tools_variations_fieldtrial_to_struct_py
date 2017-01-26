@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.1 2016/12/10 15:35:25 robert Exp $
---- tools/variations/fieldtrial_to_struct.py.orig.port	Sat Dec  3 18:48:46 2016
-+++ tools/variations/fieldtrial_to_struct.py	Sat Dec  3 18:49:00 2016
-@@ -113,7 +113,7 @@ def main(arguments):
+$OpenBSD: patch-tools_variations_fieldtrial_to_struct_py,v 1.2 2017/01/26 17:08:26 robert Exp $
+--- tools/variations/fieldtrial_to_struct.py.orig.port	Thu Dec 15 00:02:29 2016
++++ tools/variations/fieldtrial_to_struct.py	Tue Jan  3 20:30:02 2017
+@@ -116,7 +116,7 @@ def main(arguments):
    if not opts.platform:
      parser.error('You must specify a --platform.')
  

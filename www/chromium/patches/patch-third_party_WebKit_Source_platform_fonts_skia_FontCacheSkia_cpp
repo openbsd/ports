@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.10 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Sat Dec  3 14:14:10 2016
-+++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Sat Dec  3 14:14:21 2016
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.11 2017/01/26 17:08:26 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu Dec 15 00:02:25 2016
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Tue Jan  3 20:30:01 2017
 @@ -63,7 +63,7 @@ static sk_sp<SkTypeface> typefaceForFontconfigInterfac
  
  namespace blink {
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,
  // Android special locale for retrieving the color emoji font
  // based on the proposed changes in UTR #51 for introducing
  // an Emoji script code:
-@@ -229,7 +229,7 @@ sk_sp<SkTypeface> FontCache::createTypeface(
+@@ -230,7 +230,7 @@ sk_sp<SkTypeface> FontCache::createTypeface(
    }
  #endif
  

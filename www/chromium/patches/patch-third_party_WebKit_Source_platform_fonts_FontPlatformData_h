@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.2 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig.port	Sat Dec  3 14:13:24 2016
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	Sat Dec  3 14:13:48 2016
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.3 2017/01/26 17:08:26 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig.port	Thu Dec 15 00:02:25 2016
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h	Tue Jan  3 20:30:01 2017
 @@ -47,7 +47,7 @@
  #include "wtf/text/CString.h"
  #include "wtf/text/StringImpl.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.
  #include "platform/fonts/linux/FontRenderStyle.h"
  #endif  // OS(LINUX) || OS(ANDROID)
  
-@@ -150,7 +150,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -149,7 +149,7 @@ class PLATFORM_EXPORT FontPlatformData {
    PassRefPtr<OpenTypeVerticalData> verticalData() const;
    PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_h,v 1.
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
    const FontRenderStyle& getFontRenderStyle() const { return m_style; }
-@@ -178,7 +178,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontPlatformData {
    FontOrientation m_orientation;
  
   private:

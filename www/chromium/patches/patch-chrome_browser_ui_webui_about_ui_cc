@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.37 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Fri Dec  2 00:02:08 2016
-+++ chrome/browser/ui/webui/about_ui.cc	Fri Dec  2 17:44:53 2016
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.38 2017/01/26 17:08:25 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Jan 18 21:02:50 2017
++++ chrome/browser/ui/webui/about_ui.cc	Thu Jan 19 08:22:34 2017
 @@ -75,7 +75,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
@@ -35,7 +35,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.37 2016/12/10 15:35:25 r
  
      base::StringPiece raw_response =
          ResourceBundle::GetSharedInstance().GetRawDataResource(idr);
-@@ -787,7 +789,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -794,7 +796,7 @@ void AboutUIHTMLSource::StartDataRequest(
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;
@@ -44,7 +44,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.37 2016/12/10 15:35:25 r
    } else if (source_name_ == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif
-@@ -796,7 +798,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -803,7 +805,7 @@ void AboutUIHTMLSource::StartDataRequest(
      ChromeOSCreditsHandler::Start(path, callback);
      return;
  #endif

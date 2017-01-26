@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/extensions/BUILD.gn.orig.port	Fri Dec  2 00:02:07 2016
-+++ chrome/browser/extensions/BUILD.gn	Fri Dec  2 17:44:52 2016
-@@ -1104,6 +1104,10 @@ static_library("extensions") {
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert Exp $
+--- chrome/browser/extensions/BUILD.gn.orig.port	Thu Dec 15 00:02:04 2016
++++ chrome/browser/extensions/BUILD.gn	Tue Jan  3 20:29:55 2017
+@@ -1115,6 +1115,10 @@ static_library("extensions") {
      defines += [ "ENABLE_HOTWORDING" ]
    }
  

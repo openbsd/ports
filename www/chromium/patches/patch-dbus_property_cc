@@ -1,6 +1,6 @@
-$OpenBSD: patch-dbus_property_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
---- dbus/property.cc.orig.port	Fri Dec  2 00:02:13 2016
-+++ dbus/property.cc	Fri Dec  2 17:44:54 2016
+$OpenBSD: patch-dbus_property_cc,v 1.8 2017/01/26 17:08:25 robert Exp $
+--- dbus/property.cc.orig.port	Thu Dec 15 00:02:10 2016
++++ dbus/property.cc	Tue Jan  3 20:29:59 2017
 @@ -564,6 +564,7 @@ void Property<std::vector<uint8_t>>::AppendSetValueToW
    writer->CloseContainer(&variant_writer);
  }
@@ -9,7 +9,7 @@ $OpenBSD: patch-dbus_property_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
  //
  // Property<std::map<std::string, std::string>> specialization.
  //
-@@ -724,6 +725,7 @@ void Property<std::unordered_map<std::string, std::vec
+@@ -788,6 +789,7 @@ void Property<std::unordered_map<uint16_t, std::vector
    variant_writer.CloseContainer(&dict_writer);
    writer->CloseContainer(&variant_writer);
  }
@@ -17,7 +17,7 @@ $OpenBSD: patch-dbus_property_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
  
  template class Property<uint8_t>;
  template class Property<bool>;
-@@ -739,8 +741,10 @@ template class Property<ObjectPath>;
+@@ -803,8 +805,10 @@ template class Property<ObjectPath>;
  template class Property<std::vector<std::string> >;
  template class Property<std::vector<ObjectPath> >;
  template class Property<std::vector<uint8_t>>;
@@ -26,5 +26,5 @@ $OpenBSD: patch-dbus_property_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
  template class Property<std::vector<std::pair<std::vector<uint8_t>, uint16_t>>>;
 +#endif
  template class Property<std::unordered_map<std::string, std::vector<uint8_t>>>;
+ template class Property<std::unordered_map<uint16_t, std::vector<uint8_t>>>;
  
- }  // namespace dbus

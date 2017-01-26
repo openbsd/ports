@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2016/12/10 15:35:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.66 2017/01/26 17:08:26 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -98,8 +98,6 @@ chrome/resources/inspector/Images/errorWave_2x.png
 chrome/resources/inspector/Images/fileSystem.png
 chrome/resources/inspector/Images/forward.png
 chrome/resources/inspector/Images/frame.png
-chrome/resources/inspector/Images/graphLabelCalloutLeft.png
-chrome/resources/inspector/Images/graphLabelCalloutRight.png
 chrome/resources/inspector/Images/ic_info_black_18dp.svg
 chrome/resources/inspector/Images/ic_warning_black_18dp.svg
 chrome/resources/inspector/Images/navigationControls.png
@@ -152,6 +150,8 @@ chrome/resources/inspector/animation/
 chrome/resources/inspector/animation/animation_module.js
 chrome/resources/inspector/audits/
 chrome/resources/inspector/audits/audits_module.js
+chrome/resources/inspector/audits2/
+chrome/resources/inspector/audits2/audits2_module.js
 chrome/resources/inspector/cm_modes/
 chrome/resources/inspector/cm_modes/cm_modes_module.js
 chrome/resources/inspector/components_lazy/
@@ -160,7 +160,7 @@ chrome/resources/inspector/console/
 chrome/resources/inspector/console/console_module.js
 chrome/resources/inspector/devices/
 chrome/resources/inspector/devices/devices_module.js
-chrome/resources/inspector/devtools.js
+chrome/resources/inspector/devtools_compatibility.js
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/diff/
 chrome/resources/inspector/diff/diff_module.js
@@ -226,8 +226,6 @@ chrome/resources/inspector/screencast/
 chrome/resources/inspector/screencast/screencast_module.js
 chrome/resources/inspector/security/
 chrome/resources/inspector/security/security_module.js
-chrome/resources/inspector/services/
-chrome/resources/inspector/services/services_module.js
 chrome/resources/inspector/settings/
 chrome/resources/inspector/settings/settings_module.js
 chrome/resources/inspector/snippets/
@@ -236,7 +234,6 @@ chrome/resources/inspector/source_frame/
 chrome/resources/inspector/source_frame/source_frame_module.js
 chrome/resources/inspector/sources/
 chrome/resources/inspector/sources/sources_module.js
-chrome/resources/inspector/temp_storage_shared_worker.js
 chrome/resources/inspector/terminal/
 chrome/resources/inspector/terminal/terminal_module.js
 chrome/resources/inspector/text_editor/
@@ -249,6 +246,7 @@ chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy/
 chrome/resources/inspector/ui_lazy/ui_lazy_module.js
+chrome/resources/inspector/utility_shared_worker.js
 chrome/snapshot_blob.bin
 chrome/views_mus_resources.pak
 @man man/man1/chrome.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2016/12/14 08:35:49 robert Exp $
+# $OpenBSD: Makefile,v 1.314 2017/01/26 17:08:25 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,8 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			55.0.2883.87
+V=			56.0.2924.76
+
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -53,6 +54,7 @@ WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += nspr4 nss3 nssutil3 smime3
 WANTLIB += atk-1.0 gmodule-2.0
+WANTLIB += X11-xcb xcb
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -69,6 +71,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		x11/gnome/libgnome-keyring \
 		devel/ninja \
+		x11/gtk+3 \
 		lang/gcc/4.9,-c++>=4.9,<4.10
 LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
@@ -133,8 +136,10 @@ MAKE_ENV+=	V=1
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
-	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
+.  for _dir in avcodec avformat avutil
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
+.  endfor
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio

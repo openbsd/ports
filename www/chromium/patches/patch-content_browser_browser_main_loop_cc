@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.41 2016/12/10 15:35:25 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Fri Dec  2 00:02:12 2016
-+++ content/browser/browser_main_loop.cc	Fri Dec  2 17:44:54 2016
-@@ -196,6 +196,10 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.42 2017/01/26 17:08:25 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Thu Dec 15 00:02:09 2016
++++ content/browser/browser_main_loop.cc	Tue Jan  3 20:29:59 2017
+@@ -203,6 +203,10 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.41 2016/12/10 15:35:25 
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -204,7 +208,7 @@
+@@ -211,7 +215,7 @@
  namespace content {
  namespace {
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.41 2016/12/10 15:35:25 
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
-@@ -475,10 +479,15 @@ void BrowserMainLoop::Init() {
+@@ -482,10 +486,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

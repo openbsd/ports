@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.31 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Fri Dec  2 18:04:39 2016
-+++ chrome/browser/about_flags.cc	Fri Dec  2 18:05:02 2016
-@@ -766,7 +766,7 @@ const FeatureEntry kFeatureEntries[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.32 2017/01/26 17:08:25 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Thu Dec 15 00:02:04 2016
++++ chrome/browser/about_flags.cc	Tue Jan  3 20:29:55 2017
+@@ -776,7 +776,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
                                 switches::kDisableSmoothScrolling)},
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.31 2016/12/10 15:35:25 robert 
      {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
       // Uses the system preference on Mac (a different implementation).
-@@ -1297,7 +1297,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1291,7 +1291,7 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.31 2016/12/10 15:35:25 robert 
      {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
       IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
       FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
-@@ -1771,7 +1771,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1769,7 +1769,7 @@ const FeatureEntry kFeatureEntries[] = {
       IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS

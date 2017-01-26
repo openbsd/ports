@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_child_child_thread_impl_h,v 1.1 2017/01/26 17:08:25 robert Exp $
+--- content/child/child_thread_impl.h.orig.port	Thu Jan 12 09:51:42 2017
++++ content/child/child_thread_impl.h	Thu Jan 12 09:51:49 2017
+@@ -130,7 +130,7 @@ class CONTENT_EXPORT ChildThreadImpl
+       IPC::Sender* sender,
+       bool* out_of_memory);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void SetThreadPriority(base::PlatformThreadId id,
+                          base::ThreadPriority priority);
+ #endif

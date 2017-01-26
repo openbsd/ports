@@ -1,7 +1,16 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.4 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontCache.h.orig.port	Sat Dec  3 14:12:28 2016
-+++ third_party/WebKit/Source/platform/fonts/FontCache.h	Sat Dec  3 14:12:34 2016
-@@ -217,7 +217,7 @@ class PLATFORM_EXPORT FontCache {
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.5 2017/01/26 17:08:26 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig.port	Thu Dec 15 00:02:25 2016
++++ third_party/WebKit/Source/platform/fonts/FontCache.h	Wed Jan  4 09:22:46 2017
+@@ -121,7 +121,7 @@ class PLATFORM_EXPORT FontCache {
+ #else
+   static const AtomicString& legacySystemFontFamily();
+ #endif
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+   static void setSystemFontFamily(const AtomicString&);
+ #endif
+ 
+@@ -231,7 +231,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  

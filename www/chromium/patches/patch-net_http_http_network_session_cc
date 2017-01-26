@@ -1,10 +1,10 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
---- net/http/http_network_session.cc.orig.port	Fri Dec  2 00:02:16 2016
-+++ net/http/http_network_session.cc	Fri Dec  2 17:44:55 2016
-@@ -16,7 +16,9 @@
- #include "base/strings/string_number_conversions.h"
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.8 2017/01/26 17:08:26 robert Exp $
+--- net/http/http_network_session.cc.orig.port	Tue Jan  3 20:48:49 2017
++++ net/http/http_network_session.cc	Tue Jan  3 20:48:58 2017
+@@ -17,7 +17,9 @@
  #include "base/strings/string_util.h"
  #include "base/values.h"
+ #include "net/base/network_throttle_manager.h"
 +#if defined(USE_KERBEROS)
  #include "net/http/http_auth_handler_factory.h"
 +#endif

@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_debug_scoped_thread_heap_usage_cc,v 1.1 2016/12/10 15:35:25 robert Exp $
---- base/debug/scoped_thread_heap_usage.cc.orig.port	Sat Dec  3 19:35:16 2016
-+++ base/debug/scoped_thread_heap_usage.cc	Sat Dec  3 19:35:29 2016
+$OpenBSD: patch-base_debug_thread_heap_usage_tracker_cc,v 1.1 2017/01/26 17:08:25 robert Exp $
+--- base/debug/thread_heap_usage_tracker.cc.orig.port	Tue Jan  3 20:29:54 2017
++++ base/debug/thread_heap_usage_tracker.cc	Tue Jan  3 20:30:12 2017
 @@ -14,10 +14,12 @@
  #include "base/threading/thread_local_storage.h"
  #include "build/build_config.h"
