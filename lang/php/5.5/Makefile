@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.63 2016/12/19 20:34:22 martijn Exp $
+# $OpenBSD: Makefile,v 1.64 2017/01/26 23:04:16 sthen Exp $
+
+BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
 PV=		5.5
 V=		${PV}.38
