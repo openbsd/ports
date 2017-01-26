@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.150 2017/01/25 11:55:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.151 2017/01/26 06:19:58 zhuk Exp $
 
-BROKEN =		fallout after changes in LibreSSL
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
 
@@ -13,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		40
+REVISION-main =		41
 REVISION-langlist =	1
 
 MODKDE_VERSION =	3.5.8

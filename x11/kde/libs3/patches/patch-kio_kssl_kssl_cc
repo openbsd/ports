@@ -1,0 +1,22 @@
+$OpenBSD: patch-kio_kssl_kssl_cc,v 1.1 2017/01/26 06:19:58 zhuk Exp $
+Unbreak after LibreSSL changes 25.01.2017.
+--- kio/kssl/kssl.cc.orig	Wed Jan 25 16:19:58 2017
++++ kio/kssl/kssl.cc	Wed Jan 25 17:42:00 2017
+@@ -284,7 +284,7 @@ int rc;
+ 		return -1;
+ 
+ 	if (d->session) {
+-		if (static_cast<SSL_SESSION*>(d->session->_session)->sess_cert == 0)
++		if (static_cast<SSL_SESSION*>(d->session->_session)->peer == 0)
+ 		{
+ 			kdDebug(7029) << "Can't reuse session, no certificate." << endl;
+ 			delete d->session;
+@@ -375,7 +375,7 @@ int rc;
+ 		return -1;
+ 
+ 	if (d->session) {
+-		if (static_cast<SSL_SESSION*>(d->session->_session)->sess_cert == 0)
++		if (static_cast<SSL_SESSION*>(d->session->_session)->peer == 0)
+ 		{
+ 			kdDebug(7029) << "Can't reuse session, no certificate." << endl;
+ 			delete d->session;
