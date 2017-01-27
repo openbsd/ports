@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/27 08:34:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2017/01/27 22:47:29 bentley Exp $
 
 COMMENT =	typesetting system and improved layout engine
 
@@ -28,6 +28,9 @@ EXTRACT_ONLY =		sile-$V.tar.bz2
 MODULES =		devel/gettext \
 			lang/lua
 MODLUA_VERSION =	5.2
+MODLUA_BUILD_DEPENDS +=	devel/lpeg \
+			devel/luafs \
+			textproc/luaexpat
 MODLUA_RUN_DEPENDS +=	devel/lpeg \
 			devel/luafs \
 			textproc/luaexpat
