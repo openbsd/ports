@@ -1,0 +1,13 @@
+$OpenBSD: patch-core_font_lua,v 1.1.1.1 2017/01/27 08:34:57 bentley Exp $
+From upstream 1f2a7b3b94f0d7e60cb7fef668a5542be2486a8e.
+--- core/font.lua.orig	Wed Jan 25 01:44:35 2017
++++ core/font.lua	Wed Jan 25 01:44:39 2017
+@@ -46,7 +46,7 @@
+       end
+     end, "Set current font family, size, weight, style, variant, script, direction and language")
+ 
+-SILE.settings.declare({name = "font.family", type = "string", default = "Gentium"})
++SILE.settings.declare({name = "font.family", type = "string", default = "Gentium Plus"})
+ SILE.settings.declare({name = "font.size", type = "number or integer", default = 10})
+ SILE.settings.declare({name = "font.weight", type = "integer", default = 400})
+ SILE.settings.declare({name = "font.variant", type = "string", default = "normal"})

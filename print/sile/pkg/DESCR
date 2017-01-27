@@ -1,0 +1,8 @@
+SILE is a typesetting system. Its job is to produce beautiful printed
+documents.
+
+SILE takes some textual instructions and turns them into PDF output. It has
+features inspired by TeX and InDesign, but seeks to be more flexible,
+extensible and programmable than them. It's useful both for typesetting
+documents written in the SILE language, and as a processing system for
+styling and outputting structured data.
