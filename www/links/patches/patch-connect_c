@@ -1,0 +1,35 @@
+$OpenBSD: patch-connect_c,v 1.1 2017/01/27 11:23:21 sthen Exp $
+--- connect.c.orig	Fri Jan 27 11:15:16 2017
++++ connect.c	Fri Jan 27 11:19:13 2017
+@@ -106,7 +106,6 @@ void ssl_want_read(struct connection *c)
+ 
+ 	set_timeout(c);
+ 
+-	if (c->no_tsl) c->ssl->options |= SSL_OP_NO_TLSv1;
+ 	switch (SSL_get_error(c->ssl, SSL_connect(c->ssl))) {
+ 		case SSL_ERROR_NONE:
+ 			c->newconn = NULL;
+@@ -120,7 +119,6 @@ void ssl_want_read(struct connection *c)
+ 			set_handlers(*b->sock, NULL, (void(*)(void *))ssl_want_read, (void(*)(void *))exception, c);
+ 			break;
+ 		default:
+-			c->no_tsl++;
+ 			setcstate(c, S_SSL_ERROR);
+ 			retry_connection(c);
+ 			break;
+@@ -186,7 +184,6 @@ void connected(struct connection *c)
+ 	if (c->ssl) {
+ 		c->ssl = getSSL();
+ 		SSL_set_fd(c->ssl, *b->sock);
+-		if (c->no_tsl) c->ssl->options |= SSL_OP_NO_TLSv1;
+ 		switch (SSL_get_error(c->ssl, SSL_connect(c->ssl))) {
+ 			case SSL_ERROR_WANT_READ:
+ 				setcstate(c, S_SSL_NEG);
+@@ -199,7 +196,6 @@ void connected(struct connection *c)
+ 			case SSL_ERROR_NONE:
+ 				break;
+ 			default:
+-				c->no_tsl++;
+ 				setcstate(c, S_SSL_ERROR);
+ 				retry_connection(c);
+ 				return;
