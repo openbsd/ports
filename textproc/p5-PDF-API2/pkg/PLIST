@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/16 00:17:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/01/27 14:34:24 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/API2/
 ${P5SITE}/PDF/API2.pm
@@ -125,7 +125,9 @@ ${P5SITE}/PDF/API2/Resource/XObject/Image/GIF.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/JPEG.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/PNG.pm
 ${P5SITE}/PDF/API2/Resource/XObject/Image/PNM.pm
+${P5SITE}/PDF/API2/Resource/XObject/Image/TIFF/
 ${P5SITE}/PDF/API2/Resource/XObject/Image/TIFF.pm
+${P5SITE}/PDF/API2/Resource/XObject/Image/TIFF/File.pm
 ${P5SITE}/PDF/API2/Resource/uniglyph.txt
 ${P5SITE}/PDF/API2/UniWrap.pm
 ${P5SITE}/PDF/API2/Util.pm
