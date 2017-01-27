@@ -1,14 +1,19 @@
-$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_cpp,v 1.1.1.1 2016/12/25 14:13:11 zhuk Exp $
+$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_cpp,v 1.2 2017/01/27 16:13:08 zhuk Exp $
 Unbreak build with LibreSSL.
 See also https://github.com/libressl-portable/openbsd/issues/33
---- src/network/ssl/qsslcontext_openssl.cpp.orig	Wed May 25 18:46:17 2016
-+++ src/network/ssl/qsslcontext_openssl.cpp	Sun Jul 10 14:15:13 2016
-@@ -340,7 +340,7 @@ init_context:
- 
-     const QVector<QSslEllipticCurve> qcurves = sslContext->sslConfiguration.ellipticCurves();
-     if (!qcurves.isEmpty()) {
--#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_EC)
-+#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_EC) && defined(SSL_CTRL_SET_CURVES)
-         // Set the curves to be used
+--- src/network/ssl/qsslcontext_openssl.cpp.orig	Fri Sep 16 08:49:42 2016
++++ src/network/ssl/qsslcontext_openssl.cpp	Fri Jan 27 18:57:24 2017
+@@ -345,10 +345,9 @@ init_context:
          if (q_SSLeay() >= 0x10002000L) {
              // SSL_CTX_ctrl wants a non-const pointer as last argument,
+             // but let's avoid a copy into a temporary array
+-            if (!q_SSL_CTX_ctrl(sslContext->ctx,
+-                                SSL_CTRL_SET_CURVES,
+-                                qcurves.size(),
+-                                const_cast<int *>(reinterpret_cast<const int *>(qcurves.data())))) {
++            if (!q_SSL_CTX_set1_curves(sslContext->ctx,
++                                const_cast<int *>(reinterpret_cast<const int *>(qcurves.data())),
++                                qcurves.size())) {
+                 sslContext->errorStr = msgErrorSettingEllipticCurves(QSslSocketBackendPrivate::getErrorsFromOpenSsl());
+                 sslContext->errorCode = QSslError::UnspecifiedError;
+                 return sslContext;

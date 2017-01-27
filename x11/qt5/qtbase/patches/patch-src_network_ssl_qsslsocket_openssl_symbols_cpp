@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.1 2017/01/27 16:13:08 zhuk Exp $
+Unbreak build with LibreSSL.
+See also https://github.com/libressl-portable/openbsd/issues/33
+--- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	Fri Jan 27 18:28:24 2017
++++ src/network/ssl/qsslsocket_openssl_symbols.cpp	Fri Jan 27 18:55:30 2017
+@@ -432,6 +432,8 @@ DEFINEFUNC5(int, PKCS12_parse, PKCS12 *p12, p12, const
+ DEFINEFUNC2(PKCS12 *, d2i_PKCS12_bio, BIO *bio, bio, PKCS12 **pkcs12, pkcs12, return 0, return);
+ DEFINEFUNC(void, PKCS12_free, PKCS12 *pkcs12, pkcs12, return, DUMMYARG)
+ 
++DEFINEFUNC3(int, SSL_CTX_set1_groups, SSL_CTX *a, a, const int *b, b, size_t c, c, return 0, return)
++
+ #define RESOLVEFUNC(func) \
+     if (!(_q_##func = _q_PTR_##func(libs.first->resolve(#func)))     \
+         && !(_q_##func = _q_PTR_##func(libs.second->resolve(#func)))) \
+@@ -983,6 +985,8 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(PKCS12_parse)
+     RESOLVEFUNC(d2i_PKCS12_bio)
+     RESOLVEFUNC(PKCS12_free)
++
++    RESOLVEFUNC(SSL_CTX_set1_groups)
+ 
+     symbolsResolved = true;
+     delete libs.first;
