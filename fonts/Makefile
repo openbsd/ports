@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/08/11 08:18:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.36 2017/01/27 08:33:00 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -57,6 +57,7 @@
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
      SUBDIR += spranq-ecofont-ttf
+     SUBDIR += sunscreen
      SUBDIR += symbola-ttf
      SUBDIR += terminus-font
      SUBDIR += terminus-font,symquotes
