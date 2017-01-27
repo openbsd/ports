@@ -1,34 +1,42 @@
-$OpenBSD: patch-Makefile,v 1.5 2016/03/03 14:41:46 sthen Exp $
---- Makefile.orig	Wed Mar  2 17:21:44 2016
-+++ Makefile	Thu Mar  3 14:21:14 2016
-@@ -30,7 +30,7 @@ ifeq ($(STATIC_BUILD), TRUE)
- PWD          = $(shell pwd)/openssl
+$OpenBSD: patch-Makefile,v 1.6 2017/01/27 11:01:14 sthen Exp $
+--- Makefile.orig	Sun Nov  6 13:27:11 2016
++++ Makefile	Fri Jan 27 10:45:15 2017
+@@ -24,9 +24,6 @@ DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
+ 
+ # for dynamic linking
+ LIBS      = -lssl -lcrypto
+-ifneq ($(OS), FreeBSD)
+-	LIBS += -ldl
+-endif
+ 
+ # for static linking
+ ifeq ($(STATIC_BUILD), TRUE)
+@@ -34,9 +31,6 @@ PWD          = $(shell pwd)/openssl
  LDFLAGS      += -L${PWD}/
  CFLAGS       += -I${PWD}/include/ -I${PWD}/
--LIBS         = -lssl -lcrypto -ldl
-+LIBS         = -lssl -lcrypto
+ LIBS         = -lssl -lcrypto -lz
+-ifneq ($(OS), FreeBSD)
+-	LIBS += -ldl
+-endif
  GIT_VERSION  := $(GIT_VERSION)-static
  else
  # for dynamic linking
-@@ -54,10 +54,8 @@ sslscan: $(SRCS)
- 	$(CC) -o $@ ${WARNINGS} ${LDFLAGS} ${CFLAGS} ${CPPFLAGS} ${DEFINES} ${SRCS} ${LIBS}
- 
- install: sslscan
--	mkdir -p $(DESTDIR)$(BINDIR)
--	mkdir -p $(DESTDIR)$(MAN1DIR)
--	cp sslscan $(DESTDIR)$(BINDIR)
--	cp sslscan.1 $(DESTDIR)$(MAN1DIR)
-+	$(BSD_INSTALL_PROGRAM) sslscan $(DESTDIR)$(BINDIR)/sslscan${SUFFIX}
-+	$(BSD_INSTALL_MAN) sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan${SUFFIX}.1
- 
- uninstall:
- 	rm -f $(DESTDIR)$(BINDIR)/sslscan
-@@ -78,7 +76,7 @@ openssl/Makefile: .openssl.is.fresh
- 	cd ./openssl; ./Configure darwin64-x86_64-cc
- # Any other *NIX platform
- else
--openssl/Makefile: .openssl.is.fresh
-+openssl/Makefile:
- 	cd ./openssl; ./config no-shares enable-weak-ssl-ciphers enable-ssl2
- endif
- 
+@@ -82,16 +76,12 @@ uninstall:
+ .openssl.is.fresh: opensslpull
+ 	true
+ opensslpull:
+-	if [ -d openssl -a -d openssl/.git ]; then \
+-		cd ./openssl && git checkout OpenSSL_1_0_2-stable && git pull | grep -q "Already up-to-date." && [ -e ../.openssl.is.fresh ] || touch ../.openssl.is.fresh ; \
+-	else \
+-		git clone --depth 1 -b OpenSSL_1_0_2-stable https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
+-	fi
++	touch .openssl.is.fresh
+ 	# Re-enable SSLv2 EXPORT ciphers
+ 	sed -i.bak 's/# if 0/# if 1/g' openssl/ssl/s2_lib.c
+ 	rm openssl/ssl/s2_lib.c.bak
+ 	# Re-enable weak (<1024 bit) DH keys
+-	sed -i.bak 's/dh_size < [0-9]\+/dh_size < 512/g' openssl/ssl/s3_clnt.c
++	sed -i.bak -E 's/dh_size < [0-9]\+/dh_size < 512/g' openssl/ssl/s3_clnt.c
+ 	rm openssl/ssl/s3_clnt.c.bak
+ 	# Break the weak DH key test so OpenSSL compiles
+ 	sed -i.bak 's/dhe512/zzz/g' openssl/test/testssl

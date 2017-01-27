@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/01 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/01/27 11:01:14 sthen Exp $
 
 COMMENT=	SSL port scanner
 
-V=		1.11.2
+V=		1.11.8
+GH_ACCOUNT=	rbsec
+GH_PROJECT=	sslscan
+GH_TAGNAME=	$V-rbsec
 DISTNAME=	sslscan-$V
-DISTFILES=	${DISTNAME}{$V-rbsec}.tar.gz
-WRKDIST=	${WRKDIR}/${DISTNAME}-rbsec
 
 CATEGORIES=	security net
 
@@ -21,14 +22,13 @@ FLAVOR?=
 
 WANTLIB += c
 
-MASTER_SITES=	https://github.com/rbsec/sslscan/archive/
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 		MANDIR=${TRUEPREFIX}/man \
 		GIT_VERSION="$V" \
-		CC="${CC}" SUFFIX="${SUFFIX}"
+		CC="${CC}"
 
 SUBST_VARS=	SUFFIX
 
@@ -47,5 +47,9 @@ post-extract:
 .else
 WANTLIB +=	crypto ssl
 .endif
+
+post-install:
+	mv ${PREFIX}/bin/sslscan ${PREFIX}/bin/sslscan${SUFFIX}
+	mv ${PREFIX}/man/man1/sslscan.1 ${PREFIX}/man/man1/sslscan${SUFFIX}.1
 
 .include <bsd.port.mk>
