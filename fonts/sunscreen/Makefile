@@ -1,0 +1,32 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2017/01/27 08:32:14 bentley Exp $
+
+TYPEFACE =		sunscreen
+V =			1.0
+COMMENT =		disco-inspired display face
+DISTNAME =		sunscreen-$V
+CATEGORIES =		fonts
+
+EXTRACT_SUFX =		.zip
+
+HOMEPAGE =		http://www.simon-cozens.org/fonts/sunscreen.html
+
+# SIL OFL 1.1
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =		http://www.simon-cozens.org/downloads/
+
+MODULES =		font
+FONTTYPES =		otf
+
+NO_BUILD =		Yes
+NO_TEST =		Yes
+
+WRKDIST =		${WRKDIR}/${DISTNAME}
+DOCDIR =		${PREFIX}/share/doc/sunscreen
+
+do-install:
+	${MODFONT_do-install}
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
+
+.include <bsd.port.mk>

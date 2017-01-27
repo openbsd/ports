@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/27 08:32:14 bentley Exp $
+share/doc/sunscreen/
+share/doc/sunscreen/OFL.txt
+share/fonts/
+@fontdir share/fonts/sunscreen/
+share/fonts/sunscreen/Sunscreen-Pentaline.otf
+share/fonts/sunscreen/Sunscreen-Septaline.otf
+share/fonts/sunscreen/Sunscreen-Triline.otf
+share/fonts/sunscreen/Sunscreen-TrilineEqual.otf
+share/fonts/sunscreen/Sunscreen-Unscreened.otf
