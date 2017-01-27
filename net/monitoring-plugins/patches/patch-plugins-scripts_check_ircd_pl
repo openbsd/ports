@@ -1,0 +1,24 @@
+$OpenBSD: patch-plugins-scripts_check_ircd_pl,v 1.1 2017/01/27 10:20:17 sthen Exp $
+
+Fix unportable code which assumes sockaddr does not include a length field.
+
+--- plugins-scripts/check_ircd.pl.orig	Fri Jan 27 10:13:26 2017
++++ plugins-scripts/check_ircd.pl	Fri Jan 27 10:13:57 2017
+@@ -144,7 +144,6 @@ sub bindRemote ($$)
+ {
+ 	my ($in_remotehost, $in_remoteport) = @_;
+ 	my $proto = getprotobyname('tcp');
+-	my $sockaddr;
+ 	my $that;
+ 	my ($name, $aliases,$type,$len,$thataddr) = gethostbyname($in_remotehost);
+ 
+@@ -152,8 +151,7 @@ sub bindRemote ($$)
+ 	    print "IRCD UNKNOWN: Could not start socket ($!)\n";
+ 	    exit $ERRORS{"UNKNOWN"};
+ 	}
+-	$sockaddr = 'S n a4 x8';
+-	$that = pack($sockaddr, AF_INET, $in_remoteport, $thataddr);
++	$that = pack_sockaddr_in ($in_remoteport, $thataddr);
+ 	if (!connect(ClientSocket, $that)) { 
+ 	    print "IRCD UNKNOWN: Could not connect socket ($!)\n";
+ 	    exit $ERRORS{"UNKNOWN"};
