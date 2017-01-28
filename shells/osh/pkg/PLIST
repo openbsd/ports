@@ -1,13 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/15 15:34:45 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/01/28 21:54:34 pascal Exp $
 @conflict omake-*
 @shell bin/osh
 @shell bin/sh6
 libexec/osh-${V}/
 libexec/osh-${V}/README
-@bin libexec/osh-${V}/fd2
-@bin libexec/osh-${V}/glob
-@bin libexec/osh-${V}/goto
-@bin libexec/osh-${V}/if
+libexec/osh-${V}/osh/
+libexec/osh-${V}/osh/README
+libexec/osh-${V}/osh/SetTandCTTY
+libexec/osh-${V}/osh/history
+libexec/osh-${V}/osh/history.help
+libexec/osh-${V}/osh/oshdir
+libexec/osh-${V}/sh6/
+libexec/osh-${V}/sh6/README
+@bin libexec/osh-${V}/sh6/fd2
+@bin libexec/osh-${V}/sh6/glob
+@bin libexec/osh-${V}/sh6/goto
+@bin libexec/osh-${V}/sh6/if
 @man man/man1/fd2.1
 @man man/man1/glob.1
 @man man/man1/goto.1

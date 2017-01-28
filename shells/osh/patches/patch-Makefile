@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.4 2017/01/28 21:54:34 pascal Exp $
+--- Makefile.orig	Sat Jan 28 22:52:02 2017
++++ Makefile	Sat Jan 28 22:52:25 2017
+@@ -45,7 +45,7 @@ OPTIONS=	-std=c99 -pedantic
+ WARNINGS=	-Wall -Wextra
+ #WARNINGS+=	-Wstack-protector
+ #CFLAGS+=	-g
+-CFLAGS+=	-Os $(OPTIONS) $(WARNINGS)
++CFLAGS+=	$(OPTIONS) $(WARNINGS)
+ #LDFLAGS+=	-static
+ 
+ #

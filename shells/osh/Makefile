@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/05/18 10:04:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2017/01/28 21:54:34 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-V =			4.2.1
+V =			4.3.0
 DISTNAME =		osh-$V
 EPOCH =			0
 
@@ -26,16 +26,16 @@ MAKE_FLAGS =		SYSCONFDIR="${SYSCONFDIR}" PREFIX="${TRUEPREFIX}" \
 			BINMODE="-m ${BINMODE}" MANMODE="-m ${MANMODE}" \
 			MANDIR="${PREFIX}/man/man1"
 
-NO_TEST =		Yes
+TEST_TARGET =		check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/osh
-	${INSTALL_DATA} ${WRKSRC}/examples/OpenBSD/osh.login \
+	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.login \
 		${PREFIX}/share/examples/osh/osh.login
-	${INSTALL_DATA} ${WRKSRC}/examples/OpenBSD/osh.logout \
+	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.logout \
 		${PREFIX}/share/examples/osh/osh.logout
-	${INSTALL_DATA} ${WRKSRC}/examples/OpenBSD/osh.oshrc \
+	${INSTALL_DATA} ${WRKSRC}/examples/etc.osh.oshrc \
 		${PREFIX}/share/examples/osh/osh.oshrc
 
 .include <bsd.port.mk>
