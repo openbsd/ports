@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/01/17 07:49:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2017/01/28 08:08:07 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -72,6 +72,9 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/service-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/budgets/2016-10-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/2016-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudformation/2010-05-15/paginators-1.json
