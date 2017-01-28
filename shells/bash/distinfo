@@ -10,6 +10,7 @@ SHA256 (bash/bash44-008) = hhRHAEZZM2Nte5Reibd9+V02IANHJb4WHKDKWkLiObo=
 SHA256 (bash/bash44-009) = C2vdGhig0g4zDMO8ceBIhk5KE2UuKdwOvzkYvqcpNDw=
 SHA256 (bash/bash44-010) = hGXG8sVq/lWUAiZbOdnpQ2iVSTD5qn89+m023WaGjgY=
 SHA256 (bash/bash44-011) = 3VZCbvfXKV4RB8Cz0GwZLrkpj0AjwgLKK6YmbGE9Fw0=
+SHA256 (bash/bash44-012) = +sJx0r9jcsmQPjs1PLntoETX/ja1qrUvIfPyHNaiBj4=
 SIZE (bash/bash-4.4.tar.gz) = 9377313
 SIZE (bash/bash44-001) = 1896
 SIZE (bash/bash44-002) = 1946
@@ -22,3 +23,4 @@ SIZE (bash/bash44-008) = 2223
 SIZE (bash/bash44-009) = 3117
 SIZE (bash/bash44-010) = 1670
 SIZE (bash/bash44-011) = 1603
+SIZE (bash/bash44-012) = 5768
