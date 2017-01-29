@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/08/25 06:23:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/01/29 11:59:28 jasper Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -54,6 +54,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_multiple_line.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/mismatched_control_comment.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/
@@ -67,7 +68,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/autoloader_layout_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/class_inherits_from_params_class_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/code_on_top_scope_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/inherits_across_namespaces_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/name_contains_uppercase_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/names_containing_dash_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/nested_classes_or_defines_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-lint/plugins/check_classes/parameter_order_spec.rb
