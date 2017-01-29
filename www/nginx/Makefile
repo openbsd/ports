@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2017/01/29 14:38:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2017/01/29 14:38:43 sthen Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -54,6 +54,7 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -lua -perl -passenger
 
+# t build the lua module for now, it fails following libressl changes
 FLAVOR ?=		no_lua
 PSEUDO_FLAVORS =	no_lua
 
