@@ -1,28 +1,23 @@
-$OpenBSD: patch-i3status_conf,v 1.14 2015/04/02 14:36:42 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.15 2017/01/29 15:12:42 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
+NB: _first_ keyword for network interfaces doesn't work yet.
 
---- i3status.conf.orig	Sun Mar 22 18:03:23 2015
-+++ i3status.conf	Thu Apr  2 16:35:27 2015
-@@ -7,43 +7,45 @@
+--- i3status.conf.orig	Sun Jan 29 13:01:35 2017
++++ i3status.conf	Sun Jan 29 16:07:58 2017
+@@ -7,6 +7,7 @@
  # If the above line is not correctly displayed, fix your editor first!
  
  general {
-+        output_format = "i3bar"
++	output_format = "i3bar"
          colors = true
          interval = 5
  }
- 
- order += "ipv6"
- order += "disk /"
--order += "run_watch DHCP"
--order += "run_watch VPN"
- order += "wireless _first_"
- order += "ethernet _first_"
- order += "battery 0"
+@@ -18,20 +19,31 @@ order += "ethernet _first_"
+ order += "battery all"
  order += "load"
  order += "tztime local"
-+order += "cpu_temperature cpu0" 
++order += "cpu_temperature cpu0"
 +order += "cpu_temperature acpitz0"
 +order += "volume master"
  
@@ -32,12 +27,11 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 +}
 +
 +cpu_temperature acpitz0 {
-+        format = "TZ: %degrees C" 
++        format = "TZ: %degrees C"
 +}
 +
  wireless _first_ {
--        format_up = "W: (%quality at %essid) %ip"
-+        format_up = "W: (%signal at %essid) %ip"
+         format_up = "W: (%quality at %essid) %ip"
          format_down = "W: down"
  }
  
@@ -47,28 +41,20 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
          format_down = "E: down"
  }
  
- battery 0 {
+ battery all {
 -        format = "%status %percentage %remaining"
 +        format = "%status %percentage \% %remaining"
  }
  
--run_watch DHCP {
--        pidfile = "/var/run/dhclient*.pid"
--}
--
--run_watch VPN {
--        pidfile = "/var/run/vpnc/pid"
--}
--
  tztime local {
-         format = "%Y-%m-%d %H:%M:%S"
- }
-@@ -54,4 +56,8 @@ load {
+@@ -44,4 +56,8 @@ load {
  
  disk "/" {
          format = "%avail"
+-}
 +}
 +
 +volume master {
 +	format = "vol: %volume"
- }
++}
+\ No newline at end of file
