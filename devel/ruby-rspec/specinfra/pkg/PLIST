@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2016/12/17 12:07:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.37 2017/01/29 11:54:45 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -548,6 +548,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/openbsd/virtualization_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/virtualization_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/processor_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/specinfra.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
