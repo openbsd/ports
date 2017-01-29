@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2017/01/09 15:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.106 2017/01/29 14:38:00 sthen Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -54,6 +54,11 @@ PERMIT_PACKAGE_CDROM=	yes
 
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -lua -perl -passenger
 
+FLAVOR ?=		no_lua
+PSEUDO_FLAVORS =	no_lua
+
+.include <bsd.port.arch.mk>
+
 WANTLIB-main=		c z pcre ssl crypto
 WANTLIB-mailproxy=
 WANTLIB-stream=
@@ -101,7 +106,7 @@ CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include" \
 		-L "${X11BASE}/lib"
 
-MODULES+=		lang/ruby lang/lua
+MODULES+=		lang/ruby
 MODRUBY_BUILDDEP=	No
 MODRUBY_RUNDEP=		No
 
@@ -109,8 +114,14 @@ PATCHFILES+=		nginx-${VERSION}-chroot.patch:3
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple
+
+.if ${BUILD_PACKAGES:M-lua}
+MODULES+=		lang/lua
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
+CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/lua-nginx-module
+.endif
+
 CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--sbin-path=${PREFIX}/sbin/nginx \
@@ -141,7 +152,6 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
-			--add-dynamic-module=${WRKSRC}/lua-nginx-module \
 			--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
 
 SUBSTFILES=		conf/nginx.conf \
