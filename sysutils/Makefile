@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.418 2017/01/22 08:19:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.419 2017/01/30 17:00:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
+     SUBDIR += amazon-ecs-cli
      SUBDIR += amazon-ssm-agent
      SUBDIR += anacron
      SUBDIR += ansible
