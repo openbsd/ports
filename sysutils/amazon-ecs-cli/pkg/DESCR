@@ -1,0 +1,7 @@
+The Amazon ECS Command Line Interface (CLI) is a command line interface for
+Amazon EC2 Container Service (Amazon ECS) that provides high-level commands to
+simplify creating, updating, and monitoring clusters and tasks from a local
+development environment. The Amazon ECS CLI supports Docker Compose, a popular
+open-source tool for defining and running multi-container applications. Use the
+CLI as part of your everyday development and testing cycle as an alternative to
+the AWS Management Console.
