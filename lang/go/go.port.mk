@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.13 2016/08/21 14:08:25 czarkoff Exp $
+# $OpenBSD: go.port.mk,v 1.14 2017/01/30 16:58:40 ajacoutot Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -27,6 +27,11 @@ MODGO_CMD ?=		${SETENV} ${MODGO_ENV} go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
 
+.if ! empty(MODGO_LDFLAGS)
+MODGO_BUILD_CMD +=	-ldflags="${MODGO_LDFLAGS}"
+MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
+.endif
+
 .if defined(GH_ACCOUNT) && defined(GH_PROJECT)
 ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .endif
@@ -44,7 +49,7 @@ MODGO_FLAGS +=		-x
 
 .if empty(DEBUG)
 # by default omit symbol table, debug information and DWARF symbol table
-MODGO_FLAGS +=		-ldflags="-s -w"
+MODGO_LDFLAGS +=	-s -w
 .endif
 
 INSTALL_STRIP =
