@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/05 22:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/01/30 11:29:45 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
 CATEGORIES=	www devel
 
-V=		1.0.0
+V=		1.3.2
 EPOCH=		0
 MASTER_SITES=	https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
