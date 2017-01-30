@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/19 17:55:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/01/30 20:55:50 jasper Exp $
 
 COMMENT=		collection of macros for GNU Autoconf
 
 DISTNAME=		autoconf-archive-2016.09.16
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://www.gnu.org/software/autoconf-archive/
 
