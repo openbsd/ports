@@ -1,4 +1,4 @@
-# $OpenBSD: site.OS.m4,v 1.2 2014/09/16 19:54:29 jca Exp $
+# $OpenBSD: site.OS.m4,v 1.3 2017/01/30 15:42:04 bluhm Exp $
 # OpenBSD Sendmail port configuration, generated from __file__
 dnl
 dnl Target directories
@@ -32,6 +32,8 @@ APPENDDEF(`conf_libmilter_ENVDEF', `-DMILTER')
 APPENDDEF(`conf_sendmail_ENVDEF', `-DMILTER')
 dnl (START)TLS
 APPENDDEF(`confENVDEF', `-DSTARTTLS')dnl
+APPENDDEF(`confENVDEF', `-D_FFR_TLS_EC')dnl
+APPENDDEF(`confENVDEF', `-D_FFR_TLS_SE_OPTS')dnl
 APPENDDEF(`confLIBS', `-lssl -lcrypto')dnl
 dnl Flavors
 dnl =======
