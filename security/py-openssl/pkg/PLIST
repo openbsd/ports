@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/11/03 21:53:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/01/30 11:28:54 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
@@ -13,22 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}version.${MODPY
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/_util.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/crypto.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/rand.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}test_crypto.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}test_rand.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}test_ssl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}test_tsafe.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_crypto.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_rand.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_ssl.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_tsafe.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_util.py
-lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/util.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/version.py
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -38,7 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}openssl/
-share/examples/${MODPY_PY_PREFIX}openssl/README
+share/examples/${MODPY_PY_PREFIX}openssl/README.rst
 share/examples/${MODPY_PY_PREFIX}openssl/SecureXMLRPCServer.py
 share/examples/${MODPY_PY_PREFIX}openssl/certgen.py
 share/examples/${MODPY_PY_PREFIX}openssl/mk_simple_certs.py
@@ -47,3 +31,11 @@ share/examples/${MODPY_PY_PREFIX}openssl/simple/
 share/examples/${MODPY_PY_PREFIX}openssl/simple/README
 share/examples/${MODPY_PY_PREFIX}openssl/simple/client.py
 share/examples/${MODPY_PY_PREFIX}openssl/simple/server.py
+share/examples/${MODPY_PY_PREFIX}openssl/sni/
+share/examples/${MODPY_PY_PREFIX}openssl/sni/README
+share/examples/${MODPY_PY_PREFIX}openssl/sni/another.invalid.crt
+share/examples/${MODPY_PY_PREFIX}openssl/sni/another.invalid.key
+share/examples/${MODPY_PY_PREFIX}openssl/sni/client.py
+share/examples/${MODPY_PY_PREFIX}openssl/sni/example.invalid.crt
+share/examples/${MODPY_PY_PREFIX}openssl/sni/example.invalid.key
+share/examples/${MODPY_PY_PREFIX}openssl/sni/server.py

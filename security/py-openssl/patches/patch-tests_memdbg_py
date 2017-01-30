@@ -1,0 +1,34 @@
+$OpenBSD: patch-tests_memdbg_py,v 1.1 2017/01/30 11:28:54 sthen Exp $
+--- tests/memdbg.py.orig	Fri Jan 27 14:12:10 2017
++++ tests/memdbg.py	Fri Jan 27 14:13:44 2017
+@@ -17,16 +17,11 @@ _ffi.cdef(
+     void *realloc(void *ptr, size_t size);
+ 
+     int  CRYPTO_set_mem_functions(void *(*m)(size_t),void *(*r)(void *,size_t), void (*f)(void *));
+-
+-    int backtrace(void **buffer, int size);
+-    char **backtrace_symbols(void *const *buffer, int size);
+-    void backtrace_symbols_fd(void *const *buffer, int size, int fd);
+     """)  # noqa
+ _api = _ffi.verify(
+     """
+     #include <openssl/crypto.h>
+     #include <stdlib.h>
+-    #include <execinfo.h>
+     """, libraries=["crypto"])
+ C = _ffi.dlopen(None)
+ 
+@@ -39,12 +34,7 @@ def log(s):
+ 
+ 
+ def _backtrace():
+-    buf = _ffi.new("void*[]", 64)
+-    result = _api.backtrace(buf, len(buf))
+-    strings = _api.backtrace_symbols(buf, result)
+-    stack = [_ffi.string(strings[i]) for i in range(result)]
+-    C.free(strings)
+-    return stack
++    return ""
+ 
+ 
+ @_ffi.callback("void*(*)(size_t)")
