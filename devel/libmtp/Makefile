@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2017/01/31 10:01:50 sthen Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-1.1.12
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mtp                  7.0      # 12.0
 
@@ -17,13 +17,11 @@ WANTLIB += c gcrypt gpg-error iconv intl pthread usb-1.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
 
-BUILD_DEPENDS=		devel/doxygen
-MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 LIB_DEPENDS=		devel/libusb1 \
 			security/libgcrypt
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-doxygen
+CONFIGURE_ARGS+=	--enable-doxygen=no
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
