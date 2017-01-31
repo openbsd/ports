@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/28 03:01:44 jturner Exp $
+# $OpenBSD: Makefile,v 1.27 2017/01/31 01:50:15 jturner Exp $
 
 COMMENT =		minimal CGI library for web applications
 
-DISTNAME =		kcgi-0.9.2
+DISTNAME =		kcgi-0.9.3
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -19,6 +19,7 @@ WANTLIB += c
 NO_CONFIGURE =		Yes
 USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile
+MAKE_FLAGS =		PREFIX="${PREFIX}"
 
 TEST_DEPENDS =		net/curl
 TEST_TARGET =		regress
