@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/10/03 17:52:40 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/01/31 07:05:08 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -65,9 +65,13 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/util/response.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/response.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/retry.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/retry.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/selectors.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/selectors.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssl_.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssl_.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/timeout.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/timeout.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/url.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/url.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/wait.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/wait.pyc
