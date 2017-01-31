@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.809 2017/01/31 07:02:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.810 2017/01/31 21:52:16 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -561,7 +561,6 @@
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega
      SUBDIR += xcache
-     SUBDIR += xombrero
      SUBDIR += youtube-dl
      SUBDIR += zendframework
 
