@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.52 2017/01/31 09:55:05 sthen Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	7
+REVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -27,7 +27,7 @@ WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xvidcore z
 WANTLIB += atk-1.0 vorbis
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	devel/doxygen>=1.7.2
+
 LIB_DEPENDS=	audio/faad \
 		audio/lame \
 		audio/libvorbis \
@@ -38,22 +38,20 @@ LIB_DEPENDS=	audio/faad \
 		multimedia/x264 \
 		x11/gtk+2
 
-MAKE_ENV=	DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
-
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-gpl \
 		--enable-static \
 		--with-libdv \
 		--without-alsa \
 		--without-faac \
-		--without-schroedinger
+		--without-schroedinger \
+		--without-doxygen
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_lib_ossaudio__oss_ioctl=no \
 		ac_cv_header_soundcard_h=no
 
 post-install:
-	@rm ${PREFIX}/share/doc/libquicktime/apiref/dir_*.html
 	@find ${PREFIX}/lib/libquicktime -name '*.a' -print | xargs rm
 	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 

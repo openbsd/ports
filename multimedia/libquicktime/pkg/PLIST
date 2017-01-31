@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/11/12 20:50:41 jca Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/01/31 09:55:05 sthen Exp $
 @bin bin/libquicktime_config
 @bin bin/lqt_transcode
 @bin bin/lqtplay
@@ -35,78 +35,4 @@ lib/libquicktime/lqt_vorbis.so
 lib/libquicktime/lqt_x264.so
 lib/pkgconfig/libquicktime.pc
 @man man/man1/lqtplay.1
-share/doc/libquicktime/
-share/doc/libquicktime/apiref/
-share/doc/libquicktime/apiref/annotated.html
-share/doc/libquicktime/apiref/bc_s.png
-share/doc/libquicktime/apiref/bdwn.png
-share/doc/libquicktime/apiref/classes.html
-share/doc/libquicktime/apiref/closed.png
-share/doc/libquicktime/apiref/colormodels_8h_source.html
-share/doc/libquicktime/apiref/doc.png
-share/doc/libquicktime/apiref/doxygen.css
-share/doc/libquicktime/apiref/doxygen.png
-share/doc/libquicktime/apiref/dynsections.js
-share/doc/libquicktime/apiref/files.html
-share/doc/libquicktime/apiref/folderclosed.png
-share/doc/libquicktime/apiref/folderopen.png
-share/doc/libquicktime/apiref/functions.html
-share/doc/libquicktime/apiref/functions_vars.html
-share/doc/libquicktime/apiref/globals.html
-share/doc/libquicktime/apiref/globals_defs.html
-share/doc/libquicktime/apiref/globals_enum.html
-share/doc/libquicktime/apiref/globals_eval.html
-share/doc/libquicktime/apiref/globals_func.html
-share/doc/libquicktime/apiref/globals_q.html
-share/doc/libquicktime/apiref/globals_type.html
-share/doc/libquicktime/apiref/group__atoms.html
-share/doc/libquicktime/apiref/group__audio.html
-share/doc/libquicktime/apiref/group__audio__codecs.html
-share/doc/libquicktime/apiref/group__audio__decode.html
-share/doc/libquicktime/apiref/group__audio__encode.html
-share/doc/libquicktime/apiref/group__codec__parameters.html
-share/doc/libquicktime/apiref/group__codec__registry.html
-share/doc/libquicktime/apiref/group__color.html
-share/doc/libquicktime/apiref/group__general.html
-share/doc/libquicktime/apiref/group__log.html
-share/doc/libquicktime/apiref/group__metadata.html
-share/doc/libquicktime/apiref/group__multichannel.html
-share/doc/libquicktime/apiref/group__text.html
-share/doc/libquicktime/apiref/group__text__decode.html
-share/doc/libquicktime/apiref/group__text__encode.html
-share/doc/libquicktime/apiref/group__timecodes.html
-share/doc/libquicktime/apiref/group__video.html
-share/doc/libquicktime/apiref/group__video__codecs.html
-share/doc/libquicktime/apiref/group__video__decode.html
-share/doc/libquicktime/apiref/group__video__encode.html
-share/doc/libquicktime/apiref/index.html
-share/doc/libquicktime/apiref/jquery.js
-share/doc/libquicktime/apiref/lqt_8h.html
-share/doc/libquicktime/apiref/lqt_8h_source.html
-share/doc/libquicktime/apiref/lqt__atoms_8h_source.html
-share/doc/libquicktime/apiref/lqt__codecinfo_8h_source.html
-share/doc/libquicktime/apiref/menu.js
-share/doc/libquicktime/apiref/menudata.js
-share/doc/libquicktime/apiref/modules.html
-share/doc/libquicktime/apiref/nav_f.png
-share/doc/libquicktime/apiref/nav_g.png
-share/doc/libquicktime/apiref/nav_h.png
-share/doc/libquicktime/apiref/open.png
-share/doc/libquicktime/apiref/quicktime_8h.html
-share/doc/libquicktime/apiref/quicktime_8h_source.html
-share/doc/libquicktime/apiref/splitbar.png
-share/doc/libquicktime/apiref/structlqt__codec__info__s.html
-share/doc/libquicktime/apiref/structlqt__image__size__t.html
-share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
-share/doc/libquicktime/apiref/structquicktime__clap__t.html
-share/doc/libquicktime/apiref/structquicktime__colr__t.html
-share/doc/libquicktime/apiref/structquicktime__pasp__t.html
-share/doc/libquicktime/apiref/sync_off.png
-share/doc/libquicktime/apiref/sync_on.png
-share/doc/libquicktime/apiref/tab_a.png
-share/doc/libquicktime/apiref/tab_b.png
-share/doc/libquicktime/apiref/tab_h.png
-share/doc/libquicktime/apiref/tab_s.png
-share/doc/libquicktime/apiref/tabs.css
-share/doc/libquicktime/apiref/unionlqt__parameter__value__t.html
 share/locale/de/LC_MESSAGES/libquicktime.mo
