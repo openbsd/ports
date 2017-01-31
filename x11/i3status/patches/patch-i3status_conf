@@ -1,15 +1,14 @@
-$OpenBSD: patch-i3status_conf,v 1.15 2017/01/29 15:12:42 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.16 2017/01/31 18:47:56 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
-NB: _first_ keyword for network interfaces doesn't work yet.
 
---- i3status.conf.orig	Sun Jan 29 13:01:35 2017
-+++ i3status.conf	Sun Jan 29 16:07:58 2017
+--- i3status.conf.orig	Tue Jan 31 19:44:46 2017
++++ i3status.conf	Tue Jan 31 19:46:10 2017
 @@ -7,6 +7,7 @@
  # If the above line is not correctly displayed, fix your editor first!
  
  general {
-+	output_format = "i3bar"
++        output_format = "i3bar"
          colors = true
          interval = 5
  }
@@ -51,10 +50,8 @@ NB: _first_ keyword for network interfaces doesn't work yet.
  
  disk "/" {
          format = "%avail"
--}
 +}
 +
 +volume master {
 +	format = "vol: %volume"
-+}
-\ No newline at end of file
+ }
