@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2017/01/31 09:58:35 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
-DISTNAME=	lensfun-0.2.7
-REVISION=	4
+DISTNAME=	lensfun-0.3.2
 
-SHARED_LIBS=	lensfun	1.0
-SHARED_LIBS+=	auxfun	0.0
+SHARED_LIBS=	lensfun	2.0
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.sourceforge.net/
@@ -13,36 +11,24 @@ HOMEPAGE=	http://lensfun.sourceforge.net/
 # library LGPLv3, lens db CC-BY-SA, build infrastructure/applications GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 m png pthread stdc++ z
+WANTLIB += c glib-2.0 m png stdc++ z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun.berlios/}
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun/}
 
-MODULES=		devel/cmake devel/gettext
-BUILD_DEPENDS=		devel/doxygen>=1.7.2
+MODULES=		devel/cmake
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png
 
-CONFIGURE_ARGS=		-DBUILD_DOC=Yes \
-			-DBUILD_AUXFUN=Yes
-
-TEST_PROGS=		tfun example
-
-do-test:
-.for p in ${TEST_PROGS}
-	cd ${WRKBUILD}/tests; ./$p
-.endfor
+CONFIGURE_ARGS=		-DBUILD_DOC=No \
+			-DBUILD_LENSTOOL=Yes \
+			-DBUILD_TESTS=Yes
 
 DOC_DIR=		${PREFIX}/share/doc/lensfun
-MANUAL_DIR=		${DOC_DIR}/manual
 
 post-install:
-	cd ${PREFIX}/bin; rm ${TEST_PROGS}
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*-3.0.txt ${DOC_DIR}
-	rm -Rf ${MANUAL_DIR}
-	mv ${PREFIX}/share/doc/${DISTNAME}.* ${MANUAL_DIR}
 
 .include <bsd.port.mk>
