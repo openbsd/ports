@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2017/01/29 14:38:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2017/01/31 16:36:21 sthen Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -29,7 +29,7 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-perl=	0
 REVISION-passenger=	0
 
@@ -52,10 +52,11 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>, \
 # BSD-like
 PERMIT_PACKAGE_CDROM=	yes
 
-MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -lua -perl -passenger
+# XXX -lua removed following libressl api change; re-add to
+# MULTI_PACKAGES when this is worked-around
+MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -perl -passenger	# -lua
 
-# t build the lua module for now, it fails following libressl changes
-FLAVOR ?=		no_lua
+FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua
 
 .include <bsd.port.arch.mk>
@@ -79,6 +80,7 @@ LIB_DEPENDS-xslt=	textproc/libxml \
 LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-geoip=	net/GeoIP
 
+RUN_DEPENDS-main=	# blank (override addition from lua.port.mk)
 RUN_DEPENDS-mailproxy=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-stream=	www/nginx,-main=${VERSION}
 RUN_DEPENDS-image_filter=www/nginx,-main=${VERSION}
