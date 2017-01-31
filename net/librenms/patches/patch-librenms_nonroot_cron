@@ -1,6 +1,6 @@
-$OpenBSD: patch-librenms_nonroot_cron,v 1.5 2016/10/14 12:48:55 sthen Exp $
---- librenms.nonroot.cron.orig	Fri Oct 14 13:25:25 2016
-+++ librenms.nonroot.cron	Fri Oct 14 13:25:33 2016
+$OpenBSD: patch-librenms_nonroot_cron,v 1.6 2017/01/31 22:43:30 sthen Exp $
+--- librenms.nonroot.cron.orig	Tue Jan 31 16:57:14 2017
++++ librenms.nonroot.cron	Tue Jan 31 16:57:24 2017
 @@ -1,10 +1,10 @@
  # Using this cron file requires an additional user on your system, please see install docs.
  

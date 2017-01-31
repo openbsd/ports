@@ -1,6 +1,6 @@
-$OpenBSD: patch-validate_php,v 1.8 2016/12/14 21:37:03 sthen Exp $
---- validate.php.orig	Wed Dec 14 17:43:27 2016
-+++ validate.php	Wed Dec 14 17:43:50 2016
+$OpenBSD: patch-validate_php,v 1.9 2017/01/31 22:43:30 sthen Exp $
+--- validate.php.orig	Tue Jan 31 16:57:21 2017
++++ validate.php	Tue Jan 31 22:08:48 2017
 @@ -45,7 +45,7 @@ if (!file_exists('config.php')) {
  }
  

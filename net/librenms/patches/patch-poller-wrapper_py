@@ -1,6 +1,6 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.7 2016/10/14 12:48:55 sthen Exp $
---- poller-wrapper.py.orig	Fri Oct 14 13:25:32 2016
-+++ poller-wrapper.py	Fri Oct 14 13:25:33 2016
+$OpenBSD: patch-poller-wrapper_py,v 1.8 2017/01/31 22:43:30 sthen Exp $
+--- poller-wrapper.py.orig	Tue Jan 31 16:57:21 2017
++++ poller-wrapper.py	Tue Jan 31 16:57:24 2017
 @@ -53,7 +53,7 @@ config_file = ob_install_dir + '/config.php'
  
  
@@ -18,8 +18,8 @@ $OpenBSD: patch-poller-wrapper_py,v 1.7 2016/10/14 12:48:55 sthen Exp $
 +poller_path = ob_install_dir + '/poller.php'
  db_username = config['db_user']
  db_password = config['db_pass']
- 
-@@ -296,7 +296,7 @@ def poll_worker():
+ db_port = int(config['db_port'])
+@@ -293,7 +293,7 @@ def poll_worker():
  # EOC5
              try:
                  start_time = time.time()

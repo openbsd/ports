@@ -1,79 +1,58 @@
-$OpenBSD: patch-daily_sh,v 1.14 2016/12/14 21:37:03 sthen Exp $
-
-- use ksh
-- patch php binary name
-- avoid ${cnf,,} bashism (converts to lowercase); actually the
-result was being ignored anyway
-
---- daily.sh.orig	Wed Dec 14 17:43:14 2016
-+++ daily.sh	Wed Dec 14 17:47:00 2016
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/ksh
- ################################################################################
- # Copyright (C) 2015 Daniel Preussker, QuxLabs UG <preussker@quxlabs.com>
- # Layne "Gorian" Breitkreutz <Layne.Breitkreutz@thelenon.com>
-@@ -24,7 +24,7 @@ DIR_LIBRENMS=$(dirname "$(readlink -f "$0")")
+$OpenBSD: patch-daily_sh,v 1.15 2017/01/31 22:43:30 sthen Exp $
+--- daily.sh.orig	Tue Jan 31 22:32:18 2017
++++ daily.sh	Tue Jan 31 22:39:00 2017
+@@ -25,10 +25,10 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
  
  # set log_file, using librenms $config['log_dir'], if set
  # otherwise we default to <LibreNMS Install Directory>/logs
--LOG_DIR=$(php -r "include '${DIR_LIBRENMS}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${DIR_LIBRENMS}/logs';")
-+LOG_DIR=$(%PHP% -r "include '${DIR_LIBRENMS}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${DIR_LIBRENMS}/logs';")
+-LOG_DIR=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
++LOG_DIR=$(%PHP% -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['log_dir']) ? \$config['log_dir'] : '${LIBRENMS_DIR}/logs';")
+ 
+ # get the librenms user
+-LIBRENMS_USER=$(php -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['user']) ? \$config['user'] : 'root';")
++LIBRENMS_USER=$(%PHP% -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['user']) ? \$config['user'] : 'root';")
+ LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
  
- #######################################
-@@ -52,7 +52,7 @@ status_run() {
- 
-     printf "%-50s" "${arg_text}";
-     echo "${arg_text}" >> ${log_file}
--    tmp=$(bash -c "${arg_command}" 2>&1);
-+    tmp=$(sh -c "${arg_command}" 2>&1);
-     exit_code=$?
-     echo "${tmp}" >> ${log_file}
-     echo "Returned: ${exit_code}" >> ${log_file}
-@@ -82,7 +82,7 @@ call_daily_php() {
+@@ -70,7 +70,7 @@ status_run() {
+     else
+         printf " \033[0;31mFAIL\033[0m\n";
+         if [[ "${arg_option}" == "update" ]]; then
+-            php "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
++            %PHP% "${LIBRENMS_DIR}/daily.php" -f notify -o "${tmp}"
+         fi
+     fi
+     return ${exit_code}
+@@ -91,7 +91,7 @@ call_daily_php() {
      local args=( "$@" );
  
      for arg in "${args[@]}"; do
--        php "${DIR_LIBRENMS}/daily.php" -f "${arg}";
-+        %PHP% "${DIR_LIBRENMS}/daily.php" -f "${arg}";
+-        php "${LIBRENMS_DIR}/daily.php" -f "${arg}";
++        %PHP% "${LIBRENMS_DIR}/daily.php" -f "${arg}";
      done
  }
  
-@@ -100,7 +100,7 @@ main () {
-     cd ${DIR_LIBRENMS};
+@@ -123,7 +123,7 @@ main () {
+     fi
  
      if [[ -z "$arg" ]]; then
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(%PHP% daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
-             $0 no-code-update
+             $DAILY_SCRIPT no-code-update
              exit
-@@ -123,11 +123,7 @@ main () {
-         fi
- 
-         cnf=$(echo $(grep '\[.distributed_poller.\]' config.php | egrep -v -e '^//' -e '^#' | cut -d = -f 2 | sed 's/;//g'))
--        if ((${BASH_VERSINFO[0]} < 4)); then
--            cnf=`echo $cnf|tr [:upper:] [:lower:]`
--        else
--            cnf=${cnf,,}
--        fi
-+        cnf=`echo $cnf|tr [:upper:] [:lower:]`
- 
-         if [[ -z "$cnf" ]] || [[ "$cnf" == "0" ]] || [[ "$cnf" == "false" ]]; then
-             # Call ourself again in case above pull changed or added something to daily.sh
-@@ -138,12 +134,12 @@ main () {
+@@ -161,12 +161,12 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.
 -                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
 +                status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
-                 status_run 'Cleaning up DB' "$0 cleanup"
+                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
              ;;
              post-pull)
                  # List all tasks to do after pull in the order of execution
 -                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
 +                status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
-                 status_run 'Updating submodules' "$0 submodules"
-                 status_run 'Cleaning up DB' "$0 cleanup"
-                 status_run 'Fetching notifications' "$0 notifications"
+                 status_run 'Updating submodules' "$DAILY_SCRIPT submodules"
+                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
+                 status_run 'Fetching notifications' "$DAILY_SCRIPT notifications"

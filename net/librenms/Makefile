@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2016/12/14 21:37:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/01/31 22:43:29 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.22.01
+GH_TAGNAME =	1.24
 EPOCH =		0
 
 CATEGORIES =	net www
@@ -34,6 +34,7 @@ RUN_DEPENDS =	databases/py-mysql \
 		net/pear-Net-IPv4 \
 		net/pear-Net-IPv6 \
 		net/rrdtool \
+		shells/bash \
 		sysutils/ipmitool
 
 NO_BUILD =	Yes
@@ -45,7 +46,7 @@ PREFIX =	/var/www
 INSTDIR =	${PREFIX}/librenms
 SUBST_VARS =	INSTDIR MODPHP_BIN
 
-R =	s,^\#!( )?/bin/bash,\#!${LOCALBASE}/bin/bash,;
+R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
 R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
 R +=	s,^\#!( )?/usr/bin/(env )?php,\#!${MODPHP_BIN},;
 R +=	s,/opt/librenms,/var/www/librenms,g;
