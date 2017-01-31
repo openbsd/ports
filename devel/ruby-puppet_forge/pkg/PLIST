@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/09/09 10:43:21 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/01/31 07:16:24 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -38,7 +38,16 @@ ${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/puppet_forge.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/prefix/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/prefix/v3/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/prefix/v3/bases/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/prefix/v3/bases/puppet.headers
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/uri/prefix/v3/bases/puppet.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/bases/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/bases/puppet.headers
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/bases/puppet.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/files/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/files/puppetlabs-apache-0.0.1.tar.gz.headers
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/v3/files/puppetlabs-apache-0.0.1.tar.gz.json
