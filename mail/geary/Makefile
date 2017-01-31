@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/12/26 10:33:15 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2017/01/31 09:50:06 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -21,6 +21,8 @@ CONFIGURE_ARGS =-DGSETTINGS_COMPILE=OFF \
 		-DGSETTINGS_COMPILE_IN_PLACE=OFF \
 		-DICON_UPDATE=OFF \
 		-DDESKTOP_UPDATE=OFF
+
+# port to webkit2: https://bugzilla.gnome.org/show_bug.cgi?id=728002
 
 LIB_DEPENDS =	mail/gmime \
 		www/webkit,gtk3 \
