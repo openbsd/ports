@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2016/11/12 20:50:41 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2017/01/31 09:59:57 sthen Exp $
 
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.24.2
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	ortp                 2.0      # 9.0
 
@@ -17,18 +17,13 @@ WANTLIB =		crypto m pthread ssl
 
 MASTER_SITES =		http://download.savannah.nongnu.org/releases/linphone/ortp/sources/
 
-BUILD_DEPENDS =		devel/doxygen
-
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-ssl-hmac
+CONFIGURE_ARGS =	--enable-ssl-hmac \
+			--enable-doxygen=no
 
 # OpenBSD does not support AI_V4MAPPED/AI_ALL
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -DAI_V4MAPPED=0 -DAI_ALL"
-
-post-install:
-	rm -Rf ${PREFIX}/share/doc/ortp
-	mv ${PREFIX}/share/doc/${DISTNAME} ${PREFIX}/share/doc/ortp
 
 .include <bsd.port.mk>
