@@ -1,17 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/05/04 10:08:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/01/31 08:46:50 ajacoutot Exp $
 @conflict gmpc-coveramazon-*
 @conflict gmpc-osd-*
 @conflict gmpc-lyrics-*
 @conflict gmpc-lastfm-*
 @conflict gmpc-magnatune-*
 @conflict gmpc-shout-*
+@conflict gmpc-wikipedia-*
 @pkgpath audio/gmpcca
 @pkgpath audio/gmpc-osd
 @pkgpath audio/gmpc-lyrics
 @pkgpath audio/gmpc-lastfm
 @pkgpath audio/gmpc-magnatune
 @pkgpath audio/gmpc-shout
-@pkgpath audio/gmpc-plugins
+@pkgpath audio/gmpc-plugins,-main
+@pkgpath audio/gmpc-plugins,-wikipedia
 lib/gmpc/
 lib/gmpc/plugins/
 lib/gmpc/plugins/alarmplugin.so
