@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/24 21:27:28 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2017/01/31 13:48:18 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -15,11 +15,10 @@ DIST_SUBDIR = 		${BROWSER_NAME}
 WRKDIST = 		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 
 GH_PROJECT =		torb
-GH_TAGNAME =		v${TB_VERSION}-esr45.6.0
+GH_TAGNAME =		v${TB_VERSION}-esr45.7.0
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
 DISTNAME =		${GH_TAGNAME}
-REVISION =		0
 
 SO_VERSION =		1.0
 MOZILLA_LIBS =		browsercomps xul lgpllibs
@@ -81,7 +80,7 @@ WANTLIB += 		icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--disable-gstreamer
 
-RUN_DEPENDS +=		net/tor>=0.2.8.7
+RUN_DEPENDS +=		net/tor>=0.2.9.9p0
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie

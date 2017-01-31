@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_chrome_content_popup_xul,v 1.1.1.1 2016/11/13 21:15:43 landry Exp $
+$OpenBSD: patch-src_chrome_content_popup_xul,v 1.2 2017/01/31 13:48:18 landry Exp $
 
 Get rid of "Check for Tor Browser Updates" button in UI since it can't
 do anything useful right now.
---- src/chrome/content/popup.xul.orig	Thu Jun 23 13:23:51 2016
-+++ src/chrome/content/popup.xul	Thu Jun 23 13:24:12 2016
+--- src/chrome/content/popup.xul.orig	Thu Jan 19 16:30:45 2017
++++ src/chrome/content/popup.xul	Thu Jan 26 17:27:10 2017
 @@ -44,12 +44,6 @@
                    label="&torbutton.context_menu.networksettings;"
                    accesskey="&torbutton.context_menu.networksettings.key;"
                    oncommand="torbutton_open_network_settings()"/>
--        <menuseparator/>
+-        <menuseparator id="torbutton-checkForUpdateSeparator"/>
 -        <menuitem id="torbutton-checkForUpdate"
 -                  label="&torbutton.context_menu.downloadUpdate;"
 -                  accesskey="&torbutton.context_menu.downloadUpdate.key;"
