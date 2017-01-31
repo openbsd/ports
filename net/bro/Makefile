@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2016/12/12 15:12:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2017/01/31 05:19:52 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.5
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -43,6 +43,12 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 
 RUN_DEPENDS=		net/GeoIP,-asn \
 			net/GeoIP,-city
+
+# XXX the bundled sqlite seems to pick up ICU4C if present and will error out if
+# it gets junked during the build; I could not find a proper way to disable it
+# make: don't know how to make /usr/local/include/unicode/bytestream.h
+# (prerequisite of: src/CMakeFiles/bro.dir/3rdparty/sqlite3.c.o)
+BUILD_DEPENDS +=	textproc/icu4c
 
 # share/broctl/scripts
 BUILD_DEPENDS +=	shells/bash
