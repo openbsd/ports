@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2016/11/25 14:30:52 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.63 2017/02/01 08:52:36 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -87,6 +87,7 @@ phpMyAdmin/doc/html/_sources/vendors.txt
 phpMyAdmin/doc/html/_static/
 phpMyAdmin/doc/html/_static/ajax-loader.gif
 phpMyAdmin/doc/html/_static/basic.css
+phpMyAdmin/doc/html/_static/classic.css
 phpMyAdmin/doc/html/_static/comment-bright.png
 phpMyAdmin/doc/html/_static/comment-close.png
 phpMyAdmin/doc/html/_static/comment.png
@@ -1307,6 +1308,7 @@ phpMyAdmin/libraries/sql-parser/src/Components/
 phpMyAdmin/libraries/sql-parser/src/Components/AlterOperation.php
 phpMyAdmin/libraries/sql-parser/src/Components/Array2d.php
 phpMyAdmin/libraries/sql-parser/src/Components/ArrayObj.php
+phpMyAdmin/libraries/sql-parser/src/Components/CaseExpression.php
 phpMyAdmin/libraries/sql-parser/src/Components/Condition.php
 phpMyAdmin/libraries/sql-parser/src/Components/CreateDefinition.php
 phpMyAdmin/libraries/sql-parser/src/Components/DataType.php
@@ -1544,6 +1546,7 @@ phpMyAdmin/locale/zh_TW/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/logout.php
 phpMyAdmin/navigation.php
 phpMyAdmin/normalization.php
+phpMyAdmin/phpinfo.php
 phpMyAdmin/phpmyadmin.css.php
 phpMyAdmin/phpunit.xml.dist
 phpMyAdmin/phpunit.xml.hhvm
@@ -1768,7 +1771,6 @@ phpMyAdmin/templates/test/set_helper.phtml
 phpMyAdmin/templates/test/static.phtml
 phpMyAdmin/templates/test/trim.phtml
 phpMyAdmin/test/
-phpMyAdmin/test/.htaccess
 phpMyAdmin/test/AllSeleniumTests.php
 phpMyAdmin/test/Environment_test.php
 phpMyAdmin/test/PMATestCase.php
