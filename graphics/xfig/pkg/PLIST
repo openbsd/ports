@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/03/05 17:41:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/02/01 10:09:58 kirby Exp $
 @bin bin/xfig
 lib/X11/app-defaults/Fig
 lib/X11/xfig/CompKeyDB
@@ -1297,7 +1297,6 @@ lib/X11/xfig/Libraries/Examples/isometric_drawing.fig
 lib/X11/xfig/Libraries/Examples/lidar.fig
 lib/X11/xfig/Libraries/Examples/lists.fig
 lib/X11/xfig/Libraries/Examples/logic.fig
-lib/X11/xfig/Libraries/Examples/markku_figs.zip
 lib/X11/xfig/Libraries/Examples/musicnotes.fig
 lib/X11/xfig/Libraries/Examples/nikke.fig
 lib/X11/xfig/Libraries/Examples/orifices.fig
@@ -1317,7 +1316,6 @@ lib/X11/xfig/Libraries/Examples/tsr2-side.fig
 lib/X11/xfig/Libraries/Examples/uno_hand.fig
 lib/X11/xfig/Libraries/Examples/watch.fig
 lib/X11/xfig/Libraries/Examples/window.fig
-lib/X11/xfig/Libraries/Examples/xfig.exe.stackdump
 lib/X11/xfig/Libraries/Fasteners/
 lib/X11/xfig/Libraries/Fasteners/Bolts/
 lib/X11/xfig/Libraries/Fasteners/Bolts/Hexhead_Shld_bolt.fig
@@ -1331,7 +1329,6 @@ lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Shld_Slotted_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Shld_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Slotted_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_bolt.fig
-lib/X11/xfig/Libraries/Fasteners/Fasteners.tar
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_Shld_screw.fig
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_screw.fig
@@ -1434,13 +1431,13 @@ lib/X11/xfig/Libraries/Flags/Asia/tajikstan_detail.gif
 lib/X11/xfig/Libraries/Flags/Asia/thailand.fig
 lib/X11/xfig/Libraries/Flags/Asia/uzbekistan.fig
 lib/X11/xfig/Libraries/Flags/Asia/vietnam.fig
-lib/X11/xfig/Libraries/Flags/Carribean/
-lib/X11/xfig/Libraries/Flags/Carribean/cuba.fig
-lib/X11/xfig/Libraries/Flags/Carribean/dominican_republic.fig
-lib/X11/xfig/Libraries/Flags/Carribean/grenada.fig
-lib/X11/xfig/Libraries/Flags/Carribean/haiti.fig
-lib/X11/xfig/Libraries/Flags/Carribean/jamaica.fig
-lib/X11/xfig/Libraries/Flags/Carribean/puerto_rico.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/
+lib/X11/xfig/Libraries/Flags/Caribbean/cuba.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/dominican_republic.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/grenada.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/haiti.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/jamaica.fig
+lib/X11/xfig/Libraries/Flags/Caribbean/puerto_rico.fig
 lib/X11/xfig/Libraries/Flags/CentralAmerica/
 lib/X11/xfig/Libraries/Flags/CentralAmerica/costa_rica.fig
 lib/X11/xfig/Libraries/Flags/CentralAmerica/honduras.fig
@@ -1485,7 +1482,6 @@ lib/X11/xfig/Libraries/Flags/Europe/sweden.fig
 lib/X11/xfig/Libraries/Flags/Europe/switzerland.fig
 lib/X11/xfig/Libraries/Flags/Europe/ukraine.fig
 lib/X11/xfig/Libraries/Flags/Europe/yugoslavia.fig
-lib/X11/xfig/Libraries/Flags/MAKEPNG
 lib/X11/xfig/Libraries/Flags/MiddleEast/
 lib/X11/xfig/Libraries/Flags/MiddleEast/iran.fig
 lib/X11/xfig/Libraries/Flags/MiddleEast/iraq.fig
@@ -1900,7 +1896,6 @@ lib/X11/xfig/Libraries/Maps/Asia/uzbekistan.fig
 lib/X11/xfig/Libraries/Maps/Asia/vietnam.fig
 lib/X11/xfig/Libraries/Maps/Canada/
 lib/X11/xfig/Libraries/Maps/Canada/alberta.fig
-lib/X11/xfig/Libraries/Maps/Canada/assemble
 lib/X11/xfig/Libraries/Maps/Canada/bc.fig
 lib/X11/xfig/Libraries/Maps/Canada/canada.fig
 lib/X11/xfig/Libraries/Maps/Canada/manitoba.fig
@@ -2043,7 +2038,6 @@ lib/X11/xfig/Libraries/Maps/USA/alabama.fig
 lib/X11/xfig/Libraries/Maps/USA/alaska.fig
 lib/X11/xfig/Libraries/Maps/USA/arizona.fig
 lib/X11/xfig/Libraries/Maps/USA/arkansas.fig
-lib/X11/xfig/Libraries/Maps/USA/assemble
 lib/X11/xfig/Libraries/Maps/USA/california.fig
 lib/X11/xfig/Libraries/Maps/USA/colorado.fig
 lib/X11/xfig/Libraries/Maps/USA/connecticut.fig
@@ -2640,7 +2634,15 @@ lib/X11/xfig/Libraries/Welding/tv.2.fig
 lib/X11/xfig/Libraries/Welding/tv.3.fig
 lib/X11/xfig/Libraries/Welding/u.1.fig
 @man man/man1/xfig.1
+share/applications/xfig.desktop
 share/doc/xfig/
+share/doc/xfig/FORMAT1.3
+share/doc/xfig/FORMAT1.4
+share/doc/xfig/FORMAT2.0
+share/doc/xfig/FORMAT2.1
+share/doc/xfig/FORMAT3.0
+share/doc/xfig/FORMAT3.1
+share/doc/xfig/FORMAT3.2
 share/doc/xfig/html/
 share/doc/xfig/html/accelerators.html
 share/doc/xfig/html/animate.js
@@ -2889,7 +2891,6 @@ share/doc/xfig/html/images/rotate-ccw-button.png
 share/doc/xfig/html/images/rotate-cw-button.png
 share/doc/xfig/html/images/rotation-angle-button.png
 share/doc/xfig/html/images/ruler.png
-share/doc/xfig/html/images/sav1a0.tmp
 share/doc/xfig/html/images/scale-button.png
 share/doc/xfig/html/images/screen-image.png
 share/doc/xfig/html/images/screen-image_sm.png
@@ -2947,6 +2948,8 @@ share/doc/xfig/html/images/view-menu-button.png
 share/doc/xfig/html/images/watch.png
 share/doc/xfig/html/images/watch_sm.png
 share/doc/xfig/html/images/xfig-logo.png
+share/doc/xfig/html/images/xfig-title-old.png
+share/doc/xfig/html/images/xfig-title.fig
 share/doc/xfig/html/images/xfig-title.png
 share/doc/xfig/html/images/xfig_splash_logo.png
 share/doc/xfig/html/images/xfighelp.png
@@ -2958,6 +2961,72 @@ share/doc/xfig/html/images/zoom-panel.png
 share/doc/xfig/html/index.html
 share/doc/xfig/html/installation.html
 share/doc/xfig/html/introduction.html
+share/doc/xfig/html/ja_JP.ujis
+share/doc/xfig/html/japanese/
+share/doc/xfig/html/japanese/accelerators.html
+share/doc/xfig/html/japanese/attributes.html
+share/doc/xfig/html/japanese/authors.html
+share/doc/xfig/html/japanese/bugs_fixed.html
+share/doc/xfig/html/japanese/but_frm_accelerators.html
+share/doc/xfig/html/japanese/but_frm_attributes.html
+share/doc/xfig/html/japanese/but_frm_authors.html
+share/doc/xfig/html/japanese/but_frm_bugs_fixed.html
+share/doc/xfig/html/japanese/but_frm_drawing.html
+share/doc/xfig/html/japanese/but_frm_editing.html
+share/doc/xfig/html/japanese/but_frm_faq.html
+share/doc/xfig/html/japanese/but_frm_global_settings.html
+share/doc/xfig/html/japanese/but_frm_i18n.html
+share/doc/xfig/html/japanese/but_frm_installation.html
+share/doc/xfig/html/japanese/but_frm_introduction.html
+share/doc/xfig/html/japanese/but_frm_layers.html
+share/doc/xfig/html/japanese/but_frm_main_menus.html
+share/doc/xfig/html/japanese/but_frm_miscellaneous.html
+share/doc/xfig/html/japanese/but_frm_new_features.html
+share/doc/xfig/html/japanese/but_frm_object_libraries.html
+share/doc/xfig/html/japanese/but_frm_options.html
+share/doc/xfig/html/japanese/but_frm_panning.html
+share/doc/xfig/html/japanese/but_frm_printing.html
+share/doc/xfig/html/japanese/button_frame.fig
+share/doc/xfig/html/japanese/contents.html
+share/doc/xfig/html/japanese/drawing.html
+share/doc/xfig/html/japanese/editing.html
+share/doc/xfig/html/japanese/faq.html
+share/doc/xfig/html/japanese/fig-format.html
+share/doc/xfig/html/japanese/frm_accelerators.html
+share/doc/xfig/html/japanese/frm_attributes.html
+share/doc/xfig/html/japanese/frm_authors.html
+share/doc/xfig/html/japanese/frm_bugs_fixed.html
+share/doc/xfig/html/japanese/frm_drawing.html
+share/doc/xfig/html/japanese/frm_editing.html
+share/doc/xfig/html/japanese/frm_faq.html
+share/doc/xfig/html/japanese/frm_global_settings.html
+share/doc/xfig/html/japanese/frm_i18n.html
+share/doc/xfig/html/japanese/frm_installation.html
+share/doc/xfig/html/japanese/frm_introduction.html
+share/doc/xfig/html/japanese/frm_layers.html
+share/doc/xfig/html/japanese/frm_main_menus.html
+share/doc/xfig/html/japanese/frm_master.html
+share/doc/xfig/html/japanese/frm_miscellaneous.html
+share/doc/xfig/html/japanese/frm_new_features.html
+share/doc/xfig/html/japanese/frm_object_libraries.html
+share/doc/xfig/html/japanese/frm_options.html
+share/doc/xfig/html/japanese/frm_panning.html
+share/doc/xfig/html/japanese/frm_printing.html
+share/doc/xfig/html/japanese/global_settings.html
+share/doc/xfig/html/japanese/i18n.html
+share/doc/xfig/html/japanese/index.html
+share/doc/xfig/html/japanese/installation.html
+share/doc/xfig/html/japanese/introduction.html
+share/doc/xfig/html/japanese/japanese.ps
+share/doc/xfig/html/japanese/latex_and_xfig.html
+share/doc/xfig/html/japanese/layers.html
+share/doc/xfig/html/japanese/main_menus.html
+share/doc/xfig/html/japanese/miscellaneous.html
+share/doc/xfig/html/japanese/new_features.html
+share/doc/xfig/html/japanese/options.html
+share/doc/xfig/html/japanese/panning.html
+share/doc/xfig/html/japanese/printing.html
+share/doc/xfig/html/japanese/screen_image_map.html
 share/doc/xfig/html/latex_and_xfig.html
 share/doc/xfig/html/layers.html
 share/doc/xfig/html/main_menus.html
@@ -2968,4 +3037,9 @@ share/doc/xfig/html/panning.html
 share/doc/xfig/html/printing.html
 share/doc/xfig/html/screen_image_map.html
 share/doc/xfig/xfig-howto.pdf
+share/doc/xfig/xfig_man.html
 share/doc/xfig/xfig_ref_en.pdf
+share/pixmaps/
+share/pixmaps/xfig.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
