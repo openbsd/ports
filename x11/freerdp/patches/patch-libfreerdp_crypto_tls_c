@@ -1,0 +1,31 @@
+$OpenBSD: patch-libfreerdp_crypto_tls_c,v 1.1 2017/02/01 11:43:23 sthen Exp $
+
+"For x11/freerdp we need to switch from handshake_func tests to other
+existing ways of doing this, which is what they've already done upstream.
+Note that this diff also switches from TLSv1_client_method() to
+SSLv23_client_method() so that TLSv1.1 and TLSv1.2 will work if the
+server supports them."
+
+--- libfreerdp/crypto/tls.c.orig	Wed Feb  1 11:38:11 2017
++++ libfreerdp/crypto/tls.c	Wed Feb  1 11:38:48 2017
+@@ -218,9 +218,9 @@ static long bio_rdp_tls_ctrl(BIO* bio, int cmd, long n
+ 		case BIO_CTRL_RESET:
+ 			SSL_shutdown(tls->ssl);
+ 
+-			if (tls->ssl->handshake_func == tls->ssl->method->ssl_connect)
++			if (SSL_in_connect_init(tls->ssl))
+ 				SSL_set_connect_state(tls->ssl);
+-			else if (tls->ssl->handshake_func == tls->ssl->method->ssl_accept)
++			else if (SSL_in_accept_init(tls->ssl))
+ 				SSL_set_accept_state(tls->ssl);
+ 
+ 			SSL_clear(tls->ssl);
+@@ -749,7 +749,7 @@ int tls_connect(rdpTls* tls, BIO *underlying)
+ 	 */
+ 	options |= SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS;
+ 
+-	if (!tls_prepare(tls, underlying, TLSv1_client_method(), options, TRUE))
++	if (!tls_prepare(tls, underlying, SSLv23_client_method(), options, TRUE))
+ 		return FALSE;
+ 
+ 	return tls_do_handshake(tls, TRUE);
