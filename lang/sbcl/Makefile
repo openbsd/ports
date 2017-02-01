@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/11/02 13:26:07 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2017/02/01 23:14:46 jca Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -7,6 +7,7 @@ USE_WXNEEDED =		Yes
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
 V =			1.3.10
+REVISION=		0
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -35,7 +36,8 @@ EXTRA_PARAMS=
 .if ${FLAVOR:Mthreads}
 # XXX
 BROKEN-powerpc=		no support yet
-EXTRA_PARAMS+=		--with-sb-threads
+EXTRA_PARAMS+=		--with-sb-thread
+WANTLIB+=		pthread
 .endif
 
 .if ${FLAVOR:Mnative_bootstrap}
