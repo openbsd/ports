@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/02/01 22:06:14 tim Exp $
 @bin bin/wavpack
 @bin bin/wvgain
+@bin bin/wvtag
 @bin bin/wvunpack
 include/wavpack/
 include/wavpack/wavpack.h
@@ -10,4 +11,12 @@ lib/libwavpack.la
 lib/pkgconfig/wavpack.pc
 @man man/man1/wavpack.1
 @man man/man1/wvgain.1
+@man man/man1/wvtag.1
 @man man/man1/wvunpack.1
+share/doc/wavpack/
+share/doc/wavpack/ChangeLog
+share/doc/wavpack/WavPack5FileFormat.pdf
+share/doc/wavpack/WavPack5LibraryDoc.pdf
+share/doc/wavpack/WavPack5PortingGuide.pdf
+share/doc/wavpack/style.css
+share/doc/wavpack/wavpack_doc.html

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2016/05/28 21:19:16 tim Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/01 22:06:14 tim Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-DISTNAME =		wavpack-4.80.0
+DISTNAME =		wavpack-5.1.0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.wavpack.com/
 
 MAINTAINER =		Tim van der Molen <tim@openbsd.org>
 
-SHARED_LIBS +=		wavpack		0.1	# 2.8
+SHARED_LIBS +=		wavpack		0.2	# 3.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,7 +27,11 @@ CONFIGURE_ARGS =	--enable-tests
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+DOCDIR =		${PREFIX}/share/doc/wavpack
+
 post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/* ${DOCDIR}
 	rm ${PREFIX}/bin/wvtest
 
 do-test:
