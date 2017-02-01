@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2016/12/11 09:28:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.271 2017/02/01 20:59:41 sthen Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
@@ -8,7 +8,7 @@ COMMENT=	movie player supporting many formats
 V=		20161008
 FFMPEG_V=	20161210
 DISTNAME=	mplayer-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
-		avcodec avformat avutil bluray bz2 c cdda_interface \
+		avcodec avformat avutil bluray bs2b bz2 c cdda_interface \
 		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
 		freetype fribidi gif iconv jpeg m mng mp3lame ncurses png \
 		postproc pthread sndio ssl stdc++ swscale swresample util \
@@ -35,6 +35,7 @@ MODCLANG_ARCHS=	amd64 i386
 LIB_DEPENDS=	archivers/bzip2 \
 		audio/cdparanoia \
 		audio/lame \
+		audio/libbs2b \
 		converters/enca \
 		converters/libiconv \
 		devel/fribidi \
