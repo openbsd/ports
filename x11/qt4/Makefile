@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2017/01/30 20:36:54 jca Exp $
+# $OpenBSD: Makefile,v 1.142 2017/02/01 13:56:12 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,7 +25,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		9
+REVISION-main =		10
 REVISION-examples =	0
 
 # XXX qmake include parser is bogus
@@ -175,6 +175,8 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			gstaudio-0.10 ICE SM X11>=10 Xext Xi Xinerama \
 			Xrender fontconfig freetype png>=2 z \
 			sqlite3
+# QtNetwork dlopen()s ssl libs.
+WANTLIB-main +=		ssl crypto
 
 # dlopen'd icui18n in src/corelib/tools/qlocale_icu.cpp
 RUN_DEPENDS-main +=	textproc/icu4c
