@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/27 16:13:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/01 14:07:30 sthen Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -16,7 +16,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		2
+REVISION-main =		3
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
@@ -49,6 +49,9 @@ WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
 WANTLIB-main += drm gbm
+
+# SSL libs are dlopen()d
+WANTLIB-main += ssl crypto
 
 WANTLIB-global =
 
