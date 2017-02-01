@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.428 2017/01/13 19:17:52 landry Exp $
+# $OpenBSD: Makefile,v 1.429 2017/02/01 20:47:02 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -44,7 +44,6 @@
      SUBDIR += dpic
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
-     SUBDIR += ebook-viewer
      SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
