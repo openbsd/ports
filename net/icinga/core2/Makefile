@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/06/22 21:42:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2017/02/02 21:36:18 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -9,15 +9,32 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.4.10
+V =		2.6.1
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
-DISTNAME =	icinga2-$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
+
+SHARED_LIBS +=	base                      0.0 # 2.6
+SHARED_LIBS +=	checker                   0.0 # 2.6
+SHARED_LIBS +=	cli                       0.0 # 2.6
+SHARED_LIBS +=	compat                    0.0 # 2.6
+SHARED_LIBS +=	config                    0.0 # 2.6
+SHARED_LIBS +=	db_ido                    0.0 # 2.6
+SHARED_LIBS +=	db_ido_mysql              0.0 # 2.6
+SHARED_LIBS +=	db_ido_pgsql              0.0 # 2.6
+SHARED_LIBS +=	execvpe                   0.0 # 2.6
+SHARED_LIBS +=	icinga                    0.0 # 2.6
+SHARED_LIBS +=	livestatus                0.0 # 2.6
+SHARED_LIBS +=	methods                   0.0 # 2.6
+SHARED_LIBS +=	mmatch                    0.0 # 2.6
+SHARED_LIBS +=	notification              0.0 # 2.6
+SHARED_LIBS +=	perfdata                  0.0 # 2.6
+SHARED_LIBS +=	remote                    0.0 # 2.6
+SHARED_LIBS +=	socketpair                0.0 # 2.6
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 
@@ -26,11 +43,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++
+WANTLIB += boost_thread-mt crypto execinfo m pthread ssl estdc++
 WANTLIB += yajl
 
 MODULES =		devel/cmake \
 			gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
 
 PSEUDO_FLAVORS =	test
 FLAVOR ?=
@@ -40,19 +59,38 @@ BUILD_DEPENDS =		devel/bison
 MULTI_PACKAGES =	-main -mysql -pgsql
 
 WANTLIB-main +=		${WANTLIB} c edit termcap
-LIB_DEPENDS-main =	devel/boost \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			devel/boost \
 			devel/libexecinfo \
 			devel/libyajl
 RUN_DEPENDS-main =	net/monitoring-plugins
 RUN_DEPENDS =           ${BASE_PKGPATH},-main # default for subpackages
 
-WANTLIB-mysql +=	${WANTLIB} mysqlclient_r
-LIB_DEPENDS-mysql =	${LIB_DEPENDS} databases/mariadb
-RUN_DEPENDS-mysql =	${BASE_PKGPATH},-main
+WANTLIB-mysql +=	${WANTLIB} mysqlclient \
+			lib/icinga2/base \
+			lib/icinga2/config \
+			lib/icinga2/db_ido \
+			lib/icinga2/execvpe \
+			lib/icinga2/icinga \
+			lib/icinga2/mmatch \
+			lib/icinga2/remote \
+			lib/icinga2/socketpair
+LIB_DEPENDS-mysql =	${LIB_DEPENDS} \
+			${BASE_PKGPATH},-main \
+			databases/mariadb
 
-WANTLIB-pgsql +=	${WANTLIB} pq
-LIB_DEPENDS-pgsql =	${LIB_DEPENDS} databases/postgresql
-RUN_DEPENDS-pgsql =	${BASE_PKGPATH},-main
+WANTLIB-pgsql +=	${WANTLIB} pq \
+			lib/icinga2/base \
+			lib/icinga2/config \
+			lib/icinga2/db_ido \
+			lib/icinga2/execvpe \
+			lib/icinga2/icinga \
+			lib/icinga2/mmatch \
+			lib/icinga2/remote \
+			lib/icinga2/socketpair
+LIB_DEPENDS-pgsql =	${LIB_DEPENDS} \
+			${BASE_PKGPATH},-main \
+			databases/postgresql
 
 CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_MANDIR:String=${PREFIX}/man \
@@ -74,6 +112,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/$i
 	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
 .endfor
+	sed -i "s,/usr/share/icinga2,${PREFIX}/share/icinga2,g" \
+		${PREFIX}/share/doc/icinga2/markdown/*
 
 .if ${FLAVOR:Mtest}
 pre-test:

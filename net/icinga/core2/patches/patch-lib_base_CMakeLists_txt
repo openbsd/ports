@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_base_CMakeLists_txt,v 1.5 2015/11/16 20:29:55 sthen Exp $
---- lib/base/CMakeLists.txt.orig	Mon Nov 16 09:57:03 2015
-+++ lib/base/CMakeLists.txt	Mon Nov 16 17:00:02 2015
-@@ -49,8 +49,8 @@ add_library(base SHARED ${base_SOURCES})
+$OpenBSD: patch-lib_base_CMakeLists_txt,v 1.6 2017/02/02 21:36:18 sthen Exp $
+--- lib/base/CMakeLists.txt.orig	Tue Jan 31 10:18:20 2017
++++ lib/base/CMakeLists.txt	Thu Feb  2 14:05:28 2017
+@@ -51,8 +51,8 @@ add_library(base SHARED ${base_SOURCES})
  
  target_link_libraries(base ${CMAKE_DL_LIBS} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${YAJL_LIBRARIES} mmatch socketpair)
  

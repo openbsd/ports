@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_h_cmake,v 1.5 2015/11/16 20:29:55 sthen Exp $
+$OpenBSD: patch-config_h_cmake,v 1.6 2017/02/02 21:36:18 sthen Exp $
 
 - use cmake's "find_package(Backtrace)" from FindBacktrace.cmake.
 this covers the case of BSDs where the symbols are in libexecinfo.so
@@ -9,15 +9,14 @@ but cmake should install files to an examples directory in our staging
 dir (${PREFIX}/share/examples/icinga2), package tools copy them under
 /etc at install time.
 
---- config.h.cmake.orig	Mon Nov 16 09:57:03 2015
-+++ config.h.cmake	Mon Nov 16 17:04:21 2015
-@@ -1,12 +1,11 @@
+--- config.h.cmake.orig	Tue Jan 31 10:18:20 2017
++++ config.h.cmake	Thu Feb  2 14:06:02 2017
+@@ -1,11 +1,10 @@
  #ifndef CONFIG_H
  #define CONFIG_H
  
-+#cmakedefine01 Backtrace_FOUND
- #cmakedefine HAVE_COUNTER_MACRO
 -#cmakedefine HAVE_BACKTRACE_SYMBOLS
++#cmakedefine01 Backtrace_FOUND
  #cmakedefine HAVE_PIPE2
  #cmakedefine HAVE_VFORK
  #cmakedefine HAVE_DLADDR
@@ -25,7 +24,7 @@ dir (${PREFIX}/share/examples/icinga2), package tools copy them under
  #cmakedefine HAVE_CXXABI_H
  #cmakedefine HAVE_NICE
  #cmakedefine HAVE_EDITLINE
-@@ -14,7 +13,7 @@
+@@ -13,7 +12,7 @@
  #cmakedefine ICINGA2_UNITY_BUILD
  
  #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"

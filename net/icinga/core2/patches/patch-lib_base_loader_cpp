@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_base_loader_cpp,v 1.1 2017/02/02 21:36:18 sthen Exp $
+--- lib/base/loader.cpp.orig	Thu Feb  2 20:24:24 2017
++++ lib/base/loader.cpp	Thu Feb  2 20:23:44 2017
+@@ -36,6 +36,8 @@ void Loader::LoadExtensionLibrary(const String& librar
+ 	path = library + ".dll";
+ #elif defined(__APPLE__)
+ 	path = "lib" + library + "." + Application::GetAppSpecVersion() + ".dylib";
++#elif defined(__OpenBSD__)
++	path = "lib" + library + ".so";
+ #else /* __APPLE__ */
+ 	path = "lib" + library + ".so." + Application::GetAppSpecVersion();
+ #endif /* _WIN32 */

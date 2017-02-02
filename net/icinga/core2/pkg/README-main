@@ -1,30 +1,15 @@
-$OpenBSD: README-main,v 1.12 2015/12/24 12:57:17 sthen Exp $
+$OpenBSD: README-main,v 1.13 2017/02/02 21:36:18 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Upgrading from Icinga 1.x
-=========================
-
-Icinga2 is not a drop-in replacement for Icinga (or Nagios)!
-
-Read the "Migration from Icinga 1.x" and the "Differences between Icinga
-1.x and 2" sections in the documentation.
-
-A migration script exists (see the "icinga2-migration" package), but it
-has several limitations (see the Known Caveats section in the information
-at https://github.com/Icinga/icinga2-migration). In most cases it would
-be better to write a new configuration based on your existing one, rather
-than try to migrate via the script.
-
-
 Getting Started
 ===============
 
-The following sections only consider details relating to use of Icinga 2
-on OpenBSD. Consult the main documentation for Icinga2 which is available
-in ${LOCALBASE}/share/doc/icinga2/markdown or online at
+The following information only includes notes specific to use on OpenBSD.
+Use them in conjunction with the main Icinga 2 documentation available
+in ${PREFIX}/share/doc/icinga2/markdown or online at
 http://docs.icinga.org/icinga2/latest/doc.
 
 The included sample configuration carries out some simple checks
@@ -32,7 +17,7 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Icinga:
 
-   # su -m _icinga -c "${LOCALBASE}/sbin/icinga2 daemon -C"
+   # su -m _icinga -c "${PREFIX}/sbin/icinga2 daemon -C"
 
 This will parse all configuration files and warn about any problems
 which have been identified.
@@ -43,8 +28,7 @@ Enable icinga2 at boot and start it as usual:
    # rcctl start icinga2
 
 Web User Interface
-==================
-
+------------------
 The optional Icinga Web 2 user interface can be installed separately,
 
    # pkg_add icinga-web2
@@ -54,3 +38,12 @@ Icinga Web 2.
 
 It is also possible to use Icinga 2 with the legacy CGI interface,
 or with Icinga Web 1, however this has not been tested by the maintainer.
+
+Upgrading from Icinga 1 or Nagios
+=================================
+Icinga 2 is not a drop-in replacement. Read the "Migration from Icinga 1.x"
+and the "Differences between Icinga 1.x and 2" sections in the documentation.
+
+Upgrading from previous versions of Icinga 2
+--------------------------------------------
+Follow the main documentation in ${PREFIX}/share/doc/icinga2/markdown/.
