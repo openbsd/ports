@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_llvm_lib_CodeGen_TargetLoweringBase_cpp,v 1.1 2017/02/02 08:02:50 landry Exp $
+--- src/llvm/lib/CodeGen/TargetLoweringBase.cpp.orig	Sun Jan 29 09:06:57 2017
++++ src/llvm/lib/CodeGen/TargetLoweringBase.cpp	Sun Jan 29 09:07:29 2017
+@@ -1818,9 +1818,7 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
+   if (getTargetMachine().getTargetTriple().isOSOpenBSD()) {
+     Module &M = *IRB.GetInsertBlock()->getParent()->getParent();
+     PointerType *PtrTy = Type::getInt8PtrTy(M.getContext());
+-    auto Guard = cast<GlobalValue>(M.getOrInsertGlobal("__guard_local", PtrTy));
+-    Guard->setVisibility(GlobalValue::HiddenVisibility);
+-    return Guard;
++    return M.getOrInsertGlobal("__guard_local", PtrTy);
+   }
+   return nullptr;
+ }

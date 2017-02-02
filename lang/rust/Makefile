@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/01/06 17:32:22 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2017/02/02 08:02:50 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,6 +10,7 @@ V =			1.14.0
 BV-amd64 =		1.14.0-20161221
 BV-i386 =		1.14.0-20161221
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 #RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
 RUST_HASH =		f5a209a9
@@ -72,8 +73,7 @@ PKG_ARGS += -Db32=0
 
 MODULES +=		gcc4 \
 			lang/python
-BUILD_DEPENDS +=	devel/cmake \
-			devel/llvm
+BUILD_DEPENDS +=	devel/cmake
 MODPY_RUNDEP =		No
 
 # rustllvm need c++11
@@ -102,7 +102,6 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--disable-codegen-tests \
 			--release-channel=stable \
 			--local-rust-root="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}" \
-			--llvm-root="${LOCALBASE}" \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
 
