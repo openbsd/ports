@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2016/12/05 21:48:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.67 2017/02/02 21:34:34 sebastia Exp $
 
 PORTROACH+=	limit:^2
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.3.18
+VERSION =	2.3.19
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -31,7 +31,7 @@ WANTLIB +=		objc2 gnustep-base curl
 
 LIB_DEPENDS +=		devel/libmemcached \
 			net/curl \
-			www/sope
+			www/sope>=${VERSION}
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
 

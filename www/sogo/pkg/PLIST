@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2016/12/05 21:48:35 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/02/02 21:34:34 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -2136,11 +2136,11 @@ lib/GNUstep/SOGo/WebServerResources/iefixes.css
 lib/GNUstep/SOGo/WebServerResources/important.png
 lib/GNUstep/SOGo/WebServerResources/input_bg.gif
 lib/GNUstep/SOGo/WebServerResources/inverse.png
-lib/GNUstep/SOGo/WebServerResources/jquery-ui.js
+lib/GNUstep/SOGo/WebServerResources/jquery-ui.min.js
 lib/GNUstep/SOGo/WebServerResources/jquery.fileupload.css
 lib/GNUstep/SOGo/WebServerResources/jquery.fileupload.js
 lib/GNUstep/SOGo/WebServerResources/jquery.iframe-transport.js
-lib/GNUstep/SOGo/WebServerResources/jquery.js
+lib/GNUstep/SOGo/WebServerResources/jquery.min.js
 lib/GNUstep/SOGo/WebServerResources/js_color_picker_v2.js
 lib/GNUstep/SOGo/WebServerResources/last.gif
 lib/GNUstep/SOGo/WebServerResources/layout2or3_xlib.js
