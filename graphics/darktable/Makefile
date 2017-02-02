@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2017/01/31 09:57:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2017/02/02 13:55:58 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		2.2.2
+V=		2.2.3
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -34,6 +34,7 @@ MODULES=	devel/cmake \
 		lang/lua \
 		textproc/intltool
 MODLUA_VERSION=	5.2
+# gcc4 required for TLS emulation
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c c++
 
@@ -62,7 +63,9 @@ LIB_DEPENDS=	devel/gettext \
 SEPARATE_BUILD=	Yes
 
 CONFIGURE_ARGS=	-DBINARY_PACKAGE_BUILD=1 \
-		-DCUSTOM_CFLAGS=1
+		-DCUSTOM_CFLAGS=1 \
+		-DTESTBUILD_OPENCL_PROGRAMS=OFF
+# OpenCL picks up LLVM at build time.
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
