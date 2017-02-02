@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2016/04/04 22:57:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.45 2017/02/02 03:41:12 juanfra Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 @bin bin/zsh-${V}
@@ -90,9 +90,11 @@ share/zsh/${V}/functions/VCS_INFO_get_data_p4
 share/zsh/${V}/functions/VCS_INFO_get_data_svk
 share/zsh/${V}/functions/VCS_INFO_get_data_svn
 share/zsh/${V}/functions/VCS_INFO_get_data_tla
+share/zsh/${V}/functions/VCS_INFO_hexdump
 share/zsh/${V}/functions/VCS_INFO_hook
 share/zsh/${V}/functions/VCS_INFO_maxexports
 share/zsh/${V}/functions/VCS_INFO_nvcsformats
+share/zsh/${V}/functions/VCS_INFO_patch2subject
 share/zsh/${V}/functions/VCS_INFO_quilt
 share/zsh/${V}/functions/VCS_INFO_realpath
 share/zsh/${V}/functions/VCS_INFO_reposub
@@ -101,10 +103,12 @@ share/zsh/${V}/functions/_SUSEconfig
 share/zsh/${V}/functions/_a2ps
 share/zsh/${V}/functions/_a2utils
 share/zsh/${V}/functions/_aap
+share/zsh/${V}/functions/_absolute_command_paths
 share/zsh/${V}/functions/_acpi
 share/zsh/${V}/functions/_acpitool
 share/zsh/${V}/functions/_acroread
 share/zsh/${V}/functions/_adb
+share/zsh/${V}/functions/_add-zle-hook-widget
 share/zsh/${V}/functions/_add-zsh-hook
 share/zsh/${V}/functions/_alias
 share/zsh/${V}/functions/_aliases
@@ -138,10 +142,12 @@ share/zsh/${V}/functions/_autocd
 share/zsh/${V}/functions/_awk
 share/zsh/${V}/functions/_axi-cache
 share/zsh/${V}/functions/_bash_completions
+share/zsh/${V}/functions/_baudrates
 share/zsh/${V}/functions/_baz
 share/zsh/${V}/functions/_be_name
 share/zsh/${V}/functions/_beadm
 share/zsh/${V}/functions/_beep
+share/zsh/${V}/functions/_bibtex
 share/zsh/${V}/functions/_bind_addresses
 share/zsh/${V}/functions/_bindkey
 share/zsh/${V}/functions/_bison
@@ -195,6 +201,7 @@ share/zsh/${V}/functions/_complete_debug
 share/zsh/${V}/functions/_complete_help
 share/zsh/${V}/functions/_complete_help_generic
 share/zsh/${V}/functions/_complete_tag
+share/zsh/${V}/functions/_completers
 share/zsh/${V}/functions/_compress
 share/zsh/${V}/functions/_condition
 share/zsh/${V}/functions/_configure
@@ -206,10 +213,13 @@ share/zsh/${V}/functions/_cowsay
 share/zsh/${V}/functions/_cp
 share/zsh/${V}/functions/_cpio
 share/zsh/${V}/functions/_cplay
+share/zsh/${V}/functions/_cpupower
 share/zsh/${V}/functions/_cryptsetup
+share/zsh/${V}/functions/_cscope
 share/zsh/${V}/functions/_cssh
 share/zsh/${V}/functions/_csup
 share/zsh/${V}/functions/_ctags_tags
+share/zsh/${V}/functions/_cu
 share/zsh/${V}/functions/_curl
 share/zsh/${V}/functions/_cut
 share/zsh/${V}/functions/_cvs
@@ -232,6 +242,7 @@ share/zsh/${V}/functions/_dcut
 share/zsh/${V}/functions/_dd
 share/zsh/${V}/functions/_deb_architectures
 share/zsh/${V}/functions/_deb_packages
+share/zsh/${V}/functions/_debbugs_bugnumber
 share/zsh/${V}/functions/_debchange
 share/zsh/${V}/functions/_debcheckout
 share/zsh/${V}/functions/_debdiff
@@ -251,6 +262,7 @@ share/zsh/${V}/functions/_dict_words
 share/zsh/${V}/functions/_diff
 share/zsh/${V}/functions/_diff_options
 share/zsh/${V}/functions/_diffstat
+share/zsh/${V}/functions/_dig
 share/zsh/${V}/functions/_dir_list
 share/zsh/${V}/functions/_directories
 share/zsh/${V}/functions/_directory_stack
@@ -260,8 +272,10 @@ share/zsh/${V}/functions/_dispatch
 share/zsh/${V}/functions/_django
 share/zsh/${V}/functions/_dladm
 share/zsh/${V}/functions/_dlocate
+share/zsh/${V}/functions/_dmesg
 share/zsh/${V}/functions/_dmidecode
 share/zsh/${V}/functions/_dnf
+share/zsh/${V}/functions/_doas
 share/zsh/${V}/functions/_domains
 share/zsh/${V}/functions/_dpatch-edit-patch
 share/zsh/${V}/functions/_dpkg
@@ -293,6 +307,7 @@ share/zsh/${V}/functions/_equal
 share/zsh/${V}/functions/_espeak
 share/zsh/${V}/functions/_etags
 share/zsh/${V}/functions/_ethtool
+share/zsh/${V}/functions/_evince
 share/zsh/${V}/functions/_expand
 share/zsh/${V}/functions/_expand_alias
 share/zsh/${V}/functions/_expand_word
@@ -327,6 +342,7 @@ share/zsh/${V}/functions/_fuse_arguments
 share/zsh/${V}/functions/_fuse_values
 share/zsh/${V}/functions/_fuser
 share/zsh/${V}/functions/_fusermount
+share/zsh/${V}/functions/_fw_update
 share/zsh/${V}/functions/_gcc
 share/zsh/${V}/functions/_gcore
 share/zsh/${V}/functions/_gdb
@@ -349,6 +365,7 @@ share/zsh/${V}/functions/_gnu_generic
 share/zsh/${V}/functions/_gnupod
 share/zsh/${V}/functions/_gnutls
 share/zsh/${V}/functions/_go
+share/zsh/${V}/functions/_gpasswd
 share/zsh/${V}/functions/_gpg
 share/zsh/${V}/functions/_gphoto2
 share/zsh/${V}/functions/_gprof
@@ -361,6 +378,8 @@ share/zsh/${V}/functions/_groff
 share/zsh/${V}/functions/_groups
 share/zsh/${V}/functions/_growisofs
 share/zsh/${V}/functions/_gs
+share/zsh/${V}/functions/_gsettings
+share/zsh/${V}/functions/_gstat
 share/zsh/${V}/functions/_guard
 share/zsh/${V}/functions/_guilt
 share/zsh/${V}/functions/_gv
@@ -374,8 +393,10 @@ share/zsh/${V}/functions/_history
 share/zsh/${V}/functions/_history_complete_word
 share/zsh/${V}/functions/_history_modifiers
 share/zsh/${V}/functions/_hosts
+share/zsh/${V}/functions/_htop
 share/zsh/${V}/functions/_hwinfo
 share/zsh/${V}/functions/_iconv
+share/zsh/${V}/functions/_iconvconfig
 share/zsh/${V}/functions/_id
 share/zsh/${V}/functions/_ifconfig
 share/zsh/${V}/functions/_iftop
@@ -387,6 +408,7 @@ share/zsh/${V}/functions/_init_d
 share/zsh/${V}/functions/_initctl
 share/zsh/${V}/functions/_invoke-rc.d
 share/zsh/${V}/functions/_ionice
+share/zsh/${V}/functions/_iostat
 share/zsh/${V}/functions/_ip
 share/zsh/${V}/functions/_ipadm
 share/zsh/${V}/functions/_ipset
@@ -405,17 +427,20 @@ share/zsh/${V}/functions/_jobs_builtin
 share/zsh/${V}/functions/_jobs_fg
 share/zsh/${V}/functions/_joe
 share/zsh/${V}/functions/_join
+share/zsh/${V}/functions/_jot
 share/zsh/${V}/functions/_kfmclient
 share/zsh/${V}/functions/_kill
 share/zsh/${V}/functions/_killall
 share/zsh/${V}/functions/_kld
 share/zsh/${V}/functions/_knock
+share/zsh/${V}/functions/_kpartx
 share/zsh/${V}/functions/_kvno
 share/zsh/${V}/functions/_last
 share/zsh/${V}/functions/_ld_debug
 share/zsh/${V}/functions/_ldd
 share/zsh/${V}/functions/_less
 share/zsh/${V}/functions/_lha
+share/zsh/${V}/functions/_libvirt
 share/zsh/${V}/functions/_lighttpd
 share/zsh/${V}/functions/_limit
 share/zsh/${V}/functions/_limits
@@ -426,6 +451,8 @@ share/zsh/${V}/functions/_list_files
 share/zsh/${V}/functions/_lldb
 share/zsh/${V}/functions/_ln
 share/zsh/${V}/functions/_loadkeys
+share/zsh/${V}/functions/_locale
+share/zsh/${V}/functions/_localedef
 share/zsh/${V}/functions/_locales
 share/zsh/${V}/functions/_locate
 share/zsh/${V}/functions/_logical_volumes
@@ -440,6 +467,7 @@ share/zsh/${V}/functions/_lsof
 share/zsh/${V}/functions/_lspv
 share/zsh/${V}/functions/_lsusb
 share/zsh/${V}/functions/_lsvg
+share/zsh/${V}/functions/_ltrace
 share/zsh/${V}/functions/_lynx
 share/zsh/${V}/functions/_lzop
 share/zsh/${V}/functions/_mac_applications
@@ -520,6 +548,7 @@ share/zsh/${V}/functions/_od
 share/zsh/${V}/functions/_okular
 share/zsh/${V}/functions/_oldlist
 share/zsh/${V}/functions/_open
+share/zsh/${V}/functions/_openstack
 share/zsh/${V}/functions/_options
 share/zsh/${V}/functions/_options_set
 share/zsh/${V}/functions/_options_unset
@@ -548,6 +577,8 @@ share/zsh/${V}/functions/_pgrep
 share/zsh/${V}/functions/_php
 share/zsh/${V}/functions/_physical_volumes
 share/zsh/${V}/functions/_pick_variant
+share/zsh/${V}/functions/_picocom
+share/zsh/${V}/functions/_pidof
 share/zsh/${V}/functions/_pids
 share/zsh/${V}/functions/_pine
 share/zsh/${V}/functions/_ping
@@ -598,6 +629,7 @@ share/zsh/${V}/functions/_raggle
 share/zsh/${V}/functions/_rake
 share/zsh/${V}/functions/_ranlib
 share/zsh/${V}/functions/_rar
+share/zsh/${V}/functions/_rcctl
 share/zsh/${V}/functions/_rcs
 share/zsh/${V}/functions/_rdesktop
 share/zsh/${V}/functions/_read
@@ -634,6 +666,7 @@ share/zsh/${V}/functions/_schedtool
 share/zsh/${V}/functions/_schroot
 share/zsh/${V}/functions/_scl
 share/zsh/${V}/functions/_screen
+share/zsh/${V}/functions/_script
 share/zsh/${V}/functions/_sed
 share/zsh/${V}/functions/_sep_parts
 share/zsh/${V}/functions/_sequence
@@ -683,7 +716,9 @@ share/zsh/${V}/functions/_svcprop
 share/zsh/${V}/functions/_svcs
 share/zsh/${V}/functions/_svcs_fmri
 share/zsh/${V}/functions/_svn-buildpackage
+share/zsh/${V}/functions/_sys_calls
 share/zsh/${V}/functions/_sysctl
+share/zsh/${V}/functions/_sysrc
 share/zsh/${V}/functions/_sysstat
 share/zsh/${V}/functions/_systat
 share/zsh/${V}/functions/_system_profiler
@@ -711,14 +746,18 @@ share/zsh/${V}/functions/_tmux
 share/zsh/${V}/functions/_todo.sh
 share/zsh/${V}/functions/_toilet
 share/zsh/${V}/functions/_toolchain-source
+share/zsh/${V}/functions/_top
 share/zsh/${V}/functions/_topgit
 share/zsh/${V}/functions/_totd
+share/zsh/${V}/functions/_touch
 share/zsh/${V}/functions/_tpb
 share/zsh/${V}/functions/_tpconfig
+share/zsh/${V}/functions/_tput
 share/zsh/${V}/functions/_tr
 share/zsh/${V}/functions/_tracepath
 share/zsh/${V}/functions/_trap
 share/zsh/${V}/functions/_tree
+share/zsh/${V}/functions/_truss
 share/zsh/${V}/functions/_ttyctl
 share/zsh/${V}/functions/_ttys
 share/zsh/${V}/functions/_tune2fs
@@ -776,6 +815,7 @@ share/zsh/${V}/functions/_wget
 share/zsh/${V}/functions/_whereis
 share/zsh/${V}/functions/_which
 share/zsh/${V}/functions/_whois
+share/zsh/${V}/functions/_widgets
 share/zsh/${V}/functions/_wiggle
 share/zsh/${V}/functions/_wpa_cli
 share/zsh/${V}/functions/_x_arguments
@@ -853,6 +893,7 @@ share/zsh/${V}/functions/_zsocket
 share/zsh/${V}/functions/_zstyle
 share/zsh/${V}/functions/_ztodo
 share/zsh/${V}/functions/_zypper
+share/zsh/${V}/functions/add-zle-hook-widget
 share/zsh/${V}/functions/add-zsh-hook
 share/zsh/${V}/functions/after
 share/zsh/${V}/functions/age
@@ -954,6 +995,7 @@ share/zsh/${V}/functions/run-help-svk
 share/zsh/${V}/functions/run-help-svn
 share/zsh/${V}/functions/select-bracketed
 share/zsh/${V}/functions/select-quoted
+share/zsh/${V}/functions/select-word-match
 share/zsh/${V}/functions/select-word-style
 share/zsh/${V}/functions/send-invisible
 share/zsh/${V}/functions/smart-insert-last-word
@@ -992,6 +1034,7 @@ share/zsh/${V}/functions/vcs_info_hookdel
 share/zsh/${V}/functions/vcs_info_lastmsg
 share/zsh/${V}/functions/vcs_info_printsys
 share/zsh/${V}/functions/vcs_info_setsys
+share/zsh/${V}/functions/vi-pipe
 share/zsh/${V}/functions/which-command
 share/zsh/${V}/functions/xtermctl
 share/zsh/${V}/functions/zargs
@@ -1031,6 +1074,7 @@ share/zsh/${V}/functions/zftype
 share/zsh/${V}/functions/zfuget
 share/zsh/${V}/functions/zfuput
 share/zsh/${V}/functions/zkbd
+share/zsh/${V}/functions/zmathfunc
 share/zsh/${V}/functions/zmathfuncdef
 share/zsh/${V}/functions/zmv
 share/zsh/${V}/functions/zrecompile
