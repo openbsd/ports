@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/11/27 17:37:35 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2017/02/02 12:57:28 sthen Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,6 +16,7 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
+REVISION-main =		0
 REVISION-kipi =		1
 REVISION-mediawiki =	4
 
