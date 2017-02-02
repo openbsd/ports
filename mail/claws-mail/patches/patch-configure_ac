@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.15 2016/08/19 16:52:38 danj Exp $
---- configure.ac.orig	Sun Aug  7 10:08:05 2016
-+++ configure.ac	Wed Aug 10 11:11:32 2016
-@@ -149,7 +149,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
+$OpenBSD: patch-configure_ac,v 1.16 2017/02/02 12:04:43 danj Exp $
+--- configure.ac.orig	Sun Nov  6 07:01:27 2016
++++ configure.ac	Thu Feb  2 06:50:26 2017
+@@ -156,7 +156,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
  
  if test "$GCC" = "yes"
  then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.15 2016/08/19 16:52:38 danj Exp $
  	#CFLAGS="-g -Wall -Wno-unused-function"
  fi
  
-@@ -490,6 +490,8 @@ dnl password encryption
+@@ -497,6 +497,8 @@ dnl password encryption
  OLDLIBS=$LIBS
  LIBS=
  case $host_os in
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.15 2016/08/19 16:52:38 danj Exp $
  	*dragonfly*)
  		AC_SEARCH_LIBS(encrypt, cipher, [], AC_MSG_ERROR(['encrypt'-function not found.]))
  	;;
-@@ -772,6 +774,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -781,6 +783,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_ac,v 1.15 2016/08/19 16:52:38 danj Exp $
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -844,7 +847,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -853,7 +856,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
