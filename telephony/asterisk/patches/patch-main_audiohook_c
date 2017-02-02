@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_audiohook_c,v 1.1 2017/02/02 14:04:07 sthen Exp $
+--- main/audiohook.c.orig	Thu Feb  2 13:59:35 2017
++++ main/audiohook.c	Thu Feb  2 14:01:02 2017
+@@ -273,7 +273,7 @@ static struct ast_frame *audiohook_read_frame_both(str
+ 
+ 	if (!usable_read && !usable_write) {
+ 		/* If both factories are unusable bail out */
+-		ast_debug(1, "Read factory %p and write factory %p both fail to provide %zu samples\n", &audiohook->read_factory, &audiohook->write_factory, samples);
++		ast_debug(6, "Read factory %p and write factory %p both fail to provide %zu samples\n", &audiohook->read_factory, &audiohook->write_factory, samples);
+ 		return NULL;
+ 	}
+ 
