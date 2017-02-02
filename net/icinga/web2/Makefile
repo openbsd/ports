@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/02 21:36:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/02 23:01:30 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
@@ -6,11 +6,11 @@ GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
 GH_TAGNAME =	v2.4.1
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
+REVISION =	0
 
 MODULES=	lang/php
 
-RUN_DEPENDS =	graphics/pecl-imagick \
-		lang/php/${MODPHP_VERSION},-intl \
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-intl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql
 
 NO_TEST =	Yes
