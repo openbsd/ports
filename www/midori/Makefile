@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2016/11/04 10:00:21 landry Exp $
+# $OpenBSD: Makefile,v 1.77 2017/02/02 12:48:37 landry Exp $
 
 COMMENT =	lightweight web browser
 
@@ -6,7 +6,7 @@ XFCE_VERSION =	0.5.11
 XFCE_GOODIE =	midori
 DISTNAME =	midori_0.5.11_all_
 WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -23,27 +23,14 @@ MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE =	Yes
 NO_TEST =	Yes
 
-FLAVORS =	gtk3
-FLAVOR ?=
-
 CONFIGURE_ARGS = -DUSE_ZEITGEIST:Bool=No
-
-.if ${FLAVOR:Mgtk3}
 CONFIGURE_ARGS += -DUSE_GTK3:Bool=Yes
-LIB_DEPENDS =	www/webkit,gtk3>=2.4.8p3v1 \
+CONFIGURE_ARGS += -DHALF_BRO_INCOM_WEBKIT2=true
+LIB_DEPENDS =	www/webkitgtk4 \
+		devel/libsoup \
 		x11/gnome/gcr
-WANTLIB += cairo-gobject gcr-ui-3 gdk-3 gtk-3 javascriptcoregtk-3.0 webkitgtk-3.0
 
-.else
-LIB_DEPENDS =	www/webkit>=1.8.1v0
-WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 javascriptcoregtk-1.0
-WANTLIB += webkitgtk-1.0 pangoft2-1.0 freetype fontconfig z
-
-.endif
-
-LIB_DEPENDS +=	devel/libsoup>=2.28.0
+WANTLIB += cairo-gobject gcr-ui-3 gdk-3 gtk-3 javascriptcoregtk-4.0 webkit2gtk-4.0
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav

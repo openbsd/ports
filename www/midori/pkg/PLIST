@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2015/09/07 19:35:05 landry Exp $
-!%%gtk3%%
+@comment $OpenBSD: PLIST,v 1.40 2017/02/02 12:48:37 landry Exp $
 @bin bin/midori
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
 lib/midori/
