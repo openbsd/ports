@@ -1,8 +1,8 @@
-$OpenBSD: patch-extra_libkgeomap_CMakeLists_txt,v 1.2 2015/07/10 18:34:27 zhuk Exp $
+$OpenBSD: patch-extra_libkgeomap_CMakeLists_txt,v 1.3 2017/02/02 12:57:13 sthen Exp $
 Unbreak compilation.
---- extra/libkgeomap/CMakeLists.txt.orig	Mon Jun 15 12:29:05 2015
-+++ extra/libkgeomap/CMakeLists.txt	Thu Jul  2 10:50:29 2015
-@@ -28,7 +28,7 @@ if(NOT MARBLE_FOUND)
+--- extra/libkgeomap/CMakeLists.txt.orig	Thu Sep  3 23:22:45 2015
++++ extra/libkgeomap/CMakeLists.txt	Wed Feb  1 14:50:16 2017
+@@ -29,7 +29,7 @@ if(NOT MARBLE_FOUND)
      set(MARBLE_LIBRARIES ${LIBMARBLEWIDGET_LIBRARY})
  endif()
  
