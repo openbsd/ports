@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_in,v 1.1 2017/02/03 16:21:10 naddy Exp $
+
+Deprecated and dangerous autoconf idiom that checks for a type that
+isn't used anywhere in the source and breaks the inclusion of
+<netinet/in.h>.
+
+--- configure.in.orig	Fri Feb  3 17:10:04 2017
++++ configure.in	Fri Feb  3 17:15:48 2017
+@@ -67,7 +67,6 @@ AC_CHECK_TYPE(u_int64_t, unsigned long long)
+ AC_CHECK_TYPE(u_int32_t, unsigned int)
+ AC_CHECK_TYPE(u_int16_t, unsigned short)
+ AC_CHECK_TYPE(u_int8_t, unsigned char)
+-AC_CHECK_TYPE(in_addr_t, unsigned long)
+ 
+ dnl Checks for library functions.
+ AC_PROG_GCC_TRADITIONAL

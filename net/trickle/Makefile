@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/16 21:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/02/03 16:21:10 naddy Exp $
 
 COMMENT=	lightweight userspace bandwidth shaper
 DISTNAME=	trickle-1.07
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c event
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.59
 
 .include <bsd.port.mk>
