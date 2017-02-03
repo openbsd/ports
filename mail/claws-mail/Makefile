@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2016/12/17 20:43:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.97 2017/02/03 19:34:35 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -16,6 +16,7 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-main=		0
 REVISION-pdfviewer=	0
 
 CATEGORIES=		mail news
@@ -54,8 +55,8 @@ WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb archive assuan bz2 c canberra canberra-gtk
 WANTLIB-main += dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error gpgme
 WANTLIB-main += hogweed idn ltdl lz4 lzma lzo2 nettle notify ogg p11-kit
-WANTLIB-main += perl startup-notification-1 stdc++ tasn1 vorbis vorbisfile
-WANTLIB-main += xcb-util
+WANTLIB-main += perl startup-notification-1 stdc++ tasn1 unistring vorbis
+WANTLIB-main += vorbisfile xcb-util
 
 WANTLIB-gdata = ${WANTLIB}
 WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error json-glib-1.0
