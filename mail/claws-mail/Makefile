@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2017/02/03 19:34:35 danj Exp $
+# $OpenBSD: Makefile,v 1.98 2017/02/03 19:36:03 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
-COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
@@ -13,7 +12,6 @@ DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 REVISION-main=		0
@@ -31,7 +29,7 @@ MASTER_SITES=		http://www.claws-mail.org/releases/
 
 DIST_SUBDIR=		claws
 
-MULTI_PACKAGES=		-main -bogofilter -spamassassin -htmlviewer -pdfviewer -gdata
+MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer -gdata
 FLAVORS=		jpilot ldap
 FLAVOR?=
 
@@ -63,15 +61,6 @@ WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error json-glib-1.0
 WANTLIB-gdata += lzma nspr4 nss3 oauth p11-kit plc4 plds4 smime3 softokn3
 WANTLIB-gdata += soup-2.4 sqlite3 ssl3 xml2
 
-WANTLIB-htmlviewer =  ${WANTLIB}
-WANTLIB-htmlviewer += EGL GL ICE SM X11-xcb Xt Xxf86vm drm enchant gbm gcrypt
-WANTLIB-htmlviewer += glapi gpg-error gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB-htmlviewer += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB-htmlviewer += gstvideo-1.0 harfbuzz-icu icudata icui18n icuuc
-WANTLIB-htmlviewer += javascriptcoregtk-1.0 jpeg lzma orc-0.4 secret-1
-WANTLIB-htmlviewer += soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0
-WANTLIB-htmlviewer += webp xcb-dri2 xcb-glx xcb-xfixes xml2 xslt
-
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 openjp2 poppler poppler-glib tiff
 
@@ -95,9 +84,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/gpgme \
 			x11/dbus-glib
 
-LIB_DEPENDS-htmlviewer=	${LIB_DEPENDS} \
-			www/webkit>=2.0.0
-
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
 
@@ -108,6 +94,7 @@ LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
 #python tries to dlopen libpython2.7.so
 CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-compface \
+			--disable-fancy-plugin \
 			--disable-geolocation-plugin \
 			--disable-python-plugin \
 			--enable-new-addrbook
