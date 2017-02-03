@@ -1,0 +1,2 @@
+Line oriented search tool using Rust's regex library. Combines the raw
+performance of grep with the usability of the silver searcher.
