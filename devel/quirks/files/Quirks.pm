@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.447 2017/01/31 21:53:07 gonzalo Exp $
+# $OpenBSD: Quirks.pm,v 1.448 2017/02/03 19:39:07 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -905,6 +905,7 @@ my $obsolete_reason = {
 	'rednotebook' => 5,
 	'py-webkitgtk' => 2,
 	'xombrero' => 3,
+	'claws-mail-htmlviewer' => 2,
 };
 
 # reasons for obsolete packages
