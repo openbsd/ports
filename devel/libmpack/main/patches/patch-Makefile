@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2017/02/04 12:40:43 edd Exp $
+--- Makefile.orig	Sun Sep 18 21:09:16 2016
++++ Makefile	Thu Dec 29 15:48:41 2016
+@@ -68,8 +68,14 @@ PROFOUT := $(OUTDIR)/gprof.txt
+ TEST_FILTER_OUT := --coverage -ansi -std=c99
+ 
+ .PHONY: all
+-all: lib-bin test-bin
++all: dirs lib-bin test-bin
+ 
++.PHONY: dirs
++dirs:
++	mkdir -p $(BINDIR)/$(config)/src/.libs
++	mkdir -p $(BINDIR)/$(config)/test/.libs
++	mkdir -p $(BINDIR)/$(config)/test/deps/tap/.libs
++
+ include .config/$(config).mk
+ 
+ .PHONY: tools
+@@ -109,19 +115,19 @@ compile_commands.json:
+ 
+ .PHONY: install
+ install: install-inc install-lib
+-	$(LIBTOOL) --mode=finish '$(DESTDIR)$(LIBDIR)'
++	$(LIBTOOL) --mode=finish '$(LIBDIR)'
+ 
+ .PHONY: install-inc
+ install-inc: $(AMALG_H) mpack.pc.in
+-	mkdir -p '$(DESTDIR)$(INCDIR)'
+-	install -m644 $(AMALG_H) '$(DESTDIR)$(INCDIR)'
+-	mkdir -p '$(DESTDIR)$(LIBDIR)/pkgconfig'
+-	sed 's,@VERSION@,$(VERSION),;s,@LIBDIR@,$(LIBDIR),;s,@INCDIR@,$(INCDIR),' <mpack.pc.in >'$(DESTDIR)$(LIBDIR)/pkgconfig/mpack.pc'
++	mkdir -p '$(INCDIR)'
++	install -m644 $(AMALG_H) '$(INCDIR)'
++	mkdir -p '$(LIBDIR)/pkgconfig'
++	sed 's,@VERSION@,$(VERSION),;s,@LIBDIR@,$(LIBDIR),;s,@INCDIR@,$(INCDIR),' <mpack.pc.in >'$(LIBDIR)/pkgconfig/mpack.pc'
+ 
+ .PHONY: install-lib
+ install-lib: $(LIB)
+-	mkdir -p '$(DESTDIR)$(LIBDIR)'
+-	$(LIBTOOL) --mode=install cp $(LIB) '$(DESTDIR)$(LIBDIR)/$(LIBRARY)'
++	mkdir -p '$(LIBDIR)'
++	$(LIBTOOL) --mode=install cp $(LIB) '$(LIBDIR)/$(LIBRARY)'
+ 
+ .PHONY: clean
+ clean:

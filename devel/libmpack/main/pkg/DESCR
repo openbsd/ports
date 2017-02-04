@@ -1,0 +1,2 @@
+libmpack is a small binary serialization/RPC library that implements both the
+msgpack and msgpack-rpc specifications.
