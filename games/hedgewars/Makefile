@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/11/04 11:15:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/04 15:23:57 pascal Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		4
+REVISION =		5
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -47,7 +47,7 @@ BUILD_DEPENDS +=	archivers/hs-zlib \
 			devel/hs-hslogger \
 			devel/hs-dataenc \
 			devel/hs-utf8-string \
-			lang/fpc \
+			lang/fpc>=3.0.0p2 \
 			security/hs-SHA \
 			security/hs-entropy \
 			textproc/hs-bytestring-show
