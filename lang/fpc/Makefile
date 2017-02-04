@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2017/02/04 15:23:04 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		open source compiler for Pascal/Object Pascal
 V =			3.0.0
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		1
+REVISION =		2
 BOOT_GEN =		0
 
 CATEGORIES =		lang
