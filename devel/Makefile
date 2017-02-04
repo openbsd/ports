@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1582 2017/01/23 08:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1583 2017/02/04 12:42:13 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -360,6 +360,7 @@
      SUBDIR += liblouis
      SUBDIR += libmagic
      SUBDIR += libmemcached
+     SUBDIR += libmpack
      SUBDIR += libmpc
      SUBDIR += libmtp
      SUBDIR += libnfs
