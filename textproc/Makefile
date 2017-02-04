@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.522 2017/02/03 15:03:36 danj Exp $
+# $OpenBSD: Makefile,v 1.523 2017/02/04 06:18:06 rpointel Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -138,6 +138,7 @@
      SUBDIR += luasoldout,lua53
      SUBDIR += makefaq
      SUBDIR += markdown
+     SUBDIR += mdp
      SUBDIR += meld
      SUBDIR += mgdiff
      SUBDIR += mozilla-dicts
