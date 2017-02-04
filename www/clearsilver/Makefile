@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/04/28 15:59:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/02/04 14:03:41 sthen Exp $
 
 COMMENT-main=	fast, powerful, and language-neutral HTML template system
 COMMENT-perl=	perl bindings for clearsilver
@@ -49,8 +49,10 @@ pre-configure:
 do-test:
 	@cd ${WRKSRC}/perl && ${MAKE_PROGRAM} test
 
+# can remove the /*/ line and -f after perl 5.24 update.
 post-install:
-	rm ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd/*/perllocal.pod
+	rm -f ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd/perllocal.pod \
+		${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd/*/perllocal.pod
 	find -d ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd -type d | xargs rmdir
 
 .include <bsd.port.mk>
