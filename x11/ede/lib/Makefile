@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/12/23 20:59:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/04 23:50:28 jca Exp $
 
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		5
+REVISION =		6
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui
@@ -14,8 +14,7 @@ WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c dbus-1
 WANTLIB += fltk fltk_images fontconfig jpeg m png pthread stdc++ z
 
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/jam \
-			devel/doxygen
+BUILD_DEPENDS =		devel/jam
 LIB_DEPENDS =		x11/fltk \
 			x11/dbus
 
@@ -23,7 +22,8 @@ MAKE_ENV =		EDE_VERSION="${FULL_V}"
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-shared
-CONFIGURE_ENV =		API_VER="${API_VER}"
+CONFIGURE_ENV =		API_VER="${API_VER}" \
+			ac_cv_path_DOXYGEN=""
 
 NO_TEST =		Yes
 
