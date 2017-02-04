@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.419 2017/01/30 17:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.420 2017/02/04 08:44:18 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -107,6 +107,7 @@
      SUBDIR += knutclient
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
+     SUBDIR += libevt
      SUBDIR += librelp
      SUBDIR += libstatgrab
      SUBDIR += libvirt
