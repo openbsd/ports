@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/21 19:17:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/05 15:42:09 jca Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
@@ -17,7 +17,9 @@ GH_ACCOUNT =		msgpack
 GH_PROJECT =		msgpack-c
 GH_TAGNAME =		cpp-${V}
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake gcc4
+MODGCC4_ARCHS =		arm
+MODGCC4_LANGS =		c++
 
 # Requires updated gtest, which breaks protobuf < 3
 CONFIGURE_ARGS +=	-DMSGPACK_BUILD_TESTS=Off
