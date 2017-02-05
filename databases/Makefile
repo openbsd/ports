@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2017/01/11 12:16:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.332 2017/02/05 20:56:17 kili Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -151,7 +151,6 @@
      SUBDIR += ports-readmes
      SUBDIR += ports-readmes-dancer
      SUBDIR += postgresql
-     SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-previous
      SUBDIR += postgresql-pllua
