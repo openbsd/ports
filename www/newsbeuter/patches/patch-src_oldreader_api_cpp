@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_oldreader_api_cpp,v 1.1 2017/02/05 21:58:16 abieber Exp $
+--- src/oldreader_api.cpp.orig	Tue Oct 11 09:07:35 2016
++++ src/oldreader_api.cpp	Tue Oct 11 09:11:49 2016
+@@ -1,7 +1,7 @@
+ #include <vector>
+ #include <cstring>
+ #include <iostream>
+-#include <wordexp.h>
++#include <glob.h>
+ 
+ #include <oldreader_api.h>
+ #include <config.h>
+@@ -65,11 +65,13 @@ std::string oldreader_api::retrieve_auth() {
+ 
+ 	std::string pass = cfg->get_configvalue("oldreader-password");
+ 	if( pass == "" ) {
+-		wordexp_t exp;
+-		std::ifstream ifs;
+-		wordexp(cfg->get_configvalue("oldreader-passwordfile").c_str(),&exp,0);
+-		ifs.open(exp.we_wordv[0]);
+-		wordfree(&exp);
++                glob_t exp;
++                std::ifstream ifs;
++                int res = glob(cfg->get_configvalue("oldreader-passwordfile").c_str(), GLOB_ERR, NULL, &exp);
++                if (!res && exp.gl_pathc == 1 && exp.gl_pathv) {
++                        ifs.open(exp.gl_pathv[0]);
++                }
++                globfree(&exp);
+ 		if (!ifs) {
+ 			if(!flushed) {
+ 				std::cout << std::endl;

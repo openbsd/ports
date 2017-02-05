@@ -1,25 +1,28 @@
-# $OpenBSD: Makefile,v 1.7 2016/09/23 09:16:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/05 21:58:16 abieber Exp $
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
-DISTNAME =		newsbeuter-2.7
-REVISION =		1
+DISTNAME =		newsbeuter-2.9
 CATEGORIES =		www
 
 HOMEPAGE =		http://newsbeuter.org/
 
-MAINTAINER =		Kyle Isom <kyle@tyrfingr.is>
-
-# mit
+# MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto curl json-c m ncursesw pthread sqlite3
-WANTLIB += stdc++ stfl xml2
+WANTLIB += c crypto curl iconv intl json-c m ncursesw pthread
+WANTLIB += sqlite3 stfl xml2
 
 MASTER_SITES =		http://newsbeuter.org/downloads/
 
-MODULES =		devel/gettext
+MODULES =		gcc4
+
+MODGCC4_LANGS =	c c++
+MODGCC4_ARCHS =	*
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		databases/sqlite3 \
+			devel/gettext \
 			devel/stfl \
 			devel/json-c \
 			textproc/libxml	\
@@ -31,8 +34,5 @@ FAKE_FLAGS =		mandir=${PREFIX}/man
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	config.sh
-
-post-extract:
-	rm $(WRKSRC)/src/google*.cpp
 
 .include <bsd.port.mk>

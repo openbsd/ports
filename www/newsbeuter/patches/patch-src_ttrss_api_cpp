@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ttrss_api_cpp,v 1.1 2017/02/05 21:58:16 abieber Exp $
+--- src/ttrss_api.cpp.orig	Tue Oct 11 09:07:40 2016
++++ src/ttrss_api.cpp	Tue Oct 11 09:10:44 2016
+@@ -4,7 +4,7 @@
+ #include <cstring>
+ #include <algorithm>
+ 
+-#include <wordexp.h>
++#include <glob.h>
+ #include <unistd.h>
+ #include <iostream>
+ 
+@@ -54,11 +54,13 @@ std::string ttrss_api::retrieve_sid() {
+ 
+ 	std::string pass = cfg->get_configvalue("ttrss-password");
+ 	if (pass == "") {
+-		wordexp_t exp;
++		glob_t exp;
+ 		std::ifstream ifs;
+-		wordexp(cfg->get_configvalue("ttrss-passwordfile").c_str(),&exp,0);
+-		ifs.open(exp.we_wordv[0]);
+-		wordfree(&exp);
++		int res = glob(cfg->get_configvalue("ttrss-passwordfile").c_str(), GLOB_ERR, NULL, &exp);
++		if (!res && exp.gl_pathc == 1 && exp.gl_pathv) {
++			ifs.open(exp.gl_pathv[0]);
++		}
++		globfree(&exp);
+ 		if (!ifs) {
+ 			if(!flushed) {
+ 				std::cout << std::endl;
