@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/02/02 21:36:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2017/02/05 20:26:19 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -129,6 +129,11 @@ post-patch:
 pre-test:
 	@printf "\n*** Tests were disabled to avoid potential build conflict.\n*** Re-build with \"FLAVOR=test make\" to avoid this.\n\n"
 	@exit 1
+.endif
+
+.include <bsd.port.arch.mk>
+.if !${ARCH:Mamd64}
+CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
 .include <bsd.port.mk>
