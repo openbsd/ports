@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/11/29 09:22:02 jca Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/02/06 10:22:35 jca Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 include/openvpn/
+include/openvpn/openvpn-msg.h
 include/openvpn/openvpn-plugin.h
 lib/openvpn/
 lib/openvpn/plugins/
@@ -13,6 +14,7 @@ lib/openvpn/plugins/openvpn-plugin-down-root.so
 share/doc/openvpn/
 share/doc/openvpn/COPYING
 share/doc/openvpn/COPYRIGHT.GPL
+share/doc/openvpn/Changes.rst
 share/doc/openvpn/README
 share/doc/openvpn/README.IPv6
 share/doc/openvpn/README.down-root
@@ -50,10 +52,36 @@ share/examples/openvpn/sample-keys/client.p12
 share/examples/openvpn/sample-keys/dh2048.pem
 share/examples/openvpn/sample-keys/gen-sample-keys.sh
 share/examples/openvpn/sample-keys/openssl.cnf
+share/examples/openvpn/sample-keys/sample-ca/
+share/examples/openvpn/sample-keys/sample-ca/01.pem
+share/examples/openvpn/sample-keys/sample-ca/02.pem
+share/examples/openvpn/sample-keys/sample-ca/03.pem
+share/examples/openvpn/sample-keys/sample-ca/ca.crl
+share/examples/openvpn/sample-keys/sample-ca/ca.crt
+share/examples/openvpn/sample-keys/sample-ca/ca.key
+share/examples/openvpn/sample-keys/sample-ca/client-pass.key
+share/examples/openvpn/sample-keys/sample-ca/client-revoked.crt
+share/examples/openvpn/sample-keys/sample-ca/client-revoked.csr
+share/examples/openvpn/sample-keys/sample-ca/client-revoked.key
+share/examples/openvpn/sample-keys/sample-ca/client.crt
+share/examples/openvpn/sample-keys/sample-ca/client.csr
+share/examples/openvpn/sample-keys/sample-ca/client.key
+share/examples/openvpn/sample-keys/sample-ca/client.p12
+share/examples/openvpn/sample-keys/sample-ca/index.txt
+share/examples/openvpn/sample-keys/sample-ca/index.txt.attr
+share/examples/openvpn/sample-keys/sample-ca/index.txt.attr.old
+share/examples/openvpn/sample-keys/sample-ca/index.txt.old
+share/examples/openvpn/sample-keys/sample-ca/secp256k1.pem
+share/examples/openvpn/sample-keys/sample-ca/serial
+share/examples/openvpn/sample-keys/sample-ca/serial.old
+share/examples/openvpn/sample-keys/sample-ca/server.crt
+share/examples/openvpn/sample-keys/sample-ca/server.csr
+share/examples/openvpn/sample-keys/sample-ca/server.key
 share/examples/openvpn/sample-keys/server-ec.crt
 share/examples/openvpn/sample-keys/server-ec.key
 share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
+share/examples/openvpn/sample-keys/ta.key
 share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/auth-pam.pl
 share/examples/openvpn/sample-scripts/bridge-start

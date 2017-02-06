@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_Makefile_in,v 1.6 2016/11/29 09:22:02 jca Exp $
---- include/Makefile.in.orig	Thu Nov  3 09:52:54 2016
-+++ include/Makefile.in	Tue Nov 29 10:18:42 2016
-@@ -316,7 +316,7 @@ host_cpu = @host_cpu@
+$OpenBSD: patch-include_Makefile_in,v 1.7 2017/02/06 10:22:35 jca Exp $
+--- include/Makefile.in.orig	Tue Dec 27 12:22:04 2016
++++ include/Makefile.in	Tue Jan 17 03:33:06 2017
+@@ -322,7 +322,7 @@ host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
  htmldir = @htmldir@
