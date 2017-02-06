@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_ck-manager_c,v 1.8 2017/01/25 03:19:26 ajacoutot Exp $
+$OpenBSD: patch-src_ck-manager_c,v 1.9 2017/02/06 08:15:02 ajacoutot Exp $
 
-XXX add a proper check and push upstream (adapt to OpenBSD system users naming)
+From 6dcb5b04ecca9fcdb13b518924f6835909038b1c Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 25 Jan 2017 04:26:43 +0100
+Subject: [PATCH] Add a few more display manager users.
 
 --- src/ck-manager.c.orig	Wed Jan 25 04:14:39 2017
 +++ src/ck-manager.c	Wed Jan 25 04:15:58 2017
