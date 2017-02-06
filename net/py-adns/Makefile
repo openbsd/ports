@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/27 17:06:37 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2017/02/06 09:19:40 jca Exp $
 
 COMMENT=		python interface to adns
 
@@ -24,7 +24,7 @@ WANTLIB =		adns ${MODPY_WANTLIB} pthread
 NO_TEST=		Yes
 
 pre-configure:
-	perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/setup.py
+	sed -i 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}adns
