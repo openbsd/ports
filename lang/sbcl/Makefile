@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/02/01 23:14:46 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2017/02/06 07:36:01 jca Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -34,8 +34,7 @@ FLAVOR?=
 
 EXTRA_PARAMS=
 .if ${FLAVOR:Mthreads}
-# XXX
-BROKEN-powerpc=		no support yet
+ONLY_FOR_ARCHS =	amd64
 EXTRA_PARAMS+=		--with-sb-thread
 WANTLIB+=		pthread
 .endif
