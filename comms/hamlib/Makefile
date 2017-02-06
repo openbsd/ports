@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/04/28 13:59:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/02/06 20:20:23 sthen Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -10,7 +10,7 @@ PKGNAME-main=	hamlib-${VERSION}
 PKGNAME-python=	hamlib-python-${VERSION}
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
 CATEGORIES=	comms hamradio
-REVISION-main=	2
+REVISION-main=	3
 
 MULTI_PACKAGES=	-main -python -tcl
 
@@ -29,6 +29,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 cWANTLIB=		ltdl m pthread usb usb-1.0
 WANTLIB-main=		${cWANTLIB} c iconv lzma stdc++ xml2 z
+WANTLIB-main +=		perl # uses perl ABI
 WANTLIB-python=		${cWANTLIB} hamlib ${MODPY_WANTLIB}
 WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 

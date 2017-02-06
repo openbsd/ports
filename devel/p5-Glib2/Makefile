@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2016/10/08 10:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/02/06 20:20:23 sthen Exp $
 
 COMMENT=	perl interface to the Glib libraries
 
 V =		1.323
 DISTNAME=	Glib-${V}
 PKGNAME=	p5-Glib2-${V}
+REVISION=	0
 CATEGORIES=	x11 devel
 
 CPAN_AUTHOR=	XAOC
@@ -12,7 +13,7 @@ CPAN_AUTHOR=	XAOC
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += glib-2.0 gobject-2.0 intl
+WANTLIB += glib-2.0 gobject-2.0 intl perl # uses perl ABI
 
 MODULES=	cpan
 
