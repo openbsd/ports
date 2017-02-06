@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2017/02/06 15:53:11 shadchin Exp $
 
 COMMENT =		test utilities working with files and commands
 
 MODPY_EGG_VERSION =	0.3
-DISTNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-testpath-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -26,8 +25,6 @@ RUN_DEPENDS +=		devel/py-pathlib${MODPY_FLAVOR}
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-
-WRKSRC = ${WRKDIR}/testpath-${MODPY_EGG_VERSION}
 
 FLAVORS =		python3
 FLAVOR ?=
