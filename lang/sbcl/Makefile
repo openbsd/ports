@@ -1,4 +1,4 @@
-OB# $OpenBSD: Makefile,v 1.32 2017/02/06 08:18:53 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2017/02/06 12:23:14 sthen Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
