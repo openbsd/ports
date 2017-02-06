@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/01/12 23:39:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/02/06 22:39:05 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -5873,7 +5873,7 @@ share/calibre/recipes/sueddeutsche.recipe
 share/calibre/recipes/sueddeutsche_mobil.recipe
 share/calibre/recipes/sueddeutschezeitung.png
 share/calibre/recipes/sueddeutschezeitung.recipe
-share/calibre/recipes/sunday_times.recipe
+share/calibre/recipes/sunday_times_magazine.recipe
 share/calibre/recipes/superbebe.png
 share/calibre/recipes/superbebe.recipe
 share/calibre/recipes/superesportes.recipe
