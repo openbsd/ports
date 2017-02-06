@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.811 2017/02/02 12:49:14 landry Exp $
+# $OpenBSD: Makefile,v 1.812 2017/02/06 09:56:05 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -540,8 +540,6 @@
      SUBDIR += uriparser
      SUBDIR += urlwatch
      SUBDIR += varnish
-     SUBDIR += vimb
-     SUBDIR += vimb,gtk3
      SUBDIR += visitors
      SUBDIR += vteplugin
      SUBDIR += w3m
