@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/11 12:28:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/06 15:33:15 fcambus Exp $
+
+BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT =	UNIX port of Open Cubic Player
 
