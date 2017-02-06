@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/17 23:01:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/06 20:28:32 sthen Exp $
 
 COMMENT=	SILC plugin for irssi
 
 DISTNAME=	irssi-silc-1.1.8
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	net
 
@@ -11,6 +11,8 @@ HOMEPAGE=	http://penguin-breeder.org/silc/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=	http://martynas.blarzwurst.de/distfiles/
 

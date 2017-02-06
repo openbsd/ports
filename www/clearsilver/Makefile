@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/02/04 14:03:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2017/02/06 20:28:32 sthen Exp $
 
 COMMENT-main=	fast, powerful, and language-neutral HTML template system
 COMMENT-perl=	perl bindings for clearsilver
@@ -8,6 +8,7 @@ V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
 REVISION=	12
+REVISION-perl=	13
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
@@ -27,7 +28,7 @@ MODULES=	lang/python
 WANTLIB-main=	c pthread z
 RUN_DEPENDS-main=
 
-WANTLIB-perl=	pthread z
+WANTLIB-perl=	pthread z perl # uses perl ABI
 RUN_DEPENDS-perl= ${PKGPATH} 
 
 WANTLIB-python=	${MODPY_WANTLIB} pthread z

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/04 16:09:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/02/06 20:28:32 sthen Exp $
 
 COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0
-REVISION=		11
+REVISION=		12
 CATEGORIES=		www
 SHARED_LIBS +=	fcgi                 0.0      # .0.0
 SHARED_LIBS +=	fcgi++               1.0      # .1.0
@@ -20,6 +20,7 @@ MAINTAINER=		Adam Montague <amontague@siriushosting.com>
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=		c m stdc++
+WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=		${HOMEPAGE}/dist/
 
