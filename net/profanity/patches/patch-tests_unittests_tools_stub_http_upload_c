@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_unittests_tools_stub_http_upload_c,v 1.1 2016/11/29 22:26:57 tb Exp $
+$OpenBSD: patch-tests_unittests_tools_stub_http_upload_c,v 1.2 2017/02/06 21:57:55 tb Exp $
 
 fix missing include
 
---- tests/unittests/tools/stub_http_upload.c.orig	Wed Sep 28 22:32:21 2016
-+++ tests/unittests/tools/stub_http_upload.c	Wed Sep 28 22:33:12 2016
-@@ -37,6 +37,8 @@
+--- tests/unittests/tools/stub_http_upload.c.orig	Sat Jan 28 22:10:04 2017
++++ tests/unittests/tools/stub_http_upload.c	Sun Feb  5 20:17:59 2017
+@@ -3,6 +3,8 @@
  
  #include <curl/curl.h>
  

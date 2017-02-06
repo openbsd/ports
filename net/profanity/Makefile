@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/29 22:26:57 tb Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/06 21:57:55 tb Exp $
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.5.0
+DISTNAME =	profanity-0.5.1
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.profanity.im/
@@ -15,7 +15,8 @@ MASTER_SITES =	http://www.profanity.im/
 WANTLIB += assuan c crypto curl ereadline expat ffi gcrypt gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gpgme iconv intl m ncursesw nghttp2 notify otr
-WANTLIB += pcre png pthread ssl strophe z
+WANTLIB += pcre png pthread ssl strophe util z ${MODPY_WANTLIB}
+MODULES =	lang/python
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
