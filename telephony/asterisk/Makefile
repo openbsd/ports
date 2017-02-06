@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.246 2017/02/02 14:04:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.247 2017/02/06 10:11:31 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 VER=			13.13.1
-REVISION-main=		0
+REVISION-main=		1
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -31,9 +31,9 @@ WANTLIB-main += uuid vorbis vorbisenc vorbisfile xml2 xslt z
 
 SHARED_LIBS=		asteriskssl 0.0		# 1
 
-MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
+MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -odbc \
 			-pgsql -snmp -speex -tds
-PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:C/-/no_/g}
+PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 
 LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
@@ -148,6 +148,10 @@ CONFIGURE_ARGS+=	--with-imap=no
 
 ## multipackages:
 .include <bsd.port.arch.mk>
+
+# kqueue. normally a pthread timing source is used, the kqueue-based one
+# performs poorly with default HZ.
+COMMENT-kqueue=		kqueue(2)-based timing source for Asterisk
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
