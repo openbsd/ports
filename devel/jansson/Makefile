@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/08 09:47:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/06 11:44:56 sthen Exp $
 
 COMMENT =		library for manipulating JSON data
 
 DISTNAME =		jansson-2.9
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		jansson 2.0
 

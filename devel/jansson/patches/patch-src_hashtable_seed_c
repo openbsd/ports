@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_hashtable_seed_c,v 1.1 2017/02/06 11:44:56 sthen Exp $
+--- src/hashtable_seed.c.orig	Sat Mar  7 07:02:39 2015
++++ src/hashtable_seed.c	Mon Feb  6 10:35:05 2017
+@@ -45,6 +45,11 @@
+ #include "jansson.h"
+ 
+ 
++#if defined(__OpenBSD__)
++static uint32_t generate_seed() {
++    return arc4random();
++}
++#else
+ static uint32_t buf_to_uint32(char *data) {
+     size_t i;
+     uint32_t result = 0;
+@@ -189,6 +194,7 @@ static uint32_t generate_seed() {
+ 
+     return seed;
+ }
++#endif /* OpenBSD */
+ 
+ 
+ volatile uint32_t hashtable_seed = 0;
