@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/18 23:43:50 awolk Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/06 22:29:57 awolk Exp $
 
 COMMENT=		count lines of code
 
 V=			1.70
 DISTNAME=		cloc-${V}
+REVISION=		0
 
 CATEGORIES=		textproc devel
 
@@ -19,7 +20,8 @@ MASTER_SITES=		https://github.com/AlDanial/cloc/releases/download/v${V}/
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
-LIB_DEPENDS=		devel/p5-Algorithm-Diff textproc/p5-Regexp-Common
+RUN_DEPENDS=		devel/p5-Algorithm-Diff textproc/p5-Regexp-Common
+BUILD_DEPENDS+=		${RUN_DEPENDS}
 
 FAKE_FLAGS=		prefix="${PREFIX}" \
 			man_prefix="${PREFIX}"
