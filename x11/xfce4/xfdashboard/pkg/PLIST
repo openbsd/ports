@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/30 12:10:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/02/06 09:54:14 landry Exp $
 @bin bin/xfdashboard
 @bin bin/xfdashboard-settings
 include/xfdashboard/
@@ -79,7 +79,6 @@ lib/xfdashboard/plugins/gnome-shell-search-provider.la
 lib/xfdashboard/plugins/gnome-shell-search-provider.so
 lib/xfdashboard/plugins/hot-corner.la
 lib/xfdashboard/plugins/hot-corner.so
-share/appdata/
 share/appdata/xfdashboard.appdata.xml
 share/applications/xfdashboard-settings.desktop
 share/applications/xfdashboard.desktop
