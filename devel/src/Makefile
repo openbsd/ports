@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/05 14:39:50 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/06 18:02:37 rpe Exp $
 
 COMMENT =		Simple Revision Control
 
-DISTNAME =		src-1.11
+DISTNAME =		src-1.12
 
 CATEGORIES =		devel
 
