@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2016/12/30 15:29:13 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2017/02/06 09:54:34 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.8.2
+XFCE_VERSION=	0.8.4
 XFCE_GOODIE=	xfce4-terminal
 
 # GPLv2
@@ -21,7 +21,7 @@ WANTLIB=	X11 X11-xcb atk-1.0 c gdk_pixbuf-2.0 gio-2.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		xcb xcb-render xcb-shm z xcb-util pcre2-8 iconv intl \
 		glib-2.0 gobject-2.0 pango-1.0 xfce4util ffi graphite2 \
-		harfbuzz startup-notification-1 xfce4ui-2 \
+		harfbuzz startup-notification-1 xfce4ui-2 unistring \
 		atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 \
 		gmp gnutls gtk-3 hogweed idn nettle p11-kit tasn1 vte-2.91
 
