@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/10/11 15:11:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/02/07 14:42:24 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 3.7.1
+MODPY_EGG_VERSION= 3.8.1
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 
 CATEGORIES=	audio
