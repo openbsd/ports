@@ -1,0 +1,30 @@
+$OpenBSD: patch-doc_C_gnumeric_xml,v 1.1 2017/02/07 14:03:29 ajacoutot Exp $
+
+From bf0abd9d3f8bf69f90eb155f0f1c93e0a2e9b2ba Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Sun, 5 Feb 2017 15:15:48 -0500
+Subject: Docs: get xml entities from docbook 4.5
+
+--- doc/C/gnumeric.xml.orig	Fri Dec 30 23:02:37 2016
++++ doc/C/gnumeric.xml	Wed Feb  1 14:16:46 2017
+@@ -47,17 +47,17 @@
+ 
+   <!-- For mdash, hellip and friends -->
+   <!ENTITY % isopub PUBLIC "ISO 8879:1986//ENTITIES Publishing//EN//XML"
+-           "http://www.oasis-open.org/docbook/xmlcharent/0.3/iso-pub.ent">
++           "http://www.oasis-open.org/docbook/xml/4.5/ent/isopub.ent">
+   %isopub;
+ 
+   <!-- For nbsp, pound, yen and friends -->
+   <!ENTITY % isonum PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML"
+-           "http://www.oasis-open.org/docbook/xmlcharent/0.3/iso-num.ent">
++           "http://www.oasis-open.org/docbook/xml/4.5/ent/isonum.ent">
+   %isonum;
+ 
+   <!-- Character entity to provide greek letters in simulation chapter -->
+   <!ENTITY % isogrk1 PUBLIC "ISO 8879:1986//ENTITIES Greek Letters//EN//XML"
+-           "http://www.oasis-open.org/docbook/xmlcharent/0.3/iso-grk1.ent">
++           "http://www.oasis-open.org/docbook/xml/4.5/ent/isogrk1.ent">
+   %isogrk1;
+ 
+   <!ENTITY legal                SYSTEM "legal.xml">
