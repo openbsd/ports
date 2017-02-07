@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/07 14:23:28 sthen Exp $
 
 COMMENT=	tidy indenting of XML documents
 
-DISTNAME=	XML-Tidy-1.12.B55J2qn
+DISTNAME=	XML-Tidy-1.16
 EXTRACT_SUFX=	.tgz
-PKGNAME=	p5-${DISTNAME:R}
 
 CATEGORIES=	textproc
 
-# GPLv3 only
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
