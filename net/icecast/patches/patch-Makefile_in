@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2015/01/19 09:14:32 dcoppa Exp $
---- Makefile.in.orig	Wed Nov 19 05:58:18 2014
-+++ Makefile.in	Sun Jan  4 17:06:40 2015
-@@ -392,7 +392,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m4/ogg.m4 \
+$OpenBSD: patch-Makefile_in,v 1.8 2017/02/07 01:39:59 gonzalo Exp $
+--- Makefile.in.orig	Mon Jan  4 18:07:07 2016
++++ Makefile.in	Tue Jan 31 09:32:54 2017
+@@ -401,7 +401,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m4/ogg.m4 \
      m4/xiph_compiler.m4 m4/xiph_curl.m4 m4/xiph_net.m4 \
      m4/xiph_types.m4 m4/xiph_xml2.m4
  

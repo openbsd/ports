@@ -1,7 +1,7 @@
-$OpenBSD: patch-web_Makefile_in,v 1.4 2014/05/28 13:37:25 gonzalo Exp $
---- web/Makefile.in.orig	Tue May 13 08:42:42 2014
-+++ web/Makefile.in	Tue May 13 08:47:55 2014
-@@ -60,7 +60,7 @@ am__make_running_with_option = \
+$OpenBSD: patch-web_Makefile_in,v 1.5 2017/02/07 01:39:59 gonzalo Exp $
+--- web/Makefile.in.orig	Mon Jan  4 18:07:09 2016
++++ web/Makefile.in	Tue Jan 31 09:32:55 2017
+@@ -70,7 +70,7 @@ am__make_running_with_option = \
    test $$has_opt = yes
  am__make_dryrun = (target_option=n; $(am__make_running_with_option))
  am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
