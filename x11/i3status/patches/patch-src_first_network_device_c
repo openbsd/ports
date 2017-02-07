@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_first_network_device_c,v 1.2 2017/01/31 19:01:41 jasper Exp $
+$OpenBSD: patch-src_first_network_device_c,v 1.3 2017/02/07 18:22:28 jasper Exp $
 
 https://github.com/i3/i3status/pull/197
 
---- src/first_network_device.c.orig	Sun Jan 29 16:16:11 2017
-+++ src/first_network_device.c	Tue Jan 31 19:42:54 2017
+--- src/first_network_device.c.orig	Sat Jan 21 16:00:31 2017
++++ src/first_network_device.c	Mon Feb  6 22:18:13 2017
 @@ -3,9 +3,23 @@
  #include <sys/stat.h>
  #include <stdlib.h>
@@ -36,7 +36,7 @@ https://github.com/i3/i3status/pull/197
      char devtype[32];
  
      if (!sysfs_devtype(devtype, sizeof(devtype), ifname))
-@@ -52,6 +67,48 @@ static net_type_t iface_type(const char *ifname) {
+@@ -52,6 +67,51 @@ static net_type_t iface_type(const char *ifname) {
          return NET_TYPE_OTHER;
  
      return NET_TYPE_OTHER;
@@ -67,25 +67,28 @@ https://github.com/i3/i3status/pull/197
 +    strlcpy(bssid.i_name, ifname, sizeof(bssid.i_name));
 +    ibssid = ioctl(s, SIOCG80211BSSID, &bssid);
 +
-+    if (ibssid == 0 || inwid == 0)
++    if (ibssid == 0 || inwid == 0) {
++        close(s);
 +        return NET_TYPE_WIRELESS;
++    }
 +
 +    (void) memset(&ifmr, 0, sizeof(ifmr));
 +    (void) strlcpy(ifmr.ifm_name, ifname, sizeof(ifmr.ifm_name));
 +
-+    if (ioctl(s, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0)
++    if (ioctl(s, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0) {
++        close(s);
 +        return NET_TYPE_OTHER;
-+    else
++    } else {
++        close(s);
 +        return NET_TYPE_ETHERNET;
-+
-+    close(s);
++    }
 +#else
 +#error Missing implementation to determine interface type.
 +#endif
  }
  
  const char *first_eth_interface(const net_type_t type) {
-@@ -69,15 +126,20 @@ const char *first_eth_interface(const net_type_t type)
+@@ -69,15 +129,20 @@ const char *first_eth_interface(const net_type_t type)
      for (addrp = ifaddr;
           addrp != NULL;
           addrp = addrp->ifa_next) {
