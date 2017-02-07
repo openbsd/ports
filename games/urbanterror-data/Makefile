@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/14 06:27:12 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/07 06:12:27 kirby Exp $
 
 COMMENT =	Urban Terror game data
-PKGNAME =	urbanterror-data-4.3.1
+PKGNAME =	urbanterror-data-4.3.2
 CATEGORIES =	games
 
 URT_VER =	43
-URT_REV =	1
+URT_REV =	2
 
 DISTNAME =	UrbanTerror${URT_VER}${URT_REV}_full
 

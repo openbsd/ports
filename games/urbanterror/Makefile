@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/12 02:01:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/07 06:12:27 kirby Exp $
 
 USE_WXNEEDED =	Yes
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT = 	fast-paced hollywood-tactical shooter: "fun over realism"
-DISTNAME =	urbanterror-4.3.1
+DISTNAME =	urbanterror-4.3.2
 
 GH_ACCOUNT =	Barbatos
 GH_PROJECT =	ioq3-for-UrbanTerror-4
-GH_TAGNAME =	release-4.3.1
+GH_TAGNAME =	release-4.3.2
 
 CATEGORIES =	games x11
 
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += X11 Xxf86vm c m pthread SDL
 
 LIB_DEPENDS =	devel/sdl
-RUN_DEPENDS =	games/urbanterror-data
+RUN_DEPENDS =	games/urbanterror-data \
+		net/curl
 
 USE_GMAKE =	Yes
 ALL_TARGET =    release
