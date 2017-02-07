@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2017/02/07 08:11:11 bentley Exp $
 
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	14
+REVISION =	15
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -11,7 +11,7 @@ SHARED_LIBS +=  scim-gtkutils-1.0  0.0           # .10.4
 
 CATEGORIES =	inputmethods chinese japanese korean
 
-HOMEPAGE =	http://www.scim-im.org/
+HOMEPAGE =	https://github.com/scim-im/scim
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

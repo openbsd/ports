@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/02/07 08:11:11 bentley Exp $
 
 COMMENT=	scim input method module for chewing
 
 DISTNAME=	scim-chewing-0.3.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	inputmethods chinese
 
-HOMEPAGE=	http://www.scim-im.org/
+HOMEPAGE=	http://chewing.csie.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

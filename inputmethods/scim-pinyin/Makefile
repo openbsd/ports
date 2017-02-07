@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/02/07 08:11:11 bentley Exp $
 
 COMMENT=	scim input method module for pinyin
 
 DISTNAME=	scim-pinyin-0.5.91
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	inputmethods chinese
 
-HOMEPAGE=	http://www.scim-im.org/
+HOMEPAGE=	https://github.com/scim-im/scim-pinyin
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

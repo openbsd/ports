@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/07 08:11:11 bentley Exp $
 
 COMMENT=	scim input method module for fcitx
 
 V=		3.1.1
 DISTNAME=	scim-fcitx.$V
 PKGNAME=	scim-fcitx-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	inputmethods chinese
 
-HOMEPAGE=	http://www.scim-im.org/
+HOMEPAGE=	https://github.com/scim-im/scim-fcitx
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

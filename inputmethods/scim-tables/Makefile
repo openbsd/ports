@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/18 21:38:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2017/02/07 08:11:11 bentley Exp $
 
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	inputmethods chinese japanese korean
 
-HOMEPAGE=	http://www.scim-im.org/
+HOMEPAGE=	https://github.com/scim-im/scim-tables
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
