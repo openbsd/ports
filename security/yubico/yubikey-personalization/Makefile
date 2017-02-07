@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/07 14:42:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/07 21:17:01 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
@@ -15,7 +15,6 @@ LIB_DEPENDS=	devel/json-c \
 		devel/libusb1>=1.0.9p1 \
 		security/yubico/yubico-c
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
