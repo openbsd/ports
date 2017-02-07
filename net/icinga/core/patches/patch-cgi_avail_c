@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
---- cgi/avail.c.orig	Wed Jul 15 12:04:09 2015
-+++ cgi/avail.c	Wed Jul 15 17:12:40 2015
-@@ -392,10 +392,10 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-cgi_avail_c,v 1.3 2017/02/07 21:40:06 sthen Exp $
+--- cgi/avail.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/avail.c	Tue Feb  7 21:24:21 2017
+@@ -394,10 +394,10 @@ int main(int argc, char **argv) {
  				host_report_url("all", "View <b>Availability Report</b> For <b>All Hosts</b>");
  				printf("<br>\n");
  #ifdef USE_TRENDS
@@ -14,7 +14,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  #endif
  				printf("<a href='%s?type=%d&amp;host=%s'>View <b>Information</b> For <b>This Host</b></a><br>\n", EXTINFO_CGI, DISPLAY_HOST_INFO, url_encode(host_name));
  				printf("<a href='%s?host=%s'>View <b>Service Status Detail</b> For <b>This Host</b></a><br>\n", STATUS_CGI, url_encode(host_name));
-@@ -408,10 +408,10 @@ int main(int argc, char **argv) {
+@@ -410,10 +410,10 @@ int main(int argc, char **argv) {
  				printf("<br>\n");
  #ifdef USE_TRENDS
  				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -27,7 +27,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  #endif
  				printf("<a href='%s?type=%d&amp;host=%s&amp;service=%s'>View <b>Information</b> For <b>This Service</b></a><br>\n", EXTINFO_CGI, DISPLAY_SERVICE_INFO, url_encode(host_name), url_encode(service_desc));
  				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Alert History</b> For <b>This Service</b></a><br>\n", HISTORY_CGI, url_encode(host_name), url_encode(service_desc));
-@@ -487,8 +487,8 @@ int main(int argc, char **argv) {
+@@ -489,8 +489,8 @@ int main(int argc, char **argv) {
  			printf("<tr>\n");
  			printf("<td valign='top' align='left' class='optBoxItem'>\n");
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  			if (show_log_entries == TRUE)
  				printf("<input type='hidden' name='show_log_entries' value=''>\n");
  			if (full_log_entries == TRUE)
-@@ -3294,11 +3294,11 @@ void write_log_entries(avail_subject *subject) {
+@@ -3237,11 +3237,11 @@ void write_log_entries(avail_subject *subject) {
  				printf(",\n");
  			json_start = FALSE;
  			printf("{ \"start_time_string\": \"%s\", ", start_date_time);
@@ -53,7 +53,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  			printf(" \"entry_type\": \"%s\", ", entry_type);
  			printf(" \"state_type\": \"");
  			if (temp_as->state_type == AS_HARD_STATE)
-@@ -3311,11 +3311,11 @@ void write_log_entries(avail_subject *subject) {
+@@ -3254,11 +3254,11 @@ void write_log_entries(avail_subject *subject) {
  		} else if (content_type == XML_CONTENT) {
  			printf("<log_entry>\n");
  			printf("<start_time_string>%s</start_time_string>\n", start_date_time);
@@ -68,7 +68,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  			printf("<entry_type>%s</entry_type>\n", entry_type);
  			printf("<state_type>");
  			if (temp_as->state_type == AS_HARD_STATE)
-@@ -4663,9 +4663,9 @@ void display_host_availability(void) {
+@@ -4606,9 +4606,9 @@ void display_host_availability(void) {
  #ifdef USE_TRENDS
  				printf("<p align='center'>\n");
  				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -80,7 +80,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  				printf("</a><br>\n");
  				printf("</p>\n");
  #endif
-@@ -5537,9 +5537,9 @@ void display_service_availability(void) {
+@@ -5480,9 +5480,9 @@ void display_service_availability(void) {
  #ifdef USE_TRENDS
  			printf("<p align='center'>\n");
  			printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -92,7 +92,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  			printf("</a><br>\n");
  			printf("</p>\n");
  #endif
-@@ -6187,7 +6187,7 @@ void host_report_url(char *hn, char *label) {
+@@ -6130,7 +6130,7 @@ void host_report_url(char *hn, char *label) {
  
  	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
  	printf("&amp;show_log_entries");
@@ -101,7 +101,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
  	printf("&amp;backtrack=%d", backtrack_archives);
  	printf("&amp;assumestateretention=%s", (assume_state_retention == TRUE) ? "yes" : "no");
  	printf("&amp;assumeinitialstates=%s", (assume_initial_states == TRUE) ? "yes" : "no");
-@@ -6211,7 +6211,7 @@ void service_report_url(char *hn, char *sd, char *labe
+@@ -6154,7 +6154,7 @@ void service_report_url(char *hn, char *sd, char *labe
  
  	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
  	printf("&amp;service=%s", url_encode(sd));

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.93 2017/02/07 21:20:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2017/02/07 21:40:06 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
 COMMENT-ido =		store Icinga configuration and events in a database
 
-V =			1.13.3
 GH_ACCOUNT =		Icinga
 GH_PROJECT=		icinga-core
-GH_TAGNAME =		v1.13.3
+GH_TAGNAME =		v1.14.0
 PKGNAME-main =		icinga-${GH_TAGNAME:S/v//}
 PKGNAME-cgi =		icinga-cgi-${GH_TAGNAME:S/v//}
 PKGNAME-ido =		icinga-idoutils-${GH_TAGNAME:S/v//}
-REVISION-main =		2
 
 WANTLIB =		c crypto m pthread ssl z
 
@@ -21,7 +19,7 @@ SUBST_VARS +=		PREFIX-cgi BASESYSCONFDIR
 
 RUN_DEPENDS =		${BASE_PKGPATH},-main
 
-WANTLIB-main =		${WANTLIB} ltdl>=4 perl util
+WANTLIB-main =		${WANTLIB} ltdl>=4 perl
 RUN_DEPENDS-main =	net/monitoring-plugins
 LIB_DEPENDS-main =	devel/libtool,-ltdl
 

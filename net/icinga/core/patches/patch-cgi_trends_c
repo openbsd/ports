@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_trends_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/trends.c.orig	Mon Jan 19 16:20:20 2015
-+++ cgi/trends.c	Mon Jan 19 16:21:47 2015
-@@ -431,20 +431,20 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-cgi_trends_c,v 1.2 2017/02/07 21:40:06 sthen Exp $
+--- cgi/trends.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/trends.c	Tue Feb  7 21:24:21 2017
+@@ -435,20 +435,20 @@ int main(int argc, char **argv) {
  			printf("<tr><td class='linkBox'>\n");
  
  			if (display_type == DISPLAY_HOST_TRENDS) {

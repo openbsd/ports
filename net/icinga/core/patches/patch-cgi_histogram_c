@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_histogram_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/histogram.c.orig	Mon Jan 19 16:22:10 2015
-+++ cgi/histogram.c	Mon Jan 19 16:24:07 2015
-@@ -314,9 +314,9 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-cgi_histogram_c,v 1.2 2017/02/07 21:40:06 sthen Exp $
+--- cgi/histogram.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/histogram.c	Tue Feb  7 21:24:21 2017
+@@ -320,9 +320,9 @@ int main(int argc, char **argv) {
  
  			if (display_type == DISPLAY_HOST_HISTOGRAM) {
  #ifdef USE_TRENDS
@@ -13,7 +13,7 @@ $OpenBSD: patch-cgi_histogram_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  				printf("<a href='%s?host=%s'>View <b>Service Status Detail</b> For <b>This Host</b></a><br>\n", STATUS_CGI, url_encode(host_name));
  				printf("<a href='%s?type=%d&amp;host=%s'>View <b>Information</b> For <b>This Host</b></a><br>\n", EXTINFO_CGI, DISPLAY_HOST_INFO, url_encode(host_name));
  				printf("<a href='%s?host=%s'>View <b>Alert History</b> For <b>This Host</b></a><br>\n", HISTORY_CGI, url_encode(host_name));
-@@ -324,10 +324,10 @@ int main(int argc, char **argv) {
+@@ -330,10 +330,10 @@ int main(int argc, char **argv) {
  			} else {
  #ifdef USE_TRENDS
  				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -26,7 +26,7 @@ $OpenBSD: patch-cgi_histogram_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  				printf("<a href='%s?type=%d&amp;host=%s&amp;service=%s'>View <b>Information</b> For <b>This Service</b></a><br>\n", EXTINFO_CGI, DISPLAY_SERVICE_INFO, url_encode(host_name), url_encode(service_desc));
  				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Alert History</b> For <b>This Service</b></a><br>\n", HISTORY_CGI, url_encode(host_name), url_encode(service_desc));
  				printf("<a href='%s?host=%s&amp;service=%s'>View <b>Notifications</b> For <b>This Service</b></a><br>\n", NOTIFICATIONS_CGI, url_encode(host_name), url_encode(service_desc));
-@@ -384,8 +384,8 @@ int main(int argc, char **argv) {
+@@ -390,8 +390,8 @@ int main(int argc, char **argv) {
  			printf("<tr><td class='optBoxItem' valign='top' align='left'>Breakdown type:</td><td class='optBoxItem' valign='top' align='left'>Initial states logged:</td></tr>\n");
  			printf("<tr><td class='optBoxItem' valign='top' align='left'>\n");
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-cgi_histogram_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  			printf("<input type='hidden' name='host' value='%s'>\n", escape_string(host_name));
  			if (display_type == DISPLAY_SERVICE_HISTOGRAM)
  				printf("<input type='hidden' name='service' value='%s'>\n", escape_string(service_desc));
-@@ -508,7 +508,7 @@ int main(int argc, char **argv) {
+@@ -515,7 +515,7 @@ int main(int argc, char **argv) {
  
  			printf("<br><br>\n");
  			printf("<div align='center'>\n");

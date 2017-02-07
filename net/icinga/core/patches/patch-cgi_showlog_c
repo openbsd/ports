@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_showlog_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/showlog.c.orig	Mon Jan 19 16:19:15 2015
-+++ cgi/showlog.c	Mon Jan 19 16:20:03 2015
-@@ -175,8 +175,8 @@ int main(void) {
+$OpenBSD: patch-cgi_showlog_c,v 1.2 2017/02/07 21:40:06 sthen Exp $
+--- cgi/showlog.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/showlog.c	Tue Feb  7 21:24:21 2017
+@@ -177,8 +177,8 @@ int main(void) {
  
  		/* start input form */
  		printf("<form method='GET' style='margin:0;' action='%s'>\n", SHOWLOG_CGI);
@@ -12,7 +12,7 @@ $OpenBSD: patch-cgi_showlog_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  		printf("<input type='hidden' name='limit' value='%d'>\n", result_limit);
  
  		/* begin top table */
-@@ -832,11 +832,11 @@ void display_logentries() {
+@@ -793,11 +793,11 @@ void display_logentries() {
  				if (json_start == FALSE)
  					printf(",\n");
  				json_start = FALSE;

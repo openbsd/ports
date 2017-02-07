@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_history_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/history.c.orig	Mon Jan 19 16:18:53 2015
-+++ cgi/history.c	Mon Jan 19 16:19:10 2015
-@@ -220,8 +220,8 @@ int main(void) {
+$OpenBSD: patch-cgi_history_c,v 1.2 2017/02/07 21:40:06 sthen Exp $
+--- cgi/history.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/history.c	Tue Feb  7 21:24:21 2017
+@@ -222,8 +222,8 @@ int main(void) {
  		printf("<td align='right' valign='top' width='33%%'>\n");
  
  		printf("<form method=\"GET\" action=\"%s\">\n", HISTORY_CGI);

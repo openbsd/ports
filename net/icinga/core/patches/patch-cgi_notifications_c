@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_notifications_c,v 1.1 2015/01/16 18:07:53 sthen Exp $
---- cgi/notifications.c.orig	Fri Jan 16 17:33:21 2015
-+++ cgi/notifications.c	Fri Jan 16 17:33:45 2015
-@@ -257,8 +257,8 @@ int main(void) {
+$OpenBSD: patch-cgi_notifications_c,v 1.2 2017/02/07 21:40:06 sthen Exp $
+--- cgi/notifications.c.orig	Thu Dec 22 21:40:50 2016
++++ cgi/notifications.c	Tue Feb  7 21:24:21 2017
+@@ -259,8 +259,8 @@ int main(void) {
  			printf("<input type='hidden' name='servicegroup' value='%s'>\n", escape_string(query_servicegroup_name));
  		} else
  			printf("<input type='hidden' name='%s' value='%s'>\n", (query_type == DISPLAY_HOSTS) ? "host" : "contact", (query_type == DISPLAY_HOSTS) ? escape_string(query_host_name) : escape_string(query_contact_name));

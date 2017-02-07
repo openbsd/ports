@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
---- base/checks.c.orig	Mon Mar 30 09:38:53 2015
-+++ base/checks.c	Mon Mar 30 23:28:35 2015
+$OpenBSD: patch-base_checks_c,v 1.3 2017/02/07 21:40:06 sthen Exp $
+--- base/checks.c.orig	Thu Dec 22 21:40:50 2016
++++ base/checks.c	Tue Feb  7 21:24:21 2017
 @@ -683,7 +683,7 @@ int run_async_service_check(service *svc, int check_op
  		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
  		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
  				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
  				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
  				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
-@@ -2167,9 +2167,9 @@ void check_for_orphaned_services(void) {
+@@ -2172,9 +2172,9 @@ void check_for_orphaned_services(void) {
  			log_debug_info(DEBUGL_CHECKS, 1, "Service '%s' on host '%s' was orphaned, so we're scheduling an immediate check...\n", temp_service->description, temp_service->host_name);
  
  			if (log_level(DEBUGL_CHECKS, 1))
@@ -50,7 +50,7 @@ $OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
  
  			/* decrement the number of running service checks */
  			if (currently_running_service_checks > 0)
-@@ -3298,7 +3298,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+@@ -3303,7 +3303,7 @@ int run_async_host_check_3x(host *hst, int check_optio
  		fprintf(check_result_info.output_file_fp, "scheduled_check=%d\n", check_result_info.scheduled_check);
  		fprintf(check_result_info.output_file_fp, "reschedule_check=%d\n", check_result_info.reschedule_check);
  		fprintf(check_result_info.output_file_fp, "latency=%f\n", hst->latency);
@@ -59,7 +59,7 @@ $OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
  
  		/* flush buffer or we'll end up writing twice when we fork() */
  		fflush(check_result_info.output_file_fp);
-@@ -3409,7 +3409,7 @@ int run_async_host_check_3x(host *hst, int check_optio
+@@ -3414,7 +3414,7 @@ int run_async_host_check_3x(host *hst, int check_optio
  				fp = check_result_info.output_file_fp;
  				check_result_info.output_file_fp = NULL;
  
@@ -68,7 +68,7 @@ $OpenBSD: patch-base_checks_c,v 1.2 2015/03/30 22:43:42 sthen Exp $
  				fprintf(fp, "early_timeout=%d\n", check_result_info.early_timeout);
  				fprintf(fp, "exited_ok=%d\n", check_result_info.exited_ok);
  				fprintf(fp, "return_code=%d\n", check_result_info.return_code);
-@@ -4139,7 +4139,7 @@ int process_host_check_result_3x(host *hst, int new_st
+@@ -4150,7 +4150,7 @@ int process_host_check_result_3x(host *hst, int new_st
  		run_async_check = TRUE;
  		temp_host = (host *)hostlist_item->object_ptr;
  
