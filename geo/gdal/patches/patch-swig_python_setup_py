@@ -1,7 +1,7 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.6 2016/05/15 12:18:26 landry Exp $
---- swig/python/setup.py.orig	Mon Apr 25 19:35:56 2016
-+++ swig/python/setup.py	Fri May 13 09:46:30 2016
-@@ -197,7 +197,7 @@ class gdal_ext(build_ext):
+$OpenBSD: patch-swig_python_setup_py,v 1.7 2017/02/07 08:16:45 landry Exp $
+--- swig/python/setup.py.orig	Fri Jan 20 09:20:59 2017
++++ swig/python/setup.py	Mon Feb  6 11:22:35 2017
+@@ -210,7 +210,7 @@ class gdal_ext(build_ext):
          self.include_dirs.append(os.path.join(self.gdaldir,'include'))
  
  

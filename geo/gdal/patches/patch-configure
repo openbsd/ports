@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.14 2016/08/01 08:56:40 landry Exp $
+$OpenBSD: patch-configure,v 1.15 2017/02/07 08:16:45 landry Exp $
 
 chunk 1&2: adapt paths for our openjp2 install
 
---- configure.orig	Mon Apr 25 19:35:51 2016
-+++ configure	Sun May 22 21:15:52 2016
-@@ -23677,9 +23677,9 @@ fi
+--- configure.orig	Fri Jan 20 09:20:46 2017
++++ configure	Mon Feb  6 11:22:35 2017
+@@ -23700,9 +23700,9 @@ fi
          LIBS="-lopenjp2 $LIBS"
      fi
    else
@@ -16,7 +16,7 @@ chunk 1&2: adapt paths for our openjp2 install
  if test "x$ac_cv_header_openjpeg_2_1_openjpeg_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_OPENJPEG_2_1_OPENJPEG_H 1
-@@ -23743,7 +23743,7 @@ else
+@@ -23766,7 +23766,7 @@ else
    HAVE_OPENJPEG=yes
    if test -r $with_openjpeg/include/openjpeg-2.0/openjpeg.h ; then
      EXTRA_INCLUDES="-I$with_openjpeg/include $EXTRA_INCLUDES"
