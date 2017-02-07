@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/01/12 14:35:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2017/02/07 14:48:02 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -45,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/display/ops.py
 lib/python${MODPY_VERSION}/site-packages/certbot/display/ops.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/display/util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/display/util.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/eff.py
+lib/python${MODPY_VERSION}/site-packages/certbot/eff.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/error_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/error_handler.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/errors.py
@@ -134,6 +136,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/ops_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/ops_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/util_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/eff_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/eff_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/error_handler_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/error_handler_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.py
