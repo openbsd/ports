@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/11/30 16:53:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.26 2017/02/07 08:20:51 landry Exp $
 @bin bin/qbrowser
 @bin bin/qgis
 @bin bin/qgis_bench
@@ -5325,6 +5325,7 @@ share/qgis/python/pytz/zoneinfo/zone1970.tab
 share/qgis/python/qgis/
 share/qgis/python/qgis/PyQt/
 share/qgis/python/qgis/PyQt/Qsci.py
+share/qgis/python/qgis/PyQt/Qt.py
 share/qgis/python/qgis/PyQt/QtCore.py
 share/qgis/python/qgis/PyQt/QtGui.py
 share/qgis/python/qgis/PyQt/QtNetwork.py
