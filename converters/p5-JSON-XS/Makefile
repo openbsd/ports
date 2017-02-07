@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2017/02/07 14:26:13 sthen Exp $
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
 MODULES =	cpan
-DISTNAME =	JSON-XS-3.02
+DISTNAME =	JSON-XS-3.03
 EPOCH =		1
 CATEGORIES =	converters
 
