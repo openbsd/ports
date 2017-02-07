@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/02/28 12:02:16 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.22 2017/02/07 21:34:43 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 @extra app/modules/Cronks/data/xml/extensions/pnp-host-extension.xml
@@ -1532,6 +1532,7 @@ doc/CHANGELOG-1.10
 doc/CHANGELOG-1.11
 doc/CHANGELOG-1.12
 doc/CHANGELOG-1.13
+doc/CHANGELOG-1.14
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8

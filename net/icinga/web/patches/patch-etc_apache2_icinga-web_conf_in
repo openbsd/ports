@@ -1,8 +1,8 @@
-$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.6 2014/10/02 21:05:02 sthen Exp $
---- etc/apache2/icinga-web.conf.in.orig	Wed Aug 13 11:06:35 2014
-+++ etc/apache2/icinga-web.conf.in	Wed Aug 13 13:04:09 2014
+$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.7 2017/02/07 21:34:43 sthen Exp $
+--- etc/apache2/icinga-web.conf.in.orig	Thu Dec 22 22:25:51 2016
++++ etc/apache2/icinga-web.conf.in	Tue Feb  7 21:26:20 2017
 @@ -5,9 +5,13 @@
- # Copyright (C) 2009-2014 Icinga Development Team (http://www.icinga.org)
+ # Copyright (C) 2009-2015 Icinga Development Team (http://www.icinga.org)
  ###
  
 +<IfModule !mod_rewrite.c>
