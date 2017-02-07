@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/01/05 10:28:52 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/02/07 09:36:22 sthen Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -103,7 +103,7 @@ intellij/lib/commons-net-3.3.jar
 intellij/lib/coverage-agent.jar
 intellij/lib/coverage-instrumenter.jar
 intellij/lib/coverage-util.jar
-intellij/lib/ecj-4.6.1.jar
+intellij/lib/ecj-4.6.2.jar
 intellij/lib/extensions.jar
 intellij/lib/external-system-rt.jar
 intellij/lib/fluent-hc-4.5.2.jar
