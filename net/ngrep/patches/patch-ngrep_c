@@ -1,6 +1,6 @@
-$OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
---- ngrep.c.orig	Tue Nov 28 14:38:43 2006
-+++ ngrep.c	Sat Jun 18 14:55:32 2011
+$OpenBSD: patch-ngrep_c,v 1.7 2017/02/07 12:32:56 sthen Exp $
+--- ngrep.c.orig	Tue Nov 28 13:38:43 2006
++++ ngrep.c	Tue Feb  7 12:31:35 2017
 @@ -60,6 +60,7 @@
  #include <config.h>
  
@@ -459,7 +459,18 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
              str += width;
              i   += j;
  
-@@ -1104,6 +1198,27 @@ void print_time_diff(struct pcap_pkthdr *h) {
+@@ -1080,7 +1174,9 @@ uint8_t strishex(char *str) {
+ 
+ 
+ void print_time_absolute(struct pcap_pkthdr *h) {
+-    struct tm *t = localtime((const time_t *)&h->ts.tv_sec);
++    struct tm *t;
++    time_t ts = h->ts.tv_sec;
++    t = localtime(&ts);
+ 
+     printf("%02u/%02u/%02u %02u:%02u:%02u.%06u ",
+            t->tm_year+1900, t->tm_mon+1, t->tm_mday, t->tm_hour,
+@@ -1104,6 +1200,27 @@ void print_time_diff(struct pcap_pkthdr *h) {
      prev_ts.tv_usec = h->ts.tv_usec;
  }
  
@@ -487,7 +498,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
  void dump_delay_proc_init(struct pcap_pkthdr *h) {
      dump_delay = &dump_delay_proc;
  
-@@ -1155,26 +1270,36 @@ void dump_delay_proc(struct pcap_pkthdr *h) {
+@@ -1155,26 +1272,36 @@ void dump_delay_proc(struct pcap_pkthdr *h) {
      prev_delay_ts.tv_usec = h->ts.tv_usec;
  }
  
@@ -527,7 +538,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
  void drop_privs(void) {
      struct passwd *pw;
      uid_t newuid;
-@@ -1197,6 +1322,14 @@ void drop_privs(void) {
+@@ -1197,6 +1324,14 @@ void drop_privs(void) {
              perror("attempt to drop privileges failed");
              clean_exit(-1);
          }
@@ -542,7 +553,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
  
      if (((getgid()  != newgid) && (setgid(newgid)  == -1)) ||
          ((getegid() != newgid) && (setegid(newgid) == -1)) ||
-@@ -1209,7 +1342,6 @@ void drop_privs(void) {
+@@ -1209,7 +1344,6 @@ void drop_privs(void) {
  }
  
  #endif
@@ -550,7 +561,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
  
  void usage(int8_t e) {
      printf("usage: ngrep <-"
-@@ -1234,6 +1366,7 @@ void usage(int8_t e) {
+@@ -1234,6 +1368,7 @@ void usage(int8_t e) {
             "   -D  is replay pcap_dumps with their recorded time intervals\n"
             "   -t  is print timestamp every time a packet is matched\n"
             "   -T  is print delta timestamp every time a packet is matched\n"
@@ -558,7 +569,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
             "   -M  is don't do multi-line match (do single-line match instead)\n"
             "   -I  is read packet stream from pcap format file pcap_dump\n"
             "   -O  is dump matched packets in pcap format to pcap_dump\n"
-@@ -1292,8 +1425,9 @@ void clean_exit(int32_t sig) {
+@@ -1292,8 +1427,9 @@ void clean_exit(int32_t sig) {
       && pd && !pcap_stats(pd, &s))
          printf("%u received, %u dropped\n", s.ps_recv, s.ps_drop);
  
@@ -570,7 +581,7 @@ $OpenBSD: patch-ngrep_c,v 1.6 2011/06/18 14:02:38 kili Exp $
  
  #if defined(_WIN32)
      if (delay_socket) closesocket(delay_socket);
-@@ -1379,6 +1513,28 @@ char *win32_usedevice(const char *index) {
+@@ -1379,6 +1515,28 @@ char *win32_usedevice(const char *index) {
      }
  
      pcap_freealldevs(alldevs);

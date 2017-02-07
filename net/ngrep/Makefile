@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/02/07 12:32:56 sthen Exp $
 
 COMMENT=	network grep
 
 DISTNAME=	ngrep-1.45
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
 EXTRACT_SUFX=	.tar.bz2
