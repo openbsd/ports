@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.430 2017/02/02 12:58:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.431 2017/02/07 13:52:07 feinerer Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -202,6 +202,7 @@
      SUBDIR += p5-Sane
      SUBDIR += pdf2djvu
      SUBDIR += pdfmod
+     SUBDIR += pdfsandwich
      SUBDIR += pecl-imagick
      SUBDIR += pho
      SUBDIR += pigment
