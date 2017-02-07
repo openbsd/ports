@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/07 13:42:45 feinerer Exp $
+@bin bin/pdfsandwich
+@man man/man1/pdfsandwich.1.gz
+share/doc/pdfsandwich/
+share/doc/pdfsandwich/changelog.gz
+share/doc/pdfsandwich/copyright
