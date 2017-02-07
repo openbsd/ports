@@ -1,4 +1,10 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2017/02/07 14:03:29 ajacoutot Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2017/02/07 14:12:42 ajacoutot Exp $
+
+From 798755af32c42e395d167d9d49d14cbe449d2842 Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Tue, 31 Jan 2017 18:26:55 -0500
+Subject: Compilation: destdir fix from Redhat.
+
 --- doc/Makefile.in.orig	Tue Feb  7 14:23:10 2017
 +++ doc/Makefile.in	Tue Feb  7 14:23:25 2017
 @@ -1347,7 +1347,7 @@ uninstall-am: uninstall-manpageDATA uninstall-winhelpD
