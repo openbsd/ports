@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/11 23:03:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/07 15:10:10 sthen Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
-DISTNAME=	podofo-0.9.3
+DISTNAME=	podofo-0.9.5
 
-SHARED_LIBS +=	podofo                    1.0 # 0.9
+SHARED_LIBS +=	podofo                    2.0 # 0.9
 
 CATEGORIES=	textproc
 
@@ -15,12 +15,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+ (tools) LGPLv2+ (lib)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto fontconfig freetype idn jpeg m png pthread
-WANTLIB += stdc++ tiff z
+WANTLIB += c crypto fontconfig freetype idn jpeg m png pthread tiff z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=podofo/}
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake gcc4
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
 LIB_DEPENDS=	devel/libidn \
 		graphics/jpeg \
