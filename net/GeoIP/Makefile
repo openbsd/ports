@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/10/07 10:22:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/02/08 10:52:30 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -6,8 +6,8 @@ COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
 COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
 V=		1.6.5
-D=		20161007
-REVISION-main=	4
+D=		20170208
+REVISION-main=	5
 DISTNAME=	GeoIP-$V
 PKGNAME-main=	GeoIP-$V
 PKGNAME-db=	geolite-country-$D
@@ -20,7 +20,7 @@ SHARED_LIBS +=	GeoIP                9.0      # 7.3
 
 CATEGORIES=	net geo
 
-HOMEPAGE=	http://dev.maxmind.com/geoip/legacy/downloadable/
+HOMEPAGE=	https://dev.maxmind.com/geoip/legacy/downloadable/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -57,10 +57,10 @@ geolite:
 	mkdir data; \
 	cd data; \
 	echo "This file contains an unmodified dated snapshot of GeoLite data from MaxMind," > readme.txt; \
-	echo "see http://www.maxmind.com and http://dev.maxmind.com/geoip/legacy/geolite/." >> readme.txt; \
+	echo "see https://www.maxmind.com and https://dev.maxmind.com/geoip/legacy/geolite/." >> readme.txt; \
 	echo "Distributed under Creative Commons Attribution-ShareAlike 4.0 Unported License." >> readme.txt; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> readme.txt; \
-	ftp http://geolite.maxmind.com/download/geoip/database/{GeoIPv6,GeoLiteCity,GeoLiteCityv6-beta/GeoLiteCityv6,GeoLiteCountry/GeoIP}.dat.gz http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum{,v6}.dat.gz; \
+	ftp https://geolite.maxmind.com/download/geoip/database/{GeoIPv6,GeoLiteCity,GeoLiteCityv6-beta/GeoLiteCityv6,GeoLiteCountry/GeoIP}.dat.gz https://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum{,v6}.dat.gz; \
 	gunzip *gz; \
 	cd ..; \
 	tar cf - data | xz -T 0 > $$f; \
