@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/08 12:08:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/08 10:13:38 fcambus Exp $
 
 COMMENT-main =	library for MaxMind GeoIP2/GeoLite2 IP geolocation databases
 COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
 COMMENT-city =	GeoIP2 GeoLite2 database: IPv4/v6 address to city
 
 V =		1.2.0
-D =		20170107
+D =		20170208
 REVISION-main =	0
 DISTNAME =	libmaxminddb-${V}
 PKGNAME-main =	libmaxminddb-${V}
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB-main +=	c m
 
 MASTER_SITES =	${HOMEPAGE}/releases/download/${V}/
-MASTER_SITES0 =	http://mirrors.statdns.com/
+MASTER_SITES0 =	https://mirrors.statdns.com/
 
 MULTI_PACKAGES = -main -db -city
 RUN_DEPENDS-main = net/libmaxminddb,-db
@@ -51,10 +51,10 @@ geolite2:
 	mkdir $$tmp/data; \
 	cd $$tmp/data; \
 	echo "This file contains an unmodified dated snapshot of GeoLite2 data from MaxMind," > README; \
-	echo "see http://www.maxmind.com and https://dev.maxmind.com/geoip/geoip2/geolite2/." >> README; \
+	echo "see https://www.maxmind.com and https://dev.maxmind.com/geoip/geoip2/geolite2/." >> README; \
 	echo "Distributed under Creative Commons Attribution-ShareAlike 4.0 International License." >> README; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> README; \
-	ftp http://geolite.maxmind.com/download/geoip/database/GeoLite2-{Country,City}.{md5,mmdb.gz}; \
+	ftp https://geolite.maxmind.com/download/geoip/database/GeoLite2-{Country,City}.{md5,mmdb.gz}; \
 	gunzip *gz; \
 	for file in GeoLite2-Country GeoLite2-City; do \
 		if [ "`md5 -q $$file.mmdb`" != "`cat $$file.md5`" ]; then \
