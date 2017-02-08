@@ -1,0 +1,24 @@
+$OpenBSD: patch-wpa_supplicant_config_h,v 1.1 2017/02/08 12:53:46 sthen Exp $
+--- wpa_supplicant/config.h.orig	Wed Feb  8 11:22:05 2017
++++ wpa_supplicant/config.h	Wed Feb  8 11:22:57 2017
+@@ -10,11 +10,15 @@
+ #define CONFIG_H
+ 
+ #define DEFAULT_EAPOL_VERSION 1
+-#ifdef CONFIG_NO_SCAN_PROCESSING
+-#define DEFAULT_AP_SCAN 2
+-#else /* CONFIG_NO_SCAN_PROCESSING */
+-#define DEFAULT_AP_SCAN 1
+-#endif /* CONFIG_NO_SCAN_PROCESSING */
++#ifdef __OpenBSD__
++#  define DEFAULT_AP_SCAN 0
++#else
++#  ifdef CONFIG_NO_SCAN_PROCESSING
++#    define DEFAULT_AP_SCAN 2
++#  else /* CONFIG_NO_SCAN_PROCESSING */
++#    define DEFAULT_AP_SCAN 1
++#  endif /* CONFIG_NO_SCAN_PROCESSING */
++#endif
+ #define DEFAULT_USER_MPM 1
+ #define DEFAULT_MAX_PEER_LINKS 99
+ #define DEFAULT_MESH_MAX_INACTIVITY 300
