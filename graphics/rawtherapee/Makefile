@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/17 15:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2017/02/08 09:27:06 kirby Exp $
 
-# http://50.87.144.65/~rt/w/index.php?title=The_Floating_Point_Engine
+# http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
-
-# XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-4.2
-REVISION = 		1
+DISTNAME =		rawtherapee-5.0-r1-gtk2
+PKGNAME = 		rawtherapee-5.0r1
 
 CATEGORIES =		graphics
 
@@ -49,6 +46,8 @@ LIB_DEPENDS =		audio/libcanberra,-gtk \
 
 CONFIGURE_ARGS =	-DBUILD_SHARED=ON \
 			-DOPTION_OMP=OFF \
-			-DCMAKE_CXX_FLAGS_RELEASE=${CXXFLAGS}
+			-DCMAKE_CXX_FLAGS_RELEASE=${CXXFLAGS} \
+			-DCMAKE_EXE_LINKER_FLAGS=-L${X11BASE}/lib \
+			-Wno-dev
 
 .include <bsd.port.mk>
