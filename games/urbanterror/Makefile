@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/07 06:12:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/08 12:55:18 sthen Exp $
 
 USE_WXNEEDED =	Yes
 ONLY_FOR_ARCHS = amd64 i386
@@ -24,6 +24,9 @@ WANTLIB += X11 Xxf86vm c m pthread SDL
 LIB_DEPENDS =	devel/sdl
 RUN_DEPENDS =	games/urbanterror-data \
 		net/curl
+# using clang's integrated assembler for %xmm (code/qcommon/snapvector_sse.c)
+MODULES =	lang/clang
+MODCLANG_ARCHS = i386
 
 USE_GMAKE =	Yes
 ALL_TARGET =    release
