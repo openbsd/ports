@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.3 2017/01/08 08:51:31 landry Exp $
+# $OpenBSD: cargo.port.mk,v 1.4 2017/02/08 17:36:33 danj Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -201,13 +201,13 @@ do-test:
 modcargo-metadata: patch
 	@${MODCARGO_post-patch}
 
-# modcargo-crates-1 will output crates list from Cargo.lock file.
-modcargo-crates-1: extract
+# modcargo-gen-crates will output crates list from Cargo.lock file.
+modcargo-gen-crates: extract
 	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "-" $$3 }' \
 		<${WRKSRC}/Cargo.lock
 
-# modcargo-crates-2 will try to grab license information from downloaded crates.
-modcargo-crates-2: configure
+# modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
+modcargo-gen-crates-licenses: configure
 	@find ${WRKSRC}/modcargo-crates -name 'Cargo.toml' -maxdepth 2 \
 		-exec grep -H '^license' {} \; \
 		| sed \
