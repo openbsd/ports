@@ -1,0 +1,140 @@
+$OpenBSD: patch-src_vncconnection_c,v 1.1 2017/02/09 12:34:30 ajacoutot Exp $
+
+From ea0386933214c9178aaea9f2f85049ea3fa3e14a Mon Sep 17 00:00:00 2001
+From: "Daniel P. Berrange" <berrange@redhat.com>
+Date: Thu, 2 Feb 2017 17:34:47 +0000
+Subject: Fix bounds checking for RRE, hextile & copyrect encodings
+
+From 661a676e556fef17e53c09b9e2656adc80eb0acf Mon Sep 17 00:00:00 2001
+From: "Daniel P. Berrange" <berrange@redhat.com>
+Date: Thu, 2 Feb 2017 18:01:53 +0000
+Subject: Don't accept color map entries for true-color pixel format
+
+From c8583fd3783c5b811590fcb7bae4ce6e7344963e Mon Sep 17 00:00:00 2001
+From: "Daniel P. Berrange" <berrange@redhat.com>
+Date: Thu, 2 Feb 2017 18:18:48 +0000
+Subject: Correctly validate color map range indexes
+
+--- src/vncconnection.c.orig	Thu Feb  9 13:22:02 2017
++++ src/vncconnection.c	Thu Feb  9 13:22:21 2017
+@@ -2168,7 +2168,22 @@ static vnc_connection_tight_sum_pixel_func *vnc_connec
+     (vnc_connection_tight_sum_pixel_func *)vnc_connection_tight_sum_pixel_32x32,
+ };
+ 
++static gboolean vnc_connection_validate_boundary(VncConnection *conn,
++                                                 guint16 x, guint16 y,
++                                                 guint16 width, guint16 height)
++{
++    VncConnectionPrivate *priv = conn->priv;
+ 
++    if ((x + width) > priv->width || (y + height) > priv->height) {
++        vnc_connection_set_error(conn, "Framebuffer update %dx%d at %d,%d "
++                                 "outside boundary %dx%d",
++                                 width, height, x, y, priv->width, priv->height);
++    }
++
++    return !vnc_connection_has_error(conn);
++}
++
++
+ static void vnc_connection_raw_update(VncConnection *conn,
+                                       guint16 x, guint16 y,
+                                       guint16 width, guint16 height)
+@@ -2215,6 +2230,9 @@ static void vnc_connection_copyrect_update(VncConnecti
+     src_x = vnc_connection_read_u16(conn);
+     src_y = vnc_connection_read_u16(conn);
+ 
++    if (!vnc_connection_validate_boundary(conn, src_x, src_y, width, height))
++        return;
++
+     vnc_framebuffer_copyrect(priv->fb,
+                              src_x, src_y,
+                              dst_x, dst_y,
+@@ -2257,6 +2275,10 @@ static void vnc_connection_hextile_rect(VncConnection 
+                 xy = vnc_connection_read_u8(conn);
+                 wh = vnc_connection_read_u8(conn);
+ 
++                if (!vnc_connection_validate_boundary(conn, x + nibhi(xy), y + niblo(xy),
++                                                      nibhi(wh) + 1, niblo(wh) + 1))
++                    return;
++
+                 vnc_framebuffer_fill(priv->fb, fg,
+                                      x + nibhi(xy), y + niblo(xy),
+                                      nibhi(wh) + 1, niblo(wh) + 1);
+@@ -2313,6 +2335,9 @@ static void vnc_connection_rre_update(VncConnection *c
+         sub_w = vnc_connection_read_u16(conn);
+         sub_h = vnc_connection_read_u16(conn);
+ 
++        if (!vnc_connection_validate_boundary(conn, x + sub_x, y + sub_y, sub_w, sub_h))
++            break;
++
+         vnc_framebuffer_fill(priv->fb, fg,
+                              x + sub_x, y + sub_y, sub_w, sub_h);
+     }
+@@ -3079,22 +3104,6 @@ static void vnc_connection_ext_key_event(VncConnection
+ }
+ 
+ 
+-static gboolean vnc_connection_validate_boundary(VncConnection *conn,
+-                                                 guint16 x, guint16 y,
+-                                                 guint16 width, guint16 height)
+-{
+-    VncConnectionPrivate *priv = conn->priv;
+-
+-    if ((x + width) > priv->width || (y + height) > priv->height) {
+-        vnc_connection_set_error(conn, "Framebuffer update %dx%d at %d,%d "
+-                                 "outside boundary %dx%d",
+-                                 width, height, x, y, priv->width, priv->height);
+-    }
+-
+-    return !vnc_connection_has_error(conn);
+-}
+-
+-
+ static gboolean vnc_connection_framebuffer_update(VncConnection *conn, gint32 etype,
+                                                   guint16 x, guint16 y,
+                                                   guint16 width, guint16 height)
+@@ -3324,14 +3333,24 @@ static gboolean vnc_connection_server_message(VncConne
+         VncColorMap *map;
+         int i;
+ 
++        if (priv->fmt.true_color_flag) {
++            vnc_connection_set_error(conn, "Got color map entries in true-color pix format");
++            break;
++        }
++
+         vnc_connection_read(conn, pad, 1);
+         first_color = vnc_connection_read_u16(conn);
+         n_colors = vnc_connection_read_u16(conn);
+ 
+         VNC_DEBUG("Colour map from %d with %d entries",
+                   first_color, n_colors);
+-        map = vnc_color_map_new(first_color, n_colors);
+ 
++        if (first_color > (65536 - n_colors)) {
++            vnc_connection_set_error(conn, "Colormap start %d out of range %d", first_color, 65536 - n_colors);
++            break;
++        }
++
++        map = vnc_color_map_new(first_color, n_colors);
+         for (i = 0; i < n_colors; i++) {
+             guint16 red, green, blue;
+ 
+@@ -3339,9 +3358,14 @@ static gboolean vnc_connection_server_message(VncConne
+             green = vnc_connection_read_u16(conn);
+             blue = vnc_connection_read_u16(conn);
+ 
+-            vnc_color_map_set(map,
+-                              i + first_color,
+-                              red, green, blue);
++            if (!vnc_color_map_set(map,
++                                   i + first_color,
++                                   red, green, blue)) {
++                /* Should not be reachable given earlier range check */
++                vnc_connection_set_error(conn, "Colormap index %d out of range %d,%d",
++                                         i + first_color, first_color, 65536 - n_colors);
++                break;
++            }
+         }
+ 
+         vnc_framebuffer_set_color_map(priv->fb, map);

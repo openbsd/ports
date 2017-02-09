@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2016/08/20 13:01:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2017/02/09 12:34:30 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		0.6.0
+REVISION=		0
 
 PKGNAME=		${DISTNAME}
 
@@ -26,7 +27,7 @@ WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn intl m
 WANTLIB += nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 tasn1
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += unistring xcb xcb-render xcb-shm z
 
 MODULES=		x11/gnome
 

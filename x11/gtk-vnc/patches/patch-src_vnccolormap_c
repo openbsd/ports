@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_vnccolormap_c,v 1.1 2017/02/09 12:34:30 ajacoutot Exp $
+
+From c8583fd3783c5b811590fcb7bae4ce6e7344963e Mon Sep 17 00:00:00 2001
+From: "Daniel P. Berrange" <berrange@redhat.com>
+Date: Thu, 2 Feb 2017 18:18:48 +0000
+Subject: Correctly validate color map range indexes
+
+--- src/vnccolormap.c.orig	Thu Aug 18 15:36:02 2016
++++ src/vnccolormap.c	Thu Feb  9 13:22:21 2017
+@@ -119,7 +119,7 @@ gboolean vnc_color_map_set(VncColorMap *map,
+                            guint16 green,
+                            guint16 blue)
+ {
+-    if (idx >= (map->size + map->offset))
++    if (idx < map->offset || idx >= (map->size + map->offset))
+         return FALSE;
+ 
+     map->colors[idx - map->offset].red = red;
+@@ -149,7 +149,7 @@ gboolean vnc_color_map_lookup(VncColorMap *map,
+                               guint16 *green,
+                               guint16 *blue)
+ {
+-    if (idx >= (map->size + map->offset))
++    if (idx < map->offset || idx >= (map->size + map->offset))
+         return FALSE;
+ 
+     *red = map->colors[idx - map->offset].red;
