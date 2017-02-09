@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/07 06:12:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/09 11:19:47 kirby Exp $
+
+ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	Urban Terror game data
 PKGNAME =	urbanterror-data-4.3.2
