@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/10 20:26:44 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/02/09 20:36:50 jturner Exp $
 @bin bin/6m
 @bin bin/mbld
 @bin bin/mdumpleak
@@ -18,6 +18,8 @@ lib/myr/libfileutil.a
 lib/myr/libfileutil.use
 lib/myr/libinifile.a
 lib/myr/libinifile.use
+lib/myr/libjson.a
+lib/myr/libjson.use
 lib/myr/libregex.a
 lib/myr/libregex.use
 lib/myr/libstd.a
