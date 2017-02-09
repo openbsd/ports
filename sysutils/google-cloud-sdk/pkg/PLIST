@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2017/02/02 05:50:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2017/02/09 08:27:57 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/VERSION
 google-cloud-sdk/bin/
@@ -689,6 +689,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/wait_info.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_groups/managed/wait_info.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/instance_templates/
@@ -2091,6 +2093,8 @@ google-cloud-sdk/lib/surface/app/instances/enable_debug.py
 google-cloud-sdk/lib/surface/app/instances/enable_debug.pyc
 google-cloud-sdk/lib/surface/app/instances/list.py
 google-cloud-sdk/lib/surface/app/instances/list.pyc
+google-cloud-sdk/lib/surface/app/instances/ssh.py
+google-cloud-sdk/lib/surface/app/instances/ssh.pyc
 google-cloud-sdk/lib/surface/app/logs/
 google-cloud-sdk/lib/surface/app/logs/__init__.py
 google-cloud-sdk/lib/surface/app/logs/__init__.pyc
