@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/14 19:07:26 awolk Exp $
+# $OpenBSD: Makefile,v 1.29 2017/02/09 17:03:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += aub
@@ -10,7 +10,6 @@
      SUBDIR += p5-News-Article
      SUBDIR += p5-News-Newsrc
      SUBDIR += pan
-     SUBDIR += plor
      SUBDIR += py-yenc
      SUBDIR += sabnzbd
      SUBDIR += sickbeard
