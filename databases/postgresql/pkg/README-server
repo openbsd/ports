@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.20 2016/12/18 18:18:27 jeremy Exp $
+$OpenBSD: README-server,v 1.21 2017/02/09 15:14:11 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -125,7 +125,7 @@ to the current version.
 # pkg_add -ui postgresql-server
 
 4) Backup your old data directory:
-# mv /var/postgresql/data /var/postgresql/data.old
+# mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
 5) Create a new data directory (using -E UTF8 if appropriate):
 # su _postgresql -c "mkdir /var/postgresql/data"
@@ -133,9 +133,9 @@ to the current version.
 
 6) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
-    "cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/"
+    "cp /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/"
 # su _postgresql -c \
-    "cp /var/postgresql/data.old/server.{crt,key} /var/postgresql/data/"
+    "cp /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/"
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
@@ -157,10 +157,10 @@ faster than a dump and reload, especially for large databases.
 # ${RCDIR}/postgresql stop
 
 2) Upgrade your PostgreSQL package with pkg_add.
-# pkg_add -ui postgresql-pg_upgrade
+# pkg_add postgresql-pg_upgrade
 
 3) Backup your old data directory:
-# mv /var/postgresql/data /var/postgresql/data.old
+# mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
 4) Create a new data directory (using -E UTF8 if appropriate):
 # su _postgresql -c "mkdir /var/postgresql/data"
@@ -168,19 +168,26 @@ faster than a dump and reload, especially for large databases.
 
 5) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
-    "cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/"
+    "cp /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/"
 # su _postgresql -c \
-    "cp /var/postgresql/data.old/server.{crt,key} /var/postgresql/data/"
+    "cp /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/"
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
 
-6) Run pg_upgrade:
-# su _postgresql -c "pg_upgrade -b /usr/local/bin/postgresql-9.5/
-                     -B /usr/local/bin -U postgres
-                     -d /var/postgresql/data.old/ -D /var/postgresql/data"
+6) Temporarily support connecting without a password for local users by
+   editing pg_hba.conf to include "local all postgres trust"
+# su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
 
-7) Start PostgreSQL:
+7) Run pg_upgrade:
+# su _postgresql -c "cd /var/postgresql && \
+    pg_upgrade -b /usr/local/bin/postgresql-${PREV_MAJOR}/ -B /usr/local/bin \
+    -U postgres -d /var/postgresql/data-${PREV_MAJOR}/ -D /var/postgresql/data"
+
+8) Remove "local all postgres trust" line from pg_hba.conf
+# su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
+
+9) Start PostgreSQL:
 # ${RCDIR}/postgresql start
 
 Clients/Frontends

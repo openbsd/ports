@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2016/12/26 13:56:04 jsg Exp $
+# $OpenBSD: Makefile,v 1.222 2017/02/09 15:14:11 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,11 +7,10 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-# DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
-# in case a dump before / restore after pkg_add -u is required!
-
 VERSION=	9.6.1
+PREV_MAJOR=	9.5
 REVISION=	0
+REVISION-server= 1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -42,7 +41,8 @@ MULTI_PACKAGES=	-docs -main -server -contrib -pg_upgrade -plpython
 
 MAKE_FILE=	GNUmakefile
 
-SUBST_VARS=	VERSION
+V_MAJOR=	${VERSION:R}
+SUBST_VARS=	VERSION V_MAJOR PREV_MAJOR
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
