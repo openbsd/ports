@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.450 2017/02/06 10:56:57 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.451 2017/02/09 09:50:24 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -909,6 +909,7 @@ my $obsolete_reason = {
 	'postgresql-jdbc' => 6,
 	'postgresql-jdbc-docs' => 6,
 	'vimb' => 2,
+	'plor' => 3,
 };
 
 # reasons for obsolete packages
