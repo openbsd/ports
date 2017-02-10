@@ -1,0 +1,44 @@
+$OpenBSD: patch-source_fitz_pixmap_c,v 1.1 2017/02/10 14:51:13 sthen Exp $
+
+use-after-free and heap-based buffer overflow
+
+https://bugs.ghostscript.com/show_bug.cgi?id=697515
+https://blogs.gentoo.org/ago/2017/02/09/mupdf-use-after-free-in-fz_subsample_pixmap-pixmap-c
+http://www.ghostscript.com/cgi-bin/findgit.cgi?2c4e5867ee699b1081527bc6c6ea0e99a35a5c27                                                             
+
+--- source/fitz/pixmap.c.orig	Fri Feb 10 14:33:52 2017
++++ source/fitz/pixmap.c	Fri Feb 10 14:37:16 2017
+@@ -1054,6 +1054,7 @@ fz_subsample_pixmap_ARM(unsigned char *ptr, int w, int
+ 	"@STACK:r1,<9>,factor,n,fwd,back,back2,fwd2,divX,back4,fwd4,fwd3,divY,back5,divXY\n"
+ 	"ldr	r4, [r13,#4*22]		@ r4 = divXY			\n"
+ 	"ldr	r5, [r13,#4*11]		@ for (nn = n; nn > 0; n--) {	\n"
++	"ldr	r8, [r13,#4*17]		@ r8 = back4                    \n"
+ 	"18:				@				\n"
+ 	"mov	r14,#0			@ r14= v = 0			\n"
+ 	"sub	r5, r5, r1, LSL #8	@ for (xx = x; xx > 0; x--) {	\n"
+@@ -1070,7 +1071,7 @@ fz_subsample_pixmap_ARM(unsigned char *ptr, int w, int
+ 	"mul	r14,r4, r14		@ r14= v *= divX		\n"
+ 	"mov	r14,r14,LSR #16		@ r14= v >>= 16			\n"
+ 	"strb	r14,[r9], #1		@ *d++ = r14			\n"
+-	"sub	r0, r0, r8		@ s -= back2			\n"
++	"sub	r0, r0, r8		@ s -= back4			\n"
+ 	"subs	r5, r5, #1		@ n--				\n"
+ 	"bgt	18b			@ }				\n"
+ 	"21:				@				\n"
+@@ -1199,6 +1200,7 @@ fz_subsample_pixmap(fz_context *ctx, fz_pixmap *tile, 
+ 		x += f;
+ 		if (x > 0)
+ 		{
++			int back4 = x * n - 1;
+ 			div = x * y;
+ 			for (nn = n; nn > 0; nn--)
+ 			{
+@@ -1213,7 +1215,7 @@ fz_subsample_pixmap(fz_context *ctx, fz_pixmap *tile, 
+ 					s -= back5;
+ 				}
+ 				*d++ = v / div;
+-				s -= back2;
++				s -= back4;
+ 			}
+ 		}
+ 	}
