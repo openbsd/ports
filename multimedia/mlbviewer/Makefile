@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/22 23:47:27 phessler Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/10 10:23:44 phessler Exp $
 
 COMMENT =		collection of tools for MLB.com content and MLB.TV
 
-Y =			2014
-V =			3
+Y =			2015
+V =			1
 DISTNAME =		mlbviewer${Y}-sf-${V}
 PKGNAME =		mlbviewer-${Y}.${V}
 CATEGORIES =		multimedia
 HOMEPAGE =		http://sourceforge.net/p/mlbviewer/wiki/Home/
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
-REVISION =		1
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
@@ -39,6 +38,6 @@ do-install:
 	printf '#!/bin/sh\nexec ${TRUEPREFIX}/libexec/mlbviewer/milb${i}.py $$*\n' > ${WRKBUILD}/milb${i}
 	${INSTALL_SCRIPT} ${WRKBUILD}/milb${i} ${PREFIX}/bin/milb${i}
 .endfor
-
+	@rm -rf ${PREFIX}/libexec/mlbviewer/.svn
 
 .include <bsd.port.mk>
