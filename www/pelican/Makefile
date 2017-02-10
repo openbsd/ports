@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/10 22:35:19 danj Exp $
 
 COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
@@ -23,7 +23,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-blinker \
 			devel/py-dateutil \
-			textproc/markdown \
+			textproc/py-markdown \
 			textproc/py-docutils \
 			textproc/py-pygments \
 			textproc/py-unidecode \
