@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/01/11 08:22:59 mestre Exp $
+# $OpenBSD: Makefile,v 1.30 2017/02/10 12:10:39 mestre Exp $
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-1.0.4
+DISTNAME=		mcabber-1.0.5
 CATEGORIES=		net
 
-HOMEPAGE=		http://mcabber.com/
+HOMEPAGE=		https://mcabber.com/
 
 MAINTAINER=		Markus Hennecke <markus-hennecke@markus-hennecke.de>
 
