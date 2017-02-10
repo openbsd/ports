@@ -1,10 +1,11 @@
-#	$OpenBSD: Makefile,v 1.13 2017/01/10 02:35:52 jsg Exp $
+#	$OpenBSD: Makefile,v 1.14 2017/02/10 00:02:45 jsg Exp $
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2017.01
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION}
 FULLPKGNAME=	${PKGNAME}
@@ -23,6 +24,7 @@ BUILD_DEPENDS=	devel/dtc
 MAKE_ENV=	KBUILD_VERBOSE=1
 
 MODULES=	lang/python
+MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=tools/binman/binman
 
 .if "${FLAVOR}" == "aarch64"
