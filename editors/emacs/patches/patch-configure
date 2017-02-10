@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2016/10/13 15:39:32 jca Exp $
+$OpenBSD: patch-configure,v 1.10 2017/02/10 02:24:07 jca Exp $
 --- configure.orig	Fri Sep 16 11:20:23 2016
-+++ configure	Tue Sep 27 15:22:19 2016
++++ configure	Fri Feb 10 02:56:08 2017
 @@ -9531,7 +9531,14 @@ case "$opsys" in
    openbsd)
     ## Han Boetes <han@boetes.org> says this is necessary,
@@ -8,7 +8,7 @@ $OpenBSD: patch-configure,v 1.9 2016/10/13 15:39:32 jca Exp $
 -   LD_SWITCH_SYSTEM="-Z"
 +   ## Enable only where necessary.
 +   case $host_cpu in
-+     x86_64|sparc64)
++     x86_64|sparc64|arm)
 +      ;;
 +     powerpc|mips64el|*)
 +      LD_SWITCH_SYSTEM="-Z"
