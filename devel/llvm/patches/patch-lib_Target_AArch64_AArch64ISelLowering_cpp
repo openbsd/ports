@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_AArch64_AArch64ISelLowering_cpp,v 1.1 2017/02/10 09:37:43 ajacoutot Exp $
+
+Disable the Load Stack Guard for OpenBSD on AArch64.  We don't use it
+on any other platform and it causes a segfault in combination with our
+IR Stack Guard.
+
+--- lib/Target/AArch64/AArch64ISelLowering.cpp.orig	Wed Feb  8 20:34:21 2017
++++ lib/Target/AArch64/AArch64ISelLowering.cpp	Wed Feb  8 22:07:21 2017
+@@ -10482,7 +10482,7 @@ void AArch64TargetLowering::ReplaceNodeResults(
+ }
+ 
+ bool AArch64TargetLowering::useLoadStackGuardNode() const {
+-  if (!Subtarget->isTargetAndroid())
++  if (!Subtarget->isTargetAndroid() && !Subtarget->isTargetOpenBSD())
+     return true;
+   return TargetLowering::useLoadStackGuardNode();
+ }

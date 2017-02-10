@@ -1,0 +1,30 @@
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.1 2017/02/10 09:37:43 ajacoutot Exp $
+
+- ELF: Add /usr/lib as default search path.
+
+  GNU ld and gold have this path as default search path.
+  If you don't want this directory, pass -nostdlib.
+- Enable PIE by default.
+
+--- tools/lld/ELF/Driver.cpp.orig	Wed Feb  1 18:22:23 2017
++++ tools/lld/ELF/Driver.cpp	Wed Feb  1 18:57:06 2017
+@@ -459,6 +459,9 @@ static std::vector<StringRef> getLines(MemoryBufferRef
+ 
+ // Initializes Config members by the command line options.
+ void LinkerDriver::readConfigs(opt::InputArgList &Args) {
++  if (!Args.hasArg(OPT_nostdlib))
++    Config->SearchPaths.push_back("=/usr/lib");
++
+   for (auto *Arg : Args.filtered(OPT_L))
+     Config->SearchPaths.push_back(Arg->getValue());
+ 
+@@ -493,7 +496,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+   Config->NoUndefinedVersion = Args.hasArg(OPT_no_undefined_version);
+   Config->Nostdlib = Args.hasArg(OPT_nostdlib);
+   Config->OMagic = Args.hasArg(OPT_omagic);
+-  Config->Pie = getArg(Args, OPT_pie, OPT_nopie, false);
++  Config->Pie = getArg(Args, OPT_pie, OPT_nopie,
++      !Args.hasArg(OPT_shared) && !Args.hasArg(OPT_relocatable));
+   Config->PrintGcSections = Args.hasArg(OPT_print_gc_sections);
+   Config->Relocatable = Args.hasArg(OPT_relocatable);
+   Config->DefineCommon = getArg(Args, OPT_define_common, OPT_no_define_common,

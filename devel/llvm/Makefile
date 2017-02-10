@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2017/01/08 01:59:49 bluhm Exp $
+# $OpenBSD: Makefile,v 1.131 2017/02/10 09:37:43 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -11,21 +11,18 @@ MULTI_PACKAGES =	-main -python
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-python =	Python bindings for Clang
 
-LLVM_V =	3.9.1
-REVISION-main =	0
+LLVM_V =	4.0.0rc2
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 CATEGORIES =	devel
-DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
-		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
-		lld-${LLVM_V}.src${EXTRACT_SUFX}
-MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
+DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX}
+MASTER_SITES =	http://comstyle.com/source/
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	clang		4.0 \
-		LTO		1.0
+SHARED_LIBS =	clang		5.0 \
+		LTO		2.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
@@ -81,21 +78,8 @@ GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
 GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 .endif
-CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
+CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V:S/rc2//}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
-
-post-extract:
-	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
-	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
-
-.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "powerpc"
-PKG_ARGS += -Dlld=1
-.else
-PKG_ARGS += -Dlld=0
-
-post-patch:
-	rm -r ${WRKSRC}/tools/lld
-.endif
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp \

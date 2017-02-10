@@ -1,33 +1,20 @@
-$OpenBSD: patch-lib_CodeGen_TargetLoweringBase_cpp,v 1.1 2016/10/07 08:55:30 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_TargetLoweringBase_cpp,v 1.2 2017/02/10 09:37:43 ajacoutot Exp $
 
-[SSP] Do not set __guard_local to hidden for OpenBSD SSP
+Restore setting the visibility of __guard_local to hidden for better
+code generation.  Use dyn_case_or_null instead of a static cast to
+solve the crashes in the previous code.
 
-__guard_local is defined as long on OpenBSD. If the source file contains
-a definition of __guard_local, it mismatches with the int8 pointer type
-used in LLVM. In that case, Module::getOrInsertGlobal() returns a
-cast operation instead of a GlobalVariable. Trying to set the
-visibility on the cast operation leads to random segfaults (seen when
-compiling the OpenBSD kernel, which also runs with stack protection).
-
-In the kernel, the hidden attribute does not matter. For userspace code,
-__guard_local is defined as hidden in the startup code. If a program
-re-defines __guard_local, the definition from the startup code will
-either win or the linker complains about multiple definitions
-(depending on whether the re-defined __guard_local is placed in the
-common segment or not).
-
-It also matches what gcc on OpenBSD does.
-
---- lib/CodeGen/TargetLoweringBase.cpp.orig	Sat Aug 27 00:07:44 2016
-+++ lib/CodeGen/TargetLoweringBase.cpp	Sat Aug 27 00:08:23 2016
-@@ -1818,9 +1818,7 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
+--- lib/CodeGen/TargetLoweringBase.cpp.orig	Fri Jan 20 21:35:32 2017
++++ lib/CodeGen/TargetLoweringBase.cpp	Fri Jan 20 21:37:36 2017
+@@ -1873,7 +1873,10 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
    if (getTargetMachine().getTargetTriple().isOSOpenBSD()) {
      Module &M = *IRB.GetInsertBlock()->getParent()->getParent();
      PointerType *PtrTy = Type::getInt8PtrTy(M.getContext());
--    auto Guard = cast<GlobalValue>(M.getOrInsertGlobal("__guard_local", PtrTy));
--    Guard->setVisibility(GlobalValue::HiddenVisibility);
--    return Guard;
-+    return M.getOrInsertGlobal("__guard_local", PtrTy);
+-    return M.getOrInsertGlobal("__guard_local", PtrTy);
++    Constant *C = M.getOrInsertGlobal("__guard_local", PtrTy);
++    if (GlobalVariable *G = dyn_cast_or_null<GlobalVariable>(C))
++      G->setVisibility(GlobalValue::HiddenVisibility);
++    return C;
    }
    return nullptr;
  }
