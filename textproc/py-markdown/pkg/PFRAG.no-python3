@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.no-python3,v 1.1.1.1 2017/02/10 21:42:33 danj Exp $
+@pkgpath textproc/markdown
+@conflict markdown-*
