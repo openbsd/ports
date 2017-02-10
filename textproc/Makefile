@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.523 2017/02/04 06:18:06 rpointel Exp $
+# $OpenBSD: Makefile,v 1.524 2017/02/10 22:33:10 danj Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -137,7 +137,6 @@
      SUBDIR += luasoldout,lua52
      SUBDIR += luasoldout,lua53
      SUBDIR += makefaq
-     SUBDIR += markdown
      SUBDIR += mdp
      SUBDIR += meld
      SUBDIR += mgdiff
@@ -380,6 +379,8 @@
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
+     SUBDIR += py-markdown
+     SUBDIR += py-markdown,python3
      SUBDIR += py-mistune
      SUBDIR += py-mistune,python3
      SUBDIR += py-nltk
