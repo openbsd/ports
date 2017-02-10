@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.6 2016/05/27 16:18:28 giovanni Exp $
---- configure.orig	Sat Nov 14 22:45:08 2015
-+++ configure	Thu May 12 17:25:53 2016
-@@ -15791,7 +15791,7 @@ then
+$OpenBSD: patch-configure,v 1.7 2017/02/10 09:40:01 giovanni Exp $
+--- configure.orig	Wed Jan 18 03:18:46 2017
++++ configure	Fri Feb 10 10:31:16 2017
+@@ -18878,6 +18878,7 @@ fi
+ 	LIBS="$saveLIBS"
+ 	HAVE_AUTHPGSQL=1
+ 	CFLAGS="$PGSQL_CFLAGS $CFLAGS"
++	CPPFLAGS="$PGSQL_CFLAGS $CPPFLAGS"
+ 	LIBAUTHPGSQL="libauthpgsql.la"
+ fi
+ 
+@@ -19641,7 +19642,7 @@ then
  	$COURIERCONFIG >conftest.out || exit 1
  	sed -n '/^mail/p' <conftest.out >conftest2.out || exit 1
  	. ./conftest2.out
@@ -10,7 +18,7 @@ $OpenBSD: patch-configure,v 1.6 2016/05/27 16:18:28 giovanni Exp $
  
  	cmailuser="$mailuser"
  	cmailgroup="$mailgroup"
-@@ -15803,7 +15803,7 @@ then
+@@ -19653,7 +19654,7 @@ then
  	$bindir/courierauthconfig --configfiles >conftest.out || exit 1
  	sed -n '/^mail/p' <conftest.out >conftest2.out || exit 1
  	. ./conftest2.out
