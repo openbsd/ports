@@ -1,9 +1,10 @@
-#	$OpenBSD: Makefile,v 1.4 2017/01/01 06:58:37 jsg Exp $
+#	$OpenBSD: Makefile,v 1.5 2017/02/10 09:39:21 ajacoutot Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-0.7.src
 PKGNAME=	include-what-you-use-0.7
+REVISION=	0
 
 HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -15,7 +16,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c curses form m pthread z
-BUILD_DEPENDS=	devel/llvm>=3.9.0
+BUILD_DEPENDS=	devel/llvm>=4.0.0rc2
 
 MODULES=		devel/cmake gcc4 lang/python
 MODGCC4_LANGS =		c++
