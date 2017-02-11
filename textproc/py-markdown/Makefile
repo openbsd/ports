@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/10 22:25:20 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/11 18:58:01 shadchin Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
@@ -25,6 +25,6 @@ post-install:
 	mv ${PREFIX}/bin/markdown_py{,${MODPY_BIN_SUFFIX}}
 
 do-test:
-	cd ${WRKSRC}/tests && nosetests
+	cd ${WRKSRC}/tests && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
