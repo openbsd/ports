@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.36 2017/01/25 14:16:46 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.37 2017/02/11 12:52:58 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -91,6 +91,10 @@ sub find_binaries
 {
 }
 
+sub find_perl
+{
+}
+
 package OpenBSD::PackingElement::Wantlib;
 sub register_libs
 {
@@ -111,6 +115,7 @@ sub register_libs
 }
 
 package OpenBSD::PackingElement::FileBase;
+
 sub find_libs
 {
 	my ($item, $dest, $dump) = @_;
@@ -126,6 +131,10 @@ sub scan_binaries_for_libs
 
 	if (my $fullname = $item->is_binary) {
 		$state->{scanner}->retrieve_and_scan_binary($item, $fullname);
+		if ($item->is_perl_so) {
+			$state->{scanner}->record_libs($fullname, 
+			    $state->perllibs);
+		}
 	} else {
 		$state->{scanner}->dont_scan($item);
 	}
@@ -147,11 +156,31 @@ sub is_binary
 	}
 }
 
+sub is_perl_so
+{
+	my $item = shift;
+	my $fullname = File::Spec->canonpath($item->fullname);
+
+	if ($fullname =~ m,/libdata/perl5/.*\.so$,) {
+		return $fullname;
+	} else {
+		return 0;
+	}
+}
+
 sub find_binaries
 {
 	my ($item, $h) = @_;
 	if ($item->is_binary) {
 		$h->{$item->name} = $item;
+	}
+}
+
+sub find_perl
+{
+	my ($item, $state) = @_;
+	if (my $fullname = $item->is_perl_so) {
+		$state->{scanner}->record_libs($fullname, $state->perllibs);
 	}
 }
 
@@ -235,6 +264,26 @@ sub set_context
 	} else {
 		$state->context($pkgname);
 	}
+}
+
+sub perllibs
+{
+	my $state = shift;
+	if (!defined $state->{perllibs}) {
+		OpenBSD::SharedLibs::add_libs_from_system('/', $state);
+		eval {
+		    my $perl = OpenBSD::SharedLibs->find_best('perl');
+		    my $c = OpenBSD::SharedLibs->find_best('c');
+		    if (!defined $perl || !defined $c) {
+			    $state->fatal("can't find system perl and c");
+		    }
+		    $state->{perllibs} = ["perl.".$perl->major, "c.".$c->major];
+		};
+		if ($@) {
+			$state->fatal("please upgrade pkg_add first");
+		}
+	}
+	return @{$state->{perllibs}};
 }
 
 package CheckLibDepends;
@@ -435,6 +484,7 @@ sub scan_true_package
 	$state->{scanner}->set_source($source);
 	my $h = {};
 	$plist->find_binaries($h);
+	$plist->find_perl($state);
 	while (my $o = $source->next) {
 		my $item = $h->{$o->name};
 		if (defined $item) {
