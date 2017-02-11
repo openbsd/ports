@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/11 18:50:20 shadchin Exp $
 
 COMMENT =		python style guide checker
 
-MODPY_EGG_VERSION =	2.2.0
+MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		pycodestyle-${MODPY_EGG_VERSION}
 PKGNAME =		py-codestyle-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -25,6 +24,6 @@ FLAVORS =		python3
 FLAVOR ?=
 
 post-install:
-	mv ${PREFIX}/bin/pycodestyle ${PREFIX}/bin/pycodestyle${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/pycodestyle{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
