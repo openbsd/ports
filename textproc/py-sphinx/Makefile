@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/01/03 19:27:52 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2017/02/11 21:25:50 danj Exp $
 
 COMMENT =		python documentation generator
 
@@ -47,7 +47,9 @@ DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}sphinx
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
 	cd ${WRKSRC}/doc/_build/html && pax -rw * ${DOCS}
-	cd ${PREFIX}/bin && find . -name '*' -exec mv {} {}${MODPY_BIN_SUFFIX} \;
+	for i in ${PREFIX}/bin/*; do \
+		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
+	done
 
 do-test:
 	cd ${WRKSRC} && env SPHINX_TEST_TEMPDIR=${WRKDIR} \
