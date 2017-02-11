@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/15 20:04:58 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/02/11 16:43:46 sthen Exp $
 bin/rip.pl
 ${P5SITE}/regripper/
 ${P5SITE}/regripper/shellitems.pl
@@ -9,6 +9,7 @@ share/regripper/plugins/adoberdr.pl
 share/regripper/plugins/ahaha.pl
 share/regripper/plugins/aim.pl
 share/regripper/plugins/all
+share/regripper/plugins/amcache
 share/regripper/plugins/amcache.pl
 share/regripper/plugins/aports.pl
 share/regripper/plugins/appcertdlls.pl
@@ -138,6 +139,8 @@ share/regripper/plugins/licenses.pl
 share/regripper/plugins/listsoft.pl
 share/regripper/plugins/liveContactsGUID.pl
 share/regripper/plugins/load.pl
+share/regripper/plugins/logmein.pl
+share/regripper/plugins/logmein_tln.pl
 share/regripper/plugins/logonusername.pl
 share/regripper/plugins/lsa_packages.pl
 share/regripper/plugins/lsasecrets.pl
@@ -163,6 +166,7 @@ share/regripper/plugins/muicache.pl
 share/regripper/plugins/muicache_tln.pl
 share/regripper/plugins/nero.pl
 share/regripper/plugins/netassist.pl
+share/regripper/plugins/netsh.pl
 share/regripper/plugins/netsvcs.pl
 share/regripper/plugins/network.pl
 share/regripper/plugins/networkcards.pl
@@ -205,6 +209,7 @@ share/regripper/plugins/producttype.pl
 share/regripper/plugins/profilelist.pl
 share/regripper/plugins/profiler.pl
 share/regripper/plugins/proxysettings.pl
+share/regripper/plugins/psscript.pl
 share/regripper/plugins/publishingwizard.pl
 share/regripper/plugins/putty.pl
 share/regripper/plugins/rdphint.pl
@@ -214,11 +219,13 @@ share/regripper/plugins/reading_locations.pl
 share/regripper/plugins/realplayer6.pl
 share/regripper/plugins/realvnc.pl
 share/regripper/plugins/recentdocs.pl
+share/regripper/plugins/recentdocs_timeline.pl
 share/regripper/plugins/recentdocs_tln.pl
 share/regripper/plugins/regback.pl
 share/regripper/plugins/regin.pl
 share/regripper/plugins/regtime.pl
 share/regripper/plugins/regtime_tln.pl
+share/regripper/plugins/remoteaccess.pl
 share/regripper/plugins/removdev.pl
 share/regripper/plugins/renocide.pl
 share/regripper/plugins/reveton.pl
