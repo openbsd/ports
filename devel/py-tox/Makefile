@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/11 22:21:58 danj Exp $
 
 COMMENT =		virtualenv-based automation of test activities
 
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		tox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://tox.readthedocs.io/en/latest/
 
