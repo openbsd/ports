@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/12/04 10:45:17 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/02/11 16:47:19 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -195,16 +195,20 @@ lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}selectors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}ssl_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/${MODPY_PYCACHE}wait.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/connection.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/request.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/response.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/retry.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/selectors.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/ssl_.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/timeout.py
 lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/url.py
+lib/python${MODPY_VERSION}/site-packages/requests/packages/urllib3/util/wait.py
 lib/python${MODPY_VERSION}/site-packages/requests/sessions.py
 lib/python${MODPY_VERSION}/site-packages/requests/status_codes.py
 lib/python${MODPY_VERSION}/site-packages/requests/structures.py
