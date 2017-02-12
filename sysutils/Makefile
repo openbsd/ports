@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.423 2017/02/12 06:59:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.424 2017/02/12 07:08:45 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -111,6 +111,7 @@
      SUBDIR += libevtx
      SUBDIR += libfvde
      SUBDIR += libfwnt
+     SUBDIR += libfwsi
      SUBDIR += librelp
      SUBDIR += libstatgrab
      SUBDIR += libvirt
