@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2017/01/05 23:08:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.133 2017/02/12 21:48:57 rpointel Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -121,5 +121,6 @@
      SUBDIR += wxMaxima
      SUBDIR += xspread
      SUBDIR += yorick
+     SUBDIR += z3
 
 .include <bsd.port.subdir.mk>
