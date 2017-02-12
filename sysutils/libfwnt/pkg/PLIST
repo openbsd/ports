@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/12 06:46:18 rpointel Exp $
+include/libfwnt/
+include/libfwnt.h
+include/libfwnt/definitions.h
+include/libfwnt/error.h
+include/libfwnt/extern.h
+include/libfwnt/features.h
+include/libfwnt/types.h
+lib/libfwnt.a
+lib/libfwnt.la
+@lib lib/libfwnt.so.${LIBfwnt_VERSION}
+lib/pkgconfig/libfwnt.pc
+lib/python${MODPY_VERSION}/site-packages/pyfwnt.a
+lib/python${MODPY_VERSION}/site-packages/pyfwnt.la
+lib/python${MODPY_VERSION}/site-packages/pyfwnt.so
+@man man/man3/libfwnt.3
