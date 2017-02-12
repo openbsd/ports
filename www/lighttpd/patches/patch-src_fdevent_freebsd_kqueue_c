@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_fdevent_freebsd_kqueue_c,v 1.3 2017/02/12 11:19:46 ajacoutot Exp $
+
+Use level-triggered kqueue(). https://redmine.lighttpd.net/issues/2788
+
+--- src/fdevent_freebsd_kqueue.c.orig	Sat Feb 11 13:12:42 2017
++++ src/fdevent_freebsd_kqueue.c	Sat Feb 11 13:13:31 2017
+@@ -75,14 +75,14 @@ static int fdevent_freebsd_kqueue_event_set(fdevents *
+ 	if (events == oevents) return fd;
+ 
+ 	if (addevents & FDEVENT_IN)  {
+-		EV_SET(&kev[n], fd, EVFILT_READ, EV_ADD|EV_CLEAR, 0, 0, NULL);
++		EV_SET(&kev[n], fd, EVFILT_READ, EV_ADD, 0, 0, NULL);
+ 		n++;
+ 	} else if (delevents & FDEVENT_IN) {
+ 		EV_SET(&kev[n], fd, EVFILT_READ, EV_DELETE, 0, 0, NULL);
+ 		n++;
+ 	}
+ 	if (addevents & FDEVENT_OUT)  {
+-		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_ADD|EV_CLEAR, 0, 0, NULL);
++		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_ADD, 0, 0, NULL);
+ 		n++;
+ 	} else if (delevents & FDEVENT_OUT) {
+ 		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
