@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.129 2017/02/13 10:22:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2017/02/13 10:23:50 ajacoutot Exp $
 
-COMMENT=	GNU Transport Layer Security library
+COMMENT=		GNU Transport Layer Security library
 
-V=		3.5.9
-DISTNAME=	gnutls-${V}
-EXTRACT_SUFX=	.tar.xz
+V=			3.5.9
+DISTNAME=		gnutls-${V}
+EXTRACT_SUFX=		.tar.xz
 
-CATEGORIES=	security
+CATEGORIES=		security
 
 SHARED_LIBS +=  gnutls               44.1     # 44.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 
-HOMEPAGE=	http://www.gnutls.org/
+HOMEPAGE=		http://www.gnutls.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,53 +21,53 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c ffi gmp hogweed iconv idn intl m nettle p11-kit pthread
 WANTLIB += tasn1 unistring z
 
-MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
-		http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/v${V:R}/
+MASTER_SITES=		ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
+			http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/v${V:R}/
 
 # assembly instructions
-MODULES +=	lang/clang
-MODCLANG_ARCHS=	amd64
-MODCLANG_LANGS=	c++
+MODULES +=		lang/clang
+MODCLANG_ARCHS=		amd64
+MODCLANG_LANGS=		c++
 .if ${MACHINE_ARCH} != "amd64"
 WANTLIB += stdc++
 .endif
 
 # needed for tests
-BUILD_DEPENDS=	devel/cmocka
+BUILD_DEPENDS=		devel/cmocka
 
-LIB_DEPENDS=	converters/libunistring \
-		devel/libidn \
-		security/libtasn1 \
-		security/libnettle \
-		security/p11-kit
+LIB_DEPENDS=		converters/libunistring \
+			devel/libidn \
+			security/libtasn1 \
+			security/libnettle \
+			security/p11-kit
 
-USE_GMAKE=	Yes
+USE_GMAKE=		Yes
 
 # regression tests need this
-PORTHOME=	${WRKDIR}
+PORTHOME=		${WRKDIR}
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-guile \
-		--disable-ssl3-support \
-		--disable-valgrind-tests \
-		--with-default-trust-store-file=/etc/ssl/cert.pem \
-		--with-unbound-root-key-file=/var/unbound/db/root.key
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-guile \
+			--disable-ssl3-support \
+			--disable-valgrind-tests \
+			--with-default-trust-store-file=/etc/ssl/cert.pem \
+			--with-unbound-root-key-file=/var/unbound/db/root.key
 
 # Don't pickup libidn2 just yet
 CONFIGURE_ARGS +=	--without-libidn2
 
 # OpenBSD's unbound does not provide libdane
-CONFIGURE_ARGS += --disable-libdane
+CONFIGURE_ARGS +=	--disable-libdane
 
 # requires security/trousers: not committed (aja@), needs kernel support
 # for tpm(4): http://bsssd.sourceforge.net/
-CONFIGURE_ARGS += --without-tpm
+CONFIGURE_ARGS +=	--without-tpm
 
 # prevents dependency on devel/autogen
-CONFIGURE_ARGS+=--enable-local-libopts
+CONFIGURE_ARGS +=	--enable-local-libopts
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
