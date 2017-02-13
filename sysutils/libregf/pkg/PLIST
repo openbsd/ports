@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:43:16 rpointel Exp $
+@bin bin/regfexport
+@bin bin/regfinfo
+@bin bin/regfmount
+@bin bin/regfreport
+include/libregf/
+include/libregf.h
+include/libregf/codepage.h
+include/libregf/definitions.h
+include/libregf/error.h
+include/libregf/extern.h
+include/libregf/features.h
+include/libregf/types.h
+lib/libregf.a
+lib/libregf.la
+@lib lib/libregf.so.${LIBregf_VERSION}
+lib/pkgconfig/libregf.pc
+lib/python${MODPY_VERSION}/site-packages/pyregf.a
+lib/python${MODPY_VERSION}/site-packages/pyregf.la
+lib/python${MODPY_VERSION}/site-packages/pyregf.so
+@man man/man1/regfinfo.1
+@man man/man3/libregf.3
