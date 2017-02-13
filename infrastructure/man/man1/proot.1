@@ -1,4 +1,4 @@
-.\"	$OpenBSD: proot.1,v 1.15 2016/08/09 13:45:01 schwarze Exp $
+.\"	$OpenBSD: proot.1,v 1.16 2017/02/13 12:52:13 espie Exp $
 .\"
 .\" Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: August 9 2016 $
+.Dd $Mdocdate: February 13 2017 $
 .Dt PROOT 1
 .Os
 .Sh NAME
@@ -185,19 +185,6 @@ change owners of every content.
 .It Cm extra
 extra file to copy into the
 .Ar chroot .
-.It Cm key
-Name of a
-.Xr signify 1
-signing key.
-Just give the stem, as in
-.Cm key Ns = Ns Ar stem .
-This will copy
-.Pa /etc/signify/stem-pkg.{pub,sec}
-and set
-.Va SIGNING_PARAMETERS
-in the generated
-.Pa /etc/mk.conf
-file accordingly.
 .It Cm mkconf_lines
 Add lines to the generated
 .Pa /etc/mk.conf .

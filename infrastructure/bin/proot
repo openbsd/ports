@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.54 2016/06/26 22:10:03 espie Exp $
+# $OpenBSD: proot,v 1.55 2017/02/13 12:52:13 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -196,10 +196,6 @@ sub do_parm
 		} else {
 			$state->{sets}{$v} = 1;
 		}
-	    }, key => sub {
-	    	$state->{key} = $v;
-		$state->{SIGNING_PARAMETERS} = 
-		    "-s signify -s /etc/signify/$v-pkg.sec";
 	    }, extra => sub {
 	    	$state->{known}{$v} = 1;
 	    }, mkconf_tail => sub {
@@ -328,7 +324,7 @@ sub handle_options
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -493,13 +489,6 @@ sub special_data
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
-}
-
-sub key_data
-{
-	my $state = shift;
-	$state->{known}{"/etc/signify/$state->{key}-pkg.pub"} = 1;
-	$state->{known}{"/etc/signify/$state->{key}-pkg.sec"} = 1;
 }
 
 sub read_locates
@@ -1078,9 +1067,6 @@ if ($state->{actions}{snapshot}) {
 }
 if ($state->{actions}{resolv}) {
 	$state->special_data;
-}
-if ($state->{key}) {
-	$state->key_data;
 }
 if (defined $state->{known}) {
 	$state->copy_sync;
