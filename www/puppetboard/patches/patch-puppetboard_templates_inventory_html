@@ -1,0 +1,16 @@
+$OpenBSD: patch-puppetboard_templates_inventory_html,v 1.1 2017/02/13 14:22:00 sebastia Exp $
+
+fix inventory page table rendering see:
+https://github.com/voxpupuli/puppetboard/issues/361
+
+--- puppetboard/templates/inventory.html.orig	Mon Feb 13 13:32:15 2017
++++ puppetboard/templates/inventory.html	Mon Feb 13 13:32:25 2017
+@@ -12,7 +12,7 @@
+     </tr>
+   </thead>
+   <tbody class="searchable">
+-    {% for node, facts in fact_data.iteritems() %}
++    {% for node, facts in fact_data.items() %}
+     <tr>
+       {% for name in fact_names %}
+       <td><a href="{{url_for('node', env=current_env, node_name=node)}}">{{facts.get(name, 'undef')}}</a></td>

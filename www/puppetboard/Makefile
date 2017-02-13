@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/01/03 19:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2017/02/13 14:22:00 sebastia Exp $
 
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	0.2.0
+MODPY_EGG_VERSION=	0.2.1
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
-REVISION=		2
 CATEGORIES=		www
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -21,7 +20,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=0.2.3 \
+RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=0.3.2 \
 			www/py-flask-wtf${MODPY_FLAVOR}>=0.9.4p0 \
 			www/py-gunicorn${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
