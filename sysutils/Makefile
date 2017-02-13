@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2017/02/13 19:43:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.428 2017/02/13 19:46:28 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -107,6 +107,7 @@
      SUBDIR += knutclient
      SUBDIR += krename-kde4
      SUBDIR += ktsuss
+     SUBDIR += libesedb
      SUBDIR += libevt
      SUBDIR += libevtx
      SUBDIR += libfvde
