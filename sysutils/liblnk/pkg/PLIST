@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:38:21 rpointel Exp $
+@bin bin/lnkinfo
+include/liblnk/
+include/liblnk.h
+include/liblnk/codepage.h
+include/liblnk/definitions.h
+include/liblnk/error.h
+include/liblnk/extern.h
+include/liblnk/features.h
+include/liblnk/types.h
+lib/liblnk.a
+lib/liblnk.la
+@lib lib/liblnk.so.${LIBlnk_VERSION}
+lib/pkgconfig/liblnk.pc
+lib/python${MODPY_VERSION}/site-packages/pylnk.a
+lib/python${MODPY_VERSION}/site-packages/pylnk.la
+lib/python${MODPY_VERSION}/site-packages/pylnk.so
+@man man/man1/lnkinfo.1
+@man man/man3/liblnk.3
