@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/03 19:17:24 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2017/02/13 14:20:27 sebastia Exp $
 
 COMMENT=		library for working with the PuppetDB API
 
-MODPY_EGG_VERSION=	0.3.1
+MODPY_EGG_VERSION=	0.3.2
 DISTNAME=		pypuppetdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-puppetdb-${MODPY_EGG_VERSION}
-REVISION=		1
 CATEGORIES=		databases www
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
