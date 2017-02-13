@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
-
-ONLY_FOR_ARCHS =	amd64 i386
+# $OpenBSD: Makefile,v 1.4 2017/02/13 07:23:37 kirby Exp $
 
 COMMENT =		3D space simulator
 
