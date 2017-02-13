@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.61 2017/01/25 14:16:46 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.62 2017/02/13 12:57:50 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -109,13 +109,11 @@ _cache_fragment = \
 	export _DEPENDS_CACHE PKGPATH
 
 .else
-# the cache may be filled in as root, so try to remove as normal user, THEN
-# sudo only if it fails.
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
 		X) _DEPENDS_CACHE=$$(mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
 		export _DEPENDS_CACHE; \
-		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0; \
+		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
 .endif
