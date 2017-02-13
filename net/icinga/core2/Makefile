@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/02/07 23:53:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2017/02/13 19:58:00 sthen Exp $
 
 BROKEN-arm =	needs atomic ops; __sync_add_and_fetch_4
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
@@ -8,7 +8,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.6.1
+V =		2.6.2
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -101,6 +101,11 @@ CONFIGURE_ARGS += \
 	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \
 	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios
 
+# uses too much memory full-stop on 32-bit arches.
+# uses too much memory for my amd64 workstation to not hang for minutes
+# at a time during the build.
+CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
+
 post-configure:
 	@sed -i 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h
 
@@ -128,11 +133,6 @@ post-patch:
 pre-test:
 	@printf "\n*** Tests were disabled to avoid potential build conflict.\n*** Re-build with \"FLAVOR=test make\" to avoid this.\n\n"
 	@exit 1
-.endif
-
-.include <bsd.port.arch.mk>
-.if !${ARCH:Mamd64}
-CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
 .include <bsd.port.mk>
