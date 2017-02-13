@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2017/01/15 17:58:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2017/02/13 10:22:12 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -34,7 +34,6 @@ info/gnutls-internals.png
 info/gnutls-layers.png
 info/gnutls-logo.png
 info/gnutls-modauth.png
-info/gnutls-pgp.png
 info/gnutls-x509.png
 @info info/gnutls.info
 info/pkcs11-vision.png
@@ -107,8 +106,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_free_keys.3
 @man man/man3/gnutls_certificate_get_crt_raw.3
 @man man/man3/gnutls_certificate_get_issuer.3
-@man man/man3/gnutls_certificate_get_openpgp_crt.3
-@man man/man3/gnutls_certificate_get_openpgp_key.3
 @man man/man3/gnutls_certificate_get_ours.3
 @man man/man3/gnutls_certificate_get_peers.3
 @man man/man3/gnutls_certificate_get_peers_subkey_id.3
@@ -125,13 +122,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_set_ocsp_status_request_file.3
 @man man/man3/gnutls_certificate_set_ocsp_status_request_function.3
 @man man/man3/gnutls_certificate_set_ocsp_status_request_function2.3
-@man man/man3/gnutls_certificate_set_openpgp_key.3
-@man man/man3/gnutls_certificate_set_openpgp_key_file.3
-@man man/man3/gnutls_certificate_set_openpgp_key_file2.3
-@man man/man3/gnutls_certificate_set_openpgp_key_mem.3
-@man man/man3/gnutls_certificate_set_openpgp_key_mem2.3
-@man man/man3/gnutls_certificate_set_openpgp_keyring_file.3
-@man man/man3/gnutls_certificate_set_openpgp_keyring_mem.3
 @man man/man3/gnutls_certificate_set_params_function.3
 @man man/man3/gnutls_certificate_set_pin_function.3
 @man man/man3/gnutls_certificate_set_retrieve_function.3
@@ -295,6 +285,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hmac_init.3
 @man man/man3/gnutls_hmac_output.3
 @man man/man3/gnutls_hmac_set_nonce.3
+@man man/man3/gnutls_idna_map.3
+@man man/man3/gnutls_idna_reverse_map.3
 @man man/man3/gnutls_init.3
 @man man/man3/gnutls_key_generate.3
 @man man/man3/gnutls_kx_get.3
@@ -353,75 +345,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_oid_to_mac.3
 @man man/man3/gnutls_oid_to_pk.3
 @man man/man3/gnutls_oid_to_sign.3
-@man man/man3/gnutls_openpgp_crt_check_email.3
-@man man/man3/gnutls_openpgp_crt_check_hostname.3
-@man man/man3/gnutls_openpgp_crt_check_hostname2.3
-@man man/man3/gnutls_openpgp_crt_deinit.3
-@man man/man3/gnutls_openpgp_crt_export.3
-@man man/man3/gnutls_openpgp_crt_export2.3
-@man man/man3/gnutls_openpgp_crt_get_auth_subkey.3
-@man man/man3/gnutls_openpgp_crt_get_creation_time.3
-@man man/man3/gnutls_openpgp_crt_get_expiration_time.3
-@man man/man3/gnutls_openpgp_crt_get_fingerprint.3
-@man man/man3/gnutls_openpgp_crt_get_key_id.3
-@man man/man3/gnutls_openpgp_crt_get_key_usage.3
-@man man/man3/gnutls_openpgp_crt_get_name.3
-@man man/man3/gnutls_openpgp_crt_get_pk_algorithm.3
-@man man/man3/gnutls_openpgp_crt_get_pk_dsa_raw.3
-@man man/man3/gnutls_openpgp_crt_get_pk_rsa_raw.3
-@man man/man3/gnutls_openpgp_crt_get_preferred_key_id.3
-@man man/man3/gnutls_openpgp_crt_get_revoked_status.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_count.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_creation_time.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_expiration_time.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_fingerprint.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_id.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_idx.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_pk_algorithm.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_pk_dsa_raw.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_pk_rsa_raw.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_revoked_status.3
-@man man/man3/gnutls_openpgp_crt_get_subkey_usage.3
-@man man/man3/gnutls_openpgp_crt_get_version.3
-@man man/man3/gnutls_openpgp_crt_import.3
-@man man/man3/gnutls_openpgp_crt_init.3
-@man man/man3/gnutls_openpgp_crt_print.3
-@man man/man3/gnutls_openpgp_crt_set_preferred_key_id.3
-@man man/man3/gnutls_openpgp_crt_verify_ring.3
-@man man/man3/gnutls_openpgp_crt_verify_self.3
-@man man/man3/gnutls_openpgp_keyring_check_id.3
-@man man/man3/gnutls_openpgp_keyring_deinit.3
-@man man/man3/gnutls_openpgp_keyring_get_crt.3
-@man man/man3/gnutls_openpgp_keyring_get_crt_count.3
-@man man/man3/gnutls_openpgp_keyring_import.3
-@man man/man3/gnutls_openpgp_keyring_init.3
-@man man/man3/gnutls_openpgp_privkey_deinit.3
-@man man/man3/gnutls_openpgp_privkey_export.3
-@man man/man3/gnutls_openpgp_privkey_export2.3
-@man man/man3/gnutls_openpgp_privkey_export_dsa_raw.3
-@man man/man3/gnutls_openpgp_privkey_export_rsa_raw.3
-@man man/man3/gnutls_openpgp_privkey_export_subkey_dsa_raw.3
-@man man/man3/gnutls_openpgp_privkey_export_subkey_rsa_raw.3
-@man man/man3/gnutls_openpgp_privkey_get_fingerprint.3
-@man man/man3/gnutls_openpgp_privkey_get_key_id.3
-@man man/man3/gnutls_openpgp_privkey_get_pk_algorithm.3
-@man man/man3/gnutls_openpgp_privkey_get_preferred_key_id.3
-@man man/man3/gnutls_openpgp_privkey_get_revoked_status.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_count.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_creation_time.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_expiration_time.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_fingerprint.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_id.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_idx.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_pk_algorithm.3
-@man man/man3/gnutls_openpgp_privkey_get_subkey_revoked_status.3
-@man man/man3/gnutls_openpgp_privkey_import.3
-@man man/man3/gnutls_openpgp_privkey_init.3
-@man man/man3/gnutls_openpgp_privkey_sec_param.3
-@man man/man3/gnutls_openpgp_privkey_set_preferred_key_id.3
 @man man/man3/gnutls_openpgp_privkey_sign_hash.3
 @man man/man3/gnutls_openpgp_send_cert.3
-@man man/man3/gnutls_openpgp_set_recv_key_function.3
 @man man/man3/gnutls_packet_deinit.3
 @man man/man3/gnutls_packet_get.3
 @man man/man3/gnutls_pcert_deinit.3

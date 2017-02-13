@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.128 2017/01/15 17:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2017/02/13 10:22:11 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.5.8
+V=		3.5.9
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               44.0     # 43.1
+SHARED_LIBS +=  gnutls               44.1     # 44.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 
 HOMEPAGE=	http://www.gnutls.org/
@@ -32,6 +32,9 @@ MODCLANG_LANGS=	c++
 WANTLIB += stdc++
 .endif
 
+# needed for tests
+BUILD_DEPENDS=	devel/cmocka
+
 LIB_DEPENDS=	converters/libunistring \
 		devel/libidn \
 		security/libtasn1 \
@@ -49,6 +52,9 @@ CONFIGURE_ARGS=	--disable-guile \
 		--disable-valgrind-tests \
 		--with-default-trust-store-file=/etc/ssl/cert.pem \
 		--with-unbound-root-key-file=/var/unbound/db/root.key
+
+# Don't pickup libidn2 just yet
+CONFIGURE_ARGS +=	--without-libidn2
 
 # OpenBSD's unbound does not provide libdane
 CONFIGURE_ARGS += --disable-libdane
