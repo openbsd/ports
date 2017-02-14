@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_audiohook_c,v 1.2 2017/02/06 10:11:32 sthen Exp $
+$OpenBSD: patch-main_audiohook_c,v 1.3 2017/02/14 12:31:38 sthen Exp $
 
 Raise level of audiohook debug messages, they are very frequent on OpenBSD
 making any debug levels unusable.
 
---- main/audiohook.c.orig	Thu Dec  8 17:30:57 2016
-+++ main/audiohook.c	Mon Feb  6 10:09:37 2017
-@@ -273,19 +273,19 @@ static struct ast_frame *audiohook_read_frame_both(str
+--- main/audiohook.c.orig	Mon Feb 13 19:51:51 2017
++++ main/audiohook.c	Mon Feb 13 22:27:04 2017
+@@ -269,19 +269,19 @@ static struct ast_frame *audiohook_read_frame_both(str
  
  	if (!usable_read && !usable_write) {
  		/* If both factories are unusable bail out */
@@ -37,7 +37,7 @@ making any debug levels unusable.
  	}
  
  	/* Move on to the write factory... if there are enough samples, read them in */
-@@ -326,7 +326,7 @@ static struct ast_frame *audiohook_read_frame_both(str
+@@ -330,7 +330,7 @@ static struct ast_frame *audiohook_read_frame_both(str
  			}
  		}
  	} else {
