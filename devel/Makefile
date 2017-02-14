@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1584 2017/02/14 09:38:38 edd Exp $
+# $OpenBSD: Makefile,v 1.1585 2017/02/14 16:06:57 naddy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -352,6 +352,7 @@
      SUBDIR += libguess
      SUBDIR += libhid
      SUBDIR += libidn
+     SUBDIR += libidn2
      SUBDIR += libinotify
      SUBDIR += libio
      SUBDIR += libiscsi
