@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/14 09:37:16 edd Exp $
+include/uv-bsd.h
+include/uv-errno.h
+include/uv-threadpool.h
+include/uv-unix.h
+include/uv-version.h
+include/uv.h
+lib/libuv.a
+lib/libuv.la
+@lib lib/libuv.so.${LIBuv_VERSION}
+lib/pkgconfig/libuv.pc
+@man man/man1/libuv.1

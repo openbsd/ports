@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_test-poll_c,v 1.1.1.1 2017/02/14 09:37:16 edd Exp $
+
+https://patch-diff.githubusercontent.com/raw/libuv/libuv/pull/1218.diff
+
+--- test/test-poll.c.orig	Wed Feb  1 00:38:56 2017
++++ test/test-poll.c	Thu Feb  9 21:38:39 2017
+@@ -594,7 +594,8 @@ TEST_IMPL(poll_unidirectional) {
+  */
+ TEST_IMPL(poll_bad_fdtype) {
+ #if !defined(__DragonFly__) && !defined(__FreeBSD__) && !defined(__sun) && \
+-    !defined(_AIX) && !defined(__MVS__) && !defined(__FreeBSD_kernel__)
++    !defined(_AIX) && !defined(__MVS__) && !defined(__FreeBSD_kernel__) && \
++    !defined(__OpenBSD__)
+   uv_poll_t poll_handle;
+   int fd;
+ 

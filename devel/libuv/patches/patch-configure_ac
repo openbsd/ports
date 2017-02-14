@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2017/02/14 09:37:16 edd Exp $
+--- configure.ac.orig	Sat Nov 26 18:32:08 2016
++++ configure.ac	Sat Nov 26 18:32:41 2016
+@@ -42,7 +42,6 @@ LT_INIT
+ # TODO(bnoordhuis) Check for -pthread vs. -pthreads
+ AC_CHECK_LIB([dl], [dlopen])
+ AC_CHECK_LIB([kstat], [kstat_lookup])
+-AC_CHECK_LIB([kvm], [kvm_open])
+ AC_CHECK_LIB([nsl], [gethostbyname])
+ AC_CHECK_LIB([perfstat], [perfstat_cpu])
+ AC_CHECK_LIB([pthread], [pthread_mutex_init])
