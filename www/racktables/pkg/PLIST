@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/02/29 23:42:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/02/14 22:54:52 sthen Exp $
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
@@ -15,6 +15,7 @@ racktables/gateways/telnet
 racktables/gateways/ucssdk
 racktables/plugins/
 racktables/scripts/
+racktables/scripts/cleanup_ldap_cache.php
 racktables/scripts/init-sample-racks.sql
 racktables/scripts/syncdomain.php
 racktables/wwwroot/
@@ -37,6 +38,7 @@ racktables/wwwroot/inc/functions.php
 racktables/wwwroot/inc/inc/
 racktables/wwwroot/inc/init.php
 racktables/wwwroot/inc/install.php
+racktables/wwwroot/inc/interface-8021q.php
 racktables/wwwroot/inc/interface-cables.php
 racktables/wwwroot/inc/interface-config.php
 racktables/wwwroot/inc/interface-lib.php
