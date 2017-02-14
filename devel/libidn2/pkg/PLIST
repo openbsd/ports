@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/14 16:06:00 naddy Exp $
+@bin bin/idn2
+include/idn2.h
+@info info/libidn2.info
+@comment lib/charset.alias
+lib/libidn2.a
+lib/libidn2.la
+@lib lib/libidn2.so.${LIBidn2_VERSION}
+@man man/man1/idn2.1
+@man man/man3/idn2_check_version.3
+@man man/man3/idn2_free.3
+@man man/man3/idn2_lookup_u8.3
+@man man/man3/idn2_lookup_ul.3
+@man man/man3/idn2_register_u8.3
+@man man/man3/idn2_register_ul.3
+@man man/man3/idn2_strerror.3
+@man man/man3/idn2_strerror_name.3
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libidn2/
+share/gtk-doc/html/libidn2/api-index-full.html
+share/gtk-doc/html/libidn2/home.png
+share/gtk-doc/html/libidn2/index.html
+share/gtk-doc/html/libidn2/index.sgml
+share/gtk-doc/html/libidn2/left-insensitive.png
+share/gtk-doc/html/libidn2/left.png
+share/gtk-doc/html/libidn2/libidn2-idn2.html
+share/gtk-doc/html/libidn2/libidn2.devhelp2
+share/gtk-doc/html/libidn2/libidn2.html
+share/gtk-doc/html/libidn2/right-insensitive.png
+share/gtk-doc/html/libidn2/right.png
+share/gtk-doc/html/libidn2/style.css
+share/gtk-doc/html/libidn2/up-insensitive.png
+share/gtk-doc/html/libidn2/up.png
