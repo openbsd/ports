@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2017/01/16 20:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2017/02/14 03:51:19 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
@@ -6,7 +6,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.22.7
+GNOME_VERSION=		3.22.8
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
@@ -15,8 +15,8 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2200.2   # 2200.6
-SHARED_LIBS +=  gtk-3                2200.2   # 2200.6
+SHARED_LIBS +=  gdk-3                2200.2   # 2200.8
+SHARED_LIBS +=  gtk-3                2200.2   # 2200.8
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -65,7 +65,7 @@ WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cups += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB-cups += pangoft2-1.0 pixman-1 pthread-stubs xcb xcb-render
 WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp xcb-shm
-WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1
+WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1 unistring
 
 LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			devel/json-glib \
