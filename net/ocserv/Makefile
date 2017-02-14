@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/11/19 15:35:09 sthen Exp $
-
-# XXX for 0.11.7 update, check both with+without autogen
+# $OpenBSD: Makefile,v 1.22 2017/02/14 23:02:19 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.11.6
+DISTNAME=	ocserv-0.11.7
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
