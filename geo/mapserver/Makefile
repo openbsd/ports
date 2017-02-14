@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/02/07 08:17:57 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2017/02/14 09:46:56 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 
@@ -14,6 +14,7 @@ PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 SHARED_LIBS +=	mapserver 2.0
+REVISION-main =	0
 
 CATEGORIES=	geo www
 
