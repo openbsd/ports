@@ -1,9 +1,9 @@
-$OpenBSD: patch-borg__hashindex_c,v 1.1 2016/05/19 20:30:16 jca Exp $
+$OpenBSD: patch-borg__hashindex_c,v 1.2 2017/02/14 17:56:26 danj Exp $
 
 __builtin_bswap32 unavailable at least on sparc64
 
---- borg/_hashindex.c.orig	Fri Apr 15 02:05:17 2016
-+++ borg/_hashindex.c	Wed May 18 21:47:45 2016
+--- borg/_hashindex.c.orig	Mon Feb 13 04:55:35 2017
++++ borg/_hashindex.c	Mon Feb 13 12:43:39 2017
 @@ -7,6 +7,7 @@
  #include <sys/stat.h>
  #include <fcntl.h>
@@ -12,14 +12,14 @@ __builtin_bswap32 unavailable at least on sparc64
  
  #if defined (__SVR4) && defined (__sun)
  #include <sys/isa_defs.h>
-@@ -14,8 +15,8 @@
+@@ -25,8 +26,8 @@
+ #endif
  
- #if (defined(BYTE_ORDER)&&(BYTE_ORDER == BIG_ENDIAN)) ||  \
-     (defined(_BIG_ENDIAN)&&defined(__SVR4)&&defined(__sun))
+ #if BORG_BIG_ENDIAN
 -#define _le32toh(x) __builtin_bswap32(x)
 -#define _htole32(x) __builtin_bswap32(x)
 +#define _le32toh(x) letoh32(x)
 +#define _htole32(x) htole32(x)
- #elif (defined(BYTE_ORDER)&&(BYTE_ORDER == LITTLE_ENDIAN)) || \
-       (defined(_LITTLE_ENDIAN)&&defined(__SVR4)&&defined(__sun))
+ #else
  #define _le32toh(x) (x)
+ #define _htole32(x) (x)

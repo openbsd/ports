@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/01/03 19:26:58 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/14 17:56:26 danj Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.0.9
+MODPY_EGG_VERSION =	1.0.10
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
-REVISION =		0
 
 MODPY_PI =		Yes
 
@@ -27,7 +26,8 @@ RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 
 TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-benchmark${MODPY_FLAVOR}
+			devel/py-test-benchmark${MODPY_FLAVOR} \
+			devel/py-test-xdist${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
 
