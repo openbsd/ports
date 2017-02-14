@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2017/02/14 20:23:41 rpointel Exp $
+# $OpenBSD: Makefile,v 1.430 2017/02/14 20:26:44 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -120,10 +120,12 @@
      SUBDIR += libqcow
      SUBDIR += libregf
      SUBDIR += librelp
+     SUBDIR += libscca
      SUBDIR += libsigscan
      SUBDIR += libsmdev
      SUBDIR += libsmraw
      SUBDIR += libstatgrab
+     SUBDIR += libvhdi
      SUBDIR += libvirt
      SUBDIR += libvirt-python
      SUBDIR += lockfile
