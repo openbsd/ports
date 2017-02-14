@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2016/12/18 14:31:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/14 13:55:13 fcambus Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
-V =		1.06
+V =		1.07
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://www.logswan.org/
+HOMEPAGE =	https://www.logswan.org/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
