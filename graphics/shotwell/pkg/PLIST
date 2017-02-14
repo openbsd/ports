@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/12/13 09:34:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2017/02/14 08:24:10 ajacoutot Exp $
 @bin bin/shotwell
+lib/libshotwell-authenticator.a
+lib/libshotwell-authenticator.la
+@lib lib/libshotwell-authenticator.so.${LIBshotwell-authenticator_VERSION}
 lib/libshotwell-plugin-common.a
 lib/libshotwell-plugin-common.la
 @lib lib/libshotwell-plugin-common.so.${LIBshotwell-plugin-common_VERSION}

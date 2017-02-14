@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.12 2016/11/22 11:26:41 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.13 2017/02/14 08:24:10 ajacoutot Exp $
 
 remove gudev requirement
 
---- configure.orig	Mon Nov 21 20:45:42 2016
-+++ configure	Tue Nov 22 12:14:41 2016
-@@ -8033,7 +8033,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
+--- configure.orig	Mon Feb 13 21:41:26 2017
++++ configure	Tue Feb 14 09:04:05 2017
+@@ -8094,7 +8094,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -12,7 +12,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8053,7 +8052,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
+@@ -8114,7 +8113,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -20,7 +20,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8076,7 +8074,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
+@@ -8137,7 +8135,6 @@ if test -n "$SHOTWELL_CFLAGS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -28,7 +28,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8107,7 +8104,6 @@ if test -n "$SHOTWELL_LIBS"; then
+@@ -8168,7 +8165,6 @@ if test -n "$SHOTWELL_LIBS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -36,7 +36,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8127,7 +8123,6 @@ if test -n "$SHOTWELL_LIBS"; then
+@@ -8188,7 +8184,6 @@ if test -n "$SHOTWELL_LIBS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -44,7 +44,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8150,7 +8145,6 @@ if test -n "$SHOTWELL_LIBS"; then
+@@ -8211,7 +8206,6 @@ if test -n "$SHOTWELL_LIBS"; then
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -52,7 +52,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8190,7 +8184,6 @@ fi
+@@ -8251,7 +8245,6 @@ fi
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -60,7 +60,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8211,7 +8204,6 @@ fi
+@@ -8272,7 +8265,6 @@ fi
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
@@ -68,7 +68,7 @@ remove gudev requirement
                               libexif >= 0.6.16
                               libgphoto2 >= 2.5.0
                               libraw >= 0.13.2
-@@ -8235,7 +8227,6 @@ fi
+@@ -8296,7 +8288,6 @@ fi
                               gstreamer-plugins-base-1.0 >= 1.0.0
                               gstreamer-pbutils-1.0 >= 1.0.0
                               gtk+-3.0 >= 3.14.0
