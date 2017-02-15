@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.4 2017/02/08 17:36:33 danj Exp $
+# $OpenBSD: cargo.port.mk,v 1.5 2017/02/15 12:49:43 landry Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -24,6 +24,9 @@ MASTER_SITES_CRATESIO =	https://crates.io/api/v1/crates/
 
 # Save crates inside particular DIST_SUBDIR by default.
 # If you use DIST_SUBDIR, adjust MODCARGO_DIST_SUBDIR.
+.if defined(DIST_SUBDIR) && !defined(MODCARGO_DIST_SUBDIR)
+ERRORS += "Fatal: MODCARGO_DIST_SUBDIR should be defined if DIST_SUBDIR is defined"
+.endif
 MODCARGO_DIST_SUBDIR ?= cargo
 
 .if empty(MODCARGO_DIST_SUBDIR)
@@ -204,7 +207,7 @@ modcargo-metadata: patch
 # modcargo-gen-crates will output crates list from Cargo.lock file.
 modcargo-gen-crates: extract
 	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "-" $$3 }' \
-		<${WRKSRC}/Cargo.lock
+		<${MODCARGO_CARGOTOML:toml=lock}
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
 modcargo-gen-crates-licenses: configure
