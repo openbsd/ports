@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_bootstrap_native_rs,v 1.1 2017/02/15 12:52:35 landry Exp $
+use default settings from devel/llvm to local embedded version
+--- src/bootstrap/native.rs.orig	Thu Feb  9 02:37:48 2017
++++ src/bootstrap/native.rs	Fri Feb 10 13:35:47 2017
+@@ -85,10 +85,10 @@ pub fn llvm(build: &Build, target: &str) {
+        .define("LLVM_INCLUDE_EXAMPLES", "OFF")
+        .define("LLVM_INCLUDE_TESTS", "OFF")
+        .define("LLVM_INCLUDE_DOCS", "OFF")
+-       .define("LLVM_ENABLE_ZLIB", "OFF")
+-       .define("WITH_POLLY", "OFF")
++       .define("LLVM_ENABLE_FFI", "OFF")
++       .define("LLVM_REQUIRES_RTTI", "ON")
++       .define("GO_EXECUTABLE", "GO_EXECUTABLE-NOTFOUND")
+        .define("LLVM_ENABLE_TERMINFO", "OFF")
+-       .define("LLVM_ENABLE_LIBEDIT", "OFF")
+        .define("LLVM_PARALLEL_COMPILE_JOBS", build.jobs().to_string())
+        .define("LLVM_TARGET_ARCH", target.split('-').next().unwrap())
+        .define("LLVM_DEFAULT_TARGET_TRIPLE", target);

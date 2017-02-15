@@ -1,8 +1,18 @@
-$OpenBSD: patch-src_etc_rust-gdb,v 1.1 2016/01/13 07:39:08 semarie Exp $
+$OpenBSD: patch-src_etc_rust-gdb,v 1.2 2017/02/15 12:52:35 landry Exp $
 only compatible with egdb (gdb from ports)
---- src/etc/rust-gdb.orig	Sat Dec 12 07:12:56 2015
-+++ src/etc/rust-gdb	Sat Dec 12 07:13:44 2015
-@@ -17,7 +17,7 @@ RUSTC_SYSROOT=`rustc --print=sysroot`
+--- src/etc/rust-gdb.orig	Tue Jan 31 01:29:51 2017
++++ src/etc/rust-gdb	Sun Feb  5 15:40:37 2017
+@@ -12,12 +12,17 @@
+ # Exit if anything fails
+ set -e
+ 
++if ! command -v egdb; then
++	echo "error: rust-gdb requires devel/gdb to be installed" >&2
++	exit 1
++fi
++
+ # Find out where the pretty printer Python module is
+ RUSTC_SYSROOT=`rustc --print=sysroot`
  GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustlib/etc"
  
  # Run GDB with the additional arguments that load the pretty printers

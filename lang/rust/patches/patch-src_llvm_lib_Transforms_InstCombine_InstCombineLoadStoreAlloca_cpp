@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_llvm_lib_Transforms_InstCombine_InstCombineLoadStoreAlloca_cpp,v 1.1 2017/02/15 12:52:35 landry Exp $
+https://github.com/llvm-mirror/llvm/commit/7e79c454db01898586ecb6444ec8bb4ee19dd0a0
+https://github.com/llvm-mirror/llvm/commit/e0af6c9240d5634766925c71a492ef48b5ca3538
+--- src/llvm/lib/Transforms/InstCombine/InstCombineLoadStoreAlloca.cpp.orig	Tue Jan 31 01:33:14 2017
++++ src/llvm/lib/Transforms/InstCombine/InstCombineLoadStoreAlloca.cpp	Tue Feb  7 09:35:55 2017
+@@ -587,6 +587,13 @@ static Instruction *unpackLoadToAggregate(InstCombiner
+         UndefValue::get(T), NewLoad, 0, Name));
+     }
+ 
++    // Bail out if the array is too large. Ideally we would like to optimize
++    // arrays of arbitrary size but this has a terrible impact on compile time.
++    // The threshold here is chosen arbitrarily, maybe needs a little bit of
++    // tuning.
++    if (NumElements > 1024)
++      return nullptr;
++
+     const DataLayout &DL = IC.getDataLayout();
+     auto EltSize = DL.getTypeAllocSize(ET);
+     auto Align = LI.getAlignment();
+@@ -1088,6 +1095,13 @@ static bool unpackStoreToAggregate(InstCombiner &IC, S
+       combineStoreToNewValue(IC, SI, V);
+       return true;
+     }
++
++    // Bail out if the array is too large. Ideally we would like to optimize
++    // arrays of arbitrary size but this has a terrible impact on compile time.
++    // The threshold here is chosen arbitrarily, maybe needs a little bit of
++    // tuning.
++    if (NumElements > 1024)
++      return false;
+ 
+     const DataLayout &DL = IC.getDataLayout();
+     auto EltSize = DL.getTypeAllocSize(AT->getElementType());

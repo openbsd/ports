@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_libstd_sys_unix_os_rs,v 1.4 2016/12/26 13:52:46 landry Exp $
+$OpenBSD: patch-src_libstd_sys_unix_os_rs,v 1.5 2017/02/15 12:52:35 landry Exp $
 argv0 isn't suitable as current_exe() in all cases.
---- src/libstd/sys/unix/os.rs.orig	Sun Dec 18 00:40:11 2016
-+++ src/libstd/sys/unix/os.rs	Wed Dec 21 11:18:23 2016
-@@ -245,13 +245,14 @@ pub fn current_exe() -> io::Result<PathBuf> {
+--- src/libstd/sys/unix/os.rs.orig	Fri Jan 20 21:38:38 2017
++++ src/libstd/sys/unix/os.rs	Mon Jan 30 20:13:43 2017
+@@ -240,13 +240,14 @@ pub fn current_exe() -> io::Result<PathBuf> {
          argv.set_len(argv_len as usize);
          if argv[0].is_null() {
              return Err(io::Error::new(io::ErrorKind::Other,

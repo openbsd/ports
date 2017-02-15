@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_llvm_include_llvm_Support_Threading_h,v 1.1 2017/02/02 08:02:50 landry Exp $
+$OpenBSD: patch-src_llvm_include_llvm_Support_Threading_h,v 1.2 2017/02/15 12:52:35 landry Exp $
+https://github.com/llvm-mirror/llvm/commit/f92d91a710f48a26e44451f18f0081b6af0670b7
 --- src/llvm/include/llvm/Support/Threading.h.orig	Wed Dec 21 00:36:08 2016
 +++ src/llvm/include/llvm/Support/Threading.h	Sun Jan 29 09:20:53 2017
 @@ -20,11 +20,11 @@

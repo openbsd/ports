@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_liblibc_src_unix_bsd_netbsdlike_openbsdlike_other_b64_mod_rs,v 1.1 2016/12/06 22:39:49 juanfra Exp $
-libclibc: make openbsdlike to support 64 and 32 bits archs
-
-https://github.com/rust-lang/libc/commit/94848c190728bdf42acfa2057f2bada59f46a0a6
---- src/liblibc/src/unix/bsd/netbsdlike/openbsdlike/other/b64/mod.rs.orig	Tue Nov 29 13:50:21 2016
-+++ src/liblibc/src/unix/bsd/netbsdlike/openbsdlike/other/b64/mod.rs	Tue Nov 29 13:50:21 2016
-@@ -0,0 +1,2 @@
-+pub type c_long = i64;
-+pub type c_ulong = u64;

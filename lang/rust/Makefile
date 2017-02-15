@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/02/02 08:02:50 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/15 12:52:35 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,16 +6,18 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.14.0
-BV-amd64 =		1.14.0-20161221
-BV-i386 =		1.14.0-20161221
+V =			1.15.1
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
-#RUST_HASH !=		echo -n ${V} | md5 | cut -c1-8
-RUST_HASH =		f5a209a9
-SUBST_VARS +=		RUST_HASH
-BV =			${BV-${MACHINE_ARCH}}
+# rustc bootstrap version
+RBV-amd64 =		1.15.0-20170203
+RBV-i386 =		1.15.0-20170204
+RBV =			${RBV-${MACHINE_ARCH}}
+
+# cargo bootstrap version
+CBV-amd64 =		0.16.0-20170213
+CBV-i386 =		0.16.0-20170213
+CBV =			${CBV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
@@ -40,41 +42,39 @@ MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
 
 DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${BOOTSTRAP}
+			${RBOOTSTRAP} \
+			${CBOOTSTRAP}
 
-BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
-.for m in i386 amd64
-BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}.tar.gz:0
-SUPDISTFILES +=		${BOOTSTRAP-$m}
+RBOOTSTRAP =		${RBOOTSTRAP-${MACHINE_ARCH}}
+CBOOTSTRAP =		${CBOOTSTRAP-${MACHINE_ARCH}}
+.for m in ${ONLY_FOR_ARCHS}
+RBOOTSTRAP-$m =		rustc-bootstrap-${m}-${RBV-$m}.tar.gz:0
+CBOOTSTRAP-$m =		../cargo/cargo-bootstrap-${m}-${CBV-$m}.tar.gz:0
+SUPDISTFILES +=		${RBOOTSTRAP-$m} \
+			${CBOOTSTRAP-$m}
 .endfor
 
-WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
-
-# MACHINE_ARCH to TRIPLE_ARCH conversion
+# per MACHINE_ARCH configuration
 .if "${MACHINE_ARCH}" == "amd64"
 TRIPLE_ARCH =		x86_64-unknown-openbsd
+PKG_ARGS +=		-Damd64=1 -Di386=0
 .elif "${MACHINE_ARCH}" == "i386"
 TRIPLE_ARCH =		i686-unknown-openbsd
-.endif
-SUBST_VARS +=		TRIPLE_ARCH
-
-# PFRAG
-.if ${MACHINE_ARCH} == amd64
-PKG_ARGS += -Db64=1
-.else
-PKG_ARGS += -Db64=0
-.endif
-
-.if ${MACHINE_ARCH} == i386
-PKG_ARGS += -Db32=1
-.else
-PKG_ARGS += -Db32=0
+PKG_ARGS +=		-Damd64=0 -Di386=1
 .endif
 
 MODULES +=		gcc4 \
 			lang/python
 BUILD_DEPENDS +=	devel/cmake
 MODPY_RUNDEP =		No
+
+# use embedded or ports version of LLVM
+PORTS_LLVM ?=	No
+.if ${PORTS_LLVM:L:Myes}
+BUILD_DEPENDS +=	devel/llvm<4
+.else
+BUILD_DEPENDS +=	devel/ninja
+.endif
 
 # rustllvm need c++11
 MODGCC4_LANGS =		c++
@@ -83,42 +83,19 @@ MODGCC4_ARCHS =		*
 # need to be keep in sync
 LIBESTDC_VERSION =	17.0
 
-# note: VERBOSE permit to unhide Makefile processing
-# 	RUSTFLAGS extra flags passed to rust
+# note: RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
-#       RUST_LOG helper
-MAKE_ENV =		VERBOSE=1 \
-			RUSTFLAGS="-L ${WRKDIR}/modgcc-libs" \
-			RUST_LOG="${RUST_LOG}"
-
+MAKE_ENV =		RUSTFLAGS="-L ${WRKDIR}/modgcc-libs"
 
 # build/configuration variables
-#
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--disable-valgrind-rpass \
-			--disable-codegen-tests \
-			--release-channel=stable \
-			--local-rust-root="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}" \
-			--prefix="${LOCALBASE}" \
-			--mandir="${LOCALBASE}/man"
-
-# VERSION and BOOTSTRAP are same major version
-.if ${V:C/\.[0-9]+$//} == ${BV:C/\.[0-9]+-[0-9]+$//}
-CONFIGURE_ARGS +=	--enable-local-rebuild
-.endif
-
-CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
 # need for libbacktrace
 USE_LIBTOOL =		gnu
 
-ALL_TARGET +=		rustc-stage2 docs
-TEST_TARGET =		check
-TEST_ENV +=		ALLOW_NONZERO_RLIMIT_CORE=1
-TEST_DEPENDS +=		devel/git
+TEST_DEPENDS +=		${FULLPKGNAME-main}:${BUILD_PKGPATH} \
+			devel/git
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -126,40 +103,93 @@ pre-configure:
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
 		exit 1; fi
 
-# - remove autodetected programs
+# - generate config.toml file
 # - copy libestdc++ from MODGCC4 to specific directory
 #   in order to disambiguate version linking (having multiple libestdc++
 #   at build time)
-# - copy bootstrap in stage0 (permit copying bootstrapped libs in stage0)
-post-configure:
-.for _v in CFG_CURL CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
-	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
-	CFG_GDB_VERSION CFG_ADB
-	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
-.endfor
+do-configure:
+	echo '[build]' >${WRKBUILD}/config.toml
+	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustc"' \
+		>>${WRKBUILD}/config.toml
+	echo 'cargo = "${WRKDIR}/cargo-bootstrap-${MACHINE_ARCH}-${CBV}/cargo"' \
+		>>${WRKBUILD}/config.toml
+	echo 'prefix = "${LOCALBASE}"' >>${WRKBUILD}/config.toml
+	echo 'vendor = true' >>${WRKBUILD}/config.toml
+	
+	echo '[rust]' >>${WRKBUILD}/config.toml
+	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
+	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
+	
+.if ${PORTS_LLVM:L:Myes}
+	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
+	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
+		>>${WRKBUILD}/config.toml
+.else
+	echo '[llvm]' >>${WRKBUILD}/config.toml
+	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
+	echo 'ninja = true' >>${WRKBUILD}/config.toml
+.endif
+	
 	rm -rf ${WRKDIR}/modgcc-libs
-	mkdir ${WRKDIR}/modgcc-libs
-	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} ${WRKDIR}/modgcc-libs
-	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc \
-		${WRKBUILD}/${TRIPLE_ARCH}/stage0/bin
-	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/lib/lib*.so* \
-		${WRKBUILD}/${TRIPLE_ARCH}/stage0/lib
+	mkdir -p ${WRKDIR}/modgcc-libs
+	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} \
+		${WRKDIR}/modgcc-libs
+
+BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+	    ${MODPY_BIN} ${WRKSRC}/src/bootstrap/bootstrap.py
+
+do-build:
+	${BUILD_BIN} dist --verbose --jobs=${MAKE_JOBS}
+
+COMPONENTS ?=	rustc rust-std rust-docs
+do-install:
+	rm -rf ${WRKBUILD}/_extractdist
+.for _c in ${COMPONENTS}
+	mkdir ${WRKBUILD}/_extractdist
+	cd ${WRKBUILD}/_extractdist && tar zxf \
+		${WRKBUILD}/build/dist/${_c}-${V}-${TRIPLE_ARCH}.tar.gz
+	cd ${WRKBUILD}/_extractdist/${_c}-${V}-${TRIPLE_ARCH} && ./install.sh \
+		--prefix="${PREFIX}" \
+		--mandir="${PREFIX}/man"
+	rm -rf ${WRKBUILD}/_extractdist
+.endfor
+	for lib in ${PREFIX}/lib/lib*.* ; do \
+		libname=$${lib##*/} ; \
+		test -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} && \
+			ln -fs rustlib/${TRIPLE_ARCH}/lib/$${libname} \
+				${PREFIX}/lib/$${libname} ; \
+	done
 
 post-install:
 	# cleanup
-	rm ${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version}
+	rm ${PREFIX}/bin/rust-lldb \
+		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
+		${PREFIX}/lib/rustlib/components \
+		${PREFIX}/lib/rustlib/manifest-*
 
+do-test:
+	${BUILD_BIN} test --verbose --jobs=${MAKE_JOBS}
 
 # bootstrap target permits to regenerate the bootstrap archive
-# it is based on stage3 binary
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
-bootstrap: configure
+bootstrap: build
 	rm -rf ${BOOTSTRAPDIR}
 	mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${GMAKE} rustc-stage3
-	cp ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc ${BOOTSTRAPDIR}/bin
-	strip ${BOOTSTRAPDIR}/bin/rustc
-	ldd ${BOOTSTRAPDIR}/bin/rustc \
+	${MAKE} clean=fake
+	${MAKE} fake \
+		PREFIX="${BOOTSTRAPDIR}" \
+		COMPONENTS="rustc rust-std" \
+		FAKE_SETUP=""
+	rm -rf ${BOOTSTRAPDIR}/{man,share} \
+		${BOOTSTRAPDIR}/bin/{rust-gdb,rustdoc}
+	mv ${BOOTSTRAPDIR}/bin/rustc{,.bin}
+	strip ${BOOTSTRAPDIR}/bin/rustc.bin \
+		${BOOTSTRAPDIR}/lib/lib*.so \
+		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
+	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustc \
+		${BOOTSTRAPDIR}/bin/rustc
+	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
+		ldd ${BOOTSTRAPDIR}/bin/rustc.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % cp % \
 			${BOOTSTRAPDIR}/lib

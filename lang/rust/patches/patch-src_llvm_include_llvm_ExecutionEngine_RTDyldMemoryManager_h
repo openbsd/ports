@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_llvm_include_llvm_ExecutionEngine_RTDyldMemoryManager_h,v 1.1 2017/02/15 12:52:35 landry Exp $
+https://github.com/llvm-mirror/llvm/commit/420bc5679ccfb76b41a47be8a4bf05ececf0cae5
+--- src/llvm/include/llvm/ExecutionEngine/RTDyldMemoryManager.h.orig	Mon Feb  6 20:14:30 2017
++++ src/llvm/include/llvm/ExecutionEngine/RTDyldMemoryManager.h	Mon Feb  6 20:14:41 2017
+@@ -72,7 +72,7 @@ class RTDyldMemoryManager : public MCJITMemoryManager,
+   }
+ 
+   void deregisterEHFrames(uint8_t *Addr, uint64_t LoadAddr, size_t Size) override {
+-    registerEHFramesInProcess(Addr, Size);
++    deregisterEHFramesInProcess(Addr, Size);
+   }
+ 
+   /// This method returns the address of the specified function or variable in
