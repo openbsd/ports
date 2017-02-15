@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/11/04 11:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2017/02/15 18:33:58 jasper Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -7,8 +7,7 @@ TRACKER_API=	1.0
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.3
-REVISION=	0
+GNOME_VERSION=	0.3.4
 
 API=		0.3
 SUBST_VARS=	API
