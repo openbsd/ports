@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/28 01:41:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/15 09:55:20 zhuk Exp $
 
 QT5NAME =		QtEnginio
 REVISION-qch =		0
 REVISION-html =		0
+REVISION-docindex =	0
 
 VERSION =		${ENGINIO_VERSION}
 DIST_VERSION =		${ENGINIO_VERSION}
