@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/06 15:42:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/02/16 09:35:33 ajacoutot Exp $
 bin/meson
 bin/mesonconf
 bin/mesonintrospect
@@ -59,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}gnom
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}modtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}python3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}rpm.${MODPY_PYC_MAGIC_TAG}pyc
@@ -67,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/gnome.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/i18n.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/modtest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/pkgconfig.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/python3.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt4.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt5.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/rpm.py
@@ -89,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}meso
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}regen_checker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}scanbuild.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}symbolextractor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}uninstall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}vcstagger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}yelphelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cleantrees.py
@@ -103,6 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/meson_install.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/regen_checker.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/scanbuild.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/symbolextractor.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/uninstall.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/vcstagger.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/yelphelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/
@@ -116,4 +120,5 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/wraptool.py
 @man man/man1/meson.1
 @man man/man1/mesonconf.1
 @man man/man1/mesonintrospect.1
+@man man/man1/mesontest.1
 @man man/man1/wraptool.1
