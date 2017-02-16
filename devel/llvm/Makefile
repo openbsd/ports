@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2017/02/12 11:25:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2017/02/16 15:07:16 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -66,8 +66,13 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 # Have the build disable PIE to workaround breakage that was
 # introduced when PIE was enabled
 .if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,--relax -nopie"
-CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,--relax -nopie"
+CFLAGS +=		-mlongcall
+CXXFLAGS +=		-mlongcall
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-nopie"
+CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-nopie"
+.elif ${MACHINE_ARCH} == "arm"
+CFLAGS +=		-mlong-calls
+CXXFLAGS +=		-mlong-calls
 .endif
 
 TEST_TARGET =		check
