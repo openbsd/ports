@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_openvpn_syshead_h,v 1.3 2017/02/16 21:16:55 kurt Exp $
+--- src/openvpn/syshead.h.orig	Wed Feb 15 11:34:39 2017
++++ src/openvpn/syshead.h	Wed Feb 15 11:35:49 2017
+@@ -288,6 +288,10 @@
+ #include <netinet/ip.h>
+ #endif
+ 
++#ifdef HAVE_NETINET_TCP_H
++#include <netinet/tcp.h>
++#endif
++
+ #ifdef HAVE_NET_IF_TUN_H
+ #include <net/if_tun.h>
+ #endif
