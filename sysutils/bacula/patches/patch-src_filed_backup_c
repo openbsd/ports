@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_filed_backup_c,v 1.1 2017/02/16 17:16:19 sthen Exp $
+
+Avoid FD segfault at the end of backup on OS without ACL support.
+
+--- src/filed/backup.c.orig	Thu Feb 16 16:21:07 2017
++++ src/filed/backup.c	Thu Feb 16 16:28:49 2017
+@@ -163,12 +163,14 @@ bool blast_data_to_storage_daemon(JCR *jcr, char *addr
+       jcr->setJobStatus(JS_ErrorTerminated);
+    }
+ 
+-   if (jcr->xacl->get_acl_nr_errors() > 0) {
+-      Jmsg(jcr, M_WARNING, 0, _("Had %ld acl errors while doing backup\n"), jcr->xacl->get_acl_nr_errors());
+-   }
++   if (jcr->xacl) {
++      if (jcr->xacl->get_acl_nr_errors() > 0) {
++         Jmsg(jcr, M_WARNING, 0, _("Had %ld acl errors while doing backup\n"), jcr->xacl->get_acl_nr_errors());
++      }
+ 
+-   if (jcr->xacl->get_xattr_nr_errors() > 0) {
+-      Jmsg(jcr, M_WARNING, 0, _("Had %ld xattr errors while doing backup\n"), jcr->xacl->get_xattr_nr_errors());
++      if (jcr->xacl->get_xattr_nr_errors() > 0) {
++         Jmsg(jcr, M_WARNING, 0, _("Had %ld xattr errors while doing backup\n"), jcr->xacl->get_xattr_nr_errors());
++      }
+    }
+ 
+    /* Delete or keep snapshots */
