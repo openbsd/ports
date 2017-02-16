@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/15 19:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/16 21:50:52 sebastia Exp $
 
 COMMENT =		Nagios plugin to check RabbitMQ
 
+VERSION=		2.0.3
 GH_ACCOUNT =		nagios-plugins-rabbitmq
 GH_PROJECT =		nagios-plugins-rabbitmq
-GH_TAGNAME =		0c357495d817df4db9ed6392559f2da7507383a4
-REVISION =		0
+GH_TAGNAME =		${VERSION}
 
 CATEGORIES =		net
 
-PKGNAME =		check_rabbitmq-20150224
+PKGNAME =		check_rabbitmq-${VERSION}
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
