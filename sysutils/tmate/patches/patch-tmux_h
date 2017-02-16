@@ -1,0 +1,19 @@
+$OpenBSD: patch-tmux_h,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+--- tmux.h.orig	Tue Mar 29 05:30:07 2016
++++ tmux.h	Wed Feb  8 20:42:10 2017
+@@ -26,7 +26,14 @@
+ #include <sys/time.h>
+ #include <sys/uio.h>
+ 
+-#include <event.h>
++#include <event2/buffer.h>
++#include <event2/buffer_compat.h>
++#include <event2/bufferevent.h>
++#include <event2/bufferevent_compat.h>
++#include <event2/bufferevent_struct.h>
++#include <event2/event_struct.h>
++#include <event2/event.h>
++#include <event2/event_compat.h>
+ #include <limits.h>
+ #include <stdarg.h>
+ #include <stdio.h>

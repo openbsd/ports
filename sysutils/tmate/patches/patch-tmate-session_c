@@ -1,0 +1,17 @@
+$OpenBSD: patch-tmate-session_c,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+
+From 27169b7c076376718abf98f7a1a6b484bd579314 Mon Sep 17 00:00:00 2001
+From: Nicolas Viennot <nicolas@viennot.biz>
+Date: Sun, 5 Jun 2016 12:54:25 -0400
+Subject: [PATCH] Add missing incldues for FreeBSD
+
+--- tmate-session.c.orig	Wed Feb  8 19:48:25 2017
++++ tmate-session.c	Wed Feb  8 19:48:39 2017
+@@ -2,6 +2,7 @@
+ #include <event2/util.h>
+ #include <event2/event.h>
+ 
++#include <netinet/in.h>
+ #include <sys/socket.h>
+ 
+ #include <stdio.h>

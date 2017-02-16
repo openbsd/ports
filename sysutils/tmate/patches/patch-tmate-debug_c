@@ -1,0 +1,30 @@
+$OpenBSD: patch-tmate-debug_c,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+
+Actually disable all debug handling when not requested.
+Fixes undefined references to backtrace{,_symbols}().
+
+--- tmate-debug.c.orig	Wed Feb  8 20:43:36 2017
++++ tmate-debug.c	Wed Feb  8 20:43:58 2017
+@@ -55,6 +55,7 @@ static int print_resolved_stack_frame(const char *fram
+ 
+ void tmate_print_stack_trace(void)
+ {
++#if DEBUG
+ 	void *array[20];
+ 	size_t size;
+ 	char **strings;
+@@ -66,13 +67,12 @@ void tmate_print_stack_trace(void)
+ 	tmate_info ("============ %zd stack frames ============", size);
+ 
+ 	for (i = 1; i < size; i++) {
+-#if DEBUG
+ 		if (print_resolved_stack_frame(strings[i]) < 0)
+-#endif
+ 			tmate_info("%s", strings[i]);
+ 	}
+ 
+ 	free (strings);
++#endif
+ }
+ 
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-server_c,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+--- server.c.orig	Tue Mar 29 05:30:07 2016
++++ server.c	Wed Feb  8 20:57:39 2017
+@@ -24,7 +24,7 @@
+ #include <sys/wait.h>
+ 
+ #include <errno.h>
+-#include <event.h>
++#include <event2/event.h>
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <stdio.h>
+@@ -167,7 +167,7 @@ server_start(struct event_base *base, int lockfd, char
+ 
+ #ifdef __OpenBSD__
+ 	if (pledge("stdio rpath wpath cpath fattr unix getpw recvfd proc exec "
+-	    "tty ps", NULL) != 0)
++	    "tty ps inet", NULL) != 0)
+ 		fatal("pledge failed");
+ #endif
+ 

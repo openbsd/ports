@@ -1,0 +1,16 @@
+$OpenBSD: patch-tmate_h,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
+--- tmate.h.orig	Wed Feb  8 19:58:01 2017
++++ tmate.h	Wed Feb  8 20:02:26 2017
+@@ -5,7 +5,11 @@
+ #include <msgpack.h>
+ #include <libssh/libssh.h>
+ #include <libssh/callbacks.h>
+-#include <event.h>
++
++#include <event2/buffer.h>
++#include <event2/dns.h>
++#include <event2/util.h>
++#include <event2/event.h>
+ 
+ #include "tmux.h"
+ 
