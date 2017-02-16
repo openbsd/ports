@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/12/25 21:13:04 jung Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/02/16 10:14:51 pea Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -246,6 +246,8 @@ share/homebank/icons/hicolor/48x48/status/prf-interface.png
 share/homebank/icons/hicolor/48x48/status/prf-report.png
 share/homebank/icons/hicolor/scalable/
 share/homebank/icons/hicolor/scalable/actions/
+share/homebank/icons/hicolor/scalable/actions/btn-collapse-symbolic.svg
+share/homebank/icons/hicolor/scalable/actions/btn-expand-symbolic.svg
 share/homebank/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
 share/homebank/images/
 share/homebank/images/splash.png
