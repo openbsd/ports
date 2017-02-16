@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2017/02/16 14:24:41 fcambus Exp $
 
 COMMENT=	parsing expression grammars library for lua
-DISTNAME=	lpeg-1.0.0
+DISTNAME=	lpeg-1.0.1
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
