@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/10/21 09:45:38 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/16 12:35:39 fcambus Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	ansiweather
-GH_TAGNAME =	1.09
+GH_TAGNAME =	1.10
 
 CATEGORIES =	astro
 
