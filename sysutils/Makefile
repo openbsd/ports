@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.430 2017/02/14 20:26:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.431 2017/02/16 20:06:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -280,6 +280,7 @@
      SUBDIR += terraform
      SUBDIR += testdisk
      SUBDIR += tkdvd
+     SUBDIR += tmate
      SUBDIR += tmux-mem-cpu-load
      SUBDIR += tmuxinator
      SUBDIR += toad
