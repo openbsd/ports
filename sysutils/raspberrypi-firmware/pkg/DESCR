@@ -1,0 +1,10 @@
+Firmware required to boot Raspberry Pi systems.
+
+With u-boot rpi_3 target, config.txt should contain:
+
+arm_control=0x200
+enable_uart=1
+device_tree_address=0x100
+kernel=u-boot.bin
+
+The arm_control value switches to 64 bit.
