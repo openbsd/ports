@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.119 2016/12/26 19:41:45 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.120 2017/02/17 10:01:28 phessler Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -114,10 +114,6 @@ CONFIGURE_ARGS +=	--srcdir=${WRKSRC} \
 			--with-cxx_main \
 			--with-system-expat \
 			--with-system-ffi
-
-.if ${MACHINE_ARCH:Msparc}
-CFLAGS+=-O0
-.endif
 
 CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
