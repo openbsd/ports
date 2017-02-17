@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2017/02/09 12:58:39 ajacoutot Exp $
-
-# May not be hard to add more.
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+# $OpenBSD: Makefile,v 1.273 2017/02/17 09:05:09 ajacoutot Exp $
 
 COMMENT=	movie player supporting many formats
 
