@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/06 11:26:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2017/02/17 19:16:40 sebastia Exp $
 
 COMMENT=		MCollective agent to manage the Puppet agent
 
 GH_ACCOUNT=		puppetlabs
 GH_PROJECT=		mcollective-puppet-agent
-GH_TAGNAME=		1.11.1
-REVISION=		0
+GH_TAGNAME=		1.12.0
 
 .include <bsd.port.mk>
