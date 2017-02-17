@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2017/01/20 09:24:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2017/02/17 10:46:09 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -11,7 +11,7 @@ lib/liblink-grammar.la
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.8.14
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.8.15
 share/link-grammar/
 share/link-grammar/ady/
 share/link-grammar/ady/4.0.affix
