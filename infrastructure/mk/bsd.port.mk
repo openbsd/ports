@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1326 2017/02/13 12:56:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1327 2017/02/17 23:17:43 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -182,6 +182,7 @@ _PROGRESS =
 .endif
 
 FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE} -C
+_MAKESUM ?= false
 
 PKG_TMPDIR ?= /var/tmp
 
@@ -1974,10 +1975,11 @@ ${_FUPDATE_COOKIE${_S}}:
 
 .PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIES}
 
-makesum: fetch-all
+makesum:
 	@${_warn_checksum}
-.if !defined(NO_CHECKSUM) && !empty(MAKESUMFILES)
 	@rm -f ${CHECKSUM_FILE}
+	@${MAKE} fetch-all _MAKESUM=true
+.if !empty(MAKESUMFILES)
 	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${MAKESUMFILES}; do \
@@ -1987,14 +1989,9 @@ makesum: fetch-all
 .endif
 
 list-distinfo:
-	@if test -e ${CHECKSUM_FILE}; then cat ${CHECKSUM_FILE}; \
-	else \
-		if ! test -z "${DISTFILES}"; then \
-			echo 1>&2 "${CHECKSUM_FILE} not found"; \
-			exit 1; \
-		fi; \
-	fi
-
+.if !empty(MAKESUMFILES)
+	@cat ${CHECKSUM_FILE} 2>/dev/null 
+.endif
 
 ################################################################
 # Dependency checking
@@ -2251,7 +2248,7 @@ _internal-checksum: _internal-fetch
 		fi; \
 	done
 .  if !defined(NO_CHECKSUM)
-	@if [ -z "${DISTFILES}" ]; then \
+	@if [ -z "${CHECKSUMFILES}" ]; then \
 	  ${ECHO_MSG} ">> No distfiles."; \
 	elif [ ! -f ${CHECKSUM_FILE} ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
@@ -2267,9 +2264,6 @@ _internal-checksum: _internal-fetch
 		  case "$$4" in \
 			"") \
 			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			  OK=false;; \
-			"IGNORE") \
-			  echo ">> Error: checksum for $$file is set to IGNORE in distinfo"; \
 			  OK=false;; \
 			*) \
 			  echo -n '>> '; \
@@ -2877,26 +2871,31 @@ ${DISTDIR}/$p:
 	test -f ${@:T} && exit 0; \
 	f=$f; \
 	${_CDROM_OVERRIDE}; \
+	if ! ${_MAKESUM} && test ! -f ${CHECKSUM_FILE}; then \
+		${ECHO_MSG} ">> Checksum file does not exist"; \
+		exit 1; \
+	fi; \
 	for site in ${$m}; do \
 		file=$@.part; \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
 		if ${FETCH_CMD} -o $$file $${site}$u; then \
-				ck=`${_size_fragment} $$file $p`; \
-				if [ ! -f ${CHECKSUM_FILE} ]; then \
-					${ECHO_MSG} ">> Checksum file does not exist"; \
-					mv $$file $@; \
-					exit 0; \
-				elif grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+				if ${_MAKESUM}; then \
 					mv $$file $@; \
 					exit 0; \
 				else \
-					if grep -q "SIZE ($p)" ${CHECKSUM_FILE}; then \
-						${ECHO_MSG} ">> Size does not match for $p"; \
-						rm -f $$file; \
-					else \
-						${ECHO_MSG} ">> No size recorded for $p"; \
+					ck=`${_size_fragment} $$file $p`; \
+					if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
 						mv $$file $@; \
 						exit 0; \
+					else \
+						if grep -q "SIZE ($p)" ${CHECKSUM_FILE}; then \
+							${ECHO_MSG} ">> Size does not match for $p"; \
+							rm -f $$file; \
+						else \
+							${ECHO_MSG} ">> No size recorded for $p"; \
+							rm -f $$file; \
+							exit 1; \
+						fi; \
 					fi; \
 				fi; \
 		fi; \
