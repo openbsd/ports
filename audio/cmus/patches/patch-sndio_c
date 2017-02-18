@@ -1,11 +1,11 @@
-$OpenBSD: patch-sndio_c,v 1.1 2016/09/23 23:08:36 juanfra Exp $
+$OpenBSD: patch-sndio_c,v 1.2 2017/02/18 10:16:34 jca Exp $
 
-Support 32-bit/24-bit encoding
+Support 32-bit/24-bit encoding.
 
-84f33584be91 upstream
+Commits 84f33584be91 and bf87f0d76f87 upstream.
 
 --- sndio.c.orig	Mon Jul 13 12:00:56 2015
-+++ sndio.c	Thu Sep 22 18:54:45 2016
++++ sndio.c	Thu Feb  9 12:11:30 2017
 @@ -20,7 +20,6 @@
  
  #include <sys/types.h>
@@ -14,7 +14,7 @@ Support 32-bit/24-bit encoding
  #include <sys/stat.h>
  #include <errno.h>
  #include <fcntl.h>
-@@ -82,6 +81,12 @@ static int sndio_set_sf(sample_format_t sf)
+@@ -82,6 +81,13 @@ static int sndio_set_sf(sample_format_t sf)
  		par.le = 1;
  
  	switch (sf_get_bits(sndio_sf)) {
@@ -23,6 +23,7 @@ Support 32-bit/24-bit encoding
 +		break;
 +	case 24:
 +		par.bits = 24;
++		par.bps = 3;
 +		break;
  	case 16:
  		par.bits = 16;
