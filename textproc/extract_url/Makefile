@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/06 17:53:37 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/18 08:35:17 feinerer Exp $
 
 COMMENT =		extract URLs from MIME email messages or plain text
 
-VERSION =		1.6
+VERSION =		1.6.2
 DISTNAME =		extract_url-${VERSION}
 
 CATEGORIES =		textproc
