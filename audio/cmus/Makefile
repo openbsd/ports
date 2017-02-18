@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/02/18 10:17:35 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/02/18 10:19:10 jca Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -7,7 +7,7 @@ V=			2.7.1
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -36,7 +36,7 @@ LIB_DEPENDS-main=	audio/flac \
 			audio/wavpack \
 			converters/libiconv
 
-WANTLIB-ffmpeg=		avformat swresample
+WANTLIB-ffmpeg=		avcodec avformat swresample
 LIB_DEPENDS-ffmpeg=	graphics/ffmpeg
 RUN_DEPENDS-ffmpeg=	audio/cmus
 
