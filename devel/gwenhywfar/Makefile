@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT=	helper library for networking and security applications
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
 DISTNAME=	gwenhywfar-4.13.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=78\&file=01}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	gwenhywfar           1.3      # 73.1
 SHARED_LIBS +=	gwengui-gtk2         0.0      # unknown

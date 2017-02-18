@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT =		c client library for the Riemann monitoring system
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =		algernon
 GH_PROJECT =		riemann-c-client
 GH_TAGNAME =		riemann-c-client-${V}
 DISTNAME =		${GH_PROJECT}-${V}
+REVISION =		0
 
 SHARED_LIBS +=		riemann-client 0.0 # 0.0
 

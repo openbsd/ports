@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,7 +11,7 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 COMMENT-riemann =	collectd riemann plugin
 
-REVISION-main =		1
+REVISION-main =		2
 V =			5.6.2
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
@@ -25,6 +25,15 @@ PKGNAME-memcachec =	collectd-memcachec-$V
 PKGNAME-nut =		collectd-nut-$V
 PKGNAME-riemann =	collectd-riemann-$V
 CATEGORIES =		sysutils
+REVISION-memcachec =	0
+REVISION-mysql =	0
+REVISION-nut =		0
+REVISION-pgsql =	0
+REVISION-python =	0
+REVISION-riemann =	0
+REVISION-rrdtool =	0
+REVISION-snmp =		0
+REVISION-virt =		0
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0

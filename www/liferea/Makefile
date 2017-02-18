@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2017/02/18 17:33:51 ajacoutot Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=		lwindolf
 GH_PROJECT=		liferea
 GH_TAGNAME=		v1.12-rc2
 PKGNAME=		liferea-1.12rc2
+REVISION=		0
 
 CATEGORIES=		www news x11
 

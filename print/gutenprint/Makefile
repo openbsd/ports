@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.2.12
 DISTNAME=		gutenprint-${V}
+REVISION=		0
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/02/18 17:33:51 ajacoutot Exp $
 
 V =			0.8.3-1
-REVISION =		11
+REVISION =		12
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite =	sqlite driver for libdbi

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/02/18 17:32:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2017/02/18 17:33:52 ajacoutot Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	0.8.4
 XFCE_GOODIE=	xfce4-terminal
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

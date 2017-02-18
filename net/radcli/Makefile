@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT=	simple RADIUS client library
 
@@ -6,6 +6,7 @@ SHARED_LIBS +=	radcli               0.1      # 5.1
 
 V=		1.2.5
 DISTNAME=	radcli-$V
+REVISION=	0
 
 CATEGORIES=	net
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
 DISTNAME=		libvirt-glib-0.2.3
 CATEGORIES=		devel sysutils
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  virt-gconfig-1.0          1.0 # 2.3
 SHARED_LIBS +=  virt-glib-1.0             1.0 # 2.3

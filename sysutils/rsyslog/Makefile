@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2017/02/18 17:33:51 ajacoutot Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -14,6 +14,9 @@ PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
+REVISION-main =		0
+REVISION-mysql =	0
+REVISION-pgsql =	0
 
 HOMEPAGE =		http://www.rsyslog.com/
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/02/18 17:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT =	reliable event logging protocol library
 
 DISTNAME =	librelp-1.2.9
+REVISION =	0
 
 SHARED_LIBS +=  relp                      1.0 # 1.0
 
