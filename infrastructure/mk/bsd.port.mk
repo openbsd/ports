@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1327 2017/02/17 23:17:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1328 2017/02/18 15:00:02 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -182,6 +182,9 @@ _PROGRESS =
 .endif
 
 FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE} -C
+
+# switch for fetching each distfile: avoid warnings for missing
+# distinfo and wrong size when running makesum
 _MAKESUM ?= false
 
 PKG_TMPDIR ?= /var/tmp
@@ -665,10 +668,7 @@ GMAKE ?= gmake
 CHECKSUM_FILE ?= ${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
-_CIPHERS = sha256
-
-# This is the one you can override
-PREFERRED_CIPHERS ?= ${_CIPHERS}
+_CIPHER = sha256
 
 PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 
@@ -1980,7 +1980,7 @@ makesum:
 	@rm -f ${CHECKSUM_FILE}
 	@${MAKE} fetch-all _MAKESUM=true
 .if !empty(MAKESUMFILES)
-	@cd ${DISTDIR} && cksum -b -a "${_CIPHERS}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && cksum -b -a "${_CIPHER}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 		for file in ${MAKESUMFILES}; do \
 			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
@@ -2247,46 +2247,45 @@ _internal-checksum: _internal-fetch
 			exit 1; \
 		fi; \
 	done
-.  if !defined(NO_CHECKSUM)
-	@if [ -z "${CHECKSUMFILES}" ]; then \
-	  ${ECHO_MSG} ">> No distfiles."; \
-	elif [ ! -f ${CHECKSUM_FILE} ]; then \
-	  ${ECHO_MSG} ">> No checksum file."; \
+.  if empty(CHECKSUMFILES)
+	@${ECHO_MSG} ">> No DISTFILES nor PATCHFILES."
+.  else
+.    if !defined(NO_CHECKSUM)
+	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	  ${ECHO_MSG} 1>&2 ">> No ${CHECKSUM_FILE}."; \
 	  exit 1; \
-	else \
-	  cd ${DISTDIR}; OK=true; list=''; \
-		for file in ${CHECKSUMFILES}; do \
-		  for cipher in ${PREFERRED_CIPHERS}; do \
-			set -- $$(grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}) \
-			  && break || \
-			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
-		  done; \
-		  case "$$4" in \
-			"") \
-			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			  OK=false;; \
-			*) \
-			  echo -n '>> '; \
-			  if ! echo "$$@" | cksum -c; then \
-				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-				  list="$$list $$file $$cipher $$4"; \
-				  OK=false; \
-			  fi;; \
-		  esac; \
-		done; \
-		set --; \
-		if ! $$OK; then \
-		  if ${REFETCH}; then \
-		  	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
-		  else \
-			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-			echo "are up to date.  If you want to fetch a good copy of this"; \
-			echo "file from the OpenBSD main archive, type"; \
-			echo "\"make REFETCH=true [other args]\"."; \
-			exit 1; \
-		  fi; \
-		fi ; \
-  fi
+	fi
+	@cd ${DISTDIR}; OK=true; list=''; \
+	  for file in ${CHECKSUMFILES}; do \
+		set -- $$(grep -i "^${_CIPHER} ($$file)" ${CHECKSUM_FILE}) \
+		  && break || \
+		  ${ECHO_MSG} ">> No ${_CIPHER} checksum recorded for $$file."; \
+		case "$$4" in \
+		  "") \
+			${ECHO_MSG} ">> No checksum recorded for $$file."; \
+			OK=false;; \
+		  *) \
+			echo -n '>> '; \
+			if ! echo "$$@" | cksum -c; then \
+				echo ">> Checksum mismatch for $$file. ($$cipher)"; \
+				list="$$list $$file $$cipher $$4"; \
+				OK=false; \
+			fi;; \
+		esac; \
+	  done; \
+	  set --; \
+	  if ! $$OK; then \
+		if ${REFETCH}; then \
+		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
+		else \
+		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+		  echo "are up to date.  If you want to fetch a good copy of this"; \
+		  echo "file from the OpenBSD main archive, type"; \
+		  echo "\"make REFETCH=true [other args]\"."; \
+		  exit 1; \
+		fi; \
+	  fi
+.    endif
 .  endif
 
 _refetch:
