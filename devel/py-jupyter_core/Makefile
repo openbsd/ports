@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/18 13:37:44 shadchin Exp $
 
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.2.1
+MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -35,9 +34,9 @@ TEST_DEPENDS +=		devel/py-mock
 .endif
 
 post-install:
-	mv ${PREFIX}/bin/jupyter ${PREFIX}/bin/jupyter${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/jupyter-migrate ${PREFIX}/bin/jupyter-migrate${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/jupyter-troubleshoot ${PREFIX}/bin/jupyter-troubleshoot${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/jupyter{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/jupyter-migrate{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/jupyter-troubleshoot{,${MODPY_BIN_SUFFIX}}
 
 do-test:
 	cd ${WRKSRC} && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest jupyter_core
