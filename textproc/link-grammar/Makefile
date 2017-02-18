@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/02/17 10:46:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2017/02/18 10:57:43 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -32,7 +32,9 @@ WANTLIB-java += ${WANTLIB} link-grammar pthread
 WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-python += link-grammar pthread util
 
-MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
+# XXX bad ssl setup is bad
+#MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
+MASTER_SITES =		https://distfiles.bsdfrog.org/
 
 MODULES =		lang/python
 
