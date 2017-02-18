@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/31 13:48:18 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/18 16:22:54 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -72,11 +72,6 @@ CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME} 		\
 
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
-
-# bug #1064665
-LIB_DEPENDS +=		textproc/icu4c
-CONFIGURE_ARGS += 	--with-system-icu
-WANTLIB += 		icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--disable-gstreamer
 

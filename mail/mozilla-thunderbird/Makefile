@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2017/02/08 13:26:47 landry Exp $
+# $OpenBSD: Makefile,v 1.237 2017/02/18 16:22:54 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -65,11 +65,6 @@ CONFIGURE_ARGS +=	--disable-gstreamer
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=       --disable-debug-symbols
 .endif
-
-# bug #1064665
-LIB_DEPENDS +=	textproc/icu4c
-CONFIGURE_ARGS += --with-system-icu
-WANTLIB += icudata icui18n icuuc
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie

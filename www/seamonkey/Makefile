@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2017/01/24 21:27:28 landry Exp $
+# $OpenBSD: Makefile,v 1.196 2017/02/18 16:22:54 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -63,11 +63,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
-
-# bug #1064665
-LIB_DEPENDS +=	textproc/icu4c
-CONFIGURE_ARGS += --with-system-icu
-WANTLIB += icudata icui18n icuuc
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/01/24 21:35:09 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2017/02/18 16:22:54 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -51,11 +51,6 @@ CONFIGURE_ARGS +=	--disable-webrtc
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-
-# bug #1064665
-LIB_DEPENDS +=	textproc/icu4c
-CONFIGURE_ARGS += --with-system-icu
-WANTLIB += icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--disable-gstreamer
 

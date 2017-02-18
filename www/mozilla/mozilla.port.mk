@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.98 2017/02/18 16:18:48 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.99 2017/02/18 16:22:54 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -61,6 +61,12 @@ CONFIGURE_ARGS +=	--with-system-nspr
 .if !defined(MOZILLA_USE_BUNDLED_LIBEVENT)
 MODMOZ_WANTLIB +=	event
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
+.endif
+
+.if !defined(MOZILLA_USE_BUNDLED_ICU)
+MODMOZ_LIB_DEPENDS +=	textproc/icu4c
+MODMOZ_WANTLIB +=	icudata icui18n icuuc
+CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)

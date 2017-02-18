@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.308 2017/01/24 21:33:09 landry Exp $
+# $OpenBSD: Makefile,v 1.309 2017/02/18 16:22:54 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -50,11 +50,6 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 
 # relies on pulseaudio for sound and broken at runtime
 #CONFIGURE_ARGS +=	--disable-webrtc
-
-# bug #1064665
-LIB_DEPENDS +=	textproc/icu4c
-CONFIGURE_ARGS += --with-system-icu
-WANTLIB += icudata icui18n icuuc
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
