@@ -1,7 +1,18 @@
-$OpenBSD: patch-libs_mk,v 1.12 2017/01/15 09:59:11 ajacoutot Exp $
---- libs.mk.orig	Thu Jan 12 15:27:27 2017
-+++ libs.mk	Sat Jan 14 18:47:23 2017
-@@ -255,22 +255,17 @@ EXPORT_FILE             := libvpx.def
+$OpenBSD: patch-libs_mk,v 1.13 2017/02/18 14:06:20 landry Exp $
+--- libs.mk.orig	Thu Jan 12 21:27:27 2017
++++ libs.mk	Fri Feb 17 20:11:49 2017
+@@ -115,10 +115,6 @@ endif
+ 
+ # Suppress -Wextra warnings in third party code.
+ $(BUILD_PFX)third_party/googletest/%.cc.o: CXXFLAGS += -Wno-missing-field-initializers
+-# Suppress -Wextra warnings in first party code pending investigation.
+-# https://bugs.chromium.org/p/webm/issues/detail?id=1069
+-$(BUILD_PFX)vp8/encoder/onyx_if.c.o: CFLAGS += -Wno-unknown-warning-option -Wno-clobbered
+-$(BUILD_PFX)vp8/decoder/onyxd_if.c.o: CFLAGS += -Wno-unknown-warning-option -Wno-clobbered
+ 
+ ifeq ($(CONFIG_MSVS),yes)
+ CODEC_LIB=$(if $(CONFIG_STATIC_MSVCRT),vpxmt,vpxmd)
+@@ -255,22 +251,17 @@ EXPORT_FILE             := libvpx.def
  LIBVPX_SO_SYMLINKS      :=
  LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
@@ -25,7 +36,7 @@ $OpenBSD: patch-libs_mk,v 1.12 2017/01/15 09:59:11 ajacoutot Exp $
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
-@@ -305,15 +300,7 @@ $(1): $(2)
+@@ -305,15 +296,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  
