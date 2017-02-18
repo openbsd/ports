@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2016/09/04 14:52:38 robert Exp $
+# $OpenBSD: Makefile,v 1.201 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	zarafa MAPI extensions for PHP
@@ -50,7 +50,7 @@ BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
 WANTLIB += m pthread z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt lzma idn crypto
+WANTLIB += boost_filesystem-mt boost_system-mt lzma idn2 crypto
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += c ical icalss lber-2.4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/11 09:22:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/18 17:32:37 ajacoutot Exp $
 
 # Required at build time for a temporary program created and run by
 # g-ir-scanner; programs linked against libgepub need wxneeded, too
@@ -27,7 +27,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
 WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hogweed hyphen
-WANTLIB += iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg lz4 lzma lzo2 m nettle notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3

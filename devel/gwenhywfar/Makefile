@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/01/12 16:36:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	helper library for networking and security applications
 
@@ -23,7 +23,7 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gmp gnutls gobject-2.0 gpg-error graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn lib/qt4/QtGui m
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 lib/qt4/QtGui m
 WANTLIB += nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs ssl stdc++ tasn1 xcb
 WANTLIB += xcb-render xcb-shm z

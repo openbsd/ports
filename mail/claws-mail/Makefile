@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2017/02/03 19:36:03 danj Exp $
+# $OpenBSD: Makefile,v 1.99 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -52,7 +52,7 @@ WANTLIB += pthread-stubs sasl2 ssl xcb xcb-render xcb-shm z
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb archive assuan bz2 c canberra canberra-gtk
 WANTLIB-main += dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error gpgme
-WANTLIB-main += hogweed idn ltdl lz4 lzma lzo2 nettle notify ogg p11-kit
+WANTLIB-main += hogweed idn2 ltdl lz4 lzma lzo2 nettle notify ogg p11-kit
 WANTLIB-main += perl startup-notification-1 stdc++ tasn1 unistring vorbis
 WANTLIB-main += vorbisfile xcb-util
 

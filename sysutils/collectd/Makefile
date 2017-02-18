@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/12/12 17:55:24 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -64,7 +64,7 @@ RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 LIB_DEPENDS-virt =	sysutils/libvirt
 WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
-			idn intl lzma m nghttp2 pthread ssl xml2 z
+			idn2 intl lzma m nghttp2 pthread ssl xml2 z
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
@@ -81,7 +81,7 @@ RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-nut =		crypto pthread ssl upsclient
 
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
-WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn \
+WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn2 \
 			nettle protobuf-c p11-kit pthread riemann-client tasn1 z
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 

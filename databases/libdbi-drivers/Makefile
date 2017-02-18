@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/11/08 21:56:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/02/18 17:32:37 ajacoutot Exp $
 
 V =			0.8.3-1
 REVISION =		11
@@ -58,7 +58,7 @@ LIB_DEPENDS-sqlite3 =	databases/libdbi \
 RUN_DEPENDS-sqlite3 =
 
 WANTLIB-freetds =	ct dbi iconv m pthread ffi gcrypt gmp gnutls
-WANTLIB-freetds +=	gpg-error hogweed idn intl nettle p11-kit tasn1 z
+WANTLIB-freetds +=	gpg-error hogweed idn2 intl nettle p11-kit tasn1 z
 
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi

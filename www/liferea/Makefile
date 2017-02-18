@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2017/01/04 19:10:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2017/02/18 17:32:37 ajacoutot Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -25,7 +25,7 @@ WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
 WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hogweed hyphen
-WANTLIB += iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs secret-1

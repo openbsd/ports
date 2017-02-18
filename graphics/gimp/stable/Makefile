@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2016/12/17 17:27:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.113 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -54,7 +54,7 @@ WANTLIB += avahi-common babl-0.1 bz2 c cairo croco-0.6 crypto cups
 WANTLIB += cupsimage curl dbus-1 dbus-glib-1 execinfo exif expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
-WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn ijs jasper
+WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 ijs jasper
 WANTLIB += jbig2dec jpeg lcms lcms2 lzma m mng ncurses nettle nghttp2
 WANTLIB += openjp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png poppler poppler-glib pthread pthread-stubs

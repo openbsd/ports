@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/01/08 01:59:49 bluhm Exp $
+# $OpenBSD: Makefile,v 1.41 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -31,7 +31,7 @@ WANTLIB += gnutls gobject-2.0 gpg-error graphite2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gtkmm-3.0 gtksourceview-3.0 harfbuzz harfbuzz-icu hogweed
-WANTLIB += hyphen iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += hyphen iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle nghttp2 notify orc-0.4
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pcre2-8 peas-1.0 pixman-1 png pthread pthread-stubs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/12 16:36:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -22,7 +22,7 @@ HOMEPAGE=	http://www.aquamaniac.de/sites/aqbanking/
 # GPLv2 or GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gcrypt gmp gnutls gpg-error gwenhywfar hogweed idn ltdl
+WANTLIB += c ffi gcrypt gmp gnutls gpg-error gwenhywfar hogweed idn2 ltdl
 WANTLIB += lzma m nettle p11-kit pthread stdc++ tasn1 xml2 xmlsec1
 WANTLIB += xmlsec1-gcrypt xmlsec1-gnutls xslt z
 

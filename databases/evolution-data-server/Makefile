@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2017/02/13 16:49:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.216 2017/02/18 17:32:37 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -35,7 +35,7 @@ WANTLIB += gmodule-2.0 gmp gnutls goa-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 gweather-3 harfbuzz harfbuzz-icu hogweed
-WANTLIB += hyphen ical icalss icalvcal iconv icudata icui18n icuuc idn
+WANTLIB += hyphen ical icalss icalvcal iconv icudata icui18n icuuc idn2
 WANTLIB += intl javascriptcoregtk-4.0 jpeg json-glib-1.0 lber-2.4 ldap-2.4
 WANTLIB += lzma m nettle nghttp2 notify nspr4 nss3 nssutil3 oauth
 WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre

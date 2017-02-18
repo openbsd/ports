@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/07/08 16:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
@@ -22,7 +22,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += hogweed m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs tasn1 xcb xcb-render
-WANTLIB += xcb-shm z idn
+WANTLIB += xcb-shm z idn2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtklp/}
 

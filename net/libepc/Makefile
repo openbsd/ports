@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/11 11:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		Easy Publish and Consume library
 
@@ -20,7 +20,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz hogweed lzma m
 WANTLIB += nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += tasn1 uuid xcb xcb-render xcb-shm xml2 z idn
+WANTLIB += tasn1 uuid xcb xcb-render xcb-shm xml2 z idn2
 
 MODULES=		devel/gettext \
 			x11/gnome

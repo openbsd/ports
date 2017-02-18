@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2017/02/14 08:24:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
@@ -25,7 +25,7 @@ WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error gphoto2
 WANTLIB += gphoto2_port graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
-WANTLIB += hogweed hyphen iconv icudata icui18n icuuc idn intl
+WANTLIB += hogweed hyphen iconv icudata icui18n icuuc idn2 intl
 WANTLIB += jasper javascriptcoregtk-4.0 jpeg json-glib-1.0 lcms2
 WANTLIB += ltdl lzma m nettle notify orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread

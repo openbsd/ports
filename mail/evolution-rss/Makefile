@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2016/10/31 12:34:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
@@ -31,7 +31,7 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
 WANTLIB += gtkhtml-editor-4.0 gtkspell3-3 harfbuzz harfbuzz-icu
 WANTLIB += hogweed hyphen ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn intl javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
 WANTLIB += ltdl lz4 lzma lzo2 m nettle notify nspr4 nss3 nssutil3
 WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs

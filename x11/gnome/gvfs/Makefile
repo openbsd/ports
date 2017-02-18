@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2016/12/16 08:46:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -37,7 +37,7 @@ WANTLIB-main += xcb-shm xml2 crypto lz4
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors
-WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn
+WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn2
 WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
 WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
 WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf

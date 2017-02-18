@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2017/01/11 13:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -27,7 +27,7 @@ WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
 WANTLIB += X11-xcb Xxf86vm drm epoxy estdc++ glapi
 WANTLIB += javascriptcoregtk-4.0 notify webkit2gtk-4.0 xcb-dri2
 WANTLIB += xcb-xfixes xcb-glx hyphen intl iconv
-WANTLIB += gmp gnutls hogweed idn nettle p11-kit tasn1
+WANTLIB += gmp gnutls hogweed idn2 nettle p11-kit tasn1
 
 MODULES=		devel/dconf \
 			x11/gnome

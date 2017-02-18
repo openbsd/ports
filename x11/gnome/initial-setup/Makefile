@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/12/17 15:00:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
@@ -20,7 +20,7 @@ WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gweather-3 harfbuzz harfbuzz-icu hogweed hyphen ibus-1.0
-WANTLIB += iconv icudata icui18n icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += jpeg json-glib-1.0 lzma m nettle notify orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread-stubs pwquality

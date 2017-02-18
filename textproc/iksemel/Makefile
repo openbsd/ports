@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
@@ -15,7 +15,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed idn nettle p11-kit pthread tasn1 z
+WANTLIB += c ffi gmp gnutls hogweed idn2 nettle p11-kit pthread tasn1 z
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=iksemel/}
 

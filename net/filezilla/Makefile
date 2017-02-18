@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2017/02/18 17:32:38 ajacoutot Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
@@ -8,7 +8,7 @@ V=		3.8.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	4
+REVISION=	5
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -20,19 +20,16 @@ HOMEPAGE=	http://www.filezilla-project.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++ tasn1 z hogweed nettle
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += idn gnutls>=13 dbus-1 wx_gtk2_aui wx_base_xml wx_gtk2_adv
-WANTLIB += wx_gtk2_xrc wx_base_net wx_base wx_gtk2_core
-WANTLIB += sqlite3 ffi p11-kit
-WANTLIB += gmp harfbuzz
-WANTLIB += ICE SDL SM Xxf86vm graphite2 jpeg mspack sndio tiff
-WANTLIB += usbhid wx_gtk2_html
+WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
+WANTLIB += dbus-1 expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed
+WANTLIB += idn2 jpeg m mspack nettle p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio sqlite3 stdc++ tasn1 tiff unistring usbhid wx_base
+WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
+WANTLIB += wx_gtk2_html wx_gtk2_xrc xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		gcc4
@@ -41,13 +38,13 @@ MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
 LIB_DEPENDS=	databases/sqlite3 \
-		devel/libidn \
 		devel/harfbuzz \
 		security/gnutls \
 		x11/dbus \
 		x11/wxWidgets>=2.8.6
 
 BUILD_DEPENDS=	devel/cppunit \
+		devel/libidn \
 		devel/xdg-utils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \

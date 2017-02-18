@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/11/07 10:44:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -16,7 +16,7 @@ WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
 WANTLIB += colord-gtk colordprivate dbus-1 epoxy exif exiv2 expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn intl jpeg
+WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 ltdl m nettle ogg p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ tasn1 tiff vorbis vorbisfile vte-2.91 xcb xcb-render

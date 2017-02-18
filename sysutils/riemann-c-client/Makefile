@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/30 07:44:29 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT =		c client library for the Riemann monitoring system
 
@@ -17,7 +17,7 @@ HOMEPAGE =		https://github.com/algernon/riemann-c-client
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c gmp gnutls ffi hogweed intl iconv idn json-c \
+WANTLIB =		c gmp gnutls ffi hogweed intl iconv idn2 json-c \
 			nettle protobuf-c p11-kit pthread tasn1 z
 
 BUILD_DEPENDS =		devel/libtool \

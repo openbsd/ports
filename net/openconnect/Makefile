@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/12/13 21:44:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -15,7 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed iconv idn intl lz4 lzma m
+WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl lz4 lzma m
 WANTLIB += nettle p11-kit pthread tasn1 xml2 z
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/15 23:22:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT =	reliable event logging protocol library
 
@@ -15,7 +15,7 @@ MAINTAINER =	Todd T. Fries <todd@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ffi gmp gnutls hogweed idn nettle p11-kit pthread
+WANTLIB += ffi gmp gnutls hogweed idn2 nettle p11-kit pthread
 WANTLIB += tasn1 z
 
 MASTER_SITES =		http://download.rsyslog.com/librelp/

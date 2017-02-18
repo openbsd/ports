@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2016/10/29 18:14:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
@@ -21,7 +21,7 @@ WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu hogweed hyphen iconv icudata
-WANTLIB += icui18n icuuc idn intl javascriptcoregtk-4.0 jpeg lzma
+WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.0 jpeg lzma
 WANTLIB += m nettle notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 stdc++ tasn1 webkit2gtk-4.0

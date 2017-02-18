@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2017/02/14 03:51:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2017/02/18 17:32:38 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
@@ -58,7 +58,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cups += ${WANTLIB} epoxy idn
+WANTLIB-cups += ${WANTLIB} epoxy idn2
 WANTLIB-cups += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype

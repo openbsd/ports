@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/11/08 14:38:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2017/02/18 17:32:37 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${HOMEPAGE}/sources/ \
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += avahi-client avahi-common c crypto curl dbus-1 ffi gmp gnutls
-WANTLIB += hogweed idn lzma m ncurses nettle nghttp2 p11-kit pthread
+WANTLIB += hogweed idn2 lzma m ncurses nettle nghttp2 p11-kit pthread
 WANTLIB += readline ssh2 ssl tasn1 util xml2 z
 
 MODULES=		devel/gettext \

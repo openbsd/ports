@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/04/26 10:28:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/02/18 17:32:37 ajacoutot Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -21,7 +21,7 @@ HOMEPAGE =		http://www.rsyslog.com/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main +=		${MODGETTEXT_WANTLIB}
-WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn
+WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed idn2
 WANTLIB-main +=		json-c nettle p11-kit pthread relp tasn1 uuid z
 
 WANTLIB-mysql +=	crypto m mysqlclient pthread ssl stdc++ z

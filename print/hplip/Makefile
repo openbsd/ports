@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2016/11/26 09:48:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2017/02/18 17:32:37 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -48,7 +48,7 @@ cWANTLIB += crypto m pthread
 WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
-WANTLIB-main += hpdiscovery hpipp idn iconv intl
+WANTLIB-main += hpdiscovery hpipp idn2 iconv intl
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -77,7 +77,7 @@ WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
 WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z hpdiscovery
-WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn iconv intl
+WANTLIB-hpaio += v4l1 v4l2 v4lconvert idn2 iconv intl
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -87,7 +87,7 @@ RUN_DEPENDS-hpaio=	# empty
 
 ### -hpcups
 WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
-WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1 idn
+WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
 

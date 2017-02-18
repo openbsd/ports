@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/11/03 16:20:40 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2017/02/18 17:32:38 ajacoutot Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
@@ -13,7 +13,7 @@ WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo exo-1 expat ffi
 WANTLIB += fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn m
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 m
 WANTLIB += nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += tasn1 xcb xcb-render xcb-shm xcb-util xfce4ui-1 xfce4util z iconv intl
