@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2017/02/13 10:23:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2017/02/18 17:31:59 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.5.9
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -18,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp hogweed iconv idn intl m nettle p11-kit pthread
+WANTLIB += c ffi gmp hogweed iconv idn2 intl m nettle p11-kit pthread
 WANTLIB += tasn1 unistring z
 
 MASTER_SITES=		ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/ \
@@ -36,7 +37,7 @@ WANTLIB += stdc++
 BUILD_DEPENDS=		devel/cmocka
 
 LIB_DEPENDS=		converters/libunistring \
-			devel/libidn \
+			devel/libidn2 \
 			security/libtasn1 \
 			security/libnettle \
 			security/p11-kit
@@ -53,9 +54,6 @@ CONFIGURE_ARGS=		--disable-guile \
 			--with-default-trust-store-file=/etc/ssl/cert.pem \
 			--with-unbound-root-key-file=/var/unbound/db/root.key
 
-# Don't pickup libidn2 just yet
-CONFIGURE_ARGS +=	--without-libidn2
-
 # OpenBSD's unbound does not provide libdane
 CONFIGURE_ARGS +=	--disable-libdane
 
@@ -68,6 +66,11 @@ CONFIGURE_ARGS +=	--enable-local-libopts
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX https://bugzilla.redhat.com/show_bug.cgi?id=1422256
+post-build:
+	sed -i 's/libidn2,//g' ${WRKBUILD}/lib/gnutls.pc
+	sed -i 's/-lunistring/-lunistring -lidn2/' ${WRKBUILD}/lib/gnutls.pc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
