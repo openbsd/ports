@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1328 2017/02/18 15:00:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1329 2017/02/18 15:15:07 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1986,11 +1986,6 @@ makesum:
 			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
 		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
-.endif
-
-list-distinfo:
-.if !empty(MAKESUMFILES)
-	@cat ${CHECKSUM_FILE} 2>/dev/null 
 .endif
 
 ################################################################
