@@ -1,4 +1,6 @@
-#	$OpenBSD: Makefile,v 1.14 2017/02/10 00:02:45 jsg Exp $
+#	$OpenBSD: Makefile,v 1.15 2017/02/18 12:10:50 jca Exp $
+
+BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
