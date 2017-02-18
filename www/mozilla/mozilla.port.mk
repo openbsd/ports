@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.99 2017/02/18 16:22:54 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.100 2017/02/18 22:32:25 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -131,7 +131,7 @@ FLAVORS += gtk3
 FLAVOR ?=
 
 .if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--enable-debug-symbols=yes \
+CONFIGURE_ARGS +=	--enable-debug-symbols=-g \
 			--disable-install-strip
 INSTALL_STRIP =
 .endif
