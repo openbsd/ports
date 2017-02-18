@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.1 2017/02/18 13:15:48 landry Exp $
+Let us compilation choice to be honored.
+--- src/bootstrap/lib.rs.orig	Thu Feb 16 12:26:21 2017
++++ src/bootstrap/lib.rs	Thu Feb 16 12:26:27 2017
+@@ -791,7 +791,6 @@ impl Build {
+         // gcc-rs because the build scripts will determine that for themselves.
+         let mut base = self.cc[target].0.args().iter()
+                            .map(|s| s.to_string_lossy().into_owned())
+-                           .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))
+                            .collect::<Vec<_>>();
+ 
+         // If we're compiling on OSX then we add a few unconditional flags

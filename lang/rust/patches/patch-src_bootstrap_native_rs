@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_bootstrap_native_rs,v 1.1 2017/02/15 12:52:35 landry Exp $
+$OpenBSD: patch-src_bootstrap_native_rs,v 1.2 2017/02/18 13:15:48 landry Exp $
 use default settings from devel/llvm to local embedded version
 --- src/bootstrap/native.rs.orig	Thu Feb  9 02:37:48 2017
-+++ src/bootstrap/native.rs	Fri Feb 10 13:35:47 2017
-@@ -85,10 +85,10 @@ pub fn llvm(build: &Build, target: &str) {
++++ src/bootstrap/native.rs	Thu Feb 16 12:22:02 2017
+@@ -85,16 +85,21 @@ pub fn llvm(build: &Build, target: &str) {
         .define("LLVM_INCLUDE_EXAMPLES", "OFF")
         .define("LLVM_INCLUDE_TESTS", "OFF")
         .define("LLVM_INCLUDE_DOCS", "OFF")
@@ -16,3 +16,14 @@ use default settings from devel/llvm to local embedded version
         .define("LLVM_PARALLEL_COMPILE_JOBS", build.jobs().to_string())
         .define("LLVM_TARGET_ARCH", target.split('-').next().unwrap())
         .define("LLVM_DEFAULT_TARGET_TRIPLE", target);
+ 
+     if target.starts_with("i686") {
+         cfg.define("LLVM_BUILD_32_BITS", "ON");
++    }
++
++    // propagate verbose flag to llvm build
++    if build.flags.verbose {
++        cfg.define("CMAKE_VERBOSE_MAKEFILE", "ON");
+     }
+ 
+     // http://llvm.org/docs/HowToCrossCompileLLVM.html

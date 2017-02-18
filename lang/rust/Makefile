@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/02/15 12:52:35 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2017/02/18 13:15:48 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,6 +8,7 @@ COMMENT-doc =		html documentation for rustc
 
 V =			1.15.1
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # rustc bootstrap version
 RBV-amd64 =		1.15.0-20170203
@@ -65,7 +66,6 @@ PKG_ARGS +=		-Damd64=0 -Di386=1
 
 MODULES +=		gcc4 \
 			lang/python
-BUILD_DEPENDS +=	devel/cmake
 MODPY_RUNDEP =		No
 
 # use embedded or ports version of LLVM
@@ -73,7 +73,8 @@ PORTS_LLVM ?=	No
 .if ${PORTS_LLVM:L:Myes}
 BUILD_DEPENDS +=	devel/llvm<4
 .else
-BUILD_DEPENDS +=	devel/ninja
+BUILD_DEPENDS +=	devel/cmake \
+			devel/ninja
 .endif
 
 # rustllvm need c++11
