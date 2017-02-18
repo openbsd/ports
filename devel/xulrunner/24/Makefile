@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/01/24 21:27:28 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/18 16:24:03 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 USE_WXNEEDED =		Yes
@@ -22,6 +22,8 @@ MODGCC4_ARCHS =		powerpc sparc64 alpha i386 amd64
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =
 MODCLANG_LANGS =	c c++
+# gecko24 doesnt use icu - don't depend uselessly on it
+MOZILLA_USE_BUNDLED_ICU=	Yes
 
 # to be able to link when building with clang on i386 or gcc on ppc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
