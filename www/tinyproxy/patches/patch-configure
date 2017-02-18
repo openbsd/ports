@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2013/04/13 13:08:17 sthen Exp $
---- configure.orig	Tue Apr  9 05:57:56 2013
-+++ configure	Tue Apr  9 05:57:59 2013
-@@ -6695,7 +6695,7 @@ done
+$OpenBSD: patch-configure,v 1.2 2017/02/18 17:21:51 jca Exp $
+--- configure.orig	Fri Jan  1 17:42:38 2016
++++ configure	Sun Feb  5 16:18:09 2017
+@@ -6987,7 +6987,7 @@ done
  
  
  

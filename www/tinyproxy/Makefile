@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/04/13 13:08:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2017/02/18 17:21:51 jca Exp $
 
 COMMENT =		lightweight HTTP/SSL proxy
 
-DISTNAME =		tinyproxy-1.8.3
-REVISION =		2
+V =			1.8.4
+DISTNAME =		tinyproxy-$V
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.banu.com/tinyproxy/
@@ -19,9 +19,7 @@ CONFIGURE_STYLE =	gnu
 
 WANTLIB =		c
 
-MASTER_SITES =		https://www.banu.com/pub/tinyproxy/1.8/
-
-TEST_TARGET =		check
+MASTER_SITES =		https://github.com/tinyproxy/tinyproxy/releases/download/$V/
 
 SYSCONFDIR =		${BASESYSCONFDIR}/tinyproxy
 
