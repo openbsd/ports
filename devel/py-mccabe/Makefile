@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/04 18:36:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/19 20:13:20 shadchin Exp $
 
 COMMENT =		McCabe complexity checker for Python
 
-MODPY_EGG_VERSION =	0.5.3
+MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		mccabe-${MODPY_EGG_VERSION}
 PKGNAME =		py-mccabe-${MODPY_EGG_VERSION}
 
