@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1585 2017/02/14 16:06:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.1586 2017/02/19 19:17:42 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1265,6 +1265,8 @@
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
+     SUBDIR += py-cairocffi
+     SUBDIR += py-cairocffi,python3
      SUBDIR += py-certifi
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi
