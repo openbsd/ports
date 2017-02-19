@@ -1,0 +1,3 @@
+Bleach is a whitelist-based HTML sanitizing library that escapes or
+strips markup and attributes. Bleach is intended for sanitizing text
+from untrusted sources.
