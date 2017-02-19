@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/19 09:14:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/19 14:07:47 ajacoutot Exp $
 
 COMMENT=		service discovery and configuration tool
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
-
-MODGO_ENV=		PATH="${PATH}"
 
 # go/src/github.com/hashicorp/consul/scripts/build.sh
 # go/src/github.com/hashicorp/consul/version/version.go
