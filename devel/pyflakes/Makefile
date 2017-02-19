@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/01/06 16:45:35 shadchin Exp $
+# $OpenBSD: Makefile,v 1.13 2017/02/19 20:14:33 shadchin Exp $
 
 COMMENT =		passive checker of Python programs
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		pyflakes-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
