@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/19 19:04:16 feinerer Exp $
 
 COMMENT=	portable tools library
 
@@ -6,7 +6,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS=	pt	7.0
 
@@ -65,6 +65,10 @@ pre-configure:
 	mkdir ${WRKSRC}/plugins/sound_sndio
 	cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 	${SUBST_CMD} ${WRKSRC}/make/unix.mak
+
+post-patch:
+	sed -i 's/__u32/u_int32_t/' \
+		${WRKSRC}/plugins/vidinput_v4l2/vidinput_v4l2.cxx
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/ptlib
