@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/30 16:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/19 09:14:31 ajacoutot Exp $
 
 COMMENT=		service discovery and configuration tool
 
-GH_TAGNAME=		v0.7.3
+GH_TAGNAME=		v0.7.5
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul
-REVISION=		0
 
 CATEGORIES=		sysutils net
 
@@ -19,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
+
+MODGO_ENV=		PATH="${PATH}"
 
 # go/src/github.com/hashicorp/consul/scripts/build.sh
 # go/src/github.com/hashicorp/consul/version/version.go
