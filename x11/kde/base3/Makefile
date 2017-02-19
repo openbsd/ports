@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2017/02/18 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2017/02/19 14:43:49 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -15,7 +15,7 @@ PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
 REVISION-main =		45
 REVISION-samba =	23
-REVISION-en_US =	3
+REVISION-en_US =	4
 REVISION-locale =	3
 
 MODKDE_VERSION =	3.5.8
@@ -58,6 +58,7 @@ LIB_DEPENDS-en_US =
 LIB_DEPENDS-locale =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/kde/libs3 \
+			devel/libidn2 \
 			devel/libusb-compat \
 			devel/glib2
 LIB_DEPENDS-samba =	${LIB_DEPENDS} \

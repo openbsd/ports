@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/12/22 19:54:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2017/02/19 14:43:49 ajacoutot Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		3.22.2
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,7 +18,7 @@ WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
 WANTLIB += glib-2.0 gmodule-2.0 gmp goa-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz hogweed ical
-WANTLIB += icalss icalvcal iconv icudata icui18n icuuc idn intl
+WANTLIB += icalss icalvcal iconv icudata icui18n icuuc idn2 intl
 WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 lzma m nettle nspr4
 WANTLIB += nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs

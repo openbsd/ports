@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2016/10/31 11:55:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2017/02/19 14:43:49 ajacoutot Exp $
 
 COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity graphics
 
@@ -26,7 +26,7 @@ WANTLIB += freetype gbm gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gobject-2.0
 WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += hogweed iconv icudata icui18n icuuc idn iec16022 intl
+WANTLIB += hogweed iconv icudata icui18n icuuc idn2 iec16022 intl
 WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 lzma m nettle nspr4
 WANTLIB += nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs

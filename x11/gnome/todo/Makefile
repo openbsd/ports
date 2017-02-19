@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/20 11:52:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/19 14:43:49 ajacoutot Exp $
 
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
 GNOME_VERSION=		3.22.1
+REVISION=		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +19,7 @@ WANTLIB += glapi glib-2.0 gmodule-2.0 gmp goa-1.0 gobject-2.0
 WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += hogweed ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn intl javascriptcoregtk-4.0 json-glib-1.0
+WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 json-glib-1.0
 WANTLIB += lzma m nettle nspr4 nss3 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/20 13:43:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/19 14:43:49 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.22.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -24,7 +24,7 @@ WANTLIB += glapi glib-2.0 gmodule-2.0 gmp gnome-desktop-3 goa-1.0
 WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error graphite2 grilo-0.3
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz hogweed ibus-1.0
-WANTLIB += iconv icudata icuuc idn intl javascriptcoregtk-4.0
+WANTLIB += iconv icudata icuuc idn2 intl javascriptcoregtk-4.0
 WANTLIB += json-glib-1.0 kvm lber-2.4 lcms2 ltdl lzma m
 WANTLIB += nettle ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
