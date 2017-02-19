@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/19 16:11:52 fcambus Exp $
 
 COMMENT =	fast compression/decompression library
 
-V =		1.1.3
+V =		1.1.4
 DISTNAME =	snappy-${V}
-REVISION =	0
 
-SHARED_LIBS =	snappy	0.0	# 4.0
+SHARED_LIBS =	snappy	0.0	# 4.1
 
 CATEGORIES =	archivers
 
