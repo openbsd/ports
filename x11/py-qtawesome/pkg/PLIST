@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/19 19:37:54 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/qtawesome/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}iconic_font.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtawesome/_version.py
+lib/python${MODPY_VERSION}/site-packages/qtawesome/animation.py
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome-webfont-charmap.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome-webfont.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/iconic_font.py
