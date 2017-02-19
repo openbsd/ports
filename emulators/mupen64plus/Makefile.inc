@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.12 2016/03/16 20:02:11 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2017/02/19 06:16:25 bentley Exp $
 
-ONLY_FOR_ARCHS ?=	amd64 i386
+ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
 VERSION ?= 		2.5
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
 PKGNAME ?= 		mupen64plus-${MUPEN64PLUS_MOD}-${VERSION}

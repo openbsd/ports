@@ -1,0 +1,11 @@
+$OpenBSD: patch-projects_unix_Makefile,v 1.1 2017/02/19 06:16:25 bentley Exp $
+--- projects/unix/Makefile.orig	Sat Feb 18 21:23:21 2017
++++ projects/unix/Makefile	Sat Feb 18 21:23:29 2017
+@@ -98,6 +98,7 @@ ifneq ("$(filter ppc macppc socppc powerpc,$(HOST_CPU)
+   BIG_ENDIAN := 1
+   PIC ?= 1
+   NO_ASM := 1
++  NO_SSE := 1
+   $(warning Architecture "$(HOST_CPU)" not officially supported.')
+ endif
+ ifneq ("$(filter ppc64 powerpc64,$(HOST_CPU))","")

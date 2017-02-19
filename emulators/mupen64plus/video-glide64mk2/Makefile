@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/11 23:41:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/19 06:16:25 bentley Exp $
 
 COMMENT =		n64 emulator video plugin
 REVISION =		3
@@ -7,8 +7,8 @@ REVISION =		3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		gcc4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		i386 amd64
+MODGCC4_LANGS =		c++
+MODGCC4_ARCHS =		*
 
 WANTLIB =		GL SDL2 boost_filesystem boost_system c m png pthread z
 LIB_DEPENDS =		devel/boost devel/sdl2 graphics/png
