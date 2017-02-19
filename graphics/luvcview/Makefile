@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/19 18:49:01 feinerer Exp $
 
 COMMENT=		V4L compatible video application
 
 DISTNAME=		luvcview-20070512
-REVISION=		5
+REVISION=		6
 CATEGORIES=		graphics x11
 
 # GPLv2+
@@ -19,6 +19,9 @@ MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS+="-I${X11BASE}/include -I${LOCALBASE}/include"
 
 NO_TEST=	Yes
+
+post-patch:
+	sed -i 's/__u32/u_int32_t/g' ${WRKSRC}/v4l2uvc.[ch]
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/luvcview ${PREFIX}/bin
