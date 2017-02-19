@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/02/19 19:04:16 feinerer Exp $
+# $OpenBSD: Makefile,v 1.38 2017/02/19 19:26:39 ajacoutot Exp $
 
 COMMENT=	portable tools library
 
@@ -65,8 +65,6 @@ pre-configure:
 	mkdir ${WRKSRC}/plugins/sound_sndio
 	cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 	${SUBST_CMD} ${WRKSRC}/make/unix.mak
-
-post-patch:
 	sed -i 's/__u32/u_int32_t/' \
 		${WRKSRC}/plugins/vidinput_v4l2/vidinput_v4l2.cxx
 
