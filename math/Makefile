@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2017/02/12 21:48:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.134 2017/02/19 19:05:18 shadchin Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -103,6 +103,8 @@
      SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-gnuplot
+     SUBDIR += py-mpmath
+     SUBDIR += py-mpmath,python3
      SUBDIR += py-numpy
      SUBDIR += py-numpy,python3
      SUBDIR += py-probstat
