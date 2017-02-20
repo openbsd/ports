@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.120 2017/02/17 10:01:28 phessler Exp $
+# $OpenBSD: Makefile.inc,v 1.121 2017/02/20 11:04:27 phessler Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -111,7 +111,6 @@ CONFIGURE_ARGS +=	--srcdir=${WRKSRC} \
 			--with-fpectl \
 			--with-threads \
 			--enable-ipv6 \
-			--with-cxx_main \
 			--with-system-expat \
 			--with-system-ffi
 
