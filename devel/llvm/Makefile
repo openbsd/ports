@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2017/02/16 15:07:16 jca Exp $
+# $OpenBSD: Makefile,v 1.134 2017/02/20 07:04:00 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -16,7 +16,7 @@ DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	0
+REVISION-main =	1
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX}
 MASTER_SITES =	http://comstyle.com/source/

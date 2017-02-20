@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.20 2017/02/10 09:37:43 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.21 2017/02/20 07:04:00 ajacoutot Exp $
 
-- Enable __float128 support on X86
+- Enable support for __float128 in Clang on OpenBSD/X86
 - Set ABI for ARM
 - [OpenBSD] set OpenBSD defines for aarch64
 
---- tools/clang/lib/Basic/Targets.cpp.orig	Tue Jan 10 21:16:47 2017
-+++ tools/clang/lib/Basic/Targets.cpp	Tue Jan 10 22:19:10 2017
+--- tools/clang/lib/Basic/Targets.cpp.orig	Wed Feb  8 20:35:17 2017
++++ tools/clang/lib/Basic/Targets.cpp	Sun Feb 19 17:36:20 2017
 @@ -545,6 +545,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
      Builder.defineMacro("__ELF__");
      if (Opts.POSIXThreads)
@@ -15,19 +15,22 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.20 2017/02/10 09:37:43 aja
    }
  public:
    OpenBSDTargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
-@@ -553,8 +555,11 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+@@ -552,11 +554,11 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+     this->TLSSupported = false;
  
        switch (Triple.getArch()) {
-         default:
-+          break;
+-        default:
          case llvm::Triple::x86:
          case llvm::Triple::x86_64:
+-        case llvm::Triple::arm:
+-        case llvm::Triple::sparc:
 +          this->HasFloat128 = true;
 +          // FALLTHROUGH
-         case llvm::Triple::arm:
-         case llvm::Triple::sparc:
++        default:
            this->MCountName = "__mcount";
-@@ -5144,6 +5149,8 @@ class ARMTargetInfo : public TargetInfo { (public)
+           break;
+         case llvm::Triple::mips64:
+@@ -5144,6 +5146,8 @@ class ARMTargetInfo : public TargetInfo { (public)
        default:
          if (Triple.getOS() == llvm::Triple::NetBSD)
            setABI("apcs-gnu");
@@ -36,7 +39,7 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.20 2017/02/10 09:37:43 aja
          else
            setABI("aapcs");
          break;
-@@ -8574,6 +8581,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
+@@ -8574,6 +8578,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
        return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
