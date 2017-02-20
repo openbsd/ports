@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/16 08:55:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/20 22:57:16 jca Exp $
 
 COMMENT =	high-performance event loop library
 
 DISTNAME =	libev-4.24
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -19,9 +20,5 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		m
 
 CONFIGURE_STYLE =	gnu
-
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=	-DEV_NO_SMP
-.endif
 
 .include <bsd.port.mk>
