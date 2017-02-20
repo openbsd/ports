@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1329 2017/02/18 15:15:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1330 2017/02/20 13:45:17 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1927,8 +1927,7 @@ ${_INSTALL_COOKIE${_S}}:
 	@${_MAKE} package
 .  endif
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
-		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
-		_internal-runwantlib-depends
+		exec ${MAKE} _internal-install-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
 	@if ${PKG_INFO} -e ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
@@ -1951,8 +1950,7 @@ ${_UPDATE_COOKIE${_S}}:
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
-		     ${MAKE} _internal-run-depends _internal-runlib-depends \
-			   _internal-runwantlib-depends; \
+		     ${MAKE} _internal-install-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
 		   ${SUDO} ${SETENV} ${_TERM_ ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
@@ -1961,8 +1959,7 @@ ${_UPDATE_COOKIE${_S}}:
 ${_FUPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
-		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
-		_internal-runwantlib-depends
+		exec ${MAKE} _internal-install-depends
 .  if empty(UPDATE_COOKIES_DIR)
 	@${_MAKE} ${WRKDIR}
 .  else
@@ -1994,13 +1991,13 @@ makesum:
 
 
 
-_internal-depends: _internal-lib-depends _internal-build-depends \
-	_internal-buildlib-depends \
-	_internal-run-depends _internal-buildwantlib-depends \
-	_internal-runwantlib-depends _internal-test-depends
+_internal-prepare: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+	${_DEPBUILDWANTLIB_COOKIE}
 
-_internal-prepare: _internal-build-depends _internal-buildlib-depends \
-	_internal-buildwantlib-depends
+_internal-install-depends: ${_DEPRUN_COOKIES} ${_DEPRUNLIB_COOKIES} \
+	${_DEPRUNWANTLIB_COOKIE}
+
+_internal-test-depends: ${_DEPTEST_COOKIES}
 
 # and the rules for the actual dependencies
 
@@ -2106,13 +2103,6 @@ show-prepare-results: prepare
 show-prepare-test-results: prepare test-depends
 	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPTEST_COOKIES} /dev/null
 
-_internal-build-depends: ${_DEPBUILD_COOKIES}
-_internal-run-depends: ${_DEPRUN_COOKIES}
-_internal-lib-depends: ${_DEPBUILDLIB_COOKIES}
-_internal-test-depends: ${_DEPTEST_COOKIES}
-_internal-buildlib-depends: ${_DEPBUILDLIB_COOKIES}
-_internal-runlib-depends: ${_DEPRUNLIB_COOKIES}
-
 # very quick rule, create this to force reevaluation of next rule when
 # the dependencies in the Makefile are changed
 .  if !empty(_DEPLIBSPECS_COOKIES)
@@ -2154,7 +2144,6 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	@${_MAKE_COOKIE} $@
 .  endif
 
-_internal-${_m:L}wantlib-depends: ${_DEP${_m}WANTLIB_COOKIE}
 .endfor
 
 _internal-fetch-all:
@@ -2368,9 +2357,8 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-	subupdate fetch fetch-all checksum test prepare \
-	depends lib-depends build-depends run-depends test-depends \
-	clean manpages-check plist update-plist \
+	subupdate fetch fetch-all checksum test prepare install-depends \
+	test-depends clean manpages-check plist update-plist \
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
@@ -3434,21 +3422,20 @@ _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
 	_build-dir-depends _hook-post-install \
 	_internal-all _internal-build _internal-build-depends \
-	_internal-buildlib-depends _internal-buildwantlib-depends \
-	_internal-checksum _internal-clean _internal-configure _internal-depends \
+	_internal-checksum _internal-clean _internal-configure \
 	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
-	_internal-fetch-all \
-	_internal-install-all _internal-lib-depends _internal-manpages-check \
+	_internal-fetch-all _internal-install-depends \
+	_internal-install-all _internal-manpages-check \
 	_internal-package _internal-package-only _internal-plist _internal-prepare \
-	_internal-test _internal-test-depends _internal-run-depends \
-	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
+	_internal-test _internal-test-depends \
+	_internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
-	_internal_install _internal_runlib-depends _license-check \
+	_internal_install _license-check \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
 	_recurse-test-dir-depends _recurse-run-dir-depends _refetch \
-	build-depends build-depends-list checkpatch clean clean-depends \
-	delete-package depends distpatch do-build do-configure do-distpatch \
+	build-depends-list checkpatch clean clean-depends \
+	delete-package distpatch do-build do-configure do-distpatch \
 	do-extract do-install do-test fetch-all \
 	install-all lib-depends lib-depends-list \
 	peek-ftp port-lib-depends-check post-build post-configure \
@@ -3456,7 +3443,7 @@ _all_phony = ${_recursive_depends_targets} \
 	post-patch post-test pre-build pre-configure pre-extract pre-fake \
 	pre-install pre-patch pre-test prepare \
 	print-build-depends print-run-depends rebuild \
-	test-depends test-depends-list run-depends run-depends-list \
+	test-depends test-depends-list run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
