@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/01/26 12:30:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2017/02/20 17:14:31 jca Exp $
 
 COMMENT =	network switch style shell
 
 DISTNAME =	nsh-1.0.20160605
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
