@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/12/12 03:43:30 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/02/20 07:03:42 jsg Exp $
 share/dtb/
 share/dtb/arm/
 share/dtb/arm/aks-cdu.dtb
@@ -32,6 +32,7 @@ share/dtb/arm/am437x-idk-evm.dtb
 share/dtb/arm/am437x-sbc-t43.dtb
 share/dtb/arm/am437x-sk-evm.dtb
 share/dtb/arm/am43x-epos-evm.dtb
+share/dtb/arm/am571x-idk.dtb
 share/dtb/arm/am572x-idk.dtb
 share/dtb/arm/am57xx-beagle-x15-revb1.dtb
 share/dtb/arm/am57xx-beagle-x15.dtb
@@ -65,6 +66,7 @@ share/dtb/arm/armada-375-db.dtb
 share/dtb/arm/armada-385-db-ap.dtb
 share/dtb/arm/armada-385-linksys-caiman.dtb
 share/dtb/arm/armada-385-linksys-cobra.dtb
+share/dtb/arm/armada-385-turris-omnia.dtb
 share/dtb/arm/armada-388-clearfog.dtb
 share/dtb/arm/armada-388-db.dtb
 share/dtb/arm/armada-388-gp.dtb
@@ -129,6 +131,7 @@ share/dtb/arm/bcm2836-rpi-2-b.dtb
 share/dtb/arm/bcm4708-asus-rt-ac56u.dtb
 share/dtb/arm/bcm4708-asus-rt-ac68u.dtb
 share/dtb/arm/bcm4708-buffalo-wzr-1750dhp.dtb
+share/dtb/arm/bcm4708-luxul-xap-1510.dtb
 share/dtb/arm/bcm4708-luxul-xwc-1000.dtb
 share/dtb/arm/bcm4708-netgear-r6250.dtb
 share/dtb/arm/bcm4708-netgear-r6300-v2.dtb
@@ -140,7 +143,11 @@ share/dtb/arm/bcm4709-asus-rt-ac87u.dtb
 share/dtb/arm/bcm4709-buffalo-wxr-1900dhp.dtb
 share/dtb/arm/bcm4709-netgear-r7000.dtb
 share/dtb/arm/bcm4709-netgear-r8000.dtb
+share/dtb/arm/bcm4709-tplink-archer-c9-v1.dtb
 share/dtb/arm/bcm47094-dlink-dir-885l.dtb
+share/dtb/arm/bcm47094-luxul-xwr-3100.dtb
+share/dtb/arm/bcm47094-netgear-r8500.dtb
+share/dtb/arm/bcm47189-tenda-ac9.dtb
 share/dtb/arm/bcm7445-bcm97445svmb.dtb
 share/dtb/arm/bcm911360_entphn.dtb
 share/dtb/arm/bcm911360k.dtb
@@ -162,6 +169,7 @@ share/dtb/arm/bcm988312hr.dtb
 share/dtb/arm/berlin2-sony-nsz-gs7.dtb
 share/dtb/arm/berlin2cd-google-chromecast.dtb
 share/dtb/arm/berlin2q-marvell-dmp.dtb
+share/dtb/arm/cloudengines-pogoplug-series-3.dtb
 share/dtb/arm/cx92755_equinox.dtb
 share/dtb/arm/da850-enbw-cmc.dtb
 share/dtb/arm/da850-evm.dtb
@@ -177,6 +185,7 @@ share/dtb/arm/dove-dove-db.dtb
 share/dtb/arm/dove-sbc-a510.dtb
 share/dtb/arm/dra62x-j5eco-evm.dtb
 share/dtb/arm/dra7-evm.dtb
+share/dtb/arm/dra71-evm.dtb
 share/dtb/arm/dra72-evm-revc.dtb
 share/dtb/arm/dra72-evm.dtb
 share/dtb/arm/ecx-2000.dtb
@@ -192,6 +201,7 @@ share/dtb/arm/exynos4210-origen.dtb
 share/dtb/arm/exynos4210-smdkv310.dtb
 share/dtb/arm/exynos4210-trats.dtb
 share/dtb/arm/exynos4210-universal_c210.dtb
+share/dtb/arm/exynos4412-itop-elite.dtb
 share/dtb/arm/exynos4412-odroidu3.dtb
 share/dtb/arm/exynos4412-odroidx.dtb
 share/dtb/arm/exynos4412-odroidx2.dtb
@@ -284,6 +294,7 @@ share/dtb/arm/imx6dl-aristainetos2_4.dtb
 share/dtb/arm/imx6dl-aristainetos2_7.dtb
 share/dtb/arm/imx6dl-aristainetos_4.dtb
 share/dtb/arm/imx6dl-aristainetos_7.dtb
+share/dtb/arm/imx6dl-colibri-eval-v3.dtb
 share/dtb/arm/imx6dl-cubox-i.dtb
 share/dtb/arm/imx6dl-dfi-fs700-m60.dtb
 share/dtb/arm/imx6dl-gw51xx.dtb
@@ -294,6 +305,7 @@ share/dtb/arm/imx6dl-gw551x.dtb
 share/dtb/arm/imx6dl-gw552x.dtb
 share/dtb/arm/imx6dl-gw553x.dtb
 share/dtb/arm/imx6dl-hummingboard.dtb
+share/dtb/arm/imx6dl-icore.dtb
 share/dtb/arm/imx6dl-nit6xlite.dtb
 share/dtb/arm/imx6dl-nitrogen6x.dtb
 share/dtb/arm/imx6dl-phytec-pbab01.dtb
@@ -336,8 +348,10 @@ share/dtb/arm/imx6q-gw553x.dtb
 share/dtb/arm/imx6q-h100.dtb
 share/dtb/arm/imx6q-hummingboard.dtb
 share/dtb/arm/imx6q-icore-rqs.dtb
+share/dtb/arm/imx6q-icore.dtb
 share/dtb/arm/imx6q-marsboard.dtb
 share/dtb/arm/imx6q-nitrogen6_max.dtb
+share/dtb/arm/imx6q-nitrogen6_som2.dtb
 share/dtb/arm/imx6q-nitrogen6x.dtb
 share/dtb/arm/imx6q-novena.dtb
 share/dtb/arm/imx6q-phytec-pbab01.dtb
@@ -369,12 +383,17 @@ share/dtb/arm/imx6sx-sabreauto.dtb
 share/dtb/arm/imx6sx-sdb-reva.dtb
 share/dtb/arm/imx6sx-sdb-sai.dtb
 share/dtb/arm/imx6sx-sdb.dtb
+share/dtb/arm/imx6sx-udoo-neo-basic.dtb
+share/dtb/arm/imx6sx-udoo-neo-extended.dtb
+share/dtb/arm/imx6sx-udoo-neo-full.dtb
 share/dtb/arm/imx6ul-14x14-evk.dtb
 share/dtb/arm/imx6ul-geam-kit.dtb
+share/dtb/arm/imx6ul-liteboard.dtb
 share/dtb/arm/imx6ul-pico-hobbit.dtb
 share/dtb/arm/imx6ul-tx6ul-0010.dtb
 share/dtb/arm/imx6ul-tx6ul-0011.dtb
 share/dtb/arm/imx6ul-tx6ul-mainboard.dtb
+share/dtb/arm/imx6ull-14x14-evk.dtb
 share/dtb/arm/imx7d-cl-som-imx7.dtb
 share/dtb/arm/imx7d-colibri-eval-v3.dtb
 share/dtb/arm/imx7d-nitrogen7.dtb
@@ -548,6 +567,7 @@ share/dtb/arm/omap3-sniper.dtb
 share/dtb/arm/omap3-thunder.dtb
 share/dtb/arm/omap3-zoom3.dtb
 share/dtb/arm/omap3430-sdp.dtb
+share/dtb/arm/omap4-droid4-xt894.dtb
 share/dtb/arm/omap4-duovero-parlor.dtb
 share/dtb/arm/omap4-kc1.dtb
 share/dtb/arm/omap4-panda-a4.dtb
@@ -564,6 +584,7 @@ share/dtb/arm/omap5-uevm.dtb
 share/dtb/arm/orion5x-kuroboxpro.dtb
 share/dtb/arm/orion5x-lacie-d2-network.dtb
 share/dtb/arm/orion5x-lacie-ethernet-disk-mini-v2.dtb
+share/dtb/arm/orion5x-linkstation-lschl.dtb
 share/dtb/arm/orion5x-linkstation-lsgl.dtb
 share/dtb/arm/orion5x-linkstation-lswtgl.dtb
 share/dtb/arm/orion5x-lswsgl.dtb
@@ -587,6 +608,7 @@ share/dtb/arm/qcom-apq8084-ifc6540.dtb
 share/dtb/arm/qcom-apq8084-mtp.dtb
 share/dtb/arm/qcom-ipq4019-ap.dk01.1-c1.dtb
 share/dtb/arm/qcom-ipq8064-ap148.dtb
+share/dtb/arm/qcom-mdm9615-wp8548-mangoh-green.dtb
 share/dtb/arm/qcom-msm8660-surf.dtb
 share/dtb/arm/qcom-msm8960-cdp.dtb
 share/dtb/arm/qcom-msm8974-lge-nexus5-hammerhead.dtb
@@ -595,6 +617,8 @@ share/dtb/arm/r7s72100-genmai.dtb
 share/dtb/arm/r7s72100-rskrza1.dtb
 share/dtb/arm/r8a73a4-ape6evm.dtb
 share/dtb/arm/r8a7740-armadillo800eva.dtb
+share/dtb/arm/r8a7743-sk-rzg1m.dtb
+share/dtb/arm/r8a7745-sk-rzg1e.dtb
 share/dtb/arm/r8a7778-bockw.dtb
 share/dtb/arm/r8a7779-marzen.dtb
 share/dtb/arm/r8a7790-lager.dtb
@@ -605,11 +629,14 @@ share/dtb/arm/r8a7792-wheat.dtb
 share/dtb/arm/r8a7793-gose.dtb
 share/dtb/arm/r8a7794-alt.dtb
 share/dtb/arm/r8a7794-silk.dtb
+share/dtb/arm/rk1108-evb.dtb
 share/dtb/arm/rk3036-evb.dtb
 share/dtb/arm/rk3036-kylin.dtb
 share/dtb/arm/rk3066a-bqcurie2.dtb
 share/dtb/arm/rk3066a-marsboard.dtb
+share/dtb/arm/rk3066a-mk808.dtb
 share/dtb/arm/rk3066a-rayeager.dtb
+share/dtb/arm/rk3188-px3-evb.dtb
 share/dtb/arm/rk3188-radxarock.dtb
 share/dtb/arm/rk3228-evb.dtb
 share/dtb/arm/rk3229-evb.dtb
@@ -644,6 +671,7 @@ share/dtb/arm/sama5d34ek.dtb
 share/dtb/arm/sama5d35ek.dtb
 share/dtb/arm/sama5d36ek.dtb
 share/dtb/arm/sh73a0-kzm9g.dtb
+share/dtb/arm/socfpga_arria10_socdk_qspi.dtb
 share/dtb/arm/socfpga_arria10_socdk_sdmmc.dtb
 share/dtb/arm/socfpga_arria5_socdk.dtb
 share/dtb/arm/socfpga_cyclone5_de0_sockit.dtb
@@ -651,6 +679,7 @@ share/dtb/arm/socfpga_cyclone5_mcvevk.dtb
 share/dtb/arm/socfpga_cyclone5_socdk.dtb
 share/dtb/arm/socfpga_cyclone5_sockit.dtb
 share/dtb/arm/socfpga_cyclone5_socrates.dtb
+share/dtb/arm/socfpga_cyclone5_sodia.dtb
 share/dtb/arm/socfpga_cyclone5_vining_fpga.dtb
 share/dtb/arm/socfpga_vt.dtb
 share/dtb/arm/spear1310-evb.dtb
@@ -673,13 +702,9 @@ share/dtb/arm/ste-u300.dtb
 share/dtb/arm/stih407-b2120.dtb
 share/dtb/arm/stih410-b2120.dtb
 share/dtb/arm/stih410-b2260.dtb
-share/dtb/arm/stih415-b2000.dtb
-share/dtb/arm/stih415-b2020.dtb
-share/dtb/arm/stih416-b2000.dtb
-share/dtb/arm/stih416-b2020.dtb
-share/dtb/arm/stih416-b2020e.dtb
 share/dtb/arm/stih418-b2199.dtb
 share/dtb/arm/stm32429i-eval.dtb
+share/dtb/arm/stm32746g-eval.dtb
 share/dtb/arm/stm32f429-disco.dtb
 share/dtb/arm/stm32f469-disco.dtb
 share/dtb/arm/sun4i-a10-a1000.dtb
@@ -718,6 +743,7 @@ share/dtb/arm/sun5i-a13-olinuxino-micro.dtb
 share/dtb/arm/sun5i-a13-olinuxino.dtb
 share/dtb/arm/sun5i-a13-q8-tablet.dtb
 share/dtb/arm/sun5i-a13-utoo-p66.dtb
+share/dtb/arm/sun5i-gr8-chip-pro.dtb
 share/dtb/arm/sun5i-gr8-evb.dtb
 share/dtb/arm/sun5i-r8-chip.dtb
 share/dtb/arm/sun6i-a31-app4-evb1.dtb
@@ -774,6 +800,7 @@ share/dtb/arm/sun8i-a33-sinlinx-sina33.dtb
 share/dtb/arm/sun8i-a83t-allwinner-h8homlet-v2.dtb
 share/dtb/arm/sun8i-a83t-cubietruck-plus.dtb
 share/dtb/arm/sun8i-h3-bananapi-m2-plus.dtb
+share/dtb/arm/sun8i-h3-nanopi-m1.dtb
 share/dtb/arm/sun8i-h3-nanopi-neo.dtb
 share/dtb/arm/sun8i-h3-orangepi-2.dtb
 share/dtb/arm/sun8i-h3-orangepi-lite.dtb
@@ -846,6 +873,7 @@ share/dtb/arm/wm8750-apc8750.dtb
 share/dtb/arm/wm8850-w70v2.dtb
 share/dtb/arm/xenvm-4.2.dtb
 share/dtb/arm/zx296702-ad1.dtb
+share/dtb/arm/zynq-microzed.dtb
 share/dtb/arm/zynq-parallella.dtb
 share/dtb/arm/zynq-zc702.dtb
 share/dtb/arm/zynq-zc706.dtb
@@ -854,6 +882,9 @@ share/dtb/arm/zynq-zybo.dtb
 share/dtb/arm64/
 share/dtb/arm64/al/
 share/dtb/arm64/al/alpine-v2-evp.dtb
+share/dtb/arm64/allwinner/
+share/dtb/arm64/allwinner/sun50i-a64-pine64-plus.dtb
+share/dtb/arm64/allwinner/sun50i-a64-pine64.dtb
 share/dtb/arm64/altera/
 share/dtb/arm64/altera/socfpga_stratix10_socdk.dtb
 share/dtb/arm64/amd/
@@ -862,12 +893,20 @@ share/dtb/arm64/amd/amd-overdrive-rev-b1.dtb
 share/dtb/arm64/amd/amd-overdrive.dtb
 share/dtb/arm64/amd/husky.dtb
 share/dtb/arm64/amlogic/
+share/dtb/arm64/amlogic/meson-gxbb-nexbox-a95x.dtb
 share/dtb/arm64/amlogic/meson-gxbb-odroidc2.dtb
 share/dtb/arm64/amlogic/meson-gxbb-p200.dtb
 share/dtb/arm64/amlogic/meson-gxbb-p201.dtb
 share/dtb/arm64/amlogic/meson-gxbb-vega-s95-meta.dtb
 share/dtb/arm64/amlogic/meson-gxbb-vega-s95-pro.dtb
 share/dtb/arm64/amlogic/meson-gxbb-vega-s95-telos.dtb
+share/dtb/arm64/amlogic/meson-gxl-nexbox-a95x.dtb
+share/dtb/arm64/amlogic/meson-gxl-s905d-p230.dtb
+share/dtb/arm64/amlogic/meson-gxl-s905d-p231.dtb
+share/dtb/arm64/amlogic/meson-gxl-s905x-p212.dtb
+share/dtb/arm64/amlogic/meson-gxm-nexbox-a1.dtb
+share/dtb/arm64/amlogic/meson-gxm-s912-q200.dtb
+share/dtb/arm64/amlogic/meson-gxm-s912-q201.dtb
 share/dtb/arm64/apm/
 share/dtb/arm64/apm/apm-merlin.dtb
 share/dtb/arm64/apm/apm-mustang.dtb
@@ -886,10 +925,14 @@ share/dtb/arm64/broadcom/vulcan-eval.dtb
 share/dtb/arm64/cavium/
 share/dtb/arm64/cavium/thunder-88xx.dtb
 share/dtb/arm64/exynos/
+share/dtb/arm64/exynos/exynos5433-tm2.dtb
+share/dtb/arm64/exynos/exynos5433-tm2e.dtb
 share/dtb/arm64/exynos/exynos7-espresso.dtb
 share/dtb/arm64/freescale/
 share/dtb/arm64/freescale/fsl-ls1043a-qds.dtb
 share/dtb/arm64/freescale/fsl-ls1043a-rdb.dtb
+share/dtb/arm64/freescale/fsl-ls1046a-qds.dtb
+share/dtb/arm64/freescale/fsl-ls1046a-rdb.dtb
 share/dtb/arm64/freescale/fsl-ls2080a-qds.dtb
 share/dtb/arm64/freescale/fsl-ls2080a-rdb.dtb
 share/dtb/arm64/freescale/fsl-ls2080a-simu.dtb
@@ -897,11 +940,13 @@ share/dtb/arm64/hisilicon/
 share/dtb/arm64/hisilicon/hi6220-hikey.dtb
 share/dtb/arm64/hisilicon/hip05-d02.dtb
 share/dtb/arm64/hisilicon/hip06-d03.dtb
+share/dtb/arm64/hisilicon/hip07-d05.dtb
 share/dtb/arm64/lg/
 share/dtb/arm64/lg/lg1312-ref.dtb
 share/dtb/arm64/lg/lg1313-ref.dtb
 share/dtb/arm64/marvell/
 share/dtb/arm64/marvell/armada-3720-db.dtb
+share/dtb/arm64/marvell/armada-3720-espressobin.dtb
 share/dtb/arm64/marvell/armada-7040-db.dtb
 share/dtb/arm64/marvell/armada-8040-db.dtb
 share/dtb/arm64/marvell/berlin4ct-dmp.dtb
@@ -912,6 +957,7 @@ share/dtb/arm64/mediatek/mt6795-evb.dtb
 share/dtb/arm64/mediatek/mt8173-evb.dtb
 share/dtb/arm64/nvidia/
 share/dtb/arm64/nvidia/tegra132-norrin.dtb
+share/dtb/arm64/nvidia/tegra186-p2771-0000.dtb
 share/dtb/arm64/nvidia/tegra210-p2371-0000.dtb
 share/dtb/arm64/nvidia/tegra210-p2371-2180.dtb
 share/dtb/arm64/nvidia/tegra210-p2571.dtb
@@ -920,15 +966,19 @@ share/dtb/arm64/qcom/
 share/dtb/arm64/qcom/apq8016-sbc.dtb
 share/dtb/arm64/qcom/apq8096-db820c.dtb
 share/dtb/arm64/qcom/msm8916-mtp.dtb
+share/dtb/arm64/qcom/msm8992-bullhead-rev-101.dtb
+share/dtb/arm64/qcom/msm8994-angler-rev-101.dtb
 share/dtb/arm64/qcom/msm8996-mtp.dtb
 share/dtb/arm64/renesas/
 share/dtb/arm64/renesas/r8a7795-h3ulcb.dtb
 share/dtb/arm64/renesas/r8a7795-salvator-x.dtb
+share/dtb/arm64/renesas/r8a7796-m3ulcb.dtb
 share/dtb/arm64/renesas/r8a7796-salvator-x.dtb
 share/dtb/arm64/rockchip/
 share/dtb/arm64/rockchip/rk3368-evb-act8846.dtb
 share/dtb/arm64/rockchip/rk3368-geekbox.dtb
 share/dtb/arm64/rockchip/rk3368-orion-r68-meta.dtb
+share/dtb/arm64/rockchip/rk3368-px5-evb.dtb
 share/dtb/arm64/rockchip/rk3368-r88.dtb
 share/dtb/arm64/rockchip/rk3399-evb.dtb
 share/dtb/arm64/socionext/
