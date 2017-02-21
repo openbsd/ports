@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1333 2017/02/21 13:46:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1334 2017/02/21 13:49:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1533,10 +1533,10 @@ _DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_TEST_DEPLIST} \
 
 # compute DEPBUILD_COOKIES and friends
 .for _DEP in BUILD RUN BUILDLIB RUNLIB TEST
-_DEP${_DEP}_COOKIES =
 .  for _i in ${_${_DEP}_DEPLIST}
 _DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}
 .  endfor
+_DEP${_DEP}_COOKIES ?=
 .endfor
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
