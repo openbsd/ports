@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2016/12/31 14:54:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.41 2017/02/21 09:12:57 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.34
+DISTNAME =		highlight-3.35
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
