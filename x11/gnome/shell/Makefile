@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2017/01/20 13:43:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2017/02/21 08:46:48 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.22.2
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gobject-2.0
 WANTLIB += gpg-error graphite2 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += hogweed ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn intl javascriptcoregtk-4.0 json-glib-1.0
+WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 json-glib-1.0
 WANTLIB += ltdl lzma m mozjs-24 mutter ncurses ncursesw nettle
 WANTLIB += nspr4 nss3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-agent-1
