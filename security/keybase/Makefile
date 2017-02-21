@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/19 14:39:35 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/21 15:36:21 abieber Exp $
 
 COMMENT =	client for keybase.io
 
-V =		1.0.17
+V =		1.0.18
 GH_ACCOUNT =	keybase
 GH_PROJECT =	client
 GH_TAGNAME =	v${V}
-REVISION =	0
 
 DISTNAME =	keybase-${V}
 
