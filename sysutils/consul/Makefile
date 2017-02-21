@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/19 14:07:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/21 16:49:55 sthen Exp $
+
+# XXX no i386 equivalent to mem_openbsd_amd64.go
+ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		service discovery and configuration tool
 
