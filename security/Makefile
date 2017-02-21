@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2017/02/21 09:48:43 rpointel Exp $
+# $OpenBSD: Makefile,v 1.445 2017/02/21 10:39:25 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -90,6 +90,7 @@
      SUBDIR += lastpass-cli
      SUBDIR += letsencrypt
      SUBDIR += libassuan
+     SUBDIR += libbde
      SUBDIR += libewf
      SUBDIR += libfprint
      SUBDIR += libgcrypt
