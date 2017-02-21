@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1330 2017/02/20 13:45:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1331 2017/02/21 13:15:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -60,9 +60,7 @@ _BSD_PORT_MK = Done
 FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 BULK ?= Auto
-RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?=
-_FETCH_MAKEFILE ?= /dev/stdout
 
 USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
@@ -172,8 +170,6 @@ CLEANDEPENDS_${PKGPATH} ?= ${CLEANDEPENDS}
 # Commands and command settings.
 PKG_DBDIR ?= /var/db/pkg
 
-FTP_KEEPALIVE ?= 0
-
 PROGRESS_METER ?= Yes
 .if ${PROGRESS_METER:L} == "yes"
 _PROGRESS = -m
@@ -181,7 +177,7 @@ _PROGRESS = -m
 _PROGRESS =
 .endif
 
-FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE} -C
+FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -C
 
 # switch for fetching each distfile: avoid warnings for missing
 # distinfo and wrong size when running makesum
@@ -1045,15 +1041,6 @@ MESSAGE ?= ${PKGDIR}/MESSAGE
 UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
 .  endif
 
-.  if exists(${PKGDIR}/INSTALL)
-ERRORS += "Fatal: INSTALL script support is obsolete"
-.  endif
-.  if exists(${PKGDIR}/DEINSTALL)
-ERRORS += "Fatal: DEINSTALL script support is obsolete"
-.  endif
-.  if exists(${PKGDIR}/REQ)
-ERRORS += "Fatal: REQ script support is obsolete"
-.  endif
 DESCR ?= ${PKGDIR}/DESCR
 
 .  for _v in PLIST _COMMENT MESSAGE UNMESSAGE DESCR
@@ -1081,15 +1068,6 @@ UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
 
 DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
-.    if exists(${PKGDIR}/INSTALL${_S})
-ERRORS += "Fatal: INSTALL script support is obsolete"
-.    endif
-.    if exists(${PKGDIR}/DEINSTALL${_S})
-ERRORS += "Fatal: DEINSTALL script support is obsolete"
-.    endif
-.    if exists(${PKGDIR}/REQ${_S})
-ERRORS += "Fatal: REQ script support is obsolete"
-.    endif
 .  endfor
 .endif
 
@@ -1442,8 +1420,6 @@ lib_depends_args ?= lib-depends-args
 
 
 
-PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
-
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment = { \
 		${ECHO_MSG} "===>  Verifying update for $$pkg in $$dir"; \
@@ -1561,10 +1537,6 @@ FAKE_SETUP = PATH='${PORTPATH}' TRUEPREFIX=${PREFIX} \
 	PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
 _CLEANDEPENDS ?= Yes
-
-.for _S in ${MULTI_PACKAGES}
-_FETCH_MAKEFILE_NAMES += ${PKGPATH}/${FULLPKGNAME${_S}}
-.endfor
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec, strip extra target
