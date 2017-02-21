@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/11/12 14:30:41 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/02/21 09:56:32 ajacoutot Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/boto/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}auth.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}auth_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}endpoints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/${MODPY_PYCACHE}https_connection.${MODPY_PYC_MAGIC_TAG}pyc
@@ -400,6 +401,7 @@ lib/python${MODPY_VERSION}/site-packages/boto/emr/emrobject.py
 lib/python${MODPY_VERSION}/site-packages/boto/emr/instance_group.py
 lib/python${MODPY_VERSION}/site-packages/boto/emr/step.py
 lib/python${MODPY_VERSION}/site-packages/boto/endpoints.json
+lib/python${MODPY_VERSION}/site-packages/boto/endpoints.py
 lib/python${MODPY_VERSION}/site-packages/boto/exception.py
 lib/python${MODPY_VERSION}/site-packages/boto/file/
 lib/python${MODPY_VERSION}/site-packages/boto/file/README
@@ -861,6 +863,14 @@ lib/python${MODPY_VERSION}/site-packages/boto/vendored/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto/vendored/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto/vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/vendored/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/boto/vendored/regions/regions.py
 lib/python${MODPY_VERSION}/site-packages/boto/vendored/six.py
 lib/python${MODPY_VERSION}/site-packages/boto/vpc/
 lib/python${MODPY_VERSION}/site-packages/boto/vpc/__init__.py
