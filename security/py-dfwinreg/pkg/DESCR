@@ -1,0 +1,4 @@
+dfWinReg, or Digital Forensics Windows Registry, provides read-only access to
+Windows Registry objects. The goal of dfWinReg is to provide a generic interface
+for accessing Windows Registry objects that resembles the Registry key hierarchy
+as seen on a live Windows system.
