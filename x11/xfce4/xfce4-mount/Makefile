@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/02/17 09:44:09 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2017/02/21 19:49:42 landry Exp $
 
 COMMENT=	Xfce4 mount device panel plugin
 
-XFCE_VERSION=	1.1.0
+XFCE_VERSION=	1.1.2
 XFCE_PLUGIN=	mount
 
 # GPLv2
