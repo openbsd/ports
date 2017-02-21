@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1334 2017/02/21 13:49:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1335 2017/02/21 13:53:40 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1208,6 +1208,18 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 PATCHFILES ?=
 SUPDISTFILES ?=
 
+# the following loop "parses" DISTFILES-style files
+# _PATH_x contains filenames with SUBDIR prepended when necessary
+# _LIST_x contains pure filenames
+#
+# _FULL_FETCH_LIST is used for creating all targets later on:
+# 	say if DISTFILES=filename{url}sufx:0 DIST_SUBDIR=foo/
+#	it will expand to  foo/filenamesufx filename MASTER_SITES0 urlsufx
+#
+# _FILES is used to de-duplicates names
+# the order matters: DISTFILES PATCHFILES SUPDISTFILES
+# - we never have the same names in DISTFILES and PATCHFILES
+# - SUPDISTFILES has to happen later
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
 .  if !empty($v)
@@ -1216,10 +1228,10 @@ _FILES=
 .        if empty(_FILES:M$f)
 _FILES += $f
 .          if empty(DIST_SUBDIR)
-_FULL_$v += $f $f $m $u
+_FULL_FETCH_LIST += $f $f $m $u
 _PATH_$v += $f
 .          else
-_FULL_$v += ${DIST_SUBDIR}/$f $f $m $u
+_FULL_FETCH_LIST += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
 .          endif
 _LIST_$v += $f
@@ -1227,11 +1239,11 @@ _LIST_$v += $f
 .      endfor
 .    endfor
 .  else
-_FULL_$v =
 _PATH_$v =
 _LIST_$v =
 .  endif
 .endfor
+_FULL_FETCHLIST ?=
 
 CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
 MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
@@ -2825,7 +2837,7 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}}
 
 # Separate target for each file fetch-all will retrieve
 
-.for p f m u in ${_FULL_DISTFILES} ${_FULL_PATCHFILES} ${_FULL_SUPDISTFILES}
+.for p f m u in ${_FULL_FETCH_LIST}
 ${DISTDIR}/$p:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    if !empty(MISSING_FILES)
