@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/21 12:24:36 rpointel Exp $
+@bin bin/vshadowdebug
+@bin bin/vshadowinfo
+@bin bin/vshadowmount
+include/libvshadow/
+include/libvshadow.h
+include/libvshadow/codepage.h
+include/libvshadow/definitions.h
+include/libvshadow/error.h
+include/libvshadow/extern.h
+include/libvshadow/features.h
+include/libvshadow/types.h
+lib/libvshadow.a
+lib/libvshadow.la
+@lib lib/libvshadow.so.${LIBvshadow_VERSION}
+lib/pkgconfig/libvshadow.pc
+lib/python${MODPY_VERSION}/site-packages/pyvshadow.a
+lib/python${MODPY_VERSION}/site-packages/pyvshadow.la
+lib/python${MODPY_VERSION}/site-packages/pyvshadow.so
+@man man/man1/vshadowinfo.1
+@man man/man1/vshadowmount.1
+@man man/man3/libvshadow.3
