@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/06 15:59:25 jeremy Exp $
-
-BROKEN-hppa =		OOM when building ext/ripper/ripper.c
-BROKEN-powerpc =	OOM when building ext/ripper/ripper.c
+# $OpenBSD: Makefile,v 1.2 2017/02/21 17:04:45 jca Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -75,6 +72,15 @@ TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 
 post-extract:
 	rm -rf ${WRKSRC}/ext/fiddle/libffi-* ${WRKSRC}/tool/downloader.rb
+
+# cc(1) uses too much ram to build ext/ripper/ripper.c
+# XXX remove arch if vmparam.h + login.conf give more than 1024M to pbuild
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa}
+CFLAGS_OVERRIDE =	-O1
+.endif
+pre-configure:
+	sed -i 's/%%CFLAGS_OVERRIDE%%/${CFLAGS_OVERRIDE}/g' \
+	    ${WRKSRC}/ext/ripper/depend
 
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
