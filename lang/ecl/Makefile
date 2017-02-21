@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2016/12/28 19:38:56 juanfra Exp $
+# $OpenBSD: Makefile,v 1.34 2017/02/21 09:08:22 jca Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
 BROKEN-mips64 =	ecl_min fails
-BROKEN-arm =	infinite loop while building
 
 V =		16.1.3
 DISTNAME =	ecl-$V
