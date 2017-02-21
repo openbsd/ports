@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2017/02/21 09:44:37 ajacoutot Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -6,7 +6,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.1
 DISTNAME=	abiword-${VERSION}
-REVISION=	6
+REVISION=	7
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER
@@ -20,17 +20,18 @@ HOMEPAGE=	http://www.abisource.com/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi avahi-common bz2
-WANTLIB += c cairo cairo-gobject croco-0.6 crypto curl dbus-1 enchant
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
-WANTLIB += goffice-0.10 gpg-error graphite2 gs gsf-1 gthread-2.0 gtk-3
-WANTLIB += harfbuzz hogweed idn jpeg ltdl lzma m mpfr nettle nghttp2
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs raptor2 rasqal rdf rsvg-2 spectre ssl
-WANTLIB += stdc++ tasn1 uuid wmf-0.2 wmflite-0.2 wv-1.2 xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt yajl z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 crypto
+WANTLIB += curl dbus-1 enchant epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
+WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
+WANTLIB += idn2 jpeg ltdl lzma m mpfr nettle nghttp2 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs raptor2 rasqal rdf rsvg-2 spectre ssl
+WANTLIB += stdc++ tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z
 
 MASTER_SITES=   http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
