@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.127 2017/01/22 02:53:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2017/02/21 11:45:48 feinerer Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
-REVISION=	8
+REVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -89,6 +89,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no
 
 NO_TEST=	Yes
+
+pre-configure:
+	sed -i 's/__u32/u_int32_t/' ${WRKSRC}/src/input/input_pvr.c
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm
