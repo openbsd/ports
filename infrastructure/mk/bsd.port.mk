@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1332 2017/02/21 13:31:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1333 2017/02/21 13:46:18 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2233,31 +2233,27 @@ _internal-checksum: _internal-fetch
 	fi
 	@cd ${DISTDIR}; OK=true; list=''; \
 	  for file in ${CHECKSUMFILES}; do \
-		set -- $$(grep -i "^${_CIPHER} ($$file)" ${CHECKSUM_FILE}) \
-		  && break || \
-		  ${ECHO_MSG} ">> No ${_CIPHER} checksum recorded for $$file."; \
-		case "$$4" in \
-		  "") \
-			${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			OK=false;; \
-		  *) \
+		if set -- $$(grep "^${_CIPHER:U} ($$file)" ${CHECKSUM_FILE}); \
+		then \
 			echo -n '>> '; \
 			if ! echo "$$@" | cksum -c; then \
-				echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-				list="$$list $$file $$cipher $$4"; \
+				list="$$list $$file ${_CIPHER} $$4"; \
 				OK=false; \
-			fi;; \
-		esac; \
+			fi; \
+		else  \
+			${ECHO_MSG} ">> No ${_CIPHER} recorded for $$file."; \
+			OK=false; \
+		fi; \
 	  done; \
 	  set --; \
 	  if ! $$OK; then \
 		if ${REFETCH}; then \
 		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
 		else \
-		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-		  echo "are up to date.  If you want to fetch a good copy of this"; \
-		  echo "file from the OpenBSD main archive, type"; \
-		  echo "\"make REFETCH=true [other args]\"."; \
+		  echo "Make sure the Makefile and ${CHECKSUM_FILE}"; \
+		  echo "are up to date.  If you want to fetch a good copy of this file"; \
+		  echo "from the OpenBSD main archive, type"; \
+		  echo "\tmake REFETCH=true [other args]"; \
 		  exit 1; \
 		fi; \
 	  fi
