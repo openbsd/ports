@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.433 2017/02/21 09:51:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.434 2017/02/21 12:26:23 rpointel Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -129,6 +129,7 @@
      SUBDIR += libvirt
      SUBDIR += libvirt-python
      SUBDIR += libvmdk
+     SUBDIR += libvshadow
      SUBDIR += lockfile
      SUBDIR += logfmon
      SUBDIR += login_duo
