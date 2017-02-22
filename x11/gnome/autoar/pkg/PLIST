@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/09 15:05:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/02/22 14:07:28 ajacoutot Exp $
 include/gnome-autoar-0/
 include/gnome-autoar-0/gnome-autoar/
 include/gnome-autoar-0/gnome-autoar/autoar-compressor.h
@@ -22,8 +22,6 @@ lib/pkgconfig/gnome-autoar-0.pc
 lib/pkgconfig/gnome-autoar-gtk-0.pc
 share/gir-1.0/GnomeAutoar-0.1.gir
 share/gir-1.0/GnomeAutoarGtk-0.1.gir
-share/glib-2.0/schemas/org.gnome.desktop.archives.enums.xml
-share/glib-2.0/schemas/org.gnome.desktop.archives.gschema.xml
 share/gtk-doc/html/gnome-autoar/
 share/gtk-doc/html/gnome-autoar/AutoarCompressor.html
 share/gtk-doc/html/gnome-autoar/AutoarExtractor.html
@@ -47,5 +45,5 @@ share/gtk-doc/html/gnome-autoar/right.png
 share/gtk-doc/html/gnome-autoar/style.css
 share/gtk-doc/html/gnome-autoar/up-insensitive.png
 share/gtk-doc/html/gnome-autoar/up.png
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+share/vala/vapi/gnome-autoar-0.vapi
+share/vala/vapi/gnome-autoar-gtk-0.vapi

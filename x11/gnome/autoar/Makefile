@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/09 15:05:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/22 14:07:28 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.1.1
+GNOME_VERSION=		0.2.0
 
 SHARED_LIBS +=  gnome-autoar-0            0.0 # 0.0
 SHARED_LIBS +=  gnome-autoar-gtk-0        0.0 # 0.0
@@ -22,10 +22,9 @@ WANTLIB += gtk-3 harfbuzz iconv intl lz4 lzma lzo2 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=		devel/dconf \
-			x11/gnome
+MODULES=		x11/gnome
 
-MODGNOME_TOOLS= 	gobject-introspection
+MODGNOME_TOOLS= 	gobject-introspection vala
 
 LIB_DEPENDS=		archivers/libarchive \
 			x11/gtk+3
