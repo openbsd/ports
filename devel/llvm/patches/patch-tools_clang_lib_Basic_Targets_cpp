@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.21 2017/02/20 07:04:00 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.22 2017/02/22 09:06:11 ajacoutot Exp $
 
 - Enable support for __float128 in Clang on OpenBSD/X86
 - Set ABI for ARM
-- [OpenBSD] set OpenBSD defines for aarch64
+- Hook up OpenBSD AArch64 support
 
 --- tools/clang/lib/Basic/Targets.cpp.orig	Wed Feb  8 20:35:17 2017
-+++ tools/clang/lib/Basic/Targets.cpp	Sun Feb 19 17:36:20 2017
++++ tools/clang/lib/Basic/Targets.cpp	Tue Feb 21 18:34:04 2017
 @@ -545,6 +545,8 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
      Builder.defineMacro("__ELF__");
      if (Opts.POSIXThreads)
@@ -39,7 +39,17 @@ $OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.21 2017/02/20 07:04:00 aja
          else
            setABI("aapcs");
          break;
-@@ -8574,6 +8578,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
+@@ -5925,7 +5929,8 @@ class AArch64TargetInfo : public TargetInfo {
+ public:
+   AArch64TargetInfo(const llvm::Triple &Triple, const TargetOptions &Opts)
+       : TargetInfo(Triple), ABI("aapcs") {
+-    if (getTriple().getOS() == llvm::Triple::NetBSD) {
++    if (getTriple().getOS() == llvm::Triple::NetBSD ||
++        getTriple().getOS() == llvm::Triple::OpenBSD) {
+       WCharType = SignedInt;
+ 
+       // NetBSD apparently prefers consistency across ARM targets to consistency
+@@ -8574,6 +8579,8 @@ static TargetInfo *AllocateTarget(const llvm::Triple &
        return new LinuxTargetInfo<AArch64leTargetInfo>(Triple, Opts);
      case llvm::Triple::NetBSD:
        return new NetBSDTargetInfo<AArch64leTargetInfo>(Triple, Opts);
