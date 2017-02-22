@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.143 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2017/02/22 14:03:57 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.22.1
-REVISION=		1
+REVISION=		2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -25,12 +25,12 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-common c cairo cairo-gobject dbus-1 expat ffi
 WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma lzo2 m openjp2
+WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma m openjp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
-WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z
-WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl lz4
-WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn2 crypto
+WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z unistring
+WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl
+WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn2
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -80,7 +80,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			print/texlive/base \
 			x11/gnome/nautilus
 WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
-WANTLIB += nautilus-extension gnome-autoar-0
+WANTLIB += nautilus-extension gnome-autoar-0 crypto lzo2 lz4
 .endif
 
 post-install:
