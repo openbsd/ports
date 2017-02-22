@@ -1,0 +1,18 @@
+$OpenBSD: patch-third_party_libyuv_include_libyuv_row_h,v 1.1 2017/02/22 14:26:22 jca Exp $
+
+Avoid broken vector support in old gcc versions.
+
+  https://bugs.chromium.org/p/libyuv/issues/detail?id=616
+
+--- third_party/libyuv/include/libyuv/row.h.orig	Wed Feb 22 02:53:23 2017
++++ third_party/libyuv/include/libyuv/row.h	Wed Feb 22 03:22:43 2017
+@@ -390,7 +390,8 @@ typedef __declspec(align(32)) int8 lvec8[32];
+ typedef __declspec(align(32)) uint16 ulvec16[16];
+ typedef __declspec(align(32)) uint32 ulvec32[8];
+ typedef __declspec(align(32)) uint8 ulvec8[32];
+-#elif !defined(__pnacl__) && (defined(__GNUC__) || defined(__clang__))
++#elif !defined(__pnacl__) && (defined(__clang__) || \
++    (defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 7)))
+ // Caveat GCC 4.2 to 4.7 have a known issue using vectors with const.
+ #if defined(CLANG_HAS_AVX2) || defined(GCC_HAS_AVX2)
+ #define SIMD_ALIGNED(var) var __attribute__((aligned(32)))
