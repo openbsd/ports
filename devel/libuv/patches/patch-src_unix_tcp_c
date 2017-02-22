@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_unix_tcp_c,v 1.1 2017/02/22 14:28:30 jca Exp $
+
+- we don't support setting IPV6_V6ONLY to anything but 1
+  (no support for IPv4-mapped IPv6 addresses)
+
+--- src/unix/tcp.c.orig	Tue Feb 14 07:40:30 2017
++++ src/unix/tcp.c	Tue Feb 14 07:40:32 2017
+@@ -107,23 +107,6 @@ int uv__tcp_bind(uv_tcp_t* tcp,
+   if (setsockopt(tcp->io_watcher.fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on)))
+     return -errno;
+ 
+-#ifdef IPV6_V6ONLY
+-  if (addr->sa_family == AF_INET6) {
+-    on = (flags & UV_TCP_IPV6ONLY) != 0;
+-    if (setsockopt(tcp->io_watcher.fd,
+-                   IPPROTO_IPV6,
+-                   IPV6_V6ONLY,
+-                   &on,
+-                   sizeof on) == -1) {
+-#if defined(__MVS__)
+-      if (errno == EOPNOTSUPP)
+-        return -EINVAL;
+-#endif
+-      return -errno;
+-    }
+-  }
+-#endif
+-
+   errno = 0;
+   if (bind(tcp->io_watcher.fd, addr, addrlen) && errno != EADDRINUSE) {
+     if (errno == EAFNOSUPPORT)

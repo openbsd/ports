@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_unix_udp_c,v 1.1 2017/02/22 14:28:30 jca Exp $
+
+- we don't support setting IPV6_V6ONLY to anything but 1
+  (no support for IPv4-mapped IPv6 addresses)
+- setsockopt(IP_MULTICAST_*) uses a char, setsockopt(IPV6_MULTICAST_*) uses u_int
+
+--- src/unix/udp.c.orig	Wed Feb  1 01:38:56 2017
++++ src/unix/udp.c	Tue Feb 14 07:58:03 2017
+@@ -310,19 +310,6 @@ int uv__udp_bind(uv_udp_t* handle,
+       goto out;
+   }
+ 
+-  if (flags & UV_UDP_IPV6ONLY) {
+-#ifdef IPV6_V6ONLY
+-    yes = 1;
+-    if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, &yes, sizeof yes) == -1) {
+-      err = -errno;
+-      goto out;
+-    }
+-#else
+-    err = -ENOTSUP;
+-    goto out;
+-#endif
+-  }
+-
+   if (bind(fd, addr, addrlen)) {
+     err = -errno;
+     if (errno == EAFNOSUPPORT)
+@@ -750,7 +737,7 @@ int uv_udp_set_multicast_ttl(uv_udp_t* handle, int ttl
+  * IP_MULTICAST_TTL, so hardcode the size of the option in the IPv6 case,
+  * and use the general uv__setsockopt_maybe_char call otherwise.
+  */
+-#if defined(__sun) || defined(_AIX) || defined(__MVS__)
++#if defined(__sun) || defined(_AIX) || defined(__MVS__) || defined(__OpenBSD__)
+   if (handle->flags & UV_HANDLE_IPV6)
+     return uv__setsockopt(handle,
+                           IP_MULTICAST_TTL,
+@@ -773,7 +760,7 @@ int uv_udp_set_multicast_loop(uv_udp_t* handle, int on
+  * IP_MULTICAST_LOOP, so hardcode the size of the option in the IPv6 case,
+  * and use the general uv__setsockopt_maybe_char call otherwise.
+  */
+-#if defined(__sun) || defined(_AIX) || defined(__MVS__)
++#if defined(__sun) || defined(_AIX) || defined(__MVS__) || defined(__OpenBSD__)
+   if (handle->flags & UV_HANDLE_IPV6)
+     return uv__setsockopt(handle,
+                           IP_MULTICAST_LOOP,

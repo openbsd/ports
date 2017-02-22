@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_unix_openbsd_c,v 1.1.1.1 2017/02/14 09:37:16 edd Exp $
+$OpenBSD: patch-src_unix_openbsd_c,v 1.2 2017/02/22 14:28:30 jca Exp $
 
-https://patch-diff.githubusercontent.com/raw/libuv/libuv/pull/1218.diff
+- fix insecure format string idiom
+  https://patch-diff.githubusercontent.com/raw/libuv/libuv/pull/1218.diff
+- add IPv6 support
 
---- src/unix/openbsd.c.orig	Wed Feb  1 00:38:56 2017
-+++ src/unix/openbsd.c	Thu Feb  9 21:49:54 2017
+--- src/unix/openbsd.c.orig	Wed Feb  1 01:38:56 2017
++++ src/unix/openbsd.c	Tue Feb 14 01:51:19 2017
 @@ -163,7 +163,7 @@ char** uv_setup_args(int argc, char** argv) {
  int uv_set_process_title(const char* title) {
    uv__free(process_title);
@@ -13,3 +15,23 @@ https://patch-diff.githubusercontent.com/raw/libuv/libuv/pull/1218.diff
    return 0;
  }
  
+@@ -315,7 +315,8 @@ int uv_interface_addresses(uv_interface_address_t** ad
+   for (ent = addrs; ent != NULL; ent = ent->ifa_next) {
+     if (!((ent->ifa_flags & IFF_UP) && (ent->ifa_flags & IFF_RUNNING)) ||
+         (ent->ifa_addr == NULL) ||
+-        (ent->ifa_addr->sa_family != PF_INET)) {
++        (ent->ifa_addr->sa_family != PF_INET &&
++         ent->ifa_addr->sa_family != PF_INET6)) {
+       continue;
+     }
+     (*count)++;
+@@ -337,7 +338,8 @@ int uv_interface_addresses(uv_interface_address_t** ad
+     if (ent->ifa_addr == NULL)
+       continue;
+ 
+-    if (ent->ifa_addr->sa_family != PF_INET)
++    if (ent->ifa_addr->sa_family != PF_INET &&
++        ent->ifa_addr->sa_family != PF_INET6)
+       continue;
+ 
+     address->name = uv__strdup(ent->ifa_name);
