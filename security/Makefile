@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.446 2017/02/22 19:17:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.447 2017/02/23 13:53:55 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -233,6 +233,7 @@
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
      SUBDIR += pinentry,
+     SUBDIR += plaso
      SUBDIR += polarssl
      SUBDIR += portscanner
      SUBDIR += portsentry
