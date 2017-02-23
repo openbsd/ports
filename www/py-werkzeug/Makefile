@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.27 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2017/02/23 13:03:01 danj Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.11.11
+MODPY_EGG_VERSION =	0.11.15
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		http://werkzeug.pocoo.org/
+
+MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
