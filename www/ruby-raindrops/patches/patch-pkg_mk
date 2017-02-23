@@ -1,9 +1,9 @@
-$OpenBSD: patch-pkg_mk,v 1.1.1.1 2011/07/06 01:14:09 jeremy Exp $
---- pkg.mk.orig	Mon Jun 27 10:49:35 2011
-+++ pkg.mk	Mon Jun 27 10:49:43 2011
-@@ -146,7 +146,7 @@ all:: test
- test_units := $(wildcard test/test_*.rb)
- test: test-unit
+$OpenBSD: patch-pkg_mk,v 1.2 2017/02/23 17:47:57 jca Exp $
+--- pkg.mk.orig	Sun Jul 31 17:20:21 2016
++++ pkg.mk	Wed Feb 22 13:15:38 2017
+@@ -118,7 +118,7 @@ test_units := $(wildcard test/test_*.rb)
+ test: check
+ check: test-unit
  test-unit: $(test_units)
 -$(test_units): build
 +$(test_units): 
