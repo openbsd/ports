@@ -1,0 +1,3 @@
+Hachoir is a Python library used to represent of a binary file as a tree of
+Python objects. Each object has a type, a value, an address, etc. The goal is to
+be able to know the meaning of each bit in a file.
