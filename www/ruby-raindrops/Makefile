@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/11/04 21:46:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/02/23 17:47:16 jca Exp $
 
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
@@ -17,7 +17,8 @@ CONFIGURE_STYLE =	ruby gem ext
 # XXX only actually required for gcc2/3 arch
 BUILD_DEPENDS +=	libatomic_ops-*:devel/boehm-gc,-atomic
 
-TEST_DEPENDS =	devel/gmake \
+TEST_DEPENDS =		devel/gmake \
+			www/ruby-rack,${MODRUBY_FLAVOR} \
 			www/ruby-unicorn,${MODRUBY_FLAVOR} \
 			${FULLPKGNAME}:${BUILD_PKGPATH}
 
