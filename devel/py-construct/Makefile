@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/23 13:11:20 rpointel Exp $
 
 COMMENT =	powerful declarative parser/builder for binary data
 
-MODPY_EGG_VERSION = 2.8.5
+# !!! do not update blindly: security/plaso needs a specific version
+EPOCH =		0
+MODPY_EGG_VERSION = 2.5.3
 DISTNAME =	construct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
