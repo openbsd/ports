@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.584 2017/02/19 19:41:34 shadchin Exp $
+# $OpenBSD: Makefile,v 1.585 2017/02/23 17:32:52 feinerer Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -145,6 +145,7 @@
      SUBDIR += keynav
      SUBDIR += klavaro
      SUBDIR += lablgtk2
+     SUBDIR += lemonbar
      SUBDIR += libdnd
      SUBDIR += libfm
      SUBDIR += libgdiplus
