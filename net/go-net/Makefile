@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/21 14:24:47 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/23 16:02:24 jsing Exp $
 
 COMMENT =	Go supplementary network libraries
-DISTNAME =	go-net-20160808
+DISTNAME =	go-net-20170201
 GH_ACCOUNT =	golang
 GH_PROJECT =	net
-GH_COMMIT =	198e27a07214495d89b9d748ab0877fa37c7c4ac
+GH_COMMIT =	f2499483f923065a842d38eb4c7f1927e6fc6e6d
 CATEGORIES =	net www devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/net/
