@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.22 2016/12/15 11:41:43 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.23 2017/02/23 09:33:51 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -6,14 +6,12 @@ webapps/ROOT/
 webapps/ROOT/RELEASE-NOTES.txt
 webapps/ROOT/WEB-INF/
 webapps/ROOT/WEB-INF/web.xml
-webapps/ROOT/asf-logo-wide.gif
-webapps/ROOT/asf-logo.png
+webapps/ROOT/asf-logo-wide.svg
 webapps/ROOT/bg-button.png
 webapps/ROOT/bg-middle.png
 webapps/ROOT/bg-nav-item.png
 webapps/ROOT/bg-nav.png
 webapps/ROOT/bg-upper.png
-webapps/ROOT/build.xml
 webapps/ROOT/favicon.ico
 webapps/ROOT/index.jsp
 webapps/ROOT/tomcat-power.gif
@@ -542,6 +540,7 @@ webapps/docs/api/org/apache/catalina/startup/LifecycleListenerRule.html
 webapps/docs/api/org/apache/catalina/startup/NamingRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
 webapps/docs/api/org/apache/catalina/startup/RealmRuleSet.html
+webapps/docs/api/org/apache/catalina/startup/SafeForkJoinWorkerThreadFactory.html
 webapps/docs/api/org/apache/catalina/startup/SetAllPropertiesRule.html
 webapps/docs/api/org/apache/catalina/startup/SetContextPropertiesRule.html
 webapps/docs/api/org/apache/catalina/startup/SetNextNamingRule.html
@@ -2177,8 +2176,7 @@ webapps/docs/funcspecs/mbean-names.html
 webapps/docs/html-manager-howto.html
 webapps/docs/images/
 webapps/docs/images/add.gif
-webapps/docs/images/asf-feather.png
-webapps/docs/images/asf-logo.gif
+webapps/docs/images/asf-logo.svg
 webapps/docs/images/code.gif
 webapps/docs/images/cors-flowchart.png
 webapps/docs/images/design.gif
