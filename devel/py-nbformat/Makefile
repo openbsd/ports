@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/23 11:52:00 shadchin Exp $
 
 COMMENT =		Jupyter notebook format
 
-MODPY_EGG_VERSION =	4.2.0
+MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,7 +14,7 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
-			devel/py-jupyter_core${MODPY_FLAVOR}>=4.2.1 \
+			devel/py-jupyter_core${MODPY_FLAVOR}>=4.3.0 \
 			devel/py-jsonschema${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
