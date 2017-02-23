@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_common_content_switches_internal_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- content/common/content_switches_internal.cc.orig.port	Sat Feb  4 11:46:23 2017
++++ content/common/content_switches_internal.cc	Sat Feb  4 12:18:59 2017
+@@ -27,7 +27,7 @@ const base::Feature kUseZoomForDsfEnabledByDefault {
+ #endif
+ 
+ bool IsUseZoomForDSFEnabledByDefault() {
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+   return true;
+ #elif defined(OS_WIN)
+   return base::FeatureList::IsEnabled(kUseZoomForDsfEnabledByDefault);

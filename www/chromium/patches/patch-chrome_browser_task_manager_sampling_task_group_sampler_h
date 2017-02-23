@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- chrome/browser/task_manager/sampling/task_group_sampler.h.orig.port	Sat Feb  4 11:46:22 2017
++++ chrome/browser/task_manager/sampling/task_group_sampler.h	Sat Feb  4 12:07:33 2017
+@@ -45,7 +45,7 @@ class TaskGroupSampler : public base::RefCountedThread
+   using OnCpuRefreshCallback = base::Callback<void(double)>;
+   using OnMemoryRefreshCallback = base::Callback<void(MemoryUsageStats)>;
+   using OnIdleWakeupsCallback = base::Callback<void(int)>;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   using OnOpenFdCountCallback = base::Callback<void(int)>;
+ #endif  // defined(OS_LINUX)
+   using OnProcessPriorityCallback = base::Callback<void(bool)>;
+@@ -56,7 +56,7 @@ class TaskGroupSampler : public base::RefCountedThread
+       const OnCpuRefreshCallback& on_cpu_refresh,
+       const OnMemoryRefreshCallback& on_memory_refresh,
+       const OnIdleWakeupsCallback& on_idle_wakeups,
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       const OnOpenFdCountCallback& on_open_fd_count,
+ #endif  // defined(OS_LINUX)
+       const OnProcessPriorityCallback& on_process_priority);
+@@ -73,7 +73,7 @@ class TaskGroupSampler : public base::RefCountedThread
+   double RefreshCpuUsage();
+   MemoryUsageStats RefreshMemoryUsage();
+   int RefreshIdleWakeupsPerSecond();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   int RefreshOpenFdCount();
+ #endif  // defined(OS_LINUX)
+   bool RefreshProcessPriority();
+@@ -93,7 +93,7 @@ class TaskGroupSampler : public base::RefCountedThread
+   const OnCpuRefreshCallback on_cpu_refresh_callback_;
+   const OnMemoryRefreshCallback on_memory_refresh_callback_;
+   const OnIdleWakeupsCallback on_idle_wakeups_callback_;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   const OnOpenFdCountCallback on_open_fd_count_callback_;
+ #endif  // defined(OS_LINUX)
+   const OnProcessPriorityCallback on_process_priority_callback_;

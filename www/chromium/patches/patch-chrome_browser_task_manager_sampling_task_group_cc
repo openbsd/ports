@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- chrome/browser/task_manager/sampling/task_group.cc.orig.port	Sat Feb  4 11:46:22 2017
++++ chrome/browser/task_manager/sampling/task_group.cc	Sat Feb  4 12:06:24 2017
+@@ -25,7 +25,7 @@ const int kBackgroundRefreshTypesMask =
+     REFRESH_TYPE_CPU |
+     REFRESH_TYPE_MEMORY |
+     REFRESH_TYPE_IDLE_WAKEUPS |
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     REFRESH_TYPE_FD_COUNT |
+ #endif  // defined(OS_LINUX)
+     REFRESH_TYPE_PRIORITY;
+@@ -88,7 +88,7 @@ TaskGroup::TaskGroup(
+       nacl_debug_stub_port_(-1),
+ #endif  // !defined(DISABLE_NACL)
+       idle_wakeups_per_second_(-1),
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       open_fd_count_(-1),
+ #endif  // defined(OS_LINUX)
+       gpu_memory_has_duplicates_(false),
+@@ -103,7 +103,7 @@ TaskGroup::TaskGroup(
+                                       weak_ptr_factory_.GetWeakPtr()),
+                            base::Bind(&TaskGroup::OnIdleWakeupsRefreshDone,
+                                       weak_ptr_factory_.GetWeakPtr()),
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+                            base::Bind(&TaskGroup::OnOpenFdCountRefreshDone,
+                                       weak_ptr_factory_.GetWeakPtr()),
+ #endif  // defined(OS_LINUX)
+@@ -282,7 +282,7 @@ void TaskGroup::OnIdleWakeupsRefreshDone(int idle_wake
+   OnBackgroundRefreshTypeFinished(REFRESH_TYPE_IDLE_WAKEUPS);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void TaskGroup::OnOpenFdCountRefreshDone(int open_fd_count) {
+   DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
+ 

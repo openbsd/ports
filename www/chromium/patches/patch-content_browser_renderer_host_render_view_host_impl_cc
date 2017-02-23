@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- content/browser/renderer_host/render_view_host_impl.cc.orig.port	Sat Feb  4 11:46:23 2017
++++ content/browser/renderer_host/render_view_host_impl.cc	Sat Feb  4 12:18:25 2017
+@@ -139,7 +139,7 @@ void GetPlatformSpecificPrefs(RendererPreferences* pre
+       display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
+   prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
+       display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   prefs->system_font_family_name = gfx::Font().GetFontName();
+ #endif
+ }

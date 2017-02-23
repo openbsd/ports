@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.3 2017/02/23 17:30:49 robert Exp $
+--- chrome/browser/ui/task_manager/task_manager_columns.cc.orig.port	Sat Feb  4 11:46:22 2017
++++ chrome/browser/ui/task_manager/task_manager_columns.cc	Sat Feb  4 12:08:02 2017
+@@ -74,7 +74,7 @@ const TableColumnData kColumns[] = {
+   { IDS_TASK_MANAGER_IDLE_WAKEUPS_COLUMN, ui::TableColumn::RIGHT, -1, 0,
+     arraysize("idlewakeups") * kCharWidth, -1, true, false, false },
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   { IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN, ui::TableColumn::RIGHT, -1, 0,
+     arraysize("999") * kCharWidth, -1, true, false, false },
+ #endif  // defined(OS_LINUX)

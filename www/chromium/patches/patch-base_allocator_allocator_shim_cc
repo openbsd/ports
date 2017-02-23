@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_allocator_allocator_shim_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- base/allocator/allocator_shim.cc.orig.port	Sat Feb  4 11:46:22 2017
++++ base/allocator/allocator_shim.cc	Sat Feb  4 11:48:16 2017
+@@ -89,7 +89,7 @@ inline const allocator::AllocatorDispatch* GetChainHea
+   // Unfortunately due to that bug NoBarrier_Load() is mistakenly fully
+   // barriered on Linux+Clang, and that causes visible perf regressons.
+   return reinterpret_cast<const allocator::AllocatorDispatch*>(
+-#if defined(OS_LINUX) && defined(__clang__)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(__clang__)
+       *static_cast<const volatile subtle::AtomicWord*>(&g_chain_head)
+ #else
+       subtle::NoBarrier_Load(&g_chain_head)

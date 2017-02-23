@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.6 2017/02/23 17:30:49 robert Exp $
+--- content/browser/renderer_host/render_message_filter.cc.orig.port	Sat Feb  4 11:46:23 2017
++++ content/browser/renderer_host/render_message_filter.cc	Sat Feb  4 15:35:08 2017
+@@ -92,7 +92,7 @@
+ #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/linux_util.h"
+ #include "base/threading/platform_thread.h"
+ #endif

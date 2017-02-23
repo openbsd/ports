@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.1 2017/02/23 17:30:49 robert Exp $
+--- chrome/browser/task_manager/sampling/task_group.h.orig.port	Sat Feb  4 11:46:22 2017
++++ chrome/browser/task_manager/sampling/task_group.h	Sat Feb  4 12:06:36 2017
+@@ -91,7 +91,7 @@ class TaskGroup {
+   int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
+ #endif  // !defined(DISABLE_NACL)
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   int open_fd_count() const { return open_fd_count_; }
+ #endif  // defined(OS_LINUX)
+ 
+@@ -112,7 +112,7 @@ class TaskGroup {
+ 
+   void OnIdleWakeupsRefreshDone(int idle_wakeups_per_second);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void OnOpenFdCountRefreshDone(int open_fd_count);
+ #endif  // defined(OS_LINUX)
+ 
+@@ -159,7 +159,7 @@ class TaskGroup {
+   int nacl_debug_stub_port_;
+ #endif  // !defined(DISABLE_NACL)
+   int idle_wakeups_per_second_;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // The number of file descriptors currently open by the process.
+   int open_fd_count_;
+ #endif  // defined(OS_LINUX)
