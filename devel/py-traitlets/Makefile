@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/23 14:28:44 shadchin Exp $
 
 COMMENT =		configuration system for Python applications
 
-MODPY_EGG_VERSION =	4.3.1
+MODPY_EGG_VERSION =	4.3.2
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,16 +12,17 @@ HOMEPAGE =		http://ipython.org/
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =		lang/python
+
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR}
 
-# BSD
-PERMIT_PACKAGE_CDROM =	Yes
-
-MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
