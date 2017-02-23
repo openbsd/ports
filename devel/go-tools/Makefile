@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/21 14:29:06 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/23 16:04:16 jsing Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools
-GH_COMMIT = 		26c35b4dcf6dfcb924e26828ed9f4d028c5ce05a
-DISTNAME =		go-tools-1.7.20160815
+GH_COMMIT = 		f8ed2e405fdcbb42c55233531ad98721e6d1cb3e
+DISTNAME =		go-tools-1.8.20170201
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
 
@@ -35,6 +35,7 @@ _SUBPKGS =		benchcmp \
 			gomvpkg \
 			gorename \
 			gotype \
+			goyacc \
 			guru \
 			heapview \
 			html2article \
