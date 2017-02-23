@@ -1,0 +1,5 @@
+plaso is a Python-based framework for computer forensic analysis. It can read
+files from many types of filesystem and volume image, has parsers for a huge
+number of file types across multiple platforms, and tools to deal with this
+information, in particular log2timeline which can use this to produce a single
+correlated timeline from a system.
