@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_feh_pre,v 1.36 2016/11/04 08:57:31 dcoppa Exp $
---- man/feh.pre.orig	Tue Nov  1 11:03:51 2016
-+++ man/feh.pre	Fri Nov  4 09:52:50 2016
-@@ -1053,7 +1053,7 @@ which
+$OpenBSD: patch-man_feh_pre,v 1.37 2017/02/23 08:54:33 dcoppa Exp $
+--- man/feh.pre.orig	Thu Feb 16 23:11:12 2017
++++ man/feh.pre	Thu Feb 23 09:52:48 2017
+@@ -1066,7 +1066,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
  If the files are not found in that directory, it will also try
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_feh_pre,v 1.36 2016/11/04 08:57:31 dcoppa Exp $
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1615,56 +1615,56 @@ Here are some examples of useful option combinations. 
+@@ -1628,56 +1628,56 @@ Here are some examples of useful option combinations. 
  .
  .Bl -tag -width indent
  .
@@ -84,12 +84,12 @@ $OpenBSD: patch-man_feh_pre,v 1.36 2016/11/04 08:57:31 dcoppa Exp $
  ~/image/image_name when enter is pressed
  .
  .It feh --start-at ./foo.jpg \&.
-@@ -1709,8 +1709,6 @@ section.
+@@ -1722,8 +1722,6 @@ section.
  .
  .
  .Sh BUGS
 -.
 -.Pp
  .
- On systems with Imlib2 >= 1.4.7 and giflib >= 5.1.2,
+ On systems with giflib 5.1.2,
  .Nm
