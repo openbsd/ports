@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/02/23 17:47:16 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/02/23 17:48:35 jca Exp $
 
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
@@ -14,7 +14,7 @@ MODULES =	lang/ruby
 
 CONFIGURE_STYLE =	ruby gem ext
 
-# XXX only actually required for gcc2/3 arch
+# XXX fallback if arch doesn't provide atomic builtins
 BUILD_DEPENDS +=	libatomic_ops-*:devel/boehm-gc,-atomic
 
 TEST_DEPENDS =		devel/gmake \
