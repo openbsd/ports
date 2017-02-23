@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/19 12:27:29 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/23 13:01:34 danj Exp $
 
 COMMENT =		namespace for backported Python features
 
@@ -6,6 +6,9 @@ MODPY_EGG_VERSION =	1.0
 DISTNAME =		backports-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
+
+HOMEPAGE =		https://pypi.python.org/pypi/backports
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
