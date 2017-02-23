@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/23 17:28:48 feinerer Exp $
+@bin bin/lemonbar
+@man man/man1/lemonbar.1
+share/doc/lemonbar/
+share/doc/lemonbar/LICENSE
