@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_command_CommandError_cxx,v 1.1 2017/02/23 13:03:46 dcoppa Exp $
+--- src/command/CommandError.cxx.orig	Thu Feb 23 11:19:48 2017
++++ src/command/CommandError.cxx	Thu Feb 23 11:20:54 2017
+@@ -100,13 +100,13 @@ ToAck(std::exception_ptr ep)
+ 		return ACK_ERROR_SYSTEM;
+ 	} catch (const std::invalid_argument &e) {
+ 		return ACK_ERROR_ARG;
+-#if defined(__GLIBCXX__) && __GLIBCXX__ < 20151204
++#if defined(__GLIBCXX__) && __GLIBCXX__ < 20160727
+ 	} catch (const std::exception &e) {
+ #else
+ 	} catch (...) {
+ #endif
+ 		try {
+-#if defined(__GLIBCXX__) && __GLIBCXX__ < 20151204
++#if defined(__GLIBCXX__) && __GLIBCXX__ < 20160727
+ 			/* workaround for g++ 4.x: no overload for
+ 			   rethrow_exception(exception_ptr) */
+ 			std::rethrow_if_nested(e);

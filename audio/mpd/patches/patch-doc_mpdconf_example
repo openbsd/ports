@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.16 2016/12/11 12:59:40 dcoppa Exp $
---- doc/mpdconf.example.orig	Thu Oct 20 15:02:36 2016
-+++ doc/mpdconf.example	Sun Dec 11 12:12:16 2016
+$OpenBSD: patch-doc_mpdconf_example,v 1.17 2017/02/23 13:03:46 dcoppa Exp $
+--- doc/mpdconf.example.orig	Wed Feb  1 21:58:30 2017
++++ doc/mpdconf.example	Thu Feb 23 11:18:10 2017
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -66,7 +66,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.16 2016/12/11 12:59:40 dcoppa Exp $
  #
  # This setting specifies the group that MPD will run as. If not specified
  # primary group of user specified with "user" setting will be used (if set).
-@@ -83,6 +83,8 @@
+@@ -84,6 +84,8 @@
  # And for Unix Socket
  #bind_to_address		"~/.mpd/socket"
  #
@@ -75,19 +75,20 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.16 2016/12/11 12:59:40 dcoppa Exp $
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -324,6 +326,15 @@ input {
- #	name		"My Null Output"
- #	mixer_type      "none"			# optional
- #}
-+#
-+## Default libao output:
-+#
+@@ -307,11 +309,11 @@ input {
+ #
+ # An example of an sndio output.
+ #
+-#audio_output {
+-#	type		"sndio"
+-#	name		"sndio output"
+-#	mixer_type	"software"
+-#}
 +audio_output {
-+	type			"ao"
-+	name			"Libao Audio Device"
-+	mixer_type      	"software"
-+	driver			"sndio"
++	type		"sndio"
++	name		"sndio output"
++	mixer_type	"software"
 +}
  #
- # If MPD has been compiled with libsamplerate support, this setting specifies 
- # the sample rate converter to use.  Possible values can be found in the 
+ # An example of an OS X output:
+ #

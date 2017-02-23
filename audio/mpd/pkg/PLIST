@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/27 19:57:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/02/23 13:03:46 dcoppa Exp $
 @pkgpath audio/mpd,tremor
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
@@ -11,7 +11,7 @@ share/doc/mpd/
 share/doc/mpd/AUTHORS
 share/doc/mpd/COPYING
 share/doc/mpd/NEWS
-share/doc/mpd/README
+share/doc/mpd/README.md
 share/examples/mpd/
 share/examples/mpd/mpd.conf
 @sample ${SYSCONFDIR}/mpd.conf

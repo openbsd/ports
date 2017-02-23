@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.21 2016/12/15 10:59:12 dcoppa Exp $
---- Makefile.in.orig	Tue Dec 13 10:54:19 2016
-+++ Makefile.in	Thu Dec 15 11:38:58 2016
-@@ -4296,7 +4296,7 @@ FILTER_LIBS = \
+$OpenBSD: patch-Makefile_in,v 1.22 2017/02/23 13:03:46 dcoppa Exp $
+--- Makefile.in.orig	Thu Feb  9 13:08:33 2017
++++ Makefile.in	Thu Feb 23 11:04:44 2017
+@@ -4645,7 +4645,7 @@ FILTER_LIBS = \
  # Documentation
  #
  man_MANS = doc/mpd.1 doc/mpd.conf.5
--doc_DATA = AUTHORS COPYING NEWS README doc/mpdconf.example
-+doc_DATA = AUTHORS COPYING NEWS README
+-doc_DATA = AUTHORS COPYING NEWS README.md doc/mpdconf.example
++doc_DATA = AUTHORS COPYING NEWS README.md
  DOCBOOK_FILES = doc/protocol.xml doc/user.xml doc/developer.xml
  @ENABLE_DOCUMENTATION_TRUE@protocoldir = $(docdir)/protocol
  @ENABLE_DOCUMENTATION_TRUE@protocol_DATA = $(wildcard doc/protocol/*.html)

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2016/12/30 08:59:10 jsg Exp $
+# $OpenBSD: Makefile,v 1.102 2017/02/23 13:03:46 dcoppa Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.19.21
+VER =			0.20.5
+DISTNAME =		mpd-${VER}
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -10,27 +11,25 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		FLAC ao audiofile avcodec avformat \
-			avutil bz2 c cdio cdio_cdda \
-			cdio_paranoia curl expat faad glib-2.0 \
-			gthread-2.0 icudata icui18n icuuc id3tag \
-			intl m mikmod mp3lame mpcdec mpdclient \
-			ogg opus pthread samplerate shout \
-			sndfile sndio speex sqlite3 theora \
-			vorbis vorbisenc vorbisfile yajl z
+WANTLIB =		FLAC audiofile avcodec avformat avutil \
+			bz2 c cdio cdio_cdda cdio_paranoia curl \
+			expat faad iconv icudata icui18n icuuc \
+			id3tag iso9660 m mikmod mp3lame mpcdec \
+			mpdclient ogg opus pthread samplerate \
+			shout sndfile sndio speex sqlite3 theora \
+			vorbis vorbisenc yajl z
 
-MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
+MASTER_SITES =		http://www.musicpd.org/download/mpd/${VER:R}/
 
-MODULES =		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+MODULES =		lang/clang
+MODCLANG_ARCHS =	*
+MODCLANG_LANGS =	c++
 
 BUILD_DEPENDS =		devel/boost
 
 LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/flac \
 			audio/lame \
-			audio/libao \
 			audio/libcdio \
 			audio/libid3tag \
 			audio/libmikmod \
@@ -40,7 +39,6 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/musepack \
 			audio/opus \
 			databases/sqlite3 \
-			devel/glib2 \
 			devel/libaudiofile \
 			devel/libyajl \
 			graphics/ffmpeg \
@@ -52,6 +50,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-adplug \
 			--disable-alsa \
+			--disable-ao \
 			--disable-epoll \
 			--disable-fluidsynth \
 			--disable-gme \
@@ -78,12 +77,13 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-wavpack \
 			--disable-wildmidi \
 			--enable-aac \
-			--enable-ao \
 			--enable-audiofile \
 			--enable-bzip2 \
 			--enable-cdio-paranoia \
+			--enable-cue \
 			--enable-curl \
 			--enable-ffmpeg \
+			--enable-iconv \
 			--enable-lame-encoder \
 			--enable-lsr \
 			--enable-mikmod \
@@ -92,8 +92,10 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--enable-pipe-output \
 			--enable-shout \
 			--enable-sndfile \
+			--enable-sndio \
 			--enable-soundcloud \
 			--enable-sqlite \
+			--enable-syslog \
 			--enable-vorbis \
 			--enable-vorbis-encoder \
 			--enable-wave-encoder \
