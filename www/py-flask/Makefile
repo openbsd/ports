@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/03 19:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/23 02:51:10 danj Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
-MODPY_EGG_VERSION =	0.11.1
+MODPY_EGG_VERSION =	0.12
 DISTNAME =		Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -49,6 +48,6 @@ post-install:
 	mv ${PREFIX}/bin/flask ${PREFIX}/bin/flask${MODPY_BIN_SUFFIX}
 
 do-test:
-	cd ${WRKSRC} && LC_ALL=C.UTF-8 ${MODPY_BIN} -m pytest tests examples
+	cd ${WRKSRC} && LC_ALL=C.UTF-8 ${MODPY_BIN} -m pytest tests
 
 .include <bsd.port.mk>
