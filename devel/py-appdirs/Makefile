@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/23 14:36:07 shadchin Exp $
 
 COMMENT =		module for determining platform-specific dirs
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		appdirs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
