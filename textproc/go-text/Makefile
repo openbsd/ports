@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/21 14:23:05 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/23 16:03:13 jsing Exp $
 
 COMMENT =	Go text processing support
-DISTNAME =	go-text-20160816
+DISTNAME =	go-text-20170201
 GH_ACCOUNT =	golang
 GH_PROJECT =	text
-GH_COMMIT =	d69c40b4be55797923cec7457fac7a244d91a9b6
+GH_COMMIT =	ece019dcfd29abcf65d0d1dfe145e8faad097640
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/text
@@ -24,7 +24,6 @@ _MAIN =		golang.org/x/text
 _SUBPKGS =	cases \
 		collate \
 		collate/build \
-		collate/colltab \
 		collate/tools/colcmp \
 		currency \
 		encoding \
@@ -41,6 +40,7 @@ _SUBPKGS =	cases \
 		encoding/unicode/utf32 \
 		internal \
 		internal/colltab \
+		internal/export/idna \
 		internal/format \
 		internal/format/plural \
 		internal/gen \
