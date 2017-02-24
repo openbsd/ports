@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2017/01/03 19:21:18 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2017/02/24 13:46:22 shadchin Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -39,7 +39,8 @@ BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 
 .if ${FLAVOR:Mpython3}
-COMMON_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
+COMMON_DEPENDS +=	devel/py-cairocffi${MODPY_FLAVOR} \
+			devel/py-gobject3${MODPY_FLAVOR}
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 COMMON_DEPENDS +=	x11/gtk+3
 .else
