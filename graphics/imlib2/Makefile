@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2016/11/09 14:53:00 jca Exp $
+# $OpenBSD: Makefile,v 1.41 2017/02/24 18:47:54 jca Exp $
 
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.4.9
+REVISION=	0
 SHARED_LIBS=	Imlib2	6.0	# .5.9
 CATEGORIES=	graphics
 
@@ -29,6 +30,9 @@ CONFIGURE_ARGS+= --disable-mmx
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/imlib2.pc.in ${WRKSRC}/imlib2-config.in
 
 post-install:
 	rm ${PREFIX}/lib/imlib2/filters/*.la ${PREFIX}/lib/imlib2/loaders/*.la
