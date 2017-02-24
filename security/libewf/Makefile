@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/07 08:41:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/24 05:29:16 rpointel Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
@@ -31,7 +31,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--enable-python \
 			--with-pyprefix=${LOCALBASE} \
-			--with-libuuid=no
+			--with-libuuid=no \
+			AWK=/usr/bin/awk
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
