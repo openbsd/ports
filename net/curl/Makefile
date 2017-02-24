@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.123 2017/01/05 20:46:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.124 2017/02/24 21:08:28 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-VERSION=	7.52.1
+VERSION=	7.53.1
 DISTNAME=	curl-${VERSION}
-REVISION=	0
-SHARED_LIBS=	curl                 25.8     # 8.0
+SHARED_LIBS=	curl                 25.9     # 8.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -24,7 +23,7 @@ WANTLIB=	c crypto nghttp2 ssl z
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ca-bundle=/etc/ssl/cert.pem \
-		--without-libidn \
+		--without-libidn2 \
 		--without-libpsl \
 		--without-libssh2
 CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
