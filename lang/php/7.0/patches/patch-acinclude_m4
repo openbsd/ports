@@ -1,6 +1,6 @@
-$OpenBSD: patch-acinclude_m4,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
---- acinclude.m4.orig.port	Sun Dec  6 14:05:46 2015
-+++ acinclude.m4	Sun Dec  6 14:07:36 2015
+$OpenBSD: patch-acinclude_m4,v 1.2 2017/02/24 09:13:12 robert Exp $
+--- acinclude.m4.orig.port	Tue Feb 14 14:50:52 2017
++++ acinclude.m4	Thu Feb 23 18:50:53 2017
 @@ -985,15 +985,9 @@ dnl ---------------------------------------------- Sha
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
@@ -32,7 +32,7 @@ $OpenBSD: patch-acinclude_m4,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2321,9 +2309,9 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2324,9 +2312,9 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
    test -z "$PHP_IMAP_SSL" && PHP_IMAP_SSL=no
  
    dnl Fallbacks for different configure options
