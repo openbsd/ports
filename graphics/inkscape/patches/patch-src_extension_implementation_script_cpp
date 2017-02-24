@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.4 2015/03/24 18:45:12 landry Exp $
---- src/extension/implementation/script.cpp.orig	Tue Mar 17 22:42:05 2015
-+++ src/extension/implementation/script.cpp	Tue Mar 17 22:42:58 2015
-@@ -79,14 +79,14 @@ void Script::pump_events (void) {
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.5 2017/02/24 08:05:34 landry Exp $
+--- src/extension/implementation/script.cpp.orig	Mon Jan  2 10:44:59 2017
++++ src/extension/implementation/script.cpp	Tue Jan 24 22:01:33 2017
+@@ -83,14 +83,14 @@ void Script::pump_events (void) {
      the given interpreter to a custom one per user.
  */
  Script::interpreter_t const Script::interpreterTab[] = {
