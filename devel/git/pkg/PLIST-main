@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.75 2016/11/14 08:11:00 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.76 2017/02/25 20:35:31 benoit Exp $
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/git
@@ -125,7 +125,6 @@ libexec/git/git-rebase--interactive
 libexec/git/git-rebase--merge
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
-libexec/git/git-relink
 @bin libexec/git/git-remote
 @bin libexec/git/git-remote-ext
 @bin libexec/git/git-remote-fd
@@ -301,7 +300,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-rebase.1
 @man man/man1/git-receive-pack.1
 @man man/man1/git-reflog.1
-@man man/man1/git-relink.1
 @man man/man1/git-remote-ext.1
 @man man/man1/git-remote-fd.1
 @man man/man1/git-remote-testgit.1
