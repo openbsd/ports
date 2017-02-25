@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2016/11/03 16:20:40 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2017/02/25 10:44:54 landry Exp $
 
 COMMENT=	Xfce4 disk performance panel plugin
 
-XFCE_VERSION=	2.6.0
+XFCE_VERSION=	2.6.1
 XFCE_PLUGIN=	diskperf
-REVISION =	0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
