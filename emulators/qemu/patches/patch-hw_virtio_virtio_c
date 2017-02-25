@@ -1,0 +1,38 @@
+$OpenBSD: patch-hw_virtio_virtio_c,v 1.1 2017/02/25 11:16:25 ajacoutot Exp $
+
+virtio: Fix no interrupt when not creating msi controller
+
+--- hw/virtio/virtio.c.orig	Sun Feb 19 01:58:16 2017
++++ hw/virtio/virtio.c	Sun Feb 19 02:00:49 2017
+@@ -1380,6 +1380,12 @@ void virtio_notify_irqfd(VirtIODevice *vdev, VirtQueue
+     event_notifier_set(&vq->guest_notifier);
+ }
+ 
++static void virtio_irq(VirtQueue *vq)
++{
++    virtio_set_isr(vq->vdev, 0x1);
++    virtio_notify_vector(vq->vdev, vq->vector);
++}
++
+ void virtio_notify(VirtIODevice *vdev, VirtQueue *vq)
+ {
+     if (!virtio_should_notify(vdev, vq)) {
+@@ -1387,8 +1393,7 @@ void virtio_notify(VirtIODevice *vdev, VirtQueue *vq)
+     }
+ 
+     trace_virtio_notify(vdev, vq);
+-    virtio_set_isr(vq->vdev, 0x1);
+-    virtio_notify_vector(vdev, vq->vector);
++    virtio_irq(vq);
+ }
+ 
+ void virtio_notify_config(VirtIODevice *vdev)
+@@ -2014,7 +2019,7 @@ static void virtio_queue_guest_notifier_read(EventNoti
+ {
+     VirtQueue *vq = container_of(n, VirtQueue, guest_notifier);
+     if (event_notifier_test_and_clear(n)) {
+-        virtio_notify_vector(vq->vdev, vq->vector);
++        virtio_irq(vq);
+     }
+ }
+ 
