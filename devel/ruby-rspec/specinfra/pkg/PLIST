@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2017/01/29 11:54:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2017/02/25 15:21:24 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -166,6 +166,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/inventory.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/kernel_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/routing_table.rb
@@ -460,6 +461,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian8/
