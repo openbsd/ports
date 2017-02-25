@@ -1,6 +1,6 @@
-$OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
---- OpenBSD.cf.orig	Tue Jul 23 07:23:14 2013
-+++ OpenBSD.cf	Mon Jun 15 17:47:02 2015
+$OpenBSD: patch-OpenBSD_cf,v 1.7 2017/02/25 22:08:42 naddy Exp $
+--- OpenBSD.cf.orig	Tue Dec 22 02:28:02 2015
++++ OpenBSD.cf	Sat Feb 25 23:01:15 2017
 @@ -26,10 +26,12 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #define LibDir			/usr/local/lib/X11
  #define UsrLibDir		/usr/local/lib
@@ -15,7 +15,17 @@ $OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
  #define IncRoot			/usr/local/include
  #define TopXInclude		-I/usr/X11R6/include
  #define ImakeCmd		imake -DPorts
-@@ -244,9 +246,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+@@ -172,6 +174,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #ifndef CcCmd
+ #define CcCmd 			cc
+ #endif
++#ifndef CplusplusCmd
++#define CplusplusCmd		c++
++#endif
+ #ifndef AsCmd
+ #define AsCmd			cc -c -x assembler
+ #endif
+@@ -244,9 +249,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  /*
   * Documentation formatting
   */
@@ -41,7 +51,7 @@ $OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
  #define HasGroff		YES
  
  #ifndef HasCookieMaker
-@@ -262,77 +277,15 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+@@ -262,77 +280,15 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
   */
  #define ManSuffix	1
  #define FileManSuffix	5
@@ -125,7 +135,7 @@ $OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
  	done
  
  #define InstallManPageAliases(file,destdir,aliases)			@@\
-@@ -436,8 +389,6 @@ install:: fonts.alias							@@\
+@@ -436,8 +392,6 @@ install:: fonts.alias							@@\
  #ifdef AMD64Architecture
  
  # define HasWeakSymbols		YES
@@ -134,7 +144,7 @@ $OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
  
  # define XorgServer		YES
  
-@@ -666,51 +617,26 @@ install:: fonts.alias							@@\
+@@ -666,51 +620,26 @@ install:: fonts.alias							@@\
  
  
  /*
