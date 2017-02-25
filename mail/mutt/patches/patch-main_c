@@ -1,10 +1,10 @@
-$OpenBSD: patch-main_c,v 1.7 2016/10/18 11:33:26 sthen Exp $
+$OpenBSD: patch-main_c,v 1.8 2017/02/25 10:53:14 sthen Exp $
 
 Pledge
 
---- main.c.orig	Sat Oct  8 20:35:50 2016
-+++ main.c	Tue Oct 18 12:20:17 2016
-@@ -751,6 +751,30 @@ int main (int argc, char **argv)
+--- main.c.orig	Fri Feb 24 18:29:36 2017
++++ main.c	Sat Feb 25 09:54:46 2017
+@@ -769,6 +769,30 @@ int main (int argc, char **argv, char **environ)
        }
    }
  
