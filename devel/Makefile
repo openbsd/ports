@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1587 2017/02/23 12:29:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1588 2017/02/25 20:37:35 naddy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -177,7 +177,6 @@
      SUBDIR += hasktags
      SUBDIR += help2man
      SUBDIR += hgview
-     SUBDIR += hmake
      SUBDIR += hs-BoundedChan
      SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin

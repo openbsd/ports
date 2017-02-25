@@ -1,9 +1,0 @@
-Scsh is a Unix shell embedded in Scheme. It provides full access to 
-POSIX as well as extensions common to most Unix implementations. Scsh 
-also features many abstractions to ease system programming: process 
-abstraction, event-based interrupt handling, sophisticated I/O support 
-and enables concurrent system programming.
-
-Scsh is built on top of Scheme 48, a portable R5RS-compliant Scheme 
-implementation with byte-code compilation, user-level threads, and 
-many useful extensions.

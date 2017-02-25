@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.447 2017/02/23 13:53:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.448 2017/02/25 20:37:36 naddy Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -112,7 +112,6 @@
      SUBDIR += libssh2
      SUBDIR += libtasn1
      SUBDIR += logsentry
-     SUBDIR += logsurfer
      SUBDIR += luacrypto
      SUBDIR += luasec
      SUBDIR += luasec,lua52

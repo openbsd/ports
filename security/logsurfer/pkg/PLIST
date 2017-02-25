@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/11/27 21:30:38 jakob Exp $
-@man man/man1/logsurfer.1
-@man man/man4/logsurfer.conf.4
-@bin sbin/logsurfer
