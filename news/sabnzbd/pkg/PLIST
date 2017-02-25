@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/21 23:30:08 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/02/25 20:11:33 mglocker Exp $
 @newgroup _sabnzbd:717
 @newuser _sabnzbd:717:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd
@@ -22,8 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABHelper.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/Patch-for-CP-3.8.0.diff
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/VERSION.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/__init__.pyc
@@ -33,8 +31,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpchecker.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpchecker.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpcompat.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpcompat.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpcompat_subprocess.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpcompat_subprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpconfig.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpdispatch.py
@@ -53,8 +49,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cprequest.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cprequest.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpserver.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpserver.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpthreadinglocal.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpthreadinglocal.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cptools.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cptools.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cptree.py
@@ -63,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpwsgi.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpwsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpwsgi_server.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_cpwsgi_server.pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_helper.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/_helper.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/cherryd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/daemon.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/daemon.pyc
@@ -88,8 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/encoding.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/encoding.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/gctools.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/gctools.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/http.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/http.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/httpauth.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/httpauth.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/lib/httputil.py
@@ -126,12 +120,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_builtin.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_builtin.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_pyopenssl.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_pyopenssl.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/wsgiserver2.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/wsgiserver2.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/wsgiserver3.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/wsgiserver3.pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_${MODPY_PYOEXTENSION}penssl.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_${MODPY_PYOEXTENSION}penssl.pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/test_wsgiserver.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/test_wsgiserver.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-da.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-de.tmpl
@@ -186,9 +178,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/gntp/notifier.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/nzb.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd.ico
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16.ico
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16green.ico
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16paused.ico
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32.ico
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32green.ico
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/sabnzbd16_32paused.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/README.txt
@@ -206,6 +198,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/con
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/config_sorting.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/config_special.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/config_switches.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/login/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/login/main.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/main.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/bootstrap/
@@ -218,8 +212,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/sta
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/bootstrap/js/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/bootstrap/js/bootstrap.min.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/login.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/style.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/android-192x192.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-120x120-precomposed.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-152x152-precomposed.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-180x180-precomposed.png
@@ -227,10 +223,13 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/sta
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/ico/faviconpaused.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/logo-small.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/logo.png
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/logo-arrow.svg
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/logo-full.svg
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/images/logo-small.svg
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/jquery-1.11.2.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/jquery-3.1.1.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/jquery-ui.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/jquery.tablesort.min.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/js/script.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/licenses/
@@ -242,7 +241,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/hi
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_history.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_menu.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_messages.tmpl
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_modals.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_overlays.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/include_queue.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/main.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/nzo.tmpl
@@ -257,14 +256,16 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/st
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/bootstrap/fonts/glyphicons-halflings-regular.ttf
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/bootstrap/js/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/bootstrap/js/bootstrap.min.js
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/images/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/images/logo-small.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/images/logo.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/date.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.basic.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.filelist.pagination.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.history.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.js
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/jquery-1.11.2.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.main.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/glitter.queue.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/jquery-ui.min.js
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/jquery.min.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/jquery.peity.min.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/knockout-extensions.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Glitter/templates/static/javascripts/knockout-latest.js
@@ -339,7 +340,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/stat
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss-grey.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sabnzbdplus.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sound16.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-config.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-main.png
@@ -409,7 +409,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/stati
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/key_enter.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/messagebox_critical.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/newzbin.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/nuvola/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/nuvola/kgpg.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/smpl/templates/static/images/up.gif
@@ -427,19 +426,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/inc_top.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/index.html
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/one.html
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/classic-th.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/classic.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/favicon.ico
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/icon_sab.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/plush-th.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/plush.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/smpl-th.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/images/smpl.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/javascript/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/javascript/checkserver.js
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/javascript/jquery.js
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/javascript/restart.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/static/style.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/wizard/two.html
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/
@@ -452,12 +440,11 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-feedparser.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-gntp.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-kronos.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-listquote.txt
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-msgfmt.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-pybonjour.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-pynewsleecher.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-rarfile.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-rsslib.txt
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-ssmtplib.txt
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-six.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-systrayicon.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd@.service
@@ -592,8 +579,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/encoding.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/encoding.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/getipaddress.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/getipaddress.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/growler.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/growler.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/interface.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/lang.py
@@ -604,6 +589,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newsunpack.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newsunpack.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newswrapper.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newswrapper.pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/notifier.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/notifier.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbqueue.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbqueue.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/nzbstuff.py
@@ -655,8 +642,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/kronos.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/kronos.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/listquote.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/listquote.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ordered.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ordered.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pathbrowser.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pathbrowser.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pybonjour.py
@@ -671,8 +656,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/servertests.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/servertests.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/sslinfo.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/sslinfo.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ssmtplib.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ssmtplib.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/systrayiconthread.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/systrayiconthread.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/upload.py
@@ -686,8 +669,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/zconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.cmd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.sh
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/solaris/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/solaris/manifest.xml
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/six/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/six/__init__.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/six/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/make_mo.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/make_mo.pyc

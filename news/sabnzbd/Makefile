@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/05 19:13:57 mglocker Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/25 20:11:33 mglocker Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			1.0.3
+VERSION =			1.2.1
 DISTNAME =			SABnzbd-${VERSION}-src
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
