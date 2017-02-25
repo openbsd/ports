@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2017/02/24 08:05:34 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2017/02/25 20:44:13 naddy Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -44,7 +44,9 @@ MODRUBY_BUILDDEP =	No
 # Note that Python is already pulled in indirectly by py-lxml.
 MODRUBY_RUNDEP =	No
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/boost
 
 LIB_DEPENDS =	devel/boehm-gc \
 		devel/gsl \
