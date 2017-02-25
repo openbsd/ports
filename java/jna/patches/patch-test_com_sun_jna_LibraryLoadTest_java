@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_com_sun_jna_LibraryLoadTest_java,v 1.1 2015/09/01 19:29:42 jasper Exp $
---- test/com/sun/jna/LibraryLoadTest.java.orig	Tue Sep  1 21:16:37 2015
-+++ test/com/sun/jna/LibraryLoadTest.java	Tue Sep  1 21:18:22 2015
-@@ -160,7 +160,8 @@ public class LibraryLoadTest extends TestCase implemen
+$OpenBSD: patch-test_com_sun_jna_LibraryLoadTest_java,v 1.2 2017/02/25 15:05:21 jasper Exp $
+--- test/com/sun/jna/LibraryLoadTest.java.orig	Sat Jan 14 17:15:07 2017
++++ test/com/sun/jna/LibraryLoadTest.java	Sat Feb 25 14:58:20 2017
+@@ -171,7 +171,8 @@ public class LibraryLoadTest extends TestCase implemen
              dst.deleteOnExit();
          }
          catch(UnsatisfiedLinkError e) {
@@ -10,4 +10,4 @@ $OpenBSD: patch-test_com_sun_jna_LibraryLoadTest_java,v 1.1 2015/09/01 19:29:42 
 +            //fail("Library '" + newLibName + "' at " + dst + " could not be loaded: " + e);
          }
      }
-     
+ 

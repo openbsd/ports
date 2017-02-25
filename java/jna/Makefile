@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/18 17:33:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2017/02/25 15:05:21 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
-GH_TAGNAME=	4.2.2
+GH_TAGNAME=	4.3.0
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -35,12 +35,16 @@ GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 post-extract:
 	rm ${WRKSRC}/native/libffi/src/powerpc/linux64_closure.S.orig
 
+pre-configure:
+	sed -i -e 's,-Wno-unknown-warning-option,,' \
+		-e 's,-Wno-clobbered,,' ${WRKSRC}/native/Makefile
+
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
 	${INSTALL_DATA} ${WRKSRC}/build/openbsd-${GNU_ARCH}.jar \
 		${MODJAVA_JAR_DIR}/jna-platform.jar
 	${INSTALL_DATA} ${WRKSRC}/build/jna*.jar ${MODJAVA_JAR_DIR}
-	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
+	cp -r ${WRKSRC}/doc/javadoc ${MODJAVA_DOC_DIR}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
