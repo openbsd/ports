@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.128 2017/02/21 11:45:48 feinerer Exp $
+# $OpenBSD: Makefile,v 1.129 2017/02/25 11:17:30 ajacoutot Exp $
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.6
-REVISION=	9
+DISTNAME=	xine-lib-1.2.8
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
+MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	32.0
+SHARED_LIBS=	xine	33.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -23,11 +22,10 @@ WANTLIB += Xinerama Xv XvMCW Xxf86vm avcodec avformat avutil
 WANTLIB += bluray c cdio drm dvdnav dvdread expat fontconfig
 WANTLIB += freetype glapi iso9660 jpeg lzma m mng modplug mpcdec
 WANTLIB += ogg postproc pthread pthread-stubs sndio speex theora
-WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis vpx wavpack xcb
-WANTLIB += xcb-dri2 xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir
-WANTLIB += xml2 z
+WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis vpx xcb xcb-dri2
+WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 z
 
-XINEAPI_REV=	2.5
+XINEAPI_REV=	2.6
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext \
@@ -43,7 +41,6 @@ LIB_DEPENDS=	audio/flac \
 		audio/libvorbis \
 		audio/musepack \
 		audio/speex \
-		audio/wavpack \
 		devel/sdl \
 		graphics/ffmpeg \
 		graphics/jpeg \
@@ -80,7 +77,6 @@ CONFIGURE_ARGS+=--disable-a52dec \
 		--with-external-dvdnav \
 		--with-fontconfig \
 		--with-freetype \
-		--with-wavpack \
 		--without-caca \
 		--without-esound \
 		--without-imagemagick

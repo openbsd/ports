@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/01/22 02:53:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/02/25 11:17:30 ajacoutot Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -67,10 +67,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_planar.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_switch.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sndio.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_bitplane.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_dvaudio.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_ff.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_gsm610.so
@@ -79,43 +76,27 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_libvpx.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_lpcm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpeg2.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_rgb.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_rawvideo.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spu.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucmml.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spudvb.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spuhdmv.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_yuv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_asf.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_audio.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_avi.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_fli.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_flv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_games.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_iff.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_matroska.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mng.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_modplug.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_block.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_elem.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_pes.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_mpeg_ts.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_nsv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_playlist.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_pva.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_qt.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_rawdv.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_real.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_slave.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_vc1_es.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_yuv4mpeg2.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_yuv_frames.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_dmx_video.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_flac.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_bluray.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_cdda.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_dvd.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_http.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_mms.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_net.so
@@ -123,14 +104,11 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pnm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pvr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_test.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_v4l2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_vcd.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_nsf.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_sputext.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vdr.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
@@ -141,7 +119,6 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xshm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xvmc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xxmc.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_wavpack.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_xiph.so
 @man man/man1/xine-config.1
 @man man/man1/xine-list-1.2.1
