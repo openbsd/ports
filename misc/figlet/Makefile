@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2017/02/26 20:18:13 sthen Exp $
 
 COMMENT =	generates ASCII banner art
 
@@ -19,7 +19,7 @@ MASTER_SITES0 =	http://www.arcane-labs.net/download/OpenBSD/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		figlet-contributed-06092002${EXTRACT_SUFX}:0
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
+MAKE_FLAGS =	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
 
 NO_TEST =	Yes
