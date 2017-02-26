@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/02/23 15:57:42 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.20 2017/02/26 20:05:12 sthen Exp $
 bin/go
 bin/gofmt
 go/
@@ -2087,7 +2087,7 @@ go/src/cmd/vet/all/whitelist/netbsd_386.txt
 go/src/cmd/vet/all/whitelist/netbsd_amd64.txt
 go/src/cmd/vet/all/whitelist/netbsd_arm.txt
 go/src/cmd/vet/all/whitelist/openbsd_386.txt
-go/src/cmd/vet/all/whitelist${GOCFG}.txt
+go/src/cmd/vet/all/whitelist/openbsd_amd64.txt
 go/src/cmd/vet/all/whitelist/openbsd_arm.txt
 go/src/cmd/vet/all/whitelist/plan9_386.txt
 go/src/cmd/vet/all/whitelist/plan9_amd64.txt
