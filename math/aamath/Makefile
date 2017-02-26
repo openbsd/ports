@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:50:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/26 22:15:08 kili Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -20,7 +20,7 @@ WANTLIB=		c m stdc++ termcap readline
 NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/aamath
 ALL_TARGET=
-MAKE_FLAGS=		CXX="${CXX}"
+MAKE_FLAGS=		CXX="${CXX}" LD="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/aamath ${PREFIX}/bin
