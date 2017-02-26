@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/26 21:52:07 fcambus Exp $
 
 COMMENT =	efficient hex editor
 
@@ -18,8 +18,7 @@ WANTLIB += c ncurses
 
 MASTER_SITES =	http://www.chiark.greenend.org.uk/~sgtatham/tweak/
 
-MAKE_FLAGS =	CC="${CC}" \
-		CFLAGS="${CFLAGS} -c -Dunix"
+MAKE_FLAGS =	CC="${CC}" LINK="${CC}" CFLAGS="${CFLAGS} -c -Dunix"
 
 FAKE_FLAGS =	PREFIX=${WRKINST}/${TRUEPREFIX}
 
