@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/25 15:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/26 20:13:05 sthen Exp $
 
 COMMENT=	passive OS fingerprinting tool
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pcap
 
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
+
+MAKE_FLAGS=	CC="${CC}"
 
 BUILD_DEPENDS=	shells/bash
 
