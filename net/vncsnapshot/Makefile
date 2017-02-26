@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/18 15:07:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/02/26 20:09:19 sthen Exp $
 
 COMMENT=		connect to VNC server and save screen images
 
@@ -21,6 +21,8 @@ LIB_DEPENDS=		graphics/jpeg
 WANTLIB += c m stdc++ z jpeg
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vncsnapshot/}
+
+MAKE_FLAGS=		CC="${CC}" CXX="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vncsnapshot ${PREFIX}/bin
