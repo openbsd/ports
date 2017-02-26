@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/26 22:29:58 kili Exp $
 
 COMMENT =	open source remake of old DOS game Sherlock
 
@@ -23,5 +23,7 @@ LIB_DEPENDS =	devel/sdl	\
 		devel/sdl-ttf
 
 USE_GMAKE =	Yes
+
+MAKE_FLAGS =	CXX="${CXX}"
 
 .include <bsd.port.mk>
