@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/26 22:55:38 fcambus Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
@@ -27,6 +27,8 @@ LIB_DEPENDS =	devel/sdl
 WRKDIST =	${WRKDIR}/src
 
 USE_GMAKE =	Yes
+
+MAKE_FLAGS =	CC="${CC}" CXX="${CXX}"
 
 MAKE_FILE =	makefile
 

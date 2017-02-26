@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile_common,v 1.1.1.1 2016/09/03 10:44:38 fcambus Exp $
+$OpenBSD: patch-makefile_common,v 1.2 2017/02/26 22:55:38 fcambus Exp $
 --- makefile.common.orig	Wed Jul 23 23:58:44 2014
-+++ makefile.common	Wed Aug 31 11:14:46 2016
++++ makefile.common	Sun Feb 26 23:00:21 2017
 @@ -1,9 +1,9 @@
  # common makefile directives for linux and win32 build
  
@@ -15,3 +15,27 @@ $OpenBSD: patch-makefile_common,v 1.1.1.1 2016/09/03 10:44:38 fcambus Exp $
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
  	$(PREFIX)gt2reloc$(SUFFIX) \
+@@ -48,19 +48,19 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.o bme/bme_mou.
+ 	strip $@
+ 	
+ $(PREFIX)mod2sng$(SUFFIX): mod2sng.o bme/bme_end.o
+-	gcc -o $@ $^
++	$(CC) -o $@ $^
+ 	strip $@
+ 
+ $(PREFIX)ins2snd2$(SUFFIX): ins2snd2.o bme/bme_end.o
+-	gcc -o $@ $^
++	$(CC) -o $@ $^
+ 	strip $@
+ 
+ $(PREFIX)sngspli2$(SUFFIX): sngspli2.o bme/bme_end.o
+-	gcc -o $@ $^
++	$(CC) -o $@ $^
+ 	strip $@
+ 
+ $(PREFIX)betaconv$(SUFFIX): betaconv.o bme/bme_end.o
+-	gcc -o $@ $^
++	$(CC) -o $@ $^
+ 	strip $@
+ 
+ goattrk2.dat: player.s altplayer.s chargen.bin palette.bin cursor.bin goattrk2.bmp goattrk2.seq
