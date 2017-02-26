@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2017/01/20 10:03:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2017/02/26 13:31:57 ajacoutot Exp $
 
 # archs with atomic ops
-ONLY_FOR_ARCHS-server=	alpha amd64 i386 mips64 mips64el powerpc sparc64
+ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
 ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
 
 COMMENT-main=	multithreaded SQL database (client)
