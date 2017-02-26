@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1336 2017/02/21 13:55:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1337 2017/02/26 11:18:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -755,18 +755,10 @@ _WRKDIR_STEM = ${PKGNAME}
 _WRKDIR_STEM = ${PKGNAME}${_FLAVOR_EXT2}
 .endif
 
-OLD_WRKDIR_NAME = w-${_WRKDIR_STEM}
-
-_WRKDIRS = ${.CURDIR}/${OLD_WRKDIR_NAME}
-
-.if !empty(WRKOBJDIR_${PKGPATH})
 WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
-_WRKDIRS += ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
+_WRKDIRS = ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
-.else
-WRKDIR ?= ${.CURDIR}/${OLD_WRKDIR_NAME}
-.endif
 
 # github related variables
 GH_TAGNAME ?=
@@ -1181,21 +1173,6 @@ MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .  endif
 .endfor
 
-
-# OpenBSD code to handle ports distfiles on a CDROM.
-#
-#CDROM_SITE ?= /cdrom/distfiles/${DIST_SUBDIR}
-CDROM_SITE ?=
-
-.if !empty(CDROM_SITE)
-.  if defined(FETCH_SYMLINK_DISTFILES)
-_CDROM_OVERRIDE = if ln -s ${CDROM_SITE}/$$f .; then exit 0; fi
-.  else
-_CDROM_OVERRIDE = if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
-.  endif
-.else
-_CDROM_OVERRIDE =:
-.endif
 
 EXTRACT_SUFX ?= .tar.gz
 
@@ -2852,7 +2829,6 @@ ${DISTDIR}/$p:
 	cd ${@:H}; \
 	test -f ${@:T} && exit 0; \
 	f=$f; \
-	${_CDROM_OVERRIDE}; \
 	if ! ${_MAKESUM} && test ! -f ${CHECKSUM_FILE}; then \
 		${ECHO_MSG} ">> Checksum file does not exist"; \
 		exit 1; \
@@ -3316,35 +3292,6 @@ show-run-depends:
 			exit 1; \
 		fi; \
 	done
-.endif
-
-link-categories:
-.for _CAT in ${CATEGORIES}
-	@linkname=${PORTSDIR}/${_CAT}/`basename ${.CURDIR}`; \
-	if [ ! -e $$linkname ]; then \
-		echo "$$linkname -> ${.CURDIR}"; \
-		mkdir -p ${PORTSDIR}/${_CAT}; \
-		ln -s ${.CURDIR} $$linkname; \
-	fi
-.endfor
-
-unlink-categories:
-.for _CAT in ${CATEGORIES}
-	@linkname=${PORTSDIR}/${_CAT}/`basename ${.CURDIR}`; \
-	if [ -L $$linkname ]; then \
-		echo "rm $$linkname"; \
-		rm $$linkname; \
-		if rmdir ${PORTSDIR}/${_CAT} 2>/dev/null; then \
-			echo "rmdir ${PORTSDIR}/${_CAT}"; \
-	    fi; \
-	fi
-.endfor
-
-homepage-links:
-.if defined(HOMEPAGE)
-	@echo '<li><A HREF="${HOMEPAGE}">${PKGNAME}</A>'
-.else
-	@echo '<li>${PKGNAME}'
 .endif
 
 #####################################################
