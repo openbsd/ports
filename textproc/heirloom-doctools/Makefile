@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/17 08:00:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/26 20:45:41 bentley Exp $
 
 COMMENT =		modernized troff implementation
 
@@ -20,6 +20,7 @@ MASTER_SITES =		https://github.com/n-t-roff/heirloom-doctools/releases/download/
 EXTRACT_SUFX =		.tar.bz2
 
 MAKE_FLAGS =		CC="${CC}" \
+			CXX="${CXX}" \
 			CCC="${CXX}" \
 			CFLAGS="${CFLAGS}" \
 			RANLIB=ranlib \
