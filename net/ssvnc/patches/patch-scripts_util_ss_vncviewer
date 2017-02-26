@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_util_ss_vncviewer,v 1.1 2013/04/20 16:26:25 sthen Exp $
---- scripts/util/ss_vncviewer.orig	Fri Feb  8 17:13:50 2013
-+++ scripts/util/ss_vncviewer	Fri Feb  8 17:17:45 2013
+$OpenBSD: patch-scripts_util_ss_vncviewer,v 1.2 2017/02/26 20:11:53 sthen Exp $
+--- scripts/util/ss_vncviewer.orig	Mon Apr 11 23:24:15 2011
++++ scripts/util/ss_vncviewer	Sun Feb 26 20:10:35 2017
 @@ -150,37 +150,15 @@ if [ "X$SS_DEBUG" != "X" -a "X$SS_DEBUG" != "X0" ]; th
  	set -xv 
  fi
  
 -PATH=$PATH:/usr/sbin:/usr/local/sbin:/dist/sbin; export PATH
-+PATH=$PATH:/usr/sbin:${LOCALBASE}/sbin; export PATH
++PATH=$PATH:/usr/sbin:/usr/local/sbin; export PATH
  
  localhost="localhost"
  if uname | grep Darwin >/dev/null; then
@@ -37,7 +37,7 @@ $OpenBSD: patch-scripts_util_ss_vncviewer,v 1.1 2013/04/20 16:26:25 sthen Exp $
 -	fi
 -	stunnel_set_here=1
 -fi
-+STUNNEL=${LOCALBASE}/sbin/stunnel
++STUNNEL=/usr/local/sbin/stunnel
 +stunnel_set_here=1
  
  help() {

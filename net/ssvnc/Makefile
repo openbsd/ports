@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 23:03:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2017/02/26 20:11:53 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -26,7 +26,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ssvnc/}
 
 MULTI_PACKAGES =-main -gui
 
-MAKE_ENV =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CC="${CC}" CXX="${CXX}"
 
 WRKDIST =	${WRKDIR}/ssvnc-$V
 
