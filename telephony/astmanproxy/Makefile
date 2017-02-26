@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/26 20:07:40 sthen Exp $
 
 COMMENT =	proxy for Asterisk Manager Interface
 DISTNAME =	astmanproxy-1.22pre081119
@@ -20,7 +20,7 @@ MASTER_SITES =	https://spacehopper.org/mirrors/
 
 MAKE_ENV =	CFLAGS="${CFLAGS}"
 
-MAKE_FLAGS =	SYSCONFDIR=${SYSCONFDIR} \
+MAKE_FLAGS =	CC="${CC}" SYSCONFDIR=${SYSCONFDIR} \
 		LIBDIR=${WRKINST}/${PREFIX}/lib/astmanproxy \
 		MODDIR=${PREFIX}/lib/astmanproxy/modules \
 		MODDIR_REAL=${WRKINST}/${PREFIX}/lib/astmanproxy/modules \
