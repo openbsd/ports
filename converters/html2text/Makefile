@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/25 21:58:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/26 20:27:21 sthen Exp $
 
 PORTROACH=		limit:.*[^a]$$
 
@@ -20,10 +20,10 @@ MASTER_SITES=		http://www.mbayer.de/html2text/downloads/ \
 			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/
 
 CONFIGURE_STYLE=	simple
+CONFIGURE_ENV=		CXX="${CXX}"
 
 MAKE_FLAGS=	PREFIX="${PREFIX}" \
-		CXXFLAGS="-DVERSION=1.3.2a -DAUTO_PTR_BROKEN ${CXXFLAGS}" \
-		CXX="${CXX}"
+		CXXFLAGS="-DVERSION=1.3.2a -DAUTO_PTR_BROKEN ${CXXFLAGS}"
 
 NO_TEST=	Yes
 
