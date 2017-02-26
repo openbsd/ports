@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.456 2017/02/25 20:37:36 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.457 2017/02/26 20:09:32 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -917,6 +917,7 @@ my $obsolete_reason = {
 	'nhc98' => 3,
 	'logsurfer' => 3,
 	'scsh' => 3,
+	'bladeenc' => 3,
 };
 
 # reasons for obsolete packages
