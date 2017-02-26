@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2016/09/12 17:51:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2017/02/26 13:42:10 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
-
-ONLY_FOR_ARCHS-lib =	i386 amd64
 
 DISTNAME =	cpphs-1.19.3
 PKGNAME-main =	${DISTNAME}
@@ -20,8 +18,6 @@ WANTLIB-main =		${WANTLIB} c m pthread
 
 SUBST_VARS +=		DISTNAME
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-# GHC: use cabal to build both the executable and the library.
 WANTLIB-main +=		util
 MODULES =		lang/ghc
 LIB_DEPENDS +=		converters/libiconv
@@ -37,21 +33,6 @@ RUN_DEPENDS-lib =	devel/hs-old-locale \
 BUILD_DEPENDS +=	${RUN_DEPENDS-lib}
 WANTLIB-lib =
 DIST_SUBDIR =
-.else
-MASTER_SITES = http://hackage.haskell.org/packages/archive/cpphs/${DISTNAME:S/cpphs-//}/
-# NHC: use the good old makefile for now (though it *should* be possible
-# to build with cabal, too).
-BUILD_DEPENDS +=	devel/hmake \
-			lang/nhc98
-HC =			hmake 
-HC_OPTS =		-nhc98 -package base
-
-do-build:
-	cd ${WRKSRC} && ${HC} ${HC_OPTS} cpphs
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cpphs        ${PREFIX}/bin
-.endif
 
 post-install:
 	${INSTALL_MAN}     ${WRKSRC}/docs/cpphs.1 ${PREFIX}/man/man1
