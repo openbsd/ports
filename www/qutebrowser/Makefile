@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/29 11:51:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/26 11:08:56 jasper Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION =	0.9.1
+MODPY_EGG_VERSION =	0.10.0
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://www.qutebrowser.org/
