@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2017/02/26 20:15:35 sthen Exp $
 
 COMMENT=	receive/send files via ZMODEM protocol (unrestricted)
 
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
 
 WRKDIST=	${WRKDIR}/zmtx-zmrx
 MAKE_FILE=	makefile
+MAKE_FLAGS=	CC="${CC}"
 
 NO_TEST=	Yes
 
