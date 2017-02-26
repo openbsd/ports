@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1337 2017/02/26 11:18:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1338 2017/02/26 18:54:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1955,7 +1955,7 @@ ${_FUPDATE_COOKIE${_S}}:
 
 makesum:
 	@${_warn_checksum}
-	@rm -f ${CHECKSUM_FILE}
+	@mv -f ${CHECKSUM_FILE}{,.orig} 2>/dev/null || true
 	@${MAKE} fetch-all _MAKESUM=true
 .if !empty(MAKESUMFILES)
 	@cd ${DISTDIR} && cksum -b -a "${_CIPHER}" ${MAKESUMFILES} >> ${CHECKSUM_FILE}
@@ -1964,6 +1964,8 @@ makesum:
 			${_size_fragment} $$file $$file >> ${CHECKSUM_FILE}; \
 		done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE}
+	@diff -Lold -Lnew -u ${CHECKSUM_FILE}{.orig,} 2>/dev/null|| true
+	@rm -f ${CHECKSUM_FILE}.orig
 .endif
 
 ################################################################
