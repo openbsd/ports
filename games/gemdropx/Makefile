@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/06 21:06:07 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2017/02/27 20:23:49 naddy Exp $
 
 COMMENT=	one-player puzzle game for x11
 
 VERSION=	0.9
 DISTNAME=	gemdropx-${VERSION}
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.newbreedsoftware.com/gemdropx/
@@ -18,6 +19,7 @@ LIB_DEPENDS=	devel/sdl-mixer
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 MAKE_ENV=	JOY=NO
+MAKE_FLAGS=	CC="${CC}" CXX="${CC}" XTRA_FLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin
