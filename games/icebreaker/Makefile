@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/13 06:29:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2017/02/27 20:26:30 naddy Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
@@ -24,6 +24,7 @@ USE_GMAKE=	Yes
 NO_TEST=	Yes
 MAKE_ENV=	prefix="${PREFIX}" \
 		highscoredir="/var/games/icebreaker"
+MAKE_FLAGS=	CC="${CC}"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icebreaker
