@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/02/27 11:27:25 jca Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
@@ -22,6 +22,7 @@ NO_TEST=	Yes
 LIB_DEPENDS=	x11/fltk
 
 MAKE_FLAGS+=	CC="${CC}" \
+		CXX="${CXX}" \
 		OPT="" \
 		prefix=${PREFIX} \
 		libdir=${PREFIX}/lib/nutdb
