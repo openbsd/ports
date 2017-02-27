@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/02/25 20:44:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2017/02/27 19:42:43 naddy Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -46,6 +46,7 @@ MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool \
 		devel/boost
 
 LIB_DEPENDS =	devel/boehm-gc \
