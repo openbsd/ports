@@ -1,0 +1,9 @@
+A family of high-quality WGL4 TrueType fonts, created by the Bigelow &
+Holmes type foundry specifically for the Go project.
+
+The font family, called Go (naturally), includes proportional and
+fixed-width faces in normal, bold, and italic renderings. The fonts have
+been tested for technical uses, particularly programming. Go source code
+looks particularly good when displayed in Go fonts, as its name implies,
+with things like punctuation characters easily distinguishable and
+operators lined up and placed consistently.
