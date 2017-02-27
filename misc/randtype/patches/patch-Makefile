@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/02/27 18:32:52 jca Exp $
+--- Makefile.orig	Fri Dec  7 00:22:16 2001
++++ Makefile	Mon Feb 27 19:29:36 2017
+@@ -4,7 +4,7 @@
+ # on output; they can be changed at runtime. 
+ #
+ CC		= gcc
+-CFLAGS		= -Wall -ansi -pedantic -O2 -g
++CFLAGS		= -Wall -ansi -pedantic $(PORTS_CFLAGS)
+ DEFINES		= -DDEF_MS=18 -DDEF_MULT=20000 -DHAVE_RANDOM
+ LIBS		= -lz
+ 
