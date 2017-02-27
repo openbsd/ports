@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2011/09/18 20:27:54 landry Exp $
+$OpenBSD: patch-src_Makefile,v 1.2 2017/02/27 15:47:17 jca Exp $
 --- src/Makefile.orig	Sat Sep 17 22:30:02 2011
-+++ src/Makefile	Sun Sep 18 13:13:44 2011
-@@ -7,8 +7,8 @@ RM	= rm -f
++++ src/Makefile	Mon Feb 27 16:46:09 2017
+@@ -7,10 +7,10 @@ RM	= rm -f
  INSTALL	= install
  LN	= ln
  
@@ -10,8 +10,11 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2011/09/18 20:27:54 landry Exp $
 +LIBXDIR	= $(PREFIX)/libexec/
 +BINDIR	= $(PREFIX)/bin/
  
- CXXFLAGS= -pipe -Wall -Wextra -O2 -g
+-CXXFLAGS= -pipe -Wall -Wextra -O2 -g
++CXXFLAGS= -Wall -Wextra $(PORTS_CXXFLAGS)
  LDFLAGS	= 
+ 
+ OBJS	= owx.o cli.o throw.o cmds.o wouxun.o comm.o file.o csv.o export.o import.o util.o
 @@ -33,11 +33,11 @@ install: all
  	$(INSTALL) -d $(LIBXDIR)
  	$(INSTALL) -m 755 $(NAME) $(LIBXDIR)

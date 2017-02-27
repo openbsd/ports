@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/27 15:47:17 jca Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB =	c m stdc++
 
 MASTER_SITES =	https://distfiles.nl/
+
+MAKE_FLAGS =	CXX="${CXX}" PORTS_CXXFLAGS="${CXXFLAGS}"
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
