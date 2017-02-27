@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.9 2015/04/18 15:13:35 bcallah Exp $
---- makefile.orig	Sat Apr  4 10:18:57 2015
-+++ makefile	Sat Apr  4 10:20:57 2015
+$OpenBSD: patch-makefile,v 1.10 2017/02/27 21:54:20 naddy Exp $
+--- makefile.orig	Mon Feb 27 22:21:09 2017
++++ makefile	Mon Feb 27 22:21:38 2017
 @@ -227,10 +227,10 @@ endif
  # BIGENDIAN = 1
  
@@ -14,15 +14,17 @@ $OpenBSD: patch-makefile,v 1.9 2015/04/18 15:13:35 bcallah Exp $
  
  # uncomment next line to build libflac as part of MAME build
  BUILD_FLAC = 1
-@@ -364,7 +364,7 @@ endif
+@@ -364,8 +364,8 @@ endif
  # compiler, linker and utilities
  ifneq ($(TARGETOS),emscripten)
  AR = @ar
 -CC = @gcc
+-LD = @g++
 +CC ?= @gcc
- LD = @g++
++LD ?= @g++
  endif
  MD = -mkdir$(BUILD_EXE)
+ RM = @rm -f
 @@ -417,7 +417,7 @@ NAME = $(TARGET)$(SUBTARGET)
  endif
  

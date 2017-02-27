@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/08/11 21:43:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2017/02/27 21:54:20 naddy Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -48,7 +48,7 @@ RUN_DEPENDS-main =	fonts/liberation-fonts
 LIB_DEPENDS =		devel/sdl-ttf
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
-MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
+MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD="${CXX}" \
 			TARGETOS=openbsd \
 			NO_USE_QTDEBUG=1 \
 			NOWERROR=1 \
