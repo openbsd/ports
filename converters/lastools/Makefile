@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/13 19:15:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/27 15:55:30 jca Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20170108
@@ -11,6 +11,9 @@ CATEGORIES =	converters textproc devel
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c m stdc++
+
+MAKE_FLAGS =	COMPILER="${CXX}" \
+		LINKER="${CXX}"
 
 post-patch:
 	find ${WRKSRC} -name Makefile | xargs sed -i 's/-O3/${CXXFLAGS}/'
