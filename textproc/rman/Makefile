@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2017/02/27 19:13:54 jca Exp $
 
 COMMENT=	reverse compile man pages from formatted form
 
 DISTNAME=	rman-3.2
+REVISION=	0
 CATEGORIES=	textproc
 HOMEPAGE=	http://polyglotman.sourceforge.net/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c 
+WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=polyglotman/}
+
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}"
 
 NO_TEST=	Yes
 
