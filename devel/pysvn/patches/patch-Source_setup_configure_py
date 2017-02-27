@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_setup_configure_py,v 1.5 2017/02/27 15:23:33 jca Exp $
+$OpenBSD: patch-Source_setup_configure_py,v 1.6 2017/02/27 18:03:45 jca Exp $
 
 1) Fix broken lib auto-detection. The configure script will try to stat a
    shared library file, but we don't know the exact filename because it depends
@@ -8,7 +8,7 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.5 2017/02/27 15:23:33 jca Exp $
 2) Add missing OpenBSD-specific bits.
 
 --- Source/setup_configure.py.orig	Sat May 14 11:45:00 2016
-+++ Source/setup_configure.py	Mon Feb 27 16:21:44 2017
++++ Source/setup_configure.py	Mon Feb 27 16:29:52 2017
 @@ -184,6 +184,9 @@ class Setup:
              elif sys.platform.startswith('freebsd'):
                  self.platform = 'freebsd'
@@ -36,8 +36,8 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.5 2017/02/27 15:23:33 jca Exp $
  
 -        self._addVar( 'CCC',            'g++' )
 -        self._addVar( 'CC',             'gcc' )
-+        self._addVar( 'CCC',            'c++' )
-+        self._addVar( 'CC',             'cc' )
++        self._addVar( 'CCC',            '${CXX} ${CXXFLAGS}' )
++        self._addVar( 'CC',             '${CC} ${CFLAGS}' )
  
      def getPythonExtensionFileExt( self ):
          return '.so'
