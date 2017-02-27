@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_setup_configure_py,v 1.4 2017/02/27 15:18:29 jca Exp $
+$OpenBSD: patch-Source_setup_configure_py,v 1.5 2017/02/27 15:23:33 jca Exp $
 
 1) Fix broken lib auto-detection. The configure script will try to stat a
    shared library file, but we don't know the exact filename because it depends
@@ -8,7 +8,7 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.4 2017/02/27 15:18:29 jca Exp $
 2) Add missing OpenBSD-specific bits.
 
 --- Source/setup_configure.py.orig	Sat May 14 11:45:00 2016
-+++ Source/setup_configure.py	Mon Feb 27 16:17:19 2017
++++ Source/setup_configure.py	Mon Feb 27 16:21:44 2017
 @@ -184,6 +184,9 @@ class Setup:
              elif sys.platform.startswith('freebsd'):
                  self.platform = 'freebsd'
@@ -41,7 +41,47 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.4 2017/02/27 15:18:29 jca Exp $
  
      def getPythonExtensionFileExt( self ):
          return '.so'
-@@ -1206,6 +1213,8 @@ class UnixCompilerGCC(CompilerGCC):
+@@ -905,8 +912,7 @@ class CompilerGCC(Compiler):
+         rules = []
+ 
+         rules.append( '%s : %s' % (target_filename, ' '.join( all_objects )) )
+-        rules.append( '\t@echo Link %s' % (target_filename,) )
+-        rules.append( '\t@%%(LDEXE)s -o %s %%(CCCFLAGS)s %s' % (target_filename, ' '.join( all_objects )) )
++        rules.append( '\t%%(LDEXE)s -o %s %%(CCCFLAGS)s %s' % (target_filename, ' '.join( all_objects )) )
+ 
+         self.makePrint( self.expand( '\n'.join( rules ) ) )
+ 
+@@ -918,8 +924,7 @@ class CompilerGCC(Compiler):
+         rules = []
+ 
+         rules.append( '%s : %s' % (target_filename, ' '.join( all_objects )) )
+-        rules.append( '\t@echo Link %s' % (target_filename,) )
+-        rules.append( '\t@%%(LDSHARED)s -o %s %%(CCCFLAGS)s %s %%(LDLIBS)s' % (target_filename, ' '.join( all_objects )) )
++        rules.append( '\t%%(LDSHARED)s -o %s %%(CCCFLAGS)s %s %%(LDLIBS)s' % (target_filename, ' '.join( all_objects )) )
+ 
+         self.makePrint( self.expand( '\n'.join( rules ) ) )
+ 
+@@ -929,8 +934,7 @@ class CompilerGCC(Compiler):
+         rules = []
+ 
+         rules.append( '%s: %s %s' % (obj_filename, target.src_filename, ' '.join( target.all_dependencies )) )
+-        rules.append( '\t@echo Compile: %s into %s' % (target.src_filename, obj_filename) )
+-        rules.append( '\t@%%(CCC)s -c %%(CCCFLAGS)s -o%s  %s' % (obj_filename, target.src_filename) )
++        rules.append( '\t%%(CCC)s -c %%(CCCFLAGS)s -o%s  %s' % (obj_filename, target.src_filename) )
+ 
+         self.makePrint( self.expand( '\n'.join( rules ) ) )
+ 
+@@ -940,8 +944,7 @@ class CompilerGCC(Compiler):
+         rules = []
+ 
+         rules.append( '%s: %s %s' % (obj_filename, target.src_filename, ' '.join( target.all_dependencies )) )
+-        rules.append( '\t@echo Compile: %s into %s' % (target.src_filename, obj_filename) )
+-        rules.append( '\t@%%(CC)s -c %%(CCFLAGS)s -o%s  %s' % (obj_filename, target.src_filename) )
++        rules.append( '\t%%(CC)s -c %%(CCFLAGS)s -o%s  %s' % (obj_filename, target.src_filename) )
+ 
+         self.makePrint( self.expand( '\n'.join( rules ) ) )
+ 
+@@ -1206,6 +1209,8 @@ class UnixCompilerGCC(CompilerGCC):
      def get_lib_name_for_platform( self, libname ):
          if self.setup.platform == 'cygwin':
              return ['%s.dll.a' % libname]
@@ -50,7 +90,7 @@ $OpenBSD: patch-Source_setup_configure_py,v 1.4 2017/02/27 15:18:29 jca Exp $
          else:
              return ['%s.so' % libname]
  
-@@ -1298,6 +1307,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
+@@ -1298,6 +1303,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
                  '-lcom_err',
                  '-lexpat',
                  '-lneon',
