@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/22 13:25:36 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/27 23:32:15 jca Exp $
 
 COMMENT =		public suffix list library
 
-DISTNAME =		libpsl-0.15.0
-REVISION =		0
+DISTNAME =		libpsl-0.17.0
 
-SHARED_LIBS +=		psl	1.0	# 5.0
+SHARED_LIBS +=		psl	1.1	# 6.1
 
 CATEGORIES =		net www
 
