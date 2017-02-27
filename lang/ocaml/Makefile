@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2016/06/24 15:59:12 krw Exp $
+# $OpenBSD: Makefile,v 1.75 2017/02/27 20:51:03 jca Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -33,6 +33,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	simple dest
 CONFIGURE_ARGS+=-prefix ${PREFIX}
+CONFIGURE_ARGS+=-aspp '${CC} ${CFLAGS} -c'
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
