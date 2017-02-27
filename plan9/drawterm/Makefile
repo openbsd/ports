@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/18 18:38:59 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/27 11:02:17 jca Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	X11 c pthread sndio
 
 NO_TEST=	Yes
-MAKE_FLAGS=	CONF=openbsd \
+MAKE_FLAGS=	CC="${CC}" \
+		CONF=openbsd \
 		PORTS_CFLAGS="${CFLAGS}" \
 		PORTS_LDFLAGS="${LDFLAGS}"
 
