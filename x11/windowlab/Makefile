@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/27 20:00:26 jca Exp $
 
 COMMENT =	small and simple window manager of novel design
 DISTNAME =	windowlab-1.40
@@ -16,7 +16,8 @@ WANTLIB += X11 Xext Xft c
 MASTER_SITES =	http://nickgravgaard.com/windowlab/
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	SYSCONFDIR=${SYSCONFDIR}/X11/windowlab
+MAKE_FLAGS =	CC="${CC}" \
+		SYSCONFDIR=${SYSCONFDIR}/X11/windowlab
 
 NO_TEST =	Yes
 
