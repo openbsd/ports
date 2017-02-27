@@ -1,4 +1,4 @@
-$OpenBSD: patch-SConstruct,v 1.2 2016/09/14 08:38:22 dcoppa Exp $
+$OpenBSD: patch-SConstruct,v 1.3 2017/02/27 09:49:06 dcoppa Exp $
 
 - The build_dir keyword has been deprecated; use the variant_dir
   keyword instead
@@ -7,8 +7,17 @@ $OpenBSD: patch-SConstruct,v 1.2 2016/09/14 08:38:22 dcoppa Exp $
 - Use saner libraries names
 - Fix library naming
 
---- SConstruct.orig	Thu Sep  1 09:45:08 2016
-+++ SConstruct	Wed Sep 14 10:27:15 2016
+--- SConstruct.orig	Wed Dec 14 20:39:05 2016
++++ SConstruct	Mon Feb 27 10:39:35 2017
+@@ -24,7 +24,7 @@ options.Add( EnumVariable('platform',
+ try:
+     platform = ARGUMENTS['platform']
+     if platform == 'linux-gcc':
+-        CXX = 'g++' # not quite right, but env is not yet available.
++        CXX = os.environ["CXX"]
+         import commands
+         version = commands.getoutput('%s -dumpversion' %CXX)
+         platform = 'linux-gcc-%s' %version
 @@ -40,10 +40,10 @@ except KeyError:
  print "Building using PLATFORM =", platform
  
