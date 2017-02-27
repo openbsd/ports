@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/16 22:22:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/02/27 19:58:11 jca Exp $
 
 COMMENT=	spreadsheet program under X11
 
@@ -14,7 +14,8 @@ WANTLIB=		X11 c curses m termlib
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
 CONFIGURE_STYLE=	gnu old
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+CONFIGURE_ENV=	ac_cv_prog_CC="${CC}" \
+		CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 
 INSTALL_TARGET= install install.man
