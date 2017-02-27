@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/02 13:35:00 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2017/02/27 21:27:01 jca Exp $
 
 BROKEN-sparc64 =	Bus error (core dumped)
 
@@ -19,11 +19,14 @@ MODULES =		lang/ruby
 BUILD_DEPENDS =		devel/bison \
 			lang/ruby/${MODRUBY_REV}
 
+MAKE_ENV =		CC="${CC}" \
+			LD="${CC}"
+
 NO_CONFIGURE =		Yes
 SUBST_VARS =		RUBY
 
 do-build:
-	cd ${WRKSRC} && ${RUBY} ./minirake
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} ./minirake
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
