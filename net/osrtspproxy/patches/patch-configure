@@ -1,13 +1,11 @@
-$OpenBSD: patch-configure,v 1.2 2015/07/01 11:33:50 bluhm Exp $
+$OpenBSD: patch-configure,v 1.3 2017/02/27 01:42:06 bluhm Exp $
 --- configure.orig	Fri Feb  9 07:07:26 2001
-+++ configure	Tue Nov 11 19:12:06 2014
-@@ -135,6 +135,23 @@ case "$UNAME_S" in
++++ configure	Mon Feb 27 02:09:54 2017
+@@ -135,6 +135,21 @@ case "$UNAME_S" in
      ARFLAGS="-rc"
      SYSLIBS="-lnsl -lsocket"
      ;;
 +  OpenBSD)
-+    CC=gcc
-+    CXX=g++
 +    AR=ar
 +    ARFLAGS="-rc"
 +    if [ "$DEBUG" -ne 0 ]; then

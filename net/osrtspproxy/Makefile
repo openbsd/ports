@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/01 11:33:50 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/27 01:42:06 bluhm Exp $
 
 COMMENT=		RTSP proxy reference implementation
 
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://docs.real.com/docs/proxykit/
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}"
 
 NO_TEST=Yes
 
