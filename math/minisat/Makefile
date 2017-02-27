@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/27 19:48:41 jca Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
@@ -23,6 +23,7 @@ WANTLIB +=		c m stdc++ z
 USE_GMAKE=		Yes
 ALL_TARGET=		minisat
 NO_TEST=		Yes
+MAKE_FLAGS=		CXX="${CXX}"
 MAKE_ENV+=		MROOT=${WRKBUILD}
 WRKDIST=		${WRKDIR}/minisat
 
