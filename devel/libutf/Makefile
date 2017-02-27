@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/27 11:13:05 jca Exp $
 
 COMMENT=	UTF8 support library from Plan 9
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GROFF =	Yes
 NO_TEST=	Yes
+MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 
 pre-build:
