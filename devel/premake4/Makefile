@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/05 10:35:10 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/27 11:17:29 jca Exp $
 
 COMMENT=		build configuration tool
 
@@ -23,7 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
 USE_GMAKE=		Yes
-MAKE_FLAGS=		verbose=1
+MAKE_FLAGS=		CC="${CC}" \
+			verbose=1
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src$//}
 WRKBUILD=		${WRKSRC}/build/gmake.unix
