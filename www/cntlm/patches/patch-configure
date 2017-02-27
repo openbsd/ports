@@ -1,0 +1,51 @@
+$OpenBSD: patch-configure,v 1.1 2017/02/27 10:09:05 dcoppa Exp $
+--- configure.orig	Mon Feb 27 10:55:40 2017
++++ configure	Mon Feb 27 10:58:21 2017
+@@ -10,47 +10,6 @@
+ # This can be disabled if neccessary.
+ #
+ 
+-CCS="xlc_r gcc"
+-
+-#
+-# Look for supported compilers
+-#
+-for c in $CCS; do
+-	if CCPATH=`which $c 2>&1` && [ -z "${CCPATH%%/*}" ]; then
+-		CC="$c"
+-		break
+-	fi
+-done
+-
+-#
+-# Make a link to a proper Makefile.*
+-#
+-if [ -z "$CC" ]; then
+-	echo "Unable to find GNU GCC or IBM XL C/C++. Fix your PATH!"
+-	exit 1
+-else
+-	echo "Using $CCPATH to compile Cntlm"
+-	[ -h Makefile ] && rm -f Makefile 2>/dev/null
+-	case "$CC" in
+-		gcc)
+-			# default Makefile is for GCC; just revert back to
+-			# GCC if Makefile is linked to other compiler version
+-			if [ ! -f Makefile ]; then
+-				mv Makefile.gcc Makefile
+-			fi
+-			;;
+-		*)
+-			# backup default GCC Makefile and create a link to other
+-			if [ -f Makefile ]; then
+-				mv Makefile Makefile.gcc
+-			fi
+-
+-			EXT=`echo "$CC" | sed 's/_.*//'`
+-			ln -s Makefile.$EXT Makefile
+-			;;
+-	esac
+-fi
+-
+ STAMP=configure-stamp
+ CONFIG=config/config.h
+ TESTS="endian strdup socklen_t gethostname"
