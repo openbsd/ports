@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2016/12/04 21:36:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.249 2017/02/27 11:39:56 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -45,12 +45,12 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/xz \
 		converters/libiconv \
 		databases/sqlite3
-LIB_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT} \
+LIB_DEPENDS-ldap= ${BASE_PKGPATH} \
 		databases/openldap
 LIB_DEPENDS-mysql= databases/mariadb
-RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
+RUN_DEPENDS-mysql= ${BASE_PKGPATH}
 LIB_DEPENDS-postgresql= databases/postgresql
-RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
+RUN_DEPENDS-postgresql= ${BASE_PKGPATH}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
