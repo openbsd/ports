@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/25 08:30:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/02/27 21:51:01 jca Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -45,7 +45,7 @@ SUBST_VARS+= 	V8_ARCH
 MAKE_FLAGS+=	library=shared ARCHES=${V8_ARCH} MODES=${V8_RELEASE} \
 		DEFAULT_ARCHES=${V8_ARCH}
 
-MAKE_ENV+=	V=1 CXX=c++ CCFLAGS+="${CFLAGS}" \
+MAKE_ENV+=	V=1 CXX="${CXX}" LINK="${CXX} ${LDFLAGS}" CCFLAGS+="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
