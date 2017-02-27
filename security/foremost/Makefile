@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/11 16:24:38 nigel Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/27 19:15:32 jca Exp $
 
 COMMENT =		forensic data recovery program
 
@@ -16,6 +16,8 @@ MASTER_SITES =		http://foremost.sourceforge.net/pkg/
 
 WANTLIB +=		c
 
+MAKE_FLAGS=		RAW_CC="${CC}" \
+			CFLAGS="${CFLAGS}"
 FAKE_FLAGS =		BIN=${WRKINST}${PREFIX}/bin \
 					MAN=${WRKINST}${PREFIX}/man/man8 \
 					CONF=${WRKINST}${PREFIX}/share/examples/ \
