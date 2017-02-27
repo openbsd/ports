@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2017/02/27 15:50:17 jca Exp $
 
 COMMENT=	C++ class library for MIME messages
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=devel/lang/c++/}
 
 MAKE_FILE=		makefile.unx
+MAKE_FLAGS=		CXX="${CXX}"
 ALL_TARGET=		lib
 
 INCLUDE=	address.h addrlist.h binhex.h body.h bodypart.h boyermor.h \
