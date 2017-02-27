@@ -1,0 +1,12 @@
+$OpenBSD: patch-testsuite_Makefile_in,v 1.1 2017/02/27 21:01:09 naddy Exp $
+--- testsuite/Makefile.in.orig	Wed Aug 13 16:37:50 2008
++++ testsuite/Makefile.in	Mon Feb 27 21:59:58 2017
+@@ -98,7 +98,7 @@ AUTOCONF = @AUTOCONF@
+ AUTOHEADER = @AUTOHEADER@
+ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+-CC = gcc
++CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+ CFLAGS = @CFLAGS@
+ CPP = @CPP@
