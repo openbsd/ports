@@ -1,21 +1,7 @@
-$OpenBSD: patch-doc_tinc_texi,v 1.2 2016/05/27 11:49:04 jca Exp $
---- doc/tinc.texi.orig	Sun Apr 10 00:03:55 2016
-+++ doc/tinc.texi	Mon May 23 18:13:04 2016
-@@ -268,12 +268,7 @@ The tap driver can be loaded with @code{kldload if_tap
- @node       Configuration of OpenBSD kernels
- @subsection Configuration of OpenBSD kernels
- 
--For OpenBSD version 2.9 and higher,
--the tun driver is included in the default kernel configuration.
--There is also a kernel patch from @uref{http://diehard.n-r-g.com/stuff/openbsd/}
--which adds a tap device to OpenBSD which should work with tinc,
--but with recent versions of OpenBSD,
--a tun device can act as a tap device by setting the link0 option with ifconfig.
-+The tun and tap drivers are included in the default kernel configuration.
- 
- 
- @c ==================================================================
-@@ -2075,7 +2070,7 @@ In switch or hub modes ARP does work so the sender alr
+$OpenBSD: patch-doc_tinc_texi,v 1.3 2017/02/27 14:08:16 benoit Exp $
+--- doc/tinc.texi.orig	Sat Oct 29 15:23:48 2016
++++ doc/tinc.texi	Mon Feb 27 14:47:22 2017
+@@ -2071,7 +2071,7 @@
  In those modes every interface should have a unique MAC address, so make sure they are not the same.
  Because switch and hub modes rely on MAC addresses to function correctly,
  these modes cannot be used on the following operating systems which don't have a `tap' style virtual network device:
@@ -24,7 +10,7 @@ $OpenBSD: patch-doc_tinc_texi,v 1.2 2016/05/27 11:49:04 jca Exp $
  
  
  @c ==================================================================
-@@ -2502,8 +2497,6 @@ For IPv6 addresses:
+@@ -2498,8 +2498,6 @@
  On some platforms, when running tinc in switch mode, the VPN interface must be set to tap mode with an ifconfig command:
  
  @multitable {Darwin (Mac OS X)} {ifconfig route add -bla network address netmask netmask prefixlength interface}
