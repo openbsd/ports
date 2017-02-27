@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/27 09:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/27 19:18:19 jca Exp $
 
 COMMENT =	cron-like daemon but reacting to filesystem events
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS =	devel/argp-standalone
 LIB_DEPENDS =	devel/libinotify
 
 MAKE_FLAGS =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
+		CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify"
 
