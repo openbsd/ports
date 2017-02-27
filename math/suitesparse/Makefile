@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/11 06:34:38 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/27 23:08:14 jca Exp $
 
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
@@ -39,7 +39,8 @@ SUBST_VARS=		WRKINST
 USE_GMAKE=		Yes
 WRKDIST=		${WRKDIR}/SuiteSparse
 
-MAKE_FLAGS=		CFLAGS="${CFLAGS} -fPIC"
+MAKE_FLAGS=		CFLAGS="${CFLAGS} -fPIC" \
+			CXX="${CXX}"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.mk
