@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/27 19:46:37 jca Exp $
 
 COMMENT=		three layer backpropagation neural network library
 
@@ -18,6 +18,7 @@ WANTLIB += m stdc++
 
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		ac_cv_prog_CC="${CC}"
 
 post-extract:
 	chmod +x ${WRKSRC}/configure
