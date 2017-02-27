@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/28 21:10:13 stsp Exp $
+# $OpenBSD: Makefile,v 1.6 2017/02/27 20:06:12 naddy Exp $
 
-COMMENT =		platform game set in seville and in space
+COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
 DISTNAME =		capitan-sevilla-${VERSION}
 CATEGORIES =		games
 HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
 
-REVISION =		0
+REVISION =		1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,6 +27,7 @@ LDFLAGS =		-L${LOCALBASE}/lib -L${X11BASE}/lib \
 			-lvorbis -lvorbisfile -logg -lfreetype \
 			-Llib -lalogg `allegro-config --libs` -lalfont \
 			-lpng -lz
+MAKE_ENV =		CC="${CC}" CXX="${CXX}"
 MAKE_FLAGS =		LDFLAGS="$(LDFLAGS)" DESTDIR="$(DESTDIR)"
 
 USE_GMAKE =		Yes
