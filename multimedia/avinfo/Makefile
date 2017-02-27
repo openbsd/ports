@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/15 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2017/02/27 18:41:38 jca Exp $
 
 COMMENT=	utility for audio-video information extraction
 
@@ -20,6 +20,8 @@ MASTER_SITES=	http://shounen.ru/soft/avinfo/
 BUILD_DEPENDS=	devel/bison
 
 USE_GMAKE=	Yes
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -Wall"
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/unix//}
 
