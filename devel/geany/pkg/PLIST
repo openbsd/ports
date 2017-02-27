@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/09/04 11:43:25 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/02/27 11:18:57 giovanni Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
@@ -157,8 +157,10 @@ share/geany/filedefs/filetypes.xml
 share/geany/filedefs/filetypes.yaml
 share/geany/filedefs/filetypes.zephir
 share/geany/filetype_extensions.conf
+share/geany/geany-3.0.css
+share/geany/geany-3.20.css
+share/geany/geany.css
 share/geany/geany.glade
-share/geany/geany.gtkrc
 share/geany/snippets.conf
 share/geany/tags/
 share/geany/tags/entities.html.tags
