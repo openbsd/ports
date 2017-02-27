@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/02 13:10:17 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/27 20:50:32 naddy Exp $
 
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
@@ -16,6 +16,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 WRKSRC=		${WRKDIST}/src
 USE_GMAKE=	Yes
+MAKE_FLAGS=	CC="${CC}" LOCALBASE="${LOCALBASE}"
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=   Yes
@@ -26,7 +27,7 @@ LIB_DEPENDS=	devel/sdl2-image \
 		devel/sdl2-mixer
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/seg009.c
+	${SUBST_CMD} ${WRKSRC}/seg009.c
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlpop/data
