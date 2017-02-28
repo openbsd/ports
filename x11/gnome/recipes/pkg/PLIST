@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/27 19:32:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/02/28 16:18:05 jasper Exp $
 @bin bin/gnome-recipes
 share/appdata/
 share/appdata/org.gnome.Recipes.appdata.xml
@@ -25,13 +25,11 @@ share/gnome-recipes/images/big-mediterranean.png
 share/gnome-recipes/images/big-nordic.jpg
 share/gnome-recipes/images/big-turkish.png
 share/gnome-recipes/images/borscht.jpg
-share/gnome-recipes/images/burger-fries.jpg
 share/gnome-recipes/images/cake_aux_lardons.jpg
 share/gnome-recipes/images/cake_aux_lardons2.jpg
 share/gnome-recipes/images/chickencurry.jpg
 share/gnome-recipes/images/chickensoup.jpg
 share/gnome-recipes/images/chinese.png
-share/gnome-recipes/images/coffee.jpg
 share/gnome-recipes/images/donauwellen0.jpg
 share/gnome-recipes/images/donauwellen1.jpg
 share/gnome-recipes/images/donauwellen2.jpg
@@ -52,7 +50,7 @@ share/gnome-recipes/images/ebassi-carbonara-cover.JPG
 share/gnome-recipes/images/ebassi-hackergotchi.png
 share/gnome-recipes/images/elvin.jpg
 share/gnome-recipes/images/erusan.gif
-share/gnome-recipes/images/food.jpg
+share/gnome-recipes/images/feaneron.png
 share/gnome-recipes/images/french.jpg
 share/gnome-recipes/images/fyksen.jpg
 share/gnome-recipes/images/geisha.jpg
@@ -61,6 +59,17 @@ share/gnome-recipes/images/grumbeerekiechle_1.JPG
 share/gnome-recipes/images/grumbeerekiechle_2.JPG
 share/gnome-recipes/images/grumbeerekiechle_3.JPG
 share/gnome-recipes/images/halfline.jpg
+share/gnome-recipes/images/hazelnutbutter1.jpg
+share/gnome-recipes/images/hazelnutbutter2.jpg
+share/gnome-recipes/images/hazelnutbutter3.jpg
+share/gnome-recipes/images/hazelnutbutter4.jpg
+share/gnome-recipes/images/hazelnutmilk1.jpg
+share/gnome-recipes/images/hazelnutmilk2.jpg
+share/gnome-recipes/images/hazelnutmilk3.jpg
+share/gnome-recipes/images/hazelnutmilk4.jpg
+share/gnome-recipes/images/hazelnutmilk5.jpg
+share/gnome-recipes/images/hazelnutmilk6.jpg
+share/gnome-recipes/images/hazelnutmilk7.jpg
 share/gnome-recipes/images/indian.jpg
 share/gnome-recipes/images/italian.png
 share/gnome-recipes/images/kiwi-mandarin1.jpg
@@ -72,7 +81,6 @@ share/gnome-recipes/images/kiwi-mandarin6.jpg
 share/gnome-recipes/images/kiwi-mandarin7.jpg
 share/gnome-recipes/images/mantovana.jpg
 share/gnome-recipes/images/mclasen.jpg
-share/gnome-recipes/images/meatballs.jpg
 share/gnome-recipes/images/mediterranean.png
 share/gnome-recipes/images/mwleeds.jpg
 share/gnome-recipes/images/non_knead_buns.png
@@ -88,11 +96,8 @@ share/gnome-recipes/images/oats3.jpg
 share/gnome-recipes/images/pan_pizza1.png
 share/gnome-recipes/images/pan_pizza2.png
 share/gnome-recipes/images/pan_pizza3.png
-share/gnome-recipes/images/pesto.jpg
 share/gnome-recipes/images/pineapple_upside_down.jpg
-share/gnome-recipes/images/pizza.jpg
 share/gnome-recipes/images/pizzaburger.jpg
-share/gnome-recipes/images/plain-bagel.jpg
 share/gnome-recipes/images/rakost1.jpg
 share/gnome-recipes/images/rakost2.jpg
 share/gnome-recipes/images/rakost3.jpg
@@ -111,7 +116,6 @@ share/gnome-recipes/images/rootspie8.jpg
 share/gnome-recipes/images/rootspie9.jpg
 share/gnome-recipes/images/rosemary-potatos1.jpg
 share/gnome-recipes/images/rosemary-potatos2.jpg
-share/gnome-recipes/images/salad.jpg
 share/gnome-recipes/images/salmonrice1.jpg
 share/gnome-recipes/images/salmonrice2.jpg
 share/gnome-recipes/images/salmonrice3.jpg
@@ -130,7 +134,6 @@ share/gnome-recipes/images/spanish_omelet6.jpg
 share/gnome-recipes/images/spanish_omelet7.jpg
 share/gnome-recipes/images/spanish_omelet8.jpg
 share/gnome-recipes/images/spanish_omelet9.jpg
-share/gnome-recipes/images/spring-rolls.jpg
 share/gnome-recipes/images/tagliatelle1.jpg
 share/gnome-recipes/images/tagliatelle2.jpg
 share/gnome-recipes/images/tagliatelle3.jpg
@@ -161,13 +164,21 @@ share/icons/hicolor/48x48/apps/org.gnome.Recipes.png
 share/icons/hicolor/512x512/apps/org.gnome.Recipes-symbolic.symbolic.png
 share/icons/hicolor/512x512/apps/org.gnome.Recipes.png
 share/icons/hicolor/symbolic/apps/org.gnome.Recipes-symbolic.svg
+share/locale/ar/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/ar/LC_MESSAGES/gnome-recipes.mo
+share/locale/cs/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/cs/LC_MESSAGES/gnome-recipes.mo
+share/locale/de/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/de/LC_MESSAGES/gnome-recipes.mo
+share/locale/es/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/es/LC_MESSAGES/gnome-recipes.mo
+share/locale/nl/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/nl/LC_MESSAGES/gnome-recipes.mo
+share/locale/pl/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/pl/LC_MESSAGES/gnome-recipes.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-recipes.mo
+share/locale/sr/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/sr/LC_MESSAGES/gnome-recipes.mo
 share/mime/packages/org.gnome.Recipes-mime.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

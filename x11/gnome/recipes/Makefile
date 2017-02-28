@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/27 19:32:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2017/02/28 16:18:05 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
 GNOME_PROJECT =		gnome-recipes
-GNOME_VERSION =		0.16.0
+GNOME_VERSION =		0.18.0
 
 CATEGORIES =		misc
 
@@ -25,8 +25,11 @@ WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl ltdl lz4 lzma lzo2 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ vorbis vorbisfile xcb xcb-render xcb-shm z
+WANTLIB += appstream-glib gcab-1.0 soup-2.4 sqlite3 uuid xml2
+WANTLIB += yaml-0
 
 LIB_DEPENDS =		audio/libcanberra \
+			devel/appstream-glib \
 			textproc/gspell \
 			x11/gnome/autoar
 
