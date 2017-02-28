@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1338 2017/02/26 18:54:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1339 2017/02/28 21:31:46 edd Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1933,7 +1933,7 @@ ${_UPDATE_COOKIE${_S}}:
 		*) cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		     ${MAKE} _internal-install-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} ${_TERM_ ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
+		   ${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 
