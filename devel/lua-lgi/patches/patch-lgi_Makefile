@@ -1,20 +1,20 @@
-$OpenBSD: patch-lgi_Makefile,v 1.3 2013/03/08 10:26:26 jasper Exp $
---- lgi/Makefile.orig	Sat Feb 23 10:44:48 2013
-+++ lgi/Makefile	Sat Feb 23 10:45:21 2013
-@@ -7,8 +7,8 @@
- 
+$OpenBSD: patch-lgi_Makefile,v 1.4 2017/02/28 11:32:16 dcoppa Exp $
+--- lgi/Makefile.orig	Fri May 27 21:56:36 2016
++++ lgi/Makefile	Tue Feb 28 11:53:21 2017
+@@ -8,8 +8,8 @@
  PREFIX = /usr/local
+ HOST_OS = $(shell uname -s | tr A-Z a-z)
  LUA_VERSION=5.1
 -LUA_LIBDIR = $(PREFIX)/lib/lua/$(LUA_VERSION)
 -LUA_SHAREDIR = $(PREFIX)/share/lua/$(LUA_VERSION)
 +LUA_LIBDIR ?= $(PREFIX)/lib/lua/$(LUA_VERSION)
 +LUA_SHAREDIR ?= $(PREFIX)/share/lua/$(LUA_VERSION)
  
+ PKG_CONFIG = pkg-config
  GINAME = gobject-introspection-1.0
- PKGS = $(GINAME) gmodule-2.0 libffi
-@@ -24,7 +24,7 @@ CORE = corelgilua51.so
- LIBFLAG = -bundle -undefined dynamic_lookup
+@@ -27,7 +27,7 @@ LIBFLAG = -bundle -undefined dynamic_lookup
  CCSHARED = -fno-common
+ GOBJECT_INTROSPECTION_LIBDIR = $(shell pkg-config --variable=libdir $(GINAME))
  else
 -CORE = corelgilua51.so
 +CORE = corelgilua${MODLUA_DEP_VERSION}.so

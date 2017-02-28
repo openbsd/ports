@@ -1,12 +1,12 @@
-$OpenBSD: patch-lgi_core_c,v 1.5 2013/12/30 08:00:03 jasper Exp $
---- lgi/core.c.orig	Thu Sep 12 20:55:48 2013
-+++ lgi/core.c	Mon Dec 30 08:45:13 2013
-@@ -620,7 +620,7 @@ set_resident (lua_State *L)
+$OpenBSD: patch-lgi_core_c,v 1.6 2017/02/28 11:32:16 dcoppa Exp $
+--- lgi/core.c.orig	Tue Feb 28 11:57:18 2017
++++ lgi/core.c	Tue Feb 28 11:58:03 2017
+@@ -673,7 +673,7 @@ set_resident (lua_State *L)
  }
  
- int
+ G_MODULE_EXPORT int
 -luaopen_lgi_corelgilua51 (lua_State* L)
 +luaopen_lgi_corelgilua${MODLUA_DEP_VERSION} (lua_State* L)
  {
    LgiStateMutex *mutex;
- 
+   gint state_id;

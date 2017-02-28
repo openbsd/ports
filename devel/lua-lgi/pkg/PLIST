@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/09/10 08:42:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/02/28 11:32:16 dcoppa Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
 lib/lua/${MODLUA_VERSION}/lgi/corelgi${MODLUA_DEP}.so
 share/examples/${FULLPKGNAME}/
@@ -89,6 +89,7 @@ share/lua/${MODLUA_VERSION}/lgi/override/Clutter.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Bytes.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Error.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Markup.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib-Source.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Timer.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Variant.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib.lua

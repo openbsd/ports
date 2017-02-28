@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2017/02/28 11:32:16 dcoppa Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
 GH_ACCOUNT=	pavouk
 GH_PROJECT=	lgi
-GH_TAGNAME=	0.9.0
+GH_TAGNAME=	0.9.1
 
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
