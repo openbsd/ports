@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS+=-Wall -Wno-missing-braces -Wno-parentheses -Wno-switch -O2 -c -I. -I$(PREFIX)/include
+# $OpenBSD: Make.OpenBSD,v 1.2 2017/02/28 20:50:12 naddy Exp $
+CFLAGS+=-Wall -Wno-missing-braces -Wno-parentheses -Wno-switch -c -I. -I$(PREFIX)/include
 O=o
 AR=ar
 ARFLAGS=rvc
