@@ -1,13 +1,14 @@
-$OpenBSD: patch-wmtimer_Makefile,v 1.4 2010/03/25 06:22:41 jasper Exp $
---- wmtimer/Makefile.orig	Wed Mar 24 17:13:52 2010
-+++ wmtimer/Makefile	Wed Mar 24 17:15:16 2010
+$OpenBSD: patch-wmtimer_Makefile,v 1.5 2017/02/28 21:00:12 naddy Exp $
+--- wmtimer/Makefile.orig	Mon Jan  5 01:30:50 2004
++++ wmtimer/Makefile	Tue Feb 28 21:53:00 2017
 @@ -1,7 +1,7 @@
- CC     = gcc
+-CC     = gcc
 -LIBDIR = -L/usr/X11R6/lib -L/usr/lib
++CC     ?= gcc
 +LIBDIR = -L${X11BASE}/lib
  LIBS   = -lXpm -lXext -lX11 -lpthread `pkg-config --libs gtk+-2.0`
 -CFLAGS = `pkg-config --cflags gtk+-2.0`
-+CFLAGS = -I${X11BASE}/include `pkg-config --cflags gtk+-2.0`
++CFLAGS += -I${X11BASE}/include `pkg-config --cflags gtk+-2.0`
  
  OBJS =	wmtimer.o \
  	../wmgeneral/wmgeneral.o \
