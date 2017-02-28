@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/08/27 21:28:18 jca Exp $
+# $OpenBSD: Makefile,v 1.42 2017/02/28 18:12:14 naddy Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -39,7 +39,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # XXX: Not ported to vte-2.91 yet, so keep using gtk2/vte-0.28
 CONFIGURE_ARGS+=	--disable-gtk3 \
 			--destdir="${DESTDIR}" \
-			--mandir="${PREFIX}/man"
+			--mandir="${PREFIX}/man" \
+			CC="${CC}" \
+			CXX="${CXX}"
 
 NO_TEST=		Yes
 
