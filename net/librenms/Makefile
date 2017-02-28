@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2017/01/31 22:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/28 00:21:32 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.24
+GH_TAGNAME =	1.25
 EPOCH =		0
 
 CATEGORIES =	net www

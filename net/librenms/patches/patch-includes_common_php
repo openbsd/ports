@@ -1,8 +1,8 @@
-$OpenBSD: patch-includes_common_php,v 1.8 2017/01/31 22:43:30 sthen Exp $
---- includes/common.php.orig	Tue Jan 31 16:57:12 2017
-+++ includes/common.php	Tue Jan 31 22:12:11 2017
-@@ -1095,16 +1095,15 @@ function version_info($remote = true)
-             curl_setopt($api, CURLOPT_RETURNTRANSFER, 1);
+$OpenBSD: patch-includes_common_php,v 1.9 2017/02/28 00:21:32 sthen Exp $
+--- includes/common.php.orig	Sun Feb 26 23:11:52 2017
++++ includes/common.php	Sun Feb 26 23:12:00 2017
+@@ -1098,16 +1098,15 @@ function version_info($remote = true)
+             curl_setopt($api, CURLOPT_CONNECTTIMEOUT, 5);
              $output['github'] = json_decode(curl_exec($api), true);
          }
 -        list($local_sha, $local_date) = explode('|', rtrim(`git show --pretty='%H|%ct' -s HEAD`));

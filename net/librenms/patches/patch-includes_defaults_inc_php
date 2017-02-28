@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.19 2017/01/31 22:43:30 sthen Exp $
---- includes/defaults.inc.php.orig	Tue Jan 31 16:57:12 2017
-+++ includes/defaults.inc.php	Tue Jan 31 16:57:24 2017
+$OpenBSD: patch-includes_defaults_inc_php,v 1.20 2017/02/28 00:21:32 sthen Exp $
+--- includes/defaults.inc.php.orig	Sun Feb 26 23:11:52 2017
++++ includes/defaults.inc.php	Sun Feb 26 23:12:00 2017
 @@ -41,26 +41,26 @@ $config['db_port']               = 3306;
  $config['own_hostname'] = 'localhost';
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.19 2017/01/31 22:43:30 sthen Exp $
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -456,11 +456,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -457,11 +457,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -58,7 +58,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.19 2017/01/31 22:43:30 sthen Exp $
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -468,7 +468,7 @@ $config['smokeping']['pings']             = 20;
+@@ -469,7 +469,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -67,7 +67,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.19 2017/01/31 22:43:30 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -801,7 +801,7 @@ $config['api_demo'] = 0;
+@@ -802,7 +802,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;
