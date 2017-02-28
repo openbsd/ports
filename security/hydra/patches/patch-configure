@@ -1,53 +1,85 @@
-$OpenBSD: patch-configure,v 1.7 2015/11/21 14:16:33 rpointel Exp $
-Remove tests for include files and libraries there are no
-configure options to disable support the build may fail or be altered
-if added
---- configure.orig	Sun Dec  7 15:50:24 2014
-+++ configure	Wed Nov 18 16:55:18 2015
-@@ -306,71 +306,6 @@ echo "Checking for Postgres (libpq.so, libpq-fe.h) ...
+$OpenBSD: patch-configure,v 1.8 2017/02/28 12:47:56 benoit Exp $
+--- configure.orig	Thu Aug 11 09:48:55 2016
++++ configure	Sat Oct  8 19:35:00 2016
+@@ -423,106 +423,6 @@ fi
+   fi
  #fi
  
- echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
+-echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
 -for i in $LIBDIRS ; do
 -    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-1.so" ]&&[ -f "$i/libaprutil-1.so" ]; then
+-        if [ -f "$i/libsvn_client-1.so" ]; then
 -            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
+-        if [ -f "$i/libapr-1.so" -a -f "$i/libaprutil-1.so" ]; then
 -	    APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.dll.a" ]&&[ -f "$i/libapr-1.dll.a" ]&&[ -f "$i/libaprutil-1.dll.a" ]; then
+-        if [ -f "$i/libsvn_client-1.dll.a" ]; then
 -            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
+-        if [ -f "$i/libapr-1.dll.a" -a -f "$i/libaprutil-1.dll.a" ]; then
 -	    APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.dylib" ]&&[ -f "$i/libapr-1.dylib" ]&&[ -f "$i/libaprutil-1.dylib" ]; then
+-        if [ -f "$i/libsvn_client-1.dylib" ]; then
 -            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
+-        if [ -f "$i/libapr-1.dylib" -a -f "$i/libaprutil-1.dylib" ]; then
 -	    APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.a" ]&&[ -f "$i/libapr-1.a" ]&&[ -f "$i/libaprutil-1.a" ]; then
+-        if [ -f "$i/libsvn_client-1.a" ]; then
 -            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
+-        if [ -f "$i/libapr-1.a" -a -f "$i/libaprutil-1.a" ]; then
+-	    APR_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$SVN_PATH" ]; then
+-        if [ -f "$i/libsvn_client-1.0.dylib" ]; then
+-            SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
+-        if [ -f "$i/libapr-1.0.dylib" -a -f "$i/libaprutil-1.0.dylib" ]; then
 -	    APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
 -        TMP_LIB1=`/bin/ls $i/libsvn_client*.so* 2> /dev/null | grep libsvn_client.`
+-        if [ -n "$TMP_LIB1" ]; then
+-          SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
 -        TMP_LIB2=`/bin/ls $i/libapr-1*.so* 2> /dev/null | grep libsvn_client.`
 -        TMP_LIB3=`/bin/ls $i/libaprutil-1*.so* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB1" -a -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
--          SVN_PATH="$i"
+-        if [ -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
 -	  APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
 -        TMP_LIB1=`/bin/ls $i/libsvn_client*.dll* 2> /dev/null | grep libsvn_client.`
+-        if [ -n "$TMP_LIB1" ]; then
+-          SVN_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$APR_PATH" ]; then   
 -        TMP_LIB2=`/bin/ls $i/libapr-1*.dll* 2> /dev/null | grep libsvn_client.`
 -        TMP_LIB3=`/bin/ls $i/libaprutil-1*.dll* 2> /dev/null | grep libsvn_client.`
--        if [ -n "$TMP_LIB1" -a -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
--          SVN_PATH="$i"
+-        if [ -n "$TMP_LIB2" -a -n "$TMP_LIB3" ]; then
 -	  APR_PATH="$i"
 -        fi
 -    fi
@@ -73,13 +105,14 @@ if added
 -        fi
 -    fi  
 -done
- 
- if [ "X" = "X$SVN_PATH" -o "X" = "X$SVN_IPATH" -o "X" = "X$APR_IPATH" ]; then
-     SVN_PATH=""
-@@ -392,32 +327,6 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
+ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: SVN_PATH=$SVN_PATH/libsvn_client-1
+    echo DEBUG: APR_PATH=$APR_PATH/libapr
+@@ -549,26 +449,6 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
+     echo "                                                               ... NOT found, module svn disabled"
  fi
  
- echo "Checking for firebird (libfbclient.so) ..."
+-echo "Checking for firebird (libfbclient.so) ..."
 -for i in $LIBDIRS ; do
 -    if [ "X" = "X$FIREBIRD_PATH" ]; then
 -        if [ -f "$i/libfbclient.so" -o -f "$i/libfbclient.dylib" -o -f "$i/libfbclient.a" ]; then
@@ -99,20 +132,14 @@ if added
 -        fi
 -    fi
 -done
--for i in $INCDIRS ; do
--    if [ "X" != "X$FIREBIRD_PATH" ]; then
--        if [ -f "$i/ibase.h" ]; then
--            FIREBIRD_IPATH="$i"
--        fi
--    fi
--done
- if [ -n "$FIREBIRD_PATH" -a -n "$FIREBIRD_IPATH" ]; then
-     echo "                                       ... found"
- fi
-@@ -473,32 +382,6 @@ else
+ for i in $INCDIRS ; do
+     if [ "X" != "X$FIREBIRD_PATH" ]; then
+         if [ -f "$i/ibase.h" ]; then
+@@ -638,26 +518,6 @@ if [ -f "/usr/include/math.h" ]; then
+ else
        echo "                                       ... math.h not found, module Mysql disabled"
  fi
- echo "Checking for AFP (libafpclient.so) ..."
+-echo "Checking for AFP (libafpclient.so) ..."
 -for i in $LIBDIRS ; do
 -    if [ "X" = "X$AFP_PATH" ]; then
 -        if [ -f "$i/libafpclient.so" -o -f "$i/libafpclient.so" -o -f "$i/libafpclient.a"   ]; then
@@ -132,20 +159,14 @@ if added
 -        fi
 -    fi
 -done
--for i in $INCDIRS ; do
--    if [ "X" != "X$AFP_PATH" ]; then
--        if [ -f "$i/afpfs-ng/afp.h" ]; then
--            AFP_IPATH="$i/afpfs-ng"
--        fi
--    fi
--done
- if [ -n "$AFP_PATH" -a -n "$AFP_IPATH" ]; then
-     echo "                                   ... found"
- fi
-@@ -509,32 +392,6 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
+ for i in $INCDIRS ; do
+     if [ "X" != "X$AFP_PATH" ]; then
+         if [ -f "$i/afpfs-ng/afp.h" ]; then
+@@ -678,26 +538,6 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
+     AFP_IPATH=""
  fi
  
- echo "Checking for NCP (libncp.so / nwcalls.h) ..."
+-echo "Checking for NCP (libncp.so / nwcalls.h) ..."
 -for i in $LIBDIRS ; do
 -    if [ "X" = "X$NCP_PATH" ]; then
 -        if [ -f "$i/libncp.so" -o -f "$i/libncp.dylib" -o -f "$i/libncp.a"  ]; then
@@ -165,20 +186,14 @@ if added
 -        fi
 -    fi
 -done
--for i in $INCDIRS ; do
--    if [ "X" != "X$NCP_PATH" ]; then
--        if [ -f "$i/ncp/nwcalls.h" ]; then
--            NCP_IPATH="$i"
--        fi
--    fi
--done
- if [ -n "$NCP_PATH" -a -n "$NCP_IPATH" ]; then
-     echo "                                         ... found"
- fi
-@@ -545,26 +402,6 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
+ for i in $INCDIRS ; do
+     if [ "X" != "X$NCP_PATH" ]; then
+         if [ -f "$i/ncp/nwcalls.h" ]; then
+@@ -718,27 +558,6 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
+     NCP_IPATH=""
  fi
  
- echo "Checking for SAP/R3 (librfc/saprfc.h) ..."
+-echo "Checking for SAP/R3 (librfc/saprfc.h) ..."
 -for i in $LIBDIRS  ; do
 -    if [ "X" = "X$SAPR3_PATH" ]; then
 -        if [ -f "$i/librfc.a" -o -f "$i/librfc.dylib" -o "$i/librfc32.dll" ]; then
@@ -199,26 +214,26 @@ if added
 -        fi
 -    fi
 -done
- if [ "X" = "X$SAPR3_PATH" ]; then
-     SAPR3_IPATH=""
- fi
-@@ -673,79 +510,15 @@ if [ "X" != "X$WORACLE_LIB_PATH" ]; then
-     LIBDIRS="$LIBDIRS $WORACLE_LIB_PATH"
+ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: SAPR3_PATH=$SAPR3_PATH/librfc
+    echo DEBUG: SAPR3_IPATH=$SAPR3_IPATH/saprfc.h
+@@ -822,47 +641,6 @@ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: ORACLE_INC=$INCDIRS
  fi
  
 -for i in $LIBDIRS ; do
 -    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.so" ]&&[ -f "$i/libclntsh.so" ]; then
+-        if [ -f "$i/libocci.so" -a -f "$i/libclntsh.so" ]; then
 -            ORACLE_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.dylib" ]&&[ -f "$i/libclntsh.dylib" ]; then
+-        if [ -f "$i/libocci.dylib" -a -f "$i/libclntsh.dylib" ]; then
 -            ORACLE_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$ORACLE_PATH" ]; then
--        if [ -f "$i/libocci.a" ]&&[ -f "$i/libclntsh.a" ]; then
+-        if [ -f "$i/libocci.a" -a -f "$i/libclntsh.a" ]; then
 -            ORACLE_PATH="$i"
 -        fi
 -    fi
@@ -247,30 +262,11 @@ if added
 -        fi
 -    fi
 -done
-+
- #check for Kernel Asynchronous I/O (AIO) lib support
- if [ "X" != "X$ORACLE_PATH" ]; then
-   LIBAIO=""
--  for i in $LIBDIRS ; do
--     if [ "X" = "X$LIBAIO" ]; then
--        if [ -f "$i/libaio.so" -o -f "$i/libaio.dylib" -o  -f "$i/libaio.a" ]; then
--            LIBAIO="$i"
--        fi
--     fi
--     if [ "X" = "X$LIBAIO" ]; then
--            TMP_LIB=`/bin/ls $i/libaio.so.* 2> /dev/null | grep aio.`
--            if [ -n "$TMP_LIB" ]; then
--              LIBAIO="$i"
--            fi
--            TMP_LIB=`/bin/ls $i/libaio.dll* 2> /dev/null | grep aio.`
--            if [ -n "$TMP_LIB" ]; then
--              LIBAIO="$i"
--            fi
--     fi
--  done
-   if [ "X" = "X$LIBAIO" ]; then
-     ORACLE_PATH=""
-   fi
+ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libocci
+ fi
+@@ -894,13 +672,6 @@ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: ORACLE_PATH=$ORACLE_PATH/libaio
  fi
  
 -for i in $INCDIRS ; do
@@ -280,6 +276,15 @@ if added
 -        fi
 -    fi
 -done
- if [ -n "$ORACLE_PATH" -a -n "$ORACLE_IPATH" ]; then
-     echo "                                                                    ... found"
+ if [ "X" != "X$DEBUG" ]; then
+    echo DEBUG: ORACLE_IPATH=$ORACLE_IPATH/oci.h
  fi
+@@ -997,7 +768,7 @@ test -x $TMPC && GCCSEC="yes"
+ grep -q fPI $TMPC.c.err || GCCSECOPT="-pie -fPIE $GCCSECOPT"
+ rm -f "$TMPC"
+ gcc $GCCSECOPT -Wl,-z,now -Wl,-z,relro -o $TMPC $TMPC.c > /dev/null 2> $TMPC.c.err
+-test -x $TMPC && { LDSEC="yes" ; GCCSECOPT="$GCCSECOPT -Wl,-z,now -Wl,-z,relro" ; }
++test -x $TMPC && { LDSEC="yes" ; GCCSECOPT="$GCCSECOPT" ; }
+ rm -f $TMPC $TMPC.c $TMPC.c.err
+ echo "                                                  Compiling... $GCCSEC"
+ echo "                                                  Linking... $LDSEC"
