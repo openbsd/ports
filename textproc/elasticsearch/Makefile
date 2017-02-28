@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2017/01/13 08:49:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/28 16:18:47 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-V=			5.1.2
+V=			5.2.1
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=		java/javaPathHelper \
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
+SUBST_VARS +=		V
 ES_BASE=		${PREFIX}/elasticsearch/
 
 do-install:
