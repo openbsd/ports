@@ -8,8 +8,8 @@ export LIBPREFIX="lib"               # Standard Library Prefix
 export LIBDIR="lib"                  # Name of the library directory
 
 # Compiler and Linker
-export CC="gcc"                       # C Compiler
-export CXX="g++"                      # C++ Compiler
+[ -z "$CC" ]  && export CC="cc"       # C Compiler
+[ -z "$CXX" ] && export CXX="c++"     # C++ Compiler
 export LINK=$CXX                      # Executable Linker
 export DLLLINK="$CXX -shared"         # Dynamic Library Linker
 export LIBLINK="ar cru"               # Static Library Linker
