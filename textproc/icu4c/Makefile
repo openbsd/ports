@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2017/02/25 14:59:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2017/02/28 09:24:58 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=		International Components for Unicode
 
-VERSION=		58.1
+VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		0
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		11.0
