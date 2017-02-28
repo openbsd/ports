@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/02/19 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2017/02/28 16:13:51 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		3.22.2
-REVISION =		0
+GNOME_VERSION =		3.22.3
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +23,7 @@ WANTLIB += nss3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 stdc++
 WANTLIB += tasn1 webkit2gtk-4.0 xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 z
+WANTLIB += xcb-shm xcb-xfixes xml2 z unistring
 
 MODULES =		devel/dconf \
 			x11/gnome
