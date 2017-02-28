@@ -1,7 +1,16 @@
-$OpenBSD: patch-INSTALL,v 1.5 2015/11/28 01:37:59 gsoares Exp $
+$OpenBSD: patch-INSTALL,v 1.6 2017/02/28 02:27:41 gsoares Exp $
 
---- INSTALL.orig	Wed Nov 11 12:09:34 2015
-+++ INSTALL	Tue Nov 24 10:56:24 2015
+--- INSTALL.orig	Wed Nov  2 20:17:40 2016
++++ INSTALL	Mon Feb 27 21:57:58 2017
+@@ -128,7 +128,7 @@ fi
+ if [ `uname` != Darwin ]; then
+ 	# Determine whether fontsrv X11 files are available.
+ 	rm -f a.out
+-	gcc -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 \
++	${CC} -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 \
+ 	    -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 src/cmd/fontsrv/x11.c >/dev/null 2>&1
+ 	if [ -f a.out ]; then
+ 		echo "	fontsrv dependencies found."
 @@ -151,7 +151,7 @@ cd src
  if $dobuild; then
  	if [ ! -x ../bin/mk ]; then
