@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/26 16:59:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2017/02/28 06:49:05 jca Exp $
 
-COMMENT =		open source MPI-2 implementation
+BROKEN-arm =		configure: error: No atomic primitives available for arm-unknown-openbsd6.0
 BROKEN-hppa =		error: Could not determine global symbol label prefix
 BROKEN-powerpc =	checking if Fortran 77 compiler works... no
+
+COMMENT =		open source MPI-2 implementation
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
