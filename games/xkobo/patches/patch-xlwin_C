@@ -1,0 +1,12 @@
+$OpenBSD: patch-xlwin_C,v 1.1 2017/02/28 14:17:53 espie Exp $
+--- xlwin.C.orig	Tue Feb 28 15:05:33 2017
++++ xlwin.C	Tue Feb 28 15:05:40 2017
+@@ -143,7 +143,7 @@ void win::unmap()
+     XUnmapWindow(disp,w);
+ }
+ 
+-void win::title(char *title)
++void win::title(const char *title)
+ {
+     XStoreName(disp,w,title);
+     XSetIconName(disp,w,title);

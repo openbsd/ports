@@ -1,0 +1,22 @@
+$OpenBSD: patch-xlbacking_h,v 1.1 2017/02/28 14:17:53 espie Exp $
+--- xlbacking.h.orig	Tue Feb 28 15:04:55 2017
++++ xlbacking.h	Tue Feb 28 15:08:45 2017
+@@ -51,15 +51,15 @@ class win_backing : public win{
+     virtual void expose_backing();                 /* from eventroop() */
+     void foreground(int c);
+     void background(int c);
+-    void font(char *s);
++    void font(const char *s);
+     void warp_pointer(int x, int y);
+     inline void point_back(int x,int y){
+         XDrawPoint(disp,p,gc,x,y);}
+     inline void point(int x,int y){
+         XDrawPoint(disp,p,gc,x,y);XDrawPoint(disp,w,gc,x,y);}
+-    inline void string_back(int x,int y,char *t){
++    inline void string_back(int x,int y,const char *t){
+         XDrawImageString(disp,p,gc,x,y,t,strlen(t));}
+-    inline void string(int x,int y,char *t){
++    inline void string(int x,int y,const char *t){
+         XDrawImageString(disp,p,gc,x,y,t,strlen(t));
+         XDrawImageString(disp,w,gc,x,y,t,strlen(t));}
+     inline void rectangle_back(int x,int y,int h,int v){

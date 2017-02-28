@@ -1,0 +1,12 @@
+$OpenBSD: patch-xlwin_h,v 1.1 2017/02/28 14:17:53 espie Exp $
+--- xlwin.h.orig	Tue Feb 28 15:05:22 2017
++++ xlwin.h	Tue Feb 28 15:05:29 2017
+@@ -75,7 +75,7 @@ class win{
+     void map();
+     void unmap();
+     int eventloop();
+-    void title(char *title);
++    void title(const char *title);
+     void set_wm_close();
+     void hold_size();
+     void erase_cursor();

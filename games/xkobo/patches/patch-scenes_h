@@ -1,0 +1,12 @@
+$OpenBSD: patch-scenes_h,v 1.1 2017/02/28 14:17:53 espie Exp $
+--- scenes.h.orig	Tue Feb 28 15:11:33 2017
++++ scenes.h	Tue Feb 28 15:11:40 2017
+@@ -39,7 +39,7 @@ typedef struct {
+     int x, y, h, v;
+ } _base;
+ 
+-typedef const struct {
++typedef const struct myscene {
+     int ratio;
+     int startx;
+     int starty;
