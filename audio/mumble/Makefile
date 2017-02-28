@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2016/10/11 12:59:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2017/02/28 15:35:21 dcoppa Exp $
 
 COMMENT =		low-latency voice chat client
 
 GH_ACCOUNT =		mumble-voip
 GH_PROJECT =		mumble
-GH_TAGNAME =		1.2.17
+GH_TAGNAME =		1.2.19
 
 CATEGORIES =		audio
 
@@ -62,7 +62,7 @@ ALL_TARGET =		release
 
 NO_TEST =		Yes
 
-pre-build:
+pre-configure:
 	cd ${WRKSRC}/src/mumble/ && QTDIR=${WRKDIR}/bin \
 		${MODQT_LRELEASE} *.ts
 

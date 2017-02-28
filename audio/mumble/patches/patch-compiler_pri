@@ -1,7 +1,7 @@
-$OpenBSD: patch-compiler_pri,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
---- compiler.pri.orig	Sat Jun  1 23:16:30 2013
-+++ compiler.pri	Wed Sep 25 16:28:26 2013
-@@ -114,8 +114,7 @@ unix:!macx {
+$OpenBSD: patch-compiler_pri,v 1.2 2017/02/28 15:35:22 dcoppa Exp $
+--- compiler.pri.orig	Fri Jan 27 13:29:08 2017
++++ compiler.pri	Tue Feb 28 16:04:48 2017
+@@ -117,8 +117,7 @@ unix:!macx {
  		QMAKE_LFLAGS = -Wl,--no-add-needed
  	}
  
