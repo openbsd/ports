@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/01/31 10:17:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2017/02/28 23:25:25 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -305,6 +305,7 @@ share/vim/${P}/ftplugin/arch.vim
 share/vim/${P}/ftplugin/art.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/automake.vim
+share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/bst.vim
 share/vim/${P}/ftplugin/btm.vim
