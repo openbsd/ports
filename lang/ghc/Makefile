@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2016/11/01 18:14:05 kili Exp $
+# $OpenBSD: Makefile,v 1.144 2017/02/28 00:07:10 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -106,7 +106,9 @@ CFLAGS +=		-fno-pie
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
-			--with-iconv-libraries=${LOCALBASE}/lib
+			--with-iconv-libraries=${LOCALBASE}/lib \
+			--with-gcc="${CC}" \
+			--with-clang="${CC}"
 # XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
 #      loadObj_() instead.
 CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
@@ -161,7 +163,9 @@ post-patch:
 # - Install a precompiled binary.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
-	./configure --prefix=${WRKDIR}/bootstrap && \
+	./configure --prefix=${WRKDIR}/bootstrap \
+	    --with-gcc="${CC}" \
+	    --with-clang="${CC}" && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
