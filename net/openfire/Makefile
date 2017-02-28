@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.43 2017/01/02 21:44:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.44 2017/02/28 22:29:32 juanfra Exp $
 
 COMMENT=	XMPP real time collaboration server
-V =		4.1.1
+V =		4.1.3
 DISTNAME=	openfire_src_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
