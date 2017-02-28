@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/16 15:41:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/02/28 02:54:56 jca Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.2.0
@@ -29,6 +29,7 @@ LIB_DEPENDS =		devel/glib2
 TEST_DEPENDS =		${BASE_PKGPATH}
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	--cc="${CC}"
 
 SUBST_VARS +=		DESTDIR
 
