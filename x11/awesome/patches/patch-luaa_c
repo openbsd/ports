@@ -1,0 +1,21 @@
+$OpenBSD: patch-luaa_c,v 1.7 2017/02/28 13:27:15 dcoppa Exp $
+--- luaa.c.orig	Sun Dec 25 22:17:14 2016
++++ luaa.c	Tue Feb 28 13:21:20 2017
+@@ -576,6 +576,9 @@ setup_awesome_signals(lua_State *L)
+ #ifdef SIGUNUSED
+     SETUP_SIGNAL(SIGUNUSED);
+ #endif
++#ifdef SIGPOLL
++    SETUP_SIGNAL(SIGPOLL);
++#endif
+ 
+     /* POSIX.1-1990, according to man 7 signal */
+     SETUP_SIGNAL(SIGHUP);
+@@ -600,7 +603,6 @@ setup_awesome_signals(lua_State *L)
+ 
+     /* POSIX.1-2001, according to man 7 signal */
+     SETUP_SIGNAL(SIGBUS);
+-    SETUP_SIGNAL(SIGPOLL);
+     SETUP_SIGNAL(SIGPROF);
+     SETUP_SIGNAL(SIGSYS);
+     SETUP_SIGNAL(SIGTRAP);

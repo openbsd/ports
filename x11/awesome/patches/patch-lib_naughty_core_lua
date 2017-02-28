@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_naughty_core_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- lib/naughty/core.lua.orig	Tue Feb 28 13:16:42 2017
++++ lib/naughty/core.lua	Tue Feb 28 13:17:01 2017
+@@ -37,7 +37,7 @@ Naughty configuration - a table containing common popu
+ @tfield[opt=apply_dpi(4)] int padding Space between popups and edge of the
+   workarea.
+ @tfield[opt=apply_dpi(1)] int spacing Spacing between popups.
+-@tfield[opt={"/usr/share/pixmaps/"}] table icon_dirs List of directories
++@tfield[opt={"${LOCALBASE}/share/pixmaps/"}] table icon_dirs List of directories
+   that will be checked by `getIcon()`.
+ @tfield[opt={ "png", "gif" }] table icon_formats List of formats that will be
+   checked by `getIcon()`.
+@@ -58,7 +58,7 @@ notifications, e.g.
+ naughty.config = {
+     padding = dpi(4),
+     spacing = dpi(1),
+-    icon_dirs = { "/usr/share/pixmaps/", },
++    icon_dirs = { "${LOCALBASE}/share/pixmaps/", },
+     icon_formats = { "png", "gif" },
+     notify_callback = nil,
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-themes_default_theme_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- themes/default/theme.lua.orig	Tue Feb 28 13:21:31 2017
++++ themes/default/theme.lua	Tue Feb 28 13:21:48 2017
+@@ -100,7 +100,7 @@ theme.layout_cornerse = "@AWESOME_THEMES_PATH@/default
+ theme.awesome_icon = "@AWESOME_ICON_PATH@/awesome16.png"
+ 
+ -- Define the icon theme for application icons. If not set then the icons
+--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
++-- from ${LOCALBASE}/share/icons and ${LOCALBASE}/share/icons/hicolor will be used.
+ theme.icon_theme = nil
+ 
+ return theme

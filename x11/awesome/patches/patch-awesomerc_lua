@@ -1,0 +1,12 @@
+$OpenBSD: patch-awesomerc_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- awesomerc.lua.orig	Tue Feb 28 10:36:33 2017
++++ awesomerc.lua	Tue Feb 28 10:36:57 2017
+@@ -46,7 +46,7 @@ beautiful.init(awful.util.get_themes_dir() .. "default
+ -- @DOC_DEFAULT_APPLICATIONS@
+ -- This is used later as the default terminal and editor to run.
+ terminal = "xterm"
+-editor = os.getenv("EDITOR") or "nano"
++editor = os.getenv("EDITOR") or "vi"
+ editor_cmd = terminal .. " -e " .. editor
+ 
+ -- Default modkey.

@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.16 2014/09/02 10:52:43 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.17 2017/02/28 13:27:15 dcoppa Exp $
 
 These auto-generated (db2man.xsl) manpages contain a mixture of ISO
 latin-1 characters and numerical HTML entities that neither mandoc
@@ -6,9 +6,9 @@ nor groff can fully understand: do not install them.
 
 Fix usage of -export-dynamic
 
---- CMakeLists.txt.orig	Fri Apr 11 11:07:10 2014
-+++ CMakeLists.txt	Tue Sep  2 12:28:04 2014
-@@ -79,7 +79,6 @@ set(AWE_MAN_SRCS
+--- CMakeLists.txt.orig	Sun Dec 25 22:17:14 2016
++++ CMakeLists.txt	Tue Feb 28 12:48:09 2017
+@@ -84,7 +84,6 @@ set(AWE_MAN_SRCS
      ${SOURCE_DIR}/manpages/awesome.1.txt
      ${SOURCE_DIR}/manpages/awesome-client.1.txt
      ${SOURCE_DIR}/manpages/awesomerc.5.txt)
@@ -16,10 +16,40 @@ Fix usage of -export-dynamic
  
  # Don't strip RPATH if compiling on Solaris
  if (${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
-@@ -91,11 +90,11 @@ endif()
- add_executable(${PROJECT_AWE_NAME}
-     ${AWE_SRCS})
+@@ -98,12 +97,11 @@ add_executable(${PROJECT_AWE_NAME}
  
+ # CFLAGS
+ set(AWESOME_C_FLAGS
+-    -O1 -std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
+-    -Wchar-subscripts -Wundef -Wshadow -Wcast-align -Wwrite-strings
+-    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
+-    -Wpointer-arith -Wformat-nonliteral
+-    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
+-    -Wstrict-prototypes
++    -std=gnu99 -fgnu89-inline -fno-strict-aliasing
++    -Wchar-subscripts -Wcast-align -Wwrite-strings -Wsign-compare
++    -Wunused -Wno-unused-parameter -Wuninitialized -Wpointer-arith
++    -Wno-format-zero-length -Wmissing-format-attribute
++    -Wmissing-prototypes -Wstrict-prototypes
+     CACHE STRING "CFLAGS used to compile ${PROJECT_AWE_NAME}")
+ mark_as_advanced(AWESOME_C_FLAGS)
+ target_compile_options(${PROJECT_AWE_NAME} PRIVATE ${AWESOME_C_FLAGS})
+@@ -111,23 +109,11 @@ target_compile_options(${PROJECT_AWE_NAME} PRIVATE ${A
+ # Make sure awesomerc.lua is generated
+ add_dependencies(${PROJECT_AWE_NAME} generate_awesomerc)
+ 
+-# Linux w/ GCC requires -rdynamic to get backtrace to fully work.
+-#
+-# For "historical reasons", CMake adds the option to the linker flags
+-# unnoticeably for Linux w/ GCC through its modules Linux-GNU.cmake
+-# and Linux-GNU-C.cmake.  Our build system has counted on that.  But
+-# just in case CMake should do away with the convention suddenly...
+-if(DEFINED CMAKE_SHARED_LIBRARY_LINK_C_FLAGS AND
+-        NOT CMAKE_SHARED_LIBRARY_LINK_C_FLAGS MATCHES "-rdynamic")
+-    target_link_libraries(${PROJECT_AWE_NAME}
+-        $<$<AND:$<PLATFORM_ID:Linux>,$<C_COMPILER_ID:GNU>>:-rdynamic>)
+-endif()
+-
 -# FreeBSD requires dynamic linking
 -if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
 +# FreeBSD and OpenBSD require dynamic linking
@@ -31,7 +61,7 @@ Fix usage of -export-dynamic
  endif()
  
  target_link_libraries(${PROJECT_AWE_NAME}
-@@ -103,10 +102,7 @@ target_link_libraries(${PROJECT_AWE_NAME}
+@@ -135,10 +121,6 @@ target_link_libraries(${PROJECT_AWE_NAME}
      ${AWESOME_REQUIRED_LDFLAGS}
      ${AWESOME_OPTIONAL_LDFLAGS})
  
@@ -39,11 +69,10 @@ Fix usage of -export-dynamic
 -add_custom_target(lgi-check ALL
 -    COMMAND ${SOURCE_DIR}/build-utils/lgi-check.sh)
 -
-+# {{{ Generated sources
+ # {{{ Generated sources
  # atoms
  file(MAKE_DIRECTORY ${BUILD_DIR}/common)
- add_custom_command(
-@@ -155,68 +151,45 @@ if(GENERATE_MANPAGES)
+@@ -189,68 +171,45 @@ if(GENERATE_MANPAGES)
      if(NOT BUILD_DIR STREQUAL SOURCE_DIR)
          file(MAKE_DIRECTORY ${BUILD_DIR}/manpages)
      endif()
@@ -145,7 +174,7 @@ Fix usage of -export-dynamic
      endforeach()
  
      add_custom_target(man ALL DEPENDS ${MAN_FILES})
-@@ -304,13 +277,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
+@@ -357,13 +316,8 @@ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESO
  install(FILES ${AWE_CONF_FILE_DEFAULT} DESTINATION ${AWESOME_SYSCONFDIR}
          RENAME ${AWE_CONF_FILE})
  if(GENERATE_MANPAGES)
@@ -160,4 +189,19 @@ Fix usage of -export-dynamic
 +    install(FILES ${AWE_MAN5_FILES} DESTINATION ${AWESOME_MAN_PATH}/man5)
  endif()
  install(DIRECTORY ${AWE_ICON_DIR} DESTINATION ${AWESOME_DATA_PATH})
- install(DIRECTORY ${BUILD_DIR}/themes DESTINATION ${AWESOME_DATA_PATH}
+ install(DIRECTORY ${SOURCE_DIR}/themes DESTINATION ${AWESOME_DATA_PATH}
+@@ -377,6 +331,7 @@ if(GENERATE_DOC)
+ endif()
+ # }}}
+ 
++#[[
+ # {{{ Tests
+ add_custom_target(check-integration
+     sh -c "CMAKE_BINARY_DIR='${CMAKE_BINARY_DIR}' ${CMAKE_SOURCE_DIR}/tests/run.sh"
+@@ -418,5 +373,6 @@ add_custom_target(check DEPENDS ${CHECK_TARGETS} check
+ # }}}
+ 
+ INCLUDE(${CMAKE_SOURCE_DIR}/Packaging.cmake)
++]]
+ 
+ # vim: filetype=cmake:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80:foldmethod=marker

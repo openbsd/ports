@@ -1,72 +1,20 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.19 2016/10/17 19:33:38 jca Exp $
---- awesomeConfig.cmake.orig	Sun Mar  6 15:05:54 2016
-+++ awesomeConfig.cmake	Mon Oct 17 19:27:40 2016
-@@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
- option(GENERATE_DOC "generate API documentation" ON)
+$OpenBSD: patch-awesomeConfig_cmake,v 1.20 2017/02/28 13:27:15 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Sun Dec 25 22:17:14 2016
++++ awesomeConfig.cmake	Tue Feb 28 13:56:37 2017
+@@ -261,11 +261,7 @@ endif()
+ # {{{ Install path and configuration variables
+ #If a sysconfdir is specified, use it instead
+ #of the default configuration dir.
+-if(DEFINED SYSCONFDIR)
+-    set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
+-else()
+-    set(SYSCONFDIR ${CMAKE_INSTALL_PREFIX}/etc CACHE PATH "config directory")
+-endif()
++set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
  
- # {{{ CFLAGS
--add_definitions(-O1 -std=gnu99 -ggdb3 -rdynamic -fno-strict-aliasing -Wall -Wextra
--    -Wchar-subscripts -Wundef -Wshadow -Wcast-align -Wwrite-strings
--    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
--    -Wpointer-arith -Wformat-nonliteral
--    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
--    -Wstrict-prototypes)
-+add_definitions(-std=gnu99 -fgnu89-inline -fno-strict-aliasing
-+    -Wchar-subscripts -Wcast-align -Wwrite-strings -Wsign-compare
-+    -Wunused -Wno-unused-parameter -Wuninitialized -Wpointer-arith
-+    -Wno-format-zero-length -Wmissing-format-attribute
-+    -Wmissing-prototypes -Wstrict-prototypes)
- # }}}
- 
- # {{{ Endianness
-@@ -43,11 +42,7 @@ macro(a_find_program var prg req)
-     endif()
- endmacro()
- 
--a_find_program(CAT_EXECUTABLE cat TRUE)
--a_find_program(LN_EXECUTABLE ln TRUE)
--a_find_program(GREP_EXECUTABLE grep TRUE)
- a_find_program(GIT_EXECUTABLE git FALSE)
--a_find_program(HOSTNAME_EXECUTABLE hostname FALSE)
- # programs needed for man pages
- a_find_program(ASCIIDOC_EXECUTABLE asciidoc FALSE)
- a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
-@@ -64,8 +59,8 @@ a_find_program(CONVERT_EXECUTABLE convert TRUE)
- include(FindDoxygen)
- # pkg-config
- include(FindPkgConfig)
--# lua 5.1
--include(FindLua51)
-+# lua
-+include(FindLua)
- # }}}
- 
- # {{{ Check if documentation can be build
-@@ -113,14 +108,6 @@ elseif( EXISTS ${SOURCE_DIR}/.version_stamp )
- endif()
- # }}}
- 
--# {{{ Get hostname
--execute_process(
--    COMMAND ${HOSTNAME_EXECUTABLE}
--    WORKING_DIRECTORY ${SOURCE_DIR}
--    OUTPUT_VARIABLE BUILDHOSTNAME
--    OUTPUT_STRIP_TRAILING_WHITESPACE)
--# }}}
--
- # {{{ Required libraries
- #
- # this sets up:
-@@ -189,7 +176,7 @@ else()
- endif()
- 
- # Error check
--if(NOT LUA51_FOUND AND NOT LUA50_FOUND) # This is a workaround to a cmake bug
-+if(NOT LUA_FOUND)
-     message(FATAL_ERROR "lua library not found")
- endif()
- 
-@@ -264,16 +251,13 @@ endif()
+ #If an XDG Config Dir is specificed, use it instead
+ #of the default XDG configuration dir.
+@@ -300,7 +296,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
@@ -75,12 +23,19 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.19 2016/10/17 19:33:38 jca Exp $
  endif()
  
  # Hide to avoid confusion
- mark_as_advanced(CMAKE_INSTALL_CMAKE_INSTALL_PREFIX)
+@@ -357,13 +353,13 @@ endforeach()
+ # {{{ Generate some aggregated documentation from lua script
+ add_custom_command(
+         OUTPUT ${BUILD_DIR}/docs/06-appearance.md
+-        COMMAND lua ${SOURCE_DIR}/docs/06-appearance.md.lua
++        COMMAND ${MODLUA_BIN} ${SOURCE_DIR}/docs/06-appearance.md.lua
+         ${BUILD_DIR}/docs/06-appearance.md
+ )
  
- set(AWESOME_VERSION          ${VERSION})
--set(AWESOME_COMPILE_MACHINE  ${CMAKE_SYSTEM_PROCESSOR})
--set(AWESOME_COMPILE_HOSTNAME ${BUILDHOSTNAME})
--set(AWESOME_COMPILE_BY       $ENV{USER})
- set(AWESOME_RELEASE          ${CODENAME})
- set(AWESOME_SYSCONFDIR       ${XDG_CONFIG_DIR}/${PROJECT_AWE_NAME})
- set(AWESOME_LUA_LIB_PATH     ${AWESOME_DATA_PATH}/lib)
+ add_custom_command(
+         OUTPUT ${BUILD_DIR}/awesomerc.lua ${BUILD_DIR}/docs/05-awesomerc.md
+-        COMMAND lua ${SOURCE_DIR}/docs/05-awesomerc.md.lua
++        COMMAND ${MODLUA_BIN} ${SOURCE_DIR}/docs/05-awesomerc.md.lua
+         ${BUILD_DIR}/docs/05-awesomerc.md ${SOURCE_DIR}/awesomerc.lua
+         ${BUILD_DIR}/awesomerc.lua
+ )

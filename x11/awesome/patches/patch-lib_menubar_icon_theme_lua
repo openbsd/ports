@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_menubar_icon_theme_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- lib/menubar/icon_theme.lua.orig	Tue Feb 28 13:19:01 2017
++++ lib/menubar/icon_theme.lua	Tue Feb 28 13:19:52 2017
+@@ -47,12 +47,12 @@ local get_pragmatic_base_directories = function()
+         if awful_util.dir_readable(dir) then
+             table.insert(dirs, dir)
+         end
+-        if dir == "/usr/share/pixmaps" then
++        if dir == "${LOCALBASE}/share/pixmaps" then
+             need_usr_share_pixmaps = false
+         end
+     end
+ 
+-    dir = "/usr/share/pixmaps"
++    dir = "${LOCALBASE}/share/pixmaps"
+     if need_usr_share_pixmaps and awful_util.dir_readable(dir) then
+         table.insert(dirs, dir)
+     end

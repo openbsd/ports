@@ -1,0 +1,14 @@
+$OpenBSD: patch-spawn_c,v 1.5 2017/02/28 13:27:15 dcoppa Exp $
+
+Missing header
+
+--- spawn.c.orig	Tue Feb 28 11:19:09 2017
++++ spawn.c	Tue Feb 28 11:19:30 2017
+@@ -53,6 +53,7 @@
+ 
+ #include "spawn.h"
+ 
++#include <sys/wait.h>
+ #include <unistd.h>
+ #include <glib.h>
+ 

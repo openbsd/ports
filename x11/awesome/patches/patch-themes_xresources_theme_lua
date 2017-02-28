@@ -1,0 +1,12 @@
+$OpenBSD: patch-themes_xresources_theme_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- themes/xresources/theme.lua.orig	Tue Feb 28 13:21:35 2017
++++ themes/xresources/theme.lua	Tue Feb 28 13:21:53 2017
+@@ -63,7 +63,7 @@ theme = theme_assets.recolor_titlebar_focus(theme, the
+ theme = theme_assets.recolor_layout(theme, theme.fg_normal)
+ 
+ -- Define the icon theme for application icons. If not set then the icons
+--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
++-- from ${LOCALBASE}/share/icons and ${LOCALBASE}/share/icons/hicolor will be used.
+ theme.icon_theme = nil
+ 
+ -- Generate Awesome icon:

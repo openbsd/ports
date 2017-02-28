@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_beautiful_init_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
+--- lib/beautiful/init.lua.orig	Tue Feb 28 13:15:07 2017
++++ lib/beautiful/init.lua	Tue Feb 28 13:16:00 2017
+@@ -83,7 +83,7 @@ local active_font
+ -- @beautiful beautiful.wallpaper
+ 
+ -- The icon theme name.
+--- It has to be a directory in `/usr/share/icons` or an XDG icon folder.
++-- It has to be a directory in `${LOCALBASE}/share/icons` or an XDG icon folder.
+ -- @beautiful beautiful.icon_theme
+ 
+ --- The Awesome icon path.

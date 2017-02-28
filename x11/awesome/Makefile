@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.103 2016/10/17 19:33:38 jca Exp $
+# $OpenBSD: Makefile,v 1.104 2017/02/28 13:27:15 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
-DISTNAME=		awesome-3.5.9
-REVISION=		1
+VER=			4.0
+DISTNAME=		awesome-${VER}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
-HOMEPAGE=		http://awesome.naquadah.org/
+HOMEPAGE=		https://awesomewm.org/
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
@@ -16,13 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 c cairo dbus-1 execinfo \
 			gdk_pixbuf-2.0 glib-2.0 gobject-2.0 \
-			${MODLUA_WANTLIB} m pthread \
+			${MODLUA_WANTLIB} m \
 			startup-notification-1 xcb xcb-cursor \
 			xcb-icccm xcb-keysyms xcb-randr \
 			xcb-render xcb-shape xcb-util \
-			xcb-xinerama xcb-xtest xdg-basedir
+			xcb-xinerama xcb-xkb xcb-xrm xcb-xtest \
+			xdg-basedir xkbcommon-x11 xkbcommon
 
-MASTER_SITES=		${HOMEPAGE}download/
+MASTER_SITES=		https://github.com/awesomeWM/awesome/releases/download/v${VER}/
 
 MODULES=		devel/cmake \
 			devel/gettext \
@@ -36,15 +37,15 @@ LIB_DEPENDS=		devel/libexecinfo \
 			graphics/gdk-pixbuf2 \
 			${MODLUA_LIB_DEPENDS} \
 			x11/dbus \
-			x11/libxdg-basedir
+			x11/libxdg-basedir \
+			x11/xkbcommon
 
 MODLUA_BUILD_DEPENDS=	devel/lua-lgi
 
 BUILD_DEPENDS=		devel/lualdoc \
 			textproc/asciidoc>=8.4.5 \
 			textproc/xmlto \
-			graphics/ImageMagick \
-			devel/doxygen
+			graphics/ImageMagick
 
 MODLUA_RUN_DEPENDS=	devel/lua-lgi
 
@@ -53,6 +54,7 @@ RUN_DEPENDS=		devel/pango \
 			shells/bash
 
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off \
+			-DGENERATE_DOC=off \
 			-DSYSCONFDIR=${SYSCONFDIR}
 
 SEPARATE_BUILD=		No
@@ -61,19 +63,21 @@ NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/awesomeConfig.cmake \
-		${WRKSRC}/lib/naughty.lua.in \
-		${WRKSRC}/lib/awful/util.lua.in \
-		${WRKSRC}/lib/menubar/menu_gen.lua.in \
-		${WRKSRC}/lib/menubar/utils.lua.in \
-		${WRKSRC}/themes/default/theme.lua.in
+		${WRKSRC}/lib/awful/util.lua \
+		${WRKSRC}/lib/beautiful/init.lua \
+		${WRKSRC}/lib/menubar/icon_theme.lua \
+		${WRKSRC}/lib/menubar/menu_gen.lua \
+		${WRKSRC}/lib/naughty/core.lua \
+		${WRKSRC}/themes/default/theme.lua \
+		${WRKSRC}/themes/xresources/theme.lua
 
 post-install:
-	@rm ${WRKINST}${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/gears/*.orig \
+	@rm ${WRKINST}${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/lib/beautiful/*.{beforesubst,orig} \
 		${WRKINST}${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/awesome/lib/wibox/widget/*.orig \
-		${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
+		${WRKINST}${LOCALBASE}/share/awesome/lib/naughty/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig} \
+		${WRKINST}${LOCALBASE}/share/awesome/themes/xresources/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/
