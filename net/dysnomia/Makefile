@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/02/28 21:17:35 naddy Exp $
 
 CATEGORIES = 	net audio www
 COMMENT = 	interface to the deezer on-demand music system
@@ -20,6 +20,7 @@ WANTLIB = c curl m pthread stdc++ wx_base wx_base_net wx_base_odbc \
 	wx_gtk2_html wx_gtk2_qa wx_gtk2_xrc wx_gtk2_richtext
 
 MAKE_FLAGS = \
+	CXX="${CXX}" \
 	LIBS="$(CXXFLAGS) `wx-config --libs` -L${LOCALBASE}/lib -lcurl" \
 	CXXFLAGS="`wx-config --cxxflags` $(CXXFLAGS) -Wall"
 
