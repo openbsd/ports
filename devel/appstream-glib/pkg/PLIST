@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/01/14 17:18:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/02/28 09:14:15 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -13,6 +13,7 @@ include/libappstream-glib/as-bundle.h
 include/libappstream-glib/as-checksum.h
 include/libappstream-glib/as-content-rating.h
 include/libappstream-glib/as-enums.h
+include/libappstream-glib/as-format.h
 include/libappstream-glib/as-icon.h
 include/libappstream-glib/as-image.h
 include/libappstream-glib/as-inf.h
@@ -60,6 +61,7 @@ share/gtk-doc/html/appstream-glib/AsApp.html
 share/gtk-doc/html/appstream-glib/AsBundle.html
 share/gtk-doc/html/appstream-glib/AsChecksum.html
 share/gtk-doc/html/appstream-glib/AsContentRating.html
+share/gtk-doc/html/appstream-glib/AsFormat.html
 share/gtk-doc/html/appstream-glib/AsIcon.html
 share/gtk-doc/html/appstream-glib/AsImage.html
 share/gtk-doc/html/appstream-glib/AsProblem.html
