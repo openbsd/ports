@@ -1,7 +1,28 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2010/05/22 12:29:04 landry Exp $
---- src/Makefile.in.orig	Wed Oct 14 20:32:57 2009
-+++ src/Makefile.in	Sat May 22 14:15:51 2010
-@@ -50,8 +50,8 @@ clean:
+$OpenBSD: patch-src_Makefile_in,v 1.3 2017/02/28 20:35:18 naddy Exp $
+--- src/Makefile.in.orig	Wed Dec 16 14:34:39 2009
++++ src/Makefile.in	Tue Feb 28 21:32:18 2017
+@@ -17,6 +17,7 @@
+ # along with OSM2Go.  If not, see <http://www.gnu.org/licenses/>.
+ #
+ 
++CC = @CC@
+ APP = @PACKAGE@
+ prefix = @prefix@
+ datarootdir = @datarootdir@
+@@ -40,18 +41,18 @@ LDFLAGS = @LIBS@
+ 
+ all: $(APP)
+ 
+-%.o: %.c Makefile
+-	gcc $(CFLAGS) -o $@ -c $<
++.c.o:
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ $(APP): $(OBJS) Makefile
+-	gcc $(LDFLAGS) -o $@ $(OBJS)
++	$(CC) $(LDFLAGS) -o $@ $(OBJS)
+ 
+ clean:
  	rm -f osm2go *.o *~ */*~ \#*\# version.h *.bak
  
  install: $(APP)
