@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.56 2016/12/04 21:36:02 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.57 2017/02/28 00:33:29 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -85,6 +85,7 @@ include/dovecot/data-stack.h
 include/dovecot/db-checkpassword.h
 include/dovecot/db-dict.h
 include/dovecot/db-ldap.h
+include/dovecot/db-oauth2.h
 include/dovecot/db-passwd-file.h
 include/dovecot/db-sql.h
 include/dovecot/dbox-attachment.h
@@ -331,6 +332,9 @@ include/dovecot/mail-index-view-private.h
 include/dovecot/mail-index.h
 include/dovecot/mail-namespace.h
 include/dovecot/mail-search-build.h
+include/dovecot/mail-search-mime-build.h
+include/dovecot/mail-search-mime-register.h
+include/dovecot/mail-search-mime.h
 include/dovecot/mail-search-parser-private.h
 include/dovecot/mail-search-parser.h
 include/dovecot/mail-search-register.h
@@ -377,6 +381,7 @@ include/dovecot/maildir-settings.h
 include/dovecot/maildir-storage.h
 include/dovecot/maildir-sync.h
 include/dovecot/maildir-uidlist.h
+include/dovecot/malloc-overflow.h
 include/dovecot/master-auth.h
 include/dovecot/master-instance.h
 include/dovecot/master-interface.h
@@ -418,6 +423,7 @@ include/dovecot/message-header-hash.h
 include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
+include/dovecot/message-part-data.h
 include/dovecot/message-part-serialize.h
 include/dovecot/message-part.h
 include/dovecot/message-search.h
@@ -435,6 +441,7 @@ include/dovecot/nfs-workarounds.h
 include/dovecot/notify-plugin-private.h
 include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
+include/dovecot/oauth2.h
 include/dovecot/ostream-cmp.h
 include/dovecot/ostream-dot.h
 include/dovecot/ostream-encrypt.h
@@ -748,6 +755,7 @@ share/doc/dovecot/wiki/Design.AuthProcess.txt
 share/doc/dovecot/wiki/Design.AuthProtocol.txt
 share/doc/dovecot/wiki/Design.Buffers.txt
 share/doc/dovecot/wiki/Design.Code.txt
+share/doc/dovecot/wiki/Design.Dcrypt.txt
 share/doc/dovecot/wiki/Design.DoveadmProtocol.HTTP.txt
 share/doc/dovecot/wiki/Design.DoveadmProtocol.txt
 share/doc/dovecot/wiki/Design.Dsync.txt
@@ -784,6 +792,7 @@ share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HAProxy.txt
+share/doc/dovecot/wiki/HowTo.AntispamWithSieve.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
 share/doc/dovecot/wiki/HowTo.ImapcProxy.txt
 share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
@@ -857,6 +866,7 @@ share/doc/dovecot/wiki/PasswordDatabase.IMAP.txt
 share/doc/dovecot/wiki/PasswordDatabase.PAM.txt
 share/doc/dovecot/wiki/PasswordDatabase.Shadow.txt
 share/doc/dovecot/wiki/PasswordDatabase.Static.txt
+share/doc/dovecot/wiki/PasswordDatabase.oauth2.txt
 share/doc/dovecot/wiki/PasswordDatabase.txt
 share/doc/dovecot/wiki/PerformanceTuning.txt
 share/doc/dovecot/wiki/Pigeonhole.Installation.txt
