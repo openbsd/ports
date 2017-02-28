@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/05/14 14:11:21 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2017/02/28 21:29:05 edd Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
@@ -39,6 +39,7 @@ LIB_DEPENDS =		devel/sdl \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS +=	--without-doxygen
 
 # m68k debugger, at a slight performance cost
 .if ${FLAVOR:Mdebugger}
