@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2016/09/09 12:25:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/28 21:40:03 edd Exp $
+#
+# Note that this may not build if an older libdwarf is already installed.
 
 COMMENT=		library to access the DWARF debugging file format
 
-V=			20160613
+V=			20161124
 DISTNAME=		libdwarf-${V}
 WRKDIST=		${WRKDIR}/dwarf-${V}
-REVISION=		1
 
-SHARED_LIBS=		dwarf 1.0
+SHARED_LIBS=		dwarf 1.1
 
 CATEGORIES=		devel
 
