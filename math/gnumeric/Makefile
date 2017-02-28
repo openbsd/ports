@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.122 2017/02/21 09:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2017/02/28 22:37:31 sthen Exp $
+
+BROKEN-i386=	fails when merging translations with itstool
 
 GOFFICE_API_VERSION=	0.10
 GOFFICE_VERSION=	0.10.33
