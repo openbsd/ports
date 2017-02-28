@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/02/28 09:24:04 jca Exp $
 
 COMMENT =	FTP listing and transfer tools
 
@@ -16,17 +16,21 @@ WANTLIB =		c
 
 MASTER_SITES =	http://www.ohse.de/uwe/ftpcopy/
 
-MAKE_FLAGS =	CC="${CC}"
-FAKE_FLAGS =	prefix="${DESTDIR}/${PREFIX}"
-
 WRKDIST =	${WRKDIR}/web/${DISTNAME}
 
 NO_TEST =	Yes
+
+do-configure:
+	echo "${CC}" > ${WRKSRC}/src/conf-cc
+	echo "${CC}" > ${WRKSRC}/src/conf-ld
+	echo "${CFLAGS}" > ${WRKSRC}/src/conf-cflags
+	echo "${CFLAGS} -Wall -W" > ${WRKSRC}/src/conf-cflagsw
+	echo "${LDFLAGS}" > ${WRKSRC}/src/conf-ldflags
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/ftpcopy ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/command/ftpls ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/command/ftpcp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/man/man1
-                
+
 .include <bsd.port.mk>
