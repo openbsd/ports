@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2016/10/28 13:41:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2017/02/28 12:26:01 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -508,19 +508,6 @@ share/gtk-doc/html/gdk3/X_cursor.png
 share/gtk-doc/html/gdk3/alias_cursor.png
 share/gtk-doc/html/gdk3/all_scroll_cursor.png
 share/gtk-doc/html/gdk3/annotation-glossary.html
-share/gtk-doc/html/gdk3/api-index-3-0.html
-share/gtk-doc/html/gdk3/api-index-3-10.html
-share/gtk-doc/html/gdk3/api-index-3-12.html
-share/gtk-doc/html/gdk3/api-index-3-14.html
-share/gtk-doc/html/gdk3/api-index-3-16.html
-share/gtk-doc/html/gdk3/api-index-3-18.html
-share/gtk-doc/html/gdk3/api-index-3-2.html
-share/gtk-doc/html/gdk3/api-index-3-20.html
-share/gtk-doc/html/gdk3/api-index-3-22.html
-share/gtk-doc/html/gdk3/api-index-3-4.html
-share/gtk-doc/html/gdk3/api-index-3-6.html
-share/gtk-doc/html/gdk3/api-index-3-8.html
-share/gtk-doc/html/gdk3/api-index-deprecated.html
 share/gtk-doc/html/gdk3/api-index-full.html
 share/gtk-doc/html/gdk3/arrow.png
 share/gtk-doc/html/gdk3/based_arrow_down.png
@@ -915,19 +902,6 @@ share/gtk-doc/html/gtk3/aboutdialog.png
 share/gtk-doc/html/gtk3/accel-label.png
 share/gtk-doc/html/gtk3/action-bar.png
 share/gtk-doc/html/gtk3/annotation-glossary.html
-share/gtk-doc/html/gtk3/api-index-3-0.html
-share/gtk-doc/html/gtk3/api-index-3-10.html
-share/gtk-doc/html/gtk3/api-index-3-12.html
-share/gtk-doc/html/gtk3/api-index-3-14.html
-share/gtk-doc/html/gtk3/api-index-3-16.html
-share/gtk-doc/html/gtk3/api-index-3-18.html
-share/gtk-doc/html/gtk3/api-index-3-2.html
-share/gtk-doc/html/gtk3/api-index-3-20.html
-share/gtk-doc/html/gtk3/api-index-3-22.html
-share/gtk-doc/html/gtk3/api-index-3-4.html
-share/gtk-doc/html/gtk3/api-index-3-6.html
-share/gtk-doc/html/gtk3/api-index-3-8.html
-share/gtk-doc/html/gtk3/api-index-deprecated.html
 share/gtk-doc/html/gtk3/api-index-full.html
 share/gtk-doc/html/gtk3/appchooserbutton.png
 share/gtk-doc/html/gtk3/appchooserdialog.png
