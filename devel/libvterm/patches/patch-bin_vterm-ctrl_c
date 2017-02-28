@@ -1,0 +1,16 @@
+$OpenBSD: patch-bin_vterm-ctrl_c,v 1.1.1.1 2017/02/28 22:40:11 edd Exp $
+
+Fix signed versus unsigned comparison.
+https://bugs.launchpad.net/libvterm/+bug/1668780
+
+--- bin/vterm-ctrl.c.orig	Sun Dec 18 21:03:40 2016
++++ bin/vterm-ctrl.c	Sat Feb 25 16:29:14 2017
+@@ -81,7 +81,7 @@ static char *read_csi()
+ {
+   /* TODO: This really should be a more robust CSI parser
+    */
+-  char c;
++  int c;
+ 
+   /* await CSI - 8bit or 2byte 7bit form */
+   bool in_esc = false;
