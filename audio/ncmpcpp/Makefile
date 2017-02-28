@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/11/29 11:35:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.55 2017/02/28 16:15:30 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -6,13 +6,13 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.7.7
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.bz2
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://ncmpcpp.rybczak.net/
+HOMEPAGE =		https://rybczak.net/ncmpcpp/
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 

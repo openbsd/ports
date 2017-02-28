@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_window_h,v 1.1 2016/11/29 11:35:00 dcoppa Exp $
+$OpenBSD: patch-src_window_h,v 1.2 2017/02/28 16:15:30 dcoppa Exp $
 
 commit 6b73f0ebe1c05cb2b3b6973662e7b6c95eba4530
 Author: Andrzej Rybczak <electricityispower@gmail.com>
@@ -6,8 +6,15 @@ Date:   Mon Nov 14 02:18:06 2016 +0100
 
 window: prevent ncurses from defining macros
 
---- src/window.h.orig	Tue Nov 29 11:29:00 2016
-+++ src/window.h	Tue Nov 29 11:30:54 2016
+commit 667e9be00e4ddeeabe322df536e41e499b214371
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Wed Dec 7 20:03:50 2016 +0100
+
+window: make key type 64 bits to represent unicode characters
+unambiguously
+
+--- src/window.h.orig	Mon Oct 31 12:24:35 2016
++++ src/window.h	Tue Feb 28 16:41:59 2017
 @@ -21,6 +21,8 @@
  #ifndef NCMPCPP_WINDOW_H
  #define NCMPCPP_WINDOW_H
@@ -17,14 +24,34 @@ window: prevent ncurses from defining macros
  #include "config.h"
  
  #include "curses.h"
-@@ -38,10 +40,6 @@
- #if NCURSES_MOUSE_VERSION == 1
+@@ -39,25 +41,21 @@
  # define BUTTON5_PRESSED (1U << 27)
  #endif // NCURSES_MOUSE_VERSION == 1
--
+ 
 -// undefine macros with colliding names
 -#undef border
 -#undef scroll
- 
+-
  /// NC namespace provides set of easy-to-use
  /// wrappers over original curses library.
+ namespace NC {
+ 
+ namespace Key {
+ 
+-typedef uint32_t Type;
++typedef uint64_t Type;
+ 
+ const Type None = -1;
+ 
+ // modifier masks
+-const Type Special = 1 << 31;
+-const Type Alt     = 1 << 30;
+-const Type Ctrl    = 1 << 29;
+-const Type Shift   = 1 << 28;
++const Type Special = Type{1} << 63;
++const Type Alt     = Type{1} << 62;
++const Type Ctrl    = Type{1} << 61;
++const Type Shift   = Type{1} << 60;
+ 
+ // useful names
+ const Type Null      = 0;
