@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/06 17:24:02 patrick Exp $
+# $OpenBSD: Makefile,v 1.4 2017/02/28 07:02:15 jca Exp $
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
@@ -53,7 +53,6 @@ ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 .endif
 
 LANGS=		c,c++
-CC=		/usr/bin/gcc
 CFLAGS=		-O2 -g
 
 CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
