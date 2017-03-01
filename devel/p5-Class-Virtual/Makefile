@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/03/01 14:12:56 benoit Exp $
 COMMENT=	base class for virtual base classes
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Class-Virtual-0.07
+DISTNAME =	Class-Virtual-0.08
 CATEGORIES=	devel
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
