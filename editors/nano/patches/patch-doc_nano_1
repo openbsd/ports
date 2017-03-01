@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_nano_1,v 1.1 2017/01/19 16:28:17 naddy Exp $
---- doc/nano.1.orig	Tue Jan 10 11:31:53 2017
-+++ doc/nano.1	Thu Jan 19 16:08:21 2017
-@@ -303,8 +303,6 @@ https://nano-editor.org/
+$OpenBSD: patch-doc_nano_1,v 1.2 2017/03/01 16:56:50 naddy Exp $
+--- doc/nano.1.orig	Thu Feb 23 11:41:16 2017
++++ doc/nano.1	Wed Mar  1 17:56:00 2017
+@@ -305,8 +305,6 @@ https://nano-editor.org/
  
  .SH SEE ALSO
  .BR nanorc (5)
