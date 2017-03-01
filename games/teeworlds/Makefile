@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/11/30 18:17:03 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2017/03/01 20:42:57 naddy Exp $
 
 # Crashes on strict-alignment archs, see: src/base/system.c:164
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
@@ -49,6 +49,7 @@ pre-configure:
 		${WRKSRC}/scripts/font_installer.sh \
 		${WRKSRC}/scripts/make_src.py \
 		${WRKSRC}/bam.lua \
+		${WRKSRC}/configure.lua \
 		${BAM_WRKSRC}/make_unix.sh \
 		${BAM_WRKSRC}/src/driver_gcc.lua \
 		${BAM_WRKSRC}/src/base.lua
