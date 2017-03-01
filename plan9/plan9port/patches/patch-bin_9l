@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_9l,v 1.1 2017/03/01 00:59:59 gsoares Exp $
+--- bin/9l.orig	Wed Nov  2 20:17:40 2016
++++ bin/9l	Tue Feb 28 17:32:32 2017
+@@ -11,6 +11,11 @@ nmflags=""
+ extralibs="-lm"
+ tag="${SYSNAME:-`uname`}-${OBJTYPE:-`uname -m`}"
+ case "$tag" in
++*OpenBSD*)
++	ld=${CC9:-${CC}}
++	userpath=true
++	extralibs="$extralibs -lutil"
++	;;
+ *FreeBSD*)
+ 	ld=${CC9:-gcc}
+ 	userpath=true

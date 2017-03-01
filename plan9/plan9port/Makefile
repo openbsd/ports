@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/02/28 02:27:41 gsoares Exp $
+# $OpenBSD: Makefile,v 1.20 2017/03/01 00:59:59 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -6,6 +6,7 @@ BROKEN-powerpc =	threading issues
 COMMENT =		Plan 9 from user space
 
 DISTNAME =		plan9port-20161102
+REVISION =		0
 
 
 GH_ACCOUNT =		9fans
@@ -56,7 +57,7 @@ post-patch:
 	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags .gitignore
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/INSTALL
+	${SUBST_CMD} ${WRKSRC}/INSTALL ${WRKSRC}/bin/{9c,9l}
 
 do-build:
 	cd ${WRKSRC} && env CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
