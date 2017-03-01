@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.31 2017/01/23 10:50:25 phessler Exp $
+# $OpenBSD: arch-defines.mk,v 1.32 2017/03/01 21:58:53 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -31,7 +31,7 @@ OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
 GO_ARCHS = amd64 i386
 
 
-.for PROP in ALL APM BE LE LP64 GCC4 GCC3 MONO LLVM \
+.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 MONO LLVM \
                            OCAML_NATIVE OCAML_NATIVE_DYNLINK GO
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
