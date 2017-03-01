@@ -1,16 +1,17 @@
-$OpenBSD: patch-common_osdep_h,v 1.8 2017/01/26 03:16:57 ajacoutot Exp $
+$OpenBSD: patch-common_osdep_h,v 1.9 2017/03/01 08:53:46 ajacoutot Exp $
 
-Enable the use of __sync_fetch_and_add() on alpha, mips64, powerpc and sparc64.
+Enable the use of __sync_fetch_and_add() on aarch64, alpha, mips64, powerpc
+and sparc64.
 
 --- common/osdep.h.orig	Wed Jan 25 16:45:03 2017
-+++ common/osdep.h	Wed Jan 25 20:05:15 2017
++++ common/osdep.h	Tue Feb 28 13:34:03 2017
 @@ -252,7 +252,8 @@ int x264_threading_init( void );
  static ALWAYS_INLINE int x264_pthread_fetch_and_add( int *val, int add, x264_pthread_mutex_t *mutex )
  {
  #if HAVE_THREAD
 -#if defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 0) && (ARCH_X86 || ARCH_X86_64)
-+#if defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 0) &&\
-+      (ARCH_ALPHA || ARCH_MIPS || ARCH_PPC || ARCH_SPARC64 || ARCH_X86 || ARCH_X86_64)
++#if defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 0) && \
++      (ARCH_AARCH64 || ARCH_ALPHA || ARCH_MIPS || ARCH_PPC || ARCH_SPARC64 || ARCH_X86 || ARCH_X86_64)
      return __sync_fetch_and_add( val, add );
  #else
      x264_pthread_mutex_lock( mutex );
