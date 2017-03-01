@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/05/13 04:29:58 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.28 2017/03/01 22:54:13 jmatthew Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.1.4
@@ -91,7 +91,7 @@ ${_n}_V=${_v}
 SUBST_VARS+=${_n}_V
 .endfor
 
-MAKE_ENV =	MAKE=${MAKE_PROGRAM}
+MAKE_ENV =	MAKE=${MAKE_PROGRAM} CC=${CC} CXX=${CXX}
 MAKE_FLAGS =	rel
 
 MODULES =	lang/erlang
