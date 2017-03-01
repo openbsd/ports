@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/01 10:15:27 benoit Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
 DISTNAME=	roadfighter.src_1.0.1269
 PKGNAME=	${DISTNAME:S/.src_/-/}
-REVISION =	0
+REVISION =	1
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_/-/}
 
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
+
+MAKE_ENV =	CXX="${CXX}"
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-sound \
