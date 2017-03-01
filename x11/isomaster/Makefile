@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/08/29 09:13:37 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2017/03/01 17:14:41 giovanni Exp $
 
 COMMENT=		gui cd image editor
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=		Yes
+MAKE_FLAGS=		CC=${CC}
 NO_TEST=		Yes
 
 FAKE_FLAGS=	MYMANPATH=${WRKINST}/${TRUEPREFIX}/man/man1 \
