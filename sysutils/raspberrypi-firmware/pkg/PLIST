@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/17 11:04:32 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/02 12:04:54 sthen Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -33,6 +33,7 @@ share/raspberrypi-firmware/boot/overlays/dpi18.dtbo
 share/raspberrypi-firmware/boot/overlays/dpi24.dtbo
 share/raspberrypi-firmware/boot/overlays/dwc-otg.dtbo
 share/raspberrypi-firmware/boot/overlays/dwc2.dtbo
+share/raspberrypi-firmware/boot/overlays/enc28j60-spi2.dtbo
 share/raspberrypi-firmware/boot/overlays/enc28j60.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-poweroff.dtbo
@@ -47,6 +48,7 @@ share/raspberrypi-firmware/boot/overlays/i2c-gpio.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c-mux.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c-pwm-pca9685a.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c-rtc.dtbo
+share/raspberrypi-firmware/boot/overlays/i2c-sensor.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c0-bcm2708.dtbo
 share/raspberrypi-firmware/boot/overlays/i2c1-bcm2708.dtbo
 share/raspberrypi-firmware/boot/overlays/i2s-gpio28-31.dtbo
@@ -61,10 +63,12 @@ share/raspberrypi-firmware/boot/overlays/mcp23017.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp23s17.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp2515-can0.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp2515-can1.dtbo
+share/raspberrypi-firmware/boot/overlays/mcp3008.dtbo
 share/raspberrypi-firmware/boot/overlays/mmc.dtbo
 share/raspberrypi-firmware/boot/overlays/mz61581.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-act-led.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-bt.dtbo
+share/raspberrypi-firmware/boot/overlays/pi3-disable-wifi.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-miniuart-bt.dtbo
 share/raspberrypi-firmware/boot/overlays/piscreen.dtbo
 share/raspberrypi-firmware/boot/overlays/piscreen2r.dtbo
@@ -96,6 +100,7 @@ share/raspberrypi-firmware/boot/overlays/smi-nand.dtbo
 share/raspberrypi-firmware/boot/overlays/smi.dtbo
 share/raspberrypi-firmware/boot/overlays/spi-gpio35-39.dtbo
 share/raspberrypi-firmware/boot/overlays/spi-rtc.dtbo
+share/raspberrypi-firmware/boot/overlays/spi0-cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi0-hw-cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi1-1cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi1-2cs.dtbo
