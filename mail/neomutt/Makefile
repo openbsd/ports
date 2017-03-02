@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/02/06 13:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/03/02 17:42:28 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
-V=		20170206
+V=		20170225
 DISTNAME=	neomutt-$V
 
 CATEGORIES=	mail
@@ -35,7 +35,6 @@ CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
-		--enable-hcache \
 		--enable-imap \
 		--enable-nntp \
 		--disable-notmuch \
