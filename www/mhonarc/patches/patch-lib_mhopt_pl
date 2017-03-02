@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_mhopt_pl,v 1.1 2012/05/07 20:13:50 pascal Exp $
+$OpenBSD: patch-lib_mhopt_pl,v 1.2 2017/03/02 09:41:30 sthen Exp $
 defined(%hash) is deprecated
---- lib/mhopt.pl.orig	Mon May  7 12:01:47 2012
-+++ lib/mhopt.pl	Mon May  7 12:02:00 2012
-@@ -864,7 +864,7 @@ sub update_data_1_to_2 {
- ##
+--- lib/mhopt.pl.orig	Sun Jan 29 19:45:55 2012
++++ lib/mhopt.pl	Thu Mar  2 09:36:34 2017
+@@ -865,7 +865,7 @@ sub update_data_1_to_2 {
  sub update_data_2_1_to_later {
+     no warnings qw(deprecated);
      # we can preserve filter arguments
 -    if (defined(%main::MIMEFiltersArgs)) {
 +    if (%main::MIMEFiltersArgs) {
