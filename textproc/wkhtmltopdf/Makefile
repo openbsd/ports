@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/13 18:52:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2017/03/02 10:12:02 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -39,7 +39,9 @@ LIB_DEPENDS =		converters/libiconv \
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		LIBwkhtmltox_VERSION=${LIBwkhtmltox_VERSION}
-MAKE_ENV +=		WRKBUILD=${WRKBUILD}
+MAKE_ENV +=		WRKBUILD=${WRKBUILD} \
+			PORTS_CC="${CC}" PORTS_CXX="${CXX}"
+CONFIGURE_ENV =	PORTS_CC="${CC}" PORTS_CXX="${CXX}"
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
 SEPARATE_BUILD =	Yes
@@ -51,7 +53,7 @@ pre-patch:
 	cd ${WRKDIR}/${DISTNAME} && mv ../qt-${QT_COMMIT} qt
 
 do-configure:
-	mkdir ${WRKBUILD}/qt
+	mkdir -p ${WRKBUILD}/qt
 	# qt config options taken from scripts/build.py
 	cd ${WRKBUILD}/qt && \
 		env -i ${CONFIGURE_ENV} ${WRKSRC}/qt/configure \
