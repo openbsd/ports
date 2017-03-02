@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/08/16 09:10:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/03/02 13:27:45 sthen Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -10,6 +10,7 @@ PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 PKGNAME-plugins=	olsrd-plugins-${VERSION}
 REVISION=		7
+REVISION-plugins=	8
 
 CATEGORIES=	net
 
@@ -29,13 +30,12 @@ LIB_DEPENDS-main=	# empty
 WANTLIB-main=	c
 
 LIB_DEPENDS-gui= x11/gtk+2
-WANTLIB-gui=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
-		xcb-render xcb-render-util z gdk_pixbuf-2.0 gtk-x11-2.0 \
-		gdk-x11-2.0 ${MODGETTEXT_WANTLIB}
+WANTLIB-gui=	${MODGETTEXT_WANTLIB}
+WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-gui += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB-gui += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-gui += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gui += z
 
 WANTLIB-plugins=	# empty
 LIB_DEPENDS-plugins=	# empty
@@ -47,7 +47,7 @@ NO_TEST=	Yes
 MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
-MAKE_FLAGS=	DEBUG=0
+MAKE_FLAGS=	DEBUG=0 CC="${CC}"
 FAKE_FLAGS=	SBINDIR=${DESTDIR}/${PREFIX}/sbin \
 		ETCDIR=${DESTDIR}/${PREFIX}/share/examples/olsrd \
 		LIBDIR=${DESTDIR}/${PREFIX}/lib/olsrd-plugins \
