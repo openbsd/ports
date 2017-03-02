@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/04 18:30:48 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/02 16:36:08 pascal Exp $
 bin/lazarus-ide
 bin/lazbuild
 bin/lazres
@@ -2163,12 +2163,14 @@ share/lazarus/components/ideintf/docs/compoptsintf.xml
 share/lazarus/components/ideintf/docs/findcommandsbyshortcut.pas
 share/lazarus/components/ideintf/docs/formeditingintf.xml
 share/lazarus/components/ideintf/docs/idecommands.xml
+share/lazarus/components/ideintf/docs/idehelpintf.xml
 share/lazarus/components/ideintf/docs/ideimagesintf.xml
 share/lazarus/components/ideintf/docs/ideoptionsintf.xml
 share/lazarus/components/ideintf/docs/lazideintf.xml
 share/lazarus/components/ideintf/docs/objectinspector.xml
 share/lazarus/components/ideintf/docs/packageintf.xml
 share/lazarus/components/ideintf/docs/projectintf.xml
+share/lazarus/components/ideintf/docs/propedits.xml
 share/lazarus/components/ideintf/fieldseditor.lfm
 share/lazarus/components/ideintf/fieldseditor.pas
 share/lazarus/components/ideintf/fieldslist.lfm
@@ -4397,8 +4399,8 @@ share/lazarus/components/printers/win32/winutilprn.pas
 share/lazarus/components/printers/win32/winutilprnconst.inc
 share/lazarus/components/projectgroups/
 share/lazarus/components/projectgroups/README.txt
-share/lazarus/components/projectgroups/lazprojectgroup.pas
 share/lazarus/components/projectgroups/lazprojectgroups.lpk
+share/lazarus/components/projectgroups/lazprojectgroups.pas
 share/lazarus/components/projectgroups/projectgroup.pp
 share/lazarus/components/projectgroups/projectgroupeditor.lfm
 share/lazarus/components/projectgroups/projectgroupeditor.pas
@@ -5761,6 +5763,7 @@ share/lazarus/components/turbopower_ipro/languages/ipconst.pt_BR.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.ru.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.uk.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.zh_CN.po
+share/lazarus/components/turbopower_ipro/languages/iphtmlpv.de.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.fr.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.hu.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.it.po
@@ -5783,6 +5786,7 @@ share/lazarus/components/turbopower_ipro/languages/iputils.uk.po
 share/lazarus/components/turbopower_ipro/languages/iputils.zh_CN.po
 share/lazarus/components/turbopower_ipro/make_icons.bat
 share/lazarus/components/turbopower_ipro/tipfiledataprovider.png
+share/lazarus/components/turbopower_ipro/tiphtmldataprovider.png
 share/lazarus/components/turbopower_ipro/tiphtmlpanel.png
 share/lazarus/components/turbopower_ipro/tiphttpdataprovider.png
 share/lazarus/components/turbopower_ipro/turbopoweripro.lpk
@@ -6055,11 +6059,15 @@ share/lazarus/docs/booth/ProdProgEntwMitOpenSourceSystems2007.odp
 share/lazarus/docs/chm/
 share/lazarus/docs/chm/fcl.chm
 share/lazarus/docs/chm/fcl.xct
+share/lazarus/docs/chm/fclres.chm
+share/lazarus/docs/chm/fclres.xct
+share/lazarus/docs/chm/fpdoc.chm
 share/lazarus/docs/chm/lazutils.chm
 share/lazarus/docs/chm/lazutils.xct
 share/lazarus/docs/chm/lcl.chm
 share/lazarus/docs/chm/lcl.xct
 share/lazarus/docs/chm/prog.chm
+share/lazarus/docs/chm/readmechm.txt
 share/lazarus/docs/chm/ref.chm
 share/lazarus/docs/chm/ref.kwd
 share/lazarus/docs/chm/rtl.chm
@@ -8336,6 +8344,7 @@ share/lazarus/lcl/images/buttons/btn_ok.png
 share/lazarus/lcl/images/buttons/btn_retry.png
 share/lazarus/lcl/images/buttons/btn_yes.png
 share/lazarus/lcl/images/buttons/build.bat
+share/lazarus/lcl/images/copyright.txt
 share/lazarus/lcl/images/cursors/
 share/lazarus/lcl/images/cursors/build.bat
 share/lazarus/lcl/images/cursors/cur_1.cur
@@ -9208,6 +9217,7 @@ share/lazarus/lcl/languages/lclstrconsts.nl.po
 share/lazarus/lcl/languages/lclstrconsts.no.po
 share/lazarus/lcl/languages/lclstrconsts.pl.po
 share/lazarus/lcl/languages/lclstrconsts.po
+share/lazarus/lcl/languages/lclstrconsts.pt.po
 share/lazarus/lcl/languages/lclstrconsts.pt_BR.po
 share/lazarus/lcl/languages/lclstrconsts.ru.po
 share/lazarus/lcl/languages/lclstrconsts.sk.po
@@ -9768,8 +9778,8 @@ share/lazarus/packager/globallinks/lazutils-1.lpl
 share/lazarus/packager/globallinks/lazvlc-1.lpl
 share/lazarus/packager/globallinks/lazwebextra-0.9.lpl
 share/lazarus/packager/globallinks/lazwiki-1.0.1.lpl
-share/lazarus/packager/globallinks/lcl-1.6.0.4.lpl
-share/lazarus/packager/globallinks/lclbase-1.6.0.4.lpl
+share/lazarus/packager/globallinks/lcl-1.6.4.lpl
+share/lazarus/packager/globallinks/lclbase-1.6.4.lpl
 share/lazarus/packager/globallinks/leakview-1.lpl
 share/lazarus/packager/globallinks/lhelpcontrolpkg-0.2.lpl
 share/lazarus/packager/globallinks/lr_add_function-1.lpl
@@ -10898,6 +10908,7 @@ share/lazarus/tools/jsonviewer/languages/
 share/lazarus/tools/jsonviewer/languages/jsonviewer.cs.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.de.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.es.po
+share/lazarus/tools/jsonviewer/languages/jsonviewer.fi.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.fr.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.hu.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.it.po
