@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2017/02/04 15:23:04 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2017/03/02 12:19:22 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal
 
-V =			3.0.0
+V =			3.0.2
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		2
 BOOT_GEN =		0
 
 CATEGORIES =		lang
@@ -23,8 +22,8 @@ WANTLIB += c iconv pthread
 
 LIB_DEPENDS =		converters/libiconv
 
-MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/dist/$V/source/
-MASTER_SITES0 =		https://distfiles.bsdfrog.org/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freepascal/}
+MASTER_SITES0 =		https://distfiles.stumpf.co/
 DIST_SUBDIR =		fpc
 BOOTSTRAP =		fpcboot-openbsd-$V-${BOOT_GEN}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${BOOTSTRAP}:0
@@ -46,17 +45,18 @@ SUBST_VARS +=		V CONFIG
 TEST_DEPENDS =		devel/nasm
 
 MAKE_FLAGS =		NOGDB=1
-MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
+COMMON_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
-			TARPROG=/bin/tar FPC="${WRKDIR}/bin/${COMPNAME}"
+			TARPROG=/bin/tar
+MAKE_ENV =		${COMMON_ENV} FPC="${WRKDIR}/bin/${COMPNAME}"
+TEST_ENV =		${COMMON_ENV}
 FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
 			INSTALL="${INSTALL_DATA}"
 
 TEST_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
 			FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
-			FPCOPT="-Fu${WRKSRC}/fpcsrc/rtl/units/${CONFIG}" \
-			FPCMAKE="${WRKSRC}/fpcsrc/utils/fpcm/fpcmake"
+			FPCOPT="-Fu${WRKSRC}/fpcsrc/rtl/units/${CONFIG}"
 
 USE_GMAKE =		Yes
 
@@ -78,6 +78,7 @@ post-install:
 
 do-test:
 	find ${WRKSRC} -name Package.fpc | xargs rm -f
-	cd ${WRKSRC}/fpcsrc/tests && ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
+	cd ${WRKSRC}/fpcsrc/tests && \
+		env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
 
 .include <bsd.port.mk>
