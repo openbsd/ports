@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.448 2017/02/25 20:37:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.449 2017/03/02 16:10:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -35,6 +35,7 @@
      SUBDIR += cyrus-sasl2,sqlite3
      SUBDIR += dante
      SUBDIR += despoof
+     SUBDIR += dicepassc
      SUBDIR += distorm3
      SUBDIR += dropbear
      SUBDIR += dsniff
