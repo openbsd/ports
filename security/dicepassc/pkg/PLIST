@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/02 16:10:02 sthen Exp $
+@bin bin/dicepassc
+@man man/man1/dicepassc.1
+share/dicepassc/
+share/dicepassc/diceware.wordlist
+share/dicepassc/eff_large.wordlist
+share/dicepassc/eff_short_1.wordlist

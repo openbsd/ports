@@ -1,0 +1,6 @@
+dicepassc is a passphrase generator for OpenBSD based on Arnold Reinhold's
+Diceware wordlist and the Electronic Frontier Foundation's wordlists.
+
+It aims to be a reasonably secure implementation by using arc4random(3) to
+generate random numbers, explicit_bzero(3) to clear sensitive memory, and
+pledge(2) to restrict the process.
