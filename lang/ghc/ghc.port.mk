@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.38 2016/01/20 16:08:29 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.39 2017/03/02 22:44:06 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -56,7 +56,7 @@ DIST_SUBDIR ?=			ghc
 . if ${MODGHC_BUILD:L:Mcabal}
 MODGHC_SETUP_SCRIPT ?=		Setup.lhs Setup.hs
 MODGHC_SETUP_PROG ?=		${WRKSRC}/Setup
-MODGHC_SETUP_CONF_ARGS ?=
+MODGHC_SETUP_CONF_ARGS +=	--with-gcc=${CC}
 MODGHC_SETUP_CONF_ENV ?=
 
 .  if !${MODGHC_BUILD:L:Mnort}
