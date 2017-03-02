@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/20 16:26:20 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2017/03/02 13:56:46 dcoppa Exp $
 
 COMMENT =		Haskell bindings to the libXML2 SAX interface
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
+
+MODGHC_SETUP_CONF_ARGS += --with-gcc=${CC}
 
 MODGHC_PACKAGE_KEY =	KH75wPncqwrLC4pmptfJlY
 
