@@ -1,7 +1,17 @@
-$OpenBSD: patch-specs_openbsd-g++,v 1.1 2008/01/15 21:16:24 ajacoutot Exp $
---- specs/openbsd-g++.orig	Thu Dec  6 15:15:09 2007
-+++ specs/openbsd-g++	Tue Jan 15 21:48:09 2008
-@@ -50,7 +50,7 @@ QMAKE_LINK_SHLIB_CMD	= $$QMAKE_LINK_SHLIB $(LFLAGS) \
+$OpenBSD: patch-specs_openbsd-g++,v 1.2 2017/03/02 15:10:15 espie Exp $
+--- specs/openbsd-g++.orig	Wed Mar 25 12:00:24 2015
++++ specs/openbsd-g++	Thu Mar  2 15:51:26 2017
+@@ -42,15 +42,15 @@ QMAKE_LIBDIR_QT		= $$[QT_INSTALL_LIBS]
+ QMAKE_INCDIR_OPENGL	= /usr/X11R6/include
+ QMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
+ 
+-QMAKE_LINK		= g++
+-QMAKE_LINK_SHLIB	= g++
++QMAKE_LINK		= c++
++QMAKE_LINK_SHLIB	= c++
+ QMAKE_LINK_SHLIB_CMD	= $$QMAKE_LINK_SHLIB $(LFLAGS) \
+ 	$$QMAKE_CFLAGS_SHLIB $$QMAKE_LFLAGS \
+ 	-o $(TARGETD) $(OBJECTS) $(OBJMOC) $(LIBS)
  QMAKE_LFLAGS		=
  QMAKE_LFLAGS_RELEASE	=
  QMAKE_LFLAGS_DEBUG	=
