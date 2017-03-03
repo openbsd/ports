@@ -1,7 +1,7 @@
-$OpenBSD: patch-configs_Sinovoip_BPI_M2_plus_defconfig,v 1.1 2017/01/10 02:35:52 jsg Exp $
---- configs/Sinovoip_BPI_M2_plus_defconfig.orig	Tue Jan 10 10:44:48 2017
-+++ configs/Sinovoip_BPI_M2_plus_defconfig	Tue Jan 10 10:44:48 2017
-@@ -0,0 +1,18 @@
+$OpenBSD: patch-configs_Sinovoip_BPI_M2_plus_defconfig,v 1.2 2017/03/03 03:27:28 jsg Exp $
+--- configs/Sinovoip_BPI_M2_plus_defconfig.orig	Thu Mar  2 12:44:49 2017
++++ configs/Sinovoip_BPI_M2_plus_defconfig	Thu Mar  2 13:02:25 2017
+@@ -0,0 +1,21 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_SUNXI=y
 +CONFIG_MACH_SUN8I_H3=y
@@ -18,5 +18,8 @@ $OpenBSD: patch-configs_Sinovoip_BPI_M2_plus_defconfig,v 1.1 2017/01/10 02:35:52
 +# CONFIG_CMD_IMLS is not set
 +# CONFIG_CMD_FLASH is not set
 +# CONFIG_CMD_FPGA is not set
++# CONFIG_SPL_DOS_PARTITION is not set
++# CONFIG_SPL_ISO_PARTITION is not set
++# CONFIG_SPL_EFI_PARTITION is not set
 +CONFIG_SUN8I_EMAC=y
 +CONFIG_USB_EHCI_HCD=y
