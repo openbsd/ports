@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/03 21:03:32 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/03 21:29:00 jca Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -42,6 +42,7 @@ WANTLIB-data =
 GAMEDIR =	${PREFIX}/share/tome4
 SUBST_VARS =	GAMEDIR
 
+# The build system hardcodes the use of the "gcc" command
 MODULES =	gcc4
 MODGCC4_ARCHS =	*
 
