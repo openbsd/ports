@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2016/12/26 08:55:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.118 2017/03/03 12:43:10 espie Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -19,12 +19,12 @@ FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
-REVISION-mysql= 	9
-REVISION-postgresql= 	6
-REVISION-main= 		11
+REVISION-mysql= 	10
+REVISION-postgresql= 	7
+REVISION-main= 		12
 REVISION-html= 		2
-REVISION-examples=	2
-REVISION-sqlite2= 	6
+REVISION-examples=	3
+REVISION-sqlite2= 	7
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk

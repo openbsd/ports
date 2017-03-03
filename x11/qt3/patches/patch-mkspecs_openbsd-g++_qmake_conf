@@ -1,18 +1,29 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.18 2007/03/31 22:49:46 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Thu Oct 19 16:26:15 2006
-+++ mkspecs/openbsd-g++/qmake.conf	Sat Mar 31 14:51:24 2007
-@@ -6,8 +6,9 @@
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.19 2017/03/03 12:43:10 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Fri Feb  2 15:01:44 2007
++++ mkspecs/openbsd-g++/qmake.conf	Fri Mar  3 12:22:56 2017
+@@ -6,9 +6,10 @@
  
  MAKEFILE_GENERATOR	= UNIX
  TEMPLATE		= app
 -CONFIG			+= qt warn_on release link_prl
 +CONFIG			+= qt warn_on release link_prl thread
  
+-QMAKE_CC		= gcc
 +QMAKE_OPENBSD_SHLIBS	= 1
- QMAKE_CC		= gcc
++QMAKE_CC		= cc
  QMAKE_LEX		= flex
  QMAKE_LEXFLAGS		= 
-@@ -34,12 +35,12 @@ QMAKE_CXXFLAGS_SHLIB	= $$QMAKE_CFLAGS_SHLIB
+ QMAKE_YACC		= yacc
+@@ -23,7 +24,7 @@ QMAKE_CFLAGS_SHLIB	= -fPIC
+ QMAKE_CFLAGS_YACC	= -Wno-unused -Wno-parentheses
+ QMAKE_CFLAGS_THREAD	= -pthread
+ 
+-QMAKE_CXX		= g++
++QMAKE_CXX		= c++
+ QMAKE_CXXFLAGS		= $$QMAKE_CFLAGS
+ QMAKE_CXXFLAGS_DEPS	= $$QMAKE_CFLAGS_DEPS
+ QMAKE_CXXFLAGS_WARN_ON	= $$QMAKE_CFLAGS_WARN_ON
+@@ -34,17 +35,17 @@ QMAKE_CXXFLAGS_SHLIB	= $$QMAKE_CFLAGS_SHLIB
  QMAKE_CXXFLAGS_YACC	= $$QMAKE_CFLAGS_YACC
  QMAKE_CXXFLAGS_THREAD	= $$QMAKE_CFLAGS_THREAD
  
@@ -29,6 +40,13 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.18 2007/03/31 22:49:46 espie 
  QMAKE_INCDIR_OPENGL	= /usr/X11R6/include
  QMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
  
+-QMAKE_LINK		= g++
+-QMAKE_LINK_SHLIB	= g++
++QMAKE_LINK		= c++
++QMAKE_LINK_SHLIB	= c++
+ QMAKE_LINK_SHLIB_CMD	= $$QMAKE_LINK_SHLIB $(LFLAGS) \
+ 	$$QMAKE_CFLAGS_SHLIB $$QMAKE_LFLAGS \
+ 	-o $(TARGETD) $(OBJECTS) $(OBJMOC) $(LIBS)
 @@ -53,7 +54,7 @@ QMAKE_LFLAGS_RELEASE	=
  QMAKE_LFLAGS_DEBUG	=
  QMAKE_LFLAGS_SHLIB	= -shared
