@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.5 2016/10/31 16:15:46 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.6 2017/03/03 13:01:26 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -12,8 +12,8 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-local-display-factory.c.orig	Wed Sep 21 21:27:20 2016
-+++ daemon/gdm-local-display-factory.c	Mon Oct 31 15:06:42 2016
+--- daemon/gdm-local-display-factory.c.orig	Wed Mar  1 16:58:36 2017
++++ daemon/gdm-local-display-factory.c	Fri Mar  3 12:00:56 2017
 @@ -42,6 +42,8 @@
  
  #define GDM_LOCAL_DISPLAY_FACTORY_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GDM_TYPE_LOCAL_DISPLAY_FACTORY, GdmLocalDisplayFactoryPrivate))
@@ -34,32 +34,20 @@ Subject: require logind support
  };
  
  enum {
-@@ -206,10 +210,22 @@ gdm_local_display_factory_create_transient_display (Gd
+@@ -206,8 +210,10 @@ gdm_local_display_factory_create_transient_display (Gd
  
          g_debug ("GdmLocalDisplayFactory: Creating transient display");
  
+-#ifdef ENABLE_USER_DISPLAY_SERVER
 -        display = gdm_local_display_new ();
-+#ifdef WITH_SYSTEMD
-+        if (LOGIND_RUNNING() > 0) {
-+                display = gdm_local_display_new ();
-+        }
-+#endif
- 
-+        if (display == NULL) {
-+                guint32 num;
-+
-+                num = take_next_display_number (factory);
-+
-+                display = gdm_legacy_display_new (num);
-+        }
-+
-         g_object_set (display,
--                      "seat-id", "seat0"
-+                      "seat-id", "seat-0",
-                       "allow-timed-login", FALSE,
-                       NULL);
- 
-@@ -279,7 +295,7 @@ on_display_status_changed (GdmDisplay             *dis
++#if defined ENABLE_USER_DISPLAY_SERVER && defined WITH_SYSTEMD
++	if (LOGIND_RUNNING() > 0) {
++	        display = gdm_local_display_new ();
++	}
+ #else
+         if (display == NULL) {
+                 guint32 num;
+@@ -289,7 +295,7 @@ on_display_status_changed (GdmDisplay             *dis
                          /* reset num failures */
                          factory->priv->num_failures = 0;
  
@@ -68,22 +56,16 @@ Subject: require logind support
                  }
                  break;
          case GDM_DISPLAY_FAILED:
-@@ -359,12 +375,14 @@ create_display (GdmLocalDisplayFactory *factory,
+@@ -368,7 +374,7 @@ create_display (GdmLocalDisplayFactory *factory,
+ 
          g_debug ("GdmLocalDisplayFactory: Adding display on seat %s", seat_id);
  
- 
-+#ifdef WITH_SYSTEMD
+-#ifdef ENABLE_USER_DISPLAY_SERVER
++#if defined ENABLE_USER_DISPLAY_SERVER && defined WITH_SYSTEMD
          if (g_strcmp0 (seat_id, "seat0") == 0) {
                  display = gdm_local_display_new ();
                  if (session_type != NULL) {
-                         g_object_set (G_OBJECT (display), "session-type", session_type, NULL);
-                 }
-         }
-+#endif
- 
-         if (display == NULL) {
-                 guint32 num;
-@@ -389,6 +407,8 @@ create_display (GdmLocalDisplayFactory *factory,
+@@ -400,6 +406,8 @@ create_display (GdmLocalDisplayFactory *factory,
          return display;
  }
  
@@ -92,7 +74,7 @@ Subject: require logind support
  static void
  delete_display (GdmLocalDisplayFactory *factory,
                  const char             *seat_id) {
-@@ -525,6 +545,7 @@ gdm_local_display_factory_stop_monitor (GdmLocalDispla
+@@ -536,6 +544,7 @@ gdm_local_display_factory_stop_monitor (GdmLocalDispla
                  factory->priv->seat_removed_id = 0;
          }
  }
@@ -100,7 +82,7 @@ Subject: require logind support
  
  static void
  on_display_added (GdmDisplayStore        *display_store,
-@@ -565,6 +586,7 @@ static gboolean
+@@ -576,6 +585,7 @@ static gboolean
  gdm_local_display_factory_start (GdmDisplayFactory *base_factory)
  {
          GdmLocalDisplayFactory *factory = GDM_LOCAL_DISPLAY_FACTORY (base_factory);
@@ -108,7 +90,7 @@ Subject: require logind support
          GdmDisplayStore *store;
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
-@@ -583,8 +605,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
+@@ -594,8 +604,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
                                   factory,
                                   0);
  
@@ -128,7 +110,7 @@ Subject: require logind support
  }
  
  static gboolean
-@@ -595,7 +626,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
+@@ -606,7 +625,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
  
@@ -138,7 +120,7 @@ Subject: require logind support
  
          store = gdm_display_factory_get_display_store (GDM_DISPLAY_FACTORY (factory));
  
-@@ -751,7 +784,9 @@ gdm_local_display_factory_finalize (GObject *object)
+@@ -762,7 +783,9 @@ gdm_local_display_factory_finalize (GObject *object)
  
          g_hash_table_destroy (factory->priv->used_display_numbers);
  

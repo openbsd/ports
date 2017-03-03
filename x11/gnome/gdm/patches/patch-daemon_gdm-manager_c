@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.10 2016/04/26 08:25:04 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.11 2017/03/03 13:01:26 ajacoutot Exp $
 
 XXX fix+push upstream
 
@@ -14,8 +14,8 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- daemon/gdm-manager.c.orig	Tue Apr 19 07:00:04 2016
-+++ daemon/gdm-manager.c	Tue Apr 26 10:02:48 2016
+--- daemon/gdm-manager.c.orig	Wed Mar  1 21:58:01 2017
++++ daemon/gdm-manager.c	Fri Mar  3 11:46:46 2017
 @@ -34,7 +34,9 @@
  #include <glib/gstdio.h>
  #include <glib-object.h>
@@ -632,7 +632,7 @@ Subject: require logind support
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while retrieving remoteness for session: %s",
-@@ -927,7 +1335,8 @@ on_reauthentication_client_rejected (GdmSession       
+@@ -929,7 +1337,8 @@ on_reauthentication_client_rejected (GdmSession       
                   * same audit session, ignore it since it doesn't "own" the
                   * reauthentication session
                   */
@@ -642,7 +642,7 @@ Subject: require logind support
                                                              NULL);
                  session_id = g_object_get_data (G_OBJECT (session), "caller-session-id");
  
-@@ -1139,16 +1548,20 @@ static gboolean
+@@ -1141,16 +1550,20 @@ static gboolean
  display_is_on_seat0 (GdmDisplay *display)
  {
          gboolean is_on_seat0 = TRUE;
@@ -669,7 +669,7 @@ Subject: require logind support
          return is_on_seat0;
  }
  
-@@ -1785,11 +2198,57 @@ on_user_session_died (GdmSession *session,
+@@ -1759,11 +2172,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *

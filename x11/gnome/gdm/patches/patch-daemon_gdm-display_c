@@ -1,10 +1,10 @@
-$OpenBSD: patch-daemon_gdm-display_c,v 1.1 2015/04/03 18:39:06 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-display_c,v 1.2 2017/03/03 13:01:26 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- daemon/gdm-display.c.orig	Fri Apr  3 20:26:42 2015
-+++ daemon/gdm-display.c	Fri Apr  3 20:27:20 2015
-@@ -50,7 +50,7 @@
+--- daemon/gdm-display.c.orig	Wed Mar  1 21:58:01 2017
++++ daemon/gdm-display.c	Fri Mar  3 11:52:19 2017
+@@ -49,7 +49,7 @@
  #include "gdm-dbus-util.h"
  #include "gdm-xerrors.h"
  
@@ -13,12 +13,14 @@ XXX fix+push upstream
  #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
  
  #define GDM_DISPLAY_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GDM_TYPE_DISPLAY, GdmDisplayPrivate))
-@@ -307,7 +307,7 @@ setup_xhost_auth (XHostAddress              *host_entr
-         si_entries[1].value       = GDM_USERNAME;
-         si_entries[1].valuelength = strlen (GDM_USERNAME);
-         si_entries[2].value       = "gnome-initial-setup";
--        si_entries[2].valuelength = strlen ("gnome-initial-setup");
-+        si_entries[2].valuelength = strlen ("_gnome-initial-setup");
+@@ -301,8 +301,8 @@ setup_xhost_auth (XHostAddress              *host_entr
+         host_entries[1].address   = "localuser\0" GDM_USERNAME;
+         host_entries[1].length    = sizeof ("localuser\0" GDM_USERNAME);
+         host_entries[2].family    = FamilyServerInterpreted;
+-        host_entries[2].address   = "localuser\0gnome-initial-setup";
+-        host_entries[2].length    = sizeof ("localuser\0gnome-initial-setup");
++        host_entries[2].address   = "localuser\0_gnome-initial-setup";
++        host_entries[2].length    = sizeof ("localuser\0_gnome-initial-setup");
+ }
  
-         host_entries[0].family    = FamilyServerInterpreted;
-         host_entries[0].address   = (char *) &si_entries[0];
+ gboolean
