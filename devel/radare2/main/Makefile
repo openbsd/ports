@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/10 12:20:17 feinerer Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/03 21:09:08 jca Exp $
 
 COMMENT =		reverse engineers disassembler and debugger
 
@@ -26,6 +26,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-syszip
 
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV =		HOST_CC="${CC}"
 
 post-patch:
 	sed -i 's/>mips/>mipsen/' ${WRKSRC}/libr/anal/p/anal_mips_cs.c
