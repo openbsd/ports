@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/16 13:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/03 09:41:02 landry Exp $
 
-V =		0.2.6
+V =		0.2.7
 COMMENT =	poppler pdf plugin for zathura
 DISTNAME =	zathura-pdf-poppler-${V}
 

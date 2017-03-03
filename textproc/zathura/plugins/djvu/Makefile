@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2016/10/16 13:51:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/03/03 09:41:01 landry Exp $
 
-V =		0.2.5
+V =		0.2.6
 COMMENT =	djvu plugin for zathura
 DISTNAME =	zathura-djvu-${V}
 

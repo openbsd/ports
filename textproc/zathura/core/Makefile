@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/17 08:37:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/03/03 09:41:01 landry Exp $
 
-V =			0.3.6
-REVISION =		0
+V =			0.3.7
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -24,7 +23,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	databases/sqlite3 \
 		graphics/gdk-pixbuf2 \
 		devel/libmagic \
-		x11/girara>=0.2.3
+		x11/girara>=0.2.7
 
 MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
 		DESKTOPPREFIX=${PREFIX}/share/applications \
