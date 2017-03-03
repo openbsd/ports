@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2017/02/23 08:32:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2017/03/03 09:30:38 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/VERSION
 google-cloud-sdk/bin/
@@ -536,6 +536,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/test/arg_validate.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/arg_validate.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/ctrl_c_handler.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/ctrl_c_handler.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/test/endpoints.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/test/endpoints.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/test/exit_code.py
@@ -580,6 +582,8 @@ google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/cli.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree.pyc
+google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree_markdown.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree_markdown.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/display.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/display.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/display_info.py
@@ -676,9 +680,18 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/backend_services/backend
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/backend_services/backend_flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/backend_services/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/backend_services/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/commitments/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/create.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/create.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/disks/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/firewall_rules/
@@ -896,6 +909,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/type_providers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/deployment_manager/type_providers.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deprecation_utils.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/deprecation_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/dns/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/dns/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/dns/__init__.pyc
@@ -951,8 +966,10 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/flags.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs_prep.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs_prep.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/jobs_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_predict.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_predict.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/local_train.py
@@ -961,12 +978,14 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/log_utils.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/log_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/models_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/models_util.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_lib.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_lib.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_lib_beta.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_lib_beta.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/operations_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/operations_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_utilities.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/predict_utilities.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/prediction_lib.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/prediction_lib.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/prediction_lib_beta.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/prediction_lib_beta.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/uploads.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/uploads.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/ml/versions_util.py
@@ -1041,6 +1060,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/gcloud_parser.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/gcloud_parser.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/gcloud_tree.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/gcloud_tree.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/help_window.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/help_window.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/layout.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/layout.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/shell/shell_lexer.py
@@ -1182,6 +1203,8 @@ google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/renderer.py
 google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/renderer.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/text_renderer.py
 google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/text_renderer.pyc
+google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/token_renderer.py
+google-cloud-sdk/lib/googlecloudsdk/core/document_renderers/token_renderer.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/core/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/execution_utils.py
@@ -1767,6 +1790,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/manager_v1beta2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/ml_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/ml_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/ml_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/ml_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/__init__.pyc
@@ -1776,6 +1808,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_messa
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/ml_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/ml_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/pubsub/__init__.py
@@ -2410,6 +2443,15 @@ google-cloud-sdk/lib/surface/compute/backend_services/update.py
 google-cloud-sdk/lib/surface/compute/backend_services/update.pyc
 google-cloud-sdk/lib/surface/compute/backend_services/update_backend.py
 google-cloud-sdk/lib/surface/compute/backend_services/update_backend.pyc
+google-cloud-sdk/lib/surface/compute/commitments/
+google-cloud-sdk/lib/surface/compute/commitments/__init__.py
+google-cloud-sdk/lib/surface/compute/commitments/__init__.pyc
+google-cloud-sdk/lib/surface/compute/commitments/create.py
+google-cloud-sdk/lib/surface/compute/commitments/create.pyc
+google-cloud-sdk/lib/surface/compute/commitments/describe.py
+google-cloud-sdk/lib/surface/compute/commitments/describe.pyc
+google-cloud-sdk/lib/surface/compute/commitments/list.py
+google-cloud-sdk/lib/surface/compute/commitments/list.pyc
 google-cloud-sdk/lib/surface/compute/config_ssh.py
 google-cloud-sdk/lib/surface/compute/config_ssh.pyc
 google-cloud-sdk/lib/surface/compute/connect_to_serial_port.py
@@ -2759,6 +2801,8 @@ google-cloud-sdk/lib/surface/compute/networks/subnets/get_iam_policy.py
 google-cloud-sdk/lib/surface/compute/networks/subnets/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/compute/networks/subnets/list.py
 google-cloud-sdk/lib/surface/compute/networks/subnets/list.pyc
+google-cloud-sdk/lib/surface/compute/networks/subnets/list_usable.py
+google-cloud-sdk/lib/surface/compute/networks/subnets/list_usable.pyc
 google-cloud-sdk/lib/surface/compute/networks/subnets/set_iam_policy.py
 google-cloud-sdk/lib/surface/compute/networks/subnets/set_iam_policy.pyc
 google-cloud-sdk/lib/surface/compute/networks/subnets/update.py
@@ -3794,88 +3838,88 @@ google-cloud-sdk/lib/surface/meta/render_markdown.py
 google-cloud-sdk/lib/surface/meta/render_markdown.pyc
 google-cloud-sdk/lib/surface/meta/test.py
 google-cloud-sdk/lib/surface/meta/test.pyc
-google-cloud-sdk/lib/surface/ml/
-google-cloud-sdk/lib/surface/ml/__init__.py
-google-cloud-sdk/lib/surface/ml/__init__.pyc
-google-cloud-sdk/lib/surface/ml/init_project.py
-google-cloud-sdk/lib/surface/ml/init_project.pyc
-google-cloud-sdk/lib/surface/ml/jobs/
-google-cloud-sdk/lib/surface/ml/jobs/__init__.py
-google-cloud-sdk/lib/surface/ml/jobs/__init__.pyc
-google-cloud-sdk/lib/surface/ml/jobs/cancel.py
-google-cloud-sdk/lib/surface/ml/jobs/cancel.pyc
-google-cloud-sdk/lib/surface/ml/jobs/describe.py
-google-cloud-sdk/lib/surface/ml/jobs/describe.pyc
-google-cloud-sdk/lib/surface/ml/jobs/list.py
-google-cloud-sdk/lib/surface/ml/jobs/list.pyc
-google-cloud-sdk/lib/surface/ml/jobs/stream_logs.py
-google-cloud-sdk/lib/surface/ml/jobs/stream_logs.pyc
-google-cloud-sdk/lib/surface/ml/jobs/submit/
-google-cloud-sdk/lib/surface/ml/jobs/submit/__init__.py
-google-cloud-sdk/lib/surface/ml/jobs/submit/__init__.pyc
-google-cloud-sdk/lib/surface/ml/jobs/submit/prediction.py
-google-cloud-sdk/lib/surface/ml/jobs/submit/prediction.pyc
-google-cloud-sdk/lib/surface/ml/jobs/submit/training.py
-google-cloud-sdk/lib/surface/ml/jobs/submit/training.pyc
-google-cloud-sdk/lib/surface/ml/local/
-google-cloud-sdk/lib/surface/ml/local/__init__.py
-google-cloud-sdk/lib/surface/ml/local/__init__.pyc
-google-cloud-sdk/lib/surface/ml/local/predict.py
-google-cloud-sdk/lib/surface/ml/local/predict.pyc
-google-cloud-sdk/lib/surface/ml/local/train.py
-google-cloud-sdk/lib/surface/ml/local/train.pyc
-google-cloud-sdk/lib/surface/ml/models/
-google-cloud-sdk/lib/surface/ml/models/__init__.py
-google-cloud-sdk/lib/surface/ml/models/__init__.pyc
-google-cloud-sdk/lib/surface/ml/models/create.py
-google-cloud-sdk/lib/surface/ml/models/create.pyc
-google-cloud-sdk/lib/surface/ml/models/delete.py
-google-cloud-sdk/lib/surface/ml/models/delete.pyc
-google-cloud-sdk/lib/surface/ml/models/describe.py
-google-cloud-sdk/lib/surface/ml/models/describe.pyc
-google-cloud-sdk/lib/surface/ml/models/list.py
-google-cloud-sdk/lib/surface/ml/models/list.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/
-google-cloud-sdk/lib/surface/ml/models/versions/__init__.py
-google-cloud-sdk/lib/surface/ml/models/versions/__init__.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/create.py
-google-cloud-sdk/lib/surface/ml/models/versions/create.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/delete.py
-google-cloud-sdk/lib/surface/ml/models/versions/delete.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/describe.py
-google-cloud-sdk/lib/surface/ml/models/versions/describe.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/list.py
-google-cloud-sdk/lib/surface/ml/models/versions/list.pyc
-google-cloud-sdk/lib/surface/ml/models/versions/set_default.py
-google-cloud-sdk/lib/surface/ml/models/versions/set_default.pyc
-google-cloud-sdk/lib/surface/ml/operations/
-google-cloud-sdk/lib/surface/ml/operations/__init__.py
-google-cloud-sdk/lib/surface/ml/operations/__init__.pyc
-google-cloud-sdk/lib/surface/ml/operations/cancel.py
-google-cloud-sdk/lib/surface/ml/operations/cancel.pyc
-google-cloud-sdk/lib/surface/ml/operations/delete.py
-google-cloud-sdk/lib/surface/ml/operations/delete.pyc
-google-cloud-sdk/lib/surface/ml/operations/describe.py
-google-cloud-sdk/lib/surface/ml/operations/describe.pyc
-google-cloud-sdk/lib/surface/ml/operations/list.py
-google-cloud-sdk/lib/surface/ml/operations/list.pyc
-google-cloud-sdk/lib/surface/ml/operations/wait.py
-google-cloud-sdk/lib/surface/ml/operations/wait.pyc
-google-cloud-sdk/lib/surface/ml/predict.py
-google-cloud-sdk/lib/surface/ml/predict.pyc
-google-cloud-sdk/lib/surface/ml/versions/
-google-cloud-sdk/lib/surface/ml/versions/__init__.py
-google-cloud-sdk/lib/surface/ml/versions/__init__.pyc
-google-cloud-sdk/lib/surface/ml/versions/create.py
-google-cloud-sdk/lib/surface/ml/versions/create.pyc
-google-cloud-sdk/lib/surface/ml/versions/delete.py
-google-cloud-sdk/lib/surface/ml/versions/delete.pyc
-google-cloud-sdk/lib/surface/ml/versions/describe.py
-google-cloud-sdk/lib/surface/ml/versions/describe.pyc
-google-cloud-sdk/lib/surface/ml/versions/list.py
-google-cloud-sdk/lib/surface/ml/versions/list.pyc
-google-cloud-sdk/lib/surface/ml/versions/set_default.py
-google-cloud-sdk/lib/surface/ml/versions/set_default.pyc
+google-cloud-sdk/lib/surface/ml_engine/
+google-cloud-sdk/lib/surface/ml_engine/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/init_project.py
+google-cloud-sdk/lib/surface/ml_engine/init_project.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/
+google-cloud-sdk/lib/surface/ml_engine/jobs/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/cancel.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/cancel.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/describe.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/describe.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/list.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/list.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/stream_logs.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/stream_logs.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/prediction.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/prediction.pyc
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/training.py
+google-cloud-sdk/lib/surface/ml_engine/jobs/submit/training.pyc
+google-cloud-sdk/lib/surface/ml_engine/local/
+google-cloud-sdk/lib/surface/ml_engine/local/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/local/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/local/predict.py
+google-cloud-sdk/lib/surface/ml_engine/local/predict.pyc
+google-cloud-sdk/lib/surface/ml_engine/local/train.py
+google-cloud-sdk/lib/surface/ml_engine/local/train.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/
+google-cloud-sdk/lib/surface/ml_engine/models/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/models/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/create.py
+google-cloud-sdk/lib/surface/ml_engine/models/create.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/delete.py
+google-cloud-sdk/lib/surface/ml_engine/models/delete.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/describe.py
+google-cloud-sdk/lib/surface/ml_engine/models/describe.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/list.py
+google-cloud-sdk/lib/surface/ml_engine/models/list.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/
+google-cloud-sdk/lib/surface/ml_engine/models/versions/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/create.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/create.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/delete.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/delete.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/describe.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/describe.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/list.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/list.pyc
+google-cloud-sdk/lib/surface/ml_engine/models/versions/set_default.py
+google-cloud-sdk/lib/surface/ml_engine/models/versions/set_default.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/
+google-cloud-sdk/lib/surface/ml_engine/operations/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/operations/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/cancel.py
+google-cloud-sdk/lib/surface/ml_engine/operations/cancel.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/delete.py
+google-cloud-sdk/lib/surface/ml_engine/operations/delete.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/describe.py
+google-cloud-sdk/lib/surface/ml_engine/operations/describe.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/list.py
+google-cloud-sdk/lib/surface/ml_engine/operations/list.pyc
+google-cloud-sdk/lib/surface/ml_engine/operations/wait.py
+google-cloud-sdk/lib/surface/ml_engine/operations/wait.pyc
+google-cloud-sdk/lib/surface/ml_engine/predict.py
+google-cloud-sdk/lib/surface/ml_engine/predict.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/
+google-cloud-sdk/lib/surface/ml_engine/versions/__init__.py
+google-cloud-sdk/lib/surface/ml_engine/versions/__init__.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/create.py
+google-cloud-sdk/lib/surface/ml_engine/versions/create.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/delete.py
+google-cloud-sdk/lib/surface/ml_engine/versions/delete.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/describe.py
+google-cloud-sdk/lib/surface/ml_engine/versions/describe.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/list.py
+google-cloud-sdk/lib/surface/ml_engine/versions/list.pyc
+google-cloud-sdk/lib/surface/ml_engine/versions/set_default.py
+google-cloud-sdk/lib/surface/ml_engine/versions/set_default.pyc
 google-cloud-sdk/lib/surface/organizations/
 google-cloud-sdk/lib/surface/organizations/__init__.py
 google-cloud-sdk/lib/surface/organizations/__init__.pyc
@@ -4153,8 +4197,12 @@ google-cloud-sdk/lib/surface/source/repos/create.py
 google-cloud-sdk/lib/surface/source/repos/create.pyc
 google-cloud-sdk/lib/surface/source/repos/delete.py
 google-cloud-sdk/lib/surface/source/repos/delete.pyc
+google-cloud-sdk/lib/surface/source/repos/get_iam_policy.py
+google-cloud-sdk/lib/surface/source/repos/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/source/repos/list.py
 google-cloud-sdk/lib/surface/source/repos/list.pyc
+google-cloud-sdk/lib/surface/source/repos/set_iam_policy.py
+google-cloud-sdk/lib/surface/source/repos/set_iam_policy.pyc
 google-cloud-sdk/lib/surface/spanner/
 google-cloud-sdk/lib/surface/spanner/__init__.py
 google-cloud-sdk/lib/surface/spanner/__init__.pyc
@@ -4596,6 +4644,8 @@ google-cloud-sdk/lib/third_party/containerregistry/client/docker_name_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/__init__.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/__init__.pyc
+google-cloud-sdk/lib/third_party/containerregistry/client/v1/docker_creds_.py
+google-cloud-sdk/lib/third_party/containerregistry/client/v1/docker_creds_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/docker_http_.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/docker_http_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v1/docker_image_.py
@@ -4607,6 +4657,8 @@ google-cloud-sdk/lib/third_party/containerregistry/client/v2/__init__.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/__init__.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/append_.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/append_.pyc
+google-cloud-sdk/lib/third_party/containerregistry/client/v2/docker_creds_.py
+google-cloud-sdk/lib/third_party/containerregistry/client/v2/docker_creds_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/docker_http_.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/docker_http_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2/docker_image_.py
@@ -4620,6 +4672,8 @@ google-cloud-sdk/lib/third_party/containerregistry/client/v2/v1_compat_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/__init__.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/__init__.pyc
+google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/docker_creds_.py
+google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/docker_creds_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/docker_http_.py
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/docker_http_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/client/v2_2/docker_image_.py
@@ -5461,6 +5515,8 @@ google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/posix.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/posix.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/posix_utils.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/posix_utils.pyc
+google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/select.py
+google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/select.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/utils.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/utils.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/eventloop/win32.py
@@ -5494,12 +5550,14 @@ google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/completion.
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/completion.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/emacs.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/emacs.pyc
+google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/named_commands.py
+google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/named_commands.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/scroll.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/scroll.pyc
-google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/utils.py
-google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/utils.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/vi.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/bindings/vi.pyc
+google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/defaults.py
+google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/defaults.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/digraphs.py
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/digraphs.pyc
 google-cloud-sdk/lib/third_party/prompt_toolkit/key_binding/input_processor.py
@@ -10204,6 +10262,37 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_iam_service-accounts_update.1
 @man man/man1/gcloud_info.1
 @man man/man1/gcloud_init.1
+@man man/man1/gcloud_ml-engine.1
+@man man/man1/gcloud_ml-engine_init-project.1
+@man man/man1/gcloud_ml-engine_jobs.1
+@man man/man1/gcloud_ml-engine_jobs_cancel.1
+@man man/man1/gcloud_ml-engine_jobs_describe.1
+@man man/man1/gcloud_ml-engine_jobs_list.1
+@man man/man1/gcloud_ml-engine_jobs_stream-logs.1
+@man man/man1/gcloud_ml-engine_jobs_submit.1
+@man man/man1/gcloud_ml-engine_jobs_submit_prediction.1
+@man man/man1/gcloud_ml-engine_jobs_submit_training.1
+@man man/man1/gcloud_ml-engine_local.1
+@man man/man1/gcloud_ml-engine_local_predict.1
+@man man/man1/gcloud_ml-engine_local_train.1
+@man man/man1/gcloud_ml-engine_models.1
+@man man/man1/gcloud_ml-engine_models_create.1
+@man man/man1/gcloud_ml-engine_models_delete.1
+@man man/man1/gcloud_ml-engine_models_describe.1
+@man man/man1/gcloud_ml-engine_models_list.1
+@man man/man1/gcloud_ml-engine_operations.1
+@man man/man1/gcloud_ml-engine_operations_cancel.1
+@man man/man1/gcloud_ml-engine_operations_delete.1
+@man man/man1/gcloud_ml-engine_operations_describe.1
+@man man/man1/gcloud_ml-engine_operations_list.1
+@man man/man1/gcloud_ml-engine_operations_wait.1
+@man man/man1/gcloud_ml-engine_predict.1
+@man man/man1/gcloud_ml-engine_versions.1
+@man man/man1/gcloud_ml-engine_versions_create.1
+@man man/man1/gcloud_ml-engine_versions_delete.1
+@man man/man1/gcloud_ml-engine_versions_describe.1
+@man man/man1/gcloud_ml-engine_versions_list.1
+@man man/man1/gcloud_ml-engine_versions_set-default.1
 @man man/man1/gcloud_organizations.1
 @man man/man1/gcloud_organizations_add-iam-policy-binding.1
 @man man/man1/gcloud_organizations_describe.1
