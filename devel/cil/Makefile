@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/22 19:17:30 mmcc Exp $
+# $OpenBSD: Makefile,v 1.34 2017/03/03 20:26:41 jca Exp $
 
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
@@ -34,6 +34,8 @@ P5SITE =		libdata/perl5/site_perl
 P5INST =		${PREFIX}/${P5SITE}
 SUBST_VARS +=		P5SITE
 GCC =			/usr/bin/gcc# cant use CC in case it's set to cilly
+
+MAKE_FLAGS =		CC="${CC}"
 
 .include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH} == powerpc

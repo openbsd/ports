@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2017/03/03 20:26:41 jca Exp $
+--- Makefile.in.orig	Fri Mar  3 21:22:30 2017
++++ Makefile.in	Fri Mar  3 21:22:49 2017
+@@ -69,7 +69,7 @@ ifdef EMUL
+ 	 # is broken on MacOS X)
+    MACHDEPCC=$(CC) $(CFLAGS) -static -D_GNUCC
+ else
+-   MACHDEPCC=gcc -D_GNUCC
++   MACHDEPCC=$(CC) -D_GNUCC
+ endif
+ 
+ # Put here all the byproducts of make
