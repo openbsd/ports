@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.524 2017/02/10 22:33:10 danj Exp $
+# $OpenBSD: Makefile,v 1.525 2017/03/03 17:01:25 jca Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -339,7 +339,6 @@
      SUBDIR += pear-XML-RSS
      SUBDIR += pear-XML-Serializer
      SUBDIR += pear-XML-Tree
-     SUBDIR += pilot_makedoc
      SUBDIR += pinfo
      SUBDIR += pod2mdoc
      SUBDIR += podofo
