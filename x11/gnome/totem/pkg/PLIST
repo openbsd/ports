@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2016/10/31 12:48:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/03/03 15:53:40 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -109,15 +109,10 @@ share/gtk-doc/html/totem/
 share/gtk-doc/html/totem/BaconVideoWidget.html
 share/gtk-doc/html/totem/TotemObject.html
 share/gtk-doc/html/totem/annotation-glossary.html
-share/gtk-doc/html/totem/api-index-deprecated.html
 share/gtk-doc/html/totem/api-index-full.html
 share/gtk-doc/html/totem/core-api.html
 share/gtk-doc/html/totem/home.png
 share/gtk-doc/html/totem/index.html
-share/gtk-doc/html/totem/ix02.html
-share/gtk-doc/html/totem/ix03.html
-share/gtk-doc/html/totem/ix04.html
-share/gtk-doc/html/totem/ix05.html
 share/gtk-doc/html/totem/left-insensitive.png
 share/gtk-doc/html/totem/left.png
 share/gtk-doc/html/totem/right-insensitive.png
