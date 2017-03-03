@@ -1,17 +1,11 @@
-$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.1 2017/03/02 23:02:18 sthen Exp $
+$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.2 2017/03/03 00:05:38 sthen Exp $
 
 - the local address must be configured in config file
-
 - uses hardcoded SPI (same for each direction); see comments
-
-- shutdown problem, maybe due to bad SPIs, maybe something else
-SETKEY: send: Invalid argument
-bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
-
 
 
 --- sysdep/bsd/setkey.h.orig	Thu Dec 22 22:53:39 2016
-+++ sysdep/bsd/setkey.h	Thu Mar  2 22:57:25 2017
++++ sysdep/bsd/setkey.h	Fri Mar  3 00:03:24 2017
 @@ -8,12 +8,24 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -37,22 +31,15 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
  /*
   * Open a socket for manage the IPsec SA/SP database entries
   */
-@@ -39,10 +51,14 @@ setkey_send(struct sadb_msg *msg, uint len)
- 
+@@ -40,6 +52,7 @@ setkey_send(struct sadb_msg *msg, uint len)
    if (msg->sadb_msg_type == SADB_ADD)
    {
-+#ifdef __OpenBSD__
-+    msg->sadb_msg_type = SADB_UPDATE;
-+#else
      /* Delete possible current key in the IPsec SA/SP database */
++    /* XXX use SA_UPDATE here on OpenBSD? */
      msg->sadb_msg_type = SADB_DELETE;
      send(s, msg, len, 0);
      msg->sadb_msg_type = SADB_ADD;
-+#endif
-   }
- 
-   if (send(s, msg, len, 0) < 0)
-@@ -71,7 +87,9 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
+@@ -71,7 +84,9 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
      sizeof(struct sadb_msg) +
      sizeof(struct sadb_key) + PFKEY_ALIGN8(passwd_len) +
      sizeof(struct sadb_sa) +
@@ -62,18 +49,22 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
      sizeof(struct sadb_address) + PFKEY_ALIGN8(src->sa.sa_len) +
      sizeof(struct sadb_address) + PFKEY_ALIGN8(dst->sa.sa_len);
  
-@@ -90,6 +108,7 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
+@@ -90,6 +105,9 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
    msg->sadb_msg_pid = getpid();
    pos += len;
  
-+#ifndef __OpenBSD__    /* Sent after sadb_sa for OpenBSD */
++#ifdef __OpenBSD__
++if (type != SADB_DELETE) {
++#endif
    /* Set authentication algorithm and password */
    struct sadb_key *key = (void *) pos;
    len = sizeof(struct sadb_key) + PFKEY_ALIGN8(passwd_len);
-@@ -98,31 +117,58 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
+@@ -98,31 +116,50 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
    key->sadb_key_bits = passwd_len * 8;
    memcpy(pos + sizeof(struct sadb_key), passwd, passwd_len);
    pos += len;
++#ifdef __OpenBSD__
++}
 +#endif
  
    struct sadb_sa *sa = (void *) pos;
@@ -99,16 +90,7 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
 +  sa->sadb_sa_encrypt = SADB_EALG_NONE;
    pos += len;
  
-+#ifdef __OpenBSD__
-+  /* Set authentication algorithm and password */
-+  struct sadb_key *key = (void *) pos;
-+  len = sizeof(struct sadb_key) + PFKEY_ALIGN8(passwd_len);
-+  key->sadb_key_len = PFKEY_UNIT64(len);
-+  key->sadb_key_exttype = SADB_EXT_KEY_AUTH;
-+  key->sadb_key_bits = passwd_len * 8;
-+  memcpy(pos + sizeof(struct sadb_key), passwd, passwd_len);
-+  pos += len;
-+#else
++#ifndef __OpenBSD__
    struct sadb_x_sa2 *sa2 = (void *) pos;
    len = sizeof(struct sadb_x_sa2);
    sa2->sadb_x_sa2_len = PFKEY_UNIT64(len);
@@ -117,7 +99,6 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
    pos += len;
 +#endif
  
-+/* src/dst reversed in bgpd */
    /* Set source address */
    struct sadb_address *saddr = (void *) pos;
    len = sizeof(struct sadb_address) + PFKEY_ALIGN8(src->sa.sa_len);
@@ -130,7 +111,7 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
    memcpy(pos + sizeof(struct sadb_address), &src->sa, src->sa.sa_len);
    pos += len;
  
-@@ -131,8 +177,10 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
+@@ -131,8 +168,10 @@ setkey_md5(sockaddr *src, sockaddr *dst, char *passwd,
    len = sizeof(struct sadb_address) + PFKEY_ALIGN8(dst->sa.sa_len);
    daddr->sadb_address_len = PFKEY_UNIT64(len);
    daddr->sadb_address_exttype = SADB_EXT_ADDRESS_DST;
@@ -141,7 +122,7 @@ bgp1: Socket error: Cannot delete TCP-MD5 password from the IPsec SA/SP database
    memcpy(pos + sizeof(struct sadb_address), &dst->sa, dst->sa.sa_len);
    pos += len;
  
-@@ -160,11 +208,19 @@ sk_set_md5_in_sasp_db(sock *s, ip_addr local, ip_addr 
+@@ -160,11 +199,19 @@ sk_set_md5_in_sasp_db(sock *s, ip_addr local, ip_addr 
  
      if (setkey_md5(&src, &dst, passwd, SADB_ADD) < 0)
        ERR_MSG("Cannot add TCP-MD5 password into the IPsec SA/SP database");
