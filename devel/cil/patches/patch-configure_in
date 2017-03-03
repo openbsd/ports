@@ -1,20 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.9 2012/11/27 22:28:53 chrisz Exp $
---- configure.in.orig	Tue Nov 27 09:16:41 2012
-+++ configure.in	Tue Nov 27 09:16:59 2012
-@@ -370,9 +370,15 @@ case "$target" in
+$OpenBSD: patch-configure_in,v 1.10 2017/03/03 20:26:32 jca Exp $
+--- configure.in.orig	Sat Jul 14 12:20:43 2012
++++ configure.in	Fri Mar  3 21:22:09 2017
+@@ -375,6 +375,12 @@ case "$target" in
+     ARCHOS=x86_OPENBSD
      ;;
  
-   *86*openbsd*)
--    AC_MSG_RESULT(configuring for OpenBSD/x86)
-+    AC_MSG_RESULT(configuring for OpenBSD/x86)
- 
-     ARCHOS=x86_OPENBSD
-+    ;;
-+
 +  *powerpc*openbsd*)
 +    AC_MSG_RESULT(configuring for OpenBSD/powerpc)
 +
 +    ARCHOS=ppc_OPENBSD
-     ;;
- 
++    ;;
++
    *i386*freebsd*|*amd64*freebsd*)
+ 
+     if test x"${ARCH}" = x""; then
