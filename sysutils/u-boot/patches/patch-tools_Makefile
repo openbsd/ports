@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_Makefile,v 1.1 2017/03/03 23:46:25 jsg Exp $
+--- tools/Makefile.orig	Tue Feb 28 09:36:21 2017
++++ tools/Makefile	Sat Mar  4 10:28:42 2017
+@@ -120,7 +120,7 @@ _libfdt.so-sharedobjs += $(LIBFDT_OBJS)
+ libfdt:
+ 
+ tools/_libfdt.so: $(patsubst %.o,%.c,$(LIBFDT_OBJS)) tools/libfdt_wrap.c
+-	LDFLAGS="$(HOSTLDFLAGS)" python $(srctree)/lib/libfdt/setup.py \
++	LDFLAGS="$(HOSTLDFLAGS)" ${MODPY_BIN} $(srctree)/lib/libfdt/setup.py \
+ 		"$(_hostc_flags)" $^
+ 	mv _libfdt.so $@
+ 

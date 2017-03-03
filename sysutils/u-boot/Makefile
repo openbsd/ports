@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.16 2017/03/03 03:27:28 jsg Exp $
+#	$OpenBSD: Makefile,v 1.17 2017/03/03 23:46:25 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2017.03-rc3
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION}
 FULLPKGNAME=	${PKGNAME}
@@ -21,7 +22,8 @@ MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/dtc
+BUILD_DEPENDS=	devel/dtc \
+		devel/swig
 MAKE_ENV=	KBUILD_VERBOSE=1
 
 MODULES=	lang/python
@@ -108,6 +110,9 @@ FILES=\
 	u-boot-sunxi-with-spl.bin \
 	u-boot.imx \
 	u-boot-spl.kwb
+
+pre-build:
+	${SUBST_CMD} ${WRKBUILD}/tools/Makefile
 
 do-build:
 .for BOARD in ${BOARDS}
