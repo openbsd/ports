@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/29 11:27:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/03 19:57:04 jca Exp $
 
 COMMENT=		curses / ncurses bindings for OCaml
 
@@ -32,6 +32,11 @@ ALL_TARGET =		htdoc all
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET +=		opt
 .endif
+
+SUBST_VARS +=		CC
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/curses.ml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-curses
