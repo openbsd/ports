@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2012/12/04 07:02:08 chrisz Exp $
-@bin lib/ocaml/xmlm/xmlm.cmxs
