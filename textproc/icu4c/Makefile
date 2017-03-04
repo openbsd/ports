@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/02/28 09:24:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2017/03/04 10:51:00 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -7,9 +7,10 @@ COMMENT=		International Components for Unicode
 VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
+REVISION=		0
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		11.0
+SO_VERSION=		12.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
