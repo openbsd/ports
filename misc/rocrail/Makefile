@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/03/04 16:36:00 jca Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -33,7 +33,7 @@ RUN_DEPENDS-gui +=	${PKGPATH},-main
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	none
 MAKE_FILE =		makefile
-MAKE_FLAGS =		PLATFORM=OPENBSD CPP=${CC} LNK=${CC}
+MAKE_FLAGS =		PLATFORM=OPENBSD CC="${CC}" CPP="${CC}" LNK="${CC}"
 ALL_TARGET =		fromtar
 WRKDIST =		${WRKDIR}/Rocrail
 
