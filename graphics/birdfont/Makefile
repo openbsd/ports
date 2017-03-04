@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2016/12/26 12:48:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2017/03/04 03:17:06 jca Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
@@ -44,6 +44,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	-c "${CC}"
 
 NO_TEST =	Yes
 
