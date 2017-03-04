@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2016/09/02 12:14:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.94 2017/03/04 21:59:55 sthen Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a more recent gcc port
@@ -30,7 +30,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION = 20
+REVISION = 21
 
 SHARED_LIBS =	estdc++		14.0 \
 		gfortran	3.0 \
