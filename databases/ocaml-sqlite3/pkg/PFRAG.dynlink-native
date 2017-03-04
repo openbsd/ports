@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2012/08/18 21:57:24 avsm Exp $
-@bin lib/ocaml/sqlite3/sqlite3.cmxs
