@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.1 2012/08/18 22:40:36 avsm Exp $
-lib/ocaml/cryptokit/cryptokit.a
-lib/ocaml/cryptokit/cryptokit.cmx
-lib/ocaml/cryptokit/cryptokit.cmxa
-%%dynlink%%
