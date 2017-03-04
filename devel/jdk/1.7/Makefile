@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2016/08/18 12:29:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2017/03/04 22:12:19 jca Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -106,6 +106,10 @@ MAKE_ENV+=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		BUILD_NUMBER=${B} \
 		JDK_UPDATE_VERSION=${U} \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
+
+MAKE_FLAGS =	CC="${CC}" \
+		CPP="${CC} -E" \
+		CXX="${CXX}"
 
 #ALL_TARGET=	debug_build
 
