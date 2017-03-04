@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_posttls-finger_posttls-finger_c,v 1.1 2016/09/03 15:39:58 sthen Exp $
---- src/posttls-finger/posttls-finger.c.orig	Thu Sep  1 21:51:53 2016
-+++ src/posttls-finger/posttls-finger.c	Thu Sep  1 21:54:23 2016
-@@ -1511,7 +1511,8 @@ static int finger(STATE *state)
+$OpenBSD: patch-src_posttls-finger_posttls-finger_c,v 1.2 2017/03/04 22:09:43 sthen Exp $
+--- src/posttls-finger/posttls-finger.c.orig	Fri Feb  3 17:43:04 2017
++++ src/posttls-finger/posttls-finger.c	Mon Feb 20 12:42:58 2017
+@@ -1513,7 +1513,8 @@ static int finger(STATE *state)
      return (0);
  }
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_posttls-finger_posttls-finger_c,v 1.1 2016/09/03 15:39:58 st
  
  /* ssl_cleanup - free memory allocated in the OpenSSL library */
  
-@@ -1958,7 +1959,8 @@ int     main(int argc, char *argv[])
+@@ -1966,7 +1967,8 @@ int     main(int argc, char *argv[])
      cleanup(&state);
  
      /* OpenSSL 1.1.0 and later (de)initialization is implicit */

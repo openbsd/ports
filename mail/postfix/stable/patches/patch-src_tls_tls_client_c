@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tls_tls_client_c,v 1.1 2016/09/03 15:39:58 sthen Exp $
---- src/tls/tls_client.c.orig	Thu Sep  1 21:53:17 2016
-+++ src/tls/tls_client.c	Thu Sep  1 21:55:50 2016
+$OpenBSD: patch-src_tls_tls_client_c,v 1.2 2017/03/04 22:09:43 sthen Exp $
+--- src/tls/tls_client.c.orig	Sun Jan  1 17:22:13 2017
++++ src/tls/tls_client.c	Mon Feb 20 12:42:58 2017
 @@ -299,7 +299,7 @@ TLS_APPL_STATE *tls_client_init(const TLS_CLIENT_INIT_
       */
      tls_check_version();
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_tls_tls_client_c,v 1.1 2016/09/03 15:39:58 sthen Exp $
  
      /*
       * Initialize the OpenSSL library by the book! To start with, we must
-@@ -441,7 +441,7 @@ TLS_APPL_STATE *tls_client_init(const TLS_CLIENT_INIT_
+@@ -433,7 +433,7 @@ TLS_APPL_STATE *tls_client_init(const TLS_CLIENT_INIT_
      /*
       * 2015-12-05: Ephemeral RSA removed from OpenSSL 1.1.0-dev
       */
