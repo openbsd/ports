@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/04 22:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/03/04 16:38:16 jca Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -40,7 +40,8 @@ LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 RUN_DEPENDS =		print/texlive/base \
 			x11/xvkbd
 
-MAKE_FLAGS +=		IPEPREFIX=${PREFIX} \
+MAKE_FLAGS +=		CXX="${CXX}" \
+			IPEPREFIX=${PREFIX} \
 			IPE_USE_ICONV=-DIPE_USE_ICONV \
 			ICONV_CFLAGS=-I${LOCALBASE}/include \
 			ICONV_LIBS="-L${LOCALBASE}/lib -liconv" \
