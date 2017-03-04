@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/18 22:16:27 avsm Exp $
-%%native%%
-lib/ocaml/gmp/
-lib/ocaml/gmp/META
-lib/ocaml/gmp/gmp.cma
-lib/ocaml/gmp/gmp.cmi
-lib/ocaml/gmp/gmp.mli
-lib/ocaml/gmp/libmlgmp.a

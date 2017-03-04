@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/07/16 15:51:33 edd Exp $
-lib/ocaml/gmp/gmp.a
-lib/ocaml/gmp/gmp.cmxa
