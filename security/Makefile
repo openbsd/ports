@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.449 2017/03/02 16:10:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.450 2017/03/04 16:08:55 krw Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -128,7 +128,6 @@
      SUBDIR += nipper
      SUBDIR += nss
      SUBDIR += oath-toolkit
-     SUBDIR += ocaml-cryptokit
      SUBDIR += ocaml-ssl
      SUBDIR += oledump
      SUBDIR += oletools

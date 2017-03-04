@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.525 2017/03/03 17:01:25 jca Exp $
+# $OpenBSD: Makefile,v 1.526 2017/03/04 16:08:55 krw Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -148,11 +148,7 @@
      SUBDIR += namazu
      SUBDIR += naturaldocs
      SUBDIR += nfoview
-     SUBDIR += ocaml-csv
-     SUBDIR += ocaml-rss
      SUBDIR += ocaml-text
-     SUBDIR += ocaml-xml-light
-     SUBDIR += ocaml-xmlm
      SUBDIR += odt2txt
      SUBDIR += oniguruma
      SUBDIR += openjade

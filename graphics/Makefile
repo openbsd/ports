@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.431 2017/02/07 13:52:07 feinerer Exp $
+# $OpenBSD: Makefile,v 1.432 2017/03/04 16:08:55 krw Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -161,7 +161,6 @@
      SUBDIR += mtpaint
      SUBDIR += netpbm
      SUBDIR += nomacs
-     SUBDIR += ocaml-camlimages
      SUBDIR += ocrad
      SUBDIR += opencolorio
      SUBDIR += opencsg
