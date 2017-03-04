@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/02/18 18:35:41 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/03/04 18:34:14 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -30,21 +31,6 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/extension_value.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Buffer.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Decoder.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Encoder.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/ExtensionRegistry.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/ExtensionValue.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Factory.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/MessagePackLibrary.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Packer.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Types.java
-${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Unpacker.java
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
