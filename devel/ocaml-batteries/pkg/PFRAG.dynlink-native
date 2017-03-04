@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2013/01/08 21:50:17 chrisz Exp $
-@bin lib/ocaml/batteries/batteries.cmxs
-@bin lib/ocaml/batteries/batteriesThread.cmxs
