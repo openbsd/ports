@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/09/11 16:30:11 ratchov Exp $
+# $OpenBSD: Makefile,v 1.25 2017/03/04 02:03:55 jca Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -35,7 +35,9 @@ FULLV =			$V-${SRCV}
 #MAKE_FLAGS +=		INTERP=gnu-interp
 #.endif
 
-MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak
+MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak \
+			CC="${CC}" \
+			LD="${CC}"
 DESTDIRNAME =		ROOT
 SUBST_VARS +=		FULLV
 
