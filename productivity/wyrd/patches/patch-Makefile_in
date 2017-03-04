@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Feb  2 22:40:39 2013
-+++ Makefile.in	Tue Jun 14 19:33:34 2016
-@@ -93,7 +93,12 @@
+--- Makefile.in.orig	Sun Feb  3 04:40:39 2013
++++ Makefile.in	Sat Mar  4 17:40:29 2017
+@@ -93,7 +93,12 @@ version.ml: Makefile
  
  
  $(CURSES_CMA) $(CURSES_CMXA) .stamp_built_curses:
