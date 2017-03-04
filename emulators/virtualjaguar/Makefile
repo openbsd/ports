@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/04 16:15:57 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/04 16:16:32 jca Exp $
 
 COMMENT =	Atari Jaguar emulator
 
@@ -31,7 +31,8 @@ MAKE_FLAGS =	CC="${CC}" \
 		CXX="${CXX}" \
 		HOSTCC="${CC}" \
 		LD="${CC}" \
-		LINK="${CXX}"
+		LINK="${CXX}" \
+		V=1
 
 NO_TEST =	Yes
 
