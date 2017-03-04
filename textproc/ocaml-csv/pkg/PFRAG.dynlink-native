@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2012/11/06 20:55:36 jasper Exp $
-@bin lib/ocaml/csv/csv.cmxs

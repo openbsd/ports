@@ -1,3 +1,0 @@
-This is a pure OCaml library to read and write CSV files, including all
-extensions used by Excel — eg. quotes, newlines, 8 bit characters in
-fields, "0 etc.
