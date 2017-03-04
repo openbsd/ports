@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1591 2017/03/04 16:08:55 krw Exp $
+# $OpenBSD: Makefile,v 1.1592 2017/03/04 17:14:58 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -408,6 +408,8 @@
      SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
      SUBDIR += lua-bit32
+     SUBDIR += lua-bitop
+     SUBDIR += lua-bitop,lua52
      SUBDIR += lua-cjson
      SUBDIR += lua-cjson,lua52
      SUBDIR += lua-cjson,lua53
