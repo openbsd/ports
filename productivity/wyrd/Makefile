@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/06/25 13:42:37 krw Exp $
+# $OpenBSD: Makefile,v 1.25 2017/03/04 16:45:17 jca Exp $
 
 COMMENT=		curses calendar front-end to remind
 
@@ -29,6 +29,11 @@ BUILD_DEPENDS=		${RUN_DEPENDS} lang/ocaml-camlp4
 RUN_DEPENDS=		misc/remind
 
 NO_TEST=		Yes
+
+SUBST_VARS+=		CC
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/curses/curses.ml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wyrd
