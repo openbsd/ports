@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/02/25 20:37:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2017/03/05 21:13:27 shadchin Exp $
 
     SUBDIR =
     SUBDIR += bash
@@ -10,6 +10,8 @@
     SUBDIR += nsh
     SUBDIR += nsh,static
     SUBDIR += perlsh
+    SUBDIR += py-qtconsole
+    SUBDIR += py-qtconsole,python3
     SUBDIR += sash
     SUBDIR += tcsh
     SUBDIR += tcsh,static
