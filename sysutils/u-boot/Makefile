@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.17 2017/03/03 23:46:25 jsg Exp $
+#	$OpenBSD: Makefile,v 1.18 2017/03/05 16:28:14 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -9,7 +9,7 @@ COMMENT=	U-Boot firmware
 VERSION=	2017.03-rc3
 REVISION=	0
 DISTNAME=	u-boot-${VERSION}
-PKGNAME=	u-boot-${FLAVOR}-${VERSION}
+PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
