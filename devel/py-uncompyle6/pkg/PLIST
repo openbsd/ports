@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/01/02 10:44:19 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/03/05 21:35:47 shadchin Exp $
 bin/pydisassemble${MODPY_BIN_SUFFIX}
 bin/uncompyle6${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/
@@ -124,6 +124,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}aligner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}check_ast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}consts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}fragments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}make_function.${MODPY_PYC_MAGIC_TAG}pyc
@@ -131,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}pa
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/${MODPY_PYCACHE}pysource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/aligner.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/check_ast.py
+lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/consts.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/fragments.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/helper.py
 lib/python${MODPY_VERSION}/site-packages/uncompyle6/semantics/make_function.py
