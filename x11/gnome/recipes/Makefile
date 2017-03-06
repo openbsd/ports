@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/02/28 16:18:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/03/06 18:26:34 jasper Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -35,5 +35,8 @@ LIB_DEPENDS =		audio/libcanberra \
 
 MODGNOME_TOOLS =	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache shared-mime-info vala
+
+# Prevent picking up git(1) during configure
+CONFIGURE_ENV +=	GIT=/usr/bin/true
 
 .include <bsd.port.mk>
