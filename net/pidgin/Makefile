@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2016/07/05 07:13:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2017/03/06 23:42:54 naddy Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -91,6 +91,8 @@ CONFIGURE_ARGS+= --disable-schemas-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_db_dbopen=no
+# see patch-pidgin_Makefile_in, no AC_PROG_CXX
+MAKE_ENV=	CXX="${CXX}"
 
 FLAVORS=	audio debug gtkspell
 FLAVOR?=
