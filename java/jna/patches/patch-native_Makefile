@@ -1,0 +1,21 @@
+$OpenBSD: patch-native_Makefile,v 1.1 2017/03/06 21:19:20 jca Exp $
+--- native/Makefile.orig	Mon Mar  6 21:59:50 2017
++++ native/Makefile	Mon Mar  6 22:00:22 2017
+@@ -81,7 +81,7 @@ LIBPFX=lib
+ LIBSFX=.so
+ ARSFX=.a
+ JNISFX=$(LIBSFX)
+-CC=gcc
++CC?=gcc
+ LD=$(CC)
+ LIBS=
+ # CC_OPTS only applied to objects build for jnidispatch, not for libffi
+@@ -95,7 +95,7 @@ LIBS=
+ #                   variables is ignored.
+ LOC_CC_OPTS=-Wno-unknown-warning-option -Werror -Wno-clobbered
+ # Default to Sun recommendations for JNI compilation
+-COPT=-O2 -fno-omit-frame-pointer -fno-strict-aliasing
++COPT=${PORTS_CFLAGS} -fno-omit-frame-pointer -fno-strict-aliasing
+ CASM=-S
+ ifeq ($(DEBUG),true)
+ CDEBUG=-g

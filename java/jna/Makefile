@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/02/25 15:05:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2017/03/06 21:19:20 jca Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -28,6 +28,9 @@ LIB_DEPENDS=	devel/libffi
 # clojure needs to have the jna.jar installed
 TEST_DEPENDS=	${BASE_PKGPATH} \
 		lang/clojure
+
+MAKE_ENV=	CC="${CC}" \
+		PORTS_CFLAGS="${CFLAGS}"
 
 GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 
