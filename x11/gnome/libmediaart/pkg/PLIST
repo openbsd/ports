@@ -1,26 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/28 18:03:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/03/06 08:10:10 ajacoutot Exp $
 include/libmediaart-2.0/
 include/libmediaart-2.0/libmediaart/
 include/libmediaart-2.0/libmediaart/cache.h
 include/libmediaart-2.0/libmediaart/extract.h
 include/libmediaart-2.0/libmediaart/extractgeneric.h
 include/libmediaart-2.0/libmediaart/mediaart.h
-lib/girepository-1.0/
 lib/girepository-1.0/MediaArt-2.0.typelib
 lib/libmediaart-2.0.a
 lib/libmediaart-2.0.la
 @lib lib/libmediaart-2.0.so.${LIBmediaart-2.0_VERSION}
 lib/pkgconfig/libmediaart-2.0.pc
-share/gir-1.0/
 share/gir-1.0/MediaArt-2.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libmediaart/
 share/gtk-doc/html/libmediaart/annotation-glossary.html
 share/gtk-doc/html/libmediaart/ch02.html
 share/gtk-doc/html/libmediaart/home.png
 share/gtk-doc/html/libmediaart/index.html
-share/gtk-doc/html/libmediaart/index.sgml
 share/gtk-doc/html/libmediaart/left-insensitive.png
 share/gtk-doc/html/libmediaart/left.png
 share/gtk-doc/html/libmediaart/libmediaart-Cache.html
