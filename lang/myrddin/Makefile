@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/04 21:09:04 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/06 14:12:20 jturner Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		systems language that is both powerful and fun to use
 
-DISTNAME =		myrddin-0.1
+DISTNAME =		myrddin-0.1.1
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -22,6 +22,6 @@ WRKDIST =		${WRKDIR}/mc
 CONFIGURE_STYLE =	simple
 USE_GMAKE =		Yes
 
-NO_TEST =		Yes
+TEST_TARGET =		check
 
 .include <bsd.port.mk>
