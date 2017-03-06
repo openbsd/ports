@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/27 19:40:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/06 18:03:57 jasper Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -22,6 +22,7 @@ MODGCC4_LANGS =		c++
 CXXFLAGS +=		-pthread
 
 BUILD_DEPENDS =		devel/boost \
+			devel/gettext-tools \
 			devel/leatherman \
 			net/curl
 
