@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/14 20:20:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/07 10:09:37 rpointel Exp $
 
 COMMENT =	library for binary signature scanning
 
-VERSION = 	20160312
+VERSION = 	20170124
 DISTNAME =	libsigscan-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
 
