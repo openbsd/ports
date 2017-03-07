@@ -1,41 +1,43 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
---- Makefile.orig	Tue Jul  1 10:42:26 2014
-+++ Makefile	Thu Dec 11 13:57:01 2014
-@@ -29,28 +29,28 @@ all:
+$OpenBSD: patch-Makefile,v 1.2 2017/03/07 08:53:17 bentley Exp $
+--- Makefile.orig	Tue Feb 28 11:00:40 2017
++++ Makefile	Tue Feb 28 11:04:01 2017
+@@ -35,28 +35,28 @@ all:
  	@echo "Password store is a shell script, so there is nothing to do. Try \"make install\" instead."
  
  install-common:
 -	@install -v -d "$(DESTDIR)$(MANDIR)/man1" && install -m 0644 -v man/pass.1 "$(DESTDIR)$(MANDIR)/man1/pass.1"
-+	install -d "$(DESTDIR)$(MANDIR)/man1" && install -m 0644 man/pass.1 "$(DESTDIR)$(MANDIR)/man1/pass.1"
- 
--	@[ "$(FORCE_BASHCOMP)" = "1" ] && install -v -d "$(BASHCOMP_PATH)" && install -m 0644 -v src/completion/pass.bash-completion "$(BASHCOMP_PATH)/pass" || true
--	@[ "$(FORCE_ZSHCOMP)" = "1" ] && install -v -d "$(ZSHCOMP_PATH)" && install -m 0644 -v src/completion/pass.zsh-completion "$(ZSHCOMP_PATH)/_pass" || true
--	@[ "$(FORCE_FISHCOMP)" = "1" ] && install -v -d "$(FISHCOMP_PATH)" && install -m 0644 -v src/completion/pass.fish-completion "$(FISHCOMP_PATH)/pass.fish" || true
-+	[ "$(FORCE_BASHCOMP)" = "1" ] && install -d "$(BASHCOMP_PATH)" && install -m 0644 src/completion/pass.bash-completion "$(BASHCOMP_PATH)/pass" || true
-+	[ "$(FORCE_ZSHCOMP)" = "1" ] && install -d "$(ZSHCOMP_PATH)" && install -m 0644 src/completion/pass.zsh-completion "$(ZSHCOMP_PATH)/_pass" || true
-+	[ "$(FORCE_FISHCOMP)" = "1" ] && install -d "$(FISHCOMP_PATH)" && install -m 0644 src/completion/pass.fish-completion "$(FISHCOMP_PATH)/pass.fish" || true
+-	@[ "$(WITH_BASHCOMP)" = "yes" ] || exit 0; install -v -d "$(DESTDIR)$(BASHCOMPDIR)" && install -m 0644 -v src/completion/pass.bash-completion "$(DESTDIR)$(BASHCOMPDIR)/pass"
+-	@[ "$(WITH_ZSHCOMP)" = "yes" ] || exit 0; install -v -d "$(DESTDIR)$(ZSHCOMPDIR)" && install -m 0644 -v src/completion/pass.zsh-completion "$(DESTDIR)$(ZSHCOMPDIR)/_pass"
+-	@[ "$(WITH_FISHCOMP)" = "yes" ] || exit 0; install -v -d "$(DESTDIR)$(FISHCOMPDIR)" && install -m 0644 -v src/completion/pass.fish-completion "$(DESTDIR)$(FISHCOMPDIR)/pass.fish"
++	@install -d "$(DESTDIR)$(MANDIR)/man1" && install -m 0644 man/pass.1 "$(DESTDIR)$(MANDIR)/man1/pass.1"
++	@[ "$(WITH_BASHCOMP)" = "yes" ] || exit 0; install -d "$(DESTDIR)$(BASHCOMPDIR)" && install -m 0644 src/completion/pass.bash-completion "$(DESTDIR)$(BASHCOMPDIR)/pass"
++	@[ "$(WITH_ZSHCOMP)" = "yes" ] || exit 0; install -d "$(DESTDIR)$(ZSHCOMPDIR)" && install -m 0644 src/completion/pass.zsh-completion "$(DESTDIR)$(ZSHCOMPDIR)/_pass"
++	@[ "$(WITH_FISHCOMP)" = "yes" ] || exit 0; install -d "$(DESTDIR)$(FISHCOMPDIR)" && install -m 0644 src/completion/pass.fish-completion "$(DESTDIR)$(FISHCOMPDIR)/pass.fish"
  
  
  ifneq ($(strip $(wildcard $(PLATFORMFILE))),)
  install: install-common
 -	@install -v -d "$(DESTDIR)$(LIBDIR)/password-store" && install -m 0644 -v "$(PLATFORMFILE)" "$(DESTDIR)$(LIBDIR)/password-store/platform.sh"
+-	@install -v -d "$(DESTDIR)$(LIBDIR)/password-store/extensions"
 -	@install -v -d "$(DESTDIR)$(BINDIR)/"
--	sed 's:.*PLATFORM_FUNCTION_FILE.*:source "$(DESTDIR)$(LIBDIR)/password-store/platform.sh":' src/password-store.sh > "$(DESTDIR)$(BINDIR)/pass"
-+	install -d "$(DESTDIR)$(LIBDIR)/password-store" && install -m 0644 "$(PLATFORMFILE)" "$(DESTDIR)$(LIBDIR)/password-store/platform.sh"
-+	install -d "$(DESTDIR)$(BINDIR)/"
-+	sed 's:.*PLATFORM_FUNCTION_FILE.*:source "$(LIBDIR)/password-store/platform.sh":' src/password-store.sh > "$(DESTDIR)$(BINDIR)/pass"
- 	@chmod 0755 "$(DESTDIR)$(BINDIR)/pass"
++	@install -d "$(DESTDIR)$(LIBDIR)/password-store" && install -m 0644 "$(PLATFORMFILE)" "$(DESTDIR)$(LIBDIR)/password-store/platform.sh"
++	@install -d "$(DESTDIR)$(LIBDIR)/password-store/extensions"
++	@install -d "$(DESTDIR)$(BINDIR)/"
+ 	@trap 'rm -f src/.pass' EXIT; sed 's:.*PLATFORM_FUNCTION_FILE.*:source "$(LIBDIR)/password-store/platform.sh":;s:^SYSTEM_EXTENSION_DIR=.*:SYSTEM_EXTENSION_DIR="$(LIBDIR)/password-store/extensions":' src/password-store.sh > src/.pass && \
+-	install -v -d "$(DESTDIR)$(BINDIR)/" && install -m 0755 -v src/.pass "$(DESTDIR)$(BINDIR)/pass"
++	install -d "$(DESTDIR)$(BINDIR)/" && install -m 0755 src/.pass "$(DESTDIR)$(BINDIR)/pass"
  else
  install: install-common
--	@install -v -d "$(DESTDIR)$(BINDIR)/"
-+	install -d "$(DESTDIR)$(BINDIR)/"
- 	sed '/PLATFORM_FUNCTION_FILE/d' src/password-store.sh > "$(DESTDIR)$(BINDIR)/pass"
- 	@chmod 0755 "$(DESTDIR)$(BINDIR)/pass"
+-	@install -v -d "$(DESTDIR)$(LIBDIR)/password-store/extensions"
++	@install -d "$(DESTDIR)$(LIBDIR)/password-store/extensions"
+ 	@trap 'rm -f src/.pass' EXIT; sed '/PLATFORM_FUNCTION_FILE/d;s:^SYSTEM_EXTENSION_DIR=.*:SYSTEM_EXTENSION_DIR="$(LIBDIR)/password-store/extensions":' src/password-store.sh > src/.pass && \
+-	install -v -d "$(DESTDIR)$(BINDIR)/" && install -m 0755 -v src/.pass "$(DESTDIR)$(BINDIR)/pass"
++	install -d "$(DESTDIR)$(BINDIR)/" && install -m 0755 src/.pass "$(DESTDIR)$(BINDIR)/pass"
  endif
  
  uninstall:
 -	@rm -vrf \
-+	rm -rf \
++	@rm -rf \
  		"$(DESTDIR)$(BINDIR)/pass" \
- 		"$(DESTDIR)$(LIBDIR)/password-store/" \
+ 		"$(DESTDIR)$(LIBDIR)/password-store" \
  		"$(DESTDIR)$(MANDIR)/man1/pass.1" \

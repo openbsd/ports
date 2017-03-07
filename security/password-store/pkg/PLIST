@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/07 08:53:17 bentley Exp $
 bin/pass
 lib/password-store/
+lib/password-store/extensions/
 lib/password-store/platform.sh
 @man man/man1/pass.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/pass
+@sample ${SYSCONFDIR}/bash_completion.d/pass
 share/doc/password-store/
 share/doc/password-store/COPYING
 share/doc/password-store/README
-share/doc/password-store/related-projects.txt
 share/examples/password-store/
 share/examples/password-store/completion/
 share/examples/password-store/completion/pass.bash-completion
-@sample ${SYSCONFDIR}/bash_completion.d/pass-bash-completion.sh
 share/examples/password-store/completion/pass.fish-completion
 share/examples/password-store/completion/pass.zsh-completion
 share/examples/password-store/dmenu/
@@ -25,12 +28,19 @@ share/examples/password-store/importers/1password2pass.rb
 share/examples/password-store/importers/fpm2pass.pl
 share/examples/password-store/importers/gorilla2pass.rb
 share/examples/password-store/importers/kedpm2pass.py
+share/examples/password-store/importers/keepass2csv2pass.py
 share/examples/password-store/importers/keepass2pass.py
 share/examples/password-store/importers/keepassx2pass.py
 share/examples/password-store/importers/kwallet2pass.py
 share/examples/password-store/importers/lastpass2pass.rb
+share/examples/password-store/importers/password-exporter2pass.py
+share/examples/password-store/importers/pwsafe2pass.py
 share/examples/password-store/importers/pwsafe2pass.sh
 share/examples/password-store/importers/revelation2pass.py
+share/examples/password-store/importers/roboform2pass.rb
+share/examples/password-store/pass.applescript
+share/examples/password-store/vim/
+share/examples/password-store/vim/noplaintext.vim
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_pass

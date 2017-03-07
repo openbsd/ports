@@ -1,2 +1,2 @@
-Lightweight commandline-based password manager. Uses pwgen, gpg and git to
-generate, securely store, synchronize and show stored passwords.
+Lightweight commandline-based password manager. Uses gpg and git to generate,
+securely store, synchronize and show stored passwords.

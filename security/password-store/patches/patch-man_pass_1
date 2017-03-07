@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_pass_1,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
---- man/pass.1.orig	Wed Jan 28 17:43:02 2015
-+++ man/pass.1	Mon Dec 28 14:52:32 2015
-@@ -71,7 +71,7 @@ unspecified) is removed.
+$OpenBSD: patch-man_pass_1,v 1.2 2017/03/07 08:53:17 bentley Exp $
+--- man/pass.1.orig	Sun Feb 26 18:52:16 2017
++++ man/pass.1	Tue Feb 28 10:37:29 2017
+@@ -78,7 +78,7 @@ unspecified) is removed.
  List names of passwords inside the tree at
  .I subfolder
  by using the
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_pass_1,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
  program. This command is alternatively named \fBlist\fP.
  .TP
  \fBgrep\fP \fIsearch-string\fP
-@@ -83,7 +83,7 @@ options.
+@@ -90,7 +90,7 @@ options.
  .TP
  \fBfind\fP \fIpass-names\fP...
  List names of passwords inside the tree that match \fIpass-names\fP by using the
@@ -18,15 +18,4 @@ $OpenBSD: patch-man_pass_1,v 1.1.1.1 2016/01/21 10:52:57 bentley Exp $
 +.BR colortree (1)
  program. This command is alternatively named \fBsearch\fP.
  .TP
- \fBshow\fP [ \fI--clip\fP, \fI-c\fP ] \fIpass-name\fP
-@@ -107,8 +107,8 @@ Insert a new password or edit an existing password usi
- by the environment variable \fIEDITOR\fP or using
- .BR vi (1)
- as a fallback. This mode makes use of temporary files for editing, but care is taken to
--ensure that temporary files are created in \fI/dev/shm\fP in order to avoid writing to
--difficult-to-erase disk sectors. If \fI/dev/shm\fP is not accessible, fallback to
-+ensure that temporary files are created in a \fItmpfs\fP in order to avoid writing to
-+difficult-to-erase disk sectors. If mounting a \fItmpfs\fP is not possible, fallback to
- the ordinary \fITMPDIR\fP location, and print a warning.
- .TP
- \fBgenerate\fP [ \fI--no-symbols\fP, \fI-n\fP ] [ \fI--clip\fP, \fI-c\fP ] [ \fI--in-place\fP, \fI-i\fP | \fI--force\fP, \fI-f\fP ] \fIpass-name pass-length\fP
+ \fBshow\fP [ \fI--clip\fP[=\fIline-number\fP], \fI-c\fP[\fIline-number\fP] ] [ \fI--qrcode\fP[=\fIline-number\fP], \fI-q\fP[\fIline-number\fP] ] \fIpass-name\fP

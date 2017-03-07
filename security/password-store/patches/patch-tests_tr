@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_tr,v 1.1 2017/03/07 08:53:17 bentley Exp $
+--- tests/tr.orig	Tue Feb 28 14:01:47 2017
++++ tests/tr	Tue Feb 28 14:01:54 2017
+@@ -1,2 +1,7 @@
+ #!/usr/bin/env bash
+-echo "${FAKE_PWGEN_PASSWORD:-Hello World}"
++read -r -n 8 uname
++if [ "x$uname" = "xOpenBSD" ]; then
++        echo "openbsd"
++else
++        echo "${FAKE_PWGEN_PASSWORD:-Hello World}"
++fi
