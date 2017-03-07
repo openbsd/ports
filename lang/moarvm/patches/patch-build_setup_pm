@@ -1,0 +1,21 @@
+$OpenBSD: patch-build_setup_pm,v 1.3 2017/03/07 21:21:20 pascal Exp $
+--- build/setup.pm.orig	Tue Mar  7 19:48:57 2017
++++ build/setup.pm	Tue Mar  7 19:52:49 2017
+@@ -267,7 +267,7 @@ our %COMPILERS = (
+ 
+         ccmiscflags  => '-Wdeclaration-after-statement -Werror=declaration-after-statement',
+         ccwarnflags  => '',
+-        ccoptiflags  => '-O%s -DNDEBUG',
++        ccoptiflags  => '-DNDEBUG',
+         ccdebugflags => '-g%s',
+         ccinstflags  => '-pg',
+ 
+@@ -289,7 +289,7 @@ our %COMPILERS = (
+ 
+         ccmiscflags  =>  '-fno-omit-frame-pointer -fno-optimize-sibling-calls',
+         ccwarnflags  => '-Wno-logical-op-parentheses',
+-        ccoptiflags  => '-O%s -DNDEBUG',
++        ccoptiflags  => '-DNDEBUG',
+         ccdebugflags => '-g%s',
+         ccinstflags  => '-fsanitize=address',
+ 

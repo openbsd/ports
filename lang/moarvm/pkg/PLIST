@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/08/06 16:30:07 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.8 2017/03/07 21:21:20 pascal Exp $
 @bin bin/moar
 include/libuv/
 include/libuv/android-ifaddrs.h
@@ -33,11 +33,11 @@ include/moar/6model/reprs/CStruct.h
 include/moar/6model/reprs/CUnion.h
 include/moar/6model/reprs/ConcBlockingQueue.h
 include/moar/6model/reprs/ConditionVariable.h
+include/moar/6model/reprs/Decoder.h
 include/moar/6model/reprs/HashAttrStore.h
 include/moar/6model/reprs/KnowHOWAttributeREPR.h
 include/moar/6model/reprs/KnowHOWREPR.h
 include/moar/6model/reprs/Lexotic.h
-include/moar/6model/reprs/MVMArray.h
 include/moar/6model/reprs/MVMAsyncTask.h
 include/moar/6model/reprs/MVMCFunction.h
 include/moar/6model/reprs/MVMCallCapture.h
@@ -68,6 +68,7 @@ include/moar/6model/reprs/ReentrantMutex.h
 include/moar/6model/reprs/SCRef.h
 include/moar/6model/reprs/Semaphore.h
 include/moar/6model/reprs/Uninstantiable.h
+include/moar/6model/reprs/VMArray.h
 include/moar/6model/sc.h
 include/moar/6model/serialization.h
 include/moar/bithacks.h
@@ -97,6 +98,7 @@ include/moar/core/nativecall_dyncall.h
 include/moar/core/nativecall_libffi.h
 include/moar/core/oplabels.h
 include/moar/core/ops.h
+include/moar/core/regionalloc.h
 include/moar/core/threadcontext.h
 include/moar/core/threads.h
 include/moar/core/validation.h
@@ -143,6 +145,7 @@ include/moar/mast/nodes.h
 include/moar/math/
 include/moar/math/bigintops.h
 include/moar/math/num.h
+include/moar/memdebug.h
 include/moar/moar.h
 include/moar/platform/
 include/moar/platform/inttypes.h
@@ -168,6 +171,7 @@ include/moar/spesh/facts.h
 include/moar/spesh/graph.h
 include/moar/spesh/inline.h
 include/moar/spesh/log.h
+include/moar/spesh/lookup.h
 include/moar/spesh/manipulate.h
 include/moar/spesh/optimize.h
 include/moar/spesh/osr.h
@@ -182,6 +186,7 @@ include/moar/strings/normalize.h
 include/moar/strings/ops.h
 include/moar/strings/unicode.h
 include/moar/strings/unicode_gen.h
+include/moar/strings/unicode_ops.h
 include/moar/strings/utf16.h
 include/moar/strings/utf8.h
 include/moar/strings/utf8_c8.h
