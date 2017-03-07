@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/21 10:38:42 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/07 10:07:13 rpointel Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
-VERSION =		20160731
+VERSION =		20170204
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
 
@@ -24,7 +24,8 @@ WANTLIB += bfio c crypto fuse m pthread util ${MODPY_WANTLIB}
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--enable-python \
-			--with-pyprefix=${LOCALBASE}
+			--with-pyprefix=${LOCALBASE} \
+			AWK=/usr/bin/awk
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
