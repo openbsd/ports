@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2017/03/02 17:42:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2017/03/07 09:12:48 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
-V=		20170225
+V=		20170306
 DISTNAME=	neomutt-$V
 
 CATEGORIES=	mail
