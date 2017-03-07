@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/04 17:11:09 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/07 18:33:27 espie Exp $
 
 COMMENT =	numeric bit operations for Lua
 
@@ -21,7 +21,8 @@ MASTER_SITES =		${HOMEPAGE}/download/
 MODULES =		lang/lua
 USE_GMAKE =		Yes
 
-MAKE_FLAGS +=		INCLUDES=-I${MODLUA_INCL_DIR} CCOPT= LUA=${MODLUA_BIN}
+MAKE_FLAGS +=		INCLUDES=-I${MODLUA_INCL_DIR} CCOPT= \
+			LUA=${MODLUA_BIN} CC="${CC}"
 
 INSTALL_DIR =		${MODLUA_LIBDIR}
 do-install:
