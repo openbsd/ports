@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/12 07:07:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/07 10:07:58 rpointel Exp $
 
 COMMENT =	library to access the Windows Shell Item format
 
-VERSION = 	20160110
+VERSION = 	20170117
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
 
