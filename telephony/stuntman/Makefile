@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/05/27 22:50:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/03/07 12:49:35 espie Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
 NOT_FOR_ARCHS = arm hppa # atomic ops
@@ -23,7 +23,8 @@ WANTLIB +=	c crypto m pthread stdc++
 BUILD_DEPENDS =	devel/boost
 
 MAKE_FLAGS =	BOOST_INCLUDE='-I${LOCALBASE}/include' \
-		FLAVOR_FLAGS='${CXXFLAGS} -Wno-unknown-pragmas -DHAVE_ARC4RANDOM'
+		FLAVOR_FLAGS='${CXXFLAGS} -Wno-unknown-pragmas -DHAVE_ARC4RANDOM' \
+		CXX=c++
 
 USE_GMAKE =	Yes
 
