@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.47 2017/02/18 16:22:54 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2017/03/07 15:36:45 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	45.7.0esr
-MOZILLA_BRANCH =	esr45
+MOZILLA_VERSION =	52.0esr
+MOZILLA_BRANCH =	esr52
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	3.0
-MOZILLA_LIBS =	browsercomps xul clearkey lgpllibs
+SO_VERSION =	4.0
+MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 
 CATEGORIES =	www
 
@@ -23,23 +23,25 @@ MODULES =	www/mozilla devel/gettext lang/python
 
 MODPY_RUNDEP =	No
 
-# necessary glue to build with the correct compiler after fx 17
-MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha
-MODGCC4_LANGS =		c c++
+MODULES +=		lang/clang
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
 # firefox >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+# firefox >= 46 defaults to gtk+3
+MOZILLA_USE_GTK3 = Yes
+
+WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
-# to be able to link when building with clang on i386 or gcc on ppc
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+# to be able to link when building with clang on i386
+.if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
@@ -47,12 +49,7 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 
 # relies on pulseaudio for sound and broken at runtime
-CONFIGURE_ARGS +=	--disable-webrtc
-
-# SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-
-CONFIGURE_ARGS +=	--disable-gstreamer
+#CONFIGURE_ARGS +=	--disable-webrtc
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
