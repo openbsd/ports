@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2017/03/07 15:54:05 naddy Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 VERSION=	1.58.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 CATEGORIES=	devel
@@ -79,16 +79,19 @@ BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
 
 # 'context' and 'coroutine' use MD bits and miss support for Alpha,
 # PA-RISC, SPARC and SuperH. The author does not care
-# care about adding support for Alpha and PA-RISC.
-BOOTSTRAP=	--with-python=${MODPY_BIN} \
+# about adding support for Alpha and PA-RISC.
+BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
+		--with-python=${MODPY_BIN} \
 		--with-python-root=${LOCALBASE} \
 		--with-python-version=${MODPY_VERSION} \
+		--with-toolset=gcc \
 		--without-icu \
 		--without-libraries=context,coroutine
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE
 CONFIGURE_STYLE= none
-CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
+CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 DPB_PROPERTIES= parallel
 
@@ -98,10 +101,14 @@ SUBST_VARS+=	SO_VERSION
 
 do-configure:
 	echo "using python : ${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}$$(python${MODPY_DEFAULT_VERSION_3}-config --abiflags) ;" >> ${WRKSRC}/tools/build/user-config.jam
+	echo "using gcc : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
 	@${SUBST_CMD} ${WRKSRC}/Jamroot
 	@cd ${WRKSRC}/libs/config && \
 	    ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
 	    cp user.hpp ${WRKSRC}/boost/config
+	@cd ${WRKSRC}/tools/build/src/engine && \
+	    ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" /bin/sh ./build.sh cc && \
+	    cp bin.openbsd*/b2 bin.openbsd*/bjam ${WRKSRC}
 	@cd ${WRKSRC} && chmod -R a+x ./ && \
 	    /bin/sh ./bootstrap.sh ${BOOTSTRAP}
 
