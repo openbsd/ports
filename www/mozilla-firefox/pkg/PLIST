@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2017/01/24 21:33:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.65 2017/03/07 15:31:38 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -23,9 +23,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default16.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default32.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
@@ -39,6 +36,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/features/webcompat@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/mozicon128.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
