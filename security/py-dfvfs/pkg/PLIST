@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/22 19:15:59 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/07 10:10:43 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/dfvfs/
 lib/python${MODPY_VERSION}/site-packages/dfvfs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfvfs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -344,6 +344,10 @@ lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/cpio_file_entry.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/cpio_file_entry.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/cpio_file_system.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/cpio_file_system.pyc
+lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/data_range_file_entry.py
+lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/data_range_file_entry.pyc
+lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/data_range_file_system.py
+lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/data_range_file_system.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/encoded_stream_file_entry.py
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/encoded_stream_file_entry.pyc
 lib/python${MODPY_VERSION}/site-packages/dfvfs/vfs/encoded_stream_file_system.py

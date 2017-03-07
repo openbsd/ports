@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/22 19:15:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/07 10:10:43 rpointel Exp $
 
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_EGG_VERSION = 20160918
+MODPY_EGG_VERSION = 20170116
 DISTNAME =	py-dfvfs-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	log2timeline
