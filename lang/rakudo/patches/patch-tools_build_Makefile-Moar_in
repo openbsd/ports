@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_build_Makefile-Moar_in,v 1.5 2017/03/07 21:21:51 pascal Exp $
+--- tools/build/Makefile-Moar.in.orig	Tue Mar  7 19:56:12 2017
++++ tools/build/Makefile-Moar.in	Tue Mar  7 19:56:38 2017
+@@ -1,6 +1,6 @@
+ M_CC      = @moar::cc@
+ M_LD      = @moar::ld@
+-M_CFLAGS  = @moar::cflags@ @moar::ccmiscflags@ @moar::ccoptiflags@ @moar::ccwarnflags@
++M_CFLAGS  = $(CFLAGS) @moar::cflags@ @moar::ccmiscflags@ @moar::ccoptiflags@ @moar::ccwarnflags@
+ M_LDFLAGS = @moar::ldflags@ @moar::ldmiscflags@ @moar::ldoptiflags@ @moar::ldlibs@
+ 
+ M_GEN_CAT = tools/build/gen-cat.nqp moar
