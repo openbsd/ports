@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2017/02/13 10:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2017/03/08 08:11:48 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -1086,6 +1086,15 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_trust_list_verify_crt2.3
 @man man/man3/gnutls_x509_trust_list_verify_named_crt.3
 share/doc/gnutls/
+share/doc/gnutls/gnutls-client-server-use-case.png
+share/doc/gnutls/gnutls-handshake-sequence.png
+share/doc/gnutls/gnutls-handshake-state.png
+share/doc/gnutls/gnutls-internals.png
+share/doc/gnutls/gnutls-layers.png
+share/doc/gnutls/gnutls-logo.png
+share/doc/gnutls/gnutls-modauth.png
+share/doc/gnutls/gnutls-x509.png
+share/doc/gnutls/pkcs11-vision.png
 share/examples/gnutls/
 share/examples/gnutls/ex-alert.c
 share/examples/gnutls/ex-cert-select-pkcs11.c

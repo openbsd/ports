@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.131 2017/02/18 17:31:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2017/03/08 08:11:48 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.5.9
+V=			3.5.10
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 CATEGORIES=		security
 
@@ -66,11 +65,6 @@ CONFIGURE_ARGS +=	--enable-local-libopts
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# XXX https://bugzilla.redhat.com/show_bug.cgi?id=1422256
-post-build:
-	sed -i 's/libidn2,//g' ${WRKBUILD}/lib/gnutls.pc
-	sed -i 's/-lunistring/-lunistring -lidn2/' ${WRKBUILD}/lib/gnutls.pc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
