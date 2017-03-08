@@ -1,11 +1,12 @@
-$OpenBSD: patch-contrib_libottery_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
---- contrib/libottery/CMakeLists.txt.orig	Thu Oct 15 12:30:51 2015
-+++ contrib/libottery/CMakeLists.txt	Fri Dec  2 15:12:53 2016
-@@ -6,7 +6,4 @@ SET(OTTERYSRC            chacha_merged.c
- ADD_LIBRARY(ottery STATIC ${OTTERYSRC})
+$OpenBSD: patch-contrib_libottery_CMakeLists_txt,v 1.2 2017/03/08 17:02:13 sthen Exp $
+--- contrib/libottery/CMakeLists.txt.orig	Sun Mar  5 15:23:13 2017
++++ contrib/libottery/CMakeLists.txt	Sun Mar  5 15:27:57 2017
+@@ -7,8 +7,5 @@ ADD_LIBRARY(ottery STATIC ${OTTERYSRC})
  
  SET(OTTERY_CFLAGS "-DBUILD_RSPAMD")
+ IF(ENABLE_FULL_DEBUG MATCHES "OFF")
 -if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
 -    SET(OTTERY_CFLAGS "${OTTERY_CFLAGS} -O3")
 -endif ()
+ ENDIF()
  set_target_properties(ottery PROPERTIES COMPILE_FLAGS "${OTTERY_CFLAGS}")

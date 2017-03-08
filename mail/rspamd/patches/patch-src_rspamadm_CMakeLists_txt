@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.6 2016/09/12 09:48:37 edd Exp $
---- src/rspamadm/CMakeLists.txt.orig	Fri Jul 22 10:18:48 2016
-+++ src/rspamadm/CMakeLists.txt	Tue Aug 30 18:07:13 2016
-@@ -39,9 +39,9 @@ TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.7 2017/03/08 17:02:13 sthen Exp $
+--- src/rspamadm/CMakeLists.txt.orig	Thu Feb  2 06:19:08 2017
++++ src/rspamadm/CMakeLists.txt	Sun Mar  5 15:23:51 2017
+@@ -40,9 +40,9 @@ TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
  TARGET_LINK_LIBRARIES(rspamadm ${RSPAMD_REQUIRED_LIBRARIES})
  TARGET_LINK_LIBRARIES(rspamadm rspamd-linenoise)
  

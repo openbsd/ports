@@ -1,13 +1,13 @@
-$OpenBSD: patch-contrib_http-parser_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
---- contrib/http-parser/CMakeLists.txt.orig	Thu Oct 15 12:32:21 2015
-+++ contrib/http-parser/CMakeLists.txt	Fri Dec  2 15:12:53 2016
-@@ -1,9 +1,6 @@
- SET(HTTPSRC            http_parser.c)
+$OpenBSD: patch-contrib_http-parser_CMakeLists_txt,v 1.2 2017/03/08 17:02:13 sthen Exp $
+--- contrib/http-parser/CMakeLists.txt.orig	Sun Mar  5 15:23:13 2017
++++ contrib/http-parser/CMakeLists.txt	Sun Mar  5 15:27:14 2017
+@@ -3,9 +3,6 @@ SET(HTTPSRC            http_parser.c)
  
  SET(HTTP_COMPILE_FLAGS "-DRSPAMD_LIB")
+ IF(ENABLE_FULL_DEBUG MATCHES "OFF")
 -if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
 -	set(HTTP_COMPILE_FLAGS "${HTTP_COMPILE_FLAGS} -O3")
 -endif ()
+ ENDIF()
  
  ADD_LIBRARY(rspamd-http-parser STATIC ${HTTPSRC})
- SET_TARGET_PROPERTIES(rspamd-http-parser PROPERTIES VERSION ${RSPAMD_VERSION})

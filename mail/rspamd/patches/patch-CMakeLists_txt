@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2016/12/02 14:59:09 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2017/03/08 17:02:13 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
 
---- CMakeLists.txt.orig	Tue Nov 29 11:13:23 2016
-+++ CMakeLists.txt	Thu Dec  1 15:03:14 2016
-@@ -524,14 +524,14 @@ SET(POE_LOOP "Loop::IO_Poll")
+--- CMakeLists.txt.orig	Thu Mar  2 11:58:42 2017
++++ CMakeLists.txt	Sun Mar  5 15:23:13 2017
+@@ -526,14 +526,14 @@ SET(POE_LOOP "Loop::IO_Poll")
  SET(TAR "tar")
  
  # Platform specific configuration
@@ -22,7 +22,7 @@ both libevent from base *and* libevent2
  	# Find util library
  	ProcessPackage(LIBUTIL LIBRARY util INCLUDE libutil.h
  		ROOT ${LIBUTIL_ROOT_DIR} OPTIONAL)
-@@ -544,8 +544,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
+@@ -546,8 +546,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
  	ENDIF()
  	SET(POE_LOOP "Loop::Kqueue")
  	SET(TAR "gtar")
@@ -38,7 +38,7 @@ both libevent from base *and* libevent2
  IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_BSD_SOURCE -DDARWIN")
  	SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
-@@ -694,7 +700,7 @@ ELSE()
+@@ -679,7 +685,7 @@ ELSE()
  ENDIF()
  
  ProcessPackage(LIBEVENT LIBRARY event INCLUDE event.h INCLUDE_SUFFIXES include/event
@@ -46,4 +46,4 @@ both libevent from base *and* libevent2
 +	ROOT ${LIBEVENT_ROOT_DIR} MODULES event)
  ProcessPackage(SQLITE3 LIBRARY sqlite3 INCLUDE sqlite3.h INCLUDE_SUFFIXES include/sqlite3 include/sqlite
  	ROOT ${SQLITE3_ROOT_DIR} MODULES sqlite3 sqlite)
- ProcessPackage(ICONV LIBRARY iconv libiconv libiconv-2 c INCLUDE iconv.h INCLUDE_SUFFIXES include/libiconv
+ ProcessPackage(ICUDATA LIBRARY icudata INCLUDE ucnv.h INCLUDE_SUFFIXES include/unicode

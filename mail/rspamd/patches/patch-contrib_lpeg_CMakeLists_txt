@@ -1,14 +1,13 @@
-$OpenBSD: patch-contrib_lpeg_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
---- contrib/lpeg/CMakeLists.txt.orig	Fri Dec  2 15:08:49 2016
-+++ contrib/lpeg/CMakeLists.txt	Fri Dec  2 15:09:00 2016
-@@ -4,10 +4,6 @@ SET(LPEGSRC lpcap.c
-         lptree.c
+$OpenBSD: patch-contrib_lpeg_CMakeLists_txt,v 1.2 2017/03/08 17:02:13 sthen Exp $
+--- contrib/lpeg/CMakeLists.txt.orig	Sun Dec 25 11:19:27 2016
++++ contrib/lpeg/CMakeLists.txt	Sun Mar  5 15:28:22 2017
+@@ -5,9 +5,6 @@ SET(LPEGSRC lpcap.c
          lpvm.c)
  
+ IF(ENABLE_FULL_DEBUG MATCHES "OFF")
 -if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
 -    SET(LPEG_CFLAGS "${LPEG_CFLAGS} -O3")
 -endif ()
--
+ ENDIF()
+ 
  SET(LIB_TYPE STATIC)
- ADD_LIBRARY(rspamd-lpeg ${LIB_TYPE} ${LPEGSRC})
- set_target_properties(rspamd-lpeg PROPERTIES COMPILE_FLAGS "${LPEG_CFLAGS}")

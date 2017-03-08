@@ -1,10 +1,11 @@
-$OpenBSD: patch-contrib_zstd_CMakeLists_txt,v 1.1 2016/12/02 15:19:42 sthen Exp $
---- contrib/zstd/CMakeLists.txt.orig	Fri Dec  2 15:08:49 2016
-+++ contrib/zstd/CMakeLists.txt	Fri Dec  2 15:08:51 2016
-@@ -12,6 +12,3 @@ SET(ZSTDSRC	divsufsort.c
- 			zstd_decompress.c)
- 
+$OpenBSD: patch-contrib_zstd_CMakeLists_txt,v 1.2 2017/03/08 17:02:13 sthen Exp $
+--- contrib/zstd/CMakeLists.txt.orig	Sun Dec 25 11:19:56 2016
++++ contrib/zstd/CMakeLists.txt	Sun Mar  5 15:28:06 2017
+@@ -14,7 +14,4 @@ SET(ZSTDSRC	divsufsort.c
  ADD_LIBRARY(rspamd-zstd STATIC ${ZSTDSRC})
+ 
+ IF(ENABLE_FULL_DEBUG MATCHES "OFF")
 -if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
 -	SET_TARGET_PROPERTIES(rspamd-zstd PROPERTIES COMPILE_FLAGS "-O3")
 -endif ()
+ ENDIF()

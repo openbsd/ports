@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2017/02/17 10:13:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2017/03/08 17:02:13 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.4.4
+DISTNAME=	rspamd-1.5.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -12,19 +12,21 @@ HOMEPAGE=	https://rspamd.com/
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto event gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0
-WANTLIB += luajit-5.1 m magic pcre pthread sqlite3 ssl
+WANTLIB += c crypto event fann gd glib-2.0 gthread-2.0 icudata icui18n icuuc
+WANTLIB += intl luajit-5.1 m magic pcre pthread sqlite3 ssl
 
 MASTER_SITES=	https://rspamd.com/downloads/
 
-MODULES=	devel/cmake \
-		devel/gettext
+MODULES=	devel/cmake
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libmagic \
+		devel/gettext \
 		devel/glib2 \
 		devel/pcre \
+		graphics/gd \
 		lang/luajit \
-		mail/gmime
+		math/fann \
+		textproc/icu4c
 BUILD_DEPENDS +=devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS = ${FULLPKGNAME}:${FULLPKGPATH}

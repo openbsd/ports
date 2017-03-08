@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.4 2016/09/12 09:48:37 edd Exp $
---- src/CMakeLists.txt.orig	Sat Jul 23 17:14:45 2016
-+++ src/CMakeLists.txt	Tue Aug 30 18:07:13 2016
-@@ -149,9 +149,9 @@ ADD_DEPENDENCIES(rspamd-server rspamd_lua_preprocess)
+$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2017/03/08 17:02:13 sthen Exp $
+--- src/CMakeLists.txt.orig	Wed Jan 11 09:04:45 2017
++++ src/CMakeLists.txt	Sun Mar  5 15:23:51 2017
+@@ -174,9 +174,9 @@ ENDIF()
  ADD_EXECUTABLE(rspamd ${RSPAMDSRC} ${CMAKE_CURRENT_BINARY_DIR}/workers.c)
  SET_TARGET_PROPERTIES(rspamd PROPERTIES LINKER_LANGUAGE C)
  SET_TARGET_PROPERTIES(rspamd PROPERTIES COMPILE_FLAGS "-DRSPAMD_MAIN")
