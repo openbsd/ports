@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/11/19 12:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/03/08 17:23:25 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,8 +11,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.12
-REVISION-main=	0
+V=		3.0.13
 DISTNAME=	freeradius-server-$V
 
 PKGNAME-main=	freeradius-$V

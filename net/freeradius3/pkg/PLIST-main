@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/11/15 12:24:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2017/03/08 17:23:25 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -79,6 +79,7 @@ include/freeradius/rfc7055.h
 include/freeradius/rfc7155.h
 include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
+include/freeradius/rfc7930.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
@@ -320,7 +321,6 @@ share/doc/freeradius/rfc/rfc7599.txt
 share/doc/freeradius/schemas/
 share/doc/freeradius/schemas/logstash/
 share/doc/freeradius/schemas/logstash/README
-share/doc/freeradius/schemas/logstash/kibana3-dashboard.json
 share/doc/freeradius/schemas/logstash/kibana4-dashboard.json
 share/doc/freeradius/schemas/logstash/log-courier.conf
 share/doc/freeradius/schemas/logstash/logstash-radius.conf
@@ -744,6 +744,7 @@ share/freeradius/dictionary.cisco.vpn3000
 share/freeradius/dictionary.cisco.vpn5000
 share/freeradius/dictionary.citrix
 share/freeradius/dictionary.clavister
+share/freeradius/dictionary.cnergee
 share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
@@ -798,6 +799,7 @@ share/freeradius/dictionary.meinberg
 share/freeradius/dictionary.meraki
 share/freeradius/dictionary.merit
 share/freeradius/dictionary.meru
+share/freeradius/dictionary.microsemi
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
 share/freeradius/dictionary.motorola
@@ -855,6 +857,7 @@ share/freeradius/dictionary.rfc7055
 share/freeradius/dictionary.rfc7155
 share/freeradius/dictionary.rfc7268
 share/freeradius/dictionary.rfc7499
+share/freeradius/dictionary.rfc7930
 share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin

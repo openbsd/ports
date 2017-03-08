@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_main_tls_c,v 1.1 2017/03/08 17:23:25 sthen Exp $
+--- src/main/tls.c.orig	Wed Mar  8 17:08:55 2017
++++ src/main/tls.c	Wed Mar  8 17:09:43 2017
+@@ -1929,7 +1929,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 	char		cn_str[1024];
+ 	char		buf[64];
+ 	X509		*client_cert;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	const STACK_OF(X509_EXTENSION) *ext_list;
+ #else
+ 	STACK_OF(X509_EXTENSION) *ext_list;
+@@ -2131,7 +2131,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 	}
+ 
+ 	if (lookup == 0) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 		ext_list = X509_get0_extensions(client_cert);
+ #else
+ 		X509_CINF	*client_inf;
