@@ -1,0 +1,4 @@
+Atomic file writes for Python:
+* Race-free assertion that the target file doesn't yet exist.
+* Simple high-level API that wraps a very flexible class-based API.
+* Consistent error handling across platforms.
