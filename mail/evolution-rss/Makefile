@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/02/22 13:59:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2017/03/08 11:12:22 espie Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
@@ -65,6 +65,7 @@ MODGNOME_TOOLS=		desktop-file-utils
 AUTOCONF_VERSION=	2.69
 
 CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV = ac_cv_path_GPP="${CXX}"
 
 post-install:
 	rm ${PREFIX}/lib/evolution/{plugins,modules}/*.{a,la}
