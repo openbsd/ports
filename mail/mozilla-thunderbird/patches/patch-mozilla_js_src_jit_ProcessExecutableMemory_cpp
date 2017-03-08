@@ -1,0 +1,73 @@
+$OpenBSD: patch-mozilla_js_src_jit_ProcessExecutableMemory_cpp,v 1.1 2017/03/08 15:54:54 landry Exp $
+
+https://gitweb.torproject.org/tor-browser.git/patch/?id=235c607f6bc39e124b9e8430092be249c3d64981
+
+--- mozilla/js/src/jit/ProcessExecutableMemory.cpp.orig	Sun Mar  5 21:58:25 2017
++++ mozilla/js/src/jit/ProcessExecutableMemory.cpp	Wed Mar  8 14:06:00 2017
+@@ -219,7 +219,12 @@ DeallocateProcessExecutableMemory(void* addr, size_t b
+ static DWORD
+ ProtectionSettingToFlags(ProtectionSetting protection)
+ {
+-    return PAGE_EXECUTE_READWRITE;
++    switch (protection) {
++      case ProtectionSetting::Protected:  return PAGE_NOACCESS;
++      case ProtectionSetting::Writable:   return PAGE_READWRITE;
++      case ProtectionSetting::Executable: return PAGE_EXECUTE_READ;
++    }
++    MOZ_CRASH();
+ }
+ 
+ static void
+@@ -283,7 +288,12 @@ DeallocateProcessExecutableMemory(void* addr, size_t b
+ static unsigned
+ ProtectionSettingToFlags(ProtectionSetting protection)
+ {
+-    return PROT_READ | PROT_WRITE | PROT_EXEC;
++    switch (protection) {
++      case ProtectionSetting::Protected:  return PROT_NONE;
++      case ProtectionSetting::Writable:   return PROT_READ | PROT_WRITE;
++      case ProtectionSetting::Executable: return PROT_READ | PROT_EXEC;
++    }
++    MOZ_CRASH();
+ }
+ 
+ static void
+@@ -604,4 +614,38 @@ js::jit::CanLikelyAllocateMoreExecutableMemory()
+     MOZ_ASSERT(execMemory.bytesAllocated() <= MaxCodeBytesPerProcess);
+ 
+     return execMemory.bytesAllocated() + BufferSize <= MaxCodeBytesPerProcess;
++}
++
++bool
++js::jit::ReprotectRegion(void* start, size_t size, ProtectionSetting protection)
++{
++    // Calculate the start of the page containing this region,
++    // and account for this extra memory within size.
++    size_t pageSize = gc::SystemPageSize();
++    intptr_t startPtr = reinterpret_cast<intptr_t>(start);
++    intptr_t pageStartPtr = startPtr & ~(pageSize - 1);
++    void* pageStart = reinterpret_cast<void*>(pageStartPtr);
++    size += (startPtr - pageStartPtr);
++
++    // Round size up
++    size += (pageSize - 1);
++    size &= ~(pageSize - 1);
++
++    MOZ_ASSERT((uintptr_t(pageStart) % pageSize) == 0);
++
++    execMemory.assertValidAddress(pageStart, size);
++
++    #ifdef XP_WIN
++    DWORD oldProtect;
++    DWORD flags = ProtectionSettingToFlags(protection);
++    if (!VirtualProtect(pageStart, size, flags, &oldProtect))
++        return false;
++    #else
++    unsigned flags = ProtectionSettingToFlags(protection);
++    if (mprotect(pageStart, size, flags))
++        return false;
++    #endif
++
++    execMemory.assertValidAddress(pageStart, size);
++    return true;
+ }
