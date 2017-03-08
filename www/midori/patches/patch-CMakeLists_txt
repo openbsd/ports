@@ -1,8 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/04/21 19:31:57 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2017/03/08 10:51:08 espie Exp $
 also find -lfreetype2 during linking
---- CMakeLists.txt.orig	Thu Apr  3 23:23:17 2014
-+++ CMakeLists.txt	Mon Apr 21 19:30:18 2014
-@@ -74,10 +74,10 @@ find_library (X11 X11)
+--- CMakeLists.txt.orig	Sun Aug 30 13:56:26 2015
++++ CMakeLists.txt	Tue Mar  7 20:43:09 2017
+@@ -69,20 +69,16 @@ if (UNIX)
+         add_definitions("-DHAVE_SIGNAL_H")
+     endif ()
+ 
+-    find_file (EXEC_INFO execinfo.h)
+-    if (EXEC_INFO)
+-        set(VALAFLAGS ${VALAFLAGS} -D HAVE_EXECINFO_H)
+-    endif ()
+ endif ()
+ 
+ find_library (X11 X11)
  if (X11)
      # Pass /usr/X11R6/include for OpenBSD
      find_file (SCRNSAVER X11/extensions/scrnsaver.h /usr/X11R6/include)
