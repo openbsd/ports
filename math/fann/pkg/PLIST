@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/08 17:17:14 sthen Exp $
 include/compat_time.h
 include/doublefann.h
 include/fann.h
 include/fann_activation.h
 include/fann_cascade.h
+include/fann_cpp.h
 include/fann_data.h
 include/fann_error.h
 include/fann_internal.h
@@ -11,22 +12,8 @@ include/fann_io.h
 include/fann_train.h
 include/fixedfann.h
 include/floatfann.h
-lib/libdoublefann.a
-lib/libdoublefann.la
 @lib lib/libdoublefann.so.${LIBdoublefann_VERSION}
-lib/libfann.a
-lib/libfann.la
 @lib lib/libfann.so.${LIBfann_VERSION}
-lib/libfixedfann.a
-lib/libfixedfann.la
 @lib lib/libfixedfann.so.${LIBfixedfann_VERSION}
-lib/libfloatfann.a
-lib/libfloatfann.la
 @lib lib/libfloatfann.so.${LIBfloatfann_VERSION}
 lib/pkgconfig/fann.pc
-share/doc/fann/
-share/doc/fann/advancedusage.txt
-share/doc/fann/fixedpointusage.txt
-share/doc/fann/gettingstarted.txt
-share/doc/fann/installation.txt
-share/doc/fann/theory.txt
