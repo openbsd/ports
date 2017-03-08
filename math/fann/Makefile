@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/08 17:17:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2017/03/08 17:41:04 sthen Exp $
 
 COMMENT=	Fast Artificial Neural Network Library
 
@@ -19,5 +19,12 @@ HOMEPAGE=	http://leenissen.dk/fann/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/cmake
+
+USE_GMAKE=	Yes
+TEST_DEPENDS=	math/fann
+
+do-test:
+	cd ${WRKSRC}/examples; ${MAKE_PROGRAM} runtest GCC="${CC}" \
+	    CFLAGS="${CFLAGS} -I${TRUEPREFIX}/include -L${TRUEPREFIX}/lib"
 
 .include <bsd.port.mk>
