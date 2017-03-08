@@ -1,0 +1,19 @@
+$OpenBSD: patch-jruby-launcher_inc_Makefile-conf_mk,v 1.1 2017/03/08 16:32:26 jeremy Exp $
+
+Use cc/c++ instead of gcc/g++.
+
+--- jruby-launcher/inc/Makefile-conf.mk.orig	Mon Mar  6 09:41:05 2017
++++ jruby-launcher/inc/Makefile-conf.mk	Mon Mar  6 09:41:13 2017
+@@ -3,9 +3,9 @@ MKDIR=mkdir
+ CP=cp
+ CCADMIN=CCadmin
+ RANLIB=ranlib
+-CC=gcc
+-CCC=g++
+-CXX=g++
++CC=cc
++CCC=c++
++CXX=c++
+ 
+ # Windows (mingw)?
+ ifneq (,$(findstring mingw, $(CONF)))

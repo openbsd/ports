@@ -1,0 +1,19 @@
+$OpenBSD: patch-jruby-launcher_Makefile,v 1.1 2017/03/08 16:32:26 jeremy Exp $
+
+Use c++ instead of g++.
+
+--- jruby-launcher/Makefile.orig	Mon Mar  6 09:39:32 2017
++++ jruby-launcher/Makefile	Mon Mar  6 09:40:32 2017
+@@ -28,10 +28,10 @@ jruby.res: resources/jruby.rc
+ 	windres $^ -O coff -o $@
+ 
+ jruby.exe: jrubyexe.cpp nbexecloader.h utilsfuncs.cpp utilsfuncswin.cpp jruby.res
+-	g++ $(CXXFLAGS) $^ -s -o $@ $(LDLIBSOPTIONS) -static
++	c++ $(CXXFLAGS) $^ -s -o $@ $(LDLIBSOPTIONS) -static
+ 
+ jrubyw.exe: jrubyexe.cpp nbexecloader.h utilsfuncs.cpp utilsfuncswin.cpp jruby.res
+-	g++ $(CXXFLAGS) -DJRUBYW -mwindows $^ -s -o $@ $(LDLIBSOPTIONS) -static
++	c++ $(CXXFLAGS) -DJRUBYW -mwindows $^ -s -o $@ $(LDLIBSOPTIONS) -static
+ 
+ install:
+ 	@if [ ! -f ./jruby ]; then echo "Please run 'make' first."; exit 1; fi
