@@ -1,0 +1,16 @@
+$OpenBSD: patch-examples_Makefile,v 1.1 2017/03/08 17:41:42 sthen Exp $
+--- examples/Makefile.orig	Wed Mar  8 17:35:04 2017
++++ examples/Makefile	Wed Mar  8 17:36:12 2017
+@@ -9,10 +9,10 @@ DEBUG_TARGETS = xor_train_debug xor_test_debug xor_tes
+ all: $(TARGETS)
+ 
+ %: %.c Makefile
+-	$(GCC) -O3 $< -o $@ -lfann -lm
++	$(GCC) ${CFLAGS} $< -o $@ -lfann -lm
+ 
+ %_fixed: %.c Makefile
+-	$(GCC) -O3 -DFIXEDFANN $< -o $@ -lfixedfann -lm
++	$(GCC) ${CFLAGS} -DFIXEDFANN $< -o $@ -lfixedfann -lm
+ 
+ clean:
+ 	rm -f $(TARGETS) $(DEBUG_TARGETS) xor_fixed.data *.net *~ *.obj *.exe *.tds noscale.txt withscale.txt scale_test_results.txt
