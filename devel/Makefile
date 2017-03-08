@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1593 2017/03/05 02:51:05 danj Exp $
+# $OpenBSD: Makefile,v 1.1594 2017/03/08 02:48:10 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1243,6 +1243,8 @@
      SUBDIR += py-astroid
      SUBDIR += py-astroid,python3
      SUBDIR += py-async
+     SUBDIR += py-atomicwrites
+     SUBDIR += py-atomicwrites,python3
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
      SUBDIR += py-backports-abc
@@ -1270,6 +1272,10 @@
      SUBDIR += py-cheetah
      SUBDIR += py-click
      SUBDIR += py-click,python3
+     SUBDIR += py-click-log
+     SUBDIR += py-click-log,python3
+     SUBDIR += py-click-threading
+     SUBDIR += py-click-threading,python3
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle
