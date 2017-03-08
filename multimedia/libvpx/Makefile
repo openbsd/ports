@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/01/15 09:59:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/03/08 02:22:14 jca Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -35,11 +35,6 @@ CONFIGURE_ARGS+=--enable-shared \
 		--prefix=${PREFIX} \
 		--disable-optimizations \
 		--disable-unit-tests
-CONFIGURE_ENV=	LD="${CC}"
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-CONFIGURE_ENV+=	CC="clang" \
-		CXX="clang++"
-.endif
 
 NO_TEST=	Yes
 
