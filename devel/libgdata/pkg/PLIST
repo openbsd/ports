@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/06/30 11:52:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2017/03/09 18:44:29 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -274,6 +274,7 @@ share/gtk-doc/html/gdata/ix20.html
 share/gtk-doc/html/gdata/ix21.html
 share/gtk-doc/html/gdata/ix22.html
 share/gtk-doc/html/gdata/ix23.html
+share/gtk-doc/html/gdata/ix24.html
 share/gtk-doc/html/gdata/left-insensitive.png
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
