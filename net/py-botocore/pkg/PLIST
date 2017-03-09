@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2017/03/08 08:09:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2017/03/09 05:50:57 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -582,6 +582,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/2015-08-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/2015-08-24/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/2015-08-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/waf/2015-08-24/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/2016-05-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/2016-05-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workdocs/2016-05-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/examples-1.json
