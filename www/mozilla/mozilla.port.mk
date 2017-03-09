@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.101 2017/03/07 15:23:20 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.102 2017/03/09 07:08:24 landry Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
@@ -44,8 +44,6 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/unzip \
 			archivers/zip>=2.3
 
-MODMOZ_LIB_DEPENDS =	textproc/hunspell
-
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
 MODMOZ_LIB_DEPENDS +=	security/nss>=3.28.1
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
@@ -69,6 +67,12 @@ MODMOZ_WANTLIB +=	icudata icui18n icuuc
 CONFIGURE_ARGS +=	--with-system-icu
 .endif
 
+.if !defined(MOZILLA_USE_BUNDLED_HUNSPELL)
+MODMOZ_LIB_DEPENDS +=	textproc/hunspell
+MODMOZ_WANTLIB +=	hunspell-1.3
+CONFIGURE_ARGS +=	--with-system-hunspell
+.endif
+
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)
 MODMOZ_WANTLIB +=	sqlite3>=35
 MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.17.0
@@ -89,7 +93,7 @@ MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pthread sndio stdc++ z hunspell-1.3
+		pthread sndio stdc++ z
 
 # --no-keep-memory avoids OOM when linking libxul
 # --relax avoids relocation overflow on ppc, needed since sm 2.7b, tb 10.0b, fx 15.0b
@@ -114,7 +118,6 @@ USE_GMAKE ?=	Yes
 AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--with-system-bz2=${LOCALBASE}	\
-		--enable-system-hunspell	\
 		--enable-official-branding	\
 		--enable-gio			\
 		--disable-gconf			\
