@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/21 03:10:40 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2017/03/09 17:22:08 jca Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
 DISTNAME=	ratpoison-1.4.8
+REVISION=	0
 
 CATEGORIES=	x11
 HOMEPAGE=	http://www.nongnu.org/ratpoison/
 
-MAINTAINER=	William Yodlowsky <william@openbsd.org>
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
