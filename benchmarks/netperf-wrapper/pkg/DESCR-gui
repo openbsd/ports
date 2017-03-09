@@ -1,0 +1,2 @@
+Python wrapper to run multiple simultaneous netperf/iperf/ping instances
+and aggregate the results. This package contains the PyQt-based GUI.

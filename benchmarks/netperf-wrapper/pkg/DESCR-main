@@ -1,5 +1,6 @@
 Python wrapper to run multiple simultaneous netperf/iperf/ping instances
-and aggregate the results.
+and aggregate the results. This package contains the command-line tools.
+"pkg_add flent-gui" for the PyQt-based GUI.
 
 Several commands can be run in parallel and the test data points can be
 aligned with each other in time, interpolating differences between the
@@ -11,10 +12,6 @@ emacs org mode tables, or graph plots.  Each test can specify several
 plots, including time-series plots of the values against each other,
 as well as CDF plots of (e.g.) ping times.
 
-Quick examples (see homepage or manual for more):
-
-1. netperf-wrapper -H somehost ping -f plot
-
-2. ssh somehost netserver &
-netperf-wrapper -H somehost rrul
-netperf-wrapper -i rrul-*.json.gz -f plot
+For basic use: install netperf on the server and run "netserver", then
+various tests can be run from a client machine with the flent package
+installed.

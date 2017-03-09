@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-gui,v 1.1 2017/03/09 18:55:47 sthen Exp $
+bin/flent-gui
+share/applications/flent.desktop
+share/mime/packages/flent-mime.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

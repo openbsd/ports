@@ -1,12 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.1 2015/11/06 20:42:26 sthen Exp $
---- setup.py.orig	Fri Nov  6 10:22:20 2015
-+++ setup.py	Fri Nov  6 10:22:26 2015
-@@ -91,7 +91,7 @@ data_files = [('share/netperf-wrapper', ['matplotlibrc
-               ('share/doc/netperf-wrapper',
+$OpenBSD: patch-setup_py,v 1.2 2017/03/09 18:55:47 sthen Exp $
+--- setup.py.orig	Sun Jan 15 13:47:03 2017
++++ setup.py	Thu Mar  9 17:49:55 2017
+@@ -83,7 +83,7 @@ class sdist(_sdist):
+ data_files = [('share/doc/flent',
                 ['BUGS',
-                 'README.rst']+glob("*.example")),
+                 'README.rst'] + glob("*.example")),
 -              ('share/man/man1',
 +              ('man/man1',
-                ['man/netperf-wrapper.1']),
-               ('share/doc/netperf-wrapper/misc',
+                ['man/flent.1']),
+               ('share/doc/flent/misc',
                 glob("misc/*")),
