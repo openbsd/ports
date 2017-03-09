@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/08/18 04:53:30 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/03/09 18:31:18 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/psycopg2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_range.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}errorcodes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,7 +16,9 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}extensions.${M
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}extras.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}pool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}psycopg1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}sql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}tz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/_ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_json.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.so
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_range.py
@@ -24,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/extensions.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/extras.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/pool.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/psycopg1.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/sql.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}/
@@ -31,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}dbapi20.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}dbapi20_tpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_async.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_async_keyword.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_bugX000.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_bug_gc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_cancel.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,12 +45,16 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_cur
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_dates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_errcodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_extras_dictcursor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_fast_executemany.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_green.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_lobject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_notify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_psycopg2_dbapi20.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_quote.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_replication.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_sql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_transaction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_types_basic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}test_types_extras.${MODPY_PYC_MAGIC_TAG}pyc
@@ -55,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/${MODPY_PYCACHE}testutil
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/dbapi20.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/dbapi20_tpc.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_async.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_async_keyword.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_bugX000.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_bug_gc.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_cancel.py
@@ -64,12 +74,16 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_cursor.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_dates.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_errcodes.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_extras_dictcursor.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_fast_executemany.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_green.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_lobject.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_module.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_notify.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_psycopg2_dbapi20.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_quote.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_replication.py
+lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_sql.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_transaction.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_types_basic.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/tests/test_types_extras.py
@@ -91,6 +105,7 @@ share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/install.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/module.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/news.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/pool.txt
+share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/sql.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/tz.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_sources/usage.txt
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/
@@ -100,7 +115,6 @@ share/doc/${MODPY_PY_PREFIX}psycopg2/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/comment.png
-share/doc/${MODPY_PY_PREFIX}psycopg2/_static/default.css
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}psycopg2/_static/down.png
@@ -133,6 +147,7 @@ share/doc/${MODPY_PY_PREFIX}psycopg2/pool.html
 share/doc/${MODPY_PY_PREFIX}psycopg2/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}psycopg2/search.html
 share/doc/${MODPY_PY_PREFIX}psycopg2/searchindex.js
+share/doc/${MODPY_PY_PREFIX}psycopg2/sql.html
 share/doc/${MODPY_PY_PREFIX}psycopg2/tz.html
 share/doc/${MODPY_PY_PREFIX}psycopg2/usage.html
 share/examples/${MODPY_PY_PREFIX}psycopg2/

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2017/01/03 19:17:24 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2017/03/09 18:31:18 shadchin Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.6.2
+MODPY_EGG_VERSION =	2.7
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		http://initd.org/projects/psycopg2
 
@@ -18,17 +17,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pq pthread
 
-MODULES =	lang/python
-LIB_DEPENDS =	databases/postgresql
-RUN_DEPENDS =	databases/postgresql
-BUILD_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR} \
-		textproc/py-sphinx${MODPY_FLAVOR}
-TEST_DEPENDS = ${RUN_DEPENDS}
+MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS = 	python3
+LIB_DEPENDS =		databases/postgresql
+RUN_DEPENDS =		databases/postgresql
+BUILD_DEPENDS =		textproc/py-pygments${MODPY_FLAVOR} \
+			textproc/py-sphinx${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+FLAVORS =		python3
 FLAVOR ?=
 
 # To run the tests, create and start a test database as follows:
@@ -39,9 +39,9 @@ FLAVOR ?=
 # and should own the database:
 #     echo "ALTER DATABASE psycopg2_test OWNER TO ${USER};" | \
 #         psql -U postgres
-TEST_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE =	Yes
 PSYCOPG2_TESTDB ?=	psycopg2_test
-PSYCOPG2_TESTDB_USER ?= "postgres"
+PSYCOPG2_TESTDB_USER ?=	"postgres"
 PSYCOPG2_TESTDB_PASSWORD ?= "postgres"
 USE_GMAKE =	Yes
 TEST_ENV =	PSYCOPG2_TESTDB=${PSYCOPG2_TESTDB} \
