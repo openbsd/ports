@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.461 2017/03/04 16:56:28 krw Exp $
+# $OpenBSD: Quirks.pm,v 1.462 2017/03/09 18:56:07 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -410,6 +410,7 @@ my $stem_extensions = {
 	'u-boot' => 'u-boot-arm',
 	'ja-w3m' => 'w3m',
 	'markdown' => 'py-markdown',
+	'netperf-wrapper' => 'flent',
 };
 
 my $obsolete_reason = {
