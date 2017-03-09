@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/13 13:43:19 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/03/09 13:33:52 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -22,6 +22,9 @@ include/owncloudsync/mirall/syncresult.h
 lib/owncloud/
 @lib lib/owncloud/libocsync.so.${LIBocsync_VERSION}
 share/applications/owncloud.desktop
+share/caja-python/
+share/caja-python/extensions/
+share/caja-python/extensions/syncstate-ownCloud.py
 share/examples/mirall/
 share/examples/mirall/ownCloud/
 @sample ${SYSCONFDIR}/ownCloud/
@@ -92,10 +95,10 @@ share/icons/hicolor/72x72/apps/ownCloud_warn.png
 share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
 share/nautilus-python/
 share/nautilus-python/extensions/
-share/nautilus-python/extensions/syncstate.py
+share/nautilus-python/extensions/syncstate-ownCloud.py
 share/nemo-python/
 share/nemo-python/extensions/
-share/nemo-python/extensions/syncstate.py
+share/nemo-python/extensions/syncstate-ownCloud.py
 share/owncloud/
 share/owncloud/i18n/
 share/owncloud/i18n/client_TW.qm
