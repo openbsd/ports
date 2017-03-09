@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2017/03/09 05:18:44 feinerer Exp $
+# $OpenBSD: Makefile,v 1.91 2017/03/09 10:10:41 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.3.3
@@ -49,7 +49,6 @@ LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
 		archivers/xz \
 		devel/glib2 \
-		devel/libidn \
 		devel/pango \
 		graphics/cairo \
 		graphics/jpeg \
