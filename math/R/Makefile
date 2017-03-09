@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.89 2016/11/04 11:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2017/03/09 05:18:44 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.3.2
-REVISION=	0
+DISTNAME=	R-3.3.3
 
 SO_VERSION=	32.0
 .for _lib in R Rblas Rlapack
