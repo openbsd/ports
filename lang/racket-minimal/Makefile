@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.32 2017/01/25 11:16:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.33 2017/03/09 01:56:52 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS =	arm amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			6.8
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -39,7 +40,7 @@ EXTRACT_SUFX =		.tgz
 # correctly on amd64 for this version.
 MODULES +=		gcc4
 MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		amd64
+MODGCC4_ARCHS =		arm amd64
 LIB_DEPENDS =		converters/libiconv \
 			databases/sqlite3 \
 			devel/libffi>=3.0.9p2
@@ -85,12 +86,12 @@ CFLAGS += -ggdb3
 #   http://article.gmane.org/gmane.comp.lang.racket.user/16723
 # - Using gcc4 to enable "places". It broke Racket in the past.
 # - The JIT doesn't work on powerpc when TLS is enabled. "places" and
-#   "futures" don't work on powerpc.
+#   "futures" don't work on arm and powerpc.
 #   https://github.com/racket/racket/issues/1239
 # - Racket builds fine with -O2 (and -O1 and -Os) on powerpc but
 #   it doesn't pass the tests.
 .if ${FLAVOR:Mno_jit}
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
+ONLY_FOR_ARCHS =	arm amd64 i386 powerpc
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
@@ -98,7 +99,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "i386"
+.elif ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
