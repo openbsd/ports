@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/06/29 16:14:40 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/03/10 02:21:22 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=1.8v0,<1.9v0
 @pkgpath devel/jdk/1.7,-jdk
+@pkgpath devel/jdk/1.8,-jdk,with_ipv6
 ${JDKHOME}/
 ${JDKHOME}/ASSEMBLY_EXCEPTION
 ${JDKHOME}/LICENSE

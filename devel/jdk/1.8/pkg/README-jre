@@ -1,11 +1,23 @@
-$OpenBSD: README-jre,v 1.1.1.1 2015/06/17 17:12:27 kurt Exp $
+$OpenBSD: README-jre,v 1.2 2017/03/10 02:21:22 kurt Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Note:
+reduced memory setting
+======================
   The default compressed class space size has been reduced from 1G to
   256M to accommodate smaller datasize ulimits. It can be increased with
   the -XX:CompressedClassSpaceSize argument for applications that run
   out of this space.
+
+ipv4 and v6 networking
+======================
+  ipv4 to ipv6 address mapping is disabled on OpenBSD. This means the
+  jre can only use ipv4 addresses or ipv6 addresses but not both at
+  the same time. By default ipv4 addresses are enabled. To use ipv6
+  addresses set the following properties when you start java:
+
+  -Djava.net.preferIPv4Stack=false
+  -Djava.net.preferIPv6Stack=true
+  -Djava.net.preferIPv6Addresses=true

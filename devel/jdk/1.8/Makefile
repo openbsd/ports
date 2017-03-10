@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/02/23 13:11:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2017/03/10 02:21:22 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -12,7 +12,7 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u121b13-bsd-port-20170201
@@ -23,7 +23,6 @@ CATEGORIES=	devel/jdk java
 
 MULTI_PACKAGES=	-main -jre
 
-FLAVORS=	with_ipv6
 PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
@@ -107,10 +106,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 # MAKE_FLAGS=	LOG=debug
 MAKE_ENV=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		COMPILER_WARNINGS_FATAL=false
-
-.if !${FLAVOR:Mwith_ipv6}
-MAKE_ENV+=	DONT_ENABLE_IPV6=yes
-.endif
 
 JDKHOME=	jdk-1.8.0
 JREHOME=	jre-1.8.0

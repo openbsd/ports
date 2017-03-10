@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2017/03/10 02:21:22 kurt Exp $
+--- jdk/src/solaris/native/java/lang/java_props_md.c.orig	Wed Feb  1 16:16:32 2017
++++ jdk/src/solaris/native/java/lang/java_props_md.c	Thu Feb 23 11:54:01 2017
+@@ -471,6 +471,10 @@ GetJavaProperties(JNIEnv *env)
+     sprops.awt_toolkit = "sun.awt.X11.XToolkit";
+ #endif
+ 
++#ifdef __OpenBSD__
++    sprops.java_net_preferIPv4Stack = "true";
++#endif
++
+     /* This is used only for debugging of font problems. */
+     v = getenv("JAVA2D_FONTPATH");
+     sprops.font_dir = v ? v : NULL;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_share_native_java_lang_System_c,v 1.1 2017/03/10 02:21:22 kurt Exp $
+--- jdk/src/share/native/java/lang/System.c.orig	Wed Feb  1 16:16:31 2017
++++ jdk/src/share/native/java/lang/System.c	Thu Feb 23 11:54:01 2017
+@@ -300,6 +300,10 @@ Java_java_lang_System_initProperties(JNIEnv *env, jcla
+     }
+ #endif
+ 
++#ifdef __OpenBSD__
++    PUTPROP(props, "java.net.preferIPv4Stack", sprops->java_net_preferIPv4Stack);
++#endif
++
+     /* !!! DO NOT call PUTPROP_ForPlatformNString before this line !!!
+      * !!! I18n properties have not been set up yet !!!
+      */
