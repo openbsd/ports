@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/03/07 14:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2017/03/10 18:49:43 ajacoutot Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
@@ -40,6 +40,7 @@ AUTOMAKE_VERSION=	1.15
 AUTOCONF_VERSION=	2.69
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
+			devel/gettext-tools \
 			devel/libtool # libtoolize(1)
 
 post-extract:
