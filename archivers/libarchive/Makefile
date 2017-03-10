@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.33 2016/11/01 10:40:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2017/03/10 20:07:24 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.2.2
-SHARED_LIBS=	archive		9.0	# 15.0
+DISTNAME=	libarchive-3.3.1
+SHARED_LIBS=	archive		10.0	# 16.1
 CATEGORIES=	archivers
-HOMEPAGE=	http://www.libarchive.org/
+HOMEPAGE=	https://www.libarchive.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.libarchive.org/downloads/
+MASTER_SITES=	https://www.libarchive.org/downloads/
 
 WANTLIB=	bz2 c crypto expat iconv lz4 lzma lzo2 pthread z
 LIB_DEPENDS=	archivers/bzip2 \
@@ -23,7 +23,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--without-lzmadec	# old LZMA utils
 CONFIGURE_ARGS+=--without-nettle	# prefer OpenSSL
 CONFIGURE_ARGS+=--without-xml2		# expat suffices
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
