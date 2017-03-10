@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/06/25 12:37:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2017/03/10 15:39:38 feinerer Exp $
 
 COMMENT =		libv4l userspace library
 
-VERSION =		1.10.1
+VERSION =		1.12.3
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0
@@ -21,19 +20,21 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c jpeg m pthread
+WANTLIB += c execinfo jpeg m pthread
 
 MASTER_SITES =		http://linuxtv.org/downloads/v4l-utils/
 
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/argp-standalone
-LIB_DEPENDS =		graphics/jpeg>=1.5.0v0
+LIB_DEPENDS =		devel/libexecinfo \
+			graphics/jpeg>=1.5.0v0
 
 SEPARATE_BUILD =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS =	--disable-doxygen-doc
+CONFIGURE_ARGS =	--disable-doxygen-doc \
+			--disable-static
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,15 +1,11 @@
-$OpenBSD: patch-lib_libv4lconvert_control_libv4lcontrol_c,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
---- lib/libv4lconvert/control/libv4lcontrol.c.orig	Sun Nov 22 10:58:54 2015
-+++ lib/libv4lconvert/control/libv4lcontrol.c	Sun Nov 22 10:59:21 2015
-@@ -35,7 +35,11 @@
- #include "libv4lcontrol.h"
- #include "libv4lcontrol-priv.h"
- #include "../libv4lsyscall-priv.h"
-+#if defined(__OpenBSD__)
-+#include <sys/videoio.h>
-+#else
- #include <linux/videodev2.h>
-+#endif
+$OpenBSD: patch-lib_libv4lconvert_control_libv4lcontrol_c,v 1.2 2017/03/10 15:39:38 feinerer Exp $
+--- lib/libv4lconvert/control/libv4lcontrol.c.orig	Sat Jan 28 10:40:56 2017
++++ lib/libv4lconvert/control/libv4lcontrol.c	Sat Jan 28 10:41:11 2017
+@@ -20,7 +20,6 @@
+  */
  
- #define ARRAY_SIZE(x) ((int)sizeof(x) / (int)sizeof((x)[0]))
- 
+ #include <sys/types.h>
+-#include <sys/sysmacros.h>
+ #include <sys/mman.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
