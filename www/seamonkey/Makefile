@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2017/03/07 15:26:41 landry Exp $
+# $OpenBSD: Makefile,v 1.198 2017/03/10 15:48:23 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -9,7 +9,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 EXTRACT_SUFX =		.tar.xz
-REVISION-main =		3
+REVISION-main =		4
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -42,8 +42,9 @@ MODCLANG_LANGS =	c c++
 # gecko >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # gecko >= 46 defaults to gtk+3
-MOZILLA_USE_GTK3 = Yes
-
+# MOZILLA_USE_GTK3 = Yes
+# SM 2.46 upstream defaults to gtk+2
+CONFIGURE_ARGS=--enable-default-toolkit=cairo-gtk2
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
