@@ -1,0 +1,45 @@
+$OpenBSD: patch-scheduler_conf_c,v 1.1 2017/03/10 03:23:29 ajacoutot Exp $
+
+From 42dc144c4499672114c392423d24c397ea929ad3 Mon Sep 17 00:00:00 2001
+From: Michael Sweet <michael.r.sweet@gmail.com>
+Date: Thu, 9 Mar 2017 15:24:58 -0500
+Subject: [PATCH] Allow "Negotiate" as an AuthType/DefaultAuthType
+
+--- scheduler/conf.c.orig	Tue Jan 17 20:27:22 2017
++++ scheduler/conf.c	Fri Mar 10 04:08:49 2017
+@@ -1,7 +1,7 @@
+ /*
+  * Configuration routines for the CUPS scheduler.
+  *
+- * Copyright 2007-2016 by Apple Inc.
++ * Copyright 2007-2017 by Apple Inc.
+  * Copyright 1997-2007 by Easy Software Products, all rights reserved.
+  *
+  * These coded instructions, statements, and computer programs are the
+@@ -2233,7 +2233,6 @@ parse_aaa(cupsd_location_t *loc,	/* I - Location */
+       if (loc->level == CUPSD_AUTH_ANON)
+ 	loc->level = CUPSD_AUTH_USER;
+     }
+-#ifdef HAVE_GSSAPI
+     else if (!_cups_strcasecmp(value, "negotiate"))
+     {
+       loc->type = CUPSD_AUTH_NEGOTIATE;
+@@ -2241,7 +2240,6 @@ parse_aaa(cupsd_location_t *loc,	/* I - Location */
+       if (loc->level == CUPSD_AUTH_ANON)
+ 	loc->level = CUPSD_AUTH_USER;
+     }
+-#endif /* HAVE_GSSAPI */
+     else
+     {
+       cupsdLogMessage(CUPSD_LOG_WARN,
+@@ -3175,10 +3173,8 @@ read_cupsd_conf(cups_file_t *fp)	/* I - File to read f
+ 	default_auth_type = CUPSD_AUTH_NONE;
+       else if (!_cups_strcasecmp(value, "basic"))
+ 	default_auth_type = CUPSD_AUTH_BASIC;
+-#ifdef HAVE_GSSAPI
+       else if (!_cups_strcasecmp(value, "negotiate"))
+         default_auth_type = CUPSD_AUTH_NEGOTIATE;
+-#endif /* HAVE_GSSAPI */
+       else if (!_cups_strcasecmp(value, "auto"))
+         default_auth_type = CUPSD_AUTH_AUTO;
+       else
