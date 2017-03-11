@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.57 2017/03/03 20:56:56 jturner Exp $
+# $OpenBSD: Makefile,v 1.58 2017/03/11 02:01:36 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-2.0
-PKGNAME =		fossil-2.0
+DISTNAME =		fossil-src-2.1
+PKGNAME =		fossil-2.1
 EPOCH =			0
 CATEGORIES =		devel www
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://fossil-scm.org/
-MASTER_SITES =		http://fossil-scm.org/index.html/uv/download/
+MASTER_SITES =		http://fossil-scm.org/index.html/uv/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
