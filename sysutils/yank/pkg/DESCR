@@ -1,0 +1,2 @@
+Read input from stdin and display a selection interface that allows a field to
+be selected and copied to the clipboard.
