@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2016/11/30 12:09:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.52 2017/03/11 14:26:37 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -1031,6 +1031,8 @@ roundcubemail/plugins/managesieve/tests/src/parser_include
 roundcubemail/plugins/managesieve/tests/src/parser_index
 roundcubemail/plugins/managesieve/tests/src/parser_kep14
 roundcubemail/plugins/managesieve/tests/src/parser_kep14.out
+roundcubemail/plugins/managesieve/tests/src/parser_nesting
+roundcubemail/plugins/managesieve/tests/src/parser_nesting.out
 roundcubemail/plugins/managesieve/tests/src/parser_notify_a
 roundcubemail/plugins/managesieve/tests/src/parser_notify_b
 roundcubemail/plugins/managesieve/tests/src/parser_prefix
@@ -2780,7 +2782,6 @@ roundcubemail/vendor/pear/console_getopt/package.xml
 roundcubemail/vendor/pear/pear-core-minimal/
 roundcubemail/vendor/pear/pear-core-minimal/README.rst
 roundcubemail/vendor/pear/pear-core-minimal/composer.json
-roundcubemail/vendor/pear/pear-core-minimal/copy-from-pear-core.sh
 roundcubemail/vendor/pear/pear-core-minimal/src/
 roundcubemail/vendor/pear/pear-core-minimal/src/OS/
 roundcubemail/vendor/pear/pear-core-minimal/src/OS/Guess.php
