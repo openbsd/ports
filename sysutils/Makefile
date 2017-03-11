@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2017/02/21 12:35:31 rpointel Exp $
+# $OpenBSD: Makefile,v 1.436 2017/03/11 18:00:29 fcambus Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -318,6 +318,7 @@
      SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
+     SUBDIR += yank
      SUBDIR += zap
 
 .include <bsd.port.subdir.mk>
