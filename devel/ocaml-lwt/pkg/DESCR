@@ -1,6 +1,0 @@
-Lwt provides very light-weight cooperative threads for OCaml;
-``launching'' a thread is a very fast operation, it does not require
-a new stack, a new process, or anything else. Moreover context
-switches are very fast. In fact, it is so easy that a thread can
-be launched for every system call. And composing cooperative threads
-will allow highly asynchronous programs.
