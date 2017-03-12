@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2016/06/09 06:27:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2017/03/12 03:25:35 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=		devel/pango \
 
 CONFIGURE_ARGS=		--disable-tools
 
-# error: -Bsymbolic requested but not supported by ld
+# error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 post-install:

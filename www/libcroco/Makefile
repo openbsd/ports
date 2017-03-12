@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/17 13:12:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/03/12 03:25:35 ajacoutot Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		devel/glib2 \
 
 CONFIGURE_STYLE=	gnu
 
-# error: -Bsymbolic requested but not supported by ld
+# error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 .include <bsd.port.mk>

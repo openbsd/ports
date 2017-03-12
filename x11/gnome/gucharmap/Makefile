@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2016/11/07 18:30:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2017/03/12 03:25:35 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=		archivers/unzip \
 LIB_DEPENDS=		x11/gtk+3,-main
 
 CONFIGURE_ARGS +=	--with-unicode-data=${LOCALBASE}/share/unicode/ucd/
-# error: -Bsymbolic requested but not supported by ld
+# error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 .include <bsd.port.mk>

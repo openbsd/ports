@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2015/10/18 17:14:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2017/03/12 03:25:35 ajacoutot Exp $
 
 PORTROACH +=		limit:^0\.2
 
@@ -58,7 +58,7 @@ CONFIGURE_ARGS=		--with-gtk=2.0 \
 			--enable-python \
 			--disable-gnome-pty-helper
 
-# error: -Bsymbolic requested but not supported by ld
+# error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 post-install:

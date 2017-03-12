@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2017/03/12 03:25:35 ajacoutot Exp $
 
 COMMENT=		terminal emulation library
 
@@ -45,7 +45,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 
-# error: -Bsymbolic requested but not supported by ld
+# error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 TEST_DEPENDS=		shells/bash
