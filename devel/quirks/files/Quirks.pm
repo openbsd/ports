@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.463 2017/03/12 15:08:17 krw Exp $
+# $OpenBSD: Quirks.pm,v 1.464 2017/03/12 20:52:10 krw Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -849,7 +849,8 @@ my $obsolete_reason = {
 	"ocaml-text" => 5,
 	"ocaml-ssl" => 5,
 	"ocaml-ppx-tools" => 5,
-	"ocaml-zed" => 5
+	"ocaml-zed" => 5,
+	"ocaml-camomile" => 5
 
 # KDE3 removals
 	'amarok' => 2,
