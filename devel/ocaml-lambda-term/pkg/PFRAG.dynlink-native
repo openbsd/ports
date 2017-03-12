@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2012/08/18 22:56:33 avsm Exp $
-@bin lib/ocaml/lambda-term/lambda-term.cmxs

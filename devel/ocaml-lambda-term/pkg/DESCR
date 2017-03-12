@@ -1,3 +1,0 @@
-Lambda-Term is a cross-platform OCaml library for manipulating the
-terminal. It provides abstraction for keys, mouse events, colors as
-well as a set of widgets for writing curses oriented applications.
