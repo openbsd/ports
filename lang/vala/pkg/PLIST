@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2016/10/29 07:48:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.42 2017/03/12 11:29:12 jasper Exp $
 bin/vala
 bin/vala-${API_V}
 bin/vala-gen-introspect
@@ -33,21 +33,26 @@ share/aclocal/vapigen.m4
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/vala-${API_V}/
-share/devhelp/books/vala-${API_V}/attributes.html
-share/devhelp/books/vala-${API_V}/classes.html
+share/devhelp/books/vala-${API_V}/Attributes.html
+share/devhelp/books/vala-${API_V}/Classes.html
+share/devhelp/books/vala-${API_V}/Concepts.html
+share/devhelp/books/vala-${API_V}/Delegates.html
+share/devhelp/books/vala-${API_V}/Enumerated_types__Enums_.html
+share/devhelp/books/vala-${API_V}/Errors.html
+share/devhelp/books/vala-${API_V}/Expressions.html
+share/devhelp/books/vala-${API_V}/GIDL_metadata_format.html
+share/devhelp/books/vala-${API_V}/GIR_metadata_format.html
+share/devhelp/books/vala-${API_V}/Generics.html
+share/devhelp/books/vala-${API_V}/Interfaces.html
+share/devhelp/books/vala-${API_V}/Methods.html
+share/devhelp/books/vala-${API_V}/Namespaces.html
+share/devhelp/books/vala-${API_V}/Overview.html
+share/devhelp/books/vala-${API_V}/Preprocessor.html
+share/devhelp/books/vala-${API_V}/Statements.html
+share/devhelp/books/vala-${API_V}/Structs.html
+share/devhelp/books/vala-${API_V}/Types.html
 share/devhelp/books/vala-${API_V}/default.css
-share/devhelp/books/vala-${API_V}/delegates.html
-share/devhelp/books/vala-${API_V}/enums.html
-share/devhelp/books/vala-${API_V}/exceptions.html
-share/devhelp/books/vala-${API_V}/expressions.html
 share/devhelp/books/vala-${API_V}/index.html
-share/devhelp/books/vala-${API_V}/interfaces.html
-share/devhelp/books/vala-${API_V}/methods.html
-share/devhelp/books/vala-${API_V}/namespaces.html
-share/devhelp/books/vala-${API_V}/overview.html
-share/devhelp/books/vala-${API_V}/statements.html
-share/devhelp/books/vala-${API_V}/structs.html
-share/devhelp/books/vala-${API_V}/types.html
 share/devhelp/books/vala-${API_V}/vala-${API_V}.devhelp2
 share/vala/
 share/vala-${API_V}/
