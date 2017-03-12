@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2012/08/18 22:49:29 avsm Exp $
-@bin lib/ocaml/text/text-bigarray.cmxs
-@bin lib/ocaml/text/text-pcre-syntax.cmxs
-@bin lib/ocaml/text/text-pcre.cmxs
-@bin lib/ocaml/text/text.cmxs
