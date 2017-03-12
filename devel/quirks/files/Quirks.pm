@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.462 2017/03/09 18:56:07 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.463 2017/03/12 15:08:17 krw Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -842,6 +842,14 @@ my $obsolete_reason = {
 	"ocaml-xmlm" => 5,
 	"ocaml-postgresql" => 5,
 	"ocaml-sqlite3" => 5,
+	"utop" => 7,
+	"ocaml-lambda-term" => 5,
+	"ocaml-lwt" => 5,
+	"ocaml-react" => 5,
+	"ocaml-text" => 5,
+	"ocaml-ssl" => 5,
+	"ocaml-ppx-tools" => 5,
+	"ocaml-zed" => 5
 
 # KDE3 removals
 	'amarok' => 2,
