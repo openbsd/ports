@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2017/03/12 17:55:36 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -34,6 +34,9 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
+# Optional dependency which gets picked up if it happens to be installed, thus
+# causing race conditions under dpb. Pull it in to avoid this possibility.
+BUILD_DEPENDS +=	textproc/py-mako${MODPY_FLAVOR}
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
