@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.813 2017/02/19 19:26:40 shadchin Exp $
+# $OpenBSD: Makefile,v 1.814 2017/03/12 23:57:43 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -134,6 +134,7 @@
      SUBDIR += p5-CGI-Cookie-Splitter
      SUBDIR += p5-CGI-Deurl
      SUBDIR += p5-CGI-Emulate-PSGI
+     SUBDIR += p5-CGI-Fast
      SUBDIR += p5-CGI-FormBuilder
      SUBDIR += p5-CGI-Lite
      SUBDIR += p5-CGI-PSGI
