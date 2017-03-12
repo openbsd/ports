@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/10/25 22:39:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.19 2017/03/12 22:09:27 bluhm Exp $
 
-COMMENT =		handy web browsing in a Perl object
+COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =		WWW-Mechanize-1.83
+DISTNAME =	WWW-Mechanize-1.84
 
-CATEGORIES =		www
+CATEGORIES =	www
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -12,7 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 RUN_DEPENDS =		www/p5-HTML-Form>=1.00 \
 			www/p5-HTML-Parser \
 			www/p5-HTML-Tree \
@@ -40,5 +39,7 @@ TEST_DEPENDS =		devel/p5-Test-Deep \
 .ifdef LIVE_TEST
 CONFIGURE_ARGS +=	--live
 .endif
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
