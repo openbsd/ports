@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1594 2017/03/08 02:48:10 danj Exp $
+# $OpenBSD: Makefile,v 1.1595 2017/03/12 15:02:07 krw Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -495,17 +495,12 @@
      SUBDIR += ocaml-extlib
      SUBDIR += ocaml-graph
      SUBDIR += ocaml-jsonm
-     SUBDIR += ocaml-lambda-term
-     SUBDIR += ocaml-lwt
      SUBDIR += ocaml-menhir
      SUBDIR += ocaml-ocamlbuild
      SUBDIR += ocaml-parmap
      SUBDIR += ocaml-pcre
-     SUBDIR += ocaml-ppx-tools
      SUBDIR += ocaml-re
-     SUBDIR += ocaml-react
      SUBDIR += ocaml-uutf
-     SUBDIR += ocaml-zed
      SUBDIR += ode
      SUBDIR += ois
      SUBDIR += omake
@@ -1718,7 +1713,6 @@
      SUBDIR += unibilium
      SUBDIR += utfcpp
      SUBDIR += uthash
-     SUBDIR += utop
      SUBDIR += uuid
      SUBDIR += valgrind
      SUBDIR += vanessa
