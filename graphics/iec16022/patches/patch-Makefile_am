@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2017/03/12 16:28:00 sthen Exp $
+--- Makefile.am.orig	Fri Aug 19 19:18:50 2016
++++ Makefile.am	Sun Mar 12 16:24:58 2017
+@@ -1,6 +1,4 @@
+-AM_CFLAGS = -Bsymbolic -Wundef -Wall -Wno-switch -Wno-parentheses -Wpointer-arith -Wredundant-decls -Werror=format-security -Wstrict-prototypes -Wmissing-prototypes -Wdisabled-optimization -Wno-pointer-sign -Wdeclaration-after-statement -Werror-implicit-function-declaration -std=c99 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -Wl,--as-needed -Wl,--no-undefined -fno-asynchronous-unwind-tables
+-
+-image.lo: AM_CFLAGS += -Wno-unused-result
++AM_CFLAGS = -Bsymbolic -std=c99 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -fno-asynchronous-unwind-tables
+ 
+ SUBDIRS = . test
+ 
