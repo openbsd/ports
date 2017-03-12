@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2016/06/24 15:59:12 krw Exp $
-@bin lib/ocaml/utop/utop.cmxs
