@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/08/18 22:34:57 avsm Exp $
-lib/ocaml/ssl/ssl.a
-lib/ocaml/ssl/ssl.cmx
-lib/ocaml/ssl/ssl.cmxa
-lib/ocaml/ssl/ssl_threads.a
-lib/ocaml/ssl/ssl_threads.cmx
-lib/ocaml/ssl/ssl_threads.cmxa
