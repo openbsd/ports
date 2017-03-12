@@ -1,20 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/14 23:51:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/12 14:44:27 jasper Exp $
 include/libuhttpmock-0.0/
 include/libuhttpmock-0.0/uhttpmock/
 include/libuhttpmock-0.0/uhttpmock/uhm-resolver.h
 include/libuhttpmock-0.0/uhttpmock/uhm-server.h
 include/libuhttpmock-0.0/uhttpmock/uhm-version.h
 include/libuhttpmock-0.0/uhttpmock/uhm.h
-lib/girepository-1.0/
 lib/girepository-1.0/Uhm-0.0.typelib
 lib/libuhttpmock-0.0.a
 lib/libuhttpmock-0.0.la
 @lib lib/libuhttpmock-0.0.so.${LIBuhttpmock-0.0_VERSION}
 lib/pkgconfig/libuhttpmock-0.0.pc
-share/gir-1.0/
 share/gir-1.0/Uhm-0.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libuhttpmock-0.0/
 share/gtk-doc/html/libuhttpmock-0.0/UhmResolver.html
 share/gtk-doc/html/libuhttpmock-0.0/UhmServer.html
@@ -40,7 +36,5 @@ share/gtk-doc/html/libuhttpmock-0.0/right.png
 share/gtk-doc/html/libuhttpmock-0.0/style.css
 share/gtk-doc/html/libuhttpmock-0.0/up-insensitive.png
 share/gtk-doc/html/libuhttpmock-0.0/up.png
-share/vala/
-share/vala/vapi/
 share/vala/vapi/libuhttpmock-0.0.deps
 share/vala/vapi/libuhttpmock-0.0.vapi
