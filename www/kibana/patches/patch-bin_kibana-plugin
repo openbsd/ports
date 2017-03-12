@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_kibana-plugin,v 1.1 2016/12/17 12:13:42 jasper Exp $
---- bin/kibana-plugin.orig	Wed Nov  2 16:30:17 2016
-+++ bin/kibana-plugin	Wed Nov  2 16:31:57 2016
+$OpenBSD: patch-bin_kibana-plugin,v 1.2 2017/03/12 11:40:19 jasper Exp $
+--- bin/kibana-plugin.orig	Wed Jan 11 23:30:05 2017
++++ bin/kibana-plugin	Fri Jan 13 14:54:24 2017
 @@ -21,4 +21,4 @@ if [ ! -x "$NODE" ]; then
    exit 1
  fi
  
--exec "${NODE}" $NODE_OPTIONS --no-warnings "${DIR}/src/cli_plugin" ${@}
-+exec "${NODE}" $NODE_OPTIONS "${DIR}/src/cli_plugin" ${@}
+-exec "${NODE}" $NODE_OPTIONS --no-warnings "${DIR}/src/cli_plugin" "$@"
++exec "${NODE}" $NODE_OPTIONS "${DIR}/src/cli_plugin" "$@"

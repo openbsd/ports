@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/17 12:13:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2017/03/12 11:40:19 jasper Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
-V=		5.1.1
+V=		5.2.2
 PKGNAME=	kibana-${V}
 DISTNAME=	${PKGNAME}-darwin-x86_64
 
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/kibana
 	${INSTALL_DATA} ${WRKDIST}/config/kibana.yml \
 		${PREFIX}/share/examples/kibana/kibana.yml.sample
-	rm -rf ${WRKDIST}/LICENSE.txt ${WRKDIST}/README.txt \
+	rm -rf ${WRKDIST}/{data,plugins} ${WRKDIST}/{LICENSE,NOTICE,README}.txt \
 		${WRKDIST}/bin/*.orig \
 		${WRKDIST}/config ${WRKDIST}/node
 	find ${WRKDIST} -name '*.un~' -print0 | xargs -0 rm
