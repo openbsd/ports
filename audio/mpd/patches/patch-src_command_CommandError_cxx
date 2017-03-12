@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_command_CommandError_cxx,v 1.1 2017/02/23 13:03:46 dcoppa Exp $
---- src/command/CommandError.cxx.orig	Thu Feb 23 11:19:48 2017
-+++ src/command/CommandError.cxx	Thu Feb 23 11:20:54 2017
-@@ -100,13 +100,13 @@ ToAck(std::exception_ptr ep)
- 		return ACK_ERROR_SYSTEM;
- 	} catch (const std::invalid_argument &e) {
- 		return ACK_ERROR_ARG;
--#if defined(__GLIBCXX__) && __GLIBCXX__ < 20151204
-+#if defined(__GLIBCXX__) && __GLIBCXX__ < 20160727
- 	} catch (const std::exception &e) {
- #else
- 	} catch (...) {
+$OpenBSD: patch-src_command_CommandError_cxx,v 1.2 2017/03/12 10:13:49 dcoppa Exp $
+--- src/command/CommandError.cxx.orig	Wed Mar  1 16:37:19 2017
++++ src/command/CommandError.cxx	Sun Mar 12 11:03:39 2017
+@@ -35,6 +35,7 @@
+ #define GLIBCXX_492_Debian_9 20141220
+ #define GLIBCXX_493 20150626
+ #define GLIBCXX_494 20160803
++#define GLIBCXX_494_OPENBSD 20160726
+ #define GLIBCXX_49X_NDK_r13b 20150123
+ 
+ /* the big mess attempts to detect whether we're compiling with
+@@ -48,6 +49,7 @@
+ 	 __GLIBCXX__ == GLIBCXX_492_Debian_9 || \
+ 	 __GLIBCXX__ == GLIBCXX_493 || \
+ 	 __GLIBCXX__ == GLIBCXX_494 || \
++	 __GLIBCXX__ == GLIBCXX_494_OPENBSD || \
+ 	 __GLIBCXX__ == GLIBCXX_49X_NDK_r13b))
+ #define GLIBCXX_49X
  #endif
- 		try {
--#if defined(__GLIBCXX__) && __GLIBCXX__ < 20151204
-+#if defined(__GLIBCXX__) && __GLIBCXX__ < 20160727
- 			/* workaround for g++ 4.x: no overload for
- 			   rethrow_exception(exception_ptr) */
- 			std::rethrow_if_nested(e);
