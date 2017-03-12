@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2017/03/12 17:54:55 pascal Exp $
 
 COMMENT =		Tor controller library
 
-MODPY_EGG_VERSION =	1.4.1b
+MODPY_EGG_VERSION =	1.5.4
 V =			${MODPY_EGG_VERSION:S/b//}
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		stem-${V}
 WRKDIST =		${WRKDIR}/stem-${V}
-REVISION =		0
 
 SUBST_VARS +=		V
 
@@ -19,8 +18,6 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-
-EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
 MODPY_PI =		Yes
