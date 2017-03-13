@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/03/06 16:04:22 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2017/03/13 22:25:14 giovanni Exp $
 
 COMMENT=	multi-platform file synchronization tool
 CATEGORIES=	net
 
 V=		2.48.4
-REVISION=	0
+REVISION=	1
 DISTNAME=	unison-${V}
 MASTER_SITES=	${HOMEPAGE}download/releases/stable/
 
