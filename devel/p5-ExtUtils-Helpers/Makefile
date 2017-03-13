@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2017/03/13 19:39:11 bluhm Exp $
 
 COMMENT =	various portability utilities for module builders
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	ExtUtils-Helpers-0.022
+DISTNAME =	ExtUtils-Helpers-0.026
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
