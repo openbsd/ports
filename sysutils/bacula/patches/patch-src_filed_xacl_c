@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_filed_xacl_c,v 1.1 2017/03/13 09:42:57 sthen Exp $
+--- src/filed/xacl.c.orig	Sat Mar 11 09:15:14 2017
++++ src/filed/xacl.c	Sun Mar 12 17:05:38 2017
+@@ -1311,9 +1311,7 @@ bRC_XACL XACL::afs_restore_acl (JCR *jcr, int stream){
+ /*
+  * Creating the corrent instance of the XACL for a supported OS
+  */
+-void *new_xacl()
+-{
+-   XACL *xacl;
++void *new_xacl(){
+ #if   defined(HAVE_DARWIN_OS)
+    return new XACL_OSX();
+ #elif defined(HAVE_LINUX_OS)
+@@ -1330,11 +1328,5 @@ void *new_xacl()
+    return new XACL_OSF1();
+ #elif defined(HAVE_SUN_OS)
+    return new XACL_Solaris();
+-#else
+-   /* No driver defined */
+-   xacl = new XACL();
+-   xacl->disable_acl();
+-   xacl->disable_xattr();
+-   return xacl;
+ #endif
+ };
