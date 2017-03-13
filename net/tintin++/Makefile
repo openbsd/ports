@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2014/01/04 07:51:53 bcallah Exp $ 
+# $OpenBSD: Makefile,v 1.20 2017/03/13 08:47:27 benoit Exp $ 
 
 COMMENT=	client program for playing muds with advanced features
-DISTNAME=       tintin-2.01.0
+DISTNAME =	tintin-2.01.2
 CATEGORIES=     net games
 
 HOMEPAGE=       http://tintin.sourceforge.net/
