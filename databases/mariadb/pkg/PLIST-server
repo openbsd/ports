@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.17 2017/01/20 10:03:10 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.18 2017/03/13 10:57:00 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -26,8 +26,8 @@ bin/mysql_setpermission
 @bin bin/mysql_upgrade
 bin/mysql_zap
 bin/mysqld_multi
-@bin bin/mysqld_safe_helper
 bin/mysqld_safe
+@bin bin/mysqld_safe_helper
 bin/mysqlhotcopy
 bin/mytop
 @bin bin/perror
@@ -289,7 +289,7 @@ share/doc/mysql/README
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mysql/
 share/examples/mysql/SELinux/
-share/examples/mysql/SELinux/centos6-mariadb.te
+share/examples/mysql/SELinux/mariadb.te
 share/examples/mysql/SELinux/rhel4-mysql.fc
 share/examples/mysql/SELinux/rhel4-mysql.te
 share/examples/mysql/binary-configure
