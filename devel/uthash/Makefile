@@ -1,30 +1,26 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/27 08:47:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2017/03/13 15:38:24 fcambus Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
-DISTNAME=		uthash-1.9.7
-CATEGORIES=		devel
+GH_ACCOUNT=		troydhanson
+GH_PROJECT=		uthash
+GH_TAGNAME=		v2.0.1
 
-HOMEPAGE=		http://uthash.sf.net/
+CATEGORIES=		devel
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=uthash/}
-EXTRACT_SUFX=		.tar.bz2
 
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
 PORTHOME=		${WRKDIR}
-TEST_TARGET= 	run_tests
+TEST_TARGET=		run_tests
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uthash/img
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.{css,html} \
-		${PREFIX}/share/doc/uthash
-	${INSTALL_DATA} ${WRKSRC}/doc/html/img/* ${PREFIX}/share/doc/uthash/img
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/uthash
+	${INSTALL_DATA} ${WRKSRC}/doc/u*.txt ${PREFIX}/share/doc/uthash
 
 do-test:
 	@cd ${WRKSRC}/tests/ && exec ${SETENV} ${MAKE_ENV} \

@@ -1,26 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/03 16:37:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/03/13 15:38:24 fcambus Exp $
+include/libut.h
+include/ringbuf.h
 include/utarray.h
 include/uthash.h
 include/utlist.h
+include/utmm.h
+include/utringbuffer.h
 include/utstring.h
+include/utvector.h
 share/doc/uthash/
-share/doc/uthash/ChangeLog.html
-share/doc/uthash/img/
-share/doc/uthash/img/banner.png
-share/doc/uthash/img/banner.svg
-share/doc/uthash/img/grad_blue.png
-share/doc/uthash/img/grad_blue.svg
-share/doc/uthash/img/rss.png
-share/doc/uthash/img/uthash-mini.png
-share/doc/uthash/img/uthash-mini.svg
-share/doc/uthash/img/uthash.png
-share/doc/uthash/index.html
-share/doc/uthash/license.html
-share/doc/uthash/styles.css
-share/doc/uthash/tdh-quirks.css
-share/doc/uthash/tdh.css
-share/doc/uthash/toc.css
-share/doc/uthash/userguide.html
-share/doc/uthash/utarray.html
-share/doc/uthash/utlist.html
-share/doc/uthash/utstring.html
+share/doc/uthash/userguide.txt
+share/doc/uthash/utarray.txt
+share/doc/uthash/utlist.txt
+share/doc/uthash/utringbuffer.txt
+share/doc/uthash/utstring.txt
