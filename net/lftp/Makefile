@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.113 2017/02/16 10:56:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2017/03/13 08:39:13 benoit Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.7.6
+DISTNAME=	lftp-4.7.7
 CATEGORIES=	net
 
 HOMEPAGE=	https://lftp.tech/
