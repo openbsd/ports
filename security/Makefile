@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.451 2017/03/12 15:02:07 krw Exp $
+# $OpenBSD: Makefile,v 1.452 2017/03/13 15:02:48 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -10,6 +10,7 @@
      SUBDIR += arirang
      SUBDIR += bfbtester
      SUBDIR += botan
+     SUBDIR += botan2
      SUBDIR += bounix
      SUBDIR += bsd-airtools
      SUBDIR += burpsuite
