@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_scripts_install_py,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+--- src/scripts/install.py.orig	Tue Jan 10 04:21:31 2017
++++ src/scripts/install.py	Fri Mar 10 01:54:24 2017
+@@ -171,14 +171,14 @@ def main(args = None):
+             copy_executable(os.path.join(out_dir, soname_patch),
+                             os.path.join(lib_dir, soname_patch))
+ 
+-            prev_cwd = os.getcwd()
+-
+-            try:
+-                os.chdir(lib_dir)
+-                force_symlink(soname_patch, soname_abi)
+-                force_symlink(soname_patch, soname_base)
+-            finally:
+-                os.chdir(prev_cwd)
++            if str(cfg['os']) != "openbsd":
++                prev_cwd = os.getcwd()
++                try:
++                    os.chdir(lib_dir)
++                    force_symlink(soname_patch, soname_abi)
++                    force_symlink(soname_patch, soname_base)
++                finally:
++                    os.chdir(prev_cwd)
+ 
+     copy_executable(os.path.join(out_dir, app_exe), os.path.join(bin_dir, app_exe))
+ 

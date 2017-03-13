@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_build-data_cc_gcc_txt,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+--- src/build-data/cc/gcc.txt.orig	Tue Jan 10 04:21:31 2017
++++ src/build-data/cc/gcc.txt	Mon Mar 13 07:14:45 2017
+@@ -1,6 +1,6 @@
+ macro_name GCC
+ 
+-binary_name g++
++binary_name ${CXX}
+ 
+ output_to_option "-o "
+ add_include_dir_option -I
+@@ -16,7 +16,7 @@ maintainer_warning_flags "-Wold-style-cast -Wsuggest-o
+ 
+ compile_flags "-c"
+ debug_info_flags "-g"
+-optimization_flags "-O3"
++optimization_flags "${CXXFLAGS}"
+ size_optimization_flags "-Os"
+ 
+ shared_flags "-fPIC"

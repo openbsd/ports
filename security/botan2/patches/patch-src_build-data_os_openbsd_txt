@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+--- src/build-data/os/openbsd.txt.orig	Tue Jan 10 04:21:31 2017
++++ src/build-data/os/openbsd.txt	Fri Mar 10 01:54:13 2017
+@@ -1,6 +1,8 @@
+ os_type unix
+ 
+-soname_suffix "so"
++soname_pattern_base  "libbotan-{version_major}.so"
++soname_pattern_abi   "libbotan-{version_major}.so.{abi_rev}"
++soname_pattern_patch "libbotan-{version_major}.so.{abi_rev}.{version_minor}"
+ 
+ <target_features>
+ clock_gettime
