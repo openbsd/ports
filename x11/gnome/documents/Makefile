@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2017/03/13 09:11:59 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.22.0
-REVISION=		2
+GNOME_VERSION=		3.22.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,9 +26,9 @@ WANTLIB += kvm lzma m mediaart-2.0 mozjs-24 ncursesw nettle nghttp2
 WANTLIB += notify nspr4 nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline rest-0.7 secret-1 smime3 softokn3 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 stdc++ tasn1 uuid webkit2gtk-4.0
+WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 tasn1 uuid webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z zapojit-0.0
+WANTLIB += xml2 xslt z zapojit-0.0 unistring
 WANTLIB += tracker-control-${TRACKER_API}
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
