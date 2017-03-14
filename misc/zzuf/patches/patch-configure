@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2017/03/14 02:43:18 jca Exp $
+--- configure.orig	Tue Mar 14 03:39:28 2017
++++ configure	Tue Mar 14 03:41:16 2017
+@@ -11915,7 +11915,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_try_cflags_ok" >&5
+ $as_echo "$ac_cv_try_cflags_ok" >&6; }
+     if test x"$ac_cv_try_cflags_ok" = x"yes"; then
+-        CFLAGS="${CFLAGS} -g -O2"
++        : #CFLAGS="${CFLAGS} -g -O2"
+     else
+         :
+     fi
