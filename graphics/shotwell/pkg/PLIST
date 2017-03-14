@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2017/02/14 08:24:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2017/03/14 09:38:10 ajacoutot Exp $
 @bin bin/shotwell
 lib/libshotwell-authenticator.a
 lib/libshotwell-authenticator.la
@@ -511,79 +511,6 @@ share/locale/vi/LC_MESSAGES/shotwell.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_HK/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
-share/shotwell/
-share/shotwell/icons/
-share/shotwell/icons/all-rejected.png
-share/shotwell/icons/crop-pivot-reticle.png
-share/shotwell/icons/crop.svg
-share/shotwell/icons/drag_nub.png
-share/shotwell/icons/faces-tool.png
-share/shotwell/icons/filter-flagged.png
-share/shotwell/icons/filter-photos.png
-share/shotwell/icons/filter-raw.png
-share/shotwell/icons/filter-videos.png
-share/shotwell/icons/five-star-filter.svg
-share/shotwell/icons/five-stars.svg
-share/shotwell/icons/flag-page.png
-share/shotwell/icons/flag-trinket.png
-share/shotwell/icons/four-star-filter-plus.svg
-share/shotwell/icons/four-stars.svg
-share/shotwell/icons/generic-plugin.png
-share/shotwell/icons/image-adjust.svg
-share/shotwell/icons/import-all.png
-share/shotwell/icons/import.svg
-share/shotwell/icons/make-primary.svg
-share/shotwell/icons/many-faces.png
-share/shotwell/icons/merge.svg
-share/shotwell/icons/multiple-events.png
-share/shotwell/icons/multiple-tags.png
-share/shotwell/icons/no-event.png
-share/shotwell/icons/noninterpretable-video.png
-share/shotwell/icons/one-event.png
-share/shotwell/icons/one-face.png
-share/shotwell/icons/one-star-filter-plus.svg
-share/shotwell/icons/one-star.svg
-share/shotwell/icons/one-tag.png
-share/shotwell/icons/pin-toolbar.svg
-share/shotwell/icons/publish.png
-share/shotwell/icons/redeye.png
-share/shotwell/icons/rejected.svg
-share/shotwell/icons/shotwell-16.png
-share/shotwell/icons/shotwell-auto-enhance.png
-share/shotwell/icons/shotwell-street.jpg
-share/shotwell/icons/shotwell.png
-share/shotwell/icons/slideshow-extension-point.png
-share/shotwell/icons/sprocket.png
-share/shotwell/icons/straighten.svg
-share/shotwell/icons/three-star-filter-plus.svg
-share/shotwell/icons/three-stars.svg
-share/shotwell/icons/two-star-filter-plus.svg
-share/shotwell/icons/two-stars.svg
-share/shotwell/icons/videos-page.png
-share/shotwell/icons/zoom-in.png
-share/shotwell/icons/zoom-out.png
-share/shotwell/ui/
-share/shotwell/ui/collection.ui
-share/shotwell/ui/direct.ui
-share/shotwell/ui/direct_context.ui
-share/shotwell/ui/event.ui
-share/shotwell/ui/events_directory.ui
-share/shotwell/ui/fullscreen.ui
-share/shotwell/ui/import.ui
-share/shotwell/ui/import_queue.ui
-share/shotwell/ui/media.ui
-share/shotwell/ui/offline.ui
-share/shotwell/ui/photo.ui
-share/shotwell/ui/photo_context.ui
-share/shotwell/ui/savedsearch.ui
-share/shotwell/ui/search_bar.ui
-share/shotwell/ui/search_sidebar_context.ui
-share/shotwell/ui/shotwell.ui
-share/shotwell/ui/sidebar_default_context.ui
-share/shotwell/ui/tag_sidebar_context.ui
-share/shotwell/ui/tags.ui
-share/shotwell/ui/top.ui
-share/shotwell/ui/trash.ui
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
