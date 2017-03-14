@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.23 2017/03/01 08:55:28 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.24 2017/03/14 17:29:45 ajacoutot Exp $
 
 - Enable support for __float128 in Clang on OpenBSD/X86
-- Set ABI for ARM
+- Set ABIs correctly for OpenBSD/arm; soft float and aapcs-linux
 - Hook up OpenBSD AArch64 support
-- Fix types for OpenBSD/mips64
+- Set the Int64Type / IntMaxType types correctly for OpenBSD/mips64
 
 --- tools/clang/lib/Basic/Targets.cpp.orig	Wed Feb  8 20:35:17 2017
 +++ tools/clang/lib/Basic/Targets.cpp	Mon Feb 27 15:31:50 2017

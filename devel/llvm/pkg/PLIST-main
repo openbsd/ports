@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2017/02/10 09:37:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2017/03/14 17:29:45 ajacoutot Exp $
 @pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
@@ -1255,6 +1255,7 @@ include/llvm/Linker/Linker.h
 include/llvm/MC/
 include/llvm/MC/ConstantPools.h
 include/llvm/MC/LaneBitmask.h
+include/llvm/MC/MCAnalysis/
 include/llvm/MC/MCAsmBackend.h
 include/llvm/MC/MCAsmInfo.h
 include/llvm/MC/MCAsmInfoCOFF.h
@@ -1688,7 +1689,7 @@ include/llvm/XRay/YAMLXRayRecord.h
 lib/BugpointPasses.so
 lib/LLVMHello.so
 lib/clang/
-lib/clang/4.0.0/
+lib/clang/${LLVM_V}/
 ${CLANG_INCLUDE_PATH}/
 ${CLANG_INCLUDE_PATH}/__clang_cuda_builtin_vars.h
 ${CLANG_INCLUDE_PATH}/__clang_cuda_cmath.h
