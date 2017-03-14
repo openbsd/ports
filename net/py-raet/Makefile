@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/12/29 09:28:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2017/03/14 09:13:52 ajacoutot Exp $
 
 COMMENT=		Reliable Asynchronous Event Transport protocol
 
-MODPY_EGG_VERSION=	0.6.6
+MODPY_EGG_VERSION=	0.6.7
 DISTNAME=		raet-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
