@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_updatenotification_appinfo_info_xml,v 1.1.1.1 2017/03/14 16:19:01 gonzalo Exp $
+--- apps/updatenotification/appinfo/info.xml.orig	Fri Feb 17 14:37:55 2017
++++ apps/updatenotification/appinfo/info.xml	Fri Feb 17 14:38:08 2017
+@@ -7,7 +7,6 @@
+ 	<author>Lukas Reschke</author>
+ 	<version>1.1.1</version>
+ 	<namespace>UpdateNotification</namespace>
+-	<default_enable/>
+ 	<dependencies>
+ 		<nextcloud min-version="11" max-version="11" />
+ 	</dependencies>

@@ -1,0 +1,151 @@
+$OpenBSD: README,v 1.1.1.1 2017/03/14 16:19:02 gonzalo Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Nextcloud is installed under
+    ${INSTDIR}
+
+Official documentation is available at:
+    http://docs.nextcloud.com/server/${MAJOR}/admin_manual/
+
+Post-installation instructions
+==============================
+
+*** It is highly recommended to use SSL on the webserver so that access is done
+*** over https instead of http!
+
+chroot(2)
+---------
+Nextcloud attempts to use the UTF-8 locale, which does not work by
+default inside the /var/www chroot. This causes warning messages in
+nextcloud's admin configuration page and logs. To prevent this problem,
+run the following as root:
+    # mkdir -p /var/www/usr/share/locale/UTF-8/
+    # cp /usr/share/locale/UTF-8/LC_CTYPE \
+        /var/www/usr/share/locale/UTF-8/
+
+OpenBSD HTTP daemon
+-------------------
+httpd(8) example configuration for nextcloud is stored under:
+    ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf
+
+It needs to be enabled by (assuming you already have httpd and php working):
+
+# cp ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf /etc/
+# echo 'include "/etc/httpd-nextcloud.conf"' >> /etc/httpd.conf
+# rcctl restart httpd
+
+nginx
+-----
+See:
+    https://docs.nextcloud.com/server/${MAJOR}/admin_manual/installation/nginx_nextcloud_9x.html
+
+Apache2
+-------
+Apache2 configuration for nextcloud is stored under:
+    ${PREFIX}/conf/modules.sample/apache-nextcloud.conf
+
+It needs to be enabled by running the following command after the apache-httpd
+package is installed:
+# ln -s ../modules.sample/apache-nextcloud.conf /var/www/conf/modules
+# rcctl restart apache2
+
+PHP
+---
+Default PHP values for Apache2 are set under:
+    ${TINSTDIR}/config/.htaccess
+
+OpenBSD HTTP daemon users can match these .htaccess file values by
+editing ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
+
+nginx users can match these .htaccess file values by configuring
+fastcgi_param with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
+
+For enhanced performance, a PHP opcode cache can be used, either
+use "opcache" (built-in to PHP 5.5+, enable "opcache.ini" to use it)
+or install xcache.
+
+Database configuration
+----------------------
+See the following URL for setting up a database for nextcloud:
+    https://docs.nextcloud.com/server/${MAJOR}/admin_manual/configuration_database/linux_database_configuration.html
+
+Nextcloud can work with a PostgreSQL, MariaDB or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed
+*before* setting up nextcloud:
+    php-pdo_pgsql or php-pdo_mysql
+
+Configuration is done under:
+    ${INSTDIR}/config/config.php
+and the default "datadirectory" is set to:
+    ${TINSTDIR}/data
+When running chrooted, /var/www must be stripped from the paths.
+
+Cron job
+--------
+Nextcloud needs to run background jobs on a regular basis. By default, it
+will execute one task with each page loaded ("AJAX" option in the admin
+interface). The prefered way is to use a cron(8) job instead.
+(see http://<hostname>/nextcloud/index.php/settings/admin#backgroundjobs)
+e.g.
+*/15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/nextcloud/cron.php >/dev/null
+
+Memory caching
+--------------
+nextcloud server performance can be significantly improved with memory caching,
+where frequently-requested objects are stored in memory for faster retrieval.
+Distributed caching and Transactional File Locking is provided by Redis, an
+in-memory data structure store.
+More information and configuration example are available at:
+    https://docs.nextcloud.com/server/${MAJOR}/admin_manual/configuration_server/caching_configuration.html#id4
+
+TL;DR
+You need a redis server running (available in the redis package) then adapt and
+append the following to:
+    ${INSTDIR}/config/config.php
+
+  'memcache.local' => '\OC\Memcache\Redis',
+  'redis' => array(
+    'host' => 'localhost',
+    'port' => 6379,
+    'timeout' => 0.0,
+  ),
+
+Authentication backends
+-----------------------
+When using a non-default user authentication backend (LDAP, IMAP, ...),
+extra packages may be needed (e.g. php-ldap, php-imap).
+
+Finishing and validating the installation
+-----------------------------------------
+Make sure the web server can resolve its hostname (e.g. if chrooted, by
+creating /var/www/etc/hosts and/or /var/www/etc/resolv.conf).
+
+Accessing http://<hostname>/nextcloud with a Web browser will finish the
+installation and create a new admin user.
+
+Updating
+========
+Before updating to a new release, read:
+    http://docs.nextcloud.com/server/${MAJOR}/admin_manual/maintenance/upgrade.html
+
+When using a PostgreSQL or MariaDB, the corresponding MDB2 php package
+must be installed to properly upgrade the database:
+    php-pgsql or php-mysql
+
+WebDAV access
+=============
+The personal WebDAV share can be accessed using the following URL (e.g.
+with Nautilus, Thunar or Doplhin) and the corresponding user and
+password for the share:
+    http://<hostname>/nextcloud/remote.php/webdav/
+
+Apps and dependencies
+=====================
+To keep dependencies to a minimum, not all dependencies for all
+installed apps are enforced. It is the job of the administrator to
+manually install required packages according to the non-default apps he
+wants to enable.

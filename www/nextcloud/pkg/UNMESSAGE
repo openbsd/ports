@@ -1,0 +1,4 @@
+To completely deinstall nextcloud you need to remove the "backgroundjobs"
+cron(8) job if it exists.
+The directory /var/www/usr/share/locale/en_US.UTF-8/ must also be
+removed, if it was created for nextcloud.

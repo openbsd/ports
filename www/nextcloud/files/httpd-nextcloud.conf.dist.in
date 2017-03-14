@@ -1,0 +1,28 @@
+ext_if="egress"
+
+types { include "/usr/share/misc/mime.types" }
+
+server "nextcloud.example.com" {
+	listen on $ext_if port 80
+	listen on $ext_if tls port 443
+
+	# Set max upload size to 513M (in bytes)
+	connection max request body 537919488
+
+	# First deny access to the specified files
+	location "/db_structure.xml"	{ block }
+	location "/.ht*"		{ block }
+	location "/README"		{ block }
+	location "/data*"		{ block }
+	location "/config*"		{ block }
+        
+	location "/*.php*" {
+		root { "/nextcloud", strip 1 }
+		fastcgi socket "/run/php-fpm.sock"
+	}
+        
+	location "/*" {
+		root { "/nextcloud", strip 1 }
+        
+	}
+}
