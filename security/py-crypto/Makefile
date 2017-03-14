@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2017/01/03 19:26:14 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2017/03/14 00:56:48 danj Exp $
 
 COMMENT =		cryptographic tools for Python
 
 MODPY_EGG_VERSION =	2.6.1
-REVISION =		3
+REVISION =		4
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =		security devel

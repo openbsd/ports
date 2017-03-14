@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_block_template_c,v 1.1 2017/03/14 00:56:48 danj Exp $
+
+Based on
+https://github.com/dlitz/pycrypto/commit/8dbe0dc3eea5c689d4f76b37b93fe216cf1f00d4
+
+--- src/block_template.c.orig	Mon Oct 14 17:38:10 2013
++++ src/block_template.c	Tue Mar  7 18:56:27 2017
+@@ -170,6 +170,17 @@ ALGnew(PyObject *self, PyObject *args, PyObject *kwdic
+ 				"Key cannot be the null string");
+ 		return NULL;
+ 	}
++	if (IVlen != 0 && mode == MODE_ECB)
++	{
++		PyErr_Format(PyExc_ValueError, "ECB mode does not use IV");
++		return NULL;
++	}
++	if (IVlen != 0 && mode == MODE_CTR)
++	{
++		PyErr_Format(PyExc_ValueError,
++			"CTR mode needs counter parameter, not IV");
++		return NULL;
++	}
+ 	if (IVlen != BLOCK_SIZE && mode != MODE_ECB && mode != MODE_CTR)
+ 	{
+ 		PyErr_Format(PyExc_ValueError,
