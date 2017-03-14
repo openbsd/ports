@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.9 2017/01/26 17:08:26 robert Exp $
---- ui/base/ime/input_method_factory.cc.orig.port	Tue Jan  3 20:50:44 2017
-+++ ui/base/ime/input_method_factory.cc	Tue Jan  3 20:51:13 2017
-@@ -14,7 +14,7 @@
+$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.10 2017/03/14 12:18:54 robert Exp $
+--- ui/base/ime/input_method_factory.cc.orig.port	Thu Mar  9 21:04:49 2017
++++ ui/base/ime/input_method_factory.cc	Fri Mar 10 07:46:26 2017
+@@ -16,7 +16,7 @@
  #include "ui/base/ime/input_method_win.h"
  #elif defined(OS_MACOSX)
  #include "ui/base/ime/input_method_mac.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.9 2017/01/26 17:08:26 ro
  #include "ui/base/ime/input_method_auralinux.h"
  #elif defined(OS_ANDROID)
  #include "ui/base/ime/input_method_android.h"
-@@ -55,7 +55,7 @@ std::unique_ptr<InputMethod> CreateInputMethod(
+@@ -60,7 +60,7 @@ std::unique_ptr<InputMethod> CreateInputMethod(
    return base::MakeUnique<InputMethodWin>(delegate, widget);
  #elif defined(OS_MACOSX)
    return base::MakeUnique<InputMethodMac>(delegate);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.7 2016/12/10 15:35:25 robert Exp $
---- content/shell/browser/shell_browser_main_parts.cc.orig.port	Fri Dec  2 00:02:13 2016
-+++ content/shell/browser/shell_browser_main_parts.cc	Fri Dec  2 17:44:54 2016
-@@ -44,7 +44,7 @@
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.8 2017/03/14 12:18:54 robert Exp $
+--- content/shell/browser/shell_browser_main_parts.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/shell/browser/shell_browser_main_parts.cc	Fri Mar 10 07:46:23 2017
+@@ -46,7 +46,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.7 2016/12/
  #include "ui/base/ime/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
-@@ -140,7 +140,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
+@@ -142,7 +142,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
  }
  
  void ShellBrowserMainParts::PreEarlyInitialization() {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.6 2017/01/26 17:08:25 robert Exp $
---- content/browser/renderer_host/render_process_host_impl.cc.orig.port	Tue Jan  3 20:42:07 2017
-+++ content/browser/renderer_host/render_process_host_impl.cc	Tue Jan  3 20:42:30 2017
-@@ -368,7 +368,7 @@ SiteProcessMap* GetSiteProcessMapForBrowserContext(Bro
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.7 2017/03/14 12:18:54 robert Exp $
+--- content/browser/renderer_host/render_process_host_impl.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/browser/renderer_host/render_process_host_impl.cc	Fri Mar 10 07:46:23 2017
+@@ -372,7 +372,7 @@ SiteProcessMap* GetSiteProcessMapForBrowserContext(Bro
    return map;
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.6 
  // This static member variable holds the zygote communication information for
  // the renderer.
  ZygoteHandle g_render_zygote;
-@@ -395,7 +395,7 @@ class RendererSandboxedProcessLauncherDelegate
+@@ -399,7 +399,7 @@ class RendererSandboxedProcessLauncherDelegate
      return GetContentClient()->browser()->PreSpawnRenderer(policy);
    }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.6 
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -635,7 +635,7 @@ void RenderProcessHost::SetMaxRendererProcessCount(siz
+@@ -639,7 +639,7 @@ void RenderProcessHost::SetMaxRendererProcessCount(siz
    g_max_renderer_count_override = count;
  }
  

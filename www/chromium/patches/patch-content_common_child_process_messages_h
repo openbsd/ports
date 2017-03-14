@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_child_process_messages_h,v 1.1 2017/01/26 17:08:25 robert Exp $
---- content/common/child_process_messages.h.orig.port	Fri Jan 13 11:16:10 2017
-+++ content/common/child_process_messages.h	Fri Jan 13 14:28:56 2017
-@@ -27,7 +27,7 @@
+$OpenBSD: patch-content_common_child_process_messages_h,v 1.2 2017/03/14 12:18:54 robert Exp $
+--- content/common/child_process_messages.h.orig.port	Thu Mar  9 21:04:32 2017
++++ content/common/child_process_messages.h	Fri Mar 10 07:46:23 2017
+@@ -26,7 +26,7 @@
  #include "ui/gfx/ipc/gfx_param_traits.h"
  #include "ui/gfx/ipc/skia/gfx_skia_param_traits.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_common_child_process_messages_h,v 1.1 2017/01/26 17:08:2
  #include "base/threading/platform_thread.h"
  #endif
  
-@@ -70,7 +70,7 @@ IPC_STRUCT_TRAITS_BEGIN(tracked_objects::ProcessDataSn
+@@ -75,7 +75,7 @@ IPC_STRUCT_TRAITS_BEGIN(tracked_objects::ProcessDataSn
    IPC_STRUCT_TRAITS_MEMBER(process_id)
  IPC_STRUCT_TRAITS_END()
  
@@ -19,9 +19,9 @@ $OpenBSD: patch-content_common_child_process_messages_h,v 1.1 2017/01/26 17:08:2
  IPC_ENUM_TRAITS_MAX_VALUE(base::ThreadPriority,
                            base::ThreadPriority::REALTIME_AUDIO)
  #endif
-@@ -218,7 +218,7 @@ IPC_SYNC_MESSAGE_CONTROL2_1(
- IPC_MESSAGE_CONTROL1(ChildProcessHostMsg_DeletedDiscardableSharedMemory,
-                      discardable_memory::DiscardableSharedMemoryId)
+@@ -171,7 +171,7 @@ IPC_SYNC_MESSAGE_CONTROL1_0(ChildProcessHostMsg_PreCac
+ IPC_MESSAGE_CONTROL0(ChildProcessHostMsg_ReleaseCachedFonts)
+ #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

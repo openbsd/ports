@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.8 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Sat Dec  3 14:15:47 2016
-+++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Sat Dec  3 14:15:54 2016
-@@ -154,7 +154,7 @@ class PopupMenuImpl::ItemIterationContext {
+$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.9 2017/03/14 12:18:54 robert Exp $
+--- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Thu Mar  9 21:04:46 2017
++++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Fri Mar 10 07:46:25 2017
+@@ -155,7 +155,7 @@ class PopupMenuImpl::ItemIterationContext {
          m_isInGroup(false),
          m_buffer(buffer) {
      DCHECK(m_buffer);

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.66 2017/01/26 17:08:26 robert Exp $
+@comment $OpenBSD: PLIST,v 1.67 2017/03/14 12:18:54 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/chrome_200_percent.pak
+chrome/font_service.service
+chrome/headless_lib.pak
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/locales/
@@ -152,12 +154,20 @@ chrome/resources/inspector/audits/
 chrome/resources/inspector/audits/audits_module.js
 chrome/resources/inspector/audits2/
 chrome/resources/inspector/audits2/audits2_module.js
+chrome/resources/inspector/cm/
+chrome/resources/inspector/cm/cm_module.js
 chrome/resources/inspector/cm_modes/
 chrome/resources/inspector/cm_modes/cm_modes_module.js
-chrome/resources/inspector/components_lazy/
-chrome/resources/inspector/components_lazy/components_lazy_module.js
+chrome/resources/inspector/color_picker/
+chrome/resources/inspector/color_picker/color_picker_module.js
 chrome/resources/inspector/console/
 chrome/resources/inspector/console/console_module.js
+chrome/resources/inspector/cookie_table/
+chrome/resources/inspector/cookie_table/cookie_table_module.js
+chrome/resources/inspector/css_tracker/
+chrome/resources/inspector/css_tracker/css_tracker_module.js
+chrome/resources/inspector/data_grid/
+chrome/resources/inspector/data_grid/data_grid_module.js
 chrome/resources/inspector/devices/
 chrome/resources/inspector/devices/devices_module.js
 chrome/resources/inspector/devtools_compatibility.js
@@ -207,7 +217,11 @@ chrome/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
 chrome/resources/inspector/formatter_worker.js
 chrome/resources/inspector/gonzales/
 chrome/resources/inspector/gonzales/gonzales_module.js
+chrome/resources/inspector/heap_snapshot_model/
+chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 chrome/resources/inspector/heap_snapshot_worker.js
+chrome/resources/inspector/inline_editor/
+chrome/resources/inspector/inline_editor/inline_editor_module.js
 chrome/resources/inspector/inspector.html
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/layer_viewer/
@@ -216,8 +230,12 @@ chrome/resources/inspector/layers/
 chrome/resources/inspector/layers/layers_module.js
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/network_module.js
+chrome/resources/inspector/perf_ui/
+chrome/resources/inspector/perf_ui/perf_ui_module.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler_module.js
+chrome/resources/inspector/quick_open/
+chrome/resources/inspector/quick_open/quick_open_module.js
 chrome/resources/inspector/resources/
 chrome/resources/inspector/resources/resources_module.js
 chrome/resources/inspector/sass/
@@ -244,10 +262,12 @@ chrome/resources/inspector/timeline_model/
 chrome/resources/inspector/timeline_model/timeline_model_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
-chrome/resources/inspector/ui_lazy/
-chrome/resources/inspector/ui_lazy/ui_lazy_module.js
+chrome/resources/inspector/unit_test_runner.html
+chrome/resources/inspector/unit_test_runner.js
 chrome/resources/inspector/utility_shared_worker.js
 chrome/snapshot_blob.bin
+chrome/test_ime_driver.service
+chrome/ui.service
 chrome/views_mus_resources.pak
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.26 2017/01/26 17:08:25 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Thu Dec 15 00:02:05 2016
-+++ chrome/common/chrome_switches.cc	Tue Jan  3 20:29:58 2017
-@@ -1263,7 +1263,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.27 2017/03/14 12:18:53 robert Exp $
+--- chrome/common/chrome_switches.cc.orig.port	Thu Mar  9 21:04:29 2017
++++ chrome/common/chrome_switches.cc	Fri Mar 10 07:46:20 2017
+@@ -1165,7 +1165,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
  const char kEnableWaylandServer[] = "enable-wayland-server";
  #endif
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig.port	Sat Feb  4 11:46:22 2017
-+++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc	Sat Feb  4 12:10:10 2017
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.2 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig.port	Fri Mar 10 09:56:01 2017
++++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc	Fri Mar 10 09:56:35 2017
+@@ -26,7 +26,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif  // defined(USE_AURA)
  
@@ -10,10 +10,10 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc
  #include "base/command_line.h"
  #include "chrome/browser/ui/simple_message_box.h"
  #include "chrome/grit/chromium_strings.h"
-@@ -62,7 +62,7 @@ void ChromeBrowserMainExtraPartsViews::PreCreateThread
- }
+@@ -70,7 +70,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+     IMEDriver::Register();
+ #endif
  
- void ChromeBrowserMainExtraPartsViews::PreProfileInit() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    // On the Linux desktop, we want to prevent the user from logging in as root,

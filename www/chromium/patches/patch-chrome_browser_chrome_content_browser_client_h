@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.24 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/chrome_content_browser_client.h	Tue Jan  3 20:29:55 2017
-@@ -271,7 +271,7 @@ class ChromeContentBrowserClient : public content::Con
-       int child_process_id,
-       content::FileDescriptorInfo* mappings,
-       std::map<int, base::MemoryMappedFile::Region>* regions) override;
--#elif defined(OS_POSIX) && !defined(OS_MACOSX)
-+#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.25 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Fri Mar 10 08:42:54 2017
++++ chrome/browser/chrome_content_browser_client.h	Fri Mar 10 08:43:05 2017
+@@ -259,7 +259,7 @@ class ChromeContentBrowserClient : public content::Con
+       content::RenderFrameHost* render_frame_host,
+       blink::WebPageVisibilityState* visibility_state) override;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(
        const base::CommandLine& command_line,
        int child_process_id,

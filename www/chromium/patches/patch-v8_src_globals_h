@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_globals_h,v 1.14 2017/01/26 17:08:26 robert Exp $
---- v8/src/globals.h.orig.port	Thu Dec 15 00:03:10 2016
-+++ v8/src/globals.h	Tue Jan  3 20:30:03 2017
-@@ -182,7 +182,11 @@ const size_t kCodeRangeAreaAlignment = 256 * MB;
+$OpenBSD: patch-v8_src_globals_h,v 1.15 2017/03/14 12:18:54 robert Exp $
+--- v8/src/globals.h.orig.port	Thu Mar  9 21:05:30 2017
++++ v8/src/globals.h	Fri Mar 10 07:46:26 2017
+@@ -183,7 +183,11 @@ const size_t kCodeRangeAreaAlignment = 256 * MB;
  const size_t kMaximalCodeRangeSize = 512 * MB;
  const size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
  #else

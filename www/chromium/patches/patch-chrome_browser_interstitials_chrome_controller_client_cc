@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_interstitials_chrome_controller_client_cc,v 1.3 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/interstitials/chrome_controller_client.cc.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/interstitials/chrome_controller_client.cc	Tue Jan  3 20:29:55 2017
-@@ -49,7 +49,7 @@ void LaunchDateAndTimeSettingsOnFileThread() {
+$OpenBSD: patch-chrome_browser_interstitials_chrome_controller_client_cc,v 1.4 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/interstitials/chrome_controller_client.cc.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/interstitials/chrome_controller_client.cc	Fri Mar 10 07:46:19 2017
+@@ -46,7 +46,7 @@ void LaunchDateAndTimeSettingsOnFileThread() {
  #if defined(OS_ANDROID)
    chrome::android::OpenDateAndTimeSettings();
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_interstitials_chrome_controller_client_cc,v 1.3 2
    struct ClockCommand {
      const char* const pathname;
      const char* const argument;
-@@ -136,7 +136,7 @@ void ChromeControllerClient::set_interstitial_page(
+@@ -131,7 +131,7 @@ ChromeControllerClient::~ChromeControllerClient() {}
  
  bool ChromeControllerClient::CanLaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \

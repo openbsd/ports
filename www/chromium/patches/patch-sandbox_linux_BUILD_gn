@@ -1,7 +1,7 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp $
---- sandbox/linux/BUILD.gn.orig.port	Fri Dec  2 00:02:17 2016
-+++ sandbox/linux/BUILD.gn	Fri Dec  2 17:44:55 2016
-@@ -11,12 +11,12 @@ if (is_android) {
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.5 2017/03/14 12:18:54 robert Exp $
+--- sandbox/linux/BUILD.gn.orig.port	Thu Mar  9 21:04:36 2017
++++ sandbox/linux/BUILD.gn	Fri Mar 10 07:46:24 2017
+@@ -12,12 +12,12 @@ if (is_android) {
  }
  
  declare_args() {
@@ -17,7 +17,7 @@ $OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp $
  }
  
  if (is_nacl_nonsfi) {
-@@ -356,7 +356,7 @@ component("sandbox_services") {
+@@ -357,7 +357,7 @@ component("sandbox_services") {
      public_deps += [ ":sandbox_services_headers" ]
    }
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.4 2016/12/10 15:35:25 robert Exp $
      cflags = [ "-fgnu-inline-asm" ]
  
      sources -= [
-@@ -364,6 +364,8 @@ component("sandbox_services") {
+@@ -365,6 +365,8 @@ component("sandbox_services") {
        "services/init_process_reaper.h",
        "services/scoped_process.cc",
        "services/scoped_process.h",

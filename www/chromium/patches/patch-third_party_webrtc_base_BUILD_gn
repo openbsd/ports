@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_base_BUILD_gn,v 1.5 2017/01/26 17:08:26 robert Exp $
---- third_party/webrtc/base/BUILD.gn.orig.port	Thu Dec 15 00:03:08 2016
-+++ third_party/webrtc/base/BUILD.gn	Tue Jan  3 20:30:01 2017
-@@ -650,16 +650,15 @@ rtc_static_library("rtc_base") {
-       "x11windowpicker.h",
-     ]
+$OpenBSD: patch-third_party_webrtc_base_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
+--- third_party/webrtc/base/BUILD.gn.orig.port	Thu Mar  9 21:05:29 2017
++++ third_party/webrtc/base/BUILD.gn	Fri Mar 10 07:46:25 2017
+@@ -604,16 +604,15 @@ rtc_static_library("rtc_base") {
+ 
+   if (use_x11) {
      libs += [
 -      "dl",
 -      "rt",

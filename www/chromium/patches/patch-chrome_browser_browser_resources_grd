@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.32 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/browser_resources.grd.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/browser_resources.grd	Tue Jan  3 20:29:55 2017
-@@ -372,7 +372,7 @@
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.33 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/browser_resources.grd.orig.port	Thu Mar  9 21:04:27 2017
++++ chrome/browser/browser_resources.grd	Fri Mar 10 07:46:17 2017
+@@ -384,7 +384,7 @@
          <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>

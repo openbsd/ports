@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.11 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/download/chrome_download_manager_delegate.cc	Tue Jan  3 20:29:55 2017
-@@ -778,7 +778,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.12 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/download/chrome_download_manager_delegate.cc	Fri Mar 10 07:46:18 2017
+@@ -777,7 +777,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
          target_info->is_filetype_handled_safely)
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.
      if (item->GetOriginalMimeType() == "application/x-x509-user-cert")
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  #endif
-@@ -793,7 +793,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -792,7 +792,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {

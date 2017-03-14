@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_events_event_switches_cc,v 1.6 2016/03/06 10:51:14 robert Exp $
---- ui/events/event_switches.cc.orig.port	Wed Feb 24 00:02:06 2016
-+++ ui/events/event_switches.cc	Thu Mar  3 09:43:26 2016
-@@ -28,7 +28,7 @@ const char kTouchEventsDisabled[] = "disabled";
+$OpenBSD: patch-ui_events_event_switches_cc,v 1.7 2017/03/14 12:18:54 robert Exp $
+--- ui/events/event_switches.cc.orig.port	Thu Mar  9 21:04:49 2017
++++ ui/events/event_switches.cc	Fri Mar 10 07:46:26 2017
+@@ -17,7 +17,7 @@ const char kEnableScrollPrediction[] = "enable-scroll-
  const char kCompensateForUnstablePinchZoom[] =
      "compensate-for-unstable-pinch-zoom";
  

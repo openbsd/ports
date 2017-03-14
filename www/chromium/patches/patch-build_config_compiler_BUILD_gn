@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert Exp $
---- build/config/compiler/BUILD.gn.orig.port	Thu Dec 15 00:02:03 2016
-+++ build/config/compiler/BUILD.gn	Tue Jan  3 20:29:54 2017
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.6 2017/03/14 12:18:53 robert Exp $
+--- build/config/compiler/BUILD.gn.orig.port	Thu Mar  9 21:04:27 2017
++++ build/config/compiler/BUILD.gn	Fri Mar 10 07:46:16 2017
 @@ -36,7 +36,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert 
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -210,7 +210,7 @@ config("compiler") {
+@@ -215,7 +215,7 @@ config("compiler") {
  
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert 
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -290,7 +290,7 @@ config("compiler") {
+@@ -295,7 +295,7 @@ config("compiler") {
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert 
          ldflags += [ "-Wl,-z,defs" ]
        }
  
-@@ -1020,14 +1020,14 @@ config("default_warnings") {
+@@ -1058,14 +1058,14 @@ config("default_warnings") {
      # Chrome's hermetic Clang compiler, NaCl's Clang compiler and Xcode's Clang
      # compiler will almost always have different versions. Certain flags may not
      # be recognized by one version or the other.

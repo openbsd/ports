@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.36 2017/01/26 17:08:25 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Thu Dec 15 00:02:09 2016
-+++ content/app/content_main_runner.cc	Tue Jan  3 20:29:58 2017
-@@ -97,10 +97,10 @@
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.37 2017/03/14 12:18:54 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/app/content_main_runner.cc	Fri Mar 10 07:46:21 2017
+@@ -98,10 +98,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.36 2017/01/26 17:08:25 ro
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -290,7 +290,7 @@ struct MainFunction {
+@@ -298,7 +298,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.36 2017/01/26 17:08:25 ro
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -409,7 +409,7 @@ int RunNamedProcessTypeMain(
+@@ -417,7 +417,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -32,8 +32,8 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.36 2017/01/26 17:08:25 ro
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -479,10 +479,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
-                kMojoIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
+@@ -495,10 +495,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
+         kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)

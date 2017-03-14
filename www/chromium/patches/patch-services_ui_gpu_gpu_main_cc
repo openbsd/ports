@@ -1,7 +1,7 @@
-$OpenBSD: patch-services_ui_gpu_gpu_main_cc,v 1.1 2017/02/23 17:30:49 robert Exp $
---- services/ui/gpu/gpu_main.cc.orig.port	Sat Feb  4 11:46:23 2017
-+++ services/ui/gpu/gpu_main.cc	Sat Feb  4 12:22:56 2017
-@@ -50,7 +50,7 @@ GpuMain::GpuMain()
+$OpenBSD: patch-services_ui_gpu_gpu_main_cc,v 1.2 2017/03/14 12:18:54 robert Exp $
+--- services/ui/gpu/gpu_main.cc.orig.port	Thu Mar  9 21:04:36 2017
++++ services/ui/gpu/gpu_main.cc	Fri Mar 10 07:46:24 2017
+@@ -52,7 +52,7 @@ GpuMain::GpuMain(mojom::GpuMainRequest request)
    thread_options.message_pump_factory = base::Bind(&CreateMessagePumpX11);
  #elif defined(USE_OZONE)
    thread_options.message_loop_type = base::MessageLoop::TYPE_UI;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.8 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Sat Dec  3 14:14:26 2016
-+++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Sat Dec  3 14:15:27 2016
-@@ -14,6 +14,11 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.9 2017/03/14 12:18:54 robert Exp $
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Fri Mar 10 10:07:30 2017
++++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Fri Mar 10 10:07:57 2017
+@@ -15,6 +15,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
@@ -13,32 +13,3 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.
  namespace blink {
  
  static const char* s_avoidOptimization = nullptr;
-@@ -100,6 +105,8 @@ size_t StackFrameDepth::getUnderestimatedStackSize() {
-   //    low as 512k.
-   //
-   return 512 * 1024;
-+#elif OS(OPENBSD)
-+  return 512 * 1024;
- #elif OS(MACOSX)
-   // pthread_get_stacksize_np() returns too low a value for the main thread on
-   // OSX 10.9,
-@@ -135,12 +142,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize() {
- }
- 
- void* StackFrameDepth::getStackStart() {
--#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
-+#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
-   pthread_attr_t attr;
-   int error;
- #if OS(FREEBSD)
-   pthread_attr_init(&attr);
-   error = pthread_attr_get_np(pthread_self(), &attr);
-+#elif OS(OPENBSD)
-+  stack_t ss;
-+  void *base;
-+  error = pthread_stackseg_np(pthread_self(), &ss);
-+  base = (void*)((size_t) ss.ss_sp - ss.ss_size);
-+  return reinterpret_cast<Address>(base) + ss.ss_size;
- #else
-   error = pthread_getattr_np(pthread_self(), &attr);
- #endif

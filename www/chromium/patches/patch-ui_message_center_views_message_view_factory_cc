@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_message_center_views_message_view_factory_cc,v 1.1 2016/07/31 13:11:44 robert Exp $
---- ui/message_center/views/message_view_factory.cc.orig.port	Thu Jul 21 10:44:12 2016
-+++ ui/message_center/views/message_view_factory.cc	Thu Jul 21 10:44:24 2016
+$OpenBSD: patch-ui_message_center_views_message_view_factory_cc,v 1.2 2017/03/14 12:18:54 robert Exp $
+--- ui/message_center/views/message_view_factory.cc.orig.port	Fri Mar 10 10:11:43 2017
++++ ui/message_center/views/message_view_factory.cc	Fri Mar 10 10:11:52 2017
 @@ -43,7 +43,7 @@ MessageView* MessageViewFactory::Create(MessageCenterC
        notification_view = new NotificationView(controller, notification);
    }
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   // Don't create shadows for notification toasts on linux wih aura.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Don't create shadows for notification toasts on Linux or CrOS.
    if (top_level)
      return notification_view;

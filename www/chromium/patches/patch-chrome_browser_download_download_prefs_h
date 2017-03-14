@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.5 2016/12/10 15:35:25 robert Exp $
---- chrome/browser/download/download_prefs.h.orig.port	Fri Dec  2 00:02:07 2016
-+++ chrome/browser/download/download_prefs.h	Fri Dec  2 17:44:52 2016
-@@ -80,7 +80,7 @@ class DownloadPrefs {
+$OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.6 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/download/download_prefs.h.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/download/download_prefs.h	Fri Mar 10 07:46:18 2017
+@@ -78,7 +78,7 @@ class DownloadPrefs {
    // Disables auto-open based on file extension.
    void DisableAutoOpenBasedOnExtension(const base::FilePath& file_name);
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-chrome_browser_download_download_prefs_h,v 1.5 2016/12/10 15:35:
    // Store the user preference to disk. If |should_open| is true, also disable
    // the built-in PDF plugin. If |should_open| is false, enable the PDF plugin.
    void SetShouldOpenPdfInSystemReader(bool should_open);
-@@ -115,7 +115,7 @@ class DownloadPrefs {
+@@ -109,7 +109,7 @@ class DownloadPrefs {
                     AutoOpenCompareFunctor> AutoOpenSet;
    AutoOpenSet auto_open_;
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    bool should_open_pdf_in_system_reader_;
-   bool disable_adobe_version_check_for_tests_;
  #endif
+ 

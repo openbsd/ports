@@ -1,0 +1,12 @@
+$OpenBSD: patch-services_service_manager_public_cpp_standalone_service_BUILD_gn,v 1.1 2017/03/14 12:18:54 robert Exp $
+--- services/service_manager/public/cpp/standalone_service/BUILD.gn.orig.port	Fri Mar 10 18:57:03 2017
++++ services/service_manager/public/cpp/standalone_service/BUILD.gn	Fri Mar 10 18:57:12 2017
+@@ -23,7 +23,7 @@ source_set("standalone_service") {
+     "//services/service_manager/public/interfaces",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_openbsd) {
+     sources += [
+       "linux_sandbox.cc",
+       "linux_sandbox.h",

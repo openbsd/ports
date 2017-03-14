@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_wtf_BUILD_gn,v 1.4 2017/01/26 17:08:26 robert Exp $
---- third_party/WebKit/Source/wtf/BUILD.gn.orig.port	Thu Dec 15 00:02:25 2016
-+++ third_party/WebKit/Source/wtf/BUILD.gn	Tue Jan  3 20:30:01 2017
-@@ -280,7 +280,7 @@ component("wtf") {
+$OpenBSD: patch-third_party_WebKit_Source_wtf_BUILD_gn,v 1.5 2017/03/14 12:18:54 robert Exp $
+--- third_party/WebKit/Source/wtf/BUILD.gn.orig.port	Thu Mar  9 21:04:46 2017
++++ third_party/WebKit/Source/wtf/BUILD.gn	Fri Mar 10 07:46:25 2017
+@@ -276,7 +276,7 @@ component("wtf") {
    if (is_android) {
      libs = [ "log" ]
    }

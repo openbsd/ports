@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17:08:25 robert Exp $
---- content/browser/utility_process_host_impl.cc.orig.port	Tue Jan  3 20:42:36 2017
-+++ content/browser/utility_process_host_impl.cc	Tue Jan  3 20:43:31 2017
-@@ -43,7 +43,7 @@
+$OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.8 2017/03/14 12:18:54 robert Exp $
+--- content/browser/utility_process_host_impl.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/browser/utility_process_host_impl.cc	Fri Mar 10 07:46:23 2017
+@@ -44,7 +44,7 @@
  #include "services/service_manager/public/cpp/interface_provider.h"
  #include "ui/base/ui_base_switches.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17
  #include "content/public/browser/zygote_handle_linux.h"
  #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
  
-@@ -54,7 +54,7 @@
+@@ -55,7 +55,7 @@
  
  namespace content {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17
  namespace {
  ZygoteHandle g_utility_zygote;
  }  // namespace
-@@ -73,7 +73,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -74,7 +74,7 @@ class UtilitySandboxedProcessLauncherDelegate
          launch_elevated_(launch_elevated)
  #elif defined(OS_POSIX)
          env_(env)
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17
          ,
          no_sandbox_(no_sandbox)
  #endif  // !defined(OS_MACOSX)  && !defined(OS_ANDROID)
-@@ -105,7 +105,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -106,7 +106,7 @@ class UtilitySandboxedProcessLauncherDelegate
  
  #elif defined(OS_POSIX)
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17
    ZygoteHandle* GetZygote() override {
      if (no_sandbox_ || !exposed_dir_.empty())
        return nullptr;
-@@ -126,7 +126,7 @@ class UtilitySandboxedProcessLauncherDelegate
+@@ -127,7 +127,7 @@ class UtilitySandboxedProcessLauncherDelegate
    bool launch_elevated_;
  #elif defined(OS_POSIX)
    base::EnvironmentMap env_;
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_browser_utility_process_host_impl_cc,v 1.7 2017/01/26 17
    bool no_sandbox_;
  #endif  // !defined(OS_MACOSX) && !defined(OS_ANDROID)
  #endif  // OS_WIN
-@@ -235,7 +235,7 @@ void UtilityProcessHostImpl::SetName(const base::strin
+@@ -236,7 +236,7 @@ void UtilityProcessHostImpl::SetName(const base::strin
    name_ = name;
  }
  

@@ -1,0 +1,44 @@
+$OpenBSD: patch-third_party_WebKit_Source_wtf_StackUtil_cpp,v 1.1 2017/03/14 12:18:54 robert Exp $
+--- third_party/WebKit/Source/wtf/StackUtil.cpp.orig.port	Thu Mar  9 21:04:46 2017
++++ third_party/WebKit/Source/wtf/StackUtil.cpp	Fri Mar 10 21:23:12 2017
+@@ -16,6 +16,11 @@
+ extern "C" void* __libc_stack_end;  // NOLINT
+ #endif
+ 
++#if OS(OPENBSD)
++#include <sys/signal.h>
++#include <pthread_np.h>
++#endif
++
+ namespace WTF {
+ 
+ size_t getUnderestimatedStackSize() {
+@@ -60,6 +65,8 @@ size_t getUnderestimatedStackSize() {
+   //    low as 512k.
+   //
+   return 512 * 1024;
++#elif OS(OPENBSD)
++  return 512 * 1024;
+ #elif OS(MACOSX)
+   // pthread_get_stacksize_np() returns too low a value for the main thread on
+   // OSX 10.9,
+@@ -95,12 +102,18 @@ size_t getUnderestimatedStackSize() {
+ }
+ 
+ void* getStackStart() {
+-#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
++#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
+   pthread_attr_t attr;
+   int error;
+ #if OS(FREEBSD)
+   pthread_attr_init(&attr);
+   error = pthread_attr_get_np(pthread_self(), &attr);
++#elif OS(OPENBSD)
++  stack_t ss;
++  void *base;
++  error = pthread_stackseg_np(pthread_self(), &ss);
++  base = (void*)((size_t) ss.ss_sp - ss.ss_size);
++  return reinterpret_cast<uint8_t*>(base) + ss.ss_size;
+ #else
+   error = pthread_getattr_np(pthread_self(), &attr);
+ #endif

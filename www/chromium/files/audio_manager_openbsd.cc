@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "base/metrics/histogram.h"
+#include "base/metrics/histogram_macros.h"
 
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 
@@ -62,6 +62,12 @@ void AudioManagerOpenBSD::GetAudioOutputDeviceNames(
     AudioDeviceNames* device_names) {
   AddDefaultDevice(device_names);
 }
+
+#if defined(USE_SNDIO)
+const char* AudioManagerOpenBSD::GetName() {
+  return "SNDIO";
+}
+#endif
 
 AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
     const std::string& device_id) {

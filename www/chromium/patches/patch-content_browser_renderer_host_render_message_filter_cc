@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.6 2017/02/23 17:30:49 robert Exp $
---- content/browser/renderer_host/render_message_filter.cc.orig.port	Sat Feb  4 11:46:23 2017
-+++ content/browser/renderer_host/render_message_filter.cc	Sat Feb  4 15:35:08 2017
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.7 2017/03/14 12:18:54 robert Exp $
+--- content/browser/renderer_host/render_message_filter.cc.orig.port	Thu Mar  9 21:04:32 2017
++++ content/browser/renderer_host/render_message_filter.cc	Sat Mar 11 16:31:36 2017
+@@ -90,7 +90,7 @@
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
  
@@ -10,3 +10,21 @@ $OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.6 201
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
+@@ -176,7 +176,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
+ #endif
+     IPC_MESSAGE_HANDLER_DELAY_REPLY(ChildProcessHostMsg_HasGpuProcess,
+                                     OnHasGpuProcess)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     IPC_MESSAGE_HANDLER(ChildProcessHostMsg_SetThreadPriority,
+                         OnSetThreadPriority)
+ #endif
+@@ -307,7 +307,7 @@ void RenderMessageFilter::DeletedSharedBitmap(const cc
+   bitmap_manager_client_.ChildDeletedSharedBitmap(id);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ void RenderMessageFilter::SetThreadPriorityOnFileThread(
+     base::PlatformThreadId ns_tid,
+     base::ThreadPriority priority) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.3 2016/12/10 15:35:25 robert Exp $
---- build/config/compiler/compiler.gni.orig.port	Fri Dec  2 00:02:05 2016
-+++ build/config/compiler/compiler.gni	Fri Dec  2 17:44:51 2016
-@@ -66,7 +66,7 @@ declare_args() {
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.4 2017/03/14 12:18:53 robert Exp $
+--- build/config/compiler/compiler.gni.orig.port	Thu Mar  9 21:04:27 2017
++++ build/config/compiler/compiler.gni	Fri Mar 10 07:46:16 2017
+@@ -72,7 +72,7 @@ declare_args() {
  
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.

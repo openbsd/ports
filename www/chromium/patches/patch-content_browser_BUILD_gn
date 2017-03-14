@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert Exp $
---- content/browser/BUILD.gn.orig.port	Thu Dec 15 00:02:09 2016
-+++ content/browser/BUILD.gn	Tue Jan  3 20:29:58 2017
-@@ -1421,10 +1421,11 @@ source_set("browser") {
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.6 2017/03/14 12:18:54 robert Exp $
+--- content/browser/BUILD.gn.orig.port	Thu Mar  9 21:04:32 2017
++++ content/browser/BUILD.gn	Fri Mar 10 17:51:30 2017
+@@ -1444,11 +1444,6 @@ source_set("browser") {
        "memory/memory_monitor_chromeos.cc",
        "memory/memory_monitor_chromeos.h",
      ]
@@ -9,11 +9,7 @@ $OpenBSD: patch-content_browser_BUILD_gn,v 1.5 2017/01/26 17:08:25 robert Exp $
 -    sources += [
 -      "memory/memory_monitor_linux.cc",
 -      "memory/memory_monitor_linux.h",
-+  }
-+
-+  if (is_openbsd) {
-+    sources -= [
-+      "download/quarantine_linux.cc",
-     ]
+-    ]
    }
  
+   if (!is_win) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.27 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Wed Jan  4 21:04:13 2017
-+++ chrome/browser/ui/webui/options/browser_options_handler.cc	Thu Jan  5 08:25:35 2017
-@@ -564,7 +564,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.28 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Thu Mar  9 21:04:29 2017
++++ chrome/browser/ui/webui/options/browser_options_handler.cc	Fri Mar 10 07:46:20 2017
+@@ -565,7 +565,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
      { "syncButtonTextStart", IDS_SYNC_SETUP_BUTTON_LABEL },
  #endif  // defined(OS_CHROMEOS)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.2
      { "showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS },
      { "themesNativeButton", IDS_THEMES_GTK_BUTTON },
      { "themesSetClassic", IDS_THEMES_SET_CLASSIC },
-@@ -813,7 +813,7 @@ void BrowserOptionsHandler::RegisterMessages() {
+@@ -814,7 +814,7 @@ void BrowserOptionsHandler::RegisterMessages() {
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.12 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/chrome_browser_main.cc.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/chrome_browser_main.cc	Tue Jan  3 20:29:55 2017
-@@ -181,7 +181,7 @@
- #include "chrome/browser/feedback/feedback_profile_observer.h"
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.13 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/chrome_browser_main.cc	Fri Mar 10 07:46:17 2017
+@@ -180,7 +180,7 @@
+ #include "chrome/browser/lifetime/application_lifetime.h"
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.12 2017/01/26 17:08:25
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -785,7 +785,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
+@@ -759,7 +759,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
    field_trial_synchronizer_ = new FieldTrialSynchronizer();
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.12 2017/01/26 17:08:25
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
  
-@@ -1194,7 +1194,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1173,7 +1173,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.12 2017/01/26 17:08:25
    // Set the product channel for crash reports.
    base::debug::SetCrashKeyValue(crash_keys::kChannel,
                                  chrome::GetChannelString());
-@@ -1392,7 +1392,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+@@ -1356,7 +1356,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

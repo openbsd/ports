@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_cpp,v 1.2 2016/12/10 15:35:25 robert Exp $
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig.port	Sat Dec  3 14:12:39 2016
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	Sat Dec  3 14:13:17 2016
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_cpp,v 1.3 2017/03/14 12:18:54 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig.port	Thu Mar  9 21:04:45 2017
++++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	Fri Mar 10 07:46:24 2017
 @@ -99,7 +99,7 @@ FontPlatformData::FontPlatformData(const FontPlatformD
        m_syntheticBold(source.m_syntheticBold),
        m_syntheticItalic(source.m_syntheticItalic),
@@ -18,7 +18,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_cpp,v 
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
        m_style(FontRenderStyle::querySystem(m_family,
                                             m_textSize,
-                                            m_typeface->style())),
+                                            m_typeface->fontStyle())),
 @@ -155,7 +155,7 @@ FontPlatformData::FontPlatformData(sk_sp<SkTypeface> t
        m_syntheticBold(syntheticBold),
        m_syntheticItalic(syntheticItalic),
@@ -27,7 +27,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontPlatformData_cpp,v 
 +#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
        m_style(FontRenderStyle::querySystem(m_family,
                                             m_textSize,
-                                            m_typeface->style())),
+                                            m_typeface->fontStyle())),
 @@ -200,7 +200,7 @@ const FontPlatformData& FontPlatformData::operator=(
    m_syntheticItalic = other.m_syntheticItalic;
    m_harfBuzzFace = nullptr;

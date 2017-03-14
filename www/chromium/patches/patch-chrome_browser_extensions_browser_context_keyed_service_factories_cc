@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.4 2017/01/26 17:08:25 robert Exp $
---- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/extensions/browser_context_keyed_service_factories.cc	Tue Jan  3 20:29:55 2017
-@@ -62,7 +62,7 @@
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.5 2017/03/14 12:18:53 robert Exp $
+--- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig.port	Thu Mar  9 21:04:28 2017
++++ chrome/browser/extensions/browser_context_keyed_service_factories.cc	Fri Mar 10 07:46:19 2017
+@@ -63,7 +63,7 @@
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #include "chrome/browser/extensions/api/log_private/log_private_api.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factorie
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #endif
  
-@@ -110,7 +110,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -111,7 +111,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
  #if defined(OS_CHROMEOS)
    extensions::InputImeAPI::GetFactoryInstance();
    extensions::InputMethodAPI::GetFactoryInstance();
