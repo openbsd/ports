@@ -1,0 +1,14 @@
+$OpenBSD: patch-virtualjaguar_pro,v 1.1 2017/03/14 10:43:23 fcambus Exp $
+--- virtualjaguar.pro.orig	Fri Oct 10 15:54:48 2014
++++ virtualjaguar.pro	Mon Mar 13 17:25:21 2017
+@@ -47,8 +47,8 @@ macx  { ICON = res/vj-icon.icns }
+ # NOTE: May have to put -Wall back in, but only on non-release cycles. It can
+ #       cause problems if you're not careful. (Can do this via command line in
+ #       qmake)
+-QMAKE_CFLAGS += `$(CROSS)sdl-config --cflags`
+-QMAKE_CXXFLAGS += `$(CROSS)sdl-config --cflags`
++QMAKE_CFLAGS = `$(CROSS)sdl-config --cflags`
++QMAKE_CXXFLAGS = `$(CROSS)sdl-config --cflags`
+ 
+ # Need to add libcdio stuffola (checking/including)...
+ 

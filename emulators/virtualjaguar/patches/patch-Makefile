@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2017/03/14 10:43:23 fcambus Exp $
+--- Makefile.orig	Fri Oct 10 15:54:48 2014
++++ Makefile	Mon Mar 13 17:25:21 2017
+@@ -24,8 +24,8 @@ QMAKE_EXTRA := -spec macx-g++
+ endif
+ 
+ # Set basic flags, these can be overridden from the environment
+-CFLAGS = -O2
+-CXXFLAGS = -O2
++CFLAGS ?= -O2
++CXXFLAGS ?= -O2
+ 
+ # Add CPPFLAGS
+ CFLAGS += $(CPPFLAGS)
