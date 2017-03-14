@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/14 12:29:06 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/03/14 06:27:23 jca Exp $
 
 COMMENT =		mobile shell
 
 DISTNAME =		mosh-1.2.6
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -23,9 +23,8 @@ LIB_DEPENDS =		devel/protobuf
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-# --enable-hardening forces PIE on, which doesn't work on all arches
-# pick only ld(1) -z now to match upstream
-CONFIGURE_ARGS =	--disable-hardening
-CONFIGURE_ENV =		LDFLAGS="-Wl,-z,now ${LDFLAGS}"
+# don't force PIE which doesn't work on all arches
+CONFIGURE_ENV =		ax_cv_check_cflags__Werror___fPIE=no \
+			ax_cv_check_cxxflags__Werror___fPIE=no
 
 .include <bsd.port.mk>
