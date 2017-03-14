@@ -1,0 +1,9 @@
+$OpenBSD: patch-config_mk,v 1.1 2017/03/14 01:35:52 jca Exp $
+--- config.mk.orig	Wed Mar  8 13:40:37 2017
++++ config.mk	Wed Mar  8 13:40:54 2017
+@@ -8,4 +8,4 @@ VERSION = 1.5
+ 
+ # compiler
+ CC	    = cc
+-CFLAGS	    = -std=c99 -pedantic -Wall -Wextra -g
++CFLAGS	    = -std=c99 -pedantic -Wall -Wextra ${PORTS_CFLAGS}
