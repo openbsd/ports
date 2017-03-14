@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/02/18 17:32:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2017/03/14 12:05:40 ajacoutot Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
@@ -8,7 +8,7 @@ V=		3.8.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	5
+REVISION=	6
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -25,7 +25,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += dbus-1 expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed
-WANTLIB += idn2 jpeg m mspack nettle p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += idn idn2 jpeg m mspack nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndio sqlite3 stdc++ tasn1 tiff unistring usbhid wx_base
 WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
@@ -39,12 +39,12 @@ MODGCC4_LANGS=	c++
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
+		devel/libidn \
 		security/gnutls \
 		x11/dbus \
 		x11/wxWidgets>=2.8.6
 
 BUILD_DEPENDS=	devel/cppunit \
-		devel/libidn \
 		devel/xdg-utils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
