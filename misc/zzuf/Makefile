@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/04 10:56:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/03/14 02:36:36 jca Exp $
 
-BROKEN-arm=		__sync_lock_test_and_set_4 in zzuf_mutex_lock
 BROKEN-hppa=		__sync_lock_test_and_set_4 in zzuf_mutex_lock
 
 COMMENT=		transparent application input fuzzer
@@ -18,6 +17,9 @@ MASTER_SITES=		https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m
+
+MODULES=		gcc4
+MODGCC4_ARCHS=		arm
 
 CONFIGURE_STYLE=	gnu
 # Necessary?
