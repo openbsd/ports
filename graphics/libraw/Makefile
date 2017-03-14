@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2017/03/14 02:57:27 jca Exp $
 
-BROKEN-arm =		undefined reference to __sync_fetch_and_add_4
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 
 COMMENT =		library for reading RAW files
@@ -21,6 +20,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c jasper jpeg lcms2 m pthread stdc++
 
 MASTER_SITES =		http://www.libraw.org/data/
+
+MODULES =		gcc4
+# for atomic builtins (__sync_fetch_and_add_4)
+MODGCC4_ARCHS =		arm
+MODGCC4_LANGS =		c++
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
