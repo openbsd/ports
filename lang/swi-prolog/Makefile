@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/03/04 21:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2017/03/14 12:22:41 jca Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -25,7 +25,7 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
 WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline ssl
 WANTLIB += z
 
-MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
+MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
 			https://distfiles.nl/
 
 CONFIGURE_STYLE =		gnu
