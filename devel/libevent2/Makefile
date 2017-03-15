@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/03/15 08:54:50 sthen Exp $
 
 COMMENT=	event notification library
 
@@ -17,7 +17,7 @@ SHARED_LIBS+=	event_pthreads  0.0	# 6.9
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=levent/}
+MASTER_SITES=	https://github.com/libevent/libevent/releases/download/release-$V-stable/
 
 WANTLIB=	crypto pthread ssl
 
