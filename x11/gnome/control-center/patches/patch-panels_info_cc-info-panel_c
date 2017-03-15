@@ -1,0 +1,27 @@
+$OpenBSD: patch-panels_info_cc-info-panel_c,v 1.1 2017/03/15 08:21:51 ajacoutot Exp $
+
+From 4825881b129bdde0eaa5419ece6198ebda420825 Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw@src.gnome.org>
+Date: Thu, 10 Nov 2016 22:27:11 +0800
+Subject: info: Fix build when Wayland is disabled
+
+--- panels/info/cc-info-panel.c.orig	Mon Mar 13 23:56:23 2017
++++ panels/info/cc-info-panel.c	Wed Mar 15 09:05:05 2017
+@@ -351,8 +351,15 @@ get_graphics_data (void)
+   display = gdk_display_get_default ();
+ 
+ #if defined(GDK_WINDOWING_X11) || defined(GDK_WINDOWING_WAYLAND)
+-  if (GDK_IS_X11_DISPLAY (display) ||
+-      GDK_IS_WAYLAND_DISPLAY (display))
++  gboolean x11_or_wayland = FALSE;
++#ifdef GDK_WINDOWING_X11
++  x11_or_wayland = GDK_IS_X11_DISPLAY (display);
++#endif
++#ifdef GDK_WINDOWING_WAYLAND
++  x11_or_wayland = x11_or_wayland || GDK_IS_WAYLAND_DISPLAY (display);
++#endif
++
++  if (x11_or_wayland)
+     {
+       char *discrete_renderer = NULL;
+       char *renderer;

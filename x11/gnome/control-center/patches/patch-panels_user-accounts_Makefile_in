@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.4 2016/11/01 07:12:57 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.5 2017/03/15 08:21:51 ajacoutot Exp $
 
 XXX cook a better fix + push upstream
 
---- panels/user-accounts/Makefile.in.orig	Tue Oct 11 14:14:08 2016
-+++ panels/user-accounts/Makefile.in	Mon Oct 31 11:40:20 2016
-@@ -561,7 +561,7 @@ libuser_accounts_la_SOURCES = \
+--- panels/user-accounts/Makefile.in.orig	Tue Mar 14 10:48:34 2017
++++ panels/user-accounts/Makefile.in	Tue Mar 14 13:09:38 2017
+@@ -563,7 +563,7 @@ libuser_accounts_la_SOURCES = \
  	$(BUILT_SOURCES)
  
  libuser_accounts_la_LIBADD = $(PANEL_LIBS) $(USER_ACCOUNTS_PANEL_LIBS) \
