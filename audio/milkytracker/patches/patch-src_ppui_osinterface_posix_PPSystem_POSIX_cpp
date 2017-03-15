@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ppui_osinterface_posix_PPSystem_POSIX_cpp,v 1.1 2017/03/15 22:23:33 fcambus Exp $
+--- src/ppui/osinterface/posix/PPSystem_POSIX.cpp.orig	Tue Mar 14 12:01:06 2017
++++ src/ppui/osinterface/posix/PPSystem_POSIX.cpp	Tue Mar 14 12:01:22 2017
+@@ -66,7 +66,6 @@ const SYSCHAR* System::getTempFileName()
+ 	// load, export and decompressor functions to accept a file handle (XMFILE)
+ 	// instead of a file name.
+ #pragma clang diagnostic push
+-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ 	if ((tmpnam(buffer) == NULL))
+ #pragma clang diagnostic pop
+ 	{
