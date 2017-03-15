@@ -1,27 +1,50 @@
-$OpenBSD: patch-src_pdfgrep_cc,v 1.1 2016/01/15 19:42:40 sthen Exp $
---- src/pdfgrep.cc.orig	Wed Sep 16 21:06:49 2015
-+++ src/pdfgrep.cc	Fri Jan 15 11:39:19 2016
-@@ -569,6 +569,11 @@ void handle_poppler_errors(const std::string &msg, voi
- 
+$OpenBSD: patch-src_pdfgrep_cc,v 1.2 2017/03/15 11:56:17 tb Exp $
+
+disable locale::global(locale("")) to avoid a segfault in the UTF-8 locale.
+--- src/pdfgrep.cc.orig	Sat Mar  4 09:11:53 2017
++++ src/pdfgrep.cc	Tue Mar 14 22:45:49 2017
+@@ -423,12 +423,18 @@ static void handle_poppler_errors(const string &msg, v
  int main(int argc, char** argv)
  {
-+	if (pledge("stdio rpath tty", NULL) == -1) {
+ 	Options options;
++
++	if (pledge("stdio rpath wpath cpath tty", NULL) == -1) {
 +		fprintf (stderr, "pdfgrep: pledge\n");
 +		exit (1);
 +	}
 +
- 	init_colors();
+ 	init_colors(options.outconf.colors);
+ 
+ 	// Set locale to user-preference. If this locale is an UTF-8 locale, the
+ 	// regex-functions regcomp/regexec become unicode aware, which means
+ 	// e.g. that '.' will match a unicode character, not a single byte.
+-	locale::global(locale(""));
++	// locale::global(locale(""));
  
  	enum re_engine_type {
-@@ -773,6 +778,11 @@ int main(int argc, char** argv)
- 	} else if (context == -2) {
- 		// on non-terminals, always print the whole line
- 		context = -1;
-+	}
-+
-+	if (pledge("stdio rpath", NULL) == -1) {
+ 		RE_POSIX = 0,
+@@ -649,6 +655,11 @@ int main(int argc, char** argv)
+ 	bool color_tty = isatty(STDOUT_FILENO) && getenv("TERM") &&
+ 		strcmp(getenv("TERM"), "dumb");
+ 
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 +		fprintf (stderr, "pdfgrep: pledge\n");
 +		exit (1);
++	}
++
+ 	options.outconf.color =
+ 		use_colors == COLOR_ALWAYS
+ 		|| (use_colors == COLOR_AUTO && color_tty);
+@@ -689,6 +700,12 @@ int main(int argc, char** argv)
+ 			char *limitstr = getenv("PDFGREP_CACHE_LIMIT");
+ 			unsigned int limit = limitstr ? strtoul(limitstr, NULL, 10) : 200;
+ 			limit_cachesize(options.cache_directory.c_str(), limit);
++		}
++	}
++	if (!options.use_cache) {
++		if (pledge("stdio rpath", NULL) == -1) {
++			fprintf (stderr, "pdfgrep: pledge\n");
++			exit (1);
+ 		}
  	}
  
- 	if (excludes_empty(includes))
