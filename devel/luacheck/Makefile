@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/13 00:20:00 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2017/03/15 10:27:42 jsg Exp $
 
 COMMENT=	tool for linting and static analysis of Lua code
 CATEGORIES=	devel
 
 GH_ACCOUNT=	mpeterv
 GH_PROJECT=	luacheck
-GH_TAGNAME=	0.18.0
+GH_TAGNAME=	0.19.1
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 

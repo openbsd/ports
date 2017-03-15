@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/01/13 00:20:00 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/03/15 10:27:42 jsg Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/
@@ -57,6 +57,7 @@ share/doc/luacheck/warnings.html
 share/lua/${MODLUA_VERSION}/luacheck/
 share/lua/${MODLUA_VERSION}/luacheck/analyze.lua
 share/lua/${MODLUA_VERSION}/luacheck/argparse.lua
+share/lua/${MODLUA_VERSION}/luacheck/builtin_standards.lua
 share/lua/${MODLUA_VERSION}/luacheck/cache.lua
 share/lua/${MODLUA_VERSION}/luacheck/check.lua
 share/lua/${MODLUA_VERSION}/luacheck/config.lua
@@ -76,7 +77,7 @@ share/lua/${MODLUA_VERSION}/luacheck/multithreading.lua
 share/lua/${MODLUA_VERSION}/luacheck/options.lua
 share/lua/${MODLUA_VERSION}/luacheck/parser.lua
 share/lua/${MODLUA_VERSION}/luacheck/reachability.lua
-share/lua/${MODLUA_VERSION}/luacheck/stds.lua
+share/lua/${MODLUA_VERSION}/luacheck/standards.lua
 share/lua/${MODLUA_VERSION}/luacheck/utils.lua
 share/lua/${MODLUA_VERSION}/luacheck/version.lua
 share/lua/${MODLUA_VERSION}/luacheck/whitespace.lua
