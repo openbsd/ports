@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2015/07/02 00:10:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2017/03/15 09:11:30 jca Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-4.14.10
 
 DPB_PROPERTIES =	parallel
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
 SHARED_LIBS =	akonadi-filestore	53.0 # 4.7
 #SHARED_LIBS +=	akonadi-xml		51.0 # 4.7

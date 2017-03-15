@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2016/12/25 16:33:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.77 2017/03/15 09:11:30 jca Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -16,7 +16,7 @@ PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
 
 DPB_PROPERTIES =	parallel tag:kde4
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
 SHARED_LIBS =	kde3support          50.2      # .4.0
 SHARED_LIBS +=	kdecore              50.2      # .5.0

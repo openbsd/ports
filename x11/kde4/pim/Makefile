@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/12/25 16:29:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2017/03/15 09:11:30 jca Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
@@ -6,7 +6,7 @@ PKGSPEC =	kdepim-${MODKDE4_SPEC}
 REVISION =	2
 DPB_PROPERTIES +=	parallel
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
 SHARED_LIBS =	akonadi_next			54.0
 SHARED_LIBS +=	akregatorinterfaces		54.0

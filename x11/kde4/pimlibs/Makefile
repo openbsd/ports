@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2015/07/02 00:10:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2017/03/15 09:11:30 jca Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-4.14.10
 
 DPB_PROPERTIES =	parallel
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
 SHARED_LIBS =	kabc                 54.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       54.0      # .4.0
