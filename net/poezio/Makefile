@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/03 19:24:43 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2017/03/15 00:25:59 danj Exp $
 
 COMMENT =		console XMPP client
 
-MODPY_EGG_VERSION =	0.10
+MODPY_EGG_VERSION =	0.11
 DISTNAME =		poezio-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		0
 
 HOMEPAGE =		https://poez.io/
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
@@ -35,6 +34,6 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR}
 
 do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m py.test -v test/
+	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest -v test/
 
 .include <bsd.port.mk>
