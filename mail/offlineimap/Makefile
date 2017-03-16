@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2017/01/29 20:02:41 danj Exp $
+# $OpenBSD: Makefile,v 1.42 2017/03/16 11:55:03 danj Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION = 7.0.13
+MODPY_EGG_VERSION = 7.0.14
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
