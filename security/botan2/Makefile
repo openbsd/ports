@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/16 12:32:16 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		bz2 c m lzma pthread z
 
-MASTER_SITES =		https://botan.randombit.net/releases/
+MASTER_SITES =		${HOMEPAGE}releases/
 
 SUPDISTFILES =		${DISTFILES}.asc
 EXTRACT_SUFX =		.tgz
@@ -40,8 +40,8 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--destdir=${DESTDIR}${PREFIX} \
 			--distribution-info="`uname -sr`" \
 			--with-bzip2 \
-			--with-zlib \
 			--with-lzma \
+			--with-zlib \
 			--without-sphinx
 
 SUBST_VARS =		CXX CXXFLAGS

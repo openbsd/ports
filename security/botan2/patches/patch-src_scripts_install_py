@@ -1,4 +1,14 @@
-$OpenBSD: patch-src_scripts_install_py,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+$OpenBSD: patch-src_scripts_install_py,v 1.2 2017/03/16 12:32:16 bluhm Exp $
+
+commit 6eb7588d45b7b793b11f67788a2c27eeb0d7796e
+Author: Alexander Bluhm <alexander.bluhm@gmx.net>
+Date:   Mon Mar 13 16:23:58 2017 +0100
+
+    OpenBSD does not have 3 digit soname and library symlinks.
+    
+    Set library name for openbsd to libbotan-2.so.0.0 and do not install
+    symlinks.
+
 --- src/scripts/install.py.orig	Tue Jan 10 04:21:31 2017
 +++ src/scripts/install.py	Fri Mar 10 01:54:24 2017
 @@ -171,14 +171,14 @@ def main(args = None):
