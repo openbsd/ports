@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/03/14 15:15:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2017/03/16 12:34:55 bluhm Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
-PORTROACH =	limit:^1\.
+PORTROACH =	limit:^1\.10\.
 VERSION =	1.10.15
 REVISION =	0
 DISTNAME =	Botan-${VERSION}
