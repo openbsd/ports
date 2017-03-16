@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/01/17 14:04:15 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/03/16 15:44:06 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
@@ -15,8 +15,8 @@ include/varnish/cache/cache_backend.h
 include/varnish/cache/cache_director.h
 include/varnish/cache/cache_filter.h
 include/varnish/common/
+include/varnish/common/com_params.h
 include/varnish/common/common.h
-include/varnish/common/params.h
 include/varnish/miniobj.h
 include/varnish/tbl/
 include/varnish/tbl/acct_fields_bereq.h
@@ -61,6 +61,7 @@ include/varnish/tbl/vsc_levels.h
 include/varnish/tbl/vsc_types.h
 include/varnish/tbl/vsl_tags.h
 include/varnish/tbl/vsl_tags_http.h
+include/varnish/tbl/waiters.h
 include/varnish/vapi/
 include/varnish/vapi/vapi_options.h
 include/varnish/vapi/voptget.h
@@ -95,10 +96,6 @@ lib/libvarnishapi.la
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
 lib/pkgconfig/varnishapi.pc
 lib/varnish/
-lib/varnish/libvarnish.so
-lib/varnish/libvarnishcompat.so
-lib/varnish/libvcc.so
-lib/varnish/libvgz.so
 lib/varnish/vmods/
 lib/varnish/vmods/libvmod_directors.so
 lib/varnish/vmods/libvmod_std.so
