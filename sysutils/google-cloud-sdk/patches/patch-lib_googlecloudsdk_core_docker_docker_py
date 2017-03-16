@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.8 2016/10/27 08:53:07 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.9 2017/03/16 16:21:04 ajacoutot Exp $
 --- lib/googlecloudsdk/core/docker/docker.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/docker/docker.py	Thu Oct 27 10:40:50 2016
-@@ -35,7 +35,7 @@ from googlecloudsdk.core.util import platforms
- 
++++ lib/googlecloudsdk/core/docker/docker.py	Thu Mar 16 17:06:52 2017
+@@ -37,7 +37,7 @@ from googlecloudsdk.core.util import platforms
  _USERNAME = 'oauth2accesstoken'
  _EMAIL = 'not@val.id'
+ _EMAIL_FLAG_DEPRECATED_VERSION = distutils_version.LooseVersion('1.11.0')
 -_DOCKER_NOT_FOUND_ERROR = 'Docker is not installed.'
 +_DOCKER_NOT_FOUND_ERROR = 'Docker is not available on OpenBSD.'
  _CREDENTIAL_STORE_KEY = 'credsStore'
