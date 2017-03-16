@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/07/11 08:19:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/03/16 15:31:09 giovanni Exp $
 
 COMMENT=		determine file types
 
-DISTNAME=		File-MimeInfo-0.27
-REVISION=		0
+DISTNAME=		File-MimeInfo-0.28
 CATEGORIES=		devel
 
 # perl
@@ -17,5 +16,6 @@ RUN_DEPENDS=		devel/p5-File-BaseDir \
 			misc/shared-mime-info
 TEST_DEPENDS=		devel/desktop-file-utils \
 			devel/p5-File-DesktopEntry
+MAKE_ENV=		TEST_POD=Yes
 
 .include <bsd.port.mk>
