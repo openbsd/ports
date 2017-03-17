@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.73 2017/01/24 23:47:00 phessler Exp $
+# $OpenBSD: Makefile,v 1.74 2017/03/17 08:33:16 pea Exp $
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.16.6
+DISTNAME=	gajim-0.16.7
 CATEGORIES=	net x11
 
 HOMEPAGE=	https://www.gajim.org/
@@ -32,6 +32,7 @@ COMMON_DEPENDS=	databases/py-sqlite2 \
 		net/py-nbxmpp \
 		security/py-crypto \
 		security/py-openssl \
+		security/py-gnupg \
 		textproc/gtkspell \
 		x11/dbus-python \
 		x11/py-gtk2
