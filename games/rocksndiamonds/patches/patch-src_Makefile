@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.8 2017/01/04 20:59:16 benoit Exp $
---- src/Makefile.orig	Fri Apr 15 02:47:56 2016
-+++ src/Makefile	Wed Jan  4 15:09:08 2017
-@@ -122,8 +122,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
+$OpenBSD: patch-src_Makefile,v 1.9 2017/03/17 08:56:31 benoit Exp $
+--- src/Makefile.orig	Wed Mar 15 21:15:06 2017
++++ src/Makefile	Fri Mar 17 09:36:46 2017
+@@ -117,8 +117,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
  OPTIONS = -O3 -Wall
  endif
  
