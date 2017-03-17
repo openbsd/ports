@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2017/01/31 07:02:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2017/03/17 07:54:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -42,6 +42,7 @@
      SUBDIR += tdl
      SUBDIR += thinkingrock
      SUBDIR += tryton
+     SUBDIR += vdirsyncer
      SUBDIR += vit
      SUBDIR += vym
      SUBDIR += when
