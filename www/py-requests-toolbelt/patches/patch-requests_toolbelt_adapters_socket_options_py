@@ -1,0 +1,25 @@
+$OpenBSD: patch-requests_toolbelt_adapters_socket_options_py,v 1.1.1.1 2017/03/17 07:48:46 sthen Exp $
+--- requests_toolbelt/adapters/socket_options.py.orig	Fri Mar 17 07:42:45 2017
++++ requests_toolbelt/adapters/socket_options.py	Fri Mar 17 07:43:47 2017
+@@ -104,14 +104,19 @@ class TCPKeepAliveAdapter(SocketOptionsAdapter):
+         count = kwargs.pop('count', 5)
+         socket_options = socket_options + [
+             (socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1),
+-            (socket.IPPROTO_TCP, socket.TCP_KEEPINTVL, interval),
+-            (socket.IPPROTO_TCP, socket.TCP_KEEPCNT, count),
+         ]
+ 
+         # NOTE(Ian): Apparently OSX does not have this constant defined, so we
+         # set it conditionally.
+         if getattr(socket, 'TCP_KEEPIDLE', None) is not None:
+             socket_options += [(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE, idle)]
++
++	# ...same for OpenBSD and these two:
++        if getattr(socket, 'TCP_KEEPINTVL', None) is not None:
++            socket_options += [(socket.IPPROTO_TCP, socket.TCP_KEEPINTVL, idle)]
++
++        if getattr(socket, 'TCP_KEEPCNT', None) is not None:
++            socket_options += [(socket.IPPROTO_TCP, socket.TCP_KEEPCNT, idle)]
+ 
+         super(TCPKeepAliveAdapter, self).__init__(
+             socket_options=socket_options, **kwargs
