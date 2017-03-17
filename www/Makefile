@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.816 2017/03/17 07:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.817 2017/03/17 17:46:22 edd Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -38,8 +38,6 @@
      SUBDIR += dokuwiki
      SUBDIR += drupal7
      SUBDIR += drush
-     SUBDIR += elinks
-     SUBDIR += elinks,js
      SUBDIR += epiphany
      SUBDIR += erl-mochiweb
      SUBDIR += fcgi
