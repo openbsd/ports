@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/19 12:52:27 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2017/03/17 22:13:40 danj Exp $
 
 COMMENT=	Twitter script for irssi
 
 V=		2.6.3
 DISTNAME=	twirssi-$V
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.twirssi.com/
@@ -15,7 +16,8 @@ MASTER_SITES=	http://nerd.hu/distfiles/
 EXTRACT_ONLY=
 EXTRACT_SUFX=	.pl
 
-RUN_DEPENDS=	net/irssi \
+RUN_DEPENDS=	converters/p5-JSON-Any \
+		net/irssi \
 		net/p5-Net-Twitter \
 		www/p5-LWP-Protocol-https \
 		www/p5-WWW-Shorten
