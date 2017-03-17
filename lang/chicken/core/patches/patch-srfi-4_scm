@@ -1,0 +1,99 @@
+$OpenBSD: patch-srfi-4_scm,v 1.3 2017/03/17 23:40:47 juanfra Exp $
+Backport of security fix:
+  - Remove unchecked malloc() call in SRFI-4 constructors when
+    allocating in non-GC memory, resulting in potential 1-word
+    buffer overrun and/or segfault.
+
+http://lists.gnu.org/archive/html/chicken-announce/2017-03/msg00000.html
+
+--- srfi-4.scm.orig	Thu Mar 16 06:49:38 2017
++++ srfi-4.scm	Thu Mar 16 06:57:14 2017
+@@ -256,16 +256,21 @@ EOF
+ ;;; Basic constructors:
+ 
+ (let* ([ext-alloc
+-	(foreign-lambda* scheme-object ([int bytes])
+-	  "C_word *buf = (C_word *)C_malloc(bytes + sizeof(C_header));"
+-	  "if(buf == NULL) C_return(C_SCHEME_FALSE);"
++	(foreign-lambda* scheme-object ([size_t bytes])
++          "C_word *buf;"
++          "if (bytes > C_HEADER_SIZE_MASK) C_return(C_SCHEME_FALSE);"
++          "buf = (C_word *)C_malloc(bytes + sizeof(C_header));"
+ 	  "C_block_header_init(buf, C_make_header(C_BYTEVECTOR_TYPE, bytes));"
++          "if(buf == NULL) C_return(C_SCHEME_FALSE);"
++          "C_block_header_init(buf, C_make_header(C_BYTEVECTOR_TYPE, bytes));"
+ 	  "C_return(buf);") ]
+        [ext-free
+ 	(foreign-lambda* void ([scheme-object bv])
+ 	  "C_free((void *)C_block_item(bv, 1));") ]
+        [alloc
+ 	(lambda (loc len ext?)
++         (##sys#check-exact len loc)
++         (when (fx< len 0) (##sys#error loc "size is negative" len))	
+ 	  (if ext?
+ 	      (let ([bv (ext-alloc len)])
+ 		(or bv
+@@ -282,7 +287,6 @@ EOF
+ 
+   (set! make-u8vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-u8vector)
+       (let ((v (##sys#make-structure 'u8vector (alloc 'make-u8vector len ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -295,7 +299,6 @@ EOF
+ 
+   (set! make-s8vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-s8vector)
+       (let ((v (##sys#make-structure 's8vector (alloc 'make-s8vector len ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -308,7 +311,6 @@ EOF
+ 
+   (set! make-u16vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-u16vector)
+       (let ((v (##sys#make-structure 'u16vector (alloc 'make-u16vector (##core#inline "C_fixnum_shift_left" len 1) ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -321,7 +323,6 @@ EOF
+ 
+   (set! make-s16vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-s16vector)
+       (let ((v (##sys#make-structure 's16vector (alloc 'make-s16vector (##core#inline "C_fixnum_shift_left" len 1) ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -334,7 +335,6 @@ EOF
+ 
+   (set! make-u32vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-u32vector)
+       (let ((v (##sys#make-structure 'u32vector (alloc 'make-u32vector (##core#inline "C_fixnum_shift_left" len 2) ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -347,7 +347,6 @@ EOF
+ 
+   (set! make-s32vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-s32vector)
+       (let ((v (##sys#make-structure 's32vector (alloc 'make-s32vector (##core#inline "C_fixnum_shift_left" len 2) ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -360,7 +359,6 @@ EOF
+ 
+   (set! make-f32vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-f32vector)
+       (let ((v (##sys#make-structure 'f32vector (alloc 'make-f32vector (##core#inline "C_fixnum_shift_left" len 2) ext?))))
+ 	(when (and ext? fin?) (set-finalizer! v ext-free))
+ 	(if (not init)
+@@ -375,7 +373,6 @@ EOF
+ 
+   (set! make-f64vector
+     (lambda (len #!optional (init #f)  (ext? #f) (fin? #t))
+-      (##sys#check-exact len 'make-f64vector)
+       (let ((v (##sys#make-structure
+ 		'f64vector
+ 		(alloc 'make-f64vector (##core#inline "C_fixnum_shift_left" len 3) ext?))))
