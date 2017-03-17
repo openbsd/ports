@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.7 2015/12/30 09:59:31 ajacoutot Exp $
---- docs/conf/httpd.conf.in.orig	Tue Nov  3 12:58:58 2015
-+++ docs/conf/httpd.conf.in	Mon Dec 21 13:59:16 2015
+$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.8 2017/03/17 07:36:35 sthen Exp $
+--- docs/conf/httpd.conf.in.orig	Wed Aug 17 00:12:07 2016
++++ docs/conf/httpd.conf.in	Wed Dec 21 11:09:53 2016
 @@ -74,8 +74,8 @@ Listen @@Port@@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.
@@ -12,7 +12,7 @@ $OpenBSD: patch-docs_conf_httpd_conf_in,v 1.7 2015/12/30 09:59:31 ajacoutot Exp 
  
  </IfModule>
  
-@@ -407,3 +407,5 @@ SSLRandomSeed startup builtin
+@@ -416,3 +416,5 @@ SSLRandomSeed startup builtin
  SSLRandomSeed connect builtin
  </IfModule>
  

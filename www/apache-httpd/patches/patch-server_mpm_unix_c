@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_mpm_unix_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
---- server/mpm_unix.c.orig	Thu Feb 20 20:38:49 2014
-+++ server/mpm_unix.c	Sat Jan 10 15:00:07 2015
-@@ -784,18 +784,18 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+$OpenBSD: patch-server_mpm_unix_c,v 1.2 2017/03/17 07:36:35 sthen Exp $
+--- server/mpm_unix.c.orig	Fri Dec  2 11:42:55 2016
++++ server/mpm_unix.c	Wed Dec 21 11:10:24 2016
+@@ -795,7 +795,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
              *exit_status = 1;
              return 1;
          }
@@ -9,7 +9,9 @@ $OpenBSD: patch-server_mpm_unix_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
 +        status = "httpd2 (no pid file) not running";
      }
      else {
-         if (kill(otherpid, 0) == 0) {
+         /* With containerization, httpd may get the same PID at each startup,
+@@ -804,12 +804,12 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+         if (otherpid != getpid() && kill(otherpid, 0) == 0) {
              running = 1;
              status = apr_psprintf(pconf,
 -                                  "httpd (pid %" APR_PID_T_FMT ") already "
@@ -23,7 +25,7 @@ $OpenBSD: patch-server_mpm_unix_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
                                    otherpid);
          }
      }
-@@ -819,7 +819,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+@@ -833,7 +833,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "restart")) {
          if (!running) {
@@ -32,7 +34,7 @@ $OpenBSD: patch-server_mpm_unix_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
          }
          else {
              *exit_status = send_signal(otherpid, SIGHUP);
-@@ -829,7 +829,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+@@ -843,7 +843,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "graceful")) {
          if (!running) {
