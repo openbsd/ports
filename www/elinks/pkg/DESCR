@@ -1,9 +1,0 @@
-ELinks is an advanced and well-established feature-rich text mode web
-(HTTP/FTP/..) browser. ELinks can render both frames and tables, is highly
-customizable and can be extended via Lua or Guile scripts. It is very
-portable and runs on a variety of platforms.
-
-Flavors:
-        js         - build with JavaScript support
-        lua        - build with Lua support
-        no_x11     - build without X11 support
