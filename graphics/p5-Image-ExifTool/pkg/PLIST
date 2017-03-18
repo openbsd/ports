@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2016/06/27 09:05:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2017/03/18 10:12:45 benoit Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -16,6 +16,7 @@ ${P5SITE}/Image/ExifTool/ASF.pm
 ${P5SITE}/Image/ExifTool/Apple.pm
 ${P5SITE}/Image/ExifTool/Audible.pm
 ${P5SITE}/Image/ExifTool/BMP.pm
+${P5SITE}/Image/ExifTool/BPG.pm
 ${P5SITE}/Image/ExifTool/BZZ.pm
 ${P5SITE}/Image/ExifTool/BigTIFF.pm
 ${P5SITE}/Image/ExifTool/BuildTagLookup.pm
@@ -58,6 +59,7 @@ ${P5SITE}/Image/ExifTool/Charset/Thai.pm
 ${P5SITE}/Image/ExifTool/Charset/Turkish.pm
 ${P5SITE}/Image/ExifTool/Charset/Vietnam.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
+${P5SITE}/Image/ExifTool/DJI.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
 ${P5SITE}/Image/ExifTool/DPX.pm
 ${P5SITE}/Image/ExifTool/DV.pm
@@ -66,6 +68,7 @@ ${P5SITE}/Image/ExifTool/DjVu.pm
 ${P5SITE}/Image/ExifTool/EXE.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
 ${P5SITE}/Image/ExifTool/FLAC.pm
+${P5SITE}/Image/ExifTool/FLIF.pm
 ${P5SITE}/Image/ExifTool/FLIR.pm
 ${P5SITE}/Image/ExifTool/Fixup.pm
 ${P5SITE}/Image/ExifTool/Flash.pm
@@ -142,6 +145,7 @@ ${P5SITE}/Image/ExifTool/OOXML.pm
 ${P5SITE}/Image/ExifTool/Ogg.pm
 ${P5SITE}/Image/ExifTool/Olympus.pm
 ${P5SITE}/Image/ExifTool/OpenEXR.pm
+${P5SITE}/Image/ExifTool/Opus.pm
 ${P5SITE}/Image/ExifTool/PDF.pm
 ${P5SITE}/Image/ExifTool/PGF.pm
 ${P5SITE}/Image/ExifTool/PICT.pm
@@ -216,6 +220,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Apple.3p
 @man man/man3p/Image::ExifTool::Audible.3p
 @man man/man3p/Image::ExifTool::BMP.3p
+@man man/man3p/Image::ExifTool::BPG.3p
 @man man/man3p/Image::ExifTool::BZZ.3p
 @man man/man3p/Image::ExifTool::BigTIFF.3p
 @man man/man3p/Image::ExifTool::BuildTagLookup.3p
@@ -227,6 +232,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Casio.3p
 @man man/man3p/Image::ExifTool::Charset.3p
 @man man/man3p/Image::ExifTool::DICOM.3p
+@man man/man3p/Image::ExifTool::DJI.3p
 @man man/man3p/Image::ExifTool::DNG.3p
 @man man/man3p/Image::ExifTool::DPX.3p
 @man man/man3p/Image::ExifTool::DV.3p
@@ -235,6 +241,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::EXE.3p
 @man man/man3p/Image::ExifTool::Exif.3p
 @man man/man3p/Image::ExifTool::FLAC.3p
+@man man/man3p/Image::ExifTool::FLIF.3p
 @man man/man3p/Image::ExifTool::FLIR.3p
 @man man/man3p/Image::ExifTool::Fixup.3p
 @man man/man3p/Image::ExifTool::Flash.3p
@@ -310,6 +317,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Ogg.3p
 @man man/man3p/Image::ExifTool::Olympus.3p
 @man man/man3p/Image::ExifTool::OpenEXR.3p
+@man man/man3p/Image::ExifTool::Opus.3p
 @man man/man3p/Image::ExifTool::PDF.3p
 @man man/man3p/Image::ExifTool::PGF.3p
 @man man/man3p/Image::ExifTool::PICT.3p
