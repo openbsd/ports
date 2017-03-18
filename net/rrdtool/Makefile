@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2016/11/29 10:21:59 jca Exp $
+# $OpenBSD: Makefile,v 1.101 2017/03/18 23:06:58 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -7,7 +7,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.6.0
-REVISION-main=	1
+REVISION-main=	2
 REVISION-ruby=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
