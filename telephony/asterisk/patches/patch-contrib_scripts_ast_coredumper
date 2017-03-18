@@ -1,0 +1,21 @@
+$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.1 2017/03/18 21:42:04 sthen Exp $
+--- contrib/scripts/ast_coredumper.orig	Wed Feb 15 09:39:31 2017
++++ contrib/scripts/ast_coredumper	Wed Feb 15 09:46:42 2017
+@@ -203,7 +203,7 @@ declare -a ARGS_COREDUMPS
+ 
+ # For *BSD, the preferred gdb may be in /usr/local/bin so we
+ # need to search for one that supports python.
+-for g in $(which -a gdb) ; do
++for g in $(which -a egdb; which -a gdb) ; do
+ 	result=$($g --batch --ex "python print('hello')" 2>/dev/null || : )
+ 	if [[ "$result" =~ ^hello$ ]] ; then
+ 		GDB=$g
+@@ -217,7 +217,7 @@ if [ -z "$GDB" ] ; then
+ fi
+ 
+ if [ ${#COREDUMPS[@]} -eq 0 ] ; then
+-	COREDUMPS+=(/tmp/core[-._]asterisk!(*.txt) /tmp/core[-._]$(hostname)!(*.txt))
++	COREDUMPS+=(/var/crash/asterisk/*.core /tmp/asterisk.core)
+ fi
+ 
+ DATEFORMAT=${DATEFORMAT:-'date +%FT%H-%M-%S%z'}

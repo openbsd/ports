@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2017/02/14 12:31:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.250 2017/03/18 21:42:04 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
@@ -6,6 +6,7 @@ VER=			13.14.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+REVISION-main=		0
 
 CATEGORIES=		telephony
 

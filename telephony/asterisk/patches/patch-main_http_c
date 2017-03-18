@@ -1,0 +1,42 @@
+$OpenBSD: patch-main_http_c,v 1.3 2017/03/18 21:42:04 sthen Exp $
+
+https://issues.asterisk.org/jira/browse/ASTERISK-26759
+
+From 8b5fe54d9f46d1c2d16f97a727339f281d4139d3 Mon Sep 17 00:00:00 2001
+From: Sean Bright <sean.bright@gmail.com>
+Date: Fri, 17 Mar 2017 21:43:48 -0400
+Subject: [PATCH] http: getprotobyname() is not thread safe
+
+Change-Id: I9dfc785d453053668b97886a8b25d202751d8f15
+
+--- main/http.c.orig	Mon Feb 13 19:51:51 2017
++++ main/http.c	Sat Mar 18 14:52:29 2017
+@@ -1915,8 +1915,7 @@ static int httpd_process_request(struct ast_tcptls_ses
+ static void *httpd_helper_thread(void *data)
+ {
+ 	struct ast_tcptls_session_instance *ser = data;
+-	struct protoent *p;
+-	int flags;
++	int flags = 1;
+ 	int timeout;
+ 
+ 	if (!ser || !ser->f) {
+@@ -1936,16 +1935,8 @@ static void *httpd_helper_thread(void *data)
+ 	 * This is necessary to prevent delays (caused by buffering) as we
+ 	 * write to the socket in bits and pieces.
+ 	 */
+-	p = getprotobyname("tcp");
+-	if (p) {
+-		int arg = 1;
+-
+-		if (setsockopt(ser->fd, p->p_proto, TCP_NODELAY, (char *) &arg, sizeof(arg) ) < 0) {
+-			ast_log(LOG_WARNING, "Failed to set TCP_NODELAY on HTTP connection: %s\n", strerror(errno));
+-			ast_log(LOG_WARNING, "Some HTTP requests may be slow to respond.\n");
+-		}
+-	} else {
+-		ast_log(LOG_WARNING, "Failed to set TCP_NODELAY on HTTP connection, getprotobyname(\"tcp\") failed\n");
++	if (setsockopt(ser->fd, IPPROTO_TCP, TCP_NODELAY, (char *) &flags, sizeof(flags)) < 0) {
++		ast_log(LOG_WARNING, "Failed to set TCP_NODELAY on HTTP connection: %s\n", strerror(errno));
+ 		ast_log(LOG_WARNING, "Some HTTP requests may be slow to respond.\n");
+ 	}
+ 

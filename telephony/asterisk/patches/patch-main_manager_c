@@ -1,0 +1,43 @@
+$OpenBSD: patch-main_manager_c,v 1.1 2017/03/18 21:42:04 sthen Exp $
+
+https://issues.asterisk.org/jira/browse/ASTERISK-26759
+
+From 8b5fe54d9f46d1c2d16f97a727339f281d4139d3 Mon Sep 17 00:00:00 2001
+From: Sean Bright <sean.bright@gmail.com>
+Date: Fri, 17 Mar 2017 21:43:48 -0400
+Subject: [PATCH] http: getprotobyname() is not thread safe
+
+Change-Id: I9dfc785d453053668b97886a8b25d202751d8f15
+
+--- main/manager.c.orig	Mon Feb 13 19:51:51 2017
++++ main/manager.c	Sat Mar 18 14:52:29 2017
+@@ -6581,10 +6581,9 @@ static void *session_do(void *data)
+ 	struct mansession s = {
+ 		.tcptls_session = data,
+ 	};
+-	int flags;
++	int flags = 1;
+ 	int res;
+ 	struct ast_sockaddr ser_remote_address_tmp;
+-	struct protoent *p;
+ 
+ 	if (ast_atomic_fetchadd_int(&unauth_sessions, +1) >= authlimit) {
+ 		fclose(ser->f);
+@@ -6604,14 +6603,9 @@ static void *session_do(void *data)
+ 	/* here we set TCP_NODELAY on the socket to disable Nagle's algorithm.
+ 	 * This is necessary to prevent delays (caused by buffering) as we
+ 	 * write to the socket in bits and pieces. */
+-	p = getprotobyname("tcp");
+-	if (p) {
+-		int arg = 1;
+-		if( setsockopt(ser->fd, p->p_proto, TCP_NODELAY, (char *)&arg, sizeof(arg) ) < 0 ) {
+-			ast_log(LOG_WARNING, "Failed to set manager tcp connection to TCP_NODELAY mode: %s\nSome manager actions may be slow to respond.\n", strerror(errno));
+-		}
+-	} else {
+-		ast_log(LOG_WARNING, "Failed to set manager tcp connection to TCP_NODELAY, getprotobyname(\"tcp\") failed\nSome manager actions may be slow to respond.\n");
++	if (setsockopt(ser->fd, IPPROTO_TCP, TCP_NODELAY, (char *) &flags, sizeof(flags)) < 0) {
++		ast_log(LOG_WARNING, "Failed to set manager tcp connection to TCP_NODELAY mode: %s\n", strerror(errno));
++		ast_log(LOG_WARNING, "Some manager actions may be slow to respond.\n");
+ 	}
+ 
+ 	/* make sure socket is non-blocking */
