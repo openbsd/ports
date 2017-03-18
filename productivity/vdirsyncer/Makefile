@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/17 07:53:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/18 14:44:26 sthen Exp $
 
 COMMENT =		synchronize calendars and contacts
 
@@ -20,6 +20,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+			devel/py-setuptools_scm${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
