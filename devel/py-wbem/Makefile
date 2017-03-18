@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/18 22:35:12 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
-MODPY_EGG_VERSION=	0.8.0_dev
-DISTNAME=		pywbem-0.8.0-dev.r728
-WRKDIST=		${WRKDIR}/pywbem-0.8.0-dev
-PKGNAME=		py-wbem-0.8.0pre728
-EXTRACT_SUFX=		.zip
+MODPY_EGG_VERSION=	0.10.0
+DISTNAME=		pywbem-${MODPY_EGG_VERSION}
+PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		0
 
-HOMEPAGE=		http://sourceforge.net/apps/mediawiki/pywbem/
+HOMEPAGE=		http://pywbem.github.io/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pywbem/}
-
 MODULES=		lang/python
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		security/py-M2Crypto
+MODPY_PI=		Yes
 
-#MODPY_SETUPTOOLS=	Yes
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-pip${MODPY_FLAVOR}
+
+RUN_DEPENDS=		devel/py-ply${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
+			security/py-M2Crypto${MODPY_FLAVOR}
+
+MODPY_SETUPTOOLS=	Yes
 
 .include <bsd.port.mk>
