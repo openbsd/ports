@@ -1,0 +1,32 @@
+$OpenBSD: patch-channels_chan_skinny_c,v 1.4 2017/03/18 21:49:48 sthen Exp $
+
+Same as patch-main_http_c etc; getprotobyname isn't thread-safe.
+
+--- channels/chan_skinny.c.orig	Sat Mar 18 15:56:32 2017
++++ channels/chan_skinny.c	Sat Mar 18 15:57:21 2017
+@@ -7627,7 +7627,7 @@ static void *accept_thread(void *ignore)
+ 	socklen_t sinlen;
+ 	struct skinnysession *s;
+ 	struct protoent *p;
+-	int arg = 1;
++	int flags = 1;
+ 
+ 	for (;;) {
+ 		sinlen = sizeof(sin);
+@@ -7643,12 +7643,10 @@ static void *accept_thread(void *ignore)
+ 			continue;
+ 		}
+ 
+-		p = getprotobyname("tcp");
+-		if(p) {
+-			if( setsockopt(as, p->p_proto, TCP_NODELAY, (char *)&arg, sizeof(arg) ) < 0 ) {
+-				ast_log(LOG_WARNING, "Failed to set Skinny tcp connection to TCP_NODELAY mode: %s\n", strerror(errno));
+-			}
+-		}
++		if (setsockopt(as, IPPROTO_TCP, TCP_NODELAY, (char *) &flags, sizeof(flags)) < 0) {
++			ast_log(LOG_WARNING, "Failed to set Skinny tcp connection to TCP_NODELAY mode: %s\n", strerror(errno));
++ 		}
++
+ 		if (!(s = ast_calloc(1, sizeof(struct skinnysession)))) {
+ 			close(as);
+ 			ast_atomic_fetchadd_int(&unauth_sessions, -1);
