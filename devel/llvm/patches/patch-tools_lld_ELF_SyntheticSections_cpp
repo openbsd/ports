@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.1 2017/03/18 20:49:42 ajacoutot Exp $
+
+Add support for -znodlopen.
+
+--- tools/lld/ELF/SyntheticSections.cpp.orig	Sat Mar 18 15:44:59 2017
++++ tools/lld/ELF/SyntheticSections.cpp	Sat Mar 18 15:45:39 2017
+@@ -816,6 +816,8 @@ template <class ELFT> void DynamicSection<ELFT>::addEn
+     DtFlags |= DF_SYMBOLIC;
+   if (Config->ZNodelete)
+     DtFlags1 |= DF_1_NODELETE;
++  if (Config->ZNodlopen)
++    DtFlags1 |= DF_1_NOOPEN;
+   if (Config->ZNow) {
+     DtFlags |= DF_BIND_NOW;
+     DtFlags1 |= DF_1_NOW;
