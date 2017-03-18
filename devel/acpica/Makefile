@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2016/09/01 15:50:16 pirofti Exp $
+# $OpenBSD: Makefile,v 1.21 2017/03/18 21:37:55 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix2-20160831
-PKGNAME =		${DISTNAME:S/-unix2//}
+DISTNAME =		acpica-unix-20170303
+PKGNAME =		${DISTNAME:S/-unix//}
 
 CATEGORIES =		devel
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://acpica.org/
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
-# BSD-ish (dual license)
+# BSD-ish (or GPLv2 or Intel's own license: triple-licensed)
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c pthread
