@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2017/02/25 20:37:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.197 2017/03/19 21:51:13 fcambus Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -6,6 +6,7 @@
      SUBDIR += antlr3
      SUBDIR += arena
      SUBDIR += bacon
+     SUBDIR += brandy
      SUBDIR += chibi-scheme
      SUBDIR += chicken
      SUBDIR += classpath
