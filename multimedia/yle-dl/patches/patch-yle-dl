@@ -1,7 +1,7 @@
-$OpenBSD: patch-yle-dl,v 1.2 2016/10/13 17:35:55 jca Exp $
---- yle-dl.orig	Thu Oct 13 18:11:06 2016
-+++ yle-dl	Thu Oct 13 18:12:31 2016
-@@ -73,7 +73,7 @@ excludechars_linux = '*/|'
+$OpenBSD: patch-yle-dl,v 1.3 2017/03/19 20:28:07 benoit Exp $
+--- yle-dl.orig	Mon Mar 13 06:36:30 2017
++++ yle-dl	Mon Mar 13 06:37:05 2017
+@@ -74,7 +74,7 @@ excludechars_linux = '*/|'
  excludechars_windows = '\"*/:<>?|'
  excludechars = excludechars_linux
  rtmpdump_binary = None
@@ -10,12 +10,12 @@ $OpenBSD: patch-yle-dl,v 1.2 2016/10/13 17:35:55 jca Exp $
  stream_proxy = None
  
  libcname = ctypes.util.find_library('c')
-@@ -119,7 +119,7 @@ def usage():
-     log(u'                        or "best" or "worst". Not exact on HDS streams.')
-     log(u'--rtmpdump path         Set path to rtmpdump binary')
-     log(u'--adobehds cmd          Set command for executing AdobeHDS.php script')
--    log(u'                        Default: "php /usr/local/share/yle-dl/AdobeHDS.php"')
-+    log(u'                        Default: "${MODPHP_BIN} /usr/local/share/yle-dl/AdobeHDS.php"')
-     log(u'--postprocess cmd       Execute a command cmd after a successful download.')
-     log(u'                        cmd is called with arguments: video, subtitle files')
-     log(u'--proxy uri             Proxy for downloading streams')
+@@ -132,7 +132,7 @@ def usage():
+     log('--rtmpdump path         Set path to rtmpdump binary')
+     log('--adobehds cmd          Set command for executing AdobeHDS.php '
+                                 'script')
+-    log('                        Default: "php '
++    log('                        Default: "${MODPHP_BIN} '
+                                 '/usr/local/share/yle-dl/AdobeHDS.php"')
+     log('--postprocess cmd       Execute a command cmd after a successful '
+                                 'download.')
