@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2016/05/13 12:04:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.48 2017/03/19 15:26:11 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -997,6 +997,67 @@ share/help/hu/empathy/set-custom-status.page
 share/help/hu/empathy/share-desktop.page
 share/help/hu/empathy/status-icons.page
 share/help/hu/empathy/video-call.page
+share/help/id/
+share/help/id/empathy/
+share/help/id/empathy/account-irc.page
+share/help/id/empathy/account-jabber.page
+share/help/id/empathy/accounts-window.page
+share/help/id/empathy/add-account.page
+share/help/id/empathy/add-contact.page
+share/help/id/empathy/audio-call.page
+share/help/id/empathy/audio-video.page
+share/help/id/empathy/change-status.page
+share/help/id/empathy/create-account.page
+share/help/id/empathy/disable-account.page
+share/help/id/empathy/favorite-rooms.page
+share/help/id/empathy/figures/
+share/help/id/empathy/figures/available.png
+share/help/id/empathy/figures/away.png
+share/help/id/empathy/figures/busy.png
+share/help/id/empathy/figures/conf_overview.png
+share/help/id/empathy/figures/croom_overview.png
+share/help/id/empathy/figures/empathy-logo.png
+share/help/id/empathy/figures/empathy-main-window.png
+share/help/id/empathy/figures/gtk-add.png
+share/help/id/empathy/figures/gtk-edit.png
+share/help/id/empathy/figures/gtk-remove.png
+share/help/id/empathy/figures/offline.png
+share/help/id/empathy/figures/video_overview.png
+share/help/id/empathy/geolocation-not-showing.page
+share/help/id/empathy/geolocation-privacy.page
+share/help/id/empathy/geolocation-supported.page
+share/help/id/empathy/geolocation-turn.page
+share/help/id/empathy/geolocation-what-is.page
+share/help/id/empathy/geolocation.page
+share/help/id/empathy/group-conversations.page
+share/help/id/empathy/hide-contacts.page
+share/help/id/empathy/import-account.page
+share/help/id/empathy/index.page
+share/help/id/empathy/introduction.page
+share/help/id/empathy/irc-commands.page
+share/help/id/empathy/irc-join-pwd.page
+share/help/id/empathy/irc-join-room.page
+share/help/id/empathy/irc-manage.page
+share/help/id/empathy/irc-nick-password.page
+share/help/id/empathy/irc-send-file.page
+share/help/id/empathy/irc-start-conversation.page
+share/help/id/empathy/license.page
+share/help/id/empathy/link-contacts.page
+share/help/id/empathy/overview.page
+share/help/id/empathy/prev-conv.page
+share/help/id/empathy/prob-conn-acctdisabled.page
+share/help/id/empathy/prob-conn-auth.page
+share/help/id/empathy/prob-conn-name.page
+share/help/id/empathy/prob-conn-neterror.page
+share/help/id/empathy/prob-conn.page
+share/help/id/empathy/remove-account.page
+share/help/id/empathy/salut-protocol.page
+share/help/id/empathy/send-file.page
+share/help/id/empathy/send-message.page
+share/help/id/empathy/set-custom-status.page
+share/help/id/empathy/share-desktop.page
+share/help/id/empathy/status-icons.page
+share/help/id/empathy/video-call.page
 share/help/it/
 share/help/it/empathy/
 share/help/it/empathy/account-irc.page
@@ -1671,6 +1732,7 @@ share/locale/fi/LC_MESSAGES/empathy-tpaw.mo
 share/locale/fi/LC_MESSAGES/empathy.mo
 share/locale/fr/LC_MESSAGES/empathy-tpaw.mo
 share/locale/fr/LC_MESSAGES/empathy.mo
+share/locale/fur/LC_MESSAGES/empathy-tpaw.mo
 share/locale/fur/LC_MESSAGES/empathy.mo
 share/locale/ga/LC_MESSAGES/empathy-tpaw.mo
 share/locale/ga/LC_MESSAGES/empathy.mo
