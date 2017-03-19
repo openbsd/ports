@@ -1,0 +1,5 @@
+Brandy implements Basic V, the dialect of Basic that Acorn Computers
+supplied with their ranges of desktop computers that use the ARM
+processor such as the Archimedes and RiscPC. Basic V is an extended
+version of BBC Basic. This was the Basic used on the BBC Micro that
+Acorn made during the early 1980s.

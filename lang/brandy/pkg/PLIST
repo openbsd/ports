@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/19 21:49:31 fcambus Exp $
+@bin bin/brandy
+share/doc/brandy/
+share/doc/brandy/basic
+share/doc/brandy/messages
+share/doc/brandy/use
+share/examples/brandy/
+share/examples/brandy/README
+share/examples/brandy/cmdline
+share/examples/brandy/combsort
+share/examples/brandy/cricket
+share/examples/brandy/dow
+share/examples/brandy/graphdemo
+share/examples/brandy/hanoi
+share/examples/brandy/hex
+share/examples/brandy/lands
+share/examples/brandy/pastriang
+share/examples/brandy/sieve
+share/examples/brandy/tekdemo1
+share/examples/brandy/tekdemo2
+share/examples/brandy/teklib
+share/examples/brandy/trees1
+share/examples/brandy/trees2
+share/examples/brandy/tvtime
