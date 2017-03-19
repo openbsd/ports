@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/02/28 16:18:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/19 15:24:55 jasper Exp $
 @bin bin/gnome-recipes
 share/appdata/
 share/appdata/org.gnome.Recipes.appdata.xml
 share/applications/org.gnome.Recipes.desktop
 share/dbus-1/services/org.gnome.Recipes.service
+share/glib-2.0/schemas/org.gnome.Recipes.gschema.xml
 share/gnome-recipes/
 share/gnome-recipes/chefs.db
 share/gnome-recipes/images/
+share/gnome-recipes/images/20160205-beef-goulash-hungarian-recipe-food-lab-18.jpg
 share/gnome-recipes/images/Bastian.jpg
 share/gnome-recipes/images/Sonic.jpg
 share/gnome-recipes/images/adelia.jpg
@@ -72,6 +74,7 @@ share/gnome-recipes/images/hazelnutmilk6.jpg
 share/gnome-recipes/images/hazelnutmilk7.jpg
 share/gnome-recipes/images/indian.jpg
 share/gnome-recipes/images/italian.png
+share/gnome-recipes/images/kaese-bratkartoffeln.jpg
 share/gnome-recipes/images/kiwi-mandarin1.jpg
 share/gnome-recipes/images/kiwi-mandarin2.jpg
 share/gnome-recipes/images/kiwi-mandarin3.jpg
@@ -83,6 +86,9 @@ share/gnome-recipes/images/mantovana.jpg
 share/gnome-recipes/images/mclasen.jpg
 share/gnome-recipes/images/mediterranean.png
 share/gnome-recipes/images/mwleeds.jpg
+share/gnome-recipes/images/nasilemak1.jpg
+share/gnome-recipes/images/nasilemak2.jpg
+share/gnome-recipes/images/nasilemak3.jpg
 share/gnome-recipes/images/non_knead_buns.png
 share/gnome-recipes/images/non_knead_buns1.jpg
 share/gnome-recipes/images/non_knead_buns2.jpg
@@ -125,6 +131,13 @@ share/gnome-recipes/images/salmonrice6.jpg
 share/gnome-recipes/images/salmonrice7.jpg
 share/gnome-recipes/images/salmonrice8.jpg
 share/gnome-recipes/images/salmonrice9.jpg
+share/gnome-recipes/images/sambalikan1.jpg
+share/gnome-recipes/images/sambalikan2.jpg
+share/gnome-recipes/images/sambalikan3.jpg
+share/gnome-recipes/images/sambalikan4.jpg
+share/gnome-recipes/images/sambalikan5.jpg
+share/gnome-recipes/images/sambalikan6.jpg
+share/gnome-recipes/images/sambalikan7.jpg
 share/gnome-recipes/images/spanish_omelet1.jpg
 share/gnome-recipes/images/spanish_omelet2.jpg
 share/gnome-recipes/images/spanish_omelet3.jpg
@@ -172,6 +185,9 @@ share/locale/de/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/de/LC_MESSAGES/gnome-recipes.mo
 share/locale/es/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/es/LC_MESSAGES/gnome-recipes.mo
+share/locale/fi/LC_MESSAGES/gnome-recipes.mo
+share/locale/fur/LC_MESSAGES/gnome-recipes-data.mo
+share/locale/fur/LC_MESSAGES/gnome-recipes.mo
 share/locale/nl/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/nl/LC_MESSAGES/gnome-recipes.mo
 share/locale/pl/LC_MESSAGES/gnome-recipes-data.mo
@@ -180,6 +196,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-recipes.mo
 share/locale/sr/LC_MESSAGES/gnome-recipes-data.mo
 share/locale/sr/LC_MESSAGES/gnome-recipes.mo
+share/locale/sv/LC_MESSAGES/gnome-recipes.mo
 share/mime/packages/org.gnome.Recipes-mime.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
@@ -187,3 +204,5 @@ share/mime/packages/org.gnome.Recipes-mime.xml
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
