@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/03/20 10:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/03/20 22:32:11 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
 DISTNAME=	libsodium-1.0.12
+REVISION=	0
 
 SHARED_LIBS +=	sodium         8.0            # .20.0
 
@@ -14,12 +15,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-
-# sse2 problems on i386 with base gcc
-# ports gcc uses opcodes base gas doesn't support
-# -> use clang with integreated assembler
-MODULES=	lang/clang
-MODCLANG_ARCHS=	i386
 
 WANTLIB += pthread
 
