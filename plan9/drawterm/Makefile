@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/27 11:02:17 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/03/20 10:43:52 jca Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
 COMMENT=	Plan9 terminal emulator
 
-DISTNAME=	drawterm-20161101
+DISTNAME=	drawterm-20170319
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	plan9
