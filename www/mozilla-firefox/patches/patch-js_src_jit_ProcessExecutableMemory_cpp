@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_cpp,v 1.1 2017/03/20 19:35:15 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
+
+--- js/src/jit/ProcessExecutableMemory.cpp.orig	Mon Mar 20 10:53:39 2017
++++ js/src/jit/ProcessExecutableMemory.cpp	Mon Mar 20 10:58:59 2017
+@@ -390,7 +390,12 @@ class PageBitSet
+ #if JS_BITS_PER_WORD == 32
+ static const size_t MaxCodeBytesPerProcess = 128 * 1024 * 1024;
+ #else
++#ifdef __OpenBSD__
++// default datasize is 768Mb on OpenBSD
++static const size_t MaxCodeBytesPerProcess = 128 * 1024 * 1024;
++#else
+ static const size_t MaxCodeBytesPerProcess = 1 * 1024 * 1024 * 1024;
++#endif
+ #endif
+ 
+ // Per-process executable memory allocator. It reserves a block of memory of
