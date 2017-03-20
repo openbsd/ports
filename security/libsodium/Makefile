@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/03/17 08:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/03/20 10:46:23 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
@@ -14,6 +14,12 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
+
+# sse2 problems on i386 with base gcc
+# ports gcc uses opcodes base gas doesn't support
+# -> use clang with integreated assembler
+MODULES=	lang/clang
+MODCLANG_ARCHS=	i386
 
 WANTLIB += pthread
 
