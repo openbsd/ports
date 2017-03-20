@@ -1,0 +1,94 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.22 2017/03/20 08:14:03 ajacoutot Exp $
+
+- ff_video_decoder: turn off that interlaced field hack for VP9
+- ff_video_decoder: less useless flushing
+
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	Sun Mar 19 16:12:17 2017
++++ src/combined/ffmpeg/ff_video_decoder.c	Sun Mar 19 16:18:29 2017
+@@ -110,6 +110,7 @@ struct ff_video_decoder_s {
+   uint8_t           is_direct_rendering_disabled:1;  /* used only to avoid flooding log */
+   uint8_t           cs_convert_init:1;
+   uint8_t           assume_bad_field_picture:1;
++  uint8_t           use_bad_frames:1;
+ 
+   xine_bmiheader    bih;
+   unsigned char    *buf;
+@@ -172,12 +173,14 @@ struct ff_video_decoder_s {
+ 
+   /* Ugly: 2nd guess the reason for flush.
+      ff_flush () should really have an extra argument telling this. */
+-#define STATE_RESET         0
+-#define STATE_DISCONTINUITY 1
+-#define STATE_READING_DATA  2
+-#define STATE_FRAME_SENT    3
+-#define STATE_FLUSHED       4
+-  int               state;
++  enum {
++    STATE_RESET = 0,
++    STATE_DISCONTINUITY,
++    STATE_READING_DATA,
++    STATE_FRAME_SENT,
++    STATE_FLUSHED
++  }                 state;
++  int               decode_attempts;
+ 
+ #ifdef ENABLE_EMMS
+   /* see get_buffer () */
+@@ -896,6 +899,10 @@ static void init_video_codec (ff_video_decoder_t *this
+     thread_count = 1;
+   }
+ 
++  /* Use "bad frames" to fill pts gaps */
++  if (codec_type != BUF_VIDEO_VP9)
++    this->use_bad_frames = 1;
++
+   /* Check for VAAPI HWDEC capability */
+ #ifdef ENABLE_VAAPI
+   if( this->class->enable_vaapi ) {
+@@ -1811,6 +1818,7 @@ static int decode_video_wrapper(ff_video_decoder_t *th
+   }
+ # endif /* XFF_PALETTE */
+ 
++  this->decode_attempts++;
+   len = avcodec_decode_video2 (this->context, av_frame,
+                                got_picture, &avpkt);
+ 
+@@ -1833,6 +1841,7 @@ static int decode_video_wrapper(ff_video_decoder_t *th
+ # endif /* XFF_PALETTE */
+ 
+ #else /* XFF_VIDEO */
++  this->decode_attempts++;
+   len = avcodec_decode_video (this->context, av_frame,
+                               got_picture, buf, buf_size);
+ #endif /* XFF_VIDEO */
+@@ -2317,7 +2326,7 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+     /* workaround for demux_mpeg_pes sending fields as frames:
+      * do not generate a bad frame for the first field picture
+      */
+-    if (!got_one_picture && (this->size || this->video_step || this->assume_bad_field_picture)) {
++    if (!got_one_picture && this->use_bad_frames && (this->size || this->video_step || this->assume_bad_field_picture)) {
+       /* skipped frame, output a bad frame (use size 16x16, when size still uninitialized) */
+       img = this->stream->video_out->get_frame (this->stream->video_out,
+                                                 (this->bih.biWidth  <= 0) ? 16 : ((this->bih.biWidth  + 15) & ~15),
+@@ -2415,8 +2424,12 @@ static void ff_flush_internal (ff_video_decoder_t *thi
+   AVRational  avr00 = {0, 1};
+ 
+   /* This is a stripped version of ff_handle_buffer (). It shall return yet undisplayed frames. */
++
+   if (!this->context || !this->decoder_ok || this->state == STATE_FLUSHED)
+     return;
++  /* For some reason, we are flushed right while reading the first frame?? */
++  if (!this->decode_attempts)
++    return;
+   this->state = STATE_FLUSHED;
+ 
+   while (1) {
+@@ -2516,6 +2529,8 @@ static void ff_flush_internal (ff_video_decoder_t *thi
+     av_frame_unref (this->av_frame2);
+ #endif
+   }
++
++  this->decode_attempts = 0;
+ 
+   if (frames)
+     xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.129 2017/02/25 11:17:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2017/03/20 08:14:03 ajacoutot Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.8
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://xine-lib.alioth.debian.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -22,7 +23,7 @@ WANTLIB += Xinerama Xv XvMCW Xxf86vm avcodec avformat avutil
 WANTLIB += bluray c cdio drm dvdnav dvdread expat fontconfig
 WANTLIB += freetype glapi iso9660 jpeg lzma m mng modplug mpcdec
 WANTLIB += ogg postproc pthread pthread-stubs sndio speex theora
-WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis vpx xcb xcb-dri2
+WANTLIB += usbhid v4l2 v4lconvert vcdinfo vorbis xcb xcb-dri2
 WANTLIB += xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir xml2 z
 
 XINEAPI_REV=	2.6
@@ -50,7 +51,6 @@ LIB_DEPENDS=	audio/flac \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		multimedia/libv4l \
-		multimedia/libvpx>=1.3.0 \
 		x11/libxdg-basedir
 
 # Add back fast math flag since we override CFLAGS
@@ -73,6 +73,7 @@ CONFIGURE_ARGS+=--disable-a52dec \
 		--disable-optimizations \
 		--disable-real-codecs \
 		--disable-samba \
+		--disable-vpx \
 		--disable-w32dll \
 		--with-external-dvdnav \
 		--with-fontconfig \

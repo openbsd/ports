@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_demuxers_matroska_h,v 1.10 2017/03/20 08:14:03 ajacoutot Exp $
+
+MKV: add vp9 multiframe blck support
+
+--- src/demuxers/matroska.h.orig	Sun Mar 19 16:22:07 2017
++++ src/demuxers/matroska.h	Sun Mar 19 16:22:30 2017
+@@ -283,6 +283,7 @@ struct matroska_track_s {
+   matroska_sub_track_t    *sub_track;
+ 
+   int64_t                  last_pts;
++  int64_t                  delayed_pts;
+ 
+   void                   (*handle_content) (demux_plugin_t *this_gen,
+                                             matroska_track_t *track,

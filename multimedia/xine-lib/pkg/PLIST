@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/02/25 11:17:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/03/20 08:14:03 ajacoutot Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -72,7 +72,6 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_dvaudio.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_ff.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_gsm610.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_libjpeg.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_libvpx.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_lpcm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpeg2.so
