@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/02/22 14:07:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/21 13:47:05 ajacoutot Exp $
 include/gnome-autoar-0/
 include/gnome-autoar-0/gnome-autoar/
 include/gnome-autoar-0/gnome-autoar/autoar-compressor.h
@@ -30,7 +30,6 @@ share/gtk-doc/html/gnome-autoar/api-index-full.html
 share/gtk-doc/html/gnome-autoar/ch01.html
 share/gtk-doc/html/gnome-autoar/ch02.html
 share/gtk-doc/html/gnome-autoar/ch03.html
-share/gtk-doc/html/gnome-autoar/deprecated-api-index.html
 share/gtk-doc/html/gnome-autoar/gnome-autoar-autoar-format-filter.html
 share/gtk-doc/html/gnome-autoar/gnome-autoar-autoar-gtk-chooser.html
 share/gtk-doc/html/gnome-autoar/gnome-autoar-autoar-misc.html
