@@ -1,0 +1,43 @@
+$OpenBSD: patch-lib_awful_completion_lua,v 1.1 2017/03/21 19:48:01 dcoppa Exp $
+--- lib/awful/completion.lua.orig	Tue Mar 21 20:26:14 2017
++++ lib/awful/completion.lua	Tue Mar 21 20:26:49 2017
+@@ -29,7 +29,7 @@ local bashcomp_src = "@SYSCONFDIR@/bash_completion"
+ -- @param src The bash completion source file, /etc/bash_completion by default.
+ function completion.bashcomp_load(src)
+     if src then bashcomp_src = src end
+-    local c, err = io.popen("/usr/bin/env bash -c 'source " .. bashcomp_src .. "; complete -p'")
++    local c, err = io.popen("${LOCALBASE}/bin/bash -c 'source " .. bashcomp_src .. "; complete -p'")
+     if c then
+         while true do
+             local line = c:read("*line")
+@@ -99,12 +99,12 @@ function completion.shell(command, cur_pos, ncomp, she
+         if comptype == "file" then
+             -- NOTE: ${~:-"..."} turns on GLOB_SUBST, useful for expansion of
+             -- "~/" ($HOME).  ${:-"foo"} is the string "foo" as var.
+-            shell_cmd = "/usr/bin/env zsh -c 'local -a res; res=( ${~:-"
++            shell_cmd = "${LOCALBASE}/bin/zsh -c 'local -a res; res=( ${~:-"
+                 .. string.format('%q', words[cword_index]) .. "}* ); "
+                 .. "print -ln -- ${res[@]}'"
+         else
+             -- check commands, aliases, builtins, functions and reswords
+-            shell_cmd = "/usr/bin/env zsh -c 'local -a res; "..
++            shell_cmd = "${LOCALBASE}/bin/zsh -c 'local -a res; "..
+             "res=( "..
+             "\"${(k)commands[@]}\" \"${(k)aliases[@]}\" \"${(k)builtins[@]}\" \"${(k)functions[@]}\" "..
+             "\"${(k)reswords[@]}\" "..
+@@ -115,13 +115,13 @@ function completion.shell(command, cur_pos, ncomp, she
+     else
+         if bashcomp_funcs[words[1]] then
+             -- fairly complex command with inline bash script to get the possible completions
+-            shell_cmd = "/usr/bin/env bash -c 'source " .. bashcomp_src .. "; " ..
++            shell_cmd = "${LOCALBASE}/bin/bash -c 'source " .. bashcomp_src .. "; " ..
+             "__print_completions() { for ((i=0;i<${#COMPREPLY[*]};i++)); do echo ${COMPREPLY[i]}; done }; " ..
+             "COMP_WORDS=(" ..  command .."); COMP_LINE=\"" .. command .. "\"; " ..
+             "COMP_COUNT=" .. cur_pos ..  "; COMP_CWORD=" .. cword_index-1 .. "; " ..
+             bashcomp_funcs[words[1]] .. "; __print_completions'"
+         else
+-            shell_cmd = "/usr/bin/env bash -c 'compgen -A " .. comptype .. " "
++            shell_cmd = "${LOCALBASE}/bin/bash -c 'compgen -A " .. comptype .. " "
+                 .. string.format('%q', words[cword_index]) .. "'"
+         end
+     end

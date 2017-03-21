@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_naughty_core_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
---- lib/naughty/core.lua.orig	Tue Feb 28 13:16:42 2017
-+++ lib/naughty/core.lua	Tue Feb 28 13:17:01 2017
-@@ -37,7 +37,7 @@ Naughty configuration - a table containing common popu
+$OpenBSD: patch-lib_naughty_core_lua,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
+--- lib/naughty/core.lua.orig	Sat Mar 18 10:49:46 2017
++++ lib/naughty/core.lua	Tue Mar 21 18:07:44 2017
+@@ -41,7 +41,7 @@ Naughty configuration - a table containing common popu
  @tfield[opt=apply_dpi(4)] int padding Space between popups and edge of the
    workarea.
  @tfield[opt=apply_dpi(1)] int spacing Spacing between popups.
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_naughty_core_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
    that will be checked by `getIcon()`.
  @tfield[opt={ "png", "gif" }] table icon_formats List of formats that will be
    checked by `getIcon()`.
-@@ -58,7 +58,7 @@ notifications, e.g.
+@@ -62,7 +62,7 @@ notifications, e.g.
  naughty.config = {
      padding = dpi(4),
      spacing = dpi(1),

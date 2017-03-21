@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.105 2017/03/10 19:25:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.106 2017/03/21 19:48:01 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
-VER=			4.0
+VER=			4.1
 DISTNAME=		awesome-${VER}
-REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -64,6 +63,7 @@ NO_TEST=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/awesomeConfig.cmake \
+		${WRKSRC}/lib/awful/completion.lua \
 		${WRKSRC}/lib/awful/util.lua \
 		${WRKSRC}/lib/beautiful/init.lua \
 		${WRKSRC}/lib/menubar/icon_theme.lua \

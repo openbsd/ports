@@ -1,8 +1,8 @@
-$OpenBSD: patch-utils_awesome-client,v 1.1 2017/03/10 19:25:38 dcoppa Exp $
---- utils/awesome-client.orig	Fri Mar 10 20:17:06 2017
-+++ utils/awesome-client	Fri Mar 10 20:17:46 2017
+$OpenBSD: patch-utils_awesome-client,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
+--- utils/awesome-client.orig	Sat Mar 18 10:49:46 2017
++++ utils/awesome-client	Tue Mar 21 18:07:44 2017
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env bash
 +#!${LOCALBASE}/bin/bash
  
  # Use bash's pipefail option to get errors during failure in a command

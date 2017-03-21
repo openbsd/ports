@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/02/28 13:27:15 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.16 2017/03/21 19:48:01 dcoppa Exp $
 @bin bin/awesome
 bin/awesome-client
 @man man/man1/awesome-client.1
@@ -63,12 +63,14 @@ share/awesome/lib/awful/wibar.lua
 share/awesome/lib/awful/wibox.lua
 share/awesome/lib/awful/widget/
 share/awesome/lib/awful/widget/button.lua
+share/awesome/lib/awful/widget/clienticon.lua
 share/awesome/lib/awful/widget/common.lua
 share/awesome/lib/awful/widget/graph.lua
 share/awesome/lib/awful/widget/init.lua
 share/awesome/lib/awful/widget/keyboardlayout.lua
 share/awesome/lib/awful/widget/launcher.lua
 share/awesome/lib/awful/widget/layoutbox.lua
+share/awesome/lib/awful/widget/only_on_screen.lua
 share/awesome/lib/awful/widget/progressbar.lua
 share/awesome/lib/awful/widget/prompt.lua
 share/awesome/lib/awful/widget/taglist.lua
@@ -78,20 +80,25 @@ share/awesome/lib/awful/widget/watch.lua
 share/awesome/lib/beautiful/
 share/awesome/lib/beautiful.lua
 share/awesome/lib/beautiful/init.lua
+share/awesome/lib/beautiful/theme_assets.lua
 share/awesome/lib/beautiful/xresources.lua
 share/awesome/lib/gears/
 share/awesome/lib/gears/cache.lua
 share/awesome/lib/gears/color.lua
 share/awesome/lib/gears/debug.lua
+share/awesome/lib/gears/filesystem.lua
 share/awesome/lib/gears/geometry.lua
 share/awesome/lib/gears/init.lua
+share/awesome/lib/gears/math.lua
 share/awesome/lib/gears/matrix.lua
 share/awesome/lib/gears/object/
 share/awesome/lib/gears/object.lua
 share/awesome/lib/gears/object/properties.lua
 share/awesome/lib/gears/protected_call.lua
 share/awesome/lib/gears/shape.lua
+share/awesome/lib/gears/string.lua
 share/awesome/lib/gears/surface.lua
+share/awesome/lib/gears/table.lua
 share/awesome/lib/gears/timer.lua
 share/awesome/lib/gears/wallpaper.lua
 share/awesome/lib/menubar/
@@ -113,6 +120,7 @@ share/awesome/lib/wibox/container/constraint.lua
 share/awesome/lib/wibox/container/init.lua
 share/awesome/lib/wibox/container/margin.lua
 share/awesome/lib/wibox/container/mirror.lua
+share/awesome/lib/wibox/container/place.lua
 share/awesome/lib/wibox/container/radialprogressbar.lua
 share/awesome/lib/wibox/container/rotate.lua
 share/awesome/lib/wibox/container/scroll.lua
@@ -124,6 +132,7 @@ share/awesome/lib/wibox/layout/align.lua
 share/awesome/lib/wibox/layout/constraint.lua
 share/awesome/lib/wibox/layout/fixed.lua
 share/awesome/lib/wibox/layout/flex.lua
+share/awesome/lib/wibox/layout/grid.lua
 share/awesome/lib/wibox/layout/init.lua
 share/awesome/lib/wibox/layout/margin.lua
 share/awesome/lib/wibox/layout/mirror.lua

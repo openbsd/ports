@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_awful_util_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
---- lib/awful/util.lua.orig	Sun Dec 25 22:17:14 2016
-+++ lib/awful/util.lua	Tue Feb 28 13:11:42 2017
-@@ -229,12 +229,12 @@ end
+$OpenBSD: patch-lib_awful_util_lua,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
+--- lib/awful/util.lua.orig	Sat Mar 18 10:49:46 2017
++++ lib/awful/util.lua	Tue Mar 21 18:07:44 2017
+@@ -230,12 +230,12 @@ end
  -- given extensions for the icon filename.
  -- @param iconname The name of the icon to search for.
  -- @param exts Table of image extensions allowed, otherwise { 'png', gif' }

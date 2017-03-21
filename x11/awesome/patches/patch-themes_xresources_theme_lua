@@ -1,7 +1,7 @@
-$OpenBSD: patch-themes_xresources_theme_lua,v 1.1 2017/02/28 13:27:15 dcoppa Exp $
---- themes/xresources/theme.lua.orig	Tue Feb 28 13:21:35 2017
-+++ themes/xresources/theme.lua	Tue Feb 28 13:21:53 2017
-@@ -63,7 +63,7 @@ theme = theme_assets.recolor_titlebar_focus(theme, the
+$OpenBSD: patch-themes_xresources_theme_lua,v 1.2 2017/03/21 19:48:01 dcoppa Exp $
+--- themes/xresources/theme.lua.orig	Sat Mar 18 10:49:46 2017
++++ themes/xresources/theme.lua	Tue Mar 21 18:07:44 2017
+@@ -65,7 +65,7 @@ theme = theme_assets.recolor_titlebar_focus(theme, the
  theme = theme_assets.recolor_layout(theme, theme.fg_normal)
  
  -- Define the icon theme for application icons. If not set then the icons
