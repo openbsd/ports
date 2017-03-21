@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/03/20 12:52:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2017/03/21 13:04:04 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.10.5
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -32,6 +33,10 @@ CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
+
+# import gi
+BUILD_DEPENDS=		devel/py-gobject3
+RUN_DEPENDS=		devel/py-gobject3
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_path_PYTHON2_PATH=${MODPY_BIN}
