@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.7 2016/06/17 07:22:39 landry Exp $
---- Makefile.orig	Tue Jun  7 14:45:04 2016
-+++ Makefile	Fri Jun 17 07:30:53 2016
+$OpenBSD: patch-Makefile,v 1.8 2017/03/22 20:23:52 landry Exp $
+--- Makefile.orig	Thu Feb 23 10:40:08 2017
++++ Makefile	Thu Feb 23 10:42:15 2017
 @@ -2,11 +2,11 @@ all::
  
- CGIT_VERSION = v1.0
+ CGIT_VERSION = v1.1
  CGIT_SCRIPT_NAME = cgit.cgi
 -CGIT_SCRIPT_PATH = /var/www/htdocs/cgit
 -CGIT_DATA_PATH = $(CGIT_SCRIPT_PATH)
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile,v 1.7 2016/06/17 07:22:39 landry Exp $
  	$(INSTALL) -m 0644 favicon.ico $(DESTDIR)$(CGIT_DATA_PATH)/favicon.ico
  	$(INSTALL) -m 0644 robots.txt $(DESTDIR)$(CGIT_DATA_PATH)/robots.txt
 -	$(INSTALL) -m 0755 -d $(DESTDIR)$(filterdir)
--	$(COPYTREE)  filters/* $(DESTDIR)$(filterdir)
+-	$(COPYTREE) filters/* $(DESTDIR)$(filterdir)
  
  install-doc: install-man install-html install-pdf
  

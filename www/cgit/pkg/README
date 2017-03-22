@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2016/04/29 09:40:51 sthen Exp $
+$OpenBSD: README,v 1.3 2017/03/22 20:23:52 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,6 +11,21 @@ Refer to http://git.zx2c4.com/cgit/tree/cgitrc.5.txt for the syntax.
 
 Webserver config
 ================
+
+OpenBSD httpd
+-------------
+ext_ip="0.0.0.0"
+server "default" {
+	listen on $ext_ip port 80
+
+	# don't serve static files from cgit CGI: cgit.css and cgit.png
+	location "/cgit.*" {
+		root "/cgit"
+		no fastcgi
+	}
+	root "/cgi-bin/cgit.cgi"
+	fastcgi socket "/run/slowcgi.sock"
+}
 
 Nginx
 -----
@@ -47,3 +62,14 @@ ScriptAlias /cgit /cgi-bin/cgit.cgi
 	Order allow,deny
 	Allow from all
 </Location>
+
+
+snapshots
+---------
+Nginx and OpenBSD httpd use chroot(2).
+
+For .tar.gz snapshot support a static binary in $chroot/bin/gzip is required.
+
+	cd /usr/src/usr.bin/compress
+	make clean && make LDFLAGS="-static -pie"
+	cp obj/compress $chroot/bin/gzip
