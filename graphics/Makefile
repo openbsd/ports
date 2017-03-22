@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2017/03/04 16:08:55 krw Exp $
+# $OpenBSD: Makefile,v 1.433 2017/03/22 21:23:52 landry Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -204,7 +204,6 @@
      SUBDIR += pdfsandwich
      SUBDIR += pecl-imagick
      SUBDIR += pho
-     SUBDIR += pigment
      SUBDIR += pinta
      SUBDIR += png
      SUBDIR += png2ico
@@ -227,7 +226,6 @@
      SUBDIR += py-matplotlib
      SUBDIR += py-matplotlib,python3
      SUBDIR += py-opengl
-     SUBDIR += py-pigment
      SUBDIR += py-pyx
      SUBDIR += py-sane
      SUBDIR += py-sane,python3
