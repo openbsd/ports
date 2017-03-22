@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.466 2017/03/18 18:55:26 edd Exp $
+# $OpenBSD: Quirks.pm,v 1.467 2017/03/22 21:25:04 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -945,6 +945,8 @@ my $obsolete_reason = {
 	'bladeenc' => 3,
 	'pilot_makedoc' => 6,
 	'clog' => 4,
+	'pigment' => 3,
+	'py-pigment' => 3,
 };
 
 # reasons for obsolete packages
