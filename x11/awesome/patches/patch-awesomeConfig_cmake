@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.21 2017/03/21 19:48:01 dcoppa Exp $
+$OpenBSD: patch-awesomeConfig_cmake,v 1.22 2017/03/22 17:35:26 dcoppa Exp $
 --- awesomeConfig.cmake.orig	Sat Mar 18 10:49:46 2017
-+++ awesomeConfig.cmake	Tue Mar 21 18:11:59 2017
++++ awesomeConfig.cmake	Wed Mar 22 18:25:36 2017
 @@ -269,11 +269,7 @@ endif()
  # {{{ Install path and configuration variables
  #If a sysconfdir is specified, use it instead
@@ -23,16 +23,16 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.21 2017/03/21 19:48:01 dcoppa Exp $
  endif()
  
  # Hide to avoid confusion
-@@ -394,7 +390,7 @@ file(MAKE_DIRECTORY ${BUILD_DIR}/script_files/)
+@@ -394,15 +390,14 @@ file(MAKE_DIRECTORY ${BUILD_DIR}/script_files/)
  
  add_custom_command(
          OUTPUT ${BUILD_DIR}/docs/06-appearance.md
 -        COMMAND lua ${SOURCE_DIR}/docs/06-appearance.md.lua
 +        COMMAND ${MODLUA_BIN} ${SOURCE_DIR}/docs/06-appearance.md.lua
          ${BUILD_DIR}/docs/06-appearance.md
-         DEPENDS lgi-check
+-        DEPENDS lgi-check
  )
-@@ -402,7 +398,7 @@ add_custom_command(
+ 
  add_custom_command(
          OUTPUT ${BUILD_DIR}/awesomerc.lua ${BUILD_DIR}/docs/05-awesomerc.md
              ${BUILD_DIR}/script_files/rc.lua
@@ -41,7 +41,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.21 2017/03/21 19:48:01 dcoppa Exp $
          ${BUILD_DIR}/docs/05-awesomerc.md ${SOURCE_DIR}/awesomerc.lua
          ${BUILD_DIR}/awesomerc.lua
          ${BUILD_DIR}/script_files/rc.lua
-@@ -410,7 +406,7 @@ add_custom_command(
+@@ -410,7 +405,7 @@ add_custom_command(
  
  add_custom_command(
          OUTPUT ${BUILD_DIR}/script_files/theme.lua
