@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2017/03/23 08:05:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/23 23:31:51 sthen Exp $
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
+REVISION=	0
 DISTNAME=	seabios-${FW_VER}
 
 HOMEPAGE=	https://www.seabios.org/
@@ -20,7 +21,20 @@ MODULES=	lang/python
 CONFIGURE_STYLE= x # workaround python.port.mk
 MODPY_RUNDEP=	No
 USE_GMAKE=	Yes
-MAKE_FLAGS=	PYTHON="${MODPY_BIN}" LD="${LD} -nopie -znorelro" V=1
+
+.if defined(REVISION)
+EXTRAVERSION=	p${REVISION}-OpenBSD-vmm
+.else
+EXTRAVERSION=	-OpenBSD-vmm
+.endif
+
+MAKE_FLAGS=	PYTHON="${MODPY_BIN}" V=1 EXTRAVERSION="${EXTRAVERSION}" \
+		LD32BIT_FLAG=-melf_i386_obsd LD="${LD} -nopie -znorelro" 
+
+post-build:
+	mv ${WRKSRC}/out/bios.bin ${WRKSRC}/out/default-bios.bin
+	cp ${FILESDIR}/config ${WRKSRC}/.config
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_TARGET} ${MAKE_FLAGS}
 
 do-install:
 	 ${INSTALL_DATA} ${WRKSRC}/out/bios.bin ${PREFIX}/firmware/vmm-bios
