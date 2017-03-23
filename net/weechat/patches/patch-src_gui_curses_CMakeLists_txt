@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_gui_curses_CMakeLists_txt,v 1.5 2015/10/05 11:11:47 dcoppa Exp $
+$OpenBSD: patch-src_gui_curses_CMakeLists_txt,v 1.6 2017/03/23 01:46:23 danj Exp $
 
 Fix cyclical dependency error
 
---- src/gui/curses/CMakeLists.txt.orig	Mon Oct  5 13:04:20 2015
-+++ src/gui/curses/CMakeLists.txt	Mon Oct  5 13:05:21 2015
-@@ -95,10 +95,10 @@ add_custom_command(
+--- src/gui/curses/CMakeLists.txt.orig	Sun Jan 15 01:41:25 2017
++++ src/gui/curses/CMakeLists.txt	Sun Mar 12 19:58:13 2017
+@@ -100,10 +100,10 @@ add_custom_command(
    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
    COMMENT "Creating symbolic link ${EXECUTABLE}-curses${CMAKE_EXECUTABLE_SUFFIX}"
    )

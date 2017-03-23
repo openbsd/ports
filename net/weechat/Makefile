@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/03/17 07:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2017/03/23 01:46:23 danj Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		1.5
+V=		1.7
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -15,15 +15,10 @@ PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
 
-REVISION-main =	0
-REVISION-lua =	0
-REVISION-python = 0
-REVISION-ruby =	1
-REVISION-tcl =	0
-
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.weechat.org/
+HOMEPAGE=	https://www.weechat.org/
+MAINTAINER=	Daniel Jakots <obsd@chown.me>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +27,7 @@ MASTER_SITES=	${HOMEPAGE}/files/src/
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
-WANTLIB-main=	c curl m ncursesw perl pthread util \
+WANTLIB-main=	c curl m ncursesw perl pthread \
 		gcrypt gnutls gpg-error z ${MODGETTEXT_WANTLIB}
 
 WANTLIB-lua=	${MODLUA_WANTLIB} m
@@ -51,7 +46,6 @@ MODLUA_RUNDEP=	No
 MODPY_RUNDEP=	No
 MODRUBY_RUNDEP=	No
 
-BUILD_DEPENDS =	textproc/asciidoc
 LIB_DEPENDS=	security/libgcrypt \
 		security/gnutls \
 		net/curl
@@ -90,7 +84,7 @@ pre-configure:
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
-	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.asciidoc \
+	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.adoc \
 	    ${PREFIX}/share/doc/weechat/
 
 NO_TEST=	Yes

@@ -1,25 +1,28 @@
---- doc/CMakeLists.txt.orig	Sun Jan 10 00:17:50 2016
-+++ doc/CMakeLists.txt	Sun Jan 10 06:09:03 2016
-@@ -45,14 +45,14 @@ if(ENABLE_MAN OR ENABLE_DOC)
-     set(ASCIIDOC_ARGS_DEV        ${ASCIIDOC_ARGS} ${CSS_TOC2}   )
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.7 2017/03/23 01:46:23 danj Exp $
+--- doc/CMakeLists.txt.orig	Sun Jan 15 01:41:25 2017
++++ doc/CMakeLists.txt	Sun Mar 12 20:36:40 2017
+@@ -26,15 +26,15 @@ if(ENABLE_MAN OR ENABLE_DOC)
  
-     add_subdirectory(en)
+     set(ASCIIDOCTOR_ARGS -a experimental -a icons=font -a revnumber="${VERSION}" -a sectanchors -a source-highlighter=prettify)
+ 
+-    add_subdirectory(cs)
+-    add_subdirectory(de)
+-    add_subdirectory(en)
+-    add_subdirectory(es)
 -    add_subdirectory(fr)
 -    add_subdirectory(it)
--    add_subdirectory(de)
--    add_subdirectory(pl)
--    add_subdirectory(es)
--    add_subdirectory(ru)
 -    add_subdirectory(ja)
--    add_subdirectory(cs)
+-    add_subdirectory(pl)
+-    add_subdirectory(ru)
++#    add_subdirectory(cs)
++#    add_subdirectory(de)
++#    add_subdirectory(en)
++#    add_subdirectory(es)
 +#    add_subdirectory(fr)
 +#    add_subdirectory(it)
-+#    add_subdirectory(de)
-+#    add_subdirectory(pl)
-+#    add_subdirectory(es)
-+#    add_subdirectory(ru)
 +#    add_subdirectory(ja)
-+#    add_subdirectory(cs)
++#    add_subdirectory(pl)
++#    #add_subdirectory(ru)
  
    endif()
  
