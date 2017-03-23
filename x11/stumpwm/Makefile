@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/08 13:03:36 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/23 14:23:41 jca Exp $
 
 COMMENT=		easily hackable Common LISP window manager
 
-VERSION=		0.9.9
+VERSION=		1.0.0
 DISTNAME=		stumpwm-${VERSION}
 
 CATEGORIES=		x11
@@ -18,11 +18,11 @@ WANTLIB += c m util
 
 MASTER_SITES=		https://github.com/stumpwm/stumpwm/archive/
 MASTER_SITES0=		https://github.com/edicl/cl-ppcre/archive/
-MASTER_SITES1=		http://beta.quicklisp.org/archive/clx/2016-08-25/
+MASTER_SITES1=		http://beta.quicklisp.org/archive/clx/2017-02-27/
 
 DISTFILES=		${DISTNAME}{${VERSION}}${EXTRACT_SUFX} \
 			cl-ppcre-2.0.11{v2.0.11}.tar.gz:0 \
-			clx-20160825-git.tgz:1
+			clx-20170227-git.tgz:1
 
 BUILD_DEPENDS=		lang/sbcl
 
