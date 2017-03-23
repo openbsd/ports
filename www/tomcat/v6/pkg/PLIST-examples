@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.16 2016/11/23 09:58:32 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.17 2017/03/23 18:35:30 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -6,8 +6,7 @@ webapps/ROOT/
 webapps/ROOT/RELEASE-NOTES.txt
 webapps/ROOT/WEB-INF/
 webapps/ROOT/WEB-INF/web.xml
-webapps/ROOT/asf-logo-wide.gif
-webapps/ROOT/build.xml
+webapps/ROOT/asf-logo-wide.svg
 webapps/ROOT/favicon.ico
 webapps/ROOT/index.html
 webapps/ROOT/index.jsp
@@ -982,6 +981,7 @@ webapps/docs/api/org/apache/jasper/package-tree.html
 webapps/docs/api/org/apache/jasper/runtime/
 webapps/docs/api/org/apache/jasper/runtime/AnnotationHelper.html
 webapps/docs/api/org/apache/jasper/runtime/BodyContentImpl.html
+webapps/docs/api/org/apache/jasper/runtime/ExceptionUtils.html
 webapps/docs/api/org/apache/jasper/runtime/HttpJspBase.html
 webapps/docs/api/org/apache/jasper/runtime/JspApplicationContextImpl.html
 webapps/docs/api/org/apache/jasper/runtime/JspContextWrapper.html
@@ -1490,6 +1490,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.CipherData.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.ApplicationBufferHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SecureNioChannel.html
+webapps/docs/api/org/apache/tomcat/util/net/SendfileState.html
 webapps/docs/api/org/apache/tomcat/util/net/ServerSocketFactory.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketProperties.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketStatus.html
@@ -1632,13 +1633,14 @@ webapps/docs/funcspecs/mbean-names.html
 webapps/docs/html-manager-howto.html
 webapps/docs/images/
 webapps/docs/images/add.gif
-webapps/docs/images/asf-logo.gif
+webapps/docs/images/asf-logo.svg
 webapps/docs/images/code.gif
 webapps/docs/images/design.gif
 webapps/docs/images/docs.gif
 webapps/docs/images/fix.gif
 webapps/docs/images/printer.gif
 webapps/docs/images/tomcat.gif
+webapps/docs/images/tomcat.png
 webapps/docs/images/tomcat.svg
 webapps/docs/images/update.gif
 webapps/docs/images/void.gif

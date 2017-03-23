@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2017/03/23 18:35:30 dcoppa Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -114,7 +114,7 @@ tomcat/webapps/host-manager/WEB-INF/jsp/403.jsp
 tomcat/webapps/host-manager/WEB-INF/web.xml
 tomcat/webapps/host-manager/images/
 tomcat/webapps/host-manager/images/add.gif
-tomcat/webapps/host-manager/images/asf-logo.gif
+tomcat/webapps/host-manager/images/asf-logo.svg
 tomcat/webapps/host-manager/images/code.gif
 tomcat/webapps/host-manager/images/design.gif
 tomcat/webapps/host-manager/images/docs.gif
@@ -136,7 +136,7 @@ tomcat/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 tomcat/webapps/manager/WEB-INF/web.xml
 tomcat/webapps/manager/images/
 tomcat/webapps/manager/images/add.gif
-tomcat/webapps/manager/images/asf-logo.gif
+tomcat/webapps/manager/images/asf-logo.svg
 tomcat/webapps/manager/images/code.gif
 tomcat/webapps/manager/images/design.gif
 tomcat/webapps/manager/images/docs.gif

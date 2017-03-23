@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.23 2017/02/23 09:33:51 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.24 2017/03/23 18:35:30 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -442,15 +442,17 @@ webapps/docs/api/org/apache/catalina/security/package-frame.html
 webapps/docs/api/org/apache/catalina/security/package-summary.html
 webapps/docs/api/org/apache/catalina/security/package-tree.html
 webapps/docs/api/org/apache/catalina/servlet4preview/
+webapps/docs/api/org/apache/catalina/servlet4preview/AsyncContext.html
 webapps/docs/api/org/apache/catalina/servlet4preview/GenericFilter.html
 webapps/docs/api/org/apache/catalina/servlet4preview/RequestDispatcher.html
+webapps/docs/api/org/apache/catalina/servlet4preview/ServletContext.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/
 webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpFilter.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpServletRequest.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/HttpServletRequestWrapper.html
-webapps/docs/api/org/apache/catalina/servlet4preview/http/Mapping.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/MappingMatch.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/PushBuilder.html
+webapps/docs/api/org/apache/catalina/servlet4preview/http/ServletMapping.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/package-frame.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/package-summary.html
 webapps/docs/api/org/apache/catalina/servlet4preview/http/package-tree.html
@@ -928,7 +930,6 @@ webapps/docs/api/org/apache/coyote/OutputBuffer.html
 webapps/docs/api/org/apache/coyote/Processor.html
 webapps/docs/api/org/apache/coyote/ProtocolException.html
 webapps/docs/api/org/apache/coyote/ProtocolHandler.html
-webapps/docs/api/org/apache/coyote/PushToken.html
 webapps/docs/api/org/apache/coyote/Request.html
 webapps/docs/api/org/apache/coyote/RequestGroupInfo.html
 webapps/docs/api/org/apache/coyote/RequestInfo.html
@@ -1687,6 +1688,7 @@ webapps/docs/api/org/apache/tomcat/util/file/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/file/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/
 webapps/docs/api/org/apache/tomcat/util/http/CookieProcessor.html
+webapps/docs/api/org/apache/tomcat/util/http/CookieProcessorBase.html
 webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/LegacyCookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html

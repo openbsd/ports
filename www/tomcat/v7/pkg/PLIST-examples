@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.36 2017/02/23 09:33:51 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.37 2017/03/23 18:35:30 dcoppa Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -1511,6 +1511,7 @@ webapps/docs/api/org/apache/tomcat/util/codec/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/codec/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/collections/
 webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
+webapps/docs/api/org/apache/tomcat/util/collections/ManagedConcurrentWeakHashMap.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
