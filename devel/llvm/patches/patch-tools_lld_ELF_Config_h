@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.1 2017/03/18 20:49:42 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.2 2017/03/23 08:26:07 ajacoutot Exp $
 
-Add support for -znodlopen.
+[ELF] Add -z nodlopen option.
 
 --- tools/lld/ELF/Config.h.orig	Sat Mar 18 15:46:36 2017
 +++ tools/lld/ELF/Config.h	Sat Mar 18 15:46:52 2017

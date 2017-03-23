@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.40 2017/03/14 17:29:45 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.41 2017/03/23 08:26:07 ajacoutot Exp $
 
 - Select proper SPARCv9 variant for the external assembler
 - Set ABIs correctly for OpenBSD/arm; soft float and aapcs-linux
@@ -6,8 +6,8 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.40 2017/03/14 17:29:45 ajac
 - Disable -fstrict-aliasing per default on OpenBSD
 - Always use --eh-frame-hdr on OpenBSD, even for -static
 
---- tools/clang/lib/Driver/Tools.cpp.orig	Thu Mar  2 20:25:38 2017
-+++ tools/clang/lib/Driver/Tools.cpp	Thu Mar  2 21:45:21 2017
+--- tools/clang/lib/Driver/Tools.cpp.orig	Tue Feb 21 14:11:22 2017
++++ tools/clang/lib/Driver/Tools.cpp	Sat Mar 18 17:32:52 2017
 @@ -79,7 +79,7 @@ static const char *getSparcAsmModeForCPU(StringRef Nam
            .Case("niagara2", "-Av9b")
            .Case("niagara3", "-Av9d")
@@ -70,7 +70,27 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.40 2017/03/14 17:29:45 ajac
      break;
    case llvm::Triple::x86:
    case llvm::Triple::x86_64:
-@@ -4466,9 +4476,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3845,9 +3855,10 @@ ParsePICArgs(const ToolChain &ToolChain, const ArgList
+   // OpenBSD-specific defaults for PIE
+   if (Triple.getOS() == llvm::Triple::OpenBSD) {
+     switch (ToolChain.getArch()) {
++    case llvm::Triple::arm:
++    case llvm::Triple::aarch64:
+     case llvm::Triple::mips64:
+     case llvm::Triple::mips64el:
+-    case llvm::Triple::sparcel:
+     case llvm::Triple::x86:
+     case llvm::Triple::x86_64:
+       IsPICLevelTwo = false; // "-fpie"
+@@ -3855,6 +3866,7 @@ ParsePICArgs(const ToolChain &ToolChain, const ArgList
+ 
+     case llvm::Triple::ppc:
+     case llvm::Triple::sparc:
++    case llvm::Triple::sparcel:
+     case llvm::Triple::sparcv9:
+       IsPICLevelTwo = true; // "-fPIE"
+       break;
+@@ -4466,9 +4478,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -85,7 +105,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.40 2017/03/14 17:29:45 ajac
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -8907,12 +8920,12 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -8907,12 +8922,12 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      CmdArgs.push_back("__start");
    }
  
@@ -99,7 +119,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.40 2017/03/14 17:29:45 ajac
      CmdArgs.push_back("-Bdynamic");
      if (Args.hasArg(options::OPT_shared)) {
        CmdArgs.push_back("-shared");
-@@ -8952,15 +8965,17 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -8952,15 +8967,17 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
      }
    }
  

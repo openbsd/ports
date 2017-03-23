@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.1 2017/03/18 20:49:42 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.2 2017/03/23 08:26:07 ajacoutot Exp $
 
-Add support for -znodlopen.
+[ELF] Add -z nodlopen option.
 
 --- tools/lld/ELF/SyntheticSections.cpp.orig	Sat Mar 18 15:44:59 2017
 +++ tools/lld/ELF/SyntheticSections.cpp	Sat Mar 18 15:45:39 2017
