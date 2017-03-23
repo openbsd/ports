@@ -1,9 +1,10 @@
-$OpenBSD: patch-mozilla_js_src_jit_ProcessExecutableMemory_cpp,v 1.1 2017/03/08 15:54:54 landry Exp $
+$OpenBSD: patch-mozilla_js_src_jit_ProcessExecutableMemory_cpp,v 1.2 2017/03/23 07:33:24 landry Exp $
 
 https://gitweb.torproject.org/tor-browser.git/patch/?id=235c607f6bc39e124b9e8430092be249c3d64981
+chunk 3: https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 
 --- mozilla/js/src/jit/ProcessExecutableMemory.cpp.orig	Sun Mar  5 21:58:25 2017
-+++ mozilla/js/src/jit/ProcessExecutableMemory.cpp	Wed Mar  8 14:06:00 2017
++++ mozilla/js/src/jit/ProcessExecutableMemory.cpp	Thu Mar 23 08:31:15 2017
 @@ -219,7 +219,12 @@ DeallocateProcessExecutableMemory(void* addr, size_t b
  static DWORD
  ProtectionSettingToFlags(ProtectionSetting protection)
@@ -32,7 +33,21 @@ https://gitweb.torproject.org/tor-browser.git/patch/?id=235c607f6bc39e124b9e8430
  }
  
  static void
-@@ -604,4 +614,38 @@ js::jit::CanLikelyAllocateMoreExecutableMemory()
+@@ -363,8 +373,13 @@ class PageBitSet
+ #if JS_BITS_PER_WORD == 32
+ static const size_t MaxCodeBytesPerProcess = 128 * 1024 * 1024;
+ #else
++#ifdef __OpenBSD__
++// default datasize is 768Mb on OpenBSD
++static const size_t MaxCodeBytesPerProcess = 128 * 1024 * 1024;
++#else
+ static const size_t MaxCodeBytesPerProcess = 640 * 1024 * 1024;
+ #endif
++#endif
+ 
+ // Per-process executable memory allocator. It reserves a block of memory of
+ // MaxCodeBytesPerProcess bytes, then allocates/deallocates pages from that.
+@@ -604,4 +619,38 @@ js::jit::CanLikelyAllocateMoreExecutableMemory()
      MOZ_ASSERT(execMemory.bytesAllocated() <= MaxCodeBytesPerProcess);
  
      return execMemory.bytesAllocated() + BufferSize <= MaxCodeBytesPerProcess;
