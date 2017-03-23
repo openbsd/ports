@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/11 12:21:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2017/03/23 07:23:53 dcoppa Exp $
 
 COMMENT=		library for interfacing MPD
 
-VER=			2.10
+VER=			2.11
 DISTNAME=		libmpdclient-${VER}
-REVISION=		0
-SHARED_LIBS=		mpdclient 2.1	# 2.10
+SHARED_LIBS=		mpdclient 2.2	# 2.11
 CATEGORIES=		audio
 HOMEPAGE=		http://www.musicpd.org/libs/libmpdclient/
 
@@ -19,6 +18,6 @@ MASTER_SITES=		http://www.musicpd.org/download/libmpdclient/${VER:R}/
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-documentation
+CONFIGURE_ARGS+=	--disable-documentation
 
 .include <bsd.port.mk>
