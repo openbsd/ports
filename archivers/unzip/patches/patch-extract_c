@@ -1,11 +1,20 @@
-$OpenBSD: patch-extract_c,v 1.1 2015/02/06 21:37:04 naddy Exp $
+$OpenBSD: patch-extract_c,v 1.2 2017/03/23 17:26:17 bluhm Exp $
 
+Fix CVE-2015-7696: prevent unsigned overflow on invalid input
+    https://bugzilla.redhat.com/attachment.cgi?id=1075942
+    https://bugzilla.redhat.com/show_bug.cgi?id=1260944
 Fix CVE-2014-8139: CRC32 verification heap-based overflow
+    https://bugzilla.redhat.com/show_bug.cgi?id=1174844
+    https://bugzilla.redhat.com/attachment.cgi?id=989833
 Fix CVE-2014-8140: out-of-bounds write issue in test_compr_eb()
 Fix CVE-2014-9636: out-of-bounds read/write in test_compr_eb()
+Fix CVE-2015-7697: infinite loop when extracting empty bzip2 data
+    https://bugs.debian.org/802160
+    https://bugzilla.redhat.com/show_bug.cgi?id=1260944
+    https://bugzilla.redhat.com/attachment.cgi?id=1073339
 
 --- extract.c.orig	Sat Mar 14 02:32:52 2009
-+++ extract.c	Thu Feb  5 18:58:23 2015
++++ extract.c	Tue Mar 21 16:10:27 2017
 @@ -1,5 +1,5 @@
  /*
 -  Copyright (c) 1990-2009 Info-ZIP.  All rights reserved.
@@ -22,7 +31,26 @@ Fix CVE-2014-9636: out-of-bounds read/write in test_compr_eb()
     static ZCONST char Far InvalidComprDataEAs[] =
       " invalid compressed data for EAs\n";
  #  if (defined(WIN32) && defined(NTSD_EAS))
-@@ -2023,7 +2025,8 @@ static int TestExtraField(__G__ ef, ef_len)
+@@ -1255,8 +1257,17 @@ static int extract_or_test_entrylist(__G__ numchunk,
+         if (G.lrec.compression_method == STORED) {
+             zusz_t csiz_decrypted = G.lrec.csize;
+ 
+-            if (G.pInfo->encrypted)
++            if (G.pInfo->encrypted) {
++                if (csiz_decrypted < 12) {
++                    /* handle the error now to prevent unsigned overflow */
++                    Info(slide, 0x401, ((char *)slide,
++                      LoadFarStringSmall(ErrUnzipNoFile),
++                      LoadFarString(InvalidComprData),
++                      LoadFarStringSmall2(Inflate)));
++                    return PK_ERR;
++                }
+                 csiz_decrypted -= 12;
++            }
+             if (G.lrec.ucsize != csiz_decrypted) {
+                 Info(slide, 0x401, ((char *)slide,
+                   LoadFarStringSmall2(WrnStorUCSizCSizDiff),
+@@ -2023,7 +2034,8 @@ static int TestExtraField(__G__ ef, ef_len)
          ebID = makeword(ef);
          ebLen = (unsigned)makeword(ef+EB_LEN);
  
@@ -32,7 +60,7 @@ Fix CVE-2014-9636: out-of-bounds read/write in test_compr_eb()
             /* Discovered some extra field inconsistency! */
              if (uO.qflag)
                  Info(slide, 1, ((char *)slide, "%-22s ",
-@@ -2158,11 +2161,19 @@ static int TestExtraField(__G__ ef, ef_len)
+@@ -2158,11 +2170,19 @@ static int TestExtraField(__G__ ef, ef_len)
                  }
                  break;
              case EF_PKVMS:
@@ -53,7 +81,7 @@ Fix CVE-2014-9636: out-of-bounds read/write in test_compr_eb()
                  break;
              case EF_PKW32:
              case EF_PKUNIX:
-@@ -2217,14 +2228,30 @@ static int test_compr_eb(__G__ eb, eb_size, compr_offs
+@@ -2217,15 +2237,32 @@ static int test_compr_eb(__G__ eb, eb_size, compr_offs
      ulg eb_ucsize;
      uch *eb_ucptr;
      int r;
@@ -76,14 +104,29 @@ Fix CVE-2014-9636: out-of-bounds read/write in test_compr_eb()
 +     ((eb_ucsize = makelong( eb+ (EB_HEADSIZE+ EB_UCSIZE_P))) == 0L) ||
 +     ((eb_ucsize > 0L) && (eb_size <= (compr_offset + EB_CMPRHEADLEN))))
 +        return IZ_EF_TRUNC;             /* no/bad compressed data! */
-+
-+    /* 2014-11-03 Michal Zalewski, SMS.
+ 
++    /* 2015-02-10 Mancha(?), Michal Zalewski, Tomas Hoger, SMS.
 +     * For STORE method, compressed and uncompressed sizes must agree.
 +     * http://www.info-zip.org/phpBB3/viewtopic.php?f=7&t=450
 +     */
 +    eb_compr_method = makeword( eb + (EB_HEADSIZE + compr_offset));
-+    if ((eb_compr_method == STORED) && (eb_size - compr_offset != eb_ucsize))
++    if ((eb_compr_method == STORED) &&
++     (eb_size != compr_offset + EB_CMPRHEADLEN + eb_ucsize))
 +        return PK_ERR;
- 
++
      if (
  #ifdef INT_16BIT
+         (((ulg)(extent)eb_ucsize) != eb_ucsize) ||
+@@ -2700,6 +2737,12 @@ __GDEF
+     int err=BZ_OK;
+     int repeated_buf_err;
+     bz_stream bstrm;
++
++    if (G.incnt <= 0 && G.csize <= 0L) {
++        /* avoid an infinite loop */
++        Trace((stderr, "UZbunzip2() got empty input\n"));
++        return 2;
++    }
+ 
+ #if (defined(DLL) && !defined(NO_SLIDE_REDIR))
+     if (G.redirect_slide)
