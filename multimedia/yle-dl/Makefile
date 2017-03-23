@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/03/19 20:28:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2017/03/23 01:35:37 jca Exp $
 
 V =			2.15
 COMMENT =		download videos from YLE Areena
@@ -21,13 +21,14 @@ RUN_DEPENDS =		net/rtmpdump \
 			security/py-crypto \
 			lang/php/${MODPHP_VERSION},-curl \
 			lang/php/${MODPHP_VERSION},-mcrypt
-			
+
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/aajanki-yle-dl-e188267
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_ADJ_FILES =	yle-dl
+MODPHP_BUILDDEP =	No
 
 SUBST_VARS +=		MODPHP_BIN
 
