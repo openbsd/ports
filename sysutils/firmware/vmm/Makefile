@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/23 23:31:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2017/03/23 23:36:57 sthen Exp $
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
@@ -31,10 +31,8 @@ EXTRAVERSION=	-OpenBSD-vmm
 MAKE_FLAGS=	PYTHON="${MODPY_BIN}" V=1 EXTRAVERSION="${EXTRAVERSION}" \
 		LD32BIT_FLAG=-melf_i386_obsd LD="${LD} -nopie -znorelro" 
 
-post-build:
-	mv ${WRKSRC}/out/bios.bin ${WRKSRC}/out/default-bios.bin
+pre-build:
 	cp ${FILESDIR}/config ${WRKSRC}/.config
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_TARGET} ${MAKE_FLAGS}
 
 do-install:
 	 ${INSTALL_DATA} ${WRKSRC}/out/bios.bin ${PREFIX}/firmware/vmm-bios
