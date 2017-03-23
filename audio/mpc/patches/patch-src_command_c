@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_command_c,v 1.10 2017/03/23 18:45:45 dcoppa Exp $
+
+commit 0191d38753cee57fcb72e191d9627043837414aa
+Author: Max Kellermann <max@musicpd.org>
+Date:   Wed Mar 8 16:13:29 2017 +0100
+
+command: add missing parentheses around bit shift
+
+--- src/command.c.orig	Thu Aug 18 13:10:08 2016
++++ src/command.c	Thu Mar 23 19:41:21 2017
+@@ -618,7 +618,7 @@ cmd_update(int argc, char **argv, struct mpd_connectio
+ 		/* is our last queued update finished now? */
+ 
+ 		if (current_id == 0 || current_id > id ||
+-		    (id > 1 << 30 && id < 1000)) /* wraparound */
++		    (id > (1 << 30) && id < 1000)) /* wraparound */
+ 			break;
+ 	}
+ 
