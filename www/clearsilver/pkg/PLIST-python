@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2011/09/05 17:12:35 okan Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
-lib/python${MODPY_VERSION}/site-packages/neo_cgi.so

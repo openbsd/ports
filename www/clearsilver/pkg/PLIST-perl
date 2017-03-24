@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-perl,v 1.4 2016/04/28 15:57:19 sthen Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ClearSilver.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.so
-@man man/man3p/ClearSilver.3p
