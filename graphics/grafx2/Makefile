@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/04 20:13:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2017/03/24 15:26:11 fcambus Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
@@ -29,12 +29,11 @@ WRKDIST =	${WRKDIR}/grafx2/src
 
 USE_GMAKE =	Yes
 
-MAKE_FLAGS =	NOLUA=1 NOTTF=1
+MAKE_FLAGS =	CC="${CC}" NOLUA=1 NOTTF=1
 
 NO_TEST =	Yes
 
 pre-configure:
-	@sed -i 's|CC = gcc|CC ?= gcc|' ${WRKSRC}/Makefile
 	@sed -i 's|Extract_path(program_dir, argv0);|strcpy(program_dir,"${PREFIX}/bin/");|' \
 	${WRKSRC}/setup.c
 
