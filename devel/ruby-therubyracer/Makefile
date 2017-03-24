@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2016/11/04 21:26:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/03/24 13:35:23 abieber Exp $
+
+BROKEN =	port is holding back updates to lang/libv8
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
