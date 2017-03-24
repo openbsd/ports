@@ -1,9 +1,0 @@
-$OpenBSD: patch-curses_curses_ml,v 1.1 2017/03/04 16:45:17 jca Exp $
---- curses/curses.ml.orig	Sat Mar  4 17:41:27 2017
-+++ curses/curses.ml	Sat Mar  4 17:41:36 2017
-@@ -1,4 +1,4 @@
--(*pp gcc -x c -E *)
-+(*pp ${CC} -x c -E *)
- 
- type window
- type screen
