@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/03/23 23:36:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/24 22:37:53 sthen Exp $
 
 FW_DRIVER=	vmm
 FW_VER=		1.10.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	seabios-${FW_VER}
 
 HOMEPAGE=	https://www.seabios.org/

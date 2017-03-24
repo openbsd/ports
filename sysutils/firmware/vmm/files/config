@@ -1,4 +1,4 @@
-# $OpenBSD: config,v 1.1 2017/03/23 08:05:00 sthen Exp $
+# $OpenBSD: config,v 1.2 2017/03/24 22:37:53 sthen Exp $
 #
 # Automatically generated file; DO NOT EDIT.
 # SeaBIOS Configuration
@@ -36,7 +36,7 @@ CONFIG_VIRTIO_BLK=y
 # CONFIG_FLOPPY is not set
 # CONFIG_FLASH_FLOPPY is not set
 # CONFIG_NVME is not set
-CONFIG_PS2PORT=y
+# CONFIG_PS2PORT is not set
 # CONFIG_USB is not set
 CONFIG_SERIAL=y
 # CONFIG_LPT is not set
