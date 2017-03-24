@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2016/06/27 19:36:50 sthen Exp $
+$OpenBSD: README,v 1.7 2017/03/24 18:29:37 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,6 +52,24 @@ The DAViCal configuration resides in
 ${TINSTDIR}/config/config.php and is a regular PHP file which
 sets (or overrides) some specific variables. You should only need to
 set pg_connect value to configure database access.
+
+httpd(8) Configuration
+=====================
+
+With httpd(8), it is easiest to run php-fpm and use the following 
+for a distinct server block:
+
+ext_addr="*"
+server "default" {
+    listen on $ext_addr port 80
+    listen on $ext_addr tls port 443
+    connection { max requests 500, timeout 3600 }
+    location "/" { directory index index.php }
+    location "/davical/*.php*" {
+            fastcgi socket "/run/php-fpm.sock"
+            root "/davical/htdocs"
+    }
+}
 
 Apache Configuration
 ====================
