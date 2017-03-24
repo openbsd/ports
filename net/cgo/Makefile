@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/18 19:35:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/03/24 12:59:40 abieber Exp $
 
 COMMENT =	simple terminal based gopher client
-DISTNAME =	cgo-20141022
-CATEGORIES =	net
-REVISION =	0
+DISTNAME =	cgo-20170313
 
-HOMEPAGE =	https://github.com/kieselsteini/cgo/
+CATEGORIES =	net
+
+GH_ACCOUNT =	kieselsteini
+GH_PROJECT =	cgo
+GH_COMMIT =	c1ed33645f4c2ee1d731258d8a2dc6cedb35eb90
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
-
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
