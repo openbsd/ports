@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.83 2017/02/02 03:41:12 juanfra Exp $
+# $OpenBSD: Makefile,v 1.84 2017/03/24 14:30:14 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.3
+V=		5.3.1
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -42,12 +42,15 @@ TEST_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
 		INSTALL="install -c" \
 		TMPPREFIX=${WRKBUILD}/tmp \
 		TERM=xterm
-EXTFILES=	Misc/checkmail Misc/run-help Misc/sticky-note Misc/zcalc Misc/zed Misc/zkbd \
+EXTFILES=	Misc/checkmail Misc/run-help \
+		Misc/sticky-note Misc/zcalc \
+		Misc/zed Misc/zkbd \
 		Calendar/calendar_add Example/cat Example/zless
 
 pre-configure:
 .for i in ${EXTFILES}
-	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" ${WRKSRC}/Functions/${i}
+	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" \
+		${WRKSRC}/Functions/${i}
 .endfor
 	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 
