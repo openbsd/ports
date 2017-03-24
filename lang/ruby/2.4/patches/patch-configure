@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2017/01/06 15:59:25 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2017/03/24 14:39:05 jeremy Exp $
 
 Fix so name, checking for DOT and DOXYGEN.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Fri Dec 23 08:06:46 2016
-+++ configure	Sat Dec 24 22:25:54 2016
+--- configure.orig	Tue Mar 21 22:56:10 2017
++++ configure	Wed Mar 22 08:33:15 2017
 @@ -424,7 +424,7 @@ if test -z "$2"; then :
  
  else
@@ -16,7 +16,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  	if test "$FOLD"; then :
  
  	    echo "$2" | fold -s -w50 |
-@@ -25553,7 +25553,7 @@ esac
+@@ -25601,7 +25601,7 @@ esac
    openbsd*|mirbsd*) :
  
  	SOLIBS='$(LIBS)'
@@ -25,7 +25,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  	 ;; #(
    solaris*) :
  
-@@ -26926,7 +26926,7 @@ _ACEOF
+@@ -26974,7 +26974,7 @@ _ACEOF
  _ACEOF
  
  else
