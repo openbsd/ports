@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2015/12/24 13:08:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.32 2017/03/25 15:53:56 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+USE_WXNEEDED=	Yes
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
 DISTNAME=	dosbox-0.74
-REVISION=	6
+REVISION=	7
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
