@@ -1,8 +1,8 @@
-$OpenBSD: patch-Cargo_toml,v 1.1.1.1 2017/02/03 15:00:33 danj Exp $
+$OpenBSD: patch-Cargo_toml,v 1.2 2017/03/25 16:16:47 danj Exp $
 Remove profile configuration.
---- Cargo.toml.orig	Tue Nov 22 02:53:52 2016
-+++ Cargo.toml	Sat Dec 10 05:34:48 2016
-@@ -51,6 +51,3 @@ lazy_static = "0.2"
+--- Cargo.toml.orig	Mon Mar 13 03:59:37 2017
++++ Cargo.toml	Thu Mar 16 06:21:09 2017
+@@ -50,6 +50,3 @@ lazy_static = "0.2"
  [features]
  avx-accel = ["bytecount/avx-accel"]
  simd-accel = ["bytecount/simd-accel", "regex/simd-accel"]
