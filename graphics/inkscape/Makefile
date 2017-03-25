@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.57 2017/03/10 20:09:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2017/03/25 11:45:47 landry Exp $
 
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-0.92.0
+DISTNAME =	inkscape-0.92.1
 CATEGORIES =	graphics
-REVISION =	0
 
-MASTER_SITES =	https://inkscape.org/gallery/item/10552/
+MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 HOMEPAGE =	https://www.inkscape.org/
 EXTRACT_SUFX =	.tar.bz2
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${DISTNAME}.tar_XlpI7qT.bz2}
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
