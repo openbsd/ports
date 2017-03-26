@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.119 2017/02/19 20:53:26 kili Exp $
+# $OpenBSD: Makefile,v 1.120 2017/03/26 19:51:36 kili Exp $
 
 COMMENT-main=	PDF rendering library
-COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
@@ -11,19 +10,16 @@ DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
-PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 PKGNAME-qt5=	poppler-qt5-$V
-OLDSHIT =	poppler-0.16.7
+
+EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	poppler              43.1     # 66.0
 SHARED_LIBS +=	poppler-glib         16.0     # 16.0
-SHARED_LIBS +=	poppler-qt           12.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          20.1     # 15.0
 SHARED_LIBS +=	poppler-qt5          3.1      # 10.0
 SHARED_LIBS +=	poppler-cpp          8.0      # 3.0
-
-DISTFILES = ${DISTNAME}.tar.xz ${OLDSHIT}.tar.gz
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
@@ -34,24 +30,18 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-PSEUDO_FLAVORS=no_qt no_qt4 no_qt5 bootstrap
+PSEUDO_FLAVORS=no_qt4 no_qt5 bootstrap
 # XXX not strictly a bootstrap loop, but on the critical path for libreoffice
-FLAVOR?=no_qt no_qt4 no_qt5 bootstrap
+FLAVOR?=no_qt4 no_qt5 bootstrap
 
 NOT_FOR_ARCHS-qt4 = arm
 NOT_FOR_ARCHS-qt5 = arm
 
-MULTI_PACKAGES=-main -qt -qt4 -qt5 -utils
+MULTI_PACKAGES=-main -qt4 -qt5 -utils
 
 .include <bsd.port.arch.mk>
 
 cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
-
-.if ${BUILD_PACKAGES:M-qt}
-MODULES+=	x11/qt3
-.else
-CONFIGURE_ARGS+=	--disable-poppler-qt
-.endif
 
 .if ${BUILD_PACKAGES:M-qt4}
 MODULES+=	x11/qt4
@@ -80,9 +70,6 @@ LIB_DEPENDS-main= \
 		graphics/png \
 		graphics/tiff
 
-LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
-		print/poppler
-
 LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
 		print/poppler
 
@@ -96,12 +83,6 @@ WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
 		iconv intl stdc++
 
-WANTLIB-qt=	${cWANTLIB} ${MODQT3_WANTLIB} lcms2 openjp2 poppler png \
-		pthread-stubs stdc++ \
-		GL ICE SM X11 X11-xcb Xcursor Xdamage Xext Xfixes Xft \
-		Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm glapi \
-		lcms mng xcb xcb-dri2 xcb-glx
-
 WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjp2 \
@@ -113,7 +94,7 @@ WANTLIB-qt5=	${cWANTLIB} estdc++ \
 		glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz \
 		iconv icudata icui18n icuuc intl lcms2 openjp2 pcre \
 		pcre16 png poppler pthread-stubs xcb xcb-dri2 xcb-glx
-		
+
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png pthread-stubs stdc++ xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
@@ -130,7 +111,6 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBJPEG_CFLAGS="-I${LOCALBASE}/include" \
-		POPPLER_QT_LIBS="-L${LOCALBASE}/lib/qt3 -lqt-mt" \
 		ac_cv_prog_MOCQT4=${MODQT4_MOC}
 
 USE_GMAKE=	Yes
@@ -141,15 +121,6 @@ MAIN_CXX=	/usr/bin/c++
 MAIN_CC:=	ccache ${MAIN_CC}
 MAIN_CXX:=	ccache ${MAIN_CXX}
 .endif
-
-post-extract:
-	cd ${WRKDIST} && \
-	    for i in poppler-qt-uninstalled.pc.in poppler-qt.pc.cmake \
-		poppler-qt.pc.in; do  \
-			ln -sf ../${OLDSHIT}/$$i $$i; \
-	    done; \
-	    ln -sf ../../${OLDSHIT}/m4/qt.m4 m4/qt.m4
-	cd ${WRKDIST} && cp -R ../${OLDSHIT}/qt qt
 
 post-configure:
 	find ${WRKBUILD} -name Makefile \! -path '*/qt5/*' -print0 | xargs -0 \
