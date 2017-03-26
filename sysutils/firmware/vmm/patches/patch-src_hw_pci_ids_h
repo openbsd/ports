@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_hw_pci_ids_h,v 1.1 2017/03/26 17:06:29 kettenis Exp $
+
+Since we hijacked the OpenBSD PCI vendor ID, this diff should probably
+not be upstreamed.
+
+--- src/hw/pci_ids.h.orig	Fri Feb 24 15:01:20 2017
++++ src/hw/pci_ids.h	Sat Mar 25 14:13:05 2017
+@@ -146,6 +146,9 @@
+ #define PCI_DEVICE_ID_BERKOM_A4T		0xffa4
+ #define PCI_DEVICE_ID_BERKOM_SCITEL_QUADRO	0xffa8
+ 
++#define PCI_VENDOR_ID_OPENBSD		0x0b5d
++#define PCI_DEVICE_ID_OPENBSD_PCHB	0x0666
++
+ #define PCI_VENDOR_ID_COMPAQ		0x0e11
+ #define PCI_DEVICE_ID_COMPAQ_TOKENRING	0x0508
+ #define PCI_DEVICE_ID_COMPAQ_TACHYON	0xa0fc
