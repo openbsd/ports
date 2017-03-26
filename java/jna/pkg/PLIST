@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/02/25 15:05:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2017/03/26 12:45:27 jasper Exp $
 share/java/
 share/java/classes/
 share/java/classes/jna-min.jar
@@ -21,6 +21,7 @@ share/java/doc/javadoc/com/sun/jna/CallbackReference.html
 share/java/doc/javadoc/com/sun/jna/CallbackResultContext.html
 share/java/doc/javadoc/com/sun/jna/CallbackThreadInitializer.html
 share/java/doc/javadoc/com/sun/jna/DefaultTypeMapper.html
+share/java/doc/javadoc/com/sun/jna/ELFAnalyser.html
 share/java/doc/javadoc/com/sun/jna/FromNativeContext.html
 share/java/doc/javadoc/com/sun/jna/FromNativeConverter.html
 share/java/doc/javadoc/com/sun/jna/Function.PostCallRead.html
