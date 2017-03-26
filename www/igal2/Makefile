@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/19 12:49:54 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2017/03/26 13:32:44 rpe Exp $
 
 COMMENT=	online Image GALlery generator
 
-DISTNAME=	igal2-2.1
+DISTNAME=	igal2-2.2
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://igal.trexler.at/
@@ -23,8 +23,9 @@ PKG_ARCH=	*
 DATADIR=	${PREFIX}/share/igal2
 
 do-configure:
-	@perl -pi -e "s,/usr/local,${PREFIX},g;" \
-		-e "s,${PREFIX}/lib/igal2,${DATADIR},g;" ${WRKSRC}/igal2{,.1}
+	sed -i	-e "s,/usr/local,${PREFIX},g" \
+		-e "s,${PREFIX}/lib/igal2,${DATADIR},g" \
+		${WRKSRC}/igal2{,.1}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/igal2 ${PREFIX}/bin
