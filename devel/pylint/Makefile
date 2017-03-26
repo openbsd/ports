@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2017/03/26 03:21:58 juanfra Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -8,7 +8,7 @@ DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION-main=		2
+REVISION-main=		3
 
 HOMEPAGE=		http://www.pylint.org/
 
@@ -26,6 +26,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS=		devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-isort${MODPY_FLAVOR} \
+			devel/py-mccabe${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
