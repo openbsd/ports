@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/12/15 21:44:31 juanfra Exp $
+# $OpenBSD: Makefile,v 1.13 2017/03/26 03:13:41 juanfra Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
-V =			0.9.5
+V =			0.9.6rc20170321
 DISTNAME =		pdf2djvu-${V}
 
 CATEGORIES =		graphics
@@ -22,6 +22,10 @@ MASTER_SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
 			ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
 
 EXTRACT_SUFX =		.tar.xz
+
+MODULES =		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
 LIB_DEPENDS =		devel/gettext\
