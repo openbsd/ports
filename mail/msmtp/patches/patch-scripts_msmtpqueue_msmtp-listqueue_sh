@@ -1,3 +1,4 @@
+$OpenBSD: patch-scripts_msmtpqueue_msmtp-listqueue_sh,v 1.3 2017/03/26 13:34:06 rpe Exp $
 --- scripts/msmtpqueue/msmtp-listqueue.sh.orig	Mon Jul 28 00:20:57 2008
 +++ scripts/msmtpqueue/msmtp-listqueue.sh	Tue Oct 14 14:15:51 2008
 @@ -1,8 +1,8 @@
