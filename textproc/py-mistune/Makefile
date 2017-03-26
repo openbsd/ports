@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:27:52 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/26 12:34:33 shadchin Exp $
 
 COMMENT =		markdown parser for Python
 
-MODPY_EGG_VERSION =	0.7.3
+MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
 
