@@ -1,7 +1,7 @@
-$OpenBSD: patch-pylint_test_unittest_lint_py,v 1.1 2016/04/27 12:05:02 shadchin Exp $
---- pylint/test/unittest_lint.py.orig	Sun Jan  3 20:15:48 2016
-+++ pylint/test/unittest_lint.py	Sun Jan 17 15:55:18 2016
-@@ -508,6 +508,12 @@ class ConfigTC(unittest.TestCase):
+$OpenBSD: patch-pylint_test_unittest_lint_py,v 1.2 2017/03/26 11:21:52 shadchin Exp $
+--- pylint/test/unittest_lint.py.orig	Sun Jan 22 18:51:04 2017
++++ pylint/test/unittest_lint.py	Tue Jan 24 14:26:34 2017
+@@ -512,6 +512,12 @@ class ConfigTC(unittest.TestCase):
          os.environ.pop('PYLINTRC', None)
  
      def test_pylint_home(self):
