@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2017/02/26 20:05:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.382 2017/03/27 08:12:03 fcambus Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -55,7 +55,6 @@
      SUBDIR += gmpc-plugins
      SUBDIR += goattracker
      SUBDIR += gogglesmm
-     SUBDIR += gogo
      SUBDIR += gqmpeg
      SUBDIR += gradio
      SUBDIR += grip
