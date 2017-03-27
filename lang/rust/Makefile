@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/02/18 13:15:48 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2017/03/27 12:35:31 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,13 +6,12 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.15.1
+V =			1.16.0
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
 # rustc bootstrap version
-RBV-amd64 =		1.15.0-20170203
-RBV-i386 =		1.15.0-20170204
+RBV-amd64 =		1.16.0-20160315
+RBV-i386 =		1.16.0-20170312
 RBV =			${RBV-${MACHINE_ARCH}}
 
 # cargo bootstrap version
@@ -98,6 +97,21 @@ USE_LIBTOOL =		gnu
 TEST_DEPENDS +=		${FULLPKGNAME-main}:${BUILD_PKGPATH} \
 			devel/git
 
+TEST_TARGET ?=	src/test/run-pass \
+		src/test/compile-fail \
+		src/test/parse-fail \
+		src/test/run-fail \
+		src/test/mir-opt \
+		src/test/incremental \
+		src/test/ui \
+		src/test/compile-fail-fulldeps \
+		src/test/run-make \
+		src/test/rustdoc \
+		src/test/pretty \
+		src/test/run-pass/pretty \
+		src/test/run-fail/pretty \
+		path/to/nowhere
+
 # - check datasize limit before configuring (and building)
 pre-configure:
 	@if [ `ulimit -d` -lt 1572864 ]; then \
@@ -121,6 +135,9 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
 	
+	echo '[dist]' >>${WRKBUILD}/config.toml
+	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
+	
 .if ${PORTS_LLVM:L:Myes}
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
@@ -135,6 +152,12 @@ do-configure:
 	mkdir -p ${WRKDIR}/modgcc-libs
 	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} \
 		${WRKDIR}/modgcc-libs
+
+# hack to build doc using generated stage2 instead of with stage0
+# (rustdoc isn't included in our bootstrap)
+post-configure:
+	ln -fs ${WRKBUILD}/build/${TRIPLE_ARCH}/stage2/bin/rustdoc \
+		${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${RBV}/bin/rustdoc
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/src/bootstrap/bootstrap.py
@@ -169,7 +192,7 @@ post-install:
 		${PREFIX}/lib/rustlib/manifest-*
 
 do-test:
-	${BUILD_BIN} test --verbose --jobs=${MAKE_JOBS}
+	${BUILD_BIN} test --verbose --jobs=${MAKE_JOBS} ${TEST_TARGET}
 
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new

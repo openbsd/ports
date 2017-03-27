@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.1 2017/02/15 12:52:35 landry Exp $
+@comment $OpenBSD: PFRAG.amd64-main,v 1.2 2017/03/27 12:35:31 danj Exp $
 lib/libarena-9be0c8e391cd714d.so
 lib/libflate-35a2e0a7799ede52.so
 lib/libfmt_macros-9786ebdcaffd7b66.so
@@ -7,7 +7,6 @@ lib/libgraphviz-405c42de9dbd8060.so
 lib/liblog-10e131c9710c4616.so
 lib/libproc_macro-d227dda69b7f6844.so
 lib/libproc_macro_plugin-0fe4934fae94e846.so
-lib/libproc_macro_tokens-d715c2b9eaa1f98f.so
 lib/librustc-3e62541ac92a2a57.so
 lib/librustc_back-4dbce09646909121.so
 lib/librustc_borrowck-a7bde671bbfe2e74.so
@@ -58,7 +57,6 @@ lib/rustlib/x86_64-unknown-openbsd/lib/libpanic_abort-58521f8da7a6b18c.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/libpanic_unwind-f99521716a81d87e.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/libproc_macro-d227dda69b7f6844.so
 lib/rustlib/x86_64-unknown-openbsd/lib/libproc_macro_plugin-0fe4934fae94e846.so
-lib/rustlib/x86_64-unknown-openbsd/lib/libproc_macro_tokens-d715c2b9eaa1f98f.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librand-fa1e64256580f121.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc-3e62541ac92a2a57.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_back-4dbce09646909121.so
@@ -69,6 +67,7 @@ lib/rustlib/x86_64-unknown-openbsd/lib/librustc_const_math-dab3ec5d3d3ea1e1.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_data_structures-4fd0964d090ce553.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_driver-be81d0b7172df003.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_errors-014027489d874466.so
+lib/rustlib/x86_64-unknown-openbsd/lib/librustc_i128-473c466875877959.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_incremental-f9346bea442d9bfc.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_lint-3ba673556bf687ed.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_llvm-1132aef09c4b778f.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.i386-main,v 1.1 2017/02/15 12:52:35 landry Exp $
+@comment $OpenBSD: PFRAG.i386-main,v 1.2 2017/03/27 12:35:31 danj Exp $
 lib/libarena-e6c10394ea2a068d.so
 lib/libflate-7f11ba0e0002d019.so
 lib/libfmt_macros-fb189e646ddfaa7a.so
@@ -7,7 +7,6 @@ lib/libgraphviz-0996c64ed0d164c8.so
 lib/liblog-1bdf50b11ac51d61.so
 lib/libproc_macro-2bcd4cc67250a3c6.so
 lib/libproc_macro_plugin-075014c550476d3f.so
-lib/libproc_macro_tokens-4e171438614a4837.so
 lib/librustc-8a90c4600504e360.so
 lib/librustc_back-9a6db5050b3e4861.so
 lib/librustc_borrowck-71ef7ce0af8740ab.so
@@ -58,7 +57,6 @@ lib/rustlib/i686-unknown-openbsd/lib/libpanic_abort-ecd96884dcbae1ee.rlib
 lib/rustlib/i686-unknown-openbsd/lib/libpanic_unwind-454979856f8d9ffa.rlib
 lib/rustlib/i686-unknown-openbsd/lib/libproc_macro-2bcd4cc67250a3c6.so
 lib/rustlib/i686-unknown-openbsd/lib/libproc_macro_plugin-075014c550476d3f.so
-lib/rustlib/i686-unknown-openbsd/lib/libproc_macro_tokens-4e171438614a4837.so
 lib/rustlib/i686-unknown-openbsd/lib/librand-a27596c5b33125cb.rlib
 lib/rustlib/i686-unknown-openbsd/lib/librustc-8a90c4600504e360.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_back-9a6db5050b3e4861.so
@@ -69,6 +67,7 @@ lib/rustlib/i686-unknown-openbsd/lib/librustc_const_math-1087661ebdcc39e2.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_data_structures-16a96096216afc13.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_driver-1de59cf7f254186e.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_errors-ebfa8756ab220e28.so
+lib/rustlib/i686-unknown-openbsd/lib/librustc_i128-08e78454d9c49eae.rlib
 lib/rustlib/i686-unknown-openbsd/lib/librustc_incremental-2be56285b1e8a530.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_lint-3fc9d8f3daef359b.so
 lib/rustlib/i686-unknown-openbsd/lib/librustc_llvm-819941fff501e0f0.so

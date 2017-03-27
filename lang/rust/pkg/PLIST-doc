@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-doc,v 1.18 2017/02/15 12:52:35 landry Exp $
+@comment $OpenBSD: PLIST-doc,v 1.19 2017/03/27 12:35:31 danj Exp $
+%%i386%%
 share/doc/rust/
 share/doc/rust/html/
 share/doc/rust/html/.lock
@@ -154,6 +155,7 @@ share/doc/rust/html/collections/
 share/doc/rust/html/collections/Bound.t.html
 share/doc/rust/html/collections/binary_heap/
 share/doc/rust/html/collections/binary_heap/BinaryHeap.t.html
+share/doc/rust/html/collections/binary_heap/BinaryHeapPlace.t.html
 share/doc/rust/html/collections/binary_heap/Drain.t.html
 share/doc/rust/html/collections/binary_heap/IntoIter.t.html
 share/doc/rust/html/collections/binary_heap/Iter.t.html
@@ -161,6 +163,7 @@ share/doc/rust/html/collections/binary_heap/PeekMut.t.html
 share/doc/rust/html/collections/binary_heap/index.html
 share/doc/rust/html/collections/binary_heap/sidebar-items.js
 share/doc/rust/html/collections/binary_heap/struct.BinaryHeap.html
+share/doc/rust/html/collections/binary_heap/struct.BinaryHeapPlace.html
 share/doc/rust/html/collections/binary_heap/struct.Drain.html
 share/doc/rust/html/collections/binary_heap/struct.IntoIter.html
 share/doc/rust/html/collections/binary_heap/struct.Iter.html
@@ -480,11 +483,13 @@ share/doc/rust/html/collections/vec/
 share/doc/rust/html/collections/vec.m.html
 share/doc/rust/html/collections/vec/Drain.t.html
 share/doc/rust/html/collections/vec/IntoIter.t.html
+share/doc/rust/html/collections/vec/PlaceBack.t.html
 share/doc/rust/html/collections/vec/Vec.t.html
 share/doc/rust/html/collections/vec/index.html
 share/doc/rust/html/collections/vec/sidebar-items.js
 share/doc/rust/html/collections/vec/struct.Drain.html
 share/doc/rust/html/collections/vec/struct.IntoIter.html
+share/doc/rust/html/collections/vec/struct.PlaceBack.html
 share/doc/rust/html/collections/vec/struct.Vec.html
 share/doc/rust/html/collections/vec_deque/
 share/doc/rust/html/collections/vec_deque/Drain.t.html
@@ -833,6 +838,13 @@ share/doc/rust/html/core/hash/struct.SipHasher24.html
 share/doc/rust/html/core/hash/trait.BuildHasher.html
 share/doc/rust/html/core/hash/trait.Hash.html
 share/doc/rust/html/core/hash/trait.Hasher.html
+share/doc/rust/html/core/i128/
+share/doc/rust/html/core/i128/MAX.v.html
+share/doc/rust/html/core/i128/MIN.v.html
+share/doc/rust/html/core/i128/constant.MAX.html
+share/doc/rust/html/core/i128/constant.MIN.html
+share/doc/rust/html/core/i128/index.html
+share/doc/rust/html/core/i128/sidebar-items.js
 share/doc/rust/html/core/i16/
 share/doc/rust/html/core/i16/MAX.v.html
 share/doc/rust/html/core/i16/MIN.v.html
@@ -1400,7 +1412,6 @@ share/doc/rust/html/core/macro.writeln.html
 share/doc/rust/html/core/marker/
 share/doc/rust/html/core/marker/Copy.t.html
 share/doc/rust/html/core/marker/PhantomData.t.html
-share/doc/rust/html/core/marker/Reflect.t.html
 share/doc/rust/html/core/marker/Send.t.html
 share/doc/rust/html/core/marker/Sized.t.html
 share/doc/rust/html/core/marker/Sync.t.html
@@ -1409,7 +1420,6 @@ share/doc/rust/html/core/marker/index.html
 share/doc/rust/html/core/marker/sidebar-items.js
 share/doc/rust/html/core/marker/struct.PhantomData.html
 share/doc/rust/html/core/marker/trait.Copy.html
-share/doc/rust/html/core/marker/trait.Reflect.html
 share/doc/rust/html/core/marker/trait.Send.html
 share/doc/rust/html/core/marker/trait.Sized.html
 share/doc/rust/html/core/marker/trait.Sync.html
@@ -1793,6 +1803,13 @@ share/doc/rust/html/core/sync/atomic/struct.AtomicUsize.html
 share/doc/rust/html/core/sync/index.html
 share/doc/rust/html/core/sync/sidebar-items.js
 share/doc/rust/html/core/try.m.html
+share/doc/rust/html/core/u128/
+share/doc/rust/html/core/u128/MAX.v.html
+share/doc/rust/html/core/u128/MIN.v.html
+share/doc/rust/html/core/u128/constant.MAX.html
+share/doc/rust/html/core/u128/constant.MIN.html
+share/doc/rust/html/core/u128/index.html
+share/doc/rust/html/core/u128/sidebar-items.js
 share/doc/rust/html/core/u16/
 share/doc/rust/html/core/u16/MAX.v.html
 share/doc/rust/html/core/u16/MIN.v.html
@@ -2321,6 +2338,7 @@ share/doc/rust/html/src/core/num/flt2dec/mod.rs.html
 share/doc/rust/html/src/core/num/flt2dec/strategy/
 share/doc/rust/html/src/core/num/flt2dec/strategy/dragon.rs.html
 share/doc/rust/html/src/core/num/flt2dec/strategy/grisu.rs.html
+share/doc/rust/html/src/core/num/i128.rs.html
 share/doc/rust/html/src/core/num/i16.rs.html
 share/doc/rust/html/src/core/num/i32.rs.html
 share/doc/rust/html/src/core/num/i64.rs.html
@@ -2328,6 +2346,7 @@ share/doc/rust/html/src/core/num/i8.rs.html
 share/doc/rust/html/src/core/num/int_macros.rs.html
 share/doc/rust/html/src/core/num/isize.rs.html
 share/doc/rust/html/src/core/num/mod.rs.html
+share/doc/rust/html/src/core/num/u128.rs.html
 share/doc/rust/html/src/core/num/u16.rs.html
 share/doc/rust/html/src/core/num/u32.rs.html
 share/doc/rust/html/src/core/num/u64.rs.html
@@ -2638,6 +2657,7 @@ share/doc/rust/html/std/collections/LinkedList.t.html
 share/doc/rust/html/std/collections/VecDeque.t.html
 share/doc/rust/html/std/collections/binary_heap/
 share/doc/rust/html/std/collections/binary_heap/BinaryHeap.t.html
+share/doc/rust/html/std/collections/binary_heap/BinaryHeapPlace.t.html
 share/doc/rust/html/std/collections/binary_heap/Drain.t.html
 share/doc/rust/html/std/collections/binary_heap/IntoIter.t.html
 share/doc/rust/html/std/collections/binary_heap/Iter.t.html
@@ -2645,6 +2665,7 @@ share/doc/rust/html/std/collections/binary_heap/PeekMut.t.html
 share/doc/rust/html/std/collections/binary_heap/index.html
 share/doc/rust/html/std/collections/binary_heap/sidebar-items.js
 share/doc/rust/html/std/collections/binary_heap/struct.BinaryHeap.html
+share/doc/rust/html/std/collections/binary_heap/struct.BinaryHeapPlace.html
 share/doc/rust/html/std/collections/binary_heap/struct.Drain.html
 share/doc/rust/html/std/collections/binary_heap/struct.IntoIter.html
 share/doc/rust/html/std/collections/binary_heap/struct.Iter.html
@@ -3210,6 +3231,14 @@ share/doc/rust/html/std/hash/struct.SipHasher24.html
 share/doc/rust/html/std/hash/trait.BuildHasher.html
 share/doc/rust/html/std/hash/trait.Hash.html
 share/doc/rust/html/std/hash/trait.Hasher.html
+share/doc/rust/html/std/i128/
+share/doc/rust/html/std/i128.t.html
+share/doc/rust/html/std/i128/MAX.v.html
+share/doc/rust/html/std/i128/MIN.v.html
+share/doc/rust/html/std/i128/constant.MAX.html
+share/doc/rust/html/std/i128/constant.MIN.html
+share/doc/rust/html/std/i128/index.html
+share/doc/rust/html/std/i128/sidebar-items.js
 share/doc/rust/html/std/i16/
 share/doc/rust/html/std/i16.t.html
 share/doc/rust/html/std/i16/MAX.v.html
@@ -3885,7 +3914,6 @@ share/doc/rust/html/std/macro.writeln.html
 share/doc/rust/html/std/marker/
 share/doc/rust/html/std/marker/Copy.t.html
 share/doc/rust/html/std/marker/PhantomData.t.html
-share/doc/rust/html/std/marker/Reflect.t.html
 share/doc/rust/html/std/marker/Send.t.html
 share/doc/rust/html/std/marker/Sized.t.html
 share/doc/rust/html/std/marker/Sync.t.html
@@ -3894,7 +3922,6 @@ share/doc/rust/html/std/marker/index.html
 share/doc/rust/html/std/marker/sidebar-items.js
 share/doc/rust/html/std/marker/struct.PhantomData.html
 share/doc/rust/html/std/marker/trait.Copy.html
-share/doc/rust/html/std/marker/trait.Reflect.html
 share/doc/rust/html/std/marker/trait.Send.html
 share/doc/rust/html/std/marker/trait.Sized.html
 share/doc/rust/html/std/marker/trait.Sync.html
@@ -4356,6 +4383,8 @@ share/doc/rust/html/std/prim_f32/
 share/doc/rust/html/std/prim_f32/index.html
 share/doc/rust/html/std/prim_f64/
 share/doc/rust/html/std/prim_f64/index.html
+share/doc/rust/html/std/prim_i128/
+share/doc/rust/html/std/prim_i128/index.html
 share/doc/rust/html/std/prim_i16/
 share/doc/rust/html/std/prim_i16/index.html
 share/doc/rust/html/std/prim_i32/
@@ -4374,6 +4403,8 @@ share/doc/rust/html/std/prim_str/
 share/doc/rust/html/std/prim_str/index.html
 share/doc/rust/html/std/prim_tuple/
 share/doc/rust/html/std/prim_tuple/index.html
+share/doc/rust/html/std/prim_u128/
+share/doc/rust/html/std/prim_u128/index.html
 share/doc/rust/html/std/prim_u16/
 share/doc/rust/html/std/prim_u16/index.html
 share/doc/rust/html/std/prim_u32/
@@ -4389,6 +4420,7 @@ share/doc/rust/html/std/primitive.bool.html
 share/doc/rust/html/std/primitive.char.html
 share/doc/rust/html/std/primitive.f32.html
 share/doc/rust/html/std/primitive.f64.html
+share/doc/rust/html/std/primitive.i128.html
 share/doc/rust/html/std/primitive.i16.html
 share/doc/rust/html/std/primitive.i32.html
 share/doc/rust/html/std/primitive.i64.html
@@ -4398,6 +4430,7 @@ share/doc/rust/html/std/primitive.pointer.html
 share/doc/rust/html/std/primitive.slice.html
 share/doc/rust/html/std/primitive.str.html
 share/doc/rust/html/std/primitive.tuple.html
+share/doc/rust/html/std/primitive.u128.html
 share/doc/rust/html/std/primitive.u16.html
 share/doc/rust/html/std/primitive.u32.html
 share/doc/rust/html/std/primitive.u64.html
@@ -4909,6 +4942,14 @@ share/doc/rust/html/std/time/struct.SystemTime.html
 share/doc/rust/html/std/time/struct.SystemTimeError.html
 share/doc/rust/html/std/try.m.html
 share/doc/rust/html/std/tuple.t.html
+share/doc/rust/html/std/u128/
+share/doc/rust/html/std/u128.t.html
+share/doc/rust/html/std/u128/MAX.v.html
+share/doc/rust/html/std/u128/MIN.v.html
+share/doc/rust/html/std/u128/constant.MAX.html
+share/doc/rust/html/std/u128/constant.MIN.html
+share/doc/rust/html/std/u128/index.html
+share/doc/rust/html/std/u128/sidebar-items.js
 share/doc/rust/html/std/u16/
 share/doc/rust/html/std/u16.t.html
 share/doc/rust/html/std/u16/MAX.v.html
@@ -4955,11 +4996,13 @@ share/doc/rust/html/std/vec/
 share/doc/rust/html/std/vec.m.html
 share/doc/rust/html/std/vec/Drain.t.html
 share/doc/rust/html/std/vec/IntoIter.t.html
+share/doc/rust/html/std/vec/PlaceBack.t.html
 share/doc/rust/html/std/vec/Vec.t.html
 share/doc/rust/html/std/vec/index.html
 share/doc/rust/html/std/vec/sidebar-items.js
 share/doc/rust/html/std/vec/struct.Drain.html
 share/doc/rust/html/std/vec/struct.IntoIter.html
+share/doc/rust/html/std/vec/struct.PlaceBack.html
 share/doc/rust/html/std/vec/struct.Vec.html
 share/doc/rust/html/std/write.m.html
 share/doc/rust/html/std/writeln.m.html
