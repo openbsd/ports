@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2017/03/19 21:51:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.198 2017/03/27 15:40:40 fcambus Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -14,6 +14,7 @@
      SUBDIR += clojure
      SUBDIR += cython
      SUBDIR += datalog
+     SUBDIR += duktape
      SUBDIR += eagle
      SUBDIR += ecl
      SUBDIR += elixir
