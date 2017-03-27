@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/12 20:44:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/27 14:41:23 landry Exp $
 @bin bin/cantata
 lib/cantata/
 @bin lib/cantata/cantata-replaygain
@@ -11,8 +11,35 @@ share/cantata/config/podcast_directories.xml
 share/cantata/config/scrobblers.xml
 share/cantata/config/tag_fixes.xml
 share/cantata/config/weblinks.xml
+share/cantata/fonts/
+share/cantata/fonts/fontawesome-4.3.0.ttf
 share/cantata/icons/
 share/cantata/icons/bbc.svg
+share/cantata/icons/cantata/
+share/cantata/icons/cantata/AUTHORS
+share/cantata/icons/cantata/LICENSE
+share/cantata/icons/cantata/index.theme
+share/cantata/icons/cantata/svg/
+share/cantata/icons/cantata/svg/audio-x-generic.svg
+share/cantata/icons/cantata/svg/cantata.svg
+share/cantata/icons/cantata/svg/drive-removable-media-usb-pendrive.svg
+share/cantata/icons/cantata/svg/dynamic-playlist.svg
+share/cantata/icons/cantata/svg/folder-downloads.svg
+share/cantata/icons/cantata/svg/folder-temp.svg
+share/cantata/icons/cantata/svg/fork.svg
+share/cantata/icons/cantata/svg/information.svg
+share/cantata/icons/cantata/svg/inode-directory.svg
+share/cantata/icons/cantata/svg/multimedia-player.svg
+share/cantata/icons/cantata/svg/network-server-database.svg
+share/cantata/icons/cantata/svg/playlist.svg
+share/cantata/icons/cantata/svg/preferences-desktop-keyboard.svg
+share/cantata/icons/cantata/svg/preferences-other.svg
+share/cantata/icons/cantata/svg/speaker.svg
+share/cantata/icons/cantata/svg64/
+share/cantata/icons/cantata/svg64/dialog-error.svg
+share/cantata/icons/cantata/svg64/dialog-information.svg
+share/cantata/icons/cantata/svg64/dialog-question.svg
+share/cantata/icons/cantata/svg64/dialog-warning.svg
 share/cantata/icons/cbc.svg
 share/cantata/icons/npr.svg
 share/cantata/icons/podcasts.png

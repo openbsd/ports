@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/12 05:44:46 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/27 14:41:23 landry Exp $
 
 COMMENT =	Qt-based MPD client
 
-DISTNAME =	cantata-1.5.2
+DISTNAME =	cantata-2.0.1
 
 CATEGORIES =	audio
 
-HOMEPAGE =	https://github.com/cdrummond/cantata
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	https://rhaalovely.net/stuff/
+GH_TAGNAME=	v2.0.1
+GH_ACCOUNT=	CDrummond
+GH_PROJECT=	cantata
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	devel/gettext \
 		gcc4 \
 		devel/cmake \
-		x11/qt4
+		x11/qt5
 
 # archs where qt4 builds
 MODGCC4_ARCHS =		amd64 i386 powerpc sparc64
@@ -29,17 +29,19 @@ LIB_DEPENDS +=	audio/mpg123 \
 		audio/libcddb \
 		audio/libmusicbrainz5 \
 		audio/taglib \
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtsvg \
 		devel/libmtp \
-		devel/qjson \
 		graphics/ffmpeg
 
-WANTLIB += ICE QtDBus QtGui QtNetwork QtSvg QtXml SM X11 Xext
-WANTLIB += avcodec avformat avutil c cdda_interface cdda_paranoia
-WANTLIB += cddb m mpg123 mtp musicbrainz5 pthread qjson speexdsp
-WANTLIB += tag z
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml avcodec
+WANTLIB += avformat avutil c cdda_interface cdda_paranoia cddb
+WANTLIB += m mpg123 mtp musicbrainz5 pthread speexdsp tag z
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
+			-DENABLE_LIBVLC=OFF \
 			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
-			-DLCONVERT_EXECUTABLE:String=lconvert4
+			-DLCONVERT_EXECUTABLE:String=${LOCALBASE}/lib/qt5/bin/lconvert
 
 .include <bsd.port.mk>
