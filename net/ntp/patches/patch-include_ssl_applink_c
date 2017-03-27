@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_ssl_applink_c,v 1.1 2017/03/27 11:33:40 bluhm Exp $
+--- include/ssl_applink.c.orig	Thu Mar 23 21:54:28 2017
++++ include/ssl_applink.c	Thu Mar 23 21:55:47 2017
+@@ -14,7 +14,7 @@
+ #   include "msvc_ssl_autolib.h"
+ #  endif
+ # endif
+-# if OPENSSL_VERSION_NUMBER < 0x10100000L
++# if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #  include <openssl/applink.c>
+ # endif
+ # ifdef _MSC_VER
+@@ -41,7 +41,7 @@ void ssl_applink(void);
+ void
+ ssl_applink(void)
+ {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && ! defined(LIBRESSL_VERSION_NUMBER)
+ #   ifdef WRAP_DBG_MALLOC
+ 	CRYPTO_set_mem_functions(wrap_dbg_malloc, wrap_dbg_realloc, wrap_dbg_free_ex);
+ #   else

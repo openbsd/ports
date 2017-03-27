@@ -1,0 +1,15 @@
+$OpenBSD: patch-sntp_tests_packetProcessing_c,v 1.1 2017/03/27 11:33:40 bluhm Exp $
+
+https://bugs.ntp.org/show_bug.cgi?id=3398
+
+--- sntp/tests/packetProcessing.c.orig	Thu Mar 23 22:30:58 2017
++++ sntp/tests/packetProcessing.c	Thu Mar 23 22:42:11 2017
+@@ -76,7 +76,7 @@ PrepareAuthenticationTest(
+ 	key_ptr->next = NULL;
+ 	key_ptr->key_id = key_id;
+ 	key_ptr->key_len = key_len;
+-	memcpy(key_ptr->type, "MD5", 3);
++	strlcpy(key_ptr->type, "MD5", sizeof(key_ptr->type));
+ 
+ 	TEST_ASSERT_TRUE(key_len < sizeof(key_ptr->key_seq));
+ 

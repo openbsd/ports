@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2016/12/14 20:05:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2017/03/27 11:33:40 bluhm Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,7 +6,7 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so convert it to
 # 'pl' for local use.
 
-VERSION=	4.2.8p9
+VERSION=	4.2.8p10
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -43,8 +43,11 @@ post-extract:
 	@touch ${WRKDIR}/timestamp
 	@find ${WRKSRC} -type f -print0 | xargs -0 touch -r ${WRKDIR}/timestamp
 
+# patch-sntp_tests_packetProcessing_c triggers a ruby script to regenerate
+# run-packetProcessing.c.  Avoid ruby, run file does not change anyway.
 post-patch:
 	cp ${WRKSRC}/sntp/loc/freebsd ${WRKSRC}/sntp/loc/openbsd
+	touch ${WRKSRC}/sntp/tests/run-packetProcessing.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntp

@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_ntp-keygen_c,v 1.1 2017/03/27 11:33:40 bluhm Exp $
+--- util/ntp-keygen.c.orig	Thu Mar 23 21:54:28 2017
++++ util/ntp-keygen.c	Thu Mar 23 21:59:33 2017
+@@ -474,7 +474,7 @@ main(
+ 	/*
+ 	 * Seed random number generator and grow weeds.
+ 	 */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	ERR_load_crypto_strings();
+ 	OpenSSL_add_all_algorithms();
+ #endif /* OPENSSL_VERSION_NUMBER */

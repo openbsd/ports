@@ -1,0 +1,21 @@
+$OpenBSD: patch-sntp_libevent_test_regress_ssl_c,v 1.1 2017/03/27 11:33:40 bluhm Exp $
+--- sntp/libevent/test/regress_ssl.c.orig	Thu Mar 23 21:54:28 2017
++++ sntp/libevent/test/regress_ssl.c	Thu Mar 23 21:59:01 2017
+@@ -61,7 +61,7 @@
+ 
+ #include <string.h>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ #define OpenSSL_version_num SSLeay
+ #endif /* OPENSSL_VERSION_NUMBER */
+ 
+@@ -130,7 +130,7 @@ getcert(void)
+ 	X509_set_subject_name(x509, name);
+ 	X509_set_issuer_name(x509, name);
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	X509_time_adj(X509_get_notBefore(x509), 0, &now);
+ 	now += 3600;
+ 	X509_time_adj(X509_get_notAfter(x509), 0, &now);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ports_winnt_include_msvc_ssl_autolib_h,v 1.1 2017/03/27 11:33:40 bluhm Exp $
+--- ports/winnt/include/msvc_ssl_autolib.h.orig	Thu Mar 23 22:03:03 2017
++++ ports/winnt/include/msvc_ssl_autolib.h	Thu Mar 23 22:17:23 2017
+@@ -85,7 +85,7 @@
+  * request in the object file, depending on the SSL version and the
+  * build variant.
+  */
+-# if OPENSSL_VERSION_NUMBER >= 0x10100000L
++# if OPENSSL_VERSION_NUMBER >= 0x10100000L && ! defined(LIBRESSL_VERSION_NUMBER)
+ #  pragma comment(lib, "libcrypto" LTAG_SIZE LTAG_RTLIB LTAG_DEBUG ".lib")
+ # else
+ #  pragma comment(lib, "libeay32" LTAG_RTLIB LTAG_DEBUG ".lib")

@@ -1,12 +1,12 @@
-$OpenBSD: patch-libntp_libssl_compat_c,v 1.1 2016/12/14 20:05:37 naddy Exp $
---- libntp/libssl_compat.c.orig	Mon Nov 21 13:28:40 2016
-+++ libntp/libssl_compat.c	Wed Dec 14 00:02:37 2016
-@@ -23,7 +23,7 @@
- #include "ntp_types.h"
+$OpenBSD: patch-libntp_libssl_compat_c,v 1.2 2017/03/27 11:33:40 bluhm Exp $
+--- libntp/libssl_compat.c.orig	Thu Mar 23 19:36:53 2017
++++ libntp/libssl_compat.c	Thu Mar 23 21:47:42 2017
+@@ -26,7 +26,7 @@
+ /* ----------------------------------------------------------------- */
  
  /* ----------------------------------------------------------------- */
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+-#if defined(OPENSSL) && OPENSSL_VERSION_NUMBER < 0x10100000L
++#if defined(OPENSSL) && OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
  /* ----------------------------------------------------------------- */
  
  #include "libssl_compat.h"
