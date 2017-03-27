@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/27 15:39:00 fcambus Exp $
+@bin bin/duk
+share/examples/duktape/
+share/examples/duktape/mandel.js
