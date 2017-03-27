@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cxx_supportlib_vendor-modified_libev_configure,v 1.1 2017/03/27 18:10:55 jeremy Exp $
+
+Don't pickup gmkdir.
+
+--- src/cxx_supportlib/vendor-modified/libev/configure.orig	Fri Mar 24 07:51:58 2017
++++ src/cxx_supportlib/vendor-modified/libev/configure	Fri Mar 24 07:52:17 2017
+@@ -2521,7 +2521,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-    for ac_prog in mkdir gmkdir; do
++    for ac_prog in mkdir; do
+ 	 for ac_exec_ext in '' $ac_executable_extensions; do
+ 	   as_fn_executable_p "$as_dir/$ac_prog$ac_exec_ext" || continue
+ 	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
