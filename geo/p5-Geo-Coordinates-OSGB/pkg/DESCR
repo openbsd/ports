@@ -1,0 +1,12 @@
+An implementation of co-ordinate conversion for England, Wales, and
+Scotland based on formulae and data published by the Ordnance Survey of
+Great Britain.
+
+These modules convert accurately between coordinates given in latitude
+and longitude and the OSGB national grid reference system (as used for
+maps of England, Wales, and Scotland).
+
+This code is fine tuned to the British national grid system. It is of
+no use outside Britain. In fact it's only really useful in the areas
+covered by the OS's main series of maps, which excludes the Channel
+Islands and Northern Ireland.

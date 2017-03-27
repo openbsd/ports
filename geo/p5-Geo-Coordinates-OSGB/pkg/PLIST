@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/27 09:45:38 sthen Exp $
+${P5SITE}/Geo/
+${P5SITE}/Geo/Coordinates/
+${P5SITE}/Geo/Coordinates/OSGB/
+${P5SITE}/Geo/Coordinates/OSGB.pm
+${P5SITE}/Geo/Coordinates/OSGB/Background.pod
+${P5SITE}/Geo/Coordinates/OSGB/Grid.pm
+${P5SITE}/Geo/Coordinates/OSGB/Maps.pm
+@man man/man3p/Geo::Coordinates::OSGB.3p
+@man man/man3p/Geo::Coordinates::OSGB::Background.3p
+@man man/man3p/Geo::Coordinates::OSGB::Grid.3p
+@man man/man3p/Geo::Coordinates::OSGB::Maps.3p
+share/examples/p5-Geo-Coordinates-OSGB/
+share/examples/p5-Geo-Coordinates-OSGB/National_grid.pdf
+share/examples/p5-Geo-Coordinates-OSGB/bng_to_ll.pl
+share/examples/p5-Geo-Coordinates-OSGB/gb-coastline.shapes
+share/examples/p5-Geo-Coordinates-OSGB/gbguessr.pl
+share/examples/p5-Geo-Coordinates-OSGB/ll_to_bng.pl
+share/examples/p5-Geo-Coordinates-OSGB/ostn-boundary-polygons.wkt
+share/examples/p5-Geo-Coordinates-OSGB/plot_maps.pl
+share/examples/p5-Geo-Coordinates-OSGB/what_map.pl
+share/examples/p5-Geo-Coordinates-OSGB/zero-points.pl
