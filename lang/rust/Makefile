@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/03/27 12:35:31 danj Exp $
+# $OpenBSD: Makefile,v 1.40 2017/03/27 23:43:07 danj Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -130,14 +130,14 @@ do-configure:
 		>>${WRKBUILD}/config.toml
 	echo 'prefix = "${LOCALBASE}"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
-	
+
 	echo '[rust]' >>${WRKBUILD}/config.toml
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
-	
+
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
-	
+
 .if ${PORTS_LLVM:L:Myes}
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
@@ -147,7 +147,7 @@ do-configure:
 	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
 	echo 'ninja = true' >>${WRKBUILD}/config.toml
 .endif
-	
+
 	rm -rf ${WRKDIR}/modgcc-libs
 	mkdir -p ${WRKDIR}/modgcc-libs
 	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} \
