@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.470 2017/03/26 19:55:37 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.471 2017/03/27 08:16:47 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -951,6 +951,7 @@ my $obsolete_reason = {
 	'clog' => 4,
 	'pigment' => 3,
 	'py-pigment' => 3,
+	'gogo' => 3,
 };
 
 # reasons for obsolete packages
