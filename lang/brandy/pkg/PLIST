@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/19 21:49:31 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/27 09:59:58 fcambus Exp $
 @bin bin/brandy
+@bin bin/brandy-sdl
 share/doc/brandy/
 share/doc/brandy/basic
 share/doc/brandy/messages
