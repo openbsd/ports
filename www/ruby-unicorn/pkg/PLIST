@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/01/03 16:43:13 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2017/03/27 14:40:13 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -148,6 +148,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/exec/README
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/test_exec.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/
+${GEM_LIB}/gems/${DISTNAME}/test/unit/test_ccc.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_configurator.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_droplet.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser.rb
