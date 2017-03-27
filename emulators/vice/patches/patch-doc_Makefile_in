@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2017/03/27 10:08:16 fcambus Exp $
+
+Don't build a redundant copy of vice.info, it breaks the build.
+
+--- doc/Makefile.in.orig	Thu Dec 15 04:48:15 2016
++++ doc/Makefile.in	Thu Mar 23 22:47:12 2017
+@@ -1093,7 +1093,6 @@ $(builddir)/vice.inf:	$(srcdir)/vice.texi
+ 
+ $(builddir)/vice.info:	$(srcdir)/vice.texi
+ 	touch $(builddir)/vice.info
+-	$(MAKEINFO) -D$(PLATFORM_DOX_FLAGS) -o $(builddir)/vice.info --no-split $(srcdir)/vice.texi
+ 
+ .texi.pdf:
+ 

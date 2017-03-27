@@ -1,4 +1,4 @@
-$OpenBSD: patch-acinclude_m4,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+$OpenBSD: patch-acinclude_m4,v 1.2 2017/03/27 10:08:16 fcambus Exp $
 
 Don't error on --disable-silent-rules.
 

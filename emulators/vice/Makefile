@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 21:54:40 sthen Exp $
-
-BROKEN-i386 =		platform_x86_runtime_cpu.c:203: error: 'asm' operand has impossible constraints
+# $OpenBSD: Makefile,v 1.4 2017/03/27 10:08:16 fcambus Exp $
 
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-2.4
-REVISION =		1
+DISTNAME =		vice-3.0
 
 CATEGORIES =		emulators
 
@@ -14,13 +11,14 @@ HOMEPAGE =		http://vice-emu.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SDL SM X11 Xaw Xext Xmu Xpm Xrandr Xt Xv Xxf86vm
-WANTLIB += c gif jpeg png m pthread readline stdc++ termcap usbhid
-WANTLIB += z
+WANTLIB += FLAC GL SDL c gif jpeg m ogg png pthread readline stdc++
+WANTLIB += termcap vorbis vorbisenc vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
-LIB_DEPENDS =		devel/sdl \
+LIB_DEPENDS =		audio/flac \
+			audio/libvorbis \
+			devel/sdl \
 			graphics/giflib \
 			graphics/jpeg \
 			graphics/png
@@ -31,10 +29,8 @@ AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS +=	--without-oss \
 			--without-pulse \
 			--with-sdlsound \
-			--disable-lame
-
-# XXX broken with ffmpeg-20131216
-CONFIGURE_ARGS +=	--disable-ffmpeg
+			--disable-lame \
+			--enable-sdlui
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/vice.1
