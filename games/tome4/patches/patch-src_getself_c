@@ -1,29 +1,17 @@
-$OpenBSD: patch-src_getself_c,v 1.1.1.1 2016/12/28 18:34:57 awolk Exp $
---- src/getself.c.orig	Thu Jan  7 20:09:06 2016
-+++ src/getself.c	Tue Nov 29 16:38:12 2016
-@@ -47,7 +47,8 @@ const char *get_self_executable(int argc, char **argv)
+--- src/getself.c.orig	Wed Mar  8 18:20:39 2017
++++ src/getself.c	Mon Mar 20 18:46:27 2017
+@@ -47,13 +47,7 @@ int get_number_cpus()
+ const char *get_self_executable(int argc, char **argv)
+ {
  	static char res[PATH_MAX];
- 	// Like linux, but /proc is not always mounted
- 	//  return 0 if it's not
--	if (realpath("/proc/curproc/file", res)) return NULL;
-+	//if (realpath("/proc/curproc/file", res)) return NULL;
+-	int mib[4];
+-	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC;
+-	mib[2] = KERN_PROC_PATHNAME;
+-	mib[3] = -1;
+-	size_t cb = sizeof(res);
+-	sysctl(mib,4,res,&cb,NULL,0);
 +	realpath("${GAMEDIR}/", res);
  	return res;
- }
- 
-@@ -57,8 +58,14 @@ int get_number_cpus()
- {
- 	int count;
- 	size_t size=sizeof(count);
-+	int name[2];
-+	name[0] = CTL_HW;
-+	name[1] = HW_NCPU;
- 	
--	if (sysctlbyname("hw.ncpu",&count,&size,NULL,0)) return 1;
-+	if (sysctl(name, 2, &count, &size, NULL, 0) < 0) {
-+	  count = 1;
-+	}
-+
- 	return count;
  }
  

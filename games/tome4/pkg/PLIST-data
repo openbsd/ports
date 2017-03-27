@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-data,v 1.2 2016/12/29 14:07:11 awolk Exp $
+@comment $OpenBSD: PLIST-data,v 1.3 2017/03/27 18:28:29 jca Exp $
 share/tome4/
 share/tome4/game/
 share/tome4/game/modules/
-share/tome4/game/modules/boot-te4-1.4.9.team
-share/tome4/game/modules/tome-1.4.9-gfx.team
-share/tome4/game/modules/tome-1.4.9-music.team
-share/tome4/game/modules/tome-1.4.9.team
+share/tome4/game/modules/boot-te4-${V}.team
+share/tome4/game/modules/tome-${V}-gfx.team
+share/tome4/game/modules/tome-${V}-music.team
+share/tome4/game/modules/tome-${V}.team
