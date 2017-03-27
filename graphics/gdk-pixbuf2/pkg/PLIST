@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/12/20 19:46:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2017/03/27 07:06:16 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -58,18 +58,6 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/annotation-glossary.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-12.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-14.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-2.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-26.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-28.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-30.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-32.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-36.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-4.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-6.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-8.html
-share/gtk-doc/html/gdk-pixbuf/api-index-deprecated.html
 share/gtk-doc/html/gdk-pixbuf/api-index-full.html
 share/gtk-doc/html/gdk-pixbuf/composite.png
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Animations.html
