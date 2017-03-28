@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/08/27 17:07:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2017/03/28 07:44:04 benoit Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -109,6 +109,7 @@ ${P5SITE}/SNMP/Info/Layer3/VMware.pm
 ${P5SITE}/SNMP/Info/Layer7/
 ${P5SITE}/SNMP/Info/Layer7.pm
 ${P5SITE}/SNMP/Info/Layer7/APC.pm
+${P5SITE}/SNMP/Info/Layer7/CiscoIPS.pm
 ${P5SITE}/SNMP/Info/Layer7/Neoteris.pm
 ${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
 ${P5SITE}/SNMP/Info/MAU.pm
@@ -221,6 +222,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::VMware.3p
 @man man/man3p/SNMP::Info::Layer7.3p
 @man man/man3p/SNMP::Info::Layer7::APC.3p
+@man man/man3p/SNMP::Info::Layer7::CiscoIPS.3p
 @man man/man3p/SNMP::Info::Layer7::Neoteris.3p
 @man man/man3p/SNMP::Info::Layer7::Netscaler.3p
 @man man/man3p/SNMP::Info::MAU.3p
