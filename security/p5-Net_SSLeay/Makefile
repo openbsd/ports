@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2017/01/08 03:00:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.65 2017/03/28 23:56:44 bluhm Exp $
 
 COMMENT =		perl module for using OpenSSL
 
-DISTNAME =		Net-SSLeay-1.80
+DISTNAME =		Net-SSLeay-1.81
 
 CATEGORIES =		security
 
