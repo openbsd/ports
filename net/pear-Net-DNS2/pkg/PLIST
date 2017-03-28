@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/29 21:54:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2017/03/28 09:51:19 benoit Exp $
 @group daemon
 lib/
 lib/php/
-pear/data/Net_DNS2/
-pear/data/Net_DNS2/README.md
 pear/doc/
 pear/doc/Net_DNS2/
 pear/doc/Net_DNS2/LICENSE
+pear/doc/Net_DNS2/README.md
 pear/lib/.registry/net_dns2.reg
 pear/lib/Net/
 pear/lib/Net/DNS2/
@@ -33,6 +32,7 @@ pear/lib/Net/DNS2/RR/AFSDB.php
 pear/lib/Net/DNS2/RR/ANY.php
 pear/lib/Net/DNS2/RR/APL.php
 pear/lib/Net/DNS2/RR/ATMA.php
+pear/lib/Net/DNS2/RR/AVC.php
 pear/lib/Net/DNS2/RR/CAA.php
 pear/lib/Net/DNS2/RR/CDNSKEY.php
 pear/lib/Net/DNS2/RR/CDS.php
@@ -74,6 +74,7 @@ pear/lib/Net/DNS2/RR/RP.php
 pear/lib/Net/DNS2/RR/RRSIG.php
 pear/lib/Net/DNS2/RR/RT.php
 pear/lib/Net/DNS2/RR/SIG.php
+pear/lib/Net/DNS2/RR/SMIMEA.php
 pear/lib/Net/DNS2/RR/SOA.php
 pear/lib/Net/DNS2/RR/SPF.php
 pear/lib/Net/DNS2/RR/SRV.php
