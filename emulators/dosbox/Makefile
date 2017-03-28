@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2017/03/25 15:53:56 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2017/03/28 23:16:42 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
-USE_WXNEEDED=	Yes
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
 DISTNAME=	dosbox-0.74
-REVISION=	7
+REVISION=	8
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -34,6 +33,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ENV+=LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	--disable-alsatest
+
+# needs W+X memory
+CONFIGURE_ARGS+=	--disable-dynamic-core
 
 pre-configure:
 	cp ${FILESDIR}/midi_sndio.h ${WRKSRC}/src/gui
