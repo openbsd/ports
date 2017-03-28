@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/03 16:43:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/03/28 23:38:05 jeremy Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
 DISTNAME =	rainbows-5.0.0
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://rainbows.rubyforge.org/
