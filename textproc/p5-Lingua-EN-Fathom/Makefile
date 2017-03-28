@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/03/28 11:51:40 benoit Exp $
 
 COMMENT=		measure readability of English text
 
-DISTNAME =		Lingua-EN-Fathom-1.18
+DISTNAME =		Lingua-EN-Fathom-1.19
 CATEGORIES=		textproc
 
 MODULES=		cpan
