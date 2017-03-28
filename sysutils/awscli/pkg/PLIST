@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/03/14 09:21:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2017/03/28 08:13:07 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -658,9 +658,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-applicati
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-deployment-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-connection-on-interconnect.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-hosted-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-private-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-public-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-connection-with-lag.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-hosted-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-private-virtual-interface.rst
@@ -679,6 +681,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-vi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-hosted-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnect-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-lags.rst
