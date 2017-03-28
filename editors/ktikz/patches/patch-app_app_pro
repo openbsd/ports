@@ -1,0 +1,9 @@
+$OpenBSD: patch-app_app_pro,v 1.1.1.1 2017/03/28 07:24:40 pirofti Exp $
+--- app/app.pro.orig	Mon Mar 27 00:15:41 2017
++++ app/app.pro	Mon Mar 27 00:15:48 2017
+@@ -1,4 +1,4 @@
+-include(../conf.pri)
++#include(../conf.pri)
+ include(../defaults.pri)
+ include(../macros.pri)
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtikz_pro,v 1.1.1.1 2017/03/28 07:24:40 pirofti Exp $
+--- qtikz.pro.orig	Mon Mar 27 00:10:14 2017
++++ qtikz.pro	Mon Mar 27 00:10:20 2017
+@@ -8,7 +8,7 @@ CONFIG += warn_on \
+           qt \
+           thread
+ 
+-include(conf.pri)
++#include(conf.pri)
+ include(defaults.pri)
+ 
+ message(*** QTikZ v$${APPVERSION} ***)
