@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/28 12:43:37 awolk Exp $
 
 COMMENT =		convert images to cross stitch patterns
 
 GH_ACCOUNT =		kleintom
 GH_PROJECT =		cstitch
-GH_TAGNAME =		0.9.7
-REVISION =		0
+GH_TAGNAME =		0.9.8
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME}-icons{icons}.zip:0
 
