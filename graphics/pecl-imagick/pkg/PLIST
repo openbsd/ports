@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/14 16:16:17 sthen Exp $
-@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
+@comment $OpenBSD: PLIST,v 1.9 2017/03/28 08:53:39 benoit Exp $
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_shared.h
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
