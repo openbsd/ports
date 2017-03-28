@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/11/02 06:46:20 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.22 2017/03/28 20:43:40 fcambus Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -265,7 +265,13 @@ share/mc/skins/modarin256root-defbg.ini
 share/mc/skins/modarin256root.ini
 share/mc/skins/nicedark.ini
 share/mc/skins/sand256.ini
+share/mc/skins/seasons-autumn16M.ini
+share/mc/skins/seasons-spring16M.ini
+share/mc/skins/seasons-summer16M.ini
+share/mc/skins/seasons-winter16M.ini
 share/mc/skins/xoria256.ini
+share/mc/skins/yadt256-defbg.ini
+share/mc/skins/yadt256.ini
 share/mc/syntax/
 share/mc/syntax/PKGBUILD.syntax
 share/mc/syntax/Syntax
@@ -320,6 +326,8 @@ share/mc/syntax/named.syntax
 share/mc/syntax/nemerle.syntax
 share/mc/syntax/nroff.syntax
 share/mc/syntax/octave.syntax
+share/mc/syntax/opencl.syntax
+share/mc/syntax/osl.syntax
 share/mc/syntax/pascal.syntax
 share/mc/syntax/perl.syntax
 share/mc/syntax/php.syntax
@@ -329,6 +337,7 @@ share/mc/syntax/procmail.syntax
 share/mc/syntax/properties.syntax
 share/mc/syntax/puppet.syntax
 share/mc/syntax/python.syntax
+share/mc/syntax/r.syntax
 share/mc/syntax/ruby.syntax
 share/mc/syntax/sh.syntax
 share/mc/syntax/slang.syntax
@@ -345,5 +354,6 @@ share/mc/syntax/unknown.syntax
 share/mc/syntax/verilog.syntax
 share/mc/syntax/vhdl.syntax
 share/mc/syntax/xml.syntax
+share/mc/syntax/yaml.syntax
 share/mc/syntax/yum-repo.syntax
 share/mc/syntax/yxx.syntax
