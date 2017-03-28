@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_openvpn_route_c,v 1.7 2017/02/06 10:22:35 jca Exp $
+$OpenBSD: patch-src_openvpn_route_c,v 1.8 2017/03/28 22:16:37 jca Exp $
 
 - add support for on-link routes
 
---- src/openvpn/route.c.orig	Mon Dec 26 12:51:00 2016
-+++ src/openvpn/route.c	Tue Jan 17 03:36:54 2017
-@@ -1758,12 +1758,17 @@ add_route(struct route_ipv4 *r,
+--- src/openvpn/route.c.orig	Wed Mar 22 16:34:21 2017
++++ src/openvpn/route.c	Mon Mar 27 06:01:57 2017
+@@ -1778,12 +1778,17 @@ add_route(struct route_ipv4 *r,
      }
  #endif
  

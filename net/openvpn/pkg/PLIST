@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/02/06 10:22:35 jca Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/03/28 22:16:37 jca Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 include/openvpn/
@@ -52,31 +52,6 @@ share/examples/openvpn/sample-keys/client.p12
 share/examples/openvpn/sample-keys/dh2048.pem
 share/examples/openvpn/sample-keys/gen-sample-keys.sh
 share/examples/openvpn/sample-keys/openssl.cnf
-share/examples/openvpn/sample-keys/sample-ca/
-share/examples/openvpn/sample-keys/sample-ca/01.pem
-share/examples/openvpn/sample-keys/sample-ca/02.pem
-share/examples/openvpn/sample-keys/sample-ca/03.pem
-share/examples/openvpn/sample-keys/sample-ca/ca.crl
-share/examples/openvpn/sample-keys/sample-ca/ca.crt
-share/examples/openvpn/sample-keys/sample-ca/ca.key
-share/examples/openvpn/sample-keys/sample-ca/client-pass.key
-share/examples/openvpn/sample-keys/sample-ca/client-revoked.crt
-share/examples/openvpn/sample-keys/sample-ca/client-revoked.csr
-share/examples/openvpn/sample-keys/sample-ca/client-revoked.key
-share/examples/openvpn/sample-keys/sample-ca/client.crt
-share/examples/openvpn/sample-keys/sample-ca/client.csr
-share/examples/openvpn/sample-keys/sample-ca/client.key
-share/examples/openvpn/sample-keys/sample-ca/client.p12
-share/examples/openvpn/sample-keys/sample-ca/index.txt
-share/examples/openvpn/sample-keys/sample-ca/index.txt.attr
-share/examples/openvpn/sample-keys/sample-ca/index.txt.attr.old
-share/examples/openvpn/sample-keys/sample-ca/index.txt.old
-share/examples/openvpn/sample-keys/sample-ca/secp256k1.pem
-share/examples/openvpn/sample-keys/sample-ca/serial
-share/examples/openvpn/sample-keys/sample-ca/serial.old
-share/examples/openvpn/sample-keys/sample-ca/server.crt
-share/examples/openvpn/sample-keys/sample-ca/server.csr
-share/examples/openvpn/sample-keys/sample-ca/server.key
 share/examples/openvpn/sample-keys/server-ec.crt
 share/examples/openvpn/sample-keys/server-ec.key
 share/examples/openvpn/sample-keys/server.crt
