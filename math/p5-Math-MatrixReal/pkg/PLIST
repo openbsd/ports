@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/12 16:52:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/03/28 10:52:06 benoit Exp $
 ${P5SITE}/Math/
 ${P5SITE}/Math/MatrixReal.pm
 @man man/man3p/Math::MatrixReal.3p
@@ -6,3 +6,4 @@ share/examples/p5-Math-MatrixReal/
 share/examples/p5-Math-MatrixReal/bench.pl
 share/examples/p5-Math-MatrixReal/bench_mult.pl
 share/examples/p5-Math-MatrixReal/bench_new_diag.pl
+share/examples/p5-Math-MatrixReal/openg-and-matrix.pl

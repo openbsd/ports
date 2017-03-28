@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/03/28 10:52:06 benoit Exp $
 
 COMMENT =	implement the data type "matrix of reals"
-DISTNAME =	Math-MatrixReal-2.12
+DISTNAME =	Math-MatrixReal-2.13
 CATEGORIES =	math
 
 # Perl
