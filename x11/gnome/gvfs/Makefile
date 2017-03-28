@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2017/02/18 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.170 2017/03/28 15:24:59 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,18 +7,13 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.30.3
+GNOME_VERSION=		1.30.4
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
-REVISION-goa=		0
-REVISION-google=	0
-REVISION-main=		0
-REVISION-nfs=		0
-REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,7 +30,7 @@ WANTLIB-main += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB-main += atspi avahi-client avahi-common avahi-glib bz2 cairo
 WANTLIB-main += cairo-gobject dbus-1 epoxy expat fontconfig freetype
 WANTLIB-main += gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0 gpg-error
-WANTLIB-main += graphite2 gthread-2.0 gtk-3 harfbuzz lzma lzo2 m p11-kit
+WANTLIB-main += graphite2 gthread-2.0 gtk-3 harfbuzz lzma m p11-kit
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB-main += pthread-stubs secret-1 soup-2.4 sqlite3 xcb xcb-render
 WANTLIB-main += xcb-shm xml2 crypto lz4
@@ -47,7 +42,7 @@ WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
 WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
 WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf
 WANTLIB-smb += ssl talloc tasn1 tdb tevent tevent-util util-setid
-WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1
+WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1 unistring
 WANTLIB-smb += lib/samba/asn1-samba4
 WANTLIB-smb += lib/samba/com_err-samba4
 WANTLIB-smb += lib/samba/gssapi-samba4
