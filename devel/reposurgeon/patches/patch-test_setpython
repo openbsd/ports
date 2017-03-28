@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_setpython,v 1.1 2017/03/28 14:36:04 sthen Exp $
+--- test/setpython.orig	Tue Mar 28 15:30:41 2017
++++ test/setpython	Tue Mar 28 15:30:18 2017
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ #
+ # setpython - create a local link from 'python' to a specified version
+ #

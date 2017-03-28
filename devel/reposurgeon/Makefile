@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/30 15:05:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/28 14:36:04 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
-DISTNAME=	reposurgeon-3.38
+DISTNAME=	reposurgeon-3.42
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	devel
@@ -29,19 +29,14 @@ MAKE_FLAGS=	mandir=man
 ALL_TARGET=	all cyreposurgeon
 INSTALL_TARGET=	install install-cyreposurgeon
 
-# there are tests in the repo, but not in the tar.xz.
-# scaffolding left in place for people who want to fetch and run it,
-# but: the pylint check fails (modify the Makefile to skip it or to
-# allow other tests to continue), and the setpython script doesn't
-# work with our sh.
-NO_TEST=	Yes
-
 TEST_DEPENDS=	devel/pylint \
+		shells/bash \
 		sysutils/coreutils
 TEST_TARGET=	check
 TEST_FLAGS=	HOME=${WRKDIR}
 
 pre-test:
+	sed -i s,/usr/local,${LOCALBASE},g ${WRKSRC}/test/setpython
 	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 	-ln -s ${LOCALBASE}/python${MODPY_DEFAULT_VERSION_3} ${WRKDIR}/bin/python3
 .for i in realpath make
