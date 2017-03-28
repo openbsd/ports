@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_mosquitto_passwd_c,v 1.1 2017/03/28 17:02:01 jasper Exp $
+
+Fix build with LibreSSL, from gentoo-overlay
+https://github.com/stintel/gentoo-overlay/tree/master/app-misc/mosquitto/files
+
+--- src/mosquitto_passwd.c.orig	Sat Mar 18 14:37:46 2017
++++ src/mosquitto_passwd.c	Sat Mar 18 14:39:33 2017
+@@ -90,7 +90,7 @@ int output_new_password(FILE *fptr, const char *userna
+ 	unsigned char hash[EVP_MAX_MD_SIZE];
+ 	unsigned int hash_len;
+ 	const EVP_MD *digest;
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#ifndef HAVE_OPENSSL_OPAQUE_STRUCTS
+ 	EVP_MD_CTX context;
+ #else
+ 	EVP_MD_CTX *context;
+@@ -117,7 +117,7 @@ int output_new_password(FILE *fptr, const char *userna
+ 		return 1;
+ 	}
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#ifndef HAVE_OPENSSL_OPAQUE_STRUCTS
+ 	EVP_MD_CTX_init(&context);
+ 	EVP_DigestInit_ex(&context, digest, NULL);
+ 	EVP_DigestUpdate(&context, password, strlen(password));

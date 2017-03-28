@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_h,v 1.1 2017/03/28 17:02:01 jasper Exp $
+
+OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
+
+--- config.h.orig	Sat Mar 18 14:33:36 2017
++++ config.h	Sat Mar 18 14:34:01 2017
+@@ -16,6 +16,10 @@
+ #  define EPROTO ECONNABORTED
+ #endif
+ 
++#if defined(__OpenBSD__)
++#  define EPROTO EOPNOTSUPP
++#endif
++
+ #ifdef WIN32
+ #  ifndef strcasecmp
+ #    define strcasecmp strcmpi

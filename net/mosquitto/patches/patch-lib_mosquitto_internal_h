@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_mosquitto_internal_h,v 1.1 2017/03/28 17:02:01 jasper Exp $
+
+Fix build with LibreSSL, from gentoo-overlay
+https://github.com/stintel/gentoo-overlay/tree/master/app-misc/mosquitto/files
+
+--- lib/mosquitto_internal.h.orig	Sat Mar 18 14:37:35 2017
++++ lib/mosquitto_internal.h	Sat Mar 18 14:39:58 2017
+@@ -25,6 +25,9 @@ Contributors:
+ 
+ #ifdef WITH_TLS
+ #  include <openssl/ssl.h>
++#  if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#    define HAVE_OPENSSL_OPAQUE_STRUCTS
++#  endif
+ #else
+ #  include <time.h>
+ #endif

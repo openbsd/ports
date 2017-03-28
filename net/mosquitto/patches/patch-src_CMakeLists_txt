@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2016/08/13 15:18:58 jasper Exp $
---- src/CMakeLists.txt.orig	Thu Jun  2 23:20:22 2016
-+++ src/CMakeLists.txt	Fri Jul 15 20:46:12 2016
-@@ -85,6 +85,8 @@ set (MOSQ_LIBS ${MOSQ_LIBS} ${OPENSSL_LIBRARIES})
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2017/03/28 17:02:01 jasper Exp $
+--- src/CMakeLists.txt.orig	Mon Feb 20 23:06:57 2017
++++ src/CMakeLists.txt	Sat Mar 18 13:14:28 2017
+@@ -95,6 +95,8 @@ endif (HAVE_GETADDRINFO_A)
  if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
 +	elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 +		set (MOSQ_LIBS ${MOSQ_LIBS} m)
  	else (APPLE)
- 		set (MOSQ_LIBS ${MOSQ_LIBS} rt dl m)
- 	endif (APPLE)
-@@ -101,10 +103,11 @@ endif (${WITH_WEBSOCKETS} STREQUAL ON)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
+ 		find_library(LIBRT rt)
+@@ -115,10 +117,11 @@ endif (${WITH_WEBSOCKETS} STREQUAL ON)
  # Simple detect libuuid
  if(NOT APPLE)
  	FIND_PATH(UUID_HEADER uuid/uuid.h)
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.2 2016/08/13 15:18:58 jasper Exp $
  endif(NOT APPLE)
  
  target_link_libraries(mosquitto ${MOSQ_LIBS})
-@@ -125,8 +128,4 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -139,8 +142,4 @@ if (${WITH_TLS} STREQUAL ON)
  	target_link_libraries(mosquitto_passwd "${OPENSSL_LIBRARIES}")
  	install(TARGETS mosquitto_passwd RUNTIME DESTINATION "${BINDIR}" LIBRARY DESTINATION "${LIBDIR}")
  endif (${WITH_TLS} STREQUAL ON)
