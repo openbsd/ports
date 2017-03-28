@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2017/02/06 22:39:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.29 2017/03/28 10:57:51 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -740,8 +740,6 @@ lib/calibre/calibre/ebooks/metadata/kdl.py
 lib/calibre/calibre/ebooks/metadata/kdl.pyc
 lib/calibre/calibre/ebooks/metadata/kfx.py
 lib/calibre/calibre/ebooks/metadata/kfx.pyc
-lib/calibre/calibre/ebooks/metadata/library_thing.py
-lib/calibre/calibre/ebooks/metadata/library_thing.pyc
 lib/calibre/calibre/ebooks/metadata/lit.py
 lib/calibre/calibre/ebooks/metadata/lit.pyc
 lib/calibre/calibre/ebooks/metadata/lrx.py
@@ -809,8 +807,12 @@ lib/calibre/calibre/ebooks/metadata/sources/ozon.py
 lib/calibre/calibre/ebooks/metadata/sources/ozon.pyc
 lib/calibre/calibre/ebooks/metadata/sources/prefs.py
 lib/calibre/calibre/ebooks/metadata/sources/prefs.pyc
+lib/calibre/calibre/ebooks/metadata/sources/search_engines.py
+lib/calibre/calibre/ebooks/metadata/sources/search_engines.pyc
 lib/calibre/calibre/ebooks/metadata/sources/test.py
 lib/calibre/calibre/ebooks/metadata/sources/test.pyc
+lib/calibre/calibre/ebooks/metadata/sources/update.py
+lib/calibre/calibre/ebooks/metadata/sources/update.pyc
 lib/calibre/calibre/ebooks/metadata/sources/worker.py
 lib/calibre/calibre/ebooks/metadata/sources/worker.pyc
 lib/calibre/calibre/ebooks/metadata/tag_mapper.py
@@ -2788,6 +2790,8 @@ lib/calibre/calibre/utils/ordered_dict.pyc
 lib/calibre/calibre/utils/podofo/
 lib/calibre/calibre/utils/podofo/__init__.py
 lib/calibre/calibre/utils/podofo/__init__.pyc
+lib/calibre/calibre/utils/random_ua.py
+lib/calibre/calibre/utils/random_ua.pyc
 lib/calibre/calibre/utils/rapydscript.py
 lib/calibre/calibre/utils/rapydscript.pyc
 lib/calibre/calibre/utils/recycle_bin.py
@@ -3221,7 +3225,6 @@ share/calibre/catalog/section_list_templates.pyc
 share/calibre/catalog/stylesheet.css
 share/calibre/catalog/template.xhtml
 share/calibre/coffee-script.js
-share/calibre/common-user-agents.txt
 share/calibre/compiled_coffeescript.zip
 share/calibre/content-server/
 share/calibre/content-server/autoreload.js
@@ -3587,6 +3590,7 @@ share/calibre/rapydscript/lib/pythonize.pyj
 share/calibre/rapydscript/lib/random.pyj
 share/calibre/rapydscript/lib/re.pyj
 share/calibre/rapydscript/lib/traceback.pyj
+share/calibre/rapydscript/lib/uuid.pyj
 share/calibre/recipes/
 share/calibre/recipes/10minutos.recipe
 share/calibre/recipes/180.recipe
@@ -4069,6 +4073,7 @@ share/calibre/recipes/daum_net.recipe
 share/calibre/recipes/dawn.recipe
 share/calibre/recipes/daytona_beach.recipe
 share/calibre/recipes/dbb.recipe
+share/calibre/recipes/de_redactie_be.recipe
 share/calibre/recipes/de_standaard.png
 share/calibre/recipes/de_standaard.recipe
 share/calibre/recipes/deadspin.png
@@ -4327,6 +4332,7 @@ share/calibre/recipes/endgadget_ja.png
 share/calibre/recipes/endgadget_ja.recipe
 share/calibre/recipes/entrepeneur.png
 share/calibre/recipes/entrepeneur.recipe
+share/calibre/recipes/eos_wetenschap.recipe
 share/calibre/recipes/epl_talk.recipe
 share/calibre/recipes/epw.recipe
 share/calibre/recipes/equipped.png
@@ -4877,6 +4883,7 @@ share/calibre/recipes/klip_me.recipe
 share/calibre/recipes/klubknjige.recipe
 share/calibre/recipes/km_blog.png
 share/calibre/recipes/km_blog.recipe
+share/calibre/recipes/knack_be.recipe
 share/calibre/recipes/koegelokalavisen_dk.png
 share/calibre/recipes/koegelokalavisen_dk.recipe
 share/calibre/recipes/koldinglokalavisen_dk.png
@@ -5293,6 +5300,7 @@ share/calibre/recipes/ngz.png
 share/calibre/recipes/ngz.recipe
 share/calibre/recipes/niebezpiecznik.png
 share/calibre/recipes/niebezpiecznik.recipe
+share/calibre/recipes/nieuws_be.recipe
 share/calibre/recipes/nightflier.recipe
 share/calibre/recipes/nikkei_free.png
 share/calibre/recipes/nikkei_free.recipe
@@ -5317,6 +5325,7 @@ share/calibre/recipes/nordjyske_dk.png
 share/calibre/recipes/nordjyske_dk.recipe
 share/calibre/recipes/nortecastilla.png
 share/calibre/recipes/nortecastilla.recipe
+share/calibre/recipes/nos_nl.recipe
 share/calibre/recipes/noticias_r7.recipe
 share/calibre/recipes/noticias_unb.recipe
 share/calibre/recipes/novaya_gazeta.png
@@ -5839,6 +5848,7 @@ share/calibre/recipes/sportowefakty.png
 share/calibre/recipes/sportowefakty.recipe
 share/calibre/recipes/sportsillustrated.recipe
 share/calibre/recipes/sportsillustrated_columnists.recipe
+share/calibre/recipes/sporza_be.recipe
 share/calibre/recipes/st_louis_post_dispatch.png
 share/calibre/recipes/st_louis_post_dispatch.recipe
 share/calibre/recipes/stackoverflow.png
@@ -5954,7 +5964,6 @@ share/calibre/recipes/the_marker.recipe
 share/calibre/recipes/the_nation.png
 share/calibre/recipes/the_nation.recipe
 share/calibre/recipes/the_nation_thai.png
-share/calibre/recipes/the_nation_thai.recipe
 share/calibre/recipes/the_new_age_za.png
 share/calibre/recipes/the_new_age_za.recipe
 share/calibre/recipes/the_new_republic.recipe
@@ -5984,6 +5993,7 @@ share/calibre/recipes/theluminouslandscape.png
 share/calibre/recipes/theluminouslandscape.recipe
 share/calibre/recipes/themarketticker.png
 share/calibre/recipes/themarketticker.recipe
+share/calibre/recipes/themorningpaper.recipe
 share/calibre/recipes/thenews.recipe
 share/calibre/recipes/theoldfoodie.png
 share/calibre/recipes/theoldfoodie.recipe
@@ -6154,6 +6164,7 @@ share/calibre/recipes/vitalia.recipe
 share/calibre/recipes/viva.png
 share/calibre/recipes/viva.recipe
 share/calibre/recipes/vnexpress.recipe
+share/calibre/recipes/voetbal_belgie.recipe
 share/calibre/recipes/voice_of_america.png
 share/calibre/recipes/voice_of_america.recipe
 share/calibre/recipes/volksrant.png
@@ -6264,6 +6275,7 @@ share/calibre/recipes/zerohedge.png
 share/calibre/recipes/zerohedge.recipe
 share/calibre/recipes/ziarulfinanciar.png
 share/calibre/recipes/ziarulfinanciar.recipe
+share/calibre/recipes/zita_be.recipe
 share/calibre/recipes/ziuaveche.png
 share/calibre/recipes/ziuaveche.recipe
 share/calibre/recipes/znadplanszy_pl.recipe
@@ -6285,6 +6297,7 @@ share/calibre/templates/new_book.html
 share/calibre/templates/new_nav.html
 share/calibre/templates/rtf.xsl
 share/calibre/tracer.epub
+share/calibre/user-agent-data.json
 share/calibre/user-manual-translation-stats.json
 share/calibre/viewer/
 share/calibre/viewer/blank.html

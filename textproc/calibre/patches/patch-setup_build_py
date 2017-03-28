@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_build_py,v 1.2 2017/02/06 22:39:05 sthen Exp $
---- setup/build.py.orig	Fri Jan 27 03:46:08 2017
-+++ setup/build.py	Sun Feb  5 13:34:05 2017
+$OpenBSD: patch-setup_build_py,v 1.3 2017/03/28 10:57:51 sthen Exp $
+--- setup/build.py.orig	Sat Mar 18 04:19:33 2017
++++ setup/build.py	Tue Mar 28 11:48:35 2017
 @@ -36,13 +36,6 @@ class Extension(object):
          self.cflags = d['cflags'] = kwargs.get('cflags', [])
          self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
@@ -15,11 +15,11 @@ $OpenBSD: patch-setup_build_py,v 1.2 2017/02/06 22:39:05 sthen Exp $
          self.qt_private_headers = d['qt_private_headers'] = kwargs.get('qt_private', [])
  
  
-@@ -154,6 +147,7 @@ def init_env():
+@@ -156,6 +149,7 @@ def init_env():
          cflags.append('-pthread')
          ldflags.append('-shared')
          cflags.append('-I'+sysconfig.get_python_inc())
 +        ldflags.append('-L'+os.path.join(sysconfig.PREFIX))
          ldflags.append('-lpython'+sysconfig.get_python_version())
  
-     if isosx:
+     if ishaiku:
