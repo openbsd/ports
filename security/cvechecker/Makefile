@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/03/03 09:33:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/03/28 08:15:15 ajacoutot Exp $
 
 COMMENT=	local CVE checker tool
 
-DISTNAME=	cvechecker-3.7
+DISTNAME=	cvechecker-3.8
 CATEGORIES=	security sysutils
 
 HOMEPAGE=	https://github.com/sjvermeu/cvechecker/wiki
