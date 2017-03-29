@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.100 2016/08/27 17:21:30 jca Exp $
+# $OpenBSD: Makefile,v 1.101 2017/03/29 08:51:24 dcoppa Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 
-V =			0.95.7
+V =			0.95.8
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
 
-REVISION-main=		5
-
-SHARED_LIBS +=  WINGs                     0.0 # 2.1
+SHARED_LIBS +=  WINGs                     1.0 # 4.0
 SHARED_LIBS +=  WMaker                    0.0 # 1.1
-SHARED_LIBS +=  WUtil                     0.0 # 3.0
-SHARED_LIBS +=  wraster                   5.1 # 4.1
+SHARED_LIBS +=  WUtil                     0.0 # 5.0
+SHARED_LIBS +=  wraster                   6.0 # 6.0
 
 CATEGORIES=		x11 x11/windowmaker
 
@@ -62,8 +60,9 @@ pre-configure:
 	@touch ${WRKSRC}/configure.ac ${WRKSRC}/aclocal.m4 \
 		${WRKSRC}/configure ${WRKSRC}/Makefile.am \
 		${WRKSRC}/Makefile.in
-	${SUBST_CMD} ${WRKSRC}/WindowMaker/menu \
-		${WRKSRC}/WindowMaker/plmenu \
+	${SUBST_CMD} ${WRKSRC}/WindowMaker/Makefile.in \
+		${WRKSRC}/WindowMaker/plmenu.in \
+		${WRKSRC}/WindowMaker/Defaults/Makefile.in \
 		${WRKSRC}/WindowMaker/Defaults/WMWindowAttributes.in
 
 post-install:

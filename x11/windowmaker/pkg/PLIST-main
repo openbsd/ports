@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/06/17 11:49:33 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2017/03/29 08:51:24 dcoppa Exp $
 @pkgpath x11/windowmaker
 GNUstep/
 GNUstep/Applications/
@@ -45,6 +45,7 @@ lib/libwraster.la
 @lib lib/libwraster.so.${LIBwraster_VERSION}
 lib/pkgconfig/WINGs.pc
 lib/pkgconfig/WUtil.pc
+lib/pkgconfig/wmlib.pc
 lib/pkgconfig/wrlib.pc
 @comment man/cs/
 @comment man/cs/man1/

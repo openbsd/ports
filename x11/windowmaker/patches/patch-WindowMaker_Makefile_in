@@ -1,0 +1,12 @@
+$OpenBSD: patch-WindowMaker_Makefile_in,v 1.8 2017/03/29 08:51:24 dcoppa Exp $
+--- WindowMaker/Makefile.in.orig	Wed Mar 29 09:21:22 2017
++++ WindowMaker/Makefile.in	Wed Mar 29 09:22:00 2017
+@@ -814,7 +814,7 @@ uninstall-am: uninstall-dist_prefsdataDATA \
+ 
+ 
+ $(GENERATED_MENUS):
+-	$(AM_V_GEN)sed -e "s:#wprefs#:$(wpexecbindir)/WPrefs:" \
++	$(AM_V_GEN)sed -e "s:#wprefs#:${TRUEPREFIX}/bin/WPrefs:" \
+ 		$(srcdir)/$@.in > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

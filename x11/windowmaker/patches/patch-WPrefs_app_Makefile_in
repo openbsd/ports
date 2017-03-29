@@ -1,7 +1,7 @@
-$OpenBSD: patch-WPrefs_app_Makefile_in,v 1.1 2016/06/17 11:49:33 dcoppa Exp $
---- WPrefs.app/Makefile.in.orig	Tue Aug 11 20:52:19 2015
-+++ WPrefs.app/Makefile.in	Wed Jun  8 10:03:29 2016
-@@ -455,6 +455,7 @@ WPrefs_SOURCES = \
+$OpenBSD: patch-WPrefs_app_Makefile_in,v 1.2 2017/03/29 08:51:24 dcoppa Exp $
+--- WPrefs.app/Makefile.in.orig	Mon Mar 13 16:26:42 2017
++++ WPrefs.app/Makefile.in	Wed Mar 29 09:09:48 2017
+@@ -458,6 +458,7 @@ WPrefs_SOURCES = \
  #	Themes.c
  AM_CFLAGS = 
  AM_CPPFLAGS = -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
