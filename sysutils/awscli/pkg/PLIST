@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2017/03/28 08:13:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2017/03/29 07:12:05 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/__main__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/alias.py
 lib/python${MODPY_VERSION}/site-packages/awscli/alias.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/argparser.py
