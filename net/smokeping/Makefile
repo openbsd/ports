@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2016/07/10 12:07:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2017/03/29 08:24:21 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
 DISTNAME=	smokeping-2.6.11
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	net
 
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${COMMON_DEPENDS} \
 		net/p5-SNMP_Session \
 		net/p5-Socket6 \
 		www/fcgi \
+		www/p5-CGI-Fast \
 		www/spawn-fcgi
 SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
