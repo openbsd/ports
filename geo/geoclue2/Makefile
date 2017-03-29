@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/01/29 11:02:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2017/03/29 19:08:32 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.4.5
+VERSION=		2.4.6
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
