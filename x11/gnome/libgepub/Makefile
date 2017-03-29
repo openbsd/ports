@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/18 17:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2017/03/29 13:27:12 ajacoutot Exp $
 
 # Required at build time for a temporary program created and run by
 # g-ir-scanner; programs linked against libgepub need wxneeded, too
@@ -9,7 +9,7 @@ COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
 GNOME_VERSION=		0.4
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -23,16 +23,15 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm archive
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi bz2 cairo cairo-gobject
 WANTLIB += crypto dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
 WANTLIB += freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
-WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hogweed hyphen
-WANTLIB += iconv icudata icui18n icuuc idn2 intl javascriptcoregtk-4.0
-WANTLIB += jpeg lz4 lzma lzo2 m nettle notify orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 sqlite3
-WANTLIB += stdc++ tasn1 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
+WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg lz4 lzma m notify
+WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
+WANTLIB += sqlite3 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z
 
 MODULES=		x11/gnome
 

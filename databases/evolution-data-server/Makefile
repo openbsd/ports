@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2017/03/20 20:12:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.220 2017/03/29 13:27:12 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.22.7
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -25,24 +26,24 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto curl db
-WANTLIB += dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
-WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata gdk-3
-WANTLIB += gdk_pixbuf-2.0 geocode-glib gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls goa-1.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 gweather-3 harfbuzz harfbuzz-icu hogweed
-WANTLIB += hyphen ical icalss icalvcal iconv icudata icui18n icuuc idn2
-WANTLIB += intl javascriptcoregtk-4.0 jpeg json-glib-1.0 lber-2.4 ldap-2.4
-WANTLIB += lzma m nettle nghttp2 notify nspr4 nss3 nssutil3 oauth
-WANTLIB += orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs sasl2 secret-1
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 stdc++ tasn1
-WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm
-WANTLIB += xcb-xfixes xml2 xslt z unistring
+WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto curl
+WANTLIB += db dbus-1 drm enchant epoxy estdc++ expat ffi fontconfig
+WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0 glapi glib-2.0
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += gweather-3 harfbuzz harfbuzz-icu hyphen ical icalss
+WANTLIB += icalvcal iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
+WANTLIB += jpeg json-glib-1.0 lber-2.4 ldap-2.4 lzma m nghttp2
+WANTLIB += notify nspr4 nss3 nssutil3 oauth orc-0.4 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png pthread pthread-stubs sasl2 secret-1 smime3 softokn3
+WANTLIB += soup-2.4 sqlite3 ssl ssl3 stdc++ webkit2gtk-4.0 webp
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 
 MODULES=		devel/dconf \
 			lang/python \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2017/03/29 13:27:12 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.22.4
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=  panel-gtk                 0.0 # 0.0
@@ -37,7 +37,7 @@ WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pcre2-8 peas-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 sigc-2.0 soup-2.4 sqlite3 ssh2 ssl stdc++ tasn1 util
 WANTLIB += vala-0.34 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z unistring
 
 MODULES=		devel/dconf \
 			lang/python \

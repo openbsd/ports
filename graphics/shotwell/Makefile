@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2017/03/20 15:09:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2017/03/29 13:27:12 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.26.0
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -21,18 +22,18 @@ WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto curl
 WANTLIB += dbus-1 drm enchant epoxy estdc++ exif exiv2 expat ffi
 WANTLIB += fontconfig freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt
 WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glapi
-WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls goa-1.0 gobject-2.0
-WANTLIB += gpg-error gphoto2 gphoto2_port graphite2 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz harfbuzz-icu hogweed hyphen iconv icudata
-WANTLIB += icui18n icuuc idn2 intl jasper javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lcms2 ltdl lzma m nettle nghttp2
-WANTLIB += notify nspr4 nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += raw secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl ssl3
-WANTLIB += stdc++ tasn1 unistring webkit2gtk-4.0 webp xcb xcb-dri2
-WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
+WANTLIB += gphoto2 gphoto2_port graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc intl
+WANTLIB += jasper javascriptcoregtk-4.0 jpeg json-glib-1.0 lcms2
+WANTLIB += ltdl lzma m nghttp2 notify nspr4 nss3 oauth orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs raw secret-1
+WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 stdc++ webkit2gtk-4.0
+WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 xslt z
 
 MODULES =		devel/dconf \
 			x11/gnome

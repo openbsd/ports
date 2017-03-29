@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2017/03/08 11:12:22 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2017/03/29 13:27:12 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		mail
 
@@ -24,21 +24,20 @@ WANTLIB += dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
 WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 edataserverui-1.2
 WANTLIB += enchant epoxy estdc++ expat ffi fontconfig freetype
 WANTLIB += gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp
-WANTLIB += gnome-autoar-0 gnome-autoar-gtk-0 gnome-desktop-3 gnutls
-WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
-WANTLIB += gtkhtml-editor-4.0 gtkspell3-3 harfbuzz harfbuzz-icu
-WANTLIB += hogweed hyphen ical icalss icalvcal iconv icudata icui18n
-WANTLIB += icuuc idn2 intl javascriptcoregtk-4.0 jpeg json-glib-1.0
-WANTLIB += ltdl lz4 lzma lzo2 m nettle notify nspr4 nss3 nssutil3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-autoar-0
+WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gpg-error
+WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3
+WANTLIB += harfbuzz harfbuzz-icu hyphen ical icalss icalvcal iconv
+WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
+WANTLIB += json-glib-1.0 ltdl lz4 lzma m notify nspr4 nss3 nssutil3
 WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl3 stdc++ tasn1 vorbis vorbisfile webkit2gtk-4.0
-WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z unistring
+WANTLIB += ssl3 stdc++ vorbis vorbisfile webkit2gtk-4.0 webp xcb
+WANTLIB += xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes xml2
+WANTLIB += xslt z
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
