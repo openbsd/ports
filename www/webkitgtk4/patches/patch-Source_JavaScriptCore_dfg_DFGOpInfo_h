@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGOpInfo_h,v 1.1 2016/10/28 13:44:25 ajacoutot Exp $
---- Source/JavaScriptCore/dfg/DFGOpInfo.h.orig	Wed Oct 26 15:02:20 2016
-+++ Source/JavaScriptCore/dfg/DFGOpInfo.h	Wed Oct 26 15:02:57 2016
-@@ -40,7 +40,7 @@ struct OpInfo {
+$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGOpInfo_h,v 1.2 2017/03/29 13:25:52 ajacoutot Exp $
+--- Source/JavaScriptCore/dfg/DFGOpInfo.h.orig	Mon Feb 20 17:20:11 2017
++++ Source/JavaScriptCore/dfg/DFGOpInfo.h	Sun Mar 26 13:55:13 2017
+@@ -41,7 +41,7 @@ struct OpInfo {
      explicit OpInfo(int32_t value) : m_value(static_cast<uint64_t>(value)) { }
      explicit OpInfo(uint32_t value) : m_value(static_cast<uint64_t>(value)) { }
      explicit OpInfo(uint64_t value) : m_value(static_cast<uint64_t>(value)) { }
@@ -9,4 +9,4 @@ $OpenBSD: patch-Source_JavaScriptCore_dfg_DFGOpInfo_h,v 1.1 2016/10/28 13:44:25 
 +#if OS(DARWIN) || OS(OPENBSD)
      explicit OpInfo(uintptr_t value) : m_value(static_cast<uint64_t>(value)) { }
  #endif
-     explicit OpInfo(void* value) : m_value(static_cast<uint64_t>(reinterpret_cast<uintptr_t>(value))) { }
+     explicit OpInfo(RegisteredStructure structure) : m_value(static_cast<uint64_t>(bitwise_cast<uintptr_t>(structure))) { }

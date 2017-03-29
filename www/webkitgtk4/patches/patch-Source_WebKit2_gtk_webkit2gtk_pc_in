@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WebKit2_webkit2gtk_pc_in,v 1.1 2016/08/18 14:21:39 czarkoff Exp $
---- Source/WebKit2/webkit2gtk.pc.in.orig	Tue Aug  9 00:31:34 2016
-+++ Source/WebKit2/webkit2gtk.pc.in	Tue Aug  9 00:32:11 2016
+$OpenBSD: patch-Source_WebKit2_gtk_webkit2gtk_pc_in,v 1.1 2017/03/29 13:25:52 ajacoutot Exp $
+--- Source/WebKit2/gtk/webkit2gtk.pc.in.orig	Sun Mar 26 13:57:27 2017
++++ Source/WebKit2/gtk/webkit2gtk.pc.in	Sun Mar 26 13:57:38 2017
 @@ -7,5 +7,5 @@ Name: WebKit2
  Description: Web content engine for GTK+
  Version: @PROJECT_VERSION@

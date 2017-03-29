@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.2 2016/10/28 13:44:25 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.3 2017/03/29 13:25:52 ajacoutot Exp $
 
 XXX no mcontext_t on OpenBSD
 
---- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Fri Sep 16 11:56:47 2016
-+++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Wed Oct 26 14:42:08 2016
-@@ -86,7 +86,9 @@ static void pthreadSignalHandlerSuspendResume(int, sig
+--- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Mon Feb 27 09:03:42 2017
++++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Sun Mar 26 13:55:13 2017
+@@ -87,7 +87,9 @@ static void pthreadSignalHandlerSuspendResume(int, sig
      }
  
      ucontext_t* userContext = static_cast<ucontext_t*>(ucontext);
@@ -15,7 +15,7 @@ XXX no mcontext_t on OpenBSD
      thread->suspendedMachineContext = *userContext->uc_mcontext.uc_regs;
  #else
      thread->suspendedMachineContext = userContext->uc_mcontext;
-@@ -549,6 +551,24 @@ void* MachineThreads::Thread::Registers::stackPointer(
+@@ -563,6 +565,24 @@ void* MachineThreads::Thread::Registers::stackPointer(
  #error Unknown Architecture
  #endif
  
@@ -40,7 +40,7 @@ XXX no mcontext_t on OpenBSD
  #elif defined(__GLIBC__) && ENABLE(JIT)
  
  #if CPU(X86)
-@@ -648,6 +668,24 @@ void* MachineThreads::Thread::Registers::framePointer(
+@@ -662,6 +682,24 @@ void* MachineThreads::Thread::Registers::framePointer(
  #error Unknown Architecture
  #endif
  
@@ -65,7 +65,7 @@ XXX no mcontext_t on OpenBSD
  #elif defined(__GLIBC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -730,6 +768,24 @@ void* MachineThreads::Thread::Registers::instructionPo
+@@ -744,6 +782,24 @@ void* MachineThreads::Thread::Registers::instructionPo
  #error Unknown Architecture
  #endif
  
@@ -90,7 +90,7 @@ XXX no mcontext_t on OpenBSD
  #elif defined(__GLIBC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -817,6 +873,24 @@ void* MachineThreads::Thread::Registers::llintPC() con
+@@ -831,6 +887,24 @@ void* MachineThreads::Thread::Registers::llintPC() con
      return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_gpregs.gp_x[4]);
  #elif CPU(MIPS)
      return reinterpret_cast<void*>((uintptr_t) regs.machineContext.mc_regs[12]);

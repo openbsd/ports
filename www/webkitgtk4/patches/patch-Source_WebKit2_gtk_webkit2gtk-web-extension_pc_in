@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WebKit2_webkit2gtk-web-extension_pc_in,v 1.1 2016/08/18 14:21:39 czarkoff Exp $
---- Source/WebKit2/webkit2gtk-web-extension.pc.in.orig	Tue Aug  9 01:03:06 2016
-+++ Source/WebKit2/webkit2gtk-web-extension.pc.in	Tue Aug  9 01:03:28 2016
+$OpenBSD: patch-Source_WebKit2_gtk_webkit2gtk-web-extension_pc_in,v 1.1 2017/03/29 13:25:52 ajacoutot Exp $
+--- Source/WebKit2/gtk/webkit2gtk-web-extension.pc.in.orig	Sun Mar 26 13:57:08 2017
++++ Source/WebKit2/gtk/webkit2gtk-web-extension.pc.in	Sun Mar 26 13:57:19 2017
 @@ -7,5 +7,5 @@ Name: WebKit2WebExtension
  Description: WebKit web process extensions
  Version: @PROJECT_VERSION@
