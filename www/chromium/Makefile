@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2017/03/17 10:17:29 robert Exp $
+# $OpenBSD: Makefile,v 1.319 2017/03/30 17:54:24 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			57.0.2987.110
+V=			57.0.2987.133
 
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -117,6 +117,8 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
+		is_official_build=false \
+		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 
