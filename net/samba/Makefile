@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.234 2017/03/25 17:00:01 jca Exp $
+# $OpenBSD: Makefile,v 1.235 2017/04/01 11:37:38 jca Exp $
 
-VERSION =		4.5.7
+VERSION =		4.5.8
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
