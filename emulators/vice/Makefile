@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/27 10:08:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/01 18:11:05 espie Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.0
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -32,6 +33,7 @@ CONFIGURE_ARGS +=	--without-oss \
 			--disable-lame \
 			--enable-sdlui
 
+CONFIGURE_ENV += ac_cv_header_portaudio_h=no
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/vice.1
 
