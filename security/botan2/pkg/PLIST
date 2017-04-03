@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/13 15:00:39 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/03 10:08:17 jca Exp $
 @bin bin/botan
 include/botan-2/
 include/botan-2/botan/
@@ -181,7 +181,6 @@ include/botan-2/botan/prf_x942.h
 include/botan-2/botan/pssr.h
 include/botan-2/botan/pubkey.h
 include/botan-2/botan/rc4.h
-include/botan-2/botan/rdrand_rng.h
 include/botan-2/botan/reducer.h
 include/botan-2/botan/rfc3394.h
 include/botan-2/botan/rfc6979.h
@@ -310,3 +309,4 @@ share/doc/botan-2.0.1/manual/x509.rst
 share/doc/botan-2.0.1/news.txt
 share/doc/botan-2.0.1/pgpkey.txt
 share/doc/botan-2.0.1/reading_list.txt
+%%x86%%

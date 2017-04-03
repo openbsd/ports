@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/16 12:32:16 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/03 10:08:17 jca Exp $
 
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.0.1
+REVISION =	0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
@@ -43,6 +44,12 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-lzma \
 			--with-zlib \
 			--without-sphinx
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+PKG_ARGS =		-Dx86=1
+.else
+PKG_ARGS =		-Dx86=0
+.endif
 
 SUBST_VARS =		CXX CXXFLAGS
 
