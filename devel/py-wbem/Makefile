@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/18 22:35:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/04 21:54:30 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
 MODPY_EGG_VERSION=	0.10.0
+REVISION=		0
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
@@ -20,7 +21,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 
 RUN_DEPENDS=		devel/py-ply${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
-			security/py-M2Crypto${MODPY_FLAVOR}
+			security/py-M2Crypto${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS=	Yes
 
