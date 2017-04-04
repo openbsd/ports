@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2016/10/12 08:24:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2017/04/04 21:24:13 ajacoutot Exp $
 share/cups/
 share/cups/model/
 share/cups/model/foomatic-db-ppds
@@ -3949,7 +3949,6 @@ share/foomatic/db/source/driver/epsonepl.xml
 share/foomatic/db/source/driver/escpage.xml
 share/foomatic/db/source/driver/fmlbp.xml
 share/foomatic/db/source/driver/fmpr.xml
-share/foomatic/db/source/driver/foo2hiperc-z1.xml
 share/foomatic/db/source/driver/gdi.xml
 share/foomatic/db/source/driver/gutenprint.xml
 share/foomatic/db/source/driver/hl1250.xml

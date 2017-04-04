@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/10/12 08:24:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/04 21:24:13 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -7,6 +7,7 @@ COMMENT=		Foomatic PPD data
 V=			20161003
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
+REVISION=		0
 
 CATEGORIES=		print
 
@@ -39,7 +40,7 @@ pre-configure:
 		xargs grep -l "<driver>splix"|xargs -r rm
 	rm ${WRKSRC}/db/source/driver/splix.xml
 # foo2zjs
-.for x in zjs zjs-z1 zjs-z2 zjs-z3 oak oak-z1 hp qpdl lava kyo xqx slx hiperc hbpl2
+.for x in zjs zjs-z1 zjs-z2 zjs-z3 oak oak-z1 hp qpdl lava kyo xqx slx hiperc hbpl2 hiperc-z1
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
 		xargs grep -l "<driver>foo2${x}" | xargs -r rm
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
