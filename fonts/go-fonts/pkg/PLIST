@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/27 02:28:00 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/04 22:51:29 jsg Exp $
 share/doc/go-fonts/
 share/doc/go-fonts/README
 share/fonts/
@@ -13,3 +13,5 @@ share/fonts/go/Go-Mono-Bold.ttf
 share/fonts/go/Go-Mono-Italic.ttf
 share/fonts/go/Go-Mono.ttf
 share/fonts/go/Go-Regular.ttf
+share/fonts/go/Go-Smallcaps-Italic.ttf
+share/fonts/go/Go-Smallcaps.ttf

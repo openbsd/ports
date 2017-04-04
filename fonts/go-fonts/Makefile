@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/27 02:28:00 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/04 22:51:29 jsg Exp $
 
 COMMENT=	Go TrueType fonts
 GH_ACCOUNT=	golang
 GH_PROJECT=	image
-GH_COMMIT=	c8ae36c95e9b791117fe12e441bb0047b52eaa24
-DISTNAME=	go-image-20170224
+GH_COMMIT=	ce0faa1867f5944a366e0174e7197b82089e9fa8
+DISTNAME=	go-image-20170401
 PKGNAME=	${DISTNAME:S/image/fonts/}
 HOMEPAGE=	https://blog.golang.org/go-fonts
 
