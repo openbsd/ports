@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2017/03/18 15:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/04/04 20:52:13 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.5.3
+DISTNAME=	rspamd-1.5.4
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail

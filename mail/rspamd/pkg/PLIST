@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/03/18 15:02:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2017/04/04 20:52:13 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -64,6 +64,8 @@ share/examples/rspamd/modules.d/greylist.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/greylist.conf
 share/examples/rspamd/modules.d/hfilter.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/hfilter.conf
+share/examples/rspamd/modules.d/history_redis.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/history_redis.conf
 share/examples/rspamd/modules.d/ip_score.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/ip_score.conf
 share/examples/rspamd/modules.d/maillist.conf
@@ -187,10 +189,7 @@ share/rspamd/rules/mid.lua
 share/rspamd/rules/misc.lua
 share/rspamd/rules/regexp/
 share/rspamd/rules/regexp/compromised_hosts.lua
-share/rspamd/rules/regexp/drugs.lua
-share/rspamd/rules/regexp/fraud.lua
 share/rspamd/rules/regexp/headers.lua
-share/rspamd/rules/regexp/lotto.lua
 share/rspamd/rules/regexp/misc.lua
 share/rspamd/rules/regexp/upstream_spam_filters.lua
 share/rspamd/rules/rspamd.classifiers.lua
@@ -201,7 +200,7 @@ share/rspamd/www/README.md
 share/rspamd/www/css/
 share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/d3evolution.css
-share/rspamd/www/css/datatables.min.css
+share/rspamd/www/css/footable.bootstrap.min.css
 share/rspamd/www/css/rspamd.css
 share/rspamd/www/favicon.ico
 share/rspamd/www/fonts/
@@ -227,8 +226,8 @@ share/rspamd/www/js/lib/bootstrap.min.js
 share/rspamd/www/js/lib/d3.min.js
 share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
-share/rspamd/www/js/lib/datatables.min.js
 share/rspamd/www/js/lib/domReady.js
+share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/humanize.min.js
 share/rspamd/www/js/lib/jquery-3.1.1.min.js
 share/rspamd/www/js/lib/visibility.min.js
