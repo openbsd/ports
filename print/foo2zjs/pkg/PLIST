@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/04/19 14:30:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2017/04/04 21:24:44 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -15,6 +15,9 @@
 @extraunexec rm -f %D/share/foo2zjs/icm/*
 @bin bin/arm2hpdl
 @bin bin/command2foo2lava-pjl
+@bin bin/ddstdecode
+@bin bin/foo2ddst
+bin/foo2ddst-wrapper
 @bin bin/foo2hbpl2
 bin/foo2hbpl2-wrapper
 @bin bin/foo2hiperc
@@ -48,6 +51,9 @@ bin/printer-profile
 @bin bin/zjsdecode
 libexec/cups/filter/command2foo2lava-pjl
 @man man/man1/arm2hpdl.1
+@man man/man1/ddstdecode.1
+@man man/man1/foo2ddst-wrapper.1
+@man man/man1/foo2ddst.1
 @man man/man1/foo2hbpl2-wrapper.1
 @man man/man1/foo2hbpl2.1
 @man man/man1/foo2hiperc-wrapper.1
@@ -131,6 +137,7 @@ share/foo2zjs/icm/
 share/foomatic/db/source/PPD/foo2zjs/
 share/foomatic/db/source/PPD/foo2zjs/Dell-1355.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Dell-C1765.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Epson-AcuLaser_CX17NF.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Epson-AcuLaser_M1400.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM205.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM215.ppd.gz
@@ -192,6 +199,7 @@ share/foomatic/db/source/PPD/foo2zjs/Oki-C3300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3400.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3530_MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5100.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C511dn.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5200.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5500.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5600.ppd.gz
@@ -211,6 +219,8 @@ share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-2160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3175.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3185.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_3010.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_3040.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6121MFP.ppd.gz
@@ -318,6 +328,7 @@ share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 share/foomatic/db/source/printer/Dell-1355.xml
 share/foomatic/db/source/printer/Dell-C1765.xml
+share/foomatic/db/source/printer/Epson-AcuLaser_CX17NF.xml
 share/foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM215.xml
@@ -379,6 +390,7 @@ share/foomatic/db/source/printer/Oki-C3300.xml
 share/foomatic/db/source/printer/Oki-C3400.xml
 share/foomatic/db/source/printer/Oki-C3530_MFP.xml
 share/foomatic/db/source/printer/Oki-C5100.xml
+share/foomatic/db/source/printer/Oki-C511dn.xml
 share/foomatic/db/source/printer/Oki-C5200.xml
 share/foomatic/db/source/printer/Oki-C5500.xml
 share/foomatic/db/source/printer/Oki-C5600.xml
@@ -398,6 +410,8 @@ share/foomatic/db/source/printer/Samsung-CLX-2160.xml
 share/foomatic/db/source/printer/Samsung-CLX-3160.xml
 share/foomatic/db/source/printer/Samsung-CLX-3175.xml
 share/foomatic/db/source/printer/Samsung-CLX-3185.xml
+share/foomatic/db/source/printer/Xerox-Phaser_3010.xml
+share/foomatic/db/source/printer/Xerox-Phaser_3040.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6110.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6115MFP.xml
 share/foomatic/db/source/printer/Xerox-Phaser_6121MFP.xml
