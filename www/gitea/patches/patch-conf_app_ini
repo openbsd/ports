@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
---- conf/app.ini.orig	Thu Jan  5 14:13:52 2017
-+++ conf/app.ini	Sun Jan  8 13:22:47 2017
+$OpenBSD: patch-conf_app_ini,v 1.2 2017/04/05 00:57:47 danj Exp $
+--- conf/app.ini.orig	Thu Mar  9 14:25:12 2017
++++ conf/app.ini	Fri Mar 17 21:57:30 2017
 @@ -1,12 +1,12 @@
  ; App name that shows on every page title
  APP_NAME = Gitea: Git with a cup of tea
@@ -26,16 +26,16 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
  ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
  ALLOWED_TYPES =
  ; Max size of each file in MB. Defaults to 3MB
-@@ -103,7 +103,7 @@ SSH_DOMAIN = %(DOMAIN)s
+@@ -105,7 +105,7 @@ SSH_DOMAIN = %(DOMAIN)s
  ; Network interface builtin SSH server listens on
- SSH_LISTEN_HOST = 
+ SSH_LISTEN_HOST =
  ; Port number to be exposed in clone URL
 -SSH_PORT = 22
 +SSH_PORT = 2222
  ; Port number builtin SSH server listens on
  SSH_LISTEN_PORT = %(SSH_PORT)s
  ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
-@@ -125,13 +125,13 @@ DISABLE_ROUTER_LOG = false
+@@ -127,13 +127,13 @@ DISABLE_ROUTER_LOG = false
  ; not forget to export the private key):
  ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
  ; $ openssl pkcs12 -in cert.pfx -out key.pem -nocerts -nodes
@@ -52,7 +52,7 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
  ; Application level GZIP support
  ENABLE_GZIP = false
  ; Landing page for non-logged users, can be "home" or "explore"
-@@ -146,7 +146,7 @@ DSA     = 1024
+@@ -148,7 +148,7 @@ DSA     = 1024
  
  [database]
  ; Either "mysql", "postgres" or "sqlite3", it's your choice
@@ -61,16 +61,20 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
  HOST = 127.0.0.1:3306
  NAME = gitea
  USER = root
-@@ -154,7 +154,7 @@ PASSWD =
+@@ -156,10 +156,10 @@ PASSWD =
  ; For "postgres" only, either "disable", "require" or "verify-full"
  SSL_MODE = disable
  ; For "sqlite3" and "tidb", use absolute path when you start as service
 -PATH = data/gitea.db
 +PATH = ${LOCALSTATEDIR}/gitea/data/gitea.db
  
- [admin]
+ [indexer]
+-ISSUE_INDEXER_PATH = indexers/issues.bleve
++ISSUE_INDEXER_PATH = ${LOCALSTATEDIR}/gitea/indexers/issues.bleve
+ UPDATE_BUFFER_LEN = 20
  
-@@ -215,8 +215,8 @@ HELO_HOSTNAME =
+ [admin]
+@@ -235,8 +235,8 @@ HELO_HOSTNAME =
  SKIP_VERIFY =
  ; Use client certificate
  USE_CERTIFICATE = false
@@ -81,7 +85,7 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
  ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
  FROM =
  ; Mailer user name and password
-@@ -237,13 +237,13 @@ HOST =
+@@ -261,13 +261,13 @@ HOST =
  
  [session]
  ; Either "memory", "file", or "redis", default is "memory"
@@ -95,9 +99,9 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
 -PROVIDER_CONFIG = data/sessions
 +PROVIDER_CONFIG = ${LOCALSTATEDIR}/gitea/data/sessions
  ; Session cookie name
- COOKIE_NAME = i_like_gogits
+ COOKIE_NAME = i_like_gitea
  ; If you use session in https only, default is false
-@@ -256,7 +256,7 @@ GC_INTERVAL_TIME = 86400
+@@ -280,7 +280,7 @@ GC_INTERVAL_TIME = 86400
  SESSION_LIFE_TIME = 86400
  
  [picture]
@@ -106,16 +110,16 @@ $OpenBSD: patch-conf_app_ini,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
  ; Chinese users can choose "duoshuo"
  ; or a custom avatar source, like: http://cn.gravatar.com/avatar/
  GRAVATAR_SOURCE = gravatar
-@@ -271,7 +271,7 @@ ENABLE_FEDERATED_AVATAR = false
+@@ -295,7 +295,7 @@ ENABLE_FEDERATED_AVATAR = false
  ; Whether attachments are enabled. Defaults to `true`
  ENABLE = true
  ; Path for attachments. Defaults to `data/attachments`
 -PATH = data/attachments
 +PATH = ${LOCALSTATEDIR}/gitea/data/attachments
  ; One or more allowed types, e.g. image/jpeg|image/png
- ALLOWED_TYPES = image/jpeg|image/png
+ ALLOWED_TYPES = image/jpeg|image/png|application/zip|application/gzip
  ; Max size of each file. Defaults to 32MB
-@@ -286,14 +286,14 @@ MAX_FILES = 5
+@@ -310,14 +310,14 @@ MAX_FILES = 5
  FORMAT =
  
  [log]

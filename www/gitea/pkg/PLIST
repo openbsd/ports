@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/08 19:20:33 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/05 00:57:47 danj Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
 @bin sbin/gitea
@@ -15,6 +15,8 @@ share/gitea/conf/app.ini
 @sample ${SYSCONFDIR}/gitea/conf/app.ini
 @owner
 @group
+share/gitea/conf/app.ini.beforesubst
+share/gitea/conf/app.ini.orig
 share/gitea/options/
 share/gitea/options/gitignore/
 share/gitea/options/gitignore/Actionscript
@@ -37,6 +39,7 @@ share/gitea/options/gitignore/CUDA
 share/gitea/options/gitignore/CVS
 share/gitea/options/gitignore/CakePHP
 share/gitea/options/gitignore/ChefCookbook
+share/gitea/options/gitignore/Clojure
 share/gitea/options/gitignore/Cloud9
 share/gitea/options/gitignore/CodeIgniter
 share/gitea/options/gitignore/CodeKit
@@ -63,6 +66,7 @@ share/gitea/options/gitignore/Erlang
 share/gitea/options/gitignore/Espresso
 share/gitea/options/gitignore/ExpressionEngine
 share/gitea/options/gitignore/ExtJs
+share/gitea/options/gitignore/FSharp
 share/gitea/options/gitignore/Fancy
 share/gitea/options/gitignore/Finale
 share/gitea/options/gitignore/FlexBuilder
@@ -264,6 +268,7 @@ share/gitea/public/assets/octicons-4.3.0/octicons.ttf
 share/gitea/public/assets/octicons-4.3.0/octicons.woff
 share/gitea/public/assets/octicons-4.3.0/octicons.woff2
 share/gitea/public/css/
+share/gitea/public/css/gitgraph.css
 share/gitea/public/css/github.min.css
 share/gitea/public/css/index.css
 share/gitea/public/css/semantic-2.2.1.min.css
@@ -1183,13 +1188,17 @@ share/gitea/public/img/emoji/zzz.png
 share/gitea/public/img/favicon.png
 share/gitea/public/img/gitea-large-resize.png
 share/gitea/public/img/gitea-lg.png
+share/gitea/public/img/github.png
 share/gitea/public/img/slack.png
 share/gitea/public/js/
+share/gitea/public/js/draw.js
 share/gitea/public/js/index.js
 share/gitea/public/js/jquery-1.11.3.min.js
 share/gitea/public/js/libs/
+share/gitea/public/js/libs/autolink.js
 share/gitea/public/js/libs/clipboard-1.5.9.min.js
 share/gitea/public/js/libs/emojify-1.1.0.min.js
+share/gitea/public/js/libs/gitgraph.js
 share/gitea/public/js/libs/jquery.are-you-sure.js
 share/gitea/public/js/semantic-2.2.1.min.js
 share/gitea/public/less/
@@ -1816,6 +1825,7 @@ share/gitea/templates/repo/editor/diff_preview.tmpl
 share/gitea/templates/repo/editor/edit.tmpl
 share/gitea/templates/repo/editor/upload.tmpl
 share/gitea/templates/repo/forks.tmpl
+share/gitea/templates/repo/graph.tmpl
 share/gitea/templates/repo/header.tmpl
 share/gitea/templates/repo/home.tmpl
 share/gitea/templates/repo/issue/
@@ -1828,6 +1838,7 @@ share/gitea/templates/repo/issue/milestones.tmpl
 share/gitea/templates/repo/issue/navbar.tmpl
 share/gitea/templates/repo/issue/new.tmpl
 share/gitea/templates/repo/issue/new_form.tmpl
+share/gitea/templates/repo/issue/search.tmpl
 share/gitea/templates/repo/issue/view.tmpl
 share/gitea/templates/repo/issue/view_content.tmpl
 share/gitea/templates/repo/issue/view_title.tmpl
@@ -1842,6 +1853,7 @@ share/gitea/templates/repo/release/
 share/gitea/templates/repo/release/list.tmpl
 share/gitea/templates/repo/release/new.tmpl
 share/gitea/templates/repo/settings/
+share/gitea/templates/repo/settings/branches.tmpl
 share/gitea/templates/repo/settings/collaboration.tmpl
 share/gitea/templates/repo/settings/deploy_keys.tmpl
 share/gitea/templates/repo/settings/githook_edit.tmpl
@@ -1873,10 +1885,15 @@ share/gitea/templates/user/
 share/gitea/templates/user/auth/
 share/gitea/templates/user/auth/activate.tmpl
 share/gitea/templates/user/auth/forgot_passwd.tmpl
+share/gitea/templates/user/auth/link_account.tmpl
 share/gitea/templates/user/auth/prohibit_login.tmpl
 share/gitea/templates/user/auth/reset_passwd.tmpl
 share/gitea/templates/user/auth/signin.tmpl
+share/gitea/templates/user/auth/signin_inner.tmpl
 share/gitea/templates/user/auth/signup.tmpl
+share/gitea/templates/user/auth/signup_inner.tmpl
+share/gitea/templates/user/auth/twofa.tmpl
+share/gitea/templates/user/auth/twofa_scratch.tmpl
 share/gitea/templates/user/dashboard/
 share/gitea/templates/user/dashboard/dashboard.tmpl
 share/gitea/templates/user/dashboard/feeds.tmpl
@@ -1886,8 +1903,11 @@ share/gitea/templates/user/meta/
 share/gitea/templates/user/meta/followers.tmpl
 share/gitea/templates/user/meta/header.tmpl
 share/gitea/templates/user/meta/stars.tmpl
+share/gitea/templates/user/notification/
+share/gitea/templates/user/notification/notification.tmpl
 share/gitea/templates/user/profile.tmpl
 share/gitea/templates/user/settings/
+share/gitea/templates/user/settings/account_link.tmpl
 share/gitea/templates/user/settings/applications.tmpl
 share/gitea/templates/user/settings/avatar.tmpl
 share/gitea/templates/user/settings/delete.tmpl
@@ -1896,6 +1916,8 @@ share/gitea/templates/user/settings/navbar.tmpl
 share/gitea/templates/user/settings/password.tmpl
 share/gitea/templates/user/settings/profile.tmpl
 share/gitea/templates/user/settings/sshkeys.tmpl
+share/gitea/templates/user/settings/twofa.tmpl
+share/gitea/templates/user/settings/twofa_enroll.tmpl
 @mode 750
 @owner _gitea
 @group _gitea
