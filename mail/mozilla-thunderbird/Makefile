@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.239 2017/03/23 07:33:24 landry Exp $
+# $OpenBSD: Makefile,v 1.240 2017/04/05 09:46:18 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	45.8.0
+MOZILLA_VERSION =	52.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 EXTRACT_SUFX =		.tar.xz
-REVISION =	0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-4.7.8
+PKGNAME-lightning =	lightning-5.4
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
-SO_VERSION =	31.0
+SO_VERSION =	32.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 lgpllibs prldap60 xul calbasecomps
+MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk prldap60 xul
 
 CATEGORIES=	mail news
 
@@ -33,18 +32,18 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES =	www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =	No
 
-# necessary glue to build with the correct compiler after fx 17
-MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha
-MODGCC4_LANGS =		c c++
+MODULES +=		lang/clang
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+# firefox >= 46 defaults to gtk+3
+MOZILLA_USE_GTK3 = Yes
 
 NO_TEST =	Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
 # SQLITE_CFLAGS is set from pkgconfig, but it's not used for all files that need it, e.g.
 # mailnews/build/nsMailModule.cpp pulls in mailnews/extensions/fts3/src/nsFts3Tokenizer.h
@@ -53,17 +52,15 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
-			c m stdc++ nspr4 plc4 plds4 pthread
+			c m estdc++ nspr4 plc4 plds4 pthread
+
+WANTLIB += X11-xcb pixman-1 pthread-stubs xcb xcb-shm
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
-# relies on pulseaudio for sound and broken at runtime
-CONFIGURE_ARGS +=	--disable-webrtc
-
-CONFIGURE_ARGS +=	--disable-gstreamer
 
 # to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=       --disable-debug-symbols
 .endif
 
@@ -88,8 +85,7 @@ post-install:
 .for xpi guid in ${GUIDS}
 	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
 .endfor
-	# lightning cant be used packed as a zip because it contains a binary component
-	# (libcalbasecomps.so) that the system wouldnt be able to load...
+
 	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
 		${EXTDIR}
 	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/

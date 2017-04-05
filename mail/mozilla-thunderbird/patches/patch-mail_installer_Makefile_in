@@ -1,8 +1,8 @@
-$OpenBSD: patch-mail_installer_Makefile_in,v 1.9 2016/04/27 14:18:52 landry Exp $
+$OpenBSD: patch-mail_installer_Makefile_in,v 1.10 2017/04/05 09:46:18 landry Exp $
 Don't install the sdk (revert bug #639462)
---- mail/installer/Makefile.in.orig	Fri Feb  5 20:44:00 2016
-+++ mail/installer/Makefile.in	Sat Feb  6 08:24:43 2016
-@@ -111,8 +111,6 @@ endif
+--- mail/installer/Makefile.in.orig	Wed Feb 15 17:31:57 2017
++++ mail/installer/Makefile.in	Sun Feb 19 15:08:41 2017
+@@ -131,8 +131,6 @@ endif
  
  NON_OMNIJAR_FILES = defaults/messenger/mailViews.dat
  
