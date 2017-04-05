@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.8 2016/10/09 18:47:49 czarkoff Exp $
---- config.mk.orig	Sat Oct  8 21:48:48 2016
-+++ config.mk	Sat Oct  8 21:50:30 2016
+$OpenBSD: patch-config_mk,v 1.9 2017/04/05 21:29:57 juanfra Exp $
+--- config.mk.orig	Thu Aug 11 16:25:58 2016
++++ config.mk	Tue Mar 28 12:27:10 2017
 @@ -4,24 +4,21 @@ VERSION = 0.7
  # Customize below to fit your system
  
@@ -27,9 +27,10 @@ $OpenBSD: patch-config_mk,v 1.8 2016/10/09 18:47:49 czarkoff Exp $
 +LIBS +!= pkg-config --libs fontconfig
  
  # flags
- CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
 -CFLAGS += -g -std=c99 -pedantic -Wall -Wvariadic-macros -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS += -g ${LIBS}
++CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
 +CFLAGS += -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS += ${LIBS}
  

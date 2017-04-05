@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/09 18:47:49 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/05 21:29:57 juanfra Exp $
 
 COMMENT=		simple X terminal
 
 DISTNAME=		st-0.7
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -13,6 +14,7 @@ MAINTAINER=		Joerg Jung <jung@openbsd.org>
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB=		c m util X11 Xft fontconfig freetype z
 
 MASTER_SITES=		http://dl.suckless.org/st/
