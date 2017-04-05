@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2017/04/05 07:00:37 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
@@ -99,9 +99,15 @@ lib/python3.6/test/__pycache__/memory_watchdog.cpython-36.pyc
 lib/python3.6/test/__pycache__/mock_socket.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/mock_socket.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/mock_socket.cpython-36.pyc
+lib/python3.6/test/__pycache__/mod_generics_cache.cpython-36.opt-1.pyc
+lib/python3.6/test/__pycache__/mod_generics_cache.cpython-36.opt-2.pyc
+lib/python3.6/test/__pycache__/mod_generics_cache.cpython-36.pyc
 lib/python3.6/test/__pycache__/mp_fork_bomb.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/mp_fork_bomb.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/mp_fork_bomb.cpython-36.pyc
+lib/python3.6/test/__pycache__/mp_preload.cpython-36.opt-1.pyc
+lib/python3.6/test/__pycache__/mp_preload.cpython-36.opt-2.pyc
+lib/python3.6/test/__pycache__/mp_preload.cpython-36.pyc
 lib/python3.6/test/__pycache__/multibytecodec_support.cpython-36.opt-1.pyc
 lib/python3.6/test/__pycache__/multibytecodec_support.cpython-36.opt-2.pyc
 lib/python3.6/test/__pycache__/multibytecodec_support.cpython-36.pyc
@@ -1737,7 +1743,9 @@ lib/python3.6/test/math_testcases.txt
 lib/python3.6/test/memory_watchdog.py
 lib/python3.6/test/mime.types
 lib/python3.6/test/mock_socket.py
+lib/python3.6/test/mod_generics_cache.py
 lib/python3.6/test/mp_fork_bomb.py
+lib/python3.6/test/mp_preload.py
 lib/python3.6/test/multibytecodec_support.py
 lib/python3.6/test/nokia.pem
 lib/python3.6/test/nullbytecert.pem

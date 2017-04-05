@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2016/12/26 19:40:12 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2017/04/05 07:00:37 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.6,<3.7
@@ -2341,9 +2341,9 @@ lib/python3.6/lib-dynload/xxlimited.so
 lib/python3.6/lib-dynload/zlib.so
 lib/python3.6/lib2to3/
 lib/python3.6/lib2to3/Grammar.txt
-lib/python3.6/lib2to3/Grammar3.6.0.final.0.pickle
+lib/python3.6/lib2to3/Grammar3.6.1.final.0.pickle
 lib/python3.6/lib2to3/PatternGrammar.txt
-lib/python3.6/lib2to3/PatternGrammar3.6.0.final.0.pickle
+lib/python3.6/lib2to3/PatternGrammar3.6.1.final.0.pickle
 lib/python3.6/lib2to3/__init__.py
 lib/python3.6/lib2to3/__main__.py
 lib/python3.6/lib2to3/__pycache__/
@@ -2874,7 +2874,6 @@ lib/python3.6/shlex.py
 lib/python3.6/shutil.py
 lib/python3.6/signal.py
 lib/python3.6/site-packages/
-lib/python3.6/site-packages/README
 lib/python3.6/site-packages/README.txt
 lib/python3.6/site.py
 lib/python3.6/smtpd.py
@@ -3249,8 +3248,9 @@ lib/python3.6/venv/__pycache__/__main__.cpython-36.opt-1.pyc
 lib/python3.6/venv/__pycache__/__main__.cpython-36.opt-2.pyc
 lib/python3.6/venv/__pycache__/__main__.cpython-36.pyc
 lib/python3.6/venv/scripts/
+lib/python3.6/venv/scripts/common/
+lib/python3.6/venv/scripts/common/activate
 lib/python3.6/venv/scripts/posix/
-lib/python3.6/venv/scripts/posix/activate
 lib/python3.6/venv/scripts/posix/activate.csh
 lib/python3.6/venv/scripts/posix/activate.fish
 lib/python3.6/warnings.py
