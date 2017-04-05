@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/13 19:42:15 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/05 11:45:20 rpointel Exp $
 
 COMMENT =	library and tools to access the QEMU Copy-On-Write (QCOW)
 
-VERSION = 	20160123
+VERSION = 	20170222
 DISTNAME =	libqcow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
