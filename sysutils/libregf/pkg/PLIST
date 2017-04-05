@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/13 19:43:16 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/05 11:56:51 rpointel Exp $
 @bin bin/regfexport
 @bin bin/regfinfo
 @bin bin/regfmount
-@bin bin/regfreport
 include/libregf/
 include/libregf.h
 include/libregf/codepage.h
