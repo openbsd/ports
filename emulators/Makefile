@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2016/12/20 20:30:36 juanfra Exp $
+# $OpenBSD: Makefile,v 1.90 2017/04/05 19:57:22 fcambus Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -40,7 +40,6 @@
     SUBDIR += sdlmess
     SUBDIR += simh
     SUBDIR += snes9x
-    SUBDIR += spectemu
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += uae

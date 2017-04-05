@@ -1,4 +1,0 @@
-spectemu emulates the 48k ZX Spectrum, which uses the Z80
-microprocessor. It emulates the Z80 processor as well as
-the 48k Spectrum's other hardware: keyboard, screen, sound,
-tape I/O.
