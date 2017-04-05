@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2017/03/29 07:11:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2017/04/05 07:34:48 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -145,6 +145,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2016-11-25/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2016-11-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2016-11-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2016-11-25/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/examples-1.json
@@ -494,6 +499,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/2017-01-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/2017-01-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resourcegroupstaggingapi/2017-01-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53/2013-04-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53/2013-04-01/examples-1.json
