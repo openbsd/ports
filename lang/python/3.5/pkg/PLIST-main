@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/07/03 18:16:00 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2017/04/05 11:43:23 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.5,<3.6
@@ -2151,8 +2151,8 @@ lib/python3.5/ensurepip/__pycache__/_uninstall.cpython-35.opt-1.pyc
 lib/python3.5/ensurepip/__pycache__/_uninstall.cpython-35.opt-2.pyc
 lib/python3.5/ensurepip/__pycache__/_uninstall.cpython-35.pyc
 lib/python3.5/ensurepip/_bundled/
-lib/python3.5/ensurepip/_bundled/pip-8.1.1-py2.py3-none-any.whl
-lib/python3.5/ensurepip/_bundled/setuptools-20.10.1-py2.py3-none-any.whl
+lib/python3.5/ensurepip/_bundled/pip-9.0.1-py2.py3-none-any.whl
+lib/python3.5/ensurepip/_bundled/setuptools-28.8.0-py2.py3-none-any.whl
 lib/python3.5/ensurepip/_uninstall.py
 lib/python3.5/enum.py
 lib/python3.5/filecmp.py
@@ -2325,9 +2325,9 @@ lib/python3.5/lib-dynload/xxlimited.so
 lib/python3.5/lib-dynload/zlib.so
 lib/python3.5/lib2to3/
 lib/python3.5/lib2to3/Grammar.txt
-lib/python3.5/lib2to3/Grammar3.5.2.final.0.pickle
+lib/python3.5/lib2to3/Grammar3.5.3.final.0.pickle
 lib/python3.5/lib2to3/PatternGrammar.txt
-lib/python3.5/lib2to3/PatternGrammar3.5.2.final.0.pickle
+lib/python3.5/lib2to3/PatternGrammar3.5.3.final.0.pickle
 lib/python3.5/lib2to3/__init__.py
 lib/python3.5/lib2to3/__main__.py
 lib/python3.5/lib2to3/__pycache__/
@@ -2386,9 +2386,6 @@ lib/python3.5/lib2to3/fixes/__pycache__/fix_basestring.cpython-35.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_buffer.cpython-35.opt-1.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_buffer.cpython-35.opt-2.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_buffer.cpython-35.pyc
-lib/python3.5/lib2to3/fixes/__pycache__/fix_callable.cpython-35.opt-1.pyc
-lib/python3.5/lib2to3/fixes/__pycache__/fix_callable.cpython-35.opt-2.pyc
-lib/python3.5/lib2to3/fixes/__pycache__/fix_callable.cpython-35.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_dict.cpython-35.opt-1.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_dict.cpython-35.opt-2.pyc
 lib/python3.5/lib2to3/fixes/__pycache__/fix_dict.cpython-35.pyc
@@ -2537,7 +2534,6 @@ lib/python3.5/lib2to3/fixes/fix_apply.py
 lib/python3.5/lib2to3/fixes/fix_asserts.py
 lib/python3.5/lib2to3/fixes/fix_basestring.py
 lib/python3.5/lib2to3/fixes/fix_buffer.py
-lib/python3.5/lib2to3/fixes/fix_callable.py
 lib/python3.5/lib2to3/fixes/fix_dict.py
 lib/python3.5/lib2to3/fixes/fix_except.py
 lib/python3.5/lib2to3/fixes/fix_exec.py

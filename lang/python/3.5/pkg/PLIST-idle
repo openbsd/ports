@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.4 2016/07/03 18:16:00 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.5 2017/04/05 11:43:23 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.5,<3.6
@@ -45,6 +45,7 @@ lib/python3.5/idlelib/IdleHistory.py
 lib/python3.5/idlelib/MultiCall.py
 lib/python3.5/idlelib/MultiStatusBar.py
 lib/python3.5/idlelib/NEWS.txt
+lib/python3.5/idlelib/NEWS2x.txt
 lib/python3.5/idlelib/ObjectBrowser.py
 lib/python3.5/idlelib/OutputWindow.py
 lib/python3.5/idlelib/ParenMatch.py
@@ -319,6 +320,9 @@ lib/python3.5/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_grep.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_grep.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_grep.cpython-35.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_help_about.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_help_about.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/idle_test/__pycache__/test_help_about.cpython-35.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_hyperparser.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_hyperparser.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/idle_test/__pycache__/test_hyperparser.cpython-35.pyc
@@ -381,6 +385,7 @@ lib/python3.5/idlelib/idle_test/test_editmenu.py
 lib/python3.5/idlelib/idle_test/test_editor.py
 lib/python3.5/idlelib/idle_test/test_formatparagraph.py
 lib/python3.5/idlelib/idle_test/test_grep.py
+lib/python3.5/idlelib/idle_test/test_help_about.py
 lib/python3.5/idlelib/idle_test/test_hyperparser.py
 lib/python3.5/idlelib/idle_test/test_idlehistory.py
 lib/python3.5/idlelib/idle_test/test_io.py
