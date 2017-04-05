@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/05 04:25:58 mglocker Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	1.6.1
 DISTNAME =	apache-couchdb-${COUCH_VER}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	databases
 
 HOMEPAGE =	http://couchdb.apache.org/
@@ -38,7 +38,9 @@ CONFIGURE_ARGS = --with-erlang=${LOCALBASE}/lib/erlang${MODERL_VERSION}/usr/incl
 		--disable-docs \
 		--disable-init
 # The 'erl -version' test in configure needs HOME to be set.
-CONFIGURE_ENV =	HOME=${PORTHOME}
+CONFIGURE_ENV =	HOME=${PORTHOME} \
+		ERL=${LOCALBASE}/bin/erl${MODERL_VERSION} \
+		ERLC=${LOCALBASE}/bin/erlc${MODERL_VERSION}
 
 TEST_TARGET =	check
 PORTHOME =	${WRKDIR}
