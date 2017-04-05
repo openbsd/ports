@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/07 22:18:00 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/05 12:19:02 bluhm Exp $
 
-COMMENT =		test your regular expressions
+COMMENT =	test your regular expressions
 
-DISTNAME =		Test-Regexp-2016060501
+DISTNAME =	Test-Regexp-2017040101
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
