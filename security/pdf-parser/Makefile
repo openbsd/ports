@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/27 12:27:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/05 07:13:55 rpointel Exp $
 
 COMMENT =	parse a PDF document
 
-MODPY_EGG_VERSION =	0.6.6
+MODPY_EGG_VERSION =	0.6.7
 DISTNAME =	pdf-parser_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_EGG_VERSION}
 
