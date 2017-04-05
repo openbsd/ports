@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/14 20:25:58 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/05 11:44:45 rpointel Exp $
 
 COMMENT =	library and tools to access the VHD image format
 
-VERSION = 	20160424
+VERSION = 	20170223
 DISTNAME =	libvhdi-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
