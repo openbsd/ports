@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/22 07:55:18 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/06 10:21:30 espie Exp $
+@conflict py-xlsxwriter-*
+@conflict py3-xlsxwriter-*
 bin/vba_extract.py
 lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/

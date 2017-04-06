@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/22 07:50:49 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/06 10:21:30 espie Exp $
+@conflict py-artifacts-*
+@conflict py3-artifacts-*
 bin/stats.py
 bin/validator.py
 lib/python${MODPY_VERSION}/site-packages/artifacts/
