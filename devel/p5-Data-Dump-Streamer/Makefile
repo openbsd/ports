@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/06 09:14:25 benoit Exp $
 
 COMMENT=		accurately serialize a data structure as Perl code
 
-DISTNAME =		Data-Dump-Streamer-2.39
+DISTNAME =		Data-Dump-Streamer-2.40
 CATEGORIES=		devel
 
 MODULES=		cpan
