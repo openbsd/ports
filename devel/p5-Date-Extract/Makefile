@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/06 09:55:01 benoit Exp $
 
 COMMENT =	extract probable dates from strings
 
-V =		0.05
+V =		0.06
 
 MODULES =	cpan
 PKG_ARCH =	*
