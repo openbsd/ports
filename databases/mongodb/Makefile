@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/09/20 15:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/06 22:11:23 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -9,8 +9,7 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r3.2.7
-REVISION =	0
+DISTNAME =	mongodb-src-r3.2.12
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
 
@@ -37,7 +36,6 @@ NO_CCACHE =	Yes
 MODGCC4_ARCHS =	*
 MODGCC4_LANGS =	c c++
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-ALL_TARGET =	core tools
 MODSCONS_ENV =	CC="${CC}" \
 		CXX="${CXX}" \
 		CCFLAGS="${CFLAGS} -DBOOST_NO_USER_CONFIG" \
@@ -67,9 +65,12 @@ TEST_DEPENDS =	textproc/py-yaml \
 BUILD_DEPENDS =	textproc/icu4c
 
 do-install:
-	for bin in mongo mongod mongos mongosniff mongobridge mongoperf; do \
-		${INSTALL_PROGRAM} ${WRKSRC}/$$bin ${PREFIX}/bin/; \
-	done
+.for bin in mongo mongod mongos mongosniff mongobridge mongoperf
+	${INSTALL_PROGRAM} ${WRKSRC}/${bin} ${PREFIX}/bin/
+	if [ -f ${WRKSRC}/debian/${bin}.1 ]; then \
+	  ${INSTALL_MAN} ${WRKSRC}/debian/${bin}.1 ${PREFIX}/man/man1; \
+	fi
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb
 	${INSTALL_DATA} ${FILESDIR}/mongodb.conf \
 	    ${PREFIX}/share/examples/mongodb
