@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-fr,v 1.18 2013/10/22 11:34:01 zhuk Exp $
+@comment $OpenBSD: PLIST-fr,v 1.19 2017/04/06 10:23:20 espie Exp $
 @pkgpath x11/kde/i18n3,fr
+@conflict kdevelop->=4.7
 @conflict kdeedu-<3.4
 share/apps.kde3/kanagram/
 share/apps.kde3/kanagram/data/
