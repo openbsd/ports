@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/28 23:28:26 bmercer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2017/04/06 10:24:26 espie Exp $
 arm-none-eabi/
 arm-none-eabi/include/
 arm-none-eabi/include/_ansi.h
@@ -269,5 +269,6 @@ arm-none-eabi/lib/thumb/redboot-crt0.o
 arm-none-eabi/lib/thumb/redboot-syscalls.o
 arm-none-eabi/lib/thumb/redboot.ld
 arm-none-eabi/lib/thumb/redboot.specs
-share/doc/newlib/
-share/doc/newlib/COPYING.NEWLIB
+share/doc/arm-none-eabi/
+share/doc/arm-none-eabi/newlib/
+share/doc/arm-none-eabi/newlib/COPYING.NEWLIB

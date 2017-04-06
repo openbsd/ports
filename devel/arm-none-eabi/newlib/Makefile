@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/07 17:28:27 patrick Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/06 10:24:26 espie Exp $
 
 COMMENT=	newlib for arm-none-eabi cross-development
 
 DISTNAME=	newlib-2.2.0-1
 VERSION=	2.2.0.1
 PKGNAME=	${CONFIG}-newlib-${VERSION}
-REVISION=	0
+REVISION=	1
 
 MAKE_ENV+=	${CONFIGURE_ENV}
 
@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=--enable-interwork \
 		--enable-multilib
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/newlib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arm-none-eabi/newlib
 	${INSTALL_DATA} ${WRKDIST}/COPYING.NEWLIB \
-		${PREFIX}/share/doc/newlib
+		${PREFIX}/share/doc/arm-none-eabi/newlib
 
 .include <bsd.port.mk>

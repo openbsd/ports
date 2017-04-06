@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/22 22:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/06 10:24:25 espie Exp $
 
 COMMENT=	newlib for arm-elf cross-development
 
 DISTNAME=	newlib-1.18.0
-REVISION=	0
+REVISION=	1
 BROKEN-amd64 =	as: unrecognized option -mfpu=softfpa
 
 HOMEPAGE=	http://sourceware.org/newlib/
@@ -23,8 +23,8 @@ CONFIGURE_ARGS+=--enable-interwork \
 		--enable-multilib
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/newlib
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arm-elf/newlib
 	${INSTALL_DATA} ${WRKDIST}/COPYING.NEWLIB \
-		${PREFIX}/share/doc/newlib
+		${PREFIX}/share/doc/newlib/arm-elf
 
 .include <bsd.port.mk>
