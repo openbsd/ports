@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/01 22:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/06 08:57:25 benoit Exp $
 
 COMMENT=	grammar-based, user-friendly config parser
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Config-Grammar-1.11
+DISTNAME =	Config-Grammar-1.12
 CATEGORIES=     devel
 
 # perl
