@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/27 15:59:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/06 20:34:07 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
-DISTNAME=	opus-tools-0.1.9
-REVISION=	1
+DISTNAME=	opus-tools-0.1.10
 CATEGORIES=	audio
 
-HOMEPAGE=	http://opus-codec.org/
+HOMEPAGE=	https://opus-codec.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
