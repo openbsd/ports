@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-c++,v 1.5 2016/06/29 16:14:41 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.6 2017/04/06 10:26:15 espie Exp $
 @option is-branch
 @conflict libstdc++->=4.7
+@conflict gcc-libs->=4.9
 @bin bin/ec++
 @bin bin/eg++
 @bin bin/${CONFIG}-ec++

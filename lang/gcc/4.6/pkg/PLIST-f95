@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-f95,v 1.4 2016/09/02 12:14:06 dcoppa Exp $
+@comment $OpenBSD: PLIST-f95,v 1.5 2017/04/06 10:26:15 espie Exp $
 @option is-branch
 @conflict gfortran-*
 @conflict libgfortran-*
+@conflict gcc-libs->=4.9
 @bin bin/egfortran
 bin/gfortran
 @bin bin/${CONFIG}-egfortran
