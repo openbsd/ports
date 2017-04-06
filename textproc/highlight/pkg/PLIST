@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/02/21 09:12:57 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.27 2017/04/06 07:42:25 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -70,6 +70,7 @@ share/highlight/langDefs/erlang.lang
 share/highlight/langDefs/euphoria.lang
 share/highlight/langDefs/express.lang
 share/highlight/langDefs/fame.lang
+share/highlight/langDefs/fasm.lang
 share/highlight/langDefs/felix.lang
 share/highlight/langDefs/fortran77.lang
 share/highlight/langDefs/fortran90.lang
@@ -252,6 +253,7 @@ share/highlight/themes/edit-anjuta.theme
 share/highlight/themes/edit-bbedit.theme
 share/highlight/themes/edit-eclipse.theme
 share/highlight/themes/edit-emacs.theme
+share/highlight/themes/edit-fasm.theme
 share/highlight/themes/edit-flashdevelop.theme
 share/highlight/themes/edit-gedit.theme
 share/highlight/themes/edit-godot.theme
