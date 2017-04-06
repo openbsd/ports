@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/06 12:46:12 gsoares Exp $
+# $OpenBSD: Makefile,v 1.40 2017/04/06 12:54:35 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -27,7 +27,8 @@ TEST_TARGET =		test
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 # -Ilib before PREFIX/include to avoid picking up header from devel/check
-MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build CFGDIR=${PREFIX}/share/cppcheck/cfg \
+MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build \
+			CFGDIR=${PREFIX}/share/cppcheck/cfg \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -std=c++11" \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
