@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2016/11/18 11:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2017/04/07 16:21:53 edd Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.1.15
-REVISION =	2
+DISTNAME =	gnupg-2.1.20
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
@@ -43,8 +42,6 @@ CONFIGURE_ARGS +=	--disable-ldap
 
 RUN_DEPENDS = 		security/pinentry
 
-# gpg-agent must be installed to run the regress tests
-# Make sure you dont have gpg aliased (e.g. to gpg2) when running tests.
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 PORTHOME=${WRKDIR}
 
