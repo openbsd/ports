@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/02/07 14:48:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2017/04/07 14:56:24 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -24,8 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/cli.py
 lib/python${MODPY_VERSION}/site-packages/certbot/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/client.py
 lib/python${MODPY_VERSION}/site-packages/certbot/client.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/colored_logging.py
-lib/python${MODPY_VERSION}/site-packages/certbot/colored_logging.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/configuration.py
 lib/python${MODPY_VERSION}/site-packages/certbot/configuration.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/constants.py
@@ -55,6 +53,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/hooks.py
 lib/python${MODPY_VERSION}/site-packages/certbot/hooks.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/certbot/interfaces.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/log.py
+lib/python${MODPY_VERSION}/site-packages/certbot/log.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/main.py
 lib/python${MODPY_VERSION}/site-packages/certbot/main.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/notify.py
@@ -119,8 +119,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/cli_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/cli_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/client_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/client_test.pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/colored_logging_test.py
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/colored_logging_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/configuration_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/configuration_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/crypto_util_test.py
@@ -144,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/errors_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/hook_test.pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/log_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/main_test.pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/notify_test.py
