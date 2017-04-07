@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/11 19:46:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/07 20:59:49 sthen Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
@@ -9,6 +9,7 @@ GH_PROJECT=	backtrace
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	libexecinfo-$V
 EPOCH =		0
+REVISION =	0
 CATEGORIES =	devel
 
 SHARED_LIBS =	execinfo	2.0
@@ -19,7 +20,6 @@ HOMEPAGE =	https://github.com/conformal/backtrace/wiki
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB=	c
-CFLAGS+=	-Wl,--export-dynamic
 LDFLAGS+=	-Wl,--export-dynamic
 
 MAKE_FLAGS =	LIB=execinfo
@@ -38,5 +38,9 @@ post-install:
 	mv ${PREFIX}/include/backtrace.h ${PREFIX}/include/execinfo.h
 	${INSTALL_PROGRAM} ${WRKDIST}/examples/backtrace_test \
 		${PREFIX}/bin/backtrace_test
+
+do-test:
+	${SETENV} LD_LIBRARY_PATH=${WRKSRC}/libbacktrace \
+		${WRKSRC}/examples/backtrace_test
 
 .include <bsd.port.mk>
