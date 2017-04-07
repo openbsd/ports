@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2017/03/12 03:25:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/07 07:44:40 ajacoutot Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
-GNOME_VERSION=		0.6.11
+GNOME_VERSION=		0.6.12
 
 SHARED_LIBS +=  croco-0.6            4.0      # 3.1
 
@@ -11,13 +11,14 @@ CATEGORIES=		www textproc devel
 
 HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 lzma m pcre pthread xml2 z
+WANTLIB += c glib-2.0 iconv intl lzma m pcre pthread xml2 z
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
