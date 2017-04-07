@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/06 10:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/07 21:55:11 sthen Exp $
 
 COMMENT =		non-validating SQL parser
 
 MODPY_EGG_VERSION =	0.2.2
 DISTNAME =		sqlparse-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		databases
 
@@ -23,5 +23,8 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest tests/
+
+post-install:
+	mv ${PREFIX}/bin/sqlformat ${PREFIX}/bin/sqlformat${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
