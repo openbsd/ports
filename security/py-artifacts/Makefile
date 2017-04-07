@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/06 10:21:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/07 22:01:11 sthen Exp $
 
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
 MODPY_EGG_VERSION = 20161022
 DISTNAME =	artifacts-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -26,5 +26,9 @@ FLAVOR ?=
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 TEST_DEPENDS =	${RUN_DEPENDS}
 MAKE_ENV +=	LC_CTYPE='en_US.UTF-8'
+
+post-install:
+	mv ${PREFIX}/bin/stats.py ${PREFIX}/bin/bin/stats.py${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/validator.py ${PREFIX}/bin/validator.py${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
