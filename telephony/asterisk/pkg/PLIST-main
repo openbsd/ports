@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.66 2016/11/29 13:57:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.67 2017/04/07 21:32:20 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -566,6 +566,11 @@ share/asterisk/rest-api/playbacks.json
 share/asterisk/rest-api/recordings.json
 share/asterisk/rest-api/resources.json
 share/asterisk/rest-api/sounds.json
+share/asterisk/scripts/
+share/asterisk/scripts/ast_coredumper
+share/asterisk/scripts/ast_logescalator
+share/asterisk/scripts/ast_loggrabber
+share/asterisk/scripts/refcounter.py
 share/asterisk/static-http/
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/appdocsxml.xslt
@@ -617,6 +622,7 @@ share/examples/asterisk/default/amd.conf
 @comment share/examples/asterisk/default/app_mysql.conf
 share/examples/asterisk/default/app_skel.conf
 share/examples/asterisk/default/ari.conf
+share/examples/asterisk/default/ast_debug_tools.conf
 share/examples/asterisk/default/asterisk.adsi
 share/examples/asterisk/default/asterisk.conf
 @sample ${SYSCONFDIR}/asterisk/asterisk.conf
