@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/28 17:46:35 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/07 06:04:45 rpointel Exp $
 
 COMMENT =		source code beautifier
 
-DISTNAME =		uncrustify-0.63
+DISTNAME =		uncrustify-0.64
 
 CATEGORIES =		textproc devel
 
@@ -17,16 +17,12 @@ WANTLIB += c m stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
 
-CONFIGURE_STYLE =	gnu
+WRKDIST =	${WRKDIR}
 
-MODULES =	lang/python
+MODULES =	devel/cmake
 
-MAKE_FLAGS = V=1
-
-MODPY_RUNDEP = No
-MODPY_BUILDDEP = No
-
-do-test:
-	cd ${WRKSRC}/tests && ${MODPY_BIN} ./run_tests.py
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/uncrustify/
+	${INSTALL_DATA} ${WRKSRC}/etc/*.cfg ${PREFIX}/share/uncrustify/
 
 .include <bsd.port.mk>
