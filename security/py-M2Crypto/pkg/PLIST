@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/08/21 15:18:14 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.5 2017/04/07 20:27:58 rpe Exp $
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -74,9 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/X509.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/X509.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/__init__.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/__m2crypto.so
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.pyc
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/_m2crypto.so
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/callback.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/callback.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ftpslib.py
@@ -85,6 +83,8 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/httpslib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/httpslib.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2.pyc
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2crypto.py
+lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2crypto.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib.pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.py
