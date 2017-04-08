@@ -1,9 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/05/10 05:37:08 ajacoutot Exp $
-@comment lib/gio/modules/libgiognomeproxy.la
+@comment $OpenBSD: PLIST,v 1.20 2017/04/08 10:39:22 ajacoutot Exp $
 lib/gio/modules/libgiognomeproxy.so
-@comment lib/gio/modules/libgiognutls.la
 lib/gio/modules/libgiognutls.so
-@comment lib/gio/modules/libgiolibproxy.la
 lib/gio/modules/libgiolibproxy.so
 lib/systemd/
 lib/systemd/user/
