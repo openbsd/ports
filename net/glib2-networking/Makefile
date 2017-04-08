@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/08 10:29:34 ajacoutot Exp $
 
-COMMENT=		network-related gio modules for glib2
+COMMENT=		network-related gio modules for GLib
 
 GNOME_VERSION=		2.50.0
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
