@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/13 19:41:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/08 04:25:48 rpointel Exp $
 
 COMMENT =	library and tools to access the OLE 2 Compound File
 
-VERSION = 	20161113
+VERSION = 	20170129
 DISTNAME =	libolecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
 
