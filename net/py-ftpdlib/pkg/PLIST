@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/05/29 02:02:13 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.7 2017/04/08 00:31:36 juanfra Exp $
 bin/ftpbench
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -42,5 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional_ssl.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional_ssl.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_ioloop.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_ioloop.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_misc.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_misc.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_servers.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_servers.pyc
