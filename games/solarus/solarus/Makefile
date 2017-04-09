@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2016/12/25 14:34:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/09 11:24:08 jasper Exp $
 
-V =		1.5.1
+V =		1.5.3
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}
-REVISION =	0
 
 SHARED_LIBS +=	solarus                   0.0 # 1.5
 
@@ -34,6 +33,8 @@ LIB_DEPENDS =	audio/libmodplug \
 		devel/sdl2-image \
 		devel/sdl2-ttf \
 		lang/luajit
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 WRKDIST =	${WRKDIR}/solarus-${V}
 

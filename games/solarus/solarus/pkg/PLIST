@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/08/11 11:28:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/04/09 11:24:08 jasper Exp $
 @bin bin/solarus
 @bin bin/solarus-run
 include/solarus/
@@ -27,6 +27,7 @@ include/solarus/Map.h
 include/solarus/MapData.h
 include/solarus/QuestProperties.h
 include/solarus/QuestResources.h
+include/solarus/ResourceProvider.h
 include/solarus/ResourceType.h
 include/solarus/Savegame.h
 include/solarus/SavegameConverterV1.h
@@ -242,3 +243,19 @@ include/solarus/third_party/snes_spc/dsp.h
 include/solarus/third_party/snes_spc/spc.h
 lib/libsolarus-gui.so
 @lib lib/libsolarus.so.${LIBsolarus_VERSION}
+@man man/man6/solarus-run.6
+@man man/man6/solarus.6
+share/applications/
+share/applications/solarus.desktop
+share/icons/hicolor/128x128/apps/solarus.png
+share/icons/hicolor/16x16/apps/solarus.png
+share/icons/hicolor/24x24/apps/solarus.png
+share/icons/hicolor/256x256/apps/solarus.png
+share/icons/hicolor/32x32/apps/solarus.png
+share/icons/hicolor/48x48/apps/solarus.png
+share/icons/hicolor/${MODLUA_DEP_VERSION}2x${MODLUA_DEP_VERSION}2/apps/solarus.png
+share/icons/hicolor/64x64/apps/solarus.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
