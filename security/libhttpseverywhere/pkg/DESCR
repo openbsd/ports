@@ -1,0 +1,4 @@
+libhttpseverywhere leverages the power of HTTPSEverywhere
+(https://www.eff.org/https-everywhere) for desktop applications. HTTPSEverywhere
+is a browser plugin that comes with a set of rules that ensure that HTTP is used
+instead of HTTPS only when this is absolutely not circumventable.

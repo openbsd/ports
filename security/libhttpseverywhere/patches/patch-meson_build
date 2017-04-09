@@ -1,0 +1,12 @@
+$OpenBSD: patch-meson_build,v 1.1.1.1 2017/04/09 11:31:46 ajacoutot Exp $
+--- meson.build.orig	Sat Apr  8 14:45:34 2017
++++ meson.build	Sat Apr  8 14:46:21 2017
+@@ -58,7 +58,7 @@ httpseverywhere_lib = shared_library('httpseverywhere-
+                                      vala_gir: valagir,
+                                      vala_header: 'httpseverywhere.h',
+                                      install: true,
+-                                     version: libhttpseverywhere_version)
++                                     version: '${LIBhttpseverywhere-0.4_VERSION}')
+ 
+ httpseverywhere_test = executable('httpseverywhere_test', httpseverywhere_test_source,
+                                   dependencies: [glib, gobject, gio, gee, libxml],
