@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/03 07:39:59 feinerer Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/09 11:08:07 jasper Exp $
 
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
@@ -21,7 +21,8 @@ USE_GMAKE =		Yes
 FAKE_FLAGS =		PREFIX=${PREFIX}
 MAKE_ENV =		LIBcapstone_VERSION=${LIBcapstone_VERSION} \
 			INSTALL_DATA="${INSTALL_DATA}" \
-			INSTALL_LIBRARY="${INSTALL_DATA}"
+			INSTALL_LIBRARY="${INSTALL_DATA}" \
+			V=1
 
 do-test:
 	cd ${WRKBUILD}/tests; \
