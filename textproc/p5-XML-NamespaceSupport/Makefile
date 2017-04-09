@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/09 11:25:04 jasper Exp $
 
 COMMENT=	perl module to the SAX2 NamespaceSupport class
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	XML-NamespaceSupport-1.11
-REVISION=	0
+DISTNAME=	XML-NamespaceSupport-1.12
 CATEGORIES=	textproc
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
