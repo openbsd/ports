@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.71 2017/01/17 19:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2017/04/09 11:24:24 jasper Exp $
 
 COMMENT =		ssh based config management framework
 
-MODPY_EGG_VERSION =	2.2.1.0
+MODPY_EGG_VERSION =	2.2.2.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
