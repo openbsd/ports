@@ -1,4 +1,13 @@
-@comment $OpenBSD: PLIST-wx,v 1.2 2016/12/17 12:06:25 jasper Exp $
+@comment $OpenBSD: PLIST-wx,v 1.3 2017/04/09 19:11:09 jasper Exp $
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_debugged.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_icmd.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_idb.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_ieval.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_iload.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_iserver.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_istk.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_break.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_break_win.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_code.beam
@@ -13,6 +22,24 @@ lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_trace_win.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_view.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_win.beam
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/dbg_wx_winman.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/debugger.app
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/debugger.appup
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/debugger.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/i.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/ebin/int.beam
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/priv/
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/priv/debugger.gif
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/priv/debugger.tool
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/priv/erlang_bug.png
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_debugged.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_icmd.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_idb.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_ieval.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_ieval.hrl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_iload.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_iserver.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_istk.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_break.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_break_win.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_code.erl
@@ -28,6 +55,9 @@ lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_trace_win.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_view.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_win.erl
 lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/dbg_wx_winman.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/debugger.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/i.erl
+lib/erlang${SYSTEM_VSN}/lib/${DEBUGGER}/src/int.erl
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/ebin/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/ebin/cdv_atom_cb.beam
@@ -189,6 +219,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDialog.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDirDialog.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDirPickerCtrl.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDisplayChangedEvent.beam
+lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDropFilesEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxEraseEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxEvtHandler.beam
@@ -544,6 +575,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDialog.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDirDialog.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDirPickerCtrl.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDisplayChangedEvent.erl
+lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDropFilesEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxEraseEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxEvtHandler.erl
