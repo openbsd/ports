@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/12/04 13:40:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/09 14:21:09 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.1.1
+DISTNAME =		goaccess-1.2
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -20,7 +20,7 @@ LIB_DEPENDS =		databases/tokyocabinet \
 			net/GeoIP
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-geoip \
+CONFIGURE_ARGS =	--enable-geoip=legacy \
 			--enable-utf8 \
 			--enable-tcb=btree
 
