@@ -1,7 +1,7 @@
-$OpenBSD: patch-filters_Makefile_in,v 1.4 2015/03/15 10:07:59 jasper Exp $
---- filters/Makefile.in.orig	Fri Nov 14 11:17:00 2014
-+++ filters/Makefile.in	Thu Mar 12 20:38:48 2015
-@@ -133,7 +133,7 @@ am__uninstall_files_from_dir = { \
+$OpenBSD: patch-filters_Makefile_in,v 1.5 2017/04/09 11:53:44 jasper Exp $
+--- filters/Makefile.in.orig	Fri Mar  3 11:16:20 2017
++++ filters/Makefile.in	Sun Apr  9 13:30:35 2017
+@@ -143,7 +143,7 @@ am__uninstall_files_from_dir = { \
      || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
           $(am__cd) "$$dir" && rm -f $$files; }; \
    }
@@ -10,7 +10,7 @@ $OpenBSD: patch-filters_Makefile_in,v 1.4 2015/03/15 10:07:59 jasper Exp $
  am__installdirs = "$(DESTDIR)$(man3dir)"
  NROFF = nroff
  MANS = $(man_MANS)
-@@ -238,7 +238,7 @@ target_alias = @target_alias@
+@@ -249,7 +249,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -19,7 +19,7 @@ $OpenBSD: patch-filters_Makefile_in,v 1.4 2015/03/15 10:07:59 jasper Exp $
  all: all-am
  
  .SUFFIXES:
-@@ -476,8 +476,8 @@ uninstall-man: uninstall-man3
+@@ -488,8 +488,8 @@ uninstall-man: uninstall-man3
  
  # CLEANFILES = $(man_MANS)
  

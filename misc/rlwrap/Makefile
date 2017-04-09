@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/15 10:07:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/09 11:53:44 jasper Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
-DISTNAME=		rlwrap-0.42
+V =			0.43
+DISTNAME=		rlwrap-$V
 CATEGORIES=		misc
-
-HOMEPAGE=		http://utopia.knoware.nl/~hlub/uck/rlwrap/
-
-MASTER_SITES=		${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=		https://github.com/hanslub42/rlwrap/releases/download/v$V/
 
 WANTLIB=		c curses readline util
 
