@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/11/27 12:28:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2017/04/09 12:02:47 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -168,6 +168,7 @@ share/augeas/lenses/dist/pythonpaste.aug
 share/augeas/lenses/dist/qpid.aug
 share/augeas/lenses/dist/quote.aug
 share/augeas/lenses/dist/rabbitmq.aug
+share/augeas/lenses/dist/radicale.aug
 share/augeas/lenses/dist/redis.aug
 share/augeas/lenses/dist/reprepro_uploaders.aug
 share/augeas/lenses/dist/resolv.aug
@@ -360,6 +361,7 @@ share/augeas/lenses/dist/tests/test_pythonpaste.aug
 share/augeas/lenses/dist/tests/test_qpid.aug
 share/augeas/lenses/dist/tests/test_quote.aug
 share/augeas/lenses/dist/tests/test_rabbitmq.aug
+share/augeas/lenses/dist/tests/test_radicale.aug
 share/augeas/lenses/dist/tests/test_redis.aug
 share/augeas/lenses/dist/tests/test_reprepro_uploaders.aug
 share/augeas/lenses/dist/tests/test_resolv.aug

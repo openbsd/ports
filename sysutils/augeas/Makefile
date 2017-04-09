@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/27 12:28:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2017/04/09 12:02:47 jasper Exp $
 
 COMMENT=		configuration editing tool and API
 
-DISTNAME=		augeas-1.7.0
+DISTNAME=		augeas-1.8.0
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  augeas                    0.1 # 21.0
-SHARED_LIBS +=  fa                        0.0 # 5.3
+SHARED_LIBS +=  augeas                    0.2 # 22.0
+SHARED_LIBS +=  fa                        0.0 # 5.4
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
