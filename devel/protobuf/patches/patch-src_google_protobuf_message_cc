@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_google_protobuf_message_cc,v 1.1 2017/04/09 18:52:51 sthen Exp $
+--- src/google/protobuf/message.cc.orig	Sun Apr  9 19:45:42 2017
++++ src/google/protobuf/message.cc	Sun Apr  9 19:45:50 2017
+@@ -32,7 +32,9 @@
+ //  Based on original Protocol Buffers design by
+ //  Sanjay Ghemawat, Jeff Dean, and others.
+ 
++#include <istream>
+ #include <stack>
++
+ #include <google/protobuf/stubs/hash.h>
+ 
+ #include <google/protobuf/message.h>
