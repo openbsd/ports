@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2017/03/13 15:02:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.453 2017/04/09 11:32:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -51,6 +51,7 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
+     SUBDIR += glib-openssl
      SUBDIR += gnupg
      SUBDIR += gnupg,card,ldap
      SUBDIR += gnupg2
@@ -99,6 +100,7 @@
      SUBDIR += libgpg-error
      SUBDIR += libgringotts
      SUBDIR += libgsasl
+     SUBDIR += libhttpseverywhere
      SUBDIR += libident
      SUBDIR += libksba
      SUBDIR += libmcrypt
