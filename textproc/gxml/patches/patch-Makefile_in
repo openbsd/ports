@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2017/04/09 11:29:08 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=781049
+
+--- Makefile.in.orig	Sat Apr  8 12:57:15 2017
++++ Makefile.in	Sat Apr  8 12:57:50 2017
+@@ -439,7 +439,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
+ ### Specify files to include in dist
+ 
+ # in share/doc/
+-gxmldocdir = ${prefix}/doc/gxml
++gxmldocdir = ${prefix}/share/doc/gxml
+ gxmldoc_DATA = \
+ 	README \
+ 	COPYING \

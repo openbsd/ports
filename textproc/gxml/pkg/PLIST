@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/09 11:29:08 ajacoutot Exp $
+include/gxml-0.14/
+include/gxml-0.14/gxml/
+include/gxml-0.14/gxml/gxml.h
+include/gxml-0.14/gxml/xlibxml.h
+lib/girepository-1.0/GXml-0.14.typelib
+lib/libgxml-0.14.a
+lib/libgxml-0.14.la
+@lib lib/libgxml-0.14.so.${LIBgxml-0.14_VERSION}
+lib/pkgconfig/gxml-0.14.pc
+share/doc/gxml/
+share/doc/gxml/AUTHORS
+share/doc/gxml/COPYING
+share/doc/gxml/ChangeLog
+share/doc/gxml/INSTALL
+share/doc/gxml/NEWS
+share/doc/gxml/README
+share/gir-1.0/GXml-0.14.gir
+share/locale/cs/LC_MESSAGES/GXml.mo
+share/locale/de/LC_MESSAGES/GXml.mo
+share/locale/el/LC_MESSAGES/GXml.mo
+share/locale/es/LC_MESSAGES/GXml.mo
+share/locale/hu/LC_MESSAGES/GXml.mo
+share/locale/id/LC_MESSAGES/GXml.mo
+share/locale/pl/LC_MESSAGES/GXml.mo
+share/locale/pt/LC_MESSAGES/GXml.mo
+share/locale/pt_BR/LC_MESSAGES/GXml.mo
+share/locale/sl/LC_MESSAGES/GXml.mo
+share/locale/sr/LC_MESSAGES/GXml.mo
+share/locale/sr@latin/LC_MESSAGES/GXml.mo
+share/locale/sv/LC_MESSAGES/GXml.mo
+share/locale/zh_CN/LC_MESSAGES/GXml.mo
+share/vala/vapi/gxml-0.14.deps
+share/vala/vapi/gxml-0.14.vapi

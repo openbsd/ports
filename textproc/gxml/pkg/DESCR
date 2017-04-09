@@ -1,0 +1,2 @@
+GXml is a GObject XML API for GNOME, with DOM4 implementation and Serialization
+framework wrapped around libxml2.
