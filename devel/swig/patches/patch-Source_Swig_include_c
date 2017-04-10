@@ -1,0 +1,11 @@
+$OpenBSD: patch-Source_Swig_include_c,v 1.1 2017/04/10 11:30:51 kettenis Exp $
+--- Source/Swig/include.c.orig	Sun Sep 15 16:11:43 2013
++++ Source/Swig/include.c	Sun Apr  9 23:01:00 2017
+@@ -291,6 +291,7 @@ int Swig_insert_file(const_String_or_char_ptr filename
+   while ((nbytes = Read(f, buffer, 4096)) > 0) {
+     Write(outfile, buffer, nbytes);
+   }
++  fclose(f);
+   return 0;
+ }
+ 
