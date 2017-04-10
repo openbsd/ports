@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/10 11:45:27 sthen Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -18,7 +18,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 m openal png
-WANTLIB += pthread stdc++ z
+WANTLIB += pthread ${LIBCXX} z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 

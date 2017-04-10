@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/16 14:36:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:23 sthen Exp $
 
 PORTROACH=		limit:^5
 
@@ -18,7 +18,7 @@ HOMEPAGE=		http://musicbrainz.org/doc/libmusicbrainz
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m neon stdc++
+WANTLIB += m neon ${LIBCXX}
 
 MASTER_SITES=		https://github.com/downloads/metabrainz/libmusicbrainz/
 

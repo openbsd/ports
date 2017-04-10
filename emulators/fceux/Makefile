@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/01 18:31:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -18,7 +18,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
 
 WANTLIB += 		GL SDL X11 c gd gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
 WANTLIB += 		gobject-2.0 gtk-x11-2.0 lua5.1 m pthread
-WANTLIB += 		stdc++ z ${MODLUA_WANTLIB}
+WANTLIB += 		${LIBCXX} z ${MODLUA_WANTLIB}
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl \

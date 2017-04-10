@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/16 17:27:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		state machine compiler
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.colm.net/open-source/ragel/
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES =		http://www.colm.net/files/ragel/
 

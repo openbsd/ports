@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=	NEC2++ antenna simulator
 
@@ -16,7 +16,7 @@ CONFIGURE_STYLE=gnu
 
 SHARED_LIBS=necpp 0.0
 
-WANTLIB=c m stdc++
+WANTLIB=c m ${LIBCXX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/necpp

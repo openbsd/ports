@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/01/11 13:44:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:25 sthen Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 BROKEN-arm=	wxwidgets va_list c++ mangling requires gcc < 4.4
@@ -38,7 +38,7 @@ WANTLIB += expat ffi fontconfig freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hunspell-1.3 iodbc
 WANTLIB += jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio stdc++
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio ${LIBCXX}
 WANTLIB += tiff usbhid wx_base wx_base_net wx_base_odbc wx_base_xml
 WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2016/08/30 10:20:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -19,7 +19,7 @@ WANTLIB += cdio cdio_cdda cue curl dbus-1 dbus-glib-1 faad fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-3 m mms modplug mp3lame mpg123 neon
 WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
-WANTLIB += samplerate sndfile sndio soxr stdc++ vorbis vorbisenc
+WANTLIB += samplerate sndfile sndio soxr ${LIBCXX} vorbis vorbisenc
 WANTLIB += vorbisfile wavpack xml2 z
 
 MASTER_SITES =		http://distfiles.audacious-media-player.org/

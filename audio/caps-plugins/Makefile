@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =		CAPS LADSPA plugins
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://quitte.de/dsp/caps.html
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m stdc++
+WANTLIB =		m ${LIBCXX}
 
 MASTER_SITES =		http://quitte.de/dsp/
 

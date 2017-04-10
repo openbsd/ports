@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/03/13 10:57:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2017/04/10 11:45:24 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 i386 mips64 mips64el powerpc sparc64
@@ -30,7 +30,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m pthread ssl stdc++ z
+WANTLIB=	c crypto m pthread ssl ${LIBCXX} z
 WANTLIB-main=	curses readline ${WANTLIB}
 WANTLIB-server=	mysqlclient ${WANTLIB}
 WANTLIB-tests=	mysqlclient ${WANTLIB}

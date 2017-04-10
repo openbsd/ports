@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2017/02/21 09:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2017/04/10 11:45:27 sthen Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -30,7 +30,7 @@ WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += idn2 jpeg ltdl lzma m mpfr nettle nghttp2 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs raptor2 rasqal rdf rsvg-2 spectre ssl
-WANTLIB += stdc++ tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
+WANTLIB += ${LIBCXX} tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z
 
 MASTER_SITES=   http://www.abisource.com/downloads/abiword/${VERSION}/source/

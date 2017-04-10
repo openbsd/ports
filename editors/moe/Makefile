@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/02 22:44:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =	powerful and user-friendly console text editor
 DISTNAME =	moe-1.8
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.gnu.org/software/moe/moe.html
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses stdc++
+WANTLIB += c m ncurses ${LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=moe/}
 

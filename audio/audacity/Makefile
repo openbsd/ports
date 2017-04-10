@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2016/03/11 20:28:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT=	free audio editor
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://audacity.sourceforge.net/
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += c expat glib-2.0 gobject-2.0 gtk-x11-2.0 m ogg pthread
-WANTLIB += sndfile sndio stdc++ wx_base_xml wx_base_odbc wx_gtk2_aui
+WANTLIB += sndfile sndio ${LIBCXX} wx_base_xml wx_base_odbc wx_gtk2_aui
 WANTLIB += wx_gtk2_html wx_gtk2_adv wx_gtk2_xrc wx_base_net wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate>=1
 WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -51,7 +51,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c m sndio stdc++ termcap
+WANTLIB=		c m sndio ${LIBCXX} termcap
 
 post-patch:
 	@cp ${FILESDIR}/OpenBSD.mak ${WRKSRC}/speech_tools/config/systems/OpenBSD.mak

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/04 12:44:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
@@ -13,7 +13,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c stdc++ m z pthread SDL>=1.2 png
+WANTLIB =		c ${LIBCXX} m z pthread SDL>=1.2 png
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=stella/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/02/06 20:20:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -28,7 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 cWANTLIB=		ltdl m pthread usb usb-1.0
-WANTLIB-main=		${cWANTLIB} c iconv lzma stdc++ xml2 z
+WANTLIB-main=		${cWANTLIB} c iconv lzma ${LIBCXX} xml2 z
 WANTLIB-main +=		perl # uses perl ABI
 WANTLIB-python=		${cWANTLIB} hamlib ${MODPY_WANTLIB}
 WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}

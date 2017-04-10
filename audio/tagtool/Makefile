@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/06/05 12:20:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -18,7 +18,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread-stubs stdc++ xcb xml2 z gthread-2.0 pthread
+WANTLIB += png pthread-stubs ${LIBCXX} xcb xml2 z gthread-2.0 pthread
 WANTLIB += xcb-render id3>=3.8 vorbis>=5
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0>=0.3
 WANTLIB += vorbisfile>=4 GL xcb-shm

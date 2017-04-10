@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/05/31 22:42:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT=	Night Stalker clone for X
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://sarrazip.com/dev/afternoonstalker.html
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread stdc++
+WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${LIBCXX}
 
 MASTER_SITES=	http://sarrazip.com/dev/
 

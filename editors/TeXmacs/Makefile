@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/11 20:54:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}/Download/ftp/tmftp/source/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB+=	freetype gmp guile ltdl m pthread stdc++ util z
+WANTLIB+=	freetype gmp guile ltdl m pthread ${LIBCXX} util z
 
 MODULES=	x11/qt4
 BUILD_DEPENDS=	print/ghostscript/gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://frodo.cebix.net/
 # FreeWare
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		SDL c m pthread sndio stdc++
+WANTLIB=		SDL c m pthread sndio ${LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=	linux audio developer simple plugin API
 HOMEPAGE=	http://www.ladspa.org/
@@ -23,7 +23,7 @@ ALL_TARGET=	targets
 MAKE_FLAGS=	LIBRARIES=-lm OPTS="${CFLAGS}"
 
 PROGRAMS=	analyseplugin applyplugin listplugins
-WANTLIB=	c m stdc++
+WANTLIB=	c m ${LIBCXX}
 
 do-install:
 .for i in ${PROGRAMS}

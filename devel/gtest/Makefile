@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -21,7 +21,7 @@ MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=googletest/}
 
 SEPARATE_BUILD =	Yes
 
-WANTLIB =		m stdc++
+WANTLIB =		m ${LIBCXX}
 
 CONFIGURE_STYLE =	gnu
 

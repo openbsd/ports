@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/02/28 15:35:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -17,7 +17,7 @@ WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c crypto
 WANTLIB +=		fontconfig freetype lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB +=		lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=		lib/qt4/QtXml m opus portaudio protobuf
-WANTLIB +=		pthread sndfile speex speexdsp ssl stdc++
+WANTLIB +=		pthread sndfile speex speexdsp ssl ${LIBCXX}
 
 MODULES =		devel/qmake x11/qt4
 SEPARATE_BUILD =	No

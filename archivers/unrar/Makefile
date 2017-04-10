@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2016/11/03 16:09:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -21,7 +21,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # nonstandard
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m pthread stdc++
+WANTLIB=	c crypto m pthread ${LIBCXX}
 
 MASTER_SITES=	${HOMEPAGE}rar/
 

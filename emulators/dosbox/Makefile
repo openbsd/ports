@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/03/28 23:16:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/10 11:45:27 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -16,7 +16,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += GL SDL SDL_net SDL_sound stdc++ png X11 c m pthread sndio z
+WANTLIB += GL SDL SDL_net SDL_sound ${LIBCXX} png X11 c m pthread sndio z
 
 LIB_DEPENDS=	devel/sdl-net \
 		devel/sdl-sound \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/03/07 15:54:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2017/04/10 11:45:25 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -55,7 +55,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c bz2 iconv m pthread stdc++ util z
+WANTLIB=	c bz2 iconv m pthread ${LIBCXX} util z
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

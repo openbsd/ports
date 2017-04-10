@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/06/08 21:20:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mico/}
 # LGPL/GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ncurses readline stdc++
+WANTLIB=		c m ncurses readline ${LIBCXX}
 WANTLIB+=		crypto ssl ICE SM X11 Xt pthread
 
 USE_GMAKE=		Yes

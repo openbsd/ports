@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/11 19:59:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://pqxx.org/development/libpqxx/
 # 3-clause BSDL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto m pq ssl stdc++
+WANTLIB += crypto m pq ssl ${LIBCXX}
 
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 

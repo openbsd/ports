@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/30 15:57:09 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -23,7 +23,7 @@ RUN_DEPENDS = devel/py-sip \
 LIB_DEPENDS = editors/qscintilla
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB += freetype m qscintilla2 stdc++ pthread
+WANTLIB += freetype m qscintilla2 ${LIBCXX} pthread
 
 WRKSRC =	${WRKDIST}/Python
 

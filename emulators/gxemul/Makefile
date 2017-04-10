@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gxemul/}
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 CONFIGURE_STYLE=	simple
 

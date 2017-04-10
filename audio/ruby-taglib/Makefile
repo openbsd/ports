@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/04 21:26:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT =	reads and writes metadata/tags for many audio formats
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://robinst.github.io/taglib-ruby/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 		stdc++ tag
+WANTLIB = 		${LIBCXX} tag
 
 MODULES =		lang/ruby
 

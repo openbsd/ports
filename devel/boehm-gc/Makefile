@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/11/12 10:33:04 jca Exp $
+# $OpenBSD: Makefile,v 1.64 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -33,7 +33,7 @@ NOT_FOR_ARCHS=	m88k
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main += m pthread stdc++
+WANTLIB-main += m pthread ${LIBCXX}
 
 MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \

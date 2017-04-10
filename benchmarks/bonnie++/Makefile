@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/18 20:41:29 bluhm Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:24 sthen Exp $
 
 # -Winit-self
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.coker.com.au/bonnie++/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread stdc++
+WANTLIB=	c m pthread ${LIBCXX}
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf dest

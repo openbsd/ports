@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/12 20:58:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -36,7 +36,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 
 WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += bz2 c clucene-core clucene-shared dbus-1 exiv2 fam iconv m pthread
-WANTLIB += stdc++ xml2 z avcodec avformat avutil swscale
+WANTLIB += ${LIBCXX} xml2 z avcodec avformat avutil swscale
 
 MODULES =		devel/cmake \
 			x11/qt4

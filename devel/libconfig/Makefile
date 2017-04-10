@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/04 05:26:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.hyperrealm.com/libconfig/libconfig.html
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 MASTER_SITES=		http://www.hyperrealm.com/libconfig/
 

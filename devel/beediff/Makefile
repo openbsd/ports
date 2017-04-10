@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	graphical file comparator
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.beesoft.pl/download/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext c m pthread stdc++
+WANTLIB += X11 Xext c m pthread ${LIBCXX}
 WANTLIB += lib/qt4/QtGui ICE SM Xi Xinerama Xrender fontconfig freetype
 
 WRKDIST=	${WRKDIR}/beediff

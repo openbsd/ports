@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
@@ -9,7 +9,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # custom free license; see top of cdplayer.cc
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m stdc++
+WANTLIB =	c m ${LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_FREEBSD_LOCAL:=jmz/}
 

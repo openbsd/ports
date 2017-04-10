@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/12 10:59:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		c protocol buffers
 
@@ -19,7 +19,7 @@ MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m protobuf protoc pthread stdc++ z
+WANTLIB =		c m protobuf protoc pthread ${LIBCXX} z
 
 BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \

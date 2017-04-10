@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/09/24 04:53:17 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT=	real-time strategy game
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.boswars.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	GL SDL X11 c m ogg png pthread stdc++ theora vorbis z
+WANTLIB +=	GL SDL X11 c m ogg png pthread ${LIBCXX} theora vorbis z
 WANTLIB +=	${MODLUA_WANTLIB}
 
 MODULES=	devel/scons \

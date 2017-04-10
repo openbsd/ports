@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/02/23 13:48:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		JSON parsing C++ API
 
@@ -19,7 +19,7 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 # Public Domain / MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m stdc++
+WANTLIB =		m ${LIBCXX}
 
 MODULES =		devel/scons
 MODSCONS_FLAGS =	platform=linux-gcc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	powerful and intuitive editor for programmers
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://fte.sourceforge.net/
 # GPLv2 or later / Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=	X11 Xau Xdmcp Xpm c m stdc++
+WANTLIB+=	X11 Xau Xdmcp Xpm c m ${LIBCXX}
 
 MASTER_SITES=	ftp://ftp.mrsserver.net/pub/distfiles/
 

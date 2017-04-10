@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://pms.sourceforge.net/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 m ncursesw pthread stdc++
+WANTLIB += c glib-2.0 m ncursesw pthread ${LIBCXX}
 
 LIB_DEPENDS=		devel/glib2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/05 08:15:02 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:23 sthen Exp $
 
 BROKEN-powerpc =	SIGILL when building
 COMMENT =	program for extreme audio stretching
@@ -14,7 +14,7 @@ HOMEPAGE =	http://hypermammut.sourceforge.net/paulstretch/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama audiofile c fltk fontconfig
-WANTLIB += m mad mxml ogg portaudio pthread stdc++ vorbis vorbisenc
+WANTLIB += m mad mxml ogg portaudio pthread ${LIBCXX} vorbis vorbisenc
 WANTLIB += vorbisfile z Xcursor Xfixes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hypermammut/}

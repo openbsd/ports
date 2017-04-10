@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=		indenter and formatter of C/C++/Java source files
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://astyle.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m stdc++
+WANTLIB=		c m ${LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=astyle/}
 EXTRACT_SUFX=		.zip

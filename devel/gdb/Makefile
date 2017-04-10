@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/01/28 21:38:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.47 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
-WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} stdc++ util
+WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} ${LIBCXX} util
 
 #SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu

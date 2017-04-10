@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/11 07:42:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -24,7 +24,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB =	c m pthread stdc++ z
+cWANTLIB =	c m pthread ${LIBCXX} z
 WANTLIB-main =	${cWANTLIB} SDL
 WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio usbhid Xi
 

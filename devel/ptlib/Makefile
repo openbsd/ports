@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/02/19 19:26:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	portable tools library
 
@@ -20,7 +20,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sasl2
-WANTLIB += sndio ssl stdc++ v4l2
+WANTLIB += sndio ssl ${LIBCXX} v4l2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 

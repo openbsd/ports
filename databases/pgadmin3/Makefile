@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/07/15 14:43:40 pea Exp $
+# $OpenBSD: Makefile,v 1.35 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -13,7 +13,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread stdc++ crypto z
+WANTLIB=	c m pthread ${LIBCXX} crypto z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/ \
 		ftp://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/

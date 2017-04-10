@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/12 22:27:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	interactive geometry program
 
@@ -18,7 +18,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 gtk-x11-2.0 ltdl guile
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ xcb xml2 z glade-2.0
+WANTLIB += png pthread pthread-stubs ${LIBCXX} xcb xml2 z glade-2.0
 WANTLIB += ffi gthread-2.0 xcb-render xcb-shm
 WANTLIB += harfbuzz graphite2 lzma
 

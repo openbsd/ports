@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/02/27 21:54:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2017/04/10 11:45:28 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP =	unclear license
 PERMIT_DISTFILES_FTP =	unclear license
 
 WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype
-WANTLIB += m pthread stdc++ util z
+WANTLIB += m pthread ${LIBCXX} util z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
 			http://whiper.com/mame/${V}/

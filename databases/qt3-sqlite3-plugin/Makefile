@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/12/26 09:24:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
@@ -18,7 +18,7 @@ MODULES=	x11/qt3 devel/qmake
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m pthread sqlite3 stdc++
+WANTLIB += m pthread sqlite3 ${LIBCXX}
 
 LIB_DEPENDS=		databases/sqlite3
 NO_TEST=		Yes

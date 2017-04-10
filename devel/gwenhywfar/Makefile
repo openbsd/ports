@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	helper library for networking and security applications
 
@@ -25,7 +25,7 @@ WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz hogweed idn2 lib/qt4/QtGui m
 WANTLIB += nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs ssl stdc++ tasn1 xcb
+WANTLIB += pixman-1 png pthread pthread-stubs ssl ${LIBCXX} tasn1 xcb
 WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/

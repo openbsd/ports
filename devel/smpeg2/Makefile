@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:27 sthen Exp $
 
 BROKEN-hppa=	video/mmxflags_asm.S:54: Error: unknown pseudo-op: `.note.gnu'
 COMMENT=	MPEG video player library with sound support
@@ -14,7 +14,7 @@ HOMEPAGE=	http://icculus.org/smpeg/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL2 c m pthread sndio stdc++ usbhid
+WANTLIB=	SDL2 c m pthread sndio ${LIBCXX} usbhid
 
 LIB_DEPENDS=	devel/sdl2
 

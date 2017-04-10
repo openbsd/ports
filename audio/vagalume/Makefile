@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=		last.fm client for GNOME
 
@@ -20,7 +20,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstinterfaces-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz lzma m nghttp2 notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread pthread-stubs ssl stdc++ xcb xcb-render xcb-shm xml2
+WANTLIB += pthread pthread-stubs ssl ${LIBCXX} xcb xcb-render xcb-shm xml2
 WANTLIB += z
 
 MASTER_SITES=		http://vagalume.igalia.com/files/source/

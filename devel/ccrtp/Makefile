@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_ccRTP
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto ssl ccgnu2>=1 m pthread stdc++
+WANTLIB += crypto ssl ccgnu2>=1 m pthread ${LIBCXX}
 
 LIB_DEPENDS=	devel/commoncpp
 

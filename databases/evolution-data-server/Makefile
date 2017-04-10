@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2017/03/29 13:27:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2017/04/10 11:45:24 sthen Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -41,7 +41,7 @@ WANTLIB += jpeg json-glib-1.0 lber-2.4 ldap-2.4 lzma m nghttp2
 WANTLIB += notify nspr4 nss3 nssutil3 oauth orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs sasl2 secret-1 smime3 softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 stdc++ webkit2gtk-4.0 webp
+WANTLIB += soup-2.4 sqlite3 ssl ssl3 ${LIBCXX} webkit2gtk-4.0 webp
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/03/15 22:23:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
@@ -17,7 +17,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL2 c m stdc++ z zzip
+WANTLIB +=	SDL2 c m ${LIBCXX} z zzip
 
 MODULES =	devel/cmake
 

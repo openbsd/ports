@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	graphical interface to sqlite databases
 V = 3.7.0
@@ -17,7 +17,7 @@ MODULES=	x11/qt4 devel/cmake
 # MPLv2/GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	QtGui QtNetwork c m pthread sqlite3 stdc++
+WANTLIB +=	QtGui QtNetwork c m pthread sqlite3 ${LIBCXX}
 LIB_DEPENDS =	databases/sqlite3
 RUN_DEPENDS =	x11/gtk+3,-guic devel/desktop-file-utils
 

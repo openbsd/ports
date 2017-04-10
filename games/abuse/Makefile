@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/09/13 15:29:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += FLAC GL SDL SDL_mixer X11 Xdamage Xext Xfixes
 WANTLIB += Xxf86vm c drm iconv m mikmod ogg pthread smpeg
-WANTLIB += sndio stdc++ usbhid vorbis vorbisfile xcb
+WANTLIB += sndio ${LIBCXX} usbhid vorbis vorbisfile xcb
 WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx
 WANTLIB += expat
 

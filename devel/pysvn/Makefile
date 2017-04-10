@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/27 18:03:45 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		python interface to subversion
 
@@ -19,7 +19,7 @@ MASTER_SITES =	http://pysvn.barrys-emacs.org/source_kits/
 
 MODULES = 	lang/python
 LIB_DEPENDS = 	devel/subversion,-main
-WANTLIB = 	expat m stdc++ svn_client-1 svn_diff-1 svn_repos-1
+WANTLIB = 	expat m ${LIBCXX} svn_client-1 svn_diff-1 svn_repos-1
 
 USE_GMAKE = 	Yes
 _PYSVN_PYVERSION = ${MODPY_VERSION:S/./_/}

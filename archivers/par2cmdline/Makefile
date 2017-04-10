@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/06/13 17:32:27 semarie Exp $
+# $OpenBSD: Makefile,v 1.13 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =	command line implementation of the PAR v2.0 specification
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://github.com/BlackIkeEagle/par2cmdline/
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB =	c m stdc++
+WANTLIB =	c m ${LIBCXX}
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 

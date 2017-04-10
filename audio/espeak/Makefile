@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/20 18:10:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=		compact speech synthesizer
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://espeak.sourceforge.net/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m portaudio pthread stdc++
+WANTLIB += c m portaudio pthread ${LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/02/10 10:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2017/04/10 11:45:24 sthen Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -21,12 +21,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-cWANTLIB += m pthread stdc++
+cWANTLIB += m pthread ${LIBCXX}
 
 WANTLIB-main += ${cWANTLIB} iconv intl 
 WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0
 WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 jpeg pcre png
-WANTLIB-main += pthread-stubs tiff vpx xml2 z m pthread stdc++ lzma
+WANTLIB-main += pthread-stubs tiff vpx xml2 z m pthread ${LIBCXX} lzma
 
 WANTLIB-python += ${cWANTLIB} iconv
 WANTLIB-python += pst util boost_python

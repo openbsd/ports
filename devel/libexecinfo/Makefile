@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/07 20:59:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
@@ -38,6 +38,9 @@ post-install:
 	mv ${PREFIX}/include/backtrace.h ${PREFIX}/include/execinfo.h
 	${INSTALL_PROGRAM} ${WRKDIST}/examples/backtrace_test \
 		${PREFIX}/bin/backtrace_test
+
+do-test:
+	${SETENV} LD_LIBRARY_PATH=${WRKSRC}/libbacktrace ${WRKSRC}/examples/backtrace_test
 
 do-test:
 	${SETENV} LD_LIBRARY_PATH=${WRKSRC}/libbacktrace \

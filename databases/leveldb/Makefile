@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/12/30 03:41:43 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:24 sthen Exp $
 
 #'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
 ONLY_FOR_ARCHS=	i386 amd64
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/google/leveldb
 # BSD3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m pthread ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=leveldb/}
 

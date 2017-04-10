@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2017/04/10 11:45:26 sthen Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://tangentsoft.net/mysql++/
 # LPGLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m mysqlclient stdc++
+WANTLIB += m mysqlclient ${LIBCXX}
 
 MASTER_SITES =		${HOMEPAGE}releases/
 

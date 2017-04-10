@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/11 20:28:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -18,7 +18,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 guile harfbuzz ltdl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs stdc++
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs ${LIBCXX}
 WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/

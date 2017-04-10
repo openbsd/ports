@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/25 07:37:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =		YAML parser and emitter in C++
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://github.com/jbeder/yaml-cpp
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 BUILD_DEPENDS =		devel/boost
 RUN_DEPENDS =		devel/boost

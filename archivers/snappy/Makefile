@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/19 16:11:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =	fast compression/decompression library
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://google.github.io/snappy/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	m stdc++
+WANTLIB +=	m ${LIBCXX}
 
 MASTER_SITES =	https://github.com/google/snappy/releases/download/${V}/
 

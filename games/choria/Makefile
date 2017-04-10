@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:28 sthen Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/jazztickets/choria
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += Irrlicht c m pthread sqlite3 stdc++
+WANTLIB += Irrlicht c m pthread sqlite3 ${LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=choria/}
 

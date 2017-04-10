@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/06/29 16:14:38 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -37,7 +37,7 @@ PATCHFILES=	patch.${VERSION}.1:2 \
 CONFIGURE_STYLE=gnu
 
 DEST_SUBDIR=	${REV}
-WANTLIB=	c m stdc++
+WANTLIB=	c m ${LIBCXX}
 
 PSEUDO_FLAVORS=	no_java bootstrap
 FLAVOR?= 

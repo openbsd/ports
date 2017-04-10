@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/02/28 21:29:05 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:27 sthen Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
@@ -23,7 +23,7 @@ FLAVOR ?=
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB =		GL SDL archive c m pthread stdc++
+WANTLIB =		GL SDL archive c m pthread ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dgen/}
 

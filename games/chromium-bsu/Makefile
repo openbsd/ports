@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/09 14:50:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.15.1
@@ -10,7 +10,7 @@ REVISION =		2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL SDL_image alut c fontconfig freetype ftgl glpng
-WANTLIB += jpeg m openal png pthread stdc++ tiff webp z
+WANTLIB += jpeg m openal png pthread ${LIBCXX} tiff webp z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chromium-bsu/}
 

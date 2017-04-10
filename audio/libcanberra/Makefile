@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/03/18 21:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -41,7 +41,7 @@ WANTLIB-gtk += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo canberra
 WANTLIB-gtk += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z stdc++
+WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z ${LIBCXX}
 WANTLIB-gtk += harfbuzz
 WANTLIB-gtk += graphite2
 
@@ -52,7 +52,7 @@ WANTLIB-gtk3 += cairo-gobject canberra drm expat ffi fontconfig freetype
 WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-gtk3 += gthread-2.0 gtk-3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z stdc++
+WANTLIB-gtk3 += xcb-shm z ${LIBCXX}
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz
 WANTLIB-gtk3 += epoxy graphite2
 

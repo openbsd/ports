@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/23 12:49:59 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =		data recovery tool and decompressor for lzip files
 
@@ -10,6 +10,6 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lziprecover/}
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 .include <bsd.port.mk>

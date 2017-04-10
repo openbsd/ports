@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/19 22:48:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT= 	logic circuit simulator for KDE
 
@@ -15,7 +15,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm expat fontconfig
-WANTLIB += freetype idn jpeg lcms m mng png pthread stdc++ util xcb
+WANTLIB += freetype idn jpeg lcms m mng png pthread ${LIBCXX} util xcb
 WANTLIB += xcb-glx z X11-xcb Xau Xdmcp fam glapi pthread-stubs xcb-dri2
 
 LIB_DEPENDS=	x11/kde/libs3

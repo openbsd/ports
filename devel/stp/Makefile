@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://sites.google.com/site/stpfastprover/STP-Fast-Prover
 # MIT license
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m stdc++
+WANTLIB=	c m ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stp-fast-prover/}
 EXTRACT_SUFX=	.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/26 20:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:24 sthen Exp $
 
 PORTROACH=		limit:.*[^a]$$
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.mbayer.de/html2text/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES=		http://www.mbayer.de/html2text/downloads/ \
 			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/19 22:52:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.1
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM = Yes
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db
 WANTLIB += faad gsm iconv id3tag intl ltdl m mad magic mp3lame mpcdec
 WANTLIB += ncursesw nghttp2 ogg opus pthread samplerate sndfile sndio
-WANTLIB += speex ssl stdc++ swresample tag tag_c vorbis vorbisenc
+WANTLIB += speex ssl ${LIBCXX} swresample tag tag_c vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xvidcore z
 
 # libvpx -> libavcodec -> mocp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT =		audio fingerprint extraction library
 
@@ -12,7 +12,7 @@ SHARED_LIBS =		chromaprint               1.0 # 0.1
 # LGPL2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += avcodec avformat avutil c m pthread stdc++ swresample
+WANTLIB += avcodec avformat avutil c m pthread ${LIBCXX} swresample
 
 MODULES =		devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2017/04/10 11:45:26 sthen Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -26,7 +26,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iodbc jpeg
 WANTLIB += m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 serf-1 sndio
-WANTLIB += sqlite3 stdc++ svn_client-1 svn_delta-1 svn_diff-1
+WANTLIB += sqlite3 ${LIBCXX} svn_client-1 svn_delta-1 svn_diff-1
 WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1
 WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_base

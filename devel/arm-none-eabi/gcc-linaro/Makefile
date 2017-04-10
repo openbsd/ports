@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/28 07:02:15 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
@@ -22,7 +22,7 @@ ERRORS+=	"either aarch64 or arm FLAVOR should be set"
 GCC_VERSION=	4.9.4
 SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
-WANTLIB=	c m stdc++ gmp mpfr mpc
+WANTLIB=	c m ${LIBCXX} gmp mpfr mpc
 DIST_SUBDIR=	gcc
 
 MAKE_GXX=	No

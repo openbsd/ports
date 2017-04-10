@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -15,7 +15,7 @@ MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/

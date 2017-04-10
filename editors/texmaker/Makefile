@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/26 20:37:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.33 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.5
@@ -16,7 +16,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ICE QtGui QtNetwork QtScript QtWebKit QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.3
-WANTLIB += m poppler-qt4 pthread stdc++ z
+WANTLIB += m poppler-qt4 pthread ${LIBCXX} z
 
 MODULES=		devel/qmake x11/qt4
 MODQMAKE_ARGS=		DESKTOPDIR=${LOCALBASE}/share/applications \

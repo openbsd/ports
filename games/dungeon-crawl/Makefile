@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/02/17 19:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -22,7 +22,7 @@ MAKE_FLAGS=EXTRA_FLAGS='${CXXFLAGS} -DSAVE_DIR_PATH=\"${TRUEPREFIX}/lib/dungeon-
 
 ALL_TARGET=debug
 
-WANTLIB=	c m stdc++ ncurses
+WANTLIB=	c m ${LIBCXX} ncurses
 
 
 # Almost nethack... http://www.dungeoncrawl.org/?d.l

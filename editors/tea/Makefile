@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/21 18:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=	powerful and simple GTK editor
 
@@ -18,7 +18,7 @@ WANTLIB += Xinerama Xrandr Xrender aspell>=16 atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += gtksourceview-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xml2 z zzip>=13
+WANTLIB += pixman-1 png pthread pthread-stubs ${LIBCXX} xcb xml2 z zzip>=13
 
 LIB_DEPENDS=	x11/gtk+2 \
 		gtksourceview->=2,<3:x11/gtksourceview \

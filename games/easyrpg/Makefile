@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/12 22:44:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:28 sthen Exp $
 
 V =		0.1.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
@@ -14,7 +14,7 @@ HOMEPAGE =	https://easy-rpg.org/
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += FLAC SDL SDL_mixer c expat freetype iconv jpeg m ogg openal
-WANTLIB += pixman-1 png pthread sndfile stdc++ vorbis vorbisenc z
+WANTLIB += pixman-1 png pthread sndfile ${LIBCXX} vorbis vorbisenc z
 
 MASTER_SITES0 =	https://github.com/EasyRPG/Player/archive/
 MASTER_SITES1 =	http://mirrors.nycbug.org/pub/distfiles/

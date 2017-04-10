@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/01/21 18:25:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -42,7 +42,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
 
 WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
-WANTLIB += Xinerama Xrender c fontconfig freetype m pthread stdc++
+WANTLIB += Xinerama Xrender c fontconfig freetype m pthread ${LIBCXX}
 WANTLIB += z lib/qt4/QtSerialPort
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out

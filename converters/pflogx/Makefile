@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT=		convert pf(4) logs to XML
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://akldev.free.fr/pflogx/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB= 		c expat m pcap stdc++
+WANTLIB= 		c expat m pcap ${LIBCXX}
 
 MASTER_SITES=		${HOMEPAGE}/releases/ \
 			https://distfiles.nl/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2016/09/08 10:17:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -23,7 +23,7 @@ WANTLIB += gdk_pixbuf-2.0 gdkglext-x11-1.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkglext-x11-1.0 harfbuzz iconv intl jpeg m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ theora xcb xcb-dri2
+WANTLIB += png pthread pthread-stubs ${LIBCXX} theora xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm z
 WANTLIB += ${MODLUA_WANTLIB}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/11 20:28:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_Common_C++
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	crypto ssl z m stdc++ pthread
+WANTLIB=	crypto ssl z m ${LIBCXX} pthread
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61

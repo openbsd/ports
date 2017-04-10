@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -18,7 +18,7 @@ MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread stdc++ z
+WANTLIB +=	c m pthread ${LIBCXX} z
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=protobuf/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/19 10:22:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT =		audio plugin API
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.vamp-plugins.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vamp/}
 

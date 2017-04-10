@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/01/31 08:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT =		bundle of plugins for gmpc
 
@@ -22,7 +22,7 @@ WANTLIB += cairo dbus-1 dbus-glib-1 expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl lzma m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 stdc++
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 ${LIBCXX}
 WANTLIB += tag tag_c xcb xcb-render xcb-shm xml2 z
 
 MODULES =		textproc/intltool

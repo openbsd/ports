@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2017/04/10 11:45:26 sthen Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -23,7 +23,7 @@ HOMEPAGE=	http://www.68k.org/~michael/audiofile/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC c m ogg stdc++
+WANTLIB += FLAC c m ogg ${LIBCXX}
 
 LIB_DEPENDS=	audio/flac
 

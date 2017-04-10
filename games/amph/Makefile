@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/13 06:29:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:28 sthen Exp $
 
 COMMENT=	jump'n run game with unique video effects
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
 MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		X11 Xext Xpm Xt c m pthread pthread-stubs stdc++ \
+WANTLIB=		X11 Xext Xpm Xt c m pthread pthread-stubs ${LIBCXX} \
 			usbhid xcb SDL
 
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \

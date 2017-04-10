@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
@@ -21,7 +21,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86dga Xxf86vm c atk-1.0 SDL
 WANTLIB += cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread stdc++ z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread ${LIBCXX} z
 
 LIB_DEPENDS=		devel/sdl \
 			x11/gtk+2

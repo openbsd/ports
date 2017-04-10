@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/11/19 16:06:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:26 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -19,7 +19,7 @@ MAINTAINER =		Matthew Dempsky <matthew@dempsky.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # c>=68.1 needed for ppoll
-WANTLIB =		c>=68.1 m stdc++
+WANTLIB =		c>=68.1 m ${LIBCXX}
 
 MODULES =		lang/python
 

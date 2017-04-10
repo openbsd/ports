@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/10 11:45:24 sthen Exp $
 
 V =			0.8.3-1
 REVISION =		12
@@ -37,7 +37,7 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-incdir=${LOCALBASE}/include \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
-WANTLIB-main =		crypto m pthread ssl stdc++ z mysqlclient dbi
+WANTLIB-main =		crypto m pthread ssl ${LIBCXX} z mysqlclient dbi
 LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =

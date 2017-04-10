@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	library of C++ classes for flexible logging
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://log4cpp.sourceforge.net/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m pthread stdc++
+WANTLIB += m pthread ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=log4cpp/}
 

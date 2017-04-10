@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/28 07:24:40 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://www.hackenberger.at/ktikz/
 
 WANTLIB += ICE QtGui QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m pthread stdc++ poppler-qt4
+WANTLIB += freetype m pthread ${LIBCXX} poppler-qt4
 
 MODULES =		devel/qmake \
 			x11/qt4

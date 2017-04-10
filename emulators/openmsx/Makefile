@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/08 14:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2017/04/10 11:45:28 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
 
 WANTLIB += ${MODTCL_LIB}
 WANTLIB += GL GLEW SDL SDL_ttf ao c freetype iconv lzma m ogg png
-WANTLIB += pthread stdc++ theoradec vorbis xml2 z
+WANTLIB += pthread ${LIBCXX} theoradec vorbis xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openmsx/}
 CONFIGURE_STYLE =	simple

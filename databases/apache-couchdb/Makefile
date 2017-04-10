@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/05 04:25:58 mglocker Exp $
+# $OpenBSD: Makefile,v 1.30 2017/04/10 11:45:24 sthen Exp $
 
 COMMENT =	distributed, document-oriented database
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://couchdb.apache.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto curl icudata icui18n icuuc m mozjs ncurses nghttp2
-WANTLIB += nspr4 plc4 plds4 pthread ssl stdc++ z
+WANTLIB += nspr4 plc4 plds4 pthread ssl ${LIBCXX} z
 
 MODULES =	devel/gettext \
 		lang/erlang

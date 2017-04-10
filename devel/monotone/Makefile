@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/23 09:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	distributed version control system
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://monotone.ca/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += botan-1.10 c idn m pcre pthread sqlite3 stdc++ z
+WANTLIB += botan-1.10 c idn m pcre pthread sqlite3 ${LIBCXX} z
 WANTLIB += ${MODLUA_WANTLIB}
 
 MASTER_SITES=	${HOMEPAGE}/downloads/${VERSION}/

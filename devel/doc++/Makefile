@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/12 15:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://docpp.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c intl m stdc++
+WANTLIB=		c intl m ${LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docpp/}
 

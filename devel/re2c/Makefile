@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/04 14:40:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
@@ -12,7 +12,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += c m ${LIBCXX}
 
 MASTER_SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
 

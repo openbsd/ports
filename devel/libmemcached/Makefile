@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/08 09:11:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -19,7 +19,7 @@ SHARED_LIBS +=  memcachedutil             1.0 # 1.0
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c stdc++ m pthread sasl2
+WANTLIB += c ${LIBCXX} m pthread sasl2
 
 BUILD_DEPENDS=	sysutils/e2fsprogs # detects libuuid in autoconf; only used when building tests
 LIB_DEPENDS= 	security/cyrus-sasl2

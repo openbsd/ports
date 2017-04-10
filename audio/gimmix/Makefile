@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/11/04 11:35:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2017/04/10 11:45:23 sthen Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -15,7 +15,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz lzma m mpd nghttp2 nxml pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs ssl stdc++ tag tag_c xcb xcb-render xcb-shm
+WANTLIB += pthread-stubs ssl ${LIBCXX} tag tag_c xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimmix.berlios/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/25 06:57:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:27 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -16,7 +16,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += agg c m pthread stdc++ z GL GLU X11 Xcomposite
+WANTLIB += agg c m pthread ${LIBCXX} z GL GLU X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 SDL SoundTouch

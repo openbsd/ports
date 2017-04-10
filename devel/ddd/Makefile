@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.gnu.org/software/ddd/
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z stdc++ \
+WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z ${LIBCXX} \
 		Xft Xrender expat fontconfig freetype iconv ncurses \
 		pthread-stubs xcb jpeg png Xm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/03/24 13:35:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.9 2017/04/10 11:45:27 sthen Exp $
 
 BROKEN =	port is holding back updates to lang/libv8
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/cowboyd/therubyracer
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	pthread stdc++ v8
+WANTLIB =	pthread ${LIBCXX} v8
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext
 

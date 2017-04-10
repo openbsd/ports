@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/11 11:36:24 pirofti Exp $
+# $OpenBSD: Makefile,v 1.21 2017/04/10 11:45:25 sthen Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB	+=		m stdc++ gmp
+WANTLIB	+=		m ${LIBCXX} gmp
 
 LIB_DEPENDS =		devel/gmp
 

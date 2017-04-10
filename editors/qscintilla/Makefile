@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/30 15:56:09 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:27 sthen Exp $
 
 COMMENT =	Qt4 port of the Scintilla source code editor
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
-WANTLIB += freetype m pthread stdc++
+WANTLIB += freetype m pthread ${LIBCXX}
 
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 

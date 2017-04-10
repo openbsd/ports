@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT =		unit testing framework
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://cpptest.sourceforge.net/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m stdc++
+WANTLIB += m ${LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cpptest/}
 

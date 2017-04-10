@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT =		object-oriented input system
 
@@ -18,7 +18,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # zlib/libpng
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 m stdc++ xcb
+WANTLIB =		X11 m ${LIBCXX} xcb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wgois/}
 EXTRACT_SUFX =		.zip

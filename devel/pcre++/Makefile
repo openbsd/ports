@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # XXX doesn't seem to actually link against libpcre?
 LIB_DEPENDS =		devel/pcre
-WANTLIB =		pcre m stdc++
+WANTLIB =		pcre m ${LIBCXX}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \

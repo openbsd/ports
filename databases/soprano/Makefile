@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/19 23:44:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2017/04/10 11:45:25 sthen Exp $
 
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c clucene-core clucene-shared iodbc lib/qt4/QtCore
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m pthread
-WANTLIB += raptor2 rdf stdc++
+WANTLIB += raptor2 rdf ${LIBCXX}
 
 MODULES =	x11/kde4
 MODKDE4_USE =

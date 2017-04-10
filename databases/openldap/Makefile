@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/12/17 14:11:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2017/04/10 11:45:24 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -114,7 +114,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db
 
 RUN_DEPENDS-server =	databases/openldap,-main
 WANTLIB-server +=	${WANTLIB} perl util m icudata icuuc uuid
-WANTLIB-server +=	stdc++ lib/db4/db>=4
+WANTLIB-server +=	${LIBCXX} lib/db4/db>=4
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/02/18 17:33:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/04/10 11:45:26 sthen Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -33,7 +33,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gmp gnutls hogweed idn2 m nettle p11-kit pthread stdc++
+WANTLIB += ffi gmp gnutls hogweed idn2 m nettle p11-kit pthread ${LIBCXX}
 WANTLIB += tasn1 z
 
 MODULES=	devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/12/18 18:20:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2017/04/10 11:45:24 sthen Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -17,7 +17,7 @@ HOMEPAGE =		https://github.com/plv8/plv8
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m stdc++ pthread v8
+WANTLIB =		c m ${LIBCXX} pthread v8
 
 MASTER_SITES =		http://api.pgxn.org/dist/plv8/${VERSION}/
 EXTRACT_SUFX =		.zip

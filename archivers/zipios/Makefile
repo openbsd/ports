@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/24 09:11:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2017/04/10 11:45:22 sthen Exp $
 
 COMMENT=	java-like zip interface
 
@@ -16,7 +16,7 @@ DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		m stdc++ z
+WANTLIB=		m ${LIBCXX} z
 
 CONFIGURE_STYLE=	gnu
 
