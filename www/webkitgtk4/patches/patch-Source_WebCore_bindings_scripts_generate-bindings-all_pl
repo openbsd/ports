@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WebCore_bindings_scripts_generate-bindings-all_pl,v 1.1 2017/03/29 13:25:52 ajacoutot Exp $
+$OpenBSD: patch-Source_WebCore_bindings_scripts_generate-bindings-all_pl,v 1.2 2017/04/10 12:56:11 ajacoutot Exp $
 
-https://bugs.webkit.org/show_bug.cgi?id=170106
+https://trac.webkit.org/changeset/215166/webkit
 
 --- Source/WebCore/bindings/scripts/generate-bindings-all.pl.orig	Mon Feb 20 17:20:16 2017
 +++ Source/WebCore/bindings/scripts/generate-bindings-all.pl	Tue Mar 28 08:05:16 2017
