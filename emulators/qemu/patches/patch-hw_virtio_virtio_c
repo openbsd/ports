@@ -1,10 +1,10 @@
-$OpenBSD: patch-hw_virtio_virtio_c,v 1.1 2017/02/25 11:16:25 ajacoutot Exp $
+$OpenBSD: patch-hw_virtio_virtio_c,v 1.2 2017/04/10 13:13:02 ajacoutot Exp $
 
 virtio: Fix no interrupt when not creating msi controller
 
---- hw/virtio/virtio.c.orig	Sun Feb 19 01:58:16 2017
-+++ hw/virtio/virtio.c	Sun Feb 19 02:00:49 2017
-@@ -1380,6 +1380,12 @@ void virtio_notify_irqfd(VirtIODevice *vdev, VirtQueue
+--- hw/virtio/virtio.c.orig	Fri Mar 31 10:07:03 2017
++++ hw/virtio/virtio.c	Sun Apr  9 12:21:46 2017
+@@ -1387,6 +1387,12 @@ void virtio_notify_irqfd(VirtIODevice *vdev, VirtQueue
      event_notifier_set(&vq->guest_notifier);
  }
  
@@ -17,7 +17,7 @@ virtio: Fix no interrupt when not creating msi controller
  void virtio_notify(VirtIODevice *vdev, VirtQueue *vq)
  {
      if (!virtio_should_notify(vdev, vq)) {
-@@ -1387,8 +1393,7 @@ void virtio_notify(VirtIODevice *vdev, VirtQueue *vq)
+@@ -1394,8 +1400,7 @@ void virtio_notify(VirtIODevice *vdev, VirtQueue *vq)
      }
  
      trace_virtio_notify(vdev, vq);
@@ -27,7 +27,7 @@ virtio: Fix no interrupt when not creating msi controller
  }
  
  void virtio_notify_config(VirtIODevice *vdev)
-@@ -2014,7 +2019,7 @@ static void virtio_queue_guest_notifier_read(EventNoti
+@@ -2023,7 +2028,7 @@ static void virtio_queue_guest_notifier_read(EventNoti
  {
      VirtQueue *vq = container_of(n, VirtQueue, guest_notifier);
      if (event_notifier_test_and_clear(n)) {
