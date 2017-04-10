@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/03/27 10:08:16 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2017/04/10 10:47:28 fcambus Exp $
 @bin bin/c1541
 @bin bin/cartconv
 @bin bin/petcat
@@ -28,6 +28,7 @@ lib/vice/C128/chargde
 lib/vice/C128/chargen
 lib/vice/C128/chargfr
 lib/vice/C128/chargse
+lib/vice/C128/colodore.vpl
 lib/vice/C128/community-colors.vpl
 lib/vice/C128/deekay.vpl
 lib/vice/C128/default.vrs
@@ -60,6 +61,7 @@ lib/vice/C64/c64mem.sym
 lib/vice/C64/c64s.vpl
 lib/vice/C64/ccs64.vpl
 lib/vice/C64/chargen
+lib/vice/C64/colodore.vpl
 lib/vice/C64/community-colors.vpl
 lib/vice/C64/deekay.vpl
 lib/vice/C64/default.vrs
@@ -114,6 +116,7 @@ lib/vice/CBM-II/ccs64.vpl
 lib/vice/CBM-II/chargen.500
 lib/vice/CBM-II/chargen.600
 lib/vice/CBM-II/chargen.700
+lib/vice/CBM-II/colodore.vpl
 lib/vice/CBM-II/community-colors.vpl
 lib/vice/CBM-II/deekay.vpl
 lib/vice/CBM-II/frodo.vpl
@@ -193,6 +196,7 @@ lib/vice/PLUS4/3plus1hi
 lib/vice/PLUS4/3plus1lo
 lib/vice/PLUS4/basic
 lib/vice/PLUS4/c2lo.364
+lib/vice/PLUS4/colodore_ted.vpl
 lib/vice/PLUS4/default.vrs
 lib/vice/PLUS4/kernal
 lib/vice/PLUS4/kernal.005
@@ -214,6 +218,7 @@ lib/vice/SCPU64/c64hq.vpl
 lib/vice/SCPU64/c64s.vpl
 lib/vice/SCPU64/ccs64.vpl
 lib/vice/SCPU64/chargen
+lib/vice/SCPU64/colodore.vpl
 lib/vice/SCPU64/community-colors.vpl
 lib/vice/SCPU64/deekay.vpl
 lib/vice/SCPU64/default.vrs
@@ -241,6 +246,7 @@ lib/vice/SCPU64/vice.vpl
 lib/vice/VIC20/
 lib/vice/VIC20/basic
 lib/vice/VIC20/chargen
+lib/vice/VIC20/colodore_vic.vpl
 lib/vice/VIC20/default.vrs
 lib/vice/VIC20/kernal
 lib/vice/VIC20/mike-ntsc.vpl
@@ -255,20 +261,40 @@ lib/vice/doc/CIPS2008.png
 lib/vice/doc/COPYING
 lib/vice/doc/Documentation-Howto.txt
 lib/vice/doc/Doxygen-Howto.txt
+lib/vice/doc/GTK3-Howto.txt
+lib/vice/doc/Lato-Bold.eot
+lib/vice/doc/Lato-Bold.ttf
+lib/vice/doc/Lato-Bold.woff
+lib/vice/doc/Lato-Bold.woff2
+lib/vice/doc/Lato-BoldItalic.eot
+lib/vice/doc/Lato-BoldItalic.ttf
+lib/vice/doc/Lato-BoldItalic.woff
+lib/vice/doc/Lato-BoldItalic.woff2
+lib/vice/doc/Lato-Italic.eot
+lib/vice/doc/Lato-Italic.ttf
+lib/vice/doc/Lato-Italic.woff
+lib/vice/doc/Lato-Italic.woff2
+lib/vice/doc/Lato-Regular.eot
+lib/vice/doc/Lato-Regular.ttf
+lib/vice/doc/Lato-Regular.woff
+lib/vice/doc/Lato-Regular.woff2
 lib/vice/doc/Linux-Mingw32-Howto.txt
 lib/vice/doc/Linux-Native-Howto.txt
 lib/vice/doc/MSDOS-Ethernet-Howto.txt
 lib/vice/doc/MSDOS-Howto.txt
+lib/vice/doc/MacOSX-Cocoa-Howto.txt
 lib/vice/doc/MacOSX-Howto.txt
 lib/vice/doc/MacOSX-ResourceTree.txt
 lib/vice/doc/Minix-Howto.txt
 lib/vice/doc/NEWS
 lib/vice/doc/NLS-Howto.txt
+lib/vice/doc/OFL.txt
 lib/vice/doc/OpenVMS-Howto.txt
 lib/vice/doc/OpenWatcom-Howto.txt
 lib/vice/doc/Readme-Amiga.txt
 lib/vice/doc/Readme-BeOS.txt
 lib/vice/doc/Readme-DOS.txt
+lib/vice/doc/Readme-GTK3.txt
 lib/vice/doc/Readme-MacOSX.txt
 lib/vice/doc/Readme-OS2.txt
 lib/vice/doc/Readme-SDL.txt
@@ -296,6 +322,7 @@ lib/vice/doc/robots.txt
 lib/vice/doc/sco.html
 lib/vice/doc/sitemap.xml
 lib/vice/doc/solaris.html
+lib/vice/doc/sortix.html
 lib/vice/doc/vice-logo.svg
 lib/vice/doc/vice.chm
 lib/vice/doc/vice.css
@@ -327,6 +354,7 @@ lib/vice/doc/vice_7.html
 lib/vice/doc/vice_8.html
 lib/vice/doc/vice_9.html
 lib/vice/doc/vice_toc.html
+lib/vice/doc/windows.html
 lib/vice/fonts/
 lib/vice/fonts/CBM.ttf
 lib/vice/fonts/vice-cbm.bdf

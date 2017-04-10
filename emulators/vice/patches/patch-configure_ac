@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/03/27 10:08:16 fcambus Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2017/04/10 10:47:28 fcambus Exp $
 
 Don't build a redundant copy of the documentation.
 Don't run fc-cache on install.
 
---- configure.ac.orig	Wed Mar  1 14:59:31 2017
-+++ configure.ac	Wed Mar  1 15:01:35 2017
-@@ -643,12 +643,7 @@ fi
+--- configure.ac.orig	Thu Mar 30 22:40:08 2017
++++ configure.ac	Fri Apr  7 22:07:03 2017
+@@ -653,12 +653,7 @@ fi
  AC_CHECK_PROGS(MAKEINFO, makeinfo, no)
  
  AC_CHECK_PROGS(TEXI2DVI, texi2dvi, no)
@@ -19,7 +19,7 @@ Don't run fc-cache on install.
  
  AC_CHECK_PROGS(DOS2UNIX, dos2unix, dos2unix)
  
-@@ -2998,12 +2993,7 @@ if test x"$enable_lame" != "xno" ; then
+@@ -3115,12 +3110,7 @@ if test x"$enable_lame" != "xno" ; then
  
  fi
  
